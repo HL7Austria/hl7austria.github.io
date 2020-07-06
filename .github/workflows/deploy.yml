@@ -20,7 +20,7 @@ jobs:
         repository: HL7Austria/hl7-at-fhir-profiles
         path: .
 
-    - name: Download IG PUblisher
+    - name: Download IG Publisher
       uses: Legion2/download-release-action@v2.1.0
       with:
         repository: HL7/fhir-ig-publisher
@@ -30,7 +30,7 @@ jobs:
 
     - name: Run IG Publisher
       run: |
-        java -jar org.hl7.fhir.publisher.jar
+        java -jar publisher.jar
         
     - name: Deploy Implementation Guide
       if: success()
