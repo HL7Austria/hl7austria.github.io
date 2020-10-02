@@ -38,13 +38,15 @@ jobs:
       env: 
         DISPLAY: :0.0
       run: |
-        ./build/_updatePublisher.sh
+        cd ./build
+        _updatePublisher.sh
         
     - name: Run IG Publisher
       env: 
         DISPLAY: :0.0
-      run: |
-        ./build/_genonce.sh   
+      run: | 
+        cd ./build
+        _genonce.sh   
         
     - name: Deploy Implementation Guide
       if: success()
