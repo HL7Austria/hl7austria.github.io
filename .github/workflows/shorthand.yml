@@ -46,7 +46,7 @@ jobs:
         DISPLAY: :0.0
       run: | 
         cd ./build
-        ./_genonce.sh   
+        java -jar ./input-cache/publisher.jar -ig ig.ini -Djava.awt.headless=true
         
     - name: Deploy Implementation Guide
       if: success()
