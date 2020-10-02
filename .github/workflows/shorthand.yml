@@ -42,11 +42,10 @@ jobs:
         ./_updatePublisher.sh --force
         
     - name: Run IG Publisher
-      env: 
-        DISPLAY: :0
       run: | 
         cd ./build
-        java -jar ./input-cache/publisher.jar -Djava.awt.headless=true -ig ig.ini
+        unset DISPLAY
+        java -Djava.awt.headless=true -jar ./input-cache/publisher.jar -ig ig.ini
         
     - name: Deploy Implementation Guide
       if: success()
