@@ -13,7 +13,7 @@
     <sch:title>f:Patient</sch:title>
     <sch:rule context="f:Patient">
       <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/StructureDefinition/patient-citizenship']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/StructureDefinition/patient-citizenship': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://hl7.at/fhir/4.0/HL7ATBaseProfiles/StructureDefinition/patientReligion']) &lt;= 1">extension with URL = 'http://hl7.at/fhir/4.0/HL7ATBaseProfiles/StructureDefinition/patientReligion': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://hl7.at/fhir/4.0.1/HL7ATCoreProfiles/StructureDefinition/patientReligion']) &lt;= 1">extension with URL = 'http://hl7.at/fhir/4.0.1/HL7ATCoreProfiles/StructureDefinition/patientReligion': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:name) &gt;= 1">name: minimum cardinality of 'name' is 1</sch:assert>
       <sch:assert test="count(f:gender) &gt;= 1">gender: minimum cardinality of 'gender' is 1</sch:assert>
     </sch:rule>
