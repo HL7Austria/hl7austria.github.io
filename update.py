@@ -1,1 +1,1 @@
-println( "Phyton is working..." )
+print( "Phyton is working..." )
