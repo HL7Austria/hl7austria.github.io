@@ -15,13 +15,19 @@ for name in glob.glob('./*/_index.yml'):
     
     with open(name) as file:  
         index_yml = yaml.load(file, Loader=yaml.FullLoader)
-        content += f"""<a href="r4-core-master/index.html" class="list-group-item list-group-item-action flex-column align-items-start">
+        print(index_yml)
+        folder_name = name.replace('/_index.yml', '')
+        current = 'label-warning'
+        if index_yml[4].get("branch", "n.a.") == 'current':
+            current = 'label-success'
+        
+        content += f"""<a href="{folder_name}/index.html" class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">{index_yml[0].get("title", "n.a.")}<span style="margin-left: 8px;" class="label label-success">{index_yml[4].get("branch", "n.a.")}</span></h5>
+                            <h5 class="mb-1">{index_yml[0].get("name", "n.a.")}<span style="margin-left: 8px;" class="label {current}">{index_yml[4].get("branch", "n.a.")}</span></h5>
                             <span class="label label-info">{index_yml[1].get("version", "n.a.")}</span>                      
                         </div>
-                        <p class="mb-1">{index_yml[2].get("description", "n.a.")}</p>                    
-                        <small>Last published: <span class="label label-default">{index_yml[3].get("last_published", "n.a.")}</span></small>
+                        <p class="mb-1" style="margin-top:6px;">{index_yml[2].get("description", "n.a.")}</p>                    
+                        <small>Last published:</small> <span class="label label-default">{index_yml[3].get("last_published", "n.a.")}</span>
                         </a>"""   
 
 
