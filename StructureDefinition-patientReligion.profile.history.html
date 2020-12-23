@@ -1,9 +1,13 @@
+<!-- get modelType -->
+
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE HTML>
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>HL7ATCOREPROFILES\Home - FHIR v4.0.1</title>
+    <title>HL7ATCOREPROFILES\Patient Religion - Profile Change History - FHIR v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -40,8 +44,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"1"}
-    h3,h4,h5,h6{--heading-prefix:"1"}</style>
+    <style type="text/css">h2{--heading-prefix:"2.4"}
+    h3,h4,h5,h6{--heading-prefix:"2.4"}</style>
     <div id="segment-header" class="segment">
       <!-- segment-header -->
       <div class="container">  <!-- container -->
@@ -101,7 +105,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Home</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Patient Religion</b></li>
         </ul>
       </div>  <!-- /container -->
     </div>  <!-- /segment-breadcrumb -->
@@ -111,19 +115,11 @@
         <div class="row">
           <div class="inner-wrapper">
 
-<style type="text/css">
-h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
-h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
-h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
-h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
-h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
-</style>
-<div class="col-12">
-  
+
+<div style="counter-reset: section 10" class="col-12">
   <div class="alert alert-warning" role="alert">
     <!--ReleaseHeader--><p id="publish-box">HL7 Austria FHIR Core Implementation Guide - Local Development build (v0.2.0). See the <a href="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
-  </div>  
-  <h2>Home</h2>
+  </div> 
   
 
 
@@ -134,43 +130,64 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
 
-    <p><!-- white space is critical inside of capture --></p>
-<div class="markdown-toc">
-<ul id="markdown-toc">
-  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-  <li><a href="#hl7-austria--tc-fhir" id="markdown-toc-hl7-austria--tc-fhir">HL7 Austria &amp; TC FHIR</a></li>
-  <li><a href="#fhir-shorthand-resources" id="markdown-toc-fhir-shorthand-resources">FHIR Shorthand Resources</a></li>
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="StructureDefinition-patientReligion.html">Content</a>
+  </li>
+
+
+
+  <li>
+    <a href="StructureDefinition-patientReligion-definitions.html">Detailed Descriptions</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="StructureDefinition-patientReligion-mappings.html">Mappings</a>
+    </li>
+  
+
+
+
+
+
+  
+    <li>
+      <a href="StructureDefinition-patientReligion.profile.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureDefinition-patientReligion.profile.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureDefinition-patientReligion.profile.ttl.html">TTL</a>
+    </li>
+  
+
+
 </ul>
 
-</div>
-<h3 id="introduction">Introduction</h3>
-<p>This is a draft for an implementation guide for the HL7 Austria FHIR Core Profiles based on HL7 FHIR R4.
-It is a “work in progress” implementation guide that is hosted on the <a href="https://github.com/HL7Austria">HL7 Austria github project</a> will get updated continuously.
-Ballot versions of this implementation guide will be published via the HL7 Austria homepage.</p>
 
-<h3 id="hl7-austria--tc-fhir">HL7 Austria &amp; TC FHIR</h3>
-<p>HL7 Austria is an official Affiliate of HL7 International. Within HL7 Austria the technical committee for FHIR (TC FHIR) is responsible to promote and disseminate the new upcoming standard HL7 FHIR.
-The TC FHIR deals with the standard-compliant and coordinated usage of HL7 FHIR based communication solutions. 
-It coordinates and describes necessary localizations and offers concrete help for FHIR-compliant interfaces.</p>
+  <a name="root"> </a>
+  <h2 id="root">Extension: PatientReligion - Change History</h2>
+  <p>Changes in the patientReligion extension.</p>
 
-<h3 id="fhir-shorthand-resources">FHIR Shorthand Resources</h3>
-
-<p>For the creation of this implementation guide FHIR Shorthand was used.</p>
-
-<p><a href="https://confluence.hl7.org/display/FHIRI/FHIR+Shorthand">HL7 Confluence site</a></p>
-
-<p><a href="https://build.fhir.org/ig/HL7/fhir-shorthand">FHIR Shorthand Documentation</a></p>
-
-<p><a href="https://github.com/HL7/fhir-shorthand">FHIR Shorthand documentation code repository</a></p>
-
-<p><a href="https://github.com/FHIR/sushi">SUSHI code repository</a></p>
-
-<p>Zulip (chat.fhir.org) channel: #shorthand</p>
-
-
-
+  
 
 </div>
+
         </div>  <!-- /inner-wrapper -->
       </div>  <!-- /row -->
     </div>  <!-- /container -->
@@ -178,6 +195,29 @@ It coordinates and describes necessary localizations and offers concrete help fo
 
   <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
   <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    try {
+      var currentTabIndex = sessionStorage.getItem('fhir-resource-tab-index');
+    } catch(exception) {
+    }
+
+    if (!currentTabIndex)
+      currentTabIndex = '0';
+
+    $( '#tabs' ).tabs({
+      active: currentTabIndex,
+      activate: function( event, ui ) {
+        var active = $('.selector').tabs('option', 'active');
+        currentTabIndex = ui.newTab.index();
+        document.activeElement.blur();
+        try {
+          sessionStorage.setItem('fhir-resource-tab-index', currentTabIndex);
+        } catch(exception) {
+        }
+      }
+    });
+  </script>
 
   <script type="text/javascript">
     $(document).ready(function(){
