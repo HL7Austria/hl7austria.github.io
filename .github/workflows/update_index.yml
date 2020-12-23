@@ -1,0 +1,19 @@
+# Workflow to create a landing page for the ig publisher based on the libraries present on server
+
+name: UpdateIndex
+
+# Run on updates to the master
+on:
+  push:
+    branches: [ pages ]
+  pull_request:
+    branches: [ pages ]
+
+jobs:
+   - name: Install Python
+     uses: actions/setup-python@v2
+     with:
+       python-version: 3.8 
+   - name: Execute Update Script 
+     run: |
+       python ./.github/workflows/python/update.py
