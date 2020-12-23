@@ -9,11 +9,12 @@ on:
   pull_request:
     branches: [ pages ]
 
-steps:
+jobs:
    - name: Install Python
      uses: actions/setup-python@v2
      with:
        python-version: 3.8 
+       
    - name: Execute Update Script 
      run: |
        python ./.github/workflows/python/update.py
