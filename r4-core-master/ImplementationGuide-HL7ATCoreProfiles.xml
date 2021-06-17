@@ -7,11 +7,11 @@
 </div></div>
   </text>
   <url value="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/ImplementationGuide/HL7ATCoreProfiles"/>
-  <version value="0.3.0"/>
+  <version value="0.2.0"/>
   <name value="HL7AustriaImplementationGuide"/>
   <title value="HL7 Austria FHIR Core Implementation Guide"/>
   <status value="active"/>
-  <date value="2021-05-29T18:21:46+00:00"/>
+  <date value="2021-06-17T14:22:47+00:00"/>
   <contact>
     <name value="Technical Committee for FHIR at HL7 Austria"/>
     <telecom>
@@ -189,10 +189,10 @@
         <valueString value="StructureDefinition:complex-type"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/at-core-address"/>
+        <reference value="StructureDefinition/AustrianRepresentationOfAddress"/>
       </reference>
-      <name value="HL7 AT Core Address Profile"/>
-      <description value="HL7 Austria FHIR Core Profile for address data in Austria."/>
+      <name value="Austrian Representation of an Address"/>
+      <description value="HL7 Austria FHIR Core Profile for Address Data in Austria."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -200,10 +200,10 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/at-core-patient"/>
+        <reference value="StructureDefinition/austrian-patient"/>
       </reference>
-      <name value="HL7 AT Core Patient Profile"/>
-      <description value="HL7 Austria FHIR Core Profile for patient pata in Austria."/>
+      <name value="Austrian Patient"/>
+      <description value="HL7 Austria FHIR Core Profile for Patient Data in Austria."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -211,10 +211,10 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/at-core-ext-address-additionalInformation"/>
+        <reference value="StructureDefinition/AustrianAddressAdditionalInformation"/>
       </reference>
-      <name value="Address Additional Information"/>
-      <description value="HL7 Austria FHIR Core Extension for the additional information part of the Austrian address."/>
+      <name value="Austrian Address Additional Information"/>
+      <description value="Additional Information part of the Austrian Address"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -222,10 +222,10 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/at-core-ext-patient-religion"/>
+        <reference value="StructureDefinition/patientReligion"/>
       </reference>
       <name value="Patient Religion"/>
-      <description value="HL7 Austria FHIR Core Extension for the religion (registered in Austria) of a patient."/>
+      <description value="The Religion (registered in Austria) of a Patient"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -233,21 +233,21 @@
         <valueString value="Patient"/>
       </extension>
       <reference>
-        <reference value="Patient/HL7ATCorePatientExample01"/>
+        <reference value="Patient/AustrianPatientExample01"/>
       </reference>
-      <name value="HL7ATCorePatientExample01"/>
-      <description value="Example for the usage of the HL7 AT Core Patient Profile"/>
-      <exampleCanonical value="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"/>
+      <name value="AustrianPatientExample01"/>
+      <description value="Example for the usage of the AustrianPatient Profile"/>
+      <exampleCanonical value="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/austrian-patient"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/at-core-cs-iso-3166-1-alpha-3"/>
+        <reference value="CodeSystem/CS-HL7AT-ISO-3166-1-alpha-3"/>
       </reference>
-      <name value="at-core-cs-iso-3166-1-alpha-3"/>
-      <description value="ISO code system for country codes with 3 letters"/>
+      <name value="CS-HL7AT-ISO-3166-1-alpha-3"/>
+      <description value="Country-codes with 3 letters"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -255,10 +255,10 @@
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/at-core-cs-religion"/>
+        <reference value="CodeSystem/CS-HL7AT-ReligionAustria"/>
       </reference>
-      <name value="at-core-cs-religion"/>
-      <description value="Code system for the religions and faith communities in Austria"/>
+      <name value="CS-HL7AT-ReligionAustria"/>
+      <description value="Religions and faith communities in Austria"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -266,9 +266,9 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/at-elga-vs-countryCodes"/>
+        <reference value="ValueSet/VS-ELGA-Laendercodes"/>
       </reference>
-      <name value="at-elga-vs-countryCodes"/>
+      <name value="VS-ELGA-Laendercodes"/>
       <description value="Value Set for ISO 3166-1 alpha 3 used in ELGA"/>
       <exampleBoolean value="false"/>
     </resource>
@@ -277,10 +277,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/at-elga-vs-religion"/>
+        <reference value="ValueSet/VS-ELGA-ReligiousAffiliation"/>
       </reference>
-      <name value="at-elga-vs-religion"/>
-      <description value="Set of religious affiliations to be used in ELGA. It is preferred to use entries of the first level hierachy (1-L)"/>
+      <name value="VS-ELGA-ReligiousAffiliation"/>
+      <description value="Set of Religious Affiliation to be used in ELGA. It is preferred to use entries of the first level hierachy (1-L)"/>
       <exampleBoolean value="false"/>
     </resource>
     <page>
