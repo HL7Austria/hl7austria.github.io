@@ -6,6 +6,8 @@
   <link href="fhir.css" rel="stylesheet"/>
   <style>
     span.flip  { background-color: #4CAF50; color: white; border: solid 1px #a6d8a8; padding: 2px }
+    span.toggle  { background-color: #e6f2ff; color: black; border: solid 1px #0056b3; padding: 2px; font-size: 10px }
+    span.toggle  { font-size: 10px }
   </style>
   <script>
     function flip(id) {
@@ -19,13 +21,24 @@
         span.innerHTML = 'Show Reasoning';
       }
     }
+    function toggle(id) {
+      var span = document.getElementById('s'+id);
+      var div = document.getElementById(id);
+      if (document.getElementById('s'+id).innerHTML == 'Show Validation Information') {
+        div.style.display = 'block';
+        span.innerHTML = 'Hide Validation Information';
+      } else {
+        div.style.display = 'none';
+        span.innerHTML = 'Show Validation Information';
+      }
+    }
   </script>
 </head>
 <body style="margin: 20px; background-color: #ffffff">
  <h1>Validation Results for HL7AustriaImplementationGuide</h1>
- <p>Generated Wed Jul 14 18:22:57 UTC 2021, FHIR version 4.0.1 for HL7ATCoreProfiles#0.3.0 (canonical = <a href="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1">http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1</a> (<a href="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/history.html">history</a>)). See <a href="/home/runner/work/hl7-at-fhir-core-r4/hl7-at-fhir-core-r4/output/qa.min.html">Errors Only</a></p>
+ <p>Generated Fri Sep 10 05:34:09 UTC 2021, FHIR version 4.0.1 for HL7ATCoreProfiles#0.3.0 (canonical = <a href="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1">http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1</a> (<a href="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/history.html">history</a>)). See <a href="/home/runner/work/hl7-at-fhir-core-r4/hl7-at-fhir-core-r4/output/qa.min.html">Errors Only</a></p>
 <table class="grid"> <tr><td colspan=2><b>Quality Checks</b></td></tr>
- <tr><td>Publisher Version:</td><td><span>IG Publisher Version: v1.1.76</span></td></tr>
+ <tr><td>Publisher Version:</td><td><span>IG Publisher Version: v1.1.80</span></td></tr>
  <tr><td>Publication Code:</td><td>n/a<span style="color: maroon; font-weight: bold"> </span>. PackageId = HL7ATCoreProfiles, Canonical = http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1</td></tr>
  <tr><td>Realm Check for n/a:</td><td><span style="color: maroon; font-weight: bold"></span><ul><li>n/a</li></ul></td></tr>
  <tr><td>Version Check:</td><td>0.3.0: <span stlye="color: marron; font-weight: bold">No entry in the package-list.json file for this version</span></td></tr>
@@ -79,7 +92,8 @@
 </table>
 <hr/>
 <a name="internal"> </a>
-<h2><a href="">n/a</a></h2>
+<h2><a href="">n/a</a> <span id="sv" class="toggle" onclick="toggle('v')">Show Validation Information</span> <span class="vcount" onclick="toggle('v')"></span></h2>
+ <div style="border: 1px grey solid; display: none" id="v"></div>
  <table class="grid">
    <tr style="background-color: #ffcccc">
      <td><b>ImplementationGuide.definition.parameter[23].value</b></td><td><b>error</b></td><td title=""><b>Supressed messages file not found</b></td>
@@ -87,9 +101,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_HL7-AT-FHIR-Core-R4_HL7-AT-FHIR-Core-R4_fsh-generated_resources_CodeSystem-at-core-cs-iso-3166-1-alpha-3"> </a>
-<h2><a href="CodeSystem-at-core-cs-iso-3166-1-alpha-3.html">/home/runner/work/HL7-AT-FHIR-Core-R4/HL7-AT-FHIR-Core-R4/fsh-generated/resources/CodeSystem-at-core-cs-iso-3166-1-alpha-3.json</a></h2>
- <ul style="font-size: 7px"><li>CodeSystem: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/codesystem.html">CodeSystem</a></li></ul>
-
+<h2><a href="CodeSystem-at-core-cs-iso-3166-1-alpha-3.html">fsh-generated/resources/CodeSystem-at-core-cs-iso-3166-1-alpha-3.json</a> <span id="svi1" class="toggle" onclick="toggle('vi1')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi1')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi1"><ul style="font-size: 7px"><li>CodeSystem: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/codesystem.html">CodeSystem</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -100,9 +114,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_HL7-AT-FHIR-Core-R4_HL7-AT-FHIR-Core-R4_fsh-generated_resources_CodeSystem-at-core-cs-religion"> </a>
-<h2><a href="CodeSystem-at-core-cs-religion.html">/home/runner/work/HL7-AT-FHIR-Core-R4/HL7-AT-FHIR-Core-R4/fsh-generated/resources/CodeSystem-at-core-cs-religion.json</a></h2>
- <ul style="font-size: 7px"><li>CodeSystem: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/codesystem.html">CodeSystem</a></li></ul>
-
+<h2><a href="CodeSystem-at-core-cs-religion.html">fsh-generated/resources/CodeSystem-at-core-cs-religion.json</a> <span id="svi2" class="toggle" onclick="toggle('vi2')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi2')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi2"><ul style="font-size: 7px"><li>CodeSystem: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/codesystem.html">CodeSystem</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td>&check;</td>
@@ -110,7 +124,8 @@
 </table>
 <hr/>
 <a name="_home_runner_work_HL7-AT-FHIR-Core-R4_HL7-AT-FHIR-Core-R4_fsh-generated_resources_ImplementationGuide-HL7ATCoreProfiles"> </a>
-<h2><a href="ImplementationGuide-HL7ATCoreProfiles.html">/home/runner/work/HL7-AT-FHIR-Core-R4/HL7-AT-FHIR-Core-R4/fsh-generated/resources/ImplementationGuide-HL7ATCoreProfiles.json</a></h2>
+<h2><a href="ImplementationGuide-HL7ATCoreProfiles.html">fsh-generated/resources/ImplementationGuide-HL7ATCoreProfiles.json</a> <span id="svi3" class="toggle" onclick="toggle('vi3')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi3')">(0)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi3"></div>
  <table class="grid">
    <tr>
      <td>&check;</td>
@@ -118,9 +133,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_HL7-AT-FHIR-Core-R4_HL7-AT-FHIR-Core-R4_fsh-generated_resources_Patient-HL7ATCorePatientExample01"> </a>
-<h2><a href="Patient-HL7ATCorePatientExample01.html">/home/runner/work/HL7-AT-FHIR-Core-R4/HL7-AT-FHIR-Core-R4/fsh-generated/resources/Patient-HL7ATCorePatientExample01.json</a></h2>
- <ul style="font-size: 7px"><li>Patient: Validated against <i>this.</i><a href="StructureDefinition-at-core-patient.html">HL7 AT Core Patient Profile</a></li></ul>
-
+<h2><a href="Patient-HL7ATCorePatientExample01.html">fsh-generated/resources/Patient-HL7ATCorePatientExample01.json</a> <span id="svi4" class="toggle" onclick="toggle('vi4')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi4')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi4"><ul style="font-size: 7px"><li>Patient: Validated against <i>this.</i><a href="StructureDefinition-at-core-patient.html">HL7 AT Core Patient Profile</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
@@ -134,9 +149,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_HL7-AT-FHIR-Core-R4_HL7-AT-FHIR-Core-R4_fsh-generated_resources_StructureDefinition-at-core-address"> </a>
-<h2><a href="StructureDefinition-at-core-address.html">/home/runner/work/HL7-AT-FHIR-Core-R4/HL7-AT-FHIR-Core-R4/fsh-generated/resources/StructureDefinition-at-core-address.json</a></h2>
- <ul style="font-size: 7px"><li>StructureDefinition: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></li></ul>
-
+<h2><a href="StructureDefinition-at-core-address.html">fsh-generated/resources/StructureDefinition-at-core-address.json</a> <span id="svi5" class="toggle" onclick="toggle('vi5')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi5')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi5"><ul style="font-size: 7px"><li>StructureDefinition: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td>&check;</td>
@@ -144,9 +159,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_HL7-AT-FHIR-Core-R4_HL7-AT-FHIR-Core-R4_fsh-generated_resources_StructureDefinition-at-core-ext-address-additionalInformation"> </a>
-<h2><a href="StructureDefinition-at-core-ext-address-additionalInformation.html">/home/runner/work/HL7-AT-FHIR-Core-R4/HL7-AT-FHIR-Core-R4/fsh-generated/resources/StructureDefinition-at-core-ext-address-additionalInformation.json</a></h2>
- <ul style="font-size: 7px"><li>StructureDefinition: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></li></ul>
-
+<h2><a href="StructureDefinition-at-core-ext-address-additionalInformation.html">fsh-generated/resources/StructureDefinition-at-core-ext-address-additionalInformation.json</a> <span id="svi6" class="toggle" onclick="toggle('vi6')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi6')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi6"><ul style="font-size: 7px"><li>StructureDefinition: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td>&check;</td>
@@ -154,9 +169,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_HL7-AT-FHIR-Core-R4_HL7-AT-FHIR-Core-R4_fsh-generated_resources_StructureDefinition-at-core-ext-patient-religion"> </a>
-<h2><a href="StructureDefinition-at-core-ext-patient-religion.html">/home/runner/work/HL7-AT-FHIR-Core-R4/HL7-AT-FHIR-Core-R4/fsh-generated/resources/StructureDefinition-at-core-ext-patient-religion.json</a></h2>
- <ul style="font-size: 7px"><li>StructureDefinition: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></li></ul>
-
+<h2><a href="StructureDefinition-at-core-ext-patient-religion.html">fsh-generated/resources/StructureDefinition-at-core-ext-patient-religion.json</a> <span id="svi7" class="toggle" onclick="toggle('vi7')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi7')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi7"><ul style="font-size: 7px"><li>StructureDefinition: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td>&check;</td>
@@ -164,9 +179,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_HL7-AT-FHIR-Core-R4_HL7-AT-FHIR-Core-R4_fsh-generated_resources_StructureDefinition-at-core-patient"> </a>
-<h2><a href="StructureDefinition-at-core-patient.html">/home/runner/work/HL7-AT-FHIR-Core-R4/HL7-AT-FHIR-Core-R4/fsh-generated/resources/StructureDefinition-at-core-patient.json</a></h2>
- <ul style="font-size: 7px"><li>StructureDefinition: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></li></ul>
-
+<h2><a href="StructureDefinition-at-core-patient.html">fsh-generated/resources/StructureDefinition-at-core-patient.json</a> <span id="svi8" class="toggle" onclick="toggle('vi8')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi8')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi8"><ul style="font-size: 7px"><li>StructureDefinition: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td>&check;</td>
@@ -174,9 +189,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_HL7-AT-FHIR-Core-R4_HL7-AT-FHIR-Core-R4_fsh-generated_resources_ValueSet-at-elga-vs-countryCodes"> </a>
-<h2><a href="ValueSet-at-elga-vs-countryCodes.html">/home/runner/work/HL7-AT-FHIR-Core-R4/HL7-AT-FHIR-Core-R4/fsh-generated/resources/ValueSet-at-elga-vs-countryCodes.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
-
+<h2><a href="ValueSet-at-elga-vs-countryCodes.html">fsh-generated/resources/ValueSet-at-elga-vs-countryCodes.json</a> <span id="svi9" class="toggle" onclick="toggle('vi9')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi9')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi9"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td>&check;</td>
@@ -184,9 +199,9 @@
 </table>
 <hr/>
 <a name="_home_runner_work_HL7-AT-FHIR-Core-R4_HL7-AT-FHIR-Core-R4_fsh-generated_resources_ValueSet-at-elga-vs-religion"> </a>
-<h2><a href="ValueSet-at-elga-vs-religion.html">/home/runner/work/HL7-AT-FHIR-Core-R4/HL7-AT-FHIR-Core-R4/fsh-generated/resources/ValueSet-at-elga-vs-religion.json</a></h2>
- <ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
-
+<h2><a href="ValueSet-at-elga-vs-religion.html">fsh-generated/resources/ValueSet-at-elga-vs-religion.json</a> <span id="svi10" class="toggle" onclick="toggle('vi10')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi10')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi10"><ul style="font-size: 7px"><li>ValueSet: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/valueset.html">ValueSet</a></li></ul>
+</div>
  <table class="grid">
    <tr>
      <td>&check;</td>
@@ -201,10 +216,10 @@
 <h2>Terminology_TX_System_NotKnown</h2>
  <table class="grid">
    <tr style="background-color: #fffff2">
-     <td><a href="Patient-HL7ATCorePatientExample01.html">/home/runner/work/HL7-AT-FHIR-Core-R4/HL7-AT-FHIR-Core-R4/fsh-generated/resources/Patient-HL7ATCorePatientExample01.json</a></td><td><b>Code System URI 'urn:oid:2.16.840.1.113883.2.16.1.4.1' is unknown so the code cannot be validated</b></td>
+     <td><a href="Patient-HL7ATCorePatientExample01.html">fsh-generated/resources/Patient-HL7ATCorePatientExample01.json</a></td><td><b>Code System URI 'urn:oid:2.16.840.1.113883.2.16.1.4.1' is unknown so the code cannot be validated</b></td>
    </tr>
    <tr style="background-color: #fffff2">
-     <td><a href="Patient-HL7ATCorePatientExample01.html">/home/runner/work/HL7-AT-FHIR-Core-R4/HL7-AT-FHIR-Core-R4/fsh-generated/resources/Patient-HL7ATCorePatientExample01.json</a></td><td><b>Code System URI 'urn:oid:1.0.3166.1.2.3' is unknown so the code cannot be validated</b></td>
+     <td><a href="Patient-HL7ATCorePatientExample01.html">fsh-generated/resources/Patient-HL7ATCorePatientExample01.json</a></td><td><b>Code System URI 'urn:oid:1.0.3166.1.2.3' is unknown so the code cannot be validated</b></td>
    </tr>
 </table>
 </body>
