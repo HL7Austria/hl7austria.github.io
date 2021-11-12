@@ -16,20 +16,24 @@
      ]
   ];
   fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>identifier</b>: Social Security number: 1111241261 (OFFICIAL)</p><p><b>name</b>: Alejandro Vasi Mustadimi </p><p><b>telecom</b>: <a href=\"tel:+43.2682.40400\">+43.2682.40400</a>, <a href=\"tel:+43.664.1234567\">+43.664.1234567</a>, <a href=\"mailto:herberthannes.mustermann@provider.at\">herberthannes.mustermann@provider.at</a></p><p><b>gender</b>: male</p><p><b>birthDate</b>: 1961-12-24</p><p><b>address</b>: Musterstraße 13a Eisenstadt Burgenland 7000 AUT (HOME)</p><p><b>maritalStatus</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v3-MaritalStatus M}\">Married</span></p><h3>Contacts</h3><table class=\"grid\"><tr><td>-</td><td><b>Relationship</b></td><td><b>Name</b></td><td><b>Telecom</b></td><td><b>Address</b></td></tr><tr><td>*</td><td><span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v3-RoleCode DAU}\">natural daughter</span></td><td>Julia Tochter </td><td><a href=\"tel:+43.664.12345678\">+43.664.12345678</a></td><td>Heimstrasse 1 Wien 1220 AUT </td></tr></table><h3>Communications</h3><table class=\"grid\"><tr><td>-</td><td><b>Language</b></td><td><b>Preferred</b></td></tr><tr><td>*</td><td><span title=\"Codes: {urn:ietf:bcp:47 de}\">German</span></td><td>true</td></tr></table></div>"
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"HL7ATCorePatientExample05-FullElga\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-core-patient.html\">HL7 AT Core Patient Profile</a></p></div><blockquote><p><b>Patient Religion</b></p><p><b>value</b>: Römisch-Katholisch <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (unknown#101)</span></p></blockquote><p><b>identifier</b>: Social Security Number: 1111241261 (OFFICIAL)</p><p><b>name</b>: Alexander Robert Wolfesberger </p><p><b>telecom</b>: <a href=\"tel:+43.2682.40400\">+43.2682.40400</a>, <a href=\"tel:+43.664.1234567\">+43.664.1234567</a>, <a href=\"mailto:herberthannes.mustermann@provider.at\">herberthannes.mustermann@provider.at</a></p><p><b>gender</b>: male</p><p><b>birthDate</b>: 1961-12-24</p><p><b>address</b>: Beheimgasse 7 Stock 2 Tür 1 Wien Wien 1170 AUT (HOME)</p><p><b>maritalStatus</b>: Married <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/2.1.0/CodeSystem-v3-MaritalStatus.html\">MaritalStatus</a>#M)</span></p><h3>Contacts</h3><table class=\"grid\"><tr><td>-</td><td><b>Relationship</b></td><td><b>Name</b></td><td><b>Telecom</b></td><td><b>Address</b></td></tr><tr><td>*</td><td>natural daughter <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/2.1.0/CodeSystem-v3-RoleCode.html\">RoleCode</a>#DAU)</span></td><td>Julia Tochter </td><td><a href=\"tel:+43.664.12345678\">+43.664.12345678</a></td><td>Heimstrasse 1 Wien 1220 AUT </td></tr></table><h3>Communications</h3><table class=\"grid\"><tr><td>-</td><td><b>Language</b></td><td><b>Preferred</b></td></tr><tr><td>*</td><td>German <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/2.1.0/CodeSystem-v3-ietf3066.html\">Tags for the Identification of Languages</a>#de)</span></td><td>true</td></tr></table></div>"
   ];
   fhir:DomainResource.extension [
      fhir:index 0;
-     fhir:Extension.url [ fhir:value "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/patientReligion" ];
-     fhir:Extension.valueCodeableConcept [
-       fhir:CodeableConcept.coding [
-         fhir:index 0;
-         fhir:Coding.system [ fhir:value "urn:oid:2.16.840.1.113883.2.16.1.4.1" ];
-         fhir:Coding.code [ fhir:value "101" ];
-         fhir:Coding.display [ fhir:value "Römisch-Katholisch" ]
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "code" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "urn:oid:2.16.840.1.113883.2.16.1.4.1" ];
+           fhir:Coding.code [ fhir:value "101" ];
+           fhir:Coding.display [ fhir:value "Römisch-Katholisch" ]
+         ]
        ]
-     ]
+     ];
+     fhir:Extension.url [ fhir:value "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-patient-religion" ]
   ];
   fhir:Patient.identifier [
      fhir:index 0;
@@ -39,23 +43,23 @@
          fhir:index 0;
          fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ];
          fhir:Coding.code [ fhir:value "SS" ];
-         fhir:Coding.display [ fhir:value "Social Security number" ]
+         fhir:Coding.display [ fhir:value "Social Security Number" ]
        ]
      ];
      fhir:Identifier.system [ fhir:value "urn:oid:1.2.40.0.10.1.4.3.1" ];
      fhir:Identifier.value [ fhir:value "1111241261" ];
      fhir:Identifier.assigner [
-       fhir:Reference.display [ fhir:value "Dachverband der �sterreichischen Sozialversicherungstr�ger" ]
+       fhir:Reference.display [ fhir:value "Dachverband der Österreichischen Sozialversicherungsträger" ]
      ]
   ];
   fhir:Patient.name [
      fhir:index 0;
-     fhir:HumanName.family [ fhir:value "Mustadimi" ];
+     fhir:HumanName.family [ fhir:value "Wolfesberger" ];
      fhir:HumanName.given [
-       fhir:value "Alejandro";
+       fhir:value "Alexander";
        fhir:index 0
      ], [
-       fhir:value "Vasi";
+       fhir:value "Robert";
        fhir:index 1
      ];
      fhir:HumanName.prefix [
@@ -86,13 +90,31 @@
   fhir:Patient.address [
      fhir:index 0;
      fhir:Address.use [ fhir:value "home" ];
+     fhir:Address.type [ fhir:value "both" ];
      fhir:Address.line [
-       fhir:value "Musterstraße 13a";
-       fhir:index 0
+       fhir:value "Beheimgasse 7 Stock 2 Tür 1";
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName" ];
+         fhir:Extension.valueString [ fhir:value "Beheimgasse" ]
+       ], [
+         fhir:index 1;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber" ];
+         fhir:Extension.valueString [ fhir:value "7" ]
+       ], [
+         fhir:index 2;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator" ];
+         fhir:Extension.valueString [ fhir:value "Stock 2 Tür 1" ]
+       ], [
+         fhir:index 3;
+         fhir:Extension.url [ fhir:value "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation" ];
+         fhir:Extension.valueString [ fhir:value "Lift vorhanden" ]
+       ]
      ];
-     fhir:Address.city [ fhir:value "Eisenstadt" ];
-     fhir:Address.state [ fhir:value "Burgenland" ];
-     fhir:Address.postalCode [ fhir:value "7000" ];
+     fhir:Address.city [ fhir:value "Wien" ];
+     fhir:Address.state [ fhir:value "Wien" ];
+     fhir:Address.postalCode [ fhir:value "1170" ];
      fhir:Address.country [ fhir:value "AUT" ]
   ];
   fhir:Patient.maritalStatus [
