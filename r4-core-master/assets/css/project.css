@@ -73,6 +73,16 @@ var(--publish-box-border); */
   --ig-header-color: #FFF; /* 21. Header color (sides) */
   --ig-header-container-color: #FFF; /* 22. Header container color (center) */
 
+  --footer-text-color: #ffffff; /* 24. Footer highlight font color */
+  --footer-hyperlink-text-color: #81BEF7; /* 25. Footer hyperlinks font color */
+  --footer-highlight-text-color: #ffff77; /* 26. Footer highlight font color */
+
+  --breadcrumb-bg-color: #f5f5f5; /* 27. Breadcrumb font color */
+  --breadcrumb-text-color: ##555555; /* 28. Breadcrumb font color */
+
+  --dragon-background-color: #fffbf7; /* 29. Dragon background color */
+  --dragon-text-color: #101020; /* 30. Dragon font color */
+
 }
 
 
@@ -236,8 +246,26 @@ body {
 #publish-box {
   background-color: var(--publish-box-bg-color);
   border: var(--publish-box-border);
-  padding: 0px;
-  margin: 0px;
+  padding: 5px;
+}
+
+.dragon {
+  border: 1px solid maroon;
+  padding: 10px;
+  background-color: var(--dragon-background-color);
+  min-height: 160px;
+  color: var(--dragon-text-color);
+}
+
+.dragon::before {
+  content: "";
+  background-image: url('../images/dragon.png');
+  background-size: 150px 150px;
+  display: inline-block;
+  float:left;
+  margin-right: 10px;
+  width: 150px;
+  height: 150px;
 }
 
 .note-to-balloters, .stu-note {
@@ -335,6 +363,12 @@ blockquote.stu-note {
   text-decoration: none;
   color: #333;
   background-color: var(--btn-hover-color);
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(var(--btn-gradient-start-color)), to(var(--btn-gradient-end-color)));
+  background-image: -webkit-linear-gradient(top, var(--btn-gradient-start-color), 0%, var(--btn-gradient-end-color), 100%);
+  background-image: -moz-linear-gradient(top, var(--btn-gradient-start-color) 0%, var(--btn-gradient-end-color) 100%);
+  background-image: linear-gradient(to bottom, var(--btn-gradient-start-color) 0%, var(--btn-gradient-end-color) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=var(--btn-gradient-start-color-alpha), endColorstr=var(--btn-gradient-end-color-alpha), GradientType=0);
 }
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
@@ -343,10 +377,15 @@ blockquote.stu-note {
   text-decoration: none;
   outline: 0;
   background-color: var(--btn-active-color);
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(var(--btn-gradient-start-color)), to(var(--btn-gradient-end-color)));
+  background-image: -webkit-linear-gradient(top, var(--btn-gradient-start-color), 0%, var(--btn-gradient-end-color), 100%);
+  background-image: -moz-linear-gradient(top, var(--btn-gradient-start-color) 0%, var(--btn-gradient-end-color) 100%);
+  background-image: linear-gradient(to bottom, var(--btn-gradient-start-color) 0%, var(--btn-gradient-end-color) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=var(--btn-gradient-start-color-alpha), endColorstr=var(--btn-gradient-end-color-alpha), GradientType=0);
 }
 .nav-tabs {
   margin-bottom: 20px;
-  margin-top: 20px;
 }
 .nav-tabs a {
   color: #555555;
@@ -458,6 +497,7 @@ a:focus {
 }
 .breadcrumb {
   margin-bottom: 0;
+  background-color: var(--breadcrumb-bg-color);;
 }
 .breadcrumb a {
   color: #555555;
@@ -549,15 +589,12 @@ a.to-top {
 ul.markdown-toc
 {
   margin: 4px;
-  padding: 6px;
+  padding: 4px;
   float: right;
   z-index: 10;
-  width: 250px;
+  width: 150px;
   background-color:  var(--toc-box-bg-color);
   border: var(--toc-box-border);
-  border-radius: 4px;
-  padding-top: 14px;
-  margin-left: 6px;
 }
 
 ul.markdown-toc p
@@ -578,15 +615,12 @@ ul.markdown-toc p.link
 div.markdown-toc
 {
   margin: 4px;
-  padding: 6px;
+  padding: 4px;
   float: right;
   z-index: 10;
-  width: 250px;
+  width: 150px;
   background-color:  var(--toc-box-bg-color);
   border: var(--toc-box-border);
-  border-radius: 4px;
-  padding-top: 14px;
-  margin-left: 6px;
 }
 
 div.markdown-toc p
@@ -623,7 +657,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 /* ============ downloads css ============= */
 
-a[href$=".sch"]:after, a[href$=".zip"]:after, a[href$=".tgz"]:after, a[href$=".xml"]:not([no-download^="true"]):after, a[href$=".json"]:not([no-download^="true"]):after, a[href$=".csv"]:after, a[href$=".ttl"]:not([no-download^="true"]):after {
+a[href$=".sch"]:after, a[href$=".xlsx"]:after, a[href$=".zip"]:after, a[href$=".tgz"]:after, a[href$=".xml"]:not([no-download^="true"]):after, a[href$=".json"]:not([no-download^="true"]):after, a[href$=".csv"]:after, a[href$=".ttl"]:not([no-download^="true"]):after {
   content: url(../images/download.png);
   display: inline-block;
   text-decoration: none;
@@ -631,14 +665,14 @@ a[href$=".sch"]:after, a[href$=".zip"]:after, a[href$=".tgz"]:after, a[href$=".x
 }
 
 /* =========== external links ============= */
-p a[href^="http://"]:not([no-external^="true"]):after, a[href^="https://"]:not([no-external^="true"]):after {
+p a[href^="http://"]:not([no-external^="true"]):after,p a[href^="https://"]:not([no-external^="true"]):after {
     content: url(../images/external.png);
     display: inline-block;
     text-decoration: none;
     padding-left: 3px;
 }
 
-li a[href^="http://"]:not([no-external^="true"]):after, a[href^="https://"]:not([no-external^="true"]):after {
+li a[href^="http://"]:not([no-external^="true"]):after,li a[href^="https://"]:not([no-external^="true"]):after {
     content: url(../images/external.png);
     display: inline-block;
     text-decoration: none;
@@ -685,53 +719,19 @@ li a[href^="http://"]:not([no-external^="true"]):after, a[href^="https://"]:not(
 }
 
 
-/*--------- smooth transitions ---------- */
-
-body{
-    opacity: 0;
-    transition: opacity 0.7s;
-    -webkit-transition: opacity 0.7s; /* Safari */
-    -ms-transition: opacity 0.7s; /* ie */
-    -o-transition: opacity 0.7s; /* opera */
-    -moz-transition: opacity 0.7s; /* firefox */
-}
-
-table .grid {
-  border: 0px !important;
-  width: 100% !important;
-
-}
-
-table .grid th, td {
-    padding: 6px !important; 
-    padding-bottom: 0px !important;
-    text-align: left !important;
-    border: 0px !important;
-    border-bottom: 1px solid #ddd !important;
-}
-
-
-table .hierarchy {
-  padding: 0px !important; 
-  padding-bottom: 0px !important;
-  text-align: left !important;
-  border: 0px !important;
-  border-bottom: 0px solid #ddd !important;
-}
-
-table .grid tr:hover {
-  background-color: #f5f5f5 !important;
-} 
-
-table .grid tr:nth-child(even) {
-  background-color: #f2f2f2 !important;
-}
-
-.ui-tabs .ui-tabs-nav {
-  background-color: #fff;
-  border: 0px;
-  border-bottom: 1px solid #c5c5c5;  
-  border-radius: 0px !important; 
+.feedback {
+  color: #e0e0e0;
+  padding:1px ;
+  font-size: 80%;
+  background-size: 17px 17px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  margin-left: 7px;
+  padding-left: 7px;
+  padding-right: 7px;
+  float: right ; /* none or right */
+  border-radius: 6px;
+  border: 0.5px solid #ffffff;
 }
 
 .ui-tabs .ui-tabs-nav li {
