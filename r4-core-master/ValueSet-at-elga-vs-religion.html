@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>HL7ATCOREPROFILES\at-elga-vs-religion - FHIR® v4.0.1</title>
+    <title>HL7ATCOREPROFILES\at-elga-vs-religion - FHIR v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -11,6 +11,7 @@
     <link href="fhir.css" rel="stylesheet"/>
 
     <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
     <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
 
     <!-- Project extras -->
@@ -41,14 +42,25 @@
 
     <style type="text/css">h2{--heading-prefix:"2.6"}
     h3,h4,h5,h6{--heading-prefix:"2.6"}</style>
-    <div id="segment-header" class="segment">  <!-- segment-header -->
+    <div id="segment-header" class="segment">
+      <!-- segment-header -->
       <div class="container">  <!-- container -->
-        <!-- Placeholder for child template header declarations -->
+        <div class = row>
+          <div class="col-1">
+          <img id="header-logo" src="assets/images/hl7atlogo.png"/>
+          </div>
+          <div class="col-11">
+              <!-- Placeholder for child template header declarations -->
 
-
-        <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">HL7® Austria FHIR® Core Implementation Guide</span><br/>0.3.0 - STU1</p>
-        </div>
+      
+              <div id="ig-status">
+                <p>
+                  <span style="font-size:12pt;font-weight:bold">HL7 Austria FHIR Core Implementation Guide</span><br/>
+                  <span class="label label-info">0.3.0 - STU1</span>
+                </p>
+              </div>
+            </div>
+      </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
 
@@ -74,7 +86,7 @@
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Other Resources<b class="caret"> </b></a>
     <ul class="dropdown-menu">
-      <li><a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR® Spec <img src="external.png" style="text-align: baseline"/></a></li>
+      <li><a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR Spec <img src="external.png" style="text-align: baseline"/></a></li>
     </ul>
   </li>
 </ul>
@@ -86,24 +98,23 @@
       </div>  <!-- /container -->
     </div>  <!-- /segment-navbar -->
     <!--status-bar-->
-
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
           <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>at-elga-vs-religion</b></li>
-
         </ul>
       </div>  <!-- /container -->
     </div>  <!-- /segment-breadcrumb -->
 
-    <a name="top"> </a>
-    <div id="segment-content" class="segment">  <!-- segment-content -->
+    <div id="segment-content">  <!-- segment-content -->
       <div class="container">  <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">HL7® Austria FHIR® Core Implementation Guide - Local Development build (v0.3.0). See the <a href="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <div class="alert alert-warning" role="alert">
+    <!--ReleaseHeader--><p id="publish-box">HL7 Austria FHIR Core Implementation Guide - Local Development build (v0.3.0). See the <a href="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  </div> 
   
 
 
@@ -153,7 +164,7 @@
  <tr><td>Version:</td><td>0.3.0</td></tr>
  <tr><td>Name:</td><td>ELGAVSReligion</td></tr>
  <tr><td>Title:</td><td>ELGA Religion Value Set</td></tr>
- <tr><td>Status:</td><td>Active as of 11/22/21, 4:34 PM</td></tr>
+ <tr><td>Status:</td><td>Active as of 11/23/21, 12:34 PM</td></tr>
  <tr><td>Definition:</td><td><p>Set of religious affiliations to be used in ELGA. It is preferred to use entries of the first level hierachy (1-L). Also accessible on <a href="https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=ValueSet&amp;loadName=ELGA_ReligiousAffiliation">Termpub - ValueSet - ELGA ReligiousAffiliation</a>.</p>
 </td></tr>
  <tr><td>Source Resource:</td><td><a href="ValueSet-at-elga-vs-religion.xml.html">XML</a> / <a href="ValueSet-at-elga-vs-religion.json.html">JSON</a> / <a href="ValueSet-at-elga-vs-religion.ttl.html">Turtle</a></td></tr>
@@ -193,7 +204,7 @@
   <table class="grid">
     <tr>
       <td>Level</td>
-      <td>A few code lists that FHIR® defines are hierarchical - each code is assigned a level.
+      <td>A few code lists that FHIR defines are hierarchical - each code is assigned a level.
           In this scheme, some codes are under other codes, and imply that the code they are under also applies</td>
     </tr>
     <tr>
@@ -241,19 +252,15 @@
       }
     });
   </script>
-  <a name="bottom"> </a>
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
-
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:tc-fhir@hl7.at"></a>.  Package HL7ATCoreProfiles#0.3.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Nov 22, 2021 16:34+0000">2021-11-22</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:tc-fhir@hl7.at"></a>.  Package HL7ATCoreProfiles#0.3.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 23, 2021 12:34+0000">2021-11-23</span>
           <br/>
           <span style="color: #FFFF77">
-                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
-                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
-                 
-                
+                      Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
+                 <a style="color: #81BEF7" href="qa.html">QA Report</a>
           </span>
         </p>
       </div>  <!-- /inner-wrapper -->
@@ -275,15 +282,7 @@
   <script>anchors.options.visible = 'hover'
 anchors.add()</script>
   
-<!-- feedback form - Google forms -->
-<!-- v0.1, 2021-01-09 -->
-
-
-
-<!-- / feedback form  -->
-
   <!-- Analytics Below
   ================================================== -->
   </body>
 </html>
-
