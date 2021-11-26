@@ -34,12 +34,16 @@ jobs:
     - name: Execute Update Script 
       run: |
         python update.py
+    
+    - name: Execute Fix Naming Script 
+      run: |
+        python fix_naming.py
   
     - name: Commit files
       run: |
         git config --local user.email "hl7at@github.com"
         git config --local user.name "HL7 Austria Github Action"
-        git add ./index.html
+        git add .
         git commit -m "Update landing page index.html"
     - name: Push changes
       uses: ad-m/github-push-action@master
