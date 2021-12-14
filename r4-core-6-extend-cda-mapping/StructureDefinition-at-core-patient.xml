@@ -55,7 +55,7 @@
   <name value="HL7ATCorePatient"/>
   <title value="HL7® AT Core Patient Profile"/>
   <status value="active"/>
-  <date value="2021-12-14T17:16:17+00:00"/>
+  <date value="2021-12-14T17:36:58+00:00"/>
   <contact>
     <name value="Technical Committee for FHIR® at HL7® Austria"/>
     <telecom>
@@ -91,9 +91,9 @@
     <name value="LOINC code for the element"/>
   </mapping>
   <mapping>
-    <identity value="at-core-mapping-patient2cda"/>
-    <uri value="http://hl7.org/v3/cda"/>
-    <name value="CDA (R2)"/>
+    <identity value="at-core-mapping-patient2cdaatv3"/>
+    <uri value="https://wiki.hl7.at/index.php?title=ILF:Allgemeiner_Implementierungsleitfaden_(Version_3)"/>
+    <name value="Allgemeiner Implementierungsleitfaden v3"/>
   </mapping>
   <kind value="resource"/>
   <abstract value="false"/>
@@ -174,8 +174,8 @@
         <map value="ClinicalDocument.recordTarget.patientRole"/>
       </mapping>
       <mapping>
-        <identity value="at-core-mapping-patient2cda"/>
-        <map value="Patient"/>
+        <identity value="at-core-mapping-patient2cdaatv3"/>
+        <map value="ClinicalDocument.recordTarget.patientRole"/>
       </mapping>
     </element>
     <element id="Patient.id">
@@ -1605,8 +1605,9 @@
         <map value=".id"/>
       </mapping>
       <mapping>
-        <identity value="at-core-mapping-patient2cda"/>
-        <map value=".id[1]"/>
+        <identity value="at-core-mapping-patient2cdaatv3"/>
+        <map value=".id[2]"/>
+        <comment value="Sozialversicherungsnummer des Patienten (1..1 R)"/>
       </mapping>
     </element>
     <element id="Patient.identifier:socialSecurityNumber.id">
@@ -3605,6 +3606,11 @@
       <mapping>
         <identity value="cda"/>
         <map value=".id"/>
+      </mapping>
+      <mapping>
+        <identity value="at-core-mapping-patient2cdaatv3"/>
+        <map value=".id[1]"/>
+        <comment value="Identifikation des Patienten im lokalen System (1..1 M)"/>
       </mapping>
     </element>
     <element id="Patient.identifier:localPatientId.id">
@@ -5815,8 +5821,8 @@
     <element id="Patient">
       <path value="Patient"/>
       <mapping>
-        <identity value="at-core-mapping-patient2cda"/>
-        <map value="Patient"/>
+        <identity value="at-core-mapping-patient2cdaatv3"/>
+        <map value="ClinicalDocument.recordTarget.patientRole"/>
       </mapping>
     </element>
     <element id="Patient.extension">
@@ -5885,8 +5891,9 @@
       <min value="0"/>
       <max value="1"/>
       <mapping>
-        <identity value="at-core-mapping-patient2cda"/>
-        <map value=".id[1]"/>
+        <identity value="at-core-mapping-patient2cdaatv3"/>
+        <map value=".id[2]"/>
+        <comment value="Sozialversicherungsnummer des Patienten (1..1 R)"/>
       </mapping>
     </element>
     <element id="Patient.identifier:socialSecurityNumber.type.coding.system">
@@ -5946,6 +5953,11 @@
       <sliceName value="localPatientId"/>
       <min value="0"/>
       <max value="1"/>
+      <mapping>
+        <identity value="at-core-mapping-patient2cdaatv3"/>
+        <map value=".id[1]"/>
+        <comment value="Identifikation des Patienten im lokalen System (1..1 M)"/>
+      </mapping>
     </element>
     <element id="Patient.identifier:localPatientId.type.coding.system">
       <path value="Patient.identifier.type.coding.system"/>

@@ -20,7 +20,7 @@
   "name": "HL7ATCorePatient",
   "title": "HL7® AT Core Patient Profile",
   "status": "active",
-  "date": "2021-12-14T17:16:17+00:00",
+  "date": "2021-12-14T17:36:58+00:00",
   "contact": [
     {
       "name": "Technical Committee for FHIR® at HL7® Austria",
@@ -61,9 +61,9 @@
       "name": "LOINC code for the element"
     },
     {
-      "identity": "at-core-mapping-patient2cda",
-      "uri": "http://hl7.org/v3/cda",
-      "name": "CDA (R2)"
+      "identity": "at-core-mapping-patient2cdaatv3",
+      "uri": "https://wiki.hl7.at/index.php?title=ILF:Allgemeiner_Implementierungsleitfaden_(Version_3)",
+      "name": "Allgemeiner Implementierungsleitfaden v3"
     }
   ],
   "kind": "resource",
@@ -156,8 +156,8 @@
             "map": "ClinicalDocument.recordTarget.patientRole"
           },
           {
-            "identity": "at-core-mapping-patient2cda",
-            "map": "Patient"
+            "identity": "at-core-mapping-patient2cdaatv3",
+            "map": "ClinicalDocument.recordTarget.patientRole"
           }
         ]
       },
@@ -1886,8 +1886,9 @@
             "map": ".id"
           },
           {
-            "identity": "at-core-mapping-patient2cda",
-            "map": ".id[1]"
+            "identity": "at-core-mapping-patient2cdaatv3",
+            "map": ".id[2]",
+            "comment": "Sozialversicherungsnummer des Patienten (1..1 R)"
           }
         ]
       },
@@ -4360,6 +4361,11 @@
           {
             "identity": "cda",
             "map": ".id"
+          },
+          {
+            "identity": "at-core-mapping-patient2cdaatv3",
+            "map": ".id[1]",
+            "comment": "Identifikation des Patienten im lokalen System (1..1 M)"
           }
         ]
       },
@@ -7063,8 +7069,8 @@
         "path": "Patient",
         "mapping": [
           {
-            "identity": "at-core-mapping-patient2cda",
-            "map": "Patient"
+            "identity": "at-core-mapping-patient2cdaatv3",
+            "map": "ClinicalDocument.recordTarget.patientRole"
           }
         ]
       },
@@ -7155,8 +7161,9 @@
         "max": "1",
         "mapping": [
           {
-            "identity": "at-core-mapping-patient2cda",
-            "map": ".id[1]"
+            "identity": "at-core-mapping-patient2cdaatv3",
+            "map": ".id[2]",
+            "comment": "Sozialversicherungsnummer des Patienten (1..1 R)"
           }
         ]
       },
@@ -7228,7 +7235,14 @@
         "path": "Patient.identifier",
         "sliceName": "localPatientId",
         "min": 0,
-        "max": "1"
+        "max": "1",
+        "mapping": [
+          {
+            "identity": "at-core-mapping-patient2cdaatv3",
+            "map": ".id[1]",
+            "comment": "Identifikation des Patienten im lokalen System (1..1 M)"
+          }
+        ]
       },
       {
         "id": "Patient.identifier:localPatientId.type.coding.system",
