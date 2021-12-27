@@ -1,6 +1,7 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # - resource -------------------------------------------------------------------
@@ -23,7 +24,7 @@
   fhir:ValueSet.name [ fhir:value "ELGAVSReligion"];
   fhir:ValueSet.title [ fhir:value "ELGA Religion Value Set"];
   fhir:ValueSet.status [ fhir:value "active"];
-  fhir:ValueSet.date [ fhir:value "2021-12-27T04:29:25+00:00"^^xsd:dateTime];
+  fhir:ValueSet.date [ fhir:value "2021-12-27T04:37:34+00:00"^^xsd:dateTime];
   fhir:ValueSet.contact [
      fhir:index 0;
      fhir:ContactDetail.name [ fhir:value "Technical Committee for FHIR® at HL7® Austria" ];
@@ -647,6 +648,8 @@
          fhir:ValueSet.expansion.contains.designation [
            fhir:index 0;
            fhir:ValueSet.compose.include.concept.designation.use [
+             a sct:900000000000003001;
+             fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
              fhir:Coding.code [ fhir:value "900000000000003001" ]
            ];
            fhir:ValueSet.compose.include.concept.designation.value [ fhir:value "mg/l" ]
