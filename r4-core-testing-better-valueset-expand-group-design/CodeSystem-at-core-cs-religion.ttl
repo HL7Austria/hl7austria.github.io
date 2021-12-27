@@ -1,6 +1,7 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # - resource -------------------------------------------------------------------
@@ -23,7 +24,7 @@
   fhir:CodeSystem.name [ fhir:value "HL7ATCoreCSReligion"];
   fhir:CodeSystem.title [ fhir:value "HL7 AT Core Religion Code System"];
   fhir:CodeSystem.status [ fhir:value "active"];
-  fhir:CodeSystem.date [ fhir:value "2021-12-27T05:22:14+00:00"^^xsd:dateTime];
+  fhir:CodeSystem.date [ fhir:value "2021-12-27T15:54:02+00:00"^^xsd:dateTime];
   fhir:CodeSystem.contact [
      fhir:index 0;
      fhir:ContactDetail.name [ fhir:value "Technical Committee for FHIR® at HL7® Austria" ];
@@ -763,6 +764,15 @@
      fhir:index 60;
      fhir:CodeSystem.concept.code [ fhir:value "160" ];
      fhir:CodeSystem.concept.display [ fhir:value "Konfessionslos" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.use [
+         a sct:900000000000003001;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "900000000000003001" ]
+       ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "mgl" ]
+     ];
      fhir:CodeSystem.concept.property [
        fhir:index 0;
        fhir:CodeSystem.concept.property.code [ fhir:value "parent" ];
