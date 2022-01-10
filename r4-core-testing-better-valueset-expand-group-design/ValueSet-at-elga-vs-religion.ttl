@@ -24,7 +24,7 @@
   fhir:ValueSet.name [ fhir:value "ELGAVSReligion"];
   fhir:ValueSet.title [ fhir:value "ELGA Religion Value Set"];
   fhir:ValueSet.status [ fhir:value "active"];
-  fhir:ValueSet.date [ fhir:value "2022-01-10T14:49:35+00:00"^^xsd:dateTime];
+  fhir:ValueSet.date [ fhir:value "2022-01-10T15:05:18+00:00"^^xsd:dateTime];
   fhir:ValueSet.contact [
      fhir:index 0;
      fhir:ContactDetail.name [ fhir:value "Technical Committee for FHIR® at HL7® Austria" ];
@@ -63,7 +63,16 @@
        fhir:ValueSet.compose.include.concept [
          fhir:index 0;
          fhir:ValueSet.compose.include.concept.code [ fhir:value "159" ];
-         fhir:ValueSet.compose.include.concept.display [ fhir:value "Konfessionslos, ohne Angabe" ]
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Konfessionslos, ohne Angabe" ];
+         fhir:ValueSet.compose.include.concept.designation [
+           fhir:index 0;
+           fhir:ValueSet.compose.include.concept.designation.use [
+             a sct:900000000000003001;
+             fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+             fhir:Coding.code [ fhir:value "900000000000003001" ]
+           ];
+           fhir:ValueSet.compose.include.concept.designation.value [ fhir:value "mg" ]
+         ]
        ], [
          fhir:index 1;
          fhir:ValueSet.compose.include.concept.code [ fhir:value "160" ];
@@ -80,7 +89,16 @@
        ], [
          fhir:index 2;
          fhir:ValueSet.compose.include.concept.code [ fhir:value "161" ];
-         fhir:ValueSet.compose.include.concept.display [ fhir:value "Ohne Angabe" ]
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Ohne Angabe" ];
+         fhir:ValueSet.compose.include.concept.designation [
+           fhir:index 0;
+           fhir:ValueSet.compose.include.concept.designation.use [
+             a sct:900000000000003001;
+             fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+             fhir:Coding.code [ fhir:value "900000000000003001" ]
+           ];
+           fhir:ValueSet.compose.include.concept.designation.value [ fhir:value "mgmol" ]
+         ]
        ]
      ]
   ];
@@ -96,6 +114,15 @@
        fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/CodeSystem/at-core-cs-religion" ];
        fhir:ValueSet.expansion.contains.code [ fhir:value "159" ];
        fhir:ValueSet.expansion.contains.display [ fhir:value "Konfessionslos, ohne Angabe" ];
+       fhir:ValueSet.expansion.contains.designation [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.concept.designation.use [
+           a sct:900000000000003001;
+           fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+           fhir:Coding.code [ fhir:value "900000000000003001" ]
+         ];
+         fhir:ValueSet.compose.include.concept.designation.value [ fhir:value "mg" ]
+       ];
        fhir:ValueSet.expansion.contains.contains [
          fhir:index 0;
          fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/CodeSystem/at-core-cs-religion" ];
@@ -114,7 +141,16 @@
          fhir:index 1;
          fhir:ValueSet.expansion.contains.system [ fhir:value "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/CodeSystem/at-core-cs-religion" ];
          fhir:ValueSet.expansion.contains.code [ fhir:value "161" ];
-         fhir:ValueSet.expansion.contains.display [ fhir:value "Ohne Angabe" ]
+         fhir:ValueSet.expansion.contains.display [ fhir:value "Ohne Angabe" ];
+         fhir:ValueSet.expansion.contains.designation [
+           fhir:index 0;
+           fhir:ValueSet.compose.include.concept.designation.use [
+             a sct:900000000000003001;
+             fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+             fhir:Coding.code [ fhir:value "900000000000003001" ]
+           ];
+           fhir:ValueSet.compose.include.concept.designation.value [ fhir:value "mgmol" ]
+         ]
        ]
      ]
   ] .
