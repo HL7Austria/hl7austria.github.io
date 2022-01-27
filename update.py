@@ -28,7 +28,7 @@ for name in glob.glob('./*/_index.yml'):
         print(index_yml)
         folder_name = name.replace('/_index.yml', '')
         current = 'label-warning'
-        if index_yml[4].get("branch", "n.a.") == 'current':
+        if index_yml[4].get("branch", "n.a.") == 'main':
             current = 'label-success'
         
         tmp = populate_html(folder_name, index_yml[0].get("name", "n.a."), current, index_yml[4].get("branch", "n.a."), index_yml[1].get("version", "n.a."), index_yml[2].get("description", "n.a."), index_yml[3].get("last_published", "n.a."))  
