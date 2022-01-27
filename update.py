@@ -3,7 +3,7 @@ import yaml
 import re
 
 # Read all directories and look for a index.md file
-# if found, the content of the file is added to the index.html in this repository.
+# if found, the content of the file is added to the index.html in this repository. 
 
 def populate_html( fName, name, label, branch, version, description, published ):
     return f"""<a href="{fName}/index.html" class="list-group-item list-group-item-action flex-column align-items-start">
