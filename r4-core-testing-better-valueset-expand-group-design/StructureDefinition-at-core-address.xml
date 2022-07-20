@@ -15,11 +15,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="http://hl7.org/fhir/R4/formats.html#table" title="Legend for this format"><img src="http://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address"/>
-  <version value="0.3.0"/>
+  <version value="1.1.0"/>
   <name value="HL7ATCoreAddress"/>
   <title value="HL7® AT Core Address Profile"/>
   <status value="active"/>
-  <date value="2022-02-08T14:05:18+00:00"/>
+  <date value="2022-07-20T10:49:44+00:00"/>
   <contact>
     <name value="Technical Committee for FHIR® at HL7® Austria"/>
     <telecom>
@@ -80,21 +80,21 @@
         <key value="at-addr-1"/>
         <severity value="error"/>
         <human value="If the extension for street name is used then the value for line must not be empty"/>
-        <expression value="line.all($this.extension(&#39;http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName&#39;).empty() or $this.hasValue())"/>
+        <expression value="line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName').empty() or $this.hasValue())"/>
         <source value="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address"/>
       </constraint>
       <constraint>
         <key value="at-addr-2"/>
         <severity value="error"/>
         <human value="If the extension for street number is used then the value for line must not be empty"/>
-        <expression value="line.all($this.extension(&#39;http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber&#39;).empty() or $this.hasValue())"/>
+        <expression value="line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber').empty() or $this.hasValue())"/>
         <source value="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address"/>
       </constraint>
       <constraint>
         <key value="at-addr-3"/>
         <severity value="error"/>
         <human value="If the extension for floor/door number is used then the value for line must not be empty"/>
-        <expression value="line.all($this.extension(&#39;http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator&#39;).empty() or $this.hasValue())"/>
+        <expression value="line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator').empty() or $this.hasValue())"/>
         <source value="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address"/>
       </constraint>
       <isModifier value="false"/>
@@ -294,7 +294,7 @@
       <path value="Address.text"/>
       <short value="Text representation of the address"/>
       <definition value="Specifies the entire address as it should be displayed e.g. on a postal label. This may be provided instead of or as well as the specific parts."/>
-      <comment value="Can provide both a text representation and parts. Applications updating an address SHALL ensure that  when both text and parts are present,  no content is included in the text that isn&#39;t found in a part."/>
+      <comment value="Can provide both a text representation and parts. Applications updating an address SHALL ensure that  when both text and parts are present,  no content is included in the text that isn't found in a part."/>
       <requirements value="A renderable, unencoded form."/>
       <min value="0"/>
       <max value="1"/>
@@ -336,7 +336,7 @@
     <element id="Address.line">
       <path value="Address.line"/>
       <short value="Street name, number, direction &amp; P.O. Box etc."/>
-      <definition value="This component contains the street name, street number, floor and/or door number or additonal information (e.g. street direction, P.O. Box number, delivery hints, and similar address information). This information can be split into structured values in the line-components each defined by international ISO extensions. If these extensions are used then the information they contain has to be written in a concatenated way in the line element itself as well. This makes the usage easier for systems which don&#39;t use address data in a structured way."/>
+      <definition value="This component contains the street name, street number, floor and/or door number or additonal information (e.g. street direction, P.O. Box number, delivery hints, and similar address information). This information can be split into structured values in the line-components each defined by international ISO extensions. If these extensions are used then the information they contain has to be written in a concatenated way in the line element itself as well. This makes the usage easier for systems which don't use address data in a structured way."/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -435,7 +435,7 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &#39;value&#39;)])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <isModifier value="false"/>
@@ -471,7 +471,7 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &#39;value&#39;)])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <isModifier value="false"/>
@@ -510,7 +510,7 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &#39;value&#39;)])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <isModifier value="false"/>
@@ -549,7 +549,7 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &#39;value&#39;)])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <isModifier value="false"/>
@@ -588,7 +588,7 @@
         <severity value="error"/>
         <human value="Must have either extensions or value[x], not both"/>
         <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &#39;value&#39;)])"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
       <isModifier value="false"/>
@@ -668,7 +668,7 @@
       <path value="Address.district"/>
       <short value="District name (aka county)"/>
       <definition value="The name of the administrative area (county)."/>
-      <comment value="District is sometimes known as county, but in some regions &#39;county&#39; is used in place of city (municipality), so county name should be conveyed in city instead."/>
+      <comment value="District is sometimes known as county, but in some regions 'county' is used in place of city (municipality), so county name should be conveyed in city instead."/>
       <alias value="County"/>
       <min value="0"/>
       <max value="0"/>
@@ -887,27 +887,27 @@
         <key value="at-addr-1"/>
         <severity value="error"/>
         <human value="If the extension for street name is used then the value for line must not be empty"/>
-        <expression value="line.all($this.extension(&#39;http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName&#39;).empty() or $this.hasValue())"/>
+        <expression value="line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName').empty() or $this.hasValue())"/>
         <source value="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address"/>
       </constraint>
       <constraint>
         <key value="at-addr-2"/>
         <severity value="error"/>
         <human value="If the extension for street number is used then the value for line must not be empty"/>
-        <expression value="line.all($this.extension(&#39;http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber&#39;).empty() or $this.hasValue())"/>
+        <expression value="line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber').empty() or $this.hasValue())"/>
         <source value="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address"/>
       </constraint>
       <constraint>
         <key value="at-addr-3"/>
         <severity value="error"/>
         <human value="If the extension for floor/door number is used then the value for line must not be empty"/>
-        <expression value="line.all($this.extension(&#39;http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator&#39;).empty() or $this.hasValue())"/>
+        <expression value="line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator').empty() or $this.hasValue())"/>
         <source value="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address"/>
       </constraint>
     </element>
     <element id="Address.line">
       <path value="Address.line"/>
-      <definition value="This component contains the street name, street number, floor and/or door number or additonal information (e.g. street direction, P.O. Box number, delivery hints, and similar address information). This information can be split into structured values in the line-components each defined by international ISO extensions. If these extensions are used then the information they contain has to be written in a concatenated way in the line element itself as well. This makes the usage easier for systems which don&#39;t use address data in a structured way."/>
+      <definition value="This component contains the street name, street number, floor and/or door number or additonal information (e.g. street direction, P.O. Box number, delivery hints, and similar address information). This information can be split into structured values in the line-components each defined by international ISO extensions. If these extensions are used then the information they contain has to be written in a concatenated way in the line element itself as well. This makes the usage easier for systems which don't use address data in a structured way."/>
     </element>
     <element id="Address.line.extension">
       <path value="Address.line.extension"/>

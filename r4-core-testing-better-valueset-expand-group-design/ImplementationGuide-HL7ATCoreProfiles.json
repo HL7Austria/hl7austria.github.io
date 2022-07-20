@@ -6,11 +6,11 @@
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>HL7AustriaImplementationGuide</h2><p>The official URL for this implementation guide is: </p><pre>http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/ImplementationGuide/HL7ATCoreProfiles</pre><div><p>An Implementation Guide for the HL7® Austria FHIR® Core Profiles.</p>\n</div></div>"
   },
   "url": "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/ImplementationGuide/HL7ATCoreProfiles",
-  "version": "0.3.0",
+  "version": "1.1.0",
   "name": "HL7AustriaImplementationGuide",
   "title": "HL7® Austria FHIR® Core Implementation Guide",
   "status": "active",
-  "date": "2022-02-08T14:05:18+00:00",
+  "date": "2022-07-20T10:49:44+00:00",
   "contact": [
     {
       "name": "Technical Committee for FHIR® at HL7® Austria",
@@ -27,6 +27,14 @@
   "license": "CC0-1.0",
   "fhirVersion": [
     "4.0.1"
+  ],
+  "dependsOn": [
+    {
+      "id": "hl7tx",
+      "uri": "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
+      "packageId": "hl7.terminology.r4",
+      "version": "3.1.0"
+    }
   ],
   "definition": {
     "extension": [
@@ -51,7 +59,7 @@
           },
           {
             "url": "value",
-            "valueString": "STU1"
+            "valueString": "STU2"
           }
         ],
         "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
@@ -302,6 +310,45 @@
           }
         ],
         "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "fmm-definition"
+          },
+          {
+            "url": "value",
+            "valueString": "http://hl7.org/fhir/versions.html#maturity"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "propagate-status"
+          },
+          {
+            "url": "value",
+            "valueString": "true"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "excludelogbinaryformat"
+          },
+          {
+            "url": "value",
+            "valueString": "true"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
       }
     ],
     "resource": [
@@ -499,6 +546,20 @@
         },
         "name": "at-elga-vs-religion",
         "description": "Set of religious affiliations to be used in ELGA. It is preferred to use entries of the first level hierachy (1-L). Also accessible on [Termpub - ValueSet - ELGA ReligiousAffiliation](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=ValueSet&loadName=ELGA_ReligiousAffiliation).",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/elga-laendercodes"
+        },
+        "name": "elga-laendercodes",
+        "description": "**Description:** Value Set for ISO 3166-1 alpha 3 used in ELGA\n\n**Beschreibung:** Value Set für ISO 3166-1 alpha 3 zur Verwendung in ELGA",
         "exampleBoolean": false
       }
     ],
