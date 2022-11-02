@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Appointment xmlns="http://hl7.org/fhir">
+  <id value="NabotoAppointmentExample"/>
+  <meta>
+    <profile value="http://fhir.naboto.com/StructureDefinition/naboto-appointment"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Appointment</b><a name="NabotoAppointmentExample"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Appointment "NabotoAppointmentExample" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-naboto-appointment.html">Naboto Appointment Profile</a></p></div><blockquote><p><b>NabotoNote</b></p><p><b>value</b>: Is this treatment covered by my insurance? (By https://naboto.com/patient/12345 @Jan 1, 2022, 8:00:00 AM)</p></blockquote><blockquote><p><b>NabotoNote</b></p><p><b>value</b>: Patient asked for discrete treatment (By https://naboto.com/practitioner/987654321 @Jan 1, 2022, 9:15:00 AM)</p></blockquote><p><b>identifier</b>: id: 11223344</p><p><b>status</b>: booked</p><p><b>start</b>: Feb 2, 2022, 11:00:00 AM</p><p><b>end</b>: Feb 2, 2022, 12:00:00 PM</p><p><b>created</b>: 2022-01-01 11:11:11+0000</p><blockquote><p><b>participant</b></p><blockquote><p><b>VirtualServiceContactDetail</b></p><p><b>value</b>: Visit-e (Details: http://fhir.naboto.com/CodeSystem/naboto-vidcall-channel-type code visit-e = 'Visit-e', stated as 'null')</p><p><b>value</b>: <a href="https://patient.visit-e.at/abcdefghijklmn">https://patient.visit-e.at/abcdefghijklmn</a></p><p><b>value</b>: abcdefghijklmn</p></blockquote><p><b>type</b>: primary performer <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/4.0.0/CodeSystem-v3-ParticipationType.html">ParticipationType</a>#PPRF)</span></p><p><b>actor</b>: <a href="https://naboto.com/practitioner/987654321">https://naboto.com/practitioner/987654321: Naboto Practitioner 987654321</a></p><p><b>required</b>: required</p><p><b>status</b>: accepted</p></blockquote><blockquote><p><b>participant</b></p><blockquote><p><b>VirtualServiceContactDetail</b></p><p><b>value</b>: Visit-e (Details: http://fhir.naboto.com/CodeSystem/naboto-vidcall-channel-type code visit-e = 'Visit-e', stated as 'null')</p><p><b>value</b>: <a href="https://patient.visit-e.at/1234567890">https://patient.visit-e.at/1234567890</a></p><p><b>value</b>: 1234567890</p></blockquote><p><b>type</b>: subject <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/4.0.0/CodeSystem-v3-ParticipationType.html">ParticipationType</a>#SBJ)</span></p><p><b>actor</b>: <a href="https://naboto.com/patients/1337">https://naboto.com/patients/1337: Naboto Patient 1337</a></p><p><b>status</b>: accepted</p></blockquote></div>
+  </text>
+  <extension url="http://fhir.naboto.com/StructureDefinition/naboto-note">
+    <extension url="note">
+      <valueAnnotation>
+        <authorReference>
+          <reference value="https://naboto.com/patient/12345"/>
+          <type value="Patient"/>
+          <display value="Naboto Patient 12345"/>
+        </authorReference>
+        <time value="2022-01-01T08:00:00.000Z"/>
+        <text value="Is this treatment covered by my insurance?"/>
+      </valueAnnotation>
+    </extension>
+  </extension>
+  <extension url="http://fhir.naboto.com/StructureDefinition/naboto-note">
+    <extension url="note">
+      <valueAnnotation>
+        <authorReference>
+          <reference value="https://naboto.com/practitioner/987654321"/>
+          <type value="Practitioner"/>
+          <display value="Naboto Practitioner 987654321"/>
+        </authorReference>
+        <time value="2022-01-01T09:15:00.000Z"/>
+        <text value="Patient asked for discrete treatment"/>
+      </valueAnnotation>
+    </extension>
+  </extension>
+  <identifier>
+    <system value="https://third-party-system/appointment"/>
+    <value value="11223344"/>
+  </identifier>
+  <status value="booked"/>
+  <start value="2022-02-02T11:00:00Z"/>
+  <end value="2022-02-02T12:00:00Z"/>
+  <created value="2022-01-01T11:11:11.111Z"/>
+  <participant>
+    <extension url="http://fhir.naboto.com/StructureDefinition/virtual-service-contact-detail">
+      <extension url="channelType">
+        <valueCoding>
+          <system value="http://fhir.naboto.com/CodeSystem/naboto-vidcall-channel-type"/>
+          <code value="visit-e"/>
+        </valueCoding>
+      </extension>
+      <extension url="address">
+        <valueUrl value="https://patient.visit-e.at/abcdefghijklmn"/>
+      </extension>
+      <extension url="sessionKey">
+        <valueString value="abcdefghijklmn"/>
+      </extension>
+    </extension>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+        <code value="PPRF"/>
+      </coding>
+    </type>
+    <actor>
+      <reference value="https://naboto.com/practitioner/987654321"/>
+      <type value="Patient"/>
+      <display value="Naboto Practitioner 987654321"/>
+    </actor>
+    <required value="required"/>
+    <status value="accepted"/>
+  </participant>
+  <participant>
+    <extension url="http://fhir.naboto.com/StructureDefinition/virtual-service-contact-detail">
+      <extension url="channelType">
+        <valueCoding>
+          <system value="http://fhir.naboto.com/CodeSystem/naboto-vidcall-channel-type"/>
+          <code value="visit-e"/>
+        </valueCoding>
+      </extension>
+      <extension url="address">
+        <valueUrl value="https://patient.visit-e.at/1234567890"/>
+      </extension>
+      <extension url="sessionKey">
+        <valueString value="1234567890"/>
+      </extension>
+    </extension>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+        <code value="SBJ"/>
+      </coding>
+    </type>
+    <actor>
+      <reference value="https://naboto.com/patients/1337"/>
+      <type value="Patient"/>
+      <display value="Naboto Patient 1337"/>
+    </actor>
+    <status value="accepted"/>
+  </participant>
+</Appointment>

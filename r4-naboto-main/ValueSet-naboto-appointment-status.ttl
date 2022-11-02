@@ -1,0 +1,67 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.naboto.com/ValueSet/naboto-appointment-status> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "naboto-appointment-status"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <a href=\"http://hl7.org/fhir/R4/codesystem-appointmentstatus.html\"><code>http://hl7.org/fhir/appointmentstatus</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-appointmentstatus.html#appointmentstatus-booked\">booked</a></td><td>Booked</td><td>All participant(s) have been considered and the appointment is confirmed to go ahead at the date/times specified.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-appointmentstatus.html#appointmentstatus-arrived\">arrived</a></td><td>Arrived</td><td>The patient/patients has/have arrived and is/are waiting to be seen.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-appointmentstatus.html#appointmentstatus-fulfilled\">fulfilled</a></td><td>Fulfilled</td><td>The planning stages of the appointment are now complete, the encounter resource will exist and will track further status changes. Note that an encounter may exist before the appointment status is fulfilled for many reasons.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-appointmentstatus.html#appointmentstatus-cancelled\">cancelled</a></td><td>Cancelled</td><td>The appointment has been cancelled.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-appointmentstatus.html#appointmentstatus-noshow\">noshow</a></td><td>No Show</td><td>Some or all of the participant(s) have not/did not appear for the appointment (usually the patient).</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-appointmentstatus.html#appointmentstatus-entered-in-error\">entered-in-error</a></td><td>Entered in error</td><td>This instance should not have been part of this patient's medical record.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-appointmentstatus.html#appointmentstatus-checked-in\">checked-in</a></td><td>Checked In</td><td>When checked in, all pre-encounter administrative work is complete, and the encounter may begin. (where multiple patients are involved, they are all present).</td></tr></table></li></ul></div>"
+  ];
+  fhir:ValueSet.url [ fhir:value "http://fhir.naboto.com/ValueSet/naboto-appointment-status"];
+  fhir:ValueSet.version [ fhir:value "0.1.4"];
+  fhir:ValueSet.name [ fhir:value "NabotoAppointmentStatus"];
+  fhir:ValueSet.title [ fhir:value "NabotoAppointmentStatus"];
+  fhir:ValueSet.status [ fhir:value "active"];
+  fhir:ValueSet.date [ fhir:value "2022-11-02T13:35:15+00:00"^^xsd:dateTime];
+  fhir:ValueSet.publisher [ fhir:value "Naboto Software GmbH"];
+  fhir:ValueSet.contact [
+     fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "Naboto Software GmbH" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://naboto.com" ]
+     ]
+  ];
+  fhir:ValueSet.description [ fhir:value "The free/busy status of an appointment."];
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://hl7.org/fhir/appointmentstatus" ];
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "booked" ]
+       ], [
+         fhir:index 1;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "arrived" ]
+       ], [
+         fhir:index 2;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "fulfilled" ]
+       ], [
+         fhir:index 3;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "cancelled" ]
+       ], [
+         fhir:index 4;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "noshow" ]
+       ], [
+         fhir:index 5;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "entered-in-error" ]
+       ], [
+         fhir:index 6;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "checked-in" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.naboto.com/ValueSet/naboto-appointment-status.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
