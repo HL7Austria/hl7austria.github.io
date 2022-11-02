@@ -1,0 +1,51 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.naboto.com/ValueSet/at-elga-vs-countryCodes> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "at-elga-vs-countryCodes"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include all codes defined in <a href=\"CodeSystem-at-core-cs-iso-3166-1-alpha-3.html\"><code>http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/CodeSystem/at-core-cs-iso-3166-1-alpha-3</code></a></li></ul></div>"
+  ];
+  fhir:ValueSet.url [ fhir:value "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/ValueSet/at-elga-vs-countryCodes"];
+  fhir:ValueSet.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.system [ fhir:value "urn:ietf:rfc:3986" ];
+     fhir:Identifier.value [ fhir:value "urn:oid:1.2.40.0.34.10.172" ]
+  ];
+  fhir:ValueSet.version [ fhir:value "0.1.4"];
+  fhir:ValueSet.name [ fhir:value "ELGAVSCountryCodes"];
+  fhir:ValueSet.title [ fhir:value "ELGA Country Code Value Set"];
+  fhir:ValueSet.status [ fhir:value "active"];
+  fhir:ValueSet.date [ fhir:value "2022-11-02T13:22:13+00:00"^^xsd:dateTime];
+  fhir:ValueSet.publisher [ fhir:value "Naboto Software GmbH"];
+  fhir:ValueSet.contact [
+     fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "Naboto Software GmbH" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://naboto.com" ]
+     ]
+  ];
+  fhir:ValueSet.description [ fhir:value "Value Set for ISO 3166-1 alpha 3 used in ELGA. Also accessible on [Termpub - ValueSet - ELGA Ländercodes](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=ValueSet&loadName=ELGA_Laendercodes)."];
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/CodeSystem/at-core-cs-iso-3166-1-alpha-3" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.naboto.com/ValueSet/at-elga-vs-countryCodes.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
