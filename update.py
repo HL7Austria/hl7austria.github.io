@@ -29,7 +29,7 @@ for name in glob.glob('./*/_index.yml'):
         folder_name = name.replace('/_index.yml', '')
         current = 'label-warning'
         if len(index_yml) == 6:
-            if and index_yml[4].get("branch", "n.a.") == 'main':
+            if index_yml[4].get("branch", "n.a.") == 'main':
                 current = 'label-success'
             if index_yml[5].get("type", "") == 'official':
                 current = 'label-primary'
