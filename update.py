@@ -28,16 +28,17 @@ for name in glob.glob('./*/_index.yml'):
         print(index_yml)
         folder_name = name.replace('/_index.yml', '')
         current = 'label-warning'
-        if index_yml[4].get("branch", "n.a.") == 'main':
-            current = 'label-success'
-        if index_yml[5].get("type", "") == 'official':
-            current = 'label-primary'
-        
-        tmp = populate_html(folder_name, index_yml[0].get("name", "n.a."), current, index_yml[4].get("branch", "n.a."), index_yml[1].get("version", "n.a."), index_yml[2].get("description", "n.a."), index_yml[3].get("last_published", "n.a."))  
-        if index_yml[5].get("type", "") == 'official' or index_yml[4].get("branch", "n.a.") == 'main':
-            content += tmp
-        else:
-            branchContent += tmp
+        if len(index_yml) == 6:
+            if and index_yml[4].get("branch", "n.a.") == 'main':
+                current = 'label-success'
+            if index_yml[5].get("type", "") == 'official':
+                current = 'label-primary'
+            
+            tmp = populate_html(folder_name, index_yml[0].get("name", "n.a."), current, index_yml[4].get("branch", "n.a."), index_yml[1].get("version", "n.a."), index_yml[2].get("description", "n.a."), index_yml[3].get("last_published", "n.a."))  
+            if index_yml[5].get("type", "") == 'official' or index_yml[4].get("branch", "n.a.") == 'main':
+                content += tmp
+            else:
+                branchContent += tmp
 
 
 content =  content + '<h4 style="margin-top:20px">Working drafts</h4>' + branchContent + '<!-- @@end-include -->'
