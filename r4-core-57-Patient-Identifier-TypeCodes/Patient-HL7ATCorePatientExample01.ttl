@@ -1,0 +1,161 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/Patient/HL7ATCorePatientExample01> a fhir:Patient;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "HL7ATCorePatientExample01"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient";
+       fhir:index 0;
+       fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient>
+     ]
+  ]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\"><b>Max Mustermann </b> male, DoB: 1900-01-01 ( Social Security Number: 1234010100)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Other Ids (see the one above)\">Other Ids:</td><td colspan=\"3\"><ul><li>National unique individual identifier: GH:oeLdSEb0l+8kSdJWjOYyYmnYki0=</li><li>Patient internal identifier: 0815</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Details:</td><td colspan=\"3\"><ul><li><a href=\"mailto:office@hl7.at\">office@hl7.at</a></li><li><a href=\"tel:+436501234567890\">+436501234567890</a></li><li>Landstrasse 1 Stock 9 Tür 42 Linz Oberösterreich 4020 AUT (HOME)</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"HL7® Austria FHIR® Core Extension for the religion (registered in Austria) of a patient.\r\nThe extension is used to encode the religious confession of a patient (only confessions registered in Austria). Furthermore, it uses the official [HL7 AT CodeSystem](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&amp;loadName=HL7 AT ReligionAustria) for religion and is therefore aligned with the ELGA ValueSet, respectively.\">Patient Religion:</td><td colspan=\"3\"><ul><li>code: <span title=\"Codes: {http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/CodeSystem/at-core-cs-religion 162}\">Pastafarianismus</span></li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The patient's legal status as citizen of a country.\">citizenship:</td><td colspan=\"3\"><ul><li>code: <span title=\"Codes: {http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/CodeSystem/at-core-cs-iso-3166-1-alpha-3 AUT}\">Österreich</span></li></ul></td></tr></table></div>"
+  ]; # 
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "code" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/CodeSystem/at-core-cs-religion" ];
+           fhir:Coding.code [ fhir:value "162" ];
+           fhir:Coding.display [ fhir:value "Pastafarianismus" ]
+         ]
+       ]
+     ];
+     fhir:Extension.url [ fhir:value "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-patient-religion" ]
+  ], [
+     fhir:index 1;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "code" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/CodeSystem/at-core-cs-iso-3166-1-alpha-3" ];
+           fhir:Coding.code [ fhir:value "AUT" ];
+           fhir:Coding.display [ fhir:value "Österreich" ]
+         ]
+       ]
+     ];
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/patient-citizenship" ]
+  ]; # 
+  fhir:Patient.identifier [
+     fhir:index 0;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ];
+         fhir:Coding.code [ fhir:value "SS" ];
+         fhir:Coding.display [ fhir:value "Social Security Number" ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "urn:oid:1.2.40.0.10.1.4.3.1" ];
+     fhir:Identifier.value [ fhir:value "1234010100" ];
+     fhir:Identifier.assigner [
+       fhir:Reference.display [ fhir:value "Dachverband der österreichischen Sozialversicherungsträger" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ];
+         fhir:Coding.code [ fhir:value "NI" ];
+         fhir:Coding.display [ fhir:value "National unique individual identifier" ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "urn:oid:1.2.40.0.10.2.1.1.149" ];
+     fhir:Identifier.value [ fhir:value "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0=" ];
+     fhir:Identifier.assigner [
+       fhir:Reference.display [ fhir:value "Bundesministerium für Inneres" ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ];
+         fhir:Coding.code [ fhir:value "PI" ];
+         fhir:Coding.display [ fhir:value "Patient internal identifier" ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "urn:oid:1.2.3.4.5" ];
+     fhir:Identifier.value [ fhir:value "0815" ];
+     fhir:Identifier.assigner [
+       fhir:Reference.display [ fhir:value "Ein GDA in Österreich" ]
+     ]
+  ]; # 
+  fhir:Patient.name [
+     fhir:index 0;
+     fhir:HumanName.family [ fhir:value "Mustermann" ];
+     fhir:HumanName.given [
+       fhir:value "Max";
+       fhir:index 0
+     ];
+     fhir:HumanName.prefix [
+       fhir:value "DI";
+       fhir:index 0
+     ]
+  ]; # 
+  fhir:Patient.telecom [
+     fhir:index 0;
+     fhir:ContactPoint.system [ fhir:value "email" ];
+     fhir:ContactPoint.value [ fhir:value "office@hl7.at" ];
+     fhir:ContactPoint.use [ fhir:value "work" ]
+  ], [
+     fhir:index 1;
+     fhir:ContactPoint.system [ fhir:value "phone" ];
+     fhir:ContactPoint.value [ fhir:value "+436501234567890" ];
+     fhir:ContactPoint.use [ fhir:value "home" ]
+  ]; # 
+  fhir:Patient.gender [ fhir:value "male"]; # 
+  fhir:Patient.birthDate [ fhir:value "1900-01-01"^^xsd:date]; # 
+  fhir:Patient.address [
+     fhir:index 0;
+     fhir:Address.use [ fhir:value "home" ];
+     fhir:Address.type [ fhir:value "both" ];
+     fhir:Address.line [
+       fhir:value "Landstrasse 1 Stock 9 Tür 42";
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName" ];
+         fhir:Extension.valueString [ fhir:value "Landstrasse" ]
+       ], [
+         fhir:index 1;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber" ];
+         fhir:Extension.valueString [ fhir:value "1" ]
+       ], [
+         fhir:index 2;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator" ];
+         fhir:Extension.valueString [ fhir:value "Stock 9 Tür 42" ]
+       ], [
+         fhir:index 3;
+         fhir:Extension.url [ fhir:value "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation" ];
+         fhir:Extension.valueString [ fhir:value "Lift vorhanden" ]
+       ]
+     ];
+     fhir:Address.city [ fhir:value "Linz" ];
+     fhir:Address.state [ fhir:value "Oberösterreich" ];
+     fhir:Address.postalCode [ fhir:value "4020" ];
+     fhir:Address.country [ fhir:value "AUT" ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/Patient/HL7ATCorePatientExample01.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
