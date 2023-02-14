@@ -835,6 +835,21 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "at-core-patient","Patient.link.type","Patient.link.type","","","",1,1,"","","Y","code {[]} {[]}
 ","replaced-by | replaces | refer | seealso","The type of link between this patient resource and another patient resource.","","","","","","","","","",,"required","The type of link between this patient resource and another patient resource.","http://hl7.org/fhir/ValueSet/link-type|4.0.1","",,,,"Patient.link.type",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
+"at-core-ext-valueset-systemoid","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
+","System OID","HL7® Austria FHIR® Core Extension for the capturing of OID in ValueSets to reference the CodeSystem they come from.
+The extension is used to document the OID of the system of a code referenced in a ValueSet, to align FHIR with the HL7 Austria CDA document guidelines.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
+",""
+"at-core-ext-valueset-systemoid","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"at-core-ext-valueset-systemoid","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"at-core-ext-valueset-systemoid","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-valueset-systemoid""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"at-core-ext-valueset-systemoid","Extension.value[x]","Extension.value[x]","","","",1,1,"","","","oid {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
 "at-core-address","Address","Address","","","",0,*,"","","","null {[]} {[]}
 ","An address expressed using postal conventions (as opposed to GPS or other location definition formats)","An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.","Note: address is intended to describe postal addresses for administrative purposes, not to describe absolute geographical coordinates.  Postal addresses are often used as proxies for physical locations (also see the [Location](http://hl7.org/fhir/R4/location.html#) resource).","","","","","","","","",,,,,"",,,,"Address",0,*,"ele-1
 ",""
@@ -905,21 +920,6 @@ Territory","",0,1,"","","Y","string {[]} {[]}
   <start value=""2010-03-23""/>
   <end value=""2010-07-01""/>
 </valuePeriod>","","",,,,,"",,,,"Address.period",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
-"at-core-ext-valueset-codesystemoid","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
-","CodeSystem OID","HL7® Austria FHIR® Core Extension for the capturing of OID in ValueSets to reference the CodeSystem they come from.
-The extension is used to document the OID of the CodeSystem for a code referenced in a ValueSet, to align FHIR with the HL7 Austria CDA documents.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
-",""
-"at-core-ext-valueset-codesystemoid","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
-","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
-"at-core-ext-valueset-codesystemoid","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
-","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"at-core-ext-valueset-codesystemoid","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
-","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-valueset-codesystemoid""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
-"at-core-ext-valueset-codesystemoid","Extension.value[x]","Extension.value[x]","","","",1,1,"","","","oid {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "at-core-valueset","ValueSet","ValueSet","","","",0,*,"","","","null {[]} {[]}
 ","A set of codes drawn from one or more code systems","A ValueSet resource instance specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [CodeSystem](http://hl7.org/fhir/R4/codesystem.html) definitions and their use in [coded elements](http://hl7.org/fhir/R4/terminologies.html).","","","","","","","","","",,,,,"",,,,"ValueSet",0,*,"",""
@@ -1040,8 +1040,8 @@ vsd-1:A value set include/exclude SHALL have a value set or a system {valueSet.e
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"at-core-valueset","ValueSet.compose.include.extension:CodeSystemOID","ValueSet.compose.include.extension","CodeSystemOID","","",0,1,"","","","Extension {[CanonicalType[http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-valueset-codesystemoid]]} {[]}
-","OID of the CodeSystem","Alternate representation of the CodeSystem as OID.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+"at-core-valueset","ValueSet.compose.include.extension:systemOID","ValueSet.compose.include.extension","systemOID","","",0,1,"","","","Extension {[CanonicalType[http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-valueset-systemoid]]} {[]}
+","OID of the system","Alternate representation of the system of a code as OID.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "at-core-valueset","ValueSet.compose.include.modifierExtension","ValueSet.compose.include.modifierExtension","","extensions
@@ -1195,8 +1195,8 @@ vsd-6:SHALL have a code or a display {code.exists() or display.exists()}vsd-9:Mu
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"at-core-valueset","ValueSet.expansion.contains.extension:CodeSystemOID","ValueSet.expansion.contains.extension","CodeSystemOID","","",0,1,"","","","Extension {[CanonicalType[http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-valueset-codesystemoid]]} {[]}
-","OID of the CodeSystem","Alternate representation of the CodeSystem as OID.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+"at-core-valueset","ValueSet.expansion.contains.extension:systemOID","ValueSet.expansion.contains.extension","systemOID","","",0,1,"","","","Extension {[CanonicalType[http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-valueset-systemoid]]} {[]}
+","OID of the system","Alternate representation of the system of a code as OID.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "at-core-valueset","ValueSet.expansion.contains.modifierExtension","ValueSet.expansion.contains.modifierExtension","","extensions
