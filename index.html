@@ -8,148 +8,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="http://hl7.org/fhir" />
 
-    <link href="r4-core-main/fhir.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <!-- Bootstrap core CSS -->
-    <link href="r4-core-main/assets/css/bootstrap.css" rel="stylesheet" />
-    <link href="r4-core-main/assets/css/bootstrap-fhir.css" rel="stylesheet" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- Project extras -->
-    <link href="r4-core-main/assets/css/project.css" rel="stylesheet" />
-    <link href="r4-core-main/assets/css/pygments-manni.css" rel="stylesheet" />
-    <link href="r4-core-main/assets/css/jquery-ui.css" rel="stylesheet" />
-    <link href="r4-core-main/assets/css/prism.css" rel="stylesheet" />
-    <!-- Placeholder for child template CSS declarations -->
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-    <script type="text/javascript" src="fhir-table-scripts.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="r4-core-main/assets/js/html5shiv.js"></script>
-      <script src="r4-core-main/assets/js/respond.min.js"></script>
-    <![endif]-->
 
-    <!-- Favicons -->
-    <link
-      rel="apple-touch-icon-precomposed"
-      sizes="144x144"
-      href="r4-core-main/assets/ico/apple-touch-icon-144-precomposed.png"
-    />
-    <link
-      rel="apple-touch-icon-precomposed"
-      sizes="114x114"
-      href="r4-core-main/assets/ico/apple-touch-icon-114-precomposed.png"
-    />
-    <link
-      rel="apple-touch-icon-precomposed"
-      sizes="72x72"
-      href="r4-core-main/assets/ico/apple-touch-icon-72-precomposed.png"
-    />
-    <link
-      rel="apple-touch-icon-precomposed"
-      href="r4-core-main/assets/ico/apple-touch-icon-57-precomposed.png"
-    />
-    <link rel="shortcut icon" href="r4-core-main/assets/ico/favicon.png" />
-  </head>
-  <body onload="document.body.style.opacity='1'">
-    <script src="r4-core-main/assets/js/prism.js"></script>
+    <style>
 
-    <style type="text/css">
-      h2 {
-        --heading-prefix: "1";
-      }
-      h3,
-      h4,
-      h5,
-      h6 {
-        --heading-prefix: "1";
-      }
-      
       .label-primary {
         background-color: #337ab7;
       }
-      
+
+      #header-logo {
+        max-width: 80px;
+      }
+
+      #ig-status {
+        padding-top: 10px;
+        padding-left: 20px;
+      }
+
+      #segment-content{
+        margin-top: 10px;
+        border-top: 1px solid #CCC;
+      }
+
+      .list-group-item {
+        margin-left: 20px;
+      }
+
     </style>
-    <div id="segment-header" class="segment">
-      <!-- segment-header -->
-      <div class="container">
+
+  </head>
+  <body>
+    
+      <div class="container" style="margin-top: 20px;">
         <!-- container -->
         <div class="row">
-          <div class="col-1">
+          <div class="col-sm-1">
             <img id="header-logo" src="r4-core-main/assets/images/hl7atlogo.png" />
           </div>
-          <div class="col-11">
+          <div class="col-sm-11">
             <!-- Placeholder for child template header declarations -->
-
             <div id="ig-status">
               <p>
-                <span style="font-size: 12pt; font-weight: bold"
-                  >HL7® Austria FHIR® Core Implementation Guides</span
-                >
+                <span style="font-size: 12pt; font-weight: bold">HL7® Austria FHIR® Core Implementation Guides</span>
               </p>
             </div>
           </div>
         </div>
       </div>
       <!-- /container -->
-    </div>
-    <!-- /segment-header -->
 
-    <div id="segment-navbar" class="segment">
-      <!-- segment-navbar -->
-      <div id="stripe"></div>
-      <div class="container">
-        <!-- container -->
-        <!-- HEADER CONTENT -->
-
-        <nav class="navbar navbar-inverse">
-          <!--status-bar-->
-          <div class="container">
-            <button
-              data-target=".navbar-inverse-collapse"
-              class="navbar-toggle"
-              data-toggle="collapse"
-              type="button"
-            >
-              <span class="icon-bar"> </span>
-              <span class="icon-bar"> </span>
-              <span class="icon-bar"> </span>
-            </button>
-            <a
-              class="navbar-brand hidden"
-              href="http://hl7.org/fhir/R4/index.html"
-              >FHIR&reg;</a
-            >
-            <div class="nav-collapse collapse navbar-inverse-collapse">
-              <!-- menu.xml  -->
-              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
-                <li><a href="index.html">Overview</a></li>            
-              </ul>
-            </div>
-            <!-- /.nav-collapse -->
-          </div>
-          <!-- /.container -->
-        </nav>
-        <!-- /.navbar -->
-        <!-- /HEADER CONTENT -->
-      </div>
-      <!-- /container -->
-    </div>
-    <!-- /segment-navbar -->
-    <!--status-bar-->
-    <div id="segment-breadcrumb" class="segment">
-      <!-- segment-breadcrumb -->
-      <div class="container">
-        <!-- container -->
-        <ul class="breadcrumb">
-          <li>
-            <a href="index.html"><b>Overview</b></a>
-          </li>          
-        </ul>
-      </div>
-      <!-- /container -->
-    </div>
-    <!-- /segment-breadcrumb -->
 
     <div id="segment-content">
       <!-- segment-content -->
@@ -185,134 +102,125 @@
               }
             </style>
             <div class="col-12">
-              <h2>Overview</h2>
-              <h3>Introduction</h3>
+              <h2>Introduction</h2>
               <p>Welcome to the HL7&reg; FHIR&reg; Implementation Guide Registry of HL7&reg; Austria.</p>
 
-              <h3>HL7® Austria & TC FHIR®</h3>
+              <h2>HL7® Austria & TC FHIR®</h2>
               <p>HL7® Austria is an official Affiliate of HL7® International. Within HL7® Austria the technical committee for FHIR® (TC FHIR®) is responsible to promote and disseminate the new upcoming standard HL7® FHIR®. The TC FHIR® deals with the standard-compliant and coordinated usage of HL7® FHIR® based communication solutions. It coordinates and describes necessary localizations and offers concrete help for FHIR®-compliant interfaces.</p>
-              <h3>Available Implementation Guides</h3>
+              <h2>Available Implementation Guides</h2>
               <div class="col-12" style="margin-top:10px;">
-                <!-- @@begin-include --><a href="./r4-naboto-main/index.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">NABOTO-IG-R4<span style="margin-left: 8px;" class="label label-success">main</span></h5>
-                                <span class="label label-info">0.1.4</span>                      
-                            </div>
-                            <p class="mb-1" style="margin-top:6px;">FHIR&reg; R4 Implementation Guide for appointment scheduling with the Naboto API.</p>                    
-                            <small>Last published:</small> <span class="label label-default">03.11.2022</span>
-                            </a><a href="./r4-core-STU1/index.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">HL7&reg;-AT-FHIR&reg;-Core-R4<span style="margin-left: 8px;" class="label label-primary">STU1</span></h5>
-                                <span class="label label-info">1.0.0-STU1</span>                      
-                            </div>
-                            <p class="mb-1" style="margin-top:6px;">FHIR&reg; R4 Implementation Guide for the national FHIR&reg; core profiles provided by HL7&reg; Austria.</p>                    
-                            <small>Last published:</small> <span class="label label-default">12.04.2022</span>
-                            </a><a href="./r4-core-main/index.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">HL7&reg;-AT-FHIR&reg;-Core-R4<span style="margin-left: 8px;" class="label label-success">main</span></h5>
-                                <span class="label label-info">1.1.0-STU2</span>                      
-                            </div>
-                            <p class="mb-1" style="margin-top:6px;">FHIR&reg; R4 Implementation Guide for the national FHIR&reg; core profiles provided by HL7&reg; Austria.</p>                    
-                            <small>Last published:</small> <span class="label label-default">14.02.2023</span>
-                            </a><a href="./r4-core-ballot_2021_01/index.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">HL7-AT-FHIR-Core-R4 - Ballot 1 - 2021<span style="margin-left: 8px;" class="label label-primary">ballot_2021_01</span></h5>
-                                <span class="label label-info">0.2.0-STU1</span>                      
-                            </div>
-                            <p class="mb-1" style="margin-top:6px;">FHIR&reg; R4 Implementation Guide for the national FHIR&reg; core profiles provided by HL7 Austria.</p>                    
-                            <small>Last published:</small> <span class="label label-default">18.02.2021</span>
-                            </a><h4 style="margin-top:20px">Working drafts</h4><a href="./r5-pica-5-deployment/index.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">AIST-PICA-R4<span style="margin-left: 8px;" class="label label-warning">5-deployment</span></h5>
-                                <span class="label label-info">0.1.0-STU1</span>                      
-                            </div>
-                            <p class="mb-1" style="margin-top:6px;">FHIR&reg; R5 Implementation Guide for the Process Intelligence and Conformance Auditing (PICA) project.</p>                    
-                            <small>Last published:</small> <span class="label label-default">24.02.2022</span>
-                            </a><a href="./r4-core-6-extend-cda-mapping/index.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">HL7&reg;-AT-FHIR&reg;-Core-R4<span style="margin-left: 8px;" class="label label-warning">6-extend-cda-mapping</span></h5>
-                                <span class="label label-info">0.3.0-STU1</span>                      
-                            </div>
-                            <p class="mb-1" style="margin-top:6px;">FHIR&reg; R4 Implementation Guide for the national FHIR&reg; core profiles provided by HL7&reg; Austria.</p>                    
-                            <small>Last published:</small> <span class="label label-default">20.01.2022</span>
-                            </a><a href="./r4-core-13-rebase/index.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">HL7&reg;-AT-FHIR&reg;-Core-R4<span style="margin-left: 8px;" class="label label-warning">13-rebase</span></h5>
-                                <span class="label label-info">0.3.0-STU1</span>                      
-                            </div>
-                            <p class="mb-1" style="margin-top:6px;">FHIR&reg; R4 Implementation Guide for the national FHIR&reg; core profiles provided by HL7&reg; Austria.</p>                    
-                            <small>Last published:</small> <span class="label label-default">16.12.2021</span>
-                            </a><a href="./r4-core-testing-better-valueset-expand-group-design/index.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">HL7&reg;-AT-FHIR&reg;-Core-R4<span style="margin-left: 8px;" class="label label-warning">testing-better-valueset-expand-group-design</span></h5>
-                                <span class="label label-info">1.1.0-STU2</span>                      
-                            </div>
-                            <p class="mb-1" style="margin-top:6px;">FHIR&reg; R4 Implementation Guide for the national FHIR&reg; core profiles provided by HL7&reg; Austria.</p>                    
-                            <small>Last published:</small> <span class="label label-default">20.07.2022</span>
-                            </a><a href="./r4-core-change-template-package-version/index.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">HL7&reg;-AT-FHIR&reg;-Core-R4<span style="margin-left: 8px;" class="label label-warning">change-template-package-version</span></h5>
-                                <span class="label label-info">1.1.0-STU2</span>                      
-                            </div>
-                            <p class="mb-1" style="margin-top:6px;">FHIR&reg; R4 Implementation Guide for the national FHIR&reg; core profiles provided by HL7&reg; Austria.</p>                    
-                            <small>Last published:</small> <span class="label label-default">18.01.2023</span>
-                            </a><a href="./r4-core-13-oids-for-all-terminologies/index.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">HL7&reg;-AT-FHIR&reg;-Core-R4<span style="margin-left: 8px;" class="label label-warning">13-oids-for-all-terminologies</span></h5>
-                                <span class="label label-info">0.3.0-STU1</span>                      
-                            </div>
-                            <p class="mb-1" style="margin-top:6px;">FHIR&reg; R4 Implementation Guide for the national FHIR&reg; core profiles provided by HL7&reg; Austria.</p>                    
-                            <small>Last published:</small> <span class="label label-default">07.12.2021</span>
-                            </a><a href="./r4-core-61_Missingphoto_contentType/index.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">HL7&reg;-AT-FHIR&reg;-Core-R4<span style="margin-left: 8px;" class="label label-warning">61_Missingphoto_contentType</span></h5>
-                                <span class="label label-info">1.1.0-STU2</span>                      
-                            </div>
-                            <p class="mb-1" style="margin-top:6px;">FHIR&reg; R4 Implementation Guide for the national FHIR&reg; core profiles provided by HL7&reg; Austria.</p>                    
-                            <small>Last published:</small> <span class="label label-default">14.11.2022</span>
-                            </a><a href="./r4-core-5-mappings-inconsistent-notation/index.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">HL7&reg;-AT-FHIR&reg;-Core-R4<span style="margin-left: 8px;" class="label label-warning">5-mappings-inconsistent-notation</span></h5>
-                                <span class="label label-info">0.3.0-STU1</span>                      
-                            </div>
-                            <p class="mb-1" style="margin-top:6px;">FHIR&reg; R4 Implementation Guide for the national FHIR&reg; core profiles provided by HL7&reg; Austria.</p>                    
-                            <small>Last published:</small> <span class="label label-default">26.11.2021</span>
-                            </a><a href="./r4-core-64-valuesetoid/index.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">HL7&reg;-AT-FHIR&reg;-Core-R4<span style="margin-left: 8px;" class="label label-warning">64-valuesetoid</span></h5>
-                                <span class="label label-info">1.1.0-STU2</span>                      
-                            </div>
-                            <p class="mb-1" style="margin-top:6px;">FHIR&reg; R4 Implementation Guide for the national FHIR&reg; core profiles provided by HL7&reg; Austria.</p>                    
-                            <small>Last published:</small> <span class="label label-default">14.02.2023</span>
-                            </a><a href="./r4-core-24-template-from-buildfhirorg/index.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">HL7&reg;-AT-FHIR&reg;-Core-R4<span style="margin-left: 8px;" class="label label-warning">24-template-from-buildfhirorg</span></h5>
-                                <span class="label label-info">0.3.0-STU1</span>                      
-                            </div>
-                            <p class="mb-1" style="margin-top:6px;">FHIR&reg; R4 Implementation Guide for the national FHIR&reg; core profiles provided by HL7&reg; Austria.</p>                    
-                            <small>Last published:</small> <span class="label label-default">01.12.2021</span>
-                            </a><a href="./r4-core-25-ig-folderdeploy/index.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">HL7&reg;-AT-FHIR&reg;-Core-R4<span style="margin-left: 8px;" class="label label-warning">25-ig-folderdeploy</span></h5>
-                                <span class="label label-info">0.3.0-STU1</span>                      
-                            </div>
-                            <p class="mb-1" style="margin-top:6px;">FHIR&reg; R4 Implementation Guide for the national FHIR&reg; core profiles provided by HL7&reg; Austria.</p>                    
-                            <small>Last published:</small> <span class="label label-default">26.11.2021</span>
-                            </a><a href="./r4-core-57-Patient-Identifier-TypeCodes/index.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">HL7&reg;-AT-FHIR&reg;-Core-R4<span style="margin-left: 8px;" class="label label-warning">57-Patient-Identifier-TypeCodes</span></h5>
-                                <span class="label label-info">1.1.0-STU2</span>                      
-                            </div>
-                            <p class="mb-1" style="margin-top:6px;">FHIR&reg; R4 Implementation Guide for the national FHIR&reg; core profiles provided by HL7&reg; Austria.</p>                    
-                            <small>Last published:</small> <span class="label label-default">12.02.2023</span>
-                            </a><a href="./r4-core-16-narrative/index.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">HL7&reg;-AT-FHIR&reg;-Core-R4<span style="margin-left: 8px;" class="label label-warning">16-narrative</span></h5>
-                                <span class="label label-info">0.3.0-STU1</span>                      
-                            </div>
-                            <p class="mb-1" style="margin-top:6px;">FHIR&reg; R4 Implementation Guide for the national FHIR&reg; core profiles provided by HL7&reg; Austria.</p>                    
-                            <small>Last published:</small> <span class="label label-default">16.12.2021</span>
-                            </a><!-- @@end-include -->
+                  <!-- @@begin-include --><h3 style="margin-top:20px">Official HL7-AT IGs</h3><div class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h4 class="mb-1">HL7&reg;-AT-FHIR&reg;-Core-R4</h4>
+                        <p class="mb-1" style="margin-top:6px;color:#666">FHIR&reg; R4 Implementation Guide for the national FHIR&reg; core profiles provided by HL7&reg; Austria.</p>                                                                     
+                        <table class="table datatable">
+                        <thead>
+                            <tr>
+                            <td >Version</td>
+                            <td >Status</td>
+                            <td >Last Published</td>
+                            </tr>
+                        </thead>
+                        <tbody style='font-size:14pt;'>
+                            <tr>
+                    <td style='font-size:11pt;'><span class="label label-info">1.1.0-STU2</span></td>
+                    <td style='font-size:11pt;'><span class="label label-success">main</span></td>
+                    <td style='font-size:11pt;'><span class="">14.02.2023</span></td>                                  
+                </tr><tr>
+                    <td style='font-size:11pt;'><span class="label label-info">1.0.0-STU1</span></td>
+                    <td style='font-size:11pt;'><span class="label label-primary">STU1</span></td>
+                    <td style='font-size:11pt;'><span class="">12.04.2022</span></td>                                  
+                </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div><h3 style="margin-top:50px">HL7 Austria Member IGs</h3><div class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h4 class="mb-1">NABOTO-IG-R4</h4>
+                        <p class="mb-1" style="margin-top:6px;color:#666">FHIR&reg; R4 Implementation Guide for appointment scheduling with the Naboto API.</p>                                                                     
+                        <table class="table datatable">
+                        <thead>
+                            <tr>
+                            <td >Version</td>
+                            <td >Status</td>
+                            <td >Last Published</td>
+                            </tr>
+                        </thead>
+                        <tbody style='font-size:14pt;'>
+                            <tr>
+                    <td style='font-size:11pt;'><span class="label label-info">0.1.4</span></td>
+                    <td style='font-size:11pt;'><span class="label label-success">main</span></td>
+                    <td style='font-size:11pt;'><span class="">03.11.2022</span></td>                                  
+                </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div><h3 style="margin-top:50px">Working Drafts</h3><div class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h4 class="mb-1">HL7&reg;-AT-FHIR&reg;-Core-R4</h4>
+                        <p class="mb-1" style="margin-top:6px;color:#666">FHIR&reg; R4 Implementation Guide for the national FHIR&reg; core profiles provided by HL7&reg; Austria.</p>                                                                     
+                        <table class="table sa-datatable">
+                        <thead>
+                            <tr>
+                            <td >Version</td>
+                            <td >Status</td>
+                            <td >Last Published</td>
+                            </tr>
+                        </thead>
+                        <tbody style='font-size:14pt;'>
+                            <tr>
+                    <td style='font-size:11pt;'><span class="label label-info">0.3.0-STU1</span></td>
+                    <td style='font-size:11pt;'><span class="label label-warning">16-narrative</span></td>
+                    <td style='font-size:11pt;'><span class="">16.12.2021</span></td>                                  
+                </tr><tr>
+                    <td style='font-size:11pt;'><span class="label label-info">0.3.0-STU1</span></td>
+                    <td style='font-size:11pt;'><span class="label label-warning">25-ig-folderdeploy</span></td>
+                    <td style='font-size:11pt;'><span class="">26.11.2021</span></td>                                  
+                </tr><tr>
+                    <td style='font-size:11pt;'><span class="label label-info">0.3.0-STU1</span></td>
+                    <td style='font-size:11pt;'><span class="label label-warning">13-oids-for-all-terminologies</span></td>
+                    <td style='font-size:11pt;'><span class="">07.12.2021</span></td>                                  
+                </tr><tr>
+                    <td style='font-size:11pt;'><span class="label label-info">1.1.0-STU2</span></td>
+                    <td style='font-size:11pt;'><span class="label label-warning">61_Missingphoto_contentType</span></td>
+                    <td style='font-size:11pt;'><span class="">14.11.2022</span></td>                                  
+                </tr><tr>
+                    <td style='font-size:11pt;'><span class="label label-info">0.3.0-STU1</span></td>
+                    <td style='font-size:11pt;'><span class="label label-warning">13-rebase</span></td>
+                    <td style='font-size:11pt;'><span class="">16.12.2021</span></td>                                  
+                </tr><tr>
+                    <td style='font-size:11pt;'><span class="label label-info">0.3.0-STU1</span></td>
+                    <td style='font-size:11pt;'><span class="label label-warning">6-extend-cda-mapping</span></td>
+                    <td style='font-size:11pt;'><span class="">20.01.2022</span></td>                                  
+                </tr><tr>
+                    <td style='font-size:11pt;'><span class="label label-info">0.3.0-STU1</span></td>
+                    <td style='font-size:11pt;'><span class="label label-warning">5-mappings-inconsistent-notation</span></td>
+                    <td style='font-size:11pt;'><span class="">26.11.2021</span></td>                                  
+                </tr><tr>
+                    <td style='font-size:11pt;'><span class="label label-info">0.3.0-STU1</span></td>
+                    <td style='font-size:11pt;'><span class="label label-warning">24-template-from-buildfhirorg</span></td>
+                    <td style='font-size:11pt;'><span class="">01.12.2021</span></td>                                  
+                </tr><tr>
+                    <td style='font-size:11pt;'><span class="label label-info">1.1.0-STU2</span></td>
+                    <td style='font-size:11pt;'><span class="label label-warning">57-Patient-Identifier-TypeCodes</span></td>
+                    <td style='font-size:11pt;'><span class="">12.02.2023</span></td>                                  
+                </tr><tr>
+                    <td style='font-size:11pt;'><span class="label label-info">1.1.0-STU2</span></td>
+                    <td style='font-size:11pt;'><span class="label label-warning">change-template-package-version</span></td>
+                    <td style='font-size:11pt;'><span class="">18.01.2023</span></td>                                  
+                </tr><tr>
+                    <td style='font-size:11pt;'><span class="label label-info">1.1.0-STU2</span></td>
+                    <td style='font-size:11pt;'><span class="label label-warning">64-valuesetoid</span></td>
+                    <td style='font-size:11pt;'><span class="">14.02.2023</span></td>                                  
+                </tr><tr>
+                    <td style='font-size:11pt;'><span class="label label-info">1.1.0-STU2</span></td>
+                    <td style='font-size:11pt;'><span class="label label-warning">testing-better-valueset-expand-group-design</span></td>
+                    <td style='font-size:11pt;'><span class="">20.07.2022</span></td>                                  
+                </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div><!-- @@end-include -->
               </div>
             </div>
           </div>
@@ -322,70 +230,13 @@
       </div>
       <!-- /segment-content -->
     </div>
-    <script type="text/javascript" src="r4-core-main/assets/js/jquery.js"></script>
-    <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
-    <script
-      type="text/javascript"
-      src="r4-core-main/assets/js/jquery-ui.min.js"
-    ></script>
-
-    <script type="text/javascript">
-      $(document).ready(function () {
-        if (window.location.hash != "") {
-          $('a[href="' + window.location.hash + '"]').click();
-        }
-      });
-    </script>
-    <div id="segment-footer" igtool="footer" class="segment">
-      <!-- segment-footer -->
-      <div class="container">
-        <!-- container -->
-        <div class="inner-wrapper">
-          <p>
-            IG &#169; 2020+
-            <a style="color: #81bef7" href="mailto:office@hl7.at"></a>. Package
-            HL7ATCoreProfiles based on
-            <a style="color: #81bef7" href="http://hl7.org/fhir/R4/"
-              >FHIR 4.0.1</a
-            >. Generated
-            <span title="23.12.2020">23.12.2020</span>
-          </p>
-        </div>
-        <!-- /inner-wrapper -->
-      </div>
-      <!-- /container -->
-    </div>
-    <!-- /segment-footer -->
-
-    <div id="segment-post-footer" class="segment hidden">
-      <!-- segment-post-footer -->
-      <div class="container"><!-- container --></div>
-      <!-- /container -->
-    </div>
-    <!-- /segment-post-footer -->
-
-    <!-- JS and analytics only. -->
-    <!-- Bootstrap core JavaScript
-  ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script
-      type="text/javascript"
-      src="r4-core-main/assets/js/bootstrap.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="r4-core-main/assets/js/respond.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="r4-core-main/assets/js/anchor.min.js"
-    ></script>
     <script>
-      anchors.options.visible = "hover";
-      anchors.add();
+      $(document).ready(function() {
+        $('.datatable').DataTable({searching: false, paging:false, info:false});
+        $('.sa-datatable').DataTable({searching: true, paging:true, info:true});
+      } );
     </script>
-
-    <!-- Analytics Below
-  ================================================== -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.js"></script>
   </body>
 </html>
