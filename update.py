@@ -54,10 +54,11 @@ def build_rows(content):
                 </tr>"""
     return rows
 
-def build_table_html( content, clazz = 'datatable' ): 
-    for key in content.keys():
-        value = content[key]  
-        return f"""<div class="list-group-item list-group-item-action flex-column align-items-start">
+def build_table_html( cn, clazz = 'datatable' ): 
+    ret = ''
+    for key in cn.keys():
+        value = cn[key]         
+        ret += f"""<div class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="d-flex w-100 justify-content-between">
                         <h4 class="mb-1">{key}</h4>
                         <p class="mb-1" style="margin-top:6px;color:#666">{value[0]['description']}</p>                                                                     
@@ -80,7 +81,7 @@ def build_table_html( content, clazz = 'datatable' ):
     #for k in content.keys():
         # TODO: iterate over content and build rows for visualization 
         # TODO: create class for content from yaml
-    return ''
+    return ret
 
 
 def populate_html( fName, name, label, branch, version, description, published ):
@@ -112,7 +113,7 @@ for name in glob.glob('./*/_index.yml'):
         #print(index_yml)
         folder_name = name.replace('/_index.yml', '')
         entry_value = fromYaml(name, index_yml, folder_name) 
-
+        
         if entry_value is not None:            
             if( entry_value['type'] == OFFICIAL_TYPE_NAME or entry_value['branch'] == MAIN_BRANCH_NAME ) and entry_value['name'].startswith('HL7'):
                 if entry_value['name'] not in hl7content.keys():
@@ -126,7 +127,7 @@ for name in glob.glob('./*/_index.yml'):
                 if entry_value['name'] not in workingcontent.keys():
                     workingcontent[entry_value['name']] = []
                 workingcontent[entry_value['name']].append( entry_value )
-                        
+                     
 content = content + build_table_html( hl7content )  + partnerContent + build_table_html( membercontent ) + branchContent + build_table_html( workingcontent, 'sa-datatable' ) + '<!-- @@end-include -->'
 
 with open('./index.html','r',encoding="utf8") as inputfile:
