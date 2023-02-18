@@ -46,9 +46,10 @@ def build_rows(content):
     rows = ''
     for entry in content:        
         rows += f"""<tr>
+                    <td style='font-size:11pt;'><a href="https://fhir.hl7.at/{entry['branch']}">https://fhir.hl7.at/{entry['branch']}</td>                                 
                     <td style='font-size:11pt;'><span class="label label-info">{entry['version']}</span></td>
                     <td style='font-size:11pt;'><span class="label {entry['label']}">{entry['branch']}</span></td>
-                    <td style='font-size:11pt;'><span class="">{entry['published']}</span></td>                                  
+                    <td style='font-size:11pt;'><span class="">{entry['published']}</span></td>                                                     
                 </tr>"""
     return rows
 
@@ -62,9 +63,10 @@ def build_table_html( content, clazz = 'datatable' ):
                         <table class="table {clazz}">
                         <thead>
                             <tr>
+                            <td >Published at</td>
                             <td >Version</td>
                             <td >Status</td>
-                            <td >Last Published</td>
+                            <td >Last Published</td>                            
                             </tr>
                         </thead>
                         <tbody style='font-size:14pt;'>
