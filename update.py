@@ -14,7 +14,7 @@ class Entry():
         self.branch = branch
         self.published = published
     
-def fromYaml( name, yaml ):
+def fromYaml( name, yaml,fname ):
 
     if len(yaml) == 6:
         label = 'label-warning'
@@ -36,7 +36,8 @@ def fromYaml( name, yaml ):
             "version" : index_yml[1].get("version", "n.a."),
             "branch" : index_yml[4].get("branch", "n.a."),
             "published" : index_yml[3].get("last_published", "n.a."),
-            "type" :  index_yml[5].get("type", "n.a.")
+            "type" :  index_yml[5].get("type", "n.a."),
+            "fname": fname
         }
     else:
         print(f"❌ The provided yaml configuration in {name} does not contain all required properties")
@@ -46,7 +47,7 @@ def build_rows(content):
     rows = ''
     for entry in content:        
         rows += f"""<tr>
-                    <td style='font-size:11pt;'><a href="https://fhir.hl7.at/{entry['branch']}">https://fhir.hl7.at/{entry['branch']}</td>                                 
+                    <td style='font-size:11pt;'><a href="./{entry['fname']}/index.html">{entry['fname']}</td>                                 
                     <td style='font-size:11pt;'><span class="label label-info">{entry['version']}</span></td>
                     <td style='font-size:11pt;'><span class="label {entry['label']}">{entry['branch']}</span></td>
                     <td style='font-size:11pt;'><span class="">{entry['published']}</span></td>                                                     
@@ -110,7 +111,7 @@ for name in glob.glob('./*/_index.yml'):
         index_yml = yaml.load(file, Loader=yaml.FullLoader)
         #print(index_yml)
         folder_name = name.replace('/_index.yml', '')
-        entry_value = fromYaml(name, index_yml) 
+        entry_value = fromYaml(name, index_yml, folder_name) 
 
         if entry_value is not None:            
             if( entry_value['type'] == OFFICIAL_TYPE_NAME or entry_value['branch'] == MAIN_BRANCH_NAME ) and entry_value['name'].startswith('HL7'):
