@@ -1,10 +1,17 @@
 {
-  "package": "eMedication-at.example",
-  "version": "0.1.0",
+  "package": "HL7ATCoreProfiles",
+  "version": "1.1.0",
   "fhirVersion": "4.0.1",
   "extensions": [
     {
-      "url": "http://fhir.hl7.at/eMedication-at/StructureDefinition/patientReligion",
+      "url": "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation",
+      "title": "Address Additional Information",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-patient-religion",
       "title": "Patient Religion",
       "types": [
         "CodeableConcept",
@@ -71,34 +78,41 @@
         "Dosage",
         "Meta"
       ]
+    },
+    {
+      "url": "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-valueset-systemoid",
+      "title": "System OID",
+      "types": [
+        "oid"
+      ]
     }
   ],
   "profiles": {
-    "Medication": [
-      {
-        "url": "http://fhir.hl7.at/eMedication-at/StructureDefinition/austrian-medication",
-        "title": "Austrian Medication"
-      }
-    ],
-    "MedicationRequest": [
-      {
-        "url": "http://fhir.hl7.at/eMedication-at/StructureDefinition/austrian-medication-request",
-        "title": "Austria Medication Request"
-      }
-    ],
     "Patient": [
       {
-        "url": "http://fhir.hl7.at/eMedication-at/StructureDefinition/austrian-patient",
-        "title": "Austrian Patient"
+        "url": "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient",
+        "title": "HL7® AT Core Patient Profile"
+      }
+    ],
+    "ValueSet": [
+      {
+        "url": "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-valueset",
+        "title": "HL7® AT Core ValueSet Profile"
       }
     ]
   },
   "usage": {
-    "http://fhir.hl7.at/eMedication-at/StructureDefinition/patientReligion": [
+    "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation": [
+      "Address.line",
+      "Patient.address.line",
+      "Patient.contact.address.line"
+    ],
+    "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-patient-religion": [
       "Patient"
     ],
-    "http://hl7.at/fhir/4.0.1/eMedicationAT/StructureDefinition/patientReligion": [
-      "Patient"
+    "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-valueset-systemoid": [
+      "ValueSet.compose.include",
+      "ValueSet.expansion.contains"
     ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
       "StructureDefinition.snapshot.element.constraint"
@@ -120,24 +134,24 @@
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator": [
       "Address.line",
-      "Patient.address.line"
+      "Patient.address.line",
+      "Patient.contact.address.line"
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber": [
       "Address.line",
-      "Patient.address.line"
+      "Patient.address.line",
+      "Patient.contact.address.line"
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName": [
       "Address.line",
-      "Patient.address.line"
+      "Patient.address.line",
+      "Patient.contact.address.line"
     ],
     "http://hl7.org/fhir/StructureDefinition/patient-citizenship": [
       "Patient"
     ],
     "http://hl7.org/fhir/StructureDefinition/regex": [
       "StructureDefinition.snapshot.element.type"
-    ],
-    "http://hl7.org/fhir/StructureDefinition/structuredefinition-category": [
-      "StructureDefinition"
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name": [
       "StructureDefinition.snapshot.element"
@@ -147,6 +161,15 @@
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy": [
       "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/valueset-expand-group": [
+      "ValueSet.compose.include"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/valueset-expand-rules": [
+      "ValueSet.compose.include"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name": [
       "ImplementationGuide.definition.page",
