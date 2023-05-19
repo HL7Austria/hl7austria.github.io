@@ -1,82 +1,39 @@
 {
   "package": "linkedcare.hl7.at",
   "version": "0.1.0",
-  "fhirVersion": "4.0.1",
-  "extensions": [
-    {
-      "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/HL7at-PatientNationality",
-      "title": "HL7 AT Nationality",
-      "types": [
-        "CodeableConcept",
-        "base64Binary",
-        "boolean",
-        "canonical",
-        "code",
-        "date",
-        "dateTime",
-        "decimal",
-        "id",
-        "instant",
-        "integer",
-        "markdown",
-        "oid",
-        "positiveInt",
-        "string",
-        "time",
-        "unsignedInt",
-        "uri",
-        "url",
-        "uuid",
-        "Address",
-        "Age",
-        "Annotation",
-        "Attachment",
-        "CodeableConcept",
-        "Coding",
-        "ContactPoint",
-        "Count",
-        "Distance",
-        "Duration",
-        "HumanName",
-        "Identifier",
-        "Money",
-        "Period",
-        "Quantity",
-        "Range",
-        "Ratio",
-        "Reference",
-        "SampledData",
-        "Signature",
-        "Timing",
-        "ContactDetail",
-        "Contributor",
-        "DataRequirement",
-        "Expression",
-        "ParameterDefinition",
-        "RelatedArtifact",
-        "TriggerDefinition",
-        "UsageContext",
-        "Dosage",
-        "Meta"
-      ]
-    }
-  ],
+  "fhirVersion": "5.0.0",
+  "extensions": [],
   "profiles": {
+    "ActivityDefinition": [
+      {
+        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/LINCAOrderActivity",
+        "title": "LINCAOrderActivity"
+      }
+    ],
     "Patient": [
       {
-        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/MyPatient",
-        "title": "MyPatient"
+        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/LincaPatient",
+        "title": "LincaPatient"
+      }
+    ],
+    "MedicationRequest": [
+      {
+        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/licaprescription-medication-request",
+        "title": "Prescription Medication Request"
       },
       {
-        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/hl7at-patient-new",
-        "title": "Patient Profile"
+        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request",
+        "title": "Order Medication Request"
+      }
+    ],
+    "RequestOrchestration": [
+      {
+        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-order-request",
+        "title": "Order Request"
       }
     ]
   },
   "usage": {
-    "http://fhir.hl7.at/linkedcare/StructureDefinition/HL7at-PatientNationality": [
-      "Patient"
-    ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
       "StructureDefinition.snapshot.element.constraint"
     ],
@@ -87,9 +44,6 @@
       "StructureDefinition.snapshot.element.binding"
     ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding": [
-      "StructureDefinition.snapshot.element.binding"
-    ],
-    "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
       "StructureDefinition.snapshot.element.binding"
     ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
@@ -104,12 +58,17 @@
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy": [
       "StructureDefinition.snapshot.element.type"
     ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-implements": [
+      "StructureDefinition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/binding-definition": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
     "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
       "ImplementationGuide.definition"
-    ],
-    "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name": [
-      "ImplementationGuide.definition.page",
-      "ImplementationGuide.definition.page.page"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter": [
       "ImplementationGuide.definition"
