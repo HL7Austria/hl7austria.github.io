@@ -1,3 +1,4 @@
+import datetime
 import glob
 import yaml
 import re
@@ -78,9 +79,6 @@ def build_table_html( cn, clazz = 'datatable' ):
                     </div>
                 </div>"""
 
-    #for k in content.keys():
-        # TODO: iterate over content and build rows for visualization 
-        # TODO: create class for content from yaml
     return ret
 
 
@@ -102,6 +100,8 @@ content = '<!-- @@begin-include --><h3 style="margin-top:20px">Official HL7-AT I
 partnerContent = '<h3 style="margin-top:50px">HL7 Austria Member IGs</h3>'
 branchContent =  '<h3 style="margin-top:50px">Working Drafts</h3>'
 
+date_format = '%d.%m.%Y'
+
 hl7content = dict()
 membercontent = dict()
 workingcontent = dict()
@@ -114,19 +114,26 @@ for name in glob.glob('./*/_index.yml'):
         folder_name = name.replace('/_index.yml', '')
         entry_value = fromYaml(name, index_yml, folder_name) 
         
-        if entry_value is not None:            
-            if( entry_value['type'] == OFFICIAL_TYPE_NAME or entry_value['branch'] == MAIN_BRANCH_NAME ) and entry_value['name'].startswith('HL7'):
-                if entry_value['name'] not in hl7content.keys():
-                    hl7content[entry_value['name']] = []
-                hl7content[entry_value['name']].append( entry_value )
-            elif (entry_value['type'] == OFFICIAL_TYPE_NAME or entry_value['branch'] == MAIN_BRANCH_NAME):
-                if entry_value['name'] not in membercontent.keys():
-                    membercontent[entry_value['name']] = []
-                membercontent[entry_value['name']].append( entry_value )
-            else:
-                if entry_value['name'] not in workingcontent.keys():
-                    workingcontent[entry_value['name']] = []
-                workingcontent[entry_value['name']].append( entry_value )
+        if entry_value is not None:
+
+            date_pub = datetime.strptime( entry_value['published'], date_format )
+            date_now = datetime.now()
+            delta = date_now - date_pub
+            days = abs(delta.days)
+
+            if( days < 120 ):
+                if( entry_value['type'] == OFFICIAL_TYPE_NAME or entry_value['branch'] == MAIN_BRANCH_NAME ) and entry_value['name'].startswith('HL7'):
+                    if entry_value['name'] not in hl7content.keys():
+                        hl7content[entry_value['name']] = []
+                    hl7content[entry_value['name']].append( entry_value )
+                elif (entry_value['type'] == OFFICIAL_TYPE_NAME or entry_value['branch'] == MAIN_BRANCH_NAME):
+                    if entry_value['name'] not in membercontent.keys():
+                        membercontent[entry_value['name']] = []
+                    membercontent[entry_value['name']].append( entry_value )
+                else:
+                    if entry_value['name'] not in workingcontent.keys():
+                        workingcontent[entry_value['name']] = []
+                    workingcontent[entry_value['name']].append( entry_value )
                      
 content = content + build_table_html( hl7content )  + partnerContent + build_table_html( membercontent ) + branchContent + build_table_html( workingcontent, 'sa-datatable' ) + '<!-- @@end-include -->'
 
