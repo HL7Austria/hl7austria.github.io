@@ -121,20 +121,20 @@ for name in glob.glob('./*/_index.yml'):
             delta = date_now - date_pub
             days = abs(delta.days)
 
-            if( days < 120 ):
-                if( entry_value['type'] == OFFICIAL_TYPE_NAME or entry_value['branch'] == MAIN_BRANCH_NAME ) and entry_value['name'].startswith('HL7'):
-                    if entry_value['name'] not in hl7content.keys():
-                        hl7content[entry_value['name']] = []
-                    hl7content[entry_value['name']].append( entry_value )
-                elif (entry_value['type'] == OFFICIAL_TYPE_NAME or entry_value['branch'] == MAIN_BRANCH_NAME):
-                    if entry_value['name'] not in membercontent.keys():
-                        membercontent[entry_value['name']] = []
-                    membercontent[entry_value['name']].append( entry_value )
-                else:
+            if( entry_value['type'] == OFFICIAL_TYPE_NAME or entry_value['branch'] == MAIN_BRANCH_NAME ) and entry_value['name'].startswith('HL7'):
+                if entry_value['name'] not in hl7content.keys():
+                    hl7content[entry_value['name']] = []
+                hl7content[entry_value['name']].append( entry_value )
+            elif (entry_value['type'] == OFFICIAL_TYPE_NAME or entry_value['branch'] == MAIN_BRANCH_NAME):
+                if entry_value['name'] not in membercontent.keys():
+                    membercontent[entry_value['name']] = []
+                membercontent[entry_value['name']].append( entry_value )
+            else:
+                if(days < 120):
                     if entry_value['name'] not in workingcontent.keys():
                         workingcontent[entry_value['name']] = []
                     workingcontent[entry_value['name']].append( entry_value )
-                     
+                            
 content = content + build_table_html( hl7content )  + partnerContent + build_table_html( membercontent ) + branchContent + build_table_html( workingcontent, 'sa-datatable' ) + '<!-- @@end-include -->'
 
 with open('./index.html','r',encoding="utf8") as inputfile:
@@ -145,3 +145,4 @@ with open('./index.html','r',encoding="utf8") as inputfile:
         index_html.write( c_out )
         index_html.close()
 
+ 
