@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "LINCAIG"] ; # 
   fhir:title [ fhir:v "Linked Care Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-05-31T12:18:15+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-06-19T10:35:41+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "technikum-wien-treml"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "technikum-wien-treml" ] ;
@@ -282,18 +282,6 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/LINCAMedicationDispense> ;
-         fhir:reference [ fhir:v "StructureDefinition/LINCAMedicationDispense" ]
-       ] ;
-       fhir:name [ fhir:v "Linked Care Dispense Profile" ] ;
-       fhir:description [ fhir:v "Linkded Care Dispense Profile" ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
          fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/LINCAOrderActivity> ;
          fhir:reference [ fhir:v "StructureDefinition/LINCAOrderActivity" ]
        ] ;
@@ -305,11 +293,23 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request> ;
-         fhir:reference [ fhir:v "StructureDefinition/lincaorder-medication-request" ]
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-task> ;
+         fhir:reference [ fhir:v "StructureDefinition/linca-order-task" ]
        ] ;
-       fhir:name [ fhir:v "Order Medication Request" ] ;
-       fhir:description [ fhir:v "FHIR Base Profile for Medication Data when ordering in LICA system" ] ;
+       fhir:name [ fhir:v "LINCAOrderTask" ] ;
+       fhir:description [ fhir:v "Task to seek fullfilment of a LINCAOrderMedicationRequest" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/LincaPatient> ;
+         fhir:reference [ fhir:v "StructureDefinition/LincaPatient" ]
+       ] ;
+       fhir:name [ fhir:v "LincaPatient" ] ;
+       fhir:description [ fhir:v "An example profile of the Patient resource." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -328,11 +328,40 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/licaprescription-medication-request> ;
-         fhir:reference [ fhir:v "StructureDefinition/licaprescription-medication-request" ]
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/LINCAMedicationDispense> ;
+         fhir:reference [ fhir:v "StructureDefinition/LINCAMedicationDispense" ]
        ] ;
-       fhir:name [ fhir:v "Prescription Medication Request" ] ;
-       fhir:description [ fhir:v "FHIR Base Profile for Medication Data after practicioner filled order in LICA system" ] ;
+       fhir:name [ fhir:v "Linked Care Dispense Profile" ] ;
+       fhir:description [ fhir:v "Linkded Care Dispense Profile" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/MedicationRequest/medrx0302> ;
+         fhir:reference [ fhir:v "MedicationRequest/medrx0302" ]
+       ] ;
+       fhir:name [ fhir:v "medrx0302" ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request>
+       ] [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request> ;
+         fhir:reference [ fhir:v "StructureDefinition/lincaorder-medication-request" ]
+       ] ;
+       fhir:name [ fhir:v "Order Medication Request" ] ;
+       fhir:description [ fhir:v "FHIR Base Profile for Medication Data when ordering in LICA system" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -352,11 +381,11 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/LincaPatient> ;
-         fhir:reference [ fhir:v "StructureDefinition/LincaPatient" ]
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/licaprescription-medication-request> ;
+         fhir:reference [ fhir:v "StructureDefinition/licaprescription-medication-request" ]
        ] ;
-       fhir:name [ fhir:v "LincaPatient" ] ;
-       fhir:description [ fhir:v "An example profile of the Patient resource." ] ;
+       fhir:name [ fhir:v "Prescription Medication Request" ] ;
+       fhir:description [ fhir:v "FHIR Base Profile for Medication Data after practicioner filled order in LICA system" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] ) ;
      fhir:page [

@@ -10,7 +10,7 @@
   "name" : "LINCAIG",
   "title" : "Linked Care Implementation Guide",
   "status" : "draft",
-  "date" : "2023-05-31T12:18:15+00:00",
+  "date" : "2023-06-19T10:35:41+00:00",
   "publisher" : "technikum-wien-treml",
   "contact" : [{
     "name" : "technikum-wien-treml",
@@ -318,18 +318,6 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/LINCAMedicationDispense"
-      },
-      "name" : "Linked Care Dispense Profile",
-      "description" : "Linkded Care Dispense Profile",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
         "reference" : "StructureDefinition/LINCAOrderActivity"
       },
       "name" : "LINCAOrderActivity",
@@ -341,10 +329,22 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/lincaorder-medication-request"
+        "reference" : "StructureDefinition/linca-order-task"
       },
-      "name" : "Order Medication Request",
-      "description" : "FHIR Base Profile for Medication Data when ordering in LICA system",
+      "name" : "LINCAOrderTask",
+      "description" : "Task to seek fullfilment of a LINCAOrderMedicationRequest",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LincaPatient"
+      },
+      "name" : "LincaPatient",
+      "description" : "An example profile of the Patient resource.",
       "isExample" : false
     },
     {
@@ -364,10 +364,34 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/licaprescription-medication-request"
+        "reference" : "StructureDefinition/LINCAMedicationDispense"
       },
-      "name" : "Prescription Medication Request",
-      "description" : "FHIR Base Profile for Medication Data after practicioner filled order in LICA system",
+      "name" : "Linked Care Dispense Profile",
+      "description" : "Linkded Care Dispense Profile",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/medrx0302"
+      },
+      "name" : "medrx0302",
+      "profile" : ["http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request",
+      "http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/lincaorder-medication-request"
+      },
+      "name" : "Order Medication Request",
+      "description" : "FHIR Base Profile for Medication Data when ordering in LICA system",
       "isExample" : false
     },
     {
@@ -388,10 +412,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/LincaPatient"
+        "reference" : "StructureDefinition/licaprescription-medication-request"
       },
-      "name" : "LincaPatient",
-      "description" : "An example profile of the Patient resource.",
+      "name" : "Prescription Medication Request",
+      "description" : "FHIR Base Profile for Medication Data after practicioner filled order in LICA system",
       "isExample" : false
     }],
     "page" : {

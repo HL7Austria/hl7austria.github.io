@@ -11,7 +11,7 @@
   <name value="LINCAIG"/>
   <title value="Linked Care Implementation Guide"/>
   <status value="draft"/>
-  <date value="2023-05-31T12:18:15+00:00"/>
+  <date value="2023-06-19T10:35:41+00:00"/>
   <publisher value="technikum-wien-treml"/>
   <contact>
     <name value="technikum-wien-treml"/>
@@ -241,17 +241,6 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/LINCAMedicationDispense"/>
-      </reference>
-      <name value="Linked Care Dispense Profile"/>
-      <description value="Linkded Care Dispense Profile"/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
         <reference value="StructureDefinition/LINCAOrderActivity"/>
       </reference>
       <name value="LINCAOrderActivity"/>
@@ -262,10 +251,21 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/lincaorder-medication-request"/>
+        <reference value="StructureDefinition/linca-order-task"/>
       </reference>
-      <name value="Order Medication Request"/>
-      <description value="FHIR Base Profile for Medication Data when ordering in LICA system"/>
+      <name value="LINCAOrderTask"/>
+      <description value="Task to seek fullfilment of a LINCAOrderMedicationRequest"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/LincaPatient"/>
+      </reference>
+      <name value="LincaPatient"/>
+      <description value="An example profile of the Patient resource."/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -283,10 +283,32 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/licaprescription-medication-request"/>
+        <reference value="StructureDefinition/LINCAMedicationDispense"/>
       </reference>
-      <name value="Prescription Medication Request"/>
-      <description value="FHIR Base Profile for Medication Data after practicioner filled order in LICA system"/>
+      <name value="Linked Care Dispense Profile"/>
+      <description value="Linkded Care Dispense Profile"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/medrx0302"/>
+      </reference>
+      <name value="medrx0302"/>
+      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request"/>
+      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/lincaorder-medication-request"/>
+      </reference>
+      <name value="Order Medication Request"/>
+      <description value="FHIR Base Profile for Medication Data when ordering in LICA system"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -305,10 +327,10 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/LincaPatient"/>
+        <reference value="StructureDefinition/licaprescription-medication-request"/>
       </reference>
-      <name value="LincaPatient"/>
-      <description value="An example profile of the Patient resource."/>
+      <name value="Prescription Medication Request"/>
+      <description value="FHIR Base Profile for Medication Data after practicioner filled order in LICA system"/>
       <isExample value="false"/>
     </resource>
     <page>

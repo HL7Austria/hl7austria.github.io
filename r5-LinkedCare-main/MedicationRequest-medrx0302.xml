@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MedicationRequest xmlns="http://hl7.org/fhir">
+  <id value="medrx0302"/>
+  <meta>
+    <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: MedicationRequest</b><a name="medrx0302"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource MedicationRequest &quot;medrx0302&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-lincaorder-medication-request.html">Order Medication Request</a></p></div><p><b>identifier</b>: id: 12345689 (use: OFFICIAL)</p><p><b>status</b>: active</p><p><b>intent</b>: order</p><h3>Medications</h3><table class="grid"><tr><td>-</td><td><b>Reference</b></td></tr><tr><td>*</td><td><a name="med0320"> </a><blockquote><p/><p><a name="med0320"> </a></p><p><b>code</b>: Azithromycin 250mg capsule (product) <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#324252006)</span></p></blockquote></td></tr></table><p><b>subject</b>: <a href="Patient/pat1">Patient/pat1: Max Mustermensch</a></p><p><b>informationSource</b>: <a href="CareTeam/SP1234">CareTeam/SP1234</a></p><p><b>note</b>: Pharmacy Logisitic Label</p><hr/><blockquote><p><b>Generated Narrative: Medication #med0320</b><a name="med0320"> </a></p><p><b>code</b>: Azithromycin 250mg capsule (product) <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#324252006)</span></p></blockquote></div>
+  </text>
+  <contained>
+    <Medication>
+      <id value="med0320"/>
+      <code>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="324252006"/>
+          <display value="Azithromycin 250mg capsule (product)"/>
+        </coding>
+      </code>
+    </Medication>
+  </contained>
+  <identifier>
+    <use value="official"/>
+    <system value="http://www.bmc.nl/portal/prescriptions"/>
+    <value value="12345689"/>
+  </identifier>
+  <status value="active"/>
+  <intent value="order"/>
+  <medication>
+    <reference>
+      <reference value="#med0320"/>
+    </reference>
+  </medication>
+  <subject>
+    <reference value="Patient/pat1"/>
+    <display value="Max Mustermensch"/>
+  </subject>
+  <informationSource>
+    <reference value="CareTeam/SP1234"/>
+  </informationSource>
+  <note>
+    <text value="Pharmacy Logisitic Label"/>
+  </note>
+</MedicationRequest>
