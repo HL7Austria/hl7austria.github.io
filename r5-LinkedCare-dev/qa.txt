@@ -1,35 +1,39 @@
 ﻿LINCAIG : Validation Results
 =========================================
 
-err = 3, warn = 15, info = 1
-IG Publisher Version: 1.3.16
-Generated Mon Jun 19 09:15:31 UTC 2023. FHIR version 5.0.0 for linkedcare.hl7.at#0.1.0 (canonical = http://fhir.hl7.at/linkedcare)
+err = 2, warn = 21, info = 4
+IG Publisher Version: 1.3.17
+Generated Wed Jun 21 13:26:15 UTC 2023. FHIR version 5.0.0 for linkedcare.hl7.at#0.1.0 (canonical = http://fhir.hl7.at/linkedcare)
  Build Errors : 2 / 6 / 0
  /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/ImplementationGuide-linkedcare.hl7.at : 0 / 0 / 1
- /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/MedicationRequest-medrx0302 : 3 / 0 / 2
+ /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/MedicationRequest-ExampleRequest2010 : 2 / 2 / 5
  /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/StructureDefinition-LINCAMedicationDispense : 0 / 1 / 2
  /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/StructureDefinition-LINCAOrderActivity : 0 / 1 / 1
  /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/StructureDefinition-LINCAPlanDefinition : 0 / 3 / 1
  /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/StructureDefinition-LincaPatient : 0 / 1 / 1
  /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/StructureDefinition-licaprescription-medication-request : 0 / 1 / 1
+ /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/StructureDefinition-linca-medication : 0 / 4 / 2
  /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/StructureDefinition-linca-order-task : 0 / 1 / 1
  /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/StructureDefinition-lincaorder-medication-request : 0 / 0 / 1
  /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/StructureDefinition-lincaorder-order-request : 0 / 1 / 1
 </table>
 == n/a ==
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource MedicationRequest/ExampleRequest2010.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource StructureDefinition/LINCAOrderActivity.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource StructureDefinition/LINCAPlanDefinition.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
-WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource MedicationRequest/medrx0302.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
-ERROR: /home/runner/work/LinkedCare/LinkedCare/output/MedicationRequest-medrx0302.html#/html/body/div/div/div/div/div/div/p/a at Line 179, column 1050: The link 'Patient/pat1' for "Patient/pat1: Max Mustermensch" cannot be resolved
-ERROR: /home/runner/work/LinkedCare/LinkedCare/output/MedicationRequest-medrx0302.html#/html/body/div/div/div/div/div/div/p/a at Line 179, column 1140: The link 'CareTeam/SP1234' for "CareTeam/SP1234" cannot be resolved
+ERROR: /home/runner/work/LinkedCare/LinkedCare/output/MedicationRequest-ExampleRequest2010.html#/html/body/div/div/div/div/div/div/p/a at Line 179, column 1227: The link 'Patient/pat1' for "Patient/pat1: Max Mustermensch" cannot be resolved
+ERROR: /home/runner/work/LinkedCare/LinkedCare/output/MedicationRequest-ExampleRequest2010.html#/html/body/div/div/div/div/div/div/p/a at Line 179, column 1317: The link 'CareTeam/SP1234' for "CareTeam/SP1234" cannot be resolved
 WARNING: 1: The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide
 WARNING: 3: An HTML fragment from the set [dependency-table.xhtml, dependency-table-short.xhtml] is not included anywhere in the produced implementation guide
 WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
 == fsh-generated/resources/ImplementationGuide-linkedcare.hl7.at.json ==
-== fsh-generated/resources/MedicationRequest-medrx0302.json ==
-ERROR: MedicationRequest/medrx0302: MedicationRequest.contained[0]/*Medication/med0320*/.code.coding[0]: Wrong Display Name 'Azithromycin 250mg capsule (product)' for http://snomed.info/sct#324252006 - should be one of 2 choices: 'Azithromycin (as azithromycin dihydrate) 250 mg oral capsule, "Product containing precisely azithromycin (as azithromycin dihydrate) 250 milligram/1 each conventional release oral capsule (clinical drug)"' for the language(s) '--' (from Tx-Server) for 'http://snomed.info/sct#324252006'
-ERROR: MedicationRequest/medrx0302: MedicationRequest.subject: Unable to resolve resource with reference 'Patient/pat1'
-ERROR: MedicationRequest/medrx0302: MedicationRequest.informationSource[0]: Unable to resolve resource with reference 'CareTeam/SP1234'
+== fsh-generated/resources/MedicationRequest-ExampleRequest2010.json ==
+INFORMATION: MedicationRequest/ExampleRequest2010: MedicationRequest.contained[0]/*Medication/ExampleMedication*/.code.coding[0]: Code System URI 'https://termgit.elga.gv.at/CodeSystem-asp-liste.html' is unknown so the code cannot be validated
+INFORMATION: MedicationRequest/ExampleRequest2010: MedicationRequest.contained[0]/*Medication/ExampleMedication*/.doseForm.coding[0]: Code System URI 'https://termgit.elga.gv.at/ValueSet-elga-medikationdarreichungsform.html' is unknown so the code cannot be validated
+WARNING: MedicationRequest/ExampleRequest2010: MedicationRequest.contained[0]/*Medication/ExampleMedication*/.code: ValueSet https://termgit.elga.gv.at/CodeSystem-asp-liste.html not found by validator
+WARNING: MedicationRequest/ExampleRequest2010: MedicationRequest.contained[0]/*Medication/ExampleMedication*/.doseForm: ValueSet https://termgit.elga.gv.at/ValueSet-elga-medikationdarreichungsform.html not found by validator
+ERROR: MedicationRequest/ExampleRequest2010: MedicationRequest.subject: Unable to resolve resource with reference 'Patient/pat1'
+ERROR: MedicationRequest/ExampleRequest2010: MedicationRequest.informationSource[0]: Unable to resolve resource with reference 'CareTeam/SP1234'
 == fsh-generated/resources/StructureDefinition-LINCAMedicationDispense.json ==
 INFORMATION: StructureDefinition/LINCAMedicationDispense: StructureDefinition.snapshot.element[30].mapping[0].map: The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
 WARNING: StructureDefinition.where(url = 'http://fhir.hl7.at/linkedcare/StructureDefinition/LINCAMedicationDispense'): The Implementation Guide contains no examples for this profile
@@ -43,6 +47,12 @@ WARNING: StructureDefinition.where(url = 'http://fhir.hl7.at/linkedcare/Structur
 WARNING: StructureDefinition.where(url = 'http://fhir.hl7.at/linkedcare/StructureDefinition/LincaPatient'): The Implementation Guide contains no examples for this profile
 == fsh-generated/resources/StructureDefinition-licaprescription-medication-request.json ==
 WARNING: StructureDefinition.where(url = 'http://fhir.hl7.at/linkedcare/StructureDefinition/licaprescription-medication-request'): The Implementation Guide contains no examples for this profile
+== fsh-generated/resources/StructureDefinition-linca-medication.json ==
+WARNING: StructureDefinition/linca-medication: StructureDefinition.differential.element[1].binding: The valueSet reference https://termgit.elga.gv.at/CodeSystem-asp-liste.html on element Medication.code could not be resolved
+WARNING: StructureDefinition/linca-medication: StructureDefinition.differential.element[2].binding: The valueSet reference https://termgit.elga.gv.at/ValueSet-elga-medikationdarreichungsform.html on element Medication.doseForm could not be resolved
+WARNING: StructureDefinition/linca-medication: StructureDefinition.snapshot.element[10].binding: The valueSet reference https://termgit.elga.gv.at/CodeSystem-asp-liste.html on element Medication.code could not be resolved
+WARNING: StructureDefinition/linca-medication: StructureDefinition.snapshot.element[13].binding: The valueSet reference https://termgit.elga.gv.at/ValueSet-elga-medikationdarreichungsform.html on element Medication.doseForm could not be resolved
+INFORMATION: StructureDefinition.where(url = 'http://fhir.hl7.at/linkedcare/StructureDefinition/linca-medication'): The Implementation Guide contains no explicitly linked examples for this profile
 == fsh-generated/resources/StructureDefinition-linca-order-task.json ==
 WARNING: StructureDefinition.where(url = 'http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-task'): The Implementation Guide contains no examples for this profile
 == fsh-generated/resources/StructureDefinition-lincaorder-medication-request.json ==

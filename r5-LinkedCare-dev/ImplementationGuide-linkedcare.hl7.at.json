@@ -10,7 +10,7 @@
   "name" : "LINCAIG",
   "title" : "Linked Care Implementation Guide",
   "status" : "draft",
-  "date" : "2023-06-19T09:14:41+00:00",
+  "date" : "2023-06-21T13:25:12+00:00",
   "publisher" : "technikum-wien-treml",
   "contact" : [{
     "name" : "technikum-wien-treml",
@@ -318,6 +318,30 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/linca-medication"
+      },
+      "name" : "ELGA complient Medication",
+      "description" : "Profile restricting the medication code and doseForm to ELGA defined Sets",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/ExampleRequest2010"
+      },
+      "name" : "Example single medication",
+      "profile" : ["http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request",
+      "http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/LINCAOrderActivity"
       },
       "name" : "LINCAOrderActivity",
@@ -369,18 +393,6 @@
       "name" : "Linked Care Dispense Profile",
       "description" : "Linkded Care Dispense Profile",
       "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/medrx0302"
-      },
-      "name" : "medrx0302",
-      "profile" : ["http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request",
-      "http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request"]
     },
     {
       "extension" : [{

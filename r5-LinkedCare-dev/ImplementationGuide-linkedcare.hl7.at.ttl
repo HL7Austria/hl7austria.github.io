@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "LINCAIG"] ; # 
   fhir:title [ fhir:v "Linked Care Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-06-19T09:14:41+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-06-21T13:25:12+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "technikum-wien-treml"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "technikum-wien-treml" ] ;
@@ -282,6 +282,35 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-medication> ;
+         fhir:reference [ fhir:v "StructureDefinition/linca-medication" ]
+       ] ;
+       fhir:name [ fhir:v "ELGA complient Medication" ] ;
+       fhir:description [ fhir:v "Profile restricting the medication code and doseForm to ELGA defined Sets" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/MedicationRequest/ExampleRequest2010> ;
+         fhir:reference [ fhir:v "MedicationRequest/ExampleRequest2010" ]
+       ] ;
+       fhir:name [ fhir:v "Example single medication" ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request>
+       ] [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/LINCAOrderActivity> ;
          fhir:reference [ fhir:v "StructureDefinition/LINCAOrderActivity" ]
        ] ;
@@ -334,23 +363,6 @@
        fhir:name [ fhir:v "Linked Care Dispense Profile" ] ;
        fhir:description [ fhir:v "Linkded Care Dispense Profile" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "MedicationRequest" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://fhir.hl7.at/linkedcare/MedicationRequest/medrx0302> ;
-         fhir:reference [ fhir:v "MedicationRequest/medrx0302" ]
-       ] ;
-       fhir:name [ fhir:v "medrx0302" ] ;
-       fhir:profile ( [
-         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request"^^xsd:anyURI ;
-         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request>
-       ] [
-         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request"^^xsd:anyURI ;
-         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request>
-       ] )
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
