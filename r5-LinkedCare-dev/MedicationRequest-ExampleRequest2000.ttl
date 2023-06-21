@@ -1,0 +1,103 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.hl7.at/linkedcare/MedicationRequest/ExampleRequest2000> a fhir:MedicationRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ExampleRequest2000"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request"^^xsd:anyURI ;
+       fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: MedicationRequest</b><a name=\"ExampleRequest2000\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource MedicationRequest &quot;ExampleRequest2000&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-lincaorder-medication-request.html\">Order Medication Request</a></p></div><p><b>identifier</b>: id: 12345689 (use: OFFICIAL)</p><p><b>status</b>: active</p><p><b>intent</b>: order</p><h3>Medications</h3><table class=\"grid\"><tr><td>-</td><td><b>Reference</b></td></tr><tr><td>*</td><td><a name=\"ExampleMedication\"> </a><blockquote><p/><p><a name=\"ExampleMedication\"> </a></p><p><b>code</b>: CIPROXIN FTBL 500MG <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (CodeSystem-asp-liste.html#981417)</span></p><p><b>doseForm</b>: Filmtablette <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (ValueSet-elga-medikationdarreichungsform.html#100000073665)</span></p></blockquote></td></tr></table><p><b>subject</b>: <a href=\"Patient/pat1\">Patient/pat1: Max Mustermensch</a></p><p><b>informationSource</b>: <a href=\"CareTeam/SP1234\">CareTeam/SP1234</a></p><p><b>note</b>: Pharmacy Logisitic Label</p><blockquote><p><b>dosageInstruction</b></p><p><b>sequence</b>: 1</p><p><b>text</b>: Take 2 pills daily</p><p><b>timing</b>: Once per 1 days</p><blockquote><p><b>doseAndRate</b></p></blockquote></blockquote><hr/><blockquote><p><b>Generated Narrative: Medication #ExampleMedication</b><a name=\"ExampleMedication\"> </a></p><p><b>code</b>: CIPROXIN FTBL 500MG <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (CodeSystem-asp-liste.html#981417)</span></p><p><b>doseForm</b>: Filmtablette <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (ValueSet-elga-medikationdarreichungsform.html#100000073665)</span></p></blockquote></div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Medication ;
+     fhir:id [ fhir:v "ExampleMedication" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-medication"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-medication>
+       ] )
+     ] ;
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://termgit.elga.gv.at/CodeSystem-asp-liste.html"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "981417" ] ;
+         fhir:display [ fhir:v "CIPROXIN FTBL 500MG" ]
+       ] )
+     ] ;
+     fhir:doseForm [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://termgit.elga.gv.at/ValueSet-elga-medikationdarreichungsform.html"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "100000073665" ] ;
+         fhir:display [ fhir:v "Filmtablette" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:system [ fhir:v "http://www.bmc.nl/portal/prescriptions"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "12345689" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:medication [
+     fhir:reference [
+       fhir:reference [ fhir:v "#ExampleMedication" ]
+     ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <http://fhir.hl7.at/linkedcare/Patient/pat1> ;
+     fhir:reference [ fhir:v "Patient/pat1" ] ;
+     fhir:display [ fhir:v "Max Mustermensch" ]
+  ] ; # 
+  fhir:informationSource ( [
+     fhir:link <http://fhir.hl7.at/linkedcare/CareTeam/SP1234> ;
+     fhir:reference [ fhir:v "CareTeam/SP1234" ]
+  ] ) ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "Pharmacy Logisitic Label" ]
+  ] ) ; # 
+  fhir:dosageInstruction ( [
+     fhir:sequence [ fhir:v "1"^^xsd:integer ] ;
+     fhir:text [ fhir:v "Take 2 pills daily" ] ;
+     fhir:timing [
+       fhir:repeat [
+         fhir:bounds [
+           a fhir:Duration ;
+           fhir:value [ fhir:v "14"^^xsd:decimal ] ;
+           fhir:code [ fhir:v "d" ]
+         ] ;
+         fhir:frequency [ fhir:v "1"^^xsd:positiveInteger ] ;
+         fhir:period [ fhir:v "1"^^xsd:decimal ] ;
+         fhir:periodUnit [ fhir:v "d" ]
+       ]
+     ] ;
+     fhir:doseAndRate ( [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/dose-rate-type"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "ordered" ] ;
+           fhir:display [ fhir:v "Ordered" ]
+         ] )
+       ] ;
+       fhir:dose [
+         a fhir:Quantity ;
+         fhir:value [ fhir:v "2"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "TAB" ] ;
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "TAB" ]
+       ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

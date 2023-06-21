@@ -1,11 +1,13 @@
 ﻿LINCAIG : Validation Results
 =========================================
 
-err = 2, warn = 21, info = 4
+err = 10, warn = 27, info = 8
 IG Publisher Version: 1.3.17
-Generated Wed Jun 21 13:26:15 UTC 2023. FHIR version 5.0.0 for linkedcare.hl7.at#0.1.0 (canonical = http://fhir.hl7.at/linkedcare)
- Build Errors : 2 / 6 / 0
+Generated Wed Jun 21 13:55:17 UTC 2023. FHIR version 5.0.0 for linkedcare.hl7.at#0.1.0 (canonical = http://fhir.hl7.at/linkedcare)
+ Build Errors : 6 / 8 / 0
  /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/ImplementationGuide-linkedcare.hl7.at : 0 / 0 / 1
+ /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/MedicationRequest-ExampleRequest2000 : 4 / 2 / 5
+ /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/MedicationRequest-ExampleRequest2000Monday : 4 / 2 / 5
  /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/MedicationRequest-ExampleRequest2010 : 2 / 2 / 5
  /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/StructureDefinition-LINCAMedicationDispense : 0 / 1 / 2
  /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/StructureDefinition-LINCAOrderActivity : 0 / 1 / 1
@@ -18,15 +20,39 @@ Generated Wed Jun 21 13:26:15 UTC 2023. FHIR version 5.0.0 for linkedcare.hl7.at
  /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/StructureDefinition-lincaorder-order-request : 0 / 1 / 1
 </table>
 == n/a ==
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource MedicationRequest/ExampleRequest2000.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource MedicationRequest/ExampleRequest2010.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource MedicationRequest/ExampleRequest2000Monday.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource StructureDefinition/LINCAOrderActivity.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource StructureDefinition/LINCAPlanDefinition.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+ERROR: /home/runner/work/LinkedCare/LinkedCare/output/MedicationRequest-ExampleRequest2000.html#/html/body/div/div/div/div/div/div/p/a at Line 179, column 1227: The link 'Patient/pat1' for "Patient/pat1: Max Mustermensch" cannot be resolved
+ERROR: /home/runner/work/LinkedCare/LinkedCare/output/MedicationRequest-ExampleRequest2000.html#/html/body/div/div/div/div/div/div/p/a at Line 179, column 1317: The link 'CareTeam/SP1234' for "CareTeam/SP1234" cannot be resolved
+ERROR: /home/runner/work/LinkedCare/LinkedCare/output/MedicationRequest-ExampleRequest2000Monday.html#/html/body/div/div/div/div/div/div/p/a at Line 179, column 1239: The link 'Patient/pat1' for "Patient/pat1: Max Mustermensch" cannot be resolved
+ERROR: /home/runner/work/LinkedCare/LinkedCare/output/MedicationRequest-ExampleRequest2000Monday.html#/html/body/div/div/div/div/div/div/p/a at Line 179, column 1329: The link 'CareTeam/SP1234' for "CareTeam/SP1234" cannot be resolved
 ERROR: /home/runner/work/LinkedCare/LinkedCare/output/MedicationRequest-ExampleRequest2010.html#/html/body/div/div/div/div/div/div/p/a at Line 179, column 1227: The link 'Patient/pat1' for "Patient/pat1: Max Mustermensch" cannot be resolved
 ERROR: /home/runner/work/LinkedCare/LinkedCare/output/MedicationRequest-ExampleRequest2010.html#/html/body/div/div/div/div/div/div/p/a at Line 179, column 1317: The link 'CareTeam/SP1234' for "CareTeam/SP1234" cannot be resolved
 WARNING: 1: The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide
 WARNING: 3: An HTML fragment from the set [dependency-table.xhtml, dependency-table-short.xhtml] is not included anywhere in the produced implementation guide
 WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
 == fsh-generated/resources/ImplementationGuide-linkedcare.hl7.at.json ==
+== fsh-generated/resources/MedicationRequest-ExampleRequest2000.json ==
+INFORMATION: MedicationRequest/ExampleRequest2000: MedicationRequest.contained[0]/*Medication/ExampleMedication*/.code.coding[0]: Code System URI 'https://termgit.elga.gv.at/CodeSystem-asp-liste.html' is unknown so the code cannot be validated
+INFORMATION: MedicationRequest/ExampleRequest2000: MedicationRequest.contained[0]/*Medication/ExampleMedication*/.doseForm.coding[0]: Code System URI 'https://termgit.elga.gv.at/ValueSet-elga-medikationdarreichungsform.html' is unknown so the code cannot be validated
+WARNING: MedicationRequest/ExampleRequest2000: MedicationRequest.contained[0]/*Medication/ExampleMedication*/.code: ValueSet https://termgit.elga.gv.at/CodeSystem-asp-liste.html not found by validator
+WARNING: MedicationRequest/ExampleRequest2000: MedicationRequest.contained[0]/*Medication/ExampleMedication*/.doseForm: ValueSet https://termgit.elga.gv.at/ValueSet-elga-medikationdarreichungsform.html not found by validator
+ERROR: MedicationRequest/ExampleRequest2000: MedicationRequest.subject: Unable to resolve resource with reference 'Patient/pat1'
+ERROR: MedicationRequest/ExampleRequest2000: MedicationRequest.informationSource[0]: Unable to resolve resource with reference 'CareTeam/SP1234'
+ERROR: MedicationRequest/ExampleRequest2000: MedicationRequest.dosageInstruction[0].timing.repeat.bounds.ofType(Duration): Rule drt-1: 'There SHALL be a code if there is a value and it SHALL be an expression of time.  If system is present, it SHALL be UCUM.' Failed
+ERROR: MedicationRequest/ExampleRequest2000: MedicationRequest.dosageInstruction[0].timing.repeat.bounds.ofType(Duration): Rule qty-3: 'If a code for the unit is present, the system SHALL also be present' Failed
+== fsh-generated/resources/MedicationRequest-ExampleRequest2000Monday.json ==
+INFORMATION: MedicationRequest/ExampleRequest2000Monday: MedicationRequest.contained[0]/*Medication/ExampleMedication*/.code.coding[0]: Code System URI 'https://termgit.elga.gv.at/CodeSystem-asp-liste.html' is unknown so the code cannot be validated
+INFORMATION: MedicationRequest/ExampleRequest2000Monday: MedicationRequest.contained[0]/*Medication/ExampleMedication*/.doseForm.coding[0]: Code System URI 'https://termgit.elga.gv.at/ValueSet-elga-medikationdarreichungsform.html' is unknown so the code cannot be validated
+WARNING: MedicationRequest/ExampleRequest2000Monday: MedicationRequest.contained[0]/*Medication/ExampleMedication*/.code: ValueSet https://termgit.elga.gv.at/CodeSystem-asp-liste.html not found by validator
+WARNING: MedicationRequest/ExampleRequest2000Monday: MedicationRequest.contained[0]/*Medication/ExampleMedication*/.doseForm: ValueSet https://termgit.elga.gv.at/ValueSet-elga-medikationdarreichungsform.html not found by validator
+ERROR: MedicationRequest/ExampleRequest2000Monday: MedicationRequest.subject: Unable to resolve resource with reference 'Patient/pat1'
+ERROR: MedicationRequest/ExampleRequest2000Monday: MedicationRequest.informationSource[0]: Unable to resolve resource with reference 'CareTeam/SP1234'
+ERROR: MedicationRequest/ExampleRequest2000Monday: MedicationRequest.dosageInstruction[0].timing.repeat.bounds.ofType(Duration): Rule drt-1: 'There SHALL be a code if there is a value and it SHALL be an expression of time.  If system is present, it SHALL be UCUM.' Failed
+ERROR: MedicationRequest/ExampleRequest2000Monday: MedicationRequest.dosageInstruction[0].timing.repeat.bounds.ofType(Duration): Rule qty-3: 'If a code for the unit is present, the system SHALL also be present' Failed
 == fsh-generated/resources/MedicationRequest-ExampleRequest2010.json ==
 INFORMATION: MedicationRequest/ExampleRequest2010: MedicationRequest.contained[0]/*Medication/ExampleMedication*/.code.coding[0]: Code System URI 'https://termgit.elga.gv.at/CodeSystem-asp-liste.html' is unknown so the code cannot be validated
 INFORMATION: MedicationRequest/ExampleRequest2010: MedicationRequest.contained[0]/*Medication/ExampleMedication*/.doseForm.coding[0]: Code System URI 'https://termgit.elga.gv.at/ValueSet-elga-medikationdarreichungsform.html' is unknown so the code cannot be validated
