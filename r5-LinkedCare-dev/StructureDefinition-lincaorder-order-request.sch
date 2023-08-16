@@ -12,6 +12,7 @@
   <sch:pattern>
     <sch:title>f:RequestOrchestration</sch:title>
     <sch:rule context="f:RequestOrchestration">
+      <sch:assert test="count(f:contained) &gt;= 1">contained: minimum cardinality of 'contained' is 1</sch:assert>
       <sch:assert test="count(f:subject) &gt;= 1">subject: minimum cardinality of 'subject' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
