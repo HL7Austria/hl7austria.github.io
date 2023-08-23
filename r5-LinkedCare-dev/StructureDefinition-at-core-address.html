@@ -207,7 +207,7 @@
         
           Draft
           
-            as of 2023-08-22
+            as of 2023-08-23
           
         
       </td>
@@ -398,6 +398,9 @@ The ISO21090-codedString may be used to provide a coded representation of the co
             <h4>Constraints</h4>
 <table class="list">
 <tr><td width="60"><b>Id</b></td><td><b>Grade</b></td><td><b>Path(s)</b></td><td><b>Details</b></td><td><b>Requirements</b></td></tr>
+<tr><td>at-addr-1</td><td>error</td><td>Address</td><td>If the extension for street name is used then the value for line must not be empty<br/>: line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName').empty() or $this.hasValue())</td><td></td></tr>
+<tr><td>at-addr-2</td><td>error</td><td>Address</td><td>If the extension for street number is used then the value for line must not be empty<br/>: line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber').empty() or $this.hasValue())</td><td></td></tr>
+<tr><td>at-addr-3</td><td>error</td><td>Address</td><td>If the extension for floor/door number is used then the value for line must not be empty<br/>: line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator').empty() or $this.hasValue())</td><td></td></tr>
 <tr><td>ele-1</td><td>error</td><td>**ALL** elements</td><td>All FHIR elements must have a @value or children<br/>: hasValue() or (children().count() &gt; id.count())</td><td></td></tr>
 <tr><td>ext-1</td><td>error</td><td>**ALL** extensions</td><td>Must have either extensions or value[x], not both<br/>: extension.exists() != value.exists()</td><td></td></tr>
 </table>
@@ -618,6 +621,9 @@ The ISO21090-codedString may be used to provide a coded representation of the co
             <h4>Constraints</h4>
 <table class="list">
 <tr><td width="60"><b>Id</b></td><td><b>Grade</b></td><td><b>Path(s)</b></td><td><b>Details</b></td><td><b>Requirements</b></td></tr>
+<tr><td>at-addr-1</td><td>error</td><td>Address</td><td>If the extension for street name is used then the value for line must not be empty<br/>: line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName').empty() or $this.hasValue())</td><td></td></tr>
+<tr><td>at-addr-2</td><td>error</td><td>Address</td><td>If the extension for street number is used then the value for line must not be empty<br/>: line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber').empty() or $this.hasValue())</td><td></td></tr>
+<tr><td>at-addr-3</td><td>error</td><td>Address</td><td>If the extension for floor/door number is used then the value for line must not be empty<br/>: line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator').empty() or $this.hasValue())</td><td></td></tr>
 <tr><td>ele-1</td><td>error</td><td>**ALL** elements</td><td>All FHIR elements must have a @value or children<br/>: hasValue() or (children().count() &gt; id.count())</td><td></td></tr>
 <tr><td>ext-1</td><td>error</td><td>**ALL** extensions</td><td>Must have either extensions or value[x], not both<br/>: extension.exists() != value.exists()</td><td></td></tr>
 </table>
@@ -772,7 +778,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.technikum-wien.at">technikum-wien-treml</a>.  Package linkedcare.hl7.at#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 5.0.0</a>. Generated <span title="Tue, Aug 22, 2023 11:05+0000">2023-08-22</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.technikum-wien.at">technikum-wien-treml</a>.  Package linkedcare.hl7.at#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 5.0.0</a>. Generated <span title="Wed, Aug 23, 2023 16:18+0000">2023-08-23</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -3,15 +3,14 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="linkedcare.hl7.at"/>
   <text>
-    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>LINCAIG</h2><p>The official URL for this implementation guide is: </p><pre>http://fhir.hl7.at/linkedcare/ImplementationGuide/linkedcare.hl7.at</pre><div><p>Implementation Guide for the Linked Care medication order process</p>
-</div></div>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">Placeholder</div>
   </text>
   <url value="http://fhir.hl7.at/linkedcare/ImplementationGuide/linkedcare.hl7.at"/>
   <version value="0.1.0"/>
   <name value="LINCAIG"/>
   <title value="Linked Care Implementation Guide"/>
   <status value="draft"/>
-  <date value="2023-08-22T11:05:59+00:00"/>
+  <date value="2023-08-23T16:18:46+00:00"/>
   <publisher value="technikum-wien-treml"/>
   <contact>
     <name value="technikum-wien-treml"/>
@@ -299,41 +298,18 @@
         <reference value="StructureDefinition/linca-medication"/>
       </reference>
       <name value="ELGA complient Medication"/>
-      <description value="Profile restricting the medication code and doseForm to ELGA defined Sets"/>
+      <description value="Profile restricbinding ting the medication code and doseForm to ELGA defined Sets"/>
       <isExample value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="MedicationRequest"/>
+        <valueString value="Practitioner"/>
       </extension>
       <reference>
-        <reference value="MedicationRequest/ExampleRequest2000"/>
+        <reference value="Practitioner/ExamplePractitioner-01"/>
       </reference>
-      <name value="Example Daily Dosage"/>
-      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request"/>
-      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="MedicationRequest"/>
-      </extension>
-      <reference>
-        <reference value="MedicationRequest/ExampleRequest2010"/>
-      </reference>
-      <name value="Example Dosage Splitting 2-0-1-0"/>
-      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request"/>
-      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="MedicationRequest"/>
-      </extension>
-      <reference>
-        <reference value="MedicationRequest/ExampleRequest2000Monday"/>
-      </reference>
-      <name value="Example One Dosage On Monday"/>
-      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request"/>
-      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request"/>
+      <name value="ExamplePractitioner-01"/>
+      <isExample value="true"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -373,10 +349,10 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/LINCAMedicationDispense"/>
+        <reference value="StructureDefinition/lincaorder-order-request"/>
       </reference>
-      <name value="Linked Care Dispense Profile"/>
-      <description value="Linkded Care Dispense Profile"/>
+      <name value="LINCA Order (LINCARequestOrchestration)"/>
+      <description value="The placer's software creates the RequestOrchestration when (re)ordering medication."/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -386,8 +362,8 @@
       <reference>
         <reference value="StructureDefinition/lincaorder-medication-request"/>
       </reference>
-      <name value="Order Medication Request"/>
-      <description value="FHIR Base Profile for Medication Data when ordering in LICA system"/>
+      <name value="LINCA Order Item (LINCAOrderMedicationRequest)"/>
+      <description value="Individual order items created by the Linked Care system according to the contained items in the order. Send to practicioner for authorization."/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -395,10 +371,10 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/lincaorder-order-request"/>
+        <reference value="StructureDefinition/LINCAMedicationDispense"/>
       </reference>
-      <name value="Order Request"/>
-      <description value="FHIR Base Profile for Medication List when ordering in LINCA system. Each medication is a contained resource without an ID. On the LICA Server the contained resources are transformed individual LINCAOrderMedicationRequests with an ID."/>
+      <name value="Linked Care Dispense Profile"/>
+      <description value="Linked Care Dispense Profile"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -414,14 +390,68 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/Patient-01"/>
+      </reference>
+      <name value="Patient-01"/>
+      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"/>
+      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/Patient-02"/>
+      </reference>
+      <name value="Patient-02"/>
+      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"/>
+      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/Patient-03"/>
+      </reference>
+      <name value="Patient-03"/>
+      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"/>
+      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/Patient-04"/>
+      </reference>
+      <name value="Patient-04"/>
+      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"/>
+      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
         <reference value="StructureDefinition/licaprescription-medication-request"/>
       </reference>
       <name value="Prescription Medication Request"/>
-      <description value="FHIR Base Profile for Medication Data after practicioner filled order in LICA system"/>
+      <description value="Prescription send by practicioner software. Is always based on order but might differ due to changes."/>
       <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="RequestOrchestration"/>
+      </extension>
+      <reference>
+        <reference value="RequestOrchestration/RequestOrchestrationExample"/>
+      </reference>
+      <name value="RequestOrchestrationExample"/>
+      <isExample value="true"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -433,6 +463,39 @@
       <name value="System OID"/>
       <description value="HL7® Austria FHIR® Core Extension for the capturing of OID in ValueSets to reference the CodeSystem they come from.&#xA;The extension is used to document the OID of the system of a code referenced in a ValueSet, to align FHIR with the HL7 Austria CDA document guidelines."/>
       <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationDispense"/>
+      </extension>
+      <reference>
+        <reference value="MedicationDispense/temp-dispense-ex"/>
+      </reference>
+      <name value="temp-dispense-ex"/>
+      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/LINCAMedicationDispense"/>
+      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/LINCAMedicationDispense"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/linca-order-item-007"/>
+      </reference>
+      <name value="temp-medreq-ex"/>
+      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request"/>
+      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/temp-presc-ex"/>
+      </reference>
+      <name value="temp-presc-ex"/>
+      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/licaprescription-medication-request"/>
+      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/licaprescription-medication-request"/>
     </resource>
     <page>
       <sourceUrl value="toc.html"/>
