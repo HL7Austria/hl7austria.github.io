@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>AISTPICA\Overview - FHIR® v5.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"2"}
+    h3,h4,h5,h6{--heading-prefix:"2"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img id="header-logo" src="picalogo.png"/>
+          </div>
+          <div class="col-11">
+        <!-- at-fhir-ig-template end -->
+            <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">AIST PICA Implementation Guide</span><br/>
+                <span class="label label-info">0.1.0 - STU1</span>
+              </p>
+            </div>
+        <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+        <!-- at-fhir-ig-template end -->
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R5/index.html">FHIR®</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">IG Home</a></li>
+  <li><a href="overview.html">Overview</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li><a href="artifacts.html">Artifacts Summary</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Other Resources<b class="caret"> </b></a>
+    <ul class="dropdown-menu">
+      <li><a target="_blank" href="http://hl7.org/fhir/R5/index.html">FHIR® Spec <img src="external.png" style="text-align: baseline"/></a></li>
+    </ul>
+  </li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Overview</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!-- at-fhir-ig-template begin -->
+  <div class="alert alert-warning" role="alert">
+    <!--ReleaseHeader--><p id="publish-box">AIST PICA Implementation Guide - Local Development build (v0.1.0). See the <a href="http://hl7.at/fhir/AISTPICA/R5/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  </div>
+  <!-- at-fhir-ig-template end -->
+  <h2>Overview</h2>
+  
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#architecture" id="markdown-toc-architecture">Architecture</a></li>
+  <li><a href="#fhir-r4-vs-r5" id="markdown-toc-fhir-r4-vs-r5">FHIR R4 vs. R5</a></li>
+  <li><a href="#process-mining-perspectives" id="markdown-toc-process-mining-perspectives">Process Mining Perspectives</a></li>
+</ul>
+
+</div>
+<p><strong>What is PICA?</strong></p>
+
+<p>PICA is an implementation guide that details how the <em>conformance</em> of processes conducted in a medical setting can be validated compared to an existing guideline or process description. It does so by providing guidance on how to do correct logging via the FHIR® AuditEvent resource. The IG also provides guidance on how to conduct performance auditing based on this log with tools from the process mining domain, and including this in existing software architectures.</p>
+
+<p><strong>What isn’t PICA?</strong></p>
+
+<p>PICA does <strong>not</strong> deal with mining processes, or enriching existing audit logs.</p>
+
+<h3 id="architecture">Architecture</h3>
+
+<p>PICA can be applied to any FHIR® based audit logging. It is aligned with concepts from the <a href="https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_RESTful-ATNA.pdf">IHE RESTful Audit Trail and Node Authentication (RATNA)</a> profile.</p>
+
+<p>To be applicable as an addition in existing infrastructures, it is recommended to implement PICA as an <em>Audit Record Repository</em>. An example for this, specific to the radiology domain, is outlined in <a href="https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_Suppl_SOLE.pdf">IHE Standardized Operational Log of Events (SOLE)</a> profile.</p>
+
+<div><img src="PICA.drawio.png" alt="PICA Architecture in relation to RATNA" /></div>
+
+<p>The PICA Project hosts a reference implementation of the <em>Audit Record Repository</em> on GitHub <a href="https://github.com/FHOOEAIST/pica-hapi-fhir-jpaserver-starter">FHOOE-AIST-PICA-Server</a>. This is a <a href="https://hapifhir.io/">HAPI</a> based FHIR® server, supporting all profiles, extensions, and FHIR® Operations this IG has to offer.</p>
+
+<h3 id="fhir-r4-vs-r5">FHIR R4 vs. R5</h3>
+
+<p>The PICA Implementation Guides for both FHIR versions are identical, however, since the standard has expanded in R5, several extensions are not necessary anymore. If you are browsing one of the two IG versions, the only difference between them is the Profiles and Extensions necessary to make this work. The remainder of the IG is identical.</p>
+
+<h3 id="process-mining-perspectives">Process Mining Perspectives</h3>
+
+<p>The following table shows the possible options PICA can be applied for conformance purposes. Based on the <strong>core</strong>, which is required at all times in a patient centric view, each view can be applied individually or joined with each other. These perspectives are based on the work <a href="https://pods4h.com/wp-content/uploads/2020/10/PODS4H_2020_paper_3.pdf">Process Mining on FHIR - An Open Standards-Based Process Analytics Approach for Healthcare</a></p>
+
+<p>ae references the AuditEvent resource in <a href="https://hl7.org/fhir/R4B/auditevent.html">FHIR R4B</a> or <a href="https://hl7.org/fhir/auditevent.html">FHIR R5</a> respectively.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Perspective</th>
+      <th>Description</th>
+      <th>Outcome</th>
+      <th>R4</th>
+      <th>R5</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>core</td>
+      <td>AuditEvent resources are created on server and refer to a Patient resource (see https://build.fhir.org/auditevent.html#patient)</td>
+      <td>We can mine process(es) for a specific patient</td>
+      <td>ae.entity.what &amp; ae.period</td>
+      <td>ae.patient &amp; ae.occuredDateTime</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>conformance (code)</td>
+      <td>Tasks that were conducted were documented with machine readable codes in the AuditEvents. The codes refer to a value-set defining a standardized log of operational events (e.g. http://radlex.org/RID/RID45812)</td>
+      <td>We can mine only relevant activities, and know what those activities are</td>
+      <td>Extension: PICACode</td>
+      <td>ae.code</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>patient-visit (encounter)</td>
+      <td>An Encounter resource is referenced by the AuditEvent. It refers to a patient visit grouping multiple AuditEvents (e.g. one interaction between patient and healthcare provider)</td>
+      <td>We can analyze the patient pathway during an encounter (e.g. hospital stay)</td>
+      <td>Extension: PICAEncounter</td>
+      <td>ae.encounter</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>care-pathway (based-on)</td>
+      <td>A pathway that was defined or recorded for the patient (CarePlan) was followed and documented in the AuditEvents.</td>
+      <td>We can analyze a specific process</td>
+      <td>Extension: PICABasedOn</td>
+      <td>ae.basedOn</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>actor (agents)</td>
+      <td>Agents that participated in process steps were identified in specific AuditEvents</td>
+      <td>We can mine the process from multiple perspectives (actors)</td>
+      <td>ae.agent.who</td>
+      <td>ae.agent.who</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="data-quality">Data Quality</h4>
+
+<p>Data quality is the principal requirement for any form of data science, especially conformance checking, as this can only be done with sufficient quality of the process documentation. The PICA profiles and extensions define how logging should occur, via different optional profiles, to achieve specific outcomes in conformance checking.</p>
+
+<p>The main goal of this implementation guide is to keep the profiles as simple as possible, thus only using one FHIR resource, to keep the effort minimal for organizations which wish to conduct a conformance check. What PICA does <strong>not</strong> do is deal with enriching existing audit logs. This is one of the core reasons why no resources that are referenced in the AuditEvent are considered for loading information for the conformance checking.</p>
+
+<p>The following considerations explain why the selected fields are required for the different process perspectives, and why other fields were not chosen. They may hint how one may enrich an existing audit log for conformance checking, but an enrichment is complex, and where the necessary information may be found in existing systems will vary highly in different software systems, or even across different processes.</p>
+
+<h4 id="which-perspectives-should-be-used-to-reconstruct-and-conformance-check-patient-processes">Which perspectives should be used to reconstruct and conformance check patient processes.</h4>
+
+<p>Simply: all of them, to get the best results. As minimal requirement to at least reconstruct a human readable process the <strong>core</strong> and <strong>conformance</strong> perspectives are needed, as they identify what (conformance) happened when (core) to which patient (core). The <strong>care-pathway</strong> resource allows you to check which events were recorded for a specific treatment plan, which is what is needed for conformance checking. The <strong>patient-visit</strong> allows viewing (one or more) treatments in the scope of one or more visits to a care provider, or alternatively allows to view how patients progress through their stay. Finally, <strong>actor</strong> can give an overview about who did what with the patient.</p>
+
+<h4 id="core-perspective">Core perspective</h4>
+
+<p>The PICA Core Profile is the minimum necessary perspective to reconstruct processes. It contains the two primary attributes:</p>
+<ul>
+  <li><strong>Patient</strong> - the person the process is about</li>
+  <li><strong>EventTime</strong> - when the event happened. If this is well documented in the audit event (ae.period, or ae.occuredDateTime) this information will be taken.</li>
+</ul>
+
+<h5 id="what-does-the-core-perspective-do">What does the core perspective do?</h5>
+
+<p>The core perspective alone, allows one to view all changes (create, update, delete) concerning information related to a patient. Without any other perspectives, this does not concern a specific disease, hospital stay, etc, but the entire patient history.</p>
+
+<p>It is also not clear what happened to the patient with the core perspective alone, because this is covered in the <em>conformance</em> perspective. In case you wish to simply reconstruct patient pathways without covering the other perspectives, you may wish to use ae.entity.what to show which resources were accessed, as this is the lowest common denominator.</p>
+
+<h5 id="considerations">Considerations</h5>
+
+<p>General:</p>
+<ul>
+  <li>We use AuditEvent and not Provenance as AuditEvents are required in the healthcare domain, whereas Provenance resources are optional and serve a specific context.</li>
+  <li>We do not use other FHIR Resources other than AuditEvents to keep the effort for implementers as small as possible.</li>
+</ul>
+
+<p>Considerations for Event Time:</p>
+<ul>
+  <li>ae.meta.lastUpdated could also be used, as this value is always set. However, this only captures when the server last conduced the write operation on the AuditEvent, and thus is <em>not used</em> as event time.</li>
+  <li>EventTime could also be considered via ae.recorded. This field only captures when the AuditEvent was recorded, but not when the underlying process occured, and thus is <em>not used</em> as event time.</li>
+  <li>EventTime could be tracked via the referenced based-on resources, for example Task.executionPeriod, however one Task can have multiple AuditEvents occuring, and a Task will also not always be available, as this would require FHIR based workflow management within the organization.</li>
+</ul>
+
+<h4 id="conformance-perspective">Conformance perspective</h4>
+
+<p>Core perspective to enable conformance checking. Requires the tasks that were conducted to be documented in a machine readable format:</p>
+<ul>
+  <li><strong>Task</strong> in the form of a machine readable code.</li>
+</ul>
+
+<h5 id="what-does-the-conformance-perspective-do">What does the conformance perspective do?</h5>
+
+<p>This perspective is the minimal requirement to enable conformance checking of processes. As every task that is done for a patient is documented with a machine readable code, reconstructed processes contain what has happened when for which patient. During conformance checking the processes can be filtered only to tasks relevant for the checked process.</p>
+
+<p>Note that it is possible that one task is part of multiple processes. For example, a blood test (snomed code 396550006), could be part of a general health screening, or for checking the iron content before a blood donation. Thus, it is recommended to also consider the <em>care-pathway</em> perspective.</p>
+
+<h5 id="considerations-1">Considerations</h5>
+
+<ul>
+  <li>The ae.code field was added in FHIR R5 upon request as a result of this project</li>
+  <li>In R4 ae.entity.type (and other codings) have different meanings and are not supposed to relate to the task that was conducted.</li>
+  <li>In R4 ae.type, and subtype have a different meaning as well</li>
+  <li>In R4 ae.entity.detail.type and ae.entity.detail.value could be used to document the task, but this was not recommended by the FHIR community, thus an extension was created.</li>
+</ul>
+
+<h4 id="patient-visit-perspective">Patient-Visit perspective</h4>
+
+<p>The patient visit perspective, enables documenting interactions between patients and healthcare providers:</p>
+<ul>
+  <li><strong>Encounter</strong> - Any visit from a patient with a healthcare provider</li>
+</ul>
+
+<h5 id="what-does-the-patient-visit-perspective-do">What does the patient-visit perspective do?</h5>
+
+<p>This perspective enables two scenarios:</p>
+<ul>
+  <li>Conformance checking can be done on a “per visit” basis, for example if one wanted to check if and how regularly patients adhere to follow-up screenings.</li>
+  <li>In conjunction with the <em>care-pathway</em> perspective the treatment of a disease can be viewed / grouped in multiple visits, and (if data is available) over multiple care providers.</li>
+</ul>
+
+<h5 id="considerations-2">Considerations</h5>
+
+<ul>
+  <li>ae.encounter was added in FHIR R5 upon request as a result of this project. There is no corresponding R4 field, thus an extension was created.</li>
+  <li>In R4, then encounter resource captures encounter.statusHistory.period, which (if encounter.statusHistory.status is between arrived and finished) allows the capturing of which AuditEvents belong to the encounter, and might allow filling audit events with the extension in R4.</li>
+</ul>
+
+<h4 id="care-pathway-perspective">Care-Pathway perspective</h4>
+
+<p>Care pathway documents which care plan was followed for the patient:</p>
+<ul>
+  <li><strong>Treatment Plan</strong> that was followed, e.g. the treatment of a patient for a specific condition.</li>
+</ul>
+
+<h5 id="what-does-the-care-pathway-perspective-do">What does the care pathway perspective do?</h5>
+
+<p>The care pathway follows a specific treatment plan for a patient. As these CarePlans in FHIR represent the treatment plan, based on a guideline, this allows conformance checking of a process.</p>
+
+<p>In FHIR there are several types of CarePlan. If the care plan you want to conformance check is made for a group (CarePlan.subject), you are able to process mine and conformance check for a group of patients. Otherwise, the care plan will be specific to one patient, and allows only to check the conformance of that one patient’s process. In case you want to check the conformance for a specific process (e.g. Treatment for Burn Victims in specific Hospital), all of the care plans that were made for a patient need to be selected from the Audit Log. This depends massively on how FHIR is treated in the hospital, and could be one of the following options (among others):</p>
+<ul>
+  <li>CarePlan.instantiatesCanonical refers to the treatment guideline in the form of a PlanDefinition, all care plans for one plan definition can be grouped together in this case</li>
+  <li>CarePlan.basedOn refers to a generic CarePlan (similar to PlanDefinition)</li>
+  <li>CarePlan.category identifies a code for a treatment that should be conformance checked</li>
+  <li>Other options are: carePlan.title, CarePlan.instantiatesUri, ….</li>
+</ul>
+
+<h5 id="considerations-3">Considerations</h5>
+
+<ul>
+  <li>ae.basedOn was added in FHIR R5 upon request as a result of this project. It covers more than just CarePlan because of additional requirements in FHIR.</li>
+  <li>CarePlan was chosen instead of PlanDefinition, even though PlanDefinition in FHIR is intended to define processes (not only treatment) in FHIR on a descriptive level. This was done for several reasons:
+    <ul>
+      <li>CarePlan is more used than PlanDefinition. CarePlan also can be used in the form of “this is our treatment plan for condition X”, and PlanDefinition is only used if the care provider has a rigorous workflow management.</li>
+      <li>It is more likely that an AuditEvent references the CarePlan that was actually followed for a patient, than the PlanDefinition the CarePlan is basedOn.</li>
+    </ul>
+  </li>
+  <li>Workflow Management in FHIR is a highly complex topic, and other considerations could have been ActivityDefinition, Quesitonnaire (e.g. for filling a treatment plan for a patient), Tasks, Requests &amp; Responses, etc.
+    <ul>
+      <li>In case a care provider uses these FHIR Resources, it stands to reason that they have a rigorous workflow management, and thus is capable of documenting the reference to CarePlan in ae.basedOn even if, for example, a Task is part of a CarePlan and thus would also indirectly reference the CarePlan in the ae.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="actor-perspective">Actor perspective</h4>
+
+<p>The actor perspective enables viewing processes in the form of who (person, role, deparment, organization, or machine) was involved in which process step:</p>
+<ul>
+  <li><strong>Actor</strong> that was involved in the process step</li>
+</ul>
+
+<h5 id="what-does-the-actor-perspective-do">What does the actor perspective do?</h5>
+
+<p>The actor perspective allows viewing the process from the viewpoint of a specific person, deparment, or organization. Alternatively, it allows viewing who was involved in the process at which specific step(s). For example, this can help identify bottlenecks with machines, or movement of patients between departments.</p>
+
+<p>Note that the patient can be an actor as well, for example if they filled a questionnaire, or took their own vital signs.</p>
+
+<h5 id="considerations-4">Considerations</h5>
+
+<ul>
+  <li>agent.who is the minimal requirement for this implementation guide, and documented in FHIR</li>
+  <li>optinally the agent.type and agent.role could be used to filter towards more specific involvement in the process.</li>
+</ul>
+
+<h4 id="further-perspectives">Further perspectives</h4>
+
+<p>In addition to PICA being this IG, it is also a project at the University of Applied Sciences Upper Austria going until December of 2025. If you have requirements concerning conformance checking of processes that are not covered in this implementation guide, or have questions on how to apply this IG, please contact the <a href="https://aist.fh-hagenberg.at/index.php/en/team-2">AIST research team</a>, specifically Oliver Krauss (oliver.krauss@fh-hagenberg.at) or Andreas Pointner (andreas.pointner@fh-hagenberg.at).</p>
+
+
+
+</div>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /row -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-content -->
+
+<script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+if(window.location.hash != "") {
+    $('a[href="' + window.location.hash + '"]').click()
+}
+});
+</script>
+<a name="bottom"> </a>
+<div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+<div class="container">  <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="mailto:oliver.krauss@fh-hagenberg.at"></a>.  Package AISTPICA#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Wed, Sep 6, 2023 12:08+0000">2023-09-06</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    </span>
+  </p>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+<div class="container">  <!-- container -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-post-footer -->
+
+<!-- JS and analytics only. -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+<script type="text/javascript" src="assets/js/respond.min.js"> </script>
+<script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+<script>anchors.options.visible = 'hover'
+anchors.add()</script>
+
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+
+<!-- / feedback form  -->
+
+<!-- Analytics Below
+================================================== -->
+</body>
+</html>
+
