@@ -92,12 +92,6 @@
     }
   ],
   "profiles": {
-    "MedicationDispense": [
-      {
-        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/LINCAMedicationDispense",
-        "title": "Linked Care Dispense Profile"
-      }
-    ],
     "Patient": [
       {
         "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient",
@@ -110,10 +104,16 @@
         "title": "HL7® AT Core ValueSet Profile"
       }
     ],
-    "MedicationRequest": [
+    "MedicationDispense": [
       {
-        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request",
-        "title": "LINCA Order Item (LINCAOrderMedicationRequest)"
+        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation",
+        "title": "Linked Care Dispense Profile"
+      }
+    ],
+    "RequestOrchestration": [
+      {
+        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-full-order-list",
+        "title": "LINCA Order (LINCARequestOrchestration)"
       }
     ],
     "Medication": [
@@ -122,10 +122,14 @@
         "title": "ELGA complient Medication"
       }
     ],
-    "RequestOrchestration": [
+    "MedicationRequest": [
       {
-        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-order-request",
-        "title": "LINCA Order (LINCARequestOrchestration)"
+        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request",
+        "title": "LINCA Order Item (LINCAOrderMedicationRequest)"
+      },
+      {
+        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request",
+        "title": "Prescription Medication Request"
       }
     ]
   },
@@ -206,9 +210,6 @@
       "StructureDefinition.snapshot.element.binding"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
-      "ImplementationGuide.definition"
-    ],
-    "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter": [
       "ImplementationGuide.definition"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment": [
