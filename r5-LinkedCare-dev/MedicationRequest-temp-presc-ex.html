@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>temp-presc-ex - Linked Care Implementation Guide v0.1.0</title>
+    <title>LINKEDCARE.HL7.AT\temp-presc-ex - FHIR&reg; v5.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -29,32 +29,40 @@
     <![endif] -->
 
       <!-- Favicons -->
-    <link sizes="144x144" rel="fhir-logo" href="assets/ico/icon-fhir-144.png"/>
-    <link sizes="114x114" rel="fhir-logo" href="assets/ico/icon-fhir-114.png"/>
-    <link sizes="72x72" rel="fhir-logo" href="assets/ico/icon-fhir-72.png"/>
-    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"2.24"}
-    h3,h4,h5,h6{--heading-prefix:"2.24"}</style>
+    <style type="text/css">h2{--heading-prefix:"3.24"}
+    h3,h4,h5,h6{--heading-prefix:"3.24"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
-          <!-- Placeholder for child template header declarations -->
+          <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1"><a name="l74">​</a>
+            <img src="hl7atlogo.png" id="header-logo"/>
+          </div>
+          <div class="col-11">
+          <!-- at-fhir-ig-template end -->
+              <!-- Placeholder for child template header declarations -->
 
-
-        <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Linked Care Implementation Guide</span>
-            <br/>
-            <span style="display:inline-block;">0.1.0 - ci-build
-
-
-            </span>
-          </p>
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">Linked Care Implementation Guide</span><br/>
+                <span class="label label-info">1.1.0 - ci-build</span>
+              </p>
+            </div>
+          <!-- at-fhir-ig-template begin -->
+          </div>
         </div>
+          <!-- at-fhir-ig-template end -->
       </div>   <!-- /container -->
     </div>    <!-- /segment-header -->
 
@@ -71,17 +79,19 @@
               <span class="icon-bar"> </span>
               <span class="icon-bar"> </span>
             </button>
-            <a href="http://hl7.org/fhir/R5/index.html" class="navbar-brand hidden">FHIR</a>
+            <a href="http://hl7.org/fhir/R5/index.html" class="navbar-brand hidden">FHIR&reg;</a>
             <div class="nav-collapse collapse navbar-inverse-collapse">
-                <!-- menu.xml -->
-
-<ul class="nav navbar-nav">
-  <li>
-    <a href="index.html">Home</a>
-  </li>
-  <li>
-    <a href="artifacts.html">Artifacts</a>
-  </li>
+              <ul class="nav navbar-nav">
+  <li><a href="index.html">Home</a></li>
+   <li><a href="toc.html">Table of Contents</a></li>
+  <li><a href="artifacts.html">Artifacts</a></li>
+   <li><a href="usage.html">Usage</a></li>
+   <!-- <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Other Resources<b class="caret"> </b></a>
+    <ul class="dropdown-menu">
+      <li><a target="_blank" href="http://hl7.org/fhir/R5/index.html">FHIR® Spec <img src="external.png" style="text-align: baseline"/></a></li>
+    </ul>
+  </li> -->
 </ul>
             </div>    <!-- /.nav-collapse -->
           </div>    <!-- /.container -->
@@ -99,15 +109,14 @@
         </ul>
       </div>    <!-- /container -->
     </div>    <!-- /segment-breadcrumb -->
-
+	
     <a name="top"> </a>
     <div id="segment-content" class="segment">    <!-- segment-content -->
       <div class="container">    <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
-
 <div class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">Linked Care Implementation Guide - Local Development build (v0.1.0). See the <a href="http://fhir.hl7.at/linkedcare/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">Linked Care Implementation Guide - Local Development build (v1.1.0). See the <a href="http://fhir.hl7.at/linkedcare/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
 
   
 
@@ -164,7 +173,7 @@
 
 
 
-  <div><p><b>Generated Narrative: MedicationRequest</b><a name="temp-presc-ex"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource MedicationRequest "temp-presc-ex" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-linca-prescription-medication-request.html">Prescription Medication Request</a></p></div><p><b>basedOn</b>: <a href="MedicationRequest-linca-order-item-007.html">MedicationRequest/linca-order-item-007</a></p><p><b>groupIdentifier</b>: id:&nbsp;127.0.0.1 eRezeptID</p><p><b>status</b>: active</p><p><b>intent</b>: order</p><h3>Medications</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Concept</b></td></tr><tr><td style="display: none">*</td><td>981417 <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (CodeSystem-asp-liste#981417)</span></td></tr></table><p><b>subject</b>: <a href="Patient-Patient-02.html">Patient/Patient-02</a> " MUSTERPATIENT"</p><p><a name="l305">​</a><b>informationSource</b>: <a href="Organization/1">Organization/1: Demo Org</a></p><p><b>supportingInformation</b>: <a href="RequestOrchestration-RequestOrchestrationExample.html">RequestOrchestration/RequestOrchestrationExample</a></p><p><a name="l317">​</a><b>requester</b>: <a href="Practitioner/01">Practitioner/01: Martha Stewart</a></p><p><b>performer</b>: <a href="Practitioner-ExamplePractitioner-01.html">Practitioner/ExamplePractitioner-01</a> " TRAXLER"</p><p><b>note</b>: Pharmacy Logisitic Label</p><blockquote><p><b>dosageInstruction</b></p><p><b>sequence</b>: 1</p><p><b>text</b>: Take 2 pills daily</p><p><b>timing</b>: Once per 1 days</p><blockquote><p><b>doseAndRate</b></p></blockquote></blockquote></div>
+  <div><p><b>Generated Narrative: MedicationRequest</b><a name="temp-presc-ex"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource MedicationRequest "temp-presc-ex" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-linca-prescription-medication-request.html">Prescription Medication Request</a></p></div><p><b>basedOn</b>: <a href="MedicationRequest-linca-order-item-007.html">MedicationRequest/linca-order-item-007</a></p><p><b>groupIdentifier</b>: id:&nbsp;127.0.0.1 eRezeptID</p><p><b>status</b>: active</p><p><b>intent</b>: order</p><h3>Medications</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Concept</b></td></tr><tr><td style="display: none">*</td><td>981417 <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (CodeSystem-asp-liste#981417)</span></td></tr></table><p><b>subject</b>: <a href="Patient-Patient-02.html">Patient/Patient-02</a> " MUSTERPATIENT"</p><p><a name="l328">​</a><b>informationSource</b>: <a href="Organization/1">Organization/1: Demo Org</a></p><p><b>supportingInformation</b>: <a href="RequestOrchestration-RequestOrchestrationExample.html">RequestOrchestration/RequestOrchestrationExample</a></p><p><a name="l340">​</a><b>requester</b>: <a href="Practitioner/01">Practitioner/01: Martha Stewart</a></p><p><b>performer</b>: <a href="Practitioner-ExamplePractitioner-01.html">Practitioner/ExamplePractitioner-01</a> " TRAXLER"</p><p><b>note</b>: Pharmacy Logisitic Label</p><blockquote><p><b>dosageInstruction</b></p><p><b>sequence</b>: 1</p><p><b>text</b>: Take 2 pills daily</p><p><b>timing</b>: Once per 1 days</p><blockquote><p><b>doseAndRate</b></p></blockquote></blockquote></div>
 
   
 
@@ -195,7 +204,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.technikum-wien.at">technikum-wien-treml</a>.  Package linkedcare.hl7.at#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 5.0.0</a>. Generated <span title="Mon, Sep 11, 2023 14:36+0000">2023-09-11</span>
+          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.technikum-wien.at">technikum-wien-treml</a>.  Package linkedcare.hl7.at#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 5.0.0</a>. Generated <span title="Thu, Sep 21, 2023 13:09+0000">2023-09-21</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
