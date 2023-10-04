@@ -1,53 +1,151 @@
 {
   "package": "linkedcare.hl7.at",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "fhirVersion": "5.0.0",
-  "extensions": [],
+  "extensions": [
+    {
+      "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-ext-address-additionalInformation",
+      "title": "Address Additional Information",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-ext-patient-religion",
+      "title": "Patient Religion",
+      "types": [
+        "CodeableConcept",
+        "id",
+        "Extension",
+        "Coding",
+        "id",
+        "Extension",
+        "uri",
+        "string",
+        "code",
+        "string",
+        "boolean",
+        "string",
+        "Period",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "integer64",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "CodeableReference",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "RatioRange",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Availability",
+        "ExtendedContactDetail",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-ext-valueset-systemoid",
+      "title": "System OID",
+      "types": [
+        "oid"
+      ]
+    }
+  ],
   "profiles": {
-    "MedicationDispense": [
-      {
-        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/LINCAMedicationDispense",
-        "title": "Linked Care Dispense Profile"
-      }
-    ],
-    "ActivityDefinition": [
-      {
-        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/LINCAOrderActivity",
-        "title": "LINCAOrderActivity"
-      }
-    ],
-    "PlanDefinition": [
-      {
-        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/LINCAPlanDefinition",
-        "title": "LINCAPlanDefinition"
-      }
-    ],
     "Patient": [
       {
-        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/LincaPatient",
-        "title": "LincaPatient"
+        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient",
+        "title": "HL7® AT Core Patient Profile"
       }
     ],
-    "MedicationRequest": [
+    "ValueSet": [
       {
-        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-medication-request",
-        "title": "Order Medication Request"
+        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-valueset",
+        "title": "HL7® AT Core ValueSet Profile"
       }
     ],
-    "Task": [
+    "MedicationDispense": [
       {
-        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-task",
-        "title": "LINCAOrderTask"
+        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation",
+        "title": "Linked Care Dispense Profile"
       }
     ],
     "RequestOrchestration": [
       {
-        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/lincaorder-order-request",
-        "title": "Order Request"
+        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-full-order-list",
+        "title": "LINCA Order (LINCARequestOrchestration)"
+      }
+    ],
+    "Medication": [
+      {
+        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-medication",
+        "title": "ELGA complient Medication"
+      }
+    ],
+    "MedicationRequest": [
+      {
+        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request",
+        "title": "LINCA Order Item (LINCAOrderMedicationRequest)"
+      },
+      {
+        "url": "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request",
+        "title": "Prescription Medication Request"
       }
     ]
   },
   "usage": {
+    "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-ext-address-additionalInformation": [
+      "Address.line",
+      "Patient.address.line",
+      "Patient.contact.address.line"
+    ],
+    "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-ext-patient-religion": [
+      "Patient"
+    ],
+    "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-ext-valueset-systemoid": [
+      "ValueSet.compose.include",
+      "ValueSet.expansion.contains"
+    ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
       "StructureDefinition.snapshot.element.constraint"
     ],
@@ -62,6 +160,27 @@
     ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
       "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator": [
+      "Address.line",
+      "Patient.address.line",
+      "Patient.contact.address.line"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber": [
+      "Address.line",
+      "Patient.address.line",
+      "Patient.contact.address.line"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName": [
+      "Address.line",
+      "Patient.address.line",
+      "Patient.contact.address.line"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/patient-citizenship": [
+      "Patient"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/regex": [
+      "StructureDefinition.snapshot.element.type"
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name": [
       "StructureDefinition.snapshot.element"
@@ -78,17 +197,26 @@
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status": [
       "StructureDefinition.snapshot.element"
     ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics": [
+      "StructureDefinition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/valueset-expand-group": [
+      "ValueSet.compose.include"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/valueset-expand-rules": [
+      "ValueSet.compose.include"
+    ],
     "http://hl7.org/fhir/tools/StructureDefinition/binding-definition": [
       "StructureDefinition.snapshot.element.binding"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
       "ImplementationGuide.definition"
     ],
-    "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter": [
-      "ImplementationGuide.definition"
-    ],
     "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment": [
       "ImplementationGuide.dependsOn"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/no-binding": [
+      "StructureDefinition.snapshot.element"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
       "ImplementationGuide.definition.resource"
