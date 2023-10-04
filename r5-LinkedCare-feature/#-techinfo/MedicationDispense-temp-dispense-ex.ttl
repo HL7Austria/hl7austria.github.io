@@ -1,0 +1,50 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.hl7.at/linkedcare/MedicationDispense/temp-dispense-ex> a fhir:MedicationDispense ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "temp-dispense-ex"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation"^^xsd:anyURI ;
+       fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: MedicationDispense</b><a name=\"temp-dispense-ex\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource MedicationDispense &quot;temp-dispense-ex&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-linca-dipsense-documentation.html\">Linked Care Dispense Profile</a></p></div><p><b>status</b>: completed</p><h3>Medications</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Concept</b></td></tr><tr><td style=\"display: none\">*</td><td>981417 <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (CodeSystem-asp-liste#981417)</span></td></tr></table><p><b>subject</b>: <a href=\"Patient-Patient-02.html\">Patient/Patient-02</a> &quot; MUSTERPATIENT&quot;</p><h3>Performers</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Actor</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Organization/pharmacy-01\">Organization/pharmacy-01: Einhornapotheke</a></td></tr></table><p><b>authorizingPrescription</b>: <a href=\"MedicationRequest-temp-presc-ex.html\">MedicationRequest/temp-presc-ex</a></p><h3>DosageInstructions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td></tr><tr><td style=\"display: none\">*</td><td>Take 2 pills daily</td></tr></table></div>"
+  ] ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:medication [
+     fhir:concept [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://termgit.elga.gv.at/CodeSystem-asp-liste"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "981417" ]
+       ] )
+     ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <http://fhir.hl7.at/linkedcare/Patient/Patient-02> ;
+     fhir:reference [ fhir:v "Patient/Patient-02" ]
+  ] ; # 
+  fhir:performer ( [
+     fhir:actor [
+       fhir:link <http://fhir.hl7.at/linkedcare/Organization/pharmacy-01> ;
+       fhir:reference [ fhir:v "Organization/pharmacy-01" ] ;
+       fhir:display [ fhir:v "Einhornapotheke" ]
+     ]
+  ] ) ; # 
+  fhir:authorizingPrescription ( [
+     fhir:link <http://fhir.hl7.at/linkedcare/MedicationRequest/temp-presc-ex> ;
+     fhir:reference [ fhir:v "MedicationRequest/temp-presc-ex" ]
+  ] ) ; # 
+  fhir:dosageInstruction ( [
+     fhir:text [ fhir:v "Take 2 pills daily" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

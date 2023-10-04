@@ -1,0 +1,656 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.hl7.at/linkedcare/ImplementationGuide/linkedcare.hl7.at> a fhir:ImplementationGuide ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "linkedcare.hl7.at"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>LINCAIG</h2><p>The official URL for this implementation guide is: </p><pre>http://fhir.hl7.at/linkedcare/ImplementationGuide/linkedcare.hl7.at</pre><div><p>Implementation Guide for the Linked Care medication order process</p>\n</div></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://fhir.hl7.at/linkedcare/ImplementationGuide/linkedcare.hl7.at"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.1.0"] ; # 
+  fhir:name [ fhir:v "LINCAIG"] ; # 
+  fhir:title [ fhir:v "Linked Care Implementation Guide"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2023-10-04T17:09:12+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "technikum-wien-treml"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "technikum-wien-treml" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.technikum-wien.at" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Implementation Guide for the Linked Care medication order process"] ; # 
+  fhir:packageId [ fhir:v "linkedcare.hl7.at"] ; # 
+  fhir:license [ fhir:v "CC0-1.0"] ; # 
+  fhir:fhirVersion ( [ fhir:v "5.0.0"] ) ; # 
+  fhir:dependsOn ( [
+     fhir:id [ fhir:v "hl7tx" ] ;
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Automatically added as a dependency - all IGs depend on HL7 Terminology" ]
+     ] ) ;
+     fhir:uri [
+       fhir:v "http://terminology.hl7.org/ImplementationGuide/hl7.terminology"^^xsd:anyURI ;
+       fhir:link <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
+     ] ;
+     fhir:packageId [ fhir:v "hl7.terminology.r5" ] ;
+     fhir:version [ fhir:v "5.3.0" ]
+  ] [
+     fhir:id [ fhir:v "hl7ext" ] ;
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack" ]
+     ] ) ;
+     fhir:uri [
+       fhir:v "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions>
+     ] ;
+     fhir:packageId [ fhir:v "hl7.fhir.uv.extensions.r5" ] ;
+     fhir:version [ fhir:v "1.0.0" ]
+  ] ) ; # 
+  fhir:definition [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "hl7.fhir.uv.tools#current" ]
+     ] ) ;
+     fhir:resource ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-ext-address-additionalInformation> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-core-ext-address-additionalInformation" ]
+       ] ;
+       fhir:name [ fhir:v "Address Additional Information" ] ;
+       fhir:description [ fhir:v "HL7® Austria FHIR® Core Extension for the additional information part of the Austrian address." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-medication> ;
+         fhir:reference [ fhir:v "StructureDefinition/linca-medication" ]
+       ] ;
+       fhir:name [ fhir:v "ELGA complient Medication" ] ;
+       fhir:description [ fhir:v "Profile restricbinding ting the medication code and doseForm to ELGA defined Sets" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/ValueSet/at-elga-vs-countryCodes> ;
+         fhir:reference [ fhir:v "ValueSet/at-elga-vs-countryCodes" ]
+       ] ;
+       fhir:name [ fhir:v "ELGA Country Code Value Set" ] ;
+       fhir:description [ fhir:v "Value Set for ISO 3166-1 alpha 3 used in ELGA. Also accessible on [Termpub - ValueSet - ELGA Ländercodes](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=ValueSet&loadName=ELGA_Laendercodes)." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/ValueSet/at-elga-vs-religion> ;
+         fhir:reference [ fhir:v "ValueSet/at-elga-vs-religion" ]
+       ] ;
+       fhir:name [ fhir:v "ELGA Religion Value Set" ] ;
+       fhir:description [ fhir:v "Set of religious affiliations to be used in ELGA. It is preferred to use entries of the first level hierachy (1-L). Also accessible on [Termpub - ValueSet - ELGA ReligiousAffiliation](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=ValueSet&loadName=ELGA_ReligiousAffiliation)." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Practitioner" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/Practitioner/ExamplePractitioner-01> ;
+         fhir:reference [ fhir:v "Practitioner/ExamplePractitioner-01" ]
+       ] ;
+       fhir:name [ fhir:v "ExamplePractitioner-01" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/CodeSystem/at-core-cs-religion> ;
+         fhir:reference [ fhir:v "CodeSystem/at-core-cs-religion" ]
+       ] ;
+       fhir:name [ fhir:v "HL7 AT Core Religion Code System" ] ;
+       fhir:description [ fhir:v "Code system for the religions and faith communities in Austria. Also accessible on [Termpub - CodeSystem - HL7 AT ReligionAustria](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&loadName=HL7.AT:ReligionAustria)." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:complex-type" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-address> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-core-address" ]
+       ] ;
+       fhir:name [ fhir:v "HL7® AT Core Address Profile" ] ;
+       fhir:description [ fhir:v "HL7® Austria FHIR® Core Profile for address data in Austria. Note, this extension represents the common structure of address information within Austrian information systems. This extension does not restrict the documented information to Austrian adresses. Address information that does not fit into the given structure may be captured by [Address Additional Information](StructureDefinition-at-core-ext-address-additionalInformation.html)." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-core-patient" ]
+       ] ;
+       fhir:name [ fhir:v "HL7® AT Core Patient Profile" ] ;
+       fhir:description [ fhir:v "HL7® Austria FHIR® Core Profile for patient data in Austria.\nThe HL7® AT Core Patient is based upon the core FHIR® Patient Resource and designed to meet the applicable patient demographic data elements in Austria. It identifies which core elements, extensions, vocabularies and value sets SHALL be present in the resource when using this profile. Note, this extension represents the common structure of Patient information within Austrian information systems." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-valueset> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-core-valueset" ]
+       ] ;
+       fhir:name [ fhir:v "HL7® AT Core ValueSet Profile" ] ;
+       fhir:description [ fhir:v "HL7® Austria FHIR® Core Profile for valuesets in Austria.\nThe HL7® AT Core ValueSet is based upon the core FHIR® ValueSet Resource and defines the use of the OID extension." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/CodeSystem/at-core-cs-iso-3166-1-alpha-3> ;
+         fhir:reference [ fhir:v "CodeSystem/at-core-cs-iso-3166-1-alpha-3" ]
+       ] ;
+       fhir:name [ fhir:v "HL7® AT® Core ISO 3166-1 alpha 3 Code System" ] ;
+       fhir:description [ fhir:v "ISO code system for country codes with 3 letters. Also accessible on [Termpub - CodeSystem - ISO 3166-1 alpha 3](https://termpub.gesundheit.gv.at/TermBrowser/gui/main/main.zul?loadType=CodeSystem&loadName=ISO%203166-1%20alpha%203%202016)." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-full-order-list> ;
+         fhir:reference [ fhir:v "StructureDefinition/linca-full-order-list" ]
+       ] ;
+       fhir:name [ fhir:v "LINCA Order (LINCARequestOrchestration)" ] ;
+       fhir:description [ fhir:v "The placer's software creates the RequestOrchestration when (re)ordering medication." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request> ;
+         fhir:reference [ fhir:v "StructureDefinition/linca-order-medication-request" ]
+       ] ;
+       fhir:name [ fhir:v "LINCA Order Item (LINCAOrderMedicationRequest)" ] ;
+       fhir:description [ fhir:v "Individual order items created by the Linked Care system according to the contained items in the order. Send to practicioner for authorization." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation> ;
+         fhir:reference [ fhir:v "StructureDefinition/linca-dipsense-documentation" ]
+       ] ;
+       fhir:name [ fhir:v "Linked Care Dispense Profile" ] ;
+       fhir:description [ fhir:v "Linked Care Dispense Profile" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-ext-patient-religion> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-core-ext-patient-religion" ]
+       ] ;
+       fhir:name [ fhir:v "Patient Religion" ] ;
+       fhir:description [ fhir:v "HL7® Austria FHIR® Core Extension for the religion (registered in Austria) of a patient.\nThe extension is used to encode the religious confession of a patient (only confessions registered in Austria). Furthermore, it uses the official [HL7 AT CodeSystem](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&loadName=HL7 AT ReligionAustria) for religion and is therefore aligned with the ELGA ValueSet, respectively." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Patient" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/Patient/Patient-01> ;
+         fhir:reference [ fhir:v "Patient/Patient-01" ]
+       ] ;
+       fhir:name [ fhir:v "Patient-01" ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient>
+       ] [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Patient" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/Patient/Patient-02> ;
+         fhir:reference [ fhir:v "Patient/Patient-02" ]
+       ] ;
+       fhir:name [ fhir:v "Patient-02" ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient>
+       ] [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Patient" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/Patient/Patient-03> ;
+         fhir:reference [ fhir:v "Patient/Patient-03" ]
+       ] ;
+       fhir:name [ fhir:v "Patient-03" ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient>
+       ] [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Patient" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/Patient/Patient-04> ;
+         fhir:reference [ fhir:v "Patient/Patient-04" ]
+       ] ;
+       fhir:name [ fhir:v "Patient-04" ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient>
+       ] [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request> ;
+         fhir:reference [ fhir:v "StructureDefinition/linca-prescription-medication-request" ]
+       ] ;
+       fhir:name [ fhir:v "Prescription Medication Request" ] ;
+       fhir:description [ fhir:v "Prescription send by practicioner software. Is always based on order but might differ due to changes." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "RequestOrchestration" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/RequestOrchestration/RequestOrchestrationExample> ;
+         fhir:reference [ fhir:v "RequestOrchestration/RequestOrchestrationExample" ]
+       ] ;
+       fhir:name [ fhir:v "RequestOrchestrationExample" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-ext-valueset-systemoid> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-core-ext-valueset-systemoid" ]
+       ] ;
+       fhir:name [ fhir:v "System OID" ] ;
+       fhir:description [ fhir:v "HL7® Austria FHIR® Core Extension for the capturing of OID in ValueSets to reference the CodeSystem they come from.\nThe extension is used to document the OID of the system of a code referenced in a ValueSet, to align FHIR with the HL7 Austria CDA document guidelines." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationDispense" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/MedicationDispense/temp-dispense-ex> ;
+         fhir:reference [ fhir:v "MedicationDispense/temp-dispense-ex" ]
+       ] ;
+       fhir:name [ fhir:v "temp-dispense-ex" ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation>
+       ] [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/MedicationRequest/linca-order-item-007> ;
+         fhir:reference [ fhir:v "MedicationRequest/linca-order-item-007" ]
+       ] ;
+       fhir:name [ fhir:v "temp-medreq-ex" ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request>
+       ] [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/MedicationRequest/temp-presc-ex> ;
+         fhir:reference [ fhir:v "MedicationRequest/temp-presc-ex" ]
+       ] ;
+       fhir:name [ fhir:v "temp-presc-ex" ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request>
+       ] [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request>
+       ] )
+     ] ) ;
+     fhir:page [
+       fhir:source [ fhir:v "toc.html"^^xsd:anyURI ] ;
+       fhir:name [ fhir:v "toc.html"^^xsd:anyURI ] ;
+       fhir:title [ fhir:v "Table of Contents" ] ;
+       fhir:generation [ fhir:v "html" ] ;
+       fhir:page ( [
+         fhir:source [ fhir:v "index.html"^^xsd:anyURI ] ;
+         fhir:name [ fhir:v "index.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Home" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [ fhir:v "technical_information.html"^^xsd:anyURI ] ;
+         fhir:name [ fhir:v "technical_information.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Technical Information" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [ fhir:v "usage.html"^^xsd:anyURI ] ;
+         fhir:name [ fhir:v "usage.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Usage" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [ fhir:v "user_stories.html"^^xsd:anyURI ] ;
+         fhir:name [ fhir:v "user_stories.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "User Stories" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] )
+     ] ;
+     fhir:parameter ( [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "copyrightyear" ]
+       ] ;
+       fhir:value [ fhir:v "2023+" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "releaselabel" ]
+       ] ;
+       fhir:value [ fhir:v "ci-build" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "autoload-resources" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/capabilities" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/examples" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/extensions" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/models" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/operations" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/profiles" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/resources" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/vocabulary" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/maps" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/testing" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/history" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "fsh-generated/resources" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-pages" ]
+       ] ;
+       fhir:value [ fhir:v "template/config" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-pages" ]
+       ] ;
+       fhir:value [ fhir:v "input/images" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-liquid" ]
+       ] ;
+       fhir:value [ fhir:v "template/liquid" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-liquid" ]
+       ] ;
+       fhir:value [ fhir:v "input/liquid" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-qa" ]
+       ] ;
+       fhir:value [ fhir:v "temp/qa" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-temp" ]
+       ] ;
+       fhir:value [ fhir:v "temp/pages" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-output" ]
+       ] ;
+       fhir:value [ fhir:v "output" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-tx-cache" ]
+       ] ;
+       fhir:value [ fhir:v "input-cache/txcache" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-suppressed-warnings" ]
+       ] ;
+       fhir:value [ fhir:v "input/ignoreWarnings.txt" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-history" ]
+       ] ;
+       fhir:value [ fhir:v "http://fhir.hl7.at/linkedcare/history.html" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "template-html" ]
+       ] ;
+       fhir:value [ fhir:v "template-page.html" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "template-md" ]
+       ] ;
+       fhir:value [ fhir:v "template-page-md.html" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-contact" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-context" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-copyright" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-jurisdiction" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-license" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-publisher" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-version" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-wg" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "active-tables" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "fmm-definition" ]
+       ] ;
+       fhir:value [ fhir:v "http://hl7.org/fhir/versions.html#maturity" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "propagate-status" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "excludelogbinaryformat" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "tabbed-snapshots" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
