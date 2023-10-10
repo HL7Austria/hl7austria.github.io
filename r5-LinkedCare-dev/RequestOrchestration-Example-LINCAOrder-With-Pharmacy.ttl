@@ -1,0 +1,93 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.hl7.at/linkedcare/RequestOrchestration/Example-LINCAOrder-With-Pharmacy> a fhir:RequestOrchestration ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Example-LINCAOrder-With-Pharmacy"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: RequestOrchestration</b><a name=\"Example-LINCAOrder-With-Pharmacy\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource RequestOrchestration &quot;Example-LINCAOrder-With-Pharmacy&quot; </p></div><p><b>status</b>: active</p><p><b>intent</b>: order</p><p><b>subject</b>: <a href=\"Organization-Registered-Care-Mobile.html\">Organization/Registered-Care-Mobile</a> &quot;Pflegedienst Immerdar&quot;</p><hr/><blockquote><p><b>Generated Narrative: MedicationRequest #Example-inline-LINCAOrderItem-Repeat</b><a name=\"Example-inline-LINCAOrderItem-Repeat\"> </a></p><p><b>status</b>: unknown</p><p><b>intent</b>: proposal</p><h3>Medications</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Concept</b></td></tr><tr><td style=\"display: none\">*</td><td>1293240 <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (CodeSystem-asp-liste#1293240)</span></td></tr></table><p><b>subject</b>: <a href=\"Patient-Registered-Mobile-Care-Patient.html\">Patient/Registered-Mobile-Care-Patient</a> &quot; RÜSSEL-OLIFANT&quot;</p><p><b>informationSource</b>: <a href=\"Organization-Registered-Care-Mobile.html\">Organization/Registered-Care-Mobile</a> &quot;Pflegedienst Immerdar&quot;</p><p><b>requester</b>: <a href=\"Practitioner/01\">Practitioner/01: Susanne Allzeit (DGKP)</a></p><p><b>performer</b>: <a href=\"Practitioner-Registered-Practitioner-01.html\">Practitioner/Registered-Practitioner-01</a> &quot; WÜRM&quot;</p><p><b>note</b>: Pharmacy Logisitic Label</p><blockquote><p><b>dosageInstruction</b></p><p><b>sequence</b>: 1</p><p><b>text</b>: Take 2 pills daily</p><p><b>timing</b>: Once per 1 days</p><blockquote><p><b>doseAndRate</b></p></blockquote></blockquote></blockquote></div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:MedicationRequest ;
+     fhir:id [ fhir:v "Example-inline-LINCAOrderItem-Repeat" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request>
+       ] )
+     ] ;
+     fhir:status [ fhir:v "unknown" ] ;
+     fhir:intent [ fhir:v "proposal" ] ;
+     fhir:medication [
+       fhir:concept [
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://termgit.elga.gv.at/CodeSystem-asp-liste"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "1293240" ]
+         ] )
+       ]
+     ] ;
+     fhir:subject [
+       fhir:link <http://fhir.hl7.at/linkedcare/Patient/Registered-Mobile-Care-Patient> ;
+       fhir:reference [ fhir:v "Patient/Registered-Mobile-Care-Patient" ]
+     ] ;
+     fhir:informationSource ( [
+       fhir:link <http://fhir.hl7.at/linkedcare/Organization/Registered-Care-Mobile> ;
+       fhir:reference [ fhir:v "Organization/Registered-Care-Mobile" ]
+     ] ) ;
+     fhir:requester [
+       fhir:link <http://fhir.hl7.at/linkedcare/Practitioner/01> ;
+       fhir:reference [ fhir:v "Practitioner/01" ] ;
+       fhir:display [ fhir:v "Susanne Allzeit (DGKP)" ]
+     ] ;
+     fhir:performer ( [
+       fhir:link <http://fhir.hl7.at/linkedcare/Practitioner/Registered-Practitioner-01> ;
+       fhir:reference [ fhir:v "Practitioner/Registered-Practitioner-01" ]
+     ] ) ;
+     fhir:note ( [
+       fhir:text [ fhir:v "Pharmacy Logisitic Label" ]
+     ] ) ;
+     fhir:dosageInstruction ( [
+       fhir:sequence [ fhir:v "1"^^xsd:integer ] ;
+       fhir:text [ fhir:v "Take 2 pills daily" ] ;
+       fhir:timing [
+         fhir:repeat [
+           fhir:bounds [
+             a fhir:Duration ;
+             fhir:value [ fhir:v "14"^^xsd:decimal ] ;
+             fhir:code [ fhir:v "d" ]
+           ] ;
+           fhir:frequency [ fhir:v "1"^^xsd:positiveInteger ] ;
+           fhir:period [ fhir:v "1"^^xsd:decimal ] ;
+           fhir:periodUnit [ fhir:v "d" ]
+         ]
+       ] ;
+       fhir:doseAndRate ( [
+         fhir:type [
+           fhir:coding ( [
+             fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/dose-rate-type"^^xsd:anyURI ] ;
+             fhir:code [ fhir:v "ordered" ] ;
+             fhir:display [ fhir:v "Ordered" ]
+           ] )
+         ] ;
+         fhir:dose [
+           a fhir:Quantity ;
+           fhir:value [ fhir:v "2"^^xsd:decimal ] ;
+           fhir:code [ fhir:v "100000073664" ]
+         ]
+       ] )
+     ] )
+  ] ) ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:subject [
+     fhir:link <http://fhir.hl7.at/linkedcare/Organization/Registered-Care-Mobile> ;
+     fhir:reference [ fhir:v "Organization/Registered-Care-Mobile" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -39,8 +39,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"5"}
-    h3,h4,h5,h6{--heading-prefix:"5.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"4"}
+    h3,h4,h5,h6{--heading-prefix:"4.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- at-fhir-ig-template begin -->
@@ -173,15 +173,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <tbody>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-linca-medication.html"
-                     title="StructureDefinition/linca-medication">ELGA complient Medication</a>
-               </td>
-               <td>
-<p>Profile restricbinding ting the medication code and doseForm to ELGA defined Sets</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
                   <a href="StructureDefinition-at-core-patient.html"
                      title="StructureDefinition/at-core-patient">HL7® AT Core Patient Profile</a>
                </td>
@@ -202,11 +193,29 @@ The HL7® AT Core ValueSet is based upon the core FHIR® ValueSet Resource and d
             </tr>
             <tr>
                <td style="column-width:30%">
+                  <a href="StructureDefinition-linca-dipsense-documentation.html"
+                     title="StructureDefinition/linca-dipsense-documentation">LINCA Dispense (LINCAMedicationDispense)</a>
+               </td>
+               <td>
+<p>Linked Care  Profile for dispense documentation. The dispense must be documented by the dispensing pharmacist and specify if an order was fulfilled completly or partially. The LINCA Dispense must have an LINCA Prescription as authorizingPrescription.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-linca-medication.html"
+                     title="StructureDefinition/linca-medication">LINCA Medication (LINCAMeds)</a>
+               </td>
+               <td>
+<p>Linked Care profile for Medication Resource to ensure ELGA compliant representation. Bind code to ELGA CodeSystem (‘asp-liste’) and doseForm to ELGA ValueSet (‘elga-medikationdarreichungsform’).</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="StructureDefinition-linca-full-order-list.html"
                      title="StructureDefinition/linca-full-order-list">LINCA Order (LINCARequestOrchestration)</a>
                </td>
                <td>
-<p>The placer’s software creates the RequestOrchestration when (re)ordering medication.</p>
+<p>Linked Care Profile for the overall order. The LINCA Order serves as container for the individual placements. The placer’s software creates the RequestOrchestration when (re)ordering medication.</p>
 </td>
             </tr>
             <tr>
@@ -215,25 +224,16 @@ The HL7® AT Core ValueSet is based upon the core FHIR® ValueSet Resource and d
                      title="StructureDefinition/linca-order-medication-request">LINCA Order Item (LINCAOrderMedicationRequest)</a>
                </td>
                <td>
-<p>Individual order items created by the Linked Care system according to the contained items in the order. Send to practicioner for authorization.</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-linca-dipsense-documentation.html"
-                     title="StructureDefinition/linca-dipsense-documentation">Linked Care Dispense Profile</a>
-               </td>
-               <td>
-<p>Linked Care Dispense Profile</p>
+<p>Linked Care profile for individual order items. A list of order items is first received as contained resources in a LINCA Order. Then the Linked Care FHIR server creates an instance for each contained item. These instances are send to the assigned practicioner(s) for authorization.</p>
 </td>
             </tr>
             <tr>
                <td style="column-width:30%">
                   <a href="StructureDefinition-linca-prescription-medication-request.html"
-                     title="StructureDefinition/linca-prescription-medication-request">Prescription Medication Request</a>
+                     title="StructureDefinition/linca-prescription-medication-request">LINCA Prescription (LINCAPrescriptionMedicationRequest)</a>
                </td>
                <td>
-<p>Prescription send by practicioner software. Is always based on order but might differ due to changes.</p>
+<p>Linked Care Profile for prescriptions. The prescriptions are created by the practicioner software but must be basedOn an assigned LINCA Order Item. The assigned practicioners can view, modify or cancel all of their assigned order items.</p>
 </td>
             </tr>
          </tbody>
@@ -372,53 +372,192 @@ The extension is used to document the OID of the system of a code referenced in 
          <tbody>
             <tr>
                <td style="column-width:30%">
-                  <a href="Practitioner-ExamplePractitioner-01.html"
-                     title="Practitioner/ExamplePractitioner-01">ExamplePractitioner-01</a>
+                  <a href="RequestOrchestration-RequestOrchestration-Dosage-Example.html"
+                     title="RequestOrchestration/RequestOrchestration-Dosage-Example">Additional Example: LINCA Order</a>
                </td>
+               <td>
+<p>LINCA Order with different dummy data as in the user stories. Shows all ELGA conform encodeing of dosage instructions used by the other examples.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Patient-Patient-01.html" title="Patient/Patient-01">Patient-01</a>
+                  <a href="MedicationDispense-Example-Full-LINCADispense.html"
+                     title="MedicationDispense/Example-Full-LINCADispense">Example LINCA Dispense: Completly fulfilled</a>
                </td>
+               <td>
+<p>Final element in the order chain. Was completly fulfilled, order is now complete.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Patient-Patient-02.html" title="Patient/Patient-02">Patient-02</a>
+                  <a href="MedicationDispense-Example-Partial-LINCADispense.html"
+                     title="MedicationDispense/Example-Partial-LINCADispense">Example LINCA Dispense: Partially fulfilled</a>
                </td>
+               <td>
+<p>Final element in the order chain. Was only partially fulfilled, order is still open.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Patient-Patient-03.html" title="Patient/Patient-03">Patient-03</a>
+                  <a href="MedicationRequest-linca-id-123456.html"
+                     title="MedicationRequest/linca-id-123456">Example LINCA Order Item: Instance retrieved from LINCA Order </a>
                </td>
+               <td>
+<p>Instance of LINCA Order Item from mobile care facility. Will be sent to practicioner to issue a prescription</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Patient-Patient-04.html" title="Patient/Patient-04">Patient-04</a>
+                  <a href="MedicationRequest-linca-id-123459.html"
+                     title="MedicationRequest/linca-id-123459">Example LINCA Order Item: Instance retrieved from LINCA Order </a>
                </td>
+               <td>
+<p>Instance of a LINCA Order Item from mobile care facility. Will be sent to practicioner to issue a prescription</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="RequestOrchestration-RequestOrchestrationExample.html"
-                     title="RequestOrchestration/RequestOrchestrationExample">RequestOrchestrationExample</a>
+                  <a href="RequestOrchestration-Example-Inpatient-Facility-LINCAOrder.html"
+                     title="RequestOrchestration/Example-Inpatient-Facility-LINCAOrder">Example LINCA Order: Inpatient facility</a>
                </td>
+               <td>
+<p>An employee of an inpatient care facility ordered for all their patients medications.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="MedicationDispense-temp-dispense-ex.html"
-                     title="MedicationDispense/temp-dispense-ex">temp-dispense-ex</a>
+                  <a href="RequestOrchestration-Example-LINCAOrder-With-Pharmacy.html"
+                     title="RequestOrchestration/Example-LINCAOrder-With-Pharmacy">Example LINCA Order: Single medication with pharmacy</a>
                </td>
+               <td>
+<p>An employee of a mobile care facility ordered a refill for a single medication for a single patient.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="MedicationRequest-linca-order-item-007.html"
-                     title="MedicationRequest/linca-order-item-007">temp-medreq-ex</a>
+                  <a href="RequestOrchestration-Example-LINCAOrder-No-Pharmacy.html"
+                     title="RequestOrchestration/Example-LINCAOrder-No-Pharmacy">Example LINCA Order: Single medication without pharmacy</a>
                </td>
+               <td>
+<p>An employee of a mobile care facility ordered a single medication for a single patient.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="MedicationRequest-temp-presc-ex.html"
-                     title="MedicationRequest/temp-presc-ex">temp-presc-ex</a>
+                  <a href="MedicationRequest-Example-LINCAPrescription-ASIS.html"
+                     title="MedicationRequest/Example-LINCAPrescription-ASIS">Example LINCA Prescription : ASIS</a>
                </td>
+               <td>
+<p>Practicioner signed off on original LINCA Order Item. No modifications were made</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="MedicationRequest-Example-LINCAPrescription-MODIFIED.html"
+                     title="MedicationRequest/Example-LINCAPrescription-MODIFIED">Example LINCA Prescription : Modified dosage</a>
+               </td>
+               <td>
+<p>Practicioner saw it necessary to adjust dosage. LINCA Prescription  differs from LINCA Order Item.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Organization-Registered-Care-Inpatient.html"
+                     title="Organization/Registered-Care-Inpatient">Example Registered Care Actor: 'Haus Vogelsang' (Inpatient) </a>
+               </td>
+               <td>
+<p>Instance of a dummy inpatient care facility registered at the Linked Care FHIR server.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Organization-Registered-Care-Mobile.html"
+                     title="Organization/Registered-Care-Mobile">Example Registered Care Actor: 'Pflegedienst Immerdar' (Mobile)</a>
+               </td>
+               <td>
+<p>Instance of a dummy mobile care organization registered at the Linked Care FHIR server.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Patient-Registered-Inpatient-01.html"
+                     title="Patient/Registered-Inpatient-01">Example Registered Patient 01: 'Walter Gürtelthier'</a>
+               </td>
+               <td>
+<p>Instance of dummy patient, who is inpatient at Haus Vogelsang</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Patient-Registered-Inpatient-02.html"
+                     title="Patient/Registered-Inpatient-02">Example Registered Patient 02: 'Patrizia Platypus' </a>
+               </td>
+               <td>
+<p>Instance of dummy patient, who is inpatient at Haus Vogelsang</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Patient-Registered-Mobile-Care-Patient.html"
+                     title="Patient/Registered-Mobile-Care-Patient">Example Registered Patient 03: Renate Rüssel-Olifant</a>
+               </td>
+               <td>
+<p>Instance of dummy patient, who is a client at Pflegedienst Immerdar</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Organization-Registered-Pharmacy-01.html"
+                     title="Organization/Registered-Pharmacy-01">Example Registered Pharmacy Actor: 'Klappernder Storch'</a>
+               </td>
+               <td>
+<p>Instance of dummy pharmacy in Neusiedl am See owend by dummy pharmacist Mag. Franziska Fröschl</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Organization-Registered-Pharmacy-02.html"
+                     title="Organization/Registered-Pharmacy-02">Example Registered Pharmacy Actor: 'Zum Frühen Vogel'</a>
+               </td>
+               <td>
+<p>Instance of dummy pharmacy in Salzburg owend by dummy pharmacist Mag. Andreas Amsel</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Organization-Registered-Pharmacy-03.html"
+                     title="Organization/Registered-Pharmacy-03">Example Registered Pharmacy Actor: 'Zum Linden Wur'</a>
+               </td>
+               <td>
+<p>Instance of dummy pharmacy in Klagenfurt owend by dummy pharmacist Mag. Gundula Graugans</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Practitioner-Registered-Practitioner-02.html"
+                     title="Practitioner/Registered-Practitioner-02">Example Registered Practitioner Actor: 'Kreuzotter Kunibert'</a>
+               </td>
+               <td>
+<p>Instance of a dummy practicioner registered at the Linked Care FHIR server.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Practitioner-Registered-Practitioner-03.html"
+                     title="Practitioner/Registered-Practitioner-03">Example Registered Practitioner Actor: 'Spitzmaus Silvia'</a>
+               </td>
+               <td>
+<p>Instance of a dummy practicioner registered at the Linked Care FHIR server.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Practitioner-Registered-Practitioner-01.html"
+                     title="Practitioner/Registered-Practitioner-01">Example Registered Practitioner Actor: 'Würm Wibke'</a>
+               </td>
+               <td>
+<p>Instance of a dummy practicioner registered at the Linked Care FHIR server.</p>
+</td>
             </tr>
          </tbody>
       </table>
@@ -447,7 +586,7 @@ if(window.location.hash != "") {
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.linkedcare.at/">The Linked Care Consortium</a>.  Package linkedcare.hl7.at#1.2.2 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Thu, Oct 5, 2023 15:17+0000">2023-10-05</span>
+    IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.linkedcare.at/">The Linked Care Consortium</a>.  Package linkedcare.hl7.at#1.2.2 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Oct 10, 2023 19:35+0000">2023-10-10</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

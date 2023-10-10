@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "LinkedCareIGR5"] ; # 
   fhir:title [ fhir:v "Linked Care Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-10-05T15:17:50+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-10-10T19:35:45+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "The Linked Care Consortium"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "The Linked Care Consortium" ] ;
@@ -63,6 +63,18 @@
      fhir:resource ( [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "RequestOrchestration" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/RequestOrchestration/RequestOrchestration-Dosage-Example> ;
+         fhir:reference [ fhir:v "RequestOrchestration/RequestOrchestration-Dosage-Example" ]
+       ] ;
+       fhir:name [ fhir:v "Additional Example: LINCA Order" ] ;
+       fhir:description [ fhir:v "LINCA Order with different dummy data as in the user stories. Shows all ELGA conform encodeing of dosage instructions used by the other examples." ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
@@ -71,18 +83,6 @@
        ] ;
        fhir:name [ fhir:v "Address Additional Information" ] ;
        fhir:description [ fhir:v "HL7® Austria FHIR® Core Extension for the additional information part of the Austrian address." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-medication> ;
-         fhir:reference [ fhir:v "StructureDefinition/linca-medication" ]
-       ] ;
-       fhir:name [ fhir:v "ELGA complient Medication" ] ;
-       fhir:description [ fhir:v "Profile restricbinding ting the medication code and doseForm to ELGA defined Sets" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -111,13 +111,296 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationDispense" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/MedicationDispense/Example-Full-LINCADispense> ;
+         fhir:reference [ fhir:v "MedicationDispense/Example-Full-LINCADispense" ]
+       ] ;
+       fhir:name [ fhir:v "Example LINCA Dispense: Completly fulfilled" ] ;
+       fhir:description [ fhir:v "Final element in the order chain. Was completly fulfilled, order is now complete." ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation>
+       ] [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationDispense" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/MedicationDispense/Example-Partial-LINCADispense> ;
+         fhir:reference [ fhir:v "MedicationDispense/Example-Partial-LINCADispense" ]
+       ] ;
+       fhir:name [ fhir:v "Example LINCA Dispense: Partially fulfilled" ] ;
+       fhir:description [ fhir:v "Final element in the order chain. Was only partially fulfilled, order is still open." ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation>
+       ] [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/MedicationRequest/linca-id-123456> ;
+         fhir:reference [ fhir:v "MedicationRequest/linca-id-123456" ]
+       ] ;
+       fhir:name [ fhir:v "Example LINCA Order Item: Instance retrieved from LINCA Order " ] ;
+       fhir:description [ fhir:v "Instance of LINCA Order Item from mobile care facility. Will be sent to practicioner to issue a prescription" ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request>
+       ] [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/MedicationRequest/linca-id-123459> ;
+         fhir:reference [ fhir:v "MedicationRequest/linca-id-123459" ]
+       ] ;
+       fhir:name [ fhir:v "Example LINCA Order Item: Instance retrieved from LINCA Order " ] ;
+       fhir:description [ fhir:v "Instance of a LINCA Order Item from mobile care facility. Will be sent to practicioner to issue a prescription" ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request>
+       ] [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "RequestOrchestration" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/RequestOrchestration/Example-Inpatient-Facility-LINCAOrder> ;
+         fhir:reference [ fhir:v "RequestOrchestration/Example-Inpatient-Facility-LINCAOrder" ]
+       ] ;
+       fhir:name [ fhir:v "Example LINCA Order: Inpatient facility" ] ;
+       fhir:description [ fhir:v "An employee of an inpatient care facility ordered for all their patients medications." ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "RequestOrchestration" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/RequestOrchestration/Example-LINCAOrder-With-Pharmacy> ;
+         fhir:reference [ fhir:v "RequestOrchestration/Example-LINCAOrder-With-Pharmacy" ]
+       ] ;
+       fhir:name [ fhir:v "Example LINCA Order: Single medication with pharmacy" ] ;
+       fhir:description [ fhir:v "An employee of a mobile care facility ordered a refill for a single medication for a single patient." ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "RequestOrchestration" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/RequestOrchestration/Example-LINCAOrder-No-Pharmacy> ;
+         fhir:reference [ fhir:v "RequestOrchestration/Example-LINCAOrder-No-Pharmacy" ]
+       ] ;
+       fhir:name [ fhir:v "Example LINCA Order: Single medication without pharmacy" ] ;
+       fhir:description [ fhir:v "An employee of a mobile care facility ordered a single medication for a single patient." ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/MedicationRequest/Example-LINCAPrescription-ASIS> ;
+         fhir:reference [ fhir:v "MedicationRequest/Example-LINCAPrescription-ASIS" ]
+       ] ;
+       fhir:name [ fhir:v "Example LINCA Prescription : ASIS" ] ;
+       fhir:description [ fhir:v "Practicioner signed off on original LINCA Order Item. No modifications were made" ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request>
+       ] [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/MedicationRequest/Example-LINCAPrescription-MODIFIED> ;
+         fhir:reference [ fhir:v "MedicationRequest/Example-LINCAPrescription-MODIFIED" ]
+       ] ;
+       fhir:name [ fhir:v "Example LINCA Prescription : Modified dosage" ] ;
+       fhir:description [ fhir:v "Practicioner saw it necessary to adjust dosage. LINCA Prescription  differs from LINCA Order Item." ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request>
+       ] [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Organization" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/Organization/Registered-Care-Inpatient> ;
+         fhir:reference [ fhir:v "Organization/Registered-Care-Inpatient" ]
+       ] ;
+       fhir:name [ fhir:v "Example Registered Care Actor: 'Haus Vogelsang' (Inpatient) " ] ;
+       fhir:description [ fhir:v "Instance of a dummy inpatient care facility registered at the Linked Care FHIR server." ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Organization" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/Organization/Registered-Care-Mobile> ;
+         fhir:reference [ fhir:v "Organization/Registered-Care-Mobile" ]
+       ] ;
+       fhir:name [ fhir:v "Example Registered Care Actor: 'Pflegedienst Immerdar' (Mobile)" ] ;
+       fhir:description [ fhir:v "Instance of a dummy mobile care organization registered at the Linked Care FHIR server." ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Patient" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/Patient/Registered-Inpatient-01> ;
+         fhir:reference [ fhir:v "Patient/Registered-Inpatient-01" ]
+       ] ;
+       fhir:name [ fhir:v "Example Registered Patient 01: 'Walter Gürtelthier'" ] ;
+       fhir:description [ fhir:v "Instance of dummy patient, who is inpatient at Haus Vogelsang" ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient>
+       ] [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Patient" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/Patient/Registered-Inpatient-02> ;
+         fhir:reference [ fhir:v "Patient/Registered-Inpatient-02" ]
+       ] ;
+       fhir:name [ fhir:v "Example Registered Patient 02: 'Patrizia Platypus' " ] ;
+       fhir:description [ fhir:v "Instance of dummy patient, who is inpatient at Haus Vogelsang" ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient>
+       ] [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Patient" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/Patient/Registered-Mobile-Care-Patient> ;
+         fhir:reference [ fhir:v "Patient/Registered-Mobile-Care-Patient" ]
+       ] ;
+       fhir:name [ fhir:v "Example Registered Patient 03: Renate Rüssel-Olifant" ] ;
+       fhir:description [ fhir:v "Instance of dummy patient, who is a client at Pflegedienst Immerdar" ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient>
+       ] [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Organization" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/Organization/Registered-Pharmacy-01> ;
+         fhir:reference [ fhir:v "Organization/Registered-Pharmacy-01" ]
+       ] ;
+       fhir:name [ fhir:v "Example Registered Pharmacy Actor: 'Klappernder Storch'" ] ;
+       fhir:description [ fhir:v "Instance of dummy pharmacy in Neusiedl am See owend by dummy pharmacist Mag. Franziska Fröschl" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Organization" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/Organization/Registered-Pharmacy-02> ;
+         fhir:reference [ fhir:v "Organization/Registered-Pharmacy-02" ]
+       ] ;
+       fhir:name [ fhir:v "Example Registered Pharmacy Actor: 'Zum Frühen Vogel'" ] ;
+       fhir:description [ fhir:v "Instance of dummy pharmacy in Salzburg owend by dummy pharmacist Mag. Andreas Amsel" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Organization" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/Organization/Registered-Pharmacy-03> ;
+         fhir:reference [ fhir:v "Organization/Registered-Pharmacy-03" ]
+       ] ;
+       fhir:name [ fhir:v "Example Registered Pharmacy Actor: 'Zum Linden Wur'" ] ;
+       fhir:description [ fhir:v "Instance of dummy pharmacy in Klagenfurt owend by dummy pharmacist Mag. Gundula Graugans" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "Practitioner" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://fhir.hl7.at/linkedcare/Practitioner/ExamplePractitioner-01> ;
-         fhir:reference [ fhir:v "Practitioner/ExamplePractitioner-01" ]
+         fhir:link <http://fhir.hl7.at/linkedcare/Practitioner/Registered-Practitioner-02> ;
+         fhir:reference [ fhir:v "Practitioner/Registered-Practitioner-02" ]
        ] ;
-       fhir:name [ fhir:v "ExamplePractitioner-01" ] ;
+       fhir:name [ fhir:v "Example Registered Practitioner Actor: 'Kreuzotter Kunibert'" ] ;
+       fhir:description [ fhir:v "Instance of a dummy practicioner registered at the Linked Care FHIR server." ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Practitioner" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/Practitioner/Registered-Practitioner-03> ;
+         fhir:reference [ fhir:v "Practitioner/Registered-Practitioner-03" ]
+       ] ;
+       fhir:name [ fhir:v "Example Registered Practitioner Actor: 'Spitzmaus Silvia'" ] ;
+       fhir:description [ fhir:v "Instance of a dummy practicioner registered at the Linked Care FHIR server." ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Practitioner" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/Practitioner/Registered-Practitioner-01> ;
+         fhir:reference [ fhir:v "Practitioner/Registered-Practitioner-01" ]
+       ] ;
+       fhir:name [ fhir:v "Example Registered Practitioner Actor: 'Würm Wibke'" ] ;
+       fhir:description [ fhir:v "Instance of a dummy practicioner registered at the Linked Care FHIR server." ] ;
        fhir:isExample [ fhir:v "true"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -185,11 +468,35 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation> ;
+         fhir:reference [ fhir:v "StructureDefinition/linca-dipsense-documentation" ]
+       ] ;
+       fhir:name [ fhir:v "LINCA Dispense (LINCAMedicationDispense)" ] ;
+       fhir:description [ fhir:v "Linked Care  Profile for dispense documentation. The dispense must be documented by the dispensing pharmacist and specify if an order was fulfilled completly or partially. The LINCA Dispense must have an LINCA Prescription as authorizingPrescription." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-medication> ;
+         fhir:reference [ fhir:v "StructureDefinition/linca-medication" ]
+       ] ;
+       fhir:name [ fhir:v "LINCA Medication (LINCAMeds)" ] ;
+       fhir:description [ fhir:v "Linked Care profile for Medication Resource to ensure ELGA compliant representation. Bind code to ELGA CodeSystem ('asp-liste') and doseForm to ELGA ValueSet ('elga-medikationdarreichungsform')." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-full-order-list> ;
          fhir:reference [ fhir:v "StructureDefinition/linca-full-order-list" ]
        ] ;
        fhir:name [ fhir:v "LINCA Order (LINCARequestOrchestration)" ] ;
-       fhir:description [ fhir:v "The placer's software creates the RequestOrchestration when (re)ordering medication." ] ;
+       fhir:description [ fhir:v "Linked Care Profile for the overall order. The LINCA Order serves as container for the individual placements. The placer's software creates the RequestOrchestration when (re)ordering medication." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -201,7 +508,7 @@
          fhir:reference [ fhir:v "StructureDefinition/linca-order-medication-request" ]
        ] ;
        fhir:name [ fhir:v "LINCA Order Item (LINCAOrderMedicationRequest)" ] ;
-       fhir:description [ fhir:v "Individual order items created by the Linked Care system according to the contained items in the order. Send to practicioner for authorization." ] ;
+       fhir:description [ fhir:v "Linked Care profile for individual order items. A list of order items is first received as contained resources in a LINCA Order. Then the Linked Care FHIR server creates an instance for each contained item. These instances are send to the assigned practicioner(s) for authorization." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -209,11 +516,11 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation> ;
-         fhir:reference [ fhir:v "StructureDefinition/linca-dipsense-documentation" ]
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request> ;
+         fhir:reference [ fhir:v "StructureDefinition/linca-prescription-medication-request" ]
        ] ;
-       fhir:name [ fhir:v "Linked Care Dispense Profile" ] ;
-       fhir:description [ fhir:v "Linked Care Dispense Profile" ] ;
+       fhir:name [ fhir:v "LINCA Prescription (LINCAPrescriptionMedicationRequest)" ] ;
+       fhir:description [ fhir:v "Linked Care Profile for prescriptions. The prescriptions are created by the practicioner software but must be basedOn an assigned LINCA Order Item. The assigned practicioners can view, modify or cancel all of their assigned order items." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -230,97 +537,6 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Patient" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://fhir.hl7.at/linkedcare/Patient/Patient-01> ;
-         fhir:reference [ fhir:v "Patient/Patient-01" ]
-       ] ;
-       fhir:name [ fhir:v "Patient-01" ] ;
-       fhir:profile ( [
-         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"^^xsd:anyURI ;
-         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient>
-       ] [
-         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"^^xsd:anyURI ;
-         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient>
-       ] )
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Patient" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://fhir.hl7.at/linkedcare/Patient/Patient-02> ;
-         fhir:reference [ fhir:v "Patient/Patient-02" ]
-       ] ;
-       fhir:name [ fhir:v "Patient-02" ] ;
-       fhir:profile ( [
-         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"^^xsd:anyURI ;
-         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient>
-       ] [
-         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"^^xsd:anyURI ;
-         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient>
-       ] )
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Patient" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://fhir.hl7.at/linkedcare/Patient/Patient-03> ;
-         fhir:reference [ fhir:v "Patient/Patient-03" ]
-       ] ;
-       fhir:name [ fhir:v "Patient-03" ] ;
-       fhir:profile ( [
-         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"^^xsd:anyURI ;
-         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient>
-       ] [
-         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"^^xsd:anyURI ;
-         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient>
-       ] )
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Patient" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://fhir.hl7.at/linkedcare/Patient/Patient-04> ;
-         fhir:reference [ fhir:v "Patient/Patient-04" ]
-       ] ;
-       fhir:name [ fhir:v "Patient-04" ] ;
-       fhir:profile ( [
-         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"^^xsd:anyURI ;
-         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient>
-       ] [
-         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"^^xsd:anyURI ;
-         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient>
-       ] )
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request> ;
-         fhir:reference [ fhir:v "StructureDefinition/linca-prescription-medication-request" ]
-       ] ;
-       fhir:name [ fhir:v "Prescription Medication Request" ] ;
-       fhir:description [ fhir:v "Prescription send by practicioner software. Is always based on order but might differ due to changes." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "RequestOrchestration" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://fhir.hl7.at/linkedcare/RequestOrchestration/RequestOrchestrationExample> ;
-         fhir:reference [ fhir:v "RequestOrchestration/RequestOrchestrationExample" ]
-       ] ;
-       fhir:name [ fhir:v "RequestOrchestrationExample" ] ;
-       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
@@ -330,57 +546,6 @@
        fhir:name [ fhir:v "System OID" ] ;
        fhir:description [ fhir:v "HL7® Austria FHIR® Core Extension for the capturing of OID in ValueSets to reference the CodeSystem they come from.\nThe extension is used to document the OID of the system of a code referenced in a ValueSet, to align FHIR with the HL7 Austria CDA document guidelines." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "MedicationDispense" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://fhir.hl7.at/linkedcare/MedicationDispense/temp-dispense-ex> ;
-         fhir:reference [ fhir:v "MedicationDispense/temp-dispense-ex" ]
-       ] ;
-       fhir:name [ fhir:v "temp-dispense-ex" ] ;
-       fhir:profile ( [
-         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation"^^xsd:anyURI ;
-         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation>
-       ] [
-         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation"^^xsd:anyURI ;
-         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation>
-       ] )
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "MedicationRequest" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://fhir.hl7.at/linkedcare/MedicationRequest/linca-order-item-007> ;
-         fhir:reference [ fhir:v "MedicationRequest/linca-order-item-007" ]
-       ] ;
-       fhir:name [ fhir:v "temp-medreq-ex" ] ;
-       fhir:profile ( [
-         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request"^^xsd:anyURI ;
-         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request>
-       ] [
-         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request"^^xsd:anyURI ;
-         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request>
-       ] )
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "MedicationRequest" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://fhir.hl7.at/linkedcare/MedicationRequest/temp-presc-ex> ;
-         fhir:reference [ fhir:v "MedicationRequest/temp-presc-ex" ]
-       ] ;
-       fhir:name [ fhir:v "temp-presc-ex" ] ;
-       fhir:profile ( [
-         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request"^^xsd:anyURI ;
-         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request>
-       ] [
-         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request"^^xsd:anyURI ;
-         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request>
-       ] )
      ] ) ;
      fhir:page [
        fhir:source [ fhir:v "toc.html"^^xsd:anyURI ] ;
@@ -396,11 +561,6 @@
          fhir:source [ fhir:v "technical_information.html"^^xsd:anyURI ] ;
          fhir:name [ fhir:v "technical_information.html"^^xsd:anyURI ] ;
          fhir:title [ fhir:v "Technical Information" ] ;
-         fhir:generation [ fhir:v "markdown" ]
-       ] [
-         fhir:source [ fhir:v "usage.html"^^xsd:anyURI ] ;
-         fhir:name [ fhir:v "usage.html"^^xsd:anyURI ] ;
-         fhir:title [ fhir:v "Usage" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:source [ fhir:v "user_stories.html"^^xsd:anyURI ] ;

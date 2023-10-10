@@ -10,7 +10,7 @@
   "name" : "LinkedCareIGR5",
   "title" : "Linked Care Implementation Guide",
   "status" : "draft",
-  "date" : "2023-10-05T15:17:50+00:00",
+  "date" : "2023-10-10T19:35:45+00:00",
   "publisher" : "The Linked Care Consortium",
   "contact" : [{
     "name" : "The Linked Care Consortium",
@@ -51,6 +51,18 @@
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "RequestOrchestration"
+      }],
+      "reference" : {
+        "reference" : "RequestOrchestration/RequestOrchestration-Dosage-Example"
+      },
+      "name" : "Additional Example: LINCA Order",
+      "description" : "LINCA Order with different dummy data as in the user stories. Shows all ELGA conform encodeing of dosage instructions used by the other examples.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
@@ -58,18 +70,6 @@
       },
       "name" : "Address Additional Information",
       "description" : "HL7® Austria FHIR® Core Extension for the additional information part of the Austrian address.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/linca-medication"
-      },
-      "name" : "ELGA complient Medication",
-      "description" : "Profile restricbinding ting the medication code and doseForm to ELGA defined Sets",
       "isExample" : false
     },
     {
@@ -99,12 +99,250 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationDispense"
+      }],
+      "reference" : {
+        "reference" : "MedicationDispense/Example-Full-LINCADispense"
+      },
+      "name" : "Example LINCA Dispense: Completly fulfilled",
+      "description" : "Final element in the order chain. Was completly fulfilled, order is now complete.",
+      "profile" : ["http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation",
+      "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationDispense"
+      }],
+      "reference" : {
+        "reference" : "MedicationDispense/Example-Partial-LINCADispense"
+      },
+      "name" : "Example LINCA Dispense: Partially fulfilled",
+      "description" : "Final element in the order chain. Was only partially fulfilled, order is still open.",
+      "profile" : ["http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation",
+      "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/linca-id-123456"
+      },
+      "name" : "Example LINCA Order Item: Instance retrieved from LINCA Order ",
+      "description" : "Instance of LINCA Order Item from mobile care facility. Will be sent to practicioner to issue a prescription",
+      "profile" : ["http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request",
+      "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/linca-id-123459"
+      },
+      "name" : "Example LINCA Order Item: Instance retrieved from LINCA Order ",
+      "description" : "Instance of a LINCA Order Item from mobile care facility. Will be sent to practicioner to issue a prescription",
+      "profile" : ["http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request",
+      "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "RequestOrchestration"
+      }],
+      "reference" : {
+        "reference" : "RequestOrchestration/Example-Inpatient-Facility-LINCAOrder"
+      },
+      "name" : "Example LINCA Order: Inpatient facility",
+      "description" : "An employee of an inpatient care facility ordered for all their patients medications.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "RequestOrchestration"
+      }],
+      "reference" : {
+        "reference" : "RequestOrchestration/Example-LINCAOrder-With-Pharmacy"
+      },
+      "name" : "Example LINCA Order: Single medication with pharmacy",
+      "description" : "An employee of a mobile care facility ordered a refill for a single medication for a single patient.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "RequestOrchestration"
+      }],
+      "reference" : {
+        "reference" : "RequestOrchestration/Example-LINCAOrder-No-Pharmacy"
+      },
+      "name" : "Example LINCA Order: Single medication without pharmacy",
+      "description" : "An employee of a mobile care facility ordered a single medication for a single patient.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/Example-LINCAPrescription-ASIS"
+      },
+      "name" : "Example LINCA Prescription : ASIS",
+      "description" : "Practicioner signed off on original LINCA Order Item. No modifications were made",
+      "profile" : ["http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request",
+      "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/Example-LINCAPrescription-MODIFIED"
+      },
+      "name" : "Example LINCA Prescription : Modified dosage",
+      "description" : "Practicioner saw it necessary to adjust dosage. LINCA Prescription  differs from LINCA Order Item.",
+      "profile" : ["http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request",
+      "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      }],
+      "reference" : {
+        "reference" : "Organization/Registered-Care-Inpatient"
+      },
+      "name" : "Example Registered Care Actor: 'Haus Vogelsang' (Inpatient) ",
+      "description" : "Instance of a dummy inpatient care facility registered at the Linked Care FHIR server.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      }],
+      "reference" : {
+        "reference" : "Organization/Registered-Care-Mobile"
+      },
+      "name" : "Example Registered Care Actor: 'Pflegedienst Immerdar' (Mobile)",
+      "description" : "Instance of a dummy mobile care organization registered at the Linked Care FHIR server.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/Registered-Inpatient-01"
+      },
+      "name" : "Example Registered Patient 01: 'Walter Gürtelthier'",
+      "description" : "Instance of dummy patient, who is inpatient at Haus Vogelsang",
+      "profile" : ["http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient",
+      "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/Registered-Inpatient-02"
+      },
+      "name" : "Example Registered Patient 02: 'Patrizia Platypus' ",
+      "description" : "Instance of dummy patient, who is inpatient at Haus Vogelsang",
+      "profile" : ["http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient",
+      "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/Registered-Mobile-Care-Patient"
+      },
+      "name" : "Example Registered Patient 03: Renate Rüssel-Olifant",
+      "description" : "Instance of dummy patient, who is a client at Pflegedienst Immerdar",
+      "profile" : ["http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient",
+      "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      }],
+      "reference" : {
+        "reference" : "Organization/Registered-Pharmacy-01"
+      },
+      "name" : "Example Registered Pharmacy Actor: 'Klappernder Storch'",
+      "description" : "Instance of dummy pharmacy in Neusiedl am See owend by dummy pharmacist Mag. Franziska Fröschl",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      }],
+      "reference" : {
+        "reference" : "Organization/Registered-Pharmacy-02"
+      },
+      "name" : "Example Registered Pharmacy Actor: 'Zum Frühen Vogel'",
+      "description" : "Instance of dummy pharmacy in Salzburg owend by dummy pharmacist Mag. Andreas Amsel",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      }],
+      "reference" : {
+        "reference" : "Organization/Registered-Pharmacy-03"
+      },
+      "name" : "Example Registered Pharmacy Actor: 'Zum Linden Wur'",
+      "description" : "Instance of dummy pharmacy in Klagenfurt owend by dummy pharmacist Mag. Gundula Graugans",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Practitioner"
       }],
       "reference" : {
-        "reference" : "Practitioner/ExamplePractitioner-01"
+        "reference" : "Practitioner/Registered-Practitioner-02"
       },
-      "name" : "ExamplePractitioner-01",
+      "name" : "Example Registered Practitioner Actor: 'Kreuzotter Kunibert'",
+      "description" : "Instance of a dummy practicioner registered at the Linked Care FHIR server.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/Registered-Practitioner-03"
+      },
+      "name" : "Example Registered Practitioner Actor: 'Spitzmaus Silvia'",
+      "description" : "Instance of a dummy practicioner registered at the Linked Care FHIR server.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/Registered-Practitioner-01"
+      },
+      "name" : "Example Registered Practitioner Actor: 'Würm Wibke'",
+      "description" : "Instance of a dummy practicioner registered at the Linked Care FHIR server.",
       "isExample" : true
     },
     {
@@ -173,10 +411,34 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/linca-dipsense-documentation"
+      },
+      "name" : "LINCA Dispense (LINCAMedicationDispense)",
+      "description" : "Linked Care  Profile for dispense documentation. The dispense must be documented by the dispensing pharmacist and specify if an order was fulfilled completly or partially. The LINCA Dispense must have an LINCA Prescription as authorizingPrescription.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/linca-medication"
+      },
+      "name" : "LINCA Medication (LINCAMeds)",
+      "description" : "Linked Care profile for Medication Resource to ensure ELGA compliant representation. Bind code to ELGA CodeSystem ('asp-liste') and doseForm to ELGA ValueSet ('elga-medikationdarreichungsform').",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/linca-full-order-list"
       },
       "name" : "LINCA Order (LINCARequestOrchestration)",
-      "description" : "The placer's software creates the RequestOrchestration when (re)ordering medication.",
+      "description" : "Linked Care Profile for the overall order. The LINCA Order serves as container for the individual placements. The placer's software creates the RequestOrchestration when (re)ordering medication.",
       "isExample" : false
     },
     {
@@ -188,7 +450,7 @@
         "reference" : "StructureDefinition/linca-order-medication-request"
       },
       "name" : "LINCA Order Item (LINCAOrderMedicationRequest)",
-      "description" : "Individual order items created by the Linked Care system according to the contained items in the order. Send to practicioner for authorization.",
+      "description" : "Linked Care profile for individual order items. A list of order items is first received as contained resources in a LINCA Order. Then the Linked Care FHIR server creates an instance for each contained item. These instances are send to the assigned practicioner(s) for authorization.",
       "isExample" : false
     },
     {
@@ -197,10 +459,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/linca-dipsense-documentation"
+        "reference" : "StructureDefinition/linca-prescription-medication-request"
       },
-      "name" : "Linked Care Dispense Profile",
-      "description" : "Linked Care Dispense Profile",
+      "name" : "LINCA Prescription (LINCAPrescriptionMedicationRequest)",
+      "description" : "Linked Care Profile for prescriptions. The prescriptions are created by the practicioner software but must be basedOn an assigned LINCA Order Item. The assigned practicioners can view, modify or cancel all of their assigned order items.",
       "isExample" : false
     },
     {
@@ -218,77 +480,6 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Patient"
-      }],
-      "reference" : {
-        "reference" : "Patient/Patient-01"
-      },
-      "name" : "Patient-01",
-      "profile" : ["http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient",
-      "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"]
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Patient"
-      }],
-      "reference" : {
-        "reference" : "Patient/Patient-02"
-      },
-      "name" : "Patient-02",
-      "profile" : ["http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient",
-      "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"]
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Patient"
-      }],
-      "reference" : {
-        "reference" : "Patient/Patient-03"
-      },
-      "name" : "Patient-03",
-      "profile" : ["http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient",
-      "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"]
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Patient"
-      }],
-      "reference" : {
-        "reference" : "Patient/Patient-04"
-      },
-      "name" : "Patient-04",
-      "profile" : ["http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient",
-      "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"]
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/linca-prescription-medication-request"
-      },
-      "name" : "Prescription Medication Request",
-      "description" : "Prescription send by practicioner software. Is always based on order but might differ due to changes.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "RequestOrchestration"
-      }],
-      "reference" : {
-        "reference" : "RequestOrchestration/RequestOrchestrationExample"
-      },
-      "name" : "RequestOrchestrationExample",
-      "isExample" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
@@ -297,42 +488,6 @@
       "name" : "System OID",
       "description" : "HL7® Austria FHIR® Core Extension for the capturing of OID in ValueSets to reference the CodeSystem they come from.\nThe extension is used to document the OID of the system of a code referenced in a ValueSet, to align FHIR with the HL7 Austria CDA document guidelines.",
       "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationDispense"
-      }],
-      "reference" : {
-        "reference" : "MedicationDispense/temp-dispense-ex"
-      },
-      "name" : "temp-dispense-ex",
-      "profile" : ["http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation",
-      "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation"]
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/linca-order-item-007"
-      },
-      "name" : "temp-medreq-ex",
-      "profile" : ["http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request",
-      "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-order-medication-request"]
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/temp-presc-ex"
-      },
-      "name" : "temp-presc-ex",
-      "profile" : ["http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request",
-      "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request"]
     }],
     "page" : {
       "sourceUrl" : "toc.html",
@@ -349,12 +504,6 @@
         "sourceUrl" : "technical_information.html",
         "name" : "technical_information.html",
         "title" : "Technical Information",
-        "generation" : "markdown"
-      },
-      {
-        "sourceUrl" : "usage.html",
-        "name" : "usage.html",
-        "title" : "Usage",
         "generation" : "markdown"
       },
       {
