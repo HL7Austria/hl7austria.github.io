@@ -1,0 +1,88 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.hl7.at/linkedcare/MedicationDispense/d6a2f68cd3f74c28b9dd9fa4ec014cc4> a fhir:MedicationDispense ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "d6a2f68cd3f74c28b9dd9fa4ec014cc4"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "1" ] ;
+     fhir:lastUpdated [ fhir:v "2023-10-12T16:38:54.0125468+00:00"^^xsd:dateTime ] ;
+     fhir:profile ( [
+       fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation"^^xsd:anyURI ;
+       fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: MedicationDispense</b><a name=\"d6a2f68cd3f74c28b9dd9fa4ec014cc4\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource MedicationDispense &quot;d6a2f68cd3f74c28b9dd9fa4ec014cc4&quot; Version &quot;1&quot; Updated &quot;2023-10-12 16:38:54+0000&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-linca-dipsense-documentation.html\">LINCA Dispense (LINCAMedicationDispense)</a></p></div><p><b>status</b>: completed</p><h3>Medications</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Concept</b></td></tr><tr><td style=\"display: none\">*</td><td>Lasix 40 mg Tabletten <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (CodeSystem-asp-liste#0031130)</span></td></tr></table><p><b>subject</b>: <a href=\"Patient-ee8d340312484aaca84774b2a0d53533.html\">Patient/ee8d340312484aaca84774b2a0d53533</a> &quot; RÜSSEL-OLIFANT&quot;</p><h3>Performers</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Actor</b></td></tr><tr><td style=\"display: none\">*</td><td><span>: Apotheke 'Zum frühen Vogel'</span></td></tr></table><p><b>authorizingPrescription</b>: <a href=\"MedicationRequest-331c530a6377444a9e78a8a27a2ec35c.html\">MedicationRequest/331c530a6377444a9e78a8a27a2ec35c</a></p><p><b>type</b>: First Fill - Complete <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-v3-ActCode.html\">ActCode</a>#FFC)</span></p><blockquote><p><b>dosageInstruction</b></p><p><b>sequence</b>: 1</p><p><b>text</b>: 1 pill daily </p><p><b>timing</b>: Once per 1 days</p><blockquote><p><b>doseAndRate</b></p></blockquote></blockquote></div>"
+  ] ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:medication [
+     fhir:concept [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://termgit.elga.gv.at/CodeSystem-asp-liste"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "0031130" ] ;
+         fhir:display [ fhir:v "Lasix 40 mg Tabletten" ]
+       ] )
+     ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <http://fhir.hl7.at/linkedcare/Patient/ee8d340312484aaca84774b2a0d53533> ;
+     fhir:reference [ fhir:v "Patient/ee8d340312484aaca84774b2a0d53533" ]
+  ] ; # 
+  fhir:performer ( [
+     fhir:actor [
+       fhir:identifier [
+         fhir:system [ fhir:v "urn:oid:1.2.40.0.34"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "2.999.40.0.34.5.1.2" ]
+       ] ;
+       fhir:display [ fhir:v "Apotheke 'Zum frühen Vogel'" ]
+     ]
+  ] ) ; # 
+  fhir:authorizingPrescription ( [
+     fhir:link <http://fhir.hl7.at/linkedcare/MedicationRequest/331c530a6377444a9e78a8a27a2ec35c> ;
+     fhir:reference [ fhir:v "MedicationRequest/331c530a6377444a9e78a8a27a2ec35c" ]
+  ] ) ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "FFC" ]
+     ] )
+  ] ; # 
+  fhir:dosageInstruction ( [
+     fhir:sequence [ fhir:v "1"^^xsd:integer ] ;
+     fhir:text [ fhir:v "1 pill daily " ] ;
+     fhir:timing [
+       fhir:repeat [
+         fhir:bounds [
+           a fhir:Duration ;
+           fhir:value [ fhir:v "1"^^xsd:decimal ] ;
+           fhir:code [ fhir:v "d" ]
+         ] ;
+         fhir:frequency [ fhir:v "1"^^xsd:positiveInteger ] ;
+         fhir:period [ fhir:v "1"^^xsd:decimal ] ;
+         fhir:periodUnit [ fhir:v "d" ]
+       ]
+     ] ;
+     fhir:doseAndRate ( [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/dose-rate-type"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "ordered" ] ;
+           fhir:display [ fhir:v "Ordered" ]
+         ] )
+       ] ;
+       fhir:dose [
+         a fhir:Quantity ;
+         fhir:value [ fhir:v "1"^^xsd:decimal ] ;
+         fhir:code [ fhir:v "100000073665" ]
+       ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
