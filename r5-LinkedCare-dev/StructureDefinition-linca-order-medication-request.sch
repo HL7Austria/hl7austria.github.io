@@ -13,6 +13,7 @@
     <sch:title>f:MedicationRequest</sch:title>
     <sch:rule context="f:MedicationRequest">
       <sch:assert test="count(f:contained) &lt;= 0">contained: maximum cardinality of 'contained' is 0</sch:assert>
+      <sch:assert test="count(f:basedOn) &lt;= 1">basedOn: maximum cardinality of 'basedOn' is 1</sch:assert>
       <sch:assert test="count(f:informationSource) &gt;= 1">informationSource: minimum cardinality of 'informationSource' is 1</sch:assert>
       <sch:assert test="count(f:informationSource) &lt;= 1">informationSource: maximum cardinality of 'informationSource' is 1</sch:assert>
       <sch:assert test="count(f:requester) &gt;= 1">requester: minimum cardinality of 'requester' is 1</sch:assert>
