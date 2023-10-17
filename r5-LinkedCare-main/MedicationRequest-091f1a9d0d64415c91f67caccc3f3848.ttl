@@ -1,0 +1,89 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.hl7.at/linkedcare/MedicationRequest/091f1a9d0d64415c91f67caccc3f3848> a fhir:MedicationRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "091f1a9d0d64415c91f67caccc3f3848"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "1" ] ;
+     fhir:lastUpdated [ fhir:v "2023-10-12T13:02:58.6460419+00:00"^^xsd:dateTime ] ;
+     fhir:profile ( [
+       fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request"^^xsd:anyURI ;
+       fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: MedicationRequest</b><a name=\"091f1a9d0d64415c91f67caccc3f3848\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource MedicationRequest &quot;091f1a9d0d64415c91f67caccc3f3848&quot; Version &quot;1&quot; Updated &quot;2023-10-12 13:02:58+0000&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-linca-prescription-medication-request.html\">LINCA Prescription (LINCAPrescriptionMedicationRequest)</a></p></div><p><b>identifier</b>: id: CVF1 23ER USW1</p><p><b>basedOn</b>: <a href=\"MedicationRequest-3249246cd3774134abeafdfe6189e8e7.html\">MedicationRequest/3249246cd3774134abeafdfe6189e8e7</a></p><p><b>groupIdentifier</b>: id: ABCD 1234 EFGH</p><p><b>status</b>: active</p><p><b>intent</b>: order</p><h3>Medications</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Concept</b></td></tr><tr><td style=\"display: none\">*</td><td>Ultralan - Salbe <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (CodeSystem-asp-liste#0059714)</span></td></tr></table><p><b>subject</b>: <a href=\"Patient-6800bda462034a9a8123e3dc48c61d53.html\">Patient/6800bda462034a9a8123e3dc48c61d53</a> &quot; GÜRTELTHIER&quot;</p><p><b>informationSource</b>: <span>: Haus Vogelsang</span></p><p><b>supportingInformation</b>: <a href=\"RequestOrchestration-c13972d2294549c7bd29e924cbf0ce41.html\">RequestOrchestration/c13972d2294549c7bd29e924cbf0ce41</a></p><p><b>requester</b>: <span>: DGKP Walter Specht</span></p><p><b>performer</b>: <span>: Dr. Silvia Spitzmaus</span></p><h3>DosageInstructions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td></tr><tr><td style=\"display: none\">*</td><td>apply 1x daily to the inflicted area</td></tr></table><h3>DispenseRequests</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Dispenser</b></td></tr><tr><td style=\"display: none\">*</td><td><span>: Apotheke 'Zum Linden Wurm'</span></td></tr></table></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "eMed-ID"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "CVF1 23ER USW1" ]
+  ] ) ; # 
+  fhir:basedOn ( [
+     fhir:link <http://fhir.hl7.at/linkedcare/MedicationRequest/3249246cd3774134abeafdfe6189e8e7> ;
+     fhir:reference [ fhir:v "MedicationRequest/3249246cd3774134abeafdfe6189e8e7" ]
+  ] ) ; # 
+  fhir:groupIdentifier [
+     fhir:system [ fhir:v "eRezept-ID"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "ABCD 1234 EFGH" ]
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:medication [
+     fhir:concept [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://termgit.elga.gv.at/CodeSystem-asp-liste"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "0059714" ] ;
+         fhir:display [ fhir:v "Ultralan - Salbe" ]
+       ] )
+     ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <http://fhir.hl7.at/linkedcare/Patient/6800bda462034a9a8123e3dc48c61d53> ;
+     fhir:reference [ fhir:v "Patient/6800bda462034a9a8123e3dc48c61d53" ]
+  ] ; # 
+  fhir:informationSource ( [
+     fhir:identifier [
+       fhir:system [ fhir:v "urn:oid:1.2.40.0.34"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "2.999.40.0.34.1.1.1" ]
+     ] ;
+     fhir:display [ fhir:v "Haus Vogelsang" ]
+  ] ) ; # 
+  fhir:supportingInformation ( [
+     fhir:link <http://fhir.hl7.at/linkedcare/RequestOrchestration/c13972d2294549c7bd29e924cbf0ce41> ;
+     fhir:reference [ fhir:v "RequestOrchestration/c13972d2294549c7bd29e924cbf0ce41" ]
+  ] ) ; # 
+  fhir:requester [
+     fhir:identifier [
+       fhir:system [ fhir:v "urn:oid:2.999.40.0.34.1.1.1"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "ECHT_SPECHT" ]
+     ] ;
+     fhir:display [ fhir:v "DGKP Walter Specht" ]
+  ] ; # 
+  fhir:performer ( [
+     fhir:identifier [
+       fhir:system [ fhir:v "urn:oid:1.2.40.0.34"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "2.999.40.0.34.3.1.3" ]
+     ] ;
+     fhir:display [ fhir:v "Dr. Silvia Spitzmaus" ]
+  ] ) ; # 
+  fhir:dosageInstruction ( [
+     fhir:text [ fhir:v "apply 1x daily to the inflicted area" ]
+  ] ) ; # 
+  fhir:dispenseRequest [
+     fhir:dispenser [
+       fhir:identifier [
+         fhir:system [ fhir:v "urn:oid:1.2.40.0.34"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "2.999.40.0.34.5.1.3" ]
+       ] ;
+       fhir:display [ fhir:v "Apotheke 'Zum Linden Wurm'" ]
+     ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
