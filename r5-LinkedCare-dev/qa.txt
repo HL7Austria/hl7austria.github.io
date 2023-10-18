@@ -1,14 +1,14 @@
 ﻿LinkedCareIGR5 : Validation Results
 =========================================
 
-err = 79, warn = 82, info = 42
+err = 76, warn = 81, info = 43
 IG Publisher Version: 1.4.16
-Generated Wed Oct 18 09:12:01 UTC 2023. FHIR version 5.0.0 for linkedcare.hl7.at#1.2.2 (canonical = http://fhir.hl7.at/linkedcare)
+Generated Wed Oct 18 10:01:07 UTC 2023. FHIR version 5.0.0 for linkedcare.hl7.at#1.2.2 (canonical = http://fhir.hl7.at/linkedcare)
  Build Errors : 407 / 3 / 0
  /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/CodeSystem-at-core-cs-iso-3166-1-alpha-3 : 4 / 1 / 2
  /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/CodeSystem-at-core-cs-religion : 4 / 1 / 2
  /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/ImplementationGuide-linkedcare.hl7.at : 0 / 1 / 1
- /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/MedicationDispense-d6a2f68cd3f74c28b9dd9fa4ec014cc4 : 3 / 2 / 2
+ /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/MedicationDispense-d6a2f68cd3f74c28b9dd9fa4ec014cc4 : 0 / 1 / 3
  /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/MedicationRequest-091f1a9d0d64415c91f67caccc3f3848 : 3 / 0 / 2
  /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/MedicationRequest-1762e9b8e2c84b01824f101db887593c : 4 / 1 / 2
  /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/MedicationRequest-2f9de5b899a54392b9b39c440aca0887 : 2 / 0 / 2
@@ -466,10 +466,7 @@ ERROR: /home/runner/work/LinkedCare/LinkedCare/fsh-generated/resources/CodeSyste
 WARNING: ImplementationGuide/linkedcare.hl7.at: ImplementationGuide.definition.resource[27].name: value should not start or finish with whitespace 'Registered Patient 02: 'Patrizia Platypus' '
 == fsh-generated/resources/MedicationDispense-d6a2f68cd3f74c28b9dd9fa4ec014cc4.json ==
 INFORMATION: MedicationDispense/d6a2f68cd3f74c28b9dd9fa4ec014cc4: MedicationDispense.medication.concept.coding[0]: Code System URI 'https://termgit.elga.gv.at/CodeSystem-asp-liste' is unknown so the code cannot be validated
-WARNING: MedicationDispense/d6a2f68cd3f74c28b9dd9fa4ec014cc4: MedicationDispense.dosageInstruction[0].text: value should not start or finish with whitespace '1 pill daily '
-ERROR: MedicationDispense/d6a2f68cd3f74c28b9dd9fa4ec014cc4: MedicationDispense.dosageInstruction[0].timing.repeat.bounds.ofType(Duration): Constraint failed: drt-1: 'There SHALL be a code if there is a value and it SHALL be an expression of time.  If system is present, it SHALL be UCUM.' (defined in http://hl7.org/fhir/StructureDefinition/Duration)
-ERROR: MedicationDispense/d6a2f68cd3f74c28b9dd9fa4ec014cc4: MedicationDispense.dosageInstruction[0].timing.repeat.bounds.ofType(Duration): Constraint failed: qty-3: 'If a code for the unit is present, the system SHALL also be present' (defined in http://hl7.org/fhir/StructureDefinition/Quantity)
-ERROR: MedicationDispense/d6a2f68cd3f74c28b9dd9fa4ec014cc4: MedicationDispense.dosageInstruction[0].doseAndRate[0].dose.ofType(Quantity): Constraint failed: qty-3: 'If a code for the unit is present, the system SHALL also be present' (defined in http://hl7.org/fhir/StructureDefinition/Quantity)
+INFORMATION: MedicationDispense/d6a2f68cd3f74c28b9dd9fa4ec014cc4: MedicationDispense.dosageInstruction[0].doseAndRate[0].dose.ofType(Quantity): Code System URI 'https://termgit.elga.gv.at/ValueSet/elga-medikationdarreichungsform' is unknown so the code cannot be validated
 WARNING: MedicationDispense/d6a2f68cd3f74c28b9dd9fa4ec014cc4: MedicationDispense.dosageInstruction[0].doseAndRate[0].dose.ofType(Quantity).code: ValueSet https://termgit.elga.gv.at/ValueSet/elga-medikationdarreichungsform not found
 == fsh-generated/resources/MedicationRequest-091f1a9d0d64415c91f67caccc3f3848.json ==
 ERROR: MedicationRequest/091f1a9d0d64415c91f67caccc3f3848: MedicationRequest.supportingInformation[0]: Slicing cannot be evaluated: Unable to resolve discriminator in definitions: text in profile http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request on element MedicationRequest.supportingInformation:listref, looking in profile http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request (@char 1)
