@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+  <id value="undefined"/>
+  <meta>
+    <lastUpdated value="2023-10-25T15:39:18.7959917+02:00"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>Linked Care FHIRCAAT Capability Statement</h2><div><p>LOIDL Consulting HL7/FHIR R5 Gateway</p>
+</div><table><tr><td>Mode</td><td>SERVER</td></tr><tr><td>Description</td><td/></tr><tr><td>Transaction</td><td></td></tr><tr><td>System History</td><td></td></tr><tr><td>System Search</td><td></td></tr></table><table><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th><b title="GET a resource (read interaction)">Read</b></th><th><b title="GET all set of resources of the type (search interaction)">Search</b></th><th><b title="PUT a new resource version (update interaction)">Update</b></th><th><b title="POST a new resource (create interaction)">Create</b></th><th><b title="DELETE a resource (delete interaction)">Delete</b></th></tr><tr><td>Patient</td><td><a href="http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient">http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient</a></td><td>y</td><td></td><td>y</td><td>y</td><td>y</td></tr><tr><td>RequestOrchestration</td><td><a href="http://fhir.hl7.at/linkedcare/StructureDefinition/linca-full-proposal-list">http://fhir.hl7.at/linkedcare/StructureDefinition/linca-full-proposal-list</a></td><td>y</td><td></td><td></td><td>y</td><td>y</td></tr><tr><td>MedicationRequest</td><td><a href="http://fhir.hl7.at/linkedcare/StructureDefinition/linca-proposal-medication-request">http://fhir.hl7.at/linkedcare/StructureDefinition/linca-proposal-medication-request</a></td><td>y</td><td></td><td></td><td>y</td><td></td></tr><tr><td>MedicationRequest</td><td><a href="http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request">http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request</a></td><td>y</td><td></td><td></td><td>y</td><td></td></tr><tr><td>MedicationDispense</td><td><a href="http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation">http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation</a></td><td>y</td><td></td><td></td><td>y</td><td></td></tr></table></div>
+  </text>
+  <contained>
+    <OperationDefinition>
+      <id value="proposalStatusOperation"/>
+      <name value="proposal-status"/>
+      <status value="active"/>
+      <kind value="query"/>
+      <code value="proposal-status"/>
+      <system value="false"/>
+      <type value="false"/>
+      <instance value="false"/>
+      <parameter>
+        <name value="lc_id"/>
+        <use value="in"/>
+        <min value="1"/>
+        <max value="1"/>
+        <type value="id"/>
+      </parameter>
+    </OperationDefinition>
+  </contained>
+  <contained>
+    <OperationDefinition>
+      <id value="proposalsToPrescribeOperation"/>
+      <name value="proposals-to-prescribe"/>
+      <status value="active"/>
+      <kind value="query"/>
+      <code value="proposals-to-prescribe"/>
+      <system value="false"/>
+      <type value="false"/>
+      <instance value="false"/>
+    </OperationDefinition>
+  </contained>
+  <contained>
+    <OperationDefinition>
+      <id value="prescriptionsToDispenseOperation"/>
+      <name value="prescriptions-to-dispense"/>
+      <status value="active"/>
+      <kind value="query"/>
+      <code value="prescriptions-to-dispense"/>
+      <system value="false"/>
+      <type value="false"/>
+      <instance value="false"/>
+    </OperationDefinition>
+  </contained>
+  <contained>
+    <OperationDefinition>
+      <id value="prescriptionToDispenseOperation"/>
+      <name value="prescription-to-dispense"/>
+      <status value="active"/>
+      <kind value="query"/>
+      <code value="prescription-to-dispense"/>
+      <system value="false"/>
+      <type value="false"/>
+      <instance value="false"/>
+      <parameter>
+        <name value="id"/>
+        <use value="in"/>
+        <min value="1"/>
+        <max value="1"/>
+        <type value="string"/>
+      </parameter>
+    </OperationDefinition>
+  </contained>
+  <url value="https://localhost:8084/metadata"/>
+  <version value="1.2.2"/>
+  <name value="Linked Care FHIRCAAT Capability Statement"/>
+  <status value="active"/>
+  <experimental value="true"/>
+  <date value="2023-05-21"/>
+  <publisher value="The Linked Care Consortium"/>
+  <contact>
+    <name value="The Linked Care Consortium"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.linkedcare.at/"/>
+    </telecom>
+  </contact>
+  <description value="LOIDL Consulting HL7/FHIR R5 Gateway"/>
+  <kind value="instance"/>
+  <fhirVersion value="5.0.0"/>
+  <format value="xml"/>
+  <format value="json"/>
+  <rest>
+    <mode value="server"/>
+    <resource>
+      <type value="Patient"/>
+      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"/>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="delete"/>
+      </interaction>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <versioning value="versioned"/>
+      <readHistory value="true"/>
+      <updateCreate value="false"/>
+      <conditionalCreate value="false"/>
+      <conditionalUpdate value="false"/>
+      <conditionalDelete value="not-supported"/>
+    </resource>
+    <resource>
+      <type value="RequestOrchestration"/>
+      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/linca-full-proposal-list"/>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="delete"/>
+      </interaction>
+      <versioning value="versioned"/>
+      <readHistory value="true"/>
+      <updateCreate value="false"/>
+      <conditionalCreate value="false"/>
+      <conditionalUpdate value="false"/>
+      <conditionalDelete value="not-supported"/>
+    </resource>
+    <resource>
+      <type value="MedicationRequest"/>
+      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/linca-proposal-medication-request"/>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <versioning value="no-version"/>
+      <readHistory value="true"/>
+      <updateCreate value="false"/>
+      <conditionalCreate value="false"/>
+      <conditionalUpdate value="false"/>
+      <conditionalDelete value="not-supported"/>
+    </resource>
+    <resource>
+      <type value="MedicationRequest"/>
+      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request"/>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <versioning value="no-version"/>
+      <readHistory value="true"/>
+      <updateCreate value="false"/>
+      <conditionalCreate value="false"/>
+      <conditionalUpdate value="false"/>
+      <conditionalDelete value="not-supported"/>
+    </resource>
+    <resource>
+      <type value="MedicationDispense"/>
+      <profile value="http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation"/>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <versioning value="no-version"/>
+      <readHistory value="true"/>
+      <updateCreate value="false"/>
+      <conditionalCreate value="false"/>
+      <conditionalUpdate value="false"/>
+      <conditionalDelete value="not-supported"/>
+    </resource>
+    <operation>
+      <name value="proposal-status"/>
+      <definition value="#proposalStatusOperation"/>
+    </operation>
+    <operation>
+      <name value="proposals-to-prescribe"/>
+      <definition value="#proposalsToPrescribeOperation"/>
+    </operation>
+    <operation>
+      <name value="prescriptions-to-dispense"/>
+      <definition value="#prescriptionsToDispenseOperation"/>
+    </operation>
+    <operation>
+      <name value="prescription-to-dispense"/>
+      <definition value="#prescriptionToDispenseOperation"/>
+    </operation>
+  </rest>
+</CapabilityStatement>

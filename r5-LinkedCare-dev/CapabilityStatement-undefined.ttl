@@ -1,0 +1,201 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.hl7.at/linkedcare/CapabilityStatement/undefined> a fhir:CapabilityStatement ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "undefined"] ; # 
+  fhir:meta [
+     fhir:lastUpdated [ fhir:v "2023-10-25T15:39:18.7959917+02:00"^^xsd:dateTime ]
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Linked Care FHIRCAAT Capability Statement</h2><div><p>LOIDL Consulting HL7/FHIR R5 Gateway</p>\n</div><table><tr><td>Mode</td><td>SERVER</td></tr><tr><td>Description</td><td/></tr><tr><td>Transaction</td><td></td></tr><tr><td>System History</td><td></td></tr><tr><td>System Search</td><td></td></tr></table><table><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th><b title=\"GET a resource (read interaction)\">Read</b></th><th><b title=\"GET all set of resources of the type (search interaction)\">Search</b></th><th><b title=\"PUT a new resource version (update interaction)\">Update</b></th><th><b title=\"POST a new resource (create interaction)\">Create</b></th><th><b title=\"DELETE a resource (delete interaction)\">Delete</b></th></tr><tr><td>Patient</td><td><a href=\"http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient\">http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient</a></td><td>y</td><td></td><td>y</td><td>y</td><td>y</td></tr><tr><td>RequestOrchestration</td><td><a href=\"http://fhir.hl7.at/linkedcare/StructureDefinition/linca-full-proposal-list\">http://fhir.hl7.at/linkedcare/StructureDefinition/linca-full-proposal-list</a></td><td>y</td><td></td><td></td><td>y</td><td>y</td></tr><tr><td>MedicationRequest</td><td><a href=\"http://fhir.hl7.at/linkedcare/StructureDefinition/linca-proposal-medication-request\">http://fhir.hl7.at/linkedcare/StructureDefinition/linca-proposal-medication-request</a></td><td>y</td><td></td><td></td><td>y</td><td></td></tr><tr><td>MedicationRequest</td><td><a href=\"http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request\">http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request</a></td><td>y</td><td></td><td></td><td>y</td><td></td></tr><tr><td>MedicationDispense</td><td><a href=\"http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation\">http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation</a></td><td>y</td><td></td><td></td><td>y</td><td></td></tr></table></div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:OperationDefinition ;
+     fhir:id [ fhir:v "proposalStatusOperation" ] ;
+     fhir:name [ fhir:v "proposal-status" ] ;
+     fhir:status [ fhir:v "active" ] ;
+     fhir:kind [ fhir:v "query" ] ;
+     fhir:code [ fhir:v "proposal-status" ] ;
+     fhir:system [ fhir:v "false"^^xsd:boolean ] ;
+     fhir:type [ fhir:v "false"^^xsd:boolean ] ;
+     fhir:instance [ fhir:v "false"^^xsd:boolean ] ;
+     fhir:parameter ( [
+       fhir:name [ fhir:v "lc_id" ] ;
+       fhir:use [ fhir:v "in" ] ;
+       fhir:min [ fhir:v "1"^^xsd:integer ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "id" ]
+     ] )
+  ] [
+     a fhir:OperationDefinition ;
+     fhir:id [ fhir:v "proposalsToPrescribeOperation" ] ;
+     fhir:name [ fhir:v "proposals-to-prescribe" ] ;
+     fhir:status [ fhir:v "active" ] ;
+     fhir:kind [ fhir:v "query" ] ;
+     fhir:code [ fhir:v "proposals-to-prescribe" ] ;
+     fhir:system [ fhir:v "false"^^xsd:boolean ] ;
+     fhir:type [ fhir:v "false"^^xsd:boolean ] ;
+     fhir:instance [ fhir:v "false"^^xsd:boolean ]
+  ] [
+     a fhir:OperationDefinition ;
+     fhir:id [ fhir:v "prescriptionsToDispenseOperation" ] ;
+     fhir:name [ fhir:v "prescriptions-to-dispense" ] ;
+     fhir:status [ fhir:v "active" ] ;
+     fhir:kind [ fhir:v "query" ] ;
+     fhir:code [ fhir:v "prescriptions-to-dispense" ] ;
+     fhir:system [ fhir:v "false"^^xsd:boolean ] ;
+     fhir:type [ fhir:v "false"^^xsd:boolean ] ;
+     fhir:instance [ fhir:v "false"^^xsd:boolean ]
+  ] [
+     a fhir:OperationDefinition ;
+     fhir:id [ fhir:v "prescriptionToDispenseOperation" ] ;
+     fhir:name [ fhir:v "prescription-to-dispense" ] ;
+     fhir:status [ fhir:v "active" ] ;
+     fhir:kind [ fhir:v "query" ] ;
+     fhir:code [ fhir:v "prescription-to-dispense" ] ;
+     fhir:system [ fhir:v "false"^^xsd:boolean ] ;
+     fhir:type [ fhir:v "false"^^xsd:boolean ] ;
+     fhir:instance [ fhir:v "false"^^xsd:boolean ] ;
+     fhir:parameter ( [
+       fhir:name [ fhir:v "id" ] ;
+       fhir:use [ fhir:v "in" ] ;
+       fhir:min [ fhir:v "1"^^xsd:integer ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "string" ]
+     ] )
+  ] ) ; # 
+  fhir:url [ fhir:v "https://localhost:8084/metadata"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.2.2"] ; # 
+  fhir:name [ fhir:v "Linked Care FHIRCAAT Capability Statement"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2023-05-21"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "The Linked Care Consortium"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "The Linked Care Consortium" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.linkedcare.at/" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "LOIDL Consulting HL7/FHIR R5 Gateway"] ; # 
+  fhir:kind [ fhir:v "instance"] ; # 
+  fhir:fhirVersion [ fhir:v "5.0.0"] ; # 
+  fhir:format ( [ fhir:v "xml"] [ fhir:v "json"] ) ; # 
+  fhir:rest ( [
+     fhir:mode [ fhir:v "server" ] ;
+     fhir:resource ( [
+       fhir:type [ fhir:v "Patient" ] ;
+       fhir:profile [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-patient>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "create" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] [
+         fhir:code [ fhir:v "delete" ]
+       ] [
+         fhir:code [ fhir:v "update" ]
+       ] ) ;
+       fhir:versioning [ fhir:v "versioned" ] ;
+       fhir:readHistory [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:updateCreate [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:conditionalCreate [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:conditionalUpdate [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:conditionalDelete [ fhir:v "not-supported" ]
+     ] [
+       fhir:type [ fhir:v "RequestOrchestration" ] ;
+       fhir:profile [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-full-proposal-list"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-full-proposal-list>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "create" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] [
+         fhir:code [ fhir:v "delete" ]
+       ] ) ;
+       fhir:versioning [ fhir:v "versioned" ] ;
+       fhir:readHistory [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:updateCreate [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:conditionalCreate [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:conditionalUpdate [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:conditionalDelete [ fhir:v "not-supported" ]
+     ] [
+       fhir:type [ fhir:v "MedicationRequest" ] ;
+       fhir:profile [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-proposal-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-proposal-medication-request>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "create" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] ) ;
+       fhir:versioning [ fhir:v "no-version" ] ;
+       fhir:readHistory [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:updateCreate [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:conditionalCreate [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:conditionalUpdate [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:conditionalDelete [ fhir:v "not-supported" ]
+     ] [
+       fhir:type [ fhir:v "MedicationRequest" ] ;
+       fhir:profile [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-prescription-medication-request>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "create" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] ) ;
+       fhir:versioning [ fhir:v "no-version" ] ;
+       fhir:readHistory [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:updateCreate [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:conditionalCreate [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:conditionalUpdate [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:conditionalDelete [ fhir:v "not-supported" ]
+     ] [
+       fhir:type [ fhir:v "MedicationDispense" ] ;
+       fhir:profile [
+         fhir:v "http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/linkedcare/StructureDefinition/linca-dipsense-documentation>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "create" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] ) ;
+       fhir:versioning [ fhir:v "no-version" ] ;
+       fhir:readHistory [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:updateCreate [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:conditionalCreate [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:conditionalUpdate [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:conditionalDelete [ fhir:v "not-supported" ]
+     ] ) ;
+     fhir:operation ( [
+       fhir:name [ fhir:v "proposal-status" ] ;
+       fhir:definition [ fhir:v "#proposalStatusOperation"^^xsd:anyURI ]
+     ] [
+       fhir:name [ fhir:v "proposals-to-prescribe" ] ;
+       fhir:definition [ fhir:v "#proposalsToPrescribeOperation"^^xsd:anyURI ]
+     ] [
+       fhir:name [ fhir:v "prescriptions-to-dispense" ] ;
+       fhir:definition [ fhir:v "#prescriptionsToDispenseOperation"^^xsd:anyURI ]
+     ] [
+       fhir:name [ fhir:v "prescription-to-dispense" ] ;
+       fhir:definition [ fhir:v "#prescriptionToDispenseOperation"^^xsd:anyURI ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
