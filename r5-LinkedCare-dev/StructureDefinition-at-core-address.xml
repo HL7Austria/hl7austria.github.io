@@ -19,7 +19,7 @@
   <name value="HL7ATCoreAddress"/>
   <title value="HL7® AT Core Address Profile"/>
   <status value="draft"/>
-  <date value="2023-11-06T17:00:38+00:00"/>
+  <date value="2023-11-13T13:21:24+00:00"/>
   <publisher value="The Linked Care Consortium"/>
   <contact>
     <name value="The Linked Care Consortium"/>
@@ -60,7 +60,7 @@
       <path value="Address"/>
       <short value="An address expressed using postal conventions (as opposed to GPS or other location definition formats)"/>
       <definition value="An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.&#xA;The ISO21090-codedString may be used to provide a coded representation of the contents of strings in an Address."/>
-      <comment value="Note: address is intended to describe postal addresses for administrative purposes, not to describe absolute geographical coordinates.  Postal addresses are often used as proxies for physical locations (also see the [Location](http://hl7.org/fhir/R5/location.html#) resource)."/>
+      <comment value="Note: address is intended to describe postal addresses for administrative purposes, not to describe absolute geographical coordinates.  Postal addresses are often used as proxies for physical locations (also see the [Location](location.html#) resource)."/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -213,9 +213,6 @@
       <isModifierReason value="This is labeled as &quot;Is Modifier&quot; because applications should not mistake a temporary or old address etc.for a current/permanent one"/>
       <isSummary value="true"/>
       <binding>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/binding-definition">
-          <valueMarkdown value="The use of an address."/>
-        </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="AddressUse"/>
         </extension>
@@ -240,7 +237,7 @@
       <path value="Address.type"/>
       <short value="postal | physical | both"/>
       <definition value="Distinguishes between physical addresses (those you can visit) and mailing addresses (e.g. PO Boxes and care-of addresses). Most addresses are both."/>
-      <comment value="The definition of Address states that &quot;address is intended to describe postal addresses, not physical locations&quot;. However, many applications track whether an address has a dual purpose of being a location that can be visited as well as being a valid delivery destination, and Postal addresses are often used as proxies for physical locations (also see the [Location](http://hl7.org/fhir/R5/location.html#) resource)."/>
+      <comment value="The definition of Address states that &quot;address is intended to describe postal addresses, not physical locations&quot;. However, many applications track whether an address has a dual purpose of being a location that can be visited as well as being a valid delivery destination, and Postal addresses are often used as proxies for physical locations (also see the [Location](location.html#) resource)."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -265,9 +262,6 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <binding>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/binding-definition">
-          <valueMarkdown value="The type of an address (physical / postal)."/>
-        </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="AddressType"/>
         </extension>

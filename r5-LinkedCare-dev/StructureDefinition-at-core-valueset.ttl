@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "HL7ATCoreValueSet"] ; # 
   fhir:title [ fhir:v "HL7® AT Core ValueSet Profile"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-11-06T17:00:38+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-11-13T13:21:24+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "The Linked Care Consortium"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "The Linked Care Consortium" ] ;
@@ -200,9 +200,6 @@
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"^^xsd:anyURI ] ;
            fhir:value [ fhir:v "Language" ]
-         ] [
-           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "true"^^xsd:boolean ]
          ] ) ;
          fhir:strength [ fhir:v "required" ] ;
          fhir:description [ fhir:v "IETF language tag for a human language" ] ;
@@ -484,10 +481,6 @@
        ] )
      ] [
        fhir:id [ fhir:v "ValueSet.versionAlgorithm[x]" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "trial-use" ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.versionAlgorithm[x]" ] ;
        fhir:short [ fhir:v "How to compare versions" ] ;
        fhir:definition [ fhir:v "Indicates the mechanism used to compare versions to determine which ValueSet is more current." ] ;
@@ -596,7 +589,7 @@
        fhir:path [ fhir:v "ValueSet.status" ] ;
        fhir:short [ fhir:v "draft | active | retired | unknown" ] ;
        fhir:definition [ fhir:v "The status of this value set. Enables tracking the life-cycle of the content. The status of the value set applies to the value set definition (ValueSet.compose) and the associated ValueSet metadata. Expansions do not have a state." ] ;
-       fhir:comment [ fhir:v "Allows filtering of value sets that are appropriate for use versus not.See also the [http://hl7.org/fhir/StructureDefinition/valueset-workflowStatusDescription](http://hl7.org/fhir/extensions/StructureDefinition-valueset-workflowStatusDescription.html) extension for additional status information related to the editorial process.\n\nSee guidance around (not) making local changes to elements [here](http://hl7.org/fhir/R5/canonicalresource.html#localization)." ] ;
+       fhir:comment [ fhir:v "Allows filtering of value sets that are appropriate for use versus not.See also the [http://hl7.org/fhir/StructureDefinition/valueset-workflowStatusDescription](http://hl7.org/fhir/extensions/StructureDefinition-valueset-workflowStatusDescription.html) extension for additional status information related to the editorial process.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization)." ] ;
        fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -625,9 +618,6 @@
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"^^xsd:anyURI ] ;
            fhir:value [ fhir:v "PublicationStatus" ]
-         ] [
-           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "true"^^xsd:boolean ]
          ] ) ;
          fhir:strength [ fhir:v "required" ] ;
          fhir:description [ fhir:v "The lifecycle status of an artifact." ] ;
@@ -680,7 +670,7 @@
        fhir:path [ fhir:v "ValueSet.date" ] ;
        fhir:short [ fhir:v "Date last changed" ] ;
        fhir:definition [ fhir:v "The date (and optionally time) when the value set metadata or content logical definition (.compose) was created or revised." ] ;
-       fhir:comment [ fhir:v "Note that this is not the same as the meta.lastUpdated which is specific to an instance of a value set resource on a server.  Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.\n\nSee guidance around (not) making local changes to elements [here](http://hl7.org/fhir/R5/canonicalresource.html#localization)." ] ;
+       fhir:comment [ fhir:v "Note that this is not the same as the meta.lastUpdated which is specific to an instance of a value set resource on a server.  Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization)." ] ;
        fhir:alias ( [ fhir:v "Revision Date" ] ) ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
@@ -758,7 +748,7 @@
        fhir:path [ fhir:v "ValueSet.contact" ] ;
        fhir:short [ fhir:v "Contact details for the publisher" ] ;
        fhir:definition [ fhir:v "Contact details to assist a user in finding and communicating with the publisher." ] ;
-       fhir:comment [ fhir:v "May be a web site, an email address, a telephone number, etc.\n\nSee guidance around (not) making local changes to elements [here](http://hl7.org/fhir/R5/canonicalresource.html#localization)." ] ;
+       fhir:comment [ fhir:v "May be a web site, an email address, a telephone number, etc.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization)." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "*" ] ;
        fhir:base [
@@ -824,10 +814,6 @@
        ] )
      ] [
        fhir:id [ fhir:v "ValueSet.useContext" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "trial-use" ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.useContext" ] ;
        fhir:short [ fhir:v "The context that the content is intended to support" ] ;
        fhir:definition [ fhir:v "The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate value set instances." ] ;
@@ -858,10 +844,6 @@
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "ValueSet.jurisdiction" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "deprecated" ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.jurisdiction" ] ;
        fhir:short [ fhir:v "Intended jurisdiction for value set (if applicable)" ] ;
        fhir:definition [ fhir:v "A legal or geographic region in which the value set is intended to be used." ] ;
@@ -893,9 +875,6 @@
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"^^xsd:anyURI ] ;
            fhir:value [ fhir:v "Jurisdiction" ]
-         ] [
-           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "true"^^xsd:boolean ]
          ] ) ;
          fhir:strength [ fhir:v "extensible" ] ;
          fhir:description [ fhir:v "Countries and regions within which this artifact is targeted for use." ] ;
@@ -1021,9 +1000,6 @@
      ] [
        fhir:id [ fhir:v "ValueSet.copyrightLabel" ] ;
        fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "trial-use" ]
-       ] [
          fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "true"^^xsd:boolean ]
        ] [
@@ -1060,14 +1036,10 @@
        fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "ValueSet.approvalDate" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "trial-use" ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.approvalDate" ] ;
        fhir:short [ fhir:v "When the ValueSet was approved by publisher" ] ;
        fhir:definition [ fhir:v "The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage." ] ;
-       fhir:comment [ fhir:v "The 'date' element may be more recent than the approval date because of minor changes or editorial corrections.\n\nSee guidance around (not) making local changes to elements [here](http://hl7.org/fhir/R5/canonicalresource.html#localization)." ] ;
+       fhir:comment [ fhir:v "The 'date' element may be more recent than the approval date because of minor changes or editorial corrections.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization)." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -1097,14 +1069,10 @@
        ] )
      ] [
        fhir:id [ fhir:v "ValueSet.lastReviewDate" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "trial-use" ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.lastReviewDate" ] ;
        fhir:short [ fhir:v "When the ValueSet was last reviewed by the publisher" ] ;
        fhir:definition [ fhir:v "The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date." ] ;
-       fhir:comment [ fhir:v "If specified, this date follows the original approval date.\n\nSee guidance around (not) making local changes to elements [here](http://hl7.org/fhir/R5/canonicalresource.html#localization)." ] ;
+       fhir:comment [ fhir:v "If specified, this date follows the original approval date.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization)." ] ;
        fhir:requirements [ fhir:v "Gives a sense of how \"current\" the content is.  Resources that have not been reviewed in a long time may have a risk of being less appropriate/relevant." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
@@ -1135,14 +1103,10 @@
        ] )
      ] [
        fhir:id [ fhir:v "ValueSet.effectivePeriod" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "trial-use" ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.effectivePeriod" ] ;
        fhir:short [ fhir:v "When the ValueSet is expected to be used" ] ;
        fhir:definition [ fhir:v "The period during which the ValueSet content was or is planned to be in active use." ] ;
-       fhir:comment [ fhir:v "The effective period for a ValueSet determines when the content is applicable for usage and is independent of publication and review dates. For example, a valueset intended to be used for the year 2016 might be published in 2015.\n\nSee guidance around (not) making local changes to elements [here](http://hl7.org/fhir/R5/canonicalresource.html#localization)." ] ;
+       fhir:comment [ fhir:v "The effective period for a ValueSet determines when the content is applicable for usage and is independent of publication and review dates. For example, a valueset intended to be used for the year 2016 might be published in 2015.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization)." ] ;
        fhir:requirements [ fhir:v "Allows establishing a transition before a resource comes into effect and also allows for a sunsetting process when new versions of the ValueSet are or are expected to be used instead." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
@@ -1173,10 +1137,6 @@
        ] )
      ] [
        fhir:id [ fhir:v "ValueSet.topic" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "deprecated" ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.topic" ] ;
        fhir:short [ fhir:v "E.g. Education, Treatment, Assessment, etc" ] ;
        fhir:definition [ fhir:v "Descriptions related to the content of the ValueSet. Topics provide a high-level categorization as well as keywords for the ValueSet that can be useful for filtering and searching." ] ;
@@ -1218,10 +1178,6 @@
        ]
      ] [
        fhir:id [ fhir:v "ValueSet.author" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "trial-use" ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.author" ] ;
        fhir:short [ fhir:v "Who authored the ValueSet" ] ;
        fhir:definition [ fhir:v "An individiual or organization primarily involved in the creation and maintenance of the ValueSet." ] ;
@@ -1250,10 +1206,6 @@
        fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "ValueSet.editor" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "trial-use" ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.editor" ] ;
        fhir:short [ fhir:v "Who edited the ValueSet" ] ;
        fhir:definition [ fhir:v "An individual or organization primarily responsible for internal coherence of the ValueSet." ] ;
@@ -1282,14 +1234,10 @@
        fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "ValueSet.reviewer" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "trial-use" ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.reviewer" ] ;
        fhir:short [ fhir:v "Who reviewed the ValueSet" ] ;
        fhir:definition [ fhir:v "An individual or organization asserted by the publisher to be primarily responsible for review of some aspect of the ValueSet." ] ;
-       fhir:comment [ fhir:v "See guidance around (not) making local changes to elements [here](http://hl7.org/fhir/R5/canonicalresource.html#localization)." ] ;
+       fhir:comment [ fhir:v "See guidance around (not) making local changes to elements [here](canonicalresource.html#localization)." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "*" ] ;
        fhir:base [
@@ -1315,14 +1263,10 @@
        fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "ValueSet.endorser" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "trial-use" ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.endorser" ] ;
        fhir:short [ fhir:v "Who endorsed the ValueSet" ] ;
        fhir:definition [ fhir:v "An individual or organization asserted by the publisher to be responsible for officially endorsing the ValueSet for use in some setting." ] ;
-       fhir:comment [ fhir:v "See guidance around (not) making local changes to elements [here](http://hl7.org/fhir/R5/canonicalresource.html#localization)." ] ;
+       fhir:comment [ fhir:v "See guidance around (not) making local changes to elements [here](canonicalresource.html#localization)." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "*" ] ;
        fhir:base [
@@ -1348,10 +1292,6 @@
        fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "ValueSet.relatedArtifact" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "trial-use" ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.relatedArtifact" ] ;
        fhir:short [ fhir:v "Additional documentation, citations, etc" ] ;
        fhir:definition [ fhir:v "Related artifacts such as additional documentation, justification, dependencies, bibliographic references, and predecessor and successor artifacts." ] ;
@@ -1586,10 +1526,6 @@
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "ValueSet.compose.include" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ConceptSet" ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.compose.include" ] ;
        fhir:short [ fhir:v "Include one or more codes from a code system or other value set(s)" ] ;
        fhir:definition [ fhir:v "Include one or more codes from a code system or other value set(s)." ] ;
@@ -1872,10 +1808,6 @@
        ] )
      ] [
        fhir:id [ fhir:v "ValueSet.compose.include.concept" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ConceptReference" ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.compose.include.concept" ] ;
        fhir:short [ fhir:v "A concept defined in the system" ] ;
        fhir:definition [ fhir:v "Specifies a concept to be included or excluded." ] ;
@@ -2023,10 +1955,6 @@
        ] )
      ] [
        fhir:id [ fhir:v "ValueSet.compose.include.concept.code" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/no-binding"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true"^^xsd:boolean ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.compose.include.concept.code" ] ;
        fhir:short [ fhir:v "Code or expression from system" ] ;
        fhir:definition [ fhir:v "Specifies a code for the concept to be included or excluded." ] ;
@@ -2275,9 +2203,6 @@
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"^^xsd:anyURI ] ;
            fhir:value [ fhir:v "Language" ]
-         ] [
-           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "true"^^xsd:boolean ]
          ] ) ;
          fhir:strength [ fhir:v "required" ] ;
          fhir:description [ fhir:v "IETF language tag for a human language" ] ;
@@ -2337,10 +2262,6 @@
        ]
      ] [
        fhir:id [ fhir:v "ValueSet.compose.include.concept.designation.additionalUse" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "trial-use" ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.compose.include.concept.designation.additionalUse" ] ;
        fhir:short [ fhir:v "Additional ways how this designation would be used" ] ;
        fhir:definition [ fhir:v "Additional codes that detail how this designation would be used, if there is more than one use." ] ;
@@ -2558,10 +2479,6 @@
        ] )
      ] [
        fhir:id [ fhir:v "ValueSet.compose.include.filter.property" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/no-binding"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true"^^xsd:boolean ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.compose.include.filter.property" ] ;
        fhir:short [ fhir:v "A property/filter defined by the code system" ] ;
        fhir:definition [ fhir:v "A code that identifies a property or a filter defined in the code system." ] ;
@@ -2639,10 +2556,6 @@
        ] )
      ] [
        fhir:id [ fhir:v "ValueSet.compose.include.filter.value" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/no-binding"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true"^^xsd:boolean ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.compose.include.filter.value" ] ;
        fhir:short [ fhir:v "Code from the system, or regex criteria, or boolean value for exists" ] ;
        fhir:definition [ fhir:v "The match value may be either a code defined by the system, or a string value, which is a regex match on the literal string of the property value  (if the filter represents a property defined in CodeSystem) or of the system filter value (if the filter represents a filter defined in CodeSystem) when the operation is 'regex', or one of the values (true and false), when the operation is 'exists'." ] ;
@@ -2714,10 +2627,6 @@
        ] )
      ] [
        fhir:id [ fhir:v "ValueSet.compose.include.copyright" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "trial-use" ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.compose.include.copyright" ] ;
        fhir:short [ fhir:v "A copyright statement for the specific code system included in the value set" ] ;
        fhir:definition [ fhir:v "A copyright statement for the specific code system asserted by the containing ValueSet.compose.include element's system value (if the associated ValueSet.compose.include.version element is not present); or the code system and version combination (if the associated ValueSet.compose.include.version element is present)." ] ;
@@ -2781,10 +2690,6 @@
        ] )
      ] [
        fhir:id [ fhir:v "ValueSet.compose.property" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "trial-use" ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.compose.property" ] ;
        fhir:short [ fhir:v "Property to return if client doesn't override" ] ;
        fhir:definition [ fhir:v "A property to return in the expansion, if the client doesn't ask for any particular properties. May be either a code from the code system definition (convenient) or a the formal URI that refers to the property. The special value '*' means all properties known to the server." ] ;
@@ -2817,7 +2722,7 @@
        fhir:path [ fhir:v "ValueSet.expansion" ] ;
        fhir:short [ fhir:v "Used when the value set is \"expanded\"" ] ;
        fhir:definition [ fhir:v "A value set can also be \"expanded\", where the value set is turned into a simple collection of enumerated codes. This element holds the expansion, if it has been performed." ] ;
-       fhir:comment [ fhir:v "Expansion is performed to produce a collection of codes that are ready to use for data entry or validation. Value set expansions are always considered to be stateless - they are a record of the set of codes in the value set at a point in time under a given set of conditions, and are not subject to ongoing maintenance.\n\nExpansion.parameter is  a simplified list of parameters - a subset of the features of the [Parameters](http://hl7.org/fhir/R5/parameters.html) resource." ] ;
+       fhir:comment [ fhir:v "Expansion is performed to produce a collection of codes that are ready to use for data entry or validation. Value set expansions are always considered to be stateless - they are a record of the set of codes in the value set at a point in time under a given set of conditions, and are not subject to ongoing maintenance.\n\nExpansion.parameter is  a simplified list of parameters - a subset of the features of the [Parameters](parameters.html) resource." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -2985,10 +2890,6 @@
        fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "ValueSet.expansion.next" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "trial-use" ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.expansion.next" ] ;
        fhir:short [ fhir:v "Opaque urls for paging through expansion results" ] ;
        fhir:definition [ fhir:v "As per paging Search results, the next URLs are opaque to the client, have no dictated structure, and only the server understands them." ] ;
@@ -3317,10 +3218,6 @@
        fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "ValueSet.expansion.property" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "trial-use" ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.expansion.property" ] ;
        fhir:short [ fhir:v "Additional information supplied about each concept" ] ;
        fhir:definition [ fhir:v "A property defines an additional slot through which additional information can be provided about a concept." ] ;
@@ -3462,10 +3359,6 @@
        ] )
      ] [
        fhir:id [ fhir:v "ValueSet.expansion.property.code" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/no-binding"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true"^^xsd:boolean ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.expansion.property.code" ] ;
        fhir:short [ fhir:v "Identifies the property on the concepts, and when referred to in operations" ] ;
        fhir:definition [ fhir:v "A code that is used to identify the property. The code is used in ValueSet.expansion.contains.property.code." ] ;
@@ -3496,7 +3389,7 @@
        fhir:id [ fhir:v "ValueSet.expansion.property.uri" ] ;
        fhir:path [ fhir:v "ValueSet.expansion.property.uri" ] ;
        fhir:short [ fhir:v "Formal identifier for the property" ] ;
-       fhir:definition [ fhir:v "Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](http://hl7.org/fhir/R5/codesystem-concept-properties.html) code system." ] ;
+       fhir:definition [ fhir:v "Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](codesystem-concept-properties.html) code system." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -3850,10 +3743,6 @@
        fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "ValueSet.expansion.contains.code" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/no-binding"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true"^^xsd:boolean ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.expansion.contains.code" ] ;
        fhir:short [ fhir:v "Code - if blank, this is not a selectable code" ] ;
        fhir:definition [ fhir:v "The code for this item in the expansion hierarchy. If this code is missing the entry in the hierarchy is a place holder (abstract) and does not represent a valid code in the value set." ] ;
@@ -3939,13 +3828,6 @@
        fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "ValueSet.expansion.contains.property" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "trial-use" ]
-       ] [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ConceptProperty" ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.expansion.contains.property" ] ;
        fhir:short [ fhir:v "Property value for the concept" ] ;
        fhir:definition [ fhir:v "A property value for this concept." ] ;
@@ -4087,10 +3969,6 @@
        ] )
      ] [
        fhir:id [ fhir:v "ValueSet.expansion.contains.property.code" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/no-binding"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true"^^xsd:boolean ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.expansion.contains.property.code" ] ;
        fhir:short [ fhir:v "Reference to ValueSet.expansion.property.code" ] ;
        fhir:definition [ fhir:v "A code that is a reference to ValueSet.expansion.property.code." ] ;
@@ -4119,10 +3997,6 @@
        fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "ValueSet.expansion.contains.property.value[x]" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/no-binding"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true"^^xsd:boolean ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.expansion.contains.property.value[x]" ] ;
        fhir:short [ fhir:v "Value of the property for this concept" ] ;
        fhir:definition [ fhir:v "The value of this property." ] ;
@@ -4163,10 +4037,6 @@
        fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "ValueSet.expansion.contains.property.subProperty" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ConceptSubProperty" ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.expansion.contains.property.subProperty" ] ;
        fhir:short [ fhir:v "SubProperty value for the concept" ] ;
        fhir:definition [ fhir:v "A subproperty value for this concept." ] ;
@@ -4308,10 +4178,6 @@
        ] )
      ] [
        fhir:id [ fhir:v "ValueSet.expansion.contains.property.subProperty.code" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/no-binding"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true"^^xsd:boolean ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.expansion.contains.property.subProperty.code" ] ;
        fhir:short [ fhir:v "Reference to ValueSet.expansion.property.code" ] ;
        fhir:definition [ fhir:v "A code that is a reference to ValueSet.expansion.property.code." ] ;
@@ -4340,10 +4206,6 @@
        fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "ValueSet.expansion.contains.property.subProperty.value[x]" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/no-binding"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true"^^xsd:boolean ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.expansion.contains.property.subProperty.value[x]" ] ;
        fhir:short [ fhir:v "Value of the subproperty for this concept" ] ;
        fhir:definition [ fhir:v "The value of this subproperty." ] ;
@@ -4411,10 +4273,6 @@
        fhir:isSummary [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "ValueSet.scope" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "trial-use" ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.scope" ] ;
        fhir:short [ fhir:v "Description of the semantic space the Value Set Expansion is intended to cover and should further clarify the text in ValueSet.description" ] ;
        fhir:definition [ fhir:v "Description of the semantic space the Value Set Expansion is intended to cover and should further clarify the text in ValueSet.description." ] ;
