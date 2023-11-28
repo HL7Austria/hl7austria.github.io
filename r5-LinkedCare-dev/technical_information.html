@@ -127,7 +127,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="col-12">
   <!-- at-fhir-ig-template begin -->
   <div class="alert alert-warning" role="alert">
-    <!--ReleaseHeader--><p id="publish-box">Linked Care Implementation Guide - Local Development build (v0.9.1). See the <a href="http://fhir.hl7.at/linkedcare/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+    <!--ReleaseHeader--><p id="publish-box">Linked Care Implementation Guide - Local Development build (v0.9.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://fhir.hl7.at/linkedcare/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   </div>
   <!-- at-fhir-ig-template end -->
   <h2>Linked Care Technical Information for Implementers</h2>
@@ -146,6 +146,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul id="markdown-toc">
   <li><a href="#endpoints" id="markdown-toc-endpoints">Endpoints</a></li>
   <li><a href="#validation-messages" id="markdown-toc-validation-messages">Validation Messages</a></li>
+  <li><a href="#system-messages" id="markdown-toc-system-messages">System Messages</a></li>
 </ul>
 
 </div>
@@ -391,7 +392,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
         <th scope="row">LCVAL41</th>
         <td>Referenced resource in field <em>priorPrescription</em> is not the latest chain link</td>
-        <td>Always refer to the youngest link in a resource chain</td>
+        <td>Always refer to the latest link in a resource chain</td>
     </tr>
     <tr>
         <th scope="row">LCVAL42</th>
@@ -495,21 +496,59 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
         <th scope="row">LCVAL62</th>
-        <td>Cancellation of proposal id 'value' failed&gt;/td&gt;
-	<td>It has already been processed.</td>
-        <td></td>
-    &lt;/tr&gt;
+        <td>Cancellation of proposal id 'value' failed</td>
+	    <td>It has already been processed.</td>
+    </tr>
     <tr>
         <th scope="row">LCVAL63</th>
         <td>Cancellation of RequestOrchestration lc_id 'value' failed</td> 
-	<td>It has already been revoked or completed</td>
-        <td></td>
+    	<td>It has already been revoked or completed</td>
     </tr>
-  &lt;/tbody&gt;
-&lt;/table&gt;
+    <tr>
+        <th scope="row">LCVAL64</th>
+        <td>Contained resources must be referenced in field <em>action.resource</em></td> 
+    	<td>Add a reference to the internal id of the contained resource</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL65</th>
+        <td>The OID in field <em>dispenseRequest.dispenser</em> is not valid</td> 
+	    <td>Enter a syntactically correct OID of an active pharmacy</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL66</th>
+        <td>The OID in field <em>performer</em> cannot differ from the OID in the sender's certificate</td> 
+    	<td>Enter the correct OID in field <em>performer</em></td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL67</th>
+        <td>The field <em>priorPrescription</em> must be empty when intent is set to 'originalOrder'</td> 
+	    <td>Either remove the reference in <em>priorPrescription</em>, or set the intent to 'order'</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL68</th>
+        <td>In a Bundle of LINCAPrescriptionMedicationRequests, all of them must refer to the same <em>subject</em></td> 
+	    <td>Remove LINCAPrescriptionMedicationRequests with differing <em>subject</em></td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL69</th>
+        <td>In a Bundle of LINCAPrescriptionMedicationRequests, all of them must have the same <em>groupIdentifier</em></td> 
+    	<td>Remove LINCAPrescriptionMedicationRequests with differing <em>groupIdentifier</em></td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL70</th>
+        <td>Genuine initial prescriptions cannot be connected to existing orders/lc_id</td> 
+	    <td>Remove the reference from <em>supportingInformation</em></td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL71</th>
+        <td>New and active prescriptions must be sent with [POST $prescription Bundle]</td> 
+    	<td>Check the Linked Care Implementation Guide, User Stories for Actor Doctor</td>
+    </tr>
+  </tbody>
+</table>
 
-### System Messages
-In addition to that, the base implementation defines standard validation outcomes as follows:
+<h3 id="system-messages">System Messages</h3>
+<p>In addition to that, the base implementation defines standard validation outcomes as follows:</p>
 
 <table class="table table-striped">
     <thead>
@@ -612,7 +651,6 @@ In addition to that, the base implementation defines standard validation outcome
         </tr>		
     </tbody>
 </table>
-</td></tr></tbody></table>
 
 
 
@@ -638,7 +676,7 @@ if(window.location.hash != "") {
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.linkedcare.at/">The Linked Care Consortium</a>.  Package linkedcare.hl7.at#0.9.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Nov 14, 2023 19:51+0000">2023-11-14</span>
+    IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.linkedcare.at/">The Linked Care Consortium</a>.  Package linkedcare.hl7.at#0.9.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Nov 28, 2023 16:40+0000">2023-11-28</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
