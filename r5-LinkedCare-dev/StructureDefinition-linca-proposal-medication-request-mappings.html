@@ -224,7 +224,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Request.subject</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>Request.encounter</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;supportingInformation</td><td>Request.supportingInfo</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;supportingInformation (listref)</td><td>Request.supportingInfo</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;authoredOn</td><td>Request.authoredOn</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>Request.requester</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performerType</td><td>Request.performerType</td> </tr>
@@ -240,21 +239,9 @@
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>Message/Header/PrescriberOrderNumber</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;priorPrescription</td><td>not mapped</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>no mapping</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>Message/Body/NewRx/MedicationPrescribed/Directions
-
-or 
-
-Message/Body/NewRx/MedicationPrescribed/StructuredSIG</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;medication</td><td>Message/Body/NewRx/MedicationPrescribed
-
-Medication.code.coding.code = Message/Body/NewRx/MedicationPrescribed/DrugCoded/ProductCode
-
-Medication.code.coding.system = Message/Body/NewRx/MedicationPrescribed/DrugCoded/ProductCodeQualifier
-
-Medication.code.coding.display = Message/Body/NewRx/MedicationPrescribed/DrugDescription</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Message/Body/NewRx/Patient
-
-(need detail to link to specific patient … Patient.Identification in SCRIPT)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>Message/Body/NewRx/MedicationPrescribed/Directionsor Message/Body/NewRx/MedicationPrescribed/StructuredSIG</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;medication</td><td>Message/Body/NewRx/MedicationPrescribedMedication.code.coding.code = Message/Body/NewRx/MedicationPrescribed/DrugCoded/ProductCodeMedication.code.coding.system = Message/Body/NewRx/MedicationPrescribed/DrugCoded/ProductCodeQualifierMedication.code.coding.display = Message/Body/NewRx/MedicationPrescribed/DrugDescription</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Message/Body/NewRx/Patient(need detail to link to specific patient … Patient.Identification in SCRIPT)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>no mapping</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;authoredOn</td><td>Message/Body/NewRx/MedicationPrescribed/WrittenDate</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reason</td><td>Message/Body/NewRx/MedicationPrescribed/Diagnosis/Primary/Value</td> </tr>
@@ -280,7 +267,6 @@ Medication.code.coding.display = Message/Body/NewRx/MedicationPrescribed/DrugDes
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>FiveWs.subject[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>FiveWs.context</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;supportingInformation</td><td>FiveWs.context</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;supportingInformation (listref)</td><td>FiveWs.context</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;authoredOn</td><td>FiveWs.recorded</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>FiveWs.author</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>FiveWs.actor</td> </tr>
@@ -293,8 +279,8 @@ Medication.code.coding.display = Message/Body/NewRx/MedicationPrescribed/DrugDes
  <tr><td colspan="3"><b>LINCAProposalMedicationRequest</b></td></tr>
  <tr><td>MedicationRequest</td><td>Entity, Role, or Act,CombinedMedicationRequest</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>.id</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;basedOn</td><td>.outboundRelationship[typeCode=FLFS].target[classCode=SBADM or PROC or PCPR or OBS, moodCode=RQO orPLAN or PRP]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;priorPrescription</td><td>.outboundRelationship[typeCode=?RPLC or ?SUCC]/target[classCode=SBADM,moodCode=RQO]</td> </tr>
@@ -311,7 +297,6 @@ Medication.code.coding.display = Message/Body/NewRx/MedicationPrescribed/DrugDes
  <tr><td>&nbsp;&nbsp;&nbsp;informationSource</td><td>.participation[typeCode=INF].role[classCode=PAT, or codes for Practitioner or Related Person or Practitioner Role or Organization</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>.inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN, code=&quot;type of encounter or episode&quot;]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;supportingInformation</td><td>.outboundRelationship[typeCode=PERT].target[A_SupportingClinicalStatement CMET minimal with many different choices of classCodes(ORG, ENC, PROC, SPLY, SBADM, OBS) and each of the act class codes draws from one or more of the following moodCodes (EVN, DEF, INT PRMS, RQO, PRP, APT, ARQ, GOL)]</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;supportingInformation (listref)</td><td>.outboundRelationship[typeCode=PERT].target[A_SupportingClinicalStatement CMET minimal with many different choices of classCodes(ORG, ENC, PROC, SPLY, SBADM, OBS) and each of the act class codes draws from one or more of the following moodCodes (EVN, DEF, INT PRMS, RQO, PRP, APT, ARQ, GOL)]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;authoredOn</td><td>author.time</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>.participation[typeCode=AUT].role</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reported</td><td>.participation[typeCode=INF].role</td> </tr>
@@ -328,7 +313,7 @@ Medication.code.coding.display = Message/Body/NewRx/MedicationPrescribed/DrugDes
  <tr><td>&nbsp;&nbsp;&nbsp;dosageInstruction</td><td>see dosageInstruction mapping</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sequence</td><td>.text</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>.text</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;additionalInstruction</td><td>.text</td> </tr>
@@ -357,11 +342,11 @@ Medication.code.coding.display = Message/Body/NewRx/MedicationPrescribed/DrugDes
  <tr><td>&nbsp;&nbsp;&nbsp;dispenseRequest</td><td>component.supplyEvent</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initialFill</td><td>SubstanceAdministration -&gt; ActRelationship[sequenceNumber = '1'] -&gt; Supply</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quantity</td><td>Supply.quantity[moodCode=RQO]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;duration</td><td>Supply.effectivetime[moodCode=RQO]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dispenseInterval</td><td>Supply.effectivetime[moodCode=RQO]</td> </tr>
@@ -375,7 +360,7 @@ Medication.code.coding.display = Message/Body/NewRx/MedicationPrescribed/DrugDes
  <tr><td>&nbsp;&nbsp;&nbsp;substitution</td><td>subjectOf.substitutionPersmission</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;allowed[x]</td><td>code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reason</td><td>reasonCode</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;eventHistory</td><td>.inboundRelationship(typeCode=SUBJ].source[classCode=CACT, moodCode=EVN]</td> </tr>
@@ -469,7 +454,7 @@ if(window.location.hash != "") {
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.linkedcare.at/">The Linked Care Consortium</a>.  Package linkedcare.hl7.at#0.9.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Wed, Nov 29, 2023 14:01+0000">2023-11-29</span>
+    IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.linkedcare.at/">The Linked Care Consortium</a>.  Package linkedcare.hl7.at#0.9.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Wed, Nov 29, 2023 14:08+0000">2023-11-29</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
