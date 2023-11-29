@@ -68,11 +68,6 @@
      fhir:text [ fhir:v "Take 2 drops on monday" ] ;
      fhir:timing [
        fhir:repeat [
-         fhir:bounds [
-           a fhir:Duration ;
-           fhir:value [ fhir:v "14"^^xsd:decimal ] ;
-           fhir:code [ fhir:v "d" ]
-         ] ;
          fhir:frequency [ fhir:v "1"^^xsd:positiveInteger ] ;
          fhir:period [ fhir:v "1"^^xsd:decimal ] ;
          fhir:periodUnit [ fhir:v "wk" ] ;
@@ -90,6 +85,7 @@
        fhir:dose [
          a fhir:Quantity ;
          fhir:value [ fhir:v "2"^^xsd:decimal ] ;
+         fhir:system [ fhir:v "https://termgit.elga.gv.at/ValueSet/elga-medikationdarreichungsform"^^xsd:anyURI ] ;
          fhir:code [ fhir:v "100000116169" ]
        ]
      ] )
