@@ -10,11 +10,11 @@
     "valueUri" : "http://hl7.org/fhir/StructureDefinition/MetadataResource"
   }],
   "url" : "http://fhir.hl7.at/linkedcare/StructureDefinition/at-core-valueset",
-  "version" : "1.2.2",
+  "version" : "0.9.1",
   "name" : "HL7ATCoreValueSet",
   "title" : "HL7® AT Core ValueSet Profile",
   "status" : "draft",
-  "date" : "2023-10-17T09:41:40+00:00",
+  "date" : "2023-11-29T13:50:22+00:00",
   "publisher" : "The Linked Care Consortium",
   "contact" : [{
     "name" : "The Linked Care Consortium",
@@ -185,10 +185,6 @@
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
           "valueString" : "Language"
-        },
-        {
-          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding",
-          "valueBoolean" : true
         }],
         "strength" : "required",
         "description" : "IETF language tag for a human language",
@@ -460,10 +456,6 @@
     },
     {
       "id" : "ValueSet.versionAlgorithm[x]",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "trial-use"
-      }],
       "path" : "ValueSet.versionAlgorithm[x]",
       "short" : "How to compare versions",
       "definition" : "Indicates the mechanism used to compare versions to determine which ValueSet is more current.",
@@ -565,7 +557,7 @@
       "path" : "ValueSet.status",
       "short" : "draft | active | retired | unknown",
       "definition" : "The status of this value set. Enables tracking the life-cycle of the content. The status of the value set applies to the value set definition (ValueSet.compose) and the associated ValueSet metadata. Expansions do not have a state.",
-      "comment" : "Allows filtering of value sets that are appropriate for use versus not.See also the [http://hl7.org/fhir/StructureDefinition/valueset-workflowStatusDescription](http://hl7.org/fhir/extensions/StructureDefinition-valueset-workflowStatusDescription.html) extension for additional status information related to the editorial process.\n\nSee guidance around (not) making local changes to elements [here](http://hl7.org/fhir/R5/canonicalresource.html#localization).",
+      "comment" : "Allows filtering of value sets that are appropriate for use versus not.See also the [http://hl7.org/fhir/StructureDefinition/valueset-workflowStatusDescription](http://hl7.org/fhir/extensions/StructureDefinition-valueset-workflowStatusDescription.html) extension for additional status information related to the editorial process.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -591,10 +583,6 @@
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
           "valueString" : "PublicationStatus"
-        },
-        {
-          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding",
-          "valueBoolean" : true
         }],
         "strength" : "required",
         "description" : "The lifecycle status of an artifact.",
@@ -643,7 +631,7 @@
       "path" : "ValueSet.date",
       "short" : "Date last changed",
       "definition" : "The date (and optionally time) when the value set metadata or content logical definition (.compose) was created or revised.",
-      "comment" : "Note that this is not the same as the meta.lastUpdated which is specific to an instance of a value set resource on a server.  Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.\n\nSee guidance around (not) making local changes to elements [here](http://hl7.org/fhir/R5/canonicalresource.html#localization).",
+      "comment" : "Note that this is not the same as the meta.lastUpdated which is specific to an instance of a value set resource on a server.  Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
       "alias" : ["Revision Date"],
       "min" : 0,
       "max" : "1",
@@ -719,7 +707,7 @@
       "path" : "ValueSet.contact",
       "short" : "Contact details for the publisher",
       "definition" : "Contact details to assist a user in finding and communicating with the publisher.",
-      "comment" : "May be a web site, an email address, a telephone number, etc.\n\nSee guidance around (not) making local changes to elements [here](http://hl7.org/fhir/R5/canonicalresource.html#localization).",
+      "comment" : "May be a web site, an email address, a telephone number, etc.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
       "min" : 0,
       "max" : "*",
       "base" : {
@@ -782,10 +770,6 @@
     },
     {
       "id" : "ValueSet.useContext",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "trial-use"
-      }],
       "path" : "ValueSet.useContext",
       "short" : "The context that the content is intended to support",
       "definition" : "The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate value set instances.",
@@ -814,10 +798,6 @@
     },
     {
       "id" : "ValueSet.jurisdiction",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "deprecated"
-      }],
       "path" : "ValueSet.jurisdiction",
       "short" : "Intended jurisdiction for value set (if applicable)",
       "definition" : "A legal or geographic region in which the value set is intended to be used.",
@@ -846,10 +826,6 @@
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
           "valueString" : "Jurisdiction"
-        },
-        {
-          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding",
-          "valueBoolean" : true
         }],
         "strength" : "extensible",
         "description" : "Countries and regions within which this artifact is targeted for use.",
@@ -971,10 +947,6 @@
     {
       "id" : "ValueSet.copyrightLabel",
       "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "trial-use"
-      },
-      {
         "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
         "valueBoolean" : true
       },
@@ -1010,14 +982,10 @@
     },
     {
       "id" : "ValueSet.approvalDate",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "trial-use"
-      }],
       "path" : "ValueSet.approvalDate",
       "short" : "When the ValueSet was approved by publisher",
       "definition" : "The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.",
-      "comment" : "The 'date' element may be more recent than the approval date because of minor changes or editorial corrections.\n\nSee guidance around (not) making local changes to elements [here](http://hl7.org/fhir/R5/canonicalresource.html#localization).",
+      "comment" : "The 'date' element may be more recent than the approval date because of minor changes or editorial corrections.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -1045,14 +1013,10 @@
     },
     {
       "id" : "ValueSet.lastReviewDate",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "trial-use"
-      }],
       "path" : "ValueSet.lastReviewDate",
       "short" : "When the ValueSet was last reviewed by the publisher",
       "definition" : "The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.",
-      "comment" : "If specified, this date follows the original approval date.\n\nSee guidance around (not) making local changes to elements [here](http://hl7.org/fhir/R5/canonicalresource.html#localization).",
+      "comment" : "If specified, this date follows the original approval date.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
       "requirements" : "Gives a sense of how \"current\" the content is.  Resources that have not been reviewed in a long time may have a risk of being less appropriate/relevant.",
       "min" : 0,
       "max" : "1",
@@ -1081,14 +1045,10 @@
     },
     {
       "id" : "ValueSet.effectivePeriod",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "trial-use"
-      }],
       "path" : "ValueSet.effectivePeriod",
       "short" : "When the ValueSet is expected to be used",
       "definition" : "The period during which the ValueSet content was or is planned to be in active use.",
-      "comment" : "The effective period for a ValueSet determines when the content is applicable for usage and is independent of publication and review dates. For example, a valueset intended to be used for the year 2016 might be published in 2015.\n\nSee guidance around (not) making local changes to elements [here](http://hl7.org/fhir/R5/canonicalresource.html#localization).",
+      "comment" : "The effective period for a ValueSet determines when the content is applicable for usage and is independent of publication and review dates. For example, a valueset intended to be used for the year 2016 might be published in 2015.\n\nSee guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
       "requirements" : "Allows establishing a transition before a resource comes into effect and also allows for a sunsetting process when new versions of the ValueSet are or are expected to be used instead.",
       "min" : 0,
       "max" : "1",
@@ -1117,10 +1077,6 @@
     },
     {
       "id" : "ValueSet.topic",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "deprecated"
-      }],
       "path" : "ValueSet.topic",
       "short" : "E.g. Education, Treatment, Assessment, etc",
       "definition" : "Descriptions related to the content of the ValueSet. Topics provide a high-level categorization as well as keywords for the ValueSet that can be useful for filtering and searching.",
@@ -1157,10 +1113,6 @@
     },
     {
       "id" : "ValueSet.author",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "trial-use"
-      }],
       "path" : "ValueSet.author",
       "short" : "Who authored the ValueSet",
       "definition" : "An individiual or organization primarily involved in the creation and maintenance of the ValueSet.",
@@ -1187,10 +1139,6 @@
     },
     {
       "id" : "ValueSet.editor",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "trial-use"
-      }],
       "path" : "ValueSet.editor",
       "short" : "Who edited the ValueSet",
       "definition" : "An individual or organization primarily responsible for internal coherence of the ValueSet.",
@@ -1217,14 +1165,10 @@
     },
     {
       "id" : "ValueSet.reviewer",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "trial-use"
-      }],
       "path" : "ValueSet.reviewer",
       "short" : "Who reviewed the ValueSet",
       "definition" : "An individual or organization asserted by the publisher to be primarily responsible for review of some aspect of the ValueSet.",
-      "comment" : "See guidance around (not) making local changes to elements [here](http://hl7.org/fhir/R5/canonicalresource.html#localization).",
+      "comment" : "See guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
       "min" : 0,
       "max" : "*",
       "base" : {
@@ -1248,14 +1192,10 @@
     },
     {
       "id" : "ValueSet.endorser",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "trial-use"
-      }],
       "path" : "ValueSet.endorser",
       "short" : "Who endorsed the ValueSet",
       "definition" : "An individual or organization asserted by the publisher to be responsible for officially endorsing the ValueSet for use in some setting.",
-      "comment" : "See guidance around (not) making local changes to elements [here](http://hl7.org/fhir/R5/canonicalresource.html#localization).",
+      "comment" : "See guidance around (not) making local changes to elements [here](canonicalresource.html#localization).",
       "min" : 0,
       "max" : "*",
       "base" : {
@@ -1279,10 +1219,6 @@
     },
     {
       "id" : "ValueSet.relatedArtifact",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "trial-use"
-      }],
       "path" : "ValueSet.relatedArtifact",
       "short" : "Additional documentation, citations, etc",
       "definition" : "Related artifacts such as additional documentation, justification, dependencies, bibliographic references, and predecessor and successor artifacts.",
@@ -1506,10 +1442,6 @@
     },
     {
       "id" : "ValueSet.compose.include",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name",
-        "valueString" : "ConceptSet"
-      }],
       "path" : "ValueSet.compose.include",
       "short" : "Include one or more codes from a code system or other value set(s)",
       "definition" : "Include one or more codes from a code system or other value set(s).",
@@ -1769,10 +1701,6 @@
     },
     {
       "id" : "ValueSet.compose.include.concept",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name",
-        "valueString" : "ConceptReference"
-      }],
       "path" : "ValueSet.compose.include.concept",
       "short" : "A concept defined in the system",
       "definition" : "Specifies a concept to be included or excluded.",
@@ -1915,10 +1843,6 @@
     },
     {
       "id" : "ValueSet.compose.include.concept.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/no-binding",
-        "valueBoolean" : true
-      }],
       "path" : "ValueSet.compose.include.concept.code",
       "short" : "Code or expression from system",
       "definition" : "Specifies a code for the concept to be included or excluded.",
@@ -2152,10 +2076,6 @@
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
           "valueString" : "Language"
-        },
-        {
-          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding",
-          "valueBoolean" : true
         }],
         "strength" : "required",
         "description" : "IETF language tag for a human language",
@@ -2205,10 +2125,6 @@
     },
     {
       "id" : "ValueSet.compose.include.concept.designation.additionalUse",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "trial-use"
-      }],
       "path" : "ValueSet.compose.include.concept.designation.additionalUse",
       "short" : "Additional ways how this designation would be used",
       "definition" : "Additional codes that detail how this designation would be used, if there is more than one use.",
@@ -2414,10 +2330,6 @@
     },
     {
       "id" : "ValueSet.compose.include.filter.property",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/no-binding",
-        "valueBoolean" : true
-      }],
       "path" : "ValueSet.compose.include.filter.property",
       "short" : "A property/filter defined by the code system",
       "definition" : "A code that identifies a property or a filter defined in the code system.",
@@ -2488,10 +2400,6 @@
     },
     {
       "id" : "ValueSet.compose.include.filter.value",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/no-binding",
-        "valueBoolean" : true
-      }],
       "path" : "ValueSet.compose.include.filter.value",
       "short" : "Code from the system, or regex criteria, or boolean value for exists",
       "definition" : "The match value may be either a code defined by the system, or a string value, which is a regex match on the literal string of the property value  (if the filter represents a property defined in CodeSystem) or of the system filter value (if the filter represents a filter defined in CodeSystem) when the operation is 'regex', or one of the values (true and false), when the operation is 'exists'.",
@@ -2556,10 +2464,6 @@
     },
     {
       "id" : "ValueSet.compose.include.copyright",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "trial-use"
-      }],
       "path" : "ValueSet.compose.include.copyright",
       "short" : "A copyright statement for the specific code system included in the value set",
       "definition" : "A copyright statement for the specific code system asserted by the containing ValueSet.compose.include element's system value (if the associated ValueSet.compose.include.version element is not present); or the code system and version combination (if the associated ValueSet.compose.include.version element is present).",
@@ -2619,10 +2523,6 @@
     },
     {
       "id" : "ValueSet.compose.property",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "trial-use"
-      }],
       "path" : "ValueSet.compose.property",
       "short" : "Property to return if client doesn't override",
       "definition" : "A property to return in the expansion, if the client doesn't ask for any particular properties. May be either a code from the code system definition (convenient) or a the formal URI that refers to the property. The special value '*' means all properties known to the server.",
@@ -2653,7 +2553,7 @@
       "path" : "ValueSet.expansion",
       "short" : "Used when the value set is \"expanded\"",
       "definition" : "A value set can also be \"expanded\", where the value set is turned into a simple collection of enumerated codes. This element holds the expansion, if it has been performed.",
-      "comment" : "Expansion is performed to produce a collection of codes that are ready to use for data entry or validation. Value set expansions are always considered to be stateless - they are a record of the set of codes in the value set at a point in time under a given set of conditions, and are not subject to ongoing maintenance.\n\nExpansion.parameter is  a simplified list of parameters - a subset of the features of the [Parameters](http://hl7.org/fhir/R5/parameters.html) resource.",
+      "comment" : "Expansion is performed to produce a collection of codes that are ready to use for data entry or validation. Value set expansions are always considered to be stateless - they are a record of the set of codes in the value set at a point in time under a given set of conditions, and are not subject to ongoing maintenance.\n\nExpansion.parameter is  a simplified list of parameters - a subset of the features of the [Parameters](parameters.html) resource.",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -2813,10 +2713,6 @@
     },
     {
       "id" : "ValueSet.expansion.next",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "trial-use"
-      }],
       "path" : "ValueSet.expansion.next",
       "short" : "Opaque urls for paging through expansion results",
       "definition" : "As per paging Search results, the next URLs are opaque to the client, have no dictated structure, and only the server understands them.",
@@ -3133,10 +3029,6 @@
     },
     {
       "id" : "ValueSet.expansion.property",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "trial-use"
-      }],
       "path" : "ValueSet.expansion.property",
       "short" : "Additional information supplied about each concept",
       "definition" : "A property defines an additional slot through which additional information can be provided about a concept.",
@@ -3272,10 +3164,6 @@
     },
     {
       "id" : "ValueSet.expansion.property.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/no-binding",
-        "valueBoolean" : true
-      }],
       "path" : "ValueSet.expansion.property.code",
       "short" : "Identifies the property on the concepts, and when referred to in operations",
       "definition" : "A code that is used to identify the property. The code is used in ValueSet.expansion.contains.property.code.",
@@ -3304,7 +3192,7 @@
       "id" : "ValueSet.expansion.property.uri",
       "path" : "ValueSet.expansion.property.uri",
       "short" : "Formal identifier for the property",
-      "definition" : "Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](http://hl7.org/fhir/R5/codesystem-concept-properties.html) code system.",
+      "definition" : "Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](codesystem-concept-properties.html) code system.",
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -3628,10 +3516,6 @@
     },
     {
       "id" : "ValueSet.expansion.contains.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/no-binding",
-        "valueBoolean" : true
-      }],
       "path" : "ValueSet.expansion.contains.code",
       "short" : "Code - if blank, this is not a selectable code",
       "definition" : "The code for this item in the expansion hierarchy. If this code is missing the entry in the hierarchy is a place holder (abstract) and does not represent a valid code in the value set.",
@@ -3713,14 +3597,6 @@
     },
     {
       "id" : "ValueSet.expansion.contains.property",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "trial-use"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name",
-        "valueString" : "ConceptProperty"
-      }],
       "path" : "ValueSet.expansion.contains.property",
       "short" : "Property value for the concept",
       "definition" : "A property value for this concept.",
@@ -3856,10 +3732,6 @@
     },
     {
       "id" : "ValueSet.expansion.contains.property.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/no-binding",
-        "valueBoolean" : true
-      }],
       "path" : "ValueSet.expansion.contains.property.code",
       "short" : "Reference to ValueSet.expansion.property.code",
       "definition" : "A code that is a reference to ValueSet.expansion.property.code.",
@@ -3886,10 +3758,6 @@
     },
     {
       "id" : "ValueSet.expansion.contains.property.value[x]",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/no-binding",
-        "valueBoolean" : true
-      }],
       "path" : "ValueSet.expansion.contains.property.value[x]",
       "short" : "Value of the property for this concept",
       "definition" : "The value of this property.",
@@ -3934,10 +3802,6 @@
     },
     {
       "id" : "ValueSet.expansion.contains.property.subProperty",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name",
-        "valueString" : "ConceptSubProperty"
-      }],
       "path" : "ValueSet.expansion.contains.property.subProperty",
       "short" : "SubProperty value for the concept",
       "definition" : "A subproperty value for this concept.",
@@ -4073,10 +3937,6 @@
     },
     {
       "id" : "ValueSet.expansion.contains.property.subProperty.code",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/no-binding",
-        "valueBoolean" : true
-      }],
       "path" : "ValueSet.expansion.contains.property.subProperty.code",
       "short" : "Reference to ValueSet.expansion.property.code",
       "definition" : "A code that is a reference to ValueSet.expansion.property.code.",
@@ -4103,10 +3963,6 @@
     },
     {
       "id" : "ValueSet.expansion.contains.property.subProperty.value[x]",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/no-binding",
-        "valueBoolean" : true
-      }],
       "path" : "ValueSet.expansion.contains.property.subProperty.value[x]",
       "short" : "Value of the subproperty for this concept",
       "definition" : "The value of this subproperty.",
@@ -4176,10 +4032,6 @@
     },
     {
       "id" : "ValueSet.scope",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-        "valueCode" : "trial-use"
-      }],
       "path" : "ValueSet.scope",
       "short" : "Description of the semantic space the Value Set Expansion is intended to cover and should further clarify the text in ValueSet.description",
       "definition" : "Description of the semantic space the Value Set Expansion is intended to cover and should further clarify the text in ValueSet.description.",

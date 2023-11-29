@@ -56,7 +56,7 @@
             <div id="ig-status">
               <p>
                 <span style="font-size:12pt;font-weight:bold">Linked Care Implementation Guide</span><br/>
-                <span class="label label-info">1.2.2 - ci-build</span>
+                <span class="label label-info">0.9.1 - ci-build</span>
               </p>
             </div>
         <!-- at-fhir-ig-template begin -->
@@ -127,7 +127,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="col-12">
   <!-- at-fhir-ig-template begin -->
   <div class="alert alert-warning" role="alert">
-    <!--ReleaseHeader--><p id="publish-box">Linked Care Implementation Guide - Local Development build (v1.2.2). See the <a href="http://fhir.hl7.at/linkedcare/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+    <!--ReleaseHeader--><p id="publish-box">Linked Care Implementation Guide - Local Development build (v0.9.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://fhir.hl7.at/linkedcare/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   </div>
   <!-- at-fhir-ig-template end -->
   <h2>Linked Care Implementation Guide Overview</h2>
@@ -149,7 +149,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ul>
 
 </div>
-<p>Linked Care is a comprehensive digital system designed to streamline information flow and accessibility in mobile care, assistance, and therapy. It addresses the growing demand for healthcare services due to demographic changes while facing fewer available health professionals. The system simplifies information exchange and connects all involved parties, including patients, caregivers, doctors, therapists, and pharmacies, in an efficient and secure online platform with optimal IT support. Linked Care aims to enhance collaboration, reduce workload, and improve care quality by standardizing documentation and promoting interoperability across diverse care settings. By uniting stakeholders and emphasizing ethical and user-oriented development, Linked Care aspires to set a new gold standard, positioning Austria as a pioneer in digital healthcare communication across Europe. The system offers numerous advantages, including increased autonomy for clients, streamlined information access for caregivers, improved engagement for patients and their families, and enhanced integration of digital services for healthcare providers.</p>
+<p>Linked Care is a comprehensive digital system designed to streamline information flow and accessibility in mobile care, assistance, and therapy. It addresses the growing demand for healthcare services due to demographic changes while facing fewer available health professionals. The system simplifies information exchange and connects all involved parties, including patients, caregivers, doctors, therapists, and pharmacies, in an efficient and secure online platform with optimal IT support. Linked Care aims to enhance collaboration, reduce workload, and improve care quality by standardizing documentation and promoting interoperability across diverse care settings. The system offers numerous advantages, including increased autonomy for clients, streamlined information access for caregivers, improved engagement for patients and their families, and enhanced integration of digital services for healthcare providers.</p>
 
 <h3 id="aims-and-open-issues">Aims and Open Issues</h3>
 <h4 id="standard-for-medication-ordering">Standard for Medication Ordering</h4>
@@ -162,13 +162,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Private prescriptions, authorization by chief of medicine, notifications to order placer in case of absence of the filler</p>
 
 <h3 id="workflow-and-resource-interaction">Workflow and Resource Interaction</h3>
-<p>This IG outlines a workflow involving three key actors: Actor Care, Actor Doctor, and Actor Pharmacy. Actor Care initiates the process by ordering medication, resulting in a LINCARequestOrchestration (order header) containing one or more inline LINCAOrderMedicationRequest — one for each medication (order positions). Hence, there might be multiple for one client.
-In the LINCARequestOrchestration, the “subject” attribute refers to the sending organization. In the order positions, which are of type LINCAOrderMedicationRequest, the “subject” attribute refers to the patient, and the “performer” attribute refers to the designated practitioner. 
-After submitting the LINCARequestOrchestration, the Linked Care FHIR server creates instances for each contained LINCAOrderMedicationRequest. Those are linked to the original order header using the “supportingInformation” attribute. Note: The patient resource is limited to supporting only HL7AT Patients.</p>
+<p>This IG outlines a workflow involving three key actors: Actor Care, Actor Doctor, and Actor Pharmacy. Actor Care initiates the process by ordering medication, resulting in a LINCARequestOrchestration (order header) containing one or more inline LINCAProposalMedicationRequest — one for each medication (order positions). Hence, there might be multiple for one client.
+In the LINCARequestOrchestration, the “subject” attribute refers to the sending organization. In the order positions, which are of type LINCAProposalMedicationRequest, the “subject” attribute refers to the patient, and the “performer” attribute refers to the designated practitioner. 
+After submitting the LINCARequestOrchestration, the Linked Care FHIR server creates instances for each contained LINCAProposalMedicationRequest. Those are linked to the original order header using the “supportingInformation” attribute. Note: The patient resource is limited to supporting only HL7ATCore Patients.</p>
 
-<p>Next, the Actor Doctor, the designated practitioner, fetches all relevant LINCAOrderMedicationRequest. They can only access and modify LINCAOrderMedicationRequest designated to them. 
+<p>Next, the Actor Doctor, the designated practitioner, fetches all relevant LINCAProposalMedicationRequest. They can only access and modify LINCAProposalMedicationRequest designated to them. 
 Amongst others, the Actor Doctor can adjust dosage/medication or prescribe an immediate stop to medication intake. 
-Once the Actor Doctor authorizes an order item, they create a LINCAPrescriptionMedicationRequest. The original LINCAOrderMedicationRequest is now a reference in the “basedOn” attribute, and a back-reference to the LINCARequestOrchestration once again in the “supportingInformation” attribute. The LINCAPrescriptionMedicationRequest includes optional attributes like “groupIdentifier” (eRezeptID) and “identifier” (eMedID).</p>
+Once the Actor Doctor authorizes an order item, they create a LINCAPrescriptionMedicationRequest. The original LINCAProposalMedicationRequest is now a reference in the “basedOn” attribute, and a back-reference to the LINCARequestOrchestration once again in the “supportingInformation” attribute. The LINCAPrescriptionMedicationRequest includes optional attributes like “groupIdentifier” (eRezeptId) and “identifier” (eMedId).</p>
 
 <p>If the Actor Care has specified a pharmacy (Actor Pharmacy) in the “dispenseRequest” attribute, the designated Actor Pharmacy can fetch the LINCAPrescriptionMedicationRequest and prepare the dispense.
 The Actor Pharmacy must create a LINCAMedicationDispense to document the dispensing process and complete the chain. The “authorizingPrescription” attribute in LINCAMedicationDispense refers to the LINCAPrescriptionMedicationRequest, with the “performer.actor” attribute representing the dispensing Actor Pharmacy. 
@@ -202,7 +202,7 @@ if(window.location.hash != "") {
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.linkedcare.at/">The Linked Care Consortium</a>.  Package linkedcare.hl7.at#1.2.2 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Oct 17, 2023 09:41+0000">2023-10-17</span>
+    IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.linkedcare.at/">The Linked Care Consortium</a>.  Package linkedcare.hl7.at#0.9.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Wed, Nov 29, 2023 13:50+0000">2023-11-29</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
