@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>LINKEDCARE.HL7.AT\Linked Care Technical Information for Implementers - FHIR® v5.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"3"}
+    h3,h4,h5,h6{--heading-prefix:"3"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img id="header-logo" src="logo.jpg"/>
+          </div>
+          <div class="col-11">
+        <!-- at-fhir-ig-template end -->
+            <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">Linked Care Implementation Guide</span><br/>
+                <span class="label label-info">0.9.1 - ci-build</span>
+              </p>
+            </div>
+        <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+        <!-- at-fhir-ig-template end -->
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R5/index.html">FHIR®</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li><a href="artifacts.html">Artifacts</a></li>
+  <li><a href="user_stories_noscroll.html">User Stories</a></li>
+  <li><a href="technical_information.html">Technical Information</a></li>
+	<li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">External Resources</a>
+    <ul class="dropdown-menu">
+     <li><a target="_blank" href="http://hl7.org/fhir/R5/index.html">FHIR Spec</a></li>
+     <li><a target="_blank" href="https://github.com/loidl-consulting/linca-sdk/tree/main">SDK</a></li>
+    </ul>
+  </li> 
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Linked Care Technical Information for Implementers</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+	
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!-- at-fhir-ig-template begin -->
+  <div class="alert alert-warning" role="alert">
+    <!--ReleaseHeader--><p id="publish-box">Linked Care Implementation Guide - Local Development build (v0.9.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://fhir.hl7.at/linkedcare/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  </div>
+  <!-- at-fhir-ig-template end -->
+  <h2>Linked Care Technical Information for Implementers</h2>
+  
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#endpoints" id="markdown-toc-endpoints">Endpoints</a></li>
+  <li><a href="#validation-messages" id="markdown-toc-validation-messages">Validation Messages</a></li>
+  <li><a href="#system-messages" id="markdown-toc-system-messages">System Messages</a></li>
+</ul>
+
+</div>
+<h3 id="endpoints">Endpoints</h3>
+
+<table class="table table-striped">
+    <thead>
+        <tr class="active">
+            <th scope="col">Hostname</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>fhir5-d.linkedcare.at</td>
+            <td>Development cluster gateway</td>
+        </tr>
+        <tr>
+            <td>fhir5-q.linkedcare.at</td>
+            <td>Q/A cluster gateway</td>
+        </tr>
+        <tr>
+            <td><em>(to be defined)</em></td>
+            <td>Production cluster gateway</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="validation-messages">Validation Messages</h3>
+<p>All REST endpoints will return the usual range of <a target="_blank" href="https://http.cat/">http status codes</a> back to the client. Implementations <em>should</em> guarantee, that in case of http status code <a target="_blank" href="https://www.rfc-editor.org/rfc/rfc9110.html#name-400-bad-request">400 Bad Request</a> and also in case of http status code <a target="_blank" href="https://www.rfc-editor.org/rfc/rfc9110.html#name-409-conflict">Conflict</a>, the response body will contain an <a target="_blank" href="https://www.hl7.org/fhir/operationoutcome.html">OperationOutcome</a> resource with details about the error. There is also one case where the response body will contain an OperationOutcome even though the http status code is <a target="_blank" href="https://www.rfc-editor.org/rfc/rfc9110.html#status.200">200 OK</a>: Partially successful cancellation of order.</p>
+
+<p>The LINCA implementation defines the following operation outcomes:</p>
+
+<table class="table table-striped">
+  <thead>
+    <tr class="danger">
+        <th scope="col">Code</th>
+        <th scope="col">Message</th>
+        <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <th scope="row">LCVAL01</th> 
+        <td>Name of patient (in field <em>name.text</em>) cannot be null</td>
+        <td>Enter a string into the <em>name.text</em> field of the patient resource</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL02</th>
+        <td>'value' is no valid social security number</td>
+        <td>Provide a social security number which is valid according to the checksum rules of the national implementation</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL03</th>
+        <td>A patient can have at most one social security number</td>
+        <td>Provide at most one social security number in a patient record</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL04</th>
+        <td><em>birthDate</em> is required when the social security number is missing</td>
+        <td>Enter a value into the field <em>birthDate</em></td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL05</th>
+        <td>The <em>gender</em> field must not be empty</td>
+        <td>Enter a value into the <em>gender</em> field</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL06</th>
+        <td>Cast of transmitted resource to Patient resource failed</td>
+        <td>Make sure the resource is well-formed and matches the profile of the national implementation</td>
+    </tr>
+     <tr>
+        <th scope="row">LCVAL07</th>
+        <td>The <em>intent</em> field must not be empty</td>
+        <td>Enter a value into the <em>intent</em> field</td>
+    </tr>
+     <tr>
+        <th scope="row">LCVAL08</th>
+        <td>The <em>status</em> field must not be empty</td>
+        <td>Enter a value into the <em>status</em> field</td>
+    </tr>
+     <tr>
+        <th scope="row">LCVAL09</th>
+        <td>The <em>subject</em> field must not be empty</td>
+        <td>Enter a value (reference) into the <em>subject</em> field</td>
+    </tr>
+     <tr>
+        <th scope="row">LCVAL10</th>
+        <td>'value' in field <em>intent</em> is not valid in LINCARequestOrchestration</td>
+        <td>Enter a value that matches the rules of the present resource profile (e.g., 'proposal')</td>
+    </tr>
+     <tr>
+        <th scope="row">LCVAL11</th>
+        <td>'value' in field <em>status</em> is not valid in new LINCARequestOrchestration</td>
+        <td>Enter a value that matches the rules of the present resource profile (e.g., 'active')</td>
+    </tr>
+     <tr>
+        <th scope="row">LCVAL12</th>
+        <td>The OID in field <em>subject</em> is not valid</td>
+        <td>Enter a value that is consistent with the OID in your authentication certificate</td>
+    </tr>
+     <tr>
+        <th scope="row">LCVAL13</th>
+        <td>Cardinality violation in field <em>contained</em>: minimum is 1 inline resource</td>
+        <td>Add at least one inline MedicationRequest resource into the <em>contained</em> field</td>
+    </tr>
+     <tr>
+        <th scope="row">LCVAL14</th>
+        <td>Cast of transmitted resource to RequestOrchestration resource failed</td>
+        <td>Make sure the resource is well-formed and matches the profile of the national implementation</td>
+    </tr>
+     <tr>
+        <th scope="row">LCVAL15</th>
+        <td>The field <em>id</em> must be empty in contained resources</td>
+        <td>Remove the value from the field <em>id</em>. You can add your internal ids into the <em>identifier</em> field</td>
+    </tr>
+     <tr>
+        <th scope="row">LCVAL16</th>
+        <td>The field <em>basedOn</em> must be empty contained resources</td>
+        <td>Remove any references from the field <em>basedOn</em> in contained MedicationRequest resources</td>
+    </tr>
+     <tr>
+        <th scope="row">LCVAL17</th>
+        <td><em>value</em> in field <em>status</em> is not valid in contained LINCAProposalMedicationRequest</td>
+        <td>Enter a value that matches the rules of the present resource profile (e.g., 'unknown')</td>
+    </tr>
+     <tr>
+        <th scope="row">LCVAL18</th>
+        <td>The field <em>basedOn</em> must contain exactly one reference</td>
+        <td>Enter exactly one reference to an existing LINCA resource into the field <em>basedOn</em></td>
+    </tr>
+     <tr>
+        <th scope="row">LCVAL19</th>
+        <td>'value' in field <em>intent</em> is not valid in LINCAProposalMedicationRequest</td>
+        <td>Enter a value that matches the rules of the present resource profile (e.g., 'proposal')</td>
+    </tr>
+     <tr>
+        <th scope="row">LCVAL20</th>
+        <td>'value' in field <em>status</em> is not valid in LINCAProposalMedicationRequest</td>
+        <td>Enter a value that matches the rules of the present resource profile (e.g., 'active')</td>
+    </tr>
+     <tr>
+        <th scope="row">LCVAL21</th>
+        <td>The field <em>priorPrescription</em> must be empty in LINCAProposalMedicationRequest</td>
+        <td>The field <em>priorPrescription</em> shall only be filled by prescribing practitioners</td>
+    </tr>
+     <tr>
+        <th scope="row">LCVAL22</th>
+        <td>The field <em>groupIdentifier</em> must be empty in LINCAProposalMedicationRequest</td>
+        <td>The field <em>groupIdentifier</em> is reserved for the eRezept-Id</td>
+    </tr>
+     <tr>
+        <th scope="row">LCVAL23</th>
+        <td>The field <em>informationSource</em> must not be empty</td>
+        <td>Enter exactly one reference into the <em>informationSource</em> field</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL24</th>
+        <td>The OID in <em>informationSource</em> is not valid</td>
+        <td>Enter a value that is consistent with the OID in your authentication certificate</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL25</th>
+        <td>The field <em>requester</em> must not be empty</td>
+        <td>Enter a value into the field <em>requester</em></td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL26</th>
+        <td>The field <em>medication</em> must not be empty</td>
+        <td>Enter a value in the <em>medication</em> field</td>
+    </tr>
+    <tr>        
+        <th scope="row">LCVAL27</th>
+        <td>The provided refstring 'value' in field <em>subject</em> is no valid refstring</td>
+        <td>Enter a valid reference string in the field <em>subject</em>, e.g., 'HL7ATCorePatient/FhirIdOfPatient'</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL28</th>
+        <td>Patient reference in field <em>subject</em> not found</td>
+        <td>Enter the Fhir-Id of an existing HL7ATCorePatient resource</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL29</th>
+        <td>The field <em>performer</em> must not be empty</td>
+        <td>Enter a value in the <em>performer</em> field (the OID of the practitioner)</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL30</th>
+        <td>The OID in field <em>performer</em> is not valid</td>
+        <td>Enter a syntactically correct OID of an active and eligible physician</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL31</th>
+        <td>The reference in field <em>basedOn</em> is no valid refstring</td>
+        <td>Enter a valid reference string in the field <em>basedOn</em>, e.g., 'LINCAResource/FhirIdOfResource'</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL32</th>
+        <td>Referenced resource in field <em>basedOn</em> not found</td>
+        <td>Enter the Fhir-Id of an existing LINCA resource</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL33</th>
+        <td>Referenced resource in field <em>basedOn</em> is not the latest chain link</td>
+        <td>Always refer to the youngest link in a resource chain</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL34</th>
+        <td>The field <em>informationSource</em> must contain exactly one element</td>
+        <td>Enter exactly one reference into the <em>informationSource</em> field</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL35</th>
+        <td>Cast of transmitted resource to MedicationRequest resource failed</td>
+        <td>Make sure the resource is well-formed and matches the profile of the national implementation</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL36</th>
+        <td>Field <em>supportingInformation</em> cannot differ from referenced resource in field <em>basedOn</em>, <em>priorPrescription</em>, or <em>	authorizingPrescription</em></td>
+        <td>Remove the reference to LINCARequestOrchestration in field <em>supportingInformation</em> or copy it correctly from the referenced resource</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL37</th>
+        <td>Cardinality violation: field <em>basedOn</em> must contain at most one reference</td>
+        <td>Remove redundant references from the field <em>basedOn</em></td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL38</th>
+        <td>Reference required, either in field <em>basedOn</em> or in <em>priorPrescription</em></td>
+        <td>Enter references correspondig to the rules of the present resource profile</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL39</th>
+        <td>The reference in field <em>priorPrescription</em> is no valid refstring</td>
+        <td>Enter a valid reference string in the field <em>priorPrescription</em>, e.g., 'LINCAResource/FhirIdOfResource'</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL40</th>
+        <td>Reference in field <em>priorPrescription</em> not found</td>
+        <td>Enter the Fhir-Id of an existing LINCA resource</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL41</th>
+        <td>Referenced resource in field <em>priorPrescription</em> is not the latest chain link</td>
+        <td>Always refer to the latest link in a resource chain</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL42</th>
+        <td>Field <em>informationSource</em> cannot differ from the referenced resource in <em>basedOn</em> or <em>priorPrescription</em></td>
+        <td>Remove the reference from field <em>informationSource</em> or copy it correctly from the referenced resource</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL43</th>
+        <td>Field <em>requester</em> cannot differ from the referenced resource in <em>basedOn</em> or <em>priorPrescription</em></td>
+        <td>Remove the reference from field <em>requester</em> or copy it correctly from the referenced resource</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL44</th>
+        <td>Field <em>dispenser</em> cannot differ from the referenced resource in <em>basedOn</em> or <em>priorPrescription</em></td>
+        <td>Remove the reference from field <em>dispenser</em> or copy it correctly from the referenced resource</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL45</th>
+        <td>Field <em>subject</em> cannot differ from the referenced resource in <em>basedOn</em> or <em>priorPrescription</em></td>
+        <td>Copy the patient reference correctly from the referenced resource</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL46</th>
+        <td>Field <em>performer</em> cannot differ from the referenced resource in <em>basedOn</em> or <em>priorPrescription</em></td>
+        <td>Enter the correct performer OID into the field <em>performer</em></td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL47</th>
+        <td>The field <em>intent</em> shall be 'order' in this use case</td>
+        <td>Enter the proposed value in the field intent</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL48</th>
+        <td>Value in field <em>status</em> is not supported on this Fhir server</td>
+        <td>Enter a value that matches the rules of the present resource profile</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL49</th>
+        <td>Cast of transmitted resource to MedicationDispense resource failed</td>
+        <td>Make sure the resource is well-formed and matches the profile of the national implementation</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL50</th>
+        <td>Cardinality violation: field <em>authorizingPrescription</em> must contain exactly one reference</td>
+        <td>Enter a reference to a LINCAPrescriptionMedicationResource into the field <em>authorizingPrescription</em></td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL51</th>
+        <td>The reference in field <em>authorizingPrescription</em> is no valid refstring</td>
+        <td>Enter a valid reference string in the field <em>authorizingPrescription</em>, e.g., 'LINCAResource/FhirIdOfResource'</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL52</th>
+        <td>Reference in field <em>authorizingPrescription</em> not found</td>
+        <td>Enter the reference of an existing LINCA resource</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL53</th>
+        <td>Referenced resource in field <em>authorizingPrescription</em> is not the latest chain link</td>
+        <td>Always refer to the latest link in a resource chain</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL54</th>
+        <td>Value in field <em>status</em> must be 'completed'</td>
+        <td>Enter the required value into the <em>status</em> field</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL55</th>
+        <td>Exactly one performer is required and the field <em>performer.identifier.value</em> must contain the performers OID</td>
+        <td>Enter the required value into the <em>field performer.identifier.value</em></td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL56</th>
+        <td>The dispensers OID must be provided in <em>dispenseRequest.dispenser.identifier.value</em></td>
+        <td>Enter the value into the field <em>dispenseRequest.dispenser.identifier.value</em></td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL57</th>
+        <td>The field <em>performer.actor.identifier.value</em> must contain the OID of the dispensing pharmacy</td>
+        <td>Enter the required value into the field <em>performer.actor.identifier.value</em></td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL58</th>
+        <td>Value 'value' in field <em>intent</em> is not supported on this Fhir server</td>
+        <td>Check the Linked Care Implementation Guide for allowed values of field <em>intent</em></td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL59</th>
+        <td>In field <em>status</em> the value 'active' is required in this use case</td>
+        <td>Enter the value 'active' into the field <em>status</em></td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL60</th>
+        <td>The field <em>supportingInformation</em> must contain a reference to the lc_id in adhoc prescriptions</td>
+        <td>Add the required reference to <em>supportingInformation</em></td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL61</th>
+        <td>Ad hoc prescriptions must refer to an existing proposal for the patient concerned</td>
+        <td>Make sure to enter an existing combination of patient reference and lc_id</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL62</th>
+        <td>Cancellation of proposal id 'value' failed</td>
+	    <td>It has already been processed.</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL63</th>
+        <td>Cancellation of RequestOrchestration lc_id 'value' failed</td> 
+    	<td>It has already been revoked or completed</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL64</th>
+        <td>Contained resources must be referenced in field <em>action.resource</em></td> 
+    	<td>Add a reference to the internal id of the contained resource</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL65</th>
+        <td>The OID in field <em>dispenseRequest.dispenser</em> is not valid</td> 
+	    <td>Enter a syntactically correct OID of an active pharmacy</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL66</th>
+        <td>The OID in field <em>performer</em> cannot differ from the OID in the sender's certificate</td> 
+    	<td>Enter the correct OID in field <em>performer</em></td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL67</th>
+        <td>The field <em>priorPrescription</em> must be empty when intent is set to 'originalOrder'</td> 
+	    <td>Either remove the reference in <em>priorPrescription</em>, or set the intent to 'order'</td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL68</th>
+        <td>In a Bundle of LINCAPrescriptionMedicationRequests, all of them must refer to the same <em>subject</em></td> 
+	    <td>Remove LINCAPrescriptionMedicationRequests with differing <em>subject</em></td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL69</th>
+        <td>In a Bundle of LINCAPrescriptionMedicationRequests, all of them must have the same <em>groupIdentifier</em></td> 
+    	<td>Remove LINCAPrescriptionMedicationRequests with differing <em>groupIdentifier</em></td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL70</th>
+        <td>Genuine initial prescriptions cannot be connected to existing orders/lc_id</td> 
+	    <td>Remove the reference from <em>supportingInformation</em></td>
+    </tr>
+    <tr>
+        <th scope="row">LCVAL71</th>
+        <td>New and active prescriptions must be sent with [POST $prescription Bundle]</td> 
+    	<td>Check the Linked Care Implementation Guide, User Stories for Actor Doctor</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="system-messages">System Messages</h3>
+<p>In addition to that, the base implementation defines standard validation outcomes as follows:</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr class="danger">
+            <th scope="col">Code</th>
+            <th scope="col">Message</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">PVAL101</th>
+            <td>Value is of type <em>type</em>, which is not an allowed choice</td>
+            <td>Mismatch between expected content and provided content</td>
+        </tr>
+        <tr>
+            <th scope="row">PVAL102</th>
+            <td>Element has <em>count</em> elements, but minium cardinality is <em>cardinality</em></td>
+            <td>Missing input or too few elements in a set with a defined minimum size</td>
+        </tr>	
+        <tr>
+            <th scope="row">PVAL103</th>
+            <td>Element has <em>count</em> elements, but maximum cardinality is <em>cardinality</em></td>
+            <td>Input into a non-writable field or too many elements in a set with a defined maximum size</td>
+        </tr>	
+        <tr>
+            <th scope="row">PVAL104</th>
+            <td>Repeating elements should not contain a null value</td>
+            <td>A field which contains a set of elements, should be contiguous</td>
+        </tr>	
+        <tr>
+            <th scope="row">PVAL105</th>
+            <td>Element with minimum cardinality <em>cardinality</em> cannot be null</td>
+            <td>Missing input into a mandatory field</td>
+        </tr>	
+        <tr>
+            <th scope="row">PVAL106</th>
+            <td>'<em>value</em>' is not a correct literal for a code</td>
+            <td>Malformed code value</td>
+        </tr>	
+        <tr>
+            <th scope="row">PVAL107</th>
+            <td>'<em>value</em>' is not a correct literal for a date</td>
+            <td>Malformed date value</td>
+        </tr>	
+        <tr>
+            <th scope="row">PVAL108</th>
+            <td>'<em>value</em>' is not a correct literal for a dateTime</td>
+            <td>Malformed datetime value</td>
+        </tr>		
+        <tr>
+            <th scope="row">PVAL109</th>
+            <td>'<em>value</em>' is not a correct literal for an id</td>
+            <td>Malformed FhirId value</td>
+        </tr>		
+        <tr>
+            <th scope="row">PVAL110</th>
+            <td>Value is not well-formatted Xml: <em>value</em></td>
+            <td>Invalid Xml document</td>
+        </tr>		
+        <tr>
+            <th scope="row">PVAL111</th>
+            <td>Value is not well-formed Xml adhering to the FHIR schema for Narrative: <em>value</em></td>
+            <td>Invalid narrative content value</td>
+        </tr>		
+        <tr>
+            <th scope="row">PVAL112</th>
+            <td>'<em>value</em>' is not a correct literal for an oid</td>
+            <td>Malformed OID value</td>
+        </tr>		
+        <tr>
+            <th scope="row">PVAL113</th>
+            <td>'<em>value</em>' is not a correct literal for a time</td>
+            <td>Malformed time-of-day value</td>
+        </tr>		
+        <tr>
+            <th scope="row">PVAL114</th>
+            <td>'<em>value</em>' is not a correct literal for an uri</td>
+            <td>Malformed URI value</td>
+        </tr>		
+        <tr>
+            <th scope="row">PVAL115</th>
+            <td>'<em>value</em>' is not a correct literal for a uuid</td>
+            <td>Malformed UUID value</td>
+        </tr>		
+        <tr>
+            <th scope="row">PVAL116</th>
+            <td>Value '<em>value</em>' is not a correct code for valueset '<em>valueset</em>'</td>
+            <td>Not a valid value in the corresponding code system</td>
+        </tr>		
+        <tr>
+            <th scope="row">PVAL117</th>
+            <td>Resource has contained resources with narrative, which is not allowed</td>
+            <td>Resources in the "contained" field may not come with their own narrative</td>
+        </tr>		
+        <tr>
+            <th scope="row">PVAL118</th>
+            <td>It is not allowed for a resource to contain resources which themselves contain resources</td>
+            <td>There may be at most one level of "contained" nesting</td>
+        </tr>		
+    </tbody>
+</table>
+
+
+
+</div>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /row -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-content -->
+
+<script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+if(window.location.hash != "") {
+    $('a[href="' + window.location.hash + '"]').click()
+}
+});
+</script>
+<a name="bottom"> </a>
+<div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+<div class="container">  <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.linkedcare.at/">The Linked Care Consortium</a>.  Package linkedcare.hl7.at#0.9.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Fri, Dec 1, 2023 17:21+0000">2023-12-01</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    </span>
+  </p>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+<div class="container">  <!-- container -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-post-footer -->
+
+<!-- JS and analytics only. -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+<script type="text/javascript" src="assets/js/respond.min.js"> </script>
+<script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+<script>anchors.options.visible = 'hover'
+anchors.add()</script>
+
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+
+<!-- / feedback form  -->
+
+<!-- Analytics Below
+================================================== -->
+</body>
+</html>
+
