@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "HL7AustriaImplementationGuide"] ; # 
   fhir:title [ fhir:v "HL7® Austria FHIR® Core Implementation Guide"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-03-11T12:50:36+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-12-04T20:00:03+00:00"^^xsd:dateTime] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Technical Committee for FHIR® at HL7® Austria" ] ;
      fhir:telecom ( [
@@ -40,7 +40,19 @@
        fhir:link <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
      ] ;
      fhir:packageId [ fhir:v "hl7.terminology.r4" ] ;
-     fhir:version [ fhir:v "5.0.0" ]
+     fhir:version [ fhir:v "5.3.0" ]
+  ] [
+     fhir:id [ fhir:v "hl7ext" ] ;
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack" ]
+     ] ) ;
+     fhir:uri [
+       fhir:v "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions>
+     ] ;
+     fhir:packageId [ fhir:v "hl7.fhir.uv.extensions.r4" ] ;
+     fhir:version [ fhir:v "1.0.0" ]
   ] ) ; # 
   fhir:definition [
      fhir:extension ( [
@@ -268,6 +280,9 @@
          fhir:value [ fhir:v "true" ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "hl7.fhir.uv.tools#current" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
@@ -497,42 +512,6 @@
      fhir:resource ( [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:complex-type" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address> ;
-         fhir:reference [ fhir:v "StructureDefinition/at-core-address" ]
-       ] ;
-       fhir:name [ fhir:v "HL7® AT Core Address Profile" ] ;
-       fhir:description [ fhir:v "HL7® Austria FHIR® Core Profile for address data in Austria. Note, this extension represents the common structure of address information within Austrian information systems. This extension does not restrict the documented information to Austrian adresses. Address information that does not fit into the given structure may be captured by [Address Additional Information](StructureDefinition-at-core-ext-address-additionalInformation.html)." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient> ;
-         fhir:reference [ fhir:v "StructureDefinition/at-core-patient" ]
-       ] ;
-       fhir:name [ fhir:v "HL7® AT Core Patient Profile" ] ;
-       fhir:description [ fhir:v "HL7® Austria FHIR® Core Profile for patient data in Austria.\r\nThe HL7® AT Core Patient is based upon the core FHIR® Patient Resource and designed to meet the applicable patient demographic data elements in Austria. It identifies which core elements, extensions, vocabularies and value sets SHALL be present in the resource when using this profile. Note, this extension represents the common structure of Patient information within Austrian information systems." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-valueset> ;
-         fhir:reference [ fhir:v "StructureDefinition/at-core-valueset" ]
-       ] ;
-       fhir:name [ fhir:v "HL7® AT Core ValueSet Profile" ] ;
-       fhir:description [ fhir:v "HL7® Austria FHIR® Core Profile for valuesets in Austria.\r\nThe HL7® AT Core ValueSet is based upon the core FHIR® ValueSet Resource and defines the use of the OID extension." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
@@ -541,30 +520,6 @@
        ] ;
        fhir:name [ fhir:v "Address Additional Information" ] ;
        fhir:description [ fhir:v "HL7® Austria FHIR® Core Extension for the additional information part of the Austrian address." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-patient-religion> ;
-         fhir:reference [ fhir:v "StructureDefinition/at-core-ext-patient-religion" ]
-       ] ;
-       fhir:name [ fhir:v "Patient Religion" ] ;
-       fhir:description [ fhir:v "HL7® Austria FHIR® Core Extension for the religion (registered in Austria) of a patient.\r\nThe extension is used to encode the religious confession of a patient (only confessions registered in Austria). Furthermore, it uses the official [HL7 AT CodeSystem](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&loadName=HL7 AT ReligionAustria) for religion and is therefore aligned with the ELGA ValueSet, respectively." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-valueset-systemoid> ;
-         fhir:reference [ fhir:v "StructureDefinition/at-core-ext-valueset-systemoid" ]
-       ] ;
-       fhir:name [ fhir:v "System OID" ] ;
-       fhir:description [ fhir:v "HL7® Austria FHIR® Core Extension for the capturing of OID in ValueSets to reference the CodeSystem they come from.\r\nThe extension is used to document the OID of the system of a code referenced in a ValueSet, to align FHIR with the HL7 Austria CDA document guidelines." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -644,6 +599,42 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:complex-type" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-core-address" ]
+       ] ;
+       fhir:name [ fhir:v "HL7® AT Core Address Profile" ] ;
+       fhir:description [ fhir:v "HL7® Austria FHIR® Core Profile for address data in Austria. Note, this extension represents the common structure of address information within Austrian information systems. This extension does not restrict the documented information to Austrian adresses. Address information that does not fit into the given structure may be captured by [Address Additional Information](StructureDefinition-at-core-ext-address-additionalInformation.html)." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-core-patient" ]
+       ] ;
+       fhir:name [ fhir:v "HL7® AT Core Patient Profile" ] ;
+       fhir:description [ fhir:v "HL7® Austria FHIR® Core Profile for patient data in Austria.\r\nThe HL7® AT Core Patient is based upon the core FHIR® Patient Resource and designed to meet the applicable patient demographic data elements in Austria. It identifies which core elements, extensions, vocabularies and value sets SHALL be present in the resource when using this profile. Note, this extension represents the common structure of Patient information within Austrian information systems." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-valueset> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-core-valueset" ]
+       ] ;
+       fhir:name [ fhir:v "HL7® AT Core ValueSet Profile" ] ;
+       fhir:description [ fhir:v "HL7® Austria FHIR® Core Profile for valuesets in Austria.\r\nThe HL7® AT Core ValueSet is based upon the core FHIR® ValueSet Resource and defines the use of the OID extension." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "Organization" ]
        ] ) ;
        fhir:reference [
@@ -656,50 +647,26 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "CodeSystem" ]
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/CodeSystem/at-core-cs-iso-3166-1-alpha-3> ;
-         fhir:reference [ fhir:v "CodeSystem/at-core-cs-iso-3166-1-alpha-3" ]
+         fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-patient-religion> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-core-ext-patient-religion" ]
        ] ;
-       fhir:name [ fhir:v "at-core-cs-iso-3166-1-alpha-3" ] ;
-       fhir:description [ fhir:v "ISO code system for country codes with 3 letters. Also accessible on [Termpub - CodeSystem - ISO 3166-1 alpha 3](https://termpub.gesundheit.gv.at/TermBrowser/gui/main/main.zul?loadType=CodeSystem&loadName=ISO%203166-1%20alpha%203%202016)." ] ;
+       fhir:name [ fhir:v "Patient Religion" ] ;
+       fhir:description [ fhir:v "HL7® Austria FHIR® Core Extension for the religion (registered in Austria) of a patient.\r\nThe extension is used to encode the religious confession of a patient (only confessions registered in Austria). Furthermore, it uses the official [HL7 AT CodeSystem](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&loadName=HL7 AT ReligionAustria) for religion and is therefore aligned with the ELGA ValueSet, respectively." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "CodeSystem" ]
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/CodeSystem/at-core-cs-religion> ;
-         fhir:reference [ fhir:v "CodeSystem/at-core-cs-religion" ]
+         fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-valueset-systemoid> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-core-ext-valueset-systemoid" ]
        ] ;
-       fhir:name [ fhir:v "at-core-cs-religion" ] ;
-       fhir:description [ fhir:v "Code system for the religions and faith communities in Austria. Also accessible on [Termpub - CodeSystem - HL7 AT ReligionAustria](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&loadName=HL7.AT:ReligionAustria)." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/ValueSet/at-elga-vs-countryCodes> ;
-         fhir:reference [ fhir:v "ValueSet/at-elga-vs-countryCodes" ]
-       ] ;
-       fhir:name [ fhir:v "at-elga-vs-countryCodes" ] ;
-       fhir:description [ fhir:v "Value Set for ISO 3166-1 alpha 3 used in ELGA. Also accessible on [Termpub - ValueSet - ELGA Ländercodes](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=ValueSet&loadName=ELGA_Laendercodes)." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/ValueSet/at-elga-vs-religion> ;
-         fhir:reference [ fhir:v "ValueSet/at-elga-vs-religion" ]
-       ] ;
-       fhir:name [ fhir:v "at-elga-vs-religion" ] ;
-       fhir:description [ fhir:v "Set of religious affiliations to be used in ELGA. It is preferred to use entries of the first level hierachy (1-L). Also accessible on [Termpub - ValueSet - ELGA ReligiousAffiliation](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=ValueSet&loadName=ELGA_ReligiousAffiliation)." ] ;
+       fhir:name [ fhir:v "System OID" ] ;
+       fhir:description [ fhir:v "HL7® Austria FHIR® Core Extension for the capturing of OID in ValueSets to reference the CodeSystem they come from.\r\nThe extension is used to document the OID of the system of a code referenced in a ValueSet, to align FHIR with the HL7 Austria CDA document guidelines." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] ) ;
      fhir:page [

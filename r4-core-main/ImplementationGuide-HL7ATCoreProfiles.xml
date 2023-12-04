@@ -11,7 +11,7 @@
   <name value="HL7AustriaImplementationGuide"/>
   <title value="HL7® Austria FHIR® Core Implementation Guide"/>
   <status value="active"/>
-  <date value="2023-03-11T12:50:36+00:00"/>
+  <date value="2023-12-04T20:00:03+00:00"/>
   <contact>
     <name value="Technical Committee for FHIR® at HL7® Austria"/>
     <telecom>
@@ -29,7 +29,15 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
-    <version value="5.0.0"/>
+    <version value="5.3.0"/>
+  </dependsOn>
+  <dependsOn id="hl7ext">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/>
+    </extension>
+    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+    <packageId value="hl7.fhir.uv.extensions.r4"/>
+    <version value="1.0.0"/>
   </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -232,9 +240,12 @@
         <valueString value="true"/>
       </extension>
     </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
+      <valueCode value="hl7.fhir.uv.tools#current"/>
+    </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="copyrightyear"/>
+        <valueCode value="copyrightyear"/>
       </extension>
       <extension url="value">
         <valueString value="2020+"/>
@@ -242,7 +253,7 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="releaselabel"/>
+        <valueCode value="releaselabel"/>
       </extension>
       <extension url="value">
         <valueString value="STU2"/>
@@ -250,7 +261,7 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="show-inherited-invariants"/>
+        <valueCode value="show-inherited-invariants"/>
       </extension>
       <extension url="value">
         <valueString value="false"/>
@@ -258,7 +269,7 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="autoload-resources"/>
+        <valueCode value="autoload-resources"/>
       </extension>
       <extension url="value">
         <valueString value="true"/>
@@ -266,7 +277,7 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="path-liquid"/>
+        <valueCode value="path-liquid"/>
       </extension>
       <extension url="value">
         <valueString value="template/liquid"/>
@@ -274,7 +285,7 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="path-liquid"/>
+        <valueCode value="path-liquid"/>
       </extension>
       <extension url="value">
         <valueString value="input/liquid"/>
@@ -282,7 +293,7 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="path-qa"/>
+        <valueCode value="path-qa"/>
       </extension>
       <extension url="value">
         <valueString value="temp/qa"/>
@@ -290,7 +301,7 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="path-temp"/>
+        <valueCode value="path-temp"/>
       </extension>
       <extension url="value">
         <valueString value="temp/pages"/>
@@ -298,7 +309,7 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="path-output"/>
+        <valueCode value="path-output"/>
       </extension>
       <extension url="value">
         <valueString value="output"/>
@@ -306,7 +317,7 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="path-suppressed-warnings"/>
+        <valueCode value="path-suppressed-warnings"/>
       </extension>
       <extension url="value">
         <valueString value="input/ignoreWarnings.txt"/>
@@ -314,7 +325,7 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="path-history"/>
+        <valueCode value="path-history"/>
       </extension>
       <extension url="value">
         <valueString value="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/history.html"/>
@@ -322,7 +333,7 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="template-html"/>
+        <valueCode value="template-html"/>
       </extension>
       <extension url="value">
         <valueString value="template-page.html"/>
@@ -330,7 +341,7 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="template-md"/>
+        <valueCode value="template-md"/>
       </extension>
       <extension url="value">
         <valueString value="template-page-md.html"/>
@@ -338,7 +349,7 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="apply-contact"/>
+        <valueCode value="apply-contact"/>
       </extension>
       <extension url="value">
         <valueString value="true"/>
@@ -346,7 +357,7 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="apply-context"/>
+        <valueCode value="apply-context"/>
       </extension>
       <extension url="value">
         <valueString value="true"/>
@@ -354,7 +365,7 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="apply-copyright"/>
+        <valueCode value="apply-copyright"/>
       </extension>
       <extension url="value">
         <valueString value="true"/>
@@ -362,7 +373,7 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="apply-jurisdiction"/>
+        <valueCode value="apply-jurisdiction"/>
       </extension>
       <extension url="value">
         <valueString value="true"/>
@@ -370,7 +381,7 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="apply-license"/>
+        <valueCode value="apply-license"/>
       </extension>
       <extension url="value">
         <valueString value="true"/>
@@ -378,7 +389,7 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="apply-publisher"/>
+        <valueCode value="apply-publisher"/>
       </extension>
       <extension url="value">
         <valueString value="true"/>
@@ -386,7 +397,7 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="apply-version"/>
+        <valueCode value="apply-version"/>
       </extension>
       <extension url="value">
         <valueString value="true"/>
@@ -394,7 +405,7 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="active-tables"/>
+        <valueCode value="active-tables"/>
       </extension>
       <extension url="value">
         <valueString value="true"/>
@@ -402,7 +413,7 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="fmm-definition"/>
+        <valueCode value="fmm-definition"/>
       </extension>
       <extension url="value">
         <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
@@ -410,7 +421,7 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="propagate-status"/>
+        <valueCode value="propagate-status"/>
       </extension>
       <extension url="value">
         <valueString value="true"/>
@@ -418,7 +429,7 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="excludelogbinaryformat"/>
+        <valueCode value="excludelogbinaryformat"/>
       </extension>
       <extension url="value">
         <valueString value="true"/>
@@ -426,45 +437,12 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
-        <valueString value="tabbed-snapshots"/>
+        <valueCode value="tabbed-snapshots"/>
       </extension>
       <extension url="value">
         <valueString value="true"/>
       </extension>
     </extension>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:complex-type"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/at-core-address"/>
-      </reference>
-      <name value="HL7® AT Core Address Profile"/>
-      <description value="HL7® Austria FHIR® Core Profile for address data in Austria. Note, this extension represents the common structure of address information within Austrian information systems. This extension does not restrict the documented information to Austrian adresses. Address information that does not fit into the given structure may be captured by [Address Additional Information](StructureDefinition-at-core-ext-address-additionalInformation.html)."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/at-core-patient"/>
-      </reference>
-      <name value="HL7® AT Core Patient Profile"/>
-      <description value="HL7® Austria FHIR® Core Profile for patient data in Austria.&#xD;&#xA;The HL7® AT Core Patient is based upon the core FHIR® Patient Resource and designed to meet the applicable patient demographic data elements in Austria. It identifies which core elements, extensions, vocabularies and value sets SHALL be present in the resource when using this profile. Note, this extension represents the common structure of Patient information within Austrian information systems."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/at-core-valueset"/>
-      </reference>
-      <name value="HL7® AT Core ValueSet Profile"/>
-      <description value="HL7® Austria FHIR® Core Profile for valuesets in Austria.&#xD;&#xA;The HL7® AT Core ValueSet is based upon the core FHIR® ValueSet Resource and defines the use of the OID extension."/>
-      <exampleBoolean value="false"/>
-    </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
@@ -474,28 +452,6 @@
       </reference>
       <name value="Address Additional Information"/>
       <description value="HL7® Austria FHIR® Core Extension for the additional information part of the Austrian address."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/at-core-ext-patient-religion"/>
-      </reference>
-      <name value="Patient Religion"/>
-      <description value="HL7® Austria FHIR® Core Extension for the religion (registered in Austria) of a patient.&#xD;&#xA;The extension is used to encode the religious confession of a patient (only confessions registered in Austria). Furthermore, it uses the official [HL7 AT CodeSystem](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&amp;loadName=HL7 AT ReligionAustria) for religion and is therefore aligned with the ELGA ValueSet, respectively."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/at-core-ext-valueset-systemoid"/>
-      </reference>
-      <name value="System OID"/>
-      <description value="HL7® Austria FHIR® Core Extension for the capturing of OID in ValueSets to reference the CodeSystem they come from.&#xD;&#xA;The extension is used to document the OID of the system of a code referenced in a ValueSet, to align FHIR with the HL7 Austria CDA document guidelines."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -555,6 +511,39 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:complex-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-core-address"/>
+      </reference>
+      <name value="HL7® AT Core Address Profile"/>
+      <description value="HL7® Austria FHIR® Core Profile for address data in Austria. Note, this extension represents the common structure of address information within Austrian information systems. This extension does not restrict the documented information to Austrian adresses. Address information that does not fit into the given structure may be captured by [Address Additional Information](StructureDefinition-at-core-ext-address-additionalInformation.html)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-core-patient"/>
+      </reference>
+      <name value="HL7® AT Core Patient Profile"/>
+      <description value="HL7® Austria FHIR® Core Profile for patient data in Austria.&#xD;&#xA;The HL7® AT Core Patient is based upon the core FHIR® Patient Resource and designed to meet the applicable patient demographic data elements in Austria. It identifies which core elements, extensions, vocabularies and value sets SHALL be present in the resource when using this profile. Note, this extension represents the common structure of Patient information within Austrian information systems."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-core-valueset"/>
+      </reference>
+      <name value="HL7® AT Core ValueSet Profile"/>
+      <description value="HL7® Austria FHIR® Core Profile for valuesets in Austria.&#xD;&#xA;The HL7® AT Core ValueSet is based upon the core FHIR® ValueSet Resource and defines the use of the OID extension."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Organization"/>
       </extension>
       <reference>
@@ -566,46 +555,24 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
+        <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/at-core-cs-iso-3166-1-alpha-3"/>
+        <reference value="StructureDefinition/at-core-ext-patient-religion"/>
       </reference>
-      <name value="at-core-cs-iso-3166-1-alpha-3"/>
-      <description value="ISO code system for country codes with 3 letters. Also accessible on [Termpub - CodeSystem - ISO 3166-1 alpha 3](https://termpub.gesundheit.gv.at/TermBrowser/gui/main/main.zul?loadType=CodeSystem&amp;loadName=ISO%203166-1%20alpha%203%202016)."/>
+      <name value="Patient Religion"/>
+      <description value="HL7® Austria FHIR® Core Extension for the religion (registered in Austria) of a patient.&#xD;&#xA;The extension is used to encode the religious confession of a patient (only confessions registered in Austria). Furthermore, it uses the official [HL7 AT CodeSystem](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&amp;loadName=HL7 AT ReligionAustria) for religion and is therefore aligned with the ELGA ValueSet, respectively."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
+        <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/at-core-cs-religion"/>
+        <reference value="StructureDefinition/at-core-ext-valueset-systemoid"/>
       </reference>
-      <name value="at-core-cs-religion"/>
-      <description value="Code system for the religions and faith communities in Austria. Also accessible on [Termpub - CodeSystem - HL7 AT ReligionAustria](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&amp;loadName=HL7.AT:ReligionAustria)."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/at-elga-vs-countryCodes"/>
-      </reference>
-      <name value="at-elga-vs-countryCodes"/>
-      <description value="Value Set for ISO 3166-1 alpha 3 used in ELGA. Also accessible on [Termpub - ValueSet - ELGA Ländercodes](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=ValueSet&amp;loadName=ELGA_Laendercodes)."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/at-elga-vs-religion"/>
-      </reference>
-      <name value="at-elga-vs-religion"/>
-      <description value="Set of religious affiliations to be used in ELGA. It is preferred to use entries of the first level hierachy (1-L). Also accessible on [Termpub - ValueSet - ELGA ReligiousAffiliation](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=ValueSet&amp;loadName=ELGA_ReligiousAffiliation)."/>
+      <name value="System OID"/>
+      <description value="HL7® Austria FHIR® Core Extension for the capturing of OID in ValueSets to reference the CodeSystem they come from.&#xD;&#xA;The extension is used to document the OID of the system of a code referenced in a ValueSet, to align FHIR with the HL7 Austria CDA document guidelines."/>
       <exampleBoolean value="false"/>
     </resource>
     <page>
