@@ -15,7 +15,7 @@ The extension is used to add the missing codes and is applied in case the code f
   <name value="AdministrativeGenderAddition"/>
   <title value="Administrative Gender Addition"/>
   <status value="active"/>
-  <date value="2024-01-13T13:38:20+00:00"/>
+  <date value="2024-02-04T13:07:17+00:00"/>
   <contact>
     <name value="Technical Committee for FHIR® at HL7® Austria"/>
     <telecom>
@@ -213,7 +213,7 @@ The extension is used to add the missing codes and is applied in case the code f
         <key value="at-ext-gender-1"/>
         <severity value="error"/>
         <human value="The extension for the additional administrative gender codes is only applied if the administrative gender itself is set to 'other'"/>
-        <expression value="%resource.where(gender='other').exists()"/>
+        <expression value="%resource.where(gender='other').exists() or %resource.contact.where(gender='other').exists()"/>
         <source value="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-gender-administrativeGenderAddition"/>
       </constraint>
       <isModifier value="false"/>
@@ -252,7 +252,7 @@ The extension is used to add the missing codes and is applied in case the code f
         <key value="at-ext-gender-1"/>
         <severity value="error"/>
         <human value="The extension for the additional administrative gender codes is only applied if the administrative gender itself is set to 'other'"/>
-        <expression value="%resource.where(gender='other').exists()"/>
+        <expression value="%resource.where(gender='other').exists() or %resource.contact.where(gender='other').exists()"/>
         <source value="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-gender-administrativeGenderAddition"/>
       </constraint>
       <binding>
