@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "HL7AustriaImplementationGuide"] ; # 
   fhir:title [ fhir:v "HL7® Austria FHIR® Core Implementation Guide"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-12-21T16:09:23+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-02-07T16:56:02+00:00"^^xsd:dateTime] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Technical Committee for FHIR® at HL7® Austria" ] ;
      fhir:telecom ( [
@@ -282,7 +282,7 @@
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "hl7.fhir.uv.tools#current" ]
+       fhir:value [ fhir:v "hl7.fhir.uv.tools#0.1.0" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
@@ -524,6 +524,18 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-gender-administrativeGenderAddition> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-core-ext-gender-administrativeGenderAddition" ]
+       ] ;
+       fhir:name [ fhir:v "Administrative Gender Addition" ] ;
+       fhir:description [ fhir:v "HL7® Austria FHIR® Core Extension for the administrative gender of a person (Patient, Practitioner, ...). \r\nThe extension is used to add the missing codes and is applied in case the code for administrative gender itself is set to 'other'." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "Patient" ]
        ] ) ;
        fhir:reference [
@@ -592,6 +604,21 @@
        ] ;
        fhir:name [ fhir:v "HL7ATCorePatientExample05-FullElga" ] ;
        fhir:description [ fhir:v "Example with all ELGA header elements in the HL7 AT Core Patient Profile" ] ;
+       fhir:example [
+         fhir:v "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"^^xsd:anyURI ;
+         fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Patient" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/Patient/HL7ATCorePatientExample06-GenderExtension> ;
+         fhir:reference [ fhir:v "Patient/HL7ATCorePatientExample06-GenderExtension" ]
+       ] ;
+       fhir:name [ fhir:v "HL7ATCorePatientExample06-GenderExtension" ] ;
+       fhir:description [ fhir:v "Example for the usage of the HL7 AT Core Patient Profile" ] ;
        fhir:example [
          fhir:v "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"^^xsd:anyURI ;
          fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient>
