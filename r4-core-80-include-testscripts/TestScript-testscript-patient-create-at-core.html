@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>HL7ATCOREPROFILES\HL7® AT Core TestScript - Patient Create - FHIR® v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"3.8"}
+    h3,h4,h5,h6{--heading-prefix:"3.8"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img id="header-logo" src="assets/images/hl7atlogo.png"/>
+          </div>
+          <div class="col-11">
+        <!-- at-fhir-ig-template end -->
+            <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">HL7® Austria FHIR® Core Implementation Guide</span><br/>
+                <span class="label label-info">1.1.0 - STU2</span>
+              </p>
+            </div>
+        <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+        <!-- at-fhir-ig-template end -->
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR®</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">IG Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li><a href="artifacts.html">Artifacts Summary</a></li>
+  <li><a href="tests.html">Tests</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Other Resources<b class="caret"> </b></a>
+    <ul class="dropdown-menu">
+      <li><a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR® Spec <img src="external.png" style="text-align: baseline"/></a></li>
+    </ul>
+  </li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>HL7® AT Core TestScript - Patient Create</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">HL7® Austria FHIR® Core Implementation Guide - Local Development build (v1.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="TestScript-testscript-patient-create-at-core.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="TestScript-testscript-patient-create-at-core.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="TestScript-testscript-patient-create-at-core.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+
+  <h2 id="root">TestScript: HL7® AT Core TestScript - Patient Create
+
+  </h2>
+
+  <table class="colsi">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/TestScript/testscript-patient-create-at-core<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/TestScript/testscript-patient-create-at-core"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">1.1.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/TestScript/testscript-patient-create-at-core|1.1.0"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="3">
+        
+          Active
+          
+            as of 2023-02-21
+          
+        
+      </td>
+
+
+      <td>
+        <i>Responsible:</i> 
+
+        HL7® Austria
+
+      </td>
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">HL7® AT Core TestScript - Patient Create</span></td>
+    </tr>
+
+
+
+
+    <tr>
+      <td colspan="5"><p><em>Copyright/Legal</em>: This FHIR Test Script is licensed under Creative Commons (CC0) ‘No Rights Reserved’. Learn more at https://creativecommons.org/licenses</p>
+</td>
+    </tr>
+
+  </table>
+
+
+<p>
+<p>TestScript creating a patient resource conformant to the AT Core Patient profile on a FHIR Server. FHIR Client may use any input patient resource, but the script can provide an example patient: Andreas Bucher - HL7ATCorePatientExample04. Expected Result:  Server accepts creation of Patient resource that is conformant to the AT Core Patient profile.</p>
+
+</p>
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+<!--  <p>
+  Formats: <a href="TestScript-testscript-patient-create-at-core.xml.html">XML</a>, <a href="TestScript-testscript-patient-create-at-core.json.html">JSON</a>, <a href="TestScript-testscript-patient-create-at-core.ttl.html">Turtle</a>
+  </p>-->
+
+  
+
+
+  <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: TestScript</b><a name="testscript-patient-create-at-core"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource TestScript &quot;testscript-patient-create-at-core&quot; </p></div><p><b>url</b>: <code>http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/TestScript/testscript-patient-create-at-core</code></p><p><b>version</b>: 1.1.0</p><p><b>name</b>: HL7® AT Core TestScript - Patient Create</p><p><b>title</b>: HL7® AT Core TestScript - Patient Create</p><p><b>status</b>: active</p><p><b>date</b>: 2023-02-21</p><p><b>publisher</b>: HL7® Austria</p><p><b>contact</b>: Technical Committee for FHIR® at HL7® Austria: <a href="mailto:mailto:tc-fhir@hl7.at">mailto:tc-fhir@hl7.at</a></p><p><b>description</b>: TestScript creating a patient resource conformant to the AT Core Patient profile on a FHIR Server. FHIR Client may use any input patient resource, but the script can provide an example patient: Andreas Bucher - HL7ATCorePatientExample04. Expected Result:  Server accepts creation of Patient resource that is conformant to the AT Core Patient profile.</p><p><b>copyright</b>: This FHIR Test Script is licensed under Creative Commons (CC0) 'No Rights Reserved'. Learn more at https://creativecommons.org/licenses</p><h3>Origins</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Index</b></td><td><b>Profile</b></td></tr><tr><td style="display: none">*</td><td>1</td><td>FHIR Client (Details: http://terminology.hl7.org/CodeSystem/testscript-profile-origin-types code FHIR-Client = 'FHIR Client', stated as 'null')</td></tr></table><h3>Destinations</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Index</b></td><td><b>Profile</b></td></tr><tr><td style="display: none">*</td><td>1</td><td>FHIR Server (Details: http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types code FHIR-Server = 'FHIR Server', stated as 'null')</td></tr></table><blockquote><p><b>fixture</b></p><blockquote><p><b>id</b></p>patient-create</blockquote><p><b>autocreate</b>: false</p><p><b>autodelete</b>: false</p><p><b>resource</b>: <a href="Patient-HL7ATCorePatientExample04-Full.html">Patient-HL7ATCorePatientExample04-Full.html</a></p></blockquote><p><b>profile</b>: <a href="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient">http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient</a> &quot;HL7ATCorePatient&quot;</p><h3>Variables</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Name</b></td><td><b>Path</b></td><td><b>SourceId</b></td></tr><tr><td style="display: none">*</td><td>patientResourceId</td><td>Patient/id</td><td>patient-create</td></tr></table><blockquote><p><b>test</b></p><blockquote><p><b>id</b></p>Step1-RegisterNewPatient</blockquote><p><b>name</b>: RegisterNewPatient</p><p><b>description</b>: Create a new patient conformant to the AT Core Patient profile, the server assigns the resource id using JSON.</p><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>ContentType</b></td><td><b>Destination</b></td><td><b>EncodeRequestUrl</b></td><td><b>Origin</b></td><td><b>ResponseId</b></td><td><b>SourceId</b></td></tr><tr><td style="display: none">*</td><td>Create (Details: http://terminology.hl7.org/CodeSystem/testscript-operation-codes code create = 'Create', stated as 'null')</td><td>Patient</td><td>Create patient with client assigned resource id.</td><td>json</td><td>json</td><td>1</td><td>true</td><td>1</td><td>create-response</td><td>patient-create</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>ValidateProfileId</b></td><td><b>WarningOnly</b></td></tr><tr><td style="display: none">*</td><td>Validate that the returned resource conforms to the base FHIR Patient profile.</td><td>request</td><td>at-core-patient-profile</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Operator</b></td><td><b>ResponseCode</b></td><td><b>WarningOnly</b></td></tr><tr><td style="display: none">*</td><td>Confirm that the returned HTTP status is 200(OK) or 201(Created).</td><td>response</td><td>in</td><td>200,201</td><td>false</td></tr></table></blockquote></blockquote></div>
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /row -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-content -->
+
+<script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+if(window.location.hash != "") {
+    $('a[href="' + window.location.hash + '"]').click()
+}
+});
+</script>
+<a name="bottom"> </a>
+<div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+<div class="container">  <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="mailto:tc-fhir@hl7.at"></a>.  Package HL7ATCoreProfiles#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Sun, Feb 11, 2024 13:03+0000">2024-02-11</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    </span>
+  </p>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+<div class="container">  <!-- container -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-post-footer -->
+
+<!-- JS and analytics only. -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+<script type="text/javascript" src="assets/js/respond.min.js"> </script>
+<script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+<script>anchors.options.visible = 'hover'
+anchors.add()</script>
+
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+
+<!-- / feedback form  -->
+
+<!-- Analytics Below
+================================================== -->
+</body>
+</html>
+
