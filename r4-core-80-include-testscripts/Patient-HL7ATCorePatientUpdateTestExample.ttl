@@ -1,0 +1,213 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/Patient/HL7ATCorePatientUpdateTestExample> a fhir:Patient ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "HL7ATCorePatientUpdateTestExample"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"^^xsd:anyURI ;
+       fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\"><b>Andreas Bucher </b> male, DoB: 1961-12-24 ( Social Security Number/1111241261 (use: OFFICIAL))</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Record is active\">Active:</td><td>true</td><td style=\"background-color: #f3f5da\" title=\"Known status of Patient\">Deceased:</td><td>false</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Known Marital status of Patient\">Marital Status:</td><td><span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v3-MaritalStatus M}\">Married</span></td><td style=\"background-color: #f3f5da\" title=\"Known multipleBirth status of Patient\">Multiple Birth:</td><td colspan=\"3\">false</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Other Ids (see the one above)\">Other Ids:</td><td colspan=\"3\"><ul><li>National unique individual identifier/GH:oeLdSEb0l+8kSdJWjOYyYmnYki0 (use: OFFICIAL)</li><li>Patient internal identifier/11-22-33-44 (use: OFFICIAL)</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Details:</td><td colspan=\"3\"><ul><li><a href=\"tel:+43.2682.40400\">+43.2682.40400</a></li><li><a href=\"tel:+43.664.1234567\">+43.664.1234567</a></li><li><a href=\"mailto:ABuches1961@emailexample.at\">ABuches1961@emailexample.at</a></li><li>Landstrasse 5 Stock 3 Tür 5 Wien Wien 1030 AUT (HOME)</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Languages spoken\">Language:</td><td colspan=\"3\"><span title=\"Codes: {urn:ietf:bcp:47 de}\">German</span> (preferred)</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Nominated Contact: Emergency Contact\">Emergency Contact:</td><td colspan=\"3\"><ul><li>Julia Tochter  (female)</li><li>Heimstrasse 1 Wien 1220 AUT </li><li><a href=\"tel:+43.664.12345678\">+43.664.12345678</a></li><li>Organization: <a href=\"Organization-Organization-example-f001-burgers.html\">Organization/Organization-example-f001-burgers</a> &quot;Burgers University Medical Center&quot;</li><li>Valid Period: 2016-07-30 08:30:00+0100 --&gt; 2019-07-30 08:35:00+0100</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Patient Links\">Links:</td><td colspan=\"3\"><ul><li>General Practitioner: <a href=\"Organization-Organization-example-f001-burgers.html\">Organization/Organization-example-f001-burgers</a> &quot;Burgers University Medical Center&quot;</li><li>Managing Organization: <a href=\"Organization-Organization-example-f001-burgers.html\">Organization/Organization-example-f001-burgers</a> &quot;Burgers University Medical Center&quot;</li><li>Also see: <a href=\"Patient-HL7ATCorePatientExample03-deceasedBoolean.html\">Patient/HL7ATCorePatientExample03-deceasedBoolean</a> &quot; BUCHER&quot;</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"HL7® Austria FHIR® Core Extension for the religion (registered in Austria) of a patient.\r\nThe extension is used to encode the religious confession of a patient (only confessions registered in Austria). Furthermore, it uses the official [HL7 AT CodeSystem](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&amp;loadName=HL7 AT ReligionAustria) for religion and is therefore aligned with the ELGA ValueSet, respectively.\">Patient Religion:</td><td colspan=\"3\"><ul><li>code: <span title=\"Codes: {http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/CodeSystem/at-core-cs-religion 101}\">Römisch-Katholisch</span></li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The patient's legal status as citizen of a country.\">citizenship:</td><td colspan=\"3\"><ul><li>code: <span title=\"Codes: {http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/CodeSystem/at-core-cs-iso-3166-1-alpha-3 AUT}\">Österreich</span></li><li>period: 2016-07-30 08:30:00+0100 --&gt; 2022-07-30 08:35:00+0100</li></ul></td></tr></table></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/CodeSystem/at-core-cs-religion"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "101" ] ;
+           fhir:display [ fhir:v "Römisch-Katholisch" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-patient-religion"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/CodeSystem/at-core-cs-iso-3166-1-alpha-3"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "AUT" ] ;
+           fhir:display [ fhir:v "Österreich" ]
+         ] )
+       ]
+     ] [
+       fhir:url [ fhir:v "period"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Period ;
+         fhir:start [ fhir:v "2016-07-30T08:30:00+01:00"^^xsd:dateTime ] ;
+         fhir:end [ fhir:v "2022-07-30T08:35:00+01:00"^^xsd:dateTime ]
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/patient-citizenship"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "SS" ] ;
+         fhir:display [ fhir:v "Social Security Number" ]
+       ] )
+     ] ;
+     fhir:system [ fhir:v "urn:oid:1.2.40.0.10.1.4.3.1"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "1111241261" ] ;
+     fhir:assigner [
+       fhir:display [ fhir:v "Dachverband der österreichischen Sozialversicherungsträger" ]
+     ]
+  ] [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "NI" ] ;
+         fhir:display [ fhir:v "National unique individual identifier" ]
+       ] )
+     ] ;
+     fhir:system [ fhir:v "urn:oid:1.2.40.0.10.2.1.1.149"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0" ] ;
+     fhir:assigner [
+       fhir:display [ fhir:v "Bundesministerium für Inneres" ]
+     ]
+  ] [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "PI" ] ;
+         fhir:display [ fhir:v "Patient internal identifier" ]
+       ] )
+     ] ;
+     fhir:system [ fhir:v "urn:oid:1.2.3.4.5"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "11-22-33-44" ] ;
+     fhir:assigner [
+       fhir:display [ fhir:v "Ein GDA in Österreich" ]
+     ]
+  ] ) ; # 
+  fhir:active [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:name ( [
+     fhir:family [ fhir:v "Bucher" ] ;
+     fhir:given ( [ fhir:v "Andreas" ] ) ;
+     fhir:prefix ( [ fhir:v "Dipl.Ing." ] [ fhir:v "Dr." ] )
+  ] ) ; # 
+  fhir:telecom ( [
+     fhir:system [ fhir:v "phone" ] ;
+     fhir:value [ fhir:v "+43.2682.40400" ] ;
+     fhir:use [ fhir:v "home" ]
+  ] [
+     fhir:system [ fhir:v "phone" ] ;
+     fhir:value [ fhir:v "+43.664.1234567" ] ;
+     fhir:use [ fhir:v "mobile" ]
+  ] [
+     fhir:system [ fhir:v "email" ] ;
+     fhir:value [ fhir:v "ABuches1961@emailexample.at" ]
+  ] ) ; # 
+  fhir:gender [ fhir:v "male"] ; # 
+  fhir:birthDate [ fhir:v "1961-12-24"^^xsd:date] ; # 
+  fhir:deceased [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:address ( [
+     fhir:use [ fhir:v "home" ] ;
+     fhir:type [ fhir:v "both" ] ;
+     fhir:line ( [
+       fhir:v "Landstrasse 5 Stock 3 Tür 5" ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Landstrasse" ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "5" ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Stock 3 Tür 5" ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Lift vorhanden" ]
+       ] )
+     ] ) ;
+     fhir:city [ fhir:v "Wien" ] ;
+     fhir:state [ fhir:v "Wien" ] ;
+     fhir:postalCode [ fhir:v "1030" ] ;
+     fhir:country [ fhir:v "AUT" ]
+  ] ) ; # 
+  fhir:maritalStatus [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "M" ] ;
+       fhir:display [ fhir:v "Married" ]
+     ] )
+  ] ; # 
+  fhir:multipleBirth [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:photo ( [
+     fhir:url [ fhir:v "https://image.k.at/images/facebook/3923126/78350011451694692_BLD_Online.jpg"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:contact ( [
+     fhir:relationship ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0131"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "C" ] ;
+         fhir:display [ fhir:v "Emergency Contact" ]
+       ] )
+     ] ) ;
+     fhir:name [
+       fhir:family [ fhir:v "Tochter" ] ;
+       fhir:given ( [ fhir:v "Julia" ] )
+     ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "phone" ] ;
+       fhir:value [ fhir:v "+43.664.12345678" ] ;
+       fhir:use [ fhir:v "mobile" ]
+     ] ) ;
+     fhir:address [
+       fhir:line ( [ fhir:v "Heimstrasse 1" ] ) ;
+       fhir:city [ fhir:v "Wien" ] ;
+       fhir:postalCode [ fhir:v "1220" ] ;
+       fhir:country [ fhir:v "AUT" ]
+     ] ;
+     fhir:gender [ fhir:v "female" ] ;
+     fhir:organization [
+       fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/Organization/Organization-example-f001-burgers> ;
+       fhir:reference [ fhir:v "Organization/Organization-example-f001-burgers" ]
+     ] ;
+     fhir:period [
+       fhir:start [ fhir:v "2016-07-30T08:30:00+01:00"^^xsd:dateTime ] ;
+       fhir:end [ fhir:v "2019-07-30T08:35:00+01:00"^^xsd:dateTime ]
+     ]
+  ] ) ; # 
+  fhir:communication ( [
+     fhir:language [
+       fhir:coding ( [
+         fhir:system [ fhir:v "urn:ietf:bcp:47"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "de" ]
+       ] )
+     ] ;
+     fhir:preferred [ fhir:v "true"^^xsd:boolean ]
+  ] ) ; # 
+  fhir:generalPractitioner ( [
+     fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/Organization/Organization-example-f001-burgers> ;
+     fhir:reference [ fhir:v "Organization/Organization-example-f001-burgers" ]
+  ] ) ; # 
+  fhir:managingOrganization [
+     fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/Organization/Organization-example-f001-burgers> ;
+     fhir:reference [ fhir:v "Organization/Organization-example-f001-burgers" ]
+  ] ; # 
+  fhir:link ( [
+     fhir:other [
+       fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/Patient/HL7ATCorePatientExample03-deceasedBoolean> ;
+       fhir:reference [ fhir:v "Patient/HL7ATCorePatientExample03-deceasedBoolean" ]
+     ] ;
+     fhir:type [ fhir:v "seealso" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

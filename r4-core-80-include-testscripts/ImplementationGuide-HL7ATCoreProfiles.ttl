@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "HL7AustriaImplementationGuide"] ; # 
   fhir:title [ fhir:v "HL7® Austria FHIR® Core Implementation Guide"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-02-11T13:03:59+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-02-11T13:49:58+00:00"^^xsd:dateTime] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Technical Committee for FHIR® at HL7® Austria" ] ;
      fhir:telecom ( [
@@ -539,6 +539,21 @@
          fhir:value [ fhir:v "Patient" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/Patient/HL7ATCorePatientCreateTestExample> ;
+         fhir:reference [ fhir:v "Patient/HL7ATCorePatientCreateTestExample" ]
+       ] ;
+       fhir:name [ fhir:v "HL7ATCorePatientCreateTestExample" ] ;
+       fhir:description [ fhir:v "Example with all elements for the usage of the HL7 AT Core Patient Profile" ] ;
+       fhir:example [
+         fhir:v "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"^^xsd:anyURI ;
+         fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Patient" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/Patient/HL7ATCorePatientExample01> ;
          fhir:reference [ fhir:v "Patient/HL7ATCorePatientExample01" ]
        ] ;
@@ -626,6 +641,20 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Patient" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/Patient/HL7ATCorePatientUpdateTestExample> ;
+         fhir:reference [ fhir:v "Patient/HL7ATCorePatientUpdateTestExample" ]
+       ] ;
+       fhir:name [ fhir:v "HL7ATCorePatientUpdateTestExample" ] ;
+       fhir:example [
+         fhir:v "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"^^xsd:anyURI ;
+         fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:complex-type" ]
        ] ) ;
        fhir:reference [
@@ -650,18 +679,6 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "TestPlan" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/TestPlan/at-core-testplan-T01> ;
-         fhir:reference [ fhir:v "TestPlan/at-core-testplan-T01" ]
-       ] ;
-       fhir:name [ fhir:v "HL7® AT Core Testplan" ] ;
-       fhir:description [ fhir:v "HL7® Austria FHIR® Testplan" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "TestScript" ]
        ] ) ;
        fhir:reference [
@@ -670,6 +687,18 @@
        ] ;
        fhir:name [ fhir:v "HL7® AT Core TestScript - Patient Create" ] ;
        fhir:description [ fhir:v "TestScript creating a patient resource conformant to the AT Core Patient profile on a FHIR Server. FHIR Client may use any input patient resource, but the script can provide an example patient: Andreas Bucher - HL7ATCorePatientExample04. Expected Result:  Server accepts creation of Patient resource that is conformant to the AT Core Patient profile." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "TestScript" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/TestScript/testscript-patient-update-at-core> ;
+         fhir:reference [ fhir:v "TestScript/testscript-patient-update-at-core" ]
+       ] ;
+       fhir:name [ fhir:v "HL7® AT Core TestScript - Patient Update" ] ;
+       fhir:description [ fhir:v "TestScript updating an existing patient resource conformant to the AT Core Patient profile on a FHIR Server using the JSON format. FHIR Client may use any input patient resource, but the script can provide an example patient: Andreas Bucher - HL7ATCorePatientExample04 with an updated PI value of “11-22-33-44”. Expected Result:  Server accepts update of Patient resource that is conformant to the AT Core Patient profile. The testscript uses a variable for the resource ID value which should match the Id of the resource being updated." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
