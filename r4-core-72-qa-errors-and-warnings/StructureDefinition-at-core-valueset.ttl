@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "HL7ATCoreValueSet"] ; # 
   fhir:title [ fhir:v "HL7® AT Core ValueSet Profile"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-11-10T08:44:34+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-02-13T12:21:21+00:00"^^xsd:dateTime] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Technical Committee for FHIR® at HL7® Austria" ] ;
      fhir:telecom ( [
@@ -261,9 +261,6 @@
          ] [
            fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"^^xsd:anyURI ] ;
            fhir:value [ fhir:v "Language" ]
-         ] [
-           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "true"^^xsd:boolean ]
          ] ) ;
          fhir:strength [ fhir:v "preferred" ] ;
          fhir:description [ fhir:v "A human language." ] ;
@@ -633,9 +630,6 @@
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"^^xsd:anyURI ] ;
            fhir:value [ fhir:v "PublicationStatus" ]
-         ] [
-           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "true"^^xsd:boolean ]
          ] ) ;
          fhir:strength [ fhir:v "required" ] ;
          fhir:description [ fhir:v "The lifecycle status of an artifact." ] ;
@@ -837,10 +831,6 @@
        ] )
      ] [
        fhir:id [ fhir:v "ValueSet.useContext" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "trial-use" ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.useContext" ] ;
        fhir:short [ fhir:v "The context that the content is intended to support" ] ;
        fhir:definition [ fhir:v "The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate value set instances." ] ;
@@ -906,9 +896,6 @@
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"^^xsd:anyURI ] ;
            fhir:value [ fhir:v "Jurisdiction" ]
-         ] [
-           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "true"^^xsd:boolean ]
          ] ) ;
          fhir:strength [ fhir:v "extensible" ] ;
          fhir:description [ fhir:v "Countries and regions within which this artifact is targeted for use." ] ;
@@ -1236,10 +1223,6 @@
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ]
      ] [
        fhir:id [ fhir:v "ValueSet.compose.include" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ConceptSet" ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.compose.include" ] ;
        fhir:short [ fhir:v "Include one or more codes from a code system or other value set(s)" ] ;
        fhir:definition [ fhir:v "Include one or more codes from a code system or other value set(s)." ] ;
@@ -1531,10 +1514,6 @@
        ] )
      ] [
        fhir:id [ fhir:v "ValueSet.compose.include.concept" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ConceptReference" ]
-       ] ) ;
        fhir:path [ fhir:v "ValueSet.compose.include.concept" ] ;
        fhir:short [ fhir:v "A concept defined in the system" ] ;
        fhir:definition [ fhir:v "Specifies a concept to be included or excluded." ] ;
@@ -1933,9 +1912,6 @@
          ] [
            fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"^^xsd:anyURI ] ;
            fhir:value [ fhir:v "Language" ]
-         ] [
-           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "true"^^xsd:boolean ]
          ] ) ;
          fhir:strength [ fhir:v "preferred" ] ;
          fhir:description [ fhir:v "A human language." ] ;
@@ -2348,7 +2324,7 @@
        fhir:path [ fhir:v "ValueSet.expansion" ] ;
        fhir:short [ fhir:v "Used when the value set is \"expanded\"" ] ;
        fhir:definition [ fhir:v "A value set can also be \"expanded\", where the value set is turned into a simple collection of enumerated codes. This element holds the expansion, if it has been performed." ] ;
-       fhir:comment [ fhir:v "Expansion is performed to produce a collection of codes that are ready to use for data entry or validation. Value set expansions are always considered to be stateless - they are a record of the set of codes in the value set at a point in time under a given set of conditions, and are not subject to ongoing maintenance.\n\nExpansion.parameter is  a simplified list of parameters - a subset of the features of the [Parameters](http://hl7.org/fhir/R4/parameters.html) resource." ] ;
+       fhir:comment [ fhir:v "Expansion is performed to produce a collection of codes that are ready to use for data entry or validation. Value set expansions are always considered to be stateless - they are a record of the set of codes in the value set at a point in time under a given set of conditions, and are not subject to ongoing maintenance.\n\nExpansion.parameter is  a simplified list of parameters - a subset of the features of the [Parameters](parameters.html) resource." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [

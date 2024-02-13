@@ -11,7 +11,7 @@
   <name value="HL7AustriaImplementationGuide"/>
   <title value="HL7® Austria FHIR® Core Implementation Guide"/>
   <status value="active"/>
-  <date value="2023-11-10T08:44:34+00:00"/>
+  <date value="2024-02-13T12:21:21+00:00"/>
   <contact>
     <name value="Technical Committee for FHIR® at HL7® Austria"/>
     <telecom>
@@ -202,6 +202,14 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
+        <valueString value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
         <valueString value="active-tables"/>
       </extension>
       <extension url="value">
@@ -241,7 +249,7 @@
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
-      <valueCode value="hl7.fhir.uv.tools#current"/>
+      <valueCode value="hl7.fhir.uv.tools#0.1.0"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
@@ -405,6 +413,14 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
+        <valueCode value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
         <valueCode value="active-tables"/>
       </extension>
       <extension url="value">
@@ -456,35 +472,13 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
+        <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="ValueSet/at-elga-vs-countryCodes"/>
+        <reference value="StructureDefinition/at-core-ext-gender-administrativeGenderAddition"/>
       </reference>
-      <name value="ELGA Country Code Value Set"/>
-      <description value="Value Set for ISO 3166-1 alpha 3 used in ELGA. Also accessible on [Termpub - ValueSet - ELGA Ländercodes](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=ValueSet&amp;loadName=ELGA_Laendercodes)."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/at-elga-vs-religion"/>
-      </reference>
-      <name value="ELGA Religion Value Set"/>
-      <description value="Set of religious affiliations to be used in ELGA. It is preferred to use entries of the first level hierachy (1-L). Also accessible on [Termpub - ValueSet - ELGA ReligiousAffiliation](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=ValueSet&amp;loadName=ELGA_ReligiousAffiliation)."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
-      </extension>
-      <reference>
-        <reference value="CodeSystem/at-core-cs-religion"/>
-      </reference>
-      <name value="HL7 AT Core Religion Code System"/>
-      <description value="Code system for the religions and faith communities in Austria. Also accessible on [Termpub - CodeSystem - HL7 AT ReligionAustria](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&amp;loadName=HL7.AT:ReligionAustria)."/>
+      <name value="Administrative Gender Addition"/>
+      <description value="HL7® Austria FHIR® Core Extension for the administrative gender of a person (Patient, Practitioner, ...). &#xD;&#xA;The extension is used to add the missing codes and is applied in case the code for administrative gender itself is set to 'other'."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -544,6 +538,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/HL7ATCorePatientExample06-GenderExtension"/>
+      </reference>
+      <name value="HL7ATCorePatientExample06-GenderExtension"/>
+      <description value="Example for the usage of the HL7 AT Core Patient Profile"/>
+      <exampleCanonical value="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:complex-type"/>
       </extension>
       <reference>
@@ -573,17 +578,6 @@
       </reference>
       <name value="HL7® AT Core ValueSet Profile"/>
       <description value="HL7® Austria FHIR® Core Profile for valuesets in Austria.&#xD;&#xA;The HL7® AT Core ValueSet is based upon the core FHIR® ValueSet Resource and defines the use of the OID extension."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
-      </extension>
-      <reference>
-        <reference value="CodeSystem/at-core-cs-iso-3166-1-alpha-3"/>
-      </reference>
-      <name value="HL7® AT® Core ISO 3166-1 alpha 3 Code System"/>
-      <description value="ISO code system for country codes with 3 letters. Also accessible on [Termpub - CodeSystem - ISO 3166-1 alpha 3](https://termpub.gesundheit.gv.at/TermBrowser/gui/main/main.zul?loadType=CodeSystem&amp;loadName=ISO%203166-1%20alpha%203%202016)."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
