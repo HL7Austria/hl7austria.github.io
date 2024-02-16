@@ -86,6 +86,22 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "at-core-ext-address-additionalInformation","Extension.value[x]","Extension.value[x]","","","",1,1,"","","","string {[]} {[]}
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
+"at-core-ext-gender-administrativeGenderAddition","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
+","Administrative Gender Addition","HL7® Austria FHIR® Core Extension for the administrative gender of a person (Patient, Practitioner, ...). 
+The extension is used to add the missing codes and is applied in case the code for administrative gender itself is set to 'other'.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"at-core-ext-gender-administrativeGenderAddition","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"at-core-ext-gender-administrativeGenderAddition","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"at-core-ext-gender-administrativeGenderAddition","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-gender-administrativeGenderAddition""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"at-core-ext-gender-administrativeGenderAddition","Extension.value[x]","Extension.value[x]","","","",1,1,"","","","Coding {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,"required","","https://termgit.elga.gv.at/ValueSet/hl7-at-administrativegender-fhir-extension","",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+at-ext-gender-1:The extension for the additional administrative gender codes is only applied if the administrative gender itself is set to 'other' {%resource.where(gender='other').exists() or %resource.contact.where(gender='other').exists()}"
 "at-core-ext-patient-religion","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","Patient Religion","HL7® Austria FHIR® Core Extension for the religion (registered in Austria) of a patient.
 The extension is used to encode the religious confession of a patient (only confessions registered in Austria). Furthermore, it uses the official [HL7 AT CodeSystem](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&loadName=HL7 AT ReligionAustria) for religion and is therefore aligned with the ELGA ValueSet, respectively.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
@@ -937,6 +953,19 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "at-core-patient","Patient.gender","Patient.gender","","","",1,1,"","","Y","code {[]} {[]}
 ","male | female | other | unknown","Administrative Gender - the gender that the patient is considered to have for administration and record keeping purposes.","The gender might not match the biological sex as determined by genetics or the individual's preferred identification. Note that for both humans and particularly animals, there are other legitimate possibilities than male and female, though the vast majority of systems and contexts only support male and female.  Systems providing decision support or enforcing business rules should ideally do this on the basis of Observations dealing with the specific sex or gender aspect of interest (anatomical, chromosomal, social, etc.)  However, because these observations are infrequently recorded, defaulting to the administrative gender is common practice.  Where such defaulting occurs, rule enforcement should allow for the variation between administrative and biological, chromosomal and other gender aspects.  For example, an alert about a hysterectomy on a male should be handled as a warning or overridable error, not a ""hard"" error.  See the Patient Gender and Sex section for additional information about communicating patient gender and sex.","Needed for identification of the individual, in combination with (at least) name and birth date.","","","","","","","",,"required","The gender of a person used for administrative purposes.","http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1","",,,,"Patient.gender",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
+"at-core-patient","Patient.gender.id","Patient.gender.id","","","",0,1,"","","","string {[]} {[]}
+","xml:id (or equivalent in JSON)","unique id for the element within a resource (for internal references)","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"at-core-patient","Patient.gender.extension","Patient.gender.extension","","","",0,*,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"at-core-patient","Patient.gender.extension:AdministrativeGenderAddition","Patient.gender.extension","AdministrativeGenderAddition","","",0,1,"","","","Extension {[CanonicalType[http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-gender-administrativeGenderAddition]]} {[]}
+","Administrative Gender Addition","HL7® Austria FHIR® Core Extension for the administrative gender of a person (Patient, Practitioner, ...). 
+The extension is used to add the missing codes and is applied in case the code for administrative gender itself is set to 'other'.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"at-core-patient","Patient.gender.value","Patient.gender.value","","","",0,1,"","","","string {[]} {[]}
+","Primitive value for code","Primitive value for code","","","","","","","","","",,,,,"",,,,"string.value",0,1,"",""
 "at-core-patient","Patient.birthDate","Patient.birthDate","","","",0,1,"","","Y","date {[]} {[]}
 ","The date of birth for the individual","The date of birth for the individual.","At least an estimated year should be provided as a guess if the real DOB is unknown  There is a standard extension ""patient-birthTime"" available that should be used where Time is required (such as in maternity/infant care systems).","Age of the individual drives many clinical processes.","","","","","","","",,,,,"",,,,"Patient.birthDate",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -1263,6 +1292,19 @@ Territory","",0,1,"","","Y","string {[]} {[]}
 "at-core-patient","Patient.contact.gender","Patient.contact.gender","","","",0,1,"","","","code {[]} {[]}
 ","male | female | other | unknown","Administrative Gender - the gender that the contact person is considered to have for administration and record keeping purposes.","","Needed to address the person correctly.","","","","","","","",,"required","The gender of a person used for administrative purposes.","http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1","",,,,"Patient.contact.gender",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
+"at-core-patient","Patient.contact.gender.id","Patient.contact.gender.id","","","",0,1,"","","","string {[]} {[]}
+","xml:id (or equivalent in JSON)","unique id for the element within a resource (for internal references)","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"at-core-patient","Patient.contact.gender.extension","Patient.contact.gender.extension","","","",0,*,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"at-core-patient","Patient.contact.gender.extension:AdministrativeGenderAddition","Patient.contact.gender.extension","AdministrativeGenderAddition","","",0,1,"","","","Extension {[CanonicalType[http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-gender-administrativeGenderAddition]]} {[]}
+","Administrative Gender Addition","HL7® Austria FHIR® Core Extension for the administrative gender of a person (Patient, Practitioner, ...). 
+The extension is used to add the missing codes and is applied in case the code for administrative gender itself is set to 'other'.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"at-core-patient","Patient.contact.gender.value","Patient.contact.gender.value","","","",0,1,"","","","string {[]} {[]}
+","Primitive value for code","Primitive value for code","","","","","","","","","",,,,,"",,,,"string.value",0,1,"",""
 "at-core-patient","Patient.contact.organization","Patient.contact.organization","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
 ","Organization that is associated with the contact","Organization on behalf of which the contact is acting or for which the contact is working.","","For guardians or business related contacts, the organization is relevant.","","","","","","","",,,,,"",,,,"Patient.contact.organization",0,1,"pat-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
