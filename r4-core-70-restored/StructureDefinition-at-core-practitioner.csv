@@ -243,6 +243,19 @@ at-addr-1:If the extension for street name is used then the value for line must 
 "Practitioner.gender","Practitioner.gender","","","",0,1,"","","Y","code {[]} {[]}
 ","male | female | other | unknown","Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.","","Needed to address the person correctly.","","","","","","","",,"required","The gender of a person used for administrative purposes.","http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1","",,,,"Practitioner.gender",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","STF-5","./administrativeGender","./GenderCode"
+"Practitioner.gender.id","Practitioner.gender.id","","","",0,1,"","","","string {[]} {[]}
+","xml:id (or equivalent in JSON)","unique id for the element within a resource (for internal references)","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"Practitioner.gender.extension","Practitioner.gender.extension","","","",0,*,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Practitioner.gender.extension:AdministrativeGenderAddition","Practitioner.gender.extension","AdministrativeGenderAddition","","",0,1,"","","","Extension {[CanonicalType[http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-gender-administrativeGenderAddition]]} {[]}
+","Administrative Gender Addition","HL7® Austria FHIR® Core Extension for the administrative gender of a person (Patient, Practitioner, ...). 
+The extension is used to add the missing codes and is applied in case the code for administrative gender itself is set to 'other'.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Practitioner.gender.value","Practitioner.gender.value","","","",0,1,"","","","string {[]} {[]}
+","Primitive value for code","Primitive value for code","","","","","","","","","",,,,,"",,,,"string.value",0,1,"",""
 "Practitioner.birthDate","Practitioner.birthDate","","","",0,1,"","","Y","date {[]} {[]}
 ","The date  on which the practitioner was born","The date of birth for the practitioner.","","Needed for identification.","","","","","","","",,,,,"",,,,"Practitioner.birthDate",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","STF-6","./birthTime","(not represented in ServD)"
