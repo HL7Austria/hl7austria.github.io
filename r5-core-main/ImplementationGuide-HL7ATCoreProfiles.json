@@ -10,7 +10,7 @@
   "name" : "HL7AustriaImplementationGuide",
   "title" : "HL7® Austria FHIR® Core Implementation Guide",
   "status" : "active",
-  "date" : "2024-02-17T14:54:31+00:00",
+  "date" : "2024-02-19T19:55:19+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -78,6 +78,19 @@
       "name" : "Administrative Gender Addition",
       "description" : "HL7® Austria FHIR® Core Extension for the administrative gender of a person (Patient, Practitioner, ...). \r\nThe extension is used to add the missing codes and is applied in case the code for administrative gender itself is set to 'other'.",
       "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      }],
+      "reference" : {
+        "reference" : "Organization/HL7ATCoreOrganizationExample01"
+      },
+      "name" : "HL7ATCoreOrganizationExample01",
+      "description" : "Example for the usage of the HL7 AT Core Organization Profile",
+      "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-organization",
+      "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-organization"]
     },
     {
       "extension" : [{
@@ -160,6 +173,32 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/HL7ATCorePractitionerExample01"
+      },
+      "name" : "HL7ATCorePractitionerExample01",
+      "description" : "Example for the usage of the HL7 AT Core Practitioner Profile",
+      "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-practitioner",
+      "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-practitioner"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "PractitionerRole"
+      }],
+      "reference" : {
+        "reference" : "PractitionerRole/HL7ATCorePractitionerRoleExample01"
+      },
+      "name" : "HL7ATCorePractitionerRoleExample01",
+      "description" : "Example for the usage of the HL7 AT Core PractitionerRole Profile",
+      "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-practitionerRole",
+      "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-practitionerRole"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:complex-type"
       }],
       "reference" : {
@@ -167,6 +206,30 @@
       },
       "name" : "HL7® AT Core Address Profile",
       "description" : "HL7® Austria FHIR® Core Profile for address data in Austria. Note, this extension represents the common structure of address information within Austrian information systems. This extension does not restrict the documented information to Austrian adresses. Address information that does not fit into the given structure may be captured by [Address Additional Information](StructureDefinition-at-core-ext-address-additionalInformation.html).",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:complex-type"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-core-extendedContactDetail"
+      },
+      "name" : "HL7® AT Core ExtendedContactDetail Profile",
+      "description" : "HL7® Austria FHIR® Core Profile to use the profile for address data in Austria on the datatype ExtendedContactDetail.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-core-organization"
+      },
+      "name" : "HL7® AT Core Organization Profile",
+      "description" : "HL7® Austria FHIR® Core Profile for organization data in Austria.",
       "isExample" : false
     },
     {
@@ -187,23 +250,35 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-core-valueset"
+        "reference" : "StructureDefinition/at-core-practitioner"
       },
-      "name" : "HL7® AT Core ValueSet Profile",
-      "description" : "HL7® Austria FHIR® Core Profile for valuesets in Austria.\r\nThe HL7® AT Core ValueSet is based upon the core FHIR® ValueSet Resource and defines the use of the OID extension.",
+      "name" : "HL7® AT Core Practitioner Profile",
+      "description" : "HL7® Austria FHIR® Core Profile for practitioner data in Austria.",
       "isExample" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Organization"
+        "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "Organization/Organization-example-f001-burgers"
+        "reference" : "StructureDefinition/at-core-practitionerRole"
       },
-      "name" : "Organization-example-f001-burgers",
-      "description" : "Real-world organization example (Burgers MC) from the HL7® FHIR® specification. Note that this resource uses **nothing** from this implementation guide. It just exists to be referenced in the patient example resources.",
-      "isExample" : true
+      "name" : "HL7® AT Core PractitionerRole Profile",
+      "description" : "HL7® Austria FHIR® Core Profile for practitioner role data in Austria.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-core-valueset"
+      },
+      "name" : "HL7® AT Core ValueSet Profile",
+      "description" : "HL7® Austria FHIR® Core Profile for valuesets in Austria.\r\nThe HL7® AT Core ValueSet is based upon the core FHIR® ValueSet Resource and defines the use of the OID extension.",
+      "isExample" : false
     },
     {
       "extension" : [{
