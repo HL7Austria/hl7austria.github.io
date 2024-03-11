@@ -1,0 +1,963 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>KIOLA-IMPLEMENTATION-GUIDE\Artifacts Summary - FHIR® v4.3.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"2"}
+    h3,h4,h5,h6{--heading-prefix:"2.0"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img id="header-logo" src="AIT_Bildmarke.png" />
+          </div>
+          <div class="col-11">
+        <!-- at-fhir-ig-template end -->
+            <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">KIOLA Implementation Guide</span><br/>
+                <span class="label label-info">0.1.0 - STU1</span>
+              </p>
+            </div>
+        <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+        <!-- at-fhir-ig-template end -->
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R5/index.html">FHIR®</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">Home</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Details<b class="caret"> </b></a>
+    <ul class="dropdown-menu">
+        <li><a href="StructureDefinition-kiola-care-plan.html">KIOLA Care Plan</a></li>
+        <li><a href="StructureDefinition-kiola-standard-treatment-plan.html">KIOLA Standard Treatment Plan</a></li>
+        <li><a href="StructureDefinition-kiola-measurement-definition.html">KIOLA Measurement Definition</a></li>
+    </ul>
+  </li>
+  <li><a href="artifacts.html">Artifacts Summary</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Artifacts Summary</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!-- at-fhir-ig-template begin -->
+  <div class="alert alert-warning" role="alert">
+    <!--ReleaseHeader--><p id="publish-box">KIOLA Implementation Guide - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://fhir.ehealth-systems.at/artifacts/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  </div>
+  <!-- at-fhir-ig-template end -->
+  <h2>Artifacts Summary</h2>
+  
+  <!--DO NOT EDIT THIS FILE - It is generated by https://github.com/HL7/ig-template-base/blob/master/scripts/createArtifactSummary.xslt and any changes made will be overwritten--><div xmlns:html="http://www.w3.org/1999/xhtml"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://hl7.org/fhir"
+     class="markdown-toc">
+   <p>Contents:</p>
+   <ul>
+      <li>
+         <a href="#1">Behavior: Capability Statements</a>
+      </li>
+      <li>
+         <a href="#2">Behavior: Search Parameters</a>
+      </li>
+      <li>
+         <a href="#3">Structures: Abstract Profiles</a>
+      </li>
+      <li>
+         <a href="#4">Structures: Resource Profiles</a>
+      </li>
+      <li>
+         <a href="#5">Structures: Data Type Profiles</a>
+      </li>
+      <li>
+         <a href="#6">Structures: Extension Definitions</a>
+      </li>
+      <li>
+         <a href="#7">Terminology: Value Sets</a>
+      </li>
+      <li>
+         <a href="#8">Terminology: Code Systems</a>
+      </li>
+      <li>
+         <a href="#9">Example: Example Instances</a>
+      </li>
+   </ul>
+</div>
+<div xmlns:html="http://www.w3.org/1999/xhtml"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://hl7.org/fhir">
+   <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
+   <a name="1"> </a>
+   <h3>Behavior: Capability Statements </h3>
+    <p>The following artifacts define the specific capabilities that different types of systems are expected to have in order to comply with this implementation guide.  Systems conforming to this implementation guide are expected to declare conformance to one or more of the following capability statements.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CapabilityStatement-kiola-care-plan-management.html"
+                  title="CapabilityStatement/kiola-care-plan-management">KIOLA Care Plan Management</a>
+            </td>
+            <td>
+<p>KIOLA care plans might be managed by another system. New and modified plans might be uploaded to the server and the status of existing plans might be changed.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CapabilityStatement-kiola-care-plan-retrieval.html"
+                  title="CapabilityStatement/kiola-care-plan-retrieval">KIOLA Care Plan Retrieval</a>
+            </td>
+            <td>
+<p>The currently active KIOLA Care Plan for a patient might be retrieved by a client, using a search with a fixed set of parameters. The retrieval might be confirmed, by adding a meta tag to the instance. ETags might be used to avoid fetching the same resource twice.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CapabilityStatement-kiola-standard-treatment-plan-apply.html"
+                  title="CapabilityStatement/kiola-standard-treatment-plan-apply">KIOLA Standard Treatment Plan Apply</a>
+            </td>
+            <td>
+<p>Apply a KIOLA standard treatment plan to a patient to generate a treatment plan instance. The current KIOLA care plan of the patient is not taken into account. The standard treatment plan is simply applied to the patient and a new KIOLA care plan containing this treatment plan is returned.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CapabilityStatement-kiola-standard-treatment-plan-management.html"
+                  title="CapabilityStatement/kiola-standard-treatment-plan-management">KIOLA Standard Treatment Plan Management</a>
+            </td>
+            <td>
+<p>KIOLA standard treatment plans might be managed by another system. Existing plans might be queried, new KIOLA standard treatment plans or updated versions of existing plans might be uploaded to the server. Also the status of existing plans might be changed.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CapabilityStatement-kiola-standard-treatment-plan-set-default.html"
+                  title="CapabilityStatement/kiola-standard-treatment-plan-set-default">KIOLA Standard Treatment Plan Set Default</a>
+            </td>
+            <td>
+<p>One or more KIOLA standard treatment plans might be set as default plans, to be preselected when registering a new patient.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="2"> </a>
+   <h3>Behavior: Search Parameters </h3>
+    <p>These define the properties by which a RESTful server can be searched.  They can also be used for sorting and including related resources.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="SearchParameter-care-plan-subject-identifier-parameter.html"
+                  title="SearchParameter/care-plan-subject-identifier-parameter">Care Plan Subject Identifier Parameter</a>
+            </td>
+            <td>
+<p>Returns care plans of subjects with a matching identifier</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="3"> </a>
+   <h3>Structures: Abstract Profiles </h3>
+    <p>These are profiles on resources or data types that describe patterns used by other profiles, but cannot be instantiated directly.  I.e. instances can conform to profiles <em>based</em> on these abstract profiles, but do not declare conformance to the abstract profiles themselves.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-kiola-measurement-device.html"
+                  title="StructureDefinition/kiola-measurement-device">KIOLA Measurement Device</a>
+            </td>
+            <td>
+<p>An abstract device for recording a KIOLA vital data measurement.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-kiola-measurement-device-definition.html"
+                  title="StructureDefinition/kiola-measurement-device-definition">KIOLA Measurement Device Definition</a>
+            </td>
+            <td>
+<p>Definition of an abstract device for recording a KIOLA vital data measurement.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="4"> </a>
+   <h3>Structures: Resource Profiles </h3>
+    <p>These define constraints on FHIR resources for systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-kiola-care-plan.html"
+                  title="StructureDefinition/kiola-care-plan">KIOLA Care Plan</a>
+            </td>
+            <td>
+<p>A patient-specific care plan, containing one or multiple instances of different KIOLA standard treatment plans,
+that might have been adapted individually for the patient, and/or individually assigned KIOLA activities.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-kiola-measurement-automatic-transmission-device.html"
+                  title="StructureDefinition/kiola-measurement-automatic-transmission-device">KIOLA Measurement Automatic Transmission Device</a>
+            </td>
+            <td>
+<p>Device supporting automatic transmission of KIOLA vital data measurements, without entering the data manually.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-kiola-measurement-automatic-transmission-device-definition.html"
+                  title="StructureDefinition/kiola-measurement-automatic-transmission-device-definition">KIOLA Measurement Automatic Transmission Device Definition</a>
+            </td>
+            <td>
+<p>Definition of a device supporting automatic transmission of KIOLA vital data measurements, without entering the data manually.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-kiola-measurement-definition.html"
+                  title="StructureDefinition/kiola-measurement-definition">KIOLA Measurement Definition</a>
+            </td>
+            <td>
+<p>The definition of a vital data measurement for KIOLA.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-kiola-measurement-manual-entry-device.html"
+                  title="StructureDefinition/kiola-measurement-manual-entry-device">KIOLA Measurement Manual Entry Device</a>
+            </td>
+            <td>
+<p>Device supporting manual data entry of KIOLA vital data measurements.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-kiola-measurement-manual-entry-device-definition.html"
+                  title="StructureDefinition/kiola-measurement-manual-entry-device-definition">KIOLA Measurement Manual Entry Device Definition</a>
+            </td>
+            <td>
+<p>Definition of a device supporting manual data entry of KIOLA vital data measurements.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-kiola-measurement-request.html"
+                  title="StructureDefinition/kiola-measurement-request">KIOLA Measurement Request</a>
+            </td>
+            <td>
+<p>Request to perform a KIOLA vital data measurement.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-kiola-standard-treatment-plan.html"
+                  title="StructureDefinition/kiola-standard-treatment-plan">KIOLA Standard Treatment Plan</a>
+            </td>
+            <td>
+<p>A standard treatment plan for a set of KIOLA activities. It can be applied to patients as a stand-alone plan or in combination with other plans and might be individualized for a single patient, after applying it.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-kiola-treatment-plan.html"
+                  title="StructureDefinition/kiola-treatment-plan">KIOLA Treatment Plan</a>
+            </td>
+            <td>
+<p>Instance of a KIOLA standard treatment plan, that might have been adapted individually for the patient.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="5"> </a>
+   <h3>Structures: Data Type Profiles </h3>
+    <p>These define constraints on FHIR data types for systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-kiola-subject-uuid-identifier.html"
+                  title="StructureDefinition/kiola-subject-uuid-identifier">KIOLA Subject UUID</a>
+            </td>
+            <td>
+<p>Primary identifier for a subject in KIOLA</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="6"> </a>
+   <h3>Structures: Extension Definitions </h3>
+    <p>These define constraints on FHIR data types for systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-device-definition-specialization-system-type-codeable-concept.html"
+                  title="StructureDefinition/device-definition-specialization-system-type-codeable-concept">Device Definition Specialization System Type Codeable Concept</a>
+            </td>
+            <td>
+<p>Extension …</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-participant-device-definition.html"
+                  title="StructureDefinition/participant-device-definition">Participant Device Definition</a>
+            </td>
+            <td>
+<p>Extension to add a device definition to a participant of an activity or plan definition.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-plan-definition-patient-instruction.html"
+                  title="StructureDefinition/plan-definition-patient-instruction">Plan Definition Patient Instruction</a>
+            </td>
+            <td>
+<p>Extension to add a patient instruction to the activity of a plan definition.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="7"> </a>
+   <h3>Terminology: Value Sets </h3>
+    <p>These define sets of codes used by systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-KIOLAMeasurementAutomaticTransmissionProperties.html"
+                  title="ValueSet/KIOLAMeasurementAutomaticTransmissionProperties">KIOLA Automatic Transmission Measurement Device Properties</a>
+            </td>
+            <td>
+<p>Properties of automatic transmission devices.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-KIOLAMeasurementAutomaticTransmissionDeviceTypes.html"
+                  title="ValueSet/KIOLAMeasurementAutomaticTransmissionDeviceTypes">KIOLA Automatic Transmission Measurement Device Types</a>
+            </td>
+            <td>
+<p>Types of devices that might automatically transmit vital data measurements to a KIOLA system, without entering the data manually.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-KIOLABoolean.html" title="ValueSet/KIOLABoolean">KIOLA Boolean</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-KIOLADevices.html" title="ValueSet/KIOLADevices">KIOLA Devices</a>
+            </td>
+            <td>
+<p>Devices, that might transmit data to a KIOLA system.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-KIOLAGenericQuestionnaires.html"
+                  title="ValueSet/KIOLAGenericQuestionnaires">KIOLA Generic Questionnaires</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-KIOLAMeasurementDeviceTypes.html"
+                  title="ValueSet/KIOLAMeasurementDeviceTypes">KIOLA Measurement Device Types</a>
+            </td>
+            <td>
+<p>Types of devices that might transmit vital data measurements to a KIOLA system.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-KIOLAMeasurementTypes.html"
+                  title="ValueSet/KIOLAMeasurementTypes">KIOLA Measurement Types</a>
+            </td>
+            <td>
+<p>Types of vital data measurements, that can be transmitted to a KIOLA system.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-KIOLAMedicationDailyDosage.html"
+                  title="ValueSet/KIOLAMedicationDailyDosage">KIOLA Medication Daily Dosage</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-KIOLAMeasurementUnits.html"
+                  title="ValueSet/KIOLAMeasurementUnits">KIOLAMeasurementUnits</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-KMCAppPackages.html" title="ValueSet/KMCAppPackages">KMC App Packages</a>
+            </td>
+            <td>
+<p>App package IDs of first and 3rd party apps, that might be launched by a mobile client to facilitate the transmission process.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-KMCUIReferences.html" title="ValueSet/KMCUIReferences">KMC UI References</a>
+            </td>
+            <td>
+<p>References to UI elements, that might be used to initiate the transmission process on a mobile client.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="8"> </a>
+   <h3>Terminology: Code Systems </h3>
+    <p>These define new code systems used by systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-kiola-boolean-cs.html"
+                  title="CodeSystem/kiola-boolean-cs">KIOLA Boolean</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-kiola-care-plan-category-cs.html"
+                  title="CodeSystem/kiola-care-plan-category-cs">KIOLA Care Plan Category Code System</a>
+            </td>
+            <td>
+<p>Categories of care plans supported by KIOLA.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-kiola-care-plan-transient-tag-cs.html"
+                  title="CodeSystem/kiola-care-plan-transient-tag-cs">KIOLA Care Plan Transient Tag Code System</a>
+            </td>
+            <td>
+<p>Meta data tags of care plans that should be removed when creating an updated plan for a patient, in case an activity changes.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-kiola-device-cs.html"
+                  title="CodeSystem/kiola-device-cs">KIOLA Device Codes</a>
+            </td>
+            <td>
+<p>Generic device types that can transmit vital data.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-kiola-mdc-cs.html" title="CodeSystem/kiola-mdc-cs">KIOLA Device Codes AIT 11073</a>
+            </td>
+            <td>
+<p>Measurement device types for automatic transmission of measurements and their configuration parameters, based on the ISO/IEEE 11073 standard with vendor-specific extensions, mainly AIT. The MDC display name is used as a code.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-kiola-mdc-dim-cs.html"
+                  title="CodeSystem/kiola-mdc-dim-cs">KIOLA Dimension Codes AIT 11073</a>
+            </td>
+            <td>
+<p>Measurement dimensions supported by KIOLA, based on the ISO/IEEE 11073 standard with vendor-specific extensions, mainly AIT. The MDC display name is used as a code.</p>
+
+<p>All codes might be parametrized using the syntax <code class="language-plaintext highlighter-rouge">CODE:{min=MIN_VAL,max=MAX_VAL}</code> to define a plausibility range for manual data entry, e.g.: <code class="language-plaintext highlighter-rouge">MDC_DIM_MILLI_G_PER_DL:{min=0,max=1000}</code></p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-kiola-measurement-cs.html"
+                  title="CodeSystem/kiola-measurement-cs">KIOLA Measurement Codes</a>
+            </td>
+            <td>
+<p>Types of vital data measurements that can be transmitted to a KIOLA system. The naming is derived from MDC display names of devices from the ISO/IEEE 11073 standard.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-kiola-standard-treatment-plan-tag-cs.html"
+                  title="CodeSystem/kiola-standard-treatment-plan-tag-cs">KIOLA Standard Treatment Plan Code System</a>
+            </td>
+            <td>
+<p>Meta data tags of standard treatment plans.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-kiola-device-kmc-cs.html"
+                  title="CodeSystem/kiola-device-kmc-cs">KMC Device Codes</a>
+            </td>
+            <td>
+<p>Various codes that might be used to configure a mobile client.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="9"> </a>
+   <h3>Example: Example Instances </h3>
+    <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CarePlan-5341.html" title="CarePlan/5341">5341</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-smwt.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-smwt">6-Minute-Walk-Test Measurement Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-activity.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-activity">Activity Measurement Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DeviceDefinition-dev-ait-alivecor-ecg.html"
+                  title="DeviceDefinition/dev-ait-alivecor-ecg">AliveCor Device Definition Example</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-puls-oxim.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-puls-oxim">Blood Oximeter Measurement Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-bp.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-bp">Blood Pressure Measurement Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-scale.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-scale">Body Weight Measurement Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-q-covid19-v1.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-q-covid19-v1">COVID19 Questionnaire Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-hf-cardio-ebike-config.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-hf-cardio-ebike-config">Cardio Ebike Config Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-hf-cardio-ebike-result.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-hf-cardio-ebike-result">Cardio Ebike Result Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-hf-cardio-ergo-config.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-hf-cardio-ergo-config">Cardio Ergo Config Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-hf-cardio-ergo-result.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-hf-cardio-ergo-result">Cardio Ergo Result Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-comment.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-comment">Comment Entry Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-med-daily-dose-coumadin-v1.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-med-daily-dose-coumadin-v1">Daily medication measurement of Coumadin Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-med-daily-dose-falithrom-v1.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-med-daily-dose-falithrom-v1">Daily medication measurement of Falithrom Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-med-daily-dose-marcumar-v1.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-med-daily-dose-marcumar-v1">Daily medication measurement of Marcumar Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-fhir-diagnostic-report.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-fhir-diagnostic-report">Diagnostic Report Measurement Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-generic-questionnaire-0-v1.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-0-v1">Generic Questionnaire 0 Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-generic-questionnaire-1-v1.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-1-v1">Generic Questionnaire 1 Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-generic-questionnaire-2-v1.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-2-v1">Generic Questionnaire 2 Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-generic-questionnaire-3-v1.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-3-v1">Generic Questionnaire 3 Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-generic-questionnaire-4-v1.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-4-v1">Generic Questionnaire 4 Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-generic-questionnaire-5-v1.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-5-v1">Generic Questionnaire 5 Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-generic-questionnaire-6-v1.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-6-v1">Generic Questionnaire 6 Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-generic-questionnaire-7-v1.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-7-v1">Generic Questionnaire 7 Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-generic-questionnaire-8-v1.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-8-v1">Generic Questionnaire 8 Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-generic-questionnaire-9-v1.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-9-v1">Generic Questionnaire 9 Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-gtm-ekg.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-gtm-ekg">Getemed ECG Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-glucose.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-glucose">Glucose Measurement Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-glucose-suppl-v1.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-glucose-suppl-v1">Glucose Supplemental Data Measurement Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-inr.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-inr">INR Measurement Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="PlanDefinition-kiola-standard-treatment-plan-participant-example.html"
+                  title="PlanDefinition/kiola-standard-treatment-plan-participant-example">KIOLA Standard Treatment Plan Participant Example</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="PlanDefinition-kiola-standard-treatment-plan-participant-property-example.html"
+                  title="PlanDefinition/kiola-standard-treatment-plan-participant-property-example">KIOLA Standard Treatment Plan Participant Property Example</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="PlanDefinition-kiola-standard-treatment-plan-simple-example.html"
+                  title="PlanDefinition/kiola-standard-treatment-plan-simple-example">KIOLA Standard Treatment Plan Simple Example</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="PlanDefinition-kiola-standard-treatment-plan-timing-example.html"
+                  title="PlanDefinition/kiola-standard-treatment-plan-timing-example">KIOLA Standard Treatment Plan Timing Example</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-vnd-ait-q-med-v1.html"
+                  title="ActivityDefinition/mdc-vnd-ait-q-med-v1">Medication Taken Questionnaire Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-note.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-note">Note Entry Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-vnd-ait-q-phys-visit-v1.html"
+                  title="ActivityDefinition/mdc-vnd-ait-q-phys-visit-v1">Physician Visit Questionnaire Entry Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-sleepsequence.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-sleepsequence">Sleepsequence Measurement Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-spiro.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-spiro">Spirometry Measurement Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-stepcounter.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-stepcounter">Step Counter Measurement</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-stepsequence.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-stepsequence">Stepsequence Measurement Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-pain-current.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-pain-current">Subjective Pain Measurement Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-pain-range.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-pain-range">Subjective Pain Range Measurement Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-temp.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-temp">Temperature Measurement Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-wellbeing.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-wellbeing">Wellbeing Measurement Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-wound-assessment.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-wound-assessment">Wound Assessment Measurement Definition</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ActivityDefinition-mdc-dev-spec-profile-vnd-ait-wound.html"
+                  title="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-wound">Wound Measurement Definition</a>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+</div>
+
+</div>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /row -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-content -->
+
+<script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+if(window.location.hash != "") {
+    $('a[href="' + window.location.hash + '"]').click()
+}
+});
+</script>
+<a name="bottom"> </a>
+<div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+<div class="container">  <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="mailto:office@ait.ac.at"></a>.  Package kiola-implementation-guide#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 4.3.0</a>. Generated <span title="Mon, Mar 11, 2024 08:55+0000">2024-03-11</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    </span>
+  </p>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+<div class="container">  <!-- container -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-post-footer -->
+
+<!-- JS and analytics only. -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+<script type="text/javascript" src="assets/js/respond.min.js"> </script>
+<script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+<script>anchors.options.visible = 'hover'
+anchors.add()</script>
+
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+
+<!-- / feedback form  -->
+
+<!-- Analytics Below
+================================================== -->
+</body>
+</html>
+

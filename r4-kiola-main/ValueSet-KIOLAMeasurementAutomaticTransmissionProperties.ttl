@@ -1,0 +1,47 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.ehealth-systems.at/artifacts/ValueSet/KIOLAMeasurementAutomaticTransmissionProperties> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "KIOLAMeasurementAutomaticTransmissionProperties"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set includes codes based on the following rules:</p><ul><li>Include codes from <a href=\"CodeSystem-kiola-mdc-cs.html\"><code>https://fhir.ehealth-systems.at/kiola/device/AIT-11073</code></a> where concept  is-a  <a href=\"CodeSystem-kiola-mdc-cs.html#kiola-mdc-cs-MDC_PROPERTY\">MDC_PROPERTY</a></li></ul><p>This value set excludes codes based on the following rules:</p><ul><li>Exclude these codes as defined in <a href=\"CodeSystem-kiola-mdc-cs.html\"><code>https://fhir.ehealth-systems.at/kiola/device/AIT-11073</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"CodeSystem-kiola-mdc-cs.html#kiola-mdc-cs-MDC_PROPERTY\">MDC_PROPERTY</a></td><td style=\"color: #cccccc\">KIOLA device property</td><td>A property of a KIOLA measurement device. Used to describe fields of a specific measurement.</td></tr></table></li></ul></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://fhir.ehealth-systems.at/artifacts/ValueSet/KIOLAMeasurementAutomaticTransmissionProperties"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "KIOLAMeasurementAutomaticTransmissionProperties"] ; # 
+  fhir:title [ fhir:v "KIOLA Automatic Transmission Measurement Device Properties"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2024-03-11T08:55:33+00:00"^^xsd:dateTime] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AIT Austrian Institute of Technology" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "mailto:office@ait.ac.at" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Properties of automatic transmission devices."] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "https://fhir.ehealth-systems.at/kiola/device/AIT-11073"^^xsd:anyURI ] ;
+       fhir:filter ( [
+         fhir:property [ fhir:v "concept" ] ;
+         fhir:op [ fhir:v "is-a" ] ;
+         fhir:value [ fhir:v "MDC_PROPERTY" ]
+       ] )
+     ] ) ;
+     fhir:exclude ( [
+       fhir:system [ fhir:v "https://fhir.ehealth-systems.at/kiola/device/AIT-11073"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "MDC_PROPERTY" ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

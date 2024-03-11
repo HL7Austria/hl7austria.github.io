@@ -1,0 +1,41 @@
+{
+  "resourceType" : "DeviceDefinition",
+  "id" : "dev-ait-alivecor-ecg",
+  "meta" : {
+    "profile" : ["https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-automatic-transmission-device-definition"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: DeviceDefinition</b><a name=\"dev-ait-alivecor-ecg\"> </a><a name=\"hcdev-ait-alivecor-ecg\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource DeviceDefinition &quot;dev-ait-alivecor-ecg&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-kiola-measurement-automatic-transmission-device-definition.html\">KIOLA Measurement Automatic Transmission Device Definition</a></p></div><p><b>manufacturer</b>: AliveCor</p><h3>DeviceNames</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Name</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>KardiaMobile 6L</td><td>manufacturer-name</td></tr></table><p><b>type</b>: FHIR Diagnostic report <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-kiola-mdc-cs.html\">KIOLA Device Codes AIT 11073</a>#MDC_DEV_SPEC_PROFILE_VND_AIT_FHIR_DIAGNOSTIC_REPORT)</span></p><h3>Specializations</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Extension</b></td><td><b>SystemType</b></td></tr><tr><td style=\"display: none\">*</td><td/><td>EC</td></tr></table></div>"
+  },
+  "manufacturerString" : "AliveCor",
+  "deviceName" : [{
+    "name" : "KardiaMobile 6L",
+    "type" : "manufacturer-name"
+  }],
+  "type" : {
+    "coding" : [{
+      "system" : "https://fhir.ehealth-systems.at/kiola/device/AIT-11073",
+      "code" : "MDC_DEV_SPEC_PROFILE_VND_AIT_FHIR_DIAGNOSTIC_REPORT",
+      "display" : "FHIR Diagnostic report"
+    }]
+  },
+  "specialization" : [{
+    "extension" : [{
+      "url" : "https://fhir.ehealth-systems.at/extensions/DeviceDefinition/specializationSystemTypeCodeableConcept",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v2-0074",
+          "code" : "EC",
+          "display" : "Electrocardiac"
+        },
+        {
+          "system" : "https://fhir.ehealth-systems.at/kiola/diagnostic-report/",
+          "code" : "ALIVECOR_ECG",
+          "display" : "AliveCor ECG Report"
+        }]
+      }
+    }],
+    "systemType" : "EC"
+  }]
+}

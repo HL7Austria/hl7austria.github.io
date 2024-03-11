@@ -1,0 +1,49 @@
+{
+  "resourceType" : "CapabilityStatement",
+  "id" : "kiola-care-plan-retrieval",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2 id=\"title\">KIOLA Care Plan Retrieval</h2><ul><li>Implementation Guide Version: 0.1.0</li><li>FHIR Version: 4.0.1</li><li>Supported Formats: <code>application/fhir+json</code></li><li>Supported Patch Formats: </li><li>Published on: Tue Jan 10 00:00:00 UTC 2023</li><li>Published by: null</li></ul><blockquote class=\"impl-note\"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as &quot;SHALL NOT&quot;. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h2 id=\"rest\">FHIR RESTful Capabilities</h2><div class=\"panel panel-default\"><div class=\"panel-heading\"><h3 id=\"mode1\" class=\"panel-title\">Mode: <code>server</code></h3></div><div class=\"panel-body\"><div><p>The retrieval is done in 4 steps:</p>\n<ol>\n<li>A search with the following parameters is sent to the server, eventually including a filter for the patient, if the user has access to more than one patient:\n<ul>\n<li><code>status</code>: <code>active</code></li>\n<li><code>category</code>: <code>https://fhir.ehealth-systems.at/kiola/careplan/category#kiola-care-plan</code></li>\n<li>e.g. <code>subject__identifier</code>: <code>[KIOLA_SUBJECT_UUID]</code>, if required</li>\n</ul>\n</li>\n<li>Either a single care plan is returned in the result list, or an empty list, if the patient currently does not have an active care plan.</li>\n<li>The retrieval is confirmed, by adding the meta tag <code>https://fhir.ehealth-systems.at/kiola/careplan/transient-tag#CONFIRMED</code> to the care plan using the <code>$meta-add</code> operation on the returned care plan instance. The timestamp and userAgent parameters might be appended to the code, to indicate the client and time of retrieval, e.g. <code>{userAgent=Pixel 4a/13 at.ac.ait.dm2/4.12.0(664):36fde7dd,timestamp=2022-11-25T09:28:29.950008}</code>.</li>\n<li>The server returns the result of the operation.</li>\n</ol>\n<p>Optionally, the returned ETag might be saved in step 2 and sent along in a successive retrieval in step 1 in the <code>If-Modified</code> HTTP header. If the current care plan has not been changed, a <code>302</code> HTTP code (not modified) should be returned.</p>\n<p>Sequence Diagram:</p>\n<p><img src=\"kiola-care-plan-retrieval.drawio.svg\" alt=\"null\"/></p>\n</div><div class=\"lead\"><em>Summary of System-wide Interactions</em></div></div></div><h3 id=\"resourcesCap1\">Capabilities by Resource/Profile</h3><h4 id=\"resourcesSummary1\">Summary</h4><p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul><li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class=\"bg-info\">R</span></b>ead, <b><span class=\"bg-info\">S</span></b>earch, <b><span class=\"bg-info\">U</span></b>pdate, and <b><span class=\"bg-info\">C</span></b>reate, are always shown, while <b><span class=\"bg-info\">VR</span></b>ead, <b><span class=\"bg-info\">P</span></b>atch, <b><span class=\"bg-info\">D</span></b>elete, <b><span class=\"bg-info\">H</span></b>istory on <b><span class=\"bg-info\">I</span></b>nstance, or <b><span class=\"bg-info\">H</span></b>istory on <b><span class=\"bg-info\">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class=\"table-responsive\"><table class=\"table table-condensed table-hover\"><thead><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th class=\"text-center\"><b title=\"GET a resource (read interaction)\">R</b></th><th class=\"text-center\"><b title=\"GET all set of resources of the type (search interaction)\">S</b></th><th class=\"text-center\"><b title=\"PUT a new resource version (update interaction)\">U</b></th><th class=\"text-center\"><b title=\"POST a new resource (create interaction)\">C</b></th><th><b title=\"Required and recommended search parameters\">Searches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Operations</b></th></tr></thead><tbody><tr><td><a href=\"#CarePlan1-1\">CarePlan</a></td><td><a href=\"StructureDefinition-kiola-care-plan.html\">https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-care-plan</a></td><td>y</td><td class=\"text-center\">y</td><td class=\"text-center\"></td><td class=\"text-center\"></td><td></td><td/><td/><td/></tr></tbody></table></div><hr/><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"CarePlan1-1\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: supported</span>CarePlan</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Base System Profile</span><br/><a href=\"StructureDefinition-kiola-care-plan.html\">https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-care-plan</a></div><div class=\"col-lg-3\"><span class=\"lead\">Profile Conformance</span><br/><b>SHALL</b></div><div class=\"col-lg-3\"><span class=\"lead\">Reference Policy</span><br/></div></div><p/><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Interaction summary</span><br/><ul><li>Supports <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class=\"row\"><div class=\"col-12\"><span class=\"lead\">Extended Operations</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$$meta-add</td><td><div/></td></tr></tbody></table></div></div></div></div></div></div>"
+  },
+  "url" : "https://fhir.ehealth-systems.at/artifacts/CapabilityStatement/kiola-care-plan-retrieval",
+  "version" : "0.1.0",
+  "name" : "KIOLACarePlanRetrieval",
+  "title" : "KIOLA Care Plan Retrieval",
+  "status" : "draft",
+  "date" : "2023-01-10",
+  "contact" : [{
+    "name" : "AIT Austrian Institute of Technology",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "mailto:office@ait.ac.at"
+    }]
+  }],
+  "description" : "The currently active KIOLA Care Plan for a patient might be retrieved by a client, using a search with a fixed set of parameters. The retrieval might be confirmed, by adding a meta tag to the instance. ETags might be used to avoid fetching the same resource twice.",
+  "purpose" : "This capability might be used by other systems (e.g. mobile clients) to retrieve the currently relevant care plan for immediate patient care for a specific patient. To ensure that the most current version of the care plan is used across all systems, clients might confirm the successful retrieval.",
+  "kind" : "capability",
+  "software" : {
+    "name" : "KIOLA",
+    "version" : "Bundle 2.5",
+    "releaseDate" : "2023-02-01"
+  },
+  "fhirVersion" : "4.0.1",
+  "format" : ["application/fhir+json"],
+  "rest" : [{
+    "mode" : "server",
+    "documentation" : "\nThe retrieval is done in 4 steps:\n1. A search with the following parameters is sent to the server, eventually including a filter for the patient, if the user has access to more than one patient: \n   * `status`: `active`\n   * `category`: `https://fhir.ehealth-systems.at/kiola/careplan/category#kiola-care-plan`\n   * e.g. `subject__identifier`: `[KIOLA_SUBJECT_UUID]`, if required\n2. Either a single care plan is returned in the result list, or an empty list, if the patient currently does not have an active care plan.\n3. The retrieval is confirmed, by adding the meta tag `https://fhir.ehealth-systems.at/kiola/careplan/transient-tag#CONFIRMED` to the care plan using the `$meta-add` operation on the returned care plan instance. The timestamp and userAgent parameters might be appended to the code, to indicate the client and time of retrieval, e.g. `{userAgent=Pixel 4a/13 at.ac.ait.dm2/4.12.0(664):36fde7dd,timestamp=2022-11-25T09:28:29.950008}`.\n4. The server returns the result of the operation.\n\nOptionally, the returned ETag might be saved in step 2 and sent along in a successive retrieval in step 1 in the `If-Modified` HTTP header. If the current care plan has not been changed, a `302` HTTP code (not modified) should be returned.\n\nSequence Diagram:\n\n![](kiola-care-plan-retrieval.drawio.svg)\n",
+    "resource" : [{
+      "type" : "CarePlan",
+      "profile" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-care-plan",
+      "interaction" : [{
+        "code" : "read"
+      },
+      {
+        "code" : "search-type"
+      }],
+      "operation" : [{
+        "name" : "$meta-add",
+        "definition" : "http://hl7.org/fhir/OperationDefinition/Resource-meta-add"
+      }]
+    }]
+  }]
+}

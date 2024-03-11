@@ -1,0 +1,1459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="kiola-implementation-guide"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>KIOLAImplementationGuide</h2><p>The official URL for this implementation guide is: </p><pre>https://fhir.ehealth-systems.at/artifacts/ImplementationGuide/kiola-implementation-guide</pre><div><p>An Implementation Guide for the KIOLA Profiles.</p>
+</div></div>
+  </text>
+  <url value="https://fhir.ehealth-systems.at/artifacts/ImplementationGuide/kiola-implementation-guide"/>
+  <version value="0.1.0"/>
+  <name value="KIOLAImplementationGuide"/>
+  <title value="KIOLA Implementation Guide"/>
+  <status value="active"/>
+  <date value="2024-03-11T08:55:33+00:00"/>
+  <contact>
+    <name value="AIT Austrian Institute of Technology"/>
+    <telecom>
+      <system value="email"/>
+      <value value="mailto:office@ait.ac.at"/>
+    </telecom>
+  </contact>
+  <description value="An Implementation Guide for the KIOLA Profiles."/>
+  <packageId value="kiola-implementation-guide"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="4.3.0"/>
+  <dependsOn id="hl7tx">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on HL7 Terminology"/>
+    </extension>
+    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <packageId value="hl7.terminology.r4"/>
+    <version value="5.3.0"/>
+  </dependsOn>
+  <dependsOn id="hl7ext">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/>
+    </extension>
+    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+    <packageId value="hl7.fhir.uv.extensions.r4"/>
+    <version value="1.0.0"/>
+  </dependsOn>
+  <definition>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2023+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="STU1"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="show-inherited-invariants"/>
+      </extension>
+      <extension url="value">
+        <valueString value="false"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="autoload-resources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="output"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://fhir.ehealth-systems.at/artifacts/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="fmm-definition"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="propagate-status"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="excludelogbinaryformat"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="tabbed-snapshots"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
+      <valueCode value="hl7.fhir.uv.tools#0.1.0"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2023+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="STU1"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="show-inherited-invariants"/>
+      </extension>
+      <extension url="value">
+        <valueString value="false"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="autoload-resources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="output"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://fhir.ehealth-systems.at/artifacts/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="fmm-definition"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="propagate-status"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="excludelogbinaryformat"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="tabbed-snapshots"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CarePlan"/>
+      </extension>
+      <reference>
+        <reference value="CarePlan/5341"/>
+      </reference>
+      <name value="5341"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-care-plan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-smwt"/>
+      </reference>
+      <name value="6-Minute-Walk-Test Measurement Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-activity"/>
+      </reference>
+      <name value="Activity Measurement Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DeviceDefinition"/>
+      </extension>
+      <reference>
+        <reference value="DeviceDefinition/dev-ait-alivecor-ecg"/>
+      </reference>
+      <name value="AliveCor Device Definition Example"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-automatic-transmission-device-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-puls-oxim"/>
+      </reference>
+      <name value="Blood Oximeter Measurement Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-bp"/>
+      </reference>
+      <name value="Blood Pressure Measurement Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-scale"/>
+      </reference>
+      <name value="Body Weight Measurement Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-hf-cardio-ebike-config"/>
+      </reference>
+      <name value="Cardio Ebike Config Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-hf-cardio-ebike-result"/>
+      </reference>
+      <name value="Cardio Ebike Result Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-hf-cardio-ergo-config"/>
+      </reference>
+      <name value="Cardio Ergo Config Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-hf-cardio-ergo-result"/>
+      </reference>
+      <name value="Cardio Ergo Result Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/care-plan-subject-identifier-parameter"/>
+      </reference>
+      <name value="Care Plan Subject Identifier Parameter"/>
+      <description value="Returns care plans of subjects with a matching identifier"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-comment"/>
+      </reference>
+      <name value="Comment Entry Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-q-covid19-v1"/>
+      </reference>
+      <name value="COVID19 Questionnaire Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-med-daily-dose-coumadin-v1"/>
+      </reference>
+      <name value="Daily medication measurement of Coumadin Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-med-daily-dose-falithrom-v1"/>
+      </reference>
+      <name value="Daily medication measurement of Falithrom Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-med-daily-dose-marcumar-v1"/>
+      </reference>
+      <name value="Daily medication measurement of Marcumar Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/device-definition-specialization-system-type-codeable-concept"/>
+      </reference>
+      <name value="Device Definition Specialization System Type Codeable Concept"/>
+      <description value="Extension ..."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-fhir-diagnostic-report"/>
+      </reference>
+      <name value="Diagnostic Report Measurement Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-0-v1"/>
+      </reference>
+      <name value="Generic Questionnaire 0 Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-1-v1"/>
+      </reference>
+      <name value="Generic Questionnaire 1 Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-2-v1"/>
+      </reference>
+      <name value="Generic Questionnaire 2 Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-3-v1"/>
+      </reference>
+      <name value="Generic Questionnaire 3 Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-4-v1"/>
+      </reference>
+      <name value="Generic Questionnaire 4 Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-5-v1"/>
+      </reference>
+      <name value="Generic Questionnaire 5 Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-6-v1"/>
+      </reference>
+      <name value="Generic Questionnaire 6 Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-7-v1"/>
+      </reference>
+      <name value="Generic Questionnaire 7 Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-8-v1"/>
+      </reference>
+      <name value="Generic Questionnaire 8 Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-9-v1"/>
+      </reference>
+      <name value="Generic Questionnaire 9 Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-gtm-ekg"/>
+      </reference>
+      <name value="Getemed ECG Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-glucose"/>
+      </reference>
+      <name value="Glucose Measurement Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-glucose-suppl-v1"/>
+      </reference>
+      <name value="Glucose Supplemental Data Measurement Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-inr"/>
+      </reference>
+      <name value="INR Measurement Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/KIOLAMeasurementAutomaticTransmissionProperties"/>
+      </reference>
+      <name value="KIOLA Automatic Transmission Measurement Device Properties"/>
+      <description value="Properties of automatic transmission devices."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/KIOLAMeasurementAutomaticTransmissionDeviceTypes"/>
+      </reference>
+      <name value="KIOLA Automatic Transmission Measurement Device Types"/>
+      <description value="Types of devices that might automatically transmit vital data measurements to a KIOLA system, without entering the data manually."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/KIOLABoolean"/>
+      </reference>
+      <name value="KIOLA Boolean"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/kiola-boolean-cs"/>
+      </reference>
+      <name value="KIOLA Boolean"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/kiola-care-plan"/>
+      </reference>
+      <name value="KIOLA Care Plan"/>
+      <description value="A patient-specific care plan, containing one or multiple instances of different KIOLA standard treatment plans,&#xA;that might have been adapted individually for the patient, and/or individually assigned KIOLA activities."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/kiola-care-plan-category-cs"/>
+      </reference>
+      <name value="KIOLA Care Plan Category Code System"/>
+      <description value="Categories of care plans supported by KIOLA."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/kiola-care-plan-management"/>
+      </reference>
+      <name value="KIOLA Care Plan Management"/>
+      <description value="KIOLA care plans might be managed by another system. New and modified plans might be uploaded to the server and the status of existing plans might be changed."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/kiola-care-plan-retrieval"/>
+      </reference>
+      <name value="KIOLA Care Plan Retrieval"/>
+      <description value="The currently active KIOLA Care Plan for a patient might be retrieved by a client, using a search with a fixed set of parameters. The retrieval might be confirmed, by adding a meta tag to the instance. ETags might be used to avoid fetching the same resource twice."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/kiola-care-plan-transient-tag-cs"/>
+      </reference>
+      <name value="KIOLA Care Plan Transient Tag Code System"/>
+      <description value="Meta data tags of care plans that should be removed when creating an updated plan for a patient, in case an activity changes."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/kiola-device-cs"/>
+      </reference>
+      <name value="KIOLA Device Codes"/>
+      <description value="Generic device types that can transmit vital data."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/kiola-mdc-cs"/>
+      </reference>
+      <name value="KIOLA Device Codes AIT 11073"/>
+      <description value="Measurement device types for automatic transmission of measurements and their configuration parameters, based on the ISO/IEEE 11073 standard with vendor-specific extensions, mainly AIT. The MDC display name is used as a code."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/KIOLADevices"/>
+      </reference>
+      <name value="KIOLA Devices"/>
+      <description value="Devices, that might transmit data to a KIOLA system."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/kiola-mdc-dim-cs"/>
+      </reference>
+      <name value="KIOLA Dimension Codes AIT 11073"/>
+      <description value="Measurement dimensions supported by KIOLA, based on the ISO/IEEE 11073 standard with vendor-specific extensions, mainly AIT. The MDC display name is used as a code.&#xA;&#xA;All codes might be parametrized using the syntax `CODE:{min=MIN_VAL,max=MAX_VAL}` to define a plausibility range for manual data entry, e.g.: `MDC_DIM_MILLI_G_PER_DL:{min=0,max=1000}`"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/KIOLAGenericQuestionnaires"/>
+      </reference>
+      <name value="KIOLA Generic Questionnaires"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/kiola-measurement-automatic-transmission-device"/>
+      </reference>
+      <name value="KIOLA Measurement Automatic Transmission Device"/>
+      <description value="Device supporting automatic transmission of KIOLA vital data measurements, without entering the data manually."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/kiola-measurement-automatic-transmission-device-definition"/>
+      </reference>
+      <name value="KIOLA Measurement Automatic Transmission Device Definition"/>
+      <description value="Definition of a device supporting automatic transmission of KIOLA vital data measurements, without entering the data manually."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/kiola-measurement-cs"/>
+      </reference>
+      <name value="KIOLA Measurement Codes"/>
+      <description value="Types of vital data measurements that can be transmitted to a KIOLA system. The naming is derived from MDC display names of devices from the ISO/IEEE 11073 standard."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/kiola-measurement-definition"/>
+      </reference>
+      <name value="KIOLA Measurement Definition"/>
+      <description value="The definition of a vital data measurement for KIOLA."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource:abstract"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/kiola-measurement-device"/>
+      </reference>
+      <name value="KIOLA Measurement Device"/>
+      <description value="An abstract device for recording a KIOLA vital data measurement."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource:abstract"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/kiola-measurement-device-definition"/>
+      </reference>
+      <name value="KIOLA Measurement Device Definition"/>
+      <description value="Definition of an abstract device for recording a KIOLA vital data measurement."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/KIOLAMeasurementDeviceTypes"/>
+      </reference>
+      <name value="KIOLA Measurement Device Types"/>
+      <description value="Types of devices that might transmit vital data measurements to a KIOLA system."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/kiola-measurement-manual-entry-device"/>
+      </reference>
+      <name value="KIOLA Measurement Manual Entry Device"/>
+      <description value="Device supporting manual data entry of KIOLA vital data measurements."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/kiola-measurement-manual-entry-device-definition"/>
+      </reference>
+      <name value="KIOLA Measurement Manual Entry Device Definition"/>
+      <description value="Definition of a device supporting manual data entry of KIOLA vital data measurements."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/kiola-measurement-request"/>
+      </reference>
+      <name value="KIOLA Measurement Request"/>
+      <description value="Request to perform a KIOLA vital data measurement."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/KIOLAMeasurementTypes"/>
+      </reference>
+      <name value="KIOLA Measurement Types"/>
+      <description value="Types of vital data measurements, that can be transmitted to a KIOLA system."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/KIOLAMedicationDailyDosage"/>
+      </reference>
+      <name value="KIOLA Medication Daily Dosage"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/kiola-standard-treatment-plan"/>
+      </reference>
+      <name value="KIOLA Standard Treatment Plan"/>
+      <description value="A standard treatment plan for a set of KIOLA activities. It can be applied to patients as a stand-alone plan or in combination with other plans and might be individualized for a single patient, after applying it."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/kiola-standard-treatment-plan-apply"/>
+      </reference>
+      <name value="KIOLA Standard Treatment Plan Apply"/>
+      <description value="Apply a KIOLA standard treatment plan to a patient to generate a treatment plan instance. The current KIOLA care plan of the patient is not taken into account. The standard treatment plan is simply applied to the patient and a new KIOLA care plan containing this treatment plan is returned."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/kiola-standard-treatment-plan-tag-cs"/>
+      </reference>
+      <name value="KIOLA Standard Treatment Plan Code System"/>
+      <description value="Meta data tags of standard treatment plans."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/kiola-standard-treatment-plan-management"/>
+      </reference>
+      <name value="KIOLA Standard Treatment Plan Management"/>
+      <description value="KIOLA standard treatment plans might be managed by another system. Existing plans might be queried, new KIOLA standard treatment plans or updated versions of existing plans might be uploaded to the server. Also the status of existing plans might be changed."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/kiola-standard-treatment-plan-participant-example"/>
+      </reference>
+      <name value="KIOLA Standard Treatment Plan Participant Example"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-standard-treatment-plan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/kiola-standard-treatment-plan-participant-property-example"/>
+      </reference>
+      <name value="KIOLA Standard Treatment Plan Participant Property Example"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-standard-treatment-plan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/kiola-standard-treatment-plan-set-default"/>
+      </reference>
+      <name value="KIOLA Standard Treatment Plan Set Default"/>
+      <description value="One or more KIOLA standard treatment plans might be set as default plans, to be preselected when registering a new patient."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/kiola-standard-treatment-plan-simple-example"/>
+      </reference>
+      <name value="KIOLA Standard Treatment Plan Simple Example"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-standard-treatment-plan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PlanDefinition"/>
+      </extension>
+      <reference>
+        <reference value="PlanDefinition/kiola-standard-treatment-plan-timing-example"/>
+      </reference>
+      <name value="KIOLA Standard Treatment Plan Timing Example"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-standard-treatment-plan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:complex-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/kiola-subject-uuid-identifier"/>
+      </reference>
+      <name value="KIOLA Subject UUID"/>
+      <description value="Primary identifier for a subject in KIOLA"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/kiola-treatment-plan"/>
+      </reference>
+      <name value="KIOLA Treatment Plan"/>
+      <description value="Instance of a KIOLA standard treatment plan, that might have been adapted individually for the patient."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/KIOLAMeasurementUnits"/>
+      </reference>
+      <name value="KIOLAMeasurementUnits"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/KMCAppPackages"/>
+      </reference>
+      <name value="KMC App Packages"/>
+      <description value="App package IDs of first and 3rd party apps, that might be launched by a mobile client to facilitate the transmission process."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/kiola-device-kmc-cs"/>
+      </reference>
+      <name value="KMC Device Codes"/>
+      <description value="Various codes that might be used to configure a mobile client."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/KMCUIReferences"/>
+      </reference>
+      <name value="KMC UI References"/>
+      <description value="References to UI elements, that might be used to initiate the transmission process on a mobile client."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-vnd-ait-q-med-v1"/>
+      </reference>
+      <name value="Medication Taken Questionnaire Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-note"/>
+      </reference>
+      <name value="Note Entry Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/participant-device-definition"/>
+      </reference>
+      <name value="Participant Device Definition"/>
+      <description value="Extension to add a device definition to a participant of an activity or plan definition."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-vnd-ait-q-phys-visit-v1"/>
+      </reference>
+      <name value="Physician Visit Questionnaire Entry Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/plan-definition-patient-instruction"/>
+      </reference>
+      <name value="Plan Definition Patient Instruction"/>
+      <description value="Extension to add a patient instruction to the activity of a plan definition."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-sleepsequence"/>
+      </reference>
+      <name value="Sleepsequence Measurement Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-spiro"/>
+      </reference>
+      <name value="Spirometry Measurement Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-stepcounter"/>
+      </reference>
+      <name value="Step Counter Measurement"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-stepsequence"/>
+      </reference>
+      <name value="Stepsequence Measurement Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-pain-current"/>
+      </reference>
+      <name value="Subjective Pain Measurement Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-pain-range"/>
+      </reference>
+      <name value="Subjective Pain Range Measurement Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-temp"/>
+      </reference>
+      <name value="Temperature Measurement Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-wellbeing"/>
+      </reference>
+      <name value="Wellbeing Measurement Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-wound-assessment"/>
+      </reference>
+      <name value="Wound Assessment Measurement Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActivityDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActivityDefinition/mdc-dev-spec-profile-vnd-ait-wound"/>
+      </reference>
+      <name value="Wound Measurement Definition"/>
+      <exampleCanonical value="https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"/>
+    </resource>
+    <page>
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <nameUrl value="index.html"/>
+        <title value="Home"/>
+        <generation value="markdown"/>
+      </page>
+    </page>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/capabilities"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/examples"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/extensions"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/models"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/operations"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/profiles"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/vocabulary"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/maps"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/testing"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/history"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="fsh-generated/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="template/config"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/images"/>
+    </parameter>
+    <parameter>
+      <code value="path-tx-cache"/>
+      <value value="input-cache/txcache"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>

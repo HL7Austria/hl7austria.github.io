@@ -1,0 +1,98 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-hf-cardio-ergo-config> a fhir:ActivityDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "mdc-dev-spec-profile-vnd-ait-hf-cardio-ergo-config"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+       fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: ActivityDefinition</b><a name=\"mdc-dev-spec-profile-vnd-ait-hf-cardio-ergo-config\"> </a><a name=\"hcmdc-dev-spec-profile-vnd-ait-hf-cardio-ergo-config\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource ActivityDefinition &quot;mdc-dev-spec-profile-vnd-ait-hf-cardio-ergo-config&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-kiola-measurement-definition.html\">KIOLA Measurement Definition</a></p></div><p><b>url</b>: <code>https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-hf-cardio-ergo-config</code></p><p><b>version</b>: 0.1.0</p><p><b>name</b>: MeasurementDefinition_MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_ERGO_CONFIG</p><p><b>title</b>: Cardio Ergo configuration</p><p><b>status</b>: active</p><p><b>date</b>: 2024-03-11 08:55:33+0000</p><p><b>contact</b>: AIT Austrian Institute of Technology: <a href=\"mailto:mailto:office@ait.ac.at\">mailto:office@ait.ac.at</a></p><p><b>kind</b>: ServiceRequest</p><p><b>code</b>: Cardio Ergo configuration <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-kiola-measurement-cs.html\">KIOLA Measurement Codes</a>#MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_ERGO_CONFIG)</span></p><h3>Participants</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Extension</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td/><td>device</td></tr></table><hr/><blockquote><p><b>Generated Narrative: DeviceDefinition #dev-ait-hf-cardio-ergo-config</b><a name=\"dev-ait-hf-cardio-ergo-config\"> </a><a name=\"hcdev-ait-hf-cardio-ergo-config\"> </a></p><p><b>type</b>: Cardio Ergo configuration <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-kiola-mdc-cs.html\">KIOLA Device Codes AIT 11073</a>#MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_ERGO_CONFIG)</span></p><blockquote><p><b>property</b></p><p><b>type</b>: Reference to a tile on the KMC dashboard <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-kiola-device-kmc-cs.html\">KMC Device Codes</a>#ui_reference)</span></p><p><b>valueCode</b>: Ergo <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-kiola-device-kmc-cs.html\">KMC Device Codes</a>#ergo)</span></p></blockquote><blockquote><p><b>property</b></p><p><b>type</b>: App package that handles the data transmission from the device <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-kiola-device-kmc-cs.html\">KMC Device Codes</a>#app_package)</span></p><p><b>valueCode</b>: AIT Emotioncardio App <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-kiola-device-kmc-cs.html\">KMC Device Codes</a>#at.ac.ait.emotioncardio)</span></p></blockquote></blockquote></div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:DeviceDefinition ;
+     fhir:id [ fhir:v "dev-ait-hf-cardio-ergo-config" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-automatic-transmission-device-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-automatic-transmission-device-definition>
+       ] )
+     ] ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://fhir.ehealth-systems.at/kiola/device/AIT-11073"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_ERGO_CONFIG" ] ;
+         fhir:display [ fhir:v "Cardio Ergo configuration" ]
+       ] )
+     ] ;
+     fhir:property ( [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://fhir.ehealth-systems.at/kiola/device/kmc"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "ui_reference" ]
+         ] )
+       ] ;
+       fhir:valueCode ( [
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://fhir.ehealth-systems.at/kiola/device/kmc"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "ergo" ]
+         ] )
+       ] )
+     ] [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://fhir.ehealth-systems.at/kiola/device/kmc"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "app_package" ]
+         ] )
+       ] ;
+       fhir:valueCode ( [
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://fhir.ehealth-systems.at/kiola/device/kmc"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "at.ac.ait.emotioncardio" ]
+         ] )
+       ] )
+     ] )
+  ] ) ; # 
+  fhir:url [ fhir:v "https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-hf-cardio-ergo-config"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "MeasurementDefinition_MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_ERGO_CONFIG"] ; # 
+  fhir:title [ fhir:v "Cardio Ergo configuration"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2024-03-11T08:55:33+00:00"^^xsd:dateTime] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AIT Austrian Institute of Technology" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "mailto:office@ait.ac.at" ]
+     ] )
+  ] ) ; # 
+  fhir:kind [ fhir:v "ServiceRequest"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://fhir.ehealth-systems.at/kiola/measurement"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_ERGO_CONFIG" ]
+     ] ) ;
+     fhir:text [ fhir:v "Cardio Ergo configuration" ]
+  ] ; # 
+  fhir:participant ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "https://fhir.ehealth-systems.at/extensions/ParticipantDeviceDefinition"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Reference ;
+         fhir:reference [ fhir:v "#dev-ait-hf-cardio-ergo-config" ]
+       ]
+     ] ) ;
+     fhir:type [ fhir:v "device" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

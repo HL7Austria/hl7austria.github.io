@@ -1,0 +1,1708 @@
+{
+  "resourceType" : "ImplementationGuide",
+  "id" : "kiola-implementation-guide",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>KIOLAImplementationGuide</h2><p>The official URL for this implementation guide is: </p><pre>https://fhir.ehealth-systems.at/artifacts/ImplementationGuide/kiola-implementation-guide</pre><div><p>An Implementation Guide for the KIOLA Profiles.</p>\n</div></div>"
+  },
+  "url" : "https://fhir.ehealth-systems.at/artifacts/ImplementationGuide/kiola-implementation-guide",
+  "version" : "0.1.0",
+  "name" : "KIOLAImplementationGuide",
+  "title" : "KIOLA Implementation Guide",
+  "status" : "active",
+  "date" : "2024-03-11T08:55:33+00:00",
+  "contact" : [{
+    "name" : "AIT Austrian Institute of Technology",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "mailto:office@ait.ac.at"
+    }]
+  }],
+  "description" : "An Implementation Guide for the KIOLA Profiles.",
+  "packageId" : "kiola-implementation-guide",
+  "license" : "CC0-1.0",
+  "fhirVersion" : ["4.3.0"],
+  "dependsOn" : [{
+    "id" : "hl7tx",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on HL7 Terminology"
+    }],
+    "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
+    "packageId" : "hl7.terminology.r4",
+    "version" : "5.3.0"
+  },
+  {
+    "id" : "hl7ext",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
+    }],
+    "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
+    "packageId" : "hl7.fhir.uv.extensions.r4",
+    "version" : "1.0.0"
+  }],
+  "definition" : {
+    "extension" : [{
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "copyrightyear"
+      },
+      {
+        "url" : "value",
+        "valueString" : "2023+"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "releaselabel"
+      },
+      {
+        "url" : "value",
+        "valueString" : "STU1"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "show-inherited-invariants"
+      },
+      {
+        "url" : "value",
+        "valueString" : "false"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "autoload-resources"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-qa"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/qa"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-temp"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/pages"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-output"
+      },
+      {
+        "url" : "value",
+        "valueString" : "output"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-suppressed-warnings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/ignoreWarnings.txt"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-history"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://fhir.ehealth-systems.at/artifacts/history.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "template-html"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "template-md"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page-md.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-contact"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-context"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-copyright"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-jurisdiction"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-license"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-publisher"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-version"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-wg"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "active-tables"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "fmm-definition"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://hl7.org/fhir/versions.html#maturity"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "propagate-status"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "excludelogbinaryformat"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "tabbed-snapshots"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
+      "valueCode" : "hl7.fhir.uv.tools#0.1.0"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "copyrightyear"
+      },
+      {
+        "url" : "value",
+        "valueString" : "2023+"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "releaselabel"
+      },
+      {
+        "url" : "value",
+        "valueString" : "STU1"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "show-inherited-invariants"
+      },
+      {
+        "url" : "value",
+        "valueString" : "false"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "autoload-resources"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-qa"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/qa"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-temp"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/pages"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-output"
+      },
+      {
+        "url" : "value",
+        "valueString" : "output"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-suppressed-warnings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/ignoreWarnings.txt"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-history"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://fhir.ehealth-systems.at/artifacts/history.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "template-html"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "template-md"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page-md.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-contact"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-context"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-copyright"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-jurisdiction"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-license"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-publisher"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-version"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-wg"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "active-tables"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "fmm-definition"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://hl7.org/fhir/versions.html#maturity"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "propagate-status"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "excludelogbinaryformat"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "tabbed-snapshots"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    }],
+    "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CarePlan"
+      }],
+      "reference" : {
+        "reference" : "CarePlan/5341"
+      },
+      "name" : "5341",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-care-plan"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-smwt"
+      },
+      "name" : "6-Minute-Walk-Test Measurement Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-activity"
+      },
+      "name" : "Activity Measurement Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DeviceDefinition"
+      }],
+      "reference" : {
+        "reference" : "DeviceDefinition/dev-ait-alivecor-ecg"
+      },
+      "name" : "AliveCor Device Definition Example",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-automatic-transmission-device-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-puls-oxim"
+      },
+      "name" : "Blood Oximeter Measurement Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-bp"
+      },
+      "name" : "Blood Pressure Measurement Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-scale"
+      },
+      "name" : "Body Weight Measurement Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-hf-cardio-ebike-config"
+      },
+      "name" : "Cardio Ebike Config Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-hf-cardio-ebike-result"
+      },
+      "name" : "Cardio Ebike Result Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-hf-cardio-ergo-config"
+      },
+      "name" : "Cardio Ergo Config Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-hf-cardio-ergo-result"
+      },
+      "name" : "Cardio Ergo Result Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/care-plan-subject-identifier-parameter"
+      },
+      "name" : "Care Plan Subject Identifier Parameter",
+      "description" : "Returns care plans of subjects with a matching identifier",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-comment"
+      },
+      "name" : "Comment Entry Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-q-covid19-v1"
+      },
+      "name" : "COVID19 Questionnaire Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-med-daily-dose-coumadin-v1"
+      },
+      "name" : "Daily medication measurement of Coumadin Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-med-daily-dose-falithrom-v1"
+      },
+      "name" : "Daily medication measurement of Falithrom Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-med-daily-dose-marcumar-v1"
+      },
+      "name" : "Daily medication measurement of Marcumar Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/device-definition-specialization-system-type-codeable-concept"
+      },
+      "name" : "Device Definition Specialization System Type Codeable Concept",
+      "description" : "Extension ...",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-fhir-diagnostic-report"
+      },
+      "name" : "Diagnostic Report Measurement Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-0-v1"
+      },
+      "name" : "Generic Questionnaire 0 Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-1-v1"
+      },
+      "name" : "Generic Questionnaire 1 Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-2-v1"
+      },
+      "name" : "Generic Questionnaire 2 Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-3-v1"
+      },
+      "name" : "Generic Questionnaire 3 Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-4-v1"
+      },
+      "name" : "Generic Questionnaire 4 Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-5-v1"
+      },
+      "name" : "Generic Questionnaire 5 Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-6-v1"
+      },
+      "name" : "Generic Questionnaire 6 Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-7-v1"
+      },
+      "name" : "Generic Questionnaire 7 Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-8-v1"
+      },
+      "name" : "Generic Questionnaire 8 Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-9-v1"
+      },
+      "name" : "Generic Questionnaire 9 Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-gtm-ekg"
+      },
+      "name" : "Getemed ECG Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-glucose"
+      },
+      "name" : "Glucose Measurement Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-glucose-suppl-v1"
+      },
+      "name" : "Glucose Supplemental Data Measurement Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-inr"
+      },
+      "name" : "INR Measurement Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/KIOLAMeasurementAutomaticTransmissionProperties"
+      },
+      "name" : "KIOLA Automatic Transmission Measurement Device Properties",
+      "description" : "Properties of automatic transmission devices.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/KIOLAMeasurementAutomaticTransmissionDeviceTypes"
+      },
+      "name" : "KIOLA Automatic Transmission Measurement Device Types",
+      "description" : "Types of devices that might automatically transmit vital data measurements to a KIOLA system, without entering the data manually.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/KIOLABoolean"
+      },
+      "name" : "KIOLA Boolean",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/kiola-boolean-cs"
+      },
+      "name" : "KIOLA Boolean",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/kiola-care-plan"
+      },
+      "name" : "KIOLA Care Plan",
+      "description" : "A patient-specific care plan, containing one or multiple instances of different KIOLA standard treatment plans,\nthat might have been adapted individually for the patient, and/or individually assigned KIOLA activities.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/kiola-care-plan-category-cs"
+      },
+      "name" : "KIOLA Care Plan Category Code System",
+      "description" : "Categories of care plans supported by KIOLA.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/kiola-care-plan-management"
+      },
+      "name" : "KIOLA Care Plan Management",
+      "description" : "KIOLA care plans might be managed by another system. New and modified plans might be uploaded to the server and the status of existing plans might be changed.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/kiola-care-plan-retrieval"
+      },
+      "name" : "KIOLA Care Plan Retrieval",
+      "description" : "The currently active KIOLA Care Plan for a patient might be retrieved by a client, using a search with a fixed set of parameters. The retrieval might be confirmed, by adding a meta tag to the instance. ETags might be used to avoid fetching the same resource twice.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/kiola-care-plan-transient-tag-cs"
+      },
+      "name" : "KIOLA Care Plan Transient Tag Code System",
+      "description" : "Meta data tags of care plans that should be removed when creating an updated plan for a patient, in case an activity changes.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/kiola-device-cs"
+      },
+      "name" : "KIOLA Device Codes",
+      "description" : "Generic device types that can transmit vital data.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/kiola-mdc-cs"
+      },
+      "name" : "KIOLA Device Codes AIT 11073",
+      "description" : "Measurement device types for automatic transmission of measurements and their configuration parameters, based on the ISO/IEEE 11073 standard with vendor-specific extensions, mainly AIT. The MDC display name is used as a code.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/KIOLADevices"
+      },
+      "name" : "KIOLA Devices",
+      "description" : "Devices, that might transmit data to a KIOLA system.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/kiola-mdc-dim-cs"
+      },
+      "name" : "KIOLA Dimension Codes AIT 11073",
+      "description" : "Measurement dimensions supported by KIOLA, based on the ISO/IEEE 11073 standard with vendor-specific extensions, mainly AIT. The MDC display name is used as a code.\n\nAll codes might be parametrized using the syntax `CODE:{min=MIN_VAL,max=MAX_VAL}` to define a plausibility range for manual data entry, e.g.: `MDC_DIM_MILLI_G_PER_DL:{min=0,max=1000}`",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/KIOLAGenericQuestionnaires"
+      },
+      "name" : "KIOLA Generic Questionnaires",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/kiola-measurement-automatic-transmission-device"
+      },
+      "name" : "KIOLA Measurement Automatic Transmission Device",
+      "description" : "Device supporting automatic transmission of KIOLA vital data measurements, without entering the data manually.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/kiola-measurement-automatic-transmission-device-definition"
+      },
+      "name" : "KIOLA Measurement Automatic Transmission Device Definition",
+      "description" : "Definition of a device supporting automatic transmission of KIOLA vital data measurements, without entering the data manually.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/kiola-measurement-cs"
+      },
+      "name" : "KIOLA Measurement Codes",
+      "description" : "Types of vital data measurements that can be transmitted to a KIOLA system. The naming is derived from MDC display names of devices from the ISO/IEEE 11073 standard.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/kiola-measurement-definition"
+      },
+      "name" : "KIOLA Measurement Definition",
+      "description" : "The definition of a vital data measurement for KIOLA.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource:abstract"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/kiola-measurement-device"
+      },
+      "name" : "KIOLA Measurement Device",
+      "description" : "An abstract device for recording a KIOLA vital data measurement.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource:abstract"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/kiola-measurement-device-definition"
+      },
+      "name" : "KIOLA Measurement Device Definition",
+      "description" : "Definition of an abstract device for recording a KIOLA vital data measurement.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/KIOLAMeasurementDeviceTypes"
+      },
+      "name" : "KIOLA Measurement Device Types",
+      "description" : "Types of devices that might transmit vital data measurements to a KIOLA system.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/kiola-measurement-manual-entry-device"
+      },
+      "name" : "KIOLA Measurement Manual Entry Device",
+      "description" : "Device supporting manual data entry of KIOLA vital data measurements.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/kiola-measurement-manual-entry-device-definition"
+      },
+      "name" : "KIOLA Measurement Manual Entry Device Definition",
+      "description" : "Definition of a device supporting manual data entry of KIOLA vital data measurements.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/kiola-measurement-request"
+      },
+      "name" : "KIOLA Measurement Request",
+      "description" : "Request to perform a KIOLA vital data measurement.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/KIOLAMeasurementTypes"
+      },
+      "name" : "KIOLA Measurement Types",
+      "description" : "Types of vital data measurements, that can be transmitted to a KIOLA system.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/KIOLAMedicationDailyDosage"
+      },
+      "name" : "KIOLA Medication Daily Dosage",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/kiola-standard-treatment-plan"
+      },
+      "name" : "KIOLA Standard Treatment Plan",
+      "description" : "A standard treatment plan for a set of KIOLA activities. It can be applied to patients as a stand-alone plan or in combination with other plans and might be individualized for a single patient, after applying it.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/kiola-standard-treatment-plan-apply"
+      },
+      "name" : "KIOLA Standard Treatment Plan Apply",
+      "description" : "Apply a KIOLA standard treatment plan to a patient to generate a treatment plan instance. The current KIOLA care plan of the patient is not taken into account. The standard treatment plan is simply applied to the patient and a new KIOLA care plan containing this treatment plan is returned.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/kiola-standard-treatment-plan-tag-cs"
+      },
+      "name" : "KIOLA Standard Treatment Plan Code System",
+      "description" : "Meta data tags of standard treatment plans.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/kiola-standard-treatment-plan-management"
+      },
+      "name" : "KIOLA Standard Treatment Plan Management",
+      "description" : "KIOLA standard treatment plans might be managed by another system. Existing plans might be queried, new KIOLA standard treatment plans or updated versions of existing plans might be uploaded to the server. Also the status of existing plans might be changed.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "PlanDefinition"
+      }],
+      "reference" : {
+        "reference" : "PlanDefinition/kiola-standard-treatment-plan-participant-example"
+      },
+      "name" : "KIOLA Standard Treatment Plan Participant Example",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-standard-treatment-plan"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "PlanDefinition"
+      }],
+      "reference" : {
+        "reference" : "PlanDefinition/kiola-standard-treatment-plan-participant-property-example"
+      },
+      "name" : "KIOLA Standard Treatment Plan Participant Property Example",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-standard-treatment-plan"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/kiola-standard-treatment-plan-set-default"
+      },
+      "name" : "KIOLA Standard Treatment Plan Set Default",
+      "description" : "One or more KIOLA standard treatment plans might be set as default plans, to be preselected when registering a new patient.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "PlanDefinition"
+      }],
+      "reference" : {
+        "reference" : "PlanDefinition/kiola-standard-treatment-plan-simple-example"
+      },
+      "name" : "KIOLA Standard Treatment Plan Simple Example",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-standard-treatment-plan"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "PlanDefinition"
+      }],
+      "reference" : {
+        "reference" : "PlanDefinition/kiola-standard-treatment-plan-timing-example"
+      },
+      "name" : "KIOLA Standard Treatment Plan Timing Example",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-standard-treatment-plan"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:complex-type"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/kiola-subject-uuid-identifier"
+      },
+      "name" : "KIOLA Subject UUID",
+      "description" : "Primary identifier for a subject in KIOLA",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/kiola-treatment-plan"
+      },
+      "name" : "KIOLA Treatment Plan",
+      "description" : "Instance of a KIOLA standard treatment plan, that might have been adapted individually for the patient.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/KIOLAMeasurementUnits"
+      },
+      "name" : "KIOLAMeasurementUnits",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/KMCAppPackages"
+      },
+      "name" : "KMC App Packages",
+      "description" : "App package IDs of first and 3rd party apps, that might be launched by a mobile client to facilitate the transmission process.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/kiola-device-kmc-cs"
+      },
+      "name" : "KMC Device Codes",
+      "description" : "Various codes that might be used to configure a mobile client.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/KMCUIReferences"
+      },
+      "name" : "KMC UI References",
+      "description" : "References to UI elements, that might be used to initiate the transmission process on a mobile client.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-vnd-ait-q-med-v1"
+      },
+      "name" : "Medication Taken Questionnaire Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-note"
+      },
+      "name" : "Note Entry Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/participant-device-definition"
+      },
+      "name" : "Participant Device Definition",
+      "description" : "Extension to add a device definition to a participant of an activity or plan definition.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-vnd-ait-q-phys-visit-v1"
+      },
+      "name" : "Physician Visit Questionnaire Entry Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/plan-definition-patient-instruction"
+      },
+      "name" : "Plan Definition Patient Instruction",
+      "description" : "Extension to add a patient instruction to the activity of a plan definition.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-sleepsequence"
+      },
+      "name" : "Sleepsequence Measurement Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-spiro"
+      },
+      "name" : "Spirometry Measurement Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-stepcounter"
+      },
+      "name" : "Step Counter Measurement",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-stepsequence"
+      },
+      "name" : "Stepsequence Measurement Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-pain-current"
+      },
+      "name" : "Subjective Pain Measurement Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-pain-range"
+      },
+      "name" : "Subjective Pain Range Measurement Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-temp"
+      },
+      "name" : "Temperature Measurement Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-wellbeing"
+      },
+      "name" : "Wellbeing Measurement Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-wound-assessment"
+      },
+      "name" : "Wound Assessment Measurement Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-wound"
+      },
+      "name" : "Wound Measurement Definition",
+      "exampleCanonical" : "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"
+    }],
+    "page" : {
+      "nameUrl" : "toc.html",
+      "title" : "Table of Contents",
+      "generation" : "html",
+      "page" : [{
+        "nameUrl" : "index.html",
+        "title" : "Home",
+        "generation" : "markdown"
+      }]
+    },
+    "parameter" : [{
+      "code" : "path-resource",
+      "value" : "input/capabilities"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/examples"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/extensions"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/models"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/operations"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/profiles"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/resources"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/vocabulary"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/maps"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/testing"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/history"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "fsh-generated/resources"
+    },
+    {
+      "code" : "path-pages",
+      "value" : "template/config"
+    },
+    {
+      "code" : "path-pages",
+      "value" : "input/images"
+    },
+    {
+      "code" : "path-tx-cache",
+      "value" : "input-cache/txcache"
+    }]
+  }
+}

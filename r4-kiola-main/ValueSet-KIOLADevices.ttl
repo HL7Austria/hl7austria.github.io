@@ -1,0 +1,39 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.ehealth-systems.at/artifacts/ValueSet/KIOLADevices> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "KIOLADevices"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Import all the codes that are contained in <a href=\"CodeSystem-kiola-device-cs.html\">https://fhir.ehealth-systems.at/kiola/device</a></li></ul></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://fhir.ehealth-systems.at/artifacts/ValueSet/KIOLADevices"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "KIOLADevices"] ; # 
+  fhir:title [ fhir:v "KIOLA Devices"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2024-03-11T08:55:33+00:00"^^xsd:dateTime] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AIT Austrian Institute of Technology" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "mailto:office@ait.ac.at" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Devices, that might transmit data to a KIOLA system."] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:valueSet ( [
+         fhir:v "https://fhir.ehealth-systems.at/kiola/device"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/kiola/device>
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

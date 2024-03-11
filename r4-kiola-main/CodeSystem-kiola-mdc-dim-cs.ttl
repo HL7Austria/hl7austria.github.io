@@ -1,0 +1,64 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.ehealth-systems.at/artifacts/CodeSystem/kiola-mdc-dim-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "kiola-mdc-dim-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This  code system <code>https://fhir.ehealth-systems.at/kiola/dimension/AIT-11073</code> provides <b>a fragment</b> that includes following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">MDC_DIM_CENTI_M<a name=\"kiola-mdc-dim-cs-MDC_DIM_CENTI_M\"> </a></td><td/></tr><tr><td style=\"white-space:nowrap\">MDC_DIM_KILO_G<a name=\"kiola-mdc-dim-cs-MDC_DIM_KILO_G\"> </a></td><td/></tr><tr><td style=\"white-space:nowrap\">MDC_DIM_MMHG<a name=\"kiola-mdc-dim-cs-MDC_DIM_MMHG\"> </a></td><td/></tr><tr><td style=\"white-space:nowrap\">MDC_DIM_MILLI_G_PER_DL<a name=\"kiola-mdc-dim-cs-MDC_DIM_MILLI_G_PER_DL\"> </a></td><td>mg/dl</td></tr><tr><td style=\"white-space:nowrap\">MDC_DIM_PERCENT<a name=\"kiola-mdc-dim-cs-MDC_DIM_PERCENT\"> </a></td><td>%</td></tr><tr><td style=\"white-space:nowrap\">MDC_DIM_BEAT_PER_MIN<a name=\"kiola-mdc-dim-cs-MDC_DIM_BEAT_PER_MIN\"> </a></td><td/></tr><tr><td style=\"white-space:nowrap\">MDC_DIM_RPM<a name=\"kiola-mdc-dim-cs-MDC_DIM_RPM\"> </a></td><td/></tr><tr><td style=\"white-space:nowrap\">MDC_DIM_X_ISO8601<a name=\"kiola-mdc-dim-cs-MDC_DIM_X_ISO8601\"> </a></td><td/></tr><tr><td style=\"white-space:nowrap\">MDC_DIM_X_CAL<a name=\"kiola-mdc-dim-cs-MDC_DIM_X_CAL\"> </a></td><td/></tr><tr><td style=\"white-space:nowrap\">MDC_DIM_VND_AIT_RFC3339<a name=\"kiola-mdc-dim-cs-MDC_DIM_VND_AIT_RFC3339\"> </a></td><td/></tr><tr><td style=\"white-space:nowrap\">MDC_DIM_VND_AIT_CBOR_TS_FIX<a name=\"kiola-mdc-dim-cs-MDC_DIM_VND_AIT_CBOR_TS_FIX\"> </a></td><td>cbor_fixed</td></tr><tr><td style=\"white-space:nowrap\">MDC_DIM_VND_AIT_CBOR_TS_FLEX<a name=\"kiola-mdc-dim-cs-MDC_DIM_VND_AIT_CBOR_TS_FLEX\"> </a></td><td>cbor_flex</td></tr><tr><td style=\"white-space:nowrap\">MDC_DIM_VND_AIT_CMP[MDC_DIM_S,MDC_DIM_X_WATT]<a name=\"kiola-mdc-dim-cs-MDC_DIM_VND_AIT_CMP.91MDC_DIM_S.44MDC_DIM_X_WATT.93\"> </a></td><td/></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://fhir.ehealth-systems.at/kiola/dimension/AIT-11073"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "KIOLAMDCDIMCS"] ; # 
+  fhir:title [ fhir:v "KIOLA Dimension Codes AIT 11073"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2024-03-11T08:55:33+00:00"^^xsd:dateTime] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AIT Austrian Institute of Technology" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "mailto:office@ait.ac.at" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Measurement dimensions supported by KIOLA, based on the ISO/IEEE 11073 standard with vendor-specific extensions, mainly AIT. The MDC display name is used as a code.\n\nAll codes might be parametrized using the syntax `CODE:{min=MIN_VAL,max=MAX_VAL}` to define a plausibility range for manual data entry, e.g.: `MDC_DIM_MILLI_G_PER_DL:{min=0,max=1000}`"] ; # 
+  fhir:compositional [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:content [ fhir:v "fragment"] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "MDC_DIM_CENTI_M" ]
+  ] [
+     fhir:code [ fhir:v "MDC_DIM_KILO_G" ]
+  ] [
+     fhir:code [ fhir:v "MDC_DIM_MMHG" ]
+  ] [
+     fhir:code [ fhir:v "MDC_DIM_MILLI_G_PER_DL" ] ;
+     fhir:display [ fhir:v "mg/dl" ]
+  ] [
+     fhir:code [ fhir:v "MDC_DIM_PERCENT" ] ;
+     fhir:display [ fhir:v "%" ]
+  ] [
+     fhir:code [ fhir:v "MDC_DIM_BEAT_PER_MIN" ]
+  ] [
+     fhir:code [ fhir:v "MDC_DIM_RPM" ]
+  ] [
+     fhir:code [ fhir:v "MDC_DIM_X_ISO8601" ]
+  ] [
+     fhir:code [ fhir:v "MDC_DIM_X_CAL" ]
+  ] [
+     fhir:code [ fhir:v "MDC_DIM_VND_AIT_RFC3339" ]
+  ] [
+     fhir:code [ fhir:v "MDC_DIM_VND_AIT_CBOR_TS_FIX" ] ;
+     fhir:display [ fhir:v "cbor_fixed" ]
+  ] [
+     fhir:code [ fhir:v "MDC_DIM_VND_AIT_CBOR_TS_FLEX" ] ;
+     fhir:display [ fhir:v "cbor_flex" ]
+  ] [
+     fhir:code [ fhir:v "MDC_DIM_VND_AIT_CMP[MDC_DIM_S,MDC_DIM_X_WATT]" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

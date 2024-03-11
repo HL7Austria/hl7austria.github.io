@@ -1,0 +1,68 @@
+{
+  "resourceType" : "ActivityDefinition",
+  "id" : "mdc-dev-spec-profile-vnd-ait-glucose-suppl-v1",
+  "meta" : {
+    "profile" : ["https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: ActivityDefinition</b><a name=\"mdc-dev-spec-profile-vnd-ait-glucose-suppl-v1\"> </a><a name=\"hcmdc-dev-spec-profile-vnd-ait-glucose-suppl-v1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource ActivityDefinition &quot;mdc-dev-spec-profile-vnd-ait-glucose-suppl-v1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-kiola-measurement-definition.html\">KIOLA Measurement Definition</a></p></div><p><b>url</b>: <code>https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-glucose-suppl-v1</code></p><p><b>version</b>: 0.1.0</p><p><b>name</b>: MeasurementDefinition_MDC_DEV_SPEC_PROFILE_VND_AIT_GLUCOSE_SUPPL_V1</p><p><b>title</b>: Glucose supplemental data measurement</p><p><b>status</b>: active</p><p><b>date</b>: 2024-03-11 08:55:33+0000</p><p><b>contact</b>: AIT Austrian Institute of Technology: <a href=\"mailto:mailto:office@ait.ac.at\">mailto:office@ait.ac.at</a></p><p><b>kind</b>: ServiceRequest</p><p><b>code</b>: Glucose supplemental data measurement <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-kiola-measurement-cs.html\">KIOLA Measurement Codes</a>#MDC_DEV_SPEC_PROFILE_VND_AIT_GLUCOSE_SUPPL_V1)</span></p><h3>Participants</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Extension</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td/><td>device</td></tr></table><hr/><blockquote><p><b>Generated Narrative: DeviceDefinition #dev-sdc-glucose-suppl-v1</b><a name=\"dev-sdc-glucose-suppl-v1\"> </a><a name=\"hcdev-sdc-glucose-suppl-v1\"> </a></p><p><b>type</b>: Structured Data Capture <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-kiola-device-cs.html\">KIOLA Device Codes</a>#SDC)</span></p><h3>Properties</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td><td><b>ValueCode</b></td></tr><tr><td style=\"display: none\">*</td><td>Reference to a tile on the KMC dashboard <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-kiola-device-kmc-cs.html\">KMC Device Codes</a>#ui_reference)</span></td><td>Blood glucose supplemental data questionnaire <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-kiola-device-kmc-cs.html\">KMC Device Codes</a>#glucose_suppl:{representation=SinglePageQuestionnaire})</span></td></tr></table></blockquote></div>"
+  },
+  "contained" : [{
+    "resourceType" : "DeviceDefinition",
+    "id" : "dev-sdc-glucose-suppl-v1",
+    "meta" : {
+      "profile" : ["https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-manual-entry-device-definition"]
+    },
+    "type" : {
+      "coding" : [{
+        "system" : "https://fhir.ehealth-systems.at/kiola/device",
+        "code" : "SDC"
+      }]
+    },
+    "property" : [{
+      "type" : {
+        "coding" : [{
+          "system" : "https://fhir.ehealth-systems.at/kiola/device/kmc",
+          "code" : "ui_reference"
+        }]
+      },
+      "valueCode" : [{
+        "coding" : [{
+          "system" : "https://fhir.ehealth-systems.at/kiola/device/kmc",
+          "code" : "glucose_suppl:{representation=SinglePageQuestionnaire}"
+        }]
+      }]
+    }]
+  }],
+  "url" : "https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-glucose-suppl-v1",
+  "version" : "0.1.0",
+  "name" : "MeasurementDefinition_MDC_DEV_SPEC_PROFILE_VND_AIT_GLUCOSE_SUPPL_V1",
+  "title" : "Glucose supplemental data measurement",
+  "status" : "active",
+  "date" : "2024-03-11T08:55:33+00:00",
+  "contact" : [{
+    "name" : "AIT Austrian Institute of Technology",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "mailto:office@ait.ac.at"
+    }]
+  }],
+  "kind" : "ServiceRequest",
+  "code" : {
+    "coding" : [{
+      "system" : "https://fhir.ehealth-systems.at/kiola/measurement",
+      "code" : "MDC_DEV_SPEC_PROFILE_VND_AIT_GLUCOSE_SUPPL_V1"
+    }],
+    "text" : "Glucose supplemental data measurement"
+  },
+  "participant" : [{
+    "extension" : [{
+      "url" : "https://fhir.ehealth-systems.at/extensions/ParticipantDeviceDefinition",
+      "valueReference" : {
+        "reference" : "#dev-sdc-glucose-suppl-v1"
+      }
+    }],
+    "type" : "device"
+  }]
+}

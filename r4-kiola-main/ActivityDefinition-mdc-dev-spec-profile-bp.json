@@ -1,0 +1,77 @@
+{
+  "resourceType" : "ActivityDefinition",
+  "id" : "mdc-dev-spec-profile-bp",
+  "meta" : {
+    "profile" : ["https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: ActivityDefinition</b><a name=\"mdc-dev-spec-profile-bp\"> </a><a name=\"hcmdc-dev-spec-profile-bp\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource ActivityDefinition &quot;mdc-dev-spec-profile-bp&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-kiola-measurement-definition.html\">KIOLA Measurement Definition</a></p></div><p><b>url</b>: <code>https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-bp</code></p><p><b>version</b>: 0.1.0</p><p><b>name</b>: MeasurementDefinition_MDC_DEV_SPEC_PROFILE_BP</p><p><b>title</b>: Blood pressure measurement</p><p><b>status</b>: active</p><p><b>date</b>: 2024-03-11 08:55:33+0000</p><p><b>contact</b>: AIT Austrian Institute of Technology: <a href=\"mailto:mailto:office@ait.ac.at\">mailto:office@ait.ac.at</a></p><p><b>kind</b>: ServiceRequest</p><p><b>code</b>: Blood pressure measurement <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-kiola-measurement-cs.html\">KIOLA Measurement Codes</a>#MDC_DEV_SPEC_PROFILE_BP)</span></p><blockquote><p><b>participant</b></p><p><b>Participant Device Definition</b>: <a name=\"hcdev-sdc\"> </a></p><blockquote><p/><p><a name=\"dev-sdc\"> </a></p><p><a name=\"hcdev-sdc\"> </a></p><p><b>type</b>: Structured Data Capture <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-kiola-device-cs.html\">KIOLA Device Codes</a>#SDC)</span></p></blockquote><p><b>type</b>: device</p></blockquote><blockquote><p><b>participant</b></p><p><b>Participant Device Definition</b>: <a name=\"hcdev-bp\"> </a></p><blockquote><p/><p><a name=\"dev-bp\"> </a></p><p><a name=\"hcdev-bp\"> </a></p><p><b>type</b>: Blood pressure device <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-kiola-mdc-cs.html\">KIOLA Device Codes AIT 11073</a>#MDC_DEV_SPEC_PROFILE_BP)</span></p></blockquote><p><b>type</b>: device</p></blockquote><hr/><blockquote><p><b>Generated Narrative: DeviceDefinition #dev-sdc</b><a name=\"dev-sdc\"> </a><a name=\"hcdev-sdc\"> </a></p><p><b>type</b>: Structured Data Capture <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-kiola-device-cs.html\">KIOLA Device Codes</a>#SDC)</span></p></blockquote><hr/><blockquote><p><b>Generated Narrative: DeviceDefinition #dev-bp</b><a name=\"dev-bp\"> </a><a name=\"hcdev-bp\"> </a></p><p><b>type</b>: Blood pressure device <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-kiola-mdc-cs.html\">KIOLA Device Codes AIT 11073</a>#MDC_DEV_SPEC_PROFILE_BP)</span></p></blockquote></div>"
+  },
+  "contained" : [{
+    "resourceType" : "DeviceDefinition",
+    "id" : "dev-sdc",
+    "meta" : {
+      "profile" : ["https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-manual-entry-device-definition"]
+    },
+    "type" : {
+      "coding" : [{
+        "system" : "https://fhir.ehealth-systems.at/kiola/device",
+        "code" : "SDC"
+      }]
+    }
+  },
+  {
+    "resourceType" : "DeviceDefinition",
+    "id" : "dev-bp",
+    "meta" : {
+      "profile" : ["https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-automatic-transmission-device-definition"]
+    },
+    "type" : {
+      "coding" : [{
+        "system" : "https://fhir.ehealth-systems.at/kiola/device/AIT-11073",
+        "code" : "MDC_DEV_SPEC_PROFILE_BP",
+        "display" : "Blood pressure device"
+      }]
+    }
+  }],
+  "url" : "https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-bp",
+  "version" : "0.1.0",
+  "name" : "MeasurementDefinition_MDC_DEV_SPEC_PROFILE_BP",
+  "title" : "Blood pressure measurement",
+  "status" : "active",
+  "date" : "2024-03-11T08:55:33+00:00",
+  "contact" : [{
+    "name" : "AIT Austrian Institute of Technology",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "mailto:office@ait.ac.at"
+    }]
+  }],
+  "kind" : "ServiceRequest",
+  "code" : {
+    "coding" : [{
+      "system" : "https://fhir.ehealth-systems.at/kiola/measurement",
+      "code" : "MDC_DEV_SPEC_PROFILE_BP"
+    }],
+    "text" : "Blood pressure measurement"
+  },
+  "participant" : [{
+    "extension" : [{
+      "url" : "https://fhir.ehealth-systems.at/extensions/ParticipantDeviceDefinition",
+      "valueReference" : {
+        "reference" : "#dev-sdc"
+      }
+    }],
+    "type" : "device"
+  },
+  {
+    "extension" : [{
+      "url" : "https://fhir.ehealth-systems.at/extensions/ParticipantDeviceDefinition",
+      "valueReference" : {
+        "reference" : "#dev-bp"
+      }
+    }],
+    "type" : "device"
+  }]
+}

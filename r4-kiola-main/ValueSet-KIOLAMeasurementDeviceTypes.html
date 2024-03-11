@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>KIOLA-IMPLEMENTATION-GUIDE\KIOLA Measurement Device Types - FHIR® v4.3.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"2.27"}
+    h3,h4,h5,h6{--heading-prefix:"2.27"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img id="header-logo" src="AIT_Bildmarke.png" />
+          </div>
+          <div class="col-11">
+        <!-- at-fhir-ig-template end -->
+            <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">KIOLA Implementation Guide</span><br/>
+                <span class="label label-info">0.1.0 - STU1</span>
+              </p>
+            </div>
+        <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+        <!-- at-fhir-ig-template end -->
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R5/index.html">FHIR®</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">Home</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Details<b class="caret"> </b></a>
+    <ul class="dropdown-menu">
+        <li><a href="StructureDefinition-kiola-care-plan.html">KIOLA Care Plan</a></li>
+        <li><a href="StructureDefinition-kiola-standard-treatment-plan.html">KIOLA Standard Treatment Plan</a></li>
+        <li><a href="StructureDefinition-kiola-measurement-definition.html">KIOLA Measurement Definition</a></li>
+    </ul>
+  </li>
+  <li><a href="artifacts.html">Artifacts Summary</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>KIOLA Measurement Device Types</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">KIOLA Implementation Guide - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://fhir.ehealth-systems.at/artifacts/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="ValueSet-KIOLAMeasurementDeviceTypes.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-KIOLAMeasurementDeviceTypes.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-KIOLAMeasurementDeviceTypes.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+  <h2 id="root">ValueSet: KIOLA Measurement Device Types
+
+  </h2>
+  <table class="colsi">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://fhir.ehealth-systems.at/artifacts/ValueSet/KIOLAMeasurementDeviceTypes<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://fhir.ehealth-systems.at/artifacts/ValueSet/KIOLAMeasurementDeviceTypes"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">0.1.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://fhir.ehealth-systems.at/artifacts/ValueSet/KIOLAMeasurementDeviceTypes|0.1.0"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Active
+          
+            as of 2024-03-11
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">KIOLAMeasurementDeviceTypes</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+<p>
+<p>Types of devices that might transmit vital data measurements to a KIOLA system.</p>
+
+</p>
+
+
+  <p>
+    <b>References</b>
+  </p>
+  
+<ul>
+ <li><a href="StructureDefinition-kiola-measurement-device.html">KIOLA Measurement Device</a></li>
+ <li><a href="StructureDefinition-kiola-measurement-device-definition.html">KIOLA Measurement Device Definition</a></li>
+</ul>
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <a name="definition"> </a>
+
+<!-- Content Logical Definition heading in the fragment -->
+  <h3>Logical Definition (CLD)</h3>
+<div xmlns="http://www.w3.org/1999/xhtml"><p>This value set includes codes based on the following rules:</p><ul><li>Include these codes as defined in <a href="CodeSystem-kiola-device-cs.html"><code>https://fhir.ehealth-systems.at/kiola/device</code></a><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href="CodeSystem-kiola-device-cs.html#kiola-device-cs-SDC">SDC</a></td><td style="color: #cccccc">Structured Data Capture</td><td>A device to manually enter vital data using a questionnaire.</td></tr></table></li><li>Import all the codes that are contained in <a href="ValueSet-KIOLAMeasurementAutomaticTransmissionDeviceTypes.html">KIOLA Automatic Transmission Measurement Device Types</a></li></ul></div>
+
+  <p>&#160;</p>
+  <a name="expansion"> </a>
+  <h3 id="expansion">Expansion</h3>
+
+  <div xmlns="http://www.w3.org/1999/xhtml"><div style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px"><p>Expansion based on: </p><ul><li><a href="CodeSystem-kiola-device-cs.html">codesystem KIOLA Device Codes v0.1.0 (CodeSystem)</a></li><li><a href="CodeSystem-kiola-mdc-cs.html">codesystem KIOLA Device Codes AIT 11073 v0.1.0 (CodeSystem)</a></li><li><a href="ValueSet-KIOLAMeasurementAutomaticTransmissionDeviceTypes.html">valueset KIOLA Automatic Transmission Measurement Device Types v0.1.0 (ValueSet)</a></li></ul></div><p>This value set contains 19 concepts.</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap"><a name="https---fhir.ehealth-systems.at-kiola-device-SDC"> </a>  <a href="CodeSystem-kiola-device-cs.html#kiola-device-cs-SDC">SDC</a></td><td>https://fhir.ehealth-systems.at/kiola/device</td><td>Structured Data Capture</td><td><div><p>A device to manually enter vital data using a questionnaire.</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="https---fhir.ehealth-systems.at-kiola-device-AIT-11073-MDC-DEV-SPEC-PROFILE-GLUCOSE"> </a>  <a href="CodeSystem-kiola-mdc-cs.html#kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_GLUCOSE">MDC_DEV_SPEC_PROFILE_GLUCOSE</a></td><td>https://fhir.ehealth-systems.at/kiola/device/AIT-11073</td><td>Glucose monitor</td><td><div><p>A blood glucose monitor.</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="https---fhir.ehealth-systems.at-kiola-device-AIT-11073-MDC-DEV-SPEC-PROFILE-SCALE"> </a>  <a href="CodeSystem-kiola-mdc-cs.html#kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_SCALE">MDC_DEV_SPEC_PROFILE_SCALE</a></td><td>https://fhir.ehealth-systems.at/kiola/device/AIT-11073</td><td>Body weight scale</td><td><div/></td></tr><tr><td style="white-space:nowrap"><a name="https---fhir.ehealth-systems.at-kiola-device-AIT-11073-MDC-DEV-SPEC-PROFILE-BP"> </a>  <a href="CodeSystem-kiola-mdc-cs.html#kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_BP">MDC_DEV_SPEC_PROFILE_BP</a></td><td>https://fhir.ehealth-systems.at/kiola/device/AIT-11073</td><td>Blood pressure device</td><td><div/></td></tr><tr><td style="white-space:nowrap"><a name="https---fhir.ehealth-systems.at-kiola-device-AIT-11073-MDC-DEV-SPEC-PROFILE-TEMP"> </a>  <a href="CodeSystem-kiola-mdc-cs.html#kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_TEMP">MDC_DEV_SPEC_PROFILE_TEMP</a></td><td>https://fhir.ehealth-systems.at/kiola/device/AIT-11073</td><td>Temperature measurement device</td><td><div/></td></tr><tr><td style="white-space:nowrap"><a name="https---fhir.ehealth-systems.at-kiola-device-AIT-11073-MDC-DEV-SPEC-PROFILE-SPIRO"> </a>  <a href="CodeSystem-kiola-mdc-cs.html#kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_SPIRO">MDC_DEV_SPEC_PROFILE_SPIRO</a></td><td>https://fhir.ehealth-systems.at/kiola/device/AIT-11073</td><td>Spirometry device</td><td><div/></td></tr><tr><td style="white-space:nowrap"><a name="https---fhir.ehealth-systems.at-kiola-device-AIT-11073-MDC-DEV-SPEC-PROFILE-PULS-OXIM"> </a>  <a href="CodeSystem-kiola-mdc-cs.html#kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_PULS_OXIM">MDC_DEV_SPEC_PROFILE_PULS_OXIM</a></td><td>https://fhir.ehealth-systems.at/kiola/device/AIT-11073</td><td>Blood pressure device</td><td><div/></td></tr><tr><td style="white-space:nowrap"><a name="https---fhir.ehealth-systems.at-kiola-device-AIT-11073-MDC-DEV-SPEC-PROFILE-INR"> </a>  <a href="CodeSystem-kiola-mdc-cs.html#kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_INR">MDC_DEV_SPEC_PROFILE_INR</a></td><td>https://fhir.ehealth-systems.at/kiola/device/AIT-11073</td><td>INR measurement device</td><td><div><p>A device to measure the International Normalized Ratio.</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="https---fhir.ehealth-systems.at-kiola-device-AIT-11073-MDC-DEV-SPEC-PROFILE-VND-AIT-HF-CARDIO-ERGO-RESULT"> </a>  <a href="CodeSystem-kiola-mdc-cs.html#kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_ERGO_RESULT">MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_ERGO_RESULT</a></td><td>https://fhir.ehealth-systems.at/kiola/device/AIT-11073</td><td>Cardio ergo result</td><td><div><p>A device used to specify the cardio measurements of an ergometer.</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="https---fhir.ehealth-systems.at-kiola-device-AIT-11073-MDC-DEV-SPEC-PROFILE-VND-AIT-HF-CARDIO-ERGO-CONFIG"> </a>  <a href="CodeSystem-kiola-mdc-cs.html#kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_ERGO_CONFIG">MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_ERGO_CONFIG</a></td><td>https://fhir.ehealth-systems.at/kiola/device/AIT-11073</td><td>Cardio ergo config</td><td><div><p>A device used to specify the configuration of a cardio measurement using an ergometer.</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="https---fhir.ehealth-systems.at-kiola-device-AIT-11073-MDC-DEV-SPEC-PROFILE-VND-AIT-HF-CARDIO-EBIKE-RESULT"> </a>  <a href="CodeSystem-kiola-mdc-cs.html#kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_EBIKE_RESULT">MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_EBIKE_RESULT</a></td><td>https://fhir.ehealth-systems.at/kiola/device/AIT-11073</td><td>Cardio ebike result</td><td><div><p>A device used to specify the cardio measurements of an ebike.</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="https---fhir.ehealth-systems.at-kiola-device-AIT-11073-MDC-DEV-SPEC-PROFILE-VND-AIT-HF-CARDIO-EBIKE-CONFIG"> </a>  <a href="CodeSystem-kiola-mdc-cs.html#kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_EBIKE_CONFIG">MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_EBIKE_CONFIG</a></td><td>https://fhir.ehealth-systems.at/kiola/device/AIT-11073</td><td>Cardio ebike config</td><td><div><p>A device used to specify the configuration of a cardio measurement using an ebike.</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="https---fhir.ehealth-systems.at-kiola-device-AIT-11073-MDC-DEV-SPEC-PROFILE-VND-AIT-SMWT"> </a>  <a href="CodeSystem-kiola-mdc-cs.html#kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_VND_AIT_SMWT">MDC_DEV_SPEC_PROFILE_VND_AIT_SMWT</a></td><td>https://fhir.ehealth-systems.at/kiola/device/AIT-11073</td><td>6-Minute-Walk-Test measurement</td><td><div/></td></tr><tr><td style="white-space:nowrap"><a name="https---fhir.ehealth-systems.at-kiola-device-AIT-11073-MDC-DEV-SPEC-PROFILE-VND-AIT-ACTIVITY"> </a>  <a href="CodeSystem-kiola-mdc-cs.html#kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_VND_AIT_ACTIVITY">MDC_DEV_SPEC_PROFILE_VND_AIT_ACTIVITY</a></td><td>https://fhir.ehealth-systems.at/kiola/device/AIT-11073</td><td>Activity measurement device</td><td><div/></td></tr><tr><td style="white-space:nowrap"><a name="https---fhir.ehealth-systems.at-kiola-device-AIT-11073-MDC-DEV-SPEC-PROFILE-VND-AIT-STEPCOUNTER"> </a>  <a href="CodeSystem-kiola-mdc-cs.html#kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_VND_AIT_STEPCOUNTER">MDC_DEV_SPEC_PROFILE_VND_AIT_STEPCOUNTER</a></td><td>https://fhir.ehealth-systems.at/kiola/device/AIT-11073</td><td>Step counter device</td><td><div/></td></tr><tr><td style="white-space:nowrap"><a name="https---fhir.ehealth-systems.at-kiola-device-AIT-11073-MDC-DEV-SPEC-PROFILE-VND-AIT-STEPSEQUENCE"> </a>  <a href="CodeSystem-kiola-mdc-cs.html#kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_VND_AIT_STEPSEQUENCE">MDC_DEV_SPEC_PROFILE_VND_AIT_STEPSEQUENCE</a></td><td>https://fhir.ehealth-systems.at/kiola/device/AIT-11073</td><td>Stepsequence measurement device</td><td><div/></td></tr><tr><td style="white-space:nowrap"><a name="https---fhir.ehealth-systems.at-kiola-device-AIT-11073-MDC-DEV-SPEC-PROFILE-VND-AIT-SLEEPSEQUENCE"> </a>  <a href="CodeSystem-kiola-mdc-cs.html#kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_VND_AIT_SLEEPSEQUENCE">MDC_DEV_SPEC_PROFILE_VND_AIT_SLEEPSEQUENCE</a></td><td>https://fhir.ehealth-systems.at/kiola/device/AIT-11073</td><td>Sleepsequence measurement device</td><td><div/></td></tr><tr><td style="white-space:nowrap"><a name="https---fhir.ehealth-systems.at-kiola-device-AIT-11073-MDC-DEV-SPEC-PROFILE-VND-AIT-GTM-EKG"> </a>  <a href="CodeSystem-kiola-mdc-cs.html#kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_VND_AIT_GTM_EKG">MDC_DEV_SPEC_PROFILE_VND_AIT_GTM_EKG</a></td><td>https://fhir.ehealth-systems.at/kiola/device/AIT-11073</td><td>Getemed ECG</td><td><div/></td></tr><tr><td style="white-space:nowrap"><a name="https---fhir.ehealth-systems.at-kiola-device-AIT-11073-MDC-DEV-SPEC-PROFILE-VND-AIT-FHIR-DIAGNOSTIC-REPORT"> </a>  <a href="CodeSystem-kiola-mdc-cs.html#kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_VND_AIT_FHIR_DIAGNOSTIC_REPORT">MDC_DEV_SPEC_PROFILE_VND_AIT_FHIR_DIAGNOSTIC_REPORT</a></td><td>https://fhir.ehealth-systems.at/kiola/device/AIT-11073</td><td>FHIR Diagnostic report</td><td><div/></td></tr></table></div>
+
+  <hr/>
+  <p>
+    Explanation of the columns that may appear on this page:
+  </p>
+  <table class="grid">
+    <tr>
+      <td>Level</td>
+      <td>A few code lists that FHIR defines are hierarchical - each code is assigned a level.
+          In this scheme, some codes are under other codes, and imply that the code they are under also applies</td>
+    </tr>
+    <tr>
+      <td>System</td>
+      <td>The source of the definition of the code (when the value set draws in codes defined elsewhere)</td>
+    </tr>
+    <tr>
+      <td>Code</td>
+      <td>The code (used as the code in the resource instance)</td>
+    </tr>
+    <tr>
+      <td>Display</td>
+      <td>The display (used in the <i>display</i> element of a <a href="http://hl7.org/fhir/R5/datatypes.html#Coding">Coding</a>). If there is no display, implementers should not simply display the code, but map the concept into their application</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>An explanation of the meaning of the concept</td>
+    </tr>
+    <tr>
+      <td>Comments</td>
+      <td>Additional notes about how to use the code</td>
+    </tr>
+  </table>
+
+  
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /row -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-content -->
+
+<script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+if(window.location.hash != "") {
+    $('a[href="' + window.location.hash + '"]').click()
+}
+});
+</script>
+<a name="bottom"> </a>
+<div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+<div class="container">  <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="mailto:office@ait.ac.at"></a>.  Package kiola-implementation-guide#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 4.3.0</a>. Generated <span title="Mon, Mar 11, 2024 08:55+0000">2024-03-11</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    </span>
+  </p>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+<div class="container">  <!-- container -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-post-footer -->
+
+<!-- JS and analytics only. -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+<script type="text/javascript" src="assets/js/respond.min.js"> </script>
+<script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+<script>anchors.options.visible = 'hover'
+anchors.add()</script>
+
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+
+<!-- / feedback form  -->
+
+<!-- Analytics Below
+================================================== -->
+</body>
+</html>
+

@@ -1,0 +1,54 @@
+{
+  "resourceType" : "ActivityDefinition",
+  "id" : "mdc-dev-spec-profile-vnd-ait-note",
+  "meta" : {
+    "profile" : ["https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: ActivityDefinition</b><a name=\"mdc-dev-spec-profile-vnd-ait-note\"> </a><a name=\"hcmdc-dev-spec-profile-vnd-ait-note\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource ActivityDefinition &quot;mdc-dev-spec-profile-vnd-ait-note&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-kiola-measurement-definition.html\">KIOLA Measurement Definition</a></p></div><p><b>url</b>: <code>https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-note</code></p><p><b>version</b>: 0.1.0</p><p><b>name</b>: MeasurementDefinition_MDC_DEV_SPEC_PROFILE_VND_AIT_NOTE</p><p><b>title</b>: Note entry</p><p><b>status</b>: active</p><p><b>date</b>: 2024-03-11 08:55:33+0000</p><p><b>contact</b>: AIT Austrian Institute of Technology: <a href=\"mailto:mailto:office@ait.ac.at\">mailto:office@ait.ac.at</a></p><p><b>kind</b>: ServiceRequest</p><p><b>code</b>: Note entry <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-kiola-measurement-cs.html\">KIOLA Measurement Codes</a>#MDC_DEV_SPEC_PROFILE_VND_AIT_NOTE)</span></p><h3>Participants</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Extension</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td/><td>device</td></tr></table><hr/><blockquote><p><b>Generated Narrative: DeviceDefinition #dev-sdc</b><a name=\"dev-sdc\"> </a><a name=\"hcdev-sdc\"> </a></p><p><b>type</b>: Structured Data Capture <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-kiola-device-cs.html\">KIOLA Device Codes</a>#SDC)</span></p></blockquote></div>"
+  },
+  "contained" : [{
+    "resourceType" : "DeviceDefinition",
+    "id" : "dev-sdc",
+    "meta" : {
+      "profile" : ["https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-manual-entry-device-definition"]
+    },
+    "type" : {
+      "coding" : [{
+        "system" : "https://fhir.ehealth-systems.at/kiola/device",
+        "code" : "SDC"
+      }]
+    }
+  }],
+  "url" : "https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-note",
+  "version" : "0.1.0",
+  "name" : "MeasurementDefinition_MDC_DEV_SPEC_PROFILE_VND_AIT_NOTE",
+  "title" : "Note entry",
+  "status" : "active",
+  "date" : "2024-03-11T08:55:33+00:00",
+  "contact" : [{
+    "name" : "AIT Austrian Institute of Technology",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "mailto:office@ait.ac.at"
+    }]
+  }],
+  "kind" : "ServiceRequest",
+  "code" : {
+    "coding" : [{
+      "system" : "https://fhir.ehealth-systems.at/kiola/measurement",
+      "code" : "MDC_DEV_SPEC_PROFILE_VND_AIT_NOTE"
+    }],
+    "text" : "Note entry"
+  },
+  "participant" : [{
+    "extension" : [{
+      "url" : "https://fhir.ehealth-systems.at/extensions/ParticipantDeviceDefinition",
+      "valueReference" : {
+        "reference" : "#dev-sdc"
+      }
+    }],
+    "type" : "device"
+  }]
+}

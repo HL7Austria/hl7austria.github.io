@@ -1,0 +1,256 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.ehealth-systems.at/artifacts/CodeSystem/kiola-mdc-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "kiola-mdc-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Properties</b></p><p><b>This code system  defines the following properties for its concepts</b></p><table class=\"grid\"><tr><td><b>Code</b></td><td><b>Type</b></td><td><b>Description</b></td></tr><tr><td>abstract</td><td>boolean</td><td>True, if an element is considered abstract = not for use.</td></tr></table><p><b>Concepts</b></p><p>This  code system <code>https://fhir.ehealth-systems.at/kiola/device/AIT-11073</code> defines the following codes in a Is-A heirarchy:</p><table class=\"codes\"><tr><td><b>Lvl</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>abstract</b></td></tr><tr><td>1</td><td style=\"white-space:nowrap\">MDC_DEV_SPEC<a name=\"kiola-mdc-cs-MDC_DEV_SPEC\"> </a></td><td>KIOLA measurement device</td><td>A KIOLA measurement device, using an MDC display name as code.</td><td>true</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_DEV_SPEC_PROFILE_GLUCOSE<a name=\"kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_GLUCOSE\"> </a></td><td>Glucose monitor</td><td>A blood glucose monitor.</td><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_DEV_SPEC_PROFILE_SCALE<a name=\"kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_SCALE\"> </a></td><td>Body weight scale</td><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_DEV_SPEC_PROFILE_BP<a name=\"kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_BP\"> </a></td><td>Blood pressure device</td><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_DEV_SPEC_PROFILE_TEMP<a name=\"kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_TEMP\"> </a></td><td>Temperature measurement device</td><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_DEV_SPEC_PROFILE_SPIRO<a name=\"kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_SPIRO\"> </a></td><td>Spirometry device</td><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_DEV_SPEC_PROFILE_PULS_OXIM<a name=\"kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_PULS_OXIM\"> </a></td><td>Blood pressure device</td><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_DEV_SPEC_PROFILE_INR<a name=\"kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_INR\"> </a></td><td>INR measurement device</td><td>A device to measure the International Normalized Ratio.</td><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_ERGO_RESULT<a name=\"kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_ERGO_RESULT\"> </a></td><td>Cardio ergo result</td><td>A device used to specify the cardio measurements of an ergometer.</td><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_ERGO_CONFIG<a name=\"kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_ERGO_CONFIG\"> </a></td><td>Cardio ergo config</td><td>A device used to specify the configuration of a cardio measurement using an ergometer.</td><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_EBIKE_RESULT<a name=\"kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_EBIKE_RESULT\"> </a></td><td>Cardio ebike result</td><td>A device used to specify the cardio measurements of an ebike.</td><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_EBIKE_CONFIG<a name=\"kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_EBIKE_CONFIG\"> </a></td><td>Cardio ebike config</td><td>A device used to specify the configuration of a cardio measurement using an ebike.</td><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_DEV_SPEC_PROFILE_VND_AIT_SMWT<a name=\"kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_VND_AIT_SMWT\"> </a></td><td>6-Minute-Walk-Test measurement</td><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_DEV_SPEC_PROFILE_VND_AIT_ACTIVITY<a name=\"kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_VND_AIT_ACTIVITY\"> </a></td><td>Activity measurement device</td><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_DEV_SPEC_PROFILE_VND_AIT_STEPCOUNTER<a name=\"kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_VND_AIT_STEPCOUNTER\"> </a></td><td>Step counter device</td><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_DEV_SPEC_PROFILE_VND_AIT_STEPSEQUENCE<a name=\"kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_VND_AIT_STEPSEQUENCE\"> </a></td><td>Stepsequence measurement device</td><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_DEV_SPEC_PROFILE_VND_AIT_SLEEPSEQUENCE<a name=\"kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_VND_AIT_SLEEPSEQUENCE\"> </a></td><td>Sleepsequence measurement device</td><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_DEV_SPEC_PROFILE_VND_AIT_GTM_EKG<a name=\"kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_VND_AIT_GTM_EKG\"> </a></td><td>Getemed ECG</td><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_DEV_SPEC_PROFILE_VND_AIT_FHIR_DIAGNOSTIC_REPORT<a name=\"kiola-mdc-cs-MDC_DEV_SPEC_PROFILE_VND_AIT_FHIR_DIAGNOSTIC_REPORT\"> </a></td><td>FHIR Diagnostic report</td><td/><td/></tr><tr><td>1</td><td style=\"white-space:nowrap\">MDC_PROPERTY<a name=\"kiola-mdc-cs-MDC_PROPERTY\"> </a></td><td>KIOLA device property</td><td>A property of a KIOLA measurement device. Used to describe fields of a specific measurement.</td><td>true</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_ATTR_TIME_ABS<a name=\"kiola-mdc-cs-MDC_ATTR_TIME_ABS\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_CONC_GLU_ARTERIAL_WHOLEBLOOD<a name=\"kiola-mdc-cs-MDC_CONC_GLU_ARTERIAL_WHOLEBLOOD\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_CONC_GLU_ARTERIAL_PLASMA<a name=\"kiola-mdc-cs-MDC_CONC_GLU_ARTERIAL_PLASMA\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_CONC_GLU_CONTROL<a name=\"kiola-mdc-cs-MDC_CONC_GLU_CONTROL\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_CONC_GLU_ISF<a name=\"kiola-mdc-cs-MDC_CONC_GLU_ISF\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_CONC_GLU_UNDETERMINED_WHOLEBLOOD<a name=\"kiola-mdc-cs-MDC_CONC_GLU_UNDETERMINED_WHOLEBLOOD\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_CONC_GLU_GEN<a name=\"kiola-mdc-cs-MDC_CONC_GLU_GEN\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_CONC_GLU_CAPILLARY_PLASMA<a name=\"kiola-mdc-cs-MDC_CONC_GLU_CAPILLARY_PLASMA\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_CONC_GLU_VENOUS_WHOLEBLOOD<a name=\"kiola-mdc-cs-MDC_CONC_GLU_VENOUS_WHOLEBLOOD\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_CONC_GLU_VENOUS_PLASMA<a name=\"kiola-mdc-cs-MDC_CONC_GLU_VENOUS_PLASMA\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_CONC_GLU_CAPILLARY_WHOLEBLOOD<a name=\"kiola-mdc-cs-MDC_CONC_GLU_CAPILLARY_WHOLEBLOOD\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_CONC_GLU_UNDETERMINED_PLASMA<a name=\"kiola-mdc-cs-MDC_CONC_GLU_UNDETERMINED_PLASMA\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_CONC_HBA1C<a name=\"kiola-mdc-cs-MDC_CONC_HBA1C\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_HR<a name=\"kiola-mdc-cs-MDC_HF_HR\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_ACTIVITY_TIME<a name=\"kiola-mdc-cs-MDC_HF_ACTIVITY_TIME\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_DISTANCE<a name=\"kiola-mdc-cs-MDC_HF_DISTANCE\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_STEPCOUNT<a name=\"kiola-mdc-cs-MDC_HF_STEPCOUNT\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_HR_MAX_USER<a name=\"kiola-mdc-cs-MDC_HF_HR_MAX_USER\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_ALT_GAIN<a name=\"kiola-mdc-cs-MDC_HF_ALT_GAIN\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_ALT_LOSS<a name=\"kiola-mdc-cs-MDC_HF_ALT_LOSS\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_ALT<a name=\"kiola-mdc-cs-MDC_HF_ALT\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_ASC_TME_DIST<a name=\"kiola-mdc-cs-MDC_HF_ASC_TME_DIST\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_DESC_TIME_DIST<a name=\"kiola-mdc-cs-MDC_HF_DESC_TIME_DIST\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_LATITUDE<a name=\"kiola-mdc-cs-MDC_HF_LATITUDE\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_LONGITUDE<a name=\"kiola-mdc-cs-MDC_HF_LONGITUDE\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_SLOPES<a name=\"kiola-mdc-cs-MDC_HF_SLOPES\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_SPEED<a name=\"kiola-mdc-cs-MDC_HF_SPEED\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_CAD<a name=\"kiola-mdc-cs-MDC_HF_CAD\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_INCLINE<a name=\"kiola-mdc-cs-MDC_HF_INCLINE\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_POWER<a name=\"kiola-mdc-cs-MDC_HF_POWER\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_RESIST<a name=\"kiola-mdc-cs-MDC_HF_RESIST\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_STRIDE<a name=\"kiola-mdc-cs-MDC_HF_STRIDE\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_ENERGY<a name=\"kiola-mdc-cs-MDC_HF_ENERGY\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_CAL_INGEST<a name=\"kiola-mdc-cs-MDC_HF_CAL_INGEST\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_CAL_INGEST_CARB<a name=\"kiola-mdc-cs-MDC_HF_CAL_INGEST_CARB\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_ACTIVITY_INTENSITY<a name=\"kiola-mdc-cs-MDC_HF_ACTIVITY_INTENSITY\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_WEIGHTLOSS<a name=\"kiola-mdc-cs-MDC_HF_WEIGHTLOSS\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_MEAN_NULL_INCLUDE<a name=\"kiola-mdc-cs-MDC_HF_MEAN_NULL_INCLUDE\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_MEAN_NULL_EXCLUDE<a name=\"kiola-mdc-cs-MDC_HF_MEAN_NULL_EXCLUDE\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_MAX<a name=\"kiola-mdc-cs-MDC_HF_MAX\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_MIN<a name=\"kiola-mdc-cs-MDC_HF_MIN\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_RMS<a name=\"kiola-mdc-cs-MDC_HF_RMS\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_PIM<a name=\"kiola-mdc-cs-MDC_HF_PIM\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_PIM_X<a name=\"kiola-mdc-cs-MDC_HF_PIM_X\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_PIM_Y<a name=\"kiola-mdc-cs-MDC_HF_PIM_Y\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_PIM_Z<a name=\"kiola-mdc-cs-MDC_HF_PIM_Z\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_TAT<a name=\"kiola-mdc-cs-MDC_HF_TAT\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_3D_ACC_X<a name=\"kiola-mdc-cs-MDC_HF_3D_ACC_X\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_3D_ACC_Y<a name=\"kiola-mdc-cs-MDC_HF_3D_ACC_Y\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_3D_ACC_Z<a name=\"kiola-mdc-cs-MDC_HF_3D_ACC_Z\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_3D_ACC_Z_G_OFFSET<a name=\"kiola-mdc-cs-MDC_HF_3D_ACC_Z_G_OFFSET\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_3D_ANG_ACC_X<a name=\"kiola-mdc-cs-MDC_HF_3D_ANG_ACC_X\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_3D_ANG_ACC_Y<a name=\"kiola-mdc-cs-MDC_HF_3D_ANG_ACC_Y\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_3D_ANG_ACC_Z<a name=\"kiola-mdc-cs-MDC_HF_3D_ANG_ACC_Z\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_HF_RESP_RATE<a name=\"kiola-mdc-cs-MDC_HF_RESP_RATE\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_PRESS_BLD_NONINV_SYS<a name=\"kiola-mdc-cs-MDC_PRESS_BLD_NONINV_SYS\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_PRESS_BLD_NONINV_DIA<a name=\"kiola-mdc-cs-MDC_PRESS_BLD_NONINV_DIA\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_PRESS_BLD_NONINV_MEAN<a name=\"kiola-mdc-cs-MDC_PRESS_BLD_NONINV_MEAN\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_PULS_RATE_NON_INV<a name=\"kiola-mdc-cs-MDC_PULS_RATE_NON_INV\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_MASS_BODY_ACTUAL<a name=\"kiola-mdc-cs-MDC_MASS_BODY_ACTUAL\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_VND_AIT_ABDOMINAL_GIRTH<a name=\"kiola-mdc-cs-MDC_VND_AIT_ABDOMINAL_GIRTH\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_VND_AIT_ACTIVITY_DURATION<a name=\"kiola-mdc-cs-MDC_VND_AIT_ACTIVITY_DURATION\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_VND_AIT_STEPS_SEQUENCE<a name=\"kiola-mdc-cs-MDC_VND_AIT_STEPS_SEQUENCE\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_VND_AIT_DISTANCE_CONFIDENCE_SCORE<a name=\"kiola-mdc-cs-MDC_VND_AIT_DISTANCE_CONFIDENCE_SCORE\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_VND_AIT_HF_CAD_MIN_USER<a name=\"kiola-mdc-cs-MDC_VND_AIT_HF_CAD_MIN_USER\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_VND_AIT_HF_POWER_STEP_SEQ<a name=\"kiola-mdc-cs-MDC_VND_AIT_HF_POWER_STEP_SEQ\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_VND_AIT_HF_MOTOR_OUT<a name=\"kiola-mdc-cs-MDC_VND_AIT_HF_MOTOR_OUT\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_VND_AIT_HF_POWER_TARGET<a name=\"kiola-mdc-cs-MDC_VND_AIT_HF_POWER_TARGET\"> </a></td><td/><td/><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  MDC_VND_AIT_HF_DISTANCE_SEQUENCE<a name=\"kiola-mdc-cs-MDC_VND_AIT_HF_DISTANCE_SEQUENCE\"> </a></td><td/><td/><td/></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://fhir.ehealth-systems.at/kiola/device/AIT-11073"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "KIOLAMDCCS"] ; # 
+  fhir:title [ fhir:v "KIOLA Device Codes AIT 11073"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2024-03-11T08:55:33+00:00"^^xsd:dateTime] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AIT Austrian Institute of Technology" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "mailto:office@ait.ac.at" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Measurement device types for automatic transmission of measurements and their configuration parameters, based on the ISO/IEEE 11073 standard with vendor-specific extensions, mainly AIT. The MDC display name is used as a code."] ; # 
+  fhir:hierarchyMeaning [ fhir:v "is-a"] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "89"^^xsd:nonNegativeInteger] ; # 
+  fhir:property ( [
+     fhir:code [ fhir:v "abstract" ] ;
+     fhir:description [ fhir:v "True, if an element is considered abstract = not for use." ] ;
+     fhir:type [ fhir:v "boolean" ]
+  ] ) ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "MDC_DEV_SPEC" ] ;
+     fhir:display [ fhir:v "KIOLA measurement device" ] ;
+     fhir:definition [ fhir:v "A KIOLA measurement device, using an MDC display name as code." ] ;
+     fhir:property ( [
+       fhir:code [ fhir:v "abstract" ] ;
+       fhir:value [ fhir:v "true"^^xsd:boolean ]
+     ] ) ;
+     fhir:concept ( [
+       fhir:code [ fhir:v "MDC_DEV_SPEC_PROFILE_GLUCOSE" ] ;
+       fhir:display [ fhir:v "Glucose monitor" ] ;
+       fhir:definition [ fhir:v "A blood glucose monitor." ]
+     ] [
+       fhir:code [ fhir:v "MDC_DEV_SPEC_PROFILE_SCALE" ] ;
+       fhir:display [ fhir:v "Body weight scale" ]
+     ] [
+       fhir:code [ fhir:v "MDC_DEV_SPEC_PROFILE_BP" ] ;
+       fhir:display [ fhir:v "Blood pressure device" ]
+     ] [
+       fhir:code [ fhir:v "MDC_DEV_SPEC_PROFILE_TEMP" ] ;
+       fhir:display [ fhir:v "Temperature measurement device" ]
+     ] [
+       fhir:code [ fhir:v "MDC_DEV_SPEC_PROFILE_SPIRO" ] ;
+       fhir:display [ fhir:v "Spirometry device" ]
+     ] [
+       fhir:code [ fhir:v "MDC_DEV_SPEC_PROFILE_PULS_OXIM" ] ;
+       fhir:display [ fhir:v "Blood pressure device" ]
+     ] [
+       fhir:code [ fhir:v "MDC_DEV_SPEC_PROFILE_INR" ] ;
+       fhir:display [ fhir:v "INR measurement device" ] ;
+       fhir:definition [ fhir:v "A device to measure the International Normalized Ratio." ]
+     ] [
+       fhir:code [ fhir:v "MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_ERGO_RESULT" ] ;
+       fhir:display [ fhir:v "Cardio ergo result" ] ;
+       fhir:definition [ fhir:v "A device used to specify the cardio measurements of an ergometer." ]
+     ] [
+       fhir:code [ fhir:v "MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_ERGO_CONFIG" ] ;
+       fhir:display [ fhir:v "Cardio ergo config" ] ;
+       fhir:definition [ fhir:v "A device used to specify the configuration of a cardio measurement using an ergometer." ]
+     ] [
+       fhir:code [ fhir:v "MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_EBIKE_RESULT" ] ;
+       fhir:display [ fhir:v "Cardio ebike result" ] ;
+       fhir:definition [ fhir:v "A device used to specify the cardio measurements of an ebike." ]
+     ] [
+       fhir:code [ fhir:v "MDC_DEV_SPEC_PROFILE_VND_AIT_HF_CARDIO_EBIKE_CONFIG" ] ;
+       fhir:display [ fhir:v "Cardio ebike config" ] ;
+       fhir:definition [ fhir:v "A device used to specify the configuration of a cardio measurement using an ebike." ]
+     ] [
+       fhir:code [ fhir:v "MDC_DEV_SPEC_PROFILE_VND_AIT_SMWT" ] ;
+       fhir:display [ fhir:v "6-Minute-Walk-Test measurement" ]
+     ] [
+       fhir:code [ fhir:v "MDC_DEV_SPEC_PROFILE_VND_AIT_ACTIVITY" ] ;
+       fhir:display [ fhir:v "Activity measurement device" ]
+     ] [
+       fhir:code [ fhir:v "MDC_DEV_SPEC_PROFILE_VND_AIT_STEPCOUNTER" ] ;
+       fhir:display [ fhir:v "Step counter device" ]
+     ] [
+       fhir:code [ fhir:v "MDC_DEV_SPEC_PROFILE_VND_AIT_STEPSEQUENCE" ] ;
+       fhir:display [ fhir:v "Stepsequence measurement device" ]
+     ] [
+       fhir:code [ fhir:v "MDC_DEV_SPEC_PROFILE_VND_AIT_SLEEPSEQUENCE" ] ;
+       fhir:display [ fhir:v "Sleepsequence measurement device" ]
+     ] [
+       fhir:code [ fhir:v "MDC_DEV_SPEC_PROFILE_VND_AIT_GTM_EKG" ] ;
+       fhir:display [ fhir:v "Getemed ECG" ]
+     ] [
+       fhir:code [ fhir:v "MDC_DEV_SPEC_PROFILE_VND_AIT_FHIR_DIAGNOSTIC_REPORT" ] ;
+       fhir:display [ fhir:v "FHIR Diagnostic report" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "MDC_PROPERTY" ] ;
+     fhir:display [ fhir:v "KIOLA device property" ] ;
+     fhir:definition [ fhir:v "A property of a KIOLA measurement device. Used to describe fields of a specific measurement." ] ;
+     fhir:property ( [
+       fhir:code [ fhir:v "abstract" ] ;
+       fhir:value [ fhir:v "true"^^xsd:boolean ]
+     ] ) ;
+     fhir:concept ( [
+       fhir:code [ fhir:v "MDC_ATTR_TIME_ABS" ]
+     ] [
+       fhir:code [ fhir:v "MDC_CONC_GLU_ARTERIAL_WHOLEBLOOD" ]
+     ] [
+       fhir:code [ fhir:v "MDC_CONC_GLU_ARTERIAL_PLASMA" ]
+     ] [
+       fhir:code [ fhir:v "MDC_CONC_GLU_CONTROL" ]
+     ] [
+       fhir:code [ fhir:v "MDC_CONC_GLU_ISF" ]
+     ] [
+       fhir:code [ fhir:v "MDC_CONC_GLU_UNDETERMINED_WHOLEBLOOD" ]
+     ] [
+       fhir:code [ fhir:v "MDC_CONC_GLU_GEN" ]
+     ] [
+       fhir:code [ fhir:v "MDC_CONC_GLU_CAPILLARY_PLASMA" ]
+     ] [
+       fhir:code [ fhir:v "MDC_CONC_GLU_VENOUS_WHOLEBLOOD" ]
+     ] [
+       fhir:code [ fhir:v "MDC_CONC_GLU_VENOUS_PLASMA" ]
+     ] [
+       fhir:code [ fhir:v "MDC_CONC_GLU_CAPILLARY_WHOLEBLOOD" ]
+     ] [
+       fhir:code [ fhir:v "MDC_CONC_GLU_UNDETERMINED_PLASMA" ]
+     ] [
+       fhir:code [ fhir:v "MDC_CONC_HBA1C" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_HR" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_ACTIVITY_TIME" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_DISTANCE" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_STEPCOUNT" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_HR_MAX_USER" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_ALT_GAIN" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_ALT_LOSS" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_ALT" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_ASC_TME_DIST" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_DESC_TIME_DIST" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_LATITUDE" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_LONGITUDE" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_SLOPES" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_SPEED" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_CAD" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_INCLINE" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_POWER" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_RESIST" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_STRIDE" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_ENERGY" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_CAL_INGEST" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_CAL_INGEST_CARB" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_ACTIVITY_INTENSITY" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_WEIGHTLOSS" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_MEAN_NULL_INCLUDE" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_MEAN_NULL_EXCLUDE" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_MAX" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_MIN" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_RMS" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_PIM" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_PIM_X" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_PIM_Y" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_PIM_Z" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_TAT" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_3D_ACC_X" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_3D_ACC_Y" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_3D_ACC_Z" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_3D_ACC_Z_G_OFFSET" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_3D_ANG_ACC_X" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_3D_ANG_ACC_Y" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_3D_ANG_ACC_Z" ]
+     ] [
+       fhir:code [ fhir:v "MDC_HF_RESP_RATE" ]
+     ] [
+       fhir:code [ fhir:v "MDC_PRESS_BLD_NONINV_SYS" ]
+     ] [
+       fhir:code [ fhir:v "MDC_PRESS_BLD_NONINV_DIA" ]
+     ] [
+       fhir:code [ fhir:v "MDC_PRESS_BLD_NONINV_MEAN" ]
+     ] [
+       fhir:code [ fhir:v "MDC_PULS_RATE_NON_INV" ]
+     ] [
+       fhir:code [ fhir:v "MDC_MASS_BODY_ACTUAL" ]
+     ] [
+       fhir:code [ fhir:v "MDC_VND_AIT_ABDOMINAL_GIRTH" ]
+     ] [
+       fhir:code [ fhir:v "MDC_VND_AIT_ACTIVITY_DURATION" ]
+     ] [
+       fhir:code [ fhir:v "MDC_VND_AIT_STEPS_SEQUENCE" ]
+     ] [
+       fhir:code [ fhir:v "MDC_VND_AIT_DISTANCE_CONFIDENCE_SCORE" ]
+     ] [
+       fhir:code [ fhir:v "MDC_VND_AIT_HF_CAD_MIN_USER" ]
+     ] [
+       fhir:code [ fhir:v "MDC_VND_AIT_HF_POWER_STEP_SEQ" ]
+     ] [
+       fhir:code [ fhir:v "MDC_VND_AIT_HF_MOTOR_OUT" ]
+     ] [
+       fhir:code [ fhir:v "MDC_VND_AIT_HF_POWER_TARGET" ]
+     ] [
+       fhir:code [ fhir:v "MDC_VND_AIT_HF_DISTANCE_SEQUENCE" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

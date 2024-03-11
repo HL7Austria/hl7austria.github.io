@@ -1,0 +1,53 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.ehealth-systems.at/artifacts/DeviceDefinition/dev-ait-alivecor-ecg> a fhir:DeviceDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "dev-ait-alivecor-ecg"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-automatic-transmission-device-definition"^^xsd:anyURI ;
+       fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-automatic-transmission-device-definition>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: DeviceDefinition</b><a name=\"dev-ait-alivecor-ecg\"> </a><a name=\"hcdev-ait-alivecor-ecg\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource DeviceDefinition &quot;dev-ait-alivecor-ecg&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-kiola-measurement-automatic-transmission-device-definition.html\">KIOLA Measurement Automatic Transmission Device Definition</a></p></div><p><b>manufacturer</b>: AliveCor</p><h3>DeviceNames</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Name</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>KardiaMobile 6L</td><td>manufacturer-name</td></tr></table><p><b>type</b>: FHIR Diagnostic report <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-kiola-mdc-cs.html\">KIOLA Device Codes AIT 11073</a>#MDC_DEV_SPEC_PROFILE_VND_AIT_FHIR_DIAGNOSTIC_REPORT)</span></p><h3>Specializations</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Extension</b></td><td><b>SystemType</b></td></tr><tr><td style=\"display: none\">*</td><td/><td>EC</td></tr></table></div>"
+  ] ; # 
+  fhir:manufacturer [ fhir:v "AliveCor"] ; # 
+  fhir:deviceName ( [
+     fhir:name [ fhir:v "KardiaMobile 6L" ] ;
+     fhir:type [ fhir:v "manufacturer-name" ]
+  ] ) ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://fhir.ehealth-systems.at/kiola/device/AIT-11073"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "MDC_DEV_SPEC_PROFILE_VND_AIT_FHIR_DIAGNOSTIC_REPORT" ] ;
+       fhir:display [ fhir:v "FHIR Diagnostic report" ]
+     ] )
+  ] ; # 
+  fhir:specialization ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "https://fhir.ehealth-systems.at/extensions/DeviceDefinition/specializationSystemTypeCodeableConcept"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0074"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "EC" ] ;
+           fhir:display [ fhir:v "Electrocardiac" ]
+         ] [
+           fhir:system [ fhir:v "https://fhir.ehealth-systems.at/kiola/diagnostic-report/"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "ALIVECOR_ECG" ] ;
+           fhir:display [ fhir:v "AliveCor ECG Report" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:systemType [ fhir:v "EC" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

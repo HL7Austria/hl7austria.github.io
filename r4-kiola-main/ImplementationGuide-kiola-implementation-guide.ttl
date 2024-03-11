@@ -1,0 +1,1749 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.ehealth-systems.at/artifacts/ImplementationGuide/kiola-implementation-guide> a fhir:ImplementationGuide ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "kiola-implementation-guide"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>KIOLAImplementationGuide</h2><p>The official URL for this implementation guide is: </p><pre>https://fhir.ehealth-systems.at/artifacts/ImplementationGuide/kiola-implementation-guide</pre><div><p>An Implementation Guide for the KIOLA Profiles.</p>\n</div></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://fhir.ehealth-systems.at/artifacts/ImplementationGuide/kiola-implementation-guide"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "KIOLAImplementationGuide"] ; # 
+  fhir:title [ fhir:v "KIOLA Implementation Guide"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2024-03-11T08:55:33+00:00"^^xsd:dateTime] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "AIT Austrian Institute of Technology" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "mailto:office@ait.ac.at" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "An Implementation Guide for the KIOLA Profiles."] ; # 
+  fhir:packageId [ fhir:v "kiola-implementation-guide"] ; # 
+  fhir:license [ fhir:v "CC0-1.0"] ; # 
+  fhir:fhirVersion ( [ fhir:v "4.3.0"] ) ; # 
+  fhir:dependsOn ( [
+     fhir:id [ fhir:v "hl7tx" ] ;
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Automatically added as a dependency - all IGs depend on HL7 Terminology" ]
+     ] ) ;
+     fhir:uri [
+       fhir:v "http://terminology.hl7.org/ImplementationGuide/hl7.terminology"^^xsd:anyURI ;
+       fhir:link <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
+     ] ;
+     fhir:packageId [ fhir:v "hl7.terminology.r4" ] ;
+     fhir:version [ fhir:v "5.3.0" ]
+  ] [
+     fhir:id [ fhir:v "hl7ext" ] ;
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack" ]
+     ] ) ;
+     fhir:uri [
+       fhir:v "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions>
+     ] ;
+     fhir:packageId [ fhir:v "hl7.fhir.uv.extensions.r4" ] ;
+     fhir:version [ fhir:v "1.0.0" ]
+  ] ) ; # 
+  fhir:definition [
+     fhir:extension ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "copyrightyear" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "2023+" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "releaselabel" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "STU1" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "show-inherited-invariants" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "false" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "autoload-resources" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-liquid" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template/liquid" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-liquid" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "input/liquid" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-qa" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "temp/qa" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-temp" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "temp/pages" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-output" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "output" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-suppressed-warnings" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "input/ignoreWarnings.txt" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-history" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "https://fhir.ehealth-systems.at/artifacts/history.html" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template-html" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template-page.html" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template-md" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template-page-md.html" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-contact" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-context" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-copyright" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-jurisdiction" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-license" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-publisher" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-version" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-wg" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "active-tables" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "fmm-definition" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "http://hl7.org/fhir/versions.html#maturity" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "propagate-status" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "excludelogbinaryformat" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "tabbed-snapshots" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "hl7.fhir.uv.tools#0.1.0" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "copyrightyear" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "2023+" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "releaselabel" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "STU1" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "show-inherited-invariants" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "false" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "autoload-resources" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-liquid" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template/liquid" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-liquid" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "input/liquid" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-qa" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "temp/qa" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-temp" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "temp/pages" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-output" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "output" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-suppressed-warnings" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "input/ignoreWarnings.txt" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-history" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "https://fhir.ehealth-systems.at/artifacts/history.html" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template-html" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template-page.html" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template-md" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template-page-md.html" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-contact" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-context" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-copyright" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-jurisdiction" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-license" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-publisher" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-version" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-wg" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "active-tables" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "fmm-definition" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "http://hl7.org/fhir/versions.html#maturity" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "propagate-status" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "excludelogbinaryformat" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "tabbed-snapshots" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] ) ;
+     fhir:resource ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CarePlan" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/CarePlan/5341> ;
+         fhir:reference [ fhir:v "CarePlan/5341" ]
+       ] ;
+       fhir:name [ fhir:v "5341" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-care-plan"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-care-plan>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-smwt> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-smwt" ]
+       ] ;
+       fhir:name [ fhir:v "6-Minute-Walk-Test Measurement Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-activity> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-activity" ]
+       ] ;
+       fhir:name [ fhir:v "Activity Measurement Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DeviceDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/DeviceDefinition/dev-ait-alivecor-ecg> ;
+         fhir:reference [ fhir:v "DeviceDefinition/dev-ait-alivecor-ecg" ]
+       ] ;
+       fhir:name [ fhir:v "AliveCor Device Definition Example" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-automatic-transmission-device-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-automatic-transmission-device-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-puls-oxim> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-puls-oxim" ]
+       ] ;
+       fhir:name [ fhir:v "Blood Oximeter Measurement Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-bp> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-bp" ]
+       ] ;
+       fhir:name [ fhir:v "Blood Pressure Measurement Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-scale> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-scale" ]
+       ] ;
+       fhir:name [ fhir:v "Body Weight Measurement Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-hf-cardio-ebike-config> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-hf-cardio-ebike-config" ]
+       ] ;
+       fhir:name [ fhir:v "Cardio Ebike Config Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-hf-cardio-ebike-result> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-hf-cardio-ebike-result" ]
+       ] ;
+       fhir:name [ fhir:v "Cardio Ebike Result Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-hf-cardio-ergo-config> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-hf-cardio-ergo-config" ]
+       ] ;
+       fhir:name [ fhir:v "Cardio Ergo Config Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-hf-cardio-ergo-result> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-hf-cardio-ergo-result" ]
+       ] ;
+       fhir:name [ fhir:v "Cardio Ergo Result Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SearchParameter" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/SearchParameter/care-plan-subject-identifier-parameter> ;
+         fhir:reference [ fhir:v "SearchParameter/care-plan-subject-identifier-parameter" ]
+       ] ;
+       fhir:name [ fhir:v "Care Plan Subject Identifier Parameter" ] ;
+       fhir:description [ fhir:v "Returns care plans of subjects with a matching identifier" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-comment> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-comment" ]
+       ] ;
+       fhir:name [ fhir:v "Comment Entry Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-q-covid19-v1> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-q-covid19-v1" ]
+       ] ;
+       fhir:name [ fhir:v "COVID19 Questionnaire Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-med-daily-dose-coumadin-v1> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-med-daily-dose-coumadin-v1" ]
+       ] ;
+       fhir:name [ fhir:v "Daily medication measurement of Coumadin Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-med-daily-dose-falithrom-v1> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-med-daily-dose-falithrom-v1" ]
+       ] ;
+       fhir:name [ fhir:v "Daily medication measurement of Falithrom Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-med-daily-dose-marcumar-v1> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-med-daily-dose-marcumar-v1" ]
+       ] ;
+       fhir:name [ fhir:v "Daily medication measurement of Marcumar Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/device-definition-specialization-system-type-codeable-concept> ;
+         fhir:reference [ fhir:v "StructureDefinition/device-definition-specialization-system-type-codeable-concept" ]
+       ] ;
+       fhir:name [ fhir:v "Device Definition Specialization System Type Codeable Concept" ] ;
+       fhir:description [ fhir:v "Extension ..." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-fhir-diagnostic-report> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-fhir-diagnostic-report" ]
+       ] ;
+       fhir:name [ fhir:v "Diagnostic Report Measurement Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-0-v1> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-0-v1" ]
+       ] ;
+       fhir:name [ fhir:v "Generic Questionnaire 0 Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-1-v1> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-1-v1" ]
+       ] ;
+       fhir:name [ fhir:v "Generic Questionnaire 1 Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-2-v1> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-2-v1" ]
+       ] ;
+       fhir:name [ fhir:v "Generic Questionnaire 2 Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-3-v1> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-3-v1" ]
+       ] ;
+       fhir:name [ fhir:v "Generic Questionnaire 3 Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-4-v1> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-4-v1" ]
+       ] ;
+       fhir:name [ fhir:v "Generic Questionnaire 4 Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-5-v1> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-5-v1" ]
+       ] ;
+       fhir:name [ fhir:v "Generic Questionnaire 5 Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-6-v1> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-6-v1" ]
+       ] ;
+       fhir:name [ fhir:v "Generic Questionnaire 6 Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-7-v1> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-7-v1" ]
+       ] ;
+       fhir:name [ fhir:v "Generic Questionnaire 7 Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-8-v1> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-8-v1" ]
+       ] ;
+       fhir:name [ fhir:v "Generic Questionnaire 8 Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-9-v1> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-generic-questionnaire-9-v1" ]
+       ] ;
+       fhir:name [ fhir:v "Generic Questionnaire 9 Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-gtm-ekg> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-gtm-ekg" ]
+       ] ;
+       fhir:name [ fhir:v "Getemed ECG Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-glucose> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-glucose" ]
+       ] ;
+       fhir:name [ fhir:v "Glucose Measurement Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-glucose-suppl-v1> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-glucose-suppl-v1" ]
+       ] ;
+       fhir:name [ fhir:v "Glucose Supplemental Data Measurement Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-inr> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-inr" ]
+       ] ;
+       fhir:name [ fhir:v "INR Measurement Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ValueSet/KIOLAMeasurementAutomaticTransmissionProperties> ;
+         fhir:reference [ fhir:v "ValueSet/KIOLAMeasurementAutomaticTransmissionProperties" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Automatic Transmission Measurement Device Properties" ] ;
+       fhir:description [ fhir:v "Properties of automatic transmission devices." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ValueSet/KIOLAMeasurementAutomaticTransmissionDeviceTypes> ;
+         fhir:reference [ fhir:v "ValueSet/KIOLAMeasurementAutomaticTransmissionDeviceTypes" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Automatic Transmission Measurement Device Types" ] ;
+       fhir:description [ fhir:v "Types of devices that might automatically transmit vital data measurements to a KIOLA system, without entering the data manually." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ValueSet/KIOLABoolean> ;
+         fhir:reference [ fhir:v "ValueSet/KIOLABoolean" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Boolean" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/CodeSystem/kiola-boolean-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/kiola-boolean-cs" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Boolean" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-care-plan> ;
+         fhir:reference [ fhir:v "StructureDefinition/kiola-care-plan" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Care Plan" ] ;
+       fhir:description [ fhir:v "A patient-specific care plan, containing one or multiple instances of different KIOLA standard treatment plans,\nthat might have been adapted individually for the patient, and/or individually assigned KIOLA activities." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/CodeSystem/kiola-care-plan-category-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/kiola-care-plan-category-cs" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Care Plan Category Code System" ] ;
+       fhir:description [ fhir:v "Categories of care plans supported by KIOLA." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CapabilityStatement" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/CapabilityStatement/kiola-care-plan-management> ;
+         fhir:reference [ fhir:v "CapabilityStatement/kiola-care-plan-management" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Care Plan Management" ] ;
+       fhir:description [ fhir:v "KIOLA care plans might be managed by another system. New and modified plans might be uploaded to the server and the status of existing plans might be changed." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CapabilityStatement" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/CapabilityStatement/kiola-care-plan-retrieval> ;
+         fhir:reference [ fhir:v "CapabilityStatement/kiola-care-plan-retrieval" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Care Plan Retrieval" ] ;
+       fhir:description [ fhir:v "The currently active KIOLA Care Plan for a patient might be retrieved by a client, using a search with a fixed set of parameters. The retrieval might be confirmed, by adding a meta tag to the instance. ETags might be used to avoid fetching the same resource twice." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/CodeSystem/kiola-care-plan-transient-tag-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/kiola-care-plan-transient-tag-cs" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Care Plan Transient Tag Code System" ] ;
+       fhir:description [ fhir:v "Meta data tags of care plans that should be removed when creating an updated plan for a patient, in case an activity changes." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/CodeSystem/kiola-device-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/kiola-device-cs" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Device Codes" ] ;
+       fhir:description [ fhir:v "Generic device types that can transmit vital data." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/CodeSystem/kiola-mdc-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/kiola-mdc-cs" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Device Codes AIT 11073" ] ;
+       fhir:description [ fhir:v "Measurement device types for automatic transmission of measurements and their configuration parameters, based on the ISO/IEEE 11073 standard with vendor-specific extensions, mainly AIT. The MDC display name is used as a code." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ValueSet/KIOLADevices> ;
+         fhir:reference [ fhir:v "ValueSet/KIOLADevices" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Devices" ] ;
+       fhir:description [ fhir:v "Devices, that might transmit data to a KIOLA system." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/CodeSystem/kiola-mdc-dim-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/kiola-mdc-dim-cs" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Dimension Codes AIT 11073" ] ;
+       fhir:description [ fhir:v "Measurement dimensions supported by KIOLA, based on the ISO/IEEE 11073 standard with vendor-specific extensions, mainly AIT. The MDC display name is used as a code.\n\nAll codes might be parametrized using the syntax `CODE:{min=MIN_VAL,max=MAX_VAL}` to define a plausibility range for manual data entry, e.g.: `MDC_DIM_MILLI_G_PER_DL:{min=0,max=1000}`" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ValueSet/KIOLAGenericQuestionnaires> ;
+         fhir:reference [ fhir:v "ValueSet/KIOLAGenericQuestionnaires" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Generic Questionnaires" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-automatic-transmission-device> ;
+         fhir:reference [ fhir:v "StructureDefinition/kiola-measurement-automatic-transmission-device" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Measurement Automatic Transmission Device" ] ;
+       fhir:description [ fhir:v "Device supporting automatic transmission of KIOLA vital data measurements, without entering the data manually." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-automatic-transmission-device-definition> ;
+         fhir:reference [ fhir:v "StructureDefinition/kiola-measurement-automatic-transmission-device-definition" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Measurement Automatic Transmission Device Definition" ] ;
+       fhir:description [ fhir:v "Definition of a device supporting automatic transmission of KIOLA vital data measurements, without entering the data manually." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/CodeSystem/kiola-measurement-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/kiola-measurement-cs" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Measurement Codes" ] ;
+       fhir:description [ fhir:v "Types of vital data measurements that can be transmitted to a KIOLA system. The naming is derived from MDC display names of devices from the ISO/IEEE 11073 standard." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition> ;
+         fhir:reference [ fhir:v "StructureDefinition/kiola-measurement-definition" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Measurement Definition" ] ;
+       fhir:description [ fhir:v "The definition of a vital data measurement for KIOLA." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource:abstract" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-device> ;
+         fhir:reference [ fhir:v "StructureDefinition/kiola-measurement-device" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Measurement Device" ] ;
+       fhir:description [ fhir:v "An abstract device for recording a KIOLA vital data measurement." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource:abstract" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-device-definition> ;
+         fhir:reference [ fhir:v "StructureDefinition/kiola-measurement-device-definition" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Measurement Device Definition" ] ;
+       fhir:description [ fhir:v "Definition of an abstract device for recording a KIOLA vital data measurement." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ValueSet/KIOLAMeasurementDeviceTypes> ;
+         fhir:reference [ fhir:v "ValueSet/KIOLAMeasurementDeviceTypes" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Measurement Device Types" ] ;
+       fhir:description [ fhir:v "Types of devices that might transmit vital data measurements to a KIOLA system." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-manual-entry-device> ;
+         fhir:reference [ fhir:v "StructureDefinition/kiola-measurement-manual-entry-device" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Measurement Manual Entry Device" ] ;
+       fhir:description [ fhir:v "Device supporting manual data entry of KIOLA vital data measurements." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-manual-entry-device-definition> ;
+         fhir:reference [ fhir:v "StructureDefinition/kiola-measurement-manual-entry-device-definition" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Measurement Manual Entry Device Definition" ] ;
+       fhir:description [ fhir:v "Definition of a device supporting manual data entry of KIOLA vital data measurements." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-request> ;
+         fhir:reference [ fhir:v "StructureDefinition/kiola-measurement-request" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Measurement Request" ] ;
+       fhir:description [ fhir:v "Request to perform a KIOLA vital data measurement." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ValueSet/KIOLAMeasurementTypes> ;
+         fhir:reference [ fhir:v "ValueSet/KIOLAMeasurementTypes" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Measurement Types" ] ;
+       fhir:description [ fhir:v "Types of vital data measurements, that can be transmitted to a KIOLA system." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ValueSet/KIOLAMedicationDailyDosage> ;
+         fhir:reference [ fhir:v "ValueSet/KIOLAMedicationDailyDosage" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Medication Daily Dosage" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-standard-treatment-plan> ;
+         fhir:reference [ fhir:v "StructureDefinition/kiola-standard-treatment-plan" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Standard Treatment Plan" ] ;
+       fhir:description [ fhir:v "A standard treatment plan for a set of KIOLA activities. It can be applied to patients as a stand-alone plan or in combination with other plans and might be individualized for a single patient, after applying it." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CapabilityStatement" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/CapabilityStatement/kiola-standard-treatment-plan-apply> ;
+         fhir:reference [ fhir:v "CapabilityStatement/kiola-standard-treatment-plan-apply" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Standard Treatment Plan Apply" ] ;
+       fhir:description [ fhir:v "Apply a KIOLA standard treatment plan to a patient to generate a treatment plan instance. The current KIOLA care plan of the patient is not taken into account. The standard treatment plan is simply applied to the patient and a new KIOLA care plan containing this treatment plan is returned." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/CodeSystem/kiola-standard-treatment-plan-tag-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/kiola-standard-treatment-plan-tag-cs" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Standard Treatment Plan Code System" ] ;
+       fhir:description [ fhir:v "Meta data tags of standard treatment plans." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CapabilityStatement" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/CapabilityStatement/kiola-standard-treatment-plan-management> ;
+         fhir:reference [ fhir:v "CapabilityStatement/kiola-standard-treatment-plan-management" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Standard Treatment Plan Management" ] ;
+       fhir:description [ fhir:v "KIOLA standard treatment plans might be managed by another system. Existing plans might be queried, new KIOLA standard treatment plans or updated versions of existing plans might be uploaded to the server. Also the status of existing plans might be changed." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PlanDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/PlanDefinition/kiola-standard-treatment-plan-participant-example> ;
+         fhir:reference [ fhir:v "PlanDefinition/kiola-standard-treatment-plan-participant-example" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Standard Treatment Plan Participant Example" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-standard-treatment-plan"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-standard-treatment-plan>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PlanDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/PlanDefinition/kiola-standard-treatment-plan-participant-property-example> ;
+         fhir:reference [ fhir:v "PlanDefinition/kiola-standard-treatment-plan-participant-property-example" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Standard Treatment Plan Participant Property Example" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-standard-treatment-plan"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-standard-treatment-plan>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CapabilityStatement" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/CapabilityStatement/kiola-standard-treatment-plan-set-default> ;
+         fhir:reference [ fhir:v "CapabilityStatement/kiola-standard-treatment-plan-set-default" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Standard Treatment Plan Set Default" ] ;
+       fhir:description [ fhir:v "One or more KIOLA standard treatment plans might be set as default plans, to be preselected when registering a new patient." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PlanDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/PlanDefinition/kiola-standard-treatment-plan-simple-example> ;
+         fhir:reference [ fhir:v "PlanDefinition/kiola-standard-treatment-plan-simple-example" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Standard Treatment Plan Simple Example" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-standard-treatment-plan"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-standard-treatment-plan>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PlanDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/PlanDefinition/kiola-standard-treatment-plan-timing-example> ;
+         fhir:reference [ fhir:v "PlanDefinition/kiola-standard-treatment-plan-timing-example" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Standard Treatment Plan Timing Example" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-standard-treatment-plan"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-standard-treatment-plan>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:complex-type" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-subject-uuid-identifier> ;
+         fhir:reference [ fhir:v "StructureDefinition/kiola-subject-uuid-identifier" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Subject UUID" ] ;
+       fhir:description [ fhir:v "Primary identifier for a subject in KIOLA" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-treatment-plan> ;
+         fhir:reference [ fhir:v "StructureDefinition/kiola-treatment-plan" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLA Treatment Plan" ] ;
+       fhir:description [ fhir:v "Instance of a KIOLA standard treatment plan, that might have been adapted individually for the patient." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ValueSet/KIOLAMeasurementUnits> ;
+         fhir:reference [ fhir:v "ValueSet/KIOLAMeasurementUnits" ]
+       ] ;
+       fhir:name [ fhir:v "KIOLAMeasurementUnits" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ValueSet/KMCAppPackages> ;
+         fhir:reference [ fhir:v "ValueSet/KMCAppPackages" ]
+       ] ;
+       fhir:name [ fhir:v "KMC App Packages" ] ;
+       fhir:description [ fhir:v "App package IDs of first and 3rd party apps, that might be launched by a mobile client to facilitate the transmission process." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/CodeSystem/kiola-device-kmc-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/kiola-device-kmc-cs" ]
+       ] ;
+       fhir:name [ fhir:v "KMC Device Codes" ] ;
+       fhir:description [ fhir:v "Various codes that might be used to configure a mobile client." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ValueSet/KMCUIReferences> ;
+         fhir:reference [ fhir:v "ValueSet/KMCUIReferences" ]
+       ] ;
+       fhir:name [ fhir:v "KMC UI References" ] ;
+       fhir:description [ fhir:v "References to UI elements, that might be used to initiate the transmission process on a mobile client." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-vnd-ait-q-med-v1> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-vnd-ait-q-med-v1" ]
+       ] ;
+       fhir:name [ fhir:v "Medication Taken Questionnaire Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-note> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-note" ]
+       ] ;
+       fhir:name [ fhir:v "Note Entry Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/participant-device-definition> ;
+         fhir:reference [ fhir:v "StructureDefinition/participant-device-definition" ]
+       ] ;
+       fhir:name [ fhir:v "Participant Device Definition" ] ;
+       fhir:description [ fhir:v "Extension to add a device definition to a participant of an activity or plan definition." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-vnd-ait-q-phys-visit-v1> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-vnd-ait-q-phys-visit-v1" ]
+       ] ;
+       fhir:name [ fhir:v "Physician Visit Questionnaire Entry Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/plan-definition-patient-instruction> ;
+         fhir:reference [ fhir:v "StructureDefinition/plan-definition-patient-instruction" ]
+       ] ;
+       fhir:name [ fhir:v "Plan Definition Patient Instruction" ] ;
+       fhir:description [ fhir:v "Extension to add a patient instruction to the activity of a plan definition." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-sleepsequence> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-sleepsequence" ]
+       ] ;
+       fhir:name [ fhir:v "Sleepsequence Measurement Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-spiro> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-spiro" ]
+       ] ;
+       fhir:name [ fhir:v "Spirometry Measurement Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-stepcounter> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-stepcounter" ]
+       ] ;
+       fhir:name [ fhir:v "Step Counter Measurement" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-stepsequence> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-stepsequence" ]
+       ] ;
+       fhir:name [ fhir:v "Stepsequence Measurement Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-pain-current> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-pain-current" ]
+       ] ;
+       fhir:name [ fhir:v "Subjective Pain Measurement Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-pain-range> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-pain-range" ]
+       ] ;
+       fhir:name [ fhir:v "Subjective Pain Range Measurement Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-temp> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-temp" ]
+       ] ;
+       fhir:name [ fhir:v "Temperature Measurement Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-wellbeing> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-wellbeing" ]
+       ] ;
+       fhir:name [ fhir:v "Wellbeing Measurement Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-wound-assessment> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-wound-assessment" ]
+       ] ;
+       fhir:name [ fhir:v "Wound Assessment Measurement Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ActivityDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/ActivityDefinition/mdc-dev-spec-profile-vnd-ait-wound> ;
+         fhir:reference [ fhir:v "ActivityDefinition/mdc-dev-spec-profile-vnd-ait-wound" ]
+       ] ;
+       fhir:name [ fhir:v "Wound Measurement Definition" ] ;
+       fhir:example [
+         fhir:v "https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition"^^xsd:anyURI ;
+         fhir:link <https://fhir.ehealth-systems.at/artifacts/StructureDefinition/kiola-measurement-definition>
+       ]
+     ] ) ;
+     fhir:page [
+       fhir:name [ fhir:v "toc.html"^^xsd:anyURI ] ;
+       fhir:title [ fhir:v "Table of Contents" ] ;
+       fhir:generation [ fhir:v "html" ] ;
+       fhir:page ( [
+         fhir:name [ fhir:v "index.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Home" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] )
+     ] ;
+     fhir:parameter ( [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/capabilities" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/examples" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/extensions" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/models" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/operations" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/profiles" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/resources" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/vocabulary" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/maps" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/testing" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/history" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "fsh-generated/resources" ]
+     ] [
+       fhir:code [ fhir:v "path-pages" ] ;
+       fhir:value [ fhir:v "template/config" ]
+     ] [
+       fhir:code [ fhir:v "path-pages" ] ;
+       fhir:value [ fhir:v "input/images" ]
+     ] [
+       fhir:code [ fhir:v "path-tx-cache" ] ;
+       fhir:value [ fhir:v "input-cache/txcache" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

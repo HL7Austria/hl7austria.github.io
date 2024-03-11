@@ -1,0 +1,38 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "KMCUIReferences",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set includes codes based on the following rules:</p><ul><li>Include codes from <a href=\"CodeSystem-kiola-device-kmc-cs.html\"><code>https://fhir.ehealth-systems.at/kiola/device/kmc</code></a> where concept  is-a  <a href=\"CodeSystem-kiola-device-kmc-cs.html#kiola-device-kmc-cs-ui_reference\">ui_reference</a></li></ul><p>This value set excludes codes based on the following rules:</p><ul><li>Exclude these codes as defined in <a href=\"CodeSystem-kiola-device-kmc-cs.html\"><code>https://fhir.ehealth-systems.at/kiola/device/kmc</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"CodeSystem-kiola-device-kmc-cs.html#kiola-device-kmc-cs-ui_reference\">ui_reference</a></td><td style=\"color: #cccccc\">Reference to a tile on the KMC dashboard</td></tr></table></li></ul></div>"
+  },
+  "url" : "https://fhir.ehealth-systems.at/artifacts/ValueSet/KMCUIReferences",
+  "version" : "0.1.0",
+  "name" : "KMCUIReferences",
+  "title" : "KMC UI References",
+  "status" : "active",
+  "date" : "2024-03-11T08:55:33+00:00",
+  "contact" : [{
+    "name" : "AIT Austrian Institute of Technology",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "mailto:office@ait.ac.at"
+    }]
+  }],
+  "description" : "References to UI elements, that might be used to initiate the transmission process on a mobile client.",
+  "compose" : {
+    "include" : [{
+      "system" : "https://fhir.ehealth-systems.at/kiola/device/kmc",
+      "filter" : [{
+        "property" : "concept",
+        "op" : "is-a",
+        "value" : "ui_reference"
+      }]
+    }],
+    "exclude" : [{
+      "system" : "https://fhir.ehealth-systems.at/kiola/device/kmc",
+      "concept" : [{
+        "code" : "ui_reference"
+      }]
+    }]
+  }
+}
