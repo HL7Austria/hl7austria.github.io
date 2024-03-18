@@ -1,0 +1,740 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.hl7.at/elga-e-medikation-R5/ImplementationGuide/elga-e-medikation-R5.elga.hl7.at> a fhir:ImplementationGuide ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "elga-e-medikation-R5.elga.hl7.at"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>ELGAFHIReMedikationR5</h2><p>The official URL for this implementation guide is: </p><pre>http://fhir.hl7.at/elga-e-medikation-R5/ImplementationGuide/elga-e-medikation-R5.elga.hl7.at</pre><div><p>Die e-Medikation ist als Service zu verstehen, welches im Zuge des Verordnungs-, des Abgabe-, bzw. des Verabreichungsprozesses Informationen zur Medikation eines Patienten zur Verfügung stellt.</p>\n</div></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://fhir.hl7.at/elga-e-medikation-R5/ImplementationGuide/elga-e-medikation-R5.elga.hl7.at"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.0.0"] ; # 
+  fhir:name [ fhir:v "ELGAFHIReMedikationR5"] ; # 
+  fhir:title [ fhir:v "ELGA e-Medikation FHIR R5 Implementierungsleitfaden"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2024-03-18T05:30:15+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "ELGA GmbH" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.elga.gv.at/" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Die e-Medikation ist als Service zu verstehen, welches im Zuge des Verordnungs-, des Abgabe-, bzw. des Verabreichungsprozesses Informationen zur Medikation eines Patienten zur Verfügung stellt."] ; # 
+  fhir:packageId [ fhir:v "elga-e-medikation-R5.elga.hl7.at"] ; # 
+  fhir:license [ fhir:v "CC0-1.0"] ; # 
+  fhir:fhirVersion ( [ fhir:v "5.0.0"] ) ; # 
+  fhir:dependsOn ( [
+     fhir:id [ fhir:v "hl7tx" ] ;
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Automatically added as a dependency - all IGs depend on HL7 Terminology" ]
+     ] ) ;
+     fhir:uri [
+       fhir:v "http://terminology.hl7.org/ImplementationGuide/hl7.terminology"^^xsd:anyURI ;
+       fhir:link <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
+     ] ;
+     fhir:packageId [ fhir:v "hl7.terminology.r5" ] ;
+     fhir:version [ fhir:v "5.3.0" ]
+  ] [
+     fhir:id [ fhir:v "hl7ext" ] ;
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack" ]
+     ] ) ;
+     fhir:uri [
+       fhir:v "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions>
+     ] ;
+     fhir:packageId [ fhir:v "hl7.fhir.uv.extensions.r5" ] ;
+     fhir:version [ fhir:v "1.0.0" ]
+  ] ) ; # 
+  fhir:definition [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "hl7.fhir.uv.tools#0.1.0" ]
+     ] ) ;
+     fhir:resource ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/at-core-ext-address-additionalInformation> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-core-ext-address-additionalInformation" ]
+       ] ;
+       fhir:name [ fhir:v "Address Additional Information" ] ;
+       fhir:description [ fhir:v "HL7® Austria FHIR® Core Extension for the additional information part of the Austrian address." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/ValueSet/at-elga-vs-countryCodes> ;
+         fhir:reference [ fhir:v "ValueSet/at-elga-vs-countryCodes" ]
+       ] ;
+       fhir:name [ fhir:v "ELGA Country Code Value Set" ] ;
+       fhir:description [ fhir:v "Value Set for ISO 3166-1 alpha 3 used in ELGA. Also accessible on [Termpub - ValueSet - ELGA Ländercodes](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=ValueSet&loadName=ELGA_Laendercodes)." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/ValueSet/at-elga-vs-religion> ;
+         fhir:reference [ fhir:v "ValueSet/at-elga-vs-religion" ]
+       ] ;
+       fhir:name [ fhir:v "ELGA Religion Value Set" ] ;
+       fhir:description [ fhir:v "Set of religious affiliations to be used in ELGA. It is preferred to use entries of the first level hierachy (1-L). Also accessible on [Termpub - ValueSet - ELGA ReligiousAffiliation](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=ValueSet&loadName=ELGA_ReligiousAffiliation)." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "RequestOrchestration" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/RequestOrchestration/bfa0d45270674e0794b694f2892cb1c0> ;
+         fhir:reference [ fhir:v "RequestOrchestration/bfa0d45270674e0794b694f2892cb1c0" ]
+       ] ;
+       fhir:name [ fhir:v "Ex0100 US001 LINCARequestOrchestration: Single medication without pharmacy" ] ;
+       fhir:description [ fhir:v "LINCARequestOrchestration created by DGKP Susanne Allzeits. It contains the single medication proposal for her client Renate Rüssel-Olifant without a specified pharmacy for pickup." ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-full-proposal-list"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-full-proposal-list>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/MedicationRequest/b8aad49741e74c36aeab76cada3ad1bc> ;
+         fhir:reference [ fhir:v "MedicationRequest/b8aad49741e74c36aeab76cada3ad1bc" ]
+       ] ;
+       fhir:name [ fhir:v "Ex0102 US001 LINCAProposalMedicationRequest: Systeminstance" ] ;
+       fhir:description [ fhir:v "The Linked Care FHIR server, creates an instance from DGKP Susanne Allzeit's single medication proposal." ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-proposal-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-proposal-medication-request>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/MedicationRequest/331c530a6377444a9e78a8a27a2ec35c> ;
+         fhir:reference [ fhir:v "MedicationRequest/331c530a6377444a9e78a8a27a2ec35c" ]
+       ] ;
+       fhir:name [ fhir:v "Ex0103 US010 LINCAPrescriptionMedicationRequest: Prescribe as proposed" ] ;
+       fhir:description [ fhir:v "Practitioner Dr. Wibke Würm is designated practicioner for Renate Rüssel-Olifant.  They decide that the received proposal is ok and issue a prescription for the medication." ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-prescription-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-prescription-medication-request>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationDispense" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/MedicationDispense/d6a2f68cd3f74c28b9dd9fa4ec014cc4> ;
+         fhir:reference [ fhir:v "MedicationDispense/d6a2f68cd3f74c28b9dd9fa4ec014cc4" ]
+       ] ;
+       fhir:name [ fhir:v "Ex0104 US016 LINCAMedicationDispense: Full Dispense" ] ;
+       fhir:description [ fhir:v "Pharmacist Mag. Andreas Amsel, owner of the pharmacy Apotheke 'Zum frühen Vogel' has access to and permission in a pharmacist role in the LINCA system. When he is expected to fullfil medication orders for a customer Renate Rüssel-Olifant, and he has a LINCA order Id to go with a purchase her care giver Susanne Allzeit just made for her, then Mag. Andreas Amsel submits a dispense record for the order position in question." ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-dipsense-documentation"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-dipsense-documentation>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "RequestOrchestration" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/RequestOrchestration/c13972d2294549c7bd29e924cbf0ce41> ;
+         fhir:reference [ fhir:v "RequestOrchestration/c13972d2294549c7bd29e924cbf0ce41" ]
+       ] ;
+       fhir:name [ fhir:v "Ex0200 US003 LINCARequestOrchestration: Minimalistic Inpatient" ] ;
+       fhir:description [ fhir:v "DGKP Walter Specht submits LINCARequestOrchestration containing individual proposal items and specifies a pharmacy for pickup. Each item consists of 1 medication for a single patient. Hence, if one patient needs multiple medications, each must be an individual proposal item." ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-full-proposal-list"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-full-proposal-list>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/MedicationRequest/4ca9d9bf9936427c926118e9c627fc3a> ;
+         fhir:reference [ fhir:v "MedicationRequest/4ca9d9bf9936427c926118e9c627fc3a" ]
+       ] ;
+       fhir:name [ fhir:v "Ex0203 US003 LINCAProposalMedicationRequest: Systeminstance 01" ] ;
+       fhir:description [ fhir:v "The proposal was successfully posted to the Linked Care FHIR server and an instance of the inline LINCAProposalMedicationRequest was created." ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-proposal-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-proposal-medication-request>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/MedicationRequest/1762e9b8e2c84b01824f101db887593c> ;
+         fhir:reference [ fhir:v "MedicationRequest/1762e9b8e2c84b01824f101db887593c" ]
+       ] ;
+       fhir:name [ fhir:v "Ex0204 US003 LINCAProposalMedicationRequest: Systeminstance 02" ] ;
+       fhir:description [ fhir:v "Second proposal item of DGKP Walte Specht's proposal. Instance is for another patient in 'Haus Vogelsang'" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-proposal-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-proposal-medication-request>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/MedicationRequest/3249246cd3774134abeafdfe6189e8e7> ;
+         fhir:reference [ fhir:v "MedicationRequest/3249246cd3774134abeafdfe6189e8e7" ]
+       ] ;
+       fhir:name [ fhir:v "Ex0205 US004 LINCAProposalMedicationRequest: Update basedOn" ] ;
+       fhir:description [ fhir:v "DGKP Walter Specht needs to modify details of his proposal. He wants to update one individual proposal item for his client Günter Gürtelthier." ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-proposal-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-proposal-medication-request>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/MedicationRequest/ab0ad2904cd14d36af23de4edc332ea3> ;
+         fhir:reference [ fhir:v "MedicationRequest/ab0ad2904cd14d36af23de4edc332ea3" ]
+       ] ;
+       fhir:name [ fhir:v "Ex0206 US005 LINCAProposalMedicationRequest: Cancel basedOn" ] ;
+       fhir:description [ fhir:v "DGKP Walter Specht needs to cancel individual proposal positions for his client Patrizia Platypus. He submits updates on those positions, providing a reason for cancellation, such as a medical reason, and sets their status to 'cancelled'." ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-proposal-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-proposal-medication-request>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/MedicationRequest/091f1a9d0d64415c91f67caccc3f3848> ;
+         fhir:reference [ fhir:v "MedicationRequest/091f1a9d0d64415c91f67caccc3f3848" ]
+       ] ;
+       fhir:name [ fhir:v "Ex0207 US011 LINCAPrescriptionMedicationRequest: Change medication in prescription" ] ;
+       fhir:description [ fhir:v "Dr. Silvia Spitzmaus does not agree with the proposed medication for Patient Walter Gürtelthier, hence she issues a prescription for a different medication." ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-prescription-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-prescription-medication-request>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "MedicationRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/MedicationRequest/2f9de5b899a54392b9b39c440aca0887> ;
+         fhir:reference [ fhir:v "MedicationRequest/2f9de5b899a54392b9b39c440aca0887" ]
+       ] ;
+       fhir:name [ fhir:v "Ex0208 US012 LINCAPrescriptionMedicationRequest: Modify Dosage" ] ;
+       fhir:description [ fhir:v "After issuing the prescription for Walter Gürtelthier, Dr. Silvia Spitzmaus realizes the dosage needs adjustment. ence, she submits an update to that prescription with new dosage instructions." ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-prescription-medication-request"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-prescription-medication-request>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "RequestOrchestration" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/RequestOrchestration/RequestOrchestration-Dosage-Example> ;
+         fhir:reference [ fhir:v "RequestOrchestration/RequestOrchestration-Dosage-Example" ]
+       ] ;
+       fhir:name [ fhir:v "Example LINCARequestOrchestration: Dosage Variation" ] ;
+       fhir:description [ fhir:v "LINCA Proposal with different dummy data as in the user stories. Shows all ELGA conform encodeing of dosage instructions used by the other examples." ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-full-proposal-list"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-full-proposal-list>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/CodeSystem/at-core-cs-religion> ;
+         fhir:reference [ fhir:v "CodeSystem/at-core-cs-religion" ]
+       ] ;
+       fhir:name [ fhir:v "HL7 AT Core Religion Code System" ] ;
+       fhir:description [ fhir:v "Code system for the religions and faith communities in Austria. Also accessible on [Termpub - CodeSystem - HL7 AT ReligionAustria](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&loadName=HL7.AT:ReligionAustria)." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:complex-type" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/at-core-address> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-core-address" ]
+       ] ;
+       fhir:name [ fhir:v "HL7® AT Core Address Profile" ] ;
+       fhir:description [ fhir:v "HL7® Austria FHIR® Core Profile for address data in Austria. Note, this extension represents the common structure of address information within Austrian information systems. This extension does not restrict the documented information to Austrian adresses. Address information that does not fit into the given structure may be captured by [Address Additional Information](StructureDefinition-at-core-ext-address-additionalInformation.html)." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/at-core-patient> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-core-patient" ]
+       ] ;
+       fhir:name [ fhir:v "HL7® AT Core Patient Profile" ] ;
+       fhir:description [ fhir:v "HL7® Austria FHIR® Core Profile for patient data in Austria.\nThe HL7® AT Core Patient is based upon the core FHIR® Patient Resource and designed to meet the applicable patient demographic data elements in Austria. It identifies which core elements, extensions, vocabularies and value sets SHALL be present in the resource when using this profile. Note, this extension represents the common structure of Patient information within Austrian information systems." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/at-core-valueset> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-core-valueset" ]
+       ] ;
+       fhir:name [ fhir:v "HL7® AT Core ValueSet Profile" ] ;
+       fhir:description [ fhir:v "HL7® Austria FHIR® Core Profile for valuesets in Austria.\nThe HL7® AT Core ValueSet is based upon the core FHIR® ValueSet Resource and defines the use of the OID extension." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/CodeSystem/at-core-cs-iso-3166-1-alpha-3> ;
+         fhir:reference [ fhir:v "CodeSystem/at-core-cs-iso-3166-1-alpha-3" ]
+       ] ;
+       fhir:name [ fhir:v "HL7® AT® Core ISO 3166-1 alpha 3 Code System" ] ;
+       fhir:description [ fhir:v "ISO code system for country codes with 3 letters. Also accessible on [Termpub - CodeSystem - ISO 3166-1 alpha 3](https://termpub.gesundheit.gv.at/TermBrowser/gui/main/main.zul?loadType=CodeSystem&loadName=ISO%203166-1%20alpha%203%202016)." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-dipsense-documentation> ;
+         fhir:reference [ fhir:v "StructureDefinition/linca-dipsense-documentation" ]
+       ] ;
+       fhir:name [ fhir:v "LINCA Dispense (LINCAMedicationDispense)" ] ;
+       fhir:description [ fhir:v "Linked Care  Profile for dispense documentation. The dispense must be documented by the dispensing pharmacist and specify if an order was fulfilled completly or partially. The LINCA Dispense must have an LINCA Prescription as authorizingPrescription." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-medication> ;
+         fhir:reference [ fhir:v "StructureDefinition/linca-medication" ]
+       ] ;
+       fhir:name [ fhir:v "LINCA Medication (LINCAMeds)" ] ;
+       fhir:description [ fhir:v "Linked Care profile for Medication Resource to ensure ELGA compliant representation. Bind code to ELGA CodeSystem ('asp-liste') and doseForm to ELGA ValueSet ('elga-medikationdarreichungsform')." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-prescription-medication-request> ;
+         fhir:reference [ fhir:v "StructureDefinition/linca-prescription-medication-request" ]
+       ] ;
+       fhir:name [ fhir:v "LINCA Prescription (LINCAPrescriptionMedicationRequest)" ] ;
+       fhir:description [ fhir:v "Linked Care Profile for prescriptions. The prescriptions are created by the practicioner software but must be basedOn an assigned LINCA Proposal Item. The assigned practicioners can view, modify or cancel all of their assigned proposal items." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-proposal-medication-request> ;
+         fhir:reference [ fhir:v "StructureDefinition/linca-proposal-medication-request" ]
+       ] ;
+       fhir:name [ fhir:v "LINCA Proposal Item (LINCAProposalMedicationRequest)" ] ;
+       fhir:description [ fhir:v "Linked Care profile for individual proposal positions. A list of proposal positions is first received as contained resources in a LINCA Proposal. Then the Linked Care FHIR server creates an instance for each contained item. These instances are send to the assigned practicioner(s) for authorization." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-full-proposal-list> ;
+         fhir:reference [ fhir:v "StructureDefinition/linca-full-proposal-list" ]
+       ] ;
+       fhir:name [ fhir:v "LINCA Proposal List (LINCARequestOrchestration)" ] ;
+       fhir:description [ fhir:v "Linked Care Profile for the overall proposal. The LINCA Proposal List serves as container for the individual placements. The placer's software creates the RequestOrchestration when (re)ordering medication." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/at-core-ext-patient-religion> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-core-ext-patient-religion" ]
+       ] ;
+       fhir:name [ fhir:v "Patient Religion" ] ;
+       fhir:description [ fhir:v "HL7® Austria FHIR® Core Extension for the religion (registered in Austria) of a patient.\nThe extension is used to encode the religious confession of a patient (only confessions registered in Austria). Furthermore, it uses the official [HL7 AT CodeSystem](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&loadName=HL7 AT ReligionAustria) for religion and is therefore aligned with the ELGA ValueSet, respectively." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Patient" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/Patient/6800bda462034a9a8123e3dc48c61d53> ;
+         fhir:reference [ fhir:v "Patient/6800bda462034a9a8123e3dc48c61d53" ]
+       ] ;
+       fhir:name [ fhir:v "Registered Patient 01: 'Günter Gürtelthier'" ] ;
+       fhir:description [ fhir:v "Instance of fictitious patient, who is an inpatient at Haus Vogelsang" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/at-core-patient"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/at-core-patient>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Patient" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/Patient/d14e6251b3c545828f7e44cdc6faf2fb> ;
+         fhir:reference [ fhir:v "Patient/d14e6251b3c545828f7e44cdc6faf2fb" ]
+       ] ;
+       fhir:name [ fhir:v "Registered Patient 02: 'Patrizia Platypus' " ] ;
+       fhir:description [ fhir:v "Instance of fictitious patient, who is inpatient at Haus Vogelsang" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/at-core-patient"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/at-core-patient>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Patient" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/Patient/ee8d340312484aaca84774b2a0d53533> ;
+         fhir:reference [ fhir:v "Patient/ee8d340312484aaca84774b2a0d53533" ]
+       ] ;
+       fhir:name [ fhir:v "Registered Patient 03: Renate Rüssel-Olifant" ] ;
+       fhir:description [ fhir:v "Instance of fictitious patient, who is a client at Pflegedienst Immerdar" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/at-core-patient"^^xsd:anyURI ;
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/at-core-patient>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/at-core-ext-valueset-systemoid> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-core-ext-valueset-systemoid" ]
+       ] ;
+       fhir:name [ fhir:v "System OID" ] ;
+       fhir:description [ fhir:v "HL7® Austria FHIR® Core Extension for the capturing of OID in ValueSets to reference the CodeSystem they come from.\nThe extension is used to document the OID of the system of a code referenced in a ValueSet, to align FHIR with the HL7 Austria CDA document guidelines." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] ) ;
+     fhir:page [
+       fhir:source [ fhir:v "toc.html"^^xsd:anyURI ] ;
+       fhir:name [ fhir:v "toc.html"^^xsd:anyURI ] ;
+       fhir:title [ fhir:v "Table of Contents" ] ;
+       fhir:generation [ fhir:v "html" ] ;
+       fhir:page ( [
+         fhir:source [ fhir:v "index.html"^^xsd:anyURI ] ;
+         fhir:name [ fhir:v "index.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "ELGA e-Medikation Implementierungsleitfaden in FHIR R5" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] )
+     ] ;
+     fhir:parameter ( [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "copyrightyear" ]
+       ] ;
+       fhir:value [ fhir:v "2024+" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "releaselabel" ]
+       ] ;
+       fhir:value [ fhir:v "ci-build" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "autoload-resources" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/capabilities" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/examples" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/extensions" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/models" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/operations" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/profiles" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/resources" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/vocabulary" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/maps" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/testing" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/history" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "fsh-generated/resources" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-pages" ]
+       ] ;
+       fhir:value [ fhir:v "template/config" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-pages" ]
+       ] ;
+       fhir:value [ fhir:v "input/images" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-liquid" ]
+       ] ;
+       fhir:value [ fhir:v "template/liquid" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-liquid" ]
+       ] ;
+       fhir:value [ fhir:v "input/liquid" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-qa" ]
+       ] ;
+       fhir:value [ fhir:v "temp/qa" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-temp" ]
+       ] ;
+       fhir:value [ fhir:v "temp/pages" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-output" ]
+       ] ;
+       fhir:value [ fhir:v "output" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-tx-cache" ]
+       ] ;
+       fhir:value [ fhir:v "input-cache/txcache" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-suppressed-warnings" ]
+       ] ;
+       fhir:value [ fhir:v "input/ignoreWarnings.txt" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-history" ]
+       ] ;
+       fhir:value [ fhir:v "http://fhir.hl7.at/elga-e-medikation-R5/history.html" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "template-html" ]
+       ] ;
+       fhir:value [ fhir:v "template-page.html" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "template-md" ]
+       ] ;
+       fhir:value [ fhir:v "template-page-md.html" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-contact" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-context" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-copyright" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-jurisdiction" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-license" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-publisher" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-version" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-wg" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "active-tables" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "fmm-definition" ]
+       ] ;
+       fhir:value [ fhir:v "http://hl7.org/fhir/versions.html#maturity" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "propagate-status" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "excludelogbinaryformat" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "tabbed-snapshots" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
