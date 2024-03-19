@@ -39,8 +39,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"7"}
-    h3,h4,h5,h6{--heading-prefix:"7"}</style>
+    <style type="text/css">h2{--heading-prefix:"5"}
+    h3,h4,h5,h6{--heading-prefix:"5"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
           <!-- at-fhir-ig-template begin -->
@@ -150,11 +150,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#verordnungen-mit-rezept-anlegen" id="markdown-toc-verordnungen-mit-rezept-anlegen">Verordnung(en) mit Rezept anlegen</a></li>
   <li><a href="#rezept-mit-verordnungen-abrufen" id="markdown-toc-rezept-mit-verordnungen-abrufen">Rezept mit Verordnung(en) abrufen</a></li>
   <li><a href="#verordnung-stornieren" id="markdown-toc-verordnung-stornieren">Verordnung stornieren</a></li>
+  <li><a href="#verordnungrezept-ändern" id="markdown-toc-verordnungrezept-ändern">Verordnung/Rezept ändern</a></li>
+  <li><a href="#abgabe-mit-verordnungsbezug-durchführen" id="markdown-toc-abgabe-mit-verordnungsbezug-durchführen">Abgabe mit Verordnungsbezug durchführen</a></li>
+  <li><a href="#abgabe-ohne-verordnungsbezug-durchführen" id="markdown-toc-abgabe-ohne-verordnungsbezug-durchführen">Abgabe ohne Verordnungsbezug durchführen</a></li>
+  <li><a href="#abgabe-abrufen" id="markdown-toc-abgabe-abrufen">Abgabe abrufen</a></li>
+  <li><a href="#abgabe-stornieren" id="markdown-toc-abgabe-stornieren">Abgabe stornieren</a></li>
+  <li><a href="#abgabe-absetzen" id="markdown-toc-abgabe-absetzen">Abgabe absetzen</a></li>
+  <li><a href="#abgabe-ändern" id="markdown-toc-abgabe-ändern">Abgabe ändern</a></li>
+  <li><a href="#medikationsliste-abrufen" id="markdown-toc-medikationsliste-abrufen">Medikationsliste abrufen</a></li>
 </ul>
 
 </div>
 <blockquote>
-  <p><strong><a name="l280">​</a>For the english version please click <a href="usecases_en.html">here</a>.</strong></p>
+  <p><strong><a name="l312">​</a>For the english version please click <a href="usecases_en.html">here</a>.</strong></p>
 </blockquote>
 
 <p>Zum besseren Verständnis des Implementierungsleitfaden „e-Medikation“ sowie dem Zusammenspiel der CDA-Dokumente werden im Folgenden die Anwendungsfälle für die e- Medikation kurz dargestellt.
@@ -429,6 +437,358 @@ Ein Rezept gilt als storniert, wenn einer der folgenden beiden Methoden angewand
 <h5 id="ergebnis-im-fehlerfall-2">Ergebnis im Fehlerfall</h5>
 <p>Im Fehlerfall wird der Vorgang abgebrochen und kann bei Bedarf wiederholt werden. Die Verordnung behält den Status „OFFEN“.</p>
 
+<h3 id="verordnungrezept-ändern">Verordnung/Rezept ändern</h3>
+
+<h4 id="beschreibung-2">Beschreibung</h4>
+<p>Der Arzt muss eine bereits in e-Medikation gespeicherte Verordnung ändern können. Die Änderungen darf von jedem Arzt vorgenommen werden, unabhängig davon, ob der Arzt die Verordnung erstellt hat oder nicht.</p>
+
+<h4 id="vorbedingung-3">Vorbedingung</h4>
+<ul>
+  <li>ELGA-Vorbedingung: GDA ist autorisiert, ELGA Teilnehmer ist identifiziert, eine gültige Kontaktbestätigung/Berechtigung („Ticket“) wurde vom ELGA-Berechtigungssystem ausgestellt.</li>
+  <li>e-Medikation Vorbedingung: Verordnung mit dem Status=OFFEN ist vorhanden.</li>
+</ul>
+
+<h4 id="akteure-3">Akteure</h4>
+<ul>
+  <li>Arzt im niedergelassenen Bereich</li>
+  <li>Krankenanstalt</li>
+  <li>Einrichtung der Pflege</li>
+</ul>
+
+<h4 id="ablauf-3">Ablauf</h4>
+
+<p>Eine Verordnung kann mittels einer Korrekturmeldung (=Pharmazeutischen Empfehlung) geändert werden. Der Arzt kann nur die folgenden Datenfelder einer Verordnung ändern, nicht aber das verordnete Arzneimittel oder die Menge selbst:</p>
+<ul>
+  <li>Art der Anwendung</li>
+  <li>Zusatzinformation</li>
+  <li>Ergänzende Information</li>
+  <li>Alternative Einnahme</li>
+  <li>Tagesdosierung</li>
+  <li>Morgen Dosierung</li>
+  <li>Mittags Dosierung</li>
+  <li>Abends Dosierung</li>
+  <li>Nachts Dosierung</li>
+  <li>Frequenz</li>
+  <li>Therapieart</li>
+  <li>Tagesangabe</li>
+</ul>
+
+<p>Verordnungen mit dem Status ABGELAUFEN, NICHT DISPENSIERT, EINGELÖST, STORNIERT können nicht geändert werden. Die Medikation (z.B. Handelsname) einer Verordnung kann NICHT geändert werden.
+Ist eine Änderung der Medikation notwendig, kann der Akteur eine neue Verordnung anlegen und eine Stornierung der zu ändernden Verordnung veranlassen (Rücksprache). Das gleiche gilt für die Angabe „Menge“, dazu muss der Arzt ein weiteres Rezept mit einer entsprechenden Verordnung ausstellen. Die Verringerung der Menge kann nicht abgebildet werden.
+Die eMED-ID am Rezept muss bei einer Änderung der Verordnung gleich bleiben. Jede Änderung ist zu protokollieren; Es muss nachvollziehbar sein,</p>
+<ul>
+  <li>wann die Änderung der Verordnung durchgeführt wurde.</li>
+  <li>welcher GDA die Änderung der Verordnung durchgeführt hat.</li>
+</ul>
+
+<p>Der Aussteller des Rezepts mit der entsprechenden Verordnung bleibt gleich und darf nicht durch die Änderung der Verordnung verändert werden.</p>
+
+<h5 id="ergebnis-im-gutfall-3">Ergebnis im Gutfall</h5>
+<p>Im Gutfall wird die Änderung der Datenfelder der Verordnung über eine Korrekturmeldung durchgeführt und in e-Medikation gespeichert.</p>
+
+<h5 id="ergebnis-im-fehlerfall-3">Ergebnis im Fehlerfall</h5>
+<p>Im Fehlerfall wird der Vorgang abgebrochen und kann bei Bedarf wiederholt werden. Die in e-Medikation gespeicherte Verordnung wurde nicht verändert.
+Falls fehlerhafte Daten übergeben werden, muss eine Fehlermeldung zurückgeliefert werden mit dem Hinweis auf den Fehler.</p>
+
+<h3 id="abgabe-mit-verordnungsbezug-durchführen">Abgabe mit Verordnungsbezug durchführen</h3>
+
+<h4 id="beschreibung-3">Beschreibung:</h4>
+<p>Eine Apotheke bzw. ein hausapothekenführender Arzt möchte ein Rezept für einen ELGA-Teilnehmer einlösen, dessen Verordnungen bereits in der e-Medikation gespeichert wurden. Hierzu müssen zunächst die Verordnungsdaten abgerufen werden und anschließend die Abgaben mit dem entsprechenden Verordnungsbezug gespeichert werden. 
+Für die Abfrage der Verordnungen aus der e-Medikation bestehen grundsätzlich 2 Möglichkeiten:</p>
+<ul>
+  <li>Abfrage der Verordnungsdaten mittels eMED-ID</li>
+  <li>Abfrage der Verordnungsdaten auf Basis einer bestehenden ELGA-Kontaktbestätigung</li>
+</ul>
+
+<h4 id="vorbedingung-4">Vorbedingung</h4>
+<ul>
+  <li>ELGA-Vorbedingung: GDA ist autorisiert, ELGA Teilnehmer ist identifiziert, eine gültige Kontaktbestätigung/Berechtigung („Ticket“) wurde vom ELGA-Berechtigungssystem ausgestellt.</li>
+  <li>e-Medikation Vorbedingung: Verordnung mit dem Status=OFFEN ist vorhanden</li>
+</ul>
+
+<h4 id="akteure-4">Akteure</h4>
+<ul>
+  <li>Arzt im niedergelassenen Bereich</li>
+  <li>Apotheke</li>
+</ul>
+
+<h4 id="ablauf-4">Ablauf</h4>
+<ul>
+  <li>
+    <p>Rezept mit Verordnungen abrufen</p>
+
+    <p>Üblicherweise wird in einem e-Rezept-Datensatz die korrespondierende eMED-ID gespeichert und liegt daher beim Abruf des e-Rezepts elektronisch als Zusatzinformation                                                                                                     vor. Alternativ kann die eMED-ID durch Scan des Matrix-Codes auf dem e-Rezept-Ausdruck oder durch manuelle Eingabe erfolgen. In diesem Fall ist keine ELGA-Kontaktbestätigung erforderlich. Allerdings ist hierdurch ausschließlich der Zugriff auf die Daten des durch die eMED-ID referenzierten Rezepts möglich und nicht auf andere in der e-Medikation gespeicherte Daten (z.B. komplette e-Medikationsliste des Patienten).</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Abfrage der Verordnungsdaten auf Basis einer bestehenden ELGA-Kontaktbestätigung
+</code></pre></div>    </div>
+
+    <p>Sämtliche zu einem ELGA-Teilnehmer in der e-Medikation gespeicherten Verordnungsdaten können auf Basis einer bestehenden ELGA-Kontaktbestätigung (z.B. ausgelöst durch Einlesen der e-card) abgerufen werden.</p>
+  </li>
+  <li>
+    <p>Abgabe in der e-Medikation speichern</p>
+
+    <p>Die Daten aus der Verordnung sind in der Regel vollständig für die Abgabe zu übernehmen. In Sonderfällen (z.B. Austausch eines Medikaments nach Rücksprache mit dem Arzt) können die aus der Verordnung übernommenen Daten geändert werden.</p>
+
+    <p>Für den Fall, dass bereits erfolgte Abgaben nacherfasst werden sollen (z.B. technische Probleme zum Zeitpunkt der eigentlichen Abgabe), wird als Erfassungsdatum der Zeitpunkt der Nacherfassung gesetzt, während als Abgabedatum das in der Vergangenheit liegende Datum der tatsächlichen Abgabe eingetragen wird</p>
+  </li>
+</ul>
+
+<p>In der Fachlogik gelten folgende Prüfregeln:</p>
+
+<ul>
+  <li>Damit die Verordnung eingelöst werden kann, muss diese den Status OFFEN haben.</li>
+  <li>Rezepte mit der Rezeptart=Privatrezepte können von mehreren Akteuren eingelöst werden, z.B. verschiedene Apotheken.</li>
+  <li>Rezepte mit der Rezeptart=Kassenrezept und Substitutionsrezept können nur von einem Akteur eingelöst werden. Somit müssen alle Verordnungen zu einem Rezept abgegeben werden. Verordnungen, die nicht abgegeben werden, erhalten den Status NICHT DISPENSIERT</li>
+  <li>Zu Rezepten mit dem Status ABGELAUFEN können keine Abgaben mehr gespeichert werden. Die (nachträgliche) Speicherung von Abgaben zu einem abgelaufenen Rezept kann im Anlassfall allerdings ohne Verordnungsbezug erfolgen (siehe Kapitel xxx).</li>
+</ul>
+
+<h5 id="sonderfälle">Sonderfälle</h5>
+
+<h6 id="austausch">Austausch:</h6>
+<p>Wird ein Arzneimittel verordnet, welches in der Apotheke nicht vorhanden ist, so kann im Rahmen der gesetzlichen Bestimmungen, der Apotheker bzw. der hausapotheken- führende Arzt ein wirkstoffgleiches Arzneimittel bzw. nach Rücksprache mit dem Arzt ein alternatives Arzneimittel abgeben.
+Jedenfalls ist das tatsächlich abgegebene Arzneimittel in e-Medikation zu speichern und der Verordnung/dem Rezept zuzuordnen, um die Zugrundeliegende Verordnung einzulösen.</p>
+
+<h6 id="besorger">Besorger:</h6>
+<p>Der Prozess des „Besorgers“ (ein Arzneimittel ist nicht lagernd und muss bestellt werden) wird in e-Medikation abgebildet. Das Rezept wird von der Apotheke eingelöst und die Abgabe wird als „Teilabgabe“ gekennzeichnet (siehe Markierung FFP „First Fill, Part Fill“ oder RFP „Refill - Part Fill“). Es wird die Verordnung nicht in den Status „EINGELOEST“ versetzt und es können solange weitere Abgaben dispensiert werden, bis eine Abgabe mit der Markierung RFC „Refill - Complete“ gespeichert wird. Die Kennzeichnung zeigt, dass das Arzneimittel dem Patienten noch nicht ausgehändigt wurde. Die Kennzeichnung zeigt auch, ob alle Packungen einer Verordnung bzw. teilweise Packungen einer Verordnung bestellt werden. Solange eine Abgabe mit der Kennzeichnung „Besorger“ vorhanden ist, muss die Abgabe mit der eMED-ID abrufbar sein.
+Der Prozess einer „Teilabgabe“ eines Rezeptes kann mit obiger Logik des „Besorgers“ auch abgebildet werden.</p>
+
+<h6 id="otc">OTC:</h6>
+<ul>
+  <li>Erfolgt die Abgabe eines OTC auf Basis einer Verordnung, wird die Abgabe immer in e-Medikation gespeichert, auch wenn dieses OTC nicht in der ASP-Liste als wechselwirkungsrelevante Arzneispezialität geführt ist.</li>
+  <li>Erfolgt die Abgabe eines OTC ohne Verordnungsbezug (siehe Kapitel „Abgabe ohne Verordnungsbrzug durchführen“), darf die Abgabe nur in e-Medikation gespeichert werden, wenn dieses OTC in der ASP-Liste als wechselwirkungsrelevante Arzneispezialität geführt ist.</li>
+</ul>
+
+<h5 id="ergebnis-im-gutfall-4">Ergebnis im Gutfall</h5>
+<p>Die Verordnung ist eingelöst und die Medikationsabgabe ist gespeichert. Die Verknüpfung von Verordnung und Abgabe ist vorhanden. Teilabgaben sind entsprechend markiert.</p>
+
+<h5 id="ergebnis-im-fehlerfall-4">Ergebnis im Fehlerfall</h5>
+<p>Im Fehlerfall wird der Vorgang abgebrochen und kann bei Bedarf wiederholt werden. Die in e-Medikation gespeicherte Verordnung wird nicht verändert.</p>
+
+<h3 id="abgabe-ohne-verordnungsbezug-durchführen">Abgabe ohne Verordnungsbezug durchführen</h3>
+
+<h4 id="beschreibung-4">Beschreibung</h4>
+<p>Der Akteur speichert die Arzneimittel in e-Medikation, welche tatsächlich abgegeben werden. Dieser Prozess wird durchgeführt</p>
+
+<ul>
+  <li>bei Abgabe von nicht verordneten Arzneimitteln (Abgabe von wechselwirkungsrelevanten OTC )</li>
+  <li>wenn ein e-Rezept-Eintrag oder ein Papierrezept vorhanden ist und keine Verordnungen in e-Medikation eingetragen wurden</li>
+  <li>Abgabe eines Arztmusters</li>
+  <li>Nacherfassung von bereits abgegebenen Arzneimitteln (z.B. wenn eine Speicherung zum Zeitpunkt der Abgabe aus technischen Gründen nicht möglich war, bei Arzneimittelbezug aus dem Ausland etc.)</li>
+</ul>
+
+<h4 id="vorbedingung-5">Vorbedingung</h4>
+<ul>
+  <li>ELGA-Vorbedingung: GDA ist autorisiert, ELGA Teilnehmer ist identifiziert, eine gültige Kontaktbestätigung/Berechtigung („Ticket“) wurde vom ELGA-Berechtigungssystem ausgestellt.</li>
+  <li>e-Medikation Vorbedingung: keine</li>
+</ul>
+
+<h4 id="akteure-5">Akteure</h4>
+<ul>
+  <li>Arzt im niedergelassenen Bereich</li>
+  <li>Apotheke</li>
+  <li>Krankenanstalt</li>
+  <li>Einrichtung der Pflege</li>
+</ul>
+
+<h4 id="ablauf-5">Ablauf</h4>
+
+<p>Der Akteur erfasst die Medikationsabgabe. Die Prüfungen der Arzneimittel z.B. auf potentielle Wechselwirkungen, Kontraindikationen, Dosierungen etc. erfolgt in der Eigenverantwortung des Akteurs und ist nicht Gegenstand des Informationssystems „e- Medikation“.</p>
+
+<p>Wenn eine Medikationsabgabe (ohne Rezept/Verordnung) in e-Medikation gespeichert wird, dann gilt die Medikationsabgabe als vom Akteur geprüft. Wenn ein e-Rezept-Eintrag oder ein Papierrezept ohne e-Medikations-Verordnung vorhanden ist, dann obliegt es dem abgebenden Akteur diese zu prüfen.</p>
+
+<p>Im Rahmen der Nacherfassung von bereits erfolgten Abgaben wird als Erfassungsdatum der Zeitpunkt der Nacherfassung gesetzt, während als Abgabedatum das in der Vergangenheit liegende Datum der tatsächlichen Abgabe eingetragen wird.</p>
+
+<h5 id="ergebnis-im-gutfall-5">Ergebnis im Gutfall</h5>
+<p>745	Die Medikationsabgabe ist in e-Medikation gespeichert.</p>
+
+<h5 id="ergebnis-im-fehlerfall-5">Ergebnis im Fehlerfall</h5>
+<p>Im Fehlerfall wird der Vorgang abgebrochen und kann bei Bedarf wiederholt werden.</p>
+
+<p>Falls fehlerhafte Daten übergeben werden, muss eine Fehlermeldung zurückgeliefert werden mit dem Hinweis auf den Fehler.</p>
+
+<h3 id="abgabe-abrufen">Abgabe abrufen</h3>
+
+<h4 id="beschreibung-5">Beschreibung</h4>
+<p>Im Zuge der Behandlung eines ELGA Teilnehmers kann der Akteur die Medikationsabgaben eines ELGA Teilnehmers abrufen.</p>
+
+<h4 id="vorbedingung-6">Vorbedingung</h4>
+<ul>
+  <li>ELGA-Vorbedingung: GDA ist autorisiert, ELGA Teilnehmer ist identifiziert, eine gültige Kontaktbestätigung/Berechtigung („Ticket“) wurde vom ELGA-Berechtigungssystem ausgestellt.</li>
+  <li>e-Medikation Vorbedingung: Abgaben in den letzten 365 Tagen vorhanden</li>
+</ul>
+
+<h4 id="akteure-6">Akteure</h4>
+<ul>
+  <li>Arzt im niedergelassenen Bereich</li>
+  <li>Krankenanstalt</li>
+  <li>Apotheke</li>
+  <li>Pflege</li>
+</ul>
+
+<h4 id="ablauf-6">Ablauf</h4>
+<p>Der Akteur fragt die Medikationsabgabe des identifizierten ELGA-Teilnehmers ab. Folgende Filterungen/Suchfunktionen können vorgenommen werden:</p>
+<ul>
+  <li>eMED-ID</li>
+  <li>Zeitraum
+Stornierte Abgaben können nicht abgerufen werden. Es gibt keine Einschränkung bei der Anzeige der Datenfelder (z.B. abgebender GDA darf angezeigt werden). Es werden alle Datenfelder zu einer Abgabe über die Schnittstelle zur Verfügung gestellt.</li>
+</ul>
+
+<h5 id="ergebnis-im-gutfall-6">Ergebnis im Gutfall</h5>
+<p>Im Gutfall werden dem Akteur die angeforderten Medikationsabgaben als auch zugehörige Korrekturmeldungen zurückgeliefert und stehen zur weiteren Verwendung zur Verfügung.</p>
+
+<h5 id="ergebnis-im-fehlerfall-6">Ergebnis im Fehlerfall</h5>
+<p>Im Fehlerfall wird der Vorgang abgebrochen und kann bei Bedarf wiederholt werden. 
+Falls fehlerhafte Daten übergeben werden, muss eine Fehlermeldung zurückgeliefert werden mit dem Hinweis auf den Fehler.</p>
+
+<h3 id="abgabe-stornieren">Abgabe stornieren</h3>
+
+<h4 id="beschreibung-6">Beschreibung</h4>
+
+<p>Der Akteur muss die Abgabe stornieren können (z.B. wenn irrtümlich eine Abgabe gespeichert wurde). Das Stornieren der Abgabe ist jederzeit möglich und darf nur vom Ersteller der Abgabe durchgeführt werden.</p>
+
+<h4 id="vorbedingung-7">Vorbedingung</h4>
+<ul>
+  <li>ELGA-Vorbedingung: GDA ist autorisiert, ELGA Teilnehmer ist identifiziert, eine gültige Kontaktbestätigung/Berechtigung („Ticket“) wurde vom ELGA-Berechtigungssystem ausgestellt.</li>
+  <li>e-Medikation Vorbedingung: Abgabe vorhanden, Status= ABGEGEBEN</li>
+</ul>
+
+<h4 id="akteure-7">Akteure</h4>
+<ul>
+  <li>Arzt im niedergelassenen Bereich</li>
+  <li>Apotheke</li>
+  <li>Krankenanstalt</li>
+  <li>Pflege</li>
+</ul>
+
+<h4 id="ablauf-7">Ablauf</h4>
+<p>Der Akteur wählt die Medikationsabgabe, welche storniert werden soll. Die Stornierung  von Abgaben ist jederzeit möglich. Die Abgabe erhält den Status=STORNIERT und kann nicht mehr abgerufen werden. Handelt es sich bei der Abgabe um eine Medikation mit Verordnungsbezug, dann wechselt der Status der Verordnung auf „OFFEN“oder – falls der Gültigkeitszeitraum des zugrunde liegenden Rezepts überschritten wurde – auf „ABGELAUFEN“</p>
+
+<h5 id="ergebnis-im-gutfall-7">Ergebnis im Gutfall</h5>
+
+<p>Im Gutfall wird die Stornierung der Medikationsabgabe durchgeführt. Die Abgabe erhält den Status STORNIERT, eine der Abgabe zugrunde liegende Verordnung den Status OFFEN oder ABGELAUFEN.</p>
+
+<h5 id="ergebnis-im-fehlerfall-7">Ergebnis im Fehlerfall</h5>
+<p>Im Fehlerfall wird der Vorgang abgebrochen und kann bei Bedarf wiederholt werden.
+Falls fehlerhafte Daten übergeben werden, muss eine Fehlermeldung zurückgeliefert werden mit dem Hinweis auf den Fehler.</p>
+
+<h3 id="abgabe-absetzen">Abgabe absetzen</h3>
+
+<h4 id="beschreibung-7">Beschreibung</h4>
+<p>Im Patientengespräch erfährt der Akteur, dass eine erfolgte Medikationsabgabe vom ELGA Teilnehmer nicht eingenommen wird. In diesem Fall wurde ein Arzneimittel zwar in der Apotheke abgegeben, es wird bzw. wurde aber nicht mehr (z.B. aufgrund von Unverträglichkeiten) eingenommen. Ein Absetzen einer Medikationsabgabe kann von jedem Akteur (außer ELGA-Teilnehmer selbst) durchgeführt werden.</p>
+
+<h4 id="vorbedingung-8">Vorbedingung</h4>
+
+<ul>
+  <li>GDA ist autorisiert, ELGA Teilnehmer ist identifiziert, eine gültige Kontaktbestätigung/Berechtigung („Ticket“) wurde vom ELGA-Berechtigungssystem ausgestellt.</li>
+  <li>e-Medikation Vorbedingung: Abgabe vorhanden, Status= ABGEGEBEN</li>
+</ul>
+
+<h4 id="akteure-8">Akteure</h4>
+<ul>
+  <li>Arzt im niedergelassenen Bereich</li>
+  <li>Krankenanstalt</li>
+  <li>Apotheke</li>
+  <li>Pflege</li>
+</ul>
+
+<h4 id="ablauf-8">Ablauf</h4>
+
+<p>Eine Abgabe kann mittels einer Korrekturmeldung (=Pharmazeutischen Empfehlung) abgesetzt werden. Der Akteur bestimmt die abzusetzende Medikationsabgabe durch Übergabe der AbgabeID.</p>
+
+<p>Der Akteur muss das Datum der Absetzung angeben.</p>
+
+<p>Das Datum der Absetzung muss beim Abruf der Medikationsabgaben und bei der Medikationsliste dargestellt werden.
+Solange eine Medikationsabgabe abgerufen werden kann, kann die Medikationsabgabe auch abgesetzt werden. Im Zuge einer Absetzung erfolgen keine weiteren Prüfungen.
+Das	Absetzen	kann	via	Metadatenupdate	der	entsprechenden	Pharmazeutischen Empfehlung wieder rückgängig gemacht werden.</p>
+
+<h5 id="ergebnis-im-gutfall-8">Ergebnis im Gutfall</h5>
+<p>Im Gutfall wird das Absetzen der Medikationsabgabe durchgeführt und in e-Medikation gespeichert (Status=ABGESETZT). Das Absetzdatum ist in den Abgabedatenfeldern vorhanden.</p>
+
+<h5 id="ergebnis-im-fehlerfall-8">Ergebnis im Fehlerfall</h5>
+<p>Im Fehlerfall wird der Vorgang abgebrochen und kann bei Bedarf wiederholt werden. Der Status der Abgabe ist „ABGEGEBEN“.
+Falls fehlerhafte Daten übergeben werden, muss eine Fehlermeldung zurückgeliefert werden mit dem Hinweis auf den Fehler.</p>
+
+<h3 id="abgabe-ändern">Abgabe ändern</h3>
+
+<h4 id="beschreibung-8">Beschreibung</h4>
+<p>Der Akteur muss die Daten einer Medikationsabgabe ändern können (z.B. bei Einstellungen der Dosierung eines Arzneimittels). Es dürfen nur definierte Datenfelder geändert werden.</p>
+
+<h4 id="vorbedingung-9">Vorbedingung</h4>
+<ul>
+  <li>GDA ist autorisiert, ELGA Teilnehmer ist identifiziert, eine gültige Kontaktbestätigung/Berechtigung („Ticket“) wurde vom ELGA-Berechtigungssystem ausgestellt.</li>
+  <li>e-Medikation Vorbedingung: Abgabe vorhanden, Status=ABGEGEBEN</li>
+</ul>
+
+<h4 id="akteure-9">Akteure</h4>
+<ul>
+  <li>Arzt im niedergelassenen Bereich</li>
+  <li>Krankenanstalt</li>
+  <li>Apotheke</li>
+</ul>
+
+<h4 id="ablauf-9">Ablauf</h4>
+
+<p>Der Akteur bestimmt die zu ändernde Medikationsabgabe durch Übergabe der AbgabeID.Der Akteur kann nur bestimmte Datenfelder einer Medikationsabgabe ändern, nicht aber das Arzneimittel oder die Menge selbst. Folgende Datenfelder können verändert werden:</p>
+<ul>
+  <li>Art der Anwendung</li>
+  <li>Zusatzinformation</li>
+  <li>Alternative Einnahme</li>
+  <li>Ergänzende Information</li>
+  <li>Tagesdosierung</li>
+  <li>Morgen Dosierung</li>
+  <li>Mittags Dosierung</li>
+  <li>Abends Dosierung</li>
+  <li>Nachts Dosierung</li>
+  <li>Tagesangabe</li>
+  <li>Frequenz</li>
+  <li>Therapieart</li>
+</ul>
+
+<p>Die Medikation (z.B. Handelsname) einer Medikationsabgabe kann NICHT geändert werden. Der GDA der Medikationsabgabe bleibt der gleiche und darf nicht durch die Änderung verändert werden.</p>
+
+<h5 id="ergebnis-im-gutfall-9">Ergebnis im Gutfall</h5>
+<p>Im Gutfall wird die Änderung der Medikationsabgabe durchgeführt und in e-Medikation gespeichert.</p>
+
+<h5 id="ergebnis-im-fehlerfall-9">Ergebnis im Fehlerfall</h5>
+<p>Im Fehlerfall wird der Vorgang abgebrochen und kann bei Bedarf wiederholt werden. Falls fehlerhafte Daten übergeben werden, muss eine Fehlermeldung zurückgeliefert werden mit dem Hinweis auf den Fehler.</p>
+
+<h3 id="medikationsliste-abrufen">Medikationsliste abrufen</h3>
+
+<h4 id="beschreibung-9">Beschreibung</h4>
+<p>Im Zuge der Behandlung eines ELGA Teilnehmers möchte der Akteur die Medikationsliste des ELGA Teilnehmers abrufen. Die Medikationsliste fasst offene Verordnungen und Abgaben zusammen.</p>
+
+<h4 id="vorbedingung-10">Vorbedingung</h4>
+<ul>
+  <li>GDA ist autorisiert, ELGA Teilnehmer ist identifiziert, eine gültige Kontaktbestätigung/Berechtigung („Ticket“) wurde vom ELGA-Berechtigungssystem ausgestellt.</li>
+  <li>e-Medikation Vorbedingung: keine</li>
+</ul>
+
+<h4 id="akteure-10">Akteure</h4>
+<ul>
+  <li>Arzt im niedergelassenen Bereich</li>
+  <li>Krankenanstalt</li>
+  <li>Apotheke</li>
+  <li>Pflege</li>
+  <li>ELGA-Teilnehmer</li>
+</ul>
+
+<h4 id="ablauf-10">Ablauf</h4>
+
+<p>Der Akteur kann die gesamte, konsolidierte Medikationsliste (sortierbare Zusammenfassung über Zulassungsnummer und Abgabe bzw. Verordnungsdatum) abrufen.
+Die Medikationsliste wird bei Aufruf serverseitig erstellt und enthält die aktuell gültigen Abgaben bzw. Verordnungen (z.B. bei einer Änderung wird nur die geänderte Dosierung angezeigt).</p>
+
+<h5 id="ergebnis-im-gutfall-10">Ergebnis im Gutfall</h5>
+<p>Im Gutfall wird dem Akteur die angeforderte Medikationsliste zurückgeliefert und steht zur weiteren Verwendung zur Verfügung. Sind keine relevanten Verordnungen und Abgaben vorhanden, so wird eine „leere Liste“ retourniert.</p>
+
+<h5 id="ergebnis-im-fehlerfall-10">Ergebnis im Fehlerfall</h5>
+<p>Im Fehlerfall wird der Vorgang abgebrochen und kann bei Bedarf wiederholt werden. Falls fehlerhafte Daten übergeben werden, muss eine Fehlermeldung zurückgeliefert werden mit dem Hinweis auf den Fehler.</p>
+
+<h4 id="alternativer-ablauf">Alternativer Ablauf</h4>
+
+<p>Bei der Ermittlung der aktuellen Medikation eines Patienten ist die Verwendung der konsolidierten Medikationsliste optional. Alternativ können alle verfügbaren (Quell)Daten der e-Medikation (das sind die Dokumenten- klassen Rezept (Prescription), Abgabe (Dispense), und die entsprechenden Korrektur- meldungen  bzw.  Pharmazeutische  Empfehlungen  (Pharmaceutical  Advice)  separat entsprechend dem im IHE Pharmacy Profil definierten Abfragen („Queries“) abgerufen und in der lokalen Software weiterverarbeitet werden.</p>
+
+<p>Dies hat den Vorteil, dass man auch die Historie der Änderungen sehen kann, welche in der Implementierung der Medikationsliste bereits eingearbeitet sind.</p>
+
 
 
 
@@ -454,7 +814,7 @@ if(window.location.hash != "") {
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA GmbH</a>.  Package elga-e-medikation-R5.elga.hl7.at#0.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Tue, Mar 19, 2024 11:54+0000">2024-03-19</span>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA GmbH</a>.  Package elga-e-medikation-R5.elga.hl7.at#0.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Tue, Mar 19, 2024 12:43+0000">2024-03-19</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
