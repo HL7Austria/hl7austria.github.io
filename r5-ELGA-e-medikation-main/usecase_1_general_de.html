@@ -1,11 +1,9 @@
-
-
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE HTML>
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>ELGA-E-MEDIKATION-R5.ELGA.HL7.AT\Registered Patient 01: &#39;Günter Gürtelthier&#39; - JSON Representation - FHIR® v5.0.0</title>
+    <title>ELGA-E-MEDIKATION-R5.ELGA.HL7.AT\Anwendungsfälle generell (de) - FHIR® v5.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -41,8 +39,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"9.28"}
-    h3,h4,h5,h6{--heading-prefix:"9.28"}</style>
+    <style type="text/css">h2{--heading-prefix:"6.1"}
+    h3,h4,h5,h6{--heading-prefix:"6.1"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- at-fhir-ig-template begin -->
@@ -111,7 +109,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Registered Patient 01: 'Günter Gürtelthier'</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='usecase_en.html'><b>Use Cases (en)</b></a></li><li><b>Anwendungsfälle generell (de)</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -122,8 +120,21 @@
       <div class="container">  <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
-<div style="counter-reset: section 8" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">ELGA e-Medikation FHIR R5 Implementierungsleitfaden - Local Development build (v0.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://fhir.hl7.at/elga-e-medikation-R5/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!-- at-fhir-ig-template begin -->
+  <div class="alert alert-warning" role="alert">
+    <!--ReleaseHeader--><p id="publish-box">ELGA e-Medikation FHIR R5 Implementierungsleitfaden - Local Development build (v0.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://fhir.hl7.at/elga-e-medikation-R5/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  </div>
+  <!-- at-fhir-ig-template end -->
+  <h2>Anwendungsfälle generell (de)</h2>
+  
 
 
 
@@ -133,115 +144,98 @@
 
 
 
-<ul class="nav nav-tabs">
-
-  <li>
-    <a href="Patient-6800bda462034a9a8123e3dc48c61d53.html">Narrative Content</a>
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<h4 id="akteure">Akteure</h4>
+<p>Folgende Akteure werden in der ELGA-Anwendung e-Medikation (eMEDAT) definiert:</p>
+<ul>
+  <li>Akteure im niedergelassenen Bereich
+    <ul>
+      <li>Arzt
+        <ul>
+          <li>Kassenarzt</li>
+          <li>Wahlarzt</li>
+          <li>Facharzt</li>
+          <li>Hausapotheker (Da im GDA-Index jeder GDA nur eine Rolle besitzt und es eine Rolle „Hausapotheker“ nicht gibt, haben Hausapotheker dieselbe Rolle wie niedergelassene Ärzte ohne Hausapotheke. Somit hat jeder Arzt auch die Funktionalitäten zur Abgabe zur Verfügung.)</li>
+          <li>etc.</li>
+        </ul>
+      </li>
+      <li>Arztpraxisassistent</li>
+    </ul>
   </li>
-
-
-
-  
-    <li>
-      <a href="Patient-6800bda462034a9a8123e3dc48c61d53.xml.html">XML</a>
-    </li>
-  
-
-
-  
-    <li class="active">
-      <a href="#">JSON</a>
-    </li>
-  
-
-
-  
-    <li>
-      <a href="Patient-6800bda462034a9a8123e3dc48c61d53.ttl.html">TTL</a>
-    </li>
-  
-
-
-
+  <li>Krankenanstalt
+    <ul>
+      <li>In der e-Medikation erfolgt keine Unterscheidung in stationären und ambulanten Bereich.</li>
+    </ul>
+  </li>
+  <li>Akteure in der Apotheke
+    <ul>
+      <li>Pharmazeut/In</li>
+      <li>Pharmazeutisch-kaufmännisch(er/e) AssistentIn</li>
+    </ul>
+  </li>
+  <li>Einrichtung der Pflege
+    <ul>
+      <li>Die Umsetzung der Berechtigungen (z.B. darf nur ein Arzt eine Verordnung in e- Medikation speichern), obliegt der GDA-Software.</li>
+      <li>Pflegeperson (siehe Vertreter, Vollmachtnehmer)</li>
+    </ul>
+  </li>
+  <li>ELGA-Teilnehmer
+    <ul>
+      <li>Vertreter
+        <ul>
+          <li>Ombudsstelle</li>
+          <li>Vollmachtnehmer</li>
+          <li>gesetzlicher Vertreter</li>
+          <li>etc.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
 
+<h4 id="dokumententypen">Dokumententypen</h4>
+<p>Der gegenständliche Implementierungsleitfaden „e-Medikation“ definiert die folgenden CDA- Dokumente: Rezept, Abgabe, Korrekturmeldung (Pharmazeutische Empfehlung) und Medikationsliste. Um den Medikationsprozess und die folgend beschriebenen Anwendungsfälle abbilden zu können, werden diese Dokumente mit den folgenden Status in der e-Medikation abgebildet:</p>
+<ul>
+  <li>Rezept (PRESCRIPTION; Ein Rezept wird durch ein Prescription Dokument abgebildet und kann eine oder mehrere Verordnungen enthalten. Bezüglich der möglichen Statuswerte unterscheiden sich das Prescription Dokument und die einzelnen Verordnungen.)
+    <ul>
+      <li>OFFEN</li>
+      <li>EINGELÖST</li>
+      <li>STORNIERT</li>
+      <li>ABGELAUFEN</li>
+    </ul>
+  </li>
+  <li>Verordnung
+    <ul>
+      <li>OFFEN</li>
+      <li>EINGELOEST</li>
+      <li>STORNIERT</li>
+      <li>NICHT_DISPENSIERT</li>
+    </ul>
+  </li>
+  <li>Abgabe (DISPENSE)
+    <ul>
+      <li>ABGEGEBEN</li>
+      <li>ABGESETZT (Korrekturmeldung vorhanden)</li>
+      <li>STORNIERT (deprecated)</li>
+    </ul>
+  </li>
+  <li>Korrekturmeldung (Pharmazeutische Empfehlung, Pharmaceutical Advice)
+    <ul>
+      <li>GÜLTIG</li>
+      <li>STORNIERT (deprecated)</li>
+    </ul>
+  </li>
+  <li>Medikationsliste
+    <ul>
+      <li>GÜLTIG</li>
+      <li>ERSETZT (deprecated)</li>
+    </ul>
+  </li>
+</ul>
 
-<a name="root"> </a>
-
-
-<h2 id="root">: Registered Patient 01: &#39;Günter Gürtelthier&#39; - JSON Representation</h2>
-
-
-<p><a href="Patient-6800bda462034a9a8123e3dc48c61d53.json" no-download="true">Raw json</a> | <a href="Patient-6800bda462034a9a8123e3dc48c61d53.json" download>Download</a></p>
-
-  <!-- insert intro if present -->
-  
-
-
-
-  <pre class="json" style="white-space: pre; text-wrap: nowrap;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">
-{
-  "<a href="http://hl7.org/fhir/R5/patient.html#Patient">resourceType</a>" : "Patient",
-  "<a href="http://hl7.org/fhir/R5/patient.html#Patient.id">id</a>" : "6800bda462034a9a8123e3dc48c61d53",
-  "<a href="http://hl7.org/fhir/R5/patient.html#Patient.meta">meta</a>" : {
-    "<a href="http://hl7.org/fhir/R5/resource.html#Meta#Meta.profile">profile</a>" : [
-      <a href="StructureDefinition-at-core-patient.html" style="color: Maroon">&#x1F517;</a> "http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/at-core-patient"
-    ]
-  },
-  "<a href="http://hl7.org/fhir/R5/patient.html#Patient.text">text</a>" : {
-    "<a href="http://hl7.org/fhir/R5/narrative.html#Narrative#Narrative.status">status</a>" : "generated",
-    "<a href="http://hl7.org/fhir/R5/narrative.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p style=\&quot;border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\&quot;&gt;&lt;b&gt;Günter Gürtelthier(OFFICIAL)&lt;/b&gt; male, DoB: 2001-10-24 ( &lt;code&gt;urn:oid:1.2.40.0.10.1.4.3.1&lt;/code&gt;/2410011234)&lt;/p&gt;&lt;hr/&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;background-color: #f3f5da\&quot; title=\&quot;Record is active\&quot;&gt;Active:&lt;/td&gt;&lt;td colspan=\&quot;3\&quot;&gt;true&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;background-color: #f3f5da\&quot; title=\&quot;Ways to contact the Patient\&quot;&gt;Contact Details:&lt;/td&gt;&lt;td colspan=\&quot;3\&quot;&gt;&lt;ul&gt;&lt;li&gt;ph: 00436641234567(MOBILE)&lt;/li&gt;&lt;li&gt;Musterstrasse 123/4 Vienna 1100 AT (HOME)&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;background-color: #f3f5da\&quot; title=\&quot;Patient Links\&quot;&gt;Links:&lt;/td&gt;&lt;td colspan=\&quot;3\&quot;&gt;&lt;ul&gt;&lt;li&gt;Managing Organization: &lt;span&gt;: Haus Vogelsang&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
-  },
-  "<a href="http://hl7.org/fhir/R5/patient.html#Patient.identifier">identifier</a>" : [
-    {
-      "<a href="http://hl7.org/fhir/R5/datatypes.html#Identifier#Identifier.system">system</a>" : "urn:oid:1.2.40.0.10.1.4.3.1",
-      "<a href="http://hl7.org/fhir/R5/datatypes.html#Identifier#Identifier.value">value</a>" : "2410011234"
-    }
-  ],
-  "<a href="http://hl7.org/fhir/R5/patient.html#Patient.active">active</a>" : true,
-  "<a href="http://hl7.org/fhir/R5/patient.html#Patient.name">name</a>" : [
-    {
-      "<a href="http://hl7.org/fhir/R5/datatypes.html#HumanName#HumanName.use">use</a>" : "official",
-      "<a href="http://hl7.org/fhir/R5/datatypes.html#HumanName#HumanName.text">text</a>" : "Günter Gürtelthier",
-      "<a href="http://hl7.org/fhir/R5/datatypes.html#HumanName#HumanName.family">family</a>" : "Gürtelthier",
-      "<a href="http://hl7.org/fhir/R5/datatypes.html#HumanName#HumanName.given">given</a>" : [
-        "Walter"
-      ]
-    }
-  ],
-  "<a href="http://hl7.org/fhir/R5/patient.html#Patient.telecom">telecom</a>" : [
-    {
-      "<a href="http://hl7.org/fhir/R5/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "phone",
-      "<a href="http://hl7.org/fhir/R5/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "00436641234567",
-      "<a href="http://hl7.org/fhir/R5/datatypes.html#ContactPoint#ContactPoint.use">use</a>" : "mobile"
-    }
-  ],
-  "<a href="http://hl7.org/fhir/R5/patient.html#Patient.gender">gender</a>" : "male",
-  "<a href="http://hl7.org/fhir/R5/patient.html#Patient.birthDate">birthDate</a>" : "2001-10-24",
-  "<a href="http://hl7.org/fhir/R5/patient.html#Patient.address">address</a>" : [
-    {
-      "<a href="http://hl7.org/fhir/R5/datatypes.html#Address#Address.use">use</a>" : "home",
-      "<a href="http://hl7.org/fhir/R5/datatypes.html#Address#Address.type">type</a>" : "both",
-      "<a href="http://hl7.org/fhir/R5/datatypes.html#Address#Address.line">line</a>" : [
-        "Musterstrasse 123/4"
-      ],
-      "<a href="http://hl7.org/fhir/R5/datatypes.html#Address#Address.city">city</a>" : "Vienna",
-      "<a href="http://hl7.org/fhir/R5/datatypes.html#Address#Address.postalCode">postalCode</a>" : "1100",
-      "<a href="http://hl7.org/fhir/R5/datatypes.html#Address#Address.country">country</a>" : "AT"
-    }
-  ],
-  "<a href="http://hl7.org/fhir/R5/patient.html#Patient.managingOrganization">managingOrganization</a>" : {
-    "<a href="http://hl7.org/fhir/R5/references.html#Reference#Reference.identifier">identifier</a>" : {
-      "<a href="http://hl7.org/fhir/R5/datatypes.html#Identifier#Identifier.system">system</a>" : "urn:oid:1.2.40.0.34.5.2",
-      "<a href="http://hl7.org/fhir/R5/datatypes.html#Identifier#Identifier.value">value</a>" : "2.999.40.0.34.1.1.1"
-    },
-    "<a href="http://hl7.org/fhir/R5/references.html#Reference#Reference.display">display</a>" : "Haus Vogelsang"
-  }
-}</code></pre>
-
-
-  <!-- insert notes if present -->
-  
 
 
 
