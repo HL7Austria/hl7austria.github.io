@@ -145,8 +145,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div class="markdown-toc">
-
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
 <div xmlns="http://www.w3.org/1999/xhtml" class="container"> 
    Zum besseren Verständnis des Implementierungsleitfaden „e-Medikation“ werden im Folgenden die Anwendungsfälle kurz dargestellt.
@@ -157,7 +157,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </ul>
     <div class="tab-content">
         <div id="allgemein" class="tab-pane fade in active">
-            <h3 id="allgemein">Allgemein</h3>
+            h2 {
+   counter-set: count2 1;
+}
 <h4 id="akteure">Akteure</h4>
 <p>Folgende Akteure werden in der ELGA-Anwendung e-Medikation (eMEDAT) definiert:</p>
 <ul>
@@ -234,7 +236,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ul>
         </div>
         <div id="pres_create" class="tab-pane fade">
-            <h3 id="verordnung-en-mit-rezept-anlegen">Verordnung(en) mit Rezept anlegen</h3>
+            h2 {
+   counter-set: count2 2;
+}
 <p>Im Zuge der Behandlung stellt der Arzt fest, dass dem ELGA Teilnehmer ein oder mehrere Arzneimittel verordnet werden müssen. Eine Verordnung besteht immer nur aus genau einer Medikation (= ein Arzneimittel). Das Rezept kann aus mehreren Verordnungen bestehen und bildet somit die Klammer über die Verordnungen. Das Rezept mit den Verordnungen wird mit einer eindeutigen eMED-ID versehen.
 Die Prüfungen der Arzneimittel z.B. auf potentielle Wechselwirkungen, Kontraindikationen, Dosierungen, etc. erfolgt in der Eigenverantwortung des Arztes und ist nicht Gegenstand der e-Medikation.
 Eine Speicherung von Verordnungen ohne Zuordnung eines Rezeptes ist nicht gültig. Die Verordnung wird als geprüft angesehen, wenn die zugeordnete Verordnung in e-Medikation gespeichert ist.</p>
@@ -305,7 +309,9 @@ Es können die folgenden Fehlerfälle aus der Schnittstelle zur e-Medikation her
 
         </div>
         <div id="pres_read" class="tab-pane fade">
-            <h3 id="rezept-mit-verordnung-en-abrufen">Rezept mit Verordnung(en) abrufen</h3>
+            h2 {
+   counter-set: count2 3;
+}
 <p>Im Zuge der Abgabe eines Arzneimittels in einer Apotheke (nach Identifikation mittels e-card) kann der Akteur die Rezepte samt Verordnungen zu einem ELGA Teilnehmer abrufen. Alternativ zur Identifikation mit e-card kann mittels eMED-ID ein Rezept abgerufen werden</p>
 <h4 id="vorbedingung">Vorbedingung</h4>
 <ul>
@@ -368,7 +374,7 @@ if(window.location.hash != "") {
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA GmbH</a>.  Package elga-e-medikation-R5.elga.hl7.at#0.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Wed, Mar 20, 2024 06:38+0000">2024-03-20</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA GmbH</a>.  Package elga-e-medikation-R5.elga.hl7.at#0.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Wed, Mar 20, 2024 06:50+0000">2024-03-20</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
