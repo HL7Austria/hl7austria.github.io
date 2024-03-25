@@ -220,11 +220,27 @@ window._atl_jic_parameters = "{\"baseUrl\":\"https://jira-neu.elga.gv.at\",\"col
 
   <a name="script10.6"> </a><h3>Mappings for Mapping to NCPDP SCRIPT 10.6 (http://ncpdp.org/SCRIPT10_6)</h3><table class="grid">
  <tr><td colspan="3"><b>LINCAMeds</b></td></tr>
- <tr><td>Medication</td><td>NewRx/MedicationPrescribed-or-RxFill/MedicationDispensed-or-RxHistoryResponse/MedicationDispensed-or-RxHistoryResponse/MedicationPrescribed</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>coding.code = //element(*,MedicationType)/DrugCoded/ProductCodecoding.system = //element(*,MedicationType)/DrugCoded/ProductCodeQualifiercoding.display = //element(*,MedicationType)/DrugDescription</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;doseForm</td><td>coding.code =  //element(*,DrugCodedType)/FormCodecoding.system = //element(*,DrugCodedType)/FormSourceCode</td> </tr>
+ <tr><td>Medication</td><td>NewRx/MedicationPrescribed
+-or-
+RxFill/MedicationDispensed
+-or-
+RxHistoryResponse/MedicationDispensed
+-or-
+RxHistoryResponse/MedicationPrescribed</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>coding.code = //element(*,MedicationType)/DrugCoded/ProductCode
+
+coding.system = //element(*,MedicationType)/DrugCoded/ProductCodeQualifier
+
+coding.display = //element(*,MedicationType)/DrugDescription</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;doseForm</td><td>coding.code =  //element(*,DrugCodedType)/FormCode
+
+coding.system = //element(*,DrugCodedType)/FormSourceCode</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;ingredient</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;item</td><td>coding.code = //element(*,MedicationType)/DrugCoded/ProductCodecoding.system = //element(*,MedicationType)/DrugCoded/ProductCodeQualifiercoding.display = //element(*,MedicationType)/DrugDescription</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;item</td><td>coding.code = //element(*,MedicationType)/DrugCoded/ProductCode
+
+coding.system = //element(*,MedicationType)/DrugCoded/ProductCodeQualifier
+
+coding.display = //element(*,MedicationType)/DrugDescription</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strength[x]</td><td>//element(*,DrugCodedType)/Strength</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;batch</td><td>no mapping</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lotNumber</td><td>no mapping</td> </tr>
@@ -240,9 +256,9 @@ window._atl_jic_parameters = "{\"baseUrl\":\"https://jira-neu.elga.gv.at\",\"col
  <tr><td colspan="3"><b>LINCAMeds</b></td></tr>
  <tr><td>Medication</td><td>Entity, Role, or Act,ManufacturedProduct[classCode=ADMM]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>.id</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>.code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>.statusCode</td> </tr>
@@ -252,14 +268,14 @@ window._atl_jic_parameters = "{\"baseUrl\":\"https://jira-neu.elga.gv.at\",\"col
  <tr><td>&nbsp;&nbsp;&nbsp;ingredient</td><td>.scopesRole[typeCode=INGR]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;item</td><td>.player</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isActive</td><td>NA</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strength[x]</td><td>.quantity</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;batch</td><td>.player[classCode=CONT]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lotNumber</td><td>.id</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expirationDate</td><td>participation[typeCode=CSM].role[classCode=INST].scopedRole.scoper[classCode=MMAT].expirationTime</td> </tr>
 </table>
