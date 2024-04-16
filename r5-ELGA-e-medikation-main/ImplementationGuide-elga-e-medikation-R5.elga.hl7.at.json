@@ -1,0 +1,761 @@
+{
+  "resourceType" : "ImplementationGuide",
+  "id" : "elga-e-medikation-R5.elga.hl7.at",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>ELGAFHIReMedikationR5</h2><p>The official URL for this implementation guide is: </p><pre>http://fhir.hl7.at/elga-e-medikation-R5/ImplementationGuide/elga-e-medikation-R5.elga.hl7.at</pre><div><p>Die e-Medikation ist als Service zu verstehen, welches im Zuge des Verordnungs-, des Abgabe-, bzw. des Verabreichungsprozesses Informationen zur Medikation eines Patienten zur Verfügung stellt.</p>\n</div></div>"
+  },
+  "url" : "http://fhir.hl7.at/elga-e-medikation-R5/ImplementationGuide/elga-e-medikation-R5.elga.hl7.at",
+  "version" : "0.0.0",
+  "name" : "ELGAFHIReMedikationR5",
+  "title" : "ELGA e-Medikation FHIR R5 Implementierungsleitfaden",
+  "status" : "draft",
+  "date" : "2024-04-16T07:53:49+00:00",
+  "publisher" : "ELGA GmbH",
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.elga.gv.at/"
+    }]
+  }],
+  "description" : "Die e-Medikation ist als Service zu verstehen, welches im Zuge des Verordnungs-, des Abgabe-, bzw. des Verabreichungsprozesses Informationen zur Medikation eines Patienten zur Verfügung stellt.",
+  "packageId" : "elga-e-medikation-R5.elga.hl7.at",
+  "license" : "CC0-1.0",
+  "fhirVersion" : ["5.0.0"],
+  "dependsOn" : [{
+    "id" : "hl7tx",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on HL7 Terminology"
+    }],
+    "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
+    "packageId" : "hl7.terminology.r5",
+    "version" : "5.3.0"
+  },
+  {
+    "id" : "hl7ext",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
+    }],
+    "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
+    "packageId" : "hl7.fhir.uv.extensions.r5",
+    "version" : "1.0.0"
+  }],
+  "definition" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
+      "valueCode" : "hl7.fhir.uv.tools#0.1.0"
+    }],
+    "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-core-ext-address-additionalInformation"
+      },
+      "name" : "Address Additional Information",
+      "description" : "HL7® Austria FHIR® Core Extension for the additional information part of the Austrian address.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/at-elga-vs-countryCodes"
+      },
+      "name" : "ELGA Country Code Value Set",
+      "description" : "Value Set for ISO 3166-1 alpha 3 used in ELGA. Also accessible on [Termpub - ValueSet - ELGA Ländercodes](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=ValueSet&loadName=ELGA_Laendercodes).",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/at-elga-vs-religion"
+      },
+      "name" : "ELGA Religion Value Set",
+      "description" : "Set of religious affiliations to be used in ELGA. It is preferred to use entries of the first level hierachy (1-L). Also accessible on [Termpub - ValueSet - ELGA ReligiousAffiliation](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=ValueSet&loadName=ELGA_ReligiousAffiliation).",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "RequestOrchestration"
+      }],
+      "reference" : {
+        "reference" : "RequestOrchestration/bfa0d45270674e0794b694f2892cb1c0"
+      },
+      "name" : "Ex0100 US001 LINCARequestOrchestration: Single medication without pharmacy",
+      "description" : "LINCARequestOrchestration created by DGKP Susanne Allzeits. It contains the single medication proposal for her client Renate Rüssel-Olifant without a specified pharmacy for pickup.",
+      "isExample" : true,
+      "profile" : ["http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-full-proposal-list"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/b8aad49741e74c36aeab76cada3ad1bc"
+      },
+      "name" : "Ex0102 US001 LINCAProposalMedicationRequest: Systeminstance",
+      "description" : "The Linked Care FHIR server, creates an instance from DGKP Susanne Allzeit's single medication proposal.",
+      "isExample" : true,
+      "profile" : ["http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-proposal-medication-request"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/331c530a6377444a9e78a8a27a2ec35c"
+      },
+      "name" : "Ex0103 US010 LINCAPrescriptionMedicationRequest: Prescribe as proposed",
+      "description" : "Practitioner Dr. Wibke Würm is designated practicioner for Renate Rüssel-Olifant.  They decide that the received proposal is ok and issue a prescription for the medication.",
+      "isExample" : true,
+      "profile" : ["http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-prescription-medication-request"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationDispense"
+      }],
+      "reference" : {
+        "reference" : "MedicationDispense/d6a2f68cd3f74c28b9dd9fa4ec014cc4"
+      },
+      "name" : "Ex0104 US016 LINCAMedicationDispense: Full Dispense",
+      "description" : "Pharmacist Mag. Andreas Amsel, owner of the pharmacy Apotheke 'Zum frühen Vogel' has access to and permission in a pharmacist role in the LINCA system. When he is expected to fullfil medication orders for a customer Renate Rüssel-Olifant, and he has a LINCA order Id to go with a purchase her care giver Susanne Allzeit just made for her, then Mag. Andreas Amsel submits a dispense record for the order position in question.",
+      "isExample" : true,
+      "profile" : ["http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-dipsense-documentation"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "RequestOrchestration"
+      }],
+      "reference" : {
+        "reference" : "RequestOrchestration/c13972d2294549c7bd29e924cbf0ce41"
+      },
+      "name" : "Ex0200 US003 LINCARequestOrchestration: Minimalistic Inpatient",
+      "description" : "DGKP Walter Specht submits LINCARequestOrchestration containing individual proposal items and specifies a pharmacy for pickup. Each item consists of 1 medication for a single patient. Hence, if one patient needs multiple medications, each must be an individual proposal item.",
+      "isExample" : true,
+      "profile" : ["http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-full-proposal-list"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/4ca9d9bf9936427c926118e9c627fc3a"
+      },
+      "name" : "Ex0203 US003 LINCAProposalMedicationRequest: Systeminstance 01",
+      "description" : "The proposal was successfully posted to the Linked Care FHIR server and an instance of the inline LINCAProposalMedicationRequest was created.",
+      "isExample" : true,
+      "profile" : ["http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-proposal-medication-request"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/1762e9b8e2c84b01824f101db887593c"
+      },
+      "name" : "Ex0204 US003 LINCAProposalMedicationRequest: Systeminstance 02",
+      "description" : "Second proposal item of DGKP Walte Specht's proposal. Instance is for another patient in 'Haus Vogelsang'",
+      "isExample" : true,
+      "profile" : ["http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-proposal-medication-request"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/3249246cd3774134abeafdfe6189e8e7"
+      },
+      "name" : "Ex0205 US004 LINCAProposalMedicationRequest: Update basedOn",
+      "description" : "DGKP Walter Specht needs to modify details of his proposal. He wants to update one individual proposal item for his client Günter Gürtelthier.",
+      "isExample" : true,
+      "profile" : ["http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-proposal-medication-request"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/ab0ad2904cd14d36af23de4edc332ea3"
+      },
+      "name" : "Ex0206 US005 LINCAProposalMedicationRequest: Cancel basedOn",
+      "description" : "DGKP Walter Specht needs to cancel individual proposal positions for his client Patrizia Platypus. He submits updates on those positions, providing a reason for cancellation, such as a medical reason, and sets their status to 'cancelled'.",
+      "isExample" : true,
+      "profile" : ["http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-proposal-medication-request"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/091f1a9d0d64415c91f67caccc3f3848"
+      },
+      "name" : "Ex0207 US011 LINCAPrescriptionMedicationRequest: Change medication in prescription",
+      "description" : "Dr. Silvia Spitzmaus does not agree with the proposed medication for Patient Walter Gürtelthier, hence she issues a prescription for a different medication.",
+      "isExample" : true,
+      "profile" : ["http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-prescription-medication-request"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/2f9de5b899a54392b9b39c440aca0887"
+      },
+      "name" : "Ex0208 US012 LINCAPrescriptionMedicationRequest: Modify Dosage",
+      "description" : "After issuing the prescription for Walter Gürtelthier, Dr. Silvia Spitzmaus realizes the dosage needs adjustment. ence, she submits an update to that prescription with new dosage instructions.",
+      "isExample" : true,
+      "profile" : ["http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-prescription-medication-request"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "RequestOrchestration"
+      }],
+      "reference" : {
+        "reference" : "RequestOrchestration/RequestOrchestration-Dosage-Example"
+      },
+      "name" : "Example LINCARequestOrchestration: Dosage Variation",
+      "description" : "LINCA Proposal with different dummy data as in the user stories. Shows all ELGA conform encodeing of dosage instructions used by the other examples.",
+      "isExample" : true,
+      "profile" : ["http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-full-proposal-list"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/at-core-cs-religion"
+      },
+      "name" : "HL7 AT Core Religion Code System",
+      "description" : "Code system for the religions and faith communities in Austria. Also accessible on [Termpub - CodeSystem - HL7 AT ReligionAustria](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&loadName=HL7.AT:ReligionAustria).",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:complex-type"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-core-address"
+      },
+      "name" : "HL7® AT Core Address Profile",
+      "description" : "HL7® Austria FHIR® Core Profile for address data in Austria. Note, this extension represents the common structure of address information within Austrian information systems. This extension does not restrict the documented information to Austrian adresses. Address information that does not fit into the given structure may be captured by [Address Additional Information](StructureDefinition-at-core-ext-address-additionalInformation.html).",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-core-patient"
+      },
+      "name" : "HL7® AT Core Patient Profile",
+      "description" : "HL7® Austria FHIR® Core Profile for patient data in Austria.\nThe HL7® AT Core Patient is based upon the core FHIR® Patient Resource and designed to meet the applicable patient demographic data elements in Austria. It identifies which core elements, extensions, vocabularies and value sets SHALL be present in the resource when using this profile. Note, this extension represents the common structure of Patient information within Austrian information systems.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-core-valueset"
+      },
+      "name" : "HL7® AT Core ValueSet Profile",
+      "description" : "HL7® Austria FHIR® Core Profile for valuesets in Austria.\nThe HL7® AT Core ValueSet is based upon the core FHIR® ValueSet Resource and defines the use of the OID extension.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/at-core-cs-iso-3166-1-alpha-3"
+      },
+      "name" : "HL7® AT® Core ISO 3166-1 alpha 3 Code System",
+      "description" : "ISO code system for country codes with 3 letters. Also accessible on [Termpub - CodeSystem - ISO 3166-1 alpha 3](https://termpub.gesundheit.gv.at/TermBrowser/gui/main/main.zul?loadType=CodeSystem&loadName=ISO%203166-1%20alpha%203%202016).",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/linca-dipsense-documentation"
+      },
+      "name" : "LINCA Dispense (LINCAMedicationDispense)",
+      "description" : "Linked Care  Profile for dispense documentation. The dispense must be documented by the dispensing pharmacist and specify if an order was fulfilled completly or partially. The LINCA Dispense must have an LINCA Prescription as authorizingPrescription.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/linca-medication"
+      },
+      "name" : "LINCA Medication (LINCAMeds)",
+      "description" : "Linked Care profile for Medication Resource to ensure ELGA compliant representation. Bind code to ELGA CodeSystem ('asp-liste') and doseForm to ELGA ValueSet ('elga-medikationdarreichungsform').",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/linca-prescription-medication-request"
+      },
+      "name" : "LINCA Prescription (LINCAPrescriptionMedicationRequest)",
+      "description" : "Linked Care Profile for prescriptions. The prescriptions are created by the practicioner software but must be basedOn an assigned LINCA Proposal Item. The assigned practicioners can view, modify or cancel all of their assigned proposal items.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/linca-proposal-medication-request"
+      },
+      "name" : "LINCA Proposal Item (LINCAProposalMedicationRequest)",
+      "description" : "Linked Care profile for individual proposal positions. A list of proposal positions is first received as contained resources in a LINCA Proposal. Then the Linked Care FHIR server creates an instance for each contained item. These instances are send to the assigned practicioner(s) for authorization.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/linca-full-proposal-list"
+      },
+      "name" : "LINCA Proposal List (LINCARequestOrchestration)",
+      "description" : "Linked Care Profile for the overall proposal. The LINCA Proposal List serves as container for the individual placements. The placer's software creates the RequestOrchestration when (re)ordering medication.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-core-ext-patient-religion"
+      },
+      "name" : "Patient Religion",
+      "description" : "HL7® Austria FHIR® Core Extension for the religion (registered in Austria) of a patient.\nThe extension is used to encode the religious confession of a patient (only confessions registered in Austria). Furthermore, it uses the official [HL7 AT CodeSystem](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&loadName=HL7 AT ReligionAustria) for religion and is therefore aligned with the ELGA ValueSet, respectively.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/6800bda462034a9a8123e3dc48c61d53"
+      },
+      "name" : "Registered Patient 01: 'Günter Gürtelthier'",
+      "description" : "Instance of fictitious patient, who is an inpatient at Haus Vogelsang",
+      "isExample" : true,
+      "profile" : ["http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/at-core-patient"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/d14e6251b3c545828f7e44cdc6faf2fb"
+      },
+      "name" : "Registered Patient 02: 'Patrizia Platypus' ",
+      "description" : "Instance of fictitious patient, who is inpatient at Haus Vogelsang",
+      "isExample" : true,
+      "profile" : ["http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/at-core-patient"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/ee8d340312484aaca84774b2a0d53533"
+      },
+      "name" : "Registered Patient 03: Renate Rüssel-Olifant",
+      "description" : "Instance of fictitious patient, who is a client at Pflegedienst Immerdar",
+      "isExample" : true,
+      "profile" : ["http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/at-core-patient"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-core-ext-valueset-systemoid"
+      },
+      "name" : "System OID",
+      "description" : "HL7® Austria FHIR® Core Extension for the capturing of OID in ValueSets to reference the CodeSystem they come from.\nThe extension is used to document the OID of the system of a code referenced in a ValueSet, to align FHIR with the HL7 Austria CDA document guidelines.",
+      "isExample" : false
+    }],
+    "page" : {
+      "sourceUrl" : "toc.html",
+      "name" : "toc.html",
+      "title" : "Table of Contents",
+      "generation" : "html",
+      "page" : [{
+        "sourceUrl" : "index.html",
+        "name" : "index.html",
+        "title" : "Home - Informationen über diesen Leitfaden (de)",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "intro_de.html",
+        "name" : "intro_de.html",
+        "title" : "Einleitung & Abgrenzung (de)",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "usecase_de.html",
+        "name" : "usecase_de.html",
+        "title" : "Anwendungsfälle (de)",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "support_de.html",
+        "name" : "support_de.html",
+        "title" : "Support & Impressum (de)",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "index_en.html",
+        "name" : "index_en.html",
+        "title" : "Home - Information about this implementation guide (en)",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "intro_en.html",
+        "name" : "intro_en.html",
+        "title" : "Intro & Differentiation (en)",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "usecase_en.html",
+        "name" : "usecase_en.html",
+        "title" : "Use Cases (en)",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "support_en.html",
+        "name" : "support_en.html",
+        "title" : "Support & Imprint (en)",
+        "generation" : "markdown"
+      }]
+    },
+    "parameter" : [{
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "copyrightyear"
+      },
+      "value" : "2024+"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "releaselabel"
+      },
+      "value" : "ci-build"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "autoload-resources"
+      },
+      "value" : "true"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-resource"
+      },
+      "value" : "input/capabilities"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-resource"
+      },
+      "value" : "input/examples"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-resource"
+      },
+      "value" : "input/extensions"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-resource"
+      },
+      "value" : "input/models"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-resource"
+      },
+      "value" : "input/operations"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-resource"
+      },
+      "value" : "input/profiles"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-resource"
+      },
+      "value" : "input/resources"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-resource"
+      },
+      "value" : "input/vocabulary"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-resource"
+      },
+      "value" : "input/maps"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-resource"
+      },
+      "value" : "input/testing"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-resource"
+      },
+      "value" : "input/history"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-resource"
+      },
+      "value" : "fsh-generated/resources"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-pages"
+      },
+      "value" : "template/config"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-pages"
+      },
+      "value" : "input/images"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "path-liquid"
+      },
+      "value" : "template/liquid"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "path-liquid"
+      },
+      "value" : "input/liquid"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "path-qa"
+      },
+      "value" : "temp/qa"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "path-temp"
+      },
+      "value" : "temp/pages"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "path-output"
+      },
+      "value" : "output"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-tx-cache"
+      },
+      "value" : "input-cache/txcache"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "path-suppressed-warnings"
+      },
+      "value" : "input/ignoreWarnings.txt"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "path-history"
+      },
+      "value" : "http://fhir.hl7.at/elga-e-medikation-R5/history.html"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "template-html"
+      },
+      "value" : "template-page.html"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "template-md"
+      },
+      "value" : "template-page-md.html"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "apply-contact"
+      },
+      "value" : "true"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "apply-context"
+      },
+      "value" : "true"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "apply-copyright"
+      },
+      "value" : "true"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "apply-jurisdiction"
+      },
+      "value" : "true"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "apply-license"
+      },
+      "value" : "true"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "apply-publisher"
+      },
+      "value" : "true"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "apply-version"
+      },
+      "value" : "true"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "apply-wg"
+      },
+      "value" : "true"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "active-tables"
+      },
+      "value" : "true"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "fmm-definition"
+      },
+      "value" : "http://hl7.org/fhir/versions.html#maturity"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "propagate-status"
+      },
+      "value" : "true"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "excludelogbinaryformat"
+      },
+      "value" : "true"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "tabbed-snapshots"
+      },
+      "value" : "true"
+    }]
+  }
+}
