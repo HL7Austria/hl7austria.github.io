@@ -11,7 +11,7 @@
   <name value="ELGAFHIReMedikationR5"/>
   <title value="ELGA e-Medikation FHIR R5 Implementierungsleitfaden"/>
   <status value="draft"/>
-  <date value="2024-04-18T08:01:47+00:00"/>
+  <date value="2024-04-25T15:11:21+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -30,7 +30,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r5"/>
-    <version value="5.3.0"/>
+    <version value="5.5.0"/>
   </dependsOn>
   <dependsOn id="hl7ext">
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
@@ -68,6 +68,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/eMed-prescription-with-multiple-med-requests"/>
+      </reference>
+      <name value="ELGA e-Medication Prescription with multiple MedicationRequests (eMedRequestOrchestration)"/>
+      <description value="**Description:** In the course of treatment, the doctor determines that the ELGA participant must be prescribed one or more medicines. A MedicationRequest always consists of exactly one medication (= one medicine). The e-Medication prescription can consist of several MedicationRequests and thus forms a grouping over them. The prescription with the MedicationRequests is labelled with a unique eMED ID. The doctor is responsible for checking the medicines, e.g. for potential interactions, contraindications, dosages, etc. and this is not part of e-Medication. Storing requests without assigning a prescription is not valid. The prescription is considered to have been checked if the associated prescription is saved in e-Medication.&#xA;&#xA;**Beschreibung:** Im Zuge der Behandlung stellt der Arzt fest, dass dem ELGA Teilnehmer ein oder mehrere Arzneimittel verordnet werden müssen. Eine Verordnung besteht immer nur aus genau einer Medikation (= ein Arzneimittel). Das Rezept kann aus mehreren Verordnungen/MedicationRequests bestehen und bildet somit die Klammer über die Verordnungen/MedicationRequests. Das Rezept mit den Verordnungen/MedicationRequests wird mit einer eindeutigen eMED-ID versehen. Die Prüfungen der Arzneimittel z.B. auf potentielle Wechselwirkungen, Kontraindikationen, Dosierungen, etc. erfolgt in der Eigenverantwortung des Arztes und ist nicht Gegenstand der e-Medikation. Eine Speicherung von Verordnungen/MedicationRequests ohne Zuordnung eines Rezeptes ist nicht gültig. Die Verordnung/MedicationRequest wird als geprüft angesehen, wenn die zugeordnete Verordnung in e-Medikation gespeichert ist."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
@@ -76,150 +87,6 @@
       <name value="ELGA Religion Value Set"/>
       <description value="Set of religious affiliations to be used in ELGA. It is preferred to use entries of the first level hierachy (1-L). Also accessible on [Termpub - ValueSet - ELGA ReligiousAffiliation](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=ValueSet&amp;loadName=ELGA_ReligiousAffiliation)."/>
       <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="RequestOrchestration"/>
-      </extension>
-      <reference>
-        <reference value="RequestOrchestration/bfa0d45270674e0794b694f2892cb1c0"/>
-      </reference>
-      <name value="Ex0100 US001 LINCARequestOrchestration: Single medication without pharmacy"/>
-      <description value="LINCARequestOrchestration created by DGKP Susanne Allzeits. It contains the single medication proposal for her client Renate Rüssel-Olifant without a specified pharmacy for pickup."/>
-      <isExample value="true"/>
-      <profile value="http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-full-proposal-list"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="MedicationRequest"/>
-      </extension>
-      <reference>
-        <reference value="MedicationRequest/b8aad49741e74c36aeab76cada3ad1bc"/>
-      </reference>
-      <name value="Ex0102 US001 LINCAProposalMedicationRequest: Systeminstance"/>
-      <description value="The Linked Care FHIR server, creates an instance from DGKP Susanne Allzeit's single medication proposal."/>
-      <isExample value="true"/>
-      <profile value="http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-proposal-medication-request"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="MedicationRequest"/>
-      </extension>
-      <reference>
-        <reference value="MedicationRequest/331c530a6377444a9e78a8a27a2ec35c"/>
-      </reference>
-      <name value="Ex0103 US010 LINCAPrescriptionMedicationRequest: Prescribe as proposed"/>
-      <description value="Practitioner Dr. Wibke Würm is designated practicioner for Renate Rüssel-Olifant.  They decide that the received proposal is ok and issue a prescription for the medication."/>
-      <isExample value="true"/>
-      <profile value="http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-prescription-medication-request"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="MedicationDispense"/>
-      </extension>
-      <reference>
-        <reference value="MedicationDispense/d6a2f68cd3f74c28b9dd9fa4ec014cc4"/>
-      </reference>
-      <name value="Ex0104 US016 LINCAMedicationDispense: Full Dispense"/>
-      <description value="Pharmacist Mag. Andreas Amsel, owner of the pharmacy Apotheke 'Zum frühen Vogel' has access to and permission in a pharmacist role in the LINCA system. When he is expected to fullfil medication orders for a customer Renate Rüssel-Olifant, and he has a LINCA order Id to go with a purchase her care giver Susanne Allzeit just made for her, then Mag. Andreas Amsel submits a dispense record for the order position in question."/>
-      <isExample value="true"/>
-      <profile value="http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-dipsense-documentation"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="RequestOrchestration"/>
-      </extension>
-      <reference>
-        <reference value="RequestOrchestration/c13972d2294549c7bd29e924cbf0ce41"/>
-      </reference>
-      <name value="Ex0200 US003 LINCARequestOrchestration: Minimalistic Inpatient"/>
-      <description value="DGKP Walter Specht submits LINCARequestOrchestration containing individual proposal items and specifies a pharmacy for pickup. Each item consists of 1 medication for a single patient. Hence, if one patient needs multiple medications, each must be an individual proposal item."/>
-      <isExample value="true"/>
-      <profile value="http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-full-proposal-list"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="MedicationRequest"/>
-      </extension>
-      <reference>
-        <reference value="MedicationRequest/4ca9d9bf9936427c926118e9c627fc3a"/>
-      </reference>
-      <name value="Ex0203 US003 LINCAProposalMedicationRequest: Systeminstance 01"/>
-      <description value="The proposal was successfully posted to the Linked Care FHIR server and an instance of the inline LINCAProposalMedicationRequest was created."/>
-      <isExample value="true"/>
-      <profile value="http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-proposal-medication-request"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="MedicationRequest"/>
-      </extension>
-      <reference>
-        <reference value="MedicationRequest/1762e9b8e2c84b01824f101db887593c"/>
-      </reference>
-      <name value="Ex0204 US003 LINCAProposalMedicationRequest: Systeminstance 02"/>
-      <description value="Second proposal item of DGKP Walte Specht's proposal. Instance is for another patient in 'Haus Vogelsang'"/>
-      <isExample value="true"/>
-      <profile value="http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-proposal-medication-request"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="MedicationRequest"/>
-      </extension>
-      <reference>
-        <reference value="MedicationRequest/3249246cd3774134abeafdfe6189e8e7"/>
-      </reference>
-      <name value="Ex0205 US004 LINCAProposalMedicationRequest: Update basedOn"/>
-      <description value="DGKP Walter Specht needs to modify details of his proposal. He wants to update one individual proposal item for his client Günter Gürtelthier."/>
-      <isExample value="true"/>
-      <profile value="http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-proposal-medication-request"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="MedicationRequest"/>
-      </extension>
-      <reference>
-        <reference value="MedicationRequest/ab0ad2904cd14d36af23de4edc332ea3"/>
-      </reference>
-      <name value="Ex0206 US005 LINCAProposalMedicationRequest: Cancel basedOn"/>
-      <description value="DGKP Walter Specht needs to cancel individual proposal positions for his client Patrizia Platypus. He submits updates on those positions, providing a reason for cancellation, such as a medical reason, and sets their status to 'cancelled'."/>
-      <isExample value="true"/>
-      <profile value="http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-proposal-medication-request"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="MedicationRequest"/>
-      </extension>
-      <reference>
-        <reference value="MedicationRequest/091f1a9d0d64415c91f67caccc3f3848"/>
-      </reference>
-      <name value="Ex0207 US011 LINCAPrescriptionMedicationRequest: Change medication in prescription"/>
-      <description value="Dr. Silvia Spitzmaus does not agree with the proposed medication for Patient Walter Gürtelthier, hence she issues a prescription for a different medication."/>
-      <isExample value="true"/>
-      <profile value="http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-prescription-medication-request"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="MedicationRequest"/>
-      </extension>
-      <reference>
-        <reference value="MedicationRequest/2f9de5b899a54392b9b39c440aca0887"/>
-      </reference>
-      <name value="Ex0208 US012 LINCAPrescriptionMedicationRequest: Modify Dosage"/>
-      <description value="After issuing the prescription for Walter Gürtelthier, Dr. Silvia Spitzmaus realizes the dosage needs adjustment. ence, she submits an update to that prescription with new dosage instructions."/>
-      <isExample value="true"/>
-      <profile value="http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-prescription-medication-request"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="RequestOrchestration"/>
-      </extension>
-      <reference>
-        <reference value="RequestOrchestration/RequestOrchestration-Dosage-Example"/>
-      </reference>
-      <name value="Example LINCARequestOrchestration: Dosage Variation"/>
-      <description value="LINCA Proposal with different dummy data as in the user stories. Shows all ELGA conform encodeing of dosage instructions used by the other examples."/>
-      <isExample value="true"/>
-      <profile value="http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-full-proposal-list"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -322,17 +189,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/linca-full-proposal-list"/>
-      </reference>
-      <name value="LINCA Proposal List (LINCARequestOrchestration)"/>
-      <description value="Linked Care Profile for the overall proposal. The LINCA Proposal List serves as container for the individual placements. The placer's software creates the RequestOrchestration when (re)ordering medication."/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -341,42 +197,6 @@
       <name value="Patient Religion"/>
       <description value="HL7® Austria FHIR® Core Extension for the religion (registered in Austria) of a patient.&#xA;The extension is used to encode the religious confession of a patient (only confessions registered in Austria). Furthermore, it uses the official [HL7 AT CodeSystem](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&amp;loadName=HL7 AT ReligionAustria) for religion and is therefore aligned with the ELGA ValueSet, respectively."/>
       <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Patient"/>
-      </extension>
-      <reference>
-        <reference value="Patient/6800bda462034a9a8123e3dc48c61d53"/>
-      </reference>
-      <name value="Registered Patient 01: 'Günter Gürtelthier'"/>
-      <description value="Instance of fictitious patient, who is an inpatient at Haus Vogelsang"/>
-      <isExample value="true"/>
-      <profile value="http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/at-core-patient"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Patient"/>
-      </extension>
-      <reference>
-        <reference value="Patient/d14e6251b3c545828f7e44cdc6faf2fb"/>
-      </reference>
-      <name value="Registered Patient 02: 'Patrizia Platypus' "/>
-      <description value="Instance of fictitious patient, who is inpatient at Haus Vogelsang"/>
-      <isExample value="true"/>
-      <profile value="http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/at-core-patient"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Patient"/>
-      </extension>
-      <reference>
-        <reference value="Patient/ee8d340312484aaca84774b2a0d53533"/>
-      </reference>
-      <name value="Registered Patient 03: Renate Rüssel-Olifant"/>
-      <description value="Instance of fictitious patient, who is a client at Pflegedienst Immerdar"/>
-      <isExample value="true"/>
-      <profile value="http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/at-core-patient"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">

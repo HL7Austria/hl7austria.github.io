@@ -176,9 +176,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li>
          <a href="#5">Terminology: Code Systems</a>
       </li>
-      <li>
-         <a href="#6">Example: Example Instances</a>
-      </li>
    </ul>
 </div>
 <div xmlns:html="http://www.w3.org/1999/xhtml"
@@ -191,6 +188,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <table class="grid">
       <col style="width:20%"/>
       <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-eMed-prescription-with-multiple-med-requests.html"
+                  title="StructureDefinition/eMed-prescription-with-multiple-med-requests">ELGA e-Medication Prescription with multiple MedicationRequests (eMedRequestOrchestration)</a>
+            </td>
+            <td>
+<p><strong>Description:</strong> In the course of treatment, the doctor determines that the ELGA participant must be prescribed one or more medicines. A MedicationRequest always consists of exactly one medication (= one medicine). The e-Medication prescription can consist of several MedicationRequests and thus forms a grouping over them. The prescription with the MedicationRequests is labelled with a unique eMED ID. The doctor is responsible for checking the medicines, e.g. for potential interactions, contraindications, dosages, etc. and this is not part of e-Medication. Storing requests without assigning a prescription is not valid. The prescription is considered to have been checked if the associated prescription is saved in e-Medication.</p>
+
+<p><strong>Beschreibung:</strong> Im Zuge der Behandlung stellt der Arzt fest, dass dem ELGA Teilnehmer ein oder mehrere Arzneimittel verordnet werden müssen. Eine Verordnung besteht immer nur aus genau einer Medikation (= ein Arzneimittel). Das Rezept kann aus mehreren Verordnungen/MedicationRequests bestehen und bildet somit die Klammer über die Verordnungen/MedicationRequests. Das Rezept mit den Verordnungen/MedicationRequests wird mit einer eindeutigen eMED-ID versehen. Die Prüfungen der Arzneimittel z.B. auf potentielle Wechselwirkungen, Kontraindikationen, Dosierungen, etc. erfolgt in der Eigenverantwortung des Arztes und ist nicht Gegenstand der e-Medikation. Eine Speicherung von Verordnungen/MedicationRequests ohne Zuordnung eines Rezeptes ist nicht gültig. Die Verordnung/MedicationRequest wird als geprüft angesehen, wenn die zugeordnete Verordnung in e-Medikation gespeichert ist.</p>
+</td>
+         </tr>
          <tr>
             <td style="column-width:30%">
                <a href="StructureDefinition-at-core-patient.html"
@@ -245,15 +253,6 @@ The HL7® AT Core ValueSet is based upon the core FHIR® ValueSet Resource and d
             </td>
             <td>
 <p>Linked Care profile for individual proposal positions. A list of proposal positions is first received as contained resources in a LINCA Proposal. Then the Linked Care FHIR server creates an instance for each contained item. These instances are send to the assigned practicioner(s) for authorization.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-linca-full-proposal-list.html"
-                  title="StructureDefinition/linca-full-proposal-list">LINCA Proposal List (LINCARequestOrchestration)</a>
-            </td>
-            <td>
-<p>Linked Care Profile for the overall proposal. The LINCA Proposal List serves as container for the individual placements. The placer’s software creates the RequestOrchestration when (re)ordering medication.</p>
 </td>
          </tr>
       </tbody>
@@ -364,149 +363,6 @@ The extension is used to document the OID of the system of a code referenced in 
          </tr>
       </tbody>
    </table>
-   <a name="6"> </a>
-   <h3>Example: Example Instances </h3>
-    <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.</p>
-<table class="grid">
-      <col style="width:20%"/>
-      <tbody>
-         <tr>
-            <td style="column-width:30%">
-               <a href="RequestOrchestration-bfa0d45270674e0794b694f2892cb1c0.html"
-                  title="RequestOrchestration/bfa0d45270674e0794b694f2892cb1c0">Ex0100 US001 LINCARequestOrchestration: Single medication without pharmacy</a>
-            </td>
-            <td>
-<p>LINCARequestOrchestration created by DGKP Susanne Allzeits. It contains the single medication proposal for her client Renate Rüssel-Olifant without a specified pharmacy for pickup.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="MedicationRequest-b8aad49741e74c36aeab76cada3ad1bc.html"
-                  title="MedicationRequest/b8aad49741e74c36aeab76cada3ad1bc">Ex0102 US001 LINCAProposalMedicationRequest: Systeminstance</a>
-            </td>
-            <td>
-<p>The Linked Care FHIR server, creates an instance from DGKP Susanne Allzeit’s single medication proposal.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="MedicationRequest-331c530a6377444a9e78a8a27a2ec35c.html"
-                  title="MedicationRequest/331c530a6377444a9e78a8a27a2ec35c">Ex0103 US010 LINCAPrescriptionMedicationRequest: Prescribe as proposed</a>
-            </td>
-            <td>
-<p>Practitioner Dr. Wibke Würm is designated practicioner for Renate Rüssel-Olifant.  They decide that the received proposal is ok and issue a prescription for the medication.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="MedicationDispense-d6a2f68cd3f74c28b9dd9fa4ec014cc4.html"
-                  title="MedicationDispense/d6a2f68cd3f74c28b9dd9fa4ec014cc4">Ex0104 US016 LINCAMedicationDispense: Full Dispense</a>
-            </td>
-            <td>
-<p>Pharmacist Mag. Andreas Amsel, owner of the pharmacy Apotheke ‘Zum frühen Vogel’ has access to and permission in a pharmacist role in the LINCA system. When he is expected to fullfil medication orders for a customer Renate Rüssel-Olifant, and he has a LINCA order Id to go with a purchase her care giver Susanne Allzeit just made for her, then Mag. Andreas Amsel submits a dispense record for the order position in question.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="RequestOrchestration-c13972d2294549c7bd29e924cbf0ce41.html"
-                  title="RequestOrchestration/c13972d2294549c7bd29e924cbf0ce41">Ex0200 US003 LINCARequestOrchestration: Minimalistic Inpatient</a>
-            </td>
-            <td>
-<p>DGKP Walter Specht submits LINCARequestOrchestration containing individual proposal items and specifies a pharmacy for pickup. Each item consists of 1 medication for a single patient. Hence, if one patient needs multiple medications, each must be an individual proposal item.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="MedicationRequest-4ca9d9bf9936427c926118e9c627fc3a.html"
-                  title="MedicationRequest/4ca9d9bf9936427c926118e9c627fc3a">Ex0203 US003 LINCAProposalMedicationRequest: Systeminstance 01</a>
-            </td>
-            <td>
-<p>The proposal was successfully posted to the Linked Care FHIR server and an instance of the inline LINCAProposalMedicationRequest was created.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="MedicationRequest-1762e9b8e2c84b01824f101db887593c.html"
-                  title="MedicationRequest/1762e9b8e2c84b01824f101db887593c">Ex0204 US003 LINCAProposalMedicationRequest: Systeminstance 02</a>
-            </td>
-            <td>
-<p>Second proposal item of DGKP Walte Specht’s proposal. Instance is for another patient in ‘Haus Vogelsang’</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="MedicationRequest-3249246cd3774134abeafdfe6189e8e7.html"
-                  title="MedicationRequest/3249246cd3774134abeafdfe6189e8e7">Ex0205 US004 LINCAProposalMedicationRequest: Update basedOn</a>
-            </td>
-            <td>
-<p>DGKP Walter Specht needs to modify details of his proposal. He wants to update one individual proposal item for his client Günter Gürtelthier.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="MedicationRequest-ab0ad2904cd14d36af23de4edc332ea3.html"
-                  title="MedicationRequest/ab0ad2904cd14d36af23de4edc332ea3">Ex0206 US005 LINCAProposalMedicationRequest: Cancel basedOn</a>
-            </td>
-            <td>
-<p>DGKP Walter Specht needs to cancel individual proposal positions for his client Patrizia Platypus. He submits updates on those positions, providing a reason for cancellation, such as a medical reason, and sets their status to ‘cancelled’.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="MedicationRequest-091f1a9d0d64415c91f67caccc3f3848.html"
-                  title="MedicationRequest/091f1a9d0d64415c91f67caccc3f3848">Ex0207 US011 LINCAPrescriptionMedicationRequest: Change medication in prescription</a>
-            </td>
-            <td>
-<p>Dr. Silvia Spitzmaus does not agree with the proposed medication for Patient Walter Gürtelthier, hence she issues a prescription for a different medication.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="MedicationRequest-2f9de5b899a54392b9b39c440aca0887.html"
-                  title="MedicationRequest/2f9de5b899a54392b9b39c440aca0887">Ex0208 US012 LINCAPrescriptionMedicationRequest: Modify Dosage</a>
-            </td>
-            <td>
-<p>After issuing the prescription for Walter Gürtelthier, Dr. Silvia Spitzmaus realizes the dosage needs adjustment. ence, she submits an update to that prescription with new dosage instructions.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="RequestOrchestration-RequestOrchestration-Dosage-Example.html"
-                  title="RequestOrchestration/RequestOrchestration-Dosage-Example">Example LINCARequestOrchestration: Dosage Variation</a>
-            </td>
-            <td>
-<p>LINCA Proposal with different dummy data as in the user stories. Shows all ELGA conform encodeing of dosage instructions used by the other examples.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Patient-6800bda462034a9a8123e3dc48c61d53.html"
-                  title="Patient/6800bda462034a9a8123e3dc48c61d53">Registered Patient 01: 'Günter Gürtelthier'</a>
-            </td>
-            <td>
-<p>Instance of fictitious patient, who is an inpatient at Haus Vogelsang</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Patient-d14e6251b3c545828f7e44cdc6faf2fb.html"
-                  title="Patient/d14e6251b3c545828f7e44cdc6faf2fb">Registered Patient 02: 'Patrizia Platypus' </a>
-            </td>
-            <td>
-<p>Instance of fictitious patient, who is inpatient at Haus Vogelsang</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Patient-ee8d340312484aaca84774b2a0d53533.html"
-                  title="Patient/ee8d340312484aaca84774b2a0d53533">Registered Patient 03: Renate Rüssel-Olifant</a>
-            </td>
-            <td>
-<p>Instance of fictitious patient, who is a client at Pflegedienst Immerdar</p>
-</td>
-         </tr>
-      </tbody>
-   </table>
 </div>
 
 </div>
@@ -531,7 +387,7 @@ if(window.location.hash != "") {
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA GmbH</a>.  Package elga-e-medikation-R5.elga.hl7.at#0.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Thu, Apr 18, 2024 08:01+0000">2024-04-18</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA GmbH</a>.  Package elga-e-medikation-R5.elga.hl7.at#0.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Thu, Apr 25, 2024 15:11+0000">2024-04-25</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
@@ -558,13 +414,6 @@ if(window.location.hash != "") {
 <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
 <script>anchors.options.visible = 'hover'
 anchors.add()</script>
-
-<!-- feedback form - Google forms -->
-<!-- v0.1, 2021-01-09 -->
-
-
-
-<!-- / feedback form  -->
 
 <!-- Analytics Below
 ================================================== -->
