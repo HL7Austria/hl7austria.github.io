@@ -1,0 +1,78 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/PractitionerRole/HL7ATCorePractitionerRoleExample01> a fhir:PractitionerRole ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "HL7ATCorePractitionerRoleExample01"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-practitionerRole"^^xsd:anyURI ;
+       fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-practitionerRole>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: PractitionerRole</b><a name=\"HL7ATCorePractitionerRoleExample01\"> </a><a name=\"hcHL7ATCorePractitionerRoleExample01\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource PractitionerRole &quot;HL7ATCorePractitionerRoleExample01&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-core-practitionerRole.html\">HL7® AT Core PractitionerRole Profile</a></p></div><p><b>active</b>: true</p><p><b>practitioner</b>: <a href=\"Practitioner-HL7ATCorePractitionerExample01.html\">Practitioner/HL7ATCorePractitionerExample01</a> &quot; MUSTERÄRZTIN&quot;</p><p><b>code</b>: Ärztin/Arzt für Allgemeinmedizin <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (hl7-at-practitionerrole#100)</span></p><p><b>specialty</b>: Family practice <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#419772000)</span>, Dive medicine <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#410005002)</span></p><blockquote><p><b>availability</b></p><blockquote><p><b>availableTime</b></p></blockquote><blockquote><p><b>availableTime</b></p></blockquote><blockquote><p><b>availableTime</b></p></blockquote><blockquote><p><b>notAvailableTime</b></p></blockquote><blockquote><p><b>notAvailableTime</b></p></blockquote></blockquote></div>"
+  ] ; # 
+  fhir:active [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:practitioner [
+     fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/Practitioner/HL7ATCorePractitionerExample01> ;
+     fhir:reference [ fhir:v "Practitioner/HL7ATCorePractitionerExample01" ]
+  ] ; # 
+  fhir:code ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://termgit.elga.gv.at/ValueSet/hl7-at-practitionerrole"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "100" ] ;
+       fhir:display [ fhir:v "Ärztin/Arzt für Allgemeinmedizin" ]
+     ] )
+  ] ) ; # 
+  fhir:specialty ( [
+     fhir:coding ( [
+       a sct:419772000 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "419772000" ] ;
+       fhir:display [ fhir:v "Family practice" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       a sct:410005002 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "410005002" ] ;
+       fhir:display [ fhir:v "Dive medicine" ]
+     ] )
+  ] ) ; # 
+  fhir:availability ( [
+     fhir:availableTime ( [
+       fhir:daysOfWeek ( [ fhir:v "mon" ] ) ;
+       fhir:availableStartTime [ fhir:v "07:00:00"^^xsd:time ] ;
+       fhir:availableEndTime [ fhir:v "12:00:00"^^xsd:time ]
+     ] [
+       fhir:daysOfWeek ( [ fhir:v "tue" ] ) ;
+       fhir:availableStartTime [ fhir:v "07:30:00"^^xsd:time ] ;
+       fhir:availableEndTime [ fhir:v "12:30:00"^^xsd:time ]
+     ] [
+       fhir:daysOfWeek ( [ fhir:v "thu" ] ) ;
+       fhir:allDay [ fhir:v "true"^^xsd:boolean ]
+     ] ) ;
+     fhir:notAvailableTime ( [
+       fhir:description [ fhir:v "Urlaub" ] ;
+       fhir:during [
+         fhir:start [ fhir:v "2024-08-01"^^xsd:date ] ;
+         fhir:end [ fhir:v "2024-08-31"^^xsd:date ]
+       ]
+     ] [
+       fhir:description [ fhir:v "Zwischen den Feiertagen geschlossen." ] ;
+       fhir:during [
+         fhir:start [ fhir:v "2024-12-24"^^xsd:date ] ;
+         fhir:end [ fhir:v "2025-01-06"^^xsd:date ]
+       ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
