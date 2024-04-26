@@ -1,0 +1,715 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Architecture - Österreichischer e-Health-Terminologie-Browser v2.7.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="fhir-logo" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="fhir-logo" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="fhir-logo" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"4"}
+    h3,h4,h5,h6{--heading-prefix:"4"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+          <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Österreichischer e-Health-Terminologie-Browser</span>
+            <br/>
+            <span style="display:inline-block;">2.7.0 - TerminoloGit
+
+
+            </span>
+          </p>
+        </div>
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4B/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts Summary</a>
+  </li>
+  <li>
+    <a href="support_de.html">Support &amp; Imprint</a>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Architecture</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- ReleaseHeader --><p id="publish-box">Österreichischer e-Health-Terminologie-Browser - Local Development build (v2.7.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="TERMGIT_CANONICAL/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <h2>Architecture</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#terminologit-and-its-components" id="markdown-toc-terminologit-and-its-components">TerminoloGit and its components</a></li>
+  <li><a href="#structure-of-the-repository" id="markdown-toc-structure-of-the-repository">Structure of the repository</a></li>
+  <li><a href="#cicd-flow" id="markdown-toc-cicd-flow">CI/CD flow</a></li>
+  <li><a href="#fully-dressed-use-case-diagram" id="markdown-toc-fully-dressed-use-case-diagram">Fully dressed use case diagram</a></li>
+</ul>
+
+</div>
+<blockquote>
+  <p><strong><a name="l252">​</a>Für die deutsche Version bitte <a href="architecture_de.md">hier</a> klicken.</strong></p>
+</blockquote>
+
+<p>For better understanding of the architecture of TerminoloGit basic knowledge of the following technologies and/or systems is assumed:</p>
+<ul>
+  <li>Git
+    <ul>
+      <li>Branching and merging</li>
+      <li>Tags</li>
+      <li>Git logs</li>
+    </ul>
+  </li>
+  <li>GitLab
+    <ul>
+      <li>Merge requests</li>
+      <li>CI/CD</li>
+    </ul>
+  </li>
+  <li>HL7&reg; FHIR&reg;
+    <ul>
+      <li>REST API</li>
+    </ul>
+  </li>
+  <li>HL7&reg; FHIR&reg; IG Publisher</li>
+</ul>
+
+<h3 id="terminologit-and-its-components">TerminoloGit and its components</h3>
+
+<p>TerminoloGit is an open source project that is made up of multiple interacting repositories, initialized by the Austrian ELGA GmbH.</p>
+
+<ul>
+  <li><a href="https://gitlab.com/elga-gmbh/termgit-dev">TerminoloGit Dev</a></li>
+  <li><a href="https://gitlab.com/elga-gmbh/terminologit-dev-html">TerminoloGit Dev HTML</a> - Hosts created static HTML pages enabling versioning of terminologies.</li>
+  <li><a name="l321">​</a><a href="https://gitlab.com/elga-gmbh/malac-ct">MaLaC-CT (also standalone)</a> - Converts between supported <a href="file_formats_en.md">file formats</a>.</li>
+  <li><a href="https://gitlab.com/elga-gmbh/terminologit-template">TerminoloGit Template</a> - Formats static HTML pages.</li>
+  <li><a href="https://gitlab.com/elga-gmbh/docker/fsh-ing-grounds">fsh-ing-grounds</a> or <a href="https://hub.docker.com/r/elgagmbh/fsh-ing-grounds">docker image elgagmbh/fsh-ing-grounds</a> - Docker image prepared to run the <a href="https://github.com/HL7/fhir-ig-publisher">HL7&reg; FHIR&reg; IG Publisher</a></li>
+  <li><em>external</em> <a href="https://github.com/HL7/fhir-ig-publisher">HL7&reg; FHIR&reg; IG Publisher</a> - Used to generate static HTML pages.</li>
+</ul>
+
+<h4 id="terminologit-and-fhir-server">TerminoloGit and FHIR&reg; Server</h4>
+
+<p>If TerminoloGit shall be used in connection with a FHIR&reg; server, please take a look at the project <a href="https://gitlab.com/elga-gmbh/terminologit-tergi">TerminoloGit tergi</a> which allows to set up a fully-fledged FHIR&reg; server complemented with a lightweight Git repository.</p>
+
+<h3 id="structure-of-the-repository">Structure of the repository</h3>
+
+<p>This chapter briefly explains the structure of a TerminoloGit repository:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">.</code> - contains the <code class="language-plaintext highlighter-rouge">README</code>, the <code class="language-plaintext highlighter-rouge">CODE_OF_CONDUCT</code>, the <code class="language-plaintext highlighter-rouge">CONTRIBUTING</code>, the <code class="language-plaintext highlighter-rouge">CHANGELOG</code>, the <code class="language-plaintext highlighter-rouge">LICENSE</code>, as well as a lot of scripts used throughout a pipeline run.</li>
+  <li><code class="language-plaintext highlighter-rouge">input/files/</code> - contains some templates to be used for terminology creation.</li>
+  <li><code class="language-plaintext highlighter-rouge">input/fsh/</code> - kept to tell TerminoloGit users that no <code class="language-plaintext highlighter-rouge">fsh</code> files shall be put into that directory.</li>
+  <li><code class="language-plaintext highlighter-rouge">input/images/</code> - images which are used within the documentation.</li>
+  <li><code class="language-plaintext highlighter-rouge">input/includes/</code> - for each terminology a fragment for its downloads and its previous versions is provided in this directory. These fragments will later be processed by the TerminoloGit template.</li>
+  <li><code class="language-plaintext highlighter-rouge">input/pagecontent/</code> - several markdown files that form the documentation of TerminoloGit.</li>
+  <li><code class="language-plaintext highlighter-rouge">input/redirects/</code> - for each terminology a redirects file exists which allows to access the terminologies based on their canonical.</li>
+  <li><code class="language-plaintext highlighter-rouge">input/resources/</code> - FHIR&reg; resources which shall not be processed by MaLaC-CT are placed in this directory, e.g. ConceptMaps or intensional ValueSets.</li>
+  <li><code class="language-plaintext highlighter-rouge">input/sitemap/</code> - Meta-information for web crawler where to find the sitemap and which pages shall be indexed.</li>
+  <li><code class="language-plaintext highlighter-rouge">terminologies/</code> - for each terminology a directory exists (pattern <code class="language-plaintext highlighter-rouge">[CodeSystem | ValueSet]-[id]</code>). Furthermore, it contains the <code class="language-plaintext highlighter-rouge">terminologiesMetadata.csv</code>.</li>
+</ul>
+
+<p>The <code class="language-plaintext highlighter-rouge">terminologies/terminologiesMeta.csv</code> contains some important meta-information about all terminologies which are managed by TerminoloGit:</p>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">name</code> - <code class="language-plaintext highlighter-rouge">[CodeSystem | ValueSet]-[id]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">canonical</code> - <code class="language-plaintext highlighter-rouge">[TERMGIT_CANONICAL]/[CodeSystem | ValueSet]/[id]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">oid</code> - OID of the terminology</li>
+  <li><code class="language-plaintext highlighter-rouge">version</code> - version of the terminology</li>
+  <li><code class="language-plaintext highlighter-rouge">id</code> - the terminology’s <code class="language-plaintext highlighter-rouge">id</code></li>
+  <li><code class="language-plaintext highlighter-rouge">type</code> - <code class="language-plaintext highlighter-rouge">[CodeSystem | ValueSet]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">metadata-change-timestamp</code> - the time of the last change of the terminology metadata.</li>
+</ol>
+
+<h3 id="cicd-flow">CI/CD flow</h3>
+
+<p>The CI/CD pipeline in TerminoloGit consists of several stages and its corresponding jobs and is structured as follows. Please note, that neither all stages nor all jobs are executed in every pipeline, however, rules control which will be executed.</p>
+<ul>
+  <li>Stage <code class="language-plaintext highlighter-rouge">manual_trigger</code>
+    <ul>
+      <li>Job <code class="language-plaintext highlighter-rouge">manual_trigger</code> - A manual trigger to start the pipeline in branches apart from the default branch. On the default branch the pipeline will start automatically upon a push of new commits.</li>
+    </ul>
+  </li>
+  <li>Stage <code class="language-plaintext highlighter-rouge">check_variables</code>
+    <ul>
+      <li>Job <code class="language-plaintext highlighter-rouge">check_variables</code> - Check if the required environment variables are set.</li>
+    </ul>
+  </li>
+  <li>Stage <code class="language-plaintext highlighter-rouge">run_malac-ct</code> - Depending on the circumstances one of the following jobs will be executed.
+    <ul>
+      <li>Job <code class="language-plaintext highlighter-rouge">run_malac-ct</code> - This job automatically detects new/updated terminologies within the <code class="language-plaintext highlighter-rouge">terminologies/</code> directory and will convert them to all file formats by using MaLaC-CT.</li>
+      <li>Job <code class="language-plaintext highlighter-rouge">run_malac-ct_integration_test</code> - This job is not part of the default pipeline in a TerminoloGit project. It can be triggered from within a MaLaC-CT repository and will then run instead of the usual <code class="language-plaintext highlighter-rouge">run_malac-ct</code>. It converts all existing terminologies of a specified TerminoloGit repository using a specified file format as source.</li>
+      <li>Job <code class="language-plaintext highlighter-rouge">skip_malac-ct</code> - This job can be triggered if a commit is prepended with <code class="language-plaintext highlighter-rouge">SKIP_MALAC</code>. As a result, no terminology will be processed by MaLaC-CT. <em>Note, currently new business versions will NOT be detected in this case.</em></li>
+    </ul>
+  </li>
+  <li>Stage <code class="language-plaintext highlighter-rouge">run_ig</code>
+    <ul>
+      <li>Job <code class="language-plaintext highlighter-rouge">run_ig</code> - This job handles the creation of previous versions (except for pipelines started with a <code class="language-plaintext highlighter-rouge">SKIP_MALAC</code> commit) and starts the HL7&reg; FHIR&reg; IG Publisher which creates the static HTML pages.</li>
+    </ul>
+  </li>
+  <li>Stage <code class="language-plaintext highlighter-rouge">update_html</code> - On the default branch <code class="language-plaintext highlighter-rouge">update_html_full_content</code> will always be executed. On other branches <code class="language-plaintext highlighter-rouge">update_html_with_diff</code> will be executed.
+    <ul>
+      <li>Job <code class="language-plaintext highlighter-rouge">update_html_full_content</code> - The result of <code class="language-plaintext highlighter-rouge">run_ig</code> will update the <code class="language-plaintext highlighter-rouge">TERMGIT_HTML_PROJECT_DEFAULT_BRANCH</code> within the <code class="language-plaintext highlighter-rouge">TERMGIT_HTML_PROJECT</code> project.</li>
+      <li>Job <code class="language-plaintext highlighter-rouge">update_html_with_diff</code> - The result of <code class="language-plaintext highlighter-rouge">run_ig</code> will be pushed to the <code class="language-plaintext highlighter-rouge">TERMGIT_HTML_PROJECT</code>. The branch name will be the same as in the TerminoloGit project.</li>
+    </ul>
+  </li>
+  <li>Stage <code class="language-plaintext highlighter-rouge">publish</code> - The following jobs run in parallel.
+    <ul>
+      <li>Job <code class="language-plaintext highlighter-rouge">pages</code> - Updates the GitLab pages of the TerminoloGit project.</li>
+      <li>Job <code class="language-plaintext highlighter-rouge">upload_input_resources</code> - Uploads all resources within the <code class="language-plaintext highlighter-rouge">input/resources/</code> directory to the given FHIR&reg; servers.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>The following is a visualization of the three most common flows of the CI/CD pipeline. For details, refer to the <code class="language-plaintext highlighter-rouge">.gitlab-ci.yml</code>.</p>
+
+<h4 id="standard-terminology-maintenance">Standard terminology maintenance</h4>
+
+<p><a name="l667">​</a><a href="input/images/CICD_standard.drawio.png"><a name="l668">​</a><img src="input/images/CICD_standard.drawio.png" alt="CI-CD-standard" style="width: 100%"/></a></p>
+
+<h4 id="integration-test">Integration test</h4>
+
+<p><a name="l674">​</a><a href="input/images/CICD_integration_test.drawio.png"><a name="l675">​</a><img src="input/images/CICD_integration_test.drawio.png" alt="CI-CD-integration-test" style="width: 100%"/></a></p>
+
+<h4 id="skip_malac">SKIP_MALAC</h4>
+
+<p><a name="l681">​</a><a href="input/images/CICD_skip_malac.drawio.png"><a name="l682">​</a><img src="input/images/CICD_skip_malac.drawio.png" alt="CI-CD-skip-malac" style="width: 100%"/></a></p>
+
+<h3 id="fully-dressed-use-case-diagram">Fully dressed use case diagram</h3>
+
+<p>The entire concept is shown in a fully dressed use case diagram, below the written use cases at subfunction/fish level can be found. Please note, this diagram is not fully compliant to the Cockburn diagram for fully dressed use case diagrams. A few changes have been made to show all the needed information in one diagram.</p>
+
+<p><a name="l691">​</a><a href="input/images/FullyDressedUseCaseDiagramm.drawio.png"><a name="l692">​</a><img src="input/images/FullyDressedUseCaseDiagramm.drawio.png" alt="fully dressed use case diagram" style="width: 100%"/></a></p>
+
+<p><strong>Parameters for all use cases:</strong></p>
+
+<ol>
+  <li><strong>Actors:</strong>
+    <ul>
+      <li>only differentiated between GitLab roles and the GitLab service itself, additional roles can be set per governance in each production system</li>
+    </ul>
+  </li>
+  <li><strong>Scope:</strong>
+    <ul>
+      <li>a terminology like a code system or value set</li>
+    </ul>
+  </li>
+  <li><strong>Level:</strong>
+    <ul>
+      <li>Subfunction/Fish</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="1-create-account-authenticate-and-authorise">#1 Create Account, Authenticate and Authorise</h4>
+
+<ol>
+  <li><strong>Actors:</strong>
+    <ul>
+      <li>Guest (human)</li>
+      <li>Service (machine)</li>
+    </ul>
+  </li>
+  <li><strong>Brief:</strong> A guest needs a GitLab account for special interactions (e.g. subscribing to a tag of a terminology via GitLab) and creates one via GitLab.</li>
+  <li><strong>Postconditions:</strong>
+    <ol>
+      <li><strong>Minimal Guarantees:</strong> none</li>
+      <li><strong>Success Guarantees:</strong>
+        <ul>
+          <li>A user account has been created</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li><strong>Preconditions:</strong>
+    <ul>
+      <li>The GitLab projects needed for TerminoloGit have been created</li>
+    </ul>
+  </li>
+  <li><strong>Triggers:</strong>
+    <ul>
+      <li>A guest wants to perform a special interaction</li>
+    </ul>
+  </li>
+  <li><strong>Basic flow:</strong>
+    <ol>
+      <li>Creating an account on GitLab and if needed requesting individual permissions</li>
+      <li>Login in GitLab</li>
+    </ol>
+  </li>
+  <li><strong>Extensions:</strong> none</li>
+  <li><strong>Software:</strong>
+    <ul>
+      <li>Any browser</li>
+    </ul>
+  </li>
+  <li><strong>Hardware:</strong>
+    <ul>
+      <li>Any client with a browser</li>
+    </ul>
+  </li>
+  <li><strong>Services:</strong>
+    <ul>
+      <li>GitLab.com or own GitLab CE hosting</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="2-subscription">#2 Subscription</h4>
+
+<ol>
+  <li><strong>Actors:</strong>
+    <ul>
+      <li>Service (machine)</li>
+      <li>Subscriber (human - a guest that subscribed to some terminologies)</li>
+    </ul>
+  </li>
+  <li><strong>Brief:</strong> The subscribers are being informed automatically via e-mail, because a new or edited terminology file has been pushed.</li>
+  <li><strong>Postconditions:</strong>
+    <ol>
+      <li><strong>Minimal Guarantees:</strong> none</li>
+      <li><strong>Success Guarantees:</strong>
+        <ul>
+          <li>A subscriber is being informed of a new terminology</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li><strong>Preconditions:</strong>
+    <ul>
+      <li>A guest has subscribed to the GitLab project TerminoloGit</li>
+    </ul>
+  </li>
+  <li><strong>Triggers:</strong>
+    <ul>
+      <li>A terminology has been added or updated</li>
+    </ul>
+  </li>
+  <li><strong>Basic flow:</strong>
+    <ol>
+      <li>GitLab sends the change to all subscribers</li>
+    </ol>
+  </li>
+  <li><strong>Extensions:</strong> none</li>
+  <li><strong>Software:</strong>
+    <ul>
+      <li>Any e-mail program</li>
+    </ul>
+  </li>
+  <li><strong>Hardware:</strong>
+    <ul>
+      <li>Any client with an e-mail program</li>
+    </ul>
+  </li>
+  <li><strong>Services:</strong>
+    <ul>
+      <li>GitLab for sending the change to subscribers</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="3-using-fhir-ig-and-fhir-tx">#3 Using FHIR&reg; IG and FHIR-tx</h4>
+
+<ol>
+  <li><strong>Actors:</strong>
+    <ul>
+      <li>Guest (human or machine)</li>
+      <li>Service (machine)</li>
+    </ul>
+  </li>
+  <li><strong>Brief:</strong> A terminology like a code system or value set is being retrieved via the GitLab GUI, TerminoloGit GUI, GitLab REST API, or FHIR-tx REST API interface</li>
+  <li><strong>Postconditions:</strong>
+    <ol>
+      <li><strong>Minimal Guarantees:</strong> none</li>
+      <li><strong>Success Guarantees:</strong>
+        <ul>
+          <li>if the terminology the guest is looking for exists
+            <ul>
+              <li>receiving a terminology</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li><strong>Preconditions:</strong>
+    <ul>
+      <li>The TerminoloGit GitLab project exists</li>
+      <li>The FHIR&reg; IG is published</li>
+      <li>The FHIR-tx is up to date</li>
+    </ul>
+  </li>
+  <li><strong>Triggers:</strong>
+    <ul>
+      <li>A terminology needs to be retrieved</li>
+    </ul>
+  </li>
+  <li><strong>Basic flow:</strong>
+    <ol>
+      <li>By requesting the FHIR&reg; IG web site a guest gets a browsable format of all terminologies with the possibility to download them in any format</li>
+      <li>By requesting the GitLab web site a guest gets a list of all formats of all terminologies with the possibility to download them</li>
+      <li>By operating with FHIR&reg; ValueSet or CodeSystems REST operations the terminologies are retrieved by a machine</li>
+      <li>By operating with the GitLab REST API terminologies are retrieved by a machine</li>
+    </ol>
+  </li>
+  <li><strong>Extensions:</strong>
+    <ul>
+      <li>A validation of concepts in ValueSet or CodeSystem resources is possible with <code class="language-plaintext highlighter-rouge">$validate-code</code>.</li>
+      <li>A hierarchy status between two concepts in a CodeSystem is possible by <code class="language-plaintext highlighter-rouge">$subsumes</code>.</li>
+      <li>A detailed view of a concept in a CodeSystem is possible by <code class="language-plaintext highlighter-rouge">$lookup</code>.</li>
+    </ul>
+  </li>
+  <li><strong>Software:</strong>
+    <ul>
+      <li>A browser or REST client</li>
+    </ul>
+  </li>
+  <li><strong>Hardware:</strong>
+    <ul>
+      <li>Client for browsing or sending REST requests</li>
+    </ul>
+  </li>
+  <li><strong>Services:</strong>
+    <ul>
+      <li>GitLab for publishing terminologies</li>
+      <li>a FHIR&reg; server for REST requests</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="4-crud-and-push-a-terminology-to-gitlab">#4 CRUD and push a terminology to GitLab</h4>
+
+<ol>
+  <li><strong>Actors:</strong>
+    <ul>
+      <li>Developer (human)</li>
+      <li>Service (machine)</li>
+    </ul>
+  </li>
+  <li><strong>Brief:</strong> A new terminology file is being created or edited and pushed to the GitLab project</li>
+  <li><strong>Postconditions:</strong>
+    <ol>
+      <li><strong>Minimal Guarantees:</strong>
+        <ul>
+          <li>some feedback what went wrong with the commit or push</li>
+        </ul>
+      </li>
+      <li><strong>Success Guarantees:</strong>
+        <ul>
+          <li>The new, edited or as retired flagged terminology file is published in the TerminoloGit GitLab project. The CI/CD pipeline will be triggerd automaticly or manually</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li><strong>Preconditions:</strong>
+    <ul>
+      <li>The TerminoloGit GitLab project exists</li>
+      <li>A local Git client and an editor is installed on a client or a WebIDE of GitLab is being used</li>
+    </ul>
+  </li>
+  <li><strong>Triggers:</strong>
+    <ul>
+      <li>A terminology needs to be created or updated</li>
+    </ul>
+  </li>
+  <li><strong>Basic flow:</strong>
+    <ol>
+      <li>With an editor (e.g. Notepad++, Visual Studio Code) or a WebIDE a terminology file in the local Git repository is being created, updated, or deleted by setting the status to retired.</li>
+      <li>In your local Git client a new commit is being created and pushed to the remote TerminoloGit repository</li>
+    </ol>
+  </li>
+  <li><strong>Extensions:</strong>
+    <ul>
+      <li>A branch beside of the default branch could indicate that a new commit is pushed for testing or approval purposes. In this case the CI/CD of GitLab is the same as for the default branch with the only difference that the result is only visible on a seperate site.</li>
+    </ul>
+  </li>
+  <li><strong>Software:</strong>
+    <ul>
+      <li>a local Git client or a browser</li>
+      <li>an editor (e.g. Notepad++, Visual Studio Code) or a browser</li>
+    </ul>
+  </li>
+  <li><strong>Hardware:</strong>
+    <ul>
+      <li>Client for editing text files and Git pushing or browsing</li>
+    </ul>
+  </li>
+  <li><strong>Services:</strong>
+    <ul>
+      <li>GitLab for publishing terminologies</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="5-continuous-delivery-to-fhir-ig-and-fhir-tx">#5 Continuous Delivery to FHIR&reg; IG and FHIR-tx</h4>
+
+<ol>
+  <li><strong>Actors:</strong>
+    <ul>
+      <li>Service (machine)</li>
+    </ul>
+  </li>
+  <li><strong>Brief:</strong> A new or edited terminology file is being converted to other terminology formats from the GitLab service by a runner</li>
+  <li><strong>Postconditions:</strong>
+    <ol>
+      <li><strong>Minimal Guarantees:</strong>
+        <ul>
+          <li>there is some CI/CD error</li>
+        </ul>
+      </li>
+      <li><strong>Success Guarantees:</strong>
+        <ul>
+          <li>It’s converted by MaLaC-CT, versioned the IGVer, rendered by the IG Publisher and shown on a gitlab page</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li><strong>Preconditions:</strong>
+    <ul>
+      <li>The TerminoloGit GitLab CI/CD is configured</li>
+    </ul>
+  </li>
+  <li><strong>Triggers:</strong>
+    <ul>
+      <li>A terminology has been added or updated</li>
+    </ul>
+  </li>
+  <li><strong>Basic flow:</strong>
+    <ol>
+      <li>a GitLab runner for the CI/CD is being started because a new commit has been pushed</li>
+      <li>the runner is converting the terminology to all other file formats</li>
+      <li>if the conversion passed, the IGVer and afterwards the IG Publisher is started</li>
+      <li>if the IG Publisher passed, the upload to FHIR-tx is starting</li>
+    </ol>
+  </li>
+  <li><strong>Extensions:</strong> none</li>
+  <li><strong>Software:</strong> none</li>
+  <li><strong>Hardware:</strong> none</li>
+  <li><strong>Services:</strong>
+    <ul>
+      <li>GitLab for running the runner</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="6-push-to-branches-approve-and-merge-to-master">#6 Push to branches, approve and merge to master</h4>
+
+<ol>
+  <li><strong>Actors:</strong>
+    <ul>
+      <li>Developer (human)</li>
+      <li>Service (machine)</li>
+    </ul>
+  </li>
+  <li><strong>Brief:</strong> new or edited terminology files are being committed to a branch and requested for a merge to master.</li>
+  <li><strong>Postconditions:</strong>
+    <ol>
+      <li><strong>Minimal Guarantees:</strong>
+        <ul>
+          <li>If a correction is needed:
+            <ul>
+              <li>waiting that the developer corrects with a new commit</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><strong>Success Guarantees:</strong>
+        <ul>
+          <li>a branch has been merged to master</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li><strong>Preconditions:</strong>
+    <ul>
+      <li>The TerminoloGit project is configured for branching</li>
+    </ul>
+  </li>
+  <li><strong>Triggers:</strong>
+    <ul>
+      <li>A terminology has been added or updated to a branch</li>
+    </ul>
+  </li>
+  <li><strong>Basic flow:</strong>
+    <ol>
+      <li>the developer creates a branch for his commits</li>
+      <li>the developer creates a commit with his changes</li>
+      <li>the developer requests a merge to master or another protected branch</li>
+      <li>another developer comments the request and demands changes or accepts this branch</li>
+      <li>the developer merges it into master</li>
+    </ol>
+  </li>
+  <li><strong>Extensions:</strong> none</li>
+  <li><strong>Software:</strong>
+    <ul>
+      <li>a browser</li>
+    </ul>
+  </li>
+  <li><strong>Hardware:</strong>
+    <ul>
+      <li>a machine with a browser</li>
+    </ul>
+  </li>
+  <li><strong>Services:</strong>
+    <ul>
+      <li>GitLab for running the runner</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="bigpicture">BigPicture</h4>
+
+<p>Knowing the architecture through the fully dressed use case diagram, the following BigPicture shows the different ways to use TerminoloGit, including the possible cascading system dependencies.</p>
+
+<p><a name="l1554">​</a><a href="input/images/BigPicture.drawio.png"><a name="l1555">​</a><img src="input/images/BigPicture.drawio.png" alt="big-picture" style="width: 100%"/></a></p>
+
+<p>Cascading synchronization between TerminoloGit instances is recommended through merge requests. You can create merge requests to and from every forked project, you can even <a href="https://docs.gitlab.com/ee/api/projects.html#create-a-forked-fromto-relation-between-existing-projects">add fork relations afterwards</a>. Beware that if there are some errors doing the post (like a 500 internal server error), you may have to <a href="https://docs.gitlab.com/ee/api/projects.html#delete-an-existing-forked-from-relationship">delete the old fork relation</a> before.
+You can also use the Git function Submodule or Subtree.
+Furthermore, it is possible to automate the sync via CI/CD in your own system or via “mirroring” or “sync” features, if you do not perform any adaptations/extensions to the terminologies yourself.</p>
+
+<p>Cascading synchronization between a TerminoloGit instance and a tergi instance has to be set up in your TerminoloGit instance, see <a href="https://gitlab.com/elga-gmbh/terminologit-tergi">the README in the tergi repo</a> for more information.</p>
+
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="null">ELGA GmbH</a>.  Package austrian-terminology-server#2.7.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4B/">FHIR 4.3.0</a>. Generated <span title="Fri, Apr 26, 2024 06:27+0000">2024-04-26</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+  
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+  
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

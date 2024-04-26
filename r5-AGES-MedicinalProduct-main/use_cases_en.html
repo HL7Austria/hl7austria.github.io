@@ -1,0 +1,614 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>How to use TerminoloGit - Österreichischer e-Health-Terminologie-Browser v2.7.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="fhir-logo" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="fhir-logo" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="fhir-logo" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"18"}
+    h3,h4,h5,h6{--heading-prefix:"18"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+          <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Österreichischer e-Health-Terminologie-Browser</span>
+            <br/>
+            <span style="display:inline-block;">2.7.0 - TerminoloGit
+
+
+            </span>
+          </p>
+        </div>
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4B/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts Summary</a>
+  </li>
+  <li>
+    <a href="support_de.html">Support &amp; Imprint</a>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>How to use TerminoloGit</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- ReleaseHeader --><p id="publish-box">Österreichischer e-Health-Terminologie-Browser - Local Development build (v2.7.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="TERMGIT_CANONICAL/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <h2>How to use TerminoloGit</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#add-a-new-terminology" id="markdown-toc-add-a-new-terminology">Add a new terminology</a></li>
+  <li><a href="#reference-external-code-systems" id="markdown-toc-reference-external-code-systems">Reference external code systems</a></li>
+  <li><a href="#update-a-terminology" id="markdown-toc-update-a-terminology">Update a terminology</a></li>
+  <li><a href="#delete-a-terminology" id="markdown-toc-delete-a-terminology">Delete a terminology</a></li>
+  <li><a href="#start-a-pipeline" id="markdown-toc-start-a-pipeline">Start a pipeline</a></li>
+  <li><a href="#browse-terminologies" id="markdown-toc-browse-terminologies">Browse terminologies</a></li>
+  <li><a href="#import-of-terminologies" id="markdown-toc-import-of-terminologies">Import of terminologies</a></li>
+  <li><a href="#validation-of-codes" id="markdown-toc-validation-of-codes">Validation of codes</a></li>
+  <li><a href="#further-fhir-operations-with-limitations-by-hapi-jpa-server" id="markdown-toc-further-fhir-operations-with-limitations-by-hapi-jpa-server">Further FHIR&reg; operations with limitations by HAPI JPA Server</a></li>
+  <li><a href="#upload-terminologies-to-fhir-servers" id="markdown-toc-upload-terminologies-to-fhir-servers">Upload terminologies to FHIR&reg; servers</a></li>
+</ul>
+
+</div>
+<blockquote>
+  <p><strong><a name="l276">​</a>Für die deutsche Version bitte <a href="use_cases_de.md">hier</a> klicken.</strong></p>
+</blockquote>
+
+<p>A rather general description of various use cases can be found here. Please note that this is not an exhaustive list of use cases. It shall only give you an impression of what is possible with TerminoloGit.</p>
+
+<h3 id="add-a-new-terminology">Add a new terminology</h3>
+
+<p><a name="l289">​</a><strong>Code systems and extensional value sets</strong> should be <strong><a href="#add-a-new-terminology-to-the-terminologies-directory">added to  <code class="language-plaintext highlighter-rouge">terminologies/</code> directory</a></strong> in order to have it converted to all supported <a href="file_formats_en.md">file formats</a> by MaLaC-CT.</p>
+
+<p><strong>Intensional ValueSets and other FHIR&reg; resources</strong>, on the other hand, have to be <strong><a href="#add-intensional-valuesets-or-other-fhir-resources-to-the-inputresources-directory">added to <code class="language-plaintext highlighter-rouge">input/resources/</code> directory</a></strong> as the are not supported by MaLaC-CT.</p>
+
+<p>Additional configuration of TerminoloGit is recommended when <strong><a href="#add-terminologies-with-a-different-base-url">adding a terminology with a different base URL</a></strong> within its canonical.</p>
+
+<h4 id="add-a-new-terminology-to-the-terminologies-directory">Add a new terminology to the terminologies/ directory</h4>
+
+<p><a name="l326">​</a>Code systems and extensional value sets should be added to the <code class="language-plaintext highlighter-rouge">terminologies/</code> directory in order to be converted to all other supported <a href="file_formats_en.md">file formats</a> by MaLaC-CT.</p>
+
+<blockquote>
+  <p><a name="l337">​</a>A new terminology can be created in any of the supported <a href="file_formats_en.md">file formats</a>. However, it is not recommended to use one of the deprecated file formats as in might result in information loss.</p>
+</blockquote>
+
+<p>The following process describes how to add a new terminology based on the <code class="language-plaintext highlighter-rouge">.1.propcsv.xlsx</code> file format:</p>
+<ol>
+  <li>Download the <strong><a name="l354">​</a>templates for a <a href="input/files/CodeSystem-cs-import-template.1.propcsv.xlsx">Code System</a> or a <a href="input/files/ValueSet-vs-import-template.1.propcsv.xlsx">Value Set</a></strong> for creating a new code system or value set, respectively. <em>Note: cells that have to be edited are highlighted in yellow.</em></li>
+  <li>Once finished editing the file, rename it according to the following pattern:
+    <ol>
+      <li><code class="language-plaintext highlighter-rouge">[CodeSystem | ValueSet]-[id].1.propcsv.xlsx</code></li>
+    </ol>
+  </li>
+  <li>Create a new branch within the repository and continue working with it.</li>
+  <li>Create a new sub-directory within <code class="language-plaintext highlighter-rouge">terminologies/</code> according to the following pattern:
+    <ol>
+      <li><code class="language-plaintext highlighter-rouge">[CodeSystem | ValueSet]-[id]</code></li>
+    </ol>
+  </li>
+  <li>Place the <code class="language-plaintext highlighter-rouge">.1.propcsv.xlsx</code> file into the corresponding directory within the <code class="language-plaintext highlighter-rouge">terminologies/</code> directory. The resulting path should be the following:
+    <ol>
+      <li><code class="language-plaintext highlighter-rouge">terminologies/[CodeSystem | ValueSet]-[id]/[CodeSystem | ValueSet]-[id].1.propcsv.xlsx</code> e.g. <code class="language-plaintext highlighter-rouge">terminologies/CodeSystem-appc-anatomie/CodeSystem-appc-anatomie.1.propcsv.xlsx</code> or <code class="language-plaintext highlighter-rouge">terminologies/ValueSet-elga-laborparameter/ValueSet-elga-laborparameter.1.propcsv.xlsx</code></li>
+    </ol>
+  </li>
+  <li>Commit and push the changes to the new branch.</li>
+  <li>Create a merge request within GitLab.</li>
+  <li>Manually start the pipeline within GitLab.</li>
+  <li>Check the results of the pipeline - the following files should be created automatically by the pipeline:
+    <ol>
+      <li><code class="language-plaintext highlighter-rouge">input/includes/</code>
+        <ol>
+          <li><code class="language-plaintext highlighter-rouge">[CodeSystem | ValueSet]-[id]-download.xhtml</code></li>
+          <li><code class="language-plaintext highlighter-rouge">[CodeSystem | ValueSet]-[id]-previous-versions.xhtml</code></li>
+        </ol>
+      </li>
+      <li><code class="language-plaintext highlighter-rouge">input/redirects/</code>
+        <ol>
+          <li><code class="language-plaintext highlighter-rouge">[CodeSystem | ValueSet]/[id].html</code></li>
+        </ol>
+      </li>
+      <li><code class="language-plaintext highlighter-rouge">terminologies/[CodeSystem | ValueSet]-[id]/</code>
+        <ol>
+          <li>all other file formats</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>Once the pipeline has succeeded and the merge request has been approved (optional), it can be merged into the default branch.</li>
+  <li>On the default branch the pipeline will be started automatically.</li>
+  <li>The new terminology has been successfully published.</li>
+</ol>
+
+<h4 id="add-intensional-valuesets-or-other-fhir-resources-to-the-inputresources-directory">Add intensional ValueSets or other FHIR&reg; resources to the input/resources/ directory</h4>
+
+<p>Intensional ValueSets or other FHIR&reg; resources (as FHIR&reg; XML or FHIR&reg; JSON) have to be added to the <code class="language-plaintext highlighter-rouge">input/resources/</code> directory as they cannot be converted by MaLaC-CT.</p>
+
+<p>Consider the following requirements:</p>
+<ul>
+  <li>Additional files required by the TerminoloGit template for intensional ValueSets have to be created manually.</li>
+</ul>
+
+<p>The following process describes how to add an intensional ValueSet or other FHIR&reg; resources:</p>
+<ol>
+  <li>Create the intensional ValueSet or the FHIR&reg; resource according to the FHIR&reg; specification and save it within <code class="language-plaintext highlighter-rouge">input/resources/</code> according to the following pattern:
+    <ol>
+      <li><code class="language-plaintext highlighter-rouge">[FHIR&reg; resource type]-[id].[xml | json]</code></li>
+    </ol>
+  </li>
+  <li>Create a new branch within the repository and continue working with it.</li>
+  <li>For intensional ValueSets create the following files:
+    <ol>
+      <li><code class="language-plaintext highlighter-rouge">input/includes/[CodeSystem | ValueSet]-[id]-download.xhtml</code> using the <strong><a name="l524">​</a><a href="input/files/download-template.xhtml">download template</a></strong> by replacing <code class="language-plaintext highlighter-rouge">[CI_PROJECT_PATH]</code>, <code class="language-plaintext highlighter-rouge">[CI_DEFAULT_BRANCH]</code>, and <code class="language-plaintext highlighter-rouge">[CodeSystem | ValueSet]-[id]</code> accordingly. Furthermore, use the appropriate file extension <code class="language-plaintext highlighter-rouge">xml</code> or <code class="language-plaintext highlighter-rouge">json</code> depending on the format of the ValueSet.</li>
+      <li><code class="language-plaintext highlighter-rouge">input/includes/[CodeSystem | ValueSet]-[id]-previous-versions.xhtml</code> using the <strong><a name="l548">​</a><a href="input/files/previous-versions-template.xhtml">previous versions template</a></strong>.</li>
+      <li><code class="language-plaintext highlighter-rouge">input/redirects/[CodeSystem | ValueSet]/[id].html</code> using the <strong><a name="l557">​</a><a download="redirects-template" href="files/redirects-template.html">redirects template</a></strong> by replacing <code class="language-plaintext highlighter-rouge">[TERMGIT_CANONICAL]</code> and <code class="language-plaintext highlighter-rouge">[CodeSystem | ValueSet]-[id]</code> accordingly.</li>
+    </ol>
+  </li>
+  <li>For CodeSystems and ValueSets add a line to <code class="language-plaintext highlighter-rouge">terminologies/terminologiesMetadata.csv</code>
+    <ol>
+      <li><code class="language-plaintext highlighter-rouge">name</code> - <code class="language-plaintext highlighter-rouge">[CodeSystem | ValueSet]-[id]</code></li>
+      <li><code class="language-plaintext highlighter-rouge">canonical</code> - <code class="language-plaintext highlighter-rouge">[TERMGIT_CANONICAL]/[CodeSystem | ValueSet]/[id]</code></li>
+      <li><code class="language-plaintext highlighter-rouge">oid</code> - OID of the terminology</li>
+      <li><code class="language-plaintext highlighter-rouge">version</code> - version of the terminology</li>
+      <li><code class="language-plaintext highlighter-rouge">id</code> - <code class="language-plaintext highlighter-rouge">[id]</code></li>
+      <li><code class="language-plaintext highlighter-rouge">type</code> - <code class="language-plaintext highlighter-rouge">[CodeSystem | ValueSet]</code></li>
+      <li><code class="language-plaintext highlighter-rouge">metadata-change-timestamp</code> - the time of the last change of the terminology metadata.</li>
+    </ol>
+  </li>
+  <li>Commit and push the changes to the new branch.</li>
+  <li>Create a merge request within GitLab.</li>
+  <li>Manually start the pipeline within GitLab.</li>
+  <li>Check the results of the pipeline.</li>
+  <li>Once the pipeline has succeeded and the merge request has been approved, it can be merged into the default branch.</li>
+  <li>On the default branch the pipeline will be started automatically.</li>
+  <li>The intensional ValueSet or the FHIR&reg; resource has been successfully published.</li>
+</ol>
+
+<h4 id="add-terminologies-with-a-different-base-url">Add terminologies with a different base URL</h4>
+
+<p>It is possible to add terminologies which have a canonical URL whose base does not match the <code class="language-plaintext highlighter-rouge">TERMGIT_CANONICAL</code>, e.g. the <code class="language-plaintext highlighter-rouge">TERMGIT_CANONICAL</code> is <code class="language-plaintext highlighter-rouge">https://termgit.elga.gv.at</code> but the terminology’s canonical is <code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/ValueSet/v3-TargetAwareness</code>.</p>
+
+<p>In such a case, follow the instructions as described above depending on which of them suits the resource to be added best, but additionally it is recommended to add the resources’s canonical to the <code class="language-plaintext highlighter-rouge">sushi-config.yaml</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+parameters:
+  ...
+  special-url:
+    - http://terminology.hl7.org/ValueSet/v3-TargetAwareness
+...
+</code></pre></div></div>
+
+<h3 id="reference-external-code-systems">Reference external code systems</h3>
+
+<p>It is possible that a value set is based on a code system which is included neither in <code class="language-plaintext highlighter-rouge">terminologies/</code> nor in <code class="language-plaintext highlighter-rouge">input/resources/</code>, e.g. <code class="language-plaintext highlighter-rouge">http://loinc.org</code> or <code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender</code>. In such a case, a manual entry in the <code class="language-plaintext highlighter-rouge">terminologies/terminologiesMetadata.csv</code> has to be added in order to guarantee a conversion of the value set to all file formats.</p>
+
+<p>Add a line to <code class="language-plaintext highlighter-rouge">terminologies/terminologiesMetadata.csv</code></p>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">name</code> - empty</li>
+  <li><code class="language-plaintext highlighter-rouge">canonical</code> - canonical of the referenced code system, e.g. <code class="language-plaintext highlighter-rouge">http://loinc.org</code> or <code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender</code></li>
+  <li><code class="language-plaintext highlighter-rouge">oid</code> - OID of the terminology</li>
+  <li><code class="language-plaintext highlighter-rouge">version</code> - version of the terminology</li>
+  <li><code class="language-plaintext highlighter-rouge">id</code> - empty</li>
+  <li><code class="language-plaintext highlighter-rouge">type</code> - empty</li>
+  <li><code class="language-plaintext highlighter-rouge">metadata-change-timestamp</code> - empty</li>
+</ol>
+
+<h3 id="update-a-terminology">Update a terminology</h3>
+
+<h4 id="update-a-terminology-in-the-terminologies-directory">Update a terminology in the terminologies/ directory</h4>
+
+<p><a name="l749">​</a>Simply, any of the supported <a href="file_formats_en.md">file formats</a> of a terminology within the <code class="language-plaintext highlighter-rouge">terminologies/</code> directory may be edited and commited in order to trigger an updated publication of the terminology.</p>
+
+<p>If the business version of the terminology (<code class="language-plaintext highlighter-rouge">CodeSystem.version</code> or <code class="language-plaintext highlighter-rouge">ValueSet.version</code>, respectively) has been incremented, <code class="language-plaintext highlighter-rouge">IGver.py</code> will automatically create a previous version for the terminology.</p>
+
+<h4 id="update-a-terminology-in-the-inputresources-directory">Update a terminology in the input/resources/ directory</h4>
+
+<p>Simply, update the terminology within the <code class="language-plaintext highlighter-rouge">input/resources/</code> directory.</p>
+
+<p>If a previous version shall be created for the updated terminology, this has to be done manually:</p>
+<ol>
+  <li>Within the project <code class="language-plaintext highlighter-rouge">TERMGIT_HTML_PROJECT</code>:
+    <ol>
+      <li>Create a copy of the following files where <code class="language-plaintext highlighter-rouge">YYYYMMDD-hhmmss-</code> represents the date and time of the creation of the copy:
+        <ol>
+          <li><code class="language-plaintext highlighter-rouge">output/[CodeSystem | ValueSet]-[id].html</code> and create <code class="language-plaintext highlighter-rouge">output/YYYYMMDD-hhmmss-[CodeSystem | ValueSet]-[id].html</code></li>
+          <li><code class="language-plaintext highlighter-rouge">output/[CodeSystem | ValueSet]-[id].download.html</code> and create <code class="language-plaintext highlighter-rouge">output/YYYYMMDD-hhmmss-[CodeSystem | ValueSet]-[id].download.html</code></li>
+        </ol>
+      </li>
+      <li>Within the copied files add the following banner and replace <code class="language-plaintext highlighter-rouge">[CodeSystem | ValueSet]-[id]</code> accordingly:
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div role="alert" class="alert alert-danger"&gt;
+  &lt;p id="publish-box"&gt;This is an outdated version that is no longer valid! You can access the &lt;a href=[CodeSystem | ValueSet]-[id].html&gt;current version here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+</code></pre></div>        </div>
+      </li>
+      <li>Commit and push the changes to <code class="language-plaintext highlighter-rouge">TERMGIT_HTML_PROJECT</code>.</li>
+    </ol>
+  </li>
+  <li>Within the TerminoloGit project:
+    <ol>
+      <li>Within <code class="language-plaintext highlighter-rouge">input/includes/[CodeSystem | ValueSet]-[id]-previous-versions.xhtml</code> create a new line according to the following pattern. <code class="language-plaintext highlighter-rouge">OLD_BUSINESS_VERSION</code> represents the business version of the outdated terminology.
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;tr&gt;&lt;td&gt;&lt;a href="YYYYMMDD-hhmmss-[CodeSystem | ValueSet]-[id].html"&gt;OLD_BUSINESS_VERSION&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a onclick="createDiff('[CodeSystem | ValueSet]-[id].html', 'YYYYMMDD-hhmmss-[CodeSystem | ValueSet]-[id].html')" href="javascript:void(0);"&gt;Diff&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+</code></pre></div>        </div>
+      </li>
+      <li>Commit and push the changes to the TerminoloGit project.</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="delete-a-terminology">Delete a terminology</h3>
+
+<blockquote>
+  <p>Before a terminology is deleted from TerminoloGit, consider setting its <code class="language-plaintext highlighter-rouge">status</code> to <code class="language-plaintext highlighter-rouge">retired</code> (see <code class="language-plaintext highlighter-rouge">CodeSystem.status</code> or <code class="language-plaintext highlighter-rouge">ValueSet.status</code>, respectively).</p>
+</blockquote>
+
+<ol>
+  <li>Within the project <code class="language-plaintext highlighter-rouge">TERMGIT_HTML_PROJECT</code>:
+    <ol>
+      <li>Search and delete all files matching the following patterns. <strong>Double check if the pattern includes files from terminologies that should not be deleted. Likewise, it might happen that the pattern does not capture all files belonging to the terminology which should be deleted.</strong>
+        <ol>
+          <li><code class="language-plaintext highlighter-rouge">ls output/*[CodeSystem | ValueSet]-[id].*</code></li>
+          <li><code class="language-plaintext highlighter-rouge">ls output/[CodeSystem | ValueSet]/[id].html</code></li>
+        </ol>
+      </li>
+      <li>Commit and push the changes to the <code class="language-plaintext highlighter-rouge">TERMGIT_HTML_PROJECT</code>.</li>
+    </ol>
+  </li>
+  <li>Within the TerminoloGit project:
+    <ol>
+      <li>Search and delete the following files and directories:
+        <ol>
+          <li><code class="language-plaintext highlighter-rouge">input/includes/[CodeSystem | ValueSet]-[id]-previous-versions.xhtml</code></li>
+          <li><code class="language-plaintext highlighter-rouge">input/includes/[CodeSystem | ValueSet]-[id]-download.xhtml</code></li>
+          <li><code class="language-plaintext highlighter-rouge">input/redirects/[CodeSystem | ValueSet]/[id].html</code></li>
+          <li><code class="language-plaintext highlighter-rouge">terminologies/[CodeSystem | ValueSet]-[id]/</code> <strong>or</strong> <code class="language-plaintext highlighter-rouge">input/resources/[CodeSystem | ValueSet]-[id].xml</code></li>
+        </ol>
+      </li>
+      <li>Remove the entry corresponding to the deleted terminology from <code class="language-plaintext highlighter-rouge">terminologies/terminologiesMetadata.csv</code></li>
+      <li>Commit and push the changes to the TerminoloGit project.</li>
+    </ol>
+  </li>
+  <li>Remove the terminology from any FHIR&reg; server where it might have been uploaded.</li>
+</ol>
+
+<h3 id="start-a-pipeline">Start a pipeline</h3>
+
+<p>Basically, there are four ways how the GitLab pipeline can be started:</p>
+<ol>
+  <li>Pushing a commit to the default branch of the project.</li>
+  <li>Pushing a commit to any other branch of the project. Subsequently, the pipeline has to be started manually within GitLab (see <a href="https://docs.gitlab.com/ee/ci/pipelines/#add-manual-interaction-to-your-pipeline">Add manual interaction to your pipeline</a>).</li>
+  <li>By starting a pipeline manually (see <a href="https://docs.gitlab.com/ee/ci/pipelines/#run-a-pipeline-manually">Run a pipeline manually</a>)
+    <ol>
+      <li>The minimum requirement for a TerminoloGit pipeline to be started manually is to provide the <code class="language-plaintext highlighter-rouge">CI_COMMIT_TITLE</code>. By doing so a commit will be simulated.</li>
+    </ol>
+  </li>
+  <li>By starting an integration test from a MaLaC-CT project.</li>
+</ol>
+
+<h3 id="browse-terminologies">Browse terminologies</h3>
+
+<p>The HL7&reg; FHIR&reg; IG Publisher creates a set of static HTML pages. These pages are ideal for research purposes or simply for browsing, as all terminologies are presented in a well-structured HTML page. The user has the possibility to retrieve different code systems and value sets in a structured form or to search for specific concepts with the help of the search function. There is always a link between the code systems and value sets to make it easier to find terminologies that belong together.</p>
+
+<h3 id="import-of-terminologies">Import of terminologies</h3>
+
+<h4 id="automatic-import-of-terminologies">Automatic import of terminologies</h4>
+
+<p>To ensure that a system is always up to date, there are different options of automatically importing terminologies. The options presented here focus on importing a specific terminology.</p>
+
+<p>Basically, the following URL template can always be used to retrieve the latest version of a terminology:</p>
+
+<ul>
+  <li>For terminologies within the <code class="language-plaintext highlighter-rouge">terminologies/</code> directory:
+<code class="language-plaintext highlighter-rouge">[GITLAB_URL]/[PROJECT_PATH]/-/raw/[DEFAULT_BRANCH]/terminologies/[NAME_OF_TERMINOLOGY]/[NAME_OF_TERMINOLOGY][FORMAT]</code></li>
+  <li>For terminologies within the <code class="language-plaintext highlighter-rouge">input/resources/</code> directory:
+<code class="language-plaintext highlighter-rouge">[GITLAB_URL]/[PROJECT_PATH]/-/raw/[DEFAULT_BRANCH]/input/resources/[NAME_OF_TERMINOLOGY].xml</code></li>
+</ul>
+
+<p>Here the</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">[GITLAB_URL]</code> represents the URL used to access the GitLab instance which hosts the Git repository holding the terminologies (e.g. <code class="language-plaintext highlighter-rouge">https://gitlab.com</code>).</li>
+  <li><code class="language-plaintext highlighter-rouge">[PROJECT_PATH]</code> the path to the Git repository holding the terminologies (e.g. <code class="language-plaintext highlighter-rouge">elga-gmbh/termgit</code>).</li>
+  <li><code class="language-plaintext highlighter-rouge">[DEFAULT_BRANCH]</code> specifies the name of the default branch of the Git repository (e.g. <code class="language-plaintext highlighter-rouge">main</code>).</li>
+  <li><code class="language-plaintext highlighter-rouge">[NAME_OF_TERMINOLOGY]</code> corresponds to the type of the terminology (<code class="language-plaintext highlighter-rouge">CodeSystem</code> or <code class="language-plaintext highlighter-rouge">ValueSet</code>) and the id of the terminology (e.g. <code class="language-plaintext highlighter-rouge">iso-3166-1-alpha-3</code>). The type and id are linked with <code class="language-plaintext highlighter-rouge">-</code> resulting in <code class="language-plaintext highlighter-rouge">CodeSystem-iso-3166-1-alpha-3</code>.</li>
+  <li><a name="l1084">​</a><code class="language-plaintext highlighter-rouge">[FORMAT]</code> corresponds to the file extension of one of the supported <a href="file_formats_en.md">file formats</a>, e.g. <code class="language-plaintext highlighter-rouge">.4.fhir.xml</code>.</li>
+</ul>
+
+<p>The result then may look like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://gitlab.com/elga-gmbh/termgit/-/raw/main/terminologies/CodeSystem-iso-3166-1-alpha-3/CodeSystem-iso-3166-1-alpha-3.4.fhir.xml
+</code></pre></div></div>
+
+<p>Based on a particular file format of a terminology, different types of retrieval are presented in the next points. Note, the examples here are based on the Austrian terminology browser <a href="https://termgit.elga.gv.at">termgit.elga.gv.at</a>.</p>
+<ol>
+  <li>As a permalink to the file, without versioning details:
+    <ul>
+      <li>
+        <p>Python:</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>response = urllib2.urlopen('https://gitlab.com/elga-gmbh/termgit/-/raw/main/terminologies/CodeSystem-iso-3166-1-alpha-3/CodeSystem-iso-3166-1-alpha-3.2.claml.xml?inline=false')
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>Java:</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>URL url = new URL("https://gitlab.com/elga-gmbh/termgit/-/raw/main/terminologies/CodeSystem-iso-3166-1-alpha-3/CodeSystem-iso-3166-1-alpha-3.2.claml.xml?inline=false");
+URLConnection connection = url.openConnection();
+InputStream is = connection.getInputStream();
+// ... then download the file
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>With Git via ssh within a local repository and the Git-tags for the corresponding terminology:
+    <ul>
+      <li>
+        <p>First clone of the repository:</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@gitlab.com:elga-gmbh/termgit.git
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>Update of the local Git repository (incl. Git-tags):</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git fetch --tags -f
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>Checking the difference between current local directory content and that of the Git-tag of a terminology once the repository has been updated:</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git log HEAD..tags/CodeSystem-iso-3166-1-alpha-3
+</code></pre></div>        </div>
+
+        <p>or</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git log HEAD..tags/1.0.3166.1.2.3
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>Checkout the latest version of a terminology with the corresponding Git-tag. <strong>Note:</strong> This will set the entire repository to the state of the Git-tag. Other terminologies might have a more recent state.</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout tags/CodeSystem-iso-3166-1-alpha-3
+</code></pre></div>        </div>
+
+        <p>or</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout tags/1.0.3166.1.2.3
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>With Git via ssh without a local repository and the Git-tags for the corresponding terminology directory. All available download formats will be retrieved:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git archive -o C:/tmp/CS-ISO-3166-1-alpha-3.zip --remote git@gitlab.com:elga-gmbh/termgit.git CodeSystem-iso-3166-1-alpha-3:terminologies/CodeSystem-iso-3166-1-alpha-3
+</code></pre></div>    </div>
+
+    <p>or</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git archive -o C:/tmp/CS-ISO-3166-1-alpha-3.zip --remote git@gitlab.com:elga-gmbh/termgit.git 1.0.3166.1.2.3:terminologies/CodeSystem-iso-3166-1-alpha-3
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>With GitLab API via REST for a specific download format (here <code class="language-plaintext highlighter-rouge">.2.claml.xml</code>). <code class="language-plaintext highlighter-rouge">/</code> needs to be escaped with <code class="language-plaintext highlighter-rouge">%2f</code>:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://gitlab.com/api/v4/projects/33179072/repository/files/terminologies%2fCodeSystem-iso-3166-1-alpha-3%2fCodeSystem-iso-3166-1-alpha-3.2.claml.xml?ref=main
+</code></pre></div>    </div>
+  </li>
+  <li>Using FHIR&reg; REST API when having a FHIR&reg; server connected to the system:
+    <ul>
+      <li>
+        <p>curl:</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://tergi.elga.gv.at/fhir-server/api/v4/CodeSystem/iso-3166-1-alpha-3
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>for more details see <a href="http://www.hl7.org/fhir/overview-dev.html#Interactions">http://www.hl7.org/fhir/overview-dev.html#Interactions</a></p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h5 id="retrieving-meta-information-of-a-git-tag">Retrieving meta information of a Git-tag</h5>
+
+<p>The <a href="https://docs.gitlab.com/ee/api/tags.html">GitLab API for Git Tags</a> can be used for automated checks whether a particular terminology has been updated. The following command can be used to retrieve the metadata of a Git-tag:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://gitlab.com/api/v4/projects/33179072/repository/tags/CodeSystem-iso-3166-1-alpha-3
+</code></pre></div></div>
+
+<p>Among other things, the metadata includes</p>
+<ul>
+  <li>the current version of the terminology (<code class="language-plaintext highlighter-rouge">message</code>).</li>
+  <li>the date the Git-tag was created (<code class="language-plaintext highlighter-rouge">created_at</code>).</li>
+</ul>
+
+<h4 id="manual-import-of-terminologies">Manual import of terminologies</h4>
+
+<p>In addition to the automatic import of terminologies, it is also possible to manually import all terminologies. For this, it is recommended to activate the tag news in GitLab. You will then receive an automatic notification for each change.</p>
+
+<p><a name="l1338">​</a><a href="input/images/manual_import_en.drawio.png"><a name="l1339">​</a><img src="input/images/manual_import_en.drawio.png" alt="manual-import" style="width: 100%" title="manual-import"/></a></p>
+
+<h3 id="validation-of-codes">Validation of codes</h3>
+
+<p>The system can also be used to check whether a particular code is part of a code system or value set. This works with the FHIR&reg; operation <a href="http://www.hl7.org/fhir/codesystem-operation-validate-code.html"><code class="language-plaintext highlighter-rouge">$validate-code</code> for CodeSystems</a> and <a href="http://www.hl7.org/fhir/valueset-operation-validate-code.html"><code class="language-plaintext highlighter-rouge">$validate-code</code> for ValueSets</a>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> curl https://tergi.elga.gv.at/fhir-server/api/v4/ValueSet/appc-anatomie/$validate-code?system=https://termgit.elga.gv.at/CodeSystem/appc-anatomie&amp;code=0
+</code></pre></div></div>
+
+<p><a name="l1364">​</a><a href="input/images/validate-code.png"><a name="l1365">​</a><img src="input/images/validate-code.png" alt="validate-code" style="width: 100%"/></a></p>
+
+<p>If you are using the HAPI JPA server, please note the following limitations on the <code class="language-plaintext highlighter-rouge">$validate-code</code> FHIR&reg; operation which is working according to the FHIR R4 specification:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">[base]/CodeSystem/$validate-code</code> does not allow a trailing slash for the GET parameter <code class="language-plaintext highlighter-rouge">url</code> (eg. https://dev-tergi.elga.gv.at/fhir-server/api/v4/CodeSystem/$validate-code?code=100&amp;url=https://termgit.elga.gv.at/CodeSystem/elga-e-health-anwendungen)</li>
+  <li><code class="language-plaintext highlighter-rouge">[base]/CodeSystem/[id]/$validate-code</code> (eg. https://dev-tergi.elga.gv.at/fhir-server/api/v4/CodeSystem/appc-anatomie/$validate-code?code=100)</li>
+  <li><code class="language-plaintext highlighter-rouge">[base]/ValueSet/$validate-code</code> does not allow a trailing slash for the GET parameters <code class="language-plaintext highlighter-rouge">url</code> and <code class="language-plaintext highlighter-rouge">system</code> (eg. https://dev-tergi.elga.gv.at/fhir-server/api/v4/ValueSet/$validate-code?url=https://termgit.elga.gv.at/ValueSet/appc-anatomie&amp;code=0&amp;system=https://termgit.elga.gv.at/CodeSystem/appc-anatomie)</li>
+  <li><code class="language-plaintext highlighter-rouge">[base]/ValueSet/[id]/$validate-code</code> does not allow a trailing slash for the GET parameter <code class="language-plaintext highlighter-rouge">system</code> (eg. https://dev-tergi.elga.gv.at/fhir-server/api/v4/ValueSet/appc-anatomie/$validate-code?system=https://termgit.elga.gv.at/CodeSystem/appc-anatomie&amp;code=0)</li>
+</ul>
+
+<h3 id="further-fhir-operations-with-limitations-by-hapi-jpa-server">Further FHIR&reg; operations with limitations by HAPI JPA Server</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">[base]/CodeSystem/$lookup</code> requires a trailing slash for the GET parameter <code class="language-plaintext highlighter-rouge">system</code> (eg. https://dev-tergi.elga.gv.at/fhir-server/api/v4/CodeSystem/$lookup?code=100&amp;system=https://termgit.elga.gv.at/CodeSystem/appc-anatomie/)</li>
+  <li><code class="language-plaintext highlighter-rouge">[base]/ValueSet/$expand</code> does not allow a trailing slash for the GET parameter <code class="language-plaintext highlighter-rouge">url</code> (eg. https://dev-tergi.elga.gv.at/fhir-server/api/v4/ValueSet/$expand?url=https://termgit.elga.gv.at/ValueSet/appc-anatomie&amp;system=https://termgit.elga.gv.at/CodeSystem/appc-anatomie/)</li>
+  <li><code class="language-plaintext highlighter-rouge">[base]/ValueSet/[id]/$expand</code> (eg. https://dev-tergi.elga.gv.at/fhir-server/api/v4/ValueSet/appc-anatomie/$expand?system=https://termgit.elga.gv.at/CodeSystem/appc-anatomie/)</li>
+</ul>
+
+<h3 id="upload-terminologies-to-fhir-servers">Upload terminologies to FHIR&reg; servers</h3>
+
+<p>TerminoloGit managed resources can directly be uploaded to FHIR&reg; servers. This can be accomplished by leveraging <a href="https://docs.gitlab.com/ee/ci/secure_files/">GitLab’s Project-level Secure Files</a>.</p>
+
+<p><a name="l1445">​</a>Use the <a href="input/files/additional-fhir-server-template.json">template for specifying FHIR&reg; server</a>, fill in the information required and create a file for each additional FHIR&reg; server. The <code class="language-plaintext highlighter-rouge">FHIRServer</code> is madatory. You can choose between <code class="language-plaintext highlighter-rouge">User</code>+<code class="language-plaintext highlighter-rouge">UserPassword</code> or the <code class="language-plaintext highlighter-rouge">TergiTunnelToken</code>, please leave the unused variable empty with <code class="language-plaintext highlighter-rouge">""</code>. For more information about the variables look at the <a href="setup_en.md">setup</a>.</p>
+
+<p><a name="l1469">​</a>Now add the created file in your TerminoloGit instance:
+<a href="input/images/tergi-sec-file.png"><a name="l1471">​</a><img src="input/images/tergi-sec-file.png" alt="Add a secure file in gitlab" style="width: 100%" title="Add a secure file in gitlab"/></a></p>
+
+<p>All new or updated terminologies or FHIR&reg; resources located in the <code class="language-plaintext highlighter-rouge">input/resources</code> directory are subsequently loaded onto the additional FHIR&reg; servers.</p>
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="null">ELGA GmbH</a>.  Package austrian-terminology-server#2.7.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4B/">FHIR 4.3.0</a>. Generated <span title="Fri, Apr 26, 2024 06:27+0000">2024-04-26</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+  
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+  
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

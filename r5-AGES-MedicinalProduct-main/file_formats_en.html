@@ -1,0 +1,897 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>File Formats - Österreichischer e-Health-Terminologie-Browser v2.7.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="fhir-logo" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="fhir-logo" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="fhir-logo" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"6"}
+    h3,h4,h5,h6{--heading-prefix:"6"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+          <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Österreichischer e-Health-Terminologie-Browser</span>
+            <br/>
+            <span style="display:inline-block;">2.7.0 - TerminoloGit
+
+
+            </span>
+          </p>
+        </div>
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4B/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts Summary</a>
+  </li>
+  <li>
+    <a href="support_de.html">Support &amp; Imprint</a>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>File Formats</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- ReleaseHeader --><p id="publish-box">Österreichischer e-Health-Terminologie-Browser - Local Development build (v2.7.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="TERMGIT_CANONICAL/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <h2>File Formats</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#file-formats-overview" id="markdown-toc-file-formats-overview">File Formats Overview</a></li>
+  <li><a href="#disclaimer-regarding-conversion-between-file-formats" id="markdown-toc-disclaimer-regarding-conversion-between-file-formats">Disclaimer regarding conversion between file formats</a></li>
+  <li><a href="#fhir-r4b" id="markdown-toc-fhir-r4b">FHIR&reg; R4B</a></li>
+  <li><a href="#fhir-shorthand-fsh" id="markdown-toc-fhir-shorthand-fsh">FHIR&reg; Shorthand (FSH)</a></li>
+  <li><a href="#proprietary-csv-propcsv---csv-and-xlsx" id="markdown-toc-proprietary-csv-propcsv---csv-and-xlsx">Proprietary CSV (propCSV) - CSV and XLSX</a></li>
+  <li><a href="#claml-v2-and-v3" id="markdown-toc-claml-v2-and-v3">ClaML v2 and v3</a></li>
+  <li><a href="#svsextelga-v1-and-v2" id="markdown-toc-svsextelga-v1-and-v2">SVSextELGA v1 and v2</a></li>
+  <li><a href="#outdated-csv-outdatedcsv-v1-and-v2" id="markdown-toc-outdated-csv-outdatedcsv-v1-and-v2">Outdated CSV (outdatedcsv) v1 and v2</a></li>
+</ul>
+
+</div>
+<blockquote>
+  <p><strong><a name="l268">​</a>Für die deutsche Version bitte <a href="file_formats_de.md">hier</a> klicken.</strong></p>
+</blockquote>
+
+<h3 id="file-formats-overview">File Formats Overview</h3>
+
+<p>The following file formats are currently supported:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>File extension</th>
+      <th>Character encoding</th>
+      <th>Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>FHIR&reg; R4B xml</td>
+      <td><code class="language-plaintext highlighter-rouge">.4.fhir.xml</code></td>
+      <td>UTF-8</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>FHIR&reg; R4B json</td>
+      <td><code class="language-plaintext highlighter-rouge">.4.fhir.json</code></td>
+      <td>UTF-8</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>fsh v1</td>
+      <td><code class="language-plaintext highlighter-rouge">.1.fsh</code></td>
+      <td>UTF-8</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>fsh v2</td>
+      <td><code class="language-plaintext highlighter-rouge">.2.fsh</code></td>
+      <td>UTF-8</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>propCSV v1 csv</td>
+      <td><code class="language-plaintext highlighter-rouge">.1.propcsv.csv</code></td>
+      <td>cp-1252 or UTF-8 if there are encoding errors</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>propCSV v1 xlsx</td>
+      <td><code class="language-plaintext highlighter-rouge">.1.propcsv.xlsx</code></td>
+      <td>UTF-8</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>ClaML v2</td>
+      <td><code class="language-plaintext highlighter-rouge">.2.claml.xml</code></td>
+      <td>UTF-8</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>ClaML v3</td>
+      <td><code class="language-plaintext highlighter-rouge">.3.claml.xml</code></td>
+      <td>UTF-8</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>SVSextELGA v1</td>
+      <td><code class="language-plaintext highlighter-rouge">.1.svsextelga.xml</code></td>
+      <td>UTF-8</td>
+      <td><strong>Warning! DEPRECATED!</strong><br/>This format can technically not contain all the information<br/>that is available in the other formats.<br/>This format is only available for legacy purposes.</td>
+    </tr>
+    <tr>
+      <td>SVSextELGA v2</td>
+      <td><code class="language-plaintext highlighter-rouge">.2.svsextelga.xml</code></td>
+      <td>UTF-8</td>
+      <td><strong>Warning! DEPRECATED!</strong><br/>This format can technically not contain all the information<br/>that is available in the other formats.<br/>This format is only available for legacy purposes. <br/>However, all concept properties are available.</td>
+    </tr>
+    <tr>
+      <td>outdatedCSV v1</td>
+      <td><code class="language-plaintext highlighter-rouge">.1.outdatedcsv.csv</code></td>
+      <td>UTF-8</td>
+      <td><strong>Warning! DEPRECATED!</strong><br/>This format can technically not contain all the information<br/>that is available in the other formats.<br/>This format is only available for legacy purposes.</td>
+    </tr>
+    <tr>
+      <td>outdatedCSV v2</td>
+      <td><code class="language-plaintext highlighter-rouge">.2.outdatedcsv.csv</code></td>
+      <td>UTF-8</td>
+      <td><strong>Warning! DEPRECATED!</strong><br/>This format can technically not contain all the information<br/>that is available in the other formats.<br/>This format is only available for legacy purposes. <br/>However, all concept properties are available.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="disclaimer-regarding-conversion-between-file-formats">Disclaimer regarding conversion between file formats</h3>
+
+<blockquote>
+  <p><em>Please note that the propCSV represents the core file format regarding the conversion between the various file formats. Furthermore, the XLSX version of the propCSV is fully human readable.</em></p>
+
+  <p><em>E.g., if there is an element available in the FHIR&reg; specification which is not supported in propCSV it cannot be converted to the other file formats.</em></p>
+</blockquote>
+
+<h3 id="fhir-r4b">FHIR&reg; R4B</h3>
+
+<p>For the structure of FHIR&reg; resources, please refer to the corresponding documentation, e.g.:</p>
+<ul>
+  <li><a href="http://hl7.org/fhir/R4B/codesystem.html">CodeSystem</a></li>
+  <li><a href="http://hl7.org/fhir/R4B/valueset.html">ValueSet</a></li>
+  <li><a href="http://hl7.org/fhir/R4B/conceptmap.html">ConceptMap</a></li>
+</ul>
+
+<p>The XML representation for a resource is described using this format (see <a href="http://hl7.org/fhir/R4B/xml.html">XML Representation of Resources</a>):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;name xmlns="http://hl7.org/fhir" (attrA="value")&gt;
+  &lt;!-- from Resource: id, meta, implicitRules, and language --&gt;
+  &lt;nameA&gt;&lt;!--  1..1 type description of content  --&gt;&lt;nameA&gt;
+  &lt;nameB[x]&gt;&lt;!-- 0..1 type1|type1 description  --&gt;&lt;/nameB[x]&gt;
+  &lt;nameC&gt; &lt;!--  1..* --&gt;
+    &lt;nameD&gt;&lt;!-- 1..1 type&gt;Relevant elements  --&gt;&lt;/nameD&gt;
+  &lt;/nameC&gt;
+&lt;name&gt;
+</code></pre></div></div>
+
+<p>The JSON representation for a resource is based on the <a href="https://www.rfc-editor.org/info/std90">JSON format described in STD 90 (RFC 8259)</a>, and is described using this format (see <a href="http://hl7.org/fhir/R4B/json.html">JSON Representation of Resources</a>):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "resourceType" : "[Resource Type]",
+  // from Source: property0
+  "property1" : "&lt;[primitive]&gt;", // short description
+  "property2" : { [Data Type] }, // short description
+  "property3" : { // Short Description
+    "propertyA" : { CodeableConcept }, // Short Description (Example)
+  },
+  "property4" : [{ // Short Description
+    "propertyB" : { Reference(ResourceType) } // R!  Short Description
+  }]
+}
+</code></pre></div></div>
+
+<h3 id="fhir-shorthand-fsh">FHIR&reg; Shorthand (FSH)</h3>
+
+<p>FHIR&reg; Shorthand (FSH) is a domain-specific language for defining the contents of FHIR&reg; Implementation Guides (IG). The language is specifically designed for this purpose, simple and compact, and allows the author to express their intent with fewer concerns about underlying FHIR&reg; mechanics. FSH can be created and updated using any text editor, and because it is text, it enables distributed, team-based development using source code control tools such as GitHub.</p>
+
+<p>Documentation of FSH:</p>
+<ul>
+  <li><a href="http://hl7.org/fhir/uv/shorthand/2021Sep/">fsh v1</a></li>
+  <li><a href="http://hl7.org/fhir/uv/shorthand/">fsh v2</a></li>
+</ul>
+
+<h3 id="proprietary-csv-propcsv---csv-and-xlsx">Proprietary CSV (propCSV) - CSV and XLSX</h3>
+
+<p>The proprietary CSV (propCSV) allows simplified editing of terminologies. This format is based on the FHIR&reg; specification for code systems and value sets. It enables the documentation of metadata elements as well as concept elements of a terminology.</p>
+
+<p>The FHIR&reg; specification defines the mandatory elements for code systems (http://hl7.org/fhir/codesystem.html#resource) and value sets (http://hl7.org/fhir/valueset.html#resource). The names of the corresponding elements must not be changed. In general, no other elements than defined by the FHIR&reg; specification may be used unless a FHIR&reg; extension is used. However, in some exceptional cases it might be necessary to add custom elements (e.g. <code class="language-plaintext highlighter-rouge">parent</code> and <code class="language-plaintext highlighter-rouge">parentSystem</code> to support hierarchical structures in <code class="language-plaintext highlighter-rouge">ValueSet.expansion</code>) in order to support certain requirements which are still based on the FHIR&reg; specification.</p>
+
+<p>The value of an element is converted into the respective FHIR&reg; data types (uri, identifier, string, code, …) and stored if the conversion was successful.</p>
+
+<p>The propCSV is provided as CSV as well as XLSX file. <strong>For editing, the XLSX file is recommended.</strong></p>
+
+<h4 id="file-structure">File Structure</h4>
+
+<p>The first two lines comprise of the metadata elements for the terminology, i.e. in the first line the name of the element is specified, in the second line the value of the corresponding element is documented.</p>
+
+<p>An empty line separates the metadata elements from the concept elements.</p>
+
+<p>For the concept elements a line specifying the required concept element names is followed by the respective values for each concept that shall be part of the terminology.</p>
+
+<p>The metadata elements and concept elements can be specified in any order. According to the <strong>key-value-principle</strong> always the key is read, which gives the meaning to the value standing beneath it.</p>
+
+<h4 id="code-system">Code System</h4>
+
+<p>The following list comprises of required as well as recommended metadata elements for code systems. A sample file can be downloaded here: <strong><a name="l660">​</a><a href="input/files/CodeSystem-cs-import-template.1.propcsv.xlsx">Code System</a></strong> <em>Note: cells that have to be edited are highlighted in yellow.</em></p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Cardinality</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>resource</code></td>
+            <td><strong>1..1</strong></td>
+            <td>Specifies the type of the terminology. Fixed value: <code>CodeSystem</code></td>
+            <td><code>CodeSystem</code></td>
+        </tr>
+        <tr>
+            <td><code>id</code></td>
+            <td><strong>1..1</strong></td>
+            <td>Logical id of this artifact.</td>
+            <td><code>cs-import-template</code></td>
+        </tr>
+        <tr>
+            <td><code>url</code></td>
+            <td><strong>1..1</strong></td>
+            <td>Canonical identifier for this code system, represented as a URI (globally unique)
+                (<code>Coding.system</code>).</td>
+            <td><code>https://my-terminology-server.com/CodeSystem/cs-import-template</code></td>
+        </tr>
+        <tr>
+            <td><code>identifier</code></td>
+            <td>0..*</td>
+            <td>Additional identifier for the code system (business identifier). Currently, only <code>urn:oid:</code>
+                is supported. As a result the value given corresponds to <code>Identifier.value</code> (see <a href="http://www.hl7.org/fhir/datatypes.html#Identifier">http://www.hl7.org/fhir/datatypes.html#Identifier</a>).
+            </td>
+            <td><code>1.25.256.25.8.9</code></td>
+        </tr>
+        <tr>
+            <td><code>version</code></td>
+            <td><strong>1..1</strong></td>
+            <td>Business version of the code system (<code>Coding.version</code>).</td>
+            <td><code>1.0.0+20230601</code></td>
+        </tr>
+        <tr>
+            <td><code>name</code></td>
+            <td>0..1</td>
+            <td>Name for this code system (computer friendly).</td>
+            <td><code>cs-import-template</code></td>
+        </tr>
+        <tr>
+            <td><code>title</code></td>
+            <td>0..1</td>
+            <td>Name for this code system (human friendly).</td>
+            <td><code>CS Import Template</code></td>
+        </tr>
+        <tr>
+            <td><code>status</code></td>
+            <td><strong>1..1</strong></td>
+            <td><code>draft</code> | <code>active</code> | <code>retired</code> | <code>unknown</code></td>
+            <td><code>active</code></td>
+        </tr>
+        <tr>
+            <td><code>date</code></td>
+            <td>0..1</td>
+            <td>Date last changed. The format is <code>YYYY-MM-DD</code>.</td>
+            <td><code>2015-02-07</code></td>
+        </tr>
+        <tr>
+            <td><code>contact</code></td>
+            <td>0..*</td>
+            <td>Contact details for the publisher. All sub-attributes (see <a href="http://hl7.org/fhir/R4B/metadatatypes.html#ContactDetail">http://hl7.org/fhir/R4B/metadatatypes.html#ContactDetail</a>)
+                are combined by a <code>|</code> in the first level and by a <code>^</code> in the second level.<br/>
+                <ul>
+                    <li><code>name</code> - Name of an individual to contact.</li>
+                    <li><code>telecom</code> - Contact details for individual or organization.<ul>
+                            <li><code>system</code> - <code>phone</code> | <code>fax</code> | <code>email</code> |
+                                <code>pager</code> | <code>url</code> | <code>sms</code> | <code>other</code></li>
+                            <li><code>value</code> - The actual contact point details</li>
+                            <li><code>use</code> - <code>home</code> | <code>work</code> | <code>temp</code> |
+                                <code>old</code> | <code>mobile</code> - purpose of this contact point</li>
+                            <li><code>rank</code> - Specify preferred order of use (1 = highest)</li>
+                            <li><code>periodStart</code> - Starting time with inclusive boundary when the contact point
+                                was/is in use.</li>
+                            <li><code>periodEnd</code> - End time with inclusive boundary, if not ongoing when the
+                                contact point was/is in use.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </td>
+            <td><code>John Doe|url^https://my-terminology-publishing.com^^^^</code></td>
+        </tr>
+        <tr>
+            <td><code>description</code></td>
+            <td>0..1</td>
+            <td>Natural language description of the code system.</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><code>copyright</code></td>
+            <td>0..1</td>
+            <td>Use and/or publishing restrictions.</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><code>content</code></td>
+            <td><strong>1..1</strong></td>
+            <td><code>not-present</code> | <code>example</code> | <code>fragment</code> | <code>complete</code> |
+                <code>supplement</code></td>
+            <td><code>complete</code></td>
+        </tr>
+        <tr>
+            <td><code>count</code></td>
+            <td>0..1</td>
+            <td>Total concepts in the code system</td>
+            <td><code>238</code></td>
+        </tr>
+        <tr>
+            <td><code>property</code></td>
+            <td>0..*</td>
+            <td>Additional information supplied about each concept. All sub-attributes are combined by a
+                <code>|</code>.<br/>
+                <ul>
+                    <li><code>code</code> <em><strong>required</strong></em> - Identifies the property on the concepts,
+                        and when referred to in operations.</li>
+                    <li><code>uri</code> - Formal identifier for the property</li>
+                    <li><code>description</code> - Why the property is defined, and/or what it conveys</li>
+                    <li><code>type</code> <em><strong>required</strong></em> - <code>code</code> | <code>Coding</code> |
+                        <code>string</code> | <code>integer</code> | <code>boolean</code> | <code>dateTime</code> |
+                        <code>decimal</code></li>
+                </ul>
+            </td>
+            <td><code>child|||code</code></td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The following list comprises of required as well as recommended concept elements for code systems:</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Cardinality</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>code</code></td>
+            <td><strong>1..1</strong></td>
+            <td>Code that identifies concept.</td>
+            <td><code>123456</code></td>
+        </tr>
+        <tr>
+            <td><code>display</code></td>
+            <td>0..1</td>
+            <td>Text to display to the user.</td>
+            <td><code>bear</code></td>
+        </tr>
+        <tr>
+            <td><code>definition</code></td>
+            <td>0..1</td>
+            <td>Formal definition</td>
+            <td><code>Bears are carnivoran mammals of the family Ursidae.</code></td>
+        </tr>
+        <tr>
+            <td><code>designation</code></td>
+            <td>0..*</td>
+            <td>Additional representations for the concept. All sub-attributes are combined by a <code>|</code>.<br/>
+                <ul>
+                    <li><code>language</code> - Human language of the designation.</li>
+                    <li><code>use</code> - Details how this designation would be used.</li>
+                    <li><code>value</code> <em><strong>required</strong></em> - The text value for this designation</li>
+                </ul>
+            </td>
+            <td><code>de-AT|^^^^|Bär</code> or
+                <code>|http://snomed.info/sct^^900000000000003001^Fully specified name^|Ursidae</code></td>
+        </tr>
+        <tr>
+            <td><code>property</code></td>
+            <td>0..*</td>
+            <td>Property value for the concept. All sub-attributes are combined by a <code>|</code>.<br/>
+                <ul>
+                    <li><code>code</code> <em><strong>required</strong></em> - Identifies the property on the concepts,
+                        and when referred to in operations.</li>
+                    <li><code>value</code> <em><strong>required</strong></em> - Value of the property for this concept.
+                    </li>
+                    <li><code>type</code> <em><strong>required</strong></em> - <code>code</code> | <code>Coding</code> |
+                        <code>string</code> | <code>integer</code> | <code>boolean</code> | <code>dateTime</code> |
+                        <code>decimal</code></li>
+                </ul>
+            </td>
+            <td><code>color|brown|string</code></td>
+        </tr>
+    </tbody>
+</table>
+
+<h4 id="value-set">Value Set</h4>
+
+<p>The following list comprises of required as well as recommended metadata elements for value sets. A sample file can be downloaded here: <strong><a name="l1342">​</a><a href="input/files/ValueSet-vs-import-template.1.propcsv.xlsx">Value Set</a></strong> <em>Note: cells that have to be edited are highlighted in yellow.</em></p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Cardinality</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>resource</code></td>
+            <td><strong>1..1</strong></td>
+            <td>Specifies the type of the terminology. Fixed value: <code>ValueSet</code></td>
+            <td><code>ValueSet</code></td>
+        </tr>
+        <tr>
+            <td><code>id</code></td>
+            <td><strong>1..1</strong></td>
+            <td>Logical id of this artifact.</td>
+            <td><code>vs-import-template</code></td>
+        </tr>
+        <tr>
+            <td><code>url</code></td>
+            <td><strong>1..1</strong></td>
+            <td>Canonical identifier for this value set, represented as a URI (globally unique)</td>
+            <td><code>https://my-terminology-server.com/ValueSet/vs-import-template</code></td>
+        </tr>
+        <tr>
+            <td><code>identifier</code></td>
+            <td>0..*</td>
+            <td>Additional identifier for the value set (business identifier). Currently, only <code>urn:oid:</code> is
+                supported. As a result the value given corresponds to <code>Identifier.value</code> (see <a href="http://www.hl7.org/fhir/datatypes.html#Identifier">http://www.hl7.org/fhir/datatypes.html#Identifier</a>).
+            </td>
+            <td><code>1.2.3.4.5.6.7.9.10</code></td>
+        </tr>
+        <tr>
+            <td><code>version</code></td>
+            <td><strong>1..1</strong></td>
+            <td>Business version of the value set.</td>
+            <td><code>1.0.0+20230601</code></td>
+        </tr>
+        <tr>
+            <td><code>name</code></td>
+            <td>0..1</td>
+            <td>Name for this value set (computer friendly).</td>
+            <td><code>vs-import-template</code></td>
+        </tr>
+        <tr>
+            <td><code>title</code></td>
+            <td>0..1</td>
+            <td>Name for this value set (human friendly).</td>
+            <td><code>VS Import Template</code></td>
+        </tr>
+        <tr>
+            <td><code>status</code></td>
+            <td><strong>1..1</strong></td>
+            <td><code>draft</code> | <code>active</code> | <code>retired</code> | <code>unknown</code></td>
+            <td><code>active</code></td>
+        </tr>
+        <tr>
+            <td><code>date</code></td>
+            <td>0..1</td>
+            <td>Date last changed. The format is <code>YYYY-MM-DD</code>.</td>
+            <td><code>2015-02-07</code></td>
+        </tr>
+        <tr>
+            <td><code>contact</code></td>
+            <td>0..*</td>
+            <td>Contact details for the publisher. All sub-attributes (see <a href="http://hl7.org/fhir/R4B/metadatatypes.html#ContactDetail">http://hl7.org/fhir/R4B/metadatatypes.html#ContactDetail</a>)
+                are combined by a <code>|</code> in the first level and by a <code>^</code> in the second level.<br/>
+                <ul>
+                    <li><code>name</code> - Name of an individual to contact.</li>
+                    <li><code>telecom</code> - Contact details for individual or organization.<ul>
+                            <li><code>system</code> - <code>phone</code> | <code>fax</code> | <code>email</code> |
+                                <code>pager</code> | <code>url</code> | <code>sms</code> | <code>other</code></li>
+                            <li><code>value</code> - The actual contact point details</li>
+                            <li><code>use</code> - <code>home</code> | <code>work</code> | <code>temp</code> |
+                                <code>old</code> | <code>mobile</code> - purpose of this contact point</li>
+                            <li><code>rank</code> - Specify preferred order of use (1 = highest)</li>
+                            <li><code>periodStart</code> - Starting time with inclusive boundary when the contact point
+                                was/is in use.</li>
+                            <li><code>periodEnd</code> - End time with inclusive boundary, if not ongoing when the
+                                contact point was/is in use.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </td>
+            <td><code>John Doe|url^https://my-terminology-publishing.com^^^^</code></td>
+        </tr>
+        <tr>
+            <td><code>description</code></td>
+            <td>0..1</td>
+            <td>Natural language description of the value set.</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><code>copyright</code></td>
+            <td>0..1</td>
+            <td>Use and/or publishing restrictions.</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The following list comprises of required as well as recommended concept elements for value sets:</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Cardinality</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>system</code></td>
+            <td><strong>1..1</strong></td>
+            <td>The code system the codes come from.</td>
+            <td><code>https://my-terminology-server.com/CodeSystem/cs-import-template</code></td>
+        </tr>
+        <tr>
+            <td><code>version</code></td>
+            <td>0..1</td>
+            <td>Specific version of the code system referred to.</td>
+            <td><code>1.0.0+20230601</code></td>
+        </tr>
+        <tr>
+            <td><code>code</code></td>
+            <td><strong>1..1</strong></td>
+            <td>Code or expression from system</td>
+            <td><code>123456</code></td>
+        </tr>
+        <tr>
+            <td><code>display</code></td>
+            <td>0..1</td>
+            <td>Text to display for this code in this value set.</td>
+            <td><code>bear</code></td>
+        </tr>
+        <tr>
+            <td><code>designation</code></td>
+            <td>0..*</td>
+            <td>Additional representations for the concept. All sub-attributes are combined by a <code>|</code>.<br/>
+                <ul>
+                    <li><code>language</code> - Human language of the designation.</li>
+                    <li><code>use</code> - Details how this designation would be used.</li>
+                    <li><code>value</code> <em><strong>required</strong></em> - The text value for this designation</li>
+                </ul>
+            </td>
+            <td><code>de-AT|^^^^|Bär</code> or
+                <code>|http://snomed.info/sct^^900000000000003001^Fully specified name^|Ursidae</code></td>
+        </tr>
+        <tr>
+            <td><code>exclude</code></td>
+            <td>0..1</td>
+            <td>As the opposite of include, this allows to explicitly exclude a specific concept of a code system. Even
+                whole code systems or value sets, with all their concepts, may be excluded. Additionally, code system
+                filters can be used in order to exclude multiple concepts based on their properties. <code>true</code>
+                if the line within the propCSV shall be interpreted as an exclusion. If not specified
+                <code>false</code> is assumed, i.e. the line will be interpreted as inclusion.<br/><br/><em>Note: At
+                least one line must represent an inclusion.</em></td>
+            <td><code>true</code></td>
+        </tr>
+        <tr>
+            <td><code>parent</code></td>
+            <td>0..1</td>
+            <td>Code of the parent of this concept. Combined with <code>parentSystem</code> this element is necessary
+                when dealing with hierarchical value sets. In a FHIR&reg; ValueSet this will then result in a hierarchical
+                expansion, i.e. <code>ValueSet.expansion.contains.contains</code>.</td>
+            <td><code>123457</code></td>
+        </tr>
+        <tr>
+            <td><code>parentSystem</code></td>
+            <td>0..1</td>
+            <td>Code system of the parent's code of this concept. Required if <code>parent</code> is used.</td>
+            <td><code>https://my-terminology-server.com/CodeSystem/cs-import-template</code></td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="claml-v2-and-v3">ClaML v2 and v3</h3>
+
+<p>ClaML (Classification Markup Language) is a special XML data format for classifications. The ClaML file format primarily supports code systems.</p>
+
+<p>The following elements describe the metadata of a terminology:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Title</code></td>
+      <td>Contains the name (<code class="language-plaintext highlighter-rouge">name</code> attribute), the version (<code class="language-plaintext highlighter-rouge">version</code> attribute) as well as the validity date (<code class="language-plaintext highlighter-rouge">date</code> attribute, format: <code class="language-plaintext highlighter-rouge">YYYY-MM-DD</code>).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Identifier</code></td>
+      <td>Contains the OID of the terminology within the <code class="language-plaintext highlighter-rouge">uid</code> attribute.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Authors</code></td>
+      <td>Contains one or more <code class="language-plaintext highlighter-rouge">Author</code> elements which contain the name (<code class="language-plaintext highlighter-rouge">name</code> attribute) of the author and the contact details as element content.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Meta</code></td>
+      <td>Several <code class="language-plaintext highlighter-rouge">Meta</code> elements contain furter information as key-value pairs.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The most used <code class="language-plaintext highlighter-rouge">Meta</code> elements are:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">titleLong</code> - Human readable title</li>
+  <li><code class="language-plaintext highlighter-rouge">resource</code> - Specifies the type of the terminology (e.g. <code class="language-plaintext highlighter-rouge">CodeSystem</code>, <code class="language-plaintext highlighter-rouge">ValueSet</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">id</code> - Logical id of this artifact</li>
+  <li><code class="language-plaintext highlighter-rouge">url</code> - Canonical identifier for this terminology, represented as a URI (globally unique)</li>
+  <li><code class="language-plaintext highlighter-rouge">status</code> - <code class="language-plaintext highlighter-rouge">draft</code> | <code class="language-plaintext highlighter-rouge">active</code> | <code class="language-plaintext highlighter-rouge">retired</code> | <code class="language-plaintext highlighter-rouge">unknown</code></li>
+  <li><code class="language-plaintext highlighter-rouge">description</code> - German description of the terminology</li>
+  <li><code class="language-plaintext highlighter-rouge">description_eng</code> - English description of the terminology</li>
+  <li><code class="language-plaintext highlighter-rouge">content</code> - Relevant for code systems only. <code class="language-plaintext highlighter-rouge">not-present</code> | <code class="language-plaintext highlighter-rouge">example</code> | <code class="language-plaintext highlighter-rouge">fragment</code> | <code class="language-plaintext highlighter-rouge">complete</code> | <code class="language-plaintext highlighter-rouge">supplement</code></li>
+  <li><code class="language-plaintext highlighter-rouge">website</code> - Link to source etc.</li>
+  <li><code class="language-plaintext highlighter-rouge">copyright</code> - Use and/or publishing restrictions.</li>
+  <li><code class="language-plaintext highlighter-rouge">version_description</code> - Description of the version</li>
+  <li><code class="language-plaintext highlighter-rouge">property</code> - Declares the properties which are to be expected within the concepts of this terminology</li>
+</ul>
+
+<p>The concepts are represented as <code class="language-plaintext highlighter-rouge">Class</code> elements:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Class/@code</code> - Code of the concept</li>
+  <li><code class="language-plaintext highlighter-rouge">Class/Rubric[@kind='preferred']</code> - Display of the concept</li>
+  <li><code class="language-plaintext highlighter-rouge">Class/Rubric[@kind='note']</code> - more detailed description (application description) of the concept</li>
+  <li><code class="language-plaintext highlighter-rouge">Class/Meta[@name='TS_ATTRIBUTE_HINTS']</code> - hints on the application of the concept</li>
+  <li><code class="language-plaintext highlighter-rouge">Class/Meta[@name='TS_ATTRIBUTE_MEANING']</code> or <code class="language-plaintext highlighter-rouge">Class/Rubric[@kind='designation']</code> with <code class="language-plaintext highlighter-rouge">de-AT</code> - German language variant</li>
+  <li><code class="language-plaintext highlighter-rouge">Class/Meta[@name='Level']</code> and <code class="language-plaintext highlighter-rouge">Class/Meta[@name='Type']</code> - mapping of the hierarchy</li>
+  <li><code class="language-plaintext highlighter-rouge">Class/SubClass</code> - specifies the child concepts of this concept</li>
+  <li><code class="language-plaintext highlighter-rouge">Class/SuperClass</code> - specifies the parent concepts of this concept</li>
+</ul>
+
+<h3 id="svsextelga-v1-and-v2">SVSextELGA v1 and v2</h3>
+
+<blockquote>
+  <p><strong><em>DISCLAIMER:</em></strong> This file format is <strong>deprecated</strong>. The SVSextELGA will continue to be supported for the time being. However, no further developments for this format will be implemented. As a result, this file format can technically not contain all the information that is available in non-deprecated file formats. Furthermore, in the medium term (approx. 2025), this format will be fully removed.</p>
+</blockquote>
+
+<p>The supported SVS is based on the IHE Sharing Value Set format and has been extended for ELGA purposes. This XML format supports code systems as well as value sets.</p>
+
+<p>The root element <code class="language-plaintext highlighter-rouge">valueSet</code> contains the metadata of the terminology as attributes:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">name</code> - name of the terminology</li>
+  <li><code class="language-plaintext highlighter-rouge">displayName</code> - human readable name of the terminology</li>
+  <li><code class="language-plaintext highlighter-rouge">beschreibung</code> - description of the terminology in German</li>
+  <li><code class="language-plaintext highlighter-rouge">description</code> - description of the terminology in English</li>
+  <li><code class="language-plaintext highlighter-rouge">effectiveDate</code> - validity date</li>
+  <li><code class="language-plaintext highlighter-rouge">id</code> - OID of the terminology</li>
+  <li><code class="language-plaintext highlighter-rouge">last_change_date</code> - date last changed</li>
+  <li><code class="language-plaintext highlighter-rouge">version</code> - version of the terminology</li>
+  <li><code class="language-plaintext highlighter-rouge">website</code> - Link to source etc.</li>
+</ul>
+
+<p>The <code class="language-plaintext highlighter-rouge">conceptList</code> element contains the concepts represented as <code class="language-plaintext highlighter-rouge">concept</code> elements. The following list explains the most important attributes of the <code class="language-plaintext highlighter-rouge">concept</code> element:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">code</code> - Code that identifies concept</li>
+  <li><code class="language-plaintext highlighter-rouge">displayName</code> - Text to display for this code in this value set</li>
+  <li><code class="language-plaintext highlighter-rouge">displayNameAlt</code> - Alternative display name</li>
+  <li><code class="language-plaintext highlighter-rouge">codeSystem</code> - OID of the code system the code comes from</li>
+  <li><code class="language-plaintext highlighter-rouge">concept_beschreibung</code> - more detailed description (application description) of the concept</li>
+  <li><code class="language-plaintext highlighter-rouge">deutsch</code> - German language variant, meaning</li>
+  <li><code class="language-plaintext highlighter-rouge">einheit_codiert</code> - coded representation of a test result’s unit</li>
+  <li><code class="language-plaintext highlighter-rouge">einheit_print</code> - human readable form of a test result’s unit</li>
+  <li><code class="language-plaintext highlighter-rouge">hinweise</code> - Notes regarding the application of the concept</li>
+  <li><code class="language-plaintext highlighter-rouge">level</code> - specifies the level of the concept within a hierarchy</li>
+  <li><code class="language-plaintext highlighter-rouge">orderNumber</code> - index to fix the order of concepts (relevant only for value sets)</li>
+  <li><code class="language-plaintext highlighter-rouge">parentCodeSystemName</code> - canonical url of the code system the code comes from</li>
+  <li><code class="language-plaintext highlighter-rouge">relationships</code> - possible connections to other concepts</li>
+  <li><code class="language-plaintext highlighter-rouge">type</code> - type of the concept (<code class="language-plaintext highlighter-rouge">L</code> - leaf, <code class="language-plaintext highlighter-rouge">S</code> - specializable, <code class="language-plaintext highlighter-rouge">A</code> - abstract, <code class="language-plaintext highlighter-rouge">D</code> - deprecated)</li>
+</ul>
+
+<p>In version 2 of SVSextELGA, undefined attributes/properties may be included as additional concept attributes.</p>
+
+<h3 id="outdated-csv-outdatedcsv-v1-and-v2">Outdated CSV (outdatedcsv) v1 and v2</h3>
+
+<blockquote>
+  <p><strong><em>DISCLAIMER:</em></strong> This file format is <strong>deprecated</strong>. The outdatedcsv will continue to be supported for the time being. However, no further developments for this format will be implemented. As a result, this file format can technically not contain all the information that is available in non-deprecated file formats. Furthermore, in the medium term (approx. 2025), this format will be fully removed.</p>
+</blockquote>
+
+<p>The outdated CSV (outdatedcsv) represents the CSV export format of the old terminology server (termpub.gv.at). The format does not contain any metadata on code systems or value sets and cannot represent all the information required for FHIR&reg; that is representable in other file formats.</p>
+
+<p>For each concept only the following information can be represented in outdatedcsv:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">code</code></li>
+  <li><code class="language-plaintext highlighter-rouge">codeSystem</code></li>
+  <li><code class="language-plaintext highlighter-rouge">displayName</code></li>
+  <li><code class="language-plaintext highlighter-rouge">parentCode</code> (code systems only)</li>
+  <li><code class="language-plaintext highlighter-rouge">parentCodeSystemName</code> (value sets only)</li>
+  <li><code class="language-plaintext highlighter-rouge">concept_Beschreibung</code></li>
+  <li><code class="language-plaintext highlighter-rouge">meaning</code></li>
+  <li><code class="language-plaintext highlighter-rouge">hints</code></li>
+  <li><code class="language-plaintext highlighter-rouge">orderNumber</code> (value sets only)</li>
+  <li><code class="language-plaintext highlighter-rouge">level</code></li>
+  <li><code class="language-plaintext highlighter-rouge">type</code></li>
+  <li><code class="language-plaintext highlighter-rouge">relationships</code></li>
+  <li><code class="language-plaintext highlighter-rouge">einheit print</code> (value sets only)</li>
+  <li><code class="language-plaintext highlighter-rouge">einheit codiert</code> (value sets only)</li>
+</ul>
+
+<p>In version 2 of outdatedcsv, undefined attributes may be included as additional columns. Furthermore, the following additional changes have been implemented in version 2:</p>
+<ul>
+  <li>Empty values are really empty and not coded with <code class="language-plaintext highlighter-rouge">''</code></li>
+  <li>If there are only empty values at the end of a line, the <code class="language-plaintext highlighter-rouge">;</code> between the designated columns are omitted (CSV compliant). This results in size savings of up to 20% for large terminologies.</li>
+  <li>The implementation recommendation for reading CSVs is to use the column names and not the column index. Here is an example Python code snippet how this can be done with a <code class="language-plaintext highlighter-rouge">DictReader</code> from the <code class="language-plaintext highlighter-rouge">csv</code> library:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import csv
+with open(FILEPATH, 'r', newline='') as file:
+csvFile = csv.DictReader(file, quotechar='\'', delimiter=';') # DictReader allows access by keys/columns
+for csv_line in csvFile:
+...
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &copy; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="null">ELGA GmbH</a>.  Package austrian-terminology-server#2.7.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4B/">FHIR 4.3.0</a>. Generated <span title="Fri, Apr 26, 2024 06:27+0000">2024-04-26</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+  
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+  
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
