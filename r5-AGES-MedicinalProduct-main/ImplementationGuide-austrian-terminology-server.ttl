@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "termgit"] ; # 
   fhir:title [ fhir:v "Österreichischer e-Health-Terminologie-Browser"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-04-26T06:27:57+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-04-26T06:59:48+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
   fhir:description [ fhir:v "Der Terminologie-Browser von TerminoloGit, powerd by FHIR IG Publisher."] ; # 
   fhir:packageId [ fhir:v "austrian-terminology-server"] ; # 
@@ -623,6 +623,18 @@
        ] ;
        fhir:name [ fhir:v "ELGA_AdministrativeGender" ] ;
        fhir:description [ fhir:v "**Description:** The gender of a person used for adminstrative purposes (as opposed to clinical gender).\n\n**Beschreibung:** Das Geschlecht einer Person zur administrativen Nutzung (entspricht nicht notwendigerweise dem biologischen oder medizinischen Geschlecht)." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <TERMGIT_CANONICAL/ValueSet/elga-laborparameter> ;
+         fhir:reference [ fhir:v "ValueSet/elga-laborparameter" ]
+       ] ;
+       fhir:name [ fhir:v "ELGA_Laborparameter" ] ;
+       fhir:description [ fhir:v "**Description:** List of parameters used in Austrian laboratories. Units must be specified in UCUM. The list is based on the catalogue of LOINC codes used in the \"Wiener Gesundheitsverbund\" (with the German language version of the codes in the DisplayName). ATTENTION: For some, no official LOINC code exists yet. In these cases, codes derive from the Codesystem ELGA_LaborparameterErgaenzung.\n\n**Beschreibung:** Liste der in österreichischen Labors verwendeten Parameter. Einheiten sind verpflichend in UCUM anzugeben. Grundlage der Liste ist der im Wiener Gesundheitsverbund verwendete Katalog von LOINC-Codes (mit der deutschen Sprachvariante der Codes im DisplayName). ACHTUNG: Für einige existiert noch kein offizieller LOINC-Code. In diesen Fällen werden die Codes aus dem Codesystem ELGA_LaborparameterErgaenzung bezogen." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
