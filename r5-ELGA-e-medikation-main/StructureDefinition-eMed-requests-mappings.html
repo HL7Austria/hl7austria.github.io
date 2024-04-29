@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>ELGA-E-MEDIKATION-R5.ELGA.HL7.AT\ELGA e-Medication MedicationRequests (eMedRequest) - Mappings - FHIR® v5.0.0</title>
+    <title>ELGA-E-MEDIKATION-R5.ELGA.HL7.AT\2 ELGA e-Medication MedicationRequests (eMedRequest) - Mappings - FHIR® v5.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,8 +61,8 @@
         e.classList.remove("giscus-frame--loading")});b=document.getElementById("giscus-css")||document.createElement("link");b.id="giscus-css";b.rel="stylesheet";b.href="".concat(k,"/default.css");document.head.prepend(b);if(d){for(;d.firstChild;)d.firstChild.remove();d.appendChild(e)}else d=document.createElement("div"),d.setAttribute("class","giscus"),d.appendChild(e),m.insertAdjacentElement("afterend",d);window.addEventListener("message",function(a){a.origin===k&&(a=a.data,"object"===typeof a&&a.giscus&&
         (a.giscus.resizeHeight&&(e.style.height="".concat(a.giscus.resizeHeight,"px")),a.giscus.signOut?(localStorage.removeItem("giscus-session"),console.log("[giscus] User has logged out. Session has been cleared."),p()):a.giscus.error&&(a=a.giscus.error,a.includes("Bad credentials")||a.includes("Invalid state value")||a.includes("State has expired")?null!==localStorage.getItem("giscus-session")?(localStorage.removeItem("giscus-session"),console.warn("".concat(h(a)," Session has been cleared.")),p()):n||
         console.error("".concat(h(a)," No session is stored initially. ").concat("Please consider reporting this error at https://github.com/giscus/giscus/issues/new.")):a.includes("Discussion not found")?console.warn("[giscus] ".concat(a,". A new discussion will be created if a comment/reaction is submitted.")):a.includes("API rate limit exceeded")?console.warn(h(a)):console.error("".concat(h(a)," ").concat("Please consider reporting this error at https://github.com/giscus/giscus/issues/new.")))))})})();</script>
-    <style type="text/css">h2{--heading-prefix:"9.1"}
-    h3,h4,h5,h6{--heading-prefix:"9.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.2"}
+    h3,h4,h5,h6{--heading-prefix:"9.2"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- at-fhir-ig-template begin -->
@@ -131,7 +131,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>ELGA e-Medication MedicationRequests (eMedRequest)</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>2 ELGA e-Medication MedicationRequests (eMedRequest)</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -264,21 +264,9 @@
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>Message/Header/PrescriberOrderNumber</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;priorPrescription</td><td>not mapped</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>no mapping</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>Message/Body/NewRx/MedicationPrescribed/Directions
-
-or 
-
-Message/Body/NewRx/MedicationPrescribed/StructuredSIG</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;medication</td><td>Message/Body/NewRx/MedicationPrescribed
-
-Medication.code.coding.code = Message/Body/NewRx/MedicationPrescribed/DrugCoded/ProductCode
-
-Medication.code.coding.system = Message/Body/NewRx/MedicationPrescribed/DrugCoded/ProductCodeQualifier
-
-Medication.code.coding.display = Message/Body/NewRx/MedicationPrescribed/DrugDescription</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Message/Body/NewRx/Patient
-
-(need detail to link to specific patient … Patient.Identification in SCRIPT)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>Message/Body/NewRx/MedicationPrescribed/Directionsor Message/Body/NewRx/MedicationPrescribed/StructuredSIG</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;medication</td><td>Message/Body/NewRx/MedicationPrescribedMedication.code.coding.code = Message/Body/NewRx/MedicationPrescribed/DrugCoded/ProductCodeMedication.code.coding.system = Message/Body/NewRx/MedicationPrescribed/DrugCoded/ProductCodeQualifierMedication.code.coding.display = Message/Body/NewRx/MedicationPrescribed/DrugDescription</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Message/Body/NewRx/Patient(need detail to link to specific patient … Patient.Identification in SCRIPT)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>no mapping</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;authoredOn</td><td>Message/Body/NewRx/MedicationPrescribed/WrittenDate</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reason</td><td>Message/Body/NewRx/MedicationPrescribed/Diagnosis/Primary/Value</td> </tr>
@@ -316,9 +304,9 @@ Medication.code.coding.display = Message/Body/NewRx/MedicationPrescribed/DrugDes
  <tr><td colspan="3"><b>eMedRequest</b></td></tr>
  <tr><td>MedicationRequest</td><td>Entity, Role, or Act,CombinedMedicationRequest</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>.id</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;basedOn</td><td>.outboundRelationship[typeCode=FLFS].target[classCode=SBADM or PROC or PCPR or OBS, moodCode=RQO orPLAN or PRP]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;priorPrescription</td><td>.outboundRelationship[typeCode=?RPLC or ?SUCC]/target[classCode=SBADM,moodCode=RQO]</td> </tr>
@@ -351,7 +339,7 @@ Medication.code.coding.display = Message/Body/NewRx/MedicationPrescribed/DrugDes
  <tr><td>&nbsp;&nbsp;&nbsp;dosageInstruction</td><td>see dosageInstruction mapping</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sequence</td><td>.text</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>.text</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;additionalInstruction</td><td>.text</td> </tr>
@@ -380,11 +368,11 @@ Medication.code.coding.display = Message/Body/NewRx/MedicationPrescribed/DrugDes
  <tr><td>&nbsp;&nbsp;&nbsp;dispenseRequest</td><td>component.supplyEvent</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initialFill</td><td>SubstanceAdministration -&gt; ActRelationship[sequenceNumber = '1'] -&gt; Supply</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quantity</td><td>Supply.quantity[moodCode=RQO]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;duration</td><td>Supply.effectivetime[moodCode=RQO]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dispenseInterval</td><td>Supply.effectivetime[moodCode=RQO]</td> </tr>
@@ -398,7 +386,7 @@ Medication.code.coding.display = Message/Body/NewRx/MedicationPrescribed/DrugDes
  <tr><td>&nbsp;&nbsp;&nbsp;substitution</td><td>subjectOf.substitutionPersmission</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;allowed[x]</td><td>code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reason</td><td>reasonCode</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;eventHistory</td><td>.inboundRelationship(typeCode=SUBJ].source[classCode=CACT, moodCode=EVN]</td> </tr>
@@ -492,7 +480,7 @@ if(window.location.hash != "") {
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA GmbH</a>.  Package elga-e-medikation-R5.elga.hl7.at#0.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Mon, Apr 29, 2024 05:01+0000">2024-04-29</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA GmbH</a>.  Package elga-e-medikation-R5.elga.hl7.at#0.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Mon, Apr 29, 2024 05:16+0000">2024-04-29</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

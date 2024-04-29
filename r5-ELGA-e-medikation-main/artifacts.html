@@ -190,8 +190,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <tbody>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-eMed-prescription-with-multiple-eMed-requests.html"
+                  title="StructureDefinition/eMed-prescription-with-multiple-eMed-requests">1 ELGA e-Medication Prescription with multiple MedicationRequests (eMedPrescriptionAsRequestOrchestration)</a>
+            </td>
+            <td>
+<p><strong>Description:</strong> In the course of treatment, the doctor determines that the ELGA participant must be prescribed one or more medicines. A MedicationRequest always consists of exactly one medication (= one medicine). The e-Medication prescription can consist of several MedicationRequests and thus forms a grouping over them. The prescription and it’s MedicationRequests are labelled with one unique, common eMED ID. The doctor is responsible for checking the medicines, e.g. for potential interactions, contraindications, dosages, etc. and this is not part of e-Medication. Storing requests without assigning a prescription is not valid. The prescription is considered to have been checked if the associated prescription is saved in e-Medication.</p>
+
+<p><strong>Beschreibung:</strong> Im Zuge der Behandlung stellt der Arzt fest, dass dem ELGA Teilnehmer ein oder mehrere Arzneimittel verordnet werden müssen. Eine Verordnung besteht immer nur aus genau einer Medikation (= ein Arzneimittel). Das Rezept kann aus mehreren Verordnungen/MedicationRequests bestehen und bildet somit die Klammer über die Verordnungen/MedicationRequests. Das Rezept und seine Verordnungen/MedicationRequests werden mit einer eindeutigen, gemeinsamen eMED-ID versehen. Die Prüfungen der Arzneimittel z.B. auf potentielle Wechselwirkungen, Kontraindikationen, Dosierungen, etc. erfolgt in der Eigenverantwortung des Arztes und ist nicht Gegenstand der e-Medikation. Eine Speicherung von Verordnungen/MedicationRequests ohne Zuordnung eines Rezeptes ist nicht gültig. Die Verordnung/MedicationRequest wird als geprüft angesehen, wenn die zugeordnete Verordnung in e-Medikation gespeichert ist.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-eMed-requests.html"
-                  title="StructureDefinition/eMed-requests">ELGA e-Medication MedicationRequests (eMedRequest)</a>
+                  title="StructureDefinition/eMed-requests">2 ELGA e-Medication MedicationRequests (eMedRequest)</a>
             </td>
             <td>
 <p><strong>Description:</strong> In the course of treatment, the doctor determines that the ELGA participant must be prescribed one or more medicines. A MedicationRequest always consists of exactly one medication (= one medicine). The e-Medication prescription can consist of several MedicationRequests and thus forms a grouping over them. The prescription and it’s MedicationRequests are labelled with one unique, common eMED ID. The doctor is responsible for checking the medicines, e.g. for potential interactions, contraindications, dosages, etc. and this is not part of e-Medication. Storing requests without assigning a prescription is not valid. The prescription is considered to have been checked if the associated prescription is saved in e-Medication.</p>
@@ -202,21 +213,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <tr>
             <td style="column-width:30%">
                <a href="StructureDefinition-eMed-medications.html"
-                  title="StructureDefinition/eMed-medications">ELGA e-Medication Medications (eMedMedications)</a>
+                  title="StructureDefinition/eMed-medications">9 ELGA e-Medication Medications (eMedMedications)</a>
             </td>
             <td>
 <p>Medication Resource to ensure ELGA e-Medication compliant representation. Binding code to ELGA CodeSystem (‘asp-liste’) and doseForm to ELGA ValueSet (‘elga-medikationdarreichungsform’).</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-eMed-prescription-with-multiple-eMed-requests.html"
-                  title="StructureDefinition/eMed-prescription-with-multiple-eMed-requests">ELGA e-Medication Prescription with multiple MedicationRequests (eMedPrescriptionAsRequestOrchestration)</a>
-            </td>
-            <td>
-<p><strong>Description:</strong> In the course of treatment, the doctor determines that the ELGA participant must be prescribed one or more medicines. A MedicationRequest always consists of exactly one medication (= one medicine). The e-Medication prescription can consist of several MedicationRequests and thus forms a grouping over them. The prescription and it’s MedicationRequests are labelled with one unique, common eMED ID. The doctor is responsible for checking the medicines, e.g. for potential interactions, contraindications, dosages, etc. and this is not part of e-Medication. Storing requests without assigning a prescription is not valid. The prescription is considered to have been checked if the associated prescription is saved in e-Medication.</p>
-
-<p><strong>Beschreibung:</strong> Im Zuge der Behandlung stellt der Arzt fest, dass dem ELGA Teilnehmer ein oder mehrere Arzneimittel verordnet werden müssen. Eine Verordnung besteht immer nur aus genau einer Medikation (= ein Arzneimittel). Das Rezept kann aus mehreren Verordnungen/MedicationRequests bestehen und bildet somit die Klammer über die Verordnungen/MedicationRequests. Das Rezept und seine Verordnungen/MedicationRequests werden mit einer eindeutigen, gemeinsamen eMED-ID versehen. Die Prüfungen der Arzneimittel z.B. auf potentielle Wechselwirkungen, Kontraindikationen, Dosierungen, etc. erfolgt in der Eigenverantwortung des Arztes und ist nicht Gegenstand der e-Medikation. Eine Speicherung von Verordnungen/MedicationRequests ohne Zuordnung eines Rezeptes ist nicht gültig. Die Verordnung/MedicationRequest wird als geprüft angesehen, wenn die zugeordnete Verordnung in e-Medikation gespeichert ist.</p>
 </td>
          </tr>
          <tr>
@@ -380,7 +380,7 @@ if(window.location.hash != "") {
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA GmbH</a>.  Package elga-e-medikation-R5.elga.hl7.at#0.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Mon, Apr 29, 2024 05:01+0000">2024-04-29</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA GmbH</a>.  Package elga-e-medikation-R5.elga.hl7.at#0.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Mon, Apr 29, 2024 05:16+0000">2024-04-29</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
