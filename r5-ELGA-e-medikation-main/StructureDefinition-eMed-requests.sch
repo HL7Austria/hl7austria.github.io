@@ -74,7 +74,6 @@
     <sch:rule context="f:MedicationRequest/f:dosageInstruction/f:doseAndRate">
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
       <sch:assert test="count(f:type) &lt;= 1">type: maximum cardinality of 'type' is 1</sch:assert>
-      <sch:assert test="count(f:rate[x]) &lt;= 1">rate[x]: maximum cardinality of 'rate[x]' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
