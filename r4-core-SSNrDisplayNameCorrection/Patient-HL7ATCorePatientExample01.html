@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>HL7ATCOREPROFILES\HL7ATCorePatientExample01 - FHIR® v4.0.1</title>
+    <title>HL7.AT.FHIR.CORE.R4\HL7ATCorePatientExample01 - FHIR® v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -175,7 +175,7 @@
 
 
   <div xmlns="http://www.w3.org/1999/xhtml"><p style="border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;"><b>Max Mustermann </b> male, DoB: 1900-01-01 ( Social Security number/1234010100)</p><hr/><table class="grid"><tr><td style="background-color: #f3f5da" title="Other Ids (see the one above)">Other Ids:</td><td colspan="3"><ul><li>National unique individual identifier/GH:oeLdSEb0l+8kSdJWjOYyYmnYki0=</li><li>Patient internal identifier/0815</li></ul></td></tr><tr><td style="background-color: #f3f5da" title="Ways to contact the Patient">Contact Detail</td><td colspan="3"><ul><li><a href="mailto:office@hl7.at">office@hl7.at</a></li><li><a href="tel:+436501234567890">+436501234567890</a></li><li>Landstrasse 1 Stock 9 Tür 42 Linz Oberösterreich 4020 AUT (home)</li></ul></td></tr><tr><td style="background-color: #f3f5da" title="HL7® Austria FHIR® Core Extension for the religion (registered in Austria) of a patient.
-The extension is used to encode the religious confession of a patient (only confessions registered in Austria). Furthermore, it uses the official [HL7 AT CodeSystem](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&amp;loadName=HL7 AT ReligionAustria) for religion and is therefore aligned with the ELGA ValueSet, respectively.">Patient Religion:</td><td colspan="3"><ul><li>code: <span title="Codes: {http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/CodeSystem/at-core-cs-religion 162}">Pastafarianismus</span></li></ul></td></tr><tr><td style="background-color: #f3f5da" title="The patient's legal status as citizen of a country.">citizenship:</td><td colspan="3"><ul><li>code: <span title="Codes: {http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/CodeSystem/at-core-cs-iso-3166-1-alpha-3 AUT}">Österreich</span></li></ul></td></tr></table></div>
+The extension is used to encode the religious confession of a patient (only confessions registered in Austria). Furthermore, it uses the official [HL7 AT CodeSystem](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&amp;loadName=HL7 AT ReligionAustria) for religion and is therefore aligned with the ELGA ValueSet, respectively.">Patient Religion:</td><td colspan="3"><ul><li>code: <span title="Codes: {https://termgit.elga.gv.at/CodeSystem/hl7-at-religionaustria 162}">Pastafarianismus</span></li></ul></td></tr><tr><td style="background-color: #f3f5da" title="The patient's legal status as citizen of a country.">Patient Citizenship:</td><td colspan="3"><ul><li>code: <span title="Codes: {https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3 AUT}">Österreich</span></li></ul></td></tr></table></div>
 
   
 
@@ -193,20 +193,14 @@ The extension is used to encode the religious confession of a patient (only conf
 <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
 <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
 
-<script type="text/javascript">
-$(document).ready(function(){
-if(window.location.hash != "") {
-    $('a[href="' + window.location.hash + '"]').click()
-}
-});
-</script>
+<script type="text/javascript" src="assets/js/window-hash.js"> </script>
 <a name="bottom"> </a>
 <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
 <div class="container">  <!-- container -->
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://hl7.at/technische-komitees/tc-fhir/">HL7® Austria, TC FHIR®</a>.  Package HL7ATCoreProfiles#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Sat, Apr 27, 2024 15:29+0000">2024-04-27</span>
+    IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://hl7.at/technische-komitees/tc-fhir/">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.core.r4#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Fri, May 10, 2024 11:18+0000">2024-05-10</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
@@ -231,8 +225,9 @@ if(window.location.hash != "") {
 <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
 <script type="text/javascript" src="assets/js/respond.min.js"> </script>
 <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
-<script>anchors.options.visible = 'hover'
-anchors.add()</script>
+<script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+<script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
 
 <!-- Analytics Below
 ================================================== -->
