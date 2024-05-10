@@ -48,7 +48,7 @@ def fromYaml( name, yaml,fname ):
 def build_publication(content):
     rows = ''
     for entry in content:
-        rows += f"""<p class="mb-1" style="margin-top:6px;color:#666"><a href="./{entry['fname']}/index.html">Implementation Guide</a> | <a href="https://build.fhir.org/ig/hl7Austria/{entry['fname']}/index.html">CI Build</a> | <a href="./{entry['fname']}/history.html">Publication History</a> | <a href="https://github.com/hl7austria/{entry['fname']}">Source</a></p>"""
+        rows += f"""<p class="mb-1" style="margin-top:6px;color:#666"><a href="./{entry['fname']}/index.html">Implementation Guide</a> | <a href="https://build.fhir.org/ig/HL7Austria/{entry['fname']}/index.html">CI Build</a> | <a href="./{entry['fname']}/history.html">Publication History</a> | <a href="https://github.com/HL7Austria/{entry['fname']}">Source</a></p>"""
     return rows
 
 def build_table_html( cn, clazz = 'datatable' ):
