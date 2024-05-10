@@ -2,6 +2,7 @@ from datetime import datetime
 import glob
 import yaml
 import re
+import os
 
 OFFICIAL_TYPE_NAME = 'official'
 MAIN_BRANCH_NAME = 'main'
@@ -79,11 +80,11 @@ for name in glob.glob('./*/_index.yml'):
     with open(name) as file:
         index_yml = yaml.load(file, Loader=yaml.FullLoader)
         #print(index_yml)
-        folder_name = name.replace('/_index.yml', '')
+        folder_name = os.path.dirname(os.path.normpath(file.name))
         entry_value = fromYaml(name, index_yml, folder_name)
 
         if entry_value is not None:
-            if entry_value['branch'] in entry_value['fname']:
+            if entry_value['branch'] == entry_value['fname']:
                 if entry_value['name'].startswith('HL7'):
                     if entry_value['name'] not in hl7content.keys():
                         hl7content[entry_value['name']] = []
