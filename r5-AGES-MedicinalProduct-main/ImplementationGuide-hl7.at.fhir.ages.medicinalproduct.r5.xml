@@ -9,7 +9,7 @@
   <version value="0.1.0"/>
   <name value="AGESMedicinalProductR5"/>
   <status value="draft"/>
-  <date value="2024-04-26T07:47:34+00:00"/>
+  <date value="2024-05-17T07:26:28+00:00"/>
   <publisher value="AGES"/>
   <contact>
     <name value="AGES"/>
@@ -35,12 +35,133 @@
     </extension>
     <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
     <packageId value="hl7.fhir.uv.extensions.r5"/>
-    <version value="1.0.0"/>
+    <version value="5.1.0"/>
   </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
       <valueCode value="hl7.fhir.uv.tools#0.1.0"/>
     </extension>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/codeSystemName"/>
+      </reference>
+      <name value="CodeSystemName"/>
+      <description value="Name of the coding system the 'coding' element belongs to as the number is not very explicative"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/100000000004"/>
+      </reference>
+      <name value="Domain"/>
+      <description value="Domain"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:complex-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/emaCoding"/>
+      </reference>
+      <name value="Ema Coding"/>
+      <description value="Ema Coding"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:complex-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/RefTermCodeableConcept"/>
+      </reference>
+      <name value="Generic ReferentialTerm CodeableConcept"/>
+      <description value="Generic ReferentialTerm CodeableConcept"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:complex-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/Identifier-eMed"/>
+      </reference>
+      <name value="Identifier"/>
+      <description value="Identifier used in the AGES export of medicinal products"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-emed-Ingredient"/>
+      </reference>
+      <name value="ingredient"/>
+      <description value="Defines the Strength and Composition parts of a medicinal product"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/100000072050"/>
+      </reference>
+      <name value="Ingredient Role"/>
+      <description value="Ingredient Role"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/100000072051"/>
+      </reference>
+      <name value="Legal Status From the Supply"/>
+      <description value="Legal Status From the Supply"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-emed-MarketingRegulatedAuthorization"/>
+      </reference>
+      <name value="Marketing Regulated Authorization"/>
+      <description value="Contains the Authorisation information of a Medicinal Product"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/220000000000"/>
+      </reference>
+      <name value="Medicinal Product Name Part Type"/>
+      <description value="Medicinal Product Name Part Type"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-emed-MedicinalProductDefinition"/>
+      </reference>
+      <name value="MedicinalProductDefinition-Med"/>
+      <description value="Medicinal Product Definition Profiled resource containing a subset of attributes needed for the Austrian eHealth Community"/>
+      <isExample value="false"/>
+    </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
@@ -54,6 +175,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-emed-PackagedProductDefinition"/>
+      </reference>
+      <name value="Packaged product definition"/>
+      <description value="Defines the Package information of a Medicinal Product"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Patient"/>
       </extension>
       <reference>
@@ -63,6 +195,151 @@
       <description value="An example of a patient with a license to krill."/>
       <isExample value="true"/>
       <profile value="https://www.ages.at/fhir/medicinalproduct/StructureDefinition/MyPatient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/200000000004"/>
+      </reference>
+      <name value="Pharmaceutical Dose Form"/>
+      <description value="Pharmaceutical Dose Form"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/100000000008"/>
+      </reference>
+      <name value="Quantity Operator"/>
+      <description value="Quantity Operator"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/220000000060"/>
+      </reference>
+      <name value="Regulatory Entitlement"/>
+      <description value="Regulatory Entitlement"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/regulatoryEntitlementStatusCs"/>
+      </reference>
+      <name value="Regulatory Entitlement Status"/>
+      <description value="Regulatory Entitlement Status"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/domainVs"/>
+      </reference>
+      <name value="The Domain Value Set"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ingredientRoleVs"/>
+      </reference>
+      <name value="The Ingredient Role Value Set"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/legalStatusForTheSupplyVs"/>
+      </reference>
+      <name value="The Legal Status of Supply Value Set"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/medicinalProductNamePartTypeVs"/>
+      </reference>
+      <name value="The Medicinal Product Name Part Type"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/pharmaceuticalDoseFormVs"/>
+      </reference>
+      <name value="The Pharmaceutical Dose Form Value Set"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/quantityOperatorVs"/>
+      </reference>
+      <name value="The Quantity Operator Value Set"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/regulatoryEntitlementStatusVs"/>
+      </reference>
+      <name value="The Regulatory Entitlement Status Value Set"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/regulatoryEntitlementTypeVs"/>
+      </reference>
+      <name value="The Regulatory Entitlement Type Value Set"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/unitsOfPresentationVs"/>
+      </reference>
+      <name value="The Units of Presentation Value Set"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/200000000014"/>
+      </reference>
+      <name value="Units Of Presentation"/>
+      <description value="Units Of Presentation"/>
+      <isExample value="false"/>
     </resource>
     <page>
       <sourceUrl value="toc.html"/>

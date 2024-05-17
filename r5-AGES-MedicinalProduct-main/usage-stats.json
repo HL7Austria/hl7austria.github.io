@@ -2,16 +2,53 @@
   "package": "hl7.at.fhir.ages.medicinalproduct.r5",
   "version": "0.1.0",
   "fhirVersion": "5.0.0",
-  "extensions": [],
+  "extensions": [
+    {
+      "url": "http://ema.europa.eu/fhir/extension/codeSystemName",
+      "title": "CodeSystemName",
+      "types": [
+        "string"
+      ]
+    }
+  ],
   "profiles": {
     "Patient": [
       {
         "url": "https://www.ages.at/fhir/medicinalproduct/StructureDefinition/MyPatient",
         "title": "MyPatient"
       }
+    ],
+    "Ingredient": [
+      {
+        "url": "https://www.ages.at/fhir/medicinalproduct/StructureDefinition/at-emed-Ingredient",
+        "title": "ingredient"
+      }
+    ],
+    "RegulatedAuthorization": [
+      {
+        "url": "https://www.ages.at/fhir/medicinalproduct/StructureDefinition/at-emed-MarketingRegulatedAuthorization",
+        "title": "Marketing Regulated Authorization"
+      }
+    ],
+    "MedicinalProductDefinition": [
+      {
+        "url": "https://www.ages.at/fhir/medicinalproduct/StructureDefinition/at-emed-MedicinalProductDefinition",
+        "title": "MedicinalProductDefinition-Med"
+      }
+    ],
+    "PackagedProductDefinition": [
+      {
+        "url": "https://www.ages.at/fhir/medicinalproduct/StructureDefinition/at-emed-PackagedProductDefinition",
+        "title": "Packaged product definition"
+      }
     ]
   },
   "usage": {
+    "http://ema.europa.eu/fhir/extension/codeSystemName": [
+      "Coding.system",
+      "Ingredient.substance.code.concept.coding.system",
+      "MedicinalProductDefinition.name.part.type.coding.system"
+    ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
       "StructureDefinition.snapshot.element.constraint"
     ],
@@ -21,11 +58,20 @@
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName": [
       "StructureDefinition.snapshot.element.binding"
     ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/regex": [
+      "StructureDefinition.snapshot.element.type"
+    ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
       "StructureDefinition.snapshot.element.type"
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy": [
       "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics": [
+      "StructureDefinition"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
       "ImplementationGuide.definition"

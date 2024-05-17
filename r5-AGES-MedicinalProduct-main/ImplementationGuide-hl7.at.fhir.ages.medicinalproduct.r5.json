@@ -9,7 +9,7 @@
   "version" : "0.1.0",
   "name" : "AGESMedicinalProductR5",
   "status" : "draft",
-  "date" : "2024-04-26T07:47:34+00:00",
+  "date" : "2024-05-17T07:26:28+00:00",
   "publisher" : "AGES",
   "contact" : [{
     "name" : "AGES",
@@ -39,7 +39,7 @@
     }],
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r5",
-    "version" : "1.0.0"
+    "version" : "5.1.0"
   }],
   "definition" : {
     "extension" : [{
@@ -47,6 +47,138 @@
       "valueCode" : "hl7.fhir.uv.tools#0.1.0"
     }],
     "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/codeSystemName"
+      },
+      "name" : "CodeSystemName",
+      "description" : "Name of the coding system the 'coding' element belongs to as the number is not very explicative",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/100000000004"
+      },
+      "name" : "Domain",
+      "description" : "Domain",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:complex-type"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/emaCoding"
+      },
+      "name" : "Ema Coding",
+      "description" : "Ema Coding",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:complex-type"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/RefTermCodeableConcept"
+      },
+      "name" : "Generic ReferentialTerm CodeableConcept",
+      "description" : "Generic ReferentialTerm CodeableConcept",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:complex-type"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/Identifier-eMed"
+      },
+      "name" : "Identifier",
+      "description" : "Identifier used in the AGES export of medicinal products",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-emed-Ingredient"
+      },
+      "name" : "ingredient",
+      "description" : "Defines the Strength and Composition parts of a medicinal product",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/100000072050"
+      },
+      "name" : "Ingredient Role",
+      "description" : "Ingredient Role",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/100000072051"
+      },
+      "name" : "Legal Status From the Supply",
+      "description" : "Legal Status From the Supply",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-emed-MarketingRegulatedAuthorization"
+      },
+      "name" : "Marketing Regulated Authorization",
+      "description" : "Contains the Authorisation information of a Medicinal Product",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/220000000000"
+      },
+      "name" : "Medicinal Product Name Part Type",
+      "description" : "Medicinal Product Name Part Type",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-emed-MedicinalProductDefinition"
+      },
+      "name" : "MedicinalProductDefinition-Med",
+      "description" : "Medicinal Product Definition Profiled resource containing a subset of attributes needed for the Austrian eHealth Community",
+      "isExample" : false
+    },
+    {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
@@ -61,6 +193,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-emed-PackagedProductDefinition"
+      },
+      "name" : "Packaged product definition",
+      "description" : "Defines the Package information of a Medicinal Product",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Patient"
       }],
       "reference" : {
@@ -70,6 +214,165 @@
       "description" : "An example of a patient with a license to krill.",
       "isExample" : true,
       "profile" : ["https://www.ages.at/fhir/medicinalproduct/StructureDefinition/MyPatient"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/200000000004"
+      },
+      "name" : "Pharmaceutical Dose Form",
+      "description" : "Pharmaceutical Dose Form",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/100000000008"
+      },
+      "name" : "Quantity Operator",
+      "description" : "Quantity Operator",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/220000000060"
+      },
+      "name" : "Regulatory Entitlement",
+      "description" : "Regulatory Entitlement",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/regulatoryEntitlementStatusCs"
+      },
+      "name" : "Regulatory Entitlement Status",
+      "description" : "Regulatory Entitlement Status",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/domainVs"
+      },
+      "name" : "The Domain Value Set",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ingredientRoleVs"
+      },
+      "name" : "The Ingredient Role Value Set",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/legalStatusForTheSupplyVs"
+      },
+      "name" : "The Legal Status of Supply Value Set",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/medicinalProductNamePartTypeVs"
+      },
+      "name" : "The Medicinal Product Name Part Type",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/pharmaceuticalDoseFormVs"
+      },
+      "name" : "The Pharmaceutical Dose Form Value Set",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/quantityOperatorVs"
+      },
+      "name" : "The Quantity Operator Value Set",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/regulatoryEntitlementStatusVs"
+      },
+      "name" : "The Regulatory Entitlement Status Value Set",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/regulatoryEntitlementTypeVs"
+      },
+      "name" : "The Regulatory Entitlement Type Value Set",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/unitsOfPresentationVs"
+      },
+      "name" : "The Units of Presentation Value Set",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/200000000014"
+      },
+      "name" : "Units Of Presentation",
+      "description" : "Units Of Presentation",
+      "isExample" : false
     }],
     "page" : {
       "sourceUrl" : "toc.html",

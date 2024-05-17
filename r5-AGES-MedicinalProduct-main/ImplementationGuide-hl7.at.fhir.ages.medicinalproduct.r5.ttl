@@ -16,7 +16,7 @@
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "AGESMedicinalProductR5"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-04-26T07:47:34+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-05-17T07:26:28+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "AGES"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "AGES" ] ;
@@ -51,7 +51,7 @@
        fhir:link <http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions>
      ] ;
      fhir:packageId [ fhir:v "hl7.fhir.uv.extensions.r5" ] ;
-     fhir:version [ fhir:v "1.0.0" ]
+     fhir:version [ fhir:v "5.1.0" ]
   ] ) ; # 
   fhir:definition [
      fhir:extension ( [
@@ -59,6 +59,138 @@
        fhir:value [ fhir:v "hl7.fhir.uv.tools#0.1.0" ]
      ] ) ;
      fhir:resource ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/StructureDefinition/codeSystemName> ;
+         fhir:reference [ fhir:v "StructureDefinition/codeSystemName" ]
+       ] ;
+       fhir:name [ fhir:v "CodeSystemName" ] ;
+       fhir:description [ fhir:v "Name of the coding system the 'coding' element belongs to as the number is not very explicative" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/CodeSystem/100000000004> ;
+         fhir:reference [ fhir:v "CodeSystem/100000000004" ]
+       ] ;
+       fhir:name [ fhir:v "Domain" ] ;
+       fhir:description [ fhir:v "Domain" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:complex-type" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/StructureDefinition/emaCoding> ;
+         fhir:reference [ fhir:v "StructureDefinition/emaCoding" ]
+       ] ;
+       fhir:name [ fhir:v "Ema Coding" ] ;
+       fhir:description [ fhir:v "Ema Coding" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:complex-type" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/StructureDefinition/RefTermCodeableConcept> ;
+         fhir:reference [ fhir:v "StructureDefinition/RefTermCodeableConcept" ]
+       ] ;
+       fhir:name [ fhir:v "Generic ReferentialTerm CodeableConcept" ] ;
+       fhir:description [ fhir:v "Generic ReferentialTerm CodeableConcept" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:complex-type" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/StructureDefinition/Identifier-eMed> ;
+         fhir:reference [ fhir:v "StructureDefinition/Identifier-eMed" ]
+       ] ;
+       fhir:name [ fhir:v "Identifier" ] ;
+       fhir:description [ fhir:v "Identifier used in the AGES export of medicinal products" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/StructureDefinition/at-emed-Ingredient> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-emed-Ingredient" ]
+       ] ;
+       fhir:name [ fhir:v "ingredient" ] ;
+       fhir:description [ fhir:v "Defines the Strength and Composition parts of a medicinal product" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/CodeSystem/100000072050> ;
+         fhir:reference [ fhir:v "CodeSystem/100000072050" ]
+       ] ;
+       fhir:name [ fhir:v "Ingredient Role" ] ;
+       fhir:description [ fhir:v "Ingredient Role" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/CodeSystem/100000072051> ;
+         fhir:reference [ fhir:v "CodeSystem/100000072051" ]
+       ] ;
+       fhir:name [ fhir:v "Legal Status From the Supply" ] ;
+       fhir:description [ fhir:v "Legal Status From the Supply" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/StructureDefinition/at-emed-MarketingRegulatedAuthorization> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-emed-MarketingRegulatedAuthorization" ]
+       ] ;
+       fhir:name [ fhir:v "Marketing Regulated Authorization" ] ;
+       fhir:description [ fhir:v "Contains the Authorisation information of a Medicinal Product" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/CodeSystem/220000000000> ;
+         fhir:reference [ fhir:v "CodeSystem/220000000000" ]
+       ] ;
+       fhir:name [ fhir:v "Medicinal Product Name Part Type" ] ;
+       fhir:description [ fhir:v "Medicinal Product Name Part Type" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/StructureDefinition/at-emed-MedicinalProductDefinition> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-emed-MedicinalProductDefinition" ]
+       ] ;
+       fhir:name [ fhir:v "MedicinalProductDefinition-Med" ] ;
+       fhir:description [ fhir:v "Medicinal Product Definition Profiled resource containing a subset of attributes needed for the Austrian eHealth Community" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:resource" ]
@@ -69,6 +201,18 @@
        ] ;
        fhir:name [ fhir:v "MyPatient" ] ;
        fhir:description [ fhir:v "An example profile of the Patient resource." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/StructureDefinition/at-emed-PackagedProductDefinition> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-emed-PackagedProductDefinition" ]
+       ] ;
+       fhir:name [ fhir:v "Packaged product definition" ] ;
+       fhir:description [ fhir:v "Defines the Package information of a Medicinal Product" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -86,6 +230,165 @@
          fhir:v "https://www.ages.at/fhir/medicinalproduct/StructureDefinition/MyPatient"^^xsd:anyURI ;
          fhir:link <https://www.ages.at/fhir/medicinalproduct/StructureDefinition/MyPatient>
        ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/CodeSystem/200000000004> ;
+         fhir:reference [ fhir:v "CodeSystem/200000000004" ]
+       ] ;
+       fhir:name [ fhir:v "Pharmaceutical Dose Form" ] ;
+       fhir:description [ fhir:v "Pharmaceutical Dose Form" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/CodeSystem/100000000008> ;
+         fhir:reference [ fhir:v "CodeSystem/100000000008" ]
+       ] ;
+       fhir:name [ fhir:v "Quantity Operator" ] ;
+       fhir:description [ fhir:v "Quantity Operator" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/CodeSystem/220000000060> ;
+         fhir:reference [ fhir:v "CodeSystem/220000000060" ]
+       ] ;
+       fhir:name [ fhir:v "Regulatory Entitlement" ] ;
+       fhir:description [ fhir:v "Regulatory Entitlement" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/CodeSystem/regulatoryEntitlementStatusCs> ;
+         fhir:reference [ fhir:v "CodeSystem/regulatoryEntitlementStatusCs" ]
+       ] ;
+       fhir:name [ fhir:v "Regulatory Entitlement Status" ] ;
+       fhir:description [ fhir:v "Regulatory Entitlement Status" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/ValueSet/domainVs> ;
+         fhir:reference [ fhir:v "ValueSet/domainVs" ]
+       ] ;
+       fhir:name [ fhir:v "The Domain Value Set" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/ValueSet/ingredientRoleVs> ;
+         fhir:reference [ fhir:v "ValueSet/ingredientRoleVs" ]
+       ] ;
+       fhir:name [ fhir:v "The Ingredient Role Value Set" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/ValueSet/legalStatusForTheSupplyVs> ;
+         fhir:reference [ fhir:v "ValueSet/legalStatusForTheSupplyVs" ]
+       ] ;
+       fhir:name [ fhir:v "The Legal Status of Supply Value Set" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/ValueSet/medicinalProductNamePartTypeVs> ;
+         fhir:reference [ fhir:v "ValueSet/medicinalProductNamePartTypeVs" ]
+       ] ;
+       fhir:name [ fhir:v "The Medicinal Product Name Part Type" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/ValueSet/pharmaceuticalDoseFormVs> ;
+         fhir:reference [ fhir:v "ValueSet/pharmaceuticalDoseFormVs" ]
+       ] ;
+       fhir:name [ fhir:v "The Pharmaceutical Dose Form Value Set" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/ValueSet/quantityOperatorVs> ;
+         fhir:reference [ fhir:v "ValueSet/quantityOperatorVs" ]
+       ] ;
+       fhir:name [ fhir:v "The Quantity Operator Value Set" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/ValueSet/regulatoryEntitlementStatusVs> ;
+         fhir:reference [ fhir:v "ValueSet/regulatoryEntitlementStatusVs" ]
+       ] ;
+       fhir:name [ fhir:v "The Regulatory Entitlement Status Value Set" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/ValueSet/regulatoryEntitlementTypeVs> ;
+         fhir:reference [ fhir:v "ValueSet/regulatoryEntitlementTypeVs" ]
+       ] ;
+       fhir:name [ fhir:v "The Regulatory Entitlement Type Value Set" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/ValueSet/unitsOfPresentationVs> ;
+         fhir:reference [ fhir:v "ValueSet/unitsOfPresentationVs" ]
+       ] ;
+       fhir:name [ fhir:v "The Units of Presentation Value Set" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/CodeSystem/200000000014> ;
+         fhir:reference [ fhir:v "CodeSystem/200000000014" ]
+       ] ;
+       fhir:name [ fhir:v "Units Of Presentation" ] ;
+       fhir:description [ fhir:v "Units Of Presentation" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] ) ;
      fhir:page [
        fhir:source [ fhir:v "toc.html"^^xsd:anyURI ] ;
