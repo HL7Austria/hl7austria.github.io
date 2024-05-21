@@ -9,7 +9,7 @@
   "version" : "0.1.0",
   "name" : "AGESMedicinalProductR5",
   "status" : "draft",
-  "date" : "2024-05-17T07:26:28+00:00",
+  "date" : "2024-05-21T07:48:00+00:00",
   "publisher" : "AGES",
   "contact" : [{
     "name" : "AGES",
@@ -47,6 +47,18 @@
       "valueCode" : "hl7.fhir.uv.tools#0.1.0"
     }],
     "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-emed-AdministrableProductDefinition"
+      },
+      "name" : "Administrable product definition",
+      "description" : "Required for the attribute Route of Administration",
+      "isExample" : false
+    },
+    {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
@@ -148,6 +160,18 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/at-emed-ManufacturedItemDefinition"
+      },
+      "name" : "Manufactured item definition",
+      "description" : "Manufactured Items are required to maintain the link between Ingredient and Packaged Medicinal Product",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/at-emed-MarketingRegulatedAuthorization"
       },
       "name" : "Marketing Regulated Authorization",
@@ -174,7 +198,7 @@
       "reference" : {
         "reference" : "StructureDefinition/at-emed-MedicinalProductDefinition"
       },
-      "name" : "MedicinalProductDefinition-Med",
+      "name" : "MedicinalProductDefinition",
       "description" : "Medicinal Product Definition Profiled resource containing a subset of attributes needed for the Austrian eHealth Community",
       "isExample" : false
     },
@@ -266,6 +290,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/100000073345"
+      },
+      "name" : "Routes and Methods Of Administration",
+      "description" : "Routes and Methods Of Administration",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
@@ -349,6 +385,17 @@
         "reference" : "ValueSet/regulatoryEntitlementTypeVs"
       },
       "name" : "The Regulatory Entitlement Type Value Set",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/routesAndMethodsOfAdministrationVs"
+      },
+      "name" : "The Target Species Value Set",
       "isExample" : false
     },
     {

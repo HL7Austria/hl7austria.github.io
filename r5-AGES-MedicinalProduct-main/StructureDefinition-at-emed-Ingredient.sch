@@ -10,6 +10,13 @@
     single schematron that validates contained resources (if you have any) 
   -->
   <sch:pattern>
+    <sch:title>f:Ingredient</sch:title>
+    <sch:rule context="f:Ingredient">
+      <sch:assert test="count(f:for) &gt;= 1">for: minimum cardinality of 'for' is 1</sch:assert>
+      <sch:assert test="count(f:for) &lt;= 1">for: maximum cardinality of 'for' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:title>f:Ingredient/f:substance</sch:title>
     <sch:rule context="f:Ingredient/f:substance">
       <sch:assert test="count(f:strength) &gt;= 1">strength: minimum cardinality of 'strength' is 1</sch:assert>

@@ -16,7 +16,7 @@
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "AGESMedicinalProductR5"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-05-17T07:26:28+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-05-21T07:48:00+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "AGES"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "AGES" ] ;
@@ -59,6 +59,18 @@
        fhir:value [ fhir:v "hl7.fhir.uv.tools#0.1.0" ]
      ] ) ;
      fhir:resource ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/StructureDefinition/at-emed-AdministrableProductDefinition> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-emed-AdministrableProductDefinition" ]
+       ] ;
+       fhir:name [ fhir:v "Administrable product definition" ] ;
+       fhir:description [ fhir:v "Required for the attribute Route of Administration" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:extension" ]
@@ -160,6 +172,18 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/StructureDefinition/at-emed-ManufacturedItemDefinition> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-emed-ManufacturedItemDefinition" ]
+       ] ;
+       fhir:name [ fhir:v "Manufactured item definition" ] ;
+       fhir:description [ fhir:v "Manufactured Items are required to maintain the link between Ingredient and Packaged Medicinal Product" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <https://www.ages.at/fhir/medicinalproduct/StructureDefinition/at-emed-MarketingRegulatedAuthorization> ;
          fhir:reference [ fhir:v "StructureDefinition/at-emed-MarketingRegulatedAuthorization" ]
        ] ;
@@ -187,7 +211,7 @@
          fhir:link <https://www.ages.at/fhir/medicinalproduct/StructureDefinition/at-emed-MedicinalProductDefinition> ;
          fhir:reference [ fhir:v "StructureDefinition/at-emed-MedicinalProductDefinition" ]
        ] ;
-       fhir:name [ fhir:v "MedicinalProductDefinition-Med" ] ;
+       fhir:name [ fhir:v "MedicinalProductDefinition" ] ;
        fhir:description [ fhir:v "Medicinal Product Definition Profiled resource containing a subset of attributes needed for the Austrian eHealth Community" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
@@ -281,6 +305,18 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/CodeSystem/100000073345> ;
+         fhir:reference [ fhir:v "CodeSystem/100000073345" ]
+       ] ;
+       fhir:name [ fhir:v "Routes and Methods Of Administration" ] ;
+       fhir:description [ fhir:v "Routes and Methods Of Administration" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
@@ -365,6 +401,17 @@
          fhir:reference [ fhir:v "ValueSet/regulatoryEntitlementTypeVs" ]
        ] ;
        fhir:name [ fhir:v "The Regulatory Entitlement Type Value Set" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/ValueSet/routesAndMethodsOfAdministrationVs> ;
+         fhir:reference [ fhir:v "ValueSet/routesAndMethodsOfAdministrationVs" ]
+       ] ;
+       fhir:name [ fhir:v "The Target Species Value Set" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
