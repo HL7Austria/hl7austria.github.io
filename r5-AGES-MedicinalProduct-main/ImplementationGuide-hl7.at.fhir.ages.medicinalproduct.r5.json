@@ -9,7 +9,7 @@
   "version" : "0.1.0",
   "name" : "AGESMedicinalProductR5",
   "status" : "draft",
-  "date" : "2024-05-21T07:48:00+00:00",
+  "date" : "2024-05-21T11:15:54+00:00",
   "publisher" : "AGES",
   "contact" : [{
     "name" : "AGES",
@@ -73,6 +73,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:complex-type"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-medprod-coding"
+      },
+      "name" : "Coding",
+      "description" : "Profiled coding for Austrian medicinal product definitions",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
       }],
       "reference" : {
@@ -88,19 +100,7 @@
         "valueString" : "StructureDefinition:complex-type"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/emaCoding"
-      },
-      "name" : "Ema Coding",
-      "description" : "Ema Coding",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:complex-type"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/RefTermCodeableConcept"
+        "reference" : "StructureDefinition/at-medprod-codeableconcept"
       },
       "name" : "Generic ReferentialTerm CodeableConcept",
       "description" : "Generic ReferentialTerm CodeableConcept",
@@ -112,7 +112,7 @@
         "valueString" : "StructureDefinition:complex-type"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/Identifier-eMed"
+        "reference" : "StructureDefinition/at-medprod-identifier"
       },
       "name" : "Identifier",
       "description" : "Identifier used in the AGES export of medicinal products",
@@ -124,10 +124,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-emed-Ingredient"
+        "reference" : "StructureDefinition/at-medprod-ingredient"
       },
-      "name" : "ingredient",
-      "description" : "Defines the Strength and Composition parts of a medicinal product",
+      "name" : "Ingredient",
+      "description" : "Defines the strength and composition parts of a medicinal product",
       "isExample" : false
     },
     {
@@ -172,10 +172,22 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-emed-MarketingRegulatedAuthorization"
+        "reference" : "StructureDefinition/at-medprod-marketingregulatedauthorization"
       },
       "name" : "Marketing Regulated Authorization",
-      "description" : "Contains the Authorisation information of a Medicinal Product",
+      "description" : "Contains the authorisation information of a medicinal product",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-medprod-medicinalproductdefinition"
+      },
+      "name" : "Medicinal Product Definition",
+      "description" : "Medicinal Product Definition profiled resource containing a subset of attributes needed for the Austrian eHealth Community",
       "isExample" : false
     },
     {
@@ -196,48 +208,11 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-emed-MedicinalProductDefinition"
-      },
-      "name" : "MedicinalProductDefinition",
-      "description" : "Medicinal Product Definition Profiled resource containing a subset of attributes needed for the Austrian eHealth Community",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/MyPatient"
-      },
-      "name" : "MyPatient",
-      "description" : "An example profile of the Patient resource.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/at-emed-PackagedProductDefinition"
+        "reference" : "StructureDefinition/at-medprod-packagedproductdefinition"
       },
       "name" : "Packaged product definition",
-      "description" : "Defines the Package information of a Medicinal Product",
+      "description" : "Defines the package information of a medicinal product",
       "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Patient"
-      }],
-      "reference" : {
-        "reference" : "Patient/PatientExample"
-      },
-      "name" : "PatientExample",
-      "description" : "An example of a patient with a license to krill.",
-      "isExample" : true,
-      "profile" : ["https://www.ages.at/fhir/medicinalproduct/StructureDefinition/MyPatient"]
     },
     {
       "extension" : [{
@@ -430,6 +405,12 @@
         "sourceUrl" : "index.html",
         "name" : "index.html",
         "title" : "Home",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "notes.html",
+        "name" : "notes.html",
+        "title" : "Notes",
         "generation" : "markdown"
       }]
     },

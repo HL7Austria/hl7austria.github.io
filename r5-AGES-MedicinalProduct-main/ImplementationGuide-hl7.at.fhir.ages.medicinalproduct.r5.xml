@@ -9,7 +9,7 @@
   <version value="0.1.0"/>
   <name value="AGESMedicinalProductR5"/>
   <status value="draft"/>
-  <date value="2024-05-21T07:48:00+00:00"/>
+  <date value="2024-05-21T11:15:54+00:00"/>
   <publisher value="AGES"/>
   <contact>
     <name value="AGES"/>
@@ -65,6 +65,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:complex-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-medprod-coding"/>
+      </reference>
+      <name value="Coding"/>
+      <description value="Profiled coding for Austrian medicinal product definitions"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
@@ -79,18 +90,7 @@
         <valueString value="StructureDefinition:complex-type"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/emaCoding"/>
-      </reference>
-      <name value="Ema Coding"/>
-      <description value="Ema Coding"/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:complex-type"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/RefTermCodeableConcept"/>
+        <reference value="StructureDefinition/at-medprod-codeableconcept"/>
       </reference>
       <name value="Generic ReferentialTerm CodeableConcept"/>
       <description value="Generic ReferentialTerm CodeableConcept"/>
@@ -101,7 +101,7 @@
         <valueString value="StructureDefinition:complex-type"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/Identifier-eMed"/>
+        <reference value="StructureDefinition/at-medprod-identifier"/>
       </reference>
       <name value="Identifier"/>
       <description value="Identifier used in the AGES export of medicinal products"/>
@@ -112,10 +112,10 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/at-emed-Ingredient"/>
+        <reference value="StructureDefinition/at-medprod-ingredient"/>
       </reference>
-      <name value="ingredient"/>
-      <description value="Defines the Strength and Composition parts of a medicinal product"/>
+      <name value="Ingredient"/>
+      <description value="Defines the strength and composition parts of a medicinal product"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -156,10 +156,21 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/at-emed-MarketingRegulatedAuthorization"/>
+        <reference value="StructureDefinition/at-medprod-marketingregulatedauthorization"/>
       </reference>
       <name value="Marketing Regulated Authorization"/>
-      <description value="Contains the Authorisation information of a Medicinal Product"/>
+      <description value="Contains the authorisation information of a medicinal product"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-medprod-medicinalproductdefinition"/>
+      </reference>
+      <name value="Medicinal Product Definition"/>
+      <description value="Medicinal Product Definition profiled resource containing a subset of attributes needed for the Austrian eHealth Community"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -178,45 +189,11 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/at-emed-MedicinalProductDefinition"/>
-      </reference>
-      <name value="MedicinalProductDefinition"/>
-      <description value="Medicinal Product Definition Profiled resource containing a subset of attributes needed for the Austrian eHealth Community"/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/MyPatient"/>
-      </reference>
-      <name value="MyPatient"/>
-      <description value="An example profile of the Patient resource."/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/at-emed-PackagedProductDefinition"/>
+        <reference value="StructureDefinition/at-medprod-packagedproductdefinition"/>
       </reference>
       <name value="Packaged product definition"/>
-      <description value="Defines the Package information of a Medicinal Product"/>
+      <description value="Defines the package information of a medicinal product"/>
       <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Patient"/>
-      </extension>
-      <reference>
-        <reference value="Patient/PatientExample"/>
-      </reference>
-      <name value="PatientExample"/>
-      <description value="An example of a patient with a license to krill."/>
-      <isExample value="true"/>
-      <profile value="https://www.ages.at/fhir/medicinalproduct/StructureDefinition/MyPatient"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -393,6 +370,12 @@
         <sourceUrl value="index.html"/>
         <name value="index.html"/>
         <title value="Home"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="notes.html"/>
+        <name value="notes.html"/>
+        <title value="Notes"/>
         <generation value="markdown"/>
       </page>
     </page>
