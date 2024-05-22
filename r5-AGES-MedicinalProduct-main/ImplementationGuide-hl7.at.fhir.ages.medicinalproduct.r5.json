@@ -9,7 +9,7 @@
   "version" : "0.1.0",
   "name" : "AGESMedicinalProductR5",
   "status" : "draft",
-  "date" : "2024-05-21T11:15:54+00:00",
+  "date" : "2024-05-22T12:56:07+00:00",
   "publisher" : "AGES",
   "contact" : [{
     "name" : "AGES",
@@ -52,7 +52,7 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-emed-AdministrableProductDefinition"
+        "reference" : "StructureDefinition/at-medprod-administrableProductDefinition"
       },
       "name" : "Administrable product definition",
       "description" : "Required for the attribute Route of Administration",
@@ -89,6 +89,18 @@
       }],
       "reference" : {
         "reference" : "CodeSystem/100000000004"
+      },
+      "name" : "Domain",
+      "description" : "Domain",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/100000073346"
       },
       "name" : "Domain",
       "description" : "Domain",
@@ -160,7 +172,7 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-emed-ManufacturedItemDefinition"
+        "reference" : "StructureDefinition/at-medprod-manufacturedItemDefinition"
       },
       "name" : "Manufactured item definition",
       "description" : "Manufactured Items are required to maintain the link between Ingredient and Packaged Medicinal Product",
@@ -172,7 +184,7 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-medprod-marketingregulatedauthorization"
+        "reference" : "StructureDefinition/at-medprod-marketingRegulatedAuthorization"
       },
       "name" : "Marketing Regulated Authorization",
       "description" : "Contains the authorisation information of a medicinal product",
@@ -181,10 +193,22 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/100000072052"
+      },
+      "name" : "Marketing Status",
+      "description" : "Marketing Status",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-medprod-medicinalproductdefinition"
+        "reference" : "StructureDefinition/at-medprod-medicinalProductDefinition"
       },
       "name" : "Medicinal Product Definition",
       "description" : "Medicinal Product Definition profiled resource containing a subset of attributes needed for the Austrian eHealth Community",
@@ -208,7 +232,7 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-medprod-packagedproductdefinition"
+        "reference" : "StructureDefinition/at-medprod-packagedProductDefinition"
       },
       "name" : "Packaged product definition",
       "description" : "Defines the package information of a medicinal product",
@@ -313,9 +337,31 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
+        "reference" : "ValueSet/marketingStatusVs"
+      },
+      "name" : "The Marketing Status value Set",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
         "reference" : "ValueSet/medicinalProductNamePartTypeVs"
       },
       "name" : "The Medicinal Product Name Part Type",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/packagingVs"
+      },
+      "name" : "The Packaging Value Set",
       "isExample" : false
     },
     {
