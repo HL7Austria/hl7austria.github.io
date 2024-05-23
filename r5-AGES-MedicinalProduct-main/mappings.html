@@ -133,10 +133,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div>
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
+<p>The following table maps all relevant fields and attributes of the “ASP-Liste” (<a href="https://termgit.elga.gv.at/CodeSystem/asp-liste">https://termgit.elga.gv.at/CodeSystem/asp-liste</a>) and the “eImpf_Impfstoffe” (<a href="https://termgit.elga.gv.at/CodeSystem/eimpf-impfstoffe">https://termgit.elga.gv.at/CodeSystem/eimpf-impfstoffe</a>) to FHIR resources.</p>
+
 <table class="grid">
 <tbody>
   <tr>
-    <th colspan="2"><strong>List of medicinal products"ASP-Liste"</strong></th>
+    <th colspan="2"><strong>List of medicinal products ("ASP-Liste" or "eImpf_Impfstoffe")</strong></th>
     <th colspan="5"><strong>FHIR resources</strong></th>
   </tr>
   <tr>
@@ -151,7 +153,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <tr>
     <td>Pharmaceutical registration number<br />Pharmazentralnummer (PZN)</td>
     <td>.concept[x].code</td>
-    <td>.identifier <br /> system="https://argepharma.fcio.at"</td>
+    <td>.identifier</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -178,7 +180,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td>.name.productName</td>
     <td>-</td>
     <td>-</td>
-    <td></td>
+    <td>-</td>
   </tr>
   <tr>
     <td>Authorization number</td>
@@ -187,7 +189,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td>-</td>
     <td>.identifier</td>
     <td>-</td>
-    <td></td>
+    <td>-</td>
   </tr>
   <tr>
     <td>Authorization state</td>
@@ -196,7 +198,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td>-</td>
     <td>.status.coding</td>
     <td>-</td>
-    <td></td>
+    <td>-</td>
   </tr>
   <tr>
     <td>Authorization holder</td>
@@ -205,7 +207,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td>-</td>
     <td>.holder</td>
     <td>-</td>
-    <td></td>
+    <td>-</td>
   </tr>
   <tr>
     <td>Validity</td>
@@ -229,19 +231,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td>Size / Weight of the package</td>
     <td><code class="highlighter-rouge language-plaintext">GroesseGewicht</code></td>
     <td>.containedItemQuantity.value</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
   </tr>
   <tr>
     <td>Unit to size / weight</td>
     <td><code class="highlighter-rouge language-plaintext">ELGA_MedikationMengenart_code</code><br /><code class="highlighter-rouge language-plaintext">ELGA_MedikationMengenart_text</code></td>
-    <td>.containedItemQuantity.code, .containedItemQuantity.system</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>.containedItemQuantity.code<br />.containedItemQuantity.unit</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
   </tr>
   <tr>
     <td>Prescription requirement state</td>
@@ -264,17 +266,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <tr>
     <td>Immunization target combination</td>
     <td><code class="highlighter-rouge language-plaintext">ELGA_ImpfungIndikation_K_code</code><br /><code class="highlighter-rouge language-plaintext">ELGA_ImpfungIndikation_K_text</code></td>
-    <td>not mapped</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td colspan="5"><i>not mapped</i></td>
   </tr>
   <tr>
     <td>Immunization target</td>
     <td><code class="highlighter-rouge language-plaintext">ELGA_ImpfungIndikation_XX_code</code><br /><code class="highlighter-rouge language-plaintext">ELGA_ImpfungIndikation_XX_text</code></td>
     <td>-</td>
-    <td>.classification.coding</td>
+    <td>.classification.coding.where(system='https://termgit.elga.gv.at/CodeSystem/eimpf-ergaenzung')</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -292,7 +290,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td>ATC code</td>
     <td><code class="highlighter-rouge language-plaintext">ELGA_whoATC_XX_code</code><br /><code class="highlighter-rouge language-plaintext">ELGA_whoATC_XX_text</code></td>
     <td>-</td>
-    <td>.classification.coding</td>
+    <td>.classification.coding.where(system='http://www.whocc.no/atc')</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -313,7 +311,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td>-</td>
     <td>-</td>
     <td>-</td>
-    <td>.substance.code.concept.coding</td>
+    <td>.substance.code.concept.coding.where(system='https://www.ages.at/fhir/GRZ')</td>
   </tr>
   <tr>
     <td>Active ingredient</td>
@@ -322,7 +320,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td>-</td>
     <td>-</td>
     <td>-</td>
-    <td>.substance.code.concept.coding</td>
+    <td>.substance.code.concept.coding.where(system='https://spor.ema.europa.eu/v3/SubstanceDefinition')</td>
   </tr>
   <tr>
     <td>Ingredient Role</td>
@@ -345,10 +343,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <tr>
     <td>Reference Ingredient</td>
     <td><code class="highlighter-rouge language-plaintext">ELGA_ReferenceIngredient_XX_code</code><br /><code class="highlighter-rouge language-plaintext">ELGA_ReferenceIngredient_XX_text</code></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
     <td>.substance.strength.referenceStrength.substance</td>
   </tr>
   <tr>
@@ -373,7 +371,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td>Drug Interaction</td>
     <td><code class="highlighter-rouge language-plaintext">ELGA_MedikationWechselwirkungsRelevant</code></td>
     <td></td>
-    <td>.classification.coding, coding=interactionRelevance</td>
+    <td>.classification.coding.where(system='https://www.ages.at/fhir/interactionRelevance')</td>
     <td></td>
     <td></td>
     <td></td>
@@ -389,7 +387,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </tr>
   <tr>
     <td></td>
-    <td><code class="highlighter-rouge language-plaintext">status</code></td> 
+    <td><code class="highlighter-rouge language-plaintext">status</code></td>
     <td>TODO</td>
     <td></td>
     <td></td>
@@ -417,7 +415,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.ages.at/">AGES</a>.  Package hl7.at.fhir.ages.medicinalproduct.r5#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 5.0.0</a>. Generated <span title="Thu, May 23, 2024 09:15+0000">2024-05-23</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.ages.at/">AGES</a>.  Package hl7.at.fhir.ages.medicinalproduct.r5#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 5.0.0</a>. Generated <span title="Thu, May 23, 2024 10:26+0000">2024-05-23</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
