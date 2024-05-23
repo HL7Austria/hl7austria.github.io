@@ -9,7 +9,7 @@
   <version value="0.1.0"/>
   <name value="AGESMedicinalProductR5"/>
   <status value="draft"/>
-  <date value="2024-05-17T13:17:34+00:00"/>
+  <date value="2024-05-23T11:14:51+00:00"/>
   <publisher value="AGES"/>
   <contact>
     <name value="AGES"/>
@@ -43,6 +43,28 @@
     </extension>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/at-medprod-cs-additionalMedicinalProductNamePartType"/>
+      </reference>
+      <name value="Additional Medicinal Product Name Part Type"/>
+      <description value="Contains additional codes to be used for name parts of a MedicinalProductDefinition"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-medprod-administrableProductDefinition"/>
+      </reference>
+      <name value="Administrable product definition"/>
+      <description value="Required for the attribute Route of Administration"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -69,6 +91,17 @@
       </extension>
       <reference>
         <reference value="CodeSystem/100000000004"/>
+      </reference>
+      <name value="Domain"/>
+      <description value="Domain"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/100000073346"/>
       </reference>
       <name value="Domain"/>
       <description value="Domain"/>
@@ -134,10 +167,10 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/at-medprod-marketingregulatedauthorization"/>
+        <reference value="StructureDefinition/at-medprod-manufacturedItemDefinition"/>
       </reference>
-      <name value="Marketing Regulated Authorization"/>
-      <description value="Contains the authorisation information of a medicinal product"/>
+      <name value="Manufactured item definition"/>
+      <description value="Manufactured Items are required to maintain the link between Ingredient and Packaged Medicinal Product"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -145,10 +178,42 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/at-medprod-medicinalproductdefinition"/>
+        <reference value="StructureDefinition/at-medprod-marketingRegulatedAuthorization"/>
+      </reference>
+      <name value="Marketing Regulated Authorization"/>
+      <description value="Contains the authorisation information of a medicinal product"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/100000072052"/>
+      </reference>
+      <name value="Marketing Status"/>
+      <description value="Marketing Status"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-medprod-medicinalProductDefinition"/>
       </reference>
       <name value="Medicinal Product Definition"/>
       <description value="Medicinal Product Definition profiled resource containing a subset of attributes needed for the Austrian eHealth Community"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/medicinalProductNamePartTypeVs"/>
+      </reference>
+      <name value="Medicinal Product Name Part Type"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -167,7 +232,7 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/at-medprod-packagedproductdefinition"/>
+        <reference value="StructureDefinition/at-medprod-packagedProductDefinition"/>
       </reference>
       <name value="Packaged product definition"/>
       <description value="Defines the package information of a medicinal product"/>
@@ -219,6 +284,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/100000073345"/>
+      </reference>
+      <name value="Routes and Methods Of Administration"/>
+      <description value="Routes and Methods Of Administration"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
@@ -252,9 +328,19 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/medicinalProductNamePartTypeVs"/>
+        <reference value="ValueSet/marketingStatusVs"/>
       </reference>
-      <name value="The Medicinal Product Name Part Type"/>
+      <name value="The Marketing Status value Set"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/packagingVs"/>
+      </reference>
+      <name value="The Packaging Value Set"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -302,6 +388,16 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
+        <reference value="ValueSet/routesAndMethodsOfAdministrationVs"/>
+      </reference>
+      <name value="The Target Species Value Set"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
         <reference value="ValueSet/unitsOfPresentationVs"/>
       </reference>
       <name value="The Units of Presentation Value Set"/>
@@ -327,6 +423,12 @@
         <sourceUrl value="index.html"/>
         <name value="index.html"/>
         <title value="Home"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="mappings.html"/>
+        <name value="mappings.html"/>
+        <title value="Mappings"/>
         <generation value="markdown"/>
       </page>
       <page>

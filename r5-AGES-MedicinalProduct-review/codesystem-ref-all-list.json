@@ -1,6 +1,18 @@
 {
   "codeSystems" : [
     {
+      "url" : "http://hl7.org/fhir/animal-tissue-type",
+      "version" : "5.0.0",
+      "status" : "active",
+      "name" : "AnimalTissueType",
+      "title" : "Animal Tissue Type",
+      "description" : "A tissue type of an animal.",
+      "oids" : ["2.16.840.1.113883.4.642.4.2033"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-animal-tissue-type.html" : "Animal Tissue Type"
+    },
+    {
       "url" : "http://hl7.org/fhir/combined-dose-form",
       "version" : "5.0.0",
       "status" : "active",
@@ -59,18 +71,6 @@
       "uses" : {
       },
       "http://hl7.org/fhir/R5/valueset-ingredient-manufacturer-role.html" : "Ingredient Manufacturer Role"
-    },
-    {
-      "url" : "http://hl7.org/fhir/ingredient-role",
-      "version" : "5.0.0",
-      "status" : "active",
-      "name" : "IngredientRole",
-      "title" : "Ingredient Role",
-      "description" : "A classification of the ingredient identifying its purpose within the product, e.g. active, inactive.",
-      "oids" : ["2.16.840.1.113883.4.642.4.2080"],
-      "uses" : {
-      },
-      "http://hl7.org/fhir/R5/valueset-ingredient-role.html" : "Ingredient Role"
     },
     {
       "url" : "http://hl7.org/fhir/legal-status-of-supply",
@@ -241,18 +241,6 @@
       "http://hl7.org/fhir/R5/valueset-package-type.html" : "Package Type"
     },
     {
-      "url" : "http://hl7.org/fhir/packaging-type",
-      "version" : "5.0.0",
-      "status" : "active",
-      "name" : "PackagingType",
-      "title" : "Packaging Type",
-      "description" : "A type of packaging.",
-      "oids" : ["2.16.840.1.113883.4.642.4.1966"],
-      "uses" : {
-      },
-      "http://hl7.org/fhir/R5/valueset-packaging-type.html" : "Packaging Type"
-    },
-    {
       "url" : "http://hl7.org/fhir/product-intended-use",
       "version" : "5.0.0",
       "status" : "active",
@@ -323,6 +311,18 @@
       "uses" : {
       },
       "http://hl7.org/fhir/R5/valueset-regulated-authorization-type.html" : "Regulated Authorization Type"
+    },
+    {
+      "url" : "http://hl7.org/fhir/target-species",
+      "version" : "5.0.0",
+      "status" : "active",
+      "name" : "TargetSpecies",
+      "title" : "Target Species",
+      "description" : "A species for which a medicinal product is intended.",
+      "oids" : ["2.16.840.1.113883.4.642.4.2030"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R5/valueset-target-species.html" : "Target Species"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/v2-0203",
@@ -404,6 +404,39 @@
       "ValueSet-legalStatusForTheSupplyVs.html" : "The Legal Status of Supply Value Set"
     },
     {
+      "url" : "https://spor.ema.europa.eu/v1/lists/100000072052",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "MarketingStatusCs",
+      "title" : "Marketing Status",
+      "description" : "Marketing Status",
+      "uses" : {
+      },
+      "ValueSet-marketingStatusVs.html" : "The Marketing Status value Set"
+    },
+    {
+      "url" : "https://spor.ema.europa.eu/v1/lists/100000073345",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "RoutesAndMethodsOfAdministrationCs",
+      "title" : "Routes and Methods Of Administration",
+      "description" : "Routes and Methods Of Administration",
+      "uses" : {
+      },
+      "ValueSet-routesAndMethodsOfAdministrationVs.html" : "The Target Species Value Set"
+    },
+    {
+      "url" : "https://spor.ema.europa.eu/v1/lists/100000073346",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "PackagingCs",
+      "title" : "Domain",
+      "description" : "Domain",
+      "uses" : {
+      },
+      "ValueSet-packagingVs.html" : "The Packaging Value Set"
+    },
+    {
       "url" : "https://spor.ema.europa.eu/v1/lists/200000000004",
       "version" : "0.1.0",
       "status" : "active",
@@ -434,7 +467,7 @@
       "description" : "Medicinal Product Name Part Type",
       "uses" : {
       },
-      "ValueSet-medicinalProductNamePartTypeVs.html" : "The Medicinal Product Name Part Type"
+      "ValueSet-medicinalProductNamePartTypeVs.html" : "Medicinal Product Name Part Type"
     },
     {
       "url" : "https://spor.ema.europa.eu/v1/lists/220000000060",
@@ -448,6 +481,17 @@
       "ValueSet-regulatoryEntitlementTypeVs.html" : "The Regulatory Entitlement Type Value Set"
     },
     {
+      "url" : "https://www.ages.at/fhir/medicinalproduct/CodeSystem/at-medprod-cs-additionalMedicinalProductNamePartType",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "AdditionalMedicinalProductNamePartTypeCs",
+      "title" : "Additional Medicinal Product Name Part Type",
+      "description" : "Contains additional codes to be used for name parts of a MedicinalProductDefinition",
+      "uses" : {
+      },
+      "ValueSet-medicinalProductNamePartTypeVs.html" : "Medicinal Product Name Part Type"
+    },
+    {
       "url" : "urn:ietf:bcp:47",
       "version" : "2.0.1",
       "status" : "active",
@@ -457,8 +501,8 @@
       "oids" : ["2.16.840.1.113883.6.121"],
       "uses" : {
       },
-      "http://hl7.org/fhir/R5/valueset-all-languages.html" : "All Languages",
-      "http://hl7.org/fhir/R5/valueset-languages.html" : "Common Languages"
+      "http://hl7.org/fhir/R5/valueset-languages.html" : "Common Languages",
+      "http://hl7.org/fhir/R5/valueset-all-languages.html" : "All Languages"
     },
     {
       "url" : "urn:iso:std:iso:3166",
@@ -470,8 +514,8 @@
       "oids" : ["1.0.3166.1"],
       "uses" : {
       },
-      "http://hl7.org/fhir/R5/valueset-jurisdiction.html" : "Jurisdiction ValueSet",
-      "http://hl7.org/fhir/R5/valueset-country.html" : "Country ValueSet"
+      "http://hl7.org/fhir/R5/valueset-country.html" : "Country ValueSet",
+      "http://hl7.org/fhir/R5/valueset-jurisdiction.html" : "Jurisdiction ValueSet"
     },
     {
       "url" : "urn:iso:std:iso:3166:-2",
