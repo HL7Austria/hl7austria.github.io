@@ -151,7 +151,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <tr>
     <td>Pharmaceutical registration number<br />Pharmazentralnummer (PZN)</td>
     <td>.concept[x].code</td>
-    <td>.identifier</td>
+    <td>.identifier <br /> system="https://argepharma.fcio.at"</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -228,7 +228,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <tr>
     <td>Size / Weight of the package</td>
     <td><code class="highlighter-rouge language-plaintext">GroesseGewicht</code></td>
-    <td>TODO</td>
+    <td>.containedItemQuantity.value</td>
     <td></td>
     <td></td>
     <td></td>
@@ -237,7 +237,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <tr>
     <td>Unit to size / weight</td>
     <td><code class="highlighter-rouge language-plaintext">ELGA_MedikationMengenart_code</code><br /><code class="highlighter-rouge language-plaintext">ELGA_MedikationMengenart_text</code></td>
-    <td>TODO</td>
+    <td>.containedItemQuantity.code, .containedItemQuantity.system</td>
     <td></td>
     <td></td>
     <td></td>
@@ -255,7 +255,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <tr>
     <td>Package type container</td>
     <td><code class="highlighter-rouge language-plaintext">ELGA_Packaging_XX_code</code><br /><code class="highlighter-rouge language-plaintext">ELGA_Packaging_XX_text</code></td>
-    <td>.packaging.type<br /><br />TODO multiple values would have to be allowed</td>
+    <td>.packaging.type<br /> Additional packaging.type can be added in additional packagagings via the self reference .packaging.packaging</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -345,11 +345,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <tr>
     <td>Reference Ingredient</td>
     <td><code class="highlighter-rouge language-plaintext">ELGA_ReferenceIngredient_XX_code</code><br /><code class="highlighter-rouge language-plaintext">ELGA_ReferenceIngredient_XX_text</code></td>
-    <td>TODO</td>
     <td></td>
     <td></td>
     <td></td>
     <td></td>
+    <td>.substance.strength.referenceStrength.substance</td>
   </tr>
   <tr>
     <td>Reference Ingredient Strength &amp; Unit</td>
@@ -358,7 +358,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td>-</td>
     <td>-</td>
     <td>-</td>
-    <td>.substance.strength.referenceStrength</td>
+    <td>.substance.strength.referenceStrength.strength[x]</td>
   </tr>
   <tr>
     <td>Pharmaceutical dose form</td>
@@ -372,8 +372,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <tr>
     <td>Drug Interaction</td>
     <td><code class="highlighter-rouge language-plaintext">ELGA_MedikationWechselwirkungsRelevant</code></td>
-    <td>TODO</td>
     <td></td>
+    <td>.classification.coding, coding=interactionRelevance</td>
     <td></td>
     <td></td>
     <td></td>
@@ -382,14 +382,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td>Domain</td>
     <td><code class="highlighter-rouge language-plaintext">Domaene</code></td>
     <td>-</td>
-    <td>.domain</td>
+    <td>.domain (always human)</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
   </tr>
   <tr>
     <td></td>
-    <td><code class="highlighter-rouge language-plaintext">status</code></td>
+    <td><code class="highlighter-rouge language-plaintext">status</code></td> 
     <td>TODO</td>
     <td></td>
     <td></td>
@@ -417,7 +417,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.ages.at/">AGES</a>.  Package hl7.at.fhir.ages.medicinalproduct.r5#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 5.0.0</a>. Generated <span title="Thu, May 23, 2024 06:53+0000">2024-05-23</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.ages.at/">AGES</a>.  Package hl7.at.fhir.ages.medicinalproduct.r5#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 5.0.0</a>. Generated <span title="Thu, May 23, 2024 09:15+0000">2024-05-23</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
