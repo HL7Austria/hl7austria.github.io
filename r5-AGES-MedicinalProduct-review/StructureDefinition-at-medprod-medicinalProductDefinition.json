@@ -10,7 +10,7 @@
   "name" : "AT_MedicinalProduct_MedicinalProductDefinition",
   "title" : "Medicinal Product Definition",
   "status" : "draft",
-  "date" : "2024-05-23T12:44:01+00:00",
+  "date" : "2024-05-23T12:55:33+00:00",
   "publisher" : "AGES",
   "contact" : [{
     "name" : "AGES",
@@ -2185,6 +2185,40 @@
       }]
     },
     {
+      "id" : "MedicinalProductDefinition.classification.coding:interactionRelevance.extension:codeSystemName",
+      "path" : "MedicinalProductDefinition.classification.coding.extension",
+      "sliceName" : "codeSystemName",
+      "short" : "Extension",
+      "definition" : "Name of the coding system the 'coding' element belongs to as the number is not very explicative",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ema.europa.eu/fhir/extension/codeSystemName"]
+      }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
+    },
+    {
       "id" : "MedicinalProductDefinition.classification.coding:interactionRelevance.system",
       "path" : "MedicinalProductDefinition.classification.coding.system",
       "short" : "Drug intercation",
@@ -2223,129 +2257,6 @@
         "identity" : "orim",
         "map" : "fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"
       }]
-    },
-    {
-      "id" : "MedicinalProductDefinition.classification.coding:interactionRelevance.system.id",
-      "path" : "MedicinalProductDefinition.classification.coding.system.id",
-      "representation" : ["xmlAttr"],
-      "short" : "xml:id (or equivalent in JSON)",
-      "definition" : "unique id for the element within a resource (for internal references)",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.id",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-          "valueUrl" : "string"
-        }],
-        "code" : "http://hl7.org/fhirpath/System.String"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
-    },
-    {
-      "id" : "MedicinalProductDefinition.classification.coding:interactionRelevance.system.extension",
-      "path" : "MedicinalProductDefinition.classification.coding.system.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "ordered" : false,
-        "rules" : "open"
-      },
-      "short" : "Extension",
-      "definition" : "An Extension",
-      "min" : 0,
-      "max" : "*",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
-    },
-    {
-      "id" : "MedicinalProductDefinition.classification.coding:interactionRelevance.system.extension:codeSystemName",
-      "path" : "MedicinalProductDefinition.classification.coding.system.extension",
-      "sliceName" : "codeSystemName",
-      "short" : "Extension",
-      "definition" : "Name of the coding system the 'coding' element belongs to as the number is not very explicative",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["http://ema.europa.eu/fhir/extension/codeSystemName"]
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "isModifier" : false
-    },
-    {
-      "id" : "MedicinalProductDefinition.classification.coding:interactionRelevance.system.value",
-      "path" : "MedicinalProductDefinition.classification.coding.system.value",
-      "representation" : ["xmlAttr"],
-      "short" : "Primitive value for uri",
-      "definition" : "The actual value",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "uri.value",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-          "valueUrl" : "uri"
-        },
-        {
-          "url" : "http://hl7.org/fhir/StructureDefinition/regex",
-          "valueString" : "\\S*"
-        }],
-        "code" : "http://hl7.org/fhirpath/System.String"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
     },
     {
       "id" : "MedicinalProductDefinition.classification.coding:interactionRelevance.version",
@@ -2629,6 +2540,40 @@
       }]
     },
     {
+      "id" : "MedicinalProductDefinition.classification.coding:elgaImpfziel.extension:codeSystemName",
+      "path" : "MedicinalProductDefinition.classification.coding.extension",
+      "sliceName" : "codeSystemName",
+      "short" : "Extension",
+      "definition" : "Name of the coding system the 'coding' element belongs to as the number is not very explicative",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ema.europa.eu/fhir/extension/codeSystemName"]
+      }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
+    },
+    {
       "id" : "MedicinalProductDefinition.classification.coding:elgaImpfziel.system",
       "path" : "MedicinalProductDefinition.classification.coding.system",
       "short" : "Immunization target",
@@ -2667,129 +2612,6 @@
         "identity" : "orim",
         "map" : "fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"
       }]
-    },
-    {
-      "id" : "MedicinalProductDefinition.classification.coding:elgaImpfziel.system.id",
-      "path" : "MedicinalProductDefinition.classification.coding.system.id",
-      "representation" : ["xmlAttr"],
-      "short" : "xml:id (or equivalent in JSON)",
-      "definition" : "unique id for the element within a resource (for internal references)",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.id",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-          "valueUrl" : "string"
-        }],
-        "code" : "http://hl7.org/fhirpath/System.String"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
-    },
-    {
-      "id" : "MedicinalProductDefinition.classification.coding:elgaImpfziel.system.extension",
-      "path" : "MedicinalProductDefinition.classification.coding.system.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "ordered" : false,
-        "rules" : "open"
-      },
-      "short" : "Extension",
-      "definition" : "An Extension",
-      "min" : 0,
-      "max" : "*",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
-    },
-    {
-      "id" : "MedicinalProductDefinition.classification.coding:elgaImpfziel.system.extension:codeSystemName",
-      "path" : "MedicinalProductDefinition.classification.coding.system.extension",
-      "sliceName" : "codeSystemName",
-      "short" : "Extension",
-      "definition" : "Name of the coding system the 'coding' element belongs to as the number is not very explicative",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["http://ema.europa.eu/fhir/extension/codeSystemName"]
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "isModifier" : false
-    },
-    {
-      "id" : "MedicinalProductDefinition.classification.coding:elgaImpfziel.system.value",
-      "path" : "MedicinalProductDefinition.classification.coding.system.value",
-      "representation" : ["xmlAttr"],
-      "short" : "Primitive value for uri",
-      "definition" : "The actual value",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "uri.value",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-          "valueUrl" : "uri"
-        },
-        {
-          "url" : "http://hl7.org/fhir/StructureDefinition/regex",
-          "valueString" : "\\S*"
-        }],
-        "code" : "http://hl7.org/fhirpath/System.String"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
     },
     {
       "id" : "MedicinalProductDefinition.classification.coding:elgaImpfziel.version",
@@ -3073,6 +2895,40 @@
       }]
     },
     {
+      "id" : "MedicinalProductDefinition.classification.coding:ATCCodeRMS.extension:codeSystemName",
+      "path" : "MedicinalProductDefinition.classification.coding.extension",
+      "sliceName" : "codeSystemName",
+      "short" : "Extension",
+      "definition" : "Name of the coding system the 'coding' element belongs to as the number is not very explicative",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ema.europa.eu/fhir/extension/codeSystemName"]
+      }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
+    },
+    {
       "id" : "MedicinalProductDefinition.classification.coding:ATCCodeRMS.system",
       "path" : "MedicinalProductDefinition.classification.coding.system",
       "short" : "Identity of the terminology system",
@@ -3111,129 +2967,6 @@
         "identity" : "orim",
         "map" : "fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"
       }]
-    },
-    {
-      "id" : "MedicinalProductDefinition.classification.coding:ATCCodeRMS.system.id",
-      "path" : "MedicinalProductDefinition.classification.coding.system.id",
-      "representation" : ["xmlAttr"],
-      "short" : "xml:id (or equivalent in JSON)",
-      "definition" : "unique id for the element within a resource (for internal references)",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.id",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-          "valueUrl" : "string"
-        }],
-        "code" : "http://hl7.org/fhirpath/System.String"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
-    },
-    {
-      "id" : "MedicinalProductDefinition.classification.coding:ATCCodeRMS.system.extension",
-      "path" : "MedicinalProductDefinition.classification.coding.system.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "ordered" : false,
-        "rules" : "open"
-      },
-      "short" : "Extension",
-      "definition" : "An Extension",
-      "min" : 0,
-      "max" : "*",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
-    },
-    {
-      "id" : "MedicinalProductDefinition.classification.coding:ATCCodeRMS.system.extension:codeSystemName",
-      "path" : "MedicinalProductDefinition.classification.coding.system.extension",
-      "sliceName" : "codeSystemName",
-      "short" : "Extension",
-      "definition" : "Name of the coding system the 'coding' element belongs to as the number is not very explicative",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["http://ema.europa.eu/fhir/extension/codeSystemName"]
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "isModifier" : false
-    },
-    {
-      "id" : "MedicinalProductDefinition.classification.coding:ATCCodeRMS.system.value",
-      "path" : "MedicinalProductDefinition.classification.coding.system.value",
-      "representation" : ["xmlAttr"],
-      "short" : "Primitive value for uri",
-      "definition" : "The actual value",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "uri.value",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-          "valueUrl" : "uri"
-        },
-        {
-          "url" : "http://hl7.org/fhir/StructureDefinition/regex",
-          "valueString" : "\\S*"
-        }],
-        "code" : "http://hl7.org/fhirpath/System.String"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
     },
     {
       "id" : "MedicinalProductDefinition.classification.coding:ATCCodeRMS.version",
@@ -3517,6 +3250,40 @@
       }]
     },
     {
+      "id" : "MedicinalProductDefinition.classification.coding:ATCCodeWHO.extension:codeSystemName",
+      "path" : "MedicinalProductDefinition.classification.coding.extension",
+      "sliceName" : "codeSystemName",
+      "short" : "Extension",
+      "definition" : "Name of the coding system the 'coding' element belongs to as the number is not very explicative",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ema.europa.eu/fhir/extension/codeSystemName"]
+      }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
+    },
+    {
       "id" : "MedicinalProductDefinition.classification.coding:ATCCodeWHO.system",
       "path" : "MedicinalProductDefinition.classification.coding.system",
       "short" : "WHO ATC",
@@ -3555,129 +3322,6 @@
         "identity" : "orim",
         "map" : "fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"
       }]
-    },
-    {
-      "id" : "MedicinalProductDefinition.classification.coding:ATCCodeWHO.system.id",
-      "path" : "MedicinalProductDefinition.classification.coding.system.id",
-      "representation" : ["xmlAttr"],
-      "short" : "xml:id (or equivalent in JSON)",
-      "definition" : "unique id for the element within a resource (for internal references)",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.id",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-          "valueUrl" : "string"
-        }],
-        "code" : "http://hl7.org/fhirpath/System.String"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
-    },
-    {
-      "id" : "MedicinalProductDefinition.classification.coding:ATCCodeWHO.system.extension",
-      "path" : "MedicinalProductDefinition.classification.coding.system.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "ordered" : false,
-        "rules" : "open"
-      },
-      "short" : "Extension",
-      "definition" : "An Extension",
-      "min" : 0,
-      "max" : "*",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
-    },
-    {
-      "id" : "MedicinalProductDefinition.classification.coding:ATCCodeWHO.system.extension:codeSystemName",
-      "path" : "MedicinalProductDefinition.classification.coding.system.extension",
-      "sliceName" : "codeSystemName",
-      "short" : "Extension",
-      "definition" : "Name of the coding system the 'coding' element belongs to as the number is not very explicative",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["http://ema.europa.eu/fhir/extension/codeSystemName"]
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "isModifier" : false
-    },
-    {
-      "id" : "MedicinalProductDefinition.classification.coding:ATCCodeWHO.system.value",
-      "path" : "MedicinalProductDefinition.classification.coding.system.value",
-      "representation" : ["xmlAttr"],
-      "short" : "Primitive value for uri",
-      "definition" : "The actual value",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "uri.value",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-          "valueUrl" : "uri"
-        },
-        {
-          "url" : "http://hl7.org/fhir/StructureDefinition/regex",
-          "valueString" : "\\S*"
-        }],
-        "code" : "http://hl7.org/fhirpath/System.String"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
     },
     {
       "id" : "MedicinalProductDefinition.classification.coding:ATCCodeWHO.version",

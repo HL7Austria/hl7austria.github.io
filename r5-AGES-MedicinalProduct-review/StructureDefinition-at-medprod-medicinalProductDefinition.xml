@@ -46,7 +46,7 @@
   <name value="AT_MedicinalProduct_MedicinalProductDefinition"/>
   <title value="Medicinal Product Definition"/>
   <status value="draft"/>
-  <date value="2024-05-23T12:44:01+00:00"/>
+  <date value="2024-05-23T12:55:33+00:00"/>
   <publisher value="AGES"/>
   <contact>
     <name value="AGES"/>
@@ -2144,6 +2144,39 @@
         <map value="n/a"/>
       </mapping>
     </element>
+    <element id="MedicinalProductDefinition.classification.coding:interactionRelevance.extension:codeSystemName">
+      <path value="MedicinalProductDefinition.classification.coding.extension"/>
+      <sliceName value="codeSystemName"/>
+      <short value="Extension"/>
+      <definition value="Name of the coding system the 'coding' element belongs to as the number is not very explicative"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+        <profile value="http://ema.europa.eu/fhir/extension/codeSystemName"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+    </element>
     <element id="MedicinalProductDefinition.classification.coding:interactionRelevance.system">
       <path value="MedicinalProductDefinition.classification.coding.system"/>
       <short value="Drug intercation"/>
@@ -2182,122 +2215,6 @@
         <identity value="orim"/>
         <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
       </mapping>
-    </element>
-    <element id="MedicinalProductDefinition.classification.coding:interactionRelevance.system.id">
-      <path value="MedicinalProductDefinition.classification.coding.system.id"/>
-      <representation value="xmlAttr"/>
-      <short value="xml:id (or equivalent in JSON)"/>
-      <definition value="unique id for the element within a resource (for internal references)"/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Element.id"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
-          <valueUrl value="string"/>
-        </extension>
-        <code value="http://hl7.org/fhirpath/System.String"/>
-      </type>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
-    </element>
-    <element id="MedicinalProductDefinition.classification.coding:interactionRelevance.system.extension">
-      <path value="MedicinalProductDefinition.classification.coding.system.extension"/>
-      <slicing>
-        <discriminator>
-          <type value="value"/>
-          <path value="url"/>
-        </discriminator>
-        <ordered value="false"/>
-        <rules value="open"/>
-      </slicing>
-      <short value="Extension"/>
-      <definition value="An Extension"/>
-      <min value="0"/>
-      <max value="*"/>
-      <base>
-        <path value="Element.extension"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Extension"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <constraint>
-        <key value="ext-1"/>
-        <severity value="error"/>
-        <human value="Must have either extensions or value[x], not both"/>
-        <expression value="extension.exists() != value.exists()"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
-    </element>
-    <element id="MedicinalProductDefinition.classification.coding:interactionRelevance.system.extension:codeSystemName">
-      <path value="MedicinalProductDefinition.classification.coding.system.extension"/>
-      <sliceName value="codeSystemName"/>
-      <short value="Extension"/>
-      <definition value="Name of the coding system the 'coding' element belongs to as the number is not very explicative"/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Element.extension"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Extension"/>
-        <profile value="http://ema.europa.eu/fhir/extension/codeSystemName"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <constraint>
-        <key value="ext-1"/>
-        <severity value="error"/>
-        <human value="Must have either extensions or value[x], not both"/>
-        <expression value="extension.exists() != value.exists()"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-      </constraint>
-      <isModifier value="false"/>
-    </element>
-    <element id="MedicinalProductDefinition.classification.coding:interactionRelevance.system.value">
-      <path value="MedicinalProductDefinition.classification.coding.system.value"/>
-      <representation value="xmlAttr"/>
-      <short value="Primitive value for uri"/>
-      <definition value="The actual value"/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="uri.value"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
-          <valueUrl value="uri"/>
-        </extension>
-        <extension url="http://hl7.org/fhir/StructureDefinition/regex">
-          <valueString value="\S*"/>
-        </extension>
-        <code value="http://hl7.org/fhirpath/System.String"/>
-      </type>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
     </element>
     <element id="MedicinalProductDefinition.classification.coding:interactionRelevance.version">
       <path value="MedicinalProductDefinition.classification.coding.version"/>
@@ -2571,6 +2488,39 @@
         <map value="n/a"/>
       </mapping>
     </element>
+    <element id="MedicinalProductDefinition.classification.coding:elgaImpfziel.extension:codeSystemName">
+      <path value="MedicinalProductDefinition.classification.coding.extension"/>
+      <sliceName value="codeSystemName"/>
+      <short value="Extension"/>
+      <definition value="Name of the coding system the 'coding' element belongs to as the number is not very explicative"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+        <profile value="http://ema.europa.eu/fhir/extension/codeSystemName"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+    </element>
     <element id="MedicinalProductDefinition.classification.coding:elgaImpfziel.system">
       <path value="MedicinalProductDefinition.classification.coding.system"/>
       <short value="Immunization target"/>
@@ -2609,122 +2559,6 @@
         <identity value="orim"/>
         <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
       </mapping>
-    </element>
-    <element id="MedicinalProductDefinition.classification.coding:elgaImpfziel.system.id">
-      <path value="MedicinalProductDefinition.classification.coding.system.id"/>
-      <representation value="xmlAttr"/>
-      <short value="xml:id (or equivalent in JSON)"/>
-      <definition value="unique id for the element within a resource (for internal references)"/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Element.id"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
-          <valueUrl value="string"/>
-        </extension>
-        <code value="http://hl7.org/fhirpath/System.String"/>
-      </type>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
-    </element>
-    <element id="MedicinalProductDefinition.classification.coding:elgaImpfziel.system.extension">
-      <path value="MedicinalProductDefinition.classification.coding.system.extension"/>
-      <slicing>
-        <discriminator>
-          <type value="value"/>
-          <path value="url"/>
-        </discriminator>
-        <ordered value="false"/>
-        <rules value="open"/>
-      </slicing>
-      <short value="Extension"/>
-      <definition value="An Extension"/>
-      <min value="0"/>
-      <max value="*"/>
-      <base>
-        <path value="Element.extension"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Extension"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <constraint>
-        <key value="ext-1"/>
-        <severity value="error"/>
-        <human value="Must have either extensions or value[x], not both"/>
-        <expression value="extension.exists() != value.exists()"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
-    </element>
-    <element id="MedicinalProductDefinition.classification.coding:elgaImpfziel.system.extension:codeSystemName">
-      <path value="MedicinalProductDefinition.classification.coding.system.extension"/>
-      <sliceName value="codeSystemName"/>
-      <short value="Extension"/>
-      <definition value="Name of the coding system the 'coding' element belongs to as the number is not very explicative"/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Element.extension"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Extension"/>
-        <profile value="http://ema.europa.eu/fhir/extension/codeSystemName"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <constraint>
-        <key value="ext-1"/>
-        <severity value="error"/>
-        <human value="Must have either extensions or value[x], not both"/>
-        <expression value="extension.exists() != value.exists()"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-      </constraint>
-      <isModifier value="false"/>
-    </element>
-    <element id="MedicinalProductDefinition.classification.coding:elgaImpfziel.system.value">
-      <path value="MedicinalProductDefinition.classification.coding.system.value"/>
-      <representation value="xmlAttr"/>
-      <short value="Primitive value for uri"/>
-      <definition value="The actual value"/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="uri.value"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
-          <valueUrl value="uri"/>
-        </extension>
-        <extension url="http://hl7.org/fhir/StructureDefinition/regex">
-          <valueString value="\S*"/>
-        </extension>
-        <code value="http://hl7.org/fhirpath/System.String"/>
-      </type>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
     </element>
     <element id="MedicinalProductDefinition.classification.coding:elgaImpfziel.version">
       <path value="MedicinalProductDefinition.classification.coding.version"/>
@@ -2998,6 +2832,39 @@
         <map value="n/a"/>
       </mapping>
     </element>
+    <element id="MedicinalProductDefinition.classification.coding:ATCCodeRMS.extension:codeSystemName">
+      <path value="MedicinalProductDefinition.classification.coding.extension"/>
+      <sliceName value="codeSystemName"/>
+      <short value="Extension"/>
+      <definition value="Name of the coding system the 'coding' element belongs to as the number is not very explicative"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+        <profile value="http://ema.europa.eu/fhir/extension/codeSystemName"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+    </element>
     <element id="MedicinalProductDefinition.classification.coding:ATCCodeRMS.system">
       <path value="MedicinalProductDefinition.classification.coding.system"/>
       <short value="Identity of the terminology system"/>
@@ -3036,122 +2903,6 @@
         <identity value="orim"/>
         <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
       </mapping>
-    </element>
-    <element id="MedicinalProductDefinition.classification.coding:ATCCodeRMS.system.id">
-      <path value="MedicinalProductDefinition.classification.coding.system.id"/>
-      <representation value="xmlAttr"/>
-      <short value="xml:id (or equivalent in JSON)"/>
-      <definition value="unique id for the element within a resource (for internal references)"/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Element.id"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
-          <valueUrl value="string"/>
-        </extension>
-        <code value="http://hl7.org/fhirpath/System.String"/>
-      </type>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
-    </element>
-    <element id="MedicinalProductDefinition.classification.coding:ATCCodeRMS.system.extension">
-      <path value="MedicinalProductDefinition.classification.coding.system.extension"/>
-      <slicing>
-        <discriminator>
-          <type value="value"/>
-          <path value="url"/>
-        </discriminator>
-        <ordered value="false"/>
-        <rules value="open"/>
-      </slicing>
-      <short value="Extension"/>
-      <definition value="An Extension"/>
-      <min value="0"/>
-      <max value="*"/>
-      <base>
-        <path value="Element.extension"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Extension"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <constraint>
-        <key value="ext-1"/>
-        <severity value="error"/>
-        <human value="Must have either extensions or value[x], not both"/>
-        <expression value="extension.exists() != value.exists()"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
-    </element>
-    <element id="MedicinalProductDefinition.classification.coding:ATCCodeRMS.system.extension:codeSystemName">
-      <path value="MedicinalProductDefinition.classification.coding.system.extension"/>
-      <sliceName value="codeSystemName"/>
-      <short value="Extension"/>
-      <definition value="Name of the coding system the 'coding' element belongs to as the number is not very explicative"/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Element.extension"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Extension"/>
-        <profile value="http://ema.europa.eu/fhir/extension/codeSystemName"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <constraint>
-        <key value="ext-1"/>
-        <severity value="error"/>
-        <human value="Must have either extensions or value[x], not both"/>
-        <expression value="extension.exists() != value.exists()"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-      </constraint>
-      <isModifier value="false"/>
-    </element>
-    <element id="MedicinalProductDefinition.classification.coding:ATCCodeRMS.system.value">
-      <path value="MedicinalProductDefinition.classification.coding.system.value"/>
-      <representation value="xmlAttr"/>
-      <short value="Primitive value for uri"/>
-      <definition value="The actual value"/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="uri.value"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
-          <valueUrl value="uri"/>
-        </extension>
-        <extension url="http://hl7.org/fhir/StructureDefinition/regex">
-          <valueString value="\S*"/>
-        </extension>
-        <code value="http://hl7.org/fhirpath/System.String"/>
-      </type>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
     </element>
     <element id="MedicinalProductDefinition.classification.coding:ATCCodeRMS.version">
       <path value="MedicinalProductDefinition.classification.coding.version"/>
@@ -3425,6 +3176,39 @@
         <map value="n/a"/>
       </mapping>
     </element>
+    <element id="MedicinalProductDefinition.classification.coding:ATCCodeWHO.extension:codeSystemName">
+      <path value="MedicinalProductDefinition.classification.coding.extension"/>
+      <sliceName value="codeSystemName"/>
+      <short value="Extension"/>
+      <definition value="Name of the coding system the 'coding' element belongs to as the number is not very explicative"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+        <profile value="http://ema.europa.eu/fhir/extension/codeSystemName"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+    </element>
     <element id="MedicinalProductDefinition.classification.coding:ATCCodeWHO.system">
       <path value="MedicinalProductDefinition.classification.coding.system"/>
       <short value="WHO ATC"/>
@@ -3463,122 +3247,6 @@
         <identity value="orim"/>
         <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
       </mapping>
-    </element>
-    <element id="MedicinalProductDefinition.classification.coding:ATCCodeWHO.system.id">
-      <path value="MedicinalProductDefinition.classification.coding.system.id"/>
-      <representation value="xmlAttr"/>
-      <short value="xml:id (or equivalent in JSON)"/>
-      <definition value="unique id for the element within a resource (for internal references)"/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Element.id"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
-          <valueUrl value="string"/>
-        </extension>
-        <code value="http://hl7.org/fhirpath/System.String"/>
-      </type>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
-    </element>
-    <element id="MedicinalProductDefinition.classification.coding:ATCCodeWHO.system.extension">
-      <path value="MedicinalProductDefinition.classification.coding.system.extension"/>
-      <slicing>
-        <discriminator>
-          <type value="value"/>
-          <path value="url"/>
-        </discriminator>
-        <ordered value="false"/>
-        <rules value="open"/>
-      </slicing>
-      <short value="Extension"/>
-      <definition value="An Extension"/>
-      <min value="0"/>
-      <max value="*"/>
-      <base>
-        <path value="Element.extension"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Extension"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <constraint>
-        <key value="ext-1"/>
-        <severity value="error"/>
-        <human value="Must have either extensions or value[x], not both"/>
-        <expression value="extension.exists() != value.exists()"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
-    </element>
-    <element id="MedicinalProductDefinition.classification.coding:ATCCodeWHO.system.extension:codeSystemName">
-      <path value="MedicinalProductDefinition.classification.coding.system.extension"/>
-      <sliceName value="codeSystemName"/>
-      <short value="Extension"/>
-      <definition value="Name of the coding system the 'coding' element belongs to as the number is not very explicative"/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Element.extension"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Extension"/>
-        <profile value="http://ema.europa.eu/fhir/extension/codeSystemName"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <constraint>
-        <key value="ext-1"/>
-        <severity value="error"/>
-        <human value="Must have either extensions or value[x], not both"/>
-        <expression value="extension.exists() != value.exists()"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-      </constraint>
-      <isModifier value="false"/>
-    </element>
-    <element id="MedicinalProductDefinition.classification.coding:ATCCodeWHO.system.value">
-      <path value="MedicinalProductDefinition.classification.coding.system.value"/>
-      <representation value="xmlAttr"/>
-      <short value="Primitive value for uri"/>
-      <definition value="The actual value"/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="uri.value"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
-          <valueUrl value="uri"/>
-        </extension>
-        <extension url="http://hl7.org/fhir/StructureDefinition/regex">
-          <valueString value="\S*"/>
-        </extension>
-        <code value="http://hl7.org/fhirpath/System.String"/>
-      </type>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
     </element>
     <element id="MedicinalProductDefinition.classification.coding:ATCCodeWHO.version">
       <path value="MedicinalProductDefinition.classification.coding.version"/>

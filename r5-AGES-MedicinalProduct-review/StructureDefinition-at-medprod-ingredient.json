@@ -10,7 +10,7 @@
   "name" : "AT_MedicinalProduct_Ingredient",
   "title" : "Ingredient",
   "status" : "draft",
-  "date" : "2024-05-23T12:44:01+00:00",
+  "date" : "2024-05-23T12:55:33+00:00",
   "publisher" : "AGES",
   "contact" : [{
     "name" : "AGES",
@@ -1431,6 +1431,40 @@
       }]
     },
     {
+      "id" : "Ingredient.substance.code.concept.coding:substancePharos.extension:codeSystemName",
+      "path" : "Ingredient.substance.code.concept.coding.extension",
+      "sliceName" : "codeSystemName",
+      "short" : "Extension",
+      "definition" : "Name of the coding system the 'coding' element belongs to as the number is not very explicative",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ema.europa.eu/fhir/extension/codeSystemName"]
+      }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
+    },
+    {
       "id" : "Ingredient.substance.code.concept.coding:substancePharos.system",
       "path" : "Ingredient.substance.code.concept.coding.system",
       "short" : "Substance",
@@ -1469,129 +1503,6 @@
         "identity" : "orim",
         "map" : "fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"
       }]
-    },
-    {
-      "id" : "Ingredient.substance.code.concept.coding:substancePharos.system.id",
-      "path" : "Ingredient.substance.code.concept.coding.system.id",
-      "representation" : ["xmlAttr"],
-      "short" : "xml:id (or equivalent in JSON)",
-      "definition" : "unique id for the element within a resource (for internal references)",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.id",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-          "valueUrl" : "string"
-        }],
-        "code" : "http://hl7.org/fhirpath/System.String"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
-    },
-    {
-      "id" : "Ingredient.substance.code.concept.coding:substancePharos.system.extension",
-      "path" : "Ingredient.substance.code.concept.coding.system.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "ordered" : false,
-        "rules" : "open"
-      },
-      "short" : "Extension",
-      "definition" : "An Extension",
-      "min" : 0,
-      "max" : "*",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
-    },
-    {
-      "id" : "Ingredient.substance.code.concept.coding:substancePharos.system.extension:codeSystemName",
-      "path" : "Ingredient.substance.code.concept.coding.system.extension",
-      "sliceName" : "codeSystemName",
-      "short" : "Extension",
-      "definition" : "Name of the coding system the 'coding' element belongs to as the number is not very explicative",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["http://ema.europa.eu/fhir/extension/codeSystemName"]
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "isModifier" : false
-    },
-    {
-      "id" : "Ingredient.substance.code.concept.coding:substancePharos.system.value",
-      "path" : "Ingredient.substance.code.concept.coding.system.value",
-      "representation" : ["xmlAttr"],
-      "short" : "Primitive value for uri",
-      "definition" : "The actual value",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "uri.value",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-          "valueUrl" : "uri"
-        },
-        {
-          "url" : "http://hl7.org/fhir/StructureDefinition/regex",
-          "valueString" : "\\S*"
-        }],
-        "code" : "http://hl7.org/fhirpath/System.String"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
     },
     {
       "id" : "Ingredient.substance.code.concept.coding:substancePharos.version",
@@ -1875,6 +1786,40 @@
       }]
     },
     {
+      "id" : "Ingredient.substance.code.concept.coding:substanceSMS.extension:codeSystemName",
+      "path" : "Ingredient.substance.code.concept.coding.extension",
+      "sliceName" : "codeSystemName",
+      "short" : "Extension",
+      "definition" : "Name of the coding system the 'coding' element belongs to as the number is not very explicative",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ema.europa.eu/fhir/extension/codeSystemName"]
+      }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
+    },
+    {
       "id" : "Ingredient.substance.code.concept.coding:substanceSMS.system",
       "path" : "Ingredient.substance.code.concept.coding.system",
       "short" : "Active ingredient",
@@ -1913,129 +1858,6 @@
         "identity" : "orim",
         "map" : "fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"
       }]
-    },
-    {
-      "id" : "Ingredient.substance.code.concept.coding:substanceSMS.system.id",
-      "path" : "Ingredient.substance.code.concept.coding.system.id",
-      "representation" : ["xmlAttr"],
-      "short" : "xml:id (or equivalent in JSON)",
-      "definition" : "unique id for the element within a resource (for internal references)",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.id",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-          "valueUrl" : "string"
-        }],
-        "code" : "http://hl7.org/fhirpath/System.String"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
-    },
-    {
-      "id" : "Ingredient.substance.code.concept.coding:substanceSMS.system.extension",
-      "path" : "Ingredient.substance.code.concept.coding.system.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "ordered" : false,
-        "rules" : "open"
-      },
-      "short" : "Extension",
-      "definition" : "An Extension",
-      "min" : 0,
-      "max" : "*",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
-    },
-    {
-      "id" : "Ingredient.substance.code.concept.coding:substanceSMS.system.extension:codeSystemName",
-      "path" : "Ingredient.substance.code.concept.coding.system.extension",
-      "sliceName" : "codeSystemName",
-      "short" : "Extension",
-      "definition" : "Name of the coding system the 'coding' element belongs to as the number is not very explicative",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Element.extension",
-        "min" : 0,
-        "max" : "*"
-      },
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["http://ema.europa.eu/fhir/extension/codeSystemName"]
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "ext-1",
-        "severity" : "error",
-        "human" : "Must have either extensions or value[x], not both",
-        "expression" : "extension.exists() != value.exists()",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
-      }],
-      "isModifier" : false
-    },
-    {
-      "id" : "Ingredient.substance.code.concept.coding:substanceSMS.system.value",
-      "path" : "Ingredient.substance.code.concept.coding.system.value",
-      "representation" : ["xmlAttr"],
-      "short" : "Primitive value for uri",
-      "definition" : "The actual value",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "uri.value",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-          "valueUrl" : "uri"
-        },
-        {
-          "url" : "http://hl7.org/fhir/StructureDefinition/regex",
-          "valueString" : "\\S*"
-        }],
-        "code" : "http://hl7.org/fhirpath/System.String"
-      }],
-      "isModifier" : false,
-      "isSummary" : false
     },
     {
       "id" : "Ingredient.substance.code.concept.coding:substanceSMS.version",

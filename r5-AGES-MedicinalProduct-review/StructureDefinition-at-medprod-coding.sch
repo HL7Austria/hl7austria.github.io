@@ -12,17 +12,10 @@
   <sch:pattern>
     <sch:title>f:Coding</sch:title>
     <sch:rule context="f:Coding">
+      <sch:assert test="count(f:extension[@url = 'http://ema.europa.eu/fhir/extension/codeSystemName']) &lt;= 1">extension with URL = 'http://ema.europa.eu/fhir/extension/codeSystemName': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:system) &gt;= 1">system: minimum cardinality of 'system' is 1</sch:assert>
       <sch:assert test="count(f:code) &gt;= 1">code: minimum cardinality of 'code' is 1</sch:assert>
       <sch:assert test="count(f:display) &gt;= 1">display: minimum cardinality of 'display' is 1</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:title>f:Coding/f:system</sch:title>
-    <sch:rule context="f:Coding/f:system">
-      <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://ema.europa.eu/fhir/extension/codeSystemName']) &lt;= 1">extension with URL = 'http://ema.europa.eu/fhir/extension/codeSystemName': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:value) &lt;= 1">value: maximum cardinality of 'value' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>
