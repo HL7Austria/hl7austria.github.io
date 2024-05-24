@@ -9,7 +9,7 @@
   <version value="0.1.0"/>
   <name value="AGESMedicinalProductR5"/>
   <status value="draft"/>
-  <date value="2024-05-23T10:26:48+00:00"/>
+  <date value="2024-05-24T08:22:08+00:00"/>
   <publisher value="AGES"/>
   <contact>
     <name value="AGES"/>
@@ -41,6 +41,17 @@
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
       <valueCode value="hl7.fhir.uv.tools#0.1.0"/>
     </extension>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/at-medprod-cs-additionalMedicinalProductNamePartType"/>
+      </reference>
+      <name value="Additional Medicinal Product Name Part Type"/>
+      <description value="Contains additional codes to be used for name parts of a MedicinalProductDefinition"/>
+      <isExample value="false"/>
+    </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
@@ -197,6 +208,16 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/medicinalProductNamePartTypeVs"/>
+      </reference>
+      <name value="Medicinal Product Name Part Type"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
@@ -317,16 +338,6 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/medicinalProductNamePartTypeVs"/>
-      </reference>
-      <name value="The Medicinal Product Name Part Type"/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
         <reference value="ValueSet/packagingVs"/>
       </reference>
       <name value="The Packaging Value Set"/>
@@ -417,13 +428,7 @@
       <page>
         <sourceUrl value="mappings.html"/>
         <name value="mappings.html"/>
-        <title value="Mappings"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <sourceUrl value="notes.html"/>
-        <name value="notes.html"/>
-        <title value="Notes"/>
+        <title value="Representing medicinal product code systems as FHIR resources"/>
         <generation value="markdown"/>
       </page>
     </page>

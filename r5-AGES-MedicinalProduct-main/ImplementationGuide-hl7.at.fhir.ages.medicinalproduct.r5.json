@@ -9,7 +9,7 @@
   "version" : "0.1.0",
   "name" : "AGESMedicinalProductR5",
   "status" : "draft",
-  "date" : "2024-05-23T10:26:48+00:00",
+  "date" : "2024-05-24T08:22:08+00:00",
   "publisher" : "AGES",
   "contact" : [{
     "name" : "AGES",
@@ -47,6 +47,18 @@
       "valueCode" : "hl7.fhir.uv.tools#0.1.0"
     }],
     "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/at-medprod-cs-additionalMedicinalProductNamePartType"
+      },
+      "name" : "Additional Medicinal Product Name Part Type",
+      "description" : "Contains additional codes to be used for name parts of a MedicinalProductDefinition",
+      "isExample" : false
+    },
+    {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
@@ -217,6 +229,17 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/medicinalProductNamePartTypeVs"
+      },
+      "name" : "Medicinal Product Name Part Type",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
       }],
       "reference" : {
@@ -348,17 +371,6 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/medicinalProductNamePartTypeVs"
-      },
-      "name" : "The Medicinal Product Name Part Type",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
         "reference" : "ValueSet/packagingVs"
       },
       "name" : "The Packaging Value Set",
@@ -456,13 +468,7 @@
       {
         "sourceUrl" : "mappings.html",
         "name" : "mappings.html",
-        "title" : "Mappings",
-        "generation" : "markdown"
-      },
-      {
-        "sourceUrl" : "notes.html",
-        "name" : "notes.html",
-        "title" : "Notes",
+        "title" : "Representing medicinal product code systems as FHIR resources",
         "generation" : "markdown"
       }]
     },

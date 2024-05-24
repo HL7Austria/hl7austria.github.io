@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Mappings -  v0.1.0</title>
+    <title>Representing medicinal product code systems as FHIR resources -  v0.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -80,6 +80,9 @@
     <a href="index.html">Home</a>
   </li>
   <li>
+    <a href="mappings.html">Mapping</a>
+  </li>
+  <li>
     <a href="artifacts.html">Artifacts</a>
   </li>
 </ul>
@@ -94,7 +97,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Mappings</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Representing medicinal product code systems as FHIR resources</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -115,7 +118,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   <!--ReleaseHeader--><p id="publish-box">AGESMedicinalProductR5 - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://www.ages.at/fhir/medicinalproduct/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
-  <h2>Mappings</h2>
+  <h2>Representing medicinal product code systems as FHIR resources</h2>
   
 
 
@@ -152,8 +155,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </tr>
   <tr>
     <td>Pharmaceutical registration number<br />Pharmazentralnummer (PZN)</td>
-    <td>.concept[x].code</td>
-    <td>.identifier</td>
+    <td><code class="highlighter-rouge language-plaintext">.concept[x].code</code></td>
+    <td><code class="highlighter-rouge language-plaintext">.identifier</code></td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -161,23 +164,23 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </tr>
   <tr>
     <td>Trade name</td>
-    <td>.concept[x].display</td>
-    <td>TODO</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td><code class="highlighter-rouge language-plaintext">.concept[x].display</code></td>
+    <td>-</td>
+    <td><code class="highlighter-rouge language-plaintext">.name.part.where(type.coding.code='tradeName')</code></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
   </tr>
   <tr>
     <td></td>
-    <td>The following are concept properties which are represented <br />by the following FHIR path:<br /><br />.concept[x].property.where(code='name-of-property')<br /><br />A property containing XX in its name may occur more<br />than once.</td>
+    <td>The following are concept properties which are represented by the following FHIR path:<br /><br /><code class="highlighter-rouge language-plaintext">.concept[x].property.where(code='name-of-property')</code><br /><br />A property containing <code class="highlighter-rouge language-plaintext">XX</code> in its name may occur more than once.</td>
     <td colspan="5"></td>
   </tr>
   <tr>
     <td>Authorization name</td>
     <td><code class="highlighter-rouge language-plaintext">Bezeichnung_Arzneispezialitaet_Zulassung</code></td>
     <td>-</td>
-    <td>.name.productName</td>
+    <td><code class="highlighter-rouge language-plaintext">.name.productName</code></td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -187,7 +190,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td><code class="highlighter-rouge language-plaintext">ZulassungsNummer</code></td>
     <td>-</td>
     <td>-</td>
-    <td>.identifier</td>
+    <td><code class="highlighter-rouge language-plaintext">.identifier</code></td>
     <td>-</td>
     <td>-</td>
   </tr>
@@ -196,7 +199,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td><code class="highlighter-rouge language-plaintext">ELGA_Zulassungsstatus</code></td>
     <td>-</td>
     <td>-</td>
-    <td>.status.coding</td>
+    <td><code class="highlighter-rouge language-plaintext">.status.coding</code></td>
     <td>-</td>
     <td>-</td>
   </tr>
@@ -205,7 +208,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td><code class="highlighter-rouge language-plaintext">ELGA_Inhaber</code></td>
     <td>-</td>
     <td>-</td>
-    <td>.holder</td>
+    <td><code class="highlighter-rouge language-plaintext">.holder</code></td>
     <td>-</td>
     <td>-</td>
   </tr>
@@ -221,7 +224,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <tr>
     <td>Delivery state of the package</td>
     <td><code class="highlighter-rouge language-plaintext">ELGA_MedikationPackungsstatusLieferbar</code></td>
-    <td>.marketingStatus.status.coding.code</td>
+    <td><code class="highlighter-rouge language-plaintext">.marketingStatus.status.coding.code</code></td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -230,7 +233,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <tr>
     <td>Size / Weight of the package</td>
     <td><code class="highlighter-rouge language-plaintext">GroesseGewicht</code></td>
-    <td>.containedItemQuantity.value</td>
+    <td><code class="highlighter-rouge language-plaintext">.containedItemQuantity.value</code></td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -239,7 +242,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <tr>
     <td>Unit to size / weight</td>
     <td><code class="highlighter-rouge language-plaintext">ELGA_MedikationMengenart_code</code><br /><code class="highlighter-rouge language-plaintext">ELGA_MedikationMengenart_text</code></td>
-    <td>.containedItemQuantity.code<br />.containedItemQuantity.unit</td>
+    <td><code class="highlighter-rouge language-plaintext">.containedItemQuantity.code<br />.containedItemQuantity.unit</code></td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -249,7 +252,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td>Prescription requirement state</td>
     <td><code class="highlighter-rouge language-plaintext">ELGA_MedikationRezeptpflichtStatus_code</code><br /><code class="highlighter-rouge language-plaintext">ELGA_MedikationRezeptpflichtStatus_text</code></td>
     <td>-</td>
-    <td>.legalStatusOfSupply.coding</td>
+    <td><code class="highlighter-rouge language-plaintext">.legalStatusOfSupply.coding</code></td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -257,7 +260,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <tr>
     <td>Package type container</td>
     <td><code class="highlighter-rouge language-plaintext">ELGA_Packaging_XX_code</code><br /><code class="highlighter-rouge language-plaintext">ELGA_Packaging_XX_text</code></td>
-    <td>.packaging.type<br /> Additional packaging.type can be added in additional packagagings via the self reference .packaging.packaging</td>
+    <td><code class="highlighter-rouge language-plaintext">.packaging.type</code><br /><br />Additional <code class="highlighter-rouge language-plaintext">.packaging.type</code> can be added in additional packagagings via the self reference <code class="highlighter-rouge language-plaintext">.packaging.packaging</code>.</td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -272,7 +275,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td>Immunization target</td>
     <td><code class="highlighter-rouge language-plaintext">ELGA_ImpfungIndikation_XX_code</code><br /><code class="highlighter-rouge language-plaintext">ELGA_ImpfungIndikation_XX_text</code></td>
     <td>-</td>
-    <td>.classification.coding.where(system='https://termgit.elga.gv.at/CodeSystem/eimpf-ergaenzung')</td>
+    <td><code class="highlighter-rouge language-plaintext">.classification.coding.where(system=<br />
+    'https://termgit.elga.gv.at/CodeSystem/eimpf-ergaenzung')</code></td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -281,7 +285,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td>Part name</td>
     <td><code class="highlighter-rouge language-plaintext">ELGA_PartName</code></td>
     <td>-</td>
-    <td>.name.part</td>
+    <td><code class="highlighter-rouge language-plaintext">.name.part.where(type.coding.code=<br />'220000000002')</code></td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -290,7 +294,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td>ATC code</td>
     <td><code class="highlighter-rouge language-plaintext">ELGA_whoATC_XX_code</code><br /><code class="highlighter-rouge language-plaintext">ELGA_whoATC_XX_text</code></td>
     <td>-</td>
-    <td>.classification.coding.where(system='http://www.whocc.no/atc')</td>
+    <td><code class="highlighter-rouge language-plaintext">.classification.coding.where(system=<br />'http://www.whocc.no/atc')</code></td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -301,7 +305,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td>-</td>
     <td>-</td>
     <td>-</td>
-    <td>.routeOfAdministration.code</td>
+    <td><code class="highlighter-rouge language-plaintext">.routeOfAdministration.code</code></td>
     <td>-</td>
   </tr>
   <tr>
@@ -311,7 +315,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td>-</td>
     <td>-</td>
     <td>-</td>
-    <td>.substance.code.concept.coding.where(system='https://www.ages.at/fhir/GRZ')</td>
+    <td><code class="highlighter-rouge language-plaintext">.substance.code.concept.coding.where(system=<br />'https://www.ages.at/fhir/GRZ')</code></td>
   </tr>
   <tr>
     <td>Active ingredient</td>
@@ -320,7 +324,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td>-</td>
     <td>-</td>
     <td>-</td>
-    <td>.substance.code.concept.coding.where(system='https://spor.ema.europa.eu/v3/SubstanceDefinition')</td>
+    <td><code class="highlighter-rouge language-plaintext">.substance.code.concept.coding.where(system=<br />'https://spor.ema.europa.eu/v3/SubstanceDefinition')</code></td>
   </tr>
   <tr>
     <td>Ingredient Role</td>
@@ -329,7 +333,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td>-</td>
     <td>-</td>
     <td>-</td>
-    <td>.role.coding</td>
+    <td><code class="highlighter-rouge language-plaintext">.role.coding</code></td>
   </tr>
   <tr>
     <td>Active Ingredient Strength &amp; Unit</td>
@@ -338,7 +342,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td>-</td>
     <td>-</td>
     <td>-</td>
-    <td>.substance.strength</td>
+    <td><code class="highlighter-rouge language-plaintext">.substance.strength</code></td>
   </tr>
   <tr>
     <td>Reference Ingredient</td>
@@ -347,7 +351,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td>-</td>
     <td>-</td>
     <td>-</td>
-    <td>.substance.strength.referenceStrength.substance</td>
+    <td><code class="highlighter-rouge language-plaintext">.substance.strength.referenceStrength.substance</code></td>
   </tr>
   <tr>
     <td>Reference Ingredient Strength &amp; Unit</td>
@@ -356,13 +360,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <td>-</td>
     <td>-</td>
     <td>-</td>
-    <td>.substance.strength.referenceStrength.strength[x]</td>
+    <td><code class="highlighter-rouge language-plaintext">.substance.strength.referenceStrength.strength[x]</code></td>
   </tr>
   <tr>
     <td>Pharmaceutical dose form</td>
     <td><code class="highlighter-rouge language-plaintext">ELGA_MedikationDarreichungsform_XX_code</code><br /><code class="highlighter-rouge language-plaintext">ELGA_MedikationDarreichungsform_XX_text</code></td>
     <td>-</td>
-    <td>.combinedPharmaceuticalDoseForm</td>
+    <td><code class="highlighter-rouge language-plaintext">.combinedPharmaceuticalDoseForm</code></td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -370,17 +374,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <tr>
     <td>Drug Interaction</td>
     <td><code class="highlighter-rouge language-plaintext">ELGA_MedikationWechselwirkungsRelevant</code></td>
-    <td></td>
-    <td>.classification.coding.where(system='https://www.ages.at/fhir/interactionRelevance')</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>-</td>
+    <td><code class="highlighter-rouge language-plaintext">.classification.coding.where(system=<br />'https://www.ages.at/fhir/interactionRelevance')</code></td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
   </tr>
   <tr>
     <td>Domain</td>
     <td><code class="highlighter-rouge language-plaintext">Domaene</code></td>
     <td>-</td>
-    <td>.domain (always human)</td>
+    <td><code class="highlighter-rouge language-plaintext">.domain</code></td>
     <td>-</td>
     <td>-</td>
     <td>-</td>
@@ -415,7 +419,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.ages.at/">AGES</a>.  Package hl7.at.fhir.ages.medicinalproduct.r5#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 5.0.0</a>. Generated <span title="Thu, May 23, 2024 10:26+0000">2024-05-23</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.ages.at/">AGES</a>.  Package hl7.at.fhir.ages.medicinalproduct.r5#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 5.0.0</a>. Generated <span title="Fri, May 24, 2024 08:22+0000">2024-05-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
