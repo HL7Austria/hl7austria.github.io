@@ -16,7 +16,7 @@
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "AGESMedicinalProductR5"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-05-24T09:29:16+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-05-24T10:07:38+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "AGES"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "AGES" ] ;
@@ -61,6 +61,28 @@
      fhir:resource ( [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/ValueSet/asp-liste-authorizationState> ;
+         fhir:reference [ fhir:v "ValueSet/asp-liste-authorizationState" ]
+       ] ;
+       fhir:name [ fhir:v "\"ASP-Liste\" Authorization State" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/CodeSystem/asp-liste-authorizationState> ;
+         fhir:reference [ fhir:v "CodeSystem/asp-liste-authorizationState" ]
+       ] ;
+       fhir:name [ fhir:v "\"ASP-Liste\" Authorization State" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "CodeSystem" ]
        ] ) ;
        fhir:reference [
@@ -81,6 +103,18 @@
        ] ;
        fhir:name [ fhir:v "Administrable product definition" ] ;
        fhir:description [ fhir:v "Required for the attribute Route of Administration" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ages.at/fhir/medicinalproduct/ConceptMap/at-medprod-cm-authorizationState> ;
+         fhir:reference [ fhir:v "ConceptMap/at-medprod-cm-authorizationState" ]
+       ] ;
+       fhir:name [ fhir:v "Authorization State Mapping" ] ;
+       fhir:description [ fhir:v "A mapping between the authorization state used in the \"ASP-Liste\" and the status used in the RegulatedAuthorization" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
