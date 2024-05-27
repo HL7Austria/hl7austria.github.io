@@ -1,0 +1,59 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://diab.iv.elga.gv.at/ValueSet/diagnose> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "diagnose"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Deutsch (Österreich) (German (Austria), de)</b></td></tr><tr><td><a href=\"http://snomed.info/id/703272007\">703272007</a></td><td>HFrEF - heart failure with reduced ejection fraction</td><td>HFrEF</td></tr><tr><td><a href=\"http://snomed.info/id/788950000\">788950000</a></td><td>HFmEF - heart failure with mid range ejection fraction</td><td>HFmrEF</td></tr><tr><td><a href=\"http://snomed.info/id/446221000\">446221000</a></td><td>HFpEF - heart failure with preserved ejection fraction</td><td>HFpEF</td></tr></table></li></ul></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://diab.iv.elga.gv.at/ValueSet/diagnose"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "Diagnose"] ; # 
+  fhir:title [ fhir:v "Diagnose"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2024-05-27T08:13:49+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "ELGA GmbH" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.elga.gv.at/" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Klassifikation der Herzinsuffizienz auf Basis der LVEF"] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "703272007" ] ;
+         fhir:display [ fhir:v "HFrEF - heart failure with reduced ejection fraction" ] ;
+         fhir:designation ( [
+           fhir:language [ fhir:v "de-AT" ] ;
+           fhir:value [ fhir:v "HFrEF" ]
+         ] )
+       ] [
+         fhir:code [ fhir:v "788950000" ] ;
+         fhir:display [ fhir:v "HFmEF - heart failure with mid range ejection fraction" ] ;
+         fhir:designation ( [
+           fhir:language [ fhir:v "de-AT" ] ;
+           fhir:value [ fhir:v "HFmrEF" ]
+         ] )
+       ] [
+         fhir:code [ fhir:v "446221000" ] ;
+         fhir:display [ fhir:v "HFpEF - heart failure with preserved ejection fraction" ] ;
+         fhir:designation ( [
+           fhir:language [ fhir:v "de-AT" ] ;
+           fhir:value [ fhir:v "HFpEF" ]
+         ] )
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
