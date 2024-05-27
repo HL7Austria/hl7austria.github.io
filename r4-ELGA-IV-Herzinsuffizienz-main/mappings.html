@@ -1,0 +1,1324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Mapping from HI to IPS -  v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"2"}
+    h3,h4,h5,h6{--heading-prefix:"2"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold"></span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Logical Model (HI)
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="StructureDefinition-Patient-hi.html">Patient (HI)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-Akteur-hi.html">Akteur (HI)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-Erstdokumentation-hi.html">Erstdokumentation (HI)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-Folgedokumentation-hi.html">Folgedokumentation (HI)</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Logical Model (IPS)
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="StructureDefinition-Subject-ips.html">Subject (IPS)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-ProblemList-ips.html">Problem List (IPS)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-DiagnosticResults-ips.html">Diagnostic Results (IPS)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-PlanOfCare-ips.html">Plan of Care (IPS)</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="mappings.html">Mapping HI to IPS</a>
+  </li>
+  <li>
+    <a href="terminologies.html">Terminologies</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Mapping from HI to IPS</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">IntegrierteVersorgungHerzinsuffizienz - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://hi.iv.elga.gv.at/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Mapping from HI to IPS</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<p>On this page you can find the mapping from the data model based on the “Disease-Management bei chronischer Herzinsuffizienz - Modulares Rahmenkonzept für Österreich” to the data model based on the <a href="https://build.fhir.org/ig/HL7/fhir-ips/">International Patient Summary (IPS)</a>.</p>
+
+<p>Note, that for each mapping only the relevant modules of the IPS will be included. Furthermore, even if not all modules of the IPS are mentioned in the mappings it is of course allowed to use them, if applicable.</p>
+
+<style type="text/css">
+.grid .ips-recommended{background-color:#ffa52a;}
+.grid .ips-header{background-color:#56c3f3;}
+.grid .ips-required{background-color:#e53432;}
+.grid .source-module{vertical-align:middle}
+.grid .target-module{text-align:center;}
+.grid .ips-optional{background-color:#91cf50;}
+</style>
+
+<h4 id="patient">Patient</h4>
+
+<p>Please refer to <a href="StructureDefinition-Patient-hi.html">Patient (HI)</a> for further details about this data model.</p>
+
+<table class="grid">
+<tbody>
+  <tr>
+    <th class="source-module" rowspan="2"><a href="StructureDefinition-Patient-hi.html"><strong>Patient (HI)</strong></a></th>
+    <th class="target-module" colspan="2"><strong>IPS Modules</strong></th>
+    <th class="source-module" rowspan="2"><strong>Comment</strong></th>
+  </tr>
+  <tr>
+    <th class="ips-header"><a href="StructureDefinition-Subject-ips.html"><strong>Subject (IPS)</strong></a></th>
+    <th class="ips-optional"><a href="StructureDefinition-PlanOfCare-ips.html"><strong>Plan of Care (IPS)</strong></a></th>
+  </tr>
+  <tr>
+    <td>Vorname</td>
+    <td>.name.given</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Zuname</td>
+    <td>.name.family</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Geburtsjahr</td>
+    <td>.birthDate</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>SVNR</td>
+    <td>.identifier</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>KVTraeger</td>
+    <td>.contactInsurance</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Adresse</td>
+    <td>.address</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Telefonnummer</td>
+    <td>.telecom</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Geschlecht</td>
+    <td>n/a</td>
+    <td>n/a</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Geschlecht.gender</td>
+    <td>.gender</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Geschlecht.genderExtension</td>
+    <td>.genderExtension</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Schulung</td>
+    <td>-</td>
+    <td>.activity</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;absolviert</td>
+    <td>-</td>
+    <td>.activity.status</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Datum</td>
+    <td>-</td>
+    <td>.activity.scheduled[x]</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Einverstaendnis</td>
+    <td>-</td>
+    <td>-</td>
+    <td>unclear</td>
+  </tr>
+  <tr>
+    <td>Einschreibung</td>
+    <td>-</td>
+    <td>.period</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Austritt</td>
+    <td>n/a</td>
+    <td>n/a</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Datum</td>
+    <td>-</td>
+    <td>.period</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Grund</td>
+    <td>-</td>
+    <td>-</td>
+    <td>unclear</td>
+  </tr>
+  <tr>
+    <td>Anlaufstelle</td>
+    <td>-</td>
+    <td>-</td>
+    <td>unclear</td>
+  </tr>
+  <tr>
+    <td>Betreuungsnetzwerk</td>
+    <td>n/a</td>
+    <td>n/a</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Einbindung</td>
+    <td>see "Kontakt"</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Pflegehilfe</td>
+    <td>see "Kontakt"</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Kontakt</td>
+    <td>.contact in case of Betreuungsnetzwerk.where(Einbindung=true)<br /><br />.generalPractitioner in case of Betreuungsnetzwerk.where(Pflegehilfe=true)</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Versorgungsnetzwerk</td>
+    <td>-</td>
+    <td>.author and .careTeam</td>
+    <td>.author if it is the case coordinator</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Kontakt</td>
+    <td>-</td>
+    <td>.author and .careTeam.participant.member</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Kontakttyp</td>
+    <td>-</td>
+    <td>.careTeam.participant.role</td>
+    <td></td>
+  </tr>
+</tbody>
+</table>
+
+<h4 id="akteur">Akteur</h4>
+
+<p>Please refer to <a href="StructureDefinition-Akteur-hi.html">Akteur (HI)</a> for further details about this data model.</p>
+
+<table class="grid">
+<tbody>
+  <tr>
+    <th class="source-module" rowspan="2"><a href="StructureDefinition-Akteur-hi.html"><strong>Akteur (HI)</strong></a></th>
+    <th class="target-module"><strong>IPS Modules</strong></th>
+    <th class="target-module"><strong>IPS IG</strong></th>
+    <th class="source-module" rowspan="2"><strong>Comment</strong></th>
+  </tr>
+  <tr>
+    <th class="ips-optional"><a href="StructureDefinition-PlanOfCare-ips.html"><strong>Plan of Care (IPS)</strong></a></th>
+    <th><a href="http://hl7.org/fhir/uv/ips/StructureDefinition/PractitionerRole-uv-ips"><strong>PractitionerRole (IPS)</strong></a></th>
+  </tr>
+  <tr>
+    <td>Einrichtung</td>
+    <td>-</td>
+    <td>.organization.name</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Einrichtungsart</td>
+    <td>-</td>
+    <td>.organization.type</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Fachrichtung</td>
+    <td>-</td>
+    <td>.practitioner.qualification.code</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Adresse</td>
+    <td>-</td>
+    <td>.organization.address or .practitioner.address</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Personalstand</td>
+    <td>n/a</td>
+    <td>n/a</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Anzahl</td>
+    <td>n/a</td>
+    <td>n/a</td>
+    <td>derivable</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Berufsgruppe</td>
+    <td>-</td>
+    <td>.code</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>GDL</td>
+    <td>.author and .careTeam.participant.member</td>
+    <td>.practitioner</td>
+    <td>.author if it is the case coordinator</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Vorname</td>
+    <td>-</td>
+    <td>.practitioner.name.given</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Zuname</td>
+    <td>-</td>
+    <td>.practitioner.name.family</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Vertragspartnernummer</td>
+    <td>-</td>
+    <td>.practitioner.identifier</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Teilnahmebeginn</td>
+    <td>.careTeam.participant.period</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Schulungsnachweis</td>
+    <td>-</td>
+    <td>.practitioner.qualification</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Austritt</td>
+    <td>n/a</td>
+    <td>n/a</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;Austrittsanfrage</td>
+    <td>-</td>
+    <td>-</td>
+    <td>unclear</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;Teilnahmeende</td>
+    <td>.careTeam.participant.period</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Schulungen</td>
+    <td>-</td>
+    <td>-</td>
+    <td>derivable from PlanOfCare.activity and its corresponding performer</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;aktiv</td>
+    <td>n/a</td>
+    <td>n/a</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Anzahl</td>
+    <td>n/a</td>
+    <td>n/a</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Konsultationen</td>
+    <td>-</td>
+    <td>-</td>
+    <td>unclear</td>
+  </tr>
+</tbody>
+</table>
+
+<h4 id="erstdokumentation">Erstdokumentation</h4>
+
+<p>Please refer to <a href="StructureDefinition-Erstdokumentation-hi.html">Erstdokumentation (HI)</a> for further details about this data model.</p>
+
+<p>The “Erstdokumentation” itself should be represented as “PlanOfCare.activity”. The results of activities might be documented as “PlanOfCare.activity.outcomeReference” and might as well be documented elsewhere in the patient’s summary (e.g. “Problem List”). As has been done with some of the examinations of the “Erstdokumentation” (e.g. “EKG”, “Diagnose”, …).</p>
+
+<table class="grid">
+<tbody>
+  <tr>
+    <th class="source-module" rowspan="2"><a href="StructureDefinition-Erstdokumentation-hi.html"><strong>Erstdokumentation (HI)</strong></a></th>
+    <th class="target-module" colspan="6"><strong>IPS Modules</strong></th>
+    <th class="source-module" rowspan="2"><strong>Comment</strong></th>
+  </tr>
+  <tr>
+    <th class="ips-header"><a href="StructureDefinition-Subject-ips.html"><strong>Subject (IPS)</strong></a></th>
+    <th class="ips-required"><a href="StructureDefinition-MedicationSummary-ips.html"><strong>Medication Summary (IPS)</strong></a></th>
+    <th class="ips-required"><a href="StructureDefinition-ProblemList-ips.html"><strong>Problem List (IPS)</strong></a></th>
+    <th class="ips-recommended"><a href="StructureDefinition-DiagnosticResults-ips.html"><strong>Diagnostic Results (IPS)</strong></a></th>
+    <th class="ips-optional"><a href="StructureDefinition-FunctionalStatus-ips.html"><strong>Functional Status (IPS)</strong></a></th>
+    <th class="ips-optional"><a href="StructureDefinition-PlanOfCare-ips.html"><strong>Plan of Care (IPS)</strong></a></th>
+  </tr>
+  <tr>
+    <td>VPNR</td>
+    <td>-</td>
+    <td>.informationSource</td>
+    <td>.asserter</td>
+    <td>.performer</td>
+    <td>.assessor</td>
+    <td>.activity.performer</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Untersuchungsdatum</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.recordedDate</td>
+    <td>.effective[x]</td>
+    <td>-</td>
+    <td>.activity.scheduled[x]</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Patient</td>
+    <td>-</td>
+    <td>.subject</td>
+    <td>.subject</td>
+    <td>.subject</td>
+    <td>.subject</td>
+    <td>.subject</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Erstabklärung</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Untersuchung</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity.outcomeReference</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Komorbiditaet</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.code</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;EKG</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.code and .value</td>
+    <td>-</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Echokardiogramm</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.code and .value</td>
+    <td>-</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;NTproBNP</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.code and .value</td>
+    <td>-</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Symptomatik</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.code</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Kardiologe</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Diagnose</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.code</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Behandlungsziel</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.goal</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Labor</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.code and .value</td>
+    <td>-</td>
+    <td>.activity</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Therapie</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;HITherapie</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>unclear</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;Therapie</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>unclear</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;Zieldosis</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>unclear</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Komedikation</td>
+    <td>-</td>
+    <td>.medication[x]</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Selbstmanagement</td>
+    <td>n/a</td>
+    <td>n/a</td>
+    <td>n/a</td>
+    <td>n/a</td>
+    <td>n/a</td>
+    <td>n/a</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Ressourcen</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.finding[x]</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Betreuung</td>
+    <td>.contact</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;DMPSchulung</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;absolviert</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity.status</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;Datum</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity.scheduled[x]</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;GewichtSchulung</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;absolviert</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity.status</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;Datum</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity.scheduled[x]</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;ImpfungBeratung</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;absolviert</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity.status</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;Datum</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity.scheduled[x]</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;TelemonitoringSchulung</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;absolviert</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity.status</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;Datum</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity.scheduled[x]</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Lebensqualitaet</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.finding[x]</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+</tbody>
+</table>
+
+<h4 id="folgedokumentation">Folgedokumentation</h4>
+
+<p>Please refer to <a href="StructureDefinition-Folgedokumentation-hi.html">Folgedokumentation (HI)</a> for further details about this data model.</p>
+
+<p>The “Folgedokumentation” itself should be represented as “PlanOfCare.activity”. The results of activities might be documented as “PlanOfCare.activity.outcomeReference” and might as well be documented elsewhere in the patient’s summary (e.g. “Problem List”). As has been done with some of the examinations of the “Erstdokumentation” (e.g. “EKG”, “Diagnose”, …).</p>
+
+<table class="grid">
+<tbody>
+  <tr>
+    <th class="source-module" rowspan="2"><a href="StructureDefinition-Folgedokumentation-hi.html"><strong>Folgedokumentation (HI)</strong></a></th>
+    <th class="target-module" colspan="5"><strong>IPS Modules</strong></th>
+    <th class="source-module" rowspan="2"><strong>Comment&lt;/comment&gt;&lt;/th&gt;
+  &lt;/tr&gt;
+  <tr>
+    <th class="ips-header"><a href="StructureDefinition-Subject-ips.html"><strong>Subject (IPS)</strong></a></th>
+    <th class="ips-required"><a href="StructureDefinition-ProblemList-ips.html"><strong>Problem List (IPS)</strong></a></th>
+    <th class="ips-recommended"><a href="StructureDefinition-DiagnosticResults-ips.html"><strong>Diagnostic Results (IPS)</strong></a></th>
+    <th class="ips-optional"><a href="StructureDefinition-FunctionalStatus-ips.html"><strong>Functional Status (IPS)</strong></a></th>
+    <th class="ips-optional"><a href="StructureDefinition-DiagnosticResults-ips.html"><strong>Plan of Care (IPS)</strong></a></th>
+  </tr>
+  <tr>
+    <td>VPNR</td>
+    <td>-</td>
+    <td>.asserter</td>
+    <td>.performer</td>
+    <td>.assessor</td>
+    <td>.activity.performer</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Untersuchungsdatum</td>
+    <td>-</td>
+    <td>.recordedDate</td>
+    <td>.effective[x]</td>
+    <td>-</td>
+    <td>.activity.scheduled[x]</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Patient</td>
+    <td>-</td>
+    <td>.subject</td>
+    <td>.subject</td>
+    <td>.subject</td>
+    <td>.subject</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Versorgung</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;geplant</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity.status</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;AnzahlStationaer</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>derivable from IPS module "History of Procedures"</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Symtomatik</td>
+    <td>-</td>
+    <td>.code</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Behandlungsziel</td>
+    <td>n/a</td>
+    <td>n/a</td>
+    <td>n/a</td>
+    <td>n/a</td>
+    <td>n/a</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;Aenderung</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>unclear</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;Behandlungsziel</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.goal</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Komorbiditaet</td>
+    <td>-</td>
+    <td>.code</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;EKG</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.code and .value</td>
+    <td>-</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Kardiologe</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Echokardiogramm</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.code and .value</td>
+    <td>-</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Labor</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Befund</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.code and .value</td>
+    <td>-</td>
+    <td>.activity.outcomeReference</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Datum</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.effective[x]</td>
+    <td>-</td>
+    <td>.activity.scheduled[x]</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Therapie</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;ACE</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>unclear</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;ACE</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>unclear</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;Zieldosis</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>unclear</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Betablocker</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>unclear</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;Betablocker</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>unclear</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;Zieldosis</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>unclear</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Antikoagulation</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>unclear</td>
+  </tr>
+  <tr>
+    <td>Selbstmanagement</td>
+    <td>n/a</td>
+    <td>n/a</td>
+    <td>n/a</td>
+    <td>n/a</td>
+    <td>n/a</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Ressourcen</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.finding[x]</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Betreuung</td>
+    <td>.contact</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;DMPSchulung</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;absolviert</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity.status</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;Datum</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity.scheduled[x]</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;GewichtSchulung</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;absolviert</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity.status</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;Datum</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity.scheduled[x]</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;ImpfungBeratung</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;absolviert</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity.status</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;Datum</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity.scheduled[x]</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;TelemonitoringSchulung</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;absolviert</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity.status</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;Datum</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.activity.scheduled[x]</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Lebensqualitaet</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>.finding[x]</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+&lt;/tbody&gt;
+&lt;/table&gt;
+</strong></th></tr></tbody></table>
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA GmbH</a>.  Package elga.iv.hi#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, May 27, 2024 08:28+0000">2024-05-27</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

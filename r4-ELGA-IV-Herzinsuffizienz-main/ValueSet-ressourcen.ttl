@@ -1,0 +1,53 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://hi.iv.elga.gv.at/ValueSet/ressourcen> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ressourcen"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set includes codes based on the following rules:</p><ul><li>Include these codes as defined in <a href=\"CodeSystem-sample.html\"><code>https://hi.iv.elga.gv.at/CodeSystem/sample</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Deutsch (Österreich) (German (Austria), de)</b></td></tr><tr><td><a href=\"CodeSystem-sample.html#sample-selbst\">selbst</a></td><td>Selbstmanagement möglich (regelmäßiges Monitoring wichtiger Parameter)</td><td></td></tr><tr><td><a href=\"CodeSystem-sample.html#sample-intervall\">intervall</a></td><td>prinzipiell Selbstmanagement (Überprüfung in definierten Zeitintervallen)</td><td></td></tr></table></li><li>Include these codes as defined in <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Deutsch (Österreich) (German (Austria), de)</b></td></tr><tr><td><a href=\"http://snomed.info/id/225309002\">225309002</a></td><td>Constant supervision</td><td>Kontinuierliche Supervision</td></tr></table></li></ul></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://hi.iv.elga.gv.at/ValueSet/ressourcen"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "Ressourcen"] ; # 
+  fhir:title [ fhir:v "Ressourcen"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2024-05-27T08:28:19+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "ELGA GmbH" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.elga.gv.at/" ]
+     ] )
+  ] ) ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "https://hi.iv.elga.gv.at/CodeSystem/sample"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "selbst" ] ;
+         fhir:display [ fhir:v "Selbstmanagement möglich (regelmäßiges Monitoring wichtiger Parameter)" ]
+       ] [
+         fhir:code [ fhir:v "intervall" ] ;
+         fhir:display [ fhir:v "prinzipiell Selbstmanagement (Überprüfung in definierten Zeitintervallen)" ]
+       ] )
+     ] [
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "225309002" ] ;
+         fhir:display [ fhir:v "Constant supervision" ] ;
+         fhir:designation ( [
+           fhir:language [ fhir:v "de-AT" ] ;
+           fhir:value [ fhir:v "Kontinuierliche Supervision" ]
+         ] )
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

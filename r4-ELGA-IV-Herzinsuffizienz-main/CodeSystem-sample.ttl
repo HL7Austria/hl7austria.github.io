@@ -1,0 +1,80 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://hi.iv.elga.gv.at/CodeSystem/sample> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "sample"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This  code system <code>https://hi.iv.elga.gv.at/CodeSystem/sample</code> defines the following codes in an undefined hierarchy:</p><table class=\"codes\"><tr><td><b>Lvl</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>1</td><td style=\"white-space:nowrap\">austritt<a name=\"sample-austritt\"> </a></td><td>Grund der Beendigung</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  einrichtung<a name=\"sample-einrichtung\"> </a></td><td>durch Einrichtung beendet</td></tr><tr><td>1</td><td style=\"white-space:nowrap\">behandlungsziel<a name=\"sample-behandlungsziel\"> </a></td><td>Behandlungsziel</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  1<a name=\"sample-1\"> </a></td><td>Überwachung der Stabilität</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  2<a name=\"sample-2\"> </a></td><td>Erreichen der Zieldosis</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  3a<a name=\"sample-3a\"> </a></td><td>Frühzeitige Erkennung von Verschlechterungen und Optimierung der Risikoparameter</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  3b<a name=\"sample-3b\"> </a></td><td>Intensives Management</td></tr><tr><td>1</td><td style=\"white-space:nowrap\">ressourcen<a name=\"sample-ressourcen\"> </a></td><td>Ressourcen</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  selbst<a name=\"sample-selbst\"> </a></td><td>Selbstmanagement möglich (regelmäßiges Monitoring wichtiger Parameter)</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  intervall<a name=\"sample-intervall\"> </a></td><td>prinzipiell Selbstmanagement (Überprüfung in definierten Zeitintervallen)</td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://hi.iv.elga.gv.at/CodeSystem/sample"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "Sample"] ; # 
+  fhir:title [ fhir:v "Sample CS"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2024-05-27T08:28:19+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "ELGA GmbH" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.elga.gv.at/" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Dieses Codesystem fasst all jene Konzepte zusammen, für die noch keine Entsprechung in etablierten Codesystemen (z.B. SNOMED, LOINC, etc.) gefunden werden konnte."] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "10"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "austritt" ] ;
+     fhir:display [ fhir:v "Grund der Beendigung" ] ;
+     fhir:property ( [
+       fhir:code [ fhir:v "notSelectable" ] ;
+       fhir:value [ fhir:v "true"^^xsd:boolean ]
+     ] ) ;
+     fhir:concept ( [
+       fhir:code [ fhir:v "einrichtung" ] ;
+       fhir:display [ fhir:v "durch Einrichtung beendet" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "behandlungsziel" ] ;
+     fhir:display [ fhir:v "Behandlungsziel" ] ;
+     fhir:property ( [
+       fhir:code [ fhir:v "notSelectable" ] ;
+       fhir:value [ fhir:v "true"^^xsd:boolean ]
+     ] ) ;
+     fhir:concept ( [
+       fhir:code [ fhir:v "1" ] ;
+       fhir:display [ fhir:v "Überwachung der Stabilität" ]
+     ] [
+       fhir:code [ fhir:v "2" ] ;
+       fhir:display [ fhir:v "Erreichen der Zieldosis" ]
+     ] [
+       fhir:code [ fhir:v "3a" ] ;
+       fhir:display [ fhir:v "Frühzeitige Erkennung von Verschlechterungen und Optimierung der Risikoparameter" ]
+     ] [
+       fhir:code [ fhir:v "3b" ] ;
+       fhir:display [ fhir:v "Intensives Management" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "ressourcen" ] ;
+     fhir:display [ fhir:v "Ressourcen" ] ;
+     fhir:property ( [
+       fhir:code [ fhir:v "notSelectable" ] ;
+       fhir:value [ fhir:v "true"^^xsd:boolean ]
+     ] ) ;
+     fhir:concept ( [
+       fhir:code [ fhir:v "selbst" ] ;
+       fhir:display [ fhir:v "Selbstmanagement möglich (regelmäßiges Monitoring wichtiger Parameter)" ]
+     ] [
+       fhir:code [ fhir:v "intervall" ] ;
+       fhir:display [ fhir:v "prinzipiell Selbstmanagement (Überprüfung in definierten Zeitintervallen)" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
