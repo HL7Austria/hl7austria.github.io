@@ -63,7 +63,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "
 "Bundle.entry","Bundle.entry","","","",2,*,"","","Y","BackboneElement {[]} {[]}
 ","Entry in the bundle - will have a resource or information","An entry in a bundle resource - will either contain a resource or information about a resource (transactions and history only).","","","","","","","","","",,,,,"","profile:resource}
-","",,"open","Bundle.entry",0,*,"","bdl-5:must be a resource unless there's a request or response {resource.exists() or request.exists() or response.exists()}
+type:resource}","",,"open","Bundle.entry",0,*,"","bdl-5:must be a resource unless there's a request or response {resource.exists() or request.exists() or response.exists()}
 bdl-8:fullUrl cannot be a version specific reference {fullUrl.contains('/_history/').not()}ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}"
 "Bundle.entry.id","Bundle.entry.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
@@ -1718,7 +1718,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 
 Note that the fullUrl is not the same as the canonical URL - it's an absolute url for an endpoint serving the resource (these will happen to have the same value on the canonical server for the resource with the canonical URL).","","","","","","","","",,,,,"",,,,"Bundle.entry.fullUrl",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"Bundle.entry:Practitioner.resource","Bundle.entry.resource","","","",0,1,"","","","Practitioner {[CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-practitioner]]} {[]}
+"Bundle.entry:Practitioner.resource","Bundle.entry.resource","","","",1,1,"","","","Practitioner {[CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-practitioner]]} {[]}
 ","AT IPS Practitioner","A person who is directly or indirectly involved in the provisioning of healthcare.","","","","","","","","","",,,,,"",,,,"Bundle.entry.resource",0,1,"","","PRD (as one example)","Entity. Role, or Act","Role"
 "Bundle.entry:Practitioner.search","Bundle.entry.search","","","",0,1,"","","Y","BackboneElement {[]} {[]}
 ","Search related information","Information about the search process that lead to the creation of this entry.","","","","","","","","","",,,,,"",,,,"Bundle.entry.search",0,1,"bdl-2
@@ -1834,7 +1834,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 
 Note that the fullUrl is not the same as the canonical URL - it's an absolute url for an endpoint serving the resource (these will happen to have the same value on the canonical server for the resource with the canonical URL).","","","","","","","","",,,,,"",,,,"Bundle.entry.fullUrl",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"Bundle.entry:PractitionerRole.resource","Bundle.entry.resource","","","",0,1,"","","","PractitionerRole {[CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-practitionerrole]]} {[]}
+"Bundle.entry:PractitionerRole.resource","Bundle.entry.resource","","","",1,1,"","","","PractitionerRole {[CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-practitionerrole]]} {[]}
 ","At IPS PractitionerRole","A specific set of Roles/Locations/specialties/services that a practitioner may perform at an organization for a period of time.","","","","","","","","","",,,,,"",,,,"Bundle.entry.resource",0,1,"","","PRD (as one example)","Entity. Role, or Act","Role"
 "Bundle.entry:PractitionerRole.search","Bundle.entry.search","","","",0,1,"","","Y","BackboneElement {[]} {[]}
 ","Search related information","Information about the search process that lead to the creation of this entry.","","","","","","","","","",,,,,"",,,,"Bundle.entry.search",0,1,"bdl-2
@@ -2066,7 +2066,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 
 Note that the fullUrl is not the same as the canonical URL - it's an absolute url for an endpoint serving the resource (these will happen to have the same value on the canonical server for the resource with the canonical URL).","","","","","","","","",,,,,"",,,,"Bundle.entry.fullUrl",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"Bundle.entry:Organization.resource","Bundle.entry.resource","","","",0,1,"","","","Organization {[CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-organization]]} {[]}
+"Bundle.entry:Organization.resource","Bundle.entry.resource","","","",1,1,"","","","Organization {[CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-organization]]} {[]}
 ","AT IPS Organization","A formally or informally recognized grouping of people or organizations formed for the purpose of achieving some form of collective action.  Includes companies, institutions, corporations, departments, community groups, healthcare practice groups, payer/insurer, etc.","","","","","","","","","",,,,,"",,,,"Bundle.entry.resource",0,1,"","","(also see master files messages)","Entity. Role, or Act","Organization(classCode=ORG, determinerCode=INST)"
 "Bundle.entry:Organization.search","Bundle.entry.search","","","",0,1,"","","Y","BackboneElement {[]} {[]}
 ","Search related information","Information about the search process that lead to the creation of this entry.","","","","","","","","","",,,,,"",,,,"Bundle.entry.search",0,1,"bdl-2
