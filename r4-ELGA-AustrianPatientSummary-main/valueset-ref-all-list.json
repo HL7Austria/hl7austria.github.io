@@ -1,6 +1,20 @@
 {
   "codeSystems" : [
     {
+      "url" : "http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_29.html",
+      "version" : "2022.4.20221006",
+      "status" : "active",
+      "name" : "AcquisitionModality",
+      "title" : null,
+      "description" : "Transitive closure of CID 29 AcquisitionModality",
+      "systems" : ["http://dicom.nema.org/resources/ontology/DCM"],
+      "oids" : ["1.2.840.10008.6.1.19"],
+      "sources" : ["1.2.840.10008.6.1.19"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-imagingstudy.html" : "AT IPS ImagingStudy"
+    },
+    {
       "url" : "http://hl7.org/fhir/ValueSet/address-type",
       "version" : "4.0.1",
       "status" : "active",
@@ -40,8 +54,8 @@
       "sources" : ["2.16.840.1.113883.4.642.3.1"],
       "uses" : {
       },
-      "StructureDefinition-at-ips-patient.html" : "AT IPS Patient",
-      "StructureDefinition-at-ips-practitioner.html" : "AT IPS Practitioner"
+      "StructureDefinition-at-ips-practitioner.html" : "AT IPS Practitioner",
+      "StructureDefinition-at-ips-patient.html" : "AT IPS Patient"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/allergy-intolerance-category",
@@ -144,8 +158,35 @@
       "uses" : {
       },
       "StructureDefinition-at-ips-condition.html" : "AT IPS Condition",
+      "StructureDefinition-at-ips-specimen.html" : "AT IPS Specimen",
+      "StructureDefinition-at-ips-MediaObservation.html" : "AT IPS MediaObservation",
+      "StructureDefinition-at-ips-imagingstudy.html" : "AT IPS ImagingStudy",
+      "StructureDefinition-at-ips-observationvitalsigns.html" : "AT IPS Observation Vital Signs",
+      "StructureDefinition-at-ips-observationpregnancystatus.html" : "AT IPS Observation Pregnancy Status",
+      "StructureDefinition-at-ips-observationpregnancyoutcome.html" : "AT IPS Observation Pregnancy Outcome",
+      "StructureDefinition-at-ips-observationresultslaboratory.html" : "AT IPS Observation Results Laboratory",
+      "StructureDefinition-at-ips-observationpregnancyedd.html" : "AT IPS Observation Pregnancy Expected Delivery Date",
+      "StructureDefinition-at-ips-observationresults.html" : "AT IPS Observation Results",
       "StructureDefinition-at-ips-deviceusestatement.html" : "AT IPS DeviceUseStatement",
-      "StructureDefinition-at-ips-specimen.html" : "AT IPS Specimen"
+      "StructureDefinition-at-ips-observationalcoholuse.html" : "AT IPS Observation Pregnancy Status",
+      "StructureDefinition-at-ips-observationresultspathology.html" : "AT IPS Observation Results Pathology",
+      "StructureDefinition-at-ips-Procedure.html" : "AT IPS Procedure",
+      "StructureDefinition-at-ips-observationresultsradiology.html" : "AT IPS Observation Results Radiology",
+      "StructureDefinition-at-ips-observationtobaccouse.html" : "AT IPS Observation Tobacco Use"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/bodysite-laterality",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "Laterality",
+      "title" : "Laterality",
+      "description" : "Laterality: SNOMED-CT concepts for 'left', 'right', and 'bilateral'",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : ["2.16.840.1.113883.4.642.3.287"],
+      "sources" : ["2.16.840.1.113883.4.642.3.287"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-imagingstudy.html" : "AT IPS ImagingStudy"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/bundle-type",
@@ -187,6 +228,7 @@
       "sources" : ["2.16.840.1.113883.4.642.3.232"],
       "uses" : {
       },
+      "StructureDefinition-at-ips-diagnosticreport.html" : "AT IPS DiagnosticReport",
       "StructureDefinition-at-ips-allergyintolerance.html" : "AT IPS AllergyIntolerance"
     },
     {
@@ -257,8 +299,9 @@
       "sources" : ["2.16.840.1.113883.4.642.3.161"],
       "uses" : {
       },
-      "StructureDefinition-at-ips-medicationstatement.html" : "AT IPS MedicationStatement",
       "StructureDefinition-at-ips-condition.html" : "AT IPS Condition",
+      "StructureDefinition-at-ips-medicationstatement.html" : "AT IPS MedicationStatement",
+      "StructureDefinition-at-ips-Procedure.html" : "AT IPS Procedure",
       "StructureDefinition-at-ips-medicationrequest.html" : "AT IPS MedicationRequest"
     },
     {
@@ -360,6 +403,29 @@
       "StructureDefinition-at-ips-organization.html" : "AT IPS Organization"
     },
     {
+      "url" : "http://hl7.org/fhir/ValueSet/data-absent-reason",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "DataAbsentReason",
+      "title" : "DataAbsentReason",
+      "description" : "Used to specify why the normally expected content of the data element is missing.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/data-absent-reason"],
+      "oids" : ["2.16.840.1.113883.4.642.3.5"],
+      "sources" : ["2.16.840.1.113883.4.642.3.5"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-observationpregnancystatus.html" : "AT IPS Observation Pregnancy Status",
+      "StructureDefinition-at-ips-observationpregnancyoutcome.html" : "AT IPS Observation Pregnancy Outcome",
+      "StructureDefinition-at-ips-observationresultslaboratory.html" : "AT IPS Observation Results Laboratory",
+      "StructureDefinition-at-ips-observationpregnancyedd.html" : "AT IPS Observation Pregnancy Expected Delivery Date",
+      "StructureDefinition-at-ips-observationresults.html" : "AT IPS Observation Results",
+      "StructureDefinition-at-ips-observationvitalsigns.html" : "AT IPS Observation Vital Signs",
+      "StructureDefinition-at-ips-observationalcoholuse.html" : "AT IPS Observation Pregnancy Status",
+      "StructureDefinition-at-ips-observationresultspathology.html" : "AT IPS Observation Results Pathology",
+      "StructureDefinition-at-ips-observationresultsradiology.html" : "AT IPS Observation Results Radiology",
+      "StructureDefinition-at-ips-observationtobaccouse.html" : "AT IPS Observation Tobacco Use"
+    },
+    {
       "url" : "http://hl7.org/fhir/ValueSet/days-of-week",
       "version" : "4.0.1",
       "status" : "active",
@@ -372,6 +438,34 @@
       "uses" : {
       },
       "StructureDefinition-at-ips-practitionerrole.html" : "AT IPS PractitionerRole"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/device-action",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "ProcedureDeviceActionCodes",
+      "title" : "Procedure Device Action Codes",
+      "description" : "Example codes indicating the change that happened to the device during the procedure.  Note that these are in no way complete and might not even be appropriate for some uses.",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : ["2.16.840.1.113883.4.642.3.425"],
+      "sources" : ["2.16.840.1.113883.4.642.3.425"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-Procedure.html" : "AT IPS Procedure"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/device-kind",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "FHIRDeviceTypes",
+      "title" : "FHIR Device Types",
+      "description" : "Codes used to identify medical devices. Includes concepts from SNOMED CT (http://www.snomed.org/) where concept is-a 49062001 (Device)  and is provided as a suggestive example.",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : ["2.16.840.1.113883.4.642.3.208"],
+      "sources" : ["2.16.840.1.113883.4.642.3.208"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-Procedure.html" : "AT IPS Procedure"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/device-nametype",
@@ -444,6 +538,34 @@
       "StructureDefinition-at-ips-device.html" : "AT IPS Device"
     },
     {
+      "url" : "http://hl7.org/fhir/ValueSet/diagnostic-report-status",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "DiagnosticReportStatus",
+      "title" : "DiagnosticReportStatus",
+      "description" : "The status of the diagnostic report.",
+      "systems" : ["http://hl7.org/fhir/diagnostic-report-status"],
+      "oids" : ["2.16.840.1.113883.4.642.3.235"],
+      "sources" : ["2.16.840.1.113883.4.642.3.235"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-diagnosticreport.html" : "AT IPS DiagnosticReport"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/diagnostic-service-sections",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "DiagnosticServiceSectionCodes",
+      "title" : "Diagnostic Service Section Codes",
+      "description" : "This value set includes all the codes in HL7 V2 table 0074.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0074"],
+      "oids" : ["2.16.840.1.113883.4.642.3.234"],
+      "sources" : ["2.16.840.1.113883.4.642.3.234"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-diagnosticreport.html" : "AT IPS DiagnosticReport"
+    },
+    {
       "url" : "http://hl7.org/fhir/ValueSet/doc-section-codes",
       "version" : "4.0.1",
       "status" : "draft",
@@ -500,6 +622,21 @@
       "StructureDefinition-at-ips-composition.html" : "AT IPS Composition"
     },
     {
+      "url" : "http://hl7.org/fhir/ValueSet/event-status",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "EventStatus",
+      "title" : "EventStatus",
+      "description" : "Codes identifying the lifecycle stage of an event.",
+      "systems" : ["http://hl7.org/fhir/event-status"],
+      "oids" : ["2.16.840.1.113883.4.642.3.109"],
+      "sources" : ["2.16.840.1.113883.4.642.3.109"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-MediaObservation.html" : "AT IPS MediaObservation",
+      "StructureDefinition-at-ips-Procedure.html" : "AT IPS Procedure"
+    },
+    {
       "url" : "http://hl7.org/fhir/ValueSet/http-verb",
       "version" : "4.0.1",
       "status" : "active",
@@ -540,9 +677,23 @@
       "sources" : ["2.16.840.1.113883.4.642.3.57"],
       "uses" : {
       },
-      "StructureDefinition-at-ips-patient.html" : "AT IPS Patient",
       "StructureDefinition-at-ips-practitioner.html" : "AT IPS Practitioner",
-      "StructureDefinition-at-ips-organization.html" : "AT IPS Organization"
+      "StructureDefinition-at-ips-organization.html" : "AT IPS Organization",
+      "StructureDefinition-at-ips-patient.html" : "AT IPS Patient"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/imagingstudy-status",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "ImagingStudyStatus",
+      "title" : "ImagingStudyStatus",
+      "description" : "The status of the ImagingStudy.",
+      "systems" : ["http://hl7.org/fhir/imagingstudy-status"],
+      "oids" : ["2.16.840.1.113883.4.642.3.990"],
+      "sources" : ["2.16.840.1.113883.4.642.3.990"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-imagingstudy.html" : "AT IPS ImagingStudy"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/immunization-function",
@@ -721,21 +872,35 @@
       "sources" : ["2.16.840.1.113883.4.642.3.20"],
       "uses" : {
       },
-      "StructureDefinition-at-ips-medicationstatement.html" : "AT IPS MedicationStatement",
-      "StructureDefinition-at-ips-allergyintolerance.html" : "AT IPS AllergyIntolerance",
-      "StructureDefinition-at-ips-deviceusestatement.html" : "AT IPS DeviceUseStatement",
-      "StructureDefinition-at-ips-practitioner.html" : "AT IPS Practitioner",
-      "StructureDefinition-at-ips-medicationrequest.html" : "AT IPS MedicationRequest",
-      "StructureDefinition-at-ips-organization.html" : "AT IPS Organization",
-      "StructureDefinition-at-ips-immunization.html" : "AT IPS Immunization",
-      "StructureDefinition-at-ips-practitionerrole.html" : "AT IPS PractitionerRole",
-      "StructureDefinition-at-ips-device.html" : "AT IPS Device",
-      "StructureDefinition-at-ips-document.html" : "AT IPS Document",
       "StructureDefinition-at-ips-condition.html" : "AT IPS Condition",
-      "StructureDefinition-at-ips-patient.html" : "AT IPS Patient",
+      "StructureDefinition-at-ips-practitionerrole.html" : "AT IPS PractitionerRole",
       "StructureDefinition-at-ips-specimen.html" : "AT IPS Specimen",
+      "StructureDefinition-at-ips-observationvitalsigns.html" : "AT IPS Observation Vital Signs",
+      "StructureDefinition-at-ips-practitioner.html" : "AT IPS Practitioner",
+      "StructureDefinition-at-ips-patient.html" : "AT IPS Patient",
+      "StructureDefinition-at-ips-observationpregnancystatus.html" : "AT IPS Observation Pregnancy Status",
+      "StructureDefinition-at-ips-observationpregnancyoutcome.html" : "AT IPS Observation Pregnancy Outcome",
+      "StructureDefinition-at-ips-immunization.html" : "AT IPS Immunization",
+      "StructureDefinition-at-ips-allergyintolerance.html" : "AT IPS AllergyIntolerance",
+      "StructureDefinition-at-ips-observationalcoholuse.html" : "AT IPS Observation Pregnancy Status",
+      "StructureDefinition-at-ips-observationresultspathology.html" : "AT IPS Observation Results Pathology",
+      "StructureDefinition-at-ips-Procedure.html" : "AT IPS Procedure",
       "StructureDefinition-at-ips-composition.html" : "AT IPS Composition",
-      "StructureDefinition-at-ips-medication.html" : "AT IPS Medication"
+      "StructureDefinition-at-ips-medicationrequest.html" : "AT IPS MedicationRequest",
+      "StructureDefinition-at-ips-observationresultsradiology.html" : "AT IPS Observation Results Radiology",
+      "StructureDefinition-at-ips-organization.html" : "AT IPS Organization",
+      "StructureDefinition-at-ips-MediaObservation.html" : "AT IPS MediaObservation",
+      "StructureDefinition-at-ips-diagnosticreport.html" : "AT IPS DiagnosticReport",
+      "StructureDefinition-at-ips-imagingstudy.html" : "AT IPS ImagingStudy",
+      "StructureDefinition-at-ips-document.html" : "AT IPS Document",
+      "StructureDefinition-at-ips-medication.html" : "AT IPS Medication",
+      "StructureDefinition-at-ips-medicationstatement.html" : "AT IPS MedicationStatement",
+      "StructureDefinition-at-ips-observationresultslaboratory.html" : "AT IPS Observation Results Laboratory",
+      "StructureDefinition-at-ips-observationpregnancyedd.html" : "AT IPS Observation Pregnancy Expected Delivery Date",
+      "StructureDefinition-at-ips-observationresults.html" : "AT IPS Observation Results",
+      "StructureDefinition-at-ips-deviceusestatement.html" : "AT IPS DeviceUseStatement",
+      "StructureDefinition-at-ips-device.html" : "AT IPS Device",
+      "StructureDefinition-at-ips-observationtobaccouse.html" : "AT IPS Observation Tobacco Use"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/link-type",
@@ -823,6 +988,48 @@
       "uses" : {
       },
       "StructureDefinition-at-ips-patient.html" : "AT IPS Patient"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/media-modality",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "MediaModality",
+      "title" : "Media Modality",
+      "description" : "Detailed information about the type of the image - its kind, purpose, or the kind of equipment used to generate it.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/media-modality"],
+      "oids" : ["2.16.840.1.113883.4.642.3.1001"],
+      "sources" : ["2.16.840.1.113883.4.642.3.1001"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-MediaObservation.html" : "AT IPS MediaObservation"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/media-type",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "MediaType",
+      "title" : "Media Type",
+      "description" : "Codes for high level media categories.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/media-type"],
+      "oids" : ["2.16.840.1.113883.4.642.3.1000"],
+      "sources" : ["2.16.840.1.113883.4.642.3.1000"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-MediaObservation.html" : "AT IPS MediaObservation"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/media-view",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "MediaCollectionView/Projection",
+      "title" : "Media Collection View/Projection",
+      "description" : "Codes defined in SNOMED CT that can be used to record Media Recording views.",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : ["2.16.840.1.113883.4.642.3.337"],
+      "sources" : ["2.16.840.1.113883.4.642.3.337"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-MediaObservation.html" : "AT IPS MediaObservation"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/medication-codes",
@@ -974,6 +1181,136 @@
       "StructureDefinition-at-ips-patient.html" : "AT IPS Patient"
     },
     {
+      "url" : "http://hl7.org/fhir/ValueSet/observation-category",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "ObservationCategoryCodes",
+      "title" : "Observation Category Codes",
+      "description" : "Observation Category codes.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/observation-category"],
+      "oids" : ["2.16.840.1.113883.4.642.3.403"],
+      "sources" : ["2.16.840.1.113883.4.642.3.403"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-observationpregnancystatus.html" : "AT IPS Observation Pregnancy Status",
+      "StructureDefinition-at-ips-observationpregnancyoutcome.html" : "AT IPS Observation Pregnancy Outcome",
+      "StructureDefinition-at-ips-observationresultslaboratory.html" : "AT IPS Observation Results Laboratory",
+      "StructureDefinition-at-ips-observationpregnancyedd.html" : "AT IPS Observation Pregnancy Expected Delivery Date",
+      "StructureDefinition-at-ips-observationresults.html" : "AT IPS Observation Results",
+      "StructureDefinition-at-ips-observationvitalsigns.html" : "AT IPS Observation Vital Signs",
+      "StructureDefinition-at-ips-observationalcoholuse.html" : "AT IPS Observation Pregnancy Status",
+      "StructureDefinition-at-ips-observationresultspathology.html" : "AT IPS Observation Results Pathology",
+      "StructureDefinition-at-ips-observationresultsradiology.html" : "AT IPS Observation Results Radiology",
+      "StructureDefinition-at-ips-observationtobaccouse.html" : "AT IPS Observation Tobacco Use"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/observation-codes",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "LOINCCodes",
+      "title" : "LOINC Codes",
+      "description" : "This value set includes all LOINC codes",
+      "systems" : ["http://loinc.org"],
+      "oids" : ["2.16.840.1.113883.4.642.3.396"],
+      "sources" : ["2.16.840.1.113883.4.642.3.396"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-observationpregnancystatus.html" : "AT IPS Observation Pregnancy Status",
+      "StructureDefinition-at-ips-observationpregnancyoutcome.html" : "AT IPS Observation Pregnancy Outcome",
+      "StructureDefinition-at-ips-observationresultslaboratory.html" : "AT IPS Observation Results Laboratory",
+      "StructureDefinition-at-ips-observationpregnancyedd.html" : "AT IPS Observation Pregnancy Expected Delivery Date",
+      "StructureDefinition-at-ips-observationresults.html" : "AT IPS Observation Results",
+      "StructureDefinition-at-ips-observationalcoholuse.html" : "AT IPS Observation Pregnancy Status",
+      "StructureDefinition-at-ips-observationresultspathology.html" : "AT IPS Observation Results Pathology",
+      "StructureDefinition-at-ips-observationresultsradiology.html" : "AT IPS Observation Results Radiology",
+      "StructureDefinition-at-ips-observationtobaccouse.html" : "AT IPS Observation Tobacco Use"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/observation-interpretation",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "ObservationInterpretationCodes",
+      "title" : "Observation Interpretation Codes",
+      "description" : "A categorical assessment, providing a rough qualitative interpretation of the observation value,    such as “normal”/ “abnormal”,”low” / “high”, “better” / “worse”, “susceptible” / “resistant”, “expected”/ “not expected”.    The value set is intended to be for ANY use where coded representation of an interpretation is needed.   \r\n   \r\n   Notes:\r\n   \r\n   This is being communicated in v2.x in OBX-8 (Observation Interpretation), in v3 in ObservationInterpretation (CWE) in R1 (Representative Realm) and in FHIR in    Observation.interpretation. Historically these values come from the laboratory domain, and these codes are extensively    used. The value set binding is extensible, so codes outside the value set that are needed for interpretation concepts    (i.e. particular meanings) that are not included in the value set can be used, and these new codes may also be added to    the value set and published in a future version.",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
+      ],
+      "oids" : ["2.16.840.1.113883.4.642.3.399"],
+      "sources" : ["2.16.840.1.113883.4.642.3.399"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-observationpregnancystatus.html" : "AT IPS Observation Pregnancy Status",
+      "StructureDefinition-at-ips-observationpregnancyoutcome.html" : "AT IPS Observation Pregnancy Outcome",
+      "StructureDefinition-at-ips-observationresultslaboratory.html" : "AT IPS Observation Results Laboratory",
+      "StructureDefinition-at-ips-observationpregnancyedd.html" : "AT IPS Observation Pregnancy Expected Delivery Date",
+      "StructureDefinition-at-ips-observationresults.html" : "AT IPS Observation Results",
+      "StructureDefinition-at-ips-observationvitalsigns.html" : "AT IPS Observation Vital Signs",
+      "StructureDefinition-at-ips-observationalcoholuse.html" : "AT IPS Observation Pregnancy Status",
+      "StructureDefinition-at-ips-observationresultspathology.html" : "AT IPS Observation Results Pathology",
+      "StructureDefinition-at-ips-observationresultsradiology.html" : "AT IPS Observation Results Radiology",
+      "StructureDefinition-at-ips-observationtobaccouse.html" : "AT IPS Observation Tobacco Use"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/observation-methods",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "ObservationMethods",
+      "title" : "Observation Methods",
+      "description" : "Observation Method codes from [SNOMED CT](http://snomed.info/sct) where concept is-a 272394005 (Technique (qualifier value)) or is-a 129264002 (Action (qualifier value)) or is-a 386053000 (Evaluation procedure(procedure))",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : ["2.16.840.1.113883.4.642.3.395"],
+      "sources" : ["2.16.840.1.113883.4.642.3.395"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-observationpregnancystatus.html" : "AT IPS Observation Pregnancy Status",
+      "StructureDefinition-at-ips-observationpregnancyoutcome.html" : "AT IPS Observation Pregnancy Outcome",
+      "StructureDefinition-at-ips-observationresultslaboratory.html" : "AT IPS Observation Results Laboratory",
+      "StructureDefinition-at-ips-observationpregnancyedd.html" : "AT IPS Observation Pregnancy Expected Delivery Date",
+      "StructureDefinition-at-ips-observationresults.html" : "AT IPS Observation Results",
+      "StructureDefinition-at-ips-observationvitalsigns.html" : "AT IPS Observation Vital Signs",
+      "StructureDefinition-at-ips-observationalcoholuse.html" : "AT IPS Observation Pregnancy Status",
+      "StructureDefinition-at-ips-observationresultspathology.html" : "AT IPS Observation Results Pathology",
+      "StructureDefinition-at-ips-observationresultsradiology.html" : "AT IPS Observation Results Radiology",
+      "StructureDefinition-at-ips-observationtobaccouse.html" : "AT IPS Observation Tobacco Use"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/observation-status",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "ObservationStatus",
+      "title" : "ObservationStatus",
+      "description" : "Codes providing the status of an observation.",
+      "systems" : ["http://hl7.org/fhir/observation-status"],
+      "oids" : ["2.16.840.1.113883.4.642.3.400"],
+      "sources" : ["2.16.840.1.113883.4.642.3.400"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-observationpregnancystatus.html" : "AT IPS Observation Pregnancy Status",
+      "StructureDefinition-at-ips-observationpregnancyoutcome.html" : "AT IPS Observation Pregnancy Outcome",
+      "StructureDefinition-at-ips-observationresultslaboratory.html" : "AT IPS Observation Results Laboratory",
+      "StructureDefinition-at-ips-observationpregnancyedd.html" : "AT IPS Observation Pregnancy Expected Delivery Date",
+      "StructureDefinition-at-ips-observationresults.html" : "AT IPS Observation Results",
+      "StructureDefinition-at-ips-observationvitalsigns.html" : "AT IPS Observation Vital Signs",
+      "StructureDefinition-at-ips-observationalcoholuse.html" : "AT IPS Observation Pregnancy Status",
+      "StructureDefinition-at-ips-observationresultspathology.html" : "AT IPS Observation Results Pathology",
+      "StructureDefinition-at-ips-observationresultsradiology.html" : "AT IPS Observation Results Radiology",
+      "StructureDefinition-at-ips-observationtobaccouse.html" : "AT IPS Observation Tobacco Use"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/observation-vitalsignresult",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "VitalSigns",
+      "title" : "Vital Signs",
+      "description" : "This value set indicates the allowed vital sign result types.   The LOINC code for Vitals Signs panel (85353-1) is a grouping structure for a set of vital signs and includes related links (with type=has-member) to the Observations in this set (e.g. respiratory rate, heart rate, BP).  The Blood pressure panel (85354-9) is used to group the component observations Systolic blood pressure (8480-6) and Diastolic blood pressure (8462-4).",
+      "systems" : ["http://loinc.org"],
+      "oids" : ["2.16.840.1.113883.3.88.12.80.62"],
+      "sources" : ["2.16.840.1.113883.3.88.12.80.62"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-observationvitalsigns.html" : "AT IPS Observation Vital Signs"
+    },
+    {
       "url" : "http://hl7.org/fhir/ValueSet/patient-contactrelationship",
       "version" : "4.0.1",
       "status" : "active",
@@ -999,7 +1336,94 @@
       "sources" : ["2.16.840.1.113883.4.642.3.433"],
       "uses" : {
       },
+      "StructureDefinition-at-ips-Procedure.html" : "AT IPS Procedure",
       "StructureDefinition-at-ips-medicationrequest.html" : "AT IPS MedicationRequest"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/procedure-category",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "ProcedureCategoryCodes(SNOMEDCT)",
+      "title" : "Procedure Category Codes (SNOMED CT)",
+      "description" : "Procedure Category code: A selection of relevant SNOMED CT codes.",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : ["2.16.840.1.113883.4.642.3.430"],
+      "sources" : ["2.16.840.1.113883.4.642.3.430"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-Procedure.html" : "AT IPS Procedure"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/procedure-code",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "ProcedureCodes(SNOMEDCT)",
+      "title" : "Procedure Codes (SNOMED CT)",
+      "description" : "Procedure Code: All SNOMED CT procedure codes.",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : ["2.16.840.1.113883.4.642.3.427"],
+      "sources" : ["2.16.840.1.113883.4.642.3.427"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-Procedure.html" : "AT IPS Procedure"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/procedure-followup",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "ProcedureFollowUpCodes(SNOMEDCT)",
+      "title" : "Procedure Follow up Codes (SNOMED CT)",
+      "description" : "Procedure follow up codes: A selection of SNOMED CT codes relevant to procedure follow up.",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : ["2.16.840.1.113883.4.642.3.429"],
+      "sources" : ["2.16.840.1.113883.4.642.3.429"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-Procedure.html" : "AT IPS Procedure"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/procedure-not-performed-reason",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "ProcedureNotPerformedReason(SNOMED-CT)",
+      "title" : "Procedure Not Performed Reason (SNOMED-CT)",
+      "description" : "Situation codes describing the reason that a procedure, which might otherwise be expected, was not performed, or a procedure that was started and was not completed. Consists of SNOMED CT codes, children of procedure contraindicated (183932001), procedure discontinued (416406003), procedure not done (416237000), procedure not indicated (428119001), procedure not offered (416064006), procedure not wanted (416432009), procedure refused (183944003), and procedure stopped (394908001).",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : ["2.16.840.1.113883.4.642.3.431"],
+      "sources" : ["2.16.840.1.113883.4.642.3.431"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-Procedure.html" : "AT IPS Procedure"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/procedure-outcome",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "ProcedureOutcomeCodes(SNOMEDCT)",
+      "title" : "Procedure Outcome Codes (SNOMED CT)",
+      "description" : "Procedure Outcome code: A selection of relevant SNOMED CT codes.",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : ["2.16.840.1.113883.4.642.3.428"],
+      "sources" : ["2.16.840.1.113883.4.642.3.428"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-Procedure.html" : "AT IPS Procedure"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/procedure-reason",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "ProcedureReasonCodes",
+      "title" : "Procedure Reason Codes",
+      "description" : "This example value set defines the set of codes that can be used to indicate a reason for a procedure.",
+      "systems" : ["http://snomed.info/sct"],
+      "oids" : ["2.16.840.1.113883.4.642.3.432"],
+      "sources" : ["2.16.840.1.113883.4.642.3.432"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-MediaObservation.html" : "AT IPS MediaObservation",
+      "StructureDefinition-at-ips-imagingstudy.html" : "AT IPS ImagingStudy",
+      "StructureDefinition-at-ips-Procedure.html" : "AT IPS Procedure"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/reaction-event-severity",
@@ -1030,6 +1454,71 @@
       "StructureDefinition-at-ips-medicationstatement.html" : "AT IPS MedicationStatement"
     },
     {
+      "url" : "http://hl7.org/fhir/ValueSet/referencerange-appliesto",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "ObservationReferenceRangeAppliesToCodes",
+      "title" : "Observation Reference Range Applies To Codes",
+      "description" : "This value set defines a set of codes that can be used to indicate the particular target population the reference range applies to.",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/v3-Race",
+        "http://snomed.info/sct"
+      ],
+      "oids" : ["2.16.840.1.113883.4.642.3.407"],
+      "sources" : ["2.16.840.1.113883.4.642.3.407"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-observationpregnancystatus.html" : "AT IPS Observation Pregnancy Status",
+      "StructureDefinition-at-ips-observationpregnancyoutcome.html" : "AT IPS Observation Pregnancy Outcome",
+      "StructureDefinition-at-ips-observationresultslaboratory.html" : "AT IPS Observation Results Laboratory",
+      "StructureDefinition-at-ips-observationpregnancyedd.html" : "AT IPS Observation Pregnancy Expected Delivery Date",
+      "StructureDefinition-at-ips-observationresults.html" : "AT IPS Observation Results",
+      "StructureDefinition-at-ips-observationvitalsigns.html" : "AT IPS Observation Vital Signs",
+      "StructureDefinition-at-ips-observationalcoholuse.html" : "AT IPS Observation Pregnancy Status",
+      "StructureDefinition-at-ips-observationresultspathology.html" : "AT IPS Observation Results Pathology",
+      "StructureDefinition-at-ips-observationresultsradiology.html" : "AT IPS Observation Results Radiology",
+      "StructureDefinition-at-ips-observationtobaccouse.html" : "AT IPS Observation Tobacco Use"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/referencerange-meaning",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "ObservationReferenceRangeMeaningCodes",
+      "title" : "Observation Reference Range Meaning Codes",
+      "description" : "This value set defines a set of codes that can be used to indicate the meaning/use of a reference range for a particular target population.",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/referencerange-meaning"
+      ],
+      "oids" : ["2.16.840.1.113883.4.642.3.397"],
+      "sources" : ["2.16.840.1.113883.4.642.3.397"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-observationpregnancystatus.html" : "AT IPS Observation Pregnancy Status",
+      "StructureDefinition-at-ips-observationpregnancyoutcome.html" : "AT IPS Observation Pregnancy Outcome",
+      "StructureDefinition-at-ips-observationresultslaboratory.html" : "AT IPS Observation Results Laboratory",
+      "StructureDefinition-at-ips-observationpregnancyedd.html" : "AT IPS Observation Pregnancy Expected Delivery Date",
+      "StructureDefinition-at-ips-observationresults.html" : "AT IPS Observation Results",
+      "StructureDefinition-at-ips-observationvitalsigns.html" : "AT IPS Observation Vital Signs",
+      "StructureDefinition-at-ips-observationalcoholuse.html" : "AT IPS Observation Pregnancy Status",
+      "StructureDefinition-at-ips-observationresultspathology.html" : "AT IPS Observation Results Pathology",
+      "StructureDefinition-at-ips-observationresultsradiology.html" : "AT IPS Observation Results Radiology",
+      "StructureDefinition-at-ips-observationtobaccouse.html" : "AT IPS Observation Tobacco Use"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/report-codes",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "LOINCDiagnosticReportCodes",
+      "title" : "LOINC Diagnostic Report Codes",
+      "description" : "This value set includes LOINC codes that relate to Diagnostic Observations.",
+      "systems" : ["http://loinc.org"],
+      "oids" : ["2.16.840.1.113883.4.642.3.233"],
+      "sources" : ["2.16.840.1.113883.4.642.3.233"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-diagnosticreport.html" : "AT IPS DiagnosticReport"
+    },
+    {
       "url" : "http://hl7.org/fhir/ValueSet/request-priority",
       "version" : "4.0.1",
       "status" : "draft",
@@ -1055,9 +1544,9 @@
       "sources" : ["2.16.840.1.113883.4.642.3.27"],
       "uses" : {
       },
-      "StructureDefinition-at-ips-patient.html" : "AT IPS Patient",
       "StructureDefinition-at-ips-practitioner.html" : "AT IPS Practitioner",
-      "StructureDefinition-at-ips-organization.html" : "AT IPS Organization"
+      "StructureDefinition-at-ips-organization.html" : "AT IPS Organization",
+      "StructureDefinition-at-ips-patient.html" : "AT IPS Patient"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/route-codes",
@@ -1086,6 +1575,20 @@
       "uses" : {
       },
       "StructureDefinition-at-ips-document.html" : "AT IPS Document"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/series-performer-function",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "ImagingStudySeriesPerformerFunction",
+      "title" : "ImagingStudy series performer function",
+      "description" : "Performer function of an agent in an imaging study series",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ParticipationType"],
+      "oids" : ["2.16.840.1.113883.4.642.3.989"],
+      "sources" : ["2.16.840.1.113883.4.642.3.989"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-imagingstudy.html" : "AT IPS ImagingStudy"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/specimen-collection-method",
@@ -1156,6 +1659,20 @@
       "uses" : {
       },
       "StructureDefinition-at-ips-allergyintolerance.html" : "AT IPS AllergyIntolerance"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/ucum-vitals-common",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "VitalSignsUnits",
+      "title" : "Vital Signs Units",
+      "description" : "Common UCUM units for recording Vital Signs",
+      "systems" : ["http://unitsofmeasure.org"],
+      "oids" : ["2.16.840.1.113883.4.642.3.955"],
+      "sources" : ["2.16.840.1.113883.4.642.3.955"],
+      "uses" : {
+      },
+      "StructureDefinition-at-ips-observationvitalsigns.html" : "AT IPS Observation Vital Signs"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/udi-entry-type",
