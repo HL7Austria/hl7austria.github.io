@@ -16,7 +16,7 @@
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "IntegrierteVersorgungHerzinsuffizienz"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-05-28T14:23:58+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-05-29T09:10:17+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ELGA GmbH" ] ;
@@ -775,6 +775,18 @@
        ] ;
        fhir:name [ fhir:v "Schulung" ] ;
        fhir:description [ fhir:v "Erhebung der absolvierten Schulungen" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://hi.iv.elga.gv.at/ValueSet/education> ;
+         fhir:reference [ fhir:v "ValueSet/education" ]
+       ] ;
+       fhir:name [ fhir:v "Schulung und Beratung" ] ;
+       fhir:description [ fhir:v "Schulungen im Rahmen des DMP \"Herzinsuffizienz\"" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
