@@ -10,14 +10,14 @@
   fhir:id [ fhir:v "hl7.at.fhir.elga.ips"] ; # 
   fhir:text [
      fhir:status [ fhir:v "extensions" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>ELGAAustrianPatientSummaryR4</h2><p>The official URL for this implementation guide is: </p><pre>https://fhir.hl7.at/elga-austrianpatientsummary-r4/ImplementationGuide/hl7.at.fhir.elga.ips</pre><div><p>The FHIR® implementation guide Austrian IPS is derived from the HL7® Austria FHIR® Core Implementation Guide and ensures conformity with the International Patient Summary (IPS).</p>\n</div></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>ELGAAustrianPatientSummaryR4</h2><p>The official URL for this implementation guide is: </p><pre>https://fhir.hl7.at/elga-austrianpatientsummary-r4/ImplementationGuide/hl7.at.fhir.elga.ips</pre><div><p>The FHIR® implementation guide Austrian IPS is derived from the HL7® Austria FHIR® Core implementation guide and ensures conformity with the International Patient Summary (IPS).</p>\n</div></div>"
   ] ; # 
   fhir:url [ fhir:v "https://fhir.hl7.at/elga-austrianpatientsummary-r4/ImplementationGuide/hl7.at.fhir.elga.ips"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "ELGAAustrianPatientSummaryR4"] ; # 
   fhir:title [ fhir:v "Austrian IPS (R4)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-05-28T13:59:53+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-05-29T06:58:17+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ELGA GmbH" ] ;
@@ -26,7 +26,7 @@
        fhir:value [ fhir:v "https://elga.gv.at" ]
      ] )
   ] ) ; # 
-  fhir:description [ fhir:v "The FHIR® implementation guide Austrian IPS is derived from the HL7® Austria FHIR® Core Implementation Guide and ensures conformity with the International Patient Summary (IPS)."] ; # 
+  fhir:description [ fhir:v "The FHIR® implementation guide Austrian IPS is derived from the HL7® Austria FHIR® Core implementation guide and ensures conformity with the International Patient Summary (IPS)."] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
        fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
@@ -542,7 +542,19 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-allergyintolerance" ]
        ] ;
        fhir:name [ fhir:v "AT IPS AllergyIntolerance" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the AllergyIntolerance resource is derived from the general AllergyIntolerance resource in absence of a corresponding profile in the HL7® Austria FHIR® Core Implementation Guide and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the AllergyIntolerance resource is derived from the general AllergyIntolerance resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-bundle> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-ips-bundle" ]
+       ] ;
+       fhir:name [ fhir:v "AT IPS Bundle" ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the Bundle resource is derived from the general Bundle resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -554,7 +566,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-composition" ]
        ] ;
        fhir:name [ fhir:v "AT IPS Composition" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the Composition resource is derived from the general Composition resource in absence of a corresponding profile in the HL7® Austria FHIR® Core Implementation Guide and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the Composition resource is derived from the general Composition resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -566,7 +578,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-condition" ]
        ] ;
        fhir:name [ fhir:v "AT IPS Condition" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the Condition resource is derived from the general Condition resource in absence of a corresponding profile in the HL7® Austria FHIR® Core Implementation Guide and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the Condition resource is derived from the general Condition resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -578,7 +590,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-device" ]
        ] ;
        fhir:name [ fhir:v "AT IPS Device" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the Device resource is derived from the general Device resource in absence of a corresponding profile in the HL7® Austria FHIR® Core Implementation Guide and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the Device resource is derived from the general Device resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -590,7 +602,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-deviceusestatement" ]
        ] ;
        fhir:name [ fhir:v "AT IPS DeviceUseStatement" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the DeviceUseStatement resource is derived from the general DeviceUseStatement resource in absence of a corresponding profile in the HL7® Austria FHIR® Core Implementation Guide and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the DeviceUseStatement resource is derived from the general DeviceUseStatement resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -602,19 +614,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-diagnosticreport" ]
        ] ;
        fhir:name [ fhir:v "AT IPS DiagnosticReport" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the DiagnosticReport resource is derived from the general DiagnosticReport resource in absence of a corresponding profile in the HL7® Austria FHIR® Core Implementation Guide and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-document> ;
-         fhir:reference [ fhir:v "StructureDefinition/at-ips-document" ]
-       ] ;
-       fhir:name [ fhir:v "AT IPS Document" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the Bundle resource is derived from the general Bundle resource in absence of a corresponding profile in the HL7® Austria FHIR® Core Implementation Guide and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the DiagnosticReport resource is derived from the general DiagnosticReport resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -626,7 +626,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-imagingstudy" ]
        ] ;
        fhir:name [ fhir:v "AT IPS ImagingStudy" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the ImagingStudy resource is derived from the general ImagingStudy resource in absence of a corresponding profile in the HL7® Austria FHIR® Core Implementation Guide and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the ImagingStudy resource is derived from the general ImagingStudy resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -638,7 +638,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-immunization" ]
        ] ;
        fhir:name [ fhir:v "AT IPS Immunization" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the Immunization resource is derived from the general Immunization resource in absence of a corresponding profile in the HL7® Austria FHIR® Core Implementation Guide and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the Immunization resource is derived from the general Immunization resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -650,7 +650,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-MediaObservation" ]
        ] ;
        fhir:name [ fhir:v "AT IPS MediaObservation" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the MediaObservation resource is derived from the general MediaObservation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core Implementation Guide and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the Media resource is derived from the general Media resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -662,7 +662,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-medication" ]
        ] ;
        fhir:name [ fhir:v "AT IPS Medication" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the Medication resource is derived from the IPS Medication resource in absence of a corresponding profile in the HL7® Austria FHIR® Core Implementation Guide." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the Medication resource is derived from the IPS Medication resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -674,7 +674,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-medicationrequest" ]
        ] ;
        fhir:name [ fhir:v "AT IPS MedicationRequest" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the MedicationRequest resource is derived from the general MedicationRequest resource in absence of a corresponding profile in the HL7® Austria FHIR® Core Implementation Guide and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the MedicationRequest resource is derived from the general MedicationRequest resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -686,7 +686,19 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-medicationstatement" ]
        ] ;
        fhir:name [ fhir:v "AT IPS MedicationStatement" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the MedicationStatement resource is derived from the general MedicationStatement resource in absence of a corresponding profile in the HL7® Austria FHIR® Core Implementation Guide and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the MedicationStatement resource is derived from the general MedicationStatement resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationalcoholuse> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-ips-observationalcoholuse" ]
+       ] ;
+       fhir:name [ fhir:v "AT IPS Observation Alcohol Use" ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -698,7 +710,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-observationpregnancyedd" ]
        ] ;
        fhir:name [ fhir:v "AT IPS Observation Pregnancy Expected Delivery Date" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core Implementation Guide and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -710,19 +722,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-observationpregnancyoutcome" ]
        ] ;
        fhir:name [ fhir:v "AT IPS Observation Pregnancy Outcome" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core Implementation Guide and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationalcoholuse> ;
-         fhir:reference [ fhir:v "StructureDefinition/at-ips-observationalcoholuse" ]
-       ] ;
-       fhir:name [ fhir:v "AT IPS Observation Pregnancy Status" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core Implementation Guide and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -734,7 +734,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-observationpregnancystatus" ]
        ] ;
        fhir:name [ fhir:v "AT IPS Observation Pregnancy Status" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core Implementation Guide and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -746,7 +746,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-observationresults" ]
        ] ;
        fhir:name [ fhir:v "AT IPS Observation Results" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core Implementation Guide and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -758,7 +758,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-observationresultslaboratory" ]
        ] ;
        fhir:name [ fhir:v "AT IPS Observation Results Laboratory" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core Implementation Guide and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the Observation resource is derived from the \"AtIpsObservationResults\" profile and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -770,7 +770,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-observationresultspathology" ]
        ] ;
        fhir:name [ fhir:v "AT IPS Observation Results Pathology" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core Implementation Guide and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the Observation resource is derived from the \"AtIpsObservationResults\" profile and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -782,7 +782,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-observationresultsradiology" ]
        ] ;
        fhir:name [ fhir:v "AT IPS Observation Results Radiology" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core Implementation Guide and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the Observation resource is derived from the \"AtIpsObservationResults\" profile and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -794,7 +794,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-observationtobaccouse" ]
        ] ;
        fhir:name [ fhir:v "AT IPS Observation Tobacco Use" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core Implementation Guide and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -806,7 +806,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-observationvitalsigns" ]
        ] ;
        fhir:name [ fhir:v "AT IPS Observation Vital Signs" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core Implementation Guide and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the Observation resource is derived from the general vital signs profile." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -818,7 +818,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-organization" ]
        ] ;
        fhir:name [ fhir:v "AT IPS Organization" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the Organization resource is derived from the corresponding HL7® Austria FHIR® Core profile and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the Organization resource is derived from the corresponding HL7® Austria FHIR® Core profile and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -830,7 +830,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-patient" ]
        ] ;
        fhir:name [ fhir:v "AT IPS Patient" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the Patient resource is derived from the corresponding HL7® Austria FHIR® Core profile and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the Patient resource is derived from the corresponding HL7® Austria FHIR® Core profile and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -842,7 +842,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-practitioner" ]
        ] ;
        fhir:name [ fhir:v "AT IPS Practitioner" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the Practitioner resource is derived from the corresponding HL7® Austria FHIR® Core profile and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the Practitioner resource is derived from the corresponding HL7® Austria FHIR® Core profile and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -854,7 +854,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-practitionerrole" ]
        ] ;
        fhir:name [ fhir:v "AT IPS PractitionerRole" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the PractitionerRole resource is derived from the corresponding HL7® Austria FHIR® Core profile and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the PractitionerRole resource is derived from the corresponding HL7® Austria FHIR® Core profile and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -866,7 +866,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-Procedure" ]
        ] ;
        fhir:name [ fhir:v "AT IPS Procedure" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the Procedure resource is derived from the general Procedure resource in absence of a corresponding profile in the HL7® Austria FHIR® Core Implementation Guide and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the Procedure resource is derived from the general Procedure resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -878,7 +878,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-ips-specimen" ]
        ] ;
        fhir:name [ fhir:v "AT IPS Specimen" ] ;
-       fhir:description [ fhir:v "This AT IPS profile for the Specimen resource is derived from the general Specimen resource in absence of a corresponding profile in the HL7® Austria FHIR® Core Implementation Guide and also ensures IPS conformity via the IPS profile referenced by the so-called imposeProfile extension." ] ;
+       fhir:description [ fhir:v "This AT IPS profile for the Specimen resource is derived from the general Specimen resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] ) ;
      fhir:page [
