@@ -305,7 +305,7 @@ Eine Speicherung von Verordnungen ohne Zuordnung eines Rezeptes ist nicht gülti
 <ul>
   <li>Arzneimittel auswählen: Der Arzt wählt eine oder mehrere Arzneimittelspezialitäten aus einem Katalog („ASP-Liste“, die Liste der humanen Arzneispezialitäten gelistet nach PZN) aus, wobei Handelsname, Pharmazentralnummer (PZN) sowie andere Daten zur Beschreibung des Arzneimittels (Stärke, Darreichungsform, Packungsgröße, Zulassungsnummer etc.) automatisch aus einem Katalog6 mit allen ELGA-relevanten Arzneimittelspezialitäten übernommen werden können.</li>
   <li>eMED-ID anfordern: Die Vergabe der eindeutigen eMED-ID erfolgt zentral durch die Serverkomponente e-Medikation und kann über eine entsprechende Schnittstelle angefordert werden.</li>
-  <li>Arzneimittel ausnehmen: Arzneimittel können von der Speicherung in e-Medikation ausgenommen werden (funktionale Anforderung an die GDA-Software, siehe ELGA Usability-Styleguide &amp; Situatives Opt-Out [2],[3],[4])</li>
+  <li>Arzneimittel ausnehmen: Arzneimittel können von der Speicherung in e-Medikation ausgenommen werden (funktionale Anforderung an die GDA-Software)</li>
   <li>Rezept mit Verordnung in e-Medikation speichern: Prüfung der Eingabedaten</li>
   <li>Rezept drucken (Anforderung an die GDA-Software, kein Teil in der e-Medikation). Die eMED-ID soll, sofern technisch möglich, sowohl als Klartext als auch als maschinenlesbarer Code (2D-Matrix-Code) auf dem e-Rezept-Ausdruck bzw. einem Papierrezept aufgedruckt werden (§18 Abs. 4 Z. 4 GTelG 2012) um die Versorgungskontinuität (verbesserte Arbeitsabläufe) als auch die anwenderfreundlichen Umsetzung der e-Medikation zu unterstützen.</li>
 </ul>
@@ -320,15 +320,18 @@ Eine Speicherung von Verordnungen ohne Zuordnung eines Rezeptes ist nicht gülti
 
 <p>Das Rezept wird durch eine Rezeptart gekennzeichnet, um die Gültigkeitsdauer prüfen zu können. In e-Medikation werden folgende Rezeptarten berücksichtigt:</p>
 <ul>
-  <li>Kassenrezept – 1 Monat gültig; eine Einlösung möglich; im Zuge des „Besorgerprozesses“ wird bei einer gespeicherten Teilabgabe die gesamte Gültigkeitsdauer auf 3 Monate verlängert
-Es ist nicht möglich, zusätzliche Einlösungen anzugeben.</li>
-  <li>Privatrezept - 1 Monat gültig
+  <li>Kassenrezept – 1 Monat gültig und entspricht dem Zeitraum vom Ausstellungszeitpunkt bis zum gleichen Tag im Folgemonat 23:59 Uhr; eine Einlösung möglich; im Zuge des „Besorgerprozesses“ wird bei einer gespeicherten Teilabgabe die gesamte Gültigkeitsdauer auf 3 Monate verlängert
+Es ist nicht möglich, zusätzliche Einlösungen anzugeben.
     <ul>
-      <li>Die Gültigkeitsdauer von 1 Monat bezieht sich auf die erste Einlösung. Der Akteur kann eine erweiterte Gültigkeitsdauer mit maximal einem Jahr festlegen.</li>
-      <li>bis zu 365 Tage bzw. bis zu 6 Einlösungen, wobei Gültigkeitsdauer und Anzahl der möglichen Einlösungen vom Arzt definiert werden können.  Dabei muss das Privatrezept innerhalb des ersten Monats erstmalig eingelöst werden (§ 4 Abs. 1 RezeptpflichtG).</li>
+      <li>Beispiel: Wenn ein Kassenrezept am 1.4., 16:45 Uhr ausgestellt wird, dann ist es bis 2.5., 00:01 Uhr gültig. Möglicherweise führt das erwähnte „add_month“ dazu, dass die die Gültigkeit in dem Fall auf die Uhrzeit genau, also auf 2.5., 16:45 Uhr gesetzt wird, was dann zu dem Fehler führt.</li>
     </ul>
   </li>
-  <li>Substitutionsrezept – Maximale Gültigkeitsdauer von 24 Monaten. Das GültigVon Datum darf maximal einen Monat in der Zukunft liegen. 
+  <li>Privatrezept - 12 Monate gültig, sofern die erste Einlösung innerhalb von 1 Monat ab Erstelldatum erfolgt ist
+    <ul>
+      <li>Die maximale Gültigkeitsdauer beträgt 365 Tage bzw. sind bis zu 6 Einlösungen möglich, wobei Gültigkeitsdauer und Anzahl der möglichen Einlösungen vom Arzt definiert werden können. Dabei muss das Privatrezept innerhalb des ersten Monats erstmalig eingelöst werden (§ 4 Abs. 1 RezeptpflichtG).</li>
+    </ul>
+  </li>
+  <li>Substitutionsrezept – Maximale Gültigkeitsdauer von 12 Monaten. Das GültigVon Datum darf maximal einen Monat in der Zukunft liegen. 
 Es ist nicht möglich, zusätzliche Einlösungen anzugeben.</li>
 </ul>
 
@@ -627,7 +630,7 @@ Der Prozess einer „Teilabgabe“ eines Rezeptes kann mit obiger Logik des „B
 <h4 id="vorbedingung-6">Vorbedingung</h4>
 <ul>
   <li>ELGA-Vorbedingung: GDA ist autorisiert, ELGA Teilnehmer ist identifiziert, eine gültige Kontaktbestätigung/Berechtigung („Ticket“) wurde vom ELGA-Berechtigungssystem ausgestellt.</li>
-  <li>e-Medikation Vorbedingung: Abgaben in den letzten 365 Tagen vorhanden</li>
+  <li>e-Medikation Vorbedingung: Abgaben in den letzten 18 Monaten vorhanden</li>
 </ul>
 
 <h4 id="akteure-7">Akteure</h4>
@@ -733,6 +736,7 @@ Falls fehlerhafte Daten übergeben werden, muss eine Fehlermeldung zurückgelief
   <li>Arzt im niedergelassenen Bereich</li>
   <li>Krankenanstalt</li>
   <li>Apotheke</li>
+  <li>Einrichtungen der Pflege</li>
 </ul>
 
 <h4 id="ablauf-9">Ablauf</h4>
@@ -814,7 +818,7 @@ Die Medikationsliste wird bei Aufruf serverseitig erstellt und enthält die aktu
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA GmbH</a>.  Package elga-e-medikation-R5.elga.hl7.at#0.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Mon, May 13, 2024 06:24+0000">2024-05-13</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA GmbH</a>.  Package elga-e-medikation-R5.elga.hl7.at#0.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Wed, Jun 5, 2024 08:21+0000">2024-06-05</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
