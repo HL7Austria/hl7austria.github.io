@@ -3,14 +3,14 @@
   "id" : "hl7.at.fhir.elga.ips",
   "text" : {
     "status" : "extensions",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>ELGAAustrianPatientSummaryR4</h2><p>The official URL for this implementation guide is: </p><pre>https://fhir.hl7.at/elga-austrianpatientsummary-r4/ImplementationGuide/hl7.at.fhir.elga.ips</pre><div><p>The FHIR® implementation guide Austrian IPS is derived from the HL7® Austria FHIR® Core implementation guide and ensures conformity with the International Patient Summary (IPS).</p>\n</div></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>ELGAAustrianPatientSummaryR4</h2><p>The official URL for this implementation guide is: </p><pre>https://fhir.hl7.at/elga-austrianpatientsummary-r4/ImplementationGuide/hl7.at.fhir.elga.ips</pre><div><p>The FHIR® implementation guide Austrian Patient Summary is derived from the HL7® Austria FHIR® Core implementation guide and ensures conformity with the International Patient Summary (IPS).</p>\n</div></div>"
   },
   "url" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/ImplementationGuide/hl7.at.fhir.elga.ips",
   "version" : "0.1.0",
   "name" : "ELGAAustrianPatientSummaryR4",
-  "title" : "Austrian IPS (R4)",
+  "title" : "Austrian Patient Summary (R4)",
   "status" : "draft",
-  "date" : "2024-05-29T12:02:27+00:00",
+  "date" : "2024-06-19T12:04:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -19,7 +19,7 @@
       "value" : "https://elga.gv.at"
     }]
   }],
-  "description" : "The FHIR® implementation guide Austrian IPS is derived from the HL7® Austria FHIR® Core implementation guide and ensures conformity with the International Patient Summary (IPS).",
+  "description" : "The FHIR® implementation guide Austrian Patient Summary is derived from the HL7® Austria FHIR® Core implementation guide and ensures conformity with the International Patient Summary (IPS).",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -619,6 +619,28 @@
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/APS-1-no-problems-medication-allergies"
+      },
+      "name" : "APS-1-no-problems-medication-allergies",
+      "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-bundle"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/APS-2-preventive-medical-checkup"
+      },
+      "name" : "APS-2-preventive-medical-checkup",
+      "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-bundle"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
@@ -963,28 +985,6 @@
       "name" : "AT IPS Specimen",
       "description" : "This AT IPS profile for the Specimen resource is derived from the general Specimen resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
       "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Bundle"
-      }],
-      "reference" : {
-        "reference" : "Bundle/IPS-1-no-problems-medication-allergies"
-      },
-      "name" : "IPS-1-no-problems-medication-allergies",
-      "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-bundle"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Bundle"
-      }],
-      "reference" : {
-        "reference" : "Bundle/IPS-2-preventive-medical-checkup"
-      },
-      "name" : "IPS-2-preventive-medical-checkup",
-      "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-bundle"
     }],
     "page" : {
       "extension" : [{
@@ -1001,6 +1001,15 @@
         }],
         "nameUrl" : "index.html",
         "title" : "Home",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "contest.html"
+        }],
+        "nameUrl" : "contest.html",
+        "title" : "IPS Visualization Contest",
         "generation" : "markdown"
       }]
     },

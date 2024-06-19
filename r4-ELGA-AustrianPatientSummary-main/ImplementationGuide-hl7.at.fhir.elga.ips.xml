@@ -3,15 +3,15 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="hl7.at.fhir.elga.ips"/>
   <text>
-    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>ELGAAustrianPatientSummaryR4</h2><p>The official URL for this implementation guide is: </p><pre>https://fhir.hl7.at/elga-austrianpatientsummary-r4/ImplementationGuide/hl7.at.fhir.elga.ips</pre><div><p>The FHIR® implementation guide Austrian IPS is derived from the HL7® Austria FHIR® Core implementation guide and ensures conformity with the International Patient Summary (IPS).</p>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>ELGAAustrianPatientSummaryR4</h2><p>The official URL for this implementation guide is: </p><pre>https://fhir.hl7.at/elga-austrianpatientsummary-r4/ImplementationGuide/hl7.at.fhir.elga.ips</pre><div><p>The FHIR® implementation guide Austrian Patient Summary is derived from the HL7® Austria FHIR® Core implementation guide and ensures conformity with the International Patient Summary (IPS).</p>
 </div></div>
   </text>
   <url value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/ImplementationGuide/hl7.at.fhir.elga.ips"/>
   <version value="0.1.0"/>
   <name value="ELGAAustrianPatientSummaryR4"/>
-  <title value="Austrian IPS (R4)"/>
+  <title value="Austrian Patient Summary (R4)"/>
   <status value="draft"/>
-  <date value="2024-05-29T12:02:27+00:00"/>
+  <date value="2024-06-19T12:04:55+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -20,7 +20,7 @@
       <value value="https://elga.gv.at"/>
     </telecom>
   </contact>
-  <description value="The FHIR® implementation guide Austrian IPS is derived from the HL7® Austria FHIR® Core implementation guide and ensures conformity with the International Patient Summary (IPS)."/>
+  <description value="The FHIR® implementation guide Austrian Patient Summary is derived from the HL7® Austria FHIR® Core implementation guide and ensures conformity with the International Patient Summary (IPS)."/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
@@ -462,6 +462,26 @@
     </extension>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/APS-1-no-problems-medication-allergies"/>
+      </reference>
+      <name value="APS-1-no-problems-medication-allergies"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-bundle"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/APS-2-preventive-medical-checkup"/>
+      </reference>
+      <name value="APS-2-preventive-medical-checkup"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-bundle"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
@@ -779,26 +799,6 @@
       <description value="This AT IPS profile for the Specimen resource is derived from the general Specimen resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension."/>
       <exampleBoolean value="false"/>
     </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Bundle"/>
-      </extension>
-      <reference>
-        <reference value="Bundle/IPS-1-no-problems-medication-allergies"/>
-      </reference>
-      <name value="IPS-1-no-problems-medication-allergies"/>
-      <exampleCanonical value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-bundle"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Bundle"/>
-      </extension>
-      <reference>
-        <reference value="Bundle/IPS-2-preventive-medical-checkup"/>
-      </reference>
-      <name value="IPS-2-preventive-medical-checkup"/>
-      <exampleCanonical value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-bundle"/>
-    </resource>
     <page>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
         <valueUrl value="toc.html"/>
@@ -812,6 +812,14 @@
         </extension>
         <nameUrl value="index.html"/>
         <title value="Home"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="contest.html"/>
+        </extension>
+        <nameUrl value="contest.html"/>
+        <title value="IPS Visualization Contest"/>
         <generation value="markdown"/>
       </page>
     </page>
