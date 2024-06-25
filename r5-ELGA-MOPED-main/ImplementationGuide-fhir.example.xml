@@ -10,7 +10,7 @@
   <name value="MOPED"/>
   <title value="Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"/>
   <status value="draft"/>
-  <date value="2024-06-19T12:05:11+00:00"/>
+  <date value="2024-06-25T16:45:11+00:00"/>
   <publisher value="Example Publisher"/>
   <contact>
     <name value="Example Publisher"/>
@@ -47,6 +47,28 @@
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
       <valueCode value="hl7.fhir.uv.tools#0.1.0"/>
     </extension>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-diagnose-typ"/>
+      </reference>
+      <name value="LKF Diagnoseart"/>
+      <description value="MOPED Extension für die Art der LKF Diagnose. Die Diagnoseart gibt an, ob es sich um eine Haupt- oder Nebendiagnose handelt."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MOPEDAccount"/>
+      </reference>
+      <name value="MOPEDAccount"/>
+      <description value="MOPED Profil der Account Ressource für die administrative Fallführung und Abrechnung."/>
+      <isExample value="false"/>
+    </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
@@ -124,6 +146,17 @@
       <description value="MOPED Profil für Abteilungen innerhalb einer Krankenanstalt."/>
       <isExample value="false"/>
     </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-workflow-status"/>
+      </reference>
+      <name value="Workflow Status"/>
+      <description value="MOPED Extension für den Workflowstatus. Dieser beschreibt den Zustand in dem sich der administrative Fall derzeit befindet"/>
+      <isExample value="false"/>
+    </resource>
     <page>
       <sourceUrl value="toc.html"/>
       <name value="toc.html"/>
@@ -136,9 +169,27 @@
         <generation value="markdown"/>
       </page>
       <page>
-        <sourceUrl value="use_cases.html"/>
-        <name value="use_cases.html"/>
-        <title value="Anwendungsfälle"/>
+        <sourceUrl value="use_case_description.html"/>
+        <name value="use_case_description.html"/>
+        <title value="Anwendungsfallbeschreibung"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="actors.html"/>
+        <name value="actors.html"/>
+        <title value="Akteure"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="workflowmanagement.html"/>
+        <name value="workflowmanagement.html"/>
+        <title value="Workflowmanagement"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="poc.html"/>
+        <name value="poc.html"/>
+        <title value="Proof of Concept"/>
         <generation value="markdown"/>
       </page>
       <page>

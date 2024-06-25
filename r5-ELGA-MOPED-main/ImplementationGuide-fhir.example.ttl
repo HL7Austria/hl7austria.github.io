@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "MOPED"] ; # 
   fhir:title [ fhir:v "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-06-19T12:05:11+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-06-25T16:45:11+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Example Publisher"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Example Publisher" ] ;
@@ -68,6 +68,30 @@
        fhir:value [ fhir:v "hl7.fhir.uv.tools#0.1.0" ]
      ] ) ;
      fhir:resource ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-diagnose-typ> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-diagnose-typ" ]
+       ] ;
+       fhir:name [ fhir:v "LKF Diagnoseart" ] ;
+       fhir:description [ fhir:v "MOPED Extension für die Art der LKF Diagnose. Die Diagnoseart gibt an, ob es sich um eine Haupt- oder Nebendiagnose handelt." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/MOPEDAccount> ;
+         fhir:reference [ fhir:v "StructureDefinition/MOPEDAccount" ]
+       ] ;
+       fhir:name [ fhir:v "MOPEDAccount" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Account Ressource für die administrative Fallführung und Abrechnung." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:resource" ]
@@ -151,6 +175,18 @@
        fhir:name [ fhir:v "MOPEDOrganizationAbteilung" ] ;
        fhir:description [ fhir:v "MOPED Profil für Abteilungen innerhalb einer Krankenanstalt." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-workflow-status> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-workflow-status" ]
+       ] ;
+       fhir:name [ fhir:v "Workflow Status" ] ;
+       fhir:description [ fhir:v "MOPED Extension für den Workflowstatus. Dieser beschreibt den Zustand in dem sich der administrative Fall derzeit befindet" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] ) ;
      fhir:page [
        fhir:source [ fhir:v "toc.html"^^xsd:anyURI ] ;
@@ -163,9 +199,24 @@
          fhir:title [ fhir:v "Home" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
-         fhir:source [ fhir:v "use_cases.html"^^xsd:anyURI ] ;
-         fhir:name [ fhir:v "use_cases.html"^^xsd:anyURI ] ;
-         fhir:title [ fhir:v "Anwendungsfälle" ] ;
+         fhir:source [ fhir:v "use_case_description.html"^^xsd:anyURI ] ;
+         fhir:name [ fhir:v "use_case_description.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Anwendungsfallbeschreibung" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [ fhir:v "actors.html"^^xsd:anyURI ] ;
+         fhir:name [ fhir:v "actors.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Akteure" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [ fhir:v "workflowmanagement.html"^^xsd:anyURI ] ;
+         fhir:name [ fhir:v "workflowmanagement.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Workflowmanagement" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [ fhir:v "poc.html"^^xsd:anyURI ] ;
+         fhir:name [ fhir:v "poc.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Proof of Concept" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:source [ fhir:v "ka-org_mapping.html"^^xsd:anyURI ] ;

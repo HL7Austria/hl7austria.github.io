@@ -10,7 +10,7 @@
   "name" : "MOPED",
   "title" : "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)",
   "status" : "draft",
-  "date" : "2024-06-19T12:05:11+00:00",
+  "date" : "2024-06-25T16:45:11+00:00",
   "publisher" : "Example Publisher",
   "contact" : [{
     "name" : "Example Publisher",
@@ -54,6 +54,30 @@
       "valueCode" : "hl7.fhir.uv.tools#0.1.0"
     }],
     "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/moped-ext-diagnose-typ"
+      },
+      "name" : "LKF Diagnoseart",
+      "description" : "MOPED Extension für die Art der LKF Diagnose. Die Diagnoseart gibt an, ob es sich um eine Haupt- oder Nebendiagnose handelt.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MOPEDAccount"
+      },
+      "name" : "MOPEDAccount",
+      "description" : "MOPED Profil der Account Ressource für die administrative Fallführung und Abrechnung.",
+      "isExample" : false
+    },
+    {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
@@ -136,6 +160,18 @@
       "name" : "MOPEDOrganizationAbteilung",
       "description" : "MOPED Profil für Abteilungen innerhalb einer Krankenanstalt.",
       "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/moped-ext-workflow-status"
+      },
+      "name" : "Workflow Status",
+      "description" : "MOPED Extension für den Workflowstatus. Dieser beschreibt den Zustand in dem sich der administrative Fall derzeit befindet",
+      "isExample" : false
     }],
     "page" : {
       "sourceUrl" : "toc.html",
@@ -149,9 +185,27 @@
         "generation" : "markdown"
       },
       {
-        "sourceUrl" : "use_cases.html",
-        "name" : "use_cases.html",
-        "title" : "Anwendungsfälle",
+        "sourceUrl" : "use_case_description.html",
+        "name" : "use_case_description.html",
+        "title" : "Anwendungsfallbeschreibung",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "actors.html",
+        "name" : "actors.html",
+        "title" : "Akteure",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "workflowmanagement.html",
+        "name" : "workflowmanagement.html",
+        "title" : "Workflowmanagement",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "poc.html",
+        "name" : "poc.html",
+        "title" : "Proof of Concept",
         "generation" : "markdown"
       },
       {

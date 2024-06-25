@@ -2,8 +2,31 @@
   "package": "fhir.example",
   "version": "0.1.0",
   "fhirVersion": "5.0.0",
-  "extensions": [],
+  "extensions": [
+    {
+      "url": "http://example.org/StructureDefinition/moped-ext-diagnose-typ",
+      "title": "LKF Diagnoseart",
+      "types": [
+        "code",
+        "code"
+      ]
+    },
+    {
+      "url": "http://example.org/StructureDefinition/moped-ext-workflow-status",
+      "title": "Workflow Status",
+      "types": [
+        "code",
+        "code"
+      ]
+    }
+  ],
   "profiles": {
+    "Account": [
+      {
+        "url": "http://example.org/StructureDefinition/MOPEDAccount",
+        "title": "MOPEDAccount"
+      }
+    ],
     "Encounter": [
       {
         "url": "http://example.org/StructureDefinition/MOPEDAdmissionEncounter",
@@ -48,6 +71,9 @@
     ]
   },
   "usage": {
+    "http://example.org/StructureDefinition/moped-ext-workflow-status": [
+      "Account"
+    ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
       "StructureDefinition.snapshot.element.constraint"
     ],
@@ -69,6 +95,9 @@
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy": [
       "StructureDefinition.differential.element.type",
       "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics": [
+      "StructureDefinition"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
       "ImplementationGuide.definition"
