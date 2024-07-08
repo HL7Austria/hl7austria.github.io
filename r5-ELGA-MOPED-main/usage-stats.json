@@ -4,18 +4,98 @@
   "fhirVersion": "5.0.0",
   "extensions": [
     {
-      "url": "http://example.org/StructureDefinition/moped-ext-diagnose-typ",
-      "title": "LKF Diagnoseart",
+      "url": "http://example.org/StructureDefinition/moped-ext-aufnahme-art",
+      "title": "Aufnahmeart",
       "types": [
-        "code",
         "code"
+      ]
+    },
+    {
+      "url": "http://example.org/StructureDefinition/moped-ext-erworben",
+      "title": "Diagnose - im stationären Aufenthalt erworben",
+      "types": [
+        "boolean"
+      ]
+    },
+    {
+      "url": "http://example.org/StructureDefinition/moped-ext-fallnummer",
+      "title": "Fallnummer",
+      "types": [
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "integer64",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "CodeableReference",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "RatioRange",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Availability",
+        "ExtendedContactDetail",
+        "Dosage",
+        "Meta",
+        "unsignedInt"
+      ]
+    },
+    {
+      "url": "http://example.org/StructureDefinition/moped-ext-transportart",
+      "title": "Transportart",
+      "types": [
+        "code"
+      ]
+    },
+    {
+      "url": "http://example.org/StructureDefinition/moped-ext-unfalldatum",
+      "title": "Unfalldatum",
+      "types": [
+        "dateTime"
       ]
     },
     {
       "url": "http://example.org/StructureDefinition/moped-ext-workflow-status",
       "title": "Workflow Status",
       "types": [
-        "code",
         "code"
       ]
     }
@@ -29,8 +109,8 @@
     ],
     "Encounter": [
       {
-        "url": "http://example.org/StructureDefinition/MOPEDAdmissionEncounter",
-        "title": "MOPEDAdmissionEncounter"
+        "url": "http://example.org/StructureDefinition/MOPEDTransferEncounter",
+        "title": "MOPEDTransferEncounter"
       }
     ],
     "Claim": [
@@ -71,6 +151,21 @@
     ]
   },
   "usage": {
+    "http://example.org/StructureDefinition/moped-ext-aufnahme-art": [
+      "Encounter.admission"
+    ],
+    "http://example.org/StructureDefinition/moped-ext-erworben": [
+      "Encounter.diagnosis"
+    ],
+    "http://example.org/StructureDefinition/moped-ext-fallnummer": [
+      "Account"
+    ],
+    "http://example.org/StructureDefinition/moped-ext-transportart": [
+      "Encounter.admission"
+    ],
+    "http://example.org/StructureDefinition/moped-ext-unfalldatum": [
+      "Encounter"
+    ],
     "http://example.org/StructureDefinition/moped-ext-workflow-status": [
       "Account"
     ],

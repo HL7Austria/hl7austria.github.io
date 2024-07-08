@@ -10,7 +10,7 @@
   <name value="MOPED"/>
   <title value="Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"/>
   <status value="draft"/>
-  <date value="2024-06-27T06:41:39+00:00"/>
+  <date value="2024-07-08T06:24:07+00:00"/>
   <publisher value="Example Publisher"/>
   <contact>
     <name value="Example Publisher"/>
@@ -52,10 +52,32 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-diagnose-typ"/>
+        <reference value="StructureDefinition/moped-ext-aufnahme-art"/>
       </reference>
-      <name value="LKF Diagnoseart"/>
-      <description value="MOPED Extension für die Art der LKF Diagnose. Die Diagnoseart gibt an, ob es sich um eine Haupt- oder Nebendiagnose handelt."/>
+      <name value="Aufnahmeart"/>
+      <description value="MOPED Extension für die Art der Aufnahme."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-erworben"/>
+      </reference>
+      <name value="Diagnose - im stationären Aufenthalt erworben"/>
+      <description value="MOPED Extension, um anzugeben, ob die Diagnose während des stationären Aufenthalts erworben wurde."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-fallnummer"/>
+      </reference>
+      <name value="Fallnummer"/>
+      <description value="Anzahl der Wiederaufnahmen"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -144,6 +166,39 @@
       </reference>
       <name value="MOPEDOrganizationAbteilung"/>
       <description value="MOPED Profil für Abteilungen innerhalb einer Krankenanstalt."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MOPEDTransferEncounter"/>
+      </reference>
+      <name value="MOPEDTransferEncounter"/>
+      <description value="MOPED Profil der Encounter Ressource für die Verlegung innerhalb oder zwischen Krankenanstalten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-transportart"/>
+      </reference>
+      <name value="Transportart"/>
+      <description value="MOPED Extension für die Transportart."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-unfalldatum"/>
+      </reference>
+      <name value="Unfalldatum"/>
+      <description value="MOPED Extension für das Ereignis-/Unfalldatum."/>
       <isExample value="false"/>
     </resource>
     <resource>
