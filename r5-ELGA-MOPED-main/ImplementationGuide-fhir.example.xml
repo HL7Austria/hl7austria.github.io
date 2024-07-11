@@ -10,7 +10,7 @@
   <name value="MOPED"/>
   <title value="Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"/>
   <status value="draft"/>
-  <date value="2024-07-08T06:24:07+00:00"/>
+  <date value="2024-07-11T13:07:17+00:00"/>
   <publisher value="Example Publisher"/>
   <contact>
     <name value="Example Publisher"/>
@@ -52,17 +52,6 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-aufnahme-art"/>
-      </reference>
-      <name value="Aufnahmeart"/>
-      <description value="MOPED Extension für die Art der Aufnahme."/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <reference>
         <reference value="StructureDefinition/moped-ext-erworben"/>
       </reference>
       <name value="Diagnose - im stationären Aufenthalt erworben"/>
@@ -77,7 +66,7 @@
         <reference value="StructureDefinition/moped-ext-fallnummer"/>
       </reference>
       <name value="Fallnummer"/>
-      <description value="Anzahl der Wiederaufnahmen"/>
+      <description value="MOPED Extension für die Anzahl der Wiederaufnahmen"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -89,17 +78,6 @@
       </reference>
       <name value="MOPEDAccount"/>
       <description value="MOPED Profil der Account Ressource für die administrative Fallführung und Abrechnung."/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/MOPEDAdmissionEncounter"/>
-      </reference>
-      <name value="MOPEDAdmissionEncounter"/>
-      <description value="MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -162,6 +140,17 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/MOPEDEncounter"/>
+      </reference>
+      <name value="MOPEDEncounter"/>
+      <description value="MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/MOPEDOrganizationAbteilung"/>
       </reference>
       <name value="MOPEDOrganizationAbteilung"/>
@@ -177,6 +166,28 @@
       </reference>
       <name value="MOPEDTransferEncounter"/>
       <description value="MOPED Profil der Encounter Ressource für die Verlegung innerhalb oder zwischen Krankenanstalten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-physischeAnwesenheit"/>
+      </reference>
+      <name value="physische Anwesenheit"/>
+      <description value="Ob der Patient physisch anwesend war."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-TageOhneKostenbeitrag"/>
+      </reference>
+      <name value="Tage ohne Einhebung des Kostenbeitrags"/>
+      <description value="Anzahl der Tage, für welche kein Kostenbeitrag seitens der Krankenanstalt eingehoben wurde"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -203,6 +214,39 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ursache-valueset"/>
+      </reference>
+      <name value="Ursache für Behandlung"/>
+      <description value="ValueSet für die Ursache der Behandlung laut Ka-Org"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-VerdachtArbeitsSchuelerunfall"/>
+      </reference>
+      <name value="Verdacht auf Arbeits- oder Schuelerunfall"/>
+      <description value="MOPED Extension für den Verdacht auf einen Arbeits- oder Schuelerunfall."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-VerdachtFremdverschulden"/>
+      </reference>
+      <name value="Verdacht auf Fremdverschulden"/>
+      <description value="MOPED Extension für den Verdacht auf Fremdverschulden"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -210,6 +254,17 @@
       </reference>
       <name value="Workflow Status"/>
       <description value="MOPED Extension für den Workflowstatus. Dieser beschreibt den Zustand in dem sich der administrative Fall derzeit befindet"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-zugangsart"/>
+      </reference>
+      <name value="Zugangsart"/>
+      <description value="MOPED Extension für die Art des Zugangs."/>
       <isExample value="false"/>
     </resource>
     <page>

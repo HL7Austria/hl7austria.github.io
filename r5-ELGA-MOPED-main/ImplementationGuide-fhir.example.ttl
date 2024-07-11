@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "MOPED"] ; # 
   fhir:title [ fhir:v "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-07-08T06:24:07+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-07-11T13:07:17+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Example Publisher"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Example Publisher" ] ;
@@ -73,18 +73,6 @@
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://example.org/StructureDefinition/moped-ext-aufnahme-art> ;
-         fhir:reference [ fhir:v "StructureDefinition/moped-ext-aufnahme-art" ]
-       ] ;
-       fhir:name [ fhir:v "Aufnahmeart" ] ;
-       fhir:description [ fhir:v "MOPED Extension für die Art der Aufnahme." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-erworben> ;
          fhir:reference [ fhir:v "StructureDefinition/moped-ext-erworben" ]
        ] ;
@@ -101,7 +89,7 @@
          fhir:reference [ fhir:v "StructureDefinition/moped-ext-fallnummer" ]
        ] ;
        fhir:name [ fhir:v "Fallnummer" ] ;
-       fhir:description [ fhir:v "Anzahl der Wiederaufnahmen" ] ;
+       fhir:description [ fhir:v "MOPED Extension für die Anzahl der Wiederaufnahmen" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -114,18 +102,6 @@
        ] ;
        fhir:name [ fhir:v "MOPEDAccount" ] ;
        fhir:description [ fhir:v "MOPED Profil der Account Ressource für die administrative Fallführung und Abrechnung." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://example.org/StructureDefinition/MOPEDAdmissionEncounter> ;
-         fhir:reference [ fhir:v "StructureDefinition/MOPEDAdmissionEncounter" ]
-       ] ;
-       fhir:name [ fhir:v "MOPEDAdmissionEncounter" ] ;
-       fhir:description [ fhir:v "MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -193,6 +169,18 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/MOPEDEncounter> ;
+         fhir:reference [ fhir:v "StructureDefinition/MOPEDEncounter" ]
+       ] ;
+       fhir:name [ fhir:v "MOPEDEncounter" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://example.org/StructureDefinition/MOPEDOrganizationAbteilung> ;
          fhir:reference [ fhir:v "StructureDefinition/MOPEDOrganizationAbteilung" ]
        ] ;
@@ -210,6 +198,30 @@
        ] ;
        fhir:name [ fhir:v "MOPEDTransferEncounter" ] ;
        fhir:description [ fhir:v "MOPED Profil der Encounter Ressource für die Verlegung innerhalb oder zwischen Krankenanstalten" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-physischeAnwesenheit> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-physischeAnwesenheit" ]
+       ] ;
+       fhir:name [ fhir:v "physische Anwesenheit" ] ;
+       fhir:description [ fhir:v "Ob der Patient physisch anwesend war." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-TageOhneKostenbeitrag> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-TageOhneKostenbeitrag" ]
+       ] ;
+       fhir:name [ fhir:v "Tage ohne Einhebung des Kostenbeitrags" ] ;
+       fhir:description [ fhir:v "Anzahl der Tage, für welche kein Kostenbeitrag seitens der Krankenanstalt eingehoben wurde" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -238,6 +250,42 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/ValueSet/ursache-valueset> ;
+         fhir:reference [ fhir:v "ValueSet/ursache-valueset" ]
+       ] ;
+       fhir:name [ fhir:v "Ursache für Behandlung" ] ;
+       fhir:description [ fhir:v "ValueSet für die Ursache der Behandlung laut Ka-Org" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-VerdachtArbeitsSchuelerunfall> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-VerdachtArbeitsSchuelerunfall" ]
+       ] ;
+       fhir:name [ fhir:v "Verdacht auf Arbeits- oder Schuelerunfall" ] ;
+       fhir:description [ fhir:v "MOPED Extension für den Verdacht auf einen Arbeits- oder Schuelerunfall." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-VerdachtFremdverschulden> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-VerdachtFremdverschulden" ]
+       ] ;
+       fhir:name [ fhir:v "Verdacht auf Fremdverschulden" ] ;
+       fhir:description [ fhir:v "MOPED Extension für den Verdacht auf Fremdverschulden" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
@@ -246,6 +294,18 @@
        ] ;
        fhir:name [ fhir:v "Workflow Status" ] ;
        fhir:description [ fhir:v "MOPED Extension für den Workflowstatus. Dieser beschreibt den Zustand in dem sich der administrative Fall derzeit befindet" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-zugangsart> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-zugangsart" ]
+       ] ;
+       fhir:name [ fhir:v "Zugangsart" ] ;
+       fhir:description [ fhir:v "MOPED Extension für die Art des Zugangs." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] ) ;
      fhir:page [

@@ -28,10 +28,19 @@ dom-4dom-3dom-5","","N/A"
 ","",,"open","DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Account.extension:Fallnummer","Account.extension","Fallnummer","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-fallnummer]]} {[]}
-","Fallnummer","Anzahl der Wiederaufnahmen","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","Fallnummer","MOPED Extension für die Anzahl der Wiederaufnahmen","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Account.extension:WorkflowStatus","Account.extension","WorkflowStatus","","",1,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-workflow-status]]} {[]}
 ","Workflow Status","MOPED Extension für den Workflowstatus. Dieser beschreibt den Zustand in dem sich der administrative Fall derzeit befindet","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Account.extension:VerdachtArbeitsSchuelerunfall","Account.extension","VerdachtArbeitsSchuelerunfall","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-VerdachtArbeitsSchuelerunfall]]} {[]}
+","Verdacht auf Arbeits- oder Schuelerunfall","MOPED Extension für den Verdacht auf einen Arbeits- oder Schuelerunfall.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Account.extension:VerdachtFremdverschulden","Account.extension","VerdachtFremdverschulden","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-VerdachtFremdverschulden]]} {[]}
+","Verdacht auf Fremdverschulden","MOPED Extension für den Verdacht auf Fremdverschulden","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Account.extension:TageOhneKostenbeitrag","Account.extension","TageOhneKostenbeitrag","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-TageOhneKostenbeitrag]]} {[]}
+","Tage ohne Einhebung des Kostenbeitrags","Anzahl der Tage, für welche kein Kostenbeitrag seitens der Krankenanstalt eingehoben wurde","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Account.modifierExtension","Account.modifierExtension","","extensions
 user content","",0,*,"","Y","Y","Extension {[]} {[]}
@@ -112,9 +121,6 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Account.identifier:Aufnahmezahl.assigner","Account.identifier.assigner","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-organization]]}
 ","Organization that issued id (may be just text)","Organization that issued/manages the identifier.","The Identifier.assigner may omit the .reference element and only contain a .display element reflecting the name or other textual information about the assigning organization.","","","","","","","","",,,,,"",,,,"Identifier.assigner",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper"
-"Account.identifier:Fallnummer","Account.identifier","Fallnummer","","",0,1,"","","Y","Identifier {[]} {[]}
-","Account number","Unique identifier used to reference the account.  Might or might not be intended for human use (e.g. credit card number).","","","","","","","","","",,,,,"",,,,"Account.identifier",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","FiveWs.identifier",".id"
 "Account.status","Account.status","","","",1,1,"","Y","Y","code {[]} {[]}
 ","active | inactive | entered-in-error | on-hold | unknown","Indicates whether the account is presently used/usable or not.","This element is labeled as a modifier because the status contains the codes inactive and entered-in-error that mark the Account as not currently valid.","","","","","","","","",,"required","Indicates whether the account is available to be used.","http://hl7.org/fhir/ValueSet/account-status|5.0.0","",,,,"Account.status",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","FiveWs.status",".statusCode"
@@ -163,7 +169,7 @@ A coverage may only be responsible for specific types of charges, and the sequen
 ","",0,1,"","","Y","positiveInt {[]} {[]}
 ","The priority of the coverage in the context of this account","The priority of the coverage in the context of this account.","It is common in some jurisdictions for there to be multiple coverages allocated to an account, and a sequence is required to order the settling of the account (often with insurance claiming).","","","","","","","","",,,,,"",,,,"Account.coverage.priority",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".coverage.sequenceNumber"
-"Account.owner","Account.owner","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
+"Account.owner","Account.owner","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-organization]]}
 ","Entity managing the Account","Indicates the service area, hospital, department, etc. with responsibility for managing the Account.","","","","","","","","","",,,,,"",,,,"Account.owner",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".holder"
 "Account.description","Account.description","","","",0,1,"","","Y","markdown {[]} {[]}

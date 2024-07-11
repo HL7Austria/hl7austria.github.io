@@ -10,7 +10,7 @@
   "name" : "MOPED",
   "title" : "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)",
   "status" : "draft",
-  "date" : "2024-07-08T06:24:07+00:00",
+  "date" : "2024-07-11T13:07:17+00:00",
   "publisher" : "Example Publisher",
   "contact" : [{
     "name" : "Example Publisher",
@@ -59,18 +59,6 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/moped-ext-aufnahme-art"
-      },
-      "name" : "Aufnahmeart",
-      "description" : "MOPED Extension für die Art der Aufnahme.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
         "reference" : "StructureDefinition/moped-ext-erworben"
       },
       "name" : "Diagnose - im stationären Aufenthalt erworben",
@@ -86,7 +74,7 @@
         "reference" : "StructureDefinition/moped-ext-fallnummer"
       },
       "name" : "Fallnummer",
-      "description" : "Anzahl der Wiederaufnahmen",
+      "description" : "MOPED Extension für die Anzahl der Wiederaufnahmen",
       "isExample" : false
     },
     {
@@ -99,18 +87,6 @@
       },
       "name" : "MOPEDAccount",
       "description" : "MOPED Profil der Account Ressource für die administrative Fallführung und Abrechnung.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/MOPEDAdmissionEncounter"
-      },
-      "name" : "MOPEDAdmissionEncounter",
-      "description" : "MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme",
       "isExample" : false
     },
     {
@@ -179,6 +155,18 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/MOPEDEncounter"
+      },
+      "name" : "MOPEDEncounter",
+      "description" : "MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/MOPEDOrganizationAbteilung"
       },
       "name" : "MOPEDOrganizationAbteilung",
@@ -195,6 +183,30 @@
       },
       "name" : "MOPEDTransferEncounter",
       "description" : "MOPED Profil der Encounter Ressource für die Verlegung innerhalb oder zwischen Krankenanstalten",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/moped-ext-physischeAnwesenheit"
+      },
+      "name" : "physische Anwesenheit",
+      "description" : "Ob der Patient physisch anwesend war.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/moped-ext-TageOhneKostenbeitrag"
+      },
+      "name" : "Tage ohne Einhebung des Kostenbeitrags",
+      "description" : "Anzahl der Tage, für welche kein Kostenbeitrag seitens der Krankenanstalt eingehoben wurde",
       "isExample" : false
     },
     {
@@ -224,6 +236,42 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ursache-valueset"
+      },
+      "name" : "Ursache für Behandlung",
+      "description" : "ValueSet für die Ursache der Behandlung laut Ka-Org",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/moped-ext-VerdachtArbeitsSchuelerunfall"
+      },
+      "name" : "Verdacht auf Arbeits- oder Schuelerunfall",
+      "description" : "MOPED Extension für den Verdacht auf einen Arbeits- oder Schuelerunfall.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/moped-ext-VerdachtFremdverschulden"
+      },
+      "name" : "Verdacht auf Fremdverschulden",
+      "description" : "MOPED Extension für den Verdacht auf Fremdverschulden",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
@@ -231,6 +279,18 @@
       },
       "name" : "Workflow Status",
       "description" : "MOPED Extension für den Workflowstatus. Dieser beschreibt den Zustand in dem sich der administrative Fall derzeit befindet",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/moped-ext-zugangsart"
+      },
+      "name" : "Zugangsart",
+      "description" : "MOPED Extension für die Art des Zugangs.",
       "isExample" : false
     }],
     "page" : {
