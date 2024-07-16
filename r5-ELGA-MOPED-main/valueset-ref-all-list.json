@@ -1,7 +1,86 @@
 {
   "codeSystems" : [
     {
-      "url" : "http://example.org/ValueSet/ursache-valueset",
+      "url" : "http://example.org/ValueSet/moped-VerdachtArbeitsSchuelerunfall-valueset",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "VerdachtArbeitsSchuelerunfall",
+      "title" : "Verdacht auf Arbeits- oder Schuelerunfall",
+      "description" : "ValueSet für den Verdacht auf einen Arbeits- oder Schuelerunfall",
+      "systems" : ["http://tbd.at/MOPED-account-VerdachtArbeitsSchuelerunfall"]
+    },
+    {
+      "url" : "http://example.org/ValueSet/moped-WorkflowStatus-valueset",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "WorkflowStatus",
+      "title" : "Workflow Status eines Falls",
+      "description" : "ValueSet für die Statusoptionen in denen sich ein Fall befinden kann.",
+      "uses" : {
+      },
+      "StructureDefinition-moped-ext-workflow-status.html" : "Workflow Status"
+    },
+    {
+      "url" : "http://example.org/ValueSet/moped-abgangsart-valueset",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "Abgangsart",
+      "title" : "Abgangsart des Patienten",
+      "description" : "ValueSet für die Abgangsart des Patienten",
+      "uses" : {
+      },
+      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPEDTransferEncounter"
+    },
+    {
+      "url" : "http://example.org/ValueSet/moped-aufnahmeart-valueset",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "Aufnahmeart",
+      "title" : "Aufnahmeart des Patienten",
+      "description" : "ValueSet für die Aufnahmeart des Patienten",
+      "systems" : ["http://tbd.at/moped-ext-diagnose-art"],
+      "uses" : {
+      },
+      "StructureDefinition-MOPEDEncounter.html" : "MOPEDEncounter"
+    },
+    {
+      "url" : "http://example.org/ValueSet/moped-behandlungsart-valueset",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "Behandlungsart",
+      "title" : "Behandlungsart",
+      "description" : "ValueSet für die Behandlungsart",
+      "systems" : ["http://tbd.at/MOPED-encounter-behandlungsart"],
+      "uses" : {
+      },
+      "StructureDefinition-MOPEDEncounter.html" : "MOPEDEncounter"
+    },
+    {
+      "url" : "http://example.org/ValueSet/moped-entlassungsart-valueset",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "Entlassungsart",
+      "title" : "Entlassungsart des Patienten",
+      "description" : "ValueSet für die Entlassungsart des Patienten",
+      "systems" : ["http://tbd.at/MOPED-encounter-entlassungsart"],
+      "uses" : {
+      },
+      "StructureDefinition-MOPEDEncounter.html" : "MOPEDEncounter"
+    },
+    {
+      "url" : "http://example.org/ValueSet/moped-transportart-valueset",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "Transportart",
+      "title" : "Transportart",
+      "description" : "ValueSet für die Transportart des Patienten",
+      "systems" : ["http://tbd.at/moped-ext-transportart"],
+      "uses" : {
+      },
+      "StructureDefinition-moped-ext-transportart.html" : "Transportart"
+    },
+    {
+      "url" : "http://example.org/ValueSet/moped-ursache-valueset",
       "version" : "0.1.0",
       "status" : "draft",
       "name" : "UrsacheValueSet",
@@ -11,6 +90,18 @@
       "uses" : {
       },
       "StructureDefinition-MOPEDEncounter.html" : "MOPEDEncounter"
+    },
+    {
+      "url" : "http://example.org/ValueSet/moped-zugangsart-valueset",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "Zugangsart",
+      "title" : "Zugangsart des Patienten",
+      "description" : "ValueSet für die Zugangsart des Patienten (LKF + Ka-Org)",
+      "systems" : ["http://tbd.at/moped-ext-diagnose-art"],
+      "uses" : {
+      },
+      "StructureDefinition-moped-ext-zugangsart.html" : "Zugangsart"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/account-aggregate",
@@ -179,15 +270,15 @@
       "sources" : ["2.16.840.1.113883.4.642.3.21"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDOrganizationAbteilung.html" : "MOPEDOrganizationAbteilung",
       "StructureDefinition-MOPEDAccount.html" : "MOPEDAccount",
-      "StructureDefinition-MOPEDCoverage.html" : "MOPEDCoverage",
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
       "StructureDefinition-MOPEDTransferEncounter.html" : "MOPEDTransferEncounter",
+      "StructureDefinition-MOPEDCoverage.html" : "MOPEDCoverage",
       "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPEDCoverageEligibilityRequest",
+      "StructureDefinition-MOPEDEncounter.html" : "MOPEDEncounter",
+      "StructureDefinition-MOPEDOrganizationAbteilung.html" : "MOPEDOrganizationAbteilung",
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
       "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPEDEncounter"
+      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/benefit-network",
@@ -382,10 +473,10 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
       "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPEDCoverageEligibilityRequest",
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse"
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
+      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse",
+      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/claim-outcome",
@@ -419,8 +510,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse"
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
+      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/claim-type",
@@ -440,8 +531,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse"
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
+      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/claim-use",
@@ -461,8 +552,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse"
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
+      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/condition-code",
@@ -609,10 +700,10 @@
       "systems" : ["http://hl7.org/fhir/datestype"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
       "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPEDCoverageEligibilityRequest",
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse"
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
+      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse",
+      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/eligibility-outcome",
@@ -929,9 +1020,9 @@
       "uses" : {
       },
       "StructureDefinition-MOPEDCoverage.html" : "MOPEDCoverage",
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
       "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPEDCoverageEligibilityRequest",
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse"
+      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse",
+      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/ex-diagnosis-on-admission",
@@ -969,8 +1060,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse"
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
+      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/ex-diagnosistype",
@@ -1044,8 +1135,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse"
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
+      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/ex-revenue-center",
@@ -1065,8 +1156,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse"
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
+      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/fm-status",
@@ -1087,10 +1178,10 @@
       "uses" : {
       },
       "StructureDefinition-MOPEDCoverage.html" : "MOPEDCoverage",
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
       "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPEDCoverageEligibilityRequest",
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse"
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
+      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse",
+      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/forms",
@@ -1119,8 +1210,8 @@
       "sources" : ["2.16.840.1.113883.4.642.3.33"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse"
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
+      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/icd-10",
@@ -1142,8 +1233,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPEDCoverageEligibilityRequest"
+      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPEDCoverageEligibilityRequest",
+      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/icd-10-procedures",
@@ -1197,15 +1288,15 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDOrganizationAbteilung.html" : "MOPEDOrganizationAbteilung",
       "StructureDefinition-MOPEDAccount.html" : "MOPEDAccount",
-      "StructureDefinition-MOPEDCoverage.html" : "MOPEDCoverage",
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
       "StructureDefinition-MOPEDTransferEncounter.html" : "MOPEDTransferEncounter",
+      "StructureDefinition-MOPEDCoverage.html" : "MOPEDCoverage",
       "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPEDCoverageEligibilityRequest",
+      "StructureDefinition-MOPEDEncounter.html" : "MOPEDEncounter",
+      "StructureDefinition-MOPEDOrganizationAbteilung.html" : "MOPEDOrganizationAbteilung",
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
       "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPEDEncounter"
+      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/location-form",
@@ -1294,8 +1385,8 @@
       "sources" : ["2.16.840.1.113883.4.642.3.31"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse"
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
+      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/payment-adjustment-reason",
@@ -1361,8 +1452,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPEDCoverageEligibilityRequest"
+      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPEDCoverageEligibilityRequest",
+      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/provider-qualification",
@@ -1426,8 +1517,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse"
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
+      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/service-type",
@@ -1470,10 +1561,10 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
       "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPEDCoverageEligibilityRequest",
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse"
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
+      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse",
+      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/subscriber-relationship",
@@ -1511,8 +1602,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse"
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
+      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/tooth",
@@ -1534,8 +1625,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse"
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
+      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
     },
     {
       "url" : "http://terminology.hl7.org/ValueSet/encounter-class",

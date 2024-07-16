@@ -10,7 +10,7 @@
   <name value="MOPED"/>
   <title value="Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"/>
   <status value="draft"/>
-  <date value="2024-07-15T09:40:45+00:00"/>
+  <date value="2024-07-16T10:33:51+00:00"/>
   <publisher value="Example Publisher"/>
   <contact>
     <name value="Example Publisher"/>
@@ -28,7 +28,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r5"/>
-    <version value="5.5.0"/>
+    <version value="6.0.0"/>
   </dependsOn>
   <dependsOn id="hl7ext">
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
@@ -49,6 +49,39 @@
     </extension>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/moped-abgangsart-valueset"/>
+      </reference>
+      <name value="Abgangsart des Patienten"/>
+      <description value="ValueSet für die Abgangsart des Patienten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/moped-aufnahmeart-valueset"/>
+      </reference>
+      <name value="Aufnahmeart des Patienten"/>
+      <description value="ValueSet für die Aufnahmeart des Patienten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/moped-behandlungsart-valueset"/>
+      </reference>
+      <name value="Behandlungsart"/>
+      <description value="ValueSet für die Behandlungsart"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -56,6 +89,17 @@
       </reference>
       <name value="Diagnose - im stationären Aufenthalt erworben"/>
       <description value="MOPED Extension, um anzugeben, ob die Diagnose während des stationären Aufenthalts erworben wurde."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/moped-entlassungsart-valueset"/>
+      </reference>
+      <name value="Entlassungsart des Patienten"/>
+      <description value="ValueSet für die Entlassungsart des Patienten"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -203,6 +247,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/moped-transportart-valueset"/>
+      </reference>
+      <name value="Transportart"/>
+      <description value="ValueSet für die Transportart des Patienten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -217,7 +272,7 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/ursache-valueset"/>
+        <reference value="ValueSet/moped-ursache-valueset"/>
       </reference>
       <name value="Ursache für Behandlung"/>
       <description value="ValueSet für die Ursache der Behandlung laut Ka-Org"/>
@@ -232,6 +287,17 @@
       </reference>
       <name value="Verdacht auf Arbeits- oder Schuelerunfall"/>
       <description value="MOPED Extension für den Verdacht auf einen Arbeits- oder Schuelerunfall."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/moped-VerdachtArbeitsSchuelerunfall-valueset"/>
+      </reference>
+      <name value="Verdacht auf Arbeits- oder Schuelerunfall"/>
+      <description value="ValueSet für den Verdacht auf einen Arbeits- oder Schuelerunfall"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -258,6 +324,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/moped-WorkflowStatus-valueset"/>
+      </reference>
+      <name value="Workflow Status eines Falls"/>
+      <description value="ValueSet für die Statusoptionen in denen sich ein Fall befinden kann."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -265,6 +342,17 @@
       </reference>
       <name value="Zugangsart"/>
       <description value="MOPED Extension für die Art des Zugangs."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/moped-zugangsart-valueset"/>
+      </reference>
+      <name value="Zugangsart des Patienten"/>
+      <description value="ValueSet für die Zugangsart des Patienten (LKF + Ka-Org)"/>
       <isExample value="false"/>
     </resource>
     <page>

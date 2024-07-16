@@ -10,7 +10,7 @@
   "name" : "MOPED",
   "title" : "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)",
   "status" : "draft",
-  "date" : "2024-07-15T09:40:45+00:00",
+  "date" : "2024-07-16T10:33:51+00:00",
   "publisher" : "Example Publisher",
   "contact" : [{
     "name" : "Example Publisher",
@@ -30,7 +30,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r5",
-    "version" : "5.5.0"
+    "version" : "6.0.0"
   },
   {
     "id" : "hl7ext",
@@ -56,6 +56,42 @@
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/moped-abgangsart-valueset"
+      },
+      "name" : "Abgangsart des Patienten",
+      "description" : "ValueSet für die Abgangsart des Patienten",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/moped-aufnahmeart-valueset"
+      },
+      "name" : "Aufnahmeart des Patienten",
+      "description" : "ValueSet für die Aufnahmeart des Patienten",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/moped-behandlungsart-valueset"
+      },
+      "name" : "Behandlungsart",
+      "description" : "ValueSet für die Behandlungsart",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
@@ -63,6 +99,18 @@
       },
       "name" : "Diagnose - im stationären Aufenthalt erworben",
       "description" : "MOPED Extension, um anzugeben, ob die Diagnose während des stationären Aufenthalts erworben wurde.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/moped-entlassungsart-valueset"
+      },
+      "name" : "Entlassungsart des Patienten",
+      "description" : "ValueSet für die Entlassungsart des Patienten",
       "isExample" : false
     },
     {
@@ -224,6 +272,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/moped-transportart-valueset"
+      },
+      "name" : "Transportart",
+      "description" : "ValueSet für die Transportart des Patienten",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
@@ -239,7 +299,7 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/ursache-valueset"
+        "reference" : "ValueSet/moped-ursache-valueset"
       },
       "name" : "Ursache für Behandlung",
       "description" : "ValueSet für die Ursache der Behandlung laut Ka-Org",
@@ -255,6 +315,18 @@
       },
       "name" : "Verdacht auf Arbeits- oder Schuelerunfall",
       "description" : "MOPED Extension für den Verdacht auf einen Arbeits- oder Schuelerunfall.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/moped-VerdachtArbeitsSchuelerunfall-valueset"
+      },
+      "name" : "Verdacht auf Arbeits- oder Schuelerunfall",
+      "description" : "ValueSet für den Verdacht auf einen Arbeits- oder Schuelerunfall",
       "isExample" : false
     },
     {
@@ -284,6 +356,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/moped-WorkflowStatus-valueset"
+      },
+      "name" : "Workflow Status eines Falls",
+      "description" : "ValueSet für die Statusoptionen in denen sich ein Fall befinden kann.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
@@ -291,6 +375,18 @@
       },
       "name" : "Zugangsart",
       "description" : "MOPED Extension für die Art des Zugangs.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/moped-zugangsart-valueset"
+      },
+      "name" : "Zugangsart des Patienten",
+      "description" : "ValueSet für die Zugangsart des Patienten (LKF + Ka-Org)",
       "isExample" : false
     }],
     "page" : {

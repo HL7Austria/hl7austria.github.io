@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "MOPED"] ; # 
   fhir:title [ fhir:v "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-07-15T09:40:45+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-07-16T10:33:51+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Example Publisher"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Example Publisher" ] ;
@@ -40,7 +40,7 @@
        fhir:link <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
      ] ;
      fhir:packageId [ fhir:v "hl7.terminology.r5" ] ;
-     fhir:version [ fhir:v "5.5.0" ]
+     fhir:version [ fhir:v "6.0.0" ]
   ] [
      fhir:id [ fhir:v "hl7ext" ] ;
      fhir:extension ( [
@@ -70,6 +70,42 @@
      fhir:resource ( [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/ValueSet/moped-abgangsart-valueset> ;
+         fhir:reference [ fhir:v "ValueSet/moped-abgangsart-valueset" ]
+       ] ;
+       fhir:name [ fhir:v "Abgangsart des Patienten" ] ;
+       fhir:description [ fhir:v "ValueSet für die Abgangsart des Patienten" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/ValueSet/moped-aufnahmeart-valueset> ;
+         fhir:reference [ fhir:v "ValueSet/moped-aufnahmeart-valueset" ]
+       ] ;
+       fhir:name [ fhir:v "Aufnahmeart des Patienten" ] ;
+       fhir:description [ fhir:v "ValueSet für die Aufnahmeart des Patienten" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/ValueSet/moped-behandlungsart-valueset> ;
+         fhir:reference [ fhir:v "ValueSet/moped-behandlungsart-valueset" ]
+       ] ;
+       fhir:name [ fhir:v "Behandlungsart" ] ;
+       fhir:description [ fhir:v "ValueSet für die Behandlungsart" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
@@ -78,6 +114,18 @@
        ] ;
        fhir:name [ fhir:v "Diagnose - im stationären Aufenthalt erworben" ] ;
        fhir:description [ fhir:v "MOPED Extension, um anzugeben, ob die Diagnose während des stationären Aufenthalts erworben wurde." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/ValueSet/moped-entlassungsart-valueset> ;
+         fhir:reference [ fhir:v "ValueSet/moped-entlassungsart-valueset" ]
+       ] ;
+       fhir:name [ fhir:v "Entlassungsart des Patienten" ] ;
+       fhir:description [ fhir:v "ValueSet für die Entlassungsart des Patienten" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -238,6 +286,18 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/ValueSet/moped-transportart-valueset> ;
+         fhir:reference [ fhir:v "ValueSet/moped-transportart-valueset" ]
+       ] ;
+       fhir:name [ fhir:v "Transportart" ] ;
+       fhir:description [ fhir:v "ValueSet für die Transportart des Patienten" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
@@ -253,8 +313,8 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://example.org/ValueSet/ursache-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/ursache-valueset" ]
+         fhir:link <http://example.org/ValueSet/moped-ursache-valueset> ;
+         fhir:reference [ fhir:v "ValueSet/moped-ursache-valueset" ]
        ] ;
        fhir:name [ fhir:v "Ursache für Behandlung" ] ;
        fhir:description [ fhir:v "ValueSet für die Ursache der Behandlung laut Ka-Org" ] ;
@@ -270,6 +330,18 @@
        ] ;
        fhir:name [ fhir:v "Verdacht auf Arbeits- oder Schuelerunfall" ] ;
        fhir:description [ fhir:v "MOPED Extension für den Verdacht auf einen Arbeits- oder Schuelerunfall." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/ValueSet/moped-VerdachtArbeitsSchuelerunfall-valueset> ;
+         fhir:reference [ fhir:v "ValueSet/moped-VerdachtArbeitsSchuelerunfall-valueset" ]
+       ] ;
+       fhir:name [ fhir:v "Verdacht auf Arbeits- oder Schuelerunfall" ] ;
+       fhir:description [ fhir:v "ValueSet für den Verdacht auf einen Arbeits- oder Schuelerunfall" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -298,6 +370,18 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/ValueSet/moped-WorkflowStatus-valueset> ;
+         fhir:reference [ fhir:v "ValueSet/moped-WorkflowStatus-valueset" ]
+       ] ;
+       fhir:name [ fhir:v "Workflow Status eines Falls" ] ;
+       fhir:description [ fhir:v "ValueSet für die Statusoptionen in denen sich ein Fall befinden kann." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
@@ -306,6 +390,18 @@
        ] ;
        fhir:name [ fhir:v "Zugangsart" ] ;
        fhir:description [ fhir:v "MOPED Extension für die Art des Zugangs." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/ValueSet/moped-zugangsart-valueset> ;
+         fhir:reference [ fhir:v "ValueSet/moped-zugangsart-valueset" ]
+       ] ;
+       fhir:name [ fhir:v "Zugangsart des Patienten" ] ;
+       fhir:description [ fhir:v "ValueSet für die Zugangsart des Patienten (LKF + Ka-Org)" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] ) ;
      fhir:page [
