@@ -1,0 +1,76 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/Practitioner/HL7ATCorePractitionerExample01> a fhir:Practitioner ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "HL7ATCorePractitionerExample01"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner"^^xsd:anyURI ;
+       fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Practitioner HL7ATCorePractitionerExample01</b></p><a name=\"HL7ATCorePractitionerExample01\"> </a><a name=\"hcHL7ATCorePractitionerExample01\"> </a><a name=\"HL7ATCorePractitionerExample01-en-US\"> </a><p><b>identifier</b>: <code>urn:ietf:rfc:3986</code>/urn:oid:1.2.40.0.34.99.4613.4, <code>urn:oid:1.2.40.0.10.1.4.3.2</code>/987654321</p><p><b>active</b>: true</p><p><b>name</b>: Melanie Musterärztin </p><p><b>telecom</b>: <a href=\"mailto:office@musterpraxis.at\">office@musterpraxis.at</a>, <a href=\"tel:+436500987654321\">+436500987654321</a></p><p><b>address</b>: Mozartgasse 8 Stiege 2 St. Wolfgang Salzburg 5350 AUT (work)</p><p><b>gender</b>: Female</p></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "urn:ietf:rfc:3986"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "urn:oid:1.2.40.0.34.99.4613.4" ] ;
+     fhir:assigner [
+       fhir:display [ fhir:v "Bundesministerium für Gesundheit" ]
+     ]
+  ] [
+     fhir:system [ fhir:v "urn:oid:1.2.40.0.10.1.4.3.2"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "987654321" ] ;
+     fhir:assigner [
+       fhir:display [ fhir:v "Dachverband der österreichischen Sozialversicherungsträger" ]
+     ]
+  ] ) ; # 
+  fhir:active [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:name ( [
+     fhir:family [ fhir:v "Musterärztin" ] ;
+     fhir:given ( [ fhir:v "Melanie" ] ) ;
+     fhir:prefix ( [ fhir:v "Prof. Dr." ] )
+  ] ) ; # 
+  fhir:telecom ( [
+     fhir:system [ fhir:v "email" ] ;
+     fhir:value [ fhir:v "office@musterpraxis.at" ] ;
+     fhir:use [ fhir:v "work" ]
+  ] [
+     fhir:system [ fhir:v "phone" ] ;
+     fhir:value [ fhir:v "+436500987654321" ] ;
+     fhir:use [ fhir:v "work" ]
+  ] ) ; # 
+  fhir:address ( [
+     fhir:use [ fhir:v "work" ] ;
+     fhir:type [ fhir:v "both" ] ;
+     fhir:line ( [
+       fhir:v "Mozartgasse 8 Stiege 2" ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Mozartgasse" ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "8" ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Stiege 2" ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Barrierefreier Zugang" ]
+       ] )
+     ] ) ;
+     fhir:city [ fhir:v "St. Wolfgang" ] ;
+     fhir:state [ fhir:v "Salzburg" ] ;
+     fhir:postalCode [ fhir:v "5350" ] ;
+     fhir:country [ fhir:v "AUT" ]
+  ] ) ; # 
+  fhir:gender [ fhir:v "female"] . # 
+
+# -------------------------------------------------------------------------------------
+
