@@ -10,7 +10,7 @@
   "name" : "MOPED",
   "title" : "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)",
   "status" : "draft",
-  "date" : "2024-07-16T10:33:51+00:00",
+  "date" : "2024-07-19T05:43:00+00:00",
   "publisher" : "Example Publisher",
   "contact" : [{
     "name" : "Example Publisher",
@@ -68,6 +68,54 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/moped-ext-AbrechnungsGruppe"
+      },
+      "name" : "Abrechnung - Gruppe",
+      "description" : "Dieses Datenfeld ist mit der Codenummer der zutreffenden Abrechnungsgruppe zu befüllen. Bei Datensätzen von stationären Krankenhausaufenthalten, die keiner leistungsorientier- ten Diagnosenfallgruppe zugeordnet werden, erfolgt ein Eintrag entsprechend der jeweiligen Aufnahmeart.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/moped-ext-AbrechnungsKnoten"
+      },
+      "name" : "Abrechnung - Knoten",
+      "description" : "Lukriert die Patient:innen über eine reguläre Gruppe Punkte, so ist in diesem Datenfeld die entsprechende Knotenbezeichnung einzutragen.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/SVAbrechnungsquartal"
+      },
+      "name" : "Abrechnungsquartal der Sozialversicherung",
+      "description" : "Das Abrechnungsquartal ist in der Form Jahr (JJJJ) und Quartal (Q) zu melden.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/moped-AbrechnungsRelevanz-valueset"
+      },
+      "name" : "Abrechnungsrelevanz der medizinischen Leistung",
+      "description" : "Abrechnungsrelevanz der medizinischen Leistung",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
@@ -119,10 +167,58 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/moped-ext-ErrorWarning"
+      },
+      "name" : "Error/Warning",
+      "description" : "MOPED Extension für akzeptierte Errors und Warnings",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/moped-ext-fallnummer"
       },
       "name" : "Fallnummer",
       "description" : "MOPED Extension für die Anzahl der Wiederaufnahmen",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/moped-ext-fondsrelevanz"
+      },
+      "name" : "Fondsrelevanz",
+      "description" : "Hier ist anzugeben, ob der stationäre Aufenthalt/ambulante Besuch gegenüber dem Landesgesundheitsfonds/PRIKRAF abzurechnen ist.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/Leistungskomponente-Leistungspunkte"
+      },
+      "name" : "Leistungskomponente/Leistungspunkte",
+      "description" : "In dieses Datenfeld ist – soweit zutreffend – die Leistungskomponente bzw. sind die Leistungspunkte einzutragen.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/moped-ext-AbrechnungsRelevanz"
+      },
+      "name" : "Medizinische Leistung - Abrechnungsrelevanz",
+      "description" : "Hier ist anzugeben, ob die medizinische Leistung bei der Bepunktung des ambulanten Besuchs/stationären Aufenthalts (Satzart X01) zu berücksichtigen ist.",
       "isExample" : false
     },
     {
@@ -251,10 +347,82 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/Plausibilitaetskennzeichen"
+      },
+      "name" : "Plausibilitaetskennzeichen",
+      "description" : "Dieses Datenfeld enthält eine Kennzeichnung als Ergebnis der vom Gesundheits- ministerium vorgegebenen Plausibilitätsprüfung.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/Punkte-Belagsdauerausreisser-unten-Leistungskomponente"
+      },
+      "name" : "Punkte Belagsdauerausreisser unten - Leistungskomponente",
+      "description" : "In dieses Datenfeld ist – soweit zutreffend – die ermittelte Leistungskomponente für jene Patient:innen einzutragen, deren Belagsdauer des akut-stationären Krankenhausaufent- halts unter der im LKF-Modell in der jeweiligen LDF-Pauschale festgelegten Belagsdauer- untergrenze liegt.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/Punkte-Belagsdauerausreisser-unten-Tageskomponente"
+      },
+      "name" : "Punkte Belagsdauerausreisser unten - Tageskomponente",
+      "description" : "In dieses Datenfeld ist – soweit zutreffend – die ermittelte Tageskomponente für jene Patient:innen einzutragen, deren Belagsdauer des akut-stationären Krankenhausaufent- halts unter der im LKF-Modell in der jeweiligen LDF-Pauschale festgelegten Belagsdauer- untergrenze liegt.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/Punkte-spezieller-Bereiche-tageweise"
+      },
+      "name" : "Punkte spezieller Bereiche (tageweise)",
+      "description" : "In dieses Datenfeld ist – soweit zutreffend – die Summe der tageweise ermittelten Punkte für einen stationären Krankenhausaufenthalt in speziellen Leistungsbereichen (z.B. in den Bereichen der Kinder- und Jugendpsychiatrie, der Akut-Nachbehandlung von neuro- logischen Patient:innen, der medizinischen Geriatrie, der Akutgeriatrie/Remobilisation sowie der palliativmedizinischen Einrichtungen) einzutragen.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/totalPoints"
+      },
+      "name" : "Punkte total",
+      "description" : "In dieses Datenfeld ist die Gesamtsumme der für den stationären Aufenthalt/den ambulanten Besuch ermittelten Punkte einzutragen.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/moped-ext-TageOhneKostenbeitrag"
       },
       "name" : "Tage ohne Einhebung des Kostenbeitrags",
       "description" : "Anzahl der Tage, für welche kein Kostenbeitrag seitens der Krankenanstalt eingehoben wurde",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/Tageskomponente-Kontaktpunkte"
+      },
+      "name" : "Tageskomponente/Kontaktpunkte",
+      "description" : "In dieses Datenfeld ist – soweit zutreffend – die Tageskomponente bzw. sind die Kontakt- punkte einzutragen.",
       "isExample" : false
     },
     {
@@ -387,6 +555,42 @@
       },
       "name" : "Zugangsart des Patienten",
       "description" : "ValueSet für die Zugangsart des Patienten (LKF + Ka-Org)",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/moped-ext-Zusatzpunkte-Belagsdauerausreisser-nach-oben"
+      },
+      "name" : "Zusatzpunkte Belagsdauerausreißer nach oben",
+      "description" : "In dieses Datenfeld ist – soweit zutreffend – die Summe der tageweise ermittelten Zusatz- punkte für jene Patient:innen einzutragen, deren Belagsdauer des akut-stationären Krankenhausaufenthaltes über der im LKF-Modell in der jeweiligen LDF-Pauschale fest- gelegten Belagsdauerobergrenze liegt.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/moped-ext-Zusatzpunkte-Intensiv"
+      },
+      "name" : "Zusatzpunkte Intensiv",
+      "description" : "In dieses Datenfeld ist – soweit zutreffend – die Summe der Zusatzpunkte für während des stationären Krankenhausaufenthalts angefallene Tage auf abrechnungsrelevanten Intensiveinheiten einzutragen.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/moped-ext-Zusatzpunkte-Mehrfachleistungen"
+      },
+      "name" : "Zusatzpunkte Mehrfachleistungen",
+      "description" : "In dieses Datenfeld ist – soweit zutreffend – die Summe der Zusatzpunkte für zusätzliche Leistungen außerhalb des Punktepauschales der zur Abrechnung gelangenden Gruppe einzutragen.",
       "isExample" : false
     }],
     "page" : {

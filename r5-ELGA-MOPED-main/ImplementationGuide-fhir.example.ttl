@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "MOPED"] ; # 
   fhir:title [ fhir:v "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-07-16T10:33:51+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-07-19T05:43:00+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Example Publisher"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Example Publisher" ] ;
@@ -82,6 +82,54 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-AbrechnungsGruppe> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-AbrechnungsGruppe" ]
+       ] ;
+       fhir:name [ fhir:v "Abrechnung - Gruppe" ] ;
+       fhir:description [ fhir:v "Dieses Datenfeld ist mit der Codenummer der zutreffenden Abrechnungsgruppe zu befüllen. Bei Datensätzen von stationären Krankenhausaufenthalten, die keiner leistungsorientier- ten Diagnosenfallgruppe zugeordnet werden, erfolgt ein Eintrag entsprechend der jeweiligen Aufnahmeart." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-AbrechnungsKnoten> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-AbrechnungsKnoten" ]
+       ] ;
+       fhir:name [ fhir:v "Abrechnung - Knoten" ] ;
+       fhir:description [ fhir:v "Lukriert die Patient:innen über eine reguläre Gruppe Punkte, so ist in diesem Datenfeld die entsprechende Knotenbezeichnung einzutragen." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/SVAbrechnungsquartal> ;
+         fhir:reference [ fhir:v "StructureDefinition/SVAbrechnungsquartal" ]
+       ] ;
+       fhir:name [ fhir:v "Abrechnungsquartal der Sozialversicherung" ] ;
+       fhir:description [ fhir:v "Das Abrechnungsquartal ist in der Form Jahr (JJJJ) und Quartal (Q) zu melden." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/ValueSet/moped-AbrechnungsRelevanz-valueset> ;
+         fhir:reference [ fhir:v "ValueSet/moped-AbrechnungsRelevanz-valueset" ]
+       ] ;
+       fhir:name [ fhir:v "Abrechnungsrelevanz der medizinischen Leistung" ] ;
+       fhir:description [ fhir:v "Abrechnungsrelevanz der medizinischen Leistung" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
@@ -133,11 +181,59 @@
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-ErrorWarning> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-ErrorWarning" ]
+       ] ;
+       fhir:name [ fhir:v "Error/Warning" ] ;
+       fhir:description [ fhir:v "MOPED Extension für akzeptierte Errors und Warnings" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-fallnummer> ;
          fhir:reference [ fhir:v "StructureDefinition/moped-ext-fallnummer" ]
        ] ;
        fhir:name [ fhir:v "Fallnummer" ] ;
        fhir:description [ fhir:v "MOPED Extension für die Anzahl der Wiederaufnahmen" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-fondsrelevanz> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-fondsrelevanz" ]
+       ] ;
+       fhir:name [ fhir:v "Fondsrelevanz" ] ;
+       fhir:description [ fhir:v "Hier ist anzugeben, ob der stationäre Aufenthalt/ambulante Besuch gegenüber dem Landesgesundheitsfonds/PRIKRAF abzurechnen ist." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/Leistungskomponente-Leistungspunkte> ;
+         fhir:reference [ fhir:v "StructureDefinition/Leistungskomponente-Leistungspunkte" ]
+       ] ;
+       fhir:name [ fhir:v "Leistungskomponente/Leistungspunkte" ] ;
+       fhir:description [ fhir:v "In dieses Datenfeld ist – soweit zutreffend – die Leistungskomponente bzw. sind die Leistungspunkte einzutragen." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-AbrechnungsRelevanz> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-AbrechnungsRelevanz" ]
+       ] ;
+       fhir:name [ fhir:v "Medizinische Leistung - Abrechnungsrelevanz" ] ;
+       fhir:description [ fhir:v "Hier ist anzugeben, ob die medizinische Leistung bei der Bepunktung des ambulanten Besuchs/stationären Aufenthalts (Satzart X01) zu berücksichtigen ist." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -265,11 +361,83 @@
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/Plausibilitaetskennzeichen> ;
+         fhir:reference [ fhir:v "StructureDefinition/Plausibilitaetskennzeichen" ]
+       ] ;
+       fhir:name [ fhir:v "Plausibilitaetskennzeichen" ] ;
+       fhir:description [ fhir:v "Dieses Datenfeld enthält eine Kennzeichnung als Ergebnis der vom Gesundheits- ministerium vorgegebenen Plausibilitätsprüfung." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/Punkte-Belagsdauerausreisser-unten-Leistungskomponente> ;
+         fhir:reference [ fhir:v "StructureDefinition/Punkte-Belagsdauerausreisser-unten-Leistungskomponente" ]
+       ] ;
+       fhir:name [ fhir:v "Punkte Belagsdauerausreisser unten - Leistungskomponente" ] ;
+       fhir:description [ fhir:v "In dieses Datenfeld ist – soweit zutreffend – die ermittelte Leistungskomponente für jene Patient:innen einzutragen, deren Belagsdauer des akut-stationären Krankenhausaufent- halts unter der im LKF-Modell in der jeweiligen LDF-Pauschale festgelegten Belagsdauer- untergrenze liegt." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/Punkte-Belagsdauerausreisser-unten-Tageskomponente> ;
+         fhir:reference [ fhir:v "StructureDefinition/Punkte-Belagsdauerausreisser-unten-Tageskomponente" ]
+       ] ;
+       fhir:name [ fhir:v "Punkte Belagsdauerausreisser unten - Tageskomponente" ] ;
+       fhir:description [ fhir:v "In dieses Datenfeld ist – soweit zutreffend – die ermittelte Tageskomponente für jene Patient:innen einzutragen, deren Belagsdauer des akut-stationären Krankenhausaufent- halts unter der im LKF-Modell in der jeweiligen LDF-Pauschale festgelegten Belagsdauer- untergrenze liegt." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/Punkte-spezieller-Bereiche-tageweise> ;
+         fhir:reference [ fhir:v "StructureDefinition/Punkte-spezieller-Bereiche-tageweise" ]
+       ] ;
+       fhir:name [ fhir:v "Punkte spezieller Bereiche (tageweise)" ] ;
+       fhir:description [ fhir:v "In dieses Datenfeld ist – soweit zutreffend – die Summe der tageweise ermittelten Punkte für einen stationären Krankenhausaufenthalt in speziellen Leistungsbereichen (z.B. in den Bereichen der Kinder- und Jugendpsychiatrie, der Akut-Nachbehandlung von neuro- logischen Patient:innen, der medizinischen Geriatrie, der Akutgeriatrie/Remobilisation sowie der palliativmedizinischen Einrichtungen) einzutragen." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/totalPoints> ;
+         fhir:reference [ fhir:v "StructureDefinition/totalPoints" ]
+       ] ;
+       fhir:name [ fhir:v "Punkte total" ] ;
+       fhir:description [ fhir:v "In dieses Datenfeld ist die Gesamtsumme der für den stationären Aufenthalt/den ambulanten Besuch ermittelten Punkte einzutragen." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-TageOhneKostenbeitrag> ;
          fhir:reference [ fhir:v "StructureDefinition/moped-ext-TageOhneKostenbeitrag" ]
        ] ;
        fhir:name [ fhir:v "Tage ohne Einhebung des Kostenbeitrags" ] ;
        fhir:description [ fhir:v "Anzahl der Tage, für welche kein Kostenbeitrag seitens der Krankenanstalt eingehoben wurde" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/Tageskomponente-Kontaktpunkte> ;
+         fhir:reference [ fhir:v "StructureDefinition/Tageskomponente-Kontaktpunkte" ]
+       ] ;
+       fhir:name [ fhir:v "Tageskomponente/Kontaktpunkte" ] ;
+       fhir:description [ fhir:v "In dieses Datenfeld ist – soweit zutreffend – die Tageskomponente bzw. sind die Kontakt- punkte einzutragen." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -402,6 +570,42 @@
        ] ;
        fhir:name [ fhir:v "Zugangsart des Patienten" ] ;
        fhir:description [ fhir:v "ValueSet für die Zugangsart des Patienten (LKF + Ka-Org)" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-Zusatzpunkte-Belagsdauerausreisser-nach-oben> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-Zusatzpunkte-Belagsdauerausreisser-nach-oben" ]
+       ] ;
+       fhir:name [ fhir:v "Zusatzpunkte Belagsdauerausreißer nach oben" ] ;
+       fhir:description [ fhir:v "In dieses Datenfeld ist – soweit zutreffend – die Summe der tageweise ermittelten Zusatz- punkte für jene Patient:innen einzutragen, deren Belagsdauer des akut-stationären Krankenhausaufenthaltes über der im LKF-Modell in der jeweiligen LDF-Pauschale fest- gelegten Belagsdauerobergrenze liegt." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-Zusatzpunkte-Intensiv> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-Zusatzpunkte-Intensiv" ]
+       ] ;
+       fhir:name [ fhir:v "Zusatzpunkte Intensiv" ] ;
+       fhir:description [ fhir:v "In dieses Datenfeld ist – soweit zutreffend – die Summe der Zusatzpunkte für während des stationären Krankenhausaufenthalts angefallene Tage auf abrechnungsrelevanten Intensiveinheiten einzutragen." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-Zusatzpunkte-Mehrfachleistungen> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-Zusatzpunkte-Mehrfachleistungen" ]
+       ] ;
+       fhir:name [ fhir:v "Zusatzpunkte Mehrfachleistungen" ] ;
+       fhir:description [ fhir:v "In dieses Datenfeld ist – soweit zutreffend – die Summe der Zusatzpunkte für zusätzliche Leistungen außerhalb des Punktepauschales der zur Abrechnung gelangenden Gruppe einzutragen." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] ) ;
      fhir:page [
