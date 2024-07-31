@@ -10,7 +10,7 @@
   "name" : "MOPED",
   "title" : "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)",
   "status" : "draft",
-  "date" : "2024-07-19T05:43:00+00:00",
+  "date" : "2024-07-31T11:45:17+00:00",
   "publisher" : "Example Publisher",
   "contact" : [{
     "name" : "Example Publisher",
@@ -30,7 +30,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r5",
-    "version" : "6.0.0"
+    "version" : "6.0.2"
   },
   {
     "id" : "hl7ext",
@@ -71,19 +71,7 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/moped-ext-AbrechnungsGruppe"
-      },
-      "name" : "Abrechnung - Gruppe",
-      "description" : "Dieses Datenfeld ist mit der Codenummer der zutreffenden Abrechnungsgruppe zu befüllen. Bei Datensätzen von stationären Krankenhausaufenthalten, die keiner leistungsorientier- ten Diagnosenfallgruppe zugeordnet werden, erfolgt ein Eintrag entsprechend der jeweiligen Aufnahmeart.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/moped-ext-AbrechnungsKnoten"
+        "reference" : "StructureDefinition/moped-ext-diagnosisRelatedNode"
       },
       "name" : "Abrechnung - Knoten",
       "description" : "Lukriert die Patient:innen über eine reguläre Gruppe Punkte, so ist in diesem Datenfeld die entsprechende Knotenbezeichnung einzutragen.",
@@ -152,6 +140,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/moped-ext-EndOfEligibility"
+      },
+      "name" : "EndOfEligibility",
+      "description" : "Fristende - Befristungen sind in folgenden Fällen vorgesehen:\n- Bei zeitlichen Beschränkungen aufgrund einer zu erwartenden, nachfolgenden medizini-\nschen Hauskrankenpflege\n- Bei Vorhersehbarkeit des Eintritts einer Asylierung\n- Bei unsicherer, versicherungsrechtlicher Entwicklung\nBei den ersten beiden Punkten wird von den Krankenversicherungsträgern das Fristende individuell gesetzt. Beim dritten Punkt wird im Regelfall eine generelle Tagesbeschränkung erfolgen, weil die Versichertenanspruchserklärung in die Zukunft gerichtet ist und der Krankenversicherungsträger seine Zuständigkeit von vornherein nur für einen bestimmten Zeitraum annehmen kann (Ausleis- tungssituation gem. § 122 ASVG).\nDurch die Angabe eines Fristendes wird signalisiert, dass bei einem über das Fristende hinaus dau- ernden Aufenthalt eine Verlängerungsanzeige vorzulegen ist.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
@@ -203,10 +203,58 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/moped-ext-comment"
+      },
+      "name" : "Kommentar",
+      "description" : "Dieses Datenfeld ist für generelle oder spezifische Anmerkungen zum jeweiligen Krankenhausaufenthalt vorgesehen.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ecard-anspruch-kostenanteilbefreit"
+      },
+      "name" : "Kostenanteilbefreit laut Versicherungsanspruch",
+      "description" : "Kostenanteilbefreiung für den Patienten, die direkt an den Anspruch geknüpft ist. Kostenanteile sind \nentweder laut Gesetz vorgegeben (z.B. Rezeptgebühr) oder sie sind in der Satzung des jeweiligen KV-Trägers \nverankert und werden meistens errechnet (z.B. für Heilbehelfe und Hilfsmittel).",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/moped-ext-Kostenstelle"
+      },
+      "name" : "Kostenstelle",
+      "description" : "MOPED Extension für akzeptierte Errors und Warnings",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/Leistungskomponente-Leistungspunkte"
       },
       "name" : "Leistungskomponente/Leistungspunkte",
       "description" : "In dieses Datenfeld ist – soweit zutreffend – die Leistungskomponente bzw. sind die Leistungspunkte einzutragen.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/moped-ext-MealCostExcemption"
+      },
+      "name" : "MealCostExcemption",
+      "description" : "VKBEFR – Verpflegskosten-Beitragsbefreiung",
       "isExample" : false
     },
     {
@@ -302,7 +350,7 @@
         "reference" : "StructureDefinition/MOPEDEncounter"
       },
       "name" : "MOPEDEncounter",
-      "description" : "MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme",
+      "description" : "MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme und Entlassung",
       "isExample" : false
     },
     {
@@ -407,6 +455,18 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/ecard-anspruch-rezeptgebbefreit"
+      },
+      "name" : "Rezeptgebührenbefreit laut Versicherungsanspruch",
+      "description" : "Rezeptgebührenbefreiung für den Patienten, die direkt an den Anspruch  geknüpft ist. Der Patient ist von der \nEntrichtung der Rezeptgebühr befreit. Kostenanteile sind entweder laut Gesetz vorgegeben (z.B. Rezeptgebühr) oder sie sind in der Satzung des jeweiligen KV-Trägers \nverankert und werden meistens errechnet (z.B. für Heilbehelfe und Hilfsmittel).",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/moped-ext-TageOhneKostenbeitrag"
       },
       "name" : "Tage ohne Einhebung des Kostenbeitrags",
@@ -479,6 +539,30 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/moped-ext-vaestatus"
+      },
+      "name" : "VAEStatus",
+      "description" : "\"VAEST - Status der Versichertenanspruchserklärung\"",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/moped-ext-vdasid"
+      },
+      "name" : "VDAS-ID - VersichertenDatenAbfrageService",
+      "description" : "Es handelt sich um eine ID, welche bei der VDAS-Abfrage durch die Krankenanstalt vom e-card System vergeben wird und von der Krankenanstalt in der Aufnahme-/Ereignisanzeige mitgeliefert werden kann. Dadurch kann das Abfrageergebnis eindeutig nachvollzogen werden.\nDas Ergebnis der VDAS-Abfrage ist im ambulanten Bereich für den Krankenversicherungsträger verbindlich. Eine Ablehnung aus versicherungsrechtlichen Gründen ist nicht möglich, sofern die Ereignisanzeige jenem Träger aus der VDAS-Abfrage (inkl. VDAS-ID) übermittelt wurde.\nUm eine zwischenstaatliche Verrechnung zu ermöglichen ist bei zwischenstaatlichen Fällen eine Ablehnung zulässig.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/moped-ext-VerdachtArbeitsSchuelerunfall"
       },
       "name" : "Verdacht auf Arbeits- oder Schuelerunfall",
@@ -507,6 +591,30 @@
       },
       "name" : "Verdacht auf Fremdverschulden",
       "description" : "MOPED Extension für den Verdacht auf Fremdverschulden",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/moped-ext-extensionDays"
+      },
+      "name" : "Verlaengerungstage",
+      "description" : "Anzahl der Verlaengerungstage bei Verlängerung",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/moped-ext-NumberOfPreviouslyPaidDays"
+      },
+      "name" : "Vortageanzahl auf Kostenbeitrag",
+      "description" : "Zur Berechnung des Verpflegskostenbeitrags für Versicherte sowie des Kostenbeitrags für Angehörige ist die Angabe der zu berücksichtigenden Vortage erforderlich. Der Krankenversicherungsträger ist auf Grund der ihm zugänglichen Informationen in der Lage, Vorpflegetage zu berücksichtigen. Berücksichtigt werden alle stationären Aufenthalte eines Patienten innerhalb eines Kalenderjahres.\nDer höchste Wert, mit welchem das Feld VTAGE befüllt werden kann, ist jener Wert, für welchen maximal ein Verpflegskostenbeitrag pro Kalenderjahr zu entrichten ist. Der Maximale Höchstwert beträgt somit 28 Tage.",
       "isExample" : false
     },
     {

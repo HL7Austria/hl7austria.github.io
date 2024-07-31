@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "MOPED"] ; # 
   fhir:title [ fhir:v "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-07-19T05:43:00+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-07-31T11:45:17+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Example Publisher"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Example Publisher" ] ;
@@ -40,7 +40,7 @@
        fhir:link <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
      ] ;
      fhir:packageId [ fhir:v "hl7.terminology.r5" ] ;
-     fhir:version [ fhir:v "6.0.0" ]
+     fhir:version [ fhir:v "6.0.2" ]
   ] [
      fhir:id [ fhir:v "hl7ext" ] ;
      fhir:extension ( [
@@ -85,20 +85,8 @@
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://example.org/StructureDefinition/moped-ext-AbrechnungsGruppe> ;
-         fhir:reference [ fhir:v "StructureDefinition/moped-ext-AbrechnungsGruppe" ]
-       ] ;
-       fhir:name [ fhir:v "Abrechnung - Gruppe" ] ;
-       fhir:description [ fhir:v "Dieses Datenfeld ist mit der Codenummer der zutreffenden Abrechnungsgruppe zu befüllen. Bei Datensätzen von stationären Krankenhausaufenthalten, die keiner leistungsorientier- ten Diagnosenfallgruppe zugeordnet werden, erfolgt ein Eintrag entsprechend der jeweiligen Aufnahmeart." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://example.org/StructureDefinition/moped-ext-AbrechnungsKnoten> ;
-         fhir:reference [ fhir:v "StructureDefinition/moped-ext-AbrechnungsKnoten" ]
+         fhir:link <http://example.org/StructureDefinition/moped-ext-diagnosisRelatedNode> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-diagnosisRelatedNode" ]
        ] ;
        fhir:name [ fhir:v "Abrechnung - Knoten" ] ;
        fhir:description [ fhir:v "Lukriert die Patient:innen über eine reguläre Gruppe Punkte, so ist in diesem Datenfeld die entsprechende Knotenbezeichnung einzutragen." ] ;
@@ -166,6 +154,18 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-EndOfEligibility> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-EndOfEligibility" ]
+       ] ;
+       fhir:name [ fhir:v "EndOfEligibility" ] ;
+       fhir:description [ fhir:v "Fristende - Befristungen sind in folgenden Fällen vorgesehen:\n- Bei zeitlichen Beschränkungen aufgrund einer zu erwartenden, nachfolgenden medizini-\nschen Hauskrankenpflege\n- Bei Vorhersehbarkeit des Eintritts einer Asylierung\n- Bei unsicherer, versicherungsrechtlicher Entwicklung\nBei den ersten beiden Punkten wird von den Krankenversicherungsträgern das Fristende individuell gesetzt. Beim dritten Punkt wird im Regelfall eine generelle Tagesbeschränkung erfolgen, weil die Versichertenanspruchserklärung in die Zukunft gerichtet ist und der Krankenversicherungsträger seine Zuständigkeit von vornherein nur für einen bestimmten Zeitraum annehmen kann (Ausleis- tungssituation gem. § 122 ASVG).\nDurch die Angabe eines Fristendes wird signalisiert, dass bei einem über das Fristende hinaus dau- ernden Aufenthalt eine Verlängerungsanzeige vorzulegen ist." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
@@ -217,11 +217,59 @@
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-comment> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-comment" ]
+       ] ;
+       fhir:name [ fhir:v "Kommentar" ] ;
+       fhir:description [ fhir:v "Dieses Datenfeld ist für generelle oder spezifische Anmerkungen zum jeweiligen Krankenhausaufenthalt vorgesehen." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/ecard-anspruch-kostenanteilbefreit> ;
+         fhir:reference [ fhir:v "StructureDefinition/ecard-anspruch-kostenanteilbefreit" ]
+       ] ;
+       fhir:name [ fhir:v "Kostenanteilbefreit laut Versicherungsanspruch" ] ;
+       fhir:description [ fhir:v "Kostenanteilbefreiung für den Patienten, die direkt an den Anspruch geknüpft ist. Kostenanteile sind \nentweder laut Gesetz vorgegeben (z.B. Rezeptgebühr) oder sie sind in der Satzung des jeweiligen KV-Trägers \nverankert und werden meistens errechnet (z.B. für Heilbehelfe und Hilfsmittel)." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-Kostenstelle> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-Kostenstelle" ]
+       ] ;
+       fhir:name [ fhir:v "Kostenstelle" ] ;
+       fhir:description [ fhir:v "MOPED Extension für akzeptierte Errors und Warnings" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://example.org/StructureDefinition/Leistungskomponente-Leistungspunkte> ;
          fhir:reference [ fhir:v "StructureDefinition/Leistungskomponente-Leistungspunkte" ]
        ] ;
        fhir:name [ fhir:v "Leistungskomponente/Leistungspunkte" ] ;
        fhir:description [ fhir:v "In dieses Datenfeld ist – soweit zutreffend – die Leistungskomponente bzw. sind die Leistungspunkte einzutragen." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-MealCostExcemption> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-MealCostExcemption" ]
+       ] ;
+       fhir:name [ fhir:v "MealCostExcemption" ] ;
+       fhir:description [ fhir:v "VKBEFR – Verpflegskosten-Beitragsbefreiung" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -317,7 +365,7 @@
          fhir:reference [ fhir:v "StructureDefinition/MOPEDEncounter" ]
        ] ;
        fhir:name [ fhir:v "MOPEDEncounter" ] ;
-       fhir:description [ fhir:v "MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme und Entlassung" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -421,6 +469,18 @@
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/ecard-anspruch-rezeptgebbefreit> ;
+         fhir:reference [ fhir:v "StructureDefinition/ecard-anspruch-rezeptgebbefreit" ]
+       ] ;
+       fhir:name [ fhir:v "Rezeptgebührenbefreit laut Versicherungsanspruch" ] ;
+       fhir:description [ fhir:v "Rezeptgebührenbefreiung für den Patienten, die direkt an den Anspruch  geknüpft ist. Der Patient ist von der \nEntrichtung der Rezeptgebühr befreit. Kostenanteile sind entweder laut Gesetz vorgegeben (z.B. Rezeptgebühr) oder sie sind in der Satzung des jeweiligen KV-Trägers \nverankert und werden meistens errechnet (z.B. für Heilbehelfe und Hilfsmittel)." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-TageOhneKostenbeitrag> ;
          fhir:reference [ fhir:v "StructureDefinition/moped-ext-TageOhneKostenbeitrag" ]
        ] ;
@@ -493,6 +553,30 @@
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-vaestatus> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-vaestatus" ]
+       ] ;
+       fhir:name [ fhir:v "VAEStatus" ] ;
+       fhir:description [ fhir:v "\"VAEST - Status der Versichertenanspruchserklärung\"" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-vdasid> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-vdasid" ]
+       ] ;
+       fhir:name [ fhir:v "VDAS-ID - VersichertenDatenAbfrageService" ] ;
+       fhir:description [ fhir:v "Es handelt sich um eine ID, welche bei der VDAS-Abfrage durch die Krankenanstalt vom e-card System vergeben wird und von der Krankenanstalt in der Aufnahme-/Ereignisanzeige mitgeliefert werden kann. Dadurch kann das Abfrageergebnis eindeutig nachvollzogen werden.\nDas Ergebnis der VDAS-Abfrage ist im ambulanten Bereich für den Krankenversicherungsträger verbindlich. Eine Ablehnung aus versicherungsrechtlichen Gründen ist nicht möglich, sofern die Ereignisanzeige jenem Träger aus der VDAS-Abfrage (inkl. VDAS-ID) übermittelt wurde.\nUm eine zwischenstaatliche Verrechnung zu ermöglichen ist bei zwischenstaatlichen Fällen eine Ablehnung zulässig." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-VerdachtArbeitsSchuelerunfall> ;
          fhir:reference [ fhir:v "StructureDefinition/moped-ext-VerdachtArbeitsSchuelerunfall" ]
        ] ;
@@ -522,6 +606,30 @@
        ] ;
        fhir:name [ fhir:v "Verdacht auf Fremdverschulden" ] ;
        fhir:description [ fhir:v "MOPED Extension für den Verdacht auf Fremdverschulden" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-extensionDays> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-extensionDays" ]
+       ] ;
+       fhir:name [ fhir:v "Verlaengerungstage" ] ;
+       fhir:description [ fhir:v "Anzahl der Verlaengerungstage bei Verlängerung" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-NumberOfPreviouslyPaidDays> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-NumberOfPreviouslyPaidDays" ]
+       ] ;
+       fhir:name [ fhir:v "Vortageanzahl auf Kostenbeitrag" ] ;
+       fhir:description [ fhir:v "Zur Berechnung des Verpflegskostenbeitrags für Versicherte sowie des Kostenbeitrags für Angehörige ist die Angabe der zu berücksichtigenden Vortage erforderlich. Der Krankenversicherungsträger ist auf Grund der ihm zugänglichen Informationen in der Lage, Vorpflegetage zu berücksichtigen. Berücksichtigt werden alle stationären Aufenthalte eines Patienten innerhalb eines Kalenderjahres.\nDer höchste Wert, mit welchem das Feld VTAGE befüllt werden kann, ist jener Wert, für welchen maximal ein Verpflegskostenbeitrag pro Kalenderjahr zu entrichten ist. Der Maximale Höchstwert beträgt somit 28 Tage." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [

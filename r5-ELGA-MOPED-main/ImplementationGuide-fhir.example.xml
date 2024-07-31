@@ -10,7 +10,7 @@
   <name value="MOPED"/>
   <title value="Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"/>
   <status value="draft"/>
-  <date value="2024-07-19T05:43:00+00:00"/>
+  <date value="2024-07-31T11:45:17+00:00"/>
   <publisher value="Example Publisher"/>
   <contact>
     <name value="Example Publisher"/>
@@ -28,7 +28,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r5"/>
-    <version value="6.0.0"/>
+    <version value="6.0.2"/>
   </dependsOn>
   <dependsOn id="hl7ext">
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
@@ -63,18 +63,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-AbrechnungsGruppe"/>
-      </reference>
-      <name value="Abrechnung - Gruppe"/>
-      <description value="Dieses Datenfeld ist mit der Codenummer der zutreffenden Abrechnungsgruppe zu befüllen. Bei Datensätzen von stationären Krankenhausaufenthalten, die keiner leistungsorientier- ten Diagnosenfallgruppe zugeordnet werden, erfolgt ein Eintrag entsprechend der jeweiligen Aufnahmeart."/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/moped-ext-AbrechnungsKnoten"/>
+        <reference value="StructureDefinition/moped-ext-diagnosisRelatedNode"/>
       </reference>
       <name value="Abrechnung - Knoten"/>
       <description value="Lukriert die Patient:innen über eine reguläre Gruppe Punkte, so ist in diesem Datenfeld die entsprechende Knotenbezeichnung einzutragen."/>
@@ -137,6 +126,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-EndOfEligibility"/>
+      </reference>
+      <name value="EndOfEligibility"/>
+      <description value="Fristende - Befristungen sind in folgenden Fällen vorgesehen:&#xA;- Bei zeitlichen Beschränkungen aufgrund einer zu erwartenden, nachfolgenden medizini-&#xA;schen Hauskrankenpflege&#xA;- Bei Vorhersehbarkeit des Eintritts einer Asylierung&#xA;- Bei unsicherer, versicherungsrechtlicher Entwicklung&#xA;Bei den ersten beiden Punkten wird von den Krankenversicherungsträgern das Fristende individuell gesetzt. Beim dritten Punkt wird im Regelfall eine generelle Tagesbeschränkung erfolgen, weil die Versichertenanspruchserklärung in die Zukunft gerichtet ist und der Krankenversicherungsträger seine Zuständigkeit von vornherein nur für einen bestimmten Zeitraum annehmen kann (Ausleis- tungssituation gem. § 122 ASVG).&#xA;Durch die Angabe eines Fristendes wird signalisiert, dass bei einem über das Fristende hinaus dau- ernden Aufenthalt eine Verlängerungsanzeige vorzulegen ist."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
@@ -184,10 +184,54 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/moped-ext-comment"/>
+      </reference>
+      <name value="Kommentar"/>
+      <description value="Dieses Datenfeld ist für generelle oder spezifische Anmerkungen zum jeweiligen Krankenhausaufenthalt vorgesehen."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ecard-anspruch-kostenanteilbefreit"/>
+      </reference>
+      <name value="Kostenanteilbefreit laut Versicherungsanspruch"/>
+      <description value="Kostenanteilbefreiung für den Patienten, die direkt an den Anspruch geknüpft ist. Kostenanteile sind &#xA;entweder laut Gesetz vorgegeben (z.B. Rezeptgebühr) oder sie sind in der Satzung des jeweiligen KV-Trägers &#xA;verankert und werden meistens errechnet (z.B. für Heilbehelfe und Hilfsmittel)."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-Kostenstelle"/>
+      </reference>
+      <name value="Kostenstelle"/>
+      <description value="MOPED Extension für akzeptierte Errors und Warnings"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/Leistungskomponente-Leistungspunkte"/>
       </reference>
       <name value="Leistungskomponente/Leistungspunkte"/>
       <description value="In dieses Datenfeld ist – soweit zutreffend – die Leistungskomponente bzw. sind die Leistungspunkte einzutragen."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-MealCostExcemption"/>
+      </reference>
+      <name value="MealCostExcemption"/>
+      <description value="VKBEFR – Verpflegskosten-Beitragsbefreiung"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -275,7 +319,7 @@
         <reference value="StructureDefinition/MOPEDEncounter"/>
       </reference>
       <name value="MOPEDEncounter"/>
-      <description value="MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme"/>
+      <description value="MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme und Entlassung"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -371,6 +415,17 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/ecard-anspruch-rezeptgebbefreit"/>
+      </reference>
+      <name value="Rezeptgebührenbefreit laut Versicherungsanspruch"/>
+      <description value="Rezeptgebührenbefreiung für den Patienten, die direkt an den Anspruch  geknüpft ist. Der Patient ist von der &#xA;Entrichtung der Rezeptgebühr befreit. Kostenanteile sind entweder laut Gesetz vorgegeben (z.B. Rezeptgebühr) oder sie sind in der Satzung des jeweiligen KV-Trägers &#xA;verankert und werden meistens errechnet (z.B. für Heilbehelfe und Hilfsmittel)."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/moped-ext-TageOhneKostenbeitrag"/>
       </reference>
       <name value="Tage ohne Einhebung des Kostenbeitrags"/>
@@ -437,6 +492,28 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/moped-ext-vaestatus"/>
+      </reference>
+      <name value="VAEStatus"/>
+      <description value="&quot;VAEST - Status der Versichertenanspruchserklärung&quot;"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-vdasid"/>
+      </reference>
+      <name value="VDAS-ID - VersichertenDatenAbfrageService"/>
+      <description value="Es handelt sich um eine ID, welche bei der VDAS-Abfrage durch die Krankenanstalt vom e-card System vergeben wird und von der Krankenanstalt in der Aufnahme-/Ereignisanzeige mitgeliefert werden kann. Dadurch kann das Abfrageergebnis eindeutig nachvollzogen werden.&#xA;Das Ergebnis der VDAS-Abfrage ist im ambulanten Bereich für den Krankenversicherungsträger verbindlich. Eine Ablehnung aus versicherungsrechtlichen Gründen ist nicht möglich, sofern die Ereignisanzeige jenem Träger aus der VDAS-Abfrage (inkl. VDAS-ID) übermittelt wurde.&#xA;Um eine zwischenstaatliche Verrechnung zu ermöglichen ist bei zwischenstaatlichen Fällen eine Ablehnung zulässig."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/moped-ext-VerdachtArbeitsSchuelerunfall"/>
       </reference>
       <name value="Verdacht auf Arbeits- oder Schuelerunfall"/>
@@ -463,6 +540,28 @@
       </reference>
       <name value="Verdacht auf Fremdverschulden"/>
       <description value="MOPED Extension für den Verdacht auf Fremdverschulden"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-extensionDays"/>
+      </reference>
+      <name value="Verlaengerungstage"/>
+      <description value="Anzahl der Verlaengerungstage bei Verlängerung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-NumberOfPreviouslyPaidDays"/>
+      </reference>
+      <name value="Vortageanzahl auf Kostenbeitrag"/>
+      <description value="Zur Berechnung des Verpflegskostenbeitrags für Versicherte sowie des Kostenbeitrags für Angehörige ist die Angabe der zu berücksichtigenden Vortage erforderlich. Der Krankenversicherungsträger ist auf Grund der ihm zugänglichen Informationen in der Lage, Vorpflegetage zu berücksichtigen. Berücksichtigt werden alle stationären Aufenthalte eines Patienten innerhalb eines Kalenderjahres.&#xA;Der höchste Wert, mit welchem das Feld VTAGE befüllt werden kann, ist jener Wert, für welchen maximal ein Verpflegskostenbeitrag pro Kalenderjahr zu entrichten ist. Der Maximale Höchstwert beträgt somit 28 Tage."/>
       <isExample value="false"/>
     </resource>
     <resource>
