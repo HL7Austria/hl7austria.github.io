@@ -14,6 +14,7 @@
     <sch:rule context="f:CoverageEligibilityRequest">
       <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-vdasid']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-vdasid': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-extensionDays']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-extensionDays': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-PremiumClass']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-PremiumClass': maximum cardinality of 'extension' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>
