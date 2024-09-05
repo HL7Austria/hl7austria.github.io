@@ -10,7 +10,7 @@
   <name value="MOPED"/>
   <title value="Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"/>
   <status value="draft"/>
-  <date value="2024-09-03T06:46:02+00:00"/>
+  <date value="2024-09-05T05:58:31+00:00"/>
   <publisher value="Example Publisher"/>
   <contact>
     <name value="Example Publisher"/>
@@ -93,6 +93,28 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-AccountRef"/>
+      </reference>
+      <name value="Account Referenz"/>
+      <description value="Referenz auf den im Claim abzurechnenden Account"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-AnzahlSonderleistungen"/>
+      </reference>
+      <name value="Anzahl Sonderleistungen"/>
+      <description value="MOPED Extension für die Anzahl der Sonderleistungen"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
@@ -111,6 +133,17 @@
       </reference>
       <name value="Behandlungsart"/>
       <description value="ValueSet für die Behandlungsart"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-Beihilfenaequivalent"/>
+      </reference>
+      <name value="Beihilfenaequivalent"/>
+      <description value="MOPED Extension für das Beihilfenaequivalent"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -184,6 +217,17 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/moped-ext-ForderungsbetragAuslaenderverrechnungRegress"/>
+      </reference>
+      <name value="Forderungsbetrag für Auslaenderverrechnung oder Regress"/>
+      <description value="MOPED Extension für den Forderungsbetrag für Ausländerverrechnung oder Regress"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/moped-ext-comment"/>
       </reference>
       <name value="Kommentar"/>
@@ -206,10 +250,54 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/moped-ext-KonstenmeldungARK"/>
+      </reference>
+      <name value="Kostenmeldung für (A/R/K)"/>
+      <description value="MOPED Extension für die Kostenmeldung. Konstenmeldung für A = Ausländerverrechnung, R = Regressangelegenheiten oder K = Kosteninformation"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/moped-KostenmeldungARK-valueset"/>
+      </reference>
+      <name value="Kostenmeldung für (A/R/K)"/>
+      <description value="ValueSet für die Art der Kostenmeldung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/moped-ext-Kostenstelle"/>
       </reference>
       <name value="Kostenstelle"/>
       <description value="MOPED Extension für akzeptierte Errors und Warnings"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-LDFBetragNetto"/>
+      </reference>
+      <name value="LDF-Betrag Netto"/>
+      <description value="MOPED Extension für den LDF-Punktewert Netto. Ergibt sich durch Punkteanzahl mal Punktewert Forderungsbasis ohne Berücksichtigung eines Patientenanteiles f. Angehörige bzw. eines Beihilfenäquivalentes"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-LDFPunktewertNetto"/>
+      </reference>
+      <name value="LDF-Punktewert Netto"/>
+      <description value="MOPED Extension für den LDF-Punktewert Netto"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -349,6 +437,28 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/moped-ext-PatientenanteilAngehoerige"/>
+      </reference>
+      <name value="Patientenanteil für Angehoerige"/>
+      <description value="MOPED Extension für den Patientenanteil für Angehörige (tägl. Satz) netto: Betrag in €, 2 Nachkommastellen"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-Patientenanteil"/>
+      </reference>
+      <name value="Patientenanteil Netto"/>
+      <description value="MOPED Extension für den Patientenanteil netto: Betrag in €, 2 Nachkommastellen"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/moped-ext-physischeAnwesenheit"/>
       </reference>
       <name value="physische Anwesenheit"/>
@@ -363,7 +473,7 @@
         <reference value="StructureDefinition/Plausibilitaetskennzeichen"/>
       </reference>
       <name value="Plausibilitaetskennzeichen"/>
-      <description value="Dieses Datenfeld enthält eine Kennzeichnung als Ergebnis der vom Gesundheits- ministerium vorgegebenen Plausibilitätsprüfung."/>
+      <description value="Dieses Datenfeld enthält eine Kennzeichnung als Ergebnis der vom Gesundheitsministerium vorgegebenen Plausibilitätsprüfung."/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -404,6 +514,17 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/moped-ext-PunkteLDFPauschale"/>
+      </reference>
+      <name value="Punkte LDF Pauschale"/>
+      <description value="MOPED Extension für die LDF Punkte Pauschale"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/Punkte-spezieller-Bereiche-tageweise"/>
       </reference>
       <name value="Punkte spezieller Bereiche (tageweise)"/>
@@ -426,10 +547,32 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/moped-ext-RechnungsnummerKHLGF"/>
+      </reference>
+      <name value="Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds"/>
+      <description value="MOPED Extension für die Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/ecard-anspruch-rezeptgebbefreit"/>
       </reference>
       <name value="Rezeptgebührenbefreit laut Versicherungsanspruch"/>
       <description value="Rezeptgebührenbefreiung für den Patienten, die direkt an den Anspruch  geknüpft ist. Der Patient ist von der &#xA;Entrichtung der Rezeptgebühr befreit. Kostenanteile sind entweder laut Gesetz vorgegeben (z.B. Rezeptgebühr) oder sie sind in der Satzung des jeweiligen KV-Trägers &#xA;verankert und werden meistens errechnet (z.B. für Heilbehelfe und Hilfsmittel)."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-Sonderleistungsnummer"/>
+      </reference>
+      <name value="Sonderleistungsnummer"/>
+      <description value="MOPED Extension für die Sonderleistungsnummer"/>
       <isExample value="false"/>
     </resource>
     <resource>

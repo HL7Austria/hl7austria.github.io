@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "MOPED"] ; # 
   fhir:title [ fhir:v "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-09-03T06:46:02+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-09-05T05:58:31+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Example Publisher"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Example Publisher" ] ;
@@ -118,6 +118,30 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-AccountRef> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-AccountRef" ]
+       ] ;
+       fhir:name [ fhir:v "Account Referenz" ] ;
+       fhir:description [ fhir:v "Referenz auf den im Claim abzurechnenden Account" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-AnzahlSonderleistungen> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-AnzahlSonderleistungen" ]
+       ] ;
+       fhir:name [ fhir:v "Anzahl Sonderleistungen" ] ;
+       fhir:description [ fhir:v "MOPED Extension für die Anzahl der Sonderleistungen" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
@@ -138,6 +162,18 @@
        ] ;
        fhir:name [ fhir:v "Behandlungsart" ] ;
        fhir:description [ fhir:v "ValueSet für die Behandlungsart" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-Beihilfenaequivalent> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-Beihilfenaequivalent" ]
+       ] ;
+       fhir:name [ fhir:v "Beihilfenaequivalent" ] ;
+       fhir:description [ fhir:v "MOPED Extension für das Beihilfenaequivalent" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -217,6 +253,18 @@
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-ForderungsbetragAuslaenderverrechnungRegress> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-ForderungsbetragAuslaenderverrechnungRegress" ]
+       ] ;
+       fhir:name [ fhir:v "Forderungsbetrag für Auslaenderverrechnung oder Regress" ] ;
+       fhir:description [ fhir:v "MOPED Extension für den Forderungsbetrag für Ausländerverrechnung oder Regress" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-comment> ;
          fhir:reference [ fhir:v "StructureDefinition/moped-ext-comment" ]
        ] ;
@@ -241,11 +289,59 @@
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-KonstenmeldungARK> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-KonstenmeldungARK" ]
+       ] ;
+       fhir:name [ fhir:v "Kostenmeldung für (A/R/K)" ] ;
+       fhir:description [ fhir:v "MOPED Extension für die Kostenmeldung. Konstenmeldung für A = Ausländerverrechnung, R = Regressangelegenheiten oder K = Kosteninformation" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/ValueSet/moped-KostenmeldungARK-valueset> ;
+         fhir:reference [ fhir:v "ValueSet/moped-KostenmeldungARK-valueset" ]
+       ] ;
+       fhir:name [ fhir:v "Kostenmeldung für (A/R/K)" ] ;
+       fhir:description [ fhir:v "ValueSet für die Art der Kostenmeldung" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-Kostenstelle> ;
          fhir:reference [ fhir:v "StructureDefinition/moped-ext-Kostenstelle" ]
        ] ;
        fhir:name [ fhir:v "Kostenstelle" ] ;
        fhir:description [ fhir:v "MOPED Extension für akzeptierte Errors und Warnings" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-LDFBetragNetto> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-LDFBetragNetto" ]
+       ] ;
+       fhir:name [ fhir:v "LDF-Betrag Netto" ] ;
+       fhir:description [ fhir:v "MOPED Extension für den LDF-Punktewert Netto. Ergibt sich durch Punkteanzahl mal Punktewert Forderungsbasis ohne Berücksichtigung eines Patientenanteiles f. Angehörige bzw. eines Beihilfenäquivalentes" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-LDFPunktewertNetto> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-LDFPunktewertNetto" ]
+       ] ;
+       fhir:name [ fhir:v "LDF-Punktewert Netto" ] ;
+       fhir:description [ fhir:v "MOPED Extension für den LDF-Punktewert Netto" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -397,6 +493,30 @@
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-PatientenanteilAngehoerige> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-PatientenanteilAngehoerige" ]
+       ] ;
+       fhir:name [ fhir:v "Patientenanteil für Angehoerige" ] ;
+       fhir:description [ fhir:v "MOPED Extension für den Patientenanteil für Angehörige (tägl. Satz) netto: Betrag in €, 2 Nachkommastellen" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-Patientenanteil> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-Patientenanteil" ]
+       ] ;
+       fhir:name [ fhir:v "Patientenanteil Netto" ] ;
+       fhir:description [ fhir:v "MOPED Extension für den Patientenanteil netto: Betrag in €, 2 Nachkommastellen" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-physischeAnwesenheit> ;
          fhir:reference [ fhir:v "StructureDefinition/moped-ext-physischeAnwesenheit" ]
        ] ;
@@ -413,7 +533,7 @@
          fhir:reference [ fhir:v "StructureDefinition/Plausibilitaetskennzeichen" ]
        ] ;
        fhir:name [ fhir:v "Plausibilitaetskennzeichen" ] ;
-       fhir:description [ fhir:v "Dieses Datenfeld enthält eine Kennzeichnung als Ergebnis der vom Gesundheits- ministerium vorgegebenen Plausibilitätsprüfung." ] ;
+       fhir:description [ fhir:v "Dieses Datenfeld enthält eine Kennzeichnung als Ergebnis der vom Gesundheitsministerium vorgegebenen Plausibilitätsprüfung." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -457,6 +577,18 @@
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-PunkteLDFPauschale> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-PunkteLDFPauschale" ]
+       ] ;
+       fhir:name [ fhir:v "Punkte LDF Pauschale" ] ;
+       fhir:description [ fhir:v "MOPED Extension für die LDF Punkte Pauschale" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://example.org/StructureDefinition/Punkte-spezieller-Bereiche-tageweise> ;
          fhir:reference [ fhir:v "StructureDefinition/Punkte-spezieller-Bereiche-tageweise" ]
        ] ;
@@ -481,11 +613,35 @@
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-RechnungsnummerKHLGF> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-RechnungsnummerKHLGF" ]
+       ] ;
+       fhir:name [ fhir:v "Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds" ] ;
+       fhir:description [ fhir:v "MOPED Extension für die Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://example.org/StructureDefinition/ecard-anspruch-rezeptgebbefreit> ;
          fhir:reference [ fhir:v "StructureDefinition/ecard-anspruch-rezeptgebbefreit" ]
        ] ;
        fhir:name [ fhir:v "Rezeptgebührenbefreit laut Versicherungsanspruch" ] ;
        fhir:description [ fhir:v "Rezeptgebührenbefreiung für den Patienten, die direkt an den Anspruch  geknüpft ist. Der Patient ist von der \nEntrichtung der Rezeptgebühr befreit. Kostenanteile sind entweder laut Gesetz vorgegeben (z.B. Rezeptgebühr) oder sie sind in der Satzung des jeweiligen KV-Trägers \nverankert und werden meistens errechnet (z.B. für Heilbehelfe und Hilfsmittel)." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-Sonderleistungsnummer> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-Sonderleistungsnummer" ]
+       ] ;
+       fhir:name [ fhir:v "Sonderleistungsnummer" ] ;
+       fhir:description [ fhir:v "MOPED Extension für die Sonderleistungsnummer" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [

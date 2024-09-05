@@ -25,6 +25,7 @@
       <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-fondsrelevanz']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-fondsrelevanz': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/Plausibilitaetskennzeichen']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/Plausibilitaetskennzeichen': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/SVAbrechnungsquartal']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/SVAbrechnungsquartal': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-AccountRef']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-AccountRef': maximum cardinality of 'extension' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

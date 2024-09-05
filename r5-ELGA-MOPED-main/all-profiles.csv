@@ -419,10 +419,13 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Fondsrelevanz","Hier ist anzugeben, ob der stationäre Aufenthalt/ambulante Besuch gegenüber dem Landesgesundheitsfonds/PRIKRAF abzurechnen ist.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "MOPEDClaim","Claim.extension:Plausibilitaetskennzeichen","Claim.extension","Plausibilitaetskennzeichen","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/Plausibilitaetskennzeichen]]} {[]}
-","Plausibilitaetskennzeichen","Dieses Datenfeld enthält eine Kennzeichnung als Ergebnis der vom Gesundheits- ministerium vorgegebenen Plausibilitätsprüfung.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","Plausibilitaetskennzeichen","Dieses Datenfeld enthält eine Kennzeichnung als Ergebnis der vom Gesundheitsministerium vorgegebenen Plausibilitätsprüfung.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "MOPEDClaim","Claim.extension:SVAbrechnungsquartal","Claim.extension","SVAbrechnungsquartal","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/SVAbrechnungsquartal]]} {[]}
 ","Abrechnungsquartal der Sozialversicherung","Das Abrechnungsquartal ist in der Form Jahr (JJJJ) und Quartal (Q) zu melden.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MOPEDClaim","Claim.extension:AccountRef","Claim.extension","AccountRef","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-AccountRef]]} {[]}
+","Account Referenz","Referenz auf den im Claim abzurechnenden Account","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "MOPEDClaim","Claim.modifierExtension","Claim.modifierExtension","","extensions
 user content","",0,*,"","Y","Y","Extension {[]} {[]}
@@ -1030,6 +1033,72 @@ dom-4dom-3dom-5",""
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "MOPEDClaimResponse","ClaimResponse.extension:ErrorWarning","ClaimResponse.extension","ErrorWarning","","",0,*,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-ErrorWarning]]} {[]}
 ","Error/Warning","MOPED Extension für akzeptierte Errors und Warnings","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MOPEDClaimResponse","ClaimResponse.extension:DiagnosisRelatedNode","ClaimResponse.extension","DiagnosisRelatedNode","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-diagnosisRelatedNode]]} {[]}
+","""Abrechnung - Knoten:"" Lukriert die Patient:innen über eine reguläre Gruppe Punkte, so ist in diesem Datenfeld die entsprechende Knotenbezeichnung einzutragen.","""Abrechnung - Knoten:"" Lukriert die Patient:innen über eine reguläre Gruppe Punkte, so ist in diesem Datenfeld die entsprechende Knotenbezeichnung einzutragen.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MOPEDClaimResponse","ClaimResponse.extension:ZusatzpunkteBelagsdauerausreisserNachOben","ClaimResponse.extension","ZusatzpunkteBelagsdauerausreisserNachOben","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-Zusatzpunkte-Belagsdauerausreisser-nach-oben]]} {[]}
+","Zusatzpunkte Belagsdauerausreißer nach oben","""Zusatzpunkte Belagsdauerausreißer nach oben:"" In dieses Datenfeld ist – soweit zutreffend – die Summe der tageweise ermittelten Zusatz- punkte für jene Patient:innen einzutragen, deren Belagsdauer des akut-stationären Krankenhausaufenthaltes über der im LKF-Modell in der jeweiligen LDF-Pauschale fest- gelegten Belagsdauerobergrenze liegt.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MOPEDClaimResponse","ClaimResponse.extension:ZusatzpunkteIntensiv","ClaimResponse.extension","ZusatzpunkteIntensiv","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-Zusatzpunkte-Intensiv]]} {[]}
+","Zusatzpunkte Intensiv","""Zusatzpunkte Intensiv:"" In dieses Datenfeld ist – soweit zutreffend – die Summe der Zusatzpunkte für während des stationären Krankenhausaufenthalts angefallene Tage auf abrechnungsrelevanten Intensiveinheiten einzutragen.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MOPEDClaimResponse","ClaimResponse.extension:ZusatzpunkteMehrfachleistungen","ClaimResponse.extension","ZusatzpunkteMehrfachleistungen","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-Zusatzpunkte-Mehrfachleistungen]]} {[]}
+","Zusatzpunkte Mehrfachleistungen","""Zusatzpunkte Mehrfachleistungen:"" In dieses Datenfeld ist – soweit zutreffend – die Summe der Zusatzpunkte für zusätzliche Leistungen außerhalb des Punktepauschales der zur Abrechnung gelangenden Gruppe einzutragen.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MOPEDClaimResponse","ClaimResponse.extension:PunkteSpeziellerBereicheTageweise","ClaimResponse.extension","PunkteSpeziellerBereicheTageweise","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/Punkte-spezieller-Bereiche-tageweise]]} {[]}
+","Punkte spezieller Bereiche (tageweise)","""Punkte spezieller Bereiche (tageweise):"" In dieses Datenfeld ist – soweit zutreffend – die ermittelte Tageskomponente für jene Patient:innen einzutragen, deren Belagsdauer des akut-stationären Krankenhausaufent- halts unter der im LKF-Modell in der jeweiligen LDF-Pauschale festgelegten Belagsdauer- untergrenze liegt.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MOPEDClaimResponse","ClaimResponse.extension:TotalPoints","ClaimResponse.extension","TotalPoints","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/totalPoints]]} {[]}
+","Punkte total","""Punkte total:"" In dieses Datenfeld ist die Gesamtsumme der für den stationären Aufenthalt/den ambulanten Besuch ermittelten Punkte einzutragen.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MOPEDClaimResponse","ClaimResponse.extension:LDFPunktewertNetto","ClaimResponse.extension","LDFPunktewertNetto","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-LDFPunktewertNetto]]} {[]}
+","LDF-Punktewert Netto","MOPED Extension für den LDF-Punktewert Netto","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MOPEDClaimResponse","ClaimResponse.extension:LDFBetragNetto","ClaimResponse.extension","LDFBetragNetto","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-LDFBetragNetto]]} {[]}
+","LDF-Betrag Netto","MOPED Extension für den LDF-Punktewert Netto. Ergibt sich durch Punkteanzahl mal Punktewert Forderungsbasis ohne Berücksichtigung eines Patientenanteiles f. Angehörige bzw. eines Beihilfenäquivalentes","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MOPEDClaimResponse","ClaimResponse.extension:PatientenanteilAngehoerige","ClaimResponse.extension","PatientenanteilAngehoerige","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-PatientenanteilAngehoerige]]} {[]}
+","Patientenanteil für Angehoerige","MOPED Extension für den Patientenanteil für Angehörige (tägl. Satz) netto: Betrag in €, 2 Nachkommastellen","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MOPEDClaimResponse","ClaimResponse.extension:Patientenanteil","ClaimResponse.extension","Patientenanteil","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-Patientenanteil]]} {[]}
+","Patientenanteil Netto","MOPED Extension für den Patientenanteil netto: Betrag in €, 2 Nachkommastellen","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MOPEDClaimResponse","ClaimResponse.extension:Beihilfenaequivalent","ClaimResponse.extension","Beihilfenaequivalent","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-Beihilfenaequivalent]]} {[]}
+","Beihilfenaequivalent","MOPED Extension für das Beihilfenaequivalent","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MOPEDClaimResponse","ClaimResponse.extension:ForderungsbetragAuslaenderverrechnungRegress","ClaimResponse.extension","ForderungsbetragAuslaenderverrechnungRegress","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-ForderungsbetragAuslaenderverrechnungRegress]]} {[]}
+","Forderungsbetrag für Auslaenderverrechnung oder Regress","MOPED Extension für den Forderungsbetrag für Ausländerverrechnung oder Regress","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MOPEDClaimResponse","ClaimResponse.extension:RechnungsnummerKHLGF","ClaimResponse.extension","RechnungsnummerKHLGF","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-RechnungsnummerKHLGF]]} {[]}
+","Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds","MOPED Extension für die Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MOPEDClaimResponse","ClaimResponse.extension:Comment","ClaimResponse.extension","Comment","","",0,*,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-comment]]} {[]}
+","Kommentar","""Kommentar:"" Dieses Datenfeld ist für generelle oder spezifische Anmerkungen zum jeweiligen Krankenhausaufenthalt vorgesehen.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MOPEDClaimResponse","ClaimResponse.extension:LeistungskomponenteLeistungspunkte","ClaimResponse.extension","LeistungskomponenteLeistungspunkte","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/Leistungskomponente-Leistungspunkte]]} {[]}
+","Leistungskomponente/Leistungspunkte","""Leistungskomponente/Leistungspunkte:"" In dieses Datenfeld ist – soweit zutreffend – die ermittelte Leistungskomponente für jene Patient:innen einzutragen, deren Belagsdauer des akut-stationären Krankenhausaufent- halts unter der im LKF-Modell in der jeweiligen LDF-Pauschale festgelegten Belagsdauer- untergrenze liegt.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MOPEDClaimResponse","ClaimResponse.extension:TageskomponenteKontaktpunkte","ClaimResponse.extension","TageskomponenteKontaktpunkte","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/Tageskomponente-Kontaktpunkte]]} {[]}
+","Tageskomponente/Kontaktpunkte","""Tageskomponente/Kontaktpunkte:"" In dieses Datenfeld ist – soweit zutreffend – die Tageskomponente bzw. sind die Kontakt- punkte einzutragen.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MOPEDClaimResponse","ClaimResponse.extension:Sonderleistungsnummer","ClaimResponse.extension","Sonderleistungsnummer","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-Sonderleistungsnummer]]} {[]}
+","Sonderleistungsnummer","MOPED Extension für die Sonderleistungsnummer","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MOPEDClaimResponse","ClaimResponse.extension:AnzahlSonderleistungen","ClaimResponse.extension","AnzahlSonderleistungen","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-AnzahlSonderleistungen]]} {[]}
+","Anzahl Sonderleistungen","MOPED Extension für die Anzahl der Sonderleistungen","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MOPEDClaimResponse","ClaimResponse.extension:PunkteLDFPauschale","ClaimResponse.extension","PunkteLDFPauschale","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-PunkteLDFPauschale]]} {[]}
+","Punkte LDF Pauschale","MOPED Extension für die LDF Punkte Pauschale","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MOPEDClaimResponse","ClaimResponse.extension:KonstenmeldungARK","ClaimResponse.extension","KonstenmeldungARK","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-KonstenmeldungARK]]} {[]}
+","Kostenmeldung für (A/R/K)","MOPED Extension für die Kostenmeldung. Konstenmeldung für A = Ausländerverrechnung, R = Regressangelegenheiten oder K = Kosteninformation","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MOPEDClaimResponse","ClaimResponse.extension:PunkteBelagsdauerausreisserUntenLeistungskomponente","ClaimResponse.extension","PunkteBelagsdauerausreisserUntenLeistungskomponente","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/Punkte-Belagsdauerausreisser-unten-Leistungskomponente]]} {[]}
+","Punkte Belagsdauerausreisser unten - Leistungskomponente","""Punkte Belagsdauerausreisser unten - Leistungskomponente:"" In dieses Datenfeld ist – soweit zutreffend – die ermittelte Leistungskomponente für jene Patient:innen einzutragen, deren Belagsdauer des akut-stationären Krankenhausaufent- halts unter der im LKF-Modell in der jeweiligen LDF-Pauschale festgelegten Belagsdauer- untergrenze liegt.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MOPEDClaimResponse","ClaimResponse.extension:PunkteBelagsdauerausreisserUntenTageskomponente","ClaimResponse.extension","PunkteBelagsdauerausreisserUntenTageskomponente","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/Punkte-Belagsdauerausreisser-unten-Tageskomponente]]} {[]}
+","Punkte Belagsdauerausreisser unten - Tageskomponente","""Punkte Belagsdauerausreisser unten - Tageskomponente:"" In dieses Datenfeld ist – soweit zutreffend – die ermittelte Tageskomponente für jene Patient:innen einzutragen, deren Belagsdauer des akut-stationären Krankenhausaufent- halts unter der im LKF-Modell in der jeweiligen LDF-Pauschale festgelegten Belagsdauer- untergrenze liegt.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "MOPEDClaimResponse","ClaimResponse.modifierExtension","ClaimResponse.modifierExtension","","extensions
 user content","",0,*,"","Y","Y","Extension {[]} {[]}
@@ -3093,7 +3162,7 @@ There may be many levels in the hierachy, and this may only pic specific levels 
 ","Time period during which the patient was present at the location","Time period during which the patient was present at the location.","","","","","","","","","",,,,,"",,,,"Encounter.location.period",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Plausibilitaetskennzeichen","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
-","Plausibilitaetskennzeichen","Dieses Datenfeld enthält eine Kennzeichnung als Ergebnis der vom Gesundheits- ministerium vorgegebenen Plausibilitätsprüfung.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","Plausibilitaetskennzeichen","Dieses Datenfeld enthält eine Kennzeichnung als Ergebnis der vom Gesundheitsministerium vorgegebenen Plausibilitätsprüfung.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Plausibilitaetskennzeichen","Extension.id","Extension.id","","","",0,1,"","","","id {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
@@ -3294,6 +3363,64 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,"required","","http://example.org/ValueSet/moped-AbrechnungsRelevanz-valueset","",,,,"Extension.value[x]",0,1,"ext-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
+"moped-ext-AccountRef","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
+","Account Referenz","Referenz auf den im Claim abzurechnenden Account","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-AccountRef","Extension.id","Extension.id","","","",0,1,"","","","id {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
+",""
+"moped-ext-AccountRef","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-AccountRef","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/StructureDefinition/moped-ext-AccountRef""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"moped-ext-AccountRef","Extension.value[x]","Extension.value[x]","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://example.org/StructureDefinition/MOPEDAccount]]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"moped-ext-AnzahlSonderleistungen","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
+","Anzahl Sonderleistungen","MOPED Extension für die Anzahl der Sonderleistungen","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-AnzahlSonderleistungen","Extension.id","Extension.id","","","",0,1,"","","","id {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
+",""
+"moped-ext-AnzahlSonderleistungen","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-AnzahlSonderleistungen","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/StructureDefinition/moped-ext-AnzahlSonderleistungen""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"moped-ext-AnzahlSonderleistungen","Extension.value[x]","Extension.value[x]","","","",0,1,"","","","base64Binary {[]} {[]}
+boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[]}decimal {[]} {[]}id {[]} {[]}instant {[]} {[]}integer {[]} {[]}integer64 {[]} {[]}markdown {[]} {[]}oid {[]} {[]}positiveInt {[]} {[]}string {[]} {[]}time {[]} {[]}unsignedInt {[]} {[]}uri {[]} {[]}url {[]} {[]}uuid {[]} {[]}Address {[]} {[]}Age {[]} {[]}Annotation {[]} {[]}Attachment {[]} {[]}CodeableConcept {[]} {[]}CodeableReference {[]} {[]}Coding {[]} {[]}ContactPoint {[]} {[]}Count {[]} {[]}Distance {[]} {[]}Duration {[]} {[]}HumanName {[]} {[]}Identifier {[]} {[]}Money {[]} {[]}Period {[]} {[]}Quantity {[]} {[]}Range {[]} {[]}Ratio {[]} {[]}RatioRange {[]} {[]}Reference {[]} {[]}SampledData {[]} {[]}Signature {[]} {[]}Timing {[]} {[]}ContactDetail {[]} {[]}DataRequirement {[]} {[]}Expression {[]} {[]}ParameterDefinition {[]} {[]}RelatedArtifact {[]} {[]}TriggerDefinition {[]} {[]}UsageContext {[]} {[]}Availability {[]} {[]}ExtendedContactDetail {[]} {[]}Dosage {[]} {[]}Meta {[]} {[]}","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"","type:$this}
+","",,"open","Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"moped-ext-AnzahlSonderleistungen","Extension.value[x]:valueUnsignedInt","Extension.value[x]","valueUnsignedInt","","",0,1,"","","","unsignedInt {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"moped-ext-Beihilfenaequivalent","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
+","Beihilfenaequivalent","MOPED Extension für das Beihilfenaequivalent","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-Beihilfenaequivalent","Extension.id","Extension.id","","","",0,1,"","","","id {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
+",""
+"moped-ext-Beihilfenaequivalent","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-Beihilfenaequivalent","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/StructureDefinition/moped-ext-Beihilfenaequivalent""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"moped-ext-Beihilfenaequivalent","Extension.value[x]","Extension.value[x]","","","",0,1,"","","","base64Binary {[]} {[]}
+boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[]}decimal {[]} {[]}id {[]} {[]}instant {[]} {[]}integer {[]} {[]}integer64 {[]} {[]}markdown {[]} {[]}oid {[]} {[]}positiveInt {[]} {[]}string {[]} {[]}time {[]} {[]}unsignedInt {[]} {[]}uri {[]} {[]}url {[]} {[]}uuid {[]} {[]}Address {[]} {[]}Age {[]} {[]}Annotation {[]} {[]}Attachment {[]} {[]}CodeableConcept {[]} {[]}CodeableReference {[]} {[]}Coding {[]} {[]}ContactPoint {[]} {[]}Count {[]} {[]}Distance {[]} {[]}Duration {[]} {[]}HumanName {[]} {[]}Identifier {[]} {[]}Money {[]} {[]}Period {[]} {[]}Quantity {[]} {[]}Range {[]} {[]}Ratio {[]} {[]}RatioRange {[]} {[]}Reference {[]} {[]}SampledData {[]} {[]}Signature {[]} {[]}Timing {[]} {[]}ContactDetail {[]} {[]}DataRequirement {[]} {[]}Expression {[]} {[]}ParameterDefinition {[]} {[]}RelatedArtifact {[]} {[]}TriggerDefinition {[]} {[]}UsageContext {[]} {[]}Availability {[]} {[]}ExtendedContactDetail {[]} {[]}Dosage {[]} {[]}Meta {[]} {[]}","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"","type:$this}
+","",,"open","Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"moped-ext-Beihilfenaequivalent","Extension.value[x]:valueUnsignedInt","Extension.value[x]","valueUnsignedInt","","",0,1,"","","","unsignedInt {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
 "moped-ext-EndOfEligibility","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","""Fristende""","""Fristende""","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
@@ -3373,6 +3500,43 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/StructureDefinition/moped-ext-ErrorWarning""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
 "moped-ext-ErrorWarning","Extension.value[x]","Extension.value[x]","","","",0,0,"","","","base64Binary {[]} {[]}
 boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[]}decimal {[]} {[]}id {[]} {[]}instant {[]} {[]}integer {[]} {[]}integer64 {[]} {[]}markdown {[]} {[]}oid {[]} {[]}positiveInt {[]} {[]}string {[]} {[]}time {[]} {[]}unsignedInt {[]} {[]}uri {[]} {[]}url {[]} {[]}uuid {[]} {[]}Address {[]} {[]}Age {[]} {[]}Annotation {[]} {[]}Attachment {[]} {[]}CodeableConcept {[]} {[]}CodeableReference {[]} {[]}Coding {[]} {[]}ContactPoint {[]} {[]}Count {[]} {[]}Distance {[]} {[]}Duration {[]} {[]}HumanName {[]} {[]}Identifier {[]} {[]}Money {[]} {[]}Period {[]} {[]}Quantity {[]} {[]}Range {[]} {[]}Ratio {[]} {[]}RatioRange {[]} {[]}Reference {[]} {[]}SampledData {[]} {[]}Signature {[]} {[]}Timing {[]} {[]}ContactDetail {[]} {[]}DataRequirement {[]} {[]}Expression {[]} {[]}ParameterDefinition {[]} {[]}RelatedArtifact {[]} {[]}TriggerDefinition {[]} {[]}UsageContext {[]} {[]}Availability {[]} {[]}ExtendedContactDetail {[]} {[]}Dosage {[]} {[]}Meta {[]} {[]}","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"moped-ext-ForderungsbetragAuslaenderverrechnungRegress","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
+","Forderungsbetrag für Auslaenderverrechnung oder Regress","MOPED Extension für den Forderungsbetrag für Ausländerverrechnung oder Regress","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-ForderungsbetragAuslaenderverrechnungRegress","Extension.id","Extension.id","","","",0,1,"","","","id {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
+",""
+"moped-ext-ForderungsbetragAuslaenderverrechnungRegress","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-ForderungsbetragAuslaenderverrechnungRegress","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/StructureDefinition/moped-ext-ForderungsbetragAuslaenderverrechnungRegress""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"moped-ext-ForderungsbetragAuslaenderverrechnungRegress","Extension.value[x]","Extension.value[x]","","","",0,1,"","","","base64Binary {[]} {[]}
+boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[]}decimal {[]} {[]}id {[]} {[]}instant {[]} {[]}integer {[]} {[]}integer64 {[]} {[]}markdown {[]} {[]}oid {[]} {[]}positiveInt {[]} {[]}string {[]} {[]}time {[]} {[]}unsignedInt {[]} {[]}uri {[]} {[]}url {[]} {[]}uuid {[]} {[]}Address {[]} {[]}Age {[]} {[]}Annotation {[]} {[]}Attachment {[]} {[]}CodeableConcept {[]} {[]}CodeableReference {[]} {[]}Coding {[]} {[]}ContactPoint {[]} {[]}Count {[]} {[]}Distance {[]} {[]}Duration {[]} {[]}HumanName {[]} {[]}Identifier {[]} {[]}Money {[]} {[]}Period {[]} {[]}Quantity {[]} {[]}Range {[]} {[]}Ratio {[]} {[]}RatioRange {[]} {[]}Reference {[]} {[]}SampledData {[]} {[]}Signature {[]} {[]}Timing {[]} {[]}ContactDetail {[]} {[]}DataRequirement {[]} {[]}Expression {[]} {[]}ParameterDefinition {[]} {[]}RelatedArtifact {[]} {[]}TriggerDefinition {[]} {[]}UsageContext {[]} {[]}Availability {[]} {[]}ExtendedContactDetail {[]} {[]}Dosage {[]} {[]}Meta {[]} {[]}","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"","type:$this}
+","",,"open","Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"moped-ext-ForderungsbetragAuslaenderverrechnungRegress","Extension.value[x]:valueMoney","Extension.value[x]","valueMoney","","",0,1,"","","","Money {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"moped-ext-KonstenmeldungARK","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
+","Kostenmeldung für (A/R/K)","MOPED Extension für die Kostenmeldung. Konstenmeldung für A = Ausländerverrechnung, R = Regressangelegenheiten oder K = Kosteninformation","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-KonstenmeldungARK","Extension.id","Extension.id","","","",0,1,"","","","id {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
+",""
+"moped-ext-KonstenmeldungARK","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-KonstenmeldungARK","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/StructureDefinition/moped-ext-KonstenmeldungARK""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"moped-ext-KonstenmeldungARK","Extension.value[x]","Extension.value[x]","","","",0,1,"","","","code {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,"required","","http://example.org/ValueSet/moped-KostenmeldungARK-valueset","",,,,"Extension.value[x]",0,1,"ext-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "moped-ext-Kostenstelle","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
@@ -3456,6 +3620,48 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[]}decimal {[]} {[]}id {[]} {[]}instant {[]} {[]}integer {[]} {[]}integer64 {[]} {[]}markdown {[]} {[]}oid {[]} {[]}positiveInt {[]} {[]}string {[]} {[]}time {[]} {[]}unsignedInt {[]} {[]}uri {[]} {[]}url {[]} {[]}uuid {[]} {[]}Address {[]} {[]}Age {[]} {[]}Annotation {[]} {[]}Attachment {[]} {[]}CodeableConcept {[]} {[]}CodeableReference {[]} {[]}Coding {[]} {[]}ContactPoint {[]} {[]}Count {[]} {[]}Distance {[]} {[]}Duration {[]} {[]}HumanName {[]} {[]}Identifier {[]} {[]}Money {[]} {[]}Period {[]} {[]}Quantity {[]} {[]}Range {[]} {[]}Ratio {[]} {[]}RatioRange {[]} {[]}Reference {[]} {[]}SampledData {[]} {[]}Signature {[]} {[]}Timing {[]} {[]}ContactDetail {[]} {[]}DataRequirement {[]} {[]}Expression {[]} {[]}ParameterDefinition {[]} {[]}RelatedArtifact {[]} {[]}TriggerDefinition {[]} {[]}UsageContext {[]} {[]}Availability {[]} {[]}ExtendedContactDetail {[]} {[]}Dosage {[]} {[]}Meta {[]} {[]}","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
+"moped-ext-LDFBetragNetto","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
+","LDF-Betrag Netto","MOPED Extension für den LDF-Punktewert Netto. Ergibt sich durch Punkteanzahl mal Punktewert Forderungsbasis ohne Berücksichtigung eines Patientenanteiles f. Angehörige bzw. eines Beihilfenäquivalentes","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-LDFBetragNetto","Extension.id","Extension.id","","","",0,1,"","","","id {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
+",""
+"moped-ext-LDFBetragNetto","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-LDFBetragNetto","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/StructureDefinition/moped-ext-LDFBetragNetto""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"moped-ext-LDFBetragNetto","Extension.value[x]","Extension.value[x]","","","",0,1,"","","","base64Binary {[]} {[]}
+boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[]}decimal {[]} {[]}id {[]} {[]}instant {[]} {[]}integer {[]} {[]}integer64 {[]} {[]}markdown {[]} {[]}oid {[]} {[]}positiveInt {[]} {[]}string {[]} {[]}time {[]} {[]}unsignedInt {[]} {[]}uri {[]} {[]}url {[]} {[]}uuid {[]} {[]}Address {[]} {[]}Age {[]} {[]}Annotation {[]} {[]}Attachment {[]} {[]}CodeableConcept {[]} {[]}CodeableReference {[]} {[]}Coding {[]} {[]}ContactPoint {[]} {[]}Count {[]} {[]}Distance {[]} {[]}Duration {[]} {[]}HumanName {[]} {[]}Identifier {[]} {[]}Money {[]} {[]}Period {[]} {[]}Quantity {[]} {[]}Range {[]} {[]}Ratio {[]} {[]}RatioRange {[]} {[]}Reference {[]} {[]}SampledData {[]} {[]}Signature {[]} {[]}Timing {[]} {[]}ContactDetail {[]} {[]}DataRequirement {[]} {[]}Expression {[]} {[]}ParameterDefinition {[]} {[]}RelatedArtifact {[]} {[]}TriggerDefinition {[]} {[]}UsageContext {[]} {[]}Availability {[]} {[]}ExtendedContactDetail {[]} {[]}Dosage {[]} {[]}Meta {[]} {[]}","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"","type:$this}
+","",,"open","Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"moped-ext-LDFBetragNetto","Extension.value[x]:valueDecimal","Extension.value[x]","valueDecimal","","",0,1,"","","","decimal {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"moped-ext-LDFPunktewertNetto","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
+","LDF-Punktewert Netto","MOPED Extension für den LDF-Punktewert Netto","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-LDFPunktewertNetto","Extension.id","Extension.id","","","",0,1,"","","","id {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
+",""
+"moped-ext-LDFPunktewertNetto","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-LDFPunktewertNetto","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/StructureDefinition/moped-ext-LDFPunktewertNetto""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"moped-ext-LDFPunktewertNetto","Extension.value[x]","Extension.value[x]","","","",0,1,"","","","base64Binary {[]} {[]}
+boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[]}decimal {[]} {[]}id {[]} {[]}instant {[]} {[]}integer {[]} {[]}integer64 {[]} {[]}markdown {[]} {[]}oid {[]} {[]}positiveInt {[]} {[]}string {[]} {[]}time {[]} {[]}unsignedInt {[]} {[]}uri {[]} {[]}url {[]} {[]}uuid {[]} {[]}Address {[]} {[]}Age {[]} {[]}Annotation {[]} {[]}Attachment {[]} {[]}CodeableConcept {[]} {[]}CodeableReference {[]} {[]}Coding {[]} {[]}ContactPoint {[]} {[]}Count {[]} {[]}Distance {[]} {[]}Duration {[]} {[]}HumanName {[]} {[]}Identifier {[]} {[]}Money {[]} {[]}Period {[]} {[]}Quantity {[]} {[]}Range {[]} {[]}Ratio {[]} {[]}RatioRange {[]} {[]}Reference {[]} {[]}SampledData {[]} {[]}Signature {[]} {[]}Timing {[]} {[]}ContactDetail {[]} {[]}DataRequirement {[]} {[]}Expression {[]} {[]}ParameterDefinition {[]} {[]}RelatedArtifact {[]} {[]}TriggerDefinition {[]} {[]}UsageContext {[]} {[]}Availability {[]} {[]}ExtendedContactDetail {[]} {[]}Dosage {[]} {[]}Meta {[]} {[]}","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"","type:$this}
+","",,"open","Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"moped-ext-LDFPunktewertNetto","Extension.value[x]:valueDecimal","Extension.value[x]","valueDecimal","","",0,1,"","","","decimal {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
 "moped-ext-MealCostExcemption","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","""VKBEFR – Verpflegskosten-Beitragsbefreiung""","""VKBEFR – Verpflegskosten-Beitragsbefreiung""","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
@@ -3495,6 +3701,48 @@ boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
+"moped-ext-Patientenanteil","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
+","Patientenanteil Netto","MOPED Extension für den Patientenanteil netto: Betrag in €, 2 Nachkommastellen","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-Patientenanteil","Extension.id","Extension.id","","","",0,1,"","","","id {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
+",""
+"moped-ext-Patientenanteil","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-Patientenanteil","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/StructureDefinition/moped-ext-Patientenanteil""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"moped-ext-Patientenanteil","Extension.value[x]","Extension.value[x]","","","",0,1,"","","","base64Binary {[]} {[]}
+boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[]}decimal {[]} {[]}id {[]} {[]}instant {[]} {[]}integer {[]} {[]}integer64 {[]} {[]}markdown {[]} {[]}oid {[]} {[]}positiveInt {[]} {[]}string {[]} {[]}time {[]} {[]}unsignedInt {[]} {[]}uri {[]} {[]}url {[]} {[]}uuid {[]} {[]}Address {[]} {[]}Age {[]} {[]}Annotation {[]} {[]}Attachment {[]} {[]}CodeableConcept {[]} {[]}CodeableReference {[]} {[]}Coding {[]} {[]}ContactPoint {[]} {[]}Count {[]} {[]}Distance {[]} {[]}Duration {[]} {[]}HumanName {[]} {[]}Identifier {[]} {[]}Money {[]} {[]}Period {[]} {[]}Quantity {[]} {[]}Range {[]} {[]}Ratio {[]} {[]}RatioRange {[]} {[]}Reference {[]} {[]}SampledData {[]} {[]}Signature {[]} {[]}Timing {[]} {[]}ContactDetail {[]} {[]}DataRequirement {[]} {[]}Expression {[]} {[]}ParameterDefinition {[]} {[]}RelatedArtifact {[]} {[]}TriggerDefinition {[]} {[]}UsageContext {[]} {[]}Availability {[]} {[]}ExtendedContactDetail {[]} {[]}Dosage {[]} {[]}Meta {[]} {[]}","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"","type:$this}
+","",,"open","Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"moped-ext-Patientenanteil","Extension.value[x]:valueMoney","Extension.value[x]","valueMoney","","",0,1,"","","","Money {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"moped-ext-PatientenanteilAngehoerige","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
+","Patientenanteil für Angehoerige","MOPED Extension für den Patientenanteil für Angehörige (tägl. Satz) netto: Betrag in €, 2 Nachkommastellen","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-PatientenanteilAngehoerige","Extension.id","Extension.id","","","",0,1,"","","","id {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
+",""
+"moped-ext-PatientenanteilAngehoerige","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-PatientenanteilAngehoerige","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/StructureDefinition/moped-ext-PatientenanteilAngehoerige""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"moped-ext-PatientenanteilAngehoerige","Extension.value[x]","Extension.value[x]","","","",0,1,"","","","base64Binary {[]} {[]}
+boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[]}decimal {[]} {[]}id {[]} {[]}instant {[]} {[]}integer {[]} {[]}integer64 {[]} {[]}markdown {[]} {[]}oid {[]} {[]}positiveInt {[]} {[]}string {[]} {[]}time {[]} {[]}unsignedInt {[]} {[]}uri {[]} {[]}url {[]} {[]}uuid {[]} {[]}Address {[]} {[]}Age {[]} {[]}Annotation {[]} {[]}Attachment {[]} {[]}CodeableConcept {[]} {[]}CodeableReference {[]} {[]}Coding {[]} {[]}ContactPoint {[]} {[]}Count {[]} {[]}Distance {[]} {[]}Duration {[]} {[]}HumanName {[]} {[]}Identifier {[]} {[]}Money {[]} {[]}Period {[]} {[]}Quantity {[]} {[]}Range {[]} {[]}Ratio {[]} {[]}RatioRange {[]} {[]}Reference {[]} {[]}SampledData {[]} {[]}Signature {[]} {[]}Timing {[]} {[]}ContactDetail {[]} {[]}DataRequirement {[]} {[]}Expression {[]} {[]}ParameterDefinition {[]} {[]}RelatedArtifact {[]} {[]}TriggerDefinition {[]} {[]}UsageContext {[]} {[]}Availability {[]} {[]}ExtendedContactDetail {[]} {[]}Dosage {[]} {[]}Meta {[]} {[]}","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"","type:$this}
+","",,"open","Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"moped-ext-PatientenanteilAngehoerige","Extension.value[x]:valueMoney","Extension.value[x]","valueMoney","","",0,1,"","","","Money {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
 "moped-ext-PremiumClass","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","""KLAS – Allgemeine Gebührenklasse/Sonderklasse"" ","""KLAS – Allgemeine Gebührenklasse/Sonderklasse"" ","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
@@ -3509,6 +3757,64 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/StructureDefinition/moped-ext-PremiumClass""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
 "moped-ext-PremiumClass","Extension.value[x]","Extension.value[x]","","","",0,1,"","","","code {[]} {[]}
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,"required","","http://tbd.at/MOPED-LKFAbrechnungsKnoten","",,,,"Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"moped-ext-PunkteLDFPauschale","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
+","Punkte LDF Pauschale","MOPED Extension für die LDF Punkte Pauschale","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-PunkteLDFPauschale","Extension.id","Extension.id","","","",0,1,"","","","id {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
+",""
+"moped-ext-PunkteLDFPauschale","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-PunkteLDFPauschale","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/StructureDefinition/moped-ext-PunkteLDFPauschale""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"moped-ext-PunkteLDFPauschale","Extension.value[x]","Extension.value[x]","","","",0,1,"","","","base64Binary {[]} {[]}
+boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[]}decimal {[]} {[]}id {[]} {[]}instant {[]} {[]}integer {[]} {[]}integer64 {[]} {[]}markdown {[]} {[]}oid {[]} {[]}positiveInt {[]} {[]}string {[]} {[]}time {[]} {[]}unsignedInt {[]} {[]}uri {[]} {[]}url {[]} {[]}uuid {[]} {[]}Address {[]} {[]}Age {[]} {[]}Annotation {[]} {[]}Attachment {[]} {[]}CodeableConcept {[]} {[]}CodeableReference {[]} {[]}Coding {[]} {[]}ContactPoint {[]} {[]}Count {[]} {[]}Distance {[]} {[]}Duration {[]} {[]}HumanName {[]} {[]}Identifier {[]} {[]}Money {[]} {[]}Period {[]} {[]}Quantity {[]} {[]}Range {[]} {[]}Ratio {[]} {[]}RatioRange {[]} {[]}Reference {[]} {[]}SampledData {[]} {[]}Signature {[]} {[]}Timing {[]} {[]}ContactDetail {[]} {[]}DataRequirement {[]} {[]}Expression {[]} {[]}ParameterDefinition {[]} {[]}RelatedArtifact {[]} {[]}TriggerDefinition {[]} {[]}UsageContext {[]} {[]}Availability {[]} {[]}ExtendedContactDetail {[]} {[]}Dosage {[]} {[]}Meta {[]} {[]}","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"","type:$this}
+","",,"open","Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"moped-ext-PunkteLDFPauschale","Extension.value[x]:valueDecimal","Extension.value[x]","valueDecimal","","",0,1,"","","","decimal {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"moped-ext-RechnungsnummerKHLGF","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
+","Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds","MOPED Extension für die Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-RechnungsnummerKHLGF","Extension.id","Extension.id","","","",0,1,"","","","id {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
+",""
+"moped-ext-RechnungsnummerKHLGF","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-RechnungsnummerKHLGF","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/StructureDefinition/moped-ext-RechnungsnummerKHLGF""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"moped-ext-RechnungsnummerKHLGF","Extension.value[x]","Extension.value[x]","","","",0,1,"","","","base64Binary {[]} {[]}
+boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[]}decimal {[]} {[]}id {[]} {[]}instant {[]} {[]}integer {[]} {[]}integer64 {[]} {[]}markdown {[]} {[]}oid {[]} {[]}positiveInt {[]} {[]}string {[]} {[]}time {[]} {[]}unsignedInt {[]} {[]}uri {[]} {[]}url {[]} {[]}uuid {[]} {[]}Address {[]} {[]}Age {[]} {[]}Annotation {[]} {[]}Attachment {[]} {[]}CodeableConcept {[]} {[]}CodeableReference {[]} {[]}Coding {[]} {[]}ContactPoint {[]} {[]}Count {[]} {[]}Distance {[]} {[]}Duration {[]} {[]}HumanName {[]} {[]}Identifier {[]} {[]}Money {[]} {[]}Period {[]} {[]}Quantity {[]} {[]}Range {[]} {[]}Ratio {[]} {[]}RatioRange {[]} {[]}Reference {[]} {[]}SampledData {[]} {[]}Signature {[]} {[]}Timing {[]} {[]}ContactDetail {[]} {[]}DataRequirement {[]} {[]}Expression {[]} {[]}ParameterDefinition {[]} {[]}RelatedArtifact {[]} {[]}TriggerDefinition {[]} {[]}UsageContext {[]} {[]}Availability {[]} {[]}ExtendedContactDetail {[]} {[]}Dosage {[]} {[]}Meta {[]} {[]}","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"","type:$this}
+","",,"open","Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"moped-ext-RechnungsnummerKHLGF","Extension.value[x]:valueString","Extension.value[x]","valueString","","",0,1,"","","","string {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"moped-ext-Sonderleistungsnummer","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
+","Sonderleistungsnummer","MOPED Extension für die Sonderleistungsnummer","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-Sonderleistungsnummer","Extension.id","Extension.id","","","",0,1,"","","","id {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
+",""
+"moped-ext-Sonderleistungsnummer","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-Sonderleistungsnummer","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/StructureDefinition/moped-ext-Sonderleistungsnummer""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"moped-ext-Sonderleistungsnummer","Extension.value[x]","Extension.value[x]","","","",0,1,"","","","code {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,"required","","http://tbd.at/MOPED-Sonderleistungsnummern","",,,,"Extension.value[x]",0,1,"ext-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "moped-ext-TageOhneKostenbeitrag","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
