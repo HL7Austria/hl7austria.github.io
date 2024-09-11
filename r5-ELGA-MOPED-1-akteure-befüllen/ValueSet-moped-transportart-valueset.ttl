@@ -1,0 +1,56 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/ValueSet/moped-transportart-valueset> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "moped-transportart-valueset"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet moped-transportart-valueset</b></p><a name=\"moped-transportart-valueset\"> </a><a name=\"hcmoped-transportart-valueset\"> </a><a name=\"moped-transportart-valueset-en-US\"> </a><ul><li>Include these codes as defined in <code>http://tbd.at/moped-ext-transportart</code><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>H</td><td>Notarzt-Hubschrauber</td></tr><tr><td>K</td><td>Krankentransport</td></tr><tr><td>N</td><td>Rettung mit notärztlicher Begleitung</td></tr><tr><td>R</td><td>Rettung ohne notärztliche Begleitung</td></tr><tr><td>S</td><td>Selbstanreise des Patienten/der Patientin</td></tr><tr><td>Z</td><td>Sonstige Transportart</td></tr></table></li></ul></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://example.org/ValueSet/moped-transportart-valueset"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "Transportart"] ; # 
+  fhir:title [ fhir:v "Transportart"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2024-09-11T18:30:59+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Example Publisher"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Example Publisher" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://example.org/example-publisher" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "ValueSet für die Transportart des Patienten"] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "http://tbd.at/moped-ext-transportart"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "H" ] ;
+         fhir:display [ fhir:v "Notarzt-Hubschrauber" ]
+       ] [
+         fhir:code [ fhir:v "K" ] ;
+         fhir:display [ fhir:v "Krankentransport" ]
+       ] [
+         fhir:code [ fhir:v "N" ] ;
+         fhir:display [ fhir:v "Rettung mit notärztlicher Begleitung" ]
+       ] [
+         fhir:code [ fhir:v "R" ] ;
+         fhir:display [ fhir:v "Rettung ohne notärztliche Begleitung" ]
+       ] [
+         fhir:code [ fhir:v "S" ] ;
+         fhir:display [ fhir:v "Selbstanreise des Patienten/der Patientin" ]
+       ] [
+         fhir:code [ fhir:v "Z" ] ;
+         fhir:display [ fhir:v "Sonstige Transportart" ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
