@@ -1,13 +1,13 @@
 MOPED : Validation Results
 =========================================
 
-err = 42, warn = 280, info = 3
+err = 37, warn = 280, info = 3
 $--
 Generated $--. FHIR version $-- for fhir.example#$-- (canonical = http://example.org)
- Build Errors : 674 / 15 / 0
+ Build Errors : 672 / 15 / 0
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Account-Test1Account : 2 / 0 / 2
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Condition-Test1Condition1 : 2 / 1 / 1
- /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Coverage-Test1SVCCoverage : 7 / 1 / 1
+ /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Coverage-Test1SVCCoverage : 2 / 1 / 1
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/CoverageEligibilityRequest-Test1MOPEDCoverageEligibilityRequest1 : 3 / 1 / 1
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/CoverageEligibilityResponse-Test1MOPEDCoverageEligibilityResponse1 : 0 / 2 / 1
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Encounter-Test1MOPEDEncounter1 : 7 / 8 / 1
@@ -112,8 +112,6 @@ ERROR: /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/output/Condition-Test1Condi
 ERROR: /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/output/Condition-Test1Condition1.ttl.html#/html/body/div/div/div/p/a at Line 247, column 22: The link 'http://example.org/example-publisher' for "Example Publisher" cannot be resolved
 ERROR: /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/output/Condition-Test1Condition1.xml.html#/html/body/div/div/div/p/a at Line 240, column 22: The link 'http://example.org/example-publisher' for "Example Publisher" cannot be resolved
 ERROR: /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/output/Coverage-Test1SVCCoverage.change.history.html#/html/body/div/div/div/p/a at Line 208, column 22: The link 'http://example.org/example-publisher' for "Example Publisher" cannot be resolved
-ERROR: /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/output/Coverage-Test1SVCCoverage.html#/html/body/div/div/div/div/div/div/p/a at Line 192, column 311: The link '"Patient/Test1Patient"' for ""Patient/Test1Patient"" cannot be resolved
-ERROR: /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/output/Coverage-Test1SVCCoverage.html#/html/body/div/div/div/div/div/div/p/a at Line 192, column 417: The link '"Patient/Test1Patient"' for ""Patient/Test1Patient"" cannot be resolved
 ERROR: /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/output/Coverage-Test1SVCCoverage.html#/html/body/div/div/div/p/a at Line 217, column 22: The link 'http://example.org/example-publisher' for "Example Publisher" cannot be resolved
 ERROR: /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/output/Coverage-Test1SVCCoverage.json.html#/html/body/div/div/div/p/a at Line 253, column 22: The link 'http://example.org/example-publisher' for "Example Publisher" cannot be resolved
 ERROR: /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/output/Coverage-Test1SVCCoverage.ttl.html#/html/body/div/div/div/p/a at Line 255, column 22: The link 'http://example.org/example-publisher' for "Example Publisher" cannot be resolved
@@ -789,12 +787,7 @@ ERROR: Condition/Test1Condition1: Condition.code.coding[0].display: Wrong Displa
 == fsh-generated/resources/Coverage-Test1SVCCoverage.json ==
 ERROR: Coverage/Test1SVCCoverage: Coverage.class[0]: Slicing cannot be evaluated: Could not match discriminator (1) for slice [type.coding.code] in profile Coverage.class:Versichertenarten - the discriminator http://example.org/StructureDefinition/SVCCoverage|0.1.0 does not have fixed value, binding or existence assertions
 ERROR: Coverage/Test1SVCCoverage: Coverage.class[0]: Slicing cannot be evaluated: Could not match discriminator (1) for slice [type.coding.code] in profile Coverage.class:Versichertenkategorien - the discriminator http://example.org/StructureDefinition/SVCCoverage|0.1.0 does not have fixed value, binding or existence assertions
-ERROR: Coverage/Test1SVCCoverage: Coverage.text.div: The URL is not valid because '(URL contains 2 Invalid Characters (["]))': "Patient/Test1Patient"
-ERROR: Coverage/Test1SVCCoverage: Coverage.subscriber: Unable to resolve resource with reference '"Patient/Test1Patient"'
-ERROR: Coverage/Test1SVCCoverage: Coverage.beneficiary: Unable to resolve resource with reference '"Patient/Test1Patient"'
 WARNING: Coverage/Test1SVCCoverage: Coverage.class[0].type.coding[0]: A definition for CodeSystem 'http://svc.co.at/CodeSystem/ecard-versichertenkategorie-cs' could not be found, so the code cannot be validated
-ERROR: Coverage.text.div: Hyperlink '"Patient/Test1Patient"' at 'div/p/a' for '"Patient/Test1Patient"' does not resolve
-ERROR: Coverage.text.div: Hyperlink '"Patient/Test1Patient"' at 'div/p/a' for '"Patient/Test1Patient"' does not resolve
 == fsh-generated/resources/CoverageEligibilityRequest-Test1MOPEDCoverageEligibilityRequest1.json ==
 ERROR: CoverageEligibilityRequest/Test1MOPEDCoverageEligibilityRequest1: CoverageEligibilityRequest.text.div: The URL is not valid because '(URL contains 2 Invalid Characters (["]))': "Organization/Test1OrganizationInsurance1"
 WARNING: CoverageEligibilityRequest/Test1MOPEDCoverageEligibilityRequest1: CoverageEligibilityRequest.extension[1].value.ofType(code): ValueSet 'http://tbd.at/MOPED-LKFAbrechnungsKnoten' not found
