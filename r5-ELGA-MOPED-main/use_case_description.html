@@ -156,69 +156,178 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p>  <!-- white space is critical inside of capture --></p>
-<div class="markdown-toc">
-
+<div>
+  <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown. -->
 </div>
-<p>Die folgende Beschreibung und die zugehörigen Sequenzdiagramme illustrieren den neuen Sollprozess in FHIR. Ziel ist es, die Kommunikation und Datenübermittlung im österreichischen Gesundheitswesen zu standardisieren und zu harmonisieren. Dies umfasst die verschiedenen Phasen der Patientenversorgung, Abrechnung und Dokumentation, angefangen von der Aufnahme über die Kostenübernahme und Patientenversorgung bis hin zur Entlassung und Leistungsabrechnung.</p>
+<p>Die folgende Beschreibung und die zugehörigen Diagramme illustrieren den neuen Sollprozess in FHIR. Ziel ist es, die Kommunikation und Datenübermittlung im österreichischen Gesundheitswesen zu standardisieren und zu harmonisieren. Dies umfasst die verschiedenen Phasen der Aufnahme, Patientenversorgung, Entlassung, Abrechnung und Dokumentation.</p>
 
-<p>Die einzelnen Abschnitte beschreiben detailliert die Schritte und Interaktionen zwischen den beteiligten Akteuren. Die Diagramme verdeutlichen, wie die FHIR-Ressourcen zur effizienten und konsistenten Datenkommunikation eingesetzt werden können.</p>
+<p>Die einzelnen Abschnitte beschreiben detailliert die Schritte und Interaktionen zwischen den beteiligten Akteuren. Die Diagramme verdeutlichen, wie der neue Prozess zur effizienten und konsistenten Datenkommunikation eingesetzt werden kann.</p>
+
+<div class="container">
+<h2>Sollprozess - Überblick:</h2>
+<img src="Sollprozess/Gesamtprozess_Ueberblick.png" width="65%"/>
+</div>
+
+<div class="container"> 
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#Behandlungsfall"> <strong>Behandlungsfall</strong></a></li>
+        <li><a data-toggle="tab" href="#LeistungsabrechnungDatenmeldung"> <strong>Leistungsabrechnung &amp; Datenmeldung</strong></a></li>
+        <li><a data-toggle="tab" href="#Kostenmeldung"> <strong>Kostenmeldung</strong></a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="Behandlungsfall" class="tab-pane fade in active">
+        <h1>Behandlungsfall</h1>
+
+<img src="Sollprozess/SollProzesse_einzeln/Behandlungsfall.png" width="60%"/>
+
 
 <div class="container"> 
     <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#Aufnahme"> <strong>Aufnahme</strong></a></li>
         <li><a data-toggle="tab" href="#Kostenübernahme"> <strong>Kostenübernahme</strong></a></li>
-        <li><a data-toggle="tab" href="#Versorgung"> <strong>Patientenversorgung</strong></a></li>
+        <li><a data-toggle="tab" href="#Patientenversorgung"> <strong>Patientenversorgung</strong></a></li>
         <li><a data-toggle="tab" href="#Entlassung"> <strong>Entlassung</strong></a></li>
-        <li><a data-toggle="tab" href="#Abrechnung"> <strong>Leistungsabrechung &amp; Datenmeldung</strong></a></li>
     </ul>
     <div class="tab-content">
         <div id="Aufnahme" class="tab-pane fade in active">
-        <h3>Aufnahme</h3>
-<a style="border:none;" href="aufnahme_seq.svg" target="_blank">
-                <img src="aufnahme_seq.svg" width="80%"/>
-</a>
+        <h1>Aufnahme</h1>
+<img src="Sollprozess/SollProzesse_einzeln/Aufnahme.png" width="70%"/>
 
-<p>
-</p>
+<div class="container"> 
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#AufnahmeEinmelden"> <strong>Aufnahme einmelden</strong></a></li>
+        <li><a data-toggle="tab" href="#AdministrativeDatenErfassen"> <strong>Administrative Daten erfassen</strong></a></li>
+        <li><a data-toggle="tab" href="#VersicherungsdatenErfassen"> <strong>Versicherungsdaten erfassen</strong></a></li>
+        <li><a data-toggle="tab" href="#AufnahmedatenErfassen"> <strong>Aufnahmedaten erfassen</strong></a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="AufnahmeEinmelden" class="tab-pane fade in active">
+            <h1>Aufnahme Einmelden</h1>
+            <img src="Sollprozess/eEPKs/Aufnahme einmelden.png" width="20%"/>
+        </div>
+        <div id="AdministrativeDatenErfassen" class="tab-pane fade">
+            <h1>Administrative Daten erfassen</h1>
+            <img src="Sollprozess/eEPKs/Administrative Daten erfassen.png" width="50%"/>
+        </div>
+        <div id="VersicherungsdatenErfassen" class="tab-pane fade">
+            <h1>Versicherungsdaten erfassen</h1>
+            <img src="Sollprozess/eEPKs/Versicherungsdaten erfassen.png" width="65%"/>
+        </div>
+        <div id="AufnahmedatenErfassen" class="tab-pane fade">
+            <h1>Aufnahmedaten erfassen</h1>
+            <img src="Sollprozess/eEPKs/Aufnahmedaten erfassen.png" width="60%"/>
+        </div>
+    </div>
+</div>
 
         </div>
-        <div id="Kostenübernahme" class="tab-pane fade">
-        <h3>Kostenübernahme</h3>
-
- <div>
-    <a style="border:none;" href="kostenübernahme_seq.svg" target="_blank">
-        <img src="kostenübernahme_seq.svg" width="80%"/>
-    </a>
+        <div id="Kostenübernahme" class="tab-pane fade"><a name="l438">​</a>
+            <h1>Kostenübernahme</h1>
+            <img src="Sollprozess/Sollprozesse_einzeln/Kostenübernahme.png" width="50%"/>
+            <img src="Sollprozess/eEPKs/Kostenübernahme.png" width="40%"/>
+        </div>
+        <div id="Patientenversorgung" class="tab-pane fade"><a name="l448">​</a>
+            <h1>Patientenversorgung</h1>
+            <img src="Sollprozess/Sollprozesse_einzeln/Patientenversorgung.png" width="50%"/>
+            <img src="Sollprozess/eEPKs/Patientenversorgung.png" width="50%"/>
+            <p>Während des Krankenhausaufenthalts werden alle medizinischen Maßnahmen und Beobachtungen kontinuierlich dokumentiert. Dies umfasst die Aktualisierung von Leistungen, Diagnosen und eventuell auch Medikamentenverabreichungen in den entsprechenden FHIR-Ressourcen.</p>
+        </div>
+        <div id="Entlassung" class="tab-pane fade"><a name="l461">​</a>
+            <h1>Entlassung</h1>
+            <img src="Sollprozess/Sollprozesse_einzeln/Entlassung.png" width="50%"/>
+            <img src="Sollprozess/eEPKs/Entlassung.png" width="60%"/>
+        </div>
+    </div>
 </div>
         </div>
-        <div id="Versorgung" class="tab-pane fade">
-            <h3>Versorgung</h3>
+        <div id="LeistungsabrechnungDatenmeldung" class="tab-pane fade"><a name="l474">​</a>
+        <h1>Leistungsabrechnung &amp; Datenmeldung</h1>
+<img src="Sollprozess/Sollprozesse_einzeln/Leistungsabrechnung &amp; Datenmeldung.png" width="100%"/>
 
-<div>
-            <a style="border:none;" href="versorgung_seq.svg" target="_blank">
-                <img src="versorgung_seq.svg" width="80%"/>
-            </a>
-            </div>
-<p>Während des Krankenhausaufenthalts werden alle medizinischen Maßnahmen und Beobachtungen kontinuierlich dokumentiert. Dies umfasst die Aktualisierung von Leistungen, Diagnosen und eventuell auch Medikamentenverabreichungen in den entsprechenden FHIR-Ressourcen.</p>
+<div class="container"> 
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#VorläufigeLeistungsabrechnung"> <strong>Vorläufige Leistungsabrechnung &amp; Datenmeldung</strong></a></li>
+        <li><a data-toggle="tab" href="#JährlicheLeistungsabrechnung"> <strong>Jährliche Leistungsabrechnung &amp; Datenmeldung</strong></a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="VorläufigeLeistungsabrechnung" class="tab-pane fade in active">
+            <h1>Vorläufige Leistungsabrechnung &amp; Datenmeldung</h1>
+<div class="container"> 
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#VorläufigeMeldung"> <strong>Vorläufige Meldung</strong></a></li>
+        <li><a data-toggle="tab" href="#VorläufigeFreigabe"> <strong>Vorläufige Freigabe</strong></a></li>
+        <li><a data-toggle="tab" href="#Quartalsmeldung"> <strong>Quartalsmeldung</strong></a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="VorläufigeMeldung" class="tab-pane fade in active"><a name="l530">​</a>
+        <h1>Vorläufige Meldung</h1>
+            <img src="Sollprozess/Sollprozesse_einzeln/Vorläufige Meldung.png" width="50%"/>
+            <img src="Sollprozess/eEPKs/Vorläufige Meldung.png" width="70%"/>
         </div>
-        <div id="Entlassung" class="tab-pane fade">
-           <h3>Entlassung</h3>
-
-
-<div>
-                <a style="border:none;" href="entlassung_seq.svg" target="_blank">
-                    <img src="entlassung_seq.svg" width="80%"/>
-                </a>
-            </div>
+        <div id="VorläufigeFreigabe" class="tab-pane fade"><a name="l540">​</a>
+        <h1>Vorläufige Freigabe</h1>
+            <img src="Sollprozess/Sollprozesse_einzeln/Vorläufige Freigabe.png" width="50%"/>
+            <img src="Sollprozess/eEPKs/Vorläufige Freigabe.png" width="75%"/>
         </div>
-        <div id="Abrechnung" class="tab-pane fade">
-           <h3>Leistungsabrechung &amp; Datenmeldung</h3>
+        <div id="Quartalsmeldung" class="tab-pane fade"><a name="l550">​</a>
+        <h1>Quartalsmeldung</h1>
+            <img src="Sollprozess/Sollprozesse_einzeln/Quartalsmeldung.png" width="40%"/>
+            <img src="Sollprozess/eEPKs/Bundesmeldung unterjährig.png" width="50%"/>
+        </div>
+    </div>
+</div>
+        </div>
+        <div id="JährlicheLeistungsabrechnung" class="tab-pane fade">
+            <h1>Jährliche Leistungsabrechnung &amp; Datenmeldung</h1>
+<div class="container"> 
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#EndgültigeMeldung"> <strong>Endgültige Meldung</strong></a></li>
+        <li><a data-toggle="tab" href="#EndgültigeFreigabe"> <strong>Endgültige Freigabe</strong></a></li>
+        <li><a data-toggle="tab" href="#JährlicheBundesmeldung"> <strong>Jährliche Bundesmeldung</strong></a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="EndgültigeMeldung" class="tab-pane fade in active"><a name="l593">​</a>
+            <h1>Endgültige Meldung</h1>
+            <img src="Sollprozess/Sollprozesse_einzeln/Endgültige Meldung.png" width="50%"/>
+            <img src="Sollprozess/eEPKs/Endgültige Meldung.png" width="70%"/>
+        </div>
+        <div id="EndgültigeFreigabe" class="tab-pane fade"><a name="l603">​</a>
+            <h1>Endgültige Freigabe</h1>
+            <img src="Sollprozess/Sollprozesse_einzeln/Endgültige Freigabe.png" width="50%"/>
+            <img src="Sollprozess/eEPKs/Endgültige Freigabe.png" width="70%"/>
+        </div>
+        <div id="JährlicheBundesmeldung" class="tab-pane fade"><a name="l613">​</a>
+            <h1>Jährliche Bundesmeldung</h1>
+            <img src="Sollprozess/Sollprozesse_einzeln/Jährliche Bundesmeldung.png" width="50%"/>
+            <img src="Sollprozess/eEPKs/Jährliche Bundesmeldung.png" width="50%"/>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+        </div>
+        <div id="Kostenmeldung" class="tab-pane fade">
+            <h1>Kostenmeldung</h1>
+<img src="Sollprozess/SollProzesse_einzeln/Kostenmeldung.png" width="60%"/>
 
-<div>
-                <a style="border:none;" href="datenmeldung_seq.svg" target="_blank">
-                    <img src="datenmeldung_seq.svg" width="80%"/>
-                </a>
-            </div>
+
+<div class="container"> 
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#KostenmeldungÜbernahme"> <strong>Kostenmeldung - Übernahme</strong></a></li>
+        <li><a data-toggle="tab" href="#KostenmeldungRückmeldung"> <strong>Kostenmeldung - Rückmeldung</strong></a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="KostenmeldungÜbernahme" class="tab-pane fade in active">
+            <h1>Kostenmeldung - Übernahme</h1>
+            <img src="Sollprozess/eEPKs/Kostenmeldung - Übernahme.png" width="60%"/>
+        </div>
+        <div id="KostenmeldungRückmeldung" class="tab-pane fade">
+            <h1>Kostenmeldung - Rückmeldung</h1>
+        <img src="Sollprozess/eEPKs/Kostenmeldung - Rückmeldung.png" width="60%"/>
+        </div>
+    </div>
+</div>
         </div>
     </div>
 </div>
@@ -240,8 +349,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="container">    <!-- container -->
 
 <div class="inner-wrapper">
-  <p><a name="l441">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Tue, Sep 17, 2024 18:22+0000">2024-09-17</span>
+  <p><a name="l713">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Tue, Sep 17, 2024 20:06+0000">2024-09-17</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
