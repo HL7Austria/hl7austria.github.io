@@ -1,0 +1,45 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/Account/Test1Account> a fhir:Account ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Test1Account"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://example.org/StructureDefinition/MOPEDAccount"^^xsd:anyURI ;
+       fhir:link <http://example.org/StructureDefinition/MOPEDAccount>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Account Test1Account</b></p><a name=\"Test1Account\"> </a><a name=\"hcTest1Account\"> </a><a name=\"Test1Account-en-US\"> </a><p><b>Workflow Status</b>: TBD</p><p><b>Verdacht auf Arbeits- oder Schuelerunfall</b>: 0</p><p><b>Verdacht auf Fremdverschulden</b>: false</p><p><b>org/StructureDefinition/moped-ext-VDASID</b>: TEST12345678</p><p><b>status</b>: Active</p><p><b>subject</b>: <a href=\"Patient-Test1Patient.html\">Patientenkommun Moderne (official) Female, DoB: 1969-04-21 ( Social Security Number: 9994210469)</a></p><p><b>owner</b>: <a href=\"Organization-Test1OrganizationHerzJesuKrankenhaus.html\">Organization Herz Jesu-Krankenhaus</a></p></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://example.org/StructureDefinition/moped-ext-workflow-status"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "TBD" ]
+  ] [
+     fhir:url [ fhir:v "http://example.org/StructureDefinition/moped-ext-VerdachtArbeitsSchuelerunfall"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "0" ]
+  ] [
+     fhir:url [ fhir:v "http://example.org/StructureDefinition/moped-ext-VerdachtFremdverschulden"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "false"^^xsd:boolean ]
+  ] [
+     fhir:url [ fhir:v "http://example.org/StructureDefinition/moped-ext-VDASID"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "TEST12345678" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:subject ( [
+     fhir:link <http://example.org/Patient/Test1Patient> ;
+     fhir:reference [ fhir:v "Patient/Test1Patient" ]
+  ] ) ; # 
+  fhir:owner [
+     fhir:link <http://example.org/Organization/Test1OrganizationHerzJesuKrankenhaus> ;
+     fhir:reference [ fhir:v "Organization/Test1OrganizationHerzJesuKrankenhaus" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

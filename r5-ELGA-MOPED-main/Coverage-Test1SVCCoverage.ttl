@@ -1,0 +1,44 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/Coverage/Test1SVCCoverage> a fhir:Coverage ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Test1SVCCoverage"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://example.org/StructureDefinition/SVCCoverage"^^xsd:anyURI ;
+       fhir:link <http://example.org/StructureDefinition/SVCCoverage>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Coverage Test1SVCCoverage</b></p><a name=\"Test1SVCCoverage\"> </a><a name=\"hcTest1SVCCoverage\"> </a><a name=\"Test1SVCCoverage-en-US\"> </a><p><b>status</b>: Active</p><p><b>kind</b>: Insurance</p><p><b>subscriber</b>: <a href=\"&quot;Patient/Test1Patient&quot;\">&quot;Patient/Test1Patient&quot;</a></p><p><b>beneficiary</b>: <a href=\"&quot;Patient/Test1Patient&quot;\">&quot;Patient/Test1Patient&quot;</a></p><h3>Classes</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td><td><b>Value</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://svc.co.at/CodeSystem/ecard-versichertenkategorie-cs 01}\">01</span></td><td>01</td></tr></table></div>"
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:kind [ fhir:v "insurance"] ; # 
+  fhir:subscriber [
+     fhir:link <http://example.org/"Patient/Test1Patient"> ;
+     fhir:reference [ fhir:v "\"Patient/Test1Patient\"" ]
+  ] ; # 
+  fhir:beneficiary [
+     fhir:link <http://example.org/"Patient/Test1Patient"> ;
+     fhir:reference [ fhir:v "\"Patient/Test1Patient\"" ]
+  ] ; # 
+  fhir:class ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://svc.co.at/CodeSystem/ecard-versichertenkategorie-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "01" ]
+       ] )
+     ] ;
+     fhir:value [
+       fhir:value [ fhir:v "01" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

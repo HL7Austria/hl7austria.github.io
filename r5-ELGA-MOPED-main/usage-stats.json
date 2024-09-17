@@ -520,6 +520,67 @@
       ]
     },
     {
+      "url": "http://example.org/StructureDefinition/moped-ext-AnzahlVerlegungen",
+      "title": "AnzahlVerlegungen",
+      "types": [
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "integer64",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "CodeableReference",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "RatioRange",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Availability",
+        "ExtendedContactDetail",
+        "Dosage",
+        "Meta",
+        "unsignedInt"
+      ]
+    },
+    {
       "url": "http://example.org/StructureDefinition/moped-ext-Beihilfenaequivalent",
       "title": "Beihilfenaequivalent",
       "types": [
@@ -584,7 +645,7 @@
       "url": "http://example.org/StructureDefinition/moped-ext-EndOfEligibility",
       "title": "EndOfEligibility",
       "types": [
-        "date"
+        "boolean"
       ]
     },
     {
@@ -1672,67 +1733,6 @@
       ]
     },
     {
-      "url": "http://example.org/StructureDefinition/moped-ext-fallnummer",
-      "title": "Fallnummer",
-      "types": [
-        "base64Binary",
-        "boolean",
-        "canonical",
-        "code",
-        "date",
-        "dateTime",
-        "decimal",
-        "id",
-        "instant",
-        "integer",
-        "integer64",
-        "markdown",
-        "oid",
-        "positiveInt",
-        "string",
-        "time",
-        "unsignedInt",
-        "uri",
-        "url",
-        "uuid",
-        "Address",
-        "Age",
-        "Annotation",
-        "Attachment",
-        "CodeableConcept",
-        "CodeableReference",
-        "Coding",
-        "ContactPoint",
-        "Count",
-        "Distance",
-        "Duration",
-        "HumanName",
-        "Identifier",
-        "Money",
-        "Period",
-        "Quantity",
-        "Range",
-        "Ratio",
-        "RatioRange",
-        "Reference",
-        "SampledData",
-        "Signature",
-        "Timing",
-        "ContactDetail",
-        "DataRequirement",
-        "Expression",
-        "ParameterDefinition",
-        "RelatedArtifact",
-        "TriggerDefinition",
-        "UsageContext",
-        "Availability",
-        "ExtendedContactDetail",
-        "Dosage",
-        "Meta",
-        "unsignedInt"
-      ]
-    },
-    {
       "url": "http://example.org/StructureDefinition/moped-ext-fondsrelevanz",
       "title": "Fondsrelevanz",
       "types": [
@@ -1977,12 +1977,6 @@
         "title": "MOPEDClaimResponse"
       }
     ],
-    "Coverage": [
-      {
-        "url": "http://example.org/StructureDefinition/MOPEDCoverage",
-        "title": "MOPEDCoverage"
-      }
-    ],
     "CoverageEligibilityRequest": [
       {
         "url": "http://example.org/StructureDefinition/MOPEDCoverageEligibilityRequest",
@@ -2005,6 +1999,12 @@
       {
         "url": "http://example.org/StructureDefinition/MOPEDOrganizationAbteilung",
         "title": "MOPEDOrganizationAbteilung"
+      }
+    ],
+    "Coverage": [
+      {
+        "url": "http://example.org/StructureDefinition/SVCCoverage",
+        "title": "SVCCoverage"
       }
     ]
   },
@@ -2049,6 +2049,9 @@
     ],
     "http://example.org/StructureDefinition/moped-ext-AnzahlSonderleistungen": [
       "ClaimResponse"
+    ],
+    "http://example.org/StructureDefinition/moped-ext-AnzahlVerlegungen": [
+      "Encounter"
     ],
     "http://example.org/StructureDefinition/moped-ext-Beihilfenaequivalent": [
       "ClaimResponse"
@@ -2102,6 +2105,9 @@
     "http://example.org/StructureDefinition/moped-ext-TageOhneKostenbeitrag": [
       "Account"
     ],
+    "http://example.org/StructureDefinition/moped-ext-VDASID": [
+      "Account"
+    ],
     "http://example.org/StructureDefinition/moped-ext-VerdachtArbeitsSchuelerunfall": [
       "Account"
     ],
@@ -2127,9 +2133,6 @@
     "http://example.org/StructureDefinition/moped-ext-extensionDays": [
       "CoverageEligibilityRequest"
     ],
-    "http://example.org/StructureDefinition/moped-ext-fallnummer": [
-      "Encounter"
-    ],
     "http://example.org/StructureDefinition/moped-ext-fondsrelevanz": [
       "Claim"
     ],
@@ -2146,7 +2149,7 @@
       "CoverageEligibilityResponse"
     ],
     "http://example.org/StructureDefinition/moped-ext-vdasid": [
-      "CoverageEligibilityRequest"
+      "Account"
     ],
     "http://example.org/StructureDefinition/moped-ext-workflow-status": [
       "Account"
@@ -2170,9 +2173,18 @@
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
       "StructureDefinition.snapshot.element"
     ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber": [
+      "Organization.contact.address.line"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName": [
+      "Organization.contact.address.line"
+    ],
     "http://hl7.org/fhir/StructureDefinition/note": [
       "Claim",
       "ClaimResponse"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/patient-citizenship": [
+      "Patient"
     ],
     "http://hl7.org/fhir/StructureDefinition/questionnaire-unit": [
       "Questionnaire.item.item"
