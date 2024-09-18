@@ -1,0 +1,96 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/OperationDefinition/MOPED.Patient.Aufnehmen> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "MOPED.Patient.Aufnehmen"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition MOPED.Patient.Aufnehmen</b></p><a name=\"MOPED.Patient.Aufnehmen\"> </a><a name=\"hcMOPED.Patient.Aufnehmen\"> </a><a name=\"MOPED.Patient.Aufnehmen-en-US\"> </a><p>URL: [base]/Patient/[id]/$aufnehmen</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>falldaten</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/resource.html\">Resource</a> (<a href=\"StructureDefinition-MOPEDAufnahmeBundle.html\" title=\"http://example.org/StructureDefinition/MOPEDAufnahmeBundle\">MOPED Aufnahme Bundle</a>)</td><td/><td><div><p>Der <em>falldaten</em> Parameter beinhält die nötigen Elemente um die Details zum Fall zu beschreiben die bei Patientenaufnahme bekannt sind, inklusive Patient, Encounter und Coverage.</p>\n</div></td></tr><tr><td>IN</td><td>modus</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#code\">code</a></td><td>hl7.at.test.freigeben.oder.zwischenspeichern (Required)</td><td><div><p>Mit Hilfe des <em>modus</em> Parameters wird angegeben, ob es sich bei der Patienten-Aufnahme um vollständige Daten handelt und somit eine Validierung erfolgen soll, oder ob lediglich unvollständige Daten zwischengespeichert werden (<em>zwischenspeichern</em>).</p>\n</div></td></tr><tr><td>IN</td><td>verdachtArbeitsSchuelerunfall</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#code\">code</a></td><td><a href=\"ValueSet-moped-VerdachtArbeitsSchuelerunfall-valueset.html\">Verdacht auf Arbeits- oder Schuelerunfall</a> (Required)</td><td><div><p>Mit Hilfe des <em>verdachtArbeitsSchuelerunfall</em> Parameters wird festgehalten, ob es bei der Patienten-Aufnahme einen Verdacht auf einen Schüler- oder Arbeitsunfall gibt. Wird dieser Parameter mitgegeben, ist im Account das entsprechende Feld zu befüllen.</p>\n</div></td></tr><tr><td>IN</td><td>verdachtFremdverschulden</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#boolean\">boolean</a></td><td/><td><div><p>Mit Hilfe des <em>verdachtFremdverschulden</em> Parameters wird festgehalten, ob es bei der Patienten-Aufnahme einen Verdacht auf Fremdverschulden gibt. Wird dieser Parameter mitgegeben, ist im Account das entsprechende Feld zu befüllen.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/resource.html\">Resource</a> (<a href=\"http://hl7.org/fhir/R5/operationoutcome.html\" title=\"http://hl7.org/fhir/StructureDefinition/OperationOutcome\">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation. Wenn der <em>modus</em> Parameter auf 'freigeben' gesetzt war, ist die Operation erfolgreich, wenn die Daten validiert wurden und abgespeichert werden konnten. Wenn der <em>modus</em> Parameter auf <em>zwischenspeichern</em> gesetzt war, ist für eine erfolgreiche Durchführung der Operation lediglich ein erfolgreiches Speichern vorausgesetzt. Schlägt die Operation fehl, wird eine entsprechende Meldung ausgegeben.</p>\n</div></td></tr></table><div><p>TBD: Input ggf. ServiceProvider Organization bzw. GDA-OID, und ggf. CoverageID/VDAS ID falls im Prozess schon zuvor die Coverage angelegt wurde; mit welchem Wert/identifier kann die Coverage wiedergefunden werden?</p>\n</div></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://example.org/OperationDefinition/MOPED.Patient.Aufnehmen"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "MOPED_Patient_Aufnehmen"] ; # 
+  fhir:title [ fhir:v "MOPED Patient $aufnehmen (POC)"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2024-09-18T05:27:51+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Example Publisher"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Example Publisher" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://example.org/example-publisher" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Die Patient $aufnehmen Operation wird aufgerufen, wenn ein(e) Patient*in in das Krankenhaus aufgenommen wird.\nDie Operation wird vom Akteur Krankenhaus (KH) aufgerufen.\n\n1. Encounter erstellen: FHIR Transaction ausführen, wie im Operation-Parameter *falldaten* mitgegeben. Dabei soll geprüft werden, ob bereits ein Patient mit dem jeweiligen identifier (bPK bzw. Sozialversicherungsnummer) vorliegt um Duplikate zu vermeiden.\n2. Account anlegen:\n   * *MOPEDAccount.WorkflowStatus*: lt. Beschreibung der Werte-Ausprägungen des *modus* Parameter (siehe unten)\n   * *MOPEDAccount.VerdachtArbeitsSchuelerunfall* lt. Operation Parameter\n   * *MOPEDAccount.VerdachtFremdverschulden* lt. Operation Parameter\n   * *MOPEDAccount.subject* mit der gleichen Referenz befüllen wie *MOPEDEncounter.subjec*\n   * *MOPEDAccount.owner* mit der gleichen Organization befüllen wie *MOPEDEncounter.serviceProvider*\n   * *MOPEDAccount.VDASID* lt. Operation Parameter befüllen (TBD: brauchen wir die VDAS ID oder können wir sie mit Absprache SVC als Identifier in die Coverage geben?)\n   * *MOPEDAccount.coverage.coverage* mit der Referenz lt. Parameter befüllen und ggf. Hauptversicherter (Patient) anlegen, falls noch nicht am Server.\n3. Account im Encounter referenzieren: Den neuen MOPEDAccount im *MOPEDEncounter.account* referenzieren\n\nDie Werte-Ausprägung des *modus* Parameters haben eine Auswirkung auf das Verhalten der Operation:\n* *zwischenspeichern*: Die Patientenaufnahme ist noch nicht vollständig und wird lediglich zwischengespeichert. Hier findet keine Validierung der Encounter Ressource statt. Eine Account-Ressource wird erstellt, die den *WorkflowStatus* 'Aufnahme in Arbeit' hat und im Encounter referenziert.\n* *freigeben*: Die Patientenaufnahme ist vollständig und es ist zu erwarten, dass alle nötigen Felder befüllt sind. Schlägt die Validierung der *falldaten* fehl, kann die Operation nicht erfolgreich durchgeführt werden. Ist die Validierung erfolgreich, wird eine im Encounter referenzierte Account-Ressource erstellt bzw. upgedatet, die den *WorkflowStatus* 'Aufnahme freigegeben' hat. \n"] ; # 
+  fhir:affectsState [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:code [ fhir:v "aufnehmen"] ; # 
+  fhir:comment [ fhir:v "TBD: Input ggf. ServiceProvider Organization bzw. GDA-OID, und ggf. CoverageID/VDAS ID falls im Prozess schon zuvor die Coverage angelegt wurde; mit welchem Wert/identifier kann die Coverage wiedergefunden werden?"] ; # 
+  fhir:base [
+     fhir:v "http://hl7.org/fhir/OperationDefinition/Patient-aufnehmen"^^xsd:anyURI ;
+     fhir:link <http://hl7.org/fhir/OperationDefinition/Patient-aufnehmen>
+  ] ; # 
+  fhir:resource ( [ fhir:v "Patient"] ) ; # 
+  fhir:system [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:type [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:instance [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "falldaten" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Der *falldaten* Parameter beinhält die nötigen Elemente um die Details zum Fall zu beschreiben die bei Patientenaufnahme bekannt sind, inklusive Patient, Encounter und Coverage." ] ;
+     fhir:type [ fhir:v "Resource" ] ;
+     fhir:targetProfile ( [
+       fhir:v "http://example.org/StructureDefinition/MOPEDAufnahmeBundle"^^xsd:anyURI ;
+       fhir:link <http://example.org/StructureDefinition/MOPEDAufnahmeBundle>
+     ] )
+  ] [
+     fhir:name [ fhir:v "modus" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Mit Hilfe des *modus* Parameters wird angegeben, ob es sich bei der Patienten-Aufnahme um vollständige Daten handelt und somit eine Validierung erfolgen soll, oder ob lediglich unvollständige Daten zwischengespeichert werden (*zwischenspeichern*)." ] ;
+     fhir:type [ fhir:v "code" ] ;
+     fhir:binding [
+       fhir:strength [ fhir:v "required" ] ;
+       fhir:valueSet [ fhir:v "hl7.at.test.freigeben.oder.zwischenspeichern"^^xsd:anyURI ]
+     ]
+  ] [
+     fhir:name [ fhir:v "verdachtArbeitsSchuelerunfall" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Mit Hilfe des *verdachtArbeitsSchuelerunfall* Parameters wird festgehalten, ob es bei der Patienten-Aufnahme einen Verdacht auf einen Schüler- oder Arbeitsunfall gibt. Wird dieser Parameter mitgegeben, ist im Account das entsprechende Feld zu befüllen." ] ;
+     fhir:type [ fhir:v "code" ] ;
+     fhir:binding [
+       fhir:strength [ fhir:v "required" ] ;
+       fhir:valueSet [ fhir:v "moped-VerdachtArbeitsSchuelerunfall-valueset"^^xsd:anyURI ]
+     ]
+  ] [
+     fhir:name [ fhir:v "verdachtFremdverschulden" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Mit Hilfe des *verdachtFremdverschulden* Parameters wird festgehalten, ob es bei der Patienten-Aufnahme einen Verdacht auf Fremdverschulden gibt. Wird dieser Parameter mitgegeben, ist im Account das entsprechende Feld zu befüllen." ] ;
+     fhir:type [ fhir:v "boolean" ]
+  ] [
+     fhir:name [ fhir:v "return" ] ;
+     fhir:use [ fhir:v "out" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Der *return* Parameter gibt Auskunft über den Erfolg der Operation. Wenn der *modus* Parameter auf 'freigeben' gesetzt war, ist die Operation erfolgreich, wenn die Daten validiert wurden und abgespeichert werden konnten. Wenn der *modus* Parameter auf *zwischenspeichern* gesetzt war, ist für eine erfolgreiche Durchführung der Operation lediglich ein erfolgreiches Speichern vorausgesetzt. Schlägt die Operation fehl, wird eine entsprechende Meldung ausgegeben." ] ;
+     fhir:type [ fhir:v "Resource" ] ;
+     fhir:targetProfile ( [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/OperationOutcome"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/OperationOutcome>
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

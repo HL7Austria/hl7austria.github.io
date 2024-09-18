@@ -150,27 +150,188 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
    <p>Contents:</p>
    <ul>
       <li>
-         <a href="#1">Structures: Resource Profiles</a>
+         <a href="#1">Behavior: Operation Definitions</a>
       </li>
       <li>
-         <a href="#2">Structures: Extension Definitions</a>
+         <a href="#2">Structures: Resource Profiles</a>
       </li>
       <li>
-         <a href="#3">Terminology: Value Sets</a>
+         <a href="#3">Structures: Extension Definitions</a>
       </li>
       <li>
-         <a href="#4">Example: Example Instances</a>
+         <a href="#4">Terminology: Value Sets</a>
+      </li>
+      <li>
+         <a href="#5">Example: Example Instances</a>
       </li>
    </ul>
 </div>
 <div xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="http://hl7.org/fhir">
    <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
    <a name="1"> </a>
+   <h3>Behavior: Operation Definitions </h3>
+    <p>These are custom operations that can be supported by and/or invoked by systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="OperationDefinition-MOPED.CoverageEligibilityRequest.CheckStatus.html" title="OperationDefinition/MOPED.CoverageEligibilityRequest.CheckStatus">Kostenübernahme-Anfrage $check (POC)</a>
+            </td>
+            <td>
+<p>Die Kostenübernahme-Anfrage $check Operation wird aufgerufen, um zu überprüfen, in welchem Status sich die Bearbeitung seitens SV derzeit befindet. Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen.</p>
+
+<ol>
+  <li>Suchen des Accounts: Suchen des MOPEDAccounts, der vom MOPEDEncounter mit dem <em>aufnahmezahl</em> Parameter als <em>identifier</em> im <em>MOPEDEncounter.account</em> Feld referenziert wird.</li>
+  <li>Suchen des Requests: Es geht um jenen Request, der in <em>MOPEDAccount.coverageEligibilityRequest</em> Feld referenziert wurde</li>
+  <li>Suche nach einer CoverageEligibilityResponse die im Feld <em>CoverageEligibilityResponse.request</em> den Request aus Schritt 2 referenziert
+    <ul>
+      <li>Sollte es mehrere Responses zu einem Request geben, ist das eine Inkonsistenz die zu einer Fehlermeldung führen soll</li>
+      <li>Gibt es eine Response, so ist zu prüfen in welchem <em>CoverageEligibilityResponse.status</em> die Ressource aufscheint:</li>
+    </ul>
+    <ul>
+      <li><em>draft</em>: Draft in Kombination mit dem <em>outcome</em>-Wert <em>queued</em> heißt, dass die SV den jeweiligen Request bereits ausgeliefert bekommen hat, jedoch die Bearbeitung noch nicht begonnen hat. Ein <em>draft</em>-Status in Kombination mit einem anderen <em>outcome</em>-Wert ist ungültig und sollte zu einer Fehlermeldung führen.</li>
+      <li><em>active</em>: Active in Kombination mit dem <em>outcome</em>-Wert <em>queued</em> bedeutet, dass die SV aktiv gestartet hat, den CoverageEligibilityRequest zu bearbeiten, es jedoch noch kein Resultat gibt. Ist der <em>outcome</em> mit dem Wert <em>completed</em>, <em>error</em> oder <em>partial</em> befüllt, ist die SV mit der Response fertig und eine Meldung kann ausgegeben werden, dass die freigegebene CoverageEligibilityResponse vom Krankenhaus abgeholt werden kann.</li>
+    </ul>
+  </li>
+</ol>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="OperationDefinition-MOPED.CoverageEligibilityRequest.Abfragen.html" title="OperationDefinition/MOPED.CoverageEligibilityRequest.Abfragen">Kostenübernahme-Anfragen $abholen (POC)</a>
+            </td>
+            <td>
+<p>Die Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die Kostenübernahme-Anfragen $abholen Operation wird aufgerufen, um alle noch offenen Kostenübernahme-Anfragen, die bisher seitens SV noch nicht bearbeitet wurden, abgeholt werden können.</p>
+<ol>
+  <li>Suche nach relevanten Requests: Alle CoverageEligibilityRequests,
+    <ul>
+      <li>die im Feld <em>CoverageEligibilityRequest.insurer</em> die Organization mit <em>Organization.identifier</em> = Operation-Parameter <em>versicherer</em> referenziert haben UND</li>
+      <li>die noch keine gezugehörigen CoverageEligibilityResponse haben (CoverageEligibilityRequest CEReq where not exists CoverageEligibilityResponse with <em>CoverageEligibilityResponse.request</em> = CEReq). Der Status der Resposne ist dabei irrelevant.</li>
+    </ul>
+  </li>
+  <li>Zusammenstellen des Return-Bundles:
+Mit der gleichen Logik wie der <em>_include</em> Suchparameter um die relevanten Ressourcen (Patient, Coverage) direkt mitbekommen zu können.</li>
+  <li>Erstellung eine Draft CoverageEligibilityResponse für jeden der ausgelieferten Requests:
+    <ul>
+      <li>mit Feld <em>CoverageEligibilityResponse.status</em> = <em>draft</em></li>
+      <li>mit Feld <em>CoverageEligibilityResponse.request</em> = Referenz auf jeweiligen Request</li>
+      <li>mit Feld <em>CoverageEligibilityResponse.outcome</em> = <em>queued</em></li>
+    </ul>
+  </li>
+</ol>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="OperationDefinition-MOPED.CoverageEligibilityRequest.Anfragen.html" title="OperationDefinition/MOPED.CoverageEligibilityRequest.Anfragen">MOPED Kostenuebernahme $anfragen (POC)</a>
+            </td>
+            <td>
+<p>Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die Kostenübernahme $anfragen Operation wird aufgerufen, um die Kostenübernahme-Anfrage an die SV anzustoßen.</p>
+<ol>
+  <li>Vorbereitung des CoverageEligibilityRequest: Ein CoverageEligibilityRequest mit dem <em>status</em> 'active' und <em>purpose</em> 'validation' und dem <em>created</em> aktuellem Zeitpunkt wird vorbereitet.</li>
+  <li>Suchen des Accounts: Suchen des MOPEDAccounts, der vom MOPEDEncounter mit dem <em>aufnahmezahl</em> Parameter als <em>identifier</em> im <em>MOPEDEncounter.account</em> Feld referenziert wird.</li>
+  <li>Referenzieren des Patienten: Eine Referenz auf den Patienten der als <em>subject</em> im MOPEDAccount geführt ist, wird im <em>CoverageEligibilityRequest.patient</em> Element referenziert</li>
+  <li>Referenzieren der Coverage: Die gleiche Referenz wie im <em>MOPEDAccount.coverage.coverage</em> wird auch im CoverageEligibilityRequest referenziert. Check erfolgt, ob diese Coverage den gleichen Patienten als <em>beneficiary</em> hat wie das <em>subject</em> des CoverageEligibilityRequest.</li>
+  <li>Referenzieren des Providers: Als <em>provider</em> Element wird die Organization referenziert, die als <em>owner</em> im MOPEDAccount referenziert ist.</li>
+  <li>Einfügen des Versicherers: Als <em>insurer</em> Element wird die Organization referenziert, deren <em>identifier</em> dem Operation-Parameter <em>versicherer</em> entspricht.</li>
+  <li>POSTen des neu erstellten CoverageEligibilityRequest</li>
+  <li>Referenzierung des CoverageEligibilityRequest im MOPEDAccount im Element <em>coverageEligibilityRequest</em>.</li>
+</ol>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="OperationDefinition-MOPED.Patient.Aufnehmen.html" title="OperationDefinition/MOPED.Patient.Aufnehmen">MOPED Patient $aufnehmen (POC)</a>
+            </td>
+            <td>
+<p>Die Patient $aufnehmen Operation wird aufgerufen, wenn ein(e) Patient*in in das Krankenhaus aufgenommen wird.
+Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen.</p>
+
+<ol>
+  <li>Encounter erstellen: FHIR Transaction ausführen, wie im Operation-Parameter <em>falldaten</em> mitgegeben. Dabei soll geprüft werden, ob bereits ein Patient mit dem jeweiligen identifier (bPK bzw. Sozialversicherungsnummer) vorliegt um Duplikate zu vermeiden.</li>
+  <li>Account anlegen:
+    <ul>
+      <li><em>MOPEDAccount.WorkflowStatus</em>: lt. Beschreibung der Werte-Ausprägungen des <em>modus</em> Parameter (siehe unten)</li>
+      <li><em>MOPEDAccount.VerdachtArbeitsSchuelerunfall</em> lt. Operation Parameter</li>
+      <li><em>MOPEDAccount.VerdachtFremdverschulden</em> lt. Operation Parameter</li>
+      <li><em>MOPEDAccount.subject</em> mit der gleichen Referenz befüllen wie <em>MOPEDEncounter.subjec</em></li>
+      <li><em>MOPEDAccount.owner</em> mit der gleichen Organization befüllen wie <em>MOPEDEncounter.serviceProvider</em></li>
+      <li><em>MOPEDAccount.VDASID</em> lt. Operation Parameter befüllen (TBD: brauchen wir die VDAS ID oder können wir sie mit Absprache SVC als Identifier in die Coverage geben?)</li>
+      <li><em>MOPEDAccount.coverage.coverage</em> mit der Referenz lt. Parameter befüllen und ggf. Hauptversicherter (Patient) anlegen, falls noch nicht am Server.</li>
+    </ul>
+  </li>
+  <li>Account im Encounter referenzieren: Den neuen MOPEDAccount im <em>MOPEDEncounter.account</em> referenzieren</li>
+</ol>
+
+<p>Die Werte-Ausprägung des <em>modus</em> Parameters haben eine Auswirkung auf das Verhalten der Operation:</p>
+<ul>
+  <li><em>zwischenspeichern</em>: Die Patientenaufnahme ist noch nicht vollständig und wird lediglich zwischengespeichert. Hier findet keine Validierung der Encounter Ressource statt. Eine Account-Ressource wird erstellt, die den <em>WorkflowStatus</em> 'Aufnahme in Arbeit' hat und im Encounter referenziert.</li>
+  <li><em>freigeben</em>: Die Patientenaufnahme ist vollständig und es ist zu erwarten, dass alle nötigen Felder befüllt sind. Schlägt die Validierung der <em>falldaten</em> fehl, kann die Operation nicht erfolgreich durchgeführt werden. Ist die Validierung erfolgreich, wird eine im Encounter referenzierte Account-Ressource erstellt bzw. upgedatet, die den <em>WorkflowStatus</em> 'Aufnahme freigegeben' hat.</li>
+</ul>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="OperationDefinition-MOPED.Patient.Beurlauben.html" title="OperationDefinition/MOPED.Patient.Beurlauben">MOPED Patient $beurlauben</a>
+            </td>
+            <td>
+<p>Die Patient $beurlauben Operation wird aufgerufen, wenn ein(e) Patient*in in das Krankenhaus aufgenommen wurde und während eines laufenden Falles beurlaubt wird. Die Operation $verlegen wird aufgerufen mit dem Funktionscode XXX als Parameter, der Abgangsart YYY und ohne physische Anwesenheit. TBD: finde heraus, welcher Funktionscode und welche Abgangsart konkret für Urlaub stehen.</p>
+
+<p>Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="OperationDefinition-MOPED.Patient.Entlassen.html" title="OperationDefinition/MOPED.Patient.Entlassen">MOPED Patient $entlassen (POC)</a>
+            </td>
+            <td>
+<p>Diese Operation wurde noch nicht ausdefiniert - die Kommentare unterhalb dienen lediglich zur Orientierung und müssen noch stark verändert und erweitert werden.</p>
+
+<p>Die Patient $entlassen Operation wird aufgerufen, wenn ein(e) Patient*in aus dem Krankenhaus entlassen wurde.</p>
+
+<p>Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen.</p>
+
+<ol>
+  <li>Der Encounter erhält ein End-Datum (<em>MOPEDEncounter.actualPeriod.end</em>); der <em>MOPEDEncounter.status</em> wird auf <em>discharged</em> gesetzt</li>
+  <li>Ein MOPEDClaim mit dem Status <em>draft</em> wird erstellt und in <em>MOPEDAccount.claim</em> referenziert.</li>
+  <li>Änderungen am Account: der <em>MOPEDAccount.WorkflowStatus</em> wird auf <em>Entlassungs Aviso</em> gesetzt.</li>
+</ol>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="OperationDefinition-MOPED.Patient.Verlegen.html" title="OperationDefinition/MOPED.Patient.Verlegen">MOPED Patient $verlegen (POC)</a>
+            </td>
+            <td>
+<p>Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen.</p>
+
+<p>Die Patient $verlegen Operation wird aufgerufen, wenn ein(e) Patient*in auf eine andere Station verlegt wird.</p>
+
+<ol>
+  <li>Neuer Transfer Encounter: Der MOPEDEncounter mit der jeweiligen Aufnahmezahl wird gesucht, und ein neuer MOPEDTransferEncounter der mit partOf den MOPEDEncounter referenziert wird erstellt. Beim neu erstellten MOPEDTransferEncounter wird der <em>zeitpunkt</em> als <em>MOPEDTransferEncounter.actualPeriod.start</em> eingefügt und als <em>MOPEDTransferEncounter.serviceProvider</em> die Abteilung MOPEDOrganizationAbteilung mit dem jeweiligen <em>funktionscode</em> referenziert.</li>
+  <li>Alter Transfer Encounter: Der alte MOPEDTransferEncounter der partOf des MOPEDEncounters mit der jeweiligen Aufnahmezahl war und noch den Status <em>in-progress</em> hat, wird gesucht. Der Status wird auf <em>completed</em> gesetzt und die MOPEDTransferEncounter.actualPeriod.end mit dem <em>zeitpunkt</em> der Verlegung versehen. Ebenso wird beim alten Encounter die <em>abgangsart</em> von diesem Funktionscode dokumentiert.</li>
+  <li>Fallnummer: Die Fallnummer im zur Aufnahmezahl gehöhrenden Account wird um 1 erhöht.</li>
+  <li>Validierung: Es kann immer nur einen MOPEDTransferEncounter für den jeweiligen Fall geben der partOf eines MOPEDEncounters mit der <em>aufnahmezahl</em> ist und den Status <em>in-progress</em> hat.</li>
+</ol>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="2"> </a>
    <h3>Structures: Resource Profiles </h3>
     <p>These define constraints on FHIR resources for systems conforming to this implementation guide.</p>
 <table class="grid">
       <col style="width:20%"/>
       <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-MOPEDAufnahmeBundle.html" title="StructureDefinition/MOPEDAufnahmeBundle">MOPED Aufnahme Bundle</a>
+            </td>
+            <td>
+<p>Bundle für die Input-Ressourcen bei Patienten-Aufnahme</p>
+</td>
+         </tr>
          <tr>
             <td style="column-width:30%">
                <a href="StructureDefinition-MOPEDAccount.html" title="StructureDefinition/MOPEDAccount">MOPEDAccount</a>
@@ -245,7 +406,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
       </tbody>
    </table>
-   <a name="2"> </a>
+   <a name="3"> </a>
    <h3>Structures: Extension Definitions </h3>
     <p>These define constraints on FHIR data types for systems conforming to this implementation guide.</p>
 <table class="grid">
@@ -644,7 +805,7 @@ Der höchste Wert, mit welchem das Feld VTAGE befüllt werden kann, ist jener We
          </tr>
       </tbody>
    </table>
-   <a name="3"> </a>
+   <a name="4"> </a>
    <h3>Terminology: Value Sets </h3>
     <p>These define sets of codes used by systems conforming to this implementation guide.</p>
 <table class="grid">
@@ -740,7 +901,7 @@ Der höchste Wert, mit welchem das Feld VTAGE befüllt werden kann, ist jener We
          </tr>
       </tbody>
    </table>
-   <a name="4"> </a>
+   <a name="5"> </a>
    <h3>Example: Example Instances </h3>
     <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.</p>
 <table class="grid">
@@ -893,8 +1054,8 @@ Der höchste Wert, mit welchem das Feld VTAGE befüllt werden kann, ist jener We
 <div class="container">    <!-- container -->
 
 <div class="inner-wrapper">
-  <p><a name="l1646">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Tue, Sep 17, 2024 20:22+0000">2024-09-17</span>
+  <p><a name="l2191">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Wed, Sep 18, 2024 05:27+0000">2024-09-18</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
