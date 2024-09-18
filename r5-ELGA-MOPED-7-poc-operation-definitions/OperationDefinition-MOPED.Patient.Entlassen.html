@@ -233,11 +233,9 @@
 <p>Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen.</p>
 
 <ol>
-  <li>Der Encounter erhält ein End-Datum, status wird auch discharged gesetzt</li>
-  <li>Es werden zahlreiche Felder, die hier als Parameter vorliegen, in die jeweiligen Extensions gepackt.</li>
-  <li>Ein Draft-Claim wird erstellt</li>
-  <li>Alles war wir für die SV-Entlassungsanzeige brauchen wird erstellt</li>
-  <li>Änderungen am Account - zumindest der Status</li>
+  <li>Der Encounter erhält ein End-Datum (<em>MOPEDEncounter.actualPeriod.end</em>); der <em>MOPEDEncounter.status</em> wird auf <em>discharged</em> gesetzt</li>
+  <li>Ein MOPEDClaim mit dem Status <em>draft</em> wird erstellt und in <em>MOPEDAccount.claim</em> referenziert.</li>
+  <li>Änderungen am Account: der <em>MOPEDAccount.WorkflowStatus</em> wird auf <em>Entlassungs Aviso</em> gesetzt.</li>
 </ol>
 
 </p>
@@ -258,7 +256,8 @@
   <div><p class="res-header-id"><b>Generated Narrative: OperationDefinition MOPED.Patient.Entlassen</b></p><a name="MOPED.Patient.Entlassen"> </a><a name="hcMOPED.Patient.Entlassen"> </a><a name="MOPED.Patient.Entlassen-en-US"> </a><p>URL: [base]/Patient/[id]/$beurlauben</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>aufnahmezahl</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#string">string</a></td><td></td><td><div><p>Der <em>aufnahmezahl</em> Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall.</p>
 </div></td></tr><tr><td>IN</td><td>zeitpunkt</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#dateTime">dateTime</a></td><td></td><td><div><p>Der <em>zeitpunkt</em> Parameter definiert zu welchem Zeitpunkt die Beurlaubung startet.</p>
 </div></td></tr><tr><td>OUT</td><td>return</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td></td><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>
-</div></td></tr></table></div>
+</div></td></tr></table><div><p>TBD: die Extension für Claim-Account ref ist derzeit in Claim, sollte aber zu Account wandern. In dieser Operation werden noch keine Leitungen erfasst, hier muss eine Möglichkeit gegeben werden, dies nachzuholen - ggf. in einer separaten Operation. Was ist, wenn ein Patient stirbt? Wird hier eine Verlegung mit spezieller Abgangsart vorab angestoßen oder findet sich diese Ergeignis erst in der Entlassung wieder?</p>
+</div></div>
 
     <!-- insert notes if present -->
   
@@ -282,8 +281,8 @@
 <div class="container">    <!-- container -->
 
 <div class="inner-wrapper">
-  <p><a name="l525">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Wed, Sep 18, 2024 04:23+0000">2024-09-18</span>
+  <p><a name="l544">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Wed, Sep 18, 2024 05:23+0000">2024-09-18</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
