@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>FHIR.EXAMPLE\Kostenübernahme-Anfrage $check (POC) - FHIR&reg; v5.0.0</title>
+    <title>FHIR.EXAMPLE\Kostenübernahme-Anfrage $checkStatus (POC) - FHIR&reg; v5.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -120,7 +120,7 @@
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="artifacts.html"><b>Artifacts Summary</b></a></li><li><b>Kostenübernahme-Anfrage $check (POC)</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="artifacts.html"><b>Artifacts Summary</b></a></li><li><b>Kostenübernahme-Anfrage $checkStatus (POC)</b></li>
 
         </ul>
       </div>    <!-- /container -->
@@ -176,7 +176,7 @@
 
   <a name="root"> </a>
 
-  <h2 id="root">OperationDefinition: Kostenübernahme-Anfrage $check (POC)
+  <h2 id="root">OperationDefinition: Kostenübernahme-Anfrage $checkStatus (POC)
 
   </h2>
 
@@ -226,7 +226,7 @@
 
 
 <p>
-<p>Die Kostenübernahme-Anfrage $check Operation wird aufgerufen, um zu überprüfen, in welchem Status sich die Bearbeitung seitens SV derzeit befindet. Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen.</p>
+<p>Die Kostenübernahme-Anfrage $checkStatus Operation wird aufgerufen, um zu überprüfen, in welchem Status sich die Bearbeitung seitens SV derzeit befindet. Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen.</p>
 
 <ol>
   <li>Suchen des Accounts: Suchen des MOPEDAccounts, der vom MOPEDEncounter mit dem <em>aufnahmezahl</em> Parameter als <em>identifier</em> im <em>MOPEDEncounter.account</em> Feld referenziert wird.</li>
@@ -258,9 +258,10 @@
   
 
 
-  <div><p class="res-header-id"><b>Generated Narrative: OperationDefinition MOPED.CoverageEligibilityRequest.CheckStatus</b></p><a name="MOPED.CoverageEligibilityRequest.CheckStatus"> </a><a name="hcMOPED.CoverageEligibilityRequest.CheckStatus"> </a><a name="MOPED.CoverageEligibilityRequest.CheckStatus-en-US"> </a><p>URL: [base]/CoverageEligibilityRequest/$abfragen</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>aufnahmezahl</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#string">string</a></td><td></td><td><div><p>Der <em>aufnahmezahl</em> Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall dessen Kostenübernahme-Status überprüft werden soll.</p>
+  <div><p class="res-header-id"><b>Generated Narrative: OperationDefinition MOPED.CoverageEligibilityRequest.CheckStatus</b></p><a name="MOPED.CoverageEligibilityRequest.CheckStatus"> </a><a name="hcMOPED.CoverageEligibilityRequest.CheckStatus"> </a><a name="MOPED.CoverageEligibilityRequest.CheckStatus-en-US"> </a><p>URL: [base]/CoverageEligibilityRequest/$checkStatus</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>aufnahmezahl</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#string">string</a></td><td></td><td><div><p>Der <em>aufnahmezahl</em> Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall dessen Kostenübernahme-Status überprüft werden soll.</p>
 </div></td></tr><tr><td>OUT</td><td>return</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td></td><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>
-</div></td></tr></table></div>
+</div></td></tr></table><div><p>Klären, auf welchem Endpunkt die Operation aufgerufen werden soll (CoverageEligibilityRequest, oder Server-Base)</p>
+</div></div>
 
     <!-- insert notes if present -->
   
@@ -284,8 +285,8 @@
 <div class="container">    <!-- container -->
 
 <div class="inner-wrapper">
-  <p><a name="l563">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Thu, Sep 19, 2024 11:50+0000">2024-09-19</span>
+  <p><a name="l567">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Thu, Sep 19, 2024 12:04+0000">2024-09-19</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
