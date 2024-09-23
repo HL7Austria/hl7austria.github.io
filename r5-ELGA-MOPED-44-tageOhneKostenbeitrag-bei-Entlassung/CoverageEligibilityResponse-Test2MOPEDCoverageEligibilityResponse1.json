@@ -1,0 +1,49 @@
+{
+  "resourceType" : "CoverageEligibilityResponse",
+  "id" : "Test2MOPEDCoverageEligibilityResponse1",
+  "meta" : {
+    "profile" : ["http://example.org/StructureDefinition/MOPEDCoverageEligibilityResponse"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CoverageEligibilityResponse Test2MOPEDCoverageEligibilityResponse1</b></p><a name=\"Test2MOPEDCoverageEligibilityResponse1\"> </a><a name=\"hcTest2MOPEDCoverageEligibilityResponse1\"> </a><a name=\"Test2MOPEDCoverageEligibilityResponse1-en-US\"> </a><p><b>EndOfEligibility</b>: true</p><p><b>VAEStatus</b>: 00</p><p><b>MealCostExcemption</b>: N</p><p><b>Vortageanzahl auf Kostenbeitrag</b>: 0</p><p><b>status</b>: Active</p><p><b>purpose</b>: Coverage Validation</p><p><b>patient</b>: <a href=\"Patient-Test2Patient.html\">Santiago Schnabeltier TEST (official) Male, DoB: 1985-03-19 ( Social Security Number: 2873111374)</a></p><p><b>created</b>: 2024-09-23</p><p><b>request</b>: <a href=\"CoverageEligibilityRequest-Test2MOPEDCoverageEligibilityRequest1.html\">CoverageEligibilityRequest: extension = A; status = active; purpose = validation; created = 2024-09-23</a></p><p><b>outcome</b>: Processing Complete</p><p><b>insurer</b>: <a href=\"Organization-Test2OrganizationInsurance1.html\">Organization Österreichische Gesundheitskasse Oberösterreich</a></p><h3>Insurances</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Coverage</b></td><td><b>BenefitPeriod</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Coverage-Test2SVCCoverage.html\">Coverage: status = active; kind = insurance</a></td><td>2024-08-08 --&gt; 2024-08-26</td></tr></table></div>"
+  },
+  "extension" : [{
+    "url" : "http://example.org/StructureDefinition/moped-ext-EndOfEligibility",
+    "valueBoolean" : true
+  },
+  {
+    "url" : "http://example.org/StructureDefinition/moped-ext-vaestatus",
+    "valueCode" : "00"
+  },
+  {
+    "url" : "http://example.org/StructureDefinition/moped-ext-MealCostExcemption",
+    "valueCode" : "N"
+  },
+  {
+    "url" : "http://example.org/StructureDefinition/moped-ext-NumberOfPreviouslyPaidDays",
+    "valueUnsignedInt" : 0
+  }],
+  "status" : "active",
+  "purpose" : ["validation"],
+  "patient" : {
+    "reference" : "Patient/Test2Patient"
+  },
+  "created" : "2024-09-23",
+  "request" : {
+    "reference" : "CoverageEligibilityRequest/Test2MOPEDCoverageEligibilityRequest1"
+  },
+  "outcome" : "complete",
+  "insurer" : {
+    "reference" : "Organization/Test2OrganizationInsurance1"
+  },
+  "insurance" : [{
+    "coverage" : {
+      "reference" : "Coverage/Test2SVCCoverage"
+    },
+    "benefitPeriod" : {
+      "start" : "2024-08-08",
+      "end" : "2024-08-26"
+    }
+  }]
+}
