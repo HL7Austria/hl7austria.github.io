@@ -237,7 +237,7 @@
   <li>Das Element <em>MOPEDEncounter.admission.dischargeDisposition</em> wird mit dem Operation-Parameter <em>entlassungsart</em> befüllt.</li>
   <li>Der alte MOPEDTransferEncounter der <em>partOf</em> des MOPEDEncounters mit der jeweiligen Aufnahmezahl war und noch den Status <em>in-progress</em> hat, wird gesucht. Der Status wird auf <em>completed</em> gesetzt und die <em>MOPEDTransferEncounter.actualPeriod.end</em> mit dem <em>zeitpunkt</em> der Entlassung versehen.</li>
   <li>Ein MOPEDClaim mit dem Status <em>draft</em> wird erstellt und in <em>MOPEDAccount.claim</em> referenziert.</li>
-  <li>Änderungen am Account: der <em>MOPEDAccount.WorkflowStatus</em> wird auf <em>Entlassungs Aviso</em> gesetzt.</li>
+  <li>Änderungen am Account: der <em>MOPEDAccount.WorkflowStatus</em> wird auf <em>Entlassungs Aviso</em> gesetzt, oder, falls der <em>modus</em>-Parameter auf <em>freigeben</em> gesetzt war und die Validierung erfolgreich war, wird <em>MOPEDAccount.WorkflowStatus</em> auf <em>Entlassung vollständig</em> gesetzt. Ebenso im <em>MOPEDAccount</em> im Element <em>TageOhneKostenbeitrag</em> wird der gleichnamige Opeartion-Parameter abgespeichert. Dieser ist verpflichtend zu befüllen, wenn der <em>modus</em>-Parameter auf <em>freigeben</em> gestellt ist.</li>
 </ol>
 
 </p>
@@ -258,6 +258,8 @@
   <div><p class="res-header-id"><b>Generated Narrative: OperationDefinition MOPED.Patient.Entlassen</b></p><a name="MOPED.Patient.Entlassen"> </a><a name="hcMOPED.Patient.Entlassen"> </a><a name="MOPED.Patient.Entlassen-en-US"> </a><p>URL: [base]/Encounter/$entlassen</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>aufnahmezahl</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#Identifier">Identifier</a></td><td></td><td><div><p>Der <em>aufnahmezahl</em> Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall.</p>
 </div></td></tr><tr><td>IN</td><td>zeitpunkt</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#dateTime">dateTime</a></td><td></td><td><div><p>Der <em>zeitpunkt</em> Parameter definiert zu welchem Zeitpunkt die Beurlaubung startet.</p>
 </div></td></tr><tr><td>IN</td><td>entlassungsart</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="ValueSet-moped-entlassungsart-valueset.html">Entlassungsart des Patienten</a> (Required)</td><td><div><p>Der <em>entlassungsart</em> Parameter definiert die Entlassungsart des Patienten.</p>
+</div></td></tr><tr><td>IN</td><td>tageOhneKostenbeitrag</td><td></td><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#unsignedInt">unsignedInt</a></td><td></td><td><div><p>Der <em>tageOhneKostenbeitrag</em> Parameter definiert zu für wie viele Tage kein Kostenbeitrag eingehoben wurde.</p>
+</div></td></tr><tr><td>IN</td><td>modus</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td>hl7.at.test.aviso.oder.freigeben (Required)</td><td><div><p>Mit Hilfe des <em>modus</em> Parameters wird angegeben, ob es sich bei der Patienten-Entlassung um vollständige Daten handelt (<em>freigeben</em>) und somit eine Validierung erfolgen soll, oder ob lediglich unvollständige Daten zwischengespeichert werden (<em>aviso</em>).</p>
 </div></td></tr><tr><td>OUT</td><td>return</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td></td><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>
 </div></td></tr></table><div><p>TBD: Schritt 3: eine Abgangsart vom TransferEncounter muss hinzugefügt werden, welchen fixen wert enthält diese bei Enlassung? Die Extension für Claim-Account ref ist derzeit in Claim, sollte aber zu Account wandern. In dieser Operation werden noch keine Leitungen erfasst, hier muss eine Möglichkeit gegeben werden, dies nachzuholen - ggf. in einer separaten Operation. Was ist, wenn ein Patient stirbt? Wird hier eine Verlegung mit spezieller Abgangsart vorab angestoßen oder findet sich diese Ergeignis erst in der Entlassung wieder?</p>
 </div></div>
@@ -284,8 +286,8 @@
 <div class="container">    <!-- container -->
 
 <div class="inner-wrapper">
-  <p><a name="l594">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Mon, Sep 23, 2024 11:42+0000">2024-09-23</span>
+  <p><a name="l665">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Mon, Sep 23, 2024 12:18+0000">2024-09-23</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
