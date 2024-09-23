@@ -10,7 +10,7 @@
   <name value="MOPED"/>
   <title value="Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"/>
   <status value="draft"/>
-  <date value="2024-09-23T11:09:48+00:00"/>
+  <date value="2024-09-23T11:29:53+00:00"/>
   <publisher value="Example Publisher"/>
   <contact>
     <name value="Example Publisher"/>
@@ -427,7 +427,7 @@
         <reference value="OperationDefinition/MOPED.Patient.Entlassen"/>
       </reference>
       <name value="MOPED Patient $entlassen (POC)"/>
-      <description value="Diese Operation wurde noch nicht ausdefiniert - die Kommentare unterhalb dienen lediglich zur Orientierung und müssen noch stark verändert und erweitert werden.&#xA;&#xA;Die Patient $entlassen Operation wird aufgerufen, wenn ein(e) Patient*in aus dem Krankenhaus entlassen wurde.&#xA;&#xA;Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen.&#xA;&#xA;1. Der Encounter erhält ein End-Datum (*MOPEDEncounter.actualPeriod.end*); der *MOPEDEncounter.status* wird auf *discharged* gesetzt&#xA;3. Ein MOPEDClaim mit dem Status *draft* wird erstellt und in *MOPEDAccount.claim* referenziert.&#xA;5. Änderungen am Account: der *MOPEDAccount.WorkflowStatus* wird auf *Entlassungs Aviso* gesetzt."/>
+      <description value="Diese Operation wurde noch nicht ausdefiniert - die Kommentare unterhalb dienen lediglich zur Orientierung und müssen noch stark verändert und erweitert werden.&#xA;&#xA;Die Patient $entlassen Operation wird aufgerufen, wenn ein(e) Patient*in aus dem Krankenhaus entlassen wurde.&#xA;&#xA;Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen.&#xA;&#xA;1. Der Encounter erhält ein End-Datum (*MOPEDEncounter.actualPeriod.end*); der *MOPEDEncounter.status* wird auf *discharged* gesetzt&#xA;2. Das Element *MOPEDEncounter.admission.dischargeDisposition* wird mit dem Operation-Parameter *entlassungsart* befüllt.&#xA;3. Der alte MOPEDTransferEncounter der *partOf* des MOPEDEncounters mit der jeweiligen Aufnahmezahl war und noch den Status *in-progress* hat, wird gesucht. Der Status wird auf *completed* gesetzt und die *MOPEDTransferEncounter.actualPeriod.end* mit dem *zeitpunkt* der Entlassung versehen. &#xA;4. Ein MOPEDClaim mit dem Status *draft* wird erstellt und in *MOPEDAccount.claim* referenziert.&#xA;5. Änderungen am Account: der *MOPEDAccount.WorkflowStatus* wird auf *Entlassungs Aviso* gesetzt."/>
       <isExample value="false"/>
     </resource>
     <resource>
