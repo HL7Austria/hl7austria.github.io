@@ -10,7 +10,7 @@
   "name" : "MOPED",
   "title" : "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)",
   "status" : "draft",
-  "date" : "2024-09-22T15:40:07+00:00",
+  "date" : "2024-09-23T07:19:12+00:00",
   "publisher" : "Example Publisher",
   "contact" : [{
     "name" : "Example Publisher",
@@ -338,6 +338,18 @@
       "name" : "Kostenübernahme-Anfragen $abholen (POC)",
       "description" : "Die Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die Kostenübernahme-Anfragen $abholen Operation wird aufgerufen, um alle noch offenen Kostenübernahme-Anfragen, die bisher seitens SV noch nicht bearbeitet wurden, abgeholt werden können.\n1. Suche nach relevanten Requests: Alle CoverageEligibilityRequests, \n  * die im Feld *CoverageEligibilityRequest.insurer* die Organization mit *Organization.identifier* = Operation-Parameter *versicherer* referenziert haben UND\n  * die noch keine gezugehörigen CoverageEligibilityResponse haben (CoverageEligibilityRequest CEReq where not exists CoverageEligibilityResponse with *CoverageEligibilityResponse.request* = CEReq). Der Status der Resposne ist dabei irrelevant.\n2. Zusammenstellen des Return-Bundles:\n   Mit der gleichen Logik wie der *_include* Suchparameter um die relevanten Ressourcen (Patient, Coverage) direkt mitbekommen zu können.\n3. Erstellung eine Draft CoverageEligibilityResponse für jeden der ausgelieferten Requests:\n   * mit Feld *CoverageEligibilityResponse.status* = *draft*\n   * mit Feld *CoverageEligibilityResponse.request* = Referenz auf jeweiligen Request\n   * mit Feld *CoverageEligibilityResponse.outcome* = *queued*",
       "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      }],
+      "reference" : {
+        "reference" : "Organization/Test2OrganizationKrankenhausRied"
+      },
+      "name" : "Krankenhaus der Barmherzigen Schwestern vom Hl. Vinzenz von Paul Ried",
+      "description" : "Organization resource for Krankenhaus der Barmherzigen Schwestern vom Hl. Vinzenz von Paul Ried",
+      "isExample" : true
     },
     {
       "extension" : [{
@@ -938,6 +950,169 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Account"
+      }],
+      "reference" : {
+        "reference" : "Account/Test2Account"
+      },
+      "name" : "Test2Account",
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDAccount"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      }],
+      "reference" : {
+        "reference" : "Condition/Test2Condition1"
+      },
+      "name" : "Test2Condition1",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      }],
+      "reference" : {
+        "reference" : "Condition/Test2Condition2"
+      },
+      "name" : "Test2Condition2",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CoverageEligibilityRequest"
+      }],
+      "reference" : {
+        "reference" : "CoverageEligibilityRequest/Test2MOPEDCoverageEligibilityRequest1"
+      },
+      "name" : "Test2MOPEDCoverageEligibilityRequest1",
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDCoverageEligibilityRequest"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CoverageEligibilityResponse"
+      }],
+      "reference" : {
+        "reference" : "CoverageEligibilityResponse/Test2MOPEDCoverageEligibilityResponse1"
+      },
+      "name" : "Test2MOPEDCoverageEligibilityResponse1",
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDCoverageEligibilityResponse"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      }],
+      "reference" : {
+        "reference" : "Encounter/Test2MOPEDEncounter1"
+      },
+      "name" : "Test2MOPEDEncounter1",
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDEncounter"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      }],
+      "reference" : {
+        "reference" : "Organization/Test2OrganizationAbteilung1"
+      },
+      "name" : "Test2OrganizationAbteilung1",
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      }],
+      "reference" : {
+        "reference" : "Organization/Test2OrganizationAbteilung2"
+      },
+      "name" : "Test2OrganizationAbteilung2",
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      }],
+      "reference" : {
+        "reference" : "Organization/Test2OrganizationAbteilung3"
+      },
+      "name" : "Test2OrganizationAbteilung3",
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      }],
+      "reference" : {
+        "reference" : "Organization/Test2OrganizationAbteilung4"
+      },
+      "name" : "Test2OrganizationAbteilung4",
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      }],
+      "reference" : {
+        "reference" : "Organization/Test2OrganizationAbteilung5"
+      },
+      "name" : "Test2OrganizationAbteilung5",
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      }],
+      "reference" : {
+        "reference" : "Organization/Test2OrganizationInsurance1"
+      },
+      "name" : "Test2OrganizationInsurance1",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      }],
+      "reference" : {
+        "reference" : "Organization/Test2OrganizationUeberweisendeOrganisation"
+      },
+      "name" : "Test2OrganizationUeberweisendeOrganisation",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/Test2Patient"
+      },
+      "name" : "Test2Patient",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "QuestionnaireResponse"
       }],
       "reference" : {
@@ -945,6 +1120,78 @@
       },
       "name" : "Test2SAPS3QuestionnaireResponse1",
       "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Coverage"
+      }],
+      "reference" : {
+        "reference" : "Coverage/Test2SVCCoverage"
+      },
+      "name" : "Test2SVCCoverage",
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/SVCCoverage"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      }],
+      "reference" : {
+        "reference" : "Encounter/Test2TransferEncounter1"
+      },
+      "name" : "Test2TransferEncounter1",
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDTransferEncounter"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      }],
+      "reference" : {
+        "reference" : "Encounter/Test2TransferEncounter2"
+      },
+      "name" : "Test2TransferEncounter2",
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDTransferEncounter"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      }],
+      "reference" : {
+        "reference" : "Encounter/Test2TransferEncounter3"
+      },
+      "name" : "Test2TransferEncounter3",
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDTransferEncounter"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      }],
+      "reference" : {
+        "reference" : "Encounter/Test2TransferEncounter4"
+      },
+      "name" : "Test2TransferEncounter4",
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDTransferEncounter"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      }],
+      "reference" : {
+        "reference" : "Encounter/Test2TransferEncounter5"
+      },
+      "name" : "Test2TransferEncounter5",
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDTransferEncounter"]
     },
     {
       "extension" : [{

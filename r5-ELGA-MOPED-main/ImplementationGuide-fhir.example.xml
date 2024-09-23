@@ -10,7 +10,7 @@
   <name value="MOPED"/>
   <title value="Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"/>
   <status value="draft"/>
-  <date value="2024-09-22T15:40:07+00:00"/>
+  <date value="2024-09-23T07:19:12+00:00"/>
   <publisher value="Example Publisher"/>
   <contact>
     <name value="Example Publisher"/>
@@ -308,6 +308,17 @@
       <name value="Kostenübernahme-Anfragen $abholen (POC)"/>
       <description value="Die Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die Kostenübernahme-Anfragen $abholen Operation wird aufgerufen, um alle noch offenen Kostenübernahme-Anfragen, die bisher seitens SV noch nicht bearbeitet wurden, abgeholt werden können.&#xA;1. Suche nach relevanten Requests: Alle CoverageEligibilityRequests, &#xA;  * die im Feld *CoverageEligibilityRequest.insurer* die Organization mit *Organization.identifier* = Operation-Parameter *versicherer* referenziert haben UND&#xA;  * die noch keine gezugehörigen CoverageEligibilityResponse haben (CoverageEligibilityRequest CEReq where not exists CoverageEligibilityResponse with *CoverageEligibilityResponse.request* = CEReq). Der Status der Resposne ist dabei irrelevant.&#xA;2. Zusammenstellen des Return-Bundles:&#xA;   Mit der gleichen Logik wie der *_include* Suchparameter um die relevanten Ressourcen (Patient, Coverage) direkt mitbekommen zu können.&#xA;3. Erstellung eine Draft CoverageEligibilityResponse für jeden der ausgelieferten Requests:&#xA;   * mit Feld *CoverageEligibilityResponse.status* = *draft*&#xA;   * mit Feld *CoverageEligibilityResponse.request* = Referenz auf jeweiligen Request&#xA;   * mit Feld *CoverageEligibilityResponse.outcome* = *queued*"/>
       <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/Test2OrganizationKrankenhausRied"/>
+      </reference>
+      <name value="Krankenhaus der Barmherzigen Schwestern vom Hl. Vinzenz von Paul Ried"/>
+      <description value="Organization resource for Krankenhaus der Barmherzigen Schwestern vom Hl. Vinzenz von Paul Ried"/>
+      <isExample value="true"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -857,6 +868,155 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Account"/>
+      </extension>
+      <reference>
+        <reference value="Account/Test2Account"/>
+      </reference>
+      <name value="Test2Account"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDAccount"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/Test2Condition1"/>
+      </reference>
+      <name value="Test2Condition1"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/Test2Condition2"/>
+      </reference>
+      <name value="Test2Condition2"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CoverageEligibilityRequest"/>
+      </extension>
+      <reference>
+        <reference value="CoverageEligibilityRequest/Test2MOPEDCoverageEligibilityRequest1"/>
+      </reference>
+      <name value="Test2MOPEDCoverageEligibilityRequest1"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDCoverageEligibilityRequest"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CoverageEligibilityResponse"/>
+      </extension>
+      <reference>
+        <reference value="CoverageEligibilityResponse/Test2MOPEDCoverageEligibilityResponse1"/>
+      </reference>
+      <name value="Test2MOPEDCoverageEligibilityResponse1"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDCoverageEligibilityResponse"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/Test2MOPEDEncounter1"/>
+      </reference>
+      <name value="Test2MOPEDEncounter1"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDEncounter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/Test2OrganizationAbteilung1"/>
+      </reference>
+      <name value="Test2OrganizationAbteilung1"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/Test2OrganizationAbteilung2"/>
+      </reference>
+      <name value="Test2OrganizationAbteilung2"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/Test2OrganizationAbteilung3"/>
+      </reference>
+      <name value="Test2OrganizationAbteilung3"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/Test2OrganizationAbteilung4"/>
+      </reference>
+      <name value="Test2OrganizationAbteilung4"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/Test2OrganizationAbteilung5"/>
+      </reference>
+      <name value="Test2OrganizationAbteilung5"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/Test2OrganizationInsurance1"/>
+      </reference>
+      <name value="Test2OrganizationInsurance1"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/Test2OrganizationUeberweisendeOrganisation"/>
+      </reference>
+      <name value="Test2OrganizationUeberweisendeOrganisation"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/Test2Patient"/>
+      </reference>
+      <name value="Test2Patient"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="QuestionnaireResponse"/>
       </extension>
       <reference>
@@ -864,6 +1024,72 @@
       </reference>
       <name value="Test2SAPS3QuestionnaireResponse1"/>
       <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Coverage"/>
+      </extension>
+      <reference>
+        <reference value="Coverage/Test2SVCCoverage"/>
+      </reference>
+      <name value="Test2SVCCoverage"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/SVCCoverage"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/Test2TransferEncounter1"/>
+      </reference>
+      <name value="Test2TransferEncounter1"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDTransferEncounter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/Test2TransferEncounter2"/>
+      </reference>
+      <name value="Test2TransferEncounter2"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDTransferEncounter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/Test2TransferEncounter3"/>
+      </reference>
+      <name value="Test2TransferEncounter3"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDTransferEncounter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/Test2TransferEncounter4"/>
+      </reference>
+      <name value="Test2TransferEncounter4"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDTransferEncounter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/Test2TransferEncounter5"/>
+      </reference>
+      <name value="Test2TransferEncounter5"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDTransferEncounter"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
