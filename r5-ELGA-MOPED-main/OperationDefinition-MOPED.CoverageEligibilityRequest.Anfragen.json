@@ -3,7 +3,7 @@
   "id" : "MOPED.CoverageEligibilityRequest.Anfragen",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition MOPED.CoverageEligibilityRequest.Anfragen</b></p><a name=\"MOPED.CoverageEligibilityRequest.Anfragen\"> </a><a name=\"hcMOPED.CoverageEligibilityRequest.Anfragen\"> </a><a name=\"MOPED.CoverageEligibilityRequest.Anfragen-en-US\"> </a><p>URL: [base]/Account/$anfragen</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>aufnahmezahl</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#Identifier\">Identifier</a></td><td/><td><div><p>Der <em>aufnahmezahl</em> Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall.</p>\n</div></td></tr><tr><td>IN</td><td>versicherer</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#Identifier\">Identifier</a></td><td/><td><div><p>Der <em>versicherer</em> Parameter beinhält den eindeutigen Identifizierer für den Versicherer an dem der CoverageEligibilityRequest gerichtet ist.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/resource.html\">Resource</a> (<a href=\"http://hl7.org/fhir/R5/operationoutcome.html\" title=\"http://hl7.org/fhir/StructureDefinition/OperationOutcome\">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>\n</div></td></tr></table><div><p>TBD: erstellung einer Extension im Account für die Referenz auf den CoverageEligibilityRequest</p>\n</div></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition MOPED.CoverageEligibilityRequest.Anfragen</b></p><a name=\"MOPED.CoverageEligibilityRequest.Anfragen\"> </a><a name=\"hcMOPED.CoverageEligibilityRequest.Anfragen\"> </a><a name=\"MOPED.CoverageEligibilityRequest.Anfragen-en-US\"> </a><p>URL: [base]/Account/$anfragen</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>aufnahmezahl</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#Identifier\">Identifier</a></td><td/><td><div><p>Der <em>aufnahmezahl</em> Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall.</p>\n</div></td></tr><tr><td>IN</td><td>versicherer</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#Identifier\">Identifier</a></td><td/><td><div><p>Der <em>versicherer</em> Parameter beinhält den eindeutigen Identifizierer für den Versicherer an dem der CoverageEligibilityRequest gerichtet ist.</p>\n</div></td></tr><tr><td>IN</td><td>verlaengerungstage</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#unsignedInt\">unsignedInt</a></td><td/><td><div><p>Der <em>verlaengerungstage</em> beschreibt, um wie viele Verlängerungstage angefragt wird.</p>\n</div></td></tr><tr><td>IN</td><td>sonderklasse</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#code\">code</a></td><td>moped-sonderklasse-valueset (Required)</td><td><div><p>Der <em>sonderklasse</em> codiert, ob der Aufenthalt in der Allgemeine Gebührenklasse oder Sonderklasse stattfindet, da es bei speziellen Versicherungsträgern dafür Optionen gibt.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/resource.html\">Resource</a> (<a href=\"http://hl7.org/fhir/R5/operationoutcome.html\" title=\"http://hl7.org/fhir/StructureDefinition/OperationOutcome\">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>\n</div></td></tr></table><div><p>TBD: erstellung einer Extension im Account für die Referenz auf den CoverageEligibilityRequest; Erstellung des Sonderklasse ValueSets, verlinkung im Operation-Parameter sowie im Profil des CoverageEligibilityRequests beim Element <em>PremiumClass</em></p>\n</div></div>"
   },
   "url" : "http://example.org/OperationDefinition/MOPED.CoverageEligibilityRequest.Anfragen",
   "version" : "0.1.0",
@@ -11,7 +11,7 @@
   "title" : "MOPED Kostenuebernahme $anfragen (POC)",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2024-09-23T11:29:53+00:00",
+  "date" : "2024-09-23T11:42:54+00:00",
   "publisher" : "Example Publisher",
   "contact" : [{
     "name" : "Example Publisher",
@@ -20,10 +20,10 @@
       "value" : "http://example.org/example-publisher"
     }]
   }],
-  "description" : "Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die Kostenübernahme $anfragen Operation wird aufgerufen, um die Kostenübernahme-Anfrage an die SV anzustoßen.\n1. Vorbereitung des CoverageEligibilityRequest: Ein CoverageEligibilityRequest mit dem *status* 'active' und *purpose* 'validation' und dem *created* aktuellem Zeitpunkt wird vorbereitet.\n2. Suchen des Accounts: Suchen des MOPEDAccounts, der vom MOPEDEncounter mit dem *aufnahmezahl* Parameter als *identifier* im *MOPEDEncounter.account* Feld referenziert wird. \n2. Referenzieren des Patienten: Eine Referenz auf den Patienten der als *subject* im MOPEDAccount geführt ist, wird im *CoverageEligibilityRequest.patient* Element referenziert\n3. Referenzieren der Coverage: Die gleiche Referenz wie im *MOPEDAccount.coverage.coverage* wird auch im CoverageEligibilityRequest referenziert. Check erfolgt, ob diese Coverage den gleichen Patienten als *beneficiary* hat wie das *subject* des CoverageEligibilityRequest.\n4. Referenzieren des Providers: Als *provider* Element wird die Organization referenziert, die als *owner* im MOPEDAccount referenziert ist. \n5. Einfügen des Versicherers: Als *insurer* Element wird die Organization referenziert, deren *identifier* dem Operation-Parameter *versicherer* entspricht.\n6. POSTen des neu erstellten CoverageEligibilityRequest\n7. Referenzierung des CoverageEligibilityRequest im MOPEDAccount im Element *coverageEligibilityRequest*. ",
+  "description" : "Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die Kostenübernahme $anfragen Operation wird aufgerufen, um die Kostenübernahme-Anfrage an die SV anzustoßen.\n1. Vorbereitung des CoverageEligibilityRequest: Ein CoverageEligibilityRequest mit dem *status* 'active' und *purpose* 'validation' und dem *created* aktuellem Zeitpunkt wird vorbereitet. Die Extension *ExtensionDays* wird mit dem Operation-Parameter *verlaengerungstage* befüllt, die Extension *PremiumClass* mit dem Operation-Parameter *sonderklasse*.\n2. Suchen des Accounts: Suchen des MOPEDAccounts, der vom MOPEDEncounter mit dem *aufnahmezahl* Parameter als *identifier* im *MOPEDEncounter.account* Feld referenziert wird. \n2. Referenzieren des Patienten: Eine Referenz auf den Patienten der als *subject* im MOPEDAccount geführt ist, wird im *CoverageEligibilityRequest.patient* Element referenziert\n3. Referenzieren der Coverage: Die gleiche Referenz wie im *MOPEDAccount.coverage.coverage* wird auch im CoverageEligibilityRequest referenziert. Check erfolgt, ob diese Coverage den gleichen Patienten als *beneficiary* hat wie das *subject* des CoverageEligibilityRequest.\n4. Referenzieren des Providers: Als *provider* Element wird die Organization referenziert, die als *owner* im MOPEDAccount referenziert ist. \n5. Einfügen des Versicherers: Als *insurer* Element wird die Organization referenziert, deren *identifier* dem Operation-Parameter *versicherer* entspricht.\n6. POSTen des neu erstellten CoverageEligibilityRequest\n7. Referenzierung des CoverageEligibilityRequest im MOPEDAccount im Element *coverageEligibilityRequest*. ",
   "affectsState" : true,
   "code" : "anfragen",
-  "comment" : "TBD: erstellung einer Extension im Account für die Referenz auf den CoverageEligibilityRequest",
+  "comment" : "TBD: erstellung einer Extension im Account für die Referenz auf den CoverageEligibilityRequest; Erstellung des Sonderklasse ValueSets, verlinkung im Operation-Parameter sowie im Profil des CoverageEligibilityRequests beim Element *PremiumClass*",
   "base" : "http://hl7.org/fhir/OperationDefinition/CoverageEligibilityRequest-anfragen",
   "resource" : ["Account"],
   "system" : false,
@@ -44,6 +44,26 @@
     "max" : "1",
     "documentation" : "Der *versicherer* Parameter beinhält den eindeutigen Identifizierer für den Versicherer an dem der CoverageEligibilityRequest gerichtet ist.",
     "type" : "Identifier"
+  },
+  {
+    "name" : "verlaengerungstage",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Der *verlaengerungstage* beschreibt, um wie viele Verlängerungstage angefragt wird.",
+    "type" : "unsignedInt"
+  },
+  {
+    "name" : "sonderklasse",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Der *sonderklasse* codiert, ob der Aufenthalt in der Allgemeine Gebührenklasse oder Sonderklasse stattfindet, da es bei speziellen Versicherungsträgern dafür Optionen gibt.",
+    "type" : "code",
+    "binding" : {
+      "strength" : "required",
+      "valueSet" : "moped-sonderklasse-valueset"
+    }
   },
   {
     "name" : "return",
