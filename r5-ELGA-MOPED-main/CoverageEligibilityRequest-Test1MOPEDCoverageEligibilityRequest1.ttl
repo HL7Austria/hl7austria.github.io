@@ -16,14 +16,18 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "extensions" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CoverageEligibilityRequest Test1MOPEDCoverageEligibilityRequest1</b></p><a name=\"Test1MOPEDCoverageEligibilityRequest1\"> </a><a name=\"hcTest1MOPEDCoverageEligibilityRequest1\"> </a><a name=\"Test1MOPEDCoverageEligibilityRequest1-en-US\"> </a><p><b>Verlaengerungstage</b>: 0</p><p><b>PremiumClass</b>: A</p><p><b>status</b>: Active</p><p><b>purpose</b>: Coverage Validation</p><p><b>patient</b>: <a href=\"Patient-Test1Patient.html\">Patientenkommun Moderne (official) Female, DoB: 1969-04-21 ( Social Security Number: 9994210469)</a></p><p><b>created</b>: 2024-09-17</p><p><b>provider</b>: <a href=\"Organization-Test1OrganizationHerzJesuKrankenhaus.html\">Organization Herz Jesu-Krankenhaus</a></p><p><b>insurer</b>: <a href=\"Organization-Test1OrganizationInsurance1.html\">Organization Österreichische Gesundheitskasse Wien</a></p><h3>Insurances</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Coverage</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Coverage-Test1SVCCoverage.html\">Coverage: status = active; kind = insurance</a></td></tr></table></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CoverageEligibilityRequest Test1MOPEDCoverageEligibilityRequest1</b></p><a name=\"Test1MOPEDCoverageEligibilityRequest1\"> </a><a name=\"hcTest1MOPEDCoverageEligibilityRequest1\"> </a><a name=\"Test1MOPEDCoverageEligibilityRequest1-en-US\"> </a><p><b>Verlaengerungstage</b>: 0</p><p><b>PremiumClass</b>: MOPED-Sonderklasse A: A</p><p><b>status</b>: Active</p><p><b>purpose</b>: Coverage Validation</p><p><b>patient</b>: <a href=\"Patient-Test1Patient.html\">Patientenkommun Moderne (official) Female, DoB: 1969-04-21 ( Social Security Number: 9994210469)</a></p><p><b>created</b>: 2024-09-17</p><p><b>provider</b>: <a href=\"Organization-Test1OrganizationHerzJesuKrankenhaus.html\">Organization Herz Jesu-Krankenhaus</a></p><p><b>insurer</b>: <a href=\"Organization-Test1OrganizationInsurance1.html\">Organization Österreichische Gesundheitskasse Wien</a></p><h3>Insurances</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Coverage</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Coverage-Test1SVCCoverage.html\">Coverage: status = active; kind = insurance</a></td></tr></table></div>"
   ] ; # 
   fhir:extension ( [
      fhir:url [ fhir:v "http://example.org/StructureDefinition/moped-ext-extensionDays"^^xsd:anyURI ] ;
      fhir:value [ fhir:v "0"^^xsd:nonNegativeInteger ]
   ] [
      fhir:url [ fhir:v "http://example.org/StructureDefinition/moped-ext-PremiumClass"^^xsd:anyURI ] ;
-     fhir:value [ fhir:v "A" ]
+     fhir:value [
+       a fhir:Coding ;
+       fhir:system [ fhir:v "http://tbd.at/MOPED-Sonderklasse"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "A" ]
+     ]
   ] ) ; # 
   fhir:status [ fhir:v "active"] ; # 
   fhir:purpose ( [ fhir:v "validation"] ) ; # 

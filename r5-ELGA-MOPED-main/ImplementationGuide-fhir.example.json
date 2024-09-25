@@ -10,7 +10,7 @@
   "name" : "MOPED",
   "title" : "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)",
   "status" : "draft",
-  "date" : "2024-09-25T11:40:05+00:00",
+  "date" : "2024-09-25T11:54:18+00:00",
   "publisher" : "Example Publisher",
   "contact" : [{
     "name" : "Example Publisher",
@@ -111,6 +111,18 @@
       },
       "name" : "Account Referenz",
       "description" : "Referenz auf den im Claim abzurechnenden Account",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/moped-ext-Altersgruppe"
+      },
+      "name" : "Altersgruppe",
+      "description" : "In Gruppen eingeteilt, wobei vollendete Lebensjahre ausschlaggebend sind.",
       "isExample" : false
     },
     {
@@ -243,6 +255,18 @@
       },
       "name" : "Fondsrelevanz",
       "description" : "Hier ist anzugeben, ob der stationäre Aufenthalt/ambulante Besuch gegenüber dem Landesgesundheitsfonds/PRIKRAF abzurechnen ist.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/moped-Fondsrelevanz-valueset"
+      },
+      "name" : "Fondsrelevanz",
+      "description" : "ValueSet für die Fondsrelevanz",
       "isExample" : false
     },
     {
@@ -589,6 +613,18 @@
       },
       "name" : "MOPEDTransferEncounter",
       "description" : "MOPED Profil der Encounter Ressource für die Verlegung innerhalb oder zwischen Krankenanstalten",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/moped-ext-Neugeborenes"
+      },
+      "name" : "Neugeborenes",
+      "description" : "Ein Patient wird als Neugeborenes bezeichnet, wenn das Alter zum Zugangszeitpunkt auf die Abteilung <28 Tage ist.",
       "isExample" : false
     },
     {

@@ -16,14 +16,22 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "extensions" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Account Test1Account</b></p><a name=\"Test1Account\"> </a><a name=\"hcTest1Account\"> </a><a name=\"Test1Account-en-US\"> </a><p><b>Workflow Status</b>: TBD</p><p><b>Verdacht auf Arbeits- oder Schuelerunfall</b>: 0</p><p><b>Verdacht auf Fremdverschulden</b>: false</p><p><b>org/StructureDefinition/moped-ext-VDASID</b>: TEST12345678</p><p><b>status</b>: Active</p><p><b>subject</b>: <a href=\"Patient-Test1Patient.html\">Patientenkommun Moderne (official) Female, DoB: 1969-04-21 ( Social Security Number: 9994210469)</a></p><p><b>owner</b>: <a href=\"Organization-Test1OrganizationHerzJesuKrankenhaus.html\">Organization Herz Jesu-Krankenhaus</a></p></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Account Test1Account</b></p><a name=\"Test1Account\"> </a><a name=\"hcTest1Account\"> </a><a name=\"Test1Account-en-US\"> </a><p><b>Workflow Status</b>: moped-ext-workflow-status TBD: TBD</p><p><b>Verdacht auf Arbeits- oder Schuelerunfall</b>: MOPED-account-VerdachtArbeitsSchuelerunfall 0: 0</p><p><b>Verdacht auf Fremdverschulden</b>: false</p><p><b>org/StructureDefinition/moped-ext-VDASID</b>: TEST12345678</p><p><b>status</b>: Active</p><p><b>subject</b>: <a href=\"Patient-Test1Patient.html\">Patientenkommun Moderne (official) Female, DoB: 1969-04-21 ( Social Security Number: 9994210469)</a></p><p><b>owner</b>: <a href=\"Organization-Test1OrganizationHerzJesuKrankenhaus.html\">Organization Herz Jesu-Krankenhaus</a></p></div>"
   ] ; # 
   fhir:extension ( [
      fhir:url [ fhir:v "http://example.org/StructureDefinition/moped-ext-workflow-status"^^xsd:anyURI ] ;
-     fhir:value [ fhir:v "TBD" ]
+     fhir:value [
+       a fhir:Coding ;
+       fhir:system [ fhir:v "http://tbd.at/moped-ext-workflow-status"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "TBD" ]
+     ]
   ] [
      fhir:url [ fhir:v "http://example.org/StructureDefinition/moped-ext-VerdachtArbeitsSchuelerunfall"^^xsd:anyURI ] ;
-     fhir:value [ fhir:v "0" ]
+     fhir:value [
+       a fhir:Coding ;
+       fhir:system [ fhir:v "http://tbd.at/MOPED-account-VerdachtArbeitsSchuelerunfall"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "0" ]
+     ]
   ] [
      fhir:url [ fhir:v "http://example.org/StructureDefinition/moped-ext-VerdachtFremdverschulden"^^xsd:anyURI ] ;
      fhir:value [ fhir:v "false"^^xsd:boolean ]

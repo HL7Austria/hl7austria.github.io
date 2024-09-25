@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "MOPED"] ; # 
   fhir:title [ fhir:v "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-09-25T11:40:05+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-09-25T11:54:18+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Example Publisher"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Example Publisher" ] ;
@@ -126,6 +126,18 @@
        ] ;
        fhir:name [ fhir:v "Account Referenz" ] ;
        fhir:description [ fhir:v "Referenz auf den im Claim abzurechnenden Account" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-Altersgruppe> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-Altersgruppe" ]
+       ] ;
+       fhir:name [ fhir:v "Altersgruppe" ] ;
+       fhir:description [ fhir:v "In Gruppen eingeteilt, wobei vollendete Lebensjahre ausschlaggebend sind." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -258,6 +270,18 @@
        ] ;
        fhir:name [ fhir:v "Fondsrelevanz" ] ;
        fhir:description [ fhir:v "Hier ist anzugeben, ob der stationäre Aufenthalt/ambulante Besuch gegenüber dem Landesgesundheitsfonds/PRIKRAF abzurechnen ist." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/ValueSet/moped-Fondsrelevanz-valueset> ;
+         fhir:reference [ fhir:v "ValueSet/moped-Fondsrelevanz-valueset" ]
+       ] ;
+       fhir:name [ fhir:v "Fondsrelevanz" ] ;
+       fhir:description [ fhir:v "ValueSet für die Fondsrelevanz" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -604,6 +628,18 @@
        ] ;
        fhir:name [ fhir:v "MOPEDTransferEncounter" ] ;
        fhir:description [ fhir:v "MOPED Profil der Encounter Ressource für die Verlegung innerhalb oder zwischen Krankenanstalten" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-Neugeborenes> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-Neugeborenes" ]
+       ] ;
+       fhir:name [ fhir:v "Neugeborenes" ] ;
+       fhir:description [ fhir:v "Ein Patient wird als Neugeborenes bezeichnet, wenn das Alter zum Zugangszeitpunkt auf die Abteilung <28 Tage ist." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
