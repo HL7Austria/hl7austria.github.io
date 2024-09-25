@@ -12,6 +12,8 @@
   <sch:pattern>
     <sch:title>f:Account</sch:title>
     <sch:rule context="f:Account">
+      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-AnzahlVerlegungen']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-AnzahlVerlegungen': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-AnzahlBeurlaubungen']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-AnzahlBeurlaubungen': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-vdasid']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-vdasid': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-workflow-status']) &gt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-workflow-status': minimum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-workflow-status']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-workflow-status': maximum cardinality of 'extension' is 1</sch:assert>
