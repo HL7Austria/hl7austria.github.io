@@ -10,7 +10,7 @@
   "name" : "MOPED",
   "title" : "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)",
   "status" : "draft",
-  "date" : "2024-09-26T07:17:19+00:00",
+  "date" : "2024-09-26T07:48:16+00:00",
   "publisher" : "Example Publisher",
   "contact" : [{
     "name" : "Example Publisher",
@@ -354,30 +354,6 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "OperationDefinition"
-      }],
-      "reference" : {
-        "reference" : "OperationDefinition/MOPED.CoverageEligibilityRequest.CheckStatus"
-      },
-      "name" : "Kostenübernahme-Anfrage $checkStatus (POC)",
-      "description" : "Die Kostenübernahme-Anfrage $checkStatus Operation wird aufgerufen, um zu überprüfen, in welchem Status sich die Bearbeitung seitens SV derzeit befindet. Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen.\n\n1. Suchen des MOPEDAccounts: Über die Referenz der Ressource *MOPEDEncounter.account*. Dabei handelt es sich um jenen Encounter, der den *aufnahmezahl* Parameter als *identifier* gespeichert hat. \n2. Suchen des Requests: Es geht um jenen Request, der in *MOPEDAccount.coverageEligibilityRequest* Feld referenziert wurde\n3. Suche nach einer CoverageEligibilityResponse die im Feld *CoverageEligibilityResponse.request* den Request aus Schritt 2 referenziert\n  * Sollte es mehrere Responses zu einem Request geben, ist das eine Inkonsistenz die zu einer Fehlermeldung führen soll\n  * Gibt es eine Response, so ist zu prüfen in welchem *CoverageEligibilityResponse.status* die Ressource aufscheint:\n     * *draft*: Draft in Kombination mit dem *outcome*-Wert *queued* heißt, dass die SV den jeweiligen Request bereits ausgeliefert bekommen hat, jedoch die Bearbeitung noch nicht begonnen hat. Ein *draft*-Status in Kombination mit einem anderen *outcome*-Wert ist ungültig und sollte zu einer Fehlermeldung führen.\n     * *active*: Active in Kombination mit dem *outcome*-Wert *queued* bedeutet, dass die SV aktiv gestartet hat, den CoverageEligibilityRequest zu bearbeiten, es jedoch noch kein Resultat gibt. Ist der *outcome* mit dem Wert *completed*, *error* oder *partial* befüllt, ist die SV mit der Response fertig und eine Meldung kann ausgegeben werden, dass die freigegebene CoverageEligibilityResponse vom Krankenhaus abgeholt werden kann.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "OperationDefinition"
-      }],
-      "reference" : {
-        "reference" : "OperationDefinition/MOPED.CoverageEligibilityRequest.Abholen"
-      },
-      "name" : "Kostenübernahme-Anfragen $abholen (POC)",
-      "description" : "Die Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die Kostenübernahme-Anfragen $abholen Operation wird aufgerufen, um alle noch offenen Kostenübernahme-Anfragen, die bisher seitens SV noch nicht bearbeitet wurden, abgeholt werden können.\n1. Suche nach relevanten Requests: Alle CoverageEligibilityRequests, \n  * die im Feld *CoverageEligibilityRequest.insurer* die Organization mit *Organization.identifier* = Operation-Parameter *versicherer* referenziert haben UND\n  * die noch keine gezugehörigen CoverageEligibilityResponse haben (CoverageEligibilityRequest CEReq where not exists CoverageEligibilityResponse with *CoverageEligibilityResponse.request* = CEReq). Der Status der Resposne ist dabei irrelevant.\n2. Zusammenstellen des Return-Bundles:\n   Mit der gleichen Logik wie der *_include* Suchparameter um die relevanten Ressourcen (Patient, Coverage) direkt mitbekommen zu können.\n3. Erstellung eine Draft CoverageEligibilityResponse für jeden der ausgelieferten Requests:\n   * mit Feld *CoverageEligibilityResponse.status* = *draft*\n   * mit Feld *CoverageEligibilityResponse.request* = Referenz auf jeweiligen Request\n   * mit Feld *CoverageEligibilityResponse.outcome* = *queued*",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Organization"
       }],
       "reference" : {
@@ -465,18 +441,6 @@
         "valueString" : "OperationDefinition"
       }],
       "reference" : {
-        "reference" : "OperationDefinition/MOPED.CoverageEligibilityRequest.Anfragen"
-      },
-      "name" : "MOPED Kostenuebernahme $anfragen (POC)",
-      "description" : "Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die Kostenübernahme $anfragen Operation wird aufgerufen, um die Kostenübernahme-Anfrage an die SV anzustoßen. Diese Operation ist irrelevant für Selbstzahler (das ist wichtig für künftige weiterentwicklung - wenn im Account auf eine Coverage-Ressource für Selbstzahler referenziert wird, darf die Operation $anfragen nicht ausgeführt werden).\n1. Vorbereitung des CoverageEligibilityRequest: Ein CoverageEligibilityRequest mit dem *status* 'active' und *purpose* 'validation' und dem *created* aktuellem Zeitpunkt wird vorbereitet. Die Extension *ExtensionDays* wird mit dem Operation-Parameter *verlaengerungstage* befüllt, die Extension *PremiumClass* mit dem Operation-Parameter *sonderklasse*.\n2. Suchen des MOPEDAccounts: Über die Referenz der Ressource *MOPEDEncounter.account*. Dabei handelt es sich um jenen Encounter, der den *aufnahmezahl* Parameter als *identifier* gespeichert hat. \n3. Referenzieren des Patienten: Eine Referenz auf den Patienten der als *subject* im MOPEDAccount geführt ist, wird im *CoverageEligibilityRequest.patient* Element referenziert\n4. Referenzieren der Coverage: Die gleiche Referenz wie im *MOPEDAccount.coverage.coverage* wird auch im CoverageEligibilityRequest referenziert. Check erfolgt, ob diese Coverage den gleichen Patienten als *beneficiary* hat wie das *subject* des CoverageEligibilityRequest. Außerdem wird geprüft, ob der *versicherer* an dem der Request gerichtet ist, auch tatsächlich als Coverage.insurer gelistet ist. Sollten im Account mehrere Coverages referenziert sein, so ist nur diejenige mitzusenden, die als *Coverage.insurer* den *versicherer* aus dem Operation-Parameter gespeichert hat.\n4. Referenzieren des Providers: Als *provider* Element wird die Organization referenziert, die als *owner* im MOPEDAccount referenziert ist. \n5. Einfügen des Versicherers: Als *insurer* Element wird die Organization referenziert, deren *identifier* dem Operation-Parameter *versicherer* entspricht.\n6. POSTen des neu erstellten CoverageEligibilityRequest\n7. Referenzierung des CoverageEligibilityRequest im MOPEDAccount im Element *coverageEligibilityRequest*.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "OperationDefinition"
-      }],
-      "reference" : {
         "reference" : "OperationDefinition/MOPED.Patient.Aufnehmen"
       },
       "name" : "MOPED Patient $aufnehmen (POC)",
@@ -517,6 +481,18 @@
       },
       "name" : "MOPED Patient $verlegen (POC)",
       "description" : "Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen.\n\nDie Patient $verlegen Operation wird aufgerufen, wenn ein(e) Patient*in auf eine andere Station verlegt wird. \n\n1. Neuer Transfer Encounter: Der MOPEDEncounter mit der jeweiligen Aufnahmezahl wird gesucht, und ein neuer MOPEDTransferEncounter der mit partOf den MOPEDEncounter referenziert wird erstellt. Beim neu erstellten MOPEDTransferEncounter wird der *zeitpunkt* als *MOPEDTransferEncounter.actualPeriod.start* eingefügt und als *MOPEDTransferEncounter.serviceProvider* die Abteilung MOPEDOrganizationAbteilung mit dem jeweiligen *funktionscode* referenziert. \n2. Alter Transfer Encounter: Der alte MOPEDTransferEncounter der partOf des MOPEDEncounters mit der jeweiligen Aufnahmezahl war und noch den Status *in-progress* hat, wird gesucht. Der Status wird auf *completed* gesetzt und die MOPEDTransferEncounter.actualPeriod.end mit dem *zeitpunkt* der Verlegung versehen. Ebenso wird beim alten Encounter die *abgangsart* von diesem Funktionscode dokumentiert. \n3. AnzahlBeurlaubungen: Dieser Counter gibt die Wiederaufnahmen nach Urlaub an. Wenn es sich beim alten MOPEDTransferEncounter der gerade auf *completed* gesetzt wurde um eine Beurlaubung gehandelt hat (i.e. Funktionscode XXX-TBD), dann wird der Counter Account.extension.AnzahlBeurlaubungen um 1 erhöht. \n4. AnzahlVerlegungen: Die Extension Account.extension.AnzahlVerlegungen im zur Aufnahmezahl gehöhrenden Account wird um 1 erhöht.\n5. Validierung: Es kann immer nur einen MOPEDTransferEncounter für den jeweiligen Fall geben der partOf eines MOPEDEncounters mit der *aufnahmezahl* ist und den Status *in-progress* hat. \n\nNote: Der Counter für AnzahlVerlegungen wird auch im Falle einer Beurlaubung erhöht, bei der eine reguläre Verlegung-Operation aufgerufen wird.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/MOPED.CoverageEligibilityRequest.Anfragen"
+      },
+      "name" : "MOPED Versichertenanspruchserklärung $anfragen (POC)",
+      "description" : "Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die Versichertenanspruchserklärung $anfragen Operation wird aufgerufen, um die Versichertenanspruchserklärung-Anfrage an die SV anzustoßen. Diese Operation ist irrelevant für Selbstzahler (das ist wichtig für künftige weiterentwicklung - wenn im Account auf eine Coverage-Ressource für Selbstzahler referenziert wird, darf die Operation $anfragen nicht ausgeführt werden).\n1. Vorbereitung des CoverageEligibilityRequest: Ein CoverageEligibilityRequest mit dem *status* 'active' und *purpose* 'validation' und dem *created* aktuellem Zeitpunkt wird vorbereitet. Die Extension *ExtensionDays* wird mit dem Operation-Parameter *verlaengerungstage* befüllt, die Extension *PremiumClass* mit dem Operation-Parameter *sonderklasse*.\n2. Suchen des MOPEDAccounts: Über die Referenz der Ressource *MOPEDEncounter.account*. Dabei handelt es sich um jenen Encounter, der den *aufnahmezahl* Parameter als *identifier* gespeichert hat. \n3. Referenzieren des Patienten: Eine Referenz auf den Patienten der als *subject* im MOPEDAccount geführt ist, wird im *CoverageEligibilityRequest.patient* Element referenziert\n4. Referenzieren der Coverage: Die gleiche Referenz wie im *MOPEDAccount.coverage.coverage* wird auch im CoverageEligibilityRequest referenziert. Check erfolgt, ob diese Coverage den gleichen Patienten als *beneficiary* hat wie das *subject* des CoverageEligibilityRequest. Außerdem wird geprüft, ob der *versicherer* an dem der Request gerichtet ist, auch tatsächlich als Coverage.insurer gelistet ist. Sollten im Account mehrere Coverages referenziert sein, so ist nur diejenige mitzusenden, die als *Coverage.insurer* den *versicherer* aus dem Operation-Parameter gespeichert hat.\n4. Referenzieren des Providers: Als *provider* Element wird die Organization referenziert, die als *owner* im MOPEDAccount referenziert ist. \n5. Einfügen des Versicherers: Als *insurer* Element wird die Organization referenziert, deren *identifier* dem Operation-Parameter *versicherer* entspricht.\n6. POSTen des neu erstellten CoverageEligibilityRequest\n7. Referenzierung des CoverageEligibilityRequest im MOPEDAccount im Element *coverageEligibilityRequest*.",
       "isExample" : false
     },
     {
@@ -564,7 +540,7 @@
         "reference" : "StructureDefinition/MOPEDCoverageEligibilityRequest"
       },
       "name" : "MOPEDCoverageEligibilityRequest",
-      "description" : "MOPED Profil der CoverageEligibilityRequest Ressource für die Kostenübernahmeanfrage.",
+      "description" : "MOPED Profil der CoverageEligibilityRequest Ressource für die Versichertenanspruchserklärung-Anfrage.",
       "isExample" : false
     },
     {
@@ -576,7 +552,7 @@
         "reference" : "StructureDefinition/MOPEDCoverageEligibilityResponse"
       },
       "name" : "MOPEDCoverageEligibilityResponse",
-      "description" : "MOPED Profil der CoverageEligibilityResponse Ressource für die Kostenübernahmeantwort.",
+      "description" : "MOPED Profil der CoverageEligibilityResponse Ressource für die Versichertenanspruchserklärung-Antwort.",
       "isExample" : false
     },
     {
@@ -1371,6 +1347,30 @@
       },
       "name" : "Verlaengerungstage",
       "description" : "Anzahl der Verlaengerungstage bei Verlängerung",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/MOPED.CoverageEligibilityRequest.CheckStatus"
+      },
+      "name" : "Versichertenanspruchserklärung-Anfrage $checkStatus (POC)",
+      "description" : "Die Versichertenanspruchserklärung-Anfrage $checkStatus Operation wird aufgerufen, um zu überprüfen, in welchem Status sich die Bearbeitung seitens SV derzeit befindet. Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen.\n\n1. Suchen des MOPEDAccounts: Über die Referenz der Ressource *MOPEDEncounter.account*. Dabei handelt es sich um jenen Encounter, der den *aufnahmezahl* Parameter als *identifier* gespeichert hat. \n2. Suchen des Requests: Es geht um jenen Request, der in *MOPEDAccount.coverageEligibilityRequest* Feld referenziert wurde\n3. Suche nach einer CoverageEligibilityResponse die im Feld *CoverageEligibilityResponse.request* den Request aus Schritt 2 referenziert\n  * Sollte es mehrere Responses zu einem Request geben, ist das eine Inkonsistenz die zu einer Fehlermeldung führen soll\n  * Gibt es eine Response, so ist zu prüfen in welchem *CoverageEligibilityResponse.status* die Ressource aufscheint:\n     * *draft*: Draft in Kombination mit dem *outcome*-Wert *queued* heißt, dass die SV den jeweiligen Request bereits ausgeliefert bekommen hat, jedoch die Bearbeitung noch nicht begonnen hat. Ein *draft*-Status in Kombination mit einem anderen *outcome*-Wert ist ungültig und sollte zu einer Fehlermeldung führen.\n     * *active*: Active in Kombination mit dem *outcome*-Wert *queued* bedeutet, dass die SV aktiv gestartet hat, den CoverageEligibilityRequest zu bearbeiten, es jedoch noch kein Resultat gibt. Ist der *outcome* mit dem Wert *completed*, *error* oder *partial* befüllt, ist die SV mit der Response fertig und eine Meldung kann ausgegeben werden, dass die freigegebene CoverageEligibilityResponse vom Krankenhaus abgeholt werden kann.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/MOPED.CoverageEligibilityRequest.Abholen"
+      },
+      "name" : "Versichertenanspruchserklärung-Anfragen $abholen (POC)",
+      "description" : "Die Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die Versichertenanspruchserklärung-Anfragen $abholen Operation wird aufgerufen, um alle noch offenen Versichertenanspruchserklärung-Anfragen, die bisher seitens SV noch nicht bearbeitet wurden, abgeholt werden können.\n1. Suche nach relevanten Requests: Alle CoverageEligibilityRequests, \n  * die im Feld *CoverageEligibilityRequest.insurer* die Organization mit *Organization.identifier* = Operation-Parameter *versicherer* referenziert haben UND\n  * die noch keine gezugehörigen CoverageEligibilityResponse haben (CoverageEligibilityRequest CEReq where not exists CoverageEligibilityResponse with *CoverageEligibilityResponse.request* = CEReq). Der Status der Resposne ist dabei irrelevant.\n2. Zusammenstellen des Return-Bundles:\n   Mit der gleichen Logik wie der *_include* Suchparameter um die relevanten Ressourcen (Patient, Coverage) direkt mitbekommen zu können.\n3. Erstellung eine Draft CoverageEligibilityResponse für jeden der ausgelieferten Requests:\n   * mit Feld *CoverageEligibilityResponse.status* = *draft*\n   * mit Feld *CoverageEligibilityResponse.request* = Referenz auf jeweiligen Request\n   * mit Feld *CoverageEligibilityResponse.outcome* = *queued*",
       "isExample" : false
     },
     {

@@ -176,72 +176,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <tbody>
          <tr>
             <td style="column-width:30%">
-               <a href="OperationDefinition-MOPED.CoverageEligibilityRequest.CheckStatus.html" title="OperationDefinition/MOPED.CoverageEligibilityRequest.CheckStatus">Kostenübernahme-Anfrage $checkStatus (POC)</a>
-            </td>
-            <td>
-<p>Die Kostenübernahme-Anfrage $checkStatus Operation wird aufgerufen, um zu überprüfen, in welchem Status sich die Bearbeitung seitens SV derzeit befindet. Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen.</p>
-
-<ol>
-  <li>Suchen des MOPEDAccounts: Über die Referenz der Ressource <em>MOPEDEncounter.account</em>. Dabei handelt es sich um jenen Encounter, der den <em>aufnahmezahl</em> Parameter als <em>identifier</em> gespeichert hat.</li>
-  <li>Suchen des Requests: Es geht um jenen Request, der in <em>MOPEDAccount.coverageEligibilityRequest</em> Feld referenziert wurde</li>
-  <li>Suche nach einer CoverageEligibilityResponse die im Feld <em>CoverageEligibilityResponse.request</em> den Request aus Schritt 2 referenziert
-    <ul>
-      <li>Sollte es mehrere Responses zu einem Request geben, ist das eine Inkonsistenz die zu einer Fehlermeldung führen soll</li>
-      <li>Gibt es eine Response, so ist zu prüfen in welchem <em>CoverageEligibilityResponse.status</em> die Ressource aufscheint:</li>
-    </ul>
-    <ul>
-      <li><em>draft</em>: Draft in Kombination mit dem <em>outcome</em>-Wert <em>queued</em> heißt, dass die SV den jeweiligen Request bereits ausgeliefert bekommen hat, jedoch die Bearbeitung noch nicht begonnen hat. Ein <em>draft</em>-Status in Kombination mit einem anderen <em>outcome</em>-Wert ist ungültig und sollte zu einer Fehlermeldung führen.</li>
-      <li><em>active</em>: Active in Kombination mit dem <em>outcome</em>-Wert <em>queued</em> bedeutet, dass die SV aktiv gestartet hat, den CoverageEligibilityRequest zu bearbeiten, es jedoch noch kein Resultat gibt. Ist der <em>outcome</em> mit dem Wert <em>completed</em>, <em>error</em> oder <em>partial</em> befüllt, ist die SV mit der Response fertig und eine Meldung kann ausgegeben werden, dass die freigegebene CoverageEligibilityResponse vom Krankenhaus abgeholt werden kann.</li>
-    </ul>
-  </li>
-</ol>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="OperationDefinition-MOPED.CoverageEligibilityRequest.Abholen.html" title="OperationDefinition/MOPED.CoverageEligibilityRequest.Abholen">Kostenübernahme-Anfragen $abholen (POC)</a>
-            </td>
-            <td>
-<p>Die Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die Kostenübernahme-Anfragen $abholen Operation wird aufgerufen, um alle noch offenen Kostenübernahme-Anfragen, die bisher seitens SV noch nicht bearbeitet wurden, abgeholt werden können.</p>
-<ol>
-  <li>Suche nach relevanten Requests: Alle CoverageEligibilityRequests,
-    <ul>
-      <li>die im Feld <em>CoverageEligibilityRequest.insurer</em> die Organization mit <em>Organization.identifier</em> = Operation-Parameter <em>versicherer</em> referenziert haben UND</li>
-      <li>die noch keine gezugehörigen CoverageEligibilityResponse haben (CoverageEligibilityRequest CEReq where not exists CoverageEligibilityResponse with <em>CoverageEligibilityResponse.request</em> = CEReq). Der Status der Resposne ist dabei irrelevant.</li>
-    </ul>
-  </li>
-  <li>Zusammenstellen des Return-Bundles:
-Mit der gleichen Logik wie der <em>_include</em> Suchparameter um die relevanten Ressourcen (Patient, Coverage) direkt mitbekommen zu können.</li>
-  <li>Erstellung eine Draft CoverageEligibilityResponse für jeden der ausgelieferten Requests:
-    <ul>
-      <li>mit Feld <em>CoverageEligibilityResponse.status</em> = <em>draft</em></li>
-      <li>mit Feld <em>CoverageEligibilityResponse.request</em> = Referenz auf jeweiligen Request</li>
-      <li>mit Feld <em>CoverageEligibilityResponse.outcome</em> = <em>queued</em></li>
-    </ul>
-  </li>
-</ol>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="OperationDefinition-MOPED.CoverageEligibilityRequest.Anfragen.html" title="OperationDefinition/MOPED.CoverageEligibilityRequest.Anfragen">MOPED Kostenuebernahme $anfragen (POC)</a>
-            </td>
-            <td>
-<p>Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die Kostenübernahme $anfragen Operation wird aufgerufen, um die Kostenübernahme-Anfrage an die SV anzustoßen. Diese Operation ist irrelevant für Selbstzahler (das ist wichtig für künftige weiterentwicklung - wenn im Account auf eine Coverage-Ressource für Selbstzahler referenziert wird, darf die Operation $anfragen nicht ausgeführt werden).</p>
-<ol>
-  <li>Vorbereitung des CoverageEligibilityRequest: Ein CoverageEligibilityRequest mit dem <em>status</em> 'active' und <em>purpose</em> 'validation' und dem <em>created</em> aktuellem Zeitpunkt wird vorbereitet. Die Extension <em>ExtensionDays</em> wird mit dem Operation-Parameter <em>verlaengerungstage</em> befüllt, die Extension <em>PremiumClass</em> mit dem Operation-Parameter <em>sonderklasse</em>.</li>
-  <li>Suchen des MOPEDAccounts: Über die Referenz der Ressource <em>MOPEDEncounter.account</em>. Dabei handelt es sich um jenen Encounter, der den <em>aufnahmezahl</em> Parameter als <em>identifier</em> gespeichert hat.</li>
-  <li>Referenzieren des Patienten: Eine Referenz auf den Patienten der als <em>subject</em> im MOPEDAccount geführt ist, wird im <em>CoverageEligibilityRequest.patient</em> Element referenziert</li>
-  <li>Referenzieren der Coverage: Die gleiche Referenz wie im <em>MOPEDAccount.coverage.coverage</em> wird auch im CoverageEligibilityRequest referenziert. Check erfolgt, ob diese Coverage den gleichen Patienten als <em>beneficiary</em> hat wie das <em>subject</em> des CoverageEligibilityRequest. Außerdem wird geprüft, ob der <em>versicherer</em> an dem der Request gerichtet ist, auch tatsächlich als Coverage.insurer gelistet ist. Sollten im Account mehrere Coverages referenziert sein, so ist nur diejenige mitzusenden, die als <em>Coverage.insurer</em> den <em>versicherer</em> aus dem Operation-Parameter gespeichert hat.</li>
-  <li>Referenzieren des Providers: Als <em>provider</em> Element wird die Organization referenziert, die als <em>owner</em> im MOPEDAccount referenziert ist.</li>
-  <li>Einfügen des Versicherers: Als <em>insurer</em> Element wird die Organization referenziert, deren <em>identifier</em> dem Operation-Parameter <em>versicherer</em> entspricht.</li>
-  <li>POSTen des neu erstellten CoverageEligibilityRequest</li>
-  <li>Referenzierung des CoverageEligibilityRequest im MOPEDAccount im Element <em>coverageEligibilityRequest</em>.</li>
-</ol>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
                <a href="OperationDefinition-MOPED.Patient.Aufnehmen.html" title="OperationDefinition/MOPED.Patient.Aufnehmen">MOPED Patient $aufnehmen (POC)</a>
             </td>
             <td>
@@ -326,6 +260,72 @@ Mit der gleichen Logik wie der <em>_include</em> Suchparameter um die relevanten
 <p>Note: Der Counter für AnzahlVerlegungen wird auch im Falle einer Beurlaubung erhöht, bei der eine reguläre Verlegung-Operation aufgerufen wird.</p>
 </td>
          </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="OperationDefinition-MOPED.CoverageEligibilityRequest.Anfragen.html" title="OperationDefinition/MOPED.CoverageEligibilityRequest.Anfragen">MOPED Versichertenanspruchserklärung $anfragen (POC)</a>
+            </td>
+            <td>
+<p>Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die Versichertenanspruchserklärung $anfragen Operation wird aufgerufen, um die Versichertenanspruchserklärung-Anfrage an die SV anzustoßen. Diese Operation ist irrelevant für Selbstzahler (das ist wichtig für künftige weiterentwicklung - wenn im Account auf eine Coverage-Ressource für Selbstzahler referenziert wird, darf die Operation $anfragen nicht ausgeführt werden).</p>
+<ol>
+  <li>Vorbereitung des CoverageEligibilityRequest: Ein CoverageEligibilityRequest mit dem <em>status</em> 'active' und <em>purpose</em> 'validation' und dem <em>created</em> aktuellem Zeitpunkt wird vorbereitet. Die Extension <em>ExtensionDays</em> wird mit dem Operation-Parameter <em>verlaengerungstage</em> befüllt, die Extension <em>PremiumClass</em> mit dem Operation-Parameter <em>sonderklasse</em>.</li>
+  <li>Suchen des MOPEDAccounts: Über die Referenz der Ressource <em>MOPEDEncounter.account</em>. Dabei handelt es sich um jenen Encounter, der den <em>aufnahmezahl</em> Parameter als <em>identifier</em> gespeichert hat.</li>
+  <li>Referenzieren des Patienten: Eine Referenz auf den Patienten der als <em>subject</em> im MOPEDAccount geführt ist, wird im <em>CoverageEligibilityRequest.patient</em> Element referenziert</li>
+  <li>Referenzieren der Coverage: Die gleiche Referenz wie im <em>MOPEDAccount.coverage.coverage</em> wird auch im CoverageEligibilityRequest referenziert. Check erfolgt, ob diese Coverage den gleichen Patienten als <em>beneficiary</em> hat wie das <em>subject</em> des CoverageEligibilityRequest. Außerdem wird geprüft, ob der <em>versicherer</em> an dem der Request gerichtet ist, auch tatsächlich als Coverage.insurer gelistet ist. Sollten im Account mehrere Coverages referenziert sein, so ist nur diejenige mitzusenden, die als <em>Coverage.insurer</em> den <em>versicherer</em> aus dem Operation-Parameter gespeichert hat.</li>
+  <li>Referenzieren des Providers: Als <em>provider</em> Element wird die Organization referenziert, die als <em>owner</em> im MOPEDAccount referenziert ist.</li>
+  <li>Einfügen des Versicherers: Als <em>insurer</em> Element wird die Organization referenziert, deren <em>identifier</em> dem Operation-Parameter <em>versicherer</em> entspricht.</li>
+  <li>POSTen des neu erstellten CoverageEligibilityRequest</li>
+  <li>Referenzierung des CoverageEligibilityRequest im MOPEDAccount im Element <em>coverageEligibilityRequest</em>.</li>
+</ol>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="OperationDefinition-MOPED.CoverageEligibilityRequest.CheckStatus.html" title="OperationDefinition/MOPED.CoverageEligibilityRequest.CheckStatus">Versichertenanspruchserklärung-Anfrage $checkStatus (POC)</a>
+            </td>
+            <td>
+<p>Die Versichertenanspruchserklärung-Anfrage $checkStatus Operation wird aufgerufen, um zu überprüfen, in welchem Status sich die Bearbeitung seitens SV derzeit befindet. Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen.</p>
+
+<ol>
+  <li>Suchen des MOPEDAccounts: Über die Referenz der Ressource <em>MOPEDEncounter.account</em>. Dabei handelt es sich um jenen Encounter, der den <em>aufnahmezahl</em> Parameter als <em>identifier</em> gespeichert hat.</li>
+  <li>Suchen des Requests: Es geht um jenen Request, der in <em>MOPEDAccount.coverageEligibilityRequest</em> Feld referenziert wurde</li>
+  <li>Suche nach einer CoverageEligibilityResponse die im Feld <em>CoverageEligibilityResponse.request</em> den Request aus Schritt 2 referenziert
+    <ul>
+      <li>Sollte es mehrere Responses zu einem Request geben, ist das eine Inkonsistenz die zu einer Fehlermeldung führen soll</li>
+      <li>Gibt es eine Response, so ist zu prüfen in welchem <em>CoverageEligibilityResponse.status</em> die Ressource aufscheint:</li>
+    </ul>
+    <ul>
+      <li><em>draft</em>: Draft in Kombination mit dem <em>outcome</em>-Wert <em>queued</em> heißt, dass die SV den jeweiligen Request bereits ausgeliefert bekommen hat, jedoch die Bearbeitung noch nicht begonnen hat. Ein <em>draft</em>-Status in Kombination mit einem anderen <em>outcome</em>-Wert ist ungültig und sollte zu einer Fehlermeldung führen.</li>
+      <li><em>active</em>: Active in Kombination mit dem <em>outcome</em>-Wert <em>queued</em> bedeutet, dass die SV aktiv gestartet hat, den CoverageEligibilityRequest zu bearbeiten, es jedoch noch kein Resultat gibt. Ist der <em>outcome</em> mit dem Wert <em>completed</em>, <em>error</em> oder <em>partial</em> befüllt, ist die SV mit der Response fertig und eine Meldung kann ausgegeben werden, dass die freigegebene CoverageEligibilityResponse vom Krankenhaus abgeholt werden kann.</li>
+    </ul>
+  </li>
+</ol>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="OperationDefinition-MOPED.CoverageEligibilityRequest.Abholen.html" title="OperationDefinition/MOPED.CoverageEligibilityRequest.Abholen">Versichertenanspruchserklärung-Anfragen $abholen (POC)</a>
+            </td>
+            <td>
+<p>Die Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die Versichertenanspruchserklärung-Anfragen $abholen Operation wird aufgerufen, um alle noch offenen Versichertenanspruchserklärung-Anfragen, die bisher seitens SV noch nicht bearbeitet wurden, abgeholt werden können.</p>
+<ol>
+  <li>Suche nach relevanten Requests: Alle CoverageEligibilityRequests,
+    <ul>
+      <li>die im Feld <em>CoverageEligibilityRequest.insurer</em> die Organization mit <em>Organization.identifier</em> = Operation-Parameter <em>versicherer</em> referenziert haben UND</li>
+      <li>die noch keine gezugehörigen CoverageEligibilityResponse haben (CoverageEligibilityRequest CEReq where not exists CoverageEligibilityResponse with <em>CoverageEligibilityResponse.request</em> = CEReq). Der Status der Resposne ist dabei irrelevant.</li>
+    </ul>
+  </li>
+  <li>Zusammenstellen des Return-Bundles:
+Mit der gleichen Logik wie der <em>_include</em> Suchparameter um die relevanten Ressourcen (Patient, Coverage) direkt mitbekommen zu können.</li>
+  <li>Erstellung eine Draft CoverageEligibilityResponse für jeden der ausgelieferten Requests:
+    <ul>
+      <li>mit Feld <em>CoverageEligibilityResponse.status</em> = <em>draft</em></li>
+      <li>mit Feld <em>CoverageEligibilityResponse.request</em> = Referenz auf jeweiligen Request</li>
+      <li>mit Feld <em>CoverageEligibilityResponse.outcome</em> = <em>queued</em></li>
+    </ul>
+  </li>
+</ol>
+</td>
+         </tr>
       </tbody>
    </table>
    <a name="2"> </a>
@@ -380,7 +380,7 @@ Mit der gleichen Logik wie der <em>_include</em> Suchparameter um die relevanten
                <a href="StructureDefinition-MOPEDCoverageEligibilityRequest.html" title="StructureDefinition/MOPEDCoverageEligibilityRequest">MOPEDCoverageEligibilityRequest</a>
             </td>
             <td>
-<p>MOPED Profil der CoverageEligibilityRequest Ressource für die Kostenübernahmeanfrage.</p>
+<p>MOPED Profil der CoverageEligibilityRequest Ressource für die Versichertenanspruchserklärung-Anfrage.</p>
 </td>
          </tr>
          <tr>
@@ -388,7 +388,7 @@ Mit der gleichen Logik wie der <em>_include</em> Suchparameter um die relevanten
                <a href="StructureDefinition-MOPEDCoverageEligibilityResponse.html" title="StructureDefinition/MOPEDCoverageEligibilityResponse">MOPEDCoverageEligibilityResponse</a>
             </td>
             <td>
-<p>MOPED Profil der CoverageEligibilityResponse Ressource für die Kostenübernahmeantwort.</p>
+<p>MOPED Profil der CoverageEligibilityResponse Ressource für die Versichertenanspruchserklärung-Antwort.</p>
 </td>
          </tr>
          <tr>
@@ -1298,7 +1298,7 @@ Der höchste Wert, mit welchem das Feld VTAGE befüllt werden kann, ist jener We
 
 <div class="inner-wrapper">
   <p><a name="l2671">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Thu, Sep 26, 2024 07:17+0000">2024-09-26</span>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Thu, Sep 26, 2024 07:48+0000">2024-09-26</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
