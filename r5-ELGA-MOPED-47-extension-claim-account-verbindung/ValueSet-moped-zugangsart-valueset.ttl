@@ -1,0 +1,107 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/ValueSet/moped-zugangsart-valueset> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "moped-zugangsart-valueset"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet moped-zugangsart-valueset</b></p><a name=\"moped-zugangsart-valueset\"> </a><a name=\"hcmoped-zugangsart-valueset\"> </a><a name=\"moped-zugangsart-valueset-en-US\"> </a><ul><li>Include these codes as defined in <code>http://tbd.at/moped-ext-diagnose-art</code><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>A</td><td>Aufnahme in den allgemein stationären Bereich inkl. Aufnahme auf Intensiveinheiten</td></tr><tr><td>T</td><td>Transfer von einem anderen Krankenhaus in den allgemein stationären Bereich inkl. Intensiveinheiten</td></tr><tr><td>W</td><td>Wiederaufnahme in den allgemein stationären Bereich inkl. Wiederaufnahme auf Intensiveinheiten</td></tr><tr><td>R</td><td>Aufnahme in den Bereich der Rehabilitation</td></tr><tr><td>K</td><td>Aufnahme eines 0-Tagesfalls</td></tr><tr><td>L</td><td>Kennzeichen der Datensätze, die den Patientenaufenthalt nach dem Zeitpunkt der Asylierung beschreiben</td></tr><tr><td>G</td><td>Aufnahme eines Frühgeborenen/Neugeborenen am Tag der Geburt oder am Folgetag in den allgemein stationären Bereich inkl. Aufnahme auf Intensiveinheiten</td></tr><tr><td>LKF_P</td><td>Aufnahme in den ausschließlichen Bereich der Pflege</td></tr><tr><td>KaOrg_3</td><td>Ambulanzfall</td></tr><tr><td>KaOrg_7</td><td>AUVA Wiederaufnahme (Diagnose der Aufnahme enthält Diagnose der Ersterkrankung. Aufnahmezahl AUFZL enthält jene des Erstberichtes).</td></tr><tr><td>KaOrg_8</td><td>Kurheilverfahren stationär</td></tr><tr><td>KaOrg_9</td><td>Rehabilitationsaufenthalt ambulant</td></tr><tr><td>KaOrg_U</td><td>Urgenz</td></tr><tr><td>KaOrg_1</td><td>Verlängerung</td></tr><tr><td>KaOrg_2</td><td>Asylierung</td></tr><tr><td>KaOrg_E</td><td>Erinnerung (Urgenz von Ambulanzmeldungen)</td></tr><tr><td>LKF_1</td><td>Fremdzuweisung von einem:einer Allgemeinmediziner:in</td></tr><tr><td>LKF_2</td><td>Fremdzuweisung von einem Facharzt/einer Fachärztin</td></tr><tr><td>LKF_3</td><td>Fremdzuweisung von der eigenen/einer anderen Krankenanstalt ohne bestehenden stationären Aufenthalt</td></tr><tr><td>LKF_4</td><td>Fremdzuweisung von einem Notarzt/einer Notärztin</td></tr><tr><td>LKF_5</td><td>Selbstzuweisung (ohne Einweisungsschein)</td></tr><tr><td>LKF_6</td><td>Wiederbestellung</td></tr><tr><td>LKF_9</td><td>Sonstige Zuweisung (durch Behörde, Pflegeeinrichtung, etc.)</td></tr></table></li></ul></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://example.org/ValueSet/moped-zugangsart-valueset"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "Zugangsart"] ; # 
+  fhir:title [ fhir:v "Zugangsart des Patienten"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2024-09-26T09:34:58+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Example Publisher"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Example Publisher" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://example.org/example-publisher" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "ValueSet für die Zugangsart des Patienten (LKF + Ka-Org)"] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "http://tbd.at/moped-ext-diagnose-art"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "A" ] ;
+         fhir:display [ fhir:v "Aufnahme in den allgemein stationären Bereich inkl. Aufnahme auf Intensiveinheiten" ]
+       ] [
+         fhir:code [ fhir:v "T" ] ;
+         fhir:display [ fhir:v "Transfer von einem anderen Krankenhaus in den allgemein stationären Bereich inkl. Intensiveinheiten" ]
+       ] [
+         fhir:code [ fhir:v "W" ] ;
+         fhir:display [ fhir:v "Wiederaufnahme in den allgemein stationären Bereich inkl. Wiederaufnahme auf Intensiveinheiten" ]
+       ] [
+         fhir:code [ fhir:v "R" ] ;
+         fhir:display [ fhir:v "Aufnahme in den Bereich der Rehabilitation" ]
+       ] [
+         fhir:code [ fhir:v "K" ] ;
+         fhir:display [ fhir:v "Aufnahme eines 0-Tagesfalls" ]
+       ] [
+         fhir:code [ fhir:v "L" ] ;
+         fhir:display [ fhir:v "Kennzeichen der Datensätze, die den Patientenaufenthalt nach dem Zeitpunkt der Asylierung beschreiben" ]
+       ] [
+         fhir:code [ fhir:v "G" ] ;
+         fhir:display [ fhir:v "Aufnahme eines Frühgeborenen/Neugeborenen am Tag der Geburt oder am Folgetag in den allgemein stationären Bereich inkl. Aufnahme auf Intensiveinheiten" ]
+       ] [
+         fhir:code [ fhir:v "LKF_P" ] ;
+         fhir:display [ fhir:v "Aufnahme in den ausschließlichen Bereich der Pflege" ]
+       ] [
+         fhir:code [ fhir:v "KaOrg_3" ] ;
+         fhir:display [ fhir:v "Ambulanzfall" ]
+       ] [
+         fhir:code [ fhir:v "KaOrg_7" ] ;
+         fhir:display [ fhir:v "AUVA Wiederaufnahme (Diagnose der Aufnahme enthält Diagnose der Ersterkrankung. Aufnahmezahl AUFZL enthält jene des Erstberichtes)." ]
+       ] [
+         fhir:code [ fhir:v "KaOrg_8" ] ;
+         fhir:display [ fhir:v "Kurheilverfahren stationär" ]
+       ] [
+         fhir:code [ fhir:v "KaOrg_9" ] ;
+         fhir:display [ fhir:v "Rehabilitationsaufenthalt ambulant" ]
+       ] [
+         fhir:code [ fhir:v "KaOrg_U" ] ;
+         fhir:display [ fhir:v "Urgenz" ]
+       ] [
+         fhir:code [ fhir:v "KaOrg_1" ] ;
+         fhir:display [ fhir:v "Verlängerung" ]
+       ] [
+         fhir:code [ fhir:v "KaOrg_2" ] ;
+         fhir:display [ fhir:v "Asylierung" ]
+       ] [
+         fhir:code [ fhir:v "KaOrg_E" ] ;
+         fhir:display [ fhir:v "Erinnerung (Urgenz von Ambulanzmeldungen)" ]
+       ] [
+         fhir:code [ fhir:v "LKF_1" ] ;
+         fhir:display [ fhir:v "Fremdzuweisung von einem:einer Allgemeinmediziner:in" ]
+       ] [
+         fhir:code [ fhir:v "LKF_2" ] ;
+         fhir:display [ fhir:v "Fremdzuweisung von einem Facharzt/einer Fachärztin" ]
+       ] [
+         fhir:code [ fhir:v "LKF_3" ] ;
+         fhir:display [ fhir:v "Fremdzuweisung von der eigenen/einer anderen Krankenanstalt ohne bestehenden stationären Aufenthalt" ]
+       ] [
+         fhir:code [ fhir:v "LKF_4" ] ;
+         fhir:display [ fhir:v "Fremdzuweisung von einem Notarzt/einer Notärztin" ]
+       ] [
+         fhir:code [ fhir:v "LKF_5" ] ;
+         fhir:display [ fhir:v "Selbstzuweisung (ohne Einweisungsschein)" ]
+       ] [
+         fhir:code [ fhir:v "LKF_6" ] ;
+         fhir:display [ fhir:v "Wiederbestellung" ]
+       ] [
+         fhir:code [ fhir:v "LKF_9" ] ;
+         fhir:display [ fhir:v "Sonstige Zuweisung (durch Behörde, Pflegeeinrichtung, etc.)" ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
