@@ -1,0 +1,106 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/Encounter/Test1MOPEDEncounter1> a fhir:Encounter ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Test1MOPEDEncounter1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://example.org/StructureDefinition/MOPEDEncounter"^^xsd:anyURI ;
+       fhir:link <http://example.org/StructureDefinition/MOPEDEncounter>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Encounter Test1MOPEDEncounter1</b></p><a name=\"Test1MOPEDEncounter1\"> </a><a name=\"hcTest1MOPEDEncounter1\"> </a><a name=\"Test1MOPEDEncounter1-en-US\"> </a><p><b>identifier</b>: VN/1024000028</p><p><b>status</b>: In Progress</p><p><b>class</b>: <span title=\"Codes:{http://tbd.at/MOPED-encounter-behandlungsart S}\">S</span>, <span title=\"Codes:{http://tbd.at/moped-ext-aufnahmeart P}\">P</span></p><p><b>subject</b>: <a href=\"Patient-Test1Patient.html\">Patientenkommun Moderne (official) Female, DoB: 1969-04-21 ( Social Security Number: 9994210469)</a></p><p><b>serviceProvider</b>: <a href=\"Organization-Test1OrganizationHerzJesuKrankenhaus.html\">Organization Herz Jesu-Krankenhaus</a></p><p><b>actualPeriod</b>: 2024-02-22 19:33:00+0200 --&gt; (ongoing)</p><blockquote><p><b>reason</b></p><p><b>use</b>: <span title=\"Codes:{http://hl7.org/fhir/ValueSet/encounter-reason-use RV}\">RV</span></p><h3>Values</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Concept</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:\">00</span></td></tr></table></blockquote><blockquote><p><b>diagnosis</b></p><h3>Conditions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Reference</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Condition-Test1Condition1.html\">Condition Sleep Apnea</a></td></tr></table><p><b>use</b>: <span title=\"Codes:{https://termgit.elga.gv.at/ValueSet/lkf-diagnose-typ H}\">H</span></p></blockquote><p><b>account</b>: <a href=\"Account-Test1Account.html\">Account: extension = TBD (moped-ext-workflow-status#TBD),0 (MOPED-account-VerdachtArbeitsSchuelerunfall#0),false,TEST12345678; status = active</a></p><h3>Admissions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Extension</b></td><td><b>Origin</b></td></tr><tr><td style=\"display: none\">*</td><td/><td><a href=\"Organization-Test1OrganizationUeberweisendeOrganisation.html\">Organization HJK Interne Ambulanz</a></td></tr></table></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://termgit.elga.gv.at/ValueSet/hl7-at-patientidentifier"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "VN" ]
+       ] )
+     ] ;
+     fhir:value [ fhir:v "1024000028" ] ;
+     fhir:assigner [
+       fhir:link <http://example.org/Organization/Test1OrganizationHerzJesuKrankenhaus> ;
+       fhir:reference [ fhir:v "Organization/Test1OrganizationHerzJesuKrankenhaus" ]
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "in-progress"] ; # 
+  fhir:class ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://tbd.at/MOPED-encounter-behandlungsart"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "S" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://tbd.at/moped-ext-aufnahmeart"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "P" ]
+     ] )
+  ] ) ; # 
+  fhir:subject [
+     fhir:link <http://example.org/Patient/Test1Patient> ;
+     fhir:reference [ fhir:v "Patient/Test1Patient" ]
+  ] ; # 
+  fhir:serviceProvider [
+     fhir:link <http://example.org/Organization/Test1OrganizationHerzJesuKrankenhaus> ;
+     fhir:reference [ fhir:v "Organization/Test1OrganizationHerzJesuKrankenhaus" ]
+  ] ; # 
+  fhir:actualPeriod [
+     fhir:start [ fhir:v "2024-02-22T19:33:00+02:00"^^xsd:dateTime ]
+  ] ; # 
+  fhir:reason ( [
+     fhir:use ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://hl7.org/fhir/ValueSet/encounter-reason-use"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "RV" ]
+       ] )
+     ] ) ;
+     fhir:value ( [
+       fhir:concept [
+         fhir:coding ( [
+           fhir:code [ fhir:v "00" ]
+         ] )
+       ]
+     ] )
+  ] ) ; # 
+  fhir:diagnosis ( [
+     fhir:condition ( [
+       fhir:reference [
+         fhir:link <http://example.org/Condition/Test1Condition1> ;
+         fhir:reference [ fhir:v "Condition/Test1Condition1" ]
+       ]
+     ] ) ;
+     fhir:use ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://termgit.elga.gv.at/ValueSet/lkf-diagnose-typ"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "H" ]
+       ] )
+     ] )
+  ] ) ; # 
+  fhir:account ( [
+     fhir:link <http://example.org/Account/Test1Account> ;
+     fhir:reference [ fhir:v "Account/Test1Account" ]
+  ] ) ; # 
+  fhir:admission [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://example.org/StructureDefinition/moped-ext-zugangsart"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Coding ;
+         fhir:system [ fhir:v "http://tbd.at/moped-ext-diagnose-art"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "A" ]
+       ]
+     ] ) ;
+     fhir:origin [
+       fhir:link <http://example.org/Organization/Test1OrganizationUeberweisendeOrganisation> ;
+       fhir:reference [ fhir:v "Organization/Test1OrganizationUeberweisendeOrganisation" ]
+     ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

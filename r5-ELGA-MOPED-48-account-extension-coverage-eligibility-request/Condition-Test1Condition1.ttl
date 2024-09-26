@@ -1,0 +1,33 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/Condition/Test1Condition1> a fhir:Condition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Test1Condition1"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Condition Test1Condition1</b></p><a name=\"Test1Condition1\"> </a><a name=\"hcTest1Condition1\"> </a><a name=\"Test1Condition1-en-US\"> </a><p><b>clinicalStatus</b>: <span title=\"Codes:\">active</span></p><p><b>code</b>: <span title=\"Codes:{http://hl7.org/fhir/sid/icd-10 G47.3}\">Sleep Apnea</span></p><p><b>subject</b>: <a href=\"Patient-Test1Patient.html\">Patientenkommun Moderne (official) Female, DoB: 1969-04-21 ( Social Security Number: 9994210469)</a></p></div>"
+  ] ; # 
+  fhir:clinicalStatus [
+     fhir:coding ( [
+       fhir:code [ fhir:v "active" ]
+     ] )
+  ] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/sid/icd-10"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "G47.3" ] ;
+       fhir:display [ fhir:v "Sleep Apnea" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:link <http://example.org/Patient/Test1Patient> ;
+     fhir:reference [ fhir:v "Patient/Test1Patient" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
