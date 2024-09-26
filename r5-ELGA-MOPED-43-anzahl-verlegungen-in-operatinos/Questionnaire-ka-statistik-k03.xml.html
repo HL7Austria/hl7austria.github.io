@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>FHIR.EXAMPLE\Satzart K03 – KA-Statistik (Ressourcen und Inanspruchnahme) - XML Representation - FHIR&reg; v5.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"8.85"}
+    h3,h4,h5,h6{--heading-prefix:"8.85"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+          <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img src="logo.png" id="header-logo"/>
+          </div>
+          <div class="col-11">
+          <!-- at-fhir-ig-template end -->
+              <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)</span><br/>
+                <span class="label label-info">0.1.0 - ci-build</span>
+              </p>
+            </div>
+          <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+          <!-- at-fhir-ig-template end -->
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R5/index.html" class="navbar-brand hidden">FHIR&reg;</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="use_case_description.html">Sollprozess (Entwurf)</a>
+  </li>
+  <li>
+    <a href="actors.html">Akteure</a>
+  </li>
+  <li>
+    <a href="workflowmanagement.html">Workflowmanagement</a>
+  </li>
+  <li>
+    <a href="poc.html">Proof of Concept</a>
+  </li>
+  <li>
+    <a href="lkf_mapping.html">LKF Mapping</a>
+  </li>
+  <li>
+    <a href="ka-org_mapping.html">Ka-Org Mapping</a>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="artifacts.html"><b>Artifacts Summary</b></a></li><li><b>Satzart K03 – KA-Statistik (Ressourcen und Inanspruchnahme)</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+	
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<div style="counter-reset: section 7" class="col-12">
+  <!-- ReleaseHeader --><p id="publish-box">Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED) - Local Development build (v0.1.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://example.org/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="Questionnaire-ka-statistik-k03.html">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li class="active">
+      <a href="#">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="Questionnaire-ka-statistik-k03.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="Questionnaire-ka-statistik-k03.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+<h2 id="root">: Satzart K03 – KA-Statistik (Ressourcen und Inanspruchnahme) - XML Representation</h2>
+
+  <table class="colsi">
+    <tr>
+
+      <td colspan="2">
+        
+          Active
+          
+            as of 2024-09-26
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p><a href="Questionnaire-ka-statistik-k03.xml" no-download="true">Raw xml</a> | <a download="null" href="Questionnaire-ka-statistik-k03.xml">Download</a></p>
+
+    <!-- insert intro if present -->
+  
+
+
+
+  <pre style="white-space: pre; text-wrap: nowrap; width: auto;" class="xml"><code style="white-space: pre; text-wrap: nowrap;">
+&lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire">Questionnaire</a> xmlns="http://hl7.org/fhir"&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.id">id</a> <a href="http://hl7.org/fhir/R5/datatypes.html#id">value</a>="ka-statistik-k03"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.text">text</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/narrative.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="generated"/&gt;
+    &lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;p class="res-header-id"&gt;&lt;b&gt;Generated Narrative: Questionnaire ka-statistik-k03&lt;/b&gt;&lt;/p&gt;&lt;a name="ka-statistik-k03"&gt; &lt;/a&gt;&lt;a name="hcka-statistik-k03"&gt; &lt;/a&gt;&lt;a name="ka-statistik-k03-en-US"&gt; &lt;/a&gt;&lt;table border="1" cellpadding="0" cellspacing="0" style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"&gt;&lt;tr style="border: 2px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top"&gt;&lt;th style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/formats.html#table" title="The linkID for the item"&gt;LinkID&lt;/a&gt;&lt;/th&gt;&lt;th style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/formats.html#table" title="Text for the item"&gt;Text&lt;/a&gt;&lt;/th&gt;&lt;th style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/formats.html#table" title="Minimum and Maximum # of times the item can appear in the instance"&gt;Cardinality&lt;/a&gt;&lt;/th&gt;&lt;th style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/formats.html#table" title="The type of the item"&gt;Type&lt;/a&gt;&lt;/th&gt;&lt;th style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/formats.html#table" title="Additional information about the item"&gt;Description &amp;amp; Constraints&lt;/a&gt;&lt;span style="float: right"&gt;&lt;a href="http://hl7.org/fhir/R5/formats.html#table" title="Legend for this format"&gt;&lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/&gt;&lt;/a&gt;&lt;/span&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon_q_root.gif" alt="." style="background-color: white; background-color: inherit" title="QuestionnaireRoot" class="hierarchy"/&gt; K03 Questionnaire&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;This questionnaire is used to collect KA-Statistik data for K03 message reporting.&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Questionnaire&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;http://example.org/Questionnaire/ka-statistik-k03#0.1.0&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" id="item.sazartenkennzeichen" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon-q-string.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="string" class="hierarchy"/&gt; sazartenkennzeichen&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Sazartenkennzeichen&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/codesystem-item-type.html#item-type-string"&gt;string&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Max Length: 3&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" id="item.jahr" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon-q-date.png" alt="." style="background-color: white; background-color: inherit" title="date" class="hierarchy"/&gt; jahr&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Jahr&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/codesystem-item-type.html#item-type-date"&gt;date&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;/tr&gt;
+&lt;tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" id="item.krankenanstaltennummer" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon-q-string.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="string" class="hierarchy"/&gt; krankenanstaltennummer&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Krankenanstaltennummer&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/codesystem-item-type.html#item-type-string"&gt;string&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Max Length: 6&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" id="item.systemisierte-betten-insgesamt" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon-q-integer.png" alt="." style="background-color: white; background-color: inherit" title="integer" class="hierarchy"/&gt; systemisierte-betten-insgesamt&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Systemisierte Betten insgesamt&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/codesystem-item-type.html#item-type-integer"&gt;integer&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Max Length: 6&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" id="item.systemisierte-betten-sonderklasse" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon-q-integer.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="integer" class="hierarchy"/&gt; systemisierte-betten-sonderklasse&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Systemisierte Betten – Sonderklasse&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/codesystem-item-type.html#item-type-integer"&gt;integer&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Max Length: 6&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" id="item.tatsachlich-aufgestellte-betten-insgesamt" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon-q-integer.png" alt="." style="background-color: white; background-color: inherit" title="integer" class="hierarchy"/&gt; tatsachlich-aufgestellte-betten-insgesamt&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Tatsächlich aufgestellte Betten insgesamt&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/codesystem-item-type.html#item-type-integer"&gt;integer&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Max Length: 6&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" id="item.tatsachlich-aufgestellte-betten-sonderklasse" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon-q-integer.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="integer" class="hierarchy"/&gt; tatsachlich-aufgestellte-betten-sonderklasse&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Tatsächlich aufgestellte Betten – Sonderklasse&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/codesystem-item-type.html#item-type-integer"&gt;integer&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Max Length: 6&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" id="item.belagstage-sonderklasse" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon-q-integer.png" alt="." style="background-color: white; background-color: inherit" title="integer" class="hierarchy"/&gt; belagstage-sonderklasse&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Belagstage – Sonderklasse&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/codesystem-item-type.html#item-type-integer"&gt;integer&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Max Length: 6&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" id="item.aufnahmen-sonderklasse" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon-q-integer.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="integer" class="hierarchy"/&gt; aufnahmen-sonderklasse&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Aufnahmen – Sonderklasse&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/codesystem-item-type.html#item-type-integer"&gt;integer&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Max Length: 6&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" id="item.vom-vorjahr-verbliebene-sonderklasse" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon-q-integer.png" alt="." style="background-color: white; background-color: inherit" title="integer" class="hierarchy"/&gt; vom-vorjahr-verbliebene-sonderklasse&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Vom Vorjahr Verbliebene – Sonderklasse&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/codesystem-item-type.html#item-type-integer"&gt;integer&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Max Length: 6&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" id="item.entlassungen-sonderklasse" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon-q-integer.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="integer" class="hierarchy"/&gt; entlassungen-sonderklasse&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Entlassungen – Sonderklasse&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/codesystem-item-type.html#item-type-integer"&gt;integer&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Max Length: 6&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" id="item.verstorbene-sonderklasse" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon-q-integer.png" alt="." style="background-color: white; background-color: inherit" title="integer" class="hierarchy"/&gt; verstorbene-sonderklasse&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Verstorbene – Sonderklasse&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/codesystem-item-type.html#item-type-integer"&gt;integer&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Max Length: 6&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" id="item.aufnahmen-von-begleitpersonen" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon-q-integer.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="integer" class="hierarchy"/&gt; aufnahmen-von-begleitpersonen&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Aufnahmen von Begleitpersonen&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/codesystem-item-type.html#item-type-integer"&gt;integer&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Max Length: 6&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" id="item.belagstage-von-begleitpersonen" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon-q-integer.png" alt="." style="background-color: white; background-color: inherit" title="integer" class="hierarchy"/&gt; belagstage-von-begleitpersonen&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Belagstage von Begleitpersonen&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/codesystem-item-type.html#item-type-integer"&gt;integer&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Max Length: 6&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" id="item.ambulante-patienten-patientinnen" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon-q-integer.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="integer" class="hierarchy"/&gt; ambulante-patienten-patientinnen&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Ambulante Patienten/Patientinnen&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/codesystem-item-type.html#item-type-integer"&gt;integer&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Max Length: 6&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" id="item.ambulante-betreuungsplatze" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon-q-integer.png" alt="." style="background-color: white; background-color: inherit" title="integer" class="hierarchy"/&gt; ambulante-betreuungsplatze&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Ambulante Betreuungsplätze&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/codesystem-item-type.html#item-type-integer"&gt;integer&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Max Length: 6&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" id="item.op-tische" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon-q-integer.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="integer" class="hierarchy"/&gt; op-tische&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;OP-Tische&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/codesystem-item-type.html#item-type-integer"&gt;integer&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Max Length: 6&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" id="item.entbindungsplatze" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon-q-integer.png" alt="." style="background-color: white; background-color: inherit" title="integer" class="hierarchy"/&gt; entbindungsplatze&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Entbindungsplätze&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/codesystem-item-type.html#item-type-integer"&gt;integer&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Max Length: 6&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" id="item.postoperative-uberwachungsplatze" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon-q-integer.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="integer" class="hierarchy"/&gt; postoperative-uberwachungsplatze&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Postoperative Überwachungsplätze&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/codesystem-item-type.html#item-type-integer"&gt;integer&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Max Length: 6&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" id="item.dialyseplatze" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon-q-integer.png" alt="." style="background-color: white; background-color: inherit" title="integer" class="hierarchy"/&gt; dialyseplatze&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Dialyseplätze&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/codesystem-item-type.html#item-type-integer"&gt;integer&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Max Length: 6&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" id="item.obduktionen-durch-anstaltspersonal" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon-q-integer.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="integer" class="hierarchy"/&gt; obduktionen-durch-anstaltspersonal&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Obduktionen durch Anstaltspersonal&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/codesystem-item-type.html#item-type-integer"&gt;integer&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Max Length: 6&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" id="item.obduktionen-durch-fremdpersonal" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon-q-integer.png" alt="." style="background-color: white; background-color: inherit" title="integer" class="hierarchy"/&gt; obduktionen-durch-fremdpersonal&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Obduktionen durch Fremdpersonal&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/codesystem-item-type.html#item-type-integer"&gt;integer&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Max Length: 6&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" id="item.entbindungen-lebendgeborene" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon-q-integer.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="integer" class="hierarchy"/&gt; entbindungen-lebendgeborene&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Entbindungen – Lebendgeborene&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/codesystem-item-type.html#item-type-integer"&gt;integer&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Max Length: 6&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)" id="item.entbindungen-totgeborene" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon-q-integer.png" alt="." style="background-color: white; background-color: inherit" title="integer" class="hierarchy"/&gt; entbindungen-totgeborene&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Entbindungen – Totgeborene&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R5/codesystem-item-type.html#item-type-integer"&gt;integer&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;Max Length: 6&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan="5" class="hierarchy"&gt;&lt;br/&gt;&lt;a href="http://hl7.org/fhir/R5/formats.html#table" title="Legend for this format"&gt;&lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/&gt; Documentation for this format&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;<a name="end-xhtml"></a>
+  &lt;/text&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.url">url</a> <a href="http://hl7.org/fhir/R5/datatypes.html#uri">value</a>="http://example.org/Questionnaire/ka-statistik-k03"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.version">version</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="0.1.0"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.name">name</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="K03 Questionnaire"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.title">title</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="K03 Questionnaire for KA-Statistik"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.status">status</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="active"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.subjectType">subjectType</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="Patient"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.date">date</a> <a href="http://hl7.org/fhir/R5/datatypes.html#dateTime">value</a>="2024-09-26T05:46:51+00:00"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.publisher">publisher</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Example Publisher"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.contact">contact</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/metadatatypes.html#ContactDetail#ContactDetail.name">name</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Example Publisher"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R5/datatypes.html#ContactPoint#ContactPoint.system">system</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="url"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R5/datatypes.html#ContactPoint#ContactPoint.value">value</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="http://example.org/example-publisher"/&gt;
+    &lt;/telecom&gt;
+  &lt;/contact&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.description">description</a>
+               <a href="http://hl7.org/fhir/R5/datatypes.html#markdown">value</a>="This questionnaire is used to collect KA-Statistik data for K03 message reporting."/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="sazartenkennzeichen"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Sazartenkennzeichen"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="string"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.maxLength">maxLength</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="3"/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="jahr"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Jahr"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="date"/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="krankenanstaltennummer"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Krankenanstaltennummer"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="string"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.maxLength">maxLength</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="6"/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="systemisierte-betten-insgesamt"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Systemisierte Betten insgesamt"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="integer"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.maxLength">maxLength</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="6"/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="systemisierte-betten-sonderklasse"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Systemisierte Betten – Sonderklasse"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="integer"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.maxLength">maxLength</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="6"/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="tatsachlich-aufgestellte-betten-insgesamt"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Tatsächlich aufgestellte Betten insgesamt"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="integer"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.maxLength">maxLength</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="6"/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="tatsachlich-aufgestellte-betten-sonderklasse"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Tatsächlich aufgestellte Betten – Sonderklasse"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="integer"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.maxLength">maxLength</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="6"/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="belagstage-sonderklasse"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Belagstage – Sonderklasse"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="integer"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.maxLength">maxLength</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="6"/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="aufnahmen-sonderklasse"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Aufnahmen – Sonderklasse"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="integer"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.maxLength">maxLength</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="6"/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="vom-vorjahr-verbliebene-sonderklasse"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Vom Vorjahr Verbliebene – Sonderklasse"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="integer"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.maxLength">maxLength</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="6"/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="entlassungen-sonderklasse"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Entlassungen – Sonderklasse"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="integer"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.maxLength">maxLength</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="6"/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="verstorbene-sonderklasse"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Verstorbene – Sonderklasse"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="integer"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.maxLength">maxLength</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="6"/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="aufnahmen-von-begleitpersonen"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Aufnahmen von Begleitpersonen"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="integer"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.maxLength">maxLength</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="6"/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="belagstage-von-begleitpersonen"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Belagstage von Begleitpersonen"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="integer"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.maxLength">maxLength</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="6"/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="ambulante-patienten-patientinnen"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Ambulante Patienten/Patientinnen"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="integer"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.maxLength">maxLength</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="6"/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="ambulante-betreuungsplatze"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Ambulante Betreuungsplätze"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="integer"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.maxLength">maxLength</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="6"/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="op-tische"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="OP-Tische"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="integer"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.maxLength">maxLength</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="6"/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="entbindungsplatze"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Entbindungsplätze"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="integer"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.maxLength">maxLength</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="6"/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="postoperative-uberwachungsplatze"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Postoperative Überwachungsplätze"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="integer"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.maxLength">maxLength</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="6"/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="dialyseplatze"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Dialyseplätze"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="integer"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.maxLength">maxLength</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="6"/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="obduktionen-durch-anstaltspersonal"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Obduktionen durch Anstaltspersonal"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="integer"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.maxLength">maxLength</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="6"/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="obduktionen-durch-fremdpersonal"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Obduktionen durch Fremdpersonal"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="integer"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.maxLength">maxLength</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="6"/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="entbindungen-lebendgeborene"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Entbindungen – Lebendgeborene"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="integer"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.maxLength">maxLength</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="6"/&gt;
+  &lt;/item&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item">item</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.linkId">linkId</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="entbindungen-totgeborene"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.text">text</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Entbindungen – Totgeborene"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="integer"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/questionnaire.html#Questionnaire.item.maxLength">maxLength</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="6"/&gt;
+  &lt;/item&gt;
+&lt;/Questionnaire&gt;</code></pre>
+
+
+    <!-- insert notes if present -->
+  
+
+
+
+</div>
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /row -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-content -->
+
+<script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+<script src="assets/js/window-hash.js" type="text/javascript"> </script>
+<a name="bottom"> </a>
+<div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+<div class="container">    <!-- container -->
+
+<div class="inner-wrapper">
+  <p><a name="l1105">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Thu, Sep 26, 2024 05:46+0000">2024-09-26</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    
+  </p>
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+<div class="container">    <!-- container -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+<script src="assets/js/respond.min.js" type="text/javascript"> </script>
+<script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+<script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+<script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+<script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+</body>
+</html>
