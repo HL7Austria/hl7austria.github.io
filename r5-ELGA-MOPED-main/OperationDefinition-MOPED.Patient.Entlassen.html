@@ -202,7 +202,7 @@
         
           Draft
           
-            as of 2024-09-26
+            as of 2024-09-27
           
         
       </td>
@@ -226,19 +226,28 @@
 
 
 <p>
-<p>Diese Operation wurde noch nicht ausdefiniert - die Kommentare unterhalb dienen lediglich zur Orientierung und müssen noch stark verändert und erweitert werden.</p>
+<p>Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen.</p>
 
 <p>Die Patient $entlassen Operation wird aufgerufen, wenn ein(e) Patient*in aus dem Krankenhaus entlassen wurde.</p>
 
-<p>Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen.</p>
+<p>Voraussetzungen für den Aufruf:</p>
+<ul>
+  <li>Account-Status: SV verarbeitet</li>
+</ul>
 
 <ol>
   <li>Der Encounter erhält ein End-Datum (<em>MOPEDEncounter.actualPeriod.end</em>); der <em>MOPEDEncounter.status</em> wird auf <em>discharged</em> gesetzt</li>
   <li>Das Element <em>MOPEDEncounter.admission.dischargeDisposition</em> wird mit dem Operation-Parameter <em>entlassungsart</em> befüllt.</li>
   <li>Der alte MOPEDTransferEncounter der <em>partOf</em> des MOPEDEncounters mit der jeweiligen Aufnahmezahl war und noch den Status <em>in-progress</em> hat, wird gesucht. Der Status wird auf <em>completed</em> gesetzt und die <em>MOPEDTransferEncounter.actualPeriod.end</em> mit dem <em>zeitpunkt</em> der Entlassung versehen.</li>
   <li>Ein MOPEDClaim mit dem Status <em>draft</em> wird erstellt und in <em>MOPEDAccount.claim</em> referenziert.</li>
-  <li>Änderungen am Account: der <em>MOPEDAccount.WorkflowStatus</em> wird auf <em>Entlassungs Aviso</em> gesetzt, oder, falls der <em>modus</em>-Parameter auf <em>freigeben</em> gesetzt war und die Validierung erfolgreich war, wird <em>MOPEDAccount.WorkflowStatus</em> auf <em>Entlassung vollständig</em> gesetzt. Ebenso im <em>MOPEDAccount</em> im Element <em>TageOhneKostenbeitrag</em> wird der gleichnamige Opeartion-Parameter abgespeichert. Dieser ist verpflichtend zu befüllen, wenn der <em>modus</em>-Parameter auf <em>freigeben</em> gestellt ist.</li>
+  <li>Änderungen am Account: der <em>MOPEDAccount.WorkflowStatus</em> wird auf <em>Entlassungs Aviso</em> gesetzt, oder, falls der <em>freigeben</em>-Parameter auf <em>true</em> gesetzt war und die Validierung erfolgreich war, wird <em>MOPEDAccount.WorkflowStatus</em> auf <em>Entlassung vollständig</em> gesetzt. Ebenso im <em>MOPEDAccount</em> im Element <em>TageOhneKostenbeitrag</em> wird der gleichnamige Opeartion-Parameter abgespeichert. Dieser ist verpflichtend zu befüllen, wenn der <em>freigeben</em>-Parameter auf <em>true</em> gestellt ist.</li>
 </ol>
+
+<p>Validierung / Fehlerbehandlung:</p>
+<ul>
+  <li>Wenn der <em>freigeben</em>-Parameter auf <em>true</em> ist, muss eine Validierung aller Ressourcen (MOPEDEncounter, Account) erfolgreich sein, oder die Operation schlägt fehl.</li>
+  <li>Wurden bei der Suche in Schritt 3 mehrere MOPEDTransferEncounter gefunden, liegen inkonsistente Daten vor und die Operation schlägt fehl.</li>
+</ul>
 
 </p>
 
@@ -259,9 +268,9 @@
 </div></td></tr><tr><td>IN</td><td>zeitpunkt</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#dateTime">dateTime</a></td><td></td><td><div><p>Der <em>zeitpunkt</em> Parameter definiert zu welchem Zeitpunkt die Beurlaubung startet.</p>
 </div></td></tr><tr><td>IN</td><td>entlassungsart</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="ValueSet-moped-entlassungsart-valueset.html">Entlassungsart des Patienten</a> (Required)</td><td><div><p>Der <em>entlassungsart</em> Parameter definiert die Entlassungsart des Patienten.</p>
 </div></td></tr><tr><td>IN</td><td>tageOhneKostenbeitrag</td><td></td><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#unsignedInt">unsignedInt</a></td><td></td><td><div><p>Der <em>tageOhneKostenbeitrag</em> Parameter definiert zu für wie viele Tage kein Kostenbeitrag eingehoben wurde.</p>
-</div></td></tr><tr><td>IN</td><td>modus</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td>hl7.at.test.aviso.oder.freigeben (Required)</td><td><div><p>Mit Hilfe des <em>modus</em> Parameters wird angegeben, ob es sich bei der Patienten-Entlassung um vollständige Daten handelt (<em>freigeben</em>) und somit eine Validierung erfolgen soll, oder ob lediglich unvollständige Daten zwischengespeichert werden (<em>aviso</em>).</p>
+</div></td></tr><tr><td>IN</td><td>freigeben</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#boolean">boolean</a></td><td></td><td><div><p>Mit Hilfe des <em>freigeben</em> Parameters wird angegeben, ob es sich bei der Patienten-Entlassung um vollständige Daten handelt (<em>freigeben</em> = <em>true</em>) und somit eine Validierung erfolgen soll, oder ob lediglich unvollständige Daten zwischengespeichert werden (<em>freigeben</em> = <em>false</em>) - in diesem Fall wird ein Entlassungs-Aviso erstellt.</p>
 </div></td></tr><tr><td>OUT</td><td>return</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td></td><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>
-</div></td></tr></table><div><p>TBD: Schritt 3: eine Abgangsart vom TransferEncounter muss hinzugefügt werden, welchen fixen wert enthält diese bei Enlassung? In dieser Operation werden noch keine Leitungen erfasst, hier muss eine Möglichkeit gegeben werden, dies nachzuholen - ggf. in einer separaten Operation. Was ist, wenn ein Patient stirbt? Wird hier eine Verlegung mit spezieller Abgangsart vorab angestoßen oder findet sich diese Ergeignis erst in der Entlassung wieder?</p>
+</div></td></tr></table><div><p>TBD: Schritt 3: eine Abgangsart vom TransferEncounter muss hinzugefügt werden, welchen fixen wert enthält diese bei Enlassung? In dieser Operation werden noch keine Leitungen erfasst, hier muss eine Möglichkeit gegeben werden, dies nachzuholen - in einer separaten Transaction/Operation.; Der Status 'SV verarbeitet' stimmt zwar als Voraussetzung für den ersten Schritt. Kann das aber so weiterverfolgt werden, sobald Selbstzahler / private Versicherungen hinzukommen? Was passiert in einer schnellen Entlassung, wenn die SV sich noch nicht zurück gemeldet hat?</p>
 </div></div>
 
     <!-- insert notes if present -->
@@ -286,8 +295,8 @@
 <div class="container">    <!-- container -->
 
 <div class="inner-wrapper">
-  <p><a name="l665">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Thu, Sep 26, 2024 13:57+0000">2024-09-26</span>
+  <p><a name="l694">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Fri, Sep 27, 2024 07:18+0000">2024-09-27</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
