@@ -245,7 +245,7 @@
       <li>Ein neuer MOPEDTransferEncounter wird vorbereitet</li>
       <li><em>MOPEDTransferEncounter.partOf</em> referenziert den MOPEDEncounter aus Schritt 1.</li>
       <li><em>MOPEDTransferEncounter.actualPeriod.start</em> wird mit dem <em>zeitpunkt</em> lt. Operation-Parameter befüllt.</li>
-      <li><em>MOPEDTransferEncounter.serviceProvider</em> setzt eine Referenz auf die MOPEDOrganizationAbteilung mit dem jeweiligen <em>funktionscode</em> lt. Operation-Parameter.</li>
+      <li><em>MOPEDTransferEncounter.serviceProvider</em> setzt eine Referenz auf die MOPEDOrganizationAbteilung mit dem jeweiligen <em>funktionscode</em> bzw. <em>funktionssubcode</em> lt. Operation-Parameter.</li>
       <li><em>MOPEDTransferEncounter.Neugeborenes</em> wird lt. LKF-Regeln berechnet (siehe Hinweis 1).</li>
       <li><em>MOPEDTransferEncounter.PhysischeAnwesenheit</em> wird lt. Operation-Parameter befüllt.</li>
     </ul>
@@ -307,6 +307,7 @@
   <div><p class="res-header-id"><b>Generated Narrative: OperationDefinition MOPED.Patient.Verlegen</b></p><a name="MOPED.Patient.Verlegen"> </a><a name="hcMOPED.Patient.Verlegen"> </a><a name="MOPED.Patient.Verlegen-en-US"> </a><p>URL: [base]/Encounter/$verlegen</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>aufnahmezahl</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#Identifier">Identifier</a></td><td></td><td><div><p>Der <em>aufnahmezahl</em> Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall.</p>
 </div></td></tr><tr><td>IN</td><td>zeitpunkt</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#dateTime">dateTime</a></td><td></td><td><div><p>Der <em>zeitpunkt</em> Parameter definiert zu welchem Zeitpunkt die Verlegung stattfindet.</p>
 </div></td></tr><tr><td>IN</td><td>funktionscode</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#string">string</a></td><td></td><td><div><p>Der <em>funktionscode</em> Parameter definiert auf welchen Funktionscode die Verlegung stattfindet.</p>
+</div></td></tr><tr><td>IN</td><td>funktionssubcode</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#string">string</a></td><td></td><td><div><p>Der <em>funktionssubcode</em> Parameter definiert auf welchen Funktionssubcode die Verlegung stattfindet.</p>
 </div></td></tr><tr><td>IN</td><td>pysischeAnwesenheit</td><td></td><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#boolean">boolean</a></td><td></td><td><div><p>Der <em>pysischeAnwesenheit</em> Parameter definiert ob der Patient physisch anwesend ist oder nicht.</p>
 </div></td></tr><tr><td>IN</td><td>neuaufnahme</td><td></td><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#boolean">boolean</a></td><td></td><td><div><p>Der <em>neuaufnahme</em> Parameter definiert ob es sich bei der Verlegung um die initiale Aufnahme des Patienten auf eine bestimmte Station handelt.</p>
 </div></td></tr><tr><td>IN</td><td>abgangsart</td><td></td><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="ValueSet-moped-abgangsart-valueset.html">Abgangsart des Patienten</a> (Required)</td><td><div><p>Der <em>abgangsart</em> Parameter definiert die Abgangsart des Patienten vom bisher aktuellen MOPEDTransferEncounter.</p>
@@ -336,8 +337,8 @@
 <div class="container">    <!-- container -->
 
 <div class="inner-wrapper">
-  <p><a name="l802">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Mon, Sep 30, 2024 08:48+0000">2024-09-30</span>
+  <p><a name="l825">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Mon, Sep 30, 2024 09:04+0000">2024-09-30</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

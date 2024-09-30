@@ -259,6 +259,7 @@
       <li><em>$verlegen#aufnahmezahl</em> = <em>$aufnehmen#aufnahmezahl</em></li>
       <li><em>$verlegen#zeitpunkt</em> = <em>$aufnehmen#zeitpunkt</em></li>
       <li><em>$verlegen#funktionscode</em> = <em>$aufnehmen#funktionscode</em></li>
+      <li><em>$verlgegen#funktionssubcode</em> = <em>$aufnehmen#funktionssubcode</em></li>
       <li><em>$verlegen#physischeAnwesenheit</em> = <em>$aufnehmen#physischeAnwesenheit</em></li>
       <li><em>$verlegen#neuaufnahme</em> = <code class="language-plaintext highlighter-rouge">true</code></li>
     </ul>
@@ -307,6 +308,7 @@
 </div></td></tr><tr><td>IN</td><td>verdachtArbeitsSchuelerunfall</td><td></td><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="ValueSet-moped-VerdachtArbeitsSchuelerunfall-valueset.html">Verdacht auf Arbeits- oder Schuelerunfall</a> (Required)</td><td><div><p>Mit Hilfe des <em>verdachtArbeitsSchuelerunfall</em> Parameters wird festgehalten, ob es bei der Patienten-Aufnahme einen Verdacht auf einen Schüler- oder Arbeitsunfall gibt. Wird dieser Parameter mitgegeben, ist im Account das entsprechende Feld zu befüllen.</p>
 </div></td></tr><tr><td>IN</td><td>verdachtFremdverschulden</td><td></td><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#boolean">boolean</a></td><td></td><td><div><p>Mit Hilfe des <em>verdachtFremdverschulden</em> Parameters wird festgehalten, ob es bei der Patienten-Aufnahme einen Verdacht auf Fremdverschulden gibt. Wird dieser Parameter mitgegeben, ist im Account das entsprechende Feld zu befüllen.</p>
 </div></td></tr><tr><td>IN</td><td>funktionscode</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#string">string</a></td><td></td><td><div><p>Der <em>funktionscode</em> Parameter definiert auf welchen Funktionscode die Neuaufnahme stattfindet.</p>
+</div></td></tr><tr><td>IN</td><td>funktionssubcode</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#string">string</a></td><td></td><td><div><p>Der <em>funktionssubcode</em> Parameter definiert auf welchen Funktionssubcode die Neuaufnahme stattfindet.</p>
 </div></td></tr><tr><td>OUT</td><td>return</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td></td><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation. Wenn der <em>modus</em> Parameter auf 'freigeben' gesetzt war, ist die Operation erfolgreich, wenn die Daten validiert wurden und abgespeichert werden konnten. Wenn der <em>modus</em> Parameter auf <em>zwischenspeichern</em> gesetzt war, ist für eine erfolgreiche Durchführung der Operation lediglich ein erfolgreiches Speichern vorausgesetzt. Schlägt die Operation fehl, wird eine entsprechende Meldung ausgegeben.</p>
 </div></td></tr></table><div><p>TBD: möchten wir zusätzlich zur GDA-Referenz einen Input-Parameter, der gleich sein muss? Um in einem Extra-Schritt zusätzlich auf Gleichheit mit der Referenz in falldaten.MOPEDEncounter.serviceProvider prüfen zu können?; Frage an Architektur: gibt es Möglichkeiten, einen solchen Input-Parameter (GDA als Kontext) automatisiert auf einem anderen Sicherheits-Level zu befüllen als der Inhalt des Transaction Body?; Check, wo version-specific References nötig sind - ggf. relevant für Account.subject, Account.owner und Account.coverage sobald Modus auf <em>freigeben</em>.</p>
 </div></div>
@@ -333,8 +335,8 @@
 <div class="container">    <!-- container -->
 
 <div class="inner-wrapper">
-  <p><a name="l838">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Mon, Sep 30, 2024 08:48+0000">2024-09-30</span>
+  <p><a name="l865">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Mon, Sep 30, 2024 09:04+0000">2024-09-30</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
