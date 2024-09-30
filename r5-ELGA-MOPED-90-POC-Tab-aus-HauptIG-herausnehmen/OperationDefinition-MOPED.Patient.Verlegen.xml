@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="MOPED.Patient.Verlegen"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition MOPED.Patient.Verlegen</b></p><a name="MOPED.Patient.Verlegen"> </a><a name="hcMOPED.Patient.Verlegen"> </a><a name="MOPED.Patient.Verlegen-en-US"> </a><p>URL: [base]/Encounter/$verlegen</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>aufnahmezahl</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#Identifier">Identifier</a></td><td/><td><div><p>Der <em>aufnahmezahl</em> Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall.</p>
+</div></td></tr><tr><td>IN</td><td>zeitpunkt</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#dateTime">dateTime</a></td><td/><td><div><p>Der <em>zeitpunkt</em> Parameter definiert zu welchem Zeitpunkt die Verlegung stattfindet.</p>
+</div></td></tr><tr><td>IN</td><td>funktionscode</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#string">string</a></td><td/><td><div><p>Der <em>funktionscode</em> Parameter definiert auf welchen Funktionscode die Verlegung stattfindet.</p>
+</div></td></tr><tr><td>IN</td><td>funktionssubcode</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#string">string</a></td><td/><td><div><p>Der <em>funktionssubcode</em> Parameter definiert auf welchen Funktionssubcode die Verlegung stattfindet.</p>
+</div></td></tr><tr><td>IN</td><td>pysischeAnwesenheit</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#boolean">boolean</a></td><td/><td><div><p>Der <em>pysischeAnwesenheit</em> Parameter definiert ob der Patient physisch anwesend ist oder nicht.</p>
+</div></td></tr><tr><td>IN</td><td>neuaufnahme</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#boolean">boolean</a></td><td/><td><div><p>Der <em>neuaufnahme</em> Parameter definiert ob es sich bei der Verlegung um die initiale Aufnahme des Patienten auf eine bestimmte Station handelt.</p>
+</div></td></tr><tr><td>IN</td><td>abgangsart</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="ValueSet-moped-abgangsart-valueset.html">Abgangsart des Patienten</a> (Required)</td><td><div><p>Der <em>abgangsart</em> Parameter definiert die Abgangsart des Patienten vom bisher aktuellen MOPEDTransferEncounter.</p>
+</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>
+</div></td></tr></table><div><p>TBD: was passiert, wenn eine $aufnehmen Operation mehrmals mit Status <code>Aufnahme in Arbeit</code> aufgerufen wird und damit zu mehreren MOPEDTransferEncounter führt?</p>
+</div></div>
+  </text>
+  <url value="http://example.org/OperationDefinition/MOPED.Patient.Verlegen"/>
+  <version value="0.1.0"/>
+  <name value="MOPED_Patient_Verlegen"/>
+  <title value="MOPED Patient $verlegen (POC)"/>
+  <status value="draft"/>
+  <kind value="operation"/>
+  <date value="2024-09-30T12:18:31+00:00"/>
+  <publisher value="Example Publisher"/>
+  <contact>
+    <name value="Example Publisher"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://example.org/example-publisher"/>
+    </telecom>
+  </contact>
+  <description value="**Wer ruft diese Operation in welchem Zusammenhang auf?**&#xA;&#xA;Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $verlegen Operation wird aufgerufen, wenn ein(e) Patient*in auf eine andere Station verlegt wird. Auch initial, wenn ein Patient auf eine bestimmte Station aufgenommen wird, wird diese Operation aufgerufen (dies passiert automatisch im Zuge der Operation $aufnehmen).&#xA;&#xA;**Voraussetzungen für den Aufruf**&#xA;&#xA;* Account-Status: `Aufnahme in Arbeit` oder `Aufnahme freigegeben`&#xA;&#xA;**Detaillierte Business-Logik**&#xA;&#xA;1. Suche des MOPEDEncounter: Der MOPEDEncounter mit der jeweiligen *aufnahmezahl* lt. Operation-Parameter wird gesucht&#xA;2. Neuer Transfer Encounter: &#xA;  * Ein neuer MOPEDTransferEncounter wird vorbereitet&#xA;  * *MOPEDTransferEncounter.partOf* referenziert den MOPEDEncounter aus Schritt 1. &#xA;  * *MOPEDTransferEncounter.actualPeriod.start* wird mit dem *zeitpunkt* lt. Operation-Parameter befüllt.&#xA;  * *MOPEDTransferEncounter.serviceProvider* setzt eine Referenz auf die MOPEDOrganizationAbteilung mit dem jeweiligen *funktionscode* bzw. *funktionssubcode* lt. Operation-Parameter. &#xA;  * *MOPEDTransferEncounter.Neugeborenes* wird lt. LKF-Regeln berechnet (siehe Hinweis 1).&#xA;  * *MOPEDTransferEncounter.PhysischeAnwesenheit* wird lt. Operation-Parameter befüllt.&#xA;3. Account AnzahlVerlegungen: Die Extension *Account.extension.AnzahlVerlegungen* im zur Aufnahmezahl gehöhrenden Account wird um 1 erhöht. Dies ist auch so, wenn es sich bei der Verlegung um einen Urlaub handeln sollte (siehe Hinweis 2).&#xA;3. Alter Transfer Encounter: &#xA;  * Dieser Schritt ist nur relevant, wenn es sich *nicht* um eine Neufaufnahme (lt. Operation-Parameter) handelt.&#xA;  * Suche des alten MOPEDTransferEncounter: Mit *MOPEDTransferEncounter.partOf* einer Referenz auf den MOPEDEncounter aus Schritt 1 und den Status *in-progress*&#xA;  * Abschließen des alten MOPEDTransferEncounter: *MOPEDTransferEncounter.status* wird auf *completed* gesetzt&#xA;  * Endzeitpunkt des alten MOPEDTransferEncounter: *MOPEDTransferEncounter.actualPeriod.end* wird auf den *zeitpunkt* lt. Operation-Parameter gesetzt. &#xA;  * Abgangsart vom alten MOPEDTransferEncounter: *MOPEDTransferEncounter.abgangsart* wird auf *abgangsart* lt. Operation-Parameter gesetzt. &#xA;4. Account AnzahlBeurlaubungen:&#xA;  * Dieser Schritt ist nur relevant, wenn es sich *nicht* um eine Neufaufnahme (lt. Operation-Parameter) handelt.&#xA;  * War alter MOPEDTransferEncounter aus Schritt 3.2 ein Urlaub (i.e. Funktionscode `10000000`)? &#xA;    * Wenn ja, dann wird der Counter *Account.extension.AnzahlBeurlaubungen* um 1 erhöht. &#xA;&#xA;**Validierung / Fehlerbehandlung**&#xA;* Bei Neuaufnahme (lt. Operation-Parameter) muss das Feld *AnzahlVerlegungen* nach Ausführen der Operation den Wert `1` aufweisen und das Feld *AnzahlBeurlaubungen* den Wert `0`.&#xA;* Es kann immer nur einen MOPEDTransferEncounter für den jeweiligen Fall geben der *partOf* eines MOPEDEncounters mit der *aufnahmezahl* ist und den Status *in-progress* hat. &#xA;* Wenn es sich um eine Neuaufnahme (lt. Operation-Parameter) handelt, kann es keine Abgangsart (Operation-Parameter) geben.&#xA;&#xA;**Weitere Hinweise**&#xA;* Hinweis 1: LKF 4.2.16 Neugeborenes&#xA;  * Ja (Alter zum Zugangszeitpunkt auf die Abteilung &lt;28 Tage)&#xA;  * Nein (Alter zum Zugangszeitpunkt auf die Abteilung &gt;=28 Tage)&#xA;* Hinweis 2: Der Counter für AnzahlVerlegungen wird auch im Falle einer Beurlaubung erhöht, bei der eine reguläre Verlegung-Operation aufgerufen wird.&#xA;"/>
+  <affectsState value="true"/>
+  <code value="verlegen"/>
+  <comment value="TBD: was passiert, wenn eine $aufnehmen Operation mehrmals mit Status `Aufnahme in Arbeit` aufgerufen wird und damit zu mehreren MOPEDTransferEncounter führt?"/>
+  <base value="http://hl7.org/fhir/OperationDefinition/Patient-verlegen"/>
+  <resource value="Encounter"/>
+  <system value="false"/>
+  <type value="true"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="aufnahmezahl"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der *aufnahmezahl* Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall."/>
+    <type value="Identifier"/>
+  </parameter>
+  <parameter>
+    <name value="zeitpunkt"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der *zeitpunkt* Parameter definiert zu welchem Zeitpunkt die Verlegung stattfindet."/>
+    <type value="dateTime"/>
+  </parameter>
+  <parameter>
+    <name value="funktionscode"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der *funktionscode* Parameter definiert auf welchen Funktionscode die Verlegung stattfindet."/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="funktionssubcode"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der *funktionssubcode* Parameter definiert auf welchen Funktionssubcode die Verlegung stattfindet."/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="pysischeAnwesenheit"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Der *pysischeAnwesenheit* Parameter definiert ob der Patient physisch anwesend ist oder nicht."/>
+    <type value="boolean"/>
+  </parameter>
+  <parameter>
+    <name value="neuaufnahme"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Der *neuaufnahme* Parameter definiert ob es sich bei der Verlegung um die initiale Aufnahme des Patienten auf eine bestimmte Station handelt."/>
+    <type value="boolean"/>
+  </parameter>
+  <parameter>
+    <name value="abgangsart"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Der *abgangsart* Parameter definiert die Abgangsart des Patienten vom bisher aktuellen MOPEDTransferEncounter."/>
+    <type value="code"/>
+    <binding>
+      <strength value="required"/>
+      <valueSet value="moped-abgangsart-valueset"/>
+    </binding>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der *return* Parameter gibt Auskunft über den Erfolg der Operation."/>
+    <type value="Resource"/>
+    <targetProfile value="http://hl7.org/fhir/StructureDefinition/OperationOutcome"/>
+  </parameter>
+</OperationDefinition>
