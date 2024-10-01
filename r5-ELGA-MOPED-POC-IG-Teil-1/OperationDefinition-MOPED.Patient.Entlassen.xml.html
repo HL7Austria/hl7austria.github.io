@@ -209,7 +209,7 @@
   &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.title">title</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="MOPED Patient $entlassen (POC)"/&gt;
   &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.status">status</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="draft"/&gt;
   &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.kind">kind</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="operation"/&gt;
-  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.date">date</a> <a href="http://hl7.org/fhir/R5/datatypes.html#dateTime">value</a>="2024-10-01T15:25:51+00:00"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.date">date</a> <a href="http://hl7.org/fhir/R5/datatypes.html#dateTime">value</a>="2024-10-01T15:31:56+00:00"/&gt;
   &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.publisher">publisher</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Example Publisher"/&gt;
   &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.contact">contact</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R5/metadatatypes.html#ContactDetail#ContactDetail.name">name</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Example Publisher"/&gt;
@@ -241,8 +241,9 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $entlassen Operat
   * *MOPEDTransferEncounter.actualPeriod.end* mit *zeitpunkt* lt. Operation-Parameter befüllen 
 4. Erstellung eines leeren *MOPEDClaim*: 
   * *MOPEDClaim.status* mit `draft` befüllen
+  * *MOPEDClaim.patient* mit MOPEDAccount.subject befüllen
 5. Änderungen im Account:
-  * *MOPEDAccount.claim* mit der Referenz aus Schritt 4 befüllen  
+  * *MOPEDAccount.ClaimRef* mit der Referenz aus Schritt 4 befüllen  
   * *MOPEDAccount.WorkflowStatus* mit `Entlassungs Aviso` befüllen, oder, falls der *freigeben*-Operation-Parameter auf `true` gesetzt war und die Validierung erfolgreich war, wird *MOPEDAccount.WorkflowStatus* mit `Entlassung vollständig` befüllt. 
   * *MOPEDAccount.TageOhneKostenbeitrag* lt. gleichnamigen Opeartion-Parameter befüllen
 
@@ -348,7 +349,7 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $entlassen Operat
 
 <div class="inner-wrapper">
   <p><a name="l736">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Tue, Oct 1, 2024 15:25+0000">2024-10-01</span>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Tue, Oct 1, 2024 15:31+0000">2024-10-01</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
