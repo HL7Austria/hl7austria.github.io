@@ -1,0 +1,44 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/ValueSet/moped-Sonderklasse-valueset> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "moped-Sonderklasse-valueset"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet moped-Sonderklasse-valueset</b></p><a name=\"moped-Sonderklasse-valueset\"> </a><a name=\"hcmoped-Sonderklasse-valueset\"> </a><a name=\"moped-Sonderklasse-valueset-en-US\"> </a><ul><li>Include these codes as defined in <code>http://tbd.at/MOPED-Sonderklasse</code><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>A</td><td>Allgemeine Gebührenklasse</td></tr><tr><td>S</td><td>Sonderklasse</td></tr></table></li></ul></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://example.org/ValueSet/moped-Sonderklasse-valueset"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "Sonderklasse"] ; # 
+  fhir:title [ fhir:v "Sonderklasse"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2024-10-01T11:54:07+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Example Publisher"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Example Publisher" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://example.org/example-publisher" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "ValueSet für die Klasse (KaOrg)"] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "http://tbd.at/MOPED-Sonderklasse"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "A" ] ;
+         fhir:display [ fhir:v "Allgemeine Gebührenklasse" ]
+       ] [
+         fhir:code [ fhir:v "S" ] ;
+         fhir:display [ fhir:v "Sonderklasse" ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,47 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/ValueSet/moped-KostenmeldungARK-valueset> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "moped-KostenmeldungARK-valueset"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet moped-KostenmeldungARK-valueset</b></p><a name=\"moped-KostenmeldungARK-valueset\"> </a><a name=\"hcmoped-KostenmeldungARK-valueset\"> </a><a name=\"moped-KostenmeldungARK-valueset-en-US\"> </a><ul><li>Include these codes as defined in <code>http://tbd.at/MOPED-KostenmeldungARK</code><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>A</td><td>Ausländerverrechnung</td></tr><tr><td>R</td><td>Regressangelegenheiten</td></tr><tr><td>K</td><td>Kosteninformation</td></tr></table></li></ul></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://example.org/ValueSet/moped-KostenmeldungARK-valueset"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "KostenmeldungARK"] ; # 
+  fhir:title [ fhir:v "Kostenmeldung für (A/R/K)"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2024-10-01T11:54:07+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Example Publisher"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Example Publisher" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://example.org/example-publisher" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "ValueSet für die Art der Kostenmeldung"] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "http://tbd.at/MOPED-KostenmeldungARK"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "A" ] ;
+         fhir:display [ fhir:v "Ausländerverrechnung" ]
+       ] [
+         fhir:code [ fhir:v "R" ] ;
+         fhir:display [ fhir:v "Regressangelegenheiten" ]
+       ] [
+         fhir:code [ fhir:v "K" ] ;
+         fhir:display [ fhir:v "Kosteninformation" ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
