@@ -1,0 +1,66 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/OperationDefinition/MOPED.CoverageEligibilityRequest.Abholen> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "MOPED.CoverageEligibilityRequest.Abholen"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition MOPED.CoverageEligibilityRequest.Abholen</b></p><a name=\"MOPED.CoverageEligibilityRequest.Abholen\"> </a><a name=\"hcMOPED.CoverageEligibilityRequest.Abholen\"> </a><a name=\"MOPED.CoverageEligibilityRequest.Abholen-en-US\"> </a><p>URL: [base]/CoverageEligibilityRequest/$abholen</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>versicherer</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#Identifier\">Identifier</a></td><td/><td><div><p>Der <em>versicherer</em> Parameter beinhält den eindeutigen Identifizierer für den Versicherer der die $abholen Operation aufruft.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/resource.html\">Resource</a> (<a href=\"http://hl7.org/fhir/R5/bundle.html\" title=\"http://hl7.org/fhir/StructureDefinition/Bundle\">Bundle</a>, <a href=\"http://hl7.org/fhir/R5/operationoutcome.html\" title=\"http://hl7.org/fhir/StructureDefinition/OperationOutcome\">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>\n</div></td></tr></table><div><p>TBD: Es ist auch der Wunsch der Krankenanstalten tracken zu können, ob die SV den Request (1) abgefragt hat (status draft, outcome queued), (2) derzeit bearbeitet oder (status draft; outcome <em>queued</em>) (3) abgeschlossen hat (outcome <em>complete</em> OR <em>error</em> OR <em>partial</em> und der <em>status</em> auf <em>active</em>).\nSomit brauchen wir noch Möglichkeiten im Workflow, wie die erstellte Draft-Response weiter bearbeitet werden kann.</p>\n</div></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://example.org/OperationDefinition/MOPED.CoverageEligibilityRequest.Abholen"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "MOPED_CoverageEligibilityRequest_Abholen"] ; # 
+  fhir:title [ fhir:v "Versichertenanspruchserklärung-Anfragen $abholen"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2024-10-03T13:16:46+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Example Publisher"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Example Publisher" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://example.org/example-publisher" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Die Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die Versichertenanspruchserklärung-Anfragen $abholen Operation wird aufgerufen, um alle noch offenen Versichertenanspruchserklärung-Anfragen, die bisher seitens SV noch nicht bearbeitet wurden, abgeholt werden können.\n1. Suche nach relevanten Requests: Alle CoverageEligibilityRequests, \n  * die im Feld *CoverageEligibilityRequest.insurer* die Organization mit *Organization.identifier* = Operation-Parameter *versicherer* referenziert haben UND\n  * die noch keine gezugehörigen CoverageEligibilityResponse haben (CoverageEligibilityRequest CEReq where not exists CoverageEligibilityResponse with *CoverageEligibilityResponse.request* = CEReq). Der Status der Resposne ist dabei irrelevant.\n2. Zusammenstellen des Return-Bundles:\n   Mit der gleichen Logik wie der *_include* Suchparameter um die relevanten Ressourcen (Patient, Coverage) direkt mitbekommen zu können.\n3. Erstellung eine Draft CoverageEligibilityResponse für jeden der ausgelieferten Requests:\n   * mit Feld *CoverageEligibilityResponse.status* = *draft*\n   * mit Feld *CoverageEligibilityResponse.request* = Referenz auf jeweiligen Request\n   * mit Feld *CoverageEligibilityResponse.outcome* = *queued*"] ; # 
+  fhir:affectsState [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:code [ fhir:v "abholen"] ; # 
+  fhir:comment [ fhir:v "TBD: Es ist auch der Wunsch der Krankenanstalten tracken zu können, ob die SV den Request (1) abgefragt hat (status draft, outcome queued), (2) derzeit bearbeitet oder (status draft; outcome *queued*) (3) abgeschlossen hat (outcome *complete* OR *error* OR *partial* und der *status* auf *active*).\nSomit brauchen wir noch Möglichkeiten im Workflow, wie die erstellte Draft-Response weiter bearbeitet werden kann."] ; # 
+  fhir:base [
+     fhir:v "http://hl7.org/fhir/OperationDefinition/CoverageEligibilityRequest-abholen"^^xsd:anyURI ;
+     fhir:link <http://hl7.org/fhir/OperationDefinition/CoverageEligibilityRequest-abholen>
+  ] ; # 
+  fhir:resource ( [ fhir:v "CoverageEligibilityRequest"] ) ; # 
+  fhir:system [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:type [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:instance [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "versicherer" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Der *versicherer* Parameter beinhält den eindeutigen Identifizierer für den Versicherer der die $abholen Operation aufruft." ] ;
+     fhir:type [ fhir:v "Identifier" ]
+  ] [
+     fhir:name [ fhir:v "return" ] ;
+     fhir:use [ fhir:v "out" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Der *return* Parameter gibt Auskunft über den Erfolg der Operation." ] ;
+     fhir:type [ fhir:v "Resource" ] ;
+     fhir:targetProfile ( [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/Bundle"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/Bundle>
+     ] [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/OperationOutcome"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/OperationOutcome>
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
