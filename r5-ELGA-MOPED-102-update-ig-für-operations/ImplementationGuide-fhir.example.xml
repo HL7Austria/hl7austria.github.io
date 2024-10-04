@@ -1,0 +1,1681 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="fhir.example"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide fhir.example</b></p><a name="fhir.example"> </a><a name="hcfhir.example"> </a><a name="fhir.example-en-US"> </a><h2>MOPED</h2><p>The official URL for this implementation guide is: </p><pre>http://example.org/ImplementationGuide/fhir.example</pre></div>
+  </text>
+  <url value="http://example.org/ImplementationGuide/fhir.example"/>
+  <version value="0.1.0"/>
+  <name value="MOPED"/>
+  <title value="Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"/>
+  <status value="draft"/>
+  <date value="2024-10-04T07:25:23+00:00"/>
+  <publisher value="Example Publisher"/>
+  <contact>
+    <name value="Example Publisher"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://example.org/example-publisher"/>
+    </telecom>
+  </contact>
+  <packageId value="fhir.example"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="5.0.0"/>
+  <dependsOn id="hl7tx">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on HL7 Terminology"/>
+    </extension>
+    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <packageId value="hl7.terminology.r5"/>
+    <version value="6.0.2"/>
+  </dependsOn>
+  <dependsOn id="hl7ext">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/>
+    </extension>
+    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+    <packageId value="hl7.fhir.uv.extensions.r5"/>
+    <version value="5.1.0"/>
+  </dependsOn>
+  <dependsOn id="hl7_at_fhir_core_r5">
+    <uri value="http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/ImplementationGuide/hl7.at.fhir.core.r5"/>
+    <packageId value="hl7.at.fhir.core.r5"/>
+    <version value="current"/>
+  </dependsOn>
+  <definition>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
+      <valueCode value="hl7.fhir.uv.tools#0.2.0"/>
+    </extension>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/moped-abgangsart-valueset"/>
+      </reference>
+      <name value="Abgangsart des Patienten"/>
+      <description value="ValueSet für die Abgangsart des Patienten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-diagnosisRelatedNode"/>
+      </reference>
+      <name value="Abrechnung - Knoten"/>
+      <description value="Lukriert die Patient:innen über eine reguläre Gruppe Punkte, so ist in diesem Datenfeld die entsprechende Knotenbezeichnung einzutragen."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/SVAbrechnungsquartal"/>
+      </reference>
+      <name value="Abrechnungsquartal der Sozialversicherung"/>
+      <description value="Das Abrechnungsquartal ist in der Form Jahr (JJJJ) und Quartal (Q) zu melden."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/moped-AbrechnungsRelevanz-valueset"/>
+      </reference>
+      <name value="Abrechnungsrelevanz der medizinischen Leistung"/>
+      <description value="Abrechnungsrelevanz der medizinischen Leistung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-Altersgruppe"/>
+      </reference>
+      <name value="Altersgruppe"/>
+      <description value="In Gruppen eingeteilt, wobei vollendete Lebensjahre ausschlaggebend sind."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-AnzahlSonderleistungen"/>
+      </reference>
+      <name value="Anzahl Sonderleistungen"/>
+      <description value="MOPED Extension für die Anzahl der Sonderleistungen"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-AnzahlBeurlaubungen"/>
+      </reference>
+      <name value="AnzahlBeurlaubungen"/>
+      <description value="MOPED Extension für die Anzahl der Beurlaubungen"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-AnzahlVerlegungen"/>
+      </reference>
+      <name value="AnzahlVerlegungen"/>
+      <description value="MOPED Extension für die Anzahl der Verlegungen"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/moped-aufnahmeart-valueset"/>
+      </reference>
+      <name value="Aufnahmeart des Patienten"/>
+      <description value="ValueSet für die Aufnahmeart des Patienten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/moped-behandlungsart-valueset"/>
+      </reference>
+      <name value="Behandlungsart"/>
+      <description value="ValueSet für die Behandlungsart"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-Beihilfenaequivalent"/>
+      </reference>
+      <name value="Beihilfenaequivalent"/>
+      <description value="MOPED Extension für das Beihilfenaequivalent"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-ClaimRef"/>
+      </reference>
+      <name value="Claim Referenz"/>
+      <description value="Referenz vom Account auf den Claim."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-CoverageEligibilityRequestRef"/>
+      </reference>
+      <name value="CoverageEligibilityRequest Referenz"/>
+      <description value="Referenz vom Account auf den CoverageEligibilityRequest."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-erworben"/>
+      </reference>
+      <name value="Diagnose - im stationären Aufenthalt erworben"/>
+      <description value="MOPED Extension, um anzugeben, ob die Diagnose während des stationären Aufenthalts erworben wurde."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-EndOfEligibility"/>
+      </reference>
+      <name value="EndOfEligibility"/>
+      <description value="Fristende - Befristungen sind in folgenden Fällen vorgesehen:&#xA;- Bei zeitlichen Beschränkungen aufgrund einer zu erwartenden, nachfolgenden medizini-&#xA;schen Hauskrankenpflege&#xA;- Bei Vorhersehbarkeit des Eintritts einer Asylierung&#xA;- Bei unsicherer, versicherungsrechtlicher Entwicklung&#xA;Bei den ersten beiden Punkten wird von den Krankenversicherungsträgern das Fristende individuell gesetzt. Beim dritten Punkt wird im Regelfall eine generelle Tagesbeschränkung erfolgen, weil die Versichertenanspruchserklärung in die Zukunft gerichtet ist und der Krankenversicherungsträger seine Zuständigkeit von vornherein nur für einen bestimmten Zeitraum annehmen kann (Ausleis- tungssituation gem. § 122 ASVG).&#xA;Durch die Angabe eines Fristendes wird signalisiert, dass bei einem über das Fristende hinaus dau- ernden Aufenthalt eine Verlängerungsanzeige vorzulegen ist."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/moped-entlassungsart-valueset"/>
+      </reference>
+      <name value="Entlassungsart des Patienten"/>
+      <description value="ValueSet für die Entlassungsart des Patienten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-ErrorWarning"/>
+      </reference>
+      <name value="Error/Warning"/>
+      <description value="MOPED Extension für akzeptierte Errors und Warnings"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-fondsrelevanz"/>
+      </reference>
+      <name value="Fondsrelevanz"/>
+      <description value="Hier ist anzugeben, ob der stationäre Aufenthalt/ambulante Besuch gegenüber dem Landesgesundheitsfonds/PRIKRAF abzurechnen ist."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/moped-Fondsrelevanz-valueset"/>
+      </reference>
+      <name value="Fondsrelevanz"/>
+      <description value="ValueSet für die Fondsrelevanz"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-ForderungsbetragAuslaenderverrechnungRegress"/>
+      </reference>
+      <name value="Forderungsbetrag für Auslaenderverrechnung oder Regress"/>
+      <description value="MOPED Extension für den Forderungsbetrag für Ausländerverrechnung oder Regress"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/tiss-a-questionnaire"/>
+      </reference>
+      <name value="I12 Questionnaire für TISS-A-Daten"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/tiss-a-questionnaireresponse"/>
+      </reference>
+      <name value="I12 QuestionnaireResponse für TISS-A-Daten"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ecard-anspruch-kostenanteilbefreit"/>
+      </reference>
+      <name value="Kostenanteilbefreit laut Versicherungsanspruch"/>
+      <description value="Kostenanteilbefreiung für den Patienten, die direkt an den Anspruch geknüpft ist. Kostenanteile sind &#xA;entweder laut Gesetz vorgegeben (z.B. Rezeptgebühr) oder sie sind in der Satzung des jeweiligen KV-Trägers &#xA;verankert und werden meistens errechnet (z.B. für Heilbehelfe und Hilfsmittel)."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-KonstenmeldungARK"/>
+      </reference>
+      <name value="Kostenmeldung für (A/R/K)"/>
+      <description value="MOPED Extension für die Kostenmeldung. Konstenmeldung für A = Ausländerverrechnung, R = Regressangelegenheiten oder K = Kosteninformation"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/moped-KostenmeldungARK-valueset"/>
+      </reference>
+      <name value="Kostenmeldung für (A/R/K)"/>
+      <description value="ValueSet für die Art der Kostenmeldung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-Kostenstelle"/>
+      </reference>
+      <name value="Kostenstelle"/>
+      <description value="MOPED Extension für akzeptierte Errors und Warnings"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/Test2OrganizationKrankenhausRied"/>
+      </reference>
+      <name value="Krankenhaus der Barmherzigen Schwestern vom Hl. Vinzenz von Paul Ried"/>
+      <description value="Organization Ressource für das Krankenhaus der Barmherzigen Schwestern vom Hl. Vinzenz von Paul Ried"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-LDFBetragNetto"/>
+      </reference>
+      <name value="LDF-Betrag Netto"/>
+      <description value="MOPED Extension für den LDF-Punktewert Netto. Ergibt sich durch Punkteanzahl mal Punktewert Forderungsbasis ohne Berücksichtigung eines Patientenanteiles f. Angehörige bzw. eines Beihilfenäquivalentes"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-LDFPunktewertNetto"/>
+      </reference>
+      <name value="LDF-Punktewert Netto"/>
+      <description value="MOPED Extension für den LDF-Punktewert Netto"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/Leistungskomponente-Leistungspunkte"/>
+      </reference>
+      <name value="Leistungskomponente/Leistungspunkte"/>
+      <description value="In dieses Datenfeld ist – soweit zutreffend – die Leistungskomponente bzw. sind die Leistungspunkte einzutragen."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-MealCostExcemption"/>
+      </reference>
+      <name value="MealCostExcemption"/>
+      <description value="VKBEFR – Verpflegskosten-Beitragsbefreiung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-AbrechnungsRelevanz"/>
+      </reference>
+      <name value="Medizinische Leistung - Abrechnungsrelevanz"/>
+      <description value="Hier ist anzugeben, ob die medizinische Leistung bei der Bepunktung des ambulanten Besuchs/stationären Aufenthalts (Satzart X01) zu berücksichtigen ist."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MOPEDAufnahmeBundle"/>
+      </reference>
+      <name value="MOPED Aufnahme Bundle"/>
+      <description value="Bundle für die Input-Ressourcen bei Patienten-Aufnahme&#xA;&#xA;* Hinweis 1: Anstelle einer separaten GDA-Organization-Ressource ist angedacht, hier mit einer conditional Reference in der Ressource Encounter mit entsprechendem GDA-identifier zu arbeiten. Somit wird auch vermieden, dass Duplikate einer GDA-Organization-Ressource am Server angelegt/verwendet werden.&#xA;* Hinweis 2: Es wird davon ausgegangen, dass der Patient bereits vor der Bundle-Erstellung mit dem ZPI abgeglichen wurde.&#xA;* Hinweis 3: Es wird davon ausgegangen, dass vor der Bundle-Erstellung eine VDAS-Abfrage gestellt wurde. Die Coverage-Ressourcen in diesem Transaction-Bundle speichern die Ansprüche aufgrund der VDAS-Abfrage in Moped ein.&#xA;* Hinweis 4: In Zukunft wird Moped auch die Datenübermittlung von Selbstzahlern und Privatversicherten unterstützen. Für diese Ansprüche werden separate Coverage-Profile definiert werden und dieses Bundle wird in weiterer Folge unterschiedliche Coverage-Arten unterstützen.&#xA;* Hinweis 5: Eine vorangegangene VDAS-Anfrage an die SVC kann mehrere Coverages retournieren. In diesem Fall wählt der Patient/die Patientin direkt bei aufnahme *eine* Versicherung aus, welche im Zuge der Aufnahme gespeichert wird. Das ist der Grund für die Kardinalität 1..1 der Coverage in diesem Bundle."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/MOPED.Patient.Aufnehmen"/>
+      </reference>
+      <name value="MOPED Patient $aufnehmen (POC)"/>
+      <description value="**Wer ruft diese Operation in welchem Zusammenhang auf?**&#xA;&#xA;Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $aufnehmen Operation wird aufgerufen, wenn ein(e) Patient*in in das Krankenhaus aufgenommen wird.&#xA;&#xA;**Voraussetzungen für den Aufruf**&#xA;&#xA;* Account-Status: n/a (die Ressource Account wird erst mit dieser Operation erstellt)&#xA;&#xA;**Detaillierte Business-Logik**&#xA;&#xA;1. Ressourcen der Transaction erstellen: FHIR Transaction ausführen, wie im Operation-Parameter *falldaten* mitgegeben. Dabei soll geprüft werden, ob bereits ein Patient mit dem jeweiligen identifier (bPK bzw. Sozialversicherungsnummer) vorliegt um Duplikate zu vermeiden. Das gleiche gilt für die anderen Ressourcen im Bundle, und kann technisch mit Hilfe von conditional References im Input-Bundle realisiert werden.&#xA;2. Account anlegen:&#xA;   * *MOPEDAccount.WorkflowStatus*: lt. Beschreibung der Werte-Ausprägungen des *freigeben* Parameter (siehe Hinweis 1)&#xA;   * *MOPEDAccount.VerdachtArbeitsSchuelerunfall* lt. Operation-Parameter&#xA;   * *MOPEDAccount.VerdachtFremdverschulden* lt. Operation-Parameter&#xA;   * *MOPEDAccount.subject* mit der gleichen Referenz befüllen wie *MOPEDEncounter.subjec*&#xA;   * *MOPEDAccount.owner* mit der gleichen Referenz befüllen wie *MOPEDEncounter.serviceProvider*&#xA;   * *MOPEDAccount.VDASID* lt. Operation-Parameter *vdasid* befüllen&#xA;   * *MOPEDAccount.AnzahlVerlegungen* mit Wert '0' befüllen&#xA;   * *MOPEDAccount.AnzahlBeurlaubungen* mit Wert '0' befüllen&#xA;   * *MOPEDAccount.coverage.coverage* mit der Referenz lt. Parameter befüllen und ggf. Hauptversicherter (Patient) anlegen, falls noch nicht am Server.&#xA;3. Account im Encounter referenzieren: Den neuen MOPEDAccount im *MOPEDEncounter.account* referenzieren&#xA;4. Durchführung der Operation `$verlegen` für Neufaufnahme:&#xA;  * *$verlegen#aufnahmezahl* = *$aufnehmen#aufnahmezahl*&#xA;  * *$verlegen#zeitpunkt* = Operation-Parameter falldaten mit dem Pfad *Bundle.Encounter.actualPeriod.start*&#xA;  * *$verlegen#funktionscode* = *$aufnehmen#funktionscode*&#xA;  * *$verlgegen#funktionssubcode* = *$aufnehmen#funktionssubcode*&#xA;  * *$verlegen#physischeAnwesenheit* = *$aufnehmen#physischeAnwesenheit*&#xA;  * *$verlegen#neuaufnahme* = `true`&#xA;&#xA;**Validierung / Fehlerbehandlung**&#xA;&#xA;* Wenn der *freigeben*-Parameter auf *true* ist, muss eine Validierung aller Ressourcen im *falldaten*-Bundle erfolgreich sein, oder die Operation schlägt fehl.&#xA;* Es kann nie mehrere MOPEDEnconuter-Instanzen mit der gleichen Aufnahmezahl geben&#xA;* Der Status *MOPEDEncounter.status* muss den Wert 'in-progress' haben&#xA;&#xA;**Weitere Hinweise**&#xA;&#xA;* Hinweis 1: Die Werte-Ausprägung des *freigeben* Parameters haben eine Auswirkung auf das Verhalten der Operation:&#xA;  * *false*: Die Patientenaufnahme ist noch nicht vollständig und wird lediglich zwischengespeichert. Hier findet keine Validierung der Encounter Ressource statt. Eine Account-Ressource wird erstellt, die den *WorkflowStatus* 'Aufnahme in Arbeit' hat und im Encounter referenziert.&#xA;  * *true*: Die Patientenaufnahme ist vollständig und es ist zu erwarten, dass alle nötigen Felder befüllt sind. Schlägt die Validierung der *falldaten* fehl, kann die Operation nicht erfolgreich durchgeführt werden. Ist die Validierung erfolgreich, wird eine im Encounter referenzierte Account-Ressource erstellt bzw. upgedatet, die den *WorkflowStatus* 'Aufnahme freigegeben' hat.&#xA;* Hinweis 2: Es ist nicht nötig, bei dieser Operation den GDA-Identifier als Kontext mitzugeben. Auf den GDA wird im *falldaten*-Bundle als conditional Reference mittels entsprechendem Identifier im MOPEDEncounter verwiesen. Somit wird auch vermieden, dass Duplikate einer GDA-Organization-Ressource am Server angelegt/verwendet werden.&#xA;* Hinweis 3: Im Parameter *falldaten* wird unter Anderem eine Coverage Ressource mitgegeben. Diese Ressource stammt in der Regel aus einer erfolgreichen VDAS-Abfrage. In Zukunft wird Moped auch andere Optionen unterstützen, wie die Verarbeitung von Daten von Selbstzahlern (wofür ein separates Coverage-Profil angelegt wird), oder die Verarbeitung von Fällen mit privater Krankenversicherung (auch hierfür wird ein separates Coverage-Profil angelegt). Im Ersten Schritt liegt der Fokus auf den Standard-Fall, der als Ausgangsbasis eine erfolgreich abgeschlossene VDAS-Abfrage voraussetzt."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/MOPED.Patient.Beurlauben"/>
+      </reference>
+      <name value="MOPED Patient $beurlauben"/>
+      <description value="Die Patient $beurlauben Operation wird aufgerufen, wenn ein(e) Patient*in in das Krankenhaus aufgenommen wurde und während eines laufenden Falles beurlaubt wird. Die Operation $verlegen wird aufgerufen mit dem Funktionscode '10000000' als Parameter, der Abgangsart '1' und ohne physische Anwesenheit. &#xA;&#xA;Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/MOPED.Patient.Entlassen"/>
+      </reference>
+      <name value="MOPED Patient $entlassen (POC)"/>
+      <description value="&#xA;**Wer ruft diese Operation in welchem Zusammenhang auf?**&#xA;&#xA;Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $entlassen Operation wird aufgerufen, wenn ein(e) Patient*in aus dem Krankenhaus entlassen wurde.&#xA;&#xA;**Voraussetzungen für den Aufruf**&#xA;&#xA;* Account-Status: `SV verarbeitet`&#xA;&#xA;**Detaillierte Business-Logik**&#xA;&#xA;1. Suche des MOPEDEncounter: Der MOPEDEncounter mit der jeweiligen *aufnahmezahl* lt. Operation-Parameter wird gesucht&#xA;2. Update des MOPEDEncounters:&#xA;  * *MOPEDEncounter.actualPeriod.end* mit dem *zeitpunkt* lt. Operation-Parameter befüllen&#xA;  * *MOPEDEncounter.status* mit `discharged`  befüllen&#xA;  * *MOPEDEncounter.admission.dischargeDisposition* mit *entlassungsart* lt. Operation-Parameter befüllen&#xA;3. Suche des letzten MOPEDTransferEncounter: Mit *MOPEDTransferEncounter.partOf* einer Referenz auf den MOPEDEncounter aus Schritt 1 und den Status *in-progress*&#xA;4. Update des letzten MOPEDTransferEncounter:&#xA;  * *MOPEDTransferEncounter.status* mit `completed` befüllen gesetzt&#xA;  * *MOPEDTransferEncounter.actualPeriod.end* mit *zeitpunkt* lt. Operation-Parameter befüllen&#xA;4. Erstellung eines leeren *MOPEDClaim*:&#xA;  * *MOPEDClaim.status* mit `draft` befüllen&#xA;  * *MOPEDClaim.patient* mit MOPEDAccount.subject befüllen&#xA;5. Änderungen im Account:&#xA;  * *MOPEDAccount.ClaimRef* mit der Referenz aus Schritt 4 befüllen&#xA;  * *MOPEDAccount.WorkflowStatus* mit `Entlassungs Aviso` befüllen, oder, falls der *freigeben*-Operation-Parameter auf `true` gesetzt war und die Validierung erfolgreich war, wird *MOPEDAccount.WorkflowStatus* mit `Entlassung vollständig` befüllt.&#xA;  * *MOPEDAccount.TageOhneKostenbeitrag* lt. gleichnamigen Opeartion-Parameter befüllen&#xA;&#xA;**Validierung / Fehlerbehandlung**&#xA;&#xA;* Wenn der *freigeben*-Parameter auf *true* ist, muss eine Validierung aller Ressourcen (MOPEDEncounter, Account) erfolgreich sein, oder die Operation schlägt fehl.&#xA;* Wenn der *freigeben*-Parameter auf *true* ist, muss Information zu den Tagen ohne Kostenbeitrag vorliegen (i.e. der Operation-Parameter *TageOhneKostenbeitrag* muss befüllt sein)&#xA;* Wurden bei der Suche in Schritt 4 mehrere MOPEDTransferEncounter gefunden, liegen inkonsistente Daten vor und die Operation schlägt fehl.&#xA;&#xA;**Weitere Hinweise**&#xA;&#xA;* Hinweis 1: Wurde der Patient direkt aus der Intensivstation entlassen, so müsste auch eine Abgangsart im MOPEDTransferEncounter gesetzt werden. Dieser Spezialfall wurde noch nicht berücksichtigt."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/MOPED.Patient.Verlegen"/>
+      </reference>
+      <name value="MOPED Patient $verlegen (POC)"/>
+      <description value="&#xA;**Wer ruft diese Operation in welchem Zusammenhang auf?**&#xA;&#xA;Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $verlegen Operation wird aufgerufen, wenn ein(e) Patient*in auf eine andere Station verlegt wird. Auch initial, wenn ein Patient auf eine bestimmte Station aufgenommen wird, wird diese Operation aufgerufen (dies passiert automatisch im Zuge der Operation $aufnehmen).&#xA;&#xA;**Voraussetzungen für den Aufruf**&#xA;&#xA;* Account-Status: `Aufnahme in Arbeit` oder `Aufnahme freigegeben`&#xA;&#xA;**Detaillierte Business-Logik**&#xA;&#xA;1. Suche des MOPEDEncounter: Der MOPEDEncounter mit der jeweiligen *aufnahmezahl* lt. Operation-Parameter wird gesucht&#xA;2. Neuer Transfer Encounter:&#xA;  * Ein neuer MOPEDTransferEncounter wird vorbereitet&#xA;  * *MOPEDTransferEncounter.partOf* referenziert den MOPEDEncounter aus Schritt 1.&#xA;  * *MOPEDTransferEncounter.actualPeriod.start* wird mit dem *zeitpunkt* lt. Operation-Parameter befüllt.&#xA;  * *MOPEDTransferEncounter.serviceProvider* setzt eine Referenz auf die MOPEDOrganizationAbteilung mit dem jeweiligen *funktionscode* bzw. *funktionssubcode* lt. Operation-Parameter.&#xA;  * *MOPEDTransferEncounter.Neugeborenes* wird lt. LKF-Regeln berechnet, anhand des *MOPEDEncounter.subject.birthdate* aus dem Encounter aus Schritt 1 (für Berechnugns-Details siehe Hinweis 1).&#xA;  * *MOPEDTransferEncounter.Altersgruppe* wird lt. LKF-Regeln berechnet, anhand des *MOPEDEncounter.subject.birthdate* aus dem Encounter aus Schritt 1 (für Berechnugns-Details siehe Hinweis 2).&#xA;  * *MOPEDTransferEncounter.PhysischeAnwesenheit* wird lt. Operation-Parameter befüllt.&#xA;3. Account AnzahlVerlegungen: Die Extension *Account.extension.AnzahlVerlegungen* im zur Aufnahmezahl gehöhrenden Account wird um 1 erhöht. Dies ist auch so, wenn es sich bei der Verlegung um einen Urlaub handeln sollte (siehe Hinweis 3).&#xA;4. Alter Transfer Encounter:&#xA;  * Dieser Schritt ist nur relevant, wenn es sich *nicht* um eine Neufaufnahme (lt. Operation-Parameter) handelt.&#xA;  * Suche des alten MOPEDTransferEncounter: Mit *MOPEDTransferEncounter.partOf* einer Referenz auf den MOPEDEncounter aus Schritt 1 und den Status *in-progress*&#xA;  * Abschließen des alten MOPEDTransferEncounter: *MOPEDTransferEncounter.status* wird auf *completed* gesetzt&#xA;  * Endzeitpunkt des alten MOPEDTransferEncounter: *MOPEDTransferEncounter.actualPeriod.end* wird auf den *zeitpunkt* lt. Operation-Parameter gesetzt.&#xA;  * Abgangsart vom alten MOPEDTransferEncounter: *MOPEDTransferEncounter.abgangsart* wird auf *abgangsart* lt. Operation-Parameter gesetzt.&#xA;5. Account AnzahlBeurlaubungen:&#xA;  * Dieser Schritt ist nur relevant, wenn es sich *nicht* um eine Neufaufnahme (lt. Operation-Parameter) handelt.&#xA;  * War alter MOPEDTransferEncounter aus Schritt 4.2 ein Urlaub (i.e. Funktionscode `10000000`)?&#xA;    * Wenn ja, dann wird der Counter *Account.extension.AnzahlBeurlaubungen* um 1 erhöht.&#xA;&#xA;**Validierung / Fehlerbehandlung**&#xA;* Bei Neuaufnahme (lt. Operation-Parameter) muss das Feld *AnzahlVerlegungen* nach Ausführen der Operation $verlegen den Wert `1` aufweisen und das Feld *AnzahlBeurlaubungen* den Wert `0`.&#xA;* Es kann immer nur einen MOPEDTransferEncounter für den jeweiligen Fall geben der *partOf* eines MOPEDEncounters mit der *aufnahmezahl* ist und den Status *in-progress* hat.&#xA;* Wenn es sich um eine Neuaufnahme (lt. Operation-Parameter) handelt, kann es keine Abgangsart (Operation-Parameter) geben.&#xA;&#xA;**Weitere Hinweise**&#xA;* Hinweis 1: LKF 4.2.16 Neugeborenes&#xA;  * Ja (Alter zum Zugangszeitpunkt auf die Abteilung &lt;28 Tage)&#xA;  * Nein (Alter zum Zugangszeitpunkt auf die Abteilung &gt;=28 Tage)&#xA;* Hinweis 2: LKF 4.1.9 Altersgruppe bei Entlassung/Kontakt&#xA;  * Vollendete Lebensjahre sind ausschlaggebend&#xA;  * 0: 0&#xA;  * 1-4: 1&#xA;  * 5-9: 5&#xA;  * 10-14: 10&#xA;  * 15-19: 15&#xA;  * 20-24: 20&#xA;  * ... immer weiter so, die untere Grenze des Alters in 5er-Schritten&#xA;  * 85-89: 85&#xA;  * 90-95: 90&#xA;  * 95 und älter: 95&#xA;* Hinweis 3: Der Counter für AnzahlVerlegungen wird auch im Falle einer Beurlaubung erhöht, bei der eine reguläre Verlegung-Operation aufgerufen wird."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/MOPED.CoverageEligibilityRequest.Anfragen"/>
+      </reference>
+      <name value="MOPED Versichertenanspruchserklärung $anfragen (POC)"/>
+      <description value="Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. &#xA;&#xA;Voraussetzungen für den Aufruf:&#xA;* Account-Status: 'Aufnahme freigegeben'&#xA;&#xA;Die Versichertenanspruchserklärung $anfragen Operation wird aufgerufen, um die Versichertenanspruchserklärung-Anfrage an die SV anzustoßen. Diese Operation ist irrelevant für Selbstzahler (das ist wichtig für künftige weiterentwicklung - wenn im Account auf eine Coverage-Ressource für Selbstzahler referenziert wird, darf die Operation $anfragen nicht ausgeführt werden).&#xA;&#xA;1. Vorbereitung des CoverageEligibilityRequest: Ein CoverageEligibilityRequest mit dem *status* 'active' und *purpose* 'validation' und dem *created* aktuellem Zeitpunkt wird vorbereitet. Die Extension *ExtensionDays* wird mit dem Operation-Parameter *verlaengerungstage* befüllt, die Extension *PremiumClass* mit dem Operation-Parameter *sonderklasse*.&#xA;2. Suchen des MOPEDAccounts: Über die Referenz der Ressource *MOPEDEncounter.account*. Dabei handelt es sich um jenen Encounter, der den *aufnahmezahl* Parameter als *identifier* gespeichert hat. &#xA;3. Referenzieren des Patienten: Eine Referenz auf den Patienten der als *subject* im MOPEDAccount geführt ist, wird im *CoverageEligibilityRequest.patient* Element referenziert&#xA;4. Referenzieren der Coverage: Die gleiche Referenz wie im *MOPEDAccount.coverage.coverage* wird auch im CoverageEligibilityRequest referenziert. Check erfolgt, ob diese Coverage den gleichen Patienten als *beneficiary* hat wie das *subject* des CoverageEligibilityRequest. Außerdem wird geprüft, ob der *versicherer* an dem der Request gerichtet ist, auch tatsächlich als Coverage.insurer gelistet ist. Sollten im Account mehrere Coverages referenziert sein, so ist nur diejenige mitzusenden, die als *Coverage.insurer* den *versicherer* aus dem Operation-Parameter gespeichert hat.&#xA;4. Referenzieren des Providers: Als *provider* Element wird die Organization referenziert, die als *owner* im MOPEDAccount referenziert ist. &#xA;5. Einfügen des Versicherers: Als *insurer* Element wird die Organization referenziert, deren *identifier* dem Operation-Parameter *versicherer* entspricht.&#xA;6. POSTen des neu erstellten CoverageEligibilityRequest&#xA;7. Referenzierung des CoverageEligibilityRequest im MOPEDAccount im Element *coverageEligibilityRequest*."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MOPEDAccount"/>
+      </reference>
+      <name value="MOPEDAccount"/>
+      <description value="MOPED Profil der Account Ressource für die administrative Fallführung und Abrechnung."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MOPEDClaim"/>
+      </reference>
+      <name value="MOPEDClaim"/>
+      <description value="MOPED Profil der Claim Ressource für die Leistungsabrechnungsanfrage."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MOPEDClaimResponse"/>
+      </reference>
+      <name value="MOPEDClaimResponse"/>
+      <description value="MOPED Profil der ClaimResponse Ressource für die Leistungsabrechnungsantwort."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MOPEDCoverageEligibilityRequest"/>
+      </reference>
+      <name value="MOPEDCoverageEligibilityRequest"/>
+      <description value="MOPED Profil der CoverageEligibilityRequest Ressource für die Versichertenanspruchserklärung-Anfrage."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MOPEDCoverageEligibilityResponse"/>
+      </reference>
+      <name value="MOPEDCoverageEligibilityResponse"/>
+      <description value="MOPED Profil der CoverageEligibilityResponse Ressource für die Versichertenanspruchserklärung-Antwort."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MOPEDEncounter"/>
+      </reference>
+      <name value="MOPEDEncounter"/>
+      <description value="MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme und Entlassung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MOPEDOrganizationAbteilung"/>
+      </reference>
+      <name value="MOPEDOrganizationAbteilung"/>
+      <description value="MOPED Profil für Abteilungen innerhalb einer Krankenanstalt."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MOPEDTransferEncounter"/>
+      </reference>
+      <name value="MOPEDTransferEncounter"/>
+      <description value="MOPED Profil der Encounter Ressource für die Verlegung innerhalb oder zwischen Krankenanstalten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-Neugeborenes"/>
+      </reference>
+      <name value="Neugeborenes"/>
+      <description value="Ein Patient wird als Neugeborenes bezeichnet, wenn das Alter zum Zugangszeitpunkt auf die Abteilung &lt;28 Tage ist."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-PatientenanteilAngehoerige"/>
+      </reference>
+      <name value="Patientenanteil für Angehoerige"/>
+      <description value="MOPED Extension für den Patientenanteil für Angehörige (tägl. Satz) netto: Betrag in €, 2 Nachkommastellen"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-Patientenanteil"/>
+      </reference>
+      <name value="Patientenanteil Netto"/>
+      <description value="MOPED Extension für den Patientenanteil netto: Betrag in €, 2 Nachkommastellen"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-physischeAnwesenheit"/>
+      </reference>
+      <name value="physische Anwesenheit"/>
+      <description value="Ob der Patient physisch anwesend war."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/Plausibilitaetskennzeichen"/>
+      </reference>
+      <name value="Plausibilitaetskennzeichen"/>
+      <description value="Dieses Datenfeld enthält eine Kennzeichnung als Ergebnis der vom Gesundheitsministerium vorgegebenen Plausibilitätsprüfung."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-PremiumClass"/>
+      </reference>
+      <name value="PremiumClass"/>
+      <description value="KLAS – Allgemeine Gebührenklasse/Sonderklasse"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/Punkte-Belagsdauerausreisser-unten-Leistungskomponente"/>
+      </reference>
+      <name value="Punkte Belagsdauerausreisser unten - Leistungskomponente"/>
+      <description value="In dieses Datenfeld ist – soweit zutreffend – die ermittelte Leistungskomponente für jene Patient:innen einzutragen, deren Belagsdauer des akutstationären Krankenhausaufenthalts unter der im LKF-Modell in der jeweiligen LDF-Pauschale festgelegten Belagsdaueruntergrenze liegt."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/Punkte-Belagsdauerausreisser-unten-Tageskomponente"/>
+      </reference>
+      <name value="Punkte Belagsdauerausreisser unten - Tageskomponente"/>
+      <description value="In dieses Datenfeld ist – soweit zutreffend – die ermittelte Tageskomponente für jene Patient:innen einzutragen, deren Belagsdauer des akutstationären Krankenhausaufenthalts unter der im LKF-Modell in der jeweiligen LDF-Pauschale festgelegten Belagsdaueruntergrenze liegt."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-PunkteLDFPauschale"/>
+      </reference>
+      <name value="Punkte LDF Pauschale"/>
+      <description value="MOPED Extension für die LDF Punkte Pauschale"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/Punkte-spezieller-Bereiche-tageweise"/>
+      </reference>
+      <name value="Punkte spezieller Bereiche (tageweise)"/>
+      <description value="In dieses Datenfeld ist – soweit zutreffend – die Summe der tageweise ermittelten Punkte für einen stationären Krankenhausaufenthalt in speziellen Leistungsbereichen (z.B. in den Bereichen der Kinder- und Jugendpsychiatrie, der Akut-Nachbehandlung von neuro- logischen Patient:innen, der medizinischen Geriatrie, der Akutgeriatrie/Remobilisation sowie der palliativmedizinischen Einrichtungen) einzutragen."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/totalPoints"/>
+      </reference>
+      <name value="Punkte total"/>
+      <description value="In dieses Datenfeld ist die Gesamtsumme der für den stationären Aufenthalt/den ambulanten Besuch ermittelten Punkte einzutragen."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-RechnungsnummerKHLGF"/>
+      </reference>
+      <name value="Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds"/>
+      <description value="MOPED Extension für die Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ecard-anspruch-rezeptgebbefreit"/>
+      </reference>
+      <name value="Rezeptgebührenbefreit laut Versicherungsanspruch"/>
+      <description value="Rezeptgebührenbefreiung für den Patienten, die direkt an den Anspruch  geknüpft ist. Der Patient ist von der &#xA;Entrichtung der Rezeptgebühr befreit. Kostenanteile sind entweder laut Gesetz vorgegeben (z.B. Rezeptgebühr) oder sie sind in der Satzung des jeweiligen KV-Trägers &#xA;verankert und werden meistens errechnet (z.B. für Heilbehelfe und Hilfsmittel)."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/SAPS3Questionnaire"/>
+      </reference>
+      <name value="SAPS3 Questionnaire"/>
+      <description value="A questionnaire for collecting SAPS3 data"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/ka-statistik-k03"/>
+      </reference>
+      <name value="Satzart K03 – KA-Statistik (Ressourcen und Inanspruchnahme)"/>
+      <description value="This questionnaire is used to collect KA-Statistik data for K03 message reporting."/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/ka-statistik-k05"/>
+      </reference>
+      <name value="Satzart K05 – KA-Statistik (Personal des ärztlichen Dienstes)"/>
+      <description value="This questionnaire is used to collect KA-Statistik data for K05 message reporting."/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/moped-Sonderklasse-valueset"/>
+      </reference>
+      <name value="Sonderklasse"/>
+      <description value="ValueSet für die Klasse (KaOrg)"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-Sonderleistungsnummer"/>
+      </reference>
+      <name value="Sonderleistungsnummer"/>
+      <description value="MOPED Extension für die Sonderleistungsnummer"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/SVCCoverage"/>
+      </reference>
+      <name value="SVCCoverage"/>
+      <description value="SVC Profil der Coverage Ressource für Versicherungen. Basierend auf dem Profil &quot;ecardAnspruch&quot;: https://www.chipkarte.at/de/vdas-on-fhir/site/StructureDefinition-ecard-anspruch-profile.html"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-TageOhneKostenbeitrag"/>
+      </reference>
+      <name value="Tage ohne Einhebung des Kostenbeitrags"/>
+      <description value="Anzahl der Tage, für welche kein Kostenbeitrag seitens der Krankenanstalt eingehoben wurde"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/Tageskomponente-Kontaktpunkte"/>
+      </reference>
+      <name value="Tageskomponente/Kontaktpunkte"/>
+      <description value="In dieses Datenfeld ist – soweit zutreffend – die Tageskomponente bzw. sind die Kontakt- punkte einzutragen."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Account"/>
+      </extension>
+      <reference>
+        <reference value="Account/Test1Account"/>
+      </reference>
+      <name value="Test1Account"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDAccount"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/Test1Condition1"/>
+      </reference>
+      <name value="Test1Condition1"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CoverageEligibilityRequest"/>
+      </extension>
+      <reference>
+        <reference value="CoverageEligibilityRequest/Test1MOPEDCoverageEligibilityRequest1"/>
+      </reference>
+      <name value="Test1MOPEDCoverageEligibilityRequest1"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDCoverageEligibilityRequest"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CoverageEligibilityResponse"/>
+      </extension>
+      <reference>
+        <reference value="CoverageEligibilityResponse/Test1MOPEDCoverageEligibilityResponse1"/>
+      </reference>
+      <name value="Test1MOPEDCoverageEligibilityResponse1"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDCoverageEligibilityResponse"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/Test1MOPEDEncounter"/>
+      </reference>
+      <name value="Test1MOPEDEncounter"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDEncounter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/Test1OrganizationAbteilung1"/>
+      </reference>
+      <name value="Test1OrganizationAbteilung1"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/Test1OrganizationHerzJesuKrankenhaus"/>
+      </reference>
+      <name value="Test1OrganizationHerzJesuKrankenhaus"/>
+      <description value="Organization Ressource für das Herz Jesu-Krankenhaus"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/Test1OrganizationInsurance1"/>
+      </reference>
+      <name value="Test1OrganizationInsurance1"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/Test1OrganizationUeberweisendeOrganisation"/>
+      </reference>
+      <name value="Test1OrganizationUeberweisendeOrganisation"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/Test1Patient"/>
+      </reference>
+      <name value="Test1Patient"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Coverage"/>
+      </extension>
+      <reference>
+        <reference value="Coverage/Test1SVCCoverage"/>
+      </reference>
+      <name value="Test1SVCCoverage"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/SVCCoverage"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/Test1TransferEncounter1"/>
+      </reference>
+      <name value="Test1TransferEncounter1"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDTransferEncounter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Account"/>
+      </extension>
+      <reference>
+        <reference value="Account/Test2Account"/>
+      </reference>
+      <name value="Test2Account"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDAccount"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/Test2Condition1"/>
+      </reference>
+      <name value="Test2Condition1"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/Test2Condition2"/>
+      </reference>
+      <name value="Test2Condition2"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CoverageEligibilityRequest"/>
+      </extension>
+      <reference>
+        <reference value="CoverageEligibilityRequest/Test2MOPEDCoverageEligibilityRequest1"/>
+      </reference>
+      <name value="Test2MOPEDCoverageEligibilityRequest1"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDCoverageEligibilityRequest"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CoverageEligibilityResponse"/>
+      </extension>
+      <reference>
+        <reference value="CoverageEligibilityResponse/Test2MOPEDCoverageEligibilityResponse1"/>
+      </reference>
+      <name value="Test2MOPEDCoverageEligibilityResponse1"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDCoverageEligibilityResponse"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/Test2MOPEDEncounter1"/>
+      </reference>
+      <name value="Test2MOPEDEncounter1"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDEncounter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/Test2OrganizationAbteilung1"/>
+      </reference>
+      <name value="Test2OrganizationAbteilung1"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/Test2OrganizationAbteilung2"/>
+      </reference>
+      <name value="Test2OrganizationAbteilung2"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/Test2OrganizationAbteilung3"/>
+      </reference>
+      <name value="Test2OrganizationAbteilung3"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/Test2OrganizationAbteilung4"/>
+      </reference>
+      <name value="Test2OrganizationAbteilung4"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/Test2OrganizationAbteilung5"/>
+      </reference>
+      <name value="Test2OrganizationAbteilung5"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/Test2OrganizationInsurance1"/>
+      </reference>
+      <name value="Test2OrganizationInsurance1"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/Test2OrganizationUeberweisendeOrganisation"/>
+      </reference>
+      <name value="Test2OrganizationUeberweisendeOrganisation"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/Test2Patient"/>
+      </reference>
+      <name value="Test2Patient"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/Test2SAPS3QuestionnaireResponse1"/>
+      </reference>
+      <name value="Test2SAPS3QuestionnaireResponse1"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Coverage"/>
+      </extension>
+      <reference>
+        <reference value="Coverage/Test2SVCCoverage"/>
+      </reference>
+      <name value="Test2SVCCoverage"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/SVCCoverage"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/Test2TransferEncounter1"/>
+      </reference>
+      <name value="Test2TransferEncounter1"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDTransferEncounter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/Test2TransferEncounter2"/>
+      </reference>
+      <name value="Test2TransferEncounter2"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDTransferEncounter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/Test2TransferEncounter3"/>
+      </reference>
+      <name value="Test2TransferEncounter3"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDTransferEncounter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/Test2TransferEncounter4"/>
+      </reference>
+      <name value="Test2TransferEncounter4"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDTransferEncounter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/Test2TransferEncounter5"/>
+      </reference>
+      <name value="Test2TransferEncounter5"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/StructureDefinition/MOPEDTransferEncounter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-transportart"/>
+      </reference>
+      <name value="Transportart"/>
+      <description value="MOPED Extension für die Transportart."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/moped-transportart-valueset"/>
+      </reference>
+      <name value="Transportart"/>
+      <description value="ValueSet für die Transportart des Patienten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-unfalldatum"/>
+      </reference>
+      <name value="Unfalldatum"/>
+      <description value="MOPED Extension für das Ereignis-/Unfalldatum."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/moped-ursache-valueset"/>
+      </reference>
+      <name value="Ursache für Behandlung"/>
+      <description value="ValueSet für die Ursache der Behandlung laut Ka-Org"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-vaestatus"/>
+      </reference>
+      <name value="VAEStatus"/>
+      <description value="&quot;VAEST - Status der Versichertenanspruchserklärung&quot;"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-vdasid"/>
+      </reference>
+      <name value="VDAS-ID - VersichertenDatenAbfrageService"/>
+      <description value="Es handelt sich um eine ID, welche bei der VDAS-Abfrage durch die Krankenanstalt vom e-card System vergeben wird und von der Krankenanstalt in der Aufnahme-/Ereignisanzeige mitgeliefert werden kann. Dadurch kann das Abfrageergebnis eindeutig nachvollzogen werden.&#xA;Das Ergebnis der VDAS-Abfrage ist im ambulanten Bereich für den Krankenversicherungsträger verbindlich. Eine Ablehnung aus versicherungsrechtlichen Gründen ist nicht möglich, sofern die Ereignisanzeige jenem Träger aus der VDAS-Abfrage (inkl. VDAS-ID) übermittelt wurde.&#xA;Um eine zwischenstaatliche Verrechnung zu ermöglichen ist bei zwischenstaatlichen Fällen eine Ablehnung zulässig."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-VerdachtArbeitsSchuelerunfall"/>
+      </reference>
+      <name value="Verdacht auf Arbeits- oder Schuelerunfall"/>
+      <description value="MOPED Extension für den Verdacht auf einen Arbeits- oder Schuelerunfall."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/moped-VerdachtArbeitsSchuelerunfall-valueset"/>
+      </reference>
+      <name value="Verdacht auf Arbeits- oder Schuelerunfall"/>
+      <description value="ValueSet für den Verdacht auf einen Arbeits- oder Schuelerunfall"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-VerdachtFremdverschulden"/>
+      </reference>
+      <name value="Verdacht auf Fremdverschulden"/>
+      <description value="MOPED Extension für den Verdacht auf Fremdverschulden"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-extensionDays"/>
+      </reference>
+      <name value="Verlaengerungstage"/>
+      <description value="Anzahl der Verlaengerungstage bei Verlängerung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/MOPED.CoverageEligibilityRequest.CheckStatus"/>
+      </reference>
+      <name value="Versichertenanspruchserklärung-Anfrage $checkStatus"/>
+      <description value="Die Versichertenanspruchserklärung-Anfrage $checkStatus Operation wird aufgerufen, um zu überprüfen, in welchem Status sich die Bearbeitung seitens SV derzeit befindet. Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen.&#xA;&#xA;1. Suchen des MOPEDAccounts: Über die Referenz der Ressource *MOPEDEncounter.account*. Dabei handelt es sich um jenen Encounter, der den *aufnahmezahl* Parameter als *identifier* gespeichert hat. &#xA;2. Suchen des Requests: Es geht um jenen Request, der in *MOPEDAccount.coverageEligibilityRequest* Feld referenziert wurde&#xA;3. Suche nach einer CoverageEligibilityResponse die im Feld *CoverageEligibilityResponse.request* den Request aus Schritt 2 referenziert&#xA;  * Sollte es mehrere Responses zu einem Request geben, ist das eine Inkonsistenz die zu einer Fehlermeldung führen soll&#xA;  * Gibt es eine Response, so ist zu prüfen in welchem *CoverageEligibilityResponse.status* die Ressource aufscheint:&#xA;     * *draft*: Draft in Kombination mit dem *outcome*-Wert *queued* heißt, dass die SV den jeweiligen Request bereits ausgeliefert bekommen hat, jedoch die Bearbeitung noch nicht begonnen hat. Ein *draft*-Status in Kombination mit einem anderen *outcome*-Wert ist ungültig und sollte zu einer Fehlermeldung führen.&#xA;     * *active*: Active in Kombination mit dem *outcome*-Wert *queued* bedeutet, dass die SV aktiv gestartet hat, den CoverageEligibilityRequest zu bearbeiten, es jedoch noch kein Resultat gibt. Ist der *outcome* mit dem Wert *completed*, *error* oder *partial* befüllt, ist die SV mit der Response fertig und eine Meldung kann ausgegeben werden, dass die freigegebene CoverageEligibilityResponse vom Krankenhaus abgeholt werden kann."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/MOPED.CoverageEligibilityRequest.Abholen"/>
+      </reference>
+      <name value="Versichertenanspruchserklärung-Anfragen $abholen"/>
+      <description value="Die Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die Versichertenanspruchserklärung-Anfragen $abholen Operation wird aufgerufen, um alle noch offenen Versichertenanspruchserklärung-Anfragen, die bisher seitens SV noch nicht bearbeitet wurden, abgeholt werden können.&#xA;1. Suche nach relevanten Requests: Alle CoverageEligibilityRequests, &#xA;  * die im Feld *CoverageEligibilityRequest.insurer* die Organization mit *Organization.identifier* = Operation-Parameter *versicherer* referenziert haben UND&#xA;  * die noch keine gezugehörigen CoverageEligibilityResponse haben (CoverageEligibilityRequest CEReq where not exists CoverageEligibilityResponse with *CoverageEligibilityResponse.request* = CEReq). Der Status der Resposne ist dabei irrelevant.&#xA;2. Zusammenstellen des Return-Bundles:&#xA;   Mit der gleichen Logik wie der *_include* Suchparameter um die relevanten Ressourcen (Patient, Coverage) direkt mitbekommen zu können.&#xA;3. Erstellung eine Draft CoverageEligibilityResponse für jeden der ausgelieferten Requests:&#xA;   * mit Feld *CoverageEligibilityResponse.status* = *draft*&#xA;   * mit Feld *CoverageEligibilityResponse.request* = Referenz auf jeweiligen Request&#xA;   * mit Feld *CoverageEligibilityResponse.outcome* = *queued*"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-NumberOfPreviouslyPaidDays"/>
+      </reference>
+      <name value="Vortageanzahl auf Kostenbeitrag"/>
+      <description value="Zur Berechnung des Verpflegskostenbeitrags für Versicherte sowie des Kostenbeitrags für Angehörige ist die Angabe der zu berücksichtigenden Vortage erforderlich. Der Krankenversicherungsträger ist auf Grund der ihm zugänglichen Informationen in der Lage, Vorpflegetage zu berücksichtigen. Berücksichtigt werden alle stationären Aufenthalte eines Patienten innerhalb eines Kalenderjahres.&#xA;Der höchste Wert, mit welchem das Feld VTAGE befüllt werden kann, ist jener Wert, für welchen maximal ein Verpflegskostenbeitrag pro Kalenderjahr zu entrichten ist. Der Maximale Höchstwert beträgt somit 28 Tage."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-workflow-status"/>
+      </reference>
+      <name value="Workflow Status"/>
+      <description value="MOPED Extension für den Workflowstatus. Dieser beschreibt den Zustand in dem sich der administrative Fall derzeit befindet"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/moped-WorkflowStatus-valueset"/>
+      </reference>
+      <name value="Workflow Status eines Falls"/>
+      <description value="ValueSet für die Statusoptionen in denen sich ein Fall befinden kann."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-zugangsart"/>
+      </reference>
+      <name value="Zugangsart"/>
+      <description value="MOPED Extension für die Art des Zugangs."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/moped-zugangsart-valueset"/>
+      </reference>
+      <name value="Zugangsart des Patienten"/>
+      <description value="ValueSet für die Zugangsart des Patienten (LKF + Ka-Org)"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-Zusatzpunkte-Belagsdauerausreisser-nach-oben"/>
+      </reference>
+      <name value="Zusatzpunkte Belagsdauerausreißer nach oben"/>
+      <description value="In dieses Datenfeld ist – soweit zutreffend – die Summe der tageweise ermittelten Zusatz- punkte für jene Patient:innen einzutragen, deren Belagsdauer des akut-stationären Krankenhausaufenthaltes über der im LKF-Modell in der jeweiligen LDF-Pauschale fest- gelegten Belagsdauerobergrenze liegt."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-Zusatzpunkte-Intensiv"/>
+      </reference>
+      <name value="Zusatzpunkte Intensiv"/>
+      <description value="In dieses Datenfeld ist – soweit zutreffend – die Summe der Zusatzpunkte für während des stationären Krankenhausaufenthalts angefallene Tage auf abrechnungsrelevanten Intensiveinheiten einzutragen."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-Zusatzpunkte-Mehrfachleistungen"/>
+      </reference>
+      <name value="Zusatzpunkte Mehrfachleistungen"/>
+      <description value="In dieses Datenfeld ist – soweit zutreffend – die Summe der Zusatzpunkte für zusätzliche Leistungen außerhalb des Punktepauschales der zur Abrechnung gelangenden Gruppe einzutragen."/>
+      <isExample value="false"/>
+    </resource>
+    <page>
+      <sourceUrl value="toc.html"/>
+      <name value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <sourceUrl value="index.html"/>
+        <name value="index.html"/>
+        <title value="Home"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="use_case_description.html"/>
+        <name value="use_case_description.html"/>
+        <title value="Anwendungsfallbeschreibung"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="actors.html"/>
+        <name value="actors.html"/>
+        <title value="Akteure"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="workflowmanagement.html"/>
+        <name value="workflowmanagement.html"/>
+        <title value="Workflowmanagement"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="ka-org_mapping.html"/>
+        <name value="ka-org_mapping.html"/>
+        <title value="Ka-Org Mapping"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="lkf_mapping.html"/>
+        <name value="lkf_mapping.html"/>
+        <title value="LKF Mapping"/>
+        <generation value="markdown"/>
+      </page>
+    </page>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="copyrightyear"/>
+      </code>
+      <value value="2024+"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="releaselabel"/>
+      </code>
+      <value value="ci-build"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="autoload-resources"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/capabilities"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/examples"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/extensions"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/models"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/operations"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/profiles"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/resources"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/vocabulary"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/maps"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/testing"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/history"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="fsh-generated/resources"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-pages"/>
+      </code>
+      <value value="template/config"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-pages"/>
+      </code>
+      <value value="input/images"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-liquid"/>
+      </code>
+      <value value="template/liquid"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-liquid"/>
+      </code>
+      <value value="input/liquid"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-qa"/>
+      </code>
+      <value value="temp/qa"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-temp"/>
+      </code>
+      <value value="temp/pages"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-output"/>
+      </code>
+      <value value="output"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-tx-cache"/>
+      </code>
+      <value value="input-cache/txcache"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-suppressed-warnings"/>
+      </code>
+      <value value="input/ignoreWarnings.txt"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-history"/>
+      </code>
+      <value value="http://example.org/history.html"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="template-html"/>
+      </code>
+      <value value="template-page.html"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="template-md"/>
+      </code>
+      <value value="template-page-md.html"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-contact"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-context"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-copyright"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-jurisdiction"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-license"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-publisher"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-version"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-wg"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="active-tables"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="fmm-definition"/>
+      </code>
+      <value value="http://hl7.org/fhir/versions.html#maturity"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="propagate-status"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="excludelogbinaryformat"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="tabbed-snapshots"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>
