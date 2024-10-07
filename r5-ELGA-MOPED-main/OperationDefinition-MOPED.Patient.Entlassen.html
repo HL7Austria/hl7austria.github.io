@@ -199,7 +199,7 @@
         
           Draft
           
-            as of 2024-10-01
+            as of 2024-10-07
           
         
       </td>
@@ -223,27 +223,62 @@
 
 
 <p>
-<p>Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen.</p>
 
-<p>Die Patient $entlassen Operation wird aufgerufen, wenn ein(e) Patient*in aus dem Krankenhaus entlassen wurde.</p>
+<p><strong>Wer ruft diese Operation in welchem Zusammenhang auf?</strong></p>
 
-<p>Voraussetzungen für den Aufruf:</p>
+<p>Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $entlassen Operation wird aufgerufen, wenn ein(e) Patient*in aus dem Krankenhaus entlassen wurde.</p>
+
+<p><strong>Voraussetzungen für den Aufruf</strong></p>
+
 <ul>
-  <li>Account-Status: SV verarbeitet</li>
+  <li>Account-Status: <code class="language-plaintext highlighter-rouge">SV verarbeitet</code></li>
 </ul>
 
+<p><strong>Detaillierte Business-Logik</strong></p>
+
 <ol>
-  <li>Der Encounter erhält ein End-Datum (<em>MOPEDEncounter.actualPeriod.end</em>); der <em>MOPEDEncounter.status</em> wird auf <em>discharged</em> gesetzt</li>
-  <li>Das Element <em>MOPEDEncounter.admission.dischargeDisposition</em> wird mit dem Operation-Parameter <em>entlassungsart</em> befüllt.</li>
-  <li>Der alte MOPEDTransferEncounter der <em>partOf</em> des MOPEDEncounters mit der jeweiligen Aufnahmezahl war und noch den Status <em>in-progress</em> hat, wird gesucht. Der Status wird auf <em>completed</em> gesetzt und die <em>MOPEDTransferEncounter.actualPeriod.end</em> mit dem <em>zeitpunkt</em> der Entlassung versehen.</li>
-  <li>Ein MOPEDClaim mit dem Status <em>draft</em> wird erstellt und in <em>MOPEDAccount.claim</em> referenziert.</li>
-  <li>Änderungen am Account: der <em>MOPEDAccount.WorkflowStatus</em> wird auf <em>Entlassungs Aviso</em> gesetzt, oder, falls der <em>freigeben</em>-Parameter auf <em>true</em> gesetzt war und die Validierung erfolgreich war, wird <em>MOPEDAccount.WorkflowStatus</em> auf <em>Entlassung vollständig</em> gesetzt. Ebenso im <em>MOPEDAccount</em> im Element <em>TageOhneKostenbeitrag</em> wird der gleichnamige Opeartion-Parameter abgespeichert. Dieser ist verpflichtend zu befüllen, wenn der <em>freigeben</em>-Parameter auf <em>true</em> gestellt ist.</li>
+  <li>Suche des MOPEDEncounter: Der MOPEDEncounter mit der jeweiligen <em>aufnahmezahl</em> lt. Operation-Parameter wird gesucht</li>
+  <li>Update des MOPEDEncounters:
+    <ul>
+      <li><em>MOPEDEncounter.actualPeriod.end</em> mit dem <em>zeitpunkt</em> lt. Operation-Parameter befüllen</li>
+      <li><em>MOPEDEncounter.status</em> mit <code class="language-plaintext highlighter-rouge">discharged</code>  befüllen</li>
+      <li><em>MOPEDEncounter.admission.dischargeDisposition</em> mit <em>entlassungsart</em> lt. Operation-Parameter befüllen</li>
+    </ul>
+  </li>
+  <li>Suche des letzten MOPEDTransferEncounter: Mit <em>MOPEDTransferEncounter.partOf</em> einer Referenz auf den MOPEDEncounter aus Schritt 1 und den Status <em>in-progress</em></li>
+  <li>Update des letzten MOPEDTransferEncounter:
+    <ul>
+      <li><em>MOPEDTransferEncounter.status</em> mit <code class="language-plaintext highlighter-rouge">completed</code> befüllen gesetzt</li>
+      <li><em>MOPEDTransferEncounter.actualPeriod.end</em> mit <em>zeitpunkt</em> lt. Operation-Parameter befüllen</li>
+    </ul>
+  </li>
+  <li>Erstellung eines leeren <em>MOPEDClaim</em>:
+    <ul>
+      <li><em>MOPEDClaim.status</em> mit <code class="language-plaintext highlighter-rouge">draft</code> befüllen</li>
+      <li><em>MOPEDClaim.patient</em> mit MOPEDAccount.subject befüllen</li>
+    </ul>
+  </li>
+  <li>Änderungen im Account:
+    <ul>
+      <li><em>MOPEDAccount.ClaimRef</em> mit der Referenz aus Schritt 4 befüllen</li>
+      <li><em>MOPEDAccount.WorkflowStatus</em> mit <code class="language-plaintext highlighter-rouge">Entlassungs Aviso</code> befüllen, oder, falls der <em>freigeben</em>-Operation-Parameter auf <code class="language-plaintext highlighter-rouge">true</code> gesetzt war und die Validierung erfolgreich war, wird <em>MOPEDAccount.WorkflowStatus</em> mit <code class="language-plaintext highlighter-rouge">Entlassung vollständig</code> befüllt.</li>
+      <li><em>MOPEDAccount.TageOhneKostenbeitrag</em> lt. gleichnamigen Opeartion-Parameter befüllen</li>
+    </ul>
+  </li>
 </ol>
 
-<p>Validierung / Fehlerbehandlung:</p>
+<p><strong>Validierung / Fehlerbehandlung</strong></p>
+
 <ul>
   <li>Wenn der <em>freigeben</em>-Parameter auf <em>true</em> ist, muss eine Validierung aller Ressourcen (MOPEDEncounter, Account) erfolgreich sein, oder die Operation schlägt fehl.</li>
-  <li>Wurden bei der Suche in Schritt 3 mehrere MOPEDTransferEncounter gefunden, liegen inkonsistente Daten vor und die Operation schlägt fehl.</li>
+  <li>Wenn der <em>freigeben</em>-Parameter auf <em>true</em> ist, muss Information zu den Tagen ohne Kostenbeitrag vorliegen (i.e. der Operation-Parameter <em>TageOhneKostenbeitrag</em> muss befüllt sein)</li>
+  <li>Wurden bei der Suche in Schritt 4 mehrere MOPEDTransferEncounter gefunden, liegen inkonsistente Daten vor und die Operation schlägt fehl.</li>
+</ul>
+
+<p><strong>Weitere Hinweise</strong></p>
+
+<ul>
+  <li>Hinweis 1: Wurde der Patient direkt aus der Intensivstation entlassen, so müsste auch eine Abgangsart im MOPEDTransferEncounter gesetzt werden. Dieser Spezialfall wurde noch nicht berücksichtigt.</li>
 </ul>
 
 </p>
@@ -267,7 +302,7 @@
 </div></td></tr><tr><td>IN</td><td>tageOhneKostenbeitrag</td><td></td><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#unsignedInt">unsignedInt</a></td><td></td><td><div><p>Der <em>tageOhneKostenbeitrag</em> Parameter definiert zu für wie viele Tage kein Kostenbeitrag eingehoben wurde.</p>
 </div></td></tr><tr><td>IN</td><td>freigeben</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#boolean">boolean</a></td><td></td><td><div><p>Mit Hilfe des <em>freigeben</em> Parameters wird angegeben, ob es sich bei der Patienten-Entlassung um vollständige Daten handelt (<em>freigeben</em> = <em>true</em>) und somit eine Validierung erfolgen soll, oder ob lediglich unvollständige Daten zwischengespeichert werden (<em>freigeben</em> = <em>false</em>) - in diesem Fall wird ein Entlassungs-Aviso erstellt.</p>
 </div></td></tr><tr><td>OUT</td><td>return</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td></td><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>
-</div></td></tr></table><div><p>TBD: Schritt 3: eine Abgangsart vom TransferEncounter muss hinzugefügt werden, welchen fixen wert enthält diese bei Enlassung? In dieser Operation werden noch keine Leitungen erfasst, hier muss eine Möglichkeit gegeben werden, dies nachzuholen - in einer separaten Transaction/Operation.; Der Status 'SV verarbeitet' stimmt zwar als Voraussetzung für den ersten Schritt. Kann das aber so weiterverfolgt werden, sobald Selbstzahler / private Versicherungen hinzukommen? Was passiert in einer schnellen Entlassung, wenn die SV sich noch nicht zurück gemeldet hat?</p>
+</div></td></tr></table><div><p>TBD: Abgangsart beim MOPEDTransferEncounter falls intensiv, muss befüllt werden; In dieser Operation werden noch keine Leitungen erfasst, hier muss eine Möglichkeit gegeben werden, dies nachzuholen - in einer separaten Transaction/Operation.; Der Status 'SV verarbeitet' stimmt zwar als Voraussetzung für den ersten Schritt. Kann das aber so weiterverfolgt werden, sobald Selbstzahler / private Versicherungen hinzukommen? Was passiert in einer schnellen Entlassung, wenn die SV sich noch nicht zurück gemeldet hat?</p>
 </div></div>
 
     <!-- insert notes if present -->
@@ -292,8 +327,8 @@
 <div class="container">    <!-- container -->
 
 <div class="inner-wrapper">
-  <p><a name="l688">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Tue, Oct 1, 2024 12:31+0000">2024-10-01</span>
+  <p><a name="l762">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Mon, Oct 7, 2024 08:22+0000">2024-10-07</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -199,7 +199,7 @@
         
           Draft
           
-            as of 2024-10-01
+            as of 2024-10-07
           
         
       </td>
@@ -230,7 +230,7 @@
 <p><strong>Voraussetzungen für den Aufruf</strong></p>
 
 <ul>
-  <li>Account-Status: keiner (die Ressource Account wird erst mit dieser Operation erstellt)</li>
+  <li>Account-Status: n/a (die Ressource Account wird erst mit dieser Operation erstellt)</li>
 </ul>
 
 <p><strong>Detaillierte Business-Logik</strong></p>
@@ -247,14 +247,14 @@
       <li><em>MOPEDAccount.VDASID</em> lt. Operation-Parameter <em>vdasid</em> befüllen</li>
       <li><em>MOPEDAccount.AnzahlVerlegungen</em> mit Wert '0' befüllen</li>
       <li><em>MOPEDAccount.AnzahlBeurlaubungen</em> mit Wert '0' befüllen</li>
-      <li><em>MOPEDAccount.coverage.coverage</em> mit der Referenz lt. Parameter befüllen und ggf. Hauptversicherter (Patient) anlegen, falls noch nicht am Server. Hinweis: Eine vorangegangene VDAS-Anfrage an die SVC kann mehrere Coverages retournieren, im Input-Bundle <em>falldaten</em> wären somit mehrere Coverages die bei der Transaction angelegt werden. In diesem Fall sind <em>alle</em> im Account zu referenzieren.</li>
+      <li><em>MOPEDAccount.coverage.coverage</em> mit der Referenz lt. Parameter befüllen und ggf. Hauptversicherter (Patient) anlegen, falls noch nicht am Server.</li>
     </ul>
   </li>
   <li>Account im Encounter referenzieren: Den neuen MOPEDAccount im <em>MOPEDEncounter.account</em> referenzieren</li>
   <li>Durchführung der Operation <code class="language-plaintext highlighter-rouge">$verlegen</code> für Neufaufnahme:
     <ul>
       <li><em>$verlegen#aufnahmezahl</em> = <em>$aufnehmen#aufnahmezahl</em></li>
-      <li><em>$verlegen#zeitpunkt</em> = <em>$aufnehmen#zeitpunkt</em></li>
+      <li><em>$verlegen#zeitpunkt</em> = Operation-Parameter falldaten mit dem Pfad <em>Bundle.Encounter.actualPeriod.start</em></li>
       <li><em>$verlegen#funktionscode</em> = <em>$aufnehmen#funktionscode</em></li>
       <li><em>$verlgegen#funktionssubcode</em> = <em>$aufnehmen#funktionssubcode</em></li>
       <li><em>$verlegen#physischeAnwesenheit</em> = <em>$aufnehmen#physischeAnwesenheit</em></li>
@@ -267,8 +267,8 @@
 
 <ul>
   <li>Wenn der <em>freigeben</em>-Parameter auf <em>true</em> ist, muss eine Validierung aller Ressourcen im <em>falldaten</em>-Bundle erfolgreich sein, oder die Operation schlägt fehl.</li>
-  <li>Es kann nie mehrere Enconuter-Instanzen mit der gleichen Aufnahmezahl geben</li>
-  <li>Der Status <em>Encounter.status</em> muss den Wert 'in-progress' haben</li>
+  <li>Es kann nie mehrere MOPEDEnconuter-Instanzen mit der gleichen Aufnahmezahl geben</li>
+  <li>Der Status <em>MOPEDEncounter.status</em> muss den Wert 'in-progress' haben</li>
 </ul>
 
 <p><strong>Weitere Hinweise</strong></p>
@@ -304,10 +304,11 @@
 </div></td></tr><tr><td>IN</td><td>freigeben</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#boolean">boolean</a></td><td></td><td><div><p>Mit Hilfe des <em>freigeben</em> Parameters wird angegeben, ob es sich bei der Patienten-Aufnahme um vollständige Daten handelt und somit eine Validierung erfolgen soll (<em>freigeben</em> = <em>true</em>), oder ob lediglich unvollständige Daten zwischengespeichert werden (<em>freigeben</em> = <em>false</em>).</p>
 </div></td></tr><tr><td>IN</td><td>verdachtArbeitsSchuelerunfall</td><td></td><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="ValueSet-moped-VerdachtArbeitsSchuelerunfall-valueset.html">Verdacht auf Arbeits- oder Schuelerunfall</a> (Required)</td><td><div><p>Mit Hilfe des <em>verdachtArbeitsSchuelerunfall</em> Parameters wird festgehalten, ob es bei der Patienten-Aufnahme einen Verdacht auf einen Schüler- oder Arbeitsunfall gibt. Wird dieser Parameter mitgegeben, ist im Account das entsprechende Feld zu befüllen.</p>
 </div></td></tr><tr><td>IN</td><td>verdachtFremdverschulden</td><td></td><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#boolean">boolean</a></td><td></td><td><div><p>Mit Hilfe des <em>verdachtFremdverschulden</em> Parameters wird festgehalten, ob es bei der Patienten-Aufnahme einen Verdacht auf Fremdverschulden gibt. Wird dieser Parameter mitgegeben, ist im Account das entsprechende Feld zu befüllen.</p>
+</div></td></tr><tr><td>IN</td><td>physischeAnwesenheit</td><td></td><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#boolean">boolean</a></td><td></td><td><div><p>Der <em>physischeAnwesenheit</em> Parameter definiert ob der Patient physisch anwesend ist oder nicht.</p>
 </div></td></tr><tr><td>IN</td><td>funktionscode</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#string">string</a></td><td></td><td><div><p>Der <em>funktionscode</em> Parameter definiert auf welchen Funktionscode die Neuaufnahme stattfindet.</p>
 </div></td></tr><tr><td>IN</td><td>funktionssubcode</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#string">string</a></td><td></td><td><div><p>Der <em>funktionssubcode</em> Parameter definiert auf welchen Funktionssubcode die Neuaufnahme stattfindet.</p>
 </div></td></tr><tr><td>OUT</td><td>return</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td></td><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation. Wenn der <em>modus</em> Parameter auf 'freigeben' gesetzt war, ist die Operation erfolgreich, wenn die Daten validiert wurden und abgespeichert werden konnten. Wenn der <em>modus</em> Parameter auf <em>zwischenspeichern</em> gesetzt war, ist für eine erfolgreiche Durchführung der Operation lediglich ein erfolgreiches Speichern vorausgesetzt. Schlägt die Operation fehl, wird eine entsprechende Meldung ausgegeben.</p>
-</div></td></tr></table><div><p>TBD: möchten wir zusätzlich zur GDA-Referenz einen Input-Parameter, der gleich sein muss? Um in einem Extra-Schritt zusätzlich auf Gleichheit mit der Referenz in falldaten.MOPEDEncounter.serviceProvider prüfen zu können?; Frage an Architektur: gibt es Möglichkeiten, einen solchen Input-Parameter (GDA als Kontext) automatisiert auf einem anderen Sicherheits-Level zu befüllen als der Inhalt des Transaction Body?; Check, wo version-specific References nötig sind - ggf. relevant für Account.subject, Account.owner und Account.coverage sobald Modus auf <em>freigeben</em>.</p>
+</div></td></tr></table><div><p>TBD: möchten wir zusätzlich zur GDA-Referenz einen Input-Parameter, der gleich sein muss? Um in einem Extra-Schritt zusätzlich auf Gleichheit mit der Referenz in falldaten.MOPEDEncounter.serviceProvider prüfen zu können?; Frage an Architektur: gibt es Möglichkeiten, einen solchen Input-Parameter (GDA als Kontext) automatisiert auf einem anderen Sicherheits-Level zu befüllen als der Inhalt des Transaction Body?; Check, wo version-specific References nötig sind - ggf. relevant für Account.subject, Account.owner und Account.coverage sobald Modus auf <em>freigeben</em>. Überlegen, für was der Status Aufnahme in Arbeit tatsächlich nützlich ist und wenn dieser wirklich nötig ist, was passiert, wenn diese Operation mehrfach aufgerufen wird (speziell mit POSTen von Coverages, das Anlegen von MOPEDTransfer Encounters via $verlgen ect.)</p>
 </div></div>
 
     <!-- insert notes if present -->
@@ -332,8 +333,8 @@
 <div class="container">    <!-- container -->
 
 <div class="inner-wrapper">
-  <p><a name="l859">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Tue, Oct 1, 2024 12:31+0000">2024-10-01</span>
+  <p><a name="l873">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Mon, Oct 7, 2024 08:22+0000">2024-10-07</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

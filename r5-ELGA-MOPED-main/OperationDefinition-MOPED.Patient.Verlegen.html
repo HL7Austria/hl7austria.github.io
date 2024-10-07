@@ -199,7 +199,7 @@
         
           Draft
           
-            as of 2024-10-01
+            as of 2024-10-07
           
         
       </td>
@@ -223,6 +223,7 @@
 
 
 <p>
+
 <p><strong>Wer ruft diese Operation in welchem Zusammenhang auf?</strong></p>
 
 <p>Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $verlegen Operation wird aufgerufen, wenn ein(e) Patient*in auf eine andere Station verlegt wird. Auch initial, wenn ein Patient auf eine bestimmte Station aufgenommen wird, wird diese Operation aufgerufen (dies passiert automatisch im Zuge der Operation $aufnehmen).</p>
@@ -243,11 +244,12 @@
       <li><em>MOPEDTransferEncounter.partOf</em> referenziert den MOPEDEncounter aus Schritt 1.</li>
       <li><em>MOPEDTransferEncounter.actualPeriod.start</em> wird mit dem <em>zeitpunkt</em> lt. Operation-Parameter befüllt.</li>
       <li><em>MOPEDTransferEncounter.serviceProvider</em> setzt eine Referenz auf die MOPEDOrganizationAbteilung mit dem jeweiligen <em>funktionscode</em> bzw. <em>funktionssubcode</em> lt. Operation-Parameter.</li>
-      <li><em>MOPEDTransferEncounter.Neugeborenes</em> wird lt. LKF-Regeln berechnet (siehe Hinweis 1).</li>
+      <li><em>MOPEDTransferEncounter.Neugeborenes</em> wird lt. LKF-Regeln berechnet, anhand des <em>MOPEDEncounter.subject.birthdate</em> aus dem Encounter aus Schritt 1 (für Berechnugns-Details siehe Hinweis 1).</li>
+      <li><em>MOPEDTransferEncounter.Altersgruppe</em> wird lt. LKF-Regeln berechnet, anhand des <em>MOPEDEncounter.subject.birthdate</em> aus dem Encounter aus Schritt 1 (für Berechnugns-Details siehe Hinweis 2).</li>
       <li><em>MOPEDTransferEncounter.PhysischeAnwesenheit</em> wird lt. Operation-Parameter befüllt.</li>
     </ul>
   </li>
-  <li>Account AnzahlVerlegungen: Die Extension <em>Account.extension.AnzahlVerlegungen</em> im zur Aufnahmezahl gehöhrenden Account wird um 1 erhöht. Dies ist auch so, wenn es sich bei der Verlegung um einen Urlaub handeln sollte (siehe Hinweis 2).</li>
+  <li>Account AnzahlVerlegungen: Die Extension <em>Account.extension.AnzahlVerlegungen</em> im zur Aufnahmezahl gehöhrenden Account wird um 1 erhöht. Dies ist auch so, wenn es sich bei der Verlegung um einen Urlaub handeln sollte (siehe Hinweis 3).</li>
   <li>Alter Transfer Encounter:
     <ul>
       <li>Dieser Schritt ist nur relevant, wenn es sich <em>nicht</em> um eine Neufaufnahme (lt. Operation-Parameter) handelt.</li>
@@ -260,7 +262,7 @@
   <li>Account AnzahlBeurlaubungen:
     <ul>
       <li>Dieser Schritt ist nur relevant, wenn es sich <em>nicht</em> um eine Neufaufnahme (lt. Operation-Parameter) handelt.</li>
-      <li>War alter MOPEDTransferEncounter aus Schritt 3.2 ein Urlaub (i.e. Funktionscode <code class="language-plaintext highlighter-rouge">10000000</code>)?</li>
+      <li>War alter MOPEDTransferEncounter aus Schritt 4.2 ein Urlaub (i.e. Funktionscode <code class="language-plaintext highlighter-rouge">10000000</code>)?</li>
     </ul>
     <ul>
       <li>Wenn ja, dann wird der Counter <em>Account.extension.AnzahlBeurlaubungen</em> um 1 erhöht.</li>
@@ -270,7 +272,7 @@
 
 <p><strong>Validierung / Fehlerbehandlung</strong></p>
 <ul>
-  <li>Bei Neuaufnahme (lt. Operation-Parameter) muss das Feld <em>AnzahlVerlegungen</em> nach Ausführen der Operation den Wert <code class="language-plaintext highlighter-rouge">1</code> aufweisen und das Feld <em>AnzahlBeurlaubungen</em> den Wert <code class="language-plaintext highlighter-rouge">0</code>.</li>
+  <li>Bei Neuaufnahme (lt. Operation-Parameter) muss das Feld <em>AnzahlVerlegungen</em> nach Ausführen der Operation $verlegen den Wert <code class="language-plaintext highlighter-rouge">1</code> aufweisen und das Feld <em>AnzahlBeurlaubungen</em> den Wert <code class="language-plaintext highlighter-rouge">0</code>.</li>
   <li>Es kann immer nur einen MOPEDTransferEncounter für den jeweiligen Fall geben der <em>partOf</em> eines MOPEDEncounters mit der <em>aufnahmezahl</em> ist und den Status <em>in-progress</em> hat.</li>
   <li>Wenn es sich um eine Neuaufnahme (lt. Operation-Parameter) handelt, kann es keine Abgangsart (Operation-Parameter) geben.</li>
 </ul>
@@ -283,7 +285,22 @@
       <li>Nein (Alter zum Zugangszeitpunkt auf die Abteilung &gt;=28 Tage)</li>
     </ul>
   </li>
-  <li>Hinweis 2: Der Counter für AnzahlVerlegungen wird auch im Falle einer Beurlaubung erhöht, bei der eine reguläre Verlegung-Operation aufgerufen wird.</li>
+  <li>Hinweis 2: LKF 4.1.9 Altersgruppe bei Entlassung/Kontakt
+    <ul>
+      <li>Vollendete Lebensjahre sind ausschlaggebend</li>
+      <li>0: 0</li>
+      <li>1-4: 1</li>
+      <li>5-9: 5</li>
+      <li>10-14: 10</li>
+      <li>15-19: 15</li>
+      <li>20-24: 20</li>
+      <li>… immer weiter so, die untere Grenze des Alters in 5er-Schritten</li>
+      <li>85-89: 85</li>
+      <li>90-95: 90</li>
+      <li>95 und älter: 95</li>
+    </ul>
+  </li>
+  <li>Hinweis 3: Der Counter für AnzahlVerlegungen wird auch im Falle einer Beurlaubung erhöht, bei der eine reguläre Verlegung-Operation aufgerufen wird.</li>
 </ul>
 
 </p>
@@ -305,7 +322,7 @@
 </div></td></tr><tr><td>IN</td><td>zeitpunkt</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#dateTime">dateTime</a></td><td></td><td><div><p>Der <em>zeitpunkt</em> Parameter definiert zu welchem Zeitpunkt die Verlegung stattfindet.</p>
 </div></td></tr><tr><td>IN</td><td>funktionscode</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#string">string</a></td><td></td><td><div><p>Der <em>funktionscode</em> Parameter definiert auf welchen Funktionscode die Verlegung stattfindet.</p>
 </div></td></tr><tr><td>IN</td><td>funktionssubcode</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#string">string</a></td><td></td><td><div><p>Der <em>funktionssubcode</em> Parameter definiert auf welchen Funktionssubcode die Verlegung stattfindet.</p>
-</div></td></tr><tr><td>IN</td><td>pysischeAnwesenheit</td><td></td><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#boolean">boolean</a></td><td></td><td><div><p>Der <em>pysischeAnwesenheit</em> Parameter definiert ob der Patient physisch anwesend ist oder nicht.</p>
+</div></td></tr><tr><td>IN</td><td>physischeAnwesenheit</td><td></td><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#boolean">boolean</a></td><td></td><td><div><p>Der <em>physischeAnwesenheit</em> Parameter definiert ob der Patient physisch anwesend ist oder nicht.</p>
 </div></td></tr><tr><td>IN</td><td>neuaufnahme</td><td></td><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#boolean">boolean</a></td><td></td><td><div><p>Der <em>neuaufnahme</em> Parameter definiert ob es sich bei der Verlegung um die initiale Aufnahme des Patienten auf eine bestimmte Station handelt.</p>
 </div></td></tr><tr><td>IN</td><td>abgangsart</td><td></td><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="ValueSet-moped-abgangsart-valueset.html">Abgangsart des Patienten</a> (Required)</td><td><div><p>Der <em>abgangsart</em> Parameter definiert die Abgangsart des Patienten vom bisher aktuellen MOPEDTransferEncounter.</p>
 </div></td></tr><tr><td>OUT</td><td>return</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td></td><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>
@@ -334,8 +351,8 @@
 <div class="container">    <!-- container -->
 
 <div class="inner-wrapper">
-  <p><a name="l819">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Tue, Oct 1, 2024 12:31+0000">2024-10-01</span>
+  <p><a name="l869">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Mon, Oct 7, 2024 08:22+0000">2024-10-07</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
