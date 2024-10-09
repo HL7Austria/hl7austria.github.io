@@ -184,7 +184,7 @@
         
           Draft
           
-            as of 2024-10-03
+            as of 2024-10-09
           
         
       </td>
@@ -210,10 +210,11 @@
 &lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;freigeben&lt;/td&gt;&lt;td/&gt;&lt;td&gt;1..1&lt;/td&gt;&lt;td&gt;&lt;a href="http://hl7.org/fhir/R5/datatypes.html#boolean"&gt;boolean&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Mit Hilfe des &lt;em&gt;freigeben&lt;/em&gt; Parameters wird angegeben, ob es sich bei der Patienten-Aufnahme um vollständige Daten handelt und somit eine Validierung erfolgen soll (&lt;em&gt;freigeben&lt;/em&gt; = &lt;em&gt;true&lt;/em&gt;), oder ob lediglich unvollständige Daten zwischengespeichert werden (&lt;em&gt;freigeben&lt;/em&gt; = &lt;em&gt;false&lt;/em&gt;).&lt;/p&gt;
 &lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;verdachtArbeitsSchuelerunfall&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href="http://hl7.org/fhir/R5/datatypes.html#code"&gt;code&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a href="ValueSet-moped-VerdachtArbeitsSchuelerunfall-valueset.html"&gt;Verdacht auf Arbeits- oder Schuelerunfall&lt;/a&gt; (Required)&lt;/td&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Mit Hilfe des &lt;em&gt;verdachtArbeitsSchuelerunfall&lt;/em&gt; Parameters wird festgehalten, ob es bei der Patienten-Aufnahme einen Verdacht auf einen Schüler- oder Arbeitsunfall gibt. Wird dieser Parameter mitgegeben, ist im Account das entsprechende Feld zu befüllen.&lt;/p&gt;
 &lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;verdachtFremdverschulden&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href="http://hl7.org/fhir/R5/datatypes.html#boolean"&gt;boolean&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Mit Hilfe des &lt;em&gt;verdachtFremdverschulden&lt;/em&gt; Parameters wird festgehalten, ob es bei der Patienten-Aufnahme einen Verdacht auf Fremdverschulden gibt. Wird dieser Parameter mitgegeben, ist im Account das entsprechende Feld zu befüllen.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;physischeAnwesenheit&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href="http://hl7.org/fhir/R5/datatypes.html#boolean"&gt;boolean&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Der &lt;em&gt;physischeAnwesenheit&lt;/em&gt; Parameter definiert ob der Patient physisch anwesend ist oder nicht.&lt;/p&gt;
 &lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;funktionscode&lt;/td&gt;&lt;td/&gt;&lt;td&gt;1..1&lt;/td&gt;&lt;td&gt;&lt;a href="http://hl7.org/fhir/R5/datatypes.html#string"&gt;string&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Der &lt;em&gt;funktionscode&lt;/em&gt; Parameter definiert auf welchen Funktionscode die Neuaufnahme stattfindet.&lt;/p&gt;
 &lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;funktionssubcode&lt;/td&gt;&lt;td/&gt;&lt;td&gt;1..1&lt;/td&gt;&lt;td&gt;&lt;a href="http://hl7.org/fhir/R5/datatypes.html#string"&gt;string&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Der &lt;em&gt;funktionssubcode&lt;/em&gt; Parameter definiert auf welchen Funktionssubcode die Neuaufnahme stattfindet.&lt;/p&gt;
 &lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;OUT&lt;/td&gt;&lt;td&gt;return&lt;/td&gt;&lt;td/&gt;&lt;td&gt;1..1&lt;/td&gt;&lt;td&gt;&lt;a href="http://hl7.org/fhir/R5/resource.html"&gt;Resource&lt;/a&gt; (&lt;a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome"&gt;OperationOutcome&lt;/a&gt;)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Der &lt;em&gt;return&lt;/em&gt; Parameter gibt Auskunft über den Erfolg der Operation. Wenn der &lt;em&gt;modus&lt;/em&gt; Parameter auf 'freigeben' gesetzt war, ist die Operation erfolgreich, wenn die Daten validiert wurden und abgespeichert werden konnten. Wenn der &lt;em&gt;modus&lt;/em&gt; Parameter auf &lt;em&gt;zwischenspeichern&lt;/em&gt; gesetzt war, ist für eine erfolgreiche Durchführung der Operation lediglich ein erfolgreiches Speichern vorausgesetzt. Schlägt die Operation fehl, wird eine entsprechende Meldung ausgegeben.&lt;/p&gt;
-&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;div&gt;&lt;p&gt;TBD: möchten wir zusätzlich zur GDA-Referenz einen Input-Parameter, der gleich sein muss? Um in einem Extra-Schritt zusätzlich auf Gleichheit mit der Referenz in falldaten.MOPEDEncounter.serviceProvider prüfen zu können?; Frage an Architektur: gibt es Möglichkeiten, einen solchen Input-Parameter (GDA als Kontext) automatisiert auf einem anderen Sicherheits-Level zu befüllen als der Inhalt des Transaction Body?; Check, wo version-specific References nötig sind - ggf. relevant für Account.subject, Account.owner und Account.coverage sobald Modus auf &lt;em&gt;freigeben&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;div&gt;&lt;p&gt;TBD: möchten wir zusätzlich zur GDA-Referenz einen Input-Parameter, der gleich sein muss? Um in einem Extra-Schritt zusätzlich auf Gleichheit mit der Referenz in falldaten.MOPEDEncounter.serviceProvider prüfen zu können?; Frage an Architektur: gibt es Möglichkeiten, einen solchen Input-Parameter (GDA als Kontext) automatisiert auf einem anderen Sicherheits-Level zu befüllen als der Inhalt des Transaction Body?; Check, wo version-specific References nötig sind - ggf. relevant für Account.subject, Account.owner und Account.coverage sobald Modus auf &lt;em&gt;freigeben&lt;/em&gt;. Überlegen, für was der Status Aufnahme in Arbeit tatsächlich nützlich ist und wenn dieser wirklich nötig ist, was passiert, wenn diese Operation mehrfach aufgerufen wird (speziell mit POSTen von Coverages, das Anlegen von MOPEDTransfer Encounters via $verlgen ect.)&lt;/p&gt;
 &lt;/div&gt;&lt;/div&gt;<a name="end-xhtml"></a>
   &lt;/text&gt;
   &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.url">url</a>
@@ -223,7 +224,7 @@
   &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.title">title</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="MOPED Patient $aufnehmen (POC)"/&gt;
   &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.status">status</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="draft"/&gt;
   &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.kind">kind</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="operation"/&gt;
-  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.date">date</a> <a href="http://hl7.org/fhir/R5/datatypes.html#dateTime">value</a>="2024-10-03T14:00:19+00:00"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.date">date</a> <a href="http://hl7.org/fhir/R5/datatypes.html#dateTime">value</a>="2024-10-09T10:44:28+00:00"/&gt;
   &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.publisher">publisher</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Example Publisher"/&gt;
   &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.contact">contact</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R5/metadatatypes.html#ContactDetail#ContactDetail.name">name</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Example Publisher"/&gt;
@@ -239,7 +240,7 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $aufnehmen Operat
 
 **Voraussetzungen für den Aufruf**
 
-* Account-Status: keiner (die Ressource Account wird erst mit dieser Operation erstellt)
+* Account-Status: n/a (die Ressource Account wird erst mit dieser Operation erstellt)
 
 **Detaillierte Business-Logik**
 
@@ -253,11 +254,11 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $aufnehmen Operat
    * *MOPEDAccount.VDASID* lt. Operation-Parameter *vdasid* befüllen
    * *MOPEDAccount.AnzahlVerlegungen* mit Wert '0' befüllen
    * *MOPEDAccount.AnzahlBeurlaubungen* mit Wert '0' befüllen
-   * *MOPEDAccount.coverage.coverage* mit der Referenz lt. Parameter befüllen und ggf. Hauptversicherter (Patient) anlegen, falls noch nicht am Server. Hinweis: Eine vorangegangene VDAS-Anfrage an die SVC kann mehrere Coverages retournieren, im Input-Bundle *falldaten* wären somit mehrere Coverages die bei der Transaction angelegt werden. In diesem Fall sind *alle* im Account zu referenzieren.
+   * *MOPEDAccount.coverage.coverage* mit der Referenz lt. Parameter befüllen und ggf. Hauptversicherter (Patient) anlegen, falls noch nicht am Server.
 3. Account im Encounter referenzieren: Den neuen MOPEDAccount im *MOPEDEncounter.account* referenzieren
 4. Durchführung der Operation `$verlegen` für Neufaufnahme:
   * *$verlegen#aufnahmezahl* = *$aufnehmen#aufnahmezahl*
-  * *$verlegen#zeitpunkt* = *$aufnehmen#zeitpunkt*
+  * *$verlegen#zeitpunkt* = Operation-Parameter falldaten mit dem Pfad *Bundle.Encounter.actualPeriod.start*
   * *$verlegen#funktionscode* = *$aufnehmen#funktionscode*
   * *$verlgegen#funktionssubcode* = *$aufnehmen#funktionssubcode*
   * *$verlegen#physischeAnwesenheit* = *$aufnehmen#physischeAnwesenheit*
@@ -266,20 +267,20 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $aufnehmen Operat
 **Validierung / Fehlerbehandlung**
 
 * Wenn der *freigeben*-Parameter auf *true* ist, muss eine Validierung aller Ressourcen im *falldaten*-Bundle erfolgreich sein, oder die Operation schlägt fehl.
-* Es kann nie mehrere Enconuter-Instanzen mit der gleichen Aufnahmezahl geben
-* Der Status *Encounter.status* muss den Wert 'in-progress' haben
+* Es kann nie mehrere MOPEDEnconuter-Instanzen mit der gleichen Aufnahmezahl geben
+* Der Status *MOPEDEncounter.status* muss den Wert 'in-progress' haben
 
 **Weitere Hinweise**
 
 * Hinweis 1: Die Werte-Ausprägung des *freigeben* Parameters haben eine Auswirkung auf das Verhalten der Operation:
   * *false*: Die Patientenaufnahme ist noch nicht vollständig und wird lediglich zwischengespeichert. Hier findet keine Validierung der Encounter Ressource statt. Eine Account-Ressource wird erstellt, die den *WorkflowStatus* 'Aufnahme in Arbeit' hat und im Encounter referenziert.
-  * *true*: Die Patientenaufnahme ist vollständig und es ist zu erwarten, dass alle nötigen Felder befüllt sind. Schlägt die Validierung der *falldaten* fehl, kann die Operation nicht erfolgreich durchgeführt werden. Ist die Validierung erfolgreich, wird eine im Encounter referenzierte Account-Ressource erstellt bzw. upgedatet, die den *WorkflowStatus* 'Aufnahme freigegeben' hat. 
+  * *true*: Die Patientenaufnahme ist vollständig und es ist zu erwarten, dass alle nötigen Felder befüllt sind. Schlägt die Validierung der *falldaten* fehl, kann die Operation nicht erfolgreich durchgeführt werden. Ist die Validierung erfolgreich, wird eine im Encounter referenzierte Account-Ressource erstellt bzw. upgedatet, die den *WorkflowStatus* 'Aufnahme freigegeben' hat.
 * Hinweis 2: Es ist nicht nötig, bei dieser Operation den GDA-Identifier als Kontext mitzugeben. Auf den GDA wird im *falldaten*-Bundle als conditional Reference mittels entsprechendem Identifier im MOPEDEncounter verwiesen. Somit wird auch vermieden, dass Duplikate einer GDA-Organization-Ressource am Server angelegt/verwendet werden.
-* Hinweis 3: Im Parameter *falldaten* wird unter Anderem eine Coverage Ressource mitgegeben. Diese Ressource stammt in der Regel aus einer erfolgreichen VDAS-Abfrage. In Zukunft wird Moped auch andere Optionen unterstützen, wie die Verarbeitung von Daten von Selbstzahlern (wofür ein separates Coverage-Profil angelegt wird), oder die Verarbeitung von Fällen mit privater Krankenversicherung (auch hierfür wird ein separates Coverage-Profil angelegt). Im Ersten Schritt liegt der Fokus auf den Standard-Fall, der als Ausgangsbasis eine erfolgreich abgeschlossene VDAS-Abfrage voraussetzt. "/&gt;
+* Hinweis 3: Im Parameter *falldaten* wird unter Anderem eine Coverage Ressource mitgegeben. Diese Ressource stammt in der Regel aus einer erfolgreichen VDAS-Abfrage. In Zukunft wird Moped auch andere Optionen unterstützen, wie die Verarbeitung von Daten von Selbstzahlern (wofür ein separates Coverage-Profil angelegt wird), oder die Verarbeitung von Fällen mit privater Krankenversicherung (auch hierfür wird ein separates Coverage-Profil angelegt). Im Ersten Schritt liegt der Fokus auf den Standard-Fall, der als Ausgangsbasis eine erfolgreich abgeschlossene VDAS-Abfrage voraussetzt."/&gt;
   &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.affectsState">affectsState</a> <a href="http://hl7.org/fhir/R5/datatypes.html#boolean">value</a>="true"/&gt;
   &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.code">code</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="aufnehmen"/&gt;
   &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.comment">comment</a>
-           <a href="http://hl7.org/fhir/R5/datatypes.html#markdown">value</a>="TBD: möchten wir zusätzlich zur GDA-Referenz einen Input-Parameter, der gleich sein muss? Um in einem Extra-Schritt zusätzlich auf Gleichheit mit der Referenz in falldaten.MOPEDEncounter.serviceProvider prüfen zu können?; Frage an Architektur: gibt es Möglichkeiten, einen solchen Input-Parameter (GDA als Kontext) automatisiert auf einem anderen Sicherheits-Level zu befüllen als der Inhalt des Transaction Body?; Check, wo version-specific References nötig sind - ggf. relevant für Account.subject, Account.owner und Account.coverage sobald Modus auf *freigeben*."/&gt;
+           <a href="http://hl7.org/fhir/R5/datatypes.html#markdown">value</a>="TBD: möchten wir zusätzlich zur GDA-Referenz einen Input-Parameter, der gleich sein muss? Um in einem Extra-Schritt zusätzlich auf Gleichheit mit der Referenz in falldaten.MOPEDEncounter.serviceProvider prüfen zu können?; Frage an Architektur: gibt es Möglichkeiten, einen solchen Input-Parameter (GDA als Kontext) automatisiert auf einem anderen Sicherheits-Level zu befüllen als der Inhalt des Transaction Body?; Check, wo version-specific References nötig sind - ggf. relevant für Account.subject, Account.owner und Account.coverage sobald Modus auf *freigeben*. Überlegen, für was der Status Aufnahme in Arbeit tatsächlich nützlich ist und wenn dieser wirklich nötig ist, was passiert, wenn diese Operation mehrfach aufgerufen wird (speziell mit POSTen von Coverages, das Anlegen von MOPEDTransfer Encounters via $verlgen ect.)"/&gt;
   &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.base">base</a> <a href="http://hl7.org/fhir/R5/datatypes.html#canonical">value</a>="http://hl7.org/fhir/OperationDefinition/Patient-aufnehmen"/&gt;
   &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.resource">resource</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="Encounter"/&gt;
   &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.system">system</a> <a href="http://hl7.org/fhir/R5/datatypes.html#boolean">value</a>="false"/&gt;
@@ -337,6 +338,15 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $aufnehmen Operat
     &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="boolean"/&gt;
   &lt;/parameter&gt;
   &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.name">name</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="physischeAnwesenheit"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.use">use</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="in"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.min">min</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="0"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.max">max</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="1"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>
+                   <a href="http://hl7.org/fhir/R5/datatypes.html#markdown">value</a>="Der *physischeAnwesenheit* Parameter definiert ob der Patient physisch anwesend ist oder nicht."/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="boolean"/&gt;
+  &lt;/parameter&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.name">name</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="funktionscode"/&gt;
     &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.use">use</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="in"/&gt;
     &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.min">min</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="1"/&gt;
@@ -388,8 +398,8 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $aufnehmen Operat
 <div class="container">    <!-- container -->
 
 <div class="inner-wrapper">
-  <p><a name="l844">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Thu, Oct 3, 2024 14:00+0000">2024-10-03</span>
+  <p><a name="l883">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Wed, Oct 9, 2024 10:44+0000">2024-10-09</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
