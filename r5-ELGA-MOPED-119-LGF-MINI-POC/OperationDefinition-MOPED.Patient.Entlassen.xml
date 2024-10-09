@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="MOPED.Patient.Entlassen"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition MOPED.Patient.Entlassen</b></p><a name="MOPED.Patient.Entlassen"> </a><a name="hcMOPED.Patient.Entlassen"> </a><a name="MOPED.Patient.Entlassen-en-US"> </a><p>URL: [base]/Encounter/$entlassen</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>aufnahmezahl</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#Identifier">Identifier</a></td><td/><td><div><p>Der <em>aufnahmezahl</em> Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall.</p>
+</div></td></tr><tr><td>IN</td><td>zeitpunkt</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#dateTime">dateTime</a></td><td/><td><div><p>Der <em>zeitpunkt</em> Parameter definiert zu welchem Zeitpunkt die Beurlaubung startet.</p>
+</div></td></tr><tr><td>IN</td><td>entlassungsart</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="ValueSet-moped-entlassungsart-valueset.html">Entlassungsart des Patienten</a> (Required)</td><td><div><p>Der <em>entlassungsart</em> Parameter definiert die Entlassungsart des Patienten.</p>
+</div></td></tr><tr><td>IN</td><td>tageOhneKostenbeitrag</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#unsignedInt">unsignedInt</a></td><td/><td><div><p>Der <em>tageOhneKostenbeitrag</em> Parameter definiert zu für wie viele Tage kein Kostenbeitrag eingehoben wurde.</p>
+</div></td></tr><tr><td>IN</td><td>freigeben</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#boolean">boolean</a></td><td/><td><div><p>Mit Hilfe des <em>freigeben</em> Parameters wird angegeben, ob es sich bei der Patienten-Entlassung um vollständige Daten handelt (<em>freigeben</em> = <em>true</em>) und somit eine Validierung erfolgen soll, oder ob lediglich unvollständige Daten zwischengespeichert werden (<em>freigeben</em> = <em>false</em>) - in diesem Fall wird ein Entlassungs-Aviso erstellt.</p>
+</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>
+</div></td></tr></table><div><p>TBD: Abgangsart beim MOPEDTransferEncounter falls intensiv, muss befüllt werden; In dieser Operation werden noch keine Leitungen erfasst, hier muss eine Möglichkeit gegeben werden, dies nachzuholen - in einer separaten Transaction/Operation.; Der Status 'SV verarbeitet' stimmt zwar als Voraussetzung für den ersten Schritt. Kann das aber so weiterverfolgt werden, sobald Selbstzahler / private Versicherungen hinzukommen? Was passiert in einer schnellen Entlassung, wenn die SV sich noch nicht zurück gemeldet hat?</p>
+</div></div>
+  </text>
+  <url value="http://example.org/OperationDefinition/MOPED.Patient.Entlassen"/>
+  <version value="0.1.0"/>
+  <name value="MOPED_Patient_Entlassen"/>
+  <title value="MOPED Patient $entlassen (POC)"/>
+  <status value="draft"/>
+  <kind value="operation"/>
+  <date value="2024-10-09T10:32:17+00:00"/>
+  <publisher value="Example Publisher"/>
+  <contact>
+    <name value="Example Publisher"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://example.org/example-publisher"/>
+    </telecom>
+  </contact>
+  <description value="&#xA;**Wer ruft diese Operation in welchem Zusammenhang auf?**&#xA;&#xA;Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $entlassen Operation wird aufgerufen, wenn ein(e) Patient*in aus dem Krankenhaus entlassen wurde.&#xA;&#xA;**Voraussetzungen für den Aufruf**&#xA;&#xA;* Account-Status: `SV verarbeitet`&#xA;&#xA;**Detaillierte Business-Logik**&#xA;&#xA;1. Suche des MOPEDEncounter: Der MOPEDEncounter mit der jeweiligen *aufnahmezahl* lt. Operation-Parameter wird gesucht&#xA;2. Update des MOPEDEncounters:&#xA;  * *MOPEDEncounter.actualPeriod.end* mit dem *zeitpunkt* lt. Operation-Parameter befüllen&#xA;  * *MOPEDEncounter.status* mit `discharged`  befüllen&#xA;  * *MOPEDEncounter.admission.dischargeDisposition* mit *entlassungsart* lt. Operation-Parameter befüllen&#xA;3. Suche des letzten MOPEDTransferEncounter: Mit *MOPEDTransferEncounter.partOf* einer Referenz auf den MOPEDEncounter aus Schritt 1 und den Status *in-progress*&#xA;4. Update des letzten MOPEDTransferEncounter:&#xA;  * *MOPEDTransferEncounter.status* mit `completed` befüllen gesetzt&#xA;  * *MOPEDTransferEncounter.actualPeriod.end* mit *zeitpunkt* lt. Operation-Parameter befüllen&#xA;4. Erstellung eines leeren *MOPEDClaim*:&#xA;  * *MOPEDClaim.status* mit `draft` befüllen&#xA;  * *MOPEDClaim.patient* mit MOPEDAccount.subject befüllen&#xA;5. Änderungen im Account:&#xA;  * *MOPEDAccount.ClaimRef* mit der Referenz aus Schritt 4 befüllen&#xA;  * *MOPEDAccount.WorkflowStatus* mit `Entlassungs Aviso` befüllen, oder, falls der *freigeben*-Operation-Parameter auf `true` gesetzt war und die Validierung erfolgreich war, wird *MOPEDAccount.WorkflowStatus* mit `Entlassung vollständig` befüllt.&#xA;  * *MOPEDAccount.TageOhneKostenbeitrag* lt. gleichnamigen Opeartion-Parameter befüllen&#xA;&#xA;**Validierung / Fehlerbehandlung**&#xA;&#xA;* Wenn der *freigeben*-Parameter auf *true* ist, muss eine Validierung aller Ressourcen (MOPEDEncounter, Account) erfolgreich sein, oder die Operation schlägt fehl.&#xA;* Wenn der *freigeben*-Parameter auf *true* ist, muss Information zu den Tagen ohne Kostenbeitrag vorliegen (i.e. der Operation-Parameter *TageOhneKostenbeitrag* muss befüllt sein)&#xA;* Wurden bei der Suche in Schritt 4 mehrere MOPEDTransferEncounter gefunden, liegen inkonsistente Daten vor und die Operation schlägt fehl.&#xA;&#xA;**Weitere Hinweise**&#xA;&#xA;* Hinweis 1: Wurde der Patient direkt aus der Intensivstation entlassen, so müsste auch eine Abgangsart im MOPEDTransferEncounter gesetzt werden. Dieser Spezialfall wurde noch nicht berücksichtigt."/>
+  <affectsState value="true"/>
+  <code value="entlassen"/>
+  <comment value="TBD: Abgangsart beim MOPEDTransferEncounter falls intensiv, muss befüllt werden; In dieser Operation werden noch keine Leitungen erfasst, hier muss eine Möglichkeit gegeben werden, dies nachzuholen - in einer separaten Transaction/Operation.; Der Status 'SV verarbeitet' stimmt zwar als Voraussetzung für den ersten Schritt. Kann das aber so weiterverfolgt werden, sobald Selbstzahler / private Versicherungen hinzukommen? Was passiert in einer schnellen Entlassung, wenn die SV sich noch nicht zurück gemeldet hat?"/>
+  <base value="http://hl7.org/fhir/OperationDefinition/Patient-entlassen"/>
+  <resource value="Encounter"/>
+  <system value="false"/>
+  <type value="true"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="aufnahmezahl"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der *aufnahmezahl* Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall."/>
+    <type value="Identifier"/>
+  </parameter>
+  <parameter>
+    <name value="zeitpunkt"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der *zeitpunkt* Parameter definiert zu welchem Zeitpunkt die Beurlaubung startet."/>
+    <type value="dateTime"/>
+  </parameter>
+  <parameter>
+    <name value="entlassungsart"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der *entlassungsart* Parameter definiert die Entlassungsart des Patienten."/>
+    <type value="code"/>
+    <binding>
+      <strength value="required"/>
+      <valueSet value="moped-entlassungsart-valueset"/>
+    </binding>
+  </parameter>
+  <parameter>
+    <name value="tageOhneKostenbeitrag"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Der *tageOhneKostenbeitrag* Parameter definiert zu für wie viele Tage kein Kostenbeitrag eingehoben wurde."/>
+    <type value="unsignedInt"/>
+  </parameter>
+  <parameter>
+    <name value="freigeben"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Mit Hilfe des *freigeben* Parameters wird angegeben, ob es sich bei der Patienten-Entlassung um vollständige Daten handelt (*freigeben* = *true*) und somit eine Validierung erfolgen soll, oder ob lediglich unvollständige Daten zwischengespeichert werden (*freigeben* = *false*) - in diesem Fall wird ein Entlassungs-Aviso erstellt."/>
+    <type value="boolean"/>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der *return* Parameter gibt Auskunft über den Erfolg der Operation."/>
+    <type value="Resource"/>
+    <targetProfile value="http://hl7.org/fhir/StructureDefinition/OperationOutcome"/>
+  </parameter>
+</OperationDefinition>
