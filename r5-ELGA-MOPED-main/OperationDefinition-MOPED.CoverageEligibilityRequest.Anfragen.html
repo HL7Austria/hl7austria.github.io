@@ -223,25 +223,53 @@
 
 
 <p>
-<p>Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen.</p>
 
-<p>Voraussetzungen für den Aufruf:</p>
+<p><strong>Wer ruft diese Operation in welchem Zusammenhang auf?</strong></p>
+
+<p>Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die Versichertenanspruchserklärung $anfragen Operation wird aufgerufen, um die Versichertenanspruchserklärung-Anfrage an die SV anzustoßen. Diese Operation ist irrelevant für Selbstzahler (das ist wichtig für künftige weiterentwicklung - wenn im Account auf eine Coverage-Ressource für Selbstzahler referenziert wird, darf die Operation $anfragen nicht ausgeführt werden).</p>
+
+<p><strong>Voraussetzungen für den Aufruf</strong></p>
+
 <ul>
-  <li>Account-Status: 'Aufnahme freigegeben'</li>
+  <li>Account-Status: : <code class="language-plaintext highlighter-rouge">Aufnahme freigegeben</code></li>
 </ul>
 
-<p>Die Versichertenanspruchserklärung $anfragen Operation wird aufgerufen, um die Versichertenanspruchserklärung-Anfrage an die SV anzustoßen. Diese Operation ist irrelevant für Selbstzahler (das ist wichtig für künftige weiterentwicklung - wenn im Account auf eine Coverage-Ressource für Selbstzahler referenziert wird, darf die Operation $anfragen nicht ausgeführt werden).</p>
+<p><strong>Detaillierte Business-Logik</strong></p>
 
 <ol>
-  <li>Vorbereitung des CoverageEligibilityRequest: Ein CoverageEligibilityRequest mit dem <em>status</em> 'active' und <em>purpose</em> 'validation' und dem <em>created</em> aktuellem Zeitpunkt wird vorbereitet. Die Extension <em>ExtensionDays</em> wird mit dem Operation-Parameter <em>verlaengerungstage</em> befüllt, die Extension <em>PremiumClass</em> mit dem Operation-Parameter <em>sonderklasse</em>.</li>
-  <li>Suchen des MOPEDAccounts: Über die Referenz der Ressource <em>MOPEDEncounter.account</em>. Dabei handelt es sich um jenen Encounter, der den <em>aufnahmezahl</em> Parameter als <em>identifier</em> gespeichert hat.</li>
-  <li>Referenzieren des Patienten: Eine Referenz auf den Patienten der als <em>subject</em> im MOPEDAccount geführt ist, wird im <em>CoverageEligibilityRequest.patient</em> Element referenziert</li>
-  <li>Referenzieren der Coverage: Die gleiche Referenz wie im <em>MOPEDAccount.coverage.coverage</em> wird auch im CoverageEligibilityRequest referenziert. Check erfolgt, ob diese Coverage den gleichen Patienten als <em>beneficiary</em> hat wie das <em>subject</em> des CoverageEligibilityRequest. Außerdem wird geprüft, ob der <em>versicherer</em> an dem der Request gerichtet ist, auch tatsächlich als Coverage.insurer gelistet ist. Sollten im Account mehrere Coverages referenziert sein, so ist nur diejenige mitzusenden, die als <em>Coverage.insurer</em> den <em>versicherer</em> aus dem Operation-Parameter gespeichert hat.</li>
-  <li>Referenzieren des Providers: Als <em>provider</em> Element wird die Organization referenziert, die als <em>owner</em> im MOPEDAccount referenziert ist.</li>
-  <li>Einfügen des Versicherers: Als <em>insurer</em> Element wird die Organization referenziert, deren <em>identifier</em> dem Operation-Parameter <em>versicherer</em> entspricht.</li>
+  <li>Suche des MOPEDEncounter: Der MOPEDEncounter mit der jeweiligen <em>aufnahmezahl</em> lt. Operation-Parameter wird gesucht</li>
+  <li>Suchen des MOPEDAccounts: Die Referenz des <em>MOPEDEncounter.account</em> aus Schritt 1.</li>
+  <li>Erstellung des MOPEDCoverageEligibilityRequest:
+    <ul>
+      <li>a. <em>MOPEDCoverageEligibilityRequest.status</em> mit 'active' befüllen</li>
+      <li>b. <em>MOPEDCoverageEligibilityRequest.purpose</em> mit 'validation' befüllen</li>
+      <li>c. <em>MOPEDCoverageEligibilityRequest.created</em> mit dem aktuellem Zeitpunkt befüllen</li>
+      <li>d. <em>MOPEDCoverageEligibilityRequest.ExtensionDays</em> mit <em>verlaengerungstage</em> lt. Operation-Parameter befüllen</li>
+      <li>e. <em>MOPEDCoverageEligibilityRequest.PremiumClass</em> mit <em>sonderklasse</em> lt. Operation-Parameter befüllen</li>
+      <li>f. <em>MOPEDCoverageEligibilityRequest.patient</em> mit <em>MOPEDAccount.subject</em> befüllen</li>
+      <li>g. <em>MOPEDCoverageEligibilityRequest.insurance.coverage</em> mit <em>MOPEDAccount.coverage.coverage</em> befüllen</li>
+      <li>h. <em>MOPEDCoverageEligibilityRequest.provider</em> mit <em>MOPEDAccount.owner</em> befüllen</li>
+      <li>i. <em>MOPEDCoverageEligibilityRequest.insurer</em> mit einer Referenz auf jene Organization befüllen, deren <em>Organization.identifier</em> dem Identifier <em>versicherer</em> lt. Operation-Parameter entspricht</li>
+    </ul>
+  </li>
   <li>POSTen des neu erstellten CoverageEligibilityRequest</li>
-  <li>Referenzierung des CoverageEligibilityRequest im MOPEDAccount im Element <em>coverageEligibilityRequest</em>.</li>
+  <li>Referenz im MOPEDAccount:
+  a. <em>MOPEDAccount.coverageEligibilityRequest</em> mit Hilfe der resultierenden ID aus Schritt 6 referenzieren</li>
 </ol>
+
+<p><strong>Validierung / Fehlerbehandlung</strong></p>
+<ul>
+  <li><em>MOPEDAccount.coverage</em> darf nur eine Versicherung gelistet haben</li>
+  <li><em>CoverageEligibilityRequest.subject</em> muss mit <em>Coverage.beneficiary</em> aus Schritt 3g übereinstimmen</li>
+  <li><em>MOPEDCoverageEligibilityRequest.insurer</em> muss mit <em>Coverage.insurer</em> aus Schritt 3g übereinstimmen</li>
+  <li><em>MOPEDCoverageEligibilityRequest.provider</em> muss gleichzeitig die gleiche Organisation sein, die lt. Token die Operation aufgerufen hat.</li>
+</ul>
+
+<p><strong>Weitere Hinweise</strong></p>
+
+<ul>
+  <li>Hinweis 1: Nach dieser Operation findet lt. Soll-Prozess kein Update des Status <em>MOPEDAccount.workflowStatus</em> statt.</li>
+</ul>
 
 </p>
 
@@ -288,8 +316,8 @@
 <div class="container">    <!-- container -->
 
 <div class="inner-wrapper">
-  <p><a name="l651">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Fri, Oct 11, 2024 08:15+0000">2024-10-11</span>
+  <p><a name="l711">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Fri, Oct 11, 2024 09:22+0000">2024-10-11</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

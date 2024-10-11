@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "MOPED"] ; # 
   fhir:title [ fhir:v "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-10-11T08:15:28+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-10-11T09:22:23+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Example Publisher"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Example Publisher" ] ;
@@ -142,6 +142,18 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/ValueSet/moped-Anwesenheitsart-valueset> ;
+         fhir:reference [ fhir:v "ValueSet/moped-Anwesenheitsart-valueset" ]
+       ] ;
+       fhir:name [ fhir:v "Anwesenheitsart" ] ;
+       fhir:description [ fhir:v "ValueSet für die Anwesenheitsart" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
@@ -186,6 +198,18 @@
        ] ;
        fhir:name [ fhir:v "Aufnahmeart des Patienten" ] ;
        fhir:description [ fhir:v "ValueSet für die Aufnahmeart des Patienten" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/ValueSet/moped-VerpflegskostenBeitragsbefreiung-valueset> ;
+         fhir:reference [ fhir:v "ValueSet/moped-VerpflegskostenBeitragsbefreiung-valueset" ]
+       ] ;
+       fhir:name [ fhir:v "Befreiung für den Verpflegskostenbeitrag" ] ;
+       fhir:description [ fhir:v "Befreiung für den Verpflegskostenbeitrag" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -440,6 +464,30 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/ValueSet/moped-LKFAbrechnungsGruppe-valueset> ;
+         fhir:reference [ fhir:v "ValueSet/moped-LKFAbrechnungsGruppe-valueset" ]
+       ] ;
+       fhir:name [ fhir:v "LKF Abrechnungsgruppe" ] ;
+       fhir:description [ fhir:v "LKF Abrechnungsgruppe" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/ValueSet/moped-LKFbrechnungsKnoten-valueset> ;
+         fhir:reference [ fhir:v "ValueSet/moped-LKFbrechnungsKnoten-valueset" ]
+       ] ;
+       fhir:name [ fhir:v "LKF Abrechnungsknoten" ] ;
+       fhir:description [ fhir:v "LKF Abrechnungsknoten" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
@@ -531,7 +579,7 @@
          fhir:reference [ fhir:v "OperationDefinition/MOPED.CoverageEligibilityRequest.Anfragen" ]
        ] ;
        fhir:name [ fhir:v "MOPED Versichertenanspruchserklärung $anfragen (POC)" ] ;
-       fhir:description [ fhir:v "Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. \n\nVoraussetzungen für den Aufruf:\n* Account-Status: 'Aufnahme freigegeben'\n\nDie Versichertenanspruchserklärung $anfragen Operation wird aufgerufen, um die Versichertenanspruchserklärung-Anfrage an die SV anzustoßen. Diese Operation ist irrelevant für Selbstzahler (das ist wichtig für künftige weiterentwicklung - wenn im Account auf eine Coverage-Ressource für Selbstzahler referenziert wird, darf die Operation $anfragen nicht ausgeführt werden).\n\n1. Vorbereitung des CoverageEligibilityRequest: Ein CoverageEligibilityRequest mit dem *status* 'active' und *purpose* 'validation' und dem *created* aktuellem Zeitpunkt wird vorbereitet. Die Extension *ExtensionDays* wird mit dem Operation-Parameter *verlaengerungstage* befüllt, die Extension *PremiumClass* mit dem Operation-Parameter *sonderklasse*.\n2. Suchen des MOPEDAccounts: Über die Referenz der Ressource *MOPEDEncounter.account*. Dabei handelt es sich um jenen Encounter, der den *aufnahmezahl* Parameter als *identifier* gespeichert hat. \n3. Referenzieren des Patienten: Eine Referenz auf den Patienten der als *subject* im MOPEDAccount geführt ist, wird im *CoverageEligibilityRequest.patient* Element referenziert\n4. Referenzieren der Coverage: Die gleiche Referenz wie im *MOPEDAccount.coverage.coverage* wird auch im CoverageEligibilityRequest referenziert. Check erfolgt, ob diese Coverage den gleichen Patienten als *beneficiary* hat wie das *subject* des CoverageEligibilityRequest. Außerdem wird geprüft, ob der *versicherer* an dem der Request gerichtet ist, auch tatsächlich als Coverage.insurer gelistet ist. Sollten im Account mehrere Coverages referenziert sein, so ist nur diejenige mitzusenden, die als *Coverage.insurer* den *versicherer* aus dem Operation-Parameter gespeichert hat.\n4. Referenzieren des Providers: Als *provider* Element wird die Organization referenziert, die als *owner* im MOPEDAccount referenziert ist. \n5. Einfügen des Versicherers: Als *insurer* Element wird die Organization referenziert, deren *identifier* dem Operation-Parameter *versicherer* entspricht.\n6. POSTen des neu erstellten CoverageEligibilityRequest\n7. Referenzierung des CoverageEligibilityRequest im MOPEDAccount im Element *coverageEligibilityRequest*." ] ;
+       fhir:description [ fhir:v "\n**Wer ruft diese Operation in welchem Zusammenhang auf?**\n\nDie Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die Versichertenanspruchserklärung $anfragen Operation wird aufgerufen, um die Versichertenanspruchserklärung-Anfrage an die SV anzustoßen. Diese Operation ist irrelevant für Selbstzahler (das ist wichtig für künftige weiterentwicklung - wenn im Account auf eine Coverage-Ressource für Selbstzahler referenziert wird, darf die Operation $anfragen nicht ausgeführt werden).\n\n**Voraussetzungen für den Aufruf**\n\n* Account-Status: : `Aufnahme freigegeben`\n\n**Detaillierte Business-Logik**\n\n1. Suche des MOPEDEncounter: Der MOPEDEncounter mit der jeweiligen *aufnahmezahl* lt. Operation-Parameter wird gesucht\n2. Suchen des MOPEDAccounts: Die Referenz des *MOPEDEncounter.account* aus Schritt 1.\n3. Erstellung des MOPEDCoverageEligibilityRequest: \n  * a. *MOPEDCoverageEligibilityRequest.status* mit 'active' befüllen\n  * b. *MOPEDCoverageEligibilityRequest.purpose* mit 'validation' befüllen\n  * c. *MOPEDCoverageEligibilityRequest.created* mit dem aktuellem Zeitpunkt befüllen\n  * d. *MOPEDCoverageEligibilityRequest.ExtensionDays* mit *verlaengerungstage* lt. Operation-Parameter befüllen\n  * e. *MOPEDCoverageEligibilityRequest.PremiumClass* mit *sonderklasse* lt. Operation-Parameter befüllen\n  * f. *MOPEDCoverageEligibilityRequest.patient* mit *MOPEDAccount.subject* befüllen\n  * g. *MOPEDCoverageEligibilityRequest.insurance.coverage* mit *MOPEDAccount.coverage.coverage* befüllen\n  * h. *MOPEDCoverageEligibilityRequest.provider* mit *MOPEDAccount.owner* befüllen\n  * i. *MOPEDCoverageEligibilityRequest.insurer* mit einer Referenz auf jene Organization befüllen, deren *Organization.identifier* dem Identifier *versicherer* lt. Operation-Parameter entspricht\n6. POSTen des neu erstellten CoverageEligibilityRequest\n7. Referenz im MOPEDAccount:\n  a. *MOPEDAccount.coverageEligibilityRequest* mit Hilfe der resultierenden ID aus Schritt 6 referenzieren\n\n**Validierung / Fehlerbehandlung**\n* *MOPEDAccount.coverage* darf nur eine Versicherung gelistet haben\n* *CoverageEligibilityRequest.subject* muss mit *Coverage.beneficiary* aus Schritt 3g übereinstimmen\n* *MOPEDCoverageEligibilityRequest.insurer* muss mit *Coverage.insurer* aus Schritt 3g übereinstimmen\n* *MOPEDCoverageEligibilityRequest.provider* muss gleichzeitig die gleiche Organisation sein, die lt. Token die Operation aufgerufen hat.\n\n**Weitere Hinweise**\n\n* Hinweis 1: Nach dieser Operation findet lt. Soll-Prozess kein Update des Status *MOPEDAccount.workflowStatus* statt." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -644,6 +692,18 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/ValueSet/moped-sonderleistungsnummern-valueset> ;
+         fhir:reference [ fhir:v "ValueSet/moped-sonderleistungsnummern-valueset" ]
+       ] ;
+       fhir:name [ fhir:v "Nummer für Sonderleistung" ] ;
+       fhir:description [ fhir:v "Nummer für Sonderleistung" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
@@ -664,18 +724,6 @@
        ] ;
        fhir:name [ fhir:v "Patientenanteil Netto" ] ;
        fhir:description [ fhir:v "MOPED Extension für den Patientenanteil netto: Betrag in €, 2 Nachkommastellen" ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://example.org/StructureDefinition/moped-ext-physischeAnwesenheit> ;
-         fhir:reference [ fhir:v "StructureDefinition/moped-ext-physischeAnwesenheit" ]
-       ] ;
-       fhir:name [ fhir:v "physische Anwesenheit" ] ;
-       fhir:description [ fhir:v "Ob der Patient physisch anwesend war." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -844,6 +892,18 @@
        ] ;
        fhir:name [ fhir:v "Sonderleistungsnummer" ] ;
        fhir:description [ fhir:v "MOPED Extension für die Sonderleistungsnummer" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/ValueSet/moped-VAEStatus-valueset> ;
+         fhir:reference [ fhir:v "ValueSet/moped-VAEStatus-valueset" ]
+       ] ;
+       fhir:name [ fhir:v "Status der Versichertenanspruchserklärung" ] ;
+       fhir:description [ fhir:v "Status der Versichertenanspruchserklärung" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
