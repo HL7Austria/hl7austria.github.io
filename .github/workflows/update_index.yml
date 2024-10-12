@@ -5,9 +5,7 @@ name: UpdateIndex
 # Run on updates to the master
 on:
   push:
-    branches: [ pages ]
-  pull_request:
-    branches: [ pages ]
+    branches: [ refactor-landing-page ]
 
 jobs:
   build:
@@ -24,21 +22,25 @@ jobs:
       if: success()
       uses: actions/setup-python@v2
       with:
-        python-version: 3.8 
-    
+        python-version: 3.8
+
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
         pip install pyyaml
 
-    - name: Execute Update Script 
+    - name: Execute Update Script
       run: |
         python update.py
-    
-    - name: Execute Fix Naming Script 
+
+    - name: Update landing page for published IGs
+      run: |
+        python update_published.py
+
+    - name: Execute Fix Naming Script
       run: |
         python fix_naming.py
-  
+
     - name: Commit files
       run: |
         git config --local user.email "hl7at@github.com"
@@ -49,4 +51,4 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: pages
+        branch: refactor-landing-page
