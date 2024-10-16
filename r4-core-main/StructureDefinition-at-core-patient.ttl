@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "HL7ATCorePatient"] ; # 
   fhir:title [ fhir:v "HL7® AT Core Patient Profile"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-07-17T07:47:16+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-10-16T10:06:48+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7® Austria, TC FHIR®"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "HL7® Austria, TC FHIR®" ] ;
@@ -142,6 +142,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "ClinicalDocument.recordTarget.patientRole" ]
+       ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "Entity. Role, or Act" ]
        ] [
@@ -149,9 +152,6 @@
          fhir:map [ fhir:v "Patient[classCode=PAT]" ]
        ] [
          fhir:identity [ fhir:v "cda" ] ;
-         fhir:map [ fhir:v "ClinicalDocument.recordTarget.patientRole" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
          fhir:map [ fhir:v "ClinicalDocument.recordTarget.patientRole" ]
        ] )
      ] [
@@ -2165,6 +2165,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".id[1].root" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "CX.4 / EI-2-4" ]
        ] [
@@ -2173,9 +2176,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./IdentifierType" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".id[1].root" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.identifier:socialSecurityNumber.value" ] ;
@@ -2211,6 +2211,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".id[1].extension" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "CX.1 / EI.1" ]
        ] [
@@ -2219,9 +2222,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./Value" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".id[1].extension" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.identifier:socialSecurityNumber.period" ] ;
@@ -3226,6 +3226,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".id.where(root='1.2.40.0.10.2.1.1.149').root" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "CX.4 / EI-2-4" ]
        ] [
@@ -3234,9 +3237,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./IdentifierType" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".id.where(root='1.2.40.0.10.2.1.1.149').root" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.identifier:bPK.value" ] ;
@@ -3272,6 +3272,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".id.where(root='1.2.40.0.10.2.1.1.149').extension" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "CX.1 / EI.1" ]
        ] [
@@ -3280,9 +3283,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./Value" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".id.where(root='1.2.40.0.10.2.1.1.149').extension" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.identifier:bPK.period" ] ;
@@ -4286,6 +4286,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".id[0].root" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "CX.4 / EI-2-4" ]
        ] [
@@ -4294,9 +4297,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./IdentifierType" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".id[0].root" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.identifier:localPatientId.value" ] ;
@@ -4332,6 +4332,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".id[0].extension" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "CX.1 / EI.1" ]
        ] [
@@ -4340,9 +4343,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./Value" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".id[0].extension" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.identifier:localPatientId.period" ] ;
@@ -4458,6 +4458,9 @@
        fhir:isModifierReason [ fhir:v "This element is labelled as a modifier because it is a status element that can indicate that a record should not be treated as valid" ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] [
          fhir:identity [ fhir:v "w5" ] ;
          fhir:map [ fhir:v "FiveWs.status" ]
        ] [
@@ -4465,9 +4468,6 @@
          fhir:map [ fhir:v "statusCode" ]
        ] [
          fhir:identity [ fhir:v "cda" ] ;
-         fhir:map [ fhir:v "n/a" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
          fhir:map [ fhir:v "n/a" ]
        ] )
      ] [
@@ -4501,6 +4501,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".patient.name" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "PID-5, PID-9" ]
        ] [
@@ -4508,9 +4511,6 @@
          fhir:map [ fhir:v "name" ]
        ] [
          fhir:identity [ fhir:v "cda" ] ;
-         fhir:map [ fhir:v ".patient.name" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
          fhir:map [ fhir:v ".patient.name" ]
        ] )
      ] [
@@ -4712,6 +4712,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".patient.name.family.dataString" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XPN.1/FN.1" ]
        ] [
@@ -4720,9 +4723,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./FamilyName" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".patient.name.family.dataString" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.name.given" ] ;
@@ -4756,6 +4756,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".patient.name.given.dataString" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XPN.2 + XPN.3" ]
        ] [
@@ -4764,9 +4767,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./GivenNames" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".patient.name.given.dataString" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.name.prefix" ] ;
@@ -4798,6 +4798,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".patient.name.prefix.dataString" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XPN.5" ]
        ] [
@@ -4806,9 +4809,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./TitleCode" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".patient.name.prefix.dataString" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.name.suffix" ] ;
@@ -4840,14 +4840,14 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".patient.name.suffix.dataString" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XPN/4" ]
        ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "./part[partType = SFX]" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".patient.name.suffix.dataString" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.name.period" ] ;
@@ -5048,6 +5048,9 @@
          ]
        ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".telecom.value" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XTN.3" ]
        ] [
@@ -5056,9 +5059,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./ContactPointType" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".telecom.value" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.telecom.value" ] ;
@@ -5091,6 +5091,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".telecom.value" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XTN.1 (or XTN.12)" ]
        ] [
@@ -5099,9 +5102,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./Value" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".telecom.value" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.telecom.use" ] ;
@@ -5147,6 +5147,9 @@
          ]
        ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".telecom.use" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XTN.2 - but often indicated by field" ]
        ] [
@@ -5155,9 +5158,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./ContactPointPurpose" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".telecom.use" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.telecom.rank" ] ;
@@ -5276,6 +5276,9 @@
          ]
        ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".patient.administrativeGenderCode.displayName" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "PID-8" ]
        ] [
@@ -5284,9 +5287,6 @@
        ] [
          fhir:identity [ fhir:v "cda" ] ;
          fhir:map [ fhir:v ".patient.administrativeGenderCode" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".patient.administrativeGenderCode.displayName" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.gender.id" ] ;
@@ -5455,6 +5455,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".patient.birthTime.value" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "PID-7" ]
        ] [
@@ -5466,9 +5469,6 @@
        ] [
          fhir:identity [ fhir:v "loinc" ] ;
          fhir:map [ fhir:v "21112-8" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".patient.birthTime.value" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.deceased[x]" ] ;
@@ -5554,6 +5554,9 @@
        fhir:isModifierReason [ fhir:v "This element is labeled as a modifier because once a patient is marked as deceased, the actions that are appropriate to perform on the patient may be significantly different." ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".patient.deceasedInd" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "PID-30  (bool) and PID-29 (datetime)" ]
        ] [
@@ -5562,9 +5565,6 @@
        ] [
          fhir:identity [ fhir:v "cda" ] ;
          fhir:map [ fhir:v "n/a" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".patient.deceasedInd" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.deceased[x]:deceasedDateTime" ] ;
@@ -5599,6 +5599,9 @@
        fhir:isModifierReason [ fhir:v "This element is labeled as a modifier because once a patient is marked as deceased, the actions that are appropriate to perform on the patient may be significantly different." ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".patient.deceasedTime" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "PID-30  (bool) and PID-29 (datetime)" ]
        ] [
@@ -5607,16 +5610,13 @@
        ] [
          fhir:identity [ fhir:v "cda" ] ;
          fhir:map [ fhir:v "n/a" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".patient.deceasedTime" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.address" ] ;
        fhir:path [ fhir:v "Patient.address" ] ;
        fhir:short [ fhir:v "An address expressed using postal conventions (as opposed to GPS or other location definition formats)" ] ;
        fhir:definition [ fhir:v "An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world." ] ;
-       fhir:comment [ fhir:v "Note: address is intended to describe postal addresses for administrative purposes, not to describe absolute geographical coordinates.  Postal addresses are often used as proxies for physical locations (also see the [Location](location.html#) resource)." ] ;
+       fhir:comment [ fhir:v "Note: address is intended to describe postal addresses for administrative purposes, not to describe absolute geographical coordinates.  Postal addresses are often used as proxies for physical locations (also see the [Location](http://hl7.org/fhir/R4/location.html#) resource)." ] ;
        fhir:requirements [ fhir:v "May need to keep track of patient addresses for contacting, billing or reporting requirements and also to help with identification." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "*" ] ;
@@ -5811,6 +5811,9 @@
          ]
        ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".addr.use" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XAD.7" ]
        ] [
@@ -5819,9 +5822,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./AddressPurpose" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".addr.use" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.address.type" ] ;
@@ -5913,6 +5913,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".addr.select(streetAddressLine.dataString + ' ' + postalCode.dataString + ' ' + city.dataString + ' ' + country.dataString)" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XAD.1 + XAD.2 + XAD.3 + XAD.4 + XAD.5 + XAD.6" ]
        ] [
@@ -5921,9 +5924,6 @@
        ] [
          fhir:identity [ fhir:v "vcard" ] ;
          fhir:map [ fhir:v "address label parameter" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".addr.select(streetAddressLine.dataString + ' ' + postalCode.dataString + ' ' + city.dataString + ' ' + country.dataString)" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.address.line" ] ;
@@ -5959,6 +5959,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".addr.streetAddressLine" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XAD.1 + XAD.2 (note: XAD.1 and XAD.2 have different meanings for a company address than for a person address)" ]
        ] [
@@ -5970,9 +5973,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./StreetAddress (newline delimitted)" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".addr.streetAddressLine" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.address.line.id" ] ;
@@ -6277,6 +6277,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".addr.city.dataString" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XAD.3" ]
        ] [
@@ -6288,9 +6291,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./Jurisdiction" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".addr.city.dataString" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.address.district" ] ;
@@ -6363,6 +6363,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".addr.state.dataString" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XAD.4" ]
        ] [
@@ -6374,9 +6377,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./Region" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".addr.state.dataString" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.address.postalCode" ] ;
@@ -6412,6 +6412,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".addr.postalCode.dataString" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XAD.5" ]
        ] [
@@ -6423,9 +6426,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./PostalIdentificationCode" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".addr.postalCode.dataString" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.address.country" ] ;
@@ -6457,6 +6457,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".addr.country.dataString" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XAD.6" ]
        ] [
@@ -6468,9 +6471,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./Country" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".addr.country.dataString" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.address.period" ] ;
@@ -6797,6 +6797,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".patient.maritalStatusCode.codeSystem" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.3" ]
        ] [
@@ -6805,9 +6808,6 @@
        ] [
          fhir:identity [ fhir:v "orim" ] ;
          fhir:map [ fhir:v "fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".patient.maritalStatusCode.codeSystem" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.maritalStatus.coding.version" ] ;
@@ -6878,6 +6878,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".patient.maritalStatusCode.code" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.1" ]
        ] [
@@ -6886,9 +6889,6 @@
        ] [
          fhir:identity [ fhir:v "orim" ] ;
          fhir:map [ fhir:v "fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".patient.maritalStatusCode.code" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.maritalStatus.coding.display" ] ;
@@ -6924,6 +6924,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".patient.maritalStatusCode.displayName" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.2 - but note this is not well followed" ]
        ] [
@@ -6932,9 +6935,6 @@
        ] [
          fhir:identity [ fhir:v "orim" ] ;
          fhir:map [ fhir:v "fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".patient.maritalStatusCode.displayName" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.maritalStatus.coding.userSelected" ] ;
@@ -7102,6 +7102,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "PID-24 (bool), PID-25 (integer)" ]
        ] [
@@ -7109,9 +7112,6 @@
          fhir:map [ fhir:v "player[classCode=PSN|ANM and determinerCode=INSTANCE]/multipleBirthInd,  player[classCode=PSN|ANM and determinerCode=INSTANCE]/multipleBirthOrderNumber" ]
        ] [
          fhir:identity [ fhir:v "cda" ] ;
-         fhir:map [ fhir:v "n/a" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
          fhir:map [ fhir:v "n/a" ]
        ] )
      ] [
@@ -7146,6 +7146,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "PID-24 (bool), PID-25 (integer)" ]
        ] [
@@ -7153,9 +7156,6 @@
          fhir:map [ fhir:v "player[classCode=PSN|ANM and determinerCode=INSTANCE]/multipleBirthInd,  player[classCode=PSN|ANM and determinerCode=INSTANCE]/multipleBirthOrderNumber" ]
        ] [
          fhir:identity [ fhir:v "cda" ] ;
-         fhir:map [ fhir:v "n/a" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
          fhir:map [ fhir:v "n/a" ]
        ] )
      ] [
@@ -7189,6 +7189,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "OBX-5 - needs a profile" ]
        ] [
@@ -7196,9 +7199,6 @@
          fhir:map [ fhir:v "player[classCode=PSN|ANM and determinerCode=INSTANCE]/desc" ]
        ] [
          fhir:identity [ fhir:v "cda" ] ;
-         fhir:map [ fhir:v "n/a" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
          fhir:map [ fhir:v "n/a" ]
        ] )
      ] [
@@ -7642,6 +7642,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.code.codeSystem" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.3" ]
        ] [
@@ -7650,9 +7653,6 @@
        ] [
          fhir:identity [ fhir:v "orim" ] ;
          fhir:map [ fhir:v "fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.code.codeSystem" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.contact.relationship.coding.version" ] ;
@@ -7723,6 +7723,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.code.code" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.1" ]
        ] [
@@ -7731,9 +7734,6 @@
        ] [
          fhir:identity [ fhir:v "orim" ] ;
          fhir:map [ fhir:v "fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.code.code" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.contact.relationship.coding.display" ] ;
@@ -7769,6 +7769,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.code.displayName" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.2 - but note this is not well followed" ]
        ] [
@@ -7777,9 +7780,6 @@
        ] [
          fhir:identity [ fhir:v "orim" ] ;
          fhir:map [ fhir:v "fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.code.displayName" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.contact.relationship.coding.userSelected" ] ;
@@ -8103,6 +8103,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.associatedPerson.name.family" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XPN.1/FN.1" ]
        ] [
@@ -8111,9 +8114,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./FamilyName" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.associatedPerson.name.family" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.contact.name.given" ] ;
@@ -8147,6 +8147,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.associatedPerson.name.given" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XPN.2 + XPN.3" ]
        ] [
@@ -8155,9 +8158,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./GivenNames" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.associatedPerson.name.given" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.contact.name.prefix" ] ;
@@ -8433,6 +8433,9 @@
          ]
        ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.telecom.system" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XTN.3" ]
        ] [
@@ -8441,9 +8444,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./ContactPointType" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.telecom.system" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.contact.telecom.value" ] ;
@@ -8476,6 +8476,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.telecom.value" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XTN.1 (or XTN.12)" ]
        ] [
@@ -8484,9 +8487,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./Value" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.telecom.value" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.contact.telecom.use" ] ;
@@ -8532,6 +8532,9 @@
          ]
        ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.telecom.use" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XTN.2 - but often indicated by field" ]
        ] [
@@ -8540,9 +8543,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./ContactPointPurpose" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.telecom.use" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.contact.telecom.rank" ] ;
@@ -8623,7 +8623,7 @@
        fhir:path [ fhir:v "Patient.contact.address" ] ;
        fhir:short [ fhir:v "An address expressed using postal conventions (as opposed to GPS or other location definition formats)" ] ;
        fhir:definition [ fhir:v "An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world." ] ;
-       fhir:comment [ fhir:v "Note: address is intended to describe postal addresses for administrative purposes, not to describe absolute geographical coordinates.  Postal addresses are often used as proxies for physical locations (also see the [Location](location.html#) resource)." ] ;
+       fhir:comment [ fhir:v "Note: address is intended to describe postal addresses for administrative purposes, not to describe absolute geographical coordinates.  Postal addresses are often used as proxies for physical locations (also see the [Location](http://hl7.org/fhir/R4/location.html#) resource)." ] ;
        fhir:requirements [ fhir:v "Need to keep track where the contact person can be contacted per postal mail or visited." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
@@ -8818,6 +8818,9 @@
          ]
        ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.addr.use" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XAD.7" ]
        ] [
@@ -8826,9 +8829,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./AddressPurpose" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.addr.use" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.contact.address.type" ] ;
@@ -8920,6 +8920,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.addr.select(streetAddressLine.dataString + ' ' + postalCode.dataString + ' ' + city.dataString + ' ' + country.dataString)" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XAD.1 + XAD.2 + XAD.3 + XAD.4 + XAD.5 + XAD.6" ]
        ] [
@@ -8928,9 +8931,6 @@
        ] [
          fhir:identity [ fhir:v "vcard" ] ;
          fhir:map [ fhir:v "address label parameter" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.addr.select(streetAddressLine.dataString + ' ' + postalCode.dataString + ' ' + city.dataString + ' ' + country.dataString)" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.contact.address.line" ] ;
@@ -8966,6 +8966,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.addr.streetAddressLine" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XAD.1 + XAD.2 (note: XAD.1 and XAD.2 have different meanings for a company address than for a person address)" ]
        ] [
@@ -8977,9 +8980,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./StreetAddress (newline delimitted)" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.addr.streetAddressLine" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.contact.address.line.id" ] ;
@@ -9284,6 +9284,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.addr.city.dataString" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XAD.3" ]
        ] [
@@ -9295,9 +9298,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./Jurisdiction" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.addr.city.dataString" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.contact.address.district" ] ;
@@ -9370,6 +9370,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.addr.state.dataString" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XAD.4" ]
        ] [
@@ -9381,9 +9384,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./Region" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.addr.state.dataString" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.contact.address.postalCode" ] ;
@@ -9419,6 +9419,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.addr.postalCode.dataString" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XAD.5" ]
        ] [
@@ -9430,9 +9433,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./PostalIdentificationCode" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.addr.postalCode.dataString" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.contact.address.country" ] ;
@@ -9464,6 +9464,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.addr.country.dataString" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XAD.6" ]
        ] [
@@ -9475,9 +9478,6 @@
        ] [
          fhir:identity [ fhir:v "servd" ] ;
          fhir:map [ fhir:v "./Country" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.addr.country.dataString" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.contact.address.period" ] ;
@@ -9568,6 +9568,9 @@
          ]
        ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "NK1-15" ]
        ] [
@@ -9575,9 +9578,6 @@
          fhir:map [ fhir:v "player[classCode=PSN|ANM and determinerCode=INSTANCE]/administrativeGender" ]
        ] [
          fhir:identity [ fhir:v "cda" ] ;
-         fhir:map [ fhir:v "n/a" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
          fhir:map [ fhir:v "n/a" ]
        ] )
      ] [
@@ -9751,6 +9751,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.scopingOrganization.id[0]" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "NK1-13, NK1-30, NK1-31, NK1-32, NK1-41" ]
        ] [
@@ -9759,9 +9762,6 @@
        ] [
          fhir:identity [ fhir:v "cda" ] ;
          fhir:map [ fhir:v "n/a" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v "ClinicalDocument.participant.where(associatedEntity.classCode='ECON').associatedEntity.scopingOrganization.id[0]" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.contact.period" ] ;
@@ -9792,13 +9792,13 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "effectiveTime" ]
        ] [
          fhir:identity [ fhir:v "cda" ] ;
-         fhir:map [ fhir:v "n/a" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
          fhir:map [ fhir:v "n/a" ]
        ] )
      ] [
@@ -10003,6 +10003,9 @@
          ]
        ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".patient.languageCommunication.languageCode.code" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "PID-15, LAN-2" ]
        ] [
@@ -10011,9 +10014,6 @@
        ] [
          fhir:identity [ fhir:v "cda" ] ;
          fhir:map [ fhir:v ".languageCode" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".patient.languageCommunication.languageCode.code" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.communication.preferred" ] ;
@@ -10046,6 +10046,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v ".patient.languageCommunication.preferenceInd.value" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "PID-15" ]
        ] [
@@ -10054,9 +10057,6 @@
        ] [
          fhir:identity [ fhir:v "cda" ] ;
          fhir:map [ fhir:v ".preferenceInd" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v ".patient.languageCommunication.preferenceInd.value" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.generalPractitioner" ] ;
@@ -10099,6 +10099,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "ClinicalDocument.participant.where(functionCode='PCP').associatedEntity.id" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "PD1-4" ]
        ] [
@@ -10107,9 +10110,6 @@
        ] [
          fhir:identity [ fhir:v "cda" ] ;
          fhir:map [ fhir:v "n/a" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v "ClinicalDocument.participant.where(functionCode='PCP').associatedEntity.id" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.managingOrganization" ] ;
@@ -10146,14 +10146,14 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "ClinicalDocument.custodian.assignedCustodian.representedCustodianOrganization.id" ]
+       ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "scoper" ]
        ] [
          fhir:identity [ fhir:v "cda" ] ;
          fhir:map [ fhir:v ".providerOrganization" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
-         fhir:map [ fhir:v "ClinicalDocument.custodian.assignedCustodian.representedCustodianOrganization.id" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.link" ] ;
@@ -10350,6 +10350,9 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "PID-3, MRG-1" ]
        ] [
@@ -10357,9 +10360,6 @@
          fhir:map [ fhir:v "id" ]
        ] [
          fhir:identity [ fhir:v "cda" ] ;
-         fhir:map [ fhir:v "n/a" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
          fhir:map [ fhir:v "n/a" ]
        ] )
      ] [
@@ -10403,13 +10403,13 @@
          ]
        ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
+         fhir:map [ fhir:v "n/a" ]
+       ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "typeCode" ]
        ] [
          fhir:identity [ fhir:v "cda" ] ;
-         fhir:map [ fhir:v "n/a" ]
-       ] [
-         fhir:identity [ fhir:v "at-core-mapping-patient2cdaatv3" ] ;
          fhir:map [ fhir:v "n/a" ]
        ] )
      ] )
