@@ -1,0 +1,107 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/ValueSet/moped-VAEStatus-valueset> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "moped-VAEStatus-valueset"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet moped-VAEStatus-valueset</b></p><a name=\"moped-VAEStatus-valueset\"> </a><a name=\"hcmoped-VAEStatus-valueset\"> </a><a name=\"moped-VAEStatus-valueset-en-US\"> </a><ul><li>Include these codes as defined in <code>http://tbd.at/MOPED-VAEStatus</code><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>00</td><td>bewilligt (nur für stationären Bereich)</td></tr><tr><td>01</td><td>Versicherung nicht festgestellt</td></tr><tr><td>02</td><td>Wartezeit für Schutzfrist nicht gegeben</td></tr><tr><td>03</td><td>nicht leistungszuständig</td></tr><tr><td>04</td><td>Angehörigeneigenschaft nicht nachgewiesen</td></tr><tr><td>05</td><td>Änderung der Zuständigkeit</td></tr><tr><td>08</td><td>Anstaltspflege ohne Notwendigkeit ärztlicher Behandlung</td></tr><tr><td>10</td><td>Leistungszuständigkeit durch Nichtbeantwortung einer Anfrage nicht geklärt</td></tr><tr><td>11</td><td>notwendige Unterlagen fehlen</td></tr><tr><td>12</td><td>direkte Verrechnung mit dem Versicherten</td></tr><tr><td>14</td><td>Nichterfüllung der Wartezeit bei Selbstversicherten</td></tr><tr><td>16</td><td>Kostenübernahme vom Chef(Kontroll)arzt abgelehnt</td></tr><tr><td>17</td><td>die weitere Kostenübernahme vom Chef(Kontroll)arzt abgelehnt</td></tr><tr><td>18</td><td>Bearbeitung/Verlängerung erst nach Vorlage der Krankengeschichte möglich</td></tr><tr><td>19</td><td>Versicherung festgestellt (nur für Ambulanzverrechnung inkl. tageschirurgischer Versorgung)</td></tr><tr><td>21</td><td>Pflicht anerkannt, aber zahlungsunfähig X</td></tr><tr><td>22</td><td>Pflicht anerkannt, Kostenübernahme abgelehnt X</td></tr><tr><td>40</td><td>Voraussetzung für Angehörigeneigenschaft nicht mehr gegeben</td></tr><tr><td>42</td><td>Angehöriger ist selber versichert oder anderweitig mitversichert</td></tr><tr><td>49</td><td>Ablehnungsgrund steht im Kommentarsatz (sonstige Ablehnung)</td></tr><tr><td>97</td><td>Urgenz für Entlassungsnachricht (K05)</td></tr><tr><td>98</td><td>in Bearbeitung</td></tr><tr><td>99</td><td>kasseninterne Berichtigung</td></tr></table></li></ul></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://example.org/ValueSet/moped-VAEStatus-valueset"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "VAEStatus"] ; # 
+  fhir:title [ fhir:v "Status der Versichertenanspruchserklärung"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2024-10-16T09:30:10+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Example Publisher"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Example Publisher" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://example.org/example-publisher" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Status der Versichertenanspruchserklärung"] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "http://tbd.at/MOPED-VAEStatus"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "00" ] ;
+         fhir:display [ fhir:v "bewilligt (nur für stationären Bereich)" ]
+       ] [
+         fhir:code [ fhir:v "01" ] ;
+         fhir:display [ fhir:v "Versicherung nicht festgestellt" ]
+       ] [
+         fhir:code [ fhir:v "02" ] ;
+         fhir:display [ fhir:v "Wartezeit für Schutzfrist nicht gegeben" ]
+       ] [
+         fhir:code [ fhir:v "03" ] ;
+         fhir:display [ fhir:v "nicht leistungszuständig" ]
+       ] [
+         fhir:code [ fhir:v "04" ] ;
+         fhir:display [ fhir:v "Angehörigeneigenschaft nicht nachgewiesen" ]
+       ] [
+         fhir:code [ fhir:v "05" ] ;
+         fhir:display [ fhir:v "Änderung der Zuständigkeit" ]
+       ] [
+         fhir:code [ fhir:v "08" ] ;
+         fhir:display [ fhir:v "Anstaltspflege ohne Notwendigkeit ärztlicher Behandlung" ]
+       ] [
+         fhir:code [ fhir:v "10" ] ;
+         fhir:display [ fhir:v "Leistungszuständigkeit durch Nichtbeantwortung einer Anfrage nicht geklärt" ]
+       ] [
+         fhir:code [ fhir:v "11" ] ;
+         fhir:display [ fhir:v "notwendige Unterlagen fehlen" ]
+       ] [
+         fhir:code [ fhir:v "12" ] ;
+         fhir:display [ fhir:v "direkte Verrechnung mit dem Versicherten" ]
+       ] [
+         fhir:code [ fhir:v "14" ] ;
+         fhir:display [ fhir:v "Nichterfüllung der Wartezeit bei Selbstversicherten" ]
+       ] [
+         fhir:code [ fhir:v "16" ] ;
+         fhir:display [ fhir:v "Kostenübernahme vom Chef(Kontroll)arzt abgelehnt" ]
+       ] [
+         fhir:code [ fhir:v "17" ] ;
+         fhir:display [ fhir:v "die weitere Kostenübernahme vom Chef(Kontroll)arzt abgelehnt" ]
+       ] [
+         fhir:code [ fhir:v "18" ] ;
+         fhir:display [ fhir:v "Bearbeitung/Verlängerung erst nach Vorlage der Krankengeschichte möglich" ]
+       ] [
+         fhir:code [ fhir:v "19" ] ;
+         fhir:display [ fhir:v "Versicherung festgestellt (nur für Ambulanzverrechnung inkl. tageschirurgischer Versorgung)" ]
+       ] [
+         fhir:code [ fhir:v "21" ] ;
+         fhir:display [ fhir:v "Pflicht anerkannt, aber zahlungsunfähig X" ]
+       ] [
+         fhir:code [ fhir:v "22" ] ;
+         fhir:display [ fhir:v "Pflicht anerkannt, Kostenübernahme abgelehnt X" ]
+       ] [
+         fhir:code [ fhir:v "40" ] ;
+         fhir:display [ fhir:v "Voraussetzung für Angehörigeneigenschaft nicht mehr gegeben" ]
+       ] [
+         fhir:code [ fhir:v "42" ] ;
+         fhir:display [ fhir:v "Angehöriger ist selber versichert oder anderweitig mitversichert" ]
+       ] [
+         fhir:code [ fhir:v "49" ] ;
+         fhir:display [ fhir:v "Ablehnungsgrund steht im Kommentarsatz (sonstige Ablehnung)" ]
+       ] [
+         fhir:code [ fhir:v "97" ] ;
+         fhir:display [ fhir:v "Urgenz für Entlassungsnachricht (K05)" ]
+       ] [
+         fhir:code [ fhir:v "98" ] ;
+         fhir:display [ fhir:v "in Bearbeitung" ]
+       ] [
+         fhir:code [ fhir:v "99" ] ;
+         fhir:display [ fhir:v "kasseninterne Berichtigung" ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
