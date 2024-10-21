@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>FHIR.EXAMPLE\MOPED Patient $entlassen (POC) - XML Representation - FHIR&reg; v5.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"7.3"}
+    h3,h4,h5,h6{--heading-prefix:"7.3"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+          <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img src="logo.png" id="header-logo"/>
+          </div>
+          <div class="col-11">
+          <!-- at-fhir-ig-template end -->
+              <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)</span><br/>
+                <span class="label label-info">0.1.0 - ci-build</span>
+              </p>
+            </div>
+          <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+          <!-- at-fhir-ig-template end -->
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R5/index.html" class="navbar-brand hidden">FHIR&reg;</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="use_case_description.html">Sollprozess (Entwurf)</a>
+  </li>
+  <li>
+    <a href="actors.html">Akteure</a>
+  </li>
+  <li>
+    <a href="workflowmanagement.html">Workflowmanagement</a>
+  </li>
+  <li>
+    <a href="lkf_mapping.html">LKF Mapping</a>
+  </li>
+  <li>
+    <a href="ka-org_mapping.html">Ka-Org Mapping</a>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="artifacts.html"><b>Artifacts Summary</b></a></li><li><b>MOPED Patient $entlassen (POC)</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+	
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<div style="counter-reset: section 7" class="col-12">
+  <!-- ReleaseHeader --><p id="publish-box">Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED) - Local Development build (v0.1.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://example.org/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="OperationDefinition-MOPED.Patient.Entlassen.html">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li class="active">
+      <a href="#">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="OperationDefinition-MOPED.Patient.Entlassen.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="OperationDefinition-MOPED.Patient.Entlassen.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+<h2 id="root">: MOPED Patient $entlassen (POC) - XML Representation</h2>
+
+  <table class="colsd">
+    <tr>
+
+      <td colspan="2">
+        
+          Draft
+          
+            as of 2024-10-21
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p><a href="OperationDefinition-MOPED.Patient.Entlassen.xml" no-download="true">Raw xml</a> | <a download="null" href="OperationDefinition-MOPED.Patient.Entlassen.xml">Download</a></p>
+
+    <!-- insert intro if present -->
+  
+
+
+
+  <pre style="white-space: pre; text-wrap: nowrap; width: auto;" class="xml"><code style="white-space: pre; text-wrap: nowrap;" class="language-xml">
+&lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition">OperationDefinition</a> xmlns="http://hl7.org/fhir"&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.id">id</a> <a href="http://hl7.org/fhir/R5/datatypes.html#id">value</a>="MOPED.Patient.Entlassen"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.text">text</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/narrative.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="generated"/&gt;
+    &lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;p class="res-header-id"&gt;&lt;b&gt;Generated Narrative: OperationDefinition MOPED.Patient.Entlassen&lt;/b&gt;&lt;/p&gt;&lt;a name="MOPED.Patient.Entlassen"&gt; &lt;/a&gt;&lt;a name="hcMOPED.Patient.Entlassen"&gt; &lt;/a&gt;&lt;a name="MOPED.Patient.Entlassen-en-US"&gt; &lt;/a&gt;&lt;p&gt;URL: [base]/Encounter/$entlassen&lt;/p&gt;&lt;h3&gt;Parameters&lt;/h3&gt;&lt;table class="grid"&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Use&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Name&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Scope&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Cardinality&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Binding&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Documentation&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;aufnahmezahl&lt;/td&gt;&lt;td/&gt;&lt;td&gt;1..1&lt;/td&gt;&lt;td&gt;&lt;a href="http://hl7.org/fhir/R5/datatypes.html#Identifier"&gt;Identifier&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Der &lt;em&gt;aufnahmezahl&lt;/em&gt; Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;zeitpunkt&lt;/td&gt;&lt;td/&gt;&lt;td&gt;1..1&lt;/td&gt;&lt;td&gt;&lt;a href="http://hl7.org/fhir/R5/datatypes.html#dateTime"&gt;dateTime&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Der &lt;em&gt;zeitpunkt&lt;/em&gt; Parameter definiert zu welchem Zeitpunkt die Beurlaubung startet.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;entlassungsart&lt;/td&gt;&lt;td/&gt;&lt;td&gt;1..1&lt;/td&gt;&lt;td&gt;&lt;a href="http://hl7.org/fhir/R5/datatypes.html#code"&gt;code&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a href="ValueSet-moped-entlassungsart-valueset.html"&gt;Entlassungsart des Patienten&lt;/a&gt; (Required)&lt;/td&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Der &lt;em&gt;entlassungsart&lt;/em&gt; Parameter definiert die Entlassungsart des Patienten.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;tageOhneKostenbeitrag&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href="http://hl7.org/fhir/R5/datatypes.html#unsignedInt"&gt;unsignedInt&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Der &lt;em&gt;tageOhneKostenbeitrag&lt;/em&gt; Parameter definiert zu für wie viele Tage kein Kostenbeitrag eingehoben wurde.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;freigeben&lt;/td&gt;&lt;td/&gt;&lt;td&gt;1..1&lt;/td&gt;&lt;td&gt;&lt;a href="http://hl7.org/fhir/R5/datatypes.html#boolean"&gt;boolean&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Mit Hilfe des &lt;em&gt;freigeben&lt;/em&gt; Parameters wird angegeben, ob es sich bei der Patienten-Entlassung um vollständige Daten handelt (&lt;em&gt;freigeben&lt;/em&gt; = &lt;em&gt;true&lt;/em&gt;) und somit eine Validierung erfolgen soll, oder ob lediglich unvollständige Daten zwischengespeichert werden (&lt;em&gt;freigeben&lt;/em&gt; = &lt;em&gt;false&lt;/em&gt;) - in diesem Fall wird ein Entlassungs-Aviso erstellt.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;OUT&lt;/td&gt;&lt;td&gt;return&lt;/td&gt;&lt;td/&gt;&lt;td&gt;1..1&lt;/td&gt;&lt;td&gt;&lt;a href="http://hl7.org/fhir/R5/resource.html"&gt;Resource&lt;/a&gt; (&lt;a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome"&gt;OperationOutcome&lt;/a&gt;)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Der &lt;em&gt;return&lt;/em&gt; Parameter gibt Auskunft über den Erfolg der Operation.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;div&gt;&lt;p&gt;TBD: Abgangsart beim MOPEDTransferEncounter falls intensiv, muss befüllt werden; In dieser Operation werden noch keine Leitungen erfasst, hier muss eine Möglichkeit gegeben werden, dies nachzuholen - in einer separaten Transaction/Operation.; Der Status 'SV verarbeitet' stimmt zwar als Voraussetzung für den ersten Schritt. Kann das aber so weiterverfolgt werden, sobald Selbstzahler / private Versicherungen hinzukommen? Was passiert in einer schnellen Entlassung, wenn die SV sich noch nicht zurück gemeldet hat?&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;<a name="end-xhtml"></a>
+  &lt;/text&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.url">url</a>
+       <a href="http://hl7.org/fhir/R5/datatypes.html#uri">value</a>="http://example.org/OperationDefinition/MOPED.Patient.Entlassen"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.version">version</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="0.1.0"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.name">name</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="MOPED_Patient_Entlassen"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.title">title</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="MOPED Patient $entlassen (POC)"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.status">status</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="draft"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.kind">kind</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="operation"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.date">date</a> <a href="http://hl7.org/fhir/R5/datatypes.html#dateTime">value</a>="2024-10-21T06:07:01+00:00"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.publisher">publisher</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Example Publisher"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.contact">contact</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/metadatatypes.html#ContactDetail#ContactDetail.name">name</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="Example Publisher"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R5/datatypes.html#ContactPoint#ContactPoint.system">system</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="url"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R5/datatypes.html#ContactPoint#ContactPoint.value">value</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="http://example.org/example-publisher"/&gt;
+    &lt;/telecom&gt;
+  &lt;/contact&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.description">description</a>
+               <a href="http://hl7.org/fhir/R5/datatypes.html#markdown">value</a>="
+**Wer ruft diese Operation in welchem Zusammenhang auf?**
+
+Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $entlassen Operation wird aufgerufen, wenn ein(e) Patient*in aus dem Krankenhaus entlassen wurde.
+
+**Voraussetzungen für den Aufruf**
+
+* Account-Status: `SV verarbeitet`
+
+**Detaillierte Business-Logik**
+
+1. Suche des MOPEDEncounter: Der MOPEDEncounter mit der jeweiligen *aufnahmezahl* lt. Operation-Parameter wird gesucht
+2. Update des MOPEDEncounters:
+  * *MOPEDEncounter.actualPeriod.end* mit dem *zeitpunkt* lt. Operation-Parameter befüllen
+  * *MOPEDEncounter.status* mit `discharged`  befüllen
+  * *MOPEDEncounter.admission.dischargeDisposition* mit *entlassungsart* lt. Operation-Parameter befüllen
+3. Suche des letzten MOPEDTransferEncounter: Mit *MOPEDTransferEncounter.partOf* einer Referenz auf den MOPEDEncounter aus Schritt 1 und den Status *in-progress*
+4. Update des letzten MOPEDTransferEncounter:
+  * *MOPEDTransferEncounter.status* mit `completed` befüllen gesetzt
+  * *MOPEDTransferEncounter.actualPeriod.end* mit *zeitpunkt* lt. Operation-Parameter befüllen
+4. Erstellung eines leeren *MOPEDClaim*:
+  * *MOPEDClaim.status* mit `draft` befüllen
+  * *MOPEDClaim.patient* mit MOPEDAccount.subject befüllen
+5. Änderungen im Account:
+  * *MOPEDAccount.ClaimRef* mit der Referenz aus Schritt 4 befüllen
+  * *MOPEDAccount.WorkflowStatus* mit `Entlassungs Aviso` befüllen, oder, falls der *freigeben*-Operation-Parameter auf `true` gesetzt war und die Validierung erfolgreich war, wird *MOPEDAccount.WorkflowStatus* mit `Entlassung vollständig` befüllt.
+  * *MOPEDAccount.TageOhneKostenbeitrag* lt. gleichnamigen Opeartion-Parameter befüllen
+
+**Validierung / Fehlerbehandlung**
+
+* Wenn der *freigeben*-Parameter auf *true* ist, muss eine Validierung aller Ressourcen (MOPEDEncounter, Account) erfolgreich sein, oder die Operation schlägt fehl.
+* Wenn der *freigeben*-Parameter auf *true* ist, muss Information zu den Tagen ohne Kostenbeitrag vorliegen (i.e. der Operation-Parameter *TageOhneKostenbeitrag* muss befüllt sein)
+* Wurden bei der Suche in Schritt 4 mehrere MOPEDTransferEncounter gefunden, liegen inkonsistente Daten vor und die Operation schlägt fehl.
+
+**Weitere Hinweise**
+
+* Hinweis 1: Wurde der Patient direkt aus der Intensivstation entlassen, so müsste auch eine Abgangsart im MOPEDTransferEncounter gesetzt werden. Dieser Spezialfall wurde noch nicht berücksichtigt."/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.affectsState">affectsState</a> <a href="http://hl7.org/fhir/R5/datatypes.html#boolean">value</a>="true"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.code">code</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="entlassen"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.comment">comment</a>
+           <a href="http://hl7.org/fhir/R5/datatypes.html#markdown">value</a>="TBD: Abgangsart beim MOPEDTransferEncounter falls intensiv, muss befüllt werden; In dieser Operation werden noch keine Leitungen erfasst, hier muss eine Möglichkeit gegeben werden, dies nachzuholen - in einer separaten Transaction/Operation.; Der Status 'SV verarbeitet' stimmt zwar als Voraussetzung für den ersten Schritt. Kann das aber so weiterverfolgt werden, sobald Selbstzahler / private Versicherungen hinzukommen? Was passiert in einer schnellen Entlassung, wenn die SV sich noch nicht zurück gemeldet hat?"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.base">base</a> <a href="http://hl7.org/fhir/R5/datatypes.html#canonical">value</a>="http://hl7.org/fhir/OperationDefinition/Patient-entlassen"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.resource">resource</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="Encounter"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.system">system</a> <a href="http://hl7.org/fhir/R5/datatypes.html#boolean">value</a>="false"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#boolean">value</a>="true"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.instance">instance</a> <a href="http://hl7.org/fhir/R5/datatypes.html#boolean">value</a>="false"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.name">name</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="aufnahmezahl"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.use">use</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="in"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.min">min</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="1"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.max">max</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="1"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>
+                   <a href="http://hl7.org/fhir/R5/datatypes.html#markdown">value</a>="Der *aufnahmezahl* Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall."/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="Identifier"/&gt;
+  &lt;/parameter&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.name">name</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="zeitpunkt"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.use">use</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="in"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.min">min</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="1"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.max">max</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="1"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>
+                   <a href="http://hl7.org/fhir/R5/datatypes.html#markdown">value</a>="Der *zeitpunkt* Parameter definiert zu welchem Zeitpunkt die Beurlaubung startet."/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="dateTime"/&gt;
+  &lt;/parameter&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.name">name</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="entlassungsart"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.use">use</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="in"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.min">min</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="1"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.max">max</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="1"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>
+                   <a href="http://hl7.org/fhir/R5/datatypes.html#markdown">value</a>="Der *entlassungsart* Parameter definiert die Entlassungsart des Patienten."/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="code"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.binding">binding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.binding.strength">strength</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="required"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.binding.valueSet">valueSet</a> <a href="http://hl7.org/fhir/R5/datatypes.html#canonical">value</a>="moped-entlassungsart-valueset"/&gt;
+    &lt;/binding&gt;
+  &lt;/parameter&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.name">name</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="tageOhneKostenbeitrag"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.use">use</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="in"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.min">min</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="0"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.max">max</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="1"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>
+                   <a href="http://hl7.org/fhir/R5/datatypes.html#markdown">value</a>="Der *tageOhneKostenbeitrag* Parameter definiert zu für wie viele Tage kein Kostenbeitrag eingehoben wurde."/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="unsignedInt"/&gt;
+  &lt;/parameter&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.name">name</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="freigeben"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.use">use</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="in"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.min">min</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="1"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.max">max</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="1"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>
+                   <a href="http://hl7.org/fhir/R5/datatypes.html#markdown">value</a>="Mit Hilfe des *freigeben* Parameters wird angegeben, ob es sich bei der Patienten-Entlassung um vollständige Daten handelt (*freigeben* = *true*) und somit eine Validierung erfolgen soll, oder ob lediglich unvollständige Daten zwischengespeichert werden (*freigeben* = *false*) - in diesem Fall wird ein Entlassungs-Aviso erstellt."/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="boolean"/&gt;
+  &lt;/parameter&gt;
+  &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.name">name</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="return"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.use">use</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="out"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.min">min</a> <a href="http://hl7.org/fhir/R5/datatypes.html#integer">value</a>="1"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.max">max</a> <a href="http://hl7.org/fhir/R5/datatypes.html#string">value</a>="1"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>
+                   <a href="http://hl7.org/fhir/R5/datatypes.html#markdown">value</a>="Der *return* Parameter gibt Auskunft über den Erfolg der Operation."/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/R5/datatypes.html#code">value</a>="Resource"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.targetProfile">targetProfile</a>
+                   <a href="http://hl7.org/fhir/R5/datatypes.html#canonical">value</a>="http://hl7.org/fhir/StructureDefinition/OperationOutcome"/&gt;
+  &lt;/parameter&gt;
+&lt;/OperationDefinition&gt;</code></pre>
+
+
+    <!-- insert notes if present -->
+  
+
+
+
+</div>
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /row -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-content -->
+
+<script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+<script src="assets/js/window-hash.js" type="text/javascript"> </script>
+<a name="bottom"> </a>
+<div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+<div class="container">    <!-- container -->
+
+<div class="inner-wrapper">
+  <p><a name="l760">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Mon, Oct 21, 2024 06:07+0000">2024-10-21</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    
+  </p>
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+<div class="container">    <!-- container -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+<script src="assets/js/respond.min.js" type="text/javascript"> </script>
+<script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+<script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+<script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+<script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+</body>
+</html>
