@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "MOPED"] ; # 
   fhir:title [ fhir:v "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-10-23T09:21:30+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-10-23T09:27:20+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Example Publisher"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Example Publisher" ] ;
@@ -563,6 +563,18 @@
          fhir:value [ fhir:v "OperationDefinition" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://example.org/OperationDefinition/MOPED.Encounter.erfassen> ;
+         fhir:reference [ fhir:v "OperationDefinition/MOPED.Encounter.erfassen" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED Encounter Leistung und Diagnosen $erfassen (POC)" ] ;
+       fhir:description [ fhir:v "Die $erfassen Operation wird aufgerufen, wenn eine erbrachte Leistungen und Diagnosen eingemeldet wird." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OperationDefinition" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://example.org/OperationDefinition/MOPED.Patient.Aufnehmen> ;
          fhir:reference [ fhir:v "OperationDefinition/MOPED.Patient.Aufnehmen" ]
        ] ;
@@ -592,18 +604,6 @@
        ] ;
        fhir:name [ fhir:v "MOPED Patient $entlassen (POC)" ] ;
        fhir:description [ fhir:v "Die $entlassen Operation wird aufgerufen, wenn ein(e) Patient*in aus dem Krankenhaus entlassen wurde." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OperationDefinition" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://example.org/OperationDefinition/MOPED.Patient.LeistungMelden> ;
-         fhir:reference [ fhir:v "OperationDefinition/MOPED.Patient.LeistungMelden" ]
-       ] ;
-       fhir:name [ fhir:v "MOPED Patient $leistungMelden (POC)" ] ;
-       fhir:description [ fhir:v "Die $leistungMelden Operation wird aufgerufen, wenn eine erbrachte Leistung eingemeldet wird." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
