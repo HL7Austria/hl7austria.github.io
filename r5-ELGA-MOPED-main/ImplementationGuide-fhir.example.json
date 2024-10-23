@@ -10,7 +10,7 @@
   "name" : "MOPED",
   "title" : "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)",
   "status" : "draft",
-  "date" : "2024-10-23T07:34:13+00:00",
+  "date" : "2024-10-23T11:03:56+00:00",
   "publisher" : "Example Publisher",
   "contact" : [{
     "name" : "Example Publisher",
@@ -513,10 +513,58 @@
         "valueString" : "OperationDefinition"
       }],
       "reference" : {
+        "reference" : "OperationDefinition/MOPED.ClaimResponse.Auffordern"
+      },
+      "name" : "MOPED ClaimResponse $auffordern (POC)",
+      "description" : "Die $auffordern Operation wird aufgerufen, wenn eine Abrechnung beantwortet wird und das Krankehaus zu einer Korrektur aufgefordert wird.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/MOPED.ClaimResponse.Freigeben"
+      },
+      "name" : "MOPED ClaimResponse $freigeben (POC)",
+      "description" : "Die $freigeben Operation wird aufgerufen, wenn eine Abrechnung beantwortet wird und freigegeben wird.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/MOPED.Encounter.Abrechnen"
+      },
+      "name" : "MOPED Encounter $abrechnen (POC)",
+      "description" : "Die $abrechnen Operation wird aufgerufen, wenn ein Fall abgerechnet werden sollte.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/MOPED.Encounter.erfassen"
+      },
+      "name" : "MOPED Encounter Leistung und Diagnosen $erfassen (POC)",
+      "description" : "Die $erfassen Operation wird aufgerufen, wenn eine erbrachte Leistungen und Diagnosen eingemeldet wird.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
         "reference" : "OperationDefinition/MOPED.Patient.Aufnehmen"
       },
       "name" : "MOPED Patient $aufnehmen (POC)",
-      "description" : "**Wer ruft diese Operation in welchem Zusammenhang auf?**\n\nDie Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $aufnehmen Operation wird aufgerufen, wenn ein(e) Patient*in in das Krankenhaus aufgenommen wird.\n\n**Voraussetzungen für den Aufruf**\n\n* Account-Status: n/a (die Ressource Account wird erst mit dieser Operation erstellt)\n\n**Detaillierte Business-Logik**\n\n1. Ressourcen der Transaction erstellen: FHIR Transaction ausführen, wie im Operation-Parameter *falldaten* mitgegeben. Dabei soll geprüft werden, ob bereits ein Patient mit dem jeweiligen identifier (bPK bzw. Sozialversicherungsnummer) vorliegt um Duplikate zu vermeiden. Das gleiche gilt für die anderen Ressourcen im Bundle, und kann technisch mit Hilfe von conditional References im Input-Bundle realisiert werden.\n2. Account anlegen:\n   * *MOPEDAccount.WorkflowStatus*: lt. Beschreibung der Werte-Ausprägungen des *freigeben* Parameter (siehe Hinweis 1)\n   * *MOPEDAccount.VerdachtArbeitsSchuelerunfall* lt. Operation-Parameter\n   * *MOPEDAccount.VerdachtFremdverschulden* lt. Operation-Parameter\n   * *MOPEDAccount.subject* mit der gleichen Referenz befüllen wie *MOPEDEncounter.subjec*\n   * *MOPEDAccount.owner* mit der gleichen Referenz befüllen wie *MOPEDEncounter.serviceProvider*\n   * *MOPEDAccount.VDASID* lt. Operation-Parameter *vdasid* befüllen\n   * *MOPEDAccount.AnzahlVerlegungen* mit Wert '0' befüllen\n   * *MOPEDAccount.AnzahlBeurlaubungen* mit Wert '0' befüllen\n   * *MOPEDAccount.coverage.coverage* mit der Referenz lt. Parameter befüllen und ggf. Hauptversicherter (Patient) anlegen, falls noch nicht am Server.\n3. Account im Encounter referenzieren: Den neuen MOPEDAccount im *MOPEDEncounter.account* referenzieren\n4. Durchführung der Operation `$verlegen` für Neufaufnahme:\n  * *$verlegen#aufnahmezahl* = *$aufnehmen#aufnahmezahl*\n  * *$verlegen#zeitpunkt* = Operation-Parameter falldaten mit dem Pfad *Bundle.Encounter.actualPeriod.start*\n  * *$verlegen#funktionscode* = *$aufnehmen#funktionscode*\n  * *$verlgegen#funktionssubcode* = *$aufnehmen#funktionssubcode*\n  * *$verlegen#physischeAnwesenheit* = *$aufnehmen#physischeAnwesenheit*\n  * *$verlegen#neuaufnahme* = `true`\n\n**Validierung / Fehlerbehandlung**\n\n* Wenn der *freigeben*-Parameter auf *true* ist, muss eine Validierung aller Ressourcen im *falldaten*-Bundle erfolgreich sein, oder die Operation schlägt fehl.\n* Es kann nie mehrere MOPEDEnconuter-Instanzen mit der gleichen Aufnahmezahl geben\n* Der Status *MOPEDEncounter.status* muss den Wert 'in-progress' haben\n\n**Weitere Hinweise**\n\n* Hinweis 1: Die Werte-Ausprägung des *freigeben* Parameters haben eine Auswirkung auf das Verhalten der Operation:\n  * *false*: Die Patientenaufnahme ist noch nicht vollständig und wird lediglich zwischengespeichert. Hier findet keine Validierung der Encounter Ressource statt. Eine Account-Ressource wird erstellt, die den *WorkflowStatus* 'Aufnahme in Arbeit' hat und im Encounter referenziert.\n  * *true*: Die Patientenaufnahme ist vollständig und es ist zu erwarten, dass alle nötigen Felder befüllt sind. Schlägt die Validierung der *falldaten* fehl, kann die Operation nicht erfolgreich durchgeführt werden. Ist die Validierung erfolgreich, wird eine im Encounter referenzierte Account-Ressource erstellt bzw. upgedatet, die den *WorkflowStatus* 'Aufnahme freigegeben' hat.\n* Hinweis 2: Es ist nicht nötig, bei dieser Operation den GDA-Identifier als Kontext mitzugeben. Auf den GDA wird im *falldaten*-Bundle als conditional Reference mittels entsprechendem Identifier im MOPEDEncounter verwiesen. Somit wird auch vermieden, dass Duplikate einer GDA-Organization-Ressource am Server angelegt/verwendet werden.\n* Hinweis 3: Im Parameter *falldaten* wird unter Anderem eine Coverage Ressource mitgegeben. Diese Ressource stammt in der Regel aus einer erfolgreichen VDAS-Abfrage. In Zukunft wird Moped auch andere Optionen unterstützen, wie die Verarbeitung von Daten von Selbstzahlern (wofür ein separates Coverage-Profil angelegt wird), oder die Verarbeitung von Fällen mit privater Krankenversicherung (auch hierfür wird ein separates Coverage-Profil angelegt). Im Ersten Schritt liegt der Fokus auf den Standard-Fall, der als Ausgangsbasis eine erfolgreich abgeschlossene VDAS-Abfrage voraussetzt.",
+      "description" : "Die $aufnehmen Operation wird aufgerufen, wenn ein(e) Patient*in in das Krankenhaus aufgenommen wird.",
       "isExample" : false
     },
     {
@@ -540,7 +588,7 @@
         "reference" : "OperationDefinition/MOPED.Patient.Entlassen"
       },
       "name" : "MOPED Patient $entlassen (POC)",
-      "description" : "\n**Wer ruft diese Operation in welchem Zusammenhang auf?**\n\nDie Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $entlassen Operation wird aufgerufen, wenn ein(e) Patient*in aus dem Krankenhaus entlassen wurde.\n\n**Voraussetzungen für den Aufruf**\n\n* Account-Status: `SV verarbeitet`\n\n**Detaillierte Business-Logik**\n\n1. Suche des MOPEDEncounter: Der MOPEDEncounter mit der jeweiligen *aufnahmezahl* lt. Operation-Parameter wird gesucht\n2. Update des MOPEDEncounters:\n  * *MOPEDEncounter.actualPeriod.end* mit dem *zeitpunkt* lt. Operation-Parameter befüllen\n  * *MOPEDEncounter.status* mit `discharged`  befüllen\n  * *MOPEDEncounter.admission.dischargeDisposition* mit *entlassungsart* lt. Operation-Parameter befüllen\n3. Suche des letzten MOPEDTransferEncounter: Mit *MOPEDTransferEncounter.partOf* einer Referenz auf den MOPEDEncounter aus Schritt 1 und den Status *in-progress*\n4. Update des letzten MOPEDTransferEncounter:\n  * *MOPEDTransferEncounter.status* mit `completed` befüllen gesetzt\n  * *MOPEDTransferEncounter.actualPeriod.end* mit *zeitpunkt* lt. Operation-Parameter befüllen\n4. Erstellung eines leeren *MOPEDClaim*:\n  * *MOPEDClaim.status* mit `draft` befüllen\n  * *MOPEDClaim.patient* mit MOPEDAccount.subject befüllen\n5. Änderungen im Account:\n  * *MOPEDAccount.ClaimRef* mit der Referenz aus Schritt 4 befüllen\n  * *MOPEDAccount.WorkflowStatus* mit `Entlassungs Aviso` befüllen, oder, falls der *freigeben*-Operation-Parameter auf `true` gesetzt war und die Validierung erfolgreich war, wird *MOPEDAccount.WorkflowStatus* mit `Entlassung vollständig` befüllt.\n  * *MOPEDAccount.TageOhneKostenbeitrag* lt. gleichnamigen Opeartion-Parameter befüllen\n\n**Validierung / Fehlerbehandlung**\n\n* Wenn der *freigeben*-Parameter auf *true* ist, muss eine Validierung aller Ressourcen (MOPEDEncounter, Account) erfolgreich sein, oder die Operation schlägt fehl.\n* Wenn der *freigeben*-Parameter auf *true* ist, muss Information zu den Tagen ohne Kostenbeitrag vorliegen (i.e. der Operation-Parameter *TageOhneKostenbeitrag* muss befüllt sein)\n* Wurden bei der Suche in Schritt 4 mehrere MOPEDTransferEncounter gefunden, liegen inkonsistente Daten vor und die Operation schlägt fehl.\n\n**Weitere Hinweise**\n\n* Hinweis 1: Wurde der Patient direkt aus der Intensivstation entlassen, so müsste auch eine Abgangsart im MOPEDTransferEncounter gesetzt werden. Dieser Spezialfall wurde noch nicht berücksichtigt.",
+      "description" : "Die $entlassen Operation wird aufgerufen, wenn ein(e) Patient*in aus dem Krankenhaus entlassen wurde.",
       "isExample" : false
     },
     {
@@ -552,7 +600,7 @@
         "reference" : "OperationDefinition/MOPED.Patient.Verlegen"
       },
       "name" : "MOPED Patient $verlegen (POC)",
-      "description" : "\n**Wer ruft diese Operation in welchem Zusammenhang auf?**\n\nDie Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $verlegen Operation wird aufgerufen, wenn ein(e) Patient*in auf eine andere Station verlegt wird. Auch initial, wenn ein Patient auf eine bestimmte Station aufgenommen wird, wird diese Operation aufgerufen (dies passiert automatisch im Zuge der Operation $aufnehmen).\n\n**Voraussetzungen für den Aufruf**\n\n* Account-Status: `Aufnahme in Arbeit` oder `Aufnahme freigegeben`\n\n**Detaillierte Business-Logik**\n\n1. Suche des MOPEDEncounter: Der MOPEDEncounter mit der jeweiligen *aufnahmezahl* lt. Operation-Parameter wird gesucht\n2. Neuer Transfer Encounter:\n  * Ein neuer MOPEDTransferEncounter wird vorbereitet\n  * *MOPEDTransferEncounter.partOf* referenziert den MOPEDEncounter aus Schritt 1.\n  * *MOPEDTransferEncounter.actualPeriod.start* wird mit dem *zeitpunkt* lt. Operation-Parameter befüllt.\n  * *MOPEDTransferEncounter.serviceProvider* setzt eine Referenz auf die MOPEDOrganizationAbteilung mit dem jeweiligen *funktionscode* bzw. *funktionssubcode* lt. Operation-Parameter.\n  * *MOPEDTransferEncounter.Neugeborenes* wird lt. LKF-Regeln berechnet, anhand des *MOPEDEncounter.subject.birthdate* aus dem Encounter aus Schritt 1 (für Berechnugns-Details siehe Hinweis 1).\n  * *MOPEDTransferEncounter.Altersgruppe* wird lt. LKF-Regeln berechnet, anhand des *MOPEDEncounter.subject.birthdate* aus dem Encounter aus Schritt 1 (für Berechnugns-Details siehe Hinweis 2).\n  * *MOPEDTransferEncounter.PhysischeAnwesenheit* wird lt. Operation-Parameter befüllt.\n3. Account AnzahlVerlegungen: Die Extension *Account.extension.AnzahlVerlegungen* im zur Aufnahmezahl gehöhrenden Account wird um 1 erhöht. Dies ist auch so, wenn es sich bei der Verlegung um einen Urlaub handeln sollte (siehe Hinweis 3).\n4. Alter Transfer Encounter:\n  * Dieser Schritt ist nur relevant, wenn es sich *nicht* um eine Neufaufnahme (lt. Operation-Parameter) handelt.\n  * Suche des alten MOPEDTransferEncounter: Mit *MOPEDTransferEncounter.partOf* einer Referenz auf den MOPEDEncounter aus Schritt 1 und den Status *in-progress*\n  * Abschließen des alten MOPEDTransferEncounter: *MOPEDTransferEncounter.status* wird auf *completed* gesetzt\n  * Endzeitpunkt des alten MOPEDTransferEncounter: *MOPEDTransferEncounter.actualPeriod.end* wird auf den *zeitpunkt* lt. Operation-Parameter gesetzt.\n  * Abgangsart vom alten MOPEDTransferEncounter: *MOPEDTransferEncounter.abgangsart* wird auf *abgangsart* lt. Operation-Parameter gesetzt.\n5. Account AnzahlBeurlaubungen:\n  * Dieser Schritt ist nur relevant, wenn es sich *nicht* um eine Neufaufnahme (lt. Operation-Parameter) handelt.\n  * War alter MOPEDTransferEncounter aus Schritt 4.2 ein Urlaub (i.e. Funktionscode `10000000`)?\n    * Wenn ja, dann wird der Counter *Account.extension.AnzahlBeurlaubungen* um 1 erhöht.\n\n**Validierung / Fehlerbehandlung**\n* Bei Neuaufnahme (lt. Operation-Parameter) muss das Feld *AnzahlVerlegungen* nach Ausführen der Operation $verlegen den Wert `1` aufweisen und das Feld *AnzahlBeurlaubungen* den Wert `0`.\n* Es kann immer nur einen MOPEDTransferEncounter für den jeweiligen Fall geben der *partOf* eines MOPEDEncounters mit der *aufnahmezahl* ist und den Status *in-progress* hat.\n* Wenn es sich um eine Neuaufnahme (lt. Operation-Parameter) handelt, kann es keine Abgangsart (Operation-Parameter) geben.\n\n**Weitere Hinweise**\n* Hinweis 1: LKF 4.2.16 Neugeborenes\n  * Ja (Alter zum Zugangszeitpunkt auf die Abteilung <28 Tage)\n  * Nein (Alter zum Zugangszeitpunkt auf die Abteilung >=28 Tage)\n* Hinweis 2: LKF 4.1.9 Altersgruppe bei Entlassung/Kontakt\n  * Vollendete Lebensjahre sind ausschlaggebend\n  * 0: 0\n  * 1-4: 1\n  * 5-9: 5\n  * 10-14: 10\n  * 15-19: 15\n  * 20-24: 20\n  * ... immer weiter so, die untere Grenze des Alters in 5er-Schritten\n  * 85-89: 85\n  * 90-95: 90\n  * 95 und älter: 95\n* Hinweis 3: Der Counter für AnzahlVerlegungen wird auch im Falle einer Beurlaubung erhöht, bei der eine reguläre Verlegung-Operation aufgerufen wird.",
+      "description" : "Die $verlegen Operation wird aufgerufen, wenn ein(e) Patient*in auf eine andere Station verlegt wird. Auch initial, wenn ein Patient auf eine bestimmte Station aufgenommen wird, wird diese Operation aufgerufen (dies passiert automatisch im Zuge der Operation $aufnehmen).",
       "isExample" : false
     },
     {
@@ -564,7 +612,7 @@
         "reference" : "OperationDefinition/MOPED.CoverageEligibilityRequest.Anfragen"
       },
       "name" : "MOPED Versichertenanspruchserklärung $anfragen (POC)",
-      "description" : "\n**Wer ruft diese Operation in welchem Zusammenhang auf?**\n\nDie Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die Versichertenanspruchserklärung $anfragen Operation wird aufgerufen, um die Versichertenanspruchserklärung-Anfrage an die SV anzustoßen. Diese Operation ist irrelevant für Selbstzahler (das ist wichtig für künftige weiterentwicklung - wenn im Account auf eine Coverage-Ressource für Selbstzahler referenziert wird, darf die Operation $anfragen nicht ausgeführt werden).\n\n**Voraussetzungen für den Aufruf**\n\n* Account-Status: : `Aufnahme freigegeben`\n\n**Detaillierte Business-Logik**\n\n1. Suche des MOPEDEncounter: Der MOPEDEncounter mit der jeweiligen *aufnahmezahl* lt. Operation-Parameter wird gesucht\n2. Suchen des MOPEDAccounts: Die Referenz des *MOPEDEncounter.account* aus Schritt 1.\n3. Erstellung des MOPEDCoverageEligibilityRequest: \n  * a. *MOPEDCoverageEligibilityRequest.status* mit 'active' befüllen\n  * b. *MOPEDCoverageEligibilityRequest.purpose* mit 'validation' befüllen\n  * c. *MOPEDCoverageEligibilityRequest.created* mit dem aktuellem Zeitpunkt befüllen\n  * d. *MOPEDCoverageEligibilityRequest.ExtensionDays* mit *verlaengerungstage* lt. Operation-Parameter befüllen\n  * e. *MOPEDCoverageEligibilityRequest.PremiumClass* mit *sonderklasse* lt. Operation-Parameter befüllen\n  * f. *MOPEDCoverageEligibilityRequest.patient* mit *MOPEDAccount.subject* befüllen\n  * g. *MOPEDCoverageEligibilityRequest.insurance.coverage* mit *MOPEDAccount.coverage.coverage* befüllen\n  * h. *MOPEDCoverageEligibilityRequest.provider* mit *MOPEDAccount.owner* befüllen\n  * i. *MOPEDCoverageEligibilityRequest.insurer* mit einer Referenz auf jene Organization befüllen, deren *Organization.identifier* dem Identifier *versicherer* lt. Operation-Parameter entspricht\n6. POSTen des neu erstellten CoverageEligibilityRequest\n7. Referenz im MOPEDAccount:\n  a. *MOPEDAccount.coverageEligibilityRequest* mit Hilfe der resultierenden ID aus Schritt 6 referenzieren\n\n**Validierung / Fehlerbehandlung**\n* *MOPEDAccount.coverage* darf nur eine Versicherung gelistet haben\n* *CoverageEligibilityRequest.subject* muss mit *Coverage.beneficiary* aus Schritt 3g übereinstimmen\n* *MOPEDCoverageEligibilityRequest.insurer* muss mit *Coverage.insurer* aus Schritt 3g übereinstimmen\n* *MOPEDCoverageEligibilityRequest.provider* muss gleichzeitig die gleiche Organisation sein, die lt. Token die Operation aufgerufen hat.\n\n**Weitere Hinweise**\n\n* Hinweis 1: Nach dieser Operation findet lt. Soll-Prozess kein Update des Status *MOPEDAccount.workflowStatus* statt.",
+      "description" : "Die Versichertenanspruchserklärung $anfragen Operation wird aufgerufen, um die Versichertenanspruchserklärung-Anfrage an die SV anzustoßen. Diese Operation ist irrelevant für Selbstzahler (das ist wichtig für künftige weiterentwicklung - wenn im Account auf eine Coverage-Ressource für Selbstzahler referenziert wird, darf die Operation $anfragen nicht ausgeführt werden).",
       "isExample" : false
     },
     {
@@ -601,6 +649,18 @@
       },
       "name" : "MOPEDClaimResponse",
       "description" : "MOPED Profil der ClaimResponse Ressource für die Leistungsabrechnungsantwort.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MOPEDCondition"
+      },
+      "name" : "MOPEDCondition",
+      "description" : "MOPED Profil der Condition Ressource für die LDF-Abrechnung",
       "isExample" : false
     },
     {
@@ -649,6 +709,18 @@
       },
       "name" : "MOPEDOrganizationAbteilung",
       "description" : "MOPED Profil für Abteilungen innerhalb einer Krankenanstalt.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MOPEDProcedure"
+      },
+      "name" : "MOPEDProcedure",
+      "description" : "MOPED Profil der Procedure Ressource für die LDF-Abrechnung",
       "isExample" : false
     },
     {
@@ -1442,7 +1514,7 @@
         "reference" : "OperationDefinition/MOPED.CoverageEligibilityRequest.CheckStatus"
       },
       "name" : "Versichertenanspruchserklärung-Anfrage $checkStatus",
-      "description" : "Die Versichertenanspruchserklärung-Anfrage $checkStatus Operation wird aufgerufen, um zu überprüfen, in welchem Status sich die Bearbeitung seitens SV derzeit befindet. Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen.\n\n1. Suchen des MOPEDAccounts: Über die Referenz der Ressource *MOPEDEncounter.account*. Dabei handelt es sich um jenen Encounter, der den *aufnahmezahl* Parameter als *identifier* gespeichert hat. \n2. Suchen des Requests: Es geht um jenen Request, der in *MOPEDAccount.coverageEligibilityRequest* Feld referenziert wurde\n3. Suche nach einer CoverageEligibilityResponse die im Feld *CoverageEligibilityResponse.request* den Request aus Schritt 2 referenziert\n  * Sollte es mehrere Responses zu einem Request geben, ist das eine Inkonsistenz die zu einer Fehlermeldung führen soll\n  * Gibt es eine Response, so ist zu prüfen in welchem *CoverageEligibilityResponse.status* die Ressource aufscheint:\n     * *draft*: Draft in Kombination mit dem *outcome*-Wert *queued* heißt, dass die SV den jeweiligen Request bereits ausgeliefert bekommen hat, jedoch die Bearbeitung noch nicht begonnen hat. Ein *draft*-Status in Kombination mit einem anderen *outcome*-Wert ist ungültig und sollte zu einer Fehlermeldung führen.\n     * *active*: Active in Kombination mit dem *outcome*-Wert *queued* bedeutet, dass die SV aktiv gestartet hat, den CoverageEligibilityRequest zu bearbeiten, es jedoch noch kein Resultat gibt. Ist der *outcome* mit dem Wert *completed*, *error* oder *partial* befüllt, ist die SV mit der Response fertig und eine Meldung kann ausgegeben werden, dass die freigegebene CoverageEligibilityResponse vom Krankenhaus abgeholt werden kann.",
+      "description" : "Die Versichertenanspruchserklärung-Anfrage $checkStatus Operation wird aufgerufen, um zu überprüfen, in welchem Status sich die Bearbeitung seitens SV derzeit befindet. Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen.",
       "isExample" : false
     },
     {
@@ -1454,7 +1526,7 @@
         "reference" : "OperationDefinition/MOPED.CoverageEligibilityRequest.Abholen"
       },
       "name" : "Versichertenanspruchserklärung-Anfragen $abholen",
-      "description" : "Die Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die Versichertenanspruchserklärung-Anfragen $abholen Operation wird aufgerufen, um alle noch offenen Versichertenanspruchserklärung-Anfragen, die bisher seitens SV noch nicht bearbeitet wurden, abgeholt werden können.\n1. Suche nach relevanten Requests: Alle CoverageEligibilityRequests, \n  * die im Feld *CoverageEligibilityRequest.insurer* die Organization mit *Organization.identifier* = Operation-Parameter *versicherer* referenziert haben UND\n  * die noch keine gezugehörigen CoverageEligibilityResponse haben (CoverageEligibilityRequest CEReq where not exists CoverageEligibilityResponse with *CoverageEligibilityResponse.request* = CEReq). Der Status der Resposne ist dabei irrelevant.\n2. Zusammenstellen des Return-Bundles:\n   Mit der gleichen Logik wie der *_include* Suchparameter um die relevanten Ressourcen (Patient, Coverage) direkt mitbekommen zu können.\n3. Erstellung eine Draft CoverageEligibilityResponse für jeden der ausgelieferten Requests:\n   * mit Feld *CoverageEligibilityResponse.status* = *draft*\n   * mit Feld *CoverageEligibilityResponse.request* = Referenz auf jeweiligen Request\n   * mit Feld *CoverageEligibilityResponse.outcome* = *queued*",
+      "description" : "Die Versichertenanspruchserklärung-Anfragen $abholen Operation wird aufgerufen, um alle noch offenen Versichertenanspruchserklärung-Anfragen, die bisher seitens SV noch nicht bearbeitet wurden, abgeholt werden können.",
       "isExample" : false
     },
     {
