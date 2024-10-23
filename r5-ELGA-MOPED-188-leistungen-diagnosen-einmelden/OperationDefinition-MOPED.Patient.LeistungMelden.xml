@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="MOPED.Patient.LeistungMelden"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition MOPED.Patient.LeistungMelden</b></p><a name="MOPED.Patient.LeistungMelden"> </a><a name="hcMOPED.Patient.LeistungMelden"> </a><a name="MOPED.Patient.LeistungMelden-en-US"> </a><p>URL: [base]/Encounter/$leistungMelden</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>aufnahmezahl</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#Identifier">Identifier</a></td><td/><td><div><p>Der <em>aufnahmezahl</em> Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall.</p>
+</div></td></tr><tr><td>IN</td><td>leistung</td><td/><td>0..*</td><td><a href="http://hl7.org/fhir/R5/procedure.html">Procedure</a> (<code>MOPEDProcedure</code>)</td><td/><td><div><p>Der <em>leistung</em> Parameter beinhält eine erbrachte Leistung in MEL-Codierung.</p>
+</div></td></tr><tr><td>IN</td><td>diagnose</td><td/><td>0..*</td><td><a href="http://hl7.org/fhir/R5/condition.html">Condition</a> (<code>MOPEDCondition</code>)</td><td/><td><div><p>Der <em>diagnose</em> Parameter beinhält eine Diagnose in HDG-Codierung.</p>
+</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>
+</div></td></tr></table></div>
+  </text>
+  <url value="http://example.org/OperationDefinition/MOPED.Patient.LeistungMelden"/>
+  <version value="0.1.0"/>
+  <name value="MOPED_Patient_LeistungMelden"/>
+  <title value="MOPED Patient $leistungMelden (POC)"/>
+  <status value="draft"/>
+  <kind value="operation"/>
+  <date value="2024-10-23T08:41:38+00:00"/>
+  <publisher value="Example Publisher"/>
+  <contact>
+    <name value="Example Publisher"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://example.org/example-publisher"/>
+    </telecom>
+  </contact>
+  <description value="Die $leistungMelden Operation wird aufgerufen, wenn eine erbrachte Leistung eingemeldet wird."/>
+  <purpose value="&#xA;**Wer ruft diese Operation in welchem Zusammenhang auf?**&#xA;&#xA;Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $leistungMelden Operation wird aufgerufen, wenn ein(e) im Zuge des Falles erbrachte Leistung eingemeldet wird.&#xA;&#xA;**Voraussetzungen für den Aufruf**&#xA;&#xA;* Account-Status: `Entlassung vollständig` &#xA;&#xA;**Detaillierte Business-Logik**&#xA;&#xA;1. Suche des MOPEDEncounter: Der MOPEDEncounter mit der jeweiligen *aufnahmezahl* lt. Operation-Parameter wird gesucht&#xA;2. Falls bisher Conditions oder Procedures eingemeldet wurden, die zum Encounter aus Schritt 1 gehören (also diesen Encounter in Procedure.encounter bzw. Condition.encounter referenzieren), dann werden diese gelöscht&#xA;3. Die neuen Conditions und Procedures werden. lt. Ressourcen in den Operation-Parametern eingespielt, sofern die Validierung (siehe unten) erfolgreich war.&#xA;&#xA;**Validierung / Fehlerbehandlung**&#xA;&#xA;* Mindestens ein leistungs- oder ein diagnose-Parameter müssen befüllt sein&#xA;* Procedure.status muss `completed` sein&#xA;* Procedure.code muss einen MEL-Code beinhalten (lt. Profil TBD)&#xA;* Procedure.subject muss gleich sein wie Encounter.subject (Encounter aus Schritt 1)&#xA;* Procedure.encounter muss gleich sein wie der Encounter aus Schritt 1&#xA;* Procedure.performer.onBehalfOf muss gleich sein wie Encounter.serviceProvider aus Schritt 1&#xA;* Procedure.occurence muss innerhalb der Zeit erfolgt sein, wie Encounter.actualPeriod aus Schritt 1&#xA;* Condition.verificationStatus muss `confirmed` sein&#xA;* Condition.code muss mit HDG-Gruppe codiert sein (lt. Profil TBD)&#xA;* Condition.subject muss gleich sein wie Encounter.subject (Encounter aus Schritt 1)&#xA;* Condition.encounter muss gleich sein wie der Encounter aus Schritt 1&#xA;&#xA;**Weitere Hinweise**&#xA;&#xA;* Hinweis 1: Leistungen melden kann ein Krankenhaus beliebig oft. Eine Status-Änderung erfolgt dadurch nicht. Erst du einem bestimmten Zeitpunkt, sobald sich das Krankenhaus für die Abrechnung ($abrechnen) entschließt, wird im Zuge dieser weiterführenden Operation die Abrechnung und somit eine Status-Änderung angestoßen.&#xA;&#xA;**Annahmen an das BeS**&#xA;* Es wurde vorab geprüft, ob das `system` des Parameters `aufnahmezahl` dem GDA entspricht, der die Operation aufruft. Somit ist sichergestellt, dass nur Procedures/Conditions für die eigenen Fälle eingemeldet werden können.&#xA;"/>
+  <affectsState value="true"/>
+  <code value="leistungMelden"/>
+  <base value="http://hl7.org/fhir/OperationDefinition/Patient-leistungMelden"/>
+  <resource value="Encounter"/>
+  <system value="false"/>
+  <type value="true"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="aufnahmezahl"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der *aufnahmezahl* Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall."/>
+    <type value="Identifier"/>
+  </parameter>
+  <parameter>
+    <name value="leistung"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="Der *leistung* Parameter beinhält eine erbrachte Leistung in MEL-Codierung."/>
+    <type value="Procedure"/>
+    <targetProfile value="MOPEDProcedure"/>
+  </parameter>
+  <parameter>
+    <name value="diagnose"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="Der *diagnose* Parameter beinhält eine Diagnose in HDG-Codierung."/>
+    <type value="Condition"/>
+    <targetProfile value="MOPEDCondition"/>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der *return* Parameter gibt Auskunft über den Erfolg der Operation."/>
+    <type value="Resource"/>
+    <targetProfile value="http://hl7.org/fhir/StructureDefinition/OperationOutcome"/>
+  </parameter>
+</OperationDefinition>
