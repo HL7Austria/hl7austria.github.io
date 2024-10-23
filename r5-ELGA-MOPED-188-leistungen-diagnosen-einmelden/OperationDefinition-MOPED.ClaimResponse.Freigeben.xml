@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="MOPED.ClaimResponse.Freigeben"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition MOPED.ClaimResponse.Freigeben</b></p><a name="MOPED.ClaimResponse.Freigeben"> </a><a name="hcMOPED.ClaimResponse.Freigeben"> </a><a name="MOPED.ClaimResponse.Freigeben-en-US"> </a><p>URL: [base]/ClaimResponse/$freigeben</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>claimResponse</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/claimresponse.html">ClaimResponse</a> (<code>MOPEDClaimResponse</code>)</td><td/><td><div><p>Der <em>claimResponse</em> Parameter beinhält sämtliche Details zur Antwort auf den Claim.</p>
+</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>
+</div></td></tr></table></div>
+  </text>
+  <url value="http://example.org/OperationDefinition/MOPED.ClaimResponse.Freigeben"/>
+  <version value="0.1.0"/>
+  <name value="MOPED_ClaimResponse_Freigeben"/>
+  <title value="MOPED ClaimResponse $freigeben (POC)"/>
+  <status value="draft"/>
+  <kind value="operation"/>
+  <date value="2024-10-23T09:11:48+00:00"/>
+  <publisher value="Example Publisher"/>
+  <contact>
+    <name value="Example Publisher"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://example.org/example-publisher"/>
+    </telecom>
+  </contact>
+  <description value="Die $freigeben Operation wird aufgerufen, wenn eine Abrechnung beantwortet wird und freigegeben wird."/>
+  <purpose value="&#xA;**Wer ruft diese Operation in welchem Zusammenhang auf?**&#xA;&#xA;Die Operation wird vom Akteur Landesgesundheitsfonds (LFG) aufgerufen. Die $freigeben Operation wird aufgerufen, wenn die Abrechnung eines Krankenhauses freigegeben wird.&#xA;&#xA;**Voraussetzungen für den Aufruf**&#xA;&#xA;* Account-Status: `Vorläufige Meldung` oder `Endgültige Meldung`&#xA;&#xA;**Detaillierte Business-Logik**&#xA;&#xA;1. Die ClaimResponse wird lt. Regeln (siehe unten) validiert und eingespielt&#xA;2. Falls Schritt 1 erfolgreich war, wird der ClaimResponse.encounter.account.workflowStatus (ClaimResponse aus Operation-Parameter; der Encounter vom Profil MOPEDEncounter) wird auf &#xA;   * `Vorläufige Freigabe` gesetzt, falls der vorherige Status `Vorläufige Meldung` war&#xA;   * `Endgültige Freigabe` gesetzt, falls der vorherige Status `Endgültige Meldung` war&#xA;&#xA;&#xA;**Validierung / Fehlerbehandlung**&#xA;&#xA;* ClaimResponse.status muss `active` sein (lt. Profil)&#xA;* ClaimResponse.type muss `institutional` sein (lt. Profil)&#xA;* ClaimResponse.use muss `claim` sein (lt. Profil)&#xA;* ClaimResponse.patient muss gleich ClaimResponse.request.patient sein&#xA;* ClaimResponse.insurer muss gleich ClaimResponse.request.insurer sein&#xA;* ClaimResponse.requestor muss gleich ClaimResponse.request.provider sein&#xA;* ClaimResponse.outcome muss `completed` oder `partial` sein&#xA;* ClaimResponse.insurance.coverage muss gleich der Claim.insurance.coverage sein&#xA;&#xA;**Weitere Hinweise**&#xA;&#xA;* Hinweis 1: Für den Fehlerfall gibt es eine weitere Operation die eine Korrekturaufforderung anstelle einer Freigabe macht&#xA;&#xA;**Annahmen an das BeS**&#xA;* Es wurde vorab geprüft, ob die ClaimResponse auch dem LGF entspricht, der die Operation aufruft. Somit ist sichergestellt, dass jeder LGF nur eigene Claims beantworten kann.&#xA;"/>
+  <affectsState value="true"/>
+  <code value="freigeben"/>
+  <base value="http://hl7.org/fhir/OperationDefinition/ClaimResponse-freigeben"/>
+  <resource value="ClaimResponse"/>
+  <system value="false"/>
+  <type value="true"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="claimResponse"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der *claimResponse* Parameter beinhält sämtliche Details zur Antwort auf den Claim."/>
+    <type value="ClaimResponse"/>
+    <targetProfile value="MOPEDClaimResponse"/>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der *return* Parameter gibt Auskunft über den Erfolg der Operation."/>
+    <type value="Resource"/>
+    <targetProfile value="http://hl7.org/fhir/StructureDefinition/OperationOutcome"/>
+  </parameter>
+</OperationDefinition>
