@@ -11,7 +11,7 @@
   "title" : "Versichertenanspruchserklärung-Anfragen $abholen",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2024-10-16T09:30:10+00:00",
+  "date" : "2024-10-24T07:04:57+00:00",
   "publisher" : "Example Publisher",
   "contact" : [{
     "name" : "Example Publisher",
@@ -20,7 +20,8 @@
       "value" : "http://example.org/example-publisher"
     }]
   }],
-  "description" : "Die Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die Versichertenanspruchserklärung-Anfragen $abholen Operation wird aufgerufen, um alle noch offenen Versichertenanspruchserklärung-Anfragen, die bisher seitens SV noch nicht bearbeitet wurden, abgeholt werden können.\n1. Suche nach relevanten Requests: Alle CoverageEligibilityRequests, \n  * die im Feld *CoverageEligibilityRequest.insurer* die Organization mit *Organization.identifier* = Operation-Parameter *versicherer* referenziert haben UND\n  * die noch keine gezugehörigen CoverageEligibilityResponse haben (CoverageEligibilityRequest CEReq where not exists CoverageEligibilityResponse with *CoverageEligibilityResponse.request* = CEReq). Der Status der Resposne ist dabei irrelevant.\n2. Zusammenstellen des Return-Bundles:\n   Mit der gleichen Logik wie der *_include* Suchparameter um die relevanten Ressourcen (Patient, Coverage) direkt mitbekommen zu können.\n3. Erstellung eine Draft CoverageEligibilityResponse für jeden der ausgelieferten Requests:\n   * mit Feld *CoverageEligibilityResponse.status* = *draft*\n   * mit Feld *CoverageEligibilityResponse.request* = Referenz auf jeweiligen Request\n   * mit Feld *CoverageEligibilityResponse.outcome* = *queued*",
+  "description" : "Die Versichertenanspruchserklärung-Anfragen $abholen Operation wird aufgerufen, um alle noch offenen Versichertenanspruchserklärung-Anfragen, die bisher seitens SV noch nicht bearbeitet wurden, abgeholt werden können.",
+  "purpose" : "Die Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die Versichertenanspruchserklärung-Anfragen $abholen Operation wird aufgerufen, um alle noch offenen Versichertenanspruchserklärung-Anfragen, die bisher seitens SV noch nicht bearbeitet wurden, abgeholt werden können.\n1. Suche nach relevanten Requests: Alle CoverageEligibilityRequests, \n  * die im Feld *CoverageEligibilityRequest.insurer* die Organization mit *Organization.identifier* = Operation-Parameter *versicherer* referenziert haben UND\n  * die noch keine gezugehörigen CoverageEligibilityResponse haben (CoverageEligibilityRequest CEReq where not exists CoverageEligibilityResponse with *CoverageEligibilityResponse.request* = CEReq). Der Status der Resposne ist dabei irrelevant.\n2. Zusammenstellen des Return-Bundles:\n   Mit der gleichen Logik wie der *_include* Suchparameter um die relevanten Ressourcen (Patient, Coverage) direkt mitbekommen zu können.\n3. Erstellung eine Draft CoverageEligibilityResponse für jeden der ausgelieferten Requests:\n   * mit Feld *CoverageEligibilityResponse.status* = *draft*\n   * mit Feld *CoverageEligibilityResponse.request* = Referenz auf jeweiligen Request\n   * mit Feld *CoverageEligibilityResponse.outcome* = *queued*",
   "affectsState" : true,
   "code" : "abholen",
   "comment" : "TBD: Es ist auch der Wunsch der Krankenanstalten tracken zu können, ob die SV den Request (1) abgefragt hat (status draft, outcome queued), (2) derzeit bearbeitet oder (status draft; outcome *queued*) (3) abgeschlossen hat (outcome *complete* OR *error* OR *partial* und der *status* auf *active*).\nSomit brauchen wir noch Möglichkeiten im Workflow, wie die erstellte Draft-Response weiter bearbeitet werden kann.",
