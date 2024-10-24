@@ -1,0 +1,99 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "MOPED.Patient.Verlegen",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition MOPED.Patient.Verlegen</b></p><a name=\"MOPED.Patient.Verlegen\"> </a><a name=\"hcMOPED.Patient.Verlegen\"> </a><a name=\"MOPED.Patient.Verlegen-en-US\"> </a><p>URL: [base]/Encounter/$verlegen</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>aufnahmezahl</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#Identifier\">Identifier</a></td><td/><td><div><p>Der <em>aufnahmezahl</em> Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall.</p>\n</div></td></tr><tr><td>IN</td><td>zeitpunkt</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#dateTime\">dateTime</a></td><td/><td><div><p>Der <em>zeitpunkt</em> Parameter definiert zu welchem Zeitpunkt die Verlegung stattfindet.</p>\n</div></td></tr><tr><td>IN</td><td>funktionscode</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#string\">string</a></td><td/><td><div><p>Der <em>funktionscode</em> Parameter definiert auf welchen Funktionscode die Verlegung stattfindet.</p>\n</div></td></tr><tr><td>IN</td><td>funktionssubcode</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#string\">string</a></td><td/><td><div><p>Der <em>funktionssubcode</em> Parameter definiert auf welchen Funktionssubcode die Verlegung stattfindet.</p>\n</div></td></tr><tr><td>IN</td><td>pysischeAnwesenheit</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#boolean\">boolean</a></td><td/><td><div><p>Der <em>physischeAnwesenheit</em> Parameter definiert ob der Patient physisch anwesend ist oder nicht.</p>\n</div></td></tr><tr><td>IN</td><td>neuaufnahme</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#boolean\">boolean</a></td><td/><td><div><p>Der <em>neuaufnahme</em> Parameter definiert ob es sich bei der Verlegung um die initiale Aufnahme des Patienten auf eine bestimmte Station handelt.</p>\n</div></td></tr><tr><td>IN</td><td>abgangsart</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#code\">code</a></td><td><a href=\"ValueSet-moped-abgangsart-valueset.html\">Abgangsart des Patienten</a> (Required)</td><td><div><p>Der <em>abgangsart</em> Parameter definiert die Abgangsart des Patienten vom bisher aktuellen MOPEDTransferEncounter.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/resource.html\">Resource</a> (<a href=\"http://hl7.org/fhir/R5/operationoutcome.html\" title=\"http://hl7.org/fhir/StructureDefinition/OperationOutcome\">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>\n</div></td></tr></table><div><p>TBD: was passiert, wenn eine $aufnehmen Operation mehrmals mit Status <code>Aufnahme in Arbeit</code> aufgerufen wird und damit zu mehreren MOPEDTransferEncounter führt?</p>\n</div></div>"
+  },
+  "url" : "http://example.org/OperationDefinition/MOPED.Patient.Verlegen",
+  "version" : "0.1.0",
+  "name" : "MOPED_Patient_Verlegen",
+  "status" : "draft",
+  "kind" : "operation",
+  "date" : "2024-10-24T19:23:15+00:00",
+  "publisher" : "Example Publisher",
+  "contact" : [{
+    "name" : "Example Publisher",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://example.org/example-publisher"
+    }]
+  }],
+  "affectsState" : true,
+  "code" : "verlegen",
+  "comment" : "TBD: was passiert, wenn eine $aufnehmen Operation mehrmals mit Status `Aufnahme in Arbeit` aufgerufen wird und damit zu mehreren MOPEDTransferEncounter führt?",
+  "base" : "http://hl7.org/fhir/OperationDefinition/Patient-verlegen",
+  "resource" : ["Encounter"],
+  "system" : false,
+  "type" : true,
+  "instance" : false,
+  "parameter" : [{
+    "name" : "aufnahmezahl",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *aufnahmezahl* Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall.",
+    "type" : "Identifier"
+  },
+  {
+    "name" : "zeitpunkt",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *zeitpunkt* Parameter definiert zu welchem Zeitpunkt die Verlegung stattfindet.",
+    "type" : "dateTime"
+  },
+  {
+    "name" : "funktionscode",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *funktionscode* Parameter definiert auf welchen Funktionscode die Verlegung stattfindet.",
+    "type" : "string"
+  },
+  {
+    "name" : "funktionssubcode",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *funktionssubcode* Parameter definiert auf welchen Funktionssubcode die Verlegung stattfindet.",
+    "type" : "string"
+  },
+  {
+    "name" : "pysischeAnwesenheit",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Der *physischeAnwesenheit* Parameter definiert ob der Patient physisch anwesend ist oder nicht.",
+    "type" : "boolean"
+  },
+  {
+    "name" : "neuaufnahme",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Der *neuaufnahme* Parameter definiert ob es sich bei der Verlegung um die initiale Aufnahme des Patienten auf eine bestimmte Station handelt.",
+    "type" : "boolean"
+  },
+  {
+    "name" : "abgangsart",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Der *abgangsart* Parameter definiert die Abgangsart des Patienten vom bisher aktuellen MOPEDTransferEncounter.",
+    "type" : "code",
+    "binding" : {
+      "strength" : "required",
+      "valueSet" : "moped-abgangsart-valueset"
+    }
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *return* Parameter gibt Auskunft über den Erfolg der Operation.",
+    "type" : "Resource",
+    "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/OperationOutcome"]
+  }]
+}
