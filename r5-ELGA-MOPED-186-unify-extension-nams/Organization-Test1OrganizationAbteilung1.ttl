@@ -1,0 +1,62 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/Organization/Test1OrganizationAbteilung1> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Test1OrganizationAbteilung1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"^^xsd:anyURI ;
+       fhir:link <http://example.org/StructureDefinition/MOPEDOrganizationAbteilung>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Organization Test1OrganizationAbteilung1</b></p><a name=\"Test1OrganizationAbteilung1\"> </a><a name=\"hcTest1OrganizationAbteilung1\"> </a><a name=\"Test1OrganizationAbteilung1-en-US\"> </a><blockquote><p><b>org/StructureDefinition/moped-ext-Kostenstelle</b></p><ul><li>InterneKostenstellennummer: 11160</li><li>InterneKostenstellenbezeichnung: Schlaflabor (Interne)</li><li>SpezielleOrganisationsform: MOPED-SpezielleOrganisationsform A: A</li><li>KostenstellenJahr: 2024</li></ul></blockquote><p><b>identifier</b>: Funktionscode/131180, Funktionssubcode/00</p><p><b>partOf</b>: <a href=\"Organization-Test1OrganizationHerzJesuKrankenhaus.html\">Organization Herz Jesu-Krankenhaus</a></p></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "InterneKostenstellennummer"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "11160"^^xsd:nonNegativeInteger ]
+     ] [
+       fhir:url [ fhir:v "InterneKostenstellenbezeichnung"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Schlaflabor (Interne)" ]
+     ] [
+       fhir:url [ fhir:v "SpezielleOrganisationsform"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Coding ;
+         fhir:system [ fhir:v "http://tbd.at/MOPED-SpezielleOrganisationsform"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "A" ]
+       ]
+     ] [
+       fhir:url [ fhir:v "KostenstellenJahr"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "2024"^^xsd:gYear ]
+     ] ) ;
+     fhir:url [ fhir:v "http://example.org/StructureDefinition/moped-ext-Kostenstelle"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:code [ fhir:v "Funktionscode" ]
+       ] )
+     ] ;
+     fhir:value [ fhir:v "131180" ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:code [ fhir:v "Funktionssubcode" ]
+       ] )
+     ] ;
+     fhir:value [ fhir:v "00" ]
+  ] ) ; # 
+  fhir:partOf [
+     fhir:link <http://example.org/Organization/Test1OrganizationHerzJesuKrankenhaus> ;
+     fhir:reference [ fhir:v "Organization/Test1OrganizationHerzJesuKrankenhaus" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

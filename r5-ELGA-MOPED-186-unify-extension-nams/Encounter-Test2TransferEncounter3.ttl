@@ -1,0 +1,46 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/Encounter/Test2TransferEncounter3> a fhir:Encounter ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Test2TransferEncounter3"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://example.org/StructureDefinition/MOPEDTransferEncounter"^^xsd:anyURI ;
+       fhir:link <http://example.org/StructureDefinition/MOPEDTransferEncounter>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Encounter Test2TransferEncounter3</b></p><a name=\"Test2TransferEncounter3\"> </a><a name=\"hcTest2TransferEncounter3\"> </a><a name=\"Test2TransferEncounter3-en-US\"> </a><p><b>org/StructureDefinition/moped-ext-Altersgruppe</b>: 35</p><p><b>org/StructureDefinition/moped-ext-Neugeborenes</b>: false</p><p><b>status</b>: In Progress</p><p><b>subject</b>: <a href=\"Patient-Test2Patient.html\">Santiago Schnabeltier TEST (official) Male, DoB: 1985-03-19 ( Social Security Number: 2873111374)</a></p><p><b>partOf</b>: <a href=\"Encounter-Test2MOPEDEncounter1.html\">Encounter: identifier = VN; status = in-progress; class = S,A; actualPeriod = 2024-08-08 08:21:00+0200 --&gt; 2024-08-08 19:22:00+0200</a></p><p><b>serviceProvider</b>: <a href=\"Organization-Test2OrganizationAbteilung3.html\">Organization: identifier = Funktionscode,Funktionssubcode</a></p><p><b>actualPeriod</b>: 2024-08-08 11:41:00+0200 --&gt; (ongoing)</p></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://example.org/StructureDefinition/moped-ext-Altersgruppe"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "35"^^xsd:nonNegativeInteger ]
+  ] [
+     fhir:url [ fhir:v "http://example.org/StructureDefinition/moped-ext-Neugeborenes"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "false"^^xsd:boolean ]
+  ] ) ; # 
+  fhir:status [ fhir:v "in-progress"] ; # 
+  fhir:subject [
+     fhir:link <http://example.org/Patient/Test2Patient> ;
+     fhir:reference [ fhir:v "Patient/Test2Patient" ]
+  ] ; # 
+  fhir:partOf [
+     fhir:link <http://example.org/Encounter/Test2MOPEDEncounter1> ;
+     fhir:reference [ fhir:v "Encounter/Test2MOPEDEncounter1" ]
+  ] ; # 
+  fhir:serviceProvider [
+     fhir:link <http://example.org/Organization/Test2OrganizationAbteilung3> ;
+     fhir:reference [ fhir:v "Organization/Test2OrganizationAbteilung3" ]
+  ] ; # 
+  fhir:actualPeriod [
+     fhir:start [ fhir:v "2024-08-08T11:41:00+02:00"^^xsd:dateTime ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

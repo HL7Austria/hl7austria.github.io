@@ -1,0 +1,55 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/CoverageEligibilityRequest/Test1MOPEDCoverageEligibilityRequest1> a fhir:CoverageEligibilityRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Test1MOPEDCoverageEligibilityRequest1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://example.org/StructureDefinition/MOPEDCoverageEligibilityRequest"^^xsd:anyURI ;
+       fhir:link <http://example.org/StructureDefinition/MOPEDCoverageEligibilityRequest>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CoverageEligibilityRequest Test1MOPEDCoverageEligibilityRequest1</b></p><a name=\"Test1MOPEDCoverageEligibilityRequest1\"> </a><a name=\"hcTest1MOPEDCoverageEligibilityRequest1\"> </a><a name=\"Test1MOPEDCoverageEligibilityRequest1-en-US\"> </a><p><b>Verlaengerungstage</b>: 0</p><p><b>org/StructureDefinition/moped-ext-PremiumClass</b>: MOPED-Sonderklasse A: A</p><p><b>status</b>: Active</p><p><b>purpose</b>: Coverage Validation</p><p><b>patient</b>: <a href=\"Patient-Test1Patient.html\">Patientenkommun Moderne (official) Female, DoB: 1969-04-21 ( Social Security Number: 9994210469)</a></p><p><b>created</b>: 2024-09-17</p><p><b>provider</b>: <a href=\"Organization-Test1OrganizationHerzJesuKrankenhaus.html\">Organization Herz Jesu-Krankenhaus</a></p><p><b>insurer</b>: <a href=\"Organization-Test1OrganizationInsurance1.html\">Organization Österreichische Gesundheitskasse Wien</a></p><h3>Insurances</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Coverage</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Coverage-Test1SVCCoverage.html\">Coverage: status = active; kind = insurance</a></td></tr></table></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://example.org/StructureDefinition/moped-ext-verlaengerungstage"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "0"^^xsd:nonNegativeInteger ]
+  ] [
+     fhir:url [ fhir:v "http://example.org/StructureDefinition/moped-ext-PremiumClass"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Coding ;
+       fhir:system [ fhir:v "http://tbd.at/MOPED-Sonderklasse"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "A" ]
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:purpose ( [ fhir:v "validation"] ) ; # 
+  fhir:patient [
+     fhir:link <http://example.org/Patient/Test1Patient> ;
+     fhir:reference [ fhir:v "Patient/Test1Patient" ]
+  ] ; # 
+  fhir:created [ fhir:v "2024-09-17"^^xsd:date] ; # 
+  fhir:provider [
+     fhir:link <http://example.org/Organization/Test1OrganizationHerzJesuKrankenhaus> ;
+     fhir:reference [ fhir:v "Organization/Test1OrganizationHerzJesuKrankenhaus" ]
+  ] ; # 
+  fhir:insurer [
+     fhir:link <http://example.org/Organization/Test1OrganizationInsurance1> ;
+     fhir:reference [ fhir:v "Organization/Test1OrganizationInsurance1" ]
+  ] ; # 
+  fhir:insurance ( [
+     fhir:coverage [
+       fhir:link <http://example.org/Coverage/Test1SVCCoverage> ;
+       fhir:reference [ fhir:v "Coverage/Test1SVCCoverage" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
