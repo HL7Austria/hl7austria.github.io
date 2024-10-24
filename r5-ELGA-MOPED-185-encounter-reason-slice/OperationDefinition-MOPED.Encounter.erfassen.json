@@ -1,0 +1,67 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "MOPED.Encounter.erfassen",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition MOPED.Encounter.erfassen</b></p><a name=\"MOPED.Encounter.erfassen\"> </a><a name=\"hcMOPED.Encounter.erfassen\"> </a><a name=\"MOPED.Encounter.erfassen-en-US\"> </a><p>URL: [base]/Encounter/$erfassen</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>aufnahmezahl</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#Identifier\">Identifier</a></td><td/><td><div><p>Der <em>aufnahmezahl</em> Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall.</p>\n</div></td></tr><tr><td>IN</td><td>leistung</td><td/><td>0..*</td><td><a href=\"http://hl7.org/fhir/R5/procedure.html\">Procedure</a> (<code>MOPEDProcedure</code>)</td><td/><td><div><p>Der <em>leistung</em> Parameter beinhält eine erbrachte Leistung in MEL-Codierung.</p>\n</div></td></tr><tr><td>IN</td><td>diagnose</td><td/><td>0..*</td><td><a href=\"http://hl7.org/fhir/R5/condition.html\">Condition</a> (<code>MOPEDCondition</code>)</td><td/><td><div><p>Der <em>diagnose</em> Parameter beinhält eine Diagnose in HDG-Codierung.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/resource.html\">Resource</a> (<a href=\"http://hl7.org/fhir/R5/operationoutcome.html\" title=\"http://hl7.org/fhir/StructureDefinition/OperationOutcome\">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>\n</div></td></tr></table></div>"
+  },
+  "url" : "http://example.org/OperationDefinition/MOPED.Encounter.erfassen",
+  "version" : "0.1.0",
+  "name" : "MOPED_Encounter_erfassen",
+  "title" : "MOPED Encounter Leistung und Diagnosen $erfassen (POC)",
+  "status" : "draft",
+  "kind" : "operation",
+  "date" : "2024-10-24T12:33:56+00:00",
+  "publisher" : "Example Publisher",
+  "contact" : [{
+    "name" : "Example Publisher",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://example.org/example-publisher"
+    }]
+  }],
+  "description" : "Die $erfassen Operation wird aufgerufen, wenn eine erbrachte Leistungen und Diagnosen eingemeldet wird.",
+  "purpose" : "\n**Wer ruft diese Operation in welchem Zusammenhang auf?**\n\nDie Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $erfassen Operation wird aufgerufen, wenn ein(e) im Zuge des Falles erbrachte Leistung und Diagnosen eingemeldet wird.\n\n**Voraussetzungen für den Aufruf**\n\n* Account-Status: `Entlassung vollständig` \n\n**Detaillierte Business-Logik**\n\n1. Suche des MOPEDEncounter: Der MOPEDEncounter mit der jeweiligen *aufnahmezahl* lt. Operation-Parameter wird gesucht\n2. Falls bisher Conditions oder Procedures eingemeldet wurden, die zum Encounter aus Schritt 1 gehören (also diesen Encounter in Procedure.encounter bzw. Condition.encounter referenzieren), dann werden diese gelöscht\n3. Die neuen Conditions und Procedures werden. lt. Ressourcen in den Operation-Parametern eingespielt, sofern die Validierung (siehe unten) erfolgreich war.\n\n**Validierung / Fehlerbehandlung**\n\n* Mindestens ein leistungs- oder ein diagnose-Parameter müssen befüllt sein\n* Procedure.status muss `completed` sein\n* Procedure.code muss einen MEL-Code beinhalten (lt. Profil TBD)\n* Procedure.subject muss gleich sein wie Encounter.subject (Encounter aus Schritt 1)\n* Procedure.encounter muss gleich sein wie der Encounter aus Schritt 1\n* Procedure.performer.onBehalfOf muss gleich sein wie Encounter.serviceProvider aus Schritt 1\n* Procedure.occurence muss innerhalb der Zeit erfolgt sein, wie Encounter.actualPeriod aus Schritt 1\n* Condition.verificationStatus muss `confirmed` sein\n* Condition.code muss mit HDG-Gruppe codiert sein (lt. Profil TBD)\n* Condition.subject muss gleich sein wie Encounter.subject (Encounter aus Schritt 1)\n* Condition.encounter muss gleich sein wie der Encounter aus Schritt 1\n\n**Weitere Hinweise**\n\n* Hinweis 1: Leistungen melden kann ein Krankenhaus beliebig oft. Eine Status-Änderung erfolgt dadurch nicht. Erst du einem bestimmten Zeitpunkt, sobald sich das Krankenhaus für die Abrechnung ($abrechnen) entschließt, wird im Zuge dieser weiterführenden Operation die Abrechnung und somit eine Status-Änderung angestoßen.\n\n**Annahmen an das BeS**\n* Es wurde vorab geprüft, ob das `system` des Parameters `aufnahmezahl` dem GDA entspricht, der die Operation aufruft. Somit ist sichergestellt, dass nur Procedures/Conditions für die eigenen Fälle eingemeldet werden können.\n",
+  "affectsState" : true,
+  "code" : "erfassen",
+  "base" : "http://hl7.org/fhir/OperationDefinition/Enconuter-erfassen",
+  "resource" : ["Encounter"],
+  "system" : false,
+  "type" : true,
+  "instance" : false,
+  "parameter" : [{
+    "name" : "aufnahmezahl",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *aufnahmezahl* Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall.",
+    "type" : "Identifier"
+  },
+  {
+    "name" : "leistung",
+    "use" : "in",
+    "min" : 0,
+    "max" : "*",
+    "documentation" : "Der *leistung* Parameter beinhält eine erbrachte Leistung in MEL-Codierung.",
+    "type" : "Procedure",
+    "targetProfile" : ["MOPEDProcedure"]
+  },
+  {
+    "name" : "diagnose",
+    "use" : "in",
+    "min" : 0,
+    "max" : "*",
+    "documentation" : "Der *diagnose* Parameter beinhält eine Diagnose in HDG-Codierung.",
+    "type" : "Condition",
+    "targetProfile" : ["MOPEDCondition"]
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *return* Parameter gibt Auskunft über den Erfolg der Operation.",
+    "type" : "Resource",
+    "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/OperationOutcome"]
+  }]
+}

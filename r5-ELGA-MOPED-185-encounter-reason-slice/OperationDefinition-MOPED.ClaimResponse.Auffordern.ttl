@@ -1,0 +1,64 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/OperationDefinition/MOPED.ClaimResponse.Auffordern> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "MOPED.ClaimResponse.Auffordern"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition MOPED.ClaimResponse.Auffordern</b></p><a name=\"MOPED.ClaimResponse.Auffordern\"> </a><a name=\"hcMOPED.ClaimResponse.Auffordern\"> </a><a name=\"MOPED.ClaimResponse.Auffordern-en-US\"> </a><p>URL: [base]/ClaimResponse/$auffordern</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>claimResponse</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/claimresponse.html\">ClaimResponse</a> (<code>MOPEDClaimResponse</code>)</td><td/><td><div><p>Der <em>claimResponse</em> Parameter beinhält sämtliche Details zur Antwort auf den Claim.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/resource.html\">Resource</a> (<a href=\"http://hl7.org/fhir/R5/operationoutcome.html\" title=\"http://hl7.org/fhir/StructureDefinition/OperationOutcome\">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>\n</div></td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://example.org/OperationDefinition/MOPED.ClaimResponse.Auffordern"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "MOPED_ClaimResponse_Auffordern"] ; # 
+  fhir:title [ fhir:v "MOPED ClaimResponse $auffordern (POC)"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2024-10-24T12:33:56+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Example Publisher"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Example Publisher" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://example.org/example-publisher" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Die $auffordern Operation wird aufgerufen, wenn eine Abrechnung beantwortet wird und das Krankehaus zu einer Korrektur aufgefordert wird."] ; # 
+  fhir:purpose [ fhir:v "\n**Wer ruft diese Operation in welchem Zusammenhang auf?**\n\nDie Operation wird vom Akteur Landesgesundheitsfonds (LFG) aufgerufen. Die $auffordern Operation wird aufgerufen, wenn die Abrechnung eines Krankenhauses nicht freigegeben wird, sondern eine Korrektur der Abrechnung angefordert wird.\n\n**Voraussetzungen für den Aufruf**\n\n* Account-Status: `Vorläufige Meldung` oder `Endgültige Meldung`\n\n**Detaillierte Business-Logik**\n\n1. Die ClaimResponse wird lt. Regeln (siehe unten) validiert und eingespielt\n2. Falls Schritt 1 erfolgreich war, wird der ClaimResponse.encounter.account.workflowStatus (ClaimResponse aus Operation-Parameter; der Encounter vom Profil MOPEDEncounter) wird auf \n   * `LGF Korrekturaufforderung` gesetzt, falls der vorherige Status `Vorläufige Meldung` war\n   * `Endgültige Korrekturaufforderung` gesetzt, falls der vorherige Status `Endgültige Meldung` war\n\n\n**Validierung / Fehlerbehandlung**\n\n* ClaimResponse.status muss `active` sein (lt. Profil)\n* ClaimResponse.type muss `institutional` sein (lt. Profil)\n* ClaimResponse.use muss `claim` sein (lt. Profil)\n* ClaimResponse.patient muss gleich ClaimResponse.request.patient sein\n* ClaimResponse.insurer muss gleich ClaimResponse.request.insurer sein\n* ClaimResponse.requestor muss gleich ClaimResponse.request.provider sein\n* ClaimResponse.outcome muss `error` sein\n* ClaimResponse.insurance.coverage muss gleich der Claim.insurance.coverage sein\n* ClaimResponse.error muss befüllt sein\n\n**Weitere Hinweise**\n\n* Hinweis 1: Für den Fall, dass ein Claim freigegeben wird und kein Fehler auftritt, gibt es eine weitere Operation die anstelle einer Korrekturaufforderung eine Freigabe definiert\n\n**Annahmen an das BeS**\n* Es wurde vorab geprüft, ob die ClaimResponse auch dem LGF entspricht, der die Operation aufruft. Somit ist sichergestellt, dass jeder LGF nur eigene Claims beantworten kann.\n"] ; # 
+  fhir:affectsState [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:code [ fhir:v "auffordern"] ; # 
+  fhir:base [
+     fhir:v "http://hl7.org/fhir/OperationDefinition/ClaimResponse-Auffordern"^^xsd:anyURI ;
+     fhir:link <http://hl7.org/fhir/OperationDefinition/ClaimResponse-Auffordern>
+  ] ; # 
+  fhir:resource ( [ fhir:v "ClaimResponse"] ) ; # 
+  fhir:system [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:type [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:instance [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "claimResponse" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Der *claimResponse* Parameter beinhält sämtliche Details zur Antwort auf den Claim." ] ;
+     fhir:type [ fhir:v "ClaimResponse" ] ;
+     fhir:targetProfile ( [ fhir:v "MOPEDClaimResponse"^^xsd:anyURI ] )
+  ] [
+     fhir:name [ fhir:v "return" ] ;
+     fhir:use [ fhir:v "out" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Der *return* Parameter gibt Auskunft über den Erfolg der Operation." ] ;
+     fhir:type [ fhir:v "Resource" ] ;
+     fhir:targetProfile ( [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/OperationOutcome"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/OperationOutcome>
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

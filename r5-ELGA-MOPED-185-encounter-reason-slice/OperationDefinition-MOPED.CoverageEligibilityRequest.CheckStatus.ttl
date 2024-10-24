@@ -1,0 +1,63 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/OperationDefinition/MOPED.CoverageEligibilityRequest.CheckStatus> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "MOPED.CoverageEligibilityRequest.CheckStatus"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition MOPED.CoverageEligibilityRequest.CheckStatus</b></p><a name=\"MOPED.CoverageEligibilityRequest.CheckStatus\"> </a><a name=\"hcMOPED.CoverageEligibilityRequest.CheckStatus\"> </a><a name=\"MOPED.CoverageEligibilityRequest.CheckStatus-en-US\"> </a><p>URL: [base]/CoverageEligibilityRequest/$checkStatus</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>aufnahmezahl</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#Identifier\">Identifier</a></td><td/><td><div><p>Der <em>aufnahmezahl</em> Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall dessen Versichertenanspruchserklärung-Status überprüft werden soll.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/resource.html\">Resource</a> (<a href=\"http://hl7.org/fhir/R5/operationoutcome.html\" title=\"http://hl7.org/fhir/StructureDefinition/OperationOutcome\">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>\n</div></td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://example.org/OperationDefinition/MOPED.CoverageEligibilityRequest.CheckStatus"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "MOPED_CoverageEligibilityRequest_Check_Status"] ; # 
+  fhir:title [ fhir:v "Versichertenanspruchserklärung-Anfrage $checkStatus"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2024-10-24T12:33:56+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Example Publisher"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Example Publisher" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://example.org/example-publisher" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Die Versichertenanspruchserklärung-Anfrage $checkStatus Operation wird aufgerufen, um zu überprüfen, in welchem Status sich die Bearbeitung seitens SV derzeit befindet. Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen."] ; # 
+  fhir:purpose [ fhir:v "Die Versichertenanspruchserklärung-Anfrage $checkStatus Operation wird aufgerufen, um zu überprüfen, in welchem Status sich die Bearbeitung seitens SV derzeit befindet. Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen.\n\n1. Suchen des MOPEDAccounts: Über die Referenz der Ressource *MOPEDEncounter.account*. Dabei handelt es sich um jenen Encounter, der den *aufnahmezahl* Parameter als *identifier* gespeichert hat. \n2. Suchen des Requests: Es geht um jenen Request, der in *MOPEDAccount.coverageEligibilityRequest* Feld referenziert wurde\n3. Suche nach einer CoverageEligibilityResponse die im Feld *CoverageEligibilityResponse.request* den Request aus Schritt 2 referenziert\n  * Sollte es mehrere Responses zu einem Request geben, ist das eine Inkonsistenz die zu einer Fehlermeldung führen soll\n  * Gibt es eine Response, so ist zu prüfen in welchem *CoverageEligibilityResponse.status* die Ressource aufscheint:\n     * *draft*: Draft in Kombination mit dem *outcome*-Wert *queued* heißt, dass die SV den jeweiligen Request bereits ausgeliefert bekommen hat, jedoch die Bearbeitung noch nicht begonnen hat. Ein *draft*-Status in Kombination mit einem anderen *outcome*-Wert ist ungültig und sollte zu einer Fehlermeldung führen.\n     * *active*: Active in Kombination mit dem *outcome*-Wert *queued* bedeutet, dass die SV aktiv gestartet hat, den CoverageEligibilityRequest zu bearbeiten, es jedoch noch kein Resultat gibt. Ist der *outcome* mit dem Wert *completed*, *error* oder *partial* befüllt, ist die SV mit der Response fertig und eine Meldung kann ausgegeben werden, dass die freigegebene CoverageEligibilityResponse vom Krankenhaus abgeholt werden kann. "] ; # 
+  fhir:affectsState [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:code [ fhir:v "checkStatus"] ; # 
+  fhir:base [
+     fhir:v "http://hl7.org/fhir/OperationDefinition/CoverageEligibilityRequest-checkStatus"^^xsd:anyURI ;
+     fhir:link <http://hl7.org/fhir/OperationDefinition/CoverageEligibilityRequest-checkStatus>
+  ] ; # 
+  fhir:resource ( [ fhir:v "CoverageEligibilityRequest"] ) ; # 
+  fhir:system [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:type [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:instance [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "aufnahmezahl" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Der *aufnahmezahl* Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall dessen Versichertenanspruchserklärung-Status überprüft werden soll." ] ;
+     fhir:type [ fhir:v "Identifier" ]
+  ] [
+     fhir:name [ fhir:v "return" ] ;
+     fhir:use [ fhir:v "out" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Der *return* Parameter gibt Auskunft über den Erfolg der Operation." ] ;
+     fhir:type [ fhir:v "Resource" ] ;
+     fhir:targetProfile ( [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/OperationOutcome"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/OperationOutcome>
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
