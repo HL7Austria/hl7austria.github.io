@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>FHIR.EXAMPLE\Anwendungsfallbeschreibung - FHIR&reg; v5.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"2"}
+    h3,h4,h5,h6{--heading-prefix:"2"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+          <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img src="logo.png" id="header-logo"/>
+          </div>
+          <div class="col-11">
+          <!-- at-fhir-ig-template end -->
+              <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)</span><br/>
+                <span class="label label-info">0.1.0 - ci-build</span>
+              </p>
+            </div>
+          <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+          <!-- at-fhir-ig-template end -->
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R5/index.html" class="navbar-brand hidden">FHIR&reg;</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="use_case_description.html">Sollprozess (Entwurf)</a>
+  </li>
+  <li>
+    <a href="actors.html">Akteure</a>
+  </li>
+  <li>
+    <a href="workflowmanagement.html">Workflowmanagement</a>
+  </li>
+  <li>
+    <a href="lkf_mapping.html">LKF Mapping</a>
+  </li>
+  <li>
+    <a href="ka-org_mapping.html">Ka-Org Mapping</a>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Anwendungsfallbeschreibung</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+	
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- at-fhir-ig-template begin -->
+  <div role="alert" class="alert alert-warning">
+      <!-- ReleaseHeader --><p id="publish-box">Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED) - Local Development build (v0.1.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://example.org/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  </div>
+    <!-- at-fhir-ig-template end -->
+  <h2>Anwendungsfallbeschreibung</h2>
+  
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div>
+  <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown. -->
+</div>
+<p>Die folgende Beschreibung und die zugehörigen Diagramme illustrieren den neuen Sollprozess in FHIR. Ziel ist es, die Kommunikation und Datenübermittlung im österreichischen Gesundheitswesen zu standardisieren und zu harmonisieren. Dies umfasst die verschiedenen Phasen der Aufnahme, Patientenversorgung, Entlassung, Abrechnung und Dokumentation.</p>
+
+<p>Die einzelnen Abschnitte beschreiben detailliert die Schritte und Interaktionen zwischen den beteiligten Akteuren. Die Diagramme verdeutlichen, wie der neue Prozess zur effizienten und konsistenten Datenkommunikation eingesetzt werden kann.</p>
+
+<div class="container">
+<h2>Sollprozess (Entwurf):</h2>
+</div>
+
+<div class="container"> 
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#Behandlungsfall"> <strong>Behandlungsfall</strong></a></li>
+        <li><a data-toggle="tab" href="#LeistungsabrechnungDatenmeldung"> <strong>Leistungsabrechnung &amp; Datenmeldung</strong></a></li>
+        <li><a data-toggle="tab" href="#Kostenmeldung"> <strong>Kostenmeldung</strong></a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="Behandlungsfall" class="tab-pane fade in active">
+        <h1>Behandlungsfall</h1>
+
+<img src="Sollprozess/SollProzesse_einzeln/Behandlungsfall.png" width="60%"/>
+
+
+<div class="container"> 
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#Aufnahme"> <strong>Aufnahme</strong></a></li>
+        <li><a data-toggle="tab" href="#Versichertenanspruchserklärung"> <strong>Versichertenanspruchserklärung</strong></a></li>
+        <li><a data-toggle="tab" href="#Patientenversorgung"> <strong>Patientenversorgung</strong></a></li>
+        <li><a data-toggle="tab" href="#Entlassung"> <strong>Entlassung</strong></a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="Aufnahme" class="tab-pane fade in active">
+        <h1>Aufnahme</h1>
+<img src="Sollprozess/SollProzesse_einzeln/Aufnahme.png" width="70%"/>
+
+<div class="container"> 
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#AufnahmeEinmelden"> <strong>Aufnahme einmelden</strong></a></li>
+        <li><a data-toggle="tab" href="#AdministrativeDatenErfassen"> <strong>Administrative Daten erfassen</strong></a></li>
+        <li><a data-toggle="tab" href="#VersicherungsdatenErfassen"> <strong>Versicherungsdaten erfassen</strong></a></li>
+        <li><a data-toggle="tab" href="#AufnahmedatenErfassen"> <strong>Aufnahmedaten erfassen</strong></a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="AufnahmeEinmelden" class="tab-pane fade in active">
+            <h1>Aufnahme Einmelden</h1>
+            <img src="Sollprozess/eEPKs/Aufnahme einmelden.png" width="20%"/>
+        </div>
+        <div id="AdministrativeDatenErfassen" class="tab-pane fade">
+            <h1>Administrative Daten erfassen</h1>
+            <img src="Sollprozess/eEPKs/Administrative Daten erfassen.png" width="50%"/>
+        </div>
+        <div id="VersicherungsdatenErfassen" class="tab-pane fade">
+            <h1>Versicherungsdaten erfassen</h1>
+            <img src="Sollprozess/eEPKs/Versicherungsdaten erfassen.png" width="65%"/>
+        </div>
+        <div id="AufnahmedatenErfassen" class="tab-pane fade">
+            <h1>Aufnahmedaten erfassen</h1>
+            <img src="Sollprozess/eEPKs/Aufnahmedaten erfassen.png" width="60%"/>
+        </div>
+    </div>
+</div>
+
+        </div>
+        <div id="Versichertenanspruchserklärung" class="tab-pane fade">
+            <h1>Versichertenanspruchserklärung</h1>
+            <img src="Sollprozess/SollProzesse_einzeln/Versichertenanspruchserklärung.png" width="50%"/>
+            <img src="Sollprozess/eEPKs/Versichertenanspruchserklärung.png" width="40%"/>
+        </div>
+        <div id="Patientenversorgung" class="tab-pane fade">
+            <h1>Patientenversorgung</h1>
+            <img src="Sollprozess/SollProzesse_einzeln/Patientenversorgung.png" width="50%"/>
+            <img src="Sollprozess/eEPKs/Patientenversorgung.png" width="50%"/>
+            <p>Während des Krankenhausaufenthalts werden alle medizinischen Maßnahmen und Beobachtungen kontinuierlich dokumentiert. Dies umfasst die Aktualisierung von Leistungen, Diagnosen und eventuell auch Medikamentenverabreichungen in den entsprechenden FHIR-Ressourcen.</p>
+        </div>
+        <div id="Entlassung" class="tab-pane fade">
+            <h1>Entlassung</h1>
+            <img src="Sollprozess/SollProzesse_einzeln/Entlassung.png" width="50%"/>
+            <img src="Sollprozess/eEPKs/Entlassung.png" width="60%"/>
+        </div>
+    </div>
+</div>
+        </div>
+        <div id="LeistungsabrechnungDatenmeldung" class="tab-pane fade">
+        <h1>Leistungsabrechnung &amp; Datenmeldung</h1>
+<img src="Sollprozess/SollProzesse_einzeln/Leistungsabrechnung &amp; Datenmeldung.png" width="100%"/>
+
+<div class="container"> 
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#VorläufigeLeistungsabrechnung"> <strong>Vorläufige Leistungsabrechnung &amp; Datenmeldung</strong></a></li>
+        <li><a data-toggle="tab" href="#JährlicheLeistungsabrechnung"> <strong>Jährliche Leistungsabrechnung &amp; Datenmeldung</strong></a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="VorläufigeLeistungsabrechnung" class="tab-pane fade in active">
+            <h1>Vorläufige Leistungsabrechnung &amp; Datenmeldung</h1>
+<div class="container"> 
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#VorläufigeMeldung"> <strong>Vorläufige Meldung</strong></a></li>
+        <li><a data-toggle="tab" href="#VorläufigeFreigabe"> <strong>Vorläufige Freigabe</strong></a></li>
+        <li><a data-toggle="tab" href="#Quartalsmeldung"> <strong>Quartalsmeldung</strong></a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="VorläufigeMeldung" class="tab-pane fade in active">
+        <h1>Vorläufige Meldung</h1>
+            <img src="Sollprozess/SollProzesse_einzeln/Vorläufige Meldung.png" width="50%"/>
+            <img src="Sollprozess/eEPKs/Vorläufige Meldung.png" width="70%"/>
+        </div>
+        <div id="VorläufigeFreigabe" class="tab-pane fade">
+        <h1>Vorläufige Freigabe</h1>
+            <img src="Sollprozess/SollProzesse_einzeln/Vorläufige Freigabe.png" width="50%"/>
+            <img src="Sollprozess/eEPKs/Vorläufige Freigabe.png" width="75%"/>
+        </div>
+        <div id="Quartalsmeldung" class="tab-pane fade">
+        <h1>Quartalsmeldung</h1>
+            <img src="Sollprozess/SollProzesse_einzeln/Quartalsmeldung.png" width="40%"/>
+            <img src="Sollprozess/eEPKs/Bundesmeldung unterjährig.png" width="50%"/>
+        </div>
+    </div>
+</div>
+        </div>
+        <div id="JährlicheLeistungsabrechnung" class="tab-pane fade">
+            <h1>Jährliche Leistungsabrechnung &amp; Datenmeldung</h1>
+<div class="container"> 
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#EndgültigeMeldung"> <strong>Endgültige Meldung</strong></a></li>
+        <li><a data-toggle="tab" href="#EndgültigeFreigabe"> <strong>Endgültige Freigabe</strong></a></li>
+        <li><a data-toggle="tab" href="#JährlicheBundesmeldung"> <strong>Jährliche Bundesmeldung</strong></a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="EndgültigeMeldung" class="tab-pane fade in active">
+            <h1>Endgültige Meldung</h1>
+            <img src="Sollprozess/SollProzesse_einzeln/Endgültige Meldung.png" width="50%"/>
+            <img src="Sollprozess/eEPKs/Endgültige Meldung.png" width="70%"/>
+        </div>
+        <div id="EndgültigeFreigabe" class="tab-pane fade">
+            <h1>Endgültige Freigabe</h1>
+            <img src="Sollprozess/SollProzesse_einzeln/Endgültige Freigabe.png" width="50%"/>
+            <img src="Sollprozess/eEPKs/Endgültige Freigabe.png" width="70%"/>
+        </div>
+        <div id="JährlicheBundesmeldung" class="tab-pane fade">
+            <h1>Jährliche Bundesmeldung</h1>
+            <img src="Sollprozess/SollProzesse_einzeln/Jahresmeldung.png" width="50%"/>
+            <img src="Sollprozess/eEPKs/Jährliche Bundesmeldung.png" width="50%"/>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+        </div>
+        <div id="Kostenmeldung" class="tab-pane fade">
+            <h1>Kostenmeldung</h1>
+<img src="Sollprozess/SollProzesse_einzeln/Kostenmeldung.png" width="60%"/>
+
+
+<div class="container"> 
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#KostenmeldungÜbernahme"> <strong>Kostenmeldung - Übernahme</strong></a></li>
+        <li><a data-toggle="tab" href="#KostenmeldungRückmeldung"> <strong>Kostenmeldung - Rückmeldung</strong></a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="KostenmeldungÜbernahme" class="tab-pane fade in active">
+            <h1>Kostenmeldung - Übernahme</h1>
+            <img src="Sollprozess/eEPKs/Kostenmeldung - Übernahme.png" width="50%"/>
+        </div>
+        <div id="KostenmeldungRückmeldung" class="tab-pane fade">
+            <h1>Kostenmeldung - Rückmeldung</h1>
+        <img src="Sollprozess/eEPKs/Kostenmeldung - Rückmeldung.png" width="50%"/>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+
+
+
+</div>
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /row -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-content -->
+
+<script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+<script src="assets/js/window-hash.js" type="text/javascript"> </script>
+<a name="bottom"> </a>
+<div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+<div class="container">    <!-- container -->
+
+<div class="inner-wrapper">
+  <p><a name="l705">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Thu, Oct 24, 2024 10:48+0000">2024-10-24</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    
+  </p>
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+<div class="container">    <!-- container -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+<script src="assets/js/respond.min.js" type="text/javascript"> </script>
+<script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+<script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+<script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+<script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+</body>
+</html>
