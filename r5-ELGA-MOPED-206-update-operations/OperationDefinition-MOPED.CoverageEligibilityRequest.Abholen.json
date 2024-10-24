@@ -1,0 +1,51 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "MOPED.CoverageEligibilityRequest.Abholen",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition MOPED.CoverageEligibilityRequest.Abholen</b></p><a name=\"MOPED.CoverageEligibilityRequest.Abholen\"> </a><a name=\"hcMOPED.CoverageEligibilityRequest.Abholen\"> </a><a name=\"MOPED.CoverageEligibilityRequest.Abholen-en-US\"> </a><p>URL: [base]/CoverageEligibilityRequest/$abholen</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>versicherer</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#Identifier\">Identifier</a></td><td/><td><div><p>Der <em>versicherer</em> Parameter beinhält den eindeutigen Identifizierer für den Versicherer der die $abholen Operation aufruft.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/resource.html\">Resource</a> (<a href=\"http://hl7.org/fhir/R5/bundle.html\" title=\"http://hl7.org/fhir/StructureDefinition/Bundle\">Bundle</a>, <a href=\"http://hl7.org/fhir/R5/operationoutcome.html\" title=\"http://hl7.org/fhir/StructureDefinition/OperationOutcome\">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>\n</div></td></tr></table><div><p>TBD: Es ist auch der Wunsch der Krankenanstalten tracken zu können, ob die SV den Request (1) abgefragt hat (status draft, outcome queued), (2) derzeit bearbeitet oder (status draft; outcome <em>queued</em>) (3) abgeschlossen hat (outcome <em>complete</em> OR <em>error</em> OR <em>partial</em> und der <em>status</em> auf <em>active</em>).\nSomit brauchen wir noch Möglichkeiten im Workflow, wie die erstellte Draft-Response weiter bearbeitet werden kann.</p>\n</div></div>"
+  },
+  "url" : "http://example.org/OperationDefinition/MOPED.CoverageEligibilityRequest.Abholen",
+  "version" : "0.1.0",
+  "name" : "MOPED_CoverageEligibilityRequest_Abholen",
+  "title" : "Versichertenanspruchserklärung-Anfragen $abholen",
+  "status" : "draft",
+  "kind" : "operation",
+  "date" : "2024-10-24T13:42:21+00:00",
+  "publisher" : "Example Publisher",
+  "contact" : [{
+    "name" : "Example Publisher",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://example.org/example-publisher"
+    }]
+  }],
+  "description" : "Die Versichertenanspruchserklärung-Anfragen $abholen Operation wird aufgerufen, um alle noch offenen Versichertenanspruchserklärung-Anfragen, die bisher seitens SV noch nicht bearbeitet wurden, abgeholt werden können.",
+  "purpose" : "Die Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die Versichertenanspruchserklärung-Anfragen $abholen Operation wird aufgerufen, um alle noch offenen Versichertenanspruchserklärung-Anfragen, die bisher seitens SV noch nicht bearbeitet wurden, abgeholt werden können.\n1. Suche nach relevanten Requests: Alle CoverageEligibilityRequests, \n  * die im Feld *CoverageEligibilityRequest.insurer* die Organization mit *Organization.identifier* = Operation-Parameter *versicherer* referenziert haben UND\n  * die noch keine gezugehörigen CoverageEligibilityResponse haben (CoverageEligibilityRequest CEReq where not exists CoverageEligibilityResponse with *CoverageEligibilityResponse.request* = CEReq). Der Status der Resposne ist dabei irrelevant.\n2. Zusammenstellen des Return-Bundles:\n   Mit der gleichen Logik wie der *_include* Suchparameter um die relevanten Ressourcen (Patient, Coverage) direkt mitbekommen zu können.\n3. Erstellung eine Draft CoverageEligibilityResponse für jeden der ausgelieferten Requests:\n   * mit Feld *CoverageEligibilityResponse.status* = *draft*\n   * mit Feld *CoverageEligibilityResponse.request* = Referenz auf jeweiligen Request\n   * mit Feld *CoverageEligibilityResponse.outcome* = *queued*",
+  "affectsState" : true,
+  "code" : "abholen",
+  "comment" : "TBD: Es ist auch der Wunsch der Krankenanstalten tracken zu können, ob die SV den Request (1) abgefragt hat (status draft, outcome queued), (2) derzeit bearbeitet oder (status draft; outcome *queued*) (3) abgeschlossen hat (outcome *complete* OR *error* OR *partial* und der *status* auf *active*).\nSomit brauchen wir noch Möglichkeiten im Workflow, wie die erstellte Draft-Response weiter bearbeitet werden kann.",
+  "base" : "http://hl7.org/fhir/OperationDefinition/CoverageEligibilityRequest-abholen",
+  "resource" : ["CoverageEligibilityRequest"],
+  "system" : false,
+  "type" : true,
+  "instance" : false,
+  "parameter" : [{
+    "name" : "versicherer",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *versicherer* Parameter beinhält den eindeutigen Identifizierer für den Versicherer der die $abholen Operation aufruft.",
+    "type" : "Identifier"
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *return* Parameter gibt Auskunft über den Erfolg der Operation.",
+    "type" : "Resource",
+    "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Bundle",
+    "http://hl7.org/fhir/StructureDefinition/OperationOutcome"]
+  }]
+}
