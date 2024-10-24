@@ -244,8 +244,7 @@
 
 <ol>
   <li>Suche des MOPEDEncounter: Der MOPEDEncounter mit der jeweiligen <em>aufnahmezahl</em> lt. Operation-Parameter wird gesucht</li>
-  <li>Falls bisher Conditions oder Procedures eingemeldet wurden, die zum Encounter aus Schritt 1 gehören (also diesen Encounter in Procedure.encounter bzw. Condition.encounter referenzieren), dann werden diese gelöscht</li>
-  <li>Die neuen Conditions und Procedures werden. lt. Ressourcen in den Operation-Parametern eingespielt, sofern die Validierung (siehe unten) erfolgreich war.</li>
+  <li>Falls bisher Conditions oder Procedures eingemeldet wurden, die zum Encounter aus Schritt 1 gehören (also diesen Encounter in Procedure.encounter bzw. Condition.encounter referenzieren), dann werden diese auf den verificationStatus <code class="language-plaintext highlighter-rouge">entered-in-error</code> gesetzt bzw. mit der neuen Ressource upgedatet, falls der gefundene Identifier mit dem neu-übermittelten übereinstimmt. Die neuen Conditions und Procedures werden lt. Ressourcen in den Operation-Parametern eingespielt (bzw. upgedatet), sofern die Validierung (siehe unten) erfolgreich war.</li>
 </ol>
 
 <p><strong>Validierung / Fehlerbehandlung</strong></p>
@@ -253,13 +252,11 @@
 <ul>
   <li>Mindestens ein leistungs- oder ein diagnose-Parameter müssen befüllt sein</li>
   <li>Procedure.status muss <code class="language-plaintext highlighter-rouge">completed</code> sein</li>
-  <li>Procedure.code muss einen MEL-Code beinhalten (lt. Profil TBD)</li>
   <li>Procedure.subject muss gleich sein wie Encounter.subject (Encounter aus Schritt 1)</li>
   <li>Procedure.encounter muss gleich sein wie der Encounter aus Schritt 1</li>
   <li>Procedure.performer.onBehalfOf muss gleich sein wie Encounter.serviceProvider aus Schritt 1</li>
   <li>Procedure.occurence muss innerhalb der Zeit erfolgt sein, wie Encounter.actualPeriod aus Schritt 1</li>
-  <li>Condition.verificationStatus muss <code class="language-plaintext highlighter-rouge">confirmed</code> sein</li>
-  <li>Condition.code muss mit HDG-Gruppe codiert sein (lt. Profil TBD)</li>
+  <li>Condition.verificationStatus muss <code class="language-plaintext highlighter-rouge">confirmed</code> oder <code class="language-plaintext highlighter-rouge">unconfirmed</code> sein</li>
   <li>Condition.subject muss gleich sein wie Encounter.subject (Encounter aus Schritt 1)</li>
   <li>Condition.encounter muss gleich sein wie der Encounter aus Schritt 1</li>
 </ul>
@@ -317,8 +314,8 @@
 <div class="container">    <!-- container -->
 
 <div class="inner-wrapper">
-  <p><a name="l636">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Thu, Oct 24, 2024 13:32+0000">2024-10-24</span>
+  <p><a name="l633">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Thu, Oct 24, 2024 13:59+0000">2024-10-24</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
