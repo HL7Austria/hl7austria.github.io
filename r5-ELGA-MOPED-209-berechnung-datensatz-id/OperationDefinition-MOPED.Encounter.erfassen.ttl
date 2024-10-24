@@ -1,0 +1,79 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/OperationDefinition/MOPED.Encounter.erfassen> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "MOPED.Encounter.erfassen"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition MOPED.Encounter.erfassen</b></p><a name=\"MOPED.Encounter.erfassen\"> </a><a name=\"hcMOPED.Encounter.erfassen\"> </a><a name=\"MOPED.Encounter.erfassen-en-US\"> </a><p>URL: [base]/Encounter/$erfassen</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>aufnahmezahl</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#Identifier\">Identifier</a></td><td/><td><div><p>Der <em>aufnahmezahl</em> Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall.</p>\n</div></td></tr><tr><td>IN</td><td>leistung</td><td/><td>0..*</td><td><a href=\"http://hl7.org/fhir/R5/procedure.html\">Procedure</a> (<code>MOPEDProcedure</code>)</td><td/><td><div><p>Der <em>leistung</em> Parameter beinhält eine erbrachte Leistung in MEL-Codierung.</p>\n</div></td></tr><tr><td>IN</td><td>diagnose</td><td/><td>0..*</td><td><a href=\"http://hl7.org/fhir/R5/condition.html\">Condition</a> (<code>MOPEDCondition</code>)</td><td/><td><div><p>Der <em>diagnose</em> Parameter beinhält eine Diagnose in HDG-Codierung.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/resource.html\">Resource</a> (<a href=\"http://hl7.org/fhir/R5/operationoutcome.html\" title=\"http://hl7.org/fhir/StructureDefinition/OperationOutcome\">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>\n</div></td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://example.org/OperationDefinition/MOPED.Encounter.erfassen"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "MOPED_Encounter_erfassen"] ; # 
+  fhir:title [ fhir:v "MOPED Encounter Leistung und Diagnosen $erfassen (POC)"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2024-10-24T14:15:52+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Example Publisher"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Example Publisher" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://example.org/example-publisher" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Die $erfassen Operation wird aufgerufen, wenn eine erbrachte Leistungen und Diagnosen eingemeldet wird."] ; # 
+  fhir:purpose [ fhir:v "\n**Wer ruft diese Operation in welchem Zusammenhang auf?**\n\nDie Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $erfassen Operation wird aufgerufen, wenn ein(e) im Zuge des Falles erbrachte Leistung und Diagnosen eingemeldet wird.\n\n**Voraussetzungen für den Aufruf**\n\n* Account-Status: `Entlassung vollständig` \n\n**Detaillierte Business-Logik**\n\n1. Suche des MOPEDEncounter: Der MOPEDEncounter mit der jeweiligen *aufnahmezahl* lt. Operation-Parameter wird gesucht\n2. Falls bisher Conditions oder Procedures eingemeldet wurden, die zum Encounter aus Schritt 1 gehören (also diesen Encounter in Procedure.encounter bzw. Condition.encounter referenzieren), dann werden diese gelöscht\n3. Die neuen Conditions und Procedures werden. lt. Ressourcen in den Operation-Parametern eingespielt, sofern die Validierung (siehe unten) erfolgreich war.\n\n**Validierung / Fehlerbehandlung**\n\n* Mindestens ein leistungs- oder ein diagnose-Parameter müssen befüllt sein\n* Procedure.status muss `completed` sein\n* Procedure.code muss einen MEL-Code beinhalten (lt. Profil TBD)\n* Procedure.subject muss gleich sein wie Encounter.subject (Encounter aus Schritt 1)\n* Procedure.encounter muss gleich sein wie der Encounter aus Schritt 1\n* Procedure.performer.onBehalfOf muss gleich sein wie Encounter.serviceProvider aus Schritt 1\n* Procedure.occurence muss innerhalb der Zeit erfolgt sein, wie Encounter.actualPeriod aus Schritt 1\n* Condition.verificationStatus muss `confirmed` sein\n* Condition.code muss mit HDG-Gruppe codiert sein (lt. Profil TBD)\n* Condition.subject muss gleich sein wie Encounter.subject (Encounter aus Schritt 1)\n* Condition.encounter muss gleich sein wie der Encounter aus Schritt 1\n\n**Weitere Hinweise**\n\n* Hinweis 1: Leistungen melden kann ein Krankenhaus beliebig oft. Eine Status-Änderung erfolgt dadurch nicht. Erst du einem bestimmten Zeitpunkt, sobald sich das Krankenhaus für die Abrechnung ($abrechnen) entschließt, wird im Zuge dieser weiterführenden Operation die Abrechnung und somit eine Status-Änderung angestoßen.\n\n**Annahmen an das BeS**\n* Es wurde vorab geprüft, ob das `system` des Parameters `aufnahmezahl` dem GDA entspricht, der die Operation aufruft. Somit ist sichergestellt, dass nur Procedures/Conditions für die eigenen Fälle eingemeldet werden können.\n"] ; # 
+  fhir:affectsState [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:code [ fhir:v "erfassen"] ; # 
+  fhir:base [
+     fhir:v "http://hl7.org/fhir/OperationDefinition/Enconuter-erfassen"^^xsd:anyURI ;
+     fhir:link <http://hl7.org/fhir/OperationDefinition/Enconuter-erfassen>
+  ] ; # 
+  fhir:resource ( [ fhir:v "Encounter"] ) ; # 
+  fhir:system [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:type [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:instance [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "aufnahmezahl" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Der *aufnahmezahl* Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall." ] ;
+     fhir:type [ fhir:v "Identifier" ]
+  ] [
+     fhir:name [ fhir:v "leistung" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "*" ] ;
+     fhir:documentation [ fhir:v "Der *leistung* Parameter beinhält eine erbrachte Leistung in MEL-Codierung." ] ;
+     fhir:type [ fhir:v "Procedure" ] ;
+     fhir:targetProfile ( [ fhir:v "MOPEDProcedure"^^xsd:anyURI ] )
+  ] [
+     fhir:name [ fhir:v "diagnose" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "*" ] ;
+     fhir:documentation [ fhir:v "Der *diagnose* Parameter beinhält eine Diagnose in HDG-Codierung." ] ;
+     fhir:type [ fhir:v "Condition" ] ;
+     fhir:targetProfile ( [ fhir:v "MOPEDCondition"^^xsd:anyURI ] )
+  ] [
+     fhir:name [ fhir:v "return" ] ;
+     fhir:use [ fhir:v "out" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Der *return* Parameter gibt Auskunft über den Erfolg der Operation." ] ;
+     fhir:type [ fhir:v "Resource" ] ;
+     fhir:targetProfile ( [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/OperationOutcome"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/OperationOutcome>
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
