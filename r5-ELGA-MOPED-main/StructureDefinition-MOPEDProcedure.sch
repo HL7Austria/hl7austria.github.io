@@ -12,7 +12,9 @@
   <sch:pattern>
     <sch:title>f:Procedure</sch:title>
     <sch:rule context="f:Procedure">
+      <sch:assert test="count(f:code) &gt;= 1">code: minimum cardinality of 'code' is 1</sch:assert>
       <sch:assert test="count(f:encounter) &gt;= 1">encounter: minimum cardinality of 'encounter' is 1</sch:assert>
+      <sch:assert test="count(f:occurrence[x]) &gt;= 1">occurrence[x]: minimum cardinality of 'occurrence[x]' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -44,6 +46,12 @@
       <sch:assert test="count(f:code) &lt;= 1">code: maximum cardinality of 'code' is 1</sch:assert>
       <sch:assert test="count(f:display) &lt;= 1">display: maximum cardinality of 'display' is 1</sch:assert>
       <sch:assert test="count(f:userSelected) &lt;= 1">userSelected: maximum cardinality of 'userSelected' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:Procedure/f:performer</sch:title>
+    <sch:rule context="f:Procedure/f:performer">
+      <sch:assert test="count(f:onBehalfOf) &gt;= 1">onBehalfOf: minimum cardinality of 'onBehalfOf' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>
