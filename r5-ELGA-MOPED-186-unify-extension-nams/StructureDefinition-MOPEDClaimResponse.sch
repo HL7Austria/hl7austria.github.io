@@ -13,11 +13,6 @@
     <sch:title>f:ClaimResponse</sch:title>
     <sch:rule context="f:ClaimResponse">
       <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-diagnoseKnoten']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-diagnoseKnoten': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-zusatzpunkteBelagsdauerausreisserNachOben']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-zusatzpunkteBelagsdauerausreisserNachOben': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-zusatzpunkteIntensiv']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-zusatzpunkteIntensiv': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-zusatzpunkteMehrfachleistungen']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-zusatzpunkteMehrfachleistungen': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-punkteSpeziellerBereicheTSageweise']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-punkteSpeziellerBereicheTSageweise': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-totalPoints']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-totalPoints': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-ldfPunktewertNetto']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-ldfPunktewertNetto': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-ldfBetragNetto']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-ldfBetragNetto': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-patientenanteilAngehoerige']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-patientenanteilAngehoerige': maximum cardinality of 'extension' is 1</sch:assert>
@@ -25,14 +20,31 @@
       <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-beihilfenaequivalent']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-beihilfenaequivalent': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-forderungsbetragAuslaenderverrechnungRegress']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-forderungsbetragAuslaenderverrechnungRegress': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-rechnungsnummerKhlgf']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-rechnungsnummerKhlgf': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-leistungskomponenteLeistungspunkte']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-leistungskomponenteLeistungspunkte': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-tageskomponenteKontaktpunkte']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-tageskomponenteKontaktpunkte': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-sonderleistungsnummer']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-sonderleistungsnummer': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-anzahlSonderleistungen']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-anzahlSonderleistungen': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-PunkteLdfPauschale']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-PunkteLdfPauschale': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-konstenmeldungArk']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-konstenmeldungArk': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-punkteBelagsdauerausreisserUntenLeistungskomponente']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-punkteBelagsdauerausreisserUntenLeistungskomponente': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-punkteBelagsdauerausreisserUntenTageskomponente']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-punkteBelagsdauerausreisserUntenTageskomponente': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:insurer) &gt;= 1">insurer: minimum cardinality of 'insurer' is 1</sch:assert>
+      <sch:assert test="count(f:requestor) &gt;= 1">requestor: minimum cardinality of 'requestor' is 1</sch:assert>
+      <sch:assert test="count(f:request) &gt;= 1">request: minimum cardinality of 'request' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:ClaimResponse/f:type</sch:title>
+    <sch:rule context="f:ClaimResponse/f:type">
+      <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
+      <sch:assert test="count(f:text) &lt;= 1">text: maximum cardinality of 'text' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:ClaimResponse/f:type/f:coding</sch:title>
+    <sch:rule context="f:ClaimResponse/f:type/f:coding">
+      <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
+      <sch:assert test="count(f:system) &lt;= 1">system: maximum cardinality of 'system' is 1</sch:assert>
+      <sch:assert test="count(f:version) &lt;= 1">version: maximum cardinality of 'version' is 1</sch:assert>
+      <sch:assert test="count(f:code) &lt;= 1">code: maximum cardinality of 'code' is 1</sch:assert>
+      <sch:assert test="count(f:display) &lt;= 1">display: maximum cardinality of 'display' is 1</sch:assert>
+      <sch:assert test="count(f:userSelected) &lt;= 1">userSelected: maximum cardinality of 'userSelected' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>
