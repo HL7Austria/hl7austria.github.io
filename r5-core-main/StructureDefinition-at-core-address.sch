@@ -12,6 +12,7 @@
   <sch:pattern>
     <sch:title>f:Address</sch:title>
     <sch:rule context="f:Address">
+      <sch:assert test="count(f:extension[@url = 'http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-ext-address-municipalityCode']) &lt;= 1">extension with URL = 'http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-ext-address-municipalityCode': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:district) &lt;= 0">district: maximum cardinality of 'district' is 0</sch:assert>
       <sch:assert test="count(f:period) &lt;= 0">period: maximum cardinality of 'period' is 0</sch:assert>
     </sch:rule>
