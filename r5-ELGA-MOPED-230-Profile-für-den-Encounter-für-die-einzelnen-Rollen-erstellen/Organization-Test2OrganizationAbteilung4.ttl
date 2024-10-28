@@ -1,0 +1,42 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/Organization/Test2OrganizationAbteilung4> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Test2OrganizationAbteilung4"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"^^xsd:anyURI ;
+       fhir:link <http://example.org/StructureDefinition/MOPEDOrganizationAbteilung>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Organization Test2OrganizationAbteilung4</b></p><a name=\"Test2OrganizationAbteilung4\"> </a><a name=\"hcTest2OrganizationAbteilung4\"> </a><a name=\"Test2OrganizationAbteilung4-en-US\"> </a><p><b>identifier</b>: Funktionscode/100000, Funktionssubcode/00</p><p><b>partOf</b>: <a href=\"Organization-Test2OrganizationKrankenhausRied.html\">Organization Krankenhaus der Barmherzigen Schwestern vom Hl. Vinzenz von Paul Ried</a></p></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:code [ fhir:v "Funktionscode" ]
+       ] )
+     ] ;
+     fhir:value [ fhir:v "100000" ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:code [ fhir:v "Funktionssubcode" ]
+       ] )
+     ] ;
+     fhir:value [ fhir:v "00" ]
+  ] ) ; # 
+  fhir:partOf [
+     fhir:link <http://example.org/Organization/Test2OrganizationKrankenhausRied> ;
+     fhir:reference [ fhir:v "Organization/Test2OrganizationKrankenhausRied" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
