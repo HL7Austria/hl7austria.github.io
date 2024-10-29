@@ -10,7 +10,7 @@
   <name value="MOPED"/>
   <title value="Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"/>
   <status value="draft"/>
-  <date value="2024-10-29T08:42:45+00:00"/>
+  <date value="2024-10-29T10:21:23+00:00"/>
   <publisher value="Example Publisher"/>
   <contact>
     <name value="Example Publisher"/>
@@ -63,7 +63,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-diagnosisRelatedNode"/>
+        <reference value="StructureDefinition/moped-ext-diagnoseKnoten"/>
       </reference>
       <name value="Abrechnung - Knoten"/>
       <description value="Lukriert die Patient:innen über eine reguläre Gruppe Punkte, so ist in diesem Datenfeld die entsprechende Knotenbezeichnung einzutragen."/>
@@ -74,7 +74,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/SVAbrechnungsquartal"/>
+        <reference value="StructureDefinition/moped-ext-svAbrechnungsquartal"/>
       </reference>
       <name value="Abrechnungsquartal der Sozialversicherung"/>
       <description value="Das Abrechnungsquartal ist in der Form Jahr (JJJJ) und Quartal (Q) zu melden."/>
@@ -96,7 +96,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-Altersgruppe"/>
+        <reference value="StructureDefinition/moped-ext-altersgruppe"/>
       </reference>
       <name value="Altersgruppe"/>
       <description value="In Gruppen eingeteilt, wobei vollendete Lebensjahre ausschlaggebend sind."/>
@@ -129,7 +129,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-AnzahlSonderleistungen"/>
+        <reference value="StructureDefinition/moped-ext-anzahlSonderleistungen"/>
       </reference>
       <name value="Anzahl Sonderleistungen"/>
       <description value="MOPED Extension für die Anzahl der Sonderleistungen"/>
@@ -140,7 +140,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-AnzahlBeurlaubungen"/>
+        <reference value="StructureDefinition/moped-ext-anzahlBeurlaubungen"/>
       </reference>
       <name value="AnzahlBeurlaubungen"/>
       <description value="MOPED Extension für die Anzahl der Beurlaubungen"/>
@@ -151,7 +151,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-AnzahlVerlegungen"/>
+        <reference value="StructureDefinition/moped-ext-anzahlVerlegungen"/>
       </reference>
       <name value="AnzahlVerlegungen"/>
       <description value="MOPED Extension für die Anzahl der Verlegungen"/>
@@ -195,7 +195,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-Beihilfenaequivalent"/>
+        <reference value="StructureDefinition/moped-ext-beihilfenaequivalent"/>
       </reference>
       <name value="Beihilfenaequivalent"/>
       <description value="MOPED Extension für das Beihilfenaequivalent"/>
@@ -206,7 +206,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-ClaimRef"/>
+        <reference value="StructureDefinition/moped-ext-claimRef"/>
       </reference>
       <name value="Claim Referenz"/>
       <description value="Referenz vom Account auf den Claim."/>
@@ -217,7 +217,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-CoverageEligibilityRequestRef"/>
+        <reference value="StructureDefinition/moped-ext-coverageEligibilityRequestRef"/>
       </reference>
       <name value="CoverageEligibilityRequest Referenz"/>
       <description value="Referenz vom Account auf den CoverageEligibilityRequest."/>
@@ -228,21 +228,10 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-erworben"/>
+        <reference value="StructureDefinition/moped-ext-diagnoseErworben"/>
       </reference>
       <name value="Diagnose - im stationären Aufenthalt erworben"/>
       <description value="MOPED Extension, um anzugeben, ob die Diagnose während des stationären Aufenthalts erworben wurde."/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/moped-ext-EndOfEligibility"/>
-      </reference>
-      <name value="EndOfEligibility"/>
-      <description value="Fristende - Befristungen sind in folgenden Fällen vorgesehen:&#xA;- Bei zeitlichen Beschränkungen aufgrund einer zu erwartenden, nachfolgenden medizini-&#xA;schen Hauskrankenpflege&#xA;- Bei Vorhersehbarkeit des Eintritts einer Asylierung&#xA;- Bei unsicherer, versicherungsrechtlicher Entwicklung&#xA;Bei den ersten beiden Punkten wird von den Krankenversicherungsträgern das Fristende individuell gesetzt. Beim dritten Punkt wird im Regelfall eine generelle Tagesbeschränkung erfolgen, weil die Versichertenanspruchserklärung in die Zukunft gerichtet ist und der Krankenversicherungsträger seine Zuständigkeit von vornherein nur für einen bestimmten Zeitraum annehmen kann (Ausleis- tungssituation gem. § 122 ASVG).&#xA;Durch die Angabe eines Fristendes wird signalisiert, dass bei einem über das Fristende hinaus dau- ernden Aufenthalt eine Verlängerungsanzeige vorzulegen ist."/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -261,7 +250,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-ErrorWarning"/>
+        <reference value="StructureDefinition/moped-ext-fehlerWarnung"/>
       </reference>
       <name value="Error/Warning"/>
       <description value="MOPED Extension für akzeptierte Errors und Warnings"/>
@@ -294,10 +283,21 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-ForderungsbetragAuslaenderverrechnungRegress"/>
+        <reference value="StructureDefinition/moped-ext-forderungsbetragAuslaenderverrechnungRegress"/>
       </reference>
       <name value="Forderungsbetrag für Auslaenderverrechnung oder Regress"/>
       <description value="MOPED Extension für den Forderungsbetrag für Ausländerverrechnung oder Regress"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-fristende"/>
+      </reference>
+      <name value="Fristende"/>
+      <description value="Fristende - Befristungen sind in folgenden Fällen vorgesehen:&#xA;- Bei zeitlichen Beschränkungen aufgrund einer zu erwartenden, nachfolgenden medizini-&#xA;schen Hauskrankenpflege&#xA;- Bei Vorhersehbarkeit des Eintritts einer Asylierung&#xA;- Bei unsicherer, versicherungsrechtlicher Entwicklung&#xA;Bei den ersten beiden Punkten wird von den Krankenversicherungsträgern das Fristende individuell gesetzt. Beim dritten Punkt wird im Regelfall eine generelle Tagesbeschränkung erfolgen, weil die Versichertenanspruchserklärung in die Zukunft gerichtet ist und der Krankenversicherungsträger seine Zuständigkeit von vornherein nur für einen bestimmten Zeitraum annehmen kann (Ausleis- tungssituation gem. § 122 ASVG).&#xA;Durch die Angabe eines Fristendes wird signalisiert, dass bei einem über das Fristende hinaus dau- ernden Aufenthalt eine Verlängerungsanzeige vorzulegen ist."/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -336,7 +336,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-KonstenmeldungARK"/>
+        <reference value="StructureDefinition/moped-ext-konstenmeldungARK"/>
       </reference>
       <name value="Kostenmeldung für (A/R/K)"/>
       <description value="MOPED Extension für die Kostenmeldung. Konstenmeldung für A = Ausländerverrechnung, R = Regressangelegenheiten oder K = Kosteninformation"/>
@@ -358,7 +358,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-Kostenstelle"/>
+        <reference value="StructureDefinition/moped-ext-kostenstelle"/>
       </reference>
       <name value="Kostenstelle"/>
       <description value="MOPED Extension für akzeptierte Errors und Warnings"/>
@@ -380,7 +380,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-LDFBetragNetto"/>
+        <reference value="StructureDefinition/moped-ext-ldfBetragNetto"/>
       </reference>
       <name value="LDF-Betrag Netto"/>
       <description value="MOPED Extension für den LDF-Punktewert Netto. Ergibt sich durch Punkteanzahl mal Punktewert Forderungsbasis ohne Berücksichtigung eines Patientenanteiles f. Angehörige bzw. eines Beihilfenäquivalentes"/>
@@ -391,7 +391,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-LDFPunktewertNetto"/>
+        <reference value="StructureDefinition/moped-ext-ldfPunktewertNetto"/>
       </reference>
       <name value="LDF-Punktewert Netto"/>
       <description value="MOPED Extension für den LDF-Punktewert Netto"/>
@@ -445,7 +445,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/lkfPunkte"/>
+        <reference value="StructureDefinition/moped-ext-lkfPunkte"/>
       </reference>
       <name value="LKF Punkte"/>
       <description value="In dieser Extension werden alle möglichen Punkteangaben im LKF zusammengefasst."/>
@@ -456,18 +456,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-MealCostExcemption"/>
-      </reference>
-      <name value="MealCostExcemption"/>
-      <description value="VKBEFR – Verpflegskosten-Beitragsbefreiung"/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/moped-ext-AbrechnungsRelevanz"/>
+        <reference value="StructureDefinition/moped-ext-abrechnungsRelevanz"/>
       </reference>
       <name value="Medizinische Leistung - Abrechnungsrelevanz"/>
       <description value="Hier ist anzugeben, ob die medizinische Leistung bei der Bepunktung des ambulanten Besuchs/stationären Aufenthalts (Satzart X01) zu berücksichtigen ist."/>
@@ -698,7 +687,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-Neugeborenes"/>
+        <reference value="StructureDefinition/moped-ext-neugeborenes"/>
       </reference>
       <name value="Neugeborenes"/>
       <description value="Ein Patient wird als Neugeborenes bezeichnet, wenn das Alter zum Zugangszeitpunkt auf die Abteilung &lt;28 Tage ist."/>
@@ -720,7 +709,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-PatientenanteilAngehoerige"/>
+        <reference value="StructureDefinition/moped-ext-patientenanteilAngehoerige"/>
       </reference>
       <name value="Patientenanteil für Angehoerige"/>
       <description value="MOPED Extension für den Patientenanteil für Angehörige (tägl. Satz) netto: Betrag in €, 2 Nachkommastellen"/>
@@ -731,7 +720,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-Patientenanteil"/>
+        <reference value="StructureDefinition/moped-ext-patientenanteil"/>
       </reference>
       <name value="Patientenanteil Netto"/>
       <description value="MOPED Extension für den Patientenanteil netto: Betrag in €, 2 Nachkommastellen"/>
@@ -742,7 +731,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/Plausibilitaetskennzeichen"/>
+        <reference value="StructureDefinition/moped-ext-plausibilitaetskennzeichen"/>
       </reference>
       <name value="Plausibilitaetskennzeichen"/>
       <description value="Dieses Datenfeld enthält eine Kennzeichnung als Ergebnis der vom Gesundheitsministerium vorgegebenen Plausibilitätsprüfung."/>
@@ -753,18 +742,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-PremiumClass"/>
-      </reference>
-      <name value="PremiumClass"/>
-      <description value="KLAS – Allgemeine Gebührenklasse/Sonderklasse"/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/moped-ext-PunkteLDFPauschale"/>
+        <reference value="StructureDefinition/moped-ext-punkteLDFPauschale"/>
       </reference>
       <name value="Punkte LDF Pauschale"/>
       <description value="MOPED Extension für die LDF Punkte Pauschale"/>
@@ -775,7 +753,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-RechnungsnummerKHLGF"/>
+        <reference value="StructureDefinition/moped-ext-rechnungsnummerKHLGF"/>
       </reference>
       <name value="Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds"/>
       <description value="MOPED Extension für die Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds"/>
@@ -827,6 +805,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-sonderklasse"/>
+      </reference>
+      <name value="Sonderklasse"/>
+      <description value="KLAS – Allgemeine Gebührenklasse/Sonderklasse"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
@@ -841,7 +830,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-Sonderleistungsnummer"/>
+        <reference value="StructureDefinition/moped-ext-sonderleistungsnummer"/>
       </reference>
       <name value="Sonderleistungsnummer"/>
       <description value="MOPED Extension für die Sonderleistungsnummer"/>
@@ -874,7 +863,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-TageOhneKostenbeitrag"/>
+        <reference value="StructureDefinition/moped-ext-tageOhneKostenbeitrag"/>
       </reference>
       <name value="Tage ohne Einhebung des Kostenbeitrags"/>
       <description value="Anzahl der Tage, für welche kein Kostenbeitrag seitens der Krankenanstalt eingehoben wurde"/>
@@ -1304,7 +1293,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-VerdachtArbeitsSchuelerunfall"/>
+        <reference value="StructureDefinition/moped-ext-verdachtArbeitsSchuelerunfall"/>
       </reference>
       <name value="Verdacht auf Arbeits- oder Schuelerunfall"/>
       <description value="MOPED Extension für den Verdacht auf einen Arbeits- oder Schuelerunfall."/>
@@ -1326,7 +1315,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-VerdachtFremdverschulden"/>
+        <reference value="StructureDefinition/moped-ext-verdachtFremdverschulden"/>
       </reference>
       <name value="Verdacht auf Fremdverschulden"/>
       <description value="MOPED Extension für den Verdacht auf Fremdverschulden"/>
@@ -1337,7 +1326,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-extensionDays"/>
+        <reference value="StructureDefinition/moped-ext-verlaengerungstage"/>
       </reference>
       <name value="Verlaengerungstage"/>
       <description value="Anzahl der Verlaengerungstage bei Verlängerung"/>
@@ -1348,7 +1337,18 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-NumberOfPreviouslyPaidDays"/>
+        <reference value="StructureDefinition/moped-ext-verpflegskostenBeitragsbefreiung"/>
+      </reference>
+      <name value="VerpflegskostenBeitragsbefreiung"/>
+      <description value="VKBEFR – Verpflegskosten-Beitragsbefreiung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-vortageanzahlAufKostenbeitrag"/>
       </reference>
       <name value="Vortageanzahl auf Kostenbeitrag"/>
       <description value="Zur Berechnung des Verpflegskostenbeitrags für Versicherte sowie des Kostenbeitrags für Angehörige ist die Angabe der zu berücksichtigenden Vortage erforderlich. Der Krankenversicherungsträger ist auf Grund der ihm zugänglichen Informationen in der Lage, Vorpflegetage zu berücksichtigen. Berücksichtigt werden alle stationären Aufenthalte eines Patienten innerhalb eines Kalenderjahres.&#xA;Der höchste Wert, mit welchem das Feld VTAGE befüllt werden kann, ist jener Wert, für welchen maximal ein Verpflegskostenbeitrag pro Kalenderjahr zu entrichten ist. Der Maximale Höchstwert beträgt somit 28 Tage."/>
@@ -1359,7 +1359,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-workflow-status"/>
+        <reference value="StructureDefinition/moped-ext-workflowStatus"/>
       </reference>
       <name value="Workflow Status"/>
       <description value="MOPED Extension für den Workflowstatus. Dieser beschreibt den Zustand in dem sich der administrative Fall derzeit befindet"/>

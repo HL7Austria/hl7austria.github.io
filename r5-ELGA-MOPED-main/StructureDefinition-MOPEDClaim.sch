@@ -12,10 +12,10 @@
   <sch:pattern>
     <sch:title>f:Claim</sch:title>
     <sch:rule context="f:Claim">
-      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-diagnosisRelatedNode']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-diagnosisRelatedNode': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-diagnoseKnoten']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-diagnoseKnoten': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-fondsrelevanz']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-fondsrelevanz': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/Plausibilitaetskennzeichen']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/Plausibilitaetskennzeichen': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/SVAbrechnungsquartal']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/SVAbrechnungsquartal': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-plausibilitaetskennzeichen']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-plausibilitaetskennzeichen': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-svAbrechnungsquartal']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-svAbrechnungsquartal': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:insurer) &gt;= 1">insurer: minimum cardinality of 'insurer' is 1</sch:assert>
       <sch:assert test="count(f:provider) &gt;= 1">provider: minimum cardinality of 'provider' is 1</sch:assert>
     </sch:rule>
@@ -23,7 +23,7 @@
   <sch:pattern>
     <sch:title>f:Claim/f:procedure</sch:title>
     <sch:rule context="f:Claim/f:procedure">
-      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-AbrechnungsRelevanz']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-AbrechnungsRelevanz': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-abrechnungsRelevanz']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-abrechnungsRelevanz': maximum cardinality of 'extension' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>

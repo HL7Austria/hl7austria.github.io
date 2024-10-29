@@ -12,10 +12,10 @@
   <sch:pattern>
     <sch:title>f:CoverageEligibilityResponse</sch:title>
     <sch:rule context="f:CoverageEligibilityResponse">
-      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-EndOfEligibility']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-EndOfEligibility': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-fristende']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-fristende': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-vaestatus']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-vaestatus': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-MealCostExcemption']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-MealCostExcemption': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-NumberOfPreviouslyPaidDays']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-NumberOfPreviouslyPaidDays': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-verpflegskostenBeitragsbefreiung']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-verpflegskostenBeitragsbefreiung': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-vortageanzahlAufKostenbeitrag']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-vortageanzahlAufKostenbeitrag': maximum cardinality of 'extension' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>
