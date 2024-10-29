@@ -1,0 +1,33 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/Condition/Test2Condition2> a fhir:Condition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Test2Condition2"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Condition Test2Condition2</b></p><a name=\"Test2Condition2\"> </a><a name=\"hcTest2Condition2\"> </a><a name=\"Test2Condition2-en-US\"> </a><p><b>clinicalStatus</b>: <span title=\"Codes:\">active</span></p><p><b>code</b>: <span title=\"Codes:{http://hl7.org/fhir/sid/icd-10 999.9}\">TBD</span></p><p><b>subject</b>: <a href=\"Patient-Test2Patient.html\">Santiago Schnabeltier TEST (official) Male, DoB: 1985-03-19 ( Social Security Number: 2873111374)</a></p></div>"
+  ] ; # 
+  fhir:clinicalStatus [
+     fhir:coding ( [
+       fhir:code [ fhir:v "active" ]
+     ] )
+  ] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/sid/icd-10"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "999.9" ] ;
+       fhir:display [ fhir:v "TBD" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:link <http://example.org/Patient/Test2Patient> ;
+     fhir:reference [ fhir:v "Patient/Test2Patient" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
