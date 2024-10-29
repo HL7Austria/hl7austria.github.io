@@ -12,8 +12,8 @@
   <sch:pattern>
     <sch:title>f:CoverageEligibilityRequest</sch:title>
     <sch:rule context="f:CoverageEligibilityRequest">
-      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-extensionDays']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-extensionDays': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-PremiumClass']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-PremiumClass': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-verlaengerungstage']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-verlaengerungstage': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-sonderklasse']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-sonderklasse': maximum cardinality of 'extension' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>
