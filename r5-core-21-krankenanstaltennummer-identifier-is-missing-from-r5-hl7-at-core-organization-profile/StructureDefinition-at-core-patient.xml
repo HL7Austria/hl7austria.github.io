@@ -113,7 +113,7 @@
   <name value="HL7ATCorePatient"/>
   <title value="HL7® AT Core Patient Profile"/>
   <status value="active"/>
-  <date value="2024-10-22T14:43:49+00:00"/>
+  <date value="2024-10-30T14:17:02+00:00"/>
   <publisher value="HL7® Austria, TC FHIR®"/>
   <contact>
     <name value="HL7® Austria, TC FHIR®"/>
@@ -5578,6 +5578,39 @@
         <map value="n/a"/>
       </mapping>
     </element>
+    <element id="Patient.address.extension:municipalityCode">
+      <path value="Patient.address.extension"/>
+      <sliceName value="municipalityCode"/>
+      <short value="Address Municipality Code"/>
+      <definition value="HL7® Austria FHIR® Core Extension for the municipality code part of the Austrian address"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+        <profile value="http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-ext-address-municipalityCode"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+    </element>
     <element id="Patient.address.use">
       <path value="Patient.address.use"/>
       <short value="home | work | temp | old | billing - purpose of this address"/>
@@ -8397,6 +8430,39 @@
         <identity value="rim"/>
         <map value="n/a"/>
       </mapping>
+    </element>
+    <element id="Patient.contact.address.extension:municipalityCode">
+      <path value="Patient.contact.address.extension"/>
+      <sliceName value="municipalityCode"/>
+      <short value="Address Municipality Code"/>
+      <definition value="HL7® Austria FHIR® Core Extension for the municipality code part of the Austrian address"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+        <profile value="http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-ext-address-municipalityCode"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Patient.contact.address.use">
       <path value="Patient.contact.address.use"/>
