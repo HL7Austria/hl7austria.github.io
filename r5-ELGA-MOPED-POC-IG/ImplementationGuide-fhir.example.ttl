@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "MOPED"] ; # 
   fhir:title [ fhir:v "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-10-29T09:20:35+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-10-31T11:17:53+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Example Publisher"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Example Publisher" ] ;
@@ -501,6 +501,18 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/MOPEDEncounter> ;
+         fhir:reference [ fhir:v "StructureDefinition/MOPEDEncounter" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED Encounter" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme und Entlassung" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "OperationDefinition" ]
        ] ) ;
        fhir:reference [
@@ -513,6 +525,30 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/MOPEDEncounterBund> ;
+         fhir:reference [ fhir:v "StructureDefinition/MOPEDEncounterBund" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED Encounter Bund" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Encounter Ressource für die Rolle: Bund" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/MOPEDEncounterKH> ;
+         fhir:reference [ fhir:v "StructureDefinition/MOPEDEncounterKH" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED Encounter KH" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Encounter Ressource für die Rolle: KH" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "OperationDefinition" ]
        ] ) ;
        fhir:reference [
@@ -521,6 +557,30 @@
        ] ;
        fhir:name [ fhir:v "MOPED Encounter Leistung und Diagnosen $erfassen (POC)" ] ;
        fhir:description [ fhir:v "Die $erfassen Operation wird aufgerufen, wenn eine erbrachte Leistungen und Diagnosen eingemeldet wird." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/MOPEDEncounterLGF> ;
+         fhir:reference [ fhir:v "StructureDefinition/MOPEDEncounterLGF" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED Encounter LGF" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Encounter Ressource für die Rolle: LGF" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/MOPEDEncounterSV> ;
+         fhir:reference [ fhir:v "StructureDefinition/MOPEDEncounterSV" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED Encounter SV" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Encounter Ressource für die Rolle: SV" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -557,6 +617,42 @@
        ] ;
        fhir:name [ fhir:v "MOPED Patient $verlegen (POC)" ] ;
        fhir:description [ fhir:v "Legende: ~~durchgestrichen~~ heißt, dass es für den IG zwar bedacht wird, für den ersten POC jedoch nicht relevant ist.\n\n**Wer ruft diese Operation in welchem Zusammenhang auf?**\n\nDie Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $verlegen Operation wird aufgerufen, wenn ein(e) Patient*in auf eine andere Station verlegt wird. Auch initial, wenn ein Patient auf eine bestimmte Station aufgenommen wird, wird diese Operation aufgerufen (dies passiert automatisch im Zuge der Operation $aufnehmen).\n\n**Voraussetzungen für den Aufruf**\n\n* Account-Status: `Aufnahme in Arbeit` oder `Aufnahme freigegeben`\n\n**Detaillierte Business-Logik**\n\n1. Suche des MOPEDEncounter: Der MOPEDEncounter mit der jeweiligen *aufnahmezahl* lt. Operation-Parameter wird gesucht\n2. Neuer Transfer Encounter: \n  * Ein neuer MOPEDTransferEncounter wird vorbereitet\n  * *MOPEDTransferEncounter.partOf* referenziert den MOPEDEncounter aus Schritt 1. \n  * *MOPEDTransferEncounter.actualPeriod.start* wird mit dem *zeitpunkt* lt. Operation-Parameter befüllt.\n  * *MOPEDTransferEncounter.serviceProvider* setzt eine Referenz auf die MOPEDOrganizationAbteilung mit dem jeweiligen *funktionscode* bzw. *funktionssubcode* lt. Operation-Parameter. \n  * *MOPEDTransferEncounter.Neugeborenes* wird lt. LKF-Regeln berechnet, anhand des *MOPEDEncounter.subject.birthdate* aus dem Encounter aus Schritt 1 (für Berechnugns-Details siehe Hinweis 1).\n  * *MOPEDTransferEncounter.Altersgruppe* wird lt. LKF-Regeln berechnet, anhand des *MOPEDEncounter.subject.birthdate* aus dem Encounter aus Schritt 1 (für Berechnugns-Details siehe Hinweis 2).\n  * *MOPEDTransferEncounter.PhysischeAnwesenheit* wird lt. Operation-Parameter befüllt.\n3. Account AnzahlVerlegungen: Die Extension *Account.extension.AnzahlVerlegungen* im zur Aufnahmezahl gehöhrenden Account wird um 1 erhöht. Dies ist auch so, wenn es sich bei der Verlegung um einen Urlaub handeln sollte (siehe Hinweis 3).\n4. ~~Alter Transfer Encounter:~~\n  * ~~Dieser Schritt ist nur relevant, wenn es sich *nicht* um eine Neufaufnahme (lt. Operation-Parameter) handelt.~~\n  * ~~Suche des alten MOPEDTransferEncounter: Mit *MOPEDTransferEncounter.partOf* einer Referenz auf den MOPEDEncounter aus Schritt 1 und den Status *in-progress*~~\n  * ~~Abschließen des alten MOPEDTransferEncounter: *MOPEDTransferEncounter.status* wird auf *completed* gesetzt~~\n  * ~~Endzeitpunkt des alten MOPEDTransferEncounter: *MOPEDTransferEncounter.actualPeriod.end* wird auf den *zeitpunkt* lt. Operation-Parameter gesetzt.~~\n  * ~~Abgangsart vom alten MOPEDTransferEncounter: *MOPEDTransferEncounter.abgangsart* wird auf *abgangsart* lt. Operation-Parameter gesetzt.~~\n5. ~~Account AnzahlBeurlaubungen:~~\n  * ~~Dieser Schritt ist nur relevant, wenn es sich *nicht* um eine Neufaufnahme (lt. Operation-Parameter) handelt.~~\n  * ~~War alter MOPEDTransferEncounter aus Schritt 4.2 ein Urlaub (i.e. Funktionscode `10000000`)?~~\n    * ~~Wenn ja, dann wird der Counter *Account.extension.AnzahlBeurlaubungen* um 1 erhöht.~~\n\n**Validierung / Fehlerbehandlung**\n* Bei Neuaufnahme (lt. Operation-Parameter) muss das Feld *AnzahlVerlegungen* nach Ausführen der Operation $verlegen den Wert `1` aufweisen und das Feld *AnzahlBeurlaubungen* den Wert `0`.\n* Es kann immer nur einen MOPEDTransferEncounter für den jeweiligen Fall geben der *partOf* eines MOPEDEncounters mit der *aufnahmezahl* ist und den Status *in-progress* hat. \n* Wenn es sich um eine Neuaufnahme (lt. Operation-Parameter) handelt, kann es keine Abgangsart (Operation-Parameter) geben.\n\n**Weitere Hinweise**\n* Hinweis 1: LKF 4.2.16 Neugeborenes\n  * Ja (Alter zum Zugangszeitpunkt auf die Abteilung <28 Tage)\n  * Nein (Alter zum Zugangszeitpunkt auf die Abteilung >=28 Tage)\n* Hinweis 2: LKF 4.1.9 Altersgruppe bei Entlassung/Kontakt\n  * Vollendete Lebensjahre sind ausschlaggebend\n  * 0: 0\n  * 1-4: 1\n  * 5-9: 5\n  * 10-14: 10\n  * 15-19: 15\n  * 20-24: 20\n  * ... immer weiter so, die untere Grenze des Alters in 5er-Schritten\n  * 85-89: 85\n  * 90-95: 90\n  * 95 und älter: 95\n* Hinweis 3: Der Counter für AnzahlVerlegungen wird auch im Falle einer Beurlaubung erhöht, bei der eine reguläre Verlegung-Operation aufgerufen wird." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/MOPEDPatientBund> ;
+         fhir:reference [ fhir:v "StructureDefinition/MOPEDPatientBund" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED Patient Bund" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Patient Ressource aus der Sicht der Rolle: Bund" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/MOPEDPatientLGF> ;
+         fhir:reference [ fhir:v "StructureDefinition/MOPEDPatientLGF" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED Patient LGF" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Patient Ressource aus der Sicht der Rolle: LGF" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/MOPEDPatientSV> ;
+         fhir:reference [ fhir:v "StructureDefinition/MOPEDPatientSV" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED Patient SV" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Patient Ressource aus der Sicht der Rolle: SV" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -641,18 +737,6 @@
        ] ;
        fhir:name [ fhir:v "MOPEDCoverageEligibilityResponse" ] ;
        fhir:description [ fhir:v "MOPED Profil der CoverageEligibilityResponse Ressource für die Versichertenanspruchserklärung-Antwort." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://example.org/StructureDefinition/MOPEDEncounter> ;
-         fhir:reference [ fhir:v "StructureDefinition/MOPEDEncounter" ]
-       ] ;
-       fhir:name [ fhir:v "MOPEDEncounter" ] ;
-       fhir:description [ fhir:v "MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme und Entlassung" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [

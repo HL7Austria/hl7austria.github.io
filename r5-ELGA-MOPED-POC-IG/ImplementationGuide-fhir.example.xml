@@ -10,7 +10,7 @@
   <name value="MOPED"/>
   <title value="Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"/>
   <status value="draft"/>
-  <date value="2024-10-29T09:20:35+00:00"/>
+  <date value="2024-10-31T11:17:53+00:00"/>
   <publisher value="Example Publisher"/>
   <contact>
     <name value="Example Publisher"/>
@@ -444,6 +444,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MOPEDEncounter"/>
+      </reference>
+      <name value="MOPED Encounter"/>
+      <description value="MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme und Entlassung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
@@ -455,6 +466,28 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MOPEDEncounterBund"/>
+      </reference>
+      <name value="MOPED Encounter Bund"/>
+      <description value="MOPED Profil der Encounter Ressource für die Rolle: Bund"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MOPEDEncounterKH"/>
+      </reference>
+      <name value="MOPED Encounter KH"/>
+      <description value="MOPED Profil der Encounter Ressource für die Rolle: KH"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
@@ -462,6 +495,28 @@
       </reference>
       <name value="MOPED Encounter Leistung und Diagnosen $erfassen (POC)"/>
       <description value="Die $erfassen Operation wird aufgerufen, wenn eine erbrachte Leistungen und Diagnosen eingemeldet wird."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MOPEDEncounterLGF"/>
+      </reference>
+      <name value="MOPED Encounter LGF"/>
+      <description value="MOPED Profil der Encounter Ressource für die Rolle: LGF"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MOPEDEncounterSV"/>
+      </reference>
+      <name value="MOPED Encounter SV"/>
+      <description value="MOPED Profil der Encounter Ressource für die Rolle: SV"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -495,6 +550,39 @@
       </reference>
       <name value="MOPED Patient $verlegen (POC)"/>
       <description value="Legende: ~~durchgestrichen~~ heißt, dass es für den IG zwar bedacht wird, für den ersten POC jedoch nicht relevant ist.&#xA;&#xA;**Wer ruft diese Operation in welchem Zusammenhang auf?**&#xA;&#xA;Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $verlegen Operation wird aufgerufen, wenn ein(e) Patient*in auf eine andere Station verlegt wird. Auch initial, wenn ein Patient auf eine bestimmte Station aufgenommen wird, wird diese Operation aufgerufen (dies passiert automatisch im Zuge der Operation $aufnehmen).&#xA;&#xA;**Voraussetzungen für den Aufruf**&#xA;&#xA;* Account-Status: `Aufnahme in Arbeit` oder `Aufnahme freigegeben`&#xA;&#xA;**Detaillierte Business-Logik**&#xA;&#xA;1. Suche des MOPEDEncounter: Der MOPEDEncounter mit der jeweiligen *aufnahmezahl* lt. Operation-Parameter wird gesucht&#xA;2. Neuer Transfer Encounter: &#xA;  * Ein neuer MOPEDTransferEncounter wird vorbereitet&#xA;  * *MOPEDTransferEncounter.partOf* referenziert den MOPEDEncounter aus Schritt 1. &#xA;  * *MOPEDTransferEncounter.actualPeriod.start* wird mit dem *zeitpunkt* lt. Operation-Parameter befüllt.&#xA;  * *MOPEDTransferEncounter.serviceProvider* setzt eine Referenz auf die MOPEDOrganizationAbteilung mit dem jeweiligen *funktionscode* bzw. *funktionssubcode* lt. Operation-Parameter. &#xA;  * *MOPEDTransferEncounter.Neugeborenes* wird lt. LKF-Regeln berechnet, anhand des *MOPEDEncounter.subject.birthdate* aus dem Encounter aus Schritt 1 (für Berechnugns-Details siehe Hinweis 1).&#xA;  * *MOPEDTransferEncounter.Altersgruppe* wird lt. LKF-Regeln berechnet, anhand des *MOPEDEncounter.subject.birthdate* aus dem Encounter aus Schritt 1 (für Berechnugns-Details siehe Hinweis 2).&#xA;  * *MOPEDTransferEncounter.PhysischeAnwesenheit* wird lt. Operation-Parameter befüllt.&#xA;3. Account AnzahlVerlegungen: Die Extension *Account.extension.AnzahlVerlegungen* im zur Aufnahmezahl gehöhrenden Account wird um 1 erhöht. Dies ist auch so, wenn es sich bei der Verlegung um einen Urlaub handeln sollte (siehe Hinweis 3).&#xA;4. ~~Alter Transfer Encounter:~~&#xA;  * ~~Dieser Schritt ist nur relevant, wenn es sich *nicht* um eine Neufaufnahme (lt. Operation-Parameter) handelt.~~&#xA;  * ~~Suche des alten MOPEDTransferEncounter: Mit *MOPEDTransferEncounter.partOf* einer Referenz auf den MOPEDEncounter aus Schritt 1 und den Status *in-progress*~~&#xA;  * ~~Abschließen des alten MOPEDTransferEncounter: *MOPEDTransferEncounter.status* wird auf *completed* gesetzt~~&#xA;  * ~~Endzeitpunkt des alten MOPEDTransferEncounter: *MOPEDTransferEncounter.actualPeriod.end* wird auf den *zeitpunkt* lt. Operation-Parameter gesetzt.~~&#xA;  * ~~Abgangsart vom alten MOPEDTransferEncounter: *MOPEDTransferEncounter.abgangsart* wird auf *abgangsart* lt. Operation-Parameter gesetzt.~~&#xA;5. ~~Account AnzahlBeurlaubungen:~~&#xA;  * ~~Dieser Schritt ist nur relevant, wenn es sich *nicht* um eine Neufaufnahme (lt. Operation-Parameter) handelt.~~&#xA;  * ~~War alter MOPEDTransferEncounter aus Schritt 4.2 ein Urlaub (i.e. Funktionscode `10000000`)?~~&#xA;    * ~~Wenn ja, dann wird der Counter *Account.extension.AnzahlBeurlaubungen* um 1 erhöht.~~&#xA;&#xA;**Validierung / Fehlerbehandlung**&#xA;* Bei Neuaufnahme (lt. Operation-Parameter) muss das Feld *AnzahlVerlegungen* nach Ausführen der Operation $verlegen den Wert `1` aufweisen und das Feld *AnzahlBeurlaubungen* den Wert `0`.&#xA;* Es kann immer nur einen MOPEDTransferEncounter für den jeweiligen Fall geben der *partOf* eines MOPEDEncounters mit der *aufnahmezahl* ist und den Status *in-progress* hat. &#xA;* Wenn es sich um eine Neuaufnahme (lt. Operation-Parameter) handelt, kann es keine Abgangsart (Operation-Parameter) geben.&#xA;&#xA;**Weitere Hinweise**&#xA;* Hinweis 1: LKF 4.2.16 Neugeborenes&#xA;  * Ja (Alter zum Zugangszeitpunkt auf die Abteilung &lt;28 Tage)&#xA;  * Nein (Alter zum Zugangszeitpunkt auf die Abteilung &gt;=28 Tage)&#xA;* Hinweis 2: LKF 4.1.9 Altersgruppe bei Entlassung/Kontakt&#xA;  * Vollendete Lebensjahre sind ausschlaggebend&#xA;  * 0: 0&#xA;  * 1-4: 1&#xA;  * 5-9: 5&#xA;  * 10-14: 10&#xA;  * 15-19: 15&#xA;  * 20-24: 20&#xA;  * ... immer weiter so, die untere Grenze des Alters in 5er-Schritten&#xA;  * 85-89: 85&#xA;  * 90-95: 90&#xA;  * 95 und älter: 95&#xA;* Hinweis 3: Der Counter für AnzahlVerlegungen wird auch im Falle einer Beurlaubung erhöht, bei der eine reguläre Verlegung-Operation aufgerufen wird."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MOPEDPatientBund"/>
+      </reference>
+      <name value="MOPED Patient Bund"/>
+      <description value="MOPED Profil der Patient Ressource aus der Sicht der Rolle: Bund"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MOPEDPatientLGF"/>
+      </reference>
+      <name value="MOPED Patient LGF"/>
+      <description value="MOPED Profil der Patient Ressource aus der Sicht der Rolle: LGF"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MOPEDPatientSV"/>
+      </reference>
+      <name value="MOPED Patient SV"/>
+      <description value="MOPED Profil der Patient Ressource aus der Sicht der Rolle: SV"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -572,17 +660,6 @@
       </reference>
       <name value="MOPEDCoverageEligibilityResponse"/>
       <description value="MOPED Profil der CoverageEligibilityResponse Ressource für die Versichertenanspruchserklärung-Antwort."/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/MOPEDEncounter"/>
-      </reference>
-      <name value="MOPEDEncounter"/>
-      <description value="MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme und Entlassung"/>
       <isExample value="false"/>
     </resource>
     <resource>
