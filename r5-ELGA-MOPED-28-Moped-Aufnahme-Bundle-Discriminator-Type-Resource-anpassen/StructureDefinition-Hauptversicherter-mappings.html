@@ -220,56 +220,61 @@
 
   <a name="w5"> </a><h3>Mappings for FiveWs Pattern Mapping (http://hl7.org/fhir/fivews)</h3><table class="grid">
  <tr><td colspan="3"><b>Hauptversicherter</b></td></tr>
- <tr><td>Person</td><td>administrative.entity</td> </tr>
+ <tr><td>RelatedPerson</td><td>administrative.individual</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>FiveWs.identifier</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>FiveWs.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;relationship</td><td>FiveWs.class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;period</td><td>FiveWs.done[x]</td> </tr>
 </table>
 <a name="rim"> </a><h3>Mappings for RIM Mapping (<a href="http://hl7.org/comparison-v3.html">http://hl7.org/v3</a>)</h3><table class="grid">
  <tr><td colspan="3"><b>Hauptversicherter</b></td></tr>
- <tr><td>Person</td><td>Entity, Role, or Act,Person(classCode="PSN" and determinerCode="INST" and quantity="1")</td> </tr>
+ <tr><td>RelatedPerson</td><td>Entity, Role, or Act,role</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>.plays:Role(classCode='IDENT').id</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>statusCode</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>./name</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td>./telecom</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;gender</td><td>player[classCode=PSN|ANM and determinerCode=INSTANCE]/administrativeGender</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;birthDate</td><td>./birthTime</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;deceased[x]</td><td>player[classCode=PSN|ANM and determinerCode=INSTANCE]/deceasedInd, player[classCode=PSN|ANM and determinerCode=INSTANCE]/deceasedTime</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;address</td><td>./addr</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;maritalStatus</td><td>player[classCode=PSN]/maritalStatusCode</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;photo</td><td>player[classCode=PSN|ANM and determinerCode=INSTANCE]/desc</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>.id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>.statusCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;patient</td><td>scoper[classCode=PSN|ANM and determinerCode='INSTANCE']/playedRole[classCode='PAT']/id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;relationship</td><td>code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>name</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td>telecom</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;gender</td><td>administrativeGender</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;birthDate</td><td>player.birthTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;address</td><td>addr</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;photo</td><td>player[classCode='PSN' and determinerCode='INSTANCE']/desc</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;period</td><td>.effectiveTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;communication</td><td>LanguageCommunication</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;language</td><td>player[classCode=PSN|ANM and determinerCode=INSTANCE]/languageCommunication/code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;preferred</td><td>preferenceInd</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;managingOrganization</td><td>scoper</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;link</td><td>outboundLink</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target</td><td>id</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assurance</td><td>priorityNumber?</td> </tr>
+</table>
+<a name="interface"> </a><h3>Mappings for Interface Pattern (<a href="http://hl7.org/fhir/patterns.html">http://hl7.org/fhir/interface</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>Hauptversicherter</b></td></tr>
+ <tr><td>RelatedPerson</td><td>ParticipantLiving</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>Participant.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>Participant.active</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>Participant.name</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td>ParticipantContactable.telecom</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;gender</td><td>ParticipantLiving.gender</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;birthDate</td><td>ParticipantLiving.birthDate</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;address</td><td>ParticipantContactable.address</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;photo</td><td>ParticipantLiving.photo</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;communication</td><td>ParticipantLiving.communication</td> </tr>
 </table>
 <a name="v2"> </a><h3>Mappings for HL7 V2 Mapping (<a href="http://hl7.org/comparison-v2.html">http://hl7.org/v2</a>)</h3><table class="grid">
  <tr><td colspan="3"><b>Hauptversicherter</b></td></tr>
- <tr><td>Person</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>PID-3</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>PID-5, PID-9</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td>PID-13, PID-14</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;gender</td><td>PID-8</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;birthDate</td><td>PID-7</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;deceased[x]</td><td>PID-30  (bool) and PID-29 (datetime)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;address</td><td>PID-11</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;maritalStatus</td><td>PID-16</td> </tr>
+ <tr><td>RelatedPerson</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>NK1-33</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;patient</td><td>PID-3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;relationship</td><td>NK1-3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>NK1-2</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td>NK1-5 / NK1-6 / NK1-40</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;gender</td><td>NK1-15</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;address</td><td>NK1-4</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;photo</td><td>OBX-5 - needs a profile</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;communication</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;language</td><td>PID-15, LAN-2</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;preferred</td><td>PID-15</td> </tr>
 </table>
 
 
@@ -296,8 +301,8 @@
 <div class="container">    <!-- container -->
 
 <div class="inner-wrapper">
-  <p><a name="l715">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Wed, Nov 6, 2024 10:59+0000">2024-11-06</span>
+  <p><a name="l745">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Wed, Nov 6, 2024 11:18+0000">2024-11-06</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
