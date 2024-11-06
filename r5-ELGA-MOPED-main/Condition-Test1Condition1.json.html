@@ -188,14 +188,43 @@
   <pre style="white-space: pre; text-wrap: nowrap; width: auto;" class="json"><code style="white-space: pre; text-wrap: nowrap;" class="language-json">{
   "<a href="http://hl7.org/fhir/R5/condition.html#Condition">resourceType</a>" : "Condition",
   "<a href="http://hl7.org/fhir/R5/condition.html#Condition.id">id</a>" : "Test1Condition1",
+  "<a href="http://hl7.org/fhir/R5/condition.html#Condition.meta">meta</a>" : {
+    "<a href="http://hl7.org/fhir/R5/resource.html#Meta#Meta.profile">profile</a>" : [
+      <a style="color: Maroon" href="StructureDefinition-MOPEDCondition.html">&#x1F517;</a> "http://example.org/StructureDefinition/MOPEDCondition"
+    ]
+  },
   "<a href="http://hl7.org/fhir/R5/condition.html#Condition.text">text</a>" : {
     "<a href="http://hl7.org/fhir/R5/narrative.html#Narrative#Narrative.status">status</a>" : "generated",
-    "<a href="http://hl7.org/fhir/R5/narrative.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p class=\"res-header-id\"&gt;&lt;b&gt;Generated Narrative: Condition Test1Condition1&lt;/b&gt;&lt;/p&gt;&lt;a name=\"Test1Condition1\"&gt; &lt;/a&gt;&lt;a name=\"hcTest1Condition1\"&gt; &lt;/a&gt;&lt;a name=\"Test1Condition1-en-US\"&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;clinicalStatus&lt;/b&gt;: &lt;span title=\"Codes:\"&gt;active&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=\"Codes:{http://hl7.org/fhir/sid/icd-10 G47.3}\"&gt;Sleep Apnea&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a href=\"Patient-Test1Patient.html\"&gt;Patientenkommun Moderne (official) Female, DoB: 1969-04-21 ( Social Security Number: 9994210469)&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;"
+    "<a href="http://hl7.org/fhir/R5/narrative.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p class=\"res-header-id\"&gt;&lt;b&gt;Generated Narrative: Condition Test1Condition1&lt;/b&gt;&lt;/p&gt;&lt;a name=\"Test1Condition1\"&gt; &lt;/a&gt;&lt;a name=\"hcTest1Condition1\"&gt; &lt;/a&gt;&lt;a name=\"Test1Condition1-en-US\"&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: RI/?ngen-9?&lt;/p&gt;&lt;p&gt;&lt;b&gt;clinicalStatus&lt;/b&gt;: &lt;span title=\"Codes:\"&gt;active&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;verificationStatus&lt;/b&gt;: &lt;span title=\"Codes:\"&gt;confirmed&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=\"Codes:{http://hl7.org/fhir/sid/icd-10 G47.3}, {http://tbd.at/MOPED-LKFHauptdiagnosegruppen HDG24.01}\"&gt;Sleep Apnea&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a href=\"Patient-Test1Patient.html\"&gt;Patientenkommun Moderne (official) Female, DoB: 1969-04-21 ( Social Security Number: 9994210469)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;encounter&lt;/b&gt;: &lt;a href=\"MOPEDEncounter/Test2MOPEDEncounter1\"&gt;MOPEDEncounter/Test2MOPEDEncounter1&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;"
   },
+  "<a href="http://hl7.org/fhir/R5/condition.html#Condition.identifier">identifier</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R5/datatypes.html#Identifier#Identifier.type">type</a>" : {
+        "<a href="http://hl7.org/fhir/R5/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R5/datatypes.html#Coding#Coding.code">code</a>" : "RI"
+          }
+        ]
+      }
+    }
+  ],
   "<a href="http://hl7.org/fhir/R5/condition.html#Condition.clinicalStatus">clinicalStatus</a>" : {
+    "<a href="http://hl7.org/fhir/R5/datatypes.html#CodeableConcept#CodeableConcept.extension">extension</a>" : [
+      {
+        "<a href="http://hl7.org/fhir/R5/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+        "<a href="http://hl7.org/fhir/R5/extensibility.html#Extension#Extension.value[x]">valueCode</a>" : "not-asked"
+      }
+    ],
     "<a href="http://hl7.org/fhir/R5/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
       {
         "<a href="http://hl7.org/fhir/R5/datatypes.html#Coding#Coding.code">code</a>" : "active"
+      }
+    ]
+  },
+  "<a href="http://hl7.org/fhir/R5/condition.html#Condition.verificationStatus">verificationStatus</a>" : {
+    "<a href="http://hl7.org/fhir/R5/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+      {
+        "<a href="http://hl7.org/fhir/R5/datatypes.html#Coding#Coding.code">code</a>" : "confirmed"
       }
     ]
   },
@@ -205,11 +234,19 @@
         "<a href="http://hl7.org/fhir/R5/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/sid/icd-10",
         "<a href="http://hl7.org/fhir/R5/datatypes.html#Coding#Coding.code">code</a>" : "G47.3",
         "<a href="http://hl7.org/fhir/R5/datatypes.html#Coding#Coding.display">display</a>" : "Sleep Apnea"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R5/datatypes.html#Coding#Coding.system">system</a>" : "http://tbd.at/MOPED-LKFHauptdiagnosegruppen",
+        "<a href="http://hl7.org/fhir/R5/datatypes.html#Coding#Coding.code">code</a>" : "HDG24.01",
+        "<a href="http://hl7.org/fhir/R5/datatypes.html#Coding#Coding.display">display</a>" : "TBD"
       }
     ]
   },
   "<a href="http://hl7.org/fhir/R5/condition.html#Condition.subject">subject</a>" : {
     <a style="color: Maroon" href="Patient-Test1Patient.html">&#x1F517;</a> "<a href="http://hl7.org/fhir/R5/references.html#Reference#Reference.reference">reference</a>" : "Patient/Test1Patient"
+  },
+  "<a href="http://hl7.org/fhir/R5/condition.html#Condition.encounter">encounter</a>" : {
+    "<a href="http://hl7.org/fhir/R5/references.html#Reference#Reference.reference">reference</a>" : "MOPEDEncounter/Test2MOPEDEncounter1"
   }
 }</code></pre>
 
@@ -234,8 +271,8 @@
 <div class="container">    <!-- container -->
 
 <div class="inner-wrapper">
-  <p><a name="l398">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Thu, Oct 31, 2024 07:20+0000">2024-10-31</span>
+  <p><a name="l452">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Wed, Nov 6, 2024 10:03+0000">2024-11-06</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
