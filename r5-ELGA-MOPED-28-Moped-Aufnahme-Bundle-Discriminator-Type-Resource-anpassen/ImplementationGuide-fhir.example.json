@@ -10,7 +10,7 @@
   "name" : "MOPED",
   "title" : "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)",
   "status" : "draft",
-  "date" : "2024-11-05T14:58:51+00:00",
+  "date" : "2024-11-06T10:59:22+00:00",
   "publisher" : "Example Publisher",
   "contact" : [{
     "name" : "Example Publisher",
@@ -338,7 +338,7 @@
         "reference" : "StructureDefinition/Hauptversicherter"
       },
       "name" : "Hauptversicherter",
-      "description" : "MOPED Profil der Patient Ressource für den Hauptversicherten",
+      "description" : "MOPED Profil der Person Ressource für den Hauptversicherten",
       "isExample" : false
     },
     {
@@ -1055,7 +1055,8 @@
         "reference" : "Condition/Test1Condition1"
       },
       "name" : "Test1Condition1",
-      "isExample" : true
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDCondition"]
     },
     {
       "extension" : [{
@@ -1195,7 +1196,8 @@
         "reference" : "Condition/Test2Condition1"
       },
       "name" : "Test2Condition1",
-      "isExample" : true
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDCondition"]
     },
     {
       "extension" : [{
@@ -1206,7 +1208,8 @@
         "reference" : "Condition/Test2Condition2"
       },
       "name" : "Test2Condition2",
-      "isExample" : true
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDCondition"]
     },
     {
       "extension" : [{
@@ -1298,18 +1301,6 @@
         "valueString" : "Organization"
       }],
       "reference" : {
-        "reference" : "Organization/Test2OrganizationAbteilung5"
-      },
-      "name" : "Test2OrganizationAbteilung5",
-      "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"]
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Organization"
-      }],
-      "reference" : {
         "reference" : "Organization/Test2OrganizationInsurance1"
       },
       "name" : "Test2OrganizationInsurance1",
@@ -1336,6 +1327,18 @@
       },
       "name" : "Test2Patient",
       "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Procedure"
+      }],
+      "reference" : {
+        "reference" : "Procedure/Test2Procedure1"
+      },
+      "name" : "Test2Procedure1",
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDProcedure"]
     },
     {
       "extension" : [{

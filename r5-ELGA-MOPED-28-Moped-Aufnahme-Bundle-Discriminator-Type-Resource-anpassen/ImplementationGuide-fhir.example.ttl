@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "MOPED"] ; # 
   fhir:title [ fhir:v "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-11-05T14:58:51+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-11-06T10:59:22+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Example Publisher"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Example Publisher" ] ;
@@ -353,7 +353,7 @@
          fhir:reference [ fhir:v "StructureDefinition/Hauptversicherter" ]
        ] ;
        fhir:name [ fhir:v "Hauptversicherter" ] ;
-       fhir:description [ fhir:v "MOPED Profil der Patient Ressource für den Hauptversicherten" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Person Ressource für den Hauptversicherten" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1073,7 +1073,11 @@
          fhir:reference [ fhir:v "Condition/Test1Condition1" ]
        ] ;
        fhir:name [ fhir:v "Test1Condition1" ] ;
-       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://example.org/StructureDefinition/MOPEDCondition"^^xsd:anyURI ;
+         fhir:link <http://example.org/StructureDefinition/MOPEDCondition>
+       ] )
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1234,7 +1238,11 @@
          fhir:reference [ fhir:v "Condition/Test2Condition1" ]
        ] ;
        fhir:name [ fhir:v "Test2Condition1" ] ;
-       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://example.org/StructureDefinition/MOPEDCondition"^^xsd:anyURI ;
+         fhir:link <http://example.org/StructureDefinition/MOPEDCondition>
+       ] )
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1245,7 +1253,11 @@
          fhir:reference [ fhir:v "Condition/Test2Condition2" ]
        ] ;
        fhir:name [ fhir:v "Test2Condition2" ] ;
-       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://example.org/StructureDefinition/MOPEDCondition"^^xsd:anyURI ;
+         fhir:link <http://example.org/StructureDefinition/MOPEDCondition>
+       ] )
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1357,21 +1369,6 @@
          fhir:value [ fhir:v "Organization" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://example.org/Organization/Test2OrganizationAbteilung5> ;
-         fhir:reference [ fhir:v "Organization/Test2OrganizationAbteilung5" ]
-       ] ;
-       fhir:name [ fhir:v "Test2OrganizationAbteilung5" ] ;
-       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
-       fhir:profile ( [
-         fhir:v "http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"^^xsd:anyURI ;
-         fhir:link <http://example.org/StructureDefinition/MOPEDOrganizationAbteilung>
-       ] )
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Organization" ]
-       ] ) ;
-       fhir:reference [
          fhir:link <http://example.org/Organization/Test2OrganizationInsurance1> ;
          fhir:reference [ fhir:v "Organization/Test2OrganizationInsurance1" ]
        ] ;
@@ -1399,6 +1396,21 @@
        ] ;
        fhir:name [ fhir:v "Test2Patient" ] ;
        fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Procedure" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/Procedure/Test2Procedure1> ;
+         fhir:reference [ fhir:v "Procedure/Test2Procedure1" ]
+       ] ;
+       fhir:name [ fhir:v "Test2Procedure1" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://example.org/StructureDefinition/MOPEDProcedure"^^xsd:anyURI ;
+         fhir:link <http://example.org/StructureDefinition/MOPEDProcedure>
+       ] )
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
