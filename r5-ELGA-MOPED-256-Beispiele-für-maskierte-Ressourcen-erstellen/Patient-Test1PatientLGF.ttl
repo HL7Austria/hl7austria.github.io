@@ -1,0 +1,56 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/Patient/Test1PatientLGF> a fhir:Patient ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Test1PatientLGF"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://example.org/StructureDefinition/MOPEDPatientLGF"^^xsd:anyURI ;
+       fhir:link <http://example.org/StructureDefinition/MOPEDPatientLGF>
+     ] [
+       fhir:v "http://example.org/StructureDefinition/MOPEDPatientSV"^^xsd:anyURI ;
+       fhir:link <http://example.org/StructureDefinition/MOPEDPatientSV>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient Test1PatientLGF</b></p><a name=\"Test1PatientLGF\"> </a><a name=\"hcTest1PatientLGF\"> </a><a name=\"Test1PatientLGF-en-US\"> </a><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">MSK MSK (official) Female, DoB: 1969-04-21</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\">1030 AT (home)</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The patient's legal status as citizen of a country.\">Patient Citizenship:</td><td colspan=\"3\"><ul><li>code: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3 AUT}\">Österreich</span></li></ul></td></tr></table></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "AUT" ] ;
+           fhir:display [ fhir:v "Österreich" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/patient-citizenship"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:name ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/data-absent-reason"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "masked" ]
+     ] ) ;
+     fhir:use [ fhir:v "official" ] ;
+     fhir:family [ fhir:v "MSK" ] ;
+     fhir:given ( [ fhir:v "MSK" ] )
+  ] ) ; # 
+  fhir:gender [ fhir:v "female"] ; # 
+  fhir:birthDate [ fhir:v "1969-04-21"^^xsd:date] ; # 
+  fhir:address ( [
+     fhir:use [ fhir:v "home" ] ;
+     fhir:postalCode [ fhir:v "1030" ] ;
+     fhir:country [ fhir:v "AT" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
