@@ -1,0 +1,49 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "MOPED.CoverageEligibilityResponse.Beantworten",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition MOPED.CoverageEligibilityResponse.Beantworten</b></p><a name=\"MOPED.CoverageEligibilityResponse.Beantworten\"> </a><a name=\"hcMOPED.CoverageEligibilityResponse.Beantworten\"> </a><a name=\"MOPED.CoverageEligibilityResponse.Beantworten-en-US\"> </a><p>URL: [base]/CoverageEligibilityResponse/$beantworten</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>coverageEligibilityResponse</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/coverageeligibilityresponse.html\">CoverageEligibilityResponse</a></td><td/><td><div><p>Der <em>coverageEligibilityResponse</em> Parameter beinhält sämtliche Details zur Antwort auf den CoverageEligibilityRequest.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/resource.html\">Resource</a> (<a href=\"http://hl7.org/fhir/R5/operationoutcome.html\" title=\"http://hl7.org/fhir/StructureDefinition/OperationOutcome\">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>\n</div></td></tr></table></div>"
+  },
+  "url" : "http://example.org/OperationDefinition/MOPED.CoverageEligibilityResponse.Beantworten",
+  "version" : "0.1.0",
+  "name" : "MOPED_CoverageEligibilityResponse_Beantworten",
+  "title" : "MOPED CoverageEligibilityResponse $beantworten (POC)",
+  "status" : "draft",
+  "kind" : "operation",
+  "date" : "2024-11-07T14:31:26+00:00",
+  "publisher" : "Example Publisher",
+  "contact" : [{
+    "name" : "Example Publisher",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://example.org/example-publisher"
+    }]
+  }],
+  "description" : "Die $beantworten Operation wird aufgerufen, wenn eine Versichertenanspruchserklärung beantwortet wird.",
+  "purpose" : "\n**Wer ruft diese Operation in welchem Zusammenhang auf?**\n\nDie Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die $beantworten Operation wird aufgerufen, wenn der CoverageEligibilityRequest eines Krankenhauses beantwortet wird.\n\n**Voraussetzungen für den Aufruf**\n\n* Account-Status: `Aufnahme Freigegeben`\n\n**Detaillierte Business-Logik**\n\n1. Die CoverageEligibilityResponse wird lt. Regeln (siehe unten) validiert und eingespielt\n2. Falls Schritt 1 erfolgreich war, wird die Ressource Account gesucht, die eine Referenz auf den CoverageEligibilityResponse.request beihält (CoverageEligibilityResponse lt. Operation-Parameter) und auf `SV verarbeitet` gesetzt\n\n**Validierung / Fehlerbehandlung**\n\n* CoverageEligibilityResponse.patient muss gleich CoverageEligibilityResponse.request.patient sein\n\n**Weitere Hinweise**\n\n**Annahmen an das BeS**\n* Es wurde vorab geprüft, ob *CoverageEligibilityResponse.insurance* auch der SV entspricht, der die Operation aufruft. Somit ist sichergestellt, dass jede SV nur eigene CoverageEligibilityRequests beantworten kann.\n",
+  "affectsState" : true,
+  "code" : "beantworten",
+  "base" : "http://hl7.org/fhir/OperationDefinition/CoverageEligibilityResponse-beantworten",
+  "resource" : ["CoverageEligibilityResponse"],
+  "system" : false,
+  "type" : true,
+  "instance" : false,
+  "parameter" : [{
+    "name" : "coverageEligibilityResponse",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *coverageEligibilityResponse* Parameter beinhält sämtliche Details zur Antwort auf den CoverageEligibilityRequest.",
+    "type" : "CoverageEligibilityResponse"
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *return* Parameter gibt Auskunft über den Erfolg der Operation.",
+    "type" : "Resource",
+    "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/OperationOutcome"]
+  }]
+}

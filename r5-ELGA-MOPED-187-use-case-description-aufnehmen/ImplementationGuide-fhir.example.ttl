@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "MOPED"] ; # 
   fhir:title [ fhir:v "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-11-07T13:12:32+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-11-07T14:31:26+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Example Publisher"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Example Publisher" ] ;
@@ -567,6 +567,18 @@
        ] ;
        fhir:name [ fhir:v "MOPED ClaimResponse $freigeben (POC)" ] ;
        fhir:description [ fhir:v "Die $freigeben Operation wird aufgerufen, wenn eine Abrechnung beantwortet wird und freigegeben wird." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OperationDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/OperationDefinition/MOPED.CoverageEligibilityResponse.Beantworten> ;
+         fhir:reference [ fhir:v "OperationDefinition/MOPED.CoverageEligibilityResponse.Beantworten" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED CoverageEligibilityResponse $beantworten (POC)" ] ;
+       fhir:description [ fhir:v "Die $beantworten Operation wird aufgerufen, wenn eine Versichertenanspruchserklärung beantwortet wird." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
