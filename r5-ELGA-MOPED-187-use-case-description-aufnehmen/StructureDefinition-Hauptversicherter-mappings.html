@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>FHIR.EXAMPLE\Neugeborenes - Testing - FHIR&reg; v5.0.0</title>
+    <title>FHIR.EXAMPLE\Hauptversicherter - Mappings - FHIR&reg; v5.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -39,8 +39,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"7.49"}
-    h3,h4,h5,h6{--heading-prefix:"7.49"}</style>
+    <style type="text/css">h2{--heading-prefix:"7.10"}
+    h3,h4,h5,h6{--heading-prefix:"7.10"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
           <!-- at-fhir-ig-template begin -->
@@ -117,7 +117,7 @@
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="artifacts.html"><b>Artifacts Summary</b></a></li><li><b>Neugeborenes</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="artifacts.html"><b>Artifacts Summary</b></a></li><li><b>Hauptversicherter</b></li>
 
         </ul>
       </div>    <!-- /container -->
@@ -128,7 +128,7 @@
       <div class="container">    <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
-<div style="counter-reset: section 6" class="col-12">
+<div style="counter-reset: section 5" class="col-12">
     <!-- ReleaseHeader --><p id="publish-box">Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED) - Local Development build (v0.1.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://example.org/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   
 
@@ -145,20 +145,20 @@
 <ul class="nav nav-tabs">
 
   <li>
-    <a href="StructureDefinition-moped-ext-neugeborenes.html">Content</a>
+    <a href="StructureDefinition-Hauptversicherter.html">Content</a>
   </li>
 
 
 
   <li>
-    <a href="StructureDefinition-moped-ext-neugeborenes-definitions.html">Detailed Descriptions</a>
+    <a href="StructureDefinition-Hauptversicherter-definitions.html">Detailed Descriptions</a>
   </li>
 
 
 
   
-    <li>
-      <a href="StructureDefinition-moped-ext-neugeborenes-mappings.html">Mappings</a>
+    <li class="active">
+      <a href="#">Mappings</a>
     </li>
   
 
@@ -170,21 +170,21 @@
 
   
     <li>
-      <a href="StructureDefinition-moped-ext-neugeborenes.profile.xml.html">XML</a>
+      <a href="StructureDefinition-Hauptversicherter.profile.xml.html">XML</a>
     </li>
   
 
 
   
     <li>
-      <a href="StructureDefinition-moped-ext-neugeborenes.profile.json.html">JSON</a>
+      <a href="StructureDefinition-Hauptversicherter.profile.json.html">JSON</a>
     </li>
   
 
 
   
     <li>
-      <a href="StructureDefinition-moped-ext-neugeborenes.profile.ttl.html">TTL</a>
+      <a href="StructureDefinition-Hauptversicherter.profile.ttl.html">TTL</a>
     </li>
   
 
@@ -192,8 +192,8 @@
 </ul>
 
 
-  <a name="root"> </a>
-  <h2 id="root">Extension: Neugeborenes - Testing</h2>
+<a name="root"> </a>
+<h2 id="root">Resource Profile: Hauptversicherter - Mappings</h2>
 
   <table class="colsd">
     <tr>
@@ -202,7 +202,7 @@
         
           Draft
           
-            as of 2024-11-06
+            as of 2024-11-07
           
         
       </td>
@@ -211,25 +211,75 @@
   </table>
 
 
+<p>Mappings for the Hauptversicherter resource profile.</p>
+
+    <!-- insert intro if present -->
+  
 
 
-  <!-- insert intro if present -->
+
+  <a name="w5"> </a><h3>Mappings for FiveWs Pattern Mapping (http://hl7.org/fhir/fivews)</h3><table class="grid">
+ <tr><td colspan="3"><b>Hauptversicherter</b></td></tr>
+ <tr><td>RelatedPerson</td><td>administrative.individual</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>FiveWs.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>FiveWs.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;relationship</td><td>FiveWs.class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;period</td><td>FiveWs.done[x]</td> </tr>
+</table>
+<a name="rim"> </a><h3>Mappings for RIM Mapping (<a href="http://hl7.org/comparison-v3.html">http://hl7.org/v3</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>Hauptversicherter</b></td></tr>
+ <tr><td>RelatedPerson</td><td>Entity, Role, or Act,role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>.id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>.statusCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;patient</td><td>scoper[classCode=PSN|ANM and determinerCode='INSTANCE']/playedRole[classCode='PAT']/id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;relationship</td><td>code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>name</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td>telecom</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;gender</td><td>administrativeGender</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;birthDate</td><td>player.birthTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;address</td><td>addr</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;photo</td><td>player[classCode='PSN' and determinerCode='INSTANCE']/desc</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;period</td><td>.effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;communication</td><td>LanguageCommunication</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;language</td><td>player[classCode=PSN|ANM and determinerCode=INSTANCE]/languageCommunication/code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;preferred</td><td>preferenceInd</td> </tr>
+</table>
+<a name="interface"> </a><h3>Mappings for Interface Pattern (<a href="http://hl7.org/fhir/patterns.html">http://hl7.org/fhir/interface</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>Hauptversicherter</b></td></tr>
+ <tr><td>RelatedPerson</td><td>ParticipantLiving</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>Participant.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>Participant.active</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>Participant.name</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td>ParticipantContactable.telecom</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;gender</td><td>ParticipantLiving.gender</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;birthDate</td><td>ParticipantLiving.birthDate</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;address</td><td>ParticipantContactable.address</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;photo</td><td>ParticipantLiving.photo</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;communication</td><td>ParticipantLiving.communication</td> </tr>
+</table>
+<a name="v2"> </a><h3>Mappings for HL7 V2 Mapping (<a href="http://hl7.org/comparison-v2.html">http://hl7.org/v2</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>Hauptversicherter</b></td></tr>
+ <tr><td>RelatedPerson</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>NK1-33</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;patient</td><td>PID-3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;relationship</td><td>NK1-3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>NK1-2</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td>NK1-5 / NK1-6 / NK1-40</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;gender</td><td>NK1-15</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;address</td><td>NK1-4</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;photo</td><td>OBX-5 - needs a profile</td> </tr>
+</table>
 
 
-
-
-<h3>Test Plans</h3>
-
-  <p><b>No test plans are currently available for the  Profile.</b></p>
-
-
-<h3>Test Scripts</h3>
-
-  <p><b>No test scripts are currently available for the  Profile.</b></p>
-
-
-  <!-- insert notes if present -->
-
+    <!-- insert notes if present -->
+  
 
 
 
@@ -251,8 +301,8 @@
 <div class="container">    <!-- container -->
 
 <div class="inner-wrapper">
-  <p><a name="l378">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Wed, Nov 6, 2024 09:40+0000">2024-11-06</span>
+  <p><a name="l745">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Thu, Nov 7, 2024 06:21+0000">2024-11-07</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

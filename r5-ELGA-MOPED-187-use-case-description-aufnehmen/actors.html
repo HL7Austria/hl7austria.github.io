@@ -163,13 +163,30 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <pre class="mermaid">
     graph LR
-    A[Test]
-    B[<a href="http://google.com">Test link on Node</a>] 
-    A ---|<a href="http://google.com">Test link on Arrow</a>| B
-    B--&gt;C[fa:fa-ban forbidden]
-    B--&gt;D(fa:fa-spinner);
-</pre>
+    KH[Krankenhaus]
+    SV[Sozialversicherung]
+    BMSGPK[BMSGPK]
+    LGF[Landesgesundheitsfonds]
+    Moped[<a href="index.html">Moped</a>] 
 
+    KH ---&gt;|<a href="OperationDefinition-MOPED.Patient.Aufnehmen.html"> $aufnehmen</a>| Moped 
+    KH --&gt;|<a href="OperationDefinition-MOPED.CoverageEligibilityRequest.Anfragen.html"> $anfragen</a>| Moped
+    KH --&gt;|<a href="OperationDefinition-MOPED.Encounter.erfassen.html"> $entlassen</a>| Moped 
+    KH --&gt;|$einmelden| Moped
+    KH --&gt;|<a href="OperationDefinition-MOPED.Encounter.Abrechnen.html"> $abrechnen</a>| Moped
+    Moped --&gt;|<a href="StructureDefinition-MOPEDCoverageEligibilityResponse.html"> GET_CoverageEligibilityResponse</a>| KH
+    Moped ---&gt;|<a href="StructureDefinition-MOPEDClaimResponse.html"> GET_ClaimResponse</a>| KH
+
+    Moped ---&gt;|<a href="StructureDefinition-MOPEDClaimResponse.html"> GET ClaimResponse</a>| SV
+    Moped ---&gt;|<a href="StructureDefinition-MOPEDCoverageEligibilityRequest.html"> GET CoverageEligibilityRequest</a>| SV
+    SV ---&gt;|<a href="StructureDefinition-MOPEDCoverageEligibilityResponse.html"> GET CoverageEligibilityResponse</a>| Moped
+
+    Moped ---&gt;|<a href="StructureDefinition-MOPEDClaim.html"> GET Claim</a>| LGF
+    LGF ---&gt;|<a href="OperationDefinition-MOPED.ClaimResponse.Freigeben.html"> $freigeben</a>| Moped
+    LGF ---&gt;|<a href="OperationDefinition-MOPED.ClaimResponse.Auffordern.html"> $auffordern</a>| Moped
+
+    Moped ---&gt;|<a href="StructureDefinition-MOPEDClaimResponse.html"> GET_ClaimResponse</a>| BMSGPK 
+</pre>
 <div class="container"> 
     <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#actor-KH"> <strong>KH</strong></a></li>
@@ -180,42 +197,64 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         <li><a data-toggle="tab" href="#actor-medMel"> <strong>med. Melderegister</strong></a></li>
     </ul>
     <div class="tab-content">
-        <div id="actor-KH" class="tab-pane fade in active">
+        <div id="actor-KH" class="tab-pane active">
             <div class="container"> 
                 Im MOPED-Kontext spielt eine Krankenanstalt (KH) eine zentrale Rolle als Initiator zahlreicher Prozesse und als Meldestelle für vielfältige Daten. Diese umfassen unter anderem die Patientenaufnahme, die Abfrage des Versicherungsstatus und -anspruchs, die Erfassung von Versorgungsdaten während der Patientenbehandlung, die Entlassung sowie die Initiierung der Leistungsabrechnung.
             </div>
-            <figure>
-                <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 303 206" zoomAndPan="magnify" preserveAspectRatio="none" width="303px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:303px;height:206px;background:#FFFFFF;" version="1.1" height="206px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="261" y="19" font-family="sans-serif" fill="#33FF02">Dot Executable: /opt/local/bin/dot</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="237" y="35.2969" font-family="sans-serif" fill="#33FF02">Dot executable does not exist</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="291" y="51.5938" font-family="sans-serif" fill="#33FF02">Cannot find Graphviz. You should try</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="5" y="67.8906" font-family="sans-serif" fill="#33FF02">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="84.1875" font-family="sans-serif" fill="#33FF02">@startuml</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="57" y="100.4844" font-family="sans-serif" fill="#33FF02">testdot</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="72" y="116.7813" font-family="sans-serif" fill="#33FF02">@enduml</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="5" y="133.0781" font-family="sans-serif" fill="#33FF02">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="10" font-size="14" textLength="17" y="149.375" font-family="sans-serif" fill="#33FF02">or</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="5" y="165.6719" font-family="sans-serif" fill="#33FF02">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="227" y="181.9688" font-family="sans-serif" fill="#33FF02">java -jar plantuml.jar -testdot</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="5" y="198.2656" font-family="sans-serif" fill="#33FF02">&nbsp;</text></g></svg>
-            </figure>    
+            <pre class="mermaid">
+                graph LR
+                KH[Krankenhaus]
+                Moped[<a href="index.html">Moped</a>] 
+                KH ---&gt;|<a href="OperationDefinition-MOPED.Patient.Aufnehmen.html"> $aufnehmen</a>| Moped 
+                KH --&gt;|<a href="OperationDefinition-MOPED.CoverageEligibilityRequest.Anfragen.html"> $anfragen</a>| Moped
+                KH --&gt;|<a href="OperationDefinition-MOPED.Encounter.erfassen.html"> $entlassen</a>| Moped 
+                KH --&gt;|$einmelden| Moped
+                KH --&gt;|<a href="OperationDefinition-MOPED.Encounter.Abrechnen.html"> $abrechnen</a>| Moped
+                Moped --&gt;|<a href="StructureDefinition-MOPEDCoverageEligibilityResponse.html"> GET_CoverageEligibilityResponse</a>| KH
+                Moped ---&gt;|<a href="StructureDefinition-MOPEDClaimResponse.html"> GET_ClaimResponse</a>| KH
+            </pre>  
         </div>
-        <div id="actor-SV" class="tab-pane fade">
+        <div id="actor-SV" class="tab-pane active">
            <div class="container"> 
               Im MOPED-Kontext übernimmt die Sozialversicherung (SV) eine zentrale Rolle, indem sie Rückmeldungen zur Versichertenanspruchserklärung bereitstellt, über die Entlassung von Patienten informiert wird und Benachrichtigungen über freigegebene Daten erhält. Darüber hinaus ist die SV verantwortlich für die Kostenmeldungsanforderung und Rückmeldungen im Zusammenhang mit der Ausländerverrechnung sowie Regressen.
            </div>
-           <figure>
-                <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 303 206" zoomAndPan="magnify" preserveAspectRatio="none" width="303px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:303px;height:206px;background:#FFFFFF;" version="1.1" height="206px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="261" y="19" font-family="sans-serif" fill="#33FF02">Dot Executable: /opt/local/bin/dot</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="237" y="35.2969" font-family="sans-serif" fill="#33FF02">Dot executable does not exist</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="291" y="51.5938" font-family="sans-serif" fill="#33FF02">Cannot find Graphviz. You should try</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="5" y="67.8906" font-family="sans-serif" fill="#33FF02">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="84.1875" font-family="sans-serif" fill="#33FF02">@startuml</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="57" y="100.4844" font-family="sans-serif" fill="#33FF02">testdot</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="72" y="116.7813" font-family="sans-serif" fill="#33FF02">@enduml</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="5" y="133.0781" font-family="sans-serif" fill="#33FF02">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="10" font-size="14" textLength="17" y="149.375" font-family="sans-serif" fill="#33FF02">or</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="5" y="165.6719" font-family="sans-serif" fill="#33FF02">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="227" y="181.9688" font-family="sans-serif" fill="#33FF02">java -jar plantuml.jar -testdot</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="5" y="198.2656" font-family="sans-serif" fill="#33FF02">&nbsp;</text></g></svg>
-            </figure>   
+           <pre class="mermaid">
+              graph LR
+              SV[Sozialversicherung]
+              Moped[<a href="index.html">Moped</a>] 
+              Moped ---&gt;|<a href="StructureDefinition-MOPEDClaimResponse.html"> GET ClaimResponse</a>| SV
+              Moped ---&gt;|<a href="StructureDefinition-MOPEDCoverageEligibilityRequest.html"> GET CoverageEligibilityRequest</a>| SV
+              SV ---&gt;|<a href="StructureDefinition-MOPEDCoverageEligibilityResponse.html"> GET CoverageEligibilityResponse</a>| Moped
+            </pre>   
         </div>
-        <div id="actor-LGF" class="tab-pane fade">
+        <div id="actor-LGF" class="tab-pane active">
           <div class="container"> 
               Im MOPED-Kontext sind die Landesgesundheitsfonds (LGF) für das Scoring der Leistungen im Rahmen der Abrechnung verantwortlich. Sie geben Hinweise und Begründungen bei Abweisungen und fordern gegebenenfalls Korrekturen an. Sobald von den Krankenanstalten ein endgültiges Scoring vorliegt, wird der LGF informiert und vergibt anschließend die endgültige Freigabe. Der LGF erhält zusätzliche Informationen der SV über den Verrechnungsstatus bei Ausländerverrechnung und Regressen.
           </div>
-          <figure>
-              <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 303 206" zoomAndPan="magnify" preserveAspectRatio="none" width="303px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:303px;height:206px;background:#FFFFFF;" version="1.1" height="206px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="261" y="19" font-family="sans-serif" fill="#33FF02">Dot Executable: /opt/local/bin/dot</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="237" y="35.2969" font-family="sans-serif" fill="#33FF02">Dot executable does not exist</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="291" y="51.5938" font-family="sans-serif" fill="#33FF02">Cannot find Graphviz. You should try</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="5" y="67.8906" font-family="sans-serif" fill="#33FF02">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="84.1875" font-family="sans-serif" fill="#33FF02">@startuml</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="57" y="100.4844" font-family="sans-serif" fill="#33FF02">testdot</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="72" y="116.7813" font-family="sans-serif" fill="#33FF02">@enduml</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="5" y="133.0781" font-family="sans-serif" fill="#33FF02">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="10" font-size="14" textLength="17" y="149.375" font-family="sans-serif" fill="#33FF02">or</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="5" y="165.6719" font-family="sans-serif" fill="#33FF02">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="227" y="181.9688" font-family="sans-serif" fill="#33FF02">java -jar plantuml.jar -testdot</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="5" y="198.2656" font-family="sans-serif" fill="#33FF02">&nbsp;</text></g></svg>
-          </figure> 
+          <pre class="mermaid">
+              graph LR
+              LGF[Landesgesundheitsfonds]
+              Moped[<a href="index.html">Moped</a>] 
+              Moped ---&gt;|<a href="StructureDefinition-MOPEDClaim.html"> GET Claim</a>| LGF
+              LGF ---&gt;|<a href="OperationDefinition-MOPED.ClaimResponse.Freigeben.html"> $freigeben</a>| Moped
+              LGF ---&gt;|<a href="OperationDefinition-MOPED.ClaimResponse.Auffordern.html"> $auffordern</a>| Moped
+          </pre>
         </div>
-        <div id="actor-BMSGPK" class="tab-pane fade">
+        <div id="actor-BMSGPK" class="tab-pane active">
             <div class="container"> 
               Im MOPED-Kontext spielt das Bundesministerium für Soziales, Gesundheit, Pflege und Konsumentenschutz (BMSGPK) eine bedeutende Rolle, da nach der Abrechnung pseudonymisierte Daten freigegeben werden. Diese Daten liefern dem BMSGPK wichtige Informationen für die strategische Steuerung im Gesundheitswesen.
             </div>
-            <figure>
-                <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 303 206" zoomAndPan="magnify" preserveAspectRatio="none" width="303px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:303px;height:206px;background:#FFFFFF;" version="1.1" height="206px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="261" y="19" font-family="sans-serif" fill="#33FF02">Dot Executable: /opt/local/bin/dot</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="237" y="35.2969" font-family="sans-serif" fill="#33FF02">Dot executable does not exist</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="291" y="51.5938" font-family="sans-serif" fill="#33FF02">Cannot find Graphviz. You should try</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="5" y="67.8906" font-family="sans-serif" fill="#33FF02">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="79" y="84.1875" font-family="sans-serif" fill="#33FF02">@startuml</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="57" y="100.4844" font-family="sans-serif" fill="#33FF02">testdot</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="72" y="116.7813" font-family="sans-serif" fill="#33FF02">@enduml</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="5" y="133.0781" font-family="sans-serif" fill="#33FF02">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="10" font-size="14" textLength="17" y="149.375" font-family="sans-serif" fill="#33FF02">or</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="5" y="165.6719" font-family="sans-serif" fill="#33FF02">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="227" y="181.9688" font-family="sans-serif" fill="#33FF02">java -jar plantuml.jar -testdot</text><text font-weight="bold" lengthAdjust="spacing" x="5" font-size="14" textLength="5" y="198.2656" font-family="sans-serif" fill="#33FF02">&nbsp;</text></g></svg>
-            </figure>   
+            <pre class="mermaid">
+                graph LR
+                BMSGPK[BMSGPK]
+                Moped[<a href="index.html">Moped</a>] 
+                Moped ---&gt;|<a href="StructureDefinition-MOPEDClaimResponse.html"> GET_ClaimResponse</a>| BMSGPK  
+            </pre>
         </div>
-        <div id="actor-EMS" class="tab-pane fade">
+        <div id="actor-EMS" class="tab-pane">
            TBD
         </div>
-        <div id="actor-medMel" class="tab-pane fade">
+        <div id="actor-medMel" class="tab-pane">
             TBD
         </div>
     </div>
@@ -238,8 +277,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="container">    <!-- container -->
 
 <div class="inner-wrapper">
-  <p><a name="l534">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Wed, Nov 6, 2024 09:40+0000">2024-11-06</span>
+  <p><a name="l505">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Thu, Nov 7, 2024 06:21+0000">2024-11-07</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

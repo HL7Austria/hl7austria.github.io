@@ -10,7 +10,7 @@
   "name" : "MOPED",
   "title" : "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)",
   "status" : "draft",
-  "date" : "2024-11-06T09:40:37+00:00",
+  "date" : "2024-11-07T06:21:30+00:00",
   "publisher" : "Example Publisher",
   "contact" : [{
     "name" : "Example Publisher",
@@ -327,6 +327,18 @@
       },
       "name" : "Fristende",
       "description" : "Fristende - Befristungen sind in folgenden Fällen vorgesehen:\n- Bei zeitlichen Beschränkungen aufgrund einer zu erwartenden, nachfolgenden medizini-\nschen Hauskrankenpflege\n- Bei Vorhersehbarkeit des Eintritts einer Asylierung\n- Bei unsicherer, versicherungsrechtlicher Entwicklung\nBei den ersten beiden Punkten wird von den Krankenversicherungsträgern das Fristende individuell gesetzt. Beim dritten Punkt wird im Regelfall eine generelle Tagesbeschränkung erfolgen, weil die Versichertenanspruchserklärung in die Zukunft gerichtet ist und der Krankenversicherungsträger seine Zuständigkeit von vornherein nur für einen bestimmten Zeitraum annehmen kann (Ausleis- tungssituation gem. § 122 ASVG).\nDurch die Angabe eines Fristendes wird signalisiert, dass bei einem über das Fristende hinaus dau- ernden Aufenthalt eine Verlängerungsanzeige vorzulegen ist.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/Hauptversicherter"
+      },
+      "name" : "Hauptversicherter",
+      "description" : "MOPED Profil der Person Ressource für den Hauptversicherten",
       "isExample" : false
     },
     {
@@ -821,18 +833,6 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/moped-ext-neugeborenes"
-      },
-      "name" : "Neugeborenes",
-      "description" : "Ein Patient wird als Neugeborenes bezeichnet, wenn das Alter zum Zugangszeitpunkt auf die Abteilung <28 Tage ist.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
@@ -1043,7 +1043,8 @@
         "reference" : "Condition/Test1Condition1"
       },
       "name" : "Test1Condition1",
-      "isExample" : true
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDCondition"]
     },
     {
       "extension" : [{
@@ -1183,7 +1184,8 @@
         "reference" : "Condition/Test2Condition1"
       },
       "name" : "Test2Condition1",
-      "isExample" : true
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDCondition"]
     },
     {
       "extension" : [{
@@ -1194,7 +1196,8 @@
         "reference" : "Condition/Test2Condition2"
       },
       "name" : "Test2Condition2",
-      "isExample" : true
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDCondition"]
     },
     {
       "extension" : [{
@@ -1286,18 +1289,6 @@
         "valueString" : "Organization"
       }],
       "reference" : {
-        "reference" : "Organization/Test2OrganizationAbteilung5"
-      },
-      "name" : "Test2OrganizationAbteilung5",
-      "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"]
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Organization"
-      }],
-      "reference" : {
         "reference" : "Organization/Test2OrganizationInsurance1"
       },
       "name" : "Test2OrganizationInsurance1",
@@ -1324,6 +1315,18 @@
       },
       "name" : "Test2Patient",
       "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Procedure"
+      }],
+      "reference" : {
+        "reference" : "Procedure/Test2Procedure1"
+      },
+      "name" : "Test2Procedure1",
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDProcedure"]
     },
     {
       "extension" : [{
