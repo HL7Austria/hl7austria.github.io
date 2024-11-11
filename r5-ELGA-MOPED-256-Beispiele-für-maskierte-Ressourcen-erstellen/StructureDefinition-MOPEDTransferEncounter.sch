@@ -10,10 +10,9 @@
     single schematron that validates contained resources (if you have any) 
   -->
   <sch:pattern>
-    <sch:title>f:Encounter</sch:title>
-    <sch:rule context="f:Encounter">
+    <sch:title>f:Encounter/f:admission</sch:title>
+    <sch:rule context="f:Encounter/f:admission">
       <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-altersgruppe']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-altersgruppe': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-neugeborenes']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-neugeborenes': maximum cardinality of 'extension' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>

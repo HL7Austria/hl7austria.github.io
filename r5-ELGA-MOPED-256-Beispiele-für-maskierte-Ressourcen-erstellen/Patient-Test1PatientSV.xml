@@ -6,7 +6,7 @@
     <profile value="http://example.org/StructureDefinition/MOPEDPatientSV"/>
   </meta>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Patient Test1PatientSV</b></p><a name="Test1PatientSV"> </a><a name="hcTest1PatientSV"> </a><a name="Test1PatientSV-en-US"> </a><p style="border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;">Patientenkommun Moderne (official) Female, DoB: 1969-04-21 ( Social Security Number: 9994210469)</p><hr/><table class="grid"><tr><td style="background-color: #f3f5da" title="Ways to contact the Patient">Contact Detail</td><td colspan="3">Baumgasse 20a Wien 1030 AT (home)</td></tr><tr><td style="background-color: #f3f5da" title="The patient's legal status as citizen of a country.">Patient Citizenship:</td><td colspan="3"><ul><li>code: <span title="Codes:{https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3 AUT}">Österreich</span></li></ul></td></tr></table></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Patient Test1PatientSV</b></p><a name="Test1PatientSV"> </a><a name="hcTest1PatientSV"> </a><a name="Test1PatientSV-en-US"> </a><p style="border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;">Patientenkommun Moderne (official) Female, DoB: 1969-04-21 ( Social Security Number: 9994210469)</p><hr/><table class="grid"><tr><td style="background-color: #f3f5da" title="Ways to contact the Patient">Contact Detail</td><td colspan="3">Baumgasse 20a Wien 1030 AUT (home)</td></tr><tr><td style="background-color: #f3f5da" title="The patient's legal status as citizen of a country.">Patient Citizenship:</td><td colspan="3"><ul><li>code: <span title="Codes:{https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3 AUT}">Österreich</span></li></ul></td></tr></table></div>
   </text>
   <extension url="http://hl7.org/fhir/StructureDefinition/patient-citizenship">
     <extension url="code">
@@ -42,9 +42,16 @@
   <birthDate value="1969-04-21"/>
   <address>
     <use value="home"/>
-    <line value="Baumgasse 20a"/>
+    <line value="Baumgasse 20a">
+      <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+        <valueString value="Baumgasse"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+        <valueString value="20a"/>
+      </extension>
+    </line>
     <city value="Wien"/>
     <postalCode value="1030"/>
-    <country value="AT"/>
+    <country value="AUT"/>
   </address>
 </Patient>
