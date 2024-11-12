@@ -201,7 +201,7 @@
   "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.title">title</a>" : "MOPED CoverageEligibilityResponse $beantworten (POC)",
   "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.status">status</a>" : "draft",
   "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.kind">kind</a>" : "operation",
-  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.date">date</a>" : "2024-11-12T08:47:06+00:00",
+  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.date">date</a>" : "2024-11-12T20:06:39+00:00",
   "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.publisher">publisher</a>" : "Example Publisher",
   "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.contact">contact</a>" : [
     {
@@ -218,7 +218,6 @@
   "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.purpose">purpose</a>" : "\n**Wer ruft diese Operation in welchem Zusammenhang auf?**\n\nDie Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die $beantworten Operation wird aufgerufen, wenn der CoverageEligibilityRequest eines Krankenhauses beantwortet wird.\n\n**Voraussetzungen für den Aufruf**\n\n* Account-Status: `Aufnahme Freigegeben`\n\n**Detaillierte Business-Logik**\n\n1. Die CoverageEligibilityResponse wird lt. Regeln (siehe unten) validiert und eingespielt\n2. Falls Schritt 1 erfolgreich war, wird die Ressource Account gesucht, die eine Referenz auf den CoverageEligibilityResponse.request beihält (CoverageEligibilityResponse lt. Operation-Parameter) und auf `SV verarbeitet` gesetzt\n\n**Validierung / Fehlerbehandlung**\n\n* CoverageEligibilityResponse.patient muss gleich CoverageEligibilityResponse.request.patient sein\n\n**Weitere Hinweise**\n\n**Annahmen an das BeS**\n* Es wurde vorab geprüft, ob *CoverageEligibilityResponse.insurance* auch der SV entspricht, der die Operation aufruft. Somit ist sichergestellt, dass jede SV nur eigene CoverageEligibilityRequests beantworten kann.\n",
   "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.affectsState">affectsState</a>" : true,
   "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.code">code</a>" : "beantworten",
-  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.base">base</a>" : "http://hl7.org/fhir/OperationDefinition/CoverageEligibilityResponse-beantworten",
   "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.resource">resource</a>" : [
     "CoverageEligibilityResponse"
   ],
@@ -269,8 +268,8 @@
 <div class="container">    <!-- container -->
 
 <div class="inner-wrapper">
-  <p><a name="l461">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Tue, Nov 12, 2024 08:47+0000">2024-11-12</span>
+  <p><a name="l458">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Tue, Nov 12, 2024 20:06+0000">2024-11-12</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

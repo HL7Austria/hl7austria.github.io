@@ -18,7 +18,7 @@
   fhir:title [ fhir:v "MOPED Patient $entlassen (POC)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
   fhir:kind [ fhir:v "operation"] ; # 
-  fhir:date [ fhir:v "2024-11-12T08:47:06+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-11-12T20:06:39+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Example Publisher"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Example Publisher" ] ;
@@ -31,10 +31,6 @@
   fhir:affectsState [ fhir:v "true"^^xsd:boolean] ; # 
   fhir:code [ fhir:v "entlassen"] ; # 
   fhir:comment [ fhir:v "TBD: Abgangsart beim MOPEDTransferEncounter falls intensiv, muss befüllt werden; In dieser Operation werden noch keine Leitungen erfasst, hier muss eine Möglichkeit gegeben werden, dies nachzuholen - in einer separaten Transaction/Operation.; Der Status 'SV verarbeitet' stimmt zwar als Voraussetzung für den ersten Schritt. Kann das aber so weiterverfolgt werden, sobald Selbstzahler / private Versicherungen hinzukommen? Was passiert in einer schnellen Entlassung, wenn die SV sich noch nicht zurück gemeldet hat?"] ; # 
-  fhir:base [
-     fhir:v "http://hl7.org/fhir/OperationDefinition/Patient-entlassen"^^xsd:anyURI ;
-     fhir:link <http://hl7.org/fhir/OperationDefinition/Patient-entlassen>
-  ] ; # 
   fhir:resource ( [ fhir:v "Encounter"] ) ; # 
   fhir:system [ fhir:v "false"^^xsd:boolean] ; # 
   fhir:type [ fhir:v "true"^^xsd:boolean] ; # 
@@ -62,7 +58,10 @@
      fhir:type [ fhir:v "code" ] ;
      fhir:binding [
        fhir:strength [ fhir:v "required" ] ;
-       fhir:valueSet [ fhir:v "moped-entlassungsart-valueset"^^xsd:anyURI ]
+       fhir:valueSet [
+         fhir:v "http://example.org/ValueSet/moped-entlassungsart-valueset"^^xsd:anyURI ;
+         fhir:link <http://example.org/ValueSet/moped-entlassungsart-valueset>
+       ]
      ]
   ] [
      fhir:name [ fhir:v "tageOhneKostenbeitrag" ] ;

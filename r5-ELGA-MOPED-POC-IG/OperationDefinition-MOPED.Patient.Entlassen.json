@@ -11,7 +11,7 @@
   "title" : "MOPED Patient $entlassen (POC)",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2024-11-12T08:47:06+00:00",
+  "date" : "2024-11-12T20:06:39+00:00",
   "publisher" : "Example Publisher",
   "contact" : [{
     "name" : "Example Publisher",
@@ -24,7 +24,6 @@
   "affectsState" : true,
   "code" : "entlassen",
   "comment" : "TBD: Abgangsart beim MOPEDTransferEncounter falls intensiv, muss befüllt werden; In dieser Operation werden noch keine Leitungen erfasst, hier muss eine Möglichkeit gegeben werden, dies nachzuholen - in einer separaten Transaction/Operation.; Der Status 'SV verarbeitet' stimmt zwar als Voraussetzung für den ersten Schritt. Kann das aber so weiterverfolgt werden, sobald Selbstzahler / private Versicherungen hinzukommen? Was passiert in einer schnellen Entlassung, wenn die SV sich noch nicht zurück gemeldet hat?",
-  "base" : "http://hl7.org/fhir/OperationDefinition/Patient-entlassen",
   "resource" : ["Encounter"],
   "system" : false,
   "type" : true,
@@ -54,7 +53,7 @@
     "type" : "code",
     "binding" : {
       "strength" : "required",
-      "valueSet" : "moped-entlassungsart-valueset"
+      "valueSet" : "http://example.org/ValueSet/moped-entlassungsart-valueset"
     }
   },
   {

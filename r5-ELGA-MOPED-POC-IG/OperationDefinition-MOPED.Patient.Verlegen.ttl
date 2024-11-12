@@ -18,7 +18,7 @@
   fhir:title [ fhir:v "MOPED Patient $verlegen (POC)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
   fhir:kind [ fhir:v "operation"] ; # 
-  fhir:date [ fhir:v "2024-11-12T08:47:06+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-11-12T20:06:39+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Example Publisher"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Example Publisher" ] ;
@@ -31,10 +31,6 @@
   fhir:affectsState [ fhir:v "true"^^xsd:boolean] ; # 
   fhir:code [ fhir:v "verlegen"] ; # 
   fhir:comment [ fhir:v "TBD: was passiert, wenn eine $aufnehmen Operation mehrmals mit Status `Aufnahme in Arbeit` aufgerufen wird und damit zu mehreren MOPEDTransferEncounter führt?"] ; # 
-  fhir:base [
-     fhir:v "http://hl7.org/fhir/OperationDefinition/Patient-verlegen"^^xsd:anyURI ;
-     fhir:link <http://hl7.org/fhir/OperationDefinition/Patient-verlegen>
-  ] ; # 
   fhir:resource ( [ fhir:v "Encounter"] ) ; # 
   fhir:system [ fhir:v "false"^^xsd:boolean] ; # 
   fhir:type [ fhir:v "true"^^xsd:boolean] ; # 
@@ -90,7 +86,10 @@
      fhir:type [ fhir:v "code" ] ;
      fhir:binding [
        fhir:strength [ fhir:v "required" ] ;
-       fhir:valueSet [ fhir:v "moped-abgangsart-valueset"^^xsd:anyURI ]
+       fhir:valueSet [
+         fhir:v "http://example.org/ValueSet/moped-abgangsart-valueset"^^xsd:anyURI ;
+         fhir:link <http://example.org/ValueSet/moped-abgangsart-valueset>
+       ]
      ]
   ] [
      fhir:name [ fhir:v "return" ] ;
