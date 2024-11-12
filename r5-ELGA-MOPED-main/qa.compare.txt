@@ -1,7 +1,7 @@
 MOPED : Validation Results
 =========================================
 
-err = 84, warn = 682, info = 27
+err = 78, warn = 682, info = 27
 $--
 Generated $--. FHIR version $-- for fhir.example#$-- (canonical = http://example.org)
  Build Errors : 1024 / 47 / 0
@@ -16,13 +16,13 @@ Generated $--. FHIR version $-- for fhir.example#$-- (canonical = http://example
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/CoverageEligibilityRequest-Test2MOPEDCoverageEligibilityRequest1 : 1 / 0 / 2
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/CoverageEligibilityResponse-Test1MOPEDCoverageEligibilityResponse1 : 0 / 1 / 4
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/CoverageEligibilityResponse-Test2MOPEDCoverageEligibilityResponse1 : 0 / 2 / 3
- /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Encounter-Test1MOPEDEncounter : 2 / 9 / 2
- /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Encounter-Test1MOPEDEncounterBasis : 1 / 10 / 1
- /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Encounter-Test1MOPEDEncounterBund : 1 / 8 / 1
- /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Encounter-Test1MOPEDEncounterLGF : 1 / 8 / 1
- /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Encounter-Test1MOPEDEncounterSV : 1 / 3 / 1
+ /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Encounter-Test1MOPEDEncounter : 1 / 9 / 2
+ /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Encounter-Test1MOPEDEncounterBasis : 0 / 10 / 1
+ /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Encounter-Test1MOPEDEncounterBund : 0 / 8 / 1
+ /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Encounter-Test1MOPEDEncounterLGF : 0 / 8 / 1
+ /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Encounter-Test1MOPEDEncounterSV : 0 / 3 / 1
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Encounter-Test1TransferEncounter1 : 2 / 0 / 1
- /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Encounter-Test2MOPEDEncounter1 : 5 / 13 / 2
+ /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Encounter-Test2MOPEDEncounter1 : 4 / 13 / 2
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Encounter-Test2TransferEncounter1 : 3 / 0 / 1
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Encounter-Test2TransferEncounter2 : 3 / 2 / 1
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Encounter-Test2TransferEncounter3 : 3 / 0 / 1
@@ -1313,9 +1313,8 @@ WARNING: Encounter/Test1MOPEDEncounter: Encounter.class[1]: Unable to check whet
 WARNING: Encounter/Test1MOPEDEncounter: Encounter.reason[0].value[0].concept.coding[0]: Coding has no system. A code with no system has no defined meaning, and it cannot be validated. A system should be provided
 WARNING: Encounter/Test1MOPEDEncounter: Encounter.diagnosis[0].use[0]: ValueSet 'https://termgit.elga.gv.at/ValueSet-lkf-diagnose-typ.html' not found
 WARNING: Encounter/Test1MOPEDEncounter: Encounter.diagnosis[0].use[0].coding[0]: A definition for CodeSystem 'https://termgit.elga.gv.at/ValueSet/lkf-diagnose-typ' could not be found, so the code cannot be validated
-ERROR: Encounter/Test1MOPEDEncounter: Encounter.admission: The extension http://example.org/StructureDefinition/moped-ext-zugangsart is not allowed to be used at this point (allowed = e:http://example.org/StructureDefinition/MOPEDEncounter#Encounter; this element is [BackboneElement, Encounter.admission])
-ERROR: Encounter/Test1MOPEDEncounter: Encounter.admission.extension[0].value.ofType(Coding): The code provided (http://tbd.at/moped-ext-diagnose-art#A) was not found in the value set 'Zugangsart des Patienten' (http://example.org/ValueSet/moped-zugangsart-valueset|0.1.0), and a code from this value set is required: A definition for CodeSystem 'http://tbd.at/moped-ext-diagnose-art' could not be found, so the code cannot be validated
-INFORMATION: Encounter/Test1MOPEDEncounter: Encounter.admission.extension[0].value.ofType(Coding): A definition for CodeSystem 'http://tbd.at/moped-ext-diagnose-art' could not be found, so the code cannot be validated
+ERROR: Encounter/Test1MOPEDEncounter: Encounter.admission.extension[0].value.ofType(Coding): The code provided (http://tbd.at/moped-ext-zugangsart#A) was not found in the value set 'Zugangsart des Patienten' (http://example.org/ValueSet/moped-zugangsart-valueset|0.1.0), and a code from this value set is required: A definition for CodeSystem 'http://tbd.at/moped-ext-zugangsart' could not be found, so the code cannot be validated
+INFORMATION: Encounter/Test1MOPEDEncounter: Encounter.admission.extension[0].value.ofType(Coding): A definition for CodeSystem 'http://tbd.at/moped-ext-zugangsart' could not be found, so the code cannot be validated
 == fsh-generated/resources/Encounter-Test1MOPEDEncounterBasis.json ==
 WARNING: Encounter/Test1MOPEDEncounterBasis: Encounter.identifier[0].type: ValueSet 'https://termgit.elga.gv.at/ValueSet/hl7-at-patientidentifier' not found
 WARNING: Encounter/Test1MOPEDEncounterBasis: Encounter.identifier[1].type: ValueSet 'https://termgit.elga.gv.at/ValueSet/hl7-at-patientidentifier' not found
@@ -1326,7 +1325,6 @@ WARNING: Encounter/Test1MOPEDEncounterBasis: Encounter.class[1]: Unable to check
 WARNING: Encounter/Test1MOPEDEncounterBasis: Encounter.reason[0].value[0].concept.coding[0]: Coding has no system. A code with no system has no defined meaning, and it cannot be validated. A system should be provided
 WARNING: Encounter/Test1MOPEDEncounterBasis: Encounter.diagnosis[0].use[0]: ValueSet 'https://termgit.elga.gv.at/ValueSet-lkf-diagnose-typ.html' not found
 WARNING: Encounter/Test1MOPEDEncounterBasis: Encounter.diagnosis[0].use[0].coding[0]: A definition for CodeSystem 'https://termgit.elga.gv.at/CodeSystem/lkf-diagnose-typ' could not be found, so the code cannot be validated
-ERROR: Encounter/Test1MOPEDEncounterBasis: Encounter.admission: The extension http://example.org/StructureDefinition/moped-ext-zugangsart is not allowed to be used at this point (allowed = e:http://example.org/StructureDefinition/MOPEDEncounter#Encounter; this element is [BackboneElement, Encounter.admission])
 WARNING: Encounter/Test1MOPEDEncounterBasis: Encounter.admission.extension[0].value.ofType(Coding): A code with no system has no defined meaning, and it cannot be validated. A system should be provided
 == fsh-generated/resources/Encounter-Test1MOPEDEncounterBund.json ==
 WARNING: Encounter/Test1MOPEDEncounterBund: Encounter.identifier[0].type: ValueSet 'https://termgit.elga.gv.at/ValueSet/hl7-at-patientidentifier' not found
@@ -1336,7 +1334,6 @@ WARNING: Encounter/Test1MOPEDEncounterBund: Encounter.class[1].coding[0]: A defi
 WARNING: Encounter/Test1MOPEDEncounterBund: Encounter.class[1]: Unable to check whether the code is in the value set 'http://example.org/ValueSet/moped-aufnahmeart-valueset|0.1.0' because the code system http://tbd.at/moped-ext-aufnahmeart was not found
 WARNING: Encounter/Test1MOPEDEncounterBund: Encounter.diagnosis[0].use[0]: ValueSet 'https://termgit.elga.gv.at/ValueSet-lkf-diagnose-typ.html' not found
 WARNING: Encounter/Test1MOPEDEncounterBund: Encounter.diagnosis[0].use[0].coding[0]: A definition for CodeSystem 'https://termgit.elga.gv.at/CodeSystem/lkf-diagnose-typ' could not be found, so the code cannot be validated
-ERROR: Encounter/Test1MOPEDEncounterBund: Encounter.admission: The extension http://example.org/StructureDefinition/moped-ext-zugangsart is not allowed to be used at this point (allowed = e:http://example.org/StructureDefinition/MOPEDEncounter#Encounter; this element is [BackboneElement, Encounter.admission])
 WARNING: Encounter/Test1MOPEDEncounterBund: Encounter.admission.extension[0].value.ofType(Coding): A code with no system has no defined meaning, and it cannot be validated. A system should be provided
 == fsh-generated/resources/Encounter-Test1MOPEDEncounterLGF.json ==
 WARNING: Encounter/Test1MOPEDEncounterLGF: Encounter.identifier[0].type: ValueSet 'https://termgit.elga.gv.at/ValueSet/hl7-at-patientidentifier' not found
@@ -1346,12 +1343,10 @@ WARNING: Encounter/Test1MOPEDEncounterLGF: Encounter.class[1].coding[0]: A defin
 WARNING: Encounter/Test1MOPEDEncounterLGF: Encounter.class[1]: Unable to check whether the code is in the value set 'http://example.org/ValueSet/moped-aufnahmeart-valueset|0.1.0' because the code system http://tbd.at/moped-ext-aufnahmeart was not found
 WARNING: Encounter/Test1MOPEDEncounterLGF: Encounter.diagnosis[0].use[0]: ValueSet 'https://termgit.elga.gv.at/ValueSet-lkf-diagnose-typ.html' not found
 WARNING: Encounter/Test1MOPEDEncounterLGF: Encounter.diagnosis[0].use[0].coding[0]: A definition for CodeSystem 'https://termgit.elga.gv.at/CodeSystem/lkf-diagnose-typ' could not be found, so the code cannot be validated
-ERROR: Encounter/Test1MOPEDEncounterLGF: Encounter.admission: The extension http://example.org/StructureDefinition/moped-ext-zugangsart is not allowed to be used at this point (allowed = e:http://example.org/StructureDefinition/MOPEDEncounter#Encounter; this element is [BackboneElement, Encounter.admission])
 WARNING: Encounter/Test1MOPEDEncounterLGF: Encounter.admission.extension[0].value.ofType(Coding): A code with no system has no defined meaning, and it cannot be validated. A system should be provided
 == fsh-generated/resources/Encounter-Test1MOPEDEncounterSV.json ==
 WARNING: Encounter/Test1MOPEDEncounterSV: Encounter.identifier[0].type: ValueSet 'https://termgit.elga.gv.at/ValueSet/hl7-at-patientidentifier' not found
 WARNING: Encounter/Test1MOPEDEncounterSV: Encounter.reason[0].value[0].concept.coding[0]: Coding has no system. A code with no system has no defined meaning, and it cannot be validated. A system should be provided
-ERROR: Encounter/Test1MOPEDEncounterSV: Encounter.admission: The extension http://example.org/StructureDefinition/moped-ext-zugangsart is not allowed to be used at this point (allowed = e:http://example.org/StructureDefinition/MOPEDEncounter#Encounter; this element is [BackboneElement, Encounter.admission])
 WARNING: Encounter/Test1MOPEDEncounterSV: Encounter.admission.extension[0].value.ofType(Coding): A code with no system has no defined meaning, and it cannot be validated. A system should be provided
 == fsh-generated/resources/Encounter-Test1TransferEncounter1.json ==
 ERROR: Encounter/Test1TransferEncounter1: Encounter.partOf: Unable to resolve resource with reference 'Encounter/Test1MOPEDEncounter1'
@@ -1371,9 +1366,8 @@ WARNING: Encounter/Test2MOPEDEncounter1: Encounter.diagnosis[0].use[0]: ValueSet
 WARNING: Encounter/Test2MOPEDEncounter1: Encounter.diagnosis[0].use[0].coding[0]: A definition for CodeSystem 'https://termgit.elga.gv.at/ValueSet/lkf-diagnose-typ' could not be found, so the code cannot be validated
 WARNING: Encounter/Test2MOPEDEncounter1: Encounter.diagnosis[1].use[0]: ValueSet 'https://termgit.elga.gv.at/ValueSet-lkf-diagnose-typ.html' not found
 WARNING: Encounter/Test2MOPEDEncounter1: Encounter.diagnosis[1].use[0].coding[0]: A definition for CodeSystem 'https://termgit.elga.gv.at/ValueSet/lkf-diagnose-typ' could not be found, so the code cannot be validated
-ERROR: Encounter/Test2MOPEDEncounter1: Encounter.admission: The extension http://example.org/StructureDefinition/moped-ext-zugangsart is not allowed to be used at this point (allowed = e:http://example.org/StructureDefinition/MOPEDEncounter#Encounter; this element is [BackboneElement, Encounter.admission])
-ERROR: Encounter/Test2MOPEDEncounter1: Encounter.admission.extension[0].value.ofType(Coding): The code provided (http://tbd.at/moped-ext-diagnose-art#A) was not found in the value set 'Zugangsart des Patienten' (http://example.org/ValueSet/moped-zugangsart-valueset|0.1.0), and a code from this value set is required: A definition for CodeSystem 'http://tbd.at/moped-ext-diagnose-art' could not be found, so the code cannot be validated
-INFORMATION: Encounter/Test2MOPEDEncounter1: Encounter.admission.extension[0].value.ofType(Coding): A definition for CodeSystem 'http://tbd.at/moped-ext-diagnose-art' could not be found, so the code cannot be validated
+ERROR: Encounter/Test2MOPEDEncounter1: Encounter.admission.extension[0].value.ofType(Coding): The code provided (http://tbd.at/moped-ext-zugangsart#A) was not found in the value set 'Zugangsart des Patienten' (http://example.org/ValueSet/moped-zugangsart-valueset|0.1.0), and a code from this value set is required: A definition for CodeSystem 'http://tbd.at/moped-ext-zugangsart' could not be found, so the code cannot be validated
+INFORMATION: Encounter/Test2MOPEDEncounter1: Encounter.admission.extension[0].value.ofType(Coding): A definition for CodeSystem 'http://tbd.at/moped-ext-zugangsart' could not be found, so the code cannot be validated
 WARNING: Encounter/Test2MOPEDEncounter1: Encounter.admission.dischargeDisposition.coding[0]: A definition for CodeSystem 'http://tbd.at/MOPED-encounter-entlassungsart' could not be found, so the code cannot be validated
 WARNING: Encounter/Test2MOPEDEncounter1: Encounter.admission.dischargeDisposition: Unable to check whether the code is in the value set 'http://example.org/ValueSet/moped-entlassungsart-valueset|0.1.0' because the code system http://tbd.at/MOPED-encounter-entlassungsart was not found
 == fsh-generated/resources/Encounter-Test2TransferEncounter1.json ==
@@ -2097,6 +2091,6 @@ WARNING: ValueSet/moped-ursache-valueset: ValueSet.compose.include[0]: Unknown S
 WARNING: ValueSet/moped-ursache-valueset: ValueSet: Published value sets SHOULD conform to the ShareableValueSet profile, which says that the element ValueSet.experimental is mandatory, but it is not present
 WARNING: ValueSet.where(id = 'moped-ursache-valueset'): Error from http://tx.fhir.org/r4: Unable to provide support for code system http://tbd.at/MOPED-encounter-ursache
 == fsh-generated/resources/ValueSet-moped-zugangsart-valueset.json ==
-WARNING: ValueSet/moped-zugangsart-valueset: ValueSet.compose.include[0]: Unknown System 'http://tbd.at/moped-ext-diagnose-art' specified, so Concepts and Filters can't be checked (Details: A definition for CodeSystem 'http://tbd.at/moped-ext-diagnose-art' could not be found, so the code cannot be validated)
+WARNING: ValueSet/moped-zugangsart-valueset: ValueSet.compose.include[0]: Unknown System 'http://tbd.at/moped-ext-zugangsart' specified, so Concepts and Filters can't be checked (Details: A definition for CodeSystem 'http://tbd.at/moped-ext-zugangsart' could not be found, so the code cannot be validated)
 WARNING: ValueSet/moped-zugangsart-valueset: ValueSet: Published value sets SHOULD conform to the ShareableValueSet profile, which says that the element ValueSet.experimental is mandatory, but it is not present
-WARNING: ValueSet.where(id = 'moped-zugangsart-valueset'): Error from http://tx.fhir.org/r4: Unable to provide support for code system http://tbd.at/moped-ext-diagnose-art
+WARNING: ValueSet.where(id = 'moped-zugangsart-valueset'): Error from http://tx.fhir.org/r4: Unable to provide support for code system http://tbd.at/moped-ext-zugangsart
