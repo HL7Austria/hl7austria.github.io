@@ -235,8 +235,9 @@
   <li>Suche des MOPEDEncounter: Der MOPEDEncounter mit der jeweiligen <em>aufnahmezahl</em> lt. Operation-Parameter wird gesucht</li>
   <li>Suche aller MOPEDProcedures und MOPEDConditions, die auf den Encounter aus Schritt 1 referenzieren</li>
   <li>Suche aller MOPEDTransferEncounter die <em>partOf</em> den MOPEDEncounter aus Schritt 1 referenzieren</li>
-  <li>Der Claim wird lt. Regeln (siehe unten) validiert und eingespielt</li>
-  <li>Falls Schritt 4 erfolgreich war, wird der Encounter.account.workflowStatus (Encounter aus Schritt 1) wird auf
+  <li>Der Claim wird lt. Regeln (siehe unten) validiert</li>
+  <li>Der Claim wird um alle in Schritt 3 gefundenen MOPEDTransferEncounter erweitert und am Server eingespielt</li>
+  <li>Falls Schritt 5 erfolgreich war, wird der Encounter.account.workflowStatus (Encounter aus Schritt 1) auf
     <ul>
       <li><code class="language-plaintext highlighter-rouge">Vorläufige Meldung</code> gesetzt, falls der <code class="language-plaintext highlighter-rouge">abschliessen</code>-Parameter <code class="language-plaintext highlighter-rouge">false</code> ist</li>
       <li><code class="language-plaintext highlighter-rouge">Endgültige Meldung</code> gesetzt, falls der <code class="language-plaintext highlighter-rouge">abschliessen</code>-Parameter <code class="language-plaintext highlighter-rouge">true</code> ist</li>
@@ -249,7 +250,6 @@
 
 <ul>
   <li>Alle Procedures und Conditions aus Schritt 2 müssen im Claim vorkommen (referenziert unter <code class="language-plaintext highlighter-rouge">Claim.diagnosis</code> oder <code class="language-plaintext highlighter-rouge">Claim.procedure</code>)</li>
-  <li>Alle TransferEncounter aus Schritt 3 müssen in <em>Claim.encounter</em> vorkommen</li>
   <li>Claim.encounter.identifier des Slice <em>MopedEncounter</em> muss der Aufnahmezahl lt. Operation-Parameter entsprechen</li>
   <li>Claim.status soll <code class="language-plaintext highlighter-rouge">draft</code> sein, falls der <code class="language-plaintext highlighter-rouge">abschließen</code>-Parameter = <code class="language-plaintext highlighter-rouge">false</code> ist.</li>
   <li>Claim.status soll <code class="language-plaintext highlighter-rouge">active</code> sein, falls der <code class="language-plaintext highlighter-rouge">abschließen</code>-Parameter = <code class="language-plaintext highlighter-rouge">true</code> ist.</li>
@@ -314,8 +314,8 @@
 <div class="container">    <!-- container -->
 
 <div class="inner-wrapper">
-  <p><a name="l682">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Tue, Nov 12, 2024 07:20+0000">2024-11-12</span>
+  <p><a name="l679">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Tue, Nov 12, 2024 07:35+0000">2024-11-12</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
