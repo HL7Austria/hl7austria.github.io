@@ -10,7 +10,7 @@
   "name" : "MOPED",
   "title" : "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)",
   "status" : "draft",
-  "date" : "2024-11-12T06:16:09+00:00",
+  "date" : "2024-11-12T07:45:43+00:00",
   "publisher" : "Example Publisher",
   "contact" : [{
     "name" : "Example Publisher",
@@ -369,18 +369,6 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/ecard-anspruch-kostenanteilbefreit"
-      },
-      "name" : "Kostenanteilbefreit laut Versicherungsanspruch",
-      "description" : "Kostenanteilbefreiung für den Patienten, die direkt an den Anspruch geknüpft ist. Kostenanteile sind \nentweder laut Gesetz vorgegeben (z.B. Rezeptgebühr) oder sie sind in der Satzung des jeweiligen KV-Trägers \nverankert und werden meistens errechnet (z.B. für Heilbehelfe und Hilfsmittel).",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
         "reference" : "StructureDefinition/moped-ext-konstenmeldungARK"
       },
       "name" : "Kostenmeldung für (A/R/K)",
@@ -593,6 +581,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MOPEDEncounterKH"
+      },
+      "name" : "MOPED Encounter KH",
+      "description" : "MOPED Profil der Encounter Ressource für die Rolle: KH",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
       }],
       "reference" : {
@@ -776,6 +776,18 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/MOPEDCoverage"
+      },
+      "name" : "MOPEDCoverage",
+      "description" : "MOPED Profil der Coverage Ressource für Versicherungen.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/MOPEDCoverageEligibilityRequest"
       },
       "name" : "MOPEDCoverageEligibilityRequest",
@@ -917,18 +929,6 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ecard-anspruch-rezeptgebbefreit"
-      },
-      "name" : "Rezeptgebührenbefreit laut Versicherungsanspruch",
-      "description" : "Rezeptgebührenbefreiung für den Patienten, die direkt an den Anspruch  geknüpft ist. Der Patient ist von der \nEntrichtung der Rezeptgebühr befreit. Kostenanteile sind entweder laut Gesetz vorgegeben (z.B. Rezeptgebühr) oder sie sind in der Satzung des jeweiligen KV-Trägers \nverankert und werden meistens errechnet (z.B. für Heilbehelfe und Hilfsmittel).",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Questionnaire"
       }],
       "reference" : {
@@ -971,7 +971,7 @@
         "reference" : "StructureDefinition/moped-ext-sonderklasse"
       },
       "name" : "Sonderklasse",
-      "description" : "KLAS – Allgemeine Gebührenklasse/Sonderklasse",
+      "description" : "KLAS: Allgemeine Gebuehrenklasse bzw. Sonderklasse",
       "isExample" : false
     },
     {
@@ -1013,18 +1013,6 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/SVCCoverage"
-      },
-      "name" : "SVCCoverage",
-      "description" : "SVC Profil der Coverage Ressource für Versicherungen. Basierend auf dem Profil \"ecardAnspruch\": https://www.chipkarte.at/de/vdas-on-fhir/site/StructureDefinition-ecard-anspruch-profile.html",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
@@ -1061,6 +1049,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Coverage"
+      }],
+      "reference" : {
+        "reference" : "Coverage/Test1MOPEDCoverage"
+      },
+      "name" : "Test1MOPEDCoverage",
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDCoverage"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CoverageEligibilityRequest"
       }],
       "reference" : {
@@ -1093,6 +1093,54 @@
       "name" : "Test1MOPEDEncounter",
       "isExample" : true,
       "profile" : ["http://example.org/StructureDefinition/MOPEDEncounter"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      }],
+      "reference" : {
+        "reference" : "Encounter/Test1MOPEDEncounterBasis"
+      },
+      "name" : "Test1MOPEDEncounterBasis",
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDEncounter"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      }],
+      "reference" : {
+        "reference" : "Encounter/Test1MOPEDEncounterBund"
+      },
+      "name" : "Test1MOPEDEncounterBund",
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDEncounterBund"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      }],
+      "reference" : {
+        "reference" : "Encounter/Test1MOPEDEncounterLGF"
+      },
+      "name" : "Test1MOPEDEncounterLGF",
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDEncounterLGF"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      }],
+      "reference" : {
+        "reference" : "Encounter/Test1MOPEDEncounterSV"
+      },
+      "name" : "Test1MOPEDEncounterSV",
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDEncounterSV"]
     },
     {
       "extension" : [{
@@ -1154,14 +1202,49 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Coverage"
+        "valueString" : "Patient"
       }],
       "reference" : {
-        "reference" : "Coverage/Test1SVCCoverage"
+        "reference" : "Patient/Test1PatientBund"
       },
-      "name" : "Test1SVCCoverage",
+      "name" : "Test1PatientBund",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/SVCCoverage"]
+      "profile" : ["http://example.org/StructureDefinition/MOPEDPatientBund"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/Test1PatientLGF"
+      },
+      "name" : "Test1PatientLGF",
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDPatientLGF"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/Test1PatientOhneMaskierung"
+      },
+      "name" : "Test1PatientOhneMaskierung",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/Test1PatientSV"
+      },
+      "name" : "Test1PatientSV",
+      "isExample" : true,
+      "profile" : ["http://example.org/StructureDefinition/MOPEDPatientSV"]
     },
     {
       "extension" : [{
@@ -1357,11 +1440,11 @@
         "valueString" : "Coverage"
       }],
       "reference" : {
-        "reference" : "Coverage/Test2SVCCoverage"
+        "reference" : "Coverage/Test2MOPEDCoverage"
       },
       "name" : "Test2SVCCoverage",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/SVCCoverage"]
+      "profile" : ["http://example.org/StructureDefinition/MOPEDCoverage"]
     },
     {
       "extension" : [{
@@ -1481,18 +1564,6 @@
       },
       "name" : "VAEStatus",
       "description" : "\"VAEST - Status der Versichertenanspruchserklärung\"",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/moped-ext-vdasid"
-      },
-      "name" : "VDAS-ID - VersichertenDatenAbfrageService",
-      "description" : "Es handelt sich um eine ID, welche bei der VDAS-Abfrage durch die Krankenanstalt vom e-card System vergeben wird und von der Krankenanstalt in der Aufnahme-/Ereignisanzeige mitgeliefert werden kann. Dadurch kann das Abfrageergebnis eindeutig nachvollzogen werden.\nDas Ergebnis der VDAS-Abfrage ist im ambulanten Bereich für den Krankenversicherungsträger verbindlich. Eine Ablehnung aus versicherungsrechtlichen Gründen ist nicht möglich, sofern die Ereignisanzeige jenem Träger aus der VDAS-Abfrage (inkl. VDAS-ID) übermittelt wurde.\nUm eine zwischenstaatliche Verrechnung zu ermöglichen ist bei zwischenstaatlichen Fällen eine Ablehnung zulässig.",
       "isExample" : false
     },
     {

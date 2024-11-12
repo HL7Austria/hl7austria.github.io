@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "MOPED"] ; # 
   fhir:title [ fhir:v "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-11-12T06:16:09+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-11-12T07:45:43+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Example Publisher"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Example Publisher" ] ;
@@ -383,18 +383,6 @@
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://example.org/StructureDefinition/ecard-anspruch-kostenanteilbefreit> ;
-         fhir:reference [ fhir:v "StructureDefinition/ecard-anspruch-kostenanteilbefreit" ]
-       ] ;
-       fhir:name [ fhir:v "Kostenanteilbefreit laut Versicherungsanspruch" ] ;
-       fhir:description [ fhir:v "Kostenanteilbefreiung für den Patienten, die direkt an den Anspruch geknüpft ist. Kostenanteile sind \nentweder laut Gesetz vorgegeben (z.B. Rezeptgebühr) oder sie sind in der Satzung des jeweiligen KV-Trägers \nverankert und werden meistens errechnet (z.B. für Heilbehelfe und Hilfsmittel)." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-konstenmeldungARK> ;
          fhir:reference [ fhir:v "StructureDefinition/moped-ext-konstenmeldungARK" ]
        ] ;
@@ -607,6 +595,18 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/MOPEDEncounterKH> ;
+         fhir:reference [ fhir:v "StructureDefinition/MOPEDEncounterKH" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED Encounter KH" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Encounter Ressource für die Rolle: KH" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "OperationDefinition" ]
        ] ) ;
        fhir:reference [
@@ -790,6 +790,18 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/MOPEDCoverage> ;
+         fhir:reference [ fhir:v "StructureDefinition/MOPEDCoverage" ]
+       ] ;
+       fhir:name [ fhir:v "MOPEDCoverage" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Coverage Ressource für Versicherungen." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://example.org/StructureDefinition/MOPEDCoverageEligibilityRequest> ;
          fhir:reference [ fhir:v "StructureDefinition/MOPEDCoverageEligibilityRequest" ]
        ] ;
@@ -931,18 +943,6 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://example.org/StructureDefinition/ecard-anspruch-rezeptgebbefreit> ;
-         fhir:reference [ fhir:v "StructureDefinition/ecard-anspruch-rezeptgebbefreit" ]
-       ] ;
-       fhir:name [ fhir:v "Rezeptgebührenbefreit laut Versicherungsanspruch" ] ;
-       fhir:description [ fhir:v "Rezeptgebührenbefreiung für den Patienten, die direkt an den Anspruch  geknüpft ist. Der Patient ist von der \nEntrichtung der Rezeptgebühr befreit. Kostenanteile sind entweder laut Gesetz vorgegeben (z.B. Rezeptgebühr) oder sie sind in der Satzung des jeweiligen KV-Trägers \nverankert und werden meistens errechnet (z.B. für Heilbehelfe und Hilfsmittel)." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "Questionnaire" ]
        ] ) ;
        fhir:reference [
@@ -986,7 +986,7 @@
          fhir:reference [ fhir:v "StructureDefinition/moped-ext-sonderklasse" ]
        ] ;
        fhir:name [ fhir:v "Sonderklasse" ] ;
-       fhir:description [ fhir:v "KLAS – Allgemeine Gebührenklasse/Sonderklasse" ] ;
+       fhir:description [ fhir:v "KLAS: Allgemeine Gebuehrenklasse bzw. Sonderklasse" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1023,18 +1023,6 @@
        ] ;
        fhir:name [ fhir:v "Status der Versichertenanspruchserklärung" ] ;
        fhir:description [ fhir:v "Status der Versichertenanspruchserklärung" ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://example.org/StructureDefinition/SVCCoverage> ;
-         fhir:reference [ fhir:v "StructureDefinition/SVCCoverage" ]
-       ] ;
-       fhir:name [ fhir:v "SVCCoverage" ] ;
-       fhir:description [ fhir:v "SVC Profil der Coverage Ressource für Versicherungen. Basierend auf dem Profil \"ecardAnspruch\": https://www.chipkarte.at/de/vdas-on-fhir/site/StructureDefinition-ecard-anspruch-profile.html" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1081,6 +1069,21 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Coverage" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/Coverage/Test1MOPEDCoverage> ;
+         fhir:reference [ fhir:v "Coverage/Test1MOPEDCoverage" ]
+       ] ;
+       fhir:name [ fhir:v "Test1MOPEDCoverage" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://example.org/StructureDefinition/MOPEDCoverage"^^xsd:anyURI ;
+         fhir:link <http://example.org/StructureDefinition/MOPEDCoverage>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "CoverageEligibilityRequest" ]
        ] ) ;
        fhir:reference [
@@ -1122,6 +1125,66 @@
        fhir:profile ( [
          fhir:v "http://example.org/StructureDefinition/MOPEDEncounter"^^xsd:anyURI ;
          fhir:link <http://example.org/StructureDefinition/MOPEDEncounter>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Encounter" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/Encounter/Test1MOPEDEncounterBasis> ;
+         fhir:reference [ fhir:v "Encounter/Test1MOPEDEncounterBasis" ]
+       ] ;
+       fhir:name [ fhir:v "Test1MOPEDEncounterBasis" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://example.org/StructureDefinition/MOPEDEncounter"^^xsd:anyURI ;
+         fhir:link <http://example.org/StructureDefinition/MOPEDEncounter>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Encounter" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/Encounter/Test1MOPEDEncounterBund> ;
+         fhir:reference [ fhir:v "Encounter/Test1MOPEDEncounterBund" ]
+       ] ;
+       fhir:name [ fhir:v "Test1MOPEDEncounterBund" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://example.org/StructureDefinition/MOPEDEncounterBund"^^xsd:anyURI ;
+         fhir:link <http://example.org/StructureDefinition/MOPEDEncounterBund>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Encounter" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/Encounter/Test1MOPEDEncounterLGF> ;
+         fhir:reference [ fhir:v "Encounter/Test1MOPEDEncounterLGF" ]
+       ] ;
+       fhir:name [ fhir:v "Test1MOPEDEncounterLGF" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://example.org/StructureDefinition/MOPEDEncounterLGF"^^xsd:anyURI ;
+         fhir:link <http://example.org/StructureDefinition/MOPEDEncounterLGF>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Encounter" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/Encounter/Test1MOPEDEncounterSV> ;
+         fhir:reference [ fhir:v "Encounter/Test1MOPEDEncounterSV" ]
+       ] ;
+       fhir:name [ fhir:v "Test1MOPEDEncounterSV" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://example.org/StructureDefinition/MOPEDEncounterSV"^^xsd:anyURI ;
+         fhir:link <http://example.org/StructureDefinition/MOPEDEncounterSV>
        ] )
      ] [
        fhir:extension ( [
@@ -1186,17 +1249,58 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Coverage" ]
+         fhir:value [ fhir:v "Patient" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://example.org/Coverage/Test1SVCCoverage> ;
-         fhir:reference [ fhir:v "Coverage/Test1SVCCoverage" ]
+         fhir:link <http://example.org/Patient/Test1PatientBund> ;
+         fhir:reference [ fhir:v "Patient/Test1PatientBund" ]
        ] ;
-       fhir:name [ fhir:v "Test1SVCCoverage" ] ;
+       fhir:name [ fhir:v "Test1PatientBund" ] ;
        fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
        fhir:profile ( [
-         fhir:v "http://example.org/StructureDefinition/SVCCoverage"^^xsd:anyURI ;
-         fhir:link <http://example.org/StructureDefinition/SVCCoverage>
+         fhir:v "http://example.org/StructureDefinition/MOPEDPatientBund"^^xsd:anyURI ;
+         fhir:link <http://example.org/StructureDefinition/MOPEDPatientBund>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Patient" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/Patient/Test1PatientLGF> ;
+         fhir:reference [ fhir:v "Patient/Test1PatientLGF" ]
+       ] ;
+       fhir:name [ fhir:v "Test1PatientLGF" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://example.org/StructureDefinition/MOPEDPatientLGF"^^xsd:anyURI ;
+         fhir:link <http://example.org/StructureDefinition/MOPEDPatientLGF>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Patient" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/Patient/Test1PatientOhneMaskierung> ;
+         fhir:reference [ fhir:v "Patient/Test1PatientOhneMaskierung" ]
+       ] ;
+       fhir:name [ fhir:v "Test1PatientOhneMaskierung" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Patient" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/Patient/Test1PatientSV> ;
+         fhir:reference [ fhir:v "Patient/Test1PatientSV" ]
+       ] ;
+       fhir:name [ fhir:v "Test1PatientSV" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "http://example.org/StructureDefinition/MOPEDPatientSV"^^xsd:anyURI ;
+         fhir:link <http://example.org/StructureDefinition/MOPEDPatientSV>
        ] )
      ] [
        fhir:extension ( [
@@ -1428,14 +1532,14 @@
          fhir:value [ fhir:v "Coverage" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://example.org/Coverage/Test2SVCCoverage> ;
-         fhir:reference [ fhir:v "Coverage/Test2SVCCoverage" ]
+         fhir:link <http://example.org/Coverage/Test2MOPEDCoverage> ;
+         fhir:reference [ fhir:v "Coverage/Test2MOPEDCoverage" ]
        ] ;
        fhir:name [ fhir:v "Test2SVCCoverage" ] ;
        fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
        fhir:profile ( [
-         fhir:v "http://example.org/StructureDefinition/SVCCoverage"^^xsd:anyURI ;
-         fhir:link <http://example.org/StructureDefinition/SVCCoverage>
+         fhir:v "http://example.org/StructureDefinition/MOPEDCoverage"^^xsd:anyURI ;
+         fhir:link <http://example.org/StructureDefinition/MOPEDCoverage>
        ] )
      ] [
        fhir:extension ( [
@@ -1571,18 +1675,6 @@
        ] ;
        fhir:name [ fhir:v "VAEStatus" ] ;
        fhir:description [ fhir:v "\"VAEST - Status der Versichertenanspruchserklärung\"" ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://example.org/StructureDefinition/moped-ext-vdasid> ;
-         fhir:reference [ fhir:v "StructureDefinition/moped-ext-vdasid" ]
-       ] ;
-       fhir:name [ fhir:v "VDAS-ID - VersichertenDatenAbfrageService" ] ;
-       fhir:description [ fhir:v "Es handelt sich um eine ID, welche bei der VDAS-Abfrage durch die Krankenanstalt vom e-card System vergeben wird und von der Krankenanstalt in der Aufnahme-/Ereignisanzeige mitgeliefert werden kann. Dadurch kann das Abfrageergebnis eindeutig nachvollzogen werden.\nDas Ergebnis der VDAS-Abfrage ist im ambulanten Bereich für den Krankenversicherungsträger verbindlich. Eine Ablehnung aus versicherungsrechtlichen Gründen ist nicht möglich, sofern die Ereignisanzeige jenem Träger aus der VDAS-Abfrage (inkl. VDAS-ID) übermittelt wurde.\nUm eine zwischenstaatliche Verrechnung zu ermöglichen ist bei zwischenstaatlichen Fällen eine Ablehnung zulässig." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
