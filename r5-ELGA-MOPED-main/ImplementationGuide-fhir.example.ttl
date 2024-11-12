@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "MOPED"] ; # 
   fhir:title [ fhir:v "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-11-12T08:54:48+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-11-12T10:30:22+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Example Publisher"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Example Publisher" ] ;
@@ -662,7 +662,7 @@
          fhir:reference [ fhir:v "OperationDefinition/MOPED.Patient.Beurlauben" ]
        ] ;
        fhir:name [ fhir:v "MOPED Patient $beurlauben" ] ;
-       fhir:description [ fhir:v "Die Patient $beurlauben Operation wird aufgerufen, wenn ein(e) Patient*in in das Krankenhaus aufgenommen wurde und während eines laufenden Falles beurlaubt wird. Die Operation $verlegen wird aufgerufen mit dem Funktionscode '10000000' als Parameter, der Abgangsart '1' und ohne physische Anwesenheit. \n\nDie Operation wird vom Akteur Krankenhaus (KH) aufgerufen." ] ;
+       fhir:description [ fhir:v "Die Patient $beurlauben Operation wird aufgerufen, wenn ein(e) Patient*in in das Krankenhaus aufgenommen wurde und während eines laufenden Falles beurlaubt wird. Die Operation $verlegen wird aufgerufen mit dem Funktionscode '10000000' als Parameter, der Abgangsart '1' und ohne physische Anwesenheit. \n\nDie Operation wird vom Akteur Krankenhaus (KH) aufgerufen.\n\n**Annahmen an das BeS**\n* Es wurde vorab geprüft, ob das `system` des Parameters `aufnahmezahl` dem GDA entspricht, der die Operation aufruft. Somit ist sichergestellt, dass nur eigene Fälle beurlaubt werden können." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -994,10 +994,10 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://example.org/ValueSet/moped-Sonderklasse-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/moped-Sonderklasse-valueset" ]
+         fhir:link <http://example.org/ValueSet/moped-sonderklasse-valueset> ;
+         fhir:reference [ fhir:v "ValueSet/moped-sonderklasse-valueset" ]
        ] ;
-       fhir:name [ fhir:v "Sonderklasse" ] ;
+       fhir:name [ fhir:v "Sonderklasse ValueSet" ] ;
        fhir:description [ fhir:v "ValueSet für die Klasse (KaOrg)" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
@@ -1697,7 +1697,7 @@
          fhir:link <http://example.org/ValueSet/moped-VerdachtArbeitsSchuelerunfall-valueset> ;
          fhir:reference [ fhir:v "ValueSet/moped-VerdachtArbeitsSchuelerunfall-valueset" ]
        ] ;
-       fhir:name [ fhir:v "Verdacht auf Arbeits- oder Schuelerunfall" ] ;
+       fhir:name [ fhir:v "Verdacht auf Arbeits- oder Schuelerunfall ValueSet" ] ;
        fhir:description [ fhir:v "ValueSet für den Verdacht auf einen Arbeits- oder Schuelerunfall" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [

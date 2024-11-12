@@ -18,7 +18,7 @@
   fhir:title [ fhir:v "MOPED CoverageEligibilityResponse $beantworten (POC)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
   fhir:kind [ fhir:v "operation"] ; # 
-  fhir:date [ fhir:v "2024-11-12T08:54:48+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-11-12T10:30:22+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Example Publisher"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Example Publisher" ] ;
@@ -31,10 +31,6 @@
   fhir:purpose [ fhir:v "\n**Wer ruft diese Operation in welchem Zusammenhang auf?**\n\nDie Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die $beantworten Operation wird aufgerufen, wenn der CoverageEligibilityRequest eines Krankenhauses beantwortet wird.\n\n**Voraussetzungen für den Aufruf**\n\n* Account-Status: `Aufnahme Freigegeben`\n\n**Detaillierte Business-Logik**\n\n1. Die CoverageEligibilityResponse wird lt. Regeln (siehe unten) validiert und eingespielt\n2. Falls Schritt 1 erfolgreich war, wird die Ressource Account gesucht, die eine Referenz auf den CoverageEligibilityResponse.request beihält (CoverageEligibilityResponse lt. Operation-Parameter) und auf `SV verarbeitet` gesetzt\n\n**Validierung / Fehlerbehandlung**\n\n* CoverageEligibilityResponse.patient muss gleich CoverageEligibilityResponse.request.patient sein\n\n**Weitere Hinweise**\n\n**Annahmen an das BeS**\n* Es wurde vorab geprüft, ob *CoverageEligibilityResponse.insurance* auch der SV entspricht, der die Operation aufruft. Somit ist sichergestellt, dass jede SV nur eigene CoverageEligibilityRequests beantworten kann.\n"] ; # 
   fhir:affectsState [ fhir:v "true"^^xsd:boolean] ; # 
   fhir:code [ fhir:v "beantworten"] ; # 
-  fhir:base [
-     fhir:v "http://hl7.org/fhir/OperationDefinition/CoverageEligibilityResponse-beantworten"^^xsd:anyURI ;
-     fhir:link <http://hl7.org/fhir/OperationDefinition/CoverageEligibilityResponse-beantworten>
-  ] ; # 
   fhir:resource ( [ fhir:v "CoverageEligibilityResponse"] ) ; # 
   fhir:system [ fhir:v "false"^^xsd:boolean] ; # 
   fhir:type [ fhir:v "true"^^xsd:boolean] ; # 

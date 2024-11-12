@@ -13,7 +13,7 @@
   <title value="MOPED CoverageEligibilityResponse $beantworten (POC)"/>
   <status value="draft"/>
   <kind value="operation"/>
-  <date value="2024-11-12T08:54:48+00:00"/>
+  <date value="2024-11-12T10:30:22+00:00"/>
   <publisher value="Example Publisher"/>
   <contact>
     <name value="Example Publisher"/>
@@ -26,7 +26,6 @@
   <purpose value="&#xA;**Wer ruft diese Operation in welchem Zusammenhang auf?**&#xA;&#xA;Die Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die $beantworten Operation wird aufgerufen, wenn der CoverageEligibilityRequest eines Krankenhauses beantwortet wird.&#xA;&#xA;**Voraussetzungen für den Aufruf**&#xA;&#xA;* Account-Status: `Aufnahme Freigegeben`&#xA;&#xA;**Detaillierte Business-Logik**&#xA;&#xA;1. Die CoverageEligibilityResponse wird lt. Regeln (siehe unten) validiert und eingespielt&#xA;2. Falls Schritt 1 erfolgreich war, wird die Ressource Account gesucht, die eine Referenz auf den CoverageEligibilityResponse.request beihält (CoverageEligibilityResponse lt. Operation-Parameter) und auf `SV verarbeitet` gesetzt&#xA;&#xA;**Validierung / Fehlerbehandlung**&#xA;&#xA;* CoverageEligibilityResponse.patient muss gleich CoverageEligibilityResponse.request.patient sein&#xA;&#xA;**Weitere Hinweise**&#xA;&#xA;**Annahmen an das BeS**&#xA;* Es wurde vorab geprüft, ob *CoverageEligibilityResponse.insurance* auch der SV entspricht, der die Operation aufruft. Somit ist sichergestellt, dass jede SV nur eigene CoverageEligibilityRequests beantworten kann.&#xA;"/>
   <affectsState value="true"/>
   <code value="beantworten"/>
-  <base value="http://hl7.org/fhir/OperationDefinition/CoverageEligibilityResponse-beantworten"/>
   <resource value="CoverageEligibilityResponse"/>
   <system value="false"/>
   <type value="true"/>

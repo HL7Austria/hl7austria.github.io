@@ -11,7 +11,7 @@
   "title" : "MOPED CoverageEligibilityResponse $beantworten (POC)",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2024-11-12T08:54:48+00:00",
+  "date" : "2024-11-12T10:30:22+00:00",
   "publisher" : "Example Publisher",
   "contact" : [{
     "name" : "Example Publisher",
@@ -24,7 +24,6 @@
   "purpose" : "\n**Wer ruft diese Operation in welchem Zusammenhang auf?**\n\nDie Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die $beantworten Operation wird aufgerufen, wenn der CoverageEligibilityRequest eines Krankenhauses beantwortet wird.\n\n**Voraussetzungen für den Aufruf**\n\n* Account-Status: `Aufnahme Freigegeben`\n\n**Detaillierte Business-Logik**\n\n1. Die CoverageEligibilityResponse wird lt. Regeln (siehe unten) validiert und eingespielt\n2. Falls Schritt 1 erfolgreich war, wird die Ressource Account gesucht, die eine Referenz auf den CoverageEligibilityResponse.request beihält (CoverageEligibilityResponse lt. Operation-Parameter) und auf `SV verarbeitet` gesetzt\n\n**Validierung / Fehlerbehandlung**\n\n* CoverageEligibilityResponse.patient muss gleich CoverageEligibilityResponse.request.patient sein\n\n**Weitere Hinweise**\n\n**Annahmen an das BeS**\n* Es wurde vorab geprüft, ob *CoverageEligibilityResponse.insurance* auch der SV entspricht, der die Operation aufruft. Somit ist sichergestellt, dass jede SV nur eigene CoverageEligibilityRequests beantworten kann.\n",
   "affectsState" : true,
   "code" : "beantworten",
-  "base" : "http://hl7.org/fhir/OperationDefinition/CoverageEligibilityResponse-beantworten",
   "resource" : ["CoverageEligibilityResponse"],
   "system" : false,
   "type" : true,

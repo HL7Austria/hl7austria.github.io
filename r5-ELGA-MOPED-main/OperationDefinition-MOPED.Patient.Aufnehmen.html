@@ -294,6 +294,11 @@
   <li>Hinweis 3: Im Parameter <em>falldaten</em> wird unter Anderem eine Coverage Ressource mitgegeben. Diese Ressource stammt in der Regel aus einer erfolgreichen VDAS-Abfrage. In Zukunft wird Moped auch andere Optionen unterstützen, wie die Verarbeitung von Daten von Selbstzahlern (wofür ein separates Coverage-Profil angelegt wird), oder die Verarbeitung von Fällen mit privater Krankenversicherung (auch hierfür wird ein separates Coverage-Profil angelegt). Im Ersten Schritt liegt der Fokus auf den Standard-Fall, der als Ausgangsbasis eine erfolgreich abgeschlossene VDAS-Abfrage voraussetzt.</li>
 </ul>
 
+<p><strong>Annahmen an das BeS</strong></p>
+<ul>
+  <li>Es wurde vorab geprüft, ob das <code class="language-plaintext highlighter-rouge">system</code> des Parameters <em>falldaten</em>.encounter.identifier dem GDA entspricht, der die Operation aufruft. Somit ist sichergestellt, dass nur eigene Fälle aufgenommen werden können.</li>
+</ul>
+
 </p>
 
     <!-- insert intro if present -->
@@ -310,7 +315,7 @@
 
   <div><p class="res-header-id"><b>Generated Narrative: OperationDefinition MOPED.Patient.Aufnehmen</b></p><a name="MOPED.Patient.Aufnehmen"> </a><a name="hcMOPED.Patient.Aufnehmen"> </a><a name="MOPED.Patient.Aufnehmen-en-US"> </a><p>URL: [base]/Encounter/$aufnehmen</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>falldaten</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="StructureDefinition-MOPEDAufnahmeBundle.html" title="http://example.org/StructureDefinition/MOPEDAufnahmeBundle">MOPED Aufnahme Bundle</a>)</td><td></td><td><div><p>Der <em>falldaten</em> Parameter beinhält die nötigen Elemente um die Details zum Fall zu beschreiben die bei Patientenaufnahme bekannt sind, inklusive Patient, Encounter und Coverage.</p>
 </div></td></tr><tr><td>IN</td><td>freigeben</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#boolean">boolean</a></td><td></td><td><div><p>Mit Hilfe des <em>freigeben</em> Parameters wird angegeben, ob es sich bei der Patienten-Aufnahme um vollständige Daten handelt und somit eine Validierung erfolgen soll (<em>freigeben</em> = <em>true</em>), oder ob lediglich unvollständige Daten zwischengespeichert werden (<em>freigeben</em> = <em>false</em>).</p>
-</div></td></tr><tr><td>IN</td><td>verdachtArbeitsSchuelerunfall</td><td></td><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="ValueSet-moped-VerdachtArbeitsSchuelerunfall-valueset.html">Verdacht auf Arbeits- oder Schuelerunfall</a> (Required)</td><td><div><p>Mit Hilfe des <em>verdachtArbeitsSchuelerunfall</em> Parameters wird festgehalten, ob es bei der Patienten-Aufnahme einen Verdacht auf einen Schüler- oder Arbeitsunfall gibt. Wird dieser Parameter mitgegeben, ist im Account das entsprechende Feld zu befüllen.</p>
+</div></td></tr><tr><td>IN</td><td>verdachtArbeitsSchuelerunfall</td><td></td><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="ValueSet-moped-VerdachtArbeitsSchuelerunfall-valueset.html">Verdacht auf Arbeits- oder Schuelerunfall ValueSet</a> (Required)</td><td><div><p>Mit Hilfe des <em>verdachtArbeitsSchuelerunfall</em> Parameters wird festgehalten, ob es bei der Patienten-Aufnahme einen Verdacht auf einen Schüler- oder Arbeitsunfall gibt. Wird dieser Parameter mitgegeben, ist im Account das entsprechende Feld zu befüllen.</p>
 </div></td></tr><tr><td>IN</td><td>verdachtFremdverschulden</td><td></td><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#boolean">boolean</a></td><td></td><td><div><p>Mit Hilfe des <em>verdachtFremdverschulden</em> Parameters wird festgehalten, ob es bei der Patienten-Aufnahme einen Verdacht auf Fremdverschulden gibt. Wird dieser Parameter mitgegeben, ist im Account das entsprechende Feld zu befüllen.</p>
 </div></td></tr><tr><td>IN</td><td>anwesenheitsart</td><td></td><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="ValueSet-moped-Anwesenheitsart-valueset.html">Anwesenheitsart</a> (Required)</td><td><div><p>Der <em>anwesenheitsart</em> Parameter definiert in welcher art der Pateint anwesend ist.</p>
 </div></td></tr><tr><td>IN</td><td>funktionscode</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#string">string</a></td><td></td><td><div><p>Der <em>funktionscode</em> Parameter definiert auf welchen Funktionscode die Neuaufnahme stattfindet.</p>
@@ -341,8 +346,8 @@
 <div class="container">    <!-- container -->
 
 <div class="inner-wrapper">
-  <p><a name="l863">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Tue, Nov 12, 2024 08:54+0000">2024-11-12</span>
+  <p><a name="l879">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Tue, Nov 12, 2024 10:30+0000">2024-11-12</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
