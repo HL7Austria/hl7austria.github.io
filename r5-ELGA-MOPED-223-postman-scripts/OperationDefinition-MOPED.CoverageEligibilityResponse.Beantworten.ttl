@@ -1,0 +1,59 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/OperationDefinition/MOPED.CoverageEligibilityResponse.Beantworten> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "MOPED.CoverageEligibilityResponse.Beantworten"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition MOPED.CoverageEligibilityResponse.Beantworten</b></p><a name=\"MOPED.CoverageEligibilityResponse.Beantworten\"> </a><a name=\"hcMOPED.CoverageEligibilityResponse.Beantworten\"> </a><a name=\"MOPED.CoverageEligibilityResponse.Beantworten-en-US\"> </a><p>URL: [base]/CoverageEligibilityResponse/$beantworten</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>coverageEligibilityResponse</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/coverageeligibilityresponse.html\">CoverageEligibilityResponse</a></td><td/><td><div><p>Der <em>coverageEligibilityResponse</em> Parameter beinhält sämtliche Details zur Antwort auf den CoverageEligibilityRequest.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/resource.html\">Resource</a> (<a href=\"http://hl7.org/fhir/R5/operationoutcome.html\" title=\"http://hl7.org/fhir/StructureDefinition/OperationOutcome\">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>\n</div></td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://example.org/OperationDefinition/MOPED.CoverageEligibilityResponse.Beantworten"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "MOPED_CoverageEligibilityResponse_Beantworten"] ; # 
+  fhir:title [ fhir:v "MOPED CoverageEligibilityResponse $beantworten (POC)"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2024-11-18T12:27:27+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Example Publisher"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Example Publisher" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://example.org/example-publisher" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Die $beantworten Operation wird aufgerufen, wenn eine Versichertenanspruchserklärung beantwortet wird."] ; # 
+  fhir:purpose [ fhir:v "\n**Wer ruft diese Operation in welchem Zusammenhang auf?**\n\nDie Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die $beantworten Operation wird aufgerufen, wenn der CoverageEligibilityRequest eines Krankenhauses beantwortet wird.\n\n**Voraussetzungen für den Aufruf**\n\n* Account-Status: `Aufnahme Freigegeben`\n\n**Detaillierte Business-Logik**\n\n1. Die CoverageEligibilityResponse wird lt. Regeln (siehe unten) validiert und eingespielt\n2. Falls Schritt 1 erfolgreich war, wird die Ressource Account gesucht, die eine Referenz auf den CoverageEligibilityResponse.request beihält (CoverageEligibilityResponse lt. Operation-Parameter) und auf `SV verarbeitet` gesetzt\n\n**Validierung / Fehlerbehandlung**\n\n* CoverageEligibilityResponse.patient muss gleich CoverageEligibilityResponse.request.patient sein\n\n**Weitere Hinweise**\n\n**Annahmen an das BeS**\n* Es wurde vorab geprüft, ob *CoverageEligibilityResponse.insurance* auch der SV entspricht, der die Operation aufruft. Somit ist sichergestellt, dass jede SV nur eigene CoverageEligibilityRequests beantworten kann.\n"] ; # 
+  fhir:affectsState [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:code [ fhir:v "beantworten"] ; # 
+  fhir:resource ( [ fhir:v "CoverageEligibilityResponse"] ) ; # 
+  fhir:system [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:type [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:instance [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "coverageEligibilityResponse" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Der *coverageEligibilityResponse* Parameter beinhält sämtliche Details zur Antwort auf den CoverageEligibilityRequest." ] ;
+     fhir:type [ fhir:v "CoverageEligibilityResponse" ]
+  ] [
+     fhir:name [ fhir:v "return" ] ;
+     fhir:use [ fhir:v "out" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Der *return* Parameter gibt Auskunft über den Erfolg der Operation." ] ;
+     fhir:type [ fhir:v "Resource" ] ;
+     fhir:targetProfile ( [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/OperationOutcome"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/OperationOutcome>
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
