@@ -1,14 +1,15 @@
 ELGAIntegrierteVersorgungDiabetesR4 : Validation Results
 =========================================
 
-err = 18, warn = 185, info = 65
+err = 18, warn = 191, info = 65
 IG Publisher Version: 1.8.3
-Generated Fri Dec 20 15:33:29 UTC 2024. FHIR version 4.0.1 for elga.iv.diab#0.1.0 (canonical = https://fhir.hl7.at/elga-iv-diabetes)
+Generated Fri Dec 20 15:40:50 UTC 2024. FHIR version 4.0.1 for elga.iv.diab#0.1.0 (canonical = https://fhir.hl7.at/elga-iv-diabetes)
  Build Errors : 77 / 8 / 0
  /home/runner/work/ELGA-IV-Diabetes-R4/ELGA-IV-Diabetes-R4/fsh-generated/resources/Bundle-2788423 : 14 / 109 / 253
  /home/runner/work/ELGA-IV-Diabetes-R4/ELGA-IV-Diabetes-R4/fsh-generated/resources/Bundle-IPS-1-no-problems-medication-allergies : 0 / 2 / 7
  /home/runner/work/ELGA-IV-Diabetes-R4/ELGA-IV-Diabetes-R4/fsh-generated/resources/Bundle-IPS-2-preventive-medical-checkup : 0 / 36 / 71
  /home/runner/work/ELGA-IV-Diabetes-R4/ELGA-IV-Diabetes-R4/fsh-generated/resources/ImplementationGuide-elga.iv.diab : 0 / 0 / 1
+ /home/runner/work/ELGA-IV-Diabetes-R4/ELGA-IV-Diabetes-R4/fsh-generated/resources/Patient-AnnaTestpatientin : 0 / 8 / 4
  /home/runner/work/ELGA-IV-Diabetes-R4/ELGA-IV-Diabetes-R4/fsh-generated/resources/StructureDefinition-AllergiesIntolerances-ips : 0 / 12 / 1
  /home/runner/work/ELGA-IV-Diabetes-R4/ELGA-IV-Diabetes-R4/fsh-generated/resources/StructureDefinition-Datamodel-diab : 0 / 127 / 1
  /home/runner/work/ELGA-IV-Diabetes-R4/ELGA-IV-Diabetes-R4/fsh-generated/resources/StructureDefinition-Datenarten-diab : 0 / 36 / 1
@@ -22,8 +23,6 @@ Generated Fri Dec 20 15:33:29 UTC 2024. FHIR version 4.0.1 for elga.iv.diab#0.1.
  /home/runner/work/ELGA-IV-Diabetes-R4/ELGA-IV-Diabetes-R4/fsh-generated/resources/StructureDefinition-SocialHistory-ips : 0 / 14 / 1
  /home/runner/work/ELGA-IV-Diabetes-R4/ELGA-IV-Diabetes-R4/fsh-generated/resources/StructureDefinition-Subject-ips : 0 / 28 / 1
  /home/runner/work/ELGA-IV-Diabetes-R4/ELGA-IV-Diabetes-R4/fsh-generated/resources/StructureDefinition-VitalSigns-ips : 0 / 12 / 1
- /home/runner/work/ELGA-IV-Diabetes-R4/ELGA-IV-Diabetes-R4/fsh-generated/resources/StructureDefinition-at-ips-allergyintolerance : 0 / 1 / 1
- /home/runner/work/ELGA-IV-Diabetes-R4/ELGA-IV-Diabetes-R4/fsh-generated/resources/StructureDefinition-at-ips-patient : 0 / 1 / 1
  /home/runner/work/ELGA-IV-Diabetes-R4/ELGA-IV-Diabetes-R4/fsh-generated/resources/StructureDefinition-at-iv-allergyintolerance : 0 / 1 / 1
  /home/runner/work/ELGA-IV-Diabetes-R4/ELGA-IV-Diabetes-R4/fsh-generated/resources/ValueSet-diagnose : 1 / 0 / 1
  /home/runner/work/ELGA-IV-Diabetes-R4/ELGA-IV-Diabetes-R4/fsh-generated/resources/ValueSet-fussdiagnose : 1 / 0 / 1
@@ -346,6 +345,15 @@ WARNING: Bundle/IPS-2-preventive-medical-checkup: Bundle.entry[57].resource: Bes
 WARNING: Bundle/IPS-2-preventive-medical-checkup: Bundle.entry[58].resource: Best Practice Recommendation: In general, all observations should have a performer
 WARNING: Bundle/IPS-2-preventive-medical-checkup: Bundle.meta.profile[0]: Profile reference 'https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-document' has not been checked because it could not be found, and the validator is set to not fetch unknown profiles
 == fsh-generated/resources/ImplementationGuide-elga.iv.diab.json ==
+== fsh-generated/resources/Patient-AnnaTestpatientin.json ==
+WARNING: Patient/AnnaTestpatientin: Patient.extension[0].extension[0].value.ofType(CodeableConcept).coding[0].system: A definition for CodeSystem 'https://termgit.elga.gv.at/CodeSystem/hl7-at-religionaustria' could not be found, so the code cannot be validated
+WARNING: Patient/AnnaTestpatientin: Patient.extension[0].extension[0].value.ofType(CodeableConcept): ValueSet 'https://termgit.elga.gv.at/ValueSet/elga-religiousaffiliation' not found
+WARNING: Patient/AnnaTestpatientin: Patient.identifier[0].type: None of the codings provided are in the value set 'IdentifierType' (http://hl7.org/fhir/ValueSet/identifier-type|4.0.1), and a coding should come from this value set unless it has no suitable code (note that the validator cannot judge what is suitable) (codes = http://terminology.hl7.org/CodeSystem/v2-0203#SS)
+WARNING: Patient/AnnaTestpatientin: Patient.identifier[0].type: ValueSet 'https://termgit.elga.gv.at/ValueSet/hl7-at-patientidentifier' not found
+WARNING: Patient/AnnaTestpatientin: Patient.identifier[1].type: None of the codings provided are in the value set 'IdentifierType' (http://hl7.org/fhir/ValueSet/identifier-type|4.0.1), and a coding should come from this value set unless it has no suitable code (note that the validator cannot judge what is suitable) (codes = http://terminology.hl7.org/CodeSystem/v2-0203#NI)
+WARNING: Patient/AnnaTestpatientin: Patient.identifier[1].type: ValueSet 'https://termgit.elga.gv.at/ValueSet/hl7-at-patientidentifier' not found
+WARNING: Patient/AnnaTestpatientin: Patient.identifier[2].type: None of the codings provided are in the value set 'IdentifierType' (http://hl7.org/fhir/ValueSet/identifier-type|4.0.1), and a coding should come from this value set unless it has no suitable code (note that the validator cannot judge what is suitable) (codes = http://terminology.hl7.org/CodeSystem/v2-0203#PI)
+WARNING: Patient/AnnaTestpatientin: Patient.identifier[2].type: ValueSet 'https://termgit.elga.gv.at/ValueSet/hl7-at-patientidentifier' not found
 == fsh-generated/resources/StructureDefinition-AllergiesIntolerances-ips.json ==
 WARNING: StructureDefinition/AllergiesIntolerances-ips: StructureDefinition.snapshot.element[2].type[0].code: The value provided ('https://fhir.hl7.at/elga-iv-diabetes/StructureDefinition/Subject-ips') was not found in the value set 'FHIRDefinedType' (http://hl7.org/fhir/ValueSet/defined-types|4.0.1), and a code should come from this value set unless it has no suitable code (note that the validator cannot judge what is suitable)  (error message = The System URI could not be determined for the code 'https://fhir.hl7.at/elga-iv-diabetes/StructureDefinition/Subject-ips' in the ValueSet 'http://hl7.org/fhir/ValueSet/defined-types|4.0.1'; The provided code '#https://fhir.hl7.at/elga-iv-diabetes/StructureDefinition/Subject-ips' was not found in the value set 'http://hl7.org/fhir/ValueSet/defined-types|4.0.1')
 WARNING: StructureDefinition/AllergiesIntolerances-ips: StructureDefinition.snapshot.element[3].type[0].code: The value provided ('https://fhir.hl7.at/elga-iv-diabetes/StructureDefinition/Subject-ips') was not found in the value set 'FHIRDefinedType' (http://hl7.org/fhir/ValueSet/defined-types|4.0.1), and a code should come from this value set unless it has no suitable code (note that the validator cannot judge what is suitable)  (error message = The System URI could not be determined for the code 'https://fhir.hl7.at/elga-iv-diabetes/StructureDefinition/Subject-ips' in the ValueSet 'http://hl7.org/fhir/ValueSet/defined-types|4.0.1'; The provided code '#https://fhir.hl7.at/elga-iv-diabetes/StructureDefinition/Subject-ips' was not found in the value set 'http://hl7.org/fhir/ValueSet/defined-types|4.0.1')
@@ -386,10 +394,6 @@ WARNING: StructureDefinition/Subject-ips: StructureDefinition.snapshot.element[1
 == fsh-generated/resources/StructureDefinition-VitalSigns-ips.json ==
 WARNING: StructureDefinition/VitalSigns-ips: StructureDefinition.snapshot.element[2].type[0].code: The value provided ('https://fhir.hl7.at/elga-iv-diabetes/StructureDefinition/Subject-ips') was not found in the value set 'FHIRDefinedType' (http://hl7.org/fhir/ValueSet/defined-types|4.0.1), and a code should come from this value set unless it has no suitable code (note that the validator cannot judge what is suitable)  (error message = The System URI could not be determined for the code 'https://fhir.hl7.at/elga-iv-diabetes/StructureDefinition/Subject-ips' in the ValueSet 'http://hl7.org/fhir/ValueSet/defined-types|4.0.1'; The provided code '#https://fhir.hl7.at/elga-iv-diabetes/StructureDefinition/Subject-ips' was not found in the value set 'http://hl7.org/fhir/ValueSet/defined-types|4.0.1')
 WARNING: StructureDefinition/VitalSigns-ips: StructureDefinition.differential.element[2].type[0].code: The value provided ('https://fhir.hl7.at/elga-iv-diabetes/StructureDefinition/Subject-ips') was not found in the value set 'FHIRDefinedType' (http://hl7.org/fhir/ValueSet/defined-types|4.0.1), and a code should come from this value set unless it has no suitable code (note that the validator cannot judge what is suitable)  (error message = The System URI could not be determined for the code 'https://fhir.hl7.at/elga-iv-diabetes/StructureDefinition/Subject-ips' in the ValueSet 'http://hl7.org/fhir/ValueSet/defined-types|4.0.1'; The provided code '#https://fhir.hl7.at/elga-iv-diabetes/StructureDefinition/Subject-ips' was not found in the value set 'http://hl7.org/fhir/ValueSet/defined-types|4.0.1')
-== fsh-generated/resources/StructureDefinition-at-ips-allergyintolerance.json ==
-WARNING: StructureDefinition.where(url = 'https://fhir.hl7.at/elga-iv-diabetes/StructureDefinition/at-ips-allergyintolerance'): The Implementation Guide contains no examples for this profile
-== fsh-generated/resources/StructureDefinition-at-ips-patient.json ==
-WARNING: StructureDefinition.where(url = 'https://fhir.hl7.at/elga-iv-diabetes/StructureDefinition/at-ips-patient'): The Implementation Guide contains no examples for this profile
 == fsh-generated/resources/StructureDefinition-at-iv-allergyintolerance.json ==
 WARNING: StructureDefinition.where(url = 'https://fhir.hl7.at/elga-iv-diabetes/StructureDefinition/at-iv-allergyintolerance'): The Implementation Guide contains no examples for this profile
 == fsh-generated/resources/ValueSet-diagnose.json ==
