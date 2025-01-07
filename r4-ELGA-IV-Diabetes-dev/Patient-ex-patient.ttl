@@ -1,0 +1,83 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga-iv-diab-r4/Patient/ex-patient> a fhir:Patient ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ex-patient"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-patient"^^xsd:anyURI ;
+       fhir:link <https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-patient>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient ex-patient</b></p><a name=\"ex-patient\"> </a><a name=\"hcex-patient\"> </a><a name=\"ex-patient-en-US\"> </a><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Andrea Testperson  Female, DoB: 1975-11-12 ( Social Security number: 0000121150)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Known Marital status of Patient\">Marital Status:</td><td colspan=\"3\"><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-MaritalStatus M}\">Married</span></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Other Id (see the one above)\">Other Id:</td><td colspan=\"3\">Patient internal identifier/0002</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\"><ul><li><a href=\"tel:+43.1411.40400\">+43.1411.40400</a></li><li><a href=\"tel:+43.669.1234567\">+43.669.1234567</a></li><li><a href=\"mailto:andrea@test.at\">andrea@test.at</a></li><li>Schwedenplatz 1 Wien 1010 AUT (home)</li></ul></td></tr></table></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "SS" ] ;
+         fhir:display [ fhir:v "Social Security number" ]
+       ] )
+     ] ;
+     fhir:system [ fhir:v "urn:oid:1.2.40.0.10.1.4.3.1"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "0000121150" ] ;
+     fhir:assigner [
+       fhir:display [ fhir:v "Dachverband der österreichischen Sozialversicherungsträger" ]
+     ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "PI" ] ;
+         fhir:display [ fhir:v "Patient internal identifier" ]
+       ] )
+     ] ;
+     fhir:system [ fhir:v "urn:oid:1.2.3.4.5"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "0002" ] ;
+     fhir:assigner [
+       fhir:display [ fhir:v "Ein GDA in Österreich" ]
+     ]
+  ] ) ; # 
+  fhir:name ( [
+     fhir:family [ fhir:v "Testperson" ] ;
+     fhir:given ( [ fhir:v "Andrea" ] ) ;
+     fhir:prefix ( [ fhir:v "Dr." ] )
+  ] ) ; # 
+  fhir:telecom ( [
+     fhir:system [ fhir:v "phone" ] ;
+     fhir:value [ fhir:v "+43.1411.40400" ] ;
+     fhir:use [ fhir:v "home" ]
+  ] [
+     fhir:system [ fhir:v "phone" ] ;
+     fhir:value [ fhir:v "+43.669.1234567" ] ;
+     fhir:use [ fhir:v "mobile" ]
+  ] [
+     fhir:system [ fhir:v "email" ] ;
+     fhir:value [ fhir:v "andrea@test.at" ]
+  ] ) ; # 
+  fhir:gender [ fhir:v "female"] ; # 
+  fhir:birthDate [ fhir:v "1975-11-12"^^xsd:date] ; # 
+  fhir:address ( [
+     fhir:use [ fhir:v "home" ] ;
+     fhir:line ( [ fhir:v "Schwedenplatz 1" ] ) ;
+     fhir:city [ fhir:v "Wien" ] ;
+     fhir:postalCode [ fhir:v "1010" ] ;
+     fhir:country [ fhir:v "AUT" ]
+  ] ) ; # 
+  fhir:maritalStatus [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "M" ] ;
+       fhir:display [ fhir:v "Married" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
