@@ -1,10 +1,10 @@
 MOPED : Validation Results
 =========================================
 
-err = 24, warn = 662, info = 25
-IG Publisher Version: 1.8.1
-Generated Fri Dec 13 08:42:25 UTC 2024. FHIR version 5.0.0 for fhir.example#0.1.0 (canonical = http://example.org)
- Build Errors : 0 / 47 / 0
+err = 24, warn = 663, info = 27
+IG Publisher Version: 1.8.6
+Generated Tue Jan 07 14:14:02 UTC 2025. FHIR version 5.0.0 for fhir.example#0.1.0 (canonical = http://example.org)
+ Build Errors : 0 / 48 / 0
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Account-Test1Account : 2 / 0 / 3
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Account-Test2Account : 2 / 0 / 3
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Condition-Test1Condition1 : 2 / 3 / 2
@@ -40,7 +40,7 @@ Generated Fri Dec 13 08:42:25 UTC 2024. FHIR version 5.0.0 for fhir.example#0.1.
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/OperationDefinition-MOPED.Patient.Entlassen : 0 / 0 / 1
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/OperationDefinition-MOPED.Patient.Verlegen : 0 / 0 / 1
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Organization-Test1OrganizationAbteilung1 : 0 / 0 / 3
- /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Organization-Test1OrganizationHerzJesuKrankenhaus : 0 / 0 / 1
+ /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Organization-Test1OrganizationHerzJesuKrankenhaus : 0 / 0 / 2
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Organization-Test1OrganizationInsurance1 : 0 / 0 / 1
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Organization-Test1OrganizationUeberweisendeOrganisation : 0 / 0 / 1
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Organization-Test2OrganizationAbteilung1 : 0 / 0 / 1
@@ -48,7 +48,7 @@ Generated Fri Dec 13 08:42:25 UTC 2024. FHIR version 5.0.0 for fhir.example#0.1.
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Organization-Test2OrganizationAbteilung3 : 0 / 0 / 1
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Organization-Test2OrganizationAbteilung4 : 0 / 0 / 1
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Organization-Test2OrganizationInsurance1 : 0 / 0 / 1
- /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Organization-Test2OrganizationKrankenhausRied : 0 / 0 / 1
+ /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Organization-Test2OrganizationKrankenhausRied : 0 / 0 / 2
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Organization-Test2OrganizationUeberweisendeOrganisation : 0 / 0 / 1
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Patient-Test1Patient : 0 / 3 / 1
  /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/fsh-generated/resources/Patient-Test1PatientBund : 0 / 2 / 1
@@ -192,6 +192,7 @@ WARNING: /home/runner/work/ELGA-MOPED-R5/ELGA-MOPED-R5/output/actors.html#/html/
 WARNING: 1: The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide
 WARNING: 3: An HTML fragment from the set [dependency-table.xhtml, dependency-table-short.xhtml, dependency-table-nontech.xhtml] is not included anywhere in the produced implementation guide
 WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
+WARNING: IG: The IG is not for the international realm, and it uses SNOMED CT, so it should fix the SCT edition in the expansion parameters
 == fsh-generated/resources/Account-Test1Account.json ==
 ERROR: Account/Test1Account: Account.extension[0].value.ofType(Coding): The code provided (http://tbd.at/moped-ext-workflow-status#TBD) was not found in the value set 'Workflow Status eines Falls' (http://example.org/ValueSet/moped-WorkflowStatus-valueset|0.1.0), and a code from this value set is required: A definition for CodeSystem 'http://tbd.at/moped-ext-workflow-status' could not be found, so the code cannot be validated
 INFORMATION: Account/Test1Account: Account.extension[0].value.ofType(Coding): A definition for CodeSystem 'http://tbd.at/moped-ext-workflow-status' could not be found, so the code cannot be validated
@@ -330,6 +331,7 @@ ERROR: Encounter/Test2TransferEncounter5: Encounter.extension[0].extension[0].va
 INFORMATION: Organization/Test1OrganizationAbteilung1: Organization.extension[0]: This element does not match any known slice defined in the profile http://example.org/StructureDefinition/MOPEDOrganizationAbteilung|0.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Organization/Test1OrganizationAbteilung1: Organization.extension[0].extension[2].value.ofType(Coding): A definition for CodeSystem 'http://tbd.at/MOPED-SpezielleOrganisationsform' could not be found, so the code cannot be validated
 == fsh-generated/resources/Organization-Test1OrganizationHerzJesuKrankenhaus.json ==
+INFORMATION: Organization/Test1OrganizationHerzJesuKrankenhaus: Organization.identifier[1]: This element does not match any known slice defined in the profile http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-organization|1.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 == fsh-generated/resources/Organization-Test1OrganizationInsurance1.json ==
 == fsh-generated/resources/Organization-Test1OrganizationUeberweisendeOrganisation.json ==
 == fsh-generated/resources/Organization-Test2OrganizationAbteilung1.json ==
@@ -338,6 +340,7 @@ INFORMATION: Organization/Test1OrganizationAbteilung1: Organization.extension[0]
 == fsh-generated/resources/Organization-Test2OrganizationAbteilung4.json ==
 == fsh-generated/resources/Organization-Test2OrganizationInsurance1.json ==
 == fsh-generated/resources/Organization-Test2OrganizationKrankenhausRied.json ==
+INFORMATION: Organization/Test2OrganizationKrankenhausRied: Organization.identifier[1]: This element does not match any known slice defined in the profile http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-organization|1.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
 == fsh-generated/resources/Organization-Test2OrganizationUeberweisendeOrganisation.json ==
 == fsh-generated/resources/Patient-Test1Patient.json ==
 WARNING: Patient/Test1Patient: Patient.extension[0].extension[0].value.ofType(CodeableConcept).coding[0].system: A definition for CodeSystem 'https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3' could not be found, so the code cannot be validated
