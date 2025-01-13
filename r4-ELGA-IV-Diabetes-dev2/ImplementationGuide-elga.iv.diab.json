@@ -616,39 +616,17 @@
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     }],
-    "grouping" : [{
-      "id" : "IPS",
-      "name" : "IPS compliant Logical Model",
-      "description" : "IPS compliant logical model for Diabetes."
-    },
-    {
-      "id" : "Diabetes",
-      "name" : "Diabetes Datenmodell",
-      "description" : "Datenmodell basierend auf Rahmenkonzept."
-    }],
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Bundle"
+        "valueString" : "Patient"
       }],
       "reference" : {
-        "reference" : "Bundle/2788423"
+        "reference" : "Patient/example-patient"
       },
-      "name" : "2788423",
+      "name" : "Beispiel Diabetes Patientin",
+      "description" : "Beispiel einer Diabetes Patientin",
       "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:logical"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/AllergiesIntolerances-ips"
-      },
-      "name" : "Allergies and Intolerances (IPS)",
-      "description" : "Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul \"Allergies and Intolerances\".\n\nRefer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes.",
-      "exampleBoolean" : false,
-      "groupingId" : "IPS"
     },
     {
       "extension" : [{
@@ -672,67 +650,42 @@
       },
       "name" : "Datenarten für das versorgungsstufenübergreifende elektronische Leitdokument",
       "description" : "Datenarten für das Versorgungsstufenübergreifende elektronische Leitdokument basierend auf dem Rahmenkonzept Integrierte Versorgung Diabetes Mellitus Typ 2.\n\nRefer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html#patient)** in order to get an idea how the IPS can be used in this context.",
-      "exampleBoolean" : false,
-      "groupingId" : "Diabetes"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/diagnose"
-      },
-      "name" : "Diagnose",
-      "description" : "Klassifikation der Herzinsuffizienz auf Basis der LVEF",
       "exampleBoolean" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:logical"
+        "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/DiagnosticResults-ips"
+        "reference" : "StructureDefinition/diab-bundle"
       },
-      "name" : "Diagnostic Results (IPS)",
-      "description" : "Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul \"Diagnostic Results\".\n\nRefer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes.",
-      "exampleBoolean" : false,
-      "groupingId" : "IPS"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:logical"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/FunctionalStatus-ips"
-      },
-      "name" : "Functional Status (IPS)",
-      "description" : "Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul \"Functional Status\".\n\nRefer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes.",
+      "name" : "Diabetes Bundle",
+      "description" : "Diabetes Bundle",
       "exampleBoolean" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
+        "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "ValueSet/fussdiagnose"
+        "reference" : "StructureDefinition/diab-composition"
       },
-      "name" : "Fußdiagnose",
-      "description" : "Klassifikation der Herzinsuffizienz auf Basis der LVEF",
+      "name" : "Diabetes Composition",
+      "description" : "Diabetes Composition.",
       "exampleBoolean" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Bundle"
+        "valueString" : "Practitioner"
       }],
       "reference" : {
-        "reference" : "Bundle/IPS-1-no-problems-medication-allergies"
+        "reference" : "Practitioner/example-hausaerztin"
       },
-      "name" : "IPS-1-no-problems-medication-allergies",
+      "name" : "Diabetes GDA Hausärztin",
+      "description" : "Beispiel eines Diabetes GDA",
       "exampleBoolean" : true
     },
     {
@@ -741,10 +694,35 @@
         "valueString" : "Bundle"
       }],
       "reference" : {
-        "reference" : "Bundle/IPS-2-preventive-medical-checkup"
+        "reference" : "Bundle/example-diab-leitdokument"
       },
-      "name" : "IPS-2-preventive-medical-checkup",
-      "exampleBoolean" : true
+      "name" : "example-diab-leitdokument",
+      "description" : "Diabetes Checklist / Leitdokument",
+      "exampleCanonical" : "https://diab.iv.elga.gv.at/StructureDefinition/diab-bundle"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/iv-careplan-schulung"
+      },
+      "name" : "IV CarePlan Schulung",
+      "description" : "Dokumentation einer Schulung mit Careplan für IV.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/iv-condition-diagnose"
+      },
+      "name" : "IV Diagnose Profil",
+      "description" : "Dokumentation der Diagnosen eines Patienten und Kategorisierung spezieller IV Diagnosen mit Datum der Diagnosestellung durch den Behandler.",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
@@ -752,36 +730,11 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/komplikationsdiagnose"
+        "reference" : "ValueSet/vs-allediagnosentest"
       },
-      "name" : "Komplikationsdiagnose",
-      "description" : "Klassifikation der Herzinsuffizienz auf Basis der LVEF",
+      "name" : "VS Alle Diagnosen Test",
+      "description" : "Value-Set alle Diagnosen",
       "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:logical"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/MedicalDevices-ips"
-      },
-      "name" : "Medical Devices (IPS)",
-      "description" : "Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul \"Medical Devices\".\n\nRefer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:logical"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/MedicationSummary-ips"
-      },
-      "name" : "Medication Summary (IPS)",
-      "description" : "Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul \"Medication Summary\".\n\nRefer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes.",
-      "exampleBoolean" : false,
-      "groupingId" : "IPS"
     },
     {
       "extension" : [{
@@ -789,87 +742,35 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/nebendiagnose"
+        "reference" : "ValueSet/vs-diagnose-diabetes"
       },
-      "name" : "Nebendiagnose",
-      "description" : "Klassifikation der Herzinsuffizienz auf Basis der LVEF",
+      "name" : "VS Diagnose Diabetes",
+      "description" : "Value-Set Diabetesdiagnosen",
       "exampleBoolean" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:logical"
+        "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/HistoryOfIllnesses-ips"
+        "reference" : "ValueSet/vs-iv-diagnosekategorie"
       },
-      "name" : "Past History Of Illnesses (IPS)",
-      "description" : "Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul \"Past History Of Illnesses\".\n\nRefer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes.",
+      "name" : "Vs IV Diagnosekategorie",
+      "description" : "Value-Set aller IV Diagnosekategorien",
       "exampleBoolean" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:logical"
+        "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/PlanOfCare-ips"
+        "reference" : "ValueSet/vs-nebendiagnosen-diabetes"
       },
-      "name" : "Plan Of Care (IPS)",
-      "description" : "Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul \"Plan Of Care\".\n\nRefer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes.",
-      "exampleBoolean" : false,
-      "groupingId" : "IPS"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:logical"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/ProblemList-ips"
-      },
-      "name" : "Problem List (IPS)",
-      "description" : "Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul \"Problem List\".\n\nRefer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes.",
-      "exampleBoolean" : false,
-      "groupingId" : "IPS"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:logical"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/SocialHistory-ips"
-      },
-      "name" : "Social History (IPS)",
-      "description" : "Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul \"Social History\".\n\nRefer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes.",
+      "name" : "VS Nebendiagnosen Diabetes",
+      "description" : "Value-Set Nebendiagnosen Diabetes",
       "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:logical"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/Subject-ips"
-      },
-      "name" : "Subject (IPS)",
-      "description" : "Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul \"Subject\".\n\nRefer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes.",
-      "exampleBoolean" : false,
-      "groupingId" : "IPS"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:logical"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/VitalSigns-ips"
-      },
-      "name" : "Vital Signs (IPS)",
-      "description" : "Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul \"Vital Signs\".\n\nRefer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes.",
-      "exampleBoolean" : false,
-      "groupingId" : "IPS"
     }],
     "page" : {
       "extension" : [{

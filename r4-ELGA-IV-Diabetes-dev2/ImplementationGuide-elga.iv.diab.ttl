@@ -534,39 +534,18 @@
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] ) ;
-     fhir:grouping ( [
-       fhir:id [ fhir:v "IPS" ] ;
-       fhir:name [ fhir:v "IPS compliant Logical Model" ] ;
-       fhir:description [ fhir:v "IPS compliant logical model for Diabetes." ]
-     ] [
-       fhir:id [ fhir:v "Diabetes" ] ;
-       fhir:name [ fhir:v "Diabetes Datenmodell" ] ;
-       fhir:description [ fhir:v "Datenmodell basierend auf Rahmenkonzept." ]
-     ] ) ;
      fhir:resource ( [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Bundle" ]
+         fhir:value [ fhir:v "Patient" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://diab.iv.elga.gv.at/Bundle/2788423> ;
-         fhir:reference [ fhir:v "Bundle/2788423" ]
+         fhir:link <https://diab.iv.elga.gv.at/Patient/example-patient> ;
+         fhir:reference [ fhir:v "Patient/example-patient" ]
        ] ;
-       fhir:name [ fhir:v "2788423" ] ;
+       fhir:name [ fhir:v "Beispiel Diabetes Patientin" ] ;
+       fhir:description [ fhir:v "Beispiel einer Diabetes Patientin" ] ;
        fhir:example [ fhir:v "true"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:logical" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://diab.iv.elga.gv.at/StructureDefinition/AllergiesIntolerances-ips> ;
-         fhir:reference [ fhir:v "StructureDefinition/AllergiesIntolerances-ips" ]
-       ] ;
-       fhir:name [ fhir:v "Allergies and Intolerances (IPS)" ] ;
-       fhir:description [ fhir:v "Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul \"Allergies and Intolerances\".\n\nRefer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "IPS" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -590,67 +569,42 @@
        ] ;
        fhir:name [ fhir:v "Datenarten für das versorgungsstufenübergreifende elektronische Leitdokument" ] ;
        fhir:description [ fhir:v "Datenarten für das Versorgungsstufenübergreifende elektronische Leitdokument basierend auf dem Rahmenkonzept Integrierte Versorgung Diabetes Mellitus Typ 2.\n\nRefer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html#patient)** in order to get an idea how the IPS can be used in this context." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "Diabetes" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://diab.iv.elga.gv.at/ValueSet/diagnose> ;
-         fhir:reference [ fhir:v "ValueSet/diagnose" ]
-       ] ;
-       fhir:name [ fhir:v "Diagnose" ] ;
-       fhir:description [ fhir:v "Klassifikation der Herzinsuffizienz auf Basis der LVEF" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:logical" ]
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://diab.iv.elga.gv.at/StructureDefinition/DiagnosticResults-ips> ;
-         fhir:reference [ fhir:v "StructureDefinition/DiagnosticResults-ips" ]
+         fhir:link <https://diab.iv.elga.gv.at/StructureDefinition/diab-bundle> ;
+         fhir:reference [ fhir:v "StructureDefinition/diab-bundle" ]
        ] ;
-       fhir:name [ fhir:v "Diagnostic Results (IPS)" ] ;
-       fhir:description [ fhir:v "Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul \"Diagnostic Results\".\n\nRefer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "IPS" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:logical" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://diab.iv.elga.gv.at/StructureDefinition/FunctionalStatus-ips> ;
-         fhir:reference [ fhir:v "StructureDefinition/FunctionalStatus-ips" ]
-       ] ;
-       fhir:name [ fhir:v "Functional Status (IPS)" ] ;
-       fhir:description [ fhir:v "Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul \"Functional Status\".\n\nRefer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes." ] ;
+       fhir:name [ fhir:v "Diabetes Bundle" ] ;
+       fhir:description [ fhir:v "Diabetes Bundle" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://diab.iv.elga.gv.at/ValueSet/fussdiagnose> ;
-         fhir:reference [ fhir:v "ValueSet/fussdiagnose" ]
+         fhir:link <https://diab.iv.elga.gv.at/StructureDefinition/diab-composition> ;
+         fhir:reference [ fhir:v "StructureDefinition/diab-composition" ]
        ] ;
-       fhir:name [ fhir:v "Fußdiagnose" ] ;
-       fhir:description [ fhir:v "Klassifikation der Herzinsuffizienz auf Basis der LVEF" ] ;
+       fhir:name [ fhir:v "Diabetes Composition" ] ;
+       fhir:description [ fhir:v "Diabetes Composition." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Bundle" ]
+         fhir:value [ fhir:v "Practitioner" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://diab.iv.elga.gv.at/Bundle/IPS-1-no-problems-medication-allergies> ;
-         fhir:reference [ fhir:v "Bundle/IPS-1-no-problems-medication-allergies" ]
+         fhir:link <https://diab.iv.elga.gv.at/Practitioner/example-hausaerztin> ;
+         fhir:reference [ fhir:v "Practitioner/example-hausaerztin" ]
        ] ;
-       fhir:name [ fhir:v "IPS-1-no-problems-medication-allergies" ] ;
+       fhir:name [ fhir:v "Diabetes GDA Hausärztin" ] ;
+       fhir:description [ fhir:v "Beispiel eines Diabetes GDA" ] ;
        fhir:example [ fhir:v "true"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -658,136 +612,87 @@
          fhir:value [ fhir:v "Bundle" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://diab.iv.elga.gv.at/Bundle/IPS-2-preventive-medical-checkup> ;
-         fhir:reference [ fhir:v "Bundle/IPS-2-preventive-medical-checkup" ]
+         fhir:link <https://diab.iv.elga.gv.at/Bundle/example-diab-leitdokument> ;
+         fhir:reference [ fhir:v "Bundle/example-diab-leitdokument" ]
        ] ;
-       fhir:name [ fhir:v "IPS-2-preventive-medical-checkup" ] ;
-       fhir:example [ fhir:v "true"^^xsd:boolean ]
+       fhir:name [ fhir:v "example-diab-leitdokument" ] ;
+       fhir:description [ fhir:v "Diabetes Checklist / Leitdokument" ] ;
+       fhir:example [
+         fhir:v "https://diab.iv.elga.gv.at/StructureDefinition/diab-bundle"^^xsd:anyURI ;
+         fhir:link <https://diab.iv.elga.gv.at/StructureDefinition/diab-bundle>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://diab.iv.elga.gv.at/StructureDefinition/iv-careplan-schulung> ;
+         fhir:reference [ fhir:v "StructureDefinition/iv-careplan-schulung" ]
+       ] ;
+       fhir:name [ fhir:v "IV CarePlan Schulung" ] ;
+       fhir:description [ fhir:v "Dokumentation einer Schulung mit Careplan für IV." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://diab.iv.elga.gv.at/StructureDefinition/iv-condition-diagnose> ;
+         fhir:reference [ fhir:v "StructureDefinition/iv-condition-diagnose" ]
+       ] ;
+       fhir:name [ fhir:v "IV Diagnose Profil" ] ;
+       fhir:description [ fhir:v "Dokumentation der Diagnosen eines Patienten und Kategorisierung spezieller IV Diagnosen mit Datum der Diagnosestellung durch den Behandler." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://diab.iv.elga.gv.at/ValueSet/komplikationsdiagnose> ;
-         fhir:reference [ fhir:v "ValueSet/komplikationsdiagnose" ]
+         fhir:link <https://diab.iv.elga.gv.at/ValueSet/vs-allediagnosentest> ;
+         fhir:reference [ fhir:v "ValueSet/vs-allediagnosentest" ]
        ] ;
-       fhir:name [ fhir:v "Komplikationsdiagnose" ] ;
-       fhir:description [ fhir:v "Klassifikation der Herzinsuffizienz auf Basis der LVEF" ] ;
+       fhir:name [ fhir:v "VS Alle Diagnosen Test" ] ;
+       fhir:description [ fhir:v "Value-Set alle Diagnosen" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:logical" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://diab.iv.elga.gv.at/StructureDefinition/MedicalDevices-ips> ;
-         fhir:reference [ fhir:v "StructureDefinition/MedicalDevices-ips" ]
-       ] ;
-       fhir:name [ fhir:v "Medical Devices (IPS)" ] ;
-       fhir:description [ fhir:v "Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul \"Medical Devices\".\n\nRefer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:logical" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://diab.iv.elga.gv.at/StructureDefinition/MedicationSummary-ips> ;
-         fhir:reference [ fhir:v "StructureDefinition/MedicationSummary-ips" ]
-       ] ;
-       fhir:name [ fhir:v "Medication Summary (IPS)" ] ;
-       fhir:description [ fhir:v "Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul \"Medication Summary\".\n\nRefer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "IPS" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://diab.iv.elga.gv.at/ValueSet/nebendiagnose> ;
-         fhir:reference [ fhir:v "ValueSet/nebendiagnose" ]
+         fhir:link <https://diab.iv.elga.gv.at/ValueSet/vs-diagnose-diabetes> ;
+         fhir:reference [ fhir:v "ValueSet/vs-diagnose-diabetes" ]
        ] ;
-       fhir:name [ fhir:v "Nebendiagnose" ] ;
-       fhir:description [ fhir:v "Klassifikation der Herzinsuffizienz auf Basis der LVEF" ] ;
+       fhir:name [ fhir:v "VS Diagnose Diabetes" ] ;
+       fhir:description [ fhir:v "Value-Set Diabetesdiagnosen" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:logical" ]
+         fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://diab.iv.elga.gv.at/StructureDefinition/HistoryOfIllnesses-ips> ;
-         fhir:reference [ fhir:v "StructureDefinition/HistoryOfIllnesses-ips" ]
+         fhir:link <https://diab.iv.elga.gv.at/ValueSet/vs-iv-diagnosekategorie> ;
+         fhir:reference [ fhir:v "ValueSet/vs-iv-diagnosekategorie" ]
        ] ;
-       fhir:name [ fhir:v "Past History Of Illnesses (IPS)" ] ;
-       fhir:description [ fhir:v "Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul \"Past History Of Illnesses\".\n\nRefer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes." ] ;
+       fhir:name [ fhir:v "Vs IV Diagnosekategorie" ] ;
+       fhir:description [ fhir:v "Value-Set aller IV Diagnosekategorien" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:logical" ]
+         fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://diab.iv.elga.gv.at/StructureDefinition/PlanOfCare-ips> ;
-         fhir:reference [ fhir:v "StructureDefinition/PlanOfCare-ips" ]
+         fhir:link <https://diab.iv.elga.gv.at/ValueSet/vs-nebendiagnosen-diabetes> ;
+         fhir:reference [ fhir:v "ValueSet/vs-nebendiagnosen-diabetes" ]
        ] ;
-       fhir:name [ fhir:v "Plan Of Care (IPS)" ] ;
-       fhir:description [ fhir:v "Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul \"Plan Of Care\".\n\nRefer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "IPS" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:logical" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://diab.iv.elga.gv.at/StructureDefinition/ProblemList-ips> ;
-         fhir:reference [ fhir:v "StructureDefinition/ProblemList-ips" ]
-       ] ;
-       fhir:name [ fhir:v "Problem List (IPS)" ] ;
-       fhir:description [ fhir:v "Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul \"Problem List\".\n\nRefer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "IPS" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:logical" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://diab.iv.elga.gv.at/StructureDefinition/SocialHistory-ips> ;
-         fhir:reference [ fhir:v "StructureDefinition/SocialHistory-ips" ]
-       ] ;
-       fhir:name [ fhir:v "Social History (IPS)" ] ;
-       fhir:description [ fhir:v "Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul \"Social History\".\n\nRefer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes." ] ;
+       fhir:name [ fhir:v "VS Nebendiagnosen Diabetes" ] ;
+       fhir:description [ fhir:v "Value-Set Nebendiagnosen Diabetes" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:logical" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://diab.iv.elga.gv.at/StructureDefinition/Subject-ips> ;
-         fhir:reference [ fhir:v "StructureDefinition/Subject-ips" ]
-       ] ;
-       fhir:name [ fhir:v "Subject (IPS)" ] ;
-       fhir:description [ fhir:v "Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul \"Subject\".\n\nRefer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "IPS" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:logical" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://diab.iv.elga.gv.at/StructureDefinition/VitalSigns-ips> ;
-         fhir:reference [ fhir:v "StructureDefinition/VitalSigns-ips" ]
-       ] ;
-       fhir:name [ fhir:v "Vital Signs (IPS)" ] ;
-       fhir:description [ fhir:v "Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul \"Vital Signs\".\n\nRefer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "IPS" ]
      ] ) ;
      fhir:page [
        fhir:extension ( [

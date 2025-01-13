@@ -1,20 +1,6 @@
 {
   "codeSystems" : [
     {
-      "url" : "http://hl7.org/fhir/ValueSet/administrative-gender",
-      "version" : "4.0.1",
-      "status" : "active",
-      "name" : "AdministrativeGender",
-      "title" : "AdministrativeGender",
-      "description" : "The gender of a person used for administrative purposes.",
-      "systems" : ["http://hl7.org/fhir/administrative-gender"],
-      "oids" : ["2.16.840.1.113883.4.642.3.1"],
-      "sources" : ["2.16.840.1.113883.4.642.3.1"],
-      "uses" : {
-      },
-      "StructureDefinition-Subject-ips.html" : "Subject (IPS)"
-    },
-    {
       "url" : "http://hl7.org/fhir/ValueSet/care-plan-activity-kind",
       "version" : "4.0.1",
       "status" : "draft",
@@ -26,7 +12,7 @@
       "sources" : ["2.16.840.1.113883.4.642.3.145"],
       "uses" : {
       },
-      "StructureDefinition-PlanOfCare-ips.html" : "Plan Of Care (IPS)"
+      "StructureDefinition-iv-careplan-schulung.html" : "IV CarePlan Schulung"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/care-plan-activity-status",
@@ -40,84 +26,60 @@
       "sources" : ["2.16.840.1.113883.4.642.3.146"],
       "uses" : {
       },
-      "StructureDefinition-PlanOfCare-ips.html" : "Plan Of Care (IPS)"
+      "StructureDefinition-iv-careplan-schulung.html" : "IV CarePlan Schulung"
     },
     {
-      "url" : "http://hl7.org/fhir/ValueSet/patient-contactrelationship",
+      "url" : "http://hl7.org/fhir/ValueSet/care-plan-intent",
       "version" : "4.0.1",
-      "status" : "active",
-      "name" : "PatientContactRelationship",
-      "title" : "Patient Contact Relationship ",
-      "description" : "The nature of the relationship between the patient and the contact person.",
-      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0131"],
-      "oids" : ["2.16.840.1.113883.4.642.3.1130"],
-      "sources" : ["2.16.840.1.113883.4.642.3.1130"],
+      "status" : "draft",
+      "name" : "CarePlanIntent",
+      "title" : "Care Plan Intent",
+      "description" : "Codes indicating the degree of authority/intentionality associated with a care plan.",
+      "systems" : ["http://hl7.org/fhir/request-intent"],
+      "oids" : ["2.16.840.1.113883.4.642.3.150"],
+      "sources" : ["2.16.840.1.113883.4.642.3.150"],
       "uses" : {
       },
-      "StructureDefinition-Subject-ips.html" : "Subject (IPS)"
+      "StructureDefinition-iv-careplan-schulung.html" : "IV CarePlan Schulung"
     },
     {
-      "url" : "http://hl7.org/fhir/uv/ips/ValueSet/problems-snomed-absent-unknown-uv-ips",
-      "version" : "1.1.0",
-      "status" : "active",
-      "name" : "ProblemsSnomedAbsentUnknownUvIps",
-      "title" : "Problems - SNOMED CT + Absent/Unknown - IPS",
-      "description" : "This value set includes codes from SNOMED Clinical Terms®:  descendants of 404684003 \\|Clinical finding (finding) \\|, descendants of 243796009 \\|Situation with explicit context (situation)\\| and descendants of 272379006 \\|Event (event)\\| but excludes descendants of 71388002 \\|Procedure (procedure)\\|, as they are expected to be represented separately in the History of Procedures Section.",
-      "systems" : [
-        "http://hl7.org/fhir/uv/ips/CodeSystem/absent-unknown-uv-ips",
-        "http://snomed.info/sct"
-      ],
-      "uses" : {
-      },
-      "StructureDefinition-ProblemList-ips.html" : "Problem List (IPS)"
-    },
-    {
-      "url" : "https://diab.iv.elga.gv.at/ValueSet/diagnose",
+      "url" : "https://fhir.hl7.at/elga-iv-diab-r4/ValueSet/vs-allediagnosentest",
       "version" : "0.1.1",
       "status" : "draft",
-      "name" : "Diagnose",
-      "title" : "Diagnose",
-      "description" : "Klassifikation der Herzinsuffizienz auf Basis der LVEF",
+      "name" : "VsAlleDiagnosenTest",
+      "title" : "VS Alle Diagnosen Test",
+      "description" : "Value-Set alle Diagnosen",
       "systems" : ["http://snomed.info/sct"],
       "uses" : {
       },
-      "StructureDefinition-ProblemList-ips.html" : "Problem List (IPS)"
+      "StructureDefinition-iv-condition-diagnose.html" : "IV Diagnose Profil"
     },
     {
-      "url" : "https://diab.iv.elga.gv.at/ValueSet/fussdiagnose",
+      "url" : "https://fhir.hl7.at/elga-iv-diab-r4/ValueSet/vs-diagnose-diabetes",
       "version" : "0.1.1",
       "status" : "draft",
-      "name" : "Fussdiagnose",
-      "title" : "Fußdiagnose",
-      "description" : "Klassifikation der Herzinsuffizienz auf Basis der LVEF",
-      "systems" : ["http://snomed.info/sct"],
-      "uses" : {
-      },
-      "StructureDefinition-ProblemList-ips.html" : "Problem List (IPS)"
+      "name" : "VsDiagnoseDiabetes",
+      "title" : "VS Diagnose Diabetes",
+      "description" : "Value-Set Diabetesdiagnosen",
+      "systems" : ["http://snomed.info/sct"]
     },
     {
-      "url" : "https://diab.iv.elga.gv.at/ValueSet/komplikationsdiagnose",
+      "url" : "https://fhir.hl7.at/elga-iv-diab-r4/ValueSet/vs-iv-diagnosekategorie",
       "version" : "0.1.1",
       "status" : "draft",
-      "name" : "Komplikationsdiagnose",
-      "title" : "Komplikationsdiagnose",
-      "description" : "Klassifikation der Herzinsuffizienz auf Basis der LVEF",
-      "systems" : ["http://snomed.info/sct"],
-      "uses" : {
-      },
-      "StructureDefinition-ProblemList-ips.html" : "Problem List (IPS)"
+      "name" : "VsIvDiagnosekategorie",
+      "title" : "Vs IV Diagnosekategorie",
+      "description" : "Value-Set aller IV Diagnosekategorien",
+      "systems" : ["http://snomed.info/sct"]
     },
     {
-      "url" : "https://diab.iv.elga.gv.at/ValueSet/nebendiagnose",
+      "url" : "https://fhir.hl7.at/elga-iv-diab-r4/ValueSet/vs-nebendiagnosen-diabetes",
       "version" : "0.1.1",
       "status" : "draft",
-      "name" : "Nebendiagnose",
-      "title" : "Nebendiagnose",
-      "description" : "Klassifikation der Herzinsuffizienz auf Basis der LVEF",
-      "systems" : ["http://snomed.info/sct"],
-      "uses" : {
-      },
-      "StructureDefinition-ProblemList-ips.html" : "Problem List (IPS)"
+      "name" : "VsNebendiagnosenDiabetes",
+      "title" : "VS Nebendiagnosen Diabetes",
+      "description" : "Value-Set Nebendiagnosen Diabetes",
+      "systems" : ["http://snomed.info/sct"]
     }
   ]
 }

@@ -459,35 +459,16 @@
         <valueString value="true"/>
       </extension>
     </extension>
-    <grouping id="IPS">
-      <name value="IPS compliant Logical Model"/>
-      <description value="IPS compliant logical model for Diabetes."/>
-    </grouping>
-    <grouping id="Diabetes">
-      <name value="Diabetes Datenmodell"/>
-      <description value="Datenmodell basierend auf Rahmenkonzept."/>
-    </grouping>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Bundle"/>
+        <valueString value="Patient"/>
       </extension>
       <reference>
-        <reference value="Bundle/2788423"/>
+        <reference value="Patient/example-patient"/>
       </reference>
-      <name value="2788423"/>
+      <name value="Beispiel Diabetes Patientin"/>
+      <description value="Beispiel einer Diabetes Patientin"/>
       <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:logical"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/AllergiesIntolerances-ips"/>
-      </reference>
-      <name value="Allergies and Intolerances (IPS)"/>
-      <description value="Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul &quot;Allergies and Intolerances&quot;.&#xA;&#xA;Refer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="IPS"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -510,61 +491,38 @@
       <name value="Datenarten für das versorgungsstufenübergreifende elektronische Leitdokument"/>
       <description value="Datenarten für das Versorgungsstufenübergreifende elektronische Leitdokument basierend auf dem Rahmenkonzept Integrierte Versorgung Diabetes Mellitus Typ 2.&#xA;&#xA;Refer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html#patient)** in order to get an idea how the IPS can be used in this context."/>
       <exampleBoolean value="false"/>
-      <groupingId value="Diabetes"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
+        <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="ValueSet/diagnose"/>
+        <reference value="StructureDefinition/diab-bundle"/>
       </reference>
-      <name value="Diagnose"/>
-      <description value="Klassifikation der Herzinsuffizienz auf Basis der LVEF"/>
+      <name value="Diabetes Bundle"/>
+      <description value="Diabetes Bundle"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:logical"/>
+        <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/DiagnosticResults-ips"/>
+        <reference value="StructureDefinition/diab-composition"/>
       </reference>
-      <name value="Diagnostic Results (IPS)"/>
-      <description value="Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul &quot;Diagnostic Results&quot;.&#xA;&#xA;Refer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="IPS"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:logical"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/FunctionalStatus-ips"/>
-      </reference>
-      <name value="Functional Status (IPS)"/>
-      <description value="Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul &quot;Functional Status&quot;.&#xA;&#xA;Refer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes."/>
+      <name value="Diabetes Composition"/>
+      <description value="Diabetes Composition."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
+        <valueString value="Practitioner"/>
       </extension>
       <reference>
-        <reference value="ValueSet/fussdiagnose"/>
+        <reference value="Practitioner/example-hausaerztin"/>
       </reference>
-      <name value="Fußdiagnose"/>
-      <description value="Klassifikation der Herzinsuffizienz auf Basis der LVEF"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Bundle"/>
-      </extension>
-      <reference>
-        <reference value="Bundle/IPS-1-no-problems-medication-allergies"/>
-      </reference>
-      <name value="IPS-1-no-problems-medication-allergies"/>
+      <name value="Diabetes GDA Hausärztin"/>
+      <description value="Beispiel eines Diabetes GDA"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -572,125 +530,77 @@
         <valueString value="Bundle"/>
       </extension>
       <reference>
-        <reference value="Bundle/IPS-2-preventive-medical-checkup"/>
+        <reference value="Bundle/example-diab-leitdokument"/>
       </reference>
-      <name value="IPS-2-preventive-medical-checkup"/>
-      <exampleBoolean value="true"/>
+      <name value="example-diab-leitdokument"/>
+      <description value="Diabetes Checklist / Leitdokument"/>
+      <exampleCanonical value="https://diab.iv.elga.gv.at/StructureDefinition/diab-bundle"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/iv-careplan-schulung"/>
+      </reference>
+      <name value="IV CarePlan Schulung"/>
+      <description value="Dokumentation einer Schulung mit Careplan für IV."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/iv-condition-diagnose"/>
+      </reference>
+      <name value="IV Diagnose Profil"/>
+      <description value="Dokumentation der Diagnosen eines Patienten und Kategorisierung spezieller IV Diagnosen mit Datum der Diagnosestellung durch den Behandler."/>
+      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/komplikationsdiagnose"/>
+        <reference value="ValueSet/vs-allediagnosentest"/>
       </reference>
-      <name value="Komplikationsdiagnose"/>
-      <description value="Klassifikation der Herzinsuffizienz auf Basis der LVEF"/>
+      <name value="VS Alle Diagnosen Test"/>
+      <description value="Value-Set alle Diagnosen"/>
       <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:logical"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/MedicalDevices-ips"/>
-      </reference>
-      <name value="Medical Devices (IPS)"/>
-      <description value="Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul &quot;Medical Devices&quot;.&#xA;&#xA;Refer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:logical"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/MedicationSummary-ips"/>
-      </reference>
-      <name value="Medication Summary (IPS)"/>
-      <description value="Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul &quot;Medication Summary&quot;.&#xA;&#xA;Refer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="IPS"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/nebendiagnose"/>
+        <reference value="ValueSet/vs-diagnose-diabetes"/>
       </reference>
-      <name value="Nebendiagnose"/>
-      <description value="Klassifikation der Herzinsuffizienz auf Basis der LVEF"/>
+      <name value="VS Diagnose Diabetes"/>
+      <description value="Value-Set Diabetesdiagnosen"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:logical"/>
+        <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/HistoryOfIllnesses-ips"/>
+        <reference value="ValueSet/vs-iv-diagnosekategorie"/>
       </reference>
-      <name value="Past History Of Illnesses (IPS)"/>
-      <description value="Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul &quot;Past History Of Illnesses&quot;.&#xA;&#xA;Refer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes."/>
+      <name value="Vs IV Diagnosekategorie"/>
+      <description value="Value-Set aller IV Diagnosekategorien"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:logical"/>
+        <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/PlanOfCare-ips"/>
+        <reference value="ValueSet/vs-nebendiagnosen-diabetes"/>
       </reference>
-      <name value="Plan Of Care (IPS)"/>
-      <description value="Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul &quot;Plan Of Care&quot;.&#xA;&#xA;Refer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes."/>
+      <name value="VS Nebendiagnosen Diabetes"/>
+      <description value="Value-Set Nebendiagnosen Diabetes"/>
       <exampleBoolean value="false"/>
-      <groupingId value="IPS"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:logical"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/ProblemList-ips"/>
-      </reference>
-      <name value="Problem List (IPS)"/>
-      <description value="Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul &quot;Problem List&quot;.&#xA;&#xA;Refer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="IPS"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:logical"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/SocialHistory-ips"/>
-      </reference>
-      <name value="Social History (IPS)"/>
-      <description value="Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul &quot;Social History&quot;.&#xA;&#xA;Refer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:logical"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/Subject-ips"/>
-      </reference>
-      <name value="Subject (IPS)"/>
-      <description value="Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul &quot;Subject&quot;.&#xA;&#xA;Refer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="IPS"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:logical"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/VitalSigns-ips"/>
-      </reference>
-      <name value="Vital Signs (IPS)"/>
-      <description value="Abbildung der Datenfelder, die für den Entwurf der Datenspezifikation des Rahmenkonzepts Integrierte Versorgung Diabetes Mellitus Typ 2 erforderlich sind, auf dem des IPS-Modul &quot;Vital Signs&quot;.&#xA;&#xA;Refer to the **[mapping from the logical model of diabetes to the logical model based on the International Patient Summary (IPS)](http://hl7.org/fhir/R4/mappings.html)** in order to get an idea how the IPS relates to diabetes."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="IPS"/>
     </resource>
     <page>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
