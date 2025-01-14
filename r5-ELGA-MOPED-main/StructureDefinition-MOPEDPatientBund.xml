@@ -29,7 +29,7 @@
   <name value="MOPEDPatientBund"/>
   <title value="MOPED Patient Bund"/>
   <status value="draft"/>
-  <date value="2025-01-07T14:17:45+00:00"/>
+  <date value="2025-01-14T08:01:21+00:00"/>
   <publisher value="ELGA"/>
   <contact>
     <name value="ELGA"/>
@@ -1159,9 +1159,8 @@
     </element>
     <element id="Patient.extension:birthPlace.value[x]">
       <path value="Patient.extension.value[x]"/>
-      <short value="An address expressed using postal conventions (as opposed to GPS or other location definition formats)"/>
-      <definition value="An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.&#xA;The ISO21090-codedString may be used to provide a coded representation of the contents of strings in an Address."/>
-      <comment value="Note: address is intended to describe postal addresses for administrative purposes, not to describe absolute geographical coordinates.  Postal addresses are often used as proxies for physical locations (also see the [Location](http://hl7.org/fhir/R5/location.html#) resource)."/>
+      <short value="Value of extension"/>
+      <definition value="Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list)."/>
       <min value="1"/>
       <max value="1"/>
       <base>
@@ -1173,6 +1172,7 @@
         <code value="Address"/>
         <profile value="http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-address"/>
       </type>
+      <condition value="ext-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1180,39 +1180,11 @@
         <expression value="hasValue() or (children().count() &gt; id.count())"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <constraint>
-        <key value="at-addr-1"/>
-        <severity value="error"/>
-        <human value="If the extension for street name is used then the value for line must not be empty"/>
-        <expression value="line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName').empty() or $this.hasValue())"/>
-        <source value="http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-address"/>
-      </constraint>
-      <constraint>
-        <key value="at-addr-2"/>
-        <severity value="error"/>
-        <human value="If the extension for street number is used then the value for line must not be empty"/>
-        <expression value="line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber').empty() or $this.hasValue())"/>
-        <source value="http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-address"/>
-      </constraint>
-      <constraint>
-        <key value="at-addr-3"/>
-        <severity value="error"/>
-        <human value="If the extension for floor/door number is used then the value for line must not be empty"/>
-        <expression value="line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator').empty() or $this.hasValue())"/>
-        <source value="http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-address"/>
-      </constraint>
       <isModifier value="false"/>
+      <isSummary value="false"/>
       <mapping>
         <identity value="rim"/>
-        <map value="n/a,AD"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="XAD"/>
-      </mapping>
-      <mapping>
-        <identity value="servd"/>
-        <map value="Address"/>
+        <map value="N/A"/>
       </mapping>
     </element>
     <element id="Patient.modifierExtension">
@@ -5388,9 +5360,9 @@
     </element>
     <element id="Patient.address">
       <path value="Patient.address"/>
-      <short value="An address expressed using postal conventions (as opposed to GPS or other location definition formats)"/>
-      <definition value="An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.&#xA;The ISO21090-codedString may be used to provide a coded representation of the contents of strings in an Address."/>
-      <comment value="Note: address is intended to describe postal addresses for administrative purposes, not to describe absolute geographical coordinates.  Postal addresses are often used as proxies for physical locations (also see the [Location](http://hl7.org/fhir/R5/location.html#) resource)."/>
+      <short value="An address for the individual"/>
+      <definition value="An address for the individual."/>
+      <comment value="Patient may have multiple addresses with different uses or applicable periods."/>
       <requirements value="May need to keep track of patient addresses for contacting, billing or reporting requirements and also to help with identification."/>
       <min value="0"/>
       <max value="*"/>
@@ -5410,40 +5382,24 @@
         <expression value="hasValue() or (children().count() &gt; id.count())"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <constraint>
-        <key value="at-addr-1"/>
-        <severity value="error"/>
-        <human value="If the extension for street name is used then the value for line must not be empty"/>
-        <expression value="line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName').empty() or $this.hasValue())"/>
-        <source value="http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-address"/>
-      </constraint>
-      <constraint>
-        <key value="at-addr-2"/>
-        <severity value="error"/>
-        <human value="If the extension for street number is used then the value for line must not be empty"/>
-        <expression value="line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber').empty() or $this.hasValue())"/>
-        <source value="http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-address"/>
-      </constraint>
-      <constraint>
-        <key value="at-addr-3"/>
-        <severity value="error"/>
-        <human value="If the extension for floor/door number is used then the value for line must not be empty"/>
-        <expression value="line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator').empty() or $this.hasValue())"/>
-        <source value="http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-address"/>
-      </constraint>
       <mustSupport value="false"/>
       <isModifier value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a,AD"/>
-      </mapping>
+      <isSummary value="true"/>
       <mapping>
         <identity value="v2"/>
-        <map value="XAD"/>
+        <map value="PID-11"/>
       </mapping>
       <mapping>
-        <identity value="servd"/>
-        <map value="Address"/>
+        <identity value="rim"/>
+        <map value="addr"/>
+      </mapping>
+      <mapping>
+        <identity value="interface"/>
+        <map value="ParticipantContactable.address"/>
+      </mapping>
+      <mapping>
+        <identity value="cda"/>
+        <map value=".addr"/>
       </mapping>
     </element>
     <element id="Patient.address.id">
@@ -8241,9 +8197,8 @@
     </element>
     <element id="Patient.contact.address">
       <path value="Patient.contact.address"/>
-      <short value="An address expressed using postal conventions (as opposed to GPS or other location definition formats)"/>
-      <definition value="An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.&#xA;The ISO21090-codedString may be used to provide a coded representation of the contents of strings in an Address."/>
-      <comment value="Note: address is intended to describe postal addresses for administrative purposes, not to describe absolute geographical coordinates.  Postal addresses are often used as proxies for physical locations (also see the [Location](http://hl7.org/fhir/R5/location.html#) resource)."/>
+      <short value="Address for the contact person"/>
+      <definition value="Address for the contact person."/>
       <requirements value="Need to keep track where the contact person can be contacted per postal mail or visited."/>
       <min value="0"/>
       <max value="1"/>
@@ -8256,6 +8211,7 @@
         <code value="Address"/>
         <profile value="http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-address"/>
       </type>
+      <condition value="pat-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -8263,40 +8219,20 @@
         <expression value="hasValue() or (children().count() &gt; id.count())"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <constraint>
-        <key value="at-addr-1"/>
-        <severity value="error"/>
-        <human value="If the extension for street name is used then the value for line must not be empty"/>
-        <expression value="line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName').empty() or $this.hasValue())"/>
-        <source value="http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-address"/>
-      </constraint>
-      <constraint>
-        <key value="at-addr-2"/>
-        <severity value="error"/>
-        <human value="If the extension for street number is used then the value for line must not be empty"/>
-        <expression value="line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber').empty() or $this.hasValue())"/>
-        <source value="http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-address"/>
-      </constraint>
-      <constraint>
-        <key value="at-addr-3"/>
-        <severity value="error"/>
-        <human value="If the extension for floor/door number is used then the value for line must not be empty"/>
-        <expression value="line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator').empty() or $this.hasValue())"/>
-        <source value="http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-address"/>
-      </constraint>
       <mustSupport value="false"/>
       <isModifier value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a,AD"/>
-      </mapping>
+      <isSummary value="false"/>
       <mapping>
         <identity value="v2"/>
-        <map value="XAD"/>
+        <map value="NK1-4"/>
       </mapping>
       <mapping>
-        <identity value="servd"/>
-        <map value="Address"/>
+        <identity value="rim"/>
+        <map value="addr"/>
+      </mapping>
+      <mapping>
+        <identity value="cda"/>
+        <map value="n/a"/>
       </mapping>
     </element>
     <element id="Patient.contact.address.id">

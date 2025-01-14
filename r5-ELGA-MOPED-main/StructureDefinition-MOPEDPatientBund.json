@@ -10,7 +10,7 @@
   "name" : "MOPEDPatientBund",
   "title" : "MOPED Patient Bund",
   "status" : "draft",
-  "date" : "2025-01-07T14:17:45+00:00",
+  "date" : "2025-01-14T08:01:21+00:00",
   "publisher" : "ELGA",
   "contact" : [{
     "name" : "ELGA",
@@ -1179,9 +1179,8 @@
     {
       "id" : "Patient.extension:birthPlace.value[x]",
       "path" : "Patient.extension.value[x]",
-      "short" : "An address expressed using postal conventions (as opposed to GPS or other location definition formats)",
-      "definition" : "An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.\nThe ISO21090-codedString may be used to provide a coded representation of the contents of strings in an Address.",
-      "comment" : "Note: address is intended to describe postal addresses for administrative purposes, not to describe absolute geographical coordinates.  Postal addresses are often used as proxies for physical locations (also see the [Location](http://hl7.org/fhir/R5/location.html#) resource).",
+      "short" : "Value of extension",
+      "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -1193,46 +1192,19 @@
         "code" : "Address",
         "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-address"]
       }],
+      "condition" : ["ext-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
         "human" : "All FHIR elements must have a @value or children",
         "expression" : "hasValue() or (children().count() > id.count())",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "at-addr-1",
-        "severity" : "error",
-        "human" : "If the extension for street name is used then the value for line must not be empty",
-        "expression" : "line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName').empty() or $this.hasValue())",
-        "source" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-address"
-      },
-      {
-        "key" : "at-addr-2",
-        "severity" : "error",
-        "human" : "If the extension for street number is used then the value for line must not be empty",
-        "expression" : "line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber').empty() or $this.hasValue())",
-        "source" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-address"
-      },
-      {
-        "key" : "at-addr-3",
-        "severity" : "error",
-        "human" : "If the extension for floor/door number is used then the value for line must not be empty",
-        "expression" : "line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator').empty() or $this.hasValue())",
-        "source" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-address"
       }],
       "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
         "identity" : "rim",
-        "map" : "n/a,AD"
-      },
-      {
-        "identity" : "v2",
-        "map" : "XAD"
-      },
-      {
-        "identity" : "servd",
-        "map" : "Address"
+        "map" : "N/A"
       }]
     },
     {
@@ -5558,9 +5530,9 @@
     {
       "id" : "Patient.address",
       "path" : "Patient.address",
-      "short" : "An address expressed using postal conventions (as opposed to GPS or other location definition formats)",
-      "definition" : "An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.\nThe ISO21090-codedString may be used to provide a coded representation of the contents of strings in an Address.",
-      "comment" : "Note: address is intended to describe postal addresses for administrative purposes, not to describe absolute geographical coordinates.  Postal addresses are often used as proxies for physical locations (also see the [Location](http://hl7.org/fhir/R5/location.html#) resource).",
+      "short" : "An address for the individual",
+      "definition" : "An address for the individual.",
+      "comment" : "Patient may have multiple addresses with different uses or applicable periods.",
       "requirements" : "May need to keep track of patient addresses for contacting, billing or reporting requirements and also to help with identification.",
       "min" : 0,
       "max" : "*",
@@ -5579,41 +5551,25 @@
         "human" : "All FHIR elements must have a @value or children",
         "expression" : "hasValue() or (children().count() > id.count())",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "at-addr-1",
-        "severity" : "error",
-        "human" : "If the extension for street name is used then the value for line must not be empty",
-        "expression" : "line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName').empty() or $this.hasValue())",
-        "source" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-address"
-      },
-      {
-        "key" : "at-addr-2",
-        "severity" : "error",
-        "human" : "If the extension for street number is used then the value for line must not be empty",
-        "expression" : "line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber').empty() or $this.hasValue())",
-        "source" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-address"
-      },
-      {
-        "key" : "at-addr-3",
-        "severity" : "error",
-        "human" : "If the extension for floor/door number is used then the value for line must not be empty",
-        "expression" : "line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator').empty() or $this.hasValue())",
-        "source" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-address"
       }],
       "mustSupport" : false,
       "isModifier" : false,
+      "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a,AD"
-      },
-      {
         "identity" : "v2",
-        "map" : "XAD"
+        "map" : "PID-11"
       },
       {
-        "identity" : "servd",
-        "map" : "Address"
+        "identity" : "rim",
+        "map" : "addr"
+      },
+      {
+        "identity" : "interface",
+        "map" : "ParticipantContactable.address"
+      },
+      {
+        "identity" : "cda",
+        "map" : ".addr"
       }]
     },
     {
@@ -8506,9 +8462,8 @@
     {
       "id" : "Patient.contact.address",
       "path" : "Patient.contact.address",
-      "short" : "An address expressed using postal conventions (as opposed to GPS or other location definition formats)",
-      "definition" : "An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.\nThe ISO21090-codedString may be used to provide a coded representation of the contents of strings in an Address.",
-      "comment" : "Note: address is intended to describe postal addresses for administrative purposes, not to describe absolute geographical coordinates.  Postal addresses are often used as proxies for physical locations (also see the [Location](http://hl7.org/fhir/R5/location.html#) resource).",
+      "short" : "Address for the contact person",
+      "definition" : "Address for the contact person.",
       "requirements" : "Need to keep track where the contact person can be contacted per postal mail or visited.",
       "min" : 0,
       "max" : "1",
@@ -8521,47 +8476,28 @@
         "code" : "Address",
         "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-address"]
       }],
+      "condition" : ["pat-1"],
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
         "human" : "All FHIR elements must have a @value or children",
         "expression" : "hasValue() or (children().count() > id.count())",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      },
-      {
-        "key" : "at-addr-1",
-        "severity" : "error",
-        "human" : "If the extension for street name is used then the value for line must not be empty",
-        "expression" : "line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName').empty() or $this.hasValue())",
-        "source" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-address"
-      },
-      {
-        "key" : "at-addr-2",
-        "severity" : "error",
-        "human" : "If the extension for street number is used then the value for line must not be empty",
-        "expression" : "line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber').empty() or $this.hasValue())",
-        "source" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-address"
-      },
-      {
-        "key" : "at-addr-3",
-        "severity" : "error",
-        "human" : "If the extension for floor/door number is used then the value for line must not be empty",
-        "expression" : "line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator').empty() or $this.hasValue())",
-        "source" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-address"
       }],
       "mustSupport" : false,
       "isModifier" : false,
+      "isSummary" : false,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a,AD"
-      },
-      {
         "identity" : "v2",
-        "map" : "XAD"
+        "map" : "NK1-4"
       },
       {
-        "identity" : "servd",
-        "map" : "Address"
+        "identity" : "rim",
+        "map" : "addr"
+      },
+      {
+        "identity" : "cda",
+        "map" : "n/a"
       }]
     },
     {
