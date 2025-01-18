@@ -16,7 +16,7 @@
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "TCFHIRAGSchedulingR5"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-01-18T13:45:55+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-01-18T14:38:52+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7® Austria, TC FHIR®"] ; # 
   fhir:packageId [ fhir:v "TC-FHIR-AG-Scheduling-R5"] ; # 
   fhir:license [ fhir:v "CC0-1.0"] ; # 
@@ -60,6 +60,18 @@
        fhir:value [ fhir:v "hl7.fhir.uv.tools.r5#0.3.0" ]
      ] ) ;
      fhir:resource ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OperationDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/appointment-book> ;
+         fhir:reference [ fhir:v "OperationDefinition/appointment-book" ]
+       ] ;
+       fhir:name [ fhir:v "appointment-book" ] ;
+       fhir:description [ fhir:v "Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactions. This operation completes the booking of an appointment. The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the book request and updates the resource status accordingly." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "ValueSet" ]
