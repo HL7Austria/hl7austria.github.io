@@ -16,7 +16,7 @@
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "TCFHIRAGSchedulingR5"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-01-11T13:21:50+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-01-18T13:02:21+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7® Austria, TC FHIR®"] ; # 
   fhir:packageId [ fhir:v "TC-FHIR-AG-Scheduling-R5"] ; # 
   fhir:license [ fhir:v "CC0-1.0"] ; # 
@@ -60,18 +60,6 @@
        fhir:value [ fhir:v "hl7.fhir.uv.tools.r5#0.3.0" ]
      ] ) ;
      fhir:resource ( [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OperationDefinition" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/appointment-hold> ;
-         fhir:reference [ fhir:v "OperationDefinition/appointment-hold" ]
-       ] ;
-       fhir:name [ fhir:v "appointment-hold" ] ;
-       fhir:description [ fhir:v "Request for a hold on a selected Appointment in order for the user to complete entering data for booking an appointment.  This operation precedes the booking and follows the appointment availability interaction.  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "ValueSet" ]
@@ -141,6 +129,18 @@
        ] ;
        fhir:name [ fhir:v "HL7® AT Scheduling Slot Profile" ] ;
        fhir:description [ fhir:v "HL7® Austria FHIR® Scheduling Profile for slot data in Austria." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OperationDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/slot-hold> ;
+         fhir:reference [ fhir:v "OperationDefinition/slot-hold" ]
+       ] ;
+       fhir:name [ fhir:v "slot-hold" ] ;
+       fhir:description [ fhir:v "Request for a hold on a selected Slot in order for the user to complete entering data for booking an appointment.  This operation precedes the booking and follows the appointment availability interaction.  The server determines if the nominated slot is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] ) ;
      fhir:page [

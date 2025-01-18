@@ -1,9 +1,13 @@
+<!-- layouts\layout-changehistory.html -->
+<!-- get modelType -->
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE HTML>
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>TC-FHIR-AG-SCHEDULING-R5\appointment-hold - FHIR® v5.0.0</title>
+    <title>TC-FHIR-AG-SCHEDULING-R5\ - FHIR® v5.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -39,8 +43,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"2.1"}
-    h3,h4,h5,h6{--heading-prefix:"2.1"}</style>
+    <style type="text/css">h2{--heading-prefix:""}
+    h3,h4,h5,h6{--heading-prefix:""}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- at-fhir-ig-template begin -->
@@ -102,7 +106,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>appointment-hold</b></li>
+          
 
         </ul>
       </div>  <!-- /container -->
@@ -114,7 +118,8 @@
         <div class="row">
           <div class="inner-wrapper">
 
-<div class="col-12">
+
+<div style="counter-reset: section 10" class="col-12">
   <!--ReleaseHeader--><p id="publish-box">TCFHIRAGSchedulingR5 - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
@@ -127,29 +132,29 @@
 
 <ul class="nav nav-tabs">
 
-  <li class="active">
-    <a href="#">Narrative Content</a>
+  <li>
+    <a href="OperationDefinition-slot-hold.html">Narrative Content</a>
   </li>
 
 
 
   
     <li>
-      <a href="OperationDefinition-appointment-hold.xml.html">XML</a>
+      <a href="OperationDefinition-slot-hold.xml.html">XML</a>
     </li>
   
 
 
   
     <li>
-      <a href="OperationDefinition-appointment-hold.json.html">JSON</a>
+      <a href="OperationDefinition-slot-hold.json.html">JSON</a>
     </li>
   
 
 
   
     <li>
-      <a href="OperationDefinition-appointment-hold.ttl.html">TTL</a>
+      <a href="OperationDefinition-slot-hold.ttl.html">TTL</a>
     </li>
   
 
@@ -157,87 +162,15 @@
 
 </ul>
 
+
   <a name="root"> </a>
-
-  <h2 id="root">OperationDefinition: appointment-hold
-
-  </h2>
-
-  <table class="colsi">
-
-    <tr>
-      <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/appointment-hold<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/appointment-hold"/></span>
-      </td>
-      <td><i>Version</i>:
-      <span class="copy-text">0.1.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/appointment-hold|0.1.0"/></span>
-      </td>
-    </tr>
-
-    <tr>
-
-
-
-
-
-
-
-      <td colspan="3">
-        
-          Active
-          
-            as of 2025-01-11
-          
-        
-      </td>
-
-
-      <td>
-        <i>Responsible:</i> 
-
-        HL7® Austria, TC FHIR®
-
-      </td>
-
-
-      <td><i>Computable Name</i>: <span style="font-family: monospace;">Hold_Appointment_Operation</span></td>
-    </tr>
-
-
-
-
-  </table>
-
-
-<p>
-<p>Request for a hold on a selected Appointment in order for the user to complete entering data for booking an appointment.  This operation precedes the booking and follows the appointment availability interaction.  The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly.</p>
-
-</p>
-
-
-  <!-- insert intro if present -->
-  
-
-
-
-<!--  <p>
-  Formats: <a href="OperationDefinition-appointment-hold.xml.html">XML</a>, <a href="OperationDefinition-appointment-hold.json.html">JSON</a>, <a href="OperationDefinition-appointment-hold.ttl.html">Turtle</a>
-  </p>-->
-
-  
-
-
-  <div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition appointment-hold</b></p><a name="appointment-hold"> </a><a name="hcappointment-hold"> </a><a name="appointment-hold-en-US"> </a><p>URL: [base]/Appointment/$hold</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>appointment-reference</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/references.html#Reference">Reference</a> (<a href="StructureDefinition-at-scheduling-appointment.html" title="http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment">HL7® AT Scheduling Appointment Profile</a>)</td><td/><td><div><p>A resource id for one of proposed Appointments returned by a prior $find operation (e.g., Resource/1234).  References can be to an absolute URL, but servers only perform this operation on their own appointments.</p>
-</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/parameters.html">Parameters</a></td><td/><td><div><p>The response will be a Parameters resource consisting of the requested held Appointment resource and an OperationOutcome with errors, warnings or information as a result of processing the operation. The Appointment resource will have an updated <code>status</code> of &quot;pending&quot; if the hold is approved or  &quot;cancelled&quot; if the hold is rejected.</p>
-</div></td></tr></table></div>
-
-  <!-- insert notes if present -->
-  
-
-
+  <h2 id="root">: Hold_Slot_Operation - Change History</h2>
+  <p>History of changes for slot-hold .</p>
 
   
 
 </div>
+
 </div>  <!-- /inner-wrapper -->
 </div>  <!-- /row -->
 </div>  <!-- /container -->
@@ -246,6 +179,8 @@
 <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
 <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
 
+  <script type="text/javascript" src="assets/js/tabs.js"> </script>
+
 <script type="text/javascript" src="assets/js/window-hash.js"> </script>
 <a name="bottom"> </a>
 <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
@@ -253,7 +188,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package TC-FHIR-AG-Scheduling-R5#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Sat, Jan 11, 2025 13:21+0000">2025-01-11</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package TC-FHIR-AG-Scheduling-R5#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Sat, Jan 18, 2025 13:02+0000">2025-01-18</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
