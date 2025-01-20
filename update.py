@@ -14,13 +14,13 @@ class Entry():
         self.version = version
         self.branch = branch
         self.published = published
-    
+
 def fromYaml( name, yaml,fname ):
 
     if len(yaml) == 6:
         label = 'label-warning'
         if index_yml[4].get("branch", "n.a.") == MAIN_BRANCH_NAME and index_yml[0].get("name", "").startswith('HL7'):
-            label = 'label-success'            
+            label = 'label-success'
         # Partner main
         if index_yml[4].get("branch", "n.a.") == MAIN_BRANCH_NAME:
             label = 'label-success'
@@ -46,30 +46,30 @@ def fromYaml( name, yaml,fname ):
 
 def build_rows(content):
     rows = ''
-    for entry in content:        
+    for entry in content:
         rows += f"""<tr>
-                    <td style='font-size:11pt;'><a href="./{entry['fname']}/index.html">{entry['fname']}</td>                                 
+                    <td style='font-size:11pt;'><a href="./{entry['fname']}/index.html">{entry['fname']}</td>
                     <td style='font-size:11pt;'><span class="label label-info">{entry['version']}</span></td>
                     <td style='font-size:11pt;'><span class="label {entry['label']}">{entry['branch']}</span></td>
-                    <td style='font-size:11pt;'><span class="">{entry['published']}</span></td>                                                     
+                    <td style='font-size:11pt;'><span class="">{entry['published']}</span></td>
                 </tr>"""
     return rows
 
-def build_table_html( cn, clazz = 'datatable' ): 
+def build_table_html( cn, clazz = 'datatable' ):
     ret = ''
     for key in cn.keys():
-        value = cn[key]         
+        value = cn[key]
         ret += f"""<div class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="d-flex w-100 justify-content-between">
                         <h4 class="mb-1">{key}</h4>
-                        <p class="mb-1" style="margin-top:6px;color:#666">{value[0]['description']}</p>                                                                     
+                        <p class="mb-1" style="margin-top:6px;color:#666">{value[0]['description']}</p>
                         <table class="table {clazz}">
                         <thead>
                             <tr>
                             <td >Published at</td>
                             <td >Version</td>
                             <td >Status</td>
-                            <td >Last Published</td>                            
+                            <td >Last Published</td>
                             </tr>
                         </thead>
                         <tbody style='font-size:14pt;'>
@@ -86,9 +86,9 @@ def populate_html( fName, name, label, branch, version, description, published )
     return f"""<a href="{fName}/index.html" class="list-group-item list-group-item-action flex-column align-items-start">
                             <div class="d-flex w-100 justify-content-between">
                                 <h5 class="mb-1">{name}<span style="margin-left: 8px;" class="label {label}">{branch}</span></h5>
-                                <span class="label label-info">{version}</span>                      
+                                <span class="label label-info">{version}</span>
                             </div>
-                            <p class="mb-1" style="margin-top:6px;">{description}</p>                    
+                            <p class="mb-1" style="margin-top:6px;">{description}</p>
                             <small>Last published:</small> <span class="label label-default">{published}</span>
                             </a>"""
 
@@ -107,34 +107,34 @@ membercontent = dict()
 workingcontent = dict()
 
 for name in glob.glob('./*/_index.yml'):
-    
-    with open(name) as file:  
+
+    with open(name) as file:
         index_yml = yaml.load(file, Loader=yaml.FullLoader)
         #print(index_yml)
         folder_name = name.replace('/_index.yml', '')
-        entry_value = fromYaml(name, index_yml, folder_name) 
-        
+        entry_value = fromYaml(name, index_yml, folder_name)
+
         if entry_value is not None:
+            if entry_value['branch'] == entry_value['fname']:
+                date_pub = datetime.strptime( entry_value['published'], date_format )
+                date_now = datetime.now()
+                delta = date_now - date_pub
+                days = abs(delta.days)
 
-            date_pub = datetime.strptime( entry_value['published'], date_format )
-            date_now = datetime.now()
-            delta = date_now - date_pub
-            days = abs(delta.days)
+                if( entry_value['type'] == OFFICIAL_TYPE_NAME or entry_value['branch'] == MAIN_BRANCH_NAME ) and entry_value['name'].startswith('HL7'):
+                    if entry_value['name'] not in hl7content.keys():
+                        hl7content[entry_value['name']] = []
+                    hl7content[entry_value['name']].append( entry_value )
+                elif (entry_value['type'] == OFFICIAL_TYPE_NAME or entry_value['branch'] == MAIN_BRANCH_NAME):
+                    if entry_value['name'] not in membercontent.keys():
+                        membercontent[entry_value['name']] = []
+                    membercontent[entry_value['name']].append( entry_value )
+                else:
+                    if(days < 120):
+                        if entry_value['name'] not in workingcontent.keys():
+                            workingcontent[entry_value['name']] = []
+                        workingcontent[entry_value['name']].append( entry_value )
 
-            if( entry_value['type'] == OFFICIAL_TYPE_NAME or entry_value['branch'] == MAIN_BRANCH_NAME ) and entry_value['name'].startswith('HL7'):
-                if entry_value['name'] not in hl7content.keys():
-                    hl7content[entry_value['name']] = []
-                hl7content[entry_value['name']].append( entry_value )
-            elif (entry_value['type'] == OFFICIAL_TYPE_NAME or entry_value['branch'] == MAIN_BRANCH_NAME):
-                if entry_value['name'] not in membercontent.keys():
-                    membercontent[entry_value['name']] = []
-                membercontent[entry_value['name']].append( entry_value )
-            else:
-                if(days < 120):
-                    if entry_value['name'] not in workingcontent.keys():
-                        workingcontent[entry_value['name']] = []
-                    workingcontent[entry_value['name']].append( entry_value )
-                            
 content = content + build_table_html( hl7content )  + partnerContent + build_table_html( membercontent ) + branchContent + build_table_html( workingcontent, 'sa-datatable' ) + '<!-- @@end-include -->'
 
 with open('./index.html','r',encoding="utf8") as inputfile:
@@ -145,4 +145,3 @@ with open('./index.html','r',encoding="utf8") as inputfile:
         index_html.write( c_out )
         index_html.close()
 
- 
