@@ -1,0 +1,79 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/Organization/HL7ATCoreOrganizationExample01> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "HL7ATCoreOrganizationExample01"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-organization"^^xsd:anyURI ;
+       fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-organization>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Organization HL7ATCoreOrganizationExample01</b></p><a name=\"HL7ATCoreOrganizationExample01\"> </a><a name=\"hcHL7ATCoreOrganizationExample01\"> </a><a name=\"HL7ATCoreOrganizationExample01-en-US\"> </a><p><b>identifier</b>: <code>urn:ietf:rfc:3986</code>/urn:oid:1.2.40.0.34.99.4613.3, <code>urn:oid:1.2.40.0.10.1.4.3.2</code>/123456789</p><p><b>type</b>: <span title=\"Codes:{https://termgit.elga.gv.at/ValueSet/hl7-at-organizationtype 300}\">Allgemeine Krankenanstalt</span></p><p><b>name</b>: Amadeus Spital</p><p><b>address</b>: Mozartgasse 1-7 Haupteingang St. Wolfgang Salzburg 5350 AUT (work)</p><blockquote><p><b>contact</b></p><p><b>telecom</b>: <a href=\"mailto:info@amadeusspital.at\">info@amadeusspital.at</a>, <a href=\"tel:+43.6138.3453446.0\">+43.6138.3453446.0</a></p></blockquote></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "urn:ietf:rfc:3986"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "urn:oid:1.2.40.0.34.99.4613.3" ] ;
+     fhir:assigner [
+       fhir:display [ fhir:v "Bundesministerium für Gesundheit" ]
+     ]
+  ] [
+     fhir:system [ fhir:v "urn:oid:1.2.40.0.10.1.4.3.2"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "123456789" ] ;
+     fhir:assigner [
+       fhir:display [ fhir:v "Dachverband der österreichischen Sozialversicherungsträger" ]
+     ]
+  ] ) ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://termgit.elga.gv.at/ValueSet/hl7-at-organizationtype"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "300" ] ;
+       fhir:display [ fhir:v "Allgemeine Krankenanstalt" ]
+     ] )
+  ] ) ; # 
+  fhir:name [ fhir:v "Amadeus Spital"] ; # 
+  fhir:address ( [
+     fhir:use [ fhir:v "work" ] ;
+     fhir:type [ fhir:v "both" ] ;
+     fhir:line ( [
+       fhir:v "Mozartgasse 1-7 Haupteingang" ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Mozartgasse" ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "1-7" ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Haupteingang" ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Barrierefreier Zugang" ]
+       ] )
+     ] ) ;
+     fhir:city [ fhir:v "St. Wolfgang" ] ;
+     fhir:state [ fhir:v "Salzburg" ] ;
+     fhir:postalCode [ fhir:v "5350" ] ;
+     fhir:country [ fhir:v "AUT" ]
+  ] ) ; # 
+  fhir:contact ( [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "info@amadeusspital.at" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] [
+       fhir:system [ fhir:v "phone" ] ;
+       fhir:value [ fhir:v "+43.6138.3453446.0" ] ;
+       fhir:use [ fhir:v "home" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

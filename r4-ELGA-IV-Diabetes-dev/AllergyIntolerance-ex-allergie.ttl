@@ -1,0 +1,49 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga-iv-diab-r4/AllergyIntolerance/ex-allergie> a fhir:AllergyIntolerance ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ex-allergie"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/elga-iv-diab-r4/StructureDefinition/diab-allergyintolerance"^^xsd:anyURI ;
+       fhir:link <https://fhir.hl7.at/elga-iv-diab-r4/StructureDefinition/diab-allergyintolerance>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: AllergyIntolerance ex-allergie</b></p><a name=\"ex-allergie\"> </a><a name=\"hcex-allergie\"> </a><a name=\"ex-allergie-en-US\"> </a><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical active}\">Active</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 764146007}\">Penicillin</span></p><p><b>patient</b>: <a href=\"Patient-ex-patient.html\">Andrea Testperson  Female, DoB: 1975-11-12 ( Social Security number: 0000121150)</a></p><p><b>recordedDate</b>: 2024-04-26</p><p><b>asserter</b>: <a href=\"Practitioner-ex-hausaerztin.html\">Practitioner Sophie Hausärztin </a></p></div>"
+  ] ; # 
+  fhir:clinicalStatus [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "active" ] ;
+       fhir:display [ fhir:v "Active" ]
+     ] )
+  ] ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:764146007 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "764146007" ] ;
+       fhir:display [ fhir:v "Penicillin" ]
+     ] )
+  ] ; # 
+  fhir:patient [
+     fhir:link <https://fhir.hl7.at/elga-iv-diab-r4/Patient/ex-patient> ;
+     fhir:reference [ fhir:v "Patient/ex-patient" ] ;
+     fhir:type [ fhir:v "Patient"^^xsd:anyURI ]
+  ] ; # 
+  fhir:recordedDate [ fhir:v "2024-04-26"^^xsd:date] ; # 
+  fhir:asserter [
+     fhir:link <https://fhir.hl7.at/elga-iv-diab-r4/Practitioner/ex-hausaerztin> ;
+     fhir:reference [ fhir:v "Practitioner/ex-hausaerztin" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
