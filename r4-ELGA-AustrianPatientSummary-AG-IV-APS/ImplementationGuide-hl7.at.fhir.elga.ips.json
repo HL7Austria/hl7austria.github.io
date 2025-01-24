@@ -10,7 +10,7 @@
   "name" : "ELGAAustrianPatientSummaryR4",
   "title" : "Austrian Patient Summary (R4)",
   "status" : "draft",
-  "date" : "2025-01-17T11:40:58+00:00",
+  "date" : "2025-01-24T11:26:43+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -81,6 +81,39 @@
       {
         "url" : "value",
         "valueString" : "ci-build"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "excludettl"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "allow-extensible-warnings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "display-warnings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -366,6 +399,39 @@
     {
       "extension" : [{
         "url" : "code",
+        "valueCode" : "excludettl"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "allow-extensible-warnings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "display-warnings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
         "valueCode" : "autoload-resources"
       },
       {
@@ -622,11 +688,34 @@
         "valueString" : "Observation"
       }],
       "reference" : {
-        "reference" : "Observation/alcohol-use-example"
+        "reference" : "Observation/001"
       },
-      "name" : "alcohol-use-example",
+      "name" : "alcohol-use-01",
       "description" : "Social History - Alkohol Beispiel",
       "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationalcoholuse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "AllergyIntolerance"
+      }],
+      "reference" : {
+        "reference" : "AllergyIntolerance/001"
+      },
+      "name" : "AllergyIntolerance - No Known Allergies",
+      "description" : "AllergyIntolerance - No known allergies",
+      "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-allergyintolerance"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "AllergyIntolerance"
+      }],
+      "reference" : {
+        "reference" : "AllergyIntolerance/002"
+      },
+      "name" : "AllergyIntolerance - Überwundene Allergie",
+      "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-allergyintolerance"
     },
     {
       "extension" : [{
@@ -662,6 +751,18 @@
       },
       "name" : "APS-2-preventive-medical-checkup",
       "description" : "APS with preventive medical checkup",
+      "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-bundle"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/APS-3-diabetes"
+      },
+      "name" : "APS-3-diabetes",
+      "description" : "Diabetes Checklist / Leitdokument",
       "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-bundle"
     },
     {
@@ -794,6 +895,18 @@
       },
       "name" : "AT IPS Immunization",
       "description" : "This AT IPS profile for the Immunization resource is derived from the general Immunization resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/at-ips-laboratory-pathology-codes"
+      },
+      "name" : "AT IPS Laboratory/Pathology Codes",
+      "description" : "This value set combines the used value sets of ELGA for Laboratory and Pathology reports.",
       "exampleBoolean" : false
     },
     {
@@ -1018,11 +1131,11 @@
         "valueString" : "Device"
       }],
       "reference" : {
-        "reference" : "Device/device-01"
+        "reference" : "Device/001"
       },
       "name" : "device-01",
       "description" : "Beispiel eines Device",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-device"
     },
     {
       "extension" : [{
@@ -1030,23 +1143,11 @@
         "valueString" : "Device"
       }],
       "reference" : {
-        "reference" : "Device/device-software"
+        "reference" : "Device/002"
       },
-      "name" : "device-software",
+      "name" : "device-software-02",
       "description" : "Beispiel einer Software",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      }],
-      "reference" : {
-        "reference" : "Observation/exercise-example"
-      },
-      "name" : "exercise-example",
-      "description" : "Patient Story - Workout Beispiel",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-device"
     },
     {
       "extension" : [{
@@ -1075,14 +1176,38 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/002"
+      },
+      "name" : "observation-exercise-02",
+      "description" : "Patient Story - Workout Beispiel",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Patient"
       }],
       "reference" : {
-        "reference" : "Patient/001"
+        "reference" : "Patient/002"
       },
-      "name" : "patient-01",
-      "description" : "Patient - Female Minimal Marie Musterfrau",
+      "name" : "Patient/001",
+      "description" : "Patient - Female Minimal",
       "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-patient"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Procedure"
+      }],
+      "reference" : {
+        "reference" : "Procedure/001"
+      },
+      "name" : "Procedure - Surgical Placement of Coronary Stent",
+      "description" : "Procedure - Surgical Placement of Coronary Stent",
+      "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-Procedure"
     },
     {
       "extension" : [{
@@ -1090,9 +1215,9 @@
         "valueString" : "Observation"
       }],
       "reference" : {
-        "reference" : "Observation/tobacco-use-example"
+        "reference" : "Observation/003"
       },
-      "name" : "tobacco-use-example",
+      "name" : "tobacco-use-03",
       "description" : "Social History - Raucher Beispiel",
       "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationtobaccouse"
     }],

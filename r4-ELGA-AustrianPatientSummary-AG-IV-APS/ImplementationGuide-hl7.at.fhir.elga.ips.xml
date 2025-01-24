@@ -11,7 +11,7 @@
   <name value="ELGAAustrianPatientSummaryR4"/>
   <title value="Austrian Patient Summary (R4)"/>
   <status value="draft"/>
-  <date value="2025-01-17T11:40:58+00:00"/>
+  <date value="2025-01-24T11:26:43+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -71,6 +71,30 @@
       </extension>
       <extension url="value">
         <valueString value="ci-build"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="excludettl"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="allow-extensible-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="display-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -278,6 +302,30 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
+        <valueCode value="excludettl"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="allow-extensible-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="display-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
         <valueCode value="autoload-resources"/>
       </extension>
       <extension url="value">
@@ -465,11 +513,32 @@
         <valueString value="Observation"/>
       </extension>
       <reference>
-        <reference value="Observation/alcohol-use-example"/>
+        <reference value="Observation/001"/>
       </reference>
-      <name value="alcohol-use-example"/>
+      <name value="alcohol-use-01"/>
       <description value="Social History - Alkohol Beispiel"/>
       <exampleCanonical value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationalcoholuse"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/001"/>
+      </reference>
+      <name value="AllergyIntolerance - No Known Allergies"/>
+      <description value="AllergyIntolerance - No known allergies"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-allergyintolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/002"/>
+      </reference>
+      <name value="AllergyIntolerance - Überwundene Allergie"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-allergyintolerance"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -502,6 +571,17 @@
       </reference>
       <name value="APS-2-preventive-medical-checkup"/>
       <description value="APS with preventive medical checkup"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-bundle"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/APS-3-diabetes"/>
+      </reference>
+      <name value="APS-3-diabetes"/>
+      <description value="Diabetes Checklist / Leitdokument"/>
       <exampleCanonical value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-bundle"/>
     </resource>
     <resource>
@@ -623,6 +703,17 @@
       </reference>
       <name value="AT IPS Immunization"/>
       <description value="This AT IPS profile for the Immunization resource is derived from the general Immunization resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/at-ips-laboratory-pathology-codes"/>
+      </reference>
+      <name value="AT IPS Laboratory/Pathology Codes"/>
+      <description value="This value set combines the used value sets of ELGA for Laboratory and Pathology reports."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -828,33 +919,22 @@
         <valueString value="Device"/>
       </extension>
       <reference>
-        <reference value="Device/device-01"/>
+        <reference value="Device/001"/>
       </reference>
       <name value="device-01"/>
       <description value="Beispiel eines Device"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-device"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Device"/>
       </extension>
       <reference>
-        <reference value="Device/device-software"/>
+        <reference value="Device/002"/>
       </reference>
-      <name value="device-software"/>
+      <name value="device-software-02"/>
       <description value="Beispiel einer Software"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Observation"/>
-      </extension>
-      <reference>
-        <reference value="Observation/exercise-example"/>
-      </reference>
-      <name value="exercise-example"/>
-      <description value="Patient Story - Workout Beispiel"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-device"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -880,23 +960,45 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/002"/>
+      </reference>
+      <name value="observation-exercise-02"/>
+      <description value="Patient Story - Workout Beispiel"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Patient"/>
       </extension>
       <reference>
-        <reference value="Patient/001"/>
+        <reference value="Patient/002"/>
       </reference>
-      <name value="patient-01"/>
-      <description value="Patient - Female Minimal Marie Musterfrau"/>
+      <name value="Patient/001"/>
+      <description value="Patient - Female Minimal"/>
       <exampleCanonical value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-patient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Procedure"/>
+      </extension>
+      <reference>
+        <reference value="Procedure/001"/>
+      </reference>
+      <name value="Procedure - Surgical Placement of Coronary Stent"/>
+      <description value="Procedure - Surgical Placement of Coronary Stent"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-Procedure"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Observation"/>
       </extension>
       <reference>
-        <reference value="Observation/tobacco-use-example"/>
+        <reference value="Observation/003"/>
       </reference>
-      <name value="tobacco-use-example"/>
+      <name value="tobacco-use-03"/>
       <description value="Social History - Raucher Beispiel"/>
       <exampleCanonical value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationtobaccouse"/>
     </resource>
