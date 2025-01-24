@@ -45,15 +45,10 @@ def fromYaml( name, yaml,fname ):
         print(f"❌ The provided yaml configuration in {name} does not contain all required properties")
         return
 
-def build_rows(content):
+def build_publication(content):
     rows = ''
     for entry in content:
-        rows += f"""<tr>
-                    <td style='font-size:11pt;'><a href="./{entry['fname']}/index.html">{entry['fname']}</td>
-                    <td style='font-size:11pt;'><span class="label label-info">{entry['version']}</span></td>
-                    <td style='font-size:11pt;'><span class="label {entry['label']}">{entry['branch']}</span></td>
-                    <td style='font-size:11pt;'><span class="">{entry['published']}</span></td>
-                </tr>"""
+        rows += f"""<p class="mb-1" style="margin-top:6px;color:#666"><a href="./{entry['fname']}/index.html">Implementation Guide</a> | <a href="https://build.fhir.org/ig/HL7Austria/{entry['fname']}/index.html">CI Build</a> | <a href="./{entry['fname']}/history.html">Publication History</a> | <a href="https://github.com/HL7Austria/{entry['fname']}">Source</a></p>"""
     return rows
 
 def build_table_html( cn, clazz = 'datatable' ):
@@ -64,42 +59,15 @@ def build_table_html( cn, clazz = 'datatable' ):
                     <div class="d-flex w-100 justify-content-between">
                         <h4 class="mb-1">{key}</h4>
                         <p class="mb-1" style="margin-top:6px;color:#666">{value[0]['description']}</p>
-                        <table class="table {clazz}">
-                        <thead>
-                            <tr>
-                            <td >Published at</td>
-                            <td >Version</td>
-                            <td >Status</td>
-                            <td >Last Published</td>
-                            </tr>
-                        </thead>
-                        <tbody style='font-size:14pt;'>
-                            {build_rows(value)}
-                        </tbody>
-                        </table>
+                        {build_publication(value)}
                     </div>
                 </div>"""
 
     return ret
 
-
-def populate_html( fName, name, label, branch, version, description, published ):
-    return f"""<a href="{fName}/index.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">{name}<span style="margin-left: 8px;" class="label {label}">{branch}</span></h5>
-                                <span class="label label-info">{version}</span>
-                            </div>
-                            <p class="mb-1" style="margin-top:6px;">{description}</p>
-                            <small>Last published:</small> <span class="label label-default">{published}</span>
-                            </a>"""
-
-# (.*)<!--\s*@@begin-include
-# <!--\s*@@end-include\s*-->(.*)
-
 regex = '<!--\s*@@begin-include\s*-->(.*)<!--\s*@@end-include\s*-->'
 content = '<!-- @@begin-include --><h3 style="margin-top:20px">Official HL7-AT IGs</h3>'
 partnerContent = '<h3 style="margin-top:50px">HL7 Austria Member IGs</h3>'
-branchContent =  '<h3 style="margin-top:50px">Working Drafts</h3>'
 
 date_format = '%d.%m.%Y'
 
@@ -116,34 +84,23 @@ for name in glob.glob('./*/_index.yml'):
         entry_value = fromYaml(name, index_yml, folder_name)
 
         if entry_value is not None:
-            if entry_value['branch'] != entry_value['fname']:
-                date_pub = datetime.strptime( entry_value['published'], date_format )
-                date_now = datetime.now()
-                delta = date_now - date_pub
-                days = abs(delta.days)
-
-                if( entry_value['type'] == OFFICIAL_TYPE_NAME or entry_value['branch'] == MAIN_BRANCH_NAME ) and entry_value['name'].startswith('HL7'):
+            if entry_value['branch'] == entry_value['fname']:
+                if entry_value['name'].startswith('HL7'):
                     if entry_value['name'] not in hl7content.keys():
                         hl7content[entry_value['name']] = []
                     hl7content[entry_value['name']].append( entry_value )
-                elif (entry_value['type'] == OFFICIAL_TYPE_NAME or entry_value['branch'] == MAIN_BRANCH_NAME):
+                else:
                     if entry_value['name'] not in membercontent.keys():
                         membercontent[entry_value['name']] = []
                     membercontent[entry_value['name']].append( entry_value )
-                else:
-                    if(days < 120):
-                        if entry_value['name'] not in workingcontent.keys():
-                            workingcontent[entry_value['name']] = []
-                        workingcontent[entry_value['name']].append( entry_value )
 
-content = content + build_table_html( hl7content )  + partnerContent + build_table_html( membercontent ) + branchContent + build_table_html( workingcontent, 'sa-datatable' ) + '<!-- @@end-include -->'
+content = content + build_table_html( hl7content )  + partnerContent + build_table_html( membercontent ) + '<!-- @@end-include -->'
 
-with open('./index.html','r',encoding="utf8") as inputfile:
+with open('./index_published.html','r',encoding="utf8") as inputfile:
     pattern = re.compile( regex, re.MULTILINE | re.DOTALL)
     c_out = pattern.sub( content,  inputfile.read() )
 
-    with open("index.html", "w", encoding='utf8') as index_html:
+    with open("index_published.html", "w", encoding='utf8') as index_html:
         index_html.write( c_out )
         index_html.close()
-
 
