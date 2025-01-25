@@ -16,7 +16,7 @@
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "TCFHIRAGSchedulingR5"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-01-18T14:38:52+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-01-25T14:51:21+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7® Austria, TC FHIR®"] ; # 
   fhir:packageId [ fhir:v "TC-FHIR-AG-Scheduling-R5"] ; # 
   fhir:license [ fhir:v "CC0-1.0"] ; # 
@@ -32,7 +32,7 @@
        fhir:link <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
      ] ;
      fhir:packageId [ fhir:v "hl7.terminology.r5" ] ;
-     fhir:version [ fhir:v "6.1.0" ]
+     fhir:version [ fhir:v "6.2.0" ]
   ] [
      fhir:id [ fhir:v "hl7ext" ] ;
      fhir:extension ( [
@@ -81,6 +81,18 @@
          fhir:reference [ fhir:v "ValueSet/AtSchedulingServiceType" ]
        ] ;
        fhir:name [ fhir:v "AtSchedulingServiceType" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OperationDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/healthcareService-provider-find> ;
+         fhir:reference [ fhir:v "OperationDefinition/healthcareService-provider-find" ]
+       ] ;
+       fhir:name [ fhir:v "healthcareService-provider-find" ] ;
+       fhir:description [ fhir:v "A query operation that allows to search for healthcare service providers that offer a specific healthcare service. The general information about the HealthcareService identification itself is already available in advance, either as resource or via codes." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
