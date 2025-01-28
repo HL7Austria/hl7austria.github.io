@@ -1,13 +1,9 @@
-<!-- layouts\layout-changehistory.html -->
-<!-- get modelType -->
-
-
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE HTML>
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>ELGA.IV.HI\ - FHIR® v4.0.1</title>
+    <title>ELGA.IV.HI\Use Cases - FHIR® v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -43,8 +39,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:""}
-    h3,h4,h5,h6{--heading-prefix:""}</style>
+    <style type="text/css">h2{--heading-prefix:"4"}
+    h3,h4,h5,h6{--heading-prefix:"4"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- at-fhir-ig-template begin -->
@@ -159,7 +155,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Use Cases</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -171,9 +167,20 @@
         <div class="row">
           <div class="inner-wrapper">
 
-
-<div style="counter-reset: section 10" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">IntegrierteVersorgungHerzinsuffizienz - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://hi.iv.elga.gv.at/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!-- at-fhir-ig-template begin -->
+  <div class="alert alert-warning" role="alert">
+    <!--ReleaseHeader--><p id="publish-box">IntegrierteVersorgungHerzinsuffizienz - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://hi.iv.elga.gv.at/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  </div>
+  <!-- at-fhir-ig-template end -->
+  <h2>Use Cases</h2>
   
 
 
@@ -183,47 +190,73 @@
 
 
 
-<ul class="nav nav-tabs">
 
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
+
+<h3 id="patient-journey">Patient Journey</h3>
+
+<p>Die folgende fiktive "Patient Journey" beschreibt einen möglichen Anwendungsfall des Leitfadens:</p>
+
+<p>Anton ist 72 Jahre alt und lebt mit seiner Ehefrau in Wien. Er hat zwei erwachsene Kinder und Enkelkinder. Beruflich war er früher als Buchhalter tätig. Sein Allgemeinzustand ist gut, allerdings ist er adipös (BMI &gt;30). In seiner Familie gibt es eine Vorbelastung für Herzkrankheiten. Seit 2016 nimmt Anton aufgrund von arterieller Hypertonie täglich morgens eine 5-mg-Tablette Ramipril ein. Er ist körperlich aktiv und geht regelmäßig mit seinem Hund spazieren. Anton ist technisch versiert und nutzt häufig sein Smartphone. Er hat vor 5 Jahren mit dem Rauchen aufgehört. Davor rauchte er 40 Jahre lang täglich ein Päckchen Zigaretten (entsprechend 40 Pack Years). Anton gibt an, in den letzten Jahren moderat Alkohol zu konsumieren, etwa 1-2 Gläser Wein oder Bier pro Woche. Er hat nie regelmäßig größere Mengen Alkohol getrunken.</p>
+
+<ul>
   <li>
-    <a href="ValueSet-schulung.html">Narrative Content</a>
+    <p>15.03.2024: Anton verspürt seit einigen Wochen zunehmende Kurzatmigkeit und Müdigkeit, besonders bei Belastung. 
+Er sucht seinen Hausarzt auf. Dieser führt eine gründliche Anamnese und körperliche Untersuchung durch. Dabei fallen Beinödeme und EKG-Auffälligkeiten auf. 
+Es wird eine Verdachtsdiagnose auf Herzinsuffizienz gestellt. Anton wird zur weiteren Abklärung an einen Kardiologen überwiesen.</p>
   </li>
-
-
-
-  
-    <li>
-      <a href="ValueSet-schulung.xml.html">XML</a>
-    </li>
-  
-
-
-  
-    <li>
-      <a href="ValueSet-schulung.json.html">JSON</a>
-    </li>
-  
-
-
-  
-    <li>
-      <a href="ValueSet-schulung.ttl.html">TTL</a>
-    </li>
-  
-
-
-
+  <li>
+    <p>22.03.2024: Der Kardiologe diagnostiziert eine Herzinsuffizienz mit reduzierter Ejektionsfraktion (HFrEF) basierend auf der Echokardiographie und den auffälligen Laborwerten, die unter anderem auf eine Niereninsuffizienz, Anämie, Dyslipidämie und Hypothyreose hinweisen. Antons medikamentöse Therapie wird erhöht und ergänzt. Außerdem erhält Anton Empfehlungen zur Gewichtskontrolle, salzarmen Ernährung und moderater körperlicher Aktivität.</p>
+  </li>
+  <li>
+    <p>29.03.2024: Anton fühlt sich mit der Therapie bereits besser, hat jedoch Fragen zu den Untersuchungsergebnissen und zur Einnahme der Medikamente. Der Hausarzt informiert ihn über eine Veranstaltung des Herzverbands und das Disease-Management-Programm (DMP) für Herzinsuffizienz, das Anton weiterhelfen könnte.</p>
+  </li>
+  <li>
+    <p>Fortlaufende Betreuung: Anton nimmt regelmäßig an Schulungen und Beratungen im Rahmen des DMP teil. Durch die engmaschige Betreuung und optimierte Therapie kann er seine Erkrankung besser verstehen und managen, was ihm hilft, trotz der Einschränkungen eine gute Lebensqualität zu erhalten.</p>
+  </li>
 </ul>
 
+<pre class="mermaid">
+---
+config:
+  look: handDrawn
+  layout: fixed
+---
+flowchart TD
+    A("**15.03.2024**<br />Hausarzt führt <br />**Gespräch/Untersuchung** <br />durch und überweist an <br />den Kardiologen. <br />**Verdachtsdiagnose <br />Herzinsuffizienz**")
+    A -.-&gt; a1("**Körperliche Untersuchung**: <br />zeigt Beinödeme und <br />EKG-Auffälligkeiten") 
+    A -.-&gt; a2("**Anamnese**: <br />Symptome wie Kurzatmigkeit <br />bei Belastung und Müdigkeit <br />werden erhoben")
+    A ==&gt; B("**22.03.2024**<br />Der Kardiologe führt <br /> **Echokardiographie** und <br />**Blutabnahme** durch.") 
+    B -.-&gt; b1("**Diagnose Herzinsuffizienz** <br />mit reduzierter Ejektionsfraktion (HFrEF) wird gestellt.")
+    b1 -.-&gt; bb1("Medikation")
+    b1 -.-&gt; bb2("Beratung zum Lebensstil")
+    B ==&gt; C("**29.03.2024**<br />**Nachbesprechung**<br />beim Hausarzt.")
+    C -.-&gt; c1("Hausarzt informiert Patienten <br />über Infoveranstaltung des <br />Herzverbandes und über die <br />weiterführende Therapie.")
+    C ==&gt; D("**Fortlaufende Therapie**<br />Engmaschige Kontrollen <br />beim Hausarzt.<br />Patient nimmt regelmäßig an <br />Schulungen und Beratungen teil.")
+    
+    %% Styling
+    style A fill:#BBDEFB,stroke-width:4px
+    style B fill:#BBDEFB,stroke-width:4px
+    style C fill:#BBDEFB,stroke-width:4px
+    style D fill:#BBDEFB,stroke-width:4px
+    style a1 fill:#FFE0B2
+    style a2 fill:#FFE0B2
+    style b1 fill:#FFE0B2
+    style bb1 fill:#FFE0B2
+    style bb2 fill:#FFE0B2
+    style c1 fill:#FFE0B2
+</pre>
 
-  <a name="root"> </a>
-  <h2 id="root">: Schulung - Change History</h2>
-  <p>History of changes for schulung .</p>
 
-  
 
 </div>
-
 </div>  <!-- /inner-wrapper -->
 </div>  <!-- /row -->
 </div>  <!-- /container -->
@@ -231,8 +264,6 @@
 
 <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
 <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
-
-  <script type="text/javascript" src="assets/js/tabs.js"> </script>
 
 <script type="text/javascript" src="assets/js/window-hash.js"> </script>
 <a name="bottom"> </a>
