@@ -15,10 +15,4 @@
       <sch:assert test="count(f:extension[@url = 'https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/immunization-basedOn']) &lt;= 1">extension with URL = 'https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/immunization-basedOn': maximum cardinality of 'extension' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
-  <sch:pattern>
-    <sch:title>f:Immunization/f:protocolApplied</sch:title>
-    <sch:rule context="f:Immunization/f:protocolApplied">
-      <sch:assert test="count(f:targetDisease) &gt;= 1">targetDisease: minimum cardinality of 'targetDisease' is 1</sch:assert>
-    </sch:rule>
-  </sch:pattern>
 </sch:schema>
