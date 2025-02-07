@@ -22,9 +22,9 @@
       "systems" : ["http://tbd.at/MOPED-Anwesenheitsart"],
       "uses" : {
       },
+      "OperationDefinition-MOPED.Patient.Verlegen.html" : "MOPED Patient $verlegen (POC)",
       "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter",
-      "OperationDefinition-MOPED.Patient.Aufnehmen.html" : "MOPED Patient $aufnehmen (POC)",
-      "OperationDefinition-MOPED.Patient.Verlegen.html" : "MOPED Patient $verlegen (POC)"
+      "OperationDefinition-MOPED.Patient.Aufnehmen.html" : "MOPED Patient $aufnehmen (POC)"
     },
     {
       "url" : "http://example.org/ValueSet/moped-Fondsrelevanz-valueset",
@@ -60,8 +60,8 @@
       "systems" : ["http://tbd.at/MOPED-LKFAbrechnungsGruppe"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response",
-      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim"
+      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim",
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response"
     },
     {
       "url" : "http://example.org/ValueSet/moped-LKFAbrechnungsKnoten-valueset",
@@ -158,8 +158,8 @@
       "systems" : ["http://tbd.at/MOPED-encounter-abgangsart"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter",
-      "OperationDefinition-MOPED.Patient.Verlegen.html" : "MOPED Patient $verlegen (POC)"
+      "OperationDefinition-MOPED.Patient.Verlegen.html" : "MOPED Patient $verlegen (POC)",
+      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter"
     },
     {
       "url" : "http://example.org/ValueSet/moped-altersgruppe-valueset",
@@ -177,17 +177,29 @@
       "url" : "http://example.org/ValueSet/moped-aufnahmeart-valueset",
       "version" : "0.1.0",
       "status" : "draft",
-      "name" : "Aufnahmeart",
+      "name" : "AufnahmeartVS",
+      "title" : "Aufnahmeart des Patienten",
+      "description" : "ValueSet für die Aufnahmeart des Patienten (LKF + Ka-Org)",
+      "systems" : ["http://tbd.at/moped-ext-aufnahmeart"],
+      "uses" : {
+      },
+      "StructureDefinition-moped-ext-aufnahmeart.html" : "Aufnahmeart"
+    },
+    {
+      "url" : "http://example.org/ValueSet/moped-aufnahmeart2-valueset",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "Aufnahmeart2",
       "title" : "Aufnahmeart des Patienten",
       "description" : "ValueSet für die Aufnahmeart des Patienten",
       "systems" : ["http://tbd.at/moped-ext-aufnahmeart"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
       "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter"
+      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH"
     },
     {
       "url" : "http://example.org/ValueSet/moped-behandlungsart-valueset",
@@ -199,11 +211,11 @@
       "systems" : ["http://tbd.at/MOPED-encounter-behandlungsart"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
       "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter"
+      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH"
     },
     {
       "url" : "http://example.org/ValueSet/moped-entlassungsart-valueset",
@@ -215,12 +227,12 @@
       "systems" : ["http://tbd.at/MOPED-encounter-entlassungsart"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "OperationDefinition-MOPED.Patient.Entlassen.html" : "MOPED Patient $entlassen (POC)",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
       "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter"
+      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
+      "OperationDefinition-MOPED.Patient.Entlassen.html" : "MOPED Patient $entlassen (POC)",
+      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH"
     },
     {
       "url" : "http://example.org/ValueSet/moped-sonderklasse-valueset",
@@ -269,23 +281,11 @@
       "systems" : ["http://tbd.at/MOPED-encounter-ursache"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
       "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter"
-    },
-    {
-      "url" : "http://example.org/ValueSet/moped-zugangsart-valueset",
-      "version" : "0.1.0",
-      "status" : "draft",
-      "name" : "ZugangsartVS",
-      "title" : "Zugangsart des Patienten",
-      "description" : "ValueSet für die Zugangsart des Patienten (LKF + Ka-Org)",
-      "systems" : ["http://tbd.at/moped-ext-zugangsart"],
-      "uses" : {
-      },
-      "StructureDefinition-moped-ext-zugangsart.html" : "Zugangsart"
+      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/account-aggregate",
@@ -397,9 +397,9 @@
       "sources" : ["2.16.840.1.113883.4.642.3.69"],
       "uses" : {
       },
+      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
       "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF"
+      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/address-use",
@@ -413,9 +413,9 @@
       "sources" : ["2.16.840.1.113883.4.642.3.67"],
       "uses" : {
       },
+      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
       "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF"
+      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/adjudication",
@@ -451,8 +451,8 @@
       "sources" : ["2.16.840.1.113883.4.642.3.39"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response",
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPED Coverage Eligibility Response"
+      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPED Coverage Eligibility Response",
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/adjudication-reason",
@@ -486,10 +486,10 @@
       "sources" : ["2.16.840.1.113883.4.642.3.1"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV",
+      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
       "StructureDefinition-Hauptversicherter.html" : "MOPED Hauptversicherter",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF"
+      "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV",
+      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/all-languages",
@@ -503,26 +503,26 @@
       "sources" : ["2.16.840.1.113883.4.642.3.21"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response",
-      "StructureDefinition-MOPEDCondition.html" : "MOPED Condition",
-      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPED Coverage Eligibility Request",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-Hauptversicherter.html" : "MOPED Hauptversicherter",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDAufnahmeBundle.html" : "MOPED Aufnahme Bundle",
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
-      "StructureDefinition-MOPEDAccount.html" : "MOPED Account",
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV",
-      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim",
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPED Coverage Eligibility Response",
-      "StructureDefinition-MOPEDProcedure.html" : "MOPED Procedure",
-      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage",
       "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDOrganizationAbteilung.html" : "MOPED Organization Abteilung"
+      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
+      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response",
+      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
+      "StructureDefinition-MOPEDOrganizationAbteilung.html" : "MOPED Organization Abteilung",
+      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim",
+      "StructureDefinition-MOPEDCondition.html" : "MOPED Condition",
+      "StructureDefinition-MOPEDAufnahmeBundle.html" : "MOPED Aufnahme Bundle",
+      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage",
+      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
+      "StructureDefinition-MOPEDProcedure.html" : "MOPED Procedure",
+      "StructureDefinition-MOPEDAccount.html" : "MOPED Account",
+      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter",
+      "StructureDefinition-Hauptversicherter.html" : "MOPED Hauptversicherter",
+      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPED Coverage Eligibility Request",
+      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPED Coverage Eligibility Response",
+      "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/benefit-network",
@@ -542,8 +542,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPED Coverage Eligibility Response",
-      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage"
+      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage",
+      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPED Coverage Eligibility Response"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/benefit-term",
@@ -563,8 +563,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPED Coverage Eligibility Response",
-      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage"
+      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage",
+      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPED Coverage Eligibility Response"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/benefit-type",
@@ -604,8 +604,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPED Coverage Eligibility Response",
-      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage"
+      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage",
+      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPED Coverage Eligibility Response"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/body-site",
@@ -762,10 +762,10 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response",
-      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPED Coverage Eligibility Request",
       "StructureDefinition-MOPEDClaim.html" : "MOPED Claim",
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPED Coverage Eligibility Response"
+      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPED Coverage Eligibility Request",
+      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPED Coverage Eligibility Response",
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/claim-outcome",
@@ -799,8 +799,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response",
-      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim"
+      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim",
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/claim-type",
@@ -820,8 +820,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response",
-      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim"
+      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim",
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/claim-use",
@@ -841,8 +841,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response",
-      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim"
+      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim",
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/clinical-findings",
@@ -930,15 +930,15 @@
       ],
       "uses" : {
       },
+      "StructureDefinition-MOPEDCondition.html" : "MOPED Condition",
+      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
+      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MOPEDProcedure.html" : "MOPED Procedure",
       "StructureDefinition-MOPEDAccount.html" : "MOPED Account",
       "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
       "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter",
-      "StructureDefinition-MOPEDCondition.html" : "MOPED Condition",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDProcedure.html" : "MOPED Procedure",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter"
+      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/condition-severity",
@@ -1032,9 +1032,9 @@
       "sources" : ["2.16.840.1.113883.4.642.3.71"],
       "uses" : {
       },
+      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
       "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF"
+      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/contact-point-use",
@@ -1048,9 +1048,9 @@
       "sources" : ["2.16.840.1.113883.4.642.3.73"],
       "uses" : {
       },
+      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
       "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF"
+      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/coverage-class",
@@ -1176,8 +1176,8 @@
       "uses" : {
       },
       "StructureDefinition-MOPEDCondition.html" : "MOPED Condition",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF"
+      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
+      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/datestype",
@@ -1189,10 +1189,10 @@
       "systems" : ["http://hl7.org/fhir/datestype"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response",
-      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPED Coverage Eligibility Request",
       "StructureDefinition-MOPEDClaim.html" : "MOPED Claim",
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPED Coverage Eligibility Response"
+      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPED Coverage Eligibility Request",
+      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPED Coverage Eligibility Response",
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/device-action",
@@ -1296,12 +1296,12 @@
       ],
       "uses" : {
       },
+      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
+      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
       "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
       "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter"
+      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/encounter-diagnosis-use",
@@ -1338,12 +1338,12 @@
       ],
       "uses" : {
       },
+      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
+      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
       "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
       "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter"
+      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/encounter-location-status",
@@ -1365,12 +1365,12 @@
       ],
       "uses" : {
       },
+      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
+      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
       "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
       "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter"
+      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/encounter-participant-type",
@@ -1395,12 +1395,12 @@
       ],
       "uses" : {
       },
+      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
+      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
       "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
       "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter"
+      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/encounter-reason",
@@ -1422,12 +1422,12 @@
       ],
       "uses" : {
       },
+      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
+      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
       "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
       "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter"
+      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/encounter-reason-use",
@@ -1441,12 +1441,12 @@
       "sources" : ["2.16.840.1.113883.4.642.4.3320"],
       "uses" : {
       },
+      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
+      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
       "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
       "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter"
+      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/encounter-special-arrangements",
@@ -1470,12 +1470,12 @@
       ],
       "uses" : {
       },
+      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
+      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
       "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
       "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter"
+      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/encounter-special-courtesy",
@@ -1500,12 +1500,12 @@
       ],
       "uses" : {
       },
+      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
+      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
       "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
       "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter"
+      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/encounter-status",
@@ -1525,12 +1525,12 @@
       ],
       "uses" : {
       },
+      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
+      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
       "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
       "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter"
+      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/encounter-subject-status",
@@ -1546,11 +1546,11 @@
       "sources" : ["2.16.840.1.113883.4.642.3.3159"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
       "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter"
+      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/encounter-type",
@@ -1572,12 +1572,12 @@
       ],
       "uses" : {
       },
+      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
+      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
       "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
       "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter"
+      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/event-status",
@@ -1605,10 +1605,10 @@
       "sources" : ["2.16.840.1.113883.4.642.3.1174"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPED Coverage Eligibility Request",
       "StructureDefinition-MOPEDClaim.html" : "MOPED Claim",
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPED Coverage Eligibility Response",
-      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage"
+      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage",
+      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPED Coverage Eligibility Request",
+      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPED Coverage Eligibility Response"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/ex-diagnosis-on-admission",
@@ -1698,8 +1698,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response",
-      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim"
+      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim",
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/ex-revenue-center",
@@ -1719,8 +1719,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response",
-      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim"
+      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim",
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/fm-status",
@@ -1740,11 +1740,11 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response",
-      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPED Coverage Eligibility Request",
       "StructureDefinition-MOPEDClaim.html" : "MOPED Claim",
+      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage",
+      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPED Coverage Eligibility Request",
       "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPED Coverage Eligibility Response",
-      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage"
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/forms",
@@ -1758,8 +1758,8 @@
       "sources" : ["2.16.840.1.113883.4.642.3.37"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response",
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPED Coverage Eligibility Response"
+      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPED Coverage Eligibility Response",
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/fundsreserve",
@@ -1773,8 +1773,8 @@
       "sources" : ["2.16.840.1.113883.4.642.3.33"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response",
-      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim"
+      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim",
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/http-verb",
@@ -1830,8 +1830,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPED Coverage Eligibility Request",
-      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim"
+      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim",
+      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPED Coverage Eligibility Request"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/icd-10-procedures",
@@ -1865,8 +1865,8 @@
       "sources" : ["2.16.840.1.113883.4.642.3.45"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage",
-      "StructureDefinition-MOPEDOrganizationAbteilung.html" : "MOPED Organization Abteilung"
+      "StructureDefinition-MOPEDOrganizationAbteilung.html" : "MOPED Organization Abteilung",
+      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/identifier-use",
@@ -1880,18 +1880,19 @@
       "sources" : ["2.16.840.1.113883.4.642.3.57"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
-      "StructureDefinition-MOPEDCondition.html" : "MOPED Condition",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV",
+      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
       "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
+      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
+      "StructureDefinition-MOPEDOrganizationAbteilung.html" : "MOPED Organization Abteilung",
+      "StructureDefinition-MOPEDCondition.html" : "MOPED Condition",
+      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage",
       "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
       "StructureDefinition-MOPEDProcedure.html" : "MOPED Procedure",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
-      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDOrganizationAbteilung.html" : "MOPED Organization Abteilung"
+      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-Hauptversicherter.html" : "MOPED Hauptversicherter",
+      "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/languages",
@@ -1911,26 +1912,26 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response",
-      "StructureDefinition-MOPEDCondition.html" : "MOPED Condition",
-      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPED Coverage Eligibility Request",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-Hauptversicherter.html" : "MOPED Hauptversicherter",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDAufnahmeBundle.html" : "MOPED Aufnahme Bundle",
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
-      "StructureDefinition-MOPEDAccount.html" : "MOPED Account",
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV",
-      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim",
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPED Coverage Eligibility Response",
-      "StructureDefinition-MOPEDProcedure.html" : "MOPED Procedure",
-      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage",
       "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDOrganizationAbteilung.html" : "MOPED Organization Abteilung"
+      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
+      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response",
+      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
+      "StructureDefinition-MOPEDOrganizationAbteilung.html" : "MOPED Organization Abteilung",
+      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim",
+      "StructureDefinition-MOPEDCondition.html" : "MOPED Condition",
+      "StructureDefinition-MOPEDAufnahmeBundle.html" : "MOPED Aufnahme Bundle",
+      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage",
+      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
+      "StructureDefinition-MOPEDProcedure.html" : "MOPED Procedure",
+      "StructureDefinition-MOPEDAccount.html" : "MOPED Account",
+      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter",
+      "StructureDefinition-Hauptversicherter.html" : "MOPED Hauptversicherter",
+      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPED Coverage Eligibility Request",
+      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPED Coverage Eligibility Response",
+      "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/link-type",
@@ -1952,9 +1953,9 @@
       ],
       "uses" : {
       },
+      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
       "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF"
+      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/location-form",
@@ -1970,12 +1971,12 @@
       "sources" : ["2.16.840.1.113883.4.642.3.328"],
       "uses" : {
       },
+      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
+      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
       "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
       "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter"
+      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/marital-status",
@@ -1992,9 +1993,9 @@
       "sources" : ["2.16.840.1.113883.4.642.3.29"],
       "uses" : {
       },
+      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
       "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF"
+      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/missing-tooth-reason",
@@ -2030,9 +2031,9 @@
       "sources" : ["2.16.840.1.113883.4.642.3.65"],
       "uses" : {
       },
+      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
       "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF"
+      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/note-type",
@@ -2100,9 +2101,9 @@
       "sources" : ["2.16.840.1.113883.4.642.3.1130"],
       "uses" : {
       },
+      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
       "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF"
+      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/payeetype",
@@ -2116,8 +2117,8 @@
       "sources" : ["2.16.840.1.113883.4.642.3.31"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response",
-      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim"
+      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim",
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/payment-adjustment-reason",
@@ -2315,8 +2316,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPED Coverage Eligibility Request",
-      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim"
+      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim",
+      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPED Coverage Eligibility Request"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/provider-qualification",
@@ -2401,9 +2402,10 @@
       "sources" : ["2.16.840.1.113883.4.642.3.27"],
       "uses" : {
       },
+      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
+      "StructureDefinition-Hauptversicherter.html" : "MOPED Hauptversicherter",
       "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF"
+      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/search-entry-mode",
@@ -2445,8 +2447,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response",
-      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim"
+      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim",
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/service-type",
@@ -2466,12 +2468,12 @@
       ],
       "uses" : {
       },
+      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
+      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
       "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
       "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter"
+      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/service-uscls",
@@ -2493,10 +2495,10 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response",
-      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPED Coverage Eligibility Request",
       "StructureDefinition-MOPEDClaim.html" : "MOPED Claim",
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPED Coverage Eligibility Response"
+      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPED Coverage Eligibility Request",
+      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPED Coverage Eligibility Response",
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/subscriber-relationship",
@@ -2534,8 +2536,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response",
-      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim"
+      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim",
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/tooth",
@@ -2557,8 +2559,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response",
-      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim"
+      "StructureDefinition-MOPEDClaim.html" : "MOPED Claim",
+      "StructureDefinition-MOPEDClaimResponse.html" : "MOPED Claim Response"
     },
     {
       "url" : "http://terminology.hl7.org/ValueSet/encounter-class",
@@ -2570,12 +2572,12 @@
       "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActCode"],
       "uses" : {
       },
+      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
+      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
       "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
       "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter"
+      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH"
     },
     {
       "url" : "http://terminology.hl7.org/ValueSet/v2-0092",
@@ -2589,12 +2591,12 @@
       "sources" : ["2.16.840.1.113883.21.40"],
       "uses" : {
       },
+      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
+      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
       "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
       "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter"
+      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH"
     },
     {
       "url" : "http://terminology.hl7.org/ValueSet/v2-0203",
@@ -2608,13 +2610,13 @@
       "sources" : ["2.16.840.1.113883.21.120"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
       "StructureDefinition-MOPEDCondition.html" : "MOPED Condition",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
       "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
+      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
       "StructureDefinition-MOPEDProcedure.html" : "MOPED Procedure",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter"
+      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH"
     },
     {
       "url" : "http://terminology.hl7.org/ValueSet/v3-ActIncidentCode",
@@ -2642,12 +2644,12 @@
       "sources" : ["2.16.840.1.113883.1.11.16866"],
       "uses" : {
       },
+      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
+      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
       "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
       "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter"
+      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH"
     }
   ]
 }
