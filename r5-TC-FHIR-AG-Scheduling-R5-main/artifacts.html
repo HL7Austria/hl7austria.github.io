@@ -136,10 +136,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
    <p>Contents:</p>
    <ul>
       <li>
-         <a href="#1">Structures: Resource Profiles</a>
+         <a href="#1">Behavior: Operation Definitions</a>
       </li>
       <li>
-         <a href="#2">Terminology: Value Sets</a>
+         <a href="#2">Structures: Resource Profiles</a>
+      </li>
+      <li>
+         <a href="#3">Terminology: Value Sets</a>
       </li>
    </ul>
 </div>
@@ -148,6 +151,41 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
      xmlns:html="http://www.w3.org/1999/xhtml">
    <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
    <a name="1"> </a>
+   <h3>Behavior: Operation Definitions </h3>
+    <p>These are custom operations that can be supported by and/or invoked by systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="OperationDefinition-appointment-book.html"
+                  title="OperationDefinition/appointment-book">appointment-book</a>
+            </td>
+            <td>
+<p>Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactions. This operation completes the booking of an appointment. The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the book request and updates the resource status accordingly.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="OperationDefinition-healthcareService-provider-find.html"
+                  title="OperationDefinition/healthcareService-provider-find">healthcareService-provider-find</a>
+            </td>
+            <td>
+<p>A query operation that allows to search for healthcare service providers that offer a specific healthcare service. The general information about the HealthcareService identification itself is already available in advance, either as resource or via codes.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="OperationDefinition-slot-hold.html"
+                  title="OperationDefinition/slot-hold">slot-hold</a>
+            </td>
+            <td>
+<p>Request for a hold on a selected Slot in order for the user to complete entering data for booking an appointment.  This operation precedes the booking and follows the appointment availability interaction.  The server determines if the nominated slot is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="2"> </a>
    <h3>Structures: Resource Profiles </h3>
     <p>These define constraints on FHIR resources for systems conforming to this implementation guide.</p>
 <table class="grid">
@@ -200,7 +238,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
       </tbody>
    </table>
-   <a name="2"> </a>
+   <a name="3"> </a>
    <h3>Terminology: Value Sets </h3>
     <p>These define sets of codes used by systems conforming to this implementation guide.</p>
 <table class="grid">
@@ -232,7 +270,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package TC-FHIR-AG-Scheduling-R5#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Fri, Feb 7, 2025 10:03+0000">2025-02-07</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package TC-FHIR-AG-Scheduling-R5#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Fri, Feb 7, 2025 10:49+0000">2025-02-07</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

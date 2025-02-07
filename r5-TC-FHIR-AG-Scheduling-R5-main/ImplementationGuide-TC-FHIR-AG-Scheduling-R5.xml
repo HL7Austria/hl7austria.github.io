@@ -9,7 +9,7 @@
   <version value="0.1.0"/>
   <name value="TCFHIRAGSchedulingR5"/>
   <status value="draft"/>
-  <date value="2025-02-07T10:03:43+00:00"/>
+  <date value="2025-02-07T10:49:13+00:00"/>
   <publisher value="HL7® Austria, TC FHIR®"/>
   <packageId value="TC-FHIR-AG-Scheduling-R5"/>
   <license value="CC0-1.0"/>
@@ -41,12 +41,34 @@
     </extension>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/appointment-book"/>
+      </reference>
+      <name value="appointment-book"/>
+      <description value="Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactions. This operation completes the booking of an appointment. The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the book request and updates the resource status accordingly."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
         <reference value="ValueSet/AtSchedulingServiceType"/>
       </reference>
       <name value="AtSchedulingServiceType"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/healthcareService-provider-find"/>
+      </reference>
+      <name value="healthcareService-provider-find"/>
+      <description value="A query operation that allows to search for healthcare service providers that offer a specific healthcare service. The general information about the HealthcareService identification itself is already available in advance, either as resource or via codes."/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -102,6 +124,17 @@
       </reference>
       <name value="HL7® AT Scheduling Slot Profile"/>
       <description value="HL7® Austria FHIR® Scheduling Profile for slot data in Austria."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/slot-hold"/>
+      </reference>
+      <name value="slot-hold"/>
+      <description value="Request for a hold on a selected Slot in order for the user to complete entering data for booking an appointment.  This operation precedes the booking and follows the appointment availability interaction.  The server determines if the nominated slot is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly."/>
       <isExample value="false"/>
     </resource>
     <page>

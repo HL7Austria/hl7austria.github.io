@@ -16,7 +16,7 @@
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "TCFHIRAGSchedulingR5"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-02-07T10:03:43+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-02-07T10:49:13+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7® Austria, TC FHIR®"] ; # 
   fhir:packageId [ fhir:v "TC-FHIR-AG-Scheduling-R5"] ; # 
   fhir:license [ fhir:v "CC0-1.0"] ; # 
@@ -62,6 +62,18 @@
      fhir:resource ( [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OperationDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/appointment-book> ;
+         fhir:reference [ fhir:v "OperationDefinition/appointment-book" ]
+       ] ;
+       fhir:name [ fhir:v "appointment-book" ] ;
+       fhir:description [ fhir:v "Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactions. This operation completes the booking of an appointment. The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the book request and updates the resource status accordingly." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
@@ -69,6 +81,18 @@
          fhir:reference [ fhir:v "ValueSet/AtSchedulingServiceType" ]
        ] ;
        fhir:name [ fhir:v "AtSchedulingServiceType" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OperationDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/healthcareService-provider-find> ;
+         fhir:reference [ fhir:v "OperationDefinition/healthcareService-provider-find" ]
+       ] ;
+       fhir:name [ fhir:v "healthcareService-provider-find" ] ;
+       fhir:description [ fhir:v "A query operation that allows to search for healthcare service providers that offer a specific healthcare service. The general information about the HealthcareService identification itself is already available in advance, either as resource or via codes." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -129,6 +153,18 @@
        ] ;
        fhir:name [ fhir:v "HL7® AT Scheduling Slot Profile" ] ;
        fhir:description [ fhir:v "HL7® Austria FHIR® Scheduling Profile for slot data in Austria." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OperationDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/slot-hold> ;
+         fhir:reference [ fhir:v "OperationDefinition/slot-hold" ]
+       ] ;
+       fhir:name [ fhir:v "slot-hold" ] ;
+       fhir:description [ fhir:v "Request for a hold on a selected Slot in order for the user to complete entering data for booking an appointment.  This operation precedes the booking and follows the appointment availability interaction.  The server determines if the nominated slot is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] ) ;
      fhir:page [
