@@ -13,7 +13,7 @@
   <name value="MOPEDEncounterKH"/>
   <title value="MOPED Encounter KH"/>
   <status value="draft"/>
-  <date value="2025-02-06T12:43:28+00:00"/>
+  <date value="2025-02-07T07:29:32+00:00"/>
   <publisher value="ELGA"/>
   <contact>
     <name value="ELGA"/>
@@ -2577,10 +2577,10 @@
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
       </mapping>
     </element>
-    <element id="Encounter.class:Aufnahmeart">
+    <element id="Encounter.class:Aufnahmeart2">
       <path value="Encounter.class"/>
-      <sliceName value="Aufnahmeart"/>
-      <short value="Aufnahmeart"/>
+      <sliceName value="Aufnahmeart2"/>
+      <short value="Aufnahmeart2"/>
       <definition value="Concepts representing classification of patient encounter such as ambulatory (outpatient), inpatient, emergency, home health or others due to local variations."/>
       <min value="0"/>
       <max value="1"/>
@@ -2604,7 +2604,7 @@
       <isSummary value="true"/>
       <binding>
         <strength value="required"/>
-        <valueSet value="http://example.org/ValueSet/moped-aufnahmeart-valueset"/>
+        <valueSet value="http://example.org/ValueSet/moped-aufnahmeart2-valueset"/>
       </binding>
       <mapping>
         <identity value="w5"/>
@@ -2619,7 +2619,7 @@
         <map value=".inboundRelationship[typeCode=SUBJ].source[classCode=LIST].code"/>
       </mapping>
     </element>
-    <element id="Encounter.class:Aufnahmeart.id">
+    <element id="Encounter.class:Aufnahmeart2.id">
       <path value="Encounter.class.id"/>
       <representation value="xmlAttr"/>
       <short value="Unique id for inter-element referencing"/>
@@ -2645,7 +2645,7 @@
         <map value="n/a"/>
       </mapping>
     </element>
-    <element id="Encounter.class:Aufnahmeart.extension">
+    <element id="Encounter.class:Aufnahmeart2.extension">
       <path value="Encounter.class.extension"/>
       <slicing>
         <discriminator>
@@ -2691,7 +2691,7 @@
         <map value="n/a"/>
       </mapping>
     </element>
-    <element id="Encounter.class:Aufnahmeart.coding">
+    <element id="Encounter.class:Aufnahmeart2.coding">
       <path value="Encounter.class.coding"/>
       <short value="Code defined by a terminology system"/>
       <definition value="A reference to a code defined by a terminology system."/>
@@ -2729,7 +2729,7 @@
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
       </mapping>
     </element>
-    <element id="Encounter.class:Aufnahmeart.coding.id">
+    <element id="Encounter.class:Aufnahmeart2.coding.id">
       <path value="Encounter.class.coding.id"/>
       <representation value="xmlAttr"/>
       <short value="Unique id for inter-element referencing"/>
@@ -2755,7 +2755,7 @@
         <map value="n/a"/>
       </mapping>
     </element>
-    <element id="Encounter.class:Aufnahmeart.coding.extension">
+    <element id="Encounter.class:Aufnahmeart2.coding.extension">
       <path value="Encounter.class.coding.extension"/>
       <slicing>
         <discriminator>
@@ -2801,7 +2801,7 @@
         <map value="n/a"/>
       </mapping>
     </element>
-    <element id="Encounter.class:Aufnahmeart.coding.system">
+    <element id="Encounter.class:Aufnahmeart2.coding.system">
       <path value="Encounter.class.coding.system"/>
       <short value="Identity of the terminology system"/>
       <definition value="The identification of the code system that defines the meaning of the symbol in the code."/>
@@ -2840,7 +2840,7 @@
         <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
       </mapping>
     </element>
-    <element id="Encounter.class:Aufnahmeart.coding.version">
+    <element id="Encounter.class:Aufnahmeart2.coding.version">
       <path value="Encounter.class.coding.version"/>
       <short value="Version of the system - if relevant"/>
       <definition value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged."/>
@@ -2877,7 +2877,7 @@
         <map value="fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion"/>
       </mapping>
     </element>
-    <element id="Encounter.class:Aufnahmeart.coding.code">
+    <element id="Encounter.class:Aufnahmeart2.coding.code">
       <path value="Encounter.class.coding.code"/>
       <short value="Symbol in syntax defined by the system"/>
       <definition value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
@@ -2915,7 +2915,7 @@
         <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"/>
       </mapping>
     </element>
-    <element id="Encounter.class:Aufnahmeart.coding.display">
+    <element id="Encounter.class:Aufnahmeart2.coding.display">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -2959,7 +2959,7 @@
         <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"/>
       </mapping>
     </element>
-    <element id="Encounter.class:Aufnahmeart.coding.userSelected">
+    <element id="Encounter.class:Aufnahmeart2.coding.userSelected">
       <path value="Encounter.class.coding.userSelected"/>
       <short value="If this coding was chosen directly by the user"/>
       <definition value="Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays)."/>
@@ -2997,7 +2997,7 @@
         <map value="fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\#true a [     fhir:source &quot;true&quot;;     fhir:target dt:CDCoding.codingRationale\#O   ]"/>
       </mapping>
     </element>
-    <element id="Encounter.class:Aufnahmeart.text">
+    <element id="Encounter.class:Aufnahmeart2.text">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true"/>
       </extension>
@@ -5276,11 +5276,11 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
     </element>
-    <element id="Encounter.admission.extension:zugangsart">
+    <element id="Encounter.admission.extension:aufnahmeart">
       <path value="Encounter.admission.extension"/>
-      <sliceName value="zugangsart"/>
-      <short value="Zugangsart"/>
-      <definition value="MOPED Extension für die Art des Zugangs."/>
+      <sliceName value="aufnahmeart"/>
+      <short value="Aufnahmeart"/>
+      <definition value="MOPED Extension für die Aufnahmeart."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -5290,7 +5290,7 @@
       </base>
       <type>
         <code value="Extension"/>
-        <profile value="http://example.org/StructureDefinition/moped-ext-zugangsart"/>
+        <profile value="http://example.org/StructureDefinition/moped-ext-aufnahmeart"/>
       </type>
       <constraint>
         <key value="ele-1"/>

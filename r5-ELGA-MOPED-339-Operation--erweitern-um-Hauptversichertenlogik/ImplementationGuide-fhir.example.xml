@@ -10,7 +10,7 @@
   <name value="MOPED"/>
   <title value="Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"/>
   <status value="draft"/>
-  <date value="2025-02-06T12:43:28+00:00"/>
+  <date value="2025-02-07T07:29:32+00:00"/>
   <publisher value="ELGA"/>
   <contact>
     <name value="ELGA"/>
@@ -159,10 +159,32 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-aufnahmeart"/>
+      </reference>
+      <name value="Aufnahmeart"/>
+      <description value="MOPED Extension für die Aufnahmeart."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
         <reference value="ValueSet/moped-aufnahmeart-valueset"/>
+      </reference>
+      <name value="Aufnahmeart des Patienten"/>
+      <description value="ValueSet für die Aufnahmeart des Patienten (LKF + Ka-Org)"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/moped-aufnahmeart2-valueset"/>
       </reference>
       <name value="Aufnahmeart des Patienten"/>
       <description value="ValueSet für die Aufnahmeart des Patienten"/>
@@ -1540,28 +1562,6 @@
       </reference>
       <name value="Workflow Status eines Falls"/>
       <description value="ValueSet für die Statusoptionen in denen sich ein Fall befinden kann."/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/moped-ext-zugangsart"/>
-      </reference>
-      <name value="Zugangsart"/>
-      <description value="MOPED Extension für die Art des Zugangs."/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/moped-zugangsart-valueset"/>
-      </reference>
-      <name value="Zugangsart des Patienten"/>
-      <description value="ValueSet für die Zugangsart des Patienten (LKF + Ka-Org)"/>
       <isExample value="false"/>
     </resource>
     <page>

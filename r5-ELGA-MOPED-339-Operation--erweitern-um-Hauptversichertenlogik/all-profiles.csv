@@ -172,7 +172,7 @@ This element only allows for a single identifier. In the case where additional i
 ","The patient this person is related to","The patient this person is related to.","","We need to know which patient this RelatedPerson is related to.","","","","","","","",,,,,"",,,,"RelatedPerson.patient",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Hauptversicherter","RelatedPerson.relationship","RelatedPerson.relationship","","","",0,*,"","","Y","CodeableConcept {[]} {[]}
-","The relationship of the related person to the patient","The nature of the relationship between the related person and the patient.","The directionality of the relationship is from the RelatedPerson to the Patient. For example, if the Patient is a child, and the RelatedPerson is the mother, the relationship would be PRN (parent) or MTH (mother).","We need to know the relationship with the patient since it influences the interpretation of the information attributed to this person.","","","","","","","",,"required","","http://hl7.org/fhir/ValueSet/relatedperson-relationshiptype","",,,,"RelatedPerson.relationship",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","The relationship of the related person to the patient","The nature of the relationship between the related person and the patient.","The directionality of the relationship is from the RelatedPerson to the Patient. For example, if the Patient is a child, and the RelatedPerson is the mother, the relationship would be PRN (parent) or MTH (mother).","We need to know the relationship with the patient since it influences the interpretation of the information attributed to this person.","","","","","","","",,"required","","http://example.org/ValueSet/moped-related-person-relationship-type","",,,,"RelatedPerson.relationship",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Hauptversicherter","RelatedPerson.relationship.id","RelatedPerson.relationship.id","","","",0,1,"","","","id {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
@@ -200,7 +200,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Version of the system - if relevant","The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.","Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.","","","","","","","","",,,,,"",,,,"Coding.version",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Hauptversicherter","RelatedPerson.relationship.coding.code","RelatedPerson.relationship.coding.code","","","",0,1,"","","Y","code {[]} {[]}
-","Symbol in syntax defined by the system","A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).","","Need to refer to a particular code in the system.","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""GUAR""/>","","","","",,,,,"",,,,"Coding.code",0,1,"cod-1
+","Symbol in syntax defined by the system","A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).","","Need to refer to a particular code in the system.","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""SELF""/>","","","","",,,,,"",,,,"Coding.code",0,1,"cod-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Hauptversicherter","RelatedPerson.relationship.coding.display","RelatedPerson.relationship.coding.display","","","",0,1,"","","Y","string {[]} {[]}
@@ -3947,46 +3947,46 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "MOPEDEncounter","Encounter.class:Behandlungsart.text","Encounter.class.text","","","",0,1,"","","Y","string {[]} {[]}
 ","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounter","Encounter.class:Aufnahmeart","Encounter.class","Aufnahmeart","","",0,1,"","","Y","CodeableConcept {[]} {[]}
-","Aufnahmeart","Concepts representing classification of patient encounter such as ambulatory (outpatient), inpatient, emergency, home health or others due to local variations.","","","","","","","","","",,"required","","http://example.org/ValueSet/moped-aufnahmeart-valueset","",,,,"Encounter.class",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"MOPEDEncounter","Encounter.class:Aufnahmeart2","Encounter.class","Aufnahmeart2","","",0,1,"","","Y","CodeableConcept {[]} {[]}
+","Aufnahmeart2","Concepts representing classification of patient encounter such as ambulatory (outpatient), inpatient, emergency, home health or others due to local variations.","","","","","","","","","",,"required","","http://example.org/ValueSet/moped-aufnahmeart2-valueset","",,,,"Encounter.class",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounter","Encounter.class:Aufnahmeart.id","Encounter.class.id","","","",0,1,"","","","id {[]} {[]}
+"MOPEDEncounter","Encounter.class:Aufnahmeart2.id","Encounter.class.id","","","",0,1,"","","","id {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
 ",""
-"MOPEDEncounter","Encounter.class:Aufnahmeart.extension","Encounter.class.extension","","extensions
+"MOPEDEncounter","Encounter.class:Aufnahmeart2.extension","Encounter.class.extension","","extensions
 user content","",0,*,"","","","Extension {[]} {[]}
 ","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MOPEDEncounter","Encounter.class:Aufnahmeart.coding","Encounter.class.coding","","","",0,*,"","","Y","Coding {[]} {[]}
+"MOPEDEncounter","Encounter.class:Aufnahmeart2.coding","Encounter.class.coding","","","",0,*,"","","Y","Coding {[]} {[]}
 ","Code defined by a terminology system","A reference to a code defined by a terminology system.","Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,,,,"",,,,"CodeableConcept.coding",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounter","Encounter.class:Aufnahmeart.coding.id","Encounter.class.coding.id","","","",0,1,"","","","id {[]} {[]}
+"MOPEDEncounter","Encounter.class:Aufnahmeart2.coding.id","Encounter.class.coding.id","","","",0,1,"","","","id {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
 ",""
-"MOPEDEncounter","Encounter.class:Aufnahmeart.coding.extension","Encounter.class.coding.extension","","extensions
+"MOPEDEncounter","Encounter.class:Aufnahmeart2.coding.extension","Encounter.class.coding.extension","","extensions
 user content","",0,*,"","","","Extension {[]} {[]}
 ","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MOPEDEncounter","Encounter.class:Aufnahmeart.coding.system","Encounter.class.coding.system","","","",1,1,"","","Y","uri {[]} {[]}
+"MOPEDEncounter","Encounter.class:Aufnahmeart2.coding.system","Encounter.class.coding.system","","","",1,1,"","","Y","uri {[]} {[]}
 ","Identity of the terminology system","The identification of the code system that defines the meaning of the symbol in the code.","The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should be an absolute reference to some definition that establishes the system clearly and unambiguously.","Need to be unambiguous about the source of the definition of the symbol.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://tbd.at/moped-ext-aufnahmeart""/>","","","",,,,,"",,,,"Coding.system",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounter","Encounter.class:Aufnahmeart.coding.version","Encounter.class.coding.version","","","",0,1,"","","Y","string {[]} {[]}
+"MOPEDEncounter","Encounter.class:Aufnahmeart2.coding.version","Encounter.class.coding.version","","","",0,1,"","","Y","string {[]} {[]}
 ","Version of the system - if relevant","The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.","Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.","","","","","","","","",,,,,"",,,,"Coding.version",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounter","Encounter.class:Aufnahmeart.coding.code","Encounter.class.coding.code","","","",0,1,"","","Y","code {[]} {[]}
+"MOPEDEncounter","Encounter.class:Aufnahmeart2.coding.code","Encounter.class.coding.code","","","",0,1,"","","Y","code {[]} {[]}
 ","Symbol in syntax defined by the system","A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).","","Need to refer to a particular code in the system.","","","","","","","",,,,,"",,,,"Coding.code",0,1,"cod-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounter","Encounter.class:Aufnahmeart.coding.display","Encounter.class.coding.display","","","",0,1,"","","Y","string {[]} {[]}
+"MOPEDEncounter","Encounter.class:Aufnahmeart2.coding.display","Encounter.class.coding.display","","","",0,1,"","","Y","string {[]} {[]}
 ","Representation defined by the system","A representation of the meaning of the code in the system, following the rules of the system.","","Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.","","","","","","","",,,,,"",,,,"Coding.display",0,1,"cod-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounter","Encounter.class:Aufnahmeart.coding.userSelected","Encounter.class.coding.userSelected","","","",0,1,"","","Y","boolean {[]} {[]}
+"MOPEDEncounter","Encounter.class:Aufnahmeart2.coding.userSelected","Encounter.class.coding.userSelected","","","",0,1,"","","Y","boolean {[]} {[]}
 ","If this coding was chosen directly by the user","Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).","Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely.","This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing.","","","","","","","",,,,,"",,,,"Coding.userSelected",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounter","Encounter.class:Aufnahmeart.text","Encounter.class.text","","","",0,1,"","","Y","string {[]} {[]}
+"MOPEDEncounter","Encounter.class:Aufnahmeart2.text","Encounter.class.text","","","",0,1,"","","Y","string {[]} {[]}
 ","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "MOPEDEncounter","Encounter.priority","Encounter.priority","","","",0,1,"","","","CodeableConcept {[]} {[]}
@@ -4197,8 +4197,8 @@ discharge diagnosisindication","",0,*,"","","Y","CodeableReference {[]} {[Canoni
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MOPEDEncounter","Encounter.admission.extension:zugangsart","Encounter.admission.extension","zugangsart","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-zugangsart]]} {[]}
-","Zugangsart","MOPED Extension für die Art des Zugangs.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"MOPEDEncounter","Encounter.admission.extension:aufnahmeart","Encounter.admission.extension","aufnahmeart","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-aufnahmeart]]} {[]}
+","Aufnahmeart","MOPED Extension für die Aufnahmeart.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "MOPEDEncounter","Encounter.admission.extension:transportart","Encounter.admission.extension","transportart","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-transportart]]} {[]}
 ","Transportart","MOPED Extension für die Transportart.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -4485,46 +4485,46 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "MOPEDEncounterBund","Encounter.class:Behandlungsart.text","Encounter.class.text","","","",0,1,"","","Y","string {[]} {[]}
 ","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterBund","Encounter.class:Aufnahmeart","Encounter.class","Aufnahmeart","","",0,1,"","","Y","CodeableConcept {[]} {[]}
-","Aufnahmeart","Concepts representing classification of patient encounter such as ambulatory (outpatient), inpatient, emergency, home health or others due to local variations.","","","","","","","","","",,"required","","http://example.org/ValueSet/moped-aufnahmeart-valueset","",,,,"Encounter.class",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"MOPEDEncounterBund","Encounter.class:Aufnahmeart2","Encounter.class","Aufnahmeart2","","",0,1,"","","Y","CodeableConcept {[]} {[]}
+","Aufnahmeart2","Concepts representing classification of patient encounter such as ambulatory (outpatient), inpatient, emergency, home health or others due to local variations.","","","","","","","","","",,"required","","http://example.org/ValueSet/moped-aufnahmeart2-valueset","",,,,"Encounter.class",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterBund","Encounter.class:Aufnahmeart.id","Encounter.class.id","","","",0,1,"","","","id {[]} {[]}
+"MOPEDEncounterBund","Encounter.class:Aufnahmeart2.id","Encounter.class.id","","","",0,1,"","","","id {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
 ",""
-"MOPEDEncounterBund","Encounter.class:Aufnahmeart.extension","Encounter.class.extension","","extensions
+"MOPEDEncounterBund","Encounter.class:Aufnahmeart2.extension","Encounter.class.extension","","extensions
 user content","",0,*,"","","","Extension {[]} {[]}
 ","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MOPEDEncounterBund","Encounter.class:Aufnahmeart.coding","Encounter.class.coding","","","",0,*,"","","Y","Coding {[]} {[]}
+"MOPEDEncounterBund","Encounter.class:Aufnahmeart2.coding","Encounter.class.coding","","","",0,*,"","","Y","Coding {[]} {[]}
 ","Code defined by a terminology system","A reference to a code defined by a terminology system.","Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,,,,"",,,,"CodeableConcept.coding",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterBund","Encounter.class:Aufnahmeart.coding.id","Encounter.class.coding.id","","","",0,1,"","","","id {[]} {[]}
+"MOPEDEncounterBund","Encounter.class:Aufnahmeart2.coding.id","Encounter.class.coding.id","","","",0,1,"","","","id {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
 ",""
-"MOPEDEncounterBund","Encounter.class:Aufnahmeart.coding.extension","Encounter.class.coding.extension","","extensions
+"MOPEDEncounterBund","Encounter.class:Aufnahmeart2.coding.extension","Encounter.class.coding.extension","","extensions
 user content","",0,*,"","","","Extension {[]} {[]}
 ","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MOPEDEncounterBund","Encounter.class:Aufnahmeart.coding.system","Encounter.class.coding.system","","","",1,1,"","","Y","uri {[]} {[]}
+"MOPEDEncounterBund","Encounter.class:Aufnahmeart2.coding.system","Encounter.class.coding.system","","","",1,1,"","","Y","uri {[]} {[]}
 ","Identity of the terminology system","The identification of the code system that defines the meaning of the symbol in the code.","The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should be an absolute reference to some definition that establishes the system clearly and unambiguously.","Need to be unambiguous about the source of the definition of the symbol.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://tbd.at/moped-ext-aufnahmeart""/>","","","",,,,,"",,,,"Coding.system",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterBund","Encounter.class:Aufnahmeart.coding.version","Encounter.class.coding.version","","","",0,1,"","","Y","string {[]} {[]}
+"MOPEDEncounterBund","Encounter.class:Aufnahmeart2.coding.version","Encounter.class.coding.version","","","",0,1,"","","Y","string {[]} {[]}
 ","Version of the system - if relevant","The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.","Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.","","","","","","","","",,,,,"",,,,"Coding.version",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterBund","Encounter.class:Aufnahmeart.coding.code","Encounter.class.coding.code","","","",0,1,"","","Y","code {[]} {[]}
+"MOPEDEncounterBund","Encounter.class:Aufnahmeart2.coding.code","Encounter.class.coding.code","","","",0,1,"","","Y","code {[]} {[]}
 ","Symbol in syntax defined by the system","A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).","","Need to refer to a particular code in the system.","","","","","","","",,,,,"",,,,"Coding.code",0,1,"cod-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterBund","Encounter.class:Aufnahmeart.coding.display","Encounter.class.coding.display","","","",0,1,"","","Y","string {[]} {[]}
+"MOPEDEncounterBund","Encounter.class:Aufnahmeart2.coding.display","Encounter.class.coding.display","","","",0,1,"","","Y","string {[]} {[]}
 ","Representation defined by the system","A representation of the meaning of the code in the system, following the rules of the system.","","Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.","","","","","","","",,,,,"",,,,"Coding.display",0,1,"cod-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterBund","Encounter.class:Aufnahmeart.coding.userSelected","Encounter.class.coding.userSelected","","","",0,1,"","","Y","boolean {[]} {[]}
+"MOPEDEncounterBund","Encounter.class:Aufnahmeart2.coding.userSelected","Encounter.class.coding.userSelected","","","",0,1,"","","Y","boolean {[]} {[]}
 ","If this coding was chosen directly by the user","Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).","Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely.","This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing.","","","","","","","",,,,,"",,,,"Coding.userSelected",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterBund","Encounter.class:Aufnahmeart.text","Encounter.class.text","","","",0,1,"","","Y","string {[]} {[]}
+"MOPEDEncounterBund","Encounter.class:Aufnahmeart2.text","Encounter.class.text","","","",0,1,"","","Y","string {[]} {[]}
 ","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "MOPEDEncounterBund","Encounter.priority","Encounter.priority","","","",0,1,"","","","CodeableConcept {[]} {[]}
@@ -4735,8 +4735,8 @@ discharge diagnosisindication","",0,*,"","","Y","CodeableReference {[]} {[Canoni
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MOPEDEncounterBund","Encounter.admission.extension:zugangsart","Encounter.admission.extension","zugangsart","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-zugangsart]]} {[]}
-","Zugangsart","MOPED Extension für die Art des Zugangs.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"MOPEDEncounterBund","Encounter.admission.extension:aufnahmeart","Encounter.admission.extension","aufnahmeart","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-aufnahmeart]]} {[]}
+","Aufnahmeart","MOPED Extension für die Aufnahmeart.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "MOPEDEncounterBund","Encounter.admission.extension:transportart","Encounter.admission.extension","transportart","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-transportart]]} {[]}
 ","Transportart","MOPED Extension für die Transportart.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -5023,46 +5023,46 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "MOPEDEncounterKH","Encounter.class:Behandlungsart.text","Encounter.class.text","","","",0,1,"","","Y","string {[]} {[]}
 ","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterKH","Encounter.class:Aufnahmeart","Encounter.class","Aufnahmeart","","",0,1,"","","Y","CodeableConcept {[]} {[]}
-","Aufnahmeart","Concepts representing classification of patient encounter such as ambulatory (outpatient), inpatient, emergency, home health or others due to local variations.","","","","","","","","","",,"required","","http://example.org/ValueSet/moped-aufnahmeart-valueset","",,,,"Encounter.class",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"MOPEDEncounterKH","Encounter.class:Aufnahmeart2","Encounter.class","Aufnahmeart2","","",0,1,"","","Y","CodeableConcept {[]} {[]}
+","Aufnahmeart2","Concepts representing classification of patient encounter such as ambulatory (outpatient), inpatient, emergency, home health or others due to local variations.","","","","","","","","","",,"required","","http://example.org/ValueSet/moped-aufnahmeart2-valueset","",,,,"Encounter.class",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterKH","Encounter.class:Aufnahmeart.id","Encounter.class.id","","","",0,1,"","","","id {[]} {[]}
+"MOPEDEncounterKH","Encounter.class:Aufnahmeart2.id","Encounter.class.id","","","",0,1,"","","","id {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
 ",""
-"MOPEDEncounterKH","Encounter.class:Aufnahmeart.extension","Encounter.class.extension","","extensions
+"MOPEDEncounterKH","Encounter.class:Aufnahmeart2.extension","Encounter.class.extension","","extensions
 user content","",0,*,"","","","Extension {[]} {[]}
 ","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MOPEDEncounterKH","Encounter.class:Aufnahmeart.coding","Encounter.class.coding","","","",0,*,"","","Y","Coding {[]} {[]}
+"MOPEDEncounterKH","Encounter.class:Aufnahmeart2.coding","Encounter.class.coding","","","",0,*,"","","Y","Coding {[]} {[]}
 ","Code defined by a terminology system","A reference to a code defined by a terminology system.","Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,,,,"",,,,"CodeableConcept.coding",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterKH","Encounter.class:Aufnahmeart.coding.id","Encounter.class.coding.id","","","",0,1,"","","","id {[]} {[]}
+"MOPEDEncounterKH","Encounter.class:Aufnahmeart2.coding.id","Encounter.class.coding.id","","","",0,1,"","","","id {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
 ",""
-"MOPEDEncounterKH","Encounter.class:Aufnahmeart.coding.extension","Encounter.class.coding.extension","","extensions
+"MOPEDEncounterKH","Encounter.class:Aufnahmeart2.coding.extension","Encounter.class.coding.extension","","extensions
 user content","",0,*,"","","","Extension {[]} {[]}
 ","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MOPEDEncounterKH","Encounter.class:Aufnahmeart.coding.system","Encounter.class.coding.system","","","",1,1,"","","Y","uri {[]} {[]}
+"MOPEDEncounterKH","Encounter.class:Aufnahmeart2.coding.system","Encounter.class.coding.system","","","",1,1,"","","Y","uri {[]} {[]}
 ","Identity of the terminology system","The identification of the code system that defines the meaning of the symbol in the code.","The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should be an absolute reference to some definition that establishes the system clearly and unambiguously.","Need to be unambiguous about the source of the definition of the symbol.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://tbd.at/moped-ext-aufnahmeart""/>","","","",,,,,"",,,,"Coding.system",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterKH","Encounter.class:Aufnahmeart.coding.version","Encounter.class.coding.version","","","",0,1,"","","Y","string {[]} {[]}
+"MOPEDEncounterKH","Encounter.class:Aufnahmeart2.coding.version","Encounter.class.coding.version","","","",0,1,"","","Y","string {[]} {[]}
 ","Version of the system - if relevant","The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.","Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.","","","","","","","","",,,,,"",,,,"Coding.version",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterKH","Encounter.class:Aufnahmeart.coding.code","Encounter.class.coding.code","","","",0,1,"","","Y","code {[]} {[]}
+"MOPEDEncounterKH","Encounter.class:Aufnahmeart2.coding.code","Encounter.class.coding.code","","","",0,1,"","","Y","code {[]} {[]}
 ","Symbol in syntax defined by the system","A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).","","Need to refer to a particular code in the system.","","","","","","","",,,,,"",,,,"Coding.code",0,1,"cod-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterKH","Encounter.class:Aufnahmeart.coding.display","Encounter.class.coding.display","","","",0,1,"","","Y","string {[]} {[]}
+"MOPEDEncounterKH","Encounter.class:Aufnahmeart2.coding.display","Encounter.class.coding.display","","","",0,1,"","","Y","string {[]} {[]}
 ","Representation defined by the system","A representation of the meaning of the code in the system, following the rules of the system.","","Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.","","","","","","","",,,,,"",,,,"Coding.display",0,1,"cod-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterKH","Encounter.class:Aufnahmeart.coding.userSelected","Encounter.class.coding.userSelected","","","",0,1,"","","Y","boolean {[]} {[]}
+"MOPEDEncounterKH","Encounter.class:Aufnahmeart2.coding.userSelected","Encounter.class.coding.userSelected","","","",0,1,"","","Y","boolean {[]} {[]}
 ","If this coding was chosen directly by the user","Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).","Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely.","This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing.","","","","","","","",,,,,"",,,,"Coding.userSelected",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterKH","Encounter.class:Aufnahmeart.text","Encounter.class.text","","","",0,1,"","","Y","string {[]} {[]}
+"MOPEDEncounterKH","Encounter.class:Aufnahmeart2.text","Encounter.class.text","","","",0,1,"","","Y","string {[]} {[]}
 ","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "MOPEDEncounterKH","Encounter.priority","Encounter.priority","","","",0,1,"","","","CodeableConcept {[]} {[]}
@@ -5273,8 +5273,8 @@ discharge diagnosisindication","",0,*,"","","Y","CodeableReference {[]} {[Canoni
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MOPEDEncounterKH","Encounter.admission.extension:zugangsart","Encounter.admission.extension","zugangsart","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-zugangsart]]} {[]}
-","Zugangsart","MOPED Extension für die Art des Zugangs.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"MOPEDEncounterKH","Encounter.admission.extension:aufnahmeart","Encounter.admission.extension","aufnahmeart","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-aufnahmeart]]} {[]}
+","Aufnahmeart","MOPED Extension für die Aufnahmeart.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "MOPEDEncounterKH","Encounter.admission.extension:transportart","Encounter.admission.extension","transportart","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-transportart]]} {[]}
 ","Transportart","MOPED Extension für die Transportart.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -5561,46 +5561,46 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "MOPEDEncounterLGF","Encounter.class:Behandlungsart.text","Encounter.class.text","","","",0,1,"","","Y","string {[]} {[]}
 ","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterLGF","Encounter.class:Aufnahmeart","Encounter.class","Aufnahmeart","","",0,1,"","","Y","CodeableConcept {[]} {[]}
-","Aufnahmeart","Concepts representing classification of patient encounter such as ambulatory (outpatient), inpatient, emergency, home health or others due to local variations.","","","","","","","","","",,"required","","http://example.org/ValueSet/moped-aufnahmeart-valueset","",,,,"Encounter.class",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"MOPEDEncounterLGF","Encounter.class:Aufnahmeart2","Encounter.class","Aufnahmeart2","","",0,1,"","","Y","CodeableConcept {[]} {[]}
+","Aufnahmeart2","Concepts representing classification of patient encounter such as ambulatory (outpatient), inpatient, emergency, home health or others due to local variations.","","","","","","","","","",,"required","","http://example.org/ValueSet/moped-aufnahmeart2-valueset","",,,,"Encounter.class",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterLGF","Encounter.class:Aufnahmeart.id","Encounter.class.id","","","",0,1,"","","","id {[]} {[]}
+"MOPEDEncounterLGF","Encounter.class:Aufnahmeart2.id","Encounter.class.id","","","",0,1,"","","","id {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
 ",""
-"MOPEDEncounterLGF","Encounter.class:Aufnahmeart.extension","Encounter.class.extension","","extensions
+"MOPEDEncounterLGF","Encounter.class:Aufnahmeart2.extension","Encounter.class.extension","","extensions
 user content","",0,*,"","","","Extension {[]} {[]}
 ","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MOPEDEncounterLGF","Encounter.class:Aufnahmeart.coding","Encounter.class.coding","","","",0,*,"","","Y","Coding {[]} {[]}
+"MOPEDEncounterLGF","Encounter.class:Aufnahmeart2.coding","Encounter.class.coding","","","",0,*,"","","Y","Coding {[]} {[]}
 ","Code defined by a terminology system","A reference to a code defined by a terminology system.","Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,,,,"",,,,"CodeableConcept.coding",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterLGF","Encounter.class:Aufnahmeart.coding.id","Encounter.class.coding.id","","","",0,1,"","","","id {[]} {[]}
+"MOPEDEncounterLGF","Encounter.class:Aufnahmeart2.coding.id","Encounter.class.coding.id","","","",0,1,"","","","id {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
 ",""
-"MOPEDEncounterLGF","Encounter.class:Aufnahmeart.coding.extension","Encounter.class.coding.extension","","extensions
+"MOPEDEncounterLGF","Encounter.class:Aufnahmeart2.coding.extension","Encounter.class.coding.extension","","extensions
 user content","",0,*,"","","","Extension {[]} {[]}
 ","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MOPEDEncounterLGF","Encounter.class:Aufnahmeart.coding.system","Encounter.class.coding.system","","","",1,1,"","","Y","uri {[]} {[]}
+"MOPEDEncounterLGF","Encounter.class:Aufnahmeart2.coding.system","Encounter.class.coding.system","","","",1,1,"","","Y","uri {[]} {[]}
 ","Identity of the terminology system","The identification of the code system that defines the meaning of the symbol in the code.","The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should be an absolute reference to some definition that establishes the system clearly and unambiguously.","Need to be unambiguous about the source of the definition of the symbol.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://tbd.at/moped-ext-aufnahmeart""/>","","","",,,,,"",,,,"Coding.system",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterLGF","Encounter.class:Aufnahmeart.coding.version","Encounter.class.coding.version","","","",0,1,"","","Y","string {[]} {[]}
+"MOPEDEncounterLGF","Encounter.class:Aufnahmeart2.coding.version","Encounter.class.coding.version","","","",0,1,"","","Y","string {[]} {[]}
 ","Version of the system - if relevant","The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.","Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.","","","","","","","","",,,,,"",,,,"Coding.version",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterLGF","Encounter.class:Aufnahmeart.coding.code","Encounter.class.coding.code","","","",0,1,"","","Y","code {[]} {[]}
+"MOPEDEncounterLGF","Encounter.class:Aufnahmeart2.coding.code","Encounter.class.coding.code","","","",0,1,"","","Y","code {[]} {[]}
 ","Symbol in syntax defined by the system","A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).","","Need to refer to a particular code in the system.","","","","","","","",,,,,"",,,,"Coding.code",0,1,"cod-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterLGF","Encounter.class:Aufnahmeart.coding.display","Encounter.class.coding.display","","","",0,1,"","","Y","string {[]} {[]}
+"MOPEDEncounterLGF","Encounter.class:Aufnahmeart2.coding.display","Encounter.class.coding.display","","","",0,1,"","","Y","string {[]} {[]}
 ","Representation defined by the system","A representation of the meaning of the code in the system, following the rules of the system.","","Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.","","","","","","","",,,,,"",,,,"Coding.display",0,1,"cod-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterLGF","Encounter.class:Aufnahmeart.coding.userSelected","Encounter.class.coding.userSelected","","","",0,1,"","","Y","boolean {[]} {[]}
+"MOPEDEncounterLGF","Encounter.class:Aufnahmeart2.coding.userSelected","Encounter.class.coding.userSelected","","","",0,1,"","","Y","boolean {[]} {[]}
 ","If this coding was chosen directly by the user","Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).","Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely.","This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing.","","","","","","","",,,,,"",,,,"Coding.userSelected",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterLGF","Encounter.class:Aufnahmeart.text","Encounter.class.text","","","",0,1,"","","Y","string {[]} {[]}
+"MOPEDEncounterLGF","Encounter.class:Aufnahmeart2.text","Encounter.class.text","","","",0,1,"","","Y","string {[]} {[]}
 ","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "MOPEDEncounterLGF","Encounter.priority","Encounter.priority","","","",0,1,"","","","CodeableConcept {[]} {[]}
@@ -5811,8 +5811,8 @@ discharge diagnosisindication","",0,*,"","","Y","CodeableReference {[]} {[Canoni
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MOPEDEncounterLGF","Encounter.admission.extension:zugangsart","Encounter.admission.extension","zugangsart","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-zugangsart]]} {[]}
-","Zugangsart","MOPED Extension für die Art des Zugangs.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"MOPEDEncounterLGF","Encounter.admission.extension:aufnahmeart","Encounter.admission.extension","aufnahmeart","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-aufnahmeart]]} {[]}
+","Aufnahmeart","MOPED Extension für die Aufnahmeart.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "MOPEDEncounterLGF","Encounter.admission.extension:transportart","Encounter.admission.extension","transportart","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-transportart]]} {[]}
 ","Transportart","MOPED Extension für die Transportart.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -6099,46 +6099,46 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "MOPEDEncounterSV","Encounter.class:Behandlungsart.text","Encounter.class.text","","","",0,1,"","","Y","string {[]} {[]}
 ","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterSV","Encounter.class:Aufnahmeart","Encounter.class","Aufnahmeart","","",0,0,"","","Y","CodeableConcept {[]} {[]}
-","Aufnahmeart","Concepts representing classification of patient encounter such as ambulatory (outpatient), inpatient, emergency, home health or others due to local variations.","","","","","","","","","",,"required","","http://example.org/ValueSet/moped-aufnahmeart-valueset","",,,,"Encounter.class",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"MOPEDEncounterSV","Encounter.class:Aufnahmeart2","Encounter.class","Aufnahmeart2","","",0,0,"","","Y","CodeableConcept {[]} {[]}
+","Aufnahmeart2","Concepts representing classification of patient encounter such as ambulatory (outpatient), inpatient, emergency, home health or others due to local variations.","","","","","","","","","",,"required","","http://example.org/ValueSet/moped-aufnahmeart2-valueset","",,,,"Encounter.class",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterSV","Encounter.class:Aufnahmeart.id","Encounter.class.id","","","",0,1,"","","","id {[]} {[]}
+"MOPEDEncounterSV","Encounter.class:Aufnahmeart2.id","Encounter.class.id","","","",0,1,"","","","id {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
 ",""
-"MOPEDEncounterSV","Encounter.class:Aufnahmeart.extension","Encounter.class.extension","","extensions
+"MOPEDEncounterSV","Encounter.class:Aufnahmeart2.extension","Encounter.class.extension","","extensions
 user content","",0,*,"","","","Extension {[]} {[]}
 ","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MOPEDEncounterSV","Encounter.class:Aufnahmeart.coding","Encounter.class.coding","","","",0,*,"","","Y","Coding {[]} {[]}
+"MOPEDEncounterSV","Encounter.class:Aufnahmeart2.coding","Encounter.class.coding","","","",0,*,"","","Y","Coding {[]} {[]}
 ","Code defined by a terminology system","A reference to a code defined by a terminology system.","Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,,,,"",,,,"CodeableConcept.coding",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterSV","Encounter.class:Aufnahmeart.coding.id","Encounter.class.coding.id","","","",0,1,"","","","id {[]} {[]}
+"MOPEDEncounterSV","Encounter.class:Aufnahmeart2.coding.id","Encounter.class.coding.id","","","",0,1,"","","","id {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
 ",""
-"MOPEDEncounterSV","Encounter.class:Aufnahmeart.coding.extension","Encounter.class.coding.extension","","extensions
+"MOPEDEncounterSV","Encounter.class:Aufnahmeart2.coding.extension","Encounter.class.coding.extension","","extensions
 user content","",0,*,"","","","Extension {[]} {[]}
 ","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MOPEDEncounterSV","Encounter.class:Aufnahmeart.coding.system","Encounter.class.coding.system","","","",1,1,"","","Y","uri {[]} {[]}
+"MOPEDEncounterSV","Encounter.class:Aufnahmeart2.coding.system","Encounter.class.coding.system","","","",1,1,"","","Y","uri {[]} {[]}
 ","Identity of the terminology system","The identification of the code system that defines the meaning of the symbol in the code.","The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should be an absolute reference to some definition that establishes the system clearly and unambiguously.","Need to be unambiguous about the source of the definition of the symbol.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://tbd.at/moped-ext-aufnahmeart""/>","","","",,,,,"",,,,"Coding.system",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterSV","Encounter.class:Aufnahmeart.coding.version","Encounter.class.coding.version","","","",0,1,"","","Y","string {[]} {[]}
+"MOPEDEncounterSV","Encounter.class:Aufnahmeart2.coding.version","Encounter.class.coding.version","","","",0,1,"","","Y","string {[]} {[]}
 ","Version of the system - if relevant","The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.","Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.","","","","","","","","",,,,,"",,,,"Coding.version",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterSV","Encounter.class:Aufnahmeart.coding.code","Encounter.class.coding.code","","","",0,1,"","","Y","code {[]} {[]}
+"MOPEDEncounterSV","Encounter.class:Aufnahmeart2.coding.code","Encounter.class.coding.code","","","",0,1,"","","Y","code {[]} {[]}
 ","Symbol in syntax defined by the system","A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).","","Need to refer to a particular code in the system.","","","","","","","",,,,,"",,,,"Coding.code",0,1,"cod-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterSV","Encounter.class:Aufnahmeart.coding.display","Encounter.class.coding.display","","","",0,1,"","","Y","string {[]} {[]}
+"MOPEDEncounterSV","Encounter.class:Aufnahmeart2.coding.display","Encounter.class.coding.display","","","",0,1,"","","Y","string {[]} {[]}
 ","Representation defined by the system","A representation of the meaning of the code in the system, following the rules of the system.","","Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.","","","","","","","",,,,,"",,,,"Coding.display",0,1,"cod-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterSV","Encounter.class:Aufnahmeart.coding.userSelected","Encounter.class.coding.userSelected","","","",0,1,"","","Y","boolean {[]} {[]}
+"MOPEDEncounterSV","Encounter.class:Aufnahmeart2.coding.userSelected","Encounter.class.coding.userSelected","","","",0,1,"","","Y","boolean {[]} {[]}
 ","If this coding was chosen directly by the user","Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).","Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely.","This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing.","","","","","","","",,,,,"",,,,"Coding.userSelected",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"MOPEDEncounterSV","Encounter.class:Aufnahmeart.text","Encounter.class.text","","","",0,1,"","","Y","string {[]} {[]}
+"MOPEDEncounterSV","Encounter.class:Aufnahmeart2.text","Encounter.class.text","","","",0,1,"","","Y","string {[]} {[]}
 ","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "MOPEDEncounterSV","Encounter.priority","Encounter.priority","","","",0,1,"","","","CodeableConcept {[]} {[]}
@@ -6349,8 +6349,8 @@ discharge diagnosisindication","",0,*,"","","Y","CodeableReference {[]} {[Canoni
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MOPEDEncounterSV","Encounter.admission.extension:zugangsart","Encounter.admission.extension","zugangsart","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-zugangsart]]} {[]}
-","Zugangsart","MOPED Extension für die Art des Zugangs.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"MOPEDEncounterSV","Encounter.admission.extension:aufnahmeart","Encounter.admission.extension","aufnahmeart","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-aufnahmeart]]} {[]}
+","Aufnahmeart","MOPED Extension für die Aufnahmeart.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "MOPEDEncounterSV","Encounter.admission.extension:transportart","Encounter.admission.extension","transportart","","",0,0,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-transportart]]} {[]}
 ","Transportart","MOPED Extension für die Transportart.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -9926,6 +9926,22 @@ boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
+"moped-ext-aufnahmeart","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
+","Aufnahmeart","MOPED Extension für die Aufnahmeart.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-aufnahmeart","Extension.id","Extension.id","","","",0,1,"","","","id {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
+",""
+"moped-ext-aufnahmeart","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"moped-ext-aufnahmeart","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/StructureDefinition/moped-ext-aufnahmeart""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"moped-ext-aufnahmeart","Extension.value[x]","Extension.value[x]","","","",0,1,"","","","Coding {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,"required","Code für die Art der Aufnahme","http://example.org/ValueSet/moped-aufnahmeart-valueset","",,,,"Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
 "moped-ext-beihilfenaequivalent","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","Beihilfenaequivalent","MOPED Extension für das Beihilfenaequivalent","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
@@ -10796,21 +10812,5 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/StructureDefinition/moped-ext-workflowStatus""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
 "moped-ext-workflowStatus","Extension.value[x]","Extension.value[x]","","","",1,1,"","","","Coding {[]} {[]}
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,"required","Code für den MOPED Workflowstatus","http://example.org/ValueSet/moped-WorkflowStatus-valueset","",,,,"Extension.value[x]",0,1,"ext-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
-"moped-ext-zugangsart","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
-","Zugangsart","MOPED Extension für die Art des Zugangs.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"moped-ext-zugangsart","Extension.id","Extension.id","","","",0,1,"","","","id {[]} {[]}
-","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
-",""
-"moped-ext-zugangsart","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
-","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"moped-ext-zugangsart","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
-","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/StructureDefinition/moped-ext-zugangsart""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
-"moped-ext-zugangsart","Extension.value[x]","Extension.value[x]","","","",0,1,"","","","Coding {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,"required","Code für die Art des Zugangs","http://example.org/ValueSet/moped-zugangsart-valueset","",,,,"Extension.value[x]",0,1,"ext-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "

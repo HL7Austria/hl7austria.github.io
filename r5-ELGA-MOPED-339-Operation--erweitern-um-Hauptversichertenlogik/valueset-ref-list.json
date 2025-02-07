@@ -22,9 +22,9 @@
       "systems" : ["http://tbd.at/MOPED-Anwesenheitsart"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter",
       "OperationDefinition-MOPED.Patient.Verlegen.html" : "MOPED Patient $verlegen (POC)",
-      "OperationDefinition-MOPED.Patient.Aufnehmen.html" : "MOPED Patient $aufnehmen (POC)"
+      "OperationDefinition-MOPED.Patient.Aufnehmen.html" : "MOPED Patient $aufnehmen (POC)",
+      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter"
     },
     {
       "url" : "http://example.org/ValueSet/moped-Fondsrelevanz-valueset",
@@ -158,8 +158,8 @@
       "systems" : ["http://tbd.at/MOPED-encounter-abgangsart"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter",
-      "OperationDefinition-MOPED.Patient.Verlegen.html" : "MOPED Patient $verlegen (POC)"
+      "OperationDefinition-MOPED.Patient.Verlegen.html" : "MOPED Patient $verlegen (POC)",
+      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPED Transfer Encounter"
     },
     {
       "url" : "http://example.org/ValueSet/moped-altersgruppe-valueset",
@@ -177,7 +177,19 @@
       "url" : "http://example.org/ValueSet/moped-aufnahmeart-valueset",
       "version" : "0.1.0",
       "status" : "draft",
-      "name" : "Aufnahmeart",
+      "name" : "AufnahmeartVS",
+      "title" : "Aufnahmeart des Patienten",
+      "description" : "ValueSet für die Aufnahmeart des Patienten (LKF + Ka-Org)",
+      "systems" : ["http://tbd.at/moped-ext-aufnahmeart"],
+      "uses" : {
+      },
+      "StructureDefinition-moped-ext-aufnahmeart.html" : "Aufnahmeart"
+    },
+    {
+      "url" : "http://example.org/ValueSet/moped-aufnahmeart2-valueset",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "Aufnahmeart2",
       "title" : "Aufnahmeart des Patienten",
       "description" : "ValueSet für die Aufnahmeart des Patienten",
       "systems" : ["http://tbd.at/moped-ext-aufnahmeart"],
@@ -207,8 +219,8 @@
       "systems" : ["http://tbd.at/MOPED-encounter-entlassungsart"],
       "uses" : {
       },
-      "OperationDefinition-MOPED.Patient.Entlassen.html" : "MOPED Patient $entlassen (POC)",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter"
+      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
+      "OperationDefinition-MOPED.Patient.Entlassen.html" : "MOPED Patient $entlassen (POC)"
     },
     {
       "url" : "http://example.org/ValueSet/moped-related-person-relationship-type",
@@ -222,7 +234,10 @@
         "http://terminology.hl7.org/CodeSystem/v3-RoleClass",
         "http://terminology.hl7.org/CodeSystem/v2-0131",
         "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"
-      ]
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-Hauptversicherter.html" : "MOPED Hauptversicherter"
     },
     {
       "url" : "http://example.org/ValueSet/moped-sonderklasse-valueset",
@@ -234,8 +249,8 @@
       "systems" : ["http://tbd.at/MOPED-Sonderklasse"],
       "uses" : {
       },
-      "OperationDefinition-MOPED.CoverageEligibilityRequest.Anfragen.html" : "MOPED Versichertenanspruchserklärung $anfragen (POC)",
-      "StructureDefinition-moped-ext-sonderklasse.html" : "Sonderklasse"
+      "StructureDefinition-moped-ext-sonderklasse.html" : "Sonderklasse",
+      "OperationDefinition-MOPED.CoverageEligibilityRequest.Anfragen.html" : "MOPED Versichertenanspruchserklärung $anfragen (POC)"
     },
     {
       "url" : "http://example.org/ValueSet/moped-sonderleistungsnummern-valueset",
@@ -272,18 +287,6 @@
       "uses" : {
       },
       "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter"
-    },
-    {
-      "url" : "http://example.org/ValueSet/moped-zugangsart-valueset",
-      "version" : "0.1.0",
-      "status" : "draft",
-      "name" : "ZugangsartVS",
-      "title" : "Zugangsart des Patienten",
-      "description" : "ValueSet für die Zugangsart des Patienten (LKF + Ka-Org)",
-      "systems" : ["http://tbd.at/moped-ext-zugangsart"],
-      "uses" : {
-      },
-      "StructureDefinition-moped-ext-zugangsart.html" : "Zugangsart"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/encounter-reason-use",
@@ -324,7 +327,6 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-Hauptversicherter.html" : "MOPED Hauptversicherter",
       "ValueSet-moped-related-person-relationship-type.html" : "MOPED RelatedPerson Relationship Type ValueSet"
     },
     {

@@ -113,7 +113,7 @@
   <sch:pattern>
     <sch:title>f:Encounter/f:admission</sch:title>
     <sch:rule context="f:Encounter/f:admission">
-      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-zugangsart']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-zugangsart': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-aufnahmeart']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-aufnahmeart': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-transportart']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-transportart': maximum cardinality of 'extension' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>

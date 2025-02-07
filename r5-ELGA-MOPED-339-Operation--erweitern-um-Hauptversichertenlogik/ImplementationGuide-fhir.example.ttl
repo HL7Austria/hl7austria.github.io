@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "MOPED"] ; # 
   fhir:title [ fhir:v "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-02-06T12:43:28+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-02-07T07:29:32+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ELGA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ELGA" ] ;
@@ -190,11 +190,35 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/StructureDefinition/moped-ext-aufnahmeart> ;
+         fhir:reference [ fhir:v "StructureDefinition/moped-ext-aufnahmeart" ]
+       ] ;
+       fhir:name [ fhir:v "Aufnahmeart" ] ;
+       fhir:description [ fhir:v "MOPED Extension für die Aufnahmeart." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/ValueSet/moped-aufnahmeart-valueset> ;
          fhir:reference [ fhir:v "ValueSet/moped-aufnahmeart-valueset" ]
+       ] ;
+       fhir:name [ fhir:v "Aufnahmeart des Patienten" ] ;
+       fhir:description [ fhir:v "ValueSet für die Aufnahmeart des Patienten (LKF + Ka-Org)" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/ValueSet/moped-aufnahmeart2-valueset> ;
+         fhir:reference [ fhir:v "ValueSet/moped-aufnahmeart2-valueset" ]
        ] ;
        fhir:name [ fhir:v "Aufnahmeart des Patienten" ] ;
        fhir:description [ fhir:v "ValueSet für die Aufnahmeart des Patienten" ] ;
@@ -1794,30 +1818,6 @@
        ] ;
        fhir:name [ fhir:v "Workflow Status eines Falls" ] ;
        fhir:description [ fhir:v "ValueSet für die Statusoptionen in denen sich ein Fall befinden kann." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://example.org/StructureDefinition/moped-ext-zugangsart> ;
-         fhir:reference [ fhir:v "StructureDefinition/moped-ext-zugangsart" ]
-       ] ;
-       fhir:name [ fhir:v "Zugangsart" ] ;
-       fhir:description [ fhir:v "MOPED Extension für die Art des Zugangs." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://example.org/ValueSet/moped-zugangsart-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/moped-zugangsart-valueset" ]
-       ] ;
-       fhir:name [ fhir:v "Zugangsart des Patienten" ] ;
-       fhir:description [ fhir:v "ValueSet für die Zugangsart des Patienten (LKF + Ka-Org)" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] ) ;
      fhir:page [
