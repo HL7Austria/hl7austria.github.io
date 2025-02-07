@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "MOPED"] ; # 
   fhir:title [ fhir:v "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-02-07T07:07:15+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-02-07T10:07:52+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ELGA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ELGA" ] ;
@@ -867,6 +867,18 @@
        ] ;
        fhir:name [ fhir:v "MOPED Procedure" ] ;
        fhir:description [ fhir:v "MOPED Profil der Procedure Ressource für die LDF-Abrechnung" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/ValueSet/moped-related-person-relationship-type> ;
+         fhir:reference [ fhir:v "ValueSet/moped-related-person-relationship-type" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED RelatedPerson Relationship Type ValueSet" ] ;
+       fhir:description [ fhir:v "A value set containing codes for the type of relationship of a related person to the patient." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [

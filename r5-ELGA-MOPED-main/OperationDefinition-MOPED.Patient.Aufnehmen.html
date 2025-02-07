@@ -243,12 +243,24 @@
 
 <ol>
   <li>Ressourcen der Transaction erstellen: FHIR Transaction ausführen, wie im Operation-Parameter <em>falldaten</em> mitgegeben. Dabei soll geprüft werden, ob bereits ein Patient mit dem jeweiligen identifier (bPK bzw. Sozialversicherungsnummer) vorliegt um Duplikate zu vermeiden. Das gleiche gilt für die anderen Ressourcen im Bundle, und kann technisch mit Hilfe von conditional References im Input-Bundle realisiert werden.</li>
+  <li>Coverage aktualisieren:
+    <ul>
+      <li><em>MOPEDCoverage.beneficiary mit der gleichen Referenz befüllen wie *MOPEDEncounter.subject</em>
+wenn im Operation Parameter falldaten (Aufnahmebundle) ein Hauptversicherter vorhanden ist:
+        <ul>
+          <li>*MOPEDCoverage.subsciber mit der Referenz auf den Hauptversicherten befüllen
+sonst:</li>
+          <li><em>MOPEDCoverage.subsciber mit der gleichen Referenz befüllen wie *MOPEDEncounter.subject</em></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
   <li>Account anlegen:
     <ul>
       <li><em>MOPEDAccount.WorkflowStatus</em>: lt. Beschreibung der Werte-Ausprägungen des <em>freigeben</em> Parameter (siehe Hinweis 1)</li>
       <li><em>MOPEDAccount.VerdachtArbeitsSchuelerunfall</em> lt. Operation-Parameter</li>
       <li><em>MOPEDAccount.VerdachtFremdverschulden</em> lt. Operation-Parameter</li>
-      <li><em>MOPEDAccount.subject</em> mit der gleichen Referenz befüllen wie <em>MOPEDEncounter.subjec</em></li>
+      <li><em>MOPEDAccount.subject</em> mit der gleichen Referenz befüllen wie <em>MOPEDEncounter.subject</em></li>
       <li><em>MOPEDAccount.owner</em> mit der gleichen Referenz befüllen wie <em>MOPEDEncounter.serviceProvider</em></li>
       <li><em>MOPEDAccount.AnzahlVerlegungen</em> mit Wert '0' befüllen</li>
       <li><em>MOPEDAccount.AnzahlBeurlaubungen</em> mit Wert '0' befüllen</li>
@@ -347,7 +359,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Fri, Feb 7, 2025 07:07+0000">2025-02-07</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Fri, Feb 7, 2025 10:07+0000">2025-02-07</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
