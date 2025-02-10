@@ -1,5 +1,6 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -10,14 +11,14 @@
   fhir:id [ fhir:v "fhir.example"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide fhir.example</b></p><a name=\"fhir.example\"> </a><a name=\"hcfhir.example\"> </a><a name=\"fhir.example-en-US\"> </a><h2>MOPED</h2><p>The official URL for this implementation guide is: </p><pre>http://example.org/ImplementationGuide/fhir.example</pre></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide fhir.example</b></p><a name=\"fhir.example\"> </a><a name=\"hcfhir.example\"> </a><a name=\"fhir.example-en-US\"> </a><h2>MOPED</h2><p>The official URL for this implementation guide is: </p><pre>http://example.org/ImplementationGuide/fhir.example</pre></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:url [ fhir:v "http://example.org/ImplementationGuide/fhir.example"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "MOPED"] ; # 
   fhir:title [ fhir:v "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-02-06T12:00:33+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-02-10T09:34:03+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Example Publisher"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Example Publisher" ] ;
@@ -33,7 +34,10 @@
      fhir:id [ fhir:v "hl7tx" ] ;
      fhir:extension ( [
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "Automatically added as a dependency - all IGs depend on HL7 Terminology" ]
+       fhir:value [
+         a fhir:markdown ;
+         fhir:v "Automatically added as a dependency - all IGs depend on HL7 Terminology"
+       ]
      ] ) ;
      fhir:uri [
        fhir:v "http://terminology.hl7.org/ImplementationGuide/hl7.terminology"^^xsd:anyURI ;
@@ -45,7 +49,10 @@
      fhir:id [ fhir:v "hl7ext" ] ;
      fhir:extension ( [
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack" ]
+       fhir:value [
+         a fhir:markdown ;
+         fhir:v "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
+       ]
      ] ) ;
      fhir:uri [
        fhir:v "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"^^xsd:anyURI ;
@@ -65,12 +72,18 @@
   fhir:definition [
      fhir:extension ( [
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "hl7.fhir.uv.tools.r5#0.3.0" ]
+       fhir:value [
+         a fhir:code ;
+         fhir:v "hl7.fhir.uv.tools.r5#0.3.0"
+       ]
      ] ) ;
      fhir:resource ( [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/ValueSet/moped-abgangsart-valueset> ;
@@ -82,7 +95,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-diagnosisRelatedNode> ;
@@ -94,7 +110,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/SVAbrechnungsquartal> ;
@@ -106,7 +125,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/ValueSet/moped-AbrechnungsRelevanz-valueset> ;
@@ -118,7 +140,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-Altersgruppe> ;
@@ -130,7 +155,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-AnzahlSonderleistungen> ;
@@ -142,7 +170,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-AnzahlBeurlaubungen> ;
@@ -154,7 +185,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-AnzahlVerlegungen> ;
@@ -166,7 +200,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/ValueSet/moped-aufnahmeart-valueset> ;
@@ -178,7 +215,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/ValueSet/moped-VerpflegskostenBeitragsbefreiung-valueset> ;
@@ -190,7 +230,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/ValueSet/moped-behandlungsart-valueset> ;
@@ -202,7 +245,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-Beihilfenaequivalent> ;
@@ -214,7 +260,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-ClaimRef> ;
@@ -226,7 +275,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-CoverageEligibilityRequestRef> ;
@@ -238,7 +290,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-EndOfEligibility> ;
@@ -250,7 +305,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/ValueSet/moped-entlassungsart-valueset> ;
@@ -262,7 +320,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-ErrorWarning> ;
@@ -274,7 +335,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-fondsrelevanz> ;
@@ -286,7 +350,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/ValueSet/moped-Fondsrelevanz-valueset> ;
@@ -298,7 +365,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-ForderungsbetragAuslaenderverrechnungRegress> ;
@@ -310,7 +380,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-KonstenmeldungARK> ;
@@ -322,7 +395,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/ValueSet/moped-KostenmeldungARK-valueset> ;
@@ -334,7 +410,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-Kostenstelle> ;
@@ -346,7 +425,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-LDFBetragNetto> ;
@@ -358,7 +440,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-LDFPunktewertNetto> ;
@@ -370,7 +455,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/ValueSet/moped-LKFAbrechnungsGruppe-valueset> ;
@@ -382,7 +470,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/ValueSet/moped-LKFAbrechnungsKnoten-valueset> ;
@@ -394,7 +485,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/ValueSet/moped-LKFHauptdiagnosegruppen-valueset> ;
@@ -406,7 +500,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/ValueSet/moped-LKFmedizinischeEinzelleistungen-valueset> ;
@@ -417,7 +514,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/lkfPunkte> ;
@@ -429,7 +529,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-MealCostExcemption> ;
@@ -441,7 +544,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-AbrechnungsRelevanz> ;
@@ -453,7 +559,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/MOPEDAufnahmeBundle> ;
@@ -465,7 +574,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OperationDefinition" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "OperationDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/OperationDefinition/MOPED.ClaimResponse.Auffordern> ;
@@ -477,7 +589,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OperationDefinition" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "OperationDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/OperationDefinition/MOPED.ClaimResponse.Freigeben> ;
@@ -489,7 +604,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/MOPEDCoverage> ;
@@ -501,7 +619,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OperationDefinition" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "OperationDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/OperationDefinition/MOPED.CoverageEligibilityResponse.Beantworten> ;
@@ -513,7 +634,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/MOPEDEncounter> ;
@@ -525,7 +649,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OperationDefinition" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "OperationDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/OperationDefinition/MOPED.Encounter.Abrechnen> ;
@@ -537,7 +664,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/MOPEDEncounterBund> ;
@@ -549,7 +679,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/MOPEDEncounterKH> ;
@@ -561,7 +694,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OperationDefinition" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "OperationDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/OperationDefinition/MOPED.Encounter.erfassen> ;
@@ -573,7 +709,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/MOPEDEncounterLGF> ;
@@ -585,7 +724,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/MOPEDEncounterSV> ;
@@ -597,7 +739,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/Hauptversicherter> ;
@@ -609,7 +754,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OperationDefinition" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "OperationDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/OperationDefinition/MOPED.Patient.Aufnehmen> ;
@@ -621,7 +769,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OperationDefinition" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "OperationDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/OperationDefinition/MOPED.Patient.Entlassen> ;
@@ -633,7 +784,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OperationDefinition" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "OperationDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/OperationDefinition/MOPED.Patient.Verlegen> ;
@@ -645,7 +799,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/MOPEDPatientBund> ;
@@ -657,7 +814,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/MOPEDPatientLGF> ;
@@ -669,7 +829,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/MOPEDPatientSV> ;
@@ -681,7 +844,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/ValueSet/moped-related-person-relationship-type> ;
@@ -693,7 +859,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OperationDefinition" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "OperationDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/OperationDefinition/MOPED.CoverageEligibilityRequest.Anfragen> ;
@@ -705,7 +874,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/MOPEDAccount> ;
@@ -717,7 +889,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/MOPEDClaim> ;
@@ -729,7 +904,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/MOPEDClaimResponse> ;
@@ -741,7 +919,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/MOPEDCondition> ;
@@ -753,7 +934,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/MOPEDCoverageEligibilityRequest> ;
@@ -765,7 +949,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/MOPEDCoverageEligibilityResponse> ;
@@ -777,7 +964,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/MOPEDOrganizationAbteilung> ;
@@ -789,7 +979,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/MOPEDProcedure> ;
@@ -801,7 +994,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/MOPEDTransferEncounter> ;
@@ -813,7 +1009,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-Neugeborenes> ;
@@ -825,7 +1024,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/ValueSet/moped-sonderleistungsnummern-valueset> ;
@@ -837,7 +1039,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-PatientenanteilAngehoerige> ;
@@ -849,7 +1054,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-Patientenanteil> ;
@@ -861,7 +1069,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-physischeAnwesenheit> ;
@@ -873,7 +1084,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/Plausibilitaetskennzeichen> ;
@@ -885,7 +1099,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-PremiumClass> ;
@@ -897,7 +1114,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-PunkteLDFPauschale> ;
@@ -909,7 +1129,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-RechnungsnummerKHLGF> ;
@@ -921,7 +1144,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/ValueSet/moped-Sonderklasse-valueset> ;
@@ -933,7 +1159,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-Sonderleistungsnummer> ;
@@ -945,7 +1174,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/ValueSet/moped-VAEStatus-valueset> ;
@@ -957,7 +1189,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-TageOhneKostenbeitrag> ;
@@ -969,7 +1204,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-transportart> ;
@@ -981,7 +1219,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/ValueSet/moped-transportart-valueset> ;
@@ -993,7 +1234,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-unfalldatum> ;
@@ -1005,7 +1249,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/ValueSet/moped-ursache-valueset> ;
@@ -1017,7 +1264,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-vaestatus> ;
@@ -1029,7 +1279,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-vdasid> ;
@@ -1041,7 +1294,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-VerdachtArbeitsSchuelerunfall> ;
@@ -1053,7 +1309,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/ValueSet/moped-VerdachtArbeitsSchuelerunfall-valueset> ;
@@ -1065,7 +1324,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-VerdachtFremdverschulden> ;
@@ -1077,7 +1339,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-extensionDays> ;
@@ -1089,7 +1354,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-NumberOfPreviouslyPaidDays> ;
@@ -1101,7 +1369,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-workflow-status> ;
@@ -1113,7 +1384,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/ValueSet/moped-WorkflowStatus-valueset> ;
@@ -1125,7 +1399,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:extension" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/StructureDefinition/moped-ext-zugangsart> ;
@@ -1137,7 +1414,10 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://example.org/ValueSet/moped-zugangsart-valueset> ;
@@ -1148,22 +1428,34 @@
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] ) ;
      fhir:page [
-       fhir:source [ fhir:v "toc.html"^^xsd:anyURI ] ;
+       fhir:source [
+         a fhir:url ;
+         fhir:v "toc.html"^^xsd:anyURI
+       ] ;
        fhir:name [ fhir:v "toc.html"^^xsd:anyURI ] ;
        fhir:title [ fhir:v "Table of Contents" ] ;
        fhir:generation [ fhir:v "html" ] ;
        fhir:page ( [
-         fhir:source [ fhir:v "index.html"^^xsd:anyURI ] ;
+         fhir:source [
+           a fhir:url ;
+           fhir:v "index.html"^^xsd:anyURI
+         ] ;
          fhir:name [ fhir:v "index.html"^^xsd:anyURI ] ;
          fhir:title [ fhir:v "Home" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
-         fhir:source [ fhir:v "poc.html"^^xsd:anyURI ] ;
+         fhir:source [
+           a fhir:url ;
+           fhir:v "poc.html"^^xsd:anyURI
+         ] ;
          fhir:name [ fhir:v "poc.html"^^xsd:anyURI ] ;
          fhir:title [ fhir:v "Proof of Concept" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
-         fhir:source [ fhir:v "HackathonRequestOverview.html"^^xsd:anyURI ] ;
+         fhir:source [
+           a fhir:url ;
+           fhir:v "HackathonRequestOverview.html"^^xsd:anyURI
+         ] ;
          fhir:name [ fhir:v "HackathonRequestOverview.html"^^xsd:anyURI ] ;
          fhir:title [ fhir:v "Hackathon Gesamtübersicht" ] ;
          fhir:generation [ fhir:v "markdown" ]
