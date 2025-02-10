@@ -39,8 +39,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"4.5"}
-    h3,h4,h5,h6{--heading-prefix:"4.5"}</style>
+    <style type="text/css">h2{--heading-prefix:"4.2"}
+    h3,h4,h5,h6{--heading-prefix:"4.2"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
           <!-- at-fhir-ig-template begin -->
@@ -234,7 +234,7 @@
 <p><strong>Detaillierte Business-Logik</strong></p>
 
 <ol>
-  <li>Suche des MOPEDEncounter: Der MOPEDEncounter mit der jeweiligen <em>aufnahmezahl</em> lt. Operation-Parameter wird gesucht</li>
+  <li>Suche des MopedEncounter: Der MopedEncounter mit der jeweiligen <em>aufnahmezahl</em> lt. Operation-Parameter wird gesucht</li>
   <li>Falls bisher Conditions oder Procedures eingemeldet wurden, die zum Encounter aus Schritt 1 gehören (also diesen Encounter in Procedure.encounter bzw. Condition.encounter referenzieren), dann werden diese auf den verificationStatus <code class="language-plaintext highlighter-rouge">entered-in-error</code> gesetzt bzw. mit der neuen Ressource upgedatet, falls der gefundene Identifier mit dem neu-übermittelten übereinstimmt. Die neuen Conditions und Procedures werden lt. Ressourcen in den Operation-Parametern eingespielt (bzw. upgedatet), sofern die Validierung (siehe unten) erfolgreich war.</li>
 </ol>
 
@@ -278,8 +278,8 @@
 
 
   <div><p class="res-header-id"><b>Generated Narrative: OperationDefinition MOPED.Encounter.erfassen</b></p><a name="MOPED.Encounter.erfassen"> </a><a name="hcMOPED.Encounter.erfassen"> </a><a name="MOPED.Encounter.erfassen-en-US"> </a><p>URL: [base]/Encounter/$erfassen</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>aufnahmezahl</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#Identifier">Identifier</a></td><td></td><td><div><p>Der <em>aufnahmezahl</em> Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall.</p>
-</div></td></tr><tr><td>IN</td><td>leistung</td><td></td><td>0..*</td><td><a href="http://hl7.org/fhir/R5/procedure.html">Procedure</a> (<a href="StructureDefinition-MOPEDProcedure.html" title="http://example.org/StructureDefinition/MOPEDProcedure">MOPEDProcedure</a>)</td><td></td><td><div><p>Der <em>leistung</em> Parameter beinhält eine erbrachte Leistung in MEL-Codierung.</p>
-</div></td></tr><tr><td>IN</td><td>diagnose</td><td></td><td>0..*</td><td><a href="http://hl7.org/fhir/R5/condition.html">Condition</a> (<a href="StructureDefinition-MOPEDCondition.html" title="http://example.org/StructureDefinition/MOPEDCondition">MOPEDCondition</a>)</td><td></td><td><div><p>Der <em>diagnose</em> Parameter beinhält eine Diagnose in HDG-Codierung.</p>
+</div></td></tr><tr><td>IN</td><td>leistung</td><td></td><td>0..*</td><td><a href="http://hl7.org/fhir/R5/procedure.html">Procedure</a> (<a href="StructureDefinition-MopedProcedure.html" title="http://example.org/StructureDefinition/MopedProcedure">MopedProcedure</a>)</td><td></td><td><div><p>Der <em>leistung</em> Parameter beinhält eine erbrachte Leistung in MEL-Codierung.</p>
+</div></td></tr><tr><td>IN</td><td>diagnose</td><td></td><td>0..*</td><td><a href="http://hl7.org/fhir/R5/condition.html">Condition</a> (<a href="StructureDefinition-MopedCondition.html" title="http://example.org/StructureDefinition/MopedCondition">MopedCondition</a>)</td><td></td><td><div><p>Der <em>diagnose</em> Parameter beinhält eine Diagnose in HDG-Codierung.</p>
 </div></td></tr><tr><td>OUT</td><td>return</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td></td><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>
 </div></td></tr></table></div>
 
@@ -306,7 +306,7 @@
 
 <div class="inner-wrapper">
   <p><a name="l633">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Mon, Feb 10, 2025 09:34+0000">2025-02-10</span>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Mon, Feb 10, 2025 11:21+0000">2025-02-10</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>FHIR.EXAMPLE\MOPED ClaimResponse $freigeben (POC) - FHIR&reg; v5.0.0</title>
+    <title>FHIR.EXAMPLE\MOPED LKFRequest $freigeben (POC) - FHIR&reg; v5.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -39,8 +39,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"4.2"}
-    h3,h4,h5,h6{--heading-prefix:"4.2"}</style>
+    <style type="text/css">h2{--heading-prefix:"4.4"}
+    h3,h4,h5,h6{--heading-prefix:"4.4"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
           <!-- at-fhir-ig-template begin -->
@@ -108,7 +108,7 @@
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="artifacts.html"><b>Artifacts Summary</b></a></li><li><b>MOPED ClaimResponse $freigeben (POC)</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="artifacts.html"><b>Artifacts Summary</b></a></li><li><b>MOPED LKFRequest $freigeben (POC)</b></li>
 
         </ul>
       </div>    <!-- /container -->
@@ -164,7 +164,7 @@
 
   <a name="root"> </a>
 
-  <h2 id="root">OperationDefinition: MOPED ClaimResponse $freigeben (POC)
+  <h2 id="root">OperationDefinition: MOPED LKFRequest $freigeben (POC)
 
   </h2>
 
@@ -234,8 +234,8 @@
 <p><strong>Detaillierte Business-Logik</strong></p>
 
 <ol>
-  <li>Die ClaimResponse wird lt. Regeln (siehe unten) validiert und eingespielt</li>
-  <li>Falls Schritt 1 erfolgreich war, wird der ClaimResponse.encounter.account.workflowStatus (ClaimResponse aus Operation-Parameter; der Encounter vom Profil MOPEDEncounter) wird auf
+  <li>Die MopedLKFResponse wird lt. Regeln (siehe unten) validiert und eingespielt</li>
+  <li>Falls Schritt 1 erfolgreich war, wird der MopedLKFResponse.encounter.account.workflowStatus (MopedLKFResponse aus Operation-Parameter; der Encounter vom Profil MopedEncounter) wird auf
     <ul>
       <li><code class="language-plaintext highlighter-rouge">Vorläufige Freigabe</code> gesetzt, falls der vorherige Status <code class="language-plaintext highlighter-rouge">Vorläufige Meldung</code> war</li>
       <li><code class="language-plaintext highlighter-rouge">Endgültige Freigabe</code> gesetzt, falls der vorherige Status <code class="language-plaintext highlighter-rouge">Endgültige Meldung</code> war</li>
@@ -247,14 +247,14 @@
 <p><strong>Validierung / Fehlerbehandlung</strong></p>
 
 <ul>
-  <li>ClaimResponse.status muss <code class="language-plaintext highlighter-rouge">active</code> sein (lt. Profil)</li>
-  <li>ClaimResponse.type muss <code class="language-plaintext highlighter-rouge">institutional</code> sein (lt. Profil)</li>
-  <li>ClaimResponse.use muss <code class="language-plaintext highlighter-rouge">claim</code> sein (lt. Profil)</li>
-  <li>ClaimResponse.patient muss gleich ClaimResponse.request.patient sein</li>
-  <li>ClaimResponse.insurer muss gleich ClaimResponse.request.insurer sein</li>
-  <li>ClaimResponse.requestor muss gleich ClaimResponse.request.provider sein</li>
-  <li>ClaimResponse.outcome muss <code class="language-plaintext highlighter-rouge">complete</code> oder <code class="language-plaintext highlighter-rouge">partial</code> sein</li>
-  <li>ClaimResponse.insurance.coverage muss gleich der Claim.insurance.coverage sein</li>
+  <li>MopedLKFResponse.status muss <code class="language-plaintext highlighter-rouge">active</code> sein (lt. Profil)</li>
+  <li>MopedLKFResponse.type muss <code class="language-plaintext highlighter-rouge">institutional</code> sein (lt. Profil)</li>
+  <li>MopedLKFResponse.use muss <code class="language-plaintext highlighter-rouge">claim</code> sein (lt. Profil)</li>
+  <li>MopedLKFResponse.patient muss gleich MopedLKFResponse.request.patient sein</li>
+  <li>MopedLKFResponse.insurer muss gleich MopedLKFResponse.request.insurer sein</li>
+  <li>MopedLKFResponse.requestor muss gleich MopedLKFResponse.request.provider sein</li>
+  <li>MopedLKFResponse.outcome muss <code class="language-plaintext highlighter-rouge">complete</code> oder <code class="language-plaintext highlighter-rouge">partial</code> sein</li>
+  <li>MopedLKFResponse.insurance.coverage muss gleich der Claim.insurance.coverage sein</li>
 </ul>
 
 <p><strong>Weitere Hinweise</strong></p>
@@ -265,7 +265,7 @@
 
 <p><strong>Annahmen an das BeS</strong></p>
 <ul>
-  <li>Es wurde vorab geprüft, ob die ClaimResponse auch dem LGF entspricht, der die Operation aufruft. Somit ist sichergestellt, dass jeder LGF nur eigene Claims beantworten kann.</li>
+  <li>Es wurde vorab geprüft, ob die MopedLKFResponse auch dem LGF entspricht, der die Operation aufruft. Somit ist sichergestellt, dass jeder LGF nur eigene Claims beantworten kann.</li>
 </ul>
 
 </p>
@@ -282,7 +282,7 @@
   
 
 
-  <div><p class="res-header-id"><b>Generated Narrative: OperationDefinition MOPED.ClaimResponse.Freigeben</b></p><a name="MOPED.ClaimResponse.Freigeben"> </a><a name="hcMOPED.ClaimResponse.Freigeben"> </a><a name="MOPED.ClaimResponse.Freigeben-en-US"> </a><p>URL: [base]/ClaimResponse/$freigeben</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>claimResponse</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/claimresponse.html">ClaimResponse</a> (<a href="StructureDefinition-MOPEDClaimResponse.html" title="http://example.org/StructureDefinition/MOPEDClaimResponse">MOPEDClaimResponse</a>)</td><td></td><td><div><p>Der <em>claimResponse</em> Parameter beinhält sämtliche Details zur Antwort auf den Claim.</p>
+  <div><p class="res-header-id"><b>Generated Narrative: OperationDefinition MOPED.ClaimResponse.Freigeben</b></p><a name="MOPED.ClaimResponse.Freigeben"> </a><a name="hcMOPED.ClaimResponse.Freigeben"> </a><a name="MOPED.ClaimResponse.Freigeben-en-US"> </a><p>URL: [base]/ClaimResponse/$freigeben</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>MopedLKFResponse</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/claimresponse.html">ClaimResponse</a> (<a href="StructureDefinition-MopedLKFResponse.html" title="http://example.org/StructureDefinition/MopedLKFResponse">MopedLKFResponse</a>)</td><td></td><td><div><p>Der <em>MopedLKFResponse</em> Parameter beinhält sämtliche Details zur Antwort auf den Claim.</p>
 </div></td></tr><tr><td>OUT</td><td>return</td><td></td><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td></td><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>
 </div></td></tr></table></div>
 
@@ -309,7 +309,7 @@
 
 <div class="inner-wrapper">
   <p><a name="l587">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Mon, Feb 10, 2025 09:34+0000">2025-02-10</span>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Mon, Feb 10, 2025 11:21+0000">2025-02-10</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -46,8 +46,8 @@
       "systems" : ["http://tbd.at/MOPED-LKFAbrechnungsGruppe"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://example.org/ValueSet/moped-LKFAbrechnungsKnoten-valueset",
@@ -71,7 +71,7 @@
       "systems" : ["http://tbd.at/MOPED-LKFHauptdiagnosegruppen"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCondition.html" : "MOPEDCondition"
+      "StructureDefinition-MopedCondition.html" : "MopedCondition"
     },
     {
       "url" : "http://example.org/ValueSet/moped-LKFmedizinischeEinzelleistungen-valueset",
@@ -83,7 +83,7 @@
       "systems" : ["http://tbd.at/MOPED-LKFmedizinischeEinzelleistungen"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDProcedure.html" : "MOPEDProcedure"
+      "StructureDefinition-MopedProcedure.html" : "MopedProcedure"
     },
     {
       "url" : "http://example.org/ValueSet/moped-Sonderklasse-valueset",
@@ -95,8 +95,8 @@
       "systems" : ["http://tbd.at/MOPED-Sonderklasse"],
       "uses" : {
       },
-      "OperationDefinition-MOPED.CoverageEligibilityRequest.Anfragen.html" : "MOPED Versichertenanspruchserklärung $anfragen (POC)",
-      "StructureDefinition-moped-ext-PremiumClass.html" : "PremiumClass"
+      "StructureDefinition-moped-ext-PremiumClass.html" : "PremiumClass",
+      "OperationDefinition-MOPED.VAERequest.Anfragen.html" : "MOPED Versichertenanspruchserklärung $anfragen (POC)"
     },
     {
       "url" : "http://example.org/ValueSet/moped-VAEStatus-valueset",
@@ -108,7 +108,7 @@
       "systems" : ["http://tbd.at/MOPED-VAEStatus"],
       "uses" : {
       },
-      "StructureDefinition-moped-ext-vaestatus.html" : "VAEStatus"
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse"
     },
     {
       "url" : "http://example.org/ValueSet/moped-VerdachtArbeitsSchuelerunfall-valueset",
@@ -120,8 +120,8 @@
       "systems" : ["http://tbd.at/MOPED-account-VerdachtArbeitsSchuelerunfall"],
       "uses" : {
       },
-      "OperationDefinition-MOPED.Patient.Aufnehmen.html" : "MOPED Patient $aufnehmen (POC)",
-      "StructureDefinition-moped-ext-VerdachtArbeitsSchuelerunfall.html" : "Verdacht auf Arbeits- oder Schuelerunfall"
+      "StructureDefinition-moped-ext-VerdachtArbeitsSchuelerunfall.html" : "Verdacht auf Arbeits- oder Schuelerunfall",
+      "OperationDefinition-MOPED.VAERequest.Anfragen.html" : "MOPED Versichertenanspruchserklärung $anfragen (POC)"
     },
     {
       "url" : "http://example.org/ValueSet/moped-VerpflegskostenBeitragsbefreiung-valueset",
@@ -157,23 +157,35 @@
       "uses" : {
       },
       "OperationDefinition-MOPED.Patient.Verlegen.html" : "MOPED Patient $verlegen (POC)",
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPEDTransferEncounter"
+      "StructureDefinition-MopedTransferEncounter.html" : "MopedTransferEncounter"
     },
     {
       "url" : "http://example.org/ValueSet/moped-aufnahmeart-valueset",
       "version" : "0.1.0",
       "status" : "draft",
-      "name" : "Aufnahmeart",
+      "name" : "AufnahmeartVS",
       "title" : "Aufnahmeart des Patienten",
-      "description" : "ValueSet für die Aufnahmeart des Patienten",
+      "description" : "ValueSet für die Aufnahmeart des Patienten (LKF + Ka-Org)",
       "systems" : ["http://tbd.at/moped-ext-aufnahmeart"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund"
+      "StructureDefinition-moped-ext-aufnahmeart.html" : "Aufnahmeart"
+    },
+    {
+      "url" : "http://example.org/ValueSet/moped-aufnahmeart2-valueset",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "Aufnahmeart2",
+      "title" : "Aufnahmeart2 des Patienten",
+      "description" : "ValueSet für die Aufnahmeart des Patienten",
+      "systems" : ["http://tbd.at/moped-ext-aufnahmeart2"],
+      "uses" : {
+      },
+      "StructureDefinition-MopedEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MopedEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MopedEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MopedEncounterSV.html" : "MOPED Encounter SV"
     },
     {
       "url" : "http://example.org/ValueSet/moped-behandlungsart-valueset",
@@ -185,11 +197,11 @@
       "systems" : ["http://tbd.at/MOPED-encounter-behandlungsart"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund"
+      "StructureDefinition-MopedEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MopedEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MopedEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MopedEncounterSV.html" : "MOPED Encounter SV"
     },
     {
       "url" : "http://example.org/ValueSet/moped-entlassungsart-valueset",
@@ -201,18 +213,18 @@
       "systems" : ["http://tbd.at/MOPED-encounter-entlassungsart"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
       "OperationDefinition-MOPED.Patient.Entlassen.html" : "MOPED Patient $entlassen (POC)",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund"
+      "StructureDefinition-MopedEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MopedEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MopedEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MopedEncounterSV.html" : "MOPED Encounter SV"
     },
     {
       "url" : "http://example.org/ValueSet/moped-related-person-relationship-type",
       "version" : "0.1.0",
       "status" : "draft",
-      "name" : "MOPEDRelatedPersonRelationshipType",
+      "name" : "MopedRelatedPersonRelationshipType",
       "title" : "MOPED RelatedPerson Relationship Type ValueSet",
       "description" : "A value set containing codes for the type of relationship of a related person to the patient.",
       "systems" : [
@@ -238,6 +250,15 @@
       "StructureDefinition-moped-ext-Sonderleistungsnummer.html" : "Sonderleistungsnummer"
     },
     {
+      "url" : "http://example.org/ValueSet/moped-sv-vae-supporting-information-types",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "VAESupportingInformationTypes",
+      "title" : "MOPED VAESupportingInformationTypes",
+      "description" : "Arten von zusätzlichen Informationen in der VAE",
+      "systems" : ["http://tbd.at/MOPED-VAESupportingInfo"]
+    },
+    {
       "url" : "http://example.org/ValueSet/moped-transportart-valueset",
       "version" : "0.1.0",
       "status" : "draft",
@@ -259,23 +280,11 @@
       "systems" : ["http://tbd.at/MOPED-encounter-ursache"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund"
-    },
-    {
-      "url" : "http://example.org/ValueSet/moped-zugangsart-valueset",
-      "version" : "0.1.0",
-      "status" : "draft",
-      "name" : "Zugangsart",
-      "title" : "Zugangsart des Patienten",
-      "description" : "ValueSet für die Zugangsart des Patienten (LKF + Ka-Org)",
-      "systems" : ["http://tbd.at/moped-ext-diagnose-art"],
-      "uses" : {
-      },
-      "StructureDefinition-moped-ext-zugangsart.html" : "Zugangsart"
+      "StructureDefinition-MopedEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MopedEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MopedEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MopedEncounterSV.html" : "MOPED Encounter SV"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/account-aggregate",
@@ -289,7 +298,7 @@
       "sources" : ["2.16.840.1.113883.4.642.3.3227"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDAccount.html" : "MOPEDAccount"
+      "StructureDefinition-MopedAccount.html" : "MopedAccount"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/account-balance-term",
@@ -303,7 +312,7 @@
       "sources" : ["2.16.840.1.113883.4.642.3.3226"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDAccount.html" : "MOPEDAccount"
+      "StructureDefinition-MopedAccount.html" : "MopedAccount"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/account-billing-status",
@@ -317,7 +326,7 @@
       "sources" : ["2.16.840.1.113883.4.642.3.3224"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDAccount.html" : "MOPEDAccount"
+      "StructureDefinition-MopedAccount.html" : "MopedAccount"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/account-relationship",
@@ -331,7 +340,7 @@
       "sources" : ["2.16.840.1.113883.4.642.3.3225"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDAccount.html" : "MOPEDAccount"
+      "StructureDefinition-MopedAccount.html" : "MopedAccount"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/account-status",
@@ -353,7 +362,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDAccount.html" : "MOPEDAccount"
+      "StructureDefinition-MopedAccount.html" : "MopedAccount"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/account-type",
@@ -373,7 +382,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDAccount.html" : "MOPEDAccount"
+      "StructureDefinition-MopedAccount.html" : "MopedAccount"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/address-type",
@@ -387,9 +396,9 @@
       "sources" : ["2.16.840.1.113883.4.642.3.69"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV"
+      "StructureDefinition-MopedPatientSV.html" : "MOPED Patient SV",
+      "StructureDefinition-MopedPatientLGF.html" : "MOPED Patient LGF",
+      "StructureDefinition-MopedPatientBund.html" : "MOPED Patient Bund"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/address-use",
@@ -403,9 +412,9 @@
       "sources" : ["2.16.840.1.113883.4.642.3.67"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV"
+      "StructureDefinition-MopedPatientSV.html" : "MOPED Patient SV",
+      "StructureDefinition-MopedPatientLGF.html" : "MOPED Patient LGF",
+      "StructureDefinition-MopedPatientBund.html" : "MOPED Patient Bund"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/adjudication",
@@ -427,7 +436,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse"
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/adjudication-error",
@@ -441,8 +451,8 @@
       "sources" : ["2.16.840.1.113883.4.642.3.39"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse"
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/adjudication-reason",
@@ -462,7 +472,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse"
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/administrative-gender",
@@ -476,10 +487,10 @@
       "sources" : ["2.16.840.1.113883.4.642.3.1"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV",
-      "StructureDefinition-Hauptversicherter.html" : "MOPED Hauptversicherter"
+      "StructureDefinition-MopedPatientSV.html" : "MOPED Patient SV",
+      "StructureDefinition-MopedPatientLGF.html" : "MOPED Patient LGF",
+      "StructureDefinition-Hauptversicherter.html" : "MOPED Hauptversicherter",
+      "StructureDefinition-MopedPatientBund.html" : "MOPED Patient Bund"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/all-languages",
@@ -493,26 +504,26 @@
       "sources" : ["2.16.840.1.113883.4.642.3.21"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDOrganizationAbteilung.html" : "MOPEDOrganizationAbteilung",
-      "StructureDefinition-MOPEDAccount.html" : "MOPEDAccount",
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
-      "StructureDefinition-MOPEDProcedure.html" : "MOPEDProcedure",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV",
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse",
-      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPEDCoverageEligibilityRequest",
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPEDTransferEncounter",
-      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDAufnahmeBundle.html" : "MOPED Aufnahme Bundle",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDCondition.html" : "MOPEDCondition",
-      "StructureDefinition-Hauptversicherter.html" : "MOPED Hauptversicherter",
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
+      "StructureDefinition-MopedCoverage.html" : "MOPED Coverage",
+      "StructureDefinition-MopedEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MopedAufnahmeBundle.html" : "MOPED Aufnahme Bundle",
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest",
+      "StructureDefinition-MopedPatientLGF.html" : "MOPED Patient LGF",
+      "StructureDefinition-MopedAccount.html" : "MopedAccount",
+      "StructureDefinition-MopedPatientBund.html" : "MOPED Patient Bund",
+      "StructureDefinition-MopedProcedure.html" : "MopedProcedure",
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedCondition.html" : "MopedCondition",
+      "StructureDefinition-MopedOrganizationAbteilung.html" : "MopedOrganizationAbteilung",
+      "StructureDefinition-MopedPatientSV.html" : "MOPED Patient SV",
+      "StructureDefinition-MopedEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MopedTransferEncounter.html" : "MopedTransferEncounter",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse",
+      "StructureDefinition-MopedEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MopedEncounterSV.html" : "MOPED Encounter SV",
+      "StructureDefinition-Hauptversicherter.html" : "MOPED Hauptversicherter"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/benefit-network",
@@ -532,8 +543,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage",
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse"
+      "StructureDefinition-MopedCoverage.html" : "MOPED Coverage"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/benefit-term",
@@ -553,28 +563,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage",
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse"
-    },
-    {
-      "url" : "http://hl7.org/fhir/ValueSet/benefit-type",
-      "version" : "5.0.0",
-      "status" : "draft",
-      "name" : "BenefitTypeCodes",
-      "title" : "Benefit Type Codes",
-      "description" : "This value set includes a smattering of Benefit type codes.",
-      "systems" : ["http://terminology.hl7.org/CodeSystem/benefit-type"],
-      "oids" : [
-        "2.16.840.1.113883.4.642.3.598",
-        "2.16.840.1.113883.4.642.3.606"
-      ],
-      "sources" : [
-        "2.16.840.1.113883.4.642.3.598",
-        "2.16.840.1.113883.4.642.3.606"
-      ],
-      "uses" : {
-      },
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse"
+      "StructureDefinition-MopedCoverage.html" : "MOPED Coverage"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/benefit-unit",
@@ -594,8 +583,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage",
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse"
+      "StructureDefinition-MopedCoverage.html" : "MOPED Coverage"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/body-site",
@@ -617,8 +605,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDProcedure.html" : "MOPEDProcedure",
-      "StructureDefinition-MOPEDCondition.html" : "MOPEDCondition"
+      "StructureDefinition-MopedCondition.html" : "MopedCondition",
+      "StructureDefinition-MopedProcedure.html" : "MopedProcedure"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/bundle-type",
@@ -640,7 +628,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDAufnahmeBundle.html" : "MOPED Aufnahme Bundle"
+      "StructureDefinition-MopedAufnahmeBundle.html" : "MOPED Aufnahme Bundle"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/claim-careteamrole",
@@ -660,7 +648,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/claim-decision",
@@ -674,7 +663,8 @@
       "sources" : ["2.16.840.1.113883.4.642.3.2983"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse"
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/claim-decision-reason",
@@ -686,7 +676,8 @@
       "systems" : ["http://hl7.org/fhir/claim-decision-reason"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse"
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/claim-exception",
@@ -708,7 +699,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/claim-informationcategory",
@@ -730,7 +722,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/claim-modifiers",
@@ -752,10 +745,10 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse",
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPEDCoverageEligibilityRequest"
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/claim-outcome",
@@ -769,7 +762,8 @@
       "sources" : ["2.16.840.1.113883.4.642.3.2984"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse"
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/claim-subtype",
@@ -789,8 +783,10 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/claim-type",
@@ -810,8 +806,10 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/claim-use",
@@ -831,8 +829,10 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/clinical-findings",
@@ -854,7 +854,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCondition.html" : "MOPEDCondition"
+      "StructureDefinition-MopedCondition.html" : "MopedCondition"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/condition-category",
@@ -876,7 +876,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCondition.html" : "MOPEDCondition"
+      "StructureDefinition-MopedCondition.html" : "MopedCondition"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/condition-clinical",
@@ -898,7 +898,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCondition.html" : "MOPEDCondition"
+      "StructureDefinition-MopedCondition.html" : "MopedCondition"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/condition-code",
@@ -920,15 +920,15 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPEDTransferEncounter",
-      "StructureDefinition-MOPEDAccount.html" : "MOPEDAccount",
-      "StructureDefinition-MOPEDProcedure.html" : "MOPEDProcedure",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDCondition.html" : "MOPEDCondition",
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund"
+      "StructureDefinition-MopedCondition.html" : "MopedCondition",
+      "StructureDefinition-MopedEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MopedEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MopedTransferEncounter.html" : "MopedTransferEncounter",
+      "StructureDefinition-MopedEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MopedAccount.html" : "MopedAccount",
+      "StructureDefinition-MopedEncounterSV.html" : "MOPED Encounter SV",
+      "StructureDefinition-MopedProcedure.html" : "MopedProcedure"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/condition-severity",
@@ -950,7 +950,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCondition.html" : "MOPEDCondition"
+      "StructureDefinition-MopedCondition.html" : "MopedCondition"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/condition-stage",
@@ -972,7 +972,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCondition.html" : "MOPEDCondition"
+      "StructureDefinition-MopedCondition.html" : "MopedCondition"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/condition-stage-type",
@@ -986,7 +986,7 @@
       "sources" : ["2.16.840.1.113883.4.642.3.171"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCondition.html" : "MOPEDCondition"
+      "StructureDefinition-MopedCondition.html" : "MopedCondition"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/condition-ver-status",
@@ -1008,7 +1008,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCondition.html" : "MOPEDCondition"
+      "StructureDefinition-MopedCondition.html" : "MopedCondition"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/contact-point-system",
@@ -1022,9 +1022,9 @@
       "sources" : ["2.16.840.1.113883.4.642.3.71"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV"
+      "StructureDefinition-MopedPatientSV.html" : "MOPED Patient SV",
+      "StructureDefinition-MopedPatientLGF.html" : "MOPED Patient LGF",
+      "StructureDefinition-MopedPatientBund.html" : "MOPED Patient Bund"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/contact-point-use",
@@ -1038,9 +1038,9 @@
       "sources" : ["2.16.840.1.113883.4.642.3.73"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV"
+      "StructureDefinition-MopedPatientSV.html" : "MOPED Patient SV",
+      "StructureDefinition-MopedPatientLGF.html" : "MOPED Patient LGF",
+      "StructureDefinition-MopedPatientBund.html" : "MOPED Patient Bund"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/coverage-class",
@@ -1054,7 +1054,7 @@
       "sources" : ["2.16.840.1.113883.4.642.3.1009"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage"
+      "StructureDefinition-MopedCoverage.html" : "MOPED Coverage"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/coverage-copay-type",
@@ -1068,7 +1068,7 @@
       "sources" : ["2.16.840.1.113883.4.642.3.527"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage"
+      "StructureDefinition-MopedCoverage.html" : "MOPED Coverage"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/coverage-financial-exception",
@@ -1084,7 +1084,7 @@
       "sources" : ["2.16.840.1.113883.4.642.3.1328"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage"
+      "StructureDefinition-MopedCoverage.html" : "MOPED Coverage"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/coverage-kind",
@@ -1098,7 +1098,7 @@
       "sources" : ["2.16.840.1.113883.4.642.3.3244"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage"
+      "StructureDefinition-MopedCoverage.html" : "MOPED Coverage"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/coverage-type",
@@ -1121,23 +1121,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage"
-    },
-    {
-      "url" : "http://hl7.org/fhir/ValueSet/coverageeligibilityresponse-ex-auth-support",
-      "version" : "5.0.0",
-      "status" : "draft",
-      "name" : "CoverageEligibilityResponseAuthSupportCodes",
-      "title" : "CoverageEligibilityResponse Auth Support Codes",
-      "description" : "This value set includes CoverageEligibilityResponse Auth Support codes.",
-      "systems" : [
-        "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support"
-      ],
-      "oids" : ["2.16.840.1.113883.4.642.3.1393"],
-      "sources" : ["2.16.840.1.113883.4.642.3.1393"],
-      "uses" : {
-      },
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse"
+      "StructureDefinition-MopedCoverage.html" : "MOPED Coverage"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/currencies",
@@ -1151,7 +1135,7 @@
       "sources" : ["2.16.840.1.113883.4.642.3.1025"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDAccount.html" : "MOPEDAccount"
+      "StructureDefinition-MopedAccount.html" : "MopedAccount"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/data-absent-reason",
@@ -1165,9 +1149,9 @@
       "sources" : ["2.16.840.1.113883.4.642.3.5"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDCondition.html" : "MOPEDCondition"
+      "StructureDefinition-MopedCondition.html" : "MopedCondition",
+      "StructureDefinition-MopedPatientLGF.html" : "MOPED Patient LGF",
+      "StructureDefinition-MopedPatientBund.html" : "MOPED Patient Bund"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/datestype",
@@ -1179,10 +1163,10 @@
       "systems" : ["http://hl7.org/fhir/datestype"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse",
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPEDCoverageEligibilityRequest"
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/device-action",
@@ -1204,7 +1188,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDProcedure.html" : "MOPEDProcedure"
+      "StructureDefinition-MopedProcedure.html" : "MopedProcedure"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/device-type",
@@ -1222,49 +1206,7 @@
       "sources" : ["2.16.840.1.113883.4.642.3.1376"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDProcedure.html" : "MOPEDProcedure"
-    },
-    {
-      "url" : "http://hl7.org/fhir/ValueSet/eligibility-outcome",
-      "version" : "5.0.0",
-      "status" : "draft",
-      "name" : "EligibilityOutcome",
-      "title" : "Eligibility Outcome",
-      "description" : "The outcome of the processing.",
-      "systems" : ["http://hl7.org/fhir/eligibility-outcome"],
-      "oids" : ["2.16.840.1.113883.4.642.3.3233"],
-      "sources" : ["2.16.840.1.113883.4.642.3.3233"],
-      "uses" : {
-      },
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse"
-    },
-    {
-      "url" : "http://hl7.org/fhir/ValueSet/eligibilityrequest-purpose",
-      "version" : "5.0.0",
-      "status" : "draft",
-      "name" : "EligibilityRequestPurpose",
-      "title" : "Eligibility Request Purpose",
-      "description" : "A code specifying the types of information being requested.",
-      "systems" : ["http://hl7.org/fhir/eligibilityrequest-purpose"],
-      "oids" : ["2.16.840.1.113883.4.642.3.1182"],
-      "sources" : ["2.16.840.1.113883.4.642.3.1182"],
-      "uses" : {
-      },
-      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPEDCoverageEligibilityRequest"
-    },
-    {
-      "url" : "http://hl7.org/fhir/ValueSet/eligibilityresponse-purpose",
-      "version" : "5.0.0",
-      "status" : "draft",
-      "name" : "EligibilityResponsePurpose",
-      "title" : "Eligibility Response Purpose",
-      "description" : "A code specifying the types of information being requested.",
-      "systems" : ["http://hl7.org/fhir/eligibilityresponse-purpose"],
-      "oids" : ["2.16.840.1.113883.4.642.3.1184"],
-      "sources" : ["2.16.840.1.113883.4.642.3.1184"],
-      "uses" : {
-      },
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse"
+      "StructureDefinition-MopedProcedure.html" : "MopedProcedure"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/encounter-admit-source",
@@ -1286,12 +1228,12 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPEDTransferEncounter",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund"
+      "StructureDefinition-MopedEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MopedEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MopedTransferEncounter.html" : "MopedTransferEncounter",
+      "StructureDefinition-MopedEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MopedEncounterSV.html" : "MOPED Encounter SV"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/encounter-diagnosis-use",
@@ -1305,8 +1247,8 @@
       "sources" : ["2.16.840.1.113883.4.642.4.3321"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPEDTransferEncounter",
-      "StructureDefinition-MOPEDAccount.html" : "MOPEDAccount"
+      "StructureDefinition-MopedTransferEncounter.html" : "MopedTransferEncounter",
+      "StructureDefinition-MopedAccount.html" : "MopedAccount"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/encounter-diet",
@@ -1328,12 +1270,12 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPEDTransferEncounter",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund"
+      "StructureDefinition-MopedEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MopedEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MopedTransferEncounter.html" : "MopedTransferEncounter",
+      "StructureDefinition-MopedEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MopedEncounterSV.html" : "MOPED Encounter SV"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/encounter-location-status",
@@ -1355,12 +1297,12 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPEDTransferEncounter",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund"
+      "StructureDefinition-MopedEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MopedEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MopedTransferEncounter.html" : "MopedTransferEncounter",
+      "StructureDefinition-MopedEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MopedEncounterSV.html" : "MOPED Encounter SV"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/encounter-participant-type",
@@ -1385,12 +1327,12 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPEDTransferEncounter",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund"
+      "StructureDefinition-MopedEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MopedEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MopedTransferEncounter.html" : "MopedTransferEncounter",
+      "StructureDefinition-MopedEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MopedEncounterSV.html" : "MOPED Encounter SV"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/encounter-reason",
@@ -1412,12 +1354,12 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPEDTransferEncounter",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund"
+      "StructureDefinition-MopedEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MopedEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MopedTransferEncounter.html" : "MopedTransferEncounter",
+      "StructureDefinition-MopedEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MopedEncounterSV.html" : "MOPED Encounter SV"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/encounter-reason-use",
@@ -1431,12 +1373,12 @@
       "sources" : ["2.16.840.1.113883.4.642.4.3320"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPEDTransferEncounter",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund"
+      "StructureDefinition-MopedEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MopedEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MopedTransferEncounter.html" : "MopedTransferEncounter",
+      "StructureDefinition-MopedEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MopedEncounterSV.html" : "MOPED Encounter SV"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/encounter-special-arrangements",
@@ -1460,12 +1402,12 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPEDTransferEncounter",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund"
+      "StructureDefinition-MopedEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MopedEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MopedTransferEncounter.html" : "MopedTransferEncounter",
+      "StructureDefinition-MopedEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MopedEncounterSV.html" : "MOPED Encounter SV"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/encounter-special-courtesy",
@@ -1490,12 +1432,12 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPEDTransferEncounter",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund"
+      "StructureDefinition-MopedEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MopedEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MopedTransferEncounter.html" : "MopedTransferEncounter",
+      "StructureDefinition-MopedEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MopedEncounterSV.html" : "MOPED Encounter SV"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/encounter-status",
@@ -1515,12 +1457,12 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPEDTransferEncounter",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund"
+      "StructureDefinition-MopedEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MopedEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MopedTransferEncounter.html" : "MopedTransferEncounter",
+      "StructureDefinition-MopedEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MopedEncounterSV.html" : "MOPED Encounter SV"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/encounter-subject-status",
@@ -1536,12 +1478,12 @@
       "sources" : ["2.16.840.1.113883.4.642.3.3159"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPEDTransferEncounter",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund"
+      "StructureDefinition-MopedEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MopedEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MopedTransferEncounter.html" : "MopedTransferEncounter",
+      "StructureDefinition-MopedEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MopedEncounterSV.html" : "MOPED Encounter SV"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/encounter-type",
@@ -1563,12 +1505,12 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPEDTransferEncounter",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund"
+      "StructureDefinition-MopedEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MopedEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MopedTransferEncounter.html" : "MopedTransferEncounter",
+      "StructureDefinition-MopedEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MopedEncounterSV.html" : "MOPED Encounter SV"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/event-status",
@@ -1582,7 +1524,7 @@
       "sources" : ["2.16.840.1.113883.4.642.3.109"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDProcedure.html" : "MOPEDProcedure"
+      "StructureDefinition-MopedProcedure.html" : "MopedProcedure"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/ex-benefitcategory",
@@ -1596,10 +1538,9 @@
       "sources" : ["2.16.840.1.113883.4.642.3.1174"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage",
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse",
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPEDCoverageEligibilityRequest"
+      "StructureDefinition-MopedCoverage.html" : "MOPED Coverage",
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/ex-diagnosis-on-admission",
@@ -1615,7 +1556,31 @@
       "sources" : ["2.16.840.1.113883.4.642.3.1169"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest"
+    },
+    {
+      "url" : "http://hl7.org/fhir/ValueSet/ex-diagnosisrelatedgroup",
+      "version" : "5.0.0",
+      "status" : "draft",
+      "name" : "ExampleDiagnosisRelatedGroupCodes",
+      "title" : "Example Diagnosis Related Group Codes",
+      "description" : "This value set includes example Diagnosis Related Group codes.",
+      "systems" : [
+        "http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup"
+      ],
+      "oids" : [
+        "2.16.840.1.113883.4.642.3.588",
+        "2.16.840.1.113883.4.642.3.580"
+      ],
+      "sources" : [
+        "2.16.840.1.113883.4.642.3.588",
+        "2.16.840.1.113883.4.642.3.580"
+      ],
+      "uses" : {
+      },
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/ex-diagnosistype",
@@ -1635,7 +1600,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/ex-paymenttype",
@@ -1655,7 +1621,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse"
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/ex-procedure-type",
@@ -1669,7 +1636,8 @@
       "sources" : ["2.16.840.1.113883.4.642.3.1387"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/ex-program-code",
@@ -1689,8 +1657,10 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/ex-revenue-center",
@@ -1710,8 +1680,10 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/fm-status",
@@ -1731,11 +1703,11 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage",
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse",
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPEDCoverageEligibilityRequest"
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedCoverage.html" : "MOPED Coverage",
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/forms",
@@ -1749,8 +1721,8 @@
       "sources" : ["2.16.840.1.113883.4.642.3.37"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse"
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/fundsreserve",
@@ -1764,8 +1736,10 @@
       "sources" : ["2.16.840.1.113883.4.642.3.33"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/http-verb",
@@ -1787,7 +1761,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDAufnahmeBundle.html" : "MOPED Aufnahme Bundle"
+      "StructureDefinition-MopedAufnahmeBundle.html" : "MOPED Aufnahme Bundle"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/iana-link-relations",
@@ -1799,7 +1773,7 @@
       "systems" : ["http://hl7.org/fhir/CodeSystem/iana-link-relations"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDAufnahmeBundle.html" : "MOPED Aufnahme Bundle"
+      "StructureDefinition-MopedAufnahmeBundle.html" : "MOPED Aufnahme Bundle"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/icd-10",
@@ -1821,8 +1795,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPEDCoverageEligibilityRequest"
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/icd-10-procedures",
@@ -1842,7 +1816,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/identifier-type",
@@ -1856,8 +1831,8 @@
       "sources" : ["2.16.840.1.113883.4.642.3.45"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDOrganizationAbteilung.html" : "MOPEDOrganizationAbteilung",
-      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage"
+      "StructureDefinition-MopedCoverage.html" : "MOPED Coverage",
+      "StructureDefinition-MopedOrganizationAbteilung.html" : "MopedOrganizationAbteilung"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/identifier-use",
@@ -1871,18 +1846,18 @@
       "sources" : ["2.16.840.1.113883.4.642.3.57"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDOrganizationAbteilung.html" : "MOPEDOrganizationAbteilung",
-      "StructureDefinition-MOPEDProcedure.html" : "MOPEDProcedure",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV",
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDCondition.html" : "MOPEDCondition",
+      "StructureDefinition-MopedCoverage.html" : "MOPED Coverage",
+      "StructureDefinition-MopedEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MopedPatientLGF.html" : "MOPED Patient LGF",
+      "StructureDefinition-MopedPatientBund.html" : "MOPED Patient Bund",
+      "StructureDefinition-MopedProcedure.html" : "MopedProcedure",
+      "StructureDefinition-MopedCondition.html" : "MopedCondition",
+      "StructureDefinition-MopedOrganizationAbteilung.html" : "MopedOrganizationAbteilung",
+      "StructureDefinition-MopedPatientSV.html" : "MOPED Patient SV",
+      "StructureDefinition-MopedEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MopedEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MopedEncounterSV.html" : "MOPED Encounter SV",
       "StructureDefinition-Hauptversicherter.html" : "MOPED Hauptversicherter"
     },
     {
@@ -1903,26 +1878,26 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDOrganizationAbteilung.html" : "MOPEDOrganizationAbteilung",
-      "StructureDefinition-MOPEDAccount.html" : "MOPEDAccount",
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
-      "StructureDefinition-MOPEDProcedure.html" : "MOPEDProcedure",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV",
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse",
-      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPEDCoverageEligibilityRequest",
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund",
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPEDTransferEncounter",
-      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDAufnahmeBundle.html" : "MOPED Aufnahme Bundle",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDCondition.html" : "MOPEDCondition",
-      "StructureDefinition-Hauptversicherter.html" : "MOPED Hauptversicherter",
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
+      "StructureDefinition-MopedCoverage.html" : "MOPED Coverage",
+      "StructureDefinition-MopedEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MopedAufnahmeBundle.html" : "MOPED Aufnahme Bundle",
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest",
+      "StructureDefinition-MopedPatientLGF.html" : "MOPED Patient LGF",
+      "StructureDefinition-MopedAccount.html" : "MopedAccount",
+      "StructureDefinition-MopedPatientBund.html" : "MOPED Patient Bund",
+      "StructureDefinition-MopedProcedure.html" : "MopedProcedure",
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedCondition.html" : "MopedCondition",
+      "StructureDefinition-MopedOrganizationAbteilung.html" : "MopedOrganizationAbteilung",
+      "StructureDefinition-MopedPatientSV.html" : "MOPED Patient SV",
+      "StructureDefinition-MopedEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MopedTransferEncounter.html" : "MopedTransferEncounter",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse",
+      "StructureDefinition-MopedEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MopedEncounterSV.html" : "MOPED Encounter SV",
+      "StructureDefinition-Hauptversicherter.html" : "MOPED Hauptversicherter"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/link-type",
@@ -1944,9 +1919,9 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV"
+      "StructureDefinition-MopedPatientSV.html" : "MOPED Patient SV",
+      "StructureDefinition-MopedPatientLGF.html" : "MOPED Patient LGF",
+      "StructureDefinition-MopedPatientBund.html" : "MOPED Patient Bund"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/location-form",
@@ -1962,12 +1937,12 @@
       "sources" : ["2.16.840.1.113883.4.642.3.328"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPEDTransferEncounter",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund"
+      "StructureDefinition-MopedEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MopedEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MopedTransferEncounter.html" : "MopedTransferEncounter",
+      "StructureDefinition-MopedEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MopedEncounterSV.html" : "MOPED Encounter SV"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/marital-status",
@@ -1984,9 +1959,9 @@
       "sources" : ["2.16.840.1.113883.4.642.3.29"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV"
+      "StructureDefinition-MopedPatientSV.html" : "MOPED Patient SV",
+      "StructureDefinition-MopedPatientLGF.html" : "MOPED Patient LGF",
+      "StructureDefinition-MopedPatientBund.html" : "MOPED Patient Bund"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/missing-tooth-reason",
@@ -2008,7 +1983,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/name-use",
@@ -2022,9 +1998,9 @@
       "sources" : ["2.16.840.1.113883.4.642.3.65"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV"
+      "StructureDefinition-MopedPatientSV.html" : "MOPED Patient SV",
+      "StructureDefinition-MopedPatientLGF.html" : "MOPED Patient LGF",
+      "StructureDefinition-MopedPatientBund.html" : "MOPED Patient Bund"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/note-type",
@@ -2038,7 +2014,8 @@
       "sources" : ["2.16.840.1.113883.4.642.3.15"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse"
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/organization-type",
@@ -2060,7 +2037,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDOrganizationAbteilung.html" : "MOPEDOrganizationAbteilung"
+      "StructureDefinition-MopedOrganizationAbteilung.html" : "MopedOrganizationAbteilung"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/participation-role-type",
@@ -2078,7 +2055,7 @@
       "sources" : ["2.16.840.1.113883.4.642.3.54"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCondition.html" : "MOPEDCondition"
+      "StructureDefinition-MopedCondition.html" : "MopedCondition"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/patient-contactrelationship",
@@ -2092,9 +2069,9 @@
       "sources" : ["2.16.840.1.113883.4.642.3.1130"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV"
+      "StructureDefinition-MopedPatientSV.html" : "MOPED Patient SV",
+      "StructureDefinition-MopedPatientLGF.html" : "MOPED Patient LGF",
+      "StructureDefinition-MopedPatientBund.html" : "MOPED Patient Bund"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/payeetype",
@@ -2108,8 +2085,10 @@
       "sources" : ["2.16.840.1.113883.4.642.3.31"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/payment-adjustment-reason",
@@ -2131,7 +2110,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse"
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/performer-role",
@@ -2153,7 +2133,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDProcedure.html" : "MOPEDProcedure"
+      "StructureDefinition-MopedProcedure.html" : "MopedProcedure"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/procedure-category",
@@ -2175,7 +2155,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDProcedure.html" : "MOPEDProcedure"
+      "StructureDefinition-MopedProcedure.html" : "MopedProcedure"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/procedure-code",
@@ -2197,7 +2177,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDAccount.html" : "MOPEDAccount"
+      "StructureDefinition-MopedAccount.html" : "MopedAccount"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/procedure-followup",
@@ -2219,7 +2199,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDProcedure.html" : "MOPEDProcedure"
+      "StructureDefinition-MopedProcedure.html" : "MopedProcedure"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/procedure-not-performed-reason",
@@ -2241,7 +2221,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDProcedure.html" : "MOPEDProcedure"
+      "StructureDefinition-MopedProcedure.html" : "MopedProcedure"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/procedure-outcome",
@@ -2263,7 +2243,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDProcedure.html" : "MOPEDProcedure"
+      "StructureDefinition-MopedProcedure.html" : "MopedProcedure"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/procedure-reason",
@@ -2285,7 +2265,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDProcedure.html" : "MOPEDProcedure"
+      "StructureDefinition-MopedProcedure.html" : "MopedProcedure"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/process-priority",
@@ -2307,8 +2287,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPEDCoverageEligibilityRequest"
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/provider-qualification",
@@ -2330,7 +2310,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/related-claim-relationship",
@@ -2352,7 +2333,8 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/relatedperson-relationshiptype",
@@ -2393,10 +2375,10 @@
       "sources" : ["2.16.840.1.113883.4.642.3.27"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDPatientLGF.html" : "MOPED Patient LGF",
-      "StructureDefinition-MOPEDPatientBund.html" : "MOPED Patient Bund",
-      "StructureDefinition-MOPEDPatientSV.html" : "MOPED Patient SV",
-      "StructureDefinition-Hauptversicherter.html" : "MOPED Hauptversicherter"
+      "StructureDefinition-MopedPatientSV.html" : "MOPED Patient SV",
+      "StructureDefinition-MopedPatientLGF.html" : "MOPED Patient LGF",
+      "StructureDefinition-Hauptversicherter.html" : "MOPED Hauptversicherter",
+      "StructureDefinition-MopedPatientBund.html" : "MOPED Patient Bund"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/search-entry-mode",
@@ -2418,7 +2400,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDAufnahmeBundle.html" : "MOPED Aufnahme Bundle"
+      "StructureDefinition-MopedAufnahmeBundle.html" : "MOPED Aufnahme Bundle"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/service-place",
@@ -2438,8 +2420,10 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/service-type",
@@ -2459,12 +2443,12 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPEDTransferEncounter",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund"
+      "StructureDefinition-MopedEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MopedEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MopedTransferEncounter.html" : "MopedTransferEncounter",
+      "StructureDefinition-MopedEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MopedEncounterSV.html" : "MOPED Encounter SV"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/service-uscls",
@@ -2486,10 +2470,10 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
-      "StructureDefinition-MOPEDCoverageEligibilityResponse.html" : "MOPEDCoverageEligibilityResponse",
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim",
-      "StructureDefinition-MOPEDCoverageEligibilityRequest.html" : "MOPEDCoverageEligibilityRequest"
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/subscriber-relationship",
@@ -2505,7 +2489,7 @@
       "sources" : ["2.16.840.1.113883.4.642.3.1385"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDCoverage.html" : "MOPED Coverage"
+      "StructureDefinition-MopedCoverage.html" : "MOPED Coverage"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/surface",
@@ -2527,8 +2511,10 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/tooth",
@@ -2550,8 +2536,10 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaimResponse.html" : "MOPEDClaimResponse",
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
+      "StructureDefinition-MopedVAEResponse.html" : "MopedVAEResponse",
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://terminology.hl7.org/ValueSet/encounter-class",
@@ -2563,12 +2551,12 @@
       "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActCode"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPEDTransferEncounter",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund"
+      "StructureDefinition-MopedEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MopedEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MopedTransferEncounter.html" : "MopedTransferEncounter",
+      "StructureDefinition-MopedEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MopedEncounterSV.html" : "MOPED Encounter SV"
     },
     {
       "url" : "http://terminology.hl7.org/ValueSet/v2-0092",
@@ -2582,12 +2570,12 @@
       "sources" : ["2.16.840.1.113883.21.40"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPEDTransferEncounter",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund"
+      "StructureDefinition-MopedEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MopedEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MopedTransferEncounter.html" : "MopedTransferEncounter",
+      "StructureDefinition-MopedEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MopedEncounterSV.html" : "MOPED Encounter SV"
     },
     {
       "url" : "http://terminology.hl7.org/ValueSet/v3-ActIncidentCode",
@@ -2601,7 +2589,8 @@
       "sources" : ["2.16.840.1.113883.1.11.16508"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDClaim.html" : "MOPEDClaim"
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest"
     },
     {
       "url" : "http://terminology.hl7.org/ValueSet/v3-ActPriority",
@@ -2615,12 +2604,12 @@
       "sources" : ["2.16.840.1.113883.1.11.16866"],
       "uses" : {
       },
-      "StructureDefinition-MOPEDEncounterSV.html" : "MOPED Encounter SV",
-      "StructureDefinition-MOPEDTransferEncounter.html" : "MOPEDTransferEncounter",
-      "StructureDefinition-MOPEDEncounter.html" : "MOPED Encounter",
-      "StructureDefinition-MOPEDEncounterKH.html" : "MOPED Encounter KH",
-      "StructureDefinition-MOPEDEncounterLGF.html" : "MOPED Encounter LGF",
-      "StructureDefinition-MOPEDEncounterBund.html" : "MOPED Encounter Bund"
+      "StructureDefinition-MopedEncounterKH.html" : "MOPED Encounter KH",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
+      "StructureDefinition-MopedEncounterLGF.html" : "MOPED Encounter LGF",
+      "StructureDefinition-MopedTransferEncounter.html" : "MopedTransferEncounter",
+      "StructureDefinition-MopedEncounterBund.html" : "MOPED Encounter Bund",
+      "StructureDefinition-MopedEncounterSV.html" : "MOPED Encounter SV"
     }
   ]
 }
