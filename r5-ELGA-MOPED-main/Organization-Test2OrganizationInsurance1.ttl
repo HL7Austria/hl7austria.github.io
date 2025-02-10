@@ -1,5 +1,6 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -16,7 +17,7 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Organization Test2OrganizationInsurance1</b></p><a name=\"Test2OrganizationInsurance1\"> </a><a name=\"hcTest2OrganizationInsurance1\"> </a><a name=\"Test2OrganizationInsurance1-en-US\"> </a><p><b>name</b>: Österreichische Gesundheitskasse Oberösterreich</p><p><b>alias</b>: 14</p><h3>Contacts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Address</b></td></tr><tr><td style=\"display: none\">*</td><td>Gruberstraße 77, 4021 Linz Linz Oberösterreich 4021 AUT </td></tr></table></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Organization Test2OrganizationInsurance1</b></p><a name=\"Test2OrganizationInsurance1\"> </a><a name=\"hcTest2OrganizationInsurance1\"> </a><a name=\"Test2OrganizationInsurance1-en-US\"> </a><p><b>name</b>: Österreichische Gesundheitskasse Oberösterreich</p><p><b>alias</b>: 14</p><h3>Contacts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Address</b></td></tr><tr><td style=\"display: none\">*</td><td>Gruberstraße 77, 4021 Linz Linz Oberösterreich 4021 AUT </td></tr></table></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:name [ fhir:v "Österreichische Gesundheitskasse Oberösterreich"] ; # 
   fhir:alias ( [ fhir:v "14"] ) ; # 
@@ -26,10 +27,16 @@
          fhir:v "Gruberstraße 77, 4021 Linz" ;
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "Gruberstraße" ]
+           fhir:value [
+             a fhir:string ;
+             fhir:v "Gruberstraße"
+           ]
          ] [
            fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "77" ]
+           fhir:value [
+             a fhir:string ;
+             fhir:v "77"
+           ]
          ] )
        ] ) ;
        fhir:city [ fhir:v "Linz" ] ;

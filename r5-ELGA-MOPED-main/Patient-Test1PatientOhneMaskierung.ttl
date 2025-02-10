@@ -1,5 +1,6 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -16,7 +17,7 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient Test1PatientOhneMaskierung</b></p><a name=\"Test1PatientOhneMaskierung\"> </a><a name=\"hcTest1PatientOhneMaskierung\"> </a><a name=\"Test1PatientOhneMaskierung-en-US\"> </a><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Patientenkommun Moderne (official) Female, DoB: 1969-04-21 ( Social Security Number: 9994210469)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\">Baumgasse 20a Wien 1030 AUT (home)</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The patient's legal status as citizen of a country.\">Patient Citizenship:</td><td colspan=\"3\"><ul><li>code: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3 AUT}\">Österreich</span></li></ul></td></tr></table></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient Test1PatientOhneMaskierung</b></p><a name=\"Test1PatientOhneMaskierung\"> </a><a name=\"hcTest1PatientOhneMaskierung\"> </a><a name=\"Test1PatientOhneMaskierung-en-US\"> </a><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Patientenkommun Moderne (official) Female, DoB: 1969-04-21 ( Social Security Number: 9994210469)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\">Baumgasse 20a Wien 1030 AUT (home)</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The patient's legal status as citizen of a country.\">Patient Citizenship:</td><td colspan=\"3\"><ul><li>code: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3 AUT}\">Österreich</span></li></ul></td></tr></table></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:extension ( [
      fhir:extension ( [
@@ -56,17 +57,26 @@
   fhir:address ( [
      fhir:extension ( [
        fhir:url [ fhir:v "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-ext-address-municipalityCode"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "90301" ]
+       fhir:value [
+         a fhir:string ;
+         fhir:v "90301"
+       ]
      ] ) ;
      fhir:use [ fhir:v "home" ] ;
      fhir:line ( [
        fhir:v "Baumgasse 20a" ;
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Baumgasse" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Baumgasse"
+         ]
        ] [
          fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "20a" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "20a"
+         ]
        ] )
      ] ) ;
      fhir:city [ fhir:v "Wien" ] ;
