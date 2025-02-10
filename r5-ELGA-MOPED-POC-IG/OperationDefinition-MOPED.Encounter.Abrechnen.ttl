@@ -1,5 +1,6 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -10,7 +11,7 @@
   fhir:id [ fhir:v "MOPED.Encounter.Abrechnen"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition MOPED.Encounter.Abrechnen</b></p><a name=\"MOPED.Encounter.Abrechnen\"> </a><a name=\"hcMOPED.Encounter.Abrechnen\"> </a><a name=\"MOPED.Encounter.Abrechnen-en-US\"> </a><p>URL: [base]/Encounter/$abrechnen</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>aufnahmezahl</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#Identifier\">Identifier</a></td><td/><td><div><p>Der <em>aufnahmezahl</em> Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall.</p>\n</div></td></tr><tr><td>IN</td><td>abschliessen</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#boolean\">boolean</a></td><td/><td><div><p>Mit Hilfe des <em>abschliessen</em> Parameters wird angegeben, ob es sich bei der Fall-Abrechnung um die endgültige Meldung handeln soll.</p>\n</div></td></tr><tr><td>IN</td><td>claim</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/claim.html\">Claim</a> (<a href=\"StructureDefinition-MOPEDClaim.html\" title=\"http://example.org/StructureDefinition/MOPEDClaim\">MOPEDClaim</a>)</td><td/><td><div><p>Der <em>claim</em> Parameter beinhält sämtliche Details zur Abrechnung lt. MOPEDClaim Profil.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/resource.html\">Resource</a> (<a href=\"http://hl7.org/fhir/R5/operationoutcome.html\" title=\"http://hl7.org/fhir/StructureDefinition/OperationOutcome\">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>\n</div></td></tr></table></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition MOPED.Encounter.Abrechnen</b></p><a name=\"MOPED.Encounter.Abrechnen\"> </a><a name=\"hcMOPED.Encounter.Abrechnen\"> </a><a name=\"MOPED.Encounter.Abrechnen-en-US\"> </a><p>URL: [base]/Encounter/$abrechnen</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>aufnahmezahl</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#Identifier\">Identifier</a></td><td/><td><div><p>Der <em>aufnahmezahl</em> Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall.</p>\n</div></td></tr><tr><td>IN</td><td>abschliessen</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#boolean\">boolean</a></td><td/><td><div><p>Mit Hilfe des <em>abschliessen</em> Parameters wird angegeben, ob es sich bei der Fall-Abrechnung um die endgültige Meldung handeln soll.</p>\n</div></td></tr><tr><td>IN</td><td>claim</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/claim.html\">Claim</a> (<a href=\"StructureDefinition-MOPEDClaim.html\" title=\"http://example.org/StructureDefinition/MOPEDClaim\">MOPEDClaim</a>)</td><td/><td><div><p>Der <em>claim</em> Parameter beinhält sämtliche Details zur Abrechnung lt. MOPEDClaim Profil.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/resource.html\">Resource</a> (<a href=\"http://hl7.org/fhir/R5/operationoutcome.html\" title=\"http://hl7.org/fhir/StructureDefinition/OperationOutcome\">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>\n</div></td></tr></table></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:url [ fhir:v "http://example.org/OperationDefinition/MOPED.Encounter.Abrechnen"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
@@ -18,7 +19,7 @@
   fhir:title [ fhir:v "MOPED Encounter $abrechnen (POC)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
   fhir:kind [ fhir:v "operation"] ; # 
-  fhir:date [ fhir:v "2024-11-19T10:30:26+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-02-10T09:28:13+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Example Publisher"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Example Publisher" ] ;

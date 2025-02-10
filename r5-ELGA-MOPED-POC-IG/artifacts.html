@@ -138,13 +138,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <a href="#1">Behavior: Operation Definitions</a>
       </li>
       <li>
-         <a href="#2">Structures: Resource Profiles</a>
+         <a href="#2">Terminology: Value Sets</a>
       </li>
       <li>
-         <a href="#3">Structures: Extension Definitions</a>
-      </li>
-      <li>
-         <a href="#4">Terminology: Value Sets</a>
+         <a href="#3">Other</a>
       </li>
    </ul>
 </div>
@@ -490,541 +487,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       </tbody>
    </table>
    <a name="2"> </a>
-   <h3>Structures: Resource Profiles </h3>
-    <p>These define constraints on FHIR resources for systems conforming to this implementation guide.</p>
-<table class="grid">
-      <col style="width:20%"/>
-      <tbody>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-Hauptversicherter.html" title="StructureDefinition/Hauptversicherter">Hauptversicherter</a>
-            </td>
-            <td>
-<p>MOPED Profil der Person Ressource für den Hauptversicherten</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-MOPEDAufnahmeBundle.html" title="StructureDefinition/MOPEDAufnahmeBundle">MOPED Aufnahme Bundle</a>
-            </td>
-            <td>
-<p>Bundle für die Input-Ressourcen bei Patienten-Aufnahme</p>
-
-<ul>
-  <li>Hinweis 1: Anstelle einer separaten GDA-Organization-Ressource ist angedacht, hier mit einer conditional Reference in der Ressource Encounter mit entsprechendem GDA-identifier zu arbeiten. Somit wird auch vermieden, dass Duplikate einer GDA-Organization-Ressource am Server angelegt/verwendet werden.</li>
-  <li>Hinweis 2: Es wird davon ausgegangen, dass der Patient bereits vor der Bundle-Erstellung mit dem ZPI abgeglichen wurde.</li>
-  <li>Hinweis 3: Es wird davon ausgegangen, dass vor der Bundle-Erstellung eine VDAS-Abfrage gestellt wurde. Die Coverage-Ressourcen in diesem Transaction-Bundle speichern die Ansprüche aufgrund der VDAS-Abfrage in Moped ein.</li>
-  <li>Hinweis 4: In Zukunft wird Moped auch die Datenübermittlung von Selbstzahlern und Privatversicherten unterstützen. Für diese Ansprüche werden separate Coverage-Profile definiert werden und dieses Bundle wird in weiterer Folge unterschiedliche Coverage-Arten unterstützen.</li>
-  <li>Hinweis 5: Eine vorangegangene VDAS-Anfrage an die SVC kann mehrere Coverages retournieren. In diesem Fall wählt der Patient/die Patientin direkt bei aufnahme <em>eine</em> Versicherung aus, welche im Zuge der Aufnahme gespeichert wird. Das ist der Grund für die Kardinalität 1..1 der Coverage in diesem Bundle.</li>
-</ul>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-MOPEDEncounter.html" title="StructureDefinition/MOPEDEncounter">MOPED Encounter</a>
-            </td>
-            <td>
-<p>MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme und Entlassung</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-MOPEDEncounterBund.html" title="StructureDefinition/MOPEDEncounterBund">MOPED Encounter Bund</a>
-            </td>
-            <td>
-<p>MOPED Profil der Encounter Ressource für die Rolle: Bund</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-MOPEDEncounterKH.html" title="StructureDefinition/MOPEDEncounterKH">MOPED Encounter KH</a>
-            </td>
-            <td>
-<p>MOPED Profil der Encounter Ressource für die Rolle: KH</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-MOPEDEncounterLGF.html" title="StructureDefinition/MOPEDEncounterLGF">MOPED Encounter LGF</a>
-            </td>
-            <td>
-<p>MOPED Profil der Encounter Ressource für die Rolle: LGF</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-MOPEDEncounterSV.html" title="StructureDefinition/MOPEDEncounterSV">MOPED Encounter SV</a>
-            </td>
-            <td>
-<p>MOPED Profil der Encounter Ressource für die Rolle: SV</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-MOPEDPatientBund.html" title="StructureDefinition/MOPEDPatientBund">MOPED Patient Bund</a>
-            </td>
-            <td>
-<p>MOPED Profil der Patient Ressource aus der Sicht der Rolle: Bund</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-MOPEDPatientLGF.html" title="StructureDefinition/MOPEDPatientLGF">MOPED Patient LGF</a>
-            </td>
-            <td>
-<p>MOPED Profil der Patient Ressource aus der Sicht der Rolle: LGF</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-MOPEDPatientSV.html" title="StructureDefinition/MOPEDPatientSV">MOPED Patient SV</a>
-            </td>
-            <td>
-<p>MOPED Profil der Patient Ressource aus der Sicht der Rolle: SV</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-MOPEDAccount.html" title="StructureDefinition/MOPEDAccount">MOPEDAccount</a>
-            </td>
-            <td>
-<p>MOPED Profil der Account Ressource für die administrative Fallführung und Abrechnung.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-MOPEDClaim.html" title="StructureDefinition/MOPEDClaim">MOPEDClaim</a>
-            </td>
-            <td>
-<p>MOPED Profil der Claim Ressource für die Leistungsabrechnungsanfrage.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-MOPEDClaimResponse.html" title="StructureDefinition/MOPEDClaimResponse">MOPEDClaimResponse</a>
-            </td>
-            <td>
-<p>MOPED Profil der ClaimResponse Ressource für die Leistungsabrechnungsantwort.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-MOPEDCondition.html" title="StructureDefinition/MOPEDCondition">MOPEDCondition</a>
-            </td>
-            <td>
-<p>MOPED Profil der Condition Ressource für die LDF-Abrechnung</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-MOPEDCoverageEligibilityRequest.html" title="StructureDefinition/MOPEDCoverageEligibilityRequest">MOPEDCoverageEligibilityRequest</a>
-            </td>
-            <td>
-<p>MOPED Profil der CoverageEligibilityRequest Ressource für die Versichertenanspruchserklärung-Anfrage.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-MOPEDCoverageEligibilityResponse.html" title="StructureDefinition/MOPEDCoverageEligibilityResponse">MOPEDCoverageEligibilityResponse</a>
-            </td>
-            <td>
-<p>MOPED Profil der CoverageEligibilityResponse Ressource für die Versichertenanspruchserklärung-Antwort.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-MOPEDOrganizationAbteilung.html" title="StructureDefinition/MOPEDOrganizationAbteilung">MOPEDOrganizationAbteilung</a>
-            </td>
-            <td>
-<p>MOPED Profil für Abteilungen innerhalb einer Krankenanstalt.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-MOPEDProcedure.html" title="StructureDefinition/MOPEDProcedure">MOPEDProcedure</a>
-            </td>
-            <td>
-<p>MOPED Profil der Procedure Ressource für die LDF-Abrechnung</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-MOPEDTransferEncounter.html" title="StructureDefinition/MOPEDTransferEncounter">MOPEDTransferEncounter</a>
-            </td>
-            <td>
-<p>MOPED Profil der Encounter Ressource für die Verlegung innerhalb oder zwischen Krankenanstalten</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-SVCCoverage.html" title="StructureDefinition/SVCCoverage">SVCCoverage</a>
-            </td>
-            <td>
-<p>SVC Profil der Coverage Ressource für Versicherungen. Basierend auf dem Profil "ecardAnspruch": https://www.chipkarte.at/de/vdas-on-fhir/site/StructureDefinition-ecard-anspruch-profile.html</p>
-</td>
-         </tr>
-      </tbody>
-   </table>
-   <a name="3"> </a>
-   <h3>Structures: Extension Definitions </h3>
-    <p>These define constraints on FHIR data types for systems conforming to this implementation guide.</p>
-<table class="grid">
-      <col style="width:20%"/>
-      <tbody>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-diagnosisRelatedNode.html" title="StructureDefinition/moped-ext-diagnosisRelatedNode">Abrechnung - Knoten</a>
-            </td>
-            <td>
-<p>Lukriert die Patient:innen über eine reguläre Gruppe Punkte, so ist in diesem Datenfeld die entsprechende Knotenbezeichnung einzutragen.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-SVAbrechnungsquartal.html" title="StructureDefinition/SVAbrechnungsquartal">Abrechnungsquartal der Sozialversicherung</a>
-            </td>
-            <td>
-<p>Das Abrechnungsquartal ist in der Form Jahr (JJJJ) und Quartal (Q) zu melden.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-Altersgruppe.html" title="StructureDefinition/moped-ext-Altersgruppe">Altersgruppe</a>
-            </td>
-            <td>
-<p>In Gruppen eingeteilt, wobei vollendete Lebensjahre ausschlaggebend sind.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-AnzahlSonderleistungen.html" title="StructureDefinition/moped-ext-AnzahlSonderleistungen">Anzahl Sonderleistungen</a>
-            </td>
-            <td>
-<p>MOPED Extension für die Anzahl der Sonderleistungen</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-AnzahlBeurlaubungen.html" title="StructureDefinition/moped-ext-AnzahlBeurlaubungen">AnzahlBeurlaubungen</a>
-            </td>
-            <td>
-<p>MOPED Extension für die Anzahl der Beurlaubungen</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-AnzahlVerlegungen.html" title="StructureDefinition/moped-ext-AnzahlVerlegungen">AnzahlVerlegungen</a>
-            </td>
-            <td>
-<p>MOPED Extension für die Anzahl der Verlegungen</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-Beihilfenaequivalent.html" title="StructureDefinition/moped-ext-Beihilfenaequivalent">Beihilfenaequivalent</a>
-            </td>
-            <td>
-<p>MOPED Extension für das Beihilfenaequivalent</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-ClaimRef.html" title="StructureDefinition/moped-ext-ClaimRef">Claim Referenz</a>
-            </td>
-            <td>
-<p>Referenz vom Account auf den Claim.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-CoverageEligibilityRequestRef.html" title="StructureDefinition/moped-ext-CoverageEligibilityRequestRef">CoverageEligibilityRequest Referenz</a>
-            </td>
-            <td>
-<p>Referenz vom Account auf den CoverageEligibilityRequest.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-EndOfEligibility.html" title="StructureDefinition/moped-ext-EndOfEligibility">EndOfEligibility</a>
-            </td>
-            <td>
-<p>Fristende - Befristungen sind in folgenden Fällen vorgesehen:</p>
-<ul>
-  <li>Bei zeitlichen Beschränkungen aufgrund einer zu erwartenden, nachfolgenden medizini-
-schen Hauskrankenpflege</li>
-  <li>Bei Vorhersehbarkeit des Eintritts einer Asylierung</li>
-  <li>Bei unsicherer, versicherungsrechtlicher Entwicklung
-Bei den ersten beiden Punkten wird von den Krankenversicherungsträgern das Fristende individuell gesetzt. Beim dritten Punkt wird im Regelfall eine generelle Tagesbeschränkung erfolgen, weil die Versichertenanspruchserklärung in die Zukunft gerichtet ist und der Krankenversicherungsträger seine Zuständigkeit von vornherein nur für einen bestimmten Zeitraum annehmen kann (Ausleis- tungssituation gem. &sect; 122 ASVG).
-Durch die Angabe eines Fristendes wird signalisiert, dass bei einem über das Fristende hinaus dau- ernden Aufenthalt eine Verlängerungsanzeige vorzulegen ist.</li>
-</ul>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-ErrorWarning.html" title="StructureDefinition/moped-ext-ErrorWarning">Error/Warning</a>
-            </td>
-            <td>
-<p>MOPED Extension für akzeptierte Errors und Warnings</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-fondsrelevanz.html" title="StructureDefinition/moped-ext-fondsrelevanz">Fondsrelevanz</a>
-            </td>
-            <td>
-<p>Hier ist anzugeben, ob der stationäre Aufenthalt/ambulante Besuch gegenüber dem Landesgesundheitsfonds/PRIKRAF abzurechnen ist.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-ForderungsbetragAuslaenderverrechnungRegress.html" title="StructureDefinition/moped-ext-ForderungsbetragAuslaenderverrechnungRegress">Forderungsbetrag für Auslaenderverrechnung oder Regress</a>
-            </td>
-            <td>
-<p>MOPED Extension für den Forderungsbetrag für Ausländerverrechnung oder Regress</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-ecard-anspruch-kostenanteilbefreit.html" title="StructureDefinition/ecard-anspruch-kostenanteilbefreit">Kostenanteilbefreit laut Versicherungsanspruch</a>
-            </td>
-            <td>
-<p>Kostenanteilbefreiung für den Patienten, die direkt an den Anspruch geknüpft ist. Kostenanteile sind 
-entweder laut Gesetz vorgegeben (z.B. Rezeptgebühr) oder sie sind in der Satzung des jeweiligen KV-Trägers 
-verankert und werden meistens errechnet (z.B. für Heilbehelfe und Hilfsmittel).</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-KonstenmeldungARK.html" title="StructureDefinition/moped-ext-KonstenmeldungARK">Kostenmeldung für (A/R/K)</a>
-            </td>
-            <td>
-<p>MOPED Extension für die Kostenmeldung. Konstenmeldung für A = Ausländerverrechnung, R = Regressangelegenheiten oder K = Kosteninformation</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-Kostenstelle.html" title="StructureDefinition/moped-ext-Kostenstelle">Kostenstelle</a>
-            </td>
-            <td>
-<p>MOPED Extension für akzeptierte Errors und Warnings</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-LDFBetragNetto.html" title="StructureDefinition/moped-ext-LDFBetragNetto">LDF-Betrag Netto</a>
-            </td>
-            <td>
-<p>MOPED Extension für den LDF-Punktewert Netto. Ergibt sich durch Punkteanzahl mal Punktewert Forderungsbasis ohne Berücksichtigung eines Patientenanteiles f. Angehörige bzw. eines Beihilfenäquivalentes</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-LDFPunktewertNetto.html" title="StructureDefinition/moped-ext-LDFPunktewertNetto">LDF-Punktewert Netto</a>
-            </td>
-            <td>
-<p>MOPED Extension für den LDF-Punktewert Netto</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-lkfPunkte.html" title="StructureDefinition/lkfPunkte">LKF Punkte</a>
-            </td>
-            <td>
-<p>In dieser Extension werden alle möglichen Punkteangaben im LKF zusammengefasst.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-MealCostExcemption.html" title="StructureDefinition/moped-ext-MealCostExcemption">MealCostExcemption</a>
-            </td>
-            <td>
-<p>VKBEFR – Verpflegskosten-Beitragsbefreiung</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-AbrechnungsRelevanz.html" title="StructureDefinition/moped-ext-AbrechnungsRelevanz">Medizinische Leistung - Abrechnungsrelevanz</a>
-            </td>
-            <td>
-<p>Hier ist anzugeben, ob die medizinische Leistung bei der Bepunktung des ambulanten Besuchs/stationären Aufenthalts (Satzart X01) zu berücksichtigen ist.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-Neugeborenes.html" title="StructureDefinition/moped-ext-Neugeborenes">Neugeborenes</a>
-            </td>
-            <td>
-<p>Ein Patient wird als Neugeborenes bezeichnet, wenn das Alter zum Zugangszeitpunkt auf die Abteilung &lt;28 Tage ist.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-Patientenanteil.html" title="StructureDefinition/moped-ext-Patientenanteil">Patientenanteil Netto</a>
-            </td>
-            <td>
-<p>MOPED Extension für den Patientenanteil netto: Betrag in €, 2 Nachkommastellen</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-PatientenanteilAngehoerige.html" title="StructureDefinition/moped-ext-PatientenanteilAngehoerige">Patientenanteil für Angehoerige</a>
-            </td>
-            <td>
-<p>MOPED Extension für den Patientenanteil für Angehörige (tägl. Satz) netto: Betrag in €, 2 Nachkommastellen</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-Plausibilitaetskennzeichen.html" title="StructureDefinition/Plausibilitaetskennzeichen">Plausibilitaetskennzeichen</a>
-            </td>
-            <td>
-<p>Dieses Datenfeld enthält eine Kennzeichnung als Ergebnis der vom Gesundheitsministerium vorgegebenen Plausibilitätsprüfung.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-PremiumClass.html" title="StructureDefinition/moped-ext-PremiumClass">PremiumClass</a>
-            </td>
-            <td>
-<p>KLAS – Allgemeine Gebührenklasse/Sonderklasse</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-PunkteLDFPauschale.html" title="StructureDefinition/moped-ext-PunkteLDFPauschale">Punkte LDF Pauschale</a>
-            </td>
-            <td>
-<p>MOPED Extension für die LDF Punkte Pauschale</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-RechnungsnummerKHLGF.html" title="StructureDefinition/moped-ext-RechnungsnummerKHLGF">Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds</a>
-            </td>
-            <td>
-<p>MOPED Extension für die Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-ecard-anspruch-rezeptgebbefreit.html" title="StructureDefinition/ecard-anspruch-rezeptgebbefreit">Rezeptgebührenbefreit laut Versicherungsanspruch</a>
-            </td>
-            <td>
-<p>Rezeptgebührenbefreiung für den Patienten, die direkt an den Anspruch  geknüpft ist. Der Patient ist von der 
-Entrichtung der Rezeptgebühr befreit. Kostenanteile sind entweder laut Gesetz vorgegeben (z.B. Rezeptgebühr) oder sie sind in der Satzung des jeweiligen KV-Trägers 
-verankert und werden meistens errechnet (z.B. für Heilbehelfe und Hilfsmittel).</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-Sonderleistungsnummer.html" title="StructureDefinition/moped-ext-Sonderleistungsnummer">Sonderleistungsnummer</a>
-            </td>
-            <td>
-<p>MOPED Extension für die Sonderleistungsnummer</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-TageOhneKostenbeitrag.html" title="StructureDefinition/moped-ext-TageOhneKostenbeitrag">Tage ohne Einhebung des Kostenbeitrags</a>
-            </td>
-            <td>
-<p>Anzahl der Tage, für welche kein Kostenbeitrag seitens der Krankenanstalt eingehoben wurde</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-transportart.html" title="StructureDefinition/moped-ext-transportart">Transportart</a>
-            </td>
-            <td>
-<p>MOPED Extension für die Transportart.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-unfalldatum.html" title="StructureDefinition/moped-ext-unfalldatum">Unfalldatum</a>
-            </td>
-            <td>
-<p>MOPED Extension für das Ereignis-/Unfalldatum.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-vaestatus.html" title="StructureDefinition/moped-ext-vaestatus">VAEStatus</a>
-            </td>
-            <td>
-<p>"VAEST - Status der Versichertenanspruchserklärung"</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-vdasid.html" title="StructureDefinition/moped-ext-vdasid">VDAS-ID - VersichertenDatenAbfrageService</a>
-            </td>
-            <td>
-<p>Es handelt sich um eine ID, welche bei der VDAS-Abfrage durch die Krankenanstalt vom e-card System vergeben wird und von der Krankenanstalt in der Aufnahme-/Ereignisanzeige mitgeliefert werden kann. Dadurch kann das Abfrageergebnis eindeutig nachvollzogen werden.
-Das Ergebnis der VDAS-Abfrage ist im ambulanten Bereich für den Krankenversicherungsträger verbindlich. Eine Ablehnung aus versicherungsrechtlichen Gründen ist nicht möglich, sofern die Ereignisanzeige jenem Träger aus der VDAS-Abfrage (inkl. VDAS-ID) übermittelt wurde.
-Um eine zwischenstaatliche Verrechnung zu ermöglichen ist bei zwischenstaatlichen Fällen eine Ablehnung zulässig.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-VerdachtArbeitsSchuelerunfall.html" title="StructureDefinition/moped-ext-VerdachtArbeitsSchuelerunfall">Verdacht auf Arbeits- oder Schuelerunfall</a>
-            </td>
-            <td>
-<p>MOPED Extension für den Verdacht auf einen Arbeits- oder Schuelerunfall.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-VerdachtFremdverschulden.html" title="StructureDefinition/moped-ext-VerdachtFremdverschulden">Verdacht auf Fremdverschulden</a>
-            </td>
-            <td>
-<p>MOPED Extension für den Verdacht auf Fremdverschulden</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-extensionDays.html" title="StructureDefinition/moped-ext-extensionDays">Verlaengerungstage</a>
-            </td>
-            <td>
-<p>Anzahl der Verlaengerungstage bei Verlängerung</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-NumberOfPreviouslyPaidDays.html" title="StructureDefinition/moped-ext-NumberOfPreviouslyPaidDays">Vortageanzahl auf Kostenbeitrag</a>
-            </td>
-            <td>
-<p>Zur Berechnung des Verpflegskostenbeitrags für Versicherte sowie des Kostenbeitrags für Angehörige ist die Angabe der zu berücksichtigenden Vortage erforderlich. Der Krankenversicherungsträger ist auf Grund der ihm zugänglichen Informationen in der Lage, Vorpflegetage zu berücksichtigen. Berücksichtigt werden alle stationären Aufenthalte eines Patienten innerhalb eines Kalenderjahres.
-Der höchste Wert, mit welchem das Feld VTAGE befüllt werden kann, ist jener Wert, für welchen maximal ein Verpflegskostenbeitrag pro Kalenderjahr zu entrichten ist. Der Maximale Höchstwert beträgt somit 28 Tage.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-workflow-status.html" title="StructureDefinition/moped-ext-workflow-status">Workflow Status</a>
-            </td>
-            <td>
-<p>MOPED Extension für den Workflowstatus. Dieser beschreibt den Zustand in dem sich der administrative Fall derzeit befindet</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-zugangsart.html" title="StructureDefinition/moped-ext-zugangsart">Zugangsart</a>
-            </td>
-            <td>
-<p>MOPED Extension für die Art des Zugangs.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-moped-ext-physischeAnwesenheit.html" title="StructureDefinition/moped-ext-physischeAnwesenheit">physische Anwesenheit</a>
-            </td>
-            <td>
-<p>Ob der Patient physisch anwesend war.</p>
-</td>
-         </tr>
-      </tbody>
-   </table>
-   <a name="4"> </a>
    <h3>Terminology: Value Sets </h3>
     <p>These define sets of codes used by systems conforming to this implementation guide.</p>
 <table class="grid">
@@ -1192,6 +654,533 @@ Der höchste Wert, mit welchem das Feld VTAGE befüllt werden kann, ist jener We
          </tr>
       </tbody>
    </table>
+   <a name="3"> </a>
+   <h3>Other </h3>
+    <p>These are resources that are used within this implementation guide that do not fit into one of the other categories.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-diagnosisRelatedNode.html" title="StructureDefinition/moped-ext-diagnosisRelatedNode">Abrechnung - Knoten</a>
+            </td>
+            <td>
+<p>Lukriert die Patient:innen über eine reguläre Gruppe Punkte, so ist in diesem Datenfeld die entsprechende Knotenbezeichnung einzutragen.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-SVAbrechnungsquartal.html" title="StructureDefinition/SVAbrechnungsquartal">Abrechnungsquartal der Sozialversicherung</a>
+            </td>
+            <td>
+<p>Das Abrechnungsquartal ist in der Form Jahr (JJJJ) und Quartal (Q) zu melden.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-Altersgruppe.html" title="StructureDefinition/moped-ext-Altersgruppe">Altersgruppe</a>
+            </td>
+            <td>
+<p>In Gruppen eingeteilt, wobei vollendete Lebensjahre ausschlaggebend sind.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-AnzahlSonderleistungen.html" title="StructureDefinition/moped-ext-AnzahlSonderleistungen">Anzahl Sonderleistungen</a>
+            </td>
+            <td>
+<p>MOPED Extension für die Anzahl der Sonderleistungen</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-AnzahlBeurlaubungen.html" title="StructureDefinition/moped-ext-AnzahlBeurlaubungen">AnzahlBeurlaubungen</a>
+            </td>
+            <td>
+<p>MOPED Extension für die Anzahl der Beurlaubungen</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-AnzahlVerlegungen.html" title="StructureDefinition/moped-ext-AnzahlVerlegungen">AnzahlVerlegungen</a>
+            </td>
+            <td>
+<p>MOPED Extension für die Anzahl der Verlegungen</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-Beihilfenaequivalent.html" title="StructureDefinition/moped-ext-Beihilfenaequivalent">Beihilfenaequivalent</a>
+            </td>
+            <td>
+<p>MOPED Extension für das Beihilfenaequivalent</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-ClaimRef.html" title="StructureDefinition/moped-ext-ClaimRef">Claim Referenz</a>
+            </td>
+            <td>
+<p>Referenz vom Account auf den Claim.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-CoverageEligibilityRequestRef.html" title="StructureDefinition/moped-ext-CoverageEligibilityRequestRef">CoverageEligibilityRequest Referenz</a>
+            </td>
+            <td>
+<p>Referenz vom Account auf den CoverageEligibilityRequest.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-EndOfEligibility.html" title="StructureDefinition/moped-ext-EndOfEligibility">EndOfEligibility</a>
+            </td>
+            <td>
+<p>Fristende - Befristungen sind in folgenden Fällen vorgesehen:</p>
+<ul>
+  <li>Bei zeitlichen Beschränkungen aufgrund einer zu erwartenden, nachfolgenden medizini-
+schen Hauskrankenpflege</li>
+  <li>Bei Vorhersehbarkeit des Eintritts einer Asylierung</li>
+  <li>Bei unsicherer, versicherungsrechtlicher Entwicklung
+Bei den ersten beiden Punkten wird von den Krankenversicherungsträgern das Fristende individuell gesetzt. Beim dritten Punkt wird im Regelfall eine generelle Tagesbeschränkung erfolgen, weil die Versichertenanspruchserklärung in die Zukunft gerichtet ist und der Krankenversicherungsträger seine Zuständigkeit von vornherein nur für einen bestimmten Zeitraum annehmen kann (Ausleis- tungssituation gem. &sect; 122 ASVG).
+Durch die Angabe eines Fristendes wird signalisiert, dass bei einem über das Fristende hinaus dau- ernden Aufenthalt eine Verlängerungsanzeige vorzulegen ist.</li>
+</ul>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-ErrorWarning.html" title="StructureDefinition/moped-ext-ErrorWarning">Error/Warning</a>
+            </td>
+            <td>
+<p>MOPED Extension für akzeptierte Errors und Warnings</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-fondsrelevanz.html" title="StructureDefinition/moped-ext-fondsrelevanz">Fondsrelevanz</a>
+            </td>
+            <td>
+<p>Hier ist anzugeben, ob der stationäre Aufenthalt/ambulante Besuch gegenüber dem Landesgesundheitsfonds/PRIKRAF abzurechnen ist.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-ForderungsbetragAuslaenderverrechnungRegress.html" title="StructureDefinition/moped-ext-ForderungsbetragAuslaenderverrechnungRegress">Forderungsbetrag für Auslaenderverrechnung oder Regress</a>
+            </td>
+            <td>
+<p>MOPED Extension für den Forderungsbetrag für Ausländerverrechnung oder Regress</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-Hauptversicherter.html" title="StructureDefinition/Hauptversicherter">Hauptversicherter</a>
+            </td>
+            <td>
+<p>MOPED Profil der Person Ressource für den Hauptversicherten</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ecard-anspruch-kostenanteilbefreit.html" title="StructureDefinition/ecard-anspruch-kostenanteilbefreit">Kostenanteilbefreit laut Versicherungsanspruch</a>
+            </td>
+            <td>
+<p>Kostenanteilbefreiung für den Patienten, die direkt an den Anspruch geknüpft ist. Kostenanteile sind 
+entweder laut Gesetz vorgegeben (z.B. Rezeptgebühr) oder sie sind in der Satzung des jeweiligen KV-Trägers 
+verankert und werden meistens errechnet (z.B. für Heilbehelfe und Hilfsmittel).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-KonstenmeldungARK.html" title="StructureDefinition/moped-ext-KonstenmeldungARK">Kostenmeldung für (A/R/K)</a>
+            </td>
+            <td>
+<p>MOPED Extension für die Kostenmeldung. Konstenmeldung für A = Ausländerverrechnung, R = Regressangelegenheiten oder K = Kosteninformation</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-Kostenstelle.html" title="StructureDefinition/moped-ext-Kostenstelle">Kostenstelle</a>
+            </td>
+            <td>
+<p>MOPED Extension für akzeptierte Errors und Warnings</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-LDFBetragNetto.html" title="StructureDefinition/moped-ext-LDFBetragNetto">LDF-Betrag Netto</a>
+            </td>
+            <td>
+<p>MOPED Extension für den LDF-Punktewert Netto. Ergibt sich durch Punkteanzahl mal Punktewert Forderungsbasis ohne Berücksichtigung eines Patientenanteiles f. Angehörige bzw. eines Beihilfenäquivalentes</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-LDFPunktewertNetto.html" title="StructureDefinition/moped-ext-LDFPunktewertNetto">LDF-Punktewert Netto</a>
+            </td>
+            <td>
+<p>MOPED Extension für den LDF-Punktewert Netto</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-lkfPunkte.html" title="StructureDefinition/lkfPunkte">LKF Punkte</a>
+            </td>
+            <td>
+<p>In dieser Extension werden alle möglichen Punkteangaben im LKF zusammengefasst.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-MOPEDAufnahmeBundle.html" title="StructureDefinition/MOPEDAufnahmeBundle">MOPED Aufnahme Bundle</a>
+            </td>
+            <td>
+<p>Bundle für die Input-Ressourcen bei Patienten-Aufnahme</p>
+
+<ul>
+  <li>Hinweis 1: Anstelle einer separaten GDA-Organization-Ressource ist angedacht, hier mit einer conditional Reference in der Ressource Encounter mit entsprechendem GDA-identifier zu arbeiten. Somit wird auch vermieden, dass Duplikate einer GDA-Organization-Ressource am Server angelegt/verwendet werden.</li>
+  <li>Hinweis 2: Es wird davon ausgegangen, dass der Patient bereits vor der Bundle-Erstellung mit dem ZPI abgeglichen wurde.</li>
+  <li>Hinweis 3: Es wird davon ausgegangen, dass vor der Bundle-Erstellung eine VDAS-Abfrage gestellt wurde. Die Coverage-Ressourcen in diesem Transaction-Bundle speichern die Ansprüche aufgrund der VDAS-Abfrage in Moped ein.</li>
+  <li>Hinweis 4: In Zukunft wird Moped auch die Datenübermittlung von Selbstzahlern und Privatversicherten unterstützen. Für diese Ansprüche werden separate Coverage-Profile definiert werden und dieses Bundle wird in weiterer Folge unterschiedliche Coverage-Arten unterstützen.</li>
+  <li>Hinweis 5: Eine vorangegangene VDAS-Anfrage an die SVC kann mehrere Coverages retournieren. In diesem Fall wählt der Patient/die Patientin direkt bei aufnahme <em>eine</em> Versicherung aus, welche im Zuge der Aufnahme gespeichert wird. Das ist der Grund für die Kardinalität 1..1 der Coverage in diesem Bundle.</li>
+</ul>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-MOPEDEncounter.html" title="StructureDefinition/MOPEDEncounter">MOPED Encounter</a>
+            </td>
+            <td>
+<p>MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme und Entlassung</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-MOPEDEncounterBund.html" title="StructureDefinition/MOPEDEncounterBund">MOPED Encounter Bund</a>
+            </td>
+            <td>
+<p>MOPED Profil der Encounter Ressource für die Rolle: Bund</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-MOPEDEncounterKH.html" title="StructureDefinition/MOPEDEncounterKH">MOPED Encounter KH</a>
+            </td>
+            <td>
+<p>MOPED Profil der Encounter Ressource für die Rolle: KH</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-MOPEDEncounterLGF.html" title="StructureDefinition/MOPEDEncounterLGF">MOPED Encounter LGF</a>
+            </td>
+            <td>
+<p>MOPED Profil der Encounter Ressource für die Rolle: LGF</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-MOPEDEncounterSV.html" title="StructureDefinition/MOPEDEncounterSV">MOPED Encounter SV</a>
+            </td>
+            <td>
+<p>MOPED Profil der Encounter Ressource für die Rolle: SV</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-MOPEDPatientBund.html" title="StructureDefinition/MOPEDPatientBund">MOPED Patient Bund</a>
+            </td>
+            <td>
+<p>MOPED Profil der Patient Ressource aus der Sicht der Rolle: Bund</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-MOPEDPatientLGF.html" title="StructureDefinition/MOPEDPatientLGF">MOPED Patient LGF</a>
+            </td>
+            <td>
+<p>MOPED Profil der Patient Ressource aus der Sicht der Rolle: LGF</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-MOPEDPatientSV.html" title="StructureDefinition/MOPEDPatientSV">MOPED Patient SV</a>
+            </td>
+            <td>
+<p>MOPED Profil der Patient Ressource aus der Sicht der Rolle: SV</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-MOPEDAccount.html" title="StructureDefinition/MOPEDAccount">MOPEDAccount</a>
+            </td>
+            <td>
+<p>MOPED Profil der Account Ressource für die administrative Fallführung und Abrechnung.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-MOPEDClaim.html" title="StructureDefinition/MOPEDClaim">MOPEDClaim</a>
+            </td>
+            <td>
+<p>MOPED Profil der Claim Ressource für die Leistungsabrechnungsanfrage.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-MOPEDClaimResponse.html" title="StructureDefinition/MOPEDClaimResponse">MOPEDClaimResponse</a>
+            </td>
+            <td>
+<p>MOPED Profil der ClaimResponse Ressource für die Leistungsabrechnungsantwort.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-MOPEDCondition.html" title="StructureDefinition/MOPEDCondition">MOPEDCondition</a>
+            </td>
+            <td>
+<p>MOPED Profil der Condition Ressource für die LDF-Abrechnung</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-MOPEDCoverageEligibilityRequest.html" title="StructureDefinition/MOPEDCoverageEligibilityRequest">MOPEDCoverageEligibilityRequest</a>
+            </td>
+            <td>
+<p>MOPED Profil der CoverageEligibilityRequest Ressource für die Versichertenanspruchserklärung-Anfrage.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-MOPEDCoverageEligibilityResponse.html" title="StructureDefinition/MOPEDCoverageEligibilityResponse">MOPEDCoverageEligibilityResponse</a>
+            </td>
+            <td>
+<p>MOPED Profil der CoverageEligibilityResponse Ressource für die Versichertenanspruchserklärung-Antwort.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-MOPEDOrganizationAbteilung.html" title="StructureDefinition/MOPEDOrganizationAbteilung">MOPEDOrganizationAbteilung</a>
+            </td>
+            <td>
+<p>MOPED Profil für Abteilungen innerhalb einer Krankenanstalt.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-MOPEDProcedure.html" title="StructureDefinition/MOPEDProcedure">MOPEDProcedure</a>
+            </td>
+            <td>
+<p>MOPED Profil der Procedure Ressource für die LDF-Abrechnung</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-MOPEDTransferEncounter.html" title="StructureDefinition/MOPEDTransferEncounter">MOPEDTransferEncounter</a>
+            </td>
+            <td>
+<p>MOPED Profil der Encounter Ressource für die Verlegung innerhalb oder zwischen Krankenanstalten</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-MealCostExcemption.html" title="StructureDefinition/moped-ext-MealCostExcemption">MealCostExcemption</a>
+            </td>
+            <td>
+<p>VKBEFR – Verpflegskosten-Beitragsbefreiung</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-AbrechnungsRelevanz.html" title="StructureDefinition/moped-ext-AbrechnungsRelevanz">Medizinische Leistung - Abrechnungsrelevanz</a>
+            </td>
+            <td>
+<p>Hier ist anzugeben, ob die medizinische Leistung bei der Bepunktung des ambulanten Besuchs/stationären Aufenthalts (Satzart X01) zu berücksichtigen ist.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-Neugeborenes.html" title="StructureDefinition/moped-ext-Neugeborenes">Neugeborenes</a>
+            </td>
+            <td>
+<p>Ein Patient wird als Neugeborenes bezeichnet, wenn das Alter zum Zugangszeitpunkt auf die Abteilung &lt;28 Tage ist.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-Patientenanteil.html" title="StructureDefinition/moped-ext-Patientenanteil">Patientenanteil Netto</a>
+            </td>
+            <td>
+<p>MOPED Extension für den Patientenanteil netto: Betrag in €, 2 Nachkommastellen</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-PatientenanteilAngehoerige.html" title="StructureDefinition/moped-ext-PatientenanteilAngehoerige">Patientenanteil für Angehoerige</a>
+            </td>
+            <td>
+<p>MOPED Extension für den Patientenanteil für Angehörige (tägl. Satz) netto: Betrag in €, 2 Nachkommastellen</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-Plausibilitaetskennzeichen.html" title="StructureDefinition/Plausibilitaetskennzeichen">Plausibilitaetskennzeichen</a>
+            </td>
+            <td>
+<p>Dieses Datenfeld enthält eine Kennzeichnung als Ergebnis der vom Gesundheitsministerium vorgegebenen Plausibilitätsprüfung.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-PremiumClass.html" title="StructureDefinition/moped-ext-PremiumClass">PremiumClass</a>
+            </td>
+            <td>
+<p>KLAS – Allgemeine Gebührenklasse/Sonderklasse</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-PunkteLDFPauschale.html" title="StructureDefinition/moped-ext-PunkteLDFPauschale">Punkte LDF Pauschale</a>
+            </td>
+            <td>
+<p>MOPED Extension für die LDF Punkte Pauschale</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-RechnungsnummerKHLGF.html" title="StructureDefinition/moped-ext-RechnungsnummerKHLGF">Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds</a>
+            </td>
+            <td>
+<p>MOPED Extension für die Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ecard-anspruch-rezeptgebbefreit.html" title="StructureDefinition/ecard-anspruch-rezeptgebbefreit">Rezeptgebührenbefreit laut Versicherungsanspruch</a>
+            </td>
+            <td>
+<p>Rezeptgebührenbefreiung für den Patienten, die direkt an den Anspruch  geknüpft ist. Der Patient ist von der 
+Entrichtung der Rezeptgebühr befreit. Kostenanteile sind entweder laut Gesetz vorgegeben (z.B. Rezeptgebühr) oder sie sind in der Satzung des jeweiligen KV-Trägers 
+verankert und werden meistens errechnet (z.B. für Heilbehelfe und Hilfsmittel).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-SVCCoverage.html" title="StructureDefinition/SVCCoverage">SVCCoverage</a>
+            </td>
+            <td>
+<p>SVC Profil der Coverage Ressource für Versicherungen. Basierend auf dem Profil "ecardAnspruch": https://www.chipkarte.at/de/vdas-on-fhir/site/StructureDefinition-ecard-anspruch-profile.html</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-Sonderleistungsnummer.html" title="StructureDefinition/moped-ext-Sonderleistungsnummer">Sonderleistungsnummer</a>
+            </td>
+            <td>
+<p>MOPED Extension für die Sonderleistungsnummer</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-TageOhneKostenbeitrag.html" title="StructureDefinition/moped-ext-TageOhneKostenbeitrag">Tage ohne Einhebung des Kostenbeitrags</a>
+            </td>
+            <td>
+<p>Anzahl der Tage, für welche kein Kostenbeitrag seitens der Krankenanstalt eingehoben wurde</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-transportart.html" title="StructureDefinition/moped-ext-transportart">Transportart</a>
+            </td>
+            <td>
+<p>MOPED Extension für die Transportart.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-unfalldatum.html" title="StructureDefinition/moped-ext-unfalldatum">Unfalldatum</a>
+            </td>
+            <td>
+<p>MOPED Extension für das Ereignis-/Unfalldatum.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-vaestatus.html" title="StructureDefinition/moped-ext-vaestatus">VAEStatus</a>
+            </td>
+            <td>
+<p>"VAEST - Status der Versichertenanspruchserklärung"</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-vdasid.html" title="StructureDefinition/moped-ext-vdasid">VDAS-ID - VersichertenDatenAbfrageService</a>
+            </td>
+            <td>
+<p>Es handelt sich um eine ID, welche bei der VDAS-Abfrage durch die Krankenanstalt vom e-card System vergeben wird und von der Krankenanstalt in der Aufnahme-/Ereignisanzeige mitgeliefert werden kann. Dadurch kann das Abfrageergebnis eindeutig nachvollzogen werden.
+Das Ergebnis der VDAS-Abfrage ist im ambulanten Bereich für den Krankenversicherungsträger verbindlich. Eine Ablehnung aus versicherungsrechtlichen Gründen ist nicht möglich, sofern die Ereignisanzeige jenem Träger aus der VDAS-Abfrage (inkl. VDAS-ID) übermittelt wurde.
+Um eine zwischenstaatliche Verrechnung zu ermöglichen ist bei zwischenstaatlichen Fällen eine Ablehnung zulässig.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-VerdachtArbeitsSchuelerunfall.html" title="StructureDefinition/moped-ext-VerdachtArbeitsSchuelerunfall">Verdacht auf Arbeits- oder Schuelerunfall</a>
+            </td>
+            <td>
+<p>MOPED Extension für den Verdacht auf einen Arbeits- oder Schuelerunfall.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-VerdachtFremdverschulden.html" title="StructureDefinition/moped-ext-VerdachtFremdverschulden">Verdacht auf Fremdverschulden</a>
+            </td>
+            <td>
+<p>MOPED Extension für den Verdacht auf Fremdverschulden</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-extensionDays.html" title="StructureDefinition/moped-ext-extensionDays">Verlaengerungstage</a>
+            </td>
+            <td>
+<p>Anzahl der Verlaengerungstage bei Verlängerung</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-NumberOfPreviouslyPaidDays.html" title="StructureDefinition/moped-ext-NumberOfPreviouslyPaidDays">Vortageanzahl auf Kostenbeitrag</a>
+            </td>
+            <td>
+<p>Zur Berechnung des Verpflegskostenbeitrags für Versicherte sowie des Kostenbeitrags für Angehörige ist die Angabe der zu berücksichtigenden Vortage erforderlich. Der Krankenversicherungsträger ist auf Grund der ihm zugänglichen Informationen in der Lage, Vorpflegetage zu berücksichtigen. Berücksichtigt werden alle stationären Aufenthalte eines Patienten innerhalb eines Kalenderjahres.
+Der höchste Wert, mit welchem das Feld VTAGE befüllt werden kann, ist jener Wert, für welchen maximal ein Verpflegskostenbeitrag pro Kalenderjahr zu entrichten ist. Der Maximale Höchstwert beträgt somit 28 Tage.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-workflow-status.html" title="StructureDefinition/moped-ext-workflow-status">Workflow Status</a>
+            </td>
+            <td>
+<p>MOPED Extension für den Workflowstatus. Dieser beschreibt den Zustand in dem sich der administrative Fall derzeit befindet</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-zugangsart.html" title="StructureDefinition/moped-ext-zugangsart">Zugangsart</a>
+            </td>
+            <td>
+<p>MOPED Extension für die Art des Zugangs.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-moped-ext-physischeAnwesenheit.html" title="StructureDefinition/moped-ext-physischeAnwesenheit">physische Anwesenheit</a>
+            </td>
+            <td>
+<p>Ob der Patient physisch anwesend war.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
 </div>
 
 </div>
@@ -1209,8 +1198,8 @@ Der höchste Wert, mit welchem das Feld VTAGE befüllt werden kann, ist jener We
 <div class="container">    <!-- container -->
 
 <div class="inner-wrapper">
-  <p><a name="l2709">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Tue, Nov 19, 2024 10:30+0000">2024-11-19</span>
+  <p><a name="l2686">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Mon, Feb 10, 2025 09:28+0000">2025-02-10</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
