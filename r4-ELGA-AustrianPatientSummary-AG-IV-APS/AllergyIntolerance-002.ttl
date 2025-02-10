@@ -1,5 +1,6 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sct: <http://snomed.info/id/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -11,17 +12,20 @@
   fhir:id [ fhir:v "002"] ; # 
   fhir:meta [
      fhir:profile ( [
-       fhir:v "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-allergyintolerance"^^xsd:anyURI ;
-       fhir:link <https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-allergyintolerance>
+       fhir:v "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-allergyintolerance"^^xsd:anyURI ;
+       fhir:link <https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-allergyintolerance>
      ] )
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "extensions" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: AllergyIntolerance 002</b></p><a name=\"002\"> </a><a name=\"hc002\"> </a><a name=\"002-de-AT\"> </a><p><b>Abatement</b>: 2020</p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical resolved}\">Resolved</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-verification confirmed}\">Confirmed</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 256303006}\">Ambrosia-Pollen</span></p><p><b>patient</b>: <a href=\"Patient-002.html\">Maria Musterfrau</a></p><p><b>onset</b>: Absent because : unknown</p></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: AllergyIntolerance 002</b></p><a name=\"002\"> </a><a name=\"hc002\"> </a><a name=\"002-de-AT\"> </a><p><b>Abatement</b>: 2020</p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical resolved}\">Resolved</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-verification confirmed}\">Confirmed</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 256303006}\">Ambrosia-Pollen</span></p><p><b>patient</b>: <a href=\"Patient-002.html\">Maria Musterfrau</a></p><p><b>onset</b>: Absent because : unknown</p></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:extension ( [
      fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement"^^xsd:anyURI ] ;
-     fhir:value [ fhir:v "2020"^^xsd:gYear ]
+     fhir:value [
+       a fhir:dateTime ;
+       fhir:v "2020"^^xsd:gYear
+     ]
   ] ) ; # 
   fhir:clinicalStatus [
      fhir:coding ( [
@@ -52,7 +56,10 @@
      a fhir:dateTime ;
      fhir:extension ( [
        fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/data-absent-reason"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "unknown" ]
+       fhir:value [
+         a fhir:code ;
+         fhir:v "unknown"
+       ]
      ] )
   ] . # 
 
