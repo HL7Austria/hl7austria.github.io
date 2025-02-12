@@ -27,14 +27,11 @@ dom-4dom-3dom-5","","N/A"
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","",,"open","DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"Claim.extension:verlaengerungstage","Claim.extension","verlaengerungstage","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-extensionDays]]} {[]}
+"Claim.extension:Verlaengerungstage","Claim.extension","Verlaengerungstage","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-verlaengerungstage]]} {[]}
 ","Verlaengerungstage","""Verlaengerungstage:""Anzahl der Verlaengerungstage bei Verlaengerung.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"Claim.extension:VerdachtArbeitsSchuelerunfall","Claim.extension","VerdachtArbeitsSchuelerunfall","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-VerdachtArbeitsSchuelerunfall]]} {[]}
-","Verdacht auf Arbeits- oder Schuelerunfall","MOPED Extension für den Verdacht auf einen Arbeits- oder Schuelerunfall.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"Claim.extension:Sonderklasse","Claim.extension","Sonderklasse","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-PremiumClass]]} {[]}
-","""KLAS – Allgemeine Gebührenklasse/Sonderklasse"" ","""KLAS – Allgemeine Gebührenklasse/Sonderklasse""","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"Claim.extension:Sonderklasse","Claim.extension","Sonderklasse","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-sonderklasse]]} {[]}
+","KLAS: Allgemeine Gebuehrenklasse bzw. Sonderklasse","KLAS: Allgemeine Gebuehrenklasse bzw. Sonderklasse","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Claim.modifierExtension","Claim.modifierExtension","","extensions
 user content","",0,*,"","Y","Y","Extension {[]} {[]}
@@ -151,7 +148,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Encounters associated with the listed treatments","Healthcare encounters related to this claim.","This will typically be the encounter the event occurred within, but some activities may be initiated prior to or after the official completion of an encounter but still be tied to the context of the encounter.","Used in some jurisdictions to link clinical events to claim items.","","","","","","","",,,,,"","profile:resolve()}
 ","",,"open","Claim.encounter",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"Claim.encounter:MopedEncounterKH","Claim.encounter","MopedEncounterKH","","",1,1,"","","","Reference {[]} {[CanonicalType[http://example.org/StructureDefinition/MopedEncounterKH]]}
+"Claim.encounter:MopedEncounter","Claim.encounter","MopedEncounter","","",1,1,"","","","Reference {[]} {[CanonicalType[http://example.org/StructureDefinition/MopedEncounter]]}
 ","Generelle Informationen zu Aufnahme und Entlassung des Patienten","Healthcare encounters related to this claim.","This will typically be the encounter the event occurred within, but some activities may be initiated prior to or after the official completion of an encounter but still be tied to the context of the encounter.","Used in some jurisdictions to link clinical events to claim items.","","","","","","","",,,,,"",,,,"Claim.encounter",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Claim.encounter:TransferEncounter","Claim.encounter","TransferEncounter","","",0,*,"","","","Reference {[]} {[CanonicalType[http://example.org/StructureDefinition/MopedTransferEncounter]]}
@@ -405,10 +402,13 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Claim.accident.id","Claim.accident.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
 ","","n/a"
-"Claim.accident.extension","Claim.accident.extension","","extensions
-user content","",0,*,"","","","Extension {[]} {[]}
-","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a"
+"Claim.accident.extension","Claim.accident.extension","","","",0,*,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Claim.accident.extension:VerdachtArbeitsSchuelerunfall","Claim.accident.extension","VerdachtArbeitsSchuelerunfall","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-VerdachtArbeitsSchuelerunfall]]} {[]}
+","Verdacht auf Arbeits- oder Schuelerunfall","MOPED Extension für den Verdacht auf einen Arbeits- oder Schuelerunfall.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Claim.accident.modifierExtension","Claim.accident.modifierExtension","","extensions
 user contentmodifiers","",0,*,"","Y","Y","Extension {[]} {[]}
 ","Extensions that cannot be ignored even if unrecognized","May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.

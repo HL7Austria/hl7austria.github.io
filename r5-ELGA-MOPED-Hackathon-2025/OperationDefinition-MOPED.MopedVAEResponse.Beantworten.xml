@@ -13,7 +13,7 @@
   <title value="MOPED VAERequest $beantworten (POC)"/>
   <status value="draft"/>
   <kind value="operation"/>
-  <date value="2025-02-10T11:27:45+00:00"/>
+  <date value="2025-02-12T10:32:14+00:00"/>
   <publisher value="Example Publisher"/>
   <contact>
     <name value="Example Publisher"/>
@@ -23,7 +23,7 @@
     </telecom>
   </contact>
   <description value="Die $beantworten Operation wird aufgerufen, wenn eine Versichertenanspruchserklärung beantwortet wird."/>
-  <purpose value="&#xA;**Wer ruft diese Operation in welchem Zusammenhang auf?**&#xA;&#xA;Die Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die $beantworten Operation wird aufgerufen, wenn der CoverageEligibilityRequest eines Krankenhauses beantwortet wird.&#xA;&#xA;**Voraussetzungen für den Aufruf**&#xA;&#xA;* Account-Status: `Aufnahme Freigegeben`&#xA;&#xA;**Detaillierte Business-Logik**&#xA;&#xA;1. Die MopedVAEResponse wird lt. Regeln (siehe unten) validiert und eingespielt&#xA;2. Falls Schritt 1 erfolgreich war, wird die Ressource Account gesucht, die eine Referenz auf den MopedVAEResponse.request beihält (MopedVAEResponse lt. Operation-Parameter) und auf `SV verarbeitet` gesetzt&#xA;&#xA;**Validierung / Fehlerbehandlung**&#xA;&#xA;* MopedVAEResponse.patient muss gleich MopedVAEResponse.request.patient sein&#xA;&#xA;**Weitere Hinweise**&#xA;&#xA;**Annahmen an das BeS**&#xA;* Es wurde vorab geprüft, ob *MopedVAEResponse.insurance* auch der SV entspricht, der die Operation aufruft. Somit ist sichergestellt, dass jede SV nur eigene CoverageEligibilityRequests beantworten kann.&#xA;"/>
+  <purpose value="&#xA;**Wer ruft diese Operation in welchem Zusammenhang auf?**&#xA;&#xA;Die Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die $beantworten Operation wird aufgerufen, wenn der MopedVAERequest eines Krankenhauses beantwortet wird.&#xA;&#xA;**Voraussetzungen für den Aufruf**&#xA;&#xA;* Account-Status: `Aufnahme Freigegeben`&#xA;&#xA;**Detaillierte Business-Logik**&#xA;&#xA;1. Die MopedVAEResponse wird lt. Regeln (siehe unten) validiert und eingespielt&#xA;2. Falls Schritt 1 erfolgreich war, wird die Ressource Account gesucht, die eine Referenz auf den MopedVAEResponse.request beihält (MopedVAEResponse lt. Operation-Parameter) und auf `SV verarbeitet` gesetzt&#xA;&#xA;**Validierung / Fehlerbehandlung**&#xA;&#xA;* MopedVAEResponse.patient muss gleich MopedVAEResponse.request.patient sein&#xA;&#xA;**Weitere Hinweise**&#xA;&#xA;**Annahmen an das BeS**&#xA;* Es wurde vorab geprüft, ob *MopedVAEResponse.insurance* auch der SV entspricht, der die Operation aufruft. Somit ist sichergestellt, dass jede SV nur eigene MopedVAERequests beantworten kann.&#xA;"/>
   <affectsState value="true"/>
   <code value="beantworten"/>
   <resource value="ClaimResponse"/>

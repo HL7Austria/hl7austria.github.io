@@ -10,7 +10,7 @@
   <name value="MOPED"/>
   <title value="Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"/>
   <status value="draft"/>
-  <date value="2025-02-10T11:27:45+00:00"/>
+  <date value="2025-02-12T10:32:14+00:00"/>
   <publisher value="Example Publisher"/>
   <contact>
     <name value="Example Publisher"/>
@@ -36,7 +36,7 @@
     </extension>
     <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
     <packageId value="hl7.fhir.uv.extensions.r5"/>
-    <version value="5.1.0"/>
+    <version value="5.2.0"/>
   </dependsOn>
   <dependsOn id="hl7_at_fhir_core_r5">
     <uri value="http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/ImplementationGuide/hl7.at.fhir.core.r5"/>
@@ -63,7 +63,7 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-diagnosisRelatedNode"/>
+        <reference value="StructureDefinition/moped-ext-diagnoseKnoten"/>
       </reference>
       <name value="Abrechnung - Knoten"/>
       <description value="Lukriert die Patient:innen über eine reguläre Gruppe Punkte, so ist in diesem Datenfeld die entsprechende Knotenbezeichnung einzutragen."/>
@@ -96,10 +96,32 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-Altersgruppe"/>
+        <reference value="StructureDefinition/moped-ext-altersgruppe"/>
       </reference>
       <name value="Altersgruppe"/>
       <description value="In Gruppen eingeteilt, wobei vollendete Lebensjahre ausschlaggebend sind."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/moped-altersgruppe-valueset"/>
+      </reference>
+      <name value="Altersgruppe des Patienten"/>
+      <description value="ValueSet für die Altersgruppe des Patienten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/moped-Anwesenheitsart-valueset"/>
+      </reference>
+      <name value="Anwesenheitsart"/>
+      <description value="ValueSet für die Anwesenheitsart"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -203,28 +225,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/moped-ext-ClaimRef"/>
-      </reference>
-      <name value="Claim Referenz"/>
-      <description value="Referenz vom Account auf den Claim."/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/moped-ext-EndOfEligibility"/>
-      </reference>
-      <name value="EndOfEligibility"/>
-      <description value="Fristende - Befristungen sind in folgenden Fällen vorgesehen:&#xA;- Bei zeitlichen Beschränkungen aufgrund einer zu erwartenden, nachfolgenden medizini-&#xA;schen Hauskrankenpflege&#xA;- Bei Vorhersehbarkeit des Eintritts einer Asylierung&#xA;- Bei unsicherer, versicherungsrechtlicher Entwicklung&#xA;Bei den ersten beiden Punkten wird von den Krankenversicherungsträgern das Fristende individuell gesetzt. Beim dritten Punkt wird im Regelfall eine generelle Tagesbeschränkung erfolgen, weil die Versichertenanspruchserklärung in die Zukunft gerichtet ist und der Krankenversicherungsträger seine Zuständigkeit von vornherein nur für einen bestimmten Zeitraum annehmen kann (Ausleis- tungssituation gem. § 122 ASVG).&#xA;Durch die Angabe eines Fristendes wird signalisiert, dass bei einem über das Fristende hinaus dau- ernden Aufenthalt eine Verlängerungsanzeige vorzulegen ist."/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
@@ -239,7 +239,7 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-ErrorWarning"/>
+        <reference value="StructureDefinition/moped-ext-fehlerWarnung"/>
       </reference>
       <name value="Error/Warning"/>
       <description value="MOPED Extension für akzeptierte Errors und Warnings"/>
@@ -381,21 +381,10 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/lkfPunkte"/>
+        <reference value="StructureDefinition/moped-ext-LKFPunkte"/>
       </reference>
       <name value="LKF Punkte"/>
       <description value="In dieser Extension werden alle möglichen Punkteangaben im LKF zusammengefasst."/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/moped-ext-MealCostExcemption"/>
-      </reference>
-      <name value="MealCostExcemption"/>
-      <description value="VKBEFR – Verpflegskosten-Beitragsbefreiung"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -462,17 +451,6 @@
       </reference>
       <name value="MOPED Encounter Bund"/>
       <description value="MOPED Profil der Encounter Ressource für die Rolle: Bund"/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/MopedEncounterKH"/>
-      </reference>
-      <name value="MOPED Encounter KH"/>
-      <description value="MOPED Profil der Encounter Ressource für die Rolle: KH"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -609,6 +587,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MopedProcedure"/>
+      </reference>
+      <name value="MOPED Procedure"/>
+      <description value="MOPED Profil der Procedure Ressource für die LDF-Abrechnung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
@@ -711,17 +700,6 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MopedProcedure"/>
-      </reference>
-      <name value="MopedProcedure"/>
-      <description value="MOPED Profil der Procedure Ressource für die LDF-Abrechnung"/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition"/>
-      </extension>
-      <reference>
         <reference value="StructureDefinition/MopedTransferEncounter"/>
       </reference>
       <name value="MopedTransferEncounter"/>
@@ -748,17 +726,6 @@
       </reference>
       <name value="MopedVAEResponse"/>
       <description value="MOPED Profil für die Beantwortung der Versichertenanspruchserklärung VAE."/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/moped-ext-Neugeborenes"/>
-      </reference>
-      <name value="Neugeborenes"/>
-      <description value="Ein Patient wird als Neugeborenes bezeichnet, wenn das Alter zum Zugangszeitpunkt auf die Abteilung &lt;28 Tage ist."/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -799,32 +766,10 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-physischeAnwesenheit"/>
-      </reference>
-      <name value="physische Anwesenheit"/>
-      <description value="Ob der Patient physisch anwesend war."/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition"/>
-      </extension>
-      <reference>
         <reference value="StructureDefinition/Plausibilitaetskennzeichen"/>
       </reference>
       <name value="Plausibilitaetskennzeichen"/>
       <description value="Dieses Datenfeld enthält eine Kennzeichnung als Ergebnis der vom Gesundheitsministerium vorgegebenen Plausibilitätsprüfung."/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/moped-ext-PremiumClass"/>
-      </reference>
-      <name value="PremiumClass"/>
-      <description value="KLAS – Allgemeine Gebührenklasse/Sonderklasse"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -847,6 +792,17 @@
       </reference>
       <name value="Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds"/>
       <description value="MOPED Extension für die Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-sonderklasse"/>
+      </reference>
+      <name value="Sonderklasse"/>
+      <description value="KLAS: Allgemeine Gebuehrenklasse bzw. Sonderklasse"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -975,7 +931,7 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-extensionDays"/>
+        <reference value="StructureDefinition/moped-ext-verlaengerungstage"/>
       </reference>
       <name value="Verlaengerungstage"/>
       <description value="Anzahl der Verlaengerungstage bei Verlängerung"/>
@@ -986,7 +942,18 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/moped-ext-NumberOfPreviouslyPaidDays"/>
+        <reference value="StructureDefinition/moped-ext-verpflegskostenBeitragsbefreiung"/>
+      </reference>
+      <name value="VerpflegskostenBeitragsbefreiung"/>
+      <description value="VKBEFR – Verpflegskosten-Beitragsbefreiung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-vortageanzahlAufKostenbeitrag"/>
       </reference>
       <name value="Vortageanzahl auf Kostenbeitrag"/>
       <description value="Zur Berechnung des Verpflegskostenbeitrags für Versicherte sowie des Kostenbeitrags für Angehörige ist die Angabe der zu berücksichtigenden Vortage erforderlich. Der Krankenversicherungsträger ist auf Grund der ihm zugänglichen Informationen in der Lage, Vorpflegetage zu berücksichtigen. Berücksichtigt werden alle stationären Aufenthalte eines Patienten innerhalb eines Kalenderjahres.&#xA;Der höchste Wert, mit welchem das Feld VTAGE befüllt werden kann, ist jener Wert, für welchen maximal ein Verpflegskostenbeitrag pro Kalenderjahr zu entrichten ist. Der Maximale Höchstwert beträgt somit 28 Tage."/>

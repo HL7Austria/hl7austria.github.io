@@ -10,7 +10,7 @@
   "name" : "MOPED",
   "title" : "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)",
   "status" : "draft",
-  "date" : "2025-02-10T11:27:45+00:00",
+  "date" : "2025-02-12T10:32:14+00:00",
   "publisher" : "Example Publisher",
   "contact" : [{
     "name" : "Example Publisher",
@@ -40,7 +40,7 @@
     }],
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r5",
-    "version" : "5.1.0"
+    "version" : "5.2.0"
   },
   {
     "id" : "hl7_at_fhir_core_r5",
@@ -71,7 +71,7 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/moped-ext-diagnosisRelatedNode"
+        "reference" : "StructureDefinition/moped-ext-diagnoseKnoten"
       },
       "name" : "Abrechnung - Knoten",
       "description" : "Lukriert die Patient:innen über eine reguläre Gruppe Punkte, so ist in diesem Datenfeld die entsprechende Knotenbezeichnung einzutragen.",
@@ -107,10 +107,34 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/moped-ext-Altersgruppe"
+        "reference" : "StructureDefinition/moped-ext-altersgruppe"
       },
       "name" : "Altersgruppe",
       "description" : "In Gruppen eingeteilt, wobei vollendete Lebensjahre ausschlaggebend sind.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/moped-altersgruppe-valueset"
+      },
+      "name" : "Altersgruppe des Patienten",
+      "description" : "ValueSet für die Altersgruppe des Patienten",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/moped-Anwesenheitsart-valueset"
+      },
+      "name" : "Anwesenheitsart",
+      "description" : "ValueSet für die Anwesenheitsart",
       "isExample" : false
     },
     {
@@ -224,30 +248,6 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/moped-ext-ClaimRef"
-      },
-      "name" : "Claim Referenz",
-      "description" : "Referenz vom Account auf den Claim.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/moped-ext-EndOfEligibility"
-      },
-      "name" : "EndOfEligibility",
-      "description" : "Fristende - Befristungen sind in folgenden Fällen vorgesehen:\n- Bei zeitlichen Beschränkungen aufgrund einer zu erwartenden, nachfolgenden medizini-\nschen Hauskrankenpflege\n- Bei Vorhersehbarkeit des Eintritts einer Asylierung\n- Bei unsicherer, versicherungsrechtlicher Entwicklung\nBei den ersten beiden Punkten wird von den Krankenversicherungsträgern das Fristende individuell gesetzt. Beim dritten Punkt wird im Regelfall eine generelle Tagesbeschränkung erfolgen, weil die Versichertenanspruchserklärung in die Zukunft gerichtet ist und der Krankenversicherungsträger seine Zuständigkeit von vornherein nur für einen bestimmten Zeitraum annehmen kann (Ausleis- tungssituation gem. § 122 ASVG).\nDurch die Angabe eines Fristendes wird signalisiert, dass bei einem über das Fristende hinaus dau- ernden Aufenthalt eine Verlängerungsanzeige vorzulegen ist.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
@@ -263,7 +263,7 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/moped-ext-ErrorWarning"
+        "reference" : "StructureDefinition/moped-ext-fehlerWarnung"
       },
       "name" : "Error/Warning",
       "description" : "MOPED Extension für akzeptierte Errors und Warnings",
@@ -418,22 +418,10 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/lkfPunkte"
+        "reference" : "StructureDefinition/moped-ext-LKFPunkte"
       },
       "name" : "LKF Punkte",
       "description" : "In dieser Extension werden alle möglichen Punkteangaben im LKF zusammengefasst.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/moped-ext-MealCostExcemption"
-      },
-      "name" : "MealCostExcemption",
-      "description" : "VKBEFR – Verpflegskosten-Beitragsbefreiung",
       "isExample" : false
     },
     {
@@ -506,18 +494,6 @@
       },
       "name" : "MOPED Encounter Bund",
       "description" : "MOPED Profil der Encounter Ressource für die Rolle: Bund",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/MopedEncounterKH"
-      },
-      "name" : "MOPED Encounter KH",
-      "description" : "MOPED Profil der Encounter Ressource für die Rolle: KH",
       "isExample" : false
     },
     {
@@ -667,6 +643,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MopedProcedure"
+      },
+      "name" : "MOPED Procedure",
+      "description" : "MOPED Profil der Procedure Ressource für die LDF-Abrechnung",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
@@ -778,18 +766,6 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MopedProcedure"
-      },
-      "name" : "MopedProcedure",
-      "description" : "MOPED Profil der Procedure Ressource für die LDF-Abrechnung",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition"
-      }],
-      "reference" : {
         "reference" : "StructureDefinition/MopedTransferEncounter"
       },
       "name" : "MopedTransferEncounter",
@@ -818,18 +794,6 @@
       },
       "name" : "MopedVAEResponse",
       "description" : "MOPED Profil für die Beantwortung der Versichertenanspruchserklärung VAE.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/moped-ext-Neugeborenes"
-      },
-      "name" : "Neugeborenes",
-      "description" : "Ein Patient wird als Neugeborenes bezeichnet, wenn das Alter zum Zugangszeitpunkt auf die Abteilung <28 Tage ist.",
       "isExample" : false
     },
     {
@@ -874,34 +838,10 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/moped-ext-physischeAnwesenheit"
-      },
-      "name" : "physische Anwesenheit",
-      "description" : "Ob der Patient physisch anwesend war.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition"
-      }],
-      "reference" : {
         "reference" : "StructureDefinition/Plausibilitaetskennzeichen"
       },
       "name" : "Plausibilitaetskennzeichen",
       "description" : "Dieses Datenfeld enthält eine Kennzeichnung als Ergebnis der vom Gesundheitsministerium vorgegebenen Plausibilitätsprüfung.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/moped-ext-PremiumClass"
-      },
-      "name" : "PremiumClass",
-      "description" : "KLAS – Allgemeine Gebührenklasse/Sonderklasse",
       "isExample" : false
     },
     {
@@ -926,6 +866,18 @@
       },
       "name" : "Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds",
       "description" : "MOPED Extension für die Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/moped-ext-sonderklasse"
+      },
+      "name" : "Sonderklasse",
+      "description" : "KLAS: Allgemeine Gebuehrenklasse bzw. Sonderklasse",
       "isExample" : false
     },
     {
@@ -1066,7 +1018,7 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/moped-ext-extensionDays"
+        "reference" : "StructureDefinition/moped-ext-verlaengerungstage"
       },
       "name" : "Verlaengerungstage",
       "description" : "Anzahl der Verlaengerungstage bei Verlängerung",
@@ -1078,7 +1030,19 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/moped-ext-NumberOfPreviouslyPaidDays"
+        "reference" : "StructureDefinition/moped-ext-verpflegskostenBeitragsbefreiung"
+      },
+      "name" : "VerpflegskostenBeitragsbefreiung",
+      "description" : "VKBEFR – Verpflegskosten-Beitragsbefreiung",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/moped-ext-vortageanzahlAufKostenbeitrag"
       },
       "name" : "Vortageanzahl auf Kostenbeitrag",
       "description" : "Zur Berechnung des Verpflegskostenbeitrags für Versicherte sowie des Kostenbeitrags für Angehörige ist die Angabe der zu berücksichtigenden Vortage erforderlich. Der Krankenversicherungsträger ist auf Grund der ihm zugänglichen Informationen in der Lage, Vorpflegetage zu berücksichtigen. Berücksichtigt werden alle stationären Aufenthalte eines Patienten innerhalb eines Kalenderjahres.\nDer höchste Wert, mit welchem das Feld VTAGE befüllt werden kann, ist jener Wert, für welchen maximal ein Verpflegskostenbeitrag pro Kalenderjahr zu entrichten ist. Der Maximale Höchstwert beträgt somit 28 Tage.",

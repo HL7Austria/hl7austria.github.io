@@ -13,6 +13,18 @@
       "StructureDefinition-moped-ext-AbrechnungsRelevanz.html" : "Medizinische Leistung - Abrechnungsrelevanz"
     },
     {
+      "url" : "http://example.org/ValueSet/moped-Anwesenheitsart-valueset",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "Anwesenheitsart",
+      "title" : "Anwesenheitsart",
+      "description" : "ValueSet für die Anwesenheitsart",
+      "systems" : ["http://tbd.at/MOPED-Anwesenheitsart"],
+      "uses" : {
+      },
+      "StructureDefinition-MopedTransferEncounter.html" : "MopedTransferEncounter"
+    },
+    {
       "url" : "http://example.org/ValueSet/moped-Fondsrelevanz-valueset",
       "version" : "0.1.0",
       "status" : "draft",
@@ -46,8 +58,8 @@
       "systems" : ["http://tbd.at/MOPED-LKFAbrechnungsGruppe"],
       "uses" : {
       },
-      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
-      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse",
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest"
     },
     {
       "url" : "http://example.org/ValueSet/moped-LKFAbrechnungsKnoten-valueset",
@@ -59,7 +71,7 @@
       "systems" : ["http://tbd.at/MOPED-LKFAbrechnungsKnoten"],
       "uses" : {
       },
-      "StructureDefinition-moped-ext-diagnosisRelatedNode.html" : "Abrechnung - Knoten"
+      "StructureDefinition-moped-ext-diagnoseKnoten.html" : "Abrechnung - Knoten"
     },
     {
       "url" : "http://example.org/ValueSet/moped-LKFHauptdiagnosegruppen-valueset",
@@ -83,7 +95,7 @@
       "systems" : ["http://tbd.at/MOPED-LKFmedizinischeEinzelleistungen"],
       "uses" : {
       },
-      "StructureDefinition-MopedProcedure.html" : "MopedProcedure"
+      "StructureDefinition-MopedProcedure.html" : "MOPED Procedure"
     },
     {
       "url" : "http://example.org/ValueSet/moped-Sonderklasse-valueset",
@@ -95,7 +107,7 @@
       "systems" : ["http://tbd.at/MOPED-Sonderklasse"],
       "uses" : {
       },
-      "StructureDefinition-moped-ext-PremiumClass.html" : "PremiumClass",
+      "StructureDefinition-moped-ext-sonderklasse.html" : "Sonderklasse",
       "OperationDefinition-MOPED.VAERequest.Anfragen.html" : "MOPED Versichertenanspruchserklärung $anfragen (POC)"
     },
     {
@@ -120,8 +132,8 @@
       "systems" : ["http://tbd.at/MOPED-account-VerdachtArbeitsSchuelerunfall"],
       "uses" : {
       },
-      "StructureDefinition-moped-ext-VerdachtArbeitsSchuelerunfall.html" : "Verdacht auf Arbeits- oder Schuelerunfall",
-      "OperationDefinition-MOPED.VAERequest.Anfragen.html" : "MOPED Versichertenanspruchserklärung $anfragen (POC)"
+      "OperationDefinition-MOPED.VAERequest.Anfragen.html" : "MOPED Versichertenanspruchserklärung $anfragen (POC)",
+      "StructureDefinition-moped-ext-VerdachtArbeitsSchuelerunfall.html" : "Verdacht auf Arbeits- oder Schuelerunfall"
     },
     {
       "url" : "http://example.org/ValueSet/moped-VerpflegskostenBeitragsbefreiung-valueset",
@@ -133,7 +145,7 @@
       "systems" : ["http://tbd.at/MOPED-Verpflegskosten-Beitragsbefreiung"],
       "uses" : {
       },
-      "StructureDefinition-moped-ext-MealCostExcemption.html" : "MealCostExcemption"
+      "StructureDefinition-moped-ext-verpflegskostenBeitragsbefreiung.html" : "VerpflegskostenBeitragsbefreiung"
     },
     {
       "url" : "http://example.org/ValueSet/moped-WorkflowStatus-valueset",
@@ -156,8 +168,20 @@
       "systems" : ["http://tbd.at/MOPED-encounter-abgangsart"],
       "uses" : {
       },
-      "OperationDefinition-MOPED.Patient.Verlegen.html" : "MOPED Patient $verlegen (POC)",
-      "StructureDefinition-MopedTransferEncounter.html" : "MopedTransferEncounter"
+      "StructureDefinition-MopedTransferEncounter.html" : "MopedTransferEncounter",
+      "OperationDefinition-MOPED.Patient.Verlegen.html" : "MOPED Patient $verlegen (POC)"
+    },
+    {
+      "url" : "http://example.org/ValueSet/moped-altersgruppe-valueset",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "Altersgruppe",
+      "title" : "Altersgruppe des Patienten",
+      "description" : "ValueSet für die Altersgruppe des Patienten",
+      "systems" : ["http://tbd.at/moped-ext-altersgruppe"],
+      "uses" : {
+      },
+      "StructureDefinition-moped-ext-altersgruppe.html" : "Altersgruppe"
     },
     {
       "url" : "http://example.org/ValueSet/moped-aufnahmeart-valueset",
@@ -310,6 +334,22 @@
       "uses" : {
       },
       "ValueSet-moped-related-person-relationship-type.html" : "MOPED RelatedPerson Relationship Type ValueSet"
+    },
+    {
+      "url" : "http://terminology.hl7.org/ValueSet/v2-0203",
+      "version" : "2.0.0",
+      "status" : "active",
+      "name" : "Hl7VSIdentifierType",
+      "title" : "hl7VS-identifierType",
+      "description" : "Concepts specifying types of identififiers, as used in person and organization identification datatypes in HL7 Version 2 standards.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v2-0203"],
+      "oids" : ["2.16.840.1.113883.21.120"],
+      "sources" : ["2.16.840.1.113883.21.120"],
+      "uses" : {
+      },
+      "StructureDefinition-MopedProcedure.html" : "MOPED Procedure",
+      "StructureDefinition-MopedCondition.html" : "MopedCondition",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter"
     }
   ]
 }
