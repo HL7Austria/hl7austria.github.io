@@ -266,8 +266,9 @@
 <p><strong>Validierung / Fehlerbehandlung</strong></p>
 
 <ul>
+  <li>Nur POC: Der Operation-Parameter 'freigeben' muss <code class="language-plaintext highlighter-rouge">true</code> sein (siehe Hinweis 5)</li>
   <li>Wenn der <em>freigeben</em>-Parameter auf <em>true</em> ist, muss eine Validierung aller Ressourcen im <em>falldaten</em>-Bundle erfolgreich sein, oder die Operation schlägt fehl.</li>
-  <li>Es kann nie mehrere MopedEnconuter-Instanzen mit der gleichen Aufnahmezahl geben</li>
+  <li>Es kann nie mehrere MopedEnconuter-Instanzen mit der gleichen Aufnahmezahl geben. Es muss vorab überprüft werden, ob bereits ein Encounter mit dieser Aufnahmezahl vorliegt und die Operation muss in dem Fall fehlschlagen (siehe Hinweis 5).</li>
   <li>Der Status <em>MopedEncounter.status</em> muss den Wert 'in-progress' haben</li>
   <li>Wenn im MopedAufnahmeBundle[Hauptversicherter] muss gleich sein wie MopedAufnahmeBundle[Coverage].policyHolder</li>
   <li>In MopedAccount.coverage darf nur eine Coverage gelistet sein, ansonsten wird (derzeit) ein Fehler geworfen. Dieser Zustand wäre vor allem möglich, wenn $aufnehmen mehrmals aufgerufen wird, mit unterschiedlichen Coverages. Siehe Hinweis 4.</li>
@@ -284,7 +285,8 @@
   </li>
   <li>Hinweis 2: Es ist nicht nötig, bei dieser Operation den GDA-Identifier als Kontext mitzugeben. Auf den GDA wird im <em>falldaten</em>-Bundle als conditional Reference mittels entsprechendem Identifier im MopedEncounter verwiesen. Somit wird auch vermieden, dass Duplikate einer GDA-Organization-Ressource am Server angelegt/verwendet werden.</li>
   <li>Hinweis 3: Im Parameter <em>falldaten</em> wird unter Anderem eine Coverage Ressource mitgegeben. Diese Ressource stammt in der Regel aus einer erfolgreichen VDAS-Abfrage. In Zukunft wird Moped auch andere Optionen unterstützen, wie die Verarbeitung von Daten von Selbstzahlern (wofür ein separates Coverage-Profil angelegt wird), oder die Verarbeitung von Fällen mit privater Krankenversicherung (auch hierfür wird ein separates Coverage-Profil angelegt). Im Ersten Schritt liegt der Fokus auf den Standard-Fall, der als Ausgangsbasis eine erfolgreich abgeschlossene VDAS-Abfrage voraussetzt.</li>
-  <li>Hinweis 4: Das Wecheln von Versicherungen, insbesondere durch inkonsistente Covearges bei mehrfachem Ausführen von $aufnehmen wird derzeit nicht unterstützt. Hierfür müssen erst die Prozesse für den Sonderfall des Versicherungswechselns definiert werden.</li>
+  <li>Hinweis 4: Das Wecheln von Versicherungen, insbesondere durch inkonsistente Coverages bei mehrfachem Ausführen von $aufnehmen wird derzeit nicht unterstützt. Hierfür müssen erst die Prozesse für den Sonderfall des Versicherungswechselns definiert werden.</li>
+  <li>Hinweis 5: In einer erweiterten Version wird es möglich sein, diese Operation mehrmals aufzurufen. Das wird konkret zumindest der Fall sein, wenn die Aufnahme 1x in Arbeit ist und 1x freigegeben wird. Im POC soll die Operation nur einmal ausgeführt werden können, direkt mit der Freigabe.</li>
 </ul>
 
 <p><strong>Annahmen an das BeS</strong></p>
@@ -338,7 +340,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Thu, Feb 13, 2025 15:47+0000">2025-02-13</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Thu, Feb 13, 2025 19:11+0000">2025-02-13</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
