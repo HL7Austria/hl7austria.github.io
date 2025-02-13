@@ -247,34 +247,30 @@
       <li><em>MopedTransferEncounter.Neugeborenes</em> wird lt. LKF-Regeln berechnet, anhand des <em>MopedEncounter.subject.birthdate</em> aus dem Encounter aus Schritt 1 (für Berechnugns-Details siehe Hinweis 1).</li>
       <li><em>MopedTransferEncounter.admission.extension[Altersgruppe].extension[beiZugang].value</em> wird lt. LKF-Regeln berechnet, anhand des <em>MopedEncounter.subject.birthdate</em> aus dem Encounter aus Schritt 1 (für Berechnugns-Details siehe Hinweis 2 und 3).</li>
       <li><em>MopedTransferEncounter.admission.extension[Altersgruppe].extension[Neugeborenes].value</em> wird lt. LKF-Regeln berechnet, anhand des <em>MopedEncounter.subject.birthdate</em> aus dem Encounter aus Schritt 1 (für Berechnugns-Details siehe Hinweis 1).</li>
+      <li><em>MopedTransferEncounter.subjectStatus</em> wird lt. Operation-Parameter <em>physischeAnwesenheit</em> befüllt.</li>
     </ul>
   </li>
-</ol>
-
-<ul>
-  <li><em>MopedTransferEncounter.subjectStatus</em> wird lt. Operation-Parameter <em>physischeAnwesenheit</em> befüllt.
-    <ol>
-      <li>Account AnzahlVerlegungen: Die Extension <em>Account.extension.AnzahlVerlegungen</em> im zur Aufnahmezahl gehöhrenden Account wird um 1 erhöht. Dies ist auch so, wenn es sich bei der Verlegung um einen Urlaub handeln sollte (siehe Hinweis 4).</li>
-      <li>Alter Transfer Encounter:</li>
-    </ol>
+  <li>Account AnzahlVerlegungen: Die Extension <em>Account.extension.AnzahlVerlegungen</em> im zur Aufnahmezahl gehöhrenden Account wird um 1 erhöht. Dies ist auch so, wenn es sich bei der Verlegung um einen Urlaub handeln sollte (siehe Hinweis 4).</li>
+  <li>Alter Transfer Encounter:
+    <ul>
+      <li>Dieser Schritt ist nur relevant, wenn es sich <em>nicht</em> um eine Neufaufnahme (lt. Operation-Parameter) handelt.</li>
+      <li>Suche des alten MopedTransferEncounter: Mit <em>MopedTransferEncounter.partOf</em> einer Referenz auf den MopedEncounter aus Schritt 1 und den Status <em>in-progress</em></li>
+      <li>Abschließen des alten MopedTransferEncounter: <em>MopedTransferEncounter.status</em> wird auf <em>completed</em> gesetzt</li>
+      <li>Endzeitpunkt des alten MopedTransferEncounter: <em>MopedTransferEncounter.actualPeriod.end</em> wird auf den <em>zeitpunkt</em> lt. Operation-Parameter gesetzt.</li>
+      <li>Abgangsart vom alten MopedTransferEncounter: <em>MopedTransferEncounter.admission.dischargeDisposition</em> wird auf <em>abgangsart</em> lt. Operation-Parameter gesetzt.</li>
+      <li>Altersgruppe bei Abgang vom alten MopedTransferEncounter: <em>MopedTransferEncounter.admission.extension[Altersgruppe].extension[beiAbgang].value</em> wird lt. LKF-Regeln berechnet, anhand des <em>MopedEncounter.subject.birthdate</em> aus dem Encounter aus Schritt 1 (für Berechnugns-Details siehe Hinweis 2 und 3).</li>
+    </ul>
   </li>
-  <li>Dieser Schritt ist nur relevant, wenn es sich <em>nicht</em> um eine Neufaufnahme (lt. Operation-Parameter) handelt.</li>
-  <li>Suche des alten MopedTransferEncounter: Mit <em>MopedTransferEncounter.partOf</em> einer Referenz auf den MopedEncounter aus Schritt 1 und den Status <em>in-progress</em></li>
-  <li>Abschließen des alten MopedTransferEncounter: <em>MopedTransferEncounter.status</em> wird auf <em>completed</em> gesetzt</li>
-  <li>Endzeitpunkt des alten MopedTransferEncounter: <em>MopedTransferEncounter.actualPeriod.end</em> wird auf den <em>zeitpunkt</em> lt. Operation-Parameter gesetzt.</li>
-  <li>Abgangsart vom alten MopedTransferEncounter: <em>MopedTransferEncounter.admission.dischargeDisposition</em> wird auf <em>abgangsart</em> lt. Operation-Parameter gesetzt.</li>
-  <li>Altersgruppe bei Abgang vom alten MopedTransferEncounter: <em>MopedTransferEncounter.admission.extension[Altersgruppe].extension[beiAbgang].value</em> wird lt. LKF-Regeln berechnet, anhand des <em>MopedEncounter.subject.birthdate</em> aus dem Encounter aus Schritt 1 (für Berechnugns-Details siehe Hinweis 2 und 3).
-    <ol>
-      <li><del>Account AnzahlBeurlaubungen:</del></li>
-    </ol>
-  </li>
-  <li><del>Dieser Schritt ist nur relevant, wenn es sich <em>nicht</em> um eine Neufaufnahme (lt. Operation-Parameter) handelt.</del></li>
-  <li><del>War alter MopedTransferEncounter aus Schritt 4.2 ein Urlaub (i.e. Funktionscode <code class="language-plaintext highlighter-rouge">10000000</code>)?</del>
+  <li><del>Account AnzahlBeurlaubungen:</del>
+    <ul>
+      <li><del>Dieser Schritt ist nur relevant, wenn es sich <em>nicht</em> um eine Neufaufnahme (lt. Operation-Parameter) handelt.</del></li>
+      <li><del>War alter MopedTransferEncounter aus Schritt 4.2 ein Urlaub (i.e. Funktionscode <code class="language-plaintext highlighter-rouge">10000000</code>)?</del></li>
+    </ul>
     <ul>
       <li><del>Wenn ja, dann wird der Counter <em>Account.extension.AnzahlBeurlaubungen</em> um 1 erhöht.</del></li>
     </ul>
   </li>
-</ul>
+</ol>
 
 <p><strong>Validierung / Fehlerbehandlung</strong></p>
 <ul>
@@ -363,7 +359,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Thu, Feb 13, 2025 19:15+0000">2025-02-13</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Thu, Feb 13, 2025 19:20+0000">2025-02-13</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
