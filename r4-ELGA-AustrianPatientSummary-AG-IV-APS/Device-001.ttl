@@ -2,6 +2,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # - resource -------------------------------------------------------------------
@@ -17,7 +18,7 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Device 001</b></p><a name=\"001\"> </a><a name=\"hc001\"> </a><a name=\"001-de-AT\"> </a><h3>DeviceNames</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Name</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>Best Health Device</td><td>Model name</td></tr></table><p><b>type</b>: <span title=\"Codes:{https://termgit.elga.gv.at/ValueSet/elga-medicaldevices 49062001}\">Device</span></p><h3>Versions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td></tr><tr><td style=\"display: none\">*</td><td>1</td></tr></table><p><b>patient</b>: <a href=\"Patient-002.html\">Maria Musterfrau</a></p></div>"^^rdf:XMLLiteral
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Device 001</b></p><a name=\"001\"> </a><a name=\"hc001\"> </a><a name=\"001-de-AT\"> </a><h3>DeviceNames</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Name</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>Best Health Device</td><td>Model name</td></tr></table><p><b>type</b>: <span title=\"Codes:{http://snomed.info/sct 49062001}\">Device</span></p><h3>Versions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td></tr><tr><td style=\"display: none\">*</td><td>1</td></tr></table><p><b>patient</b>: <a href=\"Patient-002.html\">Maria Musterfrau</a></p></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:deviceName ( [
      fhir:name [ fhir:v "Best Health Device" ] ;
@@ -25,7 +26,8 @@
   ] ) ; # 
   fhir:type [
      fhir:coding ( [
-       fhir:system [ fhir:v "https://termgit.elga.gv.at/ValueSet/elga-medicaldevices"^^xsd:anyURI ] ;
+       a sct:49062001 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "49062001" ] ;
        fhir:display [ fhir:v "Device" ]
      ] )
