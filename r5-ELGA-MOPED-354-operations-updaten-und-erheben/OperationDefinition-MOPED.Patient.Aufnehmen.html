@@ -270,7 +270,7 @@
   <li>Wenn der <em>freigeben</em>-Parameter auf <em>true</em> ist, muss eine Validierung aller Ressourcen im <em>falldaten</em>-Bundle erfolgreich sein, oder die Operation schlägt fehl.</li>
   <li>Es kann nie mehrere MopedEnconuter-Instanzen mit der gleichen Aufnahmezahl geben. Es muss vorab überprüft werden, ob bereits ein Encounter mit dieser Aufnahmezahl vorliegt und die Operation muss in dem Fall fehlschlagen (siehe Hinweis 5).</li>
   <li>Der Status <em>MopedEncounter.status</em> muss den Wert 'in-progress' haben</li>
-  <li>Wenn im MopedAufnahmeBundle[Hauptversicherter] muss gleich sein wie MopedAufnahmeBundle[Coverage].policyHolder</li>
+  <li>Der Hauptversicherte lt. MopedAufnahmeBundle[Hauptversicherter] muss gleich sein wie MopedAufnahmeBundle[Coverage].policyHolder</li>
   <li>In MopedAccount.coverage darf nur eine Coverage gelistet sein, ansonsten wird (derzeit) ein Fehler geworfen. Dieser Zustand wäre vor allem möglich, wenn $aufnehmen mehrmals aufgerufen wird, mit unterschiedlichen Coverages. Siehe Hinweis 4.</li>
 </ul>
 
@@ -279,7 +279,7 @@
 <ul>
   <li>Hinweis 1: Die Werte-Ausprägung des <em>freigeben</em> Parameters haben eine Auswirkung auf das Verhalten der Operation:
     <ul>
-      <li><em>false</em>: Die Patientenaufnahme ist noch nicht vollständig und wird lediglich zwischengespeichert. Hier findet keine Validierung der Encounter Ressource statt. Eine Account-Ressource wird erstellt, die den <em>WorkflowStatus</em> 'Aufnahme in Arbeit' hat und im Encounter referenziert.</li>
+      <li><del><em>false</em>: Die Patientenaufnahme ist noch nicht vollständig und wird lediglich zwischengespeichert. Hier findet keine Validierung der Encounter Ressource statt. Eine Account-Ressource wird erstellt, die den <em>WorkflowStatus</em> 'Aufnahme in Arbeit' hat und im Encounter referenziert.</del></li>
       <li><em>true</em>: Die Patientenaufnahme ist vollständig und es ist zu erwarten, dass alle nötigen Felder befüllt sind. Schlägt die Validierung der <em>falldaten</em> fehl, kann die Operation nicht erfolgreich durchgeführt werden. Ist die Validierung erfolgreich, wird eine im Encounter referenzierte Account-Ressource erstellt bzw. upgedatet, die den <em>WorkflowStatus</em> 'Aufnahme freigegeben' hat.</li>
     </ul>
   </li>
@@ -340,7 +340,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Thu, Feb 13, 2025 19:11+0000">2025-02-13</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Thu, Feb 13, 2025 19:15+0000">2025-02-13</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
