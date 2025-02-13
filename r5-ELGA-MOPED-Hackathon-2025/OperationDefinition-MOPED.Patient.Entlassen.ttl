@@ -6,26 +6,26 @@
 
 # - resource -------------------------------------------------------------------
 
-<http://example.org/OperationDefinition/MOPED.Patient.Entlassen> a fhir:OperationDefinition ;
+<https://elga.moped.at/OperationDefinition/MOPED.Patient.Entlassen> a fhir:OperationDefinition ;
   fhir:nodeRole fhir:treeRoot ;
   fhir:id [ fhir:v "MOPED.Patient.Entlassen"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
      fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition MOPED.Patient.Entlassen</b></p><a name=\"MOPED.Patient.Entlassen\"> </a><a name=\"hcMOPED.Patient.Entlassen\"> </a><a name=\"MOPED.Patient.Entlassen-en-US\"> </a><p>URL: [base]/Encounter/$entlassen</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>aufnahmezahl</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#Identifier\">Identifier</a></td><td/><td><div><p>Der <em>aufnahmezahl</em> Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall.</p>\n</div></td></tr><tr><td>IN</td><td>zeitpunkt</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#dateTime\">dateTime</a></td><td/><td><div><p>Der <em>zeitpunkt</em> Parameter definiert zu welchem Zeitpunkt die Beurlaubung startet.</p>\n</div></td></tr><tr><td>IN</td><td>entlassungsart</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#code\">code</a></td><td><a href=\"ValueSet-moped-entlassungsart-valueset.html\">Entlassungsart des Patienten</a> (Required)</td><td><div><p>Der <em>entlassungsart</em> Parameter definiert die Entlassungsart des Patienten.</p>\n</div></td></tr><tr><td>IN</td><td>tageOhneKostenbeitrag</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#unsignedInt\">unsignedInt</a></td><td/><td><div><p>Der <em>tageOhneKostenbeitrag</em> Parameter definiert zu für wie viele Tage kein Kostenbeitrag eingehoben wurde.</p>\n</div></td></tr><tr><td>IN</td><td>freigeben</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#boolean\">boolean</a></td><td/><td><div><p>Mit Hilfe des <em>freigeben</em> Parameters wird angegeben, ob es sich bei der Patienten-Entlassung um vollständige Daten handelt (<em>freigeben</em> = <em>true</em>) und somit eine Validierung erfolgen soll, oder ob lediglich unvollständige Daten zwischengespeichert werden (<em>freigeben</em> = <em>false</em>) - in diesem Fall wird ein Entlassungs-Aviso erstellt.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/resource.html\">Resource</a> (<a href=\"http://hl7.org/fhir/R5/operationoutcome.html\" title=\"http://hl7.org/fhir/StructureDefinition/OperationOutcome\">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>\n</div></td></tr></table><div><p>TBD: Abgangsart beim MopedTransferEncounter falls intensiv, muss befüllt werden; In dieser Operation werden noch keine Leitungen erfasst, hier muss eine Möglichkeit gegeben werden, dies nachzuholen - in einer separaten Transaction/Operation.; Der Status 'SV verarbeitet' stimmt zwar als Voraussetzung für den ersten Schritt. Kann das aber so weiterverfolgt werden, sobald Selbstzahler / private Versicherungen hinzukommen? Was passiert in einer schnellen Entlassung, wenn die SV sich noch nicht zurück gemeldet hat?</p>\n</div></div>"^^rdf:XMLLiteral
   ] ; # 
-  fhir:url [ fhir:v "http://example.org/OperationDefinition/MOPED.Patient.Entlassen"^^xsd:anyURI] ; # 
+  fhir:url [ fhir:v "https://elga.moped.at/OperationDefinition/MOPED.Patient.Entlassen"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "MOPED_Patient_Entlassen"] ; # 
   fhir:title [ fhir:v "MOPED Patient $entlassen (POC)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
   fhir:kind [ fhir:v "operation"] ; # 
-  fhir:date [ fhir:v "2025-02-13T12:31:02+00:00"^^xsd:dateTime] ; # 
-  fhir:publisher [ fhir:v "Example Publisher"] ; # 
+  fhir:date [ fhir:v "2025-02-13T14:17:28+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
   fhir:contact ( [
-     fhir:name [ fhir:v "Example Publisher" ] ;
+     fhir:name [ fhir:v "ELGA GmbH" ] ;
      fhir:telecom ( [
        fhir:system [ fhir:v "url" ] ;
-       fhir:value [ fhir:v "http://example.org/example-publisher" ]
+       fhir:value [ fhir:v "https://elga.gv.at" ]
      ] )
   ] ) ; # 
   fhir:description [ fhir:v "Die $entlassen Operation wird aufgerufen, wenn ein(e) Patient*in aus dem Krankenhaus entlassen wurde."] ; # 
@@ -61,8 +61,8 @@
      fhir:binding [
        fhir:strength [ fhir:v "required" ] ;
        fhir:valueSet [
-         fhir:v "http://example.org/ValueSet/moped-entlassungsart-valueset"^^xsd:anyURI ;
-         fhir:link <http://example.org/ValueSet/moped-entlassungsart-valueset>
+         fhir:v "https://elga.moped.at/ValueSet/moped-entlassungsart-valueset"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/ValueSet/moped-entlassungsart-valueset>
        ]
      ]
   ] [
