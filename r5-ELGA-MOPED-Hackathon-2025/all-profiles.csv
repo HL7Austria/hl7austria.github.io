@@ -9196,12 +9196,9 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "MopedVAERequest","Claim.accident.id","Claim.accident.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
 ",""
-"MopedVAERequest","Claim.accident.extension","Claim.accident.extension","","","",0,*,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
-","",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MopedVAERequest","Claim.accident.extension:VerdachtArbeitsSchuelerunfall","Claim.accident.extension","VerdachtArbeitsSchuelerunfall","","",0,1,"","","","Extension {[CanonicalType[http://example.org/StructureDefinition/moped-ext-VerdachtArbeitsSchuelerunfall]]} {[]}
-","Verdacht auf Arbeits- oder Schuelerunfall","MOPED Extension für den Verdacht auf einen Arbeits- oder Schuelerunfall.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"MopedVAERequest","Claim.accident.extension","Claim.accident.extension","","extensions
+user content","",0,*,"","","","Extension {[]} {[]}
+","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "MopedVAERequest","Claim.accident.modifierExtension","Claim.accident.modifierExtension","","extensions
 user contentmodifiers","",0,*,"","Y","Y","Extension {[]} {[]}
@@ -9213,7 +9210,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","When the incident occurred","Date of an accident event  related to the products and services contained in the claim.","The date of the accident has to precede the dates of the products and services but within a reasonable timeframe.","Required for audit purposes and adjudication.","","","","","","","",,,,,"",,,,"Claim.accident.date",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "MopedVAERequest","Claim.accident.type","Claim.accident.type","","","",0,1,"","","","CodeableConcept {[]} {[]}
-","The nature of the accident","The type or context of the accident event for the purposes of selection of potential insurance coverages and determination of coordination between insurers.","","Coverage may be dependant on the type of accident.","","","","","","","",,"extensible","Type of accident: work place, auto, etc.","http://terminology.hl7.org/ValueSet/v3-ActIncidentCode","",,,,"Claim.accident.type",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","The nature of the accident","The type or context of the accident event for the purposes of selection of potential insurance coverages and determination of coordination between insurers.","","Coverage may be dependant on the type of accident.","","","","","","","",,"required","","http://example.org/ValueSet/moped-VerdachtArbeitsSchuelerunfall-valueset","",,,,"Claim.accident.type",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "MopedVAERequest","Claim.accident.location[x]","Claim.accident.location[x]","","","",0,1,"","","","Address {[]} {[]}
 Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Location]]}","Where the event occurred","The physical location of the accident event.","","Required for audit purposes and determination of applicable insurance liability.","","","","","","","",,,,,"",,,,"Claim.accident.location[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -10749,22 +10746,6 @@ boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[
 "
 "moped-ext-TageOhneKostenbeitrag","Extension.value[x]:valueUnsignedInt","Extension.value[x]","valueUnsignedInt","","",0,1,"","","","unsignedInt {[]} {[]}
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-"
-"moped-ext-VerdachtArbeitsSchuelerunfall","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
-","Verdacht auf Arbeits- oder Schuelerunfall","MOPED Extension für den Verdacht auf einen Arbeits- oder Schuelerunfall.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"moped-ext-VerdachtArbeitsSchuelerunfall","Extension.id","Extension.id","","","",0,1,"","","","id {[]} {[]}
-","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
-",""
-"moped-ext-VerdachtArbeitsSchuelerunfall","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
-","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"moped-ext-VerdachtArbeitsSchuelerunfall","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
-","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/StructureDefinition/moped-ext-VerdachtArbeitsSchuelerunfall""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
-"moped-ext-VerdachtArbeitsSchuelerunfall","Extension.value[x]","Extension.value[x]","","","",0,1,"","","","Coding {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,"required","Code für die Art des Verdachts","http://example.org/ValueSet/moped-VerdachtArbeitsSchuelerunfall-valueset","",,,,"Extension.value[x]",0,1,"ext-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "moped-ext-altersgruppe","Extension","Extension","","","",0,*,"","","","null {[]} {[]}

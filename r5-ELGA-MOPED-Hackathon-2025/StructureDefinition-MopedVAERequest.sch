@@ -18,10 +18,4 @@
       <sch:assert test="count(f:provider) &gt;= 1">provider: minimum cardinality of 'provider' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
-  <sch:pattern>
-    <sch:title>f:Claim/f:accident</sch:title>
-    <sch:rule context="f:Claim/f:accident">
-      <sch:assert test="count(f:extension[@url = 'http://example.org/StructureDefinition/moped-ext-VerdachtArbeitsSchuelerunfall']) &lt;= 1">extension with URL = 'http://example.org/StructureDefinition/moped-ext-VerdachtArbeitsSchuelerunfall': maximum cardinality of 'extension' is 1</sch:assert>
-    </sch:rule>
-  </sch:pattern>
 </sch:schema>

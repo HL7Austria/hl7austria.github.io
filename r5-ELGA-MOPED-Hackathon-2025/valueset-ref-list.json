@@ -58,8 +58,8 @@
       "systems" : ["http://tbd.at/MOPED-LKFAbrechnungsGruppe"],
       "uses" : {
       },
-      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse",
-      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest"
+      "StructureDefinition-MopedLKFRequest.html" : "MopedLKFRequest",
+      "StructureDefinition-MopedLKFResponse.html" : "MopedLKFResponse"
     },
     {
       "url" : "http://example.org/ValueSet/moped-LKFAbrechnungsKnoten-valueset",
@@ -107,8 +107,8 @@
       "systems" : ["http://tbd.at/MOPED-Sonderklasse"],
       "uses" : {
       },
-      "StructureDefinition-moped-ext-sonderklasse.html" : "Sonderklasse",
-      "OperationDefinition-MOPED.VAERequest.Anfragen.html" : "MOPED Versichertenanspruchserklärung $anfragen (POC)"
+      "OperationDefinition-MOPED.VAERequest.Anfragen.html" : "MOPED Versichertenanspruchserklärung $anfragen (POC)",
+      "StructureDefinition-moped-ext-sonderklasse.html" : "Sonderklasse"
     },
     {
       "url" : "http://example.org/ValueSet/moped-VAEStatus-valueset",
@@ -129,11 +129,14 @@
       "name" : "VerdachtArbeitsSchuelerunfallVS",
       "title" : "Verdacht auf Arbeits- oder Schuelerunfall ValueSet",
       "description" : "ValueSet für den Verdacht auf einen Arbeits- oder Schuelerunfall",
-      "systems" : ["http://tbd.at/MOPED-account-VerdachtArbeitsSchuelerunfall"],
+      "systems" : [
+        "http://tbd.at/MOPED-account-VerdachtArbeitsSchuelerunfall",
+        "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+      ],
       "uses" : {
       },
       "OperationDefinition-MOPED.VAERequest.Anfragen.html" : "MOPED Versichertenanspruchserklärung $anfragen (POC)",
-      "StructureDefinition-moped-ext-VerdachtArbeitsSchuelerunfall.html" : "Verdacht auf Arbeits- oder Schuelerunfall"
+      "StructureDefinition-MopedVAERequest.html" : "MopedVAERequest"
     },
     {
       "url" : "http://example.org/ValueSet/moped-VerpflegskostenBeitragsbefreiung-valueset",
@@ -229,8 +232,8 @@
       "systems" : ["http://tbd.at/MOPED-encounter-entlassungsart"],
       "uses" : {
       },
-      "OperationDefinition-MOPED.Patient.Entlassen.html" : "MOPED Patient $entlassen (POC)",
-      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter"
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
+      "OperationDefinition-MOPED.Patient.Entlassen.html" : "MOPED Patient $entlassen (POC)"
     },
     {
       "url" : "http://example.org/ValueSet/moped-related-person-relationship-type",
@@ -347,9 +350,23 @@
       "sources" : ["2.16.840.1.113883.21.120"],
       "uses" : {
       },
-      "StructureDefinition-MopedProcedure.html" : "MOPED Procedure",
+      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter",
       "StructureDefinition-MopedCondition.html" : "MopedCondition",
-      "StructureDefinition-MopedEncounter.html" : "MOPED Encounter"
+      "StructureDefinition-MopedProcedure.html" : "MOPED Procedure"
+    },
+    {
+      "url" : "http://terminology.hl7.org/ValueSet/v3-ActIncidentCode",
+      "version" : "3.0.0",
+      "status" : "active",
+      "name" : "ActIncidentCode",
+      "title" : "ActIncidentCode",
+      "description" : "Set of codes indicating the type of incident or accident.",
+      "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActCode"],
+      "oids" : ["2.16.840.1.113883.1.11.16508"],
+      "sources" : ["2.16.840.1.113883.1.11.16508"],
+      "uses" : {
+      },
+      "ValueSet-moped-VerdachtArbeitsSchuelerunfall-valueset.html" : "Verdacht auf Arbeits- oder Schuelerunfall ValueSet"
     }
   ]
 }
