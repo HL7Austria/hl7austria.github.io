@@ -206,7 +206,7 @@
   "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.title">title</a>" : "MOPED VAERequest $beantworten (POC)",
   "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.status">status</a>" : "draft",
   "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.kind">kind</a>" : "operation",
-  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.date">date</a>" : "2025-02-13T19:26:41+00:00",
+  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.date">date</a>" : "2025-02-13T19:32:49+00:00",
   "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.publisher">publisher</a>" : "ELGA GmbH",
   "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.contact">contact</a>" : [
     {
@@ -220,7 +220,7 @@
     }
   ],
   "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.description">description</a>" : "Die $beantworten Operation wird aufgerufen, wenn eine Versichertenanspruchserklärung beantwortet wird.",
-  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.purpose">purpose</a>" : "\n**Wer ruft diese Operation in welchem Zusammenhang auf?**\n\nDie Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die $beantworten Operation wird aufgerufen, wenn der MopedVAERequest eines Krankenhauses beantwortet wird.\n\n**Voraussetzungen für den Aufruf**\n\n* Account-Status: `Aufnahme Freigegeben`\n\n**Detaillierte Business-Logik**\n\n1. Die MopedVAEResponse wird lt. Regeln (siehe unten) validiert und eingespielt\n2. Falls Schritt 1 erfolgreich war, wird die Ressource Account gesucht (MopedVAEResponse.request.encount[MopedEncounter].account; MopedVAEResponse lt. Operation-Parameter) und auf `SV verarbeitet` gesetzt\n\n**Validierung / Fehlerbehandlung**\n\n* MopedVAEResponse.patient muss gleich mit `MopedVAEResponse.request.patient`und mit `MopedVAEResponse.request.encounter[MopedEncounter].subject` und mit ` MopedVAEResponse.request.encounter[MopedEncounter].account.subject` sein\n* MopedVAEResponse.requestor muss gleich sein mit `MopedVAEResponse.request.provider` und mit `MopedVAEResponse.request.encounter.serviceProvider`\n\n**Weitere Hinweise**\n\n**Annahmen an das BeS**\n* Es wurde vorab geprüft, ob *MopedVAEResponse.insurance* auch der SV entspricht, der die Operation aufruft. Somit ist sichergestellt, dass jede SV nur eigene MopedVAERequests beantworten kann.\n",
+  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.purpose">purpose</a>" : "\n**Wer ruft diese Operation in welchem Zusammenhang auf?**\n\nDie Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die $beantworten Operation wird aufgerufen, wenn der MopedVAERequest eines Krankenhauses beantwortet wird.\n\n**Voraussetzungen für den Aufruf**\n\n* Account-Status: `Aufnahme Freigegeben`\n\n**Detaillierte Business-Logik**\n\n1. Die MopedVAEResponse wird lt. Regeln (siehe unten) validiert und eingespielt\n2. Falls Schritt 1 erfolgreich war, wird die Ressource Account gesucht (`MopedVAEResponse.request.encounter[MopedEncounter].account`; MopedVAEResponse lt. Operation-Parameter) und auf `SV verarbeitet` gesetzt\n\n**Validierung / Fehlerbehandlung**\n\n* MopedVAEResponse.patient muss gleich mit `MopedVAEResponse.request.patient`und mit `MopedVAEResponse.request.encounter[MopedEncounter].subject` und mit `MopedVAEResponse.request.encounter[MopedEncounter].account.subject` sein\n* MopedVAEResponse.requestor muss gleich sein mit `MopedVAEResponse.request.provider` und mit `MopedVAEResponse.request.encounter.serviceProvider`\n\n**Weitere Hinweise**\n\n**Annahmen an das BeS**\n* Es wurde vorab geprüft, ob *MopedVAEResponse.insurance* auch der SV entspricht, der die Operation aufruft. Somit ist sichergestellt, dass jede SV nur eigene MopedVAERequests beantworten kann.\n",
   "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.affectsState">affectsState</a>" : true,
   "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.code">code</a>" : "beantworten",
   "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.resource">resource</a>" : [
@@ -274,7 +274,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Thu, Feb 13, 2025 19:27+0000">2025-02-13</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Thu, Feb 13, 2025 19:33+0000">2025-02-13</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
