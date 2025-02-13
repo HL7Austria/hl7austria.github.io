@@ -10,7 +10,7 @@
   "name" : "MOPED",
   "title" : "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)",
   "status" : "draft",
-  "date" : "2025-02-11T16:50:04+00:00",
+  "date" : "2025-02-13T14:21:37+00:00",
   "publisher" : "ELGA",
   "contact" : [{
     "name" : "ELGA",
@@ -40,7 +40,7 @@
     }],
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r5",
-    "version" : "5.1.0"
+    "version" : "5.2.0"
   },
   {
     "id" : "hl7_at_fhir_core_r5",
@@ -205,7 +205,7 @@
       "reference" : {
         "reference" : "ValueSet/moped-aufnahmeart2-valueset"
       },
-      "name" : "Aufnahmeart des Patienten",
+      "name" : "Aufnahmeart2 des Patienten",
       "description" : "ValueSet für die Aufnahmeart des Patienten",
       "isExample" : false
     },
@@ -524,7 +524,7 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MOPEDAccount"
+        "reference" : "StructureDefinition/MopedAccount"
       },
       "name" : "MOPED Account",
       "description" : "MOPED Profil der Account Ressource für die administrative Fallführung und Abrechnung.",
@@ -536,7 +536,7 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MOPEDAufnahmeBundle"
+        "reference" : "StructureDefinition/MopedAufnahmeBundle"
       },
       "name" : "MOPED Aufnahme Bundle",
       "description" : "Bundle für die Input-Ressourcen bei Patienten-Aufnahme\n\n* Hinweis 1: Anstelle einer separaten GDA-Organization-Ressource ist angedacht, hier mit einer conditional Reference in der Ressource Encounter mit entsprechendem GDA-identifier zu arbeiten. Somit wird auch vermieden, dass Duplikate einer GDA-Organization-Ressource am Server angelegt/verwendet werden.\n* Hinweis 2: Es wird davon ausgegangen, dass der Patient bereits vor der Bundle-Erstellung mit dem ZPI abgeglichen wurde.\n* Hinweis 3: Es wird davon ausgegangen, dass vor der Bundle-Erstellung eine VDAS-Abfrage gestellt wurde. Die Coverage-Ressourcen in diesem Transaction-Bundle speichern die Ansprüche aufgrund der VDAS-Abfrage in Moped ein.\n* Hinweis 4: In Zukunft wird Moped auch die Datenübermittlung von Selbstzahlern und Privatversicherten unterstützen. Für diese Ansprüche werden separate Coverage-Profile definiert werden und dieses Bundle wird in weiterer Folge unterschiedliche Coverage-Arten unterstützen.\n* Hinweis 5: Eine vorangegangene VDAS-Anfrage an die SVC kann mehrere Coverages retournieren. In diesem Fall wählt der Patient/die Patientin direkt bei aufnahme *eine* Versicherung aus, welche im Zuge der Aufnahme gespeichert wird. Das ist der Grund für die Kardinalität 1..1 der Coverage in diesem Bundle.",
@@ -548,7 +548,7 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MOPEDClaim"
+        "reference" : "StructureDefinition/MopedLKFRequest"
       },
       "name" : "MOPED Claim",
       "description" : "MOPED Profil der Claim Ressource für die Leistungsabrechnungsanfrage.",
@@ -560,7 +560,7 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MOPEDClaimResponse"
+        "reference" : "StructureDefinition/MopedLKFResponse"
       },
       "name" : "MOPED Claim Response",
       "description" : "MOPED Profil der ClaimResponse Ressource für die Leistungsabrechnungsantwort.",
@@ -596,7 +596,7 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MOPEDCondition"
+        "reference" : "StructureDefinition/MopedCondition"
       },
       "name" : "MOPED Condition",
       "description" : "MOPED Profil der Condition Ressource für die LDF-Abrechnung",
@@ -608,7 +608,7 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MOPEDCoverage"
+        "reference" : "StructureDefinition/MopedCoverage"
       },
       "name" : "MOPED Coverage",
       "description" : "MOPED Profil der Coverage Ressource für Versicherungen.",
@@ -620,7 +620,7 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MOPEDCoverageEligibilityRequest"
+        "reference" : "StructureDefinition/MopedCoverageEligibilityRequest"
       },
       "name" : "MOPED Coverage Eligibility Request",
       "description" : "MOPED Profil der CoverageEligibilityRequest Ressource für die Versichertenanspruchserklärung-Anfrage.",
@@ -632,7 +632,7 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MOPEDCoverageEligibilityResponse"
+        "reference" : "StructureDefinition/MopedCoverageEligibilityResponse"
       },
       "name" : "MOPED Coverage Eligibility Response",
       "description" : "MOPED Profil der CoverageEligibilityResponse Ressource für die Versichertenanspruchserklärung-Antwort.",
@@ -656,7 +656,7 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MOPEDEncounter"
+        "reference" : "StructureDefinition/MopedEncounter"
       },
       "name" : "MOPED Encounter",
       "description" : "MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme und Entlassung",
@@ -680,7 +680,7 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MOPEDEncounterBund"
+        "reference" : "StructureDefinition/MopedEncounterBund"
       },
       "name" : "MOPED Encounter Bund",
       "description" : "MOPED Profil der Encounter Ressource für die Rolle: Bund",
@@ -692,7 +692,7 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MOPEDEncounterKH"
+        "reference" : "StructureDefinition/MopedEncounterKH"
       },
       "name" : "MOPED Encounter KH",
       "description" : "MOPED Profil der Encounter Ressource für die Rolle: KH",
@@ -716,7 +716,7 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MOPEDEncounterLGF"
+        "reference" : "StructureDefinition/MopedEncounterLGF"
       },
       "name" : "MOPED Encounter LGF",
       "description" : "MOPED Profil der Encounter Ressource für die Rolle: LGF",
@@ -728,7 +728,7 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MOPEDEncounterSV"
+        "reference" : "StructureDefinition/MopedEncounterSV"
       },
       "name" : "MOPED Encounter SV",
       "description" : "MOPED Profil der Encounter Ressource für die Rolle: SV",
@@ -752,7 +752,7 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MOPEDOrganizationAbteilung"
+        "reference" : "StructureDefinition/MopedOrganizationAbteilung"
       },
       "name" : "MOPED Organization Abteilung",
       "description" : "MOPED Profil für Abteilungen innerhalb einer Krankenanstalt.",
@@ -812,7 +812,7 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MOPEDPatientBund"
+        "reference" : "StructureDefinition/MopedPatientBund"
       },
       "name" : "MOPED Patient Bund",
       "description" : "MOPED Profil der Patient Ressource aus der Sicht der Rolle: Bund",
@@ -824,7 +824,7 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MOPEDPatientLGF"
+        "reference" : "StructureDefinition/MopedPatientLGF"
       },
       "name" : "MOPED Patient LGF",
       "description" : "MOPED Profil der Patient Ressource aus der Sicht der Rolle: LGF",
@@ -836,7 +836,7 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MOPEDPatientSV"
+        "reference" : "StructureDefinition/MopedPatientSV"
       },
       "name" : "MOPED Patient SV",
       "description" : "MOPED Profil der Patient Ressource aus der Sicht der Rolle: SV",
@@ -848,7 +848,7 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MOPEDProcedure"
+        "reference" : "StructureDefinition/MopedProcedure"
       },
       "name" : "MOPED Procedure",
       "description" : "MOPED Profil der Procedure Ressource für die LDF-Abrechnung",
@@ -872,7 +872,7 @@
         "valueString" : "StructureDefinition"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MOPEDTransferEncounter"
+        "reference" : "StructureDefinition/MopedTransferEncounter"
       },
       "name" : "MOPED Transfer Encounter",
       "description" : "MOPED Profil der Encounter Ressource für die Verlegung innerhalb oder zwischen Krankenanstalten",
@@ -1079,7 +1079,7 @@
       },
       "name" : "Test1Account",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDAccount"]
+      "profile" : ["http://example.org/StructureDefinition/MopedAccount"]
     },
     {
       "extension" : [{
@@ -1091,7 +1091,7 @@
       },
       "name" : "Test1Condition1",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDCondition"]
+      "profile" : ["http://example.org/StructureDefinition/MopedCondition"]
     },
     {
       "extension" : [{
@@ -1099,11 +1099,11 @@
         "valueString" : "Coverage"
       }],
       "reference" : {
-        "reference" : "Coverage/Test1MOPEDCoverage"
+        "reference" : "Coverage/Test1MopedCoverage"
       },
-      "name" : "Test1MOPEDCoverage",
+      "name" : "Test1MopedCoverage",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDCoverage"]
+      "profile" : ["http://example.org/StructureDefinition/MopedCoverage"]
     },
     {
       "extension" : [{
@@ -1111,11 +1111,11 @@
         "valueString" : "CoverageEligibilityRequest"
       }],
       "reference" : {
-        "reference" : "CoverageEligibilityRequest/Test1MOPEDCoverageEligibilityRequest1"
+        "reference" : "CoverageEligibilityRequest/Test1MopedCoverageEligibilityRequest1"
       },
-      "name" : "Test1MOPEDCoverageEligibilityRequest1",
+      "name" : "Test1MopedCoverageEligibilityRequest1",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDCoverageEligibilityRequest"]
+      "profile" : ["http://example.org/StructureDefinition/MopedCoverageEligibilityRequest"]
     },
     {
       "extension" : [{
@@ -1123,11 +1123,11 @@
         "valueString" : "CoverageEligibilityResponse"
       }],
       "reference" : {
-        "reference" : "CoverageEligibilityResponse/Test1MOPEDCoverageEligibilityResponse1"
+        "reference" : "CoverageEligibilityResponse/Test1MopedCoverageEligibilityResponse1"
       },
-      "name" : "Test1MOPEDCoverageEligibilityResponse1",
+      "name" : "Test1MopedCoverageEligibilityResponse1",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDCoverageEligibilityResponse"]
+      "profile" : ["http://example.org/StructureDefinition/MopedCoverageEligibilityResponse"]
     },
     {
       "extension" : [{
@@ -1135,11 +1135,11 @@
         "valueString" : "Encounter"
       }],
       "reference" : {
-        "reference" : "Encounter/Test1MOPEDEncounter"
+        "reference" : "Encounter/Test1MopedEncounter"
       },
-      "name" : "Test1MOPEDEncounter",
+      "name" : "Test1MopedEncounter",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDEncounter"]
+      "profile" : ["http://example.org/StructureDefinition/MopedEncounter"]
     },
     {
       "extension" : [{
@@ -1147,11 +1147,11 @@
         "valueString" : "Encounter"
       }],
       "reference" : {
-        "reference" : "Encounter/Test1MOPEDEncounterBasis"
+        "reference" : "Encounter/Test1MopedEncounterBasis"
       },
-      "name" : "Test1MOPEDEncounterBasis",
+      "name" : "Test1MopedEncounterBasis",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDEncounter"]
+      "profile" : ["http://example.org/StructureDefinition/MopedEncounter"]
     },
     {
       "extension" : [{
@@ -1159,11 +1159,11 @@
         "valueString" : "Encounter"
       }],
       "reference" : {
-        "reference" : "Encounter/Test1MOPEDEncounterBund"
+        "reference" : "Encounter/Test1MopedEncounterBund"
       },
-      "name" : "Test1MOPEDEncounterBund",
+      "name" : "Test1MopedEncounterBund",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDEncounterBund"]
+      "profile" : ["http://example.org/StructureDefinition/MopedEncounterBund"]
     },
     {
       "extension" : [{
@@ -1171,11 +1171,11 @@
         "valueString" : "Encounter"
       }],
       "reference" : {
-        "reference" : "Encounter/Test1MOPEDEncounterLGF"
+        "reference" : "Encounter/Test1MopedEncounterLGF"
       },
-      "name" : "Test1MOPEDEncounterLGF",
+      "name" : "Test1MopedEncounterLGF",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDEncounterLGF"]
+      "profile" : ["http://example.org/StructureDefinition/MopedEncounterLGF"]
     },
     {
       "extension" : [{
@@ -1183,11 +1183,11 @@
         "valueString" : "Encounter"
       }],
       "reference" : {
-        "reference" : "Encounter/Test1MOPEDEncounterSV"
+        "reference" : "Encounter/Test1MopedEncounterSV"
       },
-      "name" : "Test1MOPEDEncounterSV",
+      "name" : "Test1MopedEncounterSV",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDEncounterSV"]
+      "profile" : ["http://example.org/StructureDefinition/MopedEncounterSV"]
     },
     {
       "extension" : [{
@@ -1199,7 +1199,7 @@
       },
       "name" : "Test1OrganizationAbteilung1",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"]
+      "profile" : ["http://example.org/StructureDefinition/MopedOrganizationAbteilung"]
     },
     {
       "extension" : [{
@@ -1256,7 +1256,7 @@
       },
       "name" : "Test1PatientBund",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDPatientBund"]
+      "profile" : ["http://example.org/StructureDefinition/MopedPatientBund"]
     },
     {
       "extension" : [{
@@ -1268,7 +1268,7 @@
       },
       "name" : "Test1PatientLGF",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDPatientLGF"]
+      "profile" : ["http://example.org/StructureDefinition/MopedPatientLGF"]
     },
     {
       "extension" : [{
@@ -1291,7 +1291,7 @@
       },
       "name" : "Test1PatientSV",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDPatientSV"]
+      "profile" : ["http://example.org/StructureDefinition/MopedPatientSV"]
     },
     {
       "extension" : [{
@@ -1303,7 +1303,7 @@
       },
       "name" : "Test1TransferEncounter1",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDTransferEncounter"]
+      "profile" : ["http://example.org/StructureDefinition/MopedTransferEncounter"]
     },
     {
       "extension" : [{
@@ -1315,7 +1315,7 @@
       },
       "name" : "Test2Account",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDAccount"]
+      "profile" : ["http://example.org/StructureDefinition/MopedAccount"]
     },
     {
       "extension" : [{
@@ -1327,7 +1327,7 @@
       },
       "name" : "Test2Condition1",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDCondition"]
+      "profile" : ["http://example.org/StructureDefinition/MopedCondition"]
     },
     {
       "extension" : [{
@@ -1339,7 +1339,7 @@
       },
       "name" : "Test2Condition2",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDCondition"]
+      "profile" : ["http://example.org/StructureDefinition/MopedCondition"]
     },
     {
       "extension" : [{
@@ -1347,11 +1347,11 @@
         "valueString" : "Coverage"
       }],
       "reference" : {
-        "reference" : "Coverage/Test2MOPEDCoverage"
+        "reference" : "Coverage/Test2MopedCoverage"
       },
-      "name" : "Test2MOPEDCoverage",
+      "name" : "Test2MopedCoverage",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDCoverage"]
+      "profile" : ["http://example.org/StructureDefinition/MopedCoverage"]
     },
     {
       "extension" : [{
@@ -1359,11 +1359,11 @@
         "valueString" : "CoverageEligibilityRequest"
       }],
       "reference" : {
-        "reference" : "CoverageEligibilityRequest/Test2MOPEDCoverageEligibilityRequest1"
+        "reference" : "CoverageEligibilityRequest/Test2MopedCoverageEligibilityRequest1"
       },
-      "name" : "Test2MOPEDCoverageEligibilityRequest1",
+      "name" : "Test2MopedCoverageEligibilityRequest1",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDCoverageEligibilityRequest"]
+      "profile" : ["http://example.org/StructureDefinition/MopedCoverageEligibilityRequest"]
     },
     {
       "extension" : [{
@@ -1371,11 +1371,11 @@
         "valueString" : "CoverageEligibilityResponse"
       }],
       "reference" : {
-        "reference" : "CoverageEligibilityResponse/Test2MOPEDCoverageEligibilityResponse1"
+        "reference" : "CoverageEligibilityResponse/Test2MopedCoverageEligibilityResponse1"
       },
-      "name" : "Test2MOPEDCoverageEligibilityResponse1",
+      "name" : "Test2MopedCoverageEligibilityResponse1",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDCoverageEligibilityResponse"]
+      "profile" : ["http://example.org/StructureDefinition/MopedCoverageEligibilityResponse"]
     },
     {
       "extension" : [{
@@ -1383,11 +1383,11 @@
         "valueString" : "Encounter"
       }],
       "reference" : {
-        "reference" : "Encounter/Test2MOPEDEncounter1"
+        "reference" : "Encounter/Test2MopedEncounter1"
       },
-      "name" : "Test2MOPEDEncounter1",
+      "name" : "Test2MopedEncounter1",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDEncounter"]
+      "profile" : ["http://example.org/StructureDefinition/MopedEncounter"]
     },
     {
       "extension" : [{
@@ -1399,7 +1399,7 @@
       },
       "name" : "Test2OrganizationAbteilung1",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"]
+      "profile" : ["http://example.org/StructureDefinition/MopedOrganizationAbteilung"]
     },
     {
       "extension" : [{
@@ -1411,7 +1411,7 @@
       },
       "name" : "Test2OrganizationAbteilung2",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"]
+      "profile" : ["http://example.org/StructureDefinition/MopedOrganizationAbteilung"]
     },
     {
       "extension" : [{
@@ -1423,7 +1423,7 @@
       },
       "name" : "Test2OrganizationAbteilung3",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"]
+      "profile" : ["http://example.org/StructureDefinition/MopedOrganizationAbteilung"]
     },
     {
       "extension" : [{
@@ -1435,7 +1435,7 @@
       },
       "name" : "Test2OrganizationAbteilung4",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"]
+      "profile" : ["http://example.org/StructureDefinition/MopedOrganizationAbteilung"]
     },
     {
       "extension" : [{
@@ -1480,7 +1480,7 @@
       },
       "name" : "Test2Procedure1",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDProcedure"]
+      "profile" : ["http://example.org/StructureDefinition/MopedProcedure"]
     },
     {
       "extension" : [{
@@ -1503,7 +1503,7 @@
       },
       "name" : "Test2TransferEncounter1",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDTransferEncounter"]
+      "profile" : ["http://example.org/StructureDefinition/MopedTransferEncounter"]
     },
     {
       "extension" : [{
@@ -1515,7 +1515,7 @@
       },
       "name" : "Test2TransferEncounter2",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDTransferEncounter"]
+      "profile" : ["http://example.org/StructureDefinition/MopedTransferEncounter"]
     },
     {
       "extension" : [{
@@ -1527,7 +1527,7 @@
       },
       "name" : "Test2TransferEncounter3",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDTransferEncounter"]
+      "profile" : ["http://example.org/StructureDefinition/MopedTransferEncounter"]
     },
     {
       "extension" : [{
@@ -1539,7 +1539,7 @@
       },
       "name" : "Test2TransferEncounter4",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDTransferEncounter"]
+      "profile" : ["http://example.org/StructureDefinition/MopedTransferEncounter"]
     },
     {
       "extension" : [{
@@ -1551,7 +1551,7 @@
       },
       "name" : "Test2TransferEncounter5",
       "isExample" : true,
-      "profile" : ["http://example.org/StructureDefinition/MOPEDTransferEncounter"]
+      "profile" : ["http://example.org/StructureDefinition/MopedTransferEncounter"]
     },
     {
       "extension" : [{

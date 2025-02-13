@@ -199,7 +199,7 @@
         
           Draft
           
-            as of 2025-02-11
+            as of 2025-02-13
           
         
       </td>
@@ -244,38 +244,38 @@
 <p><strong>Detaillierte Business-Logik</strong></p>
 
 <ol>
-  <li>Suche des MOPEDEncounter: Der MOPEDEncounter mit der jeweiligen <em>aufnahmezahl</em> lt. Operation-Parameter wird gesucht</li>
-  <li>Suchen des MOPEDAccounts: Die Referenz des <em>MOPEDEncounter.account</em> aus Schritt 1.</li>
-  <li>Erstellung des MOPEDCoverageEligibilityRequest:
+  <li>Suche des MopedEncounter: Der MopedEncounter mit der jeweiligen <em>aufnahmezahl</em> lt. Operation-Parameter wird gesucht</li>
+  <li>Suchen des MopedAccounts: Die Referenz des <em>MopedEncounter.account</em> aus Schritt 1.</li>
+  <li>Erstellung des MopedCoverageEligibilityRequest:
     <ul>
-      <li>a. <em>MOPEDCoverageEligibilityRequest.status</em> mit 'active' befüllen</li>
-      <li>b. <em>MOPEDCoverageEligibilityRequest.purpose</em> mit 'validation' befüllen</li>
-      <li>c. <em>MOPEDCoverageEligibilityRequest.created</em> mit dem aktuellem Zeitpunkt befüllen</li>
-      <li>d. <em>MOPEDCoverageEligibilityRequest.verlaengerungstage</em> mit <em>verlaengerungstage</em> lt. Operation-Parameter befüllen</li>
-      <li>e. <em>MOPEDCoverageEligibilityRequest.sonderklasse</em> mit <em>sonderklasse</em> lt. Operation-Parameter befüllen</li>
-      <li>f. <em>MOPEDCoverageEligibilityRequest.patient</em> mit <em>MOPEDAccount.subject</em> befüllen</li>
-      <li>g. <em>MOPEDCoverageEligibilityRequest.insurance.coverage</em> mit <em>MOPEDAccount.coverage.coverage</em> befüllen</li>
-      <li>h. <em>MOPEDCoverageEligibilityRequest.provider</em> mit <em>MOPEDAccount.owner</em> befüllen</li>
-      <li>i. <em>MOPEDCoverageEligibilityRequest.insurer</em> mit einer Referenz auf jene Organization befüllen, deren <em>Organization.identifier</em> dem Identifier <em>versicherer</em> lt. Operation-Parameter entspricht</li>
+      <li>a. <em>MopedCoverageEligibilityRequest.status</em> mit 'active' befüllen</li>
+      <li>b. <em>MopedCoverageEligibilityRequest.purpose</em> mit 'validation' befüllen</li>
+      <li>c. <em>MopedCoverageEligibilityRequest.created</em> mit dem aktuellem Zeitpunkt befüllen</li>
+      <li>d. <em>MopedCoverageEligibilityRequest.verlaengerungstage</em> mit <em>verlaengerungstage</em> lt. Operation-Parameter befüllen</li>
+      <li>e. <em>MopedCoverageEligibilityRequest.sonderklasse</em> mit <em>sonderklasse</em> lt. Operation-Parameter befüllen</li>
+      <li>f. <em>MopedCoverageEligibilityRequest.patient</em> mit <em>MopedAccount.subject</em> befüllen</li>
+      <li>g. <em>MopedCoverageEligibilityRequest.insurance.coverage</em> mit <em>MopedAccount.coverage.coverage</em> befüllen</li>
+      <li>h. <em>MopedCoverageEligibilityRequest.provider</em> mit <em>MopedAccount.owner</em> befüllen</li>
+      <li>i. <em>MopedCoverageEligibilityRequest.insurer</em> mit einer Referenz auf jene Organization befüllen, deren <em>Organization.identifier</em> dem Identifier <em>versicherer</em> lt. Operation-Parameter entspricht</li>
     </ul>
   </li>
   <li>POSTen des neu erstellten CoverageEligibilityRequest</li>
-  <li>Referenz im MOPEDAccount:
-  a. <em>MOPEDAccount.coverageEligibilityRequest</em> mit Hilfe der resultierenden ID aus Schritt 6 referenzieren</li>
+  <li>Referenz im MopedAccount:
+  a. <em>MopedAccount.coverageEligibilityRequest</em> mit Hilfe der resultierenden ID aus Schritt 6 referenzieren</li>
 </ol>
 
 <p><strong>Validierung / Fehlerbehandlung</strong></p>
 <ul>
-  <li><em>MOPEDAccount.coverage</em> darf nur eine Versicherung gelistet haben</li>
+  <li><em>MopedAccount.coverage</em> darf nur eine Versicherung gelistet haben</li>
   <li><em>CoverageEligibilityRequest.subject</em> muss mit <em>Coverage.beneficiary</em> aus Schritt 3g übereinstimmen</li>
-  <li><em>MOPEDCoverageEligibilityRequest.insurer</em> muss mit <em>Coverage.insurer</em> aus Schritt 3g übereinstimmen</li>
-  <li><em>MOPEDCoverageEligibilityRequest.provider</em> muss gleichzeitig die gleiche Organisation sein, die lt. Token die Operation aufgerufen hat.</li>
+  <li><em>MopedCoverageEligibilityRequest.insurer</em> muss mit <em>Coverage.insurer</em> aus Schritt 3g übereinstimmen</li>
+  <li><em>MopedCoverageEligibilityRequest.provider</em> muss gleichzeitig die gleiche Organisation sein, die lt. Token die Operation aufgerufen hat.</li>
 </ul>
 
 <p><strong>Weitere Hinweise</strong></p>
 
 <ul>
-  <li>Hinweis 1: Nach dieser Operation findet lt. Soll-Prozess kein Update des Status <em>MOPEDAccount.workflowStatus</em> statt.</li>
+  <li>Hinweis 1: Nach dieser Operation findet lt. Soll-Prozess kein Update des Status <em>MopedAccount.workflowStatus</em> statt.</li>
 </ul>
 
 <p><strong>Annahmen an das BeS</strong></p>
@@ -328,7 +328,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Feb 11, 2025 16:50+0000">2025-02-11</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Thu, Feb 13, 2025 14:22+0000">2025-02-13</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

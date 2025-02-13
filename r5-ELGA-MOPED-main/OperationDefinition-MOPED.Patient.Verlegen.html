@@ -199,7 +199,7 @@
         
           Draft
           
-            as of 2025-02-11
+            as of 2025-02-13
           
         
       </td>
@@ -242,32 +242,32 @@
 <p><strong>Detaillierte Business-Logik</strong></p>
 
 <ol>
-  <li>Suche des MOPEDEncounter: Der MOPEDEncounter mit der jeweiligen <em>aufnahmezahl</em> lt. Operation-Parameter wird gesucht</li>
+  <li>Suche des MopedEncounter: Der MopedEncounter mit der jeweiligen <em>aufnahmezahl</em> lt. Operation-Parameter wird gesucht</li>
   <li>Neuer Transfer Encounter:
     <ul>
-      <li>Ein neuer MOPEDTransferEncounter wird vorbereitet</li>
-      <li><em>MOPEDTransferEncounter.partOf</em> referenziert den MOPEDEncounter aus Schritt 1.</li>
-      <li><em>MOPEDTransferEncounter.actualPeriod.start</em> wird mit dem <em>zeitpunkt</em> lt. Operation-Parameter befüllt.</li>
-      <li><em>MOPEDTransferEncounter.serviceProvider</em> setzt eine Referenz auf die MOPEDOrganizationAbteilung mit dem jeweiligen <em>funktionscode</em> bzw. <em>funktionssubcode</em> lt. Operation-Parameter.</li>
-      <li><em>MOPEDTransferEncounter.Neugeborenes</em> wird lt. LKF-Regeln berechnet, anhand des <em>MOPEDEncounter.subject.birthdate</em> aus dem Encounter aus Schritt 1 (für Berechnugns-Details siehe Hinweis 1).</li>
-      <li><em>MOPEDTransferEncounter.Altersgruppe</em> wird lt. LKF-Regeln berechnet, anhand des <em>MOPEDEncounter.subject.birthdate</em> aus dem Encounter aus Schritt 1 (für Berechnugns-Details siehe Hinweis 2).</li>
-      <li><em>MOPEDTransferEncounter.subjectStatus.code</em> enthält den code lt. Operations-Parameter anwesenheitsart, und zusätzlich wird aus dem ValueSet der Display-Wert ausgelesen und in MOPEDTransferEncounter.subjectStatus.display gepseichert</li>
+      <li>Ein neuer MopedTransferEncounter wird vorbereitet</li>
+      <li><em>MopedTransferEncounter.partOf</em> referenziert den MopedEncounter aus Schritt 1.</li>
+      <li><em>MopedTransferEncounter.actualPeriod.start</em> wird mit dem <em>zeitpunkt</em> lt. Operation-Parameter befüllt.</li>
+      <li><em>MopedTransferEncounter.serviceProvider</em> setzt eine Referenz auf die MopedOrganizationAbteilung mit dem jeweiligen <em>funktionscode</em> bzw. <em>funktionssubcode</em> lt. Operation-Parameter.</li>
+      <li><em>MopedTransferEncounter.Neugeborenes</em> wird lt. LKF-Regeln berechnet, anhand des <em>MopedEncounter.subject.birthdate</em> aus dem Encounter aus Schritt 1 (für Berechnugns-Details siehe Hinweis 1).</li>
+      <li><em>MopedTransferEncounter.Altersgruppe</em> wird lt. LKF-Regeln berechnet, anhand des <em>MopedEncounter.subject.birthdate</em> aus dem Encounter aus Schritt 1 (für Berechnugns-Details siehe Hinweis 2).</li>
+      <li><em>MopedTransferEncounter.subjectStatus.code</em> enthält den code lt. Operations-Parameter anwesenheitsart, und zusätzlich wird aus dem ValueSet der Display-Wert ausgelesen und in MopedTransferEncounter.subjectStatus.display gepseichert</li>
     </ul>
   </li>
   <li>Account AnzahlVerlegungen: Die Extension <em>Account.extension.AnzahlVerlegungen</em> im zur Aufnahmezahl gehöhrenden Account wird um 1 erhöht. Dies ist auch so, wenn es sich bei der Verlegung um einen Urlaub handeln sollte (siehe Hinweis 3).</li>
   <li>Alter Transfer Encounter:
     <ul>
       <li>Dieser Schritt ist nur relevant, wenn es sich <em>nicht</em> um eine Neufaufnahme (lt. Operation-Parameter) handelt.</li>
-      <li>Suche des alten MOPEDTransferEncounter: Mit <em>MOPEDTransferEncounter.partOf</em> einer Referenz auf den MOPEDEncounter aus Schritt 1 und den Status <em>in-progress</em></li>
-      <li>Abschließen des alten MOPEDTransferEncounter: <em>MOPEDTransferEncounter.status</em> wird auf <em>completed</em> gesetzt</li>
-      <li>Endzeitpunkt des alten MOPEDTransferEncounter: <em>MOPEDTransferEncounter.actualPeriod.end</em> wird auf den <em>zeitpunkt</em> lt. Operation-Parameter gesetzt.</li>
-      <li>Abgangsart vom alten MOPEDTransferEncounter: <em>MOPEDTransferEncounter.abgangsart</em> wird auf <em>abgangsart</em> lt. Operation-Parameter gesetzt.</li>
+      <li>Suche des alten MopedTransferEncounter: Mit <em>MopedTransferEncounter.partOf</em> einer Referenz auf den MopedEncounter aus Schritt 1 und den Status <em>in-progress</em></li>
+      <li>Abschließen des alten MopedTransferEncounter: <em>MopedTransferEncounter.status</em> wird auf <em>completed</em> gesetzt</li>
+      <li>Endzeitpunkt des alten MopedTransferEncounter: <em>MopedTransferEncounter.actualPeriod.end</em> wird auf den <em>zeitpunkt</em> lt. Operation-Parameter gesetzt.</li>
+      <li>Abgangsart vom alten MopedTransferEncounter: <em>MopedTransferEncounter.abgangsart</em> wird auf <em>abgangsart</em> lt. Operation-Parameter gesetzt.</li>
     </ul>
   </li>
   <li>Account AnzahlBeurlaubungen:
     <ul>
       <li>Dieser Schritt ist nur relevant, wenn es sich <em>nicht</em> um eine Neufaufnahme (lt. Operation-Parameter) handelt.</li>
-      <li>War alter MOPEDTransferEncounter aus Schritt 4.2 ein Urlaub (i.e. Funktionscode <code class="language-plaintext highlighter-rouge">10000000</code>)?</li>
+      <li>War alter MopedTransferEncounter aus Schritt 4.2 ein Urlaub (i.e. Funktionscode <code class="language-plaintext highlighter-rouge">10000000</code>)?</li>
     </ul>
     <ul>
       <li>Wenn ja, dann wird der Counter <em>Account.extension.AnzahlBeurlaubungen</em> um 1 erhöht.</li>
@@ -278,7 +278,7 @@
 <p><strong>Validierung / Fehlerbehandlung</strong></p>
 <ul>
   <li>Bei Neuaufnahme (lt. Operation-Parameter) muss das Feld <em>AnzahlVerlegungen</em> nach Ausführen der Operation $verlegen den Wert <code class="language-plaintext highlighter-rouge">1</code> aufweisen und das Feld <em>AnzahlBeurlaubungen</em> den Wert <code class="language-plaintext highlighter-rouge">0</code>.</li>
-  <li>Es kann immer nur einen MOPEDTransferEncounter für den jeweiligen Fall geben der <em>partOf</em> eines MOPEDEncounters mit der <em>aufnahmezahl</em> ist und den Status <em>in-progress</em> hat.</li>
+  <li>Es kann immer nur einen MopedTransferEncounter für den jeweiligen Fall geben der <em>partOf</em> eines MopedEncounters mit der <em>aufnahmezahl</em> ist und den Status <em>in-progress</em> hat.</li>
   <li>Wenn es sich um eine Neuaufnahme (lt. Operation-Parameter) handelt, kann es keine Abgangsart (Operation-Parameter) geben.</li>
 </ul>
 
@@ -333,9 +333,9 @@
 </div></td></tr><tr><td>IN</td><td>funktionssubcode</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#string">string</a></td><td/><td><div><p>Der <em>funktionssubcode</em> Parameter definiert auf welchen Funktionssubcode die Verlegung stattfindet.</p>
 </div></td></tr><tr><td>IN</td><td>anwesenheitsart</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="ValueSet-moped-Anwesenheitsart-valueset.html">Anwesenheitsart</a> (Required)</td><td><div><p>Der <em>anwesenheitsart</em> Parameter definiert in welcher art der Pateint anwesend ist.</p>
 </div></td></tr><tr><td>IN</td><td>neuaufnahme</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#boolean">boolean</a></td><td/><td><div><p>Der <em>neuaufnahme</em> Parameter definiert ob es sich bei der Verlegung um die initiale Aufnahme des Patienten auf eine bestimmte Station handelt.</p>
-</div></td></tr><tr><td>IN</td><td>abgangsart</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="ValueSet-moped-abgangsart-valueset.html">Abgangsart des Patienten</a> (Required)</td><td><div><p>Der <em>abgangsart</em> Parameter definiert die Abgangsart des Patienten vom bisher aktuellen MOPEDTransferEncounter.</p>
+</div></td></tr><tr><td>IN</td><td>abgangsart</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="ValueSet-moped-abgangsart-valueset.html">Abgangsart des Patienten</a> (Required)</td><td><div><p>Der <em>abgangsart</em> Parameter definiert die Abgangsart des Patienten vom bisher aktuellen MopedTransferEncounter.</p>
 </div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>
-</div></td></tr></table><div><p>TBD: was passiert, wenn eine $aufnehmen Operation mehrmals mit Status <code>Aufnahme in Arbeit</code> aufgerufen wird und damit zu mehreren MOPEDTransferEncounter führt?</p>
+</div></td></tr></table><div><p>TBD: was passiert, wenn eine $aufnehmen Operation mehrmals mit Status <code>Aufnahme in Arbeit</code> aufgerufen wird und damit zu mehreren MopedTransferEncounter führt?</p>
 </div></div>
 
   <!-- insert notes if present -->
@@ -361,7 +361,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Feb 11, 2025 16:50+0000">2025-02-11</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Thu, Feb 13, 2025 14:22+0000">2025-02-13</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

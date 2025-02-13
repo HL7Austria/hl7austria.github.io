@@ -10,7 +10,7 @@
   <name value="MOPED"/>
   <title value="Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"/>
   <status value="draft"/>
-  <date value="2025-02-11T16:50:04+00:00"/>
+  <date value="2025-02-13T14:21:37+00:00"/>
   <publisher value="ELGA"/>
   <contact>
     <name value="ELGA"/>
@@ -36,7 +36,7 @@
     </extension>
     <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
     <packageId value="hl7.fhir.uv.extensions.r5"/>
-    <version value="5.1.0"/>
+    <version value="5.2.0"/>
   </dependsOn>
   <dependsOn id="hl7_at_fhir_core_r5">
     <uri value="http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/ImplementationGuide/hl7.at.fhir.core.r5"/>
@@ -186,7 +186,7 @@
       <reference>
         <reference value="ValueSet/moped-aufnahmeart2-valueset"/>
       </reference>
-      <name value="Aufnahmeart des Patienten"/>
+      <name value="Aufnahmeart2 des Patienten"/>
       <description value="ValueSet für die Aufnahmeart des Patienten"/>
       <isExample value="false"/>
     </resource>
@@ -478,7 +478,7 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MOPEDAccount"/>
+        <reference value="StructureDefinition/MopedAccount"/>
       </reference>
       <name value="MOPED Account"/>
       <description value="MOPED Profil der Account Ressource für die administrative Fallführung und Abrechnung."/>
@@ -489,7 +489,7 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MOPEDAufnahmeBundle"/>
+        <reference value="StructureDefinition/MopedAufnahmeBundle"/>
       </reference>
       <name value="MOPED Aufnahme Bundle"/>
       <description value="Bundle für die Input-Ressourcen bei Patienten-Aufnahme&#xA;&#xA;* Hinweis 1: Anstelle einer separaten GDA-Organization-Ressource ist angedacht, hier mit einer conditional Reference in der Ressource Encounter mit entsprechendem GDA-identifier zu arbeiten. Somit wird auch vermieden, dass Duplikate einer GDA-Organization-Ressource am Server angelegt/verwendet werden.&#xA;* Hinweis 2: Es wird davon ausgegangen, dass der Patient bereits vor der Bundle-Erstellung mit dem ZPI abgeglichen wurde.&#xA;* Hinweis 3: Es wird davon ausgegangen, dass vor der Bundle-Erstellung eine VDAS-Abfrage gestellt wurde. Die Coverage-Ressourcen in diesem Transaction-Bundle speichern die Ansprüche aufgrund der VDAS-Abfrage in Moped ein.&#xA;* Hinweis 4: In Zukunft wird Moped auch die Datenübermittlung von Selbstzahlern und Privatversicherten unterstützen. Für diese Ansprüche werden separate Coverage-Profile definiert werden und dieses Bundle wird in weiterer Folge unterschiedliche Coverage-Arten unterstützen.&#xA;* Hinweis 5: Eine vorangegangene VDAS-Anfrage an die SVC kann mehrere Coverages retournieren. In diesem Fall wählt der Patient/die Patientin direkt bei aufnahme *eine* Versicherung aus, welche im Zuge der Aufnahme gespeichert wird. Das ist der Grund für die Kardinalität 1..1 der Coverage in diesem Bundle."/>
@@ -500,7 +500,7 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MOPEDClaim"/>
+        <reference value="StructureDefinition/MopedLKFRequest"/>
       </reference>
       <name value="MOPED Claim"/>
       <description value="MOPED Profil der Claim Ressource für die Leistungsabrechnungsanfrage."/>
@@ -511,7 +511,7 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MOPEDClaimResponse"/>
+        <reference value="StructureDefinition/MopedLKFResponse"/>
       </reference>
       <name value="MOPED Claim Response"/>
       <description value="MOPED Profil der ClaimResponse Ressource für die Leistungsabrechnungsantwort."/>
@@ -544,7 +544,7 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MOPEDCondition"/>
+        <reference value="StructureDefinition/MopedCondition"/>
       </reference>
       <name value="MOPED Condition"/>
       <description value="MOPED Profil der Condition Ressource für die LDF-Abrechnung"/>
@@ -555,7 +555,7 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MOPEDCoverage"/>
+        <reference value="StructureDefinition/MopedCoverage"/>
       </reference>
       <name value="MOPED Coverage"/>
       <description value="MOPED Profil der Coverage Ressource für Versicherungen."/>
@@ -566,7 +566,7 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MOPEDCoverageEligibilityRequest"/>
+        <reference value="StructureDefinition/MopedCoverageEligibilityRequest"/>
       </reference>
       <name value="MOPED Coverage Eligibility Request"/>
       <description value="MOPED Profil der CoverageEligibilityRequest Ressource für die Versichertenanspruchserklärung-Anfrage."/>
@@ -577,7 +577,7 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MOPEDCoverageEligibilityResponse"/>
+        <reference value="StructureDefinition/MopedCoverageEligibilityResponse"/>
       </reference>
       <name value="MOPED Coverage Eligibility Response"/>
       <description value="MOPED Profil der CoverageEligibilityResponse Ressource für die Versichertenanspruchserklärung-Antwort."/>
@@ -599,7 +599,7 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MOPEDEncounter"/>
+        <reference value="StructureDefinition/MopedEncounter"/>
       </reference>
       <name value="MOPED Encounter"/>
       <description value="MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme und Entlassung"/>
@@ -621,7 +621,7 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MOPEDEncounterBund"/>
+        <reference value="StructureDefinition/MopedEncounterBund"/>
       </reference>
       <name value="MOPED Encounter Bund"/>
       <description value="MOPED Profil der Encounter Ressource für die Rolle: Bund"/>
@@ -632,7 +632,7 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MOPEDEncounterKH"/>
+        <reference value="StructureDefinition/MopedEncounterKH"/>
       </reference>
       <name value="MOPED Encounter KH"/>
       <description value="MOPED Profil der Encounter Ressource für die Rolle: KH"/>
@@ -654,7 +654,7 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MOPEDEncounterLGF"/>
+        <reference value="StructureDefinition/MopedEncounterLGF"/>
       </reference>
       <name value="MOPED Encounter LGF"/>
       <description value="MOPED Profil der Encounter Ressource für die Rolle: LGF"/>
@@ -665,7 +665,7 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MOPEDEncounterSV"/>
+        <reference value="StructureDefinition/MopedEncounterSV"/>
       </reference>
       <name value="MOPED Encounter SV"/>
       <description value="MOPED Profil der Encounter Ressource für die Rolle: SV"/>
@@ -687,7 +687,7 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MOPEDOrganizationAbteilung"/>
+        <reference value="StructureDefinition/MopedOrganizationAbteilung"/>
       </reference>
       <name value="MOPED Organization Abteilung"/>
       <description value="MOPED Profil für Abteilungen innerhalb einer Krankenanstalt."/>
@@ -742,7 +742,7 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MOPEDPatientBund"/>
+        <reference value="StructureDefinition/MopedPatientBund"/>
       </reference>
       <name value="MOPED Patient Bund"/>
       <description value="MOPED Profil der Patient Ressource aus der Sicht der Rolle: Bund"/>
@@ -753,7 +753,7 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MOPEDPatientLGF"/>
+        <reference value="StructureDefinition/MopedPatientLGF"/>
       </reference>
       <name value="MOPED Patient LGF"/>
       <description value="MOPED Profil der Patient Ressource aus der Sicht der Rolle: LGF"/>
@@ -764,7 +764,7 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MOPEDPatientSV"/>
+        <reference value="StructureDefinition/MopedPatientSV"/>
       </reference>
       <name value="MOPED Patient SV"/>
       <description value="MOPED Profil der Patient Ressource aus der Sicht der Rolle: SV"/>
@@ -775,7 +775,7 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MOPEDProcedure"/>
+        <reference value="StructureDefinition/MopedProcedure"/>
       </reference>
       <name value="MOPED Procedure"/>
       <description value="MOPED Profil der Procedure Ressource für die LDF-Abrechnung"/>
@@ -797,7 +797,7 @@
         <valueString value="StructureDefinition"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MOPEDTransferEncounter"/>
+        <reference value="StructureDefinition/MopedTransferEncounter"/>
       </reference>
       <name value="MOPED Transfer Encounter"/>
       <description value="MOPED Profil der Encounter Ressource für die Verlegung innerhalb oder zwischen Krankenanstalten"/>
@@ -987,7 +987,7 @@
       </reference>
       <name value="Test1Account"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDAccount"/>
+      <profile value="http://example.org/StructureDefinition/MopedAccount"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -998,95 +998,95 @@
       </reference>
       <name value="Test1Condition1"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDCondition"/>
+      <profile value="http://example.org/StructureDefinition/MopedCondition"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Coverage"/>
       </extension>
       <reference>
-        <reference value="Coverage/Test1MOPEDCoverage"/>
+        <reference value="Coverage/Test1MopedCoverage"/>
       </reference>
-      <name value="Test1MOPEDCoverage"/>
+      <name value="Test1MopedCoverage"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDCoverage"/>
+      <profile value="http://example.org/StructureDefinition/MopedCoverage"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CoverageEligibilityRequest"/>
       </extension>
       <reference>
-        <reference value="CoverageEligibilityRequest/Test1MOPEDCoverageEligibilityRequest1"/>
+        <reference value="CoverageEligibilityRequest/Test1MopedCoverageEligibilityRequest1"/>
       </reference>
-      <name value="Test1MOPEDCoverageEligibilityRequest1"/>
+      <name value="Test1MopedCoverageEligibilityRequest1"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDCoverageEligibilityRequest"/>
+      <profile value="http://example.org/StructureDefinition/MopedCoverageEligibilityRequest"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CoverageEligibilityResponse"/>
       </extension>
       <reference>
-        <reference value="CoverageEligibilityResponse/Test1MOPEDCoverageEligibilityResponse1"/>
+        <reference value="CoverageEligibilityResponse/Test1MopedCoverageEligibilityResponse1"/>
       </reference>
-      <name value="Test1MOPEDCoverageEligibilityResponse1"/>
+      <name value="Test1MopedCoverageEligibilityResponse1"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDCoverageEligibilityResponse"/>
+      <profile value="http://example.org/StructureDefinition/MopedCoverageEligibilityResponse"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Encounter"/>
       </extension>
       <reference>
-        <reference value="Encounter/Test1MOPEDEncounter"/>
+        <reference value="Encounter/Test1MopedEncounter"/>
       </reference>
-      <name value="Test1MOPEDEncounter"/>
+      <name value="Test1MopedEncounter"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDEncounter"/>
+      <profile value="http://example.org/StructureDefinition/MopedEncounter"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Encounter"/>
       </extension>
       <reference>
-        <reference value="Encounter/Test1MOPEDEncounterBasis"/>
+        <reference value="Encounter/Test1MopedEncounterBasis"/>
       </reference>
-      <name value="Test1MOPEDEncounterBasis"/>
+      <name value="Test1MopedEncounterBasis"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDEncounter"/>
+      <profile value="http://example.org/StructureDefinition/MopedEncounter"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Encounter"/>
       </extension>
       <reference>
-        <reference value="Encounter/Test1MOPEDEncounterBund"/>
+        <reference value="Encounter/Test1MopedEncounterBund"/>
       </reference>
-      <name value="Test1MOPEDEncounterBund"/>
+      <name value="Test1MopedEncounterBund"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDEncounterBund"/>
+      <profile value="http://example.org/StructureDefinition/MopedEncounterBund"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Encounter"/>
       </extension>
       <reference>
-        <reference value="Encounter/Test1MOPEDEncounterLGF"/>
+        <reference value="Encounter/Test1MopedEncounterLGF"/>
       </reference>
-      <name value="Test1MOPEDEncounterLGF"/>
+      <name value="Test1MopedEncounterLGF"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDEncounterLGF"/>
+      <profile value="http://example.org/StructureDefinition/MopedEncounterLGF"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Encounter"/>
       </extension>
       <reference>
-        <reference value="Encounter/Test1MOPEDEncounterSV"/>
+        <reference value="Encounter/Test1MopedEncounterSV"/>
       </reference>
-      <name value="Test1MOPEDEncounterSV"/>
+      <name value="Test1MopedEncounterSV"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDEncounterSV"/>
+      <profile value="http://example.org/StructureDefinition/MopedEncounterSV"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1097,7 +1097,7 @@
       </reference>
       <name value="Test1OrganizationAbteilung1"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"/>
+      <profile value="http://example.org/StructureDefinition/MopedOrganizationAbteilung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1149,7 +1149,7 @@
       </reference>
       <name value="Test1PatientBund"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDPatientBund"/>
+      <profile value="http://example.org/StructureDefinition/MopedPatientBund"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1160,7 +1160,7 @@
       </reference>
       <name value="Test1PatientLGF"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDPatientLGF"/>
+      <profile value="http://example.org/StructureDefinition/MopedPatientLGF"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1181,7 +1181,7 @@
       </reference>
       <name value="Test1PatientSV"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDPatientSV"/>
+      <profile value="http://example.org/StructureDefinition/MopedPatientSV"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1192,7 +1192,7 @@
       </reference>
       <name value="Test1TransferEncounter1"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDTransferEncounter"/>
+      <profile value="http://example.org/StructureDefinition/MopedTransferEncounter"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1203,7 +1203,7 @@
       </reference>
       <name value="Test2Account"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDAccount"/>
+      <profile value="http://example.org/StructureDefinition/MopedAccount"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1214,7 +1214,7 @@
       </reference>
       <name value="Test2Condition1"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDCondition"/>
+      <profile value="http://example.org/StructureDefinition/MopedCondition"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1225,51 +1225,51 @@
       </reference>
       <name value="Test2Condition2"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDCondition"/>
+      <profile value="http://example.org/StructureDefinition/MopedCondition"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Coverage"/>
       </extension>
       <reference>
-        <reference value="Coverage/Test2MOPEDCoverage"/>
+        <reference value="Coverage/Test2MopedCoverage"/>
       </reference>
-      <name value="Test2MOPEDCoverage"/>
+      <name value="Test2MopedCoverage"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDCoverage"/>
+      <profile value="http://example.org/StructureDefinition/MopedCoverage"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CoverageEligibilityRequest"/>
       </extension>
       <reference>
-        <reference value="CoverageEligibilityRequest/Test2MOPEDCoverageEligibilityRequest1"/>
+        <reference value="CoverageEligibilityRequest/Test2MopedCoverageEligibilityRequest1"/>
       </reference>
-      <name value="Test2MOPEDCoverageEligibilityRequest1"/>
+      <name value="Test2MopedCoverageEligibilityRequest1"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDCoverageEligibilityRequest"/>
+      <profile value="http://example.org/StructureDefinition/MopedCoverageEligibilityRequest"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CoverageEligibilityResponse"/>
       </extension>
       <reference>
-        <reference value="CoverageEligibilityResponse/Test2MOPEDCoverageEligibilityResponse1"/>
+        <reference value="CoverageEligibilityResponse/Test2MopedCoverageEligibilityResponse1"/>
       </reference>
-      <name value="Test2MOPEDCoverageEligibilityResponse1"/>
+      <name value="Test2MopedCoverageEligibilityResponse1"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDCoverageEligibilityResponse"/>
+      <profile value="http://example.org/StructureDefinition/MopedCoverageEligibilityResponse"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Encounter"/>
       </extension>
       <reference>
-        <reference value="Encounter/Test2MOPEDEncounter1"/>
+        <reference value="Encounter/Test2MopedEncounter1"/>
       </reference>
-      <name value="Test2MOPEDEncounter1"/>
+      <name value="Test2MopedEncounter1"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDEncounter"/>
+      <profile value="http://example.org/StructureDefinition/MopedEncounter"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1280,7 +1280,7 @@
       </reference>
       <name value="Test2OrganizationAbteilung1"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"/>
+      <profile value="http://example.org/StructureDefinition/MopedOrganizationAbteilung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1291,7 +1291,7 @@
       </reference>
       <name value="Test2OrganizationAbteilung2"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"/>
+      <profile value="http://example.org/StructureDefinition/MopedOrganizationAbteilung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1302,7 +1302,7 @@
       </reference>
       <name value="Test2OrganizationAbteilung3"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"/>
+      <profile value="http://example.org/StructureDefinition/MopedOrganizationAbteilung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1313,7 +1313,7 @@
       </reference>
       <name value="Test2OrganizationAbteilung4"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDOrganizationAbteilung"/>
+      <profile value="http://example.org/StructureDefinition/MopedOrganizationAbteilung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1354,7 +1354,7 @@
       </reference>
       <name value="Test2Procedure1"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDProcedure"/>
+      <profile value="http://example.org/StructureDefinition/MopedProcedure"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1375,7 +1375,7 @@
       </reference>
       <name value="Test2TransferEncounter1"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDTransferEncounter"/>
+      <profile value="http://example.org/StructureDefinition/MopedTransferEncounter"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1386,7 +1386,7 @@
       </reference>
       <name value="Test2TransferEncounter2"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDTransferEncounter"/>
+      <profile value="http://example.org/StructureDefinition/MopedTransferEncounter"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1397,7 +1397,7 @@
       </reference>
       <name value="Test2TransferEncounter3"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDTransferEncounter"/>
+      <profile value="http://example.org/StructureDefinition/MopedTransferEncounter"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1408,7 +1408,7 @@
       </reference>
       <name value="Test2TransferEncounter4"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDTransferEncounter"/>
+      <profile value="http://example.org/StructureDefinition/MopedTransferEncounter"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1419,7 +1419,7 @@
       </reference>
       <name value="Test2TransferEncounter5"/>
       <isExample value="true"/>
-      <profile value="http://example.org/StructureDefinition/MOPEDTransferEncounter"/>
+      <profile value="http://example.org/StructureDefinition/MopedTransferEncounter"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">

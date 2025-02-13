@@ -184,18 +184,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     KH --&gt;|<a href="OperationDefinition-MOPED.Patient.Entlassen.html"> $entlassen</a>| Moped 
     KH --&gt;|<a href="OperationDefinition-MOPED.Encounter.erfassen.html">$erfassen</a>| Moped
     KH --&gt;|<a href="OperationDefinition-MOPED.Encounter.Abrechnen.html"> $abrechnen</a>| Moped
-    Moped --&gt;|<a href="StructureDefinition-MOPEDCoverageEligibilityResponse.html"> GET CoverageEligibilityResponse</a>| KH
-    Moped ---&gt;|<a href="StructureDefinition-MOPEDClaimResponse.html"> GET ClaimResponse</a>| KH
+    Moped --&gt;|<a href="StructureDefinition-MopedCoverageEligibilityResponse.html"> GET CoverageEligibilityResponse</a>| KH
+    Moped ---&gt;|<a href="StructureDefinition-MopedLKFResponse.html"> GET ClaimResponse</a>| KH
 
-    Moped ---&gt;|<a href="StructureDefinition-MOPEDClaimResponse.html"> GET ClaimResponse</a>| SV
-    Moped ---&gt;|<a href="StructureDefinition-MOPEDCoverageEligibilityRequest.html"> GET CoverageEligibilityRequest</a>| SV
+    Moped ---&gt;|<a href="StructureDefinition-MopedLKFResponse.html"> GET ClaimResponse</a>| SV
+    Moped ---&gt;|<a href="StructureDefinition-MopedCoverageEligibilityRequest.html"> GET CoverageEligibilityRequest</a>| SV
     SV ---&gt;|<a href="OperationDefinition-MOPED.CoverageEligibilityResponse.Beantworten.html"> $beantworten</a>| Moped
 
-    Moped ---&gt;|<a href="StructureDefinition-MOPEDClaim.html"> GET Claim</a>| LGF
+    Moped ---&gt;|<a href="StructureDefinition-MopedLKFRequest.html"> GET Claim</a>| LGF
     LGF ---&gt;|<a href="OperationDefinition-MOPED.ClaimResponse.Freigeben.html"> $freigeben</a>| Moped
     LGF ---&gt;|<a href="OperationDefinition-MOPED.ClaimResponse.Auffordern.html"> $auffordern</a>| Moped
 
-    Moped ---&gt;|<a href="StructureDefinition-MOPEDClaimResponse.html"> GET ClaimResponse</a>| BMSGPK 
+    Moped ---&gt;|<a href="StructureDefinition-MopedLKFResponse.html"> GET ClaimResponse</a>| BMSGPK 
 </pre>
 
 <h3 id="actor-KH">Krankenanstalt</h3>
@@ -211,8 +211,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     KH --&gt;|<a href="OperationDefinition-MOPED.Patient.Entlassen.html"> $entlassen</a>| Moped 
     KH --&gt;|<a href="OperationDefinition-MOPED.Encounter.erfassen.html">$erfassen</a>| Moped
     KH --&gt;|<a href="OperationDefinition-MOPED.Encounter.Abrechnen.html"> $abrechnen</a>| Moped
-    Moped --&gt;|<a href="StructureDefinition-MOPEDCoverageEligibilityResponse.html"> GET CoverageEligibilityResponse</a>| KH
-    Moped ---&gt;|<a href="StructureDefinition-MOPEDClaimResponse.html"> GET ClaimResponse</a>| KH
+    Moped --&gt;|<a href="StructureDefinition-MopedCoverageEligibilityResponse.html"> GET CoverageEligibilityResponse</a>| KH
+    Moped ---&gt;|<a href="StructureDefinition-MopedLKFResponse.html"> GET ClaimResponse</a>| KH
 </pre>
 
 <h3 id="actor-SV">Sozialversicherung</h3>
@@ -223,8 +223,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     graph LR
     SV[Sozialversicherung]
     Moped[<a href="#top">Moped</a>] 
-    Moped ---&gt;|<a href="StructureDefinition-MOPEDClaimResponse.html"> GET ClaimResponse</a>| SV
-    Moped ---&gt;|<a href="StructureDefinition-MOPEDCoverageEligibilityRequest.html"> GET CoverageEligibilityRequest</a>| SV
+    Moped ---&gt;|<a href="StructureDefinition-MopedLKFResponse.html"> GET ClaimResponse</a>| SV
+    Moped ---&gt;|<a href="StructureDefinition-MopedCoverageEligibilityRequest.html"> GET CoverageEligibilityRequest</a>| SV
     SV ---&gt;|<a href="OperationDefinition-MOPED.CoverageEligibilityResponse.Beantworten.html"> $beantworten</a>| Moped
 </pre>
 
@@ -236,7 +236,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     graph LR
     LGF[Landesgesundheitsfonds]
     Moped[<a href="#top">Moped</a>] 
-    Moped ---&gt;|<a href="StructureDefinition-MOPEDClaim.html"> GET Claim</a>| LGF
+    Moped ---&gt;|<a href="StructureDefinition-MopedLKFRequest.html"> GET Claim</a>| LGF
     LGF ---&gt;|<a href="OperationDefinition-MOPED.ClaimResponse.Freigeben.html"> $freigeben</a>| Moped
     LGF ---&gt;|<a href="OperationDefinition-MOPED.ClaimResponse.Auffordern.html"> $auffordern</a>| Moped
 </pre>
@@ -249,7 +249,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     graph LR
     BMSGPK[BMSGPK]
     Moped[<a href="#top">Moped</a>] 
-    Moped --&gt;|<a href="StructureDefinition-MOPEDClaimResponse.html"> GET ClaimResponse</a>| BMSGPK   
+    Moped --&gt;|<a href="StructureDefinition-MopedLKFResponse.html"> GET ClaimResponse</a>| BMSGPK   
 </pre>
 
 <h3 id="ems">EMS</h3>
@@ -281,7 +281,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Feb 11, 2025 16:50+0000">2025-02-11</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Thu, Feb 13, 2025 14:22+0000">2025-02-13</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
