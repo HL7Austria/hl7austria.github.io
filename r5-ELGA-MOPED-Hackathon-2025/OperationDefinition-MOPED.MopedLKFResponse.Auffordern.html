@@ -190,7 +190,7 @@
         
           Draft
           
-            as of 2025-02-12
+            as of 2025-02-13
           
         
       </td>
@@ -228,7 +228,7 @@
 <p><strong>Voraussetzungen für den Aufruf</strong></p>
 
 <ul>
-  <li>Account-Status: <code class="language-plaintext highlighter-rouge">Vorläufige Meldung</code> oder <code class="language-plaintext highlighter-rouge">Endgültige Meldung</code></li>
+  <li>Account-Status: <code class="language-plaintext highlighter-rouge">Vorläufige Meldung</code>, <code class="language-plaintext highlighter-rouge">Vorläufige Freigabe</code>, <code class="language-plaintext highlighter-rouge">Endgültige Meldung</code>, <code class="language-plaintext highlighter-rouge">LGF Korrekturaufforderung</code> oder <code class="language-plaintext highlighter-rouge">Endgültige Korrekturaufforderung</code></li>
 </ul>
 
 <p><strong>Detaillierte Business-Logik</strong></p>
@@ -237,8 +237,8 @@
   <li>Die MopedLKFResponse wird lt. Regeln (siehe unten) validiert und eingespielt</li>
   <li>Falls Schritt 1 erfolgreich war, wird der MopedLKFResponse.encounter.account.workflowStatus (MopedLKFResponse aus Operation-Parameter; der Encounter vom Profil MopedEncounter) wird auf
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">LGF Korrekturaufforderung</code> gesetzt, falls der vorherige Status <code class="language-plaintext highlighter-rouge">Vorläufige Meldung</code> war</li>
-      <li><code class="language-plaintext highlighter-rouge">Endgültige Korrekturaufforderung</code> gesetzt, falls der vorherige Status <code class="language-plaintext highlighter-rouge">Endgültige Meldung</code> war</li>
+      <li><code class="language-plaintext highlighter-rouge">LGF Korrekturaufforderung</code> gesetzt, falls der vorherige Status <code class="language-plaintext highlighter-rouge">Vorläufige Meldung</code>, <code class="language-plaintext highlighter-rouge">Vorläufige Freigabe</code>oder <code class="language-plaintext highlighter-rouge">LGF Korrekturaufforderung</code> war</li>
+      <li><code class="language-plaintext highlighter-rouge">Endgültige Korrekturaufforderung</code> gesetzt, falls der vorherige Status <code class="language-plaintext highlighter-rouge">Endgültige Meldung</code> oder <code class="language-plaintext highlighter-rouge">Endgültige Korrekturaufforderung</code> war</li>
     </ul>
   </li>
   <li>Alle Referenzen sollen versionsspezifisch aufgelöst werden.</li>
@@ -309,8 +309,8 @@
 <div class="container">    <!-- container -->
 
 <div class="inner-wrapper">
-  <p><a name="l587">​</a>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Wed, Feb 12, 2025 10:55+0000">2025-02-12</span>
+  <p><a name="l605">​</a>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.org/example-publisher">Example Publisher</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Thu, Feb 13, 2025 11:55+0000">2025-02-13</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
