@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <ValueSet xmlns="http://hl7.org/fhir">
-  <id value="at-aps-condition-code-systems"/>
+  <id value="at-aps-problems"/>
   <meta>
     <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
   </meta>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet at-aps-condition-code-systems</b></p><a name="at-aps-condition-code-systems"> </a><a name="hcat-aps-condition-code-systems"> </a><a name="at-aps-condition-code-systems-de-AT"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <code>https://termgit.elga.gv.at/CodeSystem/icd-10-bmsgpk-2025</code></li><li>Include all codes defined in <code>https://termgit.elga.gv.at/CodeSystem/icpc2</code></li><li>Include all codes defined in <code>https://termgit.elga.gv.at/CodeSystem/icf</code></li><li>Include all codes defined in <a href="http://www.snomed.org/"><code>http://snomed.info/sct</code></a></li><li>Include all codes defined in <code>https://termgit.elga.gv.at/CodeSystem/lkat-bmsgpk-2025</code></li><li>Include all codes defined in <a href="http://loinc.org"><code>http://loinc.org</code></a></li></ul></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet at-aps-problems</b></p><a name="at-aps-problems"> </a><a name="hcat-aps-problems"> </a><a name="at-aps-problems-de-AT"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <code>https://termgit.elga.gv.at/CodeSystem/icd-10-bmsgpk-2025</code></li><li>Include all codes defined in <code>https://termgit.elga.gv.at/CodeSystem/icpc2</code></li><li>Include all codes defined in <code>https://termgit.elga.gv.at/CodeSystem/icf</code></li><li>Include all codes defined in <a href="http://www.snomed.org/"><code>http://snomed.info/sct</code></a></li><li>Include all codes defined in <code>https://termgit.elga.gv.at/CodeSystem/lkat-bmsgpk-2025</code></li><li>Include all codes defined in <a href="http://loinc.org"><code>http://loinc.org</code></a></li><li>Include codes from<a href="http://www.snomed.org/"><code>http://snomed.info/sct</code></a> where concept  is-a 160245001 (No current problems or disability)</li></ul></div>
   </text>
-  <url value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/ValueSet/at-aps-condition-code-systems"/>
+  <url value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/ValueSet/at-aps-problems"/>
   <version value="0.1.0"/>
-  <name value="AtApsConditionCodeSystems"/>
-  <title value="AT APS Condition CodeSystem"/>
+  <name value="AtApsProblems"/>
+  <title value="AT APS Problems"/>
   <status value="active"/>
   <experimental value="true"/>
-  <date value="2025-02-14T08:32:04+00:00"/>
+  <date value="2025-02-14T09:49:00+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -23,7 +23,7 @@
       <value value="https://elga.gv.at"/>
     </telecom>
   </contact>
-  <description value="This value set collect the different code systems which are used for the AT APS Condition code."/>
+  <description value="This value set collects the different code systems which are used for the AT APS Condition code."/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
@@ -50,6 +50,14 @@
     </include>
     <include>
       <system value="http://loinc.org"/>
+    </include>
+    <include>
+      <system value="http://snomed.info/sct"/>
+      <filter>
+        <property value="concept"/>
+        <op value="is-a"/>
+        <value value="160245001"/>
+      </filter>
     </include>
   </compose>
 </ValueSet>
