@@ -39,8 +39,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"4.9"}
-    h3,h4,h5,h6{--heading-prefix:"4.9"}</style>
+    <style type="text/css">h2{--heading-prefix:"4.10"}
+    h3,h4,h5,h6{--heading-prefix:"4.10"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- at-fhir-ig-template begin -->
@@ -190,7 +190,7 @@
         
           Draft
           
-            as of 2025-02-13
+            as of 2025-02-14
           
         
       </td>
@@ -249,11 +249,11 @@
       <li>f. <em>MopedVAERequest.Sonderklasse</em> mit <em>sonderklasse</em> lt. Operation-Parameter befüllen</li>
       <li>g. <em>MopedVAERequest.patient</em> mit <em>MopedAccount.subject</em> befüllen</li>
       <li>h. <em>MopedVAERequest.insurance.coverage</em> mit <em>MopedAccount.coverage.coverage</em> befüllen</li>
-      <li>h. <em>MopedVAERequest.provider</em> mit <em>MopedAccount.owner</em> befüllen</li>
-      <li>i. <em>MopedVAERequest.insurer</em> mit einer Referenz auf jene Organization befüllen, deren <em>Organization.identifier</em> dem Identifier <em>versicherer</em> lt. Operation-Parameter entspricht</li>
-      <li>j. <em>MopedVAERequest.encounter</em> mit allen gefundenen Encountern aus Schritt 1 und 2 befüllen.</li>
-      <li>k. <em>MopedVAERequest.supportingInfo[VerdachtFremdverschulden]</em> lt. Operation-Parameter befüllen</li>
-      <li>l. <em>MopedVAERequest.accident.VerdachtArbeitsSchuelerunfall</em> lt. Operation-Parameter befüllen</li>
+      <li>i. <em>MopedVAERequest.provider</em> mit <em>MopedAccount.owner</em> befüllen</li>
+      <li>j. <em>MopedVAERequest.insurer</em> mit einer Referenz auf jene Organization befüllen, deren <em>Organization.identifier</em> dem Identifier <em>versicherer</em> lt. Operation-Parameter entspricht</li>
+      <li>k. <em>MopedVAERequest.encounter</em> mit allen gefundenen Encountern aus Schritt 1 und 2 befüllen.</li>
+      <li>l. <em>MopedVAERequest.supportingInfo[VerdachtFremdverschulden]</em> lt. Operation-Parameter befüllen</li>
+      <li>m. <em>MopedVAERequest.accident.VerdachtArbeitsSchuelerunfall</em> lt. Operation-Parameter befüllen</li>
     </ul>
   </li>
   <li>POSTen des neu erstellten MopedVAERequest</li>
@@ -261,9 +261,9 @@
 
 <p><strong>Validierung / Fehlerbehandlung</strong></p>
 <ul>
-  <li><em>MopedAccount.coverage</em> darf nur eine Versicherung gelistet haben</li>
-  <li><em>MopedVAERequest.subject</em> muss mit <em>Coverage.beneficiary</em> aus Schritt 3g übereinstimmen</li>
-  <li><em>MopedVAERequest.insurer</em> muss mit <em>Coverage.insurer</em> aus Schritt 3g übereinstimmen</li>
+  <li><em>Nur POC: MopedAccount.coverage</em> darf nur eine Versicherung gelistet haben</li>
+  <li><em>MopedVAERequest.patient</em> muss mit <em>Coverage.beneficiary</em> mit der Coverage aus Schritt 3h übereinstimmen</li>
+  <li><em>MopedVAERequest.insurer</em> muss mit <em>Coverage.insurer</em> mit der Coverage aus aus Schritt 3h übereinstimmen</li>
   <li><del><em>MopedVAERequest.provider</em> muss gleichzeitig die gleiche Organisation sein, die lt. Token die Operation aufgerufen hat.</del></li>
 </ul>
 
@@ -292,8 +292,8 @@
   
 
 
-  <div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition MOPED.VAERequest.Anfragen</b></p><a name="MOPED.VAERequest.Anfragen"> </a><a name="hcMOPED.VAERequest.Anfragen"> </a><a name="MOPED.VAERequest.Anfragen-en-US"> </a><p>URL: [base]/Account/$anfragen</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>aufnahmezahl</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#Identifier">Identifier</a></td><td/><td><div><p>Der <em>aufnahmezahl</em> Parameter beinhält den eindeutigen Identifizierer für den relevanten Fall.</p>
-</div></td></tr><tr><td>IN</td><td>versicherer</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#Identifier">Identifier</a></td><td/><td><div><p>Der <em>versicherer</em> Parameter beinhält den eindeutigen Identifizierer für den Versicherer an dem der VAERequest gerichtet ist.</p>
+  <div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition MOPED.VAERequest.Anfragen</b></p><a name="MOPED.VAERequest.Anfragen"> </a><a name="hcMOPED.VAERequest.Anfragen"> </a><a name="MOPED.VAERequest.Anfragen-en-US"> </a><p>URL: [base]/Account/$anfragen</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>aufnahmezahl</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#Identifier">Identifier</a></td><td/><td><div><p>Der <em>aufnahmezahl</em> Parameter beinhaltet den eindeutigen Identifizierer für den relevanten Fall.</p>
+</div></td></tr><tr><td>IN</td><td>versicherer</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#Identifier">Identifier</a></td><td/><td><div><p>Der <em>versicherer</em> Parameter beinhaltet den eindeutigen Identifizierer für den Versicherer an dem der VAERequest gerichtet ist.</p>
 </div></td></tr><tr><td>IN</td><td>verlaengerungstage</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#unsignedInt">unsignedInt</a></td><td/><td><div><p>Der <em>verlaengerungstage</em> beschreibt, um wie viele Verlängerungstage angefragt wird.</p>
 </div></td></tr><tr><td>IN</td><td>sonderklasse</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="ValueSet-moped-Sonderklasse-valueset.html">Sonderklasse ValueSet</a> (Required)</td><td><div><p>Der <em>sonderklasse</em> codiert, ob der Aufenthalt in der Allgemeine Gebührenklasse oder Sonderklasse stattfindet, da es bei speziellen Versicherungsträgern dafür Optionen gibt.</p>
 </div></td></tr><tr><td>IN</td><td>verdachtArbeitsSchuelerunfall</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="ValueSet-moped-VerdachtArbeitsSchuelerunfall-valueset.html">Verdacht auf Arbeits- oder Schuelerunfall ValueSet</a> (Required)</td><td><div><p>Mit Hilfe des <em>verdachtArbeitsSchuelerunfall</em> Parameters wird festgehalten, ob es bei der Patienten-Aufnahme einen Verdacht auf einen Schüler- oder Arbeitsunfall gibt. Wird dieser Parameter mitgegeben, ist im Account das entsprechende Feld zu befüllen.</p>
@@ -325,7 +325,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Thu, Feb 13, 2025 14:59+0000">2025-02-13</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Fri, Feb 14, 2025 09:24+0000">2025-02-14</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -39,8 +39,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"4.8"}
-    h3,h4,h5,h6{--heading-prefix:"4.8"}</style>
+    <style type="text/css">h2{--heading-prefix:"4.9"}
+    h3,h4,h5,h6{--heading-prefix:"4.9"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- at-fhir-ig-template begin -->
@@ -190,7 +190,7 @@
         
           Draft
           
-            as of 2025-02-13
+            as of 2025-02-14
           
         
       </td>
@@ -235,13 +235,14 @@
 
 <ol>
   <li>Die MopedVAEResponse wird lt. Regeln (siehe unten) validiert und eingespielt</li>
-  <li>Falls Schritt 1 erfolgreich war, wird die Ressource Account gesucht, die eine Referenz auf den MopedVAEResponse.request beihält (MopedVAEResponse lt. Operation-Parameter) und auf <code class="language-plaintext highlighter-rouge">SV verarbeitet</code> gesetzt</li>
+  <li>Falls Schritt 1 erfolgreich war, wird die Ressource Account gesucht (<code class="language-plaintext highlighter-rouge">MopedVAEResponse.request.encounter[MopedEncounter].account</code>; MopedVAEResponse lt. Operation-Parameter) und auf <code class="language-plaintext highlighter-rouge">SV verarbeitet</code> gesetzt</li>
 </ol>
 
 <p><strong>Validierung / Fehlerbehandlung</strong></p>
 
 <ul>
-  <li>MopedVAEResponse.patient muss gleich MopedVAEResponse.request.patient sein</li>
+  <li>MopedVAEResponse.patient muss gleich mit <code class="language-plaintext highlighter-rouge">MopedVAEResponse.request.patient</code>und mit <code class="language-plaintext highlighter-rouge">MopedVAEResponse.request.encounter[MopedEncounter].subject</code> und mit <code class="language-plaintext highlighter-rouge">MopedVAEResponse.request.encounter[MopedEncounter].account.subject</code> sein</li>
+  <li>MopedVAEResponse.requestor muss gleich sein mit <code class="language-plaintext highlighter-rouge">MopedVAEResponse.request.provider</code> und mit <code class="language-plaintext highlighter-rouge">MopedVAEResponse.request.encounter.serviceProvider</code></li>
 </ul>
 
 <p><strong>Weitere Hinweise</strong></p>
@@ -265,7 +266,7 @@
   
 
 
-  <div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition MOPED.MopedVAEResponse.Beantworten</b></p><a name="MOPED.MopedVAEResponse.Beantworten"> </a><a name="hcMOPED.MopedVAEResponse.Beantworten"> </a><a name="MOPED.MopedVAEResponse.Beantworten-en-US"> </a><p>URL: [base]/ClaimResponse/$beantworten</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>MopedVAEResponse</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/claimresponse.html">ClaimResponse</a></td><td/><td><div><p>Der <em>MopedVAEResponse</em> Parameter beinhält sämtliche Details zur Antwort auf den VAERequest.</p>
+  <div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition MOPED.MopedVAEResponse.Beantworten</b></p><a name="MOPED.MopedVAEResponse.Beantworten"> </a><a name="hcMOPED.MopedVAEResponse.Beantworten"> </a><a name="MOPED.MopedVAEResponse.Beantworten-en-US"> </a><p>URL: [base]/ClaimResponse/$beantworten</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>MopedVAEResponse</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/claimresponse.html">ClaimResponse</a></td><td/><td><div><p>Der <em>MopedVAEResponse</em> Parameter beinhaltet sämtliche Details zur Antwort auf den VAERequest.</p>
 </div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>
 </div></td></tr></table></div>
 
@@ -292,7 +293,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Thu, Feb 13, 2025 14:59+0000">2025-02-13</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Fri, Feb 14, 2025 09:24+0000">2025-02-14</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

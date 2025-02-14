@@ -13,6 +13,7 @@
     <sch:title>f:Encounter</sch:title>
     <sch:rule context="f:Encounter">
       <sch:assert test="count(f:extension[@url = 'https://elga.moped.at/StructureDefinition/moped-ext-unfalldatum']) &lt;= 1">extension with URL = 'https://elga.moped.at/StructureDefinition/moped-ext-unfalldatum': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:account) &lt;= 1">account: maximum cardinality of 'account' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

@@ -18,7 +18,7 @@
   fhir:name [ fhir:v "MOPED"] ; # 
   fhir:title [ fhir:v "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-02-13T14:59:23+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-02-14T09:24:21+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ELGA GmbH" ] ;
@@ -840,6 +840,21 @@
        ] ;
        fhir:name [ fhir:v "MOPED Procedure" ] ;
        fhir:description [ fhir:v "MOPED Profil der Procedure Ressource für die LDF-Abrechnung" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "OperationDefinition"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/OperationDefinition/MOPED.QuestionnaireResponse.Erheben> ;
+         fhir:reference [ fhir:v "OperationDefinition/MOPED.QuestionnaireResponse.Erheben" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED QuestionnaireResponse $erheben (POC)" ] ;
+       fhir:description [ fhir:v "Die $erheben Operation wird aufgerufen, wenn ein Fragebogen für einen bestimmten Fall eingemeldet wird." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
