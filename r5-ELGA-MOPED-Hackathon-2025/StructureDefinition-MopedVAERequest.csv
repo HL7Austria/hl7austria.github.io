@@ -218,7 +218,7 @@ Exception Codes
 Occurrence Codes
 Value codes
 ","",0,*,"","","","BackboneElement {[]} {[]}
-","Supporting information","Additional information codes regarding exceptions, special considerations, the condition, situation, prior or concurrent issues.","Often there are multiple jurisdiction specific valuesets which are required.","Typically these information codes are required to support the services rendered or the adjudication of the services rendered.","","","","","","","",,,,,"","value:code.coding.code}
+","Supporting information","Additional information codes regarding exceptions, special considerations, the condition, situation, prior or concurrent issues.","Often there are multiple jurisdiction specific valuesets which are required.","Typically these information codes are required to support the services rendered or the adjudication of the services rendered.","","","","","","","",,,,,"","value:code.coding}
 ","",,"open","Claim.supportingInfo",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Request.supportingInfo"
 "Claim.supportingInfo.id","Claim.supportingInfo.id","","","",0,1,"","","","string {[]} {[]}
@@ -284,13 +284,25 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 </valueCodeableConcept>","","","",,"example","The valuset used for additional information category codes.","http://hl7.org/fhir/ValueSet/claim-informationcategory","",,,,"Claim.supportingInfo.category",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Claim.supportingInfo:VerdachtFremdverschulden.code","Claim.supportingInfo.code","","","",0,1,"","","","CodeableConcept {[]} {[]}
-","Type of information","System and code pertaining to the specific information regarding special conditions relating to the setting, treatment or patient  for which care is sought.","","Required to identify the kind of additional information.","","","","<valueCodeableConcept xmlns=""http://hl7.org/fhir"">
-  <coding>
-    <system value=""http://tbd.at/MOPED-VAESupportingInfo""/>
-    <code value=""FREVER""/>
-  </coding>
-</valueCodeableConcept>","","","",,"example","The valuset used for additional information codes.","http://hl7.org/fhir/ValueSet/claim-exception","",,,,"Claim.supportingInfo.code",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","Type of information","System and code pertaining to the specific information regarding special conditions relating to the setting, treatment or patient  for which care is sought.","","Required to identify the kind of additional information.","","","","","","","",,"example","The valuset used for additional information codes.","http://hl7.org/fhir/ValueSet/claim-exception","",,,,"Claim.supportingInfo.code",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
+"Claim.supportingInfo:VerdachtFremdverschulden.code.id","Claim.supportingInfo.code.id","","","",0,1,"","","","id {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
+","","n/a"
+"Claim.supportingInfo:VerdachtFremdverschulden.code.extension","Claim.supportingInfo.code.extension","","extensions
+user content","",0,*,"","","","Extension {[]} {[]}
+","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a"
+"Claim.supportingInfo:VerdachtFremdverschulden.code.coding","Claim.supportingInfo.code.coding","","","",1,*,"","","Y","Coding {[]} {[]}
+","Code defined by a terminology system","A reference to a code defined by a terminology system.","Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.","Allows for alternative encodings within a code system, and translations to other code systems.","","","","<valueCoding xmlns=""http://hl7.org/fhir"">
+  <system value=""https://elga.moped.at/CodeSystem/VAESupportingInformationTypesCS""/>
+  <code value=""FREVER""/>
+</valueCoding>","","","",,,,,"",,,,"CodeableConcept.coding",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","union(., ./translation)"
+"Claim.supportingInfo:VerdachtFremdverschulden.code.text","Claim.supportingInfo.code.text","","","",0,1,"","","Y","string {[]} {[]}
+","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","./originalText[mediaType/code=""text/plain""]/data"
 "Claim.supportingInfo:VerdachtFremdverschulden.timing[x]","Claim.supportingInfo.timing[x]","","","",0,1,"","","","date {[]} {[]}
 Period {[]} {[]}","When it occurred","The date when or period to which this information refers.","","","","","","","","","",,,,,"",,,,"Claim.supportingInfo.timing[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -416,7 +428,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","When the incident occurred","Date of an accident event  related to the products and services contained in the claim.","The date of the accident has to precede the dates of the products and services but within a reasonable timeframe.","Required for audit purposes and adjudication.","","","","","","","",,,,,"",,,,"Claim.accident.date",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Claim.accident.type","Claim.accident.type","","","",0,1,"","","","CodeableConcept {[]} {[]}
-","The nature of the accident","The type or context of the accident event for the purposes of selection of potential insurance coverages and determination of coordination between insurers.","","Coverage may be dependant on the type of accident.","","","","","","","",,"required","","https://elga.moped.at/ValueSet/moped-VerdachtArbeitsSchuelerunfall-valueset","",,,,"Claim.accident.type",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","The nature of the accident","The type or context of the accident event for the purposes of selection of potential insurance coverages and determination of coordination between insurers.","","Coverage may be dependant on the type of accident.","","","","","","","",,"required","","https://elga.moped.at/ValueSet/VerdachtArbeitsSchuelerunfallVS","",,,,"Claim.accident.type",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Claim.accident.location[x]","Claim.accident.location[x]","","","",0,1,"","","","Address {[]} {[]}
 Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Location]]}","Where the event occurred","The physical location of the accident event.","","Required for audit purposes and determination of applicable insurance liability.","","","","","","","",,,,,"",,,,"Claim.accident.location[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}

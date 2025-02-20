@@ -190,7 +190,7 @@
         
           Draft
           
-            as of 2025-02-19
+            as of 2025-02-20
           
         
       </td>
@@ -295,8 +295,8 @@
   <div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition MOPED.VAERequest.Anfragen</b></p><a name="MOPED.VAERequest.Anfragen"> </a><a name="hcMOPED.VAERequest.Anfragen"> </a><a name="MOPED.VAERequest.Anfragen-en-US"> </a><p>URL: [base]/Account/$anfragen</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>aufnahmezahl</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#Identifier">Identifier</a></td><td/><td><div><p>Der <em>aufnahmezahl</em> Parameter beinhaltet den eindeutigen Identifizierer für den relevanten Fall.</p>
 </div></td></tr><tr><td>IN</td><td>versicherer</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#Identifier">Identifier</a></td><td/><td><div><p>Der <em>versicherer</em> Parameter beinhaltet den eindeutigen Identifizierer für den Versicherer an dem der VAERequest gerichtet ist.</p>
 </div></td></tr><tr><td>IN</td><td>verlaengerungstage</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#unsignedInt">unsignedInt</a></td><td/><td><div><p>Der <em>verlaengerungstage</em> beschreibt, um wie viele Verlängerungstage angefragt wird.</p>
-</div></td></tr><tr><td>IN</td><td>sonderklasse</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="ValueSet-moped-Sonderklasse-valueset.html">Sonderklasse ValueSet</a> (Required)</td><td><div><p>Der <em>sonderklasse</em> codiert, ob der Aufenthalt in der Allgemeine Gebührenklasse oder Sonderklasse stattfindet, da es bei speziellen Versicherungsträgern dafür Optionen gibt.</p>
-</div></td></tr><tr><td>IN</td><td>verdachtArbeitsSchuelerunfall</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="ValueSet-moped-VerdachtArbeitsSchuelerunfall-valueset.html">Verdacht auf Arbeits- oder Schuelerunfall ValueSet</a> (Required)</td><td><div><p>Mit Hilfe des <em>verdachtArbeitsSchuelerunfall</em> Parameters wird festgehalten, ob es bei der Patienten-Aufnahme einen Verdacht auf einen Schüler- oder Arbeitsunfall gibt. Wird dieser Parameter mitgegeben, ist im Account das entsprechende Feld zu befüllen.</p>
+</div></td></tr><tr><td>IN</td><td>sonderklasse</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="ValueSet-SonderklasseVS.html">Sonderklasse ValueSet</a> (Required)</td><td><div><p>Der <em>sonderklasse</em> codiert, ob der Aufenthalt in der Allgemeine Gebührenklasse oder Sonderklasse stattfindet, da es bei speziellen Versicherungsträgern dafür Optionen gibt.</p>
+</div></td></tr><tr><td>IN</td><td>verdachtArbeitsSchuelerunfall</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="ValueSet-VerdachtArbeitsSchuelerunfallVS.html">Verdacht auf Arbeits- oder Schuelerunfall ValueSet</a> (Required)</td><td><div><p>Mit Hilfe des <em>verdachtArbeitsSchuelerunfall</em> Parameters wird festgehalten, ob es bei der Patienten-Aufnahme einen Verdacht auf einen Schüler- oder Arbeitsunfall gibt. Wird dieser Parameter mitgegeben, ist im Account das entsprechende Feld zu befüllen.</p>
 </div></td></tr><tr><td>IN</td><td>verdachtFremdverschulden</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#boolean">boolean</a></td><td/><td><div><p>Mit Hilfe des <em>verdachtFremdverschulden</em> Parameters wird festgehalten, ob es bei der Patienten-Aufnahme einen Verdacht auf Fremdverschulden gibt. Wird dieser Parameter mitgegeben, ist im Account das entsprechende Feld zu befüllen.</p>
 </div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>
 </div></td></tr></table><div><p>TBD: Ist hier evtl. eine Transaction die bessere Lösung? Bei dieser Operation findet keine Status-Änderung statt. Lediglich auf die Precondition des Workflow-Status müsste geachtet werden.</p>
@@ -325,7 +325,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Wed, Feb 19, 2025 15:36+0000">2025-02-19</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Thu, Feb 20, 2025 20:14+0000">2025-02-20</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -5,7 +5,7 @@
   <text>
     <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition MOPED.Patient.Aufnehmen</b></p><a name="MOPED.Patient.Aufnehmen"> </a><a name="hcMOPED.Patient.Aufnehmen"> </a><a name="MOPED.Patient.Aufnehmen-en-US"> </a><p>URL: [base]/Encounter/$aufnehmen</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>falldaten</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="StructureDefinition-MopedAufnahmeBundle.html" title="https://elga.moped.at/StructureDefinition/MopedAufnahmeBundle">MOPED Aufnahme Bundle</a>)</td><td/><td><div><p>Der <em>falldaten</em> Parameter beinhaltet die nötigen Elemente um die Details zum Fall zu beschreiben die bei Patientenaufnahme bekannt sind, inklusive Patient, Encounter und Coverage.</p>
 </div></td></tr><tr><td>IN</td><td>freigeben</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#boolean">boolean</a></td><td/><td><div><p>Mit Hilfe des <em>freigeben</em> Parameters wird angegeben, ob es sich bei der Patienten-Aufnahme um vollständige Daten handelt und somit eine Validierung erfolgen soll (<em>freigeben</em> = <em>true</em>), oder ob lediglich unvollständige Daten zwischengespeichert werden (<em>freigeben</em> = <em>false</em>).</p>
-</div></td></tr><tr><td>IN</td><td>physischeAnwesenheit</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="ValueSet-moped-Anwesenheitsart-valueset.html">Anwesenheitsart</a> (Required)</td><td><div><p>Der <em>physischeAnwesenheit</em> Parameter definiert ob der Patient physisch anwesend ist oder nicht.</p>
+</div></td></tr><tr><td>IN</td><td>physischeAnwesenheit</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="ValueSet-Anwesenheitsart.html">Anwesenheitsart</a> (Required)</td><td><div><p>Der <em>physischeAnwesenheit</em> Parameter definiert ob der Patient physisch anwesend ist oder nicht.</p>
 </div></td></tr><tr><td>IN</td><td>funktionscode</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#string">string</a></td><td/><td><div><p>Der <em>funktionscode</em> Parameter definiert auf welchen Funktionscode die Neuaufnahme stattfindet.</p>
 </div></td></tr><tr><td>IN</td><td>funktionssubcode</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#string">string</a></td><td/><td><div><p>Der <em>funktionssubcode</em> Parameter definiert auf welchen Funktionssubcode die Neuaufnahme stattfindet.</p>
 </div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation. Wenn der <em>modus</em> Parameter auf 'freigeben' gesetzt war, ist die Operation erfolgreich, wenn die Daten validiert wurden und abgespeichert werden konnten. Wenn der <em>modus</em> Parameter auf <em>zwischenspeichern</em> gesetzt war, ist für eine erfolgreiche Durchführung der Operation lediglich ein erfolgreiches Speichern vorausgesetzt. Schlägt die Operation fehl, wird eine entsprechende Meldung ausgegeben.</p>
@@ -18,7 +18,7 @@
   <title value="MOPED Patient $aufnehmen (POC)"/>
   <status value="draft"/>
   <kind value="operation"/>
-  <date value="2025-02-19T15:36:14+00:00"/>
+  <date value="2025-02-20T20:13:59+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -62,7 +62,7 @@
     <type value="code"/>
     <binding>
       <strength value="required"/>
-      <valueSet value="https://elga.moped.at/ValueSet/moped-Anwesenheitsart-valueset"/>
+      <valueSet value="https://elga.moped.at/ValueSet/Anwesenheitsart"/>
     </binding>
   </parameter>
   <parameter>

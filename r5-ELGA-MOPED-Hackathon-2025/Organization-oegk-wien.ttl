@@ -1,0 +1,54 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://elga.moped.at/Organization/oegk-wien> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "oegk-wien"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-organization"^^xsd:anyURI ;
+       fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-organization>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Organization oegk-wien</b></p><a name=\"oegk-wien\"> </a><a name=\"hcoegk-wien\"> </a><a name=\"oegk-wien-en-US\"> </a><p><b>identifier</b>: <code>http://svc.co.at/CodeSystem/ecard-svt-cs</code>/11</p><p><b>name</b>: Österreichische Gesundheitskasse Wien</p><p><b>alias</b>: 11</p><h3>Contacts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Address</b></td></tr><tr><td style=\"display: none\">*</td><td>Wienerbergstraße 15-19, 1100 Wien Wien Wien 1100 AUT </td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "http://svc.co.at/CodeSystem/ecard-svt-cs"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "11" ]
+  ] ) ; # 
+  fhir:name [ fhir:v "Österreichische Gesundheitskasse Wien"] ; # 
+  fhir:alias ( [ fhir:v "11"] ) ; # 
+  fhir:contact ( [
+     fhir:address [
+       fhir:line ( [
+         fhir:v "Wienerbergstraße 15-19, 1100 Wien" ;
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:string ;
+             fhir:v "Wienerbergstraße"
+           ]
+         ] [
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:string ;
+             fhir:v "15-19"
+           ]
+         ] )
+       ] ) ;
+       fhir:city [ fhir:v "Wien" ] ;
+       fhir:state [ fhir:v "Wien" ] ;
+       fhir:postalCode [ fhir:v "1100" ] ;
+       fhir:country [ fhir:v "AUT" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

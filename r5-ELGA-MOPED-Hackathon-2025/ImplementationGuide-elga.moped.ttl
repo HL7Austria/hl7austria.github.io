@@ -18,7 +18,7 @@
   fhir:name [ fhir:v "MOPED"] ; # 
   fhir:title [ fhir:v "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-02-19T15:36:14+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-02-20T20:13:59+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ELGA GmbH" ] ;
@@ -86,8 +86,8 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/ValueSet/moped-abgangsart-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/moped-abgangsart-valueset" ]
+         fhir:link <https://elga.moped.at/ValueSet/Abgangsart> ;
+         fhir:reference [ fhir:v "ValueSet/Abgangsart" ]
        ] ;
        fhir:name [ fhir:v "Abgangsart des Patienten" ] ;
        fhir:description [ fhir:v "ValueSet für die Abgangsart des Patienten" ] ;
@@ -131,12 +131,122 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/ValueSet/moped-AbrechnungsRelevanz-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/moped-AbrechnungsRelevanz-valueset" ]
+         fhir:link <https://elga.moped.at/ValueSet/AbrechnungsRelevanz> ;
+         fhir:reference [ fhir:v "ValueSet/AbrechnungsRelevanz" ]
        ] ;
        fhir:name [ fhir:v "Abrechnungsrelevanz der medizinischen Leistung" ] ;
        fhir:description [ fhir:v "Abrechnungsrelevanz der medizinischen Leistung" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/CodeSystem/AbrechnungsRelevanzCS> ;
+         fhir:reference [ fhir:v "CodeSystem/AbrechnungsRelevanzCS" ]
+       ] ;
+       fhir:name [ fhir:v "Abrechnungsrelevanz der medizinischen Leistung" ] ;
+       fhir:description [ fhir:v "Abrechnungsrelevanz der medizinischen Leistung" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Organization"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Organization/AbteilungHerzJesu1> ;
+         fhir:reference [ fhir:v "Organization/AbteilungHerzJesu1" ]
+       ] ;
+       fhir:name [ fhir:v "AbteilungHerzJesu1" ] ;
+       fhir:description [ fhir:v "Hackathon Stammdaten: Abteilung 1 des KH Herz Jesu" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedOrganizationAbteilung"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedOrganizationAbteilung>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Organization"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Organization/AbteilungKHRied1> ;
+         fhir:reference [ fhir:v "Organization/AbteilungKHRied1" ]
+       ] ;
+       fhir:name [ fhir:v "AbteilungKHRied1" ] ;
+       fhir:description [ fhir:v "Hackathon Stammdaten: Abteilung 1 des KH Ried" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedOrganizationAbteilung"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedOrganizationAbteilung>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Organization"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Organization/AbteilungKHRied2> ;
+         fhir:reference [ fhir:v "Organization/AbteilungKHRied2" ]
+       ] ;
+       fhir:name [ fhir:v "AbteilungKHRied2" ] ;
+       fhir:description [ fhir:v "Hackathon Stammdaten: Abteilung 2 des KH Ried" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedOrganizationAbteilung"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedOrganizationAbteilung>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Organization"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Organization/AbteilungKHRied3> ;
+         fhir:reference [ fhir:v "Organization/AbteilungKHRied3" ]
+       ] ;
+       fhir:name [ fhir:v "AbteilungKHRied3" ] ;
+       fhir:description [ fhir:v "Hackathon Stammdaten: Abteilung 3 des KH Ried" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedOrganizationAbteilung"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedOrganizationAbteilung>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Organization"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Organization/AbteilungKHRied4> ;
+         fhir:reference [ fhir:v "Organization/AbteilungKHRied4" ]
+       ] ;
+       fhir:name [ fhir:v "AbteilungKHRied4" ] ;
+       fhir:description [ fhir:v "Hackathon Stammdaten: Abteilung 4 des KH Ried" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedOrganizationAbteilung"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedOrganizationAbteilung>
+       ] )
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -161,11 +271,26 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/ValueSet/moped-altersgruppe-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/moped-altersgruppe-valueset" ]
+         fhir:link <https://elga.moped.at/ValueSet/Altersgruppe> ;
+         fhir:reference [ fhir:v "ValueSet/Altersgruppe" ]
        ] ;
        fhir:name [ fhir:v "Altersgruppe des Patienten" ] ;
        fhir:description [ fhir:v "ValueSet für die Altersgruppe des Patienten" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/CodeSystem/AltersgruppeCS> ;
+         fhir:reference [ fhir:v "CodeSystem/AltersgruppeCS" ]
+       ] ;
+       fhir:name [ fhir:v "Altersgruppe des Patienten" ] ;
+       fhir:description [ fhir:v "CodeSystem für die Altersgruppe des Patienten" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -176,11 +301,26 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/ValueSet/moped-Anwesenheitsart-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/moped-Anwesenheitsart-valueset" ]
+         fhir:link <https://elga.moped.at/ValueSet/Anwesenheitsart> ;
+         fhir:reference [ fhir:v "ValueSet/Anwesenheitsart" ]
        ] ;
        fhir:name [ fhir:v "Anwesenheitsart" ] ;
        fhir:description [ fhir:v "ValueSet für die Anwesenheitsart" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/CodeSystem/AnwesenheitsartCS> ;
+         fhir:reference [ fhir:v "CodeSystem/AnwesenheitsartCS" ]
+       ] ;
+       fhir:name [ fhir:v "Anwesenheitsart" ] ;
+       fhir:description [ fhir:v "CodeSystem für die Anwesenheitsart" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -232,6 +372,36 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/ValueSet/MopedEncounterTypes> ;
+         fhir:reference [ fhir:v "ValueSet/MopedEncounterTypes" ]
+       ] ;
+       fhir:name [ fhir:v "Arten von Moped Encounter" ] ;
+       fhir:description [ fhir:v "Arten von Moped Encounter" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/CodeSystem/MopedEncounterTypesCS> ;
+         fhir:reference [ fhir:v "CodeSystem/MopedEncounterTypesCS" ]
+       ] ;
+       fhir:name [ fhir:v "Arten von Moped Encounter" ] ;
+       fhir:description [ fhir:v "Arten von Moped Encounter" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "StructureDefinition:extension"
          ]
        ] ) ;
@@ -251,8 +421,8 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/ValueSet/moped-aufnahmeart-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/moped-aufnahmeart-valueset" ]
+         fhir:link <https://elga.moped.at/ValueSet/AufnahmeartVS> ;
+         fhir:reference [ fhir:v "ValueSet/AufnahmeartVS" ]
        ] ;
        fhir:name [ fhir:v "Aufnahmeart des Patienten" ] ;
        fhir:description [ fhir:v "ValueSet für die Aufnahmeart des Patienten (LKF + Ka-Org)" ] ;
@@ -266,8 +436,8 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/ValueSet/moped-aufnahmeart2-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/moped-aufnahmeart2-valueset" ]
+         fhir:link <https://elga.moped.at/ValueSet/Aufnahmeart2> ;
+         fhir:reference [ fhir:v "ValueSet/Aufnahmeart2" ]
        ] ;
        fhir:name [ fhir:v "Aufnahmeart2 des Patienten" ] ;
        fhir:description [ fhir:v "ValueSet für die Aufnahmeart des Patienten" ] ;
@@ -277,15 +447,15 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
-           fhir:v "ValueSet"
+           fhir:v "CodeSystem"
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/ValueSet/moped-VerpflegskostenBeitragsbefreiung-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/moped-VerpflegskostenBeitragsbefreiung-valueset" ]
+         fhir:link <https://elga.moped.at/CodeSystem/Aufnahmeart2CS> ;
+         fhir:reference [ fhir:v "CodeSystem/Aufnahmeart2CS" ]
        ] ;
-       fhir:name [ fhir:v "Befreiung für den Verpflegskostenbeitrag" ] ;
-       fhir:description [ fhir:v "Befreiung für den Verpflegskostenbeitrag" ] ;
+       fhir:name [ fhir:v "Aufnahmeart2 des Patienten" ] ;
+       fhir:description [ fhir:v "CodeSystem für die Aufnahmeart des Patienten" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -296,11 +466,56 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/ValueSet/moped-behandlungsart-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/moped-behandlungsart-valueset" ]
+         fhir:link <https://elga.moped.at/ValueSet/VerpflegskostenBeitragsbefreiung> ;
+         fhir:reference [ fhir:v "ValueSet/VerpflegskostenBeitragsbefreiung" ]
+       ] ;
+       fhir:name [ fhir:v "Befreiung für den Verpflegskostenbeitrag" ] ;
+       fhir:description [ fhir:v "Befreiung für den Verpflegskostenbeitrag" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/CodeSystem/VerpflegskostenBeitragsbefreiungCS> ;
+         fhir:reference [ fhir:v "CodeSystem/VerpflegskostenBeitragsbefreiungCS" ]
+       ] ;
+       fhir:name [ fhir:v "Befreiung für den Verpflegskostenbeitrag" ] ;
+       fhir:description [ fhir:v "CodeSystem für die Befreiung für den Verpflegskostenbeitrag" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/ValueSet/Behandlungsart> ;
+         fhir:reference [ fhir:v "ValueSet/Behandlungsart" ]
        ] ;
        fhir:name [ fhir:v "Behandlungsart" ] ;
        fhir:description [ fhir:v "ValueSet für die Behandlungsart" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/CodeSystem/BehandlungsartCS> ;
+         fhir:reference [ fhir:v "CodeSystem/BehandlungsartCS" ]
+       ] ;
+       fhir:name [ fhir:v "Behandlungsart" ] ;
+       fhir:description [ fhir:v "CodeSystem für die Behandlungsart" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -326,11 +541,26 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/ValueSet/moped-entlassungsart-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/moped-entlassungsart-valueset" ]
+         fhir:link <https://elga.moped.at/ValueSet/Entlassungsart> ;
+         fhir:reference [ fhir:v "ValueSet/Entlassungsart" ]
        ] ;
        fhir:name [ fhir:v "Entlassungsart des Patienten" ] ;
        fhir:description [ fhir:v "ValueSet für die Entlassungsart des Patienten" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/CodeSystem/EntlassungsartCS> ;
+         fhir:reference [ fhir:v "CodeSystem/EntlassungsartCS" ]
+       ] ;
+       fhir:name [ fhir:v "Entlassungsart des Patienten" ] ;
+       fhir:description [ fhir:v "CodeSystem für die Entlassungsart des Patienten" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -371,11 +601,26 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/ValueSet/moped-Fondsrelevanz-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/moped-Fondsrelevanz-valueset" ]
+         fhir:link <https://elga.moped.at/ValueSet/Fondsrelevanz> ;
+         fhir:reference [ fhir:v "ValueSet/Fondsrelevanz" ]
        ] ;
        fhir:name [ fhir:v "Fondsrelevanz" ] ;
        fhir:description [ fhir:v "ValueSet für die Fondsrelevanz" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/CodeSystem/FondsrelevanzCS> ;
+         fhir:reference [ fhir:v "CodeSystem/FondsrelevanzCS" ]
+       ] ;
+       fhir:name [ fhir:v "Fondsrelevanz" ] ;
+       fhir:description [ fhir:v "CodeSystem für die Fondsrelevanz" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -416,11 +661,26 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/ValueSet/moped-KostenmeldungARK-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/moped-KostenmeldungARK-valueset" ]
+         fhir:link <https://elga.moped.at/ValueSet/KostenmeldungARK> ;
+         fhir:reference [ fhir:v "ValueSet/KostenmeldungARK" ]
        ] ;
        fhir:name [ fhir:v "Kostenmeldung für (A/R/K)" ] ;
        fhir:description [ fhir:v "ValueSet für die Art der Kostenmeldung" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/CodeSystem/KostenmeldungARKCS> ;
+         fhir:reference [ fhir:v "CodeSystem/KostenmeldungARKCS" ]
+       ] ;
+       fhir:name [ fhir:v "Kostenmeldung für (A/R/K)" ] ;
+       fhir:description [ fhir:v "CodeSystem für die Art der Kostenmeldung" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -476,8 +736,8 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/ValueSet/moped-LKFAbrechnungsGruppe-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/moped-LKFAbrechnungsGruppe-valueset" ]
+         fhir:link <https://elga.moped.at/ValueSet/LKFAbrechnungsGruppe> ;
+         fhir:reference [ fhir:v "ValueSet/LKFAbrechnungsGruppe" ]
        ] ;
        fhir:name [ fhir:v "LKF Abrechnungsgruppe" ] ;
        fhir:description [ fhir:v "LKF Abrechnungsgruppe" ] ;
@@ -491,8 +751,23 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/ValueSet/moped-LKFAbrechnungsKnoten-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/moped-LKFAbrechnungsKnoten-valueset" ]
+         fhir:link <https://elga.moped.at/ValueSet/LKFAbrechnungsKnoten> ;
+         fhir:reference [ fhir:v "ValueSet/LKFAbrechnungsKnoten" ]
+       ] ;
+       fhir:name [ fhir:v "LKF Abrechnungsknoten" ] ;
+       fhir:description [ fhir:v "LKF Abrechnungsknoten" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/CodeSystem/LKFAbrechnungsKnotenCS> ;
+         fhir:reference [ fhir:v "CodeSystem/LKFAbrechnungsKnotenCS" ]
        ] ;
        fhir:name [ fhir:v "LKF Abrechnungsknoten" ] ;
        fhir:description [ fhir:v "LKF Abrechnungsknoten" ] ;
@@ -506,8 +781,23 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/ValueSet/moped-LKFHauptdiagnosegruppen-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/moped-LKFHauptdiagnosegruppen-valueset" ]
+         fhir:link <https://elga.moped.at/ValueSet/LKFHauptdiagnosegruppen> ;
+         fhir:reference [ fhir:v "ValueSet/LKFHauptdiagnosegruppen" ]
+       ] ;
+       fhir:name [ fhir:v "LKF Hauptdiagnosegruppen" ] ;
+       fhir:description [ fhir:v "LKF Hauptdiagnosegruppen" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/CodeSystem/LKFHauptdiagnosegruppenCS> ;
+         fhir:reference [ fhir:v "CodeSystem/LKFHauptdiagnosegruppenCS" ]
        ] ;
        fhir:name [ fhir:v "LKF Hauptdiagnosegruppen" ] ;
        fhir:description [ fhir:v "LKF Hauptdiagnosegruppen" ] ;
@@ -521,8 +811,8 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/ValueSet/moped-LKFLeistungskatalog-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/moped-LKFLeistungskatalog-valueset" ]
+         fhir:link <https://elga.moped.at/ValueSet/LKFLeistungskatalog> ;
+         fhir:reference [ fhir:v "ValueSet/LKFLeistungskatalog" ]
        ] ;
        fhir:name [ fhir:v "LKF Leistungskatalog BMSGPK" ] ;
        fhir:description [ fhir:v "LKF Hauptdiagnosegruppen" ] ;
@@ -536,10 +826,26 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/ValueSet/moped-LKFmedizinischeEinzelleistungen-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/moped-LKFmedizinischeEinzelleistungen-valueset" ]
+         fhir:link <https://elga.moped.at/ValueSet/LKFmedizinischeEinzelleistungen> ;
+         fhir:reference [ fhir:v "ValueSet/LKFmedizinischeEinzelleistungen" ]
        ] ;
        fhir:name [ fhir:v "LKF medizinische Einzelleistungen (MEL)" ] ;
+       fhir:description [ fhir:v "LKF medizinische Einzelleistungen (MEL)" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/CodeSystem/LKFmedizinischeEinzelleistungenCS> ;
+         fhir:reference [ fhir:v "CodeSystem/LKFmedizinischeEinzelleistungenCS" ]
+       ] ;
+       fhir:name [ fhir:v "LKF medizinische Einzelleistungen (MEL)" ] ;
+       fhir:description [ fhir:v "LKF medizinische Einzelleistungen (MEL)" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -585,6 +891,51 @@
        ] ;
        fhir:name [ fhir:v "MOPED Aufnahme Bundle" ] ;
        fhir:description [ fhir:v "Bundle für die Input-Ressourcen bei Patienten-Aufnahme\n\n* Hinweis 1: Anstelle einer separaten GDA-Organization-Ressource ist angedacht, hier mit einer conditional Reference in der Ressource Encounter mit entsprechendem GDA-identifier zu arbeiten. Somit wird auch vermieden, dass Duplikate einer GDA-Organization-Ressource am Server angelegt/verwendet werden.\n* Hinweis 2: Es wird davon ausgegangen, dass der Patient bereits vor der Bundle-Erstellung mit dem ZPI abgeglichen wurde.\n* Hinweis 3: Es wird davon ausgegangen, dass vor der Bundle-Erstellung eine VDAS-Abfrage gestellt wurde. Die Coverage-Ressourcen in diesem Transaction-Bundle speichern die Ansprüche aufgrund der VDAS-Abfrage in Moped ein.\n* Hinweis 4: In Zukunft wird Moped auch die Datenübermittlung von Selbstzahlern und Privatversicherten unterstützen. Für diese Ansprüche werden separate Coverage-Profile definiert werden und dieses Bundle wird in weiterer Folge unterschiedliche Coverage-Arten unterstützen.\n* Hinweis 5: Eine vorangegangene VDAS-Anfrage an die SVC kann mehrere Coverages retournieren. In diesem Fall wählt der Patient/die Patientin direkt bei aufnahme *eine* Versicherung aus, welche im Zuge der Aufnahme gespeichert wird. Das ist der Grund für die Kardinalität 1..1 der Coverage in diesem Bundle." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/CodeSystem/AbgangsartCS> ;
+         fhir:reference [ fhir:v "CodeSystem/AbgangsartCS" ]
+       ] ;
+       fhir:name [ fhir:v "Moped Aufnahmeart des Patienten" ] ;
+       fhir:description [ fhir:v "Zulässige Ausprägungen Aufnahmeart (LKF & KaOrg)" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/CodeSystem/AufnahmeartCS> ;
+         fhir:reference [ fhir:v "CodeSystem/AufnahmeartCS" ]
+       ] ;
+       fhir:name [ fhir:v "Moped Aufnahmeart des Patienten" ] ;
+       fhir:description [ fhir:v "Zulässige Ausprägungen Aufnahmeart (LKF & KaOrg)" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedCondition> ;
+         fhir:reference [ fhir:v "StructureDefinition/MopedCondition" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED Condition" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Condition Ressource für die LDF-Abrechnung" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -865,11 +1216,41 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/ValueSet/moped-related-person-relationship-type> ;
-         fhir:reference [ fhir:v "ValueSet/moped-related-person-relationship-type" ]
+         fhir:link <https://elga.moped.at/ValueSet/MopedRelatedPersonRelationshipType> ;
+         fhir:reference [ fhir:v "ValueSet/MopedRelatedPersonRelationshipType" ]
        ] ;
        fhir:name [ fhir:v "MOPED RelatedPerson Relationship Type ValueSet" ] ;
        fhir:description [ fhir:v "A value set containing codes for the type of relationship of a related person to the patient." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedTransferEncounter> ;
+         fhir:reference [ fhir:v "StructureDefinition/MopedTransferEncounter" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED TransferEncounter" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Encounter Ressource für die Verlegung innerhalb oder zwischen Krankenanstalten" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedVAERequest> ;
+         fhir:reference [ fhir:v "StructureDefinition/MopedVAERequest" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED VAERequest" ] ;
+       fhir:description [ fhir:v "MOPED Profil für die Anfrage der Versichertenanspruchserklärung VAE." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -895,8 +1276,23 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/ValueSet/moped-sv-vae-supporting-information-types> ;
-         fhir:reference [ fhir:v "ValueSet/moped-sv-vae-supporting-information-types" ]
+         fhir:link <https://elga.moped.at/ValueSet/VAESupportingInformationTypes> ;
+         fhir:reference [ fhir:v "ValueSet/VAESupportingInformationTypes" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED VAESupportingInformationTypes" ] ;
+       fhir:description [ fhir:v "Arten von zusätzlichen Informationen in der VAE" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/CodeSystem/VAESupportingInformationTypesCS> ;
+         fhir:reference [ fhir:v "CodeSystem/VAESupportingInformationTypesCS" ]
        ] ;
        fhir:name [ fhir:v "MOPED VAESupportingInformationTypes" ] ;
        fhir:description [ fhir:v "Arten von zusätzlichen Informationen in der VAE" ] ;
@@ -930,21 +1326,6 @@
        ] ;
        fhir:name [ fhir:v "MopedAccount" ] ;
        fhir:description [ fhir:v "MOPED Profil der Account Ressource für die administrative Fallführung und Abrechnung." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [
-           a fhir:string ;
-           fhir:v "StructureDefinition:resource"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://elga.moped.at/StructureDefinition/MopedCondition> ;
-         fhir:reference [ fhir:v "StructureDefinition/MopedCondition" ]
-       ] ;
-       fhir:name [ fhir:v "MopedCondition" ] ;
-       fhir:description [ fhir:v "MOPED Profil der Condition Ressource für die LDF-Abrechnung" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1000,36 +1381,6 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/StructureDefinition/MopedTransferEncounter> ;
-         fhir:reference [ fhir:v "StructureDefinition/MopedTransferEncounter" ]
-       ] ;
-       fhir:name [ fhir:v "MopedTransferEncounter" ] ;
-       fhir:description [ fhir:v "MOPED Profil der Encounter Ressource für die Verlegung innerhalb oder zwischen Krankenanstalten" ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [
-           a fhir:string ;
-           fhir:v "StructureDefinition:resource"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://elga.moped.at/StructureDefinition/MopedVAERequest> ;
-         fhir:reference [ fhir:v "StructureDefinition/MopedVAERequest" ]
-       ] ;
-       fhir:name [ fhir:v "MopedVAERequest" ] ;
-       fhir:description [ fhir:v "MOPED Profil für die Anfrage der Versichertenanspruchserklärung VAE." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [
-           a fhir:string ;
-           fhir:v "StructureDefinition:resource"
-         ]
-       ] ) ;
-       fhir:reference [
          fhir:link <https://elga.moped.at/StructureDefinition/MopedVAEResponse> ;
          fhir:reference [ fhir:v "StructureDefinition/MopedVAEResponse" ]
        ] ;
@@ -1045,12 +1396,147 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/ValueSet/moped-sonderleistungsnummern-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/moped-sonderleistungsnummern-valueset" ]
+         fhir:link <https://elga.moped.at/ValueSet/Sonderleistungsnummern> ;
+         fhir:reference [ fhir:v "ValueSet/Sonderleistungsnummern" ]
        ] ;
        fhir:name [ fhir:v "Nummer für Sonderleistung" ] ;
        fhir:description [ fhir:v "Nummer für Sonderleistung" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/CodeSystem/SonderleistungsnummernCS> ;
+         fhir:reference [ fhir:v "CodeSystem/SonderleistungsnummernCS" ]
+       ] ;
+       fhir:name [ fhir:v "Nummer für Sonderleistung" ] ;
+       fhir:description [ fhir:v "Nummer für Sonderleistung" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Organization"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Organization/oegk-oberoesterreich> ;
+         fhir:reference [ fhir:v "Organization/oegk-oberoesterreich" ]
+       ] ;
+       fhir:name [ fhir:v "oegk-oberoesterreich" ] ;
+       fhir:description [ fhir:v "Hackathon Stammdaten: ÖGK Oberösterreich" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Organization"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Organization/oegk-wien> ;
+         fhir:reference [ fhir:v "Organization/oegk-wien" ]
+       ] ;
+       fhir:name [ fhir:v "oegk-wien" ] ;
+       fhir:description [ fhir:v "Hackathon Stammdaten: ÖGK Wien" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "OrganizationAffiliation"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/OrganizationAffiliation/OrganizationAffiliationWgfHerzJesu> ;
+         fhir:reference [ fhir:v "OrganizationAffiliation/OrganizationAffiliationWgfHerzJesu" ]
+       ] ;
+       fhir:name [ fhir:v "OrganizationAffiliationWgfHerzJesu" ] ;
+       fhir:description [ fhir:v "Hackathon Stammdaten: Organization Affiliation zwischen LGF und KH Herz Jesu" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Organization"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Organization/OrganizationHerzJesuKrankenhaus> ;
+         fhir:reference [ fhir:v "Organization/OrganizationHerzJesuKrankenhaus" ]
+       ] ;
+       fhir:name [ fhir:v "OrganizationHerzJesuKrankenhaus" ] ;
+       fhir:description [ fhir:v "Hackathon Stammdaten: KH Herz Jesu" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Organization"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Organization/OrganizationKrankenhausRied> ;
+         fhir:reference [ fhir:v "Organization/OrganizationKrankenhausRied" ]
+       ] ;
+       fhir:name [ fhir:v "OrganizationKrankenhausRied" ] ;
+       fhir:description [ fhir:v "Hackathon Stammdaten: KH Ried" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Organization"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Organization/OrganizationLGF> ;
+         fhir:reference [ fhir:v "Organization/OrganizationLGF" ]
+       ] ;
+       fhir:name [ fhir:v "OrganizationLGF" ] ;
+       fhir:description [ fhir:v "Hackathon Stammdaten: LGF Wien" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Organization"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Organization/OrganizationUeberweisendeOrganisation1> ;
+         fhir:reference [ fhir:v "Organization/OrganizationUeberweisendeOrganisation1" ]
+       ] ;
+       fhir:name [ fhir:v "OrganizationUeberweisendeOrganisation1" ] ;
+       fhir:description [ fhir:v "Hackathon Stammdaten: Überweisende Organisation 1" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Organization"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Organization/OrganizationUeberweisendeOrganization2> ;
+         fhir:reference [ fhir:v "Organization/OrganizationUeberweisendeOrganization2" ]
+       ] ;
+       fhir:name [ fhir:v "OrganizationUeberweisendeOrganization2" ] ;
+       fhir:description [ fhir:v "Hackathon Stammdaten: Überweisende Organisation 2" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1081,6 +1567,211 @@
        fhir:name [ fhir:v "Patientenanteil Netto" ] ;
        fhir:description [ fhir:v "MOPED Extension für den Patientenanteil netto: Betrag in €, 2 Nachkommastellen" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Account"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Account/PJ1Account> ;
+         fhir:reference [ fhir:v "Account/PJ1Account" ]
+       ] ;
+       fhir:name [ fhir:v "PJ1Account" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 1 Beispiel: Account" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedAccount"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedAccount>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Condition"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Condition/PJ1Condition1> ;
+         fhir:reference [ fhir:v "Condition/PJ1Condition1" ]
+       ] ;
+       fhir:name [ fhir:v "PJ1Condition1" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 1 Beispiel: Condition 1" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedCondition"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedCondition>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Coverage"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Coverage/PJ1Coverage> ;
+         fhir:reference [ fhir:v "Coverage/PJ1Coverage" ]
+       ] ;
+       fhir:name [ fhir:v "PJ1Coverage" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 1 Beispiel: Coverage" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedCoverage"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedCoverage>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Encounter"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Encounter/PJ1Encounter> ;
+         fhir:reference [ fhir:v "Encounter/PJ1Encounter" ]
+       ] ;
+       fhir:name [ fhir:v "PJ1Encounter" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 1 Beispiel: Encounter" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedEncounter"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedEncounter>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Claim"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Claim/PJ1LKFRequest1> ;
+         fhir:reference [ fhir:v "Claim/PJ1LKFRequest1" ]
+       ] ;
+       fhir:name [ fhir:v "PJ1LKFRequest1" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 1 Beispiel: LKFRequest 1" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedLKFRequest"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedLKFRequest>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ClaimResponse"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/ClaimResponse/PJ1LKFResponse1> ;
+         fhir:reference [ fhir:v "ClaimResponse/PJ1LKFResponse1" ]
+       ] ;
+       fhir:name [ fhir:v "PJ1LKFResponse1" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 1 Beispiel: LKFResponse 1" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedLKFResponse"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedLKFResponse>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Patient"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Patient/PJ1Patient> ;
+         fhir:reference [ fhir:v "Patient/PJ1Patient" ]
+       ] ;
+       fhir:name [ fhir:v "PJ1Patient" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 1 Beispiel: Patient" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Procedure"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Procedure/PJ1Procedure1> ;
+         fhir:reference [ fhir:v "Procedure/PJ1Procedure1" ]
+       ] ;
+       fhir:name [ fhir:v "PJ1Procedure1" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 1 Beispiel: Procedure 1" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedProcedure"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedProcedure>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Encounter"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Encounter/PJ1TransferEncounter1> ;
+         fhir:reference [ fhir:v "Encounter/PJ1TransferEncounter1" ]
+       ] ;
+       fhir:name [ fhir:v "PJ1TransferEncounter1" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 1 Beispiel: TransferEncounter 1" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedTransferEncounter"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedTransferEncounter>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Claim"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Claim/PJ1VAERequest1> ;
+         fhir:reference [ fhir:v "Claim/PJ1VAERequest1" ]
+       ] ;
+       fhir:name [ fhir:v "PJ1VAERequest1" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 1 Beispiel: VAERequest 1" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedVAERequest"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedVAERequest>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ClaimResponse"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/ClaimResponse/PJ1VAEResponse1> ;
+         fhir:reference [ fhir:v "ClaimResponse/PJ1VAEResponse1" ]
+       ] ;
+       fhir:name [ fhir:v "PJ1VAEResponse1" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 1 Beispiel: VAEResponse 1" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedVAEResponse"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedVAEResponse>
+       ] )
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1146,12 +1837,27 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/CodeSystem/SonderklasseCS> ;
+         fhir:reference [ fhir:v "CodeSystem/SonderklasseCS" ]
+       ] ;
+       fhir:name [ fhir:v "Sonderklasse CodeSystem" ] ;
+       fhir:description [ fhir:v "CodeSystem für die Klasse (KaOrg)" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "ValueSet"
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/ValueSet/moped-Sonderklasse-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/moped-Sonderklasse-valueset" ]
+         fhir:link <https://elga.moped.at/ValueSet/SonderklasseVS> ;
+         fhir:reference [ fhir:v "ValueSet/SonderklasseVS" ]
        ] ;
        fhir:name [ fhir:v "Sonderklasse ValueSet" ] ;
        fhir:description [ fhir:v "ValueSet für die Klasse (KaOrg)" ] ;
@@ -1180,8 +1886,23 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/ValueSet/moped-VAEStatus-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/moped-VAEStatus-valueset" ]
+         fhir:link <https://elga.moped.at/ValueSet/VAEStatus> ;
+         fhir:reference [ fhir:v "ValueSet/VAEStatus" ]
+       ] ;
+       fhir:name [ fhir:v "Status der Versichertenanspruchserklärung" ] ;
+       fhir:description [ fhir:v "Status der Versichertenanspruchserklärung" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/CodeSystem/VAEStatusCS> ;
+         fhir:reference [ fhir:v "CodeSystem/VAEStatusCS" ]
        ] ;
        fhir:name [ fhir:v "Status der Versichertenanspruchserklärung" ] ;
        fhir:description [ fhir:v "Status der Versichertenanspruchserklärung" ] ;
@@ -1225,11 +1946,26 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/ValueSet/moped-transportart-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/moped-transportart-valueset" ]
+         fhir:link <https://elga.moped.at/ValueSet/Transportart> ;
+         fhir:reference [ fhir:v "ValueSet/Transportart" ]
        ] ;
        fhir:name [ fhir:v "Transportart" ] ;
        fhir:description [ fhir:v "ValueSet für die Transportart des Patienten" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/CodeSystem/TransportartCS> ;
+         fhir:reference [ fhir:v "CodeSystem/TransportartCS" ]
+       ] ;
+       fhir:name [ fhir:v "Transportart" ] ;
+       fhir:description [ fhir:v "CodeSystem für die Transportart des Patienten" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1255,11 +1991,26 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/ValueSet/moped-ursache-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/moped-ursache-valueset" ]
+         fhir:link <https://elga.moped.at/ValueSet/UrsacheValueSet> ;
+         fhir:reference [ fhir:v "ValueSet/UrsacheValueSet" ]
        ] ;
        fhir:name [ fhir:v "Ursache für Behandlung" ] ;
        fhir:description [ fhir:v "ValueSet für die Ursache der Behandlung laut Ka-Org" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/CodeSystem/UrsacheCS> ;
+         fhir:reference [ fhir:v "CodeSystem/UrsacheCS" ]
+       ] ;
+       fhir:name [ fhir:v "Ursache für Behandlung" ] ;
+       fhir:description [ fhir:v "CodeSystem für die Ursache der Behandlung laut Ka-Org" ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1281,12 +2032,27 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/CodeSystem/VerdachtArbeitsSchuelerunfallCS> ;
+         fhir:reference [ fhir:v "CodeSystem/VerdachtArbeitsSchuelerunfallCS" ]
+       ] ;
+       fhir:name [ fhir:v "Verdacht auf Arbeits- oder Schuelerunfall CodeSystem" ] ;
+       fhir:description [ fhir:v "CodeSystem für den Verdacht auf einen Arbeits- oder Schuelerunfall" ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "ValueSet"
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/ValueSet/moped-VerdachtArbeitsSchuelerunfall-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/moped-VerdachtArbeitsSchuelerunfall-valueset" ]
+         fhir:link <https://elga.moped.at/ValueSet/VerdachtArbeitsSchuelerunfallVS> ;
+         fhir:reference [ fhir:v "ValueSet/VerdachtArbeitsSchuelerunfallVS" ]
        ] ;
        fhir:name [ fhir:v "Verdacht auf Arbeits- oder Schuelerunfall ValueSet" ] ;
        fhir:description [ fhir:v "ValueSet für den Verdacht auf einen Arbeits- oder Schuelerunfall" ] ;
@@ -1360,11 +2126,26 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://elga.moped.at/ValueSet/moped-WorkflowStatus-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/moped-WorkflowStatus-valueset" ]
+         fhir:link <https://elga.moped.at/ValueSet/WorkflowStatus> ;
+         fhir:reference [ fhir:v "ValueSet/WorkflowStatus" ]
        ] ;
        fhir:name [ fhir:v "Workflow Status eines Falls" ] ;
        fhir:description [ fhir:v "ValueSet für die Statusoptionen in denen sich ein Fall befinden kann." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/CodeSystem/WorkflowStatusCS> ;
+         fhir:reference [ fhir:v "CodeSystem/WorkflowStatusCS" ]
+       ] ;
+       fhir:name [ fhir:v "Workflow Status eines Falls" ] ;
+       fhir:description [ fhir:v "CodeSystem für die Statusoptionen in denen sich ein Fall befinden kann." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] ) ;
      fhir:page [

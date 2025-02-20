@@ -10,7 +10,7 @@
   "name" : "MopedEncounterLGF",
   "title" : "MOPED Encounter LGF",
   "status" : "draft",
-  "date" : "2025-02-19T15:36:14+00:00",
+  "date" : "2025-02-20T20:13:59+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -2217,7 +2217,7 @@
       "isSummary" : true,
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://elga.moped.at/ValueSet/moped-behandlungsart-valueset"
+        "valueSet" : "https://elga.moped.at/ValueSet/Behandlungsart"
       },
       "mapping" : [{
         "identity" : "w5",
@@ -2438,7 +2438,7 @@
       "type" : [{
         "code" : "uri"
       }],
-      "patternUri" : "http://tbd.at/MOPED-encounter-behandlungsart",
+      "patternUri" : "https://elga.moped.at/CodeSystem/BehandlungsartCS",
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -2699,7 +2699,7 @@
       "isSummary" : true,
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://elga.moped.at/ValueSet/moped-aufnahmeart2-valueset"
+        "valueSet" : "https://elga.moped.at/ValueSet/Aufnahmeart2"
       },
       "mapping" : [{
         "identity" : "w5",
@@ -2920,7 +2920,7 @@
       "type" : [{
         "code" : "uri"
       }],
-      "patternUri" : "http://tbd.at/moped-ext-aufnahmeart2",
+      "patternUri" : "https://elga.moped.at/CodeSystem/Aufnahmeart2CS",
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3216,6 +3216,12 @@
       "type" : [{
         "code" : "CodeableConcept"
       }],
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://elga.moped.at/CodeSystem/MopedEncounterTypesCS",
+          "code" : "ENC"
+        }]
+      },
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -3544,7 +3550,7 @@
       },
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedOrganizationAbteilung"]
+        "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-organization"]
       }],
       "constraint" : [{
         "key" : "ele-1",
@@ -4955,7 +4961,7 @@
       "isSummary" : true,
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://elga.moped.at/ValueSet/moped-ursache-valueset"
+        "valueSet" : "https://elga.moped.at/ValueSet/UrsacheValueSet"
       },
       "mapping" : [{
         "identity" : "workflow",
@@ -5791,7 +5797,7 @@
       "isSummary" : false,
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://elga.moped.at/ValueSet/moped-entlassungsart-valueset"
+        "valueSet" : "https://elga.moped.at/ValueSet/Entlassungsart"
       },
       "mapping" : [{
         "identity" : "v2",

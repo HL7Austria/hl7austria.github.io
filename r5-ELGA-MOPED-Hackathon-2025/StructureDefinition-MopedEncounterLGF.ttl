@@ -18,7 +18,7 @@
   fhir:name [ fhir:v "MopedEncounterLGF"] ; # 
   fhir:title [ fhir:v "MOPED Encounter LGF"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-02-19T15:36:14+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-02-20T20:13:59+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ELGA GmbH" ] ;
@@ -2373,8 +2373,8 @@
        fhir:binding [
          fhir:strength [ fhir:v "required" ] ;
          fhir:valueSet [
-           fhir:v "https://elga.moped.at/ValueSet/moped-behandlungsart-valueset"^^xsd:anyURI ;
-           fhir:link <https://elga.moped.at/ValueSet/moped-behandlungsart-valueset>
+           fhir:v "https://elga.moped.at/ValueSet/Behandlungsart"^^xsd:anyURI ;
+           fhir:link <https://elga.moped.at/ValueSet/Behandlungsart>
          ]
        ] ;
        fhir:mapping ( [
@@ -2605,7 +2605,7 @@
        ] ) ;
        fhir:pattern [
          a fhir:uri ;
-         fhir:v "http://tbd.at/MOPED-encounter-behandlungsart"^^xsd:anyURI
+         fhir:v "https://elga.moped.at/CodeSystem/BehandlungsartCS"^^xsd:anyURI
        ] ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
@@ -2881,8 +2881,8 @@
        fhir:binding [
          fhir:strength [ fhir:v "required" ] ;
          fhir:valueSet [
-           fhir:v "https://elga.moped.at/ValueSet/moped-aufnahmeart2-valueset"^^xsd:anyURI ;
-           fhir:link <https://elga.moped.at/ValueSet/moped-aufnahmeart2-valueset>
+           fhir:v "https://elga.moped.at/ValueSet/Aufnahmeart2"^^xsd:anyURI ;
+           fhir:link <https://elga.moped.at/ValueSet/Aufnahmeart2>
          ]
        ] ;
        fhir:mapping ( [
@@ -3113,7 +3113,7 @@
        ] ) ;
        fhir:pattern [
          a fhir:uri ;
-         fhir:v "http://tbd.at/moped-ext-aufnahmeart2"^^xsd:anyURI
+         fhir:v "https://elga.moped.at/CodeSystem/Aufnahmeart2CS"^^xsd:anyURI
        ] ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
@@ -3426,6 +3426,13 @@
        fhir:type ( [
          fhir:code [ fhir:v "CodeableConcept"^^xsd:anyURI ]
        ] ) ;
+       fhir:pattern [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://elga.moped.at/CodeSystem/MopedEncounterTypesCS"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "ENC" ]
+         ] )
+       ] ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
@@ -3804,8 +3811,8 @@
        fhir:type ( [
          fhir:code [ fhir:v "Reference"^^xsd:anyURI ] ;
          fhir:targetProfile ( [
-           fhir:v "https://elga.moped.at/StructureDefinition/MopedOrganizationAbteilung"^^xsd:anyURI ;
-           fhir:link <https://elga.moped.at/StructureDefinition/MopedOrganizationAbteilung>
+           fhir:v "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-organization"^^xsd:anyURI ;
+           fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-organization>
          ] )
        ] ) ;
        fhir:constraint ( [
@@ -5338,8 +5345,8 @@
        fhir:binding [
          fhir:strength [ fhir:v "required" ] ;
          fhir:valueSet [
-           fhir:v "https://elga.moped.at/ValueSet/moped-ursache-valueset"^^xsd:anyURI ;
-           fhir:link <https://elga.moped.at/ValueSet/moped-ursache-valueset>
+           fhir:v "https://elga.moped.at/ValueSet/UrsacheValueSet"^^xsd:anyURI ;
+           fhir:link <https://elga.moped.at/ValueSet/UrsacheValueSet>
          ]
        ] ;
        fhir:mapping ( [
@@ -6269,8 +6276,8 @@
        fhir:binding [
          fhir:strength [ fhir:v "required" ] ;
          fhir:valueSet [
-           fhir:v "https://elga.moped.at/ValueSet/moped-entlassungsart-valueset"^^xsd:anyURI ;
-           fhir:link <https://elga.moped.at/ValueSet/moped-entlassungsart-valueset>
+           fhir:v "https://elga.moped.at/ValueSet/Entlassungsart"^^xsd:anyURI ;
+           fhir:link <https://elga.moped.at/ValueSet/Entlassungsart>
          ]
        ] ;
        fhir:mapping ( [
