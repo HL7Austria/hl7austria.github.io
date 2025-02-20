@@ -1,0 +1,79 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://elga.moped.at/ClaimResponse/PJ1VAEResponse1> a fhir:ClaimResponse ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PJ1VAEResponse1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://elga.moped.at/StructureDefinition/MopedVAEResponse"^^xsd:anyURI ;
+       fhir:link <https://elga.moped.at/StructureDefinition/MopedVAEResponse>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ClaimResponse PJ1VAEResponse1</b></p><a name=\"PJ1VAEResponse1\"> </a><a name=\"hcPJ1VAEResponse1\"> </a><a name=\"PJ1VAEResponse1-en-US\"> </a><p><b>VerpflegskostenBeitragsbefreiung</b>: <a href=\"CodeSystem-VerpflegskostenBeitragsbefreiungCS.html#VerpflegskostenBeitragsbefreiungCS-N\">Befreiung für den Verpflegskostenbeitrag N</a>: Es liegt keine Befreiung vom Verpflegskostenbeitrag vor.</p><p><b>Vortageanzahl auf Kostenbeitrag</b>: 2</p><p><b>status</b>: Active</p><p><b>type</b>: <span title=\"Codes:\">institutional</span></p><p><b>use</b>: Preauthorization</p><p><b>patient</b>: <code>Patient?identifier=urn:oid:1.2.40.0.10.1.4.3.1|9994210469</code></p><p><b>created</b>: 2025-02-18</p><p><b>insurer</b>: <code>Organization?identifier=http://svc.co.at/CodeSystem/ecard-svt-cs|11</code></p><p><b>requestor</b>: <code>Organization?identifier=urn:ietf:rfc:3986|urn:oid:1.3.6.1.4.1.36124.5.914</code></p><p><b>request</b>: <a href=\"Claim-PJ1VAERequest1.html\">Claim: extension = Allgemeine Gebührenklasse (Sonderklasse CodeSystem#A),0; status = active; type = Institutional; use = preauthorization; created = 2025-02-17</a></p><p><b>outcome</b>: Processing Complete</p><p><b>decision</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/VAEStatusCS 00}\">bewilligt (nur für stationären Bereich)</span></p><p><b>preAuthPeriod</b>: 2024-02-22 --&gt; 2024-08-21</p><h3>Insurances</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Sequence</b></td><td><b>Focal</b></td><td><b>Coverage</b></td></tr><tr><td style=\"display: none\">*</td><td>1</td><td>true</td><td><a href=\"Coverage-PJ1Coverage.html\">Coverage: identifier = urn:oid:1.2.40.0.10.1.4.3.9.1#XB4G37PFN9FJ; status = active; kind = insurance</a></td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://elga.moped.at/StructureDefinition/moped-ext-verpflegskostenBeitragsbefreiung"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Coding ;
+       fhir:system [ fhir:v "https://elga.moped.at/CodeSystem/VerpflegskostenBeitragsbefreiungCS"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "N" ]
+     ]
+  ] [
+     fhir:url [ fhir:v "https://elga.moped.at/StructureDefinition/moped-ext-vortageanzahlAufKostenbeitrag"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:unsignedInt ;
+       fhir:v "2"^^xsd:nonNegativeInteger
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:code [ fhir:v "institutional" ]
+     ] )
+  ] ; # 
+  fhir:use [ fhir:v "preauthorization"] ; # 
+  fhir:patient [
+     fhir:reference [ fhir:v "Patient?identifier=urn:oid:1.2.40.0.10.1.4.3.1|9994210469" ]
+  ] ; # 
+  fhir:created [ fhir:v "2025-02-18"^^xsd:date] ; # 
+  fhir:insurer [
+     fhir:link <https://elga.moped.at/Organization?identifier=http://svc.co.at/CodeSystem/ecard-svt-cs|11> ;
+     fhir:reference [ fhir:v "Organization?identifier=http://svc.co.at/CodeSystem/ecard-svt-cs|11" ]
+  ] ; # 
+  fhir:requestor [
+     fhir:reference [ fhir:v "Organization?identifier=urn:ietf:rfc:3986|urn:oid:1.3.6.1.4.1.36124.5.914" ]
+  ] ; # 
+  fhir:request [
+     fhir:link <https://elga.moped.at/Claim/PJ1VAERequest1> ;
+     fhir:reference [ fhir:v "Claim/PJ1VAERequest1" ]
+  ] ; # 
+  fhir:outcome [ fhir:v "complete"] ; # 
+  fhir:decision [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://elga.moped.at/CodeSystem/VAEStatusCS"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "00" ]
+     ] )
+  ] ; # 
+  fhir:preAuthPeriod [
+     fhir:start [ fhir:v "2024-02-22"^^xsd:date ] ;
+     fhir:end [ fhir:v "2024-08-21"^^xsd:date ]
+  ] ; # 
+  fhir:insurance ( [
+     fhir:sequence [ fhir:v "1"^^xsd:positiveInteger ] ;
+     fhir:focal [ fhir:v "true"^^xsd:boolean ] ;
+     fhir:coverage [
+       fhir:link <https://elga.moped.at/Coverage/PJ1Coverage> ;
+       fhir:reference [ fhir:v "Coverage/PJ1Coverage" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
