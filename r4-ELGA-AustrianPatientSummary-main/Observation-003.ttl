@@ -1,0 +1,58 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga-austrianpatientsummary-r4/Observation/003> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "003"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationtobaccouse"^^xsd:anyURI ;
+       fhir:link <https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationtobaccouse>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation 003</b></p><a name=\"003\"> </a><a name=\"hc003\"> </a><a name=\"003-de-AT\"> </a><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 72166-2}\">Tobacco smoking status</span></p><p><b>subject</b>: <a href=\"Patient-002.html\">Maria Musterfrau</a></p><p><b>effective</b>: 2019-07-15</p><p><b>performer</b>: <a href=\"Patient-002.html\">Maria Musterfrau</a></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 8517006}\">Ex-smoker</span></p></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:72166-2 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "72166-2" ] ;
+       fhir:display [ fhir:v "Tobacco smoking status" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://fhir.hl7.at/elga-austrianpatientsummary-r4/Patient/002> ;
+     fhir:reference [ fhir:v "Patient/002" ] ;
+     fhir:display [ fhir:v "Maria Musterfrau" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:dateTime ;
+     fhir:v "2019-07-15"^^xsd:date
+  ] ; # 
+  fhir:performer ( [
+     fhir:link <https://fhir.hl7.at/elga-austrianpatientsummary-r4/Patient/002> ;
+     fhir:reference [ fhir:v "Patient/002" ] ;
+     fhir:display [ fhir:v "Maria Musterfrau" ]
+  ] ) ; # 
+  fhir:value [
+     a fhir:CodeableConcept ;
+     fhir:coding ( [
+       a sct:8517006 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "8517006" ] ;
+       fhir:display [ fhir:v "Ex-smoker" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

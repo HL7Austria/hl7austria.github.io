@@ -3,7 +3,7 @@
 <Bundle xmlns="http://hl7.org/fhir">
   <id value="APS-2-preventive-medical-checkup"/>
   <meta>
-    <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-bundle"/>
+    <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-bundle"/>
   </meta>
   <identifier>
     <system value="http://system-to-be-defined.com"/>
@@ -17,11 +17,14 @@
       <Composition>
         <id value="APS-2-preventive-medical-checkup-composition"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-composition"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-composition"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Composition_APS-2-preventive-medical-checkup-composition"> </a><p class="res-header-id"><b>Generated Narrative: Composition APS-2-preventive-medical-checkup-composition</b></p><a name="APS-2-preventive-medical-checkup-composition"> </a><a name="hcAPS-2-preventive-medical-checkup-composition"> </a><a name="APS-2-preventive-medical-checkup-composition-de-AT"> </a><p><b>status</b>: Final</p><p><b>type</b>: <span title="Codes:{http://loinc.org 60591-5}">Patient summary Document</span></p><p><b>date</b>: 2024-02-08 14:01:30+0000</p><p><b>author</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-75db30ee-7028-486c-929a-c5126837f472">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>title</b>: International Patient Summary - Preventive Medical Checkup</p></div>
+          <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Composition_APS-2-preventive-medical-checkup-composition"> </a><p class="res-header-id"><b>Generated Narrative: Composition APS-2-preventive-medical-checkup-composition</b></p><a name="APS-2-preventive-medical-checkup-composition"> </a><a name="hcAPS-2-preventive-medical-checkup-composition"> </a><a name="APS-2-preventive-medical-checkup-composition-de-AT"> </a><p><b>Country of Affiliation element</b>: AT</p><p><b>status</b>: Final</p><p><b>type</b>: <span title="Codes:{http://loinc.org 60591-5}">Patient summary Document</span></p><p><b>date</b>: 2024-02-08 14:01:30+0000</p><p><b>author</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-75db30ee-7028-486c-929a-c5126837f472">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>title</b>: International Patient Summary - Preventive Medical Checkup</p><h3>Attesters</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Mode</b></td><td><b>Party</b></td></tr><tr><td style="display: none">*</td><td>Personal</td><td><a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></td></tr></table><p><b>custodian</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-f6266e6a-f63d-4673-b2de-3dff11e619d6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
         </text>
+        <extension url="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/country-of-affiliation">
+          <valueString value="AT"/>
+        </extension>
         <status value="final"/>
         <type>
           <coding>
@@ -38,6 +41,15 @@
           <reference value="urn:uuid:75db30ee-7028-486c-929a-c5126837f472"/>
         </author>
         <title value="International Patient Summary - Preventive Medical Checkup"/>
+        <attester>
+          <mode value="personal"/>
+          <party>
+            <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+          </party>
+        </attester>
+        <custodian>
+          <reference value="urn:uuid:f6266e6a-f63d-4673-b2de-3dff11e619d6"/>
+        </custodian>
         <section>
           <title value="Problem List"/>
           <code>
@@ -181,6 +193,19 @@
           </entry>
         </section>
         <section>
+          <title value="Medical Devices"/>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="46264-8"/>
+              <display value="History of medical device use"/>
+            </coding>
+          </code>
+          <text>
+            <status value="empty"/><div xmlns="http://www.w3.org/1999/xhtml"><p>narrative needs to be generated</p></div>
+          </text>
+        </section>
+        <section>
           <title value="Diagnostic Results"/>
           <code>
             <coding>
@@ -313,23 +338,37 @@
       <Patient>
         <id value="APS-2-preventive-medical-checkup-patient"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-patient"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-patient"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Patient_APS-2-preventive-medical-checkup-patient"> </a><p class="res-header-id"><b>Generated Narrative: Patient APS-2-preventive-medical-checkup-patient</b></p><a name="APS-2-preventive-medical-checkup-patient"> </a><a name="hcAPS-2-preventive-medical-checkup-patient"> </a><a name="APS-2-preventive-medical-checkup-patient-de-AT"> </a><p style="border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;">Arnold Test  Male, DoB: 1950-11-12 ( Social Security Number: 0000121150)</p><hr/><table class="grid"><tr><td style="background-color: #f3f5da" title="Ways to contact the Patient">Contact Detail</td><td colspan="3">Am Schulweg 5 Hainfeld 3100 AUT (home)</td></tr></table></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Patient_APS-2-preventive-medical-checkup-patient"> </a><p class="res-header-id"><b>Generated Narrative: Patient APS-2-preventive-medical-checkup-patient</b></p><a name="APS-2-preventive-medical-checkup-patient"> </a><a name="hcAPS-2-preventive-medical-checkup-patient"> </a><a name="APS-2-preventive-medical-checkup-patient-de-AT"> </a><p style="border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;">Arnold Test  Male, DoB: 1950-11-12 ( Social Security number: 0000121150)</p><hr/><table class="grid"><tr><td style="background-color: #f3f5da" title="Other Id (see the one above)">Other Id:</td><td colspan="3">Patient internal identifier/0002</td></tr><tr><td style="background-color: #f3f5da" title="Ways to contact the Patient">Contact Detail</td><td colspan="3">Am Schulweg 5 Hainfeld 3100 AUT (home)</td></tr></table></div>
         </text>
         <identifier>
           <type>
             <coding>
               <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
               <code value="SS"/>
-              <display value="Social Security Number"/>
+              <display value="Social Security number"/>
             </coding>
           </type>
           <system value="urn:oid:1.2.40.0.10.1.4.3.1"/>
           <value value="0000121150"/>
           <assigner>
             <display value="Dachverband der österreichischen Sozialversicherungsträger"/>
+          </assigner>
+        </identifier>
+        <identifier>
+          <type>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+              <code value="PI"/>
+              <display value="Patient internal identifier"/>
+            </coding>
+          </type>
+          <system value="urn:oid:1.2.3.4.5"/>
+          <value value="0002"/>
+          <assigner>
+            <display value="Ein GDA in Österreich"/>
           </assigner>
         </identifier>
         <name>
@@ -354,16 +393,16 @@
       <Practitioner>
         <id value="APS-2-preventive-medical-checkup-author"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-practitioner"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-practitioner"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Practitioner_APS-2-preventive-medical-checkup-author"> </a><p class="res-header-id"><b>Generated Narrative: Practitioner APS-2-preventive-medical-checkup-author</b></p><a name="APS-2-preventive-medical-checkup-author"> </a><a name="hcAPS-2-preventive-medical-checkup-author"> </a><a name="APS-2-preventive-medical-checkup-author-de-AT"> </a><p><b>identifier</b>: <a href="http://terminology.hl7.org/5.0.0/NamingSystem-uri.html" title="As defined by RFC 3986 (http://www.ietf.org/rfc/rfc3986.txt)(with many schemes defined in many RFCs). For OIDs and UUIDs, use the URN form (urn:oid:(note: lowercase) and urn:uuid:). See http://www.ietf.org/rfc/rfc3001.txt and http://www.ietf.org/rfc/rfc4122.txt 
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Practitioner_APS-2-preventive-medical-checkup-author"> </a><p class="res-header-id"><b>Generated Narrative: Practitioner APS-2-preventive-medical-checkup-author</b></p><a name="APS-2-preventive-medical-checkup-author"> </a><a name="hcAPS-2-preventive-medical-checkup-author"> </a><a name="APS-2-preventive-medical-checkup-author-de-AT"> </a><p><b>identifier</b>: <a href="http://terminology.hl7.org/6.0.2/NamingSystem-uri.html" title="As defined by RFC 3986 (http://www.ietf.org/rfc/rfc3986.txt)(with many schemes defined in many RFCs). For OIDs and UUIDs, use the URN form (urn:oid:(note: lowercase) and urn:uuid:). See http://www.ietf.org/rfc/rfc3001.txt and http://www.ietf.org/rfc/rfc4122.txt 
 
 This oid is used as an identifier II.root to indicate the the extension is an absolute URI (technically, an IRI). Typically, this is used for OIDs and GUIDs. Note that when this OID is used with OIDs and GUIDs, the II.extension should start with urn:oid or urn:uuid: 
 
 Note that this OID is created to aid with interconversion between CDA and FHIR - FHIR uses urn:ietf:rfc:3986 as equivalent to this OID. URIs as identifiers appear more commonly in FHIR.
 
-This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.3.4</p><p><b>name</b>: Hannes Hausarzt </p></div>
+This OID may also be used in CD.codeSystem.">Uniform Resource Identifier (URI)</a>/urn:oid:1.2.40.0.10.99.1.2.3.4</p><p><b>name</b>: Hannes Hausarzt </p></div>
         </text>
         <identifier>
           <system value="urn:ietf:rfc:3986"/>
@@ -381,12 +420,27 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
     </resource>
   </entry>
   <entry>
+    <fullUrl value="urn:uuid:f6266e6a-f63d-4673-b2de-3dff11e619d6"/>
+    <resource>
+      <Organization>
+        <id value="APS-2-organization"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-organization"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Organization_APS-2-organization"> </a><p class="res-header-id"><b>Generated Narrative: Organization APS-2-organization</b></p><a name="APS-2-organization"> </a><a name="hcAPS-2-organization"> </a><a name="APS-2-organization-de-AT"> </a><p><b>name</b>: MusterOrganization</p></div>
+        </text>
+        <name value="MusterOrganization"/>
+      </Organization>
+    </resource>
+  </entry>
+  <entry>
     <fullUrl value="urn:uuid:72e85b9d-004d-4104-b166-86d129948bae"/>
     <resource>
       <Condition>
         <id value="APS-2-preventive-medical-checkup-problem-1"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-condition"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-1"> </a><p class="res-header-id"><b>Generated Narrative: Condition APS-2-preventive-medical-checkup-problem-1</b></p><a name="APS-2-preventive-medical-checkup-problem-1"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-1"> </a><a name="APS-2-preventive-medical-checkup-problem-1-de-AT"> </a><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}">Active</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}">Problem List Item</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 700379002}">Chronic kidney disease stage 3B</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
@@ -431,7 +485,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Condition>
         <id value="APS-2-preventive-medical-checkup-problem-2"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-condition"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-2"> </a><p class="res-header-id"><b>Generated Narrative: Condition APS-2-preventive-medical-checkup-problem-2</b></p><a name="APS-2-preventive-medical-checkup-problem-2"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-2"> </a><a name="APS-2-preventive-medical-checkup-problem-2-de-AT"> </a><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}">Active</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}">Problem List Item</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 711150003}">Long-term current use of anticoagulant</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
@@ -476,7 +530,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Condition>
         <id value="APS-2-preventive-medical-checkup-problem-3"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-condition"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-3"> </a><p class="res-header-id"><b>Generated Narrative: Condition APS-2-preventive-medical-checkup-problem-3</b></p><a name="APS-2-preventive-medical-checkup-problem-3"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-3"> </a><a name="APS-2-preventive-medical-checkup-problem-3-de-AT"> </a><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}">Active</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}">Problem List Item</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 314194001}">Diabetic on insulin and oral treatment</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
@@ -521,7 +575,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Condition>
         <id value="APS-2-preventive-medical-checkup-problem-4"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-condition"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-4"> </a><p class="res-header-id"><b>Generated Narrative: Condition APS-2-preventive-medical-checkup-problem-4</b></p><a name="APS-2-preventive-medical-checkup-problem-4"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-4"> </a><a name="APS-2-preventive-medical-checkup-problem-4-de-AT"> </a><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}">Active</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}">Problem List Item</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 710159007}">Long-term current use of immunosuppressive drug</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
@@ -566,7 +620,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Condition>
         <id value="APS-2-preventive-medical-checkup-problem-5"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-condition"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-5"> </a><p class="res-header-id"><b>Generated Narrative: Condition APS-2-preventive-medical-checkup-problem-5</b></p><a name="APS-2-preventive-medical-checkup-problem-5"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-5"> </a><a name="APS-2-preventive-medical-checkup-problem-5-de-AT"> </a><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}">Active</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}">Problem List Item</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 38341003}">Hypertensive disorder</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
@@ -611,7 +665,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Condition>
         <id value="APS-2-preventive-medical-checkup-problem-6"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-condition"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-6"> </a><p class="res-header-id"><b>Generated Narrative: Condition APS-2-preventive-medical-checkup-problem-6</b></p><a name="APS-2-preventive-medical-checkup-problem-6"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-6"> </a><a name="APS-2-preventive-medical-checkup-problem-6-de-AT"> </a><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}">Active</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}">Problem List Item</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 408570008}">Carotid artery doppler normal</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
@@ -656,7 +710,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Condition>
         <id value="APS-2-preventive-medical-checkup-problem-7"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-condition"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-7"> </a><p class="res-header-id"><b>Generated Narrative: Condition APS-2-preventive-medical-checkup-problem-7</b></p><a name="APS-2-preventive-medical-checkup-problem-7"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-7"> </a><a name="APS-2-preventive-medical-checkup-problem-7-de-AT"> </a><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}">Active</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}">Problem List Item</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 168938005}">Coronary arteriography normal</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
@@ -701,7 +755,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Condition>
         <id value="APS-2-preventive-medical-checkup-problem-8"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-condition"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-8"> </a><p class="res-header-id"><b>Generated Narrative: Condition APS-2-preventive-medical-checkup-problem-8</b></p><a name="APS-2-preventive-medical-checkup-problem-8"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-8"> </a><a name="APS-2-preventive-medical-checkup-problem-8-de-AT"> </a><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}">Active</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}">Problem List Item</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 328941000119101}">Long-term current use of bisphosphonates</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>onset</b>: 2020-06 --&gt; 2025-03</p></div>
@@ -750,7 +804,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Condition>
         <id value="APS-2-preventive-medical-checkup-problem-9"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-condition"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-9"> </a><p class="res-header-id"><b>Generated Narrative: Condition APS-2-preventive-medical-checkup-problem-9</b></p><a name="APS-2-preventive-medical-checkup-problem-9"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-9"> </a><a name="APS-2-preventive-medical-checkup-problem-9-de-AT"> </a><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}">Active</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}">Problem List Item</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 440028005}">Permanent atrial fibrillation</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
@@ -795,7 +849,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Condition>
         <id value="APS-2-preventive-medical-checkup-problem-10"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-condition"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-10"> </a><p class="res-header-id"><b>Generated Narrative: Condition APS-2-preventive-medical-checkup-problem-10</b></p><a name="APS-2-preventive-medical-checkup-problem-10"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-10"> </a><a name="APS-2-preventive-medical-checkup-problem-10-de-AT"> </a><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}">Active</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}">Problem List Item</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 735623008}">Albuminuria grade A2</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
@@ -840,7 +894,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Condition>
         <id value="APS-2-preventive-medical-checkup-problem-11"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-condition"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-11"> </a><p class="res-header-id"><b>Generated Narrative: Condition APS-2-preventive-medical-checkup-problem-11</b></p><a name="APS-2-preventive-medical-checkup-problem-11"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-11"> </a><a name="APS-2-preventive-medical-checkup-problem-11-de-AT"> </a><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}">Active</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}">Problem List Item</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 239792003}">Seronegative rheumatoid arthritis</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
@@ -885,7 +939,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Condition>
         <id value="APS-2-preventive-medical-checkup-problem-12"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-condition"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-12"> </a><p class="res-header-id"><b>Generated Narrative: Condition APS-2-preventive-medical-checkup-problem-12</b></p><a name="APS-2-preventive-medical-checkup-problem-12"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-12"> </a><a name="APS-2-preventive-medical-checkup-problem-12-de-AT"> </a><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}">Active</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}">Problem List Item</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 13644009}">Hypercholesterolemia</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
@@ -930,7 +984,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Condition>
         <id value="APS-2-preventive-medical-checkup-problem-13"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-condition"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-13"> </a><p class="res-header-id"><b>Generated Narrative: Condition APS-2-preventive-medical-checkup-problem-13</b></p><a name="APS-2-preventive-medical-checkup-problem-13"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-13"> </a><a name="APS-2-preventive-medical-checkup-problem-13-de-AT"> </a><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}">Active</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}">Problem List Item</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 160303001}">Family history of diabetes mellitus (situation)</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
@@ -975,7 +1029,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Condition>
         <id value="APS-2-preventive-medical-checkup-problem-14"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-condition"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-14"> </a><p class="res-header-id"><b>Generated Narrative: Condition APS-2-preventive-medical-checkup-problem-14</b></p><a name="APS-2-preventive-medical-checkup-problem-14"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-14"> </a><a name="APS-2-preventive-medical-checkup-problem-14-de-AT"> </a><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}">Active</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}">Problem List Item</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 312824007}">Family history of cancer of colon</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
@@ -1020,7 +1074,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Condition>
         <id value="APS-2-preventive-medical-checkup-problem-15"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-condition"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-15"> </a><p class="res-header-id"><b>Generated Narrative: Condition APS-2-preventive-medical-checkup-problem-15</b></p><a name="APS-2-preventive-medical-checkup-problem-15"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-15"> </a><a name="APS-2-preventive-medical-checkup-problem-15-de-AT"> </a><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}">Active</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}">Problem List Item</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 134439009}">Family history: premature coronary heart disease</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
@@ -1065,7 +1119,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Condition>
         <id value="APS-2-preventive-medical-checkup-problem-16"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-condition"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-16"> </a><p class="res-header-id"><b>Generated Narrative: Condition APS-2-preventive-medical-checkup-problem-16</b></p><a name="APS-2-preventive-medical-checkup-problem-16"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-16"> </a><a name="APS-2-preventive-medical-checkup-problem-16-de-AT"> </a><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}">Active</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}">Problem List Item</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 160314003}">FH: Hypercholesterolemia</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
@@ -1110,7 +1164,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Condition>
         <id value="APS-2-preventive-medical-checkup-problem-17"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-condition"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-problem-17"> </a><p class="res-header-id"><b>Generated Narrative: Condition APS-2-preventive-medical-checkup-problem-17</b></p><a name="APS-2-preventive-medical-checkup-problem-17"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-17"> </a><a name="APS-2-preventive-medical-checkup-problem-17-de-AT"> </a><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical inactive}">Inactive</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status provisional}">Provisional</span></p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}">Problem List Item</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 2556008}">Periodontal disease (disorder)</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><h3>Stages</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Assessment</b></td></tr><tr><td style="display: none">*</td><td><a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-f235c566-01aa-457d-ab49-9e422df69863">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></td></tr></table></div>
@@ -1160,7 +1214,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Observation>
         <id value="APS-2-preventive-medical-checkup-problem-17-assessment-1"/>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-problem-17-assessment-1"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-problem-17-assessment-1</b></p><a name="APS-2-preventive-medical-checkup-problem-17-assessment-1"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-17-assessment-1"> </a><a name="APS-2-preventive-medical-checkup-problem-17-assessment-1-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}">Exam</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 1237049003}">Evaluation of risk factors for periodontal disease</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>value</b>: <span title="Codes:{http://snomed.info/sct 723509005}">High risk</span></p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-problem-17-assessment-1"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-problem-17-assessment-1</b></p><a name="APS-2-preventive-medical-checkup-problem-17-assessment-1"> </a><a name="hcAPS-2-preventive-medical-checkup-problem-17-assessment-1"> </a><a name="APS-2-preventive-medical-checkup-problem-17-assessment-1-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}">Exam</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 1237049003}">Evaluation of risk factors for periodontal disease</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: <span title="Codes:{http://snomed.info/sct 723509005}">High risk</span></p></div>
         </text>
         <status value="final"/>
         <category>
@@ -1181,6 +1235,9 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
           <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
         </subject>
         <effectiveDateTime value="2024-02-08T08:30:00+01:00"/>
+        <performer>
+          <reference value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
+        </performer>
         <valueCodeableConcept>
           <coding>
             <system value="http://snomed.info/sct"/>
@@ -1197,7 +1254,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <MedicationStatement>
         <id value="APS-2-preventive-medical-checkup-medication-summary-1"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-medicationstatement"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-medicationstatement"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="MedicationStatement_APS-2-preventive-medical-checkup-medication-summary-1"> </a><p class="res-header-id"><b>Generated Narrative: MedicationStatement APS-2-preventive-medical-checkup-medication-summary-1</b></p><a name="APS-2-preventive-medical-checkup-medication-summary-1"> </a><a name="hcAPS-2-preventive-medical-checkup-medication-summary-1"> </a><a name="APS-2-preventive-medical-checkup-medication-summary-1-de-AT"> </a><p><b>status</b>: Active</p><p><b>medication</b>: <span title="Codes:{https://termgit.elga.gv.at/CodeSystem/asp-liste 2443061}">EBETREXAT TBL 10MG</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 10:31:58+0200 --&gt; (ongoing)</p><blockquote><p><b>dosage</b></p><p><b>sequence</b>: 1</p><p><b>timing</b>: Night, Once</p><p><b>route</b>: <span title="Codes:{http://snomed.info/sct 26643006}">Oral use</span></p><h3>DoseAndRates</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Dose[x]</b></td></tr><tr><td style="display: none">*</td><td>2 Tablet<span style="background: LightGoldenRodYellow"> (Details:   code15054000&quot; = '15054000&quot;')</span></td></tr></table></blockquote></div>
@@ -1249,7 +1306,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <MedicationStatement>
         <id value="APS-2-preventive-medical-checkup-medication-summary-2"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-medicationstatement"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-medicationstatement"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="MedicationStatement_APS-2-preventive-medical-checkup-medication-summary-2"> </a><p class="res-header-id"><b>Generated Narrative: MedicationStatement APS-2-preventive-medical-checkup-medication-summary-2</b></p><a name="APS-2-preventive-medical-checkup-medication-summary-2"> </a><a name="hcAPS-2-preventive-medical-checkup-medication-summary-2"> </a><a name="APS-2-preventive-medical-checkup-medication-summary-2-de-AT"> </a><p><b>status</b>: Active</p><p><b>medication</b>: <span title="Codes:{https://termgit.elga.gv.at/CodeSystem/asp-liste 3779722}">ELIQUIS FTBL 2,5MG</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 10:31:58+0200 --&gt; (ongoing)</p><h3>Dosages</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Text</b></td></tr><tr><td style="display: none">*</td><td>S:1-0-0-1</td></tr></table></div>
@@ -1280,7 +1337,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <MedicationStatement>
         <id value="APS-2-preventive-medical-checkup-medication-summary-3"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-medicationstatement"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-medicationstatement"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="MedicationStatement_APS-2-preventive-medical-checkup-medication-summary-3"> </a><p class="res-header-id"><b>Generated Narrative: MedicationStatement APS-2-preventive-medical-checkup-medication-summary-3</b></p><a name="APS-2-preventive-medical-checkup-medication-summary-3"> </a><a name="hcAPS-2-preventive-medical-checkup-medication-summary-3"> </a><a name="APS-2-preventive-medical-checkup-medication-summary-3-de-AT"> </a><p><b>status</b>: Active</p><p><b>medication</b>: <span title="Codes:{https://termgit.elga.gv.at/CodeSystem/asp-liste 3910895}">FORXIGA FTBL 10MG</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 10:31:58+0200 --&gt; (ongoing)</p><h3>Dosages</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Text</b></td></tr><tr><td style="display: none">*</td><td>S:1-0-0-0</td></tr></table></div>
@@ -1311,7 +1368,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <MedicationStatement>
         <id value="APS-2-preventive-medical-checkup-medication-summary-4"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-medicationstatement"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-medicationstatement"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="MedicationStatement_APS-2-preventive-medical-checkup-medication-summary-4"> </a><p class="res-header-id"><b>Generated Narrative: MedicationStatement APS-2-preventive-medical-checkup-medication-summary-4</b></p><a name="APS-2-preventive-medical-checkup-medication-summary-4"> </a><a name="hcAPS-2-preventive-medical-checkup-medication-summary-4"> </a><a name="APS-2-preventive-medical-checkup-medication-summary-4-de-AT"> </a><p><b>status</b>: Active</p><p><b>medication</b>: <span title="Codes:{https://termgit.elga.gv.at/CodeSystem/asp-liste 4476685}">GEROFOL TBL 5MG</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 10:31:58+0200 --&gt; (ongoing)</p><h3>Dosages</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Text</b></td></tr><tr><td style="display: none">*</td><td>S:MO, MI</td></tr></table></div>
@@ -1342,7 +1399,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <MedicationStatement>
         <id value="APS-2-preventive-medical-checkup-medication-summary-5"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-medicationstatement"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-medicationstatement"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="MedicationStatement_APS-2-preventive-medical-checkup-medication-summary-5"> </a><p class="res-header-id"><b>Generated Narrative: MedicationStatement APS-2-preventive-medical-checkup-medication-summary-5</b></p><a name="APS-2-preventive-medical-checkup-medication-summary-5"> </a><a name="hcAPS-2-preventive-medical-checkup-medication-summary-5"> </a><a name="APS-2-preventive-medical-checkup-medication-summary-5-de-AT"> </a><p><b>status</b>: Active</p><p><b>medication</b>: <span title="Codes:{https://termgit.elga.gv.at/CodeSystem/asp-liste 3780576}">IBANDRONSAEURE SAN FSPR 3MG</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 10:31:58+0200 --&gt; (ongoing)</p><h3>Dosages</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Text</b></td></tr><tr><td style="display: none">*</td><td>S:0,33/Monat, alle 3 Monate</td></tr></table></div>
@@ -1373,7 +1430,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <MedicationStatement>
         <id value="APS-2-preventive-medical-checkup-medication-summary-6"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-medicationstatement"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-medicationstatement"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="MedicationStatement_APS-2-preventive-medical-checkup-medication-summary-6"> </a><p class="res-header-id"><b>Generated Narrative: MedicationStatement APS-2-preventive-medical-checkup-medication-summary-6</b></p><a name="APS-2-preventive-medical-checkup-medication-summary-6"> </a><a name="hcAPS-2-preventive-medical-checkup-medication-summary-6"> </a><a name="APS-2-preventive-medical-checkup-medication-summary-6-de-AT"> </a><p><b>status</b>: Active</p><p><b>medication</b>: <span title="Codes:{https://termgit.elga.gv.at/CodeSystem/asp-liste 1294446}">METFORMIN HEX FTBL  500MG</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 10:31:58+0200 --&gt; (ongoing)</p><h3>Dosages</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Text</b></td></tr><tr><td style="display: none">*</td><td>S:1-0-0-1</td></tr></table></div>
@@ -1404,7 +1461,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <MedicationStatement>
         <id value="APS-2-preventive-medical-checkup-medication-summary-7"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-medicationstatement"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-medicationstatement"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="MedicationStatement_APS-2-preventive-medical-checkup-medication-summary-7"> </a><p class="res-header-id"><b>Generated Narrative: MedicationStatement APS-2-preventive-medical-checkup-medication-summary-7</b></p><a name="APS-2-preventive-medical-checkup-medication-summary-7"> </a><a name="hcAPS-2-preventive-medical-checkup-medication-summary-7"> </a><a name="APS-2-preventive-medical-checkup-medication-summary-7-de-AT"> </a><p><b>status</b>: Active</p><p><b>medication</b>: <span title="Codes:{https://termgit.elga.gv.at/CodeSystem/asp-liste 2450888}">RAMIPRIL 1A TBL  5MG</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 10:31:58+0200 --&gt; (ongoing)</p><h3>Dosages</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Text</b></td></tr><tr><td style="display: none">*</td><td>S:1-0-0-0</td></tr></table></div>
@@ -1435,7 +1492,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <MedicationStatement>
         <id value="APS-2-preventive-medical-checkup-medication-summary-8"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-medicationstatement"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-medicationstatement"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="MedicationStatement_APS-2-preventive-medical-checkup-medication-summary-8"> </a><p class="res-header-id"><b>Generated Narrative: MedicationStatement APS-2-preventive-medical-checkup-medication-summary-8</b></p><a name="APS-2-preventive-medical-checkup-medication-summary-8"> </a><a name="hcAPS-2-preventive-medical-checkup-medication-summary-8"> </a><a name="APS-2-preventive-medical-checkup-medication-summary-8-de-AT"> </a><p><b>status</b>: Active</p><p><b>medication</b>: <span title="Codes:{https://termgit.elga.gv.at/CodeSystem/asp-liste 4466132}">ROSUVASTATIN 1A FTBL 10MG</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 10:31:58+0200 --&gt; (ongoing)</p></div>
@@ -1463,7 +1520,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <MedicationStatement>
         <id value="APS-2-preventive-medical-checkup-medication-summary-9"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-medicationstatement"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-medicationstatement"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="MedicationStatement_APS-2-preventive-medical-checkup-medication-summary-9"> </a><p class="res-header-id"><b>Generated Narrative: MedicationStatement APS-2-preventive-medical-checkup-medication-summary-9</b></p><a name="APS-2-preventive-medical-checkup-medication-summary-9"> </a><a name="hcAPS-2-preventive-medical-checkup-medication-summary-9"> </a><a name="APS-2-preventive-medical-checkup-medication-summary-9-de-AT"> </a><p><b>status</b>: Active</p><p><b>medication</b>: <span title="Codes:{https://termgit.elga.gv.at/CodeSystem/asp-liste 4477087}">SEMGLEE INJ 100E/ML FPEN 3ML</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 10:31:58+0200 --&gt; (ongoing)</p><h3>Dosages</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Text</b></td></tr><tr><td style="display: none">*</td><td>S:0-0-0-10</td></tr></table></div>
@@ -1494,7 +1551,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <AllergyIntolerance>
         <id value="APS-2-preventive-medical-checkup-allergy-1"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-allergyintolerance"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-allergyintolerance"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="AllergyIntolerance_APS-2-preventive-medical-checkup-allergy-1"> </a><p class="res-header-id"><b>Generated Narrative: AllergyIntolerance APS-2-preventive-medical-checkup-allergy-1</b></p><a name="APS-2-preventive-medical-checkup-allergy-1"> </a><a name="hcAPS-2-preventive-medical-checkup-allergy-1"> </a><a name="APS-2-preventive-medical-checkup-allergy-1-de-AT"> </a><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical active}">Active</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 764146007}">Penicillin</span></p><p><b>patient</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
@@ -1525,7 +1582,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Procedure>
         <id value="APS-2-preventive-medical-checkup-procedure-history-1"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-Procedure"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-Procedure"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Procedure_APS-2-preventive-medical-checkup-procedure-history-1"> </a><p class="res-header-id"><b>Generated Narrative: Procedure APS-2-preventive-medical-checkup-procedure-history-1</b></p><a name="APS-2-preventive-medical-checkup-procedure-history-1"> </a><a name="hcAPS-2-preventive-medical-checkup-procedure-history-1"> </a><a name="APS-2-preventive-medical-checkup-procedure-history-1-de-AT"> </a><p><b>status</b>: Completed</p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 770606008}">Total replacement of left hip joint</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>performed</b>: 2010</p></div>
@@ -1551,7 +1608,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Procedure>
         <id value="APS-2-preventive-medical-checkup-procedure-history-2"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-Procedure"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-Procedure"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Procedure_APS-2-preventive-medical-checkup-procedure-history-2"> </a><p class="res-header-id"><b>Generated Narrative: Procedure APS-2-preventive-medical-checkup-procedure-history-2</b></p><a name="APS-2-preventive-medical-checkup-procedure-history-2"> </a><a name="hcAPS-2-preventive-medical-checkup-procedure-history-2"> </a><a name="APS-2-preventive-medical-checkup-procedure-history-2-de-AT"> </a><p><b>status</b>: Completed</p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 80146002}">Appendectomy</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>performed</b>: 1962</p></div>
@@ -1577,7 +1634,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Procedure>
         <id value="APS-2-preventive-medical-checkup-procedure-history-3"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-Procedure"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-Procedure"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Procedure_APS-2-preventive-medical-checkup-procedure-history-3"> </a><p class="res-header-id"><b>Generated Narrative: Procedure APS-2-preventive-medical-checkup-procedure-history-3</b></p><a name="APS-2-preventive-medical-checkup-procedure-history-3"> </a><a name="hcAPS-2-preventive-medical-checkup-procedure-history-3"> </a><a name="APS-2-preventive-medical-checkup-procedure-history-3-de-AT"> </a><p><b>status</b>: Completed</p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 851000119109}">History of colonoscopy</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>performed</b>: 2014</p></div>
@@ -1598,15 +1655,65 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
     </resource>
   </entry>
   <entry>
+    <fullUrl value="urn:uuid:5218bc54-5d55-42fa-aa0c-169b61577ad0"/>
+    <resource>
+      <Specimen>
+        <id value="APS-2-preventive-medical-checkup-diagnostic-specimen-1"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-specimen"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Specimen_APS-2-preventive-medical-checkup-diagnostic-specimen-1"> </a><p class="res-header-id"><b>Generated Narrative: Specimen APS-2-preventive-medical-checkup-diagnostic-specimen-1</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-specimen-1"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-specimen-1"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-specimen-1-de-AT"> </a><p><b>status</b>: Unavailable</p><p><b>type</b>: <span title="Codes:{http://snomed.info/sct 119297000}">Blood specimen</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
+        </text>
+        <status value="unavailable"/>
+        <type>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="119297000"/>
+            <display value="Blood specimen"/>
+          </coding>
+        </type>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+      </Specimen>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:ee1e26a1-caba-45f7-928e-d93fc1a47da9"/>
+    <resource>
+      <Specimen>
+        <id value="APS-2-preventive-medical-checkup-diagnostic-specimen-2"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-specimen"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Specimen_APS-2-preventive-medical-checkup-diagnostic-specimen-2"> </a><p class="res-header-id"><b>Generated Narrative: Specimen APS-2-preventive-medical-checkup-diagnostic-specimen-2</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-specimen-2"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-specimen-2"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-specimen-2-de-AT"> </a><p><b>status</b>: Available</p><p><b>type</b>: <span title="Codes:{http://snomed.info/sct 122575003}">Urine specimen</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
+        </text>
+        <status value="available"/>
+        <type>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="122575003"/>
+            <display value="Urine specimen"/>
+          </coding>
+        </type>
+        <subject>
+          <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
+        </subject>
+      </Specimen>
+    </resource>
+  </entry>
+  <entry>
     <fullUrl value="urn:uuid:725bcf71-22e6-473b-a879-49a4b63cd654"/>
     <resource>
       <Observation>
         <id value="APS-2-preventive-medical-checkup-diagnostic-result-1"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationresultslaboratorypathology"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-1"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-1</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-1"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-1"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-1-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 882-1}">ABO and Rh group [Type] in Blood</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: <span title="Codes:{http://snomed.info/sct 278149003}">Blood group A Rh(D) positive (finding)</span></p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-1"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-1</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-1"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-1"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-1-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span>, <span title="Codes:{https://termgit.elga.gv.at/ValueSet/elga-laborstruktur 03010}">Blutbild</span>, <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 882-1}">ABO and Rh group [Type] in Blood</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: <span title="Codes:{http://snomed.info/sct 278149003}">Blood group A Rh(D) positive (finding)</span></p><p><b>specimen</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-5218bc54-5d55-42fa-aa0c-169b61577ad0">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
         </text>
         <status value="final"/>
         <category>
@@ -1614,6 +1721,19 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
             <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
             <code value="laboratory"/>
             <display value="Laboratory"/>
+          </coding>
+        </category>
+        <category>
+          <coding>
+            <system value="https://termgit.elga.gv.at/ValueSet/elga-laborstruktur"/>
+            <code value="03010"/>
+            <display value="Blutbild"/>
+          </coding>
+        </category>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
           </coding>
         </category>
         <code>
@@ -1637,6 +1757,9 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
             <display value="Blood group A Rh(D) positive (finding)"/>
           </coding>
         </valueCodeableConcept>
+        <specimen>
+          <reference value="urn:uuid:5218bc54-5d55-42fa-aa0c-169b61577ad0"/>
+        </specimen>
       </Observation>
     </resource>
   </entry>
@@ -1646,10 +1769,10 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Observation>
         <id value="APS-2-preventive-medical-checkup-diagnostic-result-2"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationresultslaboratorypathology"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-2"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-2</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-2"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-2"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-2-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{https://termgit.elga.gv.at/CodeSystem/elga-laborparameterergaenzung 500}">Klinische Chemie</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:56:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>hasMember</b>: </p><ul><li><a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-aeff2319-2cc2-4fba-9541-7a4de3d20f91">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></li><li><a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-d16dce15-bc5a-48a5-910e-6ac039785a2a">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></li><li><a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-96314fcd-3b0c-4032-8cac-6eb59579d90a">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></li><li><a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-30c8a990-ea39-4dcb-9e1e-b9ac74afffc9">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></li><li><a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-f29ac02d-762e-436e-b40c-667ab89e15f2">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></li><li><a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-28a773ea-38c7-4c77-86c4-7764325756e7">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></li></ul></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-2"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-2</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-2"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-2"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-2-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span>, <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{https://termgit.elga.gv.at/CodeSystem/elga-laborparameterergaenzung 500}">Klinische Chemie</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:56:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>specimen</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-5218bc54-5d55-42fa-aa0c-169b61577ad0">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>hasMember</b>: </p><ul><li><a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-aeff2319-2cc2-4fba-9541-7a4de3d20f91">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></li><li><a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-d16dce15-bc5a-48a5-910e-6ac039785a2a">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></li><li><a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-96314fcd-3b0c-4032-8cac-6eb59579d90a">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></li><li><a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-30c8a990-ea39-4dcb-9e1e-b9ac74afffc9">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></li><li><a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-f29ac02d-762e-436e-b40c-667ab89e15f2">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></li><li><a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-28a773ea-38c7-4c77-86c4-7764325756e7">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></li></ul></div>
         </text>
         <status value="final"/>
         <category>
@@ -1657,6 +1780,12 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
             <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
             <code value="laboratory"/>
             <display value="Laboratory"/>
+          </coding>
+        </category>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
           </coding>
         </category>
         <code>
@@ -1673,6 +1802,9 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
         <performer>
           <reference value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
         </performer>
+        <specimen>
+          <reference value="urn:uuid:5218bc54-5d55-42fa-aa0c-169b61577ad0"/>
+        </specimen>
         <hasMember>
           <reference value="urn:uuid:aeff2319-2cc2-4fba-9541-7a4de3d20f91"/>
         </hasMember>
@@ -1700,10 +1832,11 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Observation>
         <id value="APS-2-preventive-medical-checkup-diagnostic-result-3"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationresultslaboratorypathology"/>
         </meta>
+        <language value="de-AT"/>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-3"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-3</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-3"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-3"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-3-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 2093-3}">Cholesterin</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: 180 mg/dL<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemg/dL = 'mg/dL')</span></p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" xml:lang="de-AT" lang="de-AT"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-3"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-3</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-3"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-3"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-3-de-AT"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: de-AT</p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-aps-observationresultslaboratorypathology.html">AT APS Observation Results Laboratory Pathology</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span>, <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 2093-3}">Cholesterin</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: 180 mg/dL<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemg/dL = 'mg/dL')</span></p><p><b>specimen</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-5218bc54-5d55-42fa-aa0c-169b61577ad0">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
         </text>
         <status value="final"/>
         <category>
@@ -1711,6 +1844,12 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
             <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
             <code value="laboratory"/>
             <display value="Laboratory"/>
+          </coding>
+        </category>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
           </coding>
         </category>
         <code>
@@ -1733,6 +1872,9 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
           <system value="http://unitsofmeasure.org"/>
           <code value="mg/dL"/>
         </valueQuantity>
+        <specimen>
+          <reference value="urn:uuid:5218bc54-5d55-42fa-aa0c-169b61577ad0"/>
+        </specimen>
       </Observation>
     </resource>
   </entry>
@@ -1742,10 +1884,11 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Observation>
         <id value="APS-2-preventive-medical-checkup-diagnostic-result-4"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationresultslaboratorypathology"/>
         </meta>
+        <language value="de-AT"/>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-4"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-4</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-4"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-4"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-4-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 2085-9}">HDL-Cholesterin</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: 45 mg/dL<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemg/dL = 'mg/dL')</span></p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" xml:lang="de-AT" lang="de-AT"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-4"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-4</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-4"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-4"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-4-de-AT"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: de-AT</p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-aps-observationresultslaboratorypathology.html">AT APS Observation Results Laboratory Pathology</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span>, <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 2085-9}">HDL-Cholesterin</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: 45 mg/dL<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemg/dL = 'mg/dL')</span></p><p><b>specimen</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-5218bc54-5d55-42fa-aa0c-169b61577ad0">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
         </text>
         <status value="final"/>
         <category>
@@ -1753,6 +1896,12 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
             <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
             <code value="laboratory"/>
             <display value="Laboratory"/>
+          </coding>
+        </category>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
           </coding>
         </category>
         <code>
@@ -1775,6 +1924,9 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
           <system value="http://unitsofmeasure.org"/>
           <code value="mg/dL"/>
         </valueQuantity>
+        <specimen>
+          <reference value="urn:uuid:5218bc54-5d55-42fa-aa0c-169b61577ad0"/>
+        </specimen>
       </Observation>
     </resource>
   </entry>
@@ -1784,10 +1936,10 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Observation>
         <id value="APS-2-preventive-medical-checkup-diagnostic-result-5"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationresultslaboratorypathology"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-5"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-5</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-5"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-5"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-5-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 9830-1}">Cholesterol.total/Cholesterol in HDL [Mass Ratio] in Serum or Plasma</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: 4 {ratio}<span style="background: LightGoldenRodYellow"> (Details: UCUM  code{ratio} = '{ratio}')</span></p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-5"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-5</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-5"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-5"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-5-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span>, <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 9830-1}">Cholesterol.total/Cholesterol in HDL [Mass Ratio] in Serum or Plasma</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: 4 {ratio}<span style="background: LightGoldenRodYellow"> (Details: UCUM  code{ratio} = '{ratio}')</span></p><p><b>specimen</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-5218bc54-5d55-42fa-aa0c-169b61577ad0">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
         </text>
         <status value="final"/>
         <category>
@@ -1795,6 +1947,12 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
             <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
             <code value="laboratory"/>
             <display value="Laboratory"/>
+          </coding>
+        </category>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
           </coding>
         </category>
         <code>
@@ -1817,6 +1975,9 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
           <system value="http://unitsofmeasure.org"/>
           <code value="{ratio}"/>
         </valueQuantity>
+        <specimen>
+          <reference value="urn:uuid:5218bc54-5d55-42fa-aa0c-169b61577ad0"/>
+        </specimen>
       </Observation>
     </resource>
   </entry>
@@ -1826,10 +1987,11 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Observation>
         <id value="APS-2-preventive-medical-checkup-diagnostic-result-6"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationresultslaboratorypathology"/>
         </meta>
+        <language value="de-AT"/>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-6"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-6</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-6"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-6"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-6-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 2571-8}">Triglyceride</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: 130 mg/dL<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemg/dL = 'mg/dL')</span></p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" xml:lang="de-AT" lang="de-AT"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-6"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-6</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-6"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-6"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-6-de-AT"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: de-AT</p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-aps-observationresultslaboratorypathology.html">AT APS Observation Results Laboratory Pathology</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span>, <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 2571-8}">Triglyceride</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: 130 mg/dL<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemg/dL = 'mg/dL')</span></p><p><b>specimen</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-5218bc54-5d55-42fa-aa0c-169b61577ad0">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
         </text>
         <status value="final"/>
         <category>
@@ -1837,6 +1999,12 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
             <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
             <code value="laboratory"/>
             <display value="Laboratory"/>
+          </coding>
+        </category>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
           </coding>
         </category>
         <code>
@@ -1859,6 +2027,9 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
           <system value="http://unitsofmeasure.org"/>
           <code value="mg/dL"/>
         </valueQuantity>
+        <specimen>
+          <reference value="urn:uuid:5218bc54-5d55-42fa-aa0c-169b61577ad0"/>
+        </specimen>
       </Observation>
     </resource>
   </entry>
@@ -1868,10 +2039,11 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Observation>
         <id value="APS-2-preventive-medical-checkup-diagnostic-result-7"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationresultslaboratorypathology"/>
         </meta>
+        <language value="de-AT"/>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-7"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-7</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-7"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-7"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-7-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 2324-2}">Gamma-GT</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: 54 U/L<span style="background: LightGoldenRodYellow"> (Details: UCUM  codeU/L = 'U/L')</span></p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml" xml:lang="de-AT" lang="de-AT"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-7"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-7</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-7"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-7"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-7-de-AT"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: de-AT</p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-aps-observationresultslaboratorypathology.html">AT APS Observation Results Laboratory Pathology</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span>, <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 2324-2}">Gamma-GT</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: 54 U/L<span style="background: LightGoldenRodYellow"> (Details: UCUM  codeU/L = 'U/L')</span></p><p><b>specimen</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-5218bc54-5d55-42fa-aa0c-169b61577ad0">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
         </text>
         <status value="final"/>
         <category>
@@ -1879,6 +2051,12 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
             <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
             <code value="laboratory"/>
             <display value="Laboratory"/>
+          </coding>
+        </category>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
           </coding>
         </category>
         <code>
@@ -1901,6 +2079,9 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
           <system value="http://unitsofmeasure.org"/>
           <code value="U/L"/>
         </valueQuantity>
+        <specimen>
+          <reference value="urn:uuid:5218bc54-5d55-42fa-aa0c-169b61577ad0"/>
+        </specimen>
       </Observation>
     </resource>
   </entry>
@@ -1910,10 +2091,10 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Observation>
         <id value="APS-2-preventive-medical-checkup-diagnostic-result-8"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationresultslaboratorypathology"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-8"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-8</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-8"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-8"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-8-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{https://termgit.elga.gv.at/CodeSystem/elga-laborparameterergaenzung 1400}">Urindiagnostik</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:56:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>hasMember</b>: </p><ul><li><a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-24ff8632-0ccd-4279-88b2-325fdd936ecb">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></li><li><a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-8c11ad58-94ec-469c-ba4d-bfba9063067d">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></li><li><a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-8c7f9e94-b834-474e-818c-bbd6c3ce3e17">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></li><li><a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-e6e05f94-92be-4ae3-bf49-b0b7d4a62b35">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></li><li><a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-33e09da2-5f43-4046-b2eb-cf190031826b">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></li><li><a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-b675680e-9469-41b1-adc1-093904e3a1d2">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></li></ul></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-8"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-8</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-8"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-8"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-8-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span>, <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{https://termgit.elga.gv.at/CodeSystem/elga-laborparameterergaenzung 1400}">Urindiagnostik</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:56:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>specimen</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-ee1e26a1-caba-45f7-928e-d93fc1a47da9">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>hasMember</b>: </p><ul><li><a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-24ff8632-0ccd-4279-88b2-325fdd936ecb">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></li><li><a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-8c11ad58-94ec-469c-ba4d-bfba9063067d">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></li><li><a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-8c7f9e94-b834-474e-818c-bbd6c3ce3e17">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></li><li><a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-e6e05f94-92be-4ae3-bf49-b0b7d4a62b35">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></li><li><a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-33e09da2-5f43-4046-b2eb-cf190031826b">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></li><li><a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-b675680e-9469-41b1-adc1-093904e3a1d2">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></li></ul></div>
         </text>
         <status value="final"/>
         <category>
@@ -1921,6 +2102,12 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
             <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
             <code value="laboratory"/>
             <display value="Laboratory"/>
+          </coding>
+        </category>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
           </coding>
         </category>
         <code>
@@ -1937,6 +2124,9 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
         <performer>
           <reference value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
         </performer>
+        <specimen>
+          <reference value="urn:uuid:ee1e26a1-caba-45f7-928e-d93fc1a47da9"/>
+        </specimen>
         <hasMember>
           <reference value="urn:uuid:24ff8632-0ccd-4279-88b2-325fdd936ecb"/>
         </hasMember>
@@ -1964,10 +2154,10 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Observation>
         <id value="APS-2-preventive-medical-checkup-diagnostic-result-9"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationresultslaboratorypathology"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-9"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-9</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-9"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-9"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-9-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 33052-2}">Leukocytes [Presence] in Urine</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: <span title="Codes:{http://snomed.info/sct 260415000}">Not detected (qualifier value)</span></p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-9"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-9</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-9"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-9"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-9-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span>, <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 33052-2}">Leukocytes [Presence] in Urine</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: <span title="Codes:{http://snomed.info/sct 260415000}">Not detected (qualifier value)</span></p><p><b>specimen</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-ee1e26a1-caba-45f7-928e-d93fc1a47da9">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
         </text>
         <status value="final"/>
         <category>
@@ -1975,6 +2165,12 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
             <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
             <code value="laboratory"/>
             <display value="Laboratory"/>
+          </coding>
+        </category>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
           </coding>
         </category>
         <code>
@@ -1998,6 +2194,9 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
             <display value="Not detected (qualifier value)"/>
           </coding>
         </valueCodeableConcept>
+        <specimen>
+          <reference value="urn:uuid:ee1e26a1-caba-45f7-928e-d93fc1a47da9"/>
+        </specimen>
       </Observation>
     </resource>
   </entry>
@@ -2007,10 +2206,10 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Observation>
         <id value="APS-2-preventive-medical-checkup-diagnostic-result-10"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationresultslaboratorypathology"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-10"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-10</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-10"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-10"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-10-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 2887-8}">Protein [Presence] in Urine</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: <span title="Codes:{http://snomed.info/sct 260415000}">Not detected (qualifier value)</span></p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-10"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-10</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-10"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-10"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-10-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span>, <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 2887-8}">Protein [Presence] in Urine</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: <span title="Codes:{http://snomed.info/sct 260415000}">Not detected (qualifier value)</span></p><p><b>specimen</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-ee1e26a1-caba-45f7-928e-d93fc1a47da9">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
         </text>
         <status value="final"/>
         <category>
@@ -2018,6 +2217,12 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
             <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
             <code value="laboratory"/>
             <display value="Laboratory"/>
+          </coding>
+        </category>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
           </coding>
         </category>
         <code>
@@ -2041,6 +2246,9 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
             <display value="Not detected (qualifier value)"/>
           </coding>
         </valueCodeableConcept>
+        <specimen>
+          <reference value="urn:uuid:ee1e26a1-caba-45f7-928e-d93fc1a47da9"/>
+        </specimen>
       </Observation>
     </resource>
   </entry>
@@ -2050,10 +2258,10 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Observation>
         <id value="APS-2-preventive-medical-checkup-diagnostic-result-11"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationresultslaboratorypathology"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-11"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-11</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-11"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-11"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-11-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 2349-9}">Glucose [Presence] in Urine</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: <span title="Codes:{http://snomed.info/sct 260415000}">Not detected (qualifier value)</span></p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-11"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-11</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-11"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-11"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-11-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span>, <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 2349-9}">Glucose [Presence] in Urine</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: <span title="Codes:{http://snomed.info/sct 260415000}">Not detected (qualifier value)</span></p><p><b>specimen</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-ee1e26a1-caba-45f7-928e-d93fc1a47da9">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
         </text>
         <status value="final"/>
         <category>
@@ -2061,6 +2269,12 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
             <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
             <code value="laboratory"/>
             <display value="Laboratory"/>
+          </coding>
+        </category>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
           </coding>
         </category>
         <code>
@@ -2084,6 +2298,9 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
             <display value="Not detected (qualifier value)"/>
           </coding>
         </valueCodeableConcept>
+        <specimen>
+          <reference value="urn:uuid:ee1e26a1-caba-45f7-928e-d93fc1a47da9"/>
+        </specimen>
       </Observation>
     </resource>
   </entry>
@@ -2093,10 +2310,10 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Observation>
         <id value="APS-2-preventive-medical-checkup-diagnostic-result-12"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationresultslaboratorypathology"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-12"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-12</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-12"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-12"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-12-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 53963-5}">Blood [Presence] in Urine by Visual</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: <span title="Codes:{http://snomed.info/sct 260415000}">Not detected (qualifier value)</span></p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-12"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-12</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-12"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-12"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-12-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span>, <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 53963-5}">Blood [Presence] in Urine by Visual</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: <span title="Codes:{http://snomed.info/sct 260415000}">Not detected (qualifier value)</span></p><p><b>specimen</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-ee1e26a1-caba-45f7-928e-d93fc1a47da9">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
         </text>
         <status value="final"/>
         <category>
@@ -2104,6 +2321,12 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
             <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
             <code value="laboratory"/>
             <display value="Laboratory"/>
+          </coding>
+        </category>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
           </coding>
         </category>
         <code>
@@ -2127,6 +2350,9 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
             <display value="Not detected (qualifier value)"/>
           </coding>
         </valueCodeableConcept>
+        <specimen>
+          <reference value="urn:uuid:ee1e26a1-caba-45f7-928e-d93fc1a47da9"/>
+        </specimen>
       </Observation>
     </resource>
   </entry>
@@ -2136,10 +2362,10 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Observation>
         <id value="APS-2-preventive-medical-checkup-diagnostic-result-13"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationresultslaboratorypathology"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-13"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-13</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-13"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-13"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-13-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 32710-6}">Nitrite [Presence] in Urine</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: <span title="Codes:{http://snomed.info/sct 260415000}">Not detected (qualifier value)</span></p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-13"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-13</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-13"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-13"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-13-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span>, <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 32710-6}">Nitrite [Presence] in Urine</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: <span title="Codes:{http://snomed.info/sct 260415000}">Not detected (qualifier value)</span></p><p><b>specimen</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-ee1e26a1-caba-45f7-928e-d93fc1a47da9">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
         </text>
         <status value="final"/>
         <category>
@@ -2147,6 +2373,12 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
             <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
             <code value="laboratory"/>
             <display value="Laboratory"/>
+          </coding>
+        </category>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
           </coding>
         </category>
         <code>
@@ -2170,6 +2402,9 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
             <display value="Not detected (qualifier value)"/>
           </coding>
         </valueCodeableConcept>
+        <specimen>
+          <reference value="urn:uuid:ee1e26a1-caba-45f7-928e-d93fc1a47da9"/>
+        </specimen>
       </Observation>
     </resource>
   </entry>
@@ -2179,10 +2414,10 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Observation>
         <id value="APS-2-preventive-medical-checkup-diagnostic-result-14"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationresultslaboratory"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationresultslaboratorypathology"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-14"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-14</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-14"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-14"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-14-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 13658-0}">Urobilinogen [Presence] in Urine</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: <span title="Codes:{http://snomed.info/sct 260415000}">Not detected (qualifier value)</span></p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-diagnostic-result-14"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-diagnostic-result-14</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-14"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-14"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-14-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span>, <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 13658-0}">Urobilinogen [Presence] in Urine</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 07:34:06+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: <span title="Codes:{http://snomed.info/sct 260415000}">Not detected (qualifier value)</span></p><p><b>specimen</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-ee1e26a1-caba-45f7-928e-d93fc1a47da9">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
         </text>
         <status value="final"/>
         <category>
@@ -2190,6 +2425,12 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
             <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
             <code value="laboratory"/>
             <display value="Laboratory"/>
+          </coding>
+        </category>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="laboratory"/>
           </coding>
         </category>
         <code>
@@ -2213,6 +2454,9 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
             <display value="Not detected (qualifier value)"/>
           </coding>
         </valueCodeableConcept>
+        <specimen>
+          <reference value="urn:uuid:ee1e26a1-caba-45f7-928e-d93fc1a47da9"/>
+        </specimen>
       </Observation>
     </resource>
   </entry>
@@ -2222,16 +2466,16 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.10.99.1.2.
       <Organization>
         <id value="APS-2-preventive-medical-checkup-diagnostic-result-performer-1"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-organization"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-organization"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Organization_APS-2-preventive-medical-checkup-diagnostic-result-performer-1"> </a><p class="res-header-id"><b>Generated Narrative: Organization APS-2-preventive-medical-checkup-diagnostic-result-performer-1</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-performer-1"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-performer-1"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-performer-1-de-AT"> </a><p><b>identifier</b>: <a href="http://terminology.hl7.org/5.0.0/NamingSystem-uri.html" title="As defined by RFC 3986 (http://www.ietf.org/rfc/rfc3986.txt)(with many schemes defined in many RFCs). For OIDs and UUIDs, use the URN form (urn:oid:(note: lowercase) and urn:uuid:). See http://www.ietf.org/rfc/rfc3001.txt and http://www.ietf.org/rfc/rfc4122.txt 
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Organization_APS-2-preventive-medical-checkup-diagnostic-result-performer-1"> </a><p class="res-header-id"><b>Generated Narrative: Organization APS-2-preventive-medical-checkup-diagnostic-result-performer-1</b></p><a name="APS-2-preventive-medical-checkup-diagnostic-result-performer-1"> </a><a name="hcAPS-2-preventive-medical-checkup-diagnostic-result-performer-1"> </a><a name="APS-2-preventive-medical-checkup-diagnostic-result-performer-1-de-AT"> </a><p><b>identifier</b>: <a href="http://terminology.hl7.org/6.0.2/NamingSystem-uri.html" title="As defined by RFC 3986 (http://www.ietf.org/rfc/rfc3986.txt)(with many schemes defined in many RFCs). For OIDs and UUIDs, use the URN form (urn:oid:(note: lowercase) and urn:uuid:). See http://www.ietf.org/rfc/rfc3001.txt and http://www.ietf.org/rfc/rfc4122.txt 
 
 This oid is used as an identifier II.root to indicate the the extension is an absolute URI (technically, an IRI). Typically, this is used for OIDs and GUIDs. Note that when this OID is used with OIDs and GUIDs, the II.extension should start with urn:oid or urn:uuid: 
 
 Note that this OID is created to aid with interconversion between CDA and FHIR - FHIR uses urn:ietf:rfc:3986 as equivalent to this OID. URIs as identifiers appear more commonly in FHIR.
 
-This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.34.99.4613</p><p><b>name</b>: Amadeus Spital - Labor</p><p><b>telecom</b>: <a href="tel:+43.1.3453446.0">+43.1.3453446.0</a>, fax: +43.1.3453446.4674, <a href="mailto:info@amadeusspital.at">info@amadeusspital.at</a>, <a href="https://www.amadeusspital.at">https://www.amadeusspital.at</a></p><p><b>address</b>: Währinger Gürtel 18-20 Wien 1090 AUT </p></div>
+This OID may also be used in CD.codeSystem.">Uniform Resource Identifier (URI)</a>/urn:oid:1.2.40.0.34.99.4613</p><p><b>name</b>: Amadeus Spital - Labor</p><p><b>telecom</b>: <a href="tel:+43.1.3453446.0">+43.1.3453446.0</a>, fax: +43.1.3453446.4674, <a href="mailto:info@amadeusspital.at">info@amadeusspital.at</a>, <a href="https://www.amadeusspital.at">https://www.amadeusspital.at</a></p><p><b>address</b>: Währinger Gürtel 18-20 Wien 1090 AUT </p></div>
         </text>
         <identifier>
           <system value="urn:ietf:rfc:3986"/>
@@ -2272,10 +2516,10 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.34.99.4613
       <Observation>
         <id value="APS-2-preventive-medical-checkup-vital-sign-1"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationvitalsigns"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationvitalsigns"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-vital-sign-1"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-vital-sign-1</b></p><a name="APS-2-preventive-medical-checkup-vital-sign-1"> </a><a name="hcAPS-2-preventive-medical-checkup-vital-sign-1"> </a><a name="APS-2-preventive-medical-checkup-vital-sign-1-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}">Vital Signs</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 8302-2}">Body height</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>value</b>: 173 cm<span style="background: LightGoldenRodYellow"> (Details: UCUM  codecm = 'cm')</span></p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-vital-sign-1"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-vital-sign-1</b></p><a name="APS-2-preventive-medical-checkup-vital-sign-1"> </a><a name="hcAPS-2-preventive-medical-checkup-vital-sign-1"> </a><a name="APS-2-preventive-medical-checkup-vital-sign-1-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}">Vital Signs</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 8302-2}">Body height</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: 173 cm<span style="background: LightGoldenRodYellow"> (Details: UCUM  codecm = 'cm')</span></p></div>
         </text>
         <status value="final"/>
         <category>
@@ -2296,6 +2540,9 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.34.99.4613
           <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
         </subject>
         <effectiveDateTime value="2024-02-08T08:30:00+01:00"/>
+        <performer>
+          <reference value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
+        </performer>
         <valueQuantity>
           <value value="173"/>
           <unit value="cm"/>
@@ -2311,10 +2558,10 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.34.99.4613
       <Observation>
         <id value="APS-2-preventive-medical-checkup-vital-sign-2"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationvitalsigns"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationvitalsigns"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-vital-sign-2"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-vital-sign-2</b></p><a name="APS-2-preventive-medical-checkup-vital-sign-2"> </a><a name="hcAPS-2-preventive-medical-checkup-vital-sign-2"> </a><a name="APS-2-preventive-medical-checkup-vital-sign-2-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}">Vital Signs</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 29463-7}">Body weight</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>value</b>: 68 kg<span style="background: LightGoldenRodYellow"> (Details: UCUM  codekg = 'kg')</span></p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-vital-sign-2"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-vital-sign-2</b></p><a name="APS-2-preventive-medical-checkup-vital-sign-2"> </a><a name="hcAPS-2-preventive-medical-checkup-vital-sign-2"> </a><a name="APS-2-preventive-medical-checkup-vital-sign-2-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}">Vital Signs</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 29463-7}">Body weight</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: 68 kg<span style="background: LightGoldenRodYellow"> (Details: UCUM  codekg = 'kg')</span></p></div>
         </text>
         <status value="final"/>
         <category>
@@ -2335,6 +2582,9 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.34.99.4613
           <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
         </subject>
         <effectiveDateTime value="2024-02-08T08:30:00+01:00"/>
+        <performer>
+          <reference value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
+        </performer>
         <valueQuantity>
           <value value="68"/>
           <unit value="kg"/>
@@ -2350,10 +2600,10 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.34.99.4613
       <Observation>
         <id value="APS-2-preventive-medical-checkup-vital-sign-3"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationvitalsigns"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationvitalsigns"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-vital-sign-3"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-vital-sign-3</b></p><a name="APS-2-preventive-medical-checkup-vital-sign-3"> </a><a name="hcAPS-2-preventive-medical-checkup-vital-sign-3"> </a><a name="APS-2-preventive-medical-checkup-vital-sign-3-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}">Vital Signs</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 39156-5}">Body mass index (BMI) [Ratio]</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>value</b>: 22.72 kg/m2<span style="background: LightGoldenRodYellow"> (Details: UCUM  codekg/m2 = 'kg/m2')</span></p><p><b>interpretation</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation H}">High</span></p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-vital-sign-3"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-vital-sign-3</b></p><a name="APS-2-preventive-medical-checkup-vital-sign-3"> </a><a name="hcAPS-2-preventive-medical-checkup-vital-sign-3"> </a><a name="APS-2-preventive-medical-checkup-vital-sign-3-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}">Vital Signs</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 39156-5}">Body mass index (BMI) [Ratio]</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: 22.72 kg/m2<span style="background: LightGoldenRodYellow"> (Details: UCUM  codekg/m2 = 'kg/m2')</span></p><p><b>interpretation</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation H}">High</span></p></div>
         </text>
         <status value="final"/>
         <category>
@@ -2374,6 +2624,9 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.34.99.4613
           <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
         </subject>
         <effectiveDateTime value="2024-02-08T08:30:00+01:00"/>
+        <performer>
+          <reference value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
+        </performer>
         <valueQuantity>
           <value value="22.72"/>
           <unit value="kg/m2"/>
@@ -2396,10 +2649,10 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.34.99.4613
       <Observation>
         <id value="APS-2-preventive-medical-checkup-vital-sign-4"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationvitalsigns"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationvitalsigns"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-vital-sign-4"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-vital-sign-4</b></p><a name="APS-2-preventive-medical-checkup-vital-sign-4"> </a><a name="hcAPS-2-preventive-medical-checkup-vital-sign-4"> </a><a name="APS-2-preventive-medical-checkup-vital-sign-4-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}">Vital Signs</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 85354-9}">Blood pressure panel with all children optional</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 8480-6}">Systolic blood pressure</span></p><p><b>value</b>: 130 mm[Hg]<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemm[Hg] = 'mm[Hg]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 8462-4}">Diastolic blood pressure</span></p><p><b>value</b>: 80 mm[Hg]<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemm[Hg] = 'mm[Hg]')</span></p></blockquote></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-vital-sign-4"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-vital-sign-4</b></p><a name="APS-2-preventive-medical-checkup-vital-sign-4"> </a><a name="hcAPS-2-preventive-medical-checkup-vital-sign-4"> </a><a name="APS-2-preventive-medical-checkup-vital-sign-4-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}">Vital Signs</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 85354-9}">Blood pressure panel with all children optional</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 8480-6}">Systolic blood pressure</span></p><p><b>value</b>: 130 mm[Hg]<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemm[Hg] = 'mm[Hg]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 8462-4}">Diastolic blood pressure</span></p><p><b>value</b>: 80 mm[Hg]<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemm[Hg] = 'mm[Hg]')</span></p></blockquote></div>
         </text>
         <status value="final"/>
         <category>
@@ -2420,6 +2673,9 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.34.99.4613
           <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
         </subject>
         <effectiveDateTime value="2024-02-08T08:30:00+01:00"/>
+        <performer>
+          <reference value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
+        </performer>
         <component>
           <code>
             <coding>
@@ -2459,10 +2715,10 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.34.99.4613
       <Observation>
         <id value="APS-2-preventive-medical-checkup-vital-sign-5"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationvitalsigns"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationvitalsigns"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-vital-sign-5"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-vital-sign-5</b></p><a name="APS-2-preventive-medical-checkup-vital-sign-5"> </a><a name="hcAPS-2-preventive-medical-checkup-vital-sign-5"> </a><a name="APS-2-preventive-medical-checkup-vital-sign-5-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}">Vital Signs</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 8867-4}">Heart rate</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>value</b>: 85 /min<span style="background: LightGoldenRodYellow"> (Details: UCUM  code/min = '/min')</span></p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-vital-sign-5"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-vital-sign-5</b></p><a name="APS-2-preventive-medical-checkup-vital-sign-5"> </a><a name="hcAPS-2-preventive-medical-checkup-vital-sign-5"> </a><a name="APS-2-preventive-medical-checkup-vital-sign-5-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}">Vital Signs</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 8867-4}">Heart rate</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: 85 /min<span style="background: LightGoldenRodYellow"> (Details: UCUM  code/min = '/min')</span></p></div>
         </text>
         <status value="final"/>
         <category>
@@ -2483,6 +2739,9 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.34.99.4613
           <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
         </subject>
         <effectiveDateTime value="2024-02-08T08:30:00+01:00"/>
+        <performer>
+          <reference value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
+        </performer>
         <valueQuantity>
           <value value="85"/>
           <unit value="/min"/>
@@ -2498,10 +2757,10 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.34.99.4613
       <Observation>
         <id value="APS-2-preventive-medical-checkup-vital-sign-6"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationvitalsigns"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationvitalsigns"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-vital-sign-6"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-vital-sign-6</b></p><a name="APS-2-preventive-medical-checkup-vital-sign-6"> </a><a name="hcAPS-2-preventive-medical-checkup-vital-sign-6"> </a><a name="APS-2-preventive-medical-checkup-vital-sign-6-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}">Vital Signs</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 276361009}">Waist circumference</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>value</b>: &lt;102 cm<span style="background: LightGoldenRodYellow"> (Details: UCUM  codecm = 'cm')</span></p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-vital-sign-6"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-vital-sign-6</b></p><a name="APS-2-preventive-medical-checkup-vital-sign-6"> </a><a name="hcAPS-2-preventive-medical-checkup-vital-sign-6"> </a><a name="APS-2-preventive-medical-checkup-vital-sign-6-de-AT"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}">Vital Signs</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 276361009}">Waist circumference</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: &lt;102 cm<span style="background: LightGoldenRodYellow"> (Details: UCUM  codecm = 'cm')</span></p></div>
         </text>
         <status value="final"/>
         <category>
@@ -2522,6 +2781,9 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.34.99.4613
           <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
         </subject>
         <effectiveDateTime value="2024-02-08T08:30:00+01:00"/>
+        <performer>
+          <reference value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
+        </performer>
         <valueQuantity>
           <value value="102"/>
           <comparator value="&lt;"/>
@@ -2538,7 +2800,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.34.99.4613
       <Condition>
         <id value="APS-2-preventive-medical-checkup-illness-history-1"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-condition"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-illness-history-1"> </a><p class="res-header-id"><b>Generated Narrative: Condition APS-2-preventive-medical-checkup-illness-history-1</b></p><a name="APS-2-preventive-medical-checkup-illness-history-1"> </a><a name="hcAPS-2-preventive-medical-checkup-illness-history-1"> </a><a name="APS-2-preventive-medical-checkup-illness-history-1-de-AT"> </a><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical resolved}">Resolved</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}">Problem List Item</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 161419000}">History of measles</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
@@ -2583,7 +2845,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.34.99.4613
       <Condition>
         <id value="APS-2-preventive-medical-checkup-illness-history-2"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-condition"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-condition"/>
         </meta>
         <text>
           <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_APS-2-preventive-medical-checkup-illness-history-2"> </a><p class="res-header-id"><b>Generated Narrative: Condition APS-2-preventive-medical-checkup-illness-history-2</b></p><a name="APS-2-preventive-medical-checkup-illness-history-2"> </a><a name="hcAPS-2-preventive-medical-checkup-illness-history-2"> </a><a name="APS-2-preventive-medical-checkup-illness-history-2-de-AT"> </a><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical resolved}">Resolved</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}">Problem List Item</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 161423008}">History of chickenpox (situation)</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p></div>
@@ -2628,10 +2890,10 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.34.99.4613
       <Observation>
         <id value="APS-2-preventive-medical-checkup-social-history-1"/>
         <meta>
-          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-observationtobaccouse"/>
+          <profile value="https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationtobaccouse"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-social-history-1"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-social-history-1</b></p><a name="APS-2-preventive-medical-checkup-social-history-1"> </a><a name="hcAPS-2-preventive-medical-checkup-social-history-1"> </a><a name="APS-2-preventive-medical-checkup-social-history-1-de-AT"> </a><p><b>status</b>: Final</p><p><b>code</b>: <span title="Codes:{http://loinc.org 72166-2}">Tobacco smoking status</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>value</b>: <span title="Codes:{http://loinc.org LA18978-9}">Never smoker</span></p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-social-history-1"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-social-history-1</b></p><a name="APS-2-preventive-medical-checkup-social-history-1"> </a><a name="hcAPS-2-preventive-medical-checkup-social-history-1"> </a><a name="APS-2-preventive-medical-checkup-social-history-1-de-AT"> </a><p><b>status</b>: Final</p><p><b>code</b>: <span title="Codes:{http://loinc.org 72166-2}">Tobacco smoking status</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: <span title="Codes:{http://loinc.org LA18978-9}">Never smoker</span></p></div>
         </text>
         <status value="final"/>
         <code>
@@ -2645,6 +2907,9 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.34.99.4613
           <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
         </subject>
         <effectiveDateTime value="2024-02-08T08:30:00+01:00"/>
+        <performer>
+          <reference value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
+        </performer>
         <valueCodeableConcept>
           <coding>
             <system value="http://loinc.org"/>
@@ -2661,7 +2926,7 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.34.99.4613
       <Observation>
         <id value="APS-2-preventive-medical-checkup-social-history-2"/>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-social-history-2"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-social-history-2</b></p><a name="APS-2-preventive-medical-checkup-social-history-2"> </a><a name="hcAPS-2-preventive-medical-checkup-social-history-2"> </a><a name="APS-2-preventive-medical-checkup-social-history-2-de-AT"> </a><p><b>status</b>: Final</p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 61686008}">Physical exercise</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>value</b>: &gt;2.5 h<span style="background: LightGoldenRodYellow"> (Details: UCUM  codeh = 'h')</span>/1 wk<span style="background: LightGoldenRodYellow"> (Details: UCUM  codewk = 'wk')</span></p></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Observation_APS-2-preventive-medical-checkup-social-history-2"> </a><p class="res-header-id"><b>Generated Narrative: Observation APS-2-preventive-medical-checkup-social-history-2</b></p><a name="APS-2-preventive-medical-checkup-social-history-2"> </a><a name="hcAPS-2-preventive-medical-checkup-social-history-2"> </a><a name="APS-2-preventive-medical-checkup-social-history-2-de-AT"> </a><p><b>status</b>: Final</p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 61686008}">Physical exercise</span></p><p><b>subject</b>: <a href="Bundle-APS-1-no-problems-medication-allergies.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>performer</b>: <a href="Bundle-APS-2-preventive-medical-checkup.html#urn-uuid-82f802a7-56a9-49b4-a675-95da08f0d7a6">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2024-02-08 14:01:30+0000</a></p><p><b>value</b>: &gt;2.5 h<span style="background: LightGoldenRodYellow"> (Details: UCUM  codeh = 'h')</span>/1 wk<span style="background: LightGoldenRodYellow"> (Details: UCUM  codewk = 'wk')</span></p></div>
         </text>
         <status value="final"/>
         <code>
@@ -2675,6 +2940,9 @@ This OID may also be used in CD.codeSystem.">URI</a>/urn:oid:1.2.40.0.34.99.4613
           <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
         </subject>
         <effectiveDateTime value="2024-02-08T08:30:00+01:00"/>
+        <performer>
+          <reference value="urn:uuid:82f802a7-56a9-49b4-a675-95da08f0d7a6"/>
+        </performer>
         <valueRatio>
           <numerator>
             <value value="2.5"/>

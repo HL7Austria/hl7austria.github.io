@@ -10,7 +10,7 @@
   "name" : "ELGAAustrianPatientSummaryR4",
   "title" : "Austrian Patient Summary (R4)",
   "status" : "draft",
-  "date" : "2025-01-29T12:25:40+00:00",
+  "date" : "2025-02-21T10:23:38+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -23,7 +23,7 @@
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
-      "code" : "AUT"
+      "code" : "AT"
     }]
   }],
   "packageId" : "hl7.at.fhir.elga.ips",
@@ -47,13 +47,13 @@
     }],
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r4",
-    "version" : "5.1.0"
+    "version" : "5.2.0"
   },
   {
     "id" : "hl7_fhir_uv_ips",
     "uri" : "http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips",
     "packageId" : "hl7.fhir.uv.ips",
-    "version" : "1.1.0"
+    "version" : "2.0.0-ballot"
   },
   {
     "id" : "hl7_at_fhir_core_r4",
@@ -81,6 +81,39 @@
       {
         "url" : "value",
         "valueString" : "ci-build"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "excludettl"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "allow-extensible-warnings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "display-warnings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -366,6 +399,39 @@
     {
       "extension" : [{
         "url" : "code",
+        "valueCode" : "excludettl"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "allow-extensible-warnings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "display-warnings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
         "valueCode" : "autoload-resources"
       },
       {
@@ -619,13 +685,61 @@
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/001"
+      },
+      "name" : "alcohol-use-01",
+      "description" : "Social History - Alkohol Beispiel",
+      "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationalcoholuse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "AllergyIntolerance"
+      }],
+      "reference" : {
+        "reference" : "AllergyIntolerance/001"
+      },
+      "name" : "AllergyIntolerance - No Known Allergies",
+      "description" : "AllergyIntolerance - No known allergies",
+      "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-allergyintolerance"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "AllergyIntolerance"
+      }],
+      "reference" : {
+        "reference" : "AllergyIntolerance/002"
+      },
+      "name" : "AllergyIntolerance - Überwundene Allergie",
+      "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-allergyintolerance"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/aps-server"
+      },
+      "name" : "APS Server Capability Statement",
+      "description" : "This section describes the expected capabilities of the APS Server actor which is responsible for providing responses to the queries submitted for APS documents. The list of FHIR profiles and operations supported by APS Servers are defined.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
       }],
       "reference" : {
         "reference" : "Bundle/APS-1-no-problems-medication-allergies"
       },
       "name" : "APS-1-no-problems-medication-allergies",
-      "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-bundle"
+      "description" : "APS with no problems, medication or allergies (minimal example)",
+      "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-bundle"
     },
     {
       "extension" : [{
@@ -636,7 +750,20 @@
         "reference" : "Bundle/APS-2-preventive-medical-checkup"
       },
       "name" : "APS-2-preventive-medical-checkup",
-      "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-ips-bundle"
+      "description" : "APS with preventive medical checkup",
+      "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-bundle"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/APS-3-diabetes"
+      },
+      "name" : "APS-3-diabetes",
+      "description" : "Diabetes Checklist / Leitdokument",
+      "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-bundle"
     },
     {
       "extension" : [{
@@ -644,10 +771,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-allergyintolerance"
+        "reference" : "StructureDefinition/at-aps-allergyintolerance"
       },
-      "name" : "AT IPS AllergyIntolerance",
-      "description" : "This AT IPS profile for the AllergyIntolerance resource is derived from the general AllergyIntolerance resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "AT APS AllergyIntolerance",
+      "description" : "This AT APS profile for the AllergyIntolerance resource is derived from the general AllergyIntolerance resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
       "exampleBoolean" : false
     },
     {
@@ -656,10 +783,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-bundle"
+        "reference" : "StructureDefinition/at-aps-bundle"
       },
-      "name" : "AT IPS Bundle",
-      "description" : "This AT IPS profile for the Bundle resource is derived from the general Bundle resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "AT APS Bundle",
+      "description" : "This AT APS profile for the Bundle resource is derived from the general Bundle resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
       "exampleBoolean" : false
     },
     {
@@ -668,10 +795,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-composition"
+        "reference" : "StructureDefinition/at-aps-composition"
       },
-      "name" : "AT IPS Composition",
-      "description" : "This AT IPS profile for the Composition resource is derived from the general Composition resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "AT APS Composition",
+      "description" : "This AT APS profile for the Composition resource is derived from the general Composition resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
       "exampleBoolean" : false
     },
     {
@@ -680,10 +807,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-condition"
+        "reference" : "StructureDefinition/at-aps-condition"
       },
-      "name" : "AT IPS Condition",
-      "description" : "This AT IPS profile for the Condition resource is derived from the general Condition resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "AT APS Condition",
+      "description" : "This AT APS profile for the Condition resource is derived from the general Condition resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
       "exampleBoolean" : false
     },
     {
@@ -692,10 +819,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-device"
+        "reference" : "StructureDefinition/at-aps-device"
       },
-      "name" : "AT IPS Device",
-      "description" : "This AT IPS profile for the Device resource is derived from the general Device resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "AT APS Device",
+      "description" : "This AT APS profile for the Device resource is derived from the general Device resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
       "exampleBoolean" : false
     },
     {
@@ -704,10 +831,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-deviceusestatement"
+        "reference" : "StructureDefinition/at-aps-deviceusestatement"
       },
-      "name" : "AT IPS DeviceUseStatement",
-      "description" : "This AT IPS profile for the DeviceUseStatement resource is derived from the general DeviceUseStatement resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "AT APS DeviceUseStatement",
+      "description" : "This AT APS profile for the DeviceUseStatement resource is derived from the general DeviceUseStatement resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
       "exampleBoolean" : false
     },
     {
@@ -716,10 +843,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-diagnosticreport"
+        "reference" : "StructureDefinition/at-aps-diagnosticreport"
       },
-      "name" : "AT IPS DiagnosticReport",
-      "description" : "This AT IPS profile for the DiagnosticReport resource is derived from the general DiagnosticReport resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "AT APS DiagnosticReport",
+      "description" : "This AT APS profile for the DiagnosticReport resource is derived from the general DiagnosticReport resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
       "exampleBoolean" : false
     },
     {
@@ -728,10 +855,22 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-imagingstudy"
+        "reference" : "StructureDefinition/at-aps-imagingstudy"
       },
-      "name" : "AT IPS ImagingStudy",
-      "description" : "This AT IPS profile for the ImagingStudy resource is derived from the general ImagingStudy resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "AT APS ImagingStudy",
+      "description" : "This AT APS profile for the ImagingStudy resource is derived from the general ImagingStudy resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/at-aps-immunization-vaccine-codes"
+      },
+      "name" : "AT APS Immunitzation Vaccine Codes",
+      "description" : "This value set extends the existing vaccine codes from ELGA GmbH.",
       "exampleBoolean" : false
     },
     {
@@ -740,10 +879,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-immunization"
+        "reference" : "StructureDefinition/at-aps-immunization"
       },
-      "name" : "AT IPS Immunization",
-      "description" : "This AT IPS profile for the Immunization resource is derived from the general Immunization resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "AT APS Immunization",
+      "description" : "This AT APS profile for the Immunization resource is derived from the general Immunization resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
       "exampleBoolean" : false
     },
     {
@@ -752,10 +891,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-MediaObservation"
+        "reference" : "StructureDefinition/at-aps-medication"
       },
-      "name" : "AT IPS MediaObservation",
-      "description" : "This AT IPS profile for the Media resource is derived from the general Media resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "AT APS Medication",
+      "description" : "This AT APS profile for the Medication resource is derived from the IPS Medication resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide.",
       "exampleBoolean" : false
     },
     {
@@ -764,10 +903,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-medication"
+        "reference" : "StructureDefinition/at-aps-medicationrequest"
       },
-      "name" : "AT IPS Medication",
-      "description" : "This AT IPS profile for the Medication resource is derived from the IPS Medication resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide.",
+      "name" : "AT APS MedicationRequest",
+      "description" : "This AT APS profile for the MedicationRequest resource is derived from the general MedicationRequest resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
       "exampleBoolean" : false
     },
     {
@@ -776,10 +915,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-medicationrequest"
+        "reference" : "StructureDefinition/at-aps-medicationstatement"
       },
-      "name" : "AT IPS MedicationRequest",
-      "description" : "This AT IPS profile for the MedicationRequest resource is derived from the general MedicationRequest resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "AT APS MedicationStatement",
+      "description" : "This AT APS profile for the MedicationStatement resource is derived from the general MedicationStatement resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
       "exampleBoolean" : false
     },
     {
@@ -788,10 +927,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-medicationstatement"
+        "reference" : "StructureDefinition/at-aps-observationalcoholuse"
       },
-      "name" : "AT IPS MedicationStatement",
-      "description" : "This AT IPS profile for the MedicationStatement resource is derived from the general MedicationStatement resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "AT APS Observation Alcohol Use",
+      "description" : "This AT APS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
       "exampleBoolean" : false
     },
     {
@@ -800,10 +939,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-observationalcoholuse"
+        "reference" : "StructureDefinition/at-aps-observationpregnancyedd"
       },
-      "name" : "AT IPS Observation Alcohol Use",
-      "description" : "This AT IPS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "AT APS Observation Pregnancy Expected Delivery Date",
+      "description" : "This AT APS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
       "exampleBoolean" : false
     },
     {
@@ -812,10 +951,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-observationpregnancyedd"
+        "reference" : "StructureDefinition/at-aps-observationpregnancyoutcome"
       },
-      "name" : "AT IPS Observation Pregnancy Expected Delivery Date",
-      "description" : "This AT IPS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "AT APS Observation Pregnancy Outcome",
+      "description" : "This AT APS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
       "exampleBoolean" : false
     },
     {
@@ -824,10 +963,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-observationpregnancyoutcome"
+        "reference" : "StructureDefinition/at-aps-observationpregnancystatus"
       },
-      "name" : "AT IPS Observation Pregnancy Outcome",
-      "description" : "This AT IPS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "AT APS Observation Pregnancy Status",
+      "description" : "This AT APS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
       "exampleBoolean" : false
     },
     {
@@ -836,10 +975,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-observationpregnancystatus"
+        "reference" : "StructureDefinition/at-aps-observationresultslaboratorypathology"
       },
-      "name" : "AT IPS Observation Pregnancy Status",
-      "description" : "This AT IPS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "AT APS Observation Results Laboratory Pathology",
+      "description" : "This AT APS profile for the Observation resource is derived from the \"AtApsObservationResults\" profile and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
       "exampleBoolean" : false
     },
     {
@@ -848,10 +987,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-observationresults"
+        "reference" : "StructureDefinition/at-aps-observationresultsradiology"
       },
-      "name" : "AT IPS Observation Results",
-      "description" : "This AT IPS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "AT APS Observation Results Radiology",
+      "description" : "This AT APS profile for the Observation resource is derived from the \"AtApsObservationResults\" profile and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
       "exampleBoolean" : false
     },
     {
@@ -860,10 +999,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-observationresultslaboratory"
+        "reference" : "StructureDefinition/at-aps-observationtobaccouse"
       },
-      "name" : "AT IPS Observation Results Laboratory",
-      "description" : "This AT IPS profile for the Observation resource is derived from the \"AtIpsObservationResults\" profile and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "AT APS Observation Tobacco Use",
+      "description" : "This AT APS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
       "exampleBoolean" : false
     },
     {
@@ -872,10 +1011,22 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-observationresultspathology"
+        "reference" : "StructureDefinition/at-aps-observationvitalsigns"
       },
-      "name" : "AT IPS Observation Results Pathology",
-      "description" : "This AT IPS profile for the Observation resource is derived from the \"AtIpsObservationResults\" profile and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "AT APS Observation Vital Signs",
+      "description" : "This AT APS profile for the Observation resource is derived from the general vital signs profile.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/at-aps-observationinterpretation"
+      },
+      "name" : "AT APS ObservationInterpretation",
+      "description" : "This value set extends the existing value set from ELGA GmbH.",
       "exampleBoolean" : false
     },
     {
@@ -884,10 +1035,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-observationresultsradiology"
+        "reference" : "StructureDefinition/at-aps-organization"
       },
-      "name" : "AT IPS Observation Results Radiology",
-      "description" : "This AT IPS profile for the Observation resource is derived from the \"AtIpsObservationResults\" profile and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "AT APS Organization",
+      "description" : "This AT APS profile for the Organization resource is derived from the corresponding HL7® Austria FHIR® Core profile and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
       "exampleBoolean" : false
     },
     {
@@ -896,10 +1047,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-observationtobaccouse"
+        "reference" : "StructureDefinition/at-aps-patient"
       },
-      "name" : "AT IPS Observation Tobacco Use",
-      "description" : "This AT IPS profile for the Observation resource is derived from the general Observation resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "AT APS Patient",
+      "description" : "This AT APS profile for the Patient resource is derived from the corresponding HL7® Austria FHIR® Core profile and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
       "exampleBoolean" : false
     },
     {
@@ -908,10 +1059,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-observationvitalsigns"
+        "reference" : "StructureDefinition/at-aps-practitioner"
       },
-      "name" : "AT IPS Observation Vital Signs",
-      "description" : "This AT IPS profile for the Observation resource is derived from the general vital signs profile.",
+      "name" : "AT APS Practitioner",
+      "description" : "This AT APS profile for the Practitioner resource is derived from the corresponding HL7® Austria FHIR® Core profile and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
       "exampleBoolean" : false
     },
     {
@@ -920,10 +1071,22 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-organization"
+        "reference" : "StructureDefinition/at-aps-practitionerrole"
       },
-      "name" : "AT IPS Organization",
-      "description" : "This AT IPS profile for the Organization resource is derived from the corresponding HL7® Austria FHIR® Core profile and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "AT APS PractitionerRole",
+      "description" : "This AT APS profile for the PractitionerRole resource is derived from the corresponding HL7® Austria FHIR® Core profile and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/at-aps-problems"
+      },
+      "name" : "AT APS Problems",
+      "description" : "This value set collects the different code systems which are used for the AT APS Condition code.",
       "exampleBoolean" : false
     },
     {
@@ -932,10 +1095,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-patient"
+        "reference" : "StructureDefinition/at-aps-Procedure"
       },
-      "name" : "AT IPS Patient",
-      "description" : "This AT IPS profile for the Patient resource is derived from the corresponding HL7® Austria FHIR® Core profile and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "AT APS Procedure",
+      "description" : "This AT APS profile for the Procedure resource is derived from the general Procedure resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
       "exampleBoolean" : false
     },
     {
@@ -944,47 +1107,119 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-practitioner"
+        "reference" : "StructureDefinition/at-aps-specimen"
       },
-      "name" : "AT IPS Practitioner",
-      "description" : "This AT IPS profile for the Practitioner resource is derived from the corresponding HL7® Austria FHIR® Core profile and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "AT APS Specimen",
+      "description" : "This AT APS profile for the Specimen resource is derived from the general Specimen resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
       "exampleBoolean" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
+        "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-practitionerrole"
+        "reference" : "StructureDefinition/country-of-affiliation"
       },
-      "name" : "AT IPS PractitionerRole",
-      "description" : "This AT IPS profile for the PractitionerRole resource is derived from the corresponding HL7® Austria FHIR® Core profile and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "Country of Affiliation element",
+      "description" : "Add the element for Country of Affiliation",
       "exampleBoolean" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
+        "valueString" : "Device"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-Procedure"
+        "reference" : "Device/001"
       },
-      "name" : "AT IPS Procedure",
-      "description" : "This AT IPS profile for the Procedure resource is derived from the general Procedure resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
+      "name" : "device-01",
+      "description" : "Beispiel eines Device",
+      "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-device"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      }],
+      "reference" : {
+        "reference" : "Device/002"
+      },
+      "name" : "device-software-02",
+      "description" : "Beispiel einer Software",
+      "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-device"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/immunization-basedOn"
+      },
+      "name" : "Immunization basedOn",
+      "description" : "Authority that the immunization event is based on",
       "exampleBoolean" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
+        "valueString" : "Immunization"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-ips-specimen"
+        "reference" : "Immunization/immunization-vaccine-unknown"
       },
-      "name" : "AT IPS Specimen",
-      "description" : "This AT IPS profile for the Specimen resource is derived from the general Specimen resource in absence of a corresponding profile in the HL7® Austria FHIR® Core implementation guide and also ensures IPS conformity via the IPS profile referenced by the so-called [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile) extension.",
-      "exampleBoolean" : false
+      "name" : "immunization-vaccine-unknown",
+      "description" : "Immunisierung mit unbekannten Impfstoff",
+      "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-immunization"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/002"
+      },
+      "name" : "observation-exercise-02",
+      "description" : "Patient Story - Workout Beispiel",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/002"
+      },
+      "name" : "Patient/001",
+      "description" : "Patient - Female Minimal",
+      "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-patient"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Procedure"
+      }],
+      "reference" : {
+        "reference" : "Procedure/001"
+      },
+      "name" : "Procedure - Surgical Placement of Coronary Stent",
+      "description" : "Procedure - Surgical Placement of Coronary Stent",
+      "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-Procedure"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/003"
+      },
+      "name" : "tobacco-use-03",
+      "description" : "Social History - Raucher Beispiel",
+      "exampleCanonical" : "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationtobaccouse"
     }],
     "page" : {
       "extension" : [{
