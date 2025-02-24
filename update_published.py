@@ -3,6 +3,7 @@ import glob
 import yaml
 import re
 import os
+import json
 
 OFFICIAL_TYPE_NAME = 'official'
 MAIN_BRANCH_NAME = 'main'
@@ -45,10 +46,24 @@ def fromYaml( name, yaml,fname ):
         print(f"❌ The provided yaml configuration in {name} does not contain all required properties")
         return
 
+def from_package_list(entry_value, folder_name):
+    package_list_path = os.path.join(folder_name, 'package-list.json')
+
+    # Open and read the JSON file
+    with open(package_list_path, 'r') as package_list_file:
+        package_list = json.load(package_list_file)
+
+    if 'package-id' in package_list:
+        entry_value['id'] = package_list['package-id']
+    else:
+        entry_value['id'] = ''
+
+    return entry_value
+
 def build_publication(content):
     rows = ''
     for entry in content:
-        rows += f"""<p class="mb-1" style="margin-top:6px;color:#666"><a href="./{entry['fname']}/index.html">Implementation Guide</a> | <a href="https://build.fhir.org/ig/HL7Austria/{entry['fname']}/index.html">CI Build</a> | <a href="./{entry['fname']}/history.html">Publication History</a> | <a href="https://github.com/HL7Austria/{entry['fname']}">Source</a></p>"""
+        rows += f"""<p class="mb-1" style="margin-top:6px;color:#666"><a href="./{entry['fname']}/index.html">Implementation Guide</a> | <a href="https://simplifier.net/packages/{entry['id']}">FHIR Registry</a> | <a href="https://build.fhir.org/ig/HL7Austria/{entry['fname']}/index.html">CI Build</a> | <a href="./{entry['fname']}/history.html">Publication History</a> | <a href="https://github.com/HL7Austria/{entry['fname']}">Source</a></p>"""
     return rows
 
 def build_table_html( cn, clazz = 'datatable' ):
@@ -85,6 +100,8 @@ for name in glob.glob('./*/_index.yml'):
 
         if entry_value is not None:
             if entry_value['branch'] == entry_value['fname']:
+                entry_value = from_package_list(entry_value, folder_name)
+
                 if entry_value['name'].startswith('HL7'):
                     if entry_value['name'] not in hl7content.keys():
                         hl7content[entry_value['name']] = []
