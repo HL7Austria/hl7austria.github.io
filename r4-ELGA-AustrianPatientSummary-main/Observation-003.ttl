@@ -3,7 +3,6 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sct: <http://snomed.info/id/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # - resource -------------------------------------------------------------------
@@ -19,7 +18,7 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation 003</b></p><a name=\"003\"> </a><a name=\"hc003\"> </a><a name=\"003-de-AT\"> </a><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 72166-2}\">Tobacco smoking status</span></p><p><b>subject</b>: <a href=\"Patient-002.html\">Maria Musterfrau</a></p><p><b>effective</b>: 2019-07-15</p><p><b>performer</b>: <a href=\"Patient-002.html\">Maria Musterfrau</a></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 8517006}\">Ex-smoker</span></p></div>"^^rdf:XMLLiteral
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation 003</b></p><a name=\"003\"> </a><a name=\"hc003\"> </a><a name=\"003-de-AT\"> </a><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 72166-2}\">Tobacco smoking status</span></p><p><b>subject</b>: <a href=\"Patient-002.html\">Maria Musterfrau</a></p><p><b>effective</b>: 2019-07-15</p><p><b>performer</b>: <a href=\"Patient-002.html\">Maria Musterfrau</a></p><p><b>value</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/snomed-ct-auszug 8517006}\">Ex-smoker</span></p></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:status [ fhir:v "final"] ; # 
   fhir:code [
@@ -47,8 +46,7 @@
   fhir:value [
      a fhir:CodeableConcept ;
      fhir:coding ( [
-       a sct:8517006 ;
-       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:system [ fhir:v "https://termgit.elga.gv.at/CodeSystem/snomed-ct-auszug"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "8517006" ] ;
        fhir:display [ fhir:v "Ex-smoker" ]
      ] )
