@@ -1,0 +1,75 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://elga.moped.at/Encounter/PJ2TransferEncounter1> a fhir:Encounter ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PJ2TransferEncounter1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://elga.moped.at/StructureDefinition/MopedTransferEncounter"^^xsd:anyURI ;
+       fhir:link <https://elga.moped.at/StructureDefinition/MopedTransferEncounter>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Encounter PJ2TransferEncounter1</b></p><a name=\"PJ2TransferEncounter1\"> </a><a name=\"hcPJ2TransferEncounter1\"> </a><a name=\"PJ2TransferEncounter1-en-US\"> </a><p><b>status</b>: Completed</p><p><b>type</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/MopedEncounterTypesCS TENC}\">Moped Transfer Encounter</span></p><p><b>subject</b>: <code>Patient?identifier=urn:oid:1.2.40.0.10.1.4.3.1|2873111374</code></p><p><b>subjectStatus</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/AnwesenheitsartCS ANW}\">physisch anwesend</span></p><p><b>partOf</b>: <code>Encounter?identifier=urn:oid:1.3.6.1.4.1.36124.5.427|324200063</code></p><p><b>serviceProvider</b>: <code>Organization?identifier=http://example.org/lkf-system/funktionscode|112111&amp;partof:identifier=urn:ietf:rfc:3986|urn:oid:1.3.6.1.4.1.36124.5.427</code></p><p><b>actualPeriod</b>: 2024-08-08 08:21:00+0200 --&gt; 2024-08-08 11:22:00+0200</p><h3>Admissions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Extension</b></td></tr><tr><td style=\"display: none\">*</td><td/></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://elga.moped.at/CodeSystem/MopedEncounterTypesCS"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "TENC" ]
+     ] )
+  ] ) ; # 
+  fhir:subject [
+     fhir:reference [ fhir:v "Patient?identifier=urn:oid:1.2.40.0.10.1.4.3.1|2873111374" ]
+  ] ; # 
+  fhir:subjectStatus [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://elga.moped.at/CodeSystem/AnwesenheitsartCS"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "ANW" ]
+     ] )
+  ] ; # 
+  fhir:partOf [
+     fhir:reference [ fhir:v "Encounter?identifier=urn:oid:1.3.6.1.4.1.36124.5.427|324200063" ]
+  ] ; # 
+  fhir:serviceProvider [
+     fhir:link <https://elga.moped.at/Organization?identifier=http://example.org/lkf-system/funktionscode|112111&partof:identifier=urn:ietf:rfc:3986|urn:oid:1.3.6.1.4.1.36124.5.427> ;
+     fhir:reference [ fhir:v "Organization?identifier=http://example.org/lkf-system/funktionscode|112111&partof:identifier=urn:ietf:rfc:3986|urn:oid:1.3.6.1.4.1.36124.5.427" ]
+  ] ; # 
+  fhir:actualPeriod [
+     fhir:start [ fhir:v "2024-08-08T08:21:00+02:00"^^xsd:dateTime ] ;
+     fhir:end [ fhir:v "2024-08-08T11:22:00+02:00"^^xsd:dateTime ]
+  ] ; # 
+  fhir:admission [
+     fhir:extension ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "beiZugang"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "35"
+         ]
+       ] [
+         fhir:url [ fhir:v "beiEntlassung"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:code ;
+           fhir:v "35"
+         ]
+       ] [
+         fhir:url [ fhir:v "neugeborenes"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:boolean ;
+           fhir:v "false"^^xsd:boolean
+         ]
+       ] ) ;
+       fhir:url [ fhir:v "https://elga.moped.at/StructureDefinition/moped-ext-altersgruppe"^^xsd:anyURI ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

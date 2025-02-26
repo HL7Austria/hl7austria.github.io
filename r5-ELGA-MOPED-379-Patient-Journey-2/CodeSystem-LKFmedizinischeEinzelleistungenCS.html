@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>ELGA.MOPED\LKF medizinische Einzelleistungen (MEL) - FHIR® v5.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"4.100"}
+    h3,h4,h5,h6{--heading-prefix:"4.100"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img id="header-logo" src="logo.png"/>
+          </div>
+          <div class="col-11">
+        <!-- at-fhir-ig-template end -->
+            <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)</span><br/>
+                <span class="label label-info">0.1.0 - ci-build</span>
+              </p>
+            </div>
+        <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+        <!-- at-fhir-ig-template end -->
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R5/index.html">FHIR®</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="HackathonRequestOverview.html">Hackathon Gesamtübersicht</a>
+  </li>
+  <li>
+    <a href="poc.html">Proof of Concept</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>LKF medizinische Einzelleistungen (MEL)</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+	
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED) - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://elga.moped.at/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="CodeSystem-LKFmedizinischeEinzelleistungenCS.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="CodeSystem-LKFmedizinischeEinzelleistungenCS.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="CodeSystem-LKFmedizinischeEinzelleistungenCS.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+  <h2 id="root">CodeSystem: LKF medizinische Einzelleistungen (MEL)
+(Experimental)
+  </h2>
+
+  <table class="colsi">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://elga.moped.at/CodeSystem/LKFmedizinischeEinzelleistungenCS<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://elga.moped.at/CodeSystem/LKFmedizinischeEinzelleistungenCS"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">0.1.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://elga.moped.at/CodeSystem/LKFmedizinischeEinzelleistungenCS|0.1.0"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="3">
+        
+          Active
+          
+            as of 2025-02-26
+          
+        
+      </td>
+
+
+      <td>
+        <i>Responsible:</i> 
+
+        <a href="https://elga.gv.at">ELGA GmbH</a>
+
+      </td>
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">LKFmedizinischeEinzelleistungenCS</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+<p>
+<p>LKF medizinische Einzelleistungen (MEL)</p>
+
+</p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <p>
+  This Code system is referenced in the content logical definition of the following value sets:
+  </p>
+
+  
+<ul>
+ <li><a href="ValueSet-LKFAbrechnungsGruppe.html">LKFAbrechnungsGruppe</a></li>
+ <li><a href="ValueSet-LKFmedizinischeEinzelleistungen.html">LKFmedizinischeEinzelleistungen</a></li>
+</ul>
+
+
+  <div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem LKFmedizinischeEinzelleistungenCS</b></p><a name="LKFmedizinischeEinzelleistungenCS"> </a><a name="hcLKFmedizinischeEinzelleistungenCS"> </a><a name="LKFmedizinischeEinzelleistungenCS-en-US"> </a><p>This case-sensitive code system <code>https://elga.moped.at/CodeSystem/LKFmedizinischeEinzelleistungenCS</code> defines the following codes:</p>
+<table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr>
+<tr><td style="white-space:nowrap">MEL01.01<a name="LKFmedizinischeEinzelleistungenCS-MEL01.4601"> </a></td>
+<td>Eingriffe an der Schädeldecke</td></tr>
+<tr><td style="white-space:nowrap">MEL01.02<a name="LKFmedizinischeEinzelleistungenCS-MEL01.4602"> </a></td>
+<td>Eingriffe am Gehirnschädel und oberflächliche intrakranielle Eingriffe, stereotaktische Eingriffe</td></tr>
+<tr><td style="white-space:nowrap">MEL01.03<a name="LKFmedizinischeEinzelleistungenCS-MEL01.4603"> </a></td>
+<td>Tiefe intrakranielle Eingriffe I</td></tr>
+<tr><td style="white-space:nowrap">MEL01.04<a name="LKFmedizinischeEinzelleistungenCS-MEL01.4604"> </a></td>
+<td>Tiefe intrakranielle Eingriffe II</td></tr>
+<tr><td style="white-space:nowrap">MEL01.06<a name="LKFmedizinischeEinzelleistungenCS-MEL01.4606"> </a></td>
+<td>Laminektomien und Bandscheiben-Eingriffe / Eingriffe bei Sakralteratom</td></tr>
+<tr><td style="white-space:nowrap">MEL01.07<a name="LKFmedizinischeEinzelleistungenCS-MEL01.4607"> </a></td>
+<td>Eingriffe am Rückenmark und seinen Hüllen</td></tr>
+<tr><td style="white-space:nowrap">MEL01.08<a name="LKFmedizinischeEinzelleistungenCS-MEL01.4608"> </a></td>
+<td>Funktionelle Eingriffe an Rückenmark, Nerven und vegetativem Nervensystem / Implantation von Pumpensystemen</td></tr>
+<tr><td style="white-space:nowrap">MEL01.09<a name="LKFmedizinischeEinzelleistungenCS-MEL01.4609"> </a></td>
+<td>Eingriffe zur Stabilisierung der Wirbelsäule I</td></tr>
+<tr><td style="white-space:nowrap">MEL01.10<a name="LKFmedizinischeEinzelleistungenCS-MEL01.4610"> </a></td>
+<td>Eingriffe zur Stabilisierung der Wirbelsäule II</td></tr>
+<tr><td style="white-space:nowrap">MEL01.11<a name="LKFmedizinischeEinzelleistungenCS-MEL01.4611"> </a></td>
+<td>Zervikale Bandscheiben-Operation</td></tr>
+<tr><td style="white-space:nowrap">MEL01.12<a name="LKFmedizinischeEinzelleistungenCS-MEL01.4612"> </a></td>
+<td>Implantation von Elektroden zur Epilepsiediagnostik</td></tr>
+<tr><td style="white-space:nowrap">MEL01.13<a name="LKFmedizinischeEinzelleistungenCS-MEL01.4613"> </a></td>
+<td>Implantation von Elektroden zur Hinterstrangstimulation und Stimulation peripherer Nerven</td></tr>
+<tr><td style="white-space:nowrap">MEL01.14<a name="LKFmedizinischeEinzelleistungenCS-MEL01.4614"> </a></td>
+<td>Implantation von Elektroden zur Tiefenhirnstimulation</td></tr>
+<tr><td style="white-space:nowrap">MEL01.15<a name="LKFmedizinischeEinzelleistungenCS-MEL01.4615"> </a></td>
+<td>Implantation eines Impulsgenerators am Nervensystem</td></tr>
+<tr><td style="white-space:nowrap">MEL01.16<a name="LKFmedizinischeEinzelleistungenCS-MEL01.4616"> </a></td>
+<td>Implantation eines Systems zur N. Vagusstimulation</td></tr>
+<tr><td style="white-space:nowrap">MEL01.17<a name="LKFmedizinischeEinzelleistungenCS-MEL01.4617"> </a></td>
+<td>Minimal-invasive Eingriffe im Bereich der Wirbelsäule</td></tr>
+<tr><td style="white-space:nowrap">MEL01.18<a name="LKFmedizinischeEinzelleistungenCS-MEL01.4618"> </a></td>
+<td>Komplexe Eingriffe an der Wirbelsäule</td></tr>
+<tr><td style="white-space:nowrap">MEL01.19<a name="LKFmedizinischeEinzelleistungenCS-MEL01.4619"> </a></td>
+<td>Teilimplantation eines Impulsgenerators</td></tr>
+<tr><td style="white-space:nowrap">MEL01.20<a name="LKFmedizinischeEinzelleistungenCS-MEL01.4620"> </a></td>
+<td>Transkranielle Eingriffe</td></tr>
+<tr><td style="white-space:nowrap">MEL02.01<a name="LKFmedizinischeEinzelleistungenCS-MEL02.4601"> </a></td>
+<td>Eingriffe an den peripheren Nerven</td></tr>
+<tr><td style="white-space:nowrap">MEL02.02<a name="LKFmedizinischeEinzelleistungenCS-MEL02.4602"> </a></td>
+<td>Funktionell-plastische Eingriffe mit Beteiligung der peripheren Nerven</td></tr>
+<tr><td style="white-space:nowrap">MEL02.03<a name="LKFmedizinischeEinzelleistungenCS-MEL02.4603"> </a></td>
+<td>Kleine Eingriffe an Bindegewebe, Haut und Weichteilen</td></tr>
+<tr><td style="white-space:nowrap">MEL02.04<a name="LKFmedizinischeEinzelleistungenCS-MEL02.4604"> </a></td>
+<td>Plexuseingriffe</td></tr>
+<tr><td style="white-space:nowrap">MEL03.01<a name="LKFmedizinischeEinzelleistungenCS-MEL03.4601"> </a></td>
+<td>Osteotomie, Resektion und Osteosynthese am Gesichtsschädel und Kiefer</td></tr>
+<tr><td style="white-space:nowrap">MEL03.02<a name="LKFmedizinischeEinzelleistungenCS-MEL03.4602"> </a></td>
+<td>Rekonstruktive Eingriffe an Gesicht, Lippen und Mundhöhle</td></tr>
+<tr><td style="white-space:nowrap">MEL03.03<a name="LKFmedizinischeEinzelleistungenCS-MEL03.4603"> </a></td>
+<td>Eingriff zur Korrektur von Deformitäten an Ober- und Unterkiefer</td></tr>
+<tr><td style="white-space:nowrap">MEL03.04<a name="LKFmedizinischeEinzelleistungenCS-MEL03.4604"> </a></td>
+<td>Eingriffe zur Korrektur kraniofazialer Deformitäten</td></tr>
+<tr><td style="white-space:nowrap">MEL04.01<a name="LKFmedizinischeEinzelleistungenCS-MEL04.4601"> </a></td>
+<td>Eingriffe am äußeren Ohr und Mittelohr, Eingriffe zur Versorgung einer Liquorrhoe</td></tr>
+<tr><td style="white-space:nowrap">MEL04.02<a name="LKFmedizinischeEinzelleistungenCS-MEL04.4602"> </a></td>
+<td>Eingriffe am intrakraniellen Innenohr</td></tr>
+<tr><td style="white-space:nowrap">MEL04.03<a name="LKFmedizinischeEinzelleistungenCS-MEL04.4603"> </a></td>
+<td>Eingriffe an der Nase und Nasennebenhöhlen</td></tr>
+<tr><td style="white-space:nowrap">MEL04.04<a name="LKFmedizinischeEinzelleistungenCS-MEL04.4604"> </a></td>
+<td>Tonsillektomie, Adenotomie, Paracentese</td></tr>
+<tr><td style="white-space:nowrap">MEL04.05<a name="LKFmedizinischeEinzelleistungenCS-MEL04.4605"> </a></td>
+<td>Mikrochirurgische und endoskopische Eingriffe an den Nasennebenhöhlen</td></tr>
+<tr><td style="white-space:nowrap">MEL04.06<a name="LKFmedizinischeEinzelleistungenCS-MEL04.4606"> </a></td>
+<td>Eingriffe an den Speicheldrüsen</td></tr>
+<tr><td style="white-space:nowrap">MEL04.07<a name="LKFmedizinischeEinzelleistungenCS-MEL04.4607"> </a></td>
+<td>Komplexe Eingriffe am Hals und den oberen Atemwegen</td></tr>
+<tr><td style="white-space:nowrap">MEL04.08<a name="LKFmedizinischeEinzelleistungenCS-MEL04.4608"> </a></td>
+<td>Eingriffe an den oberen Atemwegen</td></tr>
+<tr><td style="white-space:nowrap">MEL04.09<a name="LKFmedizinischeEinzelleistungenCS-MEL04.4609"> </a></td>
+<td>Cochlearimplantat und elektronisches Mittelohrimplantat</td></tr>
+<tr><td style="white-space:nowrap">MEL04.10<a name="LKFmedizinischeEinzelleistungenCS-MEL04.4610"> </a></td>
+<td>Eingriffe an der Schilddrüse und Nebenschilddrüse</td></tr>
+<tr><td style="white-space:nowrap">MEL05.01<a name="LKFmedizinischeEinzelleistungenCS-MEL05.4601"> </a></td>
+<td>Eingriffe am Ösophagus, Magen und Zwerchfell</td></tr>
+<tr><td style="white-space:nowrap">MEL05.02<a name="LKFmedizinischeEinzelleistungenCS-MEL05.4602"> </a></td>
+<td>Ösophagusresektion</td></tr>
+<tr><td style="white-space:nowrap">MEL05.03<a name="LKFmedizinischeEinzelleistungenCS-MEL05.4603"> </a></td>
+<td>Magenteilresektion</td></tr>
+<tr><td style="white-space:nowrap">MEL05.04<a name="LKFmedizinischeEinzelleistungenCS-MEL05.4604"> </a></td>
+<td>Totale und subtotale Gastrektomie</td></tr>
+<tr><td style="white-space:nowrap">MEL05.05<a name="LKFmedizinischeEinzelleistungenCS-MEL05.4605"> </a></td>
+<td>Cholezystektomie</td></tr>
+<tr><td style="white-space:nowrap">MEL05.06<a name="LKFmedizinischeEinzelleistungenCS-MEL05.4606"> </a></td>
+<td>Eingriffe am Gallengangsystem</td></tr>
+<tr><td style="white-space:nowrap">MEL05.07<a name="LKFmedizinischeEinzelleistungenCS-MEL05.4607"> </a></td>
+<td>Eingriffe an Milz, Leber, Duodenum und Pankreas</td></tr>
+<tr><td style="white-space:nowrap">MEL05.08<a name="LKFmedizinischeEinzelleistungenCS-MEL05.4608"> </a></td>
+<td>Eingriffe am Pankreas</td></tr>
+<tr><td style="white-space:nowrap">MEL06.01<a name="LKFmedizinischeEinzelleistungenCS-MEL06.4601"> </a></td>
+<td>Appendektomie</td></tr>
+<tr><td style="white-space:nowrap">MEL06.02<a name="LKFmedizinischeEinzelleistungenCS-MEL06.4602"> </a></td>
+<td>Eingriffe an Dünndarm und Dickdarm</td></tr>
+<tr><td style="white-space:nowrap">MEL06.03<a name="LKFmedizinischeEinzelleistungenCS-MEL06.4603"> </a></td>
+<td>Eingriffe an Dickdarm und Rektum</td></tr>
+<tr><td style="white-space:nowrap">MEL06.04<a name="LKFmedizinischeEinzelleistungenCS-MEL06.4604"> </a></td>
+<td>Komplexe Eingriffe an Dickdarm und Rektum</td></tr>
+<tr><td style="white-space:nowrap">MEL06.05<a name="LKFmedizinischeEinzelleistungenCS-MEL06.4605"> </a></td>
+<td>Eingriffe an der Bauchwand, Laparotomie</td></tr>
+<tr><td style="white-space:nowrap">MEL06.06<a name="LKFmedizinischeEinzelleistungenCS-MEL06.4606"> </a></td>
+<td>Eingriffe bei Bauchwandhernien, Leistenhernien beim Kind</td></tr>
+<tr><td style="white-space:nowrap">MEL06.08<a name="LKFmedizinischeEinzelleistungenCS-MEL06.4608"> </a></td>
+<td>Komplexe Eingriffe an Rektum und Anus</td></tr>
+<tr><td style="white-space:nowrap">MEL06.09<a name="LKFmedizinischeEinzelleistungenCS-MEL06.4609"> </a></td>
+<td>Eingriffe an Rektum und Anus</td></tr>
+<tr><td style="white-space:nowrap">MEL06.11<a name="LKFmedizinischeEinzelleistungenCS-MEL06.4611"> </a></td>
+<td>Laparoskopie diagnostisch/therapeutisch</td></tr>
+<tr><td style="white-space:nowrap">MEL07.01<a name="LKFmedizinischeEinzelleistungenCS-MEL07.4601"> </a></td>
+<td>Anatomische Lungenresektion</td></tr>
+<tr><td style="white-space:nowrap">MEL07.02<a name="LKFmedizinischeEinzelleistungenCS-MEL07.4602"> </a></td>
+<td>Einfache thoraxchirurgische Eingriffe</td></tr>
+<tr><td style="white-space:nowrap">MEL07.03<a name="LKFmedizinischeEinzelleistungenCS-MEL07.4603"> </a></td>
+<td>Erweiterte anatomische Lungenresektionen</td></tr>
+<tr><td style="white-space:nowrap">MEL07.04<a name="LKFmedizinischeEinzelleistungenCS-MEL07.4604"> </a></td>
+<td>Eingriffe an der Thoraxwand</td></tr>
+<tr><td style="white-space:nowrap">MEL07.05<a name="LKFmedizinischeEinzelleistungenCS-MEL07.4605"> </a></td>
+<td>Implantation eines Zwerchfell-Schrittmachers</td></tr>
+<tr><td style="white-space:nowrap">MEL07.06<a name="LKFmedizinischeEinzelleistungenCS-MEL07.4606"> </a></td>
+<td>Bronchoskopische Lungenvolumenreduktion</td></tr>
+<tr><td style="white-space:nowrap">MEL08.01<a name="LKFmedizinischeEinzelleistungenCS-MEL08.4601"> </a></td>
+<td>Eingriffe am Herzen ohne Herz-Lungen-Maschine</td></tr>
+<tr><td style="white-space:nowrap">MEL08.02<a name="LKFmedizinischeEinzelleistungenCS-MEL08.4602"> </a></td>
+<td>Koronare Revaskularisation und andere Eingriffe am Herzen mit HLM</td></tr>
+<tr><td style="white-space:nowrap">MEL08.03<a name="LKFmedizinischeEinzelleistungenCS-MEL08.4603"> </a></td>
+<td>Eingriffe an den Herzklappen und Aorta ascendens mit HLM</td></tr>
+<tr><td style="white-space:nowrap">MEL08.05<a name="LKFmedizinischeEinzelleistungenCS-MEL08.4605"> </a></td>
+<td>Rekonstruktion der Aorta ascendens und des Aortenbogens mit Kreislaufstillstand, Korrektur komplexer Herzfehler</td></tr>
+<tr><td style="white-space:nowrap">MEL08.06<a name="LKFmedizinischeEinzelleistungenCS-MEL08.4606"> </a></td>
+<td>Ventrikelersatz</td></tr>
+<tr><td style="white-space:nowrap">MEL08.07<a name="LKFmedizinischeEinzelleistungenCS-MEL08.4607"> </a></td>
+<td>Rekonstruktionen an der thorakalen-thorakoabdominellen Aorta</td></tr>
+<tr><td style="white-space:nowrap">MEL08.08<a name="LKFmedizinischeEinzelleistungenCS-MEL08.4608"> </a></td>
+<td>Thorakoskopische Eingriffe</td></tr>
+<tr><td style="white-space:nowrap">MEL08.09<a name="LKFmedizinischeEinzelleistungenCS-MEL08.4609"> </a></td>
+<td>Implantation eines Aortenstents</td></tr>
+<tr><td style="white-space:nowrap">MEL08.10<a name="LKFmedizinischeEinzelleistungenCS-MEL08.4610"> </a></td>
+<td>Implantation eines Systems zur extrakorporalen Membranoxygenierung (ECMO)</td></tr>
+<tr><td style="white-space:nowrap">MEL08.11<a name="LKFmedizinischeEinzelleistungenCS-MEL08.4611"> </a></td>
+<td>Implantation eines herzunterstützenden Systems</td></tr>
+<tr><td style="white-space:nowrap">MEL09.01<a name="LKFmedizinischeEinzelleistungenCS-MEL09.4601"> </a></td>
+<td>Rekonstruktionen an den peripheren Gefäßen</td></tr>
+<tr><td style="white-space:nowrap">MEL09.02<a name="LKFmedizinischeEinzelleistungenCS-MEL09.4602"> </a></td>
+<td>Rekonstruktionen an der abdominellen Aorta und den viszeralen Gefäßen</td></tr>
+<tr><td style="white-space:nowrap">MEL09.03<a name="LKFmedizinischeEinzelleistungenCS-MEL09.4603"> </a></td>
+<td>Eingriffe an den peripheren Gefäßen</td></tr>
+<tr><td style="white-space:nowrap">MEL09.04<a name="LKFmedizinischeEinzelleistungenCS-MEL09.4604"> </a></td>
+<td>Isolierte Organperfusion</td></tr>
+<tr><td style="white-space:nowrap">MEL09.05<a name="LKFmedizinischeEinzelleistungenCS-MEL09.4605"> </a></td>
+<td>Implantation eines Loop-Recorders</td></tr>
+<tr><td style="white-space:nowrap">MEL10.01<a name="LKFmedizinischeEinzelleistungenCS-MEL10.4601"> </a></td>
+<td>Implantation eines Schrittmachers</td></tr>
+<tr><td style="white-space:nowrap">MEL10.02<a name="LKFmedizinischeEinzelleistungenCS-MEL10.4602"> </a></td>
+<td>Implantation eines Defibrillators</td></tr>
+<tr><td style="white-space:nowrap">MEL10.03<a name="LKFmedizinischeEinzelleistungenCS-MEL10.4603"> </a></td>
+<td>Implantation von Systemen zur kardialen Resynchronisation</td></tr>
+<tr><td style="white-space:nowrap">MEL10.04<a name="LKFmedizinischeEinzelleistungenCS-MEL10.4604"> </a></td>
+<td>Implantation eines automatischen Kardioverters -Defibrillators mit kardialer Resynchronisationsfunktion</td></tr>
+<tr><td style="white-space:nowrap">MEL10.05<a name="LKFmedizinischeEinzelleistungenCS-MEL10.4605"> </a></td>
+<td>Extraktion von Schrittmachersonden</td></tr>
+<tr><td style="white-space:nowrap">MEL11.01<a name="LKFmedizinischeEinzelleistungenCS-MEL11.4601"> </a></td>
+<td>Eingriffe an Niere und Harnleiter I</td></tr>
+<tr><td style="white-space:nowrap">MEL11.02<a name="LKFmedizinischeEinzelleistungenCS-MEL11.4602"> </a></td>
+<td>Komplexe Eingriffe an der Harnblase</td></tr>
+<tr><td style="white-space:nowrap">MEL11.03<a name="LKFmedizinischeEinzelleistungenCS-MEL11.4603"> </a></td>
+<td>Eingriffe an Niere und Harnleiter II</td></tr>
+<tr><td style="white-space:nowrap">MEL11.04<a name="LKFmedizinischeEinzelleistungenCS-MEL11.4604"> </a></td>
+<td>Eingriffe an Niere und Harnleiter III</td></tr>
+<tr><td style="white-space:nowrap">MEL11.05<a name="LKFmedizinischeEinzelleistungenCS-MEL11.4605"> </a></td>
+<td>Eingriffe an Harnblase und Urethra</td></tr>
+<tr><td style="white-space:nowrap">MEL11.06<a name="LKFmedizinischeEinzelleistungenCS-MEL11.4606"> </a></td>
+<td>Funktionseingriffe an Harnblase und Urethra</td></tr>
+<tr><td style="white-space:nowrap">MEL11.07<a name="LKFmedizinischeEinzelleistungenCS-MEL11.4607"> </a></td>
+<td>Transurethrale Resektion der Harnblase</td></tr>
+<tr><td style="white-space:nowrap">MEL12.01<a name="LKFmedizinischeEinzelleistungenCS-MEL12.4601"> </a></td>
+<td>Prostatektomie</td></tr>
+<tr><td style="white-space:nowrap">MEL12.02<a name="LKFmedizinischeEinzelleistungenCS-MEL12.4602"> </a></td>
+<td>Implantation Penisprothese</td></tr>
+<tr><td style="white-space:nowrap">MEL12.03<a name="LKFmedizinischeEinzelleistungenCS-MEL12.4603"> </a></td>
+<td>Transurethrale Resektion der Prostata</td></tr>
+<tr><td style="white-space:nowrap">MEL12.04<a name="LKFmedizinischeEinzelleistungenCS-MEL12.4604"> </a></td>
+<td>Eingriffe am äußeren männlichen Genitale</td></tr>
+<tr><td style="white-space:nowrap">MEL12.05<a name="LKFmedizinischeEinzelleistungenCS-MEL12.4605"> </a></td>
+<td>Einfache Eingriffe am äußeren männlichen Genitale</td></tr>
+<tr><td style="white-space:nowrap">MEL13.01<a name="LKFmedizinischeEinzelleistungenCS-MEL13.4601"> </a></td>
+<td>Komplexe Hysterektomien</td></tr>
+<tr><td style="white-space:nowrap">MEL13.02<a name="LKFmedizinischeEinzelleistungenCS-MEL13.4602"> </a></td>
+<td>Eingriffe am Uterus</td></tr>
+<tr><td style="white-space:nowrap">MEL13.03<a name="LKFmedizinischeEinzelleistungenCS-MEL13.4603"> </a></td>
+<td>Laparoskopische Eingriffe an den weiblichen Beckenorganen</td></tr>
+<tr><td style="white-space:nowrap">MEL13.04<a name="LKFmedizinischeEinzelleistungenCS-MEL13.4604"> </a></td>
+<td>Eingriffe an den weiblichen Beckenorganen und Beckenboden I</td></tr>
+<tr><td style="white-space:nowrap">MEL13.05<a name="LKFmedizinischeEinzelleistungenCS-MEL13.4605"> </a></td>
+<td>Eingriffe an den weiblichen Beckenorganen und Beckenboden II</td></tr>
+<tr><td style="white-space:nowrap">MEL13.06<a name="LKFmedizinischeEinzelleistungenCS-MEL13.4606"> </a></td>
+<td>Hysterektomien</td></tr>
+<tr><td style="white-space:nowrap">MEL13.07<a name="LKFmedizinischeEinzelleistungenCS-MEL13.4607"> </a></td>
+<td>Einfache Eingriffe am Uterus</td></tr>
+<tr><td style="white-space:nowrap">MEL13.09<a name="LKFmedizinischeEinzelleistungenCS-MEL13.4609"> </a></td>
+<td>Entbindung</td></tr>
+<tr><td style="white-space:nowrap">MEL13.10<a name="LKFmedizinischeEinzelleistungenCS-MEL13.4610"> </a></td>
+<td>Eingriffe an den Adnexen</td></tr>
+<tr><td style="white-space:nowrap">MEL13.13<a name="LKFmedizinischeEinzelleistungenCS-MEL13.4613"> </a></td>
+<td>Fetoskopische Eingriffe</td></tr>
+<tr><td style="white-space:nowrap">MEL14.01<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4601"> </a></td>
+<td>Osteosynthesen und Osteotomien an Schulter, Oberarm und Ellbogen</td></tr>
+<tr><td style="white-space:nowrap">MEL14.02<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4602"> </a></td>
+<td>Eingriffe an Schulter, Oberarm und Ellbogen</td></tr>
+<tr><td style="white-space:nowrap">MEL14.03<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4603"> </a></td>
+<td>Eingriffe an Unterarm, Handwurzel und Hand</td></tr>
+<tr><td style="white-space:nowrap">MEL14.04<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4604"> </a></td>
+<td>Endoprothetik des Schultergelenks</td></tr>
+<tr><td style="white-space:nowrap">MEL14.05<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4605"> </a></td>
+<td>Endoprothetik des Ellbogengelenks</td></tr>
+<tr><td style="white-space:nowrap">MEL14.06<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4606"> </a></td>
+<td>Endoprothetik der Hand</td></tr>
+<tr><td style="white-space:nowrap">MEL14.07<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4607"> </a></td>
+<td>Teilendoprothetik des Hüftgelenks</td></tr>
+<tr><td style="white-space:nowrap">MEL14.08<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4608"> </a></td>
+<td>Totalendoprothetik des Hüftgelenks</td></tr>
+<tr><td style="white-space:nowrap">MEL14.09<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4609"> </a></td>
+<td>Teilendoprothetik des Kniegelenks</td></tr>
+<tr><td style="white-space:nowrap">MEL14.10<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4610"> </a></td>
+<td>Totalendoprothetik des Kniegelenks</td></tr>
+<tr><td style="white-space:nowrap">MEL14.11<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4611"> </a></td>
+<td>Endoprothetik des Sprunggelenks</td></tr>
+<tr><td style="white-space:nowrap">MEL14.12<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4612"> </a></td>
+<td>Wechsel von Prothesenteilen</td></tr>
+<tr><td style="white-space:nowrap">MEL14.13<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4613"> </a></td>
+<td>Komplexe Eingriffe an Knie und Unterschenkel</td></tr>
+<tr><td style="white-space:nowrap">MEL14.14<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4614"> </a></td>
+<td>Eingriffe an Knie und Unterschenkel</td></tr>
+<tr><td style="white-space:nowrap">MEL14.15<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4615"> </a></td>
+<td>Eingriffe an Fuß, Mittelfuß und Zehen</td></tr>
+<tr><td style="white-space:nowrap">MEL14.16<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4616"> </a></td>
+<td>Amputationen</td></tr>
+<tr><td style="white-space:nowrap">MEL14.17<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4617"> </a></td>
+<td>Komplexe Eingriffe am Beckenring</td></tr>
+<tr><td style="white-space:nowrap">MEL14.18<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4618"> </a></td>
+<td>Eingriffe an Hüfte und Oberschenkel</td></tr>
+<tr><td style="white-space:nowrap">MEL14.19<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4619"> </a></td>
+<td>Replantationseingriffe</td></tr>
+<tr><td style="white-space:nowrap">MEL14.21<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4621"> </a></td>
+<td>Arthroskopische Eingriffe</td></tr>
+<tr><td style="white-space:nowrap">MEL14.22<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4622"> </a></td>
+<td>Eingriffe an Bewegungsapparat und Haut</td></tr>
+<tr><td style="white-space:nowrap">MEL14.23<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4623"> </a></td>
+<td>Entfernung von Osteosynthesematerial</td></tr>
+<tr><td style="white-space:nowrap">MEL14.24<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4624"> </a></td>
+<td>Komplexe plastische Eingriffe an der Haut/ Lappenchirurgie</td></tr>
+<tr><td style="white-space:nowrap">MEL14.25<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4625"> </a></td>
+<td>Komplexe orthopädische Eingriffe</td></tr>
+<tr><td style="white-space:nowrap">MEL14.26<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4626"> </a></td>
+<td>Implantation von Spezialprothesen</td></tr>
+<tr><td style="white-space:nowrap">MEL14.27<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4627"> </a></td>
+<td>Endoprothetik Mittelfuß und Zehen</td></tr>
+<tr><td style="white-space:nowrap">MEL14.28<a name="LKFmedizinischeEinzelleistungenCS-MEL14.4628"> </a></td>
+<td>Endoprothetik des Kiefergelenks</td></tr>
+<tr><td style="white-space:nowrap">MEL15.01<a name="LKFmedizinischeEinzelleistungenCS-MEL15.4601"> </a></td>
+<td>Plastische Eingriffe am äußeren Auge</td></tr>
+<tr><td style="white-space:nowrap">MEL15.02<a name="LKFmedizinischeEinzelleistungenCS-MEL15.4602"> </a></td>
+<td>Eingriffe an der Orbita und am Bulbus</td></tr>
+<tr><td style="white-space:nowrap">MEL15.03<a name="LKFmedizinischeEinzelleistungenCS-MEL15.4603"> </a></td>
+<td>Schiel-Operationen</td></tr>
+<tr><td style="white-space:nowrap">MEL15.04<a name="LKFmedizinischeEinzelleistungenCS-MEL15.4604"> </a></td>
+<td>Glaukom-Operationen</td></tr>
+<tr><td style="white-space:nowrap">MEL15.05<a name="LKFmedizinischeEinzelleistungenCS-MEL15.4605"> </a></td>
+<td>Katarakt-Operationen</td></tr>
+<tr><td style="white-space:nowrap">MEL15.06<a name="LKFmedizinischeEinzelleistungenCS-MEL15.4606"> </a></td>
+<td>Eingriffe an der Hornhaut</td></tr>
+<tr><td style="white-space:nowrap">MEL15.07<a name="LKFmedizinischeEinzelleistungenCS-MEL15.4607"> </a></td>
+<td>Eingriffe an der Netzhaut und am Glaskörper</td></tr>
+<tr><td style="white-space:nowrap">MEL16.01<a name="LKFmedizinischeEinzelleistungenCS-MEL16.4601"> </a></td>
+<td>Resektionen an der Mamma</td></tr>
+<tr><td style="white-space:nowrap">MEL16.02<a name="LKFmedizinischeEinzelleistungenCS-MEL16.4602"> </a></td>
+<td>Plastische Eingriffe an der Mamma</td></tr>
+<tr><td style="white-space:nowrap">MEL17.01<a name="LKFmedizinischeEinzelleistungenCS-MEL17.4601"> </a></td>
+<td>Lymphadenektomien</td></tr>
+<tr><td style="white-space:nowrap">MEL17.02<a name="LKFmedizinischeEinzelleistungenCS-MEL17.4602"> </a></td>
+<td>Komplexe Lymphoadenektomien, Entfernung retroperitonealer Raumforderungen</td></tr>
+<tr><td style="white-space:nowrap">MEL17.03<a name="LKFmedizinischeEinzelleistungenCS-MEL17.4603"> </a></td>
+<td>Rekonstruktive Eingriffe am Lymphsystem</td></tr>
+<tr><td style="white-space:nowrap">MEL18.02<a name="LKFmedizinischeEinzelleistungenCS-MEL18.4602"> </a></td>
+<td>Implantation der Niere</td></tr>
+<tr><td style="white-space:nowrap">MEL18.03<a name="LKFmedizinischeEinzelleistungenCS-MEL18.4603"> </a></td>
+<td>Implantation von Leber/Dünndarm</td></tr>
+<tr><td style="white-space:nowrap">MEL18.04<a name="LKFmedizinischeEinzelleistungenCS-MEL18.4604"> </a></td>
+<td>Implantation des Pankreas</td></tr>
+<tr><td style="white-space:nowrap">MEL18.05<a name="LKFmedizinischeEinzelleistungenCS-MEL18.4605"> </a></td>
+<td>Implantation des Herzens</td></tr>
+<tr><td style="white-space:nowrap">MEL18.06<a name="LKFmedizinischeEinzelleistungenCS-MEL18.4606"> </a></td>
+<td>Implantation der Lunge</td></tr>
+<tr><td style="white-space:nowrap">MEL18.07<a name="LKFmedizinischeEinzelleistungenCS-MEL18.4607"> </a></td>
+<td>Implantation von Herz und Lunge</td></tr>
+<tr><td style="white-space:nowrap">MEL19.01<a name="LKFmedizinischeEinzelleistungenCS-MEL19.4601"> </a></td>
+<td>Radiochirurgie mit Gammastrahlen</td></tr>
+<tr><td style="white-space:nowrap">MEL20.01<a name="LKFmedizinischeEinzelleistungenCS-MEL20.4601"> </a></td>
+<td>Interventionelle Radiologie an den Gefäßen</td></tr>
+<tr><td style="white-space:nowrap">MEL20.02<a name="LKFmedizinischeEinzelleistungenCS-MEL20.4602"> </a></td>
+<td>Radiofrequenztherapie</td></tr>
+<tr><td style="white-space:nowrap">MEL21.01<a name="LKFmedizinischeEinzelleistungenCS-MEL21.4601"> </a></td>
+<td>Interventionelle Kardiologie - Koronarangiografie</td></tr>
+<tr><td style="white-space:nowrap">MEL21.03<a name="LKFmedizinischeEinzelleistungenCS-MEL21.4603"> </a></td>
+<td>Interventionelle Kardiologie - Alternative Revaskularisationsverfahren</td></tr>
+<tr><td style="white-space:nowrap">MEL21.04<a name="LKFmedizinischeEinzelleistungenCS-MEL21.4604"> </a></td>
+<td>Interventionelle Kardiologie - Rhythmologie</td></tr>
+<tr><td style="white-space:nowrap">MEL21.05<a name="LKFmedizinischeEinzelleistungenCS-MEL21.4605"> </a></td>
+<td>Interventionelle Kardiologie - Vitientherapie</td></tr>
+<tr><td style="white-space:nowrap">MEL21.08<a name="LKFmedizinischeEinzelleistungenCS-MEL21.4608"> </a></td>
+<td>Interventionelle Kardiologie - Thrombusaspiration</td></tr>
+<tr><td style="white-space:nowrap">MEL21.10<a name="LKFmedizinischeEinzelleistungenCS-MEL21.4610"> </a></td>
+<td>Interventionelle Kardiologie - Distale Protektion</td></tr>
+<tr><td style="white-space:nowrap">MEL21.11<a name="LKFmedizinischeEinzelleistungenCS-MEL21.4611"> </a></td>
+<td>Interventionelle Kardiologie - Revaskularisation</td></tr>
+<tr><td style="white-space:nowrap">MEL22.01<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4601"> </a></td>
+<td>Chemotherapie bei malignen Erkrankungen d. Leistungsgruppe A</td></tr>
+<tr><td style="white-space:nowrap">MEL22.02<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4602"> </a></td>
+<td>Chemotherapie bei malignen Erkrankungen d. Leistungsgruppe B</td></tr>
+<tr><td style="white-space:nowrap">MEL22.03<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4603"> </a></td>
+<td>Chemotherapie bei malignen Erkrankungen d. Leistungsgruppe C</td></tr>
+<tr><td style="white-space:nowrap">MEL22.04<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4604"> </a></td>
+<td>Chemotherapie bei malignen Erkrankungen d. Leistungsgruppe D</td></tr>
+<tr><td style="white-space:nowrap">MEL22.05<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4605"> </a></td>
+<td>Chemotherapie bei malignen Erkrankungen d. Leistungsgruppe E</td></tr>
+<tr><td style="white-space:nowrap">MEL22.06<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4606"> </a></td>
+<td>Chemotherapie bei malignen Erkrankungen d. Leistungsgruppe F</td></tr>
+<tr><td style="white-space:nowrap">MEL22.08<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4608"> </a></td>
+<td>Allogene Stammzelltransplantation - verwandte Spender</td></tr>
+<tr><td style="white-space:nowrap">MEL22.09<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4609"> </a></td>
+<td>Allogene Stammzelltransplantation - unverwandte Spender</td></tr>
+<tr><td style="white-space:nowrap">MEL22.10<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4610"> </a></td>
+<td>Autologe Stammzelltransplantation</td></tr>
+<tr><td style="white-space:nowrap">MEL22.11<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4611"> </a></td>
+<td>Gewinnung von Stammzellen aus Knochenmark/Blut - ohne Purging</td></tr>
+<tr><td style="white-space:nowrap">MEL22.13<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4613"> </a></td>
+<td>Andere, zusätzliche oder begleitende onkologische Therapie - Zytokine</td></tr>
+<tr><td style="white-space:nowrap">MEL22.14<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4614"> </a></td>
+<td>Andere, zusätzliche oder begleitende onkologische Therapie - monoklonale Antikörper</td></tr>
+<tr><td style="white-space:nowrap">MEL22.16<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4616"> </a></td>
+<td>Fortsetzung einer Chemotherapie oder Verabreichen nicht kostenrelevanter Zytostatika</td></tr>
+<tr><td style="white-space:nowrap">MEL22.18<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4618"> </a></td>
+<td>Zellseperator-Thrombozytenkonzentrat von Einzelspendern</td></tr>
+<tr><td style="white-space:nowrap">MEL22.19<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4619"> </a></td>
+<td>Spezifische Gammaglobulin-Verabreichung nach Stammzelltransplantation</td></tr>
+<tr><td style="white-space:nowrap">MEL22.20<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4620"> </a></td>
+<td>Gabe von Einzelfaktorkonzentraten bei angeborenen Gerinnungsstörungen und Hemmkörperhämophilie</td></tr>
+<tr><td style="white-space:nowrap">MEL22.21<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4621"> </a></td>
+<td>Graft versus Host Erkrankung (GvHD)</td></tr>
+<tr><td style="white-space:nowrap">MEL22.22<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4622"> </a></td>
+<td>Andere spezifische Tumortherapie</td></tr>
+<tr><td style="white-space:nowrap">MEL22.23<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4623"> </a></td>
+<td>Radioaktiv markierte Antikörper</td></tr>
+<tr><td style="white-space:nowrap">MEL22.24<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4624"> </a></td>
+<td>Verabreichung von Spenderlymphozyten nach allogener Stammzelltransplantation</td></tr>
+<tr><td style="white-space:nowrap">MEL22.26<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4626"> </a></td>
+<td>Andere, zusätzliche oder begleitende onkologische Therapien - Sonstige</td></tr>
+<tr><td style="white-space:nowrap">MEL22.27<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4627"> </a></td>
+<td>Onkologische Immuntherapie</td></tr>
+<tr><td style="white-space:nowrap">MEL22.28<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4628"> </a></td>
+<td>Pädiatrische onkologische Therapie - Basistherapie</td></tr>
+<tr><td style="white-space:nowrap">MEL22.29<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4629"> </a></td>
+<td>Pädiatrische onkologische Therapie - spezielle Therapie</td></tr>
+<tr><td style="white-space:nowrap">MEL22.30<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4630"> </a></td>
+<td>Verabreichung von modifizierten Zellen</td></tr>
+<tr><td style="white-space:nowrap">MEL22.31<a name="LKFmedizinischeEinzelleistungenCS-MEL22.4631"> </a></td>
+<td>Lokoregionale Hyperthermie</td></tr>
+<tr><td style="white-space:nowrap">MEL23.01<a name="LKFmedizinischeEinzelleistungenCS-MEL23.4601"> </a></td>
+<td>Alkoholentwöhnung im Turnus 6 bis 12 Wochen</td></tr>
+<tr><td style="white-space:nowrap">MEL23.02<a name="LKFmedizinischeEinzelleistungenCS-MEL23.4602"> </a></td>
+<td>Drogenentwöhnungen auf Drogenstationen</td></tr>
+<tr><td style="white-space:nowrap">MEL24.01<a name="LKFmedizinischeEinzelleistungenCS-MEL24.4601"> </a></td>
+<td>Nierenersatztherapie</td></tr>
+<tr><td style="white-space:nowrap">MEL24.02<a name="LKFmedizinischeEinzelleistungenCS-MEL24.4602"> </a></td>
+<td>Plasmapherese, Plasmafiltration</td></tr>
+<tr><td style="white-space:nowrap">MEL24.03<a name="LKFmedizinischeEinzelleistungenCS-MEL24.4603"> </a></td>
+<td>Adsorptionssystem und Dialyse albumingebundener Substanzen</td></tr>
+<tr><td style="white-space:nowrap">MEL24.04<a name="LKFmedizinischeEinzelleistungenCS-MEL24.4604"> </a></td>
+<td>Photopherese</td></tr>
+<tr><td style="white-space:nowrap">MEL25.02<a name="LKFmedizinischeEinzelleistungenCS-MEL25.4602"> </a></td>
+<td>Brachytherapie</td></tr>
+<tr><td style="white-space:nowrap">MEL25.04<a name="LKFmedizinischeEinzelleistungenCS-MEL25.4604"> </a></td>
+<td>Radionuklidtherapie I</td></tr>
+<tr><td style="white-space:nowrap">MEL25.05<a name="LKFmedizinischeEinzelleistungenCS-MEL25.4605"> </a></td>
+<td>Radionuklidtherapie II</td></tr>
+<tr><td style="white-space:nowrap">MEL25.06<a name="LKFmedizinischeEinzelleistungenCS-MEL25.4606"> </a></td>
+<td>Implantation von radioaktiven Prostataseeds</td></tr>
+<tr><td style="white-space:nowrap">MEL25.07<a name="LKFmedizinischeEinzelleistungenCS-MEL25.4607"> </a></td>
+<td>Intraoperative Radiotherapie</td></tr>
+<tr><td style="white-space:nowrap">MEL25.08<a name="LKFmedizinischeEinzelleistungenCS-MEL25.4608"> </a></td>
+<td>Konventionelle Teletherapie</td></tr>
+<tr><td style="white-space:nowrap">MEL25.09<a name="LKFmedizinischeEinzelleistungenCS-MEL25.4609"> </a></td>
+<td>Intensitätsmodulierte Teletherapie und stereotaktische Radiochirurgie</td></tr>
+<tr><td style="white-space:nowrap">MEL25.10<a name="LKFmedizinischeEinzelleistungenCS-MEL25.4610"> </a></td>
+<td>Ergänzende Verfahren in der Strahlentherapie</td></tr>
+<tr><td style="white-space:nowrap">MEL26.01<a name="LKFmedizinischeEinzelleistungenCS-MEL26.4601"> </a></td>
+<td>Systemische Lysetherapie</td></tr>
+<tr><td style="white-space:nowrap">MEL26.02<a name="LKFmedizinischeEinzelleistungenCS-MEL26.4602"> </a></td>
+<td>Akute Insulttherapie auf Schlaganfalleinheiten (stroke unit)</td></tr>
+<tr><td style="white-space:nowrap">MEL27.01<a name="LKFmedizinischeEinzelleistungenCS-MEL27.4601"> </a></td>
+<td>Hyperbare Oxygenation</td></tr>
+<tr><td style="white-space:nowrap">MEL29.01<a name="LKFmedizinischeEinzelleistungenCS-MEL29.4601"> </a></td>
+<td>Extrakorporale/endoskopische Steinbehandlung</td></tr>
+<tr><td style="white-space:nowrap">MEL29.02<a name="LKFmedizinischeEinzelleistungenCS-MEL29.4602"> </a></td>
+<td>Therapeutische ERCP / endoskopische Prothesenimplantation</td></tr>
+<tr><td style="white-space:nowrap">MEL30.01<a name="LKFmedizinischeEinzelleistungenCS-MEL30.4601"> </a></td>
+<td>AIDS-Behandlung</td></tr>
+<tr><td style="white-space:nowrap">MEL32.01<a name="LKFmedizinischeEinzelleistungenCS-MEL32.4601"> </a></td>
+<td>Behandlung in der PSO im Turnus (Erwachsene)</td></tr>
+<tr><td style="white-space:nowrap">MEL32.03<a name="LKFmedizinischeEinzelleistungenCS-MEL32.4603"> </a></td>
+<td>Behandlung in der PSO im Turnus (Kinder und Jugendliche)</td></tr></table></div>
+
+  
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /row -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-content -->
+
+<script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/window-hash.js"> </script>
+<a name="bottom"> </a>
+<div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+<div class="container">  <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Wed, Feb 26, 2025 17:16+0000">2025-02-26</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    </span>
+  </p>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+<div class="container">  <!-- container -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-post-footer -->
+
+<!-- JS and analytics only. -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+<script type="text/javascript" src="assets/js/respond.min.js"> </script>
+<script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+<script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+</body>
+</html>
+

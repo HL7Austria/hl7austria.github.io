@@ -1,0 +1,64 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://elga.moped.at/OperationDefinition/MOPED.MopedLKFResponse.Auffordern> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "MOPED.MopedLKFResponse.Auffordern"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition MOPED.MopedLKFResponse.Auffordern</b></p><a name=\"MOPED.MopedLKFResponse.Auffordern\"> </a><a name=\"hcMOPED.MopedLKFResponse.Auffordern\"> </a><a name=\"MOPED.MopedLKFResponse.Auffordern-en-US\"> </a><p>URL: [base]/ClaimResponse/$auffordern</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>MopedLKFResponse</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/claimresponse.html\">ClaimResponse</a> (<a href=\"StructureDefinition-MopedLKFResponse.html\" title=\"https://elga.moped.at/StructureDefinition/MopedLKFResponse\">MopedLKFResponse</a>)</td><td/><td><div><p>Der <em>MopedLKFResponse</em> Parameter beinhaltet sämtliche Details zur Antwort auf den Claim.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/resource.html\">Resource</a> (<a href=\"http://hl7.org/fhir/R5/operationoutcome.html\" title=\"http://hl7.org/fhir/StructureDefinition/OperationOutcome\">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>\n</div></td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://elga.moped.at/OperationDefinition/MOPED.MopedLKFResponse.Auffordern"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "MOPED_MopedLKFResponse_Auffordern"] ; # 
+  fhir:title [ fhir:v "MOPED LKF Korrektur $auffordern (POC)"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2025-02-26T17:15:50+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "ELGA GmbH" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://elga.gv.at" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Die $auffordern Operation wird aufgerufen, wenn eine Abrechnung beantwortet wird und das Krankehaus zu einer Korrektur aufgefordert wird."] ; # 
+  fhir:purpose [ fhir:v "\n**Wer ruft diese Operation in welchem Zusammenhang auf?**\n\nDie Operation wird vom Akteur Landesgesundheitsfonds (LFG) aufgerufen. Die $auffordern Operation wird aufgerufen, wenn die Abrechnung eines Krankenhauses nicht freigegeben wird, sondern eine Korrektur der Abrechnung angefordert wird.\n\n**Voraussetzungen für den Aufruf**\n\n* Account-Status: `Vorläufige Meldung`, `Vorläufige Freigabe`, `Endgültige Meldung`\n\n**Detaillierte Business-Logik**\n\n1. Die MopedLKFResponse wird lt. Regeln (siehe unten) validiert und eingespielt\n2. Falls Schritt 1 erfolgreich war, wird der MopedLKFResponse.encounter.account.workflowStatus (MopedLKFResponse aus Operation-Parameter; der Encounter vom Profil MopedEncounter) wird auf \n   * `LGF Korrekturaufforderung` gesetzt, falls der vorherige Status `Vorläufige Meldung`, `Vorläufige Freigabe` oder `LGF Korrekturaufforderung` war\n   * `Endgültige Korrekturaufforderung` gesetzt, falls der vorherige Status `Endgültige Meldung` oder `Endgültige Korrekturaufforderung` war\n3. Alle Referenzen sollen versionsspezifisch aufgelöst werden.\n\n\n**Validierung / Fehlerbehandlung**\n\n* MopedLKFResponse.status muss `active` sein (lt. Profil)\n* MopedLKFResponse.type muss `institutional` sein (lt. Profil)\n* MopedLKFResponse.use muss `claim` sein (lt. Profil)\n* MopedLKFResponse.patient muss gleich MopedLKFResponse.request.patient sein\n* MopedLKFResponse.insurer muss gleich MopedLKFResponse.request.insurer sein\n* MopedLKFResponse.requestor muss gleich MopedLKFResponse.request.provider sein\n* MopedLKFResponse.outcome muss `error` sein\n* MopedLKFResponse.insurance.coverage muss gleich der Claim.insurance.coverage sein\n* MopedLKFResponse.error muss befüllt sein\n\n**Weitere Hinweise**\n\n* Hinweis 1: Für den Fall, dass ein Claim freigegeben wird und kein Fehler auftritt, gibt es eine weitere Operation die anstelle einer Korrekturaufforderung eine Freigabe definiert\n\n**Annahmen an das BeS**\n* Es wurde vorab geprüft, ob die MopedLKFResponse auch dem LGF entspricht, der die Operation aufruft. Somit ist sichergestellt, dass jeder LGF nur eigene Claims beantworten kann.\n"] ; # 
+  fhir:affectsState [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:code [ fhir:v "auffordern"] ; # 
+  fhir:resource ( [ fhir:v "ClaimResponse"] ) ; # 
+  fhir:system [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:type [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:instance [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "MopedLKFResponse" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Der *MopedLKFResponse* Parameter beinhaltet sämtliche Details zur Antwort auf den Claim." ] ;
+     fhir:type [ fhir:v "ClaimResponse" ] ;
+     fhir:targetProfile ( [
+       fhir:v "https://elga.moped.at/StructureDefinition/MopedLKFResponse"^^xsd:anyURI ;
+       fhir:link <https://elga.moped.at/StructureDefinition/MopedLKFResponse>
+     ] )
+  ] [
+     fhir:name [ fhir:v "return" ] ;
+     fhir:use [ fhir:v "out" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Der *return* Parameter gibt Auskunft über den Erfolg der Operation." ] ;
+     fhir:type [ fhir:v "Resource" ] ;
+     fhir:targetProfile ( [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/OperationOutcome"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/OperationOutcome>
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
