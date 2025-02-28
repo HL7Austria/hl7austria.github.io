@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>ELGA.IV.DIAB\Fußdiagnose - XML Representation - FHIR® v4.0.1</title>
+    <title>HL7.AT.FHIR.ELGA.IV.DIAB\Fußdiagnose - XML Representation - FHIR® v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -41,8 +41,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"5.15"}
-    h3,h4,h5,h6{--heading-prefix:"5.15"}</style>
+    <style type="text/css">h2{--heading-prefix:"6.19"}
+    h3,h4,h5,h6{--heading-prefix:"6.19"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- at-fhir-ig-template begin -->
@@ -57,7 +57,7 @@
             
             <div id="ig-status">
               <p>
-                <span style="font-size:12pt;font-weight:bold">Integrierte Versorgung Diabetes (R4)</span><br/>
+                <span style="font-size:12pt;font-weight:bold">Integrierte Versorgung Diabetes (R4) ****** TEST VERSION ******</span><br/>
                 <span class="label label-info">0.1.1 - ci-build</span>
               </p>
             </div>
@@ -90,10 +90,10 @@
     <a href="index.html">Home</a>
   </li>
   <li>
-    <a href="toc.html">TOC</a>
+    <a href="toc.html">Inhalt</a>
   </li>
   <li>
-    <a href="anwendungsfaelle.html">Anwendungsfälle</a>
+    <a href="anwendungsfaelle.html">Use Cases</a>
   </li>
   <li>
     <a href="terminologies.html">Terminologies</a>
@@ -102,7 +102,48 @@
     <a href="artifacts.html">Artifacts</a>
   </li>
   <li>
-    <a href="info.html">ELGA IGs</a>
+    <a href="info.html">ELGA IG</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Logical Model (Diabetes)
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="StructureDefinition-Datenarten-diab.html">Datenarten (Diabetes)</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Logical Model (IPS)
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="StructureDefinition-Subject-ips.html">Subject (IPS)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-MedicationSummary-ips.html">Medication Summary (IPS)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-AllergiesIntolerances-ips.html">Allergies and Intolerances (IPS)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-ProblemList-ips.html">Problem List (IPS)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-DiagnosticResults-ips.html">Diagnostic Results (IPS)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-VitalSigns-ips.html">Vital Signs (IPS)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-PlanOfCare-ips.html">Plan of Care (IPS)</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="mappings.html">Mapping Diabetes to IPS</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -129,7 +170,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 7" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">Integrierte Versorgung Diabetes (R4) - Local Development build (v0.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://diab.iv.elga.gv.at/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">Integrierte Versorgung Diabetes (R4) ****** TEST VERSION ****** - Local Development build (v0.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://fhir.hl7.at/elga-iv-diabetes-r4/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -161,12 +202,6 @@
   
 
 
-  
-    <li>
-      <a href="ValueSet-fussdiagnose.ttl.html">TTL</a>
-    </li>
-  
-
 
 
 </ul>
@@ -184,7 +219,7 @@
         
           Draft
           
-            as of 2025-01-30
+            as of 2025-02-28
           
         
       </td>
@@ -203,16 +238,21 @@
   <pre class="xml" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-xml" style="white-space: pre; text-wrap: nowrap;">
 &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet">ValueSet</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
   &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;fussdiagnose&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.meta">meta</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/StructureDefinition/shareablevalueset&quot;/&gt;
+  &lt;/meta&gt;
   &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.text">text</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;generated&quot;/&gt;
-    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p class=&quot;res-header-id&quot;&gt;&lt;b&gt;Generated Narrative: ValueSet fussdiagnose&lt;/b&gt;&lt;/p&gt;&lt;a name=&quot;fussdiagnose&quot;&gt; &lt;/a&gt;&lt;a name=&quot;hcfussdiagnose&quot;&gt; &lt;/a&gt;&lt;a name=&quot;fussdiagnose-en-US&quot;&gt; &lt;/a&gt;&lt;ul&gt;&lt;li&gt;Include these codes as defined in &lt;a href=&quot;http://www.snomed.org/&quot;&gt;&lt;code&gt;http://snomed.info/sct&lt;/code&gt;&lt;/a&gt;&lt;table class=&quot;none&quot;&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Deutsch (Österreich) (German (Austria), de)&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;http://snomed.info/id/703272007&quot;&gt;703272007&lt;/a&gt;&lt;/td&gt;&lt;td&gt;HFrEF - heart failure with reduced ejection fraction&lt;/td&gt;&lt;td&gt;HFrEF&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;http://snomed.info/id/788950000&quot;&gt;788950000&lt;/a&gt;&lt;/td&gt;&lt;td&gt;HFmEF - heart failure with mid range ejection fraction&lt;/td&gt;&lt;td&gt;HFmrEF&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;http://snomed.info/id/446221000&quot;&gt;446221000&lt;/a&gt;&lt;/td&gt;&lt;td&gt;HFpEF - heart failure with preserved ejection fraction&lt;/td&gt;&lt;td&gt;HFpEF&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;<a name="end-xhtml"></a>
+    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p class=&quot;res-header-id&quot;&gt;&lt;b&gt;Generated Narrative: ValueSet fussdiagnose&lt;/b&gt;&lt;/p&gt;&lt;a name=&quot;fussdiagnose&quot;&gt; &lt;/a&gt;&lt;a name=&quot;hcfussdiagnose&quot;&gt; &lt;/a&gt;&lt;a name=&quot;fussdiagnose-en-US&quot;&gt; &lt;/a&gt;&lt;div style=&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%&quot;&gt;&lt;p style=&quot;margin-bottom: 0px&quot;/&gt;&lt;p style=&quot;margin-bottom: 0px&quot;&gt;Profile: &lt;a href=&quot;http://hl7.org/fhir/R4/shareablevalueset.html&quot;&gt;Shareable ValueSet&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;ul&gt;&lt;li&gt;Include these codes as defined in &lt;a href=&quot;http://www.snomed.org/&quot;&gt;&lt;code&gt;http://snomed.info/sct&lt;/code&gt;&lt;/a&gt;&lt;table class=&quot;none&quot;&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Deutsch (Österreich) (German (Austria), de)&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;http://snomed.info/id/703272007&quot;&gt;703272007&lt;/a&gt;&lt;/td&gt;&lt;td&gt;HFrEF - heart failure with reduced ejection fraction&lt;/td&gt;&lt;td&gt;HFrEF&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;http://snomed.info/id/788950000&quot;&gt;788950000&lt;/a&gt;&lt;/td&gt;&lt;td&gt;HFmEF - heart failure with mid range ejection fraction&lt;/td&gt;&lt;td&gt;HFmrEF&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;http://snomed.info/id/446221000&quot;&gt;446221000&lt;/a&gt;&lt;/td&gt;&lt;td&gt;HFpEF - heart failure with preserved ejection fraction&lt;/td&gt;&lt;td&gt;HFpEF&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;<a name="end-xhtml"></a>
   &lt;/text&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.url">url</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://diab.iv.elga.gv.at/ValueSet/fussdiagnose&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.url">url</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://fhir.hl7.at/elga-iv-diabetes-r4/ValueSet/fussdiagnose&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;0.1.1&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Fussdiagnose&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.title">title</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Fußdiagnose&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;draft&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2025-01-30T08:21:10+00:00&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.experimental">experimental</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2025-02-28T13:11:58+00:00&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.publisher">publisher</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;ELGA GmbH&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.contact">contact</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;ELGA GmbH&quot;/&gt;
@@ -279,7 +319,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA GmbH</a>.  Package elga.iv.diab#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Jan 30, 2025 08:21+0000">2025-01-30</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA GmbH</a>.  Package hl7.at.fhir.elga.iv.diab#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Fri, Feb 28, 2025 13:12+0000">2025-02-28</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

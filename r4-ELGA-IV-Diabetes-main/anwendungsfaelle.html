@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>ELGA.IV.DIAB\Anwendungsfälle - FHIR® v4.0.1</title>
+    <title>HL7.AT.FHIR.ELGA.IV.DIAB\Anwendungsfälle - FHIR® v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -55,7 +55,7 @@
             
             <div id="ig-status">
               <p>
-                <span style="font-size:12pt;font-weight:bold">Integrierte Versorgung Diabetes (R4)</span><br/>
+                <span style="font-size:12pt;font-weight:bold">Integrierte Versorgung Diabetes (R4) ****** TEST VERSION ******</span><br/>
                 <span class="label label-info">0.1.1 - ci-build</span>
               </p>
             </div>
@@ -88,10 +88,10 @@
     <a href="index.html">Home</a>
   </li>
   <li>
-    <a href="toc.html">TOC</a>
+    <a href="toc.html">Inhalt</a>
   </li>
   <li>
-    <a href="anwendungsfaelle.html">Anwendungsfälle</a>
+    <a href="anwendungsfaelle.html">Use Cases</a>
   </li>
   <li>
     <a href="terminologies.html">Terminologies</a>
@@ -100,7 +100,48 @@
     <a href="artifacts.html">Artifacts</a>
   </li>
   <li>
-    <a href="info.html">ELGA IGs</a>
+    <a href="info.html">ELGA IG</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Logical Model (Diabetes)
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="StructureDefinition-Datenarten-diab.html">Datenarten (Diabetes)</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Logical Model (IPS)
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="StructureDefinition-Subject-ips.html">Subject (IPS)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-MedicationSummary-ips.html">Medication Summary (IPS)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-AllergiesIntolerances-ips.html">Allergies and Intolerances (IPS)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-ProblemList-ips.html">Problem List (IPS)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-DiagnosticResults-ips.html">Diagnostic Results (IPS)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-VitalSigns-ips.html">Vital Signs (IPS)</a>
+      </li>
+      <li>
+        <a href="StructureDefinition-PlanOfCare-ips.html">Plan of Care (IPS)</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="mappings.html">Mapping Diabetes to IPS</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -136,7 +177,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="col-12">
   <!-- at-fhir-ig-template begin -->
   <div class="alert alert-warning" role="alert">
-    <!--ReleaseHeader--><p id="publish-box">Integrierte Versorgung Diabetes (R4) - Local Development build (v0.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://diab.iv.elga.gv.at/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+    <!--ReleaseHeader--><p id="publish-box">Integrierte Versorgung Diabetes (R4) ****** TEST VERSION ****** - Local Development build (v0.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://fhir.hl7.at/elga-iv-diabetes-r4/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   </div>
   <!-- at-fhir-ig-template end -->
   <h2>Anwendungsfälle</h2>
@@ -161,12 +202,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="patient-journey">Patient Journey</h3>
 <p>Die folgende fiktive "Patient Journey" beschreibt einen möglichen Anwendungsfall des Leitfadens:
-Anton Test ist 72 Jahre alt und lebt mit seiner Ehefrau in Wien. Er hat zwei erwachsene Kinder und zwei Enkelkinder. Beruflich war er früher als Buchhalter tätig. Sein Allgemeinzustand ist gut, jedoch leidet er unter Adipositas (BMI &gt; 30). In seiner Familie gibt es eine genetische Vorbelastung für Herz-Kreislauf-Erkrankungen und Diabetes mellitus. Seit 2016 nimmt er aufgrund eines arteriellen Hypertonus täglich morgens eine 5-mg-Tablette Ramipril ein. Anton ist körperlich aktiv und geht regelmäßig mit seinem Hund spazieren. Er ist technisch versiert und nutzt sein Smartphone häufig.</p>
+Anton Test ist 72 Jahre alt und lebt mit seiner Ehefrau in Wien. Er hat zwei erwachsene Kinder und zwei Enkelkinder. Beruflich war er früher als Buchhalter tätig. Sein Allgemeinzustand ist gut, jedoch leidet er unter Adipositas (BMI &gt; 30). In seiner Familie gibt es eine genetische Vorbelastung für Herz-Kreislauf-Erkrankungen und Diabetes mellitus. Seit 2016 nimmt er aufgrund eines arteriellen Hypertonus täglich morgens eine 5-mg-Tablette Ramipril ein. Anton ist körperlich aktiv und geht regelmäßig mit seinem Hund spazieren. Er ist technisch versiert und nutzt sein Smartphone häufig. Er hat vor 5 Jahren mit dem Rauchen aufgehört. Davor rauchte er 40 Jahre lang täglich ein Päckchen Zigaretten (entsprechend 40 Pack Years). Anton gibt an, in den letzten Jahren moderat Alkohol zu konsumieren, etwa 1-2 Gläser Wein oder Bier pro Woche. Er hat nie regelmäßig größere Mengen Alkohol getrunken.</p>
 <ul>
-  <li>15.03.2023: Anton bemerkt zunehmend Symptome wie Mundtrockenheit, häufiges Wasserlassen, verschwommenes Sehen und er fühlt sich ständig müde, daher sucht Anton seinen Hausarzt auf. Nach einer gründlichen Anamnese und körperlichen Untersuchung wird ein erhöhter Blutzuckerwert von 250 mg/dl (kapillär, postprandial – eine Stunde nach dem Frühstück) festgestellt. Der Hausarzt ordnet eine Blutabnahme inklusive der Messung des HbA1c-Wertes zur weiteren Abklärung an.</li>
-  <li>17.03.2023: Die Ergebnisse der Blutuntersuchung bestätigen die Diagnose: Anton leidet an Diabetes mellitus Typ 2, mit einem HbA1c-Wert von 8,1 %. Der Hausarzt erklärt die Diagnose und bespricht die nächsten Schritte. Anton beginnt mit einer Therapie, die ein orales Antidiabetikum (Metformin) einschließt. Außerdem erhält er Empfehlungen zu einer Ernährungsumstellung, Gewichtsreduktion und regelmäßiger Bewegung. Zur besseren Kontrolle seiner Blutzuckerwerte wird Anton gebeten, diese mindestens dreimal täglich mithilfe eines Blutzuckermessgeräts zu überprüfen.</li>
-  <li>10.07.2023: Bei einer erneuten Nachkontrolle beim Hausarzt zeigt sich, dass Antons Blutzuckerwerte noch nicht optimal eingestellt sind. Nach Rücksprache über weitere Therapieoptionen erhält Anton zusätzlich einen SGLT-2-Inhibitor (Jardiance, 10 mg einmal täglich morgens). Dieses Medikament soll nicht nur seine Blutzuckerwerte senken, sondern unterstützt ihn auch bei der Gewichtsreduktion.</li>
-  <li>Fortlaufende Betreuung: Anton wird weiterhin engmaschig von seinem Hausarzt betreut. Er nimmt regelmäßig an Schulungen und Beratungen teil, um mehr über den Umgang mit Diabetes mellitus zu lernen und seine Therapie zu optimieren.</li>
+  <li>15.03.2023: Anton bemerkt zunehmend Symptome wie Mundtrockenheit, häufiges Wasserlassen, verschwommenes Sehen und er fühlt sich ständig müde, daher sucht Anton seinen Hausarzt auf. Nach einer gründlichen Anamnese und körperlichen Untersuchung wird ein erhöhter Blutzuckerwert von 250 mg/dl (kapillär, 1,5 Stunden postprandial) festgestellt. Der Hausarzt ordnet eine Blutabnahme inklusive der Messung des HbA1c-Wertes und eine Harnuntersuchung zur weiteren Abklärung an.</li>
+  <li>17.03.2023: Die Ergebnisse der Laboruntersuchung bestätigen die Diagnose: Anton leidet an Diabetes mellitus Typ 2, mit einem HbA1c-Wert von 8,1 %. Der Hausarzt erklärt die Diagnose und bespricht die nächsten Schritte, die eine medikamentöse Therapie mittels einem oralen Antidiabetikum, Metformin 500mg einmal morgens, einschließt. Außerdem erhält Anton Informationen zur Schulung "Umgang mit Diabetes" und eine Überweisung zu Augenärzt:in (Retinopathie-Screening).</li>
+  <li>09.04.2023: Kontrolle beim Hausarzt nach 3 Wochen. Anton scheint das Medikament gut zu vertragen, die Blutzuckerwerte sind jedoch noch nicht optimal, 200 mg/dl (kapillär, 2 Stunden postprandial), daher wird die Dosierung von Metformin 500 mg auf zweimal täglich erhöht.</li>
+  <li>Fortlaufende Betreuung: Anton wird weiterhin engmaschig von seinem Hausarzt betreut (mindestens alle 3 Monate) und er nimmt regelmäßig an Schulungen und Beratungen teil.</li>
 </ul>
 
 <pre class="mermaid">
@@ -176,15 +217,18 @@ config:
   layout: fixed
 ---
 flowchart TD
-A("**15.3.2024**<br />Hausarzt führt <br />**Gespräch/Untersuchung** <br />durch und ordnet<br />weitere Blutabnahme an. <br />**Verdachtsdiagnose Diabetes mellitus**")
-A -.-&gt; a1("**Körperliche Untersuchung**:<br /> der Schnelltest zeigt erhöhten<br /> Blutzuckerwert 250mg/dl") &amp; a2("**Anamnese**: <br />die Symptome,<br /> Mundtrockenheit, Müdigkeit,<br /> häufiges Wasserlassen und <br />verschwommenes Sehen <br />werden erhoben")
-A ==&gt; B("**17.3.2024**<br />**Laborergebnis: <br /> HbA1C 8,1%** wird besprochen.")
-B -.-&gt; b1("Die **Diagnose<br /> Diabetes mellitus Typ 2** wird bestätigt.<br />**Therapiebeginn:**")
-b1 -.-&gt; bb1("Medikation") &amp; bb2("Beratung zu Lebensstil") &amp; bb3("Patient erhält<br /> Blutzuckermessgerät und Schulung zur Handhabung")
-B ==&gt; C("**10.7.2024**<br />**Nachkontrolle beim <br />Hausarzt**. <br /> Weiterhin erhöhte BZ-Werte, <br />die medikamentöse Therapie<br /> wird angepasst.")
-C -.-&gt; c1("Medikation adaptiert")
-C ==&gt; D("**Fortlaufende Therapie**<br />Engmaschige Kontrollen beim <br />Hausarzt. Patient nimmt<br /> regelmäßig an Schulungen und Beratungen teil.")
-    
+A("**15.03.2023**<br />Hausarzt führt <br />**Gespräch/Untersuchung** <br />durch und ordnet<br />weitere Blutabnahme an. <br />**Verdachtsdiagnose <br />Diabetes mellitus**")
+A -.-&gt; a1("**Körperliche Untersuchung**:<br />Schnelltest zeigt erhöhten<br />Blutzuckerwert von 250mg/dl")
+A -.-&gt; a2("**Anamnese**: <br />Symptome wie<br />Mundtrockenheit, Müdigkeit,<br />häufiges Wasserlassen und<br />verschwommenes Sehen")
+A ==&gt; B("**17.03.2023**<br />**Laborergebnis:**<br />HbA1C 8,1% wird besprochen.")
+B -.-&gt; b1("**Diagnose Diabetes mellitus <br />Typ 2** wird bestätigt.<br />**Therapiebeginn:**")
+b1 -.-&gt; bb1("**Medikation**: <br />Metformin 500mg")
+b1 -.-&gt; bb2("**Schulung**: <br />Umgang mit Diabetes")
+b1 -.-&gt; bb3("**Überweisung**: <br />Augenärzt:in")
+B ==&gt; C("**09.04.2023**<br />**Nachkontrolle beim <br />Hausarzt**: Weiterhin erhöhte Blutzuckerwerte (200 mg/dl).")
+C -.-&gt; c1("**Medikationsanpassung**")
+C ==&gt; D("**Fortlaufende Therapie**: <br />Engmaschige Kontrollen beim <br />Hausarzt. Patient nimmt <br />regelmäßig an Schulungen und Beratungen teil.")
+
 style A fill:#BBDEFB,stroke-width:4px
 style a1 fill:#FFE0B2
 style a2 fill:#FFE0B2
@@ -216,7 +260,7 @@ style D fill:#BBDEFB,stroke-width:4px
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA GmbH</a>.  Package elga.iv.diab#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Jan 30, 2025 08:21+0000">2025-01-30</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA GmbH</a>.  Package hl7.at.fhir.elga.iv.diab#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Fri, Feb 28, 2025 13:12+0000">2025-02-28</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

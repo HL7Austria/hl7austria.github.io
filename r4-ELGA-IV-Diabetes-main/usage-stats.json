@@ -1,16 +1,56 @@
 {
-  "package": "elga.iv.diab",
+  "package": "hl7.at.fhir.elga.iv.diab",
   "version": "0.1.1",
   "fhirVersion": "4.0.1",
   "extensions": [],
-  "profiles": {},
+  "profiles": {
+    "Bundle": [
+      {
+        "url": "https://fhir.hl7.at/elga-iv-diabetes-r4/StructureDefinition/diab-bundle",
+        "title": "Diab Bundle"
+      }
+    ],
+    "CarePlan": [
+      {
+        "url": "https://fhir.hl7.at/elga-iv-diabetes-r4/StructureDefinition/diab-careplan",
+        "title": "Diabetes CarePlan"
+      }
+    ],
+    "Composition": [
+      {
+        "url": "https://fhir.hl7.at/elga-iv-diabetes-r4/StructureDefinition/diab-composition",
+        "title": "Diabetes Composition"
+      }
+    ]
+  },
   "usage": {
     "http://hl7.org/fhir/StructureDefinition/data-absent-reason": [
-      "Bundle.entry.resource.effectivePeriod",
-      "Bundle.entry.resource.onsetDateTime"
+      "Bundle.entry.resource.performedDateTime",
+      "Bundle.entry.resource.timingDateTime"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice-explanation": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
+      "StructureDefinition.snapshot.element"
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
       "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile": [
+      "StructureDefinition"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/additional-binding": [
       "StructureDefinition.differential.element.binding",
@@ -31,6 +71,13 @@
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
       "ImplementationGuide.definition.resource"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version": [
+      "StructureDefinition.snapshot"
+    ],
+    "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/country-of-affiliation": [
+      "Bundle.entry.resource",
+      "Composition"
     ]
   }
 }
