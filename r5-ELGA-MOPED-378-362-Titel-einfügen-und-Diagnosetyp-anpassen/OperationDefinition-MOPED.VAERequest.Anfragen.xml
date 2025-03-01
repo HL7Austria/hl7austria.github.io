@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="MOPED.VAERequest.Anfragen"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition MOPED.VAERequest.Anfragen</b></p><a name="MOPED.VAERequest.Anfragen"> </a><a name="hcMOPED.VAERequest.Anfragen"> </a><a name="MOPED.VAERequest.Anfragen-en-US"> </a><p>URL: [base]/Account/$anfragen</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>aufnahmezahl</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#Identifier">Identifier</a></td><td/><td><div><p>Der <em>aufnahmezahl</em> Parameter beinhaltet den eindeutigen Identifizierer für den relevanten Fall.</p>
+</div></td></tr><tr><td>IN</td><td>versicherer</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#Identifier">Identifier</a></td><td/><td><div><p>Der <em>versicherer</em> Parameter beinhaltet den eindeutigen Identifizierer für den Versicherer an dem der VAERequest gerichtet ist.</p>
+</div></td></tr><tr><td>IN</td><td>verlaengerungstage</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#unsignedInt">unsignedInt</a></td><td/><td><div><p>Der <em>verlaengerungstage</em> beschreibt, um wie viele Verlängerungstage angefragt wird.</p>
+</div></td></tr><tr><td>IN</td><td>sonderklasse</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="ValueSet-SonderklasseVS.html">Sonderklasse ValueSet</a> (Required)</td><td><div><p>Der <em>sonderklasse</em> codiert, ob der Aufenthalt in der Allgemeine Gebührenklasse oder Sonderklasse stattfindet, da es bei speziellen Versicherungsträgern dafür Optionen gibt.</p>
+</div></td></tr><tr><td>IN</td><td>verdachtArbeitsSchuelerunfall</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="ValueSet-VerdachtArbeitsSchuelerunfallVS.html">Verdacht auf Arbeits- oder Schuelerunfall ValueSet</a> (Required)</td><td><div><p>Mit Hilfe des <em>verdachtArbeitsSchuelerunfall</em> Parameters wird festgehalten, ob es bei der Patienten-Aufnahme einen Verdacht auf einen Schüler- oder Arbeitsunfall gibt. Wird dieser Parameter mitgegeben, ist im Account das entsprechende Feld zu befüllen.</p>
+</div></td></tr><tr><td>IN</td><td>verdachtFremdverschulden</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#boolean">boolean</a></td><td/><td><div><p>Mit Hilfe des <em>verdachtFremdverschulden</em> Parameters wird festgehalten, ob es bei der Patienten-Aufnahme einen Verdacht auf Fremdverschulden gibt. Wird dieser Parameter mitgegeben, ist im Account das entsprechende Feld zu befüllen.</p>
+</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>
+</div></td></tr></table><div><p>TBD: Ist hier evtl. eine Transaction die bessere Lösung? Bei dieser Operation findet keine Status-Änderung statt. Lediglich auf die Precondition des Workflow-Status müsste geachtet werden.</p>
+</div></div>
+  </text>
+  <url value="https://elga.moped.at/OperationDefinition/MOPED.VAERequest.Anfragen"/>
+  <version value="0.1.0"/>
+  <name value="MOPED_VAERequest_Anfragen"/>
+  <title value="MOPED Versichertenanspruchserklärung $anfragen (POC)"/>
+  <status value="draft"/>
+  <kind value="operation"/>
+  <date value="2025-03-01T12:31:22+00:00"/>
+  <publisher value="ELGA GmbH"/>
+  <contact>
+    <name value="ELGA GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://elga.gv.at"/>
+    </telecom>
+  </contact>
+  <description value="Die Versichertenanspruchserklärung $anfragen Operation wird aufgerufen, um die Versichertenanspruchserklärung-Anfrage an die SV anzustoßen. Diese Operation ist irrelevant für Selbstzahler (das ist wichtig für künftige weiterentwicklung - wenn im Account auf eine Coverage-Ressource für Selbstzahler referenziert wird, darf die Operation $anfragen nicht ausgeführt werden)."/>
+  <purpose value="&#xA;Legende: ~~durchgestrichen~~ heißt, dass es für den IG zwar bedacht wird, für den ersten POC jedoch nicht relevant ist.&#xA;&#xA;**Wer ruft diese Operation in welchem Zusammenhang auf?**&#xA;&#xA;Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die Versichertenanspruchserklärung $anfragen Operation wird aufgerufen, um die Versichertenanspruchserklärung-Anfrage an die SV anzustoßen. ~~Diese Operation ist irrelevant für Selbstzahler (das ist wichtig für künftige weiterentwicklung - wenn im Account auf eine Coverage-Ressource für Selbstzahler referenziert wird, darf die Operation $anfragen nicht ausgeführt werden).~~&#xA;&#xA;**Voraussetzungen für den Aufruf**&#xA;&#xA;* Account-Status: : `Aufnahme freigegeben`&#xA;&#xA;**Detaillierte Business-Logik**&#xA;&#xA;1. Suche des MopedEncounter: Der MopedEncounter mit der jeweiligen *aufnahmezahl* lt. Operation-Parameter wird gesucht&#xA;2. Suche aller MopedTransferEncounter die *partOf* den MopedEncounter aus Schritt 1 referenzieren&#xA;3. Suchen des MopedAccounts: Die Referenz des *MopedEncounter.account* aus Schritt 1.&#xA;4. Erstellung des MopedVAERequest: &#xA;  * a. *MopedVAERequest.status* mit 'active'&#xA;  * b. *MopedVAERequest.type* mit 'institutional'&#xA;  * c. *MopedVAERequest.use* mit 'preauthorization'&#xA;  * d. *MopedVAERequest.Verlaengerungstage* mit *verlaengerungstage* lt. Operation-Parameter befüllen&#xA;  * e. *MopedVAERequest.created* mit dem aktuellem Zeitpunkt befüllen&#xA;  * f. *MopedVAERequest.Sonderklasse* mit *sonderklasse* lt. Operation-Parameter befüllen&#xA;  * g. *MopedVAERequest.patient* mit *MopedAccount.subject* befüllen&#xA;  * h. *MopedVAERequest.insurance.coverage* mit *MopedAccount.coverage.coverage* befüllen&#xA;  * i. *MopedVAERequest.provider* mit *MopedAccount.owner* befüllen&#xA;  * j. *MopedVAERequest.insurer* mit einer Referenz auf jene Organization befüllen, deren *Organization.identifier* dem Identifier *versicherer* lt. Operation-Parameter entspricht&#xA;  * k. *MopedVAERequest.encounter* mit allen gefundenen Encountern aus Schritt 1 und 2 befüllen.&#xA;  * l. *MopedVAERequest.supportingInfo[VerdachtFremdverschulden].valueBoolean* lt. Operation-Parameter befüllen&#xA;  * m. *MopedVAERequest.accident.VerdachtArbeitsSchuelerunfall* lt. Operation-Parameter befüllen&#xA;5. POSTen des neu erstellten MopedVAERequest&#xA;&#xA;**Validierung / Fehlerbehandlung**&#xA;* *Nur POC: MopedAccount.coverage* darf nur eine Versicherung gelistet haben&#xA;* *MopedVAERequest.patient* muss mit *Coverage.beneficiary* mit der Coverage aus Schritt 3h übereinstimmen&#xA;* *MopedVAERequest.insurer* muss mit *Coverage.insurer* mit der Coverage aus aus Schritt 3h übereinstimmen&#xA;* ~~*MopedVAERequest.provider* muss gleichzeitig die gleiche Organisation sein, die lt. Token die Operation aufgerufen hat.~~&#xA;&#xA;**Weitere Hinweise**&#xA;&#xA;* Hinweis 1: Nach dieser Operation findet lt. Soll-Prozess kein Update des Status *MopedAccount.workflowStatus* statt.&#xA;&#xA;**Annahmen an das BeS**&#xA;* Es wurde vorab geprüft, ob das `system` des Parameters `aufnahmezahl` dem GDA entspricht, der die Operation aufruft. Somit ist sichergestellt, dass nur Kostenübernahmen für eigene Fälle angefragt werden können.&#xA;"/>
+  <affectsState value="true"/>
+  <code value="anfragen"/>
+  <comment value="TBD: Ist hier evtl. eine Transaction die bessere Lösung? Bei dieser Operation findet keine Status-Änderung statt. Lediglich auf die Precondition des Workflow-Status müsste geachtet werden."/>
+  <resource value="Account"/>
+  <system value="false"/>
+  <type value="true"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="aufnahmezahl"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der *aufnahmezahl* Parameter beinhaltet den eindeutigen Identifizierer für den relevanten Fall."/>
+    <type value="Identifier"/>
+  </parameter>
+  <parameter>
+    <name value="versicherer"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der *versicherer* Parameter beinhaltet den eindeutigen Identifizierer für den Versicherer an dem der VAERequest gerichtet ist."/>
+    <type value="Identifier"/>
+  </parameter>
+  <parameter>
+    <name value="verlaengerungstage"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Der *verlaengerungstage* beschreibt, um wie viele Verlängerungstage angefragt wird."/>
+    <type value="unsignedInt"/>
+  </parameter>
+  <parameter>
+    <name value="sonderklasse"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Der *sonderklasse* codiert, ob der Aufenthalt in der Allgemeine Gebührenklasse oder Sonderklasse stattfindet, da es bei speziellen Versicherungsträgern dafür Optionen gibt."/>
+    <type value="code"/>
+    <binding>
+      <strength value="required"/>
+      <valueSet value="https://elga.moped.at/ValueSet/SonderklasseVS"/>
+    </binding>
+  </parameter>
+  <parameter>
+    <name value="verdachtArbeitsSchuelerunfall"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Mit Hilfe des *verdachtArbeitsSchuelerunfall* Parameters wird festgehalten, ob es bei der Patienten-Aufnahme einen Verdacht auf einen Schüler- oder Arbeitsunfall gibt. Wird dieser Parameter mitgegeben, ist im Account das entsprechende Feld zu befüllen."/>
+    <type value="code"/>
+    <binding>
+      <strength value="required"/>
+      <valueSet value="https://elga.moped.at/ValueSet/VerdachtArbeitsSchuelerunfallVS"/>
+    </binding>
+  </parameter>
+  <parameter>
+    <name value="verdachtFremdverschulden"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Mit Hilfe des *verdachtFremdverschulden* Parameters wird festgehalten, ob es bei der Patienten-Aufnahme einen Verdacht auf Fremdverschulden gibt. Wird dieser Parameter mitgegeben, ist im Account das entsprechende Feld zu befüllen."/>
+    <type value="boolean"/>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der *return* Parameter gibt Auskunft über den Erfolg der Operation."/>
+    <type value="Resource"/>
+    <targetProfile value="http://hl7.org/fhir/StructureDefinition/OperationOutcome"/>
+  </parameter>
+</OperationDefinition>
