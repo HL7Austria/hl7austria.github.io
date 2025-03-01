@@ -17,7 +17,7 @@
   <name value="MopedEncounterLGF"/>
   <title value="MOPED Encounter LGF"/>
   <status value="draft"/>
-  <date value="2025-03-01T14:47:03+00:00"/>
+  <date value="2025-03-01T14:53:36+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -5024,9 +5024,12 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <binding>
-        <strength value="required"/>
-        <description value="Code für den Typ der LKF Diagnose, der angibt ob es sich um eine Haupt- oder Nebendiagnose handelt"/>
-        <valueSet value="https://termgit.elga.gv.at/ValueSet/lkf-diagnose-typ"/>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="DiagnosisUse"/>
+        </extension>
+        <strength value="preferred"/>
+        <description value="The type of diagnosis this condition represents."/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/encounter-diagnosis-use"/>
       </binding>
       <mapping>
         <identity value="v2"/>

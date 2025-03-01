@@ -10,7 +10,7 @@
   "name" : "MOPED",
   "title" : "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)",
   "status" : "draft",
-  "date" : "2025-03-01T14:47:03+00:00",
+  "date" : "2025-03-01T14:53:36+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -688,6 +688,18 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/MopedAccount"
+      },
+      "name" : "MOPED Account",
+      "description" : "MOPED Profil der Account Ressource für die administrative Fallführung und Abrechnung.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/MopedAufnahmeBundle"
       },
       "name" : "MOPED Aufnahme Bundle",
@@ -841,6 +853,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MopedLKFRequest"
+      },
+      "name" : "MOPED LKFRequest",
+      "description" : "MOPED Profil der Claim Ressource für die Leistungsabrechnungsanfrage.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
       }],
       "reference" : {
@@ -848,6 +872,30 @@
       },
       "name" : "MOPED LKFRequest $freigeben (POC)",
       "description" : "Die $freigeben Operation wird aufgerufen, wenn eine Abrechnung beantwortet wird und freigegeben wird.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MopedLKFResponse"
+      },
+      "name" : "MOPED LKFResponse",
+      "description" : "MOPED Profil der ClaimResponse Ressource für die Leistungsabrechnungsantwort.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MopedOrganizationAbteilung"
+      },
+      "name" : "MOPED Organization Abteilung",
+      "description" : "MOPED Profil für Abteilungen innerhalb einer Krankenanstalt.",
       "isExample" : false
     },
     {
@@ -997,6 +1045,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MopedVAEResponse"
+      },
+      "name" : "MOPED VAEResponse",
+      "description" : "MOPED Profil für die Beantwortung der Versichertenanspruchserklärung VAE.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
@@ -1028,66 +1088,6 @@
       },
       "name" : "MOPED Versichertenanspruchserklärung $anfragen (POC)",
       "description" : "Die Versichertenanspruchserklärung $anfragen Operation wird aufgerufen, um die Versichertenanspruchserklärung-Anfrage an die SV anzustoßen. Diese Operation ist irrelevant für Selbstzahler (das ist wichtig für künftige weiterentwicklung - wenn im Account auf eine Coverage-Ressource für Selbstzahler referenziert wird, darf die Operation $anfragen nicht ausgeführt werden).",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/MopedAccount"
-      },
-      "name" : "MopedAccount",
-      "description" : "MOPED Profil der Account Ressource für die administrative Fallführung und Abrechnung.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/MopedLKFRequest"
-      },
-      "name" : "MopedLKFRequest",
-      "description" : "MOPED Profil der Claim Ressource für die Leistungsabrechnungsanfrage.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/MopedLKFResponse"
-      },
-      "name" : "MopedLKFResponse",
-      "description" : "MOPED Profil der ClaimResponse Ressource für die Leistungsabrechnungsantwort.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/MopedOrganizationAbteilung"
-      },
-      "name" : "MopedOrganizationAbteilung",
-      "description" : "MOPED Profil für Abteilungen innerhalb einer Krankenanstalt.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/MopedVAEResponse"
-      },
-      "name" : "MopedVAEResponse",
-      "description" : "MOPED Profil für die Beantwortung der Versichertenanspruchserklärung VAE.",
       "isExample" : false
     },
     {
@@ -1373,6 +1373,226 @@
       },
       "name" : "PJ1VAEResponse1",
       "description" : "Hackathon Patient Journey 1 Beispiel: VAEResponse 1",
+      "isExample" : true,
+      "profile" : ["https://elga.moped.at/StructureDefinition/MopedVAEResponse"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Account"
+      }],
+      "reference" : {
+        "reference" : "Account/PJ2Account"
+      },
+      "name" : "PJ2Account",
+      "description" : "Hackathon Patient Journey 2 Beispiel: Account",
+      "isExample" : true,
+      "profile" : ["https://elga.moped.at/StructureDefinition/MopedAccount"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      }],
+      "reference" : {
+        "reference" : "Condition/PJ2Condition1"
+      },
+      "name" : "PJ2Condition1",
+      "description" : "Hackathon Patient Journey 2 Beispiel: Condition 1",
+      "isExample" : true,
+      "profile" : ["https://elga.moped.at/StructureDefinition/MopedCondition"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      }],
+      "reference" : {
+        "reference" : "Condition/PJ2Condition2"
+      },
+      "name" : "PJ2Condition2",
+      "description" : "Hackathon Patient Journey 2 Beispiel: Condition 2",
+      "isExample" : true,
+      "profile" : ["https://elga.moped.at/StructureDefinition/MopedCondition"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Coverage"
+      }],
+      "reference" : {
+        "reference" : "Coverage/PJ2Coverage"
+      },
+      "name" : "PJ2Coverage",
+      "description" : "Hackathon Patient Journey 2 Beispiel: Coverage",
+      "isExample" : true,
+      "profile" : ["https://elga.moped.at/StructureDefinition/MopedCoverage"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      }],
+      "reference" : {
+        "reference" : "Encounter/PJ2Encounter"
+      },
+      "name" : "PJ2Encounter",
+      "description" : "Hackathon Patient Journey 2 Beispiel: Encounter",
+      "isExample" : true,
+      "profile" : ["https://elga.moped.at/StructureDefinition/MopedEncounter"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Claim"
+      }],
+      "reference" : {
+        "reference" : "Claim/PJ2LKFRequest1"
+      },
+      "name" : "PJ2LKFRequest1",
+      "description" : "Hackathon Patient Journey 2 Beispiel: LKFRequest 1",
+      "isExample" : true,
+      "profile" : ["https://elga.moped.at/StructureDefinition/MopedLKFRequest"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClaimResponse"
+      }],
+      "reference" : {
+        "reference" : "ClaimResponse/PJ2LKFResponse1"
+      },
+      "name" : "PJ2LKFResponse1",
+      "description" : "Hackathon Patient Journey 2 Beispiel: LKFResponse 1",
+      "isExample" : true,
+      "profile" : ["https://elga.moped.at/StructureDefinition/MopedLKFResponse"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/PJ2Patient"
+      },
+      "name" : "PJ2Patient",
+      "description" : "Hackathon Patient Journey 2 Beispiel: Patient",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Procedure"
+      }],
+      "reference" : {
+        "reference" : "Procedure/PJ2Procedure1"
+      },
+      "name" : "PJ2Procedure1",
+      "description" : "Hackathon Patient Journey 2 Beispiel: Procedure 1",
+      "isExample" : true,
+      "profile" : ["https://elga.moped.at/StructureDefinition/MopedProcedure"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Procedure"
+      }],
+      "reference" : {
+        "reference" : "Procedure/PJ2Procedure2"
+      },
+      "name" : "PJ2Procedure2",
+      "description" : "Hackathon Patient Journey 2 Beispiel: Procedure 2",
+      "isExample" : true,
+      "profile" : ["https://elga.moped.at/StructureDefinition/MopedProcedure"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      }],
+      "reference" : {
+        "reference" : "Encounter/PJ2TransferEncounter1"
+      },
+      "name" : "PJ2TransferEncounter1",
+      "description" : "Hackathon Patient Journey 2 Beispiel: TransferEncounter 1",
+      "isExample" : true,
+      "profile" : ["https://elga.moped.at/StructureDefinition/MopedTransferEncounter"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      }],
+      "reference" : {
+        "reference" : "Encounter/PJ2TransferEncounter2"
+      },
+      "name" : "PJ2TransferEncounter2",
+      "description" : "Hackathon Patient Journey 2 Beispiel: TransferEncounter 2",
+      "isExample" : true,
+      "profile" : ["https://elga.moped.at/StructureDefinition/MopedTransferEncounter"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      }],
+      "reference" : {
+        "reference" : "Encounter/PJ2TransferEncounter3"
+      },
+      "name" : "PJ2TransferEncounter3",
+      "description" : "Hackathon Patient Journey 2 Beispiel: TransferEncounter 3",
+      "isExample" : true,
+      "profile" : ["https://elga.moped.at/StructureDefinition/MopedTransferEncounter"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      }],
+      "reference" : {
+        "reference" : "Encounter/PJ2TransferEncounter4"
+      },
+      "name" : "PJ2TransferEncounter4",
+      "description" : "Hackathon Patient Journey 2 Beispiel: TransferEncounter 4",
+      "isExample" : true,
+      "profile" : ["https://elga.moped.at/StructureDefinition/MopedTransferEncounter"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Encounter"
+      }],
+      "reference" : {
+        "reference" : "Encounter/PJ2TransferEncounter5"
+      },
+      "name" : "PJ2TransferEncounter5",
+      "description" : "Hackathon Patient Journey 2 Beispiel: TransferEncounter 5",
+      "isExample" : true,
+      "profile" : ["https://elga.moped.at/StructureDefinition/MopedTransferEncounter"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Claim"
+      }],
+      "reference" : {
+        "reference" : "Claim/PJ2VAERequest1"
+      },
+      "name" : "PJ2VAERequest1",
+      "description" : "Hackathon Patient Journey 2 Beispiel: VAERequest 1",
+      "isExample" : true,
+      "profile" : ["https://elga.moped.at/StructureDefinition/MopedVAERequest"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClaimResponse"
+      }],
+      "reference" : {
+        "reference" : "ClaimResponse/PJ2VAEResponse1"
+      },
+      "name" : "PJ2VAEResponse1",
+      "description" : "Hackathon Patient Journey 2 Beispiel: VAEResponse 1",
       "isExample" : true,
       "profile" : ["https://elga.moped.at/StructureDefinition/MopedVAEResponse"]
     },

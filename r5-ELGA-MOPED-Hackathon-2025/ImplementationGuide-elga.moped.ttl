@@ -18,7 +18,7 @@
   fhir:name [ fhir:v "MOPED"] ; # 
   fhir:title [ fhir:v "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-03-01T14:47:03+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-03-01T14:53:36+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ELGA GmbH" ] ;
@@ -886,6 +886,21 @@
          ]
        ] ) ;
        fhir:reference [
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedAccount> ;
+         fhir:reference [ fhir:v "StructureDefinition/MopedAccount" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED Account" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Account Ressource für die administrative Fallführung und Abrechnung." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
          fhir:link <https://elga.moped.at/StructureDefinition/MopedAufnahmeBundle> ;
          fhir:reference [ fhir:v "StructureDefinition/MopedAufnahmeBundle" ]
        ] ;
@@ -1077,6 +1092,21 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedLKFRequest> ;
+         fhir:reference [ fhir:v "StructureDefinition/MopedLKFRequest" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED LKFRequest" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Claim Ressource für die Leistungsabrechnungsanfrage." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "OperationDefinition"
          ]
        ] ) ;
@@ -1086,6 +1116,36 @@
        ] ;
        fhir:name [ fhir:v "MOPED LKFRequest $freigeben (POC)" ] ;
        fhir:description [ fhir:v "Die $freigeben Operation wird aufgerufen, wenn eine Abrechnung beantwortet wird und freigegeben wird." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedLKFResponse> ;
+         fhir:reference [ fhir:v "StructureDefinition/MopedLKFResponse" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED LKFResponse" ] ;
+       fhir:description [ fhir:v "MOPED Profil der ClaimResponse Ressource für die Leistungsabrechnungsantwort." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedOrganizationAbteilung> ;
+         fhir:reference [ fhir:v "StructureDefinition/MopedOrganizationAbteilung" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED Organization Abteilung" ] ;
+       fhir:description [ fhir:v "MOPED Profil für Abteilungen innerhalb einer Krankenanstalt." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1272,6 +1332,21 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedVAEResponse> ;
+         fhir:reference [ fhir:v "StructureDefinition/MopedVAEResponse" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED VAEResponse" ] ;
+       fhir:description [ fhir:v "MOPED Profil für die Beantwortung der Versichertenanspruchserklärung VAE." ] ;
+       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "ValueSet"
          ]
        ] ) ;
@@ -1311,81 +1386,6 @@
        ] ;
        fhir:name [ fhir:v "MOPED Versichertenanspruchserklärung $anfragen (POC)" ] ;
        fhir:description [ fhir:v "Die Versichertenanspruchserklärung $anfragen Operation wird aufgerufen, um die Versichertenanspruchserklärung-Anfrage an die SV anzustoßen. Diese Operation ist irrelevant für Selbstzahler (das ist wichtig für künftige weiterentwicklung - wenn im Account auf eine Coverage-Ressource für Selbstzahler referenziert wird, darf die Operation $anfragen nicht ausgeführt werden)." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [
-           a fhir:string ;
-           fhir:v "StructureDefinition:resource"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://elga.moped.at/StructureDefinition/MopedAccount> ;
-         fhir:reference [ fhir:v "StructureDefinition/MopedAccount" ]
-       ] ;
-       fhir:name [ fhir:v "MopedAccount" ] ;
-       fhir:description [ fhir:v "MOPED Profil der Account Ressource für die administrative Fallführung und Abrechnung." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [
-           a fhir:string ;
-           fhir:v "StructureDefinition:resource"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://elga.moped.at/StructureDefinition/MopedLKFRequest> ;
-         fhir:reference [ fhir:v "StructureDefinition/MopedLKFRequest" ]
-       ] ;
-       fhir:name [ fhir:v "MopedLKFRequest" ] ;
-       fhir:description [ fhir:v "MOPED Profil der Claim Ressource für die Leistungsabrechnungsanfrage." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [
-           a fhir:string ;
-           fhir:v "StructureDefinition:resource"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://elga.moped.at/StructureDefinition/MopedLKFResponse> ;
-         fhir:reference [ fhir:v "StructureDefinition/MopedLKFResponse" ]
-       ] ;
-       fhir:name [ fhir:v "MopedLKFResponse" ] ;
-       fhir:description [ fhir:v "MOPED Profil der ClaimResponse Ressource für die Leistungsabrechnungsantwort." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [
-           a fhir:string ;
-           fhir:v "StructureDefinition:resource"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://elga.moped.at/StructureDefinition/MopedOrganizationAbteilung> ;
-         fhir:reference [ fhir:v "StructureDefinition/MopedOrganizationAbteilung" ]
-       ] ;
-       fhir:name [ fhir:v "MopedOrganizationAbteilung" ] ;
-       fhir:description [ fhir:v "MOPED Profil für Abteilungen innerhalb einer Krankenanstalt." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [
-           a fhir:string ;
-           fhir:v "StructureDefinition:resource"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://elga.moped.at/StructureDefinition/MopedVAEResponse> ;
-         fhir:reference [ fhir:v "StructureDefinition/MopedVAEResponse" ]
-       ] ;
-       fhir:name [ fhir:v "MopedVAEResponse" ] ;
-       fhir:description [ fhir:v "MOPED Profil für die Beantwortung der Versichertenanspruchserklärung VAE." ] ;
        fhir:isExample [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1767,6 +1767,325 @@
        ] ;
        fhir:name [ fhir:v "PJ1VAEResponse1" ] ;
        fhir:description [ fhir:v "Hackathon Patient Journey 1 Beispiel: VAEResponse 1" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedVAEResponse"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedVAEResponse>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Account"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Account/PJ2Account> ;
+         fhir:reference [ fhir:v "Account/PJ2Account" ]
+       ] ;
+       fhir:name [ fhir:v "PJ2Account" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 2 Beispiel: Account" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedAccount"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedAccount>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Condition"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Condition/PJ2Condition1> ;
+         fhir:reference [ fhir:v "Condition/PJ2Condition1" ]
+       ] ;
+       fhir:name [ fhir:v "PJ2Condition1" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 2 Beispiel: Condition 1" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedCondition"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedCondition>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Condition"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Condition/PJ2Condition2> ;
+         fhir:reference [ fhir:v "Condition/PJ2Condition2" ]
+       ] ;
+       fhir:name [ fhir:v "PJ2Condition2" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 2 Beispiel: Condition 2" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedCondition"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedCondition>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Coverage"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Coverage/PJ2Coverage> ;
+         fhir:reference [ fhir:v "Coverage/PJ2Coverage" ]
+       ] ;
+       fhir:name [ fhir:v "PJ2Coverage" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 2 Beispiel: Coverage" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedCoverage"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedCoverage>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Encounter"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Encounter/PJ2Encounter> ;
+         fhir:reference [ fhir:v "Encounter/PJ2Encounter" ]
+       ] ;
+       fhir:name [ fhir:v "PJ2Encounter" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 2 Beispiel: Encounter" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedEncounter"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedEncounter>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Claim"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Claim/PJ2LKFRequest1> ;
+         fhir:reference [ fhir:v "Claim/PJ2LKFRequest1" ]
+       ] ;
+       fhir:name [ fhir:v "PJ2LKFRequest1" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 2 Beispiel: LKFRequest 1" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedLKFRequest"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedLKFRequest>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ClaimResponse"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/ClaimResponse/PJ2LKFResponse1> ;
+         fhir:reference [ fhir:v "ClaimResponse/PJ2LKFResponse1" ]
+       ] ;
+       fhir:name [ fhir:v "PJ2LKFResponse1" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 2 Beispiel: LKFResponse 1" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedLKFResponse"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedLKFResponse>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Patient"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Patient/PJ2Patient> ;
+         fhir:reference [ fhir:v "Patient/PJ2Patient" ]
+       ] ;
+       fhir:name [ fhir:v "PJ2Patient" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 2 Beispiel: Patient" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Procedure"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Procedure/PJ2Procedure1> ;
+         fhir:reference [ fhir:v "Procedure/PJ2Procedure1" ]
+       ] ;
+       fhir:name [ fhir:v "PJ2Procedure1" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 2 Beispiel: Procedure 1" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedProcedure"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedProcedure>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Procedure"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Procedure/PJ2Procedure2> ;
+         fhir:reference [ fhir:v "Procedure/PJ2Procedure2" ]
+       ] ;
+       fhir:name [ fhir:v "PJ2Procedure2" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 2 Beispiel: Procedure 2" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedProcedure"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedProcedure>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Encounter"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Encounter/PJ2TransferEncounter1> ;
+         fhir:reference [ fhir:v "Encounter/PJ2TransferEncounter1" ]
+       ] ;
+       fhir:name [ fhir:v "PJ2TransferEncounter1" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 2 Beispiel: TransferEncounter 1" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedTransferEncounter"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedTransferEncounter>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Encounter"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Encounter/PJ2TransferEncounter2> ;
+         fhir:reference [ fhir:v "Encounter/PJ2TransferEncounter2" ]
+       ] ;
+       fhir:name [ fhir:v "PJ2TransferEncounter2" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 2 Beispiel: TransferEncounter 2" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedTransferEncounter"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedTransferEncounter>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Encounter"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Encounter/PJ2TransferEncounter3> ;
+         fhir:reference [ fhir:v "Encounter/PJ2TransferEncounter3" ]
+       ] ;
+       fhir:name [ fhir:v "PJ2TransferEncounter3" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 2 Beispiel: TransferEncounter 3" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedTransferEncounter"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedTransferEncounter>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Encounter"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Encounter/PJ2TransferEncounter4> ;
+         fhir:reference [ fhir:v "Encounter/PJ2TransferEncounter4" ]
+       ] ;
+       fhir:name [ fhir:v "PJ2TransferEncounter4" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 2 Beispiel: TransferEncounter 4" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedTransferEncounter"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedTransferEncounter>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Encounter"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Encounter/PJ2TransferEncounter5> ;
+         fhir:reference [ fhir:v "Encounter/PJ2TransferEncounter5" ]
+       ] ;
+       fhir:name [ fhir:v "PJ2TransferEncounter5" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 2 Beispiel: TransferEncounter 5" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedTransferEncounter"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedTransferEncounter>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Claim"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/Claim/PJ2VAERequest1> ;
+         fhir:reference [ fhir:v "Claim/PJ2VAERequest1" ]
+       ] ;
+       fhir:name [ fhir:v "PJ2VAERequest1" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 2 Beispiel: VAERequest 1" ] ;
+       fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:profile ( [
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedVAERequest"^^xsd:anyURI ;
+         fhir:link <https://elga.moped.at/StructureDefinition/MopedVAERequest>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ClaimResponse"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://elga.moped.at/ClaimResponse/PJ2VAEResponse1> ;
+         fhir:reference [ fhir:v "ClaimResponse/PJ2VAEResponse1" ]
+       ] ;
+       fhir:name [ fhir:v "PJ2VAEResponse1" ] ;
+       fhir:description [ fhir:v "Hackathon Patient Journey 2 Beispiel: VAEResponse 1" ] ;
        fhir:isExample [ fhir:v "true"^^xsd:boolean ] ;
        fhir:profile ( [
          fhir:v "https://elga.moped.at/StructureDefinition/MopedVAEResponse"^^xsd:anyURI ;

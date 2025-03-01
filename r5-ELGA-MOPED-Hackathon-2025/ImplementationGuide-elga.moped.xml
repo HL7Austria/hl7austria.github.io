@@ -10,7 +10,7 @@
   <name value="MOPED"/>
   <title value="Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"/>
   <status value="draft"/>
-  <date value="2025-03-01T14:47:03+00:00"/>
+  <date value="2025-03-01T14:53:36+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -629,6 +629,17 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/MopedAccount"/>
+      </reference>
+      <name value="MOPED Account"/>
+      <description value="MOPED Profil der Account Ressource für die administrative Fallführung und Abrechnung."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/MopedAufnahmeBundle"/>
       </reference>
       <name value="MOPED Aufnahme Bundle"/>
@@ -769,6 +780,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MopedLKFRequest"/>
+      </reference>
+      <name value="MOPED LKFRequest"/>
+      <description value="MOPED Profil der Claim Ressource für die Leistungsabrechnungsanfrage."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
@@ -776,6 +798,28 @@
       </reference>
       <name value="MOPED LKFRequest $freigeben (POC)"/>
       <description value="Die $freigeben Operation wird aufgerufen, wenn eine Abrechnung beantwortet wird und freigegeben wird."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MopedLKFResponse"/>
+      </reference>
+      <name value="MOPED LKFResponse"/>
+      <description value="MOPED Profil der ClaimResponse Ressource für die Leistungsabrechnungsantwort."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MopedOrganizationAbteilung"/>
+      </reference>
+      <name value="MOPED Organization Abteilung"/>
+      <description value="MOPED Profil für Abteilungen innerhalb einer Krankenanstalt."/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -912,6 +956,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MopedVAEResponse"/>
+      </reference>
+      <name value="MOPED VAEResponse"/>
+      <description value="MOPED Profil für die Beantwortung der Versichertenanspruchserklärung VAE."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
@@ -941,61 +996,6 @@
       </reference>
       <name value="MOPED Versichertenanspruchserklärung $anfragen (POC)"/>
       <description value="Die Versichertenanspruchserklärung $anfragen Operation wird aufgerufen, um die Versichertenanspruchserklärung-Anfrage an die SV anzustoßen. Diese Operation ist irrelevant für Selbstzahler (das ist wichtig für künftige weiterentwicklung - wenn im Account auf eine Coverage-Ressource für Selbstzahler referenziert wird, darf die Operation $anfragen nicht ausgeführt werden)."/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/MopedAccount"/>
-      </reference>
-      <name value="MopedAccount"/>
-      <description value="MOPED Profil der Account Ressource für die administrative Fallführung und Abrechnung."/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/MopedLKFRequest"/>
-      </reference>
-      <name value="MopedLKFRequest"/>
-      <description value="MOPED Profil der Claim Ressource für die Leistungsabrechnungsanfrage."/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/MopedLKFResponse"/>
-      </reference>
-      <name value="MopedLKFResponse"/>
-      <description value="MOPED Profil der ClaimResponse Ressource für die Leistungsabrechnungsantwort."/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/MopedOrganizationAbteilung"/>
-      </reference>
-      <name value="MopedOrganizationAbteilung"/>
-      <description value="MOPED Profil für Abteilungen innerhalb einer Krankenanstalt."/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/MopedVAEResponse"/>
-      </reference>
-      <name value="MopedVAEResponse"/>
-      <description value="MOPED Profil für die Beantwortung der Versichertenanspruchserklärung VAE."/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -1258,6 +1258,209 @@
       </reference>
       <name value="PJ1VAEResponse1"/>
       <description value="Hackathon Patient Journey 1 Beispiel: VAEResponse 1"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/MopedVAEResponse"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Account"/>
+      </extension>
+      <reference>
+        <reference value="Account/PJ2Account"/>
+      </reference>
+      <name value="PJ2Account"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: Account"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/MopedAccount"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/PJ2Condition1"/>
+      </reference>
+      <name value="PJ2Condition1"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: Condition 1"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/MopedCondition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/PJ2Condition2"/>
+      </reference>
+      <name value="PJ2Condition2"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: Condition 2"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/MopedCondition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Coverage"/>
+      </extension>
+      <reference>
+        <reference value="Coverage/PJ2Coverage"/>
+      </reference>
+      <name value="PJ2Coverage"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: Coverage"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/MopedCoverage"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/PJ2Encounter"/>
+      </reference>
+      <name value="PJ2Encounter"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: Encounter"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/MopedEncounter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Claim"/>
+      </extension>
+      <reference>
+        <reference value="Claim/PJ2LKFRequest1"/>
+      </reference>
+      <name value="PJ2LKFRequest1"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: LKFRequest 1"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/MopedLKFRequest"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ClaimResponse"/>
+      </extension>
+      <reference>
+        <reference value="ClaimResponse/PJ2LKFResponse1"/>
+      </reference>
+      <name value="PJ2LKFResponse1"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: LKFResponse 1"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/MopedLKFResponse"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/PJ2Patient"/>
+      </reference>
+      <name value="PJ2Patient"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: Patient"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Procedure"/>
+      </extension>
+      <reference>
+        <reference value="Procedure/PJ2Procedure1"/>
+      </reference>
+      <name value="PJ2Procedure1"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: Procedure 1"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/MopedProcedure"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Procedure"/>
+      </extension>
+      <reference>
+        <reference value="Procedure/PJ2Procedure2"/>
+      </reference>
+      <name value="PJ2Procedure2"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: Procedure 2"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/MopedProcedure"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/PJ2TransferEncounter1"/>
+      </reference>
+      <name value="PJ2TransferEncounter1"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: TransferEncounter 1"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/MopedTransferEncounter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/PJ2TransferEncounter2"/>
+      </reference>
+      <name value="PJ2TransferEncounter2"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: TransferEncounter 2"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/MopedTransferEncounter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/PJ2TransferEncounter3"/>
+      </reference>
+      <name value="PJ2TransferEncounter3"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: TransferEncounter 3"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/MopedTransferEncounter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/PJ2TransferEncounter4"/>
+      </reference>
+      <name value="PJ2TransferEncounter4"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: TransferEncounter 4"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/MopedTransferEncounter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/PJ2TransferEncounter5"/>
+      </reference>
+      <name value="PJ2TransferEncounter5"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: TransferEncounter 5"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/MopedTransferEncounter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Claim"/>
+      </extension>
+      <reference>
+        <reference value="Claim/PJ2VAERequest1"/>
+      </reference>
+      <name value="PJ2VAERequest1"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: VAERequest 1"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/MopedVAERequest"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ClaimResponse"/>
+      </extension>
+      <reference>
+        <reference value="ClaimResponse/PJ2VAEResponse1"/>
+      </reference>
+      <name value="PJ2VAEResponse1"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: VAEResponse 1"/>
       <isExample value="true"/>
       <profile value="https://elga.moped.at/StructureDefinition/MopedVAEResponse"/>
     </resource>

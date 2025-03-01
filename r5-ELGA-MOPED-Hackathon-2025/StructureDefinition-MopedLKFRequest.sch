@@ -26,4 +26,18 @@
       <sch:assert test="count(f:extension[@url = 'https://elga.moped.at/StructureDefinition/moped-ext-AbrechnungsRelevanz']) &lt;= 1">extension with URL = 'https://elga.moped.at/StructureDefinition/moped-ext-AbrechnungsRelevanz': maximum cardinality of 'extension' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:Claim/f:item</sch:title>
+    <sch:rule context="f:Claim/f:item">
+      <sch:assert test="count(f:diagnosisSequence) &gt;= 1">diagnosisSequence: minimum cardinality of 'diagnosisSequence' is 1</sch:assert>
+      <sch:assert test="count(f:diagnosisSequence) &lt;= 1">diagnosisSequence: maximum cardinality of 'diagnosisSequence' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:Claim/f:item/f:category</sch:title>
+    <sch:rule context="f:Claim/f:item/f:category">
+      <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
+      <sch:assert test="count(f:text) &lt;= 1">text: maximum cardinality of 'text' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
 </sch:schema>
