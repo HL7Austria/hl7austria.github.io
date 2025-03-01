@@ -1,0 +1,176 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://elga.moped.at/ClaimResponse/PJ1LKFResponse1> a fhir:ClaimResponse ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PJ1LKFResponse1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://elga.moped.at/StructureDefinition/MopedLKFResponse"^^xsd:anyURI ;
+       fhir:link <https://elga.moped.at/StructureDefinition/MopedLKFResponse>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ClaimResponse PJ1LKFResponse1</b></p><a name=\"PJ1LKFResponse1\"> </a><a name=\"hcPJ1LKFResponse1\"> </a><a name=\"PJ1LKFResponse1-en-US\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-MopedLKFResponse.html\">MopedLKFResponse</a></p></div><p><b>Abrechnung - Knoten</b>: <a href=\"CodeSystem-LKFAbrechnungsKnotenCS.html#LKFAbrechnungsKnotenCS-D\">LKF Abrechnungsknoten D</a>: D</p><blockquote><p><b>LKF Punkte</b></p><ul><li>PunkteBelagsdauerausreisserUntenLeistungskomponente: 0</li><li>PunkteBelagsdauerausreisserUntenTageskomponente: 0</li><li>ZusatzpunkteBelagsdauerausreisserNachOben: 0</li><li>ZusatzpunkteIntensiv: 0</li><li>ZusatzpunkteMehrfachleistungen: 0</li><li>PunkteSpeziellerBereicheTageweise: 0</li><li>PunkteTotal: 1110</li><li>Leistungskomponente: 743</li><li>TageskomponenteKontaktpunkte: 367</li></ul></blockquote><p><b>LDF-Punktewert Netto</b>: 14892</p><p><b>LDF-Betrag Netto</b>: 165301</p><p><b>Patientenanteil für Angehoerige</b>: 0</p><p><b>Patientenanteil Netto</b>: 0</p><p><b>Beihilfenaequivalent</b>: 1111</p><p><b>Forderungsbetrag für Auslaenderverrechnung oder Regress</b>: 0</p><p><b>Punkte LDF Pauschale</b>: 1110</p><p><b>Kostenmeldung für (A/R/K)</b>: <a href=\"CodeSystem-KostenmeldungARKCS.html#KostenmeldungARKCS-K\">Kostenmeldung für (A/R/K) K</a>: Kosteninformation</p><p><b>status</b>: Active</p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/claim-type institutional}\">Institutional</span></p><p><b>use</b>: Claim</p><p><b>patient</b>: <code>Patient?identifier=urn:oid:1.2.40.0.10.1.4.3.1|9994210469</code></p><p><b>created</b>: 2024-10-31</p><p><b>insurer</b>: <code>Organization?identifier=http://svc.co.at/CodeSystem/ecard-svt-cs|11</code></p><p><b>requestor</b>: <code>Organization?identifier=urn:ietf:rfc:3986|urn:oid:1.3.6.1.4.1.36124.5.914</code></p><p><b>request</b>: <a href=\"Claim-PJ1LKFRequest1.html\">Claim: extension = D (LKF Abrechnungsknoten#D),,Ja (Abrechnung des stationären Aufenthalts/ambulanten Besuchs erfolgt über den Landesgesundheitsfonds/PRIKRAF) (Fondsrelevanz#J),4; status = active; type = Institutional; use = claim; created = 2024-10-31; diagnosisRelatedGroup = Sonstige Erkrankungen - Nervensystem</a></p><p><b>outcome</b>: Processing Complete</p><p><b>diagnosisRelatedGroup</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/LKFHauptdiagnosegruppenCS HDG01.31}\">Sonstige Erkrankungen - Nervensystem</span></p><h3>Insurances</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Sequence</b></td><td><b>Focal</b></td><td><b>Coverage</b></td></tr><tr><td style=\"display: none\">*</td><td>1</td><td>true</td><td><a href=\"Coverage-PJ1Coverage.html\">Coverage: identifier = urn:oid:1.2.40.0.10.1.4.3.9.1#XB4G37PFN9FJ; status = active; kind = insurance</a></td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://elga.moped.at/StructureDefinition/moped-ext-diagnoseKnoten"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Coding ;
+       fhir:system [ fhir:v "https://elga.moped.at/CodeSystem/LKFAbrechnungsKnotenCS"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "D" ]
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "PunkteBelagsdauerausreisserUntenLeistungskomponente"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:unsignedInt ;
+         fhir:v "0"^^xsd:nonNegativeInteger
+       ]
+     ] [
+       fhir:url [ fhir:v "PunkteBelagsdauerausreisserUntenTageskomponente"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:unsignedInt ;
+         fhir:v "0"^^xsd:nonNegativeInteger
+       ]
+     ] [
+       fhir:url [ fhir:v "ZusatzpunkteBelagsdauerausreisserNachOben"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:unsignedInt ;
+         fhir:v "0"^^xsd:nonNegativeInteger
+       ]
+     ] [
+       fhir:url [ fhir:v "ZusatzpunkteIntensiv"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:unsignedInt ;
+         fhir:v "0"^^xsd:nonNegativeInteger
+       ]
+     ] [
+       fhir:url [ fhir:v "ZusatzpunkteMehrfachleistungen"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:unsignedInt ;
+         fhir:v "0"^^xsd:nonNegativeInteger
+       ]
+     ] [
+       fhir:url [ fhir:v "PunkteSpeziellerBereicheTageweise"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:unsignedInt ;
+         fhir:v "0"^^xsd:nonNegativeInteger
+       ]
+     ] [
+       fhir:url [ fhir:v "PunkteTotal"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:unsignedInt ;
+         fhir:v "1110"^^xsd:nonNegativeInteger
+       ]
+     ] [
+       fhir:url [ fhir:v "Leistungskomponente"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:unsignedInt ;
+         fhir:v "743"^^xsd:nonNegativeInteger
+       ]
+     ] [
+       fhir:url [ fhir:v "TageskomponenteKontaktpunkte"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:unsignedInt ;
+         fhir:v "367"^^xsd:nonNegativeInteger
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://elga.moped.at/StructureDefinition/moped-ext-LKFPunkte"^^xsd:anyURI ]
+  ] [
+     fhir:url [ fhir:v "https://elga.moped.at/StructureDefinition/moped-ext-LDFPunktewertNetto"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:decimal ;
+       fhir:v "14892"^^xsd:decimal
+     ]
+  ] [
+     fhir:url [ fhir:v "https://elga.moped.at/StructureDefinition/moped-ext-LDFBetragNetto"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:decimal ;
+       fhir:v "165301"^^xsd:decimal
+     ]
+  ] [
+     fhir:url [ fhir:v "https://elga.moped.at/StructureDefinition/moped-ext-PatientenanteilAngehoerige"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Money ;
+       fhir:value [ fhir:v "0"^^xsd:decimal ]
+     ]
+  ] [
+     fhir:url [ fhir:v "https://elga.moped.at/StructureDefinition/moped-ext-Patientenanteil"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Money ;
+       fhir:value [ fhir:v "0"^^xsd:decimal ]
+     ]
+  ] [
+     fhir:url [ fhir:v "https://elga.moped.at/StructureDefinition/moped-ext-Beihilfenaequivalent"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:unsignedInt ;
+       fhir:v "1111"^^xsd:nonNegativeInteger
+     ]
+  ] [
+     fhir:url [ fhir:v "https://elga.moped.at/StructureDefinition/moped-ext-ForderungsbetragAuslaenderverrechnungRegress"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Money ;
+       fhir:value [ fhir:v "0"^^xsd:decimal ]
+     ]
+  ] [
+     fhir:url [ fhir:v "https://elga.moped.at/StructureDefinition/moped-ext-PunkteLDFPauschale"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:decimal ;
+       fhir:v "1110"^^xsd:decimal
+     ]
+  ] [
+     fhir:url [ fhir:v "https://elga.moped.at/StructureDefinition/moped-ext-KonstenmeldungARK"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Coding ;
+       fhir:system [ fhir:v "https://elga.moped.at/CodeSystem/KostenmeldungARKCS"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "K" ]
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/claim-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "institutional" ]
+     ] )
+  ] ; # 
+  fhir:use [ fhir:v "claim"] ; # 
+  fhir:patient [
+     fhir:reference [ fhir:v "Patient?identifier=urn:oid:1.2.40.0.10.1.4.3.1|9994210469" ]
+  ] ; # 
+  fhir:created [ fhir:v "2024-10-31"^^xsd:date] ; # 
+  fhir:insurer [
+     fhir:link <https://elga.moped.at/Organization?identifier=http://svc.co.at/CodeSystem/ecard-svt-cs|11> ;
+     fhir:reference [ fhir:v "Organization?identifier=http://svc.co.at/CodeSystem/ecard-svt-cs|11" ]
+  ] ; # 
+  fhir:requestor [
+     fhir:reference [ fhir:v "Organization?identifier=urn:ietf:rfc:3986|urn:oid:1.3.6.1.4.1.36124.5.914" ]
+  ] ; # 
+  fhir:request [
+     fhir:link <https://elga.moped.at/Claim/PJ1LKFRequest1> ;
+     fhir:reference [ fhir:v "Claim/PJ1LKFRequest1" ]
+  ] ; # 
+  fhir:outcome [ fhir:v "complete"] ; # 
+  fhir:diagnosisRelatedGroup [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://elga.moped.at/CodeSystem/LKFHauptdiagnosegruppenCS"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "HDG01.31" ]
+     ] )
+  ] ; # 
+  fhir:insurance ( [
+     fhir:sequence [ fhir:v "1"^^xsd:positiveInteger ] ;
+     fhir:focal [ fhir:v "true"^^xsd:boolean ] ;
+     fhir:coverage [
+       fhir:link <https://elga.moped.at/Coverage/PJ1Coverage> ;
+       fhir:reference [ fhir:v "Coverage/PJ1Coverage" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="MOPED.QuestionnaireResponse.Erheben"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition MOPED.QuestionnaireResponse.Erheben</b></p><a name="MOPED.QuestionnaireResponse.Erheben"> </a><a name="hcMOPED.QuestionnaireResponse.Erheben"> </a><a name="MOPED.QuestionnaireResponse.Erheben-en-US"> </a><p>URL: [base]/QuestionnaireResponse/$erheben</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>aufnahmezahl</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#Identifier">Identifier</a></td><td/><td><div><p>Der <em>aufnahmezahl</em> Parameter beinhaltet den eindeutigen Identifizierer für den relevanten Fall.</p>
+</div></td></tr><tr><td>IN</td><td>fragebogen</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/questionnaireresponse.html" title="http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse">QuestionnaireResponse</a>)</td><td/><td><div><p>Der <em>fragebogen</em> Parameter übermittelt den abzuspeichernden ausgefüllten Fragebogen über einen bestimmten Fall.</p>
+</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>
+</div></td></tr></table></div>
+  </text>
+  <url value="https://elga.moped.at/OperationDefinition/MOPED.QuestionnaireResponse.Erheben"/>
+  <version value="0.1.0"/>
+  <name value="MOPED_QuestionnaireResponse.Erheben"/>
+  <title value="MOPED QuestionnaireResponse $erheben (POC)"/>
+  <status value="draft"/>
+  <kind value="operation"/>
+  <date value="2025-03-01T12:22:50+00:00"/>
+  <publisher value="ELGA GmbH"/>
+  <contact>
+    <name value="ELGA GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://elga.gv.at"/>
+    </telecom>
+  </contact>
+  <description value="Die $erheben Operation wird aufgerufen, wenn ein Fragebogen für einen bestimmten Fall eingemeldet wird."/>
+  <purpose value="**Wer ruft diese Operation in welchem Zusammenhang auf?**&#xA;&#xA;Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $erheben Operation wird aufgerufen, wenn ein Fragebogen für einen bestimmten Fall eingemeldet wird.&#xA;&#xA;**Voraussetzungen für den Aufruf**&#xA;&#xA;* Account-Status: `Aufnahme in Arbeit`, `Aufnahme freigegeben`, `SV verarbeitet`, `Entlassung Aviso`, `Entlassung vollständig`, `vorläufige Meldung` oder `Endgültige Meldung` oder `vorläufige Freigabe` oder `LGF Korrekturaufforderung` oder `Endgültige Korrekturaufforderung` oder `Endgültige Freigabe`&#xA;&#xA;**Detaillierte Business-Logik**&#xA;&#xA;1. Die conditional References der QuestionnaireResponse werden aufgelöst und die Ressource wird abgespeichert.&#xA;&#xA;**Validierung / Fehlerbehandlung**&#xA;* Die Aufnahmezahl lt. Operation-Parameter muss die gleiche sein wie im Encounter mit dem Pfad QuestionnaireResponse.encounter (QuestionnaireResponse lt. Operation-Parameter *fragebogen*)&#xA;* *QuestionnaireResponse.subject* muss gleich sein wie *QuestionnaireResponse.encounter.subject*&#xA;* *QuestionnaireResponse.source* muss gleich sein wie *QuestionnaireResponse.encounter.serviceProvider*&#xA;&#xA;&#xA;**Weitere Hinweise**&#xA;&#xA;&#xA;**Annahmen an das BeS**&#xA;* Es wurde vorab geprüft, ob das `system` des Parameters `aufnahmezahl` dem GDA entspricht, der die Operation aufruft. Somit ist sichergestellt, dass nur eigene Fälle in einem Fragebogen erhoben werden können.&#xA;"/>
+  <affectsState value="true"/>
+  <code value="erheben"/>
+  <resource value="QuestionnaireResponse"/>
+  <system value="false"/>
+  <type value="true"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="aufnahmezahl"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der *aufnahmezahl* Parameter beinhaltet den eindeutigen Identifizierer für den relevanten Fall."/>
+    <type value="Identifier"/>
+  </parameter>
+  <parameter>
+    <name value="fragebogen"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der *fragebogen* Parameter übermittelt den abzuspeichernden ausgefüllten Fragebogen über einen bestimmten Fall."/>
+    <type value="Resource"/>
+    <targetProfile value="http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse"/>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der *return* Parameter gibt Auskunft über den Erfolg der Operation."/>
+    <type value="Resource"/>
+    <targetProfile value="http://hl7.org/fhir/StructureDefinition/OperationOutcome"/>
+  </parameter>
+</OperationDefinition>
