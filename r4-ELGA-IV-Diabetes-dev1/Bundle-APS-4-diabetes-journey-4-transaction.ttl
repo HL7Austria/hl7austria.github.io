@@ -1,0 +1,107 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga-iv-diabetes-r4/Bundle/APS-4-diabetes-journey-4-transaction> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "APS-4-diabetes-journey-4-transaction"] ; # 
+  fhir:identifier [
+     fhir:system [ fhir:v "http://system-to-be-defined.com"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "63fef90a-be11-4ddf-aece-d77da15c4f20" ]
+  ] ; # 
+  fhir:type [ fhir:v "transaction"] ; # 
+  fhir:timestamp [ fhir:v "2025-01-08T14:01:30+00:00"^^xsd:dateTime] ; # 
+  fhir:entry ( [
+     fhir:fullUrl [ fhir:v "urn:uuid:61db6213-22ab-405a-825a-0ae6905fad1f"^^xsd:anyURI ] ;
+     fhir:resource ( <urn:uuid:61db6213-22ab-405a-825a-0ae6905fad1f> ) ;
+     fhir:request [
+       fhir:method [ fhir:v "PUT" ] ;
+       fhir:url [ fhir:v "MedicationStatement"^^xsd:anyURI ]
+     ]
+  ] [
+     fhir:fullUrl [ fhir:v "urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89c"^^xsd:anyURI ] ;
+     fhir:resource ( <urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89c> ) ;
+     fhir:request [
+       fhir:method [ fhir:v "POST" ] ;
+       fhir:url [ fhir:v "Observation"^^xsd:anyURI ]
+     ]
+  ] ) . # 
+
+<urn:uuid:61db6213-22ab-405a-825a-0ae6905fad1f> a fhir:MedicationStatement ;
+  fhir:id [ fhir:v "APS-4-diabetes-journey-4-medication"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-medicationstatement"^^xsd:anyURI ;
+       fhir:link <https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-medicationstatement>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationStatement_APS-4-diabetes-journey-4-medication\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationStatement APS-4-diabetes-journey-4-medication</b></p><a name=\"APS-4-diabetes-journey-4-medication\"> </a><a name=\"hcAPS-4-diabetes-journey-4-medication\"> </a><a name=\"APS-4-diabetes-journey-4-medication-en-US\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"https://build.fhir.org/ig/HL7Austria/ELGA-AustrianPatientSummary-R4/StructureDefinition-at-aps-medicationstatement.html\">AT APS MedicationStatement</a></p></div><p><b>status</b>: Active</p><p><b>medication</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/asp-liste 1294446}\">METFORMIN HEX FTBL  500MG</span></p><p><b>subject</b>: <a href=\"Bundle-APS-4-diabetes-Journey-1.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8\">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2025-01-08 14:01:30+0000</a></p><p><b>effective</b>: 2023-03-17 08:01:30+0100 --&gt; (ongoing)</p><h3>Dosages</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td></tr><tr><td style=\"display: none\">*</td><td>S:1-1-1-1</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:medication [
+     a fhir:CodeableConcept ;
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://termgit.elga.gv.at/CodeSystem/asp-liste"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "1294446" ] ;
+       fhir:display [ fhir:v "METFORMIN HEX FTBL  500MG" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:reference [ fhir:v "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:Period ;
+     fhir:start [ fhir:v "2023-03-17T08:01:30+01:00"^^xsd:dateTime ]
+  ] ; # 
+  fhir:dosage ( [
+     fhir:text [ fhir:v "S:1-1-1-1" ]
+  ] ) . # 
+
+<urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89c> a fhir:Observation ;
+  fhir:id [ fhir:v "APS-4-diabetes-journey-4-transaction-observtion-glucose-in-blut"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationresultslaboratorypathology"^^xsd:anyURI ;
+       fhir:link <https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationresultslaboratorypathology>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_APS-4-diabetes-journey-4-transaction-observtion-glucose-in-blut\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation APS-4-diabetes-journey-4-transaction-observtion-glucose-in-blut</b></p><a name=\"APS-4-diabetes-journey-4-transaction-observtion-glucose-in-blut\"> </a><a name=\"hcAPS-4-diabetes-journey-4-transaction-observtion-glucose-in-blut\"> </a><a name=\"APS-4-diabetes-journey-4-transaction-observtion-glucose-in-blut-en-US\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"https://build.fhir.org/ig/HL7Austria/ELGA-AustrianPatientSummary-R4/StructureDefinition-at-aps-observationresultslaboratorypathology.html\">AT APS Observation Results Laboratory Pathology</a></p></div><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 32016-8}\">Glucose im kapillaren Blut 1h postprandial</span></p><p><b>subject</b>: <a href=\"Bundle-APS-4-diabetes-Journey-1.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8\">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2025-01-08 14:01:30+0000</a></p><p><b>effective</b>: 2023-03-15 08:30:00+0100</p><p><b>performer</b>: <a href=\"Bundle-APS-4-diabetes-Journey-1.html#urn-uuid-75db30ee-7028-486c-929a-c5126837f472\">Bundle: identifier = http://system-to-be-defined.com#63fef90a-be11-4ddf-aece-d77da15c4f20; type = document; timestamp = 2025-01-08 14:01:30+0000</a></p><p><b>value</b>: 200 mg/dL<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemg/dL = 'mg/dL')</span></p></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:32016-8 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "32016-8" ] ;
+       fhir:display [ fhir:v "Glucose im kapillaren Blut 1h postprandial" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:reference [ fhir:v "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:dateTime ;
+     fhir:v "2023-03-15T08:30:00+01:00"^^xsd:dateTime
+  ] ; # 
+  fhir:performer ( [
+     fhir:reference [ fhir:v "urn:uuid:75db30ee-7028-486c-929a-c5126837f472" ]
+  ] ) ; # 
+  fhir:value [
+     a fhir:Quantity ;
+     fhir:value [ fhir:v "200"^^xsd:decimal ] ;
+     fhir:unit [ fhir:v "mg/dL" ] ;
+     fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+     fhir:code [ fhir:v "mg/dL" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
