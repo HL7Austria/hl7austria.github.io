@@ -20,7 +20,7 @@
       </li>
       <li>
 
-    IG &copy; 2024+ HL7&reg; Austria, TC FHIR&reg;.  Package TC-FHIR-AG-Scheduling-R5#0.1.0 based on FHIR&reg; 5.0.0. Generated 2025-03-07 
+    IG &copy; 2024+ HL7&reg; Austria, TC FHIR&reg;.  Package TC-FHIR-AG-Scheduling-R5#0.1.0 based on FHIR&reg; 5.0.0. Generated 2025-03-08 
     
      
                 Links: Table of Contents |
@@ -55,7 +55,7 @@
   &lt;name value="Book_Appointment_Operation"/&gt;
   &lt;status value="active"/&gt;
   &lt;kind value="operation"/&gt;
-  &lt;date value="2025-03-07T16:14:22+00:00"/&gt;
+  &lt;date value="2025-03-08T14:41:39+00:00"/&gt;
   &lt;publisher value="HL7&reg; Austria, TC FHIR&reg;"/&gt;
   &lt;description
                value="Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactions. This operation completes the booking of an appointment. The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the book request and updates the resource status accordingly. "/&gt;
@@ -110,7 +110,7 @@
   &lt;name value="Find_HealthcareService_Provider"/&gt;
   &lt;status value="active"/&gt;
   &lt;kind value="query"/&gt;
-  &lt;date value="2025-03-07T16:14:22+00:00"/&gt;
+  &lt;date value="2025-03-08T14:41:39+00:00"/&gt;
   &lt;publisher value="HL7&reg; Austria, TC FHIR&reg;"/&gt;
   &lt;description
                value="A query operation that allows to search for healthcare service providers that offer a specific healthcare service. The general information about the HealthcareService identification itself is already available in advance, either as resource or via codes. "/&gt;
@@ -219,7 +219,7 @@
   &lt;name value="Hold_Slot_Operation"/&gt;
   &lt;status value="active"/&gt;
   &lt;kind value="operation"/&gt;
-  &lt;date value="2025-03-07T16:14:22+00:00"/&gt;
+  &lt;date value="2025-03-08T14:41:39+00:00"/&gt;
   &lt;publisher value="HL7&reg; Austria, TC FHIR&reg;"/&gt;
   &lt;description
                value="Request for a hold on a selected Slot in order for the user to complete entering data for booking an appointment.  This operation precedes the booking and follows the appointment availability interaction.  The server determines if the nominated slot is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly. "/&gt;
@@ -300,7 +300,7 @@
   &lt;name value="HL7ATSchedulingAppointment"/&gt;
   &lt;title value="HL7&reg; AT Scheduling Appointment Profile"/&gt;
   &lt;status value="draft"/&gt;
-  &lt;date value="2025-03-07T16:14:22+00:00"/&gt;
+  &lt;date value="2025-03-08T14:41:39+00:00"/&gt;
   &lt;publisher value="HL7&reg; Austria, TC FHIR&reg;"/&gt;
   &lt;description
                value="HL7&reg; Austria FHIR&reg; Scheduling Profile for appointment data in Austria."/&gt;
@@ -3178,16 +3178,11 @@ This element only allows for a single identifier. In the case where additional i
                  url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable"&gt;
         &lt;valueBoolean value="true"/&gt;
       &lt;/extension&gt;
-      &lt;extension
-                 url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable"&gt;
-        &lt;valueBoolean value="true"/&gt;
-      &lt;/extension&gt;
       &lt;path value="Appointment.participant.actor.display"/&gt;
       &lt;short value="Text alternative for the resource"/&gt;
       &lt;definition
                   value="Plain text narrative that identifies the resource in addition to the resource reference."/&gt;
-      &lt;comment
-               value="This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it."/&gt;
+      &lt;comment value="ToDo"/&gt;
       &lt;min value="0"/&gt;
       &lt;max value="1"/&gt;
       &lt;base&gt;
@@ -3207,6 +3202,7 @@ This element only allows for a single identifier. In the case where additional i
                     value="hasValue() or (children().count() &amp;gt; id.count())"/&gt;
         &lt;source value="http://hl7.org/fhir/StructureDefinition/Element"/&gt;
       &lt;/constraint&gt;
+      &lt;mustSupport value="true"/&gt;
       &lt;isModifier value="false"/&gt;
       &lt;isSummary value="true"/&gt;
       &lt;mapping&gt;
@@ -3275,7 +3271,7 @@ This element only allows for a single identifier. In the case where additional i
                     value="hasValue() or (children().count() &amp;gt; id.count())"/&gt;
         &lt;source value="http://hl7.org/fhir/StructureDefinition/Element"/&gt;
       &lt;/constraint&gt;
-      &lt;mustSupport value="false"/&gt;
+      &lt;mustSupport value="true"/&gt;
       &lt;isModifier value="false"/&gt;
       &lt;isSummary value="true"/&gt;
       &lt;binding&gt;
@@ -3812,16 +3808,11 @@ This element only allows for a single identifier. In the case where additional i
                  url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable"&gt;
         &lt;valueBoolean value="true"/&gt;
       &lt;/extension&gt;
-      &lt;extension
-                 url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable"&gt;
-        &lt;valueBoolean value="true"/&gt;
-      &lt;/extension&gt;
       &lt;path value="Appointment.participant.actor.display"/&gt;
       &lt;short value="Text alternative for the resource"/&gt;
       &lt;definition
                   value="Plain text narrative that identifies the resource in addition to the resource reference."/&gt;
-      &lt;comment
-               value="This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it."/&gt;
+      &lt;comment value="ToDo"/&gt;
       &lt;min value="0"/&gt;
       &lt;max value="1"/&gt;
       &lt;base&gt;
@@ -3841,6 +3832,7 @@ This element only allows for a single identifier. In the case where additional i
                     value="hasValue() or (children().count() &amp;gt; id.count())"/&gt;
         &lt;source value="http://hl7.org/fhir/StructureDefinition/Element"/&gt;
       &lt;/constraint&gt;
+      &lt;mustSupport value="true"/&gt;
       &lt;isModifier value="false"/&gt;
       &lt;isSummary value="true"/&gt;
       &lt;mapping&gt;
@@ -3909,7 +3901,7 @@ This element only allows for a single identifier. In the case where additional i
                     value="hasValue() or (children().count() &amp;gt; id.count())"/&gt;
         &lt;source value="http://hl7.org/fhir/StructureDefinition/Element"/&gt;
       &lt;/constraint&gt;
-      &lt;mustSupport value="false"/&gt;
+      &lt;mustSupport value="true"/&gt;
       &lt;isModifier value="false"/&gt;
       &lt;isSummary value="true"/&gt;
       &lt;binding&gt;
@@ -4448,16 +4440,11 @@ This element only allows for a single identifier. In the case where additional i
                  url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable"&gt;
         &lt;valueBoolean value="true"/&gt;
       &lt;/extension&gt;
-      &lt;extension
-                 url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable"&gt;
-        &lt;valueBoolean value="true"/&gt;
-      &lt;/extension&gt;
       &lt;path value="Appointment.participant.actor.display"/&gt;
       &lt;short value="Text alternative for the resource"/&gt;
       &lt;definition
                   value="Plain text narrative that identifies the resource in addition to the resource reference."/&gt;
-      &lt;comment
-               value="This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it."/&gt;
+      &lt;comment value="ToDo"/&gt;
       &lt;min value="0"/&gt;
       &lt;max value="1"/&gt;
       &lt;base&gt;
@@ -4477,6 +4464,7 @@ This element only allows for a single identifier. In the case where additional i
                     value="hasValue() or (children().count() &amp;gt; id.count())"/&gt;
         &lt;source value="http://hl7.org/fhir/StructureDefinition/Element"/&gt;
       &lt;/constraint&gt;
+      &lt;mustSupport value="true"/&gt;
       &lt;isModifier value="false"/&gt;
       &lt;isSummary value="true"/&gt;
       &lt;mapping&gt;
@@ -4545,7 +4533,7 @@ This element only allows for a single identifier. In the case where additional i
                     value="hasValue() or (children().count() &amp;gt; id.count())"/&gt;
         &lt;source value="http://hl7.org/fhir/StructureDefinition/Element"/&gt;
       &lt;/constraint&gt;
-      &lt;mustSupport value="false"/&gt;
+      &lt;mustSupport value="true"/&gt;
       &lt;isModifier value="false"/&gt;
       &lt;isSummary value="true"/&gt;
       &lt;binding&gt;
@@ -6684,7 +6672,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
   &lt;name value="HL7ATSchedulingAppointmentResponse"/&gt;
   &lt;title value="HL7&reg; AT Scheduling AppointmentResponse Profile"/&gt;
   &lt;status value="draft"/&gt;
-  &lt;date value="2025-03-07T16:14:22+00:00"/&gt;
+  &lt;date value="2025-03-08T14:41:39+00:00"/&gt;
   &lt;publisher value="HL7&reg; Austria, TC FHIR&reg;"/&gt;
   &lt;description
                value="HL7&reg; Austria FHIR&reg; Scheduling Profile for appointmentresponse data in Austria."/&gt;
@@ -7662,7 +7650,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
   &lt;name value="HL7ATSchedulingHealthcareService"/&gt;
   &lt;title value="HL7&reg; AT Scheduling HealthcareService Profile"/&gt;
   &lt;status value="draft"/&gt;
-  &lt;date value="2025-03-07T16:14:22+00:00"/&gt;
+  &lt;date value="2025-03-08T14:41:39+00:00"/&gt;
   &lt;publisher value="HL7&reg; Austria, TC FHIR&reg;"/&gt;
   &lt;description
                value="HL7&reg; Austria FHIR&reg; Scheduling Profile for healthcareservice data in Austria."/&gt;
@@ -9161,7 +9149,7 @@ Systems may choose to render availability differently than it is exchanged on th
   &lt;name value="HL7ATSchedulingSchedule"/&gt;
   &lt;title value="HL7&reg; AT Scheduling Schedule Profile"/&gt;
   &lt;status value="draft"/&gt;
-  &lt;date value="2025-03-07T16:14:22+00:00"/&gt;
+  &lt;date value="2025-03-08T14:41:39+00:00"/&gt;
   &lt;publisher value="HL7&reg; Austria, TC FHIR&reg;"/&gt;
   &lt;description
                value="HL7&reg; Austria FHIR&reg; Scheduling Profile for schedule data in Austria."/&gt;
@@ -9960,7 +9948,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
   &lt;name value="HL7ATSchedulingSlot"/&gt;
   &lt;title value="HL7&reg; AT Scheduling Slot Profile"/&gt;
   &lt;status value="draft"/&gt;
-  &lt;date value="2025-03-07T16:14:22+00:00"/&gt;
+  &lt;date value="2025-03-08T14:41:39+00:00"/&gt;
   &lt;publisher value="HL7&reg; Austria, TC FHIR&reg;"/&gt;
   &lt;description
                value="HL7&reg; Austria FHIR&reg; Scheduling Profile for slot data in Austria."/&gt;
@@ -10794,7 +10782,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
   &lt;version value="0.1.0"/&gt;
   &lt;name value="AtSchedulingServiceType"/&gt;
   &lt;status value="draft"/&gt;
-  &lt;date value="2025-03-07T16:14:22+00:00"/&gt;
+  &lt;date value="2025-03-08T14:41:39+00:00"/&gt;
   &lt;publisher value="HL7&reg; Austria, TC FHIR&reg;"/&gt;
   &lt;description value="ToDo"/&gt;
 &lt;/ValueSet&gt; (        <a href="ValueSet-AtSchedulingServiceType.xml.html">src</a>
@@ -10822,7 +10810,7 @@ fhir:div "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p class=\"res-he
   fhir:name [ fhir:v "Book_Appointment_Operation"] ; # 
   fhir:status [ fhir:v "active"] ; # 
   fhir:kind [ fhir:v "operation"] ; # 
-  fhir:date [ fhir:v "2025-03-07T16:14:22+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-03-08T14:41:39+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7&reg; Austria, TC FHIR&reg;"] ; # 
   fhir:description [ fhir:v "Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactions. This operation completes the booking of an appointment. The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the book request and updates the resource status accordingly. "] ; # 
   fhir:affectsState [ fhir:v true] ; # 
@@ -10875,7 +10863,7 @@ fhir:div "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p class=\"res-he
   fhir:name [ fhir:v "Find_HealthcareService_Provider"] ; # 
   fhir:status [ fhir:v "active"] ; # 
   fhir:kind [ fhir:v "query"] ; # 
-  fhir:date [ fhir:v "2025-03-07T16:14:22+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-03-08T14:41:39+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7&reg; Austria, TC FHIR&reg;"] ; # 
   fhir:description [ fhir:v "A query operation that allows to search for healthcare service providers that offer a specific healthcare service. The general information about the HealthcareService identification itself is already available in advance, either as resource or via codes. "] ; # 
   fhir:affectsState [ fhir:v false] ; # 
@@ -10977,7 +10965,7 @@ fhir:div "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p class=\"res-he
   fhir:name [ fhir:v "Hold_Slot_Operation"] ; # 
   fhir:status [ fhir:v "active"] ; # 
   fhir:kind [ fhir:v "operation"] ; # 
-  fhir:date [ fhir:v "2025-03-07T16:14:22+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-03-08T14:41:39+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7&reg; Austria, TC FHIR&reg;"] ; # 
   fhir:description [ fhir:v "Request for a hold on a selected Slot in order for the user to complete entering data for booking an appointment.  This operation precedes the booking and follows the appointment availability interaction.  The server determines if the nominated slot is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly. "] ; # 
   fhir:affectsState [ fhir:v true] ; # 
@@ -11037,7 +11025,7 @@ fhir:div "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p class=\"res-he
   fhir:name [ fhir:v "HL7ATSchedulingAppointment"] ; # 
   fhir:title [ fhir:v "HL7&reg; AT Scheduling Appointment Profile"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-03-07T16:14:22+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-03-08T14:41:39+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7&reg; Austria, TC FHIR&reg;"] ; # 
   fhir:description [ fhir:v "HL7&reg; Austria FHIR&reg; Scheduling Profile for appointment data in Austria."] ; # 
   fhir:fhirVersion [ fhir:v "5.0.0"] ; # 
@@ -13341,15 +13329,11 @@ fhir:id [ fhir:v "Appointment.participant:HL7ATCorePatient.actor.display" ] ;
 fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable"^^xsd:anyURI ] ;
 fhir:value [
 a fhir:boolean ;
-fhir:v true         ]       ] [
-fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable"^^xsd:anyURI ] ;
-fhir:value [
-a fhir:boolean ;
 fhir:v true         ]       ] ) ;
 fhir:path [ fhir:v "Appointment.participant.actor.display" ] ;
 fhir:short [ fhir:v "Text alternative for the resource" ] ;
 fhir:definition [ fhir:v "Plain text narrative that identifies the resource in addition to the resource reference." ] ;
-fhir:comment [ fhir:v "This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it." ] ;
+fhir:comment [ fhir:v "ToDo" ] ;
 fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
 fhir:max [ fhir:v "1" ] ;
 fhir:base [
@@ -13367,6 +13351,7 @@ fhir:expression [ fhir:v "hasValue() or (children().count() &gt; id.count())" ] 
 fhir:source [
 fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
 fhir:link &lt;http://hl7.org/fhir/StructureDefinition/Element&gt;         ]       ] ) ;
+fhir:mustSupport [ fhir:v true ] ;
 fhir:isModifier [ fhir:v false ] ;
 fhir:isSummary [ fhir:v true ] ;
       ( fhir:mapping [
@@ -13421,7 +13406,7 @@ fhir:expression [ fhir:v "hasValue() or (children().count() &gt; id.count())" ] 
 fhir:source [
 fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
 fhir:link &lt;http://hl7.org/fhir/StructureDefinition/Element&gt;         ]       ] ) ;
-fhir:mustSupport [ fhir:v false ] ;
+fhir:mustSupport [ fhir:v true ] ;
 fhir:isModifier [ fhir:v false ] ;
 fhir:isSummary [ fhir:v true ] ;
 fhir:binding [
@@ -13843,15 +13828,11 @@ fhir:id [ fhir:v "Appointment.participant:HL7ATCorePractitioner.actor.display" ]
 fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable"^^xsd:anyURI ] ;
 fhir:value [
 a fhir:boolean ;
-fhir:v true         ]       ] [
-fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable"^^xsd:anyURI ] ;
-fhir:value [
-a fhir:boolean ;
 fhir:v true         ]       ] ) ;
 fhir:path [ fhir:v "Appointment.participant.actor.display" ] ;
 fhir:short [ fhir:v "Text alternative for the resource" ] ;
 fhir:definition [ fhir:v "Plain text narrative that identifies the resource in addition to the resource reference." ] ;
-fhir:comment [ fhir:v "This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it." ] ;
+fhir:comment [ fhir:v "ToDo" ] ;
 fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
 fhir:max [ fhir:v "1" ] ;
 fhir:base [
@@ -13869,6 +13850,7 @@ fhir:expression [ fhir:v "hasValue() or (children().count() &gt; id.count())" ] 
 fhir:source [
 fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
 fhir:link &lt;http://hl7.org/fhir/StructureDefinition/Element&gt;         ]       ] ) ;
+fhir:mustSupport [ fhir:v true ] ;
 fhir:isModifier [ fhir:v false ] ;
 fhir:isSummary [ fhir:v true ] ;
       ( fhir:mapping [
@@ -13923,7 +13905,7 @@ fhir:expression [ fhir:v "hasValue() or (children().count() &gt; id.count())" ] 
 fhir:source [
 fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
 fhir:link &lt;http://hl7.org/fhir/StructureDefinition/Element&gt;         ]       ] ) ;
-fhir:mustSupport [ fhir:v false ] ;
+fhir:mustSupport [ fhir:v true ] ;
 fhir:isModifier [ fhir:v false ] ;
 fhir:isSummary [ fhir:v true ] ;
 fhir:binding [
@@ -14345,15 +14327,11 @@ fhir:id [ fhir:v "Appointment.participant:HL7ATCorePractitionerRole.actor.displa
 fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable"^^xsd:anyURI ] ;
 fhir:value [
 a fhir:boolean ;
-fhir:v true         ]       ] [
-fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable"^^xsd:anyURI ] ;
-fhir:value [
-a fhir:boolean ;
 fhir:v true         ]       ] ) ;
 fhir:path [ fhir:v "Appointment.participant.actor.display" ] ;
 fhir:short [ fhir:v "Text alternative for the resource" ] ;
 fhir:definition [ fhir:v "Plain text narrative that identifies the resource in addition to the resource reference." ] ;
-fhir:comment [ fhir:v "This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it." ] ;
+fhir:comment [ fhir:v "ToDo" ] ;
 fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
 fhir:max [ fhir:v "1" ] ;
 fhir:base [
@@ -14371,6 +14349,7 @@ fhir:expression [ fhir:v "hasValue() or (children().count() &gt; id.count())" ] 
 fhir:source [
 fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
 fhir:link &lt;http://hl7.org/fhir/StructureDefinition/Element&gt;         ]       ] ) ;
+fhir:mustSupport [ fhir:v true ] ;
 fhir:isModifier [ fhir:v false ] ;
 fhir:isSummary [ fhir:v true ] ;
       ( fhir:mapping [
@@ -14425,7 +14404,7 @@ fhir:expression [ fhir:v "hasValue() or (children().count() &gt; id.count())" ] 
 fhir:source [
 fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
 fhir:link &lt;http://hl7.org/fhir/StructureDefinition/Element&gt;         ]       ] ) ;
-fhir:mustSupport [ fhir:v false ] ;
+fhir:mustSupport [ fhir:v true ] ;
 fhir:isModifier [ fhir:v false ] ;
 fhir:isSummary [ fhir:v true ] ;
 fhir:binding [
@@ -16170,7 +16149,7 @@ fhir:div "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p class=\"res-he
   fhir:name [ fhir:v "HL7ATSchedulingAppointmentResponse"] ; # 
   fhir:title [ fhir:v "HL7&reg; AT Scheduling AppointmentResponse Profile"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-03-07T16:14:22+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-03-08T14:41:39+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7&reg; Austria, TC FHIR&reg;"] ; # 
   fhir:description [ fhir:v "HL7&reg; Austria FHIR&reg; Scheduling Profile for appointmentresponse data in Austria."] ; # 
   fhir:fhirVersion [ fhir:v "5.0.0"] ; # 
@@ -16970,7 +16949,7 @@ fhir:div "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p class=\"res-he
   fhir:name [ fhir:v "HL7ATSchedulingHealthcareService"] ; # 
   fhir:title [ fhir:v "HL7&reg; AT Scheduling HealthcareService Profile"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-03-07T16:14:22+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-03-08T14:41:39+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7&reg; Austria, TC FHIR&reg;"] ; # 
   fhir:description [ fhir:v "HL7&reg; Austria FHIR&reg; Scheduling Profile for healthcareservice data in Austria."] ; # 
   fhir:fhirVersion [ fhir:v "5.0.0"] ; # 
@@ -18223,7 +18202,7 @@ fhir:div "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p class=\"res-he
   fhir:name [ fhir:v "HL7ATSchedulingSchedule"] ; # 
   fhir:title [ fhir:v "HL7&reg; AT Scheduling Schedule Profile"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-03-07T16:14:22+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-03-08T14:41:39+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7&reg; Austria, TC FHIR&reg;"] ; # 
   fhir:description [ fhir:v "HL7&reg; Austria FHIR&reg; Scheduling Profile for schedule data in Austria."] ; # 
   fhir:fhirVersion [ fhir:v "5.0.0"] ; # 
@@ -18900,7 +18879,7 @@ fhir:div "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p class=\"res-he
   fhir:name [ fhir:v "HL7ATSchedulingSlot"] ; # 
   fhir:title [ fhir:v "HL7&reg; AT Scheduling Slot Profile"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-03-07T16:14:22+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-03-08T14:41:39+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7&reg; Austria, TC FHIR&reg;"] ; # 
   fhir:description [ fhir:v "HL7&reg; Austria FHIR&reg; Scheduling Profile for slot data in Austria."] ; # 
   fhir:fhirVersion [ fhir:v "5.0.0"] ; # 
@@ -19612,7 +19591,7 @@ fhir:div "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p class=\"res-he
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "AtSchedulingServiceType"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-03-07T16:14:22+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-03-08T14:41:39+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7&reg; Austria, TC FHIR&reg;"] ; # 
   fhir:description [ fhir:v "ToDo"] . # 
 
@@ -19990,6 +19969,10 @@ TC-FHIR-AG-SCHEDULING-R5\Home - FHIR&reg; v5.0.0 (        <a href="index.html">s
 )
       </li>
       <li>
+TC-FHIR-AG-SCHEDULING-R5\Interactions - FHIR&reg; v5.0.0 (        <a href="interactions.html">src</a>
+)
+      </li>
+      <li>
 TC-FHIR-AG-SCHEDULING-R5\Table of Contents - FHIR&reg; v5.0.0 (        <a href="toc.html">src</a>
 )
       </li>
@@ -20034,10 +20017,6 @@ TC-FHIR-AG-SCHEDULING-R5\healthcareService-provider-find - XML Representation - 
 )
       </li>
       <li>
-TC-FHIR-AG-SCHEDULING-R5\interactions - FHIR&reg; v5.0.0 (        <a href="interactions.html">src</a>
-)
-      </li>
-      <li>
 TC-FHIR-AG-SCHEDULING-R5\slot-hold - FHIR&reg; v5.0.0 (        <a href="OperationDefinition-slot-hold.html">src</a>
 )
       </li>
@@ -20074,7 +20053,7 @@ TCFHIRAGSchedulingR5 - Local Development build (v0.1.0) built by the FHIR (HL7&r
   "name" : "Book_Appointment_Operation",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2025-03-07T16:14:22+00:00",
+  "date" : "2025-03-08T14:41:39+00:00",
   "publisher" : "HL7&reg; Austria, TC FHIR&reg;",
   "description" : "Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactions. This operation completes the booking of an appointment. The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the book request and updates the resource status accordingly. ",
   "affectsState" : true,
@@ -20122,7 +20101,7 @@ TCFHIRAGSchedulingR5 - Local Development build (v0.1.0) built by the FHIR (HL7&r
   "name" : "Find_HealthcareService_Provider",
   "status" : "active",
   "kind" : "query",
-  "date" : "2025-03-07T16:14:22+00:00",
+  "date" : "2025-03-08T14:41:39+00:00",
   "publisher" : "HL7&reg; Austria, TC FHIR&reg;",
   "description" : "A query operation that allows to search for healthcare service providers that offer a specific healthcare service. The general information about the HealthcareService identification itself is already available in advance, either as resource or via codes. ",
   "affectsState" : false,
@@ -20225,7 +20204,7 @@ TCFHIRAGSchedulingR5 - Local Development build (v0.1.0) built by the FHIR (HL7&r
   "name" : "Hold_Slot_Operation",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2025-03-07T16:14:22+00:00",
+  "date" : "2025-03-08T14:41:39+00:00",
   "publisher" : "HL7&reg; Austria, TC FHIR&reg;",
   "description" : "Request for a hold on a selected Slot in order for the user to complete entering data for booking an appointment.  This operation precedes the booking and follows the appointment availability interaction.  The server determines if the nominated slot is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly. ",
   "affectsState" : true,
@@ -20281,7 +20260,7 @@ TCFHIRAGSchedulingR5 - Local Development build (v0.1.0) built by the FHIR (HL7&r
   "name" : "HL7ATSchedulingAppointment",
   "title" : "HL7&reg; AT Scheduling Appointment Profile",
   "status" : "draft",
-  "date" : "2025-03-07T16:14:22+00:00",
+  "date" : "2025-03-08T14:41:39+00:00",
   "publisher" : "HL7&reg; Austria, TC FHIR&reg;",
   "description" : "HL7&reg; Austria FHIR&reg; Scheduling Profile for appointment data in Austria.",
   "fhirVersion" : "5.0.0",
@@ -23459,16 +23438,12 @@ TCFHIRAGSchedulingR5 - Local Development build (v0.1.0) built by the FHIR (HL7&r
           {
             "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
             "valueBoolean" : true
-          },
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
-            "valueBoolean" : true
           }
         ],
         "path" : "Appointment.participant.actor.display",
         "short" : "Text alternative for the resource",
         "definition" : "Plain text narrative that identifies the resource in addition to the resource reference.",
-        "comment" : "This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it.",
+        "comment" : "ToDo",
         "min" : 0,
         "max" : "1",
         "base" : {
@@ -23493,6 +23468,7 @@ TCFHIRAGSchedulingR5 - Local Development build (v0.1.0) built by the FHIR (HL7&r
             "source" : "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
+        "mustSupport" : true,
         "isModifier" : false,
         "isSummary" : true,
         "mapping" : [
@@ -23569,7 +23545,7 @@ TCFHIRAGSchedulingR5 - Local Development build (v0.1.0) built by the FHIR (HL7&r
             "source" : "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
-        "mustSupport" : false,
+        "mustSupport" : true,
         "isModifier" : false,
         "isSummary" : true,
         "binding" : {
@@ -24167,16 +24143,12 @@ TCFHIRAGSchedulingR5 - Local Development build (v0.1.0) built by the FHIR (HL7&r
           {
             "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
             "valueBoolean" : true
-          },
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
-            "valueBoolean" : true
           }
         ],
         "path" : "Appointment.participant.actor.display",
         "short" : "Text alternative for the resource",
         "definition" : "Plain text narrative that identifies the resource in addition to the resource reference.",
-        "comment" : "This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it.",
+        "comment" : "ToDo",
         "min" : 0,
         "max" : "1",
         "base" : {
@@ -24201,6 +24173,7 @@ TCFHIRAGSchedulingR5 - Local Development build (v0.1.0) built by the FHIR (HL7&r
             "source" : "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
+        "mustSupport" : true,
         "isModifier" : false,
         "isSummary" : true,
         "mapping" : [
@@ -24277,7 +24250,7 @@ TCFHIRAGSchedulingR5 - Local Development build (v0.1.0) built by the FHIR (HL7&r
             "source" : "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
-        "mustSupport" : false,
+        "mustSupport" : true,
         "isModifier" : false,
         "isSummary" : true,
         "binding" : {
@@ -24875,16 +24848,12 @@ TCFHIRAGSchedulingR5 - Local Development build (v0.1.0) built by the FHIR (HL7&r
           {
             "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
             "valueBoolean" : true
-          },
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
-            "valueBoolean" : true
           }
         ],
         "path" : "Appointment.participant.actor.display",
         "short" : "Text alternative for the resource",
         "definition" : "Plain text narrative that identifies the resource in addition to the resource reference.",
-        "comment" : "This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it.",
+        "comment" : "ToDo",
         "min" : 0,
         "max" : "1",
         "base" : {
@@ -24909,6 +24878,7 @@ TCFHIRAGSchedulingR5 - Local Development build (v0.1.0) built by the FHIR (HL7&r
             "source" : "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
+        "mustSupport" : true,
         "isModifier" : false,
         "isSummary" : true,
         "mapping" : [
@@ -24985,7 +24955,7 @@ TCFHIRAGSchedulingR5 - Local Development build (v0.1.0) built by the FHIR (HL7&r
             "source" : "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
-        "mustSupport" : false,
+        "mustSupport" : true,
         "isModifier" : false,
         "isSummary" : true,
         "binding" : {
@@ -27393,7 +27363,7 @@ TCFHIRAGSchedulingR5 - Local Development build (v0.1.0) built by the FHIR (HL7&r
   "name" : "HL7ATSchedulingAppointmentResponse",
   "title" : "HL7&reg; AT Scheduling AppointmentResponse Profile",
   "status" : "draft",
-  "date" : "2025-03-07T16:14:22+00:00",
+  "date" : "2025-03-08T14:41:39+00:00",
   "publisher" : "HL7&reg; Austria, TC FHIR&reg;",
   "description" : "HL7&reg; Austria FHIR&reg; Scheduling Profile for appointmentresponse data in Austria.",
   "fhirVersion" : "5.0.0",
@@ -28447,7 +28417,7 @@ TCFHIRAGSchedulingR5 - Local Development build (v0.1.0) built by the FHIR (HL7&r
   "name" : "HL7ATSchedulingHealthcareService",
   "title" : "HL7&reg; AT Scheduling HealthcareService Profile",
   "status" : "draft",
-  "date" : "2025-03-07T16:14:22+00:00",
+  "date" : "2025-03-08T14:41:39+00:00",
   "publisher" : "HL7&reg; Austria, TC FHIR&reg;",
   "description" : "HL7&reg; Austria FHIR&reg; Scheduling Profile for healthcareservice data in Austria.",
   "fhirVersion" : "5.0.0",
@@ -30106,7 +30076,7 @@ TCFHIRAGSchedulingR5 - Local Development build (v0.1.0) built by the FHIR (HL7&r
   "name" : "HL7ATSchedulingSchedule",
   "title" : "HL7&reg; AT Scheduling Schedule Profile",
   "status" : "draft",
-  "date" : "2025-03-07T16:14:22+00:00",
+  "date" : "2025-03-08T14:41:39+00:00",
   "publisher" : "HL7&reg; Austria, TC FHIR&reg;",
   "description" : "HL7&reg; Austria FHIR&reg; Scheduling Profile for schedule data in Austria.",
   "fhirVersion" : "5.0.0",
@@ -30967,7 +30937,7 @@ TCFHIRAGSchedulingR5 - Local Development build (v0.1.0) built by the FHIR (HL7&r
   "name" : "HL7ATSchedulingSlot",
   "title" : "HL7&reg; AT Scheduling Slot Profile",
   "status" : "draft",
-  "date" : "2025-03-07T16:14:22+00:00",
+  "date" : "2025-03-08T14:41:39+00:00",
   "publisher" : "HL7&reg; Austria, TC FHIR&reg;",
   "description" : "HL7&reg; Austria FHIR&reg; Scheduling Profile for slot data in Austria.",
   "fhirVersion" : "5.0.0",
@@ -31888,7 +31858,7 @@ TCFHIRAGSchedulingR5 - Local Development build (v0.1.0) built by the FHIR (HL7&r
   "version" : "0.1.0",
   "name" : "AtSchedulingServiceType",
   "status" : "draft",
-  "date" : "2025-03-07T16:14:22+00:00",
+  "date" : "2025-03-08T14:41:39+00:00",
   "publisher" : "HL7&reg; Austria, TC FHIR&reg;",
   "description" : "ToDo"
 } (        <a href="ValueSet-AtSchedulingServiceType.json.html">src</a>
