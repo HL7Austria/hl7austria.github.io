@@ -144,9 +144,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#find-available-healthcareservice-providers-findhsp" id="markdown-toc-find-available-healthcareservice-providers-findhsp">Find available HealthcareService-Providers ($findHSP)</a></li>
   <li><a href="#transmit-patient-information" id="markdown-toc-transmit-patient-information">Transmit Patient Information</a></li>
   <li><a href="#find-available-healthcareservices" id="markdown-toc-find-available-healthcareservices">Find available HealthcareServices</a></li>
+  <li><a href="#find-available-healthcareservice-providers-findhsp" id="markdown-toc-find-available-healthcareservice-providers-findhsp">Find available HealthcareService-Providers ($findHSP)</a></li>
   <li><a href="#find-available-schedules" id="markdown-toc-find-available-schedules">Find available Schedules</a></li>
   <li><a href="#find-available-slots-for-potential-appointments" id="markdown-toc-find-available-slots-for-potential-appointments">Find available Slots for potential Appointments</a></li>
   <li><a href="#reserve-slot-hold" id="markdown-toc-reserve-slot-hold">Reserve Slot ($hold)</a></li>
@@ -160,8 +160,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 <p>This implementation guide supports the following interactions for a scheduling process.</p>
 
-<h3 id="find-available-healthcareservice-providers-findhsp">Find available HealthcareService-Providers ($findHSP)</h3>
-<p>ToDo</p>
 <h3 id="transmit-patient-information">Transmit Patient Information</h3>
 <p>Todo</p>
 
@@ -171,6 +169,23 @@ TODO: Referenz auf HealthcareService Profil
 TODO: Hinweis ValueSet specialty
 TODO: Hinweis Suche nach Region
 TODO: Suche nach Practitioner (providedBy referenziert nur auf Organization)</p>
+<h3 id="find-available-healthcareservice-providers-findhsp">Find available HealthcareService-Providers ($findHSP)</h3>
+<p>Depending on the scheduling scenario that is implementented ("peer-to-peer" appointment booking, availability of a central platform for scheduling, …), it might be necessary not only to find healthcare services that are offerd but also to find out which medical institution is offering them. Additionally, finding healthcare service providers that offer a service close to a location or within a certain zip-code area might be useful as well.</p>
+
+<p>For such a purpose, this IG provides a new operation called <a href="OperationDefinition-healthcareService-provider-find.html">$findHSP</a> (find Healthcare Service Provider).</p>
+
+<p>TODO: include diagram</p>
+
+<p>This operation uses either a full HealthCareService resource as input parameter or dedicated codes for it like <code class="language-plaintext highlighter-rouge">HealthcareService.category</code>, <code class="language-plaintext highlighter-rouge">HealthcareService.type</code> or <code class="language-plaintext highlighter-rouge">HealthcareService.specialty</code>.</p>
+
+<p>In addition to that a Scheduling Client can provide further filter criteria in its search like:</p>
+<ul>
+  <li>a region where a healthcare service should ideally be offered with either a Location reference or a zip code</li>
+  <li>the desired availablity time of a healthcare service</li>
+</ul>
+
+<p>The response will be a Bundle consisting of the HealthcareService resource and a list of healthcare service providers (Organization, Practitioner, PractitionerRole) that offer the requested service.</p>
+
 <h3 id="find-available-schedules">Find available Schedules</h3>
 <p>Nach der (optionalen) Auswahl eines HealthcareServices kann der Scheduling Client die verfügbaren Schedules vom Scheduling Server abrufen. Diese Schedules fungieren als "Kalender", in dem Termine gebucht werden können. Details zur technischen Umsetzung siehe TODO Referenz Schedule Profil.
 Um nur relevante Sucheregebnisse MUSS die Abfrage mindestens einen Suchparameter (HealthcareService, Practitioner oder Organization) enthalten.</p>
@@ -255,7 +270,7 @@ TODO Referenz return type (Appointment oder AppointmentResponse?)</p>
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package TC-FHIR-AG-Scheduling-R5#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Sat, Mar 8, 2025 15:02+0000">2025-03-08</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package TC-FHIR-AG-Scheduling-R5#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Sat, Mar 8, 2025 16:17+0000">2025-03-08</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
