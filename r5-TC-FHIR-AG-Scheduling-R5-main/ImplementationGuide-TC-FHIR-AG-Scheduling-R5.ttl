@@ -1,5 +1,6 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -10,13 +11,13 @@
   fhir:id [ fhir:v "TC-FHIR-AG-Scheduling-R5"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide TC-FHIR-AG-Scheduling-R5</b></p><a name=\"TC-FHIR-AG-Scheduling-R5\"> </a><a name=\"hcTC-FHIR-AG-Scheduling-R5\"> </a><a name=\"TC-FHIR-AG-Scheduling-R5-en-US\"> </a><h2>TCFHIRAGSchedulingR5</h2><p>The official URL for this implementation guide is: </p><pre>http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ImplementationGuide/TC-FHIR-AG-Scheduling-R5</pre></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide TC-FHIR-AG-Scheduling-R5</b></p><a name=\"TC-FHIR-AG-Scheduling-R5\"> </a><a name=\"hcTC-FHIR-AG-Scheduling-R5\"> </a><a name=\"TC-FHIR-AG-Scheduling-R5-en-US\"> </a><h2>TCFHIRAGSchedulingR5</h2><p>The official URL for this implementation guide is: </p><pre>http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ImplementationGuide/TC-FHIR-AG-Scheduling-R5</pre></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:url [ fhir:v "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ImplementationGuide/TC-FHIR-AG-Scheduling-R5"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "TCFHIRAGSchedulingR5"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-02-07T11:56:07+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-03-08T15:01:54+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7® Austria, TC FHIR®"] ; # 
   fhir:packageId [ fhir:v "TC-FHIR-AG-Scheduling-R5"] ; # 
   fhir:license [ fhir:v "CC0-1.0"] ; # 
@@ -25,7 +26,10 @@
      fhir:id [ fhir:v "hl7tx" ] ;
      fhir:extension ( [
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "Automatically added as a dependency - all IGs depend on HL7 Terminology" ]
+       fhir:value [
+         a fhir:markdown ;
+         fhir:v "Automatically added as a dependency - all IGs depend on HL7 Terminology"
+       ]
      ] ) ;
      fhir:uri [
        fhir:v "http://terminology.hl7.org/ImplementationGuide/hl7.terminology"^^xsd:anyURI ;
@@ -37,14 +41,17 @@
      fhir:id [ fhir:v "hl7ext" ] ;
      fhir:extension ( [
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack" ]
+       fhir:value [
+         a fhir:markdown ;
+         fhir:v "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
+       ]
      ] ) ;
      fhir:uri [
        fhir:v "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"^^xsd:anyURI ;
        fhir:link <http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions>
      ] ;
      fhir:packageId [ fhir:v "hl7.fhir.uv.extensions.r5" ] ;
-     fhir:version [ fhir:v "5.1.0" ]
+     fhir:version [ fhir:v "5.2.0" ]
   ] [
      fhir:id [ fhir:v "hl7_at_fhir_core_r5" ] ;
      fhir:uri [
@@ -57,12 +64,18 @@
   fhir:definition [
      fhir:extension ( [
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "hl7.fhir.uv.tools.r5#0.3.0" ]
+       fhir:value [
+         a fhir:code ;
+         fhir:v "hl7.fhir.uv.tools.r5#0.3.0"
+       ]
      ] ) ;
      fhir:resource ( [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OperationDefinition" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "OperationDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/appointment-book> ;
@@ -70,11 +83,14 @@
        ] ;
        fhir:name [ fhir:v "appointment-book" ] ;
        fhir:description [ fhir:v "Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactions. This operation completes the booking of an appointment. The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the book request and updates the resource status accordingly." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+       fhir:isExample [ fhir:v false ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType> ;
@@ -82,11 +98,14 @@
        ] ;
        fhir:name [ fhir:v "AtSchedulingServiceType" ] ;
        fhir:description [ fhir:v "ToDo" ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+       fhir:isExample [ fhir:v false ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OperationDefinition" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "OperationDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/healthcareService-provider-find> ;
@@ -94,11 +113,14 @@
        ] ;
        fhir:name [ fhir:v "healthcareService-provider-find" ] ;
        fhir:description [ fhir:v "A query operation that allows to search for healthcare service providers that offer a specific healthcare service. The general information about the HealthcareService identification itself is already available in advance, either as resource or via codes." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+       fhir:isExample [ fhir:v false ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment> ;
@@ -106,11 +128,14 @@
        ] ;
        fhir:name [ fhir:v "HL7® AT Scheduling Appointment Profile" ] ;
        fhir:description [ fhir:v "HL7® Austria FHIR® Scheduling Profile for appointment data in Austria." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+       fhir:isExample [ fhir:v false ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointmentresponse> ;
@@ -118,11 +143,14 @@
        ] ;
        fhir:name [ fhir:v "HL7® AT Scheduling AppointmentResponse Profile" ] ;
        fhir:description [ fhir:v "HL7® Austria FHIR® Scheduling Profile for appointmentresponse data in Austria." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+       fhir:isExample [ fhir:v false ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice> ;
@@ -130,11 +158,14 @@
        ] ;
        fhir:name [ fhir:v "HL7® AT Scheduling HealthcareService Profile" ] ;
        fhir:description [ fhir:v "HL7® Austria FHIR® Scheduling Profile for healthcareservice data in Austria." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+       fhir:isExample [ fhir:v false ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-schedule> ;
@@ -142,11 +173,14 @@
        ] ;
        fhir:name [ fhir:v "HL7® AT Scheduling Schedule Profile" ] ;
        fhir:description [ fhir:v "HL7® Austria FHIR® Scheduling Profile for schedule data in Austria." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+       fhir:isExample [ fhir:v false ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot> ;
@@ -154,11 +188,14 @@
        ] ;
        fhir:name [ fhir:v "HL7® AT Scheduling Slot Profile" ] ;
        fhir:description [ fhir:v "HL7® Austria FHIR® Scheduling Profile for slot data in Austria." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+       fhir:isExample [ fhir:v false ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "OperationDefinition" ]
+         fhir:value [
+           a fhir:string ;
+           fhir:v "OperationDefinition"
+         ]
        ] ) ;
        fhir:reference [
          fhir:link <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/slot-hold> ;
@@ -166,17 +203,31 @@
        ] ;
        fhir:name [ fhir:v "slot-hold" ] ;
        fhir:description [ fhir:v "Request for a hold on a selected Slot in order for the user to complete entering data for booking an appointment.  This operation precedes the booking and follows the appointment availability interaction.  The server determines if the nominated slot is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly." ] ;
-       fhir:isExample [ fhir:v "false"^^xsd:boolean ]
+       fhir:isExample [ fhir:v false ]
      ] ) ;
      fhir:page [
-       fhir:source [ fhir:v "toc.html"^^xsd:anyURI ] ;
+       fhir:source [
+         a fhir:url ;
+         fhir:v "toc.html"^^xsd:anyURI
+       ] ;
        fhir:name [ fhir:v "toc.html"^^xsd:anyURI ] ;
        fhir:title [ fhir:v "Table of Contents" ] ;
        fhir:generation [ fhir:v "html" ] ;
        fhir:page ( [
-         fhir:source [ fhir:v "index.html"^^xsd:anyURI ] ;
+         fhir:source [
+           a fhir:url ;
+           fhir:v "index.html"^^xsd:anyURI
+         ] ;
          fhir:name [ fhir:v "index.html"^^xsd:anyURI ] ;
          fhir:title [ fhir:v "Home" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [
+           a fhir:url ;
+           fhir:v "interactions.html"^^xsd:anyURI
+         ] ;
+         fhir:name [ fhir:v "interactions.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Interactions" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] )
      ] ;
