@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>FHIR.EXAMPLE\Akteure - FHIR® v5.0.0</title>
+    <title>ELGA.MOPED\Akteure - FHIR® v5.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -138,7 +138,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="col-12">
   <!-- at-fhir-ig-template begin -->
   <div class="alert alert-warning" role="alert">
-    <!--ReleaseHeader--><p id="publish-box">Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED) - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://example.org/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+    <!--ReleaseHeader--><p id="publish-box">Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED) - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://elga.moped.at/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   </div>
   <!-- at-fhir-ig-template end -->
   <h2>Akteure</h2>
@@ -180,16 +180,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     Moped[Moped] 
 
     KH ---&gt;|<a href="OperationDefinition-MOPED.Patient.Aufnehmen.html"> $aufnehmen</a>| Moped 
-    KH --&gt;|<a href="OperationDefinition-MOPED.CoverageEligibilityRequest.Anfragen.html"> $anfragen</a>| Moped
+    KH --&gt;|<a href="OperationDefinition-MOPED.VAERequest.Anfragen.html"> $anfragen</a>| Moped
     KH --&gt;|<a href="OperationDefinition-MOPED.Patient.Entlassen.html"> $entlassen</a>| Moped 
     KH --&gt;|<a href="OperationDefinition-MOPED.Encounter.erfassen.html">$erfassen</a>| Moped
     KH --&gt;|<a href="OperationDefinition-MOPED.Encounter.Abrechnen.html"> $abrechnen</a>| Moped
-    Moped --&gt;|<a href="StructureDefinition-MopedCoverageEligibilityResponse.html"> GET CoverageEligibilityResponse</a>| KH
+    Moped --&gt;|<a href="StructureDefinition-MopedVAEResponse.html"> GET VAEResponse</a>| KH
     Moped ---&gt;|<a href="StructureDefinition-MopedLKFResponse.html"> GET ClaimResponse</a>| KH
 
     Moped ---&gt;|<a href="StructureDefinition-MopedLKFResponse.html"> GET ClaimResponse</a>| SV
-    Moped ---&gt;|<a href="StructureDefinition-MopedCoverageEligibilityRequest.html"> GET CoverageEligibilityRequest</a>| SV
-    SV ---&gt;|<a href="OperationDefinition-MOPED.CoverageEligibilityResponse.Beantworten.html"> $beantworten</a>| Moped
+    Moped ---&gt;|<a href="StructureDefinition-MopedVAERequest.html"> GET VAERequest</a>| SV
+    SV ---&gt;|<a href="OperationDefinition-MOPED.VAEResponse.Beantworten.html"> $beantworten</a>| Moped
 
     Moped ---&gt;|<a href="StructureDefinition-MopedLKFRequest.html"> GET Claim</a>| LGF
     LGF ---&gt;|<a href="OperationDefinition-MOPED.ClaimResponse.Freigeben.html"> $freigeben</a>| Moped
@@ -207,11 +207,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     KH[Krankenanstalt]
     Moped[<a href="#top">Moped</a>] 
     KH ---&gt;|<a href="OperationDefinition-MOPED.Patient.Aufnehmen.html"> $aufnehmen</a>| Moped 
-    KH --&gt;|<a href="OperationDefinition-MOPED.CoverageEligibilityRequest.Anfragen.html"> $anfragen</a>| Moped
+    KH --&gt;|<a href="OperationDefinition-MOPED.VAERequest.Anfragen.html"> $anfragen</a>| Moped
     KH --&gt;|<a href="OperationDefinition-MOPED.Patient.Entlassen.html"> $entlassen</a>| Moped 
     KH --&gt;|<a href="OperationDefinition-MOPED.Encounter.erfassen.html">$erfassen</a>| Moped
     KH --&gt;|<a href="OperationDefinition-MOPED.Encounter.Abrechnen.html"> $abrechnen</a>| Moped
-    Moped --&gt;|<a href="StructureDefinition-MopedCoverageEligibilityResponse.html"> GET CoverageEligibilityResponse</a>| KH
+    Moped --&gt;|<a href="StructureDefinition-MopedVAEResponse.html"> GET VAEResponse</a>| KH
     Moped ---&gt;|<a href="StructureDefinition-MopedLKFResponse.html"> GET ClaimResponse</a>| KH
 </pre>
 
@@ -224,8 +224,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     SV[Sozialversicherung]
     Moped[<a href="#top">Moped</a>] 
     Moped ---&gt;|<a href="StructureDefinition-MopedLKFResponse.html"> GET ClaimResponse</a>| SV
-    Moped ---&gt;|<a href="StructureDefinition-MopedCoverageEligibilityRequest.html"> GET CoverageEligibilityRequest</a>| SV
-    SV ---&gt;|<a href="OperationDefinition-MOPED.CoverageEligibilityResponse.Beantworten.html"> $beantworten</a>| Moped
+    Moped ---&gt;|<a href="StructureDefinition-MopedVAERequest.html"> GET VAERequest</a>| SV
+    SV ---&gt;|<a href="OperationDefinition-MOPED.VAEResponse.Beantworten.html"> $beantworten</a>| Moped
 </pre>
 
 <h3 id="actor-LGF">Landesgesundheitsfonds</h3>
@@ -281,7 +281,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.elga.gv.at/">ELGA</a>.  Package fhir.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Thu, Feb 13, 2025 14:22+0000">2025-02-13</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Mar 11, 2025 16:16+0000">2025-03-11</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

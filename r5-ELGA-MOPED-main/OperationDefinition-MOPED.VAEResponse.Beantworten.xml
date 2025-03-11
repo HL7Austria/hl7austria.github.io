@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="MOPED.VAEResponse.Beantworten"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition MOPED.VAEResponse.Beantworten</b></p><a name="MOPED.VAEResponse.Beantworten"> </a><a name="hcMOPED.VAEResponse.Beantworten"> </a><a name="MOPED.VAEResponse.Beantworten-en-US"> </a><p>URL: [base]/ClaimResponse/$beantworten</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>MopedVAEResponse</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/claimresponse.html">ClaimResponse</a></td><td/><td><div><p>Der <em>MopedVAEResponse</em> Parameter beinhaltet sämtliche Details zur Antwort auf den VAERequest.</p>
+</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>
+</div></td></tr></table></div>
+  </text>
+  <url value="https://elga.moped.at/OperationDefinition/MOPED.VAEResponse.Beantworten"/>
+  <version value="0.1.0"/>
+  <name value="MOPED_VAEResponse_Beantworten"/>
+  <title value="MOPED VAERequest $beantworten (POC)"/>
+  <status value="draft"/>
+  <kind value="operation"/>
+  <date value="2025-03-11T16:15:22+00:00"/>
+  <publisher value="ELGA GmbH"/>
+  <contact>
+    <name value="ELGA GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://elga.gv.at"/>
+    </telecom>
+  </contact>
+  <description value="Die $beantworten Operation wird aufgerufen, wenn eine Versichertenanspruchserklärung beantwortet wird."/>
+  <purpose value="&#xA;**Wer ruft diese Operation in welchem Zusammenhang auf?**&#xA;&#xA;Die Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die $beantworten Operation wird aufgerufen, wenn der MopedVAERequest eines Krankenhauses beantwortet wird.&#xA;&#xA;**Voraussetzungen für den Aufruf**&#xA;&#xA;* Account-Status: `Aufnahme Freigegeben`&#xA;&#xA;**Detaillierte Business-Logik**&#xA;&#xA;1. Die MopedVAEResponse wird lt. Regeln (siehe unten) validiert und eingespielt&#xA;2. Falls Schritt 1 erfolgreich war, wird die Ressource Account gesucht (`MopedVAEResponse.request.encounter[MopedEncounter].account`; MopedVAEResponse lt. Operation-Parameter) und auf `SV verarbeitet` gesetzt&#xA;&#xA;**Validierung / Fehlerbehandlung**&#xA;&#xA;* MopedVAEResponse.patient muss gleich mit `MopedVAEResponse.request.patient`und mit `MopedVAEResponse.request.encounter[MopedEncounter].subject` und mit `MopedVAEResponse.request.encounter[MopedEncounter].account.subject` sein&#xA;* MopedVAEResponse.requestor muss gleich sein mit `MopedVAEResponse.request.provider` und mit `MopedVAEResponse.request.encounter.serviceProvider`&#xA;&#xA;**Weitere Hinweise**&#xA;&#xA;**Annahmen an das BeS**&#xA;* Es wurde vorab geprüft, ob *MopedVAEResponse.insurance* auch der SV entspricht, der die Operation aufruft. Somit ist sichergestellt, dass jede SV nur eigene MopedVAERequests beantworten kann.&#xA;"/>
+  <affectsState value="true"/>
+  <code value="beantworten"/>
+  <resource value="ClaimResponse"/>
+  <system value="false"/>
+  <type value="true"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="MopedVAEResponse"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der *MopedVAEResponse* Parameter beinhaltet sämtliche Details zur Antwort auf den VAERequest."/>
+    <type value="ClaimResponse"/>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der *return* Parameter gibt Auskunft über den Erfolg der Operation."/>
+    <type value="Resource"/>
+    <targetProfile value="http://hl7.org/fhir/StructureDefinition/OperationOutcome"/>
+  </parameter>
+</OperationDefinition>
