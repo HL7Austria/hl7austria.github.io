@@ -183,7 +183,7 @@
         
           Draft
           
-            as of 2025-03-02
+            as of 2025-03-11
           
         
       </td>
@@ -221,7 +221,7 @@ fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p
   <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.title">fhir:title</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#string">fhir:v</a> &quot;MOPED LKFRequest $freigeben (POC)&quot;] ; # 
   <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#code">fhir:v</a> &quot;draft&quot;] ; # 
   <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.kind">fhir:kind</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#code">fhir:v</a> &quot;operation&quot;] ; # 
-  <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.date">fhir:date</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#dateTime">fhir:v</a> &quot;2025-03-02T20:57:05+00:00&quot;^^xsd:dateTime] ; # 
+  <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.date">fhir:date</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#dateTime">fhir:v</a> &quot;2025-03-11T16:13:30+00:00&quot;^^xsd:dateTime] ; # 
   <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.publisher">fhir:publisher</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#string">fhir:v</a> &quot;ELGA GmbH&quot;] ; # 
   <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.contact">fhir:contact</a> ( [
 <a href="http://hl7.org/fhir/R5/metadatatypes.html#ContactDetail#ContactDetail.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#string">fhir:v</a> &quot;ELGA GmbH&quot; ] ;
@@ -231,16 +231,16 @@ fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p
   ] ) ; # 
   <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.description">fhir:description</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#markdown">fhir:v</a> &quot;Die $freigeben Operation wird aufgerufen, wenn eine Abrechnung beantwortet wird und freigegeben wird.&quot;] ; # 
   <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.purpose">fhir:purpose</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#markdown">fhir:v</a> &quot;\n**Wer ruft diese Operation in welchem Zusammenhang auf?**\n\nDie Operation wird vom Akteur Landesgesundheitsfonds (LFG) aufgerufen. Die $freigeben Operation wird aufgerufen, wenn die Abrechnung eines Krankenhauses freigegeben wird.\n\n**Voraussetzungen für den Aufruf**\n\n* Account-Status: `Vorläufige Meldung` oder `Endgültige Meldung`\n\n**Detaillierte Business-Logik**\n\n1. Die MopedLKFResponse wird lt. Regeln (siehe unten) validiert und eingespielt\n2. Falls Schritt 1 erfolgreich war, wird der MopedLKFResponse.encounter.account.workflowStatus (MopedLKFResponse aus Operation-Parameter; der Encounter vom Profil MopedEncounter) wird auf \n   * `Vorläufige Freigabe` gesetzt, falls der vorherige Status `Vorläufige Meldung` war\n   * `Endgültige Freigabe` gesetzt, falls der vorherige Status `Endgültige Meldung` war\n3. Alle Referenzen sollen versionsspezifisch aufgelöst werden.\n\n**Validierung / Fehlerbehandlung**\n\n* MopedLKFResponse.status muss `active` sein (lt. Profil)\n* MopedLKFResponse.type muss `institutional` sein (lt. Profil)\n* MopedLKFResponse.use muss `claim` sein (lt. Profil)\n* MopedLKFResponse.patient muss gleich MopedLKFResponse.request.patient sein\n* MopedLKFResponse.insurer muss gleich MopedLKFResponse.request.insurer sein\n* MopedLKFResponse.requestor muss gleich MopedLKFResponse.request.provider sein\n* MopedLKFResponse.outcome muss `complete` oder `partial` sein\n* MopedLKFResponse.insurance.coverage muss gleich der Claim.insurance.coverage sein\n\n**Weitere Hinweise**\n\n* Hinweis 1: Für den Fehlerfall gibt es eine weitere Operation die eine Korrekturaufforderung anstelle einer Freigabe macht\n\n**Annahmen an das BeS**\n* Es wurde vorab geprüft, ob die MopedLKFResponse auch dem LGF entspricht, der die Operation aufruft. Somit ist sichergestellt, dass jeder LGF nur eigene Claims beantworten kann.\n&quot;] ; # 
-  <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.affectsState">fhir:affectsState</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#boolean">fhir:v</a> &quot;true&quot;^^xsd:boolean] ; # 
+  <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.affectsState">fhir:affectsState</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#boolean">fhir:v</a> true] ; # 
   <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#code">fhir:v</a> &quot;freigeben&quot;] ; # 
   <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.resource">fhir:resource</a> ( [ <a href="http://hl7.org/fhir/R5/datatypes.html#code">fhir:v</a> &quot;ClaimResponse&quot;] ) ; # 
-  <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#boolean">fhir:v</a> &quot;false&quot;^^xsd:boolean] ; # 
-  <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.type">fhir:type</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#boolean">fhir:v</a> &quot;true&quot;^^xsd:boolean] ; # 
-  <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.instance">fhir:instance</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#boolean">fhir:v</a> &quot;false&quot;^^xsd:boolean] ; # 
+  <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#boolean">fhir:v</a> false] ; # 
+  <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.type">fhir:type</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#boolean">fhir:v</a> true] ; # 
+  <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.instance">fhir:instance</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#boolean">fhir:v</a> false] ; # 
   <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter">fhir:parameter</a> ( [
 <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#code">fhir:v</a> &quot;MopedLKFResponse&quot; ] ;
 <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.use">fhir:use</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#code">fhir:v</a> &quot;in&quot; ] ;
-<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.min">fhir:min</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#integer">fhir:v</a> &quot;1&quot;^^xsd:integer ] ;
+<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.min">fhir:min</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#integer">fhir:v</a> 1 ] ;
 <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.max">fhir:max</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#string">fhir:v</a> &quot;1&quot; ] ;
 <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.documentation">fhir:documentation</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#markdown">fhir:v</a> &quot;Der *MopedLKFResponse* Parameter beinhaltet sämtliche Details zur Antwort auf den Claim.&quot; ] ;
 <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.type">fhir:type</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#code">fhir:v</a> &quot;ClaimResponse&quot; ] ;
@@ -250,7 +250,7 @@ fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p
   ] [
 <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#code">fhir:v</a> &quot;return&quot; ] ;
 <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.use">fhir:use</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#code">fhir:v</a> &quot;out&quot; ] ;
-<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.min">fhir:min</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#integer">fhir:v</a> &quot;1&quot;^^xsd:integer ] ;
+<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.min">fhir:min</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#integer">fhir:v</a> 1 ] ;
 <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.max">fhir:max</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#string">fhir:v</a> &quot;1&quot; ] ;
 <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.documentation">fhir:documentation</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#markdown">fhir:v</a> &quot;Der *return* Parameter gibt Auskunft über den Erfolg der Operation.&quot; ] ;
 <a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.type">fhir:type</a> [ <a href="http://hl7.org/fhir/R5/datatypes.html#code">fhir:v</a> &quot;Resource&quot; ] ;
@@ -284,7 +284,7 @@ fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Sun, Mar 2, 2025 20:57+0000">2025-03-02</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Mar 11, 2025 16:14+0000">2025-03-11</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

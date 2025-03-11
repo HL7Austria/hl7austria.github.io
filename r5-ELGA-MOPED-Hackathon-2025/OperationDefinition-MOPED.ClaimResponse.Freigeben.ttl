@@ -19,7 +19,7 @@
   fhir:title [ fhir:v "MOPED LKFRequest $freigeben (POC)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
   fhir:kind [ fhir:v "operation"] ; # 
-  fhir:date [ fhir:v "2025-03-02T20:57:05+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-03-11T16:13:30+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ELGA GmbH" ] ;
@@ -30,16 +30,16 @@
   ] ) ; # 
   fhir:description [ fhir:v "Die $freigeben Operation wird aufgerufen, wenn eine Abrechnung beantwortet wird und freigegeben wird."] ; # 
   fhir:purpose [ fhir:v "\n**Wer ruft diese Operation in welchem Zusammenhang auf?**\n\nDie Operation wird vom Akteur Landesgesundheitsfonds (LFG) aufgerufen. Die $freigeben Operation wird aufgerufen, wenn die Abrechnung eines Krankenhauses freigegeben wird.\n\n**Voraussetzungen für den Aufruf**\n\n* Account-Status: `Vorläufige Meldung` oder `Endgültige Meldung`\n\n**Detaillierte Business-Logik**\n\n1. Die MopedLKFResponse wird lt. Regeln (siehe unten) validiert und eingespielt\n2. Falls Schritt 1 erfolgreich war, wird der MopedLKFResponse.encounter.account.workflowStatus (MopedLKFResponse aus Operation-Parameter; der Encounter vom Profil MopedEncounter) wird auf \n   * `Vorläufige Freigabe` gesetzt, falls der vorherige Status `Vorläufige Meldung` war\n   * `Endgültige Freigabe` gesetzt, falls der vorherige Status `Endgültige Meldung` war\n3. Alle Referenzen sollen versionsspezifisch aufgelöst werden.\n\n**Validierung / Fehlerbehandlung**\n\n* MopedLKFResponse.status muss `active` sein (lt. Profil)\n* MopedLKFResponse.type muss `institutional` sein (lt. Profil)\n* MopedLKFResponse.use muss `claim` sein (lt. Profil)\n* MopedLKFResponse.patient muss gleich MopedLKFResponse.request.patient sein\n* MopedLKFResponse.insurer muss gleich MopedLKFResponse.request.insurer sein\n* MopedLKFResponse.requestor muss gleich MopedLKFResponse.request.provider sein\n* MopedLKFResponse.outcome muss `complete` oder `partial` sein\n* MopedLKFResponse.insurance.coverage muss gleich der Claim.insurance.coverage sein\n\n**Weitere Hinweise**\n\n* Hinweis 1: Für den Fehlerfall gibt es eine weitere Operation die eine Korrekturaufforderung anstelle einer Freigabe macht\n\n**Annahmen an das BeS**\n* Es wurde vorab geprüft, ob die MopedLKFResponse auch dem LGF entspricht, der die Operation aufruft. Somit ist sichergestellt, dass jeder LGF nur eigene Claims beantworten kann.\n"] ; # 
-  fhir:affectsState [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:affectsState [ fhir:v true] ; # 
   fhir:code [ fhir:v "freigeben"] ; # 
   fhir:resource ( [ fhir:v "ClaimResponse"] ) ; # 
-  fhir:system [ fhir:v "false"^^xsd:boolean] ; # 
-  fhir:type [ fhir:v "true"^^xsd:boolean] ; # 
-  fhir:instance [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:system [ fhir:v false] ; # 
+  fhir:type [ fhir:v true] ; # 
+  fhir:instance [ fhir:v false] ; # 
   fhir:parameter ( [
      fhir:name [ fhir:v "MopedLKFResponse" ] ;
      fhir:use [ fhir:v "in" ] ;
-     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:min [ fhir:v 1 ] ;
      fhir:max [ fhir:v "1" ] ;
      fhir:documentation [ fhir:v "Der *MopedLKFResponse* Parameter beinhaltet sämtliche Details zur Antwort auf den Claim." ] ;
      fhir:type [ fhir:v "ClaimResponse" ] ;
@@ -50,7 +50,7 @@
   ] [
      fhir:name [ fhir:v "return" ] ;
      fhir:use [ fhir:v "out" ] ;
-     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:min [ fhir:v 1 ] ;
      fhir:max [ fhir:v "1" ] ;
      fhir:documentation [ fhir:v "Der *return* Parameter gibt Auskunft über den Erfolg der Operation." ] ;
      fhir:type [ fhir:v "Resource" ] ;
