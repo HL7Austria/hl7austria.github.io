@@ -218,7 +218,7 @@
         
           Draft
           
-            as of 2025-03-08
+            as of 2025-03-12
           
         
       </td>
@@ -248,6 +248,15 @@
 
 
 <!-- insert intro if present -->
+
+
+
+
+<div style="display:inline-block" markdown="1">
+
+<p>This Profile is used in the <a href="interactions.html#find-available-schedules">Find available Schedules Interaction</a>.</p>
+
+</div>
 
 
 
@@ -1004,6 +1013,54 @@ Summary
 <!-- insert notes if present -->
 
 
+<h3>Notes:</h3>
+
+
+<div style="display:inline-block" markdown="1">
+
+<h4 id="search-parameters">Search parameters</h4>
+
+<h5 id="required-parameters">Required Parameters</h5>
+<p>At least one of the parameters <a href="https://www.hl7.org/fhir/schedule-search.html#Schedule-actor">actor</a> and <a href="https://www.hl7.org/fhir/schedule-search.html#Schedule-service-type-reference">service-type-reference</a> is required. Additionally <a href="https://www.hl7.org/fhir/schedule-search.html#Schedule-date">date</a> is always required.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Expression</th>
+      <th>In Common</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://www.hl7.org/fhir/schedule-search.html#Schedule-actor">actor</a></td>
+      <td><a href="https://www.hl7.org/fhir/search.html#reference">reference</a></td>
+      <td><strong>TODO: Organization not part of actor</strong> The individual(HealthcareService, Practitioner, Location, …) to find a Schedule for <strong>AND/OR service-type-reference required</strong></td>
+      <td>Schedule.actor (<a href="https://www.hl7.org/fhir/organization.html">Organization</a>, <a href="https://www.hl7.org/fhir/practitioner.html">Practitioner</a>, <a href="">Practitioner Role</a>)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://www.hl7.org/fhir/schedule-search.html#Schedule-date">date</a></td>
+      <td><a href="https://www.hl7.org/fhir/search.html#date">date</a></td>
+      <td>Search for Schedule resources that have a period that contains this date specified</td>
+      <td>Schedule.planningHorizon</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://www.hl7.org/fhir/schedule-search.html#Schedule-service-type-reference">service-type-reference</a></td>
+      <td><a href="https://www.hl7.org/fhir/search.html#reference">reference</a></td>
+      <td>The type (by HealthcareService) of appointments that can be booked into associated slot(s) <strong>AND/OR actor required</strong></td>
+      <td>Schedule.serviceType.reference</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+
 
 
 </div>
@@ -1025,7 +1082,7 @@ Summary
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package TC-FHIR-AG-Scheduling-R5#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Sat, Mar 8, 2025 16:17+0000">2025-03-08</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package TC-FHIR-AG-Scheduling-R5#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Wed, Mar 12, 2025 07:45+0000">2025-03-12</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
