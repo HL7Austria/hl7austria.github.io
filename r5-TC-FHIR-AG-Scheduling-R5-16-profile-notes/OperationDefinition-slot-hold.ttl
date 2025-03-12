@@ -1,0 +1,58 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/slot-hold> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "slot-hold"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition slot-hold</b></p><a name=\"slot-hold\"> </a><a name=\"hcslot-hold\"> </a><a name=\"slot-hold-en-US\"> </a><p>URL: [base]/Slot/$hold</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>slot-reference</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R5/references.html#Reference\">Reference</a> (<a href=\"StructureDefinition-at-scheduling-slot.html\" title=\"http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot\">HL7® AT Scheduling Slot Profile</a>)</td><td/><td><div><p>A resource id for one of proposed Slots returned by a prior $find operation (e.g., Resource/1234).  References can be to an absolute URL, but servers only perform this operation on their own slots.</p>\n</div></td></tr><tr><td>IN</td><td>slot-identifier</td><td/><td>0..*</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#Identifier\">Identifier</a></td><td/><td><div><p>When slot-identifiers are provided, the server is expected to perform an internal lookup to identify the corresponding slot instance. The server SHALL reject the request if the provided identifiers do not resolve to a single slot instance.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/parameters.html\">Parameters</a></td><td/><td><div><p>The response will be a Parameters resource consisting of the requested held Slot resource and an OperationOutcome with errors, warnings or information as a result of processing the operation. The Appointment resource will have an updated <code>status</code> of &quot;busy-tentative&quot; if the hold is approved or  &quot;busy-unavailable&quot; if the hold is rejected.</p>\n</div></td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/slot-hold"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "Hold_Slot_Operation"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2025-03-12T07:38:32+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "HL7® Austria, TC FHIR®"] ; # 
+  fhir:description [ fhir:v "Request for a hold on a selected Slot in order for the user to complete entering data for booking an appointment.  This operation precedes the booking and follows the appointment availability interaction.  The server determines if the nominated slot is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly. "] ; # 
+  fhir:affectsState [ fhir:v true] ; # 
+  fhir:code [ fhir:v "hold"] ; # 
+  fhir:resource ( [ fhir:v "Slot"] ) ; # 
+  fhir:system [ fhir:v false] ; # 
+  fhir:type [ fhir:v true] ; # 
+  fhir:instance [ fhir:v false] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "slot-reference" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 0 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "A resource id for one of proposed Slots returned by a prior $find operation (e.g., Resource/1234).  References can be to an absolute URL, but servers only perform this operation on their own slots." ] ;
+     fhir:type [ fhir:v "Reference" ] ;
+     fhir:targetProfile ( [
+       fhir:v "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot"^^xsd:anyURI ;
+       fhir:link <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot>
+     ] )
+  ] [
+     fhir:name [ fhir:v "slot-identifier" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 0 ] ;
+     fhir:max [ fhir:v "*" ] ;
+     fhir:documentation [ fhir:v "When slot-identifiers are provided, the server is expected to perform an internal lookup to identify the corresponding slot instance. The server SHALL reject the request if the provided identifiers do not resolve to a single slot instance." ] ;
+     fhir:type [ fhir:v "Identifier" ]
+  ] [
+     fhir:name [ fhir:v "return" ] ;
+     fhir:use [ fhir:v "out" ] ;
+     fhir:min [ fhir:v 1 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "The response will be a Parameters resource consisting of the requested held Slot resource and an OperationOutcome with errors, warnings or information as a result of processing the operation. The Appointment resource will have an updated `status` of \"busy-tentative\" if the hold is approved or  \"busy-unavailable\" if the hold is rejected." ] ;
+     fhir:type [ fhir:v "Parameters" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
