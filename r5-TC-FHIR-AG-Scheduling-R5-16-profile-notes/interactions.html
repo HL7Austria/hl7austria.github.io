@@ -161,9 +161,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>This implementation guide supports the following interactions for a scheduling process.</p>
 
 <h3 id="transmit-patient-information">Transmit Patient Information</h3>
-<figure><img src="interactions/transmit-patient.svg"/></figure>
+<figure><img src="interactions/create-patient.svg"/></figure>
 
-<p>A Scheduling Client can transmit a Patient to a Scheduling Server to create it. This is a prerequisite for booking an Appointment in which this Patient participates. <a href="https://fhir.hl7.at/HL7-AT-FHIR-Core-R5/StructureDefinition-at-core-patient.html"> HL7&reg; AT Core Patient Profile</a> MUST be used by both the Scheduling Client for the request as well as by the Scheduling Server in the response.</p>
+<p>A Scheduling Client can create a Patient on a Scheduling Server. This is a prerequisite for booking an Appointment in which this Patient participates. <a href="https://fhir.hl7.at/HL7-AT-FHIR-Core-R5/StructureDefinition-at-core-patient.html">HL7&reg; AT Core Patient Profile</a> MUST be used by both the Scheduling Client for the request as well as the Scheduling Server in the response.</p>
 
 <h3 id="find-available-healthcareservices">Find available HealthcareServices</h3>
 <figure><img src="interactions/find-healthcareServices.svg"/></figure>
@@ -197,73 +197,43 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="find-available-slots-for-potential-appointments">Find available Slots for potential Appointments</h3>
 <figure><img src="interactions/find-slots.svg"/></figure>
 
-<p><a name="l401">​</a>After selecting one or more Schedules, available Slots for this/those Schedules can be fetched. Each of those Slots represents a time slot for which an Appointment can be booked.<a href="StructureDefinition-at-scheduling-slot.html#search-parameters">Search parameters</a> of the <a href="StructureDefinition-at-scheduling-slot.html">HL7&reg; AT Scheduling Slot Profile</a> can be used to filter the results.</p>
+<p>After selecting one or more Schedules, available Slots for this/those Schedules can be fetched. Each Slot represents a time slot for which an Appointment can be booked. <a href="StructureDefinition-at-scheduling-slot.html#search-parameters">Search parameters</a> of the <a href="StructureDefinition-at-scheduling-slot.html">HL7&reg; AT Scheduling Slot Profile</a> can be used to filter the results.</p>
 
 <p>ToDo: How are slots for video calls marked? Only implicitly via HealthcareService?</p>
 
 <h3 id="reserve-slot-hold">Reserve Slot ($hold)</h3>
-<p>ToDo</p>
+<figure><img src="interactions/hold-slot.svg"/></figure>
+<p>In this optional step, a <a href="StructureDefinition-at-scheduling-slot.html">Slot</a> can be requested to be put on hold (i.e. reserved) by a Scheduling Client until the Appointment is booked. <a href="OperationDefinition-slot-hold.html">$hold</a> is the corresponding operation definition. The Slot is identified either by a Reference or one or more Identifiers, which have to identify a single slot instance. The response contains the Slot resource and an OperationOutcome. In case of success, the <code class="language-plaintext highlighter-rouge">status</code> of the Slot is set to "busy-tentative". If the hold operation is rejected, the <code class="language-plaintext highlighter-rouge">status</code> of the Slot is set to "busy-unavailable".</p>
+
+<p>ToDo: Discuss the duration for which a slot is held and whether this should be contained in the response.</p>
+
 <h3 id="book-appointment">Book Appointment</h3>
-<p>Todo: Alles</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Akteure</th>
-      <th>Transaktionen</th>
-      <th>Optionalität</th>
-      <th>&nbsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td><br/><br/></td>
-      <td>Verplichtend</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Parameters (In)</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Cardinality</th>
-      <th>Type</th>
-      <th>Documentation</th>
-      <th>&nbsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td><br/><br/></td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-  </tbody>
-</table>
+<figure><img src="interactions/book-appointment.svg"/></figure>
+<p>The scheduling client books an appointment by sending an <a href="StructureDefinition-at-scheduling-appointment.html">HL7&reg; AT Scheduling Appointment Profile</a> resource with <code class="language-plaintext highlighter-rouge">status</code> "proposed" to the Scheduling Server. The Scheduling Server returns a <a href="https://www.hl7.org/fhir/parameters.html">Parameters</a> response containing the requested Appointment and an <a href="https://www.hl7.org/fhir/operationoutcome.html">OperationOutcome</a>. The Appointment resource will have an updated status of <code class="language-plaintext highlighter-rouge">booked</code> if the request is approved or "cancelled" if it is rejected. The corresponding operation definition is the <a href="OperationDefinition-appointment-book.html">$book</a> operation.</p>
 
 <h3 id="cancel-appointment">Cancel Appointment</h3>
 <figure><img src="interactions/cancel-appointment-client.svg"/></figure>
+<p>To cancel an Appointment, the Scheduling Client sends an <a href="StructureDefinition-at-scheduling-appointment.html">HL7&reg; AT Scheduling Appointment Profile</a> with its <code class="language-plaintext highlighter-rouge">status</code> set to "cancelled" or "entered-in-error". The Scheduling Server responds with the Appointment resource or an OperationOutcome in case of error. The Scheduling Server is responsible for notifying the participants of the Appointment.</p>
+
+<p>ToDo: Do we need server-side cancellation?</p>
+
 <figure><img src="interactions/cancel-appointment-server.svg"/></figure>
 
-<p>ToDo</p>
 <h3 id="postpone-appointment">Postpone Appointment</h3>
 <figure><img src="interactions/postpone-appointment-client.svg"/></figure>
 <figure><img src="interactions/postpone-appointment-server.svg"/></figure>
 
 <p>Todo</p>
 <h3 id="update-appointment-information">Update Appointment information</h3>
-<p>Todo</p>
+<figure><img src="interactions/update-appointment-information.svg"/></figure>
+<p>To update an Appointment, a Scheduling Client sends a <a href="StructureDefinition-at-scheduling-appointment.html">HL7&reg; AT Scheduling Appointment Profile</a> resource with updated attributes.</p>
+
+<p>ToDo: Discuss restrictions on which fields can be updated.</p>
+
 <h3 id="find-existing-appointments">Find existing Appointments</h3>
 <figure><img src="interactions/find-existing-appointments.svg"/></figure>
 
-<p><a name="l550">​</a>Scheduling Clients can fetch existing Appointments from Scheduling Servers. <a href="StructureDefinition-at-scheduling-appointment.html#search-parameters">Search parameters</a> of the <a href="StructureDefinition-at-scheduling-appointment.html">HL7&reg; AT Scheduling Appointment Profile</a> can be used to filter the results.</p>
+<p><a name="l518">​</a>Scheduling Clients can fetch existing Appointments from Scheduling Servers. <a href="StructureDefinition-at-scheduling-appointment.html#search-parameters">Search parameters</a> of the <a href="StructureDefinition-at-scheduling-appointment.html">HL7&reg; AT Scheduling Appointment Profile</a> can be used to filter the results.</p>
 
 <p>ToDo: Example Search URL</p>
 
@@ -286,7 +256,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="null">HL7&reg; Austria, TC FHIR&reg;</a>.  Package TC-FHIR-AG-Scheduling-R5#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Wed, Mar 12, 2025 07:39+0000">2025-03-12</span>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="null">HL7&reg; Austria, TC FHIR&reg;</a>.  Package TC-FHIR-AG-Scheduling-R5#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Fri, Mar 21, 2025 10:13+0000">2025-03-21</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
