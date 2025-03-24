@@ -98,12 +98,14 @@ def populate_html( fName, name, label, branch, version, description, published )
 
 regex = '<!--\s*@@begin-include\s*-->(.*)<!--\s*@@end-include\s*-->'
 content = '<!-- @@begin-include --><h3 style="margin-top:20px">Official HL7-AT IGs</h3>'
+elgaContentHeader = '<h3 style="margin-top:50px">ELGA IGs</h3>'
 partnerContent = '<h3 style="margin-top:50px">HL7 Austria Member IGs</h3>'
 branchContent =  '<h3 style="margin-top:50px">Working Drafts</h3>'
 
 date_format = '%d.%m.%Y'
 
 hl7content = dict()
+elgacontent = dict()
 membercontent = dict()
 workingcontent = dict()
 
@@ -126,6 +128,10 @@ for name in glob.glob('./*/_index.yml'):
                     if entry_value['name'] not in hl7content.keys():
                         hl7content[entry_value['name']] = []
                     hl7content[entry_value['name']].append( entry_value )
+                elif (entry_value['type'] == OFFICIAL_TYPE_NAME or entry_value['branch'] == MAIN_BRANCH_NAME) and entry_value['name'].startswith('ELGA'):
+                    if entry_value['name'] not in elgacontent.keys():
+                        elgacontent[entry_value['name']] = []
+                    elgacontent[entry_value['name']].append( entry_value )
                 elif (entry_value['type'] == OFFICIAL_TYPE_NAME or entry_value['branch'] == MAIN_BRANCH_NAME):
                     if entry_value['name'] not in membercontent.keys():
                         membercontent[entry_value['name']] = []
@@ -136,7 +142,11 @@ for name in glob.glob('./*/_index.yml'):
                             workingcontent[entry_value['name']] = []
                         workingcontent[entry_value['name']].append( entry_value )
 
-content = content + build_table_html( hl7content )  + partnerContent + build_table_html( membercontent ) + branchContent + build_table_html( workingcontent, 'sa-datatable' ) + '<!-- @@end-include -->'
+content = content + build_table_html( hl7content ) + \
+          elgaContentHeader + build_table_html(elgacontent) + \
+          partnerContent + build_table_html( membercontent ) + \
+          branchContent + build_table_html( workingcontent, 'sa-datatable' ) + \
+          '<!-- @@end-include -->'
 
 with open('./index_other.html','r',encoding="utf8") as inputfile:
     pattern = re.compile( regex, re.MULTILINE | re.DOTALL)
