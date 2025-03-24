@@ -24,7 +24,7 @@ anonymous resourcescontained resources","",0,*,"","","","Resource {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","",,"open","DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"Composition.extension:countryOfAffiliation","Composition.extension","countryOfAffiliation","","",1,1,"","","","Extension {[CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/country-of-affiliation]]} {[]}
+"Composition.extension:countryOfAffiliation","Composition.extension","countryOfAffiliation","","",1,1,"","","","Extension {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/country-of-affiliation]]} {[]}
 ","Country of affiliation of the patient. (e.g. can be ISO 3166 2 or 3 letter code)","Add the element for Country of Affiliation","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
@@ -48,7 +48,7 @@ Some reporting work flows require that the original narrative of a final documen
 "Composition.category","Composition.category","","","",0,*,"","","Y","CodeableConcept {[]} {[]}
 ","Categorization of Composition","A categorization for the type of the composition - helps for indexing and searching. This may be implied by or derived from the code specified in the Composition Type.","This is a metadata field from [XDS/MHD](http://wiki.ihe.net/index.php?title=Mobile_access_to_Health_Documents_(MHD)).","Helps humans to assess whether the composition is of interest when viewing an index of compositions or documents.","","","","","","","",,"example","High-level kind of a clinical document at a macro level.","http://hl7.org/fhir/ValueSet/document-classcodes","",,,,"Composition.category",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.subject",".outboundRelationship[typeCode=""COMP].target[classCode=""LIST"", moodCode=""EVN""].code","n/a","DocumenttReference.category","FiveWs.class"
-"Composition.subject","Composition.subject","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-patient]]}
+"Composition.subject","Composition.subject","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient]]}
 ","Who and/or what the composition is about","Who or what the composition is about. The composition can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of livestock, or a set of patients that share a common exposure).","For clinical documents, this is usually the patient.","Essential metadata for searching for the composition. Identifies who and/or what the composition/document is about.","","","","","","","",,,,,"",,,,"Composition.subject",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".participation[typeCode=""SBJ""].role[typeCode=""PAT""]",".recordTarget","DocumentReference.subject","FiveWs.subject[x]","FiveWs.subject"
 "Composition.encounter","Composition.encounter","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Encounter]]}
@@ -112,7 +112,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","replaces | transforms | signs | appends","The type of relationship that this composition has with anther composition or document.","If this document appends another document, then the document cannot be fully understood without also accessing the referenced document.","","","","","","","","",,"required","The type of relationship between documents.","http://hl7.org/fhir/ValueSet/document-relationship-type|4.0.1","",,,,"Composition.relatesTo.code",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship.typeCode",".relatedDocument.typeCode","DocumentReference.relatesTo.code"
 "Composition.relatesTo.target[x]","Composition.relatesTo.target[x]","","","",1,1,"","","","Identifier {[]} {[]}
-Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Composition], CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-composition]]}","Target of the relationship","The target composition/document of this relationship.","","","","","","","","","",,,,,"",,,,"Composition.relatesTo.target[x]",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Composition], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-composition]]}","Target of the relationship","The target composition/document of this relationship.","","","","","","","","","",,,,,"",,,,"Composition.relatesTo.target[x]",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".target[classCode=""DOC"", moodCode=""EVN""].id",".relatedDocument.id","DocumentReference.relatesTo.target"
 "Composition.event","Composition.event","","","",0,*,"","","Y","BackboneElement {[]} {[]}
 ","The clinical service(s) being documented","The clinical service, such as a colonoscopy or an appendectomy, being documented.","The event needs to be consistent with the type element, though can provide further information if desired.","Provides context for the composition and creates a linkage between a resource describing an event and the composition created describing the event.","","","","","","","",,,,,"",,,,"Composition.event",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -241,11 +241,11 @@ If the section has content (instead of sub-sections), the section.code does not 
 ","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
-"Composition.section:sectionMedications.entry:medicationStatement","Composition.section.entry","medicationStatement","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-medicationstatement]]}
+"Composition.section:sectionMedications.entry:medicationStatement","Composition.section.entry","medicationStatement","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationstatement]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"",,,,"Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
-"Composition.section:sectionMedications.entry:medicationRequest","Composition.section.entry","medicationRequest","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-medicationrequest]]}
+"Composition.section:sectionMedications.entry:medicationRequest","Composition.section.entry","medicationRequest","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationrequest]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"",,,,"Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
@@ -307,7 +307,7 @@ If the section has content (instead of sub-sections), the section.code does not 
 ","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
-"Composition.section:sectionAllergies.entry:allergyOrIntolerance","Composition.section.entry","allergyOrIntolerance","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-allergyintolerance]]}
+"Composition.section:sectionAllergies.entry:allergyOrIntolerance","Composition.section.entry","allergyOrIntolerance","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-allergyintolerance]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"",,,,"Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
@@ -369,7 +369,7 @@ If the section has content (instead of sub-sections), the section.code does not 
 ","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
-"Composition.section:sectionProblems.entry:problem","Composition.section.entry","problem","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-condition]]}
+"Composition.section:sectionProblems.entry:problem","Composition.section.entry","problem","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"",,,,"Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
@@ -431,7 +431,7 @@ If the section has content (instead of sub-sections), the section.code does not 
 ","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
-"Composition.section:sectionProceduresHx.entry:procedure","Composition.section.entry","procedure","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-Procedure]]}
+"Composition.section:sectionProceduresHx.entry:procedure","Composition.section.entry","procedure","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-Procedure]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"",,,,"Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
@@ -493,7 +493,7 @@ If the section has content (instead of sub-sections), the section.code does not 
 ","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
-"Composition.section:sectionMedicalDevices.entry:deviceStatement","Composition.section.entry","deviceStatement","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-deviceusestatement]]}
+"Composition.section:sectionMedicalDevices.entry:deviceStatement","Composition.section.entry","deviceStatement","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-deviceusestatement]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"",,,,"Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
@@ -555,7 +555,7 @@ If the section has content (instead of sub-sections), the section.code does not 
 ","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
-"Composition.section:sectionImmunizations.entry:immunization","Composition.section.entry","immunization","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-immunization]]}
+"Composition.section:sectionImmunizations.entry:immunization","Composition.section.entry","immunization","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-immunization]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"",,,,"Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
@@ -617,15 +617,15 @@ If the section has content (instead of sub-sections), the section.code does not 
 profile:resolve()}","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
-"Composition.section:sectionResults.entry:resultsObservationLaboratoryPathology","Composition.section.entry","resultsObservationLaboratoryPathology","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationresultslaboratorypathology]]}
+"Composition.section:sectionResults.entry:resultsObservationLaboratoryPathology","Composition.section.entry","resultsObservationLaboratoryPathology","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationresultslaboratorypathology]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"",,,,"Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
-"Composition.section:sectionResults.entry:resultsObservationRadiology","Composition.section.entry","resultsObservationRadiology","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationresultsradiology]]}
+"Composition.section:sectionResults.entry:resultsObservationRadiology","Composition.section.entry","resultsObservationRadiology","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationresultsradiology]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"",,,,"Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
-"Composition.section:sectionResults.entry:resultsDiagnosticReport","Composition.section.entry","resultsDiagnosticReport","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-diagnosticreport]]}
+"Composition.section:sectionResults.entry:resultsDiagnosticReport","Composition.section.entry","resultsDiagnosticReport","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-diagnosticreport]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"",,,,"Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
@@ -687,7 +687,7 @@ If the section has content (instead of sub-sections), the section.code does not 
 ","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
-"Composition.section:sectionVitalSigns.entry:vitalSign","Composition.section.entry","vitalSign","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationvitalsigns]]}
+"Composition.section:sectionVitalSigns.entry:vitalSign","Composition.section.entry","vitalSign","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationvitalsigns]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"",,,,"Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
@@ -749,7 +749,7 @@ If the section has content (instead of sub-sections), the section.code does not 
 ","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
-"Composition.section:sectionPastIllnessHx.entry:pastProblem","Composition.section.entry","pastProblem","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-condition]]}
+"Composition.section:sectionPastIllnessHx.entry:pastProblem","Composition.section.entry","pastProblem","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"",,,,"Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
@@ -811,7 +811,7 @@ If the section has content (instead of sub-sections), the section.code does not 
 ","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
-"Composition.section:sectionFunctionalStatus.entry:disability","Composition.section.entry","disability","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-condition]]}
+"Composition.section:sectionFunctionalStatus.entry:disability","Composition.section.entry","disability","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"",,,,"Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
@@ -939,11 +939,11 @@ If the section has content (instead of sub-sections), the section.code does not 
 ","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
-"Composition.section:sectionSocialHistory.entry:smokingTobaccoUse","Composition.section.entry","smokingTobaccoUse","","",0,1,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationtobaccouse]]}
+"Composition.section:sectionSocialHistory.entry:smokingTobaccoUse","Composition.section.entry","smokingTobaccoUse","","",0,1,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationtobaccouse]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"",,,,"Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
-"Composition.section:sectionSocialHistory.entry:alcoholUse","Composition.section.entry","alcoholUse","","",0,1,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationalcoholuse]]}
+"Composition.section:sectionSocialHistory.entry:alcoholUse","Composition.section.entry","alcoholUse","","",0,1,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationalcoholuse]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"",,,,"Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
@@ -1005,11 +1005,11 @@ If the section has content (instead of sub-sections), the section.code does not 
 ","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
-"Composition.section:sectionPregnancyHx.entry:pregnancyStatus","Composition.section.entry","pregnancyStatus","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationpregnancystatus]]}
+"Composition.section:sectionPregnancyHx.entry:pregnancyStatus","Composition.section.entry","pregnancyStatus","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationpregnancystatus]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"",,,,"Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
-"Composition.section:sectionPregnancyHx.entry:pregnancyOutcomeSummary","Composition.section.entry","pregnancyOutcomeSummary","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/at-aps-observationpregnancyoutcome]]}
+"Composition.section:sectionPregnancyHx.entry:pregnancyOutcomeSummary","Composition.section.entry","pregnancyOutcomeSummary","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationpregnancyoutcome]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"",,,,"Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"

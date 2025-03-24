@@ -12,7 +12,7 @@
   <sch:pattern>
     <sch:title>f:Immunization</sch:title>
     <sch:rule context="f:Immunization">
-      <sch:assert test="count(f:extension[@url = 'https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/immunization-basedOn']) &lt;= 1">extension with URL = 'https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/immunization-basedOn': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://fhir.hl7.at/elga/aps/r4/StructureDefinition/immunization-basedOn']) &lt;= 1">extension with URL = 'https://fhir.hl7.at/elga/aps/r4/StructureDefinition/immunization-basedOn': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:protocolApplied) &gt;= 1">protocolApplied: minimum cardinality of 'protocolApplied' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>

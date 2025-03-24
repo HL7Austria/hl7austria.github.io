@@ -12,8 +12,8 @@
   <sch:pattern>
     <sch:title>f:Composition</sch:title>
     <sch:rule context="f:Composition">
-      <sch:assert test="count(f:extension[@url = 'https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/country-of-affiliation']) &gt;= 1">extension with URL = 'https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/country-of-affiliation': minimum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/country-of-affiliation']) &lt;= 1">extension with URL = 'https://fhir.hl7.at/elga-austrianpatientsummary-r4/StructureDefinition/country-of-affiliation': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://fhir.hl7.at/elga/aps/r4/StructureDefinition/country-of-affiliation']) &gt;= 1">extension with URL = 'https://fhir.hl7.at/elga/aps/r4/StructureDefinition/country-of-affiliation': minimum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://fhir.hl7.at/elga/aps/r4/StructureDefinition/country-of-affiliation']) &lt;= 1">extension with URL = 'https://fhir.hl7.at/elga/aps/r4/StructureDefinition/country-of-affiliation': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:custodian) &gt;= 1">custodian: minimum cardinality of 'custodian' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
