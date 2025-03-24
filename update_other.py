@@ -138,11 +138,11 @@ for name in glob.glob('./*/_index.yml'):
 
 content = content + build_table_html( hl7content )  + partnerContent + build_table_html( membercontent ) + branchContent + build_table_html( workingcontent, 'sa-datatable' ) + '<!-- @@end-include -->'
 
-with open('./index.html','r',encoding="utf8") as inputfile:
+with open('./index_other.html','r',encoding="utf8") as inputfile:
     pattern = re.compile( regex, re.MULTILINE | re.DOTALL)
     c_out = pattern.sub( content,  inputfile.read() )
 
-    with open("index.html", "w", encoding='utf8') as index_html:
+    with open("index_other.html", "w", encoding='utf8') as index_html:
         index_html.write( c_out )
         index_html.close()
 
