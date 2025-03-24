@@ -145,52 +145,49 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="markdown-toc">
 <ul id="markdown-toc">
   <li><a href="#einleitung" id="markdown-toc-einleitung">Einleitung</a></li>
+  <li><a href="#designentscheidung" id="markdown-toc-designentscheidung">Designentscheidung</a></li>
   <li><a href="#abhängigkeiten-zu-anderen-implementierungsleitfäden" id="markdown-toc-abhängigkeiten-zu-anderen-implementierungsleitfäden">Abhängigkeiten zu anderen Implementierungsleitfäden</a></li>
+  <li><a href="#cross-version-analyse" id="markdown-toc-cross-version-analyse">Cross Version Analyse</a></li>
+  <li><a href="#globale-profile" id="markdown-toc-globale-profile">Globale Profile</a></li>
   <li><a href="#lizenz-und-rechtliche-bedingungen" id="markdown-toc-lizenz-und-rechtliche-bedingungen">Lizenz und rechtliche Bedingungen</a></li>
 </ul>
 
 </div>
-<style>
-.stu-note::before {
-  white-space: pre;
-  content: "WETTBEWERB\A ";
-  background-color: unset;
-  color: unset;
-  font-weight: bold;
-}
-
-blockquote.stu-note {
-  margin: 5px;
-  padding: 10px;
-  background-color: #CBE9FD;
-  border-left-color: #7F929E;
-}
-</style>
-
-<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <blockquote class="stu-note">
-    <p><img src="contest.png" alt="hl7at" style="width: 5%" /></p>
-    <p></p>
-    <p><strong>Der <a href="contest.html">IPS Visualization Contest</a> ist beendet, die Fachjury bedankt sich herzlich bei allen Teilnehmer:innen für ihre Einreichungen!</strong></p>
-    <p></p>
-    <p></p>
-  </blockquote>
-</div>
-
 <h3 id="einleitung">Einleitung</h3>
 
-<p>Ziel dieses Implementierungsleitfadens ist die Beschreibung von Struktur, Format und Standards des österreischischen Patient Summary (Austrian PS). Dazu werden die Vorgaben des <a href="https://hl7.org/fhir/uv/ips/">International Patient Summary (IPS)</a> sowie des <a href="https://build.fhir.org/ig/HL7Austria/HL7-AT-FHIR-Core-R4/">HL7® Austria FHIR® Core Implementation Guides</a> kombiniert.</p>
+<blockquote>
+  <p>Das ist der FHIR® Implementation Guide (IG) für das Austrian Patient Summary (APS). Die Vorgaben beruhen auf dem <a href="https://fhir.hl7.at/HL7-AT-FHIR-Core-R5/2.0.0/">HL7® Austria FHIR® Core Implementation Guide (HL7AT Core IG), Version 2.0.0</a> und dem HL7® Leitfaden für das <a href="https://hl7.org/fhir/uv/ips/2024Sep/">International Patient Summary (IPS), Version 2.0.0-ballot</a>, und sind auch kompatibel mit den Vorgaben für das Patient Summary für den grenzüberschreitenden Datenaustausch in der EU (MyHealth@EU Patient Summary Requirements Catalogue).</p>
+</blockquote>
 
-<p><a href="austrian-ips-context.drawio.png"><img src="austrian-ips-context.drawio.png" alt="overview" style="width: 50%" /></a></p>
+<p>Ein Patient Summary ist eine standardisierte Zusammenfassung von grundlegenden medizinischen Informationen zu einem Patienten, um Angehörigen von Gesundheitsberufen einen schnellen Überblick über die wesentlichen Fakten zum Gesundheitszustand des Patienten zu verschaffen.</p>
 
-<h4 id="beispiele">Beispiele</h4>
+<p>Das Patient Summary soll zur sicheren und zuverlässigen Gesundheitsversorgung beitragen, sowohl im Fall von unerwarteten oder ungeplanten Behandlungen (Unfall, Notfall), als auch bei geplanten Behandlungen, im Rahmen von organisationsübergreifenden Behandlungspfaden und bei der grenzüberschreitenden Gesundheitsversorgung.</p>
 
-<p>Die folgenden beiden Beispiele setzen die Vorgaben des österreichischen Patient Summary um:</p>
+<p>Ein Patient Summary enthält allgemeine demografische Daten des Patienten (z.B. Name, Geburtsdatum, Geschlecht), eine Zusammenfassung der für die weitere medizinische Behandlung wesentlichen Erkenntnisse und Inhalte aus den Krankenakten des Patienten (z.B. aktuelle medizinische Probleme, Allergien, größere chirurgische Eingriffe, medizinische Implantate) sowie die aktuelle Medikation.</p>
 
+<p>Ziel des Patient Summary ist es</p>
 <ul>
-  <li><a href="Bundle-APS-1-no-problems-medication-allergies.html">APS-1-no-problems-medication-allergies</a></li>
-  <li><a href="Bundle-APS-2-preventive-medical-checkup.html">APS-2-preventive-medical-checkup</a></li>
+  <li>dem GDA einen schnellen Überblick über die (in ELGA) verfügbaren Informationen zu einem Patienten zu ermöglichen;</li>
+  <li>die wesentlichen Gesundheitsinformationen eines Patienten eindeutig und hochstrukturiert vorliegen zu haben und in andere Sprachen übersetzbar zu machen.</li>
 </ul>
+
+<h4 id="umfang">Umfang</h4>
+
+<p>Das Patient Summary ist</p>
+<ul>
+  <li>ein minimaler und nicht-vollständiger Datensatz,</li>
+  <li>geeignet für alle medizinischen Fachrichtungen und Gesundheitseinrichtungen,</li>
+  <li>unabhängig von der aktuellen Situation des Patienten,</li>
+  <li>für die grenzüberschreitende Gesundheitsversorgung vorgesehen.</li>
+</ul>
+
+<p>Das Patient Summary ist daher keine vollständige Krankenakte, sondern eine Zusammenfassung. "Minimaler und nicht-vollständiger Datensatz" bedeutet, dass nur ein Teil der Krankengeschichte im Patient Summary dokumentiert wird. Es soll den eigentlichen Gesundheitszustand des Patienten repräsentieren und nicht die gesamte Historie abbilden. Es ist unabhängig von der medizinischen Fachrichtung oder dem Typ der Gesundheitseinrichtung.</p>
+
+<h3 id="designentscheidung">Designentscheidung</h3>
+
+<p>Das Profil des APS leitet direkt vom <a href="https://fhir.hl7.at/HL7-AT-FHIR-Core-R5/2.0.0/">HL7AT Core IG</a> ab. Um darüber hinaus die Vorgaben des IPS zu erfüllen, wird auf die <a href="https://hl7.org/fhir/extensions/StructureDefinition-structuredefinition-imposeProfile.html">imposeProfile-Extension</a> zurückgegriffen. Zusätzlich wurden bei der Erstellung des APS die Vorgaben aus dem Requirements Catalogue im Rahmen von <a href="https://health.ec.europa.eu/ehealth-digital-health-and-care/digital-health-and-care/electronic-cross-border-health-services_en">MyHealth@EU</a> berücksichtigt.</p>
+
+<p><a href="austrian-ips-context.drawio.png"><img src="austrian-ips-context.drawio.png" alt="overview" style="width: 60%" /></a></p>
 
 <h3 id="abhängigkeiten-zu-anderen-implementierungsleitfäden">Abhängigkeiten zu anderen Implementierungsleitfäden</h3>
 
@@ -213,10 +210,61 @@ blockquote.stu-note {
 </td></tr></table>
 <!--$$3$$-->
 
+<h3 id="cross-version-analyse">Cross Version Analyse</h3>
+
+<p>This is an R4 IG. None of the features it uses are changed in R4B, so it can be used as is with R4B systems. Packages for both <a href="package.r4.tgz">R4 (hl7.at.fhir.elga.ips.r4)</a> and <a href="package.r4b.tgz">R4B (hl7.at.fhir.elga.ips.r4b)</a> are available.</p>
+<!--$$2$$-->
+
+<h3 id="globale-profile">Globale Profile</h3>
+
+<p><i>There are no Global profiles defined</i></p>
+<!--$$4$$-->
+
 <h3 id="lizenz-und-rechtliche-bedingungen">Lizenz und rechtliche Bedingungen</h3>
 <p>HL7®, HEALTH LEVEL SEVEN® und FHIR® sind Marken im Besitz von Health Level Seven International, eingetragen beim United States Patent and Trademark Office.</p>
 
 <p>Dieser Implementierungsleitfaden enthält und verweist auf geistiges Eigentum, das Dritten gehört („Third Party IP“). Mit der Annahme dieser Lizenzbedingungen werden keine Rechte in Bezug auf das geistige Eigentum Dritter gewährt. Der Lizenznehmer ist allein dafür verantwortlich, alle erforderlichen Lizenzen oder Genehmigungen für die Nutzung des geistigen Eigentums Dritter in Verbindung mit der Spezifikation oder auf andere Weise zu ermitteln und einzuholen.</p>
+
+<h4 id="ip-statements">IP-Statements</h4>
+
+<p>This publication includes IP covered under the following statements.</p>
+<ul>
+<li>ISO maintains the copyright on the country codes, and controls its use carefully. For further details see the ISO 3166 web page: <a href="https://www.iso.org/iso-3166-country-codes.html">https://www.iso.org/iso-3166-country-codes.html</a><div id="ipp_1" onclick="if (document.getElementById('ipp2_1').innerHTML != '') {document.getElementById('ipp_1').innerHTML = document.getElementById('ipp2_1').innerHTML; document.getElementById('ipp2_1').innerHTML = ''}"> <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span></div><div id="ipp2_1" style="display: none">
+<ul>
+<li><a href="http://terminology.hl7.org/6.0.2/CodeSystem-ISO3166Part1.html">ISO 3166-1 Codes for the representation of names of countries and their subdivisions — Part 1: Country code</a>: <a href="CapabilityStatement-aps-server.html">ApsServerCapabilityStatement</a>, <a href="StructureDefinition-at-aps-allergyintolerance.html">AtApsAllergyIntolerance</a><span id="ips_1" onclick="document.getElementById('ips_1').innerHTML = document.getElementById('ips2_1').innerHTML">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 31 more</span></span><span id="ips2_1" style="display: none">, <a href="StructureDefinition-at-aps-bundle.html">AtApsBundle</a>, <a href="StructureDefinition-at-aps-composition.html">AtApsComposition</a>, <a href="StructureDefinition-at-aps-condition.html">AtApsCondition</a>, <a href="StructureDefinition-at-aps-device.html">AtApsDevice</a>, <a href="StructureDefinition-at-aps-deviceusestatement.html">AtApsDeviceUseStatement</a>, <a href="StructureDefinition-at-aps-diagnosticreport.html">AtApsDiagnosticReport</a>, <a href="StructureDefinition-at-aps-imagingstudy.html">AtApsImagingStudy</a>, <a href="StructureDefinition-at-aps-immunization.html">AtApsImmunization</a>, <a href="ValueSet-at-aps-immunization-vaccine-codes.html">AtApsImmunizationVaccineCodes</a>, <a href="StructureDefinition-at-aps-medication.html">AtApsMedication</a>, <a href="StructureDefinition-at-aps-medicationrequest.html">AtApsMedicationRequest</a>, <a href="StructureDefinition-at-aps-medicationstatement.html">AtApsMedicationStatement</a>, <a href="StructureDefinition-at-aps-observationalcoholuse.html">AtApsObservationAlcoholUse</a>, <a href="ValueSet-at-aps-observationinterpretation.html">AtApsObservationInterpretation</a>, <a href="StructureDefinition-at-aps-observationpregnancyedd.html">AtApsObservationPregnancyEdd</a>, <a href="StructureDefinition-at-aps-observationpregnancyoutcome.html">AtApsObservationPregnancyOutcome</a>, <a href="StructureDefinition-at-aps-observationpregnancystatus.html">AtApsObservationPregnancyStatus</a>, <a href="StructureDefinition-at-aps-observationresultslaboratorypathology.html">AtApsObservationResultsLaboratoryPathology</a>, <a href="StructureDefinition-at-aps-observationresultsradiology.html">AtApsObservationResultsRadiology</a>, <a href="StructureDefinition-at-aps-observationtobaccouse.html">AtApsObservationTobaccoUse</a>, <a href="StructureDefinition-at-aps-observationvitalsigns.html">AtApsObservationVitalSigns</a>, <a href="StructureDefinition-at-aps-organization.html">AtApsOrganization</a>, <a href="StructureDefinition-at-aps-patient.html">AtApsPatient</a>, <a href="StructureDefinition-at-aps-practitioner.html">AtApsPractitioner</a>, <a href="StructureDefinition-at-aps-practitionerrole.html">AtApsPractitionerRole</a>, <a href="ValueSet-at-aps-problems.html">AtApsProblems</a>, <a href="StructureDefinition-at-aps-Procedure.html">AtApsProcedure</a>, <a href="StructureDefinition-at-aps-specimen.html">AtApsSpecimen</a>, <a href="StructureDefinition-country-of-affiliation.html">CountryOfAffiliation</a>, <a href="index.html">ELGAAustrianPatientSummaryR4</a> and <a href="StructureDefinition-immunization-basedOn.html">ImmunizationBasedOn</a></span></li>
+</ul>
+</div></li>
+<li>The UCUM codes, UCUM table (regardless of format), and UCUM Specification are copyright 1999-2009, Regenstrief Institute, Inc. and the Unified Codes for Units of Measures (UCUM) Organization. All rights reserved. <a href="https://ucum.org/trac/wiki/TermsOfUse">https://ucum.org/trac/wiki/TermsOfUse</a><div id="ipp_2" onclick="if (document.getElementById('ipp2_2').innerHTML != '') {document.getElementById('ipp_2').innerHTML = document.getElementById('ipp2_2').innerHTML; document.getElementById('ipp2_2').innerHTML = ''}"> <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span></div><div id="ipp2_2" style="display: none">
+<ul>
+<li><a href="http://terminology.hl7.org/6.0.2/CodeSystem-v3-ucum.html">Unified Code for Units of Measure (UCUM)</a>: <a href="Bundle-APS-2-preventive-medical-checkup.html">Bundle/APS-2-preventive-medical-checkup</a>, <a href="Bundle-APS-3-diabetes.html">Bundle/APS-3-diabetes</a>, <a href="Observation-001.html">Observation/001</a> and <a href="Observation-002.html">Observation/002</a></li>
+</ul>
+</div></li>
+<li>This material contains content from <a href="http://loinc.org">LOINC</a>. LOINC is copyright &copy; 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the <a href="http://loinc.org/license">license</a>. LOINC&reg; is a registered United States trademark of Regenstrief Institute, Inc.<div id="ipp_3" onclick="if (document.getElementById('ipp2_3').innerHTML != '') {document.getElementById('ipp_3').innerHTML = document.getElementById('ipp2_3').innerHTML; document.getElementById('ipp2_3').innerHTML = ''}"> <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span></div><div id="ipp2_3" style="display: none">
+<ul>
+<li><a href="http://terminology.hl7.org/6.0.2/CodeSystem-v3-loinc.html">LOINC</a>: <a href="StructureDefinition-at-aps-composition.html">AtApsComposition</a>, <a href="StructureDefinition-at-aps-condition.html">AtApsCondition</a><span id="ips_3" onclick="document.getElementById('ips_3').innerHTML = document.getElementById('ips2_3').innerHTML">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 7 more</span></span><span id="ips2_3" style="display: none">, <a href="ValueSet-at-aps-problems.html">AtApsProblems</a>, <a href="Bundle-APS-1-no-problems-medication-allergies.html">Bundle/APS-1-no-problems-medication-allergies</a>, <a href="Bundle-APS-2-preventive-medical-checkup.html">Bundle/APS-2-preventive-medical-checkup</a>, <a href="Bundle-APS-3-diabetes.html">Bundle/APS-3-diabetes</a>, <a href="Observation-001.html">Observation/001</a>, <a href="Observation-002.html">Observation/002</a> and <a href="Observation-003.html">Observation/003</a></span></li>
+</ul>
+</div></li>
+<li>This material contains content that is copyright of SNOMED International. Implementers of these specifications must have the appropriate SNOMED CT Affiliate license - for more information contact <a href="https://www.snomed.org/get-snomed">https://www.snomed.org/get-snomed</a> or <a href="mailto:info@snomed.org">info@snomed.org</a>.<div id="ipp_4" onclick="if (document.getElementById('ipp2_4').innerHTML != '') {document.getElementById('ipp_4').innerHTML = document.getElementById('ipp2_4').innerHTML; document.getElementById('ipp2_4').innerHTML = ''}"> <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span></div><div id="ipp2_4" style="display: none">
+<ul>
+<li><a href="http://hl7.org/fhir/R4/codesystem-snomedct.html">SNOMED Clinical Terms&amp;reg; (SNOMED CT&amp;reg;)</a>: <a href="StructureDefinition-at-aps-condition.html">AtApsCondition</a>, <a href="StructureDefinition-at-aps-immunization.html">AtApsImmunization</a><span id="ips_4" onclick="document.getElementById('ips_4').innerHTML = document.getElementById('ips2_4').innerHTML">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 11 more</span></span><span id="ips2_4" style="display: none">, <a href="ValueSet-at-aps-immunization-vaccine-codes.html">AtApsImmunizationVaccineCodes</a>, <a href="StructureDefinition-at-aps-observationresultslaboratorypathology.html">AtApsObservationResultsLaboratoryPathology</a>, <a href="ValueSet-at-aps-problems.html">AtApsProblems</a>, <a href="StructureDefinition-at-aps-Procedure.html">AtApsProcedure</a>, <a href="StructureDefinition-at-aps-specimen.html">AtApsSpecimen</a>, <a href="Bundle-APS-2-preventive-medical-checkup.html">Bundle/APS-2-preventive-medical-checkup</a>, <a href="Bundle-APS-3-diabetes.html">Bundle/APS-3-diabetes</a>, <a href="Device-001.html">Device/001</a>, <a href="Device-002.html">Device/002</a>, <a href="Immunization-immunization-vaccine-unknown.html">Immunization/immunization-vaccine-unknown</a> and <a href="Procedure-001.html">Procedure/001</a></span></li>
+</ul>
+</div></li>
+<li>This material derives from the HL7 Terminology (THO). THO is copyright &copy;1989+ Health Level Seven International and is made available under the CC0 designation. For more licensing information see: <a href="https://terminology.hl7.org/license.html">https://terminology.hl7.org/license.html</a><div id="ipp_5" onclick="if (document.getElementById('ipp2_5').innerHTML != '') {document.getElementById('ipp_5').innerHTML = document.getElementById('ipp2_5').innerHTML; document.getElementById('ipp2_5').innerHTML = ''}"> <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span></div><div id="ipp2_5" style="display: none">
+<ul>
+<li><a href="http://terminology.hl7.org/6.0.2/CodeSystem-allergyintolerance-clinical.html">AllergyIntolerance Clinical Status Codes</a>: <a href="AllergyIntolerance-002.html">AllergyIntolerance/002</a>, <a href="Bundle-APS-2-preventive-medical-checkup.html">Bundle/APS-2-preventive-medical-checkup</a> and <a href="Bundle-APS-3-diabetes.html">Bundle/APS-3-diabetes</a></li>
+<li><a href="http://terminology.hl7.org/6.0.2/CodeSystem-allergyintolerance-verification.html">AllergyIntolerance Verification Status</a>: <a href="AllergyIntolerance-002.html">AllergyIntolerance/002</a></li>
+<li><a href="http://terminology.hl7.org/6.0.2/CodeSystem-condition-category.html">Condition Category Codes</a>: <a href="StructureDefinition-at-aps-condition.html">AtApsCondition</a>, <a href="Bundle-APS-2-preventive-medical-checkup.html">Bundle/APS-2-preventive-medical-checkup</a> and <a href="Bundle-APS-3-diabetes.html">Bundle/APS-3-diabetes</a></li>
+<li><a href="http://terminology.hl7.org/6.0.2/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>: <a href="Bundle-APS-2-preventive-medical-checkup.html">Bundle/APS-2-preventive-medical-checkup</a> and <a href="Bundle-APS-3-diabetes.html">Bundle/APS-3-diabetes</a></li>
+<li><a href="http://terminology.hl7.org/6.0.2/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>: <a href="Bundle-APS-2-preventive-medical-checkup.html">Bundle/APS-2-preventive-medical-checkup</a> and <a href="Bundle-APS-3-diabetes.html">Bundle/APS-3-diabetes</a></li>
+<li><a href="http://terminology.hl7.org/6.0.2/CodeSystem-list-empty-reason.html">List Empty Reasons</a>: <a href="Bundle-APS-1-no-problems-medication-allergies.html">Bundle/APS-1-no-problems-medication-allergies</a>, <a href="Bundle-APS-2-preventive-medical-checkup.html">Bundle/APS-2-preventive-medical-checkup</a> and <a href="Bundle-APS-3-diabetes.html">Bundle/APS-3-diabetes</a></li>
+<li><a href="http://terminology.hl7.org/6.0.2/CodeSystem-observation-category.html">Observation Category Codes</a>: <a href="Bundle-APS-2-preventive-medical-checkup.html">Bundle/APS-2-preventive-medical-checkup</a> and <a href="Bundle-APS-3-diabetes.html">Bundle/APS-3-diabetes</a></li>
+<li><a href="http://terminology.hl7.org/6.0.2/CodeSystem-v2-0203.html">identifierType</a>: <a href="Bundle-APS-1-no-problems-medication-allergies.html">Bundle/APS-1-no-problems-medication-allergies</a>, <a href="Bundle-APS-2-preventive-medical-checkup.html">Bundle/APS-2-preventive-medical-checkup</a>, <a href="Bundle-APS-3-diabetes.html">Bundle/APS-3-diabetes</a> and <a href="Patient-002.html">Patient/002</a></li>
+<li><a href="http://terminology.hl7.org/6.0.2/CodeSystem-v3-MaritalStatus.html">MaritalStatus</a>: <a href="Bundle-APS-1-no-problems-medication-allergies.html">Bundle/APS-1-no-problems-medication-allergies</a></li>
+<li><a href="http://terminology.hl7.org/6.0.2/CodeSystem-v3-ObservationInterpretation.html">ObservationInterpretation</a>: <a href="Bundle-APS-2-preventive-medical-checkup.html">Bundle/APS-2-preventive-medical-checkup</a></li>
+</ul>
+</div></li>
+</ul>
+<!--$$1$$-->
 
 
 
@@ -236,7 +284,7 @@ blockquote.stu-note {
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ips#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Mar 20, 2025 12:29+0000">2025-03-20</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ips#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Mar 24, 2025 06:29+0000">2025-03-24</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
