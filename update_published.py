@@ -81,14 +81,15 @@ def build_table_html( cn, clazz = 'datatable' ):
     return ret
 
 regex = '<!--\s*@@begin-include\s*-->(.*)<!--\s*@@end-include\s*-->'
-content = '<!-- @@begin-include --><h3 style="margin-top:20px">Official HL7-AT IGs</h3>'
-partnerContent = '<h3 style="margin-top:50px">HL7 Austria Member IGs</h3>'
+content = '<!-- @@begin-include --><h3 style="margin-top:20px">Official HL7® Austria IGs</h3><p>Official HL7® Austria IGs usually contain profiles and/or extensions which are applicable for the Austrian e-Health environment regardless of the respective use case they are applied to.</p>'
+elgaContentHeader = '<h3 style="margin-top:50px">ELGA IGs</h3><p>ELGA IGs are tailored towards specific use cases which are part of the Austrian e-Health record (ELGA) or other public services (e.g. e-medication, e-vaccination, etc.) and which may be enacted by the legislator.</p>'
+partnerContent = '<h3 style="margin-top:50px">HL7® Austria Member IGs</h3>'
 
 date_format = '%d.%m.%Y'
 
 hl7content = dict()
+elgacontent = dict()
 membercontent = dict()
-workingcontent = dict()
 
 for name in glob.glob('./*/_index.yml'):
 
@@ -106,12 +107,19 @@ for name in glob.glob('./*/_index.yml'):
                     if entry_value['name'] not in hl7content.keys():
                         hl7content[entry_value['name']] = []
                     hl7content[entry_value['name']].append( entry_value )
+                elif entry_value['name'].startswith('ELGA'):
+                    if entry_value['name'] not in elgacontent.keys():
+                        elgacontent[entry_value['name']] = []
+                    elgacontent[entry_value['name']].append( entry_value )
                 else:
                     if entry_value['name'] not in membercontent.keys():
                         membercontent[entry_value['name']] = []
                     membercontent[entry_value['name']].append( entry_value )
 
-content = content + build_table_html( hl7content )  + partnerContent + build_table_html( membercontent ) + '<!-- @@end-include -->'
+content = content + build_table_html(hl7content) + \
+          elgaContentHeader + build_table_html(elgacontent) + \
+          partnerContent + build_table_html(membercontent) + \
+          '<!-- @@end-include -->'
 
 with open('./index.html','r',encoding="utf8") as inputfile:
     pattern = re.compile( regex, re.MULTILINE | re.DOTALL)
