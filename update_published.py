@@ -82,7 +82,7 @@ def build_table_html( cn, clazz = 'datatable' ):
 
 regex = '<!--\s*@@begin-include\s*-->(.*)<!--\s*@@end-include\s*-->'
 content = '<!-- @@begin-include --><h3 style="margin-top:20px">Official HL7® Austria IGs</h3><p>Official HL7® Austria IGs usually contain profiles and/or extensions which are applicable for the Austrian e-Health environment regardless of the respective use case they are applied to.</p>'
-elgaContentHeader = '<h3 style="margin-top:50px">ELGA IGs</h3><p>IGs authored by ELGA GmbH are tailored towards specific use cases which are part of the Austrian e-Health record (ELGA) or other public services (e.g. e-medication, e-vaccination, etc.) and which may be enacted by the legislator.</p>'
+elgaContentHeader = '<h3 style="margin-top:50px">ELGA IGs</h3><p>IGs authored by ELGA GmbH are tailored towards specific use cases which are part of the Austrian e-Health record (Elektronische Gesundheitsakte - ELGA) or other public services (e.g. e-medication, e-vaccination, etc.) and which may be enacted by the legislator.</p>'
 partnerContent = '<h3 style="margin-top:50px">HL7® Austria Member IGs</h3>'
 
 date_format = '%d.%m.%Y'
