@@ -1,0 +1,54 @@
+# Workflow to create a landing page for the ig publisher based on the libraries present on server
+
+name: UpdateIndex
+
+# Run on updates to the master
+on:
+  push:
+    branches: [ pages ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout the rendered Implementation Guide
+      uses: actions/checkout@v2
+      with:
+        repository: HL7Austria/hl7austria.github.io
+        path: .
+
+    - name: Install Python
+      if: success()
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyyaml
+
+    - name: Update page with all other IG versions
+      run: |
+        python update_other.py
+
+    - name: Update page for published IGs
+      run: |
+        python update_published.py
+
+    - name: Execute Fix Naming Script
+      run: |
+        python fix_naming.py
+
+    - name: Commit files
+      run: |
+        git config --local user.email "hl7at@github.com"
+        git config --local user.name "HL7 Austria Github Action"
+        git add .
+        git commit -m "Update landing page index.html"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: pages

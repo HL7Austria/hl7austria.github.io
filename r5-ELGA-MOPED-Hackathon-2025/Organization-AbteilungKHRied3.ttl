@@ -1,0 +1,35 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://elga.moped.at/Organization/AbteilungKHRied3> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "AbteilungKHRied3"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://elga.moped.at/StructureDefinition/MopedOrganizationAbteilung"^^xsd:anyURI ;
+       fhir:link <https://elga.moped.at/StructureDefinition/MopedOrganizationAbteilung>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Organization AbteilungKHRied3</b></p><a name=\"AbteilungKHRied3\"> </a><a name=\"hcAbteilungKHRied3\"> </a><a name=\"AbteilungKHRied3-en-US\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-MopedOrganizationAbteilung.html\">MOPED Organization Abteilung</a></p></div><p><b>identifier</b>: <code>http://example.org/lkf-system/funktionscode</code>/111111, <code>http://example.org/lkf-system/funktionssubcode</code>/00</p><p><b>partOf</b>: <a href=\"Organization-OrganizationKrankenhausRied.html\">Organization Krankenhaus der Barmherzigen Schwestern vom Hl. Vinzenz von Paul Ried</a></p></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "http://example.org/lkf-system/funktionscode"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "111111" ]
+  ] [
+     fhir:system [ fhir:v "http://example.org/lkf-system/funktionssubcode"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "00" ]
+  ] ) ; # 
+  fhir:partOf [
+     fhir:link <https://elga.moped.at/Organization/OrganizationKrankenhausRied> ;
+     fhir:reference [ fhir:v "Organization/OrganizationKrankenhausRied" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

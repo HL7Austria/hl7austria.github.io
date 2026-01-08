@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Patient xmlns="http://hl7.org/fhir">
+  <id value="HL7ATCorePatientExample04-Full"/>
+  <meta>
+    <profile value="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Andreas Bucher </b> male, DoB: 1961-12-24 ( Social Security Number: 1111241261 (OFFICIAL))</p></div>
+  </text>
+  <extension url="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-patient-religion">
+    <extension url="code">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/CodeSystem/at-core-cs-religion"/>
+          <code value="101"/>
+          <display value="Römisch-Katholisch"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/patient-citizenship">
+    <extension url="code">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/CodeSystem/at-core-cs-iso-3166-1-alpha-3"/>
+          <code value="AUT"/>
+          <display value="Österreich"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="period">
+      <valuePeriod>
+        <start value="2016-07-30T08:30:00+01:00"/>
+        <end value="2022-07-30T08:35:00+01:00"/>
+      </valuePeriod>
+    </extension>
+  </extension>
+  <identifier>
+    <use value="official"/>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="SS"/>
+        <display value="Social Security Number"/>
+      </coding>
+    </type>
+    <system value="urn:oid:1.2.40.0.10.1.4.3.1"/>
+    <value value="1111241261"/>
+    <assigner>
+      <display value="Dachverband der österreichischen Sozialversicherungsträger"/>
+    </assigner>
+  </identifier>
+  <identifier>
+    <use value="official"/>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="NI"/>
+        <display value="National unique individual identifier"/>
+      </coding>
+    </type>
+    <system value="urn:oid:1.2.40.0.10.2.1.1.149"/>
+    <value value="GH:oeLdSEb0l+8kSdJWjOYyYmnYki0"/>
+    <assigner>
+      <display value="Bundesministerium für Inneres"/>
+    </assigner>
+  </identifier>
+  <identifier>
+    <use value="official"/>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="PI"/>
+        <display value="Patient internal identifier"/>
+      </coding>
+    </type>
+    <system value="urn:oid:1.2.3.4.5"/>
+    <value value="0815"/>
+    <assigner>
+      <display value="Ein GDA in Österreich"/>
+    </assigner>
+  </identifier>
+  <active value="true"/>
+  <name>
+    <family value="Bucher"/>
+    <given value="Andreas"/>
+    <prefix value="Dipl.Ing."/>
+    <prefix value="Dr."/>
+  </name>
+  <telecom>
+    <system value="phone"/>
+    <value value="+43.2682.40400"/>
+    <use value="home"/>
+  </telecom>
+  <telecom>
+    <system value="phone"/>
+    <value value="+43.664.1234567"/>
+    <use value="mobile"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="herberthannes.mustermann@provider.at"/>
+  </telecom>
+  <gender value="male"/>
+  <birthDate value="1961-12-24"/>
+  <deceasedBoolean value="false"/>
+  <address>
+    <use value="home"/>
+    <type value="both"/>
+    <line value="Landstrasse 5 Stock 3 Tür 5">
+      <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+        <valueString value="Landstrasse"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+        <valueString value="5"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator">
+        <valueString value="Stock 3 Tür 5"/>
+      </extension>
+      <extension url="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation">
+        <valueString value="Lift vorhanden"/>
+      </extension>
+    </line>
+    <city value="Wien"/>
+    <state value="Wien"/>
+    <postalCode value="1030"/>
+    <country value="AUT"/>
+  </address>
+  <maritalStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-MaritalStatus"/>
+      <code value="M"/>
+      <display value="Married"/>
+    </coding>
+  </maritalStatus>
+  <multipleBirthBoolean value="false"/>
+  <photo>
+    <url value="https://image.k.at/images/facebook/3923126/78350011451694692_BLD_Online.jpg"/>
+  </photo>
+  <contact>
+    <relationship>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0131"/>
+        <code value="C"/>
+        <display value="Emergency Contact"/>
+      </coding>
+    </relationship>
+    <name>
+      <family value="Tochter"/>
+      <given value="Julia"/>
+    </name>
+    <telecom>
+      <system value="phone"/>
+      <value value="+43.664.12345678"/>
+      <use value="mobile"/>
+    </telecom>
+    <address>
+      <line value="Heimstrasse 1"/>
+      <city value="Wien"/>
+      <postalCode value="1220"/>
+      <country value="AUT"/>
+    </address>
+    <gender value="female"/>
+    <organization>
+      <reference value="Organization/Organization-example-f001-burgers"/>
+    </organization>
+    <period>
+      <start value="2016-07-30T08:30:00+01:00"/>
+      <end value="2019-07-30T08:35:00+01:00"/>
+    </period>
+  </contact>
+  <communication>
+    <language>
+      <coding>
+        <system value="urn:ietf:bcp:47"/>
+        <code value="de"/>
+      </coding>
+    </language>
+    <preferred value="true"/>
+  </communication>
+  <generalPractitioner>
+    <reference value="Organization/Organization-example-f001-burgers"/>
+  </generalPractitioner>
+  <managingOrganization>
+    <reference value="Organization/Organization-example-f001-burgers"/>
+  </managingOrganization>
+  <link>
+    <other>
+      <reference value="Patient/HL7ATCorePatientExample03-deceasedBoolean"/>
+    </other>
+    <type value="seealso"/>
+  </link>
+</Patient>

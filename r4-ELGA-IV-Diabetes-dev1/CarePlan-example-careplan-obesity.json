@@ -1,0 +1,108 @@
+{
+  "resourceType" : "CarePlan",
+  "id" : "example-careplan-obesity",
+  "text" : {
+    "status" : "additional",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>A simple care plan to indicate a patient taking their weight once a day because of obesity.</p></div>"
+  },
+  "contained" : [{
+    "resourceType" : "Condition",
+    "id" : "plan-diab-obesity",
+    "clinicalStatus" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code" : "active"
+      }]
+    },
+    "verificationStatus" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+        "code" : "confirmed"
+      }]
+    },
+    "code" : {
+      "text" : "Obesity"
+    },
+    "subject" : {
+      "reference" : "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8",
+      "display" : "Susanne Testpatientin"
+    }
+  }],
+  "identifier" : [{
+    "value" : "12345"
+  }],
+  "instantiatesUri" : ["http://example.org/protocol-for-obesity"],
+  "basedOn" : [{
+    "display" : "Management of Type 2 Diabetes"
+  }],
+  "replaces" : [{
+    "display" : "Plan from urgent care clinic"
+  }],
+  "partOf" : [{
+    "display" : "Overall wellness plan"
+  }],
+  "status" : "active",
+  "intent" : "plan",
+  "category" : [{
+    "text" : "Weight management plan"
+  }],
+  "description" : "Manage obesity and weight loss",
+  "subject" : {
+    "reference" : "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8",
+    "display" : "Susanne Testpatientin"
+  },
+  "period" : {
+    "end" : "2017-06-01"
+  },
+  "created" : "2016-01-01",
+  "author" : {
+    "reference" : "urn:uuid:75db30ee-7028-486c-929a-c5126837f472",
+    "display" : "Dr. IV-Ärztin"
+  },
+  "addresses" : [{
+    "reference" : "#plan-diab-obesity",
+    "display" : "obesity"
+  }],
+  "activity" : [{
+    "outcomeCodeableConcept" : [{
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "161832001",
+        "display" : "Progressive weight loss"
+      }]
+    }],
+    "detail" : {
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "3141-9",
+          "display" : "Weight Measured"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "27113001",
+          "display" : "Body weight"
+        }]
+      },
+      "status" : "completed",
+      "statusReason" : {
+        "text" : "Achieved weight loss to mitigate diabetes risk."
+      },
+      "doNotPerform" : false,
+      "scheduledTiming" : {
+        "repeat" : {
+          "frequency" : 1,
+          "period" : 1,
+          "periodUnit" : "d"
+        }
+      },
+      "location" : {
+        "display" : "Patient's home"
+      },
+      "performer" : [{
+        "reference" : "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8",
+        "display" : "Susanne Testpatientin"
+      }]
+    }
+  }]
+}

@@ -1,0 +1,65 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://elga.moped.at/Account/PJ1Account> a fhir:Account ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PJ1Account"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://elga.moped.at/StructureDefinition/MopedAccount"^^xsd:anyURI ;
+       fhir:link <https://elga.moped.at/StructureDefinition/MopedAccount>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Account PJ1Account</b></p><a name=\"PJ1Account\"> </a><a name=\"hcPJ1Account\"> </a><a name=\"PJ1Account-en-US\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-MopedAccount.html\">MOPED Account</a></p></div><p><b>AnzahlVerlegungen</b>: 1</p><p><b>AnzahlBeurlaubungen</b>: 0</p><p><b>Workflow Status</b>: <a href=\"CodeSystem-WorkflowStatusCS.html#WorkflowStatusCS-Endgueltige-Freigabe\">Workflow Status eines Falls Endgueltige-Freigabe</a>: Endgültige Freigabe</p><p><b>Tage ohne Einhebung des Kostenbeitrags</b>: 0</p><p><b>status</b>: Active</p><p><b>subject</b>: <a href=\"Patient-PJ1Patient.html\">Sonnenschein Susi (official) Female, DoB: 1969-04-21 ( Social Security Number: 9994210469)</a></p><h3>Coverages</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Coverage</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Coverage-PJ1Coverage.html\">Coverage: identifier = urn:oid:1.2.40.0.10.1.4.3.9.1#XB4G37PFN9FJ; status = active; kind = insurance</a></td></tr></table><p><b>owner</b>: <a href=\"Organization-OrganizationHerzJesuKrankenhaus.html\">Organization Herz Jesu-Krankenhaus</a></p></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://elga.moped.at/StructureDefinition/moped-ext-AnzahlVerlegungen"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:unsignedInt ;
+       fhir:v "1"^^xsd:nonNegativeInteger
+     ]
+  ] [
+     fhir:url [ fhir:v "https://elga.moped.at/StructureDefinition/moped-ext-AnzahlBeurlaubungen"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:unsignedInt ;
+       fhir:v "0"^^xsd:nonNegativeInteger
+     ]
+  ] [
+     fhir:url [ fhir:v "https://elga.moped.at/StructureDefinition/moped-ext-workflow-status"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Coding ;
+       fhir:system [ fhir:v "https://elga.moped.at/CodeSystem/WorkflowStatusCS"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "Endgueltige-Freigabe" ]
+     ]
+  ] [
+     fhir:url [ fhir:v "https://elga.moped.at/StructureDefinition/moped-ext-TageOhneKostenbeitrag"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:unsignedInt ;
+       fhir:v "0"^^xsd:nonNegativeInteger
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:subject ( [
+     fhir:link <https://elga.moped.at/Patient/PJ1Patient> ;
+     fhir:reference [ fhir:v "Patient/PJ1Patient" ]
+  ] ) ; # 
+  fhir:coverage ( [
+     fhir:coverage [
+       fhir:link <https://elga.moped.at/Coverage/PJ1Coverage> ;
+       fhir:reference [ fhir:v "Coverage/PJ1Coverage" ]
+     ]
+  ] ) ; # 
+  fhir:owner [
+     fhir:link <https://elga.moped.at/Organization/OrganizationHerzJesuKrankenhaus> ;
+     fhir:reference [ fhir:v "Organization/OrganizationHerzJesuKrankenhaus" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,153 @@
+<html><head><title>Terminology Server Log</title></head><body><h2>Terminology Server Log</h2><pre>
+
+</pre><hr/>
+<a name="l1"> </a><h3>1</h3>
+<pre>
+Request: 
+
+GET http://tx.fhir.org/r5/metadata?_summary=true HTTP/1.0
+Accept: application/fhir+json; fhirVersion=5.0
+User-Agent: fhir/publisher
+
+
+Response (00:00:00.37): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:2125
+content-type:application/fhir+json
+date:Fri, 24 Jan 2025 14:21:11 GMT
+pragma:no-cache
+server:nginx
+x-request-id:183-1428191
+
+{"resourceType" : "CapabilityStatement","id" : "FhirServer","meta" : {"tag" : [{"system" : "http://hl7.org/fhir/v3/ObservationValue","code" : "SUBSETTED","display" : "Subsetted"}]},"url" : "http://tx.fhir.org/r5/CapabilityStatement/tx","version" : "5.0.0-3.4.38","name" : "FHIRReferenceServer","title" : "FHIR Reference Server Conformance Statement","status" : "active","date" : "2025-01-24T14:21:11.133Z","contact" : [{"telecom" : [{"system" : "other","value" : "http://healthintersections.com.au/"}]}],"kind" : "instance","instantiates" : ["http://hl7.org/fhir/CapabilityStatement/terminology-server","http://hl7.org/fhir/CapabilityStatement/terminology-server"],"software" : {"name" : "Reference Server","version" : "3.4.38","releaseDate" : "2025-01-12T18:58:47.058Z"},"implementation" : {"description" : "FHIR Server running at http://tx.fhir.org/r5","url" : "http://tx.fhir.org/r5"},"fhirVersion" : "5.0.0","format" : ["application/fhir+xml","application/fhir+json"],"rest" : [{"mode" : "server","security" : {"cors" : true},"resource" : [{"type" : "CodeSystem","operation" : [{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/CodeSystem-validate-code"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/CodeSystem-lookup"}]},{"type" : "ValueSet","operation" : [{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-validate-code"},{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"}]}],"operation" : [{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-lookup"},{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/Resource-validate"},{"name" : "translate","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-translate"},{"name" : "closure","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-closure"},{"name" : "versions","definition" : "http://tx.fhir.org/r5/OperationDefinition/fso-versions"}]}]}
+
+</pre><hr/>
+<a name="l2"> </a><h3>2</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r5/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"https://termgit.elga.gv.at/ValueSet/hl7-at-organizationtype","code":"300","display":"Allgemeine Krankenanstalt"}},{"name":"displayLanguage","valueString":"en"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"76fd5078-ca5b-49e7-a10f-0239841d1e62"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.39): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1617
+content-type:application/fhir+json
+date:Fri, 24 Jan 2025 14:21:19 GMT
+last-modified:Fri, 24 Jan 2025 14:21:19 GMT
+pragma:no-cache
+server:nginx
+x-request-id:183-1428259
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "https://termgit.elga.gv.at/ValueSet/hl7-at-organizationtype"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "https://termgit.elga.gv.at/ValueSet/hl7-at-organizationtype"},{"name" : "code","valueCode" : "300"},{"name" : "message","valueString" : "A definition for CodeSystem 'https://termgit.elga.gv.at/ValueSet/hl7-at-organizationtype' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'https://termgit.elga.gv.at/ValueSet/hl7-at-organizationtype' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[https://termgit.elga.gv.at/ValueSet/hl7-at-organizationtype#300 (\"Allgemeine Krankenanstalt\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"https://termgit.elga.gv.at/ValueSet/hl7-at-organizationtype#300\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"https://termgit.elga.gv.at/ValueSet/hl7-at-organizationtype\"\r\n"}]}
+
+</pre><hr/>
+<a name="l3"> </a><h3>3</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r5/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"https://termgit.elga.gv.at/CodeSystem/hl7-at-religionaustria","code":"162","display":"Pastafarianismus"}},{"name":"displayLanguage","valueString":"en"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"76fd5078-ca5b-49e7-a10f-0239841d1e62"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.29): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1622
+content-type:application/fhir+json
+date:Fri, 24 Jan 2025 14:21:19 GMT
+last-modified:Fri, 24 Jan 2025 14:21:19 GMT
+pragma:no-cache
+server:nginx
+x-request-id:183-1428262
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "https://termgit.elga.gv.at/CodeSystem/hl7-at-religionaustria"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "https://termgit.elga.gv.at/CodeSystem/hl7-at-religionaustria"},{"name" : "code","valueCode" : "162"},{"name" : "message","valueString" : "A definition for CodeSystem 'https://termgit.elga.gv.at/CodeSystem/hl7-at-religionaustria' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'https://termgit.elga.gv.at/CodeSystem/hl7-at-religionaustria' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[https://termgit.elga.gv.at/CodeSystem/hl7-at-religionaustria#162 (\"Pastafarianismus\")]\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"https://termgit.elga.gv.at/CodeSystem/hl7-at-religionaustria#162\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"https://termgit.elga.gv.at/CodeSystem/hl7-at-religionaustria\"\r\n"}]}
+
+</pre><hr/>
+<a name="l4"> </a><h3>4</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r5/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3","code":"AUT","display":"Österreich"}},{"name":"displayLanguage","valueString":"en"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"76fd5078-ca5b-49e7-a10f-0239841d1e62"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.33): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1589
+content-type:application/fhir+json
+date:Fri, 24 Jan 2025 14:21:19 GMT
+last-modified:Fri, 24 Jan 2025 14:21:19 GMT
+pragma:no-cache
+server:nginx
+x-request-id:183-1428265
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3"},{"name" : "code","valueCode" : "AUT"},{"name" : "message","valueString" : "A definition for CodeSystem 'https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3#AUT (\"Österreich\")]\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3#AUT\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3\"\r\n"}]}
+
+</pre><hr/>
+<a name="l5"> </a><h3>5</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r5/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"https://termgit.elga.gv.at/ValueSet/hl7-at-practitionerrole","code":"100","display":"Ärztin/Arzt für Allgemeinmedizin"}},{"name":"displayLanguage","valueString":"en"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"76fd5078-ca5b-49e7-a10f-0239841d1e62"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.27): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1626
+content-type:application/fhir+json
+date:Fri, 24 Jan 2025 14:21:19 GMT
+last-modified:Fri, 24 Jan 2025 14:21:19 GMT
+pragma:no-cache
+server:nginx
+x-request-id:183-1428269
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "https://termgit.elga.gv.at/ValueSet/hl7-at-practitionerrole"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "https://termgit.elga.gv.at/ValueSet/hl7-at-practitionerrole"},{"name" : "code","valueCode" : "100"},{"name" : "message","valueString" : "A definition for CodeSystem 'https://termgit.elga.gv.at/ValueSet/hl7-at-practitionerrole' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'https://termgit.elga.gv.at/ValueSet/hl7-at-practitionerrole' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[https://termgit.elga.gv.at/ValueSet/hl7-at-practitionerrole#100 (\"Ärztin/Arzt für Allgemeinmedizin\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"https://termgit.elga.gv.at/ValueSet/hl7-at-practitionerrole#100\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"https://termgit.elga.gv.at/ValueSet/hl7-at-practitionerrole\"\r\n"}]}
+</pre></head></html>
