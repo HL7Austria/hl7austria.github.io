@@ -1,0 +1,81 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://elga.moped.at/ClaimResponse/PJ2LKFResponse1> a fhir:ClaimResponse ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PJ2LKFResponse1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://elga.moped.at/StructureDefinition/MopedLKFResponse"^^xsd:anyURI ;
+       fhir:l <https://elga.moped.at/StructureDefinition/MopedLKFResponse>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ClaimResponse PJ2LKFResponse1</b></p><a name=\"PJ2LKFResponse1\"> </a><a name=\"hcPJ2LKFResponse1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-MopedLKFResponse.html\">MOPED LKFResponse</a></p></div><p><b>Abrechnung - Knoten</b>: <a href=\"CodeSystem-LKFAbrechnungsKnotenCS.html#LKFAbrechnungsKnotenCS-C\">LKF Abrechnungsknoten: C</a> (C)</p><p><b>status</b>: Active</p><p><b>type</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/MopedClaimTypeCS LKFRESP}\">LKF Response</span></p><p><b>use</b>: Claim</p><p><b>patient</b>: <a href=\"Patient-PJ2Patient.html\">Santiago Schnabeltier Test (official) Male, DoB: 1985-03-19 ( Social Security Number: 2873111374)</a></p><p><b>created</b>: 2025-02-24</p><p><b>requestor</b>: <a href=\"Organization-OrganizationHerzJesuKrankenhaus.html\">Organization Herz Jesu-Krankenhaus</a></p><p><b>request</b>: <a href=\"Claim-PJ2LKFRequest1.html\">Claim: extension = C (LKF Abrechnungsknoten#C),Ja (Abrechnung des stationären Aufenthalts/ambulanten Besuchs erfolgt über den Landesgesundheitsfonds/PRIKRAF) (Fondsrelevanz#J); status = active; type = LKF Request; subType = LKF Vorläufige Meldung; use = claim; created = 2025-02-24; diagnosisRelatedGroup = Frakturen der unteren Extremität/Becken, außer Vorfuß</a></p><p><b>outcome</b>: Processing Complete</p><p><b>decision</b>: <span title=\"Codes:{http://hl7.org/fhir/claim-decision approved}\">Approved</span></p><p><b>diagnosisRelatedGroup</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/LKFHauptdiagnosegruppenCS HDG15.03}\">Frakturen der unteren Extremität/Becken, außer Vorfuß</span></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "https://elga.moped.at/StructureDefinition/moped-ext-diagnoseKnoten"^^xsd:anyURI ;
+       fhir:l <https://elga.moped.at/StructureDefinition/moped-ext-diagnoseKnoten>
+     ] ;
+     fhir:value [
+       a fhir:Coding ;
+       fhir:system [
+         fhir:v "https://elga.moped.at/CodeSystem/LKFAbrechnungsKnotenCS"^^xsd:anyURI ;
+         fhir:l <https://elga.moped.at/CodeSystem/LKFAbrechnungsKnotenCS>
+       ] ;
+       fhir:code [ fhir:v "C" ]
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://elga.moped.at/CodeSystem/MopedClaimTypeCS"^^xsd:anyURI ;
+         fhir:l <https://elga.moped.at/CodeSystem/MopedClaimTypeCS>
+       ] ;
+       fhir:code [ fhir:v "LKFRESP" ]
+     ] )
+  ] ; # 
+  fhir:use [ fhir:v "claim"] ; # 
+  fhir:patient [
+     fhir:l <https://elga.moped.at/Patient/PJ2Patient> ;
+     fhir:reference [ fhir:v "Patient/PJ2Patient" ]
+  ] ; # 
+  fhir:created [ fhir:v "2025-02-24"^^xsd:date] ; # 
+  fhir:requestor [
+     fhir:l <https://elga.moped.at/Organization/OrganizationHerzJesuKrankenhaus> ;
+     fhir:reference [ fhir:v "Organization/OrganizationHerzJesuKrankenhaus" ]
+  ] ; # 
+  fhir:request [
+     fhir:l <https://elga.moped.at/Claim/PJ2LKFRequest1> ;
+     fhir:reference [ fhir:v "Claim/PJ2LKFRequest1" ]
+  ] ; # 
+  fhir:outcome [ fhir:v "complete"] ; # 
+  fhir:decision [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://hl7.org/fhir/claim-decision"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/claim-decision>
+       ] ;
+       fhir:code [ fhir:v "approved" ]
+     ] )
+  ] ; # 
+  fhir:diagnosisRelatedGroup [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://elga.moped.at/CodeSystem/LKFHauptdiagnosegruppenCS"^^xsd:anyURI ;
+         fhir:l <https://elga.moped.at/CodeSystem/LKFHauptdiagnosegruppenCS>
+       ] ;
+       fhir:code [ fhir:v "HDG15.03" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

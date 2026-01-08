@@ -1,0 +1,367 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ages.at/fhir/medicinalproduct/Bundle/asp-liste-3> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "asp-liste-3"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "2.0.0+20240208" ] ;
+     fhir:lastUpdated [ fhir:v "2025-06-25T17:20:56.208+02:00"^^xsd:dateTime ]
+  ] ; # 
+  fhir:identifier [
+     fhir:value [ fhir:v "1.2.40.0.34.4.16" ]
+  ] ; # 
+  fhir:type [ fhir:v "collection"] ; # 
+  fhir:entry ( [
+     fhir:fullUrl [ fhir:v "MedicinalProductDefinition/128592"^^xsd:anyURI ] ;
+     fhir:resource ( <MedicinalProductDefinition/128592> )
+  ] [
+     fhir:fullUrl [ fhir:v "PackagedProductDefinition/3515532"^^xsd:anyURI ] ;
+     fhir:resource ( <PackagedProductDefinition/3515532> )
+  ] [
+     fhir:fullUrl [ fhir:v "RegulatedAuthorization/14079"^^xsd:anyURI ] ;
+     fhir:resource ( <RegulatedAuthorization/14079> )
+  ] [
+     fhir:fullUrl [ fhir:v "AdministrableProductDefinition/2057607"^^xsd:anyURI ] ;
+     fhir:resource ( <AdministrableProductDefinition/2057607> )
+  ] [
+     fhir:fullUrl [ fhir:v "Ingredient/716774"^^xsd:anyURI ] ;
+     fhir:resource ( <Ingredient/716774> )
+  ] [
+     fhir:fullUrl [ fhir:v "Ingredient/1321640"^^xsd:anyURI ] ;
+     fhir:resource ( <Ingredient/1321640> )
+  ] ) . # 
+
+<MedicinalProductDefinition/128592> a fhir:MedicinalProductDefinition ;
+  fhir:id [ fhir:v "128592"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicinalProductDefinition_128592\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicinalProductDefinition 128592</b></p><a name=\"128592\"> </a><a name=\"hc128592\"> </a><p><b>identifier</b>: <code>https://www.ages.at/fhir/referenceNumber</code>/128592</p><p><b>domain</b>: <span title=\"Codes:{https://spor.ema.europa.eu/v1/lists/100000000004 100000000012}\">Human</span></p><p><b>combinedPharmaceuticalDoseForm</b>: <span title=\"Codes:{https://spor.ema.europa.eu/v1/lists/200000000006 100000073681}\">Brausetablette</span></p><p><b>legalStatusOfSupply</b>: <span title=\"Codes:{https://spor.ema.europa.eu/v1/lists/100000072051 200000017695}\">Arzneimittel zur Abgabe ohne aerztliche Verschreibung</span></p><p><b>classification</b>: <span title=\"Codes:{https://spor.ema.europa.eu/v1/lists/100000093533 100000097266}, {http://www.whocc.no/atc N02BA01}, {https://spor.ema.europa.eu/v1/lists/100000093533 100000094119}, {http://www.whocc.no/atc A11GB}\">Acetylsalicylsäure</span></p><h3>Names</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ProductName</b></td></tr><tr><td style=\"display: none\">*</td><td>Aspirin + C Brausetabletten</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "https://www.ages.at/fhir/referenceNumber"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "128592" ]
+  ] ) ; # 
+  fhir:domain [
+     fhir:coding ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://ema.europa.eu/fhir/extension/codeSystemName"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Domain"
+         ]
+       ] ) ;
+       fhir:system [ fhir:v "https://spor.ema.europa.eu/v1/lists/100000000004"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "100000000012" ] ;
+       fhir:display [ fhir:v "Human" ]
+     ] )
+  ] ; # 
+  fhir:combinedPharmaceuticalDoseForm [
+     fhir:coding ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://ema.europa.eu/fhir/extension/codeSystemName"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Combined Pharmaceutical Dose Form"
+         ]
+       ] ) ;
+       fhir:system [ fhir:v "https://spor.ema.europa.eu/v1/lists/200000000006"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "100000073681" ] ;
+       fhir:display [ fhir:v "Brausetablette" ]
+     ] )
+  ] ; # 
+  fhir:legalStatusOfSupply [
+     fhir:coding ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://ema.europa.eu/fhir/extension/codeSystemName"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Legal Status for the Supply"
+         ]
+       ] ) ;
+       fhir:system [ fhir:v "https://spor.ema.europa.eu/v1/lists/100000072051"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "200000017695" ] ;
+       fhir:display [ fhir:v "Arzneimittel zur Abgabe ohne aerztliche Verschreibung" ]
+     ] )
+  ] ; # 
+  fhir:classification ( [
+     fhir:coding ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://ema.europa.eu/fhir/extension/codeSystemName"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Anatomical Therapeutic Chemical classification system - Human"
+         ]
+       ] ) ;
+       fhir:system [ fhir:v "https://spor.ema.europa.eu/v1/lists/100000093533"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "100000097266" ] ;
+       fhir:display [ fhir:v "Acetylsalicylsäure" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://ema.europa.eu/fhir/extension/atcGroup"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "???"
+         ]
+       ] ) ;
+       fhir:system [ fhir:v "http://www.whocc.no/atc"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "N02BA01" ] ;
+       fhir:display [ fhir:v "Acetylsalicylsäure" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://ema.europa.eu/fhir/extension/codeSystemName"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Anatomical Therapeutic Chemical classification system - Human"
+         ]
+       ] ) ;
+       fhir:system [ fhir:v "https://spor.ema.europa.eu/v1/lists/100000093533"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "100000094119" ] ;
+       fhir:display [ fhir:v "Ascorbinsäure (Vitamin C), Kombinationen" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://ema.europa.eu/fhir/extension/atcGroup"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "???"
+         ]
+       ] ) ;
+       fhir:system [ fhir:v "http://www.whocc.no/atc"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "A11GB" ] ;
+       fhir:display [ fhir:v "Ascorbinsäure (Vitamin C), Kombinationen" ]
+     ] )
+  ] ) ; # 
+  fhir:name ( [
+     fhir:productName [ fhir:v "Aspirin + C Brausetabletten" ]
+  ] ) . # 
+
+<PackagedProductDefinition/3515532> a fhir:PackagedProductDefinition ;
+  fhir:id [ fhir:v "3515532"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"PackagedProductDefinition_3515532\"> </a><p class=\"res-header-id\"><b>Generated Narrative: PackagedProductDefinition 3515532</b></p><a name=\"3515532\"> </a><a name=\"hc3515532\"> </a><p><b>identifier</b>: <code>http://ema.europa.eu/fhir/dataCarrierIdentifier</code>/3515532</p><p><b>packageFor</b>: <a href=\"Bundle-asp-liste-3.html#MedicinalProductDefinition_128592\">Bundle: identifier = 1.2.40.0.34.4.16; type = collection</a></p><p><b>containedItemQuantity</b>: 40.0 Tablette<span style=\"background: LightGoldenRodYellow\"> (Details: unitsOfPresentation  code200000002152 = '200000002152')</span></p><h3>MarketingStatuses</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Status</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{https://spor.ema.europa.eu/v1/lists/100000072052 100000072075}\">Keine Daten übermittelt</span></td></tr></table><h3>Packagings</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{https://spor.ema.europa.eu/v1/lists/100000073346 100000073547}\">Beutel</span></td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "http://ema.europa.eu/fhir/dataCarrierIdentifier"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "3515532" ]
+  ] ) ; # 
+  fhir:packageFor ( [
+     fhir:link <https://www.ages.at/fhir/medicinalproduct/MedicinalProductDefinition/128592> ;
+     fhir:reference [ fhir:v "MedicinalProductDefinition/128592" ]
+  ] ) ; # 
+  fhir:containedItemQuantity ( [
+     fhir:value [ fhir:v 40.0 ] ;
+     fhir:unit [ fhir:v "Tablette" ] ;
+     fhir:system [ fhir:v "https://ema.europa.eu/fhir/vs/unitsOfPresentation"^^xsd:anyURI ] ;
+     fhir:code [ fhir:v "200000002152" ]
+  ] ) ; # 
+  fhir:marketingStatus ( [
+     fhir:status [
+       fhir:coding ( [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://ema.europa.eu/fhir/extension/codeSystemName"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:string ;
+             fhir:v "Marketing Status"
+           ]
+         ] ) ;
+         fhir:system [ fhir:v "https://spor.ema.europa.eu/v1/lists/100000072052"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "100000072075" ] ;
+         fhir:display [ fhir:v "Keine Daten übermittelt" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:packaging [
+     fhir:type [
+       fhir:coding ( [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://ema.europa.eu/fhir/extension/codeSystemName"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:string ;
+             fhir:v "Packaging"
+           ]
+         ] ) ;
+         fhir:system [ fhir:v "https://spor.ema.europa.eu/v1/lists/100000073346"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "100000073547" ] ;
+         fhir:display [ fhir:v "Beutel" ]
+       ] )
+     ]
+  ] . # 
+
+<RegulatedAuthorization/14079> a fhir:RegulatedAuthorization ;
+  fhir:id [ fhir:v "14079"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"RegulatedAuthorization_14079\"> </a><p class=\"res-header-id\"><b>Generated Narrative: RegulatedAuthorization 14079</b></p><a name=\"14079\"> </a><a name=\"hc14079\"> </a><p><b>identifier</b>: <code>http://ema.europa.eu/fhir/marketingAuthorizationNumber</code>/14079</p><p><b>subject</b>: <a href=\"Bundle-asp-liste-3.html#MedicinalProductDefinition_128592\">Bundle: identifier = 1.2.40.0.34.4.16; type = collection</a></p><p><b>status</b>: <span title=\"Codes:{https://spor.ema.europa.eu/v1/lists/100000072049 100000072099}\">Valid</span></p><p><b>holder</b>: <code>Bayer Austria Ges.m.b.H.</code></p></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "http://ema.europa.eu/fhir/marketingAuthorizationNumber"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "14079" ]
+  ] ) ; # 
+  fhir:subject ( [
+     fhir:link <https://www.ages.at/fhir/medicinalproduct/MedicinalProductDefinition/128592> ;
+     fhir:reference [ fhir:v "MedicinalProductDefinition/128592" ]
+  ] ) ; # 
+  fhir:status [
+     fhir:coding ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://ema.europa.eu/fhir/extension/codeSystemName"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Regulatory Entitlement Status"
+         ]
+       ] ) ;
+       fhir:system [ fhir:v "https://spor.ema.europa.eu/v1/lists/100000072049"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "100000072099" ] ;
+       fhir:display [ fhir:v "Valid" ]
+     ] )
+  ] ; # 
+  fhir:holder [
+     fhir:reference [ fhir:v "LOC-100075177" ] ;
+     fhir:display [ fhir:v "Bayer Austria Ges.m.b.H." ]
+  ] . # 
+
+<AdministrableProductDefinition/2057607> a fhir:AdministrableProductDefinition ;
+  fhir:id [ fhir:v "2057607"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"AdministrableProductDefinition_2057607\"> </a><p class=\"res-header-id\"><b>Generated Narrative: AdministrableProductDefinition 2057607</b></p><a name=\"2057607\"> </a><a name=\"hc2057607\"> </a><p><b>identifier</b>: <code>http://ema.europa.eu/fhir/???</code>/2057607</p><p><b>formOf</b>: <a href=\"Bundle-asp-liste-3.html#MedicinalProductDefinition_128592\">Bundle: identifier = 1.2.40.0.34.4.16; type = collection</a></p><h3>RouteOfAdministrations</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Code</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:\">zum Einnehmen</span></td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "http://ema.europa.eu/fhir/???"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "2057607" ]
+  ] ) ; # 
+  fhir:formOf ( [
+     fhir:link <https://www.ages.at/fhir/medicinalproduct/MedicinalProductDefinition/128592> ;
+     fhir:reference [ fhir:v "MedicinalProductDefinition/128592" ]
+  ] ) ; # 
+  fhir:routeOfAdministration ( [
+     fhir:code [
+       fhir:coding ( [
+         fhir:code [ fhir:v "100000073619" ] ;
+         fhir:display [ fhir:v "zum Einnehmen" ]
+       ] )
+     ]
+  ] ) . # 
+
+<Ingredient/716774> a fhir:Ingredient ;
+  fhir:id [ fhir:v "716774"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Ingredient_716774\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Ingredient 716774</b></p><a name=\"716774\"> </a><a name=\"hc716774\"> </a><p><b>identifier</b>: <code>http://ema.europa.eu/fhir/???</code>/716774</p><p><b>for</b>: <a href=\"Bundle-asp-liste-3.html#AdministrableProductDefinition_2057607\">Bundle: identifier = 1.2.40.0.34.4.16; type = collection</a></p><p><b>role</b>: <span title=\"Codes:{https://spor.ema.europa.eu/v1/lists/100000072050 100000072072}\">Wirkstoff</span></p><blockquote><p><b>substance</b></p><h3>Codes</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Concept</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{https://spor.ema.europa.eu/v1/lists/substanceDefinition 1707562}\">ASCORBINSÄURE</span></td></tr></table><h3>Strengths</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Presentation[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>0.24 g<span style=\"background: LightGoldenRodYellow\"> (Details: Units Of Measurement  code100000110654 = 'gram(s)')</span>/1.0 Tablette<span style=\"background: LightGoldenRodYellow\"> (Details: Units Of Presentation  code200000002152 = 'Tablet')</span></td></tr></table></blockquote></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:identifier [
+     fhir:system [ fhir:v "http://ema.europa.eu/fhir/???"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "716774" ]
+  ] ; # 
+  fhir:for ( [
+     fhir:link <https://www.ages.at/fhir/medicinalproduct/AdministrableProductDefinition/2057607> ;
+     fhir:reference [ fhir:v "AdministrableProductDefinition/2057607" ]
+  ] ) ; # 
+  fhir:role [
+     fhir:coding ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://ema.europa.eu/fhir/extension/codeSystemName"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Ingredient Role"
+         ]
+       ] ) ;
+       fhir:system [ fhir:v "https://spor.ema.europa.eu/v1/lists/100000072050"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "100000072072" ] ;
+       fhir:display [ fhir:v "Wirkstoff" ]
+     ] )
+  ] ; # 
+  fhir:substance [
+     fhir:code [
+       fhir:concept [
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://spor.ema.europa.eu/v1/lists/substanceDefinition"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "1707562" ] ;
+           fhir:display [ fhir:v "ASCORBINSÄURE" ]
+         ] )
+       ]
+     ] ;
+     fhir:strength ( [
+       fhir:presentation [
+         a fhir:Ratio ;
+         fhir:numerator [
+           fhir:value [ fhir:v 0.24 ] ;
+           fhir:unit [ fhir:v "g" ] ;
+           fhir:system [ fhir:v "https://spor.ema.europa.eu/v1/lists/100000110633"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "100000110654" ]
+         ] ;
+         fhir:denominator [
+           fhir:value [ fhir:v 1.0 ] ;
+           fhir:unit [ fhir:v "Tablette" ] ;
+           fhir:system [ fhir:v "https://spor.ema.europa.eu/v1/lists/200000000014"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "200000002152" ]
+         ]
+       ]
+     ] )
+  ] . # 
+
+<Ingredient/1321640> a fhir:Ingredient ;
+  fhir:id [ fhir:v "1321640"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Ingredient_1321640\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Ingredient 1321640</b></p><a name=\"1321640\"> </a><a name=\"hc1321640\"> </a><p><b>identifier</b>: <code>http://ema.europa.eu/fhir/???</code>/1321640</p><p><b>for</b>: <a href=\"Bundle-asp-liste-3.html#AdministrableProductDefinition_2057607\">Bundle: identifier = 1.2.40.0.34.4.16; type = collection</a></p><p><b>role</b>: <span title=\"Codes:{https://spor.ema.europa.eu/v1/lists/100000072050 100000072072}\">Wirkstoff</span></p><blockquote><p><b>substance</b></p><h3>Codes</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Concept</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{https://spor.ema.europa.eu/v1/lists/substanceDefinition 1709716}\">ACETYLSALICYLSÄURE</span></td></tr></table><h3>Strengths</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Presentation[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>0.4 g<span style=\"background: LightGoldenRodYellow\"> (Details: Units Of Measurement  code100000110654 = 'gram(s)')</span>/1.0 Tablette<span style=\"background: LightGoldenRodYellow\"> (Details: Units Of Presentation  code200000002152 = 'Tablet')</span></td></tr></table></blockquote></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:identifier [
+     fhir:system [ fhir:v "http://ema.europa.eu/fhir/???"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "1321640" ]
+  ] ; # 
+  fhir:for ( [
+     fhir:link <https://www.ages.at/fhir/medicinalproduct/AdministrableProductDefinition/2057607> ;
+     fhir:reference [ fhir:v "AdministrableProductDefinition/2057607" ]
+  ] ) ; # 
+  fhir:role [
+     fhir:coding ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://ema.europa.eu/fhir/extension/codeSystemName"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Ingredient Role"
+         ]
+       ] ) ;
+       fhir:system [ fhir:v "https://spor.ema.europa.eu/v1/lists/100000072050"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "100000072072" ] ;
+       fhir:display [ fhir:v "Wirkstoff" ]
+     ] )
+  ] ; # 
+  fhir:substance [
+     fhir:code [
+       fhir:concept [
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://spor.ema.europa.eu/v1/lists/substanceDefinition"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "1709716" ] ;
+           fhir:display [ fhir:v "ACETYLSALICYLSÄURE" ]
+         ] )
+       ]
+     ] ;
+     fhir:strength ( [
+       fhir:presentation [
+         a fhir:Ratio ;
+         fhir:numerator [
+           fhir:value [ fhir:v 0.4 ] ;
+           fhir:unit [ fhir:v "g" ] ;
+           fhir:system [ fhir:v "https://spor.ema.europa.eu/v1/lists/100000110633"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "100000110654" ]
+         ] ;
+         fhir:denominator [
+           fhir:value [ fhir:v 1.0 ] ;
+           fhir:unit [ fhir:v "Tablette" ] ;
+           fhir:system [ fhir:v "https://spor.ema.europa.eu/v1/lists/200000000014"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "200000002152" ]
+         ]
+       ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

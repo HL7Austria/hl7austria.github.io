@@ -1,0 +1,102 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/RelatedPerson/HL7ATCoreRelatedPersonExampleHomer> a fhir:RelatedPerson ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "HL7ATCoreRelatedPersonExampleHomer"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-related-person"^^xsd:anyURI ;
+       fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-related-person>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: RelatedPerson HL7ATCoreRelatedPersonExampleHomer</b></p><a name=\"HL7ATCoreRelatedPersonExampleHomer\"> </a><a name=\"hcHL7ATCoreRelatedPersonExampleHomer\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-core-related-person.html\">HL7® AT Core RelatedPerson Profile</a></p></div><p><b>identifier</b>: Social Security number/1234010190, National unique individual identifier/BPK-TEST-XY123456</p><p><b>patient</b>: <a href=\"Patient-HL7ATCorePatientExampleBart.html\">Bart Simpson  Male, DoB: 2010-04-01</a></p><p><b>relationship</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-RoleClass NOK}\">next of kin</span></p><p><b>name</b>: Homer Simpson </p><p><b>telecom</b>: <a href=\"tel:+436601234567\">+43 660 1234567</a></p><p><b>gender</b>: Male</p><p><b>address</b>: Donutgasse 7 Tür 3 Wien Wien 1150 AUT (home)</p></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "SS" ] ;
+         fhir:display [ fhir:v "Social Security number" ]
+       ] )
+     ] ;
+     fhir:system [ fhir:v "urn:oid:1.2.40.0.10.1.4.3.1"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "1234010190" ] ;
+     fhir:assigner [
+       fhir:display [ fhir:v "Dachverband der österreichischen Sozialversicherungsträger" ]
+     ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "NI" ] ;
+         fhir:display [ fhir:v "National unique individual identifier" ]
+       ] )
+     ] ;
+     fhir:system [ fhir:v "urn:oid:1.2.40.0.10.2.1.1.149"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "BPK-TEST-XY123456" ] ;
+     fhir:assigner [
+       fhir:display [ fhir:v "Bundesministerium für Inneres" ]
+     ]
+  ] ) ; # 
+  fhir:patient [
+     fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/Patient/HL7ATCorePatientExampleBart> ;
+     fhir:reference [ fhir:v "Patient/HL7ATCorePatientExampleBart" ]
+  ] ; # 
+  fhir:relationship ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-RoleClass"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "NOK" ] ;
+       fhir:display [ fhir:v "next of kin" ]
+     ] )
+  ] ) ; # 
+  fhir:name ( [
+     fhir:family [ fhir:v "Simpson" ] ;
+     fhir:given ( [ fhir:v "Homer" ] )
+  ] ) ; # 
+  fhir:telecom ( [
+     fhir:system [ fhir:v "phone" ] ;
+     fhir:value [ fhir:v "+43 660 1234567" ] ;
+     fhir:use [ fhir:v "home" ]
+  ] ) ; # 
+  fhir:gender [ fhir:v "male"] ; # 
+  fhir:address ( [
+     fhir:use [ fhir:v "home" ] ;
+     fhir:type [ fhir:v "both" ] ;
+     fhir:line ( [
+       fhir:v "Donutgasse 7 Tür 3" ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Donutgasse"
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "7"
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Tür 3"
+         ]
+       ] )
+     ] ) ;
+     fhir:city [ fhir:v "Wien" ] ;
+     fhir:state [ fhir:v "Wien" ] ;
+     fhir:postalCode [ fhir:v "1150" ] ;
+     fhir:country [ fhir:v "AUT" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

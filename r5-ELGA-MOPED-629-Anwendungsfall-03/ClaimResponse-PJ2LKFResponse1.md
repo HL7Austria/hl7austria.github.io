@@ -1,0 +1,87 @@
+# ELGA.MOPED\PJ2LKFResponse1 - FHIR® v5.0.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **PJ2LKFResponse1**
+
+## Example ClaimResponse: PJ2LKFResponse1
+
+Profile: [MOPED LKFResponse](StructureDefinition-MopedLKFResponse.md)
+
+**Abrechnung - Knoten**: [LKF Abrechnungsknoten C](CodeSystem-LKFAbrechnungsKnotenCS.md#LKFAbrechnungsKnotenCS-C): C
+
+**status**: Active
+
+**type**: Institutional
+
+**use**: Claim
+
+**patient**: [Santiago Schnabeltier Test (official) Male, DoB: 1985-03-19 ( Social Security Number: 2873111374)](Patient-PJ2Patient.md)
+
+**created**: 2025-02-24
+
+**request**: [Claim: extension = C (LKF Abrechnungsknoten#C),Ja (Abrechnung des stationären Aufenthalts/ambulanten Besuchs erfolgt über den Landesgesundheitsfonds/PRIKRAF) (Fondsrelevanz#J); status = active; type = Institutional; use = claim; created = 2025-02-24; diagnosisRelatedGroup = Frakturen der unteren Extremität/Becken, außer Vorfuß](Claim-PJ2LKFRequest1.md)
+
+**outcome**: Processing Complete
+
+**decision**: Approved
+
+**diagnosisRelatedGroup**: Frakturen der unteren Extremität/Becken, außer Vorfuß
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "ClaimResponse",
+  "id" : "PJ2LKFResponse1",
+  "meta" : {
+    "profile" : ["https://elga.moped.at/StructureDefinition/MopedLKFResponse"]
+  },
+  "extension" : [
+    {
+      "url" : "https://elga.moped.at/StructureDefinition/moped-ext-diagnoseKnoten",
+      "valueCoding" : {
+        "system" : "https://elga.moped.at/CodeSystem/LKFAbrechnungsKnotenCS",
+        "code" : "C"
+      }
+    }
+  ],
+  "status" : "active",
+  "type" : {
+    "coding" : [
+      {
+        "system" : "http://terminology.hl7.org/CodeSystem/claim-type",
+        "code" : "institutional"
+      }
+    ]
+  },
+  "use" : "claim",
+  "patient" : {
+    "reference" : "Patient/PJ2Patient"
+  },
+  "created" : "2025-02-24",
+  "request" : {
+    "reference" : "Claim/PJ2LKFRequest1"
+  },
+  "outcome" : "complete",
+  "decision" : {
+    "coding" : [
+      {
+        "system" : "http://hl7.org/fhir/claim-decision",
+        "code" : "approved"
+      }
+    ]
+  },
+  "diagnosisRelatedGroup" : {
+    "coding" : [
+      {
+        "system" : "https://elga.moped.at/CodeSystem/LKFHauptdiagnosegruppenCS",
+        "code" : "HDG15.03"
+      }
+    ]
+  }
+}
+
+```

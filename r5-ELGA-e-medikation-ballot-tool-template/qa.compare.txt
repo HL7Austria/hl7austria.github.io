@@ -1,0 +1,67 @@
+ELGAFHIReMedikationR5 : Validation Results
+=========================================
+
+err = 9, warn = 33, info = 1
+$--
+Generated $--. FHIR version $-- for elga-e-medikation-R5.elga.hl7.at#$-- (canonical = http://fhir.hl7.at/elga-e-medikation-R5)
+ Build Errors : 3 / 3 / 0
+ /home/runner/work/ELGA-FHIR-e-Medikation-R5/ELGA-FHIR-e-Medikation-R5/fsh-generated/resources/ImplementationGuide-elga-e-medikation-R5.elga.hl7.at : 0 / 0 / 1
+ /home/runner/work/ELGA-FHIR-e-Medikation-R5/ELGA-FHIR-e-Medikation-R5/fsh-generated/resources/MedicationRequest-Example-eMedRequest : 2 / 2 / 1
+ /home/runner/work/ELGA-FHIR-e-Medikation-R5/ELGA-FHIR-e-Medikation-R5/fsh-generated/resources/RequestOrchestration-WYE82A2G8EE1 : 6 / 4 / 2
+ /home/runner/work/ELGA-FHIR-e-Medikation-R5/ELGA-FHIR-e-Medikation-R5/fsh-generated/resources/StructureDefinition-eMed-prescription-with-multiple-eMed-requests : 0 / 9 / 1
+ /home/runner/work/ELGA-FHIR-e-Medikation-R5/ELGA-FHIR-e-Medikation-R5/fsh-generated/resources/StructureDefinition-eMed-request : 1 / 10 / 1
+ /home/runner/work/ELGA-FHIR-e-Medikation-R5/ELGA-FHIR-e-Medikation-R5/fsh-generated/resources/StructureDefinition-linca-dipsense-documentation : 0 / 5 / 2
+</table>
+== n/a ==
+ERROR: /home/runner/work/ELGA-FHIR-e-Medikation-R5/ELGA-FHIR-e-Medikation-R5/output/intro_de.html#/html/body/div/div/div/div/div/div/p/img at Line 252, column 5: The image source 'input/images/Zusammenspiel_der_Implementierungsleitfäden.jpg' cannot be resolved
+ERROR: /home/runner/work/ELGA-FHIR-e-Medikation-R5/ELGA-FHIR-e-Medikation-R5/output/usecase_de.html#/html/body/div/div/div/div/div/div/blockquote/p/strong/a at Line 183, column 52: The link 'usecases_en.html' for "here" cannot be resolved
+ERROR: /home/runner/work/ELGA-FHIR-e-Medikation-R5/ELGA-FHIR-e-Medikation-R5/output/usecase_en.html#/html/body/div/div/div/div/div/div/blockquote/p/strong/a at Line 169, column 46: The link 'usecases_de.html' for "hier" cannot be resolved
+WARNING: 1: The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide
+WARNING: 3: An HTML fragment from the set [dependency-table.xhtml, dependency-table-short.xhtml, dependency-table-nontech.xhtml] is not included anywhere in the produced implementation guide
+WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
+== fsh-generated/resources/ImplementationGuide-elga-e-medikation-R5.elga.hl7.at.json ==
+== fsh-generated/resources/MedicationRequest-Example-eMedRequest.json ==
+WARNING: MedicationRequest/Example-eMedRequest: MedicationRequest.medication.concept.coding[0].system: A definition for CodeSystem 'https://termgit.elga.gv.at/CodeSystem/asp-liste' could not be found, so the code cannot be validated
+WARNING: MedicationRequest/Example-eMedRequest: MedicationRequest.medication.concept.coding[0].system: URL value 'https://termgit.elga.gv.at/CodeSystem/asp-liste' does not resolve
+ERROR: MedicationRequest/Example-eMedRequest: MedicationRequest.subject: Unable to resolve resource with reference 'https://fhir.hl7.at/r5-core-main/Patient-HL7ATCorePatientExample05-FullElga'
+ERROR: MedicationRequest/Example-eMedRequest: MedicationRequest.requester: Unable to resolve resource with reference 'https://fhir.hl7.at/r5-core-main/Practitioner-HL7ATCorePractitionerExample01'
+== fsh-generated/resources/RequestOrchestration-WYE82A2G8EE1.json ==
+WARNING: RequestOrchestration/WYE82A2G8EE1: RequestOrchestration.contained[0]/*MedicationRequest/Example-eMedRequest*/.medication.concept.coding[0].system: A definition for CodeSystem 'https://termgit.elga.gv.at/CodeSystem/asp-liste' could not be found, so the code cannot be validated
+WARNING: RequestOrchestration/WYE82A2G8EE1: RequestOrchestration.contained[0]/*MedicationRequest/Example-eMedRequest*/.medication.concept.coding[0].system: URL value 'https://termgit.elga.gv.at/CodeSystem/asp-liste' does not resolve
+ERROR: RequestOrchestration/WYE82A2G8EE1: RequestOrchestration.contained[0]/*MedicationRequest/Example-eMedRequest*/.subject: Unable to resolve resource with reference 'https://fhir.hl7.at/r5-core-main/Patient-HL7ATCorePatientExample05-FullElga'
+ERROR: RequestOrchestration/WYE82A2G8EE1: RequestOrchestration.contained[0]/*MedicationRequest/Example-eMedRequest*/.requester: Unable to resolve resource with reference 'https://fhir.hl7.at/r5-core-main/Practitioner-HL7ATCorePractitionerExample01'
+WARNING: RequestOrchestration/WYE82A2G8EE1: RequestOrchestration.code: ValueSet 'https://termgit.elga.gv.at/ValueSet/elga-medikationrezeptart' not found
+ERROR: RequestOrchestration/WYE82A2G8EE1: RequestOrchestration.code.coding[0].system: The Coding references a value set, not a code system ('https://termgit.elga.gv.at/ValueSet/elga-medikationrezeptart')
+WARNING: RequestOrchestration/WYE82A2G8EE1: RequestOrchestration.code.coding[0].system: URL value 'https://termgit.elga.gv.at/ValueSet/elga-medikationrezeptart' does not resolve
+ERROR: RequestOrchestration/WYE82A2G8EE1: RequestOrchestration.subject: Unable to resolve resource with reference 'https://fhir.hl7.at/r5-core-main/Patient-HL7ATCorePatientExample05-FullElga'
+ERROR: RequestOrchestration/WYE82A2G8EE1: RequestOrchestration.author: Unable to resolve resource with reference 'https://fhir.hl7.at/r5-core-main/Practitioner-HL7ATCorePractitionerExample01'
+ERROR: RequestOrchestration/WYE82A2G8EE1: RequestOrchestration.contained[0]: The contained resource 'Example-eMedRequest' is not referenced to from elsewhere in the containing resource nor does it refer to the containing resource (dom-3)
+== fsh-generated/resources/StructureDefinition-eMed-prescription-with-multiple-eMed-requests.json ==
+WARNING: StructureDefinition/eMed-prescription-with-multiple-eMed-requests: StructureDefinition.snapshot.element[16].short: value should not start or finish with whitespace '\tThe prescription represents a request/demand and authorization for action by the requestor. | Das Rezept stellt eine Anfrage/Anforderung und Ermächtigung zum Handeln durch den Antragsteller dar.'
+WARNING: StructureDefinition/eMed-prescription-with-multiple-eMed-requests: StructureDefinition.snapshot.element[18].binding.valueSet: Canonical URL 'https://termgit.elga.gv.at/ValueSet/elga-medikationrezeptart' does not resolve
+WARNING: StructureDefinition/eMed-prescription-with-multiple-eMed-requests: StructureDefinition.differential.element[4].short: value should not start or finish with whitespace '\tThe prescription represents a request/demand and authorization for action by the requestor. | Das Rezept stellt eine Anfrage/Anforderung und Ermächtigung zum Handeln durch den Antragsteller dar.'
+WARNING: StructureDefinition/eMed-prescription-with-multiple-eMed-requests: StructureDefinition.differential.element[5].binding.valueSet: Canonical URL 'https://termgit.elga.gv.at/ValueSet/elga-medikationrezeptart' does not resolve
+WARNING: StructureDefinition/eMed-prescription-with-multiple-eMed-requests: StructureDefinition: Constraint failed: cnl-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' (defined in http://hl7.org/fhir/StructureDefinition/StructureDefinition)
+WARNING: StructureDefinition/eMed-prescription-with-multiple-eMed-requests: StructureDefinition.snapshot.element[15].binding: The definition for the element 'RequestOrchestration.status' binds to the value set 'http://hl7.org/fhir/ValueSet/request-status|5.0.0' which is experimental, but this structure is not labeled as experimental
+WARNING: StructureDefinition/eMed-prescription-with-multiple-eMed-requests: StructureDefinition.snapshot.element[16].binding: The definition for the element 'RequestOrchestration.intent' binds to the value set 'http://hl7.org/fhir/ValueSet/request-intent|5.0.0' which is experimental, but this structure is not labeled as experimental
+WARNING: StructureDefinition/eMed-prescription-with-multiple-eMed-requests: StructureDefinition.snapshot.element[17].binding: The definition for the element 'RequestOrchestration.priority' binds to the value set 'http://hl7.org/fhir/ValueSet/request-priority|5.0.0' which is experimental, but this structure is not labeled as experimental
+WARNING: StructureDefinition/eMed-prescription-with-multiple-eMed-requests: StructureDefinition.snapshot.element[35].binding: The definition for the element 'RequestOrchestration.action.priority' binds to the value set 'http://hl7.org/fhir/ValueSet/request-priority|5.0.0' which is experimental, but this structure is not labeled as experimental
+== fsh-generated/resources/StructureDefinition-eMed-request.json ==
+WARNING: StructureDefinition/eMed-request: StructureDefinition.snapshot.element[9].short: value should not start or finish with whitespace ' MedicationRequest ID = {eMed-ID}_{locally assigned ID} |  Verordnungs ID = {eMed-ID}_{lokal vergebene ID}'
+WARNING: StructureDefinition/eMed-request: StructureDefinition.snapshot.element[16].short: value should not start or finish with whitespace '\tThe prescription represents a request/demand and authorization for action by the requestor. | Das Rezept stellt eine Anfrage/Anforderung und Ermächtigung zum Handeln durch den Antragsteller dar.'
+WARNING: StructureDefinition/eMed-request: StructureDefinition.snapshot.element[20].binding.valueSet: Canonical URL 'https://termgit.elga.gv.at/CodeSystem/asp-liste' does not resolve
+WARNING: StructureDefinition/eMed-request: StructureDefinition.snapshot.element[111].short: value should not start or finish with whitespace '\tNumber of refills authorized | Anzahl der genehmigten Einlösungen'
+WARNING: StructureDefinition/eMed-request: StructureDefinition.differential.element[0].short: value should not start or finish with whitespace ' MedicationRequest ID = {eMed-ID}_{locally assigned ID} |  Verordnungs ID = {eMed-ID}_{lokal vergebene ID}'
+WARNING: StructureDefinition/eMed-request: StructureDefinition.differential.element[3].short: value should not start or finish with whitespace '\tThe prescription represents a request/demand and authorization for action by the requestor. | Das Rezept stellt eine Anfrage/Anforderung und Ermächtigung zum Handeln durch den Antragsteller dar.'
+WARNING: StructureDefinition/eMed-request: StructureDefinition.differential.element[4].binding.valueSet: Canonical URL 'https://termgit.elga.gv.at/CodeSystem/asp-liste' does not resolve
+WARNING: StructureDefinition/eMed-request: StructureDefinition.differential.element[26].short: value should not start or finish with whitespace '\tNumber of refills authorized | Anzahl der genehmigten Einlösungen'
+WARNING: StructureDefinition/eMed-request: StructureDefinition: Constraint failed: cnl-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' (defined in http://hl7.org/fhir/StructureDefinition/StructureDefinition)
+WARNING: StructureDefinition/eMed-request: StructureDefinition.snapshot.element[18].binding: The definition for the element 'MedicationRequest.priority' binds to the value set 'http://hl7.org/fhir/ValueSet/request-priority|5.0.0' which is experimental, but this structure is not labeled as experimental
+ERROR: StructureDefinition/eMed-request: StructureDefinition.snapshot.element[92]: The element MedicationRequest.dosageInstruction.doseAndRate.rate[x] has no assigned types, and no content reference
+== fsh-generated/resources/StructureDefinition-linca-dipsense-documentation.json ==
+WARNING: StructureDefinition/linca-dipsense-documentation: StructureDefinition.snapshot.element[16].binding.valueSet: Canonical URL 'https://termgit.elga.gv.at/CodeSystem/asp-liste' does not resolve
+INFORMATION: StructureDefinition/linca-dipsense-documentation: StructureDefinition.snapshot.element[34].mapping[0].map: The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
+WARNING: StructureDefinition/linca-dipsense-documentation: StructureDefinition.snapshot.element[68].binding.valueSet: Canonical URL 'https://termgit.elga.gv.at/ValueSet/elga-medikationdarreichungsform' does not resolve
+WARNING: StructureDefinition/linca-dipsense-documentation: StructureDefinition.differential.element[2].binding.valueSet: Canonical URL 'https://termgit.elga.gv.at/CodeSystem/asp-liste' does not resolve
+WARNING: StructureDefinition/linca-dipsense-documentation: StructureDefinition.differential.element[11].binding.valueSet: Canonical URL 'https://termgit.elga.gv.at/ValueSet/elga-medikationdarreichungsform' does not resolve
+WARNING: StructureDefinition.where(url = 'http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/linca-dipsense-documentation'): The Implementation Guide contains no examples for this profile

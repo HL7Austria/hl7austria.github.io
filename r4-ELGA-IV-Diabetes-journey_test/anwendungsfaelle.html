@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>HL7.AT.FHIR.ELGA.IV.DIAB\Anwendungsfälle - FHIR® v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"2"}
+    h3,h4,h5,h6{--heading-prefix:"2"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img id="header-logo" src="assets/images/hl7atlogo.png"/>
+          </div>
+          <div class="col-11">
+        <!-- at-fhir-ig-template end -->
+            <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">Integrierte Versorgung Diabetes (R4)</span><br/>
+                <span class="label label-info">0.1.1 - ci-build</span>
+              </p>
+            </div>
+        <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+        <!-- at-fhir-ig-template end -->
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR®</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Start</a>
+  </li>
+  <li>
+    <a href="toc.html">Inhalt</a>
+  </li>
+  <li>
+    <a href="anwendungsfaelle.html">Anwendungsfälle</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artefakte</a>
+  </li>
+  <li>
+    <a href="info.html">ELGA IG</a>
+  </li>
+  <li>
+    <a href="mappings.html">Mapping Diabetes to IPS</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Anwendungsfälle</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!-- at-fhir-ig-template begin -->
+  <div class="alert alert-warning" role="alert">
+    <!--ReleaseHeader--><p id="publish-box">Integrierte Versorgung Diabetes (R4) - Local Development build (v0.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga-iv-diabetes-r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  </div>
+  <!-- at-fhir-ig-template end -->
+  <h2>Anwendungsfälle</h2>
+  
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
+
+<h3 id="patient-journey">Patient Journey</h3>
+<p>Die folgende fiktive "Patient Journey" beschreibt einen möglichen Anwendungsfall der Integrierten Versorgung:<br />
+Anton Testpatient ist 71 Jahre alt und lebt mit seiner Ehefrau in Wien. Er hat zwei erwachsene Kinder und zwei Enkelkinder. Sein Allgemeinzustand ist gut, jedoch leidet er unter Adipositas (BMI &gt; 30). In seiner Familie gibt es eine genetische Vorbelastung für Herz-Kreislauf-Erkrankungen und Diabetes mellitus. Zudem hat Anton eine bekannte Allergie gegen Benzylpenicillin-Natrium. Seit 2016 nimmt er aufgrund eines arteriellen Hypertonus täglich morgens eine 5-mg-Tablette Ramipril ein. Trotz einer Hüftprothese, die Anton nach einem Autounfall im Jahr 2020 erhalten hat, ist er körperlich aktiv und geht regelmäßig mit seinem Hund spazieren. Er ist technisch versiert und nutzt sein Smartphone häufig. Er hat vor 5 Jahren mit dem Rauchen aufgehört. Anton gibt an, in den letzten Jahren moderat Alkohol zu konsumieren, etwa 1-2 Gläser Wein oder Bier pro Tag.</p>
+<ul>
+  <li><strong>14.03.2025:</strong> Anton bemerkt Symptome wie Mundtrockenheit, häufiges Wasserlassen, verschwommenes Sehen und er fühlt sich ständig müde, daher sucht Anton Dr. Hanna Hausärztin auf. Diese ruft die ELGA des Patienten auf (<a href="Bundle-example-iv-1.html">Patient Journey 1</a>). Dr. Hausärztin erhält alle verfügbaren, dokumentierten Informationen über ihren Patienten, inkl. Allergien, Impfungen und früheren Erkrankungen. Nach einer gründlichen körperlichen Untersuchung kontrolliert Dr. Hausärztin auch den Blutzucker und stellt einen erhöhten Wert von 250 mg/dl (kapillär, 1,5 Stunden postprandial) fest. Die Hausärztin ordnet eine Blutabnahme inklusive der Messung des HbA1c-Wertes und eine Harnuntersuchung zur weiteren Abklärung an. Dies ist für den Patienten als offene Aufgabe in seinem Behandlungsplan in ELGA ersichtlich (<a href="Bundle-example-iv-2.html">Patient Journey 2</a>).<br />
+In den nächsten Tagen geht Anton in ein Labor um die angeordneten Werte ermitteln zu lassen.<br /><br /></li>
+  <li><strong>22.03.2025:</strong> Die Ergebnisse der Laboruntersuchung sind eingelangt und in Antons ELGA ersichtlich (<a href="Bundle-example-iv-3.html">Patient Journey 3</a>). Anton sucht erneut seine Hausärztin auf. Dr. Hausärztin bestätigt die Diagnose: Anton leidet an Diabetes mellitus Typ 2, mit einem HbA1c-Wert von 8,1 %. Sie erklärt Anton die Diagnose und die Teilnahme am Integrierten Versorgungsmodell eVIVA. Sie trägt die Diagnose in ihr Informationssystem ein. Durch die Eingabe der Diagnose Diabetes mellitus Typ 2 startet die Integrierte Versorgung in ELGA. Damit werden alle weiteren Informationen in ELGA dokumentiert:<br /><br />
+    <ul>
+      <li>Dr. Hausärztin trägt sich selbst als <strong>Medizinische Fallführung</strong> (siehe unten) ein. Als <strong>Fallkoordination</strong> trägt sie ihren Mitarbeiter ein, den diplomierten Gesundheits- und Krankenpfleger Herrn Nutrix. Sie erklärt Anton, dass Herr Nutrix über seine Versorgung informiert ist und er sich bei Fragen oder wenn er Hilfe bei Terminvereinbarungen braucht, ganz unkompliziert telefonisch an ihn wenden kann.<br /><br /></li>
+      <li>
+        <p>Dr. Hausärztin öffnet die in ELGA hinterlegte <strong>Versorgungscheckliste</strong> (siehe unten) für das Krankheitsbild Diabetes mellitus Typ 2. Anhand dieser Liste erstellt Dr. Hausärztin als Medizinische Fallführung für Anton einen individuellen Behandlungsplan, dazu zählen die vorgesehene medikamentöse Therapie, Zielwertfestlegungen, weitere Kontrolltermine und das Patientenschulungsprogramm. Alle Versorgungsschritte bespricht Dr. Hausärztin mit Anton, stimmt diese mit ihm ab und dokumentiert sie im Behandlungsplan der ELGA. Der Behandlungsplan ist sowohl für Dr. Hausärztin und Herrn Nutrix, der Fallkoordination, als auch für Anton einsehbar.<br /><br /></p>
+      </li>
+      <li>Der <strong>Behandlungsplan</strong> sieht folgendes vor:
+        <ul>
+          <li>Anton erhält eine <strong>medikamentöse Therapie</strong> mittels eines oralen Antidiabetikums, Metformin 500 mg einmal morgens. Dr. Hausärztin stellt ein entsprechendes Rezept für Anton aus.</li>
+          <li>Um Antons Gesundheitszustand zusätzlich zu verbessern, werden folgende <strong>Ziele</strong> mit ihm vereinbart. Er soll:
+            <ul>
+              <li>einen HbA1c-Wert von 6,0% erreichen. Durch eine erneute Laboruntersuchung in 3 Monaten soll die Erreichung des Ziels kontrolliert werden. Anton erhält dafür eine Laborzuweisung und die entsprechende Erklärung.</li>
+              <li>mindestens 30 Minuten pro Tag Sport treiben,</li>
+              <li>seinen Alkoholkonsum reduzieren auf 1-2 Gläser Wein pro Woche</li>
+              <li>durch verbesserte Ernährung seinen HbA1c-Wert positiv beeinflussen.</li>
+            </ul>
+          </li>
+          <li>Anton wird empfohlen im Rahmen des Patient:innenenschulungsprogramms eine <strong>Patientenschulung</strong> in Anspruch zu nehmen und sich für eine Ernährungsberatung  anzumelden. Auch dafür stellt Dr. Hausärztin Zuweisungen aus.</li>
+          <li>Anton erhält zudem eine Überweisung zum Augenarzt zur augenärztlichen Kontrolle auf diabetische Retinopathie.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>Dr. Hausärztin vereinbart mit Anton einen Kontrolltermin in 3 Monaten. Alle Informationen sind in Antons ELGA-IV-Dokumentation ersichtlich(<a href="Bundle-example-iv-4.html">Patient Journey 4</a>).<br /><br /></p>
+  </li>
+</ul>
+
+<blockquote>
+  <p><br /><em>Die <strong>Fallkoordination</strong> ist für Patientinnen und Patienten die erste Anlaufstelle für administrative Fragen und nicht-ärztliche Anliegen im Zusammenhang mit der chronischen Erkrankung. Sie stellt eine auf die individuellen und situationsbezogenen patientenspezifischen Bedürfnisse zugeschnittene transsektorale Versorgung sicher. Die Fallkoordinationfungiert als Lotse für die Patientinnen und Patienten durch das Gesundheitssystem und hilft dabei, die richtige Anlaufstelle zu finden bzw. kann je nach entsprechender Ausbildung auch selbst Fragestellungen klären. Die Fallkoordinationagiert im Rahmen ihrer berufsrechtlichen Kompetenzen und trägt dafür Sorge, dass die/der Patient:in die erforderlichen Leistungen erhält und in Anspruch nimmt, z.B. Kontrolluntersuchungen, Diabetesschulung oder Ernährungsberatung. <br /><br />
+Bei der <strong>Versorgungscheckliste</strong> handelt es sich um eine standardisierte Aufgabenliste für die Versorgung von Menschen mit Diabetes mellitus Typ 2, die zum Teil auch mit Mindestfrequenzen versehen ist. Diese Aufgabenliste orientiert sich an den bestehenden med. Leitlinien und enthält bspw. Parameter für Laboruntersuchungen, Arten von Kontrolluntersuchungen, Patientenschulungen oder Parameter zur Zielwertfestlegung. Diese Versorgungscheckliste ist eine Unterstützung für die Medizinischen Fallführung und dient ihr als Vorlage, um individuelle Behandlungspläne für ihre Patient:innen zu erstellen.</em><br /><br /></p>
+</blockquote>
+
+<ul>
+  <li>
+    <p><strong>März – Juni 2025:</strong> Anton beginnt mit der Medikamenteneinnahme, geht täglich länger mit dem Hund spazieren und macht sich einen Kontrolltermin bei seinem Augenarzt aus, bei dem er schon seit 20 Jahren wegen seiner Altersweitsichtigkeit in Behandlung ist. Anton weiß nicht, wo er die Patientenschulungen in Anspruch nehmen kann, und kontaktiert Herrn Nutrix, seinen Fallkoordinator. Herr Nutrix klärt ihn über die Möglichkeiten auf und vermittelt ihn an eine geeignete Stelle. Zeitgleich erkundigt sich Herr Nutrix, wie es ihm geht und ob Anton die Medikamente gut verträgt. Am nächsten Tag meldet sich Anton für eine Patientenschulung mit einer Ernährungsberatung an. Er besucht die Patientenschulung mit Ernährungsberatung. Anton vergisst darauf, dass er nach 3 Monaten mit der ausgestellten Laborzuweisung sein Blut untersuchen lassen sollte.<br /><br />
+Kurz vor dem Kontrolltermin bei der Hausärztin prüft Herr Nutrix den aktuellen Stand zur Inanspruchnahme der Versorgungsleistungen aus dem Behandlungsplan. Das System zeigt an, dass Anton die geplante Laboruntersuchung noch nicht wahrgenommen hat. Herr Nutrix ruft Anton an und erinnert ihn daran, dass er vor dem Kontrolltermin bei Dr. Hausärztin noch ins Labor gehen muss.<br /><br /></p>
+  </li>
+  <li>
+    <p><strong>15.07.2025:</strong> : Kontrolle bei der Hausärztin nach 4 Monaten. Dr. Hausärztin kontrolliert den Laborbefund und setzt den Status der Aufgabe auf erledigt. Anton verträgt die Diabetesmedikation gut, aber der HbA1c Wert ist noch nicht im Zielbereich, daher erhöht Dr. Hausärztin die Metformin 500 mg Dosierung auf zweimal täglich. Die Patientenschulung und Ernährungsberatung hat Anton abgeschlossen. Alle Informationen sind in Antons ELGA-IV-Dokumentation ersichtlich(<a href="Bundle-example-iv-5.html">Patient Journey 5</a>).<br /><br /></p>
+  </li>
+  <li>
+    <p><strong>Fortlaufende Betreuung</strong>: Anton wird weiterhin engmaschig von seiner Hausärztin betreut (mindestens alle 3 Monate) und er nimmt regelmäßig an Schulungen und Beratungen teil.</p>
+  </li>
+</ul>
+
+<!-- <pre class="mermaid">
+---
+config:
+  look: handDrawn
+  layout: fixed
+---
+flowchart TD
+A("**14.03.2025**<br/>Hausärztin führt <br/>**Gespräch/Untersuchung** <br/>durch und ordnet<br/>weitere Blutabnahme an. <br/>**Verdachtsdiagnose <br/>Diabetes mellitus**")
+A -.-> a1("**Körperliche Untersuchung**:<br/>Schnelltest zeigt erhöhten<br/>Blutzuckerwert von 250mg/dl")
+A -.-> a2("**Anamnese**: <br/>Symptome wie<br/>Mundtrockenheit, Müdigkeit,<br/>häufiges Wasserlassen und<br/>verschwommenes Sehen")
+A ==> B("**22.03.2025**<br/>**Laborergebnis:**<br/>HbA1C 8,1% wird besprochen.")
+B -.-> b1("**Diagnose Diabetes mellitus <br/>Typ 2** wird bestätigt.<br/>**Therapiebeginn:**")
+b1 -.-> bb1("**Medikation**: <br/>Metformin 500mg")
+b1 -.-> bb2("**Schulung**: <br/>Ernährungsschulung")
+b1 -.-> bb3("**Überweisung**: <br/>Augenärzt:in")
+B ==> C("**17.05.2023**<br/>**Nachkontrolle bei <br/>Hausärztin**: Weiterhin erhöhte<br/>Blutzuckerwerte (200 mg/dl).")
+C -.-> c1("**Medikationsanpassung**")
+C ==> D("**Fortlaufende Therapie**: <br/>Engmaschige Kontrollen bei <br/>Hausärztin. Patient nimmt <br/>regelmäßig an Schulungen und<br/> Beratungen teil.")
+
+style A fill:#BBDEFB,stroke-width:4px
+style a1 fill:#FFE0B2
+style a2 fill:#FFE0B2
+style B fill:#BBDEFB,stroke-width:4px
+style b1 fill:#FFE0B2
+style bb1 fill:#FFE0B2
+style bb2 fill:#FFE0B2
+style bb3 fill:#FFE0B2
+style C fill:#BBDEFB,stroke-width:4px
+style c1 fill:#FFE0B2
+style D fill:#BBDEFB,stroke-width:4px
+</pre>  -->
+
+<pre class="mermaid">
+gantt
+  title Patient Journey – Anton Testpatient (Diabetes Typ 2)
+  dateFormat  YYYY-MM-DD
+  section März 2025 - Erstbesuch
+  Erstkontakt mit Hausärztin             :milestone, a1, 2025-03-14, 1d
+  Blutzuckermessung + körperliche Untersuchung :done, a2, 2025-03-14, 1d
+  Laborzuweisung (HbA1c, Harn)           :active, a3, 2025-03-14, 2025-03-17
+  Laboruntersuchung                      :active, a4, after a3, 2d
+
+  section März 2025 – Folgeuntersuchung
+  Arztbesuch – Diagnose Diabetes Typ 2, Start Integrierte Versorgung   :milestone, a5, 2025-03-22, 1d
+  Erstellen Behandlungsplan                                      :done, a7, 2025-03-22, 1d
+  Medikamenteneinnahme (Metformin 1x täglich)               :active, b1, 2025-03-22, 2025-07-15
+  Zuweisung Labor in 3 Monaten (Ziel HbA1c 6%)          :active, a9, 2025-03-22, 2025-06-22
+  Zuweisung Augenarzt                                   :active, a10, 2025-03-22, 1d
+  Zuweisung Patientenschulung und Ernährungsberatung     :active, a10, 2025-03-22, 2025-04-02
+
+  section April 2025
+  Patientenschulung und Ernährungsberatung bei Diabetes mellitus Typ II                    : milestone, 2025-04-02
+  Anpassung Lebensstil (Spaziergänge, Ernährung)               :active, b2, 2025-04-02, 2025-07-15
+  Terminvereinbarung Augenarzt          :done, b3, 2025-04-01, 1d
+  Labor vergessen                       :crit, b6, 2025-06-22, 2025-07-07
+  Erinnerung Labor durch Fallkoordination    :milestone, b7, 2025-07-07, 1d
+  Nachgeholte Laboruntersuchung         :done, b8, 2025-07-11, 1d
+
+  section Juli 2025
+  Kontrolltermin bei Hausärztin         :milestone, c1, 2025-07-15, 1d
+  Laborergebnisse und Medikation prüfen :done, c2, 2025-07-15, 1d
+  Zielwerte prüfen, Behandlungsplan aktualisieren          :done, a7, 2025-07-15, 1d
+  Anpassung Metformin (2x täglich)      :active, c3, 2025-07-15, 2025-12-31
+  Anpassung Lebensstil (Spaziergänge, Ernährung)          :active, c4, 2025-07-15, 2025-12-31
+
+  section Weiterer Verlauf
+  Regelmäßige Kontrolltermine und Schulungen         :active, d2, 2025-07-15, 2025-12-31
+</pre>
+
+
+
+</div>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /row -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-content -->
+
+<script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/window-hash.js"> </script>
+<a name="bottom"> </a>
+<div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+<div class="container">  <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.iv.diab#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Aug 11, 2025 11:04+0000">2025-08-11</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    </span>
+  </p>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+<div class="container">  <!-- container -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-post-footer -->
+
+<!-- JS and analytics only. -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+<script type="text/javascript" src="assets/js/respond.min.js"> </script>
+<script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+<script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+</body>
+</html>
+

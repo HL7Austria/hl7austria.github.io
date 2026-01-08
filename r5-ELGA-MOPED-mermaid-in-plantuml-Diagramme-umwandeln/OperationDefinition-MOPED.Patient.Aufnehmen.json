@@ -1,0 +1,47 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "MOPED.Patient.Aufnehmen",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition MOPED.Patient.Aufnehmen</b></p><a name=\"MOPED.Patient.Aufnehmen\"> </a><a name=\"hcMOPED.Patient.Aufnehmen\"> </a><p>URL: [base]/$aufnehmen</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>falldaten</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/bundle.html\">Bundle</a> (<a href=\"StructureDefinition-MopedAufnehmenBundleKH.html\" title=\"https://elga.moped.at/StructureDefinition/MopedAufnehmenBundleKH\">MOPED Aufnehmen Bundle KH</a>)</td><td/><td><div><p>Der <em>falldaten</em> Parameter beinhaltet die nötigen Elemente um die Details zum Fall zu beschreiben die bei Patientenaufnahme bekannt sind, inklusive Patient, Encounter und Aufnahmediagnose.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/resource.html\">Resource</a> (<a href=\"http://hl7.org/fhir/R5/operationoutcome.html\" title=\"http://hl7.org/fhir/StructureDefinition/OperationOutcome\">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation. Wenn der <em>modus</em> Parameter auf 'freigeben' gesetzt war, ist die Operation erfolgreich, wenn die Daten validiert wurden und abgespeichert werden konnten. Wenn der <em>modus</em> Parameter auf <em>zwischenspeichern</em> gesetzt war, ist für eine erfolgreiche Durchführung der Operation lediglich ein erfolgreiches Speichern vorausgesetzt. Schlägt die Operation fehl, wird eine entsprechende Meldung ausgegeben.</p>\n</div></td></tr></table></div>"
+  },
+  "url" : "https://elga.moped.at/OperationDefinition/MOPED.Patient.Aufnehmen",
+  "version" : "0.1.0",
+  "name" : "MOPED_Patient_Aufnehmen",
+  "title" : "MOPED Patient $aufnehmen",
+  "status" : "draft",
+  "kind" : "operation",
+  "date" : "2025-12-19T13:11:40+00:00",
+  "publisher" : "ELGA GmbH",
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
+  "description" : "Die $aufnehmen Operation wird aufgerufen, wenn ein(e) Patient*in in das Krankenhaus aufgenommen wird.",
+  "affectsState" : true,
+  "code" : "aufnehmen",
+  "system" : true,
+  "type" : true,
+  "instance" : false,
+  "parameter" : [{
+    "name" : "falldaten",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *falldaten* Parameter beinhaltet die nötigen Elemente um die Details zum Fall zu beschreiben die bei Patientenaufnahme bekannt sind, inklusive Patient, Encounter und Aufnahmediagnose.",
+    "type" : "Bundle",
+    "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedAufnehmenBundleKH"]
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *return* Parameter gibt Auskunft über den Erfolg der Operation. Wenn der *modus* Parameter auf 'freigeben' gesetzt war, ist die Operation erfolgreich, wenn die Daten validiert wurden und abgespeichert werden konnten. Wenn der *modus* Parameter auf *zwischenspeichern* gesetzt war, ist für eine erfolgreiche Durchführung der Operation lediglich ein erfolgreiches Speichern vorausgesetzt. Schlägt die Operation fehl, wird eine entsprechende Meldung ausgegeben.",
+    "type" : "Resource",
+    "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/OperationOutcome"]
+  }]
+}

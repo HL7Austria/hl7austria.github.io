@@ -1,0 +1,278 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ages.at/fhir/medicinalproduct/Bundle/asp-liste-4> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "asp-liste-4"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "2.0.0+20240208" ] ;
+     fhir:lastUpdated [ fhir:v "2025-06-25T17:16:31.964+02:00"^^xsd:dateTime ]
+  ] ; # 
+  fhir:identifier [
+     fhir:value [ fhir:v "1.2.40.0.34.4.16" ]
+  ] ; # 
+  fhir:type [ fhir:v "collection"] ; # 
+  fhir:entry ( [
+     fhir:fullUrl [ fhir:v "MedicinalProductDefinition/942778"^^xsd:anyURI ] ;
+     fhir:resource ( <MedicinalProductDefinition/942778> )
+  ] [
+     fhir:fullUrl [ fhir:v "PackagedProductDefinition/1076502"^^xsd:anyURI ] ;
+     fhir:resource ( <PackagedProductDefinition/1076502> )
+  ] [
+     fhir:fullUrl [ fhir:v "RegulatedAuthorization/2-00215"^^xsd:anyURI ] ;
+     fhir:resource ( <RegulatedAuthorization/2-00215> )
+  ] [
+     fhir:fullUrl [ fhir:v "AdministrableProductDefinition/2198207"^^xsd:anyURI ] ;
+     fhir:resource ( <AdministrableProductDefinition/2198207> )
+  ] [
+     fhir:fullUrl [ fhir:v "Ingredient/1040389"^^xsd:anyURI ] ;
+     fhir:resource ( <Ingredient/1040389> )
+  ] ) . # 
+
+<MedicinalProductDefinition/942778> a fhir:MedicinalProductDefinition ;
+  fhir:id [ fhir:v "942778"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicinalProductDefinition_942778\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicinalProductDefinition 942778</b></p><a name=\"942778\"> </a><a name=\"hc942778\"> </a><p><b>identifier</b>: <code>https://www.ages.at/fhir/referenceNumber</code>/942778</p><p><b>domain</b>: <span title=\"Codes:{https://spor.ema.europa.eu/v1/lists/100000000004 100000000012}\">Human</span></p><p><b>combinedPharmaceuticalDoseForm</b>: <span title=\"Codes:{https://spor.ema.europa.eu/v1/lists/200000000006 100000073864}\">Injektionssuspension</span></p><p><b>legalStatusOfSupply</b>: <span title=\"Codes:{https://spor.ema.europa.eu/v1/lists/100000072051 200000017698}\">Arzneimittel zur einmaligen Abgabe auf aerztliche Verschreibung</span></p><p><b>classification</b>: <span title=\"Codes:{https://spor.ema.europa.eu/v1/lists/100000093533 100000096563}, {http://www.whocc.no/atc J07BB02}\">Influenza, gereinigtes Antigen</span></p><h3>Names</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ProductName</b></td></tr><tr><td style=\"display: none\">*</td><td>VAXIGRIP Injektionssupension in einer Fertigspritze</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "https://www.ages.at/fhir/referenceNumber"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "942778" ]
+  ] ) ; # 
+  fhir:domain [
+     fhir:coding ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://ema.europa.eu/fhir/extension/codeSystemName"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Domain"
+         ]
+       ] ) ;
+       fhir:system [ fhir:v "https://spor.ema.europa.eu/v1/lists/100000000004"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "100000000012" ] ;
+       fhir:display [ fhir:v "Human" ]
+     ] )
+  ] ; # 
+  fhir:combinedPharmaceuticalDoseForm [
+     fhir:coding ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://ema.europa.eu/fhir/extension/codeSystemName"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Combined Pharmaceutical Dose Form"
+         ]
+       ] ) ;
+       fhir:system [ fhir:v "https://spor.ema.europa.eu/v1/lists/200000000006"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "100000073864" ] ;
+       fhir:display [ fhir:v "Injektionssuspension" ]
+     ] )
+  ] ; # 
+  fhir:legalStatusOfSupply [
+     fhir:coding ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://ema.europa.eu/fhir/extension/codeSystemName"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Legal Status for the Supply"
+         ]
+       ] ) ;
+       fhir:system [ fhir:v "https://spor.ema.europa.eu/v1/lists/100000072051"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "200000017698" ] ;
+       fhir:display [ fhir:v "Arzneimittel zur einmaligen Abgabe auf aerztliche Verschreibung" ]
+     ] )
+  ] ; # 
+  fhir:classification ( [
+     fhir:coding ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://ema.europa.eu/fhir/extension/codeSystemName"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Anatomical Therapeutic Chemical classification system - Human"
+         ]
+       ] ) ;
+       fhir:system [ fhir:v "https://spor.ema.europa.eu/v1/lists/100000093533"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "100000096563" ] ;
+       fhir:display [ fhir:v "Influenza, gereinigtes Antigen" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://ema.europa.eu/fhir/extension/atcGroup"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "???"
+         ]
+       ] ) ;
+       fhir:system [ fhir:v "http://www.whocc.no/atc"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "J07BB02" ] ;
+       fhir:display [ fhir:v "Influenza, gereinigtes Antigen" ]
+     ] )
+  ] ) ; # 
+  fhir:name ( [
+     fhir:productName [ fhir:v "VAXIGRIP Injektionssupension in einer Fertigspritze" ]
+  ] ) . # 
+
+<PackagedProductDefinition/1076502> a fhir:PackagedProductDefinition ;
+  fhir:id [ fhir:v "1076502"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"PackagedProductDefinition_1076502\"> </a><p class=\"res-header-id\"><b>Generated Narrative: PackagedProductDefinition 1076502</b></p><a name=\"1076502\"> </a><a name=\"hc1076502\"> </a><p><b>identifier</b>: <code>http://ema.europa.eu/fhir/dataCarrierIdentifier</code>/1076502</p><p><b>packageFor</b>: <a href=\"Bundle-asp-liste-4.html#MedicinalProductDefinition_942778\">Bundle: identifier = 1.2.40.0.34.4.16; type = collection</a></p><p><b>containedItemQuantity</b>: 1.0 nicht definiert<span style=\"background: LightGoldenRodYellow\"> (Details: unitsOfPresentation  code900000000001 = '900000000001')</span></p><h3>MarketingStatuses</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Status</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{https://spor.ema.europa.eu/v1/lists/100000072052 100000072075}\">Keine Daten übermittelt</span></td></tr></table><h3>Packagings</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{https://spor.ema.europa.eu/v1/lists/100000073346 100000073544}\">Fertigspritze</span></td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "http://ema.europa.eu/fhir/dataCarrierIdentifier"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "1076502" ]
+  ] ) ; # 
+  fhir:packageFor ( [
+     fhir:link <https://www.ages.at/fhir/medicinalproduct/MedicinalProductDefinition/942778> ;
+     fhir:reference [ fhir:v "MedicinalProductDefinition/942778" ]
+  ] ) ; # 
+  fhir:containedItemQuantity ( [
+     fhir:value [ fhir:v 1.0 ] ;
+     fhir:unit [ fhir:v "nicht definiert" ] ;
+     fhir:system [ fhir:v "https://ema.europa.eu/fhir/vs/unitsOfPresentation"^^xsd:anyURI ] ;
+     fhir:code [ fhir:v "900000000001" ]
+  ] ) ; # 
+  fhir:marketingStatus ( [
+     fhir:status [
+       fhir:coding ( [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://ema.europa.eu/fhir/extension/codeSystemName"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:string ;
+             fhir:v "Marketing Status"
+           ]
+         ] ) ;
+         fhir:system [ fhir:v "https://spor.ema.europa.eu/v1/lists/100000072052"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "100000072075" ] ;
+         fhir:display [ fhir:v "Keine Daten übermittelt" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:packaging [
+     fhir:type [
+       fhir:coding ( [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://ema.europa.eu/fhir/extension/codeSystemName"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:string ;
+             fhir:v "Packaging"
+           ]
+         ] ) ;
+         fhir:system [ fhir:v "https://spor.ema.europa.eu/v1/lists/100000073346"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "100000073544" ] ;
+         fhir:display [ fhir:v "Fertigspritze" ]
+       ] )
+     ]
+  ] . # 
+
+<RegulatedAuthorization/2-00215> a fhir:RegulatedAuthorization ;
+  fhir:id [ fhir:v "2-00215"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"RegulatedAuthorization_2-00215\"> </a><p class=\"res-header-id\"><b>Generated Narrative: RegulatedAuthorization 2-00215</b></p><a name=\"2-00215\"> </a><a name=\"hc2-00215\"> </a><p><b>identifier</b>: <code>http://ema.europa.eu/fhir/marketingAuthorizationNumber</code>/2-00215</p><p><b>subject</b>: <a href=\"Bundle-asp-liste-4.html#MedicinalProductDefinition_942778\">Bundle: identifier = 1.2.40.0.34.4.16; type = collection</a></p><p><b>status</b>: <span title=\"Codes:{https://spor.ema.europa.eu/v1/lists/100000072049 200000010409}\">Surrendered</span></p><p><b>holder</b>: <code>Sanofi Pasteur Europe</code></p></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "http://ema.europa.eu/fhir/marketingAuthorizationNumber"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "2-00215" ]
+  ] ) ; # 
+  fhir:subject ( [
+     fhir:link <https://www.ages.at/fhir/medicinalproduct/MedicinalProductDefinition/942778> ;
+     fhir:reference [ fhir:v "MedicinalProductDefinition/942778" ]
+  ] ) ; # 
+  fhir:status [
+     fhir:coding ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://ema.europa.eu/fhir/extension/codeSystemName"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Regulatory Entitlement Status"
+         ]
+       ] ) ;
+       fhir:system [ fhir:v "https://spor.ema.europa.eu/v1/lists/100000072049"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "200000010409" ] ;
+       fhir:display [ fhir:v "Surrendered" ]
+     ] )
+  ] ; # 
+  fhir:holder [
+     fhir:reference [ fhir:v "LOC-100010588" ] ;
+     fhir:display [ fhir:v "Sanofi Pasteur Europe" ]
+  ] . # 
+
+<AdministrableProductDefinition/2198207> a fhir:AdministrableProductDefinition ;
+  fhir:id [ fhir:v "2198207"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"AdministrableProductDefinition_2198207\"> </a><p class=\"res-header-id\"><b>Generated Narrative: AdministrableProductDefinition 2198207</b></p><a name=\"2198207\"> </a><a name=\"hc2198207\"> </a><p><b>identifier</b>: <code>http://ema.europa.eu/fhir/???</code>/2198207, <code>http://ema.europa.eu/fhir/???</code>/2198207</p><p><b>formOf</b>: <a href=\"Bundle-asp-liste-4.html#MedicinalProductDefinition_942778\">Bundle: identifier = 1.2.40.0.34.4.16; type = collection</a></p><blockquote><p><b>routeOfAdministration</b></p><p><b>code</b>: <span title=\"Codes:\">subkutane Anwendung</span></p></blockquote><blockquote><p><b>routeOfAdministration</b></p><p><b>code</b>: <span title=\"Codes:\">intramuskuläre Anwendung</span></p></blockquote></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "http://ema.europa.eu/fhir/???"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "2198207" ]
+  ] [
+     fhir:system [ fhir:v "http://ema.europa.eu/fhir/???"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "2198207" ]
+  ] ) ; # 
+  fhir:formOf ( [
+     fhir:link <https://www.ages.at/fhir/medicinalproduct/MedicinalProductDefinition/942778> ;
+     fhir:reference [ fhir:v "MedicinalProductDefinition/942778" ]
+  ] ) ; # 
+  fhir:routeOfAdministration ( [
+     fhir:code [
+       fhir:coding ( [
+         fhir:code [ fhir:v "100000073633" ] ;
+         fhir:display [ fhir:v "subkutane Anwendung" ]
+       ] )
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         fhir:code [ fhir:v "100000073600" ] ;
+         fhir:display [ fhir:v "intramuskuläre Anwendung" ]
+       ] )
+     ]
+  ] ) . # 
+
+<Ingredient/1040389> a fhir:Ingredient ;
+  fhir:id [ fhir:v "1040389"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Ingredient_1040389\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Ingredient 1040389</b></p><a name=\"1040389\"> </a><a name=\"hc1040389\"> </a><p><b>identifier</b>: <code>http://ema.europa.eu/fhir/???</code>/1040389</p><p><b>for</b>: <a href=\"Bundle-asp-liste-4.html#AdministrableProductDefinition_2198207\">Bundle: identifier = 1.2.40.0.34.4.16; type = collection</a></p><p><b>role</b>: <span title=\"Codes:{https://spor.ema.europa.eu/v1/lists/100000072050 100000072072}\">Wirkstoff</span></p><blockquote><p><b>substance</b></p><h3>Codes</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Concept</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{https://spor.ema.europa.eu/v1/lists/substanceDefinition 1708839}\">INFLUENZAVIRUS (AUSZUG, PRODUKTE)</span></td></tr></table></blockquote></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:identifier [
+     fhir:system [ fhir:v "http://ema.europa.eu/fhir/???"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "1040389" ]
+  ] ; # 
+  fhir:for ( [
+     fhir:link <https://www.ages.at/fhir/medicinalproduct/AdministrableProductDefinition/2198207> ;
+     fhir:reference [ fhir:v "AdministrableProductDefinition/2198207" ]
+  ] ) ; # 
+  fhir:role [
+     fhir:coding ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://ema.europa.eu/fhir/extension/codeSystemName"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Ingredient Role"
+         ]
+       ] ) ;
+       fhir:system [ fhir:v "https://spor.ema.europa.eu/v1/lists/100000072050"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "100000072072" ] ;
+       fhir:display [ fhir:v "Wirkstoff" ]
+     ] )
+  ] ; # 
+  fhir:substance [
+     fhir:code [
+       fhir:concept [
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://spor.ema.europa.eu/v1/lists/substanceDefinition"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "1708839" ] ;
+           fhir:display [ fhir:v "INFLUENZAVIRUS (AUSZUG, PRODUKTE)" ]
+         ] )
+       ]
+     ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

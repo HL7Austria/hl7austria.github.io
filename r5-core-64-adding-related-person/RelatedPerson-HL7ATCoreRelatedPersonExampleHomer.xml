@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RelatedPerson xmlns="http://hl7.org/fhir">
+  <id value="HL7ATCoreRelatedPersonExampleHomer"/>
+  <meta>
+    <profile value="http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-related-person"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: RelatedPerson HL7ATCoreRelatedPersonExampleHomer</b></p><a name="HL7ATCoreRelatedPersonExampleHomer"> </a><a name="hcHL7ATCoreRelatedPersonExampleHomer"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-core-related-person.html">HL7® AT Core RelatedPerson Profile</a></p></div><p><b>identifier</b>: Social Security number/1234010190, National unique individual identifier/BPK-TEST-XY123456</p><p><b>patient</b>: <a href="Patient-HL7ATCorePatientExampleBart.html">Bart Simpson  Male, DoB: 2010-04-01</a></p><p><b>relationship</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/v3-RoleClass NOK}">next of kin</span></p><p><b>name</b>: Homer Simpson </p><p><b>telecom</b>: <a href="tel:+436601234567">+43 660 1234567</a></p><p><b>gender</b>: Male</p><p><b>address</b>: Donutgasse 7 Tür 3 Wien Wien 1150 AUT (home)</p></div>
+  </text>
+  <identifier>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="SS"/>
+        <display value="Social Security number"/>
+      </coding>
+    </type>
+    <system value="urn:oid:1.2.40.0.10.1.4.3.1"/>
+    <value value="1234010190"/>
+    <assigner>
+      <display value="Dachverband der österreichischen Sozialversicherungsträger"/>
+    </assigner>
+  </identifier>
+  <identifier>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="NI"/>
+        <display value="National unique individual identifier"/>
+      </coding>
+    </type>
+    <system value="urn:oid:1.2.40.0.10.2.1.1.149"/>
+    <value value="BPK-TEST-XY123456"/>
+    <assigner>
+      <display value="Bundesministerium für Inneres"/>
+    </assigner>
+  </identifier>
+  <patient>
+    <reference value="Patient/HL7ATCorePatientExampleBart"/>
+  </patient>
+  <relationship>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-RoleClass"/>
+      <code value="NOK"/>
+      <display value="next of kin"/>
+    </coding>
+  </relationship>
+  <name>
+    <family value="Simpson"/>
+    <given value="Homer"/>
+  </name>
+  <telecom>
+    <system value="phone"/>
+    <value value="+43 660 1234567"/>
+    <use value="home"/>
+  </telecom>
+  <gender value="male"/>
+  <address>
+    <use value="home"/>
+    <type value="both"/>
+    <line value="Donutgasse 7 Tür 3">
+      <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+        <valueString value="Donutgasse"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+        <valueString value="7"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator">
+        <valueString value="Tür 3"/>
+      </extension>
+    </line>
+    <city value="Wien"/>
+    <state value="Wien"/>
+    <postalCode value="1150"/>
+    <country value="AUT"/>
+  </address>
+</RelatedPerson>

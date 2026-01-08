@@ -1,0 +1,41 @@
+{
+  "resourceType" : "SubscriptionTopic",
+  "id" : "vaeAbgelehnt",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: SubscriptionTopic vaeAbgelehnt</b></p><a name=\"vaeAbgelehnt\"> </a><a name=\"hcvaeAbgelehnt\"> </a><table class=\"grid\"><tr><td><b>SubscriptionTopic</b></td><td>VAEabgelehnt</td></tr><tr><td><b>Copyright Statement:</b></td><td> null</td></tr></table><table class=\"grid\"><tr><td colspan=\"4\"><b>Resource Triggers</b></td></tr><tr><th><b>Resource</b></th><th><b>Interactions</b></th><th><b>Criteria</b></th><th><b>Description</b></th></tr><tr><td><a href=\"StructureDefinition-MopedVAEResponse.html\">MOPED VAEResponse</a></td><td>create</td><td><div><ul>\n<li>current = TBD</li>\n</ul>\n</div></td><td><div><p>Erstellen einer VAEResponse mit Ablehnung</p>\n</div></td></tr></table><table class=\"grid\"><tr><td colspan=\"2\"><b>Can Filter By</b></td></tr><tr><th><b>Resource</b></th><th><b>Filter Parameter</b></th></tr><tr><td><a href=\"StructureDefinition-MopedVAEResponse.html\">MOPED VAEResponse</a></td><td>requestor</td></tr></table><table class=\"grid\"><tr><td colspan=\"2\"><b>Notification Shapes</b></td></tr><tr><th><b>Resource</b></th><th><b>Includes</b></th></tr><tr><td><a href=\"StructureDefinition-MopedMasterComposition.html\">MOPED Master Composition</a></td><td>Composition:id</td></tr><tr><td><a href=\"StructureDefinition-MopedVAEResponse.html\">MOPED VAEResponse</a></td><td>ClaimResponse:requestor</td></tr></table></div>"
+  },
+  "url" : "https://elga.moped.at/SubscriptionTopic/vaeAbgelehnt",
+  "version" : "0.1.0",
+  "name" : "VAEabgelehnt",
+  "status" : "active",
+  "date" : "2025-10-15T12:16:02+00:00",
+  "publisher" : "ELGA GmbH",
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
+  "resourceTrigger" : [{
+    "description" : "Erstellen einer VAEResponse mit Ablehnung",
+    "resource" : "https://elga.moped.at/StructureDefinition/MopedVAEResponse",
+    "supportedInteraction" : ["create"],
+    "queryCriteria" : {
+      "current" : "TBD"
+    }
+  }],
+  "canFilterBy" : [{
+    "resource" : "https://elga.moped.at/StructureDefinition/MopedVAEResponse",
+    "filterParameter" : "requestor"
+  }],
+  "notificationShape" : [{
+    "resource" : "https://elga.moped.at/StructureDefinition/MopedMasterComposition",
+    "include" : ["Composition:id"]
+  },
+  {
+    "resource" : "https://elga.moped.at/StructureDefinition/MopedVAEResponse",
+    "include" : ["ClaimResponse:requestor"]
+  }]
+}

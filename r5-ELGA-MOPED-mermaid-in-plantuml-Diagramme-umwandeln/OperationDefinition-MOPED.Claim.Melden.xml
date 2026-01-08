@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="MOPED.Claim.Melden"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition MOPED.Claim.Melden</b></p><a name="MOPED.Claim.Melden"> </a><a name="hcMOPED.Claim.Melden"> </a><p>URL: [base]/Composition/[id]/$melden</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>Kosteninformation</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/bundle.html">Bundle</a> (<a href="StructureDefinition-MopedMeldenLGFBundle.html" title="https://elga.moped.at/StructureDefinition/MopedMeldenLGFBundle">MOPED Melden Bundle LGF</a>)</td><td/><td><div><p>Der <em>Kosteninformation</em> Parameter beinhaltet ein Bundle mit sämtlichen Details zur Kosteninformation lt. MopedARKRequest Profil.</p>
+</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>
+</div></td></tr></table></div>
+  </text>
+  <url value="https://elga.moped.at/OperationDefinition/MOPED.Claim.Melden"/>
+  <version value="0.1.0"/>
+  <name value="MOPED_Claim_Melden"/>
+  <title value="MOPED Kosteninformation $melden"/>
+  <status value="draft"/>
+  <kind value="operation"/>
+  <date value="2025-12-19T13:11:40+00:00"/>
+  <publisher value="ELGA GmbH"/>
+  <contact>
+    <name value="ELGA GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://elga.gv.at"/>
+    </telecom>
+  </contact>
+  <description value="Die $melden Operation wird aufgerufen, wenn eine Kosteninformation an die SV gemeldet werden soll."/>
+  <affectsState value="true"/>
+  <code value="melden"/>
+  <resource value="Composition"/>
+  <system value="false"/>
+  <type value="false"/>
+  <instance value="true"/>
+  <parameter>
+    <name value="Kosteninformation"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der *Kosteninformation* Parameter beinhaltet ein Bundle mit sämtlichen Details zur Kosteninformation lt. MopedARKRequest Profil."/>
+    <type value="Bundle"/>
+    <targetProfile value="https://elga.moped.at/StructureDefinition/MopedMeldenLGFBundle"/>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der *return* Parameter gibt Auskunft über den Erfolg der Operation."/>
+    <type value="Resource"/>
+    <targetProfile value="http://hl7.org/fhir/StructureDefinition/OperationOutcome"/>
+  </parameter>
+</OperationDefinition>

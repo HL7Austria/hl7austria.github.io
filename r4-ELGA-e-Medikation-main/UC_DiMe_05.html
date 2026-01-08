@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>HL7.AT.FHIR.ELGA.EMED.R4\UC_DiMe_05 - Medikationsplan lesen - FHIR® v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"4.1"}
+    h3,h4,h5,h6{--heading-prefix:"4.1"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img id="header-logo" src="assets/images/hl7atlogo.png"/>
+          </div>
+          <div class="col-11">
+        <!-- at-fhir-ig-template end -->
+            <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">ELGA e-Medikation (R4)</span><br/>
+                <span class="label label-info">0.1.1 - ci-build</span>
+              </p>
+            </div>
+        <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+        <!-- at-fhir-ig-template end -->
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR®</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Start</a>
+  </li>
+  <li>
+    <a href="toc.html">Inhalt</a>
+  </li>
+  <li>
+    <a href="requirements.html">Die &quot;e-Medikation&quot;</a>
+  </li>
+  <li>
+    <a href="actors.html">Akteure</a>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR Artefakte</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anwendungsfälle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="anwendungsfaelle.html">Überblick &amp; Sunshine Case</a>
+      </li>
+      <li>
+        <a href="UC_DiMe_05.html">UC_DiMe_05 - Medikationsplan lesen</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="mapping.html">Mapping</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='anwendungsfaelle.html'><b>Überblick Anwendungsfälle</b></a></li><li><b>UC_DiMe_05 - Medikationsplan lesen</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!-- at-fhir-ig-template begin -->
+  <div class="alert alert-warning" role="alert">
+    <!--ReleaseHeader--><p id="publish-box">ELGA e-Medikation (R4) - Local Development build (v0.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/emed/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  </div>
+  <!-- at-fhir-ig-template end -->
+  <h2>UC_DiMe_05 - Medikationsplan lesen</h2>
+  
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#uc_dime_05-medikationsplan-lesen" id="markdown-toc-uc_dime_05-medikationsplan-lesen">UC_DiMe_05 Medikationsplan lesen</a>    <ul>
+      <li><a href="#beschreibung" id="markdown-toc-beschreibung">Beschreibung</a></li>
+      <li><a href="#akteure" id="markdown-toc-akteure">Akteure</a></li>
+      <li><a href="#auslöser" id="markdown-toc-auslöser">Auslöser</a></li>
+      <li><a href="#vorbedingungen" id="markdown-toc-vorbedingungen">Vorbedingungen</a></li>
+      <li><a href="#nachbedingungenergebnis" id="markdown-toc-nachbedingungenergebnis">Nachbedingungen/Ergebnis</a></li>
+      <li><a href="#abläufe" id="markdown-toc-abläufe">Abläufe</a></li>
+      <li><a href="#beispiel" id="markdown-toc-beispiel">Beispiel</a></li>
+      <li><a href="#technische-hinweise" id="markdown-toc-technische-hinweise">Technische Hinweise</a></li>
+      <li><a href="#relevante-profile" id="markdown-toc-relevante-profile">Relevante Profile</a></li>
+      <li><a href="#relevante-invarianten" id="markdown-toc-relevante-invarianten">Relevante Invarianten</a></li>
+      <li><a href="#mögliche-notifications" id="markdown-toc-mögliche-notifications">Mögliche Notifications</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+<style>
+.notification-table {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.notification-table th,
+.notification-table td {
+  padding: 10px;
+  background: #f5f5f5; /* Cell color */
+  box-shadow: 0 0 0 3px #fff;
+  text-align: left;
+}
+.notification-table th {
+  background: #e4e4e4;
+}
+
+.table-responsive {
+display: block;
+width: 100%;
+overflow-x: auto;
+max-height: 600px;
+overflow-y: auto;
+}
+.table-responsive > table {
+width: 100%;}
+.table-responsive th,
+.table-responsive td {
+  padding: 15px;
+  background: #f5f5f5;
+}
+.table-responsive table {
+  border-collapse: separate;
+  border-spacing: 3px;
+}
+/* Kopfzeile sticky */
+.table-responsive th {
+  position: sticky;
+  top: 0;
+  background: rgb(228, 228, 228);
+  z-index: 2;
+}
+/* Erste Spalte sticky */
+.table-responsive th:first-child,
+.table-responsive td:first-child {
+  position: sticky;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 3;
+}
+
+.table-responsive th:first-child {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 4;
+}
+
+</style>
+
+<script type="module"> import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';</script>
+
+<h2 id="uc_dime_05-medikationsplan-lesen">UC_DiMe_05 Medikationsplan lesen</h2>
+
+<h3 id="beschreibung">Beschreibung</h3>
+
+<p><strong>Patienten und behandelnde GDA</strong> können den Medikationsplan einsehen, um sich einen möglichst vollständigen Überblick zu allen verordneten, aktuell einzunehmenden Arzneimitteln und der zugehörigen Einnahmeninformationen zu verschaffen.<br /></p>
+
+<p><strong>Inhalt des Medikationsplans</strong></p>
+<ul>
+  <li>Der Medikationsplan besteht aus einzelnen Medikationsplaneinträgen</li>
+  <li>Angezeigt wird immer die zuletzt gespeicherte Version des Medikationsplans:
+    <ul>
+      <li>Medikamente deren Einnahmezeitraum abgelaufen ist, werden per Default ausgeblendet</li>
+      <li>zusätzliche Gesamtansicht: alle initial enthaltenen Einträge sind sichtbar, auch wenn diese bereits abgelaufen sind</li>
+      <li>noch offen: Hinweise nach erfolgten Löschungen von Medikationsplaneinträgen durch ELGA-Teilnehmer</li>
+      <li>frühere Gesamtversionen des Medikationsplans sind über die Versionshistorie einsehbar</li>
+    </ul>
+  </li>
+  <li>Einträge können von GDA in eine bestimmte Reihenfolge gebracht werden, z.B. zur fachlich sinnvollen Gruppierung und besseren Übersicht
+    <ul>
+      <li>Lesende Systeme können diese Reihenfolge nutzen, dürfen aber bei Bedarf eine andere Reihung vornehmen</li>
+    </ul>
+  </li>
+  <li>Einzelne Einträgen können Korrekturvermerke (inkl. Freitext) enthalten und müssen dem:der Benutzer:in angezeigt werden, (z.B. bei Signatur- oder Dosisänderungen vgl. UC_DiMe_06 Medikationsplan schreiben)</li>
+  <li>Je Medikationsplaneintrag werden folgende Information dargestellt:
+    <ul>
+      <li>Verantwortlicher GDA</li>
+      <li>Einnahmeinformation</li>
+      <li>Zugehörige geplante Abgaben</li>
+      <li>Zugehörige durchgeführte Abgaben
+        <ul>
+          <li>inkl. Abgaben von Substitutionen durch andere Arzneimittel(/“aut idem“) und</li>
+          <li>„Leerabgaben“. (Leerabgaben kennzeichnen, dass eine ursprünglich geplante Abgabe künftig nicht mehr bedient werden wird)</li>
+          <li>noch offen: abgelaufene Rezepte</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Fachlich kann es sinnvoll sein, zusätzlich zum aktuellen Medikationsplan auch Abgaben darzustellen, die nicht auf den aktuellen Medikationsplan referenzieren (z.B. OTC-Abgaben oder Abgaben bei fehlender ELGA-Anbindung verschreibender GDA), die seit der letzten Version des Medikationsplans neu hinzugekommen sind; dadurch erhält der GDA ein möglichst vollständiges Bild der tatsächlichen Medikation</li>
+  <li>Filter- und Suchfunktionen können hilfreich sein (v.a. bei Medikationsplänen, die viele Einträge enthalten)</li>
+</ul>
+
+<p><strong>Ansicht von Vorversionen</strong></p>
+<ul>
+  <li>Alle Vorversionen des Medikationsplans können eingesehen werden
+    <ul>
+      <li>Vorversionen können in chronologischer Reihenfolge dargestellt werden (absteigend nach Erstellungsdatum)</li>
+      <li>Sofern eine gesamte Version eines Medikationsplans von einem:r ELGA-Teilnehmer:in gelöscht wurde, wird diese nicht mehr in der Historie angezeigt; dies gilt genauso für die zuletzt erfasste Version</li>
+      <li>noch offen: Hinweise nach erfolgten Löschungen von Medikationsplanen durch ELGA-Teilnehmer</li>
+    </ul>
+  </li>
+  <li>Die Ansicht einer Vorversion unterscheidet sich in ihrer Darstellungsform nicht von der zuletzt erfassten Ansicht des Medikationsplans, mit der Ausnahme, dass abgelaufene Medikamente nicht ausgeblendet werden.
+•	Sofern der Medikationsplan eines:einer Patient:in häufigen Anpassungen unterliegt, kann es sinnvoll sein, eine Ansicht zu ermöglichen, die den Zustand des Medikationsplans zu einem bestimmten Zeitpunkt in der Vergangenheit ausgibt</li>
+</ul>
+
+<p><strong>Export des Medikationsplans</strong></p>
+
+<p>Der Medikationsplan soll für ELGA-Teilnehmer:innen im ELGA-Portal sowohl</p>
+<ul>
+  <li>als PDF zum Ausdruck bzw. zur Darstellung in der Druckansicht als auch</li>
+  <li>als strukturierte, maschinenlesbare Daten im FHIR-Format bereitgestellt werden.</li>
+</ul>
+
+<p>Der Medikationsplan soll für GDA im jeweiligen Client-System</p>
+<ul>
+  <li>als PDF zum Ausdruck bzw. zur Darstellung in der Druckansicht verfügbar sein.
+Für den PDF-Export stellt die ELGA GmbH ein Softwaremodul zur Verfügung, welches in den jeweiligen Softwaresystemen eingebunden werden kann. Dieses "FHIR2PDF" Softwaremodul stellt die Funktionen zur Verfügung, um den Medikationsplan als PDF zu exportieren. Das exportierte PDF unter Nutzung des "FHIR2PDF" stellt ein signiertes Dokument dar.</li>
+</ul>
+
+<p><strong>Eigene Ansicht vs. Verwendung des e-Medikation Stylesheets</strong>
+Zur Anzeige des Medikationsplans wird von der ELGA GmbH ein Stylesheet angeboten, welches in den jeweiligen Softwaresystemen eingebunden werden kann.</p>
+<ul>
+  <li>Dieses "e-Medikation Stylesheet" stellt alle notwendigen/vorhanden Informationen dar - Daten zur Person, aktuelle und vergangene Medikationsplaneinträge, geplante und durchgeführte Abgaben, etc.
+Neben der Verwendung des e-Medikation Stylesheets kann auch eine eigene Ansicht des Medikationsplans in den Softwaresystemen umgesetzt werden.</li>
+</ul>
+
+<p>offen: [für Clientsysteme] Abgleich mit lokal gespeicherter Dauermedikation und Anzeige von Delta zum zuletzt importieren Datenstand des Medikationsplans</p>
+
+<h3 id="akteure">Akteure</h3>
+
+<ul>
+  <li>ELGA-Teilnehmer:in bzw. Vertretung</li>
+  <li>Obmudsstelle</li>
+  <li>Behandelnde GDA:
+    <ul>
+      <li>Ärzte/Arztinnen (in Krankenanstalten und im niedergelassenen Bereich, mit und ohne Hausapotheke)</li>
+      <li>Apotheke</li>
+      <li>Pflegeeinrichtung, Mobile Pflege</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="auslöser">Auslöser</h3>
+<ul>
+  <li>Der Medikationsplan einer/eines ELGA-Teilnehmer:in wird zur Ansicht aufgerufen</li>
+</ul>
+
+<h3 id="vorbedingungen">Vorbedingungen</h3>
+<ul>
+  <li>Akteur ist authentifiziert und autorisiert</li>
+  <li>GDA hat einen Behandlungsbezug und ist berechtigt lesend auf die e-Medikation der ELGA-Teilnehmerin/des ELGA-Teilnehmers zuzugreifen</li>
+</ul>
+
+<h3 id="nachbedingungenergebnis">Nachbedingungen/Ergebnis</h3>
+<ul>
+  <li>Der Medikationsplan der ELGA-Teilnehmerin/des ELGA-Teilnehmers wird angezeigt</li>
+  <li>Zugriff wurde protokolliert</li>
+</ul>
+
+<h3 id="abläufe">Abläufe</h3>
+<h4 id="standardablauf">Standardablauf</h4>
+
+<ol>
+  <li>Der Anwender wählt die Option Medikationsplan in der e-Medikation aus <br /></li>
+  <li>Primärsystem bzw. Portal ruft den Medikationsplan von der Zentralen Anwendung e-Medikation ab und bereitet ihn für die Anzeige auf</li>
+</ol>
+
+<h3 id="beispiel">Beispiel</h3>
+
+<h3 id="technische-hinweise">Technische Hinweise</h3>
+
+<h3 id="relevante-profile">Relevante Profile</h3>
+
+<h3 id="relevante-invarianten">Relevante Invarianten</h3>
+
+<h3 id="mögliche-notifications">Mögliche Notifications</h3>
+
+
+
+</div>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /row -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-content -->
+
+<script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/window-hash.js"> </script>
+<a name="bottom"> </a>
+<div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+<div class="container">  <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Dec 30, 2025 16:45+0000">2025-12-30</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    </span>
+  </p>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+<div class="container">  <!-- container -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-post-footer -->
+
+<!-- JS and analytics only. -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+<script type="text/javascript" src="assets/js/respond.min.js"> </script>
+<script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+<script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+</body>
+</html>
+

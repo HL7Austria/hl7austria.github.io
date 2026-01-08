@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="elga-e-medikation-R5.elga.hl7.at"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>ELGAFHIReMedikationR5</h2><p>The official URL for this implementation guide is: </p><pre>http://fhir.hl7.at/elga-e-medikation-R5/ImplementationGuide/elga-e-medikation-R5.elga.hl7.at</pre><div><p>Die e-Medikation ist als Service zu verstehen, welches im Zuge des Verordnungs-, des Abgabe-, bzw. des Verabreichungsprozesses Informationen zur Medikation eines Patienten zur Verfügung stellt.</p>
+</div></div>
+  </text>
+  <url value="http://fhir.hl7.at/elga-e-medikation-R5/ImplementationGuide/elga-e-medikation-R5.elga.hl7.at"/>
+  <version value="0.0.0"/>
+  <name value="ELGAFHIReMedikationR5"/>
+  <title value="ELGA e-Medikation FHIR R5 Implementierungsleitfaden"/>
+  <status value="draft"/>
+  <date value="2024-06-26T06:22:11+00:00"/>
+  <publisher value="ELGA GmbH"/>
+  <contact>
+    <name value="ELGA GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.elga.gv.at/"/>
+    </telecom>
+  </contact>
+  <description value="Die e-Medikation ist als Service zu verstehen, welches im Zuge des Verordnungs-, des Abgabe-, bzw. des Verabreichungsprozesses Informationen zur Medikation eines Patienten zur Verfügung stellt."/>
+  <packageId value="elga-e-medikation-R5.elga.hl7.at"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="5.0.0"/>
+  <dependsOn id="hl7tx">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on HL7 Terminology"/>
+    </extension>
+    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <packageId value="hl7.terminology.r5"/>
+    <version value="5.5.0"/>
+  </dependsOn>
+  <dependsOn id="hl7ext">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/>
+    </extension>
+    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+    <packageId value="hl7.fhir.uv.extensions.r5"/>
+    <version value="5.1.0"/>
+  </dependsOn>
+  <dependsOn id="hl7_at_fhir_core_r5">
+    <uri value="http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/ImplementationGuide/hl7.at.fhir.core.r5"/>
+    <packageId value="hl7.at.fhir.core.r5"/>
+    <version value="current"/>
+  </dependsOn>
+  <definition>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
+      <valueCode value="hl7.fhir.uv.tools#0.1.0"/>
+    </extension>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/eMed-prescription-with-multiple-eMed-requests"/>
+      </reference>
+      <name value="1 ELGA e-Medication Prescription with multiple MedicationRequests (eMedPrescriptionAsRequestOrchestration)"/>
+      <description value="**Description:** In the course of treatment, the doctor determines that the ELGA participant must be prescribed one or more medicines. A MedicationRequest always consists of exactly one medication (= one medicine). The e-Medication prescription can consist of several MedicationRequests and thus forms a grouping over them. The prescription and it's MedicationRequests are labelled with one unique, common eMED ID. The doctor is responsible for checking the medicines, e.g. for potential interactions, contraindications, dosages, etc. and this is not part of e-Medication. Storing requests without assigning a prescription is not valid. The prescription is considered to have been checked if the associated prescription is saved in e-Medication.&#xA;&#xA;**Beschreibung:** Im Zuge der Behandlung stellt der Arzt fest, dass dem ELGA Teilnehmer ein oder mehrere Arzneimittel verordnet werden müssen. Eine Verordnung besteht immer nur aus genau einer Medikation (= ein Arzneimittel). Das Rezept kann aus mehreren Verordnungen/MedicationRequests bestehen und bildet somit die Klammer über die Verordnungen/MedicationRequests. Das Rezept und seine Verordnungen/MedicationRequests werden mit einer eindeutigen, gemeinsamen eMED-ID versehen. Die Prüfungen der Arzneimittel z.B. auf potentielle Wechselwirkungen, Kontraindikationen, Dosierungen, etc. erfolgt in der Eigenverantwortung des Arztes und ist nicht Gegenstand der e-Medikation. Eine Speicherung von Verordnungen/MedicationRequests ohne Zuordnung eines Rezeptes ist nicht gültig. Die Verordnung/MedicationRequest wird als geprüft angesehen, wenn die zugeordnete Verordnung in e-Medikation gespeichert ist."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/eMed-request"/>
+      </reference>
+      <name value="2 ELGA e-Medication MedicationRequest (eMedRequest)"/>
+      <description value="**Description:** In the course of treatment, the doctor determines that the ELGA participant must be prescribed one or more medicines. A MedicationRequest always consists of exactly one medication (= one medicine). The e-Medication prescription can consist of several MedicationRequests and thus forms a grouping over them. The prescription and it's MedicationRequests are labelled with one unique, common eMED ID. The doctor is responsible for checking the medicines, e.g. for potential interactions, contraindications, dosages, etc. and this is not part of e-Medication. Storing requests without assigning a prescription is not valid. The prescription is considered to have been checked if the associated prescription is saved in e-Medication.&#xA;&#xA;**Beschreibung:** Im Zuge der Behandlung stellt der Arzt fest, dass dem ELGA Teilnehmer ein oder mehrere Arzneimittel verordnet werden müssen. Eine Verordnung besteht immer nur aus genau einer Medikation (= ein Arzneimittel). Das Rezept kann aus mehreren Verordnungen/MedicationRequests bestehen und bildet somit die Klammer über die Verordnungen/MedicationRequests. Das Rezept und seine Verordnungen/MedicationRequests werden mit einer eindeutigen, gemeinsamen eMED-ID versehen. Die Prüfungen der Arzneimittel z.B. auf potentielle Wechselwirkungen, Kontraindikationen, Dosierungen, etc. erfolgt in der Eigenverantwortung des Arztes und ist nicht Gegenstand der e-Medikation. Eine Speicherung von Verordnungen/MedicationRequests ohne Zuordnung eines Rezeptes ist nicht gültig. Die Verordnung/MedicationRequest wird als geprüft angesehen, wenn die zugeordnete Verordnung in e-Medikation gespeichert ist."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="RequestOrchestration"/>
+      </extension>
+      <reference>
+        <reference value="RequestOrchestration/WYE82A2G8EE1"/>
+      </reference>
+      <name value="Example-eMedPrescriptionAsRequestOrchestration"/>
+      <description value="Example of a eMedPrescription as RequestOrchestration with data as similar as possible to https://gitlab.com/elga-gmbh/cda-beispielbefunde/-/blob/master/Basisleitf%C3%A4den_(2.06.2)/ELGA-083-e-Medikation_1-Rezept_mit_Verordnungen1-4%20Dosierungsvarianten%20an%20EINEM%20Tag.xml"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/eMed-prescription-with-multiple-eMed-requests"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/Example-eMedRequest"/>
+      </reference>
+      <name value="Example-eMedRequest"/>
+      <description value="Example of a eMedRequest as MedicationRequest with data as similar as possible to the first entry/'Verordnung' of https://gitlab.com/elga-gmbh/cda-beispielbefunde/-/blob/master/Basisleitf%C3%A4den_(2.06.2)/ELGA-083-e-Medikation_1-Rezept_mit_Verordnungen1-4%20Dosierungsvarianten%20an%20EINEM%20Tag.xml"/>
+      <isExample value="true"/>
+      <profile value="http://fhir.hl7.at/elga-e-medikation-R5/StructureDefinition/eMed-request"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/linca-dipsense-documentation"/>
+      </reference>
+      <name value="LINCA Dispense (LINCAMedicationDispense)"/>
+      <description value="Linked Care  Profile for dispense documentation. The dispense must be documented by the dispensing pharmacist and specify if an order was fulfilled completly or partially. The LINCA Dispense must have an LINCA Prescription as authorizingPrescription."/>
+      <isExample value="false"/>
+    </resource>
+    <page>
+      <sourceUrl value="toc.html"/>
+      <name value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <sourceUrl value="index.html"/>
+        <name value="index.html"/>
+        <title value="Home - Informationen über diesen Leitfaden (de)"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="intro_de.html"/>
+        <name value="intro_de.html"/>
+        <title value="Einleitung &amp; Abgrenzung (de)"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="usecase_de.html"/>
+        <name value="usecase_de.html"/>
+        <title value="Anwendungsfälle (de)"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="support_de.html"/>
+        <name value="support_de.html"/>
+        <title value="Support &amp; Impressum (de)"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="index_en.html"/>
+        <name value="index_en.html"/>
+        <title value="Home - Information about this implementation guide (en)"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="intro_en.html"/>
+        <name value="intro_en.html"/>
+        <title value="Intro &amp; Differentiation (en)"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="usecase_en.html"/>
+        <name value="usecase_en.html"/>
+        <title value="Use Cases (en)"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="support_en.html"/>
+        <name value="support_en.html"/>
+        <title value="Support &amp; Imprint (en)"/>
+        <generation value="markdown"/>
+      </page>
+    </page>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="copyrightyear"/>
+      </code>
+      <value value="2024+"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="releaselabel"/>
+      </code>
+      <value value="ci-build"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="autoload-resources"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/capabilities"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/examples"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/extensions"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/models"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/operations"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/profiles"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/resources"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/vocabulary"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/maps"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/testing"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/history"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="fsh-generated/resources"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-pages"/>
+      </code>
+      <value value="template/config"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-pages"/>
+      </code>
+      <value value="input/images"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-liquid"/>
+      </code>
+      <value value="template/liquid"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-liquid"/>
+      </code>
+      <value value="input/liquid"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-qa"/>
+      </code>
+      <value value="temp/qa"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-temp"/>
+      </code>
+      <value value="temp/pages"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-output"/>
+      </code>
+      <value value="output"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-tx-cache"/>
+      </code>
+      <value value="input-cache/txcache"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-suppressed-warnings"/>
+      </code>
+      <value value="input/ignoreWarnings.txt"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-history"/>
+      </code>
+      <value value="http://fhir.hl7.at/elga-e-medikation-R5/history.html"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="template-html"/>
+      </code>
+      <value value="template-page.html"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="template-md"/>
+      </code>
+      <value value="template-page-md.html"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-contact"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-context"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-copyright"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-jurisdiction"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-license"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-publisher"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-version"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-wg"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="active-tables"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="fmm-definition"/>
+      </code>
+      <value value="http://hl7.org/fhir/versions.html#maturity"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="propagate-status"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="excludelogbinaryformat"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="tabbed-snapshots"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>

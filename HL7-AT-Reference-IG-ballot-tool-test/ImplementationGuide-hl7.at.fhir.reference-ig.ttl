@@ -1,0 +1,581 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/hl7at/reference-ig/ImplementationGuide/hl7.at.fhir.reference-ig> a fhir:ImplementationGuide ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "hl7.at.fhir.reference-ig"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide hl7.at.fhir.reference-ig</b></p><a name=\"hl7.at.fhir.reference-ig\"> </a><a name=\"hchl7.at.fhir.reference-ig\"> </a><a name=\"hl7.at.fhir.reference-ig-en-US\"> </a><h2>HL7AustriaReferenceIG</h2><p>The official URL for this implementation guide is: </p><pre>https://fhir.hl7.at/hl7at/reference-ig/ImplementationGuide/hl7.at.fhir.reference-ig</pre></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://fhir.hl7.at/hl7at/reference-ig/ImplementationGuide/hl7.at.fhir.reference-ig"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "HL7AustriaReferenceIG"] ; # 
+  fhir:title [ fhir:v "HL7 Austria Reference IG"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2025-05-07T14:14:44+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "HL7® Austria, TC FHIR®"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "HL7® Austria, TC FHIR®" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://hl7.at/technische-komitees/tc-fhir/" ]
+     ] )
+  ] ) ; # 
+  fhir:packageId [ fhir:v "hl7.at.fhir.reference-ig"] ; # 
+  fhir:license [ fhir:v "CC0-1.0"] ; # 
+  fhir:fhirVersion ( [ fhir:v "5.0.0"] ) ; # 
+  fhir:dependsOn ( [
+     fhir:id [ fhir:v "hl7tx" ] ;
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:markdown ;
+         fhir:v "Automatically added as a dependency - all IGs depend on HL7 Terminology"
+       ]
+     ] ) ;
+     fhir:uri [
+       fhir:v "http://terminology.hl7.org/ImplementationGuide/hl7.terminology"^^xsd:anyURI ;
+       fhir:link <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
+     ] ;
+     fhir:packageId [ fhir:v "hl7.terminology.r5" ] ;
+     fhir:version [ fhir:v "6.3.0" ]
+  ] [
+     fhir:id [ fhir:v "hl7ext" ] ;
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:markdown ;
+         fhir:v "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
+       ]
+     ] ) ;
+     fhir:uri [
+       fhir:v "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions>
+     ] ;
+     fhir:packageId [ fhir:v "hl7.fhir.uv.extensions.r5" ] ;
+     fhir:version [ fhir:v "5.2.0" ]
+  ] ) ; # 
+  fhir:definition [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "hl7.fhir.uv.tools.r5#0.5.0"
+       ]
+     ] ) ;
+     fhir:page [
+       fhir:source [
+         a fhir:url ;
+         fhir:v "toc.html"^^xsd:anyURI
+       ] ;
+       fhir:name [ fhir:v "toc.html"^^xsd:anyURI ] ;
+       fhir:title [ fhir:v "Table of Contents" ] ;
+       fhir:generation [ fhir:v "html" ] ;
+       fhir:page ( [
+         fhir:source [
+           a fhir:url ;
+           fhir:v "index.html"^^xsd:anyURI
+         ] ;
+         fhir:name [ fhir:v "index.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Reference IG" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [
+           a fhir:url ;
+           fhir:v "developers-handbook.html"^^xsd:anyURI
+         ] ;
+         fhir:name [ fhir:v "developers-handbook.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Developer's Handbook" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [
+           a fhir:url ;
+           fhir:v "howToReadAnIG.html"^^xsd:anyURI
+         ] ;
+         fhir:name [ fhir:v "howToReadAnIG.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "How to read an IG" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [
+           a fhir:url ;
+           fhir:v "base.html"^^xsd:anyURI
+         ] ;
+         fhir:name [ fhir:v "base.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Base IGs" ] ;
+         fhir:generation [ fhir:v "markdown" ] ;
+         fhir:page ( [
+           fhir:source [
+             a fhir:url ;
+             fhir:v "base-toc.html"^^xsd:anyURI
+           ] ;
+           fhir:name [ fhir:v "base-toc.html"^^xsd:anyURI ] ;
+           fhir:title [ fhir:v "Base IGs - Table of Contents" ] ;
+           fhir:generation [ fhir:v "markdown" ]
+         ] [
+           fhir:source [
+             a fhir:url ;
+             fhir:v "base-artifacts.html"^^xsd:anyURI
+           ] ;
+           fhir:name [ fhir:v "base-artifacts.html"^^xsd:anyURI ] ;
+           fhir:title [ fhir:v "Base IGs - Artifacts" ] ;
+           fhir:generation [ fhir:v "markdown" ]
+         ] [
+           fhir:source [
+             a fhir:url ;
+             fhir:v "base-other.html"^^xsd:anyURI
+           ] ;
+           fhir:name [ fhir:v "base-other.html"^^xsd:anyURI ] ;
+           fhir:title [ fhir:v "Base IGs - Other" ] ;
+           fhir:generation [ fhir:v "markdown" ] ;
+           fhir:page ( [
+             fhir:source [
+               a fhir:url ;
+               fhir:v "base-about.html"^^xsd:anyURI
+             ] ;
+             fhir:name [ fhir:v "base-about.html"^^xsd:anyURI ] ;
+             fhir:title [ fhir:v "Base IGs - About" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] [
+             fhir:source [
+               a fhir:url ;
+               fhir:v "base-downloads.html"^^xsd:anyURI
+             ] ;
+             fhir:name [ fhir:v "base-downloads.html"^^xsd:anyURI ] ;
+             fhir:title [ fhir:v "Base IGs - Downloads" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] )
+         ] )
+       ] [
+         fhir:source [
+           a fhir:url ;
+           fhir:v "framework.html"^^xsd:anyURI
+         ] ;
+         fhir:name [ fhir:v "framework.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Framework IGs" ] ;
+         fhir:generation [ fhir:v "markdown" ] ;
+         fhir:page ( [
+           fhir:source [
+             a fhir:url ;
+             fhir:v "framework-toc.html"^^xsd:anyURI
+           ] ;
+           fhir:name [ fhir:v "framework-toc.html"^^xsd:anyURI ] ;
+           fhir:title [ fhir:v "Framework IGs - Table of Contents" ] ;
+           fhir:generation [ fhir:v "markdown" ]
+         ] [
+           fhir:source [
+             a fhir:url ;
+             fhir:v "framework-artifacts.html"^^xsd:anyURI
+           ] ;
+           fhir:name [ fhir:v "framework-artifacts.html"^^xsd:anyURI ] ;
+           fhir:title [ fhir:v "Framework IGs - Artifacts" ] ;
+           fhir:generation [ fhir:v "markdown" ]
+         ] [
+           fhir:source [
+             a fhir:url ;
+             fhir:v "framework-other.html"^^xsd:anyURI
+           ] ;
+           fhir:name [ fhir:v "framework-other.html"^^xsd:anyURI ] ;
+           fhir:title [ fhir:v "Framework IGs - Other" ] ;
+           fhir:generation [ fhir:v "markdown" ] ;
+           fhir:page ( [
+             fhir:source [
+               a fhir:url ;
+               fhir:v "framework-about.html"^^xsd:anyURI
+             ] ;
+             fhir:name [ fhir:v "framework-about.html"^^xsd:anyURI ] ;
+             fhir:title [ fhir:v "Framework IGs - About" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] [
+             fhir:source [
+               a fhir:url ;
+               fhir:v "framework-downloads.html"^^xsd:anyURI
+             ] ;
+             fhir:name [ fhir:v "framework-downloads.html"^^xsd:anyURI ] ;
+             fhir:title [ fhir:v "Framework IGs - Downloads" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] )
+         ] )
+       ] [
+         fhir:source [
+           a fhir:url ;
+           fhir:v "use-case.html"^^xsd:anyURI
+         ] ;
+         fhir:name [ fhir:v "use-case.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Use Case IGs" ] ;
+         fhir:generation [ fhir:v "markdown" ] ;
+         fhir:page ( [
+           fhir:source [
+             a fhir:url ;
+             fhir:v "use-case-toc.html"^^xsd:anyURI
+           ] ;
+           fhir:name [ fhir:v "use-case-toc.html"^^xsd:anyURI ] ;
+           fhir:title [ fhir:v "Use Case IGs - Table of Contents" ] ;
+           fhir:generation [ fhir:v "markdown" ]
+         ] [
+           fhir:source [
+             a fhir:url ;
+             fhir:v "use-case-background.html"^^xsd:anyURI
+           ] ;
+           fhir:name [ fhir:v "use-case-background.html"^^xsd:anyURI ] ;
+           fhir:title [ fhir:v "Use Case IGs - Background" ] ;
+           fhir:generation [ fhir:v "markdown" ]
+         ] [
+           fhir:source [
+             a fhir:url ;
+             fhir:v "use-case-artifacts.html"^^xsd:anyURI
+           ] ;
+           fhir:name [ fhir:v "use-case-artifacts.html"^^xsd:anyURI ] ;
+           fhir:title [ fhir:v "Use Case IGs - Artifacts" ] ;
+           fhir:generation [ fhir:v "markdown" ]
+         ] [
+           fhir:source [
+             a fhir:url ;
+             fhir:v "use-case-optional.html"^^xsd:anyURI
+           ] ;
+           fhir:name [ fhir:v "use-case-optional.html"^^xsd:anyURI ] ;
+           fhir:title [ fhir:v "Use Case IGs - Optional" ] ;
+           fhir:generation [ fhir:v "markdown" ] ;
+           fhir:page ( [
+             fhir:source [
+               a fhir:url ;
+               fhir:v "use-case-use-cases.html"^^xsd:anyURI
+             ] ;
+             fhir:name [ fhir:v "use-case-use-cases.html"^^xsd:anyURI ] ;
+             fhir:title [ fhir:v "Use Case IGs - [Use Cases]" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] [
+             fhir:source [
+               a fhir:url ;
+               fhir:v "use-case-workflow.html"^^xsd:anyURI
+             ] ;
+             fhir:name [ fhir:v "use-case-workflow.html"^^xsd:anyURI ] ;
+             fhir:title [ fhir:v "Use Case IGs - [Workflow]" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] [
+             fhir:source [
+               a fhir:url ;
+               fhir:v "use-case-actors.html"^^xsd:anyURI
+             ] ;
+             fhir:name [ fhir:v "use-case-actors.html"^^xsd:anyURI ] ;
+             fhir:title [ fhir:v "Use Case IGs - [Actors]" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] [
+             fhir:source [
+               a fhir:url ;
+               fhir:v "use-case-mapping.html"^^xsd:anyURI
+             ] ;
+             fhir:name [ fhir:v "use-case-mapping.html"^^xsd:anyURI ] ;
+             fhir:title [ fhir:v "Use Case IGs - [Mapping]" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] [
+             fhir:source [
+               a fhir:url ;
+               fhir:v "use-case-terminologies.html"^^xsd:anyURI
+             ] ;
+             fhir:name [ fhir:v "use-case-terminologies.html"^^xsd:anyURI ] ;
+             fhir:title [ fhir:v "Use Case IGs - [Terminologies]" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] [
+             fhir:source [
+               a fhir:url ;
+               fhir:v "use-case-technical-information.html"^^xsd:anyURI
+             ] ;
+             fhir:name [ fhir:v "use-case-technical-information.html"^^xsd:anyURI ] ;
+             fhir:title [ fhir:v "Use Case IGs - [Technical Information]" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] [
+             fhir:source [
+               a fhir:url ;
+               fhir:v "use-case-model.html"^^xsd:anyURI
+             ] ;
+             fhir:name [ fhir:v "use-case-model.html"^^xsd:anyURI ] ;
+             fhir:title [ fhir:v "Use Case IGs - [Model]" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] [
+             fhir:source [
+               a fhir:url ;
+               fhir:v "use-case-examples.html"^^xsd:anyURI
+             ] ;
+             fhir:name [ fhir:v "use-case-examples.html"^^xsd:anyURI ] ;
+             fhir:title [ fhir:v "Use Case IGs - [Examples]" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] )
+         ] [
+           fhir:source [
+             a fhir:url ;
+             fhir:v "use-case-other.html"^^xsd:anyURI
+           ] ;
+           fhir:name [ fhir:v "use-case-other.html"^^xsd:anyURI ] ;
+           fhir:title [ fhir:v "Use Case IGs - Other" ] ;
+           fhir:generation [ fhir:v "markdown" ] ;
+           fhir:page ( [
+             fhir:source [
+               a fhir:url ;
+               fhir:v "use-case-about.html"^^xsd:anyURI
+             ] ;
+             fhir:name [ fhir:v "use-case-about.html"^^xsd:anyURI ] ;
+             fhir:title [ fhir:v "Use Case IGs - About" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] [
+             fhir:source [
+               a fhir:url ;
+               fhir:v "use-case-downloads.html"^^xsd:anyURI
+             ] ;
+             fhir:name [ fhir:v "use-case-downloads.html"^^xsd:anyURI ] ;
+             fhir:title [ fhir:v "Use Case IGs - Downloads" ] ;
+             fhir:generation [ fhir:v "markdown" ]
+           ] )
+         ] )
+       ] )
+     ] ;
+     fhir:parameter ( [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "copyrightyear" ]
+       ] ;
+       fhir:value [ fhir:v "2025+" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "releaselabel" ]
+       ] ;
+       fhir:value [ fhir:v "ci-build" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "autoload-resources" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/capabilities" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/examples" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/extensions" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/models" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/operations" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/profiles" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/resources" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/vocabulary" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/maps" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/testing" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/history" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "fsh-generated/resources" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-pages" ]
+       ] ;
+       fhir:value [ fhir:v "template/config" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-pages" ]
+       ] ;
+       fhir:value [ fhir:v "input/images" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-liquid" ]
+       ] ;
+       fhir:value [ fhir:v "template/liquid" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-liquid" ]
+       ] ;
+       fhir:value [ fhir:v "input/liquid" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-qa" ]
+       ] ;
+       fhir:value [ fhir:v "temp/qa" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-temp" ]
+       ] ;
+       fhir:value [ fhir:v "temp/pages" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-output" ]
+       ] ;
+       fhir:value [ fhir:v "output" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-tx-cache" ]
+       ] ;
+       fhir:value [ fhir:v "input-cache/txcache" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-suppressed-warnings" ]
+       ] ;
+       fhir:value [ fhir:v "input/ignoreWarnings.txt" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-history" ]
+       ] ;
+       fhir:value [ fhir:v "https://fhir.hl7.at/hl7at/reference-ig/history.html" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "template-html" ]
+       ] ;
+       fhir:value [ fhir:v "template-page.html" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "template-md" ]
+       ] ;
+       fhir:value [ fhir:v "template-page-md.html" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-contact" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-context" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-copyright" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-jurisdiction" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-license" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-publisher" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-version" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-wg" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "active-tables" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "fmm-definition" ]
+       ] ;
+       fhir:value [ fhir:v "http://hl7.org/fhir/versions.html#maturity" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "propagate-status" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "excludelogbinaryformat" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "tabbed-snapshots" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

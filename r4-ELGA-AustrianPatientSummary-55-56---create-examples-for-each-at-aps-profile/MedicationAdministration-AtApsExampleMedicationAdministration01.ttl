@@ -1,0 +1,83 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/aps/r4/MedicationAdministration/AtApsExampleMedicationAdministration01> a fhir:MedicationAdministration ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "AtApsExampleMedicationAdministration01"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationadministration"^^xsd:anyURI ;
+       fhir:l <https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationadministration>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: MedicationAdministration AtApsExampleMedicationAdministration01</b></p><a name=\"AtApsExampleMedicationAdministration01\"> </a><a name=\"hcAtApsExampleMedicationAdministration01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-medicationadministration.html\">AT APS MedicationAdministration</a></p></div><p><b>status</b>: Completed</p><p><b>medication</b>: <a href=\"Medication-AtApsExampleMedication01.html\">Ramipril 5mg Kapseln</a></p><p><b>subject</b>: <a href=\"http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/2.0.0/Patient-HL7ATCorePatientExample01.html\">Max Mustermann</a></p><p><b>effective</b>: 2024-10-15 08:00:00+0100</p><h3>Performers</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Actor</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/2.0.0/Practitioner-HL7ATCorePractitionerExample01.html\">Dr. Melanie Musterärztin</a></td></tr></table><p><b>reasonCode</b>: <span title=\"Codes:{http://snomed.info/sct 59621000}\">Hypertonie</span></p><h3>Dosages</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td><td><b>Route</b></td><td><b>Dose</b></td></tr><tr><td style=\"display: none\">*</td><td>1 Kapsel täglich morgens</td><td><span title=\"Codes:{http://snomed.info/sct 26643006}\">Oral use</span></td><td>5 mg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemg = 'mg')</span></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:medication [
+     a fhir:Reference ;
+     fhir:l <https://fhir.hl7.at/elga/aps/r4/Medication/AtApsExampleMedication01> ;
+     fhir:reference [ fhir:v "Medication/AtApsExampleMedication01" ] ;
+     fhir:display [ fhir:v "Ramipril 5mg Kapseln" ]
+  ] ; # 
+  fhir:subject [
+     fhir:l <https://fhir.hl7.at/elga/aps/r4/Patient/HL7ATCorePatientExample01> ;
+     fhir:reference [ fhir:v "Patient/HL7ATCorePatientExample01" ] ;
+     fhir:display [ fhir:v "Max Mustermann" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:DateTime ;
+     fhir:v "2024-10-15T08:00:00+01:00"^^xsd:dateTime
+  ] ; # 
+  fhir:performer ( [
+     fhir:actor [
+       fhir:l <https://fhir.hl7.at/elga/aps/r4/Practitioner/HL7ATCorePractitionerExample01> ;
+       fhir:reference [ fhir:v "Practitioner/HL7ATCorePractitionerExample01" ] ;
+       fhir:display [ fhir:v "Dr. Melanie Musterärztin" ]
+     ]
+  ] ) ; # 
+  fhir:reasonCode ( [
+     fhir:coding ( [
+       a sct:59621000 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "59621000" ] ;
+       fhir:display [ fhir:v "Hypertonie" ]
+     ] ) ;
+     fhir:text [ fhir:v "Hypertonie" ]
+  ] ) ; # 
+  fhir:dosage [
+     fhir:text [ fhir:v "1 Kapsel täglich morgens" ] ;
+     fhir:route [
+       fhir:coding ( [
+         a sct:26643006 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "26643006" ] ;
+         fhir:display [ fhir:v "Oral use" ]
+       ] )
+     ] ;
+     fhir:dose [
+       fhir:value [ fhir:v "5"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "mg" ] ;
+       fhir:system [
+         fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+         fhir:l <http://unitsofmeasure.org>
+       ] ;
+       fhir:code [ fhir:v "mg" ]
+     ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

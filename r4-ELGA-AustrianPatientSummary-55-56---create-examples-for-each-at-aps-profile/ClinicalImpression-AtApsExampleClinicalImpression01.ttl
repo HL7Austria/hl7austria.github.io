@@ -1,0 +1,63 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/aps/r4/ClinicalImpression/AtApsExampleClinicalImpression01> a fhir:ClinicalImpression ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "AtApsExampleClinicalImpression01"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-clinicalimpression"^^xsd:anyURI ;
+       fhir:l <https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-clinicalimpression>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ClinicalImpression AtApsExampleClinicalImpression01</b></p><a name=\"AtApsExampleClinicalImpression01\"> </a><a name=\"hcAtApsExampleClinicalImpression01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-clinicalimpression.html\">AT APS ClinicalImpression</a></p></div><p><b>identifier</b>: 12345</p><p><b>status</b>: Completed</p><p><b>description</b>: Dieser 26-jährige männliche Patient wird nach einem Verkehrsunfall mit dem Krankenwagen in die Notaufnahme gebracht.</p><p><b>subject</b>: <a href=\"http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/2.0.0/Patient-HL7ATCorePatientExample01.html\">Max Mustermann</a></p><p><b>effective</b>: 2014-12-06 20:00:00+1100 --&gt; 2014-12-06 22:33:00+1100</p><p><b>date</b>: 2014-12-06 22:33:00+1100</p><p><b>assessor</b>: <a href=\"Practitioner-at-aps-example-practitioner-01.html\">Hanna Hausärztin</a></p><p><b>problem</b>: MVA</p><blockquote><p><b>investigation</b></p><p><b>code</b>: <span title=\"Codes:\">Erstuntersuchung</span></p><p><b>item</b>: </p><ul><li>tiefe Platzwunde an der Kopfhaut</li><li>verminderte Bewusstseinslage</li><li>zeitlich und örtlich desorientiert</li><li>unruhig</li></ul></blockquote><p><b>summary</b>: Vorläufige Diagnosen: Kopfverletzung und traumatische Hirnverletzung</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:value [ fhir:v "12345" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:description [ fhir:v "Dieser 26-jährige männliche Patient wird nach einem Verkehrsunfall mit dem Krankenwagen in die Notaufnahme gebracht."] ; # 
+  fhir:subject [
+     fhir:l <https://fhir.hl7.at/elga/aps/r4/Patient/HL7ATCorePatientExample01> ;
+     fhir:reference [ fhir:v "Patient/HL7ATCorePatientExample01" ] ;
+     fhir:display [ fhir:v "Max Mustermann" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:Period ;
+     fhir:start [ fhir:v "2014-12-06T20:00:00+11:00"^^xsd:dateTime ] ;
+     fhir:end [ fhir:v "2014-12-06T22:33:00+11:00"^^xsd:dateTime ]
+  ] ; # 
+  fhir:date [ fhir:v "2014-12-06T22:33:00+11:00"^^xsd:dateTime] ; # 
+  fhir:assessor [
+     fhir:l <https://fhir.hl7.at/elga/aps/r4/Practitioner/at-aps-example-practitioner-01> ;
+     fhir:reference [ fhir:v "Practitioner/at-aps-example-practitioner-01" ] ;
+     fhir:display [ fhir:v "Hanna Hausärztin" ]
+  ] ; # 
+  fhir:problem ( [
+     fhir:display [ fhir:v "MVA" ]
+  ] ) ; # 
+  fhir:investigation ( [
+     fhir:code [
+       fhir:text [ fhir:v "Erstuntersuchung" ]
+     ] ;
+     fhir:item ( [
+       fhir:display [ fhir:v "tiefe Platzwunde an der Kopfhaut" ]
+     ] [
+       fhir:display [ fhir:v "verminderte Bewusstseinslage" ]
+     ] [
+       fhir:display [ fhir:v "zeitlich und örtlich desorientiert" ]
+     ] [
+       fhir:display [ fhir:v "unruhig" ]
+     ] )
+  ] ) ; # 
+  fhir:summary [ fhir:v "Vorläufige Diagnosen: Kopfverletzung und traumatische Hirnverletzung"] . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,960 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>HL7.AT.FHIR.ELGA.IV.DIAB\Mappings Diabetes zur APS - FHIR® v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"4"}
+    h3,h4,h5,h6{--heading-prefix:"4"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img id="header-logo" src="assets/images/hl7atlogo.png"/>
+          </div>
+          <div class="col-11">
+        <!-- at-fhir-ig-template end -->
+            <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">Integrierte Versorgung Diabetes (R4)</span><br/>
+                <span class="label label-info">0.1.1 - ci-build</span>
+              </p>
+            </div>
+        <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+        <!-- at-fhir-ig-template end -->
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR®</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Start</a>
+  </li>
+  <li>
+    <a href="toc.html">Inhalt</a>
+  </li>
+  <li>
+    <a href="anwendungsfaelle.html">Anwendungsfälle</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artefakte</a>
+  </li>
+  <li>
+    <a href="mappings.html">Mappings Diabetes zur APS</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Weitere Infos
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="info.html">Informationen über dieses Dokument</a>
+      </li>
+      <li>
+        <a href="contributors.html">Autoren und Mitwirkende</a>
+      </li>
+      <li>
+        <a href="framework.html">Technische Rahmenbedingungen</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Mappings Diabetes zur APS</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!-- at-fhir-ig-template begin -->
+  <div class="alert alert-warning" role="alert">
+    <!--ReleaseHeader--><p id="publish-box">Integrierte Versorgung Diabetes (R4) - Local Development build (v0.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga-iv-diabetes-r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  </div>
+  <!-- at-fhir-ig-template end -->
+  <h2>Mappings Diabetes zur APS</h2>
+  
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<p>Die folende Tabelle zeigt das Mapping des Datenmodells basierend auf dem "Rahmenkonzept Integrierte Versorgung Diabetes mellitus Typ 2" auf das Datenmodell der <a href="https://fhir.hl7.at/r4-ELGA-AustrianPatientSummary-main/">Austrian Patient Summary (APS)</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Themenbereich</th>
+      <th style="text-align: left">Ausprägung</th>
+      <th style="text-align: left">Dokumentation - Zielwert</th>
+      <th style="text-align: left">Mindest-Frequenz</th>
+      <th style="text-align: left">Über-/Zuweisung/Verordnung</th>
+      <th style="text-align: left">Leistung erbracht (Check)</th>
+      <th style="text-align: left">Zusatzinfo</th>
+      <th style="text-align: left">Austrian Patient Summary Mapping</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Diagnose seit Jahr</td>
+      <td style="text-align: left">Textfeld</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.recordedDate</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Fallkoordination</td>
+      <td style="text-align: left">Textfeld</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Plan of Care / Careplan.CareTeam.participant.role und .member</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">med. Fallführung</td>
+      <td style="text-align: left">Textfeld &amp; IV-GDA -Liste</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Plan of Care / Careplan.CareTeam.participant.role und .member</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Diagnose</td>
+      <td style="text-align: left">Diabetes mellitus type 2 (disorder)</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Diabetes mellitus type 1 (disorder)</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Latent autoimmune diabetes mellitus in adults (LADA)</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Diabetes mellitus type 3: Diabetes mellitus associated with pancreatic disease (disorder)</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Diabetes mellitus due to pancreatic injury (disorder)</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Drug-induced diabetes mellitus (disorder)</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Maturity-onset diabetes of the young (disorder)</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Secondary diabetes mellitus (disorder), Atypical diabetes mellitus (disorder) u.w.</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Diabetes mellitus during pregnancy, childbirth and the puerperium (disorder)</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Gestational diabetes mellitus (disorder)</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Weitere Diagnosen / Sekundärdiagnose</td>
+      <td style="text-align: left">Diabetisches Fußsyndrom</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Alle Diagnosen sollten eingesehen werden können, nicht nur diabetesspezifische</td>
+      <td style="text-align: left">Problem / Condition.code</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Diabetische Retinopathie</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Diabetische Nierenerkrankung</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Diabetische Neuropathie</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Erkrankungen des Herzkreislaufsystems</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Parodontale Krankheiten</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Psychische Erkrankungen</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Herz: Infarkt</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Herz: Bypass/Dilatation</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Apoplexie</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Amputation</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Allergien &amp; (med.) Unverträglichkeiten /Nebenwirkungen</td>
+      <td style="text-align: left">Textfeld</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">ELGA sieht dies in Form eines Registers vor; Ärztinnen und Ärzte sollten auch die Möglichkeit haben, dies in Textform dokumentieren zu können strukturierte Erfassung von Nebenwirkungen und Unverträglichkeiten würde die Möglichkeit schaffen, diese strukutiert zu bearbeiten, weiterzuleiten</td>
+      <td style="text-align: left">Allergies and Intolerances / AllergyIntolerance.code</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Therapie Aktiv</td>
+      <td style="text-align: left">Teilnahme seit :</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Plan of Care / Careplan.category.coding und .created</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Therapie</td>
+      <td style="text-align: left">Lebensstilmodifikationen</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">je nach Mindestfrequenz soll der Check auch dokumentiert werden</td>
+      <td style="text-align: left">Plan of Care / Careplan.goal</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Medikamentöse Therapie (Übernahme E-Medikation) inkl. Prüfung im Hinblick auf Polypharmazie, inkl. Insulintherapie</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">MedicationStatement.medicationCodeableConcept oder MedicationRequest.medicationCodeableConcept</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Wundmanagement</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Plan of Care / Careplan.activity und Problem / Condition.code</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Zielwertfestlegung</td>
+      <td style="text-align: left">HbA1c</td>
+      <td style="text-align: left">Freitextfeld</td>
+      <td style="text-align: left">1 x jährlich</td>
+      <td style="text-align: left">ausgestellt am xx.xx.20xx</td>
+      <td style="text-align: left">Befund</td>
+      <td style="text-align: left">je nach Mindestfrequenz soll der Check auch dokumentiert werden</td>
+      <td style="text-align: left">Plan of Care / Careplan.goal</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">LDL-C Zielwert</td>
+      <td style="text-align: left">Freitextfeld</td>
+      <td style="text-align: left">1 x jährlich</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Befund</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Plan of Care / Careplan.goal</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Triglyceride</td>
+      <td style="text-align: left">Freitextfeld</td>
+      <td style="text-align: left">1 x jährlich</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Befund</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Plan of Care / Careplan.goal</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Blutdruck</td>
+      <td style="text-align: left">Freitextfeld</td>
+      <td style="text-align: left">1 x jährlich</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Plan of Care / Careplan.goal</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">pflegerische Ziele</td>
+      <td style="text-align: left">Freitextfeld</td>
+      <td style="text-align: left">1 x jährlich</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Plan of Care / Careplan.goal</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Tabak</td>
+      <td style="text-align: left">Freitextfeld</td>
+      <td style="text-align: left">1 x jährlich</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Plan of Care / Careplan.goal</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Bewegung</td>
+      <td style="text-align: left">Freitextfeld</td>
+      <td style="text-align: left">1 x jährlich</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Plan of Care / Careplan.goal</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">diätologische Ziele / Ernährung</td>
+      <td style="text-align: left">Freitextfeld</td>
+      <td style="text-align: left">1 x jährlich</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Plan of Care / Careplan.goal</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">individuelle Ziele : Textfeld</td>
+      <td style="text-align: left">Freitextfeld</td>
+      <td style="text-align: left">1 x jährlich</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Plan of Care / Careplan.goal</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Selbstkontrolle</td>
+      <td style="text-align: left">Blutdruckselbstmessung</td>
+      <td style="text-align: left">Freitextfeld</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Dokumentation der therapeutischen Konsequenz?</td>
+      <td style="text-align: left">Vital Signs / ObservationVitalSigns.code und .value</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Blutzuckerselbstmessung</td>
+      <td style="text-align: left">Freitextfeld</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Vital Signs / ObservationVitalSigns.code und .value</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Gewicht</td>
+      <td style="text-align: left">Freitextfeld</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Vital Signs / ObservationVitalSigns.code und .value</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">(Vital-) Messwerte</td>
+      <td style="text-align: left">Blutdruck in Ruhe</td>
+      <td style="text-align: left">Freitextfeld</td>
+      <td style="text-align: left">1 x jährlich</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Vital Signs / ObservationVitalSigns.code und .value</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Puls</td>
+      <td style="text-align: left">Freitextfeld</td>
+      <td style="text-align: left">1 x jährlich</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Vital Signs / ObservationVitalSigns.code und .value</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Größe</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Vital Signs / ObservationVitalSigns.code und .value</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Gewicht</td>
+      <td style="text-align: left">Freitextfeld</td>
+      <td style="text-align: left">1 x jährlich</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Vital Signs / ObservationVitalSigns.code und .value</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">BMI</td>
+      <td style="text-align: left">Freitextfeld</td>
+      <td style="text-align: left">1 x jährlich</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Vital Signs / ObservationVitalSigns.code und .value</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">EKG</td>
+      <td style="text-align: left">Freitextfeld</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Diagnostic Results / Observation.valueSampledData</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Laborparameter</td>
+      <td style="text-align: left">ZUMINDEST HbA1c, Kreatinin im Serum (mg/dl), eGFR (/min, Cholesterin gesamt (mg/dl), HDL (High-density-Lipoprotein-Cholesterin) (mg/dl), LDL (Low-density Lipoprotein) (mg/dl), Triglyceride (mg/dl), Albumin-Kreatinin-Quotient im Harn</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">1 x jährlich</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Diagnostic Results / ObservationResultsLaboratoryPathology.code und .value</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Screening auf Folge- /Begleiterkrankungen durch med. Fallführung</td>
+      <td style="text-align: left">körperliche Untersuchung</td>
+      <td style="text-align: left">Freitextfeld</td>
+      <td style="text-align: left">1 x jährlich</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code und Plan of Care / Careplan.activity</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Fußuntersuchung</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">1 x jährlich</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code und Plan of Care / Careplan.activity</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Fußdeformität Ulkus Puls tastbar Vibrationsempfinden vermindert</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Erfragung Lebensqualität (z. B. strukturierte FB wie EQ-5D, EQ-5D VAS, EQ visual analogue score (EQ VAS)</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">1 x jährlich</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Screening auf Folge- /Begleiterkrankungen &amp; bei Bedarf, z.B. bei Akutereignissen</td>
+      <td style="text-align: left">Ophtalmologie</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">1xjährlich</td>
+      <td style="text-align: left">ausgestellt am xx.xx.20xx</td>
+      <td style="text-align: left">Befund</td>
+      <td style="text-align: left">je nach Mindestfrequenz soll der Check auch dokumentiert werden</td>
+      <td style="text-align: left">Problem / Condition.code und Plan of Care / Careplan.activity</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Nephrologie</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">bei Bedarf</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code und Plan of Care / Careplan.activity</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Kardiologie</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">bei Bedarf</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code und Plan of Care / Careplan.activity</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Neurologie</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">bei Bedarf</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code und Plan of Care / Careplan.activity</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Podologie</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">bei Bedarf</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code und Plan of Care / Careplan.activity</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Zahnärztliche Untersuchung</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">bei Bedarf</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code und Plan of Care / Careplan.activity</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Psychologie</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">bei Bedarf</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code und Plan of Care / Careplan.activity</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Dermatologie</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">bei Bedarf</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code und Plan of Care / Careplan.activity</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Wundmanagement</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">bei Bedarf</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code und Plan of Care / Careplan.activity</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Chirurgie</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">bei Bedarf</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code und Plan of Care / Careplan.activity</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Weitere Leertextfeld</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">bei Bedarf</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Problem / Condition.code und Plan of Care / Careplan.activity</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Assessement von</td>
+      <td style="text-align: left">Heilbehelfe und (technische)Hilfsmitteln</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">1 x jährlich</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">je nach Mindestfrequenz soll der Check auch dokumentiert werden</td>
+      <td style="text-align: left">Medical Devices / DeviceUseStatement.device und Plan of Care / Careplan.activity</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Versorgungs-/Pflegebedarf</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">1 x jährlich</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Functional Status / Condition.code und Plan of Care / Careplan.activity</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Rehabedarf (ambulant und/oder stationär)</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">1 x jährlich</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Functional Status / Condition.code und Plan of Care / Careplan.activity</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Schulungen</td>
+      <td style="text-align: left">Schulung ohne Insulin, inkl. Schulung zu Akutsituationen (Hypo/Hyperglykämie)</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Initial &amp; regelmäßig /bei Bedarf, Differenzierung Einzel-/Gruppenschulung?</td>
+      <td style="text-align: left">ausgestellt am xx.xx.20xx</td>
+      <td style="text-align: left">X</td>
+      <td style="text-align: left">Frequenzen offen</td>
+      <td style="text-align: left">Plan of Care / Careplan.activity</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Schulung mit Insulin, inkl. Schulung zu Akutsituationen (Hypo/Hyperglykämie)</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Initial &amp; regelmäßig /bei Bedarf</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Plan of Care / Careplan.activity</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Schulung technischer Hilfsmittel und Telemedizin Schulung (Nutzung von App etc.)</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Initial &amp; regelmäßig /bei Bedarf</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Plan of Care / Careplan.activity</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Blutdruckschulungen</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">bei Bedarf</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Plan of Care / Careplan.activity</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Schulung Prävention Diabetisches Fußsyndrom</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">bei Bedarf</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Plan of Care / Careplan.activity</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Raucherentwöhnung</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">bei Bedarf</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">Plan of Care / Careplan.activity</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+</div>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /row -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-content -->
+
+<script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/window-hash.js"> </script>
+<a name="bottom"> </a>
+<div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+<div class="container">  <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.iv.diab#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Aug 6, 2025 09:31+0000">2025-08-06</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    </span>
+  </p>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+<div class="container">  <!-- container -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-post-footer -->
+
+<!-- JS and analytics only. -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+<script type="text/javascript" src="assets/js/respond.min.js"> </script>
+<script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+<script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+</body>
+</html>
+

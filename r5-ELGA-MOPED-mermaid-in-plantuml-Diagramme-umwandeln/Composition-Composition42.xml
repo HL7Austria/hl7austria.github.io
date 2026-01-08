@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Composition xmlns="http://hl7.org/fhir">
+  <id value="Composition42"/>
+  <meta>
+    <profile value="https://elga.moped.at/StructureDefinition/MopedComposition"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Composition Composition42</b></p><a name="Composition42"> </a><a name="hcComposition42"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-MopedComposition.html">MOPED Composition</a></p></div><p><b>status</b>: Final</p><p><b>type</b>: <span title="Codes:{http://loinc.org 102089-0}">FHIR resource patient medical record</span></p><p><b>encounter</b>: <a href="Encounter-Encounter42.html">Encounter: extension = ; identifier = Visit number,Anonymous identifier; status = completed; class = Stationär,geplante stationäre Aufnahme/geplanter ambulanter Besuch (mit vorhergehender Terminvereinbarung, Richtwert: mindestens 24 Stunden); type = Moped Encounter; actualPeriod = 2025-01-01 12:00:00+0200 --&gt; 2025-01-04 12:00:00+0200</a></p><p><b>date</b>: 2025-08-30</p><h3>UseContexts</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Code</b></td><td><b>Value[x]</b></td></tr><tr><td style="display: none">*</td><td><a href="http://terminology.hl7.org/7.0.1/CodeSystem-usage-context-type.html#usage-context-type-workflow">UsageContextType: workflow</a> (Workflow Setting)</td><td><span title="Codes:{https://elga.moped.at/CodeSystem/WorkflowStatusCS Endgueltige-Freigabe}">Endgültige Freigabe</span></td></tr></table><p><b>author</b>: <a href="Organization-KHK999.html">Organization Testkrankenhaus</a></p><p><b>title</b>: LKF Testdaten Fall</p></div>
+  </text>
+  <status value="final"/>
+  <type>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="102089-0"/>
+      <display value="FHIR resource patient medical record"/>
+    </coding>
+  </type>
+  <subject>
+    <reference value="Patient/Patient42"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/Encounter42"/>
+  </encounter>
+  <date value="2025-08-30"/>
+  <useContext>
+    <code>
+      <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+      <code value="workflow"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://elga.moped.at/CodeSystem/WorkflowStatusCS"/>
+        <code value="Endgueltige-Freigabe"/>
+        <display value="Endgültige Freigabe"/>
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <author>
+    <reference value="Organization/KHK999"/>
+  </author>
+  <title value="LKF Testdaten Fall"/>
+  <section>
+    <title value="Zuständiges KH"/>
+    <code>
+      <coding>
+        <system value="https://elga.moped.at/CodeSystem/CompositionSectionsCS"/>
+        <code value="KH"/>
+      </coding>
+    </code>
+    <entry>
+      <reference value="Organization/KHK999"/>
+    </entry>
+  </section>
+  <section>
+    <title value="Zuständiger LGF"/>
+    <code>
+      <coding>
+        <system value="https://elga.moped.at/CodeSystem/CompositionSectionsCS"/>
+        <code value="LGF"/>
+      </coding>
+    </code>
+    <entry>
+      <reference value="Organization/OrganizationLGF"/>
+    </entry>
+  </section>
+  <section>
+    <title value="Zuständige SV"/>
+    <code>
+      <coding>
+        <system value="https://elga.moped.at/CodeSystem/CompositionSectionsCS"/>
+        <code value="SV"/>
+      </coding>
+    </code>
+    <entry>
+      <reference value="Organization/SV11"/>
+    </entry>
+  </section>
+  <section>
+    <title value="LKF Requests"/>
+    <code>
+      <coding>
+        <system value="https://elga.moped.at/CodeSystem/CompositionSectionsCS"/>
+        <code value="LKFREQ"/>
+      </coding>
+    </code>
+    <entry>
+      <reference value="Claim/LKFRequest42"/>
+    </entry>
+  </section>
+  <section>
+    <title value="Conditions"/>
+    <code>
+      <coding>
+        <system value="https://elga.moped.at/CodeSystem/CompositionSectionsCS"/>
+        <code value="DIAG"/>
+      </coding>
+    </code>
+    <entry>
+      <reference value="Condition/Condition42.1"/>
+    </entry>
+  </section>
+  <section>
+    <title value="TransferEncounter"/>
+    <code>
+      <coding>
+        <system value="https://elga.moped.at/CodeSystem/MopedEncounterTypesCS"/>
+        <code value="TENC"/>
+      </coding>
+    </code>
+    <entry>
+      <reference value="Encounter/TransferEncounter42.1"/>
+    </entry>
+    <entry>
+      <reference value="Encounter/TransferEncounter42.2"/>
+    </entry>
+  </section>
+  <section>
+    <title value="QuestionnaireResponses"/>
+    <code>
+      <coding>
+        <system value="https://elga.moped.at/CodeSystem/CompositionSectionsCS"/>
+        <code value="QRESP"/>
+      </coding>
+    </code>
+    <entry>
+      <reference value="QuestionnaireResponse/SAPS42.1"/>
+    </entry>
+    <entry>
+      <reference value="QuestionnaireResponse/TISS42.1"/>
+    </entry>
+    <entry>
+      <reference value="QuestionnaireResponse/TISS42.2"/>
+    </entry>
+    <entry>
+      <reference value="QuestionnaireResponse/TISS42.3"/>
+    </entry>
+  </section>
+</Composition>

@@ -1,0 +1,50 @@
+{
+  "resourceType" : "Encounter",
+  "id" : "TransferEncounter42.1",
+  "meta" : {
+    "profile" : ["https://elga.moped.at/StructureDefinition/MopedTransferEncounter"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Encounter TransferEncounter42.1</b></p><a name=\"TransferEncounter42.1\"> </a><a name=\"hcTransferEncounter42.1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-MopedTransferEncounter.html\">MOPED TransferEncounter</a></p></div><p><b>status</b>: Completed</p><p><b>type</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/MopedEncounterTypesCS TENC}\">Moped Transfer Encounter</span></p><h3>ServiceTypes</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Reference</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"HealthcareService-KHK999ABT11111100.html\">HealthcareService: extension = ; identifier = http://example.org/lkf-system/funktionscode#111111,http://example.org/lkf-system/funktionssubcode#00; type = Hospital Services</a></td></tr></table><p><b>subject</b>: <a href=\"Patient-Patient42.html\">Patient42 Patient42FamilienName  Male, DoB: 1937-12-31 ( Social Security Number: 123456)</a></p><p><b>partOf</b>: <a href=\"Encounter-Encounter42.html\">Encounter: extension = ; identifier = Visit number,Anonymous identifier; status = completed; class = Stationär,geplante stationäre Aufnahme/geplanter ambulanter Besuch (mit vorhergehender Terminvereinbarung, Richtwert: mindestens 24 Stunden); type = Moped Encounter; actualPeriod = 2025-01-01 12:00:00+0200 --&gt; 2025-01-04 12:00:00+0200</a></p><p><b>actualPeriod</b>: 2025-01-01 --&gt; (ongoing)</p><h3>Admissions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Extension</b></td></tr><tr><td style=\"display: none\">*</td><td/></tr></table></div>"
+  },
+  "status" : "completed",
+  "type" : [{
+    "coding" : [{
+      "system" : "https://elga.moped.at/CodeSystem/MopedEncounterTypesCS",
+      "code" : "TENC"
+    }]
+  }],
+  "serviceType" : [{
+    "reference" : {
+      "reference" : "HealthcareService/KHK999ABT11111100"
+    }
+  }],
+  "subject" : {
+    "reference" : "Patient/Patient42"
+  },
+  "partOf" : {
+    "reference" : "Encounter/Encounter42"
+  },
+  "actualPeriod" : {
+    "start" : "2025-01-01"
+  },
+  "admission" : {
+    "extension" : [{
+      "extension" : [{
+        "url" : "beiZugang",
+        "valueCodeableConcept" : {
+          "coding" : [{
+            "system" : "https://elga.moped.at/CodeSystem/AltersgruppeCS",
+            "code" : "85"
+          }]
+        }
+      },
+      {
+        "url" : "neugeborenes",
+        "valueBoolean" : false
+      }],
+      "url" : "https://elga.moped.at/StructureDefinition/moped-ext-altersgruppe"
+    }]
+  }
+}

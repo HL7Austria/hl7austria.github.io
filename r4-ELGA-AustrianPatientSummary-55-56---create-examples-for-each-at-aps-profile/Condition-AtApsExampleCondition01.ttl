@@ -1,0 +1,97 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/aps/r4/Condition/AtApsExampleCondition01> a fhir:Condition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "AtApsExampleCondition01"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition"^^xsd:anyURI ;
+       fhir:l <https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Condition AtApsExampleCondition01</b></p><a name=\"AtApsExampleCondition01\"> </a><a name=\"hcAtApsExampleCondition01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-condition.html\">AT APS Condition</a></p></div><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 404684003}\">Befund</span></p><p><b>severity</b>: <span title=\"Codes:{https://termgit.elga.gv.at/ValueSet/elga-problemseverity 6736007}\">mittel</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 39065001}\">Verbranntes Ohr</span></p><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 1910005}\">Entire ear</span></p><p><b>subject</b>: <a href=\"http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/2.0.0/Patient-HL7ATCorePatientExample01.html\">Max Mustermann</a></p><p><b>onset</b>: 2025-05-24</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:clinicalStatus [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/condition-clinical"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/condition-clinical>
+       ] ;
+       fhir:code [ fhir:v "active" ]
+     ] )
+  ] ; # 
+  fhir:verificationStatus [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/condition-ver-status"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/condition-ver-status>
+       ] ;
+       fhir:code [ fhir:v "confirmed" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       a sct:404684003 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "404684003" ] ;
+       fhir:display [ fhir:v "Befund" ]
+     ] )
+  ] ) ; # 
+  fhir:severity [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://termgit.elga.gv.at/ValueSet/elga-problemseverity"^^xsd:anyURI ;
+         fhir:l <https://termgit.elga.gv.at/ValueSet/elga-problemseverity>
+       ] ;
+       fhir:code [ fhir:v "6736007" ] ;
+       fhir:display [ fhir:v "mittel" ]
+     ] )
+  ] ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:39065001 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "39065001" ] ;
+       fhir:display [ fhir:v "Burn of ear" ]
+     ] ) ;
+     fhir:text [ fhir:v "Verbranntes Ohr" ]
+  ] ; # 
+  fhir:bodySite ( [
+     fhir:coding ( [
+       a sct:1910005 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "1910005" ] ;
+       fhir:display [ fhir:v "Entire ear" ]
+     ] ) ;
+     fhir:text [ fhir:v "Entire ear" ]
+  ] ) ; # 
+  fhir:subject [
+     fhir:l <https://fhir.hl7.at/elga/aps/r4/Patient/HL7ATCorePatientExample01> ;
+     fhir:reference [ fhir:v "Patient/HL7ATCorePatientExample01" ] ;
+     fhir:display [ fhir:v "Max Mustermann" ]
+  ] ; # 
+  fhir:onset [
+     a fhir:DateTime ;
+     fhir:v "2025-05-24"^^xsd:date
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

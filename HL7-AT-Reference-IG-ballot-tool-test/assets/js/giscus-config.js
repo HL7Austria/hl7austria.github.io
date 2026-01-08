@@ -1,0 +1,4 @@
+const GITHUB_REPO = 'HL7Austria/HL7-AT-Reference-IG';
+const GITHUB_REPO_ID = 'R_kgDOOV447A';
+const GITHUB_CATEGORY = 'General';
+const GITHUB_CATEGORY_ID = 'DIC_kwDOOV447M4Cp30Y';

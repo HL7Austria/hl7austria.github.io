@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="at-aps-immunization-vaccine-codes"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet at-aps-immunization-vaccine-codes</b></p><a name="at-aps-immunization-vaccine-codes"> </a><a name="hcat-aps-immunization-vaccine-codes"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="http://hl7.org/fhir/R4/shareablevalueset.html">Shareable ValueSet</a></p></div><p>This value set includes codes based on the following rules:</p><ul><li>Import all the codes that are contained in https://termgit.elga.gv.at/ValueSet/eimpf-impfstoffe</li><li>Include codes from<a href="http://www.snomed.org/"><code>http://snomed.info/sct</code></a> version <span title="Version is not explicity stated. No matching Code System found">Not Stated (use latest from terminology server)</span> where concept  is-a 787482006 (No known immunizations)</li></ul></div>
+  </text>
+  <url value="https://fhir.hl7.at/elga/aps/r4/ValueSet/at-aps-immunization-vaccine-codes"/>
+  <version value="0.2.0"/>
+  <name value="AtApsImmunizationVaccineCodes"/>
+  <title value="AT APS Immunitzation Vaccine Codes"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-10-10T07:10:15+00:00"/>
+  <publisher value="ELGA GmbH"/>
+  <contact>
+    <name value="ELGA GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://elga.gv.at"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="ELGA GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://elga.gv.at"/>
+      <use value="work"/>
+    </telecom>
+  </contact>
+  <description value="Dieses Value-Set erweitert die in Österreich existierenden Impfstoffe um die Möglichkeit, angeben zu können, dass der verimpfte Impfstoff unbekannt ist."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="AT"/>
+    </coding>
+  </jurisdiction>
+  <immutable value="false"/>
+  <copyright value="Enthält durch SNOMED International urheberrechtlich geschützte Information. Jede Verwendung von SNOMED CT in Österreich erfordert eine aufrechte Affiliate Lizenz oder eine Sublizenz. Die entsprechende Lizenz ist kostenlos, vorausgesetzt die Verwendung findet nur in Österreich statt und erfüllt die Bedingungen des Affiliate License Agreements. Affiliate Lizenzen können über das [Mitglieder-Lizenzierungs- und Distributions-Service](https://mlds.ihtsdotools.org/#/landing/AT?lang=de) (MLDS) direkt beim jeweiligen NRC beantragt werden."/>
+  <compose>
+    <include>
+      <valueSet value="https://termgit.elga.gv.at/ValueSet/eimpf-impfstoffe"/>
+    </include>
+    <include>
+      <system value="http://snomed.info/sct"/>
+      <filter>
+        <property value="concept"/>
+        <op value="is-a"/>
+        <value value="787482006"/>
+      </filter>
+    </include>
+  </compose>
+</ValueSet>

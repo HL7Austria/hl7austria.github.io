@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="ips, international patient summary">
+    <meta name="author" content="Hannah Vinatzer">
+    <title>VIDi IPS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/view.css">
+    <link rel="stylesheet" href="styles/content.css">
+    <link rel="stylesheet" href="styles/contact.css">
+    <link rel="stylesheet" href="styles/zoom.css">
+    <link rel="stylesheet" href="styles/tabulator.css">
+    <link rel="stylesheet" href="styles/slider.css">
+    <link rel="stylesheet" href="styles/expansion-panel.css">
+    <!-- <link href="https://unpkg.com/tabulator-tables@6.2.5/dist/css/tabulator.min.css" rel="stylesheet"> -->
+    <!-- <link href="https://unpkg.com/tabulator-tables@6.2.5/dist/css/tabulator_modern.min.css" rel="stylesheet"> -->
+    <link href="https://unpkg.com/tabulator-tables@6.2.5/dist/css/tabulator_materialize.min.css" rel="stylesheet">
+    <!-- <link href="https://unpkg.com/tabulator-tables@6.2.5/dist/css/tabulator_bootstrap5.min.css" rel="stylesheet"> -->
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@6.2.5/dist/js/tabulator.min.js"></script>
+    <script src="scripts/drag.js" defer></script>
+    <script src="scripts/expansion-panel.js" defer></script>
+    <script src="scripts/view.js" defer></script>
+    <script type="module" src="scripts/tables/_loader.js" defer></script>
+    <!-- <script type="module" src="scripts/language.js"></script> -->
+    <script src="scripts/zoom.js" defer></script>
+    <script src="scripts/print.js" defer></script>
+    <script type="module" defer>
+        import { loadFrom } from './scripts/tables/_loader.js';
+        import example from './scripts/tables/Bundle-example-iv-3_vidi.json' with {type: 'json'};
+        loadFrom(example);
+    </script>
+</head>
+<body>
+    <div class="container-zoom">
+        <button type="button" aria-label="Zoom in" onclick="toggleZoomScreenRelativeChange('15')" class="btn-zoom">
+            <img src = "assets/icons/zoom_in.webp"></img>
+        </button>
+        <button type="button" aria-label="Zoom out" onclick="toggleZoomScreenRelativeChange('-15')" class="btn-zoom">
+            <img src = "assets/icons/zoom_out.webp"></img>
+        </button>
+    </div>
+    <main>
+        <div class="container-view">
+            <input type="radio" id="view_simple" name="view" value="simple">
+            <label for="view_simple" >
+                <h1 class="lang lang-de"><span class="span-big-letter">V</span><br>vereinfachte<br>Ansicht</h1>
+                <h1 class="lang lang-en" style="display:none;"><span class="span-big-letter">V</span><br>very simplified<br>view</h1>
+            </label>
+            <input type="radio" id="view_advanced" name="view" value="advanced" checked>
+            <label for="view_advanced">
+                <h1 class="lang lang-de"><span class="span-big-letter">I</span><br>informative<br>Ansicht</h1>
+                <h1 class="lang lang-en" style="display:none;"><span class="span-big-letter">I</span><br>informative<br>view</h1>
+            </label>
+            <input type="radio" id="view_dynamic" name="view" value="dynamic">
+            <label for="view_dynamic">
+                <h1 class="lang lang-de"><span class="span-big-letter">D</span><br>dynamische<br>Ansicht</h1>
+                <h1 class="lang lang-en" style="display:none;"><span class="span-big-letter">D</span><br>dynamic<br>view</h1>
+            </label>
+            <div id="btns" class="btn-container">
+                <button type="button" aria-label="Information" class="btn-information" onclick="window.open('https://gitlab.com/elga-gmbh/vidi#vidi')">
+                    <img src="assets/img/icon_info.png" width="24" height="24">
+                </button><br/><br/><br/><br/><br/>
+                <select id="select-language" style="width: 50px;">
+                    <option value="de">DE</option>
+                    <option value="en">EN</option>
+                </select>
+            </div>
+        </div>
+        <div class="container-content" id="container-simple">
+            <div class="div-introduction">
+                <div class="div-img-introduction">
+                    <img class="img-description" data-view="simple" src="assets/img/introduction_simple.jpg" alt="Beschreibung">
+                </div>
+                <div class="div-description">
+                    <div class="lang lang-de">
+                        <h1><span class="h1-light">Sehr geehrter </span>Herr Mustermann<span class="h1-light">,</span></h1>
+                        <p>In dieser Ansicht finden Sie all Ihre medizinischen Daten übersichtlich und vereinfacht dargestellt.</p>
+                        <p>Bei Fragen wenden Sie sich bitte an <span class="span-bold">Ihre Hausärztin, Frau Musterfrau</span>, die Erstellerin Ihres IPS.</p>
+                    </div>
+                    <div class="lang lang-en" style="display:none;">
+                        <h1><span class="h1-light">Dear </span>Mr. Mustermann<span class="h1-light">,</span></h1>
+                        <p>In this view, you will find all your medical data clearly and simply presented.</p>
+                        <p>If you have any questions, please contact <span class="span-bold">your family doctor, Mrs. Musterfrau</span>, the creator of your IPS.</p>
+                    </div>
+                </p>
+                </div>
+            </div>
+            <div class="expansion-panel expansion-panel-stammdaten">
+                <div class="expansion-panel-header">
+                    <img src="assets/icons/stammdaten.png" alt="Stammdaten">
+                        <span class="lang lang-de"><span class="expansion-panel-title">Meine Personendaten</span></span>
+                        <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">My Personal Data</span></span>
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+                <div class="expansion-panel-content">
+                    <p>
+                        <span class="lang lang-de">Hier werden allgemeine Informationen über Ihre Person festgehalten:</span>
+                        <span class="lang lang-en" style="display:none;">General information about your person is recorded here:</span>
+                    </p>
+                        <span class="lang lang-de">
+                            <table class="table-horizontal">
+                            <tr>
+                            <th>Name:</th>
+                            <td>Anton Testpatient</td>
+                            <th>Adresse:</th>
+                            <td>Rotenturmstraße 14, Wien, 1010, AUT</td>
+                            </tr>
+                            <tr>
+                            <th>Geschlecht:</th>
+                            <td>männlich</td>
+                            <th>Identifikationsnummer:</th>
+                            <td>0000121153</td>
+                            </tr>
+                            <tr>
+                            <th>Geburtsdatum:</th>
+                            <td>12.11.1953</td>
+                            <th></th>
+                            <td></td>
+                            </tr>
+                            <tr>
+                            <th>Verfasserin des Dokuments:</th>
+                            <td>Hausarzt:ärztin Hanna Hausärztin</td>
+                            <th></th>
+                            <td></td>
+                            </tr>
+                            </table>
+                        </span>
+                        <span class="lang lang-en" style="display:none;">
+                            <table class="table-horizontal">
+                            <tr>
+                            <th>Name:</th>
+                            <td>Anton Testpatient</td>
+                            <th>Address:</th>
+                            <td>Rotenturmstraße 14, Wien, 1010, AUT</td>
+                            </tr>
+                            <tr>
+                            <th>Gender:</th>
+                            <td>male</td>
+                            <th>Identification Number:</th>
+                            <td>0000121153</td>
+                            </tr>
+                            <tr>
+                            <th>Date of Birth:</th>
+                            <td>11/12/1953</td>
+                            <th></th>
+                            <td></td>
+                            </tr>
+                            <tr>
+                            <th>Author of the Document:</th>
+                            <td>Primary Care Physician: Hanna Hausärztin</td>
+                            <th></th>
+                            <td></td>
+                            </tr>
+                        </table>
+                        </span>
+                      </table>
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+            </div>
+            <div class="expansion-panel expansion-panel-allergien">
+                <div class="expansion-panel-header">
+                    <img src="assets/icons/allergien.png" alt="Allergien">
+                    <span class="lang lang-de"><span class="expansion-panel-title">Meine Allergien</span></span>
+                    <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">My Allergies</span></span>
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+                <div class="expansion-panel-content">
+                    <p>
+                        <span class="lang lang-de">Hier werden alle Stoffe aufgelistet, gegen diese Sie allergisch sind. Hier finden Sie eine Erklärung, was man unter einer Allergie versteht: 
+                        </br></br><a class="a-explanation" href="https://befunddolmetscher.de/allergie" target="_blank">Erklärung Allergie</a></span>
+                        <span class="lang lang-en" style="display:none;">All substances to which you are allergic are listed here. Here you will find an explanation of what an allergy is:
+                        </br></br><a class="a-explanation" href="https://www.allergy.org.au/patients/about-allergy/what-is-allergy" target="_blank">Explanation Allergy</a>
+                        </span>
+                    
+                    </p>
+                    <div id="v_allergies"></div>
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+            </div>
+            <div class="expansion-panel expansion-panel-impfungen">
+                <div class="expansion-panel-header">
+                    <img src="assets/icons/impfung.png" alt="Impfung">
+                    <span class="lang lang-de"><span class="expansion-panel-title">Meine Impfungen</span></span>
+                    <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">My Vaccinations</span></span>
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+                <div class="expansion-panel-content">
+                                        <p>
+                        <span class="lang lang-de">Hier werden alle Impfungen aufgelistet die Sie erhalten haben. Falls möglich wird neben der Diagnose eine Erklärung dieser angegeben. Hier finden Sie eine Erklärung, was man unter einer Impfung versteht: 
+                        </br></br><a class="a-explanation" href="https://www.gesundheit.gv.at/leben/gesundheitsvorsorge/impfungen.html" target="_blank">Erklärung Impfung</a></span>
+                        <span class="lang lang-en" style="display:none;">All the vaccinations you have received are listed here. If possible, an explanation of the diagnosis is given next to it. Here you will find an explanation of what a vaccination is::
+                        </br></br><a class="a-explanation" href="https://www.who.int/health-topics/vaccines-and-immunization#tab=tab_2" target="_blank">Explination Vaccinations</a>
+                        </span>
+                    
+                    </p>
+                    <div id="v_immunizations"></div>
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+            </div>
+            <div class="expansion-panel expansion-panel-aktuelle-medikamente">
+                <div class="expansion-panel-header">
+                    <img src="assets/icons/aktuelle_medikamente.png" alt="Meine Medikamente">
+                    <span class="lang lang-de"><span class="expansion-panel-title">Meine Medikamente</span></span>
+                    <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">My Medications</span></span>
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+                <div class="expansion-panel-content">
+                    <p>
+                        <span class="lang lang-de">Hier finden Sie all jene Medikamente, die Sie zur Zeit einnehmen. Hier finden Sie eine Erklärung, wie Dosierungen angegeben werden:
+                        </br></br><a class="a-explanation" href="https://www.deutschesapothekenportal.de/download/public/arbeitshilfen/dap_arbeitshilfe_86.pdf" target="_blank">Erklärung Dosierung</a></span>
+                        <span class="lang lang-en" style="display:none;">Here you will find all the medicines you are currently taking. Here you will find an explanation of how dosages are indicated:
+                        </br></br><a class="a-explanation" href="https://www.drugs.com/article/prescription-abbreviations.html" target="_blank">Explanation Dosage</a></span>
+                    </p>
+                    <div id="v_current_medication"></div>
+                    </br>
+                    <p>
+                        <span class="lang lang-de"> Hier werden all jene Medikamente aufgelistet, die Sie in der Vergangenheit eingenommen haben.</a></span>
+                        <span class="lang lang-en" style="display:none;"> All the medicines you have taken in the past are listed here.</a></span>
+                    </p>
+                    <div id="v_past_medication"></div>
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+            </div>
+            <div class="expansion-panel expansion-panel-aktuelle-diagnose">
+                <div class="expansion-panel-header">
+                    <img src="assets/icons/aktuelle_diagnose.png" alt="Aktuelle Diagnose">
+                    <span class="lang lang-de"><span class="expansion-panel-title">Meine Diagnosen</span></span>
+                    <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">My Diagnoses</span></span>
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+                <div class="expansion-panel-content">
+                    <p>
+                        <span class="lang lang-de">Hier finden Sie ihre aktuellen Diagnosen, die von einem medizinischen Fachsperonal gestellt wurden.<br>
+                        Falls möglich wird neben der Diagnose eine Erklärung dieser angegeben.</span>
+                        <span class="lang lang-en" style="display:none;">Here you will find your current diagnoses, which have been made by a medical specialist.<br>
+                            If possible, an explanation of the diagnosis is given next to it.</span>
+                        <div id="v_current_problems"></div>
+                    </p>
+                    <p> 
+                        <span class="lang lang-de">Hier finden Sie Ihre vergangenen Diagnosen, welche bereits gelöst wurden oder nicht mehr aktuell sind: </span>
+                        <span class="lang lang-en" style="display:none;">Here you will find your past diagnoses that have already been resolved or are no longer active:</span>
+                    </p>
+                    <div id="v_past_problems"></div>
+                    
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+            </div>
+            <div class="expansion-panel expansion-panel-familienanamnese">
+                <div class="expansion-panel-header">
+                    <img src="assets/icons/familienanamnese.png" alt="Familienanamnese">
+                    <span class="lang lang-de"><span class="expansion-panel-title">Meine Familienanamnese</span></span>
+                    <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">My Family Medical History</span></span>
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+                <div class="expansion-panel-content">
+                    <span class="lang lang-de"><p>Hier finden Sie Ihre Familienanamnese, darunter versteht man folgendes:</br></br> <a class="a-explanation" href="https://befunddolmetscher.de/familienanamnese" target="_blank">Erklärung Familienanamnese</a></p></span>
+                    <span class="lang lang-en" style="display:none;"><p>Here you will find your family medical history, which is defined as follows:</br></br> <a class="a-explanation" href="https://www.cancer.gov/publications/dictionaries/cancer-terms/def/family-medical-history" target="_blank">Explanation of family medical history</a></p></span>
+                    <div id="v_family_problems"></div>
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+            </div>
+            <div class="expansion-panel expansion-panel-operationen">
+                <div class="expansion-panel-header">
+                    <img src="assets/icons/operationen.png" alt="Meine Operationen">
+                    <span class="lang lang-de"><span class="expansion-panel-title">Meine Operationen</span></span>
+                    <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">My Operations</span></span>
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+                <div class="expansion-panel-content">
+                    <p> 
+                        <span class="lang lang-de">In dieser Sektion finden Sie Operationen und Eingriffe, die bei Ihnen durchgeführt wurden. Falls möglich wird neben dem Name der Operation und Eingriffes eine Erklärung angeführt.</span>
+                        <span class="lang lang-en" style="display:none;">In this section you will find operations and procedures that have been performed on you. If possible, an explanation is given next to the name of the operation and procedure.</span>  
+                    </p>
+                    <div id="v_procedures"></div>
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+            </div>
+            <div class="expansion-panel expansion-panel-lebensstil">
+                <div class="expansion-panel-header">
+                    <img src="assets/icons/lebensstil.png" alt="Mein Lebensstil">
+                    <span class="lang lang-de"><span class="expansion-panel-title">Meine Lebensstil</span></span>
+                    <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">My Lifestyle</span></span>
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+                <div class="expansion-panel-content">
+                    <p> 
+                        <span class="lang lang-de">Hier werden relevante Punkte zu Ihrem Lebensstil festgehalten.</span>
+                        <span class="lang lang-en" style="display:none;">Relevant information about your lifestyle is recorded here.</span>
+                    </p>
+                    <div id="v_socialhistory"></div>
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+            </div>
+            <div class="expansion-panel expansion-panel-durchgeführte-tests">
+                <div class="expansion-panel-header">
+                    <img src="assets/icons/durchgeführte_tests.png" alt="Durchgeführte Tests">
+                    <span class="lang lang-de"><span class="expansion-panel-title">Durchgeführte Tests</span></span>
+                    <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">Tests Performed</span></span>
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+                <div class="expansion-panel-content">
+                    <p> 
+                        <span class="lang lang-de">Hier werden alle Tests, sowie deren Ergebnisse, aufgelistet die an Ihnen durchgeführt wurden. 
+                        Diese durchgeführten Test wurden unter Beobachtung von medizinischem Fachpersonal durchgeführt und von diesen ausgwertet.</span>
+
+                        <span class="lang lang-en" style="display:none;">All tests and their results that have been carried out on you are listed here.
+                        These tests were carried out under the supervision of medical professionals and evaluated by them.</span>
+                    </p>
+                    <div id="v_vitalsigns"></div>
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+            </div>
+            <div class="expansion-panel expansion-panel-gemessene-werte">
+                <div class="expansion-panel-header">
+                    <img src="assets/icons/gemessene_werte.png" alt="Gemessene Werte">
+                    <span class="lang lang-de"><span class="expansion-panel-title">Laborwerte</span></span>
+                    <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">Laboratory Results</span></span>
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+                <div class="expansion-panel-content">
+                    <p> 
+                        <span class="lang lang-de">Hier werden alle Ihre gemessenen Werte und deren Ergebnisse augelistet. Diese Werte wurden von medizinischen Fachpersonal erhoben und ausgwertet.</span>
+                        <span class="lang lang-en" style="display:none;">All your measured laboratory values and their results are listed here. These values were collected and evaluated by medical professionals.</span>
+                    </p>
+                    <div id="v_results"></div>
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+            </div>
+            <div class="expansion-panel expansion-panel-behandlungsplan">
+                <div class="expansion-panel-header">
+                    <img src="assets/icons/careplan.png" alt="Behandlungsplan">
+                    <span class="lang lang-de"><span class="expansion-panel-title">Mein Behandlungsplan</span></span>
+                    <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">My Care Plan</span></span>
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+                <div class="expansion-panel-content">
+                    <p> 
+                        <span class="lang lang-de">Hier werden Ihre aktuellen Behandlungspläne aufgelistet. Sie enthalten Maßnahmen, die Sie bei einem gesundheitlichen Problem unterstützen. Erstellt wurden diese von medizinischen Fachpersonal. </span>
+                        <span class="lang lang-en" style="display:none;">Here you will find your current care plans. They include measures to support you with a health issue. These plans were created by medical professionals.</span>
+                    </p>
+                    <div id="v_careplan"></div>
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+            </div>
+            <div class="expansion-panel expansion-panel-behandlungsplan" expansion-panel-large="true">
+                <div class="expansion-panel-header">
+                    <img src="assets/icons/careplan.png" alt="Behandlungsplan / Tasks">
+                    <span class="lang lang-de"><span class="expansion-panel-title">Behandlungsplan / Tasks</span></span>
+                    <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">Care Plan / Tasks</span></span>
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+                <div class="expansion-panel-content">
+                    <div id="v_tasks"></div>
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+            </div>
+            <div class="expansion-panel expansion-panel-behandlungsplan" expansion-panel-large="true">
+                <div class="expansion-panel-header">
+                    <img src="assets/icons/careplan.png" alt="Behandlungsplan / Ziele">
+                    <span class="lang lang-de"><span class="expansion-panel-title">Behandlungsplan / Ziele</span></span>
+                    <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">Care Plan / Goals</span></span>
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+                <div class="expansion-panel-content">
+                    <div id="v_goals"></div>
+                    <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="container-content" id="container-advanced">
+            <div class="div-introduction">
+                <div class="div-img-introduction">
+                    <img class="img-description active" data-view="advanced-static" src="assets/img/introduction_advanced_static.jpg" alt="Beschreibung">
+                    <img class="img-description" data-view="advanced-dynamic" src="assets/img/introduction_advanced_dynamic.jpg" alt="Beschreibung">
+                </div>
+                <div class="div-description">
+                    <div class="lang lang-de">
+                    <h1><span class="h1-light">Sehr geehrte:r</span> Experte:in<span class="h1-light">,</span></h1>
+                    <p>
+                        hier finden Sie alle relevanten medizinischen Informationen zu Herrn <span class="span-bold">Anton Testpatient</span>. 
+                    </p> 
+                    <p>Dieser IPS wurde von <span class="span-bold">Hausärztin Frau Hausärztin erstellt</span> und mit den angegebenen Informationen befüllt.</p>
+                    </div>
+                    <div class="lang lang-en" style="display:none;">
+                        <h1><span class="h1-light">Dear </span> Expert<span class="h1-light">,</span></h1>
+                        <p>
+                            here you will find all relevant medical information about Mr. <span class="span-bold">Anton Testpatient</span>. 
+                        </p> 
+                        <p>This IPS was created by the <span class="span-bold">general practitioner Mrs. Musterfrau</span> and filled with the following information.</p>
+                        </div>
+                        <button class="btn-print" type="button" aria-label="Drucken"><span class="lang lang-de">IPS drucken</span><span class="lang lang-en" style="display:none;">Print IPS</span></button>
+                        <div id="div-switch-expansion-panel">
+                            <label class="switch">
+                                <input
+                                    type="checkbox"
+                                    name="toggle-expansion-panel"
+                                    id="toggle-expansion-panel"
+                                    unchecked
+                                    >
+                                <span class="slider"></span>
+                            </label>
+                            <span class="lang lang-de">Alles Ausklappen</span>
+                            <span class="lang lang-en" style="display:none;">Expand all</span>
+                        </div>
+                </div>
+            </div>
+            <div class="container-expansion-panels-dynamic">
+                <p id="description-dynamic"> <span class="lang lang-de">
+                    Ziehen Sie jene Sektion, welche Sie anschauen möchten, aus der Box und klicken Sie darauf.<br><br>
+                    Sobald Sie eine Sektion fertig betrachtet haben, klappen Sie die Sektion ein und ziehen Sie diese wieder in die graue Box.
+                    </span>
+                    <span class="lang lang-en" style="display:none;">
+                    Drag the section you want to view out of the box and click on it.<br><br>
+                    As soon as you have finished viewing a section, collapse the section and drag it back into the gray box.
+                    </span>
+                </p>
+                </div>
+                <div class="expansion-panel expansion-panel-stammdaten">
+                    <div class="expansion-panel-header">
+                        <img src="assets/icons/stammdaten.png" alt="Stammdaten">
+                        <span class="lang lang-de"><span class="expansion-panel-title">Personendaten</span></span>
+                        <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">Personal Data</span></span>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                    <div class="expansion-panel-content">
+                        <span class="lang lang-de">
+                            <table class="table-horizontal">
+                            <tr>
+                            <th>Name:</th>
+                            <td>Anton Testpatient</td>
+                            <th>Adresse:</th>
+                            <td>Rotenturmstraße 14, Wien, 1010, AUT</td>
+                            </tr>
+                            <tr>
+                            <th>Geschlecht:</th>
+                            <td>männlich</td>
+                            <th>Identifikationsnummer:</th>
+                            <td>0000121153</td>
+                            </tr>
+                            <tr>
+                            <th>Geburtsdatum:</th>
+                            <td>12.11.1953</td>
+                            <th></th>
+                            <td></td>
+                            </tr>
+                            <tr>
+                            <th>Verfasserin des Dokuments:</th>
+                            <td>Hausarzt:ärztin Hanna Hausärztin</td>
+                            <th></th>
+                            <td></td>
+                            </tr>
+                            </table>
+                        </span>
+                        <span class="lang lang-en" style="display:none;">
+                            <table class="table-horizontal">
+                            <tr>
+                            <th>Name:</th>
+                            <td>Anton Testpatient</td>
+                            <th>Address:</th>
+                            <td>Rotenturmstraße 14, Wien, 1010, AUT</td>
+                            </tr>
+                            <tr>
+                            <th>Gender:</th>
+                            <td>male</td>
+                            <th>Identification Number:</th>
+                            <td>0000121153</td>
+                            </tr>
+                            <tr>
+                            <th>Date of Birth:</th>
+                            <td>11/12/1953</td>
+                            <th></th>
+                            <td></td>
+                            </tr>
+                            <tr>
+                            <th>Author of the Document:</th>
+                            <td>Primary Care Physician: Hanna Hausärztin</td>
+                            <th></th>
+                            <td></td>
+                            </tr>
+                        </table>
+                        </span>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                </div>
+                <div class="expansion-panel expansion-panel-allergien">
+                    <div class="expansion-panel-header">
+                        <img src="assets/icons/allergien.png" alt="Allergien">
+                        <span class="lang lang-de"><span class="expansion-panel-title">Allergien</span></span>
+                        <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">Allergies</span></span>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                    <div class="expansion-panel-content">
+                        <div id="i_allergies"></div>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                </div>
+                <div class="expansion-panel expansion-panel-impfungen">
+                    <div class="expansion-panel-header">
+                        <img src="assets/icons/impfung.png" alt="Impfung">
+                        <span class="lang lang-de"><span class="expansion-panel-title">Impfungen</span></span>
+                        <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">Immunizations</span></span>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                    <div class="expansion-panel-content">
+                        <div id="i_immunizations"></div>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                </div>
+                <div class="expansion-panel expansion-panel-aktuelle-medikamente">
+                    <div class="expansion-panel-header">
+                        <img src="assets/icons/aktuelle_medikamente.png" alt="Aktuelle Medikamente">
+                        <span class="lang lang-de"><span class="expansion-panel-title">Aktuelle Medikamente</span></span>
+                        <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">Current Medications</span></span>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                    <div class="expansion-panel-content">
+                        <div id="i_current_medication"></div>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                </div>
+                <div class="expansion-panel expansion-panel-vergangene-medikamente">
+                    <div class="expansion-panel-header">
+                        <img src="assets/icons/vergangene_medikamente.png" alt="Vergangene Medikamente">
+                        <span class="lang lang-de"><span class="expansion-panel-title">Vergangene Medikamente</span></span>
+                        <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">Past Medications</span></span>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                    <div class="expansion-panel-content">
+                        <div id="i_past_medication"></div>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                </div>
+                <div class="expansion-panel expansion-panel-aktuelle-diagnose">
+                    <div class="expansion-panel-header">
+                        <img src="assets/icons/aktuelle_diagnose.png" alt="Aktuelle Diagnose">
+                        <span class="lang lang-de"><span class="expansion-panel-title">Aktuelle Diagnosen</span></span>
+                        <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">Current Diagnoses</span></span>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                    <div class="expansion-panel-content">
+                        <div id="i_current_problems"></div>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                </div>
+                <div class="expansion-panel expansion-panel-vergangene-diagnosen">
+                    <div class="expansion-panel-header">
+                        <img src="assets/icons/vergangene_diagnosen.png" alt="Vergangene Diagnosen">
+                        <span class="lang lang-de"><span class="expansion-panel-title">Vergangene Diagnosen</span></span>
+                        <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">Past Diagnoses</span></span>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                    <div class="expansion-panel-content">
+                        <div id="i_past_problems"></div>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                </div>
+                <div class="expansion-panel expansion-panel-familienanamnese">
+                    <div class="expansion-panel-header">
+                        <img src="assets/icons/familienanamnese.png" alt="Familienanamnese">
+                        <span class="lang lang-de"><span class="expansion-panel-title">Familienanamnese</span></span>
+                        <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">Family Medical History</span></span>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                    <div class="expansion-panel-content">
+                        <div id="i_family_problems"></div>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                </div>
+                <div class="expansion-panel expansion-panel-operationen">
+                    <div class="expansion-panel-header">
+                        <img src="assets/icons/operationen.png" alt="Operationen">
+                        <span class="lang lang-de"><span class="expansion-panel-title">Operationen</span></span>
+                        <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">Operations</span></span>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                    <div class="expansion-panel-content">
+                        <div id="i_procedures"></div>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                </div>
+                <div class="expansion-panel expansion-panel-lebensstil">
+                    <div class="expansion-panel-header">
+                        <img src="assets/icons/lebensstil.png" alt="Lebensstil">
+                        <span class="lang lang-de"><span class="expansion-panel-title">Lebensstil</span></span>
+                        <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">Lifestyle</span></span>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                    <div class="expansion-panel-content">
+                        <div id="i_socialhistory"></div>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                </div>
+                <div class="expansion-panel expansion-panel-durchgeführte-tests" expansion-panel-large="true">
+                    <div class="expansion-panel-header">
+                        <img src="assets/icons/durchgeführte_tests.png" alt="Durchgeführte Tests">
+                        <span class="lang lang-de"><span class="expansion-panel-title">Durchgeführte Tests</span></span>
+                        <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">Tests Performed</span></span>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                    <div class="expansion-panel-content">
+                        <div id="i_vitalsigns"></div>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                </div>
+                <div class="expansion-panel expansion-panel-gemessene-werte" expansion-panel-large="true">
+                    <div class="expansion-panel-header">
+                        <img src="assets/icons/gemessene_werte.png" alt="Gemessene Werte">
+                        <span class="lang lang-de"><span class="expansion-panel-title">Laborwerte</span></span>
+                        <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">Laboratory Results</span></span>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                    <div class="expansion-panel-content">
+                        <div id="i_results"></div>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                </div>
+                <div class="expansion-panel expansion-panel-behandlungsplan" expansion-panel-large="true">
+                    <div class="expansion-panel-header">
+                        <img src="assets/icons/careplan.png" alt="Behandlungsplan">
+                        <span class="lang lang-de"><span class="expansion-panel-title">Behandlungsplan</span></span>
+                        <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">Care Plan</span></span>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                    <div class="expansion-panel-content">
+                        <div id="i_careplan"></div>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                </div>
+                <div class="expansion-panel expansion-panel-behandlungsplan" expansion-panel-large="true">
+                    <div class="expansion-panel-header">
+                        <img src="assets/icons/careplan.png" alt="Behandlungsplan / Tasks">
+                        <span class="lang lang-de"><span class="expansion-panel-title">Behandlungsplan / Tasks</span></span>
+                        <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">Care Plan / Tasks</span></span>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                    <div class="expansion-panel-content">
+                        <div id="i_tasks"></div>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                </div>
+                <div class="expansion-panel expansion-panel-behandlungsplan" expansion-panel-large="true">
+                    <div class="expansion-panel-header">
+                        <img src="assets/icons/careplan.png" alt="Behandlungsplan / Ziele">
+                        <span class="lang lang-de"><span class="expansion-panel-title">Behandlungsplan / Ziele</span></span>
+                        <span class="lang lang-en" style="display:none;"><span class="expansion-panel-title">Care Plan / Goals</span></span>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-small"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                    <div class="expansion-panel-content">
+                        <div id="i_goals"></div>
+                        <button type="button" aria-label="Einklappen" class="btn-collapse btn-collapse-large"><span class="lang lang-de">Einklappen</span><span class="lang lang-en" style="display:none;">Collapse</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-contact">
+            <div class="div-contact-img">
+                <img src="assets/img/contact.png" alt="Contact">
+            </div>
+            <div class="div-contact-data">
+                <span class="lang lang-de">
+                <h1 class="h1-light">Bei Fragen oder Anregungen melden Sie sich gerne bei uns unter:</h1>
+                <p>E-Mail: <strong>firma@info.com</strong></p>
+                <p>Telefonnummer: <strong>+43 123 456 789</strong></p>
+                <p>Anschrift: <strong>Hauptplatz 1, 8010 Graz</strong></p>
+                </span>
+                <span class="lang lang-en" style="display:none;">
+                <h1 class="h1-light">If you have any questions or suggestions, please contact us at::</h1>
+                <p>e-mail: <strong>firma@info.com</strong></p>
+                <p>Phone number: <strong>+43 123 456 789</strong></p>
+                <p>Address: <strong>Hauptplatz 1, 8010 Graz</strong></p>
+                </span>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>

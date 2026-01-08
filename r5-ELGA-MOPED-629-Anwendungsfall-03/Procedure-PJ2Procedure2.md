@@ -1,0 +1,76 @@
+# ELGA.MOPED\PJ2Procedure2 - FHIR® v5.0.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **PJ2Procedure2**
+
+## Example Procedure: PJ2Procedure2
+
+Profile: [MOPED Procedure](StructureDefinition-MopedProcedure.md)
+
+**Leistung - Anzahl**: 1
+
+**status**: Completed
+
+**code**: Polysomnographie im Schlaflabor (LE=je Behandlungstag)
+
+**subject**: [Santiago Schnabeltier Test (official) Male, DoB: 1985-03-19 ( Social Security Number: 2873111374)](Patient-PJ2Patient.md)
+
+**encounter**: [Encounter: identifier = Visit number,Anonymous identifier; status = discharged; class = Stationär,akute stationäre Aufnahme/akuter ambulanter Besuch (ohne vorhergehende Terminvereinbarung); type = Moped Encounter; actualPeriod = 2024-08-08 08:21:00+0200 --> 2024-08-12 19:22:00+0200](Encounter-PJ2Encounter.md)
+
+**occurrence**: 2024-08-08 08:21:00+0200
+
+### Performers
+
+| | | |
+| :--- | :--- | :--- |
+| - | **Actor** | **OnBehalfOf** |
+| * | [Organization: identifier = http://example.org/lkf-system/funktionscode#112111,http://example.org/lkf-system/funktionssubcode#00; type = Hospital Department](Organization-AbteilungKHRied1.md) | [Organization Krankenhaus der Barmherzigen Schwestern vom Hl. Vinzenz von Paul Ried](Organization-OrganizationKrankenhausRied.md) |
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Procedure",
+  "id" : "PJ2Procedure2",
+  "meta" : {
+    "profile" : ["https://elga.moped.at/StructureDefinition/MopedProcedure"]
+  },
+  "extension" : [
+    {
+      "url" : "https://elga.moped.at/StructureDefinition/moped-ext-Leistungsanzahl",
+      "valueUnsignedInt" : 1
+    }
+  ],
+  "status" : "completed",
+  "code" : {
+    "coding" : [
+      {
+        "system" : "https://termgit.elga.gv.at/CodeSystem/lkat-bmsgpk-2025",
+        "code" : "AN010",
+        "display" : "Polysomnographie im Schlaflabor (LE=je Behandlungstag)"
+      }
+    ]
+  },
+  "subject" : {
+    "reference" : "Patient/PJ2Patient"
+  },
+  "encounter" : {
+    "reference" : "Encounter/PJ2Encounter"
+  },
+  "occurrenceDateTime" : "2024-08-08T08:21:00+02:00",
+  "performer" : [
+    {
+      "actor" : {
+        "reference" : "Organization/AbteilungKHRied1"
+      },
+      "onBehalfOf" : {
+        "reference" : "Organization/OrganizationKrankenhausRied"
+      }
+    }
+  ]
+}
+
+```

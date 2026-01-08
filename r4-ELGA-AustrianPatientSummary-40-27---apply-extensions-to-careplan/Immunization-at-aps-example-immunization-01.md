@@ -1,0 +1,94 @@
+# Immunization-Beispiel 1 - Austrian Patient Summary (R4) v0.2.0
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Immunization",
+  "id" : "at-aps-example-immunization-01",
+  "meta" : {
+    "profile" : [
+      "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-immunization"
+    ]
+  },
+  "status" : "completed",
+  "vaccineCode" : {
+    "coding" : [
+      {
+        "system" : "https://termgit.elga.gv.at/ValueSet/eimpf-impfstoffe",
+        "code" : "2457324",
+        "display" : "BOOSTRIX POLIO FSPR 0,5ML"
+      }
+    ],
+    "text" : "Diphtherie-Pertussis-Poliomyelitis-Tetanus"
+  },
+  "patient" : {
+    "reference" : "Patient/at-aps-example-patient-01",
+    "display" : "Maria Musterfrau"
+  },
+  "occurrenceDateTime" : "2021-10-01",
+  "route" : {
+    "coding" : [
+      {
+        "system" : "https://termgit.elga.gv.at/ValueSet/eimpf-medikationartanwendung",
+        "code" : "IM",
+        "display" : "Intramuskulär"
+      }
+    ]
+  },
+  "performer" : [
+    {
+      "actor" : {
+        "reference" : "Practitioner/at-aps-example-practitioner-01",
+        "display" : "Dr. Hanna Hausärztin"
+      }
+    }
+  ],
+  "protocolApplied" : [
+    {
+      "targetDisease" : [
+        {
+          "coding" : [
+            {
+              "system" : "https://termgit.elga.gv.at/ValueSet/eimpf-immunizationtarget",
+              "code" : "397430003",
+              "display" : "Diphtheria"
+            }
+          ]
+        },
+        {
+          "coding" : [
+            {
+              "system" : "https://termgit.elga.gv.at/ValueSet/eimpf-immunizationtarget",
+              "code" : "27836007",
+              "display" : "Pertussis"
+            }
+          ]
+        },
+        {
+          "coding" : [
+            {
+              "system" : "https://termgit.elga.gv.at/ValueSet/eimpf-immunizationtarget",
+              "code" : "398102009",
+              "display" : "Poliomyelitis"
+            }
+          ]
+        },
+        {
+          "coding" : [
+            {
+              "system" : "https://termgit.elga.gv.at/ValueSet/eimpf-immunizationtarget",
+              "code" : "76902006",
+              "display" : "Tetanus"
+            }
+          ]
+        }
+      ],
+      "doseNumberPositiveInt" : 1
+    }
+  ]
+}
+
+```

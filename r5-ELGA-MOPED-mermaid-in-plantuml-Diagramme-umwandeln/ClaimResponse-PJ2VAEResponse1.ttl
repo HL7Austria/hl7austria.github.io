@@ -1,0 +1,188 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://elga.moped.at/ClaimResponse/PJ2VAEResponse1> a fhir:ClaimResponse ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PJ2VAEResponse1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://elga.moped.at/StructureDefinition/MopedVAEResponse"^^xsd:anyURI ;
+       fhir:l <https://elga.moped.at/StructureDefinition/MopedVAEResponse>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ClaimResponse PJ2VAEResponse1</b></p><a name=\"PJ2VAEResponse1\"> </a><a name=\"hcPJ2VAEResponse1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-MopedVAEResponse.html\">MOPED VAEResponse</a></p></div><blockquote><p><b>VerpflegskostenBeitragsbefreiung</b></p><ul><li>Befreiung: <a href=\"CodeSystem-VerpflegskostenBeitragsbefreiungCS.html#VerpflegskostenBeitragsbefreiungCS-N\">Befreiung für den Verpflegskostenbeitrag: N</a> (Es liegt keine Befreiung vom Verpflegskostenbeitrag vor.)</li><li>Zeitraum: 2024-08-26 --&gt; (ongoing)</li></ul></blockquote><blockquote><p><b>Supporting Info Extension for ClaimResponse - Sonderklasse Slice</b></p><ul><li>category: <span title=\"Codes:{https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS KLAS}\">Allgemeine Gebührenklasse/Sonderklasse</span></li><li>code: <span title=\"Codes:{https://elga.moped.at/CodeSystem/SonderklasseCS A}\">Allgemeine Gebührenklasse</span></li><li>sequence: 2</li><li>timing: 2024-08-08 08:21:00+0200 --&gt; (ongoing)</li></ul></blockquote><blockquote><p><b>Supporting Info Extension for ClaimResponse - Vortageanzahl auf Kostenbeitrag</b></p><ul><li>category: <span title=\"Codes:{https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS VTAGE}\">Vortageanzahl auf Kostenbeitrag</span></li><li>value: 0</li><li>sequence: 4</li></ul></blockquote><p><b>status</b>: Active</p><p><b>type</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/MopedClaimTypeCS VAERESP}\">VAE Response</span></p><p><b>use</b>: Preauthorization</p><p><b>patient</b>: <a href=\"Patient-PJ2Patient.html\">Santiago Schnabeltier Test (official) Male, DoB: 1985-03-19 ( Social Security Number: 2873111374)</a></p><p><b>created</b>: 2025-02-24</p><p><b>insurer</b>: <a href=\"Organization-SV14.html\">Organization Österreichische Gesundheitskasse Oberösterreich</a></p><p><b>requestor</b>: <a href=\"Organization-OrganizationKrankenhausRied.html\">Organization Krankenhaus der Barmherzigen Schwestern vom Hl. Vinzenz von Paul Ried</a></p><p><b>request</b>: <a href=\"Claim-PJ2VAERequest1.html\">Claim: status = active; type = VAE Request; subType = initiale VAE; use = preauthorization; created = 2025-02-17</a></p><p><b>outcome</b>: Processing Complete</p><p><b>decision</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/VAEStatusCS 00}\">bewilligt (nur für stationären Bereich)</span></p><p><b>preAuthPeriod</b>: 2024-08-08 --&gt; 2024-08-26</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "Befreiung"^^xsd:anyURI ;
+         fhir:l fhir:Befreiung
+       ] ;
+       fhir:value [
+         a fhir:Coding ;
+         fhir:system [
+           fhir:v "https://elga.moped.at/CodeSystem/VerpflegskostenBeitragsbefreiungCS"^^xsd:anyURI ;
+           fhir:l <https://elga.moped.at/CodeSystem/VerpflegskostenBeitragsbefreiungCS>
+         ] ;
+         fhir:code [ fhir:v "N" ]
+       ]
+     ] [
+       fhir:url [
+         fhir:v "Zeitraum"^^xsd:anyURI ;
+         fhir:l fhir:Zeitraum
+       ] ;
+       fhir:value [
+         a fhir:Period ;
+         fhir:start [ fhir:v "2024-08-26"^^xsd:date ]
+       ]
+     ] ) ;
+     fhir:url [
+       fhir:v "https://elga.moped.at/StructureDefinition/moped-ext-verpflegskostenBeitragsbefreiung"^^xsd:anyURI ;
+       fhir:l <https://elga.moped.at/StructureDefinition/moped-ext-verpflegskostenBeitragsbefreiung>
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "category"^^xsd:anyURI ;
+         fhir:l fhir:category
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS"^^xsd:anyURI ;
+             fhir:l <https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS>
+           ] ;
+           fhir:code [ fhir:v "KLAS" ]
+         ] )
+       ]
+     ] [
+       fhir:url [
+         fhir:v "code"^^xsd:anyURI ;
+         fhir:l fhir:code
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "https://elga.moped.at/CodeSystem/SonderklasseCS"^^xsd:anyURI ;
+             fhir:l <https://elga.moped.at/CodeSystem/SonderklasseCS>
+           ] ;
+           fhir:code [ fhir:v "A" ]
+         ] )
+       ]
+     ] [
+       fhir:url [
+         fhir:v "sequence"^^xsd:anyURI ;
+         fhir:l fhir:sequence
+       ] ;
+       fhir:value [
+         a fhir:PositiveInt ;
+         fhir:v "2"^^xsd:positiveInteger
+       ]
+     ] [
+       fhir:url [
+         fhir:v "timing"^^xsd:anyURI ;
+         fhir:l fhir:timing
+       ] ;
+       fhir:value [
+         a fhir:Period ;
+         fhir:start [ fhir:v "2024-08-08T08:21:00+02:00"^^xsd:dateTime ]
+       ]
+     ] ) ;
+     fhir:url [
+       fhir:v "https://elga.moped.at/StructureDefinition/MopedSupportingInfoSonderklasse"^^xsd:anyURI ;
+       fhir:l <https://elga.moped.at/StructureDefinition/MopedSupportingInfoSonderklasse>
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "category"^^xsd:anyURI ;
+         fhir:l fhir:category
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS"^^xsd:anyURI ;
+             fhir:l <https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS>
+           ] ;
+           fhir:code [ fhir:v "VTAGE" ]
+         ] )
+       ]
+     ] [
+       fhir:url [
+         fhir:v "value"^^xsd:anyURI ;
+         fhir:l fhir:value
+       ] ;
+       fhir:value [
+         a fhir:Quantity ;
+         fhir:value [ fhir:v "0"^^xsd:decimal ]
+       ]
+     ] [
+       fhir:url [
+         fhir:v "sequence"^^xsd:anyURI ;
+         fhir:l fhir:sequence
+       ] ;
+       fhir:value [
+         a fhir:PositiveInt ;
+         fhir:v "4"^^xsd:positiveInteger
+       ]
+     ] ) ;
+     fhir:url [
+       fhir:v "https://elga.moped.at/StructureDefinition/MopedSupportingInfoVortageanzahlAufKostenbeitrag"^^xsd:anyURI ;
+       fhir:l <https://elga.moped.at/StructureDefinition/MopedSupportingInfoVortageanzahlAufKostenbeitrag>
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://elga.moped.at/CodeSystem/MopedClaimTypeCS"^^xsd:anyURI ;
+         fhir:l <https://elga.moped.at/CodeSystem/MopedClaimTypeCS>
+       ] ;
+       fhir:code [ fhir:v "VAERESP" ]
+     ] )
+  ] ; # 
+  fhir:use [ fhir:v "preauthorization"] ; # 
+  fhir:patient [
+     fhir:l <https://elga.moped.at/Patient/PJ2Patient> ;
+     fhir:reference [ fhir:v "Patient/PJ2Patient" ]
+  ] ; # 
+  fhir:created [ fhir:v "2025-02-24"^^xsd:date] ; # 
+  fhir:insurer [
+     fhir:l <https://elga.moped.at/Organization/SV14> ;
+     fhir:reference [ fhir:v "Organization/SV14" ]
+  ] ; # 
+  fhir:requestor [
+     fhir:l <https://elga.moped.at/Organization/OrganizationKrankenhausRied> ;
+     fhir:reference [ fhir:v "Organization/OrganizationKrankenhausRied" ]
+  ] ; # 
+  fhir:request [
+     fhir:l <https://elga.moped.at/Claim/PJ2VAERequest1> ;
+     fhir:reference [ fhir:v "Claim/PJ2VAERequest1" ]
+  ] ; # 
+  fhir:outcome [ fhir:v "complete"] ; # 
+  fhir:decision [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://elga.moped.at/CodeSystem/VAEStatusCS"^^xsd:anyURI ;
+         fhir:l <https://elga.moped.at/CodeSystem/VAEStatusCS>
+       ] ;
+       fhir:code [ fhir:v "00" ]
+     ] )
+  ] ; # 
+  fhir:preAuthPeriod [
+     fhir:start [ fhir:v "2024-08-08"^^xsd:date ] ;
+     fhir:end [ fhir:v "2024-08-26"^^xsd:date ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

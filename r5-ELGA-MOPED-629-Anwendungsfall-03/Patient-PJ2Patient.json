@@ -1,0 +1,67 @@
+{
+  "resourceType" : "Patient",
+  "id" : "PJ2Patient",
+  "meta" : {
+    "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-patient"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient PJ2Patient</b></p><a name=\"PJ2Patient\"> </a><a name=\"hcPJ2Patient\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"https://build.fhir.org/ig/HL7Austria/HL7-AT-FHIR-Core-R5/StructureDefinition-at-core-patient.html\">HL7® AT Core Patient Profile</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Santiago Schnabeltier Test (official) Male, DoB: 1985-03-19 ( Social Security Number: 2873111374)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\">Ernst-Melchior-Gasse 22/5/506 Wien Wien 1020 AUT (home)</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The patient's legal status as citizen of a country.\">Patient Citizenship:</td><td colspan=\"3\"><ul><li>code: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3 AUT}\">Österreich</span></li></ul></td></tr></table></div>"
+  },
+  "extension" : [{
+    "extension" : [{
+      "url" : "code",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3",
+          "code" : "AUT",
+          "display" : "Österreich"
+        }]
+      }
+    }],
+    "url" : "http://hl7.org/fhir/StructureDefinition/patient-citizenship"
+  }],
+  "identifier" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "SS",
+        "display" : "Social Security Number"
+      }]
+    },
+    "system" : "urn:oid:1.2.40.0.10.1.4.3.1",
+    "value" : "2873111374",
+    "assigner" : {
+      "display" : "Dachverband der österreichischen Sozialversicherungsträger"
+    }
+  }],
+  "name" : [{
+    "use" : "official",
+    "family" : "Schnabeltier Test",
+    "given" : ["Santiago"]
+  }],
+  "gender" : "male",
+  "birthDate" : "1985-03-19",
+  "address" : [{
+    "extension" : [{
+      "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-ext-address-municipalityCode",
+      "valueString" : "90201"
+    }],
+    "use" : "home",
+    "line" : ["Ernst-Melchior-Gasse 22/5/506"],
+    "_line" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+        "valueString" : "Ernst-Melchior-Gasse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+        "valueString" : "22/5/506"
+      }]
+    }],
+    "city" : "Wien",
+    "state" : "Wien",
+    "postalCode" : "1020",
+    "country" : "AUT"
+  }]
+}

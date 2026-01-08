@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClaimResponse xmlns="http://hl7.org/fhir">
+  <id value="PJ2VAEResponse1"/>
+  <meta>
+    <profile value="https://elga.moped.at/StructureDefinition/MopedVAEResponse"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ClaimResponse PJ2VAEResponse1</b></p><a name="PJ2VAEResponse1"> </a><a name="hcPJ2VAEResponse1"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-MopedVAEResponse.html">MOPED VAEResponse</a></p></div><blockquote><p><b>VerpflegskostenBeitragsbefreiung</b></p><ul><li>Befreiung: <a href="CodeSystem-VerpflegskostenBeitragsbefreiungCS.html#VerpflegskostenBeitragsbefreiungCS-N">Befreiung für den Verpflegskostenbeitrag N</a>: Es liegt keine Befreiung vom Verpflegskostenbeitrag vor.</li><li>Zeitraum: 2024-08-26 --&gt; (ongoing)</li></ul></blockquote><blockquote><p><b>Supporting Info Extension for ClaimResponse - Sonderklasse Slice</b></p><ul><li>category: <span title="Codes:{https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS KLAS}">Allgemeine Gebührenklasse/Sonderklasse</span></li><li>code: <span title="Codes:{https://elga.moped.at/CodeSystem/SonderklasseCS A}">Allgemeine Gebührenklasse</span></li><li>sequence: 2</li><li>timing: 2024-08-08 08:21:00+0200 --&gt; (ongoing)</li></ul></blockquote><blockquote><p><b>Supporting Info Extension for ClaimResponse - Vortageanzahl auf Kostenbeitrag</b></p><ul><li>category: <span title="Codes:{https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS VTAGE}">Vortageanzahl auf Kostenbeitrag</span></li><li>value: 0</li><li>sequence: 4</li></ul></blockquote><p><b>status</b>: Active</p><p><b>type</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/claim-type institutional}">Institutional</span></p><p><b>use</b>: Preauthorization</p><p><b>patient</b>: <a href="Patient-PJ2Patient.html">Santiago Schnabeltier Test (official) Male, DoB: 1985-03-19 ( Social Security Number: 2873111374)</a></p><p><b>created</b>: 2025-02-24</p><p><b>insurer</b>: <a href="Organization-SV14.html">Organization Österreichische Gesundheitskasse Oberösterreich</a></p><p><b>requestor</b>: <a href="Organization-OrganizationKrankenhausRied.html">Organization Krankenhaus der Barmherzigen Schwestern vom Hl. Vinzenz von Paul Ried</a></p><p><b>request</b>: <a href="Claim-PJ2VAERequest1.html">Claim: status = active; type = Institutional; use = preauthorization; created = 2025-02-17</a></p><p><b>outcome</b>: Processing Complete</p><p><b>decision</b>: <span title="Codes:{https://elga.moped.at/CodeSystem/VAEStatusCS 00}">bewilligt (nur für stationären Bereich)</span></p><p><b>preAuthPeriod</b>: 2024-08-08 --&gt; 2024-08-26</p></div>
+  </text>
+  <extension url="https://elga.moped.at/StructureDefinition/moped-ext-verpflegskostenBeitragsbefreiung">
+    <extension url="Befreiung">
+      <valueCoding>
+        <system value="https://elga.moped.at/CodeSystem/VerpflegskostenBeitragsbefreiungCS"/>
+        <code value="N"/>
+      </valueCoding>
+    </extension>
+    <extension url="Zeitraum">
+      <valuePeriod>
+        <start value="2024-08-26"/>
+      </valuePeriod>
+    </extension>
+  </extension>
+  <extension url="https://elga.moped.at/StructureDefinition/MopedSupportingInfoSonderklasse">
+    <extension url="category">
+      <valueCodeableConcept>
+        <coding>
+          <system value="https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS"/>
+          <code value="KLAS"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="code">
+      <valueCodeableConcept>
+        <coding>
+          <system value="https://elga.moped.at/CodeSystem/SonderklasseCS"/>
+          <code value="A"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="sequence">
+      <valuePositiveInt value="2"/>
+    </extension>
+    <extension url="timing">
+      <valuePeriod>
+        <start value="2024-08-08T08:21:00+02:00"/>
+      </valuePeriod>
+    </extension>
+  </extension>
+  <extension url="https://elga.moped.at/StructureDefinition/MopedSupportingInfoVortageanzahlAufKostenbeitrag">
+    <extension url="category">
+      <valueCodeableConcept>
+        <coding>
+          <system value="https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS"/>
+          <code value="VTAGE"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="value">
+      <valueQuantity>
+        <value value="0"/>
+      </valueQuantity>
+    </extension>
+    <extension url="sequence">
+      <valuePositiveInt value="4"/>
+    </extension>
+  </extension>
+  <status value="active"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/claim-type"/>
+      <code value="institutional"/>
+    </coding>
+  </type>
+  <use value="preauthorization"/>
+  <patient>
+    <reference value="Patient/PJ2Patient"/>
+  </patient>
+  <created value="2025-02-24"/>
+  <insurer>
+    <reference value="Organization/SV14"/>
+  </insurer>
+  <requestor>
+    <reference value="Organization/OrganizationKrankenhausRied"/>
+  </requestor>
+  <request>
+    <reference value="Claim/PJ2VAERequest1"/>
+  </request>
+  <outcome value="complete"/>
+  <decision>
+    <coding>
+      <system value="https://elga.moped.at/CodeSystem/VAEStatusCS"/>
+      <code value="00"/>
+    </coding>
+  </decision>
+  <preAuthPeriod>
+    <start value="2024-08-08"/>
+    <end value="2024-08-26"/>
+  </preAuthPeriod>
+</ClaimResponse>

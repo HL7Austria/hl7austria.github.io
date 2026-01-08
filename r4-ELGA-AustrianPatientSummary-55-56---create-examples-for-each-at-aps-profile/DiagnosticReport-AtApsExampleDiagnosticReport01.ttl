@@ -1,0 +1,73 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/aps/r4/DiagnosticReport/AtApsExampleDiagnosticReport01> a fhir:DiagnosticReport ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "AtApsExampleDiagnosticReport01"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-diagnosticreport"^^xsd:anyURI ;
+       fhir:l <https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-diagnosticreport>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: DiagnosticReport AtApsExampleDiagnosticReport01</b></p><a name=\"AtApsExampleDiagnosticReport01\"> </a><a name=\"hcAtApsExampleDiagnosticReport01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-diagnosticreport.html\">AT APS DiagnosticReport</a></p></div><h2><span title=\"Codes:{http://loinc.org 58410-2}\">Laborbefund</span> (<span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Labor</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td>Max Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</td></tr><tr><td>When For</td><td>2024-09-15 10:30:00+0100</td></tr><tr><td>Reported</td><td>2024-09-15 11:00:00+0100</td></tr><tr><td>Performer</td><td> <a href=\"Practitioner-at-aps-example-practitioner-01.html\">Hanna Hausärztin</a></td></tr></table><p><b>Report Details</b></p><table class=\"grid\"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td><td><b>Flags</b></td><td><b>When For</b></td></tr><tr><td><a href=\"Observation-AtApsExampleObservation01.html\"><span title=\"Codes:{http://loinc.org 718-7}\">Hämoglobin</span></a></td><td>13.6 g/dL<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg/dL = 'g/dL')</span></td><td>12 g/dL<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg/dL = 'g/dL')</span> - 17.5 g/dL<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg/dL = 'g/dL')</span></td><td>Final</td><td>2024-10-10 09:30:00+0100</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/v2-0074"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/v2-0074>
+       ] ;
+       fhir:code [ fhir:v "LAB" ] ;
+       fhir:display [ fhir:v "Labor" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:58410-2 ;
+       fhir:system [
+         fhir:v "http://loinc.org"^^xsd:anyURI ;
+         fhir:l <http://loinc.org>
+       ] ;
+       fhir:code [ fhir:v "58410-2" ] ;
+       fhir:display [ fhir:v "Laboratory report" ]
+     ] ) ;
+     fhir:text [ fhir:v "Laborbefund" ]
+  ] ; # 
+  fhir:subject [
+     fhir:l <https://fhir.hl7.at/elga/aps/r4/Patient/HL7ATCorePatientExample01> ;
+     fhir:reference [ fhir:v "Patient/HL7ATCorePatientExample01" ] ;
+     fhir:display [ fhir:v "Max Mustermann" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:DateTime ;
+     fhir:v "2024-09-15T10:30:00+01:00"^^xsd:dateTime
+  ] ; # 
+  fhir:issued [ fhir:v "2024-09-15T11:00:00+01:00"^^xsd:dateTime] ; # 
+  fhir:performer ( [
+     fhir:l <https://fhir.hl7.at/elga/aps/r4/Practitioner/at-aps-example-practitioner-01> ;
+     fhir:reference [ fhir:v "Practitioner/at-aps-example-practitioner-01" ] ;
+     fhir:display [ fhir:v "Hanna Hausärztin" ]
+  ] ) ; # 
+  fhir:specimen ( [
+     fhir:l <https://fhir.hl7.at/elga/aps/r4/Specimen/AtApsExampleSpecimen01> ;
+     fhir:reference [ fhir:v "Specimen/AtApsExampleSpecimen01" ] ;
+     fhir:display [ fhir:v "Blutprobe" ]
+  ] ) ; # 
+  fhir:result ( [
+     fhir:l <https://fhir.hl7.at/elga/aps/r4/Observation/AtApsExampleObservation01> ;
+     fhir:reference [ fhir:v "Observation/AtApsExampleObservation01" ] ;
+     fhir:display [ fhir:v "Hämoglobin" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

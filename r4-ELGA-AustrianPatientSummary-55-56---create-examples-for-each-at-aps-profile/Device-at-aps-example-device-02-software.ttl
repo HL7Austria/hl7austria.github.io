@@ -1,0 +1,56 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/aps/r4/Device/at-aps-example-device-02-software> a fhir:Device ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "at-aps-example-device-02-software"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-device"^^xsd:anyURI ;
+       fhir:l <https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-device>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Device at-aps-example-device-02-software</b></p><a name=\"at-aps-example-device-02-software\"> </a><a name=\"hcat-aps-example-device-02-software\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-device.html\">AT APS Device</a></p></div><blockquote><p><b>deviceName</b></p><p><b>name</b>: Best Health Software Application</p><p><b>type</b>: Model name</p></blockquote><blockquote><p><b>deviceName</b></p><p><b>name</b>: Good Health System</p><p><b>type</b>: Manufacturer name</p></blockquote><p><b>type</b>: <span title=\"Codes:{http://snomed.info/sct 706687001}\">Software</span></p><h3>Versions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td></tr><tr><td style=\"display: none\">*</td><td>1.0.5</td></tr></table><p><b>patient</b>: <a href=\"Patient-at-aps-example-patient-01.html\">Maria Mustermann</a></p><p><b>parent</b>: <a href=\"Device-at-aps-example-device-01.html\">Best Health Device</a></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:deviceName ( [
+     fhir:name [ fhir:v "Best Health Software Application" ] ;
+     fhir:type [ fhir:v "model-name" ]
+  ] [
+     fhir:name [ fhir:v "Good Health System" ] ;
+     fhir:type [ fhir:v "manufacturer-name" ]
+  ] ) ; # 
+  fhir:type [
+     fhir:coding ( [
+       a sct:706687001 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "706687001" ] ;
+       fhir:display [ fhir:v "Software" ]
+     ] )
+  ] ; # 
+  fhir:version ( [
+     fhir:value [ fhir:v "1.0.5" ]
+  ] ) ; # 
+  fhir:patient [
+     fhir:l <https://fhir.hl7.at/elga/aps/r4/Patient/at-aps-example-patient-01> ;
+     fhir:reference [ fhir:v "Patient/at-aps-example-patient-01" ] ;
+     fhir:display [ fhir:v "Maria Mustermann" ]
+  ] ; # 
+  fhir:parent [
+     fhir:l <https://fhir.hl7.at/elga/aps/r4/Device/at-aps-example-device-01> ;
+     fhir:reference [ fhir:v "Device/at-aps-example-device-01" ] ;
+     fhir:display [ fhir:v "Best Health Device" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

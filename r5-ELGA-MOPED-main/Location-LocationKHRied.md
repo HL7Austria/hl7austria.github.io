@@ -1,0 +1,31 @@
+# ELGA.MOPED\LocationKHRied - FHIR® v5.0.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **LocationKHRied**
+
+## Example Location: LocationKHRied
+
+Profile: [HL7® AT Core Location Profile](https://build.fhir.org/ig/HL7Austria/HL7-AT-FHIR-Core-R5/StructureDefinition-at-core-location.html)
+
+**managingOrganization**: [Organization Krankenhaus der Barmherzigen Schwestern vom Hl. Vinzenz von Paul Ried](Organization-OrganizationKrankenhausRied.md)
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Location",
+  "id" : "LocationKHRied",
+  "meta" : {
+    "profile" : [
+      "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-location"
+    ]
+  },
+  "managingOrganization" : {
+    "reference" : "Organization/OrganizationKrankenhausRied"
+  }
+}
+
+```

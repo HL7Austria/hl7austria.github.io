@@ -1,0 +1,50 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://elga.moped.at/SubscriptionTopic/vaeAbgelehnt> a fhir:SubscriptionTopic ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "vaeAbgelehnt"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: SubscriptionTopic vaeAbgelehnt</b></p><a name=\"vaeAbgelehnt\"> </a><a name=\"hcvaeAbgelehnt\"> </a><table class=\"grid\"><tr><td><b>SubscriptionTopic</b></td><td>VAEabgelehnt</td></tr><tr><td><b>Copyright Statement:</b></td><td> null</td></tr></table><table class=\"grid\"><tr><td colspan=\"4\"><b>Resource Triggers</b></td></tr><tr><th><b>Resource</b></th><th><b>Interactions</b></th><th><b>Criteria</b></th><th><b>Description</b></th></tr><tr><td><a href=\"StructureDefinition-MopedVAEResponse.html\">MOPED VAEResponse</a></td><td>create</td><td><div><ul>\n<li>current = TBD</li>\n</ul>\n</div></td><td><div><p>Erstellen einer VAEResponse mit Ablehnung</p>\n</div></td></tr></table><table class=\"grid\"><tr><td colspan=\"2\"><b>Can Filter By</b></td></tr><tr><th><b>Resource</b></th><th><b>Filter Parameter</b></th></tr><tr><td><a href=\"StructureDefinition-MopedVAEResponse.html\">MOPED VAEResponse</a></td><td>requestor</td></tr></table><table class=\"grid\"><tr><td colspan=\"2\"><b>Notification Shapes</b></td></tr><tr><th><b>Resource</b></th><th><b>Includes</b></th></tr><tr><td><a href=\"StructureDefinition-MopedMasterComposition.html\">MOPED Master Composition</a></td><td>Composition:id</td></tr><tr><td><a href=\"StructureDefinition-MopedVAEResponse.html\">MOPED VAEResponse</a></td><td>ClaimResponse:requestor</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://elga.moped.at/SubscriptionTopic/vaeAbgelehnt"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "VAEabgelehnt"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2025-10-15T12:16:02+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "ELGA GmbH" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://elga.gv.at" ]
+     ] )
+  ] ) ; # 
+  fhir:resourceTrigger ( [
+     fhir:description [ fhir:v "Erstellen einer VAEResponse mit Ablehnung" ] ;
+     fhir:resource [ fhir:v "https://elga.moped.at/StructureDefinition/MopedVAEResponse"^^xsd:anyURI ] ;
+     fhir:supportedInteraction ( [ fhir:v "create" ] ) ;
+     fhir:queryCriteria [
+       fhir:current [ fhir:v "TBD" ]
+     ]
+  ] ) ; # 
+  fhir:canFilterBy ( [
+     fhir:resource [ fhir:v "https://elga.moped.at/StructureDefinition/MopedVAEResponse"^^xsd:anyURI ] ;
+     fhir:filterParameter [ fhir:v "requestor" ]
+  ] ) ; # 
+  fhir:notificationShape ( [
+     fhir:resource [ fhir:v "https://elga.moped.at/StructureDefinition/MopedMasterComposition"^^xsd:anyURI ] ;
+     fhir:include ( [ fhir:v "Composition:id" ] )
+  ] [
+     fhir:resource [ fhir:v "https://elga.moped.at/StructureDefinition/MopedVAEResponse"^^xsd:anyURI ] ;
+     fhir:include ( [ fhir:v "ClaimResponse:requestor" ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,2619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>ELGA.MOPED\Ka-Org Mapping - FHIR® v5.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"10.1"}
+    h3,h4,h5,h6{--heading-prefix:"10.1"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img id="header-logo" src="logo.png"/>
+          </div>
+          <div class="col-11">
+        <!-- at-fhir-ig-template end -->
+            <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)</span><br/>
+                <span class="label label-info">0.1.0 - ci-build</span>
+              </p>
+            </div>
+        <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+        <!-- at-fhir-ig-template end -->
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R5/index.html">FHIR®</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Einleitung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="scope_and_content.html">Umfang und Inhalt</a>
+      </li>
+      <li>
+        <a href="background.html">Hintergrund</a>
+      </li>
+      <li>
+        <a href="challenges.html">Herausforderungen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Funktionales
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="moped_konzepte.html">Designentscheidungen</a>
+      </li>
+      <li>
+        <a href="actors.html">Akteure</a>
+      </li>
+      <li>
+        <a href="workflowmanagement.html">Workflowmanagement</a>
+      </li>
+      <li>
+        <a href="obligations.html">Obligations</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anwendungsfälle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="anwendungsfaelle.html">Überblick &amp; Sunshine Case</a>
+      </li>
+      <li>
+        <a href="AF1.html">ANWF 1 - Planaufnahme 🔄</a>
+      </li>
+      <li>
+        <a href="AF2.html">ANWF 2 - Stationäre Aufnahme ✅</a>
+      </li>
+      <li>
+        <a href="AF3.html">ANWF 3 - Ambulante Aufnahme 🔄</a>
+      </li>
+      <li>
+        <a href="AF4u5.html">ANWF 4,5 - Fallartwechsel 🔄</a>
+      </li>
+      <li>
+        <a href="AF6.html">ANWF 6 - Mehrmalige Aufnahme an einem Tag 🔄</a>
+      </li>
+      <li>
+        <a href="AF7.html">ANWF 7 - Behandlungsabbruch 🔄</a>
+      </li>
+      <li>
+        <a href="AF8u9u47.html">ANWF 8,9,47 - Stammdatenabgleich 🔄</a>
+      </li>
+      <li>
+        <a href="AF10.html">ANWF 10 - Klassenwechsel 🔄</a>
+      </li>
+      <li>
+        <a href="AF11.html">ANWF 11 - Versicherungswechsel 🔄</a>
+      </li>
+      <li>
+        <a href="AF12.html">ANWF 12,13,15,35-37 - Ausländerverrechnung und Regress 🔄</a>
+      </li>
+      <li>
+        <a href="AF14.html">ANWF 14 - Selbstzahler ✅</a>
+      </li>
+      <li>
+        <a href="AF17.html">ANWF 17 - Zwischenbetriebliche Leistungserbringung ✅</a>
+      </li>
+      <li>
+        <a href="AF18.html">ANWF 18 - Transfer 🔄</a>
+      </li>
+      <li>
+        <a href="AF19.html">ANWF 19 - Interne Verlegung ✅</a>
+      </li>
+      <li>
+        <a href="AF20.html">ANWF 20 - Urlaub ✅</a>
+      </li>
+      <li>
+        <a href="AF21u22.html">ANWF 21,22 - Neugeborene 🔄</a>
+      </li>
+      <li>
+        <a href="AF23bis25.html">ANWF 23-25 - Entlassung &amp; Hauptdiagnose ✅</a>
+      </li>
+      <li>
+        <a href="AF26.html">ANWF 26 - Überlieger 🔄</a>
+      </li>
+      <li>
+        <a href="AF27.html">ANWF 27 - Leistungen ohne Abrechnungsrelevanz ✅</a>
+      </li>
+      <li>
+        <a href="AF28bis32.html">ANWF 28-32 - SV Kostenübernahmevariationen 🔄</a>
+      </li>
+      <li>
+        <a href="AF33u34.html">ANWF 33-34 - Kostenmeldungen? 🔄</a>
+      </li>
+      <li>
+        <a href="AF38bis44.html">ANWF 38-44 - LKF Daten 🔄</a>
+      </li>
+      <li>
+        <a href="AF45.html">ANWF 45 - Jahresmeldung 🔄</a>
+      </li>
+      <li>
+        <a href="AF46.html">ANWF 46 - VDAS Rückmeldung (Patient verstorben) 🔄</a>
+      </li>
+      <li>
+        <a href="AF48.html">ANWF 48 - Mehrere aktive Fälle in MOPED 🔄</a>
+      </li>
+      <li>
+        <a href="AF49.html">ANWF 49 - Aufrollung nach Speicherfrist 🔄</a>
+      </li>
+      <li>
+        <a href="AF50.html">ANWF 50 - Urgenz 🔄</a>
+      </li>
+      <li>
+        <a href="AF51u52.html">ANWF 51-52 - Asylierung 🔄</a>
+      </li>
+      <li>
+        <a href="AF53.html">ANWF 53 - Intensivaufenthalt 🔄</a>
+      </li>
+      <li>
+        <a href="AF54.html">ANWF 54 - Stammdatenänderung 🔄</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Questionnaires
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Questionnaire-LKFTISSAQuestionnaire.html">MBDS - TISS-A</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFSAPS3Questionnaire.html">MBDS - SAPS3</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFL01Questionnaire.html">MBDS - Monatsmeldung - L01</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK01Questionnaire.html">MBDS - Monatsmeldung - K01</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFL02Questionnaire.html">LKF Jahresmeldung - L02</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFL03Questionnaire.html">LKF Jahresmeldung - L03</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFL04Questionnaire.html">LKF Jahresmeldung - L04</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK02Questionnaire.html">LKF Jahresmeldung - K02</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK03Questionnaire.html">LKF Jahresmeldung - K03</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK04Questionnaire.html">LKF Jahresmeldung - K04</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK05Questionnaire.html">LKF Jahresmeldung - K05</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK06Questionnaire.html">LKF Jahresmeldung - K06</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK07Questionnaire.html">LKF Jahresmeldung - K07</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK08Questionnaire.html">LKF Jahresmeldung - K08</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK09Questionnaire.html">LKF Jahresmeldung - K09</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK10Questionnaire.html">LKF Jahresmeldung - K10</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK11Questionnaire.html">LKF Jahresmeldung - K11</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK12Questionnaire.html">LKF Jahresmeldung - K12</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK13Questionnaire.html">LKF Jahresmeldung - K13</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK14Questionnaire.html">LKF Jahresmeldung - K14</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK15Questionnaire.html">LKF Jahresmeldung - K15</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK16Questionnaire.html">LKF Jahresmeldung - K16</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFG01Questionnaire.html">LKF Jahresmeldung - G01</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFG02Questionnaire.html">LKF Jahresmeldung - G02</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB01Questionnaire.html">LKF Jahresmeldung - B01</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB02Questionnaire.html">LKF Jahresmeldung - B02</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB03Questionnaire.html">LKF Jahresmeldung - B03</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB04Questionnaire.html">LKF Jahresmeldung - B04</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB05Questionnaire.html">LKF Jahresmeldung - B05</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB06Questionnaire.html">LKF Jahresmeldung - B06</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFA01Questionnaire.html">LKF Jahresmeldung - A01</a>
+      </li>
+      <li>
+        <a href="Questionnaire-StrokeUnitQuestionnaire2025.html">Register - Strokeunit</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Mappings
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="lkf_mapping.html">MBDS Mapping</a>
+      </li>
+      <li>
+        <a href="jahresmeldungen_mapping.html">LKF Jahresmeldung</a>
+      </li>
+      <li>
+        <a href="ka-org_mapping.html">Ka-Org Mapping</a>
+      </li>
+      <li>
+        <a href="stammdaten_mapping.html">Stammdaten</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">About
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="imprint.html">Impressum</a>
+      </li>
+      <li>
+        <a href="authors.html">Mitwirkende</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="dependencies.html">Dependencies</a>
+      </li>
+      <li>
+        <a href="copyright.html">Copyright</a>
+      </li>
+      <li>
+        <a href="known_issues.html">Known Issues</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='mappings.html'><b>Mappings</b></a></li><li><b>Ka-Org Mapping</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+	
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!-- at-fhir-ig-template begin -->
+  <div class="alert alert-warning" role="alert">
+    <!--ReleaseHeader--><p id="publish-box">Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED) - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://elga.moped.at/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  </div>
+  <!-- at-fhir-ig-template end -->
+  <h2>Ka-Org Mapping</h2>
+  
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#e1---fhir" id="markdown-toc-e1---fhir">E1 -&gt; FHIR</a></li>
+  <li><a href="#e11---fhir" id="markdown-toc-e11---fhir">E1.1 -&gt; FHIR</a></li>
+  <li><a href="#k01---fhir" id="markdown-toc-k01---fhir">K01 -&gt; FHIR</a></li>
+  <li><a href="#k03---fhir" id="markdown-toc-k03---fhir">K03 -&gt; FHIR</a></li>
+  <li><a href="#k05---fhir" id="markdown-toc-k05---fhir">K05 -&gt; FHIR</a></li>
+  <li><a href="#k09---fhir" id="markdown-toc-k09---fhir">K09 -&gt; FHIR</a></li>
+  <li><a href="#k12---fhir" id="markdown-toc-k12---fhir">K12 -&gt; FHIR</a></li>
+  <li><a href="#k13---fhir" id="markdown-toc-k13---fhir">K13 -&gt; FHIR</a></li>
+  <li><a href="#k20---fhir" id="markdown-toc-k20---fhir">K20 -&gt; FHIR</a></li>
+  <li><a href="#k21---fhir" id="markdown-toc-k21---fhir">K21 -&gt; FHIR</a></li>
+  <li><a href="#k27---fhir" id="markdown-toc-k27---fhir">K27 -&gt; FHIR</a></li>
+</ul>
+
+</div>
+
+<style>
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    max-height: 600px;
+    overflow-y: auto;
+}
+.table-responsive > table { width: 100%; }
+.table-responsive th, .table-responsive td { padding: 15px; background: #f5f5f5; }
+.table-responsive table { border-collapse: separate; border-spacing: 3px; }
+/* Sticky header */
+.table-responsive th { position: sticky; top: 0; background: rgb(228, 228, 228); z-index: 2; }
+/* Sticky first column */
+.table-responsive th:first-child, .table-responsive td:first-child {
+    position: sticky; left: 0; background: rgb(228, 228, 228); z-index: 3;
+}
+.table-responsive th:first-child {
+    position: sticky; top: 0; left: 0; background: rgb(228, 228, 228); z-index: 4;
+}
+</style>
+
+<p>Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. 
+Die Dokumentation der Ka-Org Meldungen ist unter 
+<a href="https://www.sozialversicherung.at/cdscontent/?contentid=10007.821512">diesem Link</a> 
+verfügbar.</p>
+<h3 id="e1---fhir">E1 -&gt; FHIR</h3>
+<div class="table-responsive">
+<table>
+    <tr>
+        <th>Feld</th>
+        <th>Abkürzung</th>
+        <th>befüllt von</th>
+        <th>Profile</th>
+        <th>FHIR Ressource</th>
+        <th>Pfad von der Ressource aus</th>
+        <th>Pfad von der Composition aus</th>
+        <th>Anmerkungen</th>
+    </tr>
+    <tr>
+        <td>Satzart</td>
+        <td>SART</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>in neuer Architektur nicht mehr notwendig</td>
+    </tr>
+    <tr>
+        <td>Vertragspartnernummer der Krankenanstalt</td>
+        <td>VPNR</td>
+        <td>MopedDeviceActor</td>
+        <td>MopedAnfragenComposition; MopedAufnahmeComposition; MopedBeantwortenComposition; MopedComposition; MopedEntlassenAvisoComposition; MopedEntlassenVollstaendigComposition; MopedMasterComposition; MopedUpdateComposition</td>
+        <td>Composition</td>
+        <td>Composition.author.resolve()</td>
+        <td>Composition.author.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Aufnahmezahl</td>
+        <td>AUFZL</td>
+        <td>MopedKHActor</td>
+        <td>MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV</td>
+        <td>Encounter</td>
+        <td>Encounter.identifier:Aufnahmezahl.value</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Fallnummer</td>
+        <td>FANU</td>
+        <td>MopedDeviceActor</td>
+        <td>MopedAnfragenComposition; MopedAufnahmeComposition; MopedBeantwortenComposition; MopedComposition; MopedEntlassenAvisoComposition; MopedEntlassenVollstaendigComposition; MopedMasterComposition; MopedUpdateComposition</td>
+        <td>Composition</td>
+        <td>Composition.extension:AnzahlBeurlaubungen</td>
+        <td>Composition.extension:AnzahlBeurlaubungen</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Kostenträger (leistungszuständig)</td>
+        <td>KOST</td>
+        <td>MopedDeviceActor</td>
+        <td>MopedAnfragenComposition; MopedAufnahmeComposition; MopedBeantwortenComposition; MopedComposition; MopedEntlassenAvisoComposition; MopedEntlassenVollstaendigComposition; MopedMasterComposition; MopedUpdateComposition</td>
+        <td>Composition</td>
+        <td>Composition.section:zustaendigeSV.entry.resolve()</td>
+        <td>Composition.section:zustaendigeSV.entry.resolve()</td>
+        <td>Slice mit dem System http://svc.co.at/CodeSystem/ecard-svt-cs</td>
+    </tr>
+    <tr>
+        <td>zuständiger Versicherungsträger</td>
+        <td>VSTR</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>noch inhaltlich abzuklären: ggf. über den Träger des KH definiert</td>
+    </tr>
+    <tr>
+        <td>Aufnahme-/Ereignisdatum</td>
+        <td>AUFN</td>
+        <td>MopedKHActor</td>
+        <td>MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV</td>
+        <td>Encounter</td>
+        <td>Encounter.actualPeriod.start</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Entlassungsdatum</td>
+        <td>ENTL</td>
+        <td>MopedKHActor</td>
+        <td>MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV</td>
+        <td>Encounter</td>
+        <td>Encounter.actualPeriod.end</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Kommentarsatz</td>
+        <td>KOMM</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>bei Kommentaren der SV muss die Communication.extension:MBDSRelevanz = false sein</td>
+    </tr>
+    <tr>
+        <td>Versicherungsnummer des Hauptversicherten</td>
+        <td>VSNR</td>
+        <td>MopedKHActor</td>
+        <td>Hauptversicherter; MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV</td>
+        <td>Patient; RelatedPerson</td>
+        <td>Patient.identifier:socialSecurityNumber; RelatedPerson.identifier:socialSecurityNumber.value</td>
+        <td>Composition.section:Hauptversicherter.entry.resolve(); Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Zuname des Hauptversicherten</td>
+        <td>ZUNA</td>
+        <td>MopedKHActor</td>
+        <td>Hauptversicherter; MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV</td>
+        <td>Patient; RelatedPerson</td>
+        <td>Patient.name.family; RelatedPerson.name.family</td>
+        <td>Composition.section:Hauptversicherter.entry.resolve(); Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Vorname des Hauptversicherten</td>
+        <td>VONA</td>
+        <td>MopedKHActor</td>
+        <td>Hauptversicherter; MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV</td>
+        <td>Patient; RelatedPerson</td>
+        <td>Patient.name.given; RelatedPerson.name.given</td>
+        <td>Composition.section:Hauptversicherter.entry.resolve(); Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Geschlecht des Hauptversicherten</td>
+        <td>GESCHL</td>
+        <td>MopedKHActor</td>
+        <td>Hauptversicherter; MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV</td>
+        <td>Patient; RelatedPerson</td>
+        <td>Patient.gender; RelatedPerson.gender</td>
+        <td>Composition.section:Hauptversicherter.entry.resolve(); Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Geburtsdatum des Hauptversicherten</td>
+        <td>GEBDAT</td>
+        <td>MopedKHActor</td>
+        <td>Hauptversicherter; MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV</td>
+        <td>Patient; RelatedPerson</td>
+        <td>Patient.birthDate; RelatedPerson.birthDate</td>
+        <td>Composition.section:Hauptversicherter.entry.resolve(); Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Datensatz-ID</td>
+        <td>DSID</td>
+        <td>MopedDeviceActor</td>
+        <td>MopedAnfragenComposition; MopedAufnahmeComposition; MopedBeantwortenComposition; MopedComposition; MopedEntlassenAvisoComposition; MopedEntlassenVollstaendigComposition; MopedMasterComposition; MopedUpdateComposition</td>
+        <td>Composition</td>
+        <td>Composition.id</td>
+        <td>Composition.id</td>
+        <td>Die KaOrg Datensatz-ID ist vergleichbar mit der technischen ID der Composition, welche einen Fall eindeutig identifiziert (inklusive Version)</td>
+    </tr>
+    <tr>
+        <td>Versichertengruppe/Kategorie</td>
+        <td>VGR</td>
+        <td>MopedKHActor</td>
+        <td>MopedCoverage</td>
+        <td>Coverage</td>
+        <td>Coverage.class:Versichertenkategorien.value</td>
+        <td>Composition.section:Coverages.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Versicherungsnummer des Mitversicherten</td>
+        <td>AVSNR</td>
+        <td>MopedKHActor</td>
+        <td>MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV</td>
+        <td>Patient</td>
+        <td>Patient.identifier:socialSecurityNumber</td>
+        <td>Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Zuname des Mitversicherten</td>
+        <td>AZUNA</td>
+        <td>MopedKHActor</td>
+        <td>MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV</td>
+        <td>Patient</td>
+        <td>Patient.name.family</td>
+        <td>Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Vorname des Mitversicherten</td>
+        <td>AVONA</td>
+        <td>MopedKHActor</td>
+        <td>MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV</td>
+        <td>Patient</td>
+        <td>Patient.name.given</td>
+        <td>Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Geschlecht des Mitversicherten</td>
+        <td>AGESCHL</td>
+        <td>MopedKHActor</td>
+        <td>MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV</td>
+        <td>Patient</td>
+        <td>Patient.gender</td>
+        <td>Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Geburtsdatum des Mitversicherten</td>
+        <td>AGEBDAT</td>
+        <td>MopedKHActor</td>
+        <td>MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV</td>
+        <td>Patient</td>
+        <td>Patient.birthDate</td>
+        <td>Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Fehlercode</td>
+        <td>FECO</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>generischer Kommunikationsprozess in Moped ist in Arbeit :)</td>
+    </tr>
+    <tr>
+        <td>Datensatz-ID-Referenz</td>
+        <td>DSIDR</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>in neuer Architektur nicht mehr notwendig</td>
+    </tr>
+    <tr>
+        <td>Krankenanstaltennummer des Bundesministeriums</td>
+        <td>BKANR</td>
+        <td>MopedDeviceActor</td>
+        <td>MopedAnfragenComposition; MopedAufnahmeComposition; MopedBeantwortenComposition; MopedComposition; MopedEntlassenAvisoComposition; MopedEntlassenVollstaendigComposition; MopedMasterComposition; MopedUpdateComposition</td>
+        <td>Composition</td>
+        <td>Composition.author.resolve()</td>
+        <td>Composition.author.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Datensatzversion ID-Teil</td>
+        <td>DVERS-ID</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>in neuer Architektur nicht mehr notwendig</td>
+    </tr>
+    <tr>
+        <td>Datensatzversion Satzart-Teil</td>
+        <td>DVERS-SA</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>in neuer Architektur nicht mehr notwendig</td>
+    </tr>
+</table>
+</div>
+
+<h3 id="e11---fhir">E1.1 -&gt; FHIR</h3>
+<div class="table-responsive">
+<table>
+    <tr>
+        <th>Feld</th>
+        <th>Abkürzung</th>
+        <th>befüllt von</th>
+        <th>Profile</th>
+        <th>FHIR Ressource</th>
+        <th>Pfad von der Ressource aus</th>
+        <th>Pfad von der Composition aus</th>
+        <th>Anmerkungen</th>
+    </tr>
+    <tr>
+        <td>Satzart</td>
+        <td>SART</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>in neuer Architektur nicht mehr notwendig</td>
+    </tr>
+    <tr>
+        <td>Vertragspartnernummer der Krankenanstalt</td>
+        <td>VPNR</td>
+        <td>MopedDeviceActor</td>
+        <td>MopedAnfragenComposition; MopedAufnahmeComposition; MopedBeantwortenComposition; MopedComposition; MopedEntlassenAvisoComposition; MopedEntlassenVollstaendigComposition; MopedMasterComposition; MopedUpdateComposition</td>
+        <td>Composition</td>
+        <td>Composition.author.resolve()</td>
+        <td>Composition.author.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Aufnahmezahl</td>
+        <td>AUFZL</td>
+        <td>MopedKHActor</td>
+        <td>MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV</td>
+        <td>Encounter</td>
+        <td>Encounter.identifier:Aufnahmezahl.value</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Fallnummer</td>
+        <td>FANU</td>
+        <td>MopedDeviceActor</td>
+        <td>MopedAnfragenComposition; MopedAufnahmeComposition; MopedBeantwortenComposition; MopedComposition; MopedEntlassenAvisoComposition; MopedEntlassenVollstaendigComposition; MopedMasterComposition; MopedUpdateComposition</td>
+        <td>Composition</td>
+        <td>Composition.extension:AnzahlBeurlaubungen</td>
+        <td>Composition.extension:AnzahlBeurlaubungen</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Kostenträger (leistungszuständig)</td>
+        <td>KOST</td>
+        <td>MopedDeviceActor</td>
+        <td>MopedAnfragenComposition; MopedAufnahmeComposition; MopedBeantwortenComposition; MopedComposition; MopedEntlassenAvisoComposition; MopedEntlassenVollstaendigComposition; MopedMasterComposition; MopedUpdateComposition</td>
+        <td>Composition</td>
+        <td>Composition.section:zustaendigeSV.entry.resolve()</td>
+        <td>Composition.section:zustaendigeSV.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>zuständiger Versicherungsträger</td>
+        <td>VSTR</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>noch inhaltlich abzuklären: ggf. über den Träger des KH definiert</td>
+    </tr>
+    <tr>
+        <td>Aufnahme-/Ereignisdatum</td>
+        <td>AUFN</td>
+        <td>MopedKHActor</td>
+        <td>MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV</td>
+        <td>Encounter</td>
+        <td>Encounter.actualPeriod.start</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Entlassungsdatum</td>
+        <td>ENTL</td>
+        <td>MopedKHActor</td>
+        <td>MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV</td>
+        <td>Encounter</td>
+        <td>Encounter.actualPeriod.end</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Kommentarsatz</td>
+        <td>KOMM</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>bei Kommentaren der SV muss die Communication.extension:MBDSRelevanz = false sein</td>
+    </tr>
+    <tr>
+        <td>Geburtsdatum des Hauptversicherten</td>
+        <td>GEBDAT</td>
+        <td>MopedKHActor</td>
+        <td>Hauptversicherter; MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV</td>
+        <td>Patient; RelatedPerson</td>
+        <td>Patient.birthDate; RelatedPerson.birthDate</td>
+        <td>Composition.section:Hauptversicherter.entry.resolve(); Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Datensatz-ID</td>
+        <td>DSID</td>
+        <td>MopedDeviceActor</td>
+        <td>MopedAnfragenComposition; MopedAufnahmeComposition; MopedBeantwortenComposition; MopedComposition; MopedEntlassenAvisoComposition; MopedEntlassenVollstaendigComposition; MopedMasterComposition; MopedUpdateComposition</td>
+        <td>Composition</td>
+        <td>Composition.id</td>
+        <td>Composition.id</td>
+        <td>Die KaOrg Datensatz-ID ist vergleichbar mit der technischen ID der Composition, welche einen Fall eindeutig identifiziert (inklusive Version)</td>
+    </tr>
+    <tr>
+        <td>Geburtsdatum des Mitversicherten</td>
+        <td>GEBDATA</td>
+        <td>MopedKHActor</td>
+        <td>MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV</td>
+        <td>Patient</td>
+        <td>Patient.birthDate</td>
+        <td>Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Fehlercode</td>
+        <td>FECO</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>generischer Kommunikationsprozess in Moped ist in Arbeit :)</td>
+    </tr>
+    <tr>
+        <td>Datensatz-ID Referenz</td>
+        <td>DSIDR</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>in neuer Architektur nicht mehr notwendig</td>
+    </tr>
+    <tr>
+        <td>Krankenanstaltennummer des Bundesministeriums</td>
+        <td>BKANR</td>
+        <td>MopedDeviceActor</td>
+        <td>MopedAnfragenComposition; MopedAufnahmeComposition; MopedBeantwortenComposition; MopedComposition; MopedEntlassenAvisoComposition; MopedEntlassenVollstaendigComposition; MopedMasterComposition; MopedUpdateComposition</td>
+        <td>Composition</td>
+        <td>Composition.author.resolve()</td>
+        <td>Composition.author.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Datensatzversion ID-Teil, Versionsnummer vom ID-Teil</td>
+        <td>DVERS-ID</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>in neuer Architektur nicht mehr notwendig</td>
+    </tr>
+    <tr>
+        <td>Datensatzversion Satzart-Teil, Versionsnummer vom Satzart-Teil</td>
+        <td>DVERS-SA</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>in neuer Architektur nicht mehr notwendig</td>
+    </tr>
+</table>
+</div>
+
+<h3 id="k01---fhir">K01 -&gt; FHIR</h3>
+<div class="table-responsive">
+<table>
+    <tr>
+        <th>Feld</th>
+        <th>Abkürzung</th>
+        <th>befüllt von</th>
+        <th>Profile</th>
+        <th>FHIR Ressource</th>
+        <th>Pfad von der Ressource aus</th>
+        <th>Pfad von der Composition aus</th>
+        <th>Anmerkungen</th>
+    </tr>
+    <tr>
+        <td>E.1. Identifikationsteil</td>
+        <td></td>
+        <td>siehe E1</td>
+        <td>siehe E1</td>
+        <td>siehe E1</td>
+        <td>siehe E1</td>
+        <td>siehe E1</td>
+        <td>siehe E1</td>
+    </tr>
+    <tr>
+        <td>Ereignisart</td>
+        <td>EREIG</td>
+        <td>MopedKHActor</td>
+        <td>MopedEncounter; MopedEncounterA; MopedEncounterBund; MopedEncounterLGF; MopedEncounterSV</td>
+        <td>Encounter</td>
+        <td>Encounter.admission.extension:aufnahmeart</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Funktionscode der Abteilung lt. LKF</td>
+        <td>FKRA</td>
+        <td>MopedKHActor</td>
+        <td>MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS</td>
+        <td>Encounter</td>
+        <td>Encounter.serviceType:MopedServiceType.reference.resolve()</td>
+        <td>Composition.section:TransferEncounter.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Funktionssubcode der Abteilung lt. LKF</td>
+        <td>FKRASU</td>
+        <td>MopedKHActor</td>
+        <td>MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS</td>
+        <td>Encounter</td>
+        <td>Encounter.serviceType:MopedServiceType.reference.resolve()</td>
+        <td>Composition.section:TransferEncounter.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Allgemeine Gebührenklasse/Sonderklasse</td>
+        <td>KLAS</td>
+        <td>MopedKHActor; MopedSVActor</td>
+        <td>MopedVAERequest; MopedVAERequestInitial; MopedVAERequestVerlaengerung; MopedVAEResponse</td>
+        <td>Claim; ClaimResponse</td>
+        <td>Claim.supportingInfo:Sonderklasse.code; ClaimResponse.extension:MopedSupportingInfoSonderklasse</td>
+        <td>Composition.section:VAERequests.entry.resolve(); Composition.section:VAEResponses.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Staatsbürgerschaftsschlüssel</td>
+        <td>STAAT</td>
+        <td>MopedKHActor</td>
+        <td>MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV</td>
+        <td>Patient</td>
+        <td>Patient.extension:citizenship</td>
+        <td>Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Wohandresse des Patienten - Straße</td>
+        <td>PASTR</td>
+        <td>MopedKHActor</td>
+        <td>MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV</td>
+        <td>Patient</td>
+        <td>Patient.address.line.extension:street</td>
+        <td>Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Wohnadresse des Patienten - Länderkennzeichen</td>
+        <td>PALKZ</td>
+        <td>MopedKHActor</td>
+        <td>MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV</td>
+        <td>Patient</td>
+        <td>Patient.address.country</td>
+        <td>Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Wohnadresse des Patienten - Postleitzahl</td>
+        <td>PAPLZL</td>
+        <td>MopedKHActor</td>
+        <td>MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV</td>
+        <td>Patient</td>
+        <td>Patient.address.postalCode</td>
+        <td>Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Wohnadresse des Patienten - Ort</td>
+        <td>PAORT</td>
+        <td>MopedKHActor</td>
+        <td>MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV</td>
+        <td>Patient</td>
+        <td>Patient.address.city</td>
+        <td>Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Verdacht auf Arbeits-/Schülerunfall</td>
+        <td>VERDAU</td>
+        <td>MopedKHActor</td>
+        <td>MopedVAERequest; MopedVAERequestInitial; MopedVAERequestVerlaengerung</td>
+        <td>Claim</td>
+        <td>Claim.accident.type</td>
+        <td>Composition.section:VAERequests.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Diganose 1 - ICD10 BMSGPK Schlüssel</td>
+        <td>DIAG1</td>
+        <td>MopedKHActor</td>
+        <td>MopedCondition</td>
+        <td>Condition</td>
+        <td>Condition.code.coding:ICD10</td>
+        <td>Composition.section:Diagnosen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Diagnose 1 - Untergliederung 1</td>
+        <td>DIAG1U1</td>
+        <td>MopedKHActor</td>
+        <td>MopedCondition</td>
+        <td>Condition</td>
+        <td>Condition.code.coding:ICD10</td>
+        <td>Composition.section:Diagnosen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Diagnose 1 - Untergliederung 2</td>
+        <td>DIAG1U2</td>
+        <td>MopedKHActor</td>
+        <td>MopedCondition</td>
+        <td>Condition</td>
+        <td>Condition.code.coding:ICD10</td>
+        <td>Composition.section:Diagnosen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Diganose 2 - ICD10 BMSGPK Schlüssel</td>
+        <td>DIAG2</td>
+        <td>MopedKHActor</td>
+        <td>MopedCondition</td>
+        <td>Condition</td>
+        <td>Condition.code.coding:ICD10</td>
+        <td>Composition.section:Diagnosen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Diagnose 2 - Untergliederung 1</td>
+        <td>DIAG2U1</td>
+        <td>MopedKHActor</td>
+        <td>MopedCondition</td>
+        <td>Condition</td>
+        <td>Condition.code.coding:ICD10</td>
+        <td>Composition.section:Diagnosen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Diagnose 2 - Untergliederung 2</td>
+        <td>DIAG2U2</td>
+        <td>MopedKHActor</td>
+        <td>MopedCondition</td>
+        <td>Condition</td>
+        <td>Condition.code.coding:ICD10</td>
+        <td>Composition.section:Diagnosen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Diganose 3 - ICD10 BMSGPK Schlüssel</td>
+        <td>DIAG3</td>
+        <td>MopedKHActor</td>
+        <td>MopedCondition</td>
+        <td>Condition</td>
+        <td>Condition.code.coding:ICD10</td>
+        <td>Composition.section:Diagnosen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Diagnose 3 - Untergliederung 1</td>
+        <td>DIAG3U1</td>
+        <td>MopedKHActor</td>
+        <td>MopedCondition</td>
+        <td>Condition</td>
+        <td>Condition.code.coding:ICD10</td>
+        <td>Composition.section:Diagnosen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Diagnose 3 - Untergliederung 2</td>
+        <td>DIAG3U2</td>
+        <td>MopedKHActor</td>
+        <td>MopedCondition</td>
+        <td>Condition</td>
+        <td>Condition.code.coding:ICD10</td>
+        <td>Composition.section:Diagnosen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Fremdverschulden</td>
+        <td>FREVER</td>
+        <td>MopedKHActor</td>
+        <td>MopedVAERequest; MopedVAERequestInitial; MopedVAERequestVerlaengerung</td>
+        <td>Claim</td>
+        <td>Claim.supportingInfo:VerdachtFremdverschulden.value[x]</td>
+        <td>Composition.section:VAERequests.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Diagnose im Klartext - kann bei Codierung entfallen</td>
+        <td>DIAG</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Diagnose im Klartext nur bei der Aufnahmediagnose</td>
+    </tr>
+    <tr>
+        <td>Ursache der Behandlung</td>
+        <td>URS</td>
+        <td>MopedKHActor</td>
+        <td>MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV</td>
+        <td>Encounter</td>
+        <td>Encounter.reason:Ursache.value</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Entbindungstag</td>
+        <td>ENTBDAT</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>erst in K05 relevant</td>
+    </tr>
+    <tr>
+        <td>Überweisende Stelle - Vertragspartnernummer</td>
+        <td>USVPNR</td>
+        <td>MopedKHActor</td>
+        <td>MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV</td>
+        <td>Encounter</td>
+        <td>Encounter.admission.origin.resolve()</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Überweisende Stelle - Name</td>
+        <td>USNA</td>
+        <td>MopedKHActor</td>
+        <td>MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV</td>
+        <td>Encounter</td>
+        <td>Encounter.admission.origin.resolve()</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>Überlegung, ob diese Organization 'contained' wird im Encounter</td>
+    </tr>
+    <tr>
+        <td>Länderkennzeichen der überweisenden Stelle</td>
+        <td>USLKZ</td>
+        <td>MopedKHActor</td>
+        <td>MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV</td>
+        <td>Encounter</td>
+        <td>Encounter.admission.origin.resolve()</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>Überlegung, ob diese Organization 'contained' wird im Encounter</td>
+    </tr>
+    <tr>
+        <td>Überweisende Stelle - Postleitzahl</td>
+        <td>USPLZL</td>
+        <td>MopedKHActor</td>
+        <td>MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV</td>
+        <td>Encounter</td>
+        <td>Encounter.admission.origin.resolve()</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>Überlegung, ob diese Organization 'contained' wird im Encounter</td>
+    </tr>
+    <tr>
+        <td>Überweisende Stelle - Ort</td>
+        <td>USORT</td>
+        <td>MopedKHActor</td>
+        <td>MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV</td>
+        <td>Encounter</td>
+        <td>Encounter.admission.origin.resolve()</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>Überlegung, ob diese Organization 'contained' wird im Encounter</td>
+    </tr>
+    <tr>
+        <td>Ereignis-/Unfalldatum (initiales Aufnahmedatum)</td>
+        <td>ERDAT</td>
+        <td>MopedKHActor</td>
+        <td>MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV</td>
+        <td>Encounter</td>
+        <td>Encounter.actualPeriod.start</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Ereignis-/Unfalldatum (echtes Unfalldatum)</td>
+        <td>ERDAT</td>
+        <td>MopedKHActor</td>
+        <td>MopedVAERequest; MopedVAERequestInitial; MopedVAERequestVerlaengerung</td>
+        <td>Claim</td>
+        <td>Claim.accident.date</td>
+        <td>Composition.section:VAERequests.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Ereignis-/Unfalldatum (Verlängerungsdatum)</td>
+        <td>ERDAT</td>
+        <td>MopedKHActor, MopedKHActor, MopedKHActor</td>
+        <td>MopedVAERequestVerlaengerung</td>
+        <td>Claim</td>
+        <td>Claim.billablePeriod.start</td>
+        <td>Composition.section:VAERequests.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Anzahl der Verlängerungstage</td>
+        <td>VTAG</td>
+        <td>MopedKHActor</td>
+        <td>MopedVAERequest; MopedVAERequestInitial; MopedVAERequestVerlaengerung</td>
+        <td>Claim</td>
+        <td>Claim.billablePeriod.end; Claim.supportingInfo:Verlaengerungstage.value[x]:valueQuantity.value</td>
+        <td>Composition.section:VAERequests.entry.resolve()</td>
+        <td>Nicht das Unfalldatum sondern das VAE Verlängerungsdatum; Modellierung der Verlängerung ist in Arbeit</td>
+    </tr>
+    <tr>
+        <td>VDAS-ID - Ergebnis der Abfrage</td>
+        <td>VDAS</td>
+        <td>MopedKHActor</td>
+        <td>MopedCoverage</td>
+        <td>Coverage</td>
+        <td>Coverage.identifier:VDASID</td>
+        <td>Composition.section:Coverages.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+</table>
+</div>
+
+<h3 id="k03---fhir">K03 -&gt; FHIR</h3>
+<div class="table-responsive">
+<table>
+    <tr>
+        <th>Feld</th>
+        <th>Abkürzung</th>
+        <th>befüllt von</th>
+        <th>Profile</th>
+        <th>FHIR Ressource</th>
+        <th>Pfad von der Ressource aus</th>
+        <th>Pfad von der Composition aus</th>
+        <th>Anmerkungen</th>
+    </tr>
+    <tr>
+        <td>E.1. Identifikationsteil</td>
+        <td></td>
+        <td>siehe E1</td>
+        <td>siehe E1</td>
+        <td>siehe E1</td>
+        <td>siehe E1</td>
+        <td>siehe E1</td>
+        <td>siehe E1</td>
+    </tr>
+    <tr>
+        <td>Ereignisart</td>
+        <td>EREIG</td>
+        <td>MopedKHActor</td>
+        <td>MopedEncounter; MopedEncounterA; MopedEncounterBund; MopedEncounterLGF; MopedEncounterSV</td>
+        <td>Encounter</td>
+        <td>Encounter.admission.extension:aufnahmeart</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Allgemeine Gebührenklasse/Sonderklasse</td>
+        <td>KLAS</td>
+        <td>MopedKHActor; MopedSVActor</td>
+        <td>MopedVAERequest; MopedVAERequestInitial; MopedVAERequestVerlaengerung; MopedVAEResponse</td>
+        <td>Claim; ClaimResponse</td>
+        <td>Claim.supportingInfo:Sonderklasse.code; ClaimResponse.extension:MopedSupportingInfoSonderklasse</td>
+        <td>Composition.section:VAERequests.entry.resolve(); Composition.section:VAEResponses.entry.resolve()</td>
+        <td>wird in R6 von einer extension zu einem normalen supportingInfo slice</td>
+    </tr>
+    <tr>
+        <td>VAE Beginndatum</td>
+        <td>DAT-VON</td>
+        <td>MopedKHActor, MopedKHActor, MopedKHActor; MopedSVActor</td>
+        <td>MopedVAERequestInitial; MopedVAEResponse</td>
+        <td>Claim; ClaimResponse</td>
+        <td>Claim.billablePeriod.start; ClaimResponse.preAuthPeriod.start</td>
+        <td>Composition.section:VAERequests.entry.resolve(); Composition.section:VAEResponses.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>VAE Endedatum</td>
+        <td>DATBIS</td>
+        <td>MopedSVActor</td>
+        <td>MopedVAEResponse</td>
+        <td>ClaimResponse</td>
+        <td>ClaimResponse.preAuthPeriod.end</td>
+        <td>Composition.section:VAEResponses.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Fristende</td>
+        <td>ENDE</td>
+        <td>MopedSVActor</td>
+        <td>MopedVAEResponse</td>
+        <td>ClaimResponse</td>
+        <td>ClaimResponse.preAuthPeriod.end</td>
+        <td>Composition.section:VAEResponses.entry.resolve()</td>
+        <td>falls das Feld preAuthPeriod.end befüllt ist, gibt es ein Fristende (Fristende = 1)</td>
+    </tr>
+    <tr>
+        <td>Status der VAE</td>
+        <td>VAEST</td>
+        <td>MopedSVActor</td>
+        <td>MopedVAEResponse</td>
+        <td>ClaimResponse</td>
+        <td>ClaimResponse.decision</td>
+        <td>Composition.section:VAEResponses.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Verpflegskosten-Beitragsbefreiung</td>
+        <td>VKBEFR</td>
+        <td>MopedSVActor</td>
+        <td>MopedVAEResponse</td>
+        <td>ClaimResponse</td>
+        <td>ClaimResponse.extension:VerpflegskostenBeitragsbefreiung</td>
+        <td>Composition.section:VAEResponses.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Vortageanzahl auf Kostenbeitrag</td>
+        <td>VTAGE</td>
+        <td>MopedSVActor</td>
+        <td>MopedVAEResponse</td>
+        <td>ClaimResponse</td>
+        <td>ClaimResponse.extension:MopedSupportingInfoVortageanzahlAufKostenbeitrag</td>
+        <td>Composition.section:VAEResponses.entry.resolve()</td>
+        <td>wird in R6 von einer extension zu einem normalen supportingInfo slice</td>
+    </tr>
+</table>
+</div>
+
+<h3 id="k05---fhir">K05 -&gt; FHIR</h3>
+<div class="table-responsive">
+<table>
+    <tr>
+        <th>Feld</th>
+        <th>Abkürzung</th>
+        <th>befüllt von</th>
+        <th>Profile</th>
+        <th>FHIR Ressource</th>
+        <th>Pfad von der Ressource aus</th>
+        <th>Pfad von der Composition aus</th>
+        <th>Anmerkungen</th>
+    </tr>
+    <tr>
+        <td>E.1. Identifikationsteil</td>
+        <td></td>
+        <td>siehe E1</td>
+        <td>siehe E1</td>
+        <td>siehe E1</td>
+        <td>siehe E1</td>
+        <td>siehe E1</td>
+        <td>siehe E1</td>
+    </tr>
+    <tr>
+        <td>Hauptdiagnose ICD 10 BMSGPK Schlüssel</td>
+        <td>HDIAG</td>
+        <td>MopedKHActor</td>
+        <td>MopedCondition</td>
+        <td>Condition</td>
+        <td>Condition.code.coding:ICD10</td>
+        <td>Composition.section:Diagnosen.entry.resolve()</td>
+        <td>Haupt und Zusatzdiagnosen können durch das Feld Condition.extension:Diagnosetyp unterschieden werden</td>
+    </tr>
+    <tr>
+        <td>Hauptdiagnose Untergliederung 1</td>
+        <td>HDIAGU1</td>
+        <td>MopedKHActor</td>
+        <td>MopedCondition</td>
+        <td>Condition</td>
+        <td>Condition.code.coding:ICD10</td>
+        <td>Composition.section:Diagnosen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Hauptdiagnose Untergliederung 2</td>
+        <td>HDIAGU2</td>
+        <td>MopedKHActor</td>
+        <td>MopedCondition</td>
+        <td>Condition</td>
+        <td>Condition.code.coding:ICD10</td>
+        <td>Composition.section:Diagnosen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Zusatzdiagnose 1 - ICD 10 BMSGPK Schlüssel</td>
+        <td>ZDIAG1</td>
+        <td>MopedKHActor</td>
+        <td>MopedCondition</td>
+        <td>Condition</td>
+        <td>Condition.code.coding:ICD10</td>
+        <td>Composition.section:Diagnosen.entry.resolve()</td>
+        <td>Haupt und Zusatzdiagnosen können durch das Feld Condition.extension:Diagnosetyp unterschieden werden</td>
+    </tr>
+    <tr>
+        <td>Zusatzdiagnose 1 - Untergliederung 1</td>
+        <td>ZDIAGU1</td>
+        <td>MopedKHActor</td>
+        <td>MopedCondition</td>
+        <td>Condition</td>
+        <td>Condition.code.coding:ICD10</td>
+        <td>Composition.section:Diagnosen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Zusatzdiagnose 1 - Untergliederung 2</td>
+        <td>ZDIAGU2</td>
+        <td>MopedKHActor</td>
+        <td>MopedCondition</td>
+        <td>Condition</td>
+        <td>Condition.code.coding:ICD10</td>
+        <td>Composition.section:Diagnosen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Fremdverschulden</td>
+        <td>FREVER</td>
+        <td>MopedKHActor</td>
+        <td>MopedVAERequest; MopedVAERequestInitial; MopedVAERequestVerlaengerung</td>
+        <td>Claim</td>
+        <td>Claim.supportingInfo:VerdachtFremdverschulden.value[x]</td>
+        <td>Composition.section:VAERequests.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Hauptdiagnose im Klartext - entfällt bei Codierung</td>
+        <td>DAIG</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>in neuer Architektur nicht mehr notwendig; (nur Aufnahmediagnosen im Klartext möglich - alle anderen Diagnosen werden codiert)</td>
+    </tr>
+    <tr>
+        <td>Ursache der Behandlung</td>
+        <td>URS</td>
+        <td>MopedKHActor</td>
+        <td>MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV</td>
+        <td>Encounter</td>
+        <td>Encounter.reason:Ursache.value</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Entbindungsdatum</td>
+        <td>ENTBDAT</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Thema Geburt in Arbeit</td>
+    </tr>
+    <tr>
+        <td>Anzahl der Lebendgeburten - männliche Kinder</td>
+        <td>ENTGM</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Thema Geburt in Arbeit</td>
+    </tr>
+    <tr>
+        <td>Anzahl der Lebendgeburten - weibliche Kinder</td>
+        <td>ENTGW</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Thema Geburt in Arbeit</td>
+    </tr>
+    <tr>
+        <td>Anzahl der Totgeburten</td>
+        <td>ENTT</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Thema Geburt in Arbeit</td>
+    </tr>
+    <tr>
+        <td>Art der Entbindung</td>
+        <td>ENTBART</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Thema Geburt in Arbeit</td>
+    </tr>
+    <tr>
+        <td>Entlassungsschlüssel</td>
+        <td>ENTS</td>
+        <td>MopedKHActor</td>
+        <td>MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV</td>
+        <td>Encounter</td>
+        <td>Encounter.admission.dischargeDisposition</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Aufnahme-/Verlegungsdatum</td>
+        <td>AVDAT</td>
+        <td>MopedKHActor</td>
+        <td>MopedVAERequest; MopedVAERequestInitial; MopedVAERequestVerlaengerung</td>
+        <td>Claim</td>
+        <td>Claim.supportingInfo:Sonderklasse.timing[x]:timingPeriod</td>
+        <td>Composition.section:VAERequests.entry.resolve()</td>
+        <td>bei einer Verlegung der Klasse muss die VAE neu eingebracht (und somit auch die alte gecancelt werden)</td>
+    </tr>
+    <tr>
+        <td>Verlegung Klasse</td>
+        <td>VKLA</td>
+        <td>MopedKHActor</td>
+        <td>MopedVAERequest; MopedVAERequestInitial; MopedVAERequestVerlaengerung</td>
+        <td>Claim</td>
+        <td>Claim.supportingInfo:Sonderklasse.code</td>
+        <td>Composition.section:VAERequests.entry.resolve()</td>
+        <td>bei einer Verlegung der Klasse muss die VAE neu eingebracht (und somit auch die alte gecancelt werden)</td>
+    </tr>
+    <tr>
+        <td>Avisio-Info</td>
+        <td>AI</td>
+        <td>MopedKHActor, MopedDeviceActor</td>
+        <td>MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV</td>
+        <td>Encounter</td>
+        <td>Encounter.status</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>Wenn der Encounter.status = discharged bedeutet das, dass ein Entlassungsaviso vorliegt</td>
+    </tr>
+    <tr>
+        <td>Anzahl der Tage für welche kein Kostenbeitrag seitens der Krankenanstalt eingehoben wurde</td>
+        <td>KABEFR</td>
+        <td>MopedKHActor</td>
+        <td>MopedEncounterAufnahmeS; MopedEncounterEntlassungS; MopedEncounterS</td>
+        <td>Encounter</td>
+        <td>Encounter.extension:TageOhneKostenbeitrag</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+</table>
+</div>
+
+<h3 id="k09---fhir">K09 -&gt; FHIR</h3>
+<div class="table-responsive">
+<table>
+    <tr>
+        <th>Feld</th>
+        <th>Abkürzung</th>
+        <th>befüllt von</th>
+        <th>Profile</th>
+        <th>FHIR Ressource</th>
+        <th>Pfad von der Ressource aus</th>
+        <th>Pfad von der Composition aus</th>
+        <th>Anmerkungen</th>
+    </tr>
+    <tr>
+        <td>IDTEIL Landesfonds</td>
+        <td></td>
+        <td>siehe E1.1</td>
+        <td>siehe E1.1</td>
+        <td>siehe E1.1</td>
+        <td>siehe E1.1</td>
+        <td>siehe E1.1</td>
+        <td>siehe E1.1</td>
+    </tr>
+    <tr>
+        <td>Staatsbürgerschaft</td>
+        <td>STAATB</td>
+        <td>MopedKHActor</td>
+        <td>MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV</td>
+        <td>Patient</td>
+        <td>Patient.extension:citizenship</td>
+        <td>Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Hauptwohnsitz Staat</td>
+        <td>STAATW</td>
+        <td>MopedKHActor</td>
+        <td>MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV</td>
+        <td>Patient</td>
+        <td>Patient.address.country</td>
+        <td>Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Hauptwohnsitz Postleitzahl</td>
+        <td>PLZLW</td>
+        <td>MopedKHActor</td>
+        <td>MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV</td>
+        <td>Patient</td>
+        <td>Patient.address.postalCode</td>
+        <td>Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Aufnahmeart</td>
+        <td>AUFART</td>
+        <td>MopedKHActor</td>
+        <td>MopedEncounter; MopedEncounterA; MopedEncounterBund; MopedEncounterLGF; MopedEncounterSV</td>
+        <td>Encounter</td>
+        <td>Encounter.admission.extension:aufnahmeart</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Entlassungsart</td>
+        <td>ENTLART</td>
+        <td>MopedKHActor</td>
+        <td>MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV</td>
+        <td>Encounter</td>
+        <td>Encounter.admission.dischargeDisposition</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Entbindungsheimpflegekennzeichen</td>
+        <td>EBH</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>laut Abstimmung: vorläufige Überarbeitung KaOrg - Feld wird voraussichtlich entfernt</td>
+    </tr>
+    <tr>
+        <td>Urlaubstage im Verrechnungszeitraum</td>
+        <td>VERURL</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>laut Abstimmung: vorläufige Überarbeitung KaOrg - Feld wird voraussichtlich entfernt</td>
+    </tr>
+    <tr>
+        <td>Sonderleistungsnummer</td>
+        <td>SOND</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>laut Abstimmung: vorläufige Überarbeitung KaOrg - Feld wird voraussichtlich entfernt</td>
+    </tr>
+    <tr>
+        <td>Anzahl Sonderleistung</td>
+        <td>SOANZ</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>laut Abstimmung: vorläufige Überarbeitung KaOrg - Feld wird voraussichtlich entfernt</td>
+    </tr>
+    <tr>
+        <td>Ablehnungsgrund für Leistungserbringung stationär</td>
+        <td>KVAB</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>laut Abstimmung: vorläufige Überarbeitung KaOrg - Feld wird voraussichtlich entfernt</td>
+    </tr>
+    <tr>
+        <td>Qualifier</td>
+        <td>QUAL</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>laut Abstimmung: vorläufige Überarbeitung KaOrg - Feld wird voraussichtlich entfernt</td>
+    </tr>
+    <tr>
+        <td>Kostenmeldung für (A/R/K)</td>
+        <td>KOANF</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>LDF-Gruppe Teil1</td>
+        <td>LDFGRP</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>LDF-Gruppe Teil2</td>
+        <td>LDFKNT</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Punkte LDF-Pauschale</td>
+        <td>LDFPP</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Punkte Verweildauerausreißer unten</td>
+        <td>VDU</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Zusatzpunkte Verweildauerausreißer oben</td>
+        <td>VDO</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Zusatzpunkte Intensiv</td>
+        <td>ZUINT</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Zusatzpunkte Mehrleistungen</td>
+        <td>ZUMEHR</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Punkte spezieller Bereich</td>
+        <td>PSPEZ</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Punkte total</td>
+        <td>PTOT</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>LDF-Punktewert Netto</td>
+        <td>LDFFAK</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>LDF-Betrag Netto</td>
+        <td>LDFBET</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Patientenanteil für Angehörige (tägl. Satz) netto</td>
+        <td>VERSATZ</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Patientenanteil netto</td>
+        <td>VERPA</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Beihilfenäquivalent</td>
+        <td>BEIH</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Forderungsbetrag für Ausländerverrechnung</td>
+        <td>FORDAV</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Forderungsbetrag für den Regress</td>
+        <td>FORDRG</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>K21 Ausländerverrechnung/Regresse - Rückmeldung</td>
+        <td>RUE</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>laut Abstimmung: vorläufige Überarbeitung KaOrg - Feld wird voraussichtlich entfernt</td>
+    </tr>
+    <tr>
+        <td>RENR</td>
+        <td>RENR</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>laut Abstimmung: vorläufige Überarbeitung KaOrg - Feld wird voraussichtlich entfernt</td>
+    </tr>
+</table>
+</div>
+
+<h3 id="k12---fhir">K12 -&gt; FHIR</h3>
+<div class="table-responsive">
+<table>
+    <tr>
+        <th>Feld</th>
+        <th>Abkürzung</th>
+        <th>befüllt von</th>
+        <th>Profile</th>
+        <th>FHIR Ressource</th>
+        <th>Pfad von der Ressource aus</th>
+        <th>Pfad von der Composition aus</th>
+        <th>Anmerkungen</th>
+    </tr>
+    <tr>
+        <td>Identifikationsteil</td>
+        <td></td>
+        <td>siehe E1</td>
+        <td>siehe E1</td>
+        <td>siehe E1</td>
+        <td>siehe E1</td>
+        <td>siehe E1</td>
+        <td>siehe E1</td>
+    </tr>
+    <tr>
+        <td>Zeilennummer</td>
+        <td>ZEILNR</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>in neuer Architektur nicht mehr notwendig</td>
+    </tr>
+    <tr>
+        <td>Kommentartext</td>
+        <td>TEXT1</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>bei Kommentaren der SV muss die Communication.extension:MBDSRelevanz = false sein</td>
+    </tr>
+    <tr>
+        <td>Kommentartext</td>
+        <td>TEXT2</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>bei Kommentaren der SV muss die Communication.extension:MBDSRelevanz = false sein</td>
+    </tr>
+    <tr>
+        <td>Kommentartext</td>
+        <td>TEXT3</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>bei Kommentaren der SV muss die Communication.extension:MBDSRelevanz = false sein</td>
+    </tr>
+    <tr>
+        <td>Kommentartext</td>
+        <td>TEXT4</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>bei Kommentaren der SV muss die Communication.extension:MBDSRelevanz = false sein</td>
+    </tr>
+</table>
+</div>
+
+<h3 id="k13---fhir">K13 -&gt; FHIR</h3>
+<div class="table-responsive">
+<table>
+    <tr>
+        <th>Feld</th>
+        <th>Abkürzung</th>
+        <th>befüllt von</th>
+        <th>Profile</th>
+        <th>FHIR Ressource</th>
+        <th>Pfad von der Ressource aus</th>
+        <th>Pfad von der Composition aus</th>
+        <th>Anmerkungen</th>
+    </tr>
+    <tr>
+        <td>IDTEIL Landesfonds</td>
+        <td></td>
+        <td>siehe E1.1</td>
+        <td>siehe E1.1</td>
+        <td>siehe E1.1</td>
+        <td>siehe E1.1</td>
+        <td>siehe E1.1</td>
+        <td>siehe E1.1</td>
+    </tr>
+    <tr>
+        <td>Abteilung - Funktionscode der Ambulanz</td>
+        <td>FKRA</td>
+        <td>MopedKHActor</td>
+        <td>MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS</td>
+        <td>Encounter</td>
+        <td>Encounter.serviceType:MopedServiceType.reference.resolve()</td>
+        <td>Composition.section:TransferEncounter.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Abteilung - Subcode</td>
+        <td>FKRASU</td>
+        <td>MopedKHActor</td>
+        <td>MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS</td>
+        <td>Encounter</td>
+        <td>Encounter.serviceType:MopedServiceType.reference.resolve()</td>
+        <td>Composition.section:TransferEncounter.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Behandlungsdatum</td>
+        <td>BDAT</td>
+        <td>MopedKHActor</td>
+        <td>MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV</td>
+        <td>Encounter</td>
+        <td>Encounter.actualPeriod.start</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Kostenmeldung für A/R/K</td>
+        <td>KOANF</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>LDF-Gruppe 1</td>
+        <td>LDFGRP</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>LDF-Gruppe 2</td>
+        <td>LDFKNR</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Punkte Total</td>
+        <td>PTOT</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>LDF-Punktewert netto</td>
+        <td>LDFFAK</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>LDF-Betrag Netto</td>
+        <td>LDFBET</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Beihilfenäquivalent</td>
+        <td>BEIH</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Forderungsbetrag für Ausländerverrechnung</td>
+        <td>FORDAV</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Forderungsbetrag für den Regress</td>
+        <td>FORDRG</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Leistungspunkte</td>
+        <td>ABTFC_LP</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Kontaktpunkte</td>
+        <td>ABTFC_KP</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+</table>
+</div>
+
+<h3 id="k20---fhir">K20 -&gt; FHIR</h3>
+<div class="table-responsive">
+<table>
+    <tr>
+        <th>Feld</th>
+        <th>Abkürzung</th>
+        <th>befüllt von</th>
+        <th>Profile</th>
+        <th>FHIR Ressource</th>
+        <th>Pfad von der Ressource aus</th>
+        <th>Pfad von der Composition aus</th>
+        <th>Anmerkungen</th>
+    </tr>
+    <tr>
+        <td>IDTEIL Landesfonds</td>
+        <td></td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>diese Meldung ist in Moped in dieser Form nicht mehr notwendig</td>
+    </tr>
+    <tr>
+        <td>Aufenthaltsartkennzeichen</td>
+        <td>AUFKZ</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>diese Meldung ist in Moped in dieser Form nicht mehr notwendig</td>
+    </tr>
+    <tr>
+        <td>Kostenmeldung für</td>
+        <td>KOANF</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>diese Meldung ist in Moped in dieser Form nicht mehr notwendig</td>
+    </tr>
+</table>
+</div>
+
+<h3 id="k21---fhir">K21 -&gt; FHIR</h3>
+<div class="table-responsive">
+<table>
+    <tr>
+        <th>Feld</th>
+        <th>Abkürzung</th>
+        <th>befüllt von</th>
+        <th>Profile</th>
+        <th>FHIR Ressource</th>
+        <th>Pfad von der Ressource aus</th>
+        <th>Pfad von der Composition aus</th>
+        <th>Anmerkungen</th>
+    </tr>
+    <tr>
+        <td>IDTEIL Landesfonds</td>
+        <td></td>
+        <td>siehe E1.1</td>
+        <td>siehe E1.1</td>
+        <td>siehe E1.1</td>
+        <td>siehe E1.1</td>
+        <td>siehe E1.1</td>
+        <td>siehe E1.1</td>
+    </tr>
+    <tr>
+        <td>Kostenmeldung</td>
+        <td>KOANF</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Zahlungskennzeichen Regress</td>
+        <td>ZKZ</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>LDF-Betrag Netto</td>
+        <td>LDFBET</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Patientenanteil für Angehörige</td>
+        <td>VERSATZ</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Patientenanteil</td>
+        <td>VERPA</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Betrag Ausländerverrechnung</td>
+        <td>BETRAV</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Betrag Regress</td>
+        <td>BETRRG</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Rechnungsnummer</td>
+        <td>RENR</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>laut Abstimmung: vorläufige Überarbeitung KaOrg - Feld wird voraussichtlich entfernt</td>
+    </tr>
+    <tr>
+        <td>Abrechnungsart Ausländerverrechnung</td>
+        <td>ART</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Prozentsatz der Zahlung</td>
+        <td>PROZ</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Betreuungsschein bei Ausländerverrechnung</td>
+        <td>SCHEIN</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Landescode</td>
+        <td>LAND</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Grund, warum keine Zahlung erfolgte</td>
+        <td>GRUND</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Rechnungsnummer der zwischenstaatlichen Abrechnung</td>
+        <td>FREMDRE</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>wird in R6 von einer extension zu einem normalen supportingInfo slice</td>
+    </tr>
+    <tr>
+        <td>Forderungsnummer der ÖGK</td>
+        <td>ELBNR</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>wird in R6 von einer extension zu einem normalen supportingInfo slice</td>
+    </tr>
+    <tr>
+        <td>Bezeichnung des ausländischen SV-Trägers</td>
+        <td>ASVT</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+</table>
+</div>
+
+<h3 id="k27---fhir">K27 -&gt; FHIR</h3>
+<div class="table-responsive">
+<table>
+    <tr>
+        <th>Feld</th>
+        <th>Abkürzung</th>
+        <th>befüllt von</th>
+        <th>Profile</th>
+        <th>FHIR Ressource</th>
+        <th>Pfad von der Ressource aus</th>
+        <th>Pfad von der Composition aus</th>
+        <th>Anmerkungen</th>
+    </tr>
+    <tr>
+        <td>E.1. Identifikationsteil</td>
+        <td></td>
+        <td>siehe E1</td>
+        <td>siehe E1</td>
+        <td>siehe E1</td>
+        <td>siehe E1</td>
+        <td>siehe E1</td>
+        <td>siehe E1</td>
+    </tr>
+    <tr>
+        <td>EWR-Versicherungsnummer des Patienten</td>
+        <td>EVSNR</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Zuname</td>
+        <td>EZUNA</td>
+        <td>MopedKHActor</td>
+        <td>MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV</td>
+        <td>Patient</td>
+        <td>Patient.name.family</td>
+        <td>Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Vorname</td>
+        <td>EVONA</td>
+        <td>MopedKHActor</td>
+        <td>MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV</td>
+        <td>Patient</td>
+        <td>Patient.name.given</td>
+        <td>Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Geschlecht</td>
+        <td>EGESL</td>
+        <td>MopedKHActor</td>
+        <td>MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV</td>
+        <td>Patient</td>
+        <td>Patient.gender</td>
+        <td>Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Geburtsdatum</td>
+        <td>EGEBD</td>
+        <td>MopedKHActor</td>
+        <td>MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV</td>
+        <td>Patient</td>
+        <td>Patient.birthDate</td>
+        <td>Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Staatenschlüssel</td>
+        <td>ESTAAT</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Instituionscode des zuständen Trägers</td>
+        <td>EIC</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Akronym des zuständigen Trägers</td>
+        <td>EAKRO</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Kartennummer</td>
+        <td>EKANR</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Endedatum des Anspruches</td>
+        <td>EAEND</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Art der Anspruchsbescheinigung</td>
+        <td>EFORM</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>wird mit Terminologen abgeklärt</td>
+    </tr>
+    <tr>
+        <td>Beginndatum des Anspruches</td>
+        <td>EABEG</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Bei EFORM " ANFO mit der Wohnort-Stadt des Patienten</td>
+        <td>ESTADT</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>/</td>
+    </tr>
+</table>
+</div>
+
+
+
+
+</div>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /row -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-content -->
+
+<script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/window-hash.js"> </script>
+<a name="bottom"> </a>
+<div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+<div class="container">  <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Wed, Jan 7, 2026 10:11+0000">2026-01-07</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    </span>
+  </p>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+<div class="container">  <!-- container -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-post-footer -->
+
+<!-- JS and analytics only. -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+<script type="text/javascript" src="assets/js/respond.min.js"> </script>
+<script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+<script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+</body>
+</html>
+

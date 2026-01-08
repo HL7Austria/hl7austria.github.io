@@ -1,0 +1,149 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.naboto.com/Appointment/NabotoAppointmentExample> a fhir:Appointment;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "NabotoAppointmentExample"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.naboto.com/StructureDefinition/naboto-appointment";
+       fhir:index 0;
+       fhir:link <http://fhir.naboto.com/StructureDefinition/naboto-appointment>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Appointment</b><a name=\"NabotoAppointmentExample\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Appointment \"NabotoAppointmentExample\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-naboto-appointment.html\">Naboto Appointment Profile</a></p></div><blockquote><p><b>NabotoNote</b></p><p><b>value</b>: Is this treatment covered by my insurance? (By https://naboto.com/patient/12345 @Jan 1, 2022, 8:00:00 AM)</p></blockquote><blockquote><p><b>NabotoNote</b></p><p><b>value</b>: Patient asked for discrete treatment (By https://naboto.com/practitioner/987654321 @Jan 1, 2022, 9:15:00 AM)</p></blockquote><p><b>identifier</b>: id: 11223344</p><p><b>status</b>: booked</p><p><b>start</b>: Feb 2, 2022, 11:00:00 AM</p><p><b>end</b>: Feb 2, 2022, 12:00:00 PM</p><p><b>created</b>: 2022-01-01 11:11:11+0000</p><blockquote><p><b>participant</b></p><blockquote><p><b>VirtualServiceContactDetail</b></p><p><b>value</b>: Visit-e (Details: http://fhir.naboto.com/CodeSystem/naboto-vidcall-channel-type code visit-e = 'Visit-e', stated as 'null')</p><p><b>value</b>: <a href=\"https://patient.visit-e.at/abcdefghijklmn\">https://patient.visit-e.at/abcdefghijklmn</a></p><p><b>value</b>: abcdefghijklmn</p></blockquote><p><b>type</b>: primary performer <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/4.0.0/CodeSystem-v3-ParticipationType.html\">ParticipationType</a>#PPRF)</span></p><p><b>actor</b>: <a href=\"https://naboto.com/practitioner/987654321\">https://naboto.com/practitioner/987654321: Naboto Practitioner 987654321</a></p><p><b>required</b>: required</p><p><b>status</b>: accepted</p></blockquote><blockquote><p><b>participant</b></p><blockquote><p><b>VirtualServiceContactDetail</b></p><p><b>value</b>: Visit-e (Details: http://fhir.naboto.com/CodeSystem/naboto-vidcall-channel-type code visit-e = 'Visit-e', stated as 'null')</p><p><b>value</b>: <a href=\"https://patient.visit-e.at/1234567890\">https://patient.visit-e.at/1234567890</a></p><p><b>value</b>: 1234567890</p></blockquote><p><b>type</b>: subject <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/4.0.0/CodeSystem-v3-ParticipationType.html\">ParticipationType</a>#SBJ)</span></p><p><b>actor</b>: <a href=\"https://naboto.com/patients/1337\">https://naboto.com/patients/1337: Naboto Patient 1337</a></p><p><b>status</b>: accepted</p></blockquote></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "note" ];
+       fhir:Extension.valueAnnotation [
+         fhir:Annotation.authorReference [
+           fhir:link <https://naboto.com/patient/12345>;
+           fhir:Reference.reference [ fhir:value "https://naboto.com/patient/12345" ];
+           fhir:Reference.type [ fhir:value "Patient" ];
+           fhir:Reference.display [ fhir:value "Naboto Patient 12345" ]
+         ];
+         fhir:Annotation.time [ fhir:value "2022-01-01T08:00:00.000Z"^^xsd:dateTime ];
+         fhir:Annotation.text [ fhir:value "Is this treatment covered by my insurance?" ]
+       ]
+     ];
+     fhir:Extension.url [ fhir:value "http://fhir.naboto.com/StructureDefinition/naboto-note" ]
+  ], [
+     fhir:index 1;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "note" ];
+       fhir:Extension.valueAnnotation [
+         fhir:Annotation.authorReference [
+           fhir:link <https://naboto.com/practitioner/987654321>;
+           fhir:Reference.reference [ fhir:value "https://naboto.com/practitioner/987654321" ];
+           fhir:Reference.type [ fhir:value "Practitioner" ];
+           fhir:Reference.display [ fhir:value "Naboto Practitioner 987654321" ]
+         ];
+         fhir:Annotation.time [ fhir:value "2022-01-01T09:15:00.000Z"^^xsd:dateTime ];
+         fhir:Annotation.text [ fhir:value "Patient asked for discrete treatment" ]
+       ]
+     ];
+     fhir:Extension.url [ fhir:value "http://fhir.naboto.com/StructureDefinition/naboto-note" ]
+  ];
+  fhir:Appointment.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "https://third-party-system/appointment" ];
+     fhir:Identifier.value [ fhir:value "11223344" ]
+  ];
+  fhir:Appointment.status [ fhir:value "booked"];
+  fhir:Appointment.start [ fhir:value "2022-02-02T11:00:00Z"^^xsd:dateTime];
+  fhir:Appointment.end [ fhir:value "2022-02-02T12:00:00Z"^^xsd:dateTime];
+  fhir:Appointment.created [ fhir:value "2022-01-01T11:11:11.111Z"^^xsd:dateTime];
+  fhir:Appointment.participant [
+     fhir:index 0;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "channelType" ];
+         fhir:Extension.valueCoding [
+           fhir:Coding.system [ fhir:value "http://fhir.naboto.com/CodeSystem/naboto-vidcall-channel-type" ];
+           fhir:Coding.code [ fhir:value "visit-e" ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:Extension.url [ fhir:value "address" ];
+         fhir:Extension.valueUrl [ fhir:value "https://patient.visit-e.at/abcdefghijklmn" ]
+       ], [
+         fhir:index 2;
+         fhir:Extension.url [ fhir:value "sessionKey" ];
+         fhir:Extension.valueString [ fhir:value "abcdefghijklmn" ]
+       ];
+       fhir:Extension.url [ fhir:value "http://fhir.naboto.com/StructureDefinition/virtual-service-contact-detail" ]
+     ];
+     fhir:Appointment.participant.type [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ParticipationType" ];
+         fhir:Coding.code [ fhir:value "PPRF" ]
+       ]
+     ];
+     fhir:Appointment.participant.actor [
+       fhir:link <https://naboto.com/practitioner/987654321>;
+       fhir:Reference.reference [ fhir:value "https://naboto.com/practitioner/987654321" ];
+       fhir:Reference.type [ fhir:value "Patient" ];
+       fhir:Reference.display [ fhir:value "Naboto Practitioner 987654321" ]
+     ];
+     fhir:Appointment.participant.required [ fhir:value "required" ];
+     fhir:Appointment.participant.status [ fhir:value "accepted" ]
+  ], [
+     fhir:index 1;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "channelType" ];
+         fhir:Extension.valueCoding [
+           fhir:Coding.system [ fhir:value "http://fhir.naboto.com/CodeSystem/naboto-vidcall-channel-type" ];
+           fhir:Coding.code [ fhir:value "visit-e" ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:Extension.url [ fhir:value "address" ];
+         fhir:Extension.valueUrl [ fhir:value "https://patient.visit-e.at/1234567890" ]
+       ], [
+         fhir:index 2;
+         fhir:Extension.url [ fhir:value "sessionKey" ];
+         fhir:Extension.valueString [ fhir:value "1234567890" ]
+       ];
+       fhir:Extension.url [ fhir:value "http://fhir.naboto.com/StructureDefinition/virtual-service-contact-detail" ]
+     ];
+     fhir:Appointment.participant.type [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ParticipationType" ];
+         fhir:Coding.code [ fhir:value "SBJ" ]
+       ]
+     ];
+     fhir:Appointment.participant.actor [
+       fhir:link <https://naboto.com/patients/1337>;
+       fhir:Reference.reference [ fhir:value "https://naboto.com/patients/1337" ];
+       fhir:Reference.type [ fhir:value "Patient" ];
+       fhir:Reference.display [ fhir:value "Naboto Patient 1337" ]
+     ];
+     fhir:Appointment.participant.status [ fhir:value "accepted" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.naboto.com/Appointment/NabotoAppointmentExample.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
