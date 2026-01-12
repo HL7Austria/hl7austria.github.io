@@ -20,7 +20,7 @@
   fhir:version [ fhir:v "0.2.0"] ; # 
   fhir:name [ fhir:v "TCFHIRAGSchedulingR5"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-01-12T10:11:28+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-01-12T10:18:34+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7® Austria, TC FHIR®"] ; # 
   fhir:packageId [ fhir:v "hl7.at.fhir.tc.wg.scheduling.r5"] ; # 
   fhir:license [ fhir:v "CC0-1.0"] ; # 
@@ -98,6 +98,24 @@
        ] ;
        fhir:name [ fhir:v "Appointment Booking URL" ] ;
        fhir:description [ fhir:v "An optional URL that can be used for redirects to a webpage for booking an Appointment. It should contain identifying information about the Slot so that it can be preselected on the target booking page." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/appointment-postponementReason> ;
+         fhir:reference [ fhir:v "StructureDefinition/appointment-postponementReason" ]
+       ] ;
+       fhir:name [ fhir:v "Appointment Postponement Reason" ] ;
+       fhir:description [ fhir:v "The reason why an appointment was postoponed. This is often used in reporting/billing/further processing to determine if further actions are required, or specific fees apply." ] ;
        fhir:isExample [ fhir:v false ]
      ] [
        fhir:extension ( [

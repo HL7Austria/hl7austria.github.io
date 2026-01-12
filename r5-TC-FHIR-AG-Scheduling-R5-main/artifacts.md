@@ -44,6 +44,7 @@ These define constraints on FHIR data types for systems conforming to this imple
 | | |
 | :--- | :--- |
 | [Appointment Booking URL](StructureDefinition-appointment-booking-url.md) | An optional URL that can be used for redirects to a webpage for booking an Appointment. It should contain identifying information about the Slot so that it can be preselected on the target booking page. |
+| [Appointment Postponement Reason](StructureDefinition-appointment-postponementReason.md) | The reason why an appointment was postoponed. This is often used in reporting/billing/further processing to determine if further actions are required, or specific fees apply. |
 | [Slot Encounter Class](StructureDefinition-slot-encounter-class.md) | An encounter class similar to (Appointment.class)[https://www.hl7.org/fhir/appointment-definitions.html#Appointment.class] for classification of possible mode of encounter |
 | [VirtualServiceDetail](StructureDefinition-virtual-service-detail.md) | Represents personalized details for a virtual service. This extension is meant to be used on appointment.participant if personalized Details (e.g. individual links or secrets) per participant exist. If the details are the same for all participants, Appointment.virtualService should be used instead.**Warning! Due to a bug, this extension contains a workaround. Instead of the custom complex data structure defined here, VirtualServiceDetail will be used as an extension on Appointment.participant in the future** |
 
