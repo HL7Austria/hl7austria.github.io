@@ -54,7 +54,7 @@ Other representations of profile: [CSV](StructureDefinition-appointment-postpone
   "name" : "AppointmentPostponementReasonExt",
   "title" : "Appointment Postponement Reason",
   "status" : "draft",
-  "date" : "2026-01-12T10:18:34+00:00",
+  "date" : "2026-01-12T10:26:55+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "The reason why an appointment was postoponed. This is often used in reporting/billing/further processing to determine if further actions are required, or specific fees apply.",
   "fhirVersion" : "5.0.0",
