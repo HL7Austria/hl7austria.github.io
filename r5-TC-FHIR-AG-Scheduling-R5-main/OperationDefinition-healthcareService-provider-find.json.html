@@ -40,6 +40,8 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
 
     <style type="text/css">h2{--heading-prefix:"4.4"}
     h3,h4,h5,h6{--heading-prefix:"4.4"}</style>
@@ -178,7 +180,7 @@
         
           Active
           
-            as of 2025-11-19
+            as of 2026-01-12
           
         
       </td>
@@ -195,102 +197,102 @@
 
 
   <pre class="json" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
-  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition">resourceType</a>" : "OperationDefinition",
-  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.id">id</a>" : "healthcareService-provider-find",
-  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.text">text</a>" : {
-    "<a href="http://hl7.org/fhir/R5/narrative.html#Narrative#Narrative.status">status</a>" : "generated",
-    "<a href="http://hl7.org/fhir/R5/narrative.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: OperationDefinition healthcareService-provider-find&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;healthcareService-provider-find\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hchealthcareService-provider-find\&quot;&gt; &lt;/a&gt;&lt;p&gt;URL: [base]/HealthcareService/$findHSP&lt;/p&gt;&lt;h3&gt;Parameters&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Use&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Name&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Scope&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Cardinality&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Binding&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Documentation&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;healthcareService-reference&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R5/references.html#Reference\&quot;&gt;Reference&lt;/a&gt; (&lt;a href=\&quot;StructureDefinition-at-scheduling-healthcareservice.html\&quot; title=\&quot;http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice\&quot;&gt;HL7® AT Scheduling HealthcareService Profile&lt;/a&gt;)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;The full HealthcareService resource can be provided for this operation. The HealthcareService SHALL be active (HealthcareService.active=true).&lt;/p&gt;\n&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;healthcareService-category&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R5/datatypes.html#string\&quot;&gt;string&lt;/a&gt;&lt;br/&gt;(&lt;a href=\&quot;https://hl7.org/fhir/R5/search.html#token\&quot;&gt;token&lt;/a&gt;)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;The code of the category of the healthcare service. Each parameter value SHALL contain &lt;em&gt;both&lt;/em&gt; the system property and the code property for a code using the general syntax &lt;code&gt;healthcareService-category=[system]|[code]&lt;/code&gt;. See the examples below for how this is implemented.&lt;/p&gt;\n&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;healthcareService-type&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R5/datatypes.html#string\&quot;&gt;string&lt;/a&gt;&lt;br/&gt;(&lt;a href=\&quot;https://hl7.org/fhir/R5/search.html#token\&quot;&gt;token&lt;/a&gt;)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;The code of the type of the healthcare service. Each parameter value SHALL contain &lt;em&gt;both&lt;/em&gt; the system property and the code property for a code using the general syntax &lt;code&gt;healthcareService-type=[system]|[code]&lt;/code&gt;. See the examples below for how this is implemented.&lt;/p&gt;\n&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;healthcareService-specialty&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R5/datatypes.html#string\&quot;&gt;string&lt;/a&gt;&lt;br/&gt;(&lt;a href=\&quot;https://hl7.org/fhir/R5/search.html#token\&quot;&gt;token&lt;/a&gt;)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;The code of the specialty of the healthcare service. Each parameter value SHALL contain &lt;em&gt;both&lt;/em&gt; the system property and the code property for a code using the general syntax &lt;code&gt;healthcareService-specialty=[system]|[code]&lt;/code&gt;. See the examples below for how this is implemented.&lt;/p&gt;\n&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;healthcareService-location&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..*&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R5/references.html#Reference\&quot;&gt;Reference&lt;/a&gt; (&lt;a href=\&quot;http://hl7.org/fhir/R5/location.html\&quot; title=\&quot;http://hl7.org/fhir/StructureDefinition/Location\&quot;&gt;Location&lt;/a&gt;)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;The (physical) location where a healthcare service should be provided can be used as a search parameter.&lt;/p&gt;\n&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;healthcareService-zipCodeArea&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..*&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R5/datatypes.html#string\&quot;&gt;string&lt;/a&gt;&lt;br/&gt;(&lt;a href=\&quot;https://hl7.org/fhir/R5/search.html#string\&quot;&gt;string&lt;/a&gt;)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;The aera in which a healthcare service should be offered can be provided as search parameter. For that purpose the zip code(s) shall be used.&lt;/p&gt;\n&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;healthcareService-availability&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..*&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R5/metadatatypes.html#Availability\&quot;&gt;Availability&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;The desired availabilities for the healthcare service.&lt;/p&gt;\n&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;OUT&lt;/td&gt;&lt;td&gt;result&lt;/td&gt;&lt;td/&gt;&lt;td&gt;1..1&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R5/bundle.html\&quot;&gt;Bundle&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;The response will be a Bundle consisting of the HealthcareService resource and a list of healthcare service providers (Organization, Practitioner, PractitionerRole) that offer the requested service and an OperationOutcome with errors, warnings or information as a result of processing the operation.&lt;/p&gt;\n&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"
+  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition">resourceType</a>" : "OperationDefinition",
+  "<a href="http://hl7.org/fhir/R5/resource.html#XOperationDefinition.id">id</a>" : "healthcareService-provider-find",
+  "<a href="http://hl7.org/fhir/R5/domainresource.html#XOperationDefinition.text">text</a>" : {
+    "<a href="http://hl7.org/fhir/R5/narrative.html#Narrative#XNarrative.status">status</a>" : "generated",
+    "<a href="http://hl7.org/fhir/R5/narrative.html#Narrative#XNarrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: OperationDefinition healthcareService-provider-find&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;healthcareService-provider-find\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hchealthcareService-provider-find\&quot;&gt; &lt;/a&gt;&lt;p&gt;URL: [base]/HealthcareService/$findHSP&lt;/p&gt;&lt;h3&gt;Parameters&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Use&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Name&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Scope&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Cardinality&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Binding&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Documentation&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;healthcareService-reference&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R5/references.html#Reference\&quot;&gt;Reference&lt;/a&gt; (&lt;a href=\&quot;StructureDefinition-at-scheduling-healthcareservice.html\&quot; title=\&quot;http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice\&quot;&gt;HL7® AT Scheduling HealthcareService Profile&lt;/a&gt;)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;The full HealthcareService resource can be provided for this operation. The HealthcareService SHALL be active (HealthcareService.active=true).&lt;/p&gt;\n&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;healthcareService-category&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R5/datatypes.html#string\&quot;&gt;string&lt;/a&gt;&lt;br/&gt;(&lt;a href=\&quot;https://hl7.org/fhir/R5/search.html#token\&quot;&gt;token&lt;/a&gt;)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;The code of the category of the healthcare service. Each parameter value SHALL contain &lt;em&gt;both&lt;/em&gt; the system property and the code property for a code using the general syntax &lt;code&gt;healthcareService-category=[system]|[code]&lt;/code&gt;. See the examples below for how this is implemented.&lt;/p&gt;\n&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;healthcareService-type&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R5/datatypes.html#string\&quot;&gt;string&lt;/a&gt;&lt;br/&gt;(&lt;a href=\&quot;https://hl7.org/fhir/R5/search.html#token\&quot;&gt;token&lt;/a&gt;)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;The code of the type of the healthcare service. Each parameter value SHALL contain &lt;em&gt;both&lt;/em&gt; the system property and the code property for a code using the general syntax &lt;code&gt;healthcareService-type=[system]|[code]&lt;/code&gt;. See the examples below for how this is implemented.&lt;/p&gt;\n&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;healthcareService-specialty&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R5/datatypes.html#string\&quot;&gt;string&lt;/a&gt;&lt;br/&gt;(&lt;a href=\&quot;https://hl7.org/fhir/R5/search.html#token\&quot;&gt;token&lt;/a&gt;)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;The code of the specialty of the healthcare service. Each parameter value SHALL contain &lt;em&gt;both&lt;/em&gt; the system property and the code property for a code using the general syntax &lt;code&gt;healthcareService-specialty=[system]|[code]&lt;/code&gt;. See the examples below for how this is implemented.&lt;/p&gt;\n&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;healthcareService-location&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..*&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R5/references.html#Reference\&quot;&gt;Reference&lt;/a&gt; (&lt;a href=\&quot;http://hl7.org/fhir/R5/location.html\&quot; title=\&quot;http://hl7.org/fhir/StructureDefinition/Location\&quot;&gt;Location&lt;/a&gt;)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;The (physical) location where a healthcare service should be provided can be used as a search parameter.&lt;/p&gt;\n&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;healthcareService-zipCodeArea&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..*&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R5/datatypes.html#string\&quot;&gt;string&lt;/a&gt;&lt;br/&gt;(&lt;a href=\&quot;https://hl7.org/fhir/R5/search.html#string\&quot;&gt;string&lt;/a&gt;)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;The aera in which a healthcare service should be offered can be provided as search parameter. For that purpose the zip code(s) shall be used.&lt;/p&gt;\n&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;healthcareService-availability&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..*&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R5/metadatatypes.html#Availability\&quot;&gt;Availability&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;The desired availabilities for the healthcare service.&lt;/p&gt;\n&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;OUT&lt;/td&gt;&lt;td&gt;result&lt;/td&gt;&lt;td/&gt;&lt;td&gt;1..1&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R5/bundle.html\&quot;&gt;Bundle&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;The response will be a Bundle consisting of the HealthcareService resource and a list of healthcare service providers (Organization, Practitioner, PractitionerRole) that offer the requested service and an OperationOutcome with errors, warnings or information as a result of processing the operation.&lt;/p&gt;\n&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"
   },
-  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.url">url</a>" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/healthcareService-provider-find",
-  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.version">version</a>" : "0.2.0",
-  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.name">name</a>" : "Find_HealthcareService_Provider",
-  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.status">status</a>" : "active",
-  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.kind">kind</a>" : "operation",
-  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.date">date</a>" : "2025-11-19T13:03:45+00:00",
-  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.publisher">publisher</a>" : "HL7® Austria, TC FHIR®",
-  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.description">description</a>" : "A query operation that allows to search for healthcare service providers that offer a specific healthcare service. The general information about the HealthcareService identification itself is already available in advance, either as resource or via codes. ",
-  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.affectsState">affectsState</a>" : false,
-  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.code">code</a>" : "findHSP",
-  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.resource">resource</a>" : [
+  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.url">url</a>" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/healthcareService-provider-find",
+  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.version">version</a>" : "0.2.0",
+  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.name">name</a>" : "Find_HealthcareService_Provider",
+  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.status">status</a>" : "active",
+  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.kind">kind</a>" : "operation",
+  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.date">date</a>" : "2026-01-12T10:11:28+00:00",
+  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.publisher">publisher</a>" : "HL7® Austria, TC FHIR®",
+  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.description">description</a>" : "A query operation that allows to search for healthcare service providers that offer a specific healthcare service. The general information about the HealthcareService identification itself is already available in advance, either as resource or via codes. ",
+  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.affectsState">affectsState</a>" : false,
+  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.code">code</a>" : "findHSP",
+  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.resource">resource</a>" : [
     "HealthcareService"
   ],
-  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.system">system</a>" : false,
-  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.type">type</a>" : true,
-  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.instance">instance</a>" : false,
-  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter">parameter</a>" : [
+  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.system">system</a>" : false,
+  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.type">type</a>" : true,
+  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.instance">instance</a>" : false,
+  "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter">parameter</a>" : [
     {
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.name">name</a>" : "healthcareService-reference",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.use">use</a>" : "in",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.min">min</a>" : 0,
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.max">max</a>" : "1",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>" : "The full HealthcareService resource can be provided for this operation. The HealthcareService SHALL be active (HealthcareService.active=true). ",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.type">type</a>" : "Reference",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.targetProfile">targetProfile</a>" : [
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.name">name</a>" : "healthcareService-reference",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.use">use</a>" : "in",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.min">min</a>" : 0,
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.max">max</a>" : "1",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.documentation">documentation</a>" : "The full HealthcareService resource can be provided for this operation. The HealthcareService SHALL be active (HealthcareService.active=true). ",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.type">type</a>" : "Reference",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.targetProfile">targetProfile</a>" : [
         <a href="StructureDefinition-at-scheduling-healthcareservice.html" style="color: Maroon">&#x1F517;</a> "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice"
       ]
     },
     {
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.name">name</a>" : "healthcareService-category",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.use">use</a>" : "in",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.min">min</a>" : 0,
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.max">max</a>" : "1",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>" : "The code of the category of the healthcare service. Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `healthcareService-category=[system]|[code]`. See the examples below for how this is implemented.",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.type">type</a>" : "string",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.searchType">searchType</a>" : "token"
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.name">name</a>" : "healthcareService-category",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.use">use</a>" : "in",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.min">min</a>" : 0,
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.max">max</a>" : "1",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.documentation">documentation</a>" : "The code of the category of the healthcare service. Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `healthcareService-category=[system]|[code]`. See the examples below for how this is implemented.",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.type">type</a>" : "string",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.searchType">searchType</a>" : "token"
     },
     {
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.name">name</a>" : "healthcareService-type",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.use">use</a>" : "in",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.min">min</a>" : 0,
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.max">max</a>" : "1",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>" : "The code of the type of the healthcare service. Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `healthcareService-type=[system]|[code]`. See the examples below for how this is implemented.",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.type">type</a>" : "string",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.searchType">searchType</a>" : "token"
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.name">name</a>" : "healthcareService-type",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.use">use</a>" : "in",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.min">min</a>" : 0,
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.max">max</a>" : "1",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.documentation">documentation</a>" : "The code of the type of the healthcare service. Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `healthcareService-type=[system]|[code]`. See the examples below for how this is implemented.",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.type">type</a>" : "string",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.searchType">searchType</a>" : "token"
     },
     {
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.name">name</a>" : "healthcareService-specialty",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.use">use</a>" : "in",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.min">min</a>" : 0,
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.max">max</a>" : "1",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>" : "The code of the specialty of the healthcare service. Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `healthcareService-specialty=[system]|[code]`. See the examples below for how this is implemented.",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.type">type</a>" : "string",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.searchType">searchType</a>" : "token"
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.name">name</a>" : "healthcareService-specialty",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.use">use</a>" : "in",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.min">min</a>" : 0,
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.max">max</a>" : "1",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.documentation">documentation</a>" : "The code of the specialty of the healthcare service. Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `healthcareService-specialty=[system]|[code]`. See the examples below for how this is implemented.",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.type">type</a>" : "string",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.searchType">searchType</a>" : "token"
     },
     {
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.name">name</a>" : "healthcareService-location",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.use">use</a>" : "in",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.min">min</a>" : 0,
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.max">max</a>" : "*",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>" : "The (physical) location where a healthcare service should be provided can be used as a search parameter.",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.type">type</a>" : "Reference",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.targetProfile">targetProfile</a>" : [
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.name">name</a>" : "healthcareService-location",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.use">use</a>" : "in",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.min">min</a>" : 0,
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.max">max</a>" : "*",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.documentation">documentation</a>" : "The (physical) location where a healthcare service should be provided can be used as a search parameter.",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.type">type</a>" : "Reference",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.targetProfile">targetProfile</a>" : [
         <a href="http://hl7.org/fhir/R5/location.html" style="color: Maroon">&#x1F517;</a> "http://hl7.org/fhir/StructureDefinition/Location"
       ]
     },
     {
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.name">name</a>" : "healthcareService-zipCodeArea",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.use">use</a>" : "in",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.min">min</a>" : 0,
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.max">max</a>" : "*",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>" : "The aera in which a healthcare service should be offered can be provided as search parameter. For that purpose the zip code(s) shall be used.",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.type">type</a>" : "string",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.searchType">searchType</a>" : "string"
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.name">name</a>" : "healthcareService-zipCodeArea",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.use">use</a>" : "in",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.min">min</a>" : 0,
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.max">max</a>" : "*",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.documentation">documentation</a>" : "The aera in which a healthcare service should be offered can be provided as search parameter. For that purpose the zip code(s) shall be used.",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.type">type</a>" : "string",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.searchType">searchType</a>" : "string"
     },
     {
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.name">name</a>" : "healthcareService-availability",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.use">use</a>" : "in",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.min">min</a>" : 0,
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.max">max</a>" : "*",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>" : "The desired availabilities for the healthcare service. ",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.type">type</a>" : "Availability"
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.name">name</a>" : "healthcareService-availability",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.use">use</a>" : "in",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.min">min</a>" : 0,
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.max">max</a>" : "*",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.documentation">documentation</a>" : "The desired availabilities for the healthcare service. ",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.type">type</a>" : "Availability"
     },
     {
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.name">name</a>" : "result",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.use">use</a>" : "out",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.min">min</a>" : 1,
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.max">max</a>" : "1",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>" : "The response will be a Bundle consisting of the HealthcareService resource and a list of healthcare service providers (Organization, Practitioner, PractitionerRole) that offer the requested service and an OperationOutcome with errors, warnings or information as a result of processing the operation.",
-      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#OperationDefinition.parameter.type">type</a>" : "Bundle"
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.name">name</a>" : "result",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.use">use</a>" : "out",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.min">min</a>" : 1,
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.max">max</a>" : "1",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.documentation">documentation</a>" : "The response will be a Bundle consisting of the HealthcareService resource and a list of healthcare service providers (Organization, Practitioner, PractitionerRole) that offer the requested service and an OperationOutcome with errors, warnings or information as a result of processing the operation.",
+      "<a href="http://hl7.org/fhir/R5/operationdefinition.html#XOperationDefinition.parameter.type">type</a>" : "Bundle"
     }
   ]
 }</code></pre>
@@ -317,7 +319,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.tc.wg.scheduling.r5#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Wed, Nov 19, 2025 13:03+0000">2025-11-19</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.tc.wg.scheduling.r5#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Mon, Jan 12, 2026 10:11+0000">2026-01-12</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

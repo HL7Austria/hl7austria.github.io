@@ -9,12 +9,10 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ActorDefinition/at-scheduling-actor-scheduling-client | *Version*:0.2.0 | |
-| Draft as of 2025-11-19 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*: |
+| Draft as of 2026-01-12 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*: |
 
  
 A system consuming the FHIR API provided by a Scheduling Server 
-
-* **Actor: null**: A Scheduling Client requests data relevant to appointment scheduling (Healthcare Service Providers, Healthcare Services, available time slots, etc.) using parameters from a Scheduling Server and books/edits/cancels appointments for a specific patient.
 
 
 
@@ -28,7 +26,7 @@ A system consuming the FHIR API provided by a Scheduling Server
   "version" : "0.2.0",
   "title" : "HL7® AT Scheduling Client ActorDefinition",
   "status" : "draft",
-  "date" : "2025-11-19T13:03:45+00:00",
+  "date" : "2026-01-12T10:11:28+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "A system consuming the FHIR API provided by a Scheduling Server",
   "type" : "system",

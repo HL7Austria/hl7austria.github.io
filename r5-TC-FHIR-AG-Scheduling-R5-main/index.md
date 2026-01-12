@@ -47,7 +47,7 @@ This Implementation Guide contains and references intellectual property owned by
   "version" : "0.2.0",
   "name" : "TCFHIRAGSchedulingR5",
   "status" : "draft",
-  "date" : "2025-11-19T13:03:45+00:00",
+  "date" : "2026-01-12T10:11:28+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "packageId" : "hl7.at.fhir.tc.wg.scheduling.r5",
   "license" : "CC0-1.0",
@@ -63,7 +63,7 @@ This Implementation Guide contains and references intellectual property owned by
       ],
       "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
       "packageId" : "hl7.terminology.r5",
-      "version" : "7.0.0"
+      "version" : "7.0.1"
     },
     {
       "id" : "hl7ext",
@@ -88,7 +88,7 @@ This Implementation Guide contains and references intellectual property owned by
     "extension" : [
       {
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-        "valueCode" : "hl7.fhir.uv.tools.r5#0.8.0"
+        "valueCode" : "hl7.fhir.uv.tools.r5#0.9.0"
       }
     ],
     "resource" : [
