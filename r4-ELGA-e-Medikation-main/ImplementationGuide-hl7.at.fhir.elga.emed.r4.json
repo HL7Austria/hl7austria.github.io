@@ -10,7 +10,7 @@
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4)",
   "status" : "draft",
-  "date" : "2025-12-30T16:45:16+00:00",
+  "date" : "2026-01-13T12:36:36+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -52,22 +52,40 @@
     "version" : "5.2.0"
   },
   {
-    "id" : "hl7_fhir_uv_ips",
-    "uri" : "http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips",
-    "packageId" : "hl7.fhir.uv.ips",
-    "version" : "current"
-  },
-  {
-    "id" : "hl7_fhir_uv_ipa",
-    "uri" : "http://hl7.org/fhir/uv/ipa/ImplementationGuide/hl7.fhir.uv.ipa",
-    "packageId" : "hl7.fhir.uv.ipa",
-    "version" : "1.1.0"
+    "id" : "hl7_fhir_eu_mpd",
+    "uri" : "http://hl7.eu/fhir/mpd/ImplementationGuide/hl7.fhir.eu.mpd",
+    "packageId" : "hl7.fhir.eu.mpd",
+    "version" : "0.1.0-ballot"
   },
   {
     "id" : "hl7_at_fhir_core_r4",
     "uri" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/ImplementationGuide/hl7.at.fhir.core.r4",
     "packageId" : "hl7.at.fhir.core.r4",
     "version" : "2.0.0"
+  },
+  {
+    "id" : "ihe_pharm_mpd_r4",
+    "uri" : "https://profiles.ihe.net/PHARM/MPD",
+    "packageId" : "ihe.pharm.mpd.r4",
+    "version" : "1.0.0-comment-2"
+  },
+  {
+    "id" : "hl7_fhir_eu_extensions_r4",
+    "uri" : "http://hl7.eu/fhir/extensions",
+    "packageId" : "hl7.fhir.eu.extensions.r4",
+    "version" : "0.1.1-ballot"
+  },
+  {
+    "id" : "hl7_fhir_eu_base",
+    "uri" : "http://hl7.eu/fhir/base/ImplementationGuide/hl7.fhir.eu.base",
+    "packageId" : "hl7.fhir.eu.base",
+    "version" : "0.1.0-ballot"
+  },
+  {
+    "id" : "hl7_at_fhir_elga_aps_r4",
+    "uri" : "https://github.com/HL7Austria/<repo>/tree/main/package",
+    "packageId" : "hl7.at.fhir.elga.aps.r4",
+    "version" : "current"
   }],
   "definition" : {
     "extension" : [{
@@ -625,6 +643,78 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     }],
     "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Medication"
+      }],
+      "reference" : {
+        "reference" : "Medication/AtEmedMedicationExample01"
+      },
+      "name" : "AtEmedMedication-Beispiel",
+      "description" : "Medication",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationDispense"
+      }],
+      "reference" : {
+        "reference" : "MedicationDispense/AtEmedExampleMedicationDispense01"
+      },
+      "name" : "AtEmedMedicationDispense-Beispiel",
+      "description" : "Medication Dispense",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationdispense"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/AtEmedExampleMedicationRequest01"
+      },
+      "name" : "AtEmedMedicationRequest-Beispiel",
+      "description" : "Medication Request",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-emed-medication"
+      },
+      "name" : "ELGA e-Medikation Medication",
+      "description" : "**Description:** In the course of treatment, the doctor determines that the ELGA participant must be prescribed one or more medicines. A MedicationRequest always consists of exactly one medication (= one medicine). The e-Medication prescription can consist of several MedicationRequests and thus forms a grouping over them. The prescription and it's MedicationRequests are labelled with one unique, common eMED ID. The doctor is responsible for checking the medicines, e.g. for potential interactions, contraindications, dosages, etc. and this is not part of e-Medication. Storing requests without assigning a prescription is not valid. The prescription is considered to have been checked if the associated prescription is saved in e-Medication.\n\n**Beschreibung:** \nIm Zuge der Behandlung verordnet der GDA dem ELGA Teilnehmer ein Arzneimittel und erstellt einen Medikationsplaneintrag (MedicationRequest).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-emed-medicationdispense"
+      },
+      "name" : "ELGA e-Medikation MedicationDispense",
+      "description" : "TODO",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-emed-medicationrequest"
+      },
+      "name" : "ELGA e-Medikation MedicationRequest",
+      "description" : "**Description:** In the course of treatment, the doctor determines that the ELGA participant must be prescribed one or more medicines. A MedicationRequest always consists of exactly one medication (= one medicine). The e-Medication prescription can consist of several MedicationRequests and thus forms a grouping over them. The prescription and it's MedicationRequests are labelled with one unique, common eMED ID. The doctor is responsible for checking the medicines, e.g. for potential interactions, contraindications, dosages, etc. and this is not part of e-Medication. Storing requests without assigning a prescription is not valid. The prescription is considered to have been checked if the associated prescription is saved in e-Medication.\n\n**Beschreibung:** \nIm Zuge der Behandlung verordnet der GDA dem ELGA Teilnehmer ein Arzneimittel und erstellt einen Medikationsplaneintrag (MedicationRequest).",
+      "exampleBoolean" : false
+    },
+    {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"

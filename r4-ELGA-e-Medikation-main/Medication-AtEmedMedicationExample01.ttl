@@ -1,0 +1,70 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/emed/r4/Medication/AtEmedMedicationExample01> a fhir:Medication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "AtEmedMedicationExample01"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"^^xsd:anyURI ;
+       fhir:l <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Medication AtEmedMedicationExample01</b></p><a name=\"AtEmedMedicationExample01\"> </a><a name=\"hcAtEmedMedicationExample01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-emed-medication.html\">ELGA e-Medikation Medication</a></p></div><p><b>code</b>: <span title=\"Codes:{http://www.whocc.no/atc C09AA05}\">Ramipril 5mg Kapseln</span></p><p><b>status</b>: Active</p><p><b>manufacturer</b>: <a href=\"Organization/AtApsExampleOrganization01\">Amadeus Spital</a></p><h3>Ingredients</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Item[x]</b></td><td><b>IsActive</b></td><td><b>Strength</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Medication/AtApsExampleMedication01\">Ramipril Wirkstoff</a></td><td>true</td><td>500 mg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemg = 'mg')</span>/1 Kapsel<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://www.whocc.no/atc"^^xsd:anyURI ;
+         fhir:l <http://www.whocc.no/atc>
+       ] ;
+       fhir:code [ fhir:v "C09AA05" ] ;
+       fhir:display [ fhir:v "Ramipril" ]
+     ] ) ;
+     fhir:text [ fhir:v "Ramipril 5mg Kapseln" ]
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:manufacturer [
+     fhir:l <https://fhir.hl7.at/elga/emed/r4/Organization/AtApsExampleOrganization01> ;
+     fhir:reference [ fhir:v "Organization/AtApsExampleOrganization01" ] ;
+     fhir:display [ fhir:v "Amadeus Spital" ]
+  ] ; # 
+  fhir:ingredient ( [
+     fhir:item [
+       a fhir:Reference ;
+       fhir:l <https://fhir.hl7.at/elga/emed/r4/Medication/AtApsExampleMedication01> ;
+       fhir:reference [ fhir:v "Medication/AtApsExampleMedication01" ] ;
+       fhir:display [ fhir:v "Ramipril Wirkstoff" ]
+     ] ;
+     fhir:isActive [ fhir:v true ] ;
+     fhir:strength [
+       fhir:numerator [
+         fhir:value [ fhir:v "500"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "mg" ] ;
+         fhir:system [
+           fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+           fhir:l <http://unitsofmeasure.org>
+         ] ;
+         fhir:code [ fhir:v "mg" ]
+       ] ;
+       fhir:denominator [
+         fhir:value [ fhir:v "1"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "Kapsel" ] ;
+         fhir:system [
+           fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+           fhir:l <http://unitsofmeasure.org>
+         ] ;
+         fhir:code [ fhir:v "1" ]
+       ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

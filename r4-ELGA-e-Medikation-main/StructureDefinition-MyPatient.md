@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/MyPatient | *Version*:0.1.1 | |
-| Draft as of 2025-12-30 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:MyPatient |
+| Draft as of 2026-01-13 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:MyPatient |
 
  
 An example profile of the Patient resource. 
@@ -40,7 +40,7 @@ Other representations of profile: [CSV](StructureDefinition-MyPatient.csv), [Exc
   "version" : "0.1.1",
   "name" : "MyPatient",
   "status" : "draft",
-  "date" : "2025-12-30T16:45:16+00:00",
+  "date" : "2026-01-13T12:36:36+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
