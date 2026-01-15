@@ -33,7 +33,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4)",
   "status" : "draft",
-  "date" : "2026-01-13T12:36:36+00:00",
+  "date" : "2026-01-15T19:11:07+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -98,26 +98,8 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "version" : "2.0.0"
     },
     {
-      "id" : "ihe_pharm_mpd_r4",
-      "uri" : "https://profiles.ihe.net/PHARM/MPD",
-      "packageId" : "ihe.pharm.mpd.r4",
-      "version" : "1.0.0-comment-2"
-    },
-    {
-      "id" : "hl7_fhir_eu_extensions_r4",
-      "uri" : "http://hl7.eu/fhir/extensions",
-      "packageId" : "hl7.fhir.eu.extensions.r4",
-      "version" : "0.1.1-ballot"
-    },
-    {
-      "id" : "hl7_fhir_eu_base",
-      "uri" : "http://hl7.eu/fhir/base/ImplementationGuide/hl7.fhir.eu.base",
-      "packageId" : "hl7.fhir.eu.base",
-      "version" : "0.1.0-ballot"
-    },
-    {
       "id" : "hl7_at_fhir_elga_aps_r4",
-      "uri" : "https://github.com/HL7Austria/<repo>/tree/main/package",
+      "uri" : "https://fhir.hl7.at/elga/aps/r4/ImplementationGuide/hl7.at.fhir.elga.aps.r4",
       "packageId" : "hl7.at.fhir.elga.aps.r4",
       "version" : "current"
     }
@@ -784,14 +766,41 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "extension" : [
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "Patient"
+          }
+        ],
+        "reference" : {
+          "reference" : "Patient/AtEmedExamplePatient01"
+        },
+        "name" : "AtEmedExamplePatient01",
+        "exampleBoolean" : true
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "List"
+          }
+        ],
+        "reference" : {
+          "reference" : "List/AtEmedExampleListMedikationsplan01"
+        },
+        "name" : "AtEmedListMedikationsplan-Beispiel",
+        "description" : "AtEmedListMedikationsplan-Beispiel",
+        "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString" : "Medication"
           }
         ],
         "reference" : {
-          "reference" : "Medication/AtEmedMedicationExample01"
+          "reference" : "Medication/AtEmedMedicationExampleCefuroxime"
         },
         "name" : "AtEmedMedication-Beispiel",
-        "description" : "Medication",
+        "description" : "AtEmedMedication-Beispiel",
         "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"
       },
       {
@@ -816,11 +825,53 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           }
         ],
         "reference" : {
-          "reference" : "MedicationRequest/AtEmedExampleMedicationRequest01"
+          "reference" : "MedicationRequest/AtEmedExampleMedicationRequestGeplanteAbgabe01"
         },
-        "name" : "AtEmedMedicationRequest-Beispiel",
-        "description" : "Medication Request",
-        "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest"
+        "name" : "AtEmedMedicationRequestGeplanteAbgabe-Beispiel",
+        "description" : "AtEmedMedicationRequestGeplanteAbgabe-Beispiel",
+        "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-geplanteAbgabe"
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "MedicationRequest"
+          }
+        ],
+        "reference" : {
+          "reference" : "MedicationRequest/AtEmedExampleMedicationRequestPlaneintrag01"
+        },
+        "name" : "AtEmedMedicationRequestPlaneintrag-Beispiel",
+        "description" : "AtEmedMedicationRequestPlaneintrag-Beispiel",
+        "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-planeintrag"
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "StructureDefinition:resource"
+          }
+        ],
+        "reference" : {
+          "reference" : "StructureDefinition/at-emed-medicationdispense"
+        },
+        "name" : "ELGA e-Medikation Abgabe",
+        "description" : "Abgabe",
+        "exampleBoolean" : false
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "StructureDefinition:resource"
+          }
+        ],
+        "reference" : {
+          "reference" : "StructureDefinition/at-emed-medicationrequest-geplanteAbgabe"
+        },
+        "name" : "ELGA e-Medikation geplante Abgabe",
+        "description" : "**Beschreibung:**Bildet eine geplante Abgabe eines Arzneimittels aus dem entsprechendem Medikationsplaneintrag des ELGA Teilnehmers ab (Rezeptierung). Sie enthält das verordnetes Arzneimittel und dessen Dosierung, der Status ist bei Ausstellung aktiv. \nAls groupIdentifier dient die eMED-ID, die auch im e-Rezept mitgeführt wird.\nWerden mehrere Arzneimittel gleichzeitig verordnet, so wird für jedes Arzneimittel eine eigene geplante Abgabe erstellt, der groupIdentifier ist aber für diese geplanten Abgaben gleich (Bildet 'Rezept-Klammer').",
+        "exampleBoolean" : false
       },
       {
         "extension" : [
@@ -833,7 +884,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "reference" : "StructureDefinition/at-emed-medication"
         },
         "name" : "ELGA e-Medikation Medication",
-        "description" : "**Description:** In the course of treatment, the doctor determines that the ELGA participant must be prescribed one or more medicines. A MedicationRequest always consists of exactly one medication (= one medicine). The e-Medication prescription can consist of several MedicationRequests and thus forms a grouping over them. The prescription and it's MedicationRequests are labelled with one unique, common eMED ID. The doctor is responsible for checking the medicines, e.g. for potential interactions, contraindications, dosages, etc. and this is not part of e-Medication. Storing requests without assigning a prescription is not valid. The prescription is considered to have been checked if the associated prescription is saved in e-Medication.\n\n**Beschreibung:** \nIm Zuge der Behandlung verordnet der GDA dem ELGA Teilnehmer ein Arzneimittel und erstellt einen Medikationsplaneintrag (MedicationRequest).",
+        "description" : "Arzneimittel",
         "exampleBoolean" : false
       },
       {
@@ -844,10 +895,10 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           }
         ],
         "reference" : {
-          "reference" : "StructureDefinition/at-emed-medicationdispense"
+          "reference" : "StructureDefinition/at-emed-list-medikationsplan"
         },
-        "name" : "ELGA e-Medikation MedicationDispense",
-        "description" : "TODO",
+        "name" : "ELGA e-Medikation Medikationsplan",
+        "description" : "**Beschreibung:** Bildet den Medikationsplan eines ELGA Teilnehmers ab. Enthält verordnete Arzneimittel und deren Dosierung in Form von 0..* Medikationsplaneinträgen (AtEmedMedicationRequestPlaneintrag).",
         "exampleBoolean" : false
       },
       {
@@ -858,39 +909,11 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           }
         ],
         "reference" : {
-          "reference" : "StructureDefinition/at-emed-medicationrequest"
+          "reference" : "StructureDefinition/at-emed-medicationrequest-planeintrag"
         },
-        "name" : "ELGA e-Medikation MedicationRequest",
-        "description" : "**Description:** In the course of treatment, the doctor determines that the ELGA participant must be prescribed one or more medicines. A MedicationRequest always consists of exactly one medication (= one medicine). The e-Medication prescription can consist of several MedicationRequests and thus forms a grouping over them. The prescription and it's MedicationRequests are labelled with one unique, common eMED ID. The doctor is responsible for checking the medicines, e.g. for potential interactions, contraindications, dosages, etc. and this is not part of e-Medication. Storing requests without assigning a prescription is not valid. The prescription is considered to have been checked if the associated prescription is saved in e-Medication.\n\n**Beschreibung:** \nIm Zuge der Behandlung verordnet der GDA dem ELGA Teilnehmer ein Arzneimittel und erstellt einen Medikationsplaneintrag (MedicationRequest).",
+        "name" : "ELGA e-Medikation Planeintrag",
+        "description" : "**Beschreibung:** Bildet einen Eintrag eines Medikationsplans eines ELGA Teilnehmers ab. Er enthält genau ein verordnetes Arzneimittel und dessen Dosierung. Dient in weiterer Folge dazu, eine geplante Abgabe zu erstellen (AtEmedMedicationRequestGeplanteAbgabe).",
         "exampleBoolean" : false
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:resource"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/MyPatient"
-        },
-        "name" : "MyPatient",
-        "description" : "An example profile of the Patient resource.",
-        "exampleBoolean" : false
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Patient"
-          }
-        ],
-        "reference" : {
-          "reference" : "Patient/PatientExample"
-        },
-        "name" : "PatientExample",
-        "description" : "An example of a patient with a license to krill.",
-        "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/MyPatient"
       }
     ],
     "page" : {
@@ -923,7 +946,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
             }
           ],
           "nameUrl" : "requirements.html",
-          "title" : "Die \"e-Medikation\"",
+          "title" : "Die 'e-Medikation'",
           "generation" : "markdown"
         },
         {
@@ -952,11 +975,55 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
               "extension" : [
                 {
                   "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-                  "valueUrl" : "UC_DiMe_05.html"
+                  "valueUrl" : "UC_eMed_05.html"
                 }
               ],
-              "nameUrl" : "UC_DiMe_05.html",
-              "title" : "UC_DiMe_05 - Medikationsplan lesen",
+              "nameUrl" : "UC_eMed_05.html",
+              "title" : "UC_eMed_05 - Medikationsplan lesen",
+              "generation" : "markdown"
+            },
+            {
+              "extension" : [
+                {
+                  "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                  "valueUrl" : "UC_eMed_06.html"
+                }
+              ],
+              "nameUrl" : "UC_eMed_06.html",
+              "title" : "UC_eMed_06 - Medikationsplan schreiben",
+              "generation" : "markdown"
+            },
+            {
+              "extension" : [
+                {
+                  "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                  "valueUrl" : "UC_eMed_07.html"
+                }
+              ],
+              "nameUrl" : "UC_eMed_07.html",
+              "title" : "UC_eMed_07 - Geplante und durchgeführte Abgaben lesen",
+              "generation" : "markdown"
+            },
+            {
+              "extension" : [
+                {
+                  "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                  "valueUrl" : "UC_eMed_08.html"
+                }
+              ],
+              "nameUrl" : "UC_eMed_08.html",
+              "title" : "UC_eMed_08 - Geplante Abgabe schreiben",
+              "generation" : "markdown"
+            },
+            {
+              "extension" : [
+                {
+                  "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                  "valueUrl" : "UC_eMed_09.html"
+                }
+              ],
+              "nameUrl" : "UC_eMed_09.html",
+              "title" : "UC_eMed_09 - Durchgeführte Abgabe schreiben",
               "generation" : "markdown"
             },
             {

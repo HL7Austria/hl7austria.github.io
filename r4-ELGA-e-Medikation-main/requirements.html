@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>HL7.AT.FHIR.ELGA.EMED.R4\Die &quot;e-Medikation&quot; - FHIR® v4.0.1</title>
+    <title>HL7.AT.FHIR.ELGA.EMED.R4\Die &#39;e-Medikation&#39; - FHIR® v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -107,10 +107,22 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="anwendungsfaelle.html">Überblick &amp; Sunshine Case</a>
+        <a href="anwendungsfaelle.html">Überblick</a>
       </li>
       <li>
-        <a href="UC_DiMe_05.html">UC_DiMe_05 - Medikationsplan lesen</a>
+        <a href="UC_eMed_05.html">UC_eMed_05 Medikationsplan lesen</a>
+      </li>
+      <li>
+        <a href="UC_eMed_06.html">UC_eMed_06 Medikationsplan schreiben</a>
+      </li>
+      <li>
+        <a href="UC_eMed_07.html">UC_eMed_07 Geplante und durchgeführte Abgaben lesen</a>
+      </li>
+      <li>
+        <a href="UC_eMed_08.html">UC_eMed_08 Geplante Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="UC_eMed_09.html">UC_eMed_09 Durchgeführte Abgabe schreiben</a>
       </li>
     </ul>
   </li>
@@ -129,7 +141,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Die &quot;e-Medikation&quot;</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Die 'e-Medikation'</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -154,7 +166,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <!--ReleaseHeader--><p id="publish-box">ELGA e-Medikation (R4) - Local Development build (v0.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/emed/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   </div>
   <!-- at-fhir-ig-template end -->
-  <h2>Die &quot;e-Medikation&quot;</h2>
+  <h2>Die &#39;e-Medikation&#39;</h2>
   
 
 
@@ -169,7 +181,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="markdown-toc">
 <ul id="markdown-toc">
   <li><a href="#die-e-medikation" id="markdown-toc-die-e-medikation">Die e-Medikation</a></li>
-  <li><a href="#der-e-medikationsplan" id="markdown-toc-der-e-medikationsplan">Der e-Medikationsplan</a></li>
   <li><a href="#die-e-abgabe" id="markdown-toc-die-e-abgabe">Die e-Abgabe</a></li>
 </ul>
 
@@ -241,14 +252,191 @@ width: 100%;}
 
 <h3 id="die-e-medikation">Die e-Medikation</h3>
 
-<h3 id="der-e-medikationsplan">Der e-Medikationsplan</h3>
+<h4 id="der-e-medikationsplan">Der e-Medikationsplan</h4>
 
-<!-- Inhalt des Medikationsplans
-Der Medikationsplan enthält folgende Informationen:
-•	alle ärztlich verordneten Medikamente samt Einnahmeinformation, die von der:dem Bürger:in aktuell eingenommen werden sollen. Jeder Medikationsplaneintrag wird von einem GDA medizinisch verantwortet. Dabei nimmt der GDA die übrigen vorbestehenden Einträge lediglich zur Kenntnis, d.h. er verantwortet nur die Verträglichkeit der neu hinzugefügten Medikation mit der bestehenden.  
-•	Die Einträge im Medikationsplan können von GDA gereiht werden. Dies geschieht in der Praxis insbesondere, um eine fachlich sinnvolle Gruppierung von Medikamenten vorzunehmen und dient der Übersichtlichkeit. Beim Lesen kann diese Reihenfolge berücksichtigt werden. Einer anderen Reihung durch das jeweilige Client-System steht aber grundsätzlich nichts entgegen. -->
+<p><strong>Inhalt des Medikationsplans</strong></p>
+<ul>
+  <li>Der Medikationsplan besteht aus einzelnen Medikationsplaneinträgen</li>
+  <li>Angezeigt wird immer die zuletzt gespeicherte Version des Medikationsplans:
+    <ul>
+      <li>Medikamente deren Einnahmezeitraum abgelaufen ist, werden per Default ausgeblendet</li>
+      <li>zusätzliche Gesamtansicht: alle initial enthaltenen Einträge sind sichtbar, auch wenn diese bereits abgelaufen sind</li>
+      <li>noch offen: Hinweise nach erfolgten Löschungen von Medikationsplaneinträgen durch ELGA-Teilnehmer</li>
+      <li>frühere Gesamtversionen des Medikationsplans sind über die Versionshistorie einsehbar</li>
+    </ul>
+  </li>
+  <li>Einträge können von GDA in eine bestimmte Reihenfolge gebracht werden, z.B. zur fachlich sinnvollen Gruppierung und besseren Übersicht
+    <ul>
+      <li>Lesende Systeme können diese Reihenfolge nutzen, dürfen aber bei Bedarf eine andere Reihung vornehmen</li>
+    </ul>
+  </li>
+  <li>Einzelne Einträgen können Korrekturvermerke (inkl. Freitext) enthalten und müssen dem:der Benutzer:in angezeigt werden, (z.B. bei Signatur- oder Dosisänderungen vgl. UC_DiMe_06 Medikationsplan schreiben)</li>
+  <li>Je Medikationsplaneintrag werden folgende Information dargestellt:
+    <ul>
+      <li>Verantwortlicher GDA</li>
+      <li>Einnahmeinformation</li>
+      <li>Zugehörige geplante Abgaben</li>
+      <li>Zugehörige durchgeführte Abgaben
+        <ul>
+          <li>inkl. Abgaben von Substitutionen durch andere Arzneimittel(/“aut idem“) und</li>
+          <li>„Leerabgaben“. (Leerabgaben kennzeichnen, dass eine ursprünglich geplante Abgabe künftig nicht mehr bedient werden wird)</li>
+          <li>noch offen: abgelaufene Rezepte</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Fachlich kann es sinnvoll sein, zusätzlich zum aktuellen Medikationsplan auch Abgaben darzustellen, die nicht auf den aktuellen Medikationsplan referenzieren (z.B. OTC-Abgaben oder Abgaben bei fehlender ELGA-Anbindung verschreibender GDA), die seit der letzten Version des Medikationsplans neu hinzugekommen sind; dadurch erhält der GDA ein möglichst vollständiges Bild der tatsächlichen Medikation</li>
+  <li>Filter- und Suchfunktionen können hilfreich sein (v.a. bei Medikationsplänen, die viele Einträge enthalten)</li>
+</ul>
+
+<p><strong>Ansicht von Vorversionen</strong></p>
+<ul>
+  <li>Alle Vorversionen des Medikationsplans können eingesehen werden
+    <ul>
+      <li>Vorversionen können in chronologischer Reihenfolge dargestellt werden (absteigend nach Erstellungsdatum)</li>
+      <li>Sofern eine gesamte Version eines Medikationsplans von einem:r ELGA-Teilnehmer:in gelöscht wurde, wird diese nicht mehr in der Historie angezeigt; dies gilt genauso für die zuletzt erfasste Version</li>
+      <li>noch offen: Hinweise nach erfolgten Löschungen von Medikationsplanen durch ELGA-Teilnehmer</li>
+    </ul>
+  </li>
+  <li>Die Ansicht einer Vorversion unterscheidet sich in ihrer Darstellungsform nicht von der zuletzt erfassten Ansicht des Medikationsplans, mit der Ausnahme, dass abgelaufene Medikamente nicht ausgeblendet werden.
+•	Sofern der Medikationsplan eines:einer Patient:in häufigen Anpassungen unterliegt, kann es sinnvoll sein, eine Ansicht zu ermöglichen, die den Zustand des Medikationsplans zu einem bestimmten Zeitpunkt in der Vergangenheit ausgibt</li>
+</ul>
+
+<p><strong>Export des Medikationsplans</strong></p>
+
+<p>Der Medikationsplan soll für ELGA-Teilnehmer:innen im ELGA-Portal sowohl</p>
+<ul>
+  <li>als PDF zum Ausdruck bzw. zur Darstellung in der Druckansicht als auch</li>
+  <li>als strukturierte, maschinenlesbare Daten im FHIR-Format bereitgestellt werden.</li>
+</ul>
+
+<p>Der Medikationsplan soll für GDA im jeweiligen Client-System</p>
+<ul>
+  <li>als PDF zum Ausdruck bzw. zur Darstellung in der Druckansicht verfügbar sein.
+Für den PDF-Export stellt die ELGA GmbH ein Softwaremodul zur Verfügung, welches in den jeweiligen Softwaresystemen eingebunden werden kann. Dieses "FHIR2PDF" Softwaremodul stellt die Funktionen zur Verfügung, um den Medikationsplan als PDF zu exportieren. Das exportierte PDF unter Nutzung des "FHIR2PDF" stellt ein signiertes Dokument dar.</li>
+</ul>
+
+<p><strong>Eigene Ansicht vs. Verwendung des e-Medikation Stylesheets</strong>
+Zur Anzeige des Medikationsplans wird von der ELGA GmbH ein Stylesheet angeboten, welches in den jeweiligen Softwaresystemen eingebunden werden kann.</p>
+<ul>
+  <li>Dieses "e-Medikation Stylesheet" stellt alle notwendigen/vorhanden Informationen dar - Daten zur Person, aktuelle und vergangene Medikationsplaneinträge, geplante und durchgeführte Abgaben, etc.
+Neben der Verwendung des e-Medikation Stylesheets kann auch eine eigene Ansicht des Medikationsplans in den Softwaresystemen umgesetzt werden.</li>
+</ul>
+
+<h4 id="medikationsplan-erfassen">Medikationsplan erfassen</h4>
+
+<p>Ein Medikationsplan besteht aus ein oder mehreren Medikationsplaneinträgen. Jeder Medikationsplaneintrag beinhaltet ein verordnetes Medikament samt Einnahmeinformation, das von der:dem ELGA-Teilnehmer:in aktuell eingenommen werden soll. Zudem enthält der Eintrag die Information, welche:r Ärztin:Arzt diesen medizinisch verantwortet.</p>
+
+<p>Ein Medikationsplan beinhaltet u.a. folgende Informationen:</p>
+<ul>
+  <li>Präparat (PZN, Wirkstoff, Dosierung)</li>
+  <li>Gebrauchsanweisung (Signatur)</li>
+  <li>Einnahmezeitraum (befristet, unbefristet)</li>
+  <li>Verordner:in</li>
+  <li>Hinweise</li>
+  <li>Indikation</li>
+</ul>
+
+<p>Die nachfolgenden Informationen betreffen die Implementierung des Medikationsplans im jeweiligen Client-System.</p>
+
+<ul>
+  <li>Ein Medikationsplan wird initial erstellt (es existieren noch keine Vorversionen):
+    <ul>
+      <li>Neue Einträge hinzufügen:
+        <ul>
+          <li>Manuelles Erfassen neuer Einträge mittels Angabe aller erforderlichen Informationen</li>
+          <li>(optional) Übernahme einer durchgeführten Abgabe ohne zugehörige geplante Abgabe, wobei die Daten vor der Speicherung des Medikationsplaneintrages nochmals verändert werden können</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Ein bereits bestehender Medikationsplan (zuletzt erfasste Medikationsplanversion) wird als Basis für das Erfassen eines neuen Medikationsplans verwendet:
+    <ul>
+      <li>Neue Einträge hinzufügen:
+        <ul>
+          <li>Manuelles Erfassen neuer Einträge mittels Angabe aller erforderlichen Informationen</li>
+          <li>(optional) Übernahme einer durchgeführten Abgabe ohne zugehöriger geplanten Abgabe, wobei die Daten vor der Speicherung des Medikationsplaneintrages nochmals verändert werden können</li>
+        </ul>
+      </li>
+      <li>Bestehende Einträge beibehalten und ggf. verändern
+        <ul>
+          <li>Beibehalten von bestehenden Einträgen der zuletzt erfassten Medikationsplanversion inklusiver aller enthaltenen Korrekturvermerke, wobei die Daten vor der Speicherung des Medikationsplaneintrages nochmals verändert werden können
+            <ul>
+              <li>es können nur sichtbare Einträge übernommen werden, siehe UC_eMed_06_Medikationsplan lesen</li>
+              <li>enthaltene Korrekturvermerke sollen bei der Erfassung eines neuen Medikationsplans zunächst durch den GDA aufgelöst und in der neuen Version berichtigt werden</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Bestehende Einträge entfernen
+    <ul>
+      <li>Der GDA kann bereits bestehende Medikationsplan-Einträge entfernen, im Sinne eines Absetzens bzw. nicht Weiterverordnen in der nächsten Version des Medikationsplans
+        <ul>
+          <li>betrifft nur sichtbare Einträge, siehe UC_eMed_06_Medikationsplan lesen</li>
+        </ul>
+      </li>
+      <li>Beim Erfassen einer neuen Medikationsplanversion stehen die abgelaufenen/befristeten Einträge nicht mehr zur Verfügung</li>
+      <li>(tbd) Medikationsplan leeren: Soll der neue Medikationsplan keine Medikationsplan-Einträge mehr enthalten – sprich der:die Bürger:in soll derzeit keine Medikation mehr einnehmen – muss ein „leerer“ Medikationsplan geschrieben/gespeichert werden. Das bedeutet, dass alle bisherigen Medikamente aus dem Medikationsplan zu entfernen sind (ggf. sind diese bereits abgelaufen und stehen damit für die neue Version des Medikationsplans schon nicht mehr zur Verfügung).</li>
+    </ul>
+  </li>
+  <li>Reihenfolge
+    <ul>
+      <li>Die Reihenfolge der Medikationsplan-Einträge kann definiert/geändert werden. Dies impliziert keine medizinische Verantwortungsübernahme für den jeweiligen umsortierten Eintrag selbst.
+        <ul>
+          <li>die durch die zentrale Anwendung gelieferte Reihenfolge der Medikationsplaneinträge kann genutzt werden oder bei Bedarf kann eine andere Reihung vorgenommen werden</li>
+        </ul>
+      </li>
+      <li>(tbd) aus fachlicher Sicht ist es nicht relevant, ob eine Umsortierung eine neue Version des Medikationsplans erfasst oder nicht; mitgeloggt soll diese Änderung dennoch werden
+        <ul>
+          <li>für die Speicherung einer neuen Reihenfolge wird technisch eine neue Medikationsplanversion benötigt (Änderung der Reihenfolge hat inhaltliche Auswirkungen)</li>
+          <li>soll es möglich sein, dass ein anderer GDA die Reihenfolge nachträglich ändert, obwohl der Medikationsplan nicht von diesem GDA verantwortet wird?</li>
+          <li>ggf. reicht es aus, wenn die Reihenfolge nur einmalig beim Erfassen einer neuen Medikationsplanversion definiert werden kann</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>*Duplikatsprüfung (?) 
+    * sofern sich am Medikationsplan inhaltlich nichts zur Vorversion verändert hat, wird die Speicherung abgelehnt 
+      * veränderte Reihenfolge erzeugt eine neue Version (soll das nachträglich durch andere GDA überhaupt möglich sein oder nur beim Erstellen/Verantworten einer neuen Version – s. oben?) 
+      * eigene Einträge entfernen und in gleicher Form wieder hinzufügen</p>
+
+<h4 id="medikationsplan-korrekturvermerk-setzen">Medikationsplan: Korrekturvermerk setzen</h4>
+
+<ul>
+  <li>Der GDA kann Medikationspläne nachträglich mittels Korrekturvermerk korrigieren, sofern ein oder mehrere Einträge fehlerhaft sind. 
+<strong>Wenn sich die Medikation ändert (Medikament absetzen, Änderung der Einnahmeanordnung, etc.), ist dies über eine neue Version abzubilden und nicht als Korrekturvermerk.</strong></li>
+  <li>Ein Korrekturvermerk beinhaltet folgende Aspekte:
+    <ul>
+      <li>Im Falle einer Korrektur auf Einzeleintragsebene:
+        <ul>
+          <li>zu korrigierender Medikationsplaneintrag wird als inkorrekt markiert</li>
+          <li>es wird ein Freitext-Kommentar als Begründung zum inkorrekten Medikationsplaneintrag erfasst</li>
+        </ul>
+      </li>
+      <li>Im Falle einer Korrektur auf Medikationsplanebene (z.B. aufgrund fehlender Einträge)
+        <ul>
+          <li>es wird ein Freitext-Kommentar als Hinweis auf die fehlende Angabe erfasst</li>
+        </ul>
+      </li>
+      <li>es besteht die Möglichkeit bereits korrigierte Medikationsplaneinträge mit einem weiteren Korrekturvermerk zu versehen. Dabei wird der jeweilige Korrekturvermerk als inkorrekt markiert.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="medikationsplan-gesetzliche-speicherfristen">Medikationsplan: Gesetzliche Speicherfristen</h4>
+
+<p>Medikationspläne werden nach Ablauf der gesetzlichen Speicherfrist gelöscht:</p>
+<ul>
+  <li>120 Jahre nach Geburt</li>
+  <li>30 Jahre nach Sterbedatum</li>
+</ul>
 
 <h3 id="die-e-abgabe">Die e-Abgabe</h3>
+
 
 
 
@@ -268,7 +456,7 @@ Der Medikationsplan enthält folgende Informationen:
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Jan 13, 2026 12:36+0000">2026-01-13</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Jan 15, 2026 19:11+0000">2026-01-15</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

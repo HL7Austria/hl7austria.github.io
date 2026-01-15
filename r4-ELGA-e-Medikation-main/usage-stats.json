@@ -4,10 +4,10 @@
   "fhirVersion": "4.0.1",
   "extensions": [],
   "profiles": {
-    "Patient": [
+    "List": [
       {
-        "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/MyPatient",
-        "title": "MyPatient"
+        "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan",
+        "title": "ELGA e-Medikation Medikationsplan"
       }
     ],
     "Medication": [
@@ -19,31 +19,26 @@
     "MedicationDispense": [
       {
         "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationdispense",
-        "title": "ELGA e-Medikation MedicationDispense"
+        "title": "ELGA e-Medikation Abgabe"
       }
     ],
     "MedicationRequest": [
       {
-        "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest",
-        "title": "ELGA e-Medikation MedicationRequest"
+        "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-geplanteAbgabe",
+        "title": "ELGA e-Medikation geplante Abgabe"
+      },
+      {
+        "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-planeintrag",
+        "title": "ELGA e-Medikation Planeintrag"
       }
     ]
   },
   "usage": {
-    "http://hl7.eu/fhir/StructureDefinition/medication-package-type": [
-      "Medication"
+    "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-ext-address-additionalInformation": [
+      "Patient.address.line"
     ],
-    "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction": [
-      "MedicationDispense"
-    ],
-    "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod": [
-      "MedicationRequest"
-    ],
-    "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction": [
-      "MedicationRequest"
-    ],
-    "http://hl7.org/fhir/StructureDefinition/data-absent-reason": [
-      "MedicationDispense.medication[x]"
+    "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-ext-patient-religion": [
+      "Patient"
     ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
       "StructureDefinition.snapshot.element.constraint"
@@ -57,17 +52,20 @@
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
       "StructureDefinition.snapshot.element.binding"
     ],
-    "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
-      "StructureDefinition.snapshot.element"
+    "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator": [
+      "Patient.address.line"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber": [
+      "Patient.address.line"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName": [
+      "Patient.address.line"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/patient-citizenship": [
+      "Patient"
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
       "StructureDefinition.snapshot.element.type"
-    ],
-    "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy": [
-      "StructureDefinition.snapshot.element.type"
-    ],
-    "http://hl7.org/fhir/tools/StructureDefinition/additional-binding": [
-      "StructureDefinition.snapshot.element.binding"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
       "ImplementationGuide.definition"
@@ -89,32 +87,8 @@
     "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version": [
       "StructureDefinition.snapshot"
     ],
-    "https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-medication-characteristic": [
-      "Medication"
-    ],
     "https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-medication-classification": [
       "Medication"
-    ],
-    "https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-medication-device": [
-      "Medication"
-    ],
-    "https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-medication-productname": [
-      "Medication"
-    ],
-    "https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-medication-sizeofitem": [
-      "Medication"
-    ],
-    "https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-medication-strengthsubstance": [
-      "Medication.ingredient.strength"
-    ],
-    "https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-medication-unitofpresentation": [
-      "Medication"
-    ],
-    "https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-medicationrequest-prescribedQuantity": [
-      "MedicationRequest.dispenseRequest"
-    ],
-    "https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-offLabel": [
-      "MedicationRequest"
     ]
   }
 }

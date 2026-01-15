@@ -13,10 +13,11 @@ These define constraints on FHIR resources for systems conforming to this implem
 
 | | |
 | :--- | :--- |
-| [ELGA e-Medikation Medication](StructureDefinition-at-emed-medication.md) | **Description:**In the course of treatment, the doctor determines that the ELGA participant must be prescribed one or more medicines. A MedicationRequest always consists of exactly one medication (= one medicine). The e-Medication prescription can consist of several MedicationRequests and thus forms a grouping over them. The prescription and it's MedicationRequests are labelled with one unique, common eMED ID. The doctor is responsible for checking the medicines, e.g. for potential interactions, contraindications, dosages, etc. and this is not part of e-Medication. Storing requests without assigning a prescription is not valid. The prescription is considered to have been checked if the associated prescription is saved in e-Medication.**Beschreibung:**Im Zuge der Behandlung verordnet der GDA dem ELGA Teilnehmer ein Arzneimittel und erstellt einen Medikationsplaneintrag (MedicationRequest). |
-| [ELGA e-Medikation MedicationDispense](StructureDefinition-at-emed-medicationdispense.md) | TODO |
-| [ELGA e-Medikation MedicationRequest](StructureDefinition-at-emed-medicationrequest.md) | **Description:**In the course of treatment, the doctor determines that the ELGA participant must be prescribed one or more medicines. A MedicationRequest always consists of exactly one medication (= one medicine). The e-Medication prescription can consist of several MedicationRequests and thus forms a grouping over them. The prescription and it's MedicationRequests are labelled with one unique, common eMED ID. The doctor is responsible for checking the medicines, e.g. for potential interactions, contraindications, dosages, etc. and this is not part of e-Medication. Storing requests without assigning a prescription is not valid. The prescription is considered to have been checked if the associated prescription is saved in e-Medication.**Beschreibung:**Im Zuge der Behandlung verordnet der GDA dem ELGA Teilnehmer ein Arzneimittel und erstellt einen Medikationsplaneintrag (MedicationRequest). |
-| [MyPatient](StructureDefinition-MyPatient.md) | An example profile of the Patient resource. |
+| [ELGA e-Medikation Abgabe](StructureDefinition-at-emed-medicationdispense.md) | Abgabe |
+| [ELGA e-Medikation Medication](StructureDefinition-at-emed-medication.md) | Arzneimittel |
+| [ELGA e-Medikation Medikationsplan](StructureDefinition-at-emed-list-medikationsplan.md) | **Beschreibung:**Bildet den Medikationsplan eines ELGA Teilnehmers ab. Enthält verordnete Arzneimittel und deren Dosierung in Form von 0..* Medikationsplaneinträgen (AtEmedMedicationRequestPlaneintrag). |
+| [ELGA e-Medikation Planeintrag](StructureDefinition-at-emed-medicationrequest-planeintrag.md) | **Beschreibung:**Bildet einen Eintrag eines Medikationsplans eines ELGA Teilnehmers ab. Er enthält genau ein verordnetes Arzneimittel und dessen Dosierung. Dient in weiterer Folge dazu, eine geplante Abgabe zu erstellen (AtEmedMedicationRequestGeplanteAbgabe). |
+| [ELGA e-Medikation geplante Abgabe](StructureDefinition-at-emed-medicationrequest-geplanteAbgabe.md) | **Beschreibung:**Bildet eine geplante Abgabe eines Arzneimittels aus dem entsprechendem Medikationsplaneintrag des ELGA Teilnehmers ab (Rezeptierung). Sie enthält das verordnetes Arzneimittel und dessen Dosierung, der Status ist bei Ausstellung aktiv. Als groupIdentifier dient die eMED-ID, die auch im e-Rezept mitgeführt wird. Werden mehrere Arzneimittel gleichzeitig verordnet, so wird für jedes Arzneimittel eine eigene geplante Abgabe erstellt, der groupIdentifier ist aber für diese geplanten Abgaben gleich (Bildet 'Rezept-Klammer'). |
 
 ### Example: Example Instances 
 
@@ -24,8 +25,10 @@ These are example instances that show what data produced and consumed by systems
 
 | | |
 | :--- | :--- |
-| [AtEmedMedication-Beispiel](Medication-AtEmedMedicationExample01.md) | Medication |
+| [AtEmedExamplePatient01](Patient-AtEmedExamplePatient01.md) |  |
+| [AtEmedListMedikationsplan-Beispiel](List-AtEmedExampleListMedikationsplan01.md) | AtEmedListMedikationsplan-Beispiel |
+| [AtEmedMedication-Beispiel](Medication-AtEmedMedicationExampleCefuroxime.md) | AtEmedMedication-Beispiel |
 | [AtEmedMedicationDispense-Beispiel](MedicationDispense-AtEmedExampleMedicationDispense01.md) | Medication Dispense |
-| [AtEmedMedicationRequest-Beispiel](MedicationRequest-AtEmedExampleMedicationRequest01.md) | Medication Request |
-| [PatientExample](Patient-PatientExample.md) | An example of a patient with a license to krill. |
+| [AtEmedMedicationRequestGeplanteAbgabe-Beispiel](MedicationRequest-AtEmedExampleMedicationRequestGeplanteAbgabe01.md) | AtEmedMedicationRequestGeplanteAbgabe-Beispiel |
+| [AtEmedMedicationRequestPlaneintrag-Beispiel](MedicationRequest-AtEmedExampleMedicationRequestPlaneintrag01.md) | AtEmedMedicationRequestPlaneintrag-Beispiel |
 

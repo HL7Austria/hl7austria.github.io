@@ -6,35 +6,28 @@
 
 ## Example MedicationDispense: AtEmedMedicationDispense-Beispiel
 
-Profile: [ELGA e-Medikation MedicationDispense](StructureDefinition-at-emed-medicationdispense.md)
+Profiles: [ELGA e-Medikation Abgabe](StructureDefinition-at-emed-medicationdispense.md), [MedicationDispense: MPD](http://hl7.eu/fhir/mpd/0.1.0-ballot/StructureDefinition-MedicationDispense-eu-mpd.html)
 
 **status**: Completed
 
-**medication**: [Ramipril 5mg Kapseln](Medication/AtApsExampleMedication01)
+**medication**: [Cefuroxime MIP 1500 mg, powder for solution for injection/infusion. N10.](http://hl7.eu/fhir/mpd/0.1.0-ballot/Medication-01C-Cefuroxime1500Branded.html)
 
-**subject**: [Max Mustermann](http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/2.0.0/Patient-HL7ATCorePatientExample01.html)
+**subject**: [Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-AtEmedExamplePatient01.md)
 
 ### Performers
 
 | | |
 | :--- | :--- |
 | - | **Actor** |
-| * | [Amadeus Spital](Organization/AtApsExampleOrganization01) |
+| * | [PractitionerRole Pharmacist](http://hl7.eu/fhir/mpd/0.1.0-ballot/PractitionerRole-pharmacist1.html) |
 
-**authorizingPrescription**: [Verordnung Ramipril](MedicationRequest/AtApsExampleMedicationRequest01)
+**authorizingPrescription**: [MedicationRequest: identifier = 10-123EP; status = active; intent = order; authoredOn = 2024-12-06](http://hl7.eu/fhir/mpd/0.1.0-ballot/MedicationRequest-400C-prescription-cefuroxime-singleline.html)
 
-**quantity**: 30 Kapseln
+**quantity**: 1 1(Details: UCUM code1 = '1')
 
-**daysSupply**: 30 Tage(Details: UCUM coded = 'd')
+**daysSupply**: 3 day(s)(Details: UCUM coded = 'd')
 
-**whenHandedOver**: 2024-10-15 09:30:00+0100
-
-### DosageInstructions
-
-| | | | |
-| :--- | :--- | :--- | :--- |
-| - | **Text** | **Timing** | **Route** |
-| * | 1 Kapsel täglich morgens | Once per 1 day | Oral use |
+**whenHandedOver**: 2024-12-06 19:54:00+0000
 
 
 
@@ -46,64 +39,42 @@ Profile: [ELGA e-Medikation MedicationDispense](StructureDefinition-at-emed-medi
   "id" : "AtEmedExampleMedicationDispense01",
   "meta" : {
     "profile" : [
-      "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationdispense"
+      "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationdispense",
+      "http://hl7.eu/fhir/mpd/StructureDefinition/MedicationDispense-eu-mpd"
     ]
   },
   "status" : "completed",
   "medicationReference" : {
-    "reference" : "Medication/AtApsExampleMedication01",
-    "display" : "Ramipril 5mg Kapseln"
+    "reference" : "Medication/01C-Cefuroxime1500Branded",
+    "display" : "Cefuroxime MIP 1500 mg, powder for solution for injection/infusion. N10."
   },
   "subject" : {
-    "reference" : "Patient/HL7ATCorePatientExample01",
-    "display" : "Max Mustermann"
+    "reference" : "Patient/AtEmedExamplePatient01"
   },
   "performer" : [
     {
       "actor" : {
-        "reference" : "Organization/AtApsExampleOrganization01",
-        "display" : "Amadeus Spital"
+        "reference" : "PractitionerRole/pharmacist1"
       }
     }
   ],
   "authorizingPrescription" : [
     {
-      "reference" : "MedicationRequest/AtApsExampleMedicationRequest01",
-      "display" : "Verordnung Ramipril"
+      "reference" : "MedicationRequest/400C-prescription-cefuroxime-singleline"
     }
   ],
   "quantity" : {
-    "value" : 30,
-    "unit" : "Kapseln"
+    "value" : 1,
+    "system" : "http://unitsofmeasure.org",
+    "code" : "1"
   },
   "daysSupply" : {
-    "value" : 30,
-    "unit" : "Tage",
+    "value" : 3,
+    "unit" : "day(s)",
     "system" : "http://unitsofmeasure.org",
     "code" : "d"
   },
-  "whenHandedOver" : "2024-10-15T09:30:00+01:00",
-  "dosageInstruction" : [
-    {
-      "text" : "1 Kapsel täglich morgens",
-      "timing" : {
-        "repeat" : {
-          "frequency" : 1,
-          "period" : 1,
-          "periodUnit" : "d"
-        }
-      },
-      "route" : {
-        "coding" : [
-          {
-            "system" : "http://snomed.info/sct",
-            "code" : "26643006",
-            "display" : "Oral use"
-          }
-        ]
-      }
-    }
-  ]
+  "whenHandedOver" : "2024-12-06T19:54:00Z"
 }
 
 ```

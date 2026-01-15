@@ -11,7 +11,7 @@
   <name value="ELGAeMedikationR4"/>
   <title value="ELGA e-Medikation (R4)"/>
   <status value="draft"/>
-  <date value="2026-01-13T12:36:36+00:00"/>
+  <date value="2026-01-15T19:11:07+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -58,23 +58,8 @@
     <packageId value="hl7.at.fhir.core.r4"/>
     <version value="2.0.0"/>
   </dependsOn>
-  <dependsOn id="ihe_pharm_mpd_r4">
-    <uri value="https://profiles.ihe.net/PHARM/MPD"/>
-    <packageId value="ihe.pharm.mpd.r4"/>
-    <version value="1.0.0-comment-2"/>
-  </dependsOn>
-  <dependsOn id="hl7_fhir_eu_extensions_r4">
-    <uri value="http://hl7.eu/fhir/extensions"/>
-    <packageId value="hl7.fhir.eu.extensions.r4"/>
-    <version value="0.1.1-ballot"/>
-  </dependsOn>
-  <dependsOn id="hl7_fhir_eu_base">
-    <uri value="http://hl7.eu/fhir/base/ImplementationGuide/hl7.fhir.eu.base"/>
-    <packageId value="hl7.fhir.eu.base"/>
-    <version value="0.1.0-ballot"/>
-  </dependsOn>
   <dependsOn id="hl7_at_fhir_elga_aps_r4">
-    <uri value="https://github.com/HL7Austria/&lt;repo&gt;/tree/main/package"/>
+    <uri value="https://fhir.hl7.at/elga/aps/r4/ImplementationGuide/hl7.at.fhir.elga.aps.r4"/>
     <packageId value="hl7.at.fhir.elga.aps.r4"/>
     <version value="current"/>
   </dependsOn>
@@ -484,13 +469,34 @@
     </extension>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/AtEmedExamplePatient01"/>
+      </reference>
+      <name value="AtEmedExamplePatient01"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="List"/>
+      </extension>
+      <reference>
+        <reference value="List/AtEmedExampleListMedikationsplan01"/>
+      </reference>
+      <name value="AtEmedListMedikationsplan-Beispiel"/>
+      <description value="AtEmedListMedikationsplan-Beispiel"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Medication"/>
       </extension>
       <reference>
-        <reference value="Medication/AtEmedMedicationExample01"/>
+        <reference value="Medication/AtEmedMedicationExampleCefuroxime"/>
       </reference>
       <name value="AtEmedMedication-Beispiel"/>
-      <description value="Medication"/>
+      <description value="AtEmedMedication-Beispiel"/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"/>
     </resource>
     <resource>
@@ -509,11 +515,44 @@
         <valueString value="MedicationRequest"/>
       </extension>
       <reference>
-        <reference value="MedicationRequest/AtEmedExampleMedicationRequest01"/>
+        <reference value="MedicationRequest/AtEmedExampleMedicationRequestGeplanteAbgabe01"/>
       </reference>
-      <name value="AtEmedMedicationRequest-Beispiel"/>
-      <description value="Medication Request"/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest"/>
+      <name value="AtEmedMedicationRequestGeplanteAbgabe-Beispiel"/>
+      <description value="AtEmedMedicationRequestGeplanteAbgabe-Beispiel"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-geplanteAbgabe"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/AtEmedExampleMedicationRequestPlaneintrag01"/>
+      </reference>
+      <name value="AtEmedMedicationRequestPlaneintrag-Beispiel"/>
+      <description value="AtEmedMedicationRequestPlaneintrag-Beispiel"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-planeintrag"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-emed-medicationdispense"/>
+      </reference>
+      <name value="ELGA e-Medikation Abgabe"/>
+      <description value="Abgabe"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-emed-medicationrequest-geplanteAbgabe"/>
+      </reference>
+      <name value="ELGA e-Medikation geplante Abgabe"/>
+      <description value="**Beschreibung:**Bildet eine geplante Abgabe eines Arzneimittels aus dem entsprechendem Medikationsplaneintrag des ELGA Teilnehmers ab (Rezeptierung). Sie enthält das verordnetes Arzneimittel und dessen Dosierung, der Status ist bei Ausstellung aktiv. &#xA;Als groupIdentifier dient die eMED-ID, die auch im e-Rezept mitgeführt wird.&#xA;Werden mehrere Arzneimittel gleichzeitig verordnet, so wird für jedes Arzneimittel eine eigene geplante Abgabe erstellt, der groupIdentifier ist aber für diese geplanten Abgaben gleich (Bildet 'Rezept-Klammer')."/>
+      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -523,7 +562,7 @@
         <reference value="StructureDefinition/at-emed-medication"/>
       </reference>
       <name value="ELGA e-Medikation Medication"/>
-      <description value="**Description:** In the course of treatment, the doctor determines that the ELGA participant must be prescribed one or more medicines. A MedicationRequest always consists of exactly one medication (= one medicine). The e-Medication prescription can consist of several MedicationRequests and thus forms a grouping over them. The prescription and it's MedicationRequests are labelled with one unique, common eMED ID. The doctor is responsible for checking the medicines, e.g. for potential interactions, contraindications, dosages, etc. and this is not part of e-Medication. Storing requests without assigning a prescription is not valid. The prescription is considered to have been checked if the associated prescription is saved in e-Medication.&#xA;&#xA;**Beschreibung:** &#xA;Im Zuge der Behandlung verordnet der GDA dem ELGA Teilnehmer ein Arzneimittel und erstellt einen Medikationsplaneintrag (MedicationRequest)."/>
+      <description value="Arzneimittel"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -531,10 +570,10 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/at-emed-medicationdispense"/>
+        <reference value="StructureDefinition/at-emed-list-medikationsplan"/>
       </reference>
-      <name value="ELGA e-Medikation MedicationDispense"/>
-      <description value="TODO"/>
+      <name value="ELGA e-Medikation Medikationsplan"/>
+      <description value="**Beschreibung:** Bildet den Medikationsplan eines ELGA Teilnehmers ab. Enthält verordnete Arzneimittel und deren Dosierung in Form von 0..* Medikationsplaneinträgen (AtEmedMedicationRequestPlaneintrag)."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -542,33 +581,11 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/at-emed-medicationrequest"/>
+        <reference value="StructureDefinition/at-emed-medicationrequest-planeintrag"/>
       </reference>
-      <name value="ELGA e-Medikation MedicationRequest"/>
-      <description value="**Description:** In the course of treatment, the doctor determines that the ELGA participant must be prescribed one or more medicines. A MedicationRequest always consists of exactly one medication (= one medicine). The e-Medication prescription can consist of several MedicationRequests and thus forms a grouping over them. The prescription and it's MedicationRequests are labelled with one unique, common eMED ID. The doctor is responsible for checking the medicines, e.g. for potential interactions, contraindications, dosages, etc. and this is not part of e-Medication. Storing requests without assigning a prescription is not valid. The prescription is considered to have been checked if the associated prescription is saved in e-Medication.&#xA;&#xA;**Beschreibung:** &#xA;Im Zuge der Behandlung verordnet der GDA dem ELGA Teilnehmer ein Arzneimittel und erstellt einen Medikationsplaneintrag (MedicationRequest)."/>
+      <name value="ELGA e-Medikation Planeintrag"/>
+      <description value="**Beschreibung:** Bildet einen Eintrag eines Medikationsplans eines ELGA Teilnehmers ab. Er enthält genau ein verordnetes Arzneimittel und dessen Dosierung. Dient in weiterer Folge dazu, eine geplante Abgabe zu erstellen (AtEmedMedicationRequestGeplanteAbgabe)."/>
       <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/MyPatient"/>
-      </reference>
-      <name value="MyPatient"/>
-      <description value="An example profile of the Patient resource."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Patient"/>
-      </extension>
-      <reference>
-        <reference value="Patient/PatientExample"/>
-      </reference>
-      <name value="PatientExample"/>
-      <description value="An example of a patient with a license to krill."/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/MyPatient"/>
     </resource>
     <page>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
@@ -590,7 +607,7 @@
           <valueUrl value="requirements.html"/>
         </extension>
         <nameUrl value="requirements.html"/>
-        <title value="Die &quot;e-Medikation&quot;"/>
+        <title value="Die 'e-Medikation'"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -610,10 +627,42 @@
         <generation value="markdown"/>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="UC_DiMe_05.html"/>
+            <valueUrl value="UC_eMed_05.html"/>
           </extension>
-          <nameUrl value="UC_DiMe_05.html"/>
-          <title value="UC_DiMe_05 - Medikationsplan lesen"/>
+          <nameUrl value="UC_eMed_05.html"/>
+          <title value="UC_eMed_05 - Medikationsplan lesen"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="UC_eMed_06.html"/>
+          </extension>
+          <nameUrl value="UC_eMed_06.html"/>
+          <title value="UC_eMed_06 - Medikationsplan schreiben"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="UC_eMed_07.html"/>
+          </extension>
+          <nameUrl value="UC_eMed_07.html"/>
+          <title value="UC_eMed_07 - Geplante und durchgeführte Abgaben lesen"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="UC_eMed_08.html"/>
+          </extension>
+          <nameUrl value="UC_eMed_08.html"/>
+          <title value="UC_eMed_08 - Geplante Abgabe schreiben"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="UC_eMed_09.html"/>
+          </extension>
+          <nameUrl value="UC_eMed_09.html"/>
+          <title value="UC_eMed_09 - Durchgeführte Abgabe schreiben"/>
           <generation value="markdown"/>
         </page>
         <page>

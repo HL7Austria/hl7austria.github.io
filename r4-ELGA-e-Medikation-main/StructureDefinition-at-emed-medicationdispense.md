@@ -1,18 +1,18 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\ELGA e-Medikation MedicationDispense - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\ELGA e-Medikation Abgabe - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **ELGA e-Medikation MedicationDispense**
+* **ELGA e-Medikation Abgabe**
 
-## Resource Profile: ELGA e-Medikation MedicationDispense 
+## Resource Profile: ELGA e-Medikation Abgabe 
 
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationdispense | *Version*:0.1.1 | |
-| Draft as of 2026-01-13 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedicationDispense |
+| Draft as of 2026-01-15 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedicationDispense |
 
  
-TODO 
+Abgabe 
 
 **Usages:**
 
@@ -39,9 +39,9 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationdi
   "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationdispense",
   "version" : "0.1.1",
   "name" : "AtEmedMedicationDispense",
-  "title" : "ELGA e-Medikation MedicationDispense",
+  "title" : "ELGA e-Medikation Abgabe",
   "status" : "draft",
-  "date" : "2026-01-13T12:36:36+00:00",
+  "date" : "2026-01-15T19:11:07+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -64,7 +64,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationdi
       ]
     }
   ],
-  "description" : "TODO",
+  "description" : "Abgabe",
   "fhirVersion" : "4.0.1",
   "mapping" : [
     {
@@ -96,7 +96,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationdi
   "kind" : "resource",
   "abstract" : false,
   "type" : "MedicationDispense",
-  "baseDefinition" : "http://hl7.eu/fhir/mpd/StructureDefinition/MedicationDispense-eu-mpd",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/MedicationDispense",
   "derivation" : "constraint",
   "differential" : {
     "element" : [

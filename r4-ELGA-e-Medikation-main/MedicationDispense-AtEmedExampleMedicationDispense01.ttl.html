@@ -43,8 +43,8 @@
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"5.6"}
-    h3,h4,h5,h6{--heading-prefix:"5.6"}</style>
+    <style type="text/css">h2{--heading-prefix:"5.9"}
+    h3,h4,h5,h6{--heading-prefix:"5.9"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- at-fhir-ig-template begin -->
@@ -109,10 +109,22 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="anwendungsfaelle.html">Überblick &amp; Sunshine Case</a>
+        <a href="anwendungsfaelle.html">Überblick</a>
       </li>
       <li>
-        <a href="UC_DiMe_05.html">UC_DiMe_05 - Medikationsplan lesen</a>
+        <a href="UC_eMed_05.html">UC_eMed_05 Medikationsplan lesen</a>
+      </li>
+      <li>
+        <a href="UC_eMed_06.html">UC_eMed_06 Medikationsplan schreiben</a>
+      </li>
+      <li>
+        <a href="UC_eMed_07.html">UC_eMed_07 Geplante und durchgeführte Abgaben lesen</a>
+      </li>
+      <li>
+        <a href="UC_eMed_08.html">UC_eMed_08 Geplante Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="UC_eMed_09.html">UC_eMed_09 Durchgeführte Abgabe schreiben</a>
       </li>
     </ul>
   </li>
@@ -205,75 +217,60 @@
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
-@prefix sct: &lt;http://snomed.info/id/&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 # - resource -------------------------------------------------------------------
 
  a fhir:MedicationDispense ;
   <a href="http://hl7.org/fhir/R4/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot ;
-  <a href="http://hl7.org/fhir/R4/resource.html#MedicationDispense.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;AtEmedExampleMedicationDispense01&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/resource.html#MedicationDispense.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;AtEmedExampleMedicationDispense01&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/resource.html#MedicationDispense.meta">fhir:meta</a> [
     ( <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:profile</a> [
 <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationdispense&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:l</a> &lt;https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationdispense&gt;     ] )
+<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:l</a> &lt;https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationdispense&gt;     ] [
+<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;http://hl7.eu/fhir/mpd/StructureDefinition/MedicationDispense-eu-mpd&quot;^^xsd:anyURI ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:l</a> &lt;http://hl7.eu/fhir/mpd/StructureDefinition/MedicationDispense-eu-mpd&gt;     ] )
   ] ; # 
   <a href="http://hl7.org/fhir/R4/domainresource.html#MedicationDispense.text">fhir:text</a> [
 <a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;generated&quot; ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">fhir:div</a> [ <a href="http://hl7.org/fhir/R4/narrative.html#xhtml">fhir:v</a> &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: MedicationDispense AtEmedExampleMedicationDispense01&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;AtEmedExampleMedicationDispense01\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcAtEmedExampleMedicationDispense01\&quot;&gt; &lt;/a&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;/&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Profile: &lt;a href=\&quot;StructureDefinition-at-emed-medicationdispense.html\&quot;&gt;ELGA e-Medikation MedicationDispense&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: Completed&lt;/p&gt;&lt;p&gt;&lt;b&gt;medication&lt;/b&gt;: &lt;a href=\&quot;Medication/AtApsExampleMedication01\&quot;&gt;Ramipril 5mg Kapseln&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a href=\&quot;http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/2.0.0/Patient-HL7ATCorePatientExample01.html\&quot;&gt;Max Mustermann&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;Performers&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Actor&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;*&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;Organization/AtApsExampleOrganization01\&quot;&gt;Amadeus Spital&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;b&gt;authorizingPrescription&lt;/b&gt;: &lt;a href=\&quot;MedicationRequest/AtApsExampleMedicationRequest01\&quot;&gt;Verordnung Ramipril&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;quantity&lt;/b&gt;: 30 Kapseln&lt;/p&gt;&lt;p&gt;&lt;b&gt;daysSupply&lt;/b&gt;: 30 Tage&lt;span style=\&quot;background: LightGoldenRodYellow\&quot;&gt; (Details: UCUM  coded = 'd')&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;whenHandedOver&lt;/b&gt;: 2024-10-15 09:30:00+0100&lt;/p&gt;&lt;h3&gt;DosageInstructions&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Text&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Timing&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Route&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;*&lt;/td&gt;&lt;td&gt;1 Kapsel täglich morgens&lt;/td&gt;&lt;td&gt;Once per 1 day&lt;/td&gt;&lt;td&gt;&lt;span title=\&quot;Codes:{http://snomed.info/sct 26643006}\&quot;&gt;Oral use&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;^^rdf:XMLLiteral ]
+<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">fhir:div</a> [ <a href="http://hl7.org/fhir/R4/narrative.html#xhtml">fhir:v</a> &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: MedicationDispense AtEmedExampleMedicationDispense01&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;AtEmedExampleMedicationDispense01\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcAtEmedExampleMedicationDispense01\&quot;&gt; &lt;/a&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;/&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Profiles: &lt;a href=\&quot;StructureDefinition-at-emed-medicationdispense.html\&quot;&gt;ELGA e-Medikation Abgabe&lt;/a&gt;, &lt;a href=\&quot;http://hl7.eu/fhir/mpd/0.1.0-ballot/StructureDefinition-MedicationDispense-eu-mpd.html\&quot;&gt;MedicationDispense: MPD&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: Completed&lt;/p&gt;&lt;p&gt;&lt;b&gt;medication&lt;/b&gt;: &lt;a href=\&quot;http://hl7.eu/fhir/mpd/0.1.0-ballot/Medication-01C-Cefuroxime1500Branded.html\&quot;&gt;Cefuroxime MIP 1500 mg, powder for solution for injection/infusion. N10.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a href=\&quot;Patient-AtEmedExamplePatient01.html\&quot;&gt;Max Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;Performers&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Actor&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;*&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.eu/fhir/mpd/0.1.0-ballot/PractitionerRole-pharmacist1.html\&quot;&gt;PractitionerRole Pharmacist&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;b&gt;authorizingPrescription&lt;/b&gt;: &lt;a href=\&quot;http://hl7.eu/fhir/mpd/0.1.0-ballot/MedicationRequest-400C-prescription-cefuroxime-singleline.html\&quot;&gt;MedicationRequest: identifier = 10-123EP; status = active; intent = order; authoredOn = 2024-12-06&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;quantity&lt;/b&gt;: 1 1&lt;span style=\&quot;background: LightGoldenRodYellow\&quot;&gt; (Details: UCUM  code1 = '1')&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;daysSupply&lt;/b&gt;: 3 day(s)&lt;span style=\&quot;background: LightGoldenRodYellow\&quot;&gt; (Details: UCUM  coded = 'd')&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;whenHandedOver&lt;/b&gt;: 2024-12-06 19:54:00+0000&lt;/p&gt;&lt;/div&gt;&quot;^^rdf:XMLLiteral ]
   ] ; # 
   <a href="http://hl7.org/fhir/R4/medicationdispense.html#MedicationDispense.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;completed&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/medicationdispense.html#MedicationDispense.medication_x_">fhir:medication</a> [
 <a href="http://hl7.org/fhir/R4/references.html#Reference">a</a> fhir:Reference ;
-<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:l</a> fhir:Medication/AtApsExampleMedication01 ;
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Medication/AtApsExampleMedication01&quot; ] ;
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Ramipril 5mg Kapseln&quot; ]
+<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:l</a> fhir:Medication/01C-Cefuroxime1500Branded ;
+<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Medication/01C-Cefuroxime1500Branded&quot; ] ;
+<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Cefuroxime MIP 1500 mg, powder for solution for injection/infusion. N10.&quot; ]
   ] ; # 
   <a href="http://hl7.org/fhir/R4/medicationdispense.html#MedicationDispense.subject">fhir:subject</a> [
-<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:l</a> fhir:Patient/HL7ATCorePatientExample01 ;
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Patient/HL7ATCorePatientExample01&quot; ] ;
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Max Mustermann&quot; ]
+<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:l</a> fhir:Patient/AtEmedExamplePatient01 ;
+<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Patient/AtEmedExamplePatient01&quot; ]
   ] ; # 
   <a href="http://hl7.org/fhir/R4/medicationdispense.html#MedicationDispense.performer">fhir:performer</a> ( [
 <a href="http://hl7.org/fhir/R4/medicationdispense.html#MedicationDispense.performer.actor">fhir:actor</a> [
-<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:l</a> fhir:Organization/AtApsExampleOrganization01 ;
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Organization/AtApsExampleOrganization01&quot; ] ;
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Amadeus Spital&quot; ]     ]
+<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:l</a> fhir:PractitionerRole/pharmacist1 ;
+<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;PractitionerRole/pharmacist1&quot; ]     ]
   ] ) ; # 
   <a href="http://hl7.org/fhir/R4/medicationdispense.html#MedicationDispense.authorizingPrescription">fhir:authorizingPrescription</a> ( [
-<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:l</a> fhir:MedicationRequest/AtApsExampleMedicationRequest01 ;
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;MedicationRequest/AtApsExampleMedicationRequest01&quot; ] ;
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Verordnung Ramipril&quot; ]
+<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:l</a> fhir:MedicationRequest/400C-prescription-cefuroxime-singleline ;
+<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;MedicationRequest/400C-prescription-cefuroxime-singleline&quot; ]
   ] ) ; # 
   <a href="http://hl7.org/fhir/R4/medicationdispense.html#MedicationDispense.quantity">fhir:quantity</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">fhir:v</a> &quot;30&quot;^^xsd:decimal ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.unit">fhir:unit</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Kapseln&quot; ]
+<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">fhir:v</a> &quot;1&quot;^^xsd:decimal ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">fhir:system</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://unitsofmeasure.org&quot;^^xsd:anyURI ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> &lt;http://unitsofmeasure.org&gt;     ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;1&quot; ]
   ] ; # 
   <a href="http://hl7.org/fhir/R4/medicationdispense.html#MedicationDispense.daysSupply">fhir:daysSupply</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">fhir:v</a> &quot;30&quot;^^xsd:decimal ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.unit">fhir:unit</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Tage&quot; ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">fhir:v</a> &quot;3&quot;^^xsd:decimal ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.unit">fhir:unit</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;day(s)&quot; ] ;
 <a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">fhir:system</a> [
 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://unitsofmeasure.org&quot;^^xsd:anyURI ;
 <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> &lt;http://unitsofmeasure.org&gt;     ] ;
 <a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;d&quot; ]
   ] ; # 
-  <a href="http://hl7.org/fhir/R4/medicationdispense.html#MedicationDispense.whenHandedOver">fhir:whenHandedOver</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> &quot;2024-10-15T09:30:00+01:00&quot;^^xsd:dateTime] ; # 
-  <a href="http://hl7.org/fhir/R4/medicationdispense.html#MedicationDispense.dosageInstruction">fhir:dosageInstruction</a> ( [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Dosage#Dosage.text">fhir:text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;1 Kapsel täglich morgens&quot; ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Dosage#Dosage.timing">fhir:timing</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Timing#Timing.repeat">fhir:repeat</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Timing#Timing.repeat.frequency">fhir:frequency</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#positiveInt">fhir:v</a> &quot;1&quot;^^xsd:positiveInteger ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Timing#Timing.repeat.period">fhir:period</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">fhir:v</a> &quot;1&quot;^^xsd:decimal ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Timing#Timing.repeat.periodUnit">fhir:periodUnit</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;d&quot; ]       ]     ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Dosage#Dosage.route">fhir:route</a> [
-      ( <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:coding</a> [
-a sct:26643006 ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:system</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://snomed.info/sct&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> &lt;http://snomed.info/sct&gt;         ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;26643006&quot; ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Oral use&quot; ]       ] )     ]
-  ] ) . # 
+  <a href="http://hl7.org/fhir/R4/medicationdispense.html#MedicationDispense.whenHandedOver">fhir:whenHandedOver</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> &quot;2024-12-06T19:54:00Z&quot;^^xsd:dateTime] . # 
 
 </code></pre>
 
@@ -300,7 +297,7 @@ a sct:26643006 ;
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Jan 13, 2026 12:36+0000">2026-01-13</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Jan 15, 2026 19:11+0000">2026-01-15</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
