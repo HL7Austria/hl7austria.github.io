@@ -178,8 +178,23 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#beschreibung" id="markdown-toc-beschreibung">Beschreibung</a></li>
+  <li><a href="#akteure" id="markdown-toc-akteure">Akteure</a></li>
+  <li><a href="#auslöser" id="markdown-toc-auslöser">Auslöser</a></li>
+  <li><a href="#vorbediungungen" id="markdown-toc-vorbediungungen">Vorbediungungen</a></li>
+  <li><a href="#nachbedingungenergebnis" id="markdown-toc-nachbedingungenergebnis">Nachbedingungen/Ergebnis</a></li>
+  <li><a href="#abläufe" id="markdown-toc-abläufe">Abläufe</a></li>
+  <li><a href="#abgrenzungen" id="markdown-toc-abgrenzungen">Abgrenzungen</a></li>
+  <li><a href="#sub-use-cases" id="markdown-toc-sub-use-cases">Sub-Use Cases</a></li>
+  <li><a href="#beispiel" id="markdown-toc-beispiel">Beispiel</a></li>
+  <li><a href="#technische-hinweise" id="markdown-toc-technische-hinweise">Technische Hinweise</a></li>
+  <li><a href="#relevante-profile" id="markdown-toc-relevante-profile">Relevante Profile</a></li>
+  <li><a href="#relevante-invarianten" id="markdown-toc-relevante-invarianten">Relevante Invarianten</a></li>
+  <li><a href="#mögliche-notifications" id="markdown-toc-mögliche-notifications">Mögliche Notifications</a></li>
+</ul>
+
 </div>
 <style>
 .notification-table {
@@ -246,8 +261,80 @@ width: 100%;}
 
 <script type="module"> import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';</script>
 
-<h2 id="anwendungsfall-uc_dime_09-durchgeführte-abgabe-schreiben">Anwendungsfall UC_DiMe_09: Durchgeführte Abgabe schreiben</h2>
+<!-- Anwendungsfall UC_eMed_09: Durchgeführte Abgabe schreiben -->
 
+<h3 id="beschreibung">Beschreibung</h3>
+
+<p>GDA (Apotheke) sollen eine durchgeführte Abgabe für eine:n Bürger:in erfassen oder korrigieren können, um diese zum Zweck der medizinischen Dokumentation festzuhalten.<br />
+<br /><br />
+Details zu "Die e-Abgabe" (ab Kapitel Durchgeführte Abgaben erfassen), siehe "<a href="requirements.html">Die e-Medikation</a>"</p>
+
+<h3 id="akteure">Akteure</h3>
+
+<ul>
+  <li>GDA (Apotheke, inkl. Hausapotheke)</li>
+</ul>
+
+<h3 id="auslöser">Auslöser</h3>
+
+<ul>
+  <li>Benutzer:in möchte die Abgabe eines Medikaments an eine:n Bürger:in dokumentieren</li>
+</ul>
+
+<h3 id="vorbediungungen">Vorbediungungen</h3>
+
+<ul>
+  <li>Benutzer:in ist authentifiziert und autorisiert</li>
+  <li>Bürger:in ist eindeutig identifiziert</li>
+</ul>
+
+<h3 id="nachbedingungenergebnis">Nachbedingungen/Ergebnis</h3>
+
+<ul>
+  <li>Die durchgeführte Abgabe wurde (mit oder ohne Bezug auf eine geplante Abgabe) erfasst oder korrigiert</li>
+  <li>Zugriff wird protokolliert</li>
+</ul>
+
+<h3 id="abläufe">Abläufe</h3>
+<h4 id="standardablauf">Standardablauf</h4>
+<ul>
+  <li>Benutzer:in startet das Erfassen einer durchgeführten Abgabe mit Bezug zu einer geplanten Abgabe (sofern vorhanden)</li>
+  <li>Benutzer:in gibt alle erforderlichen Daten zum Erfassen der durchgeführten Abgabe ein</li>
+  <li>Benutzer:in speichert die Eingaben</li>
+</ul>
+
+<h4 id="alternativabläufe">Alternativabläufe</h4>
+<h5 id="alternativablauf-01-selbst-erfasste-durchgeführte-abgabe-bearbeiten">Alternativablauf 01: selbst erfasste, durchgeführte Abgabe bearbeiten</h5>
+
+<ul>
+  <li>Benutzer:in ruft eine bestehende, selbst erfasste durchgeführte Abgabe auf</li>
+  <li>Benutzer:in verändert zuvor erfasste Angaben</li>
+  <li>Benutzer:in speichert die Änderungen ab</li>
+</ul>
+
+<h5 id="alternativablauf--02-durchgeführte-abgabe-korrigieren-korrekturvermerk">Alternativablauf  02: durchgeführte Abgabe korrigieren (Korrekturvermerk)</h5>
+
+<ul>
+  <li>Benutzer:in ruft eine bestehende durchgeführte Abgabe auf</li>
+  <li>Benutzer:in markiert die durchgeführte Abgabe als inkorrekt</li>
+  <li>Benutzer:in ergänzt einen Kommentar zu den Hintergründen der Korrektur</li>
+</ul>
+
+<h3 id="abgrenzungen">Abgrenzungen</h3>
+
+<p>Die Abgabe von EU-Rezepten ist nicht Teil des Systems.</p>
+
+<h3 id="sub-use-cases">Sub-Use Cases</h3>
+
+<h3 id="beispiel">Beispiel</h3>
+
+<h3 id="technische-hinweise">Technische Hinweise</h3>
+
+<h3 id="relevante-profile">Relevante Profile</h3>
+
+<h3 id="relevante-invarianten">Relevante Invarianten</h3>
+
+<h3 id="mögliche-notifications">Mögliche Notifications</h3>
 
 
 
@@ -267,7 +354,7 @@ width: 100%;}
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Jan 15, 2026 19:11+0000">2026-01-15</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Fri, Jan 16, 2026 14:21+0000">2026-01-16</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

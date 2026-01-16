@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-geplanteAbgabe | *Version*:0.1.1 | |
-| Draft as of 2026-01-15 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedicationRequestGeplanteAbgabe |
+| Draft as of 2026-01-16 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedicationRequestGeplanteAbgabe |
 
  
 **Beschreibung:**Bildet eine geplante Abgabe eines Arzneimittels aus dem entsprechendem Medikationsplaneintrag des ELGA Teilnehmers ab (Rezeptierung). Sie enthält das verordnetes Arzneimittel und dessen Dosierung, der Status ist bei Ausstellung aktiv. Als groupIdentifier dient die eMED-ID, die auch im e-Rezept mitgeführt wird. Werden mehrere Arzneimittel gleichzeitig verordnet, so wird für jedes Arzneimittel eine eigene geplante Abgabe erstellt, der groupIdentifier ist aber für diese geplanten Abgaben gleich (Bildet 'Rezept-Klammer'). 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationre
   "name" : "AtEmedMedicationRequestGeplanteAbgabe",
   "title" : "ELGA e-Medikation geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-01-15T19:11:07+00:00",
+  "date" : "2026-01-16T14:21:16+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

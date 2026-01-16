@@ -6,8 +6,6 @@
 
 ## UC_eMed_05 - Medikationsplan lesen
 
-## Anwendungsfall UC_DiMe_05: Medikationsplan lesen (UC_DiMe_05)
-
 ### Beschreibung
 
 GDA sollen in den Medikationsplan von Bürger:innen mit Behandlungsbezug einsehen können, um sich einen Überblick zu allen verordneten Medikamenten und der zugehörigen Einnahmeninformation zu verschaffen. 

@@ -6,8 +6,6 @@
 
 ## UC_eMed_06 - Medikationsplan schreiben
 
-## Anwendungsfall 6: Medikationsplan schreiben (UC_DiMe_06)
-
 ### Beschreibung
 
 GDA sollen einen Medikationsplan für eine:n Bürger:in erfassen oder korrigieren können, um eine Übersicht über die gesamte aktuell einzunehmende Medikation zur Verfügung zu stellen. 

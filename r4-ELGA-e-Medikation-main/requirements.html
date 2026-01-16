@@ -180,7 +180,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#die-e-medikation" id="markdown-toc-die-e-medikation">Die e-Medikation</a></li>
+  <li><a href="#der-e-medikationsplan" id="markdown-toc-der-e-medikationsplan">Der e-Medikationsplan</a></li>
+  <li><a href="#medikationsplan-erfassen" id="markdown-toc-medikationsplan-erfassen">Medikationsplan erfassen</a></li>
+  <li><a href="#medikationsplan-korrekturvermerk-setzen" id="markdown-toc-medikationsplan-korrekturvermerk-setzen">Medikationsplan: Korrekturvermerk setzen</a></li>
   <li><a href="#die-e-abgabe" id="markdown-toc-die-e-abgabe">Die e-Abgabe</a></li>
 </ul>
 
@@ -250,11 +252,10 @@ width: 100%;}
 
 <script type="module"> import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';</script>
 
-<h3 id="die-e-medikation">Die e-Medikation</h3>
+<h3 id="der-e-medikationsplan">Der e-Medikationsplan</h3>
 
-<h4 id="der-e-medikationsplan">Der e-Medikationsplan</h4>
+<h4 id="inhalt-des-medikationsplans">Inhalt des Medikationsplans</h4>
 
-<p><strong>Inhalt des Medikationsplans</strong></p>
 <ul>
   <li>Der Medikationsplan besteht aus einzelnen Medikationsplaneinträgen</li>
   <li>Angezeigt wird immer die zuletzt gespeicherte Version des Medikationsplans:
@@ -270,15 +271,17 @@ width: 100%;}
       <li>Lesende Systeme können diese Reihenfolge nutzen, dürfen aber bei Bedarf eine andere Reihung vornehmen</li>
     </ul>
   </li>
-  <li>Einzelne Einträgen können Korrekturvermerke (inkl. Freitext) enthalten und müssen dem:der Benutzer:in angezeigt werden, (z.B. bei Signatur- oder Dosisänderungen vgl. UC_DiMe_06 Medikationsplan schreiben)</li>
-  <li>Je Medikationsplaneintrag werden folgende Information dargestellt:
+  <li>
+    <p>Einzelne Einträgen können Korrekturvermerke (inkl. Freitext) enthalten und müssen dem:der Benutzer:in angezeigt werden, (z.B. bei Signatur- oder Dosisänderungen vgl. UC_DiMe_06 Medikationsplan schreiben)</p>
+  </li>
+  <li><strong>Je Medikationsplaneintrag werden folgende Information dargestellt</strong>:
     <ul>
       <li>Verantwortlicher GDA</li>
       <li>Einnahmeinformation</li>
       <li>Zugehörige geplante Abgaben</li>
       <li>Zugehörige durchgeführte Abgaben
         <ul>
-          <li>inkl. Abgaben von Substitutionen durch andere Arzneimittel(/“aut idem“) und</li>
+          <li>inkl. Abgaben von Substitutionen durch andere Arzneimittel und</li>
           <li>„Leerabgaben“. (Leerabgaben kennzeichnen, dass eine ursprünglich geplante Abgabe künftig nicht mehr bedient werden wird)</li>
           <li>noch offen: abgelaufene Rezepte</li>
         </ul>
@@ -289,7 +292,8 @@ width: 100%;}
   <li>Filter- und Suchfunktionen können hilfreich sein (v.a. bei Medikationsplänen, die viele Einträge enthalten)</li>
 </ul>
 
-<p><strong>Ansicht von Vorversionen</strong></p>
+<h4 id="ansicht-von-vorversionen">Ansicht von Vorversionen</h4>
+
 <ul>
   <li>Alle Vorversionen des Medikationsplans können eingesehen werden
     <ul>
@@ -302,7 +306,7 @@ width: 100%;}
 •	Sofern der Medikationsplan eines:einer Patient:in häufigen Anpassungen unterliegt, kann es sinnvoll sein, eine Ansicht zu ermöglichen, die den Zustand des Medikationsplans zu einem bestimmten Zeitpunkt in der Vergangenheit ausgibt</li>
 </ul>
 
-<p><strong>Export des Medikationsplans</strong></p>
+<h4 id="export-des-medikationsplans">Export des Medikationsplans</h4>
 
 <p>Der Medikationsplan soll für ELGA-Teilnehmer:innen im ELGA-Portal sowohl</p>
 <ul>
@@ -312,18 +316,19 @@ width: 100%;}
 
 <p>Der Medikationsplan soll für GDA im jeweiligen Client-System</p>
 <ul>
-  <li>als PDF zum Ausdruck bzw. zur Darstellung in der Druckansicht verfügbar sein.
-Für den PDF-Export stellt die ELGA GmbH ein Softwaremodul zur Verfügung, welches in den jeweiligen Softwaresystemen eingebunden werden kann. Dieses "FHIR2PDF" Softwaremodul stellt die Funktionen zur Verfügung, um den Medikationsplan als PDF zu exportieren. Das exportierte PDF unter Nutzung des "FHIR2PDF" stellt ein signiertes Dokument dar.</li>
+  <li>als PDF zum Ausdruck bzw. zur Darstellung in der Druckansicht verfügbar sein.</li>
+  <li>Softwaremodul für PDF-Export zur Einbindung im Client-System</li>
 </ul>
 
-<p><strong>Eigene Ansicht vs. Verwendung des e-Medikation Stylesheets</strong>
-Zur Anzeige des Medikationsplans wird von der ELGA GmbH ein Stylesheet angeboten, welches in den jeweiligen Softwaresystemen eingebunden werden kann.</p>
+<h4 id="eigene-ansicht-vs-verwendung-des-e-medikation-stylesheets">Eigene Ansicht vs. Verwendung des e-Medikation Stylesheets</h4>
+
+<p>Die Anzeige des Medikationsplans kann via Stylesheet erfolgen, welches in den jeweiligen Softwaresystemen eingebunden werden kann.</p>
 <ul>
   <li>Dieses "e-Medikation Stylesheet" stellt alle notwendigen/vorhanden Informationen dar - Daten zur Person, aktuelle und vergangene Medikationsplaneinträge, geplante und durchgeführte Abgaben, etc.
 Neben der Verwendung des e-Medikation Stylesheets kann auch eine eigene Ansicht des Medikationsplans in den Softwaresystemen umgesetzt werden.</li>
 </ul>
 
-<h4 id="medikationsplan-erfassen">Medikationsplan erfassen</h4>
+<h3 id="medikationsplan-erfassen">Medikationsplan erfassen</h3>
 
 <p>Ein Medikationsplan besteht aus ein oder mehreren Medikationsplaneinträgen. Jeder Medikationsplaneintrag beinhaltet ein verordnetes Medikament samt Einnahmeinformation, das von der:dem ELGA-Teilnehmer:in aktuell eingenommen werden soll. Zudem enthält der Eintrag die Information, welche:r Ärztin:Arzt diesen medizinisch verantwortet.</p>
 
@@ -404,7 +409,7 @@ Neben der Verwendung des e-Medikation Stylesheets kann auch eine eigene Ansicht 
       * veränderte Reihenfolge erzeugt eine neue Version (soll das nachträglich durch andere GDA überhaupt möglich sein oder nur beim Erstellen/Verantworten einer neuen Version – s. oben?) 
       * eigene Einträge entfernen und in gleicher Form wieder hinzufügen</p>
 
-<h4 id="medikationsplan-korrekturvermerk-setzen">Medikationsplan: Korrekturvermerk setzen</h4>
+<h3 id="medikationsplan-korrekturvermerk-setzen">Medikationsplan: Korrekturvermerk setzen</h3>
 
 <ul>
   <li>Der GDA kann Medikationspläne nachträglich mittels Korrekturvermerk korrigieren, sofern ein oder mehrere Einträge fehlerhaft sind. 
@@ -436,7 +441,211 @@ Neben der Verwendung des e-Medikation Stylesheets kann auch eine eigene Ansicht 
 </ul>
 
 <h3 id="die-e-abgabe">Die e-Abgabe</h3>
+<h4 id="anzeige-geplanter-abgaben">Anzeige geplanter Abgaben</h4>
 
+<p>Die geplanten Abgaben können gelesen werden:</p>
+<ul>
+  <li>Inhalte der geplanten Abgaben, siehe UC_eMed_08 Geplante Abgabe schreiben</li>
+  <li>Geplante Abgaben können Korrekturvermerke enthalten</li>
+  <li>Ausgeblendete geplante Abgaben werden in der Abgabenübersicht nicht angezeigt</li>
+  <li>Geplante Abgaben stehen nach einer unwiderruflichen Löschung nicht mehr zur Verfügung</li>
+</ul>
+
+<p>Möglichkeiten zur Darstellung der geplanten Abgaben im Client-System:</p>
+<ul>
+  <li>Zu den einzelnen Einträgen der geplanten Abgaben können folgende Informationen ergänzend dargestellt werden:
+    <ul>
+      <li>zugehöriger Medikationsplan bzw. Medikationsplaneintrag</li>
+      <li>zugehörige durchgeführte Abgaben
+        <ul>
+          <li>inkl. Abgaben von Substitutionen durch andere Arzneimittel und „Leerabgaben“ 
+(Leerabgaben sind notwendig, um im Abgabeprozess im Zusammenspiel mit dem Einlösen eines Rezepts abzubilden, dass diese geplante Abgabe auch in Zukunft nicht mehr bedient werden wird.)</li>
+        </ul>
+      </li>
+      <li>abgelaufene Rezepte (?)</li>
+    </ul>
+  </li>
+  <li>Filter- und Suchfunktionen können hilfreich sein (v.a. bei Abgabenlisten, die viele Einträge enthalten)</li>
+</ul>
+
+<h4 id="anzeige-durchgeführter-abgaben">Anzeige durchgeführter Abgaben</h4>
+
+<p>Die durchgeführten Abgaben können gelesen werden:</p>
+<ul>
+  <li>Inhalte der durchgeführten Abgaben, siehe UC_eMed_09 Durchgeführte Abgabe schreiben</li>
+  <li>Durchgeführte Abgaben können Korrekturvermerke enthalten</li>
+  <li>Ausgeblendete durchgeführte Abgaben werden in der Abgabenübersicht nicht angezeigt</li>
+  <li>Durchgeführte Abgaben stehen nach einer unwiderruflichen Löschung nicht mehr zur Verfügung</li>
+</ul>
+
+<p>Möglichkeiten zur Darstellung der durchgeführten Abgaben im Client-System</p>
+<ul>
+  <li>Zu den einzelnen Einträgen der durchgeführten Abgaben können folgende Informationen ergänzend dargestellt werden (sofern vorhanden):
+    <ul>
+      <li>zugehöriger Medikationsplan bzw. Medikationsplaneintrag</li>
+      <li>zugehörige geplante Abgabe</li>
+    </ul>
+  </li>
+  <li>Filter- und Suchfunktionen können hilfreich sein (v.a. bei Abgabenlisten, die viele Einträge enthalten)</li>
+</ul>
+
+<h4 id="anzeige-korrigierter-abgaben-korrekturvermerk">Anzeige korrigierter Abgaben (Korrekturvermerk)</h4>
+
+<p>Einzelne geplante bzw. durchgeführte Abgaben können Korrekturvermerke (inkl. Freitext) enthalten und müssen dem:der Benutzer:in angezeigt werden.</p>
+
+<p>Möglichkeiten für die Darstellung eines Korrekturvermerks am Client System, siehe UC_eMed_05 Medikationsplan lesen.</p>
+
+<h4 id="export-der-geplanten-und-durchgeführten-abgaben">Export der geplanten und durchgeführten Abgaben</h4>
+
+<p>Folgende Exportformate stehen für Benutzer:innen zur Verfügung:</p>
+<ul>
+  <li>PDF zum Ausdrucken bzw. zur Darstellung in der Druckansicht</li>
+  <li>Strukturierter Datendownload (FHIR)</li>
+  <li>Softwaremodul für PDF-Export zur Einbindung im Client-System</li>
+</ul>
+
+<h5 id="eigene-ansicht-vs-verwendung-des-e-medikation-stylesheets-1">Eigene Ansicht vs. Verwendung des e-Medikation Stylesheets</h5>
+
+<p>Die Anzeige des Medikationsplans kann via Stylesheet erfolgen, welches in den jeweiligen Softwaresystemen eingebunden werden kann. 
+Dieses "e-Medikation Stylesheet" stellt alle notwendigen/vorhanden Informationen dar - Daten zur Person, aktuelle und vergangene Medikationsplaneinträge, geplante und durchgeführte Abgaben, etc. 
+Neben der Verwendung des e-Medikation Stylesheets kann auch eine eigene Ansicht der geplanten/durchgeführten Abgaben in den Softwaresystemen umgesetzt werden.</p>
+
+<h4 id="geplante-abgabe-erfassen">Geplante Abgabe erfassen</h4>
+
+<p>Es können geplante Abgaben zu einem bestehenden Medikationsplaneintrag erfassen werden:</p>
+<ul>
+  <li>je Medikationsplaneintrag können mehrere geplante Abgaben bestehen</li>
+  <li>geplante Abgaben können zu Einträgen aus Vorversionen des Medikationsplans bestehen</li>
+</ul>
+
+<p>Eine geplante Abgabe beinhaltet u.a. folgende Informationen:</p>
+<ul>
+  <li>Präparat (PZN, Wirkstoff, Dosierung)</li>
+  <li>Gebrauchsanweisung (Signatur)</li>
+  <li>Einnahmezeitraum (befristet, unbefristet)</li>
+  <li>Verordner:in</li>
+  <li>Hinweise</li>
+  <li>Indikation</li>
+</ul>
+
+<h4 id="geplante-abgabe-bearbeiten">Geplante Abgabe bearbeiten</h4>
+
+<p>Geplante Abgaben, die von einem GDA erfasst wurden, können nachträglich von diesem GDA überarbeitet werden.</p>
+<ul>
+  <li>Hinweis zur Änderung fremderfasster Abgabeneinträge:
+  Sofern fremderfasste Einträge korrigiert werden müssen, ist dies über einen Korrekturvermerk möglich</li>
+</ul>
+
+<p>Zur Nachvollziehbarkeit erfolgt jede Bearbeitung von geplanten Abgaben über eine Versionierung</p>
+<ul>
+  <li>Vorversionen werden nicht gelöscht, sondern als solche markiert</li>
+</ul>
+
+<h4 id="geplante-abgabe-korrekturvermerk-setzen">Geplante Abgabe: Korrekturvermerk setzen</h4>
+
+<p>Der GDA kann geplante Abgaben nachträglich mittels Korrekturvermerk korrigieren, sofern diese fehlerhaft sind.</p>
+<ul>
+  <li>Hinweis zur Änderung selbsterfasster Abgabeneinträge: Sofern selbst erfasste Einträge korrigiert werden müssen, ist dies über eine erneute Bearbeitung der geplanten Abgabe möglich</li>
+</ul>
+
+<p>Ein Korrekturvermerk beinhaltet folgende Aspekte:</p>
+<ul>
+  <li>zu korrigierende geplante Abgabe wird als inkorrekt markiert</li>
+  <li>es wird ein Freitext-Kommentar als Begründung zur inkorrekten geplanten Abgabe erfasst</li>
+  <li>es besteht die Möglichkeit bereits korrigierte geplante Abgaben mit einem weiteren Korrekturvermerk zu versehen. Dabei wird der jeweilige Korrekturvermerk als inkorrekt markiert.</li>
+</ul>
+
+<h4 id="daten-für-die-rezeptierung">Daten für die Rezeptierung</h4>
+
+<p>Allgemeine Information zur Rezeptierung:</p>
+
+<ul>
+  <li>
+    <p>Abgaben in Apotheken erfolgen auf Basis von Rezepten (e-Rezept, Papierrezept). Rezepte dienen der Logistik und Abrechnung. In der e-Medikation werden Informationen über geplante Abgaben zur Verfügung gestellt, um diese zum Zweck der medizinischen Dokumentation festzuhalten. Ein Eintrag einer geplanten Abgabe in der e-Medikation ermächtigt NICHT zur Abgabe eines Medikaments in einer Apotheke. </p>
+  </li>
+  <li>
+    <p>Sollen auf Basis des aktuellen Medikationsplans Rezepte ausgestellt werden, muss in der e-Medikation parallel zum Rezeptiervorgang je Medikationsplaneintrag (mindestens) eine geplante Abgabe angelegt werden. Medikationsplaneinträge können mehrfach rezeptiert werden, daher auch zu mehrfachen geplanten Abgaben führen. </p>
+  </li>
+  <li>
+    <p>Eine einzelne geplante Abgabe weist eine eindeutige ID auf. Diese ID wird während des Rezeptiervorgangs bei der e-Medikation abgefragt und über das Rezept/e-Rezept transportiert. So kann später die durchgeführte Abgabe mit der geplanten Abgabe verknüpft werden.</p>
+  </li>
+</ul>
+
+<p>Rezeptieren aus dem Medikationsplan im Client-System:</p>
+<ul>
+  <li>Notwendigerweise setzt jedes Rezeptieren (Verschreiben) auch einen Eintrag im Medikationsplan voraus (fachliches Verordnen).
+    <ul>
+      <li>Daher sollte es einerseits möglich sein, aus dem Medikationsplan ohne Zusatzaufwand ein Rezept zu generieren.</li>
+      <li>Andererseits muss seitens der Software-Integration sichergestellt sein, dass vor jedem Rezeptieren der Medikationsplan aktualisiert und in seiner (neuen) Gesamtheit zur Kenntnis genommen wurde.</li>
+    </ul>
+  </li>
+  <li>Bei Teil Opt-out e-Medikation bzw. ELGA Opt-out muss das Rezeptieren auch ohne vorgelagerten Medikationsplaneintrag möglich sein. </li>
+</ul>
+
+<h4 id="gesetzliche-speicherfristen-von-geplanten-abgabe">Gesetzliche Speicherfristen von geplanten Abgabe</h4>
+
+<p>Geplante Abgaben werden nach Ablauf der gesetzlichen Speicherfrist (5 Jahre) gelöscht.</p>
+
+<h4 id="durchgeführte-abgabe-erfassen">Durchgeführte Abgabe erfassen</h4>
+
+<p>Es können durchgeführte Abgaben zu einer geplanten Abgabe (sofern vorhanden) erfassen werden:</p>
+<ul>
+  <li>je geplanter Abgabe kann es mehrere durchgeführte Abgaben geben (z.B. Privatrezepte)</li>
+  <li>durchgeführte Abgaben von Substitutionen</li>
+  <li>Leerabgaben (Leerabgaben kennzeichnen, dass eine ursprünglich geplante Abgabe künftig nicht mehr bedient werden wird)</li>
+  <li>durchgeführte Abgaben ohne Bezug zu einer geplanten Abgabe:
+    <ul>
+      <li>OTC-Abgaben</li>
+      <li>Abgaben verschreibender GDA ohne ELGA-Anbindung</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Eine durchgeführte Abgabe beinhaltet u.a. folgende Informationen:</p>
+<ul>
+  <li>Präparat (PZN, Wirkstoff, Dosierung)</li>
+  <li>Gebrauchsanweisung (Signatur)</li>
+  <li>Einnahmezeitraum (befristet, unbefristet)</li>
+  <li>Abgegeben durch</li>
+  <li>Hinweise</li>
+  <li>Indikation</li>
+</ul>
+
+<h4 id="durchgeführte-abgabe-bearbeiten">Durchgeführte Abgabe bearbeiten</h4>
+
+<p>Durchgeführte Abgaben, die von einem GDA erfasst wurden, können nachträglich von diesem GDA überarbeitet werden</p>
+<ul>
+  <li>Hinweis zur Änderung fremderfasster Abgabeneinträge: Sofern fremderfasste Einträge korrigiert werden müssen, ist dies über einen Korrekturvermerk möglich</li>
+</ul>
+
+<p>Ein Korrekturvermerk beinhaltet folgende Aspekte:</p>
+<ul>
+  <li>zu korrigierende durchgeführte Abgabe wird als inkorrekt markiert</li>
+  <li>es wird ein Freitext-Kommentar als Begründung zur inkorrekten durchgeführten Abgabe erfasst</li>
+  <li>es besteht die Möglichkeit bereits korrigierte durchgeführte Abgaben mit einem weiteren Korrekturvermerk zu versehen. Dabei wird der jeweilige Korrekturvermerk als inkorrekt markiert.</li>
+</ul>
+
+<h4 id="zuordnung-von-durchgeführter-zu-geplanter-abgabe">Zuordnung von durchgeführter zu geplanter Abgabe</h4>
+
+<ul>
+  <li>Beim Speichern der durchgeführten Abgabe soll eine Zuordnung zur geplanten Abgabe sichergestellt werden (anhand der eindeutigen ID der geplanten Abgabe; Transport über das (e)-Rezept), siehe UC_eMed_08 Geplante Abgabe schreiben</li>
+  <li>Ist keine geplante Abgabe vorhanden, muss zur Dokumentation einer durchgeführten Abgabe eine Kontaktbestätigung vorliegen bzw. ausgelöst werden</li>
+</ul>
+
+<h4 id="substitution">Substitution</h4>
+
+<ul>
+  <li>Bei der Abgabe eines von der geplanten Abgabe abweichenden Präparats sind alle Informationen der IST-Abgabe (vgl. UC_eMed_08 Geplante Abgabe schreiben) mit einer Verknüpfung zur ursprünglich geplanten SOLL-Abgabe zu speichern.</li>
+  <li>Signatur und Einnahmezeitraum müssen nur im Zusammenhang mit einer Substitution gespeichert werden.</li>
+</ul>
+
+<h4 id="abgabe-ohne-elga-kontaktbestätigung">Abgabe ohne ELGA-Kontaktbestätigung</h4>
+
+<p>Das Speichern einer durchgeführten Abgabe kann auch ohne ELGA-Kontaktbestätigung erfolgen, wenn diese als geplante Abgabe (eindeutige ID) in der e-Medikation gespeichert wurde. Damit wird in den Apotheken ermöglicht, dass keine zusätzliche Identifizierungsmaßnahme des:der Bürger:in notwendig ist, wodurch der administrative Aufwand in Apotheken reduziert und Datenvollständigkeit gewährleistet wird.  </p>
+
+<h4 id="gesetzliche-speicherfristen-von-durchgeführten-abgaben">Gesetzliche Speicherfristen von durchgeführten Abgaben</h4>
+
+<p>Durchgeführte Abgaben werden nach Ablauf der gesetzlichen Speicherfrist (5 Jahre) gelöscht.</p>
 
 
 
@@ -456,7 +665,7 @@ Neben der Verwendung des e-Medikation Stylesheets kann auch eine eigene Ansicht 
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Jan 15, 2026 19:11+0000">2026-01-15</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Fri, Jan 16, 2026 14:21+0000">2026-01-16</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
