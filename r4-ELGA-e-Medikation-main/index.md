@@ -33,7 +33,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) ENTWURF",
   "status" : "draft",
-  "date" : "2026-01-19T10:22:08+00:00",
+  "date" : "2026-01-20T10:13:19+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -869,8 +869,8 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : {
           "reference" : "StructureDefinition/at-emed-medicationrequest-geplanteAbgabe"
         },
-        "name" : "ELGA e-Medikation geplante Abgabe",
-        "description" : "**Beschreibung:**Bildet eine geplante Abgabe eines Arzneimittels aus dem entsprechendem Medikationsplaneintrag des ELGA Teilnehmers ab (Rezeptierung). Sie enthält das verordnetes Arzneimittel und dessen Dosierung, der Status ist bei Ausstellung aktiv. \nAls groupIdentifier dient die eMED-ID, die auch im e-Rezept mitgeführt wird.\nWerden mehrere Arzneimittel gleichzeitig verordnet, so wird für jedes Arzneimittel eine eigene geplante Abgabe erstellt, der groupIdentifier ist aber für diese geplanten Abgaben gleich (Bildet 'Rezept-Klammer').",
+        "name" : "ELGA e-Medikation Geplante Abgabe",
+        "description" : "**Beschreibung:** Bildet eine geplante Abgabe eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab.\nSie enthält das verordnete Arzneimittel und dessen Dosierung und spielgelt die Inhalte des e-Rezepts wider. \nGeplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation.\nAls groupIdentifier dient die Geplante-Abgabe-ID (früher eMED-ID), die auch im e-Rezept mitgeführt wird.\nWerden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer').",
         "exampleBoolean" : false
       },
       {
@@ -914,6 +914,20 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "name" : "ELGA e-Medikation Planeintrag",
         "description" : "**Beschreibung:** Bildet einen Eintrag eines Medikationsplans eines ELGA Teilnehmers ab. Er enthält genau ein verordnetes Arzneimittel und dessen Dosierung. Dient in weiterer Folge dazu, eine geplante Abgabe zu erstellen (AtEmedMedicationRequestGeplanteAbgabe).",
         "exampleBoolean" : false
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "Practitioner"
+          }
+        ],
+        "reference" : {
+          "reference" : "Practitioner/at-emed-example-practitioner-01"
+        },
+        "name" : "HL7ATCorePractitioner",
+        "description" : "Beispiel eines behandelnden Arztes",
+        "exampleBoolean" : true
       }
     ],
     "page" : {

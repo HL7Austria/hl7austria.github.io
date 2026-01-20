@@ -9,13 +9,14 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-planeintrag | *Version*:0.1.1 | |
-| Draft as of 2026-01-19 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedicationRequestPlaneintrag |
+| Draft as of 2026-01-20 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedicationRequestPlaneintrag |
 
  
 **Beschreibung:**Bildet einen Eintrag eines Medikationsplans eines ELGA Teilnehmers ab. Er enthält genau ein verordnetes Arzneimittel und dessen Dosierung. Dient in weiterer Folge dazu, eine geplante Abgabe zu erstellen (AtEmedMedicationRequestGeplanteAbgabe). 
 
 **Usages:**
 
+* Refer to this Profile: [ELGA e-Medikation Geplante Abgabe](StructureDefinition-at-emed-medicationrequest-geplanteAbgabe.md)
 * Examples for this Profile: [MedicationRequest/AtEmedExampleMedicationRequestPlaneintrag01](MedicationRequest-AtEmedExampleMedicationRequestPlaneintrag01.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/at-emed-medicationrequest-planeintrag)
@@ -41,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationre
   "name" : "AtEmedMedicationRequestPlaneintrag",
   "title" : "ELGA e-Medikation Planeintrag",
   "status" : "draft",
-  "date" : "2026-01-19T10:22:08+00:00",
+  "date" : "2026-01-20T10:13:19+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

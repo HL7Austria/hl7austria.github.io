@@ -6,25 +6,34 @@
 
 ## Example MedicationRequest: AtEmedMedicationRequestGeplanteAbgabe-Beispiel
 
-Profiles: [ELGA e-Medikation geplante Abgabe](StructureDefinition-at-emed-medicationrequest-geplanteAbgabe.md), [MedicationRequest: MPD](http://hl7.eu/fhir/mpd/0.1.0-ballot/StructureDefinition-MedicationRequest-eu-mpd.html)
+Profile: [ELGA e-Medikation Geplante Abgabe](StructureDefinition-at-emed-medicationrequest-geplanteAbgabe.md)
 
-**identifier**: 100-1/3
+**identifier**: WYE82A2G8EEW-4711
 
 **status**: Active
 
-**intent**: Option
+**intent**: Order
 
-**medication**: Thalidomide 50 mg oral capsule
+**medication**: EBETREXAT TBL 10MG
 
 **subject**: [Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-AtEmedExamplePatient01.md)
 
 **authoredOn**: 2024-10-03
 
-**requester**: [PractitionerRole Clinical oncologist](http://hl7.eu/fhir/mpd/0.1.0-ballot/PractitionerRole-doctor1.html)
+**requester**: [Practitioner/AtEmedExamplePractitioner01](Practitioner/AtEmedExamplePractitioner01)
 
 **reasonCode**: Multiple myeloma
 
-**groupIdentifier**: 100
+**basedOn**: [Planeintrag](Medication/AtEmedExampleMedicationRequestPlaneintrag01)
+
+**groupIdentifier**: WYE82A2G8EE1
+
+**note**: 
+
+> 
+
+Zusätzliche Informationen zur geplanten Abgabe.
+
 
 > **dosageInstruction****timing**: Late Evening, Once per 1 day
 
@@ -53,23 +62,22 @@ Profiles: [ELGA e-Medikation geplante Abgabe](StructureDefinition-at-emed-medica
   "id" : "AtEmedExampleMedicationRequestGeplanteAbgabe01",
   "meta" : {
     "profile" : [
-      "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-geplanteAbgabe",
-      "http://hl7.eu/fhir/mpd/StructureDefinition/MedicationRequest-eu-mpd"
+      "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-geplanteAbgabe"
     ]
   },
   "identifier" : [
     {
-      "value" : "100-1/3"
+      "value" : "WYE82A2G8EEW-4711"
     }
   ],
   "status" : "active",
-  "intent" : "option",
+  "intent" : "order",
   "medicationCodeableConcept" : {
     "coding" : [
       {
-        "system" : "http://snomed.info/sct",
-        "code" : "376255008",
-        "display" : "Thalidomide 50 mg oral capsule"
+        "system" : "https://termgit.elga.gv.at/CodeSystem/asp-liste",
+        "code" : "2443061",
+        "display" : "EBETREXAT TBL 10MG"
       }
     ]
   },
@@ -78,7 +86,7 @@ Profiles: [ELGA e-Medikation geplante Abgabe](StructureDefinition-at-emed-medica
   },
   "authoredOn" : "2024-10-03",
   "requester" : {
-    "reference" : "PractitionerRole/doctor1"
+    "reference" : "Practitioner/AtEmedExamplePractitioner01"
   },
   "reasonCode" : [
     {
@@ -91,9 +99,20 @@ Profiles: [ELGA e-Medikation geplante Abgabe](StructureDefinition-at-emed-medica
       ]
     }
   ],
+  "basedOn" : [
+    {
+      "reference" : "Medication/AtEmedExampleMedicationRequestPlaneintrag01",
+      "display" : "Planeintrag"
+    }
+  ],
   "groupIdentifier" : {
-    "value" : "100"
+    "value" : "WYE82A2G8EE1"
   },
+  "note" : [
+    {
+      "text" : "Zusätzliche Informationen zur geplanten Abgabe."
+    }
+  ],
   "dosageInstruction" : [
     {
       "timing" : {

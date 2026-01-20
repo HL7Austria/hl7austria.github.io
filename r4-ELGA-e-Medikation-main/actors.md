@@ -37,7 +37,7 @@ TODO Operations
 
 ### ELGA-Teilnehmer
 
-* Patient
+* Bürger
 * Vertreter 
 * ELGA-Ombudsstelle
 * Vollmachtnehmer
@@ -47,6 +47,5 @@ TODO Operations
 
 TODO Operations
 
- 
- ![](usecases_e_med4.drawio.png) 
+![](usecases_e_med4.drawio.png) 
 

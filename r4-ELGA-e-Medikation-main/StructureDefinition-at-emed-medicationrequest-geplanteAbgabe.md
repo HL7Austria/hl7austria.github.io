@@ -1,18 +1,18 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\ELGA e-Medikation geplante Abgabe - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\ELGA e-Medikation Geplante Abgabe - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **ELGA e-Medikation geplante Abgabe**
+* **ELGA e-Medikation Geplante Abgabe**
 
-## Resource Profile: ELGA e-Medikation geplante Abgabe 
+## Resource Profile: ELGA e-Medikation Geplante Abgabe 
 
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-geplanteAbgabe | *Version*:0.1.1 | |
-| Draft as of 2026-01-19 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedicationRequestGeplanteAbgabe |
+| Draft as of 2026-01-20 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedicationRequestGeplanteAbgabe |
 
  
-**Beschreibung:**Bildet eine geplante Abgabe eines Arzneimittels aus dem entsprechendem Medikationsplaneintrag des ELGA Teilnehmers ab (Rezeptierung). Sie enthält das verordnetes Arzneimittel und dessen Dosierung, der Status ist bei Ausstellung aktiv. Als groupIdentifier dient die eMED-ID, die auch im e-Rezept mitgeführt wird. Werden mehrere Arzneimittel gleichzeitig verordnet, so wird für jedes Arzneimittel eine eigene geplante Abgabe erstellt, der groupIdentifier ist aber für diese geplanten Abgaben gleich (Bildet 'Rezept-Klammer'). 
+**Beschreibung:**Bildet eine geplante Abgabe eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab. Sie enthält das verordnete Arzneimittel und dessen Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. Als groupIdentifier dient die Geplante-Abgabe-ID (früher eMED-ID), die auch im e-Rezept mitgeführt wird. Werden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer'). 
 
 **Usages:**
 
@@ -39,9 +39,9 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationre
   "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-geplanteAbgabe",
   "version" : "0.1.1",
   "name" : "AtEmedMedicationRequestGeplanteAbgabe",
-  "title" : "ELGA e-Medikation geplante Abgabe",
+  "title" : "ELGA e-Medikation Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-01-19T10:22:08+00:00",
+  "date" : "2026-01-20T10:13:19+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -64,7 +64,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationre
       ]
     }
   ],
-  "description" : "**Beschreibung:**Bildet eine geplante Abgabe eines Arzneimittels aus dem entsprechendem Medikationsplaneintrag des ELGA Teilnehmers ab (Rezeptierung). Sie enthält das verordnetes Arzneimittel und dessen Dosierung, der Status ist bei Ausstellung aktiv. \nAls groupIdentifier dient die eMED-ID, die auch im e-Rezept mitgeführt wird.\nWerden mehrere Arzneimittel gleichzeitig verordnet, so wird für jedes Arzneimittel eine eigene geplante Abgabe erstellt, der groupIdentifier ist aber für diese geplanten Abgaben gleich (Bildet 'Rezept-Klammer').",
+  "description" : "**Beschreibung:** Bildet eine geplante Abgabe eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab.\nSie enthält das verordnete Arzneimittel und dessen Dosierung und spielgelt die Inhalte des e-Rezepts wider. \nGeplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation.\nAls groupIdentifier dient die Geplante-Abgabe-ID (früher eMED-ID), die auch im e-Rezept mitgeführt wird.\nWerden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer').",
   "fhirVersion" : "4.0.1",
   "mapping" : [
     {
@@ -102,12 +102,282 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationre
     "element" : [
       {
         "id" : "MedicationRequest",
-        "path" : "MedicationRequest"
+        "path" : "MedicationRequest",
+        "short" : "Geplante Abgabe eines Arzneimittels aus dem Medikationsplan.",
+        "constraint" : [
+          {
+            "key" : "med-1",
+            "severity" : "error",
+            "human" : "Für die geplante Abgabe muss entweder CodeableConcept (PZN) oder Reference(Medication) angegeben werden – aber genau eins.",
+            "expression" : "medicationCodeableConcept.exists() xor medicationReference.exists()",
+            "source" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-geplanteAbgabe"
+          }
+        ]
+      },
+      {
+        "id" : "MedicationRequest.identifier",
+        "path" : "MedicationRequest.identifier",
+        "short" : "Geplante-Abgabe-ID (früher eMed-ID), bildet 'Rezept-Klammer' bei mehreren gleichzeitig ausgestellten geplanten Abgaben.",
+        "min" : 1,
+        "mustSupport" : true
       },
       {
         "id" : "MedicationRequest.status",
         "path" : "MedicationRequest.status",
-        "short" : "active | aktiv"
+        "short" : "Status der geplanten Abgabe (im Standardfall active oder complete): active | on-hold | cancelled | completed | entered-in-error | stopped | draft | unknown"
+      },
+      {
+        "id" : "MedicationRequest.statusReason",
+        "path" : "MedicationRequest.statusReason",
+        "short" : "Grund für den aktuellen Status: https://hl7.org/fhir/R4/valueset-medicationrequest-status-reason.html. Keine Verwendung in der geplanten Abgabe.",
+        "max" : "0"
+      },
+      {
+        "id" : "MedicationRequest.intent",
+        "path" : "MedicationRequest.intent",
+        "short" : "Die Geplante Abgabe stellt eine Anforderung und Ermächtigung zum Handeln durch den Antragsteller dar, daher ist intent immer \"order\".",
+        "patternCode" : "order",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.category",
+        "path" : "MedicationRequest.category",
+        "short" : "Art der Medikamentenanforderung (z.B. ambulante oder stationäre Einnahme oder Verabreichung)",
+        "max" : "0"
+      },
+      {
+        "id" : "MedicationRequest.priority",
+        "path" : "MedicationRequest.priority",
+        "short" : "Priorität der geplanten Abgabe: routine | urgent | asap | stat. Keine Verwendung in der geplanten Abgabe.",
+        "max" : "0"
+      },
+      {
+        "id" : "MedicationRequest.doNotPerform",
+        "path" : "MedicationRequest.doNotPerform",
+        "short" : "Gibt an, ob die geplante Abgabe untersagt ist. Keine Verwendung in der geplanten Abgabe.",
+        "max" : "0"
+      },
+      {
+        "id" : "MedicationRequest.reported[x]",
+        "path" : "MedicationRequest.reported[x]",
+        "short" : "Keine Verwendung in der geplanten Abgabe.",
+        "max" : "0"
+      },
+      {
+        "id" : "MedicationRequest.medication[x]",
+        "path" : "MedicationRequest.medication[x]",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "type",
+              "path" : "$this"
+            }
+          ],
+          "ordered" : false,
+          "rules" : "open"
+        },
+        "type" : [
+          {
+            "code" : "CodeableConcept"
+          },
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.medication[x]:medicationCodeableConcept",
+        "path" : "MedicationRequest.medication[x]",
+        "sliceName" : "medicationCodeableConcept",
+        "short" : "Angabe mittels Pharmazentralnummer (PZN) aus der ASP-Liste.",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "CodeableConcept"
+          }
+        ],
+        "mustSupport" : true,
+        "binding" : {
+          "strength" : "required",
+          "valueSet" : "https://termgit.elga.gv.at/CodeSystem/asp-liste"
+        }
+      },
+      {
+        "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding",
+        "path" : "MedicationRequest.medication[x].coding",
+        "min" : 1,
+        "max" : "1"
+      },
+      {
+        "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding.system",
+        "path" : "MedicationRequest.medication[x].coding.system",
+        "min" : 1
+      },
+      {
+        "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding.code",
+        "path" : "MedicationRequest.medication[x].coding.code",
+        "min" : 1
+      },
+      {
+        "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding.display",
+        "path" : "MedicationRequest.medication[x].coding.display",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.medication[x]:medicationReference",
+        "path" : "MedicationRequest.medication[x]",
+        "sliceName" : "medicationReference",
+        "short" : "Bei magistralen Anwendungen oder Infusionen ohne PZN.",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.subject",
+        "path" : "MedicationRequest.subject",
+        "short" : "Österreichischer Patient für den die geplante Abgabe ausgestellt wird.",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.encounter",
+        "path" : "MedicationRequest.encounter",
+        "short" : "Keine Verwendung in der geplanten Abgabe.",
+        "max" : "0"
+      },
+      {
+        "id" : "MedicationRequest.supportingInformation",
+        "path" : "MedicationRequest.supportingInformation",
+        "short" : "Keine Verwendung in der geplanten Abgabe.",
+        "max" : "0"
+      },
+      {
+        "id" : "MedicationRequest.authoredOn",
+        "path" : "MedicationRequest.authoredOn",
+        "short" : "Datum der Ausstellung der geplanten Abgabe.",
+        "min" : 1,
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.requester",
+        "path" : "MedicationRequest.requester",
+        "short" : "Der Arzt oder die Ärztin, die die geplante Abgabe erstellt hat und für den Inhalt verantwortlich ist.",
+        "min" : 1,
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner",
+              "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitionerRole",
+              "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-organization"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.performer",
+        "path" : "MedicationRequest.performer",
+        "short" : "Keine Verwendung in der geplanten Abgabe.",
+        "max" : "0"
+      },
+      {
+        "id" : "MedicationRequest.performerType",
+        "path" : "MedicationRequest.performerType",
+        "short" : "Keine Verwendung in der geplanten Abgabe.",
+        "max" : "0"
+      },
+      {
+        "id" : "MedicationRequest.recorder",
+        "path" : "MedicationRequest.recorder",
+        "short" : "Keine Verwendung in der geplanten Abgabe.",
+        "max" : "0"
+      },
+      {
+        "id" : "MedicationRequest.reasonCode",
+        "path" : "MedicationRequest.reasonCode",
+        "short" : "Grund für die Verordnung des Arzneimittels. Annahme: Keine Verwendung in der geplanten Abgabe, reasonReference ausreichend."
+      },
+      {
+        "id" : "MedicationRequest.reasonReference",
+        "path" : "MedicationRequest.reasonReference",
+        "short" : "Grund für die Verordnung des Arzneimittels (Referenz). Verwendung erst, wenn e-Diagnose referenzierbar ist.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.instantiatesCanonical",
+        "path" : "MedicationRequest.instantiatesCanonical",
+        "short" : "Keine Verwendung in der geplanten Abgabe.",
+        "max" : "0"
+      },
+      {
+        "id" : "MedicationRequest.instantiatesUri",
+        "path" : "MedicationRequest.instantiatesUri",
+        "short" : "Keine Verwendung in der geplanten Abgabe.",
+        "max" : "0"
+      },
+      {
+        "id" : "MedicationRequest.basedOn",
+        "path" : "MedicationRequest.basedOn",
+        "short" : "Referenz auf den zugrundeliegenden Medikationsplaneintrag, auf dem diese geplante Abgabe basiert.",
+        "min" : 1,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-planeintrag"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "MedicationRequest.groupIdentifier",
+        "path" : "MedicationRequest.groupIdentifier",
+        "short" : "Als groupIdentifier dient die Geplante-Abgabe-ID (früher eMED-ID), die auch im e-Rezept mitgeführt wird. Werden von einem:r Arzt:Ärtztin mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer')."
+      },
+      {
+        "id" : "MedicationRequest.courseOfTherapyType",
+        "path" : "MedicationRequest.courseOfTherapyType",
+        "short" : "Gesamtmuster der Medikamentengabe (z.B. saisonal). Evtl. im Planeintrag (dosageInstruction), paused soll im Status dokumentiert werden.",
+        "max" : "0"
+      },
+      {
+        "id" : "MedicationRequest.insurance",
+        "path" : "MedicationRequest.insurance",
+        "short" : "Zusätzliche Informationen zur geplanten Abgabe, die durch die anderen Attribute nicht abgebildet werden konnten. Dzt. unklar, ob erforderlich.",
+        "max" : "0"
+      },
+      {
+        "id" : "MedicationRequest.dosageInstruction",
+        "path" : "MedicationRequest.dosageInstruction",
+        "short" : "Anweisungen zur Einnahme/Verabreichung des Arzneimittels."
+      },
+      {
+        "id" : "MedicationRequest.priorPrescription",
+        "path" : "MedicationRequest.priorPrescription",
+        "short" : "Im Falle einer Änderung wird auf die ersetzte Verordnungen/MedicationRequests verwiesen."
       }
     ]
   }
