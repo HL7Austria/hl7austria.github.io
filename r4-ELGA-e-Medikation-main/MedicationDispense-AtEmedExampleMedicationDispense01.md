@@ -23,9 +23,9 @@ Profiles: [ELGA e-Medikation Abgabe](StructureDefinition-at-emed-medicationdispe
 
 **authorizingPrescription**: [MedicationRequest: identifier = 10-123EP; status = active; intent = order; authoredOn = 2024-12-06](http://hl7.eu/fhir/mpd/0.1.0-ballot/MedicationRequest-400C-prescription-cefuroxime-singleline.html)
 
-**quantity**: 1 1(Details: UCUM code1 = '1')
+**quantity**: 1 1 (Details: UCUM code1 = '1')
 
-**daysSupply**: 3 day(s)(Details: UCUM coded = 'd')
+**daysSupply**: 3 day(s) (Details: UCUM coded = 'd')
 
 **whenHandedOver**: 2024-12-06 19:54:00+0000
 

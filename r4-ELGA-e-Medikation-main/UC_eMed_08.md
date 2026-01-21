@@ -8,13 +8,17 @@
 
 ### Beschreibung
 
-GDA sollen eine geplante Abgabe für eine:n Bürger:in erfassen oder korrigieren können, um diese zum Zweck der medizinischen Dokumentation festzuhalten. 
+GDA sollen eine geplante Abgabe für eine:n ELGA-Teilnehmer:in erfassen oder korrigieren können, um diese zum Zweck der medizinischen Dokumentation festzuhalten. 
+ ELGA-Teilnehmer:in sollen einzelne Abgabeneinträge unwiderruflich löschen können. 
 
  Details zu "Die e-Abgabe" (ab Kapitel Geplante Abgaben erfassen), siehe "[Die e-Medikation](requirements.md)"
 
 ### Akteure
 
 * GDA
+* ELGA-Teilnehmer:in
+* Vertretung
+* OBST
 
 ### Auslöser
 
@@ -23,7 +27,7 @@ GDA sollen eine geplante Abgabe für eine:n Bürger:in erfassen oder korrigieren
 ### Vorbediungungen
 
 * Benutzer:in ist authentifiziert und autorisiert
-* Bürger:in ist eindeutig identifiziert
+* ELGA-Teilnehmer:in ist eindeutig identifiziert
 
 ### Nachbedingungen/Ergebnis
 
@@ -32,25 +36,31 @@ GDA sollen eine geplante Abgabe für eine:n Bürger:in erfassen oder korrigieren
 
 ### Abläufe
 
-#### Standardablauf
+#### Standardablauf: Geplante Abgabe erfassen
 
-* Benutzer:in startet das Erfassen einer geplanten Abgabe zu einem Medikationsplaneintrag
-* Benutzer:in gibt alle erforderlichen Daten zum Erfassen der geplanten Abgabe ein
-* Benutzer:in speichert die Eingaben
+1. Benutzer:in startet das Erfassen einer geplanten Abgabe zu einem Medikationsplaneintrag
+1. Benutzer:in gibt alle erforderlichen Daten zum Erfassen der geplanten Abgabe ein
+1. Benutzer:in speichert die Eingaben
 
 #### Alternativabläufe
 
 ##### Alternativablauf 01: selbst erfasste, geplante Abgabe bearbeiten
 
-* Benutzer:in ruft eine bestehende, selbst erfasste geplante Abgabe auf
-* Benutzer:in verändert zuvor erfasste Angaben
-* Benutzer:in speichert die Änderungen ab
+1. Benutzer:in ruft eine bestehende, selbst erfasste geplante Abgabe auf
+1. Benutzer:in verändert zuvor erfasste Angaben
+1. Benutzer:in speichert die Änderungen ab
 
 ##### Alternativablauf 02: geplante Abgabe korrigieren (Korrekturvermerk)
 
-* Benutzer:in ruft eine bestehende geplante Abgabe auf
-* Benutzer:in markiert die geplante Abgabe als inkorrekt
-* Benutzer:in ergänzt einen Kommentar zu den Hintergründen der Korrektur Abgrenzungen
+1. Benutzer:in ruft eine bestehende geplante Abgabe auf
+1. Benutzer:in markiert die geplante Abgabe als inkorrekt
+1. Benutzer:in ergänzt einen Kommentar zu den Hintergründen der Korrektur Abgrenzungen
+
+##### Alternativablauf 03: geplante Abgabe löschen
+
+1. ELGA-Teilnehmer:in ruft die Liste der geplanten Abgaben auf
+1. ELGA-Teilnehmer:in entfernt eine beliebige geplante Abgabe aus der Abgabenliste
+1. ELGA-Teilnehmer:in speichert die Änderungen ab
 
 ### Abgrenzungen
 

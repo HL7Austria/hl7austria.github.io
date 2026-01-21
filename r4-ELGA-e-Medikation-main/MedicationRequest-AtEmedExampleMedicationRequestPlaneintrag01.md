@@ -33,7 +33,7 @@ Profiles: [ELGA e-Medikation Planeintrag](StructureDefinition-at-emed-medication
 | | |
 | :--- | :--- |
 | - | **Dose[x]** |
-| * | 4 Tablet(Details: SNOMED CT code732936001 = 'Tablet (unit of presentation)') |
+| * | 4 Tablet (Details: SNOMED CT code732936001 = 'Tablet (unit of presentation)') |
 
 
 ### DispenseRequests
@@ -41,7 +41,7 @@ Profiles: [ELGA e-Medikation Planeintrag](StructureDefinition-at-emed-medication
 | | | | |
 | :--- | :--- | :--- | :--- |
 | - | **ValidityPeriod** | **NumberOfRepeatsAllowed** | **Quantity** |
-| * | 2024-10-03 --> 2024-12-03 | 1 | 168 Tablet(Details: SNOMED CT code732936001 = 'Tablet (unit of presentation)') |
+| * | 2024-10-03 --> 2024-12-03 | 1 | 168 Tablet (Details: SNOMED CT code732936001 = 'Tablet (unit of presentation)') |
 
 
 

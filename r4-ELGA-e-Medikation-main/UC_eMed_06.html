@@ -264,27 +264,28 @@ width: 100%;}
 
 <h3 id="beschreibung">Beschreibung</h3>
 
-<p>GDA sollen einen Medikationsplan für eine:n Bürger:in erfassen oder korrigieren können, um eine Übersicht über die gesamte aktuell einzunehmende Medikation zur Verfügung zu stellen. 
+<p>GDA sollen einen Medikationsplan für eine:n ELGA-Teilnehmer:in erfassen oder korrigieren können, um eine Übersicht über die gesamte aktuell einzunehmende Medikation zur Verfügung zu stellen. 
 <br /><br />
 Details zu "Medikationsplan erfassen", siehe "<a href="requirements.html">Die e-Medikation</a>"</p>
 
 <h3 id="akteure">Akteure</h3>
 
 <ul>
-  <li>Benutzer:in möchte einen Medikationsplan für eine:n Bürger:in erfassen oder korrigieren</li>
+  <li>GDA</li>
+  <li>ELGA-Teilnehmer:in</li>
 </ul>
 
 <h3 id="auslöser">Auslöser</h3>
 
 <ul>
-  <li>Benutzer:in möchte einen Medikationsplan für eine:n Bürger:in erfassen oder korrigieren</li>
+  <li>GDA möchte einen Medikationsplan für eine:n ELGA-Teilnehmer:in erfassen oder korrigieren</li>
 </ul>
 
 <h3 id="vorbediungungen">Vorbediungungen</h3>
 
 <ul>
-  <li>Benutzer:in ist authentifiziert und autorisiert</li>
-  <li>Bürger:in ist eindeutig identifiziert</li>
+  <li>GDA ist authentifiziert und autorisiert</li>
+  <li>ELGA-Teilnehmer:in ist eindeutig identifiziert</li>
 </ul>
 
 <h3 id="nachbedingungenergebnis">Nachbedingungen/Ergebnis</h3>
@@ -297,7 +298,7 @@ Details zu "Medikationsplan erfassen", siehe "<a href="requirements.html">Die e-
 <h3 id="abläufe">Abläufe</h3>
 <h4 id="standardablauf-medikationsplan-erfassen">Standardablauf: Medikationsplan erfassen</h4>
 <ol>
-  <li>Benutzer:in startet das Erfassen eines neuen Medikationsplans
+  <li>GDA startet das Erfassen eines neuen Medikationsplans
     <ol>
       <li>Im Falle eines manuellen Erfassens (initiales Erfassen sofern noch kein Medikationsplan vorhanden ist):
         <ol>
@@ -313,52 +314,69 @@ Details zu "Medikationsplan erfassen", siehe "<a href="requirements.html">Die e-
       </li>
     </ol>
   </li>
-  <li>Benutzer:in definiert die Reihenfolge der Medikationsplaneinträge</li>
-  <li>Benutzer:in bestätigt die Vollständigkeit bzw. Verträglichkeit des ganzheitlichen Mediationsplans und speichert diesen ab</li>
+  <li>GDA definiert die Reihenfolge der Medikationsplaneinträge</li>
+  <li>GDA bestätigt die Vollständigkeit bzw. Verträglichkeit des ganzheitlichen Mediationsplans und speichert diesen ab</li>
 </ol>
 
 <h4 id="alternativabläufe">Alternativabläufe</h4>
-<h5 id="alternativablauf-01-medikationsplan-leeren">Alternativablauf 01: Medikationsplan leeren</h5>
+<h5 id="alternativablauf-01-selbst-erfasste-medikationsplaneinträge-bearbeiten">Alternativablauf 01: selbst erfasste Medikationsplaneinträge bearbeiten</h5>
+<ol>
+  <li>GDA ruft einen bestehenden, selbst erfassten Medikationsplaneintrag auf</li>
+  <li>GDA verändert zuvor erfasste Angaben</li>
+  <li>GDA speichert die Änderungen ab</li>
+</ol>
+
+<h5 id="alternativablauf-02-medikationsplan-korrigieren">Alternativablauf 02: Medikationsplan korrigieren</h5>
+<ol>
+  <li>GDA ruft eine bestehende Medikationsplanversion auf (eine beliebige Vorversion oder die zuletzt erfasste Version)</li>
+  <li>GDA markiert einen einzelnen Eintrag im Medikationsplan als inkorrekt oder fügt einen allgemeingültigen Korrekturvermerk am Medikationsplan selbst hinzu</li>
+  <li>GDA ergänzt einen Kommentar zu den Hintergründen der Korrektur</li>
+</ol>
+
+<h5 id="alternativablauf-03-einzelne-medikationsplaneinträge-löschen">Alternativablauf 03: einzelne Medikationsplaneinträge löschen</h5>
+<ol>
+  <li>ELGA-Teilnehmer:in ruft den zuletzt erstellten Medikationsplan auf</li>
+  <li>ELGA-Teilnehmer:in entfernt einzelne Einträge aus dem Medikationsplan</li>
+  <li>ELGA-Teilnehmer:in speichert die Änderungen ab</li>
+</ol>
+
+<h5 id="alternativablauf-04-medikationsplanversionen-löschen">Alternativablauf 04: Medikationsplanversionen löschen</h5>
+<ol>
+  <li>ELGA-Teilnehmer:in ruft eine bestehende Medikationsplanversion auf (eine beliebige Vorversion oder die zuletzt erfasste Version)</li>
+  <li>ELGA-Teilnehmer:in entfernt die aufgerufene Medikationsplanversion vollständig</li>
+  <li>ELGA-Teilnehmer:in speichert die Änderungen ab</li>
+</ol>
+
+<h5 id="alternativablauf-05-medikationsplan-vollständig-leeren">Alternativablauf 05: Medikationsplan vollständig leeren</h5>
 <p>TBD, ob:</p>
-<ul>
+<ol>
   <li>Aktueller Plan wird in die Historie verschoben (Arzt/Ärztin bestätigt das Absetzen jeglicher Medikation)</li>
-  <li>Leeren Plan als neuen Plan speichern</li>
-  <li>Auswirkung auf Standardablauf</li>
-  <li>
-    <h5 id="alternativablauf-02-medikationsplan-korrigieren">Alternativablauf 02: Medikationsplan korrigieren</h5>
+  <li>Leeren Plan als neuen Plan speichern
     <ol>
-      <li>Benutzer:in ruft eine bestehende Medikationsplan-Version auf (eine beliebige Vorversion oder die zuletzt erfasste Version)</li>
-      <li>Benutzer:in markiert einen einzelnen Eintrag im Medikationsplan als inkorrekt oder fügt einen allgemeingültigen Korrekturvermerk am Medikationsplan selbst hinzu</li>
-      <li>Benutzer:in ergänzt einen Kommentar zu den Hintergründen der Korrektur</li>
+      <li>Auswirkung auf Standardablauf klären</li>
     </ol>
   </li>
-</ul>
+</ol>
 
 <h3 id="sub-use-cases">Sub-Use Cases</h3>
-<h4 id="uc_dime_05_1-medikationsplan-lesen-um-zu-schreiben">UC_DiMe_05_1 Medikationsplan lesen um zu schreiben</h4>
+<p><strong>TODO: DRAFT</strong></p>
+<h4 id="uc_emed_06_s01-medikationsplan-lesen-um-zu-schreiben">UC_eMed_06_S01 Medikationsplan lesen um zu schreiben</h4>
 <ol>
   <li>Vor dem Scheiben eines Medikationsplans muss sichergestellt sein, dass die aktuelle Version gelesen wird.</li>
   <li>Anwender trägt mindestens alle verpflichtend auszufüllenden Datenfelder für den Medikationsplan ein (sofern noch nicht vorhanden)</li>
   <li>Im Anschluss wird der gesamte bestehende Medikationsplan durch eine neue, geänderte Version ersetzt. Dabei nimmt der GDA die vorbestehenden Einträge lediglich zur Kenntnis, d.h. er verantwortet nur die Verträglichkeit der neu hinzugefügten Medikation mit der bestehenden.</li>
 </ol>
 
-<h4 id="uc_dime_05_2-medikationsplaneintrag-editieren-hinweis-für-versicherten-hinweis-für-mitbehandler-indikation-und-dosierangaben">UC_DiMe_05_2 Medikationsplaneintrag editieren (Hinweis für Versicherten, Hinweis für Mitbehandler, Indikation und Dosierangaben)</h4>
-<p>Vorbedingung UC_DiMe_05_1</p>
-<ol>
-  <li>Anwender ändert/ergänzt Medikationsplaneinträge 
- trägt mindestens alle verpflichtend auszufüllenden Datenfelder für den Medikationsplan ein (sofern noch nicht vorhanden)</li>
-</ol>
+<h4 id="uc_emed_06_s02-medikationsplaneintrag-editieren-hinweis-für-versicherten-hinweis-für-mitbehandler-indikation-und-dosierangaben">UC_eMed_06_S02 Medikationsplaneintrag editieren (Hinweis für Versicherten, Hinweis für Mitbehandler, Indikation und Dosierangaben)</h4>
 
-<p>Der behandelnde <strong>GDA</strong> kann, z.B. aufgrund einer Therapieanpassung, einen oder mehrere bestehende Medikationsplaneinträge ändern (Dosierangaben, Start/Enddatum, stornieren/beenden/pausieren, Indikationsangaben) oder neue Medikationsplaneinträge hinzufügen.</p>
+<h4 id="uc_emed_06_s03-medikationsplaneintrag-pausieren--aktivieren--beenden">UC_eMed_06_S03 Medikationsplaneintrag pausieren / aktivieren / beenden</h4>
 
-<h4 id="uc_dime_05_3-medikationsplaneintrag-pausieren--aktivieren--beenden">UC_DiMe_05_3 Medikationsplaneintrag pausieren / aktivieren / beenden</h4>
+<h4 id="uc_emed_06_s04-medikationsplaneintrag-stornieren">UC_eMed_06_S04 Medikationsplaneintrag stornieren</h4>
 
-<h4 id="uc_dime_05_4-medikationsplaneintrag-stornieren">UC_DiMe_05_4 Medikationsplaneintrag stornieren</h4>
-
-<h4 id="uc_dime_05_5-medikationsplaneintrag-nachtragen-einträge-aus-zusätzlich-erfolgte-abgaben-ohne-medikationsplanbezug">UC_DiMe_05_5 Medikationsplaneintrag nachtragen (Einträge aus „Zusätzlich erfolgte Abgaben“ (ohne Medikationsplanbezug))</h4>
+<h4 id="uc_emed_06_s05-medikationsplaneintrag-nachtragen-einträge-aus-zusätzlich-erfolgte-abgaben-ohne-medikationsplanbezug">UC_eMed_06_S05 Medikationsplaneintrag nachtragen (Einträge aus „Zusätzlich erfolgte Abgaben“ (ohne Medikationsplanbezug))</h4>
 <p>Optional kann der GDA Einträge aus der „Zusätzlich erfolgte Abgaben“-Liste (ohne Medikationsplanbezug) in den Medikationsplan übernehmen (d.h. einen neuen Eintrag erstellen).</p>
 
-<h4 id="uc_dime_05_5-medikationsplaneintrag-reihen">UC_DiMe_05_5 Medikationsplaneintrag reihen</h4>
+<h4 id="uc_emed_06_s06-medikationsplaneintrag-reihen">UC_eMed_06_S06 Medikationsplaneintrag reihen</h4>
 <p>Weiters kann der GDA die Reihenfolge der Medikationsplaneinträge im Medikationsplan festlegen. Dies geschieht in der Praxis insbesondere, um eine fachlich sinnvolle Gruppierung von Medikamenten vorzunehmen und dient der Übersichtlichkeit.</p>
 
 <h3 id="beispiel">Beispiel</h3>
@@ -389,7 +407,7 @@ Details zu "Medikationsplan erfassen", siehe "<a href="requirements.html">Die e-
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Jan 20, 2026 10:13+0000">2026-01-20</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jan 21, 2026 17:03+0000">2026-01-21</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

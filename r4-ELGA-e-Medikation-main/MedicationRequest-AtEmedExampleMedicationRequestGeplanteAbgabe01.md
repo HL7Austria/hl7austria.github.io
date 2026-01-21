@@ -42,7 +42,7 @@ Zusätzliche Informationen zur geplanten Abgabe.
 | | |
 | :--- | :--- |
 | - | **Dose[x]** |
-| * | 4 Tablet(Details: SNOMED CT code732936001 = 'Tablet (unit of presentation)') |
+| * | 4 Tablet (Details: SNOMED CT code732936001 = 'Tablet (unit of presentation)') |
 
 
 ### DispenseRequests
@@ -50,7 +50,7 @@ Zusätzliche Informationen zur geplanten Abgabe.
 | | | | |
 | :--- | :--- | :--- | :--- |
 | - | **ValidityPeriod** | **NumberOfRepeatsAllowed** | **Quantity** |
-| * | 2024-10-03 --> 2024-12-03 | 1 | 168 Tablet(Details: SNOMED CT code732936001 = 'Tablet (unit of presentation)') |
+| * | 2024-10-03 --> 2024-12-03 | 1 | 168 Tablet (Details: SNOMED CT code732936001 = 'Tablet (unit of presentation)') |
 
 
 

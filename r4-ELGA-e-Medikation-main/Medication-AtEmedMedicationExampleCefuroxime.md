@@ -17,7 +17,7 @@ Profiles: [ELGA e-Medikation Medication](StructureDefinition-at-emed-medication.
 | | | | |
 | :--- | :--- | :--- | :--- |
 | - | **Item[x]** | **IsActive** | **Strength** |
-| * | Cefuroxime | true | 1500 milligram(Details: UCUM codemg = 'mg')/1 Vial(Details: standardterms.edqm.eu code15060000 = 'Vial') |
+| * | Cefuroxime | true | 1500 milligram (Details: UCUM codemg = 'mg')/1 Vial (Details: standardterms.edqm.eu code15060000 = 'Vial') |
 
 
 

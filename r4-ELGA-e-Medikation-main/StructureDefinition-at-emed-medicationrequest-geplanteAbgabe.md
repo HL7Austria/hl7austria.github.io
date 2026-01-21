@@ -9,10 +9,10 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-geplanteAbgabe | *Version*:0.1.1 | |
-| Draft as of 2026-01-20 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedicationRequestGeplanteAbgabe |
+| Draft as of 2026-01-21 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedicationRequestGeplanteAbgabe |
 
  
-**Beschreibung:**Bildet eine geplante Abgabe eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab. Sie enthält das verordnete Arzneimittel und dessen Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. Als groupIdentifier dient die Geplante-Abgabe-ID (früher eMED-ID), die auch im e-Rezept mitgeführt wird. Werden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer'). 
+**Beschreibung:** Bildet eine geplante Abgabe eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab. Sie enthält das verordnete Arzneimittel und dessen Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. Als groupIdentifier dient die Geplante-Abgabe-ID (früher eMED-ID), die auch im e-Rezept mitgeführt wird. Werden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer'). 
 
 **Usages:**
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationre
   "name" : "AtEmedMedicationRequestGeplanteAbgabe",
   "title" : "ELGA e-Medikation Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-01-20T10:13:19+00:00",
+  "date" : "2026-01-21T17:03:29+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -117,7 +117,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationre
       {
         "id" : "MedicationRequest.identifier",
         "path" : "MedicationRequest.identifier",
-        "short" : "Geplante-Abgabe-ID (früher eMed-ID), bildet 'Rezept-Klammer' bei mehreren gleichzeitig ausgestellten geplanten Abgaben.",
+        "short" : "MedicationRequest identifier = {eMed-ID}_{locally assigned ID}  Setzt sich zusammen aus groupIdentifier (Rezept-Klammer) und individueller Identifikation der geplanten Abgabe.",
         "min" : 1,
         "mustSupport" : true
       },
@@ -142,8 +142,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationre
       {
         "id" : "MedicationRequest.category",
         "path" : "MedicationRequest.category",
-        "short" : "Art der Medikamentenanforderung (z.B. ambulante oder stationäre Einnahme oder Verabreichung)",
-        "max" : "0"
+        "short" : "Kategorie damit geplante Abgabe von Medikationsplaneintrag unterschieden werden kann"
       },
       {
         "id" : "MedicationRequest.priority",
@@ -210,8 +209,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationre
       {
         "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding",
         "path" : "MedicationRequest.medication[x].coding",
-        "min" : 1,
-        "max" : "1"
+        "min" : 1
       },
       {
         "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding.system",
@@ -226,8 +224,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationre
       {
         "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding.display",
         "path" : "MedicationRequest.medication[x].coding.display",
-        "min" : 1,
-        "mustSupport" : true
+        "min" : 1
       },
       {
         "id" : "MedicationRequest.medication[x]:medicationReference",
@@ -317,12 +314,12 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationre
       {
         "id" : "MedicationRequest.reasonCode",
         "path" : "MedicationRequest.reasonCode",
-        "short" : "Grund für die Verordnung des Arzneimittels. Annahme: Keine Verwendung in der geplanten Abgabe, reasonReference ausreichend."
+        "short" : "Grund für die Verordnung des Arzneimittels. Entweder Code oder Referenz (evtl. Invariante)."
       },
       {
         "id" : "MedicationRequest.reasonReference",
         "path" : "MedicationRequest.reasonReference",
-        "short" : "Grund für die Verordnung des Arzneimittels (Referenz). Verwendung erst, wenn e-Diagnose referenzierbar ist.",
+        "short" : "Grund für die Verordnung des Arzneimittels. Entweder Code oder Referenz (evtl. Invariante).",
         "mustSupport" : true
       },
       {
@@ -355,7 +352,9 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationre
       {
         "id" : "MedicationRequest.groupIdentifier",
         "path" : "MedicationRequest.groupIdentifier",
-        "short" : "Als groupIdentifier dient die Geplante-Abgabe-ID (früher eMED-ID), die auch im e-Rezept mitgeführt wird. Werden von einem:r Arzt:Ärtztin mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer')."
+        "short" : "Als groupIdentifier dient die Geplante-Abgabe-ID (früher eMED-ID), die auch im e-Rezept mitgeführt wird. Werden von einem:r Arzt:Ärtztin mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer').",
+        "min" : 1,
+        "mustSupport" : true
       },
       {
         "id" : "MedicationRequest.courseOfTherapyType",
