@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-planeintrag | *Version*:0.1.1 | |
-| Draft as of 2026-01-21 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedicationRequestPlaneintrag |
+| Draft as of 2026-01-22 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedicationRequestPlaneintrag |
 
  
 **Beschreibung:** Bildet einen Eintrag eines Medikationsplans eines ELGA Teilnehmers ab. Er enthält genau ein verordnetes Arzneimittel und dessen Dosierung. Dient in weiterer Folge dazu, eine geplante Abgabe zu erstellen (AtEmedMedicationRequestGeplanteAbgabe). 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationre
   "name" : "AtEmedMedicationRequestPlaneintrag",
   "title" : "ELGA e-Medikation Planeintrag",
   "status" : "draft",
-  "date" : "2026-01-21T17:03:29+00:00",
+  "date" : "2026-01-22T09:24:15+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

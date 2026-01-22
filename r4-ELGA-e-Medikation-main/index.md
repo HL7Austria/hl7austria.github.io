@@ -33,7 +33,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) ENTWURF",
   "status" : "draft",
-  "date" : "2026-01-21T17:03:29+00:00",
+  "date" : "2026-01-22T09:24:15+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
