@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationdi
   "name" : "AtEmedMedicationDispense",
   "title" : "ELGA e-Medikation Abgabe",
   "status" : "draft",
-  "date" : "2026-01-22T09:24:15+00:00",
+  "date" : "2026-01-22T12:59:21+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
