@@ -147,7 +147,7 @@ Ein bereits
 
 ℹ️ Hinweis zur Änderung fremderfasster Abgabeneinträge:
 
-ofern fremderfasste Einträge korrigiert werden müssen, ist dies über einen Korrekturvermerk möglich, vgl. H03
+Sofern fremderfasste Einträge korrigiert werden müssen, ist dies über einen Korrekturvermerk möglich, vgl. H03.
 
 * Zur Nachvollziehbarkeit erfolgt jede Bearbeitung von durchgeführten Abgaben über eine Versionierung 
 * Vorversionen werden nicht gelöscht, sondern als solche markiert

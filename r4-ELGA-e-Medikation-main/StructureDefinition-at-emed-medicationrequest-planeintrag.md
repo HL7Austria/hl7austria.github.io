@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationre
   "name" : "AtEmedMedicationRequestPlaneintrag",
   "title" : "ELGA e-Medikation Planeintrag",
   "status" : "draft",
-  "date" : "2026-01-22T12:59:21+00:00",
+  "date" : "2026-01-22T14:02:02+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
