@@ -22,7 +22,7 @@ GDA sollen eine geplante Abgabe für eine:n ELGA-Teilnehmer:in erfassen oder kor
 
 ### Auslöser
 
-* Benutzer:in möchte auf Basis eines Medikationsplaneintrags eine geplante Abgabe erfassen oder korrigieren
+* GDA möchte auf Basis eines Medikationsplaneintrags eine geplante Abgabe erfassen oder korrigieren
 
 ### Vorbediungungen
 
@@ -31,7 +31,7 @@ GDA sollen eine geplante Abgabe für eine:n ELGA-Teilnehmer:in erfassen oder kor
 
 ### Nachbedingungen/Ergebnis
 
-* Die geplante Abgabe wurde zu einem Medikationsplaneintrag erfasst oder korrigiert
+* Die geplante Abgabe wurde ausgehend von einem Medikationsplaneintrag erfasst oder korrigiert
 * Zugriff wird protokolliert
 
 ### Abläufe

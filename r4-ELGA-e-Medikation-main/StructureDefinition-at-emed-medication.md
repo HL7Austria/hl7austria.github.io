@@ -9,15 +9,15 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication | *Version*:0.1.1 | |
-| Draft as of 2026-01-22 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedication |
+| Draft as of 2026-01-23 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedication |
 
  
 Arzneimittel 
 
 **Usages:**
 
-* Refer to this Profile: [ELGA e-Medikation Geplante Abgabe](StructureDefinition-at-emed-medicationrequest-geplanteAbgabe.md)
-* Examples for this Profile: [Medication/AtEmedMedicationExampleCefuroxime](Medication-AtEmedMedicationExampleCefuroxime.md)
+* Refer to this Profile: [ELGA e-Medikation Geplante Abgabe](StructureDefinition-at-emed-medicationrequest-geplanteAbgabe.md) and [ELGA e-Medikation Planeintrag](StructureDefinition-at-emed-medicationrequest-planeintrag.md)
+* Examples for this Profile: [Medication/AtEmedExampleMedicationCefuroxime](Medication-AtEmedExampleMedicationCefuroxime.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/at-emed-medication)
 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
   "name" : "AtEmedMedication",
   "title" : "ELGA e-Medikation Medication",
   "status" : "draft",
-  "date" : "2026-01-22T14:02:02+00:00",
+  "date" : "2026-01-23T19:34:42+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

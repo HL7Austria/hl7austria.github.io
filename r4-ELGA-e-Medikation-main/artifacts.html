@@ -178,7 +178,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <a href="#1">Structures: Resource Profiles</a>
       </li>
       <li>
-         <a href="#2">Example: Example Instances</a>
+         <a href="#2">Terminology: Value Sets</a>
+      </li>
+      <li>
+         <a href="#3">Terminology: Code Systems</a>
+      </li>
+      <li>
+         <a href="#4">Example: Example Instances</a>
       </li>
    </ul>
 </div>
@@ -229,7 +235,7 @@ Werden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel
                   title="StructureDefinition/at-emed-list-medikationsplan">ELGA e-Medikation Medikationsplan</a>
             </td>
             <td>
-<p><strong>Beschreibung:</strong> Bildet den Medikationsplan eines ELGA Teilnehmers ab. Enthält verordnete Arzneimittel und deren Dosierung in Form von 0..* Medikationsplaneinträgen (AtEmedMedicationRequestPlaneintrag).</p>
+<p><strong>Beschreibung:</strong> Bildet den Medikationsplan eines ELGA Teilnehmers ab. Enthält verordnete Arzneimittel und deren Dosierung in Form von 0..* Medikationsplaneinträgen (AtEmedMedicationRequestPlaneintrag). Die Reihenfolge der Einträge ist fachlich relevant.</p>
 </td>
          </tr>
          <tr>
@@ -238,12 +244,48 @@ Werden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel
                   title="StructureDefinition/at-emed-medicationrequest-planeintrag">ELGA e-Medikation Planeintrag</a>
             </td>
             <td>
-<p><strong>Beschreibung:</strong> Bildet einen Eintrag eines Medikationsplans eines ELGA Teilnehmers ab. Er enthält genau ein verordnetes Arzneimittel und dessen Dosierung. Dient in weiterer Folge dazu, eine geplante Abgabe zu erstellen (AtEmedMedicationRequestGeplanteAbgabe).</p>
+<p><strong>Beschreibung:</strong> Bildet einen Eintrag eines Medikationsplans eines ELGA Teilnehmers ab. 
+Er enthält genau ein Arzneimittel und dessen Dosierung.
+Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen (AtEmedMedicationRequestGeplanteAbgabe).</p>
 </td>
          </tr>
       </tbody>
    </table>
    <a name="2"> </a>
+   <h3>Terminology: Value Sets </h3>
+    <p>These define sets of codes used by systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-MedicationRequestCategoryVS.html"
+                  title="ValueSet/MedicationRequestCategoryVS">ELGA e-Medikation MedicationRequest Kategorie ValueSet</a>
+            </td>
+            <td>
+<p>ValueSet für Zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="3"> </a>
+   <h3>Terminology: Code Systems </h3>
+    <p>These define new code systems used by systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-MedicationRequestCategoryCS.html"
+                  title="CodeSystem/MedicationRequestCategoryCS">ELGA e-Medikation MedicationRequest Kategorie CodeSystem</a>
+            </td>
+            <td>
+<p>Zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="4"> </a>
    <h3>Example: Example Instances </h3>
     <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.</p>
 <table class="grid">
@@ -260,47 +302,47 @@ Werden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="List-AtEmedExampleListMedikationsplan01.html"
-                  title="List/AtEmedExampleListMedikationsplan01">AtEmedListMedikationsplan-Beispiel</a>
+               <a href="MedicationDispense-AtEmedExampleDurchgefuehrteAbgabe01.html"
+                  title="MedicationDispense/AtEmedExampleDurchgefuehrteAbgabe01">Beispiel Durchgeführte Abgabe 1</a>
             </td>
             <td>
-<p>AtEmedListMedikationsplan-Beispiel</p>
+<p>Beispiel Durchgeführte Abgabe 1</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Medication-AtEmedMedicationExampleCefuroxime.html"
-                  title="Medication/AtEmedMedicationExampleCefuroxime">AtEmedMedication-Beispiel</a>
+               <a href="MedicationRequest-AtEmedExampleGeplanteAbgabe01.html"
+                  title="MedicationRequest/AtEmedExampleGeplanteAbgabe01">Beispiel Geplante Abgabe 1</a>
             </td>
             <td>
-<p>AtEmedMedication-Beispiel</p>
+<p>Beispiel Geplante Abgabe 1</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="MedicationDispense-AtEmedExampleMedicationDispense01.html"
-                  title="MedicationDispense/AtEmedExampleMedicationDispense01">AtEmedMedicationDispense-Beispiel</a>
+               <a href="Medication-AtEmedExampleMedicationCefuroxime.html"
+                  title="Medication/AtEmedExampleMedicationCefuroxime">Beispiel Medication Cefuroxime</a>
             </td>
             <td>
-<p>Medication Dispense</p>
+<p>Beispiel Medication Cefuroxime</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="MedicationRequest-AtEmedExampleMedicationRequestGeplanteAbgabe01.html"
-                  title="MedicationRequest/AtEmedExampleMedicationRequestGeplanteAbgabe01">AtEmedMedicationRequestGeplanteAbgabe-Beispiel</a>
+               <a href="MedicationRequest-AtEmedExamplePlaneintrag01.html"
+                  title="MedicationRequest/AtEmedExamplePlaneintrag01">Beispiel Medikationsplaneintrag 1</a>
             </td>
             <td>
-<p>AtEmedMedicationRequestGeplanteAbgabe-Beispiel</p>
+<p>Beispiel Medikationsplaneintrag 1</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="MedicationRequest-AtEmedExampleMedicationRequestPlaneintrag01.html"
-                  title="MedicationRequest/AtEmedExampleMedicationRequestPlaneintrag01">AtEmedMedicationRequestPlaneintrag-Beispiel</a>
+               <a href="List-AtEmedExampleMedikationsplan01.html"
+                  title="List/AtEmedExampleMedikationsplan01">Example Medikationsplan 1</a>
             </td>
             <td>
-<p>AtEmedMedicationRequestPlaneintrag-Beispiel</p>
+<p>Example Medikationsplan 1</p>
 </td>
          </tr>
          <tr>
@@ -332,7 +374,7 @@ Werden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Jan 22, 2026 14:02+0000">2026-01-22</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Fri, Jan 23, 2026 19:34+0000">2026-01-23</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

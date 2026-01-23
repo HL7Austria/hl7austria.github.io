@@ -16,8 +16,24 @@ These define constraints on FHIR resources for systems conforming to this implem
 | [ELGA e-Medikation Abgabe](StructureDefinition-at-emed-medicationdispense.md) | Abgabe |
 | [ELGA e-Medikation Geplante Abgabe](StructureDefinition-at-emed-medicationrequest-geplanteAbgabe.md) | **Beschreibung:** Bildet eine geplante Abgabe eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab. Sie enthält das verordnete Arzneimittel und dessen Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. Als groupIdentifier dient die Geplante-Abgabe-ID (früher eMED-ID), die auch im e-Rezept mitgeführt wird. Werden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer'). |
 | [ELGA e-Medikation Medication](StructureDefinition-at-emed-medication.md) | Arzneimittel |
-| [ELGA e-Medikation Medikationsplan](StructureDefinition-at-emed-list-medikationsplan.md) | **Beschreibung:** Bildet den Medikationsplan eines ELGA Teilnehmers ab. Enthält verordnete Arzneimittel und deren Dosierung in Form von 0..* Medikationsplaneinträgen (AtEmedMedicationRequestPlaneintrag). |
-| [ELGA e-Medikation Planeintrag](StructureDefinition-at-emed-medicationrequest-planeintrag.md) | **Beschreibung:** Bildet einen Eintrag eines Medikationsplans eines ELGA Teilnehmers ab. Er enthält genau ein verordnetes Arzneimittel und dessen Dosierung. Dient in weiterer Folge dazu, eine geplante Abgabe zu erstellen (AtEmedMedicationRequestGeplanteAbgabe). |
+| [ELGA e-Medikation Medikationsplan](StructureDefinition-at-emed-list-medikationsplan.md) | **Beschreibung:** Bildet den Medikationsplan eines ELGA Teilnehmers ab. Enthält verordnete Arzneimittel und deren Dosierung in Form von 0..* Medikationsplaneinträgen (AtEmedMedicationRequestPlaneintrag). Die Reihenfolge der Einträge ist fachlich relevant. |
+| [ELGA e-Medikation Planeintrag](StructureDefinition-at-emed-medicationrequest-planeintrag.md) | **Beschreibung:** Bildet einen Eintrag eines Medikationsplans eines ELGA Teilnehmers ab. Er enthält genau ein Arzneimittel und dessen Dosierung. Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen (AtEmedMedicationRequestGeplanteAbgabe). |
+
+### Terminology: Value Sets 
+
+These define sets of codes used by systems conforming to this implementation guide.
+
+| | |
+| :--- | :--- |
+| [ELGA e-Medikation MedicationRequest Kategorie ValueSet](ValueSet-MedicationRequestCategoryVS.md) | ValueSet für Zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen |
+
+### Terminology: Code Systems 
+
+These define new code systems used by systems conforming to this implementation guide.
+
+| | |
+| :--- | :--- |
+| [ELGA e-Medikation MedicationRequest Kategorie CodeSystem](CodeSystem-MedicationRequestCategoryCS.md) | Zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen. |
 
 ### Example: Example Instances 
 
@@ -26,10 +42,10 @@ These are example instances that show what data produced and consumed by systems
 | | |
 | :--- | :--- |
 | [AtEmedExamplePatient01](Patient-AtEmedExamplePatient01.md) |  |
-| [AtEmedListMedikationsplan-Beispiel](List-AtEmedExampleListMedikationsplan01.md) | AtEmedListMedikationsplan-Beispiel |
-| [AtEmedMedication-Beispiel](Medication-AtEmedMedicationExampleCefuroxime.md) | AtEmedMedication-Beispiel |
-| [AtEmedMedicationDispense-Beispiel](MedicationDispense-AtEmedExampleMedicationDispense01.md) | Medication Dispense |
-| [AtEmedMedicationRequestGeplanteAbgabe-Beispiel](MedicationRequest-AtEmedExampleMedicationRequestGeplanteAbgabe01.md) | AtEmedMedicationRequestGeplanteAbgabe-Beispiel |
-| [AtEmedMedicationRequestPlaneintrag-Beispiel](MedicationRequest-AtEmedExampleMedicationRequestPlaneintrag01.md) | AtEmedMedicationRequestPlaneintrag-Beispiel |
+| [Beispiel Durchgeführte Abgabe 1](MedicationDispense-AtEmedExampleDurchgefuehrteAbgabe01.md) | Beispiel Durchgeführte Abgabe 1 |
+| [Beispiel Geplante Abgabe 1](MedicationRequest-AtEmedExampleGeplanteAbgabe01.md) | Beispiel Geplante Abgabe 1 |
+| [Beispiel Medication Cefuroxime](Medication-AtEmedExampleMedicationCefuroxime.md) | Beispiel Medication Cefuroxime |
+| [Beispiel Medikationsplaneintrag 1](MedicationRequest-AtEmedExamplePlaneintrag01.md) | Beispiel Medikationsplaneintrag 1 |
+| [Example Medikationsplan 1](List-AtEmedExampleMedikationsplan01.md) | Example Medikationsplan 1 |
 | [HL7ATCorePractitioner](Practitioner-at-emed-example-practitioner-01.md) | Beispiel eines behandelnden Arztes |
 
