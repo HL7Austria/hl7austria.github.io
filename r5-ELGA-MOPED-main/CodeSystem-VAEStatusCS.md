@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/VAEStatusCS | *Version*:0.1.0 | |
-| Active as of 2026-01-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:VAEStatusCS |
+| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:VAEStatusCS |
 
  
 Status der Versichertenanspruchserklärung 
@@ -32,7 +32,7 @@ Status der Versichertenanspruchserklärung
   "title" : "Status der Versichertenanspruchserklärung",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-01-07T10:11:40+00:00",
+  "date" : "2026-01-26T07:03:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

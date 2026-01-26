@@ -29,11 +29,11 @@ Profile: [MOPED VAERequest](StructureDefinition-MopedVAERequest.md)
 * [Encounter: identifier = Visit number,Anonymous identifier; status = discharged; class = Stationär,geplante stationäre Aufnahme/geplanter ambulanter Besuch (mit vorhergehender Terminvereinbarung, Richtwert: mindestens 24 Stunden); type = Moped Encounter; actualPeriod = 2024-02-22 19:33:00+0200 --> 2024-02-23 07:38:00+0200](Encounter-PJ1Encounter.md)
 * [Encounter: status = completed; type = Moped Transfer Encounter; subjectStatus = physisch anwesend; actualPeriod = 2024-02-22 19:33:00+0200 --> 2024-02-23 07:38:00+0200](Encounter-PJ1TransferEncounter1.md)
 
-> **supportingInfo****sequence**: 1**category**:Fremdversschluden**value**: false
+> **supportingInfo****sequence**: 1**category**: Fremdversschluden**value**: false
 
-> **supportingInfo****sequence**: 2**category**:Allgemeine Gebührenklasse/Sonderklasse**code**:Allgemeine Gebührenklasse**timing**: 2024-02-22 19:33:00+0200 --> (ongoing)
+> **supportingInfo****sequence**: 2**category**: Allgemeine Gebührenklasse/Sonderklasse**code**: Allgemeine Gebührenklasse**timing**: 2024-02-22 19:33:00+0200 --> (ongoing)
 
-> **supportingInfo****sequence**: 3**category**:Verlängerungstage**value**: 0 day(Details: UCUM codeday = 'day')
+> **supportingInfo****sequence**: 3**category**: Verlängerungstage**value**: 0 day (Details: UCUM codeday = 'day')
 
 ### Insurances
 

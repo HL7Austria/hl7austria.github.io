@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedInputBundleKH | *Version*:0.1.0 | |
-| Draft as of 2026-01-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedInputBundleKH |
+| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedInputBundleKH |
 
  
 Bundle für die Input-Ressourcen beim Update von Informationen zu einem Fall 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedInputBundleKH.c
   "name" : "MopedInputBundleKH",
   "title" : "MOPED Input Bundle KH",
   "status" : "draft",
-  "date" : "2026-01-07T10:11:40+00:00",
+  "date" : "2026-01-26T07:03:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -66,11 +66,6 @@ Other representations of profile: [CSV](StructureDefinition-MopedInputBundleKH.c
       {
         "id" : "Bundle",
         "path" : "Bundle"
-      },
-      {
-        "id" : "Bundle.implicitRules",
-        "path" : "Bundle.implicitRules",
-        "max" : "0"
       },
       {
         "id" : "Bundle.type",

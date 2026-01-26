@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/VerpflegskostenBeitragsbefreiungCS | *Version*:0.1.0 | |
-| Active as of 2026-01-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:VerpflegskostenBeitragsbefreiungCS |
+| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:VerpflegskostenBeitragsbefreiungCS |
 
  
 CodeSystem für die Befreiung für den Verpflegskostenbeitrag 
@@ -32,7 +32,7 @@ CodeSystem für die Befreiung für den Verpflegskostenbeitrag
   "title" : "Befreiung für den Verpflegskostenbeitrag",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-01-07T10:11:40+00:00",
+  "date" : "2026-01-26T07:03:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

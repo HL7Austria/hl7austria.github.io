@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/SpezielleOrganisationsformVS | *Version*:0.1.0 | |
-| Draft as of 2026-01-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:SpezielleOrganisationsformVS |
+| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:SpezielleOrganisationsformVS |
 
  
 Die spezielle Organisationsform der stationären Versorgung ist im Kostenstellenplan zusätzlich zum Funktionscode mit einer entsprechenden Kennzeichnung zu versehen. 
@@ -51,7 +51,7 @@ Die spezielle Organisationsform der stationären Versorgung ist im Kostenstellen
   "title" : "Spezielle Organisationsform",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-01-07T10:11:40+00:00",
+  "date" : "2026-01-26T07:03:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

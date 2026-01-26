@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedARKRequest | *Version*:0.1.0 | |
-| Draft as of 2026-01-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedARKRequest |
+| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedARKRequest |
 
  
 MOPED Profil der Claim Ressource für die Kostenmeldung für Ausländerverrechnung und Regresse. 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedARKRequest.csv)
   "name" : "MopedARKRequest",
   "title" : "MOPED ARKRequest",
   "status" : "draft",
-  "date" : "2026-01-07T10:11:40+00:00",
+  "date" : "2026-01-26T07:03:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

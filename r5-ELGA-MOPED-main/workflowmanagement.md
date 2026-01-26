@@ -40,7 +40,7 @@
 
 #### Status-Änderungen der Financial Ressourcen (Claim, ClaimResponse)
 
-Diese Status-Änderungen folgen den Definitionen des [Resource Status Life-cycle](https://build.fhir.org/financial-module.html#resource-status) wie im FHIR Financial Modul dokumentiert.
+Diese Status-Änderungen folgen den Definitionen des [ Resource Status Life-cycle](https://build.fhir.org/financial-module.html#resource-status) wie im FHIR Financial Modul dokumentiert.
 
 ```
 

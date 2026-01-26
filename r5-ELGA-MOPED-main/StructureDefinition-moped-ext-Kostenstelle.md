@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/moped-ext-Kostenstelle | *Version*:0.1.0 | |
-| Draft as of 2026-01-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:Kostenstelle |
+| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:Kostenstelle |
 
 MOPED Extension für akzeptierte Errors und Warnings
 
@@ -20,7 +20,7 @@ MOPED Extension für akzeptierte Errors und Warnings
 **Usages:**
 
 * Use this Extension: [MOPED KH Organisationseinheiten](StructureDefinition-MopedKHOrganisationseinheit.md)
-* Examples for this Extension: [HealthcareService/AbteilungHerzJesu1](HealthcareService-AbteilungHerzJesu1.md), [HealthcareService/KHK999ABT11111100](HealthcareService-KHK999ABT11111100.md), [HealthcareService/KHK999ABT12111100](HealthcareService-KHK999ABT12111100.md), [HealthcareService/KHK999ABT12118102](HealthcareService-KHK999ABT12118102.md)...Show 5 more,[HealthcareService/KHK999ABT16075000](HealthcareService-KHK999ABT16075000.md),[HealthcareService/KHK999ABT16111111](HealthcareService-KHK999ABT16111111.md),[HealthcareService/KHK999ABT16111112](HealthcareService-KHK999ABT16111112.md),[HealthcareService/KHK999ABT16211100](HealthcareService-KHK999ABT16211100.md)and[HealthcareService/KHK999ABT16518011](HealthcareService-KHK999ABT16518011.md)
+* Examples for this Extension: [HealthcareService/AbteilungHerzJesu1](HealthcareService-AbteilungHerzJesu1.md), [HealthcareService/KHK999ABT11111100](HealthcareService-KHK999ABT11111100.md), [HealthcareService/KHK999ABT12111100](HealthcareService-KHK999ABT12111100.md), [HealthcareService/KHK999ABT12118102](HealthcareService-KHK999ABT12118102.md)... Show 5 more, [HealthcareService/KHK999ABT16075000](HealthcareService-KHK999ABT16075000.md), [HealthcareService/KHK999ABT16111111](HealthcareService-KHK999ABT16111111.md), [HealthcareService/KHK999ABT16111112](HealthcareService-KHK999ABT16111112.md), [HealthcareService/KHK999ABT16211100](HealthcareService-KHK999ABT16211100.md) and [HealthcareService/KHK999ABT16518011](HealthcareService-KHK999ABT16518011.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/elga.moped|current/StructureDefinition/moped-ext-Kostenstelle)
 
@@ -55,7 +55,7 @@ Other representations of profile: [CSV](StructureDefinition-moped-ext-Kostenstel
   "name" : "Kostenstelle",
   "title" : "Kostenstelle",
   "status" : "draft",
-  "date" : "2026-01-07T10:11:40+00:00",
+  "date" : "2026-01-26T07:03:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

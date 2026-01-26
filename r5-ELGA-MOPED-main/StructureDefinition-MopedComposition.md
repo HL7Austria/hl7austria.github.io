@@ -9,14 +9,14 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedComposition | *Version*:0.1.0 | |
-| Draft as of 2026-01-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedComposition |
+| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedComposition |
 
  
 MOPED Profil der Composition Ressource von der alle anderen Compositions ableiten. 
 
 **Usages:**
 
-* Derived from this Profile: [MOPED Anfragen Composition](StructureDefinition-MopedAnfragenComposition.md), [MOPED Aufnahme Composition](StructureDefinition-MopedAufnahmeComposition.md), [MOPED Beantworten Composition](StructureDefinition-MopedBeantwortenComposition.md), [MOPED Entlassung Aviso Composition](StructureDefinition-MopedEntlassenAvisoComposition.md)...Show 3 more,[MOPED Entlassung vollständig Composition](StructureDefinition-MopedEntlassenVollstaendigComposition.md),[MOPED Master Composition](StructureDefinition-MopedMasterComposition.md)and[MOPED Update Composition](StructureDefinition-MopedUpdateComposition.md)
+* Derived from this Profile: [MOPED Anfragen Composition](StructureDefinition-MopedAnfragenComposition.md), [MOPED Aufnahme Composition](StructureDefinition-MopedAufnahmeComposition.md), [MOPED Beantworten Composition](StructureDefinition-MopedBeantwortenComposition.md), [MOPED Entlassung Aviso Composition](StructureDefinition-MopedEntlassenAvisoComposition.md)... Show 3 more, [MOPED Entlassung vollständig Composition](StructureDefinition-MopedEntlassenVollstaendigComposition.md), [MOPED Master Composition](StructureDefinition-MopedMasterComposition.md) and [MOPED Update Composition](StructureDefinition-MopedUpdateComposition.md)
 * Examples for this Profile: [Composition/Composition42](Composition-Composition42.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/elga.moped|current/StructureDefinition/MopedComposition)
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedComposition.csv
   "title" : "MOPED Composition",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-01-07T10:11:40+00:00",
+  "date" : "2026-01-26T07:03:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

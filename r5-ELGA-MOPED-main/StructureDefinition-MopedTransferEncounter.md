@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedTransferEncounter | *Version*:0.1.0 | |
-| Draft as of 2026-01-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedTransferEncounter |
+| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedTransferEncounter |
 
  
 MOPED Profil der Encounter Ressource für die Verlegung innerhalb oder zwischen Krankenanstalten 
@@ -19,7 +19,7 @@ MOPED Profil der Encounter Ressource für die Verlegung innerhalb oder zwischen 
 * Derived from this Profile: [MOPED TransferEncounter Ambulant](StructureDefinition-MopedTransferEncounterA.md) and [MOPED TransferEncounter Stationär](StructureDefinition-MopedTransferEncounterS.md)
 * Use this Profile: [MOPED Input Bundle KH](StructureDefinition-MopedInputBundleKH.md)
 * Refer to this Profile: [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md) and [MOPED VAERequest](StructureDefinition-MopedVAERequest.md)
-* Examples for this Profile: [Encounter/PJ1TransferEncounter1](Encounter-PJ1TransferEncounter1.md), [Encounter/PJ1TransferEncounter1Aufnahme](Encounter-PJ1TransferEncounter1Aufnahme.md), [Encounter/PJ2TransferEncounter1](Encounter-PJ2TransferEncounter1.md), [Encounter/PJ2TransferEncounter2](Encounter-PJ2TransferEncounter2.md)...Show 5 more,[Encounter/PJ2TransferEncounter3](Encounter-PJ2TransferEncounter3.md),[Encounter/PJ2TransferEncounter4](Encounter-PJ2TransferEncounter4.md),[Encounter/PJ2TransferEncounter5](Encounter-PJ2TransferEncounter5.md),[Encounter/TransferEncounter42.1](Encounter-TransferEncounter42.1.md)and[Encounter/TransferEncounter42.2](Encounter-TransferEncounter42.2.md)
+* Examples for this Profile: [Encounter/PJ1TransferEncounter1](Encounter-PJ1TransferEncounter1.md), [Encounter/PJ1TransferEncounter1Aufnahme](Encounter-PJ1TransferEncounter1Aufnahme.md), [Encounter/PJ2TransferEncounter1](Encounter-PJ2TransferEncounter1.md), [Encounter/PJ2TransferEncounter2](Encounter-PJ2TransferEncounter2.md)... Show 5 more, [Encounter/PJ2TransferEncounter3](Encounter-PJ2TransferEncounter3.md), [Encounter/PJ2TransferEncounter4](Encounter-PJ2TransferEncounter4.md), [Encounter/PJ2TransferEncounter5](Encounter-PJ2TransferEncounter5.md), [Encounter/TransferEncounter42.1](Encounter-TransferEncounter42.1.md) and [Encounter/TransferEncounter42.2](Encounter-TransferEncounter42.2.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/elga.moped|current/StructureDefinition/MopedTransferEncounter)
 
@@ -44,7 +44,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedTransferEncount
   "name" : "MopedTransferEncounter",
   "title" : "MOPED TransferEncounter",
   "status" : "draft",
-  "date" : "2026-01-07T10:11:40+00:00",
+  "date" : "2026-01-26T07:03:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

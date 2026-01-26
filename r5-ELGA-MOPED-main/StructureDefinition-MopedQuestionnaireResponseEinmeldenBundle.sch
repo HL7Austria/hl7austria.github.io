@@ -12,7 +12,6 @@
   <sch:pattern>
     <sch:title>f:Bundle</sch:title>
     <sch:rule context="f:Bundle">
-      <sch:assert test="count(f:implicitRules) &lt;= 0">implicitRules: maximum cardinality of 'implicitRules' is 0</sch:assert>
       <sch:assert test="count(f:entry) &gt;= 1">entry: minimum cardinality of 'entry' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>

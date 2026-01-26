@@ -9,14 +9,14 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/KHOrganization | *Version*:0.1.0 | |
-| Draft as of 2026-01-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:KHOrganization |
+| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:KHOrganization |
 
  
 MOPED Profil für KH Organizations 
 
 **Usages:**
 
-* Refer to this Profile: [MOPED ARKRequest](StructureDefinition-MopedARKRequest.md), [MOPED Composition](StructureDefinition-MopedComposition.md), [MOPED Coverage](StructureDefinition-MopedCoverage.md), [MOPED Encounter](StructureDefinition-MopedEncounter.md)...Show 8 more,[MOPED KH Organisationseinheiten](StructureDefinition-MopedKHOrganisationseinheit.md),[MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md),[MOPED LKFResponse](StructureDefinition-MopedLKFResponse.md),[MOPED Procedure](StructureDefinition-MopedProcedure.md),[Moped QuestionnaireResponse fallbezogen](StructureDefinition-MopedQuestionnaireResponseFallbezogen.md),[Moped QuestionnaireResponse nicht fallbezogen](StructureDefinition-MopedQuestionnaireResponseNichtFallbezogen.md),[MOPED VAERequest](StructureDefinition-MopedVAERequest.md)and[MOPED VAEResponse](StructureDefinition-MopedVAEResponse.md)
+* Refer to this Profile: [MOPED ARKRequest](StructureDefinition-MopedARKRequest.md), [MOPED Composition](StructureDefinition-MopedComposition.md), [MOPED Coverage](StructureDefinition-MopedCoverage.md), [MOPED Encounter](StructureDefinition-MopedEncounter.md)... Show 8 more, [MOPED KH Organisationseinheiten](StructureDefinition-MopedKHOrganisationseinheit.md), [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md), [MOPED LKFResponse](StructureDefinition-MopedLKFResponse.md), [MOPED Procedure](StructureDefinition-MopedProcedure.md), [Moped QuestionnaireResponse fallbezogen](StructureDefinition-MopedQuestionnaireResponseFallbezogen.md), [Moped QuestionnaireResponse nicht fallbezogen](StructureDefinition-MopedQuestionnaireResponseNichtFallbezogen.md), [MOPED VAERequest](StructureDefinition-MopedVAERequest.md) and [MOPED VAEResponse](StructureDefinition-MopedVAEResponse.md)
 * Examples for this Profile: [Testkrankenhaus](Organization-KHK999.md), [Herz Jesu-Krankenhaus](Organization-OrganizationHerzJesuKrankenhaus.md) and [Krankenhaus der Barmherzigen Schwestern vom Hl. Vinzenz von Paul Ried](Organization-OrganizationKrankenhausRied.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/elga.moped|current/StructureDefinition/KHOrganization)
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-KHOrganization.csv),
   "name" : "KHOrganization",
   "title" : "KH Organization",
   "status" : "draft",
-  "date" : "2026-01-07T10:11:40+00:00",
+  "date" : "2026-01-26T07:03:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

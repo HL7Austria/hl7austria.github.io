@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedKHOrganisationseinheit | *Version*:0.1.0 | |
-| Draft as of 2026-01-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedKHOrganisationseinheit |
+| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedKHOrganisationseinheit |
 
  
 MOPED Profil für Organisationseinheiten innerhalb einer Krankenanstalt. 
@@ -17,7 +17,7 @@ MOPED Profil für Organisationseinheiten innerhalb einer Krankenanstalt.
 **Usages:**
 
 * Refer to this Profile: [MOPED Composition](StructureDefinition-MopedComposition.md), [MOPED Procedure](StructureDefinition-MopedProcedure.md) and [MOPED TransferEncounter](StructureDefinition-MopedTransferEncounter.md)
-* Examples for this Profile: [HealthcareService/AbteilungHerzJesu1](HealthcareService-AbteilungHerzJesu1.md), [HealthcareService/AbteilungKHRied1](HealthcareService-AbteilungKHRied1.md), [HealthcareService/AbteilungKHRied2](HealthcareService-AbteilungKHRied2.md), [HealthcareService/AbteilungKHRied3](HealthcareService-AbteilungKHRied3.md)...Show 9 more,[HealthcareService/AbteilungKHRied4](HealthcareService-AbteilungKHRied4.md),[HealthcareService/KHK999ABT11111100](HealthcareService-KHK999ABT11111100.md),[HealthcareService/KHK999ABT12111100](HealthcareService-KHK999ABT12111100.md),[HealthcareService/KHK999ABT12118102](HealthcareService-KHK999ABT12118102.md),[HealthcareService/KHK999ABT16075000](HealthcareService-KHK999ABT16075000.md),[HealthcareService/KHK999ABT16111111](HealthcareService-KHK999ABT16111111.md),[HealthcareService/KHK999ABT16111112](HealthcareService-KHK999ABT16111112.md),[HealthcareService/KHK999ABT16211100](HealthcareService-KHK999ABT16211100.md)and[HealthcareService/KHK999ABT16518011](HealthcareService-KHK999ABT16518011.md)
+* Examples for this Profile: [HealthcareService/AbteilungHerzJesu1](HealthcareService-AbteilungHerzJesu1.md), [HealthcareService/AbteilungKHRied1](HealthcareService-AbteilungKHRied1.md), [HealthcareService/AbteilungKHRied2](HealthcareService-AbteilungKHRied2.md), [HealthcareService/AbteilungKHRied3](HealthcareService-AbteilungKHRied3.md)... Show 9 more, [HealthcareService/AbteilungKHRied4](HealthcareService-AbteilungKHRied4.md), [HealthcareService/KHK999ABT11111100](HealthcareService-KHK999ABT11111100.md), [HealthcareService/KHK999ABT12111100](HealthcareService-KHK999ABT12111100.md), [HealthcareService/KHK999ABT12118102](HealthcareService-KHK999ABT12118102.md), [HealthcareService/KHK999ABT16075000](HealthcareService-KHK999ABT16075000.md), [HealthcareService/KHK999ABT16111111](HealthcareService-KHK999ABT16111111.md), [HealthcareService/KHK999ABT16111112](HealthcareService-KHK999ABT16111112.md), [HealthcareService/KHK999ABT16211100](HealthcareService-KHK999ABT16211100.md) and [HealthcareService/KHK999ABT16518011](HealthcareService-KHK999ABT16518011.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/elga.moped|current/StructureDefinition/MopedKHOrganisationseinheit)
 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedKHOrganisations
   "name" : "MopedKHOrganisationseinheit",
   "title" : "MOPED KH Organisationseinheiten",
   "status" : "draft",
-  "date" : "2026-01-07T10:11:40+00:00",
+  "date" : "2026-01-26T07:03:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

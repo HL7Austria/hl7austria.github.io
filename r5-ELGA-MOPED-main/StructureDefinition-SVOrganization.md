@@ -9,15 +9,15 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/SVOrganization | *Version*:0.1.0 | |
-| Draft as of 2026-01-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:SVOrganization |
+| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:SVOrganization |
 
  
 MOPED Profil für SV Organizations 
 
 **Usages:**
 
-* Refer to this Profile: [MOPED ARKRequest](StructureDefinition-MopedARKRequest.md), [MOPED Composition](StructureDefinition-MopedComposition.md), [MOPED Coverage](StructureDefinition-MopedCoverage.md), [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md)...Show 2 more,[MOPED VAERequest](StructureDefinition-MopedVAERequest.md)and[MOPED VAEResponse](StructureDefinition-MopedVAEResponse.md)
-* Examples for this Profile: [Österreichische Gesundheitskasse Wien](Organization-SV11.md), [Österreichische Gesundheitskasse Niederösterreich](Organization-SV12.md), [Österreichische Gesundheitskasse Burgenland](Organization-SV13.md), [Österreichische Gesundheitskasse Oberösterreich](Organization-SV14.md)...Show 5 more,[Österreichische Gesundheitskasse Steiermark](Organization-SV15.md),[Österreichische Gesundheitskasse Kärnten](Organization-SV16.md),[Österreichische Gesundheitskasse Salzburg](Organization-SV17.md),[Österreichische Gesundheitskasse Tirol](Organization-SV18.md)and[Österreichische Gesundheitskasse Vorarlberg](Organization-SV19.md)
+* Refer to this Profile: [MOPED ARKRequest](StructureDefinition-MopedARKRequest.md), [MOPED Composition](StructureDefinition-MopedComposition.md), [MOPED Coverage](StructureDefinition-MopedCoverage.md), [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md)... Show 2 more, [MOPED VAERequest](StructureDefinition-MopedVAERequest.md) and [MOPED VAEResponse](StructureDefinition-MopedVAEResponse.md)
+* Examples for this Profile: [Österreichische Gesundheitskasse Wien](Organization-SV11.md), [Österreichische Gesundheitskasse Niederösterreich](Organization-SV12.md), [Österreichische Gesundheitskasse Burgenland](Organization-SV13.md), [Österreichische Gesundheitskasse Oberösterreich](Organization-SV14.md)... Show 5 more, [Österreichische Gesundheitskasse Steiermark](Organization-SV15.md), [Österreichische Gesundheitskasse Kärnten](Organization-SV16.md), [Österreichische Gesundheitskasse Salzburg](Organization-SV17.md), [Österreichische Gesundheitskasse Tirol](Organization-SV18.md) and [Österreichische Gesundheitskasse Vorarlberg](Organization-SV19.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/elga.moped|current/StructureDefinition/SVOrganization)
 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-SVOrganization.csv),
   "name" : "SVOrganization",
   "title" : "SV Organization",
   "status" : "draft",
-  "date" : "2026-01-07T10:11:40+00:00",
+  "date" : "2026-01-26T07:03:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

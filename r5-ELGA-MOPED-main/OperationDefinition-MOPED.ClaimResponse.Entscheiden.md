@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/OperationDefinition/MOPED.ClaimResponse.Entscheiden | *Version*:0.1.0 | |
-| Draft as of 2026-01-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_ClaimResponse_Entscheiden |
+| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_ClaimResponse_Entscheiden |
 
  
 Die $entscheiden Operation wird aufgerufen, wenn eine Abrechnung beantwortet wird und freigegeben wird. 
@@ -25,7 +25,7 @@ Die Operation wird vom Akteur Landesgesundheitsfonds (LFG) aufgerufen. Die $ents
 ## Detaillierte Business-Logik
 
 1. Die ClaimResponse, CommunicationRequest oder Communication wird lt. Profil validiert und eingespielt
-1. Falls eine ClaimResponse eingebracht wird und es bereits eine aktive LKFResponse in der Composition.section:LKFResponses gibt so wird der status auf**cancelled**gesetzt. Die neue LKFResponse wird in die Section eingefügt und ist ab jetzt die gültige LKFResponse.
+1. Falls eine ClaimResponse eingebracht wird und es bereits eine aktive LKFResponse in der Composition.section:LKFResponses gibt so wird der status auf **cancelled** gesetzt. Die neue LKFResponse wird in die Section eingefügt und ist ab jetzt die gültige LKFResponse.
 
 ## Validierung / Fehlerbehandlung
 
@@ -61,7 +61,7 @@ Die Operation wird vom Akteur Landesgesundheitsfonds (LFG) aufgerufen. Die $ents
   "title" : "MOPED ClaimResponse $entscheiden",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-01-07T10:11:40+00:00",
+  "date" : "2026-01-26T07:03:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

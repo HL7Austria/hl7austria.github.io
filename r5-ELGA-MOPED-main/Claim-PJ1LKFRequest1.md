@@ -35,11 +35,11 @@ Profile: [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md)
 
 **diagnosisRelatedGroup**: Sonstige Erkrankungen - Nervensystem
 
-> **supportingInfo****sequence**: 1**category**:Plausibilitätskennzeichen**value**: 1234
+> **supportingInfo****sequence**: 1**category**: Plausibilitätskennzeichen**value**: 1234
 
-> **supportingInfo****sequence**: 2**category**:Endgültige Meldung**value**: false
+> **supportingInfo****sequence**: 2**category**: Endgültige Meldung**value**: false
 
-> **supportingInfo****sequence**: 3**category**:XDok Device**value**:[Device: status = active; category = Software; type = XDok](Device-XDokExampleDevice.md)
+> **supportingInfo****sequence**: 3**category**: XDok Device**value**: [Device: status = active; category = Software; type = XDok](Device-XDokExampleDevice.md)
 
 ### Diagnoses
 
@@ -62,23 +62,23 @@ Profile: [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md)
 | - | **Sequence** | **Focal** | **Coverage** |
 | * | 1 | true | [Coverage: identifier = urn:oid:1.2.40.0.10.1.4.3.9.1#XB4G37PFN9FJ; status = active; kind = insurance](Coverage-PJ1Coverage.md) |
 
-> **item****sequence**: 1**category**:Punkte Belagsdauerausreißer nach unten – Leistungskomponente**quantity**: 0
+> **item****sequence**: 1**category**: Punkte Belagsdauerausreißer nach unten – Leistungskomponente**quantity**: 0
 
-> **item****sequence**: 2**category**:Punkte Belagsdauerausreißer nach unten – Tageskomponente**quantity**: 0
+> **item****sequence**: 2**category**: Punkte Belagsdauerausreißer nach unten – Tageskomponente**quantity**: 0
 
-> **item****sequence**: 3**category**:Zusatzpunkte Belagsdauerausreißer nach oben**quantity**: 0
+> **item****sequence**: 3**category**: Zusatzpunkte Belagsdauerausreißer nach oben**quantity**: 0
 
-> **item****sequence**: 4**category**:Zusatzpunkte Intensiv**quantity**: 0
+> **item****sequence**: 4**category**: Zusatzpunkte Intensiv**quantity**: 0
 
-> **item****sequence**: 5**category**:Zusatzpunkte Mehrfachleistungen**quantity**: 0
+> **item****sequence**: 5**category**: Zusatzpunkte Mehrfachleistungen**quantity**: 0
 
-> **item****sequence**: 6**category**:Punkte spezieller Bereiche (tageweise)**quantity**: 0
+> **item****sequence**: 6**category**: Punkte spezieller Bereiche (tageweise)**quantity**: 0
 
-> **item****sequence**: 7**category**:Punkte total**quantity**: 1110
+> **item****sequence**: 7**category**: Punkte total**quantity**: 1110
 
-> **item****sequence**: 8**category**:Leistungskomponente/Leistungspunkte**quantity**: 743
+> **item****sequence**: 8**category**: Leistungskomponente/Leistungspunkte**quantity**: 743
 
-> **item****sequence**: 9**category**:Tageskomponente/Kontaktpunktet**quantity**: 367
+> **item****sequence**: 9**category**: Tageskomponente/Kontaktpunktet**quantity**: 367
 
 
 

@@ -22,7 +22,7 @@ Profile: [MOPED Encounter](StructureDefinition-MopedEncounter.md)
 
 **actualPeriod**: 2024-02-22 19:33:00+0200 --> (ongoing)
 
-> **reason****use**:Reason for Visit
+> **reason****use**: Reason for Visit
 
 ### Values
 

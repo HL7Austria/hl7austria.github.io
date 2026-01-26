@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/moped-ext-altersgruppe | *Version*:0.1.0 | |
-| Draft as of 2026-01-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:Altersgruppe |
+| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:Altersgruppe |
 
 In Gruppen eingeteilt, wobei vollendete Lebensjahre ausschlaggebend sind.
 
@@ -20,7 +20,7 @@ In Gruppen eingeteilt, wobei vollendete Lebensjahre ausschlaggebend sind.
 **Usages:**
 
 * Use this Extension: [MOPED Encounter](StructureDefinition-MopedEncounter.md) and [MOPED TransferEncounter](StructureDefinition-MopedTransferEncounter.md)
-* Examples for this Extension: [Encounter/Encounter42](Encounter-Encounter42.md), [Encounter/PJ1TransferEncounter1](Encounter-PJ1TransferEncounter1.md), [Encounter/PJ1TransferEncounter1Aufnahme](Encounter-PJ1TransferEncounter1Aufnahme.md), [Encounter/PJ2TransferEncounter1](Encounter-PJ2TransferEncounter1.md)...Show 6 more,[Encounter/PJ2TransferEncounter2](Encounter-PJ2TransferEncounter2.md),[Encounter/PJ2TransferEncounter3](Encounter-PJ2TransferEncounter3.md),[Encounter/PJ2TransferEncounter4](Encounter-PJ2TransferEncounter4.md),[Encounter/PJ2TransferEncounter5](Encounter-PJ2TransferEncounter5.md),[Encounter/TransferEncounter42.1](Encounter-TransferEncounter42.1.md)and[Encounter/TransferEncounter42.2](Encounter-TransferEncounter42.2.md)
+* Examples for this Extension: [Encounter/Encounter42](Encounter-Encounter42.md), [Encounter/PJ1TransferEncounter1](Encounter-PJ1TransferEncounter1.md), [Encounter/PJ1TransferEncounter1Aufnahme](Encounter-PJ1TransferEncounter1Aufnahme.md), [Encounter/PJ2TransferEncounter1](Encounter-PJ2TransferEncounter1.md)... Show 6 more, [Encounter/PJ2TransferEncounter2](Encounter-PJ2TransferEncounter2.md), [Encounter/PJ2TransferEncounter3](Encounter-PJ2TransferEncounter3.md), [Encounter/PJ2TransferEncounter4](Encounter-PJ2TransferEncounter4.md), [Encounter/PJ2TransferEncounter5](Encounter-PJ2TransferEncounter5.md), [Encounter/TransferEncounter42.1](Encounter-TransferEncounter42.1.md) and [Encounter/TransferEncounter42.2](Encounter-TransferEncounter42.2.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/elga.moped|current/StructureDefinition/moped-ext-altersgruppe)
 
@@ -55,7 +55,7 @@ Other representations of profile: [CSV](StructureDefinition-moped-ext-altersgrup
   "name" : "Altersgruppe",
   "title" : "Altersgruppe",
   "status" : "draft",
-  "date" : "2026-01-07T10:11:40+00:00",
+  "date" : "2026-01-26T07:03:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

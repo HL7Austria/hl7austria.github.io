@@ -36,11 +36,11 @@ Profile: [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md)
 
 **diagnosisRelatedGroup**: HDG01.12
 
-> **supportingInfo****sequence**: 1**category**:Plausibilitätskennzeichen**value**: 2
+> **supportingInfo****sequence**: 1**category**: Plausibilitätskennzeichen**value**: 2
 
-> **supportingInfo****sequence**: 2**category**:Endgültige Meldung**value**: true
+> **supportingInfo****sequence**: 2**category**: Endgültige Meldung**value**: true
 
-> **supportingInfo****sequence**: 3**category**:XDok Device**value**:[Device: status = active; category = Software; type = XDok](Device-XDokExampleDevice.md)
+> **supportingInfo****sequence**: 3**category**: XDok Device**value**: [Device: status = active; category = Software; type = XDok](Device-XDokExampleDevice.md)
 
 ### Diagnoses
 
@@ -49,23 +49,23 @@ Profile: [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md)
 | - | **Sequence** | **Diagnosis[x]** | **OnAdmission** |
 | * | 1 | [Condition G40.0](Condition-Condition42.1.md) | Unknown |
 
-> **item****sequence**: 1**category**:Leistungskomponente/Leistungspunkte**quantity**: 366.0 LKF Punkte
+> **item****sequence**: 1**category**: Leistungskomponente/Leistungspunkte**quantity**: 366.0 LKF Punkte
 
-> **item****sequence**: 2**category**:Tageskomponente/Kontaktpunktet**quantity**: 2730.0 LKF Punkte
+> **item****sequence**: 2**category**: Tageskomponente/Kontaktpunktet**quantity**: 2730.0 LKF Punkte
 
-> **item****sequence**: 3**category**:Punkte Belagsdauerausreißer nach unten – Leistungskomponente**quantity**: 0.0 LKF Punkte
+> **item****sequence**: 3**category**: Punkte Belagsdauerausreißer nach unten – Leistungskomponente**quantity**: 0.0 LKF Punkte
 
-> **item****sequence**: 4**category**:Punkte Belagsdauerausreißer nach unten – Tageskomponente**quantity**: 0.0 LKF Punkte
+> **item****sequence**: 4**category**: Punkte Belagsdauerausreißer nach unten – Tageskomponente**quantity**: 0.0 LKF Punkte
 
-> **item****sequence**: 5**category**:Zusatzpunkte Belagsdauerausreißer nach oben**quantity**: 0.0 LKF Punkte
+> **item****sequence**: 5**category**: Zusatzpunkte Belagsdauerausreißer nach oben**quantity**: 0.0 LKF Punkte
 
-> **item****sequence**: 6**category**:Zusatzpunkte Intensiv**quantity**: 2436.0 LKF Punkte
+> **item****sequence**: 6**category**: Zusatzpunkte Intensiv**quantity**: 2436.0 LKF Punkte
 
-> **item****sequence**: 7**category**:Zusatzpunkte Mehrfachleistungen**quantity**: 0.0 LKF Punkte
+> **item****sequence**: 7**category**: Zusatzpunkte Mehrfachleistungen**quantity**: 0.0 LKF Punkte
 
-> **item****sequence**: 8**category**:Punkte spezieller Bereiche (tageweise)**quantity**: 0.0 LKF Punkte
+> **item****sequence**: 8**category**: Punkte spezieller Bereiche (tageweise)**quantity**: 0.0 LKF Punkte
 
-> **item****sequence**: 9**category**:Punkte total**quantity**: 5532.0 LKF Punkte
+> **item****sequence**: 9**category**: Punkte total**quantity**: 5532.0 LKF Punkte
 
 
 

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/moped-ext-aufnahmeart | *Version*:0.1.0 | |
-| Draft as of 2026-01-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:Aufnahmeart |
+| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:Aufnahmeart |
 
 MOPED Extension für die Aufnahmeart.
 
@@ -20,7 +20,7 @@ MOPED Extension für die Aufnahmeart.
 **Usages:**
 
 * Use this Extension: [MOPED Encounter](StructureDefinition-MopedEncounter.md)
-* Examples for this Extension: [Encounter/Encounter42](Encounter-Encounter42.md), [Encounter/PJ1Encounter](Encounter-PJ1Encounter.md), [Encounter/PJ1EncounterAufnahme](Encounter-PJ1EncounterAufnahme.md), [Encounter/PJ1EncounterBasis](Encounter-PJ1EncounterBasis.md)...Show 4 more,[Encounter/PJ1EncounterBund](Encounter-PJ1EncounterBund.md),[Encounter/PJ1EncounterLGF](Encounter-PJ1EncounterLGF.md),[Encounter/PJ1EncounterSV](Encounter-PJ1EncounterSV.md)and[Encounter/PJ2Encounter](Encounter-PJ2Encounter.md)
+* Examples for this Extension: [Encounter/Encounter42](Encounter-Encounter42.md), [Encounter/PJ1Encounter](Encounter-PJ1Encounter.md), [Encounter/PJ1EncounterAufnahme](Encounter-PJ1EncounterAufnahme.md), [Encounter/PJ1EncounterBasis](Encounter-PJ1EncounterBasis.md)... Show 4 more, [Encounter/PJ1EncounterBund](Encounter-PJ1EncounterBund.md), [Encounter/PJ1EncounterLGF](Encounter-PJ1EncounterLGF.md), [Encounter/PJ1EncounterSV](Encounter-PJ1EncounterSV.md) and [Encounter/PJ2Encounter](Encounter-PJ2Encounter.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/elga.moped|current/StructureDefinition/moped-ext-aufnahmeart)
 
@@ -55,7 +55,7 @@ Other representations of profile: [CSV](StructureDefinition-moped-ext-aufnahmear
   "name" : "Aufnahmeart",
   "title" : "Aufnahmeart",
   "status" : "draft",
-  "date" : "2026-01-07T10:11:40+00:00",
+  "date" : "2026-01-26T07:03:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

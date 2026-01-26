@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedCoverageSelbstzahler | *Version*:0.1.0 | |
-| Draft as of 2026-01-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedCoverageSelbstzahler |
+| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedCoverageSelbstzahler |
 
  
 MOPED Profil der Coverage Ressource für Selbstzahler 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedCoverageSelbstz
   "name" : "MopedCoverageSelbstzahler",
   "title" : "MOPED Coverage für Selbstzahler",
   "status" : "draft",
-  "date" : "2026-01-07T10:11:40+00:00",
+  "date" : "2026-01-26T07:03:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

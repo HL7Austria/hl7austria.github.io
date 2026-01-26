@@ -35,19 +35,19 @@ Profile: [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md)
 
 **diagnosisRelatedGroup**: Frakturen der unteren Extremität/Becken, außer Vorfuß
 
-> **supportingInfo****sequence**: 1**category**:Plausibilitätskennzeichen**value**: 1234
+> **supportingInfo****sequence**: 1**category**: Plausibilitätskennzeichen**value**: 1234
 
-> **supportingInfo****sequence**: 2**category**:Endgültige Meldung**value**: false
+> **supportingInfo****sequence**: 2**category**: Endgültige Meldung**value**: false
 
-> **supportingInfo****sequence**: 3**category**:XDok Device**value**:[Device: status = active; category = Software; type = XDok](Device-XDokExampleDevice.md)
+> **supportingInfo****sequence**: 3**category**: XDok Device**value**: [Device: status = active; category = Software; type = XDok](Device-XDokExampleDevice.md)
 
-> **diagnosis****sequence**: 1**diagnosis**:[Condition Fraktur der Patella](Condition-PJ2Condition1.md)**onAdmission**:Unknown
+> **diagnosis****sequence**: 1**diagnosis**: [Condition Fraktur der Patella](Condition-PJ2Condition1.md)**onAdmission**: Unknown
 
-> **diagnosis****sequence**: 2**diagnosis**:[Condition Sonstige Ursachen exogener Noxen, nicht näher bezeichnet](Condition-PJ2Condition2.md)**onAdmission**:Unknown
+> **diagnosis****sequence**: 2**diagnosis**: [Condition Sonstige Ursachen exogener Noxen, nicht näher bezeichnet](Condition-PJ2Condition2.md)**onAdmission**: Unknown
 
-> **procedure****Medizinische Leistung - Abrechnungsrelevanz**:[Abrechnungsrelevanz der medizinischen Leistung: J](CodeSystem-AbrechnungsRelevanzCS.md#AbrechnungsRelevanzCS-J)(Ja (Die Leistung ist bei der Bepunktung zu berücksichtigen.))**sequence**: 1**procedure**:[Procedure Physiotherapie im Rahmen eines stationären Aufenthaltes (LE=je Aufenthalt)](Procedure-PJ2Procedure1.md)
+> **procedure****Medizinische Leistung - Abrechnungsrelevanz**: [Abrechnungsrelevanz der medizinischen Leistung: J](CodeSystem-AbrechnungsRelevanzCS.md#AbrechnungsRelevanzCS-J) (Ja (Die Leistung ist bei der Bepunktung zu berücksichtigen.))**sequence**: 1**procedure**: [Procedure Physiotherapie im Rahmen eines stationären Aufenthaltes (LE=je Aufenthalt)](Procedure-PJ2Procedure1.md)
 
-> **procedure****Medizinische Leistung - Abrechnungsrelevanz**:[Abrechnungsrelevanz der medizinischen Leistung: J](CodeSystem-AbrechnungsRelevanzCS.md#AbrechnungsRelevanzCS-J)(Ja (Die Leistung ist bei der Bepunktung zu berücksichtigen.))**sequence**: 2**procedure**:[Procedure Polysomnographie im Schlaflabor (LE=je Behandlungstag)](Procedure-PJ2Procedure2.md)
+> **procedure****Medizinische Leistung - Abrechnungsrelevanz**: [Abrechnungsrelevanz der medizinischen Leistung: J](CodeSystem-AbrechnungsRelevanzCS.md#AbrechnungsRelevanzCS-J) (Ja (Die Leistung ist bei der Bepunktung zu berücksichtigen.))**sequence**: 2**procedure**: [Procedure Polysomnographie im Schlaflabor (LE=je Behandlungstag)](Procedure-PJ2Procedure2.md)
 
 ### Insurances
 
@@ -56,23 +56,23 @@ Profile: [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md)
 | - | **Sequence** | **Focal** | **Coverage** |
 | * | 1 | true | [Coverage: identifier = urn:oid:1.2.40.0.10.1.4.3.9.1#FJK5MCDPMRCY; status = active; kind = insurance](Coverage-PJ2Coverage.md) |
 
-> **item****sequence**: 1**category**:Punkte Belagsdauerausreißer nach unten – Leistungskomponente**quantity**: 0
+> **item****sequence**: 1**category**: Punkte Belagsdauerausreißer nach unten – Leistungskomponente**quantity**: 0
 
-> **item****sequence**: 2**category**:Punkte Belagsdauerausreißer nach unten – Tageskomponente**quantity**: 0
+> **item****sequence**: 2**category**: Punkte Belagsdauerausreißer nach unten – Tageskomponente**quantity**: 0
 
-> **item****sequence**: 3**category**:Zusatzpunkte Belagsdauerausreißer nach oben**quantity**: 0
+> **item****sequence**: 3**category**: Zusatzpunkte Belagsdauerausreißer nach oben**quantity**: 0
 
-> **item****sequence**: 4**category**:Zusatzpunkte Intensiv**quantity**: 0
+> **item****sequence**: 4**category**: Zusatzpunkte Intensiv**quantity**: 0
 
-> **item****sequence**: 5**category**:Zusatzpunkte Mehrfachleistungen**quantity**: 0
+> **item****sequence**: 5**category**: Zusatzpunkte Mehrfachleistungen**quantity**: 0
 
-> **item****sequence**: 6**category**:Punkte spezieller Bereiche (tageweise)**quantity**: 0
+> **item****sequence**: 6**category**: Punkte spezieller Bereiche (tageweise)**quantity**: 0
 
-> **item****sequence**: 7**category**:Punkte total**quantity**: 1384
+> **item****sequence**: 7**category**: Punkte total**quantity**: 1384
 
-> **item****sequence**: 8**category**:Leistungskomponente/Leistungspunkte**quantity**: 62
+> **item****sequence**: 8**category**: Leistungskomponente/Leistungspunkte**quantity**: 62
 
-> **item****sequence**: 9**category**:Tageskomponente/Kontaktpunktet**quantity**: 1322
+> **item****sequence**: 9**category**: Tageskomponente/Kontaktpunktet**quantity**: 1322
 
 
 
