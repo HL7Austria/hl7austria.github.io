@@ -51,7 +51,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "title" : "Arten von Moped Encounter",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-01-26T07:03:23+00:00",
+  "date" : "2026-01-26T07:12:25+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

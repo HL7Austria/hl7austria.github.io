@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedProcedure.csv),
   "name" : "MopedProcedure",
   "title" : "MOPED Procedure",
   "status" : "draft",
-  "date" : "2026-01-26T07:03:23+00:00",
+  "date" : "2026-01-26T07:12:25+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -409,6 +409,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedProcedure.csv),
         ],
         "path" : "Procedure.bodySite",
         "short" : "LKF: Medizinische Leistung – Seitenlokalisation ",
+        "max" : "1",
         "binding" : {
           "strength" : "required",
           "valueSet" : "https://elga.moped.at/ValueSet/LKFSeitenlokalisationVS"

@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedEncounterLGF.cs
   "name" : "MopedEncounterLGF",
   "title" : "MOPED Encounter LGF",
   "status" : "draft",
-  "date" : "2026-01-26T07:03:23+00:00",
+  "date" : "2026-01-26T07:12:25+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

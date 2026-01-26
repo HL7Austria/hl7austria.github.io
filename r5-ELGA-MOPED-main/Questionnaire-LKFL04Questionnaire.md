@@ -26,7 +26,7 @@ LKF L04 Questionnaire - Exklusionen tagesklinischer medizinischer Leistungen
   "version" : "0.1.0",
   "title" : "LKF L04 Questionnaire",
   "status" : "active",
-  "date" : "2026-01-26T07:03:23+00:00",
+  "date" : "2026-01-26T07:12:25+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

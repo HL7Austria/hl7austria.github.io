@@ -34,7 +34,7 @@ Arten von zusätzlichen Informationen in der VAE
   "title" : "MOPED VAESupportingInformationCategory",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-01-26T07:03:23+00:00",
+  "date" : "2026-01-26T07:12:25+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

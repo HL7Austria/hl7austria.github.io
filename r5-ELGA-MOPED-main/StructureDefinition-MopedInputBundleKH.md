@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedInputBundleKH.c
   "name" : "MopedInputBundleKH",
   "title" : "MOPED Input Bundle KH",
   "status" : "draft",
-  "date" : "2026-01-26T07:03:23+00:00",
+  "date" : "2026-01-26T07:12:25+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
