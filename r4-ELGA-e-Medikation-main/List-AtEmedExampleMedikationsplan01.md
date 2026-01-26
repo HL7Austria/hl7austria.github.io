@@ -13,7 +13,7 @@ Profile: [ELGA e-Medikation Medikationsplan](StructureDefinition-at-emed-list-me
 | Mode: Working List | Status: Current |
 |  | |
 
-* **Items**: [MedicationRequest: identifier = 477; status = active; intent = order; category = Medikationsplaneintrag; medication[x] = EBETREXAT TBL 10MG; authoredOn = 2024-10-03; reasonCode = Hypertonie; note = Freitext Informationen zum Medikationsplaneintrag.](MedicationRequest-AtEmedExamplePlaneintrag01.md)
+* **Items**: [MedicationRequest: identifier = 4711; status = active; intent = order; category = Medikationsplaneintrag; medication[x] = EBETREXAT TBL 10MG; authoredOn = 2024-10-03; reasonCode = Essentielle Hypertonie; note = Freitext Informationen zum Medikationsplaneintrag.](MedicationRequest-AtEmedExamplePlaneintrag01.md)
   * Flag: Unchanged
 
 

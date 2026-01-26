@@ -24,9 +24,9 @@ Profile: [ELGA e-Medikation Geplante Abgabe](StructureDefinition-at-emed-medicat
 
 **requester**: [Practitioner/AtEmedExamplePractitioner01](Practitioner/AtEmedExamplePractitioner01)
 
-**reasonCode**: Hypertonie
+**reasonCode**: Essentielle Hypertonie
 
-**basedOn**: [Planeintrag](Medication/AtEmedExampleMedicationRequestPlaneintrag01)
+**basedOn**: [Planeintrag](MedicationRequest/AtEmedExampleMedicationRequestPlaneintrag01)
 
 **groupIdentifier**: WYE82A2G8EE1
 
@@ -37,7 +37,7 @@ Profile: [ELGA e-Medikation Geplante Abgabe](StructureDefinition-at-emed-medicat
 Freitext Informationen zur geplanten Abgabe.
 
 
-> **dosageInstruction****text**: 1 Kapsel täglich morgens**timing**: Once per 1 day**route**: Oral use
+> **dosageInstruction****text**: 1 Kapsel täglich morgens**patientInstruction**: Nehmen Sie die Kapsel jeden Morgen mit ausreichend Flüssigkeit ein.**timing**: Once per 1 day**route**: Oraler Verabreichungsweg
 
 ### DoseAndRates
 
@@ -109,15 +109,14 @@ Freitext Informationen zur geplanten Abgabe.
         {
           "system" : "http://snomed.info/sct",
           "code" : "59621000",
-          "display" : "Hypertonie"
+          "display" : "Essentielle Hypertonie"
         }
-      ],
-      "text" : "Hypertonie"
+      ]
     }
   ],
   "basedOn" : [
     {
-      "reference" : "Medication/AtEmedExampleMedicationRequestPlaneintrag01",
+      "reference" : "MedicationRequest/AtEmedExampleMedicationRequestPlaneintrag01",
       "display" : "Planeintrag"
     }
   ],
@@ -132,6 +131,7 @@ Freitext Informationen zur geplanten Abgabe.
   "dosageInstruction" : [
     {
       "text" : "1 Kapsel täglich morgens",
+      "patientInstruction" : "Nehmen Sie die Kapsel jeden Morgen mit ausreichend Flüssigkeit ein.",
       "timing" : {
         "repeat" : {
           "frequency" : 1,
@@ -144,7 +144,7 @@ Freitext Informationen zur geplanten Abgabe.
           {
             "system" : "http://snomed.info/sct",
             "code" : "26643006",
-            "display" : "Oral use"
+            "display" : "Oraler Verabreichungsweg"
           }
         ]
       },

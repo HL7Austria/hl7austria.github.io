@@ -9,15 +9,15 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-planeintrag | *Version*:0.1.1 | |
-| Draft as of 2026-01-23 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedicationRequestPlaneintrag |
+| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedicationRequestPlaneintrag |
 
  
-**Beschreibung:** Bildet einen Eintrag eines Medikationsplans eines ELGA Teilnehmers ab. Er enthält genau ein Arzneimittel und dessen Dosierung. Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen (AtEmedMedicationRequestGeplanteAbgabe). 
+**Beschreibung:** Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA Teilnehmers ab. Er enthält genau ein Arzneimittel und dessen Dosierung. Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen (AtEmedMedicationRequestGeplanteAbgabe). 
 
 **Usages:**
 
-* Refer to this Profile: [ELGA e-Medikation Medikationsplan](StructureDefinition-at-emed-list-medikationsplan.md), [ELGA e-Medikation Geplante Abgabe](StructureDefinition-at-emed-medicationrequest-geplanteAbgabe.md) and [ELGA e-Medikation Planeintrag](StructureDefinition-at-emed-medicationrequest-planeintrag.md)
-* Examples for this Profile: [MedicationRequest/AtEmedExamplePlaneintrag01](MedicationRequest-AtEmedExamplePlaneintrag01.md)
+* Refer to this Profile: [ELGA e-Medikation Composition Medikationsplan](StructureDefinition-at-emed-composition-medikationsplan.md), [ELGA e-Medikation Medikationsplan](StructureDefinition-at-emed-list-medikationsplan.md), [ELGA e-Medikation Geplante Abgabe](StructureDefinition-at-emed-medicationrequest-geplanteAbgabe.md) and [ELGA e-Medikation Planeintrag](StructureDefinition-at-emed-medicationrequest-planeintrag.md)
+* Examples for this Profile: [MedicationRequest/AtEmedExamplePlaneintrag01](MedicationRequest-AtEmedExamplePlaneintrag01.md), [MedicationRequest/ExamplePlaneintragMed1](MedicationRequest-ExamplePlaneintragMed1.md) and [MedicationRequest/ExamplePlaneintragMed2](MedicationRequest-ExamplePlaneintragMed2.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/at-emed-medicationrequest-planeintrag)
 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationre
   "name" : "AtEmedMedicationRequestPlaneintrag",
   "title" : "ELGA e-Medikation Planeintrag",
   "status" : "draft",
-  "date" : "2026-01-23T19:34:42+00:00",
+  "date" : "2026-01-26T15:48:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -65,7 +65,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationre
       ]
     }
   ],
-  "description" : "**Beschreibung:** Bildet einen Eintrag eines Medikationsplans eines ELGA Teilnehmers ab. \nEr enthält genau ein Arzneimittel und dessen Dosierung.\nKann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen (AtEmedMedicationRequestGeplanteAbgabe).",
+  "description" : "**Beschreibung:** Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA Teilnehmers ab. \nEr enthält genau ein Arzneimittel und dessen Dosierung.\nKann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen (AtEmedMedicationRequestGeplanteAbgabe).",
   "fhirVersion" : "4.0.1",
   "mapping" : [
     {
@@ -122,7 +122,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationre
       {
         "id" : "MedicationRequest.status",
         "path" : "MedicationRequest.status",
-        "short" : "Status des Medikationsplaneintrags (im Standardfall active oder complete): active | on-hold | cancelled | completed | entered-in-error | stopped | draft | unknown"
+        "short" : "Status des Medikationsplaneintrags (im Standardfall active oder complete): active | on-hold | cancelled | completed | entered-in-error | stopped | draft | unknown -> entfernen: draft, unknown"
       },
       {
         "id" : "MedicationRequest.statusReason",
@@ -329,6 +329,26 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationre
         "mustSupport" : true
       },
       {
+        "id" : "MedicationRequest.reasonCode.coding",
+        "path" : "MedicationRequest.reasonCode.coding",
+        "min" : 1
+      },
+      {
+        "id" : "MedicationRequest.reasonCode.coding.system",
+        "path" : "MedicationRequest.reasonCode.coding.system",
+        "min" : 1
+      },
+      {
+        "id" : "MedicationRequest.reasonCode.coding.code",
+        "path" : "MedicationRequest.reasonCode.coding.code",
+        "min" : 1
+      },
+      {
+        "id" : "MedicationRequest.reasonCode.coding.display",
+        "path" : "MedicationRequest.reasonCode.coding.display",
+        "min" : 1
+      },
+      {
         "id" : "MedicationRequest.reasonReference",
         "path" : "MedicationRequest.reasonReference",
         "short" : "Grund für die Verordnung des Arzneimittels. Entweder Code oder Referenz (evtl. Invariante).",
@@ -369,7 +389,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationre
       {
         "id" : "MedicationRequest.courseOfTherapyType",
         "path" : "MedicationRequest.courseOfTherapyType",
-        "short" : "Gesamtmuster der Medikamentengabe (z.B. saisonal). Evtl. im Medikationsplaneintrag (dosageInstruction), paused soll im Status dokumentiert werden."
+        "short" : "Gesamtmuster der Medikamentengabe (z.B. saisonal). Verwendung im Medikationsplaneintrag prüfen (dosageInstruction), paused soll im Status dokumentiert werden."
       },
       {
         "id" : "MedicationRequest.insurance",

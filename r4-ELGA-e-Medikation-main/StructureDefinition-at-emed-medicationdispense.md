@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationdispense | *Version*:0.1.1 | |
-| Draft as of 2026-01-23 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedicationDispense |
+| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedicationDispense |
 
  
 Abgabe 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationdi
   "name" : "AtEmedMedicationDispense",
   "title" : "ELGA e-Medikation Abgabe",
   "status" : "draft",
-  "date" : "2026-01-23T19:34:42+00:00",
+  "date" : "2026-01-26T15:48:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/ValueSet/MedicationRequestCategoryVS | *Version*:0.1.1 | |
-| Draft as of 2026-01-23 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:MedicationRequestCategoryVS |
+| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:MedicationRequestCategoryVS |
 
  
 ValueSet für Zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen 
@@ -52,7 +52,7 @@ ValueSet für Zulässige Ausprägungen der MedicationRequest Kategorie. Dient de
   "title" : "ELGA e-Medikation MedicationRequest Kategorie ValueSet",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-01-23T19:34:42+00:00",
+  "date" : "2026-01-26T15:48:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

@@ -10,7 +10,7 @@
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) ENTWURF",
   "status" : "draft",
-  "date" : "2026-01-23T19:34:42+00:00",
+  "date" : "2026-01-26T15:48:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -650,6 +650,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/AtEmedExampleBundleDocumentMedikationsplan01"
+      },
+      "name" : "Beispiel eines Document Bundles Medikationsplan 1",
+      "description" : "Beispiel eines Document Bundles Medikationsplan 1",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-document-medikationsplan"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationRequest"
       }],
       "reference" : {
@@ -701,10 +713,34 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/at-emed-composition-medikationsplan"
+      },
+      "name" : "ELGA e-Medikation Composition Medikationsplan",
+      "description" : "**Beschreibung:** Composition legt Inhalte des Medikationsplans (Dokument) fest. \nBeinhaltet:\n- Medikationsplan (List)\n- Medikationsplaneinträge (MedicationRequest)\n- Referenzen zu geplanten Abgaben (entsprechen Rezepten)\n\nBundle (type=document)\n ├─ Composition \n ├─ MedicationRequest 1\n ├─ MedicationRequest 2\n └─ List (referenziert 1+2)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-emed-bundle-document-medikationsplan"
+      },
+      "name" : "ELGA e-Medikation Document Bundle Medikationsplan",
+      "description" : "**Beschreibung:** ELGA e-Medikation Document Bundle zur Anzeige des Medikationsplans mit allen Medikationsplaneinträgen. \nBeinhaltet:\n- Medikationsplan (List)\n- Medikationsplaneinträge (MedicationRequest)\n- Referenzen zu geplanten Abgaben (entsprechen Rezepten)\n\nBundle (type=document)\n ├─ Composition  (AtEmedCompositionMedikationsplan)\n ├─ MedicationRequest 1 (AtEmedMedicationRequestPlaneintrag)\n ├─ MedicationRequest 2 (AtEmedMedicationRequestPlaneintrag)\n └─ List (referenziert 1+2) (AtEmedListMedikationsplan)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/at-emed-medicationrequest-geplanteAbgabe"
       },
       "name" : "ELGA e-Medikation Geplante Abgabe",
-      "description" : "**Beschreibung:** Bildet eine geplante Abgabe eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab.\nSie enthält das verordnete Arzneimittel und dessen Dosierung und spielgelt die Inhalte des e-Rezepts wider. \nGeplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation.\nAls groupIdentifier dient die Geplante-Abgabe-ID (früher eMED-ID), die auch im e-Rezept mitgeführt wird.\nWerden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer').",
+      "description" : "**Beschreibung:** Bildet eine geplante Abgabe eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab.\nSie enthält das verordnete Arzneimittel und dessen Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation.\nAls groupIdentifier dient die Geplante-Abgabe-ID (früher eMED-ID), die auch im e-Rezept mitgeführt wird.\nWerden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer'). Verwendet R5 Backport Extensions.",
       "exampleBoolean" : false
     },
     {
@@ -764,7 +800,7 @@
         "reference" : "StructureDefinition/at-emed-medicationrequest-planeintrag"
       },
       "name" : "ELGA e-Medikation Planeintrag",
-      "description" : "**Beschreibung:** Bildet einen Eintrag eines Medikationsplans eines ELGA Teilnehmers ab. \nEr enthält genau ein Arzneimittel und dessen Dosierung.\nKann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen (AtEmedMedicationRequestGeplanteAbgabe).",
+      "description" : "**Beschreibung:** Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA Teilnehmers ab. \nEr enthält genau ein Arzneimittel und dessen Dosierung.\nKann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen (AtEmedMedicationRequestGeplanteAbgabe).",
       "exampleBoolean" : false
     },
     {
@@ -785,11 +821,77 @@
         "valueString" : "Practitioner"
       }],
       "reference" : {
+        "reference" : "Practitioner/ExampleArzt"
+      },
+      "name" : "ExampleArzt",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "List"
+      }],
+      "reference" : {
+        "reference" : "List/ExampleMedikationsplanList"
+      },
+      "name" : "ExampleMedikationsplanList",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/ExamplePatient"
+      },
+      "name" : "ExamplePatient",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/ExamplePlaneintragMed1"
+      },
+      "name" : "ExamplePlaneintragMed1",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-planeintrag"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/ExamplePlaneintragMed2"
+      },
+      "name" : "ExamplePlaneintragMed2",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-planeintrag"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      }],
+      "reference" : {
         "reference" : "Practitioner/at-emed-example-practitioner-01"
       },
       "name" : "HL7ATCorePractitioner",
       "description" : "Beispiel eines behandelnden Arztes",
       "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Composition"
+      }],
+      "reference" : {
+        "reference" : "Composition/ExampleMedikationsplanComposition"
+      },
+      "name" : "Medikationsplan",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-composition-medikationsplan"
     }],
     "page" : {
       "extension" : [{

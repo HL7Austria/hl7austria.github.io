@@ -8,7 +8,7 @@
 
 Profile: [ELGA e-Medikation Planeintrag](StructureDefinition-at-emed-medicationrequest-planeintrag.md)
 
-**identifier**: 477
+**identifier**: 4711
 
 **status**: Active
 
@@ -24,7 +24,9 @@ Profile: [ELGA e-Medikation Planeintrag](StructureDefinition-at-emed-medicationr
 
 **requester**: [Practitioner/AtEmedExamplePractitioner01](Practitioner/AtEmedExamplePractitioner01)
 
-**reasonCode**: Hypertonie
+**reasonCode**: Essentielle Hypertonie
+
+**basedOn**: [Planeintrag](MedicationRequest/AtEmedExampleMedicationRequestPlaneintrag01)
 
 **note**: 
 
@@ -33,7 +35,7 @@ Profile: [ELGA e-Medikation Planeintrag](StructureDefinition-at-emed-medicationr
 Freitext Informationen zum Medikationsplaneintrag.
 
 
-> **dosageInstruction****text**: 1 Kapsel täglich morgens**timing**: Once per 1 day**route**: Oral use
+> **dosageInstruction****text**: 1 Kapsel täglich morgens**patientInstruction**: Nehmen Sie die Kapsel jeden Morgen mit ausreichend Flüssigkeit ein.**timing**: Once per 1 day**route**: Oraler Verabreichungsweg
 
 ### DoseAndRates
 
@@ -68,7 +70,7 @@ Freitext Informationen zum Medikationsplaneintrag.
   },
   "identifier" : [
     {
-      "value" : "477"
+      "value" : "4711"
     }
   ],
   "status" : "active",
@@ -105,10 +107,15 @@ Freitext Informationen zum Medikationsplaneintrag.
         {
           "system" : "http://snomed.info/sct",
           "code" : "59621000",
-          "display" : "Hypertonie"
+          "display" : "Essentielle Hypertonie"
         }
-      ],
-      "text" : "Hypertonie"
+      ]
+    }
+  ],
+  "basedOn" : [
+    {
+      "reference" : "MedicationRequest/AtEmedExampleMedicationRequestPlaneintrag01",
+      "display" : "Planeintrag"
     }
   ],
   "note" : [
@@ -119,6 +126,7 @@ Freitext Informationen zum Medikationsplaneintrag.
   "dosageInstruction" : [
     {
       "text" : "1 Kapsel täglich morgens",
+      "patientInstruction" : "Nehmen Sie die Kapsel jeden Morgen mit ausreichend Flüssigkeit ein.",
       "timing" : {
         "repeat" : {
           "frequency" : 1,
@@ -131,7 +139,7 @@ Freitext Informationen zum Medikationsplaneintrag.
           {
             "system" : "http://snomed.info/sct",
             "code" : "26643006",
-            "display" : "Oral use"
+            "display" : "Oraler Verabreichungsweg"
           }
         ]
       },

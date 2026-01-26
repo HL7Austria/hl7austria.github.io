@@ -209,15 +209,56 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-at-emed-composition-medikationsplan.html"
+                  title="StructureDefinition/at-emed-composition-medikationsplan">ELGA e-Medikation Composition Medikationsplan</a>
+            </td>
+            <td>
+<p><strong>Beschreibung:</strong> Composition legt Inhalte des Medikationsplans (Dokument) fest. 
+Beinhaltet:</p>
+<ul>
+  <li>Medikationsplan (List)</li>
+  <li>Medikationsplaneinträge (MedicationRequest)</li>
+  <li>Referenzen zu geplanten Abgaben (entsprechen Rezepten)</li>
+</ul>
+
+<p>Bundle (type=document)
+ ├─ Composition 
+ ├─ MedicationRequest 1
+ ├─ MedicationRequest 2
+ └─ List (referenziert 1+2)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-at-emed-bundle-document-medikationsplan.html"
+                  title="StructureDefinition/at-emed-bundle-document-medikationsplan">ELGA e-Medikation Document Bundle Medikationsplan</a>
+            </td>
+            <td>
+<p><strong>Beschreibung:</strong> ELGA e-Medikation Document Bundle zur Anzeige des Medikationsplans mit allen Medikationsplaneinträgen. 
+Beinhaltet:</p>
+<ul>
+  <li>Medikationsplan (List)</li>
+  <li>Medikationsplaneinträge (MedicationRequest)</li>
+  <li>Referenzen zu geplanten Abgaben (entsprechen Rezepten)</li>
+</ul>
+
+<p>Bundle (type=document)
+ ├─ Composition  (AtEmedCompositionMedikationsplan)
+ ├─ MedicationRequest 1 (AtEmedMedicationRequestPlaneintrag)
+ ├─ MedicationRequest 2 (AtEmedMedicationRequestPlaneintrag)
+ └─ List (referenziert 1+2) (AtEmedListMedikationsplan)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-at-emed-medicationrequest-geplanteAbgabe.html"
                   title="StructureDefinition/at-emed-medicationrequest-geplanteAbgabe">ELGA e-Medikation Geplante Abgabe</a>
             </td>
             <td>
 <p><strong>Beschreibung:</strong> Bildet eine geplante Abgabe eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab.
-Sie enthält das verordnete Arzneimittel und dessen Dosierung und spielgelt die Inhalte des e-Rezepts wider. 
-Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation.
+Sie enthält das verordnete Arzneimittel und dessen Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation.
 Als groupIdentifier dient die Geplante-Abgabe-ID (früher eMED-ID), die auch im e-Rezept mitgeführt wird.
-Werden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer').</p>
+Werden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer'). Verwendet R5 Backport Extensions.</p>
 </td>
          </tr>
          <tr>
@@ -244,7 +285,7 @@ Werden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel
                   title="StructureDefinition/at-emed-medicationrequest-planeintrag">ELGA e-Medikation Planeintrag</a>
             </td>
             <td>
-<p><strong>Beschreibung:</strong> Bildet einen Eintrag eines Medikationsplans eines ELGA Teilnehmers ab. 
+<p><strong>Beschreibung:</strong> Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA Teilnehmers ab. 
 Er enthält genau ein Arzneimittel und dessen Dosierung.
 Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen (AtEmedMedicationRequestGeplanteAbgabe).</p>
 </td>
@@ -338,6 +379,15 @@ Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen (AtEmedMed
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Bundle-AtEmedExampleBundleDocumentMedikationsplan01.html"
+                  title="Bundle/AtEmedExampleBundleDocumentMedikationsplan01">Beispiel eines Document Bundles Medikationsplan 1</a>
+            </td>
+            <td>
+<p>Beispiel eines Document Bundles Medikationsplan 1</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="List-AtEmedExampleMedikationsplan01.html"
                   title="List/AtEmedExampleMedikationsplan01">Example Medikationsplan 1</a>
             </td>
@@ -347,11 +397,63 @@ Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen (AtEmedMed
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Practitioner-ExampleArzt.html" title="Practitioner/ExampleArzt">ExampleArzt</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="List-ExampleMedikationsplanList.html"
+                  title="List/ExampleMedikationsplanList">ExampleMedikationsplanList</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Patient-ExamplePatient.html" title="Patient/ExamplePatient">ExamplePatient</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="MedicationRequest-ExamplePlaneintragMed1.html"
+                  title="MedicationRequest/ExamplePlaneintragMed1">ExamplePlaneintragMed1</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="MedicationRequest-ExamplePlaneintragMed2.html"
+                  title="MedicationRequest/ExamplePlaneintragMed2">ExamplePlaneintragMed2</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Practitioner-at-emed-example-practitioner-01.html"
                   title="Practitioner/at-emed-example-practitioner-01">HL7ATCorePractitioner</a>
             </td>
             <td>
 <p>Beispiel eines behandelnden Arztes</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Composition-ExampleMedikationsplanComposition.html"
+                  title="Composition/ExampleMedikationsplanComposition">Medikationsplan</a>
+            </td>
+            <td>
+
 </td>
          </tr>
       </tbody>
@@ -374,7 +476,7 @@ Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen (AtEmedMed
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Fri, Jan 23, 2026 19:34+0000">2026-01-23</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Jan 26, 2026 15:48+0000">2026-01-26</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -1,0 +1,230 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/emed/r4/Bundle/AtEmedExampleBundleDocumentMedikationsplan01> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "AtEmedExampleBundleDocumentMedikationsplan01"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-document-medikationsplan"^^xsd:anyURI ;
+       fhir:l <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-document-medikationsplan>
+     ] )
+  ] ; # 
+  fhir:type [ fhir:v "document"] ; # 
+  fhir:timestamp [ fhir:v "2024-10-03T10:12:00+02:00"^^xsd:dateTime] ; # 
+  fhir:entry ( [
+     fhir:fullUrl [
+       fhir:v "Composition/example-composition"^^xsd:anyURI ;
+       fhir:l <https://fhir.hl7.at/elga/emed/r4/Composition/example-composition>
+     ] ;
+     fhir:resource ( <Composition/example-composition> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "MedicationRequest/med1"^^xsd:anyURI ;
+       fhir:l <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/med1>
+     ] ;
+     fhir:resource ( <MedicationRequest/med1> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "MedicationRequest/med2"^^xsd:anyURI ;
+       fhir:l <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/med2>
+     ] ;
+     fhir:resource ( <MedicationRequest/med2> )
+  ] [
+     fhir:fullUrl [
+       fhir:v "List/planlist"^^xsd:anyURI ;
+       fhir:l <https://fhir.hl7.at/elga/emed/r4/List/planlist>
+     ] ;
+     fhir:resource ( <List/planlist> )
+  ] ) . # 
+
+<Composition/example-composition> a fhir:Composition ;
+  fhir:id [ fhir:v "ExampleMedikationsplanComposition"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-composition-medikationsplan"^^xsd:anyURI ;
+       fhir:l <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-composition-medikationsplan>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Composition_ExampleMedikationsplanComposition\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Composition ExampleMedikationsplanComposition</b></p><a name=\"ExampleMedikationsplanComposition\"> </a><a name=\"hcExampleMedikationsplanComposition\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-emed-composition-medikationsplan.html\">ELGA e-Medikation Composition Medikationsplan</a></p></div><p><b>status</b>: Final</p><p><b>type</b>: <span title=\"Codes:{http://snomed.info/sct 736378000}\">Medikationsplan</span></p><p><b>date</b>: 2024-10-03 10:12:00+0200</p><p><b>author</b>: <a href=\"Practitioner-ExampleArzt.html\">Practitioner Max Hausarzt </a></p><p><b>title</b>: Medikationsplan</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       a sct:736378000 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "736378000" ] ;
+       fhir:display [ fhir:v "Medikationsplan" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <https://fhir.hl7.at/elga/emed/r4/Patient/ExamplePatient> ;
+     fhir:reference [ fhir:v "Patient/ExamplePatient" ]
+  ] ; # 
+  fhir:date [ fhir:v "2024-10-03T10:12:00+02:00"^^xsd:dateTime] ; # 
+  fhir:author ( [
+     fhir:l <https://fhir.hl7.at/elga/emed/r4/Practitioner/ExampleArzt> ;
+     fhir:reference [ fhir:v "Practitioner/ExampleArzt" ]
+  ] ) ; # 
+  fhir:title [ fhir:v "Medikationsplan"] ; # 
+  fhir:section ( [
+     fhir:code [
+       fhir:coding ( [
+         fhir:code [ fhir:v "medikationsplan" ] ;
+         fhir:display [ fhir:v "Medikationsplan" ]
+       ] )
+     ] ;
+     fhir:entry ( [
+       fhir:l <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/med1> ;
+       fhir:reference [ fhir:v "MedicationRequest/med1" ]
+     ] [
+       fhir:l <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/med2> ;
+       fhir:reference [ fhir:v "MedicationRequest/med2" ]
+     ] [
+       fhir:l <https://fhir.hl7.at/elga/emed/r4/List/planlist> ;
+       fhir:reference [ fhir:v "List/planlist" ]
+     ] )
+  ] ) . # 
+
+<MedicationRequest/med1> a fhir:MedicationRequest ;
+  fhir:id [ fhir:v "ExamplePlaneintragMed1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-planeintrag"^^xsd:anyURI ;
+       fhir:l <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-planeintrag>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_ExamplePlaneintragMed1\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationRequest ExamplePlaneintragMed1</b></p><a name=\"ExamplePlaneintragMed1\"> </a><a name=\"hcExamplePlaneintragMed1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-emed-medicationrequest-planeintrag.html\">ELGA e-Medikation Planeintrag</a></p></div><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:\">Medikationsplaneintrag</span></p><p><b>medication</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/asp-liste 2443061}\">EBETREXAT TBL 10MG</span></p><p><b>subject</b>: <a href=\"Patient-ExamplePatient.html\">Erika Test  Female, DoB: 1970-02-14</a></p><p><b>authoredOn</b>: 2024-10-03</p><p><b>requester</b>: <a href=\"Practitioner-ExampleArzt.html\">Practitioner Max Hausarzt </a></p><h3>DosageInstructions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td></tr><tr><td style=\"display: none\">*</td><td>1x morgens</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:code [ fhir:v "1" ] ;
+       fhir:display [ fhir:v "Medikationsplaneintrag" ]
+     ] )
+  ] ) ; # 
+  fhir:medication [
+     a fhir:CodeableConcept ;
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://termgit.elga.gv.at/CodeSystem/asp-liste"^^xsd:anyURI ;
+         fhir:l <https://termgit.elga.gv.at/CodeSystem/asp-liste>
+       ] ;
+       fhir:code [ fhir:v "2443061" ] ;
+       fhir:display [ fhir:v "EBETREXAT TBL 10MG" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <https://fhir.hl7.at/elga/emed/r4/Patient/ExamplePatient> ;
+     fhir:reference [ fhir:v "Patient/ExamplePatient" ]
+  ] ; # 
+  fhir:authoredOn [ fhir:v "2024-10-03"^^xsd:date] ; # 
+  fhir:requester [
+     fhir:l <https://fhir.hl7.at/elga/emed/r4/Practitioner/ExampleArzt> ;
+     fhir:reference [ fhir:v "Practitioner/ExampleArzt" ]
+  ] ; # 
+  fhir:dosageInstruction ( [
+     fhir:text [ fhir:v "1x morgens" ]
+  ] ) . # 
+
+<MedicationRequest/med2> a fhir:MedicationRequest ;
+  fhir:id [ fhir:v "ExamplePlaneintragMed2"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-planeintrag"^^xsd:anyURI ;
+       fhir:l <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-planeintrag>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_ExamplePlaneintragMed2\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationRequest ExamplePlaneintragMed2</b></p><a name=\"ExamplePlaneintragMed2\"> </a><a name=\"hcExamplePlaneintragMed2\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-emed-medicationrequest-planeintrag.html\">ELGA e-Medikation Planeintrag</a></p></div><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:\">Medikationsplaneintrag</span></p><p><b>medication</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/asp-liste 3847199}\">AMLODIPIN 5MG</span></p><p><b>subject</b>: <a href=\"Patient-ExamplePatient.html\">Erika Test  Female, DoB: 1970-02-14</a></p><p><b>authoredOn</b>: 2024-10-03</p><p><b>requester</b>: <a href=\"Practitioner-ExampleArzt.html\">Practitioner Max Hausarzt </a></p><h3>DosageInstructions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td></tr><tr><td style=\"display: none\">*</td><td>1x täglich</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:code [ fhir:v "1" ] ;
+       fhir:display [ fhir:v "Medikationsplaneintrag" ]
+     ] )
+  ] ) ; # 
+  fhir:medication [
+     a fhir:CodeableConcept ;
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://termgit.elga.gv.at/CodeSystem/asp-liste"^^xsd:anyURI ;
+         fhir:l <https://termgit.elga.gv.at/CodeSystem/asp-liste>
+       ] ;
+       fhir:code [ fhir:v "3847199" ] ;
+       fhir:display [ fhir:v "AMLODIPIN 5MG" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <https://fhir.hl7.at/elga/emed/r4/Patient/ExamplePatient> ;
+     fhir:reference [ fhir:v "Patient/ExamplePatient" ]
+  ] ; # 
+  fhir:authoredOn [ fhir:v "2024-10-03"^^xsd:date] ; # 
+  fhir:requester [
+     fhir:l <https://fhir.hl7.at/elga/emed/r4/Practitioner/ExampleArzt> ;
+     fhir:reference [ fhir:v "Practitioner/ExampleArzt" ]
+  ] ; # 
+  fhir:dosageInstruction ( [
+     fhir:text [ fhir:v "1x täglich" ]
+  ] ) . # 
+
+<List/planlist> a fhir:List ;
+  fhir:id [ fhir:v "ExampleMedikationsplanList"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"^^xsd:anyURI ;
+       fhir:l <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"List_ExampleMedikationsplanList\"> </a><p class=\"res-header-id\"><b>Generated Narrative: List ExampleMedikationsplanList</b></p><a name=\"ExampleMedikationsplanList\"> </a><a name=\"hcExampleMedikationsplanList\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-emed-list-medikationsplan.html\">ELGA e-Medikation Medikationsplan</a></p></div><table class=\"clstu\"><tr><td>Mode: Working List </td><td>Status: Current </td></tr><tr><td>Order: user </td></tr></table><table class=\"grid\"><tr style=\"backgound-color: #eeeeee\"><td><b>Items</b></td><td>Flag</td></tr><tr><td><a href=\"Bundle-AtEmedExampleBundleDocumentMedikationsplan01.html#MedicationRequest/med1\">MedicationRequest: status = active; intent = order; category = Medikationsplaneintrag; medication[x] = EBETREXAT TBL 10MG; authoredOn = 2024-10-03</a></td><td>original</td></tr><tr><td><a href=\"Bundle-AtEmedExampleBundleDocumentMedikationsplan01.html#MedicationRequest/med2\">MedicationRequest: status = active; intent = order; category = Medikationsplaneintrag; medication[x] = AMLODIPIN 5MG; authoredOn = 2024-10-03</a></td><td>original</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "current"] ; # 
+  fhir:mode [ fhir:v "working"] ; # 
+  fhir:orderedBy [
+     fhir:coding ( [
+       fhir:code [ fhir:v "user" ]
+     ] )
+  ] ; # 
+  fhir:entry ( [
+     fhir:flag [
+       fhir:coding ( [
+         fhir:code [ fhir:v "original" ]
+       ] )
+     ] ;
+     fhir:item [
+       fhir:l <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/med1> ;
+       fhir:reference [ fhir:v "MedicationRequest/med1" ]
+     ]
+  ] [
+     fhir:flag [
+       fhir:coding ( [
+         fhir:code [ fhir:v "original" ]
+       ] )
+     ] ;
+     fhir:item [
+       fhir:l <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/med2> ;
+       fhir:reference [ fhir:v "MedicationRequest/med2" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

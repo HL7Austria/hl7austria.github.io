@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="AtEmedExampleBundleDocumentMedikationsplan01"/>
+  <meta>
+    <profile value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-document-medikationsplan"/>
+  </meta>
+  <type value="document"/>
+  <timestamp value="2024-10-03T10:12:00+02:00"/>
+  <entry>
+    <fullUrl value="Composition/example-composition"/>
+    <resource>
+      <Composition>
+        <id value="ExampleMedikationsplanComposition"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-composition-medikationsplan"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Composition_ExampleMedikationsplanComposition"> </a><p class="res-header-id"><b>Generated Narrative: Composition ExampleMedikationsplanComposition</b></p><a name="ExampleMedikationsplanComposition"> </a><a name="hcExampleMedikationsplanComposition"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-emed-composition-medikationsplan.html">ELGA e-Medikation Composition Medikationsplan</a></p></div><p><b>status</b>: Final</p><p><b>type</b>: <span title="Codes:{http://snomed.info/sct 736378000}">Medikationsplan</span></p><p><b>date</b>: 2024-10-03 10:12:00+0200</p><p><b>author</b>: <a href="Practitioner-ExampleArzt.html">Practitioner Max Hausarzt </a></p><p><b>title</b>: Medikationsplan</p></div>
+        </text>
+        <status value="final"/>
+        <type>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="736378000"/>
+            <display value="Medikationsplan"/>
+          </coding>
+        </type>
+        <subject>
+          <reference value="Patient/ExamplePatient"/>
+        </subject>
+        <date value="2024-10-03T10:12:00+02:00"/>
+        <author>
+          <reference value="Practitioner/ExampleArzt"/>
+        </author>
+        <title value="Medikationsplan"/>
+        <section>
+          <code>
+            <coding>
+              <code value="medikationsplan"/>
+              <display value="Medikationsplan"/>
+            </coding>
+          </code>
+          <entry>
+            <reference value="MedicationRequest/med1"/>
+          </entry>
+          <entry>
+            <reference value="MedicationRequest/med2"/>
+          </entry>
+          <entry>
+            <reference value="List/planlist"/>
+          </entry>
+        </section>
+      </Composition>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="MedicationRequest/med1"/>
+    <resource>
+      <MedicationRequest>
+        <id value="ExamplePlaneintragMed1"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-planeintrag"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="MedicationRequest_ExamplePlaneintragMed1"> </a><p class="res-header-id"><b>Generated Narrative: MedicationRequest ExamplePlaneintragMed1</b></p><a name="ExamplePlaneintragMed1"> </a><a name="hcExamplePlaneintragMed1"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-emed-medicationrequest-planeintrag.html">ELGA e-Medikation Planeintrag</a></p></div><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title="Codes:">Medikationsplaneintrag</span></p><p><b>medication</b>: <span title="Codes:{https://termgit.elga.gv.at/CodeSystem/asp-liste 2443061}">EBETREXAT TBL 10MG</span></p><p><b>subject</b>: <a href="Patient-ExamplePatient.html">Erika Test  Female, DoB: 1970-02-14</a></p><p><b>authoredOn</b>: 2024-10-03</p><p><b>requester</b>: <a href="Practitioner-ExampleArzt.html">Practitioner Max Hausarzt </a></p><h3>DosageInstructions</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Text</b></td></tr><tr><td style="display: none">*</td><td>1x morgens</td></tr></table></div>
+        </text>
+        <status value="active"/>
+        <intent value="order"/>
+        <category>
+          <coding>
+            <code value="1"/>
+            <display value="Medikationsplaneintrag"/>
+          </coding>
+        </category>
+        <medicationCodeableConcept>
+          <coding>
+            <system value="https://termgit.elga.gv.at/CodeSystem/asp-liste"/>
+            <code value="2443061"/>
+            <display value="EBETREXAT TBL 10MG"/>
+          </coding>
+        </medicationCodeableConcept>
+        <subject>
+          <reference value="Patient/ExamplePatient"/>
+        </subject>
+        <authoredOn value="2024-10-03"/>
+        <requester>
+          <reference value="Practitioner/ExampleArzt"/>
+        </requester>
+        <dosageInstruction>
+          <text value="1x morgens"/>
+        </dosageInstruction>
+      </MedicationRequest>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="MedicationRequest/med2"/>
+    <resource>
+      <MedicationRequest>
+        <id value="ExamplePlaneintragMed2"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-planeintrag"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="MedicationRequest_ExamplePlaneintragMed2"> </a><p class="res-header-id"><b>Generated Narrative: MedicationRequest ExamplePlaneintragMed2</b></p><a name="ExamplePlaneintragMed2"> </a><a name="hcExamplePlaneintragMed2"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-emed-medicationrequest-planeintrag.html">ELGA e-Medikation Planeintrag</a></p></div><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title="Codes:">Medikationsplaneintrag</span></p><p><b>medication</b>: <span title="Codes:{https://termgit.elga.gv.at/CodeSystem/asp-liste 3847199}">AMLODIPIN 5MG</span></p><p><b>subject</b>: <a href="Patient-ExamplePatient.html">Erika Test  Female, DoB: 1970-02-14</a></p><p><b>authoredOn</b>: 2024-10-03</p><p><b>requester</b>: <a href="Practitioner-ExampleArzt.html">Practitioner Max Hausarzt </a></p><h3>DosageInstructions</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Text</b></td></tr><tr><td style="display: none">*</td><td>1x täglich</td></tr></table></div>
+        </text>
+        <status value="active"/>
+        <intent value="order"/>
+        <category>
+          <coding>
+            <code value="1"/>
+            <display value="Medikationsplaneintrag"/>
+          </coding>
+        </category>
+        <medicationCodeableConcept>
+          <coding>
+            <system value="https://termgit.elga.gv.at/CodeSystem/asp-liste"/>
+            <code value="3847199"/>
+            <display value="AMLODIPIN 5MG"/>
+          </coding>
+        </medicationCodeableConcept>
+        <subject>
+          <reference value="Patient/ExamplePatient"/>
+        </subject>
+        <authoredOn value="2024-10-03"/>
+        <requester>
+          <reference value="Practitioner/ExampleArzt"/>
+        </requester>
+        <dosageInstruction>
+          <text value="1x täglich"/>
+        </dosageInstruction>
+      </MedicationRequest>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="List/planlist"/>
+    <resource>
+      <List>
+        <id value="ExampleMedikationsplanList"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="List_ExampleMedikationsplanList"> </a><p class="res-header-id"><b>Generated Narrative: List ExampleMedikationsplanList</b></p><a name="ExampleMedikationsplanList"> </a><a name="hcExampleMedikationsplanList"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-emed-list-medikationsplan.html">ELGA e-Medikation Medikationsplan</a></p></div><table class="clstu"><tr><td>Mode: Working List </td><td>Status: Current </td></tr><tr><td>Order: user </td></tr></table><table class="grid"><tr style="backgound-color: #eeeeee"><td><b>Items</b></td><td>Flag</td></tr><tr><td><a href="Bundle-AtEmedExampleBundleDocumentMedikationsplan01.html#MedicationRequest/med1">MedicationRequest: status = active; intent = order; category = Medikationsplaneintrag; medication[x] = EBETREXAT TBL 10MG; authoredOn = 2024-10-03</a></td><td>original</td></tr><tr><td><a href="Bundle-AtEmedExampleBundleDocumentMedikationsplan01.html#MedicationRequest/med2">MedicationRequest: status = active; intent = order; category = Medikationsplaneintrag; medication[x] = AMLODIPIN 5MG; authoredOn = 2024-10-03</a></td><td>original</td></tr></table></div>
+        </text>
+        <status value="current"/>
+        <mode value="working"/>
+        <orderedBy>
+          <coding>
+            <code value="user"/>
+          </coding>
+        </orderedBy>
+        <entry>
+          <flag>
+            <coding>
+              <code value="original"/>
+            </coding>
+          </flag>
+          <item>
+            <reference value="MedicationRequest/med1"/>
+          </item>
+        </entry>
+        <entry>
+          <flag>
+            <coding>
+              <code value="original"/>
+            </coding>
+          </flag>
+          <item>
+            <reference value="MedicationRequest/med2"/>
+          </item>
+        </entry>
+      </List>
+    </resource>
+  </entry>
+</Bundle>

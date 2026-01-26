@@ -9,10 +9,10 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-geplanteAbgabe | *Version*:0.1.1 | |
-| Draft as of 2026-01-23 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedicationRequestGeplanteAbgabe |
+| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedicationRequestGeplanteAbgabe |
 
  
-**Beschreibung:** Bildet eine geplante Abgabe eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab. Sie enthält das verordnete Arzneimittel und dessen Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. Als groupIdentifier dient die Geplante-Abgabe-ID (früher eMED-ID), die auch im e-Rezept mitgeführt wird. Werden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer'). 
+**Beschreibung:** Bildet eine geplante Abgabe eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab. Sie enthält das verordnete Arzneimittel und dessen Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. Als groupIdentifier dient die Geplante-Abgabe-ID (früher eMED-ID), die auch im e-Rezept mitgeführt wird. Werden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer'). Verwendet R5 Backport Extensions. 
 
 **Usages:**
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationre
   "name" : "AtEmedMedicationRequestGeplanteAbgabe",
   "title" : "ELGA e-Medikation Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-01-23T19:34:42+00:00",
+  "date" : "2026-01-26T15:48:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -64,7 +64,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationre
       ]
     }
   ],
-  "description" : "**Beschreibung:** Bildet eine geplante Abgabe eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab.\nSie enthält das verordnete Arzneimittel und dessen Dosierung und spielgelt die Inhalte des e-Rezepts wider. \nGeplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation.\nAls groupIdentifier dient die Geplante-Abgabe-ID (früher eMED-ID), die auch im e-Rezept mitgeführt wird.\nWerden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer').",
+  "description" : "**Beschreibung:** Bildet eine geplante Abgabe eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab.\nSie enthält das verordnete Arzneimittel und dessen Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation.\nAls groupIdentifier dient die Geplante-Abgabe-ID (früher eMED-ID), die auch im e-Rezept mitgeführt wird.\nWerden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer'). Verwendet R5 Backport Extensions.",
   "fhirVersion" : "4.0.1",
   "mapping" : [
     {
@@ -103,7 +103,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationre
       {
         "id" : "MedicationRequest",
         "path" : "MedicationRequest",
-        "short" : "Geplante Abgabe eines Arzneimittels aus dem Medikationsplan.",
+        "short" : "Geplante Abgabe eines Arzneimittels aus dem Medikationsplan. Verwendet R5 Backport Extensions.",
         "constraint" : [
           {
             "key" : "med-1",
@@ -124,7 +124,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationre
       {
         "id" : "MedicationRequest.status",
         "path" : "MedicationRequest.status",
-        "short" : "Status der geplanten Abgabe (im Standardfall active oder complete): active | on-hold | cancelled | completed | entered-in-error | stopped | draft | unknown"
+        "short" : "Status der geplanten Abgabe (im Standardfall active oder complete): active | on-hold | cancelled | completed | entered-in-error | stopped | draft | unknown -> entfernen: draft, unknown"
       },
       {
         "id" : "MedicationRequest.statusReason",
@@ -142,7 +142,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationre
       {
         "id" : "MedicationRequest.category",
         "path" : "MedicationRequest.category",
-        "short" : "Kategorie damit geplante Abgabe von Medikationsplaneintrag unterschieden werden kann",
+        "short" : "Kategorie damit geplante Abgabe von Medikationsplaneintrag unterschieden werden kann.",
         "min" : 1,
         "max" : "1",
         "mustSupport" : true,
@@ -331,6 +331,26 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medicationre
         "path" : "MedicationRequest.reasonCode",
         "short" : "Grund für die Verordnung des Arzneimittels. Entweder Code oder Referenz (evtl. Invariante).",
         "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.reasonCode.coding",
+        "path" : "MedicationRequest.reasonCode.coding",
+        "min" : 1
+      },
+      {
+        "id" : "MedicationRequest.reasonCode.coding.system",
+        "path" : "MedicationRequest.reasonCode.coding.system",
+        "min" : 1
+      },
+      {
+        "id" : "MedicationRequest.reasonCode.coding.code",
+        "path" : "MedicationRequest.reasonCode.coding.code",
+        "min" : 1
+      },
+      {
+        "id" : "MedicationRequest.reasonCode.coding.display",
+        "path" : "MedicationRequest.reasonCode.coding.display",
+        "min" : 1
       },
       {
         "id" : "MedicationRequest.reasonReference",
