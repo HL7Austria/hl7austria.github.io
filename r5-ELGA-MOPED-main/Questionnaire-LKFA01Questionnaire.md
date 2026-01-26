@@ -26,7 +26,7 @@ LKF A01 Questionnaire - Antiinfectiva-Abrufe
   "version" : "0.1.0",
   "title" : "LKF A01 Questionnaire",
   "status" : "active",
-  "date" : "2026-01-26T07:12:25+00:00",
+  "date" : "2026-01-26T07:23:42+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

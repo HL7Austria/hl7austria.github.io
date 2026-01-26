@@ -32,7 +32,7 @@ CodeSystem für die Arten der Claims/ClaimResponses
   "name" : "MopedClaimTypeCS",
   "title" : "Claim Type CodeSystem",
   "status" : "draft",
-  "date" : "2026-01-26T07:12:25+00:00",
+  "date" : "2026-01-26T07:23:42+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

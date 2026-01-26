@@ -55,7 +55,7 @@ HTTP Verben für das Einmelden von Ressourcen, welche nur initial eingemeldet un
   "name" : "HTTPVerbInsertOnlyVS",
   "title" : "HTTP Verb Insert Only",
   "status" : "draft",
-  "date" : "2026-01-26T07:12:25+00:00",
+  "date" : "2026-01-26T07:23:42+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

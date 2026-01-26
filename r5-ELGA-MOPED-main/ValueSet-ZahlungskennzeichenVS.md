@@ -51,7 +51,7 @@ ValueSet für das Zahlungskennzeichen ARK
   "title" : "ValueSet Zahlungskennzeichen ARK",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-01-26T07:12:25+00:00",
+  "date" : "2026-01-26T07:23:42+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

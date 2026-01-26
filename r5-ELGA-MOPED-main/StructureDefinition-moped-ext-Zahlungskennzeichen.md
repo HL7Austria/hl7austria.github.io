@@ -54,7 +54,7 @@ Other representations of profile: [CSV](StructureDefinition-moped-ext-Zahlungske
   "name" : "Zahlungskennzeichen",
   "title" : "Zahlungskennzeichen",
   "status" : "draft",
-  "date" : "2026-01-26T07:12:25+00:00",
+  "date" : "2026-01-26T07:23:42+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

@@ -26,7 +26,7 @@ K03 Questionnaire - KA-Statistik (Ressourcen und Inanspruchnahme)
   "version" : "0.1.0",
   "title" : "LKF K03 Questionnaire",
   "status" : "active",
-  "date" : "2026-01-26T07:12:25+00:00",
+  "date" : "2026-01-26T07:23:42+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
