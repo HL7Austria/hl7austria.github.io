@@ -26,7 +26,7 @@ A system consuming the FHIR API provided by a Scheduling Server
   "version" : "0.2.0",
   "title" : "HL7® AT Scheduling Client ActorDefinition",
   "status" : "draft",
-  "date" : "2026-01-28T07:37:37+00:00",
+  "date" : "2026-01-28T07:43:18+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "A system consuming the FHIR API provided by a Scheduling Server",
   "type" : "system",

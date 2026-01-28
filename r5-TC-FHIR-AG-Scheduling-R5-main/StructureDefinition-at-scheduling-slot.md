@@ -62,7 +62,7 @@ Other representations of profile: [CSV](StructureDefinition-at-scheduling-slot.c
   "name" : "HL7ATSchedulingSlot",
   "title" : "HL7® AT Scheduling Slot Profile",
   "status" : "draft",
-  "date" : "2026-01-28T07:37:37+00:00",
+  "date" : "2026-01-28T07:43:18+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "HL7® Austria FHIR® Scheduling Profile for slot data in Austria.",
   "fhirVersion" : "5.0.0",
