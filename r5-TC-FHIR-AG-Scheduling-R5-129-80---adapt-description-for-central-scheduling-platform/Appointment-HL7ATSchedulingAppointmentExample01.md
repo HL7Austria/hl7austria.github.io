@@ -33,9 +33,9 @@ Profile: [HL7® AT Scheduling Appointment Profile](StructureDefinition-at-schedu
 
 **subject**: [Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/2.0.0/Patient-HL7ATCorePatientExample01.html)
 
-> **participant****actor**:[Max Mustermann](http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/2.0.0/Patient-HL7ATCorePatientExample01.html)**required**: true**status**: Accepted
+> **participant****actor**: [Max Mustermann](http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/2.0.0/Patient-HL7ATCorePatientExample01.html)**required**: true**status**: Accepted
 
-> **participant****actor**:[Melanie Musterärztin](http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/2.0.0/Practitioner-HL7ATCorePractitionerExample01.html)**required**: true**status**: Accepted
+> **participant****actor**: [Melanie Musterärztin](http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/2.0.0/Practitioner-HL7ATCorePractitionerExample01.html)**required**: true**status**: Accepted
 
 
 

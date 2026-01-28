@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment | *Version*:0.2.0 | |
-| Draft as of 2026-01-12 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingAppointment |
+| Draft as of 2026-01-28 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingAppointment |
 
  
 HL7® Austria FHIR® Scheduling Profile for appointment data in Austria. 
@@ -40,7 +40,7 @@ Other representations of profile: [CSV](StructureDefinition-at-scheduling-appoin
 | | | | | |
 | :--- | :--- | :--- | :--- | :--- |
 | [actor](https://www.hl7.org/fhir/appointment-search.html#Appointment-actor) | [reference](https://hl7.org/fhir/R5/search.html#reference) | Any one of the individuals participating in the appointment | Appointment.participant.actor([HL7® AT Core Practitioner](https://fhir.hl7.at/HL7-AT-FHIR-Core-R5/StructureDefinition-at-core-practitioner.html),[Group](https://www.hl7.org/fhir/group.html),[CareTeam](https://www.hl7.org/fhir/careteam.html),[Device](https://www.hl7.org/fhir/device.html),[HL7® AT Core Patient](https://fhir.hl7.at/HL7-AT-FHIR-Core-R5/StructureDefinition-at-core-patient.html),[HealthcareService](https://www.hl7.org/fhir/healthcareservice.html),[HL7® AT Core PractitionerRole](https://fhir.hl7.at/HL7-AT-FHIR-Core-R5/StructureDefinition-at-core-practitionerRole.html),[RelatedPerson](https://www.hl7.org/fhir/relatedperson.html),[Location](https://www.hl7.org/fhir/location.html)) |  |
-| [date](https://www.hl7.org/fhir/search.html#clinical-date) | [date](https://www.hl7.org/fhir/search.html#date) | Appointment date/time. | (start | requestedPeriod.start).first() | [27 Resources](https://www.hl7.org/fhir/searchparameter-registry.html#clinical-date) |
+|  [date](https://www.hl7.org/fhir/search.html#clinical-date) | [date](https://www.hl7.org/fhir/search.html#date) | Appointment date/time. | (start | requestedPeriod.start).first() | [27 Resources](https://www.hl7.org/fhir/searchparameter-registry.html#clinical-date) |
 
 ##### Optional parameters
 
@@ -48,7 +48,7 @@ The following search parameters SHOULD be supported by scheduling servers:
 
 | | | | | |
 | :--- | :--- | :--- | :--- | :--- |
-| [status](https://www.hl7.org/fhir/appointment-search.html#Appointment-status) | [token](https://www.hl7.org/fhir/search.html#token) | The overall status of the appointment | Appointment.status |  |
+|  [status](https://www.hl7.org/fhir/appointment-search.html#Appointment-status) | [token](https://www.hl7.org/fhir/search.html#token) | The overall status of the appointment | Appointment.status |  |
 
 
 
@@ -63,7 +63,7 @@ The following search parameters SHOULD be supported by scheduling servers:
   "name" : "HL7ATSchedulingAppointment",
   "title" : "HL7® AT Scheduling Appointment Profile",
   "status" : "draft",
-  "date" : "2026-01-12T10:31:52+00:00",
+  "date" : "2026-01-28T07:47:12+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "HL7® Austria FHIR® Scheduling Profile for appointment data in Austria.",
   "fhirVersion" : "5.0.0",
