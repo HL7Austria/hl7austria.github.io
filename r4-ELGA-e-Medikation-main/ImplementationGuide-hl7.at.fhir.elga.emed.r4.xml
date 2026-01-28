@@ -11,7 +11,7 @@
   <name value="ELGAeMedikationR4"/>
   <title value="ELGA e-Medikation (R4) ENTWURF"/>
   <status value="draft"/>
-  <date value="2026-01-28T08:09:20+00:00"/>
+  <date value="2026-01-28T19:29:09+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -474,16 +474,6 @@
     </extension>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Patient"/>
-      </extension>
-      <reference>
-        <reference value="Patient/AtEmedExamplePatient01"/>
-      </reference>
-      <name value="AtEmedExamplePatient01"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="MedicationDispense"/>
       </extension>
       <reference>
@@ -509,18 +499,51 @@
         <valueString value="Medication"/>
       </extension>
       <reference>
-        <reference value="Medication/ExampleMedicationCefuroxime"/>
+        <reference value="Medication/ExampleMedicationMagistral01"/>
       </reference>
-      <name value="Beispiel Medication Cefuroxime"/>
-      <description value="Beispiel Medication Cefuroxime"/>
+      <name value="Beispiel Medication Magistral 01"/>
+      <description value="Beispiel Medication - Magistrale Zubereitung - Inotyol Salbe mit Canesten Creme, 2x täglich"/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/AtEmedExampleOrganizationApo01"/>
+      </reference>
+      <name value="Beispiel Organisation Apotheke 01"/>
+      <description value="Beispiel Organisation Apotheke 01"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/AtEmedExamplePatient01"/>
+      </reference>
+      <name value="Beispiel Patient 01"/>
+      <description value="Beispiel Patient 01"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/AtEmedExamplePractitioner01"/>
+      </reference>
+      <name value="Beispiel Ärztin 01"/>
+      <description value="Beispiel einer behandelnden Ärztin 01"/>
+      <exampleBoolean value="true"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/at-emed-collection-medikationsplan"/>
+        <reference value="StructureDefinition/at-emed-bundle-medikationsplan"/>
       </reference>
       <name value="ELGA e-Medikation Bundle vom Typ Collection Medikationsplan"/>
       <description value="**Beschreibung:** ELGA e-Medikation Bundle vom Typ Collection zur Speicherung und Auslieferung eines Medikationsplans mit Medikationsplaneinträgen. &#xA;Beinhaltet:&#xA;- Medikationsplan 1..1 (List)&#xA;- Medikationsplaneinträge 0..* (MedicationRequest)"/>
@@ -556,7 +579,7 @@
         <reference value="StructureDefinition/at-emed-medication"/>
       </reference>
       <name value="ELGA e-Medikation Medication"/>
-      <description value="Arzneimittel"/>
+      <description value="Bildet ein Arzneimittel ab, das nicht über eine PZN verfügt (z.B. magistrale Zubereitungen)."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -610,9 +633,9 @@
       <reference>
         <reference value="Bundle/AtEmedJourneyBundleMedikationsplan02"/>
       </reference>
-      <name value="Example Bundle Medikationsplan 02"/>
-      <description value="Example Bundle Medikationsplan 02"/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-collection-medikationsplan"/>
+      <name value="Example Bundle Collection Medikationsplan 02"/>
+      <description value="Example Bundle vom Typ Collection Medikationsplan 02"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-medikationsplan"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -621,9 +644,9 @@
       <reference>
         <reference value="Bundle/AtEmedJourneyBundleMedikationsplanLeer01"/>
       </reference>
-      <name value="Example Bundle Medikationsplan leer 01"/>
-      <description value="Example Bundle Medikationsplan leer 01"/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-collection-medikationsplan"/>
+      <name value="Example JourneyBundle Collection Medikationsplan leer 01"/>
+      <description value="Example Bundle vom Typ Collection Medikationsplan leer 01"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-medikationsplan"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -652,21 +675,43 @@
         <valueString value="MedicationRequest"/>
       </extension>
       <reference>
-        <reference value="MedicationRequest/AtEmedJourneyMrPlaneintrag02"/>
+        <reference value="MedicationRequest/AtEmedJourneyMrPlaneintrag0201"/>
       </reference>
-      <name value="Example Medikationsplaneintrag 02"/>
-      <description value="Example Medikationsplaneintrag 02"/>
+      <name value="Example Medikationsplaneintrag 02 01"/>
+      <description value="Example Medikationsplaneintrag 02 01"/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Practitioner"/>
+        <valueString value="MedicationRequest"/>
       </extension>
       <reference>
-        <reference value="Practitioner/at-emed-example-practitioner-01"/>
+        <reference value="MedicationRequest/AtEmedJourneyMrPlaneintrag0202"/>
       </reference>
-      <name value="HL7ATCorePractitioner"/>
-      <description value="Beispiel eines behandelnden Arztes"/>
+      <name value="Example Medikationsplaneintrag 02 02"/>
+      <description value="Example Medikationsplaneintrag 02 02"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Substance"/>
+      </extension>
+      <reference>
+        <reference value="Substance/AtEmedJourneySubstanceClotrimazol"/>
+      </reference>
+      <name value="Example Substance Clotrimazol"/>
+      <description value="Example Substance Clotrimazol"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Substance"/>
+      </extension>
+      <reference>
+        <reference value="Substance/AtEmedJourneySubstanceHydrocortison"/>
+      </reference>
+      <name value="Example Substance Hydrocortison"/>
+      <description value="Example Substance Hydrocortison"/>
       <exampleBoolean value="true"/>
     </resource>
     <page>

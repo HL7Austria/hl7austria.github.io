@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
   "name" : "AtEmedMRGeplanteAbgabe",
   "title" : "ELGA e-Medikation Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-01-28T08:09:20+00:00",
+  "date" : "2026-01-28T19:29:09+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -287,21 +287,6 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
       {
         "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding",
         "path" : "MedicationRequest.medication[x].coding",
-        "min" : 1
-      },
-      {
-        "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding.system",
-        "path" : "MedicationRequest.medication[x].coding.system",
-        "min" : 1
-      },
-      {
-        "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding.code",
-        "path" : "MedicationRequest.medication[x].coding.code",
-        "min" : 1
-      },
-      {
-        "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding.display",
-        "path" : "MedicationRequest.medication[x].coding.display",
         "min" : 1
       },
       {

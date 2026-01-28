@@ -16,9 +16,9 @@
 
 **Usages:**
 
-* Use this Profile: [ELGA e-Medikation Bundle vom Typ Collection Medikationsplan](StructureDefinition-at-emed-collection-medikationsplan.md)
-* Refer to this Profile: [ELGA e-Medikation Medikationsplan](StructureDefinition-at-emed-list-medikationsplan.md), [ELGA e-Medikation Geplante Abgabe](StructureDefinition-at-emed-mr-geplante-abgabe.md) and [ELGA e-Medikation Planeintrag](StructureDefinition-at-emed-mr-planeintrag.md)
-* Examples for this Profile: [MedicationRequest/AtEmedJourneyMrPlaneintrag02](MedicationRequest-AtEmedJourneyMrPlaneintrag02.md)
+* Use this Profile: [ELGA e-Medikation Bundle vom Typ Collection Medikationsplan](StructureDefinition-at-emed-bundle-medikationsplan.md)
+* Refer to this Profile: [ELGA e-Medikation Medikationsplan](StructureDefinition-at-emed-list-medikationsplan.md) and [ELGA e-Medikation Geplante Abgabe](StructureDefinition-at-emed-mr-geplante-abgabe.md)
+* Examples for this Profile: [MedicationRequest/AtEmedJourneyMrPlaneintrag0201](MedicationRequest-AtEmedJourneyMrPlaneintrag0201.md) and [MedicationRequest/AtEmedJourneyMrPlaneintrag0202](MedicationRequest-AtEmedJourneyMrPlaneintrag0202.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/at-emed-mr-planeintrag)
 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
   "name" : "AtEmedMRPlaneintrag",
   "title" : "ELGA e-Medikation Planeintrag",
   "status" : "draft",
-  "date" : "2026-01-28T08:09:20+00:00",
+  "date" : "2026-01-28T19:29:09+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -229,7 +229,8 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
       {
         "id" : "MedicationRequest.doNotPerform",
         "path" : "MedicationRequest.doNotPerform",
-        "short" : "Gibt an, ob der Medikationsplaneintrag die Verordnung einer Medikation (und somit die Erstellung einer geplanten Abgabe) untersagt ist. Verwendung prüfen."
+        "short" : "Gibt an, ob der Medikationsplaneintrag die Verordnung einer Medikation (und somit die Erstellung einer geplanten Abgabe) untersagt ist. Verwendung prüfen.",
+        "mustSupport" : true
       },
       {
         "id" : "MedicationRequest.reported[x]",
@@ -284,21 +285,6 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
       {
         "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding",
         "path" : "MedicationRequest.medication[x].coding",
-        "min" : 1
-      },
-      {
-        "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding.system",
-        "path" : "MedicationRequest.medication[x].coding.system",
-        "min" : 1
-      },
-      {
-        "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding.code",
-        "path" : "MedicationRequest.medication[x].coding.code",
-        "min" : 1
-      },
-      {
-        "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding.display",
-        "path" : "MedicationRequest.medication[x].coding.display",
         "min" : 1
       },
       {
@@ -398,21 +384,6 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
         "min" : 1
       },
       {
-        "id" : "MedicationRequest.reasonCode.coding.system",
-        "path" : "MedicationRequest.reasonCode.coding.system",
-        "min" : 1
-      },
-      {
-        "id" : "MedicationRequest.reasonCode.coding.code",
-        "path" : "MedicationRequest.reasonCode.coding.code",
-        "min" : 1
-      },
-      {
-        "id" : "MedicationRequest.reasonCode.coding.display",
-        "path" : "MedicationRequest.reasonCode.coding.display",
-        "min" : 1
-      },
-      {
         "id" : "MedicationRequest.reasonReference",
         "path" : "MedicationRequest.reasonReference",
         "short" : "Grund für die Verordnung des Arzneimittels. Entweder Code oder Referenz (evtl. Invariante).",
@@ -433,16 +404,8 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
       {
         "id" : "MedicationRequest.basedOn",
         "path" : "MedicationRequest.basedOn",
-        "short" : "Referenz auf einen zugrundeliegenden Medikationsplaneintrag. Verwendung im Medikationsplaneintrag zu prüfen: Bsp. nach einer Änderung; evtl. priorPrescription.",
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"
-            ]
-          }
-        ]
+        "short" : "Verwendung im Medikationsplaneintrag zu prüfen. Nach einer Änderung kann mit priorPrescription auf die Vorversion referenziert werden.\nSinnvoll wäre evtl. Referenz auf Medikationsplan (List), ist aber mit basedOn nicht möglich.",
+        "max" : "0"
       },
       {
         "id" : "MedicationRequest.groupIdentifier",
@@ -453,7 +416,8 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
       {
         "id" : "MedicationRequest.courseOfTherapyType",
         "path" : "MedicationRequest.courseOfTherapyType",
-        "short" : "Gesamtmuster der Medikamentengabe (z.B. saisonal). Verwendung im Medikationsplaneintrag prüfen (dosageInstruction), paused soll im Status dokumentiert werden."
+        "short" : "Gesamtmuster der Medikamentengabe (z.B. saisonal). Verwendung im Medikationsplaneintrag prüfen (dosageInstruction), paused soll im Status dokumentiert werden.",
+        "mustSupport" : true
       },
       {
         "id" : "MedicationRequest.insurance",
@@ -524,12 +488,13 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
       {
         "id" : "MedicationRequest.substitution",
         "path" : "MedicationRequest.substitution",
-        "short" : "Gibt an, ob eine Substitution Teil der Abgabe sein kann / sollte / nicht sein darf. Dieser Block erläutert die Absicht des Arztes, der den Medikationsplaneintrag erstellt. Wenn nichts angegeben ist, kann eine Substitution vorgenommen werden. -> Zu prüfen ob Verwendung im Medikationsplaneintrag, Dokumentation über Substitution erfolg in der Dispenses-Resource."
+        "short" : "Gibt an, ob eine Substitution Teil der Abgabe sein kann / sollte / nicht sein darf. Dieser Block erläutert die Absicht des Arztes, der den Medikationsplaneintrag erstellt. Wenn nichts angegeben ist, kann eine Substitution vorgenommen werden. -> Zu prüfen ob Verwendung im Medikationsplaneintrag, Dokumentation über Substitution erfolg in der Dispense-Resource.",
+        "max" : "0"
       },
       {
         "id" : "MedicationRequest.priorPrescription",
         "path" : "MedicationRequest.priorPrescription",
-        "short" : "Im Falle einer Änderung wird auf den ersetzten Medikationsplaneintrag verwiesen."
+        "short" : "Im Falle einer Änderung wird auf den ersetzten Medikationsplaneintrag verwiesen. Unterscheidung zu basedOn ?"
       },
       {
         "id" : "MedicationRequest.detectedIssue",

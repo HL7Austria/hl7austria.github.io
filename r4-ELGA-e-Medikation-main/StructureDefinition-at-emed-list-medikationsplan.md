@@ -16,7 +16,7 @@
 
 **Usages:**
 
-* Use this Profile: [ELGA e-Medikation Bundle vom Typ Collection Medikationsplan](StructureDefinition-at-emed-collection-medikationsplan.md)
+* Use this Profile: [ELGA e-Medikation Bundle vom Typ Collection Medikationsplan](StructureDefinition-at-emed-bundle-medikationsplan.md)
 * Examples for this Profile: [List/AtEmedJourneyListMedikationsplan02](List-AtEmedJourneyListMedikationsplan02.md) and [List/AtEmedJourneyListMedikationsplanLeer01](List-AtEmedJourneyListMedikationsplanLeer01.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/at-emed-list-medikationsplan)
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
   "name" : "AtEmedListMedikationsplan",
   "title" : "ELGA e-Medikation Medikationsplan",
   "status" : "draft",
-  "date" : "2026-01-28T08:09:20+00:00",
+  "date" : "2026-01-28T19:29:09+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

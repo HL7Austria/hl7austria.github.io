@@ -22,7 +22,7 @@ Profile: [ELGA e-Medikation Geplante Abgabe](StructureDefinition-at-emed-mr-gepl
 
 **authoredOn**: 2024-10-03
 
-**requester**: [Practitioner Melanie Musterärztin ](Practitioner-at-emed-example-practitioner-01.md)
+**requester**: [Practitioner Melanie Musterärztin ](Practitioner-AtEmedExamplePractitioner01.md)
 
 **reasonCode**: Essentielle Hypertonie
 
@@ -81,6 +81,7 @@ Freitext Informationen zur geplanten Abgabe.
     {
       "coding" : [
         {
+          "system" : "http://hl7.org/fhir/medicationrequest-category",
           "code" : "2",
           "display" : "Geplante Abgabe"
         }
@@ -101,7 +102,7 @@ Freitext Informationen zur geplanten Abgabe.
   },
   "authoredOn" : "2024-10-03",
   "requester" : {
-    "reference" : "Practitioner/at-emed-example-practitioner-01"
+    "reference" : "Practitioner/AtEmedExamplePractitioner01"
   },
   "reasonCode" : [
     {

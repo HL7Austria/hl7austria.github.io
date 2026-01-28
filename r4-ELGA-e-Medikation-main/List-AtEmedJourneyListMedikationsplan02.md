@@ -10,9 +10,15 @@ Profile: [ELGA e-Medikation Medikationsplan](StructureDefinition-at-emed-list-me
 
 | | | | |
 | :--- | :--- | :--- | :--- |
-| Date: 2013-11-20 23:10:23+1100 | Mode: Working List | Status: Current | Code: Medikationsplan |
-| Subject:[Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-AtEmedExamplePatient01.md)Source: Order: user | | | |
+| Date: 2026-01-28 08:00:00+0000 | Mode: Working List | Status: Current | Code: Medikationsplan |
+| Subject:[Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-AtEmedExamplePatient01.md)Source: Order: Sorted by User | | | |
 
+* **Items**: [MedicationRequest: extension = 2026-01-28 --> 2026-02-28,1 Kapsel täglich morgens; identifier = 4711; status = active; intent = order; category = Medikationsplaneintrag; medication[x] = EBETREXAT TBL 10MG; authoredOn = 2026-01-28 08:00:00+0000; reasonCode = Essentielle Hypertonie; note = Freitext Informationen zum Medikationsplaneintrag.](MedicationRequest-AtEmedJourneyMrPlaneintrag0201.md)
+  * Date: 2026-01-28 08:00:00+0000
+  * Flag: Prescribed
+* **Items**: [MedicationRequest: extension = 2026-01-28 --> 2026-02-28,1 täglich auftragen; identifier = 4712; status = active; intent = order; category = Medikationsplaneintrag; medication[x] = ->Magistrale Zubereitung; authoredOn = 2026-01-28 08:00:00+0000; note = Freitext Informationen zum Medikationsplaneintrag.](MedicationRequest-AtEmedJourneyMrPlaneintrag0202.md)
+  * Date: 2026-01-28 08:00:00+0000
+  * Flag: Prescribed
 
 
 
@@ -41,25 +47,50 @@ Profile: [ELGA e-Medikation Medikationsplan](StructureDefinition-at-emed-list-me
   "subject" : {
     "reference" : "Patient/AtEmedExamplePatient01"
   },
-  "date" : "2013-11-20T23:10:23+11:00",
+  "date" : "2026-01-28T08:00:00+00:00",
   "source" : {
-    "reference" : "Practitioner/at-emed-example-practitioner-01"
+    "reference" : "Practitioner/AtEmedExamplePractitioner01"
   },
   "orderedBy" : {
     "coding" : [
       {
+        "system" : "http://terminology.hl7.org/CodeSystem/list-order",
         "code" : "user"
       }
     ]
   },
-  "emptyReason" : {
-    "coding" : [
-      {
-        "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
-        "code" : "notstarted"
+  "entry" : [
+    {
+      "flag" : {
+        "coding" : [
+          {
+            "system" : "urn:oid:1.2.36.1.2001.1001.101.104.16592",
+            "code" : "04",
+            "display" : "Prescribed"
+          }
+        ]
+      },
+      "date" : "2026-01-28T08:00:00+00:00",
+      "item" : {
+        "reference" : "MedicationRequest/AtEmedJourneyMrPlaneintrag0201"
       }
-    ]
-  }
+    },
+    {
+      "flag" : {
+        "coding" : [
+          {
+            "system" : "urn:oid:1.2.36.1.2001.1001.101.104.16592",
+            "code" : "04",
+            "display" : "Prescribed"
+          }
+        ]
+      },
+      "date" : "2026-01-28T08:00:00+00:00",
+      "item" : {
+        "reference" : "MedicationRequest/AtEmedJourneyMrPlaneintrag0202"
+      }
+    }
+  ]
 }
 
 ```

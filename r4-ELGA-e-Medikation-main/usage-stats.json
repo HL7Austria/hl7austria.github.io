@@ -6,7 +6,7 @@
   "profiles": {
     "Bundle": [
       {
-        "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-collection-medikationsplan",
+        "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-medikationsplan",
         "title": "ELGA e-Medikation Bundle vom Typ Collection Medikationsplan"
       }
     ],
@@ -41,6 +41,7 @@
   },
   "usage": {
     "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation": [
+      "Organization.address.line",
       "Practitioner.address.line"
     ],
     "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-ext-address-additionalInformation": [
@@ -50,9 +51,11 @@
       "Patient"
     ],
     "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod": [
+      "Bundle.entry.resource",
       "MedicationRequest"
     ],
     "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction": [
+      "Bundle.entry.resource",
       "MedicationRequest"
     ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
@@ -71,14 +74,17 @@
       "StructureDefinition.snapshot.element"
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator": [
+      "Organization.address.line",
       "Patient.address.line",
       "Practitioner.address.line"
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber": [
+      "Organization.address.line",
       "Patient.address.line",
       "Practitioner.address.line"
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName": [
+      "Organization.address.line",
       "Patient.address.line",
       "Practitioner.address.line"
     ],
@@ -107,9 +113,6 @@
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version": [
       "StructureDefinition.snapshot"
-    ],
-    "https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-medication-classification": [
-      "Medication"
     ],
     "https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-offLabel": [
       "MedicationRequest"

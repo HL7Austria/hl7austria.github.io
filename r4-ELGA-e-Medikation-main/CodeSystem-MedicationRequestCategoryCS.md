@@ -32,7 +32,7 @@ Zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidu
   "title" : "ELGA e-Medikation MedicationRequest Kategorie CodeSystem",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-01-28T08:09:20+00:00",
+  "date" : "2026-01-28T19:29:09+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\AtEmedExamplePatient01 - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel Patient 01 - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **AtEmedExamplePatient01**
+* **Beispiel Patient 01**
 
-## Example Patient: AtEmedExamplePatient01
+## Example Patient: Beispiel Patient 01
 
 Profiles: [HL7® AT Core Patient Profile](http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/2.0.0/StructureDefinition-at-core-patient.html), `http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-patient`
 

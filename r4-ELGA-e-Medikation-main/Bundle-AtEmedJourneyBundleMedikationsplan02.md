@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\Example Bundle Medikationsplan 02 - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\Example Bundle Collection Medikationsplan 02 - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Example Bundle Medikationsplan 02**
+* **Example Bundle Collection Medikationsplan 02**
 
-## Example Bundle: Example Bundle Medikationsplan 02
+## Example Bundle: Example Bundle Collection Medikationsplan 02
 
 
 
@@ -16,15 +16,20 @@
   "id" : "AtEmedJourneyBundleMedikationsplan02",
   "meta" : {
     "profile" : [
-      "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-collection-medikationsplan"
+      "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-medikationsplan"
     ]
   },
+  "identifier" : {
+    "system" : "urn:ietf:rfc:3982",
+    "value" : "63fef90a-be11-4ddf-aece-d77da15c4f20"
+  },
   "type" : "collection",
+  "timestamp" : "2026-01-28T08:00:00+00:00",
   "entry" : [
     {
       "resource" : {
         "resourceType" : "List",
-        "id" : "AtEmedJourneyListMedikationsplanLeer01",
+        "id" : "AtEmedJourneyListMedikationsplan02",
         "meta" : {
           "profile" : [
             "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"
@@ -32,7 +37,7 @@
         },
         "text" : {
           "status" : "generated",
-          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"List_AtEmedJourneyListMedikationsplanLeer01\"> </a><p class=\"res-header-id\"><b>Generated Narrative: List AtEmedJourneyListMedikationsplanLeer01</b></p><a name=\"AtEmedJourneyListMedikationsplanLeer01\"> </a><a name=\"hcAtEmedJourneyListMedikationsplanLeer01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-emed-list-medikationsplan.html\">ELGA e-Medikation Medikationsplan</a></p></div><table class=\"clstu\"><tr><td>Date: 2013-11-20 23:10:23+1100 </td><td>Mode: Working List </td><td>Status: Current </td><td>Code: Medikationsplan </td></tr><tr><td>Subject: <a href=\"Patient-AtEmedExamplePatient01.html\">Max Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</a>Source: Order: Sorted by User </td></tr></table><table class=\"grid\"><tr style=\"backgound-color: #eeeeee\"><td><b>Items</b></td></tr></table></div>"
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"List_AtEmedJourneyListMedikationsplan02\"> </a><p class=\"res-header-id\"><b>Generated Narrative: List AtEmedJourneyListMedikationsplan02</b></p><a name=\"AtEmedJourneyListMedikationsplan02\"> </a><a name=\"hcAtEmedJourneyListMedikationsplan02\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-emed-list-medikationsplan.html\">ELGA e-Medikation Medikationsplan</a></p></div><table class=\"clstu\"><tr><td>Date: 2026-01-28 08:00:00+0000 </td><td>Mode: Working List </td><td>Status: Current </td><td>Code: Medikationsplan </td></tr><tr><td>Subject: <a href=\"Patient-AtEmedExamplePatient01.html\">Max Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</a>Source: Order: Sorted by User </td></tr></table><table class=\"grid\"><tr style=\"backgound-color: #eeeeee\"><td><b>Items</b></td><td>Date</td><td>Flag</td></tr><tr><td><a href=\"MedicationRequest-AtEmedJourneyMrPlaneintrag0201.html\">MedicationRequest: extension = 2026-01-28 --&gt; 2026-02-28,1 Kapsel täglich morgens; identifier = 4711; status = active; intent = order; category = Medikationsplaneintrag; medication[x] = EBETREXAT TBL 10MG; authoredOn = 2026-01-28 08:00:00+0000; reasonCode = Essentielle Hypertonie; note = Freitext Informationen zum Medikationsplaneintrag.</a></td><td>2026-01-28 08:00:00+0000</td><td>Prescribed</td></tr><tr><td><a href=\"MedicationRequest-AtEmedJourneyMrPlaneintrag0202.html\">MedicationRequest: extension = 2026-01-28 --&gt; 2026-02-28,1 täglich auftragen; identifier = 4712; status = active; intent = order; category = Medikationsplaneintrag; medication[x] = -&gt;Magistrale Zubereitung; authoredOn = 2026-01-28 08:00:00+0000; note = Freitext Informationen zum Medikationsplaneintrag.</a></td><td>2026-01-28 08:00:00+0000</td><td>Prescribed</td></tr></table></div>"
         },
         "status" : "current",
         "mode" : "working",
@@ -48,9 +53,9 @@
         "subject" : {
           "reference" : "Patient/AtEmedExamplePatient01"
         },
-        "date" : "2013-11-20T23:10:23+11:00",
+        "date" : "2026-01-28T08:00:00+00:00",
         "source" : {
-          "reference" : "Practitioner/at-emed-example-practitioner-01"
+          "reference" : "Practitioner/AtEmedExamplePractitioner01"
         },
         "orderedBy" : {
           "coding" : [
@@ -60,13 +65,133 @@
             }
           ]
         },
-        "emptyReason" : {
-          "coding" : [
-            {
-              "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
-              "code" : "notstarted"
+        "entry" : [
+          {
+            "flag" : {
+              "coding" : [
+                {
+                  "system" : "urn:oid:1.2.36.1.2001.1001.101.104.16592",
+                  "code" : "04",
+                  "display" : "Prescribed"
+                }
+              ]
+            },
+            "date" : "2026-01-28T08:00:00+00:00",
+            "item" : {
+              "reference" : "MedicationRequest/AtEmedJourneyMrPlaneintrag0201"
             }
+          },
+          {
+            "flag" : {
+              "coding" : [
+                {
+                  "system" : "urn:oid:1.2.36.1.2001.1001.101.104.16592",
+                  "code" : "04",
+                  "display" : "Prescribed"
+                }
+              ]
+            },
+            "date" : "2026-01-28T08:00:00+00:00",
+            "item" : {
+              "reference" : "MedicationRequest/AtEmedJourneyMrPlaneintrag0202"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource" : {
+        "resourceType" : "MedicationRequest",
+        "id" : "AtEmedJourneyMrPlaneintrag0202",
+        "meta" : {
+          "profile" : [
+            "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"
           ]
+        },
+        "text" : {
+          "status" : "extensions",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_AtEmedJourneyMrPlaneintrag0202\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationRequest AtEmedJourneyMrPlaneintrag0202</b></p><a name=\"AtEmedJourneyMrPlaneintrag0202\"> </a><a name=\"hcAtEmedJourneyMrPlaneintrag0202\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-emed-mr-planeintrag.html\">ELGA e-Medikation Planeintrag</a></p></div><p><b>Extension Definition for MedicationRequest.effectiveDosePeriod for Version 5.0</b>: 2026-01-28 --&gt; 2026-02-28</p><p><b>Extension Definition for MedicationRequest.renderedDosageInstruction for Version 5.0</b>: </p><div><p>1 täglich auftragen</p>\n</div><p><b>identifier</b>: 4712</p><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{http://hl7.org/fhir/medicationrequest-category 1}\">Medikationsplaneintrag</span></p><p><b>medication</b>: <a href=\"Medication-ExampleMedicationMagistral01.html\">Magistrale Zubereitung</a></p><p><b>subject</b>: <a href=\"Patient-AtEmedExamplePatient01.html\">Max Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</a></p><p><b>authoredOn</b>: 2026-01-28 08:00:00+0000</p><p><b>requester</b>: <a href=\"Practitioner-AtEmedExamplePractitioner01.html\">Practitioner Melanie Musterärztin </a></p><p><b>note</b>: </p><blockquote><div><p>Freitext Informationen zum Medikationsplaneintrag.</p>\n</div></blockquote><h3>DosageInstructions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td><td><b>PatientInstruction</b></td><td><b>Timing</b></td><td><b>Route</b></td></tr><tr><td style=\"display: none\">*</td><td>1 täglich auftragen</td><td>Abends sehr dünn auf die betroffene Stelle auftragen.</td><td>Once per 1 day</td><td><span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem-medikationartanwendung.html 100000073566}\">Anwendung auf der Haut</span></td></tr></table><blockquote><p><b>dispenseRequest</b></p><p><b>validityPeriod</b>: ?? --&gt; 2026-02-03</p><p><b>numberOfRepeatsAllowed</b>: 1</p><h3>ExpectedSupplyDurations</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Unit</b></td><td><b>System</b></td><td><b>Code</b></td></tr><tr><td style=\"display: none\">*</td><td>30</td><td>Tage</td><td><a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-v3-ucum.html\">http://unitsofmeasure.org</a></td><td>d</td></tr></table></blockquote></div>"
+        },
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod",
+            "valuePeriod" : {
+              "start" : "2026-01-28",
+              "end" : "2026-02-28"
+            }
+          },
+          {
+            "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
+            "valueMarkdown" : "1 täglich auftragen"
+          }
+        ],
+        "identifier" : [
+          {
+            "value" : "4712"
+          }
+        ],
+        "status" : "active",
+        "intent" : "order",
+        "category" : [
+          {
+            "coding" : [
+              {
+                "system" : "http://hl7.org/fhir/medicationrequest-category",
+                "code" : "1",
+                "display" : "Medikationsplaneintrag"
+              }
+            ]
+          }
+        ],
+        "medicationReference" : {
+          "reference" : "Medication/ExampleMedicationMagistral01",
+          "display" : "Magistrale Zubereitung"
+        },
+        "subject" : {
+          "reference" : "Patient/AtEmedExamplePatient01"
+        },
+        "authoredOn" : "2026-01-28T08:00:00+00:00",
+        "requester" : {
+          "reference" : "Practitioner/AtEmedExamplePractitioner01"
+        },
+        "note" : [
+          {
+            "text" : "Freitext Informationen zum Medikationsplaneintrag."
+          }
+        ],
+        "dosageInstruction" : [
+          {
+            "text" : "1 täglich auftragen",
+            "patientInstruction" : "Abends sehr dünn auf die betroffene Stelle auftragen.",
+            "timing" : {
+              "repeat" : {
+                "frequency" : 1,
+                "period" : 1,
+                "periodUnit" : "d"
+              }
+            },
+            "route" : {
+              "coding" : [
+                {
+                  "system" : "https://termgit.elga.gv.at/CodeSystem-medikationartanwendung.html",
+                  "code" : "100000073566",
+                  "display" : "Anwendung auf der Haut"
+                }
+              ]
+            }
+          }
+        ],
+        "dispenseRequest" : {
+          "validityPeriod" : {
+            "end" : "2026-02-03"
+          },
+          "numberOfRepeatsAllowed" : 1,
+          "expectedSupplyDuration" : {
+            "value" : 30,
+            "unit" : "Tage",
+            "system" : "http://unitsofmeasure.org",
+            "code" : "d"
+          }
         }
       }
     }
