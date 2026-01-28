@@ -6,7 +6,7 @@
 
 ## Example MedicationDispense: Beispiel Durchgeführte Abgabe 1
 
-Profiles: [ELGA e-Medikation Abgabe](StructureDefinition-at-emed-medicationdispense.md), [MedicationDispense: MPD](http://hl7.eu/fhir/mpd/0.1.0-ballot/StructureDefinition-MedicationDispense-eu-mpd.html)
+Profiles: [ELGA e-Medikation Durchgeführte Abgabe](StructureDefinition-at-emed-md-durchgefuehrte-abgabe.md), [MedicationDispense: MPD](http://hl7.eu/fhir/mpd/0.1.0-ballot/StructureDefinition-MedicationDispense-eu-mpd.html)
 
 **status**: Completed
 
@@ -39,7 +39,7 @@ Profiles: [ELGA e-Medikation Abgabe](StructureDefinition-at-emed-medicationdispe
   "id" : "AtEmedExampleDurchgefuehrteAbgabe01",
   "meta" : {
     "profile" : [
-      "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationdispense",
+      "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-md-durchgefuehrte-abgabe",
       "http://hl7.eu/fhir/mpd/StructureDefinition/MedicationDispense-eu-mpd"
     ]
   },

@@ -200,59 +200,31 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <tbody>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-at-emed-medicationdispense.html"
-                  title="StructureDefinition/at-emed-medicationdispense">ELGA e-Medikation Abgabe</a>
+               <a href="StructureDefinition-at-emed-collection-medikationsplan.html"
+                  title="StructureDefinition/at-emed-collection-medikationsplan">ELGA e-Medikation Bundle vom Typ Collection Medikationsplan</a>
             </td>
             <td>
-<p>Abgabe</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-at-emed-composition-medikationsplan.html"
-                  title="StructureDefinition/at-emed-composition-medikationsplan">ELGA e-Medikation Composition Medikationsplan</a>
-            </td>
-            <td>
-<p><strong>Beschreibung:</strong> Composition legt Inhalte des Medikationsplans (Dokument) fest. 
+<p><strong>Beschreibung:</strong> ELGA e-Medikation Bundle vom Typ Collection zur Speicherung und Auslieferung eines Medikationsplans mit Medikationsplaneinträgen. 
 Beinhaltet:</p>
 <ul>
-  <li>Medikationsplan (List)</li>
-  <li>Medikationsplaneinträge (MedicationRequest)</li>
-  <li>Referenzen zu geplanten Abgaben (entsprechen Rezepten)</li>
+  <li>Medikationsplan 1..1 (List)</li>
+  <li>Medikationsplaneinträge 0..* (MedicationRequest)</li>
 </ul>
-
-<p>Bundle (type=document)
- ├─ Composition 
- ├─ MedicationRequest 1
- ├─ MedicationRequest 2
- └─ List (referenziert 1+2)</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-at-emed-bundle-document-medikationsplan.html"
-                  title="StructureDefinition/at-emed-bundle-document-medikationsplan">ELGA e-Medikation Document Bundle Medikationsplan</a>
+               <a href="StructureDefinition-at-emed-md-durchgefuehrte-abgabe.html"
+                  title="StructureDefinition/at-emed-md-durchgefuehrte-abgabe">ELGA e-Medikation Durchgeführte Abgabe</a>
             </td>
             <td>
-<p><strong>Beschreibung:</strong> ELGA e-Medikation Document Bundle zur Anzeige des Medikationsplans mit allen Medikationsplaneinträgen. 
-Beinhaltet:</p>
-<ul>
-  <li>Medikationsplan (List)</li>
-  <li>Medikationsplaneinträge (MedicationRequest)</li>
-  <li>Referenzen zu geplanten Abgaben (entsprechen Rezepten)</li>
-</ul>
-
-<p>Bundle (type=document)
- ├─ Composition  (AtEmedCompositionMedikationsplan)
- ├─ MedicationRequest 1 (AtEmedMedicationRequestPlaneintrag)
- ├─ MedicationRequest 2 (AtEmedMedicationRequestPlaneintrag)
- └─ List (referenziert 1+2) (AtEmedListMedikationsplan)</p>
+<p>ELGA e-Medikation Durchgeführte Abgabe</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-at-emed-medicationrequest-geplanteAbgabe.html"
-                  title="StructureDefinition/at-emed-medicationrequest-geplanteAbgabe">ELGA e-Medikation Geplante Abgabe</a>
+               <a href="StructureDefinition-at-emed-mr-geplante-abgabe.html"
+                  title="StructureDefinition/at-emed-mr-geplante-abgabe">ELGA e-Medikation Geplante Abgabe</a>
             </td>
             <td>
 <p><strong>Beschreibung:</strong> Bildet eine geplante Abgabe eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab.
@@ -276,18 +248,18 @@ Werden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel
                   title="StructureDefinition/at-emed-list-medikationsplan">ELGA e-Medikation Medikationsplan</a>
             </td>
             <td>
-<p><strong>Beschreibung:</strong> Bildet den Medikationsplan eines ELGA Teilnehmers ab. Enthält verordnete Arzneimittel und deren Dosierung in Form von 0..* Medikationsplaneinträgen (AtEmedMedicationRequestPlaneintrag). Die Reihenfolge der Einträge ist fachlich relevant.</p>
+<p><strong>Beschreibung:</strong> Bildet den Medikationsplan eines ELGA Teilnehmers ab. Enthält verordnete Arzneimittel und deren Dosierung in Form von 0..* Medikationsplaneinträgen (AtEmedMRPlaneintrag). Die Reihenfolge der Einträge ist fachlich relevant.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-at-emed-medicationrequest-planeintrag.html"
-                  title="StructureDefinition/at-emed-medicationrequest-planeintrag">ELGA e-Medikation Planeintrag</a>
+               <a href="StructureDefinition-at-emed-mr-planeintrag.html"
+                  title="StructureDefinition/at-emed-mr-planeintrag">ELGA e-Medikation Planeintrag</a>
             </td>
             <td>
 <p><strong>Beschreibung:</strong> Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA Teilnehmers ab. 
 Er enthält genau ein Arzneimittel und dessen Dosierung.
-Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen (AtEmedMedicationRequestGeplanteAbgabe).</p>
+Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen (AtEmedMRGeplanteAbgabe).</p>
 </td>
          </tr>
       </tbody>
@@ -361,8 +333,8 @@ Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen (AtEmedMed
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Medication-AtEmedExampleMedicationCefuroxime.html"
-                  title="Medication/AtEmedExampleMedicationCefuroxime">Beispiel Medication Cefuroxime</a>
+               <a href="Medication-ExampleMedicationCefuroxime.html"
+                  title="Medication/ExampleMedicationCefuroxime">Beispiel Medication Cefuroxime</a>
             </td>
             <td>
 <p>Beispiel Medication Cefuroxime</p>
@@ -370,72 +342,47 @@ Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen (AtEmedMed
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="MedicationRequest-AtEmedExamplePlaneintrag01.html"
-                  title="MedicationRequest/AtEmedExamplePlaneintrag01">Beispiel Medikationsplaneintrag 1</a>
+               <a href="Bundle-AtEmedJourneyBundleMedikationsplan02.html"
+                  title="Bundle/AtEmedJourneyBundleMedikationsplan02">Example Bundle Medikationsplan 02</a>
             </td>
             <td>
-<p>Beispiel Medikationsplaneintrag 1</p>
+<p>Example Bundle Medikationsplan 02</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Bundle-AtEmedExampleBundleDocumentMedikationsplan01.html"
-                  title="Bundle/AtEmedExampleBundleDocumentMedikationsplan01">Beispiel eines Document Bundles Medikationsplan 1</a>
+               <a href="Bundle-AtEmedJourneyBundleMedikationsplanLeer01.html"
+                  title="Bundle/AtEmedJourneyBundleMedikationsplanLeer01">Example Bundle Medikationsplan leer 01</a>
             </td>
             <td>
-<p>Beispiel eines Document Bundles Medikationsplan 1</p>
+<p>Example Bundle Medikationsplan leer 01</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="List-AtEmedExampleMedikationsplan01.html"
-                  title="List/AtEmedExampleMedikationsplan01">Example Medikationsplan 1</a>
+               <a href="List-AtEmedJourneyListMedikationsplan02.html"
+                  title="List/AtEmedJourneyListMedikationsplan02">Example List Medikationsplan 02</a>
             </td>
             <td>
-<p>Example Medikationsplan 1</p>
+<p>Example List Medikationsplan 02</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Practitioner-ExampleArzt.html" title="Practitioner/ExampleArzt">ExampleArzt</a>
+               <a href="List-AtEmedJourneyListMedikationsplanLeer01.html"
+                  title="List/AtEmedJourneyListMedikationsplanLeer01">Example List Medikationsplan leer 01</a>
             </td>
             <td>
-
+<p>Example List Medikationsplan leer 01</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="List-ExampleMedikationsplanList.html"
-                  title="List/ExampleMedikationsplanList">ExampleMedikationsplanList</a>
+               <a href="MedicationRequest-AtEmedJourneyMrPlaneintrag02.html"
+                  title="MedicationRequest/AtEmedJourneyMrPlaneintrag02">Example Medikationsplaneintrag 02</a>
             </td>
             <td>
-
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Patient-ExamplePatient.html" title="Patient/ExamplePatient">ExamplePatient</a>
-            </td>
-            <td>
-
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="MedicationRequest-ExamplePlaneintragMed1.html"
-                  title="MedicationRequest/ExamplePlaneintragMed1">ExamplePlaneintragMed1</a>
-            </td>
-            <td>
-
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="MedicationRequest-ExamplePlaneintragMed2.html"
-                  title="MedicationRequest/ExamplePlaneintragMed2">ExamplePlaneintragMed2</a>
-            </td>
-            <td>
-
+<p>Example Medikationsplaneintrag 02</p>
 </td>
          </tr>
          <tr>
@@ -445,15 +392,6 @@ Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen (AtEmedMed
             </td>
             <td>
 <p>Beispiel eines behandelnden Arztes</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Composition-ExampleMedikationsplanComposition.html"
-                  title="Composition/ExampleMedikationsplanComposition">Medikationsplan</a>
-            </td>
-            <td>
-
 </td>
          </tr>
       </tbody>
@@ -476,7 +414,7 @@ Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen (AtEmedMed
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Jan 26, 2026 15:48+0000">2026-01-26</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jan 28, 2026 08:09+0000">2026-01-28</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -9,15 +9,15 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan | *Version*:0.1.1 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedListMedikationsplan |
+| Draft as of 2026-01-28 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedListMedikationsplan |
 
  
-**Beschreibung:** Bildet den Medikationsplan eines ELGA Teilnehmers ab. Enthält verordnete Arzneimittel und deren Dosierung in Form von 0..* Medikationsplaneinträgen (AtEmedMedicationRequestPlaneintrag). Die Reihenfolge der Einträge ist fachlich relevant. 
+**Beschreibung:** Bildet den Medikationsplan eines ELGA Teilnehmers ab. Enthält verordnete Arzneimittel und deren Dosierung in Form von 0..* Medikationsplaneinträgen (AtEmedMRPlaneintrag). Die Reihenfolge der Einträge ist fachlich relevant. 
 
 **Usages:**
 
-* Refer to this Profile: [ELGA e-Medikation Composition Medikationsplan](StructureDefinition-at-emed-composition-medikationsplan.md)
-* Examples for this Profile: [List/AtEmedExampleMedikationsplan01](List-AtEmedExampleMedikationsplan01.md) and [List/ExampleMedikationsplanList](List-ExampleMedikationsplanList.md)
+* Use this Profile: [ELGA e-Medikation Bundle vom Typ Collection Medikationsplan](StructureDefinition-at-emed-collection-medikationsplan.md)
+* Examples for this Profile: [List/AtEmedJourneyListMedikationsplan02](List-AtEmedJourneyListMedikationsplan02.md) and [List/AtEmedJourneyListMedikationsplanLeer01](List-AtEmedJourneyListMedikationsplanLeer01.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/at-emed-list-medikationsplan)
 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
   "name" : "AtEmedListMedikationsplan",
   "title" : "ELGA e-Medikation Medikationsplan",
   "status" : "draft",
-  "date" : "2026-01-26T15:48:48+00:00",
+  "date" : "2026-01-28T08:09:20+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -65,7 +65,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
       ]
     }
   ],
-  "description" : "**Beschreibung:** Bildet den Medikationsplan eines ELGA Teilnehmers ab. Enthält verordnete Arzneimittel und deren Dosierung in Form von 0..* Medikationsplaneinträgen (AtEmedMedicationRequestPlaneintrag). Die Reihenfolge der Einträge ist fachlich relevant.",
+  "description" : "**Beschreibung:** Bildet den Medikationsplan eines ELGA Teilnehmers ab. Enthält verordnete Arzneimittel und deren Dosierung in Form von 0..* Medikationsplaneinträgen (AtEmedMRPlaneintrag). Die Reihenfolge der Einträge ist fachlich relevant.",
   "fhirVersion" : "4.0.1",
   "mapping" : [
     {
@@ -87,15 +87,6 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
   "differential" : {
     "element" : [
       {
-        "id" : "List",
-        "path" : "List"
-      },
-      {
-        "id" : "List.identifier",
-        "path" : "List.identifier",
-        "short" : "Eindeutige Kennung der Liste. Keine Verwendung in der Liste für den Medikationsplan."
-      },
-      {
         "id" : "List.status",
         "path" : "List.status",
         "short" : "Der Medikationsplan ist aktuell: current | retired | entered-in-error. https://hl7.org/fhir/R4/valueset-list-status.html",
@@ -112,13 +103,32 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
       {
         "id" : "List.code",
         "path" : "List.code",
-        "short" : "Code, der den Typ der Liste beschreibt. https://hl7.org/fhir/R4/valueset-list-example-codes.html. Zu prüfen, ob/wie in Medikationsplan verwendet."
+        "short" : "Code, der den Typ der Liste beschreibt. https://hl7.org/fhir/R4/valueset-list-example-codes.html. Zu prüfen, ob/wie in Medikationsplan verwendet.",
+        "min" : 1,
+        "patternCodeableConcept" : {
+          "coding" : [
+            {
+              "system" : "http://snomed.info/sct",
+              "code" : "736378000",
+              "display" : "Medikationsplan"
+            }
+          ]
+        },
+        "mustSupport" : true
       },
       {
         "id" : "List.subject",
         "path" : "List.subject",
-        "short" : "Keine Verwendung in der Liste für den Medikationsplan.",
-        "max" : "0"
+        "min" : 1,
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
+            ]
+          }
+        ],
+        "mustSupport" : true
       },
       {
         "id" : "List.encounter",
@@ -130,18 +140,30 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
         "id" : "List.date",
         "path" : "List.date",
         "short" : "Letzte Aktualisierung der Liste des Medikationsplans.",
-        "max" : "0"
+        "min" : 1,
+        "mustSupport" : true
       },
       {
         "id" : "List.source",
         "path" : "List.source",
         "short" : "Ersteller der Liste des Medikationsplans.",
-        "max" : "0"
+        "min" : 1,
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner",
+              "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitionerRole"
+            ]
+          }
+        ],
+        "mustSupport" : true
       },
       {
         "id" : "List.orderedBy",
         "path" : "List.orderedBy",
         "short" : "Die Reihenfolge der Einträge im Medikationsplan ist fachlich relevant und wird durch den Ersteller der Liste vorgegeben. Mögliche Codes: user | system | event-date | entry-date| priority | alphabetic | category | patient.",
+        "min" : 1,
         "patternCodeableConcept" : {
           "coding" : [
             {
@@ -154,6 +176,12 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
           "strength" : "required",
           "valueSet" : "http://hl7.org/fhir/ValueSet/list-order"
         }
+      },
+      {
+        "id" : "List.note",
+        "path" : "List.note",
+        "short" : "Freitextliche Anmerkungen zum Medikationsplan.",
+        "mustSupport" : true
       },
       {
         "id" : "List.entry",
@@ -174,7 +202,13 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
       {
         "id" : "List.entry.deleted",
         "path" : "List.entry.deleted",
-        "short" : "Gibt an, ob der referenzierte Medikationsplaneintrag aus dem Medikationsplan entfernt wurde.",
+        "short" : "Gibt an, ob der referenzierte Medikationsplaneintrag aus dem Medikationsplan entfernt wurde. Unklar, ob Löschen so abgebildet werden soll.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "List.entry.date",
+        "path" : "List.entry.date",
+        "short" : "Datum der Aufnahme des Medikationsplaneintrags in den Medikationsplan. Fachlich zu klären.",
         "mustSupport" : true
       },
       {
@@ -185,7 +219,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
           {
             "code" : "Reference",
             "targetProfile" : [
-              "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-planeintrag"
+              "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"
             ]
           }
         ],
@@ -194,7 +228,8 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
       {
         "id" : "List.emptyReason",
         "path" : "List.emptyReason",
-        "short" : "Grund, warum die Liste keine Einträge enthält. Zu prüfen, ob/wie in Liste des Medikationsplan verwendet."
+        "short" : "Intitalzustand: notstarted Grund, TODO: code für \"Patient nimmt derzeit keine Medikamente ein\".",
+        "mustSupport" : true
       }
     ]
   }

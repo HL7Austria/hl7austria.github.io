@@ -33,7 +33,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) ENTWURF",
   "status" : "draft",
-  "date" : "2026-01-26T15:48:48+00:00",
+  "date" : "2026-01-28T08:09:20+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -102,6 +102,12 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "uri" : "https://fhir.hl7.at/elga/aps/r4/ImplementationGuide/hl7.at.fhir.elga.aps.r4",
       "packageId" : "hl7.at.fhir.elga.aps.r4",
       "version" : "current"
+    },
+    {
+      "id" : "ihe_pharm_mpd_r4",
+      "uri" : "https://profiles.ihe.net/PHARM/MPD",
+      "packageId" : "ihe.pharm.mpd.r4",
+      "version" : "1.0.0-comment-2"
     }
   ],
   "definition" : {
@@ -787,21 +793,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         },
         "name" : "Beispiel Durchgeführte Abgabe 1",
         "description" : "Beispiel Durchgeführte Abgabe 1",
-        "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationdispense"
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Bundle"
-          }
-        ],
-        "reference" : {
-          "reference" : "Bundle/AtEmedExampleBundleDocumentMedikationsplan01"
-        },
-        "name" : "Beispiel eines Document Bundles Medikationsplan 1",
-        "description" : "Beispiel eines Document Bundles Medikationsplan 1",
-        "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-document-medikationsplan"
+        "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-md-durchgefuehrte-abgabe"
       },
       {
         "extension" : [
@@ -815,7 +807,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         },
         "name" : "Beispiel Geplante Abgabe 1",
         "description" : "Beispiel Geplante Abgabe 1",
-        "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-geplanteAbgabe"
+        "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-geplante-abgabe"
       },
       {
         "extension" : [
@@ -825,7 +817,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           }
         ],
         "reference" : {
-          "reference" : "Medication/AtEmedExampleMedicationCefuroxime"
+          "reference" : "Medication/ExampleMedicationCefuroxime"
         },
         "name" : "Beispiel Medication Cefuroxime",
         "description" : "Beispiel Medication Cefuroxime",
@@ -835,28 +827,14 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "extension" : [
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "MedicationRequest"
-          }
-        ],
-        "reference" : {
-          "reference" : "MedicationRequest/AtEmedExamplePlaneintrag01"
-        },
-        "name" : "Beispiel Medikationsplaneintrag 1",
-        "description" : "Beispiel Medikationsplaneintrag 1",
-        "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-planeintrag"
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString" : "StructureDefinition:resource"
           }
         ],
         "reference" : {
-          "reference" : "StructureDefinition/at-emed-medicationdispense"
+          "reference" : "StructureDefinition/at-emed-collection-medikationsplan"
         },
-        "name" : "ELGA e-Medikation Abgabe",
-        "description" : "Abgabe",
+        "name" : "ELGA e-Medikation Bundle vom Typ Collection Medikationsplan",
+        "description" : "**Beschreibung:** ELGA e-Medikation Bundle vom Typ Collection zur Speicherung und Auslieferung eines Medikationsplans mit Medikationsplaneinträgen. \nBeinhaltet:\n- Medikationsplan 1..1 (List)\n- Medikationsplaneinträge 0..* (MedicationRequest)",
         "exampleBoolean" : false
       },
       {
@@ -867,10 +845,10 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           }
         ],
         "reference" : {
-          "reference" : "StructureDefinition/at-emed-composition-medikationsplan"
+          "reference" : "StructureDefinition/at-emed-md-durchgefuehrte-abgabe"
         },
-        "name" : "ELGA e-Medikation Composition Medikationsplan",
-        "description" : "**Beschreibung:** Composition legt Inhalte des Medikationsplans (Dokument) fest. \nBeinhaltet:\n- Medikationsplan (List)\n- Medikationsplaneinträge (MedicationRequest)\n- Referenzen zu geplanten Abgaben (entsprechen Rezepten)\n\nBundle (type=document)\n ├─ Composition \n ├─ MedicationRequest 1\n ├─ MedicationRequest 2\n └─ List (referenziert 1+2)",
+        "name" : "ELGA e-Medikation Durchgeführte Abgabe",
+        "description" : "ELGA e-Medikation Durchgeführte Abgabe",
         "exampleBoolean" : false
       },
       {
@@ -881,21 +859,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           }
         ],
         "reference" : {
-          "reference" : "StructureDefinition/at-emed-bundle-document-medikationsplan"
-        },
-        "name" : "ELGA e-Medikation Document Bundle Medikationsplan",
-        "description" : "**Beschreibung:** ELGA e-Medikation Document Bundle zur Anzeige des Medikationsplans mit allen Medikationsplaneinträgen. \nBeinhaltet:\n- Medikationsplan (List)\n- Medikationsplaneinträge (MedicationRequest)\n- Referenzen zu geplanten Abgaben (entsprechen Rezepten)\n\nBundle (type=document)\n ├─ Composition  (AtEmedCompositionMedikationsplan)\n ├─ MedicationRequest 1 (AtEmedMedicationRequestPlaneintrag)\n ├─ MedicationRequest 2 (AtEmedMedicationRequestPlaneintrag)\n └─ List (referenziert 1+2) (AtEmedListMedikationsplan)",
-        "exampleBoolean" : false
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:resource"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/at-emed-medicationrequest-geplanteAbgabe"
+          "reference" : "StructureDefinition/at-emed-mr-geplante-abgabe"
         },
         "name" : "ELGA e-Medikation Geplante Abgabe",
         "description" : "**Beschreibung:** Bildet eine geplante Abgabe eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab.\nSie enthält das verordnete Arzneimittel und dessen Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation.\nAls groupIdentifier dient die Geplante-Abgabe-ID (früher eMED-ID), die auch im e-Rezept mitgeführt wird.\nWerden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer'). Verwendet R5 Backport Extensions.",
@@ -954,7 +918,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "reference" : "StructureDefinition/at-emed-list-medikationsplan"
         },
         "name" : "ELGA e-Medikation Medikationsplan",
-        "description" : "**Beschreibung:** Bildet den Medikationsplan eines ELGA Teilnehmers ab. Enthält verordnete Arzneimittel und deren Dosierung in Form von 0..* Medikationsplaneinträgen (AtEmedMedicationRequestPlaneintrag). Die Reihenfolge der Einträge ist fachlich relevant.",
+        "description" : "**Beschreibung:** Bildet den Medikationsplan eines ELGA Teilnehmers ab. Enthält verordnete Arzneimittel und deren Dosierung in Form von 0..* Medikationsplaneinträgen (AtEmedMRPlaneintrag). Die Reihenfolge der Einträge ist fachlich relevant.",
         "exampleBoolean" : false
       },
       {
@@ -965,64 +929,67 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           }
         ],
         "reference" : {
-          "reference" : "StructureDefinition/at-emed-medicationrequest-planeintrag"
+          "reference" : "StructureDefinition/at-emed-mr-planeintrag"
         },
         "name" : "ELGA e-Medikation Planeintrag",
-        "description" : "**Beschreibung:** Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA Teilnehmers ab. \nEr enthält genau ein Arzneimittel und dessen Dosierung.\nKann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen (AtEmedMedicationRequestGeplanteAbgabe).",
+        "description" : "**Beschreibung:** Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA Teilnehmers ab. \nEr enthält genau ein Arzneimittel und dessen Dosierung.\nKann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen (AtEmedMRGeplanteAbgabe).",
         "exampleBoolean" : false
       },
       {
         "extension" : [
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "Bundle"
+          }
+        ],
+        "reference" : {
+          "reference" : "Bundle/AtEmedJourneyBundleMedikationsplan02"
+        },
+        "name" : "Example Bundle Medikationsplan 02",
+        "description" : "Example Bundle Medikationsplan 02",
+        "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-collection-medikationsplan"
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "Bundle"
+          }
+        ],
+        "reference" : {
+          "reference" : "Bundle/AtEmedJourneyBundleMedikationsplanLeer01"
+        },
+        "name" : "Example Bundle Medikationsplan leer 01",
+        "description" : "Example Bundle Medikationsplan leer 01",
+        "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-collection-medikationsplan"
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString" : "List"
           }
         ],
         "reference" : {
-          "reference" : "List/AtEmedExampleMedikationsplan01"
+          "reference" : "List/AtEmedJourneyListMedikationsplan02"
         },
-        "name" : "Example Medikationsplan 1",
-        "description" : "Example Medikationsplan 1",
+        "name" : "Example List Medikationsplan 02",
+        "description" : "Example List Medikationsplan 02",
         "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"
       },
       {
         "extension" : [
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Practitioner"
-          }
-        ],
-        "reference" : {
-          "reference" : "Practitioner/ExampleArzt"
-        },
-        "name" : "ExampleArzt",
-        "exampleBoolean" : true
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString" : "List"
           }
         ],
         "reference" : {
-          "reference" : "List/ExampleMedikationsplanList"
+          "reference" : "List/AtEmedJourneyListMedikationsplanLeer01"
         },
-        "name" : "ExampleMedikationsplanList",
+        "name" : "Example List Medikationsplan leer 01",
+        "description" : "Example List Medikationsplan leer 01",
         "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Patient"
-          }
-        ],
-        "reference" : {
-          "reference" : "Patient/ExamplePatient"
-        },
-        "name" : "ExamplePatient",
-        "exampleBoolean" : true
       },
       {
         "extension" : [
@@ -1032,23 +999,11 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           }
         ],
         "reference" : {
-          "reference" : "MedicationRequest/ExamplePlaneintragMed1"
+          "reference" : "MedicationRequest/AtEmedJourneyMrPlaneintrag02"
         },
-        "name" : "ExamplePlaneintragMed1",
-        "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-planeintrag"
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "MedicationRequest"
-          }
-        ],
-        "reference" : {
-          "reference" : "MedicationRequest/ExamplePlaneintragMed2"
-        },
-        "name" : "ExamplePlaneintragMed2",
-        "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-planeintrag"
+        "name" : "Example Medikationsplaneintrag 02",
+        "description" : "Example Medikationsplaneintrag 02",
+        "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"
       },
       {
         "extension" : [
@@ -1063,19 +1018,6 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "name" : "HL7ATCorePractitioner",
         "description" : "Beispiel eines behandelnden Arztes",
         "exampleBoolean" : true
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Composition"
-          }
-        ],
-        "reference" : {
-          "reference" : "Composition/ExampleMedikationsplanComposition"
-        },
-        "name" : "Medikationsplan",
-        "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-composition-medikationsplan"
       }
     ],
     "page" : {

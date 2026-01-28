@@ -6,14 +6,8 @@
   "profiles": {
     "Bundle": [
       {
-        "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-document-medikationsplan",
-        "title": "ELGA e-Medikation Document Bundle Medikationsplan"
-      }
-    ],
-    "Composition": [
-      {
-        "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-composition-medikationsplan",
-        "title": "ELGA e-Medikation Composition Medikationsplan"
+        "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-collection-medikationsplan",
+        "title": "ELGA e-Medikation Bundle vom Typ Collection Medikationsplan"
       }
     ],
     "List": [
@@ -22,35 +16,44 @@
         "title": "ELGA e-Medikation Medikationsplan"
       }
     ],
+    "MedicationDispense": [
+      {
+        "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-md-durchgefuehrte-abgabe",
+        "title": "ELGA e-Medikation Durchgeführte Abgabe"
+      }
+    ],
     "Medication": [
       {
         "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication",
         "title": "ELGA e-Medikation Medication"
       }
     ],
-    "MedicationDispense": [
-      {
-        "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationdispense",
-        "title": "ELGA e-Medikation Abgabe"
-      }
-    ],
     "MedicationRequest": [
       {
-        "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-geplanteAbgabe",
+        "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-geplante-abgabe",
         "title": "ELGA e-Medikation Geplante Abgabe"
       },
       {
-        "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-planeintrag",
+        "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag",
         "title": "ELGA e-Medikation Planeintrag"
       }
     ]
   },
   "usage": {
+    "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation": [
+      "Practitioner.address.line"
+    ],
     "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-ext-address-additionalInformation": [
       "Patient.address.line"
     ],
     "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-ext-patient-religion": [
       "Patient"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod": [
+      "MedicationRequest"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction": [
+      "MedicationRequest"
     ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
       "StructureDefinition.snapshot.element.constraint"
@@ -68,13 +71,16 @@
       "StructureDefinition.snapshot.element"
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator": [
-      "Patient.address.line"
+      "Patient.address.line",
+      "Practitioner.address.line"
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber": [
-      "Patient.address.line"
+      "Patient.address.line",
+      "Practitioner.address.line"
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName": [
-      "Patient.address.line"
+      "Patient.address.line",
+      "Practitioner.address.line"
     ],
     "http://hl7.org/fhir/StructureDefinition/patient-citizenship": [
       "Patient"
@@ -104,6 +110,9 @@
     ],
     "https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-medication-classification": [
       "Medication"
+    ],
+    "https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-offLabel": [
+      "MedicationRequest"
     ]
   }
 }

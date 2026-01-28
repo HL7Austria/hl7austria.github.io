@@ -6,7 +6,7 @@
 
 ## Example MedicationRequest: Beispiel Geplante Abgabe 1
 
-Profile: [ELGA e-Medikation Geplante Abgabe](StructureDefinition-at-emed-medicationrequest-geplanteAbgabe.md)
+Profile: [ELGA e-Medikation Geplante Abgabe](StructureDefinition-at-emed-mr-geplante-abgabe.md)
 
 **identifier**: WYE82A2G8EEW-4711
 
@@ -22,7 +22,7 @@ Profile: [ELGA e-Medikation Geplante Abgabe](StructureDefinition-at-emed-medicat
 
 **authoredOn**: 2024-10-03
 
-**requester**: [Practitioner/AtEmedExamplePractitioner01](Practitioner/AtEmedExamplePractitioner01)
+**requester**: [Practitioner Melanie Musterärztin ](Practitioner-at-emed-example-practitioner-01.md)
 
 **reasonCode**: Essentielle Hypertonie
 
@@ -67,7 +67,7 @@ Freitext Informationen zur geplanten Abgabe.
   "id" : "AtEmedExampleGeplanteAbgabe01",
   "meta" : {
     "profile" : [
-      "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medicationrequest-geplanteAbgabe"
+      "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-geplante-abgabe"
     ]
   },
   "identifier" : [
@@ -101,7 +101,7 @@ Freitext Informationen zur geplanten Abgabe.
   },
   "authoredOn" : "2024-10-03",
   "requester" : {
-    "reference" : "Practitioner/AtEmedExamplePractitioner01"
+    "reference" : "Practitioner/at-emed-example-practitioner-01"
   },
   "reasonCode" : [
     {

@@ -1,0 +1,78 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/emed/r4/Bundle/AtEmedJourneyBundleMedikationsplanLeer01> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "AtEmedJourneyBundleMedikationsplanLeer01"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-collection-medikationsplan"^^xsd:anyURI ;
+       fhir:l <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-collection-medikationsplan>
+     ] )
+  ] ; # 
+  fhir:type [ fhir:v "collection"] ; # 
+  fhir:entry ( [
+     fhir:resource ( [
+       a fhir:List ;
+       fhir:id [ fhir:v "AtEmedJourneyListMedikationsplanLeer01" ] ;
+       fhir:meta [
+         fhir:profile ( [
+           fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"^^xsd:anyURI ;
+           fhir:l <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan>
+         ] )
+       ] ;
+       fhir:text [
+         fhir:status [ fhir:v "generated" ] ;
+         fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"List_AtEmedJourneyListMedikationsplanLeer01\"> </a><p class=\"res-header-id\"><b>Generated Narrative: List AtEmedJourneyListMedikationsplanLeer01</b></p><a name=\"AtEmedJourneyListMedikationsplanLeer01\"> </a><a name=\"hcAtEmedJourneyListMedikationsplanLeer01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-emed-list-medikationsplan.html\">ELGA e-Medikation Medikationsplan</a></p></div><table class=\"clstu\"><tr><td>Date: 2013-11-20 23:10:23+1100 </td><td>Mode: Working List </td><td>Status: Current </td><td>Code: Medikationsplan </td></tr><tr><td>Subject: <a href=\"Patient-AtEmedExamplePatient01.html\">Max Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</a>Source: Order: Sorted by User </td></tr></table><table class=\"grid\"><tr style=\"backgound-color: #eeeeee\"><td><b>Items</b></td></tr></table></div>"^^rdf:XMLLiteral ]
+       ] ;
+       fhir:status [ fhir:v "current" ] ;
+       fhir:mode [ fhir:v "working" ] ;
+       fhir:code [
+         fhir:coding ( [
+           a sct:736378000 ;
+           fhir:system [
+             fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+             fhir:l <http://snomed.info/sct>
+           ] ;
+           fhir:code [ fhir:v "736378000" ] ;
+           fhir:display [ fhir:v "Medikationsplan" ]
+         ] )
+       ] ;
+       fhir:subject [
+         fhir:l <https://fhir.hl7.at/elga/emed/r4/Patient/AtEmedExamplePatient01> ;
+         fhir:reference [ fhir:v "Patient/AtEmedExamplePatient01" ]
+       ] ;
+       fhir:date [ fhir:v "2013-11-20T23:10:23+11:00"^^xsd:dateTime ] ;
+       fhir:source [
+         fhir:l <https://fhir.hl7.at/elga/emed/r4/Practitioner/at-emed-example-practitioner-01> ;
+         fhir:reference [ fhir:v "Practitioner/at-emed-example-practitioner-01" ]
+       ] ;
+       fhir:orderedBy [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/list-order"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/list-order>
+           ] ;
+           fhir:code [ fhir:v "user" ]
+         ] )
+       ] ;
+       fhir:emptyReason [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/list-empty-reason"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/list-empty-reason>
+           ] ;
+           fhir:code [ fhir:v "notstarted" ]
+         ] )
+       ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
