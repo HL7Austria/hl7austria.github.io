@@ -26,7 +26,7 @@
   },
   "patient" : {
     "reference" : "Patient/at-aps-example-patient-01",
-    "display" : "Maria Mustermann"
+    "display" : "Maria Musterfrau"
   },
   "occurrenceDateTime" : "1998-06-04T00:00:00+02:00",
   "protocolApplied" : [

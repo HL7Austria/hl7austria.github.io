@@ -36,8 +36,8 @@
     "text" : "Laborbefund"
   },
   "subject" : {
-    "reference" : "Patient/HL7ATCorePatientExample01",
-    "display" : "Max Mustermann"
+    "reference" : "Patient/at-aps-example-patient-01",
+    "display" : "Maria Musterfrau"
   },
   "effectiveDateTime" : "2024-09-15T10:30:00+01:00",
   "issued" : "2024-09-15T11:00:00+01:00",

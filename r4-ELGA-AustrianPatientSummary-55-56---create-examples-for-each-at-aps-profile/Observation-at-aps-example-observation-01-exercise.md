@@ -20,13 +20,13 @@
   },
   "subject" : {
     "reference" : "Patient/at-aps-example-patient-01",
-    "display" : "Maria Mustermann"
+    "display" : "Maria Musterfrau"
   },
   "effectiveDateTime" : "2024-12-02",
   "performer" : [
     {
       "reference" : "Patient/at-aps-example-patient-01",
-      "display" : "Maria Mustermann"
+      "display" : "Maria Musterfrau"
     }
   ],
   "valueQuantity" : {

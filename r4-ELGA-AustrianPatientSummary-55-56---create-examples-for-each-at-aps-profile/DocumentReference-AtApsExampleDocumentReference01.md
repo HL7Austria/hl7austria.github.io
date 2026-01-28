@@ -35,8 +35,8 @@
     ]
   },
   "subject" : {
-    "reference" : "Patient/HL7ATCorePatientExample01",
-    "display" : "Max Mustermann"
+    "reference" : "Patient/at-aps-example-patient-01",
+    "display" : "Maria Musterfrau"
   },
   "date" : "2005-12-24T09:43:41+11:00",
   "author" : [

@@ -39,7 +39,7 @@
   ],
   "patient" : {
     "reference" : "Patient/at-aps-example-patient-01",
-    "display" : "Maria Mustermann"
+    "display" : "Maria Musterfrau"
   },
   "parent" : {
     "reference" : "Device/at-aps-example-device-01",

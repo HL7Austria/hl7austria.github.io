@@ -32,13 +32,13 @@
   },
   "subject" : {
     "reference" : "Patient/at-aps-example-patient-01",
-    "display" : "Maria Mustermann"
+    "display" : "Maria Musterfrau"
   },
   "receivedTime" : "2025-06-20T10:00:00+02:00",
   "collection" : {
     "collector" : {
-      "reference" : "Practitioner/HL7ATCorePractitionerExample01",
-      "display" : "Dr. Melanie Musterärztin"
+      "reference" : "Practitioner/at-aps-example-practitioner-01",
+      "display" : "Hanna Hausärztin"
     },
     "collectedDateTime" : "2025-06-19T15:00:00+02:00",
     "quantity" : {

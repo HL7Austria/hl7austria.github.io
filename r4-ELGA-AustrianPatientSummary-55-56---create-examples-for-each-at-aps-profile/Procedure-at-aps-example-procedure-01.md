@@ -40,7 +40,7 @@
   },
   "subject" : {
     "reference" : "Patient/at-aps-example-patient-01",
-    "display" : "Maria Mustermann"
+    "display" : "Maria Musterfrau"
   },
   "performedPeriod" : {
     "extension" : [

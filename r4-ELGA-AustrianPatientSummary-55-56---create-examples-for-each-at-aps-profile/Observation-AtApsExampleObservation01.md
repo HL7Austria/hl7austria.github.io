@@ -36,8 +36,8 @@
     "text" : "Hämoglobin"
   },
   "subject" : {
-    "reference" : "Patient/HL7ATCorePatientExample01",
-    "display" : "Max Mustermann"
+    "reference" : "Patient/at-aps-example-patient-01",
+    "display" : "Maria Musterfrau"
   },
   "effectiveDateTime" : "2024-10-10T09:30:00+01:00",
   "performer" : [

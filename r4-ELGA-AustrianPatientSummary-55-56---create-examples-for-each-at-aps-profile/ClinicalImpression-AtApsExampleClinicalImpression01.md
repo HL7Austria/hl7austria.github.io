@@ -21,8 +21,8 @@
   "status" : "completed",
   "description" : "Dieser 26-jährige männliche Patient wird nach einem Verkehrsunfall mit dem Krankenwagen in die Notaufnahme gebracht.",
   "subject" : {
-    "reference" : "Patient/HL7ATCorePatientExample01",
-    "display" : "Max Mustermann"
+    "reference" : "Patient/at-aps-example-patient-01",
+    "display" : "Maria Musterfrau"
   },
   "effectivePeriod" : {
     "start" : "2014-12-06T20:00:00+11:00",

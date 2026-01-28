@@ -19,7 +19,7 @@
   "name" : "AtApsSpecimen",
   "title" : "AT APS Specimen",
   "status" : "active",
-  "date" : "2025-11-11T12:31:41+00:00",
+  "date" : "2026-01-28T09:02:10+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -122,6 +122,31 @@
             "code" : "Reference",
             "targetProfile" : [
               "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Specimen.parent",
+        "path" : "Specimen.parent",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-specimen"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Specimen.collection.collector",
+        "path" : "Specimen.collection.collector",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole"
             ]
           }
         ]

@@ -45,14 +45,14 @@
     "text" : "Vitalzeichen"
   },
   "subject" : {
-    "reference" : "Patient/HL7ATCorePatientExample01",
-    "display" : "Max Mustermann"
+    "reference" : "Patient/at-aps-example-patient-01",
+    "display" : "Maria Musterfrau"
   },
   "effectiveDateTime" : "2025-10-17T08:15:00+02:00",
   "performer" : [
     {
-      "reference" : "Practitioner/HL7ATCorePractitionerExample01",
-      "display" : "Dr. Melanie Musterärztin"
+      "reference" : "Practitioner/at-aps-example-practitioner-01",
+      "display" : "Hanna Hausärztin"
     }
   ],
   "component" : [

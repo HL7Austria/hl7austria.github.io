@@ -43,8 +43,8 @@
   ],
   "description" : "Übergewicht und Gewichtsverlust managen",
   "subject" : {
-    "reference" : "Patient/HL7ATCorePatientExample01",
-    "display" : "Max Mustermann"
+    "reference" : "Patient/at-aps-example-patient-01",
+    "display" : "Maria Musterfrau"
   },
   "period" : {
     "end" : "2017-06-01"

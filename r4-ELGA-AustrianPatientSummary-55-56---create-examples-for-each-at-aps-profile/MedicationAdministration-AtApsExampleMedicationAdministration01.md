@@ -19,15 +19,15 @@
     "display" : "Ramipril 5mg Kapseln"
   },
   "subject" : {
-    "reference" : "Patient/HL7ATCorePatientExample01",
-    "display" : "Max Mustermann"
+    "reference" : "Patient/at-aps-example-patient-01",
+    "display" : "Maria Musterfrau"
   },
   "effectiveDateTime" : "2024-10-15T08:00:00+01:00",
   "performer" : [
     {
       "actor" : {
-        "reference" : "Practitioner/HL7ATCorePractitionerExample01",
-        "display" : "Dr. Melanie Musterärztin"
+        "reference" : "Practitioner/at-aps-example-practitioner-01",
+        "display" : "Hanna Hausärztin"
       }
     }
   ],

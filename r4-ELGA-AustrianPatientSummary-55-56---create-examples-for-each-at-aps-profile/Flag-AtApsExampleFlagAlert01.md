@@ -42,8 +42,8 @@
     "text" : "Der Patient zeigt eine erhöhte Sturzgefährdung."
   },
   "subject" : {
-    "reference" : "Patient/HL7ATCorePatientExample01",
-    "display" : "Max Mustermann"
+    "reference" : "Patient/at-aps-example-patient-01",
+    "display" : "Maria Musterfrau"
   },
   "author" : {
     "reference" : "Practitioner/at-aps-example-practitioner-01",

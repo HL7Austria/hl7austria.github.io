@@ -25,13 +25,13 @@
   },
   "subject" : {
     "reference" : "Patient/at-aps-example-patient-01",
-    "display" : "Maria Mustermann"
+    "display" : "Maria Musterfrau"
   },
   "effectiveDateTime" : "2019-07-15",
   "performer" : [
     {
       "reference" : "Patient/at-aps-example-patient-01",
-      "display" : "Maria Mustermann"
+      "display" : "Maria Musterfrau"
     }
   ],
   "valueCodeableConcept" : {

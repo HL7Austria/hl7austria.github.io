@@ -93,7 +93,8 @@
                 }
               ],
               "name" : "summary",
-              "definition" : "http://hl7.org/fhir/uv/ips/OperationDefinition/summary"
+              "definition" : "http://hl7.org/fhir/uv/ips/OperationDefinition/summary",
+              "documentation" : "Operation zum Abrufen einer APS für eine Patient-Ressource. Diese Operation gibt ein APS Document Bundle als Antwort auf einen GET-Request zurück."
             }
           ]
         },

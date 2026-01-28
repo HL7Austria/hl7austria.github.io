@@ -19,7 +19,7 @@
   "name" : "AtApsComposition",
   "title" : "AT APS Composition",
   "status" : "active",
-  "date" : "2025-11-11T12:31:41+00:00",
+  "date" : "2026-01-28T09:02:10+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -91,7 +91,16 @@
       {
         "id" : "Composition",
         "path" : "Composition",
-        "short" : "AT APS Composition"
+        "short" : "AT APS Composition",
+        "constraint" : [
+          {
+            "key" : "aps-comp-1",
+            "severity" : "error",
+            "human" : "For automatically generated APS an attester is not allowed",
+            "expression" : "(author.resolve().ofType(Device).count() != author.count() or attester.count() = 0)",
+            "source" : "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-composition"
+          }
+        ]
       },
       {
         "id" : "Composition.subject",
@@ -101,6 +110,22 @@
             "code" : "Reference",
             "targetProfile" : [
               "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Composition.attester.party",
+        "path" : "Composition.attester.party",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
             ]
           }
         ]

@@ -20,8 +20,8 @@
   ],
   "status" : "active",
   "subject" : {
-    "reference" : "Patient/HL7ATCorePatientExample01",
-    "display" : "Max Mustermann"
+    "reference" : "Patient/at-aps-example-patient-01",
+    "display" : "Maria Musterfrau"
   },
   "timingDateTime" : "2015-02-07",
   "device" : {

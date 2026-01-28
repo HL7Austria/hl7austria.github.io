@@ -26,7 +26,7 @@
   },
   "subject" : {
     "reference" : "Patient/at-aps-example-patient-01",
-    "display" : "Maria Mustermann"
+    "display" : "Maria Musterfrau"
   },
   "effectiveDateTime" : "2025-05-01T10:00:00+01:00",
   "performer" : [

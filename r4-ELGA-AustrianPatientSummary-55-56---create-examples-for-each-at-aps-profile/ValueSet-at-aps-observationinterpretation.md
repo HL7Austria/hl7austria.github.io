@@ -17,7 +17,7 @@
   "title" : "AT APS ObservationInterpretation",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-11-11T12:31:41+00:00",
+  "date" : "2026-01-28T09:02:10+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

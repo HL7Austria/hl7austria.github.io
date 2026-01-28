@@ -21,8 +21,8 @@
   ],
   "status" : "available",
   "subject" : {
-    "reference" : "Patient/HL7ATCorePatientExample01",
-    "display" : "Max Mustermann"
+    "reference" : "Patient/at-aps-example-patient-01",
+    "display" : "Maria Musterfrau"
   },
   "started" : "2011-01-01T11:01:20+03:00",
   "numberOfSeries" : 1,
