@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/appointment-booking-url | *Version*:0.2.0 | |
-| Draft as of 2026-01-12 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:AppointmentBookingUrlExt |
+| Draft as of 2026-01-28 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:AppointmentBookingUrlExt |
 
 An optional URL that can be used for redirects to a webpage for booking an Appointment. It should contain identifying information about the Slot so that it can be preselected on the target booking page.
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-appointment-booking-
   "name" : "AppointmentBookingUrlExt",
   "title" : "Appointment Booking URL",
   "status" : "draft",
-  "date" : "2026-01-12T10:26:55+00:00",
+  "date" : "2026-01-28T07:37:37+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "An optional URL that can be used for redirects to a webpage for booking an Appointment. It should contain identifying information about the Slot so that it can be preselected on the target booking page.",
   "fhirVersion" : "5.0.0",
