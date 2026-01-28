@@ -424,6 +424,11 @@
       "resource" : {
         "resourceType" : "Device",
         "id" : "AtApsExampleBundle-Journey-3-author-device",
+        "meta" : {
+          "profile" : [
+            "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-device"
+          ]
+        },
         "text" : {
           "status" : "additional",
           "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Device_AtApsExampleBundle-Journey-3-author-device\"> </a><p>Dieses Gerät erzeugt ein APS FHIR-Dokument.</p></div>"
@@ -443,6 +448,11 @@
             }
           ]
         },
+        "version" : [
+          {
+            "value" : "1.0.0"
+          }
+        ],
         "patient" : {
           "reference" : "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8",
           "display" : "Maria Musterfrau"

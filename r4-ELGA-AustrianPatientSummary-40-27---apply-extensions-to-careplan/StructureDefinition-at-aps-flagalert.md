@@ -19,7 +19,7 @@
   "name" : "AtApsFlagAlert",
   "title" : "AT APS Flag Alert",
   "status" : "active",
-  "date" : "2025-10-10T07:10:15+00:00",
+  "date" : "2026-01-28T12:36:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -88,11 +88,27 @@
               "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
               "http://hl7.org/fhir/StructureDefinition/Location",
               "http://hl7.org/fhir/StructureDefinition/Group",
-              "http://hl7.org/fhir/StructureDefinition/Organization",
-              "http://hl7.org/fhir/StructureDefinition/Practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
               "http://hl7.org/fhir/StructureDefinition/PlanDefinition",
-              "http://hl7.org/fhir/StructureDefinition/Medication",
-              "http://hl7.org/fhir/StructureDefinition/Procedure"
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medication",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-procedure"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Flag.author",
+        "path" : "Flag.author",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-device",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole"
             ]
           }
         ]

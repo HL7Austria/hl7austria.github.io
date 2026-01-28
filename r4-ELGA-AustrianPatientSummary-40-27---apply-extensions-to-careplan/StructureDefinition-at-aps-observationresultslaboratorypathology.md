@@ -19,7 +19,7 @@
   "name" : "AtApsObservationResultsLaboratoryPathology",
   "title" : "AT APS Observation Results Laboratory Pathology",
   "status" : "active",
-  "date" : "2025-10-10T07:10:15+00:00",
+  "date" : "2026-01-28T12:36:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -146,23 +146,6 @@
         }
       },
       {
-        "id" : "Observation.performer",
-        "path" : "Observation.performer",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole",
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization",
-              "http://hl7.org/fhir/StructureDefinition/CareTeam",
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
-              "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
-            ]
-          }
-        ]
-      },
-      {
         "id" : "Observation.value[x]",
         "path" : "Observation.value[x]",
         "slicing" : {
@@ -245,18 +228,6 @@
           "strength" : "extensible",
           "valueSet" : "https://fhir.hl7.at/elga/aps/r4/ValueSet/at-aps-observationinterpretation"
         }
-      },
-      {
-        "id" : "Observation.specimen",
-        "path" : "Observation.specimen",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-specimen"
-            ]
-          }
-        ]
       },
       {
         "id" : "Observation.hasMember",

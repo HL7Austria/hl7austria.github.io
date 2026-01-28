@@ -19,7 +19,7 @@
   "name" : "AtApsDiagnosticReport",
   "title" : "AT APS DiagnosticReport",
   "status" : "active",
-  "date" : "2025-10-10T07:10:15+00:00",
+  "date" : "2026-01-28T12:36:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -89,6 +89,22 @@
         "short" : "AT APS DiagnosticReport"
       },
       {
+        "id" : "DiagnosticReport.basedOn",
+        "path" : "DiagnosticReport.basedOn",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan",
+              "http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationrequest",
+              "http://hl7.org/fhir/StructureDefinition/NutritionOrder",
+              "http://hl7.org/fhir/StructureDefinition/ServiceRequest"
+            ]
+          }
+        ]
+      },
+      {
         "id" : "DiagnosticReport.subject",
         "path" : "DiagnosticReport.subject",
         "type" : [
@@ -104,6 +120,21 @@
       {
         "id" : "DiagnosticReport.performer",
         "path" : "DiagnosticReport.performer",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization",
+              "http://hl7.org/fhir/StructureDefinition/CareTeam"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "DiagnosticReport.resultsInterpreter",
+        "path" : "DiagnosticReport.resultsInterpreter",
         "type" : [
           {
             "code" : "Reference",
@@ -140,7 +171,15 @@
           ],
           "ordered" : false,
           "rules" : "open"
-        }
+        },
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation"
+            ]
+          }
+        ]
       },
       {
         "id" : "DiagnosticReport.result:observationResults",
@@ -154,6 +193,18 @@
             "targetProfile" : [
               "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationresultslaboratorypathology",
               "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationresultsradiology"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "DiagnosticReport.imagingStudy",
+        "path" : "DiagnosticReport.imagingStudy",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-imagingstudy"
             ]
           }
         ]

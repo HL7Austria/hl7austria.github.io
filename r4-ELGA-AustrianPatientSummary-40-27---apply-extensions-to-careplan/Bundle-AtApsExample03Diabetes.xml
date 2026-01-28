@@ -722,9 +722,15 @@ This OID may also be used in CD.codeSystem.">Uniform Resource Identifier (URI)</
     <resource>
       <CarePlan>
         <id value="AtApsExample03Diabetes-schulung-1"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan"/>
+        </meta>
         <text>
           <status value="additional"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="CarePlan_AtApsExample03Diabetes-schulung-1"> </a><p>Schulung zur Verbesserung der Mobilität</p></div>
         </text>
+        <extension url="http://hl7.org/fhir/StructureDefinition/workflow-shallComplyWith">
+          <valueUri value="http://example.org/protocol-for-heart-association-event"/>
+        </extension>
         <identifier>
           <value value="12345"/>
         </identifier>
@@ -768,39 +774,6 @@ This OID may also be used in CD.codeSystem.">Uniform Resource Identifier (URI)</
               <display value="Allgemeines Verfahren"/>
             </coding>
           </outcomeCodeableConcept>
-          <detail>
-            <code>
-              <coding>
-                <system value="http://snomed.info/sct"/>
-                <code value="409063005"/>
-                <display value="Beratung"/>
-              </coding>
-              <coding>
-                <system value="http://snomed.info/sct"/>
-                <code value="1293061000168108"/>
-                <display value="Dienst für Gesundheitsförderung"/>
-              </coding>
-            </code>
-            <status value="completed"/>
-            <statusReason>
-              <text value="Der Hausarzt informierte den Patienten über eine Veranstaltung des Herzverbandes zur Förderung der Herzgesundheit."/>
-            </statusReason>
-            <doNotPerform value="false"/>
-            <scheduledTiming>
-              <repeat>
-                <frequency value="1"/>
-                <period value="1"/>
-                <periodUnit value="d"/>
-              </repeat>
-            </scheduledTiming>
-            <location>
-              <display value="Informationsveranstaltung des Herzverbandes"/>
-            </location>
-            <performer>
-              <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
-              <display value="Susi Testpatientin"/>
-            </performer>
-          </detail>
         </activity>
       </CarePlan>
     </resource>

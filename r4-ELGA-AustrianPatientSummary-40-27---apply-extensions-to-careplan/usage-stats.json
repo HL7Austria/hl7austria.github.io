@@ -3,15 +3,7 @@
   "version": "0.2.0",
   "fhirVersion": "4.0.1",
   "jurisdiction": "AT",
-  "extensions": [
-    {
-      "url": "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-ext-immunization-basedOn",
-      "title": "Immunization basedOn",
-      "types": [
-        "Reference"
-      ]
-    }
-  ],
+  "extensions": [],
   "profiles": {
     "AllergyIntolerance": [
       {
@@ -204,6 +196,7 @@
   },
   "usage": {
     "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation": [
+      "Organization.address.line",
       "Patient.address.line",
       "Patient.contact.address.line"
     ],
@@ -219,8 +212,8 @@
     "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-patient-religion": [
       "Patient"
     ],
-    "http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement": [
-      "AllergyIntolerance"
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-Immunization.basedOn": [
+      "Immunization"
     ],
     "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation": [
       "CapabilityStatement.rest.resource",
@@ -247,14 +240,17 @@
       "StructureDefinition.snapshot.element"
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator": [
+      "Organization.address.line",
       "Patient.address.line",
       "Patient.contact.address.line"
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber": [
+      "Organization.address.line",
       "Patient.address.line",
       "Patient.contact.address.line"
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName": [
+      "Organization.address.line",
       "Patient.address.line",
       "Patient.contact.address.line"
     ],
@@ -274,6 +270,7 @@
       "StructureDefinition.snapshot.element.type"
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy": [
+      "StructureDefinition.differential.element.type",
       "StructureDefinition.snapshot.element.type"
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile": [
@@ -283,11 +280,15 @@
       "CarePlan"
     ],
     "http://hl7.org/fhir/StructureDefinition/workflow-shallComplyWith": [
+      "Bundle.entry.resource",
       "CarePlan"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/additional-binding": [
       "StructureDefinition.differential.element.binding",
       "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters": [
+      "ImplementationGuide.definition"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
       "ImplementationGuide.definition"
@@ -307,9 +308,6 @@
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version": [
       "StructureDefinition.snapshot"
-    ],
-    "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-ext-immunization-basedOn": [
-      "Immunization"
     ]
   }
 }

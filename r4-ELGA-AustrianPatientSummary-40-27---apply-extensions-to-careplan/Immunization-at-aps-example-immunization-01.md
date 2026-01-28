@@ -13,6 +13,40 @@
       "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-immunization"
     ]
   },
+  "contained" : [
+    {
+      "resourceType" : "ServiceRequest",
+      "id" : "ExampleServiceRequest01",
+      "status" : "active",
+      "intent" : "order",
+      "code" : {
+        "coding" : [
+          {
+            "system" : "http://snomed.info/sct",
+            "code" : "390865008"
+          }
+        ]
+      },
+      "subject" : {
+        "reference" : "Patient/at-aps-example-patient-01",
+        "display" : "Max Mustermann"
+      },
+      "occurrenceDateTime" : "2021-10-01",
+      "note" : [
+        {
+          "text" : "Patient hat Angst vor Spritzen."
+        }
+      ]
+    }
+  ],
+  "extension" : [
+    {
+      "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-Immunization.basedOn",
+      "valueReference" : {
+        "reference" : "#ExampleServiceRequest01"
+      }
+    }
+  ],
   "status" : "completed",
   "vaccineCode" : {
     "coding" : [
@@ -42,7 +76,7 @@
     {
       "actor" : {
         "reference" : "Practitioner/at-aps-example-practitioner-01",
-        "display" : "Dr. Hanna Hausärztin"
+        "display" : "Hanna Hausärztin"
       }
     }
   ],

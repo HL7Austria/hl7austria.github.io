@@ -52,7 +52,7 @@ con-5","ele-1:All FHIR elements must have a @value or children {hasValue() or (c
 ","< 272141005 |Severities|","PRB-26 / ABS-3","Can be pre/post-coordinated into value.  Or ./inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=""severity""].value","FiveWs.grade","246112005"
 "Condition.code","Condition.code","","type
 ","",0,1,"","","Y","CodeableConcept {[]} {[]}
-","Identification of the condition, problem or diagnosis","Identification of the condition, problem or diagnosis.","","0..1 to account for primarily narrative only resources.","","","","","","","",,"extensible","","https://fhir.hl7.at/elga/aps/r4/ValueSet/at-aps-problems","",,,,"Condition.code",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","Identification of the condition, problem or diagnosis","Identification of the condition, problem or diagnosis.","","0..1 to account for primarily narrative only resources.","","","","","","","",,"extensible","","http://hl7.org/fhir/uv/ips/ValueSet/problems-uv-ips","",,,,"Condition.code",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.code","code 246090004 |Associated finding| (< 404684003 |Clinical finding| MINUS
 << 420134006 |Propensity to adverse reactions| MINUS 
 << 473010000 |Hypersensitivity condition| MINUS 
@@ -83,10 +83,10 @@ Age {[]} {[]}Period {[]} {[]}Range {[]} {[]}string {[]} {[]}","When in resolutio
 "Condition.recordedDate","Condition.recordedDate","","","",0,1,"","","Y","dateTime {[]} {[]}
 ","Date record was first recorded","The recordedDate represents when this particular Condition record was created in the system, which is often a system-generated date.","","","","","","","","","",,,,,"",,,,"Condition.recordedDate",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","REL-11",".participation[typeCode=AUT].time","FiveWs.recorded"
-"Condition.recorder","Condition.recorder","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1], CanonicalType[http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1], CanonicalType[http://hl7.org/fhir/StructureDefinition/Patient|4.0.1], CanonicalType[http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1]]}
+"Condition.recorder","Condition.recorder","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient], CanonicalType[http://hl7.org/fhir/StructureDefinition/RelatedPerson]]}
 ","Who recorded the condition","Individual who recorded the record and takes responsibility for its content.","","","","","","","","","",,,,,"",,,,"Condition.recorder",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".participation[typeCode=AUT].role","FiveWs.author"
-"Condition.asserter","Condition.asserter","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1], CanonicalType[http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1], CanonicalType[http://hl7.org/fhir/StructureDefinition/Patient|4.0.1], CanonicalType[http://hl7.org/fhir/StructureDefinition/RelatedPerson|4.0.1]]}
+"Condition.asserter","Condition.asserter","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient], CanonicalType[http://hl7.org/fhir/StructureDefinition/RelatedPerson]]}
 ","Person who asserts this condition","Individual who is making the condition statement.","","","","","","","","","",,,,,"",,,,"Condition.asserter",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","REL-7.1 identifier + REL-7.12 type code",".participation[typeCode=INF].role","FiveWs.source"
 "Condition.stage","Condition.stage","","","",0,*,"","","","BackboneElement {[]} {[]}
@@ -108,7 +108,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Simple summary (disease specific)","A simple summary of the stage such as ""Stage 3"". The determination of the stage is disease-specific.","","","","","","","","","",,"example","Codes describing condition stages (e.g. Cancer stages).","http://hl7.org/fhir/ValueSet/condition-stage|4.0.1","",,,,"Condition.stage.summary",0,1,"con-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","< 254291000 |Staging and scales|","PRB-14",".value"
-"Condition.stage.assessment","Condition.stage.assessment","","","",0,*,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/ClinicalImpression|4.0.1], CanonicalType[http://hl7.org/fhir/StructureDefinition/DiagnosticReport|4.0.1], CanonicalType[http://hl7.org/fhir/StructureDefinition/Observation|4.0.1]]}
+"Condition.stage.assessment","Condition.stage.assessment","","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-clinicalimpression], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-diagnosticreport], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation]]}
 ","Formal record of assessment","Reference to a formal record of the evidence on which the staging assessment is based.","","","","","","","","","",,,,,"",,,,"Condition.stage.assessment",0,*,"con-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".self"

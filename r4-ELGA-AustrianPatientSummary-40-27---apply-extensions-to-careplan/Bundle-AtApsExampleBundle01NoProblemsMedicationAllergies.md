@@ -283,6 +283,11 @@
       "resource" : {
         "resourceType" : "Device",
         "id" : "AtApsExampleBundle01-author",
+        "meta" : {
+          "profile" : [
+            "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-device"
+          ]
+        },
         "text" : {
           "status" : "additional",
           "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Device_AtApsExampleBundle01-author\"> </a><p>Dieses Gerät erzeugt ein APS FHIR-Dokument.</p></div>"
@@ -291,6 +296,11 @@
           {
             "name" : "APS Generator",
             "type" : "user-friendly-name"
+          }
+        ],
+        "version" : [
+          {
+            "value" : "1.0.0"
           }
         ]
       }

@@ -13,8 +13,8 @@
       "uses" : {
       },
       "StructureDefinition-at-aps-procedure.html" : "AT APS Procedure",
-      "StructureDefinition-at-aps-condition.html" : "AT APS Condition",
-      "StructureDefinition-at-aps-specimen.html" : "AT APS Specimen"
+      "StructureDefinition-at-aps-specimen.html" : "AT APS Specimen",
+      "StructureDefinition-at-aps-condition.html" : "AT APS Condition"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/observation-interpretation",
@@ -40,6 +40,18 @@
       "title" : "Problem Type - IPS",
       "description" : "This value set provides a category for the condition as a clinical problem for inclusion in the patient summary.",
       "systems" : ["http://terminology.hl7.org/CodeSystem/condition-category"],
+      "uses" : {
+      },
+      "StructureDefinition-at-aps-condition.html" : "AT APS Condition"
+    },
+    {
+      "url" : "http://hl7.org/fhir/uv/ips/ValueSet/problems-uv-ips",
+      "version" : "2.0.0",
+      "status" : "active",
+      "name" : "ProblemsUvIps",
+      "title" : "Problems - IPS",
+      "description" : "IPS Problem (Condition) codes value set.  This value set includes codes from SNOMED CT®: all descendants of 404684003 \\|Clinical finding (finding)\\|; all descendants of 243796009 \\|Situation with explicit context (situation)\\|; all descendants of 272379006 \\|Event (event)\\|; all descendants or self of 160245001 \\|No current problems or disability (situation)\\|.  The descendants of 71388002 \\|Procedure (procedure)\\| (which were included in the CORE problem list) are not included, as they are expected to be represented separately in the History of Procedures Section.\n\nSNOMED CT® ECL definition:\\\n< 404684003 \\|Clinical finding (finding)\\| OR < 243796009 \\|Situation with explicit context (situation)\\| OR < 272379006 \\|Event (event)\\| OR \\<\\< 160245001 \\|No current problems or disability (situation)\\|",
+      "systems" : ["http://snomed.info/sct"],
       "uses" : {
       },
       "StructureDefinition-at-aps-condition.html" : "AT APS Condition"
@@ -95,25 +107,6 @@
       "uses" : {
       },
       "StructureDefinition-at-aps-observationresultslaboratorypathology.html" : "AT APS Observation Results Laboratory Pathology"
-    },
-    {
-      "url" : "https://fhir.hl7.at/elga/aps/r4/ValueSet/at-aps-problems",
-      "version" : "0.2.0",
-      "status" : "active",
-      "name" : "AtApsProblems",
-      "title" : "AT APS Problems",
-      "description" : "Dieses Value-Set ist eine Sammlung von möglichen Quellen für die Dokumentation von Problemen/Diagnosen.",
-      "systems" : [
-        "https://termgit.elga.gv.at/CodeSystem/icd-10-bmsgpk-2025",
-        "https://termgit.elga.gv.at/CodeSystem/lkat-bmsgpk-2025",
-        "https://termgit.elga.gv.at/CodeSystem/icf",
-        "http://loinc.org",
-        "https://termgit.elga.gv.at/CodeSystem/icpc2",
-        "http://snomed.info/sct"
-      ],
-      "uses" : {
-      },
-      "StructureDefinition-at-aps-condition.html" : "AT APS Condition"
     }
   ]
 }

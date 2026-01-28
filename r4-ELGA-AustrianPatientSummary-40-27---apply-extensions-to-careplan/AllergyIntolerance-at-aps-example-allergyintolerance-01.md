@@ -13,12 +13,6 @@
       "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-allergyintolerance"
     ]
   },
-  "extension" : [
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement",
-      "valueDateTime" : "2020"
-    }
-  ],
   "clinicalStatus" : {
     "coding" : [
       {

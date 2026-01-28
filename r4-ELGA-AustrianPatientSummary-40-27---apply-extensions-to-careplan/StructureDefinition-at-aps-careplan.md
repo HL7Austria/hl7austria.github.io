@@ -13,7 +13,7 @@
   "name" : "AtApsCarePlan",
   "title" : "AT APS CarePlan",
   "status" : "active",
-  "date" : "2025-10-10T07:10:15+00:00",
+  "date" : "2026-01-28T12:36:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -135,6 +135,60 @@
         "max" : "0"
       },
       {
+        "id" : "CarePlan.basedOn",
+        "path" : "CarePlan.basedOn",
+        "type" : [
+          {
+            "extension" : [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy",
+                "valueBoolean" : true
+              }
+            ],
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "CarePlan.replaces",
+        "path" : "CarePlan.replaces",
+        "type" : [
+          {
+            "extension" : [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy",
+                "valueBoolean" : true
+              }
+            ],
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "CarePlan.partOf",
+        "path" : "CarePlan.partOf",
+        "type" : [
+          {
+            "extension" : [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy",
+                "valueBoolean" : true
+              }
+            ],
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan"
+            ]
+          }
+        ]
+      },
+      {
         "id" : "CarePlan.subject",
         "path" : "CarePlan.subject",
         "type" : [
@@ -179,6 +233,38 @@
               "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
               "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization",
               "http://hl7.org/fhir/StructureDefinition/CareTeam"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "CarePlan.addresses",
+        "path" : "CarePlan.addresses",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "CarePlan.activity.reference",
+        "path" : "CarePlan.activity.reference",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://hl7.org/fhir/StructureDefinition/Appointment",
+              "http://hl7.org/fhir/StructureDefinition/CommunicationRequest",
+              "http://hl7.org/fhir/StructureDefinition/DeviceRequest",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationrequest",
+              "http://hl7.org/fhir/StructureDefinition/NutritionOrder",
+              "http://hl7.org/fhir/StructureDefinition/Task",
+              "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
+              "http://hl7.org/fhir/StructureDefinition/VisionPrescription",
+              "http://hl7.org/fhir/StructureDefinition/RequestGroup"
             ]
           }
         ]

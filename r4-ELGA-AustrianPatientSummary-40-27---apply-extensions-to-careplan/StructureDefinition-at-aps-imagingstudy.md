@@ -19,7 +19,7 @@
   "name" : "AtApsImagingStudy",
   "title" : "AT APS ImagingStudy",
   "status" : "active",
-  "date" : "2025-10-10T07:10:15+00:00",
+  "date" : "2026-01-28T12:36:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -101,6 +101,106 @@
             "code" : "Reference",
             "targetProfile" : [
               "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "ImagingStudy.basedOn",
+        "path" : "ImagingStudy.basedOn",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan",
+              "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
+              "http://hl7.org/fhir/StructureDefinition/Appointment",
+              "http://hl7.org/fhir/StructureDefinition/AppointmentResponse",
+              "http://hl7.org/fhir/StructureDefinition/Task"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "ImagingStudy.referrer",
+        "path" : "ImagingStudy.referrer",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "ImagingStudy.interpreter",
+        "path" : "ImagingStudy.interpreter",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "ImagingStudy.procedureReference",
+        "path" : "ImagingStudy.procedureReference",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-procedure"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "ImagingStudy.reasonReference",
+        "path" : "ImagingStudy.reasonReference",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation",
+              "http://hl7.org/fhir/StructureDefinition/Media",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-diagnosticreport",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-documentreference"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "ImagingStudy.series.specimen",
+        "path" : "ImagingStudy.series.specimen",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-specimen"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "ImagingStudy.series.performer.actor",
+        "path" : "ImagingStudy.series.performer.actor",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization",
+              "http://hl7.org/fhir/StructureDefinition/CareTeam",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-device",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
             ]
           }
         ]

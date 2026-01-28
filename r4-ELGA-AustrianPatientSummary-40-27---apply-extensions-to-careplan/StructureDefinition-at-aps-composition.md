@@ -19,7 +19,7 @@
   "name" : "AtApsComposition",
   "title" : "AT APS Composition",
   "status" : "active",
-  "date" : "2025-10-10T07:10:15+00:00",
+  "date" : "2026-01-28T12:36:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -91,7 +91,16 @@
       {
         "id" : "Composition",
         "path" : "Composition",
-        "short" : "AT APS Composition"
+        "short" : "AT APS Composition",
+        "constraint" : [
+          {
+            "key" : "aps-comp-1",
+            "severity" : "error",
+            "human" : "For automatically generated APS an attester is not allowed",
+            "expression" : "(author.resolve().ofType(Device).count() != author.count() or attester.count() = 0)",
+            "source" : "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-composition"
+          }
+        ]
       },
       {
         "id" : "Composition.subject",
@@ -106,9 +115,50 @@
         ]
       },
       {
+        "id" : "Composition.author",
+        "path" : "Composition.author",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-device",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Composition.attester.party",
+        "path" : "Composition.attester.party",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
+      },
+      {
         "id" : "Composition.custodian",
         "path" : "Composition.custodian",
-        "min" : 1
+        "min" : 1,
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
       },
       {
         "id" : "Composition.relatesTo.target[x]",
@@ -120,7 +170,6 @@
           {
             "code" : "Reference",
             "targetProfile" : [
-              "http://hl7.org/fhir/StructureDefinition/Composition",
               "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-composition"
             ]
           }
@@ -140,6 +189,23 @@
           "rules" : "openAtEnd"
         },
         "min" : 5
+      },
+      {
+        "id" : "Composition.section.author",
+        "path" : "Composition.section.author",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-device",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
       },
       {
         "id" : "Composition.section:sectionMedications",

@@ -19,7 +19,7 @@
   "name" : "AtApsPatient",
   "title" : "AT APS Patient",
   "status" : "active",
-  "date" : "2025-10-10T07:10:15+00:00",
+  "date" : "2026-01-28T12:36:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -104,10 +104,68 @@
         "min" : 1
       },
       {
+        "id" : "Patient.identifier.assigner",
+        "path" : "Patient.identifier.assigner",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Patient.identifier:socialSecurityNumber",
+        "path" : "Patient.identifier",
+        "sliceName" : "socialSecurityNumber"
+      },
+      {
+        "id" : "Patient.identifier:socialSecurityNumber.assigner",
+        "path" : "Patient.identifier.assigner",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Patient.identifier:bPK",
+        "path" : "Patient.identifier",
+        "sliceName" : "bPK"
+      },
+      {
+        "id" : "Patient.identifier:bPK.assigner",
+        "path" : "Patient.identifier.assigner",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
+      },
+      {
         "id" : "Patient.identifier:localPatientId",
         "path" : "Patient.identifier",
         "sliceName" : "localPatientId",
         "min" : 1
+      },
+      {
+        "id" : "Patient.identifier:localPatientId.assigner",
+        "path" : "Patient.identifier.assigner",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
       },
       {
         "id" : "Patient.name.family",
@@ -123,6 +181,63 @@
         "id" : "Patient.birthDate",
         "path" : "Patient.birthDate",
         "min" : 1
+      },
+      {
+        "id" : "Patient.contact.organization",
+        "path" : "Patient.contact.organization",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Patient.generalPractitioner",
+        "path" : "Patient.generalPractitioner",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Patient.managingOrganization",
+        "path" : "Patient.managingOrganization",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Patient.link.other",
+        "path" : "Patient.link.other",
+        "type" : [
+          {
+            "extension" : [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy",
+                "valueBoolean" : false
+              }
+            ],
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
+            ]
+          }
+        ]
       }
     ]
   }
