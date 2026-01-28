@@ -1,14 +1,9 @@
-# Home - HL7® Austria TC FHIR® Messaging v0.1.0
+# HL7.AT.FHIR.MESSAGING.R5\Home - FHIR® v5.0.0
 
 * [**Table of Contents**](toc.md)
 * **Home**
 
 ## Home
-
-| | |
-| :--- | :--- |
-| *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ImplementationGuide/hl7.at.fhir.messaging.r5 | *Version*:0.1.0 |
-| Draft as of 2026-01-28 | *Computable Name*:ATMessaging |
 
 # ATMessaging
 
@@ -27,7 +22,7 @@ Feel free to modify this index page with your own awesome content!
   "name" : "ATMessaging",
   "title" : "HL7® Austria TC FHIR® Messaging",
   "status" : "draft",
-  "date" : "2026-01-28T09:37:24+00:00",
+  "date" : "2026-01-28T12:34:00+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [
     {

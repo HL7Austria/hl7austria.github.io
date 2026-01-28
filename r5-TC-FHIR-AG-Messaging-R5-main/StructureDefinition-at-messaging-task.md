@@ -1,4 +1,4 @@
-# AT Messaging Task - HL7® Austria TC FHIR® Messaging v0.1.0
+# HL7.AT.FHIR.MESSAGING.R5\AT Messaging Task - FHIR® v5.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -6,10 +6,10 @@
 
 ## Resource Profile: AT Messaging Task 
 
-| | |
-| :--- | :--- |
-| *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-task | *Version*:0.1.0 |
-| Draft as of 2026-01-28 | *Computable Name*:ATMessagingTask |
+| | | | |
+| :--- | :--- | :--- | :--- |
+| *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-task | *Version*:0.1.0 | | |
+| Draft as of 2026-01-28 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Realm:*![](assets/images/aut.svg) | *Computable Name*:ATMessagingTask |
 
  
 Task to be used for all service status messages transfered with the AT FHIR messaging. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-messaging-task.cs
   "name" : "ATMessagingTask",
   "title" : "AT Messaging Task",
   "status" : "draft",
-  "date" : "2026-01-28T09:37:24+00:00",
+  "date" : "2026-01-28T12:34:00+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [
     {

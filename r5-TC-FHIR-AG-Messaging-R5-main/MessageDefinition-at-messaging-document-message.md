@@ -1,4 +1,4 @@
-# Document transfer over directed messaging. - HL7® Austria TC FHIR® Messaging v0.1.0
+# HL7.AT.FHIR.MESSAGING.R5\Document transfer over directed messaging. - FHIR® v5.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -6,10 +6,10 @@
 
 ## MessageDefinition: Document transfer over directed messaging. 
 
-| | |
-| :--- | :--- |
-| *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-document-message | *Version*:0.1.0 |
-| Draft as of 2026-01-21 | *Computable Name*:ATMessagingDocumentMessage |
+| | | | |
+| :--- | :--- | :--- | :--- |
+| *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-document-message | *Version*:0.1.0 | | |
+| Draft as of 2026-01-21 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Realm:*![](assets/images/aut.svg) | *Computable Name*:ATMessagingDocumentMessage |
 
  
 Regulates the resources to be used in a directed message when transferring a document. 

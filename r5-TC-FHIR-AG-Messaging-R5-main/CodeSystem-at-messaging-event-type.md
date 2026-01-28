@@ -1,4 +1,4 @@
-# ATMessagingEventType - HL7® Austria TC FHIR® Messaging v0.1.0
+# HL7.AT.FHIR.MESSAGING.R5\ATMessagingEventType - FHIR® v5.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -6,10 +6,10 @@
 
 ## CodeSystem: ATMessagingEventType 
 
-| | |
-| :--- | :--- |
-| *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-event-type | *Version*:0.1.0 |
-| Draft as of 2026-01-28 | *Computable Name*:ATMessagingEventType |
+| | | | |
+| :--- | :--- | :--- | :--- |
+| *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-event-type | *Version*:0.1.0 | | |
+| Draft as of 2026-01-28 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Realm:*![](assets/images/aut.svg) | *Computable Name*:ATMessagingEventType |
 
  
 Event Coding for discriminating messages on the receiver. 
@@ -30,7 +30,7 @@ Event Coding for discriminating messages on the receiver.
   "version" : "0.1.0",
   "name" : "ATMessagingEventType",
   "status" : "draft",
-  "date" : "2026-01-28T09:37:24+00:00",
+  "date" : "2026-01-28T12:34:00+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [
     {
