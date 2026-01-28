@@ -1,0 +1,106 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-document-message> a fhir:MessageDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "at-messaging-document-message"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: MessageDefinition at-messaging-document-message</b></p><a name=\"at-messaging-document-message\"> </a><a name=\"hcat-messaging-document-message\"> </a><p><b>url</b>: <a href=\"MessageDefinition-at-messaging-document-message.html\">MessageDefinition Document transfer over directed messaging.</a></p><p><b>version</b>: 0.1.0</p><p><b>versionAlgorithm</b>: <a href=\"http://hl7.org/fhir/R5/codesystem-version-algorithm.html#version-algorithm-semver\">Version Algorithm: semver</a> (SemVer)</p><p><b>name</b>: ATMessagingDocumentMessage</p><p><b>title</b>: Document transfer over directed messaging.</p><p><b>status</b>: Draft</p><p><b>date</b>: 2026-01-21</p><p><b>publisher</b>: HL7® Austria, TC FHIR®</p><p><b>contact</b>: HL7® Austria, TC FHIR®: <a href=\"https://hl7.at/technische-komitees/tc-fhir/\">https://hl7.at/technische-komitees/tc-fhir/</a>,<a href=\"mailto:tc-fhir@hl7.at\">tc-fhir@hl7.at</a>, Technical Committee for FHIR® at HL7® Austria: <a href=\"mailto:tc-fhir@hl7.at\">tc-fhir@hl7.at</a></p><p><b>description</b>: </p><div><p>Regulates the resources to be used in a directed message when transferring a document.</p>\n</div><p><b>jurisdiction</b>: <span title=\"Codes:{urn:iso:std:iso:3166 AT}\">Austria</span></p><p><b>event</b>: <a href=\"CodeSystem-at-messaging-event-type.html#at-messaging-event-type-document\">ATMessagingEventType: document</a> (A document is sent.)</p><p><b>category</b>: Consequence</p><blockquote><p><b>focus</b></p><p><b>code</b>: DocumentReference</p><p><b>profile</b>: <a href=\"https://profiles.ihe.net/ITI/MHD/5.0.0/StructureDefinition-IHE.MHD.SimplifiedPublish.DocumentReference.html\">MHD DocumentReference for Simplified Publish</a></p><p><b>min</b>: 1</p><p><b>max</b>: 1</p></blockquote><blockquote><p><b>focus</b></p><p><b>code</b>: Patient</p><p><b>profile</b>: <a href=\"http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/2.0.0/StructureDefinition-at-core-patient.html\">HL7® AT Core Patient Profile</a></p><p><b>min</b>: 1</p><p><b>max</b>: 1</p></blockquote><blockquote><p><b>focus</b></p><p><b>code</b>: Encounter</p><p><b>min</b>: 0</p><p><b>max</b>: 1</p></blockquote><blockquote><p><b>allowedResponse</b></p><p><b>message</b>: <a href=\"MessageDefinition-at-messaging-communication-message.html\">Communication over directed messaging.</a></p><p><b>situation</b>: </p><div><p>As soon as the receiving system has processed the message successfully and further communication needed.</p>\n</div></blockquote><blockquote><p><b>allowedResponse</b></p><p><b>message</b>: <a href=\"MessageDefinition-at-messaging-document-message.html\">Document transfer over directed messaging.</a></p><p><b>situation</b>: </p><div><p>As soon as the receiving system has processed the message successfully when the result of the ServiceRequest is available and can be transfered to the requesting party.</p>\n</div></blockquote></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-document-message"^^xsd:anyURI ;
+     fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-document-message>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:versionAlgorithm [
+     a fhir:Coding ;
+     fhir:system [
+       fhir:v "http://hl7.org/fhir/version-algorithm"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/version-algorithm>
+     ] ;
+     fhir:code [ fhir:v "semver" ]
+  ] ; # 
+  fhir:name [ fhir:v "ATMessagingDocumentMessage"] ; # 
+  fhir:title [ fhir:v "Document transfer over directed messaging."] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2026-01-21"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "HL7® Austria, TC FHIR®"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "HL7® Austria, TC FHIR®" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://hl7.at/technische-komitees/tc-fhir/" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "tc-fhir@hl7.at" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Technical Committee for FHIR® at HL7® Austria" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "tc-fhir@hl7.at" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Regulates the resources to be used in a directed message when transferring a document."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "AT" ] ;
+       fhir:display [ fhir:v "Austria" ]
+     ] )
+  ] ) ; # 
+  fhir:event [
+     a fhir:Coding ;
+     fhir:system [
+       fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-event-type"^^xsd:anyURI ;
+       fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-event-type>
+     ] ;
+     fhir:code [ fhir:v "document" ]
+  ] ; # 
+  fhir:category [ fhir:v "consequence"] ; # 
+  fhir:focus ( [
+     fhir:code [ fhir:v "DocumentReference" ] ;
+     fhir:profile [
+       fhir:v "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.SimplifiedPublish.DocumentReference"^^xsd:anyURI ;
+       fhir:l <https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.SimplifiedPublish.DocumentReference>
+     ] ;
+     fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
+     fhir:max [ fhir:v "1" ]
+  ] [
+     fhir:code [ fhir:v "Patient" ] ;
+     fhir:profile [
+       fhir:v "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-patient"^^xsd:anyURI ;
+       fhir:l <http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-patient>
+     ] ;
+     fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
+     fhir:max [ fhir:v "1" ]
+  ] [
+     fhir:code [ fhir:v "Encounter" ] ;
+     fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
+     fhir:max [ fhir:v "1" ]
+  ] ) ; # 
+  fhir:allowedResponse ( [
+     fhir:message [
+       fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-communication-message"^^xsd:anyURI ;
+       fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-communication-message>
+     ] ;
+     fhir:situation [ fhir:v "As soon as the receiving system has processed the message successfully and further communication needed." ]
+  ] [
+     fhir:message [
+       fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-document-message"^^xsd:anyURI ;
+       fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-document-message>
+     ] ;
+     fhir:situation [ fhir:v "As soon as the receiving system has processed the message successfully when the result of the ServiceRequest is available and can be transfered to the requesting party." ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

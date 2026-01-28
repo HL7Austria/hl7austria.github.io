@@ -1,0 +1,151 @@
+# Service request over directed messaging. - HL7® Austria TC FHIR® Messaging v0.1.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Service request over directed messaging.**
+
+## MessageDefinition: Service request over directed messaging. 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-servicerequest-message | *Version*:0.1.0 |
+| Draft as of 2026-01-21 | *Computable Name*:ATMessagingServiceRequestMessage |
+
+ 
+Regulates the resources to be used in a directed message when performing a ServiceRequest. 
+
+**url**: [MessageDefinition Service request over directed messaging.](MessageDefinition-at-messaging-servicerequest-message.md)
+
+**version**: 0.1.0
+
+**versionAlgorithm**: [Version Algorithm: semver](http://hl7.org/fhir/R5/codesystem-version-algorithm.html#version-algorithm-semver) (SemVer)
+
+**name**: ATMessagingServiceRequestMessage
+
+**title**: Service request over directed messaging.
+
+**status**: Draft
+
+**date**: 2026-01-21
+
+**publisher**: HL7® Austria, TC FHIR®
+
+**contact**: HL7® Austria, TC FHIR®: [https://hl7.at/technische-komitees/tc-fhir/](https://hl7.at/technische-komitees/tc-fhir/),[tc-fhir@hl7.at](mailto:tc-fhir@hl7.at), Technical Committee for FHIR® at HL7® Austria: [tc-fhir@hl7.at](mailto:tc-fhir@hl7.at)
+
+**description**: 
+
+Regulates the resources to be used in a directed message when performing a ServiceRequest.
+
+**jurisdiction**: Austria
+
+**event**: [ATMessagingEventType: request](CodeSystem-at-messaging-event-type.md#at-messaging-event-type-request) (Message to initiate a workflow to request an action or a communication.)
+
+**category**: Consequence
+
+> **focus****code**: ServiceRequest**min**: 1**max**: 1
+
+> **focus****code**: Patient**profile**: [HL7® AT Core Patient Profile](http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/2.0.0/StructureDefinition-at-core-patient.html)**min**: 1**max**: 1
+
+> **focus****code**: Encounter**min**: 0**max**: 1
+
+> **allowedResponse****message**: [Service status update over directed messaging.](MessageDefinition-at-messaging-service-status-message.md)**situation**: 
+
+As soon as the receiving system has processed the message successfully when the result of the ServiceRequest cannot be fulfilled, is not (yet) available and in error cases.
+
+
+> **allowedResponse****message**: [Document transfer over directed messaging.](MessageDefinition-at-messaging-document-message.md)**situation**: 
+
+As soon as the receiving system has processed the message successfully when the result of the ServiceRequest is available and can be transfered to the requesting party.
+
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "MessageDefinition",
+  "id" : "at-messaging-servicerequest-message",
+  "url" : "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-servicerequest-message",
+  "version" : "0.1.0",
+  "versionAlgorithmCoding" : {
+    "system" : "http://hl7.org/fhir/version-algorithm",
+    "code" : "semver"
+  },
+  "name" : "ATMessagingServiceRequestMessage",
+  "title" : "Service request over directed messaging.",
+  "status" : "draft",
+  "date" : "2026-01-21",
+  "publisher" : "HL7® Austria, TC FHIR®",
+  "contact" : [
+    {
+      "name" : "HL7® Austria, TC FHIR®",
+      "telecom" : [
+        {
+          "system" : "url",
+          "value" : "https://hl7.at/technische-komitees/tc-fhir/"
+        },
+        {
+          "system" : "email",
+          "value" : "tc-fhir@hl7.at"
+        }
+      ]
+    },
+    {
+      "name" : "Technical Committee for FHIR® at HL7® Austria",
+      "telecom" : [
+        {
+          "system" : "email",
+          "value" : "tc-fhir@hl7.at"
+        }
+      ]
+    }
+  ],
+  "description" : "Regulates the resources to be used in a directed message when performing a ServiceRequest.",
+  "jurisdiction" : [
+    {
+      "coding" : [
+        {
+          "system" : "urn:iso:std:iso:3166",
+          "code" : "AT",
+          "display" : "Austria"
+        }
+      ]
+    }
+  ],
+  "eventCoding" : {
+    "system" : "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-event-type",
+    "code" : "request"
+  },
+  "category" : "consequence",
+  "focus" : [
+    {
+      "code" : "ServiceRequest",
+      "min" : 1,
+      "max" : "1"
+    },
+    {
+      "code" : "Patient",
+      "profile" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-patient",
+      "min" : 1,
+      "max" : "1"
+    },
+    {
+      "code" : "Encounter",
+      "min" : 0,
+      "max" : "1"
+    }
+  ],
+  "allowedResponse" : [
+    {
+      "message" : "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-service-status-message",
+      "situation" : "As soon as the receiving system has processed the message successfully when the result of the ServiceRequest cannot be fulfilled, is not (yet) available and in error cases."
+    },
+    {
+      "message" : "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-document-message",
+      "situation" : "As soon as the receiving system has processed the message successfully when the result of the ServiceRequest is available and can be transfered to the requesting party."
+    }
+  ]
+}
+
+```
