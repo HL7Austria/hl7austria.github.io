@@ -46,8 +46,9 @@ This Implementation Guide contains and references intellectual property owned by
   "url" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ImplementationGuide/hl7.at.fhir.tc.wg.scheduling.r5",
   "version" : "0.2.0",
   "name" : "TCFHIRAGSchedulingR5",
+  "title" : "Austrian Appointment Scheduling (R5)",
   "status" : "draft",
-  "date" : "2026-01-28T07:44:30+00:00",
+  "date" : "2026-01-28T08:46:49+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "packageId" : "hl7.at.fhir.tc.wg.scheduling.r5",
   "license" : "CC0-1.0",
@@ -449,6 +450,12 @@ This Implementation Guide contains and references intellectual property owned by
           "sourceUrl" : "index.html",
           "name" : "index.html",
           "title" : "Home",
+          "generation" : "markdown"
+        },
+        {
+          "sourceUrl" : "actors.html",
+          "name" : "actors.html",
+          "title" : "Actors",
           "generation" : "markdown"
         },
         {

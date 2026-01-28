@@ -194,7 +194,7 @@ HTTP 200 OK
   "name" : "Book_Appointment_Operation",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-01-28T07:44:30+00:00",
+  "date" : "2026-01-28T08:46:49+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactions. This operation completes the booking of an appointment. The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the book request and updates the resource status accordingly. ",
   "affectsState" : true,
