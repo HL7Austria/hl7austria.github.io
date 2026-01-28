@@ -1,0 +1,76 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/Slot/HL7ATSchedulingSlotExample03-selectable-encounterClass> a fhir:Slot ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "HL7ATSchedulingSlotExample03-selectable-encounterClass"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot"^^xsd:anyURI ;
+       fhir:l <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Slot HL7ATSchedulingSlotExample03-selectable-encounterClass</b></p><a name=\"HL7ATSchedulingSlotExample03-selectable-encounterClass\"> </a><a name=\"hcHL7ATSchedulingSlotExample03-selectable-encounterClass\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-scheduling-slot.html\">HL7® AT Scheduling Slot Profile</a></p></div><p><b>Slot Encounter Class</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ActCode VR}\">virtual</span></p><p><b>Slot Encounter Class</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ActCode AMB}\">ambulatory</span></p><h3>ServiceTypes</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Concept</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType 65}\">Physiotherapy</span></td></tr></table><p><b>schedule</b>: <a href=\"Schedule-HL7ATSchedulingScheduleExample01.html\">Schedule: planningHorizon = 2025-05-19 09:00:00+0200 --&gt; 2025-05-23 17:00:00+0200</a></p><p><b>status</b>: Free</p><p><b>start</b>: 2025-09-15 08:00:00+0000</p><p><b>end</b>: 2025-09-15 09:00:00+0000</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/slot-encounter-class"^^xsd:anyURI ;
+       fhir:l <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/slot-encounter-class>
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActCode>
+         ] ;
+         fhir:code [ fhir:v "VR" ] ;
+         fhir:display [ fhir:v "virtual" ]
+       ] )
+     ]
+  ] [
+     fhir:url [
+       fhir:v "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/slot-encounter-class"^^xsd:anyURI ;
+       fhir:l <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/slot-encounter-class>
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActCode>
+         ] ;
+         fhir:code [ fhir:v "AMB" ] ;
+         fhir:display [ fhir:v "ambulatory" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:serviceType ( [
+     fhir:concept [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType"^^xsd:anyURI ;
+           fhir:l <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType>
+         ] ;
+         fhir:code [ fhir:v "65" ] ;
+         fhir:display [ fhir:v "Physiotherapy" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:schedule [
+     fhir:l <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/Schedule/HL7ATSchedulingScheduleExample01> ;
+     fhir:reference [ fhir:v "Schedule/HL7ATSchedulingScheduleExample01" ]
+  ] ; # 
+  fhir:status [ fhir:v "free"] ; # 
+  fhir:start [ fhir:v "2025-09-15T08:00:00Z"^^xsd:dateTime] ; # 
+  fhir:end [ fhir:v "2025-09-15T09:00:00Z"^^xsd:dateTime] . # 
+
+# -------------------------------------------------------------------------------------
+
