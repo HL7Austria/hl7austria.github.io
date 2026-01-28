@@ -60,7 +60,7 @@
   },
   "patient" : {
     "reference" : "Patient/at-aps-example-patient-01",
-    "display" : "Max Mustermann"
+    "display" : "Maria Musterfrau"
   },
   "occurrenceDateTime" : "2021-10-01",
   "route" : {
@@ -76,7 +76,7 @@
     {
       "actor" : {
         "reference" : "Practitioner/at-aps-example-practitioner-01",
-        "display" : "Dr. Hanna Hausärztin"
+        "display" : "Hanna Hausärztin"
       }
     }
   ],

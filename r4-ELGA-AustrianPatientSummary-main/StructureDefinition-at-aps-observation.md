@@ -13,7 +13,7 @@
   "name" : "AtApsObservation",
   "title" : "AT APS Observation",
   "status" : "active",
-  "date" : "2025-11-18T10:23:29+00:00",
+  "date" : "2026-01-28T10:05:57+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -93,6 +93,40 @@
         "short" : "AT APS Observation"
       },
       {
+        "id" : "Observation.basedOn",
+        "path" : "Observation.basedOn",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan",
+              "http://hl7.org/fhir/StructureDefinition/DeviceRequest",
+              "http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationrequest",
+              "http://hl7.org/fhir/StructureDefinition/NutritionOrder",
+              "http://hl7.org/fhir/StructureDefinition/ServiceRequest"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Observation.partOf",
+        "path" : "Observation.partOf",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationadministration",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationdispense",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationstatement",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-procedure",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-immunization",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-imagingstudy"
+            ]
+          }
+        ]
+      },
+      {
         "id" : "Observation.subject",
         "path" : "Observation.subject",
         "type" : [
@@ -101,8 +135,81 @@
             "targetProfile" : [
               "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
               "http://hl7.org/fhir/StructureDefinition/Group",
-              "http://hl7.org/fhir/StructureDefinition/Device",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-device",
               "http://hl7.org/fhir/StructureDefinition/Location"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Observation.performer",
+        "path" : "Observation.performer",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization",
+              "http://hl7.org/fhir/StructureDefinition/CareTeam",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Observation.specimen",
+        "path" : "Observation.specimen",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-specimen"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Observation.device",
+        "path" : "Observation.device",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-device",
+              "http://hl7.org/fhir/StructureDefinition/DeviceMetric"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Observation.hasMember",
+        "path" : "Observation.hasMember",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation",
+              "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse",
+              "http://hl7.org/fhir/StructureDefinition/MolecularSequence"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Observation.derivedFrom",
+        "path" : "Observation.derivedFrom",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-documentreference",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-imagingstudy",
+              "http://hl7.org/fhir/StructureDefinition/Media",
+              "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation",
+              "http://hl7.org/fhir/StructureDefinition/MolecularSequence"
             ]
           }
         ]

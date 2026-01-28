@@ -19,7 +19,7 @@
   "name" : "AtApsProcedure",
   "title" : "AT APS Procedure",
   "status" : "active",
-  "date" : "2025-11-18T10:23:29+00:00",
+  "date" : "2026-01-28T10:05:57+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -89,6 +89,33 @@
         "short" : "AT APS Procedure"
       },
       {
+        "id" : "Procedure.basedOn",
+        "path" : "Procedure.basedOn",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan",
+              "http://hl7.org/fhir/StructureDefinition/ServiceRequest"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Procedure.partOf",
+        "path" : "Procedure.partOf",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-procedure",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationadministration"
+            ]
+          }
+        ]
+      },
+      {
         "id" : "Procedure.code",
         "path" : "Procedure.code",
         "binding" : {
@@ -104,6 +131,36 @@
             "code" : "Reference",
             "targetProfile" : [
               "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Procedure.recorder",
+        "path" : "Procedure.recorder",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Procedure.asserter",
+        "path" : "Procedure.asserter",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole"
             ]
           }
         ]
@@ -138,6 +195,22 @@
         ]
       },
       {
+        "id" : "Procedure.reasonReference",
+        "path" : "Procedure.reasonReference",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-procedure",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-diagnosticreport",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-documentreference"
+            ]
+          }
+        ]
+      },
+      {
         "id" : "Procedure.bodySite",
         "path" : "Procedure.bodySite",
         "binding" : {
@@ -151,6 +224,58 @@
           "description" : "Codes describing anatomical locations. May include laterality.",
           "valueSet" : "http://hl7.org/fhir/ValueSet/body-site"
         }
+      },
+      {
+        "id" : "Procedure.report",
+        "path" : "Procedure.report",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-diagnosticreport",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-documentreference",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-composition"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Procedure.complicationDetail",
+        "path" : "Procedure.complicationDetail",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Procedure.focalDevice.manipulated",
+        "path" : "Procedure.focalDevice.manipulated",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-device"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Procedure.usedReference",
+        "path" : "Procedure.usedReference",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-device",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medication",
+              "http://hl7.org/fhir/StructureDefinition/Substance"
+            ]
+          }
+        ]
       }
     ]
   }

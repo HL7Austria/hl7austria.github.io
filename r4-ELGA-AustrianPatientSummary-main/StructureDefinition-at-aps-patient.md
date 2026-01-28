@@ -19,7 +19,7 @@
   "name" : "AtApsPatient",
   "title" : "AT APS Patient",
   "status" : "active",
-  "date" : "2025-11-18T10:23:29+00:00",
+  "date" : "2026-01-28T10:05:57+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -123,6 +123,25 @@
         "id" : "Patient.birthDate",
         "path" : "Patient.birthDate",
         "min" : 1
+      },
+      {
+        "id" : "Patient.link.other",
+        "path" : "Patient.link.other",
+        "type" : [
+          {
+            "extension" : [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy",
+                "valueBoolean" : false
+              }
+            ],
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
+            ]
+          }
+        ]
       }
     ]
   }

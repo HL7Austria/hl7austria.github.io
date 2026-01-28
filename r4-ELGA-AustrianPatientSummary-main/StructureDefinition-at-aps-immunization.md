@@ -19,7 +19,7 @@
   "name" : "AtApsImmunization",
   "title" : "AT APS Immunization",
   "status" : "active",
-  "date" : "2025-11-18T10:23:29+00:00",
+  "date" : "2026-01-28T10:05:57+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -180,6 +180,18 @@
         ]
       },
       {
+        "id" : "Immunization.manufacturer",
+        "path" : "Immunization.manufacturer",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
+      },
+      {
         "id" : "Immunization.route",
         "path" : "Immunization.route",
         "binding" : {
@@ -188,9 +200,61 @@
         }
       },
       {
+        "id" : "Immunization.performer.actor",
+        "path" : "Immunization.performer.actor",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Immunization.reasonReference",
+        "path" : "Immunization.reasonReference",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-diagnosticreport"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Immunization.reaction.detail",
+        "path" : "Immunization.reaction.detail",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation"
+            ]
+          }
+        ]
+      },
+      {
         "id" : "Immunization.protocolApplied",
         "path" : "Immunization.protocolApplied",
         "min" : 1
+      },
+      {
+        "id" : "Immunization.protocolApplied.authority",
+        "path" : "Immunization.protocolApplied.authority",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
       },
       {
         "id" : "Immunization.protocolApplied.targetDisease",

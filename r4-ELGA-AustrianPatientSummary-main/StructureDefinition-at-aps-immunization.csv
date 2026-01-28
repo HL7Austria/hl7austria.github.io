@@ -78,7 +78,7 @@ string {[]} {[]}","Vaccine administration date","Date vaccine administered or wa
 "Immunization.location","Immunization.location","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Location|4.0.1]]}
 ","Where immunization occurred","The service delivery location where the vaccine administration occurred.","","","","","","","","","",,,,,"",,,,"Immunization.location",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.location","RXA-27  (or RXA-11, deprecated as of v2.7)",".participation[typeCode=LOC].COCT_MT240000UV","FiveWs.where[x]"
-"Immunization.manufacturer","Immunization.manufacturer","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization|4.0.1]]}
+"Immunization.manufacturer","Immunization.manufacturer","","","",0,1,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization]]}
 ","Vaccine manufacturer","Name of vaccine manufacturer.","","","","","","","","","",,,,,"",,,,"Immunization.manufacturer",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","RXA-17",".participation[typeCode=CSM].role[classCode=INST].scopedRole.scoper[classCode=ORG]","ClinicalDocument/component/StructuredBody/component/section/entry/substanceAdministration/consumable/manfacturedProduct/manufacuturerOrganization/name"
 "Immunization.lotNumber","Immunization.lotNumber","","","",0,1,"","","","string {[]} {[]}
@@ -114,7 +114,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Immunization.performer.function","Immunization.performer.function","","","",0,1,"","","Y","CodeableConcept {[]} {[]}
 ","What type of performance was done","Describes the type of performance (e.g. ordering provider, administering provider, etc.).","","","","","","","","","",,"extensible","The role a practitioner or organization plays in the immunization event.","http://hl7.org/fhir/ValueSet/immunization-function|4.0.1","",,,,"Immunization.performer.function",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.performer.function",".participation.functionCode"
-"Immunization.performer.actor","Immunization.performer.actor","","","",1,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Practitioner|4.0.1], CanonicalType[http://hl7.org/fhir/StructureDefinition/PractitionerRole|4.0.1], CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization|4.0.1]]}
+"Immunization.performer.actor","Immunization.performer.actor","","","",1,1,"","","Y","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization]]}
 ","Individual or organization who was performing","The practitioner or organization who performed the action.","When the individual practitioner who performed the action is known, it is best to send.","","","","","","","","",,,,,"",,,,"Immunization.performer.actor",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.performer.actor",".player","FiveWs.actor"
 "Immunization.note","Immunization.note","","","",0,*,"","","Y","Annotation {[]} {[]}
@@ -123,7 +123,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Immunization.reasonCode","Immunization.reasonCode","","","",0,*,"","","","CodeableConcept {[]} {[]}
 ","Why immunization occurred","Reasons why the vaccine was administered.","","","","","","","","","",,"example","The reason why a vaccine was administered.","http://hl7.org/fhir/ValueSet/immunization-reason|4.0.1","",,,,"Immunization.reasonCode",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.reasonCode","[actionNegationInd=false].reasonCode"
-"Immunization.reasonReference","Immunization.reasonReference","","","",0,*,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Condition|4.0.1], CanonicalType[http://hl7.org/fhir/StructureDefinition/Observation|4.0.1], CanonicalType[http://hl7.org/fhir/StructureDefinition/DiagnosticReport|4.0.1]]}
+"Immunization.reasonReference","Immunization.reasonReference","","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-diagnosticreport]]}
 ","Why immunization occurred","Condition, Observation or DiagnosticReport that supports why the immunization was administered.","","","","","","","","","",,,,,"",,,,"Immunization.reasonReference",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.reasonReference","N/A"
 "Immunization.isSubpotent","Immunization.isSubpotent","","","",0,1,"","Y","Y","boolean {[]} {[]}
@@ -183,7 +183,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Immunization.reaction.date","Immunization.reaction.date","","","",0,1,"","","","dateTime {[]} {[]}
 ","When reaction started","Date of reaction to the immunization.","","","","","","","","","",,,,,"",,,,"Immunization.reaction.date",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","OBX-14 (ideally this would be reported in an IAM segment, but IAM is not part of the HL7 v2 VXU message - most likely would appear in OBX segments if at all)",".effectiveTime"
-"Immunization.reaction.detail","Immunization.reaction.detail","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Observation|4.0.1]]}
+"Immunization.reaction.detail","Immunization.reaction.detail","","","",0,1,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation]]}
 ","Additional information on reaction","Details of the reaction.","","","","","","","","","",,,,,"",,,,"Immunization.reaction.detail",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","OBX-5",".value"
 "Immunization.reaction.reported","Immunization.reaction.reported","","","",0,1,"","","","boolean {[]} {[]}
@@ -207,7 +207,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Immunization.protocolApplied.series","Immunization.protocolApplied.series","","","",0,1,"","","","string {[]} {[]}
 ","Name of vaccine series","One possible path to achieve presumed immunity against a disease - within the context of an authority.","","","","","","","","","",,,,,"",,,,"Immunization.protocolApplied.series",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","N/A"
-"Immunization.protocolApplied.authority","Immunization.protocolApplied.authority","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization|4.0.1]]}
+"Immunization.protocolApplied.authority","Immunization.protocolApplied.authority","","","",0,1,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization]]}
 ","Who is responsible for publishing the recommendations","Indicates the authority who published the protocol (e.g. ACIP) that is being followed.","","","","","","","","","",,,,,"",,,,"Immunization.protocolApplied.authority",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","N/A"
 "Immunization.protocolApplied.targetDisease","Immunization.protocolApplied.targetDisease","","","",1,*,"","","","CodeableConcept {[]} {[]}

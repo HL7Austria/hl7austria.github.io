@@ -19,7 +19,7 @@
   "name" : "AtApsObservationResultsRadiology",
   "title" : "AT APS Observation Results Radiology",
   "status" : "active",
-  "date" : "2025-11-18T10:23:29+00:00",
+  "date" : "2026-01-28T10:05:57+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -118,23 +118,6 @@
             "code" : "Reference",
             "targetProfile" : [
               "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Observation.performer",
-        "path" : "Observation.performer",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole",
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization",
-              "http://hl7.org/fhir/StructureDefinition/CareTeam",
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
-              "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
             ]
           }
         ]

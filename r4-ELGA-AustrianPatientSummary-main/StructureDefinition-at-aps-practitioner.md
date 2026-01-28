@@ -19,7 +19,7 @@
   "name" : "AtApsPractitioner",
   "title" : "AT APS Practitioner",
   "status" : "active",
-  "date" : "2025-11-18T10:23:29+00:00",
+  "date" : "2026-01-28T10:05:57+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -87,6 +87,85 @@
         "id" : "Practitioner",
         "path" : "Practitioner",
         "short" : "AT APS Practitioner"
+      },
+      {
+        "id" : "Practitioner.identifier",
+        "path" : "Practitioner.identifier"
+      },
+      {
+        "id" : "Practitioner.identifier.assigner",
+        "path" : "Practitioner.identifier.assigner",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Practitioner.identifier:GDA-OID",
+        "path" : "Practitioner.identifier",
+        "sliceName" : "GDA-OID"
+      },
+      {
+        "id" : "Practitioner.identifier:GDA-OID.assigner",
+        "path" : "Practitioner.identifier.assigner",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Practitioner.identifier:VPNR",
+        "path" : "Practitioner.identifier",
+        "sliceName" : "VPNR"
+      },
+      {
+        "id" : "Practitioner.identifier:VPNR.assigner",
+        "path" : "Practitioner.identifier.assigner",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Practitioner.identifier:vbPK",
+        "path" : "Practitioner.identifier",
+        "sliceName" : "vbPK"
+      },
+      {
+        "id" : "Practitioner.identifier:vbPK.assigner",
+        "path" : "Practitioner.identifier.assigner",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Practitioner.qualification.issuer",
+        "path" : "Practitioner.qualification.issuer",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
       }
     ]
   }

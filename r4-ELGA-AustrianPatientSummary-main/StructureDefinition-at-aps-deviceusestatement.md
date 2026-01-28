@@ -19,7 +19,7 @@
   "name" : "AtApsDeviceUseStatement",
   "title" : "AT APS DeviceUseStatement",
   "status" : "active",
-  "date" : "2025-11-18T10:23:29+00:00",
+  "date" : "2026-01-28T10:05:57+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -106,6 +106,38 @@
         ]
       },
       {
+        "id" : "DeviceUseStatement.derivedFrom",
+        "path" : "DeviceUseStatement.derivedFrom",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-procedure",
+              "http://hl7.org/fhir/StructureDefinition/Claim",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation",
+              "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-documentreference"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "DeviceUseStatement.source",
+        "path" : "DeviceUseStatement.source",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
+            ]
+          }
+        ]
+      },
+      {
         "id" : "DeviceUseStatement.device",
         "path" : "DeviceUseStatement.device",
         "type" : [
@@ -113,6 +145,22 @@
             "code" : "Reference",
             "targetProfile" : [
               "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-device"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "DeviceUseStatement.reasonReference",
+        "path" : "DeviceUseStatement.reasonReference",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-diagnosticreport",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-documentreference",
+              "http://hl7.org/fhir/StructureDefinition/Media"
             ]
           }
         ]

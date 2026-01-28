@@ -19,7 +19,7 @@
   "name" : "AtApsMedicationStatement",
   "title" : "AT APS MedicationStatement",
   "status" : "active",
-  "date" : "2025-11-18T10:23:29+00:00",
+  "date" : "2026-01-28T10:05:57+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -89,6 +89,36 @@
         "short" : "AT APS MedicationStatement"
       },
       {
+        "id" : "MedicationStatement.basedOn",
+        "path" : "MedicationStatement.basedOn",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationrequest",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan",
+              "http://hl7.org/fhir/StructureDefinition/ServiceRequest"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "MedicationStatement.partOf",
+        "path" : "MedicationStatement.partOf",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationadministration",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationdispense",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationstatement",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-procedure",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation"
+            ]
+          }
+        ]
+      },
+      {
         "id" : "MedicationStatement.medication[x]",
         "path" : "MedicationStatement.medication[x]",
         "type" : [
@@ -111,6 +141,36 @@
             "code" : "Reference",
             "targetProfile" : [
               "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "MedicationStatement.informationSource",
+        "path" : "MedicationStatement.informationSource",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "MedicationStatement.reasonReference",
+        "path" : "MedicationStatement.reasonReference",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-diagnosticreport"
             ]
           }
         ]
