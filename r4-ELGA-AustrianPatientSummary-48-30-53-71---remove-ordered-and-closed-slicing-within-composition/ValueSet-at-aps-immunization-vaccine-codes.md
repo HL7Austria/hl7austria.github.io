@@ -17,7 +17,7 @@
   "title" : "AT APS Immunitzation Vaccine Codes",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-01-28T10:12:59+00:00",
+  "date" : "2026-01-28T10:16:21+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
