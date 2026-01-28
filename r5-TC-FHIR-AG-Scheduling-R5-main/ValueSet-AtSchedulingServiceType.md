@@ -54,7 +54,7 @@ This is a placeholder for a ValueSet of bookable service types. The contained va
   "title" : "AT Scheduling Service Type",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-01-28T07:43:18+00:00",
+  "date" : "2026-01-28T07:44:30+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "This is a placeholder for a ValueSet of bookable service types. The contained value just serves as an example and is not guaranteed to ",
   "compose" : {

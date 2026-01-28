@@ -47,7 +47,7 @@ This Implementation Guide contains and references intellectual property owned by
   "version" : "0.2.0",
   "name" : "TCFHIRAGSchedulingR5",
   "status" : "draft",
-  "date" : "2026-01-28T07:43:18+00:00",
+  "date" : "2026-01-28T07:44:30+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "packageId" : "hl7.at.fhir.tc.wg.scheduling.r5",
   "license" : "CC0-1.0",
