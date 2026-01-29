@@ -1,12 +1,12 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\Example List Medikationsplan 02 - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel Journey 02: Medikationsplan - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Example List Medikationsplan 02**
+* **Beispiel Journey 02: Medikationsplan**
 
-## Example List: Example List Medikationsplan 02
+## Example List: Beispiel Journey 02: Medikationsplan
 
-Profile: [ELGA e-Medikation Medikationsplan](StructureDefinition-at-emed-list-medikationsplan.md)
+Profile: [ELGA e-Med Medikationsplan](StructureDefinition-at-emed-list-medikationsplan.md)
 
 | | | | |
 | :--- | :--- | :--- | :--- |

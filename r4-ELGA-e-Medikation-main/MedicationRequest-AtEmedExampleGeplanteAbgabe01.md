@@ -6,7 +6,7 @@
 
 ## Example MedicationRequest: Beispiel Geplante Abgabe 1
 
-Profile: [ELGA e-Medikation Geplante Abgabe](StructureDefinition-at-emed-mr-geplante-abgabe.md)
+Profile: [ELGA e-Med Geplante Abgabe](StructureDefinition-at-emed-mr-geplante-abgabe.md)
 
 **identifier**: WYE82A2G8EEW-4711
 

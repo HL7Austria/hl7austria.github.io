@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\ELGA e-Medikation MedicationRequest Kategorie ValueSet - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\ELGA e-Med MedicationRequest Kategorie ValueSet - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **ELGA e-Medikation MedicationRequest Kategorie ValueSet**
+* **ELGA e-Med MedicationRequest Kategorie ValueSet**
 
-## ValueSet: ELGA e-Medikation MedicationRequest Kategorie ValueSet (Experimental) 
+## ValueSet: ELGA e-Med MedicationRequest Kategorie ValueSet (Experimental) 
 
 | | | |
 | :--- | :--- | :--- |
@@ -12,12 +12,12 @@
 | Draft as of 2026-01-29 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:MedicationRequestCategoryVS |
 
  
-ValueSet für Zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen 
+**Beschreibung:** ValueSet für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen 
 
  **References** 
 
-* [ELGA e-Medikation Geplante Abgabe](StructureDefinition-at-emed-mr-geplante-abgabe.md)
-* [ELGA e-Medikation Planeintrag](StructureDefinition-at-emed-mr-planeintrag.md)
+* [ELGA e-Med Geplante Abgabe](StructureDefinition-at-emed-mr-geplante-abgabe.md)
+* [ELGA e-Med Planeintrag](StructureDefinition-at-emed-mr-planeintrag.md)
 
 ### Logical Definition (CLD)
 
@@ -49,10 +49,10 @@ ValueSet für Zulässige Ausprägungen der MedicationRequest Kategorie. Dient de
   "url" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/MedicationRequestCategoryVS",
   "version" : "0.1.1",
   "name" : "MedicationRequestCategoryVS",
-  "title" : "ELGA e-Medikation MedicationRequest Kategorie ValueSet",
+  "title" : "ELGA e-Med MedicationRequest Kategorie ValueSet",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-01-29T08:16:48+00:00",
+  "date" : "2026-01-29T15:27:43+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -75,7 +75,7 @@ ValueSet für Zulässige Ausprägungen der MedicationRequest Kategorie. Dient de
       ]
     }
   ],
-  "description" : "ValueSet für Zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen",
+  "description" : "**Beschreibung:** ValueSet für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen",
   "compose" : {
     "include" : [
       {

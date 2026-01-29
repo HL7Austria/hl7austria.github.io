@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\Example Substance Hydrocortison - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel Journey 02: Substance Hydrocortison - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Example Substance Hydrocortison**
+* **Beispiel Journey 02: Substance Hydrocortison**
 
-## Example Substance: Example Substance Hydrocortison
+## Example Substance: Beispiel Journey 02: Substance Hydrocortison
 
 **status**: Active
 

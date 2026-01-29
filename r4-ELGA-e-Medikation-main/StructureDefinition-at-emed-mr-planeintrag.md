@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\ELGA e-Medikation Planeintrag - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\ELGA e-Med Planeintrag - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **ELGA e-Medikation Planeintrag**
+* **ELGA e-Med Planeintrag**
 
-## Resource Profile: ELGA e-Medikation Planeintrag 
+## Resource Profile: ELGA e-Med Planeintrag 
 
 | | | |
 | :--- | :--- | :--- |
@@ -12,12 +12,12 @@
 | Draft as of 2026-01-29 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMRPlaneintrag |
 
  
-**Beschreibung:** Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA Teilnehmers ab. Er enthält genau ein Arzneimittel und dessen Dosierung. Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen (AtEmedMRGeplanteAbgabe). 
+**Beschreibung:** Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA Teilnehmers ab ("MedicationRequest"-Ressource). Er enthält genau ein Arzneimittel und dessen Dosierung. Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet R5 Backport Extensions. 
 
 **Usages:**
 
-* Use this Profile: [ELGA e-Medikation Bundle vom Typ Collection Medikationsplan](StructureDefinition-at-emed-bundle-medikationsplan.md)
-* Refer to this Profile: [ELGA e-Medikation Medikationsplan](StructureDefinition-at-emed-list-medikationsplan.md) and [ELGA e-Medikation Geplante Abgabe](StructureDefinition-at-emed-mr-geplante-abgabe.md)
+* Use this Profile: [ELGA e-Med Medikationsplan Collection Bundle](StructureDefinition-at-emed-bundle-medikationsplan.md) and [ELGA e-Med Medikationsplan Transaction Bundle](StructureDefinition-at-emed-bundle-tx-medikationsplan.md)
+* Refer to this Profile: [ELGA e-Med Medikationsplan](StructureDefinition-at-emed-list-medikationsplan.md) and [ELGA e-Med Geplante Abgabe](StructureDefinition-at-emed-mr-geplante-abgabe.md)
 * Examples for this Profile: [MedicationRequest/AtEmedJourneyMrPlaneintrag0201](MedicationRequest-AtEmedJourneyMrPlaneintrag0201.md) and [MedicationRequest/AtEmedJourneyMrPlaneintrag0202](MedicationRequest-AtEmedJourneyMrPlaneintrag0202.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/at-emed-mr-planeintrag)
@@ -41,9 +41,9 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
   "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag",
   "version" : "0.1.1",
   "name" : "AtEmedMRPlaneintrag",
-  "title" : "ELGA e-Medikation Planeintrag",
+  "title" : "ELGA e-Med Planeintrag",
   "status" : "draft",
-  "date" : "2026-01-29T08:16:48+00:00",
+  "date" : "2026-01-29T15:27:43+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -66,7 +66,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
       ]
     }
   ],
-  "description" : "**Beschreibung:** Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA Teilnehmers ab. \nEr enthält genau ein Arzneimittel und dessen Dosierung.\nKann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen (AtEmedMRGeplanteAbgabe).",
+  "description" : "**Beschreibung:** Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA Teilnehmers ab (\"MedicationRequest\"-Ressource).\nEr enthält genau ein Arzneimittel und dessen Dosierung.\nKann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet R5 Backport Extensions.",
   "fhirVersion" : "4.0.1",
   "mapping" : [
     {

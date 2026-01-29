@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\ELGA e-Medikation Medikationsplan - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\ELGA e-Med Medikationsplan - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **ELGA e-Medikation Medikationsplan**
+* **ELGA e-Med Medikationsplan**
 
-## Resource Profile: ELGA e-Medikation Medikationsplan 
+## Resource Profile: ELGA e-Med Medikationsplan 
 
 | | | |
 | :--- | :--- | :--- |
@@ -12,12 +12,12 @@
 | Draft as of 2026-01-29 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedListMedikationsplan |
 
  
-**Beschreibung:** Bildet den Medikationsplan eines ELGA Teilnehmers ab. Enthält verordnete Arzneimittel und deren Dosierung in Form von 0..* Medikationsplaneinträgen (AtEmedMRPlaneintrag). Die Reihenfolge der Einträge ist fachlich relevant. 
+**Beschreibung:** Bildet den Medikationsplan eines ELGA Teilnehmers ab ("List"-Ressource). Die Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimitteln und deren Dosierung abbilden. Jedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch zu klären). Die Reihenfolge der Listenelemente wird duch den User festgelegt. 
 
 **Usages:**
 
-* Use this Profile: [ELGA e-Medikation Bundle vom Typ Collection Medikationsplan](StructureDefinition-at-emed-bundle-medikationsplan.md)
-* Examples for this Profile: [List/AtEmedJourneyListMedikationsplan02](List-AtEmedJourneyListMedikationsplan02.md) and [List/AtEmedJourneyListMedikationsplanLeer01](List-AtEmedJourneyListMedikationsplanLeer01.md)
+* Use this Profile: [ELGA e-Med Medikationsplan Collection Bundle](StructureDefinition-at-emed-bundle-medikationsplan.md) and [ELGA e-Med Medikationsplan Transaction Bundle](StructureDefinition-at-emed-bundle-tx-medikationsplan.md)
+* Examples for this Profile: [List/AtEmedJourneyListMedikationsplan01](List-AtEmedJourneyListMedikationsplan01.md) and [List/AtEmedJourneyListMedikationsplan02](List-AtEmedJourneyListMedikationsplan02.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/at-emed-list-medikationsplan)
 
@@ -40,9 +40,9 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
   "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan",
   "version" : "0.1.1",
   "name" : "AtEmedListMedikationsplan",
-  "title" : "ELGA e-Medikation Medikationsplan",
+  "title" : "ELGA e-Med Medikationsplan",
   "status" : "draft",
-  "date" : "2026-01-29T08:16:48+00:00",
+  "date" : "2026-01-29T15:27:43+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -65,7 +65,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
       ]
     }
   ],
-  "description" : "**Beschreibung:** Bildet den Medikationsplan eines ELGA Teilnehmers ab. Enthält verordnete Arzneimittel und deren Dosierung in Form von 0..* Medikationsplaneinträgen (AtEmedMRPlaneintrag). Die Reihenfolge der Einträge ist fachlich relevant.",
+  "description" : "**Beschreibung:** Bildet den Medikationsplan eines ELGA Teilnehmers ab (\"List\"-Ressource). \nDie Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimitteln und deren Dosierung abbilden.\nJedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch zu klären). Die Reihenfolge der Listenelemente wird duch den User festgelegt.",
   "fhirVersion" : "4.0.1",
   "mapping" : [
     {
@@ -87,6 +87,12 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
   "differential" : {
     "element" : [
       {
+        "id" : "List.identifier",
+        "path" : "List.identifier",
+        "short" : "Eindeutige Kennung der Liste. Verwendung zu prüfen.",
+        "max" : "1"
+      },
+      {
         "id" : "List.status",
         "path" : "List.status",
         "short" : "Der Medikationsplan ist aktuell: current | retired | entered-in-error. https://hl7.org/fhir/R4/valueset-list-status.html",
@@ -97,7 +103,6 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
         "id" : "List.mode",
         "path" : "List.mode",
         "short" : "Der Medikationsplan ist ein Arbeitsdokument: working | snapshot | changes. https://hl7.org/fhir/R4/valueset-list-mode.html",
-        "patternCode" : "working",
         "mustSupport" : true
       },
       {

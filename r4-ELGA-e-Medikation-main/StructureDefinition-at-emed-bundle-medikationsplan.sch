@@ -13,6 +13,7 @@
     <sch:title>f:Bundle</sch:title>
     <sch:rule context="f:Bundle">
       <sch:assert test="count(f:timestamp) &gt;= 1">timestamp: minimum cardinality of 'timestamp' is 1</sch:assert>
+      <sch:assert test="count(f:link) &lt;= 0">link: maximum cardinality of 'link' is 0</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

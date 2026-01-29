@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\ELGA e-Medikation Medication - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\ELGA e-Med Medikation - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **ELGA e-Medikation Medication**
+* **ELGA e-Med Medikation**
 
-## Resource Profile: ELGA e-Medikation Medication 
+## Resource Profile: ELGA e-Med Medikation 
 
 | | | |
 | :--- | :--- | :--- |
@@ -12,12 +12,12 @@
 | Draft as of 2026-01-29 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedication |
 
  
-Bildet ein Arzneimittel ab, das nicht über eine PZN verfügt (z.B. magistrale Zubereitungen). 
+**Beschreibung:** Bildet ein Arzneimittel ab, das nicht über eine PZN verfügt, z.B. magistrale Zubereitungen ("Medication"-Ressource). 
 
 **Usages:**
 
-* Refer to this Profile: [ELGA e-Medikation Medication](StructureDefinition-at-emed-medication.md), [ELGA e-Medikation Geplante Abgabe](StructureDefinition-at-emed-mr-geplante-abgabe.md) and [ELGA e-Medikation Planeintrag](StructureDefinition-at-emed-mr-planeintrag.md)
-* Examples for this Profile: [Medication/ExampleMedicationMagistral01](Medication-ExampleMedicationMagistral01.md)
+* Refer to this Profile: [ELGA e-Med Medikation](StructureDefinition-at-emed-medication.md), [ELGA e-Med Geplante Abgabe](StructureDefinition-at-emed-mr-geplante-abgabe.md) and [ELGA e-Med Planeintrag](StructureDefinition-at-emed-mr-planeintrag.md)
+* Examples for this Profile: [Medication/AtEmedJourneyMedicationMagistral02](Medication-AtEmedJourneyMedicationMagistral02.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/at-emed-medication)
 
@@ -40,9 +40,9 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
   "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication",
   "version" : "0.1.1",
   "name" : "AtEmedMedication",
-  "title" : "ELGA e-Medikation Medication",
+  "title" : "ELGA e-Med Medikation",
   "status" : "draft",
-  "date" : "2026-01-29T08:16:48+00:00",
+  "date" : "2026-01-29T15:27:43+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -65,7 +65,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
       ]
     }
   ],
-  "description" : "Bildet ein Arzneimittel ab, das nicht über eine PZN verfügt (z.B. magistrale Zubereitungen).",
+  "description" : "**Beschreibung:** Bildet ein Arzneimittel ab, das nicht über eine PZN verfügt, z.B. magistrale Zubereitungen (\"Medication\"-Ressource).",
   "fhirVersion" : "4.0.1",
   "mapping" : [
     {
@@ -145,6 +145,9 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
         "id" : "Medication.ingredient.item[x]",
         "path" : "Medication.ingredient.item[x]",
         "type" : [
+          {
+            "code" : "CodeableConcept"
+          },
           {
             "code" : "Reference",
             "targetProfile" : [

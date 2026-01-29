@@ -1,12 +1,12 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\Example Medikationsplaneintrag 02 01 - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel Journey 02: Medikationsplaneintrag 1 - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Example Medikationsplaneintrag 02 01**
+* **Beispiel Journey 02: Medikationsplaneintrag 1**
 
-## Example MedicationRequest: Example Medikationsplaneintrag 02 01
+## Example MedicationRequest: Beispiel Journey 02: Medikationsplaneintrag 1
 
-Profile: [ELGA e-Medikation Planeintrag](StructureDefinition-at-emed-mr-planeintrag.md)
+Profile: [ELGA e-Med Planeintrag](StructureDefinition-at-emed-mr-planeintrag.md)
 
 **Extension Definition for MedicationRequest.effectiveDosePeriod for Version 5.0**: 2026-01-28 --> 2026-02-28
 

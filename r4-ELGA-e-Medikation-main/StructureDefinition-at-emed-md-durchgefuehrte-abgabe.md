@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\ELGA e-Medikation Durchgeführte Abgabe - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\ELGA e-Med Durchgeführte Abgabe - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **ELGA e-Medikation Durchgeführte Abgabe**
+* **ELGA e-Med Durchgeführte Abgabe**
 
-## Resource Profile: ELGA e-Medikation Durchgeführte Abgabe 
+## Resource Profile: ELGA e-Med Durchgeführte Abgabe 
 
 | | | |
 | :--- | :--- | :--- |
@@ -12,7 +12,7 @@
 | Draft as of 2026-01-29 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMDDurchgefuehrteAbgabe |
 
  
-ELGA e-Medikation Durchgeführte Abgabe 
+**Beschreibung:** ELGA e-Med Durchgeführte Abgabe ("List"-MedicationDispense) - noch anzupassen 
 
 **Usages:**
 
@@ -39,9 +39,9 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
   "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-md-durchgefuehrte-abgabe",
   "version" : "0.1.1",
   "name" : "AtEmedMDDurchgefuehrteAbgabe",
-  "title" : "ELGA e-Medikation Durchgeführte Abgabe",
+  "title" : "ELGA e-Med Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-01-29T08:16:48+00:00",
+  "date" : "2026-01-29T15:27:43+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -64,7 +64,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
       ]
     }
   ],
-  "description" : "ELGA e-Medikation Durchgeführte Abgabe",
+  "description" : "**Beschreibung:** ELGA e-Med Durchgeführte Abgabe (\"List\"-MedicationDispense) - noch anzupassen",
   "fhirVersion" : "4.0.1",
   "mapping" : [
     {

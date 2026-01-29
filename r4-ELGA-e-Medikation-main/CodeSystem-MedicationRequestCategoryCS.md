@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\ELGA e-Medikation MedicationRequest Kategorie CodeSystem - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\ELGA e-Med MedicationRequest Kategorie CodeSystem - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **ELGA e-Medikation MedicationRequest Kategorie CodeSystem**
+* **ELGA e-Med MedicationRequest Kategorie CodeSystem**
 
-## CodeSystem: ELGA e-Medikation MedicationRequest Kategorie CodeSystem (Experimental) 
+## CodeSystem: ELGA e-Med MedicationRequest Kategorie CodeSystem (Experimental) 
 
 | | | |
 | :--- | :--- | :--- |
@@ -12,7 +12,7 @@
 | Active as of 2026-01-29 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:MedicationRequestCategoryCS |
 
  
-Zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen. 
+**Beschreibung:** Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen. 
 
  This Code system is referenced in the content logical definition of the following value sets: 
 
@@ -29,10 +29,10 @@ Zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidu
   "url" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS",
   "version" : "0.1.1",
   "name" : "MedicationRequestCategoryCS",
-  "title" : "ELGA e-Medikation MedicationRequest Kategorie CodeSystem",
+  "title" : "ELGA e-Med MedicationRequest Kategorie CodeSystem",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-01-29T08:16:48+00:00",
+  "date" : "2026-01-29T15:27:43+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -55,7 +55,7 @@ Zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidu
       ]
     }
   ],
-  "description" : "Zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen.",
+  "description" : "**Beschreibung:** Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen.",
   "caseSensitive" : true,
   "content" : "complete",
   "count" : 2,

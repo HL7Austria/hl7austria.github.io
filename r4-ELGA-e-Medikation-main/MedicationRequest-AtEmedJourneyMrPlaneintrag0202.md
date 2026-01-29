@@ -1,12 +1,12 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\Example Medikationsplaneintrag 02 02 - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel Journey 02: Medikationsplaneintrag 2 - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Example Medikationsplaneintrag 02 02**
+* **Beispiel Journey 02: Medikationsplaneintrag 2**
 
-## Example MedicationRequest: Example Medikationsplaneintrag 02 02
+## Example MedicationRequest: Beispiel Journey 02: Medikationsplaneintrag 2
 
-Profile: [ELGA e-Medikation Planeintrag](StructureDefinition-at-emed-mr-planeintrag.md)
+Profile: [ELGA e-Med Planeintrag](StructureDefinition-at-emed-mr-planeintrag.md)
 
 **Extension Definition for MedicationRequest.effectiveDosePeriod for Version 5.0**: 2026-01-28 --> 2026-02-28
 
@@ -22,7 +22,7 @@ Profile: [ELGA e-Medikation Planeintrag](StructureDefinition-at-emed-mr-planeint
 
 **category**: Medikationsplaneintrag
 
-**medication**: [Magistrale Zubereitung](Medication-ExampleMedicationMagistral01.md)
+**medication**: [Magistrale Zubereitung](Medication-AtEmedJourneyMedicationMagistral02.md)
 
 **subject**: [Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-AtEmedExamplePatient01.md)
 
@@ -99,7 +99,7 @@ Freitext Informationen zum Medikationsplaneintrag.
     }
   ],
   "medicationReference" : {
-    "reference" : "Medication/ExampleMedicationMagistral01",
+    "reference" : "Medication/AtEmedJourneyMedicationMagistral02",
     "display" : "Magistrale Zubereitung"
   },
   "subject" : {

@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\ELGA e-Medikation Bundle vom Typ Collection Medikationsplan - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\ELGA e-Med Medikationsplan Collection Bundle - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **ELGA e-Medikation Bundle vom Typ Collection Medikationsplan**
+* **ELGA e-Med Medikationsplan Collection Bundle**
 
-## Resource Profile: ELGA e-Medikation Bundle vom Typ Collection Medikationsplan 
+## Resource Profile: ELGA e-Med Medikationsplan Collection Bundle 
 
 | | | |
 | :--- | :--- | :--- |
@@ -12,14 +12,14 @@
 | Draft as of 2026-01-29 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedBundleMedikationsplan |
 
  
-**Beschreibung:** ELGA e-Medikation Bundle vom Typ Collection zur Speicherung und Auslieferung eines Medikationsplans mit Medikationsplaneinträgen. Beinhaltet: 
-* Medikationsplan 1..1 (List)
-* Medikationsplaneinträge 0..* (MedicationRequest)
+**Beschreibung:** Das Bundle vom Typ Collection dient dem lesenden Zugriff auf den ELGA Medikationsplan bestehend aus: 
+* 1..1 List: Liste der Medikationsplaneinträge und deren Änderungsstatus
+* 0..* MedicationRequests: Medikationsplaneinträge
  
 
 **Usages:**
 
-* Examples for this Profile: [Bundle/AtEmedJourneyBundleMedikationsplan02](Bundle-AtEmedJourneyBundleMedikationsplan02.md) and [Bundle/AtEmedJourneyBundleMedikationsplanLeer01](Bundle-AtEmedJourneyBundleMedikationsplanLeer01.md)
+* Examples for this Profile: [Bundle/AtEmedJourneyBundleMedikationsplan01](Bundle-AtEmedJourneyBundleMedikationsplan01.md) and [Bundle/AtEmedJourneyBundleMedikationsplan02](Bundle-AtEmedJourneyBundleMedikationsplan02.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/at-emed-bundle-medikationsplan)
 
@@ -42,9 +42,9 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-bundle-medik
   "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-medikationsplan",
   "version" : "0.1.1",
   "name" : "AtEmedBundleMedikationsplan",
-  "title" : "ELGA e-Medikation Bundle vom Typ Collection Medikationsplan",
+  "title" : "ELGA e-Med Medikationsplan Collection Bundle",
   "status" : "draft",
-  "date" : "2026-01-29T08:16:48+00:00",
+  "date" : "2026-01-29T15:27:43+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -67,7 +67,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-bundle-medik
       ]
     }
   ],
-  "description" : "**Beschreibung:** ELGA e-Medikation Bundle vom Typ Collection zur Speicherung und Auslieferung eines Medikationsplans mit Medikationsplaneinträgen. \nBeinhaltet:\n- Medikationsplan 1..1 (List)\n- Medikationsplaneinträge 0..* (MedicationRequest)\n",
+  "description" : "**Beschreibung:** Das Bundle vom Typ Collection dient dem lesenden Zugriff auf den ELGA Medikationsplan bestehend aus: \n- 1..1 List: Liste der Medikationsplaneinträge und deren Änderungsstatus \n- 0..* MedicationRequests: Medikationsplaneinträge\n",
   "fhirVersion" : "4.0.1",
   "mapping" : [
     {
@@ -105,12 +105,12 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-bundle-medik
       {
         "id" : "Bundle.identifier",
         "path" : "Bundle.identifier",
-        "short" : "Persistenter Identifikator für das Bundle."
+        "short" : "Persistenter Identifikator für das Bundle. Verwendung prüfen."
       },
       {
         "id" : "Bundle.type",
         "path" : "Bundle.type",
-        "short" : "Art des Bundles. Für Medikationspläne immer 'collection'.",
+        "short" : "Art des Bundles. Für Medikationspläne immer \"collection\".",
         "patternCode" : "collection"
       },
       {
@@ -122,7 +122,8 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-bundle-medik
       {
         "id" : "Bundle.link",
         "path" : "Bundle.link",
-        "short" : "Verweise auf weiterführende Informationen zum Bundle. Verwendung prüfen."
+        "short" : "Verweise auf weiterführende Informationen zum Bundle. Verwendung prüfen.",
+        "max" : "0"
       },
       {
         "id" : "Bundle.entry",
