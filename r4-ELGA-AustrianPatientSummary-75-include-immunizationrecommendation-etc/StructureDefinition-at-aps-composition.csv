@@ -136,7 +136,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ",".outboundRelationship[typeCode=""SUBJ""].target","n/a"
 "Composition.section","Composition.section","","","",5,*,"","","","BackboneElement {[]} {[]}
 ","Composition is broken into sections","The root of the sections that make up the composition.","","","","","","","","","",,,,,"","pattern:code}
-","",Y,"openAtEnd","Composition.section",0,*,"","cmp-1:A section must contain at least one of text, entries, or sub-sections {text.exists() or entry.exists() or section.exists()}
+","",,"open","Composition.section",0,*,"","cmp-1:A section must contain at least one of text, entries, or sub-sections {text.exists() or entry.exists() or section.exists()}
 cmp-2:A section can only have an emptyReason if it is empty {emptyReason.empty() or entry.empty()}ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}","./outboundRelationship[typeCode=""COMP"" and isNormalActRelationship()]/target[moodCode=""EVN"" and classCode=""DOCSECT"" and isNormalAct]",".component.structuredBody.component.section"
 "Composition.section.id","Composition.section.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
@@ -234,7 +234,7 @@ If the section has content (instead of sub-sections), the section.code does not 
 ",".outboundRelationship[typeCode=COMP].sequenceNumber > 1","n/a"
 "Composition.section:sectionMedications.entry","Composition.section.entry","","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationstatement], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationrequest], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationadministration], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationdispense], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-documentreference]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"","profile:resolve()}
-","",Y,"closed","Composition.section.entry",0,*,"cmp-2
+","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
 "Composition.section:sectionMedications.entry:medicationStatement","Composition.section.entry","medicationStatement","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationstatement]]}
@@ -312,7 +312,7 @@ If the section has content (instead of sub-sections), the section.code does not 
 ",".outboundRelationship[typeCode=COMP].sequenceNumber > 1","n/a"
 "Composition.section:sectionAllergies.entry","Composition.section.entry","","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-allergyintolerance], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-documentreference]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"","profile:resolve()}
-","",Y,"closed","Composition.section.entry",0,*,"cmp-2
+","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
 "Composition.section:sectionAllergies.entry:allergyOrIntolerance","Composition.section.entry","allergyOrIntolerance","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-allergyintolerance]]}
@@ -378,7 +378,7 @@ If the section has content (instead of sub-sections), the section.code does not 
 ",".outboundRelationship[typeCode=COMP].sequenceNumber > 1","n/a"
 "Composition.section:sectionProblems.entry","Composition.section.entry","","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-documentreference]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"","profile:resolve()}
-","",Y,"closed","Composition.section.entry",0,*,"cmp-2
+","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
 "Composition.section:sectionProblems.entry:problem","Composition.section.entry","problem","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition]]}
@@ -444,7 +444,7 @@ If the section has content (instead of sub-sections), the section.code does not 
 ",".outboundRelationship[typeCode=COMP].sequenceNumber > 1","n/a"
 "Composition.section:sectionProceduresHx.entry","Composition.section.entry","","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-procedure], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-documentreference]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"","profile:resolve()}
-","",Y,"closed","Composition.section.entry",0,*,"cmp-2
+","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
 "Composition.section:sectionProceduresHx.entry:procedure","Composition.section.entry","procedure","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-procedure]]}
@@ -510,7 +510,7 @@ If the section has content (instead of sub-sections), the section.code does not 
 ",".outboundRelationship[typeCode=COMP].sequenceNumber > 1","n/a"
 "Composition.section:sectionMedicalDevices.entry","Composition.section.entry","","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-deviceusestatement], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-documentreference]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"","profile:resolve()}
-","",Y,"closed","Composition.section.entry",0,*,"cmp-2
+","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
 "Composition.section:sectionMedicalDevices.entry:deviceStatement","Composition.section.entry","deviceStatement","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-deviceusestatement]]}
@@ -576,7 +576,7 @@ If the section has content (instead of sub-sections), the section.code does not 
 ",".outboundRelationship[typeCode=COMP].sequenceNumber > 1","n/a"
 "Composition.section:sectionImmunizations.entry","Composition.section.entry","","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-immunization], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-documentreference]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"","profile:resolve()}
-","",Y,"closed","Composition.section.entry",0,*,"cmp-2
+","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
 "Composition.section:sectionImmunizations.entry:immunization","Composition.section.entry","immunization","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-immunization]]}
@@ -642,7 +642,7 @@ If the section has content (instead of sub-sections), the section.code does not 
 ",".outboundRelationship[typeCode=COMP].sequenceNumber > 1","n/a"
 "Composition.section:sectionResults.entry","Composition.section.entry","","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-diagnosticreport], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-documentreference]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"","type:resolve()}
-profile:resolve()}","",Y,"openAtEnd","Composition.section.entry",0,*,"cmp-2
+profile:resolve()}","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
 "Composition.section:sectionResults.entry:resultsObservationLaboratoryPathology","Composition.section.entry","resultsObservationLaboratoryPathology","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationresultslaboratorypathology]]}
@@ -716,7 +716,7 @@ If the section has content (instead of sub-sections), the section.code does not 
 ",".outboundRelationship[typeCode=COMP].sequenceNumber > 1","n/a"
 "Composition.section:sectionVitalSigns.entry","Composition.section.entry","","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-documentreference]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"","profile:resolve()}
-","",Y,"openAtEnd","Composition.section.entry",0,*,"cmp-2
+","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
 "Composition.section:sectionVitalSigns.entry:vitalSign","Composition.section.entry","vitalSign","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationvitalsigns]]}
@@ -782,7 +782,7 @@ If the section has content (instead of sub-sections), the section.code does not 
 ",".outboundRelationship[typeCode=COMP].sequenceNumber > 1","n/a"
 "Composition.section:sectionPastIllnessHx.entry","Composition.section.entry","","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-documentreference]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"","profile:resolve()}
-","",Y,"closed","Composition.section.entry",0,*,"cmp-2
+","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
 "Composition.section:sectionPastIllnessHx.entry:pastProblem","Composition.section.entry","pastProblem","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition]]}
@@ -848,7 +848,7 @@ If the section has content (instead of sub-sections), the section.code does not 
 ",".outboundRelationship[typeCode=COMP].sequenceNumber > 1","n/a"
 "Composition.section:sectionFunctionalStatus.entry","Composition.section.entry","","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-clinicalimpression], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-documentreference]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"","profile:resolve()}
-","",Y,"closed","Composition.section.entry",0,*,"cmp-2
+","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
 "Composition.section:sectionFunctionalStatus.entry:disability","Composition.section.entry","disability","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition]]}
@@ -918,7 +918,7 @@ If the section has content (instead of sub-sections), the section.code does not 
 ",".outboundRelationship[typeCode=COMP].sequenceNumber > 1","n/a"
 "Composition.section:sectionPlanOfCare.entry","Composition.section.entry","","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-immunizationrecommendation], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-documentreference]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"","profile:resolve()}
-","",Y,"closed","Composition.section.entry",0,*,"cmp-2
+","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
 "Composition.section:sectionPlanOfCare.entry:carePlan","Composition.section.entry","carePlan","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan]]}
@@ -988,7 +988,7 @@ If the section has content (instead of sub-sections), the section.code does not 
 ",".outboundRelationship[typeCode=COMP].sequenceNumber > 1","n/a"
 "Composition.section:sectionSocialHistory.entry","Composition.section.entry","","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-documentreference]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"","profile:resolve()}
-","",Y,"openAtEnd","Composition.section.entry",0,*,"cmp-2
+","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
 "Composition.section:sectionSocialHistory.entry:smokingTobaccoUse","Composition.section.entry","smokingTobaccoUse","","",0,1,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationtobaccouse]]}
@@ -1058,7 +1058,7 @@ If the section has content (instead of sub-sections), the section.code does not 
 ",".outboundRelationship[typeCode=COMP].sequenceNumber > 1","n/a"
 "Composition.section:sectionPregnancyHx.entry","Composition.section.entry","","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationpregnancystatus], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationpregnancyoutcome], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-documentreference]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"","profile:resolve()}
-","",Y,"closed","Composition.section.entry",0,*,"cmp-2
+","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
 "Composition.section:sectionPregnancyHx.entry:pregnancyStatus","Composition.section.entry","pregnancyStatus","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationpregnancystatus]]}
@@ -1128,7 +1128,7 @@ If the section has content (instead of sub-sections), the section.code does not 
 ",".outboundRelationship[typeCode=COMP].sequenceNumber > 1","n/a"
 "Composition.section:sectionAdvanceDirectives.entry","Composition.section.entry","","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-consent], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-documentreference]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"","profile:resolve()}
-","",Y,"closed","Composition.section.entry",0,*,"cmp-2
+","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
 "Composition.section:sectionAdvanceDirectives.entry:advanceDirectivesConsent","Composition.section.entry","advanceDirectivesConsent","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-consent]]}
@@ -1194,7 +1194,7 @@ If the section has content (instead of sub-sections), the section.code does not 
 ",".outboundRelationship[typeCode=COMP].sequenceNumber > 1","n/a"
 "Composition.section:sectionAlerts.entry","Composition.section.entry","","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-flagalert], CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-documentreference]]}
 ","A reference to data that supports this section","A reference to the actual resource from which the narrative in the section is derived.","If there are no entries in the list, an emptyReason SHOULD be provided.","","","","","","","","",,,,,"","profile:resolve()}
-","",Y,"closed","Composition.section.entry",0,*,"cmp-2
+","",,"open","Composition.section.entry",0,*,"cmp-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=COMP] or  .participation[typeCode=SBJ]",".entry"
 "Composition.section:sectionAlerts.entry:alertsFlag","Composition.section.entry","alertsFlag","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-flagalert]]}

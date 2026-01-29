@@ -19,7 +19,7 @@
   "name" : "AtApsObservationVitalSigns",
   "title" : "AT APS Observation Vital Signs",
   "status" : "active",
-  "date" : "2026-01-28T13:57:28+00:00",
+  "date" : "2026-01-29T11:52:07+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
