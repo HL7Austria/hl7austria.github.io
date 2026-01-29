@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan | *Version*:0.1.1 | |
-| Draft as of 2026-01-28 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedListMedikationsplan |
+| Draft as of 2026-01-29 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedListMedikationsplan |
 
  
 **Beschreibung:** Bildet den Medikationsplan eines ELGA Teilnehmers ab. Enthält verordnete Arzneimittel und deren Dosierung in Form von 0..* Medikationsplaneinträgen (AtEmedMRPlaneintrag). Die Reihenfolge der Einträge ist fachlich relevant. 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
   "name" : "AtEmedListMedikationsplan",
   "title" : "ELGA e-Medikation Medikationsplan",
   "status" : "draft",
-  "date" : "2026-01-28T19:29:09+00:00",
+  "date" : "2026-01-29T08:16:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-md-durchgefuehrte-abgabe | *Version*:0.1.1 | |
-| Draft as of 2026-01-28 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMDDurchgefuehrteAbgabe |
+| Draft as of 2026-01-29 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMDDurchgefuehrteAbgabe |
 
  
 ELGA e-Medikation Durchgeführte Abgabe 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
   "name" : "AtEmedMDDurchgefuehrteAbgabe",
   "title" : "ELGA e-Medikation Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-01-28T19:29:09+00:00",
+  "date" : "2026-01-29T08:16:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
