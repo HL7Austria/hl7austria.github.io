@@ -19,7 +19,7 @@
   "name" : "AtApsObservationPregnancyEdd",
   "title" : "AT APS Observation Pregnancy Expected Delivery Date",
   "status" : "active",
-  "date" : "2026-01-28T10:05:57+00:00",
+  "date" : "2026-01-29T06:33:09+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

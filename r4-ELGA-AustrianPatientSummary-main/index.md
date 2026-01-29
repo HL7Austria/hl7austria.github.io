@@ -14,7 +14,7 @@
   "title" : "Austrian Patient Summary (R4)",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-01-28T10:05:57+00:00",
+  "date" : "2026-01-29T06:33:09+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

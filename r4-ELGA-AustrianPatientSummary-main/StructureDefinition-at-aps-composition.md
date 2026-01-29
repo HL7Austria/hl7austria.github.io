@@ -19,7 +19,7 @@
   "name" : "AtApsComposition",
   "title" : "AT APS Composition",
   "status" : "active",
-  "date" : "2026-01-28T10:05:57+00:00",
+  "date" : "2026-01-29T06:33:09+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -161,8 +161,8 @@
               "path" : "code"
             }
           ],
-          "ordered" : true,
-          "rules" : "openAtEnd"
+          "ordered" : false,
+          "rules" : "open"
         },
         "min" : 5
       },
@@ -196,8 +196,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "closed"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -317,8 +317,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "closed"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -390,8 +390,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "closed"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -472,8 +472,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "closed"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -554,8 +554,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "closed"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -627,8 +627,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "closed"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -704,8 +704,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "openAtEnd"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -808,8 +808,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "openAtEnd"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -881,8 +881,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "closed"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -954,8 +954,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "closed"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -1043,8 +1043,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "closed"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -1116,8 +1116,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "openAtEnd"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -1204,8 +1204,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "closed"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -1293,8 +1293,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "closed"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -1366,8 +1366,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "closed"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
