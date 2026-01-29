@@ -1,0 +1,925 @@
+# AtApsExampleBundle-Journey-1 - Austrian Patient Summary (R4) v0.2.0
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Bundle",
+  "id" : "AtApsExampleBundle-Journey-1",
+  "meta" : {
+    "profile" : [
+      "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-bundle"
+    ]
+  },
+  "identifier" : {
+    "system" : "http://system-to-be-defined.com",
+    "value" : "63fef90a-be11-4ddf-aece-d77da15c4f21"
+  },
+  "type" : "document",
+  "timestamp" : "2025-02-08T14:01:30+00:00",
+  "entry" : [
+    {
+      "fullUrl" : "urn:uuid:212fdc76-ccc3-40bf-8cdd-82f2ef88bd7a",
+      "resource" : {
+        "resourceType" : "Composition",
+        "id" : "AtApsExampleBundle-Journey-1-composition",
+        "meta" : {
+          "profile" : [
+            "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-composition"
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Composition_AtApsExampleBundle-Journey-1-composition\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Composition AtApsExampleBundle-Journey-1-composition</b></p><a name=\"AtApsExampleBundle-Journey-1-composition\"> </a><a name=\"hcAtApsExampleBundle-Journey-1-composition\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-composition.html\">AT APS Composition</a></p></div><p><b>status</b>: Final</p><p><b>type</b>: <span title=\"Codes:{http://loinc.org 60591-5}\">Patient summary</span></p><p><b>date</b>: 2025-02-08 14:01:30+0000</p><p><b>author</b>: <a href=\"Bundle-AtApsExample03Diabetes.html#urn-uuid-75db30ee-7028-486c-929a-c5126837f472\">APS Generator</a></p><p><b>title</b>: APS - Patient Journey 1</p><p><b>custodian</b>: <a href=\"Bundle-AtApsExample03Diabetes.html#urn-uuid-f6266e6a-f63d-4673-b2de-3dff11e619d6\">Muster-Organisation</a></p></div>"
+        },
+        "status" : "final",
+        "type" : {
+          "coding" : [
+            {
+              "system" : "http://loinc.org",
+              "code" : "60591-5",
+              "display" : "Patient summary"
+            }
+          ]
+        },
+        "subject" : {
+          "reference" : "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8",
+          "display" : "Maria Musterfrau"
+        },
+        "date" : "2025-02-08T14:01:30+00:00",
+        "author" : [
+          {
+            "reference" : "urn:uuid:75db30ee-7028-486c-929a-c5126837f472",
+            "display" : "APS Generator"
+          }
+        ],
+        "title" : "APS - Patient Journey 1",
+        "custodian" : {
+          "reference" : "urn:uuid:f6266e6a-f63d-4673-b2de-3dff11e619d6",
+          "display" : "Muster-Organisation"
+        },
+        "section" : [
+          {
+            "title" : "Medikationsliste",
+            "code" : {
+              "coding" : [
+                {
+                  "system" : "http://loinc.org",
+                  "code" : "10160-0",
+                  "display" : "Medikationsanamnese"
+                }
+              ]
+            },
+            "text" : {
+              "status" : "empty",
+              "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Narrativer Text muss generiert werden.</p></div>"
+            },
+            "entry" : [
+              {
+                "reference" : "urn:uuid:ecf9728f-fa50-4b46-b8f7-7768174df72a",
+                "display" : "RAMIPRIL 1A TBL  5MG (AtApsExampleBundle-Journey-1-medication-summary-7)"
+              }
+            ]
+          },
+          {
+            "title" : "Allergien und Intoleranzen",
+            "code" : {
+              "coding" : [
+                {
+                  "system" : "http://loinc.org",
+                  "code" : "48765-2",
+                  "display" : "Allergien und unerwünschte Wirkungen"
+                }
+              ]
+            },
+            "text" : {
+              "status" : "empty",
+              "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Narrativer Text muss generiert werden.</p></div>"
+            },
+            "entry" : [
+              {
+                "reference" : "urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b",
+                "display" : "AtApsExampleBundle-Journey-1-allergy-1"
+              }
+            ]
+          },
+          {
+            "title" : "Gesundheitsprobleme und Risiken",
+            "code" : {
+              "coding" : [
+                {
+                  "system" : "http://loinc.org",
+                  "code" : "11450-4",
+                  "display" : "Problemliste"
+                }
+              ]
+            },
+            "text" : {
+              "status" : "empty",
+              "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Narrativer Text muss generiert werden.</p></div>"
+            },
+            "entry" : [
+              {
+                "reference" : "urn:uuid:9d1c0b74-20c1-4603-a95a-71e6a1dc8fde",
+                "display" : "Arterielle Hypertonie (AtApsExampleBundle-Journey-1-problem-5)"
+              },
+              {
+                "reference" : "urn:uuid:3f3140b1-9478-4491-b7bf-10560f38da0e",
+                "display" : "Diabetes mellitus in der Familienanamnese (AtApsExampleBundle-Journey-1-problem-13)"
+              }
+            ]
+          },
+          {
+            "title" : "Eingriffe und Therapien",
+            "code" : {
+              "coding" : [
+                {
+                  "system" : "http://loinc.org",
+                  "code" : "47519-4",
+                  "display" : "Anamnese der Prozeduren oder Maßnahmen"
+                }
+              ]
+            },
+            "text" : {
+              "status" : "empty",
+              "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Narrativer Text muss generiert werden.</p></div>"
+            },
+            "entry" : [
+              {
+                "reference" : "urn:uuid:75c46c35-8f4e-4232-b026-5672c60d076a",
+                "display" : "Totalersatz des linken Hüftgelenks (AtApsExampleBundle-Journey-1-procedure-history-1)"
+              },
+              {
+                "reference" : "urn:uuid:8103f99c-64f0-4dd5-b92e-5c9680c91e47",
+                "display" : "Appendektomie (AtApsExampleBundle-Journey-1-procedure-history-2)"
+              },
+              {
+                "reference" : "urn:uuid:8a825f17-1599-4928-b384-0ca4a62daba8",
+                "display" : "Koloskopie (AtApsExampleBundle-Journey-1-procedure-history-3)"
+              }
+            ]
+          },
+          {
+            "title" : "Implantate, medizinische Geräte und Heilbehelfe",
+            "code" : {
+              "coding" : [
+                {
+                  "system" : "http://loinc.org",
+                  "code" : "46264-8",
+                  "display" : "Anamnese zum Einsatz von Medizinprodukten"
+                }
+              ]
+            },
+            "text" : {
+              "status" : "empty",
+              "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Narrativer Text muss generiert werden.</p></div>"
+            },
+            "entry" : [
+              {
+                "reference" : "urn:uuid:490dab5c-271e-4736-8a6b-d04fd2a04606",
+                "display" : "Hüftprothese"
+              }
+            ]
+          },
+          {
+            "title" : "Impfungen",
+            "code" : {
+              "coding" : [
+                {
+                  "system" : "http://loinc.org",
+                  "code" : "11369-6",
+                  "display" : "Impfungen"
+                }
+              ]
+            },
+            "text" : {
+              "status" : "empty",
+              "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Narrativer Text muss generiert werden.</p></div>"
+            },
+            "entry" : [
+              {
+                "reference" : "urn:uuid:590dab5c-271e-4736-8a6b-d04fd2a04607",
+                "display" : "Diphtherie-Pertussis-Poliomyelitis-Tetanus"
+              }
+            ]
+          },
+          {
+            "title" : "Diagnostische Resultate",
+            "code" : {
+              "coding" : [
+                {
+                  "system" : "http://loinc.org",
+                  "code" : "30954-2",
+                  "display" : "Relevante diagnostische Tests oder Labordaten"
+                }
+              ]
+            },
+            "text" : {
+              "status" : "empty",
+              "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Narrativer Text muss generiert werden.</p></div>"
+            },
+            "emptyReason" : {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+                  "code" : "nilknown"
+                }
+              ]
+            }
+          },
+          {
+            "title" : "Vergangene Gesundheitsprobleme und Risiken",
+            "code" : {
+              "coding" : [
+                {
+                  "system" : "http://loinc.org",
+                  "code" : "11348-0",
+                  "display" : "Anamnese früherer Krankheiten"
+                }
+              ]
+            },
+            "text" : {
+              "status" : "empty",
+              "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Narrativer Text muss generiert werden.</p></div>"
+            },
+            "entry" : [
+              {
+                "reference" : "urn:uuid:ce2589a2-a5e5-4520-808f-8118e2863a95",
+                "display" : "Windpocken (AtApsExampleBundle-Journey-1-illness-history-2)"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl" : "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8",
+      "resource" : {
+        "resourceType" : "Patient",
+        "id" : "AtApsExampleBundle-Journey-1-patient",
+        "meta" : {
+          "profile" : [
+            "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient"
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Patient_AtApsExampleBundle-Journey-1-patient\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Patient AtApsExampleBundle-Journey-1-patient</b></p><a name=\"AtApsExampleBundle-Journey-1-patient\"> </a><a name=\"hcAtApsExampleBundle-Journey-1-patient\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-patient.html\">AT APS Patient</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Maria Musterfrau  Female, DoB: 1998-04-17 ( Social Security number: 0000121150)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Other Id (see the one above)\">Other Id:</td><td colspan=\"3\">Patient internal identifier/0002</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\">Am Schulweg 5 Hainfeld 3100 AUT (home)</td></tr></table></div>"
+        },
+        "identifier" : [
+          {
+            "type" : {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code" : "SS",
+                  "display" : "Social Security number"
+                }
+              ]
+            },
+            "system" : "urn:oid:1.2.40.0.10.1.4.3.1",
+            "value" : "0000121150",
+            "assigner" : {
+              "display" : "Dachverband der österreichischen Sozialversicherungsträger"
+            }
+          },
+          {
+            "type" : {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code" : "PI",
+                  "display" : "Patient internal identifier"
+                }
+              ]
+            },
+            "system" : "urn:oid:1.2.3.4.5",
+            "value" : "0002",
+            "assigner" : {
+              "display" : "Ein GDA in Österreich"
+            }
+          }
+        ],
+        "name" : [
+          {
+            "family" : "Musterfrau",
+            "given" : ["Maria"]
+          }
+        ],
+        "gender" : "female",
+        "birthDate" : "1998-04-17",
+        "address" : [
+          {
+            "use" : "home",
+            "line" : ["Am Schulweg 5"],
+            "city" : "Hainfeld",
+            "postalCode" : "3100",
+            "country" : "AUT"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl" : "urn:uuid:75db30ee-7028-486c-929a-c5126837f472",
+      "resource" : {
+        "resourceType" : "Device",
+        "id" : "AtApsExampleBundle-Journey-1-author-device",
+        "text" : {
+          "status" : "additional",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Device_AtApsExampleBundle-Journey-1-author-device\"> </a><p>Dieses Gerät erzeugt ein APS FHIR-Dokument.</p></div>"
+        },
+        "deviceName" : [
+          {
+            "name" : "APS Generator",
+            "type" : "user-friendly-name"
+          }
+        ],
+        "type" : {
+          "coding" : [
+            {
+              "system" : "http://snomed.info/sct",
+              "code" : "49062001",
+              "display" : "Gerät"
+            }
+          ]
+        },
+        "patient" : {
+          "reference" : "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8",
+          "display" : "Maria Musterfrau"
+        }
+      }
+    },
+    {
+      "fullUrl" : "urn:uuid:f6266e6a-f63d-4673-b2de-3dff11e619d6",
+      "resource" : {
+        "resourceType" : "Organization",
+        "id" : "AtApsExampleBundle-Journey-1-custodian",
+        "meta" : {
+          "profile" : [
+            "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Organization_AtApsExampleBundle-Journey-1-custodian\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Organization AtApsExampleBundle-Journey-1-custodian</b></p><a name=\"AtApsExampleBundle-Journey-1-custodian\"> </a><a name=\"hcAtApsExampleBundle-Journey-1-custodian\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-organization.html\">AT APS Organization</a></p></div><p><b>name</b>: Muster-Organization</p></div>"
+        },
+        "name" : "Muster-Organization"
+      }
+    },
+    {
+      "fullUrl" : "urn:uuid:ecf9728f-fa50-4b46-b8f7-7768174df72a",
+      "resource" : {
+        "resourceType" : "MedicationStatement",
+        "id" : "AtApsExampleBundle-Journey-1-medication-summary-7",
+        "meta" : {
+          "profile" : [
+            "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationstatement"
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationStatement_AtApsExampleBundle-Journey-1-medication-summary-7\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationStatement AtApsExampleBundle-Journey-1-medication-summary-7</b></p><a name=\"AtApsExampleBundle-Journey-1-medication-summary-7\"> </a><a name=\"hcAtApsExampleBundle-Journey-1-medication-summary-7\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-medicationstatement.html\">AT APS MedicationStatement</a></p></div><p><b>status</b>: Active</p><p><b>medication</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/asp-liste 2450888}\">RAMIPRIL 1A TBL  5MG</span></p><p><b>subject</b>: <a href=\"Bundle-AtApsExample03Diabetes.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8\">Maria Musterfrau</a></p><p><b>effective</b>: 2024-12-08 10:31:58+0200 --&gt; (ongoing)</p><h3>Dosages</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td></tr><tr><td style=\"display: none\">*</td><td>S:1-0-0-0</td></tr></table></div>"
+        },
+        "status" : "active",
+        "medicationCodeableConcept" : {
+          "coding" : [
+            {
+              "system" : "https://termgit.elga.gv.at/CodeSystem/asp-liste",
+              "code" : "2450888",
+              "display" : "RAMIPRIL 1A TBL  5MG"
+            }
+          ]
+        },
+        "subject" : {
+          "reference" : "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8",
+          "display" : "Maria Musterfrau"
+        },
+        "effectivePeriod" : {
+          "start" : "2024-12-08T10:31:58+02:00"
+        },
+        "dosage" : [
+          {
+            "text" : "S:1-0-0-0"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl" : "urn:uuid:768eb9cb-00f3-4ab1-bfc2-ff835cb3b89b",
+      "resource" : {
+        "resourceType" : "AllergyIntolerance",
+        "id" : "AtApsExampleBundle-Journey-1-allergy-1",
+        "meta" : {
+          "profile" : [
+            "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-allergyintolerance"
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"AllergyIntolerance_AtApsExampleBundle-Journey-1-allergy-1\"> </a><p class=\"res-header-id\"><b>Generated Narrative: AllergyIntolerance AtApsExampleBundle-Journey-1-allergy-1</b></p><a name=\"AtApsExampleBundle-Journey-1-allergy-1\"> </a><a name=\"hcAtApsExampleBundle-Journey-1-allergy-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-allergyintolerance.html\">AT APS AllergyIntolerance</a></p></div><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical active}\">Active</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 128488006}\">Hausstaub</span></p><p><b>patient</b>: <a href=\"Bundle-AtApsExample03Diabetes.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8\">Maria Musterfrau</a></p></div>"
+        },
+        "clinicalStatus" : {
+          "coding" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code" : "active",
+              "display" : "Active"
+            }
+          ]
+        },
+        "code" : {
+          "coding" : [
+            {
+              "system" : "http://snomed.info/sct",
+              "code" : "128488006",
+              "display" : "Hausstaub"
+            }
+          ]
+        },
+        "patient" : {
+          "reference" : "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8",
+          "display" : "Maria Musterfrau"
+        }
+      }
+    },
+    {
+      "fullUrl" : "urn:uuid:9d1c0b74-20c1-4603-a95a-71e6a1dc8fde",
+      "resource" : {
+        "resourceType" : "Condition",
+        "id" : "AtApsExampleBundle-Journey-1-problem-5",
+        "meta" : {
+          "profile" : [
+            "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition"
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_AtApsExampleBundle-Journey-1-problem-5\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition AtApsExampleBundle-Journey-1-problem-5</b></p><a name=\"AtApsExampleBundle-Journey-1-problem-5\"> </a><a name=\"hcAtApsExampleBundle-Journey-1-problem-5\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-condition.html\">AT APS Condition</a></p></div><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem List Item</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 38341003}\">Arterielle Hypertonie</span></p><p><b>subject</b>: <a href=\"Bundle-AtApsExample03Diabetes.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8\">Maria Musterfrau</a></p><p><b>onset</b>: 2024-12-08 10:31:58+0200</p><h3>Evidences</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Detail</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Bundle-AtApsExampleBundle-Journey-1.html#urn-uuid-1fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc9\">Entlassungsbrief AKH Amadeus</a></td></tr></table></div>"
+        },
+        "clinicalStatus" : {
+          "coding" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code" : "active",
+              "display" : "Active"
+            }
+          ]
+        },
+        "verificationStatus" : {
+          "coding" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code" : "confirmed",
+              "display" : "Confirmed"
+            }
+          ]
+        },
+        "category" : [
+          {
+            "coding" : [
+              {
+                "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code" : "problem-list-item",
+                "display" : "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code" : {
+          "coding" : [
+            {
+              "system" : "http://snomed.info/sct",
+              "code" : "38341003",
+              "display" : "Arterielle Hypertonie"
+            }
+          ]
+        },
+        "subject" : {
+          "reference" : "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8",
+          "display" : "Maria Musterfrau"
+        },
+        "onsetDateTime" : "2024-12-08T10:31:58+02:00",
+        "evidence" : [
+          {
+            "detail" : [
+              {
+                "reference" : "urn:uuid:1fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc9",
+                "display" : "Entlassungsbrief AKH Amadeus"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl" : "urn:uuid:3f3140b1-9478-4491-b7bf-10560f38da0e",
+      "resource" : {
+        "resourceType" : "Condition",
+        "id" : "AtApsExampleBundle-Journey-1-problem-13",
+        "meta" : {
+          "profile" : [
+            "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition"
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_AtApsExampleBundle-Journey-1-problem-13\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition AtApsExampleBundle-Journey-1-problem-13</b></p><a name=\"AtApsExampleBundle-Journey-1-problem-13\"> </a><a name=\"hcAtApsExampleBundle-Journey-1-problem-13\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-condition.html\">AT APS Condition</a></p></div><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem List Item</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 160303001}\">Diabetes mellitus in der Familienanamnese</span></p><p><b>subject</b>: <a href=\"Bundle-AtApsExample03Diabetes.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8\">Maria Musterfrau</a></p></div>"
+        },
+        "clinicalStatus" : {
+          "coding" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code" : "active",
+              "display" : "Active"
+            }
+          ]
+        },
+        "verificationStatus" : {
+          "coding" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code" : "confirmed",
+              "display" : "Confirmed"
+            }
+          ]
+        },
+        "category" : [
+          {
+            "coding" : [
+              {
+                "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code" : "problem-list-item",
+                "display" : "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code" : {
+          "coding" : [
+            {
+              "system" : "http://snomed.info/sct",
+              "code" : "160303001",
+              "display" : "Diabetes mellitus in der Familienanamnese"
+            }
+          ]
+        },
+        "subject" : {
+          "reference" : "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8",
+          "display" : "Maria Musterfrau"
+        }
+      }
+    },
+    {
+      "fullUrl" : "urn:uuid:1fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc9",
+      "resource" : {
+        "resourceType" : "DocumentReference",
+        "id" : "AtApsExampleBundle-Journey-1-Entlassungsbrief-2024-12",
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"DocumentReference_AtApsExampleBundle-Journey-1-Entlassungsbrief-2024-12\"> </a><p class=\"res-header-id\"><b>Generated Narrative: DocumentReference AtApsExampleBundle-Journey-1-Entlassungsbrief-2024-12</b></p><a name=\"AtApsExampleBundle-Journey-1-Entlassungsbrief-2024-12\"> </a><a name=\"hcAtApsExampleBundle-Journey-1-Entlassungsbrief-2024-12\"> </a><p><b>status</b>: Current</p><p><b>type</b>: <span title=\"Codes:{http://loinc.org 11490-0}\">Entlassungsbrief</span></p><p><b>subject</b>: <a href=\"Bundle-AtApsExample03Diabetes.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8\">Maria Musterfrau</a></p><p><b>date</b>: 2024-12-08 10:00:00+0200</p><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ContentType</b></td><td><b>Url</b></td><td><b>Title</b></td></tr><tr><td style=\"display: none\">*</td><td>application/pdf</td><td><a href=\"https://example.org/fhir/Binary/AtApsExampleBundle-Journey-1-Entlassungsbrief-2024-12.pdf\">https://example.org/fhir/Binary/AtApsExampleBundle-Journey-1-Entlassungsbrief-2024-12.pdf</a></td><td>Entlassungsbrief AKH Amadeus</td></tr></table></blockquote></div>"
+        },
+        "status" : "current",
+        "type" : {
+          "coding" : [
+            {
+              "system" : "http://loinc.org",
+              "code" : "11490-0",
+              "display" : "Entlassungsbrief"
+            }
+          ]
+        },
+        "subject" : {
+          "reference" : "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8",
+          "display" : "Maria Musterfrau"
+        },
+        "date" : "2024-12-08T10:00:00+02:00",
+        "content" : [
+          {
+            "attachment" : {
+              "contentType" : "application/pdf",
+              "url" : "https://example.org/fhir/Binary/AtApsExampleBundle-Journey-1-Entlassungsbrief-2024-12.pdf",
+              "title" : "Entlassungsbrief AKH Amadeus"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl" : "urn:uuid:75c46c35-8f4e-4232-b026-5672c60d076a",
+      "resource" : {
+        "resourceType" : "Procedure",
+        "id" : "AtApsExampleBundle-Journey-1-procedure-history-1",
+        "meta" : {
+          "profile" : [
+            "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-procedure"
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Procedure_AtApsExampleBundle-Journey-1-procedure-history-1\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Procedure AtApsExampleBundle-Journey-1-procedure-history-1</b></p><a name=\"AtApsExampleBundle-Journey-1-procedure-history-1\"> </a><a name=\"hcAtApsExampleBundle-Journey-1-procedure-history-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-procedure.html\">AT APS Procedure</a></p></div><p><b>status</b>: Completed</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 770606008}\">Totalersatz des linken Hüftgelenks</span></p><p><b>subject</b>: <a href=\"Bundle-AtApsExample03Diabetes.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8\">Maria Musterfrau</a></p><p><b>performed</b>: 2010</p></div>"
+        },
+        "status" : "completed",
+        "code" : {
+          "coding" : [
+            {
+              "system" : "http://snomed.info/sct",
+              "code" : "770606008",
+              "display" : "Totalersatz des linken Hüftgelenks"
+            }
+          ]
+        },
+        "subject" : {
+          "reference" : "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8",
+          "display" : "Maria Musterfrau"
+        },
+        "performedDateTime" : "2010"
+      }
+    },
+    {
+      "fullUrl" : "urn:uuid:8103f99c-64f0-4dd5-b92e-5c9680c91e47",
+      "resource" : {
+        "resourceType" : "Procedure",
+        "id" : "AtApsExampleBundle-Journey-1-procedure-history-2",
+        "meta" : {
+          "profile" : [
+            "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-procedure"
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Procedure_AtApsExampleBundle-Journey-1-procedure-history-2\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Procedure AtApsExampleBundle-Journey-1-procedure-history-2</b></p><a name=\"AtApsExampleBundle-Journey-1-procedure-history-2\"> </a><a name=\"hcAtApsExampleBundle-Journey-1-procedure-history-2\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-procedure.html\">AT APS Procedure</a></p></div><p><b>status</b>: Completed</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 80146002}\">Appendektomie</span></p><p><b>subject</b>: <a href=\"Bundle-AtApsExample03Diabetes.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8\">Maria Musterfrau</a></p><p><b>performed</b>: 2001-06-15</p></div>"
+        },
+        "status" : "completed",
+        "code" : {
+          "coding" : [
+            {
+              "system" : "http://snomed.info/sct",
+              "code" : "80146002",
+              "display" : "Appendektomie"
+            }
+          ]
+        },
+        "subject" : {
+          "reference" : "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8",
+          "display" : "Maria Musterfrau"
+        },
+        "performedDateTime" : "2001-06-15"
+      }
+    },
+    {
+      "fullUrl" : "urn:uuid:8a825f17-1599-4928-b384-0ca4a62daba8",
+      "resource" : {
+        "resourceType" : "Procedure",
+        "id" : "AtApsExampleBundle-Journey-1-procedure-history-3",
+        "meta" : {
+          "profile" : [
+            "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-procedure"
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Procedure_AtApsExampleBundle-Journey-1-procedure-history-3\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Procedure AtApsExampleBundle-Journey-1-procedure-history-3</b></p><a name=\"AtApsExampleBundle-Journey-1-procedure-history-3\"> </a><a name=\"hcAtApsExampleBundle-Journey-1-procedure-history-3\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-procedure.html\">AT APS Procedure</a></p></div><p><b>status</b>: Completed</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 73761001}\">Koloskopie</span></p><p><b>subject</b>: <a href=\"Bundle-AtApsExample03Diabetes.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8\">Maria Musterfrau</a></p><p><b>performed</b>: 2014-05-17</p></div>"
+        },
+        "status" : "completed",
+        "code" : {
+          "coding" : [
+            {
+              "system" : "http://snomed.info/sct",
+              "code" : "73761001",
+              "display" : "Koloskopie"
+            }
+          ]
+        },
+        "subject" : {
+          "reference" : "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8",
+          "display" : "Maria Musterfrau"
+        },
+        "performedDateTime" : "2014-05-17"
+      }
+    },
+    {
+      "fullUrl" : "urn:uuid:490dab5c-271e-4736-8a6b-d04fd2a04606",
+      "resource" : {
+        "resourceType" : "DeviceUseStatement",
+        "id" : "AtApsExampleBundle-Journey-1-deviceUse-Hueftprothese",
+        "meta" : {
+          "profile" : [
+            "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-deviceusestatement"
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"DeviceUseStatement_AtApsExampleBundle-Journey-1-deviceUse-Hueftprothese\"> </a><p class=\"res-header-id\"><b>Generated Narrative: DeviceUseStatement AtApsExampleBundle-Journey-1-deviceUse-Hueftprothese</b></p><a name=\"AtApsExampleBundle-Journey-1-deviceUse-Hueftprothese\"> </a><a name=\"hcAtApsExampleBundle-Journey-1-deviceUse-Hueftprothese\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-deviceusestatement.html\">AT APS DeviceUseStatement</a></p></div><p><b>status</b>: Active</p><p><b>subject</b>: <a href=\"Bundle-AtApsExample03Diabetes.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8\">Maria Musterfrau</a></p><p><b>timing</b>: 2020 --&gt; (ongoing)</p><p><b>device</b>: <a href=\"Bundle-AtApsExampleBundle-Journey-1.html#urn-uuid-a1a80313-a757-4062-b0d7-d04fd2a04603\">Verwendetes Gerät: Hüftprothese</a></p><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 362905007}\">Gesamtes linkes Hüftgelenk</span></p></div>"
+        },
+        "status" : "active",
+        "subject" : {
+          "reference" : "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8",
+          "display" : "Maria Musterfrau"
+        },
+        "timingPeriod" : {
+          "start" : "2020"
+        },
+        "device" : {
+          "reference" : "urn:uuid:a1a80313-a757-4062-b0d7-d04fd2a04603",
+          "display" : "Verwendetes Gerät: Hüftprothese"
+        },
+        "bodySite" : {
+          "coding" : [
+            {
+              "system" : "http://snomed.info/sct",
+              "code" : "362905007",
+              "display" : "Gesamtes linkes Hüftgelenk"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl" : "urn:uuid:a1a80313-a757-4062-b0d7-d04fd2a04603",
+      "resource" : {
+        "resourceType" : "Device",
+        "id" : "AtApsExampleBundle-Journey-1-device-Hueftprothese",
+        "meta" : {
+          "profile" : [
+            "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-device"
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Device_AtApsExampleBundle-Journey-1-device-Hueftprothese\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Device AtApsExampleBundle-Journey-1-device-Hueftprothese</b></p><a name=\"AtApsExampleBundle-Journey-1-device-Hueftprothese\"> </a><a name=\"hcAtApsExampleBundle-Journey-1-device-Hueftprothese\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-device.html\">AT APS Device</a></p></div><h3>DeviceNames</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Name</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>Hüftprothese</td><td>other</td></tr></table><p><b>type</b>: <span title=\"Codes:{http://snomed.info/sct 67270000}\">Hüftprothese</span></p><h3>Versions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td></tr><tr><td style=\"display: none\">*</td><td>123456</td></tr></table><p><b>patient</b>: <a href=\"Bundle-AtApsExample03Diabetes.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8\">Maria Musterfrau</a></p></div>"
+        },
+        "deviceName" : [
+          {
+            "name" : "Hüftprothese",
+            "type" : "other"
+          }
+        ],
+        "type" : {
+          "coding" : [
+            {
+              "system" : "http://snomed.info/sct",
+              "code" : "67270000",
+              "display" : "Hüftprothese"
+            }
+          ]
+        },
+        "version" : [
+          {
+            "value" : "123456"
+          }
+        ],
+        "patient" : {
+          "reference" : "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8",
+          "display" : "Maria Musterfrau"
+        }
+      }
+    },
+    {
+      "fullUrl" : "urn:uuid:590dab5c-271e-4736-8a6b-d04fd2a04607",
+      "resource" : {
+        "resourceType" : "Immunization",
+        "id" : "AtApsExampleBundle-Journey-1-Immunization-1",
+        "meta" : {
+          "profile" : [
+            "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-immunization"
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Immunization_AtApsExampleBundle-Journey-1-Immunization-1\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Immunization AtApsExampleBundle-Journey-1-Immunization-1</b></p><a name=\"AtApsExampleBundle-Journey-1-Immunization-1\"> </a><a name=\"hcAtApsExampleBundle-Journey-1-Immunization-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-immunization.html\">AT APS Immunization</a></p></div><p><b>status</b>: Completed</p><p><b>vaccineCode</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/eimpf-impfstoffe 2457324}\">Diphtherie-Pertussis-Poliomyelitis-Tetanus</span></p><p><b>patient</b>: <a href=\"Bundle-AtApsExample03Diabetes.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8\">Maria Musterfrau</a></p><p><b>occurrence</b>: 2021-10-01</p><p><b>route</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/medikationartanwendung 100000073600}\">intramuskuläre Anwendung</span></p><blockquote><p><b>protocolApplied</b></p><p><b>targetDisease</b>: <span title=\"Codes:{http://snomed.info/sct 397430003}\">Diphtheria</span>, <span title=\"Codes:{http://snomed.info/sct 27836007}\">Pertussis</span>, <span title=\"Codes:{http://snomed.info/sct 398102009}\">Poliomyelitis</span>, <span title=\"Codes:{http://snomed.info/sct 76902006}\">Tetanus</span></p><p><b>doseNumber</b>: 1</p></blockquote></div>"
+        },
+        "status" : "completed",
+        "vaccineCode" : {
+          "coding" : [
+            {
+              "system" : "https://termgit.elga.gv.at/CodeSystem/eimpf-impfstoffe",
+              "code" : "2457324",
+              "display" : "BOOSTRIX POLIO FSPR 0,5ML"
+            }
+          ],
+          "text" : "Diphtherie-Pertussis-Poliomyelitis-Tetanus"
+        },
+        "patient" : {
+          "reference" : "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8",
+          "display" : "Maria Musterfrau"
+        },
+        "occurrenceDateTime" : "2021-10-01",
+        "route" : {
+          "coding" : [
+            {
+              "system" : "https://termgit.elga.gv.at/CodeSystem/medikationartanwendung",
+              "code" : "100000073600",
+              "display" : "intramuskuläre Anwendung"
+            }
+          ]
+        },
+        "protocolApplied" : [
+          {
+            "targetDisease" : [
+              {
+                "coding" : [
+                  {
+                    "system" : "http://snomed.info/sct",
+                    "code" : "397430003",
+                    "display" : "Diphtheria"
+                  }
+                ]
+              },
+              {
+                "coding" : [
+                  {
+                    "system" : "http://snomed.info/sct",
+                    "code" : "27836007",
+                    "display" : "Pertussis"
+                  }
+                ]
+              },
+              {
+                "coding" : [
+                  {
+                    "system" : "http://snomed.info/sct",
+                    "code" : "398102009",
+                    "display" : "Poliomyelitis"
+                  }
+                ]
+              },
+              {
+                "coding" : [
+                  {
+                    "system" : "http://snomed.info/sct",
+                    "code" : "76902006",
+                    "display" : "Tetanus"
+                  }
+                ]
+              }
+            ],
+            "doseNumberPositiveInt" : 1
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl" : "urn:uuid:ce2589a2-a5e5-4520-808f-8118e2863a95",
+      "resource" : {
+        "resourceType" : "Condition",
+        "id" : "AtApsExampleBundle-Journey-1-illness-history-2",
+        "meta" : {
+          "profile" : [
+            "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition"
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_AtApsExampleBundle-Journey-1-illness-history-2\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition AtApsExampleBundle-Journey-1-illness-history-2</b></p><a name=\"AtApsExampleBundle-Journey-1-illness-history-2\"> </a><a name=\"hcAtApsExampleBundle-Journey-1-illness-history-2\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-condition.html\">AT APS Condition</a></p></div><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical resolved}\">Resolved</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem List Item</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 38907003}\">Windpocken</span></p><p><b>subject</b>: <a href=\"Bundle-AtApsExample03Diabetes.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8\">Maria Musterfrau</a></p><p><b>onset</b>: 1991</p></div>"
+        },
+        "clinicalStatus" : {
+          "coding" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code" : "resolved",
+              "display" : "Resolved"
+            }
+          ]
+        },
+        "verificationStatus" : {
+          "coding" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code" : "confirmed",
+              "display" : "Confirmed"
+            }
+          ]
+        },
+        "category" : [
+          {
+            "coding" : [
+              {
+                "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code" : "problem-list-item",
+                "display" : "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code" : {
+          "coding" : [
+            {
+              "system" : "http://snomed.info/sct",
+              "code" : "38907003",
+              "display" : "Windpocken"
+            }
+          ]
+        },
+        "subject" : {
+          "reference" : "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8",
+          "display" : "Maria Musterfrau"
+        },
+        "onsetDateTime" : "1991"
+      }
+    }
+  ]
+}
+
+```
