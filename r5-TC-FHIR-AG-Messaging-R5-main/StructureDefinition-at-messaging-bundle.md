@@ -9,7 +9,7 @@
 | | | | |
 | :--- | :--- | :--- | :--- |
 | *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle | *Version*:0.1.0 | | |
-| Draft as of 2026-01-28 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Realm:*![](assets/images/aut.svg) | *Computable Name*:ATMessagingBundle |
+| Draft as of 2026-01-30 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Realm:*![](assets/images/aut.svg) | *Computable Name*:ATMessagingBundle |
 
  
 MessageBundle to be used for all messages transfered with the AT FHIR messaging. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-messaging-bundle.
   "name" : "ATMessagingBundle",
   "title" : "AT Messaging Message Bundle",
   "status" : "draft",
-  "date" : "2026-01-28T12:34:00+00:00",
+  "date" : "2026-01-30T08:45:51+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [
     {
@@ -137,7 +137,7 @@ Other representations of profile: [CSV](StructureDefinition-at-messaging-bundle.
             "key" : "uuid-only",
             "severity" : "error",
             "human" : "fullUrl must be a valid UUID",
-            "expression" : "fullUrl.matches('urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')",
+            "expression" : "value.matches('^urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')",
             "source" : "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle"
           }
         ]

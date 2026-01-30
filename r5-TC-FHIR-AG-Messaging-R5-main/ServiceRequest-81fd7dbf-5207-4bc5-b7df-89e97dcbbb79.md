@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.MESSAGING.R5\ServiceRequest for a lab - FHIR® v5.0.0
+# HL7.AT.FHIR.MESSAGING.R5\Lab ServiceRequest - FHIR® v5.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **ServiceRequest for a lab**
+* **Lab ServiceRequest**
 
-## Example ServiceRequest: ServiceRequest for a lab
+## Example ServiceRequest: Lab ServiceRequest
 
 **status**: Active
 

@@ -11,7 +11,7 @@
   <name value="ATMessaging"/>
   <title value="HL7® Austria TC FHIR® Messaging"/>
   <status value="draft"/>
-  <date value="2026-01-28T12:34:00+00:00"/>
+  <date value="2026-01-30T08:45:51+00:00"/>
   <publisher value="HL7® Austria, TC FHIR®"/>
   <contact>
     <name value="HL7® Austria, TC FHIR®"/>
@@ -213,6 +213,7 @@
         <reference value="Communication/08327a3a-1f52-4ec0-9b90-ac17fd6e06b2"/>
       </reference>
       <name value="Communication Example"/>
+      <description value="Plain text message that kindly rejects a previous communication request."/>
       <isExample value="true"/>
       <profile value="http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-communication"/>
     </resource>
@@ -246,6 +247,7 @@
         <reference value="CommunicationRequest/c7090292-dc27-4d90-a500-7e4110217947"/>
       </reference>
       <name value="CommunicationRequest for a consultation document"/>
+      <description value="Plain Text communication request for a consult document."/>
       <isExample value="true"/>
       <profile value="http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-communication-request"/>
     </resource>
@@ -298,6 +300,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/81fd7dbf-5207-4bc5-b7df-89e97dcbbb79"/>
+      </reference>
+      <name value="Lab ServiceRequest"/>
+      <description value="Service Request for a Blood Test."/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Bundle"/>
       </extension>
       <reference>
@@ -316,6 +329,7 @@
         <reference value="MessageHeader/89c89a84-bce7-4c5d-b6f6-49690eea5b06"/>
       </reference>
       <name value="MessageHeader of an ad-hoc message sending a document."/>
+      <description value="Message header for sending a doctor's note document from a HIS to a GP software without prior request."/>
       <isExample value="true"/>
       <profile value="http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header"/>
     </resource>
@@ -340,16 +354,6 @@
       <name value="Service status update over directed messaging."/>
       <description value="Regulates the resources to be used in a directed message when transferring a task status update of a ServiceRequest."/>
       <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ServiceRequest"/>
-      </extension>
-      <reference>
-        <reference value="ServiceRequest/81fd7dbf-5207-4bc5-b7df-89e97dcbbb79"/>
-      </reference>
-      <name value="ServiceRequest for a lab"/>
-      <isExample value="true"/>
     </resource>
     <page>
       <sourceUrl value="toc.html"/>

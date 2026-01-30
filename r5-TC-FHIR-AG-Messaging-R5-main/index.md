@@ -22,7 +22,7 @@ Feel free to modify this index page with your own awesome content!
   "name" : "ATMessaging",
   "title" : "HL7® Austria TC FHIR® Messaging",
   "status" : "draft",
-  "date" : "2026-01-28T12:34:00+00:00",
+  "date" : "2026-01-30T08:45:51+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [
     {
@@ -291,6 +291,7 @@ Feel free to modify this index page with your own awesome content!
           "reference" : "Communication/08327a3a-1f52-4ec0-9b90-ac17fd6e06b2"
         },
         "name" : "Communication Example",
+        "description" : "Plain text message that kindly rejects a previous communication request.",
         "isExample" : true,
         "profile" : [
           "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-communication"
@@ -335,6 +336,7 @@ Feel free to modify this index page with your own awesome content!
           "reference" : "CommunicationRequest/c7090292-dc27-4d90-a500-7e4110217947"
         },
         "name" : "CommunicationRequest for a consultation document",
+        "description" : "Plain Text communication request for a consult document.",
         "isExample" : true,
         "profile" : [
           "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-communication-request"
@@ -409,6 +411,20 @@ Feel free to modify this index page with your own awesome content!
         "extension" : [
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "ServiceRequest"
+          }
+        ],
+        "reference" : {
+          "reference" : "ServiceRequest/81fd7dbf-5207-4bc5-b7df-89e97dcbbb79"
+        },
+        "name" : "Lab ServiceRequest",
+        "description" : "Service Request for a Blood Test.",
+        "isExample" : true
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString" : "Bundle"
           }
         ],
@@ -433,6 +449,7 @@ Feel free to modify this index page with your own awesome content!
           "reference" : "MessageHeader/89c89a84-bce7-4c5d-b6f6-49690eea5b06"
         },
         "name" : "MessageHeader of an ad-hoc message sending a document.",
+        "description" : "Message header for sending a doctor's note document from a HIS to a GP software without prior request.",
         "isExample" : true,
         "profile" : [
           "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header"
@@ -465,19 +482,6 @@ Feel free to modify this index page with your own awesome content!
         "name" : "Service status update over directed messaging.",
         "description" : "Regulates the resources to be used in a directed message when transferring a task status update of a ServiceRequest.",
         "isExample" : false
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "ServiceRequest"
-          }
-        ],
-        "reference" : {
-          "reference" : "ServiceRequest/81fd7dbf-5207-4bc5-b7df-89e97dcbbb79"
-        },
-        "name" : "ServiceRequest for a lab",
-        "isExample" : true
       }
     ],
     "page" : {

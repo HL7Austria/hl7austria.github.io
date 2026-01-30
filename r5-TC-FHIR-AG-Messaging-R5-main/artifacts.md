@@ -65,12 +65,12 @@ These are example instances that show what data produced and consumed by systems
 | | |
 | :--- | :--- |
 | [Ad-hoc message of Doctors note](Bundle-269f4c84-7762-47aa-b872-c4f927301485.md) | Doctors note as ad-hoc submitted message (without previous request). |
-| [Communication Example](Communication-08327a3a-1f52-4ec0-9b90-ac17fd6e06b2.md) |  |
-| [CommunicationRequest for a consultation document](CommunicationRequest-c7090292-dc27-4d90-a500-7e4110217947.md) |  |
+| [Communication Example](Communication-08327a3a-1f52-4ec0-9b90-ac17fd6e06b2.md) | Plain text message that kindly rejects a previous communication request. |
+| [CommunicationRequest for a consultation document](CommunicationRequest-c7090292-dc27-4d90-a500-7e4110217947.md) | Plain Text communication request for a consult document. |
 | [Consult communication](Bundle-63874621-5550-410a-b893-ca890614cf6e.md) | Consultation document rejection as CommunicationRequest message. |
 | [Consult request](Bundle-6df9d997-d34a-448b-944e-8721c49e0939.md) | Consult request as CommunicationRequest message. |
+| [Lab ServiceRequest](ServiceRequest-81fd7dbf-5207-4bc5-b7df-89e97dcbbb79.md) | Service Request for a Blood Test. |
 | [Lab request](Bundle-96beaf3e-6e2f-40f4-b1d3-02b19c984fb1.md) | Lab request as ServiceRequest message. |
 | [Lab status update](Bundle-ab66186f-9d91-44b9-8459-bdee4e850bac.md) | Lab status update as service status update message. |
-| [MessageHeader of an ad-hoc message sending a document.](MessageHeader-89c89a84-bce7-4c5d-b6f6-49690eea5b06.md) |  |
-| [ServiceRequest for a lab](ServiceRequest-81fd7dbf-5207-4bc5-b7df-89e97dcbbb79.md) |  |
+| [MessageHeader of an ad-hoc message sending a document.](MessageHeader-89c89a84-bce7-4c5d-b6f6-49690eea5b06.md) | Message header for sending a doctor's note document from a HIS to a GP software without prior request. |
 

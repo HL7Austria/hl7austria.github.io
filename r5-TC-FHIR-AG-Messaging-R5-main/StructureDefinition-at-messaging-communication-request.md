@@ -9,7 +9,7 @@
 | | | | |
 | :--- | :--- | :--- | :--- |
 | *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-communication-request | *Version*:0.1.0 | | |
-| Draft as of 2026-01-28 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Realm:*![](assets/images/aut.svg) | *Computable Name*:ATMessagingCommunicationRequest |
+| Draft as of 2026-01-30 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Realm:*![](assets/images/aut.svg) | *Computable Name*:ATMessagingCommunicationRequest |
 
  
 CommunicationRequest to be used for all communication request messages transfered with the AT FHIR messaging. 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-messaging-communi
   "name" : "ATMessagingCommunicationRequest",
   "title" : "AT Messaging CommunicationRequest",
   "status" : "draft",
-  "date" : "2026-01-28T12:34:00+00:00",
+  "date" : "2026-01-30T08:45:51+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [
     {

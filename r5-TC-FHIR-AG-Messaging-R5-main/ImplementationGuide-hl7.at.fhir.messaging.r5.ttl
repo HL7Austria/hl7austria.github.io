@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "ATMessaging"] ; # 
   fhir:title [ fhir:v "HL7® Austria TC FHIR® Messaging"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-01-28T12:34:00+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-01-30T08:45:51+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7® Austria, TC FHIR®"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "HL7® Austria, TC FHIR®" ] ;
@@ -353,6 +353,7 @@
          fhir:reference [ fhir:v "Communication/08327a3a-1f52-4ec0-9b90-ac17fd6e06b2" ]
        ] ;
        fhir:name [ fhir:v "Communication Example" ] ;
+       fhir:description [ fhir:v "Plain text message that kindly rejects a previous communication request." ] ;
        fhir:isExample [ fhir:v true ] ;
        fhir:profile ( [
          fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-communication"^^xsd:anyURI ;
@@ -410,6 +411,7 @@
          fhir:reference [ fhir:v "CommunicationRequest/c7090292-dc27-4d90-a500-7e4110217947" ]
        ] ;
        fhir:name [ fhir:v "CommunicationRequest for a consultation document" ] ;
+       fhir:description [ fhir:v "Plain Text communication request for a consult document." ] ;
        fhir:isExample [ fhir:v true ] ;
        fhir:profile ( [
          fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-communication-request"^^xsd:anyURI ;
@@ -507,6 +509,24 @@
          ] ;
          fhir:value [
            a fhir:String ;
+           fhir:v "ServiceRequest"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ServiceRequest/81fd7dbf-5207-4bc5-b7df-89e97dcbbb79> ;
+         fhir:reference [ fhir:v "ServiceRequest/81fd7dbf-5207-4bc5-b7df-89e97dcbbb79" ]
+       ] ;
+       fhir:name [ fhir:v "Lab ServiceRequest" ] ;
+       fhir:description [ fhir:v "Service Request for a Blood Test." ] ;
+       fhir:isExample [ fhir:v true ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
            fhir:v "Bundle"
          ]
        ] ) ;
@@ -537,6 +557,7 @@
          fhir:reference [ fhir:v "MessageHeader/89c89a84-bce7-4c5d-b6f6-49690eea5b06" ]
        ] ;
        fhir:name [ fhir:v "MessageHeader of an ad-hoc message sending a document." ] ;
+       fhir:description [ fhir:v "Message header for sending a doctor's note document from a HIS to a GP software without prior request." ] ;
        fhir:isExample [ fhir:v true ] ;
        fhir:profile ( [
          fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header"^^xsd:anyURI ;
@@ -578,23 +599,6 @@
        fhir:name [ fhir:v "Service status update over directed messaging." ] ;
        fhir:description [ fhir:v "Regulates the resources to be used in a directed message when transferring a task status update of a ServiceRequest." ] ;
        fhir:isExample [ fhir:v false ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "ServiceRequest"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ServiceRequest/81fd7dbf-5207-4bc5-b7df-89e97dcbbb79> ;
-         fhir:reference [ fhir:v "ServiceRequest/81fd7dbf-5207-4bc5-b7df-89e97dcbbb79" ]
-       ] ;
-       fhir:name [ fhir:v "ServiceRequest for a lab" ] ;
-       fhir:isExample [ fhir:v true ]
      ] ) ;
      fhir:page [
        fhir:source [

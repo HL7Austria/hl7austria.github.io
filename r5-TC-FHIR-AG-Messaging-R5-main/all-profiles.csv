@@ -95,7 +95,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 
 Note that the fullUrl is not the same as the canonical URL - it's an absolute url for an endpoint serving the resource (these will happen to have the same value on the canonical server for the resource with the canonical URL).","","","","","","","","",,,,,"",,,,"Bundle.entry.fullUrl",0,1,"bdl-7
 bdl-15bdl-8","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-uuid-only:fullUrl must be a valid UUID {fullUrl.matches('urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')}"
+uuid-only:fullUrl must be a valid UUID {value.matches('^urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')}"
 "at-messaging-bundle","Bundle.entry.resource","Bundle.entry.resource","","","",0,1,"","","Y","Resource {[]} {[]}
 ","A resource in the bundle","The Resource for the entry. The purpose/meaning of the resource is determined by the Bundle.type. This is allowed to be a Parameters resource if and only if it is referenced by something else within the Bundle that provides context/meaning.","","","","","","","","","",,,,,"",,,,"Bundle.entry.resource",0,1,"bdl-3a
 bdl-3bbdl-3cbdl-7bdl-11bdl-12bdl-13bdl-5",""
