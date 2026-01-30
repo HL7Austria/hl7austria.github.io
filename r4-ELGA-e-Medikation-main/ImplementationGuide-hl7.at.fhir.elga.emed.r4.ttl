@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "ELGAeMedikationR4"] ; # 
   fhir:title [ fhir:v "ELGA e-Medikation (R4) ENTWURF"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-01-29T15:27:43+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-01-30T14:55:57+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ELGA GmbH" ] ;
@@ -1351,28 +1351,6 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "MedicationRequest"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/AtEmedExampleGeplanteAbgabe01> ;
-         fhir:reference [ fhir:v "MedicationRequest/AtEmedExampleGeplanteAbgabe01" ]
-       ] ;
-       fhir:name [ fhir:v "Beispiel Geplante Abgabe 1" ] ;
-       fhir:description [ fhir:v "Beispiel Geplante Abgabe 1" ] ;
-       fhir:example [
-         a fhir:Canonical ;
-         fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-geplante-abgabe"^^xsd:anyURI ;
-         fhir:l <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-geplante-abgabe>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
            fhir:v "Bundle"
          ]
        ] ) ;
@@ -1381,7 +1359,7 @@
          fhir:reference [ fhir:v "Bundle/AtEmedJourneyBundleMedikationsplan01" ]
        ] ;
        fhir:name [ fhir:v "Beispiel Journey 01: Collection Bundle" ] ;
-       fhir:description [ fhir:v "**Beschreibung:** Beispiel eines Collection Bundles, das einen leeren Mediaktionsplan (List) beinhaltet." ] ;
+       fhir:description [ fhir:v "**Beschreibung:** Beispiel eines Collection Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge)." ] ;
        fhir:example [
          a fhir:Canonical ;
          fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-medikationsplan"^^xsd:anyURI ;
@@ -1403,7 +1381,7 @@
          fhir:reference [ fhir:v "List/AtEmedJourneyListMedikationsplan01" ]
        ] ;
        fhir:name [ fhir:v "Beispiel Journey 01: Leerer Medikationsplan" ] ;
-       fhir:description [ fhir:v "**Beschreibung:** Beispiel eines leeren Mediaktionsplans (List)" ] ;
+       fhir:description [ fhir:v "**Beschreibung:** Beispiel eines leeren Mediaktionsplans (List-Ressource ohne Einträge)" ] ;
        fhir:example [
          a fhir:Canonical ;
          fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"^^xsd:anyURI ;
@@ -1425,7 +1403,7 @@
          fhir:reference [ fhir:v "Bundle/AtEmedJourneyBundleMedikationsplanTx01" ]
        ] ;
        fhir:name [ fhir:v "Beispiel Journey 01: Transaction Bundle" ] ;
-       fhir:description [ fhir:v "**Beschreibung:** Beispiel eines Transaction Bundles, das einen leeren Mediaktionsplan (List) beinhaltet." ] ;
+       fhir:description [ fhir:v "**Beschreibung:** Beispiel eines Transaction Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge)." ] ;
        fhir:example [
          a fhir:Canonical ;
          fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-tx-medikationsplan"^^xsd:anyURI ;
@@ -1447,7 +1425,7 @@
          fhir:reference [ fhir:v "Bundle/AtEmedJourneyBundleMedikationsplan02" ]
        ] ;
        fhir:name [ fhir:v "Beispiel Journey 02: Collection Bundle" ] ;
-       fhir:description [ fhir:v "**Beschreibung:** Beispiel eines Collection Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen referenziert." ] ;
+       fhir:description [ fhir:v "**Beschreibung:** Beispiel eines Collection Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert." ] ;
        fhir:example [
          a fhir:Canonical ;
          fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-medikationsplan"^^xsd:anyURI ;
@@ -1491,7 +1469,7 @@
          fhir:reference [ fhir:v "List/AtEmedJourneyListMedikationsplan02" ]
        ] ;
        fhir:name [ fhir:v "Beispiel Journey 02: Medikationsplan" ] ;
-       fhir:description [ fhir:v "**Beschreibung:** Beispiel eines Medikationsplans (List), der 2 Einträge (MedicationReqeusts) referenziert und Reihenfolge und Änderungsstatus festhält." ] ;
+       fhir:description [ fhir:v "**Beschreibung:** Beispiel eines Medikationsplans (List), der 2 Planeinträge (MedicationReqeusts) referenziert und Informationen über Reihenfolge und Änderungsstatus speichert." ] ;
        fhir:example [
          a fhir:Canonical ;
          fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"^^xsd:anyURI ;
@@ -1599,11 +1577,33 @@
          fhir:reference [ fhir:v "Bundle/AtEmedJourneyBundleMedikationsplanTx02" ]
        ] ;
        fhir:name [ fhir:v "Beispiel Journey 02: Transaction Bundle" ] ;
-       fhir:description [ fhir:v "**Beschreibung:** Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen beinhaltet." ] ;
+       fhir:description [ fhir:v "**Beschreibung:** Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) beinhaltet." ] ;
        fhir:example [
          a fhir:Canonical ;
          fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-tx-medikationsplan"^^xsd:anyURI ;
          fhir:l <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-tx-medikationsplan>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "MedicationRequest"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/AtEmedJourneyMrGeplanteAbgabe03> ;
+         fhir:reference [ fhir:v "MedicationRequest/AtEmedJourneyMrGeplanteAbgabe03" ]
+       ] ;
+       fhir:name [ fhir:v "Beispiel Journey 03: Geplante Abgabe" ] ;
+       fhir:description [ fhir:v "**Beschreibung:** Bildet eine geplante Abgabe des Medikaments EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest)." ] ;
+       fhir:example [
+         a fhir:Canonical ;
+         fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-geplante-abgabe"^^xsd:anyURI ;
+         fhir:l <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-geplante-abgabe>
        ]
      ] [
        fhir:extension ( [
@@ -1621,7 +1621,7 @@
          fhir:reference [ fhir:v "Organization/AtEmedExampleOrganizationApo01" ]
        ] ;
        fhir:name [ fhir:v "Beispiel Organisation Apotheke 01" ] ;
-       fhir:description [ fhir:v "**Beschreibung:** Beispiel einer Apotheke als Organisation 01." ] ;
+       fhir:description [ fhir:v "**Beschreibung:** Beispiel einer Apotheke als Organisation." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v true
@@ -1642,7 +1642,7 @@
          fhir:reference [ fhir:v "Patient/AtEmedExamplePatient01" ]
        ] ;
        fhir:name [ fhir:v "Beispiel Patient 01" ] ;
-       fhir:description [ fhir:v "**Beschreibung:** Beispiel eines Patienten 01." ] ;
+       fhir:description [ fhir:v "**Beschreibung:** Beispiel eines Patienten." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v true
@@ -1663,7 +1663,7 @@
          fhir:reference [ fhir:v "Practitioner/AtEmedExamplePractitioner01" ]
        ] ;
        fhir:name [ fhir:v "Beispiel Ärztin 01" ] ;
-       fhir:description [ fhir:v "**Beschreibung:** Beispiel einer behandelnden Ärztin 01." ] ;
+       fhir:description [ fhir:v "**Beschreibung:** Beispiel einer behandelnden Ärztin." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v true
@@ -1789,7 +1789,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-emed-list-medikationsplan" ]
        ] ;
        fhir:name [ fhir:v "ELGA e-Med Medikationsplan" ] ;
-       fhir:description [ fhir:v "**Beschreibung:** Bildet den Medikationsplan eines ELGA Teilnehmers ab (\"List\"-Ressource). \nDie Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimitteln und deren Dosierung abbilden.\nJedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch zu klären). Die Reihenfolge der Listenelemente wird duch den User festgelegt." ] ;
+       fhir:description [ fhir:v "**Beschreibung:** Bildet den Medikationsplan eines ELGA-Teilnehmers ab (\"List\"-Ressource). \nDie Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimittel und deren Dosierung abbilden.\nDie Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch zu klären)." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -1810,7 +1810,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-emed-bundle-medikationsplan" ]
        ] ;
        fhir:name [ fhir:v "ELGA e-Med Medikationsplan Collection Bundle" ] ;
-       fhir:description [ fhir:v "**Beschreibung:** Das Bundle vom Typ Collection dient dem lesenden Zugriff auf den ELGA Medikationsplan bestehend aus: \n- 1..1 List: Liste der Medikationsplaneinträge und deren Änderungsstatus \n- 0..* MedicationRequests: Medikationsplaneinträge" ] ;
+       fhir:description [ fhir:v "**Beschreibung:** Das Bundle vom Typ Collection bestehend aus: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus) \n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung" ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -1831,7 +1831,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-emed-bundle-tx-medikationsplan" ]
        ] ;
        fhir:name [ fhir:v "ELGA e-Med Medikationsplan Transaction Bundle" ] ;
-       fhir:description [ fhir:v "**Beschreibung:** Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan bestehend aus: \n- 1..1 List: Liste der Medikationsplaneinträge und deren Änderungsstatus\n- 0..* MedicationRequests: Medikationsplaneinträge" ] ;
+       fhir:description [ fhir:v "**Beschreibung:** Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan bestehend aus: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus) \n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung" ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false

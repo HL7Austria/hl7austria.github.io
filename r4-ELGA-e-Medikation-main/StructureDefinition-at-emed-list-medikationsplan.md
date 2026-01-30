@@ -9,10 +9,10 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan | *Version*:0.1.1 | |
-| Draft as of 2026-01-29 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedListMedikationsplan |
+| Draft as of 2026-01-30 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedListMedikationsplan |
 
  
-**Beschreibung:** Bildet den Medikationsplan eines ELGA Teilnehmers ab ("List"-Ressource). Die Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimitteln und deren Dosierung abbilden. Jedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch zu klären). Die Reihenfolge der Listenelemente wird duch den User festgelegt. 
+**Beschreibung:** Bildet den Medikationsplan eines ELGA-Teilnehmers ab ("List"-Ressource). Die Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimittel und deren Dosierung abbilden. Die Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch zu klären). 
 
 **Usages:**
 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
   "name" : "AtEmedListMedikationsplan",
   "title" : "ELGA e-Med Medikationsplan",
   "status" : "draft",
-  "date" : "2026-01-29T15:27:43+00:00",
+  "date" : "2026-01-30T14:55:57+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -65,7 +65,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
       ]
     }
   ],
-  "description" : "**Beschreibung:** Bildet den Medikationsplan eines ELGA Teilnehmers ab (\"List\"-Ressource). \nDie Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimitteln und deren Dosierung abbilden.\nJedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch zu klären). Die Reihenfolge der Listenelemente wird duch den User festgelegt.",
+  "description" : "**Beschreibung:** Bildet den Medikationsplan eines ELGA-Teilnehmers ab (\"List\"-Ressource). \nDie Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimittel und deren Dosierung abbilden.\nDie Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch zu klären).",
   "fhirVersion" : "4.0.1",
   "mapping" : [
     {
@@ -90,13 +90,13 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
         "id" : "List.identifier",
         "path" : "List.identifier",
         "short" : "Eindeutige Kennung der Liste. Verwendung zu prüfen.",
-        "max" : "1"
+        "max" : "1",
+        "mustSupport" : true
       },
       {
         "id" : "List.status",
         "path" : "List.status",
         "short" : "Der Medikationsplan ist aktuell: current | retired | entered-in-error. https://hl7.org/fhir/R4/valueset-list-status.html",
-        "patternCode" : "current",
         "mustSupport" : true
       },
       {
@@ -167,7 +167,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
       {
         "id" : "List.orderedBy",
         "path" : "List.orderedBy",
-        "short" : "Die Reihenfolge der Einträge im Medikationsplan ist fachlich relevant und wird durch den Ersteller der Liste vorgegeben. Mögliche Codes: user | system | event-date | entry-date| priority | alphabetic | category | patient.",
+        "short" : "Die Reihenfolge der Einträge im Medikationsplan ist fachlich relevant und wird durch den Erseller der Liste vorgegeben. \nMögliche Codes: user | system | event-date | entry-date| priority | alphabetic | category | patient.",
         "min" : 1,
         "patternCodeableConcept" : {
           "coding" : [
@@ -185,7 +185,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
       {
         "id" : "List.note",
         "path" : "List.note",
-        "short" : "Freitextliche Anmerkungen zum Medikationsplan.",
+        "short" : "Freitextliche Anmerkungen zum Medikationsplan. Prüfen hinsichtlich Korrekturvermerk.",
         "mustSupport" : true
       },
       {
@@ -196,7 +196,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
       {
         "id" : "List.entry.flag",
         "path" : "List.entry.flag",
-        "short" : "Kennzeichnet die Art der Änderung des Medikationsplaneintrags",
+        "short" : "Kennzeichnet die Art der Änderung des Medikationsplaneintrags.",
         "min" : 1,
         "mustSupport" : true,
         "binding" : {
@@ -233,7 +233,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
       {
         "id" : "List.emptyReason",
         "path" : "List.emptyReason",
-        "short" : "Intitalzustand: notstarted Grund, TODO: code für \"Patient nimmt derzeit keine Medikamente ein\".",
+        "short" : "Intitalzustand: notstarted Grund, TODO: Code für \"Patient nimmt derzeit keine Medikamente ein\".",
         "mustSupport" : true
       }
     ]

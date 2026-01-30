@@ -33,7 +33,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) ENTWURF",
   "status" : "draft",
-  "date" : "2026-01-29T15:27:43+00:00",
+  "date" : "2026-01-30T14:55:57+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -786,20 +786,6 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "extension" : [
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "MedicationRequest"
-          }
-        ],
-        "reference" : {
-          "reference" : "MedicationRequest/AtEmedExampleGeplanteAbgabe01"
-        },
-        "name" : "Beispiel Geplante Abgabe 1",
-        "description" : "Beispiel Geplante Abgabe 1",
-        "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-geplante-abgabe"
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString" : "Bundle"
           }
         ],
@@ -807,7 +793,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "reference" : "Bundle/AtEmedJourneyBundleMedikationsplan01"
         },
         "name" : "Beispiel Journey 01: Collection Bundle",
-        "description" : "**Beschreibung:** Beispiel eines Collection Bundles, das einen leeren Mediaktionsplan (List) beinhaltet.",
+        "description" : "**Beschreibung:** Beispiel eines Collection Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge).",
         "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-medikationsplan"
       },
       {
@@ -821,7 +807,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "reference" : "List/AtEmedJourneyListMedikationsplan01"
         },
         "name" : "Beispiel Journey 01: Leerer Medikationsplan",
-        "description" : "**Beschreibung:** Beispiel eines leeren Mediaktionsplans (List)",
+        "description" : "**Beschreibung:** Beispiel eines leeren Mediaktionsplans (List-Ressource ohne Einträge)",
         "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"
       },
       {
@@ -835,7 +821,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "reference" : "Bundle/AtEmedJourneyBundleMedikationsplanTx01"
         },
         "name" : "Beispiel Journey 01: Transaction Bundle",
-        "description" : "**Beschreibung:** Beispiel eines Transaction Bundles, das einen leeren Mediaktionsplan (List) beinhaltet.",
+        "description" : "**Beschreibung:** Beispiel eines Transaction Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge).",
         "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-tx-medikationsplan"
       },
       {
@@ -849,7 +835,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "reference" : "Bundle/AtEmedJourneyBundleMedikationsplan02"
         },
         "name" : "Beispiel Journey 02: Collection Bundle",
-        "description" : "**Beschreibung:** Beispiel eines Collection Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen referenziert.",
+        "description" : "**Beschreibung:** Beispiel eines Collection Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert.",
         "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-medikationsplan"
       },
       {
@@ -877,7 +863,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "reference" : "List/AtEmedJourneyListMedikationsplan02"
         },
         "name" : "Beispiel Journey 02: Medikationsplan",
-        "description" : "**Beschreibung:** Beispiel eines Medikationsplans (List), der 2 Einträge (MedicationReqeusts) referenziert und Reihenfolge und Änderungsstatus festhält.",
+        "description" : "**Beschreibung:** Beispiel eines Medikationsplans (List), der 2 Planeinträge (MedicationReqeusts) referenziert und Informationen über Reihenfolge und Änderungsstatus speichert.",
         "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"
       },
       {
@@ -947,8 +933,22 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "reference" : "Bundle/AtEmedJourneyBundleMedikationsplanTx02"
         },
         "name" : "Beispiel Journey 02: Transaction Bundle",
-        "description" : "**Beschreibung:** Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen beinhaltet.",
+        "description" : "**Beschreibung:** Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) beinhaltet.",
         "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-tx-medikationsplan"
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "MedicationRequest"
+          }
+        ],
+        "reference" : {
+          "reference" : "MedicationRequest/AtEmedJourneyMrGeplanteAbgabe03"
+        },
+        "name" : "Beispiel Journey 03: Geplante Abgabe",
+        "description" : "**Beschreibung:** Bildet eine geplante Abgabe des Medikaments EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest).",
+        "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-geplante-abgabe"
       },
       {
         "extension" : [
@@ -961,7 +961,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "reference" : "Organization/AtEmedExampleOrganizationApo01"
         },
         "name" : "Beispiel Organisation Apotheke 01",
-        "description" : "**Beschreibung:** Beispiel einer Apotheke als Organisation 01.",
+        "description" : "**Beschreibung:** Beispiel einer Apotheke als Organisation.",
         "exampleBoolean" : true
       },
       {
@@ -975,7 +975,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "reference" : "Patient/AtEmedExamplePatient01"
         },
         "name" : "Beispiel Patient 01",
-        "description" : "**Beschreibung:** Beispiel eines Patienten 01.",
+        "description" : "**Beschreibung:** Beispiel eines Patienten.",
         "exampleBoolean" : true
       },
       {
@@ -989,7 +989,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "reference" : "Practitioner/AtEmedExamplePractitioner01"
         },
         "name" : "Beispiel Ärztin 01",
-        "description" : "**Beschreibung:** Beispiel einer behandelnden Ärztin 01.",
+        "description" : "**Beschreibung:** Beispiel einer behandelnden Ärztin.",
         "exampleBoolean" : true
       },
       {
@@ -1073,7 +1073,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "reference" : "StructureDefinition/at-emed-list-medikationsplan"
         },
         "name" : "ELGA e-Med Medikationsplan",
-        "description" : "**Beschreibung:** Bildet den Medikationsplan eines ELGA Teilnehmers ab (\"List\"-Ressource). \nDie Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimitteln und deren Dosierung abbilden.\nJedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch zu klären). Die Reihenfolge der Listenelemente wird duch den User festgelegt.",
+        "description" : "**Beschreibung:** Bildet den Medikationsplan eines ELGA-Teilnehmers ab (\"List\"-Ressource). \nDie Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimittel und deren Dosierung abbilden.\nDie Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch zu klären).",
         "exampleBoolean" : false
       },
       {
@@ -1087,7 +1087,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "reference" : "StructureDefinition/at-emed-bundle-medikationsplan"
         },
         "name" : "ELGA e-Med Medikationsplan Collection Bundle",
-        "description" : "**Beschreibung:** Das Bundle vom Typ Collection dient dem lesenden Zugriff auf den ELGA Medikationsplan bestehend aus: \n- 1..1 List: Liste der Medikationsplaneinträge und deren Änderungsstatus \n- 0..* MedicationRequests: Medikationsplaneinträge",
+        "description" : "**Beschreibung:** Das Bundle vom Typ Collection bestehend aus: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus) \n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung",
         "exampleBoolean" : false
       },
       {
@@ -1101,7 +1101,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "reference" : "StructureDefinition/at-emed-bundle-tx-medikationsplan"
         },
         "name" : "ELGA e-Med Medikationsplan Transaction Bundle",
-        "description" : "**Beschreibung:** Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan bestehend aus: \n- 1..1 List: Liste der Medikationsplaneinträge und deren Änderungsstatus\n- 0..* MedicationRequests: Medikationsplaneinträge",
+        "description" : "**Beschreibung:** Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan bestehend aus: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus) \n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung",
         "exampleBoolean" : false
       },
       {

@@ -49,16 +49,6 @@ Freitext Informationen zum Medikationsplaneintrag.
 | * | 5 mg (Details: UCUM codemg = 'mg') |
 
 
-> **dispenseRequest****validityPeriod**: ?? --> 2026-02-03**numberOfRepeatsAllowed**: 1**quantity**: 30 Kapseln
-
-### ExpectedSupplyDurations
-
-| | | | | |
-| :--- | :--- | :--- | :--- | :--- |
-| - | **Value** | **Unit** | **System** | **Code** |
-| * | 30 | Tage | [http://unitsofmeasure.org](http://terminology.hl7.org/6.5.0/CodeSystem-v3-ucum.html) | d |
-
-
 
 
 ## Resource Content
@@ -96,9 +86,8 @@ Freitext Informationen zum Medikationsplaneintrag.
     {
       "coding" : [
         {
-          "system" : "http://hl7.org/fhir/medicationrequest-category",
-          "code" : "1",
-          "display" : "Medikationsplaneintrag"
+          "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS",
+          "code" : "1"
         }
       ]
     }
@@ -166,23 +155,7 @@ Freitext Informationen zum Medikationsplaneintrag.
         }
       ]
     }
-  ],
-  "dispenseRequest" : {
-    "validityPeriod" : {
-      "end" : "2026-02-03"
-    },
-    "numberOfRepeatsAllowed" : 1,
-    "quantity" : {
-      "value" : 30,
-      "unit" : "Kapseln"
-    },
-    "expectedSupplyDuration" : {
-      "value" : 30,
-      "unit" : "Tage",
-      "system" : "http://unitsofmeasure.org",
-      "code" : "d"
-    }
-  }
+  ]
 }
 
 ```

@@ -22,7 +22,7 @@ Profile: [ELGA e-Med Planeintrag](StructureDefinition-at-emed-mr-planeintrag.md)
 
 **category**: Medikationsplaneintrag
 
-**medication**: [Magistrale Zubereitung](Medication-AtEmedJourneyMedicationMagistral02.md)
+**medication**: ASPIRIN TBL 500MG
 
 **subject**: [Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-AtEmedExamplePatient01.md)
 
@@ -43,16 +43,6 @@ Freitext Informationen zum Medikationsplaneintrag.
 | :--- | :--- | :--- | :--- | :--- |
 | - | **Text** | **PatientInstruction** | **Timing** | **Route** |
 | * | 1 täglich auftragen | Abends sehr dünn auf die betroffene Stelle auftragen. | Once per 1 day | Anwendung auf der Haut |
-
-> **dispenseRequest****validityPeriod**: ?? --> 2026-02-03**numberOfRepeatsAllowed**: 1
-
-### ExpectedSupplyDurations
-
-| | | | | |
-| :--- | :--- | :--- | :--- | :--- |
-| - | **Value** | **Unit** | **System** | **Code** |
-| * | 30 | Tage | [http://unitsofmeasure.org](http://terminology.hl7.org/6.5.0/CodeSystem-v3-ucum.html) | d |
-
 
 
 
@@ -91,16 +81,20 @@ Freitext Informationen zum Medikationsplaneintrag.
     {
       "coding" : [
         {
-          "system" : "http://hl7.org/fhir/medicationrequest-category",
-          "code" : "1",
-          "display" : "Medikationsplaneintrag"
+          "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS",
+          "code" : "1"
         }
       ]
     }
   ],
-  "medicationReference" : {
-    "reference" : "Medication/AtEmedJourneyMedicationMagistral02",
-    "display" : "Magistrale Zubereitung"
+  "medicationCodeableConcept" : {
+    "coding" : [
+      {
+        "system" : "https://termgit.elga.gv.at/CodeSystem/asp-liste",
+        "code" : "0004340",
+        "display" : "ASPIRIN TBL 500MG"
+      }
+    ]
   },
   "subject" : {
     "reference" : "Patient/AtEmedExamplePatient01"
@@ -135,19 +129,7 @@ Freitext Informationen zum Medikationsplaneintrag.
         ]
       }
     }
-  ],
-  "dispenseRequest" : {
-    "validityPeriod" : {
-      "end" : "2026-02-03"
-    },
-    "numberOfRepeatsAllowed" : 1,
-    "expectedSupplyDuration" : {
-      "value" : 30,
-      "unit" : "Tage",
-      "system" : "http://unitsofmeasure.org",
-      "code" : "d"
-    }
-  }
+  ]
 }
 
 ```

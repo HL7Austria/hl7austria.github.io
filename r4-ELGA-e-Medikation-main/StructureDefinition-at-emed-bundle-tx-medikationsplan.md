@@ -9,12 +9,12 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-tx-medikationsplan | *Version*:0.1.1 | |
-| Draft as of 2026-01-29 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedBundleMedikationsplanTx |
+| Draft as of 2026-01-30 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedBundleMedikationsplanTx |
 
  
 **Beschreibung:** Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan bestehend aus: 
-* 1..1 List: Liste der Medikationsplaneinträge und deren Änderungsstatus
-* 0..* MedicationRequests: Medikationsplaneinträge
+* 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus)
+* 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung
  
 
 **Usages:**
@@ -44,7 +44,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-bundle-tx-me
   "name" : "AtEmedBundleMedikationsplanTx",
   "title" : "ELGA e-Med Medikationsplan Transaction Bundle",
   "status" : "draft",
-  "date" : "2026-01-29T15:27:43+00:00",
+  "date" : "2026-01-30T14:55:57+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -67,7 +67,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-bundle-tx-me
       ]
     }
   ],
-  "description" : "**Beschreibung:** Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan bestehend aus: \n- 1..1 List: Liste der Medikationsplaneinträge und deren Änderungsstatus\n- 0..* MedicationRequests: Medikationsplaneinträge \n",
+  "description" : "**Beschreibung:** Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan bestehend aus: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus) \n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung",
   "fhirVersion" : "4.0.1",
   "mapping" : [
     {
@@ -105,24 +105,28 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-bundle-tx-me
       {
         "id" : "Bundle.identifier",
         "path" : "Bundle.identifier",
-        "short" : "Persistenter Identifikator für das Bundle."
+        "short" : "Persistenter Identifikator für das Bundle.",
+        "mustSupport" : true
       },
       {
         "id" : "Bundle.type",
         "path" : "Bundle.type",
         "short" : "Art des Bundles. Für schreibenden Zugriff immer Typ \"transaction\".",
-        "patternCode" : "transaction"
+        "patternCode" : "transaction",
+        "mustSupport" : true
       },
       {
         "id" : "Bundle.timestamp",
         "path" : "Bundle.timestamp",
         "short" : "Zeitpunkt der Erstellung des Bundles. Verwendung prüfen.",
-        "min" : 1
+        "min" : 1,
+        "mustSupport" : true
       },
       {
         "id" : "Bundle.link",
         "path" : "Bundle.link",
-        "short" : "Verweise auf weiterführende Informationen zum Bundle. Verwendung prüfen."
+        "short" : "Verweise auf weiterführende Informationen zum Bundle. Verwendung prüfen.",
+        "max" : "0"
       },
       {
         "id" : "Bundle.entry",
@@ -148,8 +152,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-bundle-tx-me
       {
         "id" : "Bundle.entry.fullUrl",
         "path" : "Bundle.entry.fullUrl",
-        "short" : "Eindeutige URL für den Eintrag im Bundle. Verwendung prüfen.",
-        "max" : "0"
+        "short" : "Eindeutige URL für den Eintrag im Bundle. "
       },
       {
         "id" : "Bundle.entry:Medikationsplan",
@@ -161,11 +164,6 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-bundle-tx-me
       {
         "id" : "Bundle.entry:Medikationsplan.link",
         "path" : "Bundle.entry.link",
-        "max" : "0"
-      },
-      {
-        "id" : "Bundle.entry:Medikationsplan.fullUrl",
-        "path" : "Bundle.entry.fullUrl",
         "max" : "0"
       },
       {
@@ -191,11 +189,6 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-bundle-tx-me
       {
         "id" : "Bundle.entry:Medikationsplaneintrag.link",
         "path" : "Bundle.entry.link",
-        "max" : "0"
-      },
-      {
-        "id" : "Bundle.entry:Medikationsplaneintrag.fullUrl",
-        "path" : "Bundle.entry.fullUrl",
         "max" : "0"
       },
       {

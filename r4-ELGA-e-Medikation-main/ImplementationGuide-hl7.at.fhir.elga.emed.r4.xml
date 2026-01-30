@@ -11,7 +11,7 @@
   <name value="ELGAeMedikationR4"/>
   <title value="ELGA e-Medikation (R4) ENTWURF"/>
   <status value="draft"/>
-  <date value="2026-01-29T15:27:43+00:00"/>
+  <date value="2026-01-30T14:55:57+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -485,24 +485,13 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="MedicationRequest"/>
-      </extension>
-      <reference>
-        <reference value="MedicationRequest/AtEmedExampleGeplanteAbgabe01"/>
-      </reference>
-      <name value="Beispiel Geplante Abgabe 1"/>
-      <description value="Beispiel Geplante Abgabe 1"/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-geplante-abgabe"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Bundle"/>
       </extension>
       <reference>
         <reference value="Bundle/AtEmedJourneyBundleMedikationsplan01"/>
       </reference>
       <name value="Beispiel Journey 01: Collection Bundle"/>
-      <description value="**Beschreibung:** Beispiel eines Collection Bundles, das einen leeren Mediaktionsplan (List) beinhaltet."/>
+      <description value="**Beschreibung:** Beispiel eines Collection Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge)."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-medikationsplan"/>
     </resource>
     <resource>
@@ -513,7 +502,7 @@
         <reference value="List/AtEmedJourneyListMedikationsplan01"/>
       </reference>
       <name value="Beispiel Journey 01: Leerer Medikationsplan"/>
-      <description value="**Beschreibung:** Beispiel eines leeren Mediaktionsplans (List)"/>
+      <description value="**Beschreibung:** Beispiel eines leeren Mediaktionsplans (List-Ressource ohne Einträge)"/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"/>
     </resource>
     <resource>
@@ -524,7 +513,7 @@
         <reference value="Bundle/AtEmedJourneyBundleMedikationsplanTx01"/>
       </reference>
       <name value="Beispiel Journey 01: Transaction Bundle"/>
-      <description value="**Beschreibung:** Beispiel eines Transaction Bundles, das einen leeren Mediaktionsplan (List) beinhaltet."/>
+      <description value="**Beschreibung:** Beispiel eines Transaction Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge)."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-tx-medikationsplan"/>
     </resource>
     <resource>
@@ -535,7 +524,7 @@
         <reference value="Bundle/AtEmedJourneyBundleMedikationsplan02"/>
       </reference>
       <name value="Beispiel Journey 02: Collection Bundle"/>
-      <description value="**Beschreibung:** Beispiel eines Collection Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen referenziert."/>
+      <description value="**Beschreibung:** Beispiel eines Collection Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-medikationsplan"/>
     </resource>
     <resource>
@@ -557,7 +546,7 @@
         <reference value="List/AtEmedJourneyListMedikationsplan02"/>
       </reference>
       <name value="Beispiel Journey 02: Medikationsplan"/>
-      <description value="**Beschreibung:** Beispiel eines Medikationsplans (List), der 2 Einträge (MedicationReqeusts) referenziert und Reihenfolge und Änderungsstatus festhält."/>
+      <description value="**Beschreibung:** Beispiel eines Medikationsplans (List), der 2 Planeinträge (MedicationReqeusts) referenziert und Informationen über Reihenfolge und Änderungsstatus speichert."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"/>
     </resource>
     <resource>
@@ -612,8 +601,19 @@
         <reference value="Bundle/AtEmedJourneyBundleMedikationsplanTx02"/>
       </reference>
       <name value="Beispiel Journey 02: Transaction Bundle"/>
-      <description value="**Beschreibung:** Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen beinhaltet."/>
+      <description value="**Beschreibung:** Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) beinhaltet."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-tx-medikationsplan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/AtEmedJourneyMrGeplanteAbgabe03"/>
+      </reference>
+      <name value="Beispiel Journey 03: Geplante Abgabe"/>
+      <description value="**Beschreibung:** Bildet eine geplante Abgabe des Medikaments EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest)."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-geplante-abgabe"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -623,7 +623,7 @@
         <reference value="Organization/AtEmedExampleOrganizationApo01"/>
       </reference>
       <name value="Beispiel Organisation Apotheke 01"/>
-      <description value="**Beschreibung:** Beispiel einer Apotheke als Organisation 01."/>
+      <description value="**Beschreibung:** Beispiel einer Apotheke als Organisation."/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -634,7 +634,7 @@
         <reference value="Patient/AtEmedExamplePatient01"/>
       </reference>
       <name value="Beispiel Patient 01"/>
-      <description value="**Beschreibung:** Beispiel eines Patienten 01."/>
+      <description value="**Beschreibung:** Beispiel eines Patienten."/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -645,7 +645,7 @@
         <reference value="Practitioner/AtEmedExamplePractitioner01"/>
       </reference>
       <name value="Beispiel Ärztin 01"/>
-      <description value="**Beschreibung:** Beispiel einer behandelnden Ärztin 01."/>
+      <description value="**Beschreibung:** Beispiel einer behandelnden Ärztin."/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -711,7 +711,7 @@
         <reference value="StructureDefinition/at-emed-list-medikationsplan"/>
       </reference>
       <name value="ELGA e-Med Medikationsplan"/>
-      <description value="**Beschreibung:** Bildet den Medikationsplan eines ELGA Teilnehmers ab (&quot;List&quot;-Ressource). &#xA;Die Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimitteln und deren Dosierung abbilden.&#xA;Jedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch zu klären). Die Reihenfolge der Listenelemente wird duch den User festgelegt."/>
+      <description value="**Beschreibung:** Bildet den Medikationsplan eines ELGA-Teilnehmers ab (&quot;List&quot;-Ressource). &#xA;Die Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimittel und deren Dosierung abbilden.&#xA;Die Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch zu klären)."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -722,7 +722,7 @@
         <reference value="StructureDefinition/at-emed-bundle-medikationsplan"/>
       </reference>
       <name value="ELGA e-Med Medikationsplan Collection Bundle"/>
-      <description value="**Beschreibung:** Das Bundle vom Typ Collection dient dem lesenden Zugriff auf den ELGA Medikationsplan bestehend aus: &#xA;- 1..1 List: Liste der Medikationsplaneinträge und deren Änderungsstatus &#xA;- 0..* MedicationRequests: Medikationsplaneinträge"/>
+      <description value="**Beschreibung:** Das Bundle vom Typ Collection bestehend aus: &#xA;- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus) &#xA;- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -733,7 +733,7 @@
         <reference value="StructureDefinition/at-emed-bundle-tx-medikationsplan"/>
       </reference>
       <name value="ELGA e-Med Medikationsplan Transaction Bundle"/>
-      <description value="**Beschreibung:** Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan bestehend aus: &#xA;- 1..1 List: Liste der Medikationsplaneinträge und deren Änderungsstatus&#xA;- 0..* MedicationRequests: Medikationsplaneinträge"/>
+      <description value="**Beschreibung:** Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan bestehend aus: &#xA;- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus) &#xA;- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

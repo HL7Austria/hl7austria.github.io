@@ -16,7 +16,7 @@ Profile: [ELGA e-Med Medikationsplan](StructureDefinition-at-emed-list-medikatio
 * **Items**: [MedicationRequest: extension = 2026-01-28 --> 2026-02-28,1 Kapsel täglich morgens; identifier = 4711; status = active; intent = order; category = Medikationsplaneintrag; medication[x] = EBETREXAT TBL 10MG; authoredOn = 2026-01-28 08:00:00+0000; reasonCode = Essentielle Hypertonie; note = Freitext Informationen zum Medikationsplaneintrag.](MedicationRequest-AtEmedJourneyMrPlaneintrag0201.md)
   * Date: 2026-01-28 08:00:00+0000
   * Flag: Prescribed
-* **Items**: [MedicationRequest: extension = 2026-01-28 --> 2026-02-28,1 täglich auftragen; identifier = 4712; status = active; intent = order; category = Medikationsplaneintrag; medication[x] = ->Magistrale Zubereitung; authoredOn = 2026-01-28 08:00:00+0000; note = Freitext Informationen zum Medikationsplaneintrag.](MedicationRequest-AtEmedJourneyMrPlaneintrag0202.md)
+* **Items**: [MedicationRequest: extension = 2026-01-28 --> 2026-02-28,1 täglich auftragen; identifier = 4712; status = active; intent = order; category = Medikationsplaneintrag; medication[x] = ASPIRIN TBL 500MG; authoredOn = 2026-01-28 08:00:00+0000; note = Freitext Informationen zum Medikationsplaneintrag.](MedicationRequest-AtEmedJourneyMrPlaneintrag0202.md)
   * Date: 2026-01-28 08:00:00+0000
   * Flag: Prescribed
 

@@ -1,12 +1,18 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel Geplante Abgabe 1 - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel Journey 03: Geplante Abgabe - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Beispiel Geplante Abgabe 1**
+* **Beispiel Journey 03: Geplante Abgabe**
 
-## Example MedicationRequest: Beispiel Geplante Abgabe 1
+## Example MedicationRequest: Beispiel Journey 03: Geplante Abgabe
 
 Profile: [ELGA e-Med Geplante Abgabe](StructureDefinition-at-emed-mr-geplante-abgabe.md)
+
+**Extension Definition for MedicationRequest.effectiveDosePeriod for Version 5.0**: 2026-01-28 --> 2026-02-28
+
+**Extension Definition for MedicationRequest.renderedDosageInstruction for Version 5.0**: 
+
+1 Kapsel täglich morgens
 
 **identifier**: WYE82A2G8EEW-4711
 
@@ -20,13 +26,13 @@ Profile: [ELGA e-Med Geplante Abgabe](StructureDefinition-at-emed-mr-geplante-ab
 
 **subject**: [Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-AtEmedExamplePatient01.md)
 
-**authoredOn**: 2024-10-03
+**authoredOn**: 2026-01-29 08:00:00+0000
 
 **requester**: [Practitioner Melanie Musterärztin ](Practitioner-AtEmedExamplePractitioner01.md)
 
 **reasonCode**: Essentielle Hypertonie
 
-**basedOn**: [Planeintrag](MedicationRequest/AtEmedExampleMedicationRequestPlaneintrag01)
+**basedOn**: [Planeintrag](MedicationRequest-AtEmedJourneyMrPlaneintrag0201.md)
 
 **groupIdentifier**: WYE82A2G8EE1
 
@@ -37,7 +43,7 @@ Profile: [ELGA e-Med Geplante Abgabe](StructureDefinition-at-emed-mr-geplante-ab
 Freitext Informationen zur geplanten Abgabe.
 
 
-> **dosageInstruction****text**: 1 Kapsel täglich morgens**patientInstruction**: Nehmen Sie die Kapsel jeden Morgen mit ausreichend Flüssigkeit ein.**timing**: Once per 1 day**route**: Oraler Verabreichungsweg
+> **dosageInstruction****text**: 1 Kapsel täglich morgens**patientInstruction**: Nehmen Sie die Kapsel jeden Morgen mit ausreichend Flüssigkeit ein.**timing**: Once per 1 day**route**: zum Einnehmen
 
 ### DoseAndRates
 
@@ -47,7 +53,7 @@ Freitext Informationen zur geplanten Abgabe.
 | * | 5 mg (Details: UCUM codemg = 'mg') |
 
 
-> **dispenseRequest****quantity**: 30 Kapseln
+> **dispenseRequest****numberOfRepeatsAllowed**: 1**quantity**: 30 Kapseln
 
 ### ExpectedSupplyDurations
 
@@ -64,12 +70,25 @@ Freitext Informationen zur geplanten Abgabe.
 ```json
 {
   "resourceType" : "MedicationRequest",
-  "id" : "AtEmedExampleGeplanteAbgabe01",
+  "id" : "AtEmedJourneyMrGeplanteAbgabe03",
   "meta" : {
     "profile" : [
       "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-geplante-abgabe"
     ]
   },
+  "extension" : [
+    {
+      "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod",
+      "valuePeriod" : {
+        "start" : "2026-01-28",
+        "end" : "2026-02-28"
+      }
+    },
+    {
+      "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
+      "valueMarkdown" : "1 Kapsel täglich morgens"
+    }
+  ],
   "identifier" : [
     {
       "value" : "WYE82A2G8EEW-4711"
@@ -81,7 +100,7 @@ Freitext Informationen zur geplanten Abgabe.
     {
       "coding" : [
         {
-          "system" : "http://hl7.org/fhir/medicationrequest-category",
+          "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS",
           "code" : "2",
           "display" : "Geplante Abgabe"
         }
@@ -100,7 +119,7 @@ Freitext Informationen zur geplanten Abgabe.
   "subject" : {
     "reference" : "Patient/AtEmedExamplePatient01"
   },
-  "authoredOn" : "2024-10-03",
+  "authoredOn" : "2026-01-29T08:00:00+00:00",
   "requester" : {
     "reference" : "Practitioner/AtEmedExamplePractitioner01"
   },
@@ -117,7 +136,7 @@ Freitext Informationen zur geplanten Abgabe.
   ],
   "basedOn" : [
     {
-      "reference" : "MedicationRequest/AtEmedExampleMedicationRequestPlaneintrag01",
+      "reference" : "MedicationRequest/AtEmedJourneyMrPlaneintrag0201",
       "display" : "Planeintrag"
     }
   ],
@@ -143,9 +162,9 @@ Freitext Informationen zur geplanten Abgabe.
       "route" : {
         "coding" : [
           {
-            "system" : "http://snomed.info/sct",
-            "code" : "26643006",
-            "display" : "Oraler Verabreichungsweg"
+            "system" : "https://termgit.elga.gv.at/CodeSystem-medikationartanwendung.html",
+            "code" : "100000073619",
+            "display" : "zum Einnehmen"
           }
         ]
       },
@@ -162,6 +181,7 @@ Freitext Informationen zur geplanten Abgabe.
     }
   ],
   "dispenseRequest" : {
+    "numberOfRepeatsAllowed" : 1,
     "quantity" : {
       "value" : 30,
       "unit" : "Kapseln"

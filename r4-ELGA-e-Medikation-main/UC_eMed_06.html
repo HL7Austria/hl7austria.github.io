@@ -186,12 +186,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#vorbedingungen" id="markdown-toc-vorbedingungen">Vorbedingungen</a></li>
   <li><a href="#nachbedingungenergebnis" id="markdown-toc-nachbedingungenergebnis">Nachbedingungen/Ergebnis</a></li>
   <li><a href="#abläufe" id="markdown-toc-abläufe">Abläufe</a></li>
-  <li><a href="#sub-use-cases" id="markdown-toc-sub-use-cases">Sub-Use Cases</a></li>
-  <li><a href="#beispiel" id="markdown-toc-beispiel">Beispiel</a></li>
-  <li><a href="#technische-hinweise" id="markdown-toc-technische-hinweise">Technische Hinweise</a></li>
-  <li><a href="#relevante-profile" id="markdown-toc-relevante-profile">Relevante Profile</a></li>
-  <li><a href="#relevante-invarianten" id="markdown-toc-relevante-invarianten">Relevante Invarianten</a></li>
-  <li><a href="#mögliche-notifications" id="markdown-toc-mögliche-notifications">Mögliche Notifications</a></li>
+  <li><a href="#relevante-ilf-implementierungsleitfäden--deren-user-storys" id="markdown-toc-relevante-ilf-implementierungsleitfäden--deren-user-storys">Relevante ILF (Implementierungsleitfäden) + deren User Storys</a></li>
+  <li><a href="#abgrenzungen" id="markdown-toc-abgrenzungen">Abgrenzungen</a></li>
+  <li><a href="#user-interface-beschreibungen" id="markdown-toc-user-interface-beschreibungen">User Interface Beschreibungen</a></li>
+  <li><a href="#hinweise" id="markdown-toc-hinweise">Hinweise</a></li>
+  <li><a href="#medikationsplan-erfassen-uc_emed_06_h01" id="markdown-toc-medikationsplan-erfassen-uc_emed_06_h01">Medikationsplan erfassen (UC_eMed_06_H01)</a></li>
+  <li><a href="#medikationsplaneinträge-bearbeiten-uc_emed_06_h02" id="markdown-toc-medikationsplaneinträge-bearbeiten-uc_emed_06_h02">Medikationsplaneinträge bearbeiten (UC_eMed_06_H02)</a></li>
+  <li><a href="#medikationsplan-korrekturvermerk-setzen-uc_emed_06_h03" id="markdown-toc-medikationsplan-korrekturvermerk-setzen-uc_emed_06_h03">Medikationsplan: Korrekturvermerk setzen (UC_eMed_06_H03)</a></li>
+  <li><a href="#löschen-von-einträgen-im-medikationsplan-bzw-einer-medikationsplan-version-uc_emed_06_h04" id="markdown-toc-löschen-von-einträgen-im-medikationsplan-bzw-einer-medikationsplan-version-uc_emed_06_h04">Löschen von Einträgen im Medikationsplan bzw. einer Medikationsplan-Version (UC_eMed_06_H04)</a></li>
+  <li><a href="#medikationsplan-gesetzliche-speicherfristen-uc_emed_06_h05" id="markdown-toc-medikationsplan-gesetzliche-speicherfristen-uc_emed_06_h05">Medikationsplan: Gesetzliche Speicherfristen (UC_eMed_06_H05)</a></li>
 </ul>
 
 </div>
@@ -254,6 +257,14 @@ width: 100%;}
   left: 0;
   background: rgb(228, 228, 228);
   z-index: 4;
+}
+
+.hinweisbox {
+  border: 1px solid #156082;
+  background: #dae8f8;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
 }
 
 </style>
@@ -358,8 +369,8 @@ Details zu "Medikationsplan erfassen", siehe "<a href="requirements.html">Die e-
   </li>
 </ol>
 
-<h3 id="sub-use-cases">Sub-Use Cases</h3>
-<p><strong>TODO: DRAFT</strong></p>
+<h3 id="relevante-ilf-implementierungsleitfäden--deren-user-storys">Relevante ILF (Implementierungsleitfäden) + deren User Storys</h3>
+<p><strong>TODO: DRAFT AKL (evtl. nicht mehr aktuell)</strong></p>
 <h4 id="uc_emed_06_s01-medikationsplan-lesen-um-zu-schreiben">UC_eMed_06_S01 Medikationsplan lesen um zu schreiben</h4>
 <ol>
   <li>Vor dem Scheiben eines Medikationsplans muss sichergestellt sein, dass die aktuelle Version gelesen wird.</li>
@@ -367,27 +378,192 @@ Details zu "Medikationsplan erfassen", siehe "<a href="requirements.html">Die e-
   <li>Im Anschluss wird der gesamte bestehende Medikationsplan durch eine neue, geänderte Version ersetzt. Dabei nimmt der GDA die vorbestehenden Einträge lediglich zur Kenntnis, d.h. er verantwortet nur die Verträglichkeit der neu hinzugefügten Medikation mit der bestehenden.</li>
 </ol>
 
-<h4 id="uc_emed_06_s02-medikationsplaneintrag-editieren-hinweis-für-versicherten-hinweis-für-mitbehandler-indikation-und-dosierangaben">UC_eMed_06_S02 Medikationsplaneintrag editieren (Hinweis für Versicherten, Hinweis für Mitbehandler, Indikation und Dosierangaben)</h4>
+<h4 id="uc_emed_06_s02-medikationsplaneintrag-editieren-hinweis-für-patientenmitbehandler-indikation-und-dosierangaben">UC_eMed_06_S02 Medikationsplaneintrag editieren (Hinweis für Patienten/Mitbehandler, Indikation und Dosierangaben)</h4>
 
 <h4 id="uc_emed_06_s03-medikationsplaneintrag-pausieren--aktivieren--beenden">UC_eMed_06_S03 Medikationsplaneintrag pausieren / aktivieren / beenden</h4>
 
 <h4 id="uc_emed_06_s04-medikationsplaneintrag-stornieren">UC_eMed_06_S04 Medikationsplaneintrag stornieren</h4>
 
-<h4 id="uc_emed_06_s05-medikationsplaneintrag-nachtragen-einträge-aus-zusätzlich-erfolgte-abgaben-ohne-medikationsplanbezug">UC_eMed_06_S05 Medikationsplaneintrag nachtragen (Einträge aus „Zusätzlich erfolgte Abgaben“ (ohne Medikationsplanbezug))</h4>
-<p>Optional kann der GDA Einträge aus der „Zusätzlich erfolgte Abgaben“-Liste (ohne Medikationsplanbezug) in den Medikationsplan übernehmen (d.h. einen neuen Eintrag erstellen).</p>
+<h4 id="uc_emed_06_s05-medikationsplaneintrag-nachtragen">UC_eMed_06_S05 Medikationsplaneintrag nachtragen</h4>
+<p>Optional kann der GDA aufgrund einer dokumentierten durchgeführten Abgabe Einträge im den Medikationsplan nachtragen (d.h. einen neuen Eintrag erstellen). 
+Es besteht aber keine direkte Referenz zwischen der Abgabe und dem Medikationsplaneintrag (TODO prüfen).</p>
 
 <h4 id="uc_emed_06_s06-medikationsplaneintrag-reihen">UC_eMed_06_S06 Medikationsplaneintrag reihen</h4>
 <p>Weiters kann der GDA die Reihenfolge der Medikationsplaneinträge im Medikationsplan festlegen. Dies geschieht in der Praxis insbesondere, um eine fachlich sinnvolle Gruppierung von Medikamenten vorzunehmen und dient der Übersichtlichkeit.</p>
 
-<h3 id="beispiel">Beispiel</h3>
+<h4 id="beispiel">Beispiel</h4>
 
-<h3 id="technische-hinweise">Technische Hinweise</h3>
+<h4 id="technische-hinweise">Technische Hinweise</h4>
 
-<h3 id="relevante-profile">Relevante Profile</h3>
+<h4 id="relevante-profile">Relevante Profile</h4>
 
-<h3 id="relevante-invarianten">Relevante Invarianten</h3>
+<h4 id="relevante-invarianten">Relevante Invarianten</h4>
 
-<h3 id="mögliche-notifications">Mögliche Notifications</h3>
+<h4 id="mögliche-notifications">Mögliche Notifications</h4>
+
+<h3 id="abgrenzungen">Abgrenzungen</h3>
+<p>Keine.</p>
+
+<h3 id="user-interface-beschreibungen">User Interface Beschreibungen</h3>
+<p>Mockup folgt.</p>
+
+<h3 id="hinweise">Hinweise</h3>
+
+<h3 id="medikationsplan-erfassen-uc_emed_06_h01">Medikationsplan erfassen (UC_eMed_06_H01)</h3>
+
+<p>Ein Medikationsplan besteht aus ein oder mehreren Medikationsplaneinträgen. Jeder Medikationsplaneintrag beinhaltet ein verordnetes Medikament samt Einnahmeinformation, das von der:dem ELGA-Teilnehmer:in aktuell eingenommen werden soll. Zudem enthält der Eintrag die Information, welche:r Ärztin:Arzt diesen medizinisch verantwortet.</p>
+
+<p>Ein Medikationsplan beinhaltet u.a. folgende Informationen:</p>
+<ul>
+  <li>Präparat (PZN, Wirkstoff, Dosierung)</li>
+  <li>Gebrauchsanweisung (Signatur)</li>
+  <li>Einnahmezeitraum (befristet, unbefristet)</li>
+  <li>Verordner:in</li>
+  <li>Hinweise</li>
+  <li>Indikation</li>
+</ul>
+
+<div class="hinweisbox">
+    ℹ️   
+    Die nachfolgenden Informationen betreffen die Implementierung des Medikationsplans im jeweiligen Client-System: <br />       
+    Ein Medikationsplan wird <b>initial erstellt</b> (es existieren noch keine Vorversionen): <br />                
+    <ul>
+        <li>Neue Einträge hinzufügen:
+            <ul>
+                <li>Manuelles Erfassen neuer Einträge mittels Angabe aller erforderlichen Informationen </li>
+                <li>(optional) Übernahme einer durchgeführten Abgabe ohne zugehörige geplante Abgabe, wobei die Daten vor der Speicherung des Medikationsplaneintrages nochmals verändert werden können </li> 
+            </ul>
+        </li>
+    </ul>                
+    Ein bereits <b>bestehender</b> Medikationsplan (zuletzt erfasste Medikationsplanversion) wird als Basis für das Erfassen eines neuen Medikationsplans verwendet: <br /> 
+    <ul>
+        <li>Neue Einträge hinzufügen:
+            <ul>
+                <li>Manuelles Erfassen neuer Einträge mittels Angabe aller erforderlichen Informationen</li>
+                <li>(optional) Übernahme einer durchgeführten Abgabe ohne zugehöriger geplanten Abgabe, wobei die Daten vor der Speicherung des Medikationsplaneintrages nochmals verändert werden können
+                    Bestehende Einträge beibehalten und ggf. verändern</li>
+            </ul>
+        </li>
+        <li>Bestehende Einträge beibehalten und ggf. verändern:
+            <ul>
+                <li>Beibehalten von bestehenden* Einträgen der zuletzt erfassten Medikationsplanversion inklusiver aller enthaltenen Korrekturvermerke**, wobei die Daten vor der Speicherung des Medikationsplaneintrages nochmals verändert werden können </li>
+                * Es können nur sichtbare Einträge übernommen werden
+                    ** enthaltene Korrekturvermerke sollen bei der Erfassung eines neuen Medikationsplans zunächst durch den GDA aufgelöst und in der neuen Version berichtigt werden
+            </ul>
+        </li>
+        <li>Bestehende Einträge entfernen:
+            <ul>
+                <li>Der GDA kann bereits bestehende Medikationsplan-Einträge entfernen, im Sinne eines Absetzens bzw. nicht Weiterverordnen in der nächsten Version des Medikationsplans</li>
+                <li>Beim Erfassen einer neuen Medikationsplanversion stehen die abgelaufenen/befristeten Einträge nicht mehr zur Verfügung </li>
+                <li>(tbd) Medikationsplan leeren: Soll der neue Medikationsplan keine Medikationsplan-Einträge mehr enthalten – sprich der:die ELGA-Teilnehmer:in soll derzeit keine Medikation mehr einnehmen – muss ein „leerer“ Medikationsplan geschrieben/gespeichert werden. Das bedeutet, dass alle bisherigen Medikamente aus dem Medikationsplan zu entfernen sind (ggf. sind diese bereits abgelaufen und stehen damit für die neue Version des Medikationsplans schon nicht mehr zur Verfügung). </li>
+                * es können nur sichtbare Einträge übernommen werden, vgl. UC_eMed_06_Medikationsplan schreiben
+            </ul>
+        </li>
+        <li>Reihenfolge:
+            <ul>
+                <li>Die Reihenfolge* der Medikationsplan-Einträge kann definiert/geändert werden. Dies impliziert keine medizinische Verantwortungsübernahme für den jeweiligen umsortierten Eintrag selbst.  </li>
+                <li>(tbd) aus fachlicher Sicht ist es nicht relevant, ob eine Umsortierung eine neue Version des Medikationsplans erfasst oder nicht; mitgeloggt soll diese Änderung dennoch werden 
+                    <ul>
+                        <li>für die Speicherung einer neuen Reihenfolge wird technisch eine neue Medikationsplanversion benötigt (Änderung der Reihenfolge hat inhaltliche Auswirkungen)</li>
+                        <li>soll es möglich sein, dass ein anderer GDA die Reihenfolge nachträglich ändert, obwohl der Medikationsplan nicht von diesem GDA verantwortet wird? </li>
+                        <li>ggf. reicht es aus, wenn die Reihenfolge nur einmalig beim Erfassen einer neuen Medikationsplanversion definiert werden kann </li>
+                    </ul>
+                </li>
+                * die durch die zentrale Anwendung gelieferte Reihenfolge der Medikationsplaneinträge kann wiedergegeben werden oder bei Bedarf kann eine eigene Reihung vorgenommen werden
+            </ul>
+        </li>
+        <li>Duplikatsprüfung (?)
+            <ul>
+                <li>sofern sich am Medikationsplan inhaltlich nichts zur Vorversion verändert hat, wird die Speicherung abgelehnt
+                    <ul> 
+                        <li>veränderte Reihenfolge erzeugt eine neue Version (soll das nachträglich durch andere GDA überhaupt möglich sein oder nur beim Erstellen/Verantworten einer neuen Version – s. oben?) </li>
+                        <li>eigene Einträge entfernen und in gleicher Form wieder hinzufügen</li> 
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>                          
+</div>
+
+<h3 id="medikationsplaneinträge-bearbeiten-uc_emed_06_h02">Medikationsplaneinträge bearbeiten (UC_eMed_06_H02)</h3>
+
+<ul>
+  <li>Medikationsplaneinträge, die von einem GDA selbst erfasst wurden, können nachträglich von diesem GDA überarbeitet werden</li>
+</ul>
+
+<div class="hinweisbox">
+ℹ️   
+Hinweis zur Änderung fremderfasster Abgabeneinträge:<br />
+Sofern fremderfasste Einträge korrigiert werden müssen, ist dies über einen Korrekturvermerk möglich, vgl. H03. 
+</div>
+
+<ul>
+  <li>Zur Nachvollziehbarkeit erfolgt jede Bearbeitung von durchgeführten Abgaben über eine Versionierung
+    <ul>
+      <li>Vorversionen werden nicht gelöscht, sondern als solche markiert</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="medikationsplan-korrekturvermerk-setzen-uc_emed_06_h03">Medikationsplan: Korrekturvermerk setzen (UC_eMed_06_H03)</h3>
+
+<ul>
+  <li>Der GDA kann Medikationspläne nachträglich mittels Korrekturvermerk korrigieren, sofern ein oder mehrere Einträge fehlerhaft sind.</li>
+</ul>
+
+<div class="hinweisbox">
+ℹ️   
+Hinweis zur Änderung der Medikation:<br />
+Wenn sich die Medikation ändert (Medikament absetzen, Änderung der Einnahmeanordnung, etc.), ist dies über eine neue Version abzubilden und nicht als Korrekturvermerk.   
+</div>
+
+<ul>
+  <li>Ein Korrekturvermerk beinhaltet folgende Aspekte:
+    <ul>
+      <li>Im Falle einer Korrektur auf Einzeleintragsebene:
+        <ul>
+          <li>zu korrigierender Medikationsplaneintrag wird als inkorrekt markiert</li>
+          <li>es wird ein Freitext-Kommentar als Begründung zum inkorrekten Medikationsplaneintrag erfasst</li>
+        </ul>
+      </li>
+      <li>Im Falle einer Korrektur auf Medikationsplanebene (z.B. aufgrund fehlender Einträge)
+        <ul>
+          <li>es wird ein Freitext-Kommentar als Hinweis auf die fehlende Angabe erfasst</li>
+        </ul>
+      </li>
+      <li>es besteht die Möglichkeit bereits korrigierte Medikationsplaneinträge mit einem weiteren Korrekturvermerk zu versehen. Dabei wird der jeweilige Korrekturvermerk als inkorrekt markiert.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="löschen-von-einträgen-im-medikationsplan-bzw-einer-medikationsplan-version-uc_emed_06_h04">Löschen von Einträgen im Medikationsplan bzw. einer Medikationsplan-Version (UC_eMed_06_H04)</h3>
+
+<p>ELGA-Teilnehmer:innen können folgende Löschungen durchführen:</p>
+<ul>
+  <li>Unwiderrufliches Löschen einzelner Einträge aus dem Medikationsplan
+    <ul>
+      <li>das Löschen aller Einträge eines Medikationsplans führt zu einem leeren Medikationsplan (im Rahmen der Selbstbestimmung trotzdem zulässig)</li>
+      <li>Autor der Löschung ist der:die ELGA-Teilnehmer:in bzw. die Fachanwendung, die Verantwortung über den gesamten Medikationsplan inkl. der gelöschten Einträge trägt von diesem Zeitpunkt an nicht mehr der Verfasser des Plans (GDA)</li>
+    </ul>
+  </li>
+  <li>Unwiderrufliches Löschen vollständiger Medikationsplanversionen</li>
+</ul>
+
+<p>Ein reines „Verbergen“ einzelner Medikamente wäre nicht ausreichend, da beim Aktualisieren eines Medikationsplans durch GDA die ausgeblendeten Einträge nicht mehr aufscheinen würden und damit effektiv als gelöscht gelten. Das unwiderrufliche Löschen ist daher die einzige klare und nachhaltige Lösung; ein Ausblenden ist funktional ohnehin mit einer Löschung gleichzusetzen.​</p>
+
+<div class="hinweisbox">
+ℹ️   
+Hinweis zu medizinischen Risiken am Client System anzeigen:<br />
+Beim Löschen von relevanten Medikationsdaten wird eigenverantwortlich ein Risiko einer Schlechtbehandlung durch den GDA eingegangen, das aufgrund der Informationsverknappung entsteht.    
+</div>
+
+<h3 id="medikationsplan-gesetzliche-speicherfristen-uc_emed_06_h05">Medikationsplan: Gesetzliche Speicherfristen (UC_eMed_06_H05)</h3>
+
+<p>Medikationspläne werden nach Ablauf der gesetzlichen Speicherfrist gelöscht:</p>
+<ul>
+  <li>120 Jahre nach Geburt</li>
+  <li>30 Jahre nach Sterbedatum</li>
+</ul>
 
 
 
@@ -407,7 +583,7 @@ Details zu "Medikationsplan erfassen", siehe "<a href="requirements.html">Die e-
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Jan 29, 2026 15:27+0000">2026-01-29</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Fri, Jan 30, 2026 14:55+0000">2026-01-30</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

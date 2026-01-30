@@ -234,9 +234,9 @@ Werden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel
                   title="StructureDefinition/at-emed-list-medikationsplan">ELGA e-Med Medikationsplan</a>
             </td>
             <td>
-<p><strong>Beschreibung:</strong> Bildet den Medikationsplan eines ELGA Teilnehmers ab ("List"-Ressource). 
-Die Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimitteln und deren Dosierung abbilden.
-Jedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch zu klären). Die Reihenfolge der Listenelemente wird duch den User festgelegt.</p>
+<p><strong>Beschreibung:</strong> Bildet den Medikationsplan eines ELGA-Teilnehmers ab ("List"-Ressource). 
+Die Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimittel und deren Dosierung abbilden.
+Die Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch zu klären).</p>
 </td>
          </tr>
          <tr>
@@ -245,10 +245,10 @@ Jedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch 
                   title="StructureDefinition/at-emed-bundle-medikationsplan">ELGA e-Med Medikationsplan Collection Bundle</a>
             </td>
             <td>
-<p><strong>Beschreibung:</strong> Das Bundle vom Typ Collection dient dem lesenden Zugriff auf den ELGA Medikationsplan bestehend aus:</p>
+<p><strong>Beschreibung:</strong> Das Bundle vom Typ Collection bestehend aus:</p>
 <ul>
-  <li>1..1 List: Liste der Medikationsplaneinträge und deren Änderungsstatus</li>
-  <li>0..* MedicationRequests: Medikationsplaneinträge</li>
+  <li>1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus)</li>
+  <li>0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung</li>
 </ul>
 </td>
          </tr>
@@ -260,8 +260,8 @@ Jedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch 
             <td>
 <p><strong>Beschreibung:</strong> Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan bestehend aus:</p>
 <ul>
-  <li>1..1 List: Liste der Medikationsplaneinträge und deren Änderungsstatus</li>
-  <li>0..* MedicationRequests: Medikationsplaneinträge</li>
+  <li>1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus)</li>
+  <li>0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung</li>
 </ul>
 </td>
          </tr>
@@ -329,20 +329,11 @@ Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="MedicationRequest-AtEmedExampleGeplanteAbgabe01.html"
-                  title="MedicationRequest/AtEmedExampleGeplanteAbgabe01">Beispiel Geplante Abgabe 1</a>
-            </td>
-            <td>
-<p>Beispiel Geplante Abgabe 1</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
                <a href="Bundle-AtEmedJourneyBundleMedikationsplan01.html"
                   title="Bundle/AtEmedJourneyBundleMedikationsplan01">Beispiel Journey 01: Collection Bundle</a>
             </td>
             <td>
-<p><strong>Beschreibung:</strong> Beispiel eines Collection Bundles, das einen leeren Mediaktionsplan (List) beinhaltet.</p>
+<p><strong>Beschreibung:</strong> Beispiel eines Collection Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge).</p>
 </td>
          </tr>
          <tr>
@@ -351,7 +342,7 @@ Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet
                   title="List/AtEmedJourneyListMedikationsplan01">Beispiel Journey 01: Leerer Medikationsplan</a>
             </td>
             <td>
-<p><strong>Beschreibung:</strong> Beispiel eines leeren Mediaktionsplans (List)</p>
+<p><strong>Beschreibung:</strong> Beispiel eines leeren Mediaktionsplans (List-Ressource ohne Einträge)</p>
 </td>
          </tr>
          <tr>
@@ -360,7 +351,7 @@ Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet
                   title="Bundle/AtEmedJourneyBundleMedikationsplanTx01">Beispiel Journey 01: Transaction Bundle</a>
             </td>
             <td>
-<p><strong>Beschreibung:</strong> Beispiel eines Transaction Bundles, das einen leeren Mediaktionsplan (List) beinhaltet.</p>
+<p><strong>Beschreibung:</strong> Beispiel eines Transaction Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge).</p>
 </td>
          </tr>
          <tr>
@@ -369,7 +360,7 @@ Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet
                   title="Bundle/AtEmedJourneyBundleMedikationsplan02">Beispiel Journey 02: Collection Bundle</a>
             </td>
             <td>
-<p><strong>Beschreibung:</strong> Beispiel eines Collection Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen referenziert.</p>
+<p><strong>Beschreibung:</strong> Beispiel eines Collection Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert.</p>
 </td>
          </tr>
          <tr>
@@ -387,7 +378,7 @@ Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet
                   title="List/AtEmedJourneyListMedikationsplan02">Beispiel Journey 02: Medikationsplan</a>
             </td>
             <td>
-<p><strong>Beschreibung:</strong> Beispiel eines Medikationsplans (List), der 2 Einträge (MedicationReqeusts) referenziert und Reihenfolge und Änderungsstatus festhält.</p>
+<p><strong>Beschreibung:</strong> Beispiel eines Medikationsplans (List), der 2 Planeinträge (MedicationReqeusts) referenziert und Informationen über Reihenfolge und Änderungsstatus speichert.</p>
 </td>
          </tr>
          <tr>
@@ -432,7 +423,16 @@ Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet
                   title="Bundle/AtEmedJourneyBundleMedikationsplanTx02">Beispiel Journey 02: Transaction Bundle</a>
             </td>
             <td>
-<p><strong>Beschreibung:</strong> Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen beinhaltet.</p>
+<p><strong>Beschreibung:</strong> Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) beinhaltet.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="MedicationRequest-AtEmedJourneyMrGeplanteAbgabe03.html"
+                  title="MedicationRequest/AtEmedJourneyMrGeplanteAbgabe03">Beispiel Journey 03: Geplante Abgabe</a>
+            </td>
+            <td>
+<p><strong>Beschreibung:</strong> Bildet eine geplante Abgabe des Medikaments EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest).</p>
 </td>
          </tr>
          <tr>
@@ -441,7 +441,7 @@ Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet
                   title="Organization/AtEmedExampleOrganizationApo01">Beispiel Organisation Apotheke 01</a>
             </td>
             <td>
-<p><strong>Beschreibung:</strong> Beispiel einer Apotheke als Organisation 01.</p>
+<p><strong>Beschreibung:</strong> Beispiel einer Apotheke als Organisation.</p>
 </td>
          </tr>
          <tr>
@@ -450,7 +450,7 @@ Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet
                   title="Patient/AtEmedExamplePatient01">Beispiel Patient 01</a>
             </td>
             <td>
-<p><strong>Beschreibung:</strong> Beispiel eines Patienten 01.</p>
+<p><strong>Beschreibung:</strong> Beispiel eines Patienten.</p>
 </td>
          </tr>
          <tr>
@@ -459,7 +459,7 @@ Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet
                   title="Practitioner/AtEmedExamplePractitioner01">Beispiel Ärztin 01</a>
             </td>
             <td>
-<p><strong>Beschreibung:</strong> Beispiel einer behandelnden Ärztin 01.</p>
+<p><strong>Beschreibung:</strong> Beispiel einer behandelnden Ärztin.</p>
 </td>
          </tr>
       </tbody>
@@ -482,7 +482,7 @@ Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Jan 29, 2026 15:27+0000">2026-01-29</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Fri, Jan 30, 2026 14:55+0000">2026-01-30</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

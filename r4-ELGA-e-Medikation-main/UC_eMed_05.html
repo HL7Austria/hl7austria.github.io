@@ -186,12 +186,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#vorbedingungen" id="markdown-toc-vorbedingungen">Vorbedingungen</a></li>
   <li><a href="#nachbedingungenergebnis" id="markdown-toc-nachbedingungenergebnis">Nachbedingungen/Ergebnis</a></li>
   <li><a href="#abläufe" id="markdown-toc-abläufe">Abläufe</a></li>
-  <li><a href="#sub-usecases" id="markdown-toc-sub-usecases">Sub-Usecases</a></li>
-  <li><a href="#beispiel" id="markdown-toc-beispiel">Beispiel</a></li>
-  <li><a href="#technische-hinweise" id="markdown-toc-technische-hinweise">Technische Hinweise</a></li>
-  <li><a href="#relevante-profile" id="markdown-toc-relevante-profile">Relevante Profile</a></li>
-  <li><a href="#relevante-invarianten" id="markdown-toc-relevante-invarianten">Relevante Invarianten</a></li>
-  <li><a href="#mögliche-notifications" id="markdown-toc-mögliche-notifications">Mögliche Notifications</a></li>
+  <li><a href="#relevante-ilf-implementierungsleitfäden--deren-user-storys" id="markdown-toc-relevante-ilf-implementierungsleitfäden--deren-user-storys">Relevante ILF (Implementierungsleitfäden) + deren User Storys</a></li>
+  <li><a href="#abgrenzungen" id="markdown-toc-abgrenzungen">Abgrenzungen</a></li>
+  <li><a href="#user-interface-beschreibungen" id="markdown-toc-user-interface-beschreibungen">User Interface Beschreibungen</a></li>
+  <li><a href="#hinweise" id="markdown-toc-hinweise">Hinweise</a></li>
+  <li><a href="#inhalt-des-medikationsplans-uc_emed_05_h01" id="markdown-toc-inhalt-des-medikationsplans-uc_emed_05_h01">Inhalt des Medikationsplans (UC_eMed_05_H01)</a></li>
+  <li><a href="#ansicht-von-vorversionen-uc_emed_05_h02" id="markdown-toc-ansicht-von-vorversionen-uc_emed_05_h02">Ansicht von Vorversionen (UC_eMed_05_H02)</a></li>
+  <li><a href="#export-des-medikationsplans-uc_emed_05_h03" id="markdown-toc-export-des-medikationsplans-uc_emed_05_h03">Export des Medikationsplans (UC_eMed_05_H03)</a></li>
+  <li><a href="#medikationsplans-eigene-ansicht-vs-verwendung-des-e-medikation-stylesheets-uc_emed_05_h04" id="markdown-toc-medikationsplans-eigene-ansicht-vs-verwendung-des-e-medikation-stylesheets-uc_emed_05_h04">Medikationsplans: Eigene Ansicht vs. Verwendung des e-Medikation Stylesheets (UC_eMed_05_H04)</a></li>
 </ul>
 
 </div>
@@ -256,6 +258,14 @@ width: 100%;}
   z-index: 4;
 }
 
+.hinweisbox {
+  border: 1px solid #156082;
+  background: #dae8f8;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
 </style>
 
 <script type="module"> import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';</script>
@@ -306,17 +316,145 @@ Details zu Inhalten des Medikationsplans, siehe "<a href="requirements.html">Die
 <h4 id="alternativabläufe">Alternativabläufe</h4>
 <p>Keine</p>
 
-<h3 id="sub-usecases">Sub-Usecases</h3>
+<h3 id="relevante-ilf-implementierungsleitfäden--deren-user-storys">Relevante ILF (Implementierungsleitfäden) + deren User Storys</h3>
 
-<h3 id="beispiel">Beispiel</h3>
+<h4 id="beispiel">Beispiel</h4>
 
-<h3 id="technische-hinweise">Technische Hinweise</h3>
+<h4 id="technische-hinweise">Technische Hinweise</h4>
 
-<h3 id="relevante-profile">Relevante Profile</h3>
+<h4 id="relevante-profile">Relevante Profile</h4>
 
-<h3 id="relevante-invarianten">Relevante Invarianten</h3>
+<h4 id="relevante-invarianten">Relevante Invarianten</h4>
 
-<h3 id="mögliche-notifications">Mögliche Notifications</h3>
+<h4 id="mögliche-notifications">Mögliche Notifications</h4>
+
+<h3 id="abgrenzungen">Abgrenzungen</h3>
+<p>Keine.</p>
+
+<h3 id="user-interface-beschreibungen">User Interface Beschreibungen</h3>
+<p>Mockup folgt.</p>
+
+<h3 id="hinweise">Hinweise</h3>
+
+<h3 id="inhalt-des-medikationsplans-uc_emed_05_h01">Inhalt des Medikationsplans (UC_eMed_05_H01)</h3>
+<p>Der Medikationsplan kann gelesen werden:</p>
+<ul>
+  <li>Der Medikationsplan besteht aus einzelnen Einträgen</li>
+  <li>Der Medikationsplan wird in der zuletzt erfassten Version angezeigt:
+    <ul>
+      <li>Ist der Einnahmezeitraum eines Medikaments abgelaufen, wird der Eintrag ausgeblendet
+        <ul>
+          <li>in der Versionshistorie kann die Version inkl. der abgelaufenen Einträge eingesehen werden</li>
+          <li>Von ELGA-Teilnehmer:innen gelöschte Einträge werden in der Medikationsplanansicht nicht mehr angezeigt</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Die Einträge des Medikationsplans enthalten eine durch den GDA festgelegte Reihenfolge, z.B. zur fachlich sinnvollen Gruppierung und besseren Übersicht</li>
+</ul>
+
+<div class="hinweisbox">
+  ℹ️   
+  Reihenfolge von Medikationsplaneinträgen im Client-System: <br />
+
+  Lesende Systeme können die durch die zentrale Anwendung gelieferte Reihenfolge der Medikationsplaneinträge nutzen und bei Bedarf eine andere Reihung vornehmen 
+</div>
+
+<ul>
+  <li>Einzelne Einträge können Korrekturvermerke (inkl. Freitext) enthalten und müssen dem:der Benutzer:in angezeigt werden</li>
+</ul>
+
+<div class="hinweisbox">
+  ℹ️   
+  Möglichkeiten für die Darstellung eines Korrekturvermerks im Client-System: <br />
+  <ul>
+    <li>Overlay mit korrigierter Angabe </li>
+    <li>Ausgrauen der bisherigen Angabe</li>
+    <li>Durchstreichen der bisherigen Angabe  </li>
+    <li>etc. </li>
+  </ul>
+</div>
+
+<div class="hinweisbox">
+  ℹ️   
+  Möglichkeiten zur Darstellung des Medikationsplans im Client-System:<br />
+  Zu einzelnen Medikationsplaneinträgen können folgende Informationen zu geplanten und durchgeführten Abgaben angezeigt werden: 
+  <ul>
+    <li>zugehörige geplante Abgaben</li>
+    <li>zugehörige durchgeführte Abgaben
+      <ul>
+        <li>für Patient:innen ist insbesondere die Anzeige des zuletzt abgegebenen Präparats je Eintrag relevant, da dieses aktuell eingenommen werden soll</li>
+        <li>Abgaben von Substitutionen</li>
+        <li>Leerabgaben (Leerabgaben kennzeichnen, dass eine ursprünglich geplante Abgabe künftig nicht mehr bedient werden wird)</li>
+      </ul>
+    </li>
+    <li>Fachlich kann es sinnvoll sein, zusätzlich zum zuletzt erstellten Medikationsplan auch Abgaben darzustellen, die nicht auf den zuletzt erstellten Medikationsplan referenzieren (z.B. OTC-Abgaben oder Abgaben verschreibender GDA ohne ELGA-Anbindung)
+      <ul>
+        <li>relevant sind dabei nur die zusätzlich abgegebenen Medikamente innerhalb des Zeitraums von der Erstellung der Medikationsplanversion bis zur Erstellung der nachfolgenden Medikationsplanversion</li>
+        <li>GDA erhalten dadurch ein möglichst vollständiges Bild der tatsächlichen Medikation</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<h3 id="ansicht-von-vorversionen-uc_emed_05_h02">Ansicht von Vorversionen (UC_eMed_05_H02)</h3>
+
+<p>Alle erfassten Vorversionen des Medikationsplans (in der Vergangenheit von GDA erfasst) können eingesehen werden</p>
+<ul>
+  <li>Sofern eine gesamte Version eines Medikationsplans von einem:r ELGA-Teilnehmer:in gelöscht wurde, wird diese nicht mehr in der Historie angezeigt (dies gilt genauso für die zuletzt erfasste Version)</li>
+</ul>
+
+<div class="hinweisbox">
+  ℹ️   
+  Darstellung der Vorversionen im Client-System: <br />
+  Vorversionen können in chronologischer Reihenfolge dargestellt werden (absteigend nach Erstellungsdatum; „jüngster“ Medikationsplan zuerst) 
+</div>
+
+<ul>
+  <li>Die Ansicht einer Vorversion unterscheidet sich in ihrer Darstellungsform nicht von der zuletzt erfassten Ansicht des Medikationsplans
+    <ul>
+      <li>In einer Vorversion werden abgelaufene Medikamente zur Nachvollziehbarkeit immer angezeigt und nicht ausgeblendet</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="export-des-medikationsplans-uc_emed_05_h03">Export des Medikationsplans (UC_eMed_05_H03)</h3>
+
+<p>Folgende Exportformate stehen für Benutzer:innen zur Verfügung:</p>
+<ul>
+  <li>ELGA-Teilnehmer:in:
+    <ul>
+      <li>PDF zum Ausdrucken bzw. zur Darstellung in der Druckansicht</li>
+      <li>Strukturierter Datendownload (FHIR)</li>
+    </ul>
+  </li>
+  <li>GDA:
+    <ul>
+      <li>PDF zum Ausdrucken bzw. zur Darstellung in der Druckansicht</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="hinweisbox">
+  ℹ️   
+  Softwaremodul für PDF-Export zur Einbindung im Client-System:<br />
+  Für den PDF-Export stellt die ELGA GmbH ein Softwaremodul zur Verfügung, welches in den jeweiligen Softwaresystemen eingebunden werden kann. Dieses "FHIR2PDF"-Softwaremodul stellt die Funktionen zur Verfügung, um den Medikationsplan als PDF zu exportieren. Das exportierte PDF unter Nutzung des "FHIR2PDF" stellt ein signiertes Dokument dar.
+</div>
+
+<h3 id="medikationsplans-eigene-ansicht-vs-verwendung-des-e-medikation-stylesheets-uc_emed_05_h04">Medikationsplans: Eigene Ansicht vs. Verwendung des e-Medikation Stylesheets (UC_eMed_05_H04)</h3>
+
+<p>Zur Anzeige des Medikationsplans wird von der ELGA GmbH ein Stylesheet angeboten, welches in den jeweiligen Softwaresystemen eingebunden werden kann. </p>
+<ul>
+  <li>Dieses "e-Medikation Stylesheet" stellt alle notwendigen/vorhanden Informationen dar - Daten zur Person, aktuelle und vergangene Medikationsplaneinträge, geplante und durchgeführte Abgaben, etc.</li>
+</ul>
+
+<p>Neben der Verwendung des e-Medikation Stylesheets kann auch eine eigene Ansicht des Medikationsplans in den Softwaresystemen umgesetzt werden.</p>
+
+<div class="hinweisbox">
+  ℹ️   
+  Darstellung des Deltas zum zuletzt importierten Datenstand im Client-System: <br /> 
+  Für Client-Systeme kann es sinnvoll sein, eine Ansicht für GDA zu schaffen, aus der hervorgeht, welche Änderungen am Medikationsplan des:der ELGA-Teilnehmer:in seit dem letzten Behandlungskontakt vorgenommen wurden. Durch einen Abgleich der lokal gespeicherten Dauermedikation mit den gelieferten Medikationsdaten aus der zentralen Anwendung kann dem:der Benutzer:in das Delta übersichtlich dargestellt werden. 
+</div>
 
 
 
@@ -336,7 +474,7 @@ Details zu Inhalten des Medikationsplans, siehe "<a href="requirements.html">Die
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Jan 29, 2026 15:27+0000">2026-01-29</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Fri, Jan 30, 2026 14:55+0000">2026-01-30</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
