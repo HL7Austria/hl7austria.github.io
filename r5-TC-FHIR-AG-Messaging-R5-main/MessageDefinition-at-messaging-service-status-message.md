@@ -6,10 +6,11 @@
 
 ## MessageDefinition: Service status update over directed messaging. 
 
-| | | | |
-| :--- | :--- | :--- | :--- |
-| *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-service-status-message | *Version*:0.1.0 | | |
-| Draft as of 2026-01-21 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Realm:*![](assets/images/aut.svg) | *Computable Name*:ATMessagingServiceStatusMessage |
+| | | |
+| :--- | :--- | :--- |
+| *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-service-status-message | *Version*:0.1.0 | |
+| Draft as of 2026-01-21 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingServiceStatusMessage |
+| **Usage:**Jurisdiction: Austria | | |
 
  
 Regulates the resources to be used in a directed message when transferring a task status update of a ServiceRequest. 
@@ -36,9 +37,14 @@ Regulates the resources to be used in a directed message when transferring a tas
 
 Regulates the resources to be used in a directed message when transferring a task status update of a ServiceRequest.
 
-**jurisdiction**: Austria
+### UseContexts
 
-**event**: [ATMessagingEventType: status](CodeSystem-at-messaging-event-type.md#at-messaging-event-type-status) (The message is sent to transfer the status or result of an ongoing message flow (e.g. acknowledgement, service status update, ...))
+| | | |
+| :--- | :--- | :--- |
+| - | **Code** | **Value[x]** |
+| * | [UsageContextType: jurisdiction](http://terminology.hl7.org/7.0.1/CodeSystem-usage-context-type.html#usage-context-type-jurisdiction)(Jurisdiction) (version = 2.0.1 ) | Austria |
+
+**event**: [AT Messaging Event Type: status](CodeSystem-at-messaging-event-type.md#at-messaging-event-type-status) (The message is sent to transfer the status or result of an ongoing message flow (e.g. acknowledgement, service status update, ...))
 
 **category**: Currency
 
@@ -95,15 +101,22 @@ Regulates the resources to be used in a directed message when transferring a tas
     }
   ],
   "description" : "Regulates the resources to be used in a directed message when transferring a task status update of a ServiceRequest.",
-  "jurisdiction" : [
+  "useContext" : [
     {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "AT",
-          "display" : "Austria"
-        }
-      ]
+      "code" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "version" : "2.0.1",
+        "code" : "jurisdiction"
+      },
+      "valueCodeableConcept" : {
+        "coding" : [
+          {
+            "system" : "urn:iso:std:iso:3166",
+            "code" : "AT",
+            "display" : "Austria"
+          }
+        ]
+      }
     }
   ],
   "eventCoding" : {

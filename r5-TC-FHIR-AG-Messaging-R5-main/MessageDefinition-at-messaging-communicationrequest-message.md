@@ -6,10 +6,11 @@
 
 ## MessageDefinition: Communication request over directed messaging. 
 
-| | | | |
-| :--- | :--- | :--- | :--- |
-| *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-communicationrequest-message | *Version*:0.1.0 | | |
-| Draft as of 2026-01-21 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Realm:*![](assets/images/aut.svg) | *Computable Name*:ATMessagingCommunicationRequestMessage |
+| | | |
+| :--- | :--- | :--- |
+| *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-communicationrequest-message | *Version*:0.1.0 | |
+| Draft as of 2026-01-21 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingCommunicationRequestMessage |
+| **Usage:**Jurisdiction: Austria | | |
 
  
 Regulates the resources to be used in a directed message when performing a CommunicationRequest. 
@@ -36,9 +37,14 @@ Regulates the resources to be used in a directed message when performing a Commu
 
 Regulates the resources to be used in a directed message when performing a CommunicationRequest.
 
-**jurisdiction**: Austria
+### UseContexts
 
-**event**: [ATMessagingEventType: request](CodeSystem-at-messaging-event-type.md#at-messaging-event-type-request) (Message to initiate a workflow to request an action or a communication.)
+| | | |
+| :--- | :--- | :--- |
+| - | **Code** | **Value[x]** |
+| * | [UsageContextType: jurisdiction](http://terminology.hl7.org/7.0.1/CodeSystem-usage-context-type.html#usage-context-type-jurisdiction)(Jurisdiction) (version = 2.0.1 ) | Austria |
+
+**event**: [AT Messaging Event Type: request](CodeSystem-at-messaging-event-type.md#at-messaging-event-type-request) (Message to initiate a workflow to request an action or a communication.)
 
 **category**: Consequence
 
@@ -102,15 +108,22 @@ As soon as the receiving system has processed the message successfully when the 
     }
   ],
   "description" : "Regulates the resources to be used in a directed message when performing a CommunicationRequest.",
-  "jurisdiction" : [
+  "useContext" : [
     {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "AT",
-          "display" : "Austria"
-        }
-      ]
+      "code" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "version" : "2.0.1",
+        "code" : "jurisdiction"
+      },
+      "valueCodeableConcept" : {
+        "coding" : [
+          {
+            "system" : "urn:iso:std:iso:3166",
+            "code" : "AT",
+            "display" : "Austria"
+          }
+        ]
+      }
     }
   ],
   "eventCoding" : {

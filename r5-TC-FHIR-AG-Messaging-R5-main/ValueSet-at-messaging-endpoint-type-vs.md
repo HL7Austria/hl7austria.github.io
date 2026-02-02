@@ -1,15 +1,16 @@
-# HL7.AT.FHIR.MESSAGING.R5\ATMessagingEndpointTypeVS - FHIR® v5.0.0
+# HL7.AT.FHIR.MESSAGING.R5\AT Messaging Endpoint Type ValueSet - FHIR® v5.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **ATMessagingEndpointTypeVS**
+* **AT Messaging Endpoint Type ValueSet**
 
-## ValueSet: ATMessagingEndpointTypeVS 
+## ValueSet: AT Messaging Endpoint Type ValueSet 
 
-| | | | |
-| :--- | :--- | :--- | :--- |
-| *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ValueSet/at-messaging-endpoint-type-vs | *Version*:0.1.0 | | |
-| Draft as of 2026-01-30 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Realm:*![](assets/images/aut.svg) | *Computable Name*:ATMessagingEndpointTypeVS |
+| | | |
+| :--- | :--- | :--- |
+| *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ValueSet/at-messaging-endpoint-type-vs | *Version*:0.1.0 | |
+| Draft as of 2026-02-02 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingEndpointTypeVS |
+| **Usage:**Jurisdiction: Austria | | |
 
  
 ValueSet of Endpoint Type Codings. 
@@ -48,8 +49,10 @@ ValueSet of Endpoint Type Codings.
   "url" : "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ValueSet/at-messaging-endpoint-type-vs",
   "version" : "0.1.0",
   "name" : "ATMessagingEndpointTypeVS",
+  "title" : "AT Messaging Endpoint Type ValueSet",
   "status" : "draft",
-  "date" : "2026-01-30T08:45:51+00:00",
+  "experimental" : false,
+  "date" : "2026-02-02T14:50:43+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [
     {
@@ -76,15 +79,22 @@ ValueSet of Endpoint Type Codings.
     }
   ],
   "description" : "ValueSet of Endpoint Type Codings.",
-  "jurisdiction" : [
+  "useContext" : [
     {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "AT",
-          "display" : "Austria"
-        }
-      ]
+      "code" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "version" : "2.0.1",
+        "code" : "jurisdiction"
+      },
+      "valueCodeableConcept" : {
+        "coding" : [
+          {
+            "system" : "urn:iso:std:iso:3166",
+            "code" : "AT",
+            "display" : "Austria"
+          }
+        ]
+      }
     }
   ],
   "compose" : {

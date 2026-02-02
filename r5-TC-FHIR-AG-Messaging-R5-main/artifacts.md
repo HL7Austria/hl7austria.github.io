@@ -46,8 +46,8 @@ These define sets of codes used by systems conforming to this implementation gui
 
 | | |
 | :--- | :--- |
-| [ATMessagingEndpointTypeVS](ValueSet-at-messaging-endpoint-type-vs.md) | ValueSet of Endpoint Type Codings. |
-| [ATMessagingEventTypeVS](ValueSet-at-messaging-event-type-vs.md) | Extensible ValueSet consisting of the Message Event Type Codings. |
+| [AT Message Event Type ValueSet](ValueSet-at-messaging-event-type-vs.md) | Extensible ValueSet consisting of the Message Event Type Codings. |
+| [AT Messaging Endpoint Type ValueSet](ValueSet-at-messaging-endpoint-type-vs.md) | ValueSet of Endpoint Type Codings. |
 
 ### Terminology: Code Systems 
 
@@ -55,8 +55,8 @@ These define new code systems used by systems conforming to this implementation 
 
 | | |
 | :--- | :--- |
-| [ATMessagingEndpointType](CodeSystem-at-messaging-endpoint-type.md) | Endpoint Type Coding to encode Messaging Systems the message is transported over. |
-| [ATMessagingEventType](CodeSystem-at-messaging-event-type.md) | Event Coding for discriminating messages on the receiver. |
+| [AT Messaging Endpoint Type](CodeSystem-at-messaging-endpoint-type.md) | Endpoint Type Coding to encode Messaging Systems the message is transported over. |
+| [AT Messaging Event Type](CodeSystem-at-messaging-event-type.md) | Event Coding for discriminating messages on the receiver. |
 
 ### Example: Example Instances 
 

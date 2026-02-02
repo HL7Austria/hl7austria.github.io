@@ -22,7 +22,7 @@ Feel free to modify this index page with your own awesome content!
   "name" : "ATMessaging",
   "title" : "HL7® Austria TC FHIR® Messaging",
   "status" : "draft",
-  "date" : "2026-01-30T08:45:51+00:00",
+  "date" : "2026-02-02T14:50:43+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [
     {
@@ -49,15 +49,22 @@ Feel free to modify this index page with your own awesome content!
     }
   ],
   "description" : "Implementation Guide for Directed FHIR Messaging in Austria",
-  "jurisdiction" : [
+  "useContext" : [
     {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "AT",
-          "display" : "Austria"
-        }
-      ]
+      "code" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "version" : "2.0.1",
+        "code" : "jurisdiction"
+      },
+      "valueCodeableConcept" : {
+        "coding" : [
+          {
+            "system" : "urn:iso:std:iso:3166",
+            "code" : "AT",
+            "display" : "Austria"
+          }
+        ]
+      }
     }
   ],
   "packageId" : "hl7.at.fhir.messaging.r5",
@@ -130,6 +137,20 @@ Feel free to modify this index page with your own awesome content!
         "extension" : [
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "ValueSet"
+          }
+        ],
+        "reference" : {
+          "reference" : "ValueSet/at-messaging-event-type-vs"
+        },
+        "name" : "AT Message Event Type ValueSet",
+        "description" : "Extensible ValueSet consisting of the Message Event Type Codings.",
+        "isExample" : false
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString" : "StructureDefinition:resource"
           }
         ],
@@ -186,6 +207,48 @@ Feel free to modify this index page with your own awesome content!
         "extension" : [
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "CodeSystem"
+          }
+        ],
+        "reference" : {
+          "reference" : "CodeSystem/at-messaging-endpoint-type"
+        },
+        "name" : "AT Messaging Endpoint Type",
+        "description" : "Endpoint Type Coding to encode Messaging Systems the message is transported over.",
+        "isExample" : false
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "ValueSet"
+          }
+        ],
+        "reference" : {
+          "reference" : "ValueSet/at-messaging-endpoint-type-vs"
+        },
+        "name" : "AT Messaging Endpoint Type ValueSet",
+        "description" : "ValueSet of Endpoint Type Codings.",
+        "isExample" : false
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "CodeSystem"
+          }
+        ],
+        "reference" : {
+          "reference" : "CodeSystem/at-messaging-event-type"
+        },
+        "name" : "AT Messaging Event Type",
+        "description" : "Event Coding for discriminating messages on the receiver.",
+        "isExample" : false
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString" : "StructureDefinition:resource"
           }
         ],
@@ -222,62 +285,6 @@ Feel free to modify this index page with your own awesome content!
         },
         "name" : "AT Messaging Task",
         "description" : "Task to be used for all service status messages transfered with the AT FHIR messaging.",
-        "isExample" : false
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "CodeSystem"
-          }
-        ],
-        "reference" : {
-          "reference" : "CodeSystem/at-messaging-endpoint-type"
-        },
-        "name" : "ATMessagingEndpointType",
-        "description" : "Endpoint Type Coding to encode Messaging Systems the message is transported over.",
-        "isExample" : false
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "ValueSet"
-          }
-        ],
-        "reference" : {
-          "reference" : "ValueSet/at-messaging-endpoint-type-vs"
-        },
-        "name" : "ATMessagingEndpointTypeVS",
-        "description" : "ValueSet of Endpoint Type Codings.",
-        "isExample" : false
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "CodeSystem"
-          }
-        ],
-        "reference" : {
-          "reference" : "CodeSystem/at-messaging-event-type"
-        },
-        "name" : "ATMessagingEventType",
-        "description" : "Event Coding for discriminating messages on the receiver.",
-        "isExample" : false
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "ValueSet"
-          }
-        ],
-        "reference" : {
-          "reference" : "ValueSet/at-messaging-event-type-vs"
-        },
-        "name" : "ATMessagingEventTypeVS",
-        "description" : "Extensible ValueSet consisting of the Message Event Type Codings.",
         "isExample" : false
       },
       {

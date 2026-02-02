@@ -6,10 +6,11 @@
 
 ## Resource Profile: AT Messaging CommunicationRequest 
 
-| | | | |
-| :--- | :--- | :--- | :--- |
-| *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-communication-request | *Version*:0.1.0 | | |
-| Draft as of 2026-01-30 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Realm:*![](assets/images/aut.svg) | *Computable Name*:ATMessagingCommunicationRequest |
+| | | |
+| :--- | :--- | :--- |
+| *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-communication-request | *Version*:0.1.0 | |
+| Draft as of 2026-02-02 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingCommunicationRequest |
+| **Usage:**Jurisdiction: Austria | | |
 
  
 CommunicationRequest to be used for all communication request messages transfered with the AT FHIR messaging. 
@@ -42,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-messaging-communi
   "name" : "ATMessagingCommunicationRequest",
   "title" : "AT Messaging CommunicationRequest",
   "status" : "draft",
-  "date" : "2026-01-30T08:45:51+00:00",
+  "date" : "2026-02-02T14:50:43+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [
     {
@@ -69,15 +70,22 @@ Other representations of profile: [CSV](StructureDefinition-at-messaging-communi
     }
   ],
   "description" : "CommunicationRequest to be used for all communication request messages transfered with the AT FHIR messaging.",
-  "jurisdiction" : [
+  "useContext" : [
     {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "AT",
-          "display" : "Austria"
-        }
-      ]
+      "code" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "version" : "2.0.1",
+        "code" : "jurisdiction"
+      },
+      "valueCodeableConcept" : {
+        "coding" : [
+          {
+            "system" : "urn:iso:std:iso:3166",
+            "code" : "AT",
+            "display" : "Austria"
+          }
+        ]
+      }
     }
   ],
   "fhirVersion" : "5.0.0",

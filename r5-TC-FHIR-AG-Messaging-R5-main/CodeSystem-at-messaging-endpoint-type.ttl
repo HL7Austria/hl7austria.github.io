@@ -11,7 +11,7 @@
   fhir:id [ fhir:v "at-messaging-endpoint-type"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem at-messaging-endpoint-type</b></p><a name=\"at-messaging-endpoint-type\"> </a><a name=\"hcat-messaging-endpoint-type\"> </a><p>This  code system <code>http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-endpoint-type</code> defines the following code:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">matrix<a name=\"at-messaging-endpoint-type-matrix\"> </a></td><td>The message is transported over the Matrix protocol.</td></tr></table></div>"^^rdf:XMLLiteral ]
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem at-messaging-endpoint-type</b></p><a name=\"at-messaging-endpoint-type\"> </a><a name=\"hcat-messaging-endpoint-type\"> </a><p>This case-insensitive code system <code>http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-endpoint-type</code> defines the following code:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">matrix<a name=\"at-messaging-endpoint-type-matrix\"> </a></td><td>Communication over matrix https://spec.matrix.org/</td></tr></table></div>"^^rdf:XMLLiteral ]
   ] ; # 
   fhir:url [
      fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-endpoint-type"^^xsd:anyURI ;
@@ -19,8 +19,10 @@
   ] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "ATMessagingEndpointType"] ; # 
+  fhir:title [ fhir:v "AT Messaging Endpoint Type"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-01-30T08:45:51+00:00"^^xsd:dateTime] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-02-02T14:50:43+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7® Austria, TC FHIR®"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "HL7® Austria, TC FHIR®" ] ;
@@ -39,21 +41,34 @@
      ] )
   ] ) ; # 
   fhir:description [ fhir:v "Endpoint Type Coding to encode Messaging Systems the message is transported over."] ; # 
-  fhir:jurisdiction ( [
-     fhir:coding ( [
+  fhir:useContext ( [
+     fhir:code [
        fhir:system [
-         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
-         fhir:l <urn:iso:std:iso:3166>
+         fhir:v "http://terminology.hl7.org/CodeSystem/usage-context-type"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/usage-context-type>
        ] ;
-       fhir:code [ fhir:v "AT" ] ;
-       fhir:display [ fhir:v "Austria" ]
-     ] )
+       fhir:version [ fhir:v "2.0.1" ] ;
+       fhir:code [ fhir:v "jurisdiction" ]
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+           fhir:l <urn:iso:std:iso:3166>
+         ] ;
+         fhir:code [ fhir:v "AT" ] ;
+         fhir:display [ fhir:v "Austria" ]
+       ] )
+     ]
   ] ) ; # 
+  fhir:caseSensitive [ fhir:v false] ; # 
   fhir:content [ fhir:v "complete"] ; # 
   fhir:count [ fhir:v "1"^^xsd:nonNegativeInteger] ; # 
   fhir:concept ( [
      fhir:code [ fhir:v "matrix" ] ;
-     fhir:display [ fhir:v "The message is transported over the Matrix protocol." ]
+     fhir:display [ fhir:v "matrix" ] ;
+     fhir:definition [ fhir:v "Communication over matrix https://spec.matrix.org/" ]
   ] ) . # 
 
 # -------------------------------------------------------------------------------------

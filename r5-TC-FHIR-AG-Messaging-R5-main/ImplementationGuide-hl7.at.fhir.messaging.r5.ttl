@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "ATMessaging"] ; # 
   fhir:title [ fhir:v "HL7® Austria TC FHIR® Messaging"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-01-30T08:45:51+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-02-02T14:50:43+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7® Austria, TC FHIR®"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "HL7® Austria, TC FHIR®" ] ;
@@ -40,15 +40,26 @@
      ] )
   ] ) ; # 
   fhir:description [ fhir:v "Implementation Guide for Directed FHIR Messaging in Austria"] ; # 
-  fhir:jurisdiction ( [
-     fhir:coding ( [
+  fhir:useContext ( [
+     fhir:code [
        fhir:system [
-         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
-         fhir:l <urn:iso:std:iso:3166>
+         fhir:v "http://terminology.hl7.org/CodeSystem/usage-context-type"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/usage-context-type>
        ] ;
-       fhir:code [ fhir:v "AT" ] ;
-       fhir:display [ fhir:v "Austria" ]
-     ] )
+       fhir:version [ fhir:v "2.0.1" ] ;
+       fhir:code [ fhir:v "jurisdiction" ]
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+           fhir:l <urn:iso:std:iso:3166>
+         ] ;
+         fhir:code [ fhir:v "AT" ] ;
+         fhir:display [ fhir:v "Austria" ]
+       ] )
+     ]
   ] ) ; # 
   fhir:packageId [ fhir:v "hl7.at.fhir.messaging.r5"] ; # 
   fhir:license [ fhir:v "CC0-1.0"] ; # 
@@ -147,6 +158,24 @@
          ] ;
          fhir:value [
            a fhir:String ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ValueSet/at-messaging-event-type-vs> ;
+         fhir:reference [ fhir:v "ValueSet/at-messaging-event-type-vs" ]
+       ] ;
+       fhir:name [ fhir:v "AT Message Event Type ValueSet" ] ;
+       fhir:description [ fhir:v "Extensible ValueSet consisting of the Message Event Type Codings." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
@@ -219,6 +248,60 @@
          ] ;
          fhir:value [
            a fhir:String ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-endpoint-type> ;
+         fhir:reference [ fhir:v "CodeSystem/at-messaging-endpoint-type" ]
+       ] ;
+       fhir:name [ fhir:v "AT Messaging Endpoint Type" ] ;
+       fhir:description [ fhir:v "Endpoint Type Coding to encode Messaging Systems the message is transported over." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ValueSet/at-messaging-endpoint-type-vs> ;
+         fhir:reference [ fhir:v "ValueSet/at-messaging-endpoint-type-vs" ]
+       ] ;
+       fhir:name [ fhir:v "AT Messaging Endpoint Type ValueSet" ] ;
+       fhir:description [ fhir:v "ValueSet of Endpoint Type Codings." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-event-type> ;
+         fhir:reference [ fhir:v "CodeSystem/at-messaging-event-type" ]
+       ] ;
+       fhir:name [ fhir:v "AT Messaging Event Type" ] ;
+       fhir:description [ fhir:v "Event Coding for discriminating messages on the receiver." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
@@ -264,78 +347,6 @@
        ] ;
        fhir:name [ fhir:v "AT Messaging Task" ] ;
        fhir:description [ fhir:v "Task to be used for all service status messages transfered with the AT FHIR messaging." ] ;
-       fhir:isExample [ fhir:v false ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "CodeSystem"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-endpoint-type> ;
-         fhir:reference [ fhir:v "CodeSystem/at-messaging-endpoint-type" ]
-       ] ;
-       fhir:name [ fhir:v "ATMessagingEndpointType" ] ;
-       fhir:description [ fhir:v "Endpoint Type Coding to encode Messaging Systems the message is transported over." ] ;
-       fhir:isExample [ fhir:v false ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "ValueSet"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ValueSet/at-messaging-endpoint-type-vs> ;
-         fhir:reference [ fhir:v "ValueSet/at-messaging-endpoint-type-vs" ]
-       ] ;
-       fhir:name [ fhir:v "ATMessagingEndpointTypeVS" ] ;
-       fhir:description [ fhir:v "ValueSet of Endpoint Type Codings." ] ;
-       fhir:isExample [ fhir:v false ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "CodeSystem"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-event-type> ;
-         fhir:reference [ fhir:v "CodeSystem/at-messaging-event-type" ]
-       ] ;
-       fhir:name [ fhir:v "ATMessagingEventType" ] ;
-       fhir:description [ fhir:v "Event Coding for discriminating messages on the receiver." ] ;
-       fhir:isExample [ fhir:v false ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "ValueSet"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ValueSet/at-messaging-event-type-vs> ;
-         fhir:reference [ fhir:v "ValueSet/at-messaging-event-type-vs" ]
-       ] ;
-       fhir:name [ fhir:v "ATMessagingEventTypeVS" ] ;
-       fhir:description [ fhir:v "Extensible ValueSet consisting of the Message Event Type Codings." ] ;
        fhir:isExample [ fhir:v false ]
      ] [
        fhir:extension ( [

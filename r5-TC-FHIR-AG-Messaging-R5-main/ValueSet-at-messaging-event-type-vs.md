@@ -1,15 +1,16 @@
-# HL7.AT.FHIR.MESSAGING.R5\ATMessagingEventTypeVS - FHIR® v5.0.0
+# HL7.AT.FHIR.MESSAGING.R5\AT Message Event Type ValueSet - FHIR® v5.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **ATMessagingEventTypeVS**
+* **AT Message Event Type ValueSet**
 
-## ValueSet: ATMessagingEventTypeVS 
+## ValueSet: AT Message Event Type ValueSet 
 
-| | | | |
-| :--- | :--- | :--- | :--- |
-| *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ValueSet/at-messaging-event-type-vs | *Version*:0.1.0 | | |
-| Draft as of 2026-01-30 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Realm:*![](assets/images/aut.svg) | *Computable Name*:ATMessagingEventTypeVS |
+| | | |
+| :--- | :--- | :--- |
+| *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ValueSet/at-messaging-event-type-vs | *Version*:0.1.0 | |
+| Draft as of 2026-02-02 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingEventTypeVS |
+| **Usage:**Jurisdiction: Austria | | |
 
  
 Extensible ValueSet consisting of the Message Event Type Codings. 
@@ -48,8 +49,10 @@ Extensible ValueSet consisting of the Message Event Type Codings.
   "url" : "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ValueSet/at-messaging-event-type-vs",
   "version" : "0.1.0",
   "name" : "ATMessagingEventTypeVS",
+  "title" : "AT Message Event Type ValueSet",
   "status" : "draft",
-  "date" : "2026-01-30T08:45:51+00:00",
+  "experimental" : false,
+  "date" : "2026-02-02T14:50:43+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [
     {
@@ -76,15 +79,22 @@ Extensible ValueSet consisting of the Message Event Type Codings.
     }
   ],
   "description" : "Extensible ValueSet consisting of the Message Event Type Codings.",
-  "jurisdiction" : [
+  "useContext" : [
     {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "AT",
-          "display" : "Austria"
-        }
-      ]
+      "code" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "version" : "2.0.1",
+        "code" : "jurisdiction"
+      },
+      "valueCodeableConcept" : {
+        "coding" : [
+          {
+            "system" : "urn:iso:std:iso:3166",
+            "code" : "AT",
+            "display" : "Austria"
+          }
+        ]
+      }
     }
   ],
   "compose" : {

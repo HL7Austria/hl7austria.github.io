@@ -1,15 +1,16 @@
-# HL7.AT.FHIR.MESSAGING.R5\ATMessagingEventType - FHIR® v5.0.0
+# HL7.AT.FHIR.MESSAGING.R5\AT Messaging Event Type - FHIR® v5.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **ATMessagingEventType**
+* **AT Messaging Event Type**
 
-## CodeSystem: ATMessagingEventType 
+## CodeSystem: AT Messaging Event Type 
 
-| | | | |
-| :--- | :--- | :--- | :--- |
-| *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-event-type | *Version*:0.1.0 | | |
-| Draft as of 2026-01-30 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Realm:*![](assets/images/aut.svg) | *Computable Name*:ATMessagingEventType |
+| | | |
+| :--- | :--- | :--- |
+| *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-event-type | *Version*:0.1.0 | |
+| Draft as of 2026-02-02 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingEventType |
+| **Usage:**Jurisdiction: Austria | | |
 
  
 Event Coding for discriminating messages on the receiver. 
@@ -29,8 +30,10 @@ Event Coding for discriminating messages on the receiver.
   "url" : "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-event-type",
   "version" : "0.1.0",
   "name" : "ATMessagingEventType",
+  "title" : "AT Messaging Event Type",
   "status" : "draft",
-  "date" : "2026-01-30T08:45:51+00:00",
+  "experimental" : false,
+  "date" : "2026-02-02T14:50:43+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [
     {
@@ -57,17 +60,25 @@ Event Coding for discriminating messages on the receiver.
     }
   ],
   "description" : "Event Coding for discriminating messages on the receiver.",
-  "jurisdiction" : [
+  "useContext" : [
     {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "AT",
-          "display" : "Austria"
-        }
-      ]
+      "code" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "version" : "2.0.1",
+        "code" : "jurisdiction"
+      },
+      "valueCodeableConcept" : {
+        "coding" : [
+          {
+            "system" : "urn:iso:std:iso:3166",
+            "code" : "AT",
+            "display" : "Austria"
+          }
+        ]
+      }
     }
   ],
+  "caseSensitive" : false,
   "content" : "complete",
   "count" : 3,
   "concept" : [

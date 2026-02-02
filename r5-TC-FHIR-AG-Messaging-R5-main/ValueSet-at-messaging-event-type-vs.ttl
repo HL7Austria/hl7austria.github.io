@@ -19,8 +19,10 @@
   ] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "ATMessagingEventTypeVS"] ; # 
+  fhir:title [ fhir:v "AT Message Event Type ValueSet"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-01-30T08:45:51+00:00"^^xsd:dateTime] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-02-02T14:50:43+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7® Austria, TC FHIR®"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "HL7® Austria, TC FHIR®" ] ;
@@ -39,15 +41,26 @@
      ] )
   ] ) ; # 
   fhir:description [ fhir:v "Extensible ValueSet consisting of the Message Event Type Codings."] ; # 
-  fhir:jurisdiction ( [
-     fhir:coding ( [
+  fhir:useContext ( [
+     fhir:code [
        fhir:system [
-         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
-         fhir:l <urn:iso:std:iso:3166>
+         fhir:v "http://terminology.hl7.org/CodeSystem/usage-context-type"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/usage-context-type>
        ] ;
-       fhir:code [ fhir:v "AT" ] ;
-       fhir:display [ fhir:v "Austria" ]
-     ] )
+       fhir:version [ fhir:v "2.0.1" ] ;
+       fhir:code [ fhir:v "jurisdiction" ]
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+           fhir:l <urn:iso:std:iso:3166>
+         ] ;
+         fhir:code [ fhir:v "AT" ] ;
+         fhir:display [ fhir:v "Austria" ]
+       ] )
+     ]
   ] ) ; # 
   fhir:compose [
      fhir:include ( [
