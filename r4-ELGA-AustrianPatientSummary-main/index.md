@@ -14,7 +14,7 @@
   "title" : "Austrian Patient Summary (R4)",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-02-03T10:06:44+00:00",
+  "date" : "2026-02-03T10:34:36+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -1095,6 +1095,20 @@
           }
         ],
         "reference" : {
+          "reference" : "StructureDefinition/at-aps-immunizationrecommendation"
+        },
+        "name" : "AT APS Immunization",
+        "description" : "Das AT APS-Profil für die ImmunizationRecommendation-Ressource berücksichtigt die österreichischen Vorgaben (z.B. Patient und zu verwendende Value-Sets).",
+        "exampleBoolean" : false
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "StructureDefinition:resource"
+          }
+        ],
+        "reference" : {
           "reference" : "StructureDefinition/at-aps-medication"
         },
         "name" : "AT APS Medication",
@@ -1884,6 +1898,20 @@
         "name" : "Immunization-Beispiel 1",
         "description" : "Impfung Diphtherie, Pertussis, Poliomyelitis und Tetanus",
         "exampleCanonical" : "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-immunization"
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "ImmunizationRecommendation"
+          }
+        ],
+        "reference" : {
+          "reference" : "ImmunizationRecommendation/AtApsExampleImmunizationRecommendation01"
+        },
+        "name" : "ImmunizationRecommendation-Beispiel 1",
+        "description" : "Impfung Diphtherie, Pertussis, Poliomyelitis und Tetanus",
+        "exampleCanonical" : "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-immunizationrecommendation"
       },
       {
         "extension" : [

@@ -1037,16 +1037,29 @@
 
 <urn:uuid:39cd75da-2456-46a9-a703-89d8b65ae63b> a fhir:CarePlan ;
   fhir:id [ fhir:v "AtApsExample03Diabetes-schulung-1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan"^^xsd:anyURI ;
+       fhir:l <https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan>
+     ] )
+  ] ; # 
   fhir:text [
      fhir:status [ fhir:v "additional" ] ;
      fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"CarePlan_AtApsExample03Diabetes-schulung-1\"> </a><p>Schulung zur Verbesserung der Mobilität</p></div>"^^rdf:XMLLiteral ]
   ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/workflow-shallComplyWith"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/workflow-shallComplyWith>
+     ] ;
+     fhir:value [
+       a fhir:Uri ;
+       fhir:v "http://example.org/protocol-for-heart-association-event"^^xsd:anyURI ;
+       fhir:l <http://example.org/protocol-for-heart-association-event>
+     ]
+  ] ) ; # 
   fhir:identifier ( [
      fhir:value [ fhir:v "12345" ]
-  ] ) ; # 
-  fhir:instantiatesUri ( [
-     fhir:v "http://example.org/protocol-for-heart-association-event"^^xsd:anyURI ;
-     fhir:l <http://example.org/protocol-for-heart-association-event>
   ] ) ; # 
   fhir:basedOn ( [
      fhir:display [ fhir:v "Schulungen für Diabetespatienten" ]
@@ -1094,49 +1107,7 @@
          fhir:code [ fhir:v "408443003" ] ;
          fhir:display [ fhir:v "Allgemeines Verfahren" ]
        ] )
-     ] ) ;
-     fhir:detail [
-       fhir:code [
-         fhir:coding ( [
-           a sct:409063005 ;
-           fhir:system [
-             fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
-             fhir:l <http://snomed.info/sct>
-           ] ;
-           fhir:code [ fhir:v "409063005" ] ;
-           fhir:display [ fhir:v "Beratung" ]
-         ] [
-           a sct:1293061000168108 ;
-           fhir:system [
-             fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
-             fhir:l <http://snomed.info/sct>
-           ] ;
-           fhir:code [ fhir:v "1293061000168108" ] ;
-           fhir:display [ fhir:v "Dienst für Gesundheitsförderung" ]
-         ] )
-       ] ;
-       fhir:status [ fhir:v "completed" ] ;
-       fhir:statusReason [
-         fhir:text [ fhir:v "Der Hausarzt informierte den Patienten über eine Veranstaltung des Herzverbandes zur Förderung der Herzgesundheit." ]
-       ] ;
-       fhir:doNotPerform [ fhir:v false ] ;
-       fhir:scheduled [
-         a fhir:Timing ;
-         fhir:repeat [
-           fhir:frequency [ fhir:v "1"^^xsd:positiveInteger ] ;
-           fhir:period [ fhir:v "1"^^xsd:decimal ] ;
-           fhir:periodUnit [ fhir:v "d" ]
-         ]
-       ] ;
-       fhir:location [
-         fhir:display [ fhir:v "Informationsveranstaltung des Herzverbandes" ]
-       ] ;
-       fhir:performer ( [
-         fhir:l <urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8> ;
-         fhir:reference [ fhir:v "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8" ] ;
-         fhir:display [ fhir:v "Susi Testpatientin" ]
-       ] )
-     ]
+     ] )
   ] ) . # 
 
 <urn:uuid:acac4c94-a752-4cf5-9a6b-0d84237d5076> a fhir:MedicationStatement ;

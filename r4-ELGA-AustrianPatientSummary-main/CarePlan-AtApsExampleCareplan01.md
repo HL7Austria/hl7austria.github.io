@@ -13,12 +13,17 @@
       "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan"
     ]
   },
+  "extension" : [
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/workflow-shallComplyWith",
+      "valueUri" : "http://example.org/protocol-for-obesity"
+    }
+  ],
   "identifier" : [
     {
       "value" : "12345"
     }
   ],
-  "instantiatesUri" : ["http://example.org/protocol-for-obesity"],
   "basedOn" : [
     {
       "display" : "Behandlung von Typ-2-Diabetes"

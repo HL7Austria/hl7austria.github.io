@@ -19,7 +19,7 @@
   "name" : "AtApsPractitionerRole",
   "title" : "AT APS PractitionerRole",
   "status" : "active",
-  "date" : "2026-02-03T10:06:44+00:00",
+  "date" : "2026-02-03T10:34:36+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

@@ -725,14 +725,20 @@
     "resource" : {
       "resourceType" : "CarePlan",
       "id" : "AtApsExample03Diabetes-schulung-1",
+      "meta" : {
+        "profile" : ["https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan"]
+      },
       "text" : {
         "status" : "additional",
         "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"CarePlan_AtApsExample03Diabetes-schulung-1\"> </a><p>Schulung zur Verbesserung der Mobilität</p></div>"
       },
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/workflow-shallComplyWith",
+        "valueUri" : "http://example.org/protocol-for-heart-association-event"
+      }],
       "identifier" : [{
         "value" : "12345"
       }],
-      "instantiatesUri" : ["http://example.org/protocol-for-heart-association-event"],
       "basedOn" : [{
         "display" : "Schulungen für Diabetespatienten"
       }],
@@ -772,40 +778,7 @@
             "code" : "408443003",
             "display" : "Allgemeines Verfahren"
           }]
-        }],
-        "detail" : {
-          "code" : {
-            "coding" : [{
-              "system" : "http://snomed.info/sct",
-              "code" : "409063005",
-              "display" : "Beratung"
-            },
-            {
-              "system" : "http://snomed.info/sct",
-              "code" : "1293061000168108",
-              "display" : "Dienst für Gesundheitsförderung"
-            }]
-          },
-          "status" : "completed",
-          "statusReason" : {
-            "text" : "Der Hausarzt informierte den Patienten über eine Veranstaltung des Herzverbandes zur Förderung der Herzgesundheit."
-          },
-          "doNotPerform" : false,
-          "scheduledTiming" : {
-            "repeat" : {
-              "frequency" : 1,
-              "period" : 1,
-              "periodUnit" : "d"
-            }
-          },
-          "location" : {
-            "display" : "Informationsveranstaltung des Herzverbandes"
-          },
-          "performer" : [{
-            "reference" : "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8",
-            "display" : "Susi Testpatientin"
-          }]
-        }
+        }]
       }]
     }
   },

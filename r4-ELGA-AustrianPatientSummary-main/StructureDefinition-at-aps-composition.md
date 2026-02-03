@@ -19,7 +19,7 @@
   "name" : "AtApsComposition",
   "title" : "AT APS Composition",
   "status" : "active",
-  "date" : "2026-02-03T10:06:44+00:00",
+  "date" : "2026-02-03T10:34:36+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -115,6 +115,23 @@
         ]
       },
       {
+        "id" : "Composition.author",
+        "path" : "Composition.author",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-device",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
+      },
+      {
         "id" : "Composition.attester.party",
         "path" : "Composition.attester.party",
         "type" : [
@@ -133,7 +150,15 @@
       {
         "id" : "Composition.custodian",
         "path" : "Composition.custodian",
-        "min" : 1
+        "min" : 1,
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
       },
       {
         "id" : "Composition.relatesTo.target[x]",
@@ -145,7 +170,6 @@
           {
             "code" : "Reference",
             "targetProfile" : [
-              "http://hl7.org/fhir/StructureDefinition/Composition",
               "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-composition"
             ]
           }
@@ -165,6 +189,23 @@
           "rules" : "open"
         },
         "min" : 5
+      },
+      {
+        "id" : "Composition.section.author",
+        "path" : "Composition.section.author",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-device",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
       },
       {
         "id" : "Composition.section:sectionMedications",
@@ -1051,6 +1092,7 @@
             "code" : "Reference",
             "targetProfile" : [
               "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-immunizationrecommendation",
               "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-documentreference"
             ]
           }
@@ -1067,6 +1109,21 @@
             "code" : "Reference",
             "targetProfile" : [
               "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Composition.section:sectionPlanOfCare.entry:immunizationRecommendation",
+        "path" : "Composition.section.entry",
+        "sliceName" : "immunizationRecommendation",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-immunizationrecommendation"
             ]
           }
         ]

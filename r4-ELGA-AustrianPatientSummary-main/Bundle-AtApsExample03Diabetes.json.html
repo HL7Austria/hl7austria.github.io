@@ -43,8 +43,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"7.41"}
-    h3,h4,h5,h6{--heading-prefix:"7.41"}</style>
+    <style type="text/css">h2{--heading-prefix:"7.42"}
+    h3,h4,h5,h6{--heading-prefix:"7.42"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- at-fhir-ig-template begin -->
@@ -1107,17 +1107,25 @@
       "<a href="http://hl7.org/fhir/R4/careplan.html#CarePlan">resource</a>" : {
         "<a href="http://hl7.org/fhir/R4/careplan.html">resourceType</a>" : "CarePlan",
         "<a href="http://hl7.org/fhir/R4/resource.html#CarePlan.id">id</a>" : "AtApsExample03Diabetes-schulung-1",
+        "<a href="http://hl7.org/fhir/R4/resource.html#CarePlan.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
+            <a href="StructureDefinition-at-aps-careplan.html" style="color: Maroon">&#x1F517;</a> "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan"
+          ]
+        },
         "<a href="http://hl7.org/fhir/R4/domainresource.html#CarePlan.text">text</a>" : {
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "additional",
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;a name=\&quot;CarePlan_AtApsExample03Diabetes-schulung-1\&quot;&gt; &lt;/a&gt;&lt;p&gt;Schulung zur Verbesserung der Mobilität&lt;/p&gt;&lt;/div&gt;"
         },
+        "<a href="http://hl7.org/fhir/R4/domainresource.html#CarePlan.extension">extension</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/workflow-shallComplyWith",
+            "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueUri</a>" : "http://example.org/protocol-for-heart-association-event"
+          }
+        ],
         "<a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.identifier">identifier</a>" : [
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "12345"
           }
-        ],
-        "<a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.instantiatesUri">instantiatesUri</a>" : [
-          "http://example.org/protocol-for-heart-association-event"
         ],
         "<a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.basedOn">basedOn</a>" : [
           {
@@ -1173,44 +1181,7 @@
                   }
                 ]
               }
-            ],
-            "<a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.activity.detail">detail</a>" : {
-              "<a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.activity.detail.code">code</a>" : {
-                "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-                  {
-                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://snomed.info/sct",
-                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "409063005",
-                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Beratung"
-                  },
-                  {
-                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://snomed.info/sct",
-                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "1293061000168108",
-                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Dienst für Gesundheitsförderung"
-                  }
-                ]
-              },
-              "<a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.activity.detail.status">status</a>" : "completed",
-              "<a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.activity.detail.statusReason">statusReason</a>" : {
-                "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a>" : "Der Hausarzt informierte den Patienten über eine Veranstaltung des Herzverbandes zur Förderung der Herzgesundheit."
-              },
-              "<a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.activity.detail.doNotPerform">doNotPerform</a>" : false,
-              "<a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.activity.detail.scheduled_x_">scheduledTiming</a>" : {
-                "<a href="http://hl7.org/fhir/R4/datatypes.html#Timing#Timing.repeat">repeat</a>" : {
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Timing#Timing.repeat.frequency">frequency</a>" : 1,
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Timing#Timing.repeat.period">period</a>" : 1,
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Timing#Timing.repeat.periodUnit">periodUnit</a>" : "d"
-                }
-              },
-              "<a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.activity.detail.location">location</a>" : {
-                "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Informationsveranstaltung des Herzverbandes"
-              },
-              "<a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.activity.detail.performer">performer</a>" : [
-                {
-                  "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8",
-                  "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Susi Testpatientin"
-                }
-              ]
-            }
+            ]
           }
         ]
       }
@@ -1693,7 +1664,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.aps.r4#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Feb 3, 2026 10:06+0000">2026-02-03</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.aps.r4#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Feb 3, 2026 10:34+0000">2026-02-03</span>
     <br/>
     <span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

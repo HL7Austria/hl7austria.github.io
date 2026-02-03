@@ -20,12 +20,19 @@
      fhir:status [ fhir:v "additional" ] ;
      fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Ein einfacher Pflegeplan, der angibt, dass ein Patient aufgrund von Adipositas einmal täglich sein Gewicht messen soll.</p></div>"^^rdf:XMLLiteral ]
   ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/workflow-shallComplyWith"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/workflow-shallComplyWith>
+     ] ;
+     fhir:value [
+       a fhir:Uri ;
+       fhir:v "http://example.org/protocol-for-obesity"^^xsd:anyURI ;
+       fhir:l <http://example.org/protocol-for-obesity>
+     ]
+  ] ) ; # 
   fhir:identifier ( [
      fhir:value [ fhir:v "12345" ]
-  ] ) ; # 
-  fhir:instantiatesUri ( [
-     fhir:v "http://example.org/protocol-for-obesity"^^xsd:anyURI ;
-     fhir:l <http://example.org/protocol-for-obesity>
   ] ) ; # 
   fhir:basedOn ( [
      fhir:display [ fhir:v "Behandlung von Typ-2-Diabetes" ]
