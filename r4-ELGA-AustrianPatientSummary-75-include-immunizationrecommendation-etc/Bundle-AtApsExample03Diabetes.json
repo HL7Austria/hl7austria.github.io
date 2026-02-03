@@ -725,14 +725,20 @@
     "resource" : {
       "resourceType" : "CarePlan",
       "id" : "AtApsExample03Diabetes-schulung-1",
+      "meta" : {
+        "profile" : ["https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan"]
+      },
       "text" : {
         "status" : "additional",
         "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"CarePlan_AtApsExample03Diabetes-schulung-1\"> </a><p>Schulung zur Verbesserung der Mobilität</p></div>"
       },
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/workflow-shallComplyWith",
+        "valueUri" : "http://example.org/protocol-for-heart-association-event"
+      }],
       "identifier" : [{
         "value" : "12345"
       }],
-      "instantiatesUri" : ["http://example.org/protocol-for-heart-association-event"],
       "basedOn" : [{
         "display" : "Schulungen für Diabetespatienten"
       }],
@@ -772,40 +778,7 @@
             "code" : "408443003",
             "display" : "Allgemeines Verfahren"
           }]
-        }],
-        "detail" : {
-          "code" : {
-            "coding" : [{
-              "system" : "http://snomed.info/sct",
-              "code" : "409063005",
-              "display" : "Beratung"
-            },
-            {
-              "system" : "http://snomed.info/sct",
-              "code" : "1293061000168108",
-              "display" : "Dienst für Gesundheitsförderung"
-            }]
-          },
-          "status" : "completed",
-          "statusReason" : {
-            "text" : "Der Hausarzt informierte den Patienten über eine Veranstaltung des Herzverbandes zur Förderung der Herzgesundheit."
-          },
-          "doNotPerform" : false,
-          "scheduledTiming" : {
-            "repeat" : {
-              "frequency" : 1,
-              "period" : 1,
-              "periodUnit" : "d"
-            }
-          },
-          "location" : {
-            "display" : "Informationsveranstaltung des Herzverbandes"
-          },
-          "performer" : [{
-            "reference" : "urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8",
-            "display" : "Susi Testpatientin"
-          }]
-        }
+        }]
       }]
     }
   },
@@ -819,7 +792,7 @@
       },
       "text" : {
         "status" : "generated",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationStatement_AtApsExample03Diabetes-medication-summary-1\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationStatement AtApsExample03Diabetes-medication-summary-1</b></p><a name=\"AtApsExample03Diabetes-medication-summary-1\"> </a><a name=\"hcAtApsExample03Diabetes-medication-summary-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-medicationstatement.html\">AT APS MedicationStatement</a></p></div><p><b>status</b>: Active</p><p><b>medication</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/asp-liste 2443061}\">EBETREXAT TBL 10MG</span></p><p><b>subject</b>: <a href=\"Bundle-AtApsExample03Diabetes.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8\">Susi Testpatientin</a></p><p><b>effective</b>: 2024-02-08 10:31:58+0200 --&gt; (ongoing)</p><blockquote><p><b>dosage</b></p><p><b>sequence</b>: 1</p><p><b>timing</b>: Night, Once</p><p><b>route</b>: <span title=\"Codes:{http://snomed.info/sct 26643006}\">Oraler Verabreichungsweg</span></p><h3>DoseAndRates</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Dose[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>2 Tablet<span style=\"background: LightGoldenRodYellow\"> (Details: elga-medikationmengenart  code{TAB} = '{TAB}')</span></td></tr></table></blockquote></div>"
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationStatement_AtApsExample03Diabetes-medication-summary-1\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationStatement AtApsExample03Diabetes-medication-summary-1</b></p><a name=\"AtApsExample03Diabetes-medication-summary-1\"> </a><a name=\"hcAtApsExample03Diabetes-medication-summary-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-medicationstatement.html\">AT APS MedicationStatement</a></p></div><p><b>status</b>: Active</p><p><b>medication</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/asp-liste 2443061}\">EBETREXAT TBL 10MG</span></p><p><b>subject</b>: <a href=\"Bundle-AtApsExample03Diabetes.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8\">Susi Testpatientin</a></p><p><b>effective</b>: 2024-02-08 10:31:58+0200 --&gt; (ongoing)</p><blockquote><p><b>dosage</b></p><p><b>sequence</b>: 1</p><p><b>timing</b>: Night, Once</p><p><b>route</b>: <span title=\"Codes:{http://snomed.info/sct 26643006}\">Oraler Verabreichungsweg</span></p><h3>DoseAndRates</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Dose[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>2 Tablet<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{TAB} = '{TAB}')</span></td></tr></table></blockquote></div>"
       },
       "status" : "active",
       "medicationCodeableConcept" : {
@@ -855,7 +828,7 @@
           "doseQuantity" : {
             "value" : 2,
             "unit" : "Tablet",
-            "system" : "https://termgit.elga.gv.at/ValueSet/elga-medikationmengenart",
+            "system" : "http://unitsofmeasure.org",
             "code" : "{TAB}"
           }
         }]

@@ -43,7 +43,7 @@
   "severity" : {
     "coding" : [
       {
-        "system" : "https://termgit.elga.gv.at/ValueSet/elga-problemseverity",
+        "system" : "http://snomed.info/sct",
         "code" : "6736007",
         "display" : "mittel"
       }
