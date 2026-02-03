@@ -38,8 +38,8 @@
   "valueCodeableConcept" : {
     "coding" : [
       {
-        "system" : "https://termgit.elga.gv.at/ValueSet/elga-pregnancystatus",
-        "code" : "pregnant",
+        "system" : "http://loinc.org",
+        "code" : "LA15173-0",
         "display" : "Pregnant"
       }
     ],
