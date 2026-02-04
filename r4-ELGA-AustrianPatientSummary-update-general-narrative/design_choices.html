@@ -229,6 +229,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul id="markdown-toc">
   <li><a href="#aufbau-der-aps" id="markdown-toc-aufbau-der-aps">Aufbau der APS</a></li>
   <li><a href="#profilierung" id="markdown-toc-profilierung">Profilierung</a></li>
+  <li><a href="#must-support-und-obligations" id="markdown-toc-must-support-und-obligations">Must Support und Obligations</a></li>
+  <li><a href="#leere-sektionen-und-fehlende-daten" id="markdown-toc-leere-sektionen-und-fehlende-daten">Leere Sektionen und fehlende Daten</a></li>
   <li><a href="#datenherkunft" id="markdown-toc-datenherkunft">Datenherkunft</a></li>
   <li><a href="#todo-andere-themen" id="markdown-toc-todo-andere-themen">TODO andere Themen</a></li>
   <li><a href="#ggf-noch-einbauen" id="markdown-toc-ggf-noch-einbauen">ggf. noch einbauen</a></li>
@@ -274,18 +276,20 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Wie bei der IPS wurde bei der APS folgender Profilierungsansatz gewählt: Anstatt die Ressourcen streng zu beschränken, wurden hauptsächlich die Pflichtelemente des Minimaldatensatzes festgelegt, während anderen offen bleiben.
 Dieser Ansatz erleichtert die Wiederverwendung der Profile und erlaubt den schrittweisen Zugriff auf zusätzliche relevante Informationen, um zukünftige Anforderungen und spezifische klinische Anwendungsfälle abzubilden.</p>
-<ul>
-  <li>Einschränkungen von IPS, AtApsPatient usw wenn noch nicht an anderer Stelle beschrieben ?</li>
-</ul>
 
-<h4 id="must-support-und-obligations">Must Support und Obligations</h4>
+<p>Wo möglich wurden die Profile der APS auf jene Aufgebaut, die der HL7® Austria FHIR® Core zur Verfügung stellt. In der Folge wurden alle Profile der APS dahingehend angepasst, dass für alle Referenzen nach Möglichkeit die Profile der APS selbst verwendet werden.</p>
 
-<p>Die APS folgt den Grundsätzen des IPS-Standards in Bezug auf „Must Support“ und Verpflichtungen:
-Ein Element, das als Must Support gekennzeichnet ist, muss von Implementierungen unterstützt werden – d.h. Systeme müssen in der Lage sein, das Element zu erfassen, zu speichern, zu übermitteln und anzuzeigen, sofern entsprechende Informationen verfügbar sind.
-Wenn Daten für ein Must Support-Element nicht vorliegen, darf das Element weggelassen oder mit einem geeigneten Data Absent Reason-Code versehen werden. 
-Pflichtfelder gemäß FHIR-Definition (cardinality 1..1 oder 1..*) müssen immer befüllt werden.</p>
+<h3 id="must-support-und-obligations">Must Support und Obligations</h3>
 
-<p>TODO @Gabriel: Derzeit ist die Must Support Kennzechnung in den Profilen der APS visuell nicht sichtbar.</p>
+<p>Durch die Einbindung der IPS-Profile mit der <a href="http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile"><code class="language-plaintext highlighter-rouge">imposeProfile</code>-Extension</a> wurden die "Must Support"-Markierungen und Obligations nicht in die APS übernommen.</p>
+
+<p>Einen ähnlichen Zugang verfolgt die in Aufbau befindliche <a href="https://build.fhir.org/ig/hl7-eu/eps/">European Patient Summary (EPS) von HL7EU</a>. Diese Entwicklungen werden beobachtet und zu gegebener Zeit berücksichtigt.</p>
+
+<h3 id="leere-sektionen-und-fehlende-daten">Leere Sektionen und fehlende Daten</h3>
+
+<p>Wenn eine verpflichtende Sektion der APS leer bleibt, weile keine relevanten Informationen vorliegen oder verfügbar sind, muss „Composition.section.emptyReason“ befüllt werden, sodass der Grund dafür ersichtlich ist (z.B. "nicht verfügbar" oder "nicht abgefragt"). Nicht verpflichtende Sektionen dürfen bei der Erstellung der Patient Summary weggelassen werden.
+Auch mittels Ressourcen können fehlende Informationen dokumentiert werden, z.B. mittels SNOMED Codes, dass keine bekannte Allergie vorliegt.
+Das Ziel ist, die Vollständigkeit und Nachvollziehbarkeit der Patient Summary sicherzustellen – auch bei fehlenden Informationen.</p>
 
 <h3 id="datenherkunft">Datenherkunft</h3>
 
@@ -298,12 +302,6 @@ Pflichtfelder gemäß FHIR-Definition (cardinality 1..1 oder 1..*) müssen immer
     <li>Um zukünftige Anwendungsfälle abdecken zu können, besteht die Möglichkeit, zu einem späteren Zeitpunkt zusätzlich Provenance zu verwenden.</li>
   </ul>
 </blockquote>
-
-<h4 id="leere-sektionen-und-fehlende-daten">Leere Sektionen und fehlende Daten</h4>
-
-<p>Wenn eine verpflichtende Sektion der APS leer bleibt, weile keine relevanten Informationen vorliegen oder verfügbar sind, muss „Composition.section.emptyReason“ befüllt werden, sodass der Grund dafür ersichtlich ist (z.B. "nicht verfügbar" oder "nicht abgefragt"). Nicht verpflichtende Sektionen dürfen bei der Erstellung der Patient Summary weggelassen werden.
-Auch mittels Ressourcen können fehlende Informationen dokumentiert werden, z.B. mittels SNOMED Codes, dass keine bekannte Allergie vorliegt.
-Das Ziel ist, die Vollständigkeit und Nachvollziehbarkeit der Patient Summary sicherzustellen – auch bei fehlenden Informationen.</p>
 
 <h3 id="todo-andere-themen">TODO andere Themen</h3>
 
@@ -439,7 +437,7 @@ Beispiele siehe https://hl7.org/fhir/uv/ips/Empty-Sections-and-Missing-Data.html
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.aps.r4#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Feb 4, 2026 14:21+0000">2026-02-04</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.aps.r4#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Feb 4, 2026 15:46+0000">2026-02-04</span>
     <br/>
     <span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

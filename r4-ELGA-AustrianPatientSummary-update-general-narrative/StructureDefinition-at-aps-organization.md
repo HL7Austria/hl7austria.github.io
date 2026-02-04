@@ -19,7 +19,7 @@
   "name" : "AtApsOrganization",
   "title" : "AT APS Organization",
   "status" : "active",
-  "date" : "2026-02-04T14:21:15+00:00",
+  "date" : "2026-02-04T15:46:20+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
