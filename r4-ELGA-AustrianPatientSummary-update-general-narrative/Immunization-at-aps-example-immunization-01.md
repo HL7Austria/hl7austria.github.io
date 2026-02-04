@@ -51,7 +51,7 @@
   "vaccineCode" : {
     "coding" : [
       {
-        "system" : "https://termgit.elga.gv.at/ValueSet/eimpf-impfstoffe",
+        "system" : "https://termgit.elga.gv.at/CodeSystem/eimpf-impfstoffe",
         "code" : "2457324",
         "display" : "BOOSTRIX POLIO FSPR 0,5ML"
       }
@@ -60,15 +60,15 @@
   },
   "patient" : {
     "reference" : "Patient/at-aps-example-patient-01",
-    "display" : "Max Mustermann"
+    "display" : "Maria Musterfrau"
   },
   "occurrenceDateTime" : "2021-10-01",
   "route" : {
     "coding" : [
       {
-        "system" : "https://termgit.elga.gv.at/ValueSet/eimpf-medikationartanwendung",
-        "code" : "IM",
-        "display" : "Intramuskulär"
+        "system" : "https://termgit.elga.gv.at/CodeSystem/medikationartanwendung",
+        "code" : "100000073600",
+        "display" : "intramuskuläre Anwendung"
       }
     ]
   },
@@ -76,7 +76,7 @@
     {
       "actor" : {
         "reference" : "Practitioner/at-aps-example-practitioner-01",
-        "display" : "Dr. Hanna Hausärztin"
+        "display" : "Hanna Hausärztin"
       }
     }
   ],
@@ -86,7 +86,7 @@
         {
           "coding" : [
             {
-              "system" : "https://termgit.elga.gv.at/ValueSet/eimpf-immunizationtarget",
+              "system" : "http://snomed.info/sct",
               "code" : "397430003",
               "display" : "Diphtheria"
             }
@@ -95,7 +95,7 @@
         {
           "coding" : [
             {
-              "system" : "https://termgit.elga.gv.at/ValueSet/eimpf-immunizationtarget",
+              "system" : "http://snomed.info/sct",
               "code" : "27836007",
               "display" : "Pertussis"
             }
@@ -104,7 +104,7 @@
         {
           "coding" : [
             {
-              "system" : "https://termgit.elga.gv.at/ValueSet/eimpf-immunizationtarget",
+              "system" : "http://snomed.info/sct",
               "code" : "398102009",
               "display" : "Poliomyelitis"
             }
@@ -113,7 +113,7 @@
         {
           "coding" : [
             {
-              "system" : "https://termgit.elga.gv.at/ValueSet/eimpf-immunizationtarget",
+              "system" : "http://snomed.info/sct",
               "code" : "76902006",
               "display" : "Tetanus"
             }

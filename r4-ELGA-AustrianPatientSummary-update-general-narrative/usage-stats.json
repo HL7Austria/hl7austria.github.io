@@ -89,6 +89,12 @@
         "title": "AT APS Immunization"
       }
     ],
+    "ImmunizationRecommendation": [
+      {
+        "url": "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-immunizationrecommendation",
+        "title": "AT APS Immunization"
+      }
+    ],
     "Medication": [
       {
         "url": "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medication",
@@ -196,6 +202,7 @@
   },
   "usage": {
     "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation": [
+      "Organization.address.line",
       "Patient.address.line",
       "Patient.contact.address.line"
     ],
@@ -213,9 +220,6 @@
     ],
     "http://hl7.org/fhir/5.0/StructureDefinition/extension-Immunization.basedOn": [
       "Immunization"
-    ],
-    "http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement": [
-      "AllergyIntolerance"
     ],
     "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation": [
       "CapabilityStatement.rest.resource",
@@ -242,14 +246,17 @@
       "StructureDefinition.snapshot.element"
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator": [
+      "Organization.address.line",
       "Patient.address.line",
       "Patient.contact.address.line"
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber": [
+      "Organization.address.line",
       "Patient.address.line",
       "Patient.contact.address.line"
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName": [
+      "Organization.address.line",
       "Patient.address.line",
       "Patient.contact.address.line"
     ],
@@ -269,10 +276,18 @@
       "StructureDefinition.snapshot.element.type"
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy": [
+      "StructureDefinition.differential.element.type",
       "StructureDefinition.snapshot.element.type"
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile": [
       "StructureDefinition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/workflow-adheresTo": [
+      "CarePlan"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/workflow-shallComplyWith": [
+      "Bundle.entry.resource",
+      "CarePlan"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/additional-binding": [
       "StructureDefinition.differential.element.binding",

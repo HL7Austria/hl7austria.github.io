@@ -19,7 +19,7 @@
   "name" : "AtApsAllergyIntolerance",
   "title" : "AT APS AllergyIntolerance",
   "status" : "active",
-  "date" : "2025-11-28T12:03:31+00:00",
+  "date" : "2026-02-04T14:21:15+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -99,6 +99,36 @@
             "code" : "Reference",
             "targetProfile" : [
               "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "AllergyIntolerance.recorder",
+        "path" : "AllergyIntolerance.recorder",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "AllergyIntolerance.asserter",
+        "path" : "AllergyIntolerance.asserter",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole"
             ]
           }
         ]

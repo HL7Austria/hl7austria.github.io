@@ -12,7 +12,7 @@
   <title value="Austrian Patient Summary (R4)"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2025-11-28T12:03:31+00:00"/>
+  <date value="2026-02-04T14:21:15+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -45,7 +45,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
-    <version value="7.0.0"/>
+    <version value="7.0.1"/>
   </dependsOn>
   <dependsOn id="hl7ext">
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
@@ -309,7 +309,7 @@
       </valueReference>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
-      <valueCode value="hl7.fhir.uv.tools.r4#0.8.0"/>
+      <valueCode value="hl7.fhir.uv.tools.r4#0.9.0"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
@@ -710,6 +710,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-aps-immunizationrecommendation"/>
+      </reference>
+      <name value="AT APS Immunization"/>
+      <description value="Das AT APS-Profil für die ImmunizationRecommendation-Ressource berücksichtigt die österreichischen Vorgaben (z.B. Patient und zu verwendende Value-Sets)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
@@ -996,6 +1007,50 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CarePlan"/>
+      </extension>
+      <reference>
+        <reference value="CarePlan/AtApsExampleCareplan01"/>
+      </reference>
+      <name value="AtApsCarePlan-Beispiel"/>
+      <description value="Care Plan"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ClinicalImpression"/>
+      </extension>
+      <reference>
+        <reference value="ClinicalImpression/AtApsExampleClinicalImpression01"/>
+      </reference>
+      <name value="AtApsClinicalImpression-Beispiel"/>
+      <description value="Clinical Impression"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-clinicalimpression"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/AtApsExampleCondition01"/>
+      </reference>
+      <name value="AtApsCondition-Beispiel"/>
+      <description value="Befund"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Consent"/>
+      </extension>
+      <reference>
+        <reference value="Consent/AtApsExampleConsent01"/>
+      </reference>
+      <name value="AtApsConsent-Beispiel"/>
+      <description value="Patientenverfügung"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-consent"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Device"/>
       </extension>
       <reference>
@@ -1015,6 +1070,39 @@
       <name value="AtApsDevice-Beispiel 2"/>
       <description value="Software eines Medizinprodukts"/>
       <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-device"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DeviceUseStatement"/>
+      </extension>
+      <reference>
+        <reference value="DeviceUseStatement/AtApsExampleDeviceUseStatement01"/>
+      </reference>
+      <name value="AtApsDeviceUseStatement-Beispiel"/>
+      <description value="Device Use Statement"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-deviceusestatement"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/AtApsExampleDiagnosticReport01"/>
+      </reference>
+      <name value="AtApsDiagnosticReport-Beispiel"/>
+      <description value="Diagnostic Report"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-diagnosticreport"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
+        <reference value="DocumentReference/AtApsExampleDocumentReference01"/>
+      </reference>
+      <name value="AtApsDocumentReference-Beispiel"/>
+      <description value="Document Reference"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-documentreference"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1051,6 +1139,39 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/AtApsExampleOrganization01"/>
+      </reference>
+      <name value="AtApsExampleOrganization01-Beispiel"/>
+      <description value="Organization"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Flag"/>
+      </extension>
+      <reference>
+        <reference value="Flag/AtApsExampleFlagAlert01"/>
+      </reference>
+      <name value="AtApsFlagAlert-Beispiel"/>
+      <description value="Flag Alert"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-flagalert"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ImagingStudy"/>
+      </extension>
+      <reference>
+        <reference value="ImagingStudy/AtApsExampleImagingStudy01"/>
+      </reference>
+      <name value="AtApsImagingStudy-Beispiel"/>
+      <description value="Imaging Study"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-imagingstudy"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Immunization"/>
       </extension>
       <reference>
@@ -1059,6 +1180,138 @@
       <name value="AtApsImmunization-Beispiel"/>
       <description value="Immunisierung mit unbekanntem Impfstoff"/>
       <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-immunization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/AtApsExampleMedication01"/>
+      </reference>
+      <name value="AtApsMedication-Beispiel"/>
+      <description value="Medication"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationAdministration"/>
+      </extension>
+      <reference>
+        <reference value="MedicationAdministration/AtApsExampleMedicationAdministration01"/>
+      </reference>
+      <name value="AtApsMedicationAdministration-Beispiel"/>
+      <description value="Medication Administration"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationadministration"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationDispense"/>
+      </extension>
+      <reference>
+        <reference value="MedicationDispense/AtApsExampleMedicationDispense01"/>
+      </reference>
+      <name value="AtApsMedicationDispense-Beispiel"/>
+      <description value="Medication Dispense"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationdispense"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/AtApsExampleMedicationRequest01"/>
+      </reference>
+      <name value="AtApsMedicationRequest-Beispiel"/>
+      <description value="Medication Request"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationrequest"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationStatement"/>
+      </extension>
+      <reference>
+        <reference value="MedicationStatement/AtApsExampleMedicationStatement01"/>
+      </reference>
+      <name value="AtApsMedicationStatement-Beispiel"/>
+      <description value="Medication Statement"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationstatement"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/AtApsExampleObservation01"/>
+      </reference>
+      <name value="AtApsObservation-Beispiel"/>
+      <description value="Observation"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/AtApsExampleObservationPregnancyEdd01"/>
+      </reference>
+      <name value="AtApsObservationPregnancyEdd-Beispiel"/>
+      <description value="Observation Pregnancy Expected Delivery Date"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationpregnancyedd"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/AtApsExampleObservationPregnancyOutcome01"/>
+      </reference>
+      <name value="AtApsObservationPregnancyOutcome-Beispiel"/>
+      <description value="Observation Pregnancy Outcome"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationpregnancyoutcome"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/AtApsExampleObservationPregnancyStatus01"/>
+      </reference>
+      <name value="AtApsObservationPregnancyStatus-Beispiel"/>
+      <description value="Observation Pregnancy Status"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationpregnancystatus"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/AtApsExampleObservationResultsLaboratoryPathology01"/>
+      </reference>
+      <name value="AtApsObservationResultsLaboratoryPathology-Beispiel"/>
+      <description value="Observation Results Laboratory Pathology"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationresultslaboratorypathology"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/AtApsExampleObservationResultsRadiology01"/>
+      </reference>
+      <name value="AtApsObservationResultsRadiology-Beispiel"/>
+      <description value="Observation Results Radiology"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationresultsradiology"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/AtApsExampleObservationVitalSigns01"/>
+      </reference>
+      <name value="AtApsObservationVitalSigns-Beispiel"/>
+      <description value="Observation Vital Signs"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationvitalsigns"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1084,6 +1337,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Specimen"/>
+      </extension>
+      <reference>
+        <reference value="Specimen/AtApsExampleSpecimen01"/>
+      </reference>
+      <name value="AtApsSpecimen-Beispiel"/>
+      <description value="Specimen"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-specimen"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Immunization"/>
       </extension>
       <reference>
@@ -1092,6 +1356,17 @@
       <name value="Immunization-Beispiel 1"/>
       <description value="Impfung Diphtherie, Pertussis, Poliomyelitis und Tetanus"/>
       <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-immunization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ImmunizationRecommendation"/>
+      </extension>
+      <reference>
+        <reference value="ImmunizationRecommendation/AtApsExampleImmunizationRecommendation01"/>
+      </reference>
+      <name value="ImmunizationRecommendation-Beispiel 1"/>
+      <description value="Impfung Diphtherie, Pertussis, Poliomyelitis und Tetanus"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-immunizationrecommendation"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">

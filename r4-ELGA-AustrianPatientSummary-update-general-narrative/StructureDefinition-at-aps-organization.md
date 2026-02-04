@@ -19,7 +19,7 @@
   "name" : "AtApsOrganization",
   "title" : "AT APS Organization",
   "status" : "active",
-  "date" : "2025-11-28T12:03:31+00:00",
+  "date" : "2026-02-04T14:21:15+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -87,6 +87,92 @@
         "id" : "Organization",
         "path" : "Organization",
         "short" : "AT APS Organization"
+      },
+      {
+        "id" : "Organization.identifier:GDA-OID",
+        "path" : "Organization.identifier",
+        "sliceName" : "GDA-OID"
+      },
+      {
+        "id" : "Organization.identifier:GDA-OID.assigner",
+        "path" : "Organization.identifier.assigner",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Organization.identifier:VPNR",
+        "path" : "Organization.identifier",
+        "sliceName" : "VPNR"
+      },
+      {
+        "id" : "Organization.identifier:VPNR.assigner",
+        "path" : "Organization.identifier.assigner",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Organization.identifier:VKZ",
+        "path" : "Organization.identifier",
+        "sliceName" : "VKZ"
+      },
+      {
+        "id" : "Organization.identifier:VKZ.assigner",
+        "path" : "Organization.identifier.assigner",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Organization.identifier:KANR",
+        "path" : "Organization.identifier",
+        "sliceName" : "KANR"
+      },
+      {
+        "id" : "Organization.identifier:KANR.assigner",
+        "path" : "Organization.identifier.assigner",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Organization.partOf",
+        "path" : "Organization.partOf",
+        "type" : [
+          {
+            "extension" : [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy",
+                "valueBoolean" : true
+              }
+            ],
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
       }
     ]
   }

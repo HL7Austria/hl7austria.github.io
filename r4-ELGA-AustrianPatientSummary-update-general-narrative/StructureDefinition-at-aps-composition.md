@@ -19,7 +19,7 @@
   "name" : "AtApsComposition",
   "title" : "AT APS Composition",
   "status" : "active",
-  "date" : "2025-11-28T12:03:31+00:00",
+  "date" : "2026-02-04T14:21:15+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -119,15 +119,58 @@
       {
         "id" : "Composition.author",
         "path" : "Composition.author",
+        "short" : "Autor der Austrian Patient Summary",
+        "definition" : "Autor der Austrian Patient Summary. Ggf. Angabe eines Devices z.B. bei automatischer Erstellung der Patient Summary durch die zentrale Anwendung.",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-device",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Composition.attester",
+        "path" : "Composition.attester",
         "short" : "Person, die die Richtigkeit der Zusammenstellung bestätigt.",
         "definition" : "Person, die die Richtigkeit der Zusammenstellung bestätigt. Darf bei automatischer Erstellung durch ein Device nicht angegeben werden."
+      },
+      {
+        "id" : "Composition.attester.party",
+        "path" : "Composition.attester.party",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
       },
       {
         "id" : "Composition.custodian",
         "path" : "Composition.custodian",
         "short" : "Organisation, die die Patient Summary verwaltet (z.b. zentrale Anwendung).",
         "definition" : "Organisation, die die Patient Summary verwaltet (z.B. zentrale Anwendung).",
-        "min" : 1
+        "min" : 1,
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
       },
       {
         "id" : "Composition.relatesTo.target[x]",
@@ -139,7 +182,6 @@
           {
             "code" : "Reference",
             "targetProfile" : [
-              "http://hl7.org/fhir/StructureDefinition/Composition",
               "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-composition"
             ]
           }
@@ -155,10 +197,27 @@
               "path" : "code"
             }
           ],
-          "ordered" : true,
-          "rules" : "openAtEnd"
+          "ordered" : false,
+          "rules" : "open"
         },
         "min" : 5
+      },
+      {
+        "id" : "Composition.section.author",
+        "path" : "Composition.section.author",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-device",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
       },
       {
         "id" : "Composition.section:sectionMedications",
@@ -192,8 +251,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "closed"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -315,8 +374,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "closed"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -390,8 +449,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "closed"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -474,8 +533,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "closed"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -558,8 +617,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "closed"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -633,8 +692,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "closed"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -712,8 +771,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "openAtEnd"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -818,8 +877,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "openAtEnd"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -893,8 +952,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "closed"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -968,8 +1027,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "closed"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -1059,14 +1118,15 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "closed"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
             "code" : "Reference",
             "targetProfile" : [
               "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-immunizationrecommendation",
               "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-documentreference"
             ]
           }
@@ -1083,6 +1143,21 @@
             "code" : "Reference",
             "targetProfile" : [
               "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Composition.section:sectionPlanOfCare.entry:immunizationRecommendation",
+        "path" : "Composition.section.entry",
+        "sliceName" : "immunizationRecommendation",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-immunizationrecommendation"
             ]
           }
         ]
@@ -1134,8 +1209,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "openAtEnd"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -1224,8 +1299,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "closed"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -1315,8 +1390,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "closed"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {
@@ -1390,8 +1465,8 @@
               "path" : "resolve()"
             }
           ],
-          "ordered" : true,
-          "rules" : "closed"
+          "ordered" : false,
+          "rules" : "open"
         },
         "type" : [
           {

@@ -19,7 +19,7 @@
   "name" : "AtApsObservationPregnancyStatus",
   "title" : "AT APS Observation Pregnancy Status",
   "status" : "active",
-  "date" : "2025-11-28T12:03:31+00:00",
+  "date" : "2026-02-04T14:21:15+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

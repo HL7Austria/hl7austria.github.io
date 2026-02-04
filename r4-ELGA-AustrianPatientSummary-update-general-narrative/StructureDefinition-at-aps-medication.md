@@ -19,7 +19,7 @@
   "name" : "AtApsMedication",
   "title" : "AT APS Medication",
   "status" : "active",
-  "date" : "2025-11-28T12:03:31+00:00",
+  "date" : "2026-02-04T14:21:15+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -87,6 +87,18 @@
         "id" : "Medication",
         "path" : "Medication",
         "short" : "AT APS Medication"
+      },
+      {
+        "id" : "Medication.manufacturer",
+        "path" : "Medication.manufacturer",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
+            ]
+          }
+        ]
       },
       {
         "id" : "Medication.ingredient.item[x]",

@@ -722,13 +722,18 @@ This OID may also be used in CD.codeSystem.">Uniform Resource Identifier (URI)</
     <resource>
       <CarePlan>
         <id value="AtApsExample03Diabetes-schulung-1"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan"/>
+        </meta>
         <text>
           <status value="additional"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="CarePlan_AtApsExample03Diabetes-schulung-1"> </a><p>Schulung zur Verbesserung der Mobilität</p></div>
         </text>
+        <extension url="http://hl7.org/fhir/StructureDefinition/workflow-shallComplyWith">
+          <valueUri value="http://example.org/protocol-for-heart-association-event"/>
+        </extension>
         <identifier>
           <value value="12345"/>
         </identifier>
-        <instantiatesUri value="http://example.org/protocol-for-heart-association-event"/>
         <basedOn>
           <display value="Schulungen für Diabetespatienten"/>
         </basedOn>
@@ -769,39 +774,6 @@ This OID may also be used in CD.codeSystem.">Uniform Resource Identifier (URI)</
               <display value="Allgemeines Verfahren"/>
             </coding>
           </outcomeCodeableConcept>
-          <detail>
-            <code>
-              <coding>
-                <system value="http://snomed.info/sct"/>
-                <code value="409063005"/>
-                <display value="Beratung"/>
-              </coding>
-              <coding>
-                <system value="http://snomed.info/sct"/>
-                <code value="1293061000168108"/>
-                <display value="Dienst für Gesundheitsförderung"/>
-              </coding>
-            </code>
-            <status value="completed"/>
-            <statusReason>
-              <text value="Der Hausarzt informierte den Patienten über eine Veranstaltung des Herzverbandes zur Förderung der Herzgesundheit."/>
-            </statusReason>
-            <doNotPerform value="false"/>
-            <scheduledTiming>
-              <repeat>
-                <frequency value="1"/>
-                <period value="1"/>
-                <periodUnit value="d"/>
-              </repeat>
-            </scheduledTiming>
-            <location>
-              <display value="Informationsveranstaltung des Herzverbandes"/>
-            </location>
-            <performer>
-              <reference value="urn:uuid:0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8"/>
-              <display value="Maria Musterfrau"/>
-            </performer>
-          </detail>
         </activity>
       </CarePlan>
     </resource>
@@ -815,7 +787,7 @@ This OID may also be used in CD.codeSystem.">Uniform Resource Identifier (URI)</
           <profile value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationstatement"/>
         </meta>
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="MedicationStatement_AtApsExample03Diabetes-medication-summary-1"> </a><p class="res-header-id"><b>Generated Narrative: MedicationStatement AtApsExample03Diabetes-medication-summary-1</b></p><a name="AtApsExample03Diabetes-medication-summary-1"> </a><a name="hcAtApsExample03Diabetes-medication-summary-1"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-aps-medicationstatement.html">AT APS MedicationStatement</a></p></div><p><b>status</b>: Active</p><p><b>medication</b>: <span title="Codes:{https://termgit.elga.gv.at/CodeSystem/asp-liste 2443061}">EBETREXAT TBL 10MG</span></p><p><b>subject</b>: <a href="Bundle-AtApsExample03Diabetes.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Maria Musterfrau</a></p><p><b>effective</b>: 2024-02-08 10:31:58+0200 --&gt; (ongoing)</p><blockquote><p><b>dosage</b></p><p><b>sequence</b>: 1</p><p><b>timing</b>: Night, Once</p><p><b>route</b>: <span title="Codes:{http://snomed.info/sct 26643006}">Oraler Verabreichungsweg</span></p><h3>DoseAndRates</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Dose[x]</b></td></tr><tr><td style="display: none">*</td><td>2 Tablet<span style="background: LightGoldenRodYellow"> (Details: elga-medikationmengenart  code{TAB} = '{TAB}')</span></td></tr></table></blockquote></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="MedicationStatement_AtApsExample03Diabetes-medication-summary-1"> </a><p class="res-header-id"><b>Generated Narrative: MedicationStatement AtApsExample03Diabetes-medication-summary-1</b></p><a name="AtApsExample03Diabetes-medication-summary-1"> </a><a name="hcAtApsExample03Diabetes-medication-summary-1"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-aps-medicationstatement.html">AT APS MedicationStatement</a></p></div><p><b>status</b>: Active</p><p><b>medication</b>: <span title="Codes:{https://termgit.elga.gv.at/CodeSystem/asp-liste 2443061}">EBETREXAT TBL 10MG</span></p><p><b>subject</b>: <a href="Bundle-AtApsExample03Diabetes.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8">Maria Musterfrau</a></p><p><b>effective</b>: 2024-02-08 10:31:58+0200 --&gt; (ongoing)</p><blockquote><p><b>dosage</b></p><p><b>sequence</b>: 1</p><p><b>timing</b>: Night, Once</p><p><b>route</b>: <span title="Codes:{http://snomed.info/sct 26643006}">Oraler Verabreichungsweg</span></p><h3>DoseAndRates</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Dose[x]</b></td></tr><tr><td style="display: none">*</td><td>2 Tablet<span style="background: LightGoldenRodYellow"> (Details: UCUM  code{TAB} = '{TAB}')</span></td></tr></table></blockquote></div>
         </text>
         <status value="active"/>
         <medicationCodeableConcept>
@@ -851,7 +823,7 @@ This OID may also be used in CD.codeSystem.">Uniform Resource Identifier (URI)</
             <doseQuantity>
               <value value="2"/>
               <unit value="Tablet"/>
-              <system value="https://termgit.elga.gv.at/ValueSet/elga-medikationmengenart"/>
+              <system value="http://unitsofmeasure.org"/>
               <code value="{TAB}"/>
             </doseQuantity>
           </doseAndRate>

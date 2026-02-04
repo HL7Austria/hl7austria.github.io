@@ -13,7 +13,7 @@
   "name" : "AtApsClinicalImpression",
   "title" : "AT APS ClinicalImpression",
   "status" : "active",
-  "date" : "2025-11-28T12:03:31+00:00",
+  "date" : "2026-02-04T14:21:15+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -91,6 +91,76 @@
             "targetProfile" : [
               "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
               "http://hl7.org/fhir/StructureDefinition/Group"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "ClinicalImpression.assessor",
+        "path" : "ClinicalImpression.assessor",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "ClinicalImpression.previous",
+        "path" : "ClinicalImpression.previous",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-clinicalimpression"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "ClinicalImpression.problem",
+        "path" : "ClinicalImpression.problem",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-allergyintolerance"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "ClinicalImpression.investigation.item",
+        "path" : "ClinicalImpression.investigation.item",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation",
+              "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse",
+              "http://hl7.org/fhir/StructureDefinition/FamilyMemberHistory",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-diagnosticreport",
+              "http://hl7.org/fhir/StructureDefinition/RiskAssessment",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-imagingstudy",
+              "http://hl7.org/fhir/StructureDefinition/Media"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "ClinicalImpression.finding.itemReference",
+        "path" : "ClinicalImpression.finding.itemReference",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition",
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation",
+              "http://hl7.org/fhir/StructureDefinition/Media"
             ]
           }
         ]
