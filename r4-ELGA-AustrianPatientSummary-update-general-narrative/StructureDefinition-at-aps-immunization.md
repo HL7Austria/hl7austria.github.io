@@ -19,7 +19,7 @@
   "name" : "AtApsImmunization",
   "title" : "AT APS Immunization",
   "status" : "active",
-  "date" : "2026-02-05T08:33:30+00:00",
+  "date" : "2026-02-05T09:19:21+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
