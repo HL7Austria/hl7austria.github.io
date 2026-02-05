@@ -19,7 +19,7 @@
   "name" : "AtApsCondition",
   "title" : "AT APS Condition",
   "status" : "active",
-  "date" : "2026-02-05T06:51:53+00:00",
+  "date" : "2026-02-05T08:33:30+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
