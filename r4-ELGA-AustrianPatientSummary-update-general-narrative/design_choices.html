@@ -232,10 +232,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#must-support-und-obligations" id="markdown-toc-must-support-und-obligations">Must Support und Obligations</a></li>
   <li><a href="#leere-sektionen-und-fehlende-daten" id="markdown-toc-leere-sektionen-und-fehlende-daten">Leere Sektionen und fehlende Daten</a></li>
   <li><a href="#datenherkunft" id="markdown-toc-datenherkunft">Datenherkunft</a></li>
-  <li><a href="#todo-andere-themen" id="markdown-toc-todo-andere-themen">TODO andere Themen</a></li>
-  <li><a href="#ggf-noch-einbauen" id="markdown-toc-ggf-noch-einbauen">ggf. noch einbauen</a></li>
-  <li><a href="#designkonventionen" id="markdown-toc-designkonventionen">Designkonventionen</a></li>
-  <li><a href="#privacy-and-security-considerations" id="markdown-toc-privacy-and-security-considerations">Privacy and Security Considerations</a></li>
+  <li><a href="#terminologien" id="markdown-toc-terminologien">Terminologien</a></li>
 </ul>
 
 </div>
@@ -303,121 +300,12 @@ Das Ziel ist, die Vollständigkeit und Nachvollziehbarkeit der Patient Summary s
   </ul>
 </blockquote>
 
-<h3 id="todo-andere-themen">TODO andere Themen</h3>
+<h3 id="terminologien">Terminologien</h3>
 
-<ul>
-  <li>Aufwärtskompatibilität CarePlan -&gt; Extensions</li>
-</ul>
+<p>Die primären Terminologien der IPS (SNOMED CT, LOINC, UCUM, etc.) werden in der APS dort, wo es notwendig ist, um nationale Terminologien ergänzt.</p>
 
-<h3 id="ggf-noch-einbauen">ggf. noch einbauen</h3>
+<p>Die nationalen Terminologien sind über den <a href="https://termgit.elga.gv.at/">österreichischen e-Health Terminologieserver</a> abrufbar.</p>
 
-<h4 id="kontext-und-verwendung-von-patient-summary">Kontext und Verwendung von Patient Summary</h4>
-
-<p>Die Patient Summary ist eine standardisierte Kurzakte, die die wesentlichen medizinischen Informationen eines Patienten zusammenfasst und eine kohärente Momentaufnahme bietet. Sie ist rein informativ und nicht zur direkten Ausführung oder maschinellen Verarbeitung bestimmt.
-Die APS gewährleistet die nationale Implementierbarkeit unter Beibehaltung der semantischen und strukturellen Kompatibilität mit den IPS-Spezifikationen.</p>
-
-<h4 id="patientensicherheit">Patientensicherheit</h4>
-
-<p>Ein korrektes Verständnis der Datenelemente der Patient Summary ist entscheidend, damit Behandler fundierte Entscheidungen treffen können und Fehler vermieden werden. Daher sind sicherheitskritische Datenelemente für Ersteller und Nutzer der Patient Summary verpflichtend zu berücksichtigen.</p>
-
-<p>Elemente, die mit <a href="https://hl7.org/fhir/R4/conformance-rules.html#isModifier">"Is-modifier" ("?!")</a> oder „SHALL:handle” gekennzeichnet sind, dürfen weder bei der Erstellung noch bei der Weiterverarbeitung oder Anzeige der APS ignoriert werden und sind für menschliche Überprüfung sichtbar (SHOULD:display) zu machen.</p>
-
-<p>Beispiele für sicherheitsrelevante Fälle:</p>
-<ul>
-  <li>Eine dokumentierte Allergie (<em>AllergyIntolerance</em>), deren Schweregrad (<em>severity</em>) als schwer (<em>severe</em>) eingestuft ist.</li>
-  <li>Eine Diagnose (<em>Condition</em>), deren Verifikationsstatus (<em>verificationStatus</em>) widerlegt ist (<em>refuted</em>), also ausgeschlossen wurde.</li>
-  <li>Eine Medikation (<em>MedicationStatement</em>), deren Status <em>stopped</em> lautet.</li>
-  <li>Ein Laborergebnis (<em>Observation</em>), dessen Status vorläufig (<em>preliminary</em>) ist, also noch nicht validiert wurde.</li>
-</ul>
-
-<p>Die korrekte Übersetzung und Darstellung von Inhalten hat ebenfalls Auswirkungen auf die Patientensicherheit.</p>
-
-<h4 id="structuring-terminology-choices">Structuring Terminology Choices</h4>
-
-<p>Die APS wird in diesem Leitfaden als HL7-FHIR-Dokument vom Typ "Bundle" spezifiziert.
-Die APS Composition legt fest, dass nur jene Profile verwendet werden dürfen, die vorgesehene Sektionen und Entries enthalten. Eine Ausnahme bilden die Sektionen <em>Diagnostische Resultate</em>, <em>Vitalparameter</em> und <em>Lebensstil</em> mit der slicing.rule „openAtEnd“. 
-Erklärung?
-Reihenfolge der Sektionen?
-TODO:</p>
-<ul>
-  <li>Bevorzugte Terminologie SNOMED CD, LOINC, UCUM, ergänzt mit nationalen Value Sets und Mappings ?  Hinweis auf Snomed Lizenzen, Terminologieserver</li>
-  <li>Einschränkungen von IPS, AtApsPatient usw wenn noch nicht an anderer Stelle beschrieben</li>
-</ul>
-
-<h4 id="erstellung-und-abruf-der-aps">Erstellung und Abruf der APS</h4>
-
-<p><br clear="all" /></p>
-
-<p><br /></p>
-
-<h5 id="aps-lesen-uc2">APS lesen (UC2)</h5>
-
-<h3 id="designkonventionen">Designkonventionen</h3>
-
-<h5 id="beziehung-zu-hl7at-core-ips-und-myhealtheu">Beziehung zu HL7AT Core, IPS und MyHealth@EU</h5>
-
-<h5 id="fhir-r4">FHIR® R4</h5>
-
-<p>Aktuell liegt die IPS nur auf Basis von FHIR® R4 vor. Ob und wann die IPS auch in R5 bzw. R6 zur Verfügung steht, ist noch nicht klar. Deshalb wird die APS zurzeit auch nur in FHIR® R4 spezifiziert.</p>
-
-<h4 id="profilierungsansatz">Profilierungsansatz</h4>
-
-<h4 id="open-slicing">Open Slicing</h4>
-
-<p>TODO @Gabriel: bitte für die APS anpassen
-One of the important and useful capabilities of FHIR profiling is slicing, where multiple sets of constraints for a specific use case can be defined for a resource element or a complex element group (slicing can be used with repeating, type choice or non-repeating elements). Most of the slices specified in this guide are open (i.e. slicing.rules is not closed), which means that it is possible for resource instances with elements that do not match any of the defined slices to still be conformant with the profile as long as they satisfy the remaining profile constraints.</p>
-
-<p>Having this clear is important for correctly understanding the published profiles. For example, the optional section of Social History has open slicing on the entry element allowing for the use of the IPS Tobacco Use profile, the IPS Alcohol Use profile, or any other Observation or DocumentReference. Therefore, while specific IPS profiles are described in this guide, other profiles may also be included as well.</p>
-
-<h4 id="narrativer-text-und-übersetzungen">Narrativer Text und Übersetzungen</h4>
-
-<p>Obwohl strukturierte Daten (FHIR-Resources, Terminologien wie SNOMED CT) in der Patient Summary bevorzugt werden, kann nicht jedes System alle Informationen kodieren oder interpretieren. Daher enthält die Patient Summary Composition die Anforderung, dass jede Sektion einen menschenlesbaren narrativen Text enthalten muss. Dies steht im Einklang mit den Grundsätzen von FHIR-Dokumenten und stellt insbesondere im grenzüberschreitenden Austausch sicher, dass alle relevanten Inhalte weiterhin zugänglich sind (Sicherheits- und Fallback-Funktion). Weiters beitet FHIR Mechanismen zur Unterstützung von mehrsprachigen Übersetzungen über erweiterte Datentypen (z. B. CodeableConcept, Coding).</p>
-
-<p>Gemäß IPS-Standard bestehen derzeit keine Einschränkungen hinsichtlich der Gestaltung narrativer Beschreibungen. Es wird jedoch empfohlen, folgende Punkte zu beachten:</p>
-<ul>
-  <li>den Inhalt von Composition.section.text (verpflichtend) nicht in Composition.text duplizieren,</li>
-  <li>Verwendung verständlicher, gebräuchlicher Begriffe</li>
-  <li>konsistente Reihenfolge der Tabellen (und gegebenenfalls Erläuterung der Reihenfolge)</li>
-  <li>Einbindung mehrsprachiger Beschreibungen (mit entsprechenden Tags), wenn möglich</li>
-  <li>Berücksichtigung der Aktualität der Informationen in den Beschreibungen via meta.lastUpdated, wenn möglich</li>
-</ul>
-
-<p>Der narrative Text ist auch für den rechtlichen Unterzeichner des Dokuments (Attester) von Bedeutung, da er den präsentierten und prüfbaren Dokumentinhalt darstellt. Da in Österreich die APS automatisch generiert wird, entfällt der Attester.</p>
-
-<h4 id="linking-narrative-to-discrete-fhir-resources">Linking Narrative to Discrete FHIR Resources</h4>
-<p>TODO ?</p>
-
-<h4 id="medication-lists-in-the-ips">Medication Lists in the IPS</h4>
-<p>TODO ?</p>
-
-<h4 id="medicinal-product-identification">Medicinal Product Identification</h4>
-<p>TODO ?</p>
-
-<h4 id="use-of-persistent-identifiers-in-ips">Use of Persistent Identifiers in IPS</h4>
-<p>TODO ?</p>
-
-<h4 id="optionale-datenelemente-mit-must-supportobligations-cardinality-of-01-or-0">Optionale Datenelemente mit Must Support/Obligations (cardinality of 0..1 or 0..*)</h4>
-
-<p>Verfügt ein Ersteller einer Patient Summary über keine Daten, weil sie entweder nicht vorhanden sind, nicht weitergegeben werden dürfen oder für den Anwendungsbereich nicht relevant sind, kann das entsprechende Datenelement weggelassen werden.</p>
-
-<h4 id="verpflichtende-datenelemente-mit-must-supportobligations-cardinality-of-11-or-1">Verpflichtende Datenelemente mit Must Support/Obligations (cardinality of 1..1 or 1..*)</h4>
-
-<p>Nicht codierte Datenelemente und codierte Datenelemente:
-Beispiele siehe https://hl7.org/fhir/uv/ips/Empty-Sections-and-Missing-Data.html#required-data-elements-with-must-supportobligations-cardinality-of-11-or-1</p>
-
-<h3 id="privacy-and-security-considerations">Privacy and Security Considerations</h3>
-<p>https://hl7.org/fhir/uv/ips/Privacy-and-Security-Considerations.html</p>
-
-<h4 id="bekannte-probleme">Bekannte Probleme</h4>
-
-<p>TODO: Würde hier alle offenen Punkte reinnehmen, auch wenn sie vielleicht schon mal wo anders erwähnt wurden</p>
-<ul>
-  <li>Angaben zur Herkunft von Informationen: Meta.source vs Provenance</li>
-  <li>Inkonsistente Darstellung der APS Profile durch imposeProfile (TODO @Gabriel)</li>
-  <li>Deutsche Übersetzungen der APS Profile</li>
-</ul>
-
-<h4 id="zukünftige-entwicklungen">Zukünftige Entwicklungen</h4>
 
 
 
@@ -437,7 +325,7 @@ Beispiele siehe https://hl7.org/fhir/uv/ips/Empty-Sections-and-Missing-Data.html
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.aps.r4#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Feb 4, 2026 15:46+0000">2026-02-04</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.aps.r4#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Feb 5, 2026 06:51+0000">2026-02-05</span>
     <br/>
     <span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
