@@ -6,7 +6,9 @@
 
 ## Example MedicationDispense: Beispiel Durchgeführte Abgabe 1
 
-Profiles: [ELGA e-Med Durchgeführte Abgabe](StructureDefinition-at-emed-md-durchgefuehrte-abgabe.md), [MedicationDispense: MPD](http://hl7.eu/fhir/mpd/0.1.0-ballot/StructureDefinition-MedicationDispense-eu-mpd.html)
+Profile: [ELGA e-Med Durchgeführte Abgabe](StructureDefinition-at-emed-md-durchgefuehrte-abgabe.md)
+
+**identifier**: WYE82A2G8EEW-4711-001
 
 **status**: Completed
 
@@ -39,10 +41,14 @@ Profiles: [ELGA e-Med Durchgeführte Abgabe](StructureDefinition-at-emed-md-durc
   "id" : "AtEmedExampleDurchgefuehrteAbgabe01",
   "meta" : {
     "profile" : [
-      "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-md-durchgefuehrte-abgabe",
-      "http://hl7.eu/fhir/mpd/StructureDefinition/MedicationDispense-eu-mpd"
+      "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-md-durchgefuehrte-abgabe"
     ]
   },
+  "identifier" : [
+    {
+      "value" : "WYE82A2G8EEW-4711-001"
+    }
+  ],
   "status" : "completed",
   "medicationReference" : {
     "reference" : "Medication/01C-Cefuroxime1500Branded",

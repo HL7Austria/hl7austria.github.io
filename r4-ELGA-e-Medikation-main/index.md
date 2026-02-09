@@ -33,7 +33,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) ENTWURF",
   "status" : "draft",
-  "date" : "2026-01-30T14:55:57+00:00",
+  "date" : "2026-02-09T17:27:03+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -1003,7 +1003,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "reference" : "StructureDefinition/at-emed-md-durchgefuehrte-abgabe"
         },
         "name" : "ELGA e-Med Durchgeführte Abgabe",
-        "description" : "**Beschreibung:** ELGA e-Med Durchgeführte Abgabe (\"List\"-MedicationDispense) - noch anzupassen",
+        "description" : "**Beschreibung:** Dokumentiert eine durchgeführte Abgabe eines Arzneimittels (\"MedicationDispense\"-Ressource). \nSofern eine zugehörige geplante Abgabe vorliegt, können Abweichungen hinsichtlich der Dosierung oder einer möglichen\nSubstitution des Medikaments in der durchgeführten Abgabe dokumentiert werden.",
         "exampleBoolean" : false
       },
       {
