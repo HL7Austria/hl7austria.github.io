@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>AT APS Immunitzation Vaccine Codes - JSON Representation - Austrian Patient Summary (R4) v0.2.0</title>
+    <title>AT APS Immunization Vaccine Codes - JSON Representation - Austrian Patient Summary (R4) v0.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -43,8 +43,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"7.37"}
-    h3,h4,h5,h6{--heading-prefix:"7.37"}</style>
+    <style type="text/css">h2{--heading-prefix:"15.37"}
+    h3,h4,h5,h6{--heading-prefix:"15.37"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- at-fhir-ig-template begin -->
@@ -97,33 +97,81 @@
 
 <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
   <li>
-    <a href="index.html">Start</a>
+    <a href="index.html">Home</a>
   </li>
   <li>
-    <a href="toc.html">Inhalt</a>
-  </li>
-  <li>
-    <a href="artifacts.html">Artefakte</a>
-  </li>
-  <li>
-    <a href="background.html">Hintergrund</a>
-  </li>
-  <li>
-    <a href="requirements.html">Die &quot;APS&quot;</a>
+    <a href="toc.html">Inhaltsverzeichnis</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Weitere Infos
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Einleitung
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="info.html">Informationen über dieses Dokument</a>
+        <a href="scope_and_content.html">Umfang und Inhalt</a>
       </li>
+      <li>
+        <a href="background.html">Hintergrund</a>
+      </li>
+      <li>
+        <a href="challenges.html">Herausforderungen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Funktionales
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="design_choices.html">Designentscheidungen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anwendungsfälle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="use_case_overview.html">Überblick &amp; Anwendungsbeispiel</a>
+      </li>
+      <li>
+        <a href="use_case_1.html">ANWF1 - APS aggregieren</a>
+      </li>
+      <li>
+        <a href="use_case_2.html">ANWF2 - APS lesen</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">About
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
       <li>
         <a href="contributors.html">Autoren und Mitwirkende</a>
       </li>
       <li>
-        <a href="framework.html">Technische Rahmenbedingungen</a>
+        <a href="download.html">Download</a>
+      </li>
+      <li>
+        <a href="publication_info.html">Publikationsinformationen</a>
+      </li>
+      <li>
+        <a href="dependencies.html">Dependencies</a>
+      </li>
+      <li>
+        <a href="copyright.html">Copyright</a>
+      </li>
+      <li>
+        <a href="https://github.com/HL7Austria/ELGA-AustrianPatientSummary-R4/issues">Known Issues</a>
+      </li>
+      <li>
+        <a href="imprint.html">Impressum</a>
       </li>
     </ul>
   </li>
@@ -139,7 +187,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>AT APS Immunitzation Vaccine Codes</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>AT APS Immunization Vaccine Codes</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -193,7 +241,7 @@
 <a name="root"> </a>
 
 
-<h2 id="root">: AT APS Immunitzation Vaccine Codes - JSON Representation</h2>
+<h2 id="root">: AT APS Immunization Vaccine Codes - JSON Representation</h2>
 
   <table class="colsi">
     <tr>
@@ -202,7 +250,7 @@
         
           Active
           
-            as of 2026-02-03
+            as of 2026-02-09
           
         
       </td>
@@ -233,10 +281,10 @@
   "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.url">url</a>" : "https://fhir.hl7.at/elga/aps/r4/ValueSet/at-aps-immunization-vaccine-codes",
   "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.version">version</a>" : "0.2.0",
   "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.name">name</a>" : "AtApsImmunizationVaccineCodes",
-  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.title">title</a>" : "AT APS Immunitzation Vaccine Codes",
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.title">title</a>" : "AT APS Immunization Vaccine Codes",
   "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.status">status</a>" : "active",
   "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.experimental">experimental</a>" : false,
-  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.date">date</a>" : "2026-02-03T10:34:36+00:00",
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.date">date</a>" : "2026-02-09T07:50:08+00:00",
   "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.publisher">publisher</a>" : "ELGA GmbH",
   "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.contact">contact</a>" : [
     {
@@ -315,7 +363,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.aps.r4#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Feb 3, 2026 10:34+0000">2026-02-03</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.aps.r4#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Feb 9, 2026 07:50+0000">2026-02-09</span>
     <br/>
     <span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -12,7 +12,7 @@
   <title value="Austrian Patient Summary (R4)"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2026-02-03T10:34:36+00:00"/>
+  <date value="2026-02-09T07:50:08+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -699,17 +699,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/at-aps-immunization-vaccine-codes"/>
-      </reference>
-      <name value="AT APS Immunitzation Vaccine Codes"/>
-      <description value="Dieses Value-Set erweitert die in Österreich existierenden Impfstoffe um die Möglichkeit, angeben zu können, dass der verimpfte Impfstoff unbekannt ist."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
@@ -728,6 +717,17 @@
       </reference>
       <name value="AT APS Immunization"/>
       <description value="Das AT APS-Profil für die ImmunizationRecommendation-Ressource berücksichtigt die österreichischen Vorgaben (z.B. Patient und zu verwendende Value-Sets)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/at-aps-immunization-vaccine-codes"/>
+      </reference>
+      <name value="AT APS Immunization Vaccine Codes"/>
+      <description value="Dieses Value-Set erweitert die in Österreich existierenden Impfstoffe um die Möglichkeit, angeben zu können, dass der verimpfte Impfstoff unbekannt ist."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -914,7 +914,7 @@
         <reference value="StructureDefinition/at-aps-patient"/>
       </reference>
       <name value="AT APS Patient"/>
-      <description value="Das AT APS-Profil für die Patient-Ressource ist vom entsprechenden Profil aus dem HL7® Austria FHIR® Core IG abgeleitet und stellt zusätzlich die Konformität gegenüber dem IPS-Profil sicher, indem die so genannte [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile)-Erweiterung verwendet wird."/>
+      <description value="Patientendaten, inkl. Angabe von Kontaktpersonen, Hausarzt bzw. primäre Ansprechpartner.&#xA;&#xA;Um die Vorgaben aus dem Umfeld von MyHealth@EU zu erfüllen, muss ein Vor- und Nachname angegeben werden.&#xA;&#xA;Das AT APS-Profil für die Patient-Ressource ist vom entsprechenden Profil aus dem HL7® Austria FHIR® Core IG abgeleitet und stellt zusätzlich die Konformität gegenüber dem IPS-Profil sicher, indem die so genannte [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile)-Erweiterung verwendet wird. &#xA;Deshalb ist die Angabe des Geburtsdatums erforderlich."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1435,7 +1435,15 @@
           <valueUrl value="index.html"/>
         </extension>
         <nameUrl value="index.html"/>
-        <title value="Start"/>
+        <title value="Home"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="scope_and_content.html"/>
+        </extension>
+        <nameUrl value="scope_and_content.html"/>
+        <title value="Umfang und Inhalt"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -1448,18 +1456,42 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="requirements.html"/>
+          <valueUrl value="challenges.html"/>
         </extension>
-        <nameUrl value="requirements.html"/>
-        <title value="Die &quot;APS&quot;"/>
+        <nameUrl value="challenges.html"/>
+        <title value="Herausforderungen"/>
         <generation value="markdown"/>
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="info.html"/>
+          <valueUrl value="design_choices.html"/>
         </extension>
-        <nameUrl value="info.html"/>
-        <title value="Informationen über dieses Dokument"/>
+        <nameUrl value="design_choices.html"/>
+        <title value="Designentscheidungen"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="use_case_overview.html"/>
+        </extension>
+        <nameUrl value="use_case_overview.html"/>
+        <title value="Überblick &amp; Anwendungsbeispiel"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="use_case_1.html"/>
+        </extension>
+        <nameUrl value="use_case_1.html"/>
+        <title value="Anwendungsfall 1 - APS aggregieren"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="use_case_2.html"/>
+        </extension>
+        <nameUrl value="use_case_2.html"/>
+        <title value="Anwendungsfall 2 - APS lesen"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -1472,10 +1504,42 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="framework.html"/>
+          <valueUrl value="download.html"/>
         </extension>
-        <nameUrl value="framework.html"/>
-        <title value="Technische Rahmenbedingungen"/>
+        <nameUrl value="download.html"/>
+        <title value="Download"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="publication_info.html"/>
+        </extension>
+        <nameUrl value="publication_info.html"/>
+        <title value="Publikationsinformationen"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="dependencies.html"/>
+        </extension>
+        <nameUrl value="dependencies.html"/>
+        <title value="Dependencies"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="copyright.html"/>
+        </extension>
+        <nameUrl value="copyright.html"/>
+        <title value="Copyright"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="imprint.html"/>
+        </extension>
+        <nameUrl value="imprint.html"/>
+        <title value="Impressum"/>
         <generation value="markdown"/>
       </page>
     </page>

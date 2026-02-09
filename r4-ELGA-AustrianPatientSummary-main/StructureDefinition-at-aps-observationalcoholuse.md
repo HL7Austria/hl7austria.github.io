@@ -19,7 +19,7 @@
   "name" : "AtApsObservationAlcoholUse",
   "title" : "AT APS Observation Alcohol Use",
   "status" : "active",
-  "date" : "2026-02-03T10:34:36+00:00",
+  "date" : "2026-02-09T07:50:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

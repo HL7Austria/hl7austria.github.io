@@ -22,7 +22,7 @@
   fhir:title [ fhir:v "Austrian Patient Summary (R4)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
   fhir:experimental [ fhir:v false] ; # 
-  fhir:date [ fhir:v "2026-02-03T10:34:36+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-02-09T07:50:08+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ELGA GmbH" ] ;
@@ -1827,27 +1827,6 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "ValueSet"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <https://fhir.hl7.at/elga/aps/r4/ValueSet/at-aps-immunization-vaccine-codes> ;
-         fhir:reference [ fhir:v "ValueSet/at-aps-immunization-vaccine-codes" ]
-       ] ;
-       fhir:name [ fhir:v "AT APS Immunitzation Vaccine Codes" ] ;
-       fhir:description [ fhir:v "Dieses Value-Set erweitert die in Österreich existierenden Impfstoffe um die Möglichkeit, angeben zu können, dass der verimpfte Impfstoff unbekannt ist." ] ;
-       fhir:example [
-         a fhir:Boolean ;
-         fhir:v false
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
@@ -1878,6 +1857,27 @@
        ] ;
        fhir:name [ fhir:v "AT APS Immunization" ] ;
        fhir:description [ fhir:v "Das AT APS-Profil für die ImmunizationRecommendation-Ressource berücksichtigt die österreichischen Vorgaben (z.B. Patient und zu verwendende Value-Sets)." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/elga/aps/r4/ValueSet/at-aps-immunization-vaccine-codes> ;
+         fhir:reference [ fhir:v "ValueSet/at-aps-immunization-vaccine-codes" ]
+       ] ;
+       fhir:name [ fhir:v "AT APS Immunization Vaccine Codes" ] ;
+       fhir:description [ fhir:v "Dieses Value-Set erweitert die in Österreich existierenden Impfstoffe um die Möglichkeit, angeben zu können, dass der verimpfte Impfstoff unbekannt ist." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -2234,7 +2234,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-aps-patient" ]
        ] ;
        fhir:name [ fhir:v "AT APS Patient" ] ;
-       fhir:description [ fhir:v "Das AT APS-Profil für die Patient-Ressource ist vom entsprechenden Profil aus dem HL7® Austria FHIR® Core IG abgeleitet und stellt zusätzlich die Konformität gegenüber dem IPS-Profil sicher, indem die so genannte [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile)-Erweiterung verwendet wird." ] ;
+       fhir:description [ fhir:v "Patientendaten, inkl. Angabe von Kontaktpersonen, Hausarzt bzw. primäre Ansprechpartner.\n\nUm die Vorgaben aus dem Umfeld von MyHealth@EU zu erfüllen, muss ein Vor- und Nachname angegeben werden.\n\nDas AT APS-Profil für die Patient-Ressource ist vom entsprechenden Profil aus dem HL7® Austria FHIR® Core IG abgeleitet und stellt zusätzlich die Konformität gegenüber dem IPS-Profil sicher, indem die so genannte [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile)-Erweiterung verwendet wird. \nDeshalb ist die Angabe des Geburtsdatums erforderlich." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -3282,7 +3282,26 @@
            fhir:v "index.html"^^xsd:anyURI ;
            fhir:l fhir:index.html
          ] ;
-         fhir:title [ fhir:v "Start" ] ;
+         fhir:title [ fhir:v "Home" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+           ] ;
+           fhir:value [
+             a fhir:Url ;
+             fhir:v "scope_and_content.html"^^xsd:anyURI ;
+             fhir:l fhir:scope_and_content.html
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "scope_and_content.html"^^xsd:anyURI ;
+           fhir:l fhir:scope_and_content.html
+         ] ;
+         fhir:title [ fhir:v "Umfang und Inhalt" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
@@ -3311,16 +3330,16 @@
            ] ;
            fhir:value [
              a fhir:Url ;
-             fhir:v "requirements.html"^^xsd:anyURI ;
-             fhir:l fhir:requirements.html
+             fhir:v "challenges.html"^^xsd:anyURI ;
+             fhir:l fhir:challenges.html
            ]
          ] ) ;
          fhir:name [
            a fhir:Url ;
-           fhir:v "requirements.html"^^xsd:anyURI ;
-           fhir:l fhir:requirements.html
+           fhir:v "challenges.html"^^xsd:anyURI ;
+           fhir:l fhir:challenges.html
          ] ;
-         fhir:title [ fhir:v "Die \"APS\"" ] ;
+         fhir:title [ fhir:v "Herausforderungen" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
@@ -3330,16 +3349,73 @@
            ] ;
            fhir:value [
              a fhir:Url ;
-             fhir:v "info.html"^^xsd:anyURI ;
-             fhir:l fhir:info.html
+             fhir:v "design_choices.html"^^xsd:anyURI ;
+             fhir:l fhir:design_choices.html
            ]
          ] ) ;
          fhir:name [
            a fhir:Url ;
-           fhir:v "info.html"^^xsd:anyURI ;
-           fhir:l fhir:info.html
+           fhir:v "design_choices.html"^^xsd:anyURI ;
+           fhir:l fhir:design_choices.html
          ] ;
-         fhir:title [ fhir:v "Informationen über dieses Dokument" ] ;
+         fhir:title [ fhir:v "Designentscheidungen" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+           ] ;
+           fhir:value [
+             a fhir:Url ;
+             fhir:v "use_case_overview.html"^^xsd:anyURI ;
+             fhir:l fhir:use_case_overview.html
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "use_case_overview.html"^^xsd:anyURI ;
+           fhir:l fhir:use_case_overview.html
+         ] ;
+         fhir:title [ fhir:v "Überblick & Anwendungsbeispiel" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+           ] ;
+           fhir:value [
+             a fhir:Url ;
+             fhir:v "use_case_1.html"^^xsd:anyURI ;
+             fhir:l fhir:use_case_1.html
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "use_case_1.html"^^xsd:anyURI ;
+           fhir:l fhir:use_case_1.html
+         ] ;
+         fhir:title [ fhir:v "Anwendungsfall 1 - APS aggregieren" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+           ] ;
+           fhir:value [
+             a fhir:Url ;
+             fhir:v "use_case_2.html"^^xsd:anyURI ;
+             fhir:l fhir:use_case_2.html
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "use_case_2.html"^^xsd:anyURI ;
+           fhir:l fhir:use_case_2.html
+         ] ;
+         fhir:title [ fhir:v "Anwendungsfall 2 - APS lesen" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
@@ -3368,16 +3444,92 @@
            ] ;
            fhir:value [
              a fhir:Url ;
-             fhir:v "framework.html"^^xsd:anyURI ;
-             fhir:l fhir:framework.html
+             fhir:v "download.html"^^xsd:anyURI ;
+             fhir:l fhir:download.html
            ]
          ] ) ;
          fhir:name [
            a fhir:Url ;
-           fhir:v "framework.html"^^xsd:anyURI ;
-           fhir:l fhir:framework.html
+           fhir:v "download.html"^^xsd:anyURI ;
+           fhir:l fhir:download.html
          ] ;
-         fhir:title [ fhir:v "Technische Rahmenbedingungen" ] ;
+         fhir:title [ fhir:v "Download" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+           ] ;
+           fhir:value [
+             a fhir:Url ;
+             fhir:v "publication_info.html"^^xsd:anyURI ;
+             fhir:l fhir:publication_info.html
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "publication_info.html"^^xsd:anyURI ;
+           fhir:l fhir:publication_info.html
+         ] ;
+         fhir:title [ fhir:v "Publikationsinformationen" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+           ] ;
+           fhir:value [
+             a fhir:Url ;
+             fhir:v "dependencies.html"^^xsd:anyURI ;
+             fhir:l fhir:dependencies.html
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "dependencies.html"^^xsd:anyURI ;
+           fhir:l fhir:dependencies.html
+         ] ;
+         fhir:title [ fhir:v "Dependencies" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+           ] ;
+           fhir:value [
+             a fhir:Url ;
+             fhir:v "copyright.html"^^xsd:anyURI ;
+             fhir:l fhir:copyright.html
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "copyright.html"^^xsd:anyURI ;
+           fhir:l fhir:copyright.html
+         ] ;
+         fhir:title [ fhir:v "Copyright" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+           ] ;
+           fhir:value [
+             a fhir:Url ;
+             fhir:v "imprint.html"^^xsd:anyURI ;
+             fhir:l fhir:imprint.html
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "imprint.html"^^xsd:anyURI ;
+           fhir:l fhir:imprint.html
+         ] ;
+         fhir:title [ fhir:v "Impressum" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] )
      ] ;

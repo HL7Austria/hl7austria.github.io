@@ -1,4 +1,4 @@
-# Start - Austrian Patient Summary (R4) v0.2.0
+# Home - Austrian Patient Summary (R4) v0.2.0
 
 
 
@@ -14,7 +14,7 @@
   "title" : "Austrian Patient Summary (R4)",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-02-03T10:34:36+00:00",
+  "date" : "2026-02-09T07:50:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -1063,20 +1063,6 @@
         "extension" : [
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "ValueSet"
-          }
-        ],
-        "reference" : {
-          "reference" : "ValueSet/at-aps-immunization-vaccine-codes"
-        },
-        "name" : "AT APS Immunitzation Vaccine Codes",
-        "description" : "Dieses Value-Set erweitert die in Österreich existierenden Impfstoffe um die Möglichkeit, angeben zu können, dass der verimpfte Impfstoff unbekannt ist.",
-        "exampleBoolean" : false
-      },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString" : "StructureDefinition:resource"
           }
         ],
@@ -1099,6 +1085,20 @@
         },
         "name" : "AT APS Immunization",
         "description" : "Das AT APS-Profil für die ImmunizationRecommendation-Ressource berücksichtigt die österreichischen Vorgaben (z.B. Patient und zu verwendende Value-Sets).",
+        "exampleBoolean" : false
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "ValueSet"
+          }
+        ],
+        "reference" : {
+          "reference" : "ValueSet/at-aps-immunization-vaccine-codes"
+        },
+        "name" : "AT APS Immunization Vaccine Codes",
+        "description" : "Dieses Value-Set erweitert die in Österreich existierenden Impfstoffe um die Möglichkeit, angeben zu können, dass der verimpfte Impfstoff unbekannt ist.",
         "exampleBoolean" : false
       },
       {
@@ -1336,7 +1336,7 @@
           "reference" : "StructureDefinition/at-aps-patient"
         },
         "name" : "AT APS Patient",
-        "description" : "Das AT APS-Profil für die Patient-Ressource ist vom entsprechenden Profil aus dem HL7® Austria FHIR® Core IG abgeleitet und stellt zusätzlich die Konformität gegenüber dem IPS-Profil sicher, indem die so genannte [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile)-Erweiterung verwendet wird.",
+        "description" : "Patientendaten, inkl. Angabe von Kontaktpersonen, Hausarzt bzw. primäre Ansprechpartner.\n\nUm die Vorgaben aus dem Umfeld von MyHealth@EU zu erfüllen, muss ein Vor- und Nachname angegeben werden.\n\nDas AT APS-Profil für die Patient-Ressource ist vom entsprechenden Profil aus dem HL7® Austria FHIR® Core IG abgeleitet und stellt zusätzlich die Konformität gegenüber dem IPS-Profil sicher, indem die so genannte [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile)-Erweiterung verwendet wird. \nDeshalb ist die Angabe des Geburtsdatums erforderlich.",
         "exampleBoolean" : false
       },
       {
@@ -2003,7 +2003,18 @@
             }
           ],
           "nameUrl" : "index.html",
-          "title" : "Start",
+          "title" : "Home",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "scope_and_content.html"
+            }
+          ],
+          "nameUrl" : "scope_and_content.html",
+          "title" : "Umfang und Inhalt",
           "generation" : "markdown"
         },
         {
@@ -2021,22 +2032,55 @@
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "requirements.html"
+              "valueUrl" : "challenges.html"
             }
           ],
-          "nameUrl" : "requirements.html",
-          "title" : "Die \"APS\"",
+          "nameUrl" : "challenges.html",
+          "title" : "Herausforderungen",
           "generation" : "markdown"
         },
         {
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "info.html"
+              "valueUrl" : "design_choices.html"
             }
           ],
-          "nameUrl" : "info.html",
-          "title" : "Informationen über dieses Dokument",
+          "nameUrl" : "design_choices.html",
+          "title" : "Designentscheidungen",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "use_case_overview.html"
+            }
+          ],
+          "nameUrl" : "use_case_overview.html",
+          "title" : "Überblick & Anwendungsbeispiel",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "use_case_1.html"
+            }
+          ],
+          "nameUrl" : "use_case_1.html",
+          "title" : "Anwendungsfall 1 - APS aggregieren",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "use_case_2.html"
+            }
+          ],
+          "nameUrl" : "use_case_2.html",
+          "title" : "Anwendungsfall 2 - APS lesen",
           "generation" : "markdown"
         },
         {
@@ -2054,11 +2098,55 @@
           "extension" : [
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl" : "framework.html"
+              "valueUrl" : "download.html"
             }
           ],
-          "nameUrl" : "framework.html",
-          "title" : "Technische Rahmenbedingungen",
+          "nameUrl" : "download.html",
+          "title" : "Download",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "publication_info.html"
+            }
+          ],
+          "nameUrl" : "publication_info.html",
+          "title" : "Publikationsinformationen",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "dependencies.html"
+            }
+          ],
+          "nameUrl" : "dependencies.html",
+          "title" : "Dependencies",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "copyright.html"
+            }
+          ],
+          "nameUrl" : "copyright.html",
+          "title" : "Copyright",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl" : "imprint.html"
+            }
+          ],
+          "nameUrl" : "imprint.html",
+          "title" : "Impressum",
           "generation" : "markdown"
         }
       ]

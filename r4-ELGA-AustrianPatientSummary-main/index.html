@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Start - Austrian Patient Summary (R4) v0.2.0</title>
+    <title>Home - Austrian Patient Summary (R4) v0.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -95,33 +95,81 @@
 
 <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
   <li>
-    <a href="index.html">Start</a>
+    <a href="index.html">Home</a>
   </li>
   <li>
-    <a href="toc.html">Inhalt</a>
-  </li>
-  <li>
-    <a href="artifacts.html">Artefakte</a>
-  </li>
-  <li>
-    <a href="background.html">Hintergrund</a>
-  </li>
-  <li>
-    <a href="requirements.html">Die &quot;APS&quot;</a>
+    <a href="toc.html">Inhaltsverzeichnis</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Weitere Infos
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Einleitung
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="info.html">Informationen über dieses Dokument</a>
+        <a href="scope_and_content.html">Umfang und Inhalt</a>
       </li>
+      <li>
+        <a href="background.html">Hintergrund</a>
+      </li>
+      <li>
+        <a href="challenges.html">Herausforderungen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Funktionales
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="design_choices.html">Designentscheidungen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anwendungsfälle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="use_case_overview.html">Überblick &amp; Anwendungsbeispiel</a>
+      </li>
+      <li>
+        <a href="use_case_1.html">ANWF1 - APS aggregieren</a>
+      </li>
+      <li>
+        <a href="use_case_2.html">ANWF2 - APS lesen</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">About
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
       <li>
         <a href="contributors.html">Autoren und Mitwirkende</a>
       </li>
       <li>
-        <a href="framework.html">Technische Rahmenbedingungen</a>
+        <a href="download.html">Download</a>
+      </li>
+      <li>
+        <a href="publication_info.html">Publikationsinformationen</a>
+      </li>
+      <li>
+        <a href="dependencies.html">Dependencies</a>
+      </li>
+      <li>
+        <a href="copyright.html">Copyright</a>
+      </li>
+      <li>
+        <a href="https://github.com/HL7Austria/ELGA-AustrianPatientSummary-R4/issues">Known Issues</a>
+      </li>
+      <li>
+        <a href="imprint.html">Impressum</a>
       </li>
     </ul>
   </li>
@@ -137,7 +185,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Start</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Home</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -162,7 +210,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <!--ReleaseHeader--><p id="publish-box">Austrian Patient Summary (R4) - Local Development build (v0.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/aps/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   </div>
   <!-- at-fhir-ig-template end -->
-  <h2>Start</h2>
+  <h2>Home</h2>
   
 
 
@@ -192,7 +240,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         
           Draft
           
-            as of 2026-02-03
+            as of 2026-02-09
           
         
       </td>
@@ -216,12 +264,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div class="markdown-toc">
-<ul id="markdown-toc">
-  <li><a href="#einleitung" id="markdown-toc-einleitung">Einleitung</a></li>
-  <li><a href="#designentscheidung" id="markdown-toc-designentscheidung">Designentscheidung</a></li>
-</ul>
-
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
 <h3 id="einleitung">Einleitung</h3>
 
@@ -229,36 +273,21 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <p>Das ist der FHIR® Implementation Guide (IG) für die Austrian Patient Summary (APS). Die Vorgaben beruhen auf dem <a href="https://fhir.hl7.at/HL7-AT-FHIR-Core-R5/2.0.0/">HL7® Austria FHIR® Core Implementation Guide (HL7AT Core IG), Version 2.0.0</a> und dem HL7® Leitfaden für die <a href="https://hl7.org/fhir/uv/ips/STU2/">International Patient Summary (IPS), Version 2.0.0</a> und sind kompatibel mit den Vorgaben für die Patient Summary für den grenzüberschreitenden Datenaustausch in der EU (MyHealth@EU Patient Summary Requirements Catalogue).</p>
 </blockquote>
 
-<p>Die Austrian Patient Summary (APS) ist eine standardisierte, zusammenfassende Kurzakte, die die wesentlichen medizinischen Informationen eines Patienten enthält. Es dient dazu, Angehörigen von Gesundheitsberufen in Notfall-, Routine- oder grenzüberschreitenden Behandlungssituationen einen schnellen Überblick über den Gesundheitszustand des Patienten zu bieten.</p>
+<p>Die Austrian Patient Summary (APS) ist eine standardisierte, zusammenfassende Kurzakte, die die wesentlichen medizinischen Informationen eines Patienten enthält. Sie dient dazu, Angehörigen von Gesundheitsberufen in Notfall-, Routine- oder grenzüberschreitenden Behandlungssituationen einen schnellen Überblick über den Gesundheitszustand des Patienten zu bieten. Die APS gewährleistet die nationale Implementierbarkeit unter Beibehaltung der semantischen und strukturellen Kompatibilität mit der IPS-Spezifikation.</p>
 
 <p>Eine Patient Summary enthält allgemeine demografische Daten des Patienten (z.B. Name, Geburtsdatum, Geschlecht), eine Zusammenfassung der für die weitere medizinische Behandlung wesentlichen Erkenntnisse und Inhalte aus den Krankenakten des Patienten (z.B. aktuelle medizinische Probleme, Allergien, größere chirurgische Eingriffe, medizinische Implantate) sowie die aktuelle Medikation.</p>
 
-<div class="note-to-balloters">
-  <p><strong>Informationen für den Ballot</strong></p>
-
-  <ul>
-    <li>Besonderes Augenmerk sollte auf die Profile der jeweiligen Ressourcen gelegt werden. Diese wurden so weit wie möglich angepasst, sodass z.B. nur der <a href="StructureDefinition-at-aps-patient.html">AT APS Patient</a> verwendet werden darf. Im weiteren erhoffen wir uns Feedback, wie weit/tief die Profilierung gehen soll. Schließlich soll das APS nicht alle möglichen FHIR®-Ressourcen profilieren.</li>
-    <li>Im Rahmen der <a href="artifacts.html#example-example-instances">Beispiele</a> erhoffen wir uns Feedback, wie der Ursprung der Information innerhalb einer APS-Instanz bestenfalls abgebildet werden kann (z.B. DocumentReference, Provenance, Meta.source, etc.) - siehe z.B. <a href="Bundle-AtApsExampleBundle-Journey-1.html">AtApsExampleBundle-Journey-1</a>.</li>
-  </ul>
-</div>
-
 <h4 id="umfang">Umfang</h4>
 
-<p>Die Patient Summary ist</p>
+<p>Die APS ist</p>
 <ul>
-  <li>ein minimaler, hochstrukturierter, nicht-vollständiger Datensatz über die (in ELGA) verfügbaren Gesundheitsdaten,</li>
-  <li>geeignet für alle medizinischen Fachrichtungen und Gesundheitseinrichtungen,</li>
-  <li>unabhängig von der aktuellen Situation des Patienten,</li>
-  <li>für die grenzüberschreitende Gesundheitsversorgung vorgesehen.</li>
+  <li>ein minimaler, hochstrukturierter, nicht-vollständiger Datensatz über die verfügbaren Gesundheitsdaten,</li>
+  <li>geeignet für die Nutzung durch alle berechtigten Angehörigen der Gesundheitsdienste,</li>
+  <li>unabhängig von der aktuellen Situation des Patienten oder der behandelnden Einrichtung,</li>
+  <li>geeignet für die grenzüberschreitende Gesundheitsversorgung.</li>
 </ul>
 
-<p>Die Patient Summary ist daher keine vollständige Krankenakte, sondern eine Zusammenfassung. "Minimaler und nicht-vollständiger Datensatz" bedeutet, dass nur ein Teil der Krankengeschichte in der Patient Summary dokumentiert wird. Es soll den eigentlichen Gesundheitszustand des Patienten repräsentieren und nicht die gesamte Historie abbilden. Es ist unabhängig von der medizinischen Fachrichtung oder dem Typ der Gesundheitseinrichtung.</p>
-
-<h3 id="designentscheidung">Designentscheidung</h3>
-
-<p>Das Profil der APS leitet direkt vom <a href="https://fhir.hl7.at/HL7-AT-FHIR-Core-R5/2.0.0/">HL7AT Core IG</a> ab. Um darüber hinaus die Vorgaben der IPS zu erfüllen, wird auf die <a href="https://hl7.org/fhir/extensions/StructureDefinition-structuredefinition-imposeProfile.html">imposeProfile-Extension</a> zurückgegriffen. Zusätzlich wurden bei der Erstellung der APS die Vorgaben aus dem Requirements Catalogue im Rahmen von <a href="https://health.ec.europa.eu/ehealth-digital-health-and-care/digital-health-and-care/electronic-cross-border-health-services_en">MyHealth@EU</a> berücksichtigt. Weitere Erläuterungen finden sich im Kapitel <a href="background.html">Hintergrund</a>.</p>
-
-<p><a href="austrian-ips-context.drawio.png"><img src="austrian-ips-context.drawio.png" alt="overview" style="width: 60%" /></a></p>
+<p>Die APS ist daher keine vollständige Krankenakte, sondern eine Zusammenfassung. "Minimaler und nicht-vollständiger Datensatz" bedeutet, dass nur ein Teil der Krankengeschichte in der APS dokumentiert wird. Sie soll den eigentlichen Gesundheitszustand des Patienten repräsentieren und nicht die gesamte Historie abbilden und ist unabhängig von der medizinischen Fachrichtung oder dem Typ der Gesundheitseinrichtung.</p>
 
 
 
@@ -279,7 +308,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.aps.r4#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Feb 3, 2026 10:34+0000">2026-02-03</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.aps.r4#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Feb 9, 2026 07:50+0000">2026-02-09</span>
     <br/>
     <span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

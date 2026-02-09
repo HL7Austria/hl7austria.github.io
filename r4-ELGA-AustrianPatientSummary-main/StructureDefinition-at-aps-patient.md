@@ -19,7 +19,7 @@
   "name" : "AtApsPatient",
   "title" : "AT APS Patient",
   "status" : "active",
-  "date" : "2026-02-03T10:34:36+00:00",
+  "date" : "2026-02-09T07:50:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -42,7 +42,7 @@
       ]
     }
   ],
-  "description" : "Das AT APS-Profil für die Patient-Ressource ist vom entsprechenden Profil aus dem HL7® Austria FHIR® Core IG abgeleitet und stellt zusätzlich die Konformität gegenüber dem IPS-Profil sicher, indem die so genannte [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile)-Erweiterung verwendet wird.",
+  "description" : "Patientendaten, inkl. Angabe von Kontaktpersonen, Hausarzt bzw. primäre Ansprechpartner.\n\nUm die Vorgaben aus dem Umfeld von MyHealth@EU zu erfüllen, muss ein Vor- und Nachname angegeben werden.\n\nDas AT APS-Profil für die Patient-Ressource ist vom entsprechenden Profil aus dem HL7® Austria FHIR® Core IG abgeleitet und stellt zusätzlich die Konformität gegenüber dem IPS-Profil sicher, indem die so genannte [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile)-Erweiterung verwendet wird. \nDeshalb ist die Angabe des Geburtsdatums erforderlich.",
   "jurisdiction" : [
     {
       "coding" : [
