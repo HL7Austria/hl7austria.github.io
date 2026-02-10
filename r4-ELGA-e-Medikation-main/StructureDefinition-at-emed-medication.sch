@@ -13,6 +13,7 @@
     <sch:title>f:Medication</sch:title>
     <sch:rule context="f:Medication">
       <sch:assert test="count(f:form) &gt;= 1">form: minimum cardinality of 'form' is 1</sch:assert>
+      <sch:assert test="count(f:ingredient) &gt;= 1">ingredient: minimum cardinality of 'ingredient' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>

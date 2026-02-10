@@ -33,7 +33,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) ENTWURF",
   "status" : "draft",
-  "date" : "2026-02-09T17:27:03+00:00",
+  "date" : "2026-02-10T17:53:58+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -1059,7 +1059,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "reference" : "StructureDefinition/at-emed-medication"
         },
         "name" : "ELGA e-Med Medikation",
-        "description" : "**Beschreibung:** Bildet ein Arzneimittel ab, das nicht über eine PZN verfügt, z.B. magistrale Zubereitungen (\"Medication\"-Ressource).",
+        "description" : "**Beschreibung:** Bildet ein Arzneimittel ab, das nicht über eine PZN verfügt, z.B. magistrale Zubereitungen (\"Medication\"-Ressource).\nWird die Ressource nur für magistrale Zubreitungen verwendet? Wirkstoffverschreibung? manufacturer immer ATAPSOrganization?",
         "exampleBoolean" : false
       },
       {
@@ -1073,7 +1073,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "reference" : "StructureDefinition/at-emed-list-medikationsplan"
         },
         "name" : "ELGA e-Med Medikationsplan",
-        "description" : "**Beschreibung:** Bildet den Medikationsplan eines ELGA-Teilnehmers ab (\"List\"-Ressource). \nDie Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimittel und deren Dosierung abbilden.\nDie Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch zu klären).",
+        "description" : "**Beschreibung:** Bildet den Medikationsplan eines ELGA-Teilnehmers ab (\"List\"-Ressource). \nDie Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimittel und deren Dosierung abbilden.\nDie Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch zu klären).\n\nTODO: Invariante, dass überall in der List der gleiche Patient enthalten sein muss",
         "exampleBoolean" : false
       },
       {

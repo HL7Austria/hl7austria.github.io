@@ -9,10 +9,11 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan | *Version*:0.1.1 | |
-| Draft as of 2026-02-09 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedListMedikationsplan |
+| Draft as of 2026-02-10 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedListMedikationsplan |
 
  
 **Beschreibung:** Bildet den Medikationsplan eines ELGA-Teilnehmers ab ("List"-Ressource). Die Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimittel und deren Dosierung abbilden. Die Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch zu klären). 
+TODO: Invariante, dass überall in der List der gleiche Patient enthalten sein muss 
 
 **Usages:**
 
@@ -42,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
   "name" : "AtEmedListMedikationsplan",
   "title" : "ELGA e-Med Medikationsplan",
   "status" : "draft",
-  "date" : "2026-02-09T17:27:03+00:00",
+  "date" : "2026-02-10T17:53:58+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -65,7 +66,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
       ]
     }
   ],
-  "description" : "**Beschreibung:** Bildet den Medikationsplan eines ELGA-Teilnehmers ab (\"List\"-Ressource). \nDie Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimittel und deren Dosierung abbilden.\nDie Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch zu klären).",
+  "description" : "**Beschreibung:** Bildet den Medikationsplan eines ELGA-Teilnehmers ab (\"List\"-Ressource). \nDie Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimittel und deren Dosierung abbilden.\nDie Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch zu klären).\n\nTODO: Invariante, dass überall in der List der gleiche Patient enthalten sein muss",
   "fhirVersion" : "4.0.1",
   "mapping" : [
     {
@@ -89,21 +90,27 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
       {
         "id" : "List.identifier",
         "path" : "List.identifier",
-        "short" : "Eindeutige Kennung der Liste. Verwendung zu prüfen.",
+        "short" : "Eindeutige Kennung der Liste / des Medikationsplans. Verwendung zu prüfen.",
         "max" : "1",
         "mustSupport" : true
       },
       {
         "id" : "List.status",
         "path" : "List.status",
-        "short" : "Der Medikationsplan ist aktuell: current | retired | entered-in-error. https://hl7.org/fhir/R4/valueset-list-status.html",
+        "short" : "Verpflichtende Angabe: current | retired | entered-in-error. https://hl7.org/fhir/R4/valueset-list-status.html",
         "mustSupport" : true
       },
       {
         "id" : "List.mode",
         "path" : "List.mode",
-        "short" : "Der Medikationsplan ist ein Arbeitsdokument: working | snapshot | changes. https://hl7.org/fhir/R4/valueset-list-mode.html",
+        "short" : "Verpflichtende Angabe: working | snapshot | changes. https://hl7.org/fhir/R4/valueset-list-mode.html\nDer Medikationsplan ist ein laufend gepflegtes Dokument: working",
         "mustSupport" : true
+      },
+      {
+        "id" : "List.title",
+        "path" : "List.title",
+        "short" : "Titel der Liste. Verwendung zu prüfen.",
+        "max" : "0"
       },
       {
         "id" : "List.code",
@@ -124,6 +131,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
       {
         "id" : "List.subject",
         "path" : "List.subject",
+        "short" : "Österreichischer Patient für den der Medikationsplan erstellt wird.",
         "min" : 1,
         "type" : [
           {
@@ -138,20 +146,20 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
       {
         "id" : "List.encounter",
         "path" : "List.encounter",
-        "short" : "Keine Verwendung in der Liste für den Medikationsplan.",
+        "short" : "Verwendung zu prüfen.",
         "max" : "0"
       },
       {
         "id" : "List.date",
         "path" : "List.date",
-        "short" : "Letzte Aktualisierung der Liste des Medikationsplans.",
+        "short" : "Letzte Aktualisierung des Medikationsplans.",
         "min" : 1,
         "mustSupport" : true
       },
       {
         "id" : "List.source",
         "path" : "List.source",
-        "short" : "Ersteller der Liste des Medikationsplans.",
+        "short" : "Ersteller des Medikationsplans.",
         "min" : 1,
         "type" : [
           {
@@ -167,7 +175,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
       {
         "id" : "List.orderedBy",
         "path" : "List.orderedBy",
-        "short" : "Die Reihenfolge der Einträge im Medikationsplan ist fachlich relevant und wird durch den Erseller der Liste vorgegeben. \nMögliche Codes: user | system | event-date | entry-date| priority | alphabetic | category | patient.",
+        "short" : "Die Reihenfolge der Einträge im Medikationsplan ist fachlich relevant und wird durch den Ersteller vorgegeben. \nMögliche Codes: user | system | event-date | entry-date| priority | alphabetic | category | patient (einschränken?)",
         "min" : 1,
         "patternCodeableConcept" : {
           "coding" : [
@@ -196,7 +204,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
       {
         "id" : "List.entry.flag",
         "path" : "List.entry.flag",
-        "short" : "Kennzeichnet die Art der Änderung des Medikationsplaneintrags.",
+        "short" : "Kennzeichnet die Art der Änderung des Medikationsplaneintrags: zB Unchanged | Changed | Cancelled | Prescribed | Ceased | Suspended.",
         "min" : 1,
         "mustSupport" : true,
         "binding" : {
@@ -207,13 +215,13 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
       {
         "id" : "List.entry.deleted",
         "path" : "List.entry.deleted",
-        "short" : "Gibt an, ob der referenzierte Medikationsplaneintrag aus dem Medikationsplan entfernt wurde. Unklar, ob Löschen so abgebildet werden soll.",
+        "short" : "Gibt an, ob der referenzierte Medikationsplaneintrag zur Entfernung markiert wurde. Unklar, ob Löschen so abgebildet werden soll.",
         "mustSupport" : true
       },
       {
         "id" : "List.entry.date",
         "path" : "List.entry.date",
-        "short" : "Datum der Aufnahme des Medikationsplaneintrags in den Medikationsplan. Fachlich zu klären.",
+        "short" : "Datum der Aufnahme des Medikationsplaneintrags. Fachlich zu klären.",
         "mustSupport" : true
       },
       {
@@ -233,7 +241,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
       {
         "id" : "List.emptyReason",
         "path" : "List.emptyReason",
-        "short" : "Intitalzustand: notstarted Grund, TODO: Code für \"Patient nimmt derzeit keine Medikamente ein\".",
+        "short" : "Grund, warum der Medikationsplan noch leer ist: Intitalzustand: notstarted, TODO: Code für \"Patient nimmt derzeit keine Medikamente ein\".",
         "mustSupport" : true
       }
     ]

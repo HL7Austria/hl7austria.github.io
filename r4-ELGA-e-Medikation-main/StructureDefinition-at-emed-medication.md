@@ -9,10 +9,10 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication | *Version*:0.1.1 | |
-| Draft as of 2026-02-09 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedication |
+| Draft as of 2026-02-10 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedication |
 
  
-**Beschreibung:** Bildet ein Arzneimittel ab, das nicht über eine PZN verfügt, z.B. magistrale Zubereitungen ("Medication"-Ressource). 
+**Beschreibung:** Bildet ein Arzneimittel ab, das nicht über eine PZN verfügt, z.B. magistrale Zubereitungen ("Medication"-Ressource). Wird die Ressource nur für magistrale Zubreitungen verwendet? Wirkstoffverschreibung? manufacturer immer ATAPSOrganization? 
 
 **Usages:**
 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
   "name" : "AtEmedMedication",
   "title" : "ELGA e-Med Medikation",
   "status" : "draft",
-  "date" : "2026-02-09T17:27:03+00:00",
+  "date" : "2026-02-10T17:53:58+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -65,7 +65,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
       ]
     }
   ],
-  "description" : "**Beschreibung:** Bildet ein Arzneimittel ab, das nicht über eine PZN verfügt, z.B. magistrale Zubereitungen (\"Medication\"-Ressource).",
+  "description" : "**Beschreibung:** Bildet ein Arzneimittel ab, das nicht über eine PZN verfügt, z.B. magistrale Zubereitungen (\"Medication\"-Ressource).\nWird die Ressource nur für magistrale Zubreitungen verwendet? Wirkstoffverschreibung? manufacturer immer ATAPSOrganization?",
   "fhirVersion" : "4.0.1",
   "mapping" : [
     {
@@ -113,12 +113,12 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
       {
         "id" : "Medication.status",
         "path" : "Medication.status",
-        "short" : "Der Verfügbarkeitsstatus active | inactive | entered-in-error. Verwendung für magistrale Zubereitungen prüfen"
+        "short" : "Verfügbarkeitsstatus des Arzneimittels:(req) active | inactive | entered-in-error. Verwendung für magistrale Zubereitungen prüfen"
       },
       {
         "id" : "Medication.manufacturer",
         "path" : "Medication.manufacturer",
-        "short" : "Der Hersteller des Arzneimittels. Für magistrale Zubereitungen die Apotheke. 1..1 ?",
+        "short" : "Der Hersteller des Arzneimittels. Für magistrale Zubereitungen die Apotheke (1..1?)",
         "type" : [
           {
             "code" : "Reference",
@@ -132,18 +132,35 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
       {
         "id" : "Medication.form",
         "path" : "Medication.form",
-        "short" : "Die Darreichungsform des Arzneimittels",
+        "short" : "Die Darreichungsform des Arzneimittels: (ex) powder | tablets | capsule + https://hl7.org/fhir/R4/valueset-medication-form-codes.html",
         "min" : 1,
         "mustSupport" : true
       },
       {
         "id" : "Medication.amount",
         "path" : "Medication.amount",
-        "short" : "Die Gesamtmenge des Arzneimittels in der Verpackung."
+        "short" : "Die Gesamtmenge des Arzneimittels in der Verpackung.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Medication.ingredient",
+        "path" : "Medication.ingredient",
+        "min" : 1,
+        "mustSupport" : true
       },
       {
         "id" : "Medication.ingredient.item[x]",
         "path" : "Medication.ingredient.item[x]",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "type",
+              "path" : "$this"
+            }
+          ],
+          "ordered" : false,
+          "rules" : "open"
+        },
         "type" : [
           {
             "code" : "CodeableConcept"
@@ -158,9 +175,66 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
         ]
       },
       {
+        "id" : "Medication.ingredient.item[x]:itemCodeableConcept",
+        "path" : "Medication.ingredient.item[x]",
+        "sliceName" : "itemCodeableConcept",
+        "short" : "Inhaltsstoff codiert",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "CodeableConcept"
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "Medication.ingredient.item[x]:itemReference",
+        "path" : "Medication.ingredient.item[x]",
+        "sliceName" : "itemReference",
+        "short" : "Referenz auf Ressourcen Substance oder Medication",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://hl7.org/fhir/StructureDefinition/Substance",
+              "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "Medication.ingredient.isActive",
+        "path" : "Medication.ingredient.isActive",
+        "short" : "Aktive Wirkstoff TRUE/FALSE",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Medication.ingredient.strength",
+        "path" : "Medication.ingredient.strength",
+        "short" : "Menge der vorhandenen Zutat",
+        "mustSupport" : true
+      },
+      {
         "id" : "Medication.batch",
         "path" : "Medication.batch",
-        "short" : "Informationen zur Charge des Arzneimittels. Verwendung für magistrale Zubereitungen prüfen."
+        "short" : "Informationen zur Charge des Arzneimittels. Verwendung für magistrale Zubereitungen prüfen.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Medication.batch.lotNumber",
+        "path" : "Medication.batch.lotNumber",
+        "short" : "Identifkation der Charge",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Medication.batch.expirationDate",
+        "path" : "Medication.batch.expirationDate",
+        "short" : "Ablaufdatum",
+        "mustSupport" : true
       }
     ]
   }
