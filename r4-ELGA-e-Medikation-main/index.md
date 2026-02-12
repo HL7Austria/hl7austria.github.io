@@ -33,7 +33,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) ENTWURF",
   "status" : "draft",
-  "date" : "2026-02-10T17:53:58+00:00",
+  "date" : "2026-02-12T16:23:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -906,7 +906,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         },
         "name" : "Beispiel Journey 02: Substance Clotrimazol",
         "description" : "**Beschreibung:** Beispiel einer Substance Clotrimazol.",
-        "exampleBoolean" : true
+        "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-substance"
       },
       {
         "extension" : [
@@ -920,7 +920,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         },
         "name" : "Beispiel Journey 02: Substance Hydrocortison",
         "description" : "**Beschreibung:** Beispiel einer Substance Hydrocortison.",
-        "exampleBoolean" : true
+        "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-substance"
       },
       {
         "extension" : [
@@ -1059,7 +1059,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "reference" : "StructureDefinition/at-emed-medication"
         },
         "name" : "ELGA e-Med Medikation",
-        "description" : "**Beschreibung:** Bildet ein Arzneimittel ab, das nicht über eine PZN verfügt, z.B. magistrale Zubereitungen (\"Medication\"-Ressource).\nWird die Ressource nur für magistrale Zubreitungen verwendet? Wirkstoffverschreibung? manufacturer immer ATAPSOrganization?",
+        "description" : "**Beschreibung:** Bildet ein Arzneimittel in der \"Medication\"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, geplante Abgabe und durchgeführte Abgabe. Aktuell nur geprüft im Kontext Planeintrag.\nUnterschieden werden folgende Fälle:\n1. Arzneimittel besitzt eine PZN und wird über diese identifiziert, die weiteren Informationen werden durch die Fachanwendung angereichert.\n    a. Identifikation nur über PZN: eine Befüllung jener Felder, die über die ASP-Liste angereichert werden können, durch den GDA wird technisch verhindert (Invariante oder eigene Medication Ressource).\n    b. Identifikation über PZN und Handelsname: damit eine Prüfung auf Übereinstimmung durchgeführt werden kann. TODO: Juristisch zu prüfen. \n3. Arzneimittel besitzt keine PZN, alle benötigten Informationen sind verpflichtend vom GDA zu befüllen:\n    a. Bei Verschreibung von Wirkstoffen\n    b. Bei magistraler Anwendung, Infusionen",
         "exampleBoolean" : false
       },
       {
@@ -1115,7 +1115,21 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "reference" : "StructureDefinition/at-emed-mr-planeintrag"
         },
         "name" : "ELGA e-Med Planeintrag",
-        "description" : "**Beschreibung:** Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA Teilnehmers ab (\"MedicationRequest\"-Ressource).\nEr enthält genau ein Arzneimittel und dessen Dosierung.\nKann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet R5 Backport Extensions.",
+        "description" : "**Beschreibung:** Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers ab (\"MedicationRequest\"-Ressource).\nEr enthält genau ein Arzneimittel und dessen Dosierung.\nKann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet R5 Backport Extensions.",
+        "exampleBoolean" : false
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "StructureDefinition:resource"
+          }
+        ],
+        "reference" : {
+          "reference" : "StructureDefinition/at-emed-substance"
+        },
+        "name" : "ELGA e-Med Substanz",
+        "description" : "**Beschreibung:** Dokumentation der Substanz eines Inhaltsstoffes eines Arzneimittels, sofern es nicht kodiert vorliegt.",
         "exampleBoolean" : false
       }
     ],

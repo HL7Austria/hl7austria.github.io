@@ -8,10 +8,6 @@
 
 Profile: [ELGA e-Med Medikation](StructureDefinition-at-emed-medication.md)
 
-**status**: Active
-
-**manufacturer**: [Amadeus Apotheke](Organization-AtEmedExampleOrganizationApo01.md)
-
 **form**: Salbe
 
 > **ingredient****item**: Hydrocortison**strength**: 1 % (Details: UCUM code% = '%')/100 g (Details: UCUM codeg = 'g')
@@ -19,13 +15,6 @@ Profile: [ELGA e-Med Medikation](StructureDefinition-at-emed-medication.md)
 > **ingredient****item**: Clotrimazol**strength**: 1 % (Details: UCUM code% = '%')/100 g (Details: UCUM codeg = 'g')
 
 > **ingredient****item**: Salbengrundlage**isActive**: false**strength**: 98 g/100 g
-
-### Batches
-
-| | | |
-| :--- | :--- | :--- |
-| - | **LotNumber** | **ExpirationDate** |
-| * | MAG-2026-001 | 2027-01-01 |
 
 
 
@@ -39,11 +28,6 @@ Profile: [ELGA e-Med Medikation](StructureDefinition-at-emed-medication.md)
     "profile" : [
       "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"
     ]
-  },
-  "status" : "active",
-  "manufacturer" : {
-    "reference" : "Organization/AtEmedExampleOrganizationApo01",
-    "display" : "Amadeus Apotheke"
   },
   "form" : {
     "coding" : [
@@ -121,11 +105,7 @@ Profile: [ELGA e-Med Medikation](StructureDefinition-at-emed-medication.md)
         }
       }
     }
-  ],
-  "batch" : {
-    "lotNumber" : "MAG-2026-001",
-    "expirationDate" : "2027-01-01"
-  }
+  ]
 }
 
 ```

@@ -6,6 +6,8 @@
 
 ## Example Substance: Beispiel Journey 02: Substance Hydrocortison
 
+Profile: [ELGA e-Med Substanz](StructureDefinition-at-emed-substance.md)
+
 **status**: Active
 
 **code**: Hydrocortison
@@ -18,6 +20,11 @@
 {
   "resourceType" : "Substance",
   "id" : "AtEmedJourneySubstanceHydrocortison",
+  "meta" : {
+    "profile" : [
+      "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-substance"
+    ]
+  },
   "status" : "active",
   "code" : {
     "coding" : [

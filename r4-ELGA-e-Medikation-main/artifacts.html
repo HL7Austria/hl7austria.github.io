@@ -227,8 +227,16 @@ Werden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel
                   title="StructureDefinition/at-emed-medication">ELGA e-Med Medikation</a>
             </td>
             <td>
-<p><strong>Beschreibung:</strong> Bildet ein Arzneimittel ab, das nicht über eine PZN verfügt, z.B. magistrale Zubereitungen ("Medication"-Ressource).
-Wird die Ressource nur für magistrale Zubreitungen verwendet? Wirkstoffverschreibung? manufacturer immer ATAPSOrganization?</p>
+<p><strong>Beschreibung:</strong> Bildet ein Arzneimittel in der "Medication"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, geplante Abgabe und durchgeführte Abgabe. Aktuell nur geprüft im Kontext Planeintrag.
+Unterschieden werden folgende Fälle:</p>
+<ol>
+  <li>Arzneimittel besitzt eine PZN und wird über diese identifiziert, die weiteren Informationen werden durch die Fachanwendung angereichert.
+ a. Identifikation nur über PZN: eine Befüllung jener Felder, die über die ASP-Liste angereichert werden können, durch den GDA wird technisch verhindert (Invariante oder eigene Medication Ressource).
+ b. Identifikation über PZN und Handelsname: damit eine Prüfung auf Übereinstimmung durchgeführt werden kann. TODO: Juristisch zu prüfen.</li>
+  <li>Arzneimittel besitzt keine PZN, alle benötigten Informationen sind verpflichtend vom GDA zu befüllen:
+ a. Bei Verschreibung von Wirkstoffen
+ b. Bei magistraler Anwendung, Infusionen</li>
+</ol>
 </td>
          </tr>
          <tr>
@@ -276,9 +284,18 @@ Die Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes L
                   title="StructureDefinition/at-emed-mr-planeintrag">ELGA e-Med Planeintrag</a>
             </td>
             <td>
-<p><strong>Beschreibung:</strong> Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA Teilnehmers ab ("MedicationRequest"-Ressource).
+<p><strong>Beschreibung:</strong> Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers ab ("MedicationRequest"-Ressource).
 Er enthält genau ein Arzneimittel und dessen Dosierung.
 Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet R5 Backport Extensions.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-at-emed-substance.html"
+                  title="StructureDefinition/at-emed-substance">ELGA e-Med Substanz</a>
+            </td>
+            <td>
+<p><strong>Beschreibung:</strong> Dokumentation der Substanz eines Inhaltsstoffes eines Arzneimittels, sofern es nicht kodiert vorliegt.</p>
 </td>
          </tr>
       </tbody>
@@ -487,7 +504,7 @@ Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Feb 10, 2026 17:53+0000">2026-02-10</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Feb 12, 2026 16:23+0000">2026-02-12</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

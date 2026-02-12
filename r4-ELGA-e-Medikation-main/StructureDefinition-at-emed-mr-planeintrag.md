@@ -9,10 +9,10 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag | *Version*:0.1.1 | |
-| Draft as of 2026-02-10 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMRPlaneintrag |
+| Draft as of 2026-02-12 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMRPlaneintrag |
 
  
-**Beschreibung:** Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA Teilnehmers ab ("MedicationRequest"-Ressource). Er enthält genau ein Arzneimittel und dessen Dosierung. Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet R5 Backport Extensions. 
+**Beschreibung:** Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers ab ("MedicationRequest"-Ressource). Er enthält genau ein Arzneimittel und dessen Dosierung. Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet R5 Backport Extensions. 
 
 **Usages:**
 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
   "name" : "AtEmedMRPlaneintrag",
   "title" : "ELGA e-Med Planeintrag",
   "status" : "draft",
-  "date" : "2026-02-10T17:53:58+00:00",
+  "date" : "2026-02-12T16:23:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -66,7 +66,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
       ]
     }
   ],
-  "description" : "**Beschreibung:** Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA Teilnehmers ab (\"MedicationRequest\"-Ressource).\nEr enthält genau ein Arzneimittel und dessen Dosierung.\nKann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet R5 Backport Extensions.",
+  "description" : "**Beschreibung:** Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers ab (\"MedicationRequest\"-Ressource).\nEr enthält genau ein Arzneimittel und dessen Dosierung.\nKann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet R5 Backport Extensions.",
   "fhirVersion" : "4.0.1",
   "mapping" : [
     {
@@ -103,15 +103,46 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
   "differential" : {
     "element" : [
       {
-        "id" : "MedicationRequest",
-        "path" : "MedicationRequest",
-        "constraint" : [
+        "id" : "MedicationRequest.contained",
+        "path" : "MedicationRequest.contained",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "type",
+              "path" : "$this"
+            }
+          ],
+          "rules" : "open"
+        },
+        "min" : 1
+      },
+      {
+        "id" : "MedicationRequest.contained:medication",
+        "path" : "MedicationRequest.contained",
+        "sliceName" : "medication",
+        "min" : 1,
+        "max" : "1",
+        "type" : [
           {
-            "key" : "med-1",
-            "severity" : "error",
-            "human" : "Für die geplante Abgabe muss entweder CodeableConcept (PZN) oder Reference(Medication) angegeben werden – aber genau eins.",
-            "expression" : "medicationCodeableConcept.exists() xor medicationReference.exists()",
-            "source" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"
+            "code" : "Medication",
+            "profile" : [
+              "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "MedicationRequest.contained:substance",
+        "path" : "MedicationRequest.contained",
+        "sliceName" : "substance",
+        "min" : 0,
+        "max" : "*",
+        "type" : [
+          {
+            "code" : "Substance",
+            "profile" : [
+              "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-substance"
+            ]
           }
         ]
       },
@@ -166,7 +197,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
         "id" : "MedicationRequest.extension:offLabelUse",
         "path" : "MedicationRequest.extension",
         "sliceName" : "offLabelUse",
-        "short" : "Weist darauf hin, dass der verschreibende Arzt das Medikament wissentlich für eine Indikation, Altersgruppe, Dosierung oder Verabreichungsform verschrieben hat, die nicht von den Aufsichtsbehörden zugelassen ist und in der Verschreibungsinformation für das Produkt nicht erwähnt wird.",
+        "short" : "Weist darauf hin, dass der verschreibende Arzt das Medikament wissentlich für eine Indikation, \nAltersgruppe, Dosierung oder Verabreichungsform verschrieben hat, die nicht von den Aufsichtsbehörden zugelassen ist und in der \nVerschreibungsinformation für das Produkt nicht erwähnt wird.",
         "min" : 0,
         "max" : "1",
         "type" : [
@@ -181,32 +212,32 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
       {
         "id" : "MedicationRequest.identifier",
         "path" : "MedicationRequest.identifier",
-        "short" : "Verwendung im Medikationsplaneintrag zu prüfen. \nGeplante-Abgabe-ID (e-Med-ID) steht erst zum Zeitpunkt der Erstellung einer \ngeplanten Abgabe (Rezeptierung) zur Verfügung.",
+        "short" : "Medikationsplaneintrag-ID. TODO: Verwendung einer logischen Medikationsplaneintrag-ID prüfen.\nEvt. mit Zeitstempel (Planeintrag-ID_{Zeitstempel}) zur Herstellung eines Bezugs von geänderten Planeinträgen.\nVorteil: \n- Auch wenn sich die PZN ändert, aber logisch der gleiche Eintrag betroffen ist (z.B. Austausch eines Arzneimittels durch ein anderes mit weniger Wechselwirkung), kann ein Bezug hergestellt werden.\n- Wenn zur Vorversion des Eintrags bereits eine geplante Abgabe erstellt wurde, kann ein Bezug zum ursprünglichen Eintrag hergestellt werden.\nNachteil: \n- Falls Planeinträge mit komplett neuer Arznei überschrieben werden, entsteht dadurch ein verwirrender Bezug. \n- Die Verantwortung, dass nur Einträge geändert werden, die keine komplett neue Medikation beinhalten, liegt beim Client.",
         "mustSupport" : true
       },
       {
         "id" : "MedicationRequest.status",
         "path" : "MedicationRequest.status",
-        "short" : "Status des Medikationsplaneintrags (im Standardfall active oder complete): \n(req) active | on-hold | cancelled | completed | entered-in-error | stopped | draft | unknown -> entfernen: draft, unknown",
+        "short" : "Status des Medikationsplaneintrags. TODO: Einschränken auf active, complete, on hold; \n(req) active | on-hold | cancelled | completed | entered-in-error | stopped | draft | unknown \nTODO: Fachlich zu püfen, ob im Medikationsplan dokumentiert werden soll, dass und warum ein Medikament abgesetzt wurde (z.B. Allergie).\nAuch im Kontext mit statusReason, wo dieser Grund codiert angegeben werden kann.\n",
         "mustSupport" : true
       },
       {
         "id" : "MedicationRequest.statusReason",
         "path" : "MedicationRequest.statusReason",
-        "short" : "Grund für den aktuellen Status des Medikationsplaneintrags: (ex) https://hl7.org/fhir/R4/valueset-medicationrequest-status-reason.html. Verwendung prüfen.",
+        "short" : "Grund für den aktuellen Status des Medikationsplaneintrags: (ex) https://hl7.org/fhir/R4/valueset-medicationrequest-status-reason.html.\nTODO: Verwendung prüfen im Zusammenhang mit status.",
         "max" : "0"
       },
       {
         "id" : "MedicationRequest.intent",
         "path" : "MedicationRequest.intent",
-        "short" : "Der Medikationsplaneintrag stellt eine Anforderung und Ermächtigung \nzum Handeln durch den Antragsteller dar, daher ist intent immer \"order\". \n(req) proposal | plan | order | original-order | reflex-order | filler-order | instance-order | option",
+        "short" : "TODO: Begründung, warum hier immer \"order\" anzugeben ist:\nDer Medikationsplaneintrag ist eine Handlungsermächtigung. Dieser wurde von einem:r Arzt:Ärztin erstellt und ermächtigt (auch andere Ärzte) zur Ausstellung einer geplanten Abgabe\nbasierend auf diesen Eintrag.\n(req) proposal | plan | order | original-order | reflex-order | filler-order | instance-order | option. \nhttps://hl7.org/fhir/R4/valueset-medicationrequest-intent.html",
         "patternCode" : "order",
         "mustSupport" : true
       },
       {
         "id" : "MedicationRequest.category",
         "path" : "MedicationRequest.category",
-        "short" : "Kategorie damit Medikationsplaneintrag von geplanter Abgabe unterschieden werden kann (beide haben intent order)",
+        "short" : "Kategorie zur Unterscheidung eines Medikationsplaneintrags von einer geplanten Abgabe (beide haben intent order)",
         "min" : 1,
         "max" : "1",
         "patternCodeableConcept" : {
@@ -228,18 +259,12 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
       {
         "id" : "MedicationRequest.doNotPerform",
         "path" : "MedicationRequest.doNotPerform",
-        "short" : "Gibt an, ob der Medikationsplaneintrag die Verordnung einer Medikation \n(und somit die Erstellung einer geplanten Abgabe) untersagt. Verwendung prüfen.",
-        "mustSupport" : true
+        "short" : "Gibt an, ob der Medikationsplaneintrag die Verordnung einer Medikation \n(und somit die Erstellung einer geplanten Abgabe) untersagt (z.B. bei Allergie). TODO: Fachlich zu prüfen, ob dieser Usecase existiert.\nAuch im Kontext mit status und statusReason zu betrachten. Evtl. erst in späterer Version",
+        "max" : "0"
       },
       {
         "id" : "MedicationRequest.reported[x]",
         "path" : "MedicationRequest.reported[x]",
-        "short" : "Gibt an, ob dieser Datensatz als sekundärer „gemeldeter” Datensatz und nicht als ursprünglicher primärer Referenzdatensatz erfasst wurde. \nEr kann auch die Quelle der Meldung angeben. Keine Verwendung in Medikationsplaneintrag.",
-        "max" : "0"
-      },
-      {
-        "id" : "MedicationRequest.medication[x]",
-        "path" : "MedicationRequest.medication[x]",
         "slicing" : {
           "discriminator" : [
             {
@@ -250,10 +275,47 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
           "ordered" : false,
           "rules" : "open"
         },
+        "short" : "TODO: Verwendung zu püfen: Kann zur Dokumentation von Fremdmedikation verwendet werden. Im Falle eines \"Nachtrags\" einer Medikation in den Medikationsplan\ndurch einen anderen, nicht ursprünglich verordnenden Arzt. Dieser muss eindeutig identifiziert sein (im GDA-I vorhanden). Juristisch\nVerantwortlichkeit für Korrektheit des Eintrags zu klären.",
+        "mustSupport" : true
+      },
+      {
+        "id" : "MedicationRequest.reported[x]:reportedBoolean",
+        "path" : "MedicationRequest.reported[x]",
+        "sliceName" : "reportedBoolean",
+        "short" : "TODO: entfernen?",
+        "min" : 0,
+        "max" : "1",
         "type" : [
           {
-            "code" : "CodeableConcept"
-          },
+            "code" : "boolean"
+          }
+        ]
+      },
+      {
+        "id" : "MedicationRequest.reported[x]:reportedReference",
+        "path" : "MedicationRequest.reported[x]",
+        "sliceName" : "reportedReference",
+        "short" : "Im Falle einer Fremdmedikation verpflichtende Angabe einer Referen auf: (Patient | Practitioner | PractitionerRole | RelatedPerson | Organization)",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://hl7.org/fhir/StructureDefinition/Patient",
+              "http://hl7.org/fhir/StructureDefinition/Practitioner",
+              "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+              "http://hl7.org/fhir/StructureDefinition/Organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "MedicationRequest.medication[x]",
+        "path" : "MedicationRequest.medication[x]",
+        "short" : "Das Arzneimittel wird immer in einer contained Medication Ressource dokumentiert, damit \nArzneimittel mit und ohne PZN einheitlich dokumentiert werden können.",
+        "type" : [
           {
             "code" : "Reference",
             "targetProfile" : [
@@ -264,49 +326,22 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
         "mustSupport" : true
       },
       {
-        "id" : "MedicationRequest.medication[x]:medicationCodeableConcept",
-        "path" : "MedicationRequest.medication[x]",
-        "sliceName" : "medicationCodeableConcept",
-        "short" : "Angabe mittels Pharmazentralnummer (PZN) aus der ASP-Liste.",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
+        "id" : "MedicationRequest.medication[x].reference",
+        "path" : "MedicationRequest.medication[x].reference",
+        "constraint" : [
           {
-            "code" : "CodeableConcept"
+            "key" : "contained-ref",
+            "severity" : "error",
+            "human" : "Medication must be contained (#...)",
+            "expression" : "reference.startsWith('#')",
+            "source" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"
           }
-        ],
-        "mustSupport" : true,
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "https://termgit.elga.gv.at/CodeSystem/asp-liste"
-        }
-      },
-      {
-        "id" : "MedicationRequest.medication[x]:medicationCodeableConcept.coding",
-        "path" : "MedicationRequest.medication[x].coding",
-        "min" : 1
-      },
-      {
-        "id" : "MedicationRequest.medication[x]:medicationReference",
-        "path" : "MedicationRequest.medication[x]",
-        "sliceName" : "medicationReference",
-        "short" : "Bei magistralen Anwendungen oder Infusionen ohne PZN.",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"
-            ]
-          }
-        ],
-        "mustSupport" : true
+        ]
       },
       {
         "id" : "MedicationRequest.subject",
         "path" : "MedicationRequest.subject",
-        "short" : "Österreichischer Patient für den der Medikationsplaneintrag ausgestellt wird.",
+        "short" : "Patient, für den der Medikationsplaneintrag ausgestellt werden soll, der über den \nZentralen Patientenindex identifizierbar und Teilnehmer von ELGA e-Medikation ist.",
         "type" : [
           {
             "code" : "Reference",
@@ -320,13 +355,13 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
       {
         "id" : "MedicationRequest.encounter",
         "path" : "MedicationRequest.encounter",
-        "short" : "Aufenthalt/Begegnung, während dessen/der der Medikationsplaneintrag erstellt wurde. Verwendung im Medikationsplaneintrag prüfen.",
+        "short" : "Aufenthalt/Begegnung, während dessen/der der Medikationsplaneintrag erstellt wurde. Keine Verwendung im Medikationsplaneintrag.",
         "max" : "0"
       },
       {
         "id" : "MedicationRequest.supportingInformation",
         "path" : "MedicationRequest.supportingInformation",
-        "short" : "Zusätzliche Informationen \n(z. B. Größe und Gewicht des Patienten), die die Verschreibung des Medikaments unterstützen. \nEs müsste eigene Ressource verlinkt werden, daher keine Verwendung im Medikationsplaneintrag.",
+        "short" : "Referenz auf zusätzliche Informationen (Ressource Any)\n(z. B. Größe und Gewicht des Patienten), die die Verschreibung des Medikaments unterstützen. \nKeine Verwendung im Medikationsplaneintrag.",
         "max" : "0"
       },
       {
@@ -339,7 +374,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
       {
         "id" : "MedicationRequest.requester",
         "path" : "MedicationRequest.requester",
-        "short" : "Der Arzt oder die Ärztin, die den Medikationsplaneintrag erstellt hat \nund für den Inhalt verantwortlich ist.",
+        "short" : "Arzt oder Ärztin, die den Medikationsplaneintrag erstellt hat\nund für den Inhalt verantwortlich ist. Eindeutig identifiziert über den GDA-Index und berechtigt auf die ELGA e-Medikation \ndes Patienten zuzugreifen.",
         "min" : 1,
         "type" : [
           {
@@ -356,51 +391,43 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
       {
         "id" : "MedicationRequest.performer",
         "path" : "MedicationRequest.performer",
-        "short" : "Der gewünschte Ausführende der medikamentösen Behandlung \n(z. B. der Ausführende der Medikamentengabe). Keine Verwendung im Planeintrag.",
+        "short" : "Der gewünschte Ausführende der medikamentösen Behandlung \n(z. B. der Ausführende der Medikamentengabe). Keine Verwendung im Planeintrag. TODO: evtl im Kontext Medikationsblatt zu prüfen.",
         "max" : "0"
       },
       {
         "id" : "MedicationRequest.performerType",
         "path" : "MedicationRequest.performerType",
-        "short" : "Rollen: https://hl7.org/fhir/R4/valueset-performer-role.html. \nKeine Verwendung im Planeintrag.",
+        "short" : "Rollen: https://hl7.org/fhir/R4/valueset-performer-role.html. \nKeine Verwendung im Planeintrag. TODO: evtl im Kontext Medikationsblatt zu prüfen.",
         "max" : "0"
       },
       {
         "id" : "MedicationRequest.recorder",
         "path" : "MedicationRequest.recorder",
-        "short" : "Die Person, die den Medikationsplaneintrag im Auftrag eines GDA eingegeben hat. \nKeine Verwendung im Planeintrag.",
+        "short" : "Die Person, die den Medikationsplaneintrag im Auftrag eines GDA eingegeben hat. \nTODO: Prüfen, ob eine juristische Verpflichtung zur Dokumentation der Schreibkraft besteht.",
         "max" : "0"
       },
       {
         "id" : "MedicationRequest.reasonCode",
         "path" : "MedicationRequest.reasonCode",
-        "short" : "Grund für die Verordnung des Arzneimittels. \nEntweder Code oder Referenz (TODO: Evtl. Invariante).",
-        "mustSupport" : true
-      },
-      {
-        "id" : "MedicationRequest.reasonCode.coding",
-        "path" : "MedicationRequest.reasonCode.coding",
-        "min" : 1
+        "short" : "Grund für die Verordnung des Arzneimittels. \nEntweder Code oder Referenz (TODO: Evtl. Invariante). Erst wenn codierte Angabe möglich.",
+        "max" : "0"
       },
       {
         "id" : "MedicationRequest.reasonReference",
         "path" : "MedicationRequest.reasonReference",
-        "short" : "Grund für die Verordnung des Arzneimittels. \nEntweder Code oder Referenz (TODO: Evtl. Invariante).",
-        "mustSupport" : true
+        "max" : "0"
       },
       {
         "id" : "MedicationRequest.instantiatesCanonical",
         "path" : "MedicationRequest.instantiatesCanonical",
-        "short" : "URL, die auf ein Protokoll, eine Richtlinie, \neine Guideline oder eine andere Definition verweist, die von diesem \nMedikationsplaneintrag ganz oder teilweise eingehalten wird. TODO: Verwendung \nim Medikationsplaneintrag zu prüfen.",
-        "max" : "1",
-        "mustSupport" : true
+        "short" : "URL, die auf ein Protokoll (Richtlinie, Guideline) verweist, das von diesem \nMedikationsplaneintrag ganz oder teilweise eingehalten wird. Derzeit keine Verwendung im Medikationsplaneintrag.",
+        "max" : "0"
       },
       {
         "id" : "MedicationRequest.instantiatesUri",
         "path" : "MedicationRequest.instantiatesUri",
-        "short" : "URL, die auf ein extern gepflegtes Protokoll, \neine Richtlinie, eine Guideline oder eine andere Definition verweist, \ndie von dieser Medikamentenanforderung ganz oder teilweise eingehalten wird. \nTODO: Verwendung im Medikationsplaneintrag zu prüfen.",
-        "max" : "1",
-        "mustSupport" : true
+        "short" : "URL, die auf ein extern gepflegtes Protokoll (Richtlinie, Guideline) verweist, das von diesem \nMedikationsplaneintrag ganz oder teilweise eingehalten wird. Derzeit keine Verwendung im Medikationsplaneintrag.",
+        "max" : "0"
       },
       {
         "id" : "MedicationRequest.basedOn",
@@ -417,7 +444,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
       {
         "id" : "MedicationRequest.courseOfTherapyType",
         "path" : "MedicationRequest.courseOfTherapyType",
-        "short" : "Gesamtmuster der Medikamentengabe (z.B. saisonal). \nVerwendung im Medikationsplaneintrag prüfen (dosageInstruction), paused soll im Status dokumentiert werden.",
+        "short" : "Gesamtmuster der Medikamentengabe (z.B. saisonal). \nVerwendung im Medikationsplaneintrag prüfen (dosageInstruction), evtl. durch Dosierungsinformationen abgedeck.",
         "mustSupport" : true
       },
       {
@@ -429,7 +456,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
       {
         "id" : "MedicationRequest.note",
         "path" : "MedicationRequest.note",
-        "short" : "Zusätzliche Informationen zum Medikationsplaneintrag. TODO: zu prüfen im Kontext Korrekturvermerk",
+        "short" : "Zusätzliche Informationen zum Medikationsplaneintrag. TODO: zu prüfen im Kontext Korrekturvermerk\nTODO: fachlich prüfen, an welchen Stellen überall Freitext erforderlich sein soll/muss. Auch im Kontext zu entered-in-error\nInformationen.",
         "mustSupport" : true
       },
       {
@@ -448,7 +475,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
       {
         "id" : "MedicationRequest.substitution",
         "path" : "MedicationRequest.substitution",
-        "short" : "Gibt an, ob eine Substitution Teil der Abgabe sein kann/sollte/nicht sein darf. \nDieser Block erläutert die Absicht des Arztes, der den Medikationsplaneintrag erstellt. \nWenn nichts angegeben ist, kann eine Substitution vorgenommen werden. \nTODO: Zu prüfen, ob Verwendung im Medikationsplaneintrag; Dokumentation über Substitution erfolg in der Dispense-Resource. \nUsecase: mit welchem Medikament der Patient das Medikament ersetzen kann. Hinweis: vor allem bei\nOTC Medikamenten sinnvoll, da keine geplante Abgabe dazu existiert",
+        "short" : "Gibt an, ob das Arzneimittel substituiert werden darf oder nicht. \nErläutert die Absicht des Arztes, der den Medikationsplaneintrag erstellt. \nWenn nichts angegeben ist, kann eine Substitution vorgenommen werden. \nDie Dokumentation über eine tatsächlich erfolgte Substitution erfolgt in der Dispense-Resource. \n\nTODO: Usecase fachlich zu prüfen. Es kann für den Patienten selbst oder das Pflegeheim eine wichtige Information sein,\nmit welchem Medikament das verordnete Medikament im Bedarfsfall ersetzen werden kann.",
         "mustSupport" : true
       },
       {
@@ -460,13 +487,13 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
       {
         "id" : "MedicationRequest.detectedIssue",
         "path" : "MedicationRequest.detectedIssue",
-        "short" : "Bezeichnet ein tatsächliches/potenzielles klinisches Problem mit oder \nzwischen aktiven/vorgeschlagenen klinischen Maßnahmen für einen Patienten, \nz. B. Wechselwirkungen zwischen Medikamenten, doppelte Therapie, Dosierungswarnung usw. \nTODO: Es wäre eine eigene Ressource nötig, daher unrealistisch.",
+        "short" : "Klinisches Problem mit Maßnahme. Nur mittesl Referenz auf Ressouce DetectedIssue, \nKeine Verwendung im Medikationsplaneintrag.",
         "max" : "0"
       },
       {
         "id" : "MedicationRequest.eventHistory",
         "path" : "MedicationRequest.eventHistory",
-        "short" : "Referenz auf Provenance-Ressourcen, \ndie verschiedene relevante Versionen dieser Ressource dokumentieren. \nTODO: Verwendung im Medikationsplaneintrag zu prüfen.",
+        "short" : "Referenz auf Provenance-Ressourcen, die verschiedene relevante Versionen dieser Ressource dokumentieren. \nKeine Verwendung im Medikationsplaneintrag.",
         "max" : "0"
       }
     ]

@@ -11,7 +11,7 @@
   <name value="ELGAeMedikationR4"/>
   <title value="ELGA e-Medikation (R4) ENTWURF"/>
   <status value="draft"/>
-  <date value="2026-02-10T17:53:58+00:00"/>
+  <date value="2026-02-12T16:23:56+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -580,7 +580,7 @@
       </reference>
       <name value="Beispiel Journey 02: Substance Clotrimazol"/>
       <description value="**Beschreibung:** Beispiel einer Substance Clotrimazol."/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-substance"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -591,7 +591,7 @@
       </reference>
       <name value="Beispiel Journey 02: Substance Hydrocortison"/>
       <description value="**Beschreibung:** Beispiel einer Substance Hydrocortison."/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-substance"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -700,7 +700,7 @@
         <reference value="StructureDefinition/at-emed-medication"/>
       </reference>
       <name value="ELGA e-Med Medikation"/>
-      <description value="**Beschreibung:** Bildet ein Arzneimittel ab, das nicht über eine PZN verfügt, z.B. magistrale Zubereitungen (&quot;Medication&quot;-Ressource).&#xA;Wird die Ressource nur für magistrale Zubreitungen verwendet? Wirkstoffverschreibung? manufacturer immer ATAPSOrganization?"/>
+      <description value="**Beschreibung:** Bildet ein Arzneimittel in der &quot;Medication&quot;-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, geplante Abgabe und durchgeführte Abgabe. Aktuell nur geprüft im Kontext Planeintrag.&#xA;Unterschieden werden folgende Fälle:&#xA;1. Arzneimittel besitzt eine PZN und wird über diese identifiziert, die weiteren Informationen werden durch die Fachanwendung angereichert.&#xA;    a. Identifikation nur über PZN: eine Befüllung jener Felder, die über die ASP-Liste angereichert werden können, durch den GDA wird technisch verhindert (Invariante oder eigene Medication Ressource).&#xA;    b. Identifikation über PZN und Handelsname: damit eine Prüfung auf Übereinstimmung durchgeführt werden kann. TODO: Juristisch zu prüfen. &#xA;3. Arzneimittel besitzt keine PZN, alle benötigten Informationen sind verpflichtend vom GDA zu befüllen:&#xA;    a. Bei Verschreibung von Wirkstoffen&#xA;    b. Bei magistraler Anwendung, Infusionen"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -744,7 +744,18 @@
         <reference value="StructureDefinition/at-emed-mr-planeintrag"/>
       </reference>
       <name value="ELGA e-Med Planeintrag"/>
-      <description value="**Beschreibung:** Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA Teilnehmers ab (&quot;MedicationRequest&quot;-Ressource).&#xA;Er enthält genau ein Arzneimittel und dessen Dosierung.&#xA;Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet R5 Backport Extensions."/>
+      <description value="**Beschreibung:** Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers ab (&quot;MedicationRequest&quot;-Ressource).&#xA;Er enthält genau ein Arzneimittel und dessen Dosierung.&#xA;Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet R5 Backport Extensions."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-emed-substance"/>
+      </reference>
+      <name value="ELGA e-Med Substanz"/>
+      <description value="**Beschreibung:** Dokumentation der Substanz eines Inhaltsstoffes eines Arzneimittels, sofern es nicht kodiert vorliegt."/>
       <exampleBoolean value="false"/>
     </resource>
     <page>

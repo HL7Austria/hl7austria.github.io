@@ -6,49 +6,6 @@
 
 ## Example MedicationRequest: Beispiel Journey 02: Medikationsplaneintrag 1
 
-Profile: [ELGA e-Med Planeintrag](StructureDefinition-at-emed-mr-planeintrag.md)
-
-**Extension Definition for MedicationRequest.effectiveDosePeriod for Version 5.0**: 2026-01-28 --> 2026-02-28
-
-**Extension Definition for MedicationRequest.renderedDosageInstruction for Version 5.0**: 
-
-1 Kapsel täglich morgens
-
-**identifier**: 4711
-
-**status**: Active
-
-**intent**: Order
-
-**category**: Medikationsplaneintrag
-
-**medication**: EBETREXAT TBL 10MG
-
-**subject**: [Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-AtEmedExamplePatient01.md)
-
-**authoredOn**: 2026-01-28 08:00:00+0000
-
-**requester**: [Practitioner Melanie Musterärztin ](Practitioner-AtEmedExamplePractitioner01.md)
-
-**reasonCode**: Essentielle Hypertonie
-
-**note**: 
-
-> 
-
-Freitext Informationen zum Medikationsplaneintrag.
-
-
-> **dosageInstruction****text**: 1 Kapsel täglich morgens**patientInstruction**: Nehmen Sie die Kapsel jeden Morgen mit ausreichend Flüssigkeit ein.**timing**: Once per 1 day**route**: zum Einnehmen
-
-### DoseAndRates
-
-| | |
-| :--- | :--- |
-| - | **Dose[x]** |
-| * | 5 mg (Details: UCUM codemg = 'mg') |
-
-
 
 
 ## Resource Content
@@ -62,6 +19,94 @@ Freitext Informationen zum Medikationsplaneintrag.
       "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"
     ]
   },
+  "contained" : [
+    {
+      "resourceType" : "Medication",
+      "id" : "InlineAtEmedJourneyMedicationMagistral01",
+      "meta" : {
+        "profile" : [
+          "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"
+        ]
+      },
+      "form" : {
+        "coding" : [
+          {
+            "system" : "https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform",
+            "code" : "100000073713",
+            "display" : "Salbe"
+          }
+        ]
+      },
+      "ingredient" : [
+        {
+          "itemCodeableConcept" : {
+            "coding" : [
+              {
+                "system" : "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido",
+                "code" : "A01AC03",
+                "display" : "Hydrocortison"
+              }
+            ]
+          },
+          "strength" : {
+            "numerator" : {
+              "value" : 1,
+              "unit" : "%",
+              "system" : "http://unitsofmeasure.org",
+              "code" : "%"
+            },
+            "denominator" : {
+              "value" : 100,
+              "unit" : "g",
+              "system" : "http://unitsofmeasure.org",
+              "code" : "g"
+            }
+          }
+        },
+        {
+          "itemCodeableConcept" : {
+            "coding" : [
+              {
+                "system" : "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido",
+                "code" : "A01AB18",
+                "display" : "Clotrimazol"
+              }
+            ]
+          },
+          "strength" : {
+            "numerator" : {
+              "value" : 1,
+              "unit" : "%",
+              "system" : "http://unitsofmeasure.org",
+              "code" : "%"
+            },
+            "denominator" : {
+              "value" : 100,
+              "unit" : "g",
+              "system" : "http://unitsofmeasure.org",
+              "code" : "g"
+            }
+          }
+        },
+        {
+          "itemCodeableConcept" : {
+            "text" : "Salbengrundlage"
+          },
+          "isActive" : false,
+          "strength" : {
+            "numerator" : {
+              "value" : 98,
+              "unit" : "g"
+            },
+            "denominator" : {
+              "value" : 100,
+              "unit" : "g"
+            }
+          }
+        }
+      ]
+    }
+  ],
   "extension" : [
     {
       "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod",
@@ -92,14 +137,8 @@ Freitext Informationen zum Medikationsplaneintrag.
       ]
     }
   ],
-  "medicationCodeableConcept" : {
-    "coding" : [
-      {
-        "system" : "https://termgit.elga.gv.at/CodeSystem/asp-liste",
-        "code" : "2443061",
-        "display" : "EBETREXAT TBL 10MG"
-      }
-    ]
+  "medicationReference" : {
+    "reference" : "InlineAtEmedJourneyMedicationMagistral01"
   },
   "subject" : {
     "reference" : "Patient/AtEmedExamplePatient01"
@@ -108,17 +147,6 @@ Freitext Informationen zum Medikationsplaneintrag.
   "requester" : {
     "reference" : "Practitioner/AtEmedExamplePractitioner01"
   },
-  "reasonCode" : [
-    {
-      "coding" : [
-        {
-          "system" : "http://snomed.info/sct",
-          "code" : "59621000",
-          "display" : "Essentielle Hypertonie"
-        }
-      ]
-    }
-  ],
   "note" : [
     {
       "text" : "Freitext Informationen zum Medikationsplaneintrag."
