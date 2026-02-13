@@ -9,10 +9,10 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation | *Version*:0.1.0 | |
-| Draft as of 2026-02-12 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationStepCount |
+| Draft as of 2026-02-13 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationStepCount |
 
  
-This FHIR profile is defining the Step Count Observation, similar to the Observation Social History - Alcohol Use from the IPS. 
+This FHIR profile is defining the Step Count Observation, similar to the Observation Social History - Alcohol Use from the IPS. The step count option only allowes values inbetween 0 and 300 000. 
 
 **Usages:**
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-stepcoun
   "name" : "AtPrenudgeObservationStepCount",
   "title" : "AT PreNUDGE Observation Step Count",
   "status" : "draft",
-  "date" : "2026-02-12T15:14:29+00:00",
+  "date" : "2026-02-13T19:47:50+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [
     {
@@ -64,7 +64,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-stepcoun
       ]
     }
   ],
-  "description" : "This FHIR profile is defining the Step Count Observation, similar to the Observation Social History - Alcohol Use from the IPS.",
+  "description" : "This FHIR profile is defining the Step Count Observation, similar to the Observation Social History - Alcohol Use from the IPS. The step count option only allowes values inbetween 0 and 300 000.",
   "fhirVersion" : "4.0.1",
   "mapping" : [
     {
@@ -101,13 +101,22 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-stepcoun
   "kind" : "resource",
   "abstract" : false,
   "type" : "Observation",
-  "baseDefinition" : "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation",
+  "baseDefinition" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-observation",
   "derivation" : "constraint",
   "differential" : {
     "element" : [
       {
         "id" : "Observation",
-        "path" : "Observation"
+        "path" : "Observation",
+        "constraint" : [
+          {
+            "key" : "stepcount-range",
+            "severity" : "error",
+            "human" : "Step count must be inbetween 0 and 300 000.",
+            "expression" : "valueInteger >= 0 and valueInteger <= 300000",
+            "source" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation"
+          }
+        ]
       },
       {
         "id" : "Observation.code",
@@ -116,7 +125,8 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-stepcoun
           "coding" : [
             {
               "system" : "http://loinc.org",
-              "code" : "41950-7"
+              "code" : "41950-7",
+              "display" : "Number of steps in 24 hour Measured"
             }
           ]
         }
@@ -133,25 +143,20 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-stepcoun
           ],
           "ordered" : false,
           "rules" : "open"
-        }
+        },
+        "min" : 1
       },
       {
-        "id" : "Observation.value[x]:valueQuantity",
+        "id" : "Observation.value[x]:valueInteger",
         "path" : "Observation.value[x]",
-        "sliceName" : "valueQuantity",
-        "min" : 0,
+        "sliceName" : "valueInteger",
+        "min" : 1,
         "max" : "1",
         "type" : [
           {
-            "code" : "Quantity"
+            "code" : "integer"
           }
         ]
-      },
-      {
-        "id" : "Observation.component",
-        "path" : "Observation.component",
-        "max" : "0",
-        "mustSupport" : false
       }
     ]
   }

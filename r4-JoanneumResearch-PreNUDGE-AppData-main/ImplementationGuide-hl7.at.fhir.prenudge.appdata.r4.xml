@@ -11,7 +11,7 @@
   <name value="PreNUDGEAppdataR4"/>
   <title value="PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)"/>
   <status value="draft"/>
-  <date value="2026-02-12T15:14:29+00:00"/>
+  <date value="2026-02-13T19:47:50+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -459,6 +459,26 @@
     </extension>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/AlcoholResponseDaily"/>
+      </reference>
+      <name value="AlcoholResponseDaily"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/AlcoholResponseNever"/>
+      </reference>
+      <name value="AlcoholResponseNever"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Questionnaire"/>
       </extension>
       <reference>
@@ -466,6 +486,17 @@
       </reference>
       <name value="Alkoholkonsum-Frequenz (letztes Jahr)"/>
       <description value="Categorical variable for the frequency of alcohol consumption in the last year (IPS-compatible)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-prenudge-observation"/>
+      </reference>
+      <name value="AT PreNUDGE Observation"/>
+      <description value="This FHIR profile is defining the overall Observation for PreNUDGE."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -484,10 +515,42 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/at-prenudge-bloodglucose-observation"/>
+      </reference>
+      <name value="AT PreNUDGE Observation Blood Glucose (only in mg/dL)"/>
+      <description value="This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allowes values inbetween 12 and 1200 mg/dL."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/at-prenudge-stepcount-observation"/>
       </reference>
       <name value="AT PreNUDGE Observation Step Count"/>
-      <description value="This FHIR profile is defining the Step Count Observation, similar to the Observation Social History - Alcohol Use from the IPS."/>
+      <description value="This FHIR profile is defining the Step Count Observation, similar to the Observation Social History - Alcohol Use from the IPS. The step count option only allowes values inbetween 0 and 300 000."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-prenudge-questionnaire"/>
+      </reference>
+      <name value="AT PreNUDGE Questionnaire"/>
+      <description value="This FHIR profile is defining the overall Questionnaire for PreNUDGE."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/at-prenudge-observation-valueset-method-manual-automated"/>
+      </reference>
+      <name value="AtPrenudgeValueSetMethodManualAutomated"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -520,7 +583,7 @@
         <reference value="Questionnaire/StepCountQuestionnaire"/>
       </reference>
       <name value="Schrittanzahl (täglich)"/>
-      <description value="A simple questionnaire for asking how many steps have been done today."/>
+      <description value="A simple questionnaire for asking how many steps have been done today. The step count option only allowes values inbetween 0 and 300 000."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -532,6 +595,26 @@
       </reference>
       <name value="SNOMED CT AlcoholUse-Frequency"/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/StepCountResponseActive"/>
+      </reference>
+      <name value="StepCountResponseActive"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/StepCountResponseExtreme"/>
+      </reference>
+      <name value="StepCountResponseExtreme"/>
+      <exampleBoolean value="true"/>
     </resource>
     <page>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">

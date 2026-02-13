@@ -85,7 +85,7 @@ We will focus on:
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-02-12T15:14:29+00:00",
+  "date" : "2026-02-13T19:47:50+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [
     {
@@ -806,6 +806,32 @@ We will focus on:
         "extension" : [
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "QuestionnaireResponse"
+          }
+        ],
+        "reference" : {
+          "reference" : "QuestionnaireResponse/AlcoholResponseDaily"
+        },
+        "name" : "AlcoholResponseDaily",
+        "exampleBoolean" : true
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "QuestionnaireResponse"
+          }
+        ],
+        "reference" : {
+          "reference" : "QuestionnaireResponse/AlcoholResponseNever"
+        },
+        "name" : "AlcoholResponseNever",
+        "exampleBoolean" : true
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString" : "Questionnaire"
           }
         ],
@@ -814,6 +840,20 @@ We will focus on:
         },
         "name" : "Alkoholkonsum-Frequenz (letztes Jahr)",
         "description" : "Categorical variable for the frequency of alcohol consumption in the last year (IPS-compatible).",
+        "exampleBoolean" : false
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "StructureDefinition:resource"
+          }
+        ],
+        "reference" : {
+          "reference" : "StructureDefinition/at-prenudge-observation"
+        },
+        "name" : "AT PreNUDGE Observation",
+        "description" : "This FHIR profile is defining the overall Observation for PreNUDGE.",
         "exampleBoolean" : false
       },
       {
@@ -838,10 +878,51 @@ We will focus on:
           }
         ],
         "reference" : {
+          "reference" : "StructureDefinition/at-prenudge-bloodglucose-observation"
+        },
+        "name" : "AT PreNUDGE Observation Blood Glucose (only in mg/dL)",
+        "description" : "This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allowes values inbetween 12 and 1200 mg/dL.",
+        "exampleBoolean" : false
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "StructureDefinition:resource"
+          }
+        ],
+        "reference" : {
           "reference" : "StructureDefinition/at-prenudge-stepcount-observation"
         },
         "name" : "AT PreNUDGE Observation Step Count",
-        "description" : "This FHIR profile is defining the Step Count Observation, similar to the Observation Social History - Alcohol Use from the IPS.",
+        "description" : "This FHIR profile is defining the Step Count Observation, similar to the Observation Social History - Alcohol Use from the IPS. The step count option only allowes values inbetween 0 and 300 000.",
+        "exampleBoolean" : false
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "StructureDefinition:resource"
+          }
+        ],
+        "reference" : {
+          "reference" : "StructureDefinition/at-prenudge-questionnaire"
+        },
+        "name" : "AT PreNUDGE Questionnaire",
+        "description" : "This FHIR profile is defining the overall Questionnaire for PreNUDGE.",
+        "exampleBoolean" : false
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "ValueSet"
+          }
+        ],
+        "reference" : {
+          "reference" : "ValueSet/at-prenudge-observation-valueset-method-manual-automated"
+        },
+        "name" : "AtPrenudgeValueSetMethodManualAutomated",
         "exampleBoolean" : false
       },
       {
@@ -883,7 +964,7 @@ We will focus on:
           "reference" : "Questionnaire/StepCountQuestionnaire"
         },
         "name" : "Schrittanzahl (täglich)",
-        "description" : "A simple questionnaire for asking how many steps have been done today.",
+        "description" : "A simple questionnaire for asking how many steps have been done today. The step count option only allowes values inbetween 0 and 300 000.",
         "exampleBoolean" : false
       },
       {
@@ -898,6 +979,32 @@ We will focus on:
         },
         "name" : "SNOMED CT AlcoholUse-Frequency",
         "exampleBoolean" : false
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "QuestionnaireResponse"
+          }
+        ],
+        "reference" : {
+          "reference" : "QuestionnaireResponse/StepCountResponseActive"
+        },
+        "name" : "StepCountResponseActive",
+        "exampleBoolean" : true
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "QuestionnaireResponse"
+          }
+        ],
+        "reference" : {
+          "reference" : "QuestionnaireResponse/StepCountResponseExtreme"
+        },
+        "name" : "StepCountResponseExtreme",
+        "exampleBoolean" : true
       }
     ],
     "page" : {

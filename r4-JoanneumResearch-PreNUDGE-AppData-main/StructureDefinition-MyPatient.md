@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/MyPatient | *Version*:0.1.0 | |
-| Draft as of 2026-02-12 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:MyPatient |
+| Draft as of 2026-02-13 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:MyPatient |
 
  
 An example profile of the Patient resource. 
@@ -40,7 +40,7 @@ Other representations of profile: [CSV](StructureDefinition-MyPatient.csv), [Exc
   "version" : "0.1.0",
   "name" : "MyPatient",
   "status" : "draft",
-  "date" : "2026-02-12T15:14:29+00:00",
+  "date" : "2026-02-13T19:47:50+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [
     {
