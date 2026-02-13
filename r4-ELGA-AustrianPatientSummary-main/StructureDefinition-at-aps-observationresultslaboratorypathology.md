@@ -19,7 +19,7 @@
   "name" : "AtApsObservationResultsLaboratoryPathology",
   "title" : "AT APS Observation Results Laboratory Pathology",
   "status" : "active",
-  "date" : "2026-02-09T07:50:08+00:00",
+  "date" : "2026-02-13T12:44:21+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -226,7 +226,7 @@
         "path" : "Observation.interpretation",
         "binding" : {
           "strength" : "extensible",
-          "valueSet" : "https://fhir.hl7.at/elga/aps/r4/ValueSet/at-aps-observationinterpretation"
+          "valueSet" : "https://termgit.elga.gv.at/ValueSet/at-aps-observationinterpretation"
         }
       },
       {
@@ -337,7 +337,7 @@
         "path" : "Observation.component.interpretation",
         "binding" : {
           "strength" : "extensible",
-          "valueSet" : "https://fhir.hl7.at/elga/aps/r4/ValueSet/at-aps-observationinterpretation"
+          "valueSet" : "https://termgit.elga.gv.at/ValueSet/at-aps-observationinterpretation"
         }
       }
     ]
