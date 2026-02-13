@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MedicationDispense xmlns="http://hl7.org/fhir">
+  <id value="AtApsExampleMedicationDispense01"/>
+  <meta>
+    <profile value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationdispense"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: MedicationDispense AtApsExampleMedicationDispense01</b></p><a name="AtApsExampleMedicationDispense01"> </a><a name="hcAtApsExampleMedicationDispense01"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-aps-medicationdispense.html">AT APS MedicationDispense</a></p></div><p><b>status</b>: Completed</p><p><b>medication</b>: <a href="Medication-AtApsExampleMedication01.html">Ramipril 5mg Kapseln</a></p><p><b>subject</b>: <a href="Patient-at-aps-example-patient-01.html">Maria Musterfrau</a></p><h3>Performers</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Actor</b></td></tr><tr><td style="display: none">*</td><td><a href="Organization-AtApsExampleOrganization01.html">Amadeus Spital</a></td></tr></table><p><b>authorizingPrescription</b>: <a href="MedicationRequest-AtApsExampleMedicationRequest01.html">Verordnung Ramipril</a></p><p><b>quantity</b>: 30 Kapseln</p><p><b>daysSupply</b>: 30 Tage<span style="background: LightGoldenRodYellow"> (Details: UCUM  coded = 'd')</span></p><p><b>whenHandedOver</b>: 2024-10-15 09:30:00+0100</p><h3>DosageInstructions</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Text</b></td><td><b>Timing</b></td><td><b>Route</b></td></tr><tr><td style="display: none">*</td><td>1 Kapsel täglich morgens</td><td>Once per 1 day</td><td><span title="Codes:{http://snomed.info/sct 26643006}">Oral use</span></td></tr></table></div>
+  </text>
+  <status value="completed"/>
+  <medicationReference>
+    <reference value="Medication/AtApsExampleMedication01"/>
+    <display value="Ramipril 5mg Kapseln"/>
+  </medicationReference>
+  <subject>
+    <reference value="Patient/at-aps-example-patient-01"/>
+    <display value="Maria Musterfrau"/>
+  </subject>
+  <performer>
+    <actor>
+      <reference value="Organization/AtApsExampleOrganization01"/>
+      <display value="Amadeus Spital"/>
+    </actor>
+  </performer>
+  <authorizingPrescription>
+    <reference value="MedicationRequest/AtApsExampleMedicationRequest01"/>
+    <display value="Verordnung Ramipril"/>
+  </authorizingPrescription>
+  <quantity>
+    <value value="30"/>
+    <unit value="Kapseln"/>
+  </quantity>
+  <daysSupply>
+    <value value="30"/>
+    <unit value="Tage"/>
+    <system value="http://unitsofmeasure.org"/>
+    <code value="d"/>
+  </daysSupply>
+  <whenHandedOver value="2024-10-15T09:30:00+01:00"/>
+  <dosageInstruction>
+    <text value="1 Kapsel täglich morgens"/>
+    <timing>
+      <repeat>
+        <frequency value="1"/>
+        <period value="1"/>
+        <periodUnit value="d"/>
+      </repeat>
+    </timing>
+    <route>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="26643006"/>
+        <display value="Oral use"/>
+      </coding>
+    </route>
+  </dosageInstruction>
+</MedicationDispense>
