@@ -20,7 +20,29 @@
   "organization" : {
     "reference" : "Organization/AtApsExampleOrganization01",
     "display" : "Amadeus Spital"
-  }
+  },
+  "code" : [
+    {
+      "coding" : [
+        {
+          "system" : "https://termgit.elga.gv.at/CodeSystem/elga-gtelvogdarollen",
+          "code" : "1000",
+          "display" : "Ärztin/Arzt"
+        }
+      ]
+    }
+  ],
+  "specialty" : [
+    {
+      "coding" : [
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "419192003",
+          "display" : "Internal medicine"
+        }
+      ]
+    }
+  ]
 }
 
 ```
