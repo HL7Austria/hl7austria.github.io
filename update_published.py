@@ -17,9 +17,9 @@ class Entry():
         self.branch = branch
         self.published = published
 
-def fromYaml( name, yaml,fname ):
+def fromYaml( name, yaml, fname):
 
-    if len(yaml) == 6:
+    if len(yaml) == 7:
         label = 'label-warning'
         if index_yml[4].get("branch", "n.a.") == MAIN_BRANCH_NAME and index_yml[0].get("name", "").startswith('HL7'):
             label = 'label-success'
@@ -40,7 +40,8 @@ def fromYaml( name, yaml,fname ):
             "branch" : index_yml[4].get("branch", "n.a."),
             "published" : index_yml[3].get("last_published", "n.a."),
             "type" :  index_yml[5].get("type", "n.a."),
-            "fname": fname
+            "fname": fname,
+            "repo": index_yml[6].get("repo", "n.a.")
         }
     else:
         print(f"❌ The provided yaml configuration in {name} does not contain all required properties")
@@ -63,7 +64,7 @@ def from_package_list(entry_value, folder_name):
 def build_publication(content):
     rows = ''
     for entry in content:
-        rows += f"""<p class="mb-1" style="margin-top:6px;color:#666"><a href="./{entry['fname']}/index.html">Implementation Guide</a> | <a href="https://simplifier.net/packages/{entry['id']}">FHIR Registry</a> | <a href="https://build.fhir.org/ig/HL7Austria/{entry['fname']}/index.html">CI Build</a> | <a href="./{entry['fname']}/history.html">Publication History</a> | <a href="https://github.com/HL7Austria/{entry['fname']}">Source</a></p>"""
+        rows += f"""<p class="mb-1" style="margin-top:6px;color:#666"><a href="./{entry['branch']}/index.html">Implementation Guide</a> | <a href="https://simplifier.net/packages/{entry['id']}">FHIR Registry</a> | <a href="https://build.fhir.org/ig/HL7Austria/{entry['repo']}/index.html">CI Build</a> | <a href="./{entry['branch']}/history.html">Publication History</a> | <a href="https://github.com/HL7Austria/{entry['repo']}">Source</a></p>"""
     return rows
 
 def build_table_html( cn, clazz = 'datatable' ):
@@ -80,7 +81,7 @@ def build_table_html( cn, clazz = 'datatable' ):
 
     return ret
 
-regex = '<!--\s*@@begin-include\s*-->(.*)<!--\s*@@end-include\s*-->'
+regex = '<!--\\s*@@begin-include\\s*-->(.*)<!--\\s*@@end-include\\s*-->'
 content = '<!-- @@begin-include --><h3 style="margin-top:20px">Official HL7-AT IGs</h3>'
 partnerContent = '<h3 style="margin-top:50px">HL7 Austria Member IGs</h3>'
 
@@ -90,7 +91,7 @@ hl7content = dict()
 membercontent = dict()
 workingcontent = dict()
 
-for name in glob.glob('./*/_index.yml'):
+for name in glob.glob('./**/_index.yml', recursive=True):
 
     with open(name) as file:
         index_yml = yaml.load(file, Loader=yaml.FullLoader)
@@ -99,7 +100,7 @@ for name in glob.glob('./*/_index.yml'):
         entry_value = fromYaml(name, index_yml, folder_name)
 
         if entry_value is not None:
-            if entry_value['branch'] == entry_value['fname']:
+            if entry_value['branch'].replace('\\','').replace('/','') == entry_value['fname'].replace('\\','').replace('/',''):
                 entry_value = from_package_list(entry_value, folder_name)
 
                 if entry_value['name'].startswith('HL7'):
