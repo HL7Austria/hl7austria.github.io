@@ -19,7 +19,7 @@
   "name" : "AtApsMedication",
   "title" : "AT APS Medication",
   "status" : "active",
-  "date" : "2026-02-13T12:44:21+00:00",
+  "date" : "2026-02-16T08:31:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

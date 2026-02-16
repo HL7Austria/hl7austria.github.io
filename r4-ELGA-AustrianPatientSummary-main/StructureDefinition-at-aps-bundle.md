@@ -19,7 +19,7 @@
   "name" : "AtApsBundle",
   "title" : "AT APS Bundle",
   "status" : "active",
-  "date" : "2026-02-13T12:44:21+00:00",
+  "date" : "2026-02-16T08:31:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -425,161 +425,21 @@
         ]
       },
       {
-        "id" : "Bundle.entry:ObservationPregnancyEdd",
+        "id" : "Bundle.entry:Observation",
         "path" : "Bundle.entry",
-        "sliceName" : "ObservationPregnancyEdd",
+        "sliceName" : "Observation",
         "min" : 0,
         "max" : "*"
       },
       {
-        "id" : "Bundle.entry:ObservationPregnancyEdd.resource",
+        "id" : "Bundle.entry:Observation.resource",
         "path" : "Bundle.entry.resource",
         "min" : 1,
         "type" : [
           {
             "code" : "Observation",
             "profile" : [
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationpregnancyedd"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Bundle.entry:ObservationPregnancyOutcome",
-        "path" : "Bundle.entry",
-        "sliceName" : "ObservationPregnancyOutcome",
-        "min" : 0,
-        "max" : "*"
-      },
-      {
-        "id" : "Bundle.entry:ObservationPregnancyOutcome.resource",
-        "path" : "Bundle.entry.resource",
-        "min" : 1,
-        "type" : [
-          {
-            "code" : "Observation",
-            "profile" : [
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationpregnancyoutcome"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Bundle.entry:ObservationPregnancyStatus",
-        "path" : "Bundle.entry",
-        "sliceName" : "ObservationPregnancyStatus",
-        "min" : 0,
-        "max" : "*"
-      },
-      {
-        "id" : "Bundle.entry:ObservationPregnancyStatus.resource",
-        "path" : "Bundle.entry.resource",
-        "min" : 1,
-        "type" : [
-          {
-            "code" : "Observation",
-            "profile" : [
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationpregnancystatus"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Bundle.entry:ObservationAlcoholUse",
-        "path" : "Bundle.entry",
-        "sliceName" : "ObservationAlcoholUse",
-        "min" : 0,
-        "max" : "*"
-      },
-      {
-        "id" : "Bundle.entry:ObservationAlcoholUse.resource",
-        "path" : "Bundle.entry.resource",
-        "min" : 1,
-        "type" : [
-          {
-            "code" : "Observation",
-            "profile" : [
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationalcoholuse"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Bundle.entry:ObservationTobaccoUse",
-        "path" : "Bundle.entry",
-        "sliceName" : "ObservationTobaccoUse",
-        "min" : 0,
-        "max" : "*"
-      },
-      {
-        "id" : "Bundle.entry:ObservationTobaccoUse.resource",
-        "path" : "Bundle.entry.resource",
-        "min" : 1,
-        "type" : [
-          {
-            "code" : "Observation",
-            "profile" : [
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationtobaccouse"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Bundle.entry:ObservationResultsLaboratoryPathology",
-        "path" : "Bundle.entry",
-        "sliceName" : "ObservationResultsLaboratoryPathology",
-        "min" : 0,
-        "max" : "*"
-      },
-      {
-        "id" : "Bundle.entry:ObservationResultsLaboratoryPathology.resource",
-        "path" : "Bundle.entry.resource",
-        "min" : 1,
-        "type" : [
-          {
-            "code" : "Observation",
-            "profile" : [
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationresultslaboratorypathology"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Bundle.entry:ObservationResultsRadiology",
-        "path" : "Bundle.entry",
-        "sliceName" : "ObservationResultsRadiology",
-        "min" : 0,
-        "max" : "*"
-      },
-      {
-        "id" : "Bundle.entry:ObservationResultsRadiology.resource",
-        "path" : "Bundle.entry.resource",
-        "min" : 1,
-        "type" : [
-          {
-            "code" : "Observation",
-            "profile" : [
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationresultsradiology"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Bundle.entry:ObservationVitalSigns",
-        "path" : "Bundle.entry",
-        "sliceName" : "ObservationVitalSigns",
-        "min" : 0,
-        "max" : "*"
-      },
-      {
-        "id" : "Bundle.entry:ObservationVitalSigns.resource",
-        "path" : "Bundle.entry.resource",
-        "min" : 1,
-        "type" : [
-          {
-            "code" : "Observation",
-            "profile" : [
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationvitalsigns"
+              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation"
             ]
           }
         ]

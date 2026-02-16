@@ -14,7 +14,7 @@
   "title" : "Austrian Patient Summary (R4)",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-02-13T12:44:21+00:00",
+  "date" : "2026-02-16T08:31:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -171,6 +171,19 @@
           {
             "url" : "value",
             "valueString" : "../resources/Parameters-AtApsExpansionParametersSCT.json"
+          }
+        ],
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension" : [
+          {
+            "url" : "code",
+            "valueString" : "pin-canonicals"
+          },
+          {
+            "url" : "value",
+            "valueString" : "pin-multiples"
           }
         ],
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
@@ -558,6 +571,19 @@
           {
             "url" : "value",
             "valueString" : "../resources/Parameters-AtApsExpansionParametersSCT.json"
+          }
+        ],
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension" : [
+          {
+            "url" : "code",
+            "valueCode" : "pin-canonicals"
+          },
+          {
+            "url" : "value",
+            "valueString" : "pin-multiples"
           }
         ],
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
@@ -1595,6 +1621,34 @@
         "extension" : [
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "Device"
+          }
+        ],
+        "reference" : {
+          "reference" : "Device/at-aps-example-device-03"
+        },
+        "name" : "AtApsExampleDevice03",
+        "description" : "Medizinprodukt",
+        "exampleBoolean" : true
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "Device"
+          }
+        ],
+        "reference" : {
+          "reference" : "Device/AtApsExampleDevice04"
+        },
+        "name" : "AtApsExampleDevice04",
+        "description" : "APS Generator",
+        "exampleBoolean" : true
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString" : "Organization"
           }
         ],
@@ -1861,6 +1915,20 @@
         "extension" : [
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "Composition"
+          }
+        ],
+        "reference" : {
+          "reference" : "Composition/AtApsComposition01"
+        },
+        "name" : "Austrian Patient Summary",
+        "description" : "Composition",
+        "exampleCanonical" : "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-composition"
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString" : "Immunization"
           }
         ],
@@ -1912,6 +1980,20 @@
         "name" : "Patient Journey Practitioner",
         "description" : "Beispiel eines behandelnden Arztes in der Patient Journey",
         "exampleCanonical" : "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner"
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "PractitionerRole"
+          }
+        ],
+        "reference" : {
+          "reference" : "PractitionerRole/AtApsExamplePractitionerRole01"
+        },
+        "name" : "Patient Journey Practitioner",
+        "description" : "Beispiel eines behandelnden Arztes und seiner Organisation",
+        "exampleCanonical" : "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole"
       },
       {
         "extension" : [

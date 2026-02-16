@@ -849,9 +849,14 @@
       "resource" : {
         "resourceType" : "Observation",
         "id" : "AtApsExample03Diabetes-problem-17-assessment-1",
+        "meta" : {
+          "profile" : [
+            "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation"
+          ]
+        },
         "text" : {
           "status" : "generated",
-          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_AtApsExample03Diabetes-problem-17-assessment-1\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation AtApsExample03Diabetes-problem-17-assessment-1</b></p><a name=\"AtApsExample03Diabetes-problem-17-assessment-1\"> </a><a name=\"hcAtApsExample03Diabetes-problem-17-assessment-1\"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 1237049003}\">Bewertung der Risikofaktoren für Parodontalerkrankungen</span></p><p><b>subject</b>: <a href=\"Bundle-AtApsExample03Diabetes.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8\">Maria Musterfrau</a></p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>performer</b>: <a href=\"Bundle-AtApsExample03Diabetes.html#urn-uuid-75db30ee-7028-486c-929a-c5126837f472\">Dr. IV-Ärztin</a></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 723509005}\">Hohes Risiko</span></p></div>"
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_AtApsExample03Diabetes-problem-17-assessment-1\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation AtApsExample03Diabetes-problem-17-assessment-1</b></p><a name=\"AtApsExample03Diabetes-problem-17-assessment-1\"> </a><a name=\"hcAtApsExample03Diabetes-problem-17-assessment-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-observation.html\">AT APS Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category exam}\">Exam</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 1237049003}\">Bewertung der Risikofaktoren für Parodontalerkrankungen</span></p><p><b>subject</b>: <a href=\"Bundle-AtApsExample03Diabetes.html#urn-uuid-0fed5ebe-ca8f-4ad1-aba4-ddad45bd6cc8\">Maria Musterfrau</a></p><p><b>effective</b>: 2024-02-08 08:30:00+0100</p><p><b>performer</b>: <a href=\"Bundle-AtApsExample03Diabetes.html#urn-uuid-75db30ee-7028-486c-929a-c5126837f472\">Dr. IV-Ärztin</a></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 723509005}\">Hohes Risiko</span></p></div>"
         },
         "status" : "final",
         "category" : [

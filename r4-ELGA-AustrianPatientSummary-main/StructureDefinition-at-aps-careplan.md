@@ -13,7 +13,7 @@
   "name" : "AtApsCarePlan",
   "title" : "AT APS CarePlan",
   "status" : "active",
-  "date" : "2026-02-13T12:44:21+00:00",
+  "date" : "2026-02-16T08:31:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -106,7 +106,7 @@
           {
             "code" : "Extension",
             "profile" : [
-              "http://hl7.org/fhir/StructureDefinition/workflow-shallComplyWith"
+              "http://hl7.org/fhir/StructureDefinition/workflow-shallComplyWith|5.2.0"
             ]
           }
         ]
@@ -120,7 +120,9 @@
         "type" : [
           {
             "code" : "Extension",
-            "profile" : ["http://hl7.org/fhir/StructureDefinition/workflow-adheresTo"]
+            "profile" : [
+              "http://hl7.org/fhir/StructureDefinition/workflow-adheresTo|5.2.0"
+            ]
           }
         ]
       },
