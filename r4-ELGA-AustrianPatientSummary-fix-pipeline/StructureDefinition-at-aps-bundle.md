@@ -19,7 +19,7 @@
   "name" : "AtApsBundle",
   "title" : "AT APS Bundle",
   "status" : "active",
-  "date" : "2026-02-16T12:34:18+00:00",
+  "date" : "2026-02-16T16:11:34+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
