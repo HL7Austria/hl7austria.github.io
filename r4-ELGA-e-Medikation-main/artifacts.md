@@ -50,6 +50,8 @@ These are example instances that show what data produced and consumed by systems
 
 | | |
 | :--- | :--- |
+| [AtEmedJourneyBundleMedikationsplan01ss01](Bundle-AtEmedJourneyBundleMedikationsplan01ss01.md) |  |
+| [AtEmedJourneyBundleMedikationsplan02ss01](Bundle-AtEmedJourneyBundleMedikationsplan02ss01.md) |  |
 | [Beispiel Durchgeführte Abgabe 1](MedicationDispense-AtEmedExampleDurchgefuehrteAbgabe01.md) | Beispiel Durchgeführte Abgabe 1 |
 | [Beispiel Journey 01: Collection Bundle](Bundle-AtEmedJourneyBundleMedikationsplan01.md) | **Beschreibung:** Beispiel eines Collection Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge). |
 | [Beispiel Journey 01: Leerer Medikationsplan](List-AtEmedJourneyListMedikationsplan01.md) | **Beschreibung:** Beispiel eines leeren Mediaktionsplans (List-Ressource ohne Einträge) |

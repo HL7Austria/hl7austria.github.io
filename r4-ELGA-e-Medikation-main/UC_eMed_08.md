@@ -9,9 +9,7 @@
 ### Beschreibung
 
 GDA sollen eine geplante Abgabe für eine:n ELGA-Teilnehmer:in erfassen oder korrigieren können, um diese zum Zweck der medizinischen Dokumentation festzuhalten. 
- ELGA-Teilnehmer:in sollen einzelne Abgabeneinträge unwiderruflich löschen können. 
-
- Details zu "Die e-Abgabe" (ab Kapitel Geplante Abgaben erfassen), siehe "[Die e-Medikation](requirements.md)"
+ ELGA-Teilnehmer:in sollen einzelne Abgabeneinträge unwiderruflich löschen können.
 
 ### Akteure
 

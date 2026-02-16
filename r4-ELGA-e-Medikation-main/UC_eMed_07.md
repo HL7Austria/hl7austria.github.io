@@ -10,9 +10,7 @@
 
 GDA sollen alle geplanten und durchgeführten Abgaben von ELGA-Teilnehmer:innen mit Behandlungsbezug einsehen können, um sich einen Überblick zu den verordneten und abgegebenen Medikamenten zu verschaffen.
 
-ELGA-Teilnehmer:innen sollen alle geplanten und durchgeführten Abgaben einsehen können, um sich einen Überblick zu den verordneten und abgegebenen Medikamenten zu verschaffen. 
-
- Details zu "Die e-Abgabe" (Kapitel zur Anzeige von Abgaben), siehe "[Die e-Medikation](requirements.md)"
+ELGA-Teilnehmer:innen sollen alle geplanten und durchgeführten Abgaben einsehen können, um sich einen Überblick zu den verordneten und abgegebenen Medikamenten zu verschaffen.
 
 ### Akteure
 

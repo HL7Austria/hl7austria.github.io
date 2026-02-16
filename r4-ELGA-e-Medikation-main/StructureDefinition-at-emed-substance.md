@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-substance | *Version*:0.1.1 | |
-| Draft as of 2026-02-12 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedSubstance |
+| Draft as of 2026-02-16 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedSubstance |
 
  
 **Beschreibung:** Dokumentation der Substanz eines Inhaltsstoffes eines Arzneimittels, sofern es nicht kodiert vorliegt. 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-substance.cs
   "name" : "AtEmedSubstance",
   "title" : "ELGA e-Med Substanz",
   "status" : "draft",
-  "date" : "2026-02-12T16:23:56+00:00",
+  "date" : "2026-02-16T10:10:16+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

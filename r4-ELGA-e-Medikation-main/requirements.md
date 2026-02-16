@@ -7,16 +7,34 @@
 
 ### Patient Journey
 
-#### Inital (Journey01):
+#### Journey01:
 
-1. Patient anlegen:[Patient](Patient-AtEmedExamplePatient01.md)
-1. Arzt anlegen:[Practitioner](Practitioner-AtEmedExamplePractitioner01.md)
-1. Apotheke anlegen:[Organization](Organization-AtEmedExampleOrganizationApo01.md)
-1. Leeren Medikationsplan für einen Patienten anlegen (Transaction Bundle):[Medikationsplan anlegen](Bundle-AtEmedJourneyBundleMedikationsplanTx01.md)
-1. Leeren Medikationsplan anzeigen (Collection Bundle):[Medikationsplan anzeigen](Bundle-AtEmedJourneyBundleMedikationsplan01.md)
+##### Initial: Ressourcen anlegen:
 
-#### Medikationsplan aktualisieren (Journey02):
+* Patient anlegen: [Patient](Patient-AtEmedExamplePatient01.md)
+* Arzt anlegen: [Practitioner](Practitioner-AtEmedExamplePractitioner01.md)
+* Apotheke anlegen: [Organization](Organization-AtEmedExampleOrganizationApo01.md)
+* Leeren Medikationsplan für einen Patienten anlegen: 
+* Beispiel: [Transaction Bundle](Bundle-AtEmedJourneyBundleMedikationsplanTx01.md)
+ 
 
-1. Medikationsplan mit 2 Medikationsplaneinträgen aktualisieren (Transaction Bundle):[Medikationsplan aktualisieren](Bundle-AtEmedJourneyBundleMedikationsplanTx02.md)
-1. Medikationsplan mit 2 Medikationsplaneinträgen anzeigen (Collection Bundle):[Medikationsplan anzeigen](Bundle-AtEmedJourneyBundleMedikationsplan02.md)
+#### Journey02:
+
+##### Medikationsplan lesen:
+
+* Leeren Medikationsplan anzeigen: 
+* Beseispiel: [Collection Bundle](Bundle-AtEmedJourneyBundleMedikationsplan01.md)
+ 
+
+##### Medikationsplan schreiben:
+
+* Medikationsplaneinträge hinzufügen: 
+* Beispiel [Transaction Bundle](Bundle-AtEmedJourneyBundleMedikationsplanTx02.md)
+ 
+
+##### Medikationsplan lesen:
+
+* Medikationsplan mit 2 Medikationsplaneinträgen anzeigen: 
+* Beispiel: [Collection Bundle](Bundle-AtEmedJourneyBundleMedikationsplan02.md)
+ 
 

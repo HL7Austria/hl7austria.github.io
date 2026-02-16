@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication | *Version*:0.1.1 | |
-| Draft as of 2026-02-12 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedication |
+| Draft as of 2026-02-16 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedication |
 
  
 **Beschreibung:** Bildet ein Arzneimittel in der "Medication"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, geplante Abgabe und durchgeführte Abgabe. Aktuell nur geprüft im Kontext Planeintrag. Unterschieden werden folgende Fälle: 
@@ -46,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
   "name" : "AtEmedMedication",
   "title" : "ELGA e-Med Medikation",
   "status" : "draft",
-  "date" : "2026-02-12T16:23:56+00:00",
+  "date" : "2026-02-16T10:10:16+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

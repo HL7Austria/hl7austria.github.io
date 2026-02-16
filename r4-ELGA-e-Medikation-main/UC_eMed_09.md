@@ -9,9 +9,7 @@
 ### Beschreibung
 
 GDA (Apotheke) sollen eine durchgeführte Abgabe für eine:n ELGA-Teilnehmer:in erfassen oder korrigieren können, um diese zum Zweck der medizinischen Dokumentation festzuhalten. 
- Ein:e ELGA-Teilnehmer:in soll einzelne Abgabeneinträge unwiderruflich löschen können. 
-
- Details zu "Die e-Abgabe" (ab Kapitel Durchgeführte Abgaben erfassen), siehe "[Die e-Medikation](requirements.md)"
+ Ein:e ELGA-Teilnehmer:in soll einzelne Abgabeneinträge unwiderruflich löschen können.
 
 ### Akteure
 

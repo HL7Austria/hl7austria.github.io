@@ -33,7 +33,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) ENTWURF",
   "status" : "draft",
-  "date" : "2026-02-12T16:23:56+00:00",
+  "date" : "2026-02-16T10:10:16+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -768,6 +768,32 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       }
     ],
     "resource" : [
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "Bundle"
+          }
+        ],
+        "reference" : {
+          "reference" : "Bundle/AtEmedJourneyBundleMedikationsplan01ss01"
+        },
+        "name" : "AtEmedJourneyBundleMedikationsplan01ss01",
+        "exampleBoolean" : true
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "Bundle"
+          }
+        ],
+        "reference" : {
+          "reference" : "Bundle/AtEmedJourneyBundleMedikationsplan02ss01"
+        },
+        "name" : "AtEmedJourneyBundleMedikationsplan02ss01",
+        "exampleBoolean" : true
+      },
       {
         "extension" : [
           {
