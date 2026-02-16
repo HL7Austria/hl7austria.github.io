@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CarePlan xmlns="http://hl7.org/fhir">
+  <id value="AtApsExampleCareplan01"/>
+  <meta>
+    <profile value="https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan"/>
+  </meta>
+  <text>
+    <status value="additional"/><div xmlns="http://www.w3.org/1999/xhtml"><p>Ein einfacher Pflegeplan, der angibt, dass ein Patient aufgrund von Adipositas einmal täglich sein Gewicht messen soll.</p></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/workflow-shallComplyWith">
+    <valueUri value="http://example.org/protocol-for-obesity"/>
+  </extension>
+  <identifier>
+    <value value="12345"/>
+  </identifier>
+  <basedOn>
+    <display value="Behandlung von Typ-2-Diabetes"/>
+  </basedOn>
+  <replaces>
+    <display value="Plan der Klinik"/>
+  </replaces>
+  <partOf>
+    <display value="Allgemeiner Wellnessplan"/>
+  </partOf>
+  <status value="active"/>
+  <intent value="plan"/>
+  <category>
+    <text value="Gewichtsmanagementplan"/>
+  </category>
+  <description value="Übergewicht und Gewichtsverlust managen"/>
+  <subject>
+    <reference value="Patient/at-aps-example-patient-01"/>
+    <display value="Maria Musterfrau"/>
+  </subject>
+  <period>
+    <end value="2017-06-01"/>
+  </period>
+  <created value="2016-01-01"/>
+  <author>
+    <reference value="Practitioner/at-aps-example-practitioner-01"/>
+    <display value="Hanna Hausärztin"/>
+  </author>
+  <addresses>
+    <reference value="Condition/AtApsExampleCondition01"/>
+  </addresses>
+  <activity>
+    <outcomeCodeableConcept>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="416528001"/>
+        <display value="Intentional weight loss"/>
+      </coding>
+    </outcomeCodeableConcept>
+  </activity>
+</CarePlan>
