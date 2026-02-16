@@ -1,4 +1,4 @@
-# AtApsObservationPregnancyEdd-Beispiel - Austrian Patient Summary (R4) v0.2.0
+# AtApsObservationPregnancyEdd-Beispiel - Austrian Patient Summary (R4) v1.0.0
 
 
 

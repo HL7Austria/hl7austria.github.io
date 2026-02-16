@@ -1,4 +1,4 @@
-# AT APS Observation - Austrian Patient Summary (R4) v0.2.0
+# AT APS Observation - Austrian Patient Summary (R4) v1.0.0
 
 
 
@@ -9,11 +9,11 @@
   "resourceType" : "StructureDefinition",
   "id" : "at-aps-observation",
   "url" : "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation",
-  "version" : "0.2.0",
+  "version" : "1.0.0",
   "name" : "AtApsObservation",
   "title" : "AT APS Observation",
   "status" : "active",
-  "date" : "2026-02-16T08:31:54+00:00",
+  "date" : "2026-02-16T11:13:42+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

@@ -1,4 +1,4 @@
-# AtApsExampleDevice03 - Austrian Patient Summary (R4) v0.2.0
+# AtApsExampleDevice03 - Austrian Patient Summary (R4) v1.0.0
 
 
 

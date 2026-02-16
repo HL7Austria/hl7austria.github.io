@@ -1,4 +1,4 @@
-# AtApsPatient-Beispiel - Austrian Patient Summary (R4) v0.2.0
+# AtApsPatient-Beispiel - Austrian Patient Summary (R4) v1.0.0
 
 
 

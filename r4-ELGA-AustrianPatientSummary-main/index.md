@@ -1,4 +1,4 @@
-# Home - Austrian Patient Summary (R4) v0.2.0
+# Home - Austrian Patient Summary (R4) v1.0.0
 
 
 
@@ -9,12 +9,12 @@
   "resourceType" : "ImplementationGuide",
   "id" : "hl7.at.fhir.elga.aps.r4",
   "url" : "https://fhir.hl7.at/elga/aps/r4/ImplementationGuide/hl7.at.fhir.elga.aps.r4",
-  "version" : "0.2.0",
+  "version" : "1.0.0",
   "name" : "ELGAAustrianPatientSummaryR4",
   "title" : "Austrian Patient Summary (R4)",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-02-16T08:31:54+00:00",
+  "date" : "2026-02-16T11:13:42+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

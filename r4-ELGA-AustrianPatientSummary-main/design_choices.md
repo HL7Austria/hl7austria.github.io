@@ -1,2 +1,2 @@
-# Designentscheidungen - Austrian Patient Summary (R4) v0.2.0
+# Designentscheidungen - Austrian Patient Summary (R4) v1.0.0
 

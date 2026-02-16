@@ -1,4 +1,4 @@
-# AtApsImagingStudy-Beispiel - Austrian Patient Summary (R4) v0.2.0
+# AtApsImagingStudy-Beispiel - Austrian Patient Summary (R4) v1.0.0
 
 
 

@@ -1,4 +1,4 @@
-# AT APS CapabilityStatement (Server) - Austrian Patient Summary (R4) v0.2.0
+# AT APS CapabilityStatement (Server) - Austrian Patient Summary (R4) v1.0.0
 
 
 
@@ -9,7 +9,7 @@
   "resourceType" : "CapabilityStatement",
   "id" : "at-aps-capabilitystatement-server",
   "url" : "https://fhir.hl7.at/elga/aps/r4/CapabilityStatement/at-aps-capabilitystatement-server",
-  "version" : "0.2.0",
+  "version" : "1.0.0",
   "name" : "AtApsCapabilityStatementServer",
   "title" : "AT APS CapabilityStatement (Server)",
   "status" : "active",

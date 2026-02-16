@@ -1,4 +1,4 @@
-# AtApsBundle-Beispiel 3 - Austrian Patient Summary (R4) v0.2.0
+# AtApsBundle-Beispiel 3 - Austrian Patient Summary (R4) v1.0.0
 
 
 
