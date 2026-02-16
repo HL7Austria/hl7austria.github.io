@@ -34,7 +34,9 @@ These define sets of codes used by systems conforming to this implementation gui
 
 | | |
 | :--- | :--- |
+| [ELGA e-Med Geplante Abgabe Status ValueSet](ValueSet-GeplanteAbgabeStatusVS.md) | **Beschreibung:** ValueSet für zulässige Ausprägungen eines Status einer geplanten Abgabe (MedicationRequest). |
 | [ELGA e-Med MedicationRequest Kategorie ValueSet](ValueSet-MedicationRequestCategoryVS.md) | **Beschreibung:** ValueSet für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen |
+| [ELGA e-Med Medikationsplaneintrag Status Value Set](ValueSet-MedikationsplaneintragStatusVS.md) | **Beschreibung:** ValueSet für zulässige Ausprägungen eines Status eines Medikationsplaneintrags (MedicationRequest). |
 
 ### Terminology: Code Systems 
 
@@ -43,6 +45,7 @@ These define new code systems used by systems conforming to this implementation 
 | | |
 | :--- | :--- |
 | [ELGA e-Med MedicationRequest Kategorie CodeSystem](CodeSystem-MedicationRequestCategoryCS.md) | **Beschreibung:** Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen. |
+| [ELGA e-Med MedicationRequest Status](CodeSystem-MedicationRequestStatusCS.md) | **Beschreibung:** Codesystem für zulässige Ausprägungen eines Status eines MedicationRequests im Medikationsplaneintrag und in geplanter Abgabe. Basiert auf VS https://hl7.org/fhir/R4/valueset-medicationrequest-status.html, ohne Status: draft, unknown |
 
 ### Example: Example Instances 
 

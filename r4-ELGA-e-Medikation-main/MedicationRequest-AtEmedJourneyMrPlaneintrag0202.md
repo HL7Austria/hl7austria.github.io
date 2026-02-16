@@ -28,6 +28,10 @@
           "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"
         ]
       },
+      "text" : {
+        "status" : "additional",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Freitext-Informationen zur magistralen Anwendung.</p></div>"
+      },
       "form" : {
         "coding" : [
           {
@@ -122,7 +126,7 @@
   ],
   "identifier" : [
     {
-      "value" : "4712"
+      "value" : "4713_202602280800000"
     }
   ],
   "status" : "active",

@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "ELGAeMedikationR4"] ; # 
   fhir:title [ fhir:v "ELGA e-Medikation (R4) ENTWURF"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-02-16T10:10:16+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-02-16T15:59:40+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ELGA GmbH" ] ;
@@ -1760,6 +1760,27 @@
          ] ;
          fhir:value [
            a fhir:String ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/elga/emed/r4/ValueSet/GeplanteAbgabeStatusVS> ;
+         fhir:reference [ fhir:v "ValueSet/GeplanteAbgabeStatusVS" ]
+       ] ;
+       fhir:name [ fhir:v "ELGA e-Med Geplante Abgabe Status ValueSet" ] ;
+       fhir:description [ fhir:v "**Beschreibung:** ValueSet für zulässige Ausprägungen eines Status einer geplanten Abgabe (MedicationRequest)." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
            fhir:v "CodeSystem"
          ]
        ] ) ;
@@ -1790,6 +1811,27 @@
        ] ;
        fhir:name [ fhir:v "ELGA e-Med MedicationRequest Kategorie ValueSet" ] ;
        fhir:description [ fhir:v "**Beschreibung:** ValueSet für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestStatusCS> ;
+         fhir:reference [ fhir:v "CodeSystem/MedicationRequestStatusCS" ]
+       ] ;
+       fhir:name [ fhir:v "ELGA e-Med MedicationRequest Status" ] ;
+       fhir:description [ fhir:v "**Beschreibung:** Codesystem für zulässige Ausprägungen eines Status eines MedicationRequests im Medikationsplaneintrag und in geplanter Abgabe. \nBasiert auf VS https://hl7.org/fhir/R4/valueset-medicationrequest-status.html, ohne Status: draft, unknown" ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -1874,6 +1916,27 @@
        ] ;
        fhir:name [ fhir:v "ELGA e-Med Medikationsplan Transaction Bundle" ] ;
        fhir:description [ fhir:v "**Beschreibung:** Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan bestehend aus: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus) \n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/elga/emed/r4/ValueSet/MedikationsplaneintragStatusVS> ;
+         fhir:reference [ fhir:v "ValueSet/MedikationsplaneintragStatusVS" ]
+       ] ;
+       fhir:name [ fhir:v "ELGA e-Med Medikationsplaneintrag Status Value Set" ] ;
+       fhir:description [ fhir:v "**Beschreibung:** ValueSet für zulässige Ausprägungen eines Status eines Medikationsplaneintrags (MedicationRequest)." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false

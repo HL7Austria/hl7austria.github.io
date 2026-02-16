@@ -11,7 +11,7 @@
   <name value="ELGAeMedikationR4"/>
   <title value="ELGA e-Medikation (R4) ENTWURF"/>
   <status value="draft"/>
-  <date value="2026-02-16T10:10:16+00:00"/>
+  <date value="2026-02-16T15:59:40+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -692,6 +692,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/GeplanteAbgabeStatusVS"/>
+      </reference>
+      <name value="ELGA e-Med Geplante Abgabe Status ValueSet"/>
+      <description value="**Beschreibung:** ValueSet für zulässige Ausprägungen eines Status einer geplanten Abgabe (MedicationRequest)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
@@ -710,6 +721,17 @@
       </reference>
       <name value="ELGA e-Med MedicationRequest Kategorie ValueSet"/>
       <description value="**Beschreibung:** ValueSet für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/MedicationRequestStatusCS"/>
+      </reference>
+      <name value="ELGA e-Med MedicationRequest Status"/>
+      <description value="**Beschreibung:** Codesystem für zulässige Ausprägungen eines Status eines MedicationRequests im Medikationsplaneintrag und in geplanter Abgabe. &#xA;Basiert auf VS https://hl7.org/fhir/R4/valueset-medicationrequest-status.html, ohne Status: draft, unknown"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -754,6 +776,17 @@
       </reference>
       <name value="ELGA e-Med Medikationsplan Transaction Bundle"/>
       <description value="**Beschreibung:** Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan bestehend aus: &#xA;- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus) &#xA;- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/MedikationsplaneintragStatusVS"/>
+      </reference>
+      <name value="ELGA e-Med Medikationsplaneintrag Status Value Set"/>
+      <description value="**Beschreibung:** ValueSet für zulässige Ausprägungen eines Status eines Medikationsplaneintrags (MedicationRequest)."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

@@ -13,10 +13,10 @@ Profile: [ELGA e-Med Medikationsplan](StructureDefinition-at-emed-list-medikatio
 | Date: 2026-01-28 08:00:00+0000 | Mode: Working List | Status: Current | Code: Medikationsplan |
 | Subject:[Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-AtEmedExamplePatient01.md)Source: Order: Sorted by User | | | |
 
-* **Items**: [MedicationRequest: extension = 2026-01-28 --> 2026-02-28,1 Kapsel täglich morgens; identifier = 4711; status = active; intent = order; category = Medikationsplaneintrag; medication[x] = ->InlineAtEmedJourneyMedicationMagistral01; authoredOn = 2026-01-28 08:00:00+0000; note = Freitext Informationen zum Medikationsplaneintrag.](MedicationRequest-AtEmedJourneyMrPlaneintrag0201.md)
+* **Items**: [MedicationRequest: extension = 2026-01-28 --> 2026-02-28,1 Kapsel täglich morgens; identifier = 4712_202602280800000; status = active; intent = order; category = Medikationsplaneintrag; medication[x] = ->InlineAtEmedJourneyMedicationMagistral01; authoredOn = 2026-01-28 08:00:00+0000; note = Freitext Informationen zum Medikationsplaneintrag.](MedicationRequest-AtEmedJourneyMrPlaneintrag0201.md)
   * Date: 2026-01-28 08:00:00+0000
   * Flag: Prescribed
-* **Items**: [MedicationRequest: extension = 2026-01-28 --> 2026-02-28,1 täglich auftragen; identifier = 4712; status = active; intent = order; category = Medikationsplaneintrag; medication[x] = ->InlineAtEmedJourneyMedicationMagistral02; authoredOn = 2026-01-28 08:00:00+0000; note = Freitext Informationen zum Medikationsplaneintrag.](MedicationRequest-AtEmedJourneyMrPlaneintrag0202.md)
+* **Items**: [MedicationRequest: extension = 2026-01-28 --> 2026-02-28,1 täglich auftragen; identifier = 4713_202602280800000; status = active; intent = order; category = Medikationsplaneintrag; medication[x] = ->InlineAtEmedJourneyMedicationMagistral02; authoredOn = 2026-01-28 08:00:00+0000; note = Freitext Informationen zum Medikationsplaneintrag.](MedicationRequest-AtEmedJourneyMrPlaneintrag0202.md)
   * Date: 2026-01-28 08:00:00+0000
   * Flag: Prescribed
 

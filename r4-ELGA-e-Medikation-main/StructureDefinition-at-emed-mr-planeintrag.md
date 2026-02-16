@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
   "name" : "AtEmedMRPlaneintrag",
   "title" : "ELGA e-Med Planeintrag",
   "status" : "draft",
-  "date" : "2026-02-16T10:10:16+00:00",
+  "date" : "2026-02-16T15:59:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -213,24 +213,29 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
         "id" : "MedicationRequest.identifier",
         "path" : "MedicationRequest.identifier",
         "short" : "Medikationsplaneintrag-ID. TODO: Verwendung einer logischen Medikationsplaneintrag-ID prüfen.\nEvt. mit Zeitstempel (Planeintrag-ID_{Zeitstempel}) zur Herstellung eines Bezugs von geänderten Planeinträgen.\nVorteil: \n- Auch wenn sich die PZN ändert, aber logisch der gleiche Eintrag betroffen ist (z.B. Austausch eines Arzneimittels durch ein anderes mit weniger Wechselwirkung), kann ein Bezug hergestellt werden.\n- Wenn zur Vorversion des Eintrags bereits eine geplante Abgabe erstellt wurde, kann ein Bezug zum ursprünglichen Eintrag hergestellt werden.\nNachteil: \n- Falls Planeinträge mit komplett neuer Arznei überschrieben werden, entsteht dadurch ein verwirrender Bezug. \n- Die Verantwortung, dass nur Einträge geändert werden, die keine komplett neue Medikation beinhalten, liegt beim Client.",
-        "mustSupport" : true
+        "min" : 1,
+        "max" : "1"
       },
       {
         "id" : "MedicationRequest.status",
         "path" : "MedicationRequest.status",
-        "short" : "Status des Medikationsplaneintrags. TODO: Einschränken auf active, complete, on hold; \n(req) active | on-hold | cancelled | completed | entered-in-error | stopped | draft | unknown \nTODO: Fachlich zu püfen, ob im Medikationsplan dokumentiert werden soll, dass und warum ein Medikament abgesetzt wurde (z.B. Allergie).\nAuch im Kontext mit statusReason, wo dieser Grund codiert angegeben werden kann.\n",
-        "mustSupport" : true
+        "short" : "Status des Medikationsplaneintrags. VS Einschränkung auf active, complete, on-hold, stopped (?); TODO: Fachlich zu püfen, ob im Medikationsplan dokumentiert werden soll, dass und warum ein Medikament abgesetzt wurde (Status: stopped, z.B. bei Allergie).\nAuch im Kontext mit statusReason, wo dieser Grund codiert angegeben werden kann.\n(entfernt: cancelled, entered-in-error, draft, unknown)",
+        "mustSupport" : true,
+        "binding" : {
+          "strength" : "required",
+          "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/MedikationsplaneintragStatusVS"
+        }
       },
       {
         "id" : "MedicationRequest.statusReason",
         "path" : "MedicationRequest.statusReason",
-        "short" : "Grund für den aktuellen Status des Medikationsplaneintrags: (ex) https://hl7.org/fhir/R4/valueset-medicationrequest-status-reason.html.\nTODO: Verwendung prüfen im Zusammenhang mit status.",
+        "short" : "Grund für den aktuellen Status des Medikationsplaneintrags: (ex) https://hl7.org/fhir/R4/valueset-medicationrequest-status-reason.html.\nTODO: Verwendung fachlich zu prüfen im Zusammenhang mit Status.",
         "max" : "0"
       },
       {
         "id" : "MedicationRequest.intent",
         "path" : "MedicationRequest.intent",
-        "short" : "TODO: Begründung, warum hier immer \"order\" anzugeben ist:\nDer Medikationsplaneintrag ist eine Handlungsermächtigung. Dieser wurde von einem:r Arzt:Ärztin erstellt und ermächtigt (auch andere Ärzte) zur Ausstellung einer geplanten Abgabe\nbasierend auf diesen Eintrag.\n(req) proposal | plan | order | original-order | reflex-order | filler-order | instance-order | option. \nhttps://hl7.org/fhir/R4/valueset-medicationrequest-intent.html",
+        "short" : "Ein Medikationsplaneintrag ist eine autorisierte ärztliche Anordnung und stellt eine verbindliche Einnahmeanweisung für den Patienten dar, auf dessen Basis eine geplante Abgabe erstellt werden kann. Fixer Wert: \"order\".\n(req) proposal | plan | order | original-order | reflex-order | filler-order | instance-order | option. \nhttps://hl7.org/fhir/R4/valueset-medicationrequest-intent.html",
         "patternCode" : "order",
         "mustSupport" : true
       },

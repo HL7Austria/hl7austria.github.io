@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
   "name" : "AtEmedMRGeplanteAbgabe",
   "title" : "ELGA e-Med Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-02-16T10:10:16+00:00",
+  "date" : "2026-02-16T15:59:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -178,7 +178,12 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
       {
         "id" : "MedicationRequest.status",
         "path" : "MedicationRequest.status",
-        "short" : "Status der geplanten Abgabe (im Standardfall active oder complete): active | on-hold | cancelled | completed | entered-in-error | stopped | draft | unknown -> entfernen: draft, unknown"
+        "short" : "Status der geplanten Abgabe (im Standardfall active oder complete): \n (req) active | on-hold | cancelled | completed | entered-in-error | stopped  (entfernt: draft | unknown); TODO: Fachlich zu prüfen.",
+        "mustSupport" : true,
+        "binding" : {
+          "strength" : "required",
+          "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/GeplanteAbgabeStatusVS"
+        }
       },
       {
         "id" : "MedicationRequest.statusReason",

@@ -33,7 +33,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) ENTWURF",
   "status" : "draft",
-  "date" : "2026-02-16T10:10:16+00:00",
+  "date" : "2026-02-16T15:59:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -1050,6 +1050,20 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "extension" : [
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "ValueSet"
+          }
+        ],
+        "reference" : {
+          "reference" : "ValueSet/GeplanteAbgabeStatusVS"
+        },
+        "name" : "ELGA e-Med Geplante Abgabe Status ValueSet",
+        "description" : "**Beschreibung:** ValueSet für zulässige Ausprägungen eines Status einer geplanten Abgabe (MedicationRequest).",
+        "exampleBoolean" : false
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString" : "CodeSystem"
           }
         ],
@@ -1072,6 +1086,20 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         },
         "name" : "ELGA e-Med MedicationRequest Kategorie ValueSet",
         "description" : "**Beschreibung:** ValueSet für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen",
+        "exampleBoolean" : false
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "CodeSystem"
+          }
+        ],
+        "reference" : {
+          "reference" : "CodeSystem/MedicationRequestStatusCS"
+        },
+        "name" : "ELGA e-Med MedicationRequest Status",
+        "description" : "**Beschreibung:** Codesystem für zulässige Ausprägungen eines Status eines MedicationRequests im Medikationsplaneintrag und in geplanter Abgabe. \nBasiert auf VS https://hl7.org/fhir/R4/valueset-medicationrequest-status.html, ohne Status: draft, unknown",
         "exampleBoolean" : false
       },
       {
@@ -1128,6 +1156,20 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         },
         "name" : "ELGA e-Med Medikationsplan Transaction Bundle",
         "description" : "**Beschreibung:** Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan bestehend aus: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus) \n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung",
+        "exampleBoolean" : false
+      },
+      {
+        "extension" : [
+          {
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString" : "ValueSet"
+          }
+        ],
+        "reference" : {
+          "reference" : "ValueSet/MedikationsplaneintragStatusVS"
+        },
+        "name" : "ELGA e-Med Medikationsplaneintrag Status Value Set",
+        "description" : "**Beschreibung:** ValueSet für zulässige Ausprägungen eines Status eines Medikationsplaneintrags (MedicationRequest).",
         "exampleBoolean" : false
       },
       {

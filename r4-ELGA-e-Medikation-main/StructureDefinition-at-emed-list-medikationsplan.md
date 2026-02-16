@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
   "name" : "AtEmedListMedikationsplan",
   "title" : "ELGA e-Med Medikationsplan",
   "status" : "draft",
-  "date" : "2026-02-16T10:10:16+00:00",
+  "date" : "2026-02-16T15:59:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {

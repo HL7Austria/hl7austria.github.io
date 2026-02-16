@@ -46,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
   "name" : "AtEmedMedication",
   "title" : "ELGA e-Med Medikation",
   "status" : "draft",
-  "date" : "2026-02-16T10:10:16+00:00",
+  "date" : "2026-02-16T15:59:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -101,6 +101,12 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
   "differential" : {
     "element" : [
       {
+        "id" : "Medication.text",
+        "path" : "Medication.text",
+        "short" : "TODO: Freitext für magistrale Anwendungen oder Abbildung in Substance.description?",
+        "mustSupport" : true
+      },
+      {
         "id" : "Medication.identifier",
         "path" : "Medication.identifier",
         "short" : "Eindeutiger Identifikator für das Arzneimittel. Wird nicht benötigt, da PZN, sofern vorhanden, im Code angegeben wird.",
@@ -130,7 +136,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
       {
         "id" : "Medication.manufacturer",
         "path" : "Medication.manufacturer",
-        "short" : "Der Hersteller des Arzneimittels. Keine Verwendung im Kontext Planeintrag. TODO: Prüfen, ob im Kontext durchgeführte Abgabe und magistraler Zubereitung erforderlich; prüfen ob Einschränkung auf österr. Organisation",
+        "short" : "Der Hersteller des Arzneimittels. Keine Verwendung im Kontext Planeintrag. \nTODO: Prüfen, ob im Kontext durchgeführte Abgabe und magistraler Zubereitung erforderlich; HL7ATCoreOrganization schränkt auf Organisationen gemäß GDA-Index ein.",
         "max" : "0"
       },
       {
@@ -152,7 +158,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
       {
         "id" : "Medication.ingredient",
         "path" : "Medication.ingredient",
-        "short" : "Wirkstoffe. Wenn PZN vorhanden 0..0, da Anreicherung aus ASP-Liste durch Fachanwendung.\nGemäß AG: Einschränkung auf CodeableConcept, TODO: prüfen, wie Freitext bei magistraler Zubereitung abgebildet wird:\nIn diesem Fall müsste in einer Substance-Ressource die description (string) befüllt werden.",
+        "short" : "Wirkstoffe. Wenn PZN vorhanden 0..0, da Anreicherung aus ASP-Liste durch Fachanwendung.\nGemäß AG: Einschränkung auf CodeableConcept, TODO: prüfen, wie Freitext bei magistraler Zubereitung abgebildet wird:\nEvtl. in einer Substance-Ressource in der description (string).",
         "mustSupport" : true
       },
       {
