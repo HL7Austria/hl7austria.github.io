@@ -1,0 +1,132 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/aps/r4/Observation/AtApsExampleObservationResultsLaboratoryPathology01> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "AtApsExampleObservationResultsLaboratoryPathology01"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationresultslaboratorypathology"^^xsd:anyURI ;
+       fhir:l <https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationresultslaboratorypathology>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation AtApsExampleObservationResultsLaboratoryPathology01</b></p><a name=\"AtApsExampleObservationResultsLaboratoryPathology01\"> </a><a name=\"hcAtApsExampleObservationResultsLaboratoryPathology01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-observationresultslaboratorypathology.html\">AT APS Observation Results Laboratory Pathology</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span>, <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/elga-laborparameterergaenzung 1}\">Allgemeiner Laborbefund</span></p><p><b>code</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/elga-laborparameterergaenzung 17880}\">Pathologiebefund</span></p><p><b>subject</b>: <a href=\"Patient-at-aps-example-patient-01.html\">Maria Musterfrau</a></p><p><b>effective</b>: 2025-06-20 14:00:00+0200</p><p><b>performer</b>: <a href=\"Practitioner-at-aps-example-practitioner-01.html\">Hanna Hausärztin</a></p><p><b>value</b>: Karzinom — maligne epitheliale Neoplasie</p><p><b>interpretation</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation H}\">Pathologischer Befund</span></p><p><b>specimen</b>: <a href=\"Specimen-AtApsExampleSpecimen01.html\">Gewebeprobe Tumorbiopsie</a></p><p><b>hasMember</b>: <a href=\"Observation-AtApsExampleObservationResultsLaboratoryPathology01.html\">Subobservation 1</a></p><h3>Components</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Code</b></td><td><b>Value[x]</b></td><td><b>Interpretation</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/elga-laborparameterergaenzung 17881}\">Histologischer Typ</span></td><td><span title=\"Codes:{http://snomed.info/sct 363406005}\">Karzinom</span></td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation H}\">Pathologisch relevant</span></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/observation-category>
+       ] ;
+       fhir:code [ fhir:v "laboratory" ] ;
+       fhir:display [ fhir:v "Laboratory" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://termgit.elga.gv.at/CodeSystem/elga-laborparameterergaenzung"^^xsd:anyURI ;
+         fhir:l <https://termgit.elga.gv.at/CodeSystem/elga-laborparameterergaenzung>
+       ] ;
+       fhir:code [ fhir:v "1" ] ;
+       fhir:display [ fhir:v "Allgemeiner Laborbefund" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://termgit.elga.gv.at/CodeSystem/elga-laborparameterergaenzung"^^xsd:anyURI ;
+         fhir:l <https://termgit.elga.gv.at/CodeSystem/elga-laborparameterergaenzung>
+       ] ;
+       fhir:code [ fhir:v "17880" ] ;
+       fhir:display [ fhir:v "Zytologie" ]
+     ] ) ;
+     fhir:text [ fhir:v "Pathologiebefund" ]
+  ] ; # 
+  fhir:subject [
+     fhir:l <https://fhir.hl7.at/elga/aps/r4/Patient/at-aps-example-patient-01> ;
+     fhir:reference [ fhir:v "Patient/at-aps-example-patient-01" ] ;
+     fhir:display [ fhir:v "Maria Musterfrau" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:DateTime ;
+     fhir:v "2025-06-20T14:00:00+02:00"^^xsd:dateTime
+  ] ; # 
+  fhir:performer ( [
+     fhir:l <https://fhir.hl7.at/elga/aps/r4/Practitioner/at-aps-example-practitioner-01> ;
+     fhir:reference [ fhir:v "Practitioner/at-aps-example-practitioner-01" ] ;
+     fhir:display [ fhir:v "Hanna Hausärztin" ]
+  ] ) ; # 
+  fhir:value [
+     a fhir:String ;
+     fhir:v "Karzinom — maligne epitheliale Neoplasie"
+  ] ; # 
+  fhir:interpretation ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation>
+       ] ;
+       fhir:code [ fhir:v "H" ] ;
+       fhir:display [ fhir:v "High" ]
+     ] ) ;
+     fhir:text [ fhir:v "Pathologischer Befund" ]
+  ] ) ; # 
+  fhir:specimen [
+     fhir:l <https://fhir.hl7.at/elga/aps/r4/Specimen/AtApsExampleSpecimen01> ;
+     fhir:reference [ fhir:v "Specimen/AtApsExampleSpecimen01" ] ;
+     fhir:display [ fhir:v "Gewebeprobe Tumorbiopsie" ]
+  ] ; # 
+  fhir:hasMember ( [
+     fhir:l <https://fhir.hl7.at/elga/aps/r4/Observation/AtApsExampleObservationResultsLaboratoryPathology01> ;
+     fhir:reference [ fhir:v "Observation/AtApsExampleObservationResultsLaboratoryPathology01" ] ;
+     fhir:display [ fhir:v "Subobservation 1" ]
+  ] ) ; # 
+  fhir:component ( [
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://termgit.elga.gv.at/CodeSystem/elga-laborparameterergaenzung"^^xsd:anyURI ;
+           fhir:l <https://termgit.elga.gv.at/CodeSystem/elga-laborparameterergaenzung>
+         ] ;
+         fhir:code [ fhir:v "17881" ] ;
+         fhir:display [ fhir:v "Histologischer Typ" ]
+       ] ) ;
+       fhir:text [ fhir:v "Histologischer Typ" ]
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         a sct:363406005 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "363406005" ] ;
+         fhir:display [ fhir:v "Carcinoma" ]
+       ] ) ;
+       fhir:text [ fhir:v "Karzinom" ]
+     ] ;
+     fhir:interpretation ( [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation>
+         ] ;
+         fhir:code [ fhir:v "H" ] ;
+         fhir:display [ fhir:v "High" ]
+       ] ) ;
+       fhir:text [ fhir:v "Pathologisch relevant" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
