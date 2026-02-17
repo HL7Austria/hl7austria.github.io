@@ -18,7 +18,7 @@ class Entry():
 
 def fromYaml( name, yaml,fname ):
 
-    if len(yaml) == 6:
+    if len(yaml) == 6 or len(yaml) == 7:
         label = 'label-warning'
         if index_yml[4].get("branch", "n.a.") == MAIN_BRANCH_NAME and index_yml[0].get("name", "").startswith('HL7'):
             label = 'label-success'
