@@ -36,6 +36,7 @@ These define sets of codes used by systems conforming to this implementation gui
 | :--- | :--- |
 | [ELGA e-Med Geplante Abgabe Status ValueSet](ValueSet-GeplanteAbgabeStatusVS.md) | **Beschreibung:** ValueSet für zulässige Ausprägungen eines Status einer geplanten Abgabe (MedicationRequest). |
 | [ELGA e-Med MedicationRequest Kategorie ValueSet](ValueSet-MedicationRequestCategoryVS.md) | **Beschreibung:** ValueSet für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen |
+| [ELGA e-Med Medikationsplan Empty Reason Value Set](ValueSet-MedikationsplanEmptyReasonVS.md) | **Beschreibung:** ValueSet für zulässige Ausprägungen des elements emptyReason Status eines Medikationsplaneintrags (MedicationRequest). |
 | [ELGA e-Med Medikationsplaneintrag Status Value Set](ValueSet-MedikationsplaneintragStatusVS.md) | **Beschreibung:** ValueSet für zulässige Ausprägungen eines Status eines Medikationsplaneintrags (MedicationRequest). |
 
 ### Terminology: Code Systems 
@@ -71,4 +72,5 @@ These are example instances that show what data produced and consumed by systems
 | [Beispiel Organisation Apotheke 01](Organization-AtEmedExampleOrganizationApo01.md) | **Beschreibung:** Beispiel einer Apotheke als Organisation. |
 | [Beispiel Patient 01](Patient-AtEmedExamplePatient01.md) | **Beschreibung:** Beispiel eines Patienten. |
 | [Beispiel Ärztin 01](Practitioner-AtEmedExamplePractitioner01.md) | **Beschreibung:** Beispiel einer behandelnden Ärztin. |
+| [Beispiel Ärztin 02](Practitioner-AtEmedExamplePractitioner02.md) | **Beschreibung:** Beispiel einer ursprünglich eine Medikation verordnenden Ärztin (Fremdmedikation). |
 

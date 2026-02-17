@@ -141,6 +141,9 @@
       ]
     }
   ],
+  "reportedReference" : {
+    "reference" : "Practitioner/AtEmedExamplePractitioner02"
+  },
   "medicationReference" : {
     "reference" : "InlineAtEmedJourneyMedicationMagistral02"
   },

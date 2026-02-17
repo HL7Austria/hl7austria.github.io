@@ -22,7 +22,7 @@
   "contained" : [
     {
       "resourceType" : "Medication",
-      "id" : "InlineAtEmedJourneyMedicationMagistral01",
+      "id" : "InlinePlaneintragMedicationMagistral01",
       "meta" : {
         "profile" : [
           "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"
@@ -69,8 +69,9 @@
       ]
     }
   ],
+  "reportedBoolean" : false,
   "medicationReference" : {
-    "reference" : "InlineAtEmedJourneyMedicationMagistral01"
+    "reference" : "InlinePlaneintragMedicationMagistral01"
   },
   "subject" : {
     "reference" : "Patient/AtEmedExamplePatient01"

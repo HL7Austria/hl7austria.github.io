@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "ELGAeMedikationR4"] ; # 
   fhir:title [ fhir:v "ELGA e-Medikation (R4) ENTWURF"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-02-16T15:59:40+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-02-17T17:15:57+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ELGA GmbH" ] ;
@@ -1718,6 +1718,27 @@
          ] ;
          fhir:value [
            a fhir:String ;
+           fhir:v "Practitioner"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/elga/emed/r4/Practitioner/AtEmedExamplePractitioner02> ;
+         fhir:reference [ fhir:v "Practitioner/AtEmedExamplePractitioner02" ]
+       ] ;
+       fhir:name [ fhir:v "Beispiel Ärztin 02" ] ;
+       fhir:description [ fhir:v "**Beschreibung:** Beispiel einer ursprünglich eine Medikation verordnenden Ärztin (Fremdmedikation)." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
@@ -1895,6 +1916,27 @@
        ] ;
        fhir:name [ fhir:v "ELGA e-Med Medikationsplan Collection Bundle" ] ;
        fhir:description [ fhir:v "**Beschreibung:** Das Bundle vom Typ Collection bestehend aus: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus) \n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/elga/emed/r4/ValueSet/MedikationsplanEmptyReasonVS> ;
+         fhir:reference [ fhir:v "ValueSet/MedikationsplanEmptyReasonVS" ]
+       ] ;
+       fhir:name [ fhir:v "ELGA e-Med Medikationsplan Empty Reason Value Set" ] ;
+       fhir:description [ fhir:v "**Beschreibung:** ValueSet für zulässige Ausprägungen des elements emptyReason Status eines Medikationsplaneintrags (MedicationRequest)." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false

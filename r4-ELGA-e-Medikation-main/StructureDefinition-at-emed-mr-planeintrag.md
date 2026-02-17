@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag | *Version*:0.1.1 | |
-| Draft as of 2026-02-16 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMRPlaneintrag |
+| Draft as of 2026-02-17 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMRPlaneintrag |
 
  
 **Beschreibung:** Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers ab ("MedicationRequest"-Ressource). Er enthält genau ein Arzneimittel und dessen Dosierung. Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet R5 Backport Extensions. 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
   "name" : "AtEmedMRPlaneintrag",
   "title" : "ELGA e-Med Planeintrag",
   "status" : "draft",
-  "date" : "2026-02-16T15:59:40+00:00",
+  "date" : "2026-02-17T17:15:57+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
@@ -280,14 +280,14 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
           "ordered" : false,
           "rules" : "open"
         },
-        "short" : "TODO: Verwendung zu püfen: Kann zur Dokumentation von Fremdmedikation verwendet werden. Im Falle eines \"Nachtrags\" einer Medikation in den Medikationsplan\ndurch einen anderen, nicht ursprünglich verordnenden Arzt. Dieser muss eindeutig identifiziert sein (im GDA-I vorhanden). Juristisch\nVerantwortlichkeit für Korrektheit des Eintrags zu klären.",
+        "min" : 1,
         "mustSupport" : true
       },
       {
         "id" : "MedicationRequest.reported[x]:reportedBoolean",
         "path" : "MedicationRequest.reported[x]",
         "sliceName" : "reportedBoolean",
-        "short" : "TODO: entfernen?",
+        "short" : "TRUE im Falle der Dokumentation von Fremdmedikation (ein anderer Arzt hat das Medikament ursprünglich verordnet), sonst FALSE.\nTODO: Klären ob hier der GDA eindeutig identifiziert sein muss (im GDA-I vorhanden) oder analog zu e-Impfpass Freitext sein kann. Juristisch\nVerantwortlichkeit für Korrektheit des Eintrags zu klären.",
         "min" : 0,
         "max" : "1",
         "type" : [
@@ -300,7 +300,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
         "id" : "MedicationRequest.reported[x]:reportedReference",
         "path" : "MedicationRequest.reported[x]",
         "sliceName" : "reportedReference",
-        "short" : "Im Falle einer Fremdmedikation verpflichtende Angabe einer Referen auf: (Patient | Practitioner | PractitionerRole | RelatedPerson | Organization)",
+        "short" : "Im Falle einer Fremdmedikation Angabe einer Referenz auf: (Patient | Practitioner | PractitionerRole | RelatedPerson | Organization)",
         "min" : 0,
         "max" : "1",
         "type" : [
@@ -360,7 +360,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
       {
         "id" : "MedicationRequest.encounter",
         "path" : "MedicationRequest.encounter",
-        "short" : "Aufenthalt/Begegnung, während dessen/der der Medikationsplaneintrag erstellt wurde. Keine Verwendung im Medikationsplaneintrag.",
+        "short" : "Aufenthalt/Begegnung, während dessen der Medikationsplaneintrag erstellt wurde. Keine Verwendung im Medikationsplaneintrag.",
         "max" : "0"
       },
       {
@@ -461,7 +461,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
       {
         "id" : "MedicationRequest.note",
         "path" : "MedicationRequest.note",
-        "short" : "Zusätzliche Informationen zum Medikationsplaneintrag. TODO: zu prüfen im Kontext Korrekturvermerk\nTODO: fachlich prüfen, an welchen Stellen überall Freitext erforderlich sein soll/muss. Auch im Kontext zu entered-in-error\nInformationen.",
+        "short" : "Zusätzliche Informationen zum Medikationsplaneintrag.\nTODO: fachlich prüfen, an welchen Stellen überall Freitext erforderlich sein soll/muss. Auch im Kontext zu entered-in-error\nInformationen.",
         "mustSupport" : true
       },
       {

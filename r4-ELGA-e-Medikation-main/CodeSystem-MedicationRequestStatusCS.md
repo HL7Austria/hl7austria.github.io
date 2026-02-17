@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestStatusCS | *Version*:0.1.1 | |
-| Active as of 2026-02-16 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:MedicationRequestStatusCS |
+| Active as of 2026-02-17 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:MedicationRequestStatusCS |
 
  
 **Beschreibung:** Codesystem für zulässige Ausprägungen eines Status eines MedicationRequests im Medikationsplaneintrag und in geplanter Abgabe. Basiert auf VS https://hl7.org/fhir/R4/valueset-medicationrequest-status.html, ohne Status: draft, unknown 
@@ -33,7 +33,7 @@
   "title" : "ELGA e-Med MedicationRequest Status",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-02-16T15:59:40+00:00",
+  "date" : "2026-02-17T17:15:57+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [
     {
