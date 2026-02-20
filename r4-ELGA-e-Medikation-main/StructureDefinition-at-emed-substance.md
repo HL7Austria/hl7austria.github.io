@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-substance | *Version*:0.1.1 | |
-| Draft as of 2026-02-17 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedSubstance |
+| Draft as of 2026-02-20 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedSubstance |
 
  
 **Beschreibung:** Dokumentation der Substanz eines Inhaltsstoffes eines Arzneimittels, sofern es nicht kodiert vorliegt. 
@@ -43,60 +43,50 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-substance.cs
   "name" : "AtEmedSubstance",
   "title" : "ELGA e-Med Substanz",
   "status" : "draft",
-  "date" : "2026-02-17T17:15:57+00:00",
+  "date" : "2026-02-20T10:02:53+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://elga.gv.at"
-        }
-      ]
-    },
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at",
-          "use" : "work"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://elga.gv.at"
+    }]
+  },
+  {
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at",
+      "use" : "work"
+    }]
+  }],
   "description" : "**Beschreibung:** Dokumentation der Substanz eines Inhaltsstoffes eines Arzneimittels, sofern es nicht kodiert vorliegt.",
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    },
-    {
-      "identity" : "orim",
-      "uri" : "http://hl7.org/orim",
-      "name" : "Ontological RIM Mapping"
-    },
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "orim",
+    "uri" : "http://hl7.org/orim",
+    "name" : "Ontological RIM Mapping"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Substance",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Substance",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Substance",
-        "path" : "Substance"
-      }
-    ]
+    "element" : [{
+      "id" : "Substance",
+      "path" : "Substance"
+    }]
   }
 }
 

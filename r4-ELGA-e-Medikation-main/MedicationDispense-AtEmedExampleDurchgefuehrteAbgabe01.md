@@ -40,15 +40,11 @@ Profile: [ELGA e-Med Durchgeführte Abgabe](StructureDefinition-at-emed-md-durch
   "resourceType" : "MedicationDispense",
   "id" : "AtEmedExampleDurchgefuehrteAbgabe01",
   "meta" : {
-    "profile" : [
-      "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-md-durchgefuehrte-abgabe"
-    ]
+    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-md-durchgefuehrte-abgabe"]
   },
-  "identifier" : [
-    {
-      "value" : "WYE82A2G8EEW-4711-001"
-    }
-  ],
+  "identifier" : [{
+    "value" : "WYE82A2G8EEW-4711-001"
+  }],
   "status" : "completed",
   "medicationReference" : {
     "reference" : "Medication/01C-Cefuroxime1500Branded",
@@ -57,18 +53,14 @@ Profile: [ELGA e-Med Durchgeführte Abgabe](StructureDefinition-at-emed-md-durch
   "subject" : {
     "reference" : "Patient/AtEmedExamplePatient01"
   },
-  "performer" : [
-    {
-      "actor" : {
-        "reference" : "PractitionerRole/pharmacist1"
-      }
+  "performer" : [{
+    "actor" : {
+      "reference" : "PractitionerRole/pharmacist1"
     }
-  ],
-  "authorizingPrescription" : [
-    {
-      "reference" : "MedicationRequest/400C-prescription-cefuroxime-singleline"
-    }
-  ],
+  }],
+  "authorizingPrescription" : [{
+    "reference" : "MedicationRequest/400C-prescription-cefuroxime-singleline"
+  }],
   "quantity" : {
     "value" : 1,
     "system" : "http://unitsofmeasure.org",

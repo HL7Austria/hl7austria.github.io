@@ -29,79 +29,65 @@ Profile: [HL7® AT Core Practitioner Profile](http://hl7.at/fhir/HL7ATCoreProfil
   "resourceType" : "Practitioner",
   "id" : "AtEmedExamplePractitioner01",
   "meta" : {
-    "profile" : [
-      "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner"
-    ]
+    "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner"]
   },
-  "identifier" : [
-    {
-      "system" : "urn:ietf:rfc:3986",
-      "value" : "urn:oid:1.2.40.0.34.99.4613.4",
-      "assigner" : {
-        "display" : "Bundesministerium für Gesundheit"
-      }
-    },
-    {
-      "system" : "urn:oid:1.2.40.0.10.1.4.3.2",
-      "value" : "987654321",
-      "assigner" : {
-        "display" : "Dachverband der österreichischen Sozialversicherungsträger"
-      }
+  "identifier" : [{
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:oid:1.2.40.0.34.99.4613.4",
+    "assigner" : {
+      "display" : "Bundesministerium für Gesundheit"
     }
-  ],
+  },
+  {
+    "system" : "urn:oid:1.2.40.0.10.1.4.3.2",
+    "value" : "987654321",
+    "assigner" : {
+      "display" : "Dachverband der österreichischen Sozialversicherungsträger"
+    }
+  }],
   "active" : true,
-  "name" : [
-    {
-      "family" : "Musterärztin",
-      "given" : ["Melanie"],
-      "prefix" : ["Prof. Dr."]
-    }
-  ],
-  "telecom" : [
-    {
-      "system" : "email",
-      "value" : "office@musterpraxis.at",
-      "use" : "work"
-    },
-    {
-      "system" : "phone",
-      "value" : "+436500987654321",
-      "use" : "work"
-    }
-  ],
-  "address" : [
-    {
-      "use" : "work",
-      "type" : "both",
-      "line" : ["Mozartgasse 8 Stiege 2"],
-      "_line" : [
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-              "valueString" : "Mozartgasse"
-            },
-            {
-              "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-              "valueString" : "8"
-            },
-            {
-              "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator",
-              "valueString" : "Stiege 2"
-            },
-            {
-              "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation",
-              "valueString" : "Barrierefreier Zugang"
-            }
-          ]
-        }
-      ],
-      "city" : "St. Wolfgang",
-      "state" : "Salzburg",
-      "postalCode" : "5350",
-      "country" : "AUT"
-    }
-  ],
+  "name" : [{
+    "family" : "Musterärztin",
+    "given" : ["Melanie"],
+    "prefix" : ["Prof. Dr."]
+  }],
+  "telecom" : [{
+    "system" : "email",
+    "value" : "office@musterpraxis.at",
+    "use" : "work"
+  },
+  {
+    "system" : "phone",
+    "value" : "+436500987654321",
+    "use" : "work"
+  }],
+  "address" : [{
+    "use" : "work",
+    "type" : "both",
+    "line" : ["Mozartgasse 8 Stiege 2"],
+    "_line" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+        "valueString" : "Mozartgasse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+        "valueString" : "8"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator",
+        "valueString" : "Stiege 2"
+      },
+      {
+        "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation",
+        "valueString" : "Barrierefreier Zugang"
+      }]
+    }],
+    "city" : "St. Wolfgang",
+    "state" : "Salzburg",
+    "postalCode" : "5350",
+    "country" : "AUT"
+  }],
   "gender" : "female"
 }
 

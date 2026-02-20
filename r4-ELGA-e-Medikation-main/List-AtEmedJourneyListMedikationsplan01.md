@@ -23,20 +23,16 @@ Profile: [ELGA e-Med Medikationsplan](StructureDefinition-at-emed-list-medikatio
   "resourceType" : "List",
   "id" : "AtEmedJourneyListMedikationsplan01",
   "meta" : {
-    "profile" : [
-      "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"
-    ]
+    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"]
   },
   "status" : "current",
   "mode" : "working",
   "code" : {
-    "coding" : [
-      {
-        "system" : "http://snomed.info/sct",
-        "code" : "736378000",
-        "display" : "Medikationsplan"
-      }
-    ]
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "736378000",
+      "display" : "Medikationsplan"
+    }]
   },
   "subject" : {
     "reference" : "Patient/AtEmedExamplePatient01"
@@ -46,20 +42,16 @@ Profile: [ELGA e-Med Medikationsplan](StructureDefinition-at-emed-list-medikatio
     "reference" : "Practitioner/AtEmedExamplePractitioner01"
   },
   "orderedBy" : {
-    "coding" : [
-      {
-        "system" : "http://terminology.hl7.org/CodeSystem/list-order",
-        "code" : "user"
-      }
-    ]
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/list-order",
+      "code" : "user"
+    }]
   },
   "emptyReason" : {
-    "coding" : [
-      {
-        "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
-        "code" : "notstarted"
-      }
-    ]
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+      "code" : "notstarted"
+    }]
   }
 }
 

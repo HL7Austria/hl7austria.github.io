@@ -21,19 +21,15 @@ Profile: [ELGA e-Med Substanz](StructureDefinition-at-emed-substance.md)
   "resourceType" : "Substance",
   "id" : "AtEmedJourneySubstanceHydrocortison",
   "meta" : {
-    "profile" : [
-      "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-substance"
-    ]
+    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-substance"]
   },
   "status" : "active",
   "code" : {
-    "coding" : [
-      {
-        "system" : "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido",
-        "code" : "A01AC03",
-        "display" : "Hydrocortison"
-      }
-    ]
+    "coding" : [{
+      "system" : "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido",
+      "code" : "A01AC03",
+      "display" : "Hydrocortison"
+    }]
   }
 }
 

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-tx-medikationsplan | *Version*:0.1.1 | |
-| Draft as of 2026-02-17 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedBundleMedikationsplanTx |
+| Draft as of 2026-02-20 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedBundleMedikationsplanTx |
 
  
 **Beschreibung:** Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan bestehend aus: 
@@ -44,167 +44,147 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-bundle-tx-me
   "name" : "AtEmedBundleMedikationsplanTx",
   "title" : "ELGA e-Med Medikationsplan Transaction Bundle",
   "status" : "draft",
-  "date" : "2026-02-17T17:15:57+00:00",
+  "date" : "2026-02-20T10:02:53+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://elga.gv.at"
-        }
-      ]
-    },
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at",
-          "use" : "work"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://elga.gv.at"
+    }]
+  },
+  {
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at",
+      "use" : "work"
+    }]
+  }],
   "description" : "**Beschreibung:** Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan bestehend aus: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus) \n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung",
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "v2",
-      "uri" : "http://hl7.org/v2",
-      "name" : "HL7 v2 Mapping"
-    },
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    },
-    {
-      "identity" : "cda",
-      "uri" : "http://hl7.org/v3/cda",
-      "name" : "CDA (R2)"
-    },
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "cda",
+    "uri" : "http://hl7.org/v3/cda",
+    "name" : "CDA (R2)"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Bundle",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Bundle",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Bundle",
-        "path" : "Bundle"
+    "element" : [{
+      "id" : "Bundle",
+      "path" : "Bundle"
+    },
+    {
+      "id" : "Bundle.identifier",
+      "path" : "Bundle.identifier",
+      "short" : "Persistenter Identifikator für das Bundle.",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Bundle.type",
+      "path" : "Bundle.type",
+      "short" : "Art des Bundles. Für schreibenden Zugriff immer Typ \"transaction\".",
+      "patternCode" : "transaction",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Bundle.timestamp",
+      "path" : "Bundle.timestamp",
+      "short" : "Zeitpunkt der Erstellung des Bundles. Verwendung prüfen.",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Bundle.link",
+      "path" : "Bundle.link",
+      "short" : "Verweise auf weiterführende Informationen zum Bundle. Verwendung prüfen.",
+      "max" : "0"
+    },
+    {
+      "id" : "Bundle.entry",
+      "path" : "Bundle.entry",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "type",
+          "path" : "resource"
+        }],
+        "ordered" : true,
+        "rules" : "closed"
       },
-      {
-        "id" : "Bundle.identifier",
-        "path" : "Bundle.identifier",
-        "short" : "Persistenter Identifikator für das Bundle.",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Bundle.type",
-        "path" : "Bundle.type",
-        "short" : "Art des Bundles. Für schreibenden Zugriff immer Typ \"transaction\".",
-        "patternCode" : "transaction",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Bundle.timestamp",
-        "path" : "Bundle.timestamp",
-        "short" : "Zeitpunkt der Erstellung des Bundles. Verwendung prüfen.",
-        "min" : 1,
-        "mustSupport" : true
-      },
-      {
-        "id" : "Bundle.link",
-        "path" : "Bundle.link",
-        "short" : "Verweise auf weiterführende Informationen zum Bundle. Verwendung prüfen.",
-        "max" : "0"
-      },
-      {
-        "id" : "Bundle.entry",
-        "path" : "Bundle.entry",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "type",
-              "path" : "resource"
-            }
-          ],
-          "ordered" : true,
-          "rules" : "closed"
-        },
-        "min" : 1
-      },
-      {
-        "id" : "Bundle.entry.link",
-        "path" : "Bundle.entry.link",
-        "short" : "Verweise auf weiterführende Informationen zu diesem Entry. Verwendung prüfen.",
-        "max" : "0"
-      },
-      {
-        "id" : "Bundle.entry.fullUrl",
-        "path" : "Bundle.entry.fullUrl",
-        "short" : "Eindeutige URL für den Eintrag im Bundle. "
-      },
-      {
-        "id" : "Bundle.entry:Medikationsplan",
-        "path" : "Bundle.entry",
-        "sliceName" : "Medikationsplan",
-        "min" : 1,
-        "max" : "1"
-      },
-      {
-        "id" : "Bundle.entry:Medikationsplan.link",
-        "path" : "Bundle.entry.link",
-        "max" : "0"
-      },
-      {
-        "id" : "Bundle.entry:Medikationsplan.resource",
-        "path" : "Bundle.entry.resource",
-        "min" : 1,
-        "type" : [
-          {
-            "code" : "List",
-            "profile" : [
-              "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Bundle.entry:Medikationsplaneintrag",
-        "path" : "Bundle.entry",
-        "sliceName" : "Medikationsplaneintrag",
-        "min" : 0,
-        "max" : "*"
-      },
-      {
-        "id" : "Bundle.entry:Medikationsplaneintrag.link",
-        "path" : "Bundle.entry.link",
-        "max" : "0"
-      },
-      {
-        "id" : "Bundle.entry:Medikationsplaneintrag.resource",
-        "path" : "Bundle.entry.resource",
-        "min" : 1,
-        "type" : [
-          {
-            "code" : "MedicationRequest",
-            "profile" : [
-              "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"
-            ]
-          }
-        ]
-      }
-    ]
+      "min" : 1
+    },
+    {
+      "id" : "Bundle.entry.link",
+      "path" : "Bundle.entry.link",
+      "short" : "Verweise auf weiterführende Informationen zu diesem Entry. Verwendung prüfen.",
+      "max" : "0"
+    },
+    {
+      "id" : "Bundle.entry.fullUrl",
+      "path" : "Bundle.entry.fullUrl",
+      "short" : "Eindeutige URL für den Eintrag im Bundle. "
+    },
+    {
+      "id" : "Bundle.entry:Medikationsplan",
+      "path" : "Bundle.entry",
+      "sliceName" : "Medikationsplan",
+      "min" : 1,
+      "max" : "1"
+    },
+    {
+      "id" : "Bundle.entry:Medikationsplan.link",
+      "path" : "Bundle.entry.link",
+      "max" : "0"
+    },
+    {
+      "id" : "Bundle.entry:Medikationsplan.resource",
+      "path" : "Bundle.entry.resource",
+      "min" : 1,
+      "type" : [{
+        "code" : "List",
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"]
+      }]
+    },
+    {
+      "id" : "Bundle.entry:Medikationsplaneintrag",
+      "path" : "Bundle.entry",
+      "sliceName" : "Medikationsplaneintrag",
+      "min" : 0,
+      "max" : "*"
+    },
+    {
+      "id" : "Bundle.entry:Medikationsplaneintrag.link",
+      "path" : "Bundle.entry.link",
+      "max" : "0"
+    },
+    {
+      "id" : "Bundle.entry:Medikationsplaneintrag.resource",
+      "path" : "Bundle.entry.resource",
+      "min" : 1,
+      "type" : [{
+        "code" : "MedicationRequest",
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"]
+      }]
+    }]
   }
 }
 

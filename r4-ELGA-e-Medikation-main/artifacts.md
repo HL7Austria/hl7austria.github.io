@@ -28,6 +28,14 @@ These define constraints on FHIR resources for systems conforming to this implem
 | [ELGA e-Med Planeintrag](StructureDefinition-at-emed-mr-planeintrag.md) | **Beschreibung:** Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers ab ("MedicationRequest"-Ressource). Er enthält genau ein Arzneimittel und dessen Dosierung. Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet R5 Backport Extensions. |
 | [ELGA e-Med Substanz](StructureDefinition-at-emed-substance.md) | **Beschreibung:** Dokumentation der Substanz eines Inhaltsstoffes eines Arzneimittels, sofern es nicht kodiert vorliegt. |
 
+### Structures: Data Type Profiles 
+
+These define constraints on FHIR data types for systems conforming to this implementation guide.
+
+| | |
+| :--- | :--- |
+| [ELGA e-Med Dosage](StructureDefinition-at-emed-dosage.md) | **Beschreibung:** Dosage |
+
 ### Terminology: Value Sets 
 
 These define sets of codes used by systems conforming to this implementation guide.
@@ -46,7 +54,6 @@ These define new code systems used by systems conforming to this implementation 
 | | |
 | :--- | :--- |
 | [ELGA e-Med MedicationRequest Kategorie CodeSystem](CodeSystem-MedicationRequestCategoryCS.md) | **Beschreibung:** Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen. |
-| [ELGA e-Med MedicationRequest Status](CodeSystem-MedicationRequestStatusCS.md) | **Beschreibung:** Codesystem für zulässige Ausprägungen eines Status eines MedicationRequests im Medikationsplaneintrag und in geplanter Abgabe. Basiert auf VS https://hl7.org/fhir/R4/valueset-medicationrequest-status.html, ohne Status: draft, unknown |
 
 ### Example: Example Instances 
 
@@ -54,8 +61,6 @@ These are example instances that show what data produced and consumed by systems
 
 | | |
 | :--- | :--- |
-| [AtEmedJourneyBundleMedikationsplan01ss01](Bundle-AtEmedJourneyBundleMedikationsplan01ss01.md) |  |
-| [AtEmedJourneyBundleMedikationsplan02ss01](Bundle-AtEmedJourneyBundleMedikationsplan02ss01.md) |  |
 | [Beispiel Durchgeführte Abgabe 1](MedicationDispense-AtEmedExampleDurchgefuehrteAbgabe01.md) | Beispiel Durchgeführte Abgabe 1 |
 | [Beispiel Journey 01: Collection Bundle](Bundle-AtEmedJourneyBundleMedikationsplan01.md) | **Beschreibung:** Beispiel eines Collection Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge). |
 | [Beispiel Journey 01: Leerer Medikationsplan](List-AtEmedJourneyListMedikationsplan01.md) | **Beschreibung:** Beispiel eines leeren Mediaktionsplans (List-Ressource ohne Einträge) |
