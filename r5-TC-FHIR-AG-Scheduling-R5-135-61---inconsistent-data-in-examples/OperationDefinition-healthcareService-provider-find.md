@@ -265,7 +265,7 @@ HTTP 200 OK
   "name" : "Find_HealthcareService_Provider",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-02-20T12:10:17+00:00",
+  "date" : "2026-02-20T12:49:11+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "A query operation that allows to search for healthcare service providers that offer a specific healthcare service. The general information about the HealthcareService identification itself is already available in advance, either as resource or via codes. ",
   "affectsState" : false,

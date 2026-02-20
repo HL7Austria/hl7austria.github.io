@@ -52,7 +52,7 @@ Other representations of profile: [CSV](StructureDefinition-virtual-service-deta
   "name" : "VirtualServiceDetailExt",
   "title" : "VirtualServiceDetail",
   "status" : "draft",
-  "date" : "2026-02-20T12:10:17+00:00",
+  "date" : "2026-02-20T12:49:11+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "Represents personalized details for a virtual service. This extension is meant to be used on appointment.participant if personalized Details (e.g. individual links or secrets) per participant exist. If the details are the same for all participants, Appointment.virtualService should be used instead. **Warning! Due to a bug, this extension contains a workaround. Instead of the custom complex data structure defined here, VirtualServiceDetail will be used as an extension on Appointment.participant in the future**",
   "fhirVersion" : "5.0.0",
