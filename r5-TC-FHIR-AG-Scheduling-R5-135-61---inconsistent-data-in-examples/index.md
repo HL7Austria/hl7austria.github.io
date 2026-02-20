@@ -46,707 +46,636 @@ This Implementation Guide contains and references intellectual property owned by
   "url" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ImplementationGuide/hl7.at.fhir.tc.wg.scheduling.r5",
   "version" : "0.2.0",
   "name" : "TCFHIRAGSchedulingR5",
+  "title" : "Austrian Appointment Scheduling (R5)",
   "status" : "draft",
-  "date" : "2026-01-14T15:40:28+00:00",
+  "date" : "2026-02-20T12:10:17+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "packageId" : "hl7.at.fhir.tc.wg.scheduling.r5",
   "license" : "CC0-1.0",
   "fhirVersion" : ["5.0.0"],
-  "dependsOn" : [
-    {
-      "id" : "hl7tx",
-      "extension" : [
-        {
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
-          "valueMarkdown" : "Automatically added as a dependency - all IGs depend on HL7 Terminology"
-        }
-      ],
-      "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
-      "packageId" : "hl7.terminology.r5",
-      "version" : "7.0.1"
-    },
-    {
-      "id" : "hl7ext",
-      "extension" : [
-        {
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
-          "valueMarkdown" : "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
-        }
-      ],
-      "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
-      "packageId" : "hl7.fhir.uv.extensions.r5",
-      "version" : "5.2.0"
-    },
-    {
-      "id" : "hl7_at_fhir_core_r5",
-      "uri" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/ImplementationGuide/hl7.at.fhir.core.r5",
-      "packageId" : "hl7.at.fhir.core.r5",
-      "version" : "2.0.0"
-    }
-  ],
+  "dependsOn" : [{
+    "id" : "hl7tx",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on HL7 Terminology"
+    }],
+    "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
+    "packageId" : "hl7.terminology.r5",
+    "version" : "7.0.1"
+  },
+  {
+    "id" : "hl7ext",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
+    }],
+    "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
+    "packageId" : "hl7.fhir.uv.extensions.r5",
+    "version" : "5.2.0"
+  },
+  {
+    "id" : "hl7_at_fhir_core_r5",
+    "uri" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/ImplementationGuide/hl7.at.fhir.core.r5",
+    "packageId" : "hl7.at.fhir.core.r5",
+    "version" : "2.0.0"
+  }],
   "definition" : {
-    "extension" : [
-      {
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-        "valueCode" : "hl7.fhir.uv.tools.r5#0.9.0"
-      }
-    ],
-    "resource" : [
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:extension"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/appointment-booking-url"
-        },
-        "name" : "Appointment Booking URL",
-        "description" : "An optional URL that can be used for redirects to a webpage for booking an Appointment. It should contain identifying information about the Slot so that it can be preselected on the target booking page.",
-        "isExample" : false
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
+      "valueCode" : "hl7.fhir.uv.tools.r5#0.9.0"
+    }],
+    "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/appointment-booking-url"
       },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:extension"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/appointment-postponementReason"
-        },
-        "name" : "Appointment Postponement Reason",
-        "description" : "The reason why an appointment was postoponed. This is often used in reporting/billing/further processing to determine if further actions are required, or specific fees apply.",
-        "isExample" : false
+      "name" : "Appointment Booking URL",
+      "description" : "An optional URL that can be used for redirects to a webpage for booking an Appointment. It should contain identifying information about the Slot so that it can be preselected on the target booking page.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/appointment-postponementReason"
       },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "OperationDefinition"
-          }
-        ],
-        "reference" : {
-          "reference" : "OperationDefinition/appointment-book"
-        },
-        "name" : "appointment-book",
-        "description" : "Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactions. This operation completes the booking of an appointment. The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the book request and updates the resource status accordingly.",
-        "isExample" : false
+      "name" : "Appointment Postponement Reason",
+      "description" : "The reason why an appointment was postoponed. This is often used in reporting/billing/further processing to determine if further actions are required, or specific fees apply.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/appointment-book"
       },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "ValueSet"
-          }
-        ],
-        "reference" : {
-          "reference" : "ValueSet/AtSchedulingServiceType"
-        },
-        "name" : "AT Scheduling Service Type",
-        "description" : "This is a placeholder for a ValueSet of bookable service types. The contained value just serves as an example and is not guaranteed to",
-        "isExample" : false
+      "name" : "appointment-book",
+      "description" : "Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactions. This operation completes the booking of an appointment. The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the book request and updates the resource status accordingly.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/AtSchedulingServiceType"
       },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "OperationDefinition"
-          }
-        ],
-        "reference" : {
-          "reference" : "OperationDefinition/healthcareService-provider-find"
-        },
-        "name" : "healthcareService-provider-find",
-        "description" : "A query operation that allows to search for healthcare service providers that offer a specific healthcare service. The general information about the HealthcareService identification itself is already available in advance, either as resource or via codes.",
-        "isExample" : false
+      "name" : "AT Scheduling Service Type",
+      "description" : "This is a placeholder for a ValueSet of bookable service types. The contained value just serves as an example and is not guaranteed to",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/healthcareService-provider-find"
       },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Appointment"
-          }
-        ],
-        "reference" : {
-          "reference" : "Appointment/HL7ATSchedulingAppointmentExample01"
-        },
-        "name" : "HL7ATSchedulingAppointmentExample01",
-        "description" : "Physiotherapie - Einzelbehandlung 30 Minuten",
-        "isExample" : true,
-        "profile" : [
-          "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment"
-        ]
+      "name" : "healthcareService-provider-find",
+      "description" : "A query operation that allows to search for healthcare service providers that offer a specific healthcare service. The general information about the HealthcareService identification itself is already available in advance, either as resource or via codes.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Appointment"
+      }],
+      "reference" : {
+        "reference" : "Appointment/HL7ATSchedulingAppointmentExample01"
       },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "HealthcareService"
-          }
-        ],
-        "reference" : {
-          "reference" : "HealthcareService/HL7ATSchedulingHealthcareServiceExample01"
-        },
-        "name" : "HL7ATSchedulingHealthcareServiceExample01",
-        "isExample" : true,
-        "profile" : [
-          "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice"
-        ]
+      "name" : "HL7ATSchedulingAppointmentExample01",
+      "description" : "Physiotherapie - Einzelbehandlung 30 Minuten",
+      "isExample" : true,
+      "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "HealthcareService"
+      }],
+      "reference" : {
+        "reference" : "HealthcareService/HL7ATSchedulingHealthcareServiceExample01"
       },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Schedule"
-          }
-        ],
-        "reference" : {
-          "reference" : "Schedule/HL7ATSchedulingScheduleExample01"
-        },
-        "name" : "HL7ATSchedulingScheduleExample01",
-        "description" : "Schedule with Practitioner",
-        "isExample" : true,
-        "profile" : [
-          "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-schedule"
-        ]
+      "name" : "HL7ATSchedulingHealthcareServiceExample01",
+      "isExample" : true,
+      "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Schedule"
+      }],
+      "reference" : {
+        "reference" : "Schedule/HL7ATSchedulingScheduleExample01"
       },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Schedule"
-          }
-        ],
-        "reference" : {
-          "reference" : "Schedule/HL7ATSchedulingScheduleExample02"
-        },
-        "name" : "HL7ATSchedulingScheduleExample02",
-        "description" : "Schedule with PractitionerRole",
-        "isExample" : true,
-        "profile" : [
-          "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-schedule"
-        ]
+      "name" : "HL7ATSchedulingScheduleExample01",
+      "description" : "Schedule with Practitioner",
+      "isExample" : true,
+      "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-schedule"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Schedule"
+      }],
+      "reference" : {
+        "reference" : "Schedule/HL7ATSchedulingScheduleExample02"
       },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Schedule"
-          }
-        ],
-        "reference" : {
-          "reference" : "Schedule/HL7ATSchedulingScheduleExample03"
-        },
-        "name" : "HL7ATSchedulingScheduleExample03",
-        "description" : "Schedule with HealthcareService",
-        "isExample" : true,
-        "profile" : [
-          "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-schedule"
-        ]
+      "name" : "HL7ATSchedulingScheduleExample02",
+      "description" : "Schedule with PractitionerRole",
+      "isExample" : true,
+      "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-schedule"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Schedule"
+      }],
+      "reference" : {
+        "reference" : "Schedule/HL7ATSchedulingScheduleExample03"
       },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Slot"
-          }
-        ],
-        "reference" : {
-          "reference" : "Slot/HL7ATSchedulingSlotExample01-free"
-        },
-        "name" : "HL7ATSchedulingSlotExample01-free",
-        "description" : "A simple Slot that is available for Booking",
-        "isExample" : true,
-        "profile" : [
-          "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot"
-        ]
+      "name" : "HL7ATSchedulingScheduleExample03",
+      "description" : "Schedule with HealthcareService",
+      "isExample" : true,
+      "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-schedule"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Slot"
+      }],
+      "reference" : {
+        "reference" : "Slot/HL7ATSchedulingSlotExample01-free"
       },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Slot"
-          }
-        ],
-        "reference" : {
-          "reference" : "Slot/HL7ATSchedulingSlotExample02-VirtualVisit"
-        },
-        "name" : "HL7ATSchedulingSlotExample02-VirtualVisit",
-        "description" : "A free Slot for booking an Appointment that can only be conducted as a virtual visit (e.g. video call)",
-        "isExample" : true,
-        "profile" : [
-          "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot"
-        ]
+      "name" : "HL7ATSchedulingSlotExample01-free",
+      "description" : "A simple Slot that is available for Booking",
+      "isExample" : true,
+      "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Slot"
+      }],
+      "reference" : {
+        "reference" : "Slot/HL7ATSchedulingSlotExample02-VirtualVisit"
       },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Slot"
-          }
-        ],
-        "reference" : {
-          "reference" : "Slot/HL7ATSchedulingSlotExample03-selectable-encounterClass"
-        },
-        "name" : "HL7ATSchedulingSlotExample03-selectable-encounterClass",
-        "description" : "A free Slot for booking an Appointment that offers a choice for the encounterClass. It can either be conducted as a virtual visit (e.g. video call) or ambulatory (physically present).",
-        "isExample" : true,
-        "profile" : [
-          "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot"
-        ]
+      "name" : "HL7ATSchedulingSlotExample02-VirtualVisit",
+      "description" : "A free Slot for booking an Appointment that can only be conducted as a virtual visit (e.g. video call)",
+      "isExample" : true,
+      "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Slot"
+      }],
+      "reference" : {
+        "reference" : "Slot/HL7ATSchedulingSlotExample03-selectable-encounterClass"
       },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "Slot"
-          }
-        ],
-        "reference" : {
-          "reference" : "Slot/HL7ATSchedulingSlotExample04-external-booking-URL"
-        },
-        "name" : "HL7ATSchedulingSlotExample04-external-booking-URL",
-        "description" : "A simple Slot that is available for booking and has an external booking URL",
-        "isExample" : true,
-        "profile" : [
-          "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot"
-        ]
+      "name" : "HL7ATSchedulingSlotExample03-selectable-encounterClass",
+      "description" : "A free Slot for booking an Appointment that offers a choice for the encounterClass. It can either be conducted as a virtual visit (e.g. video call) or ambulatory (physically present).",
+      "isExample" : true,
+      "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Slot"
+      }],
+      "reference" : {
+        "reference" : "Slot/HL7ATSchedulingSlotExample04-external-booking-URL"
       },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:resource"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/at-scheduling-appointment"
-        },
-        "name" : "HL7® AT Scheduling Appointment Profile",
-        "description" : "HL7® Austria FHIR® Scheduling Profile for appointment data in Austria.",
-        "isExample" : false
+      "name" : "HL7ATSchedulingSlotExample04-external-booking-URL",
+      "description" : "A simple Slot that is available for booking and has an external booking URL",
+      "isExample" : true,
+      "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-scheduling-appointment"
       },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:resource"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/at-scheduling-healthcareservice"
-        },
-        "name" : "HL7® AT Scheduling HealthcareService Profile",
-        "description" : "HL7® Austria FHIR® Scheduling Profile for healthcareservice data in Austria.",
-        "isExample" : false
+      "name" : "HL7® AT Scheduling Appointment Profile",
+      "description" : "HL7® Austria FHIR® Scheduling Profile for appointment data in Austria.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-scheduling-healthcareservice"
       },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:resource"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/at-scheduling-schedule"
-        },
-        "name" : "HL7® AT Scheduling Schedule Profile",
-        "description" : "HL7® Austria FHIR® Scheduling Profile for schedule data in Austria.",
-        "isExample" : false
+      "name" : "HL7® AT Scheduling HealthcareService Profile",
+      "description" : "HL7® Austria FHIR® Scheduling Profile for healthcareservice data in Austria.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-scheduling-schedule"
       },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:resource"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/at-scheduling-slot"
-        },
-        "name" : "HL7® AT Scheduling Slot Profile",
-        "description" : "HL7® Austria FHIR® Scheduling Profile for slot data in Austria.",
-        "isExample" : false
+      "name" : "HL7® AT Scheduling Schedule Profile",
+      "description" : "HL7® Austria FHIR® Scheduling Profile for schedule data in Austria.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-scheduling-slot"
       },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:extension"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/slot-encounter-class"
-        },
-        "name" : "Slot Encounter Class",
-        "description" : "An encounter class similar to (Appointment.class)[https://www.hl7.org/fhir/appointment-definitions.html#Appointment.class] for classification of possible mode of encounter",
-        "isExample" : false
+      "name" : "HL7® AT Scheduling Slot Profile",
+      "description" : "HL7® Austria FHIR® Scheduling Profile for slot data in Austria.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/slot-encounter-class"
       },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "OperationDefinition"
-          }
-        ],
-        "reference" : {
-          "reference" : "OperationDefinition/slot-hold"
-        },
-        "name" : "slot-hold",
-        "description" : "Request for a hold on a selected Slot in order for the user to complete entering data for booking an appointment.  This operation precedes the booking and follows the appointment availability interaction.  The server determines if the nominated slot is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly.",
-        "isExample" : false
+      "name" : "Slot Encounter Class",
+      "description" : "An encounter class similar to (Appointment.class)[https://www.hl7.org/fhir/appointment-definitions.html#Appointment.class] for classification of possible mode of encounter",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/slot-hold"
       },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "StructureDefinition:extension"
-          }
-        ],
-        "reference" : {
-          "reference" : "StructureDefinition/virtual-service-detail"
-        },
-        "name" : "VirtualServiceDetail",
-        "description" : "Represents personalized details for a virtual service. This extension is meant to be used on appointment.participant if personalized Details (e.g. individual links or secrets) per participant exist. If the details are the same for all participants, Appointment.virtualService should be used instead. **Warning! Due to a bug, this extension contains a workaround. Instead of the custom complex data structure defined here, VirtualServiceDetail will be used as an extension on Appointment.participant in the future**",
-        "isExample" : false
+      "name" : "slot-hold",
+      "description" : "Request for a hold on a selected Slot in order for the user to complete entering data for booking an appointment.  This operation follows the appointment availability interaction and precedes the booking.  The server determines if the nominated slot is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/virtual-service-detail"
       },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "ActorDefinition"
-          }
-        ],
-        "reference" : {
-          "reference" : "ActorDefinition/at-scheduling-actor-scheduling-client"
-        },
-        "name" : "HL7® AT Scheduling Client ActorDefinition",
-        "description" : "A system consuming the FHIR API provided by a Scheduling Server"
+      "name" : "VirtualServiceDetail",
+      "description" : "Represents personalized details for a virtual service. This extension is meant to be used on appointment.participant if personalized Details (e.g. individual links or secrets) per participant exist. If the details are the same for all participants, Appointment.virtualService should be used instead. **Warning! Due to a bug, this extension contains a workaround. Instead of the custom complex data structure defined here, VirtualServiceDetail will be used as an extension on Appointment.participant in the future**",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActorDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActorDefinition/at-scheduling-actor-scheduling-client"
       },
-      {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString" : "ActorDefinition"
-          }
-        ],
-        "reference" : {
-          "reference" : "ActorDefinition/at-scheduling-actor-scheduling-server"
-        },
-        "name" : "HL7® AT Scheduling Server ActorDefinition",
-        "description" : "A system providing the FHIR API for appointment booking and related data"
-      }
-    ],
+      "name" : "HL7® AT Scheduling Client ActorDefinition",
+      "description" : "A system consuming the FHIR API provided by a Scheduling Server"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActorDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActorDefinition/at-scheduling-actor-scheduling-server"
+      },
+      "name" : "HL7® AT Scheduling Server ActorDefinition",
+      "description" : "A system providing the FHIR API for appointment booking and related data"
+    }],
     "page" : {
       "sourceUrl" : "toc.html",
       "name" : "toc.html",
       "title" : "Table of Contents",
       "generation" : "html",
-      "page" : [
-        {
-          "sourceUrl" : "index.html",
-          "name" : "index.html",
-          "title" : "Home",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "scenarios.html",
-          "name" : "scenarios.html",
-          "title" : "Scenarios",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "interactions.html",
-          "name" : "interactions.html",
-          "title" : "Interactions",
-          "generation" : "markdown"
-        }
-      ]
+      "page" : [{
+        "sourceUrl" : "index.html",
+        "name" : "index.html",
+        "title" : "Home",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "actors.html",
+        "name" : "actors.html",
+        "title" : "Actors",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "scenarios.html",
+        "name" : "scenarios.html",
+        "title" : "Scenarios",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "interactions.html",
+        "name" : "interactions.html",
+        "title" : "Interactions",
+        "generation" : "markdown"
+      }]
     },
-    "parameter" : [
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-          "code" : "copyrightyear"
-        },
-        "value" : "2024+"
+    "parameter" : [{
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "copyrightyear"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-          "code" : "releaselabel"
-        },
-        "value" : "Informative"
+      "value" : "2024+"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "releaselabel"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-          "code" : "autoload-resources"
-        },
-        "value" : "true"
+      "value" : "Informative"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "autoload-resources"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/guide-parameter-code",
-          "code" : "path-resource"
-        },
-        "value" : "input/capabilities"
+      "value" : "true"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-resource"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/guide-parameter-code",
-          "code" : "path-resource"
-        },
-        "value" : "input/examples"
+      "value" : "input/capabilities"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-resource"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/guide-parameter-code",
-          "code" : "path-resource"
-        },
-        "value" : "input/extensions"
+      "value" : "input/examples"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-resource"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/guide-parameter-code",
-          "code" : "path-resource"
-        },
-        "value" : "input/models"
+      "value" : "input/extensions"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-resource"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/guide-parameter-code",
-          "code" : "path-resource"
-        },
-        "value" : "input/operations"
+      "value" : "input/models"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-resource"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/guide-parameter-code",
-          "code" : "path-resource"
-        },
-        "value" : "input/profiles"
+      "value" : "input/operations"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-resource"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/guide-parameter-code",
-          "code" : "path-resource"
-        },
-        "value" : "input/resources"
+      "value" : "input/profiles"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-resource"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/guide-parameter-code",
-          "code" : "path-resource"
-        },
-        "value" : "input/vocabulary"
+      "value" : "input/resources"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-resource"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/guide-parameter-code",
-          "code" : "path-resource"
-        },
-        "value" : "input/maps"
+      "value" : "input/vocabulary"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-resource"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/guide-parameter-code",
-          "code" : "path-resource"
-        },
-        "value" : "input/testing"
+      "value" : "input/maps"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-resource"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/guide-parameter-code",
-          "code" : "path-resource"
-        },
-        "value" : "input/history"
+      "value" : "input/testing"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-resource"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/guide-parameter-code",
-          "code" : "path-resource"
-        },
-        "value" : "fsh-generated/resources"
+      "value" : "input/history"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-resource"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/guide-parameter-code",
-          "code" : "path-pages"
-        },
-        "value" : "template/config"
+      "value" : "fsh-generated/resources"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-pages"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/guide-parameter-code",
-          "code" : "path-pages"
-        },
-        "value" : "input/images"
+      "value" : "template/config"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-pages"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-          "code" : "path-liquid"
-        },
-        "value" : "template/liquid"
+      "value" : "input/images"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "path-liquid"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-          "code" : "path-liquid"
-        },
-        "value" : "input/liquid"
+      "value" : "template/liquid"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "path-liquid"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-          "code" : "path-qa"
-        },
-        "value" : "temp/qa"
+      "value" : "input/liquid"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "path-qa"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-          "code" : "path-temp"
-        },
-        "value" : "temp/pages"
+      "value" : "temp/qa"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "path-temp"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-          "code" : "path-output"
-        },
-        "value" : "output"
+      "value" : "temp/pages"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "path-output"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/guide-parameter-code",
-          "code" : "path-tx-cache"
-        },
-        "value" : "input-cache/txcache"
+      "value" : "output"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-tx-cache"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-          "code" : "path-suppressed-warnings"
-        },
-        "value" : "input/ignoreWarnings.txt"
+      "value" : "input-cache/txcache"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "path-suppressed-warnings"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-          "code" : "path-history"
-        },
-        "value" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/history.html"
+      "value" : "input/ignoreWarnings.txt"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "path-history"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-          "code" : "template-html"
-        },
-        "value" : "template-page.html"
+      "value" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/history.html"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "template-html"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-          "code" : "template-md"
-        },
-        "value" : "template-page-md.html"
+      "value" : "template-page.html"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "template-md"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-          "code" : "apply-contact"
-        },
-        "value" : "true"
+      "value" : "template-page-md.html"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "apply-contact"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-          "code" : "apply-context"
-        },
-        "value" : "true"
+      "value" : "true"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "apply-context"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-          "code" : "apply-copyright"
-        },
-        "value" : "true"
+      "value" : "true"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "apply-copyright"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-          "code" : "apply-jurisdiction"
-        },
-        "value" : "true"
+      "value" : "true"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "apply-jurisdiction"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-          "code" : "apply-license"
-        },
-        "value" : "true"
+      "value" : "true"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "apply-license"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-          "code" : "apply-publisher"
-        },
-        "value" : "true"
+      "value" : "true"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "apply-publisher"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-          "code" : "apply-version"
-        },
-        "value" : "true"
+      "value" : "true"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "apply-version"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-          "code" : "apply-wg"
-        },
-        "value" : "true"
+      "value" : "true"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "apply-wg"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-          "code" : "active-tables"
-        },
-        "value" : "true"
+      "value" : "true"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "active-tables"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-          "code" : "fmm-definition"
-        },
-        "value" : "http://hl7.org/fhir/versions.html#maturity"
+      "value" : "true"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "fmm-definition"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-          "code" : "propagate-status"
-        },
-        "value" : "true"
+      "value" : "http://hl7.org/fhir/versions.html#maturity"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "propagate-status"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-          "code" : "excludelogbinaryformat"
-        },
-        "value" : "true"
+      "value" : "true"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "excludelogbinaryformat"
       },
-      {
-        "code" : {
-          "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-          "code" : "tabbed-snapshots"
-        },
-        "value" : "true"
-      }
-    ]
+      "value" : "true"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "tabbed-snapshots"
+      },
+      "value" : "true"
+    }]
   }
 }
 

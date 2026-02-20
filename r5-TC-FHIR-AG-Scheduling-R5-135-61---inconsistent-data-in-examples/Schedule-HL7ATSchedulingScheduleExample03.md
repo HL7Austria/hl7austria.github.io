@@ -30,30 +30,22 @@ Profile: [HL7® AT Scheduling Schedule Profile](StructureDefinition-at-schedulin
   "resourceType" : "Schedule",
   "id" : "HL7ATSchedulingScheduleExample03",
   "meta" : {
-    "profile" : [
-      "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-schedule"
-    ]
+    "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-schedule"]
   },
   "active" : true,
-  "serviceType" : [
-    {
-      "concept" : {
-        "coding" : [
-          {
-            "system" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType",
-            "code" : "65",
-            "display" : "Physiotherapy"
-          }
-        ]
-      }
+  "serviceType" : [{
+    "concept" : {
+      "coding" : [{
+        "system" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType",
+        "code" : "65",
+        "display" : "Physiotherapy"
+      }]
     }
-  ],
-  "actor" : [
-    {
-      "reference" : "HealthcareService/HL7ATSchedulingHealthcareServiceExample01",
-      "display" : "Example of healthcareservice"
-    }
-  ],
+  }],
+  "actor" : [{
+    "reference" : "HealthcareService/HL7ATSchedulingHealthcareServiceExample01",
+    "display" : "Example of healthcareservice"
+  }],
   "planningHorizon" : {
     "start" : "2025-05-13T08:00:00+02:00",
     "end" : "2025-05-23T17:00:00+02:00"

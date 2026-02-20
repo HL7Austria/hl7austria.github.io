@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot | *Version*:0.2.0 | |
-| Draft as of 2026-01-14 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingSlot |
+| Draft as of 2026-02-20 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingSlot |
 
  
 HL7® Austria FHIR® Scheduling Profile for slot data in Austria. 
@@ -62,111 +62,89 @@ Other representations of profile: [CSV](StructureDefinition-at-scheduling-slot.c
   "name" : "HL7ATSchedulingSlot",
   "title" : "HL7® AT Scheduling Slot Profile",
   "status" : "draft",
-  "date" : "2026-01-14T15:40:28+00:00",
+  "date" : "2026-02-20T12:10:17+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "HL7® Austria FHIR® Scheduling Profile for slot data in Austria.",
   "fhirVersion" : "5.0.0",
-  "mapping" : [
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    },
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    },
-    {
-      "identity" : "ical",
-      "uri" : "http://ietf.org/rfc/2445",
-      "name" : "iCalendar"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "ical",
+    "uri" : "http://ietf.org/rfc/2445",
+    "name" : "iCalendar"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Slot",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Slot",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Slot",
-        "path" : "Slot"
-      },
-      {
-        "id" : "Slot.extension",
-        "path" : "Slot.extension",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "value",
-              "path" : "url"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
-        }
-      },
-      {
-        "id" : "Slot.extension:SlotEncounterClass",
-        "path" : "Slot.extension",
-        "sliceName" : "SlotEncounterClass",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/slot-encounter-class"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Slot.extension:bookingURL",
-        "path" : "Slot.extension",
-        "sliceName" : "bookingURL",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/appointment-booking-url"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Slot.serviceType",
-        "path" : "Slot.serviceType",
-        "type" : [
-          {
-            "code" : "CodeableReference",
-            "targetProfile" : [
-              "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice"
-            ]
-          }
-        ],
-        "binding" : {
-          "strength" : "extensible",
-          "valueSet" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType"
-        }
-      },
-      {
-        "id" : "Slot.schedule",
-        "path" : "Slot.schedule",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-schedule"
-            ]
-          }
-        ]
+    "element" : [{
+      "id" : "Slot",
+      "path" : "Slot"
+    },
+    {
+      "id" : "Slot.extension",
+      "path" : "Slot.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
       }
-    ]
+    },
+    {
+      "id" : "Slot.extension:SlotEncounterClass",
+      "path" : "Slot.extension",
+      "sliceName" : "SlotEncounterClass",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/slot-encounter-class"]
+      }]
+    },
+    {
+      "id" : "Slot.extension:bookingURL",
+      "path" : "Slot.extension",
+      "sliceName" : "bookingURL",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/appointment-booking-url"]
+      }]
+    },
+    {
+      "id" : "Slot.serviceType",
+      "path" : "Slot.serviceType",
+      "type" : [{
+        "code" : "CodeableReference",
+        "targetProfile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice"]
+      }],
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType"
+      }
+    },
+    {
+      "id" : "Slot.schedule",
+      "path" : "Slot.schedule",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-schedule"]
+      }]
+    }]
   }
 }
 

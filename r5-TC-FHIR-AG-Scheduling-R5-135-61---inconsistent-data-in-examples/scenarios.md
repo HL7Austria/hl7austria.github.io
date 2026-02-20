@@ -11,7 +11,7 @@ This IG defines two types of actors relevant to the scheduling process: Scheduli
 
 #### Scheduling Client
 
-The [Scheduling Client](ActorDefinition-at-scheduling-actor-scheduling-client.md) requests data relevant to appointment scheduling (Healthcare Service Providers, Healthcare Services, available time slots, etc.) using parameters from a Scheduling Server and books/edits/cancels appointments for a specific patient.
+The [Scheduling Client](ActorDefinition-at-scheduling-actor-scheduling-client.md) issues parameterized requests to the Scheduling Server to retrieve Healthcare Service Providers, Healthcare Services, available time slots and other data relevant for appointment scheduling. It books, edits and cancels appointments for a specific patient.
 
 #### Scheduling Server
 
@@ -23,7 +23,7 @@ In this scenario a Scheduling Client directly interacts with a Scheduling Server
 
 ### Central scheduling platform
 
-In this scenario one Central Booking Platform acts as a central Scheduling Server accumulating data from other Scheduling Servers and/or health information systems. Requests to the Central Booking Platform are relayed to known other Scheduling Servers. The other Scheduling Servers can either be health information systems or booking platforms which in turn access the APIs of other Scheduling Servers (either via FHIR or other APIs) in a cascading fashion. The Central Booking Platform aggregates search results from multiple sources for the Scheduling Client and relays requests related to appointment booking from the Scheduling Client to the target Scheduling Server. The Central Booking Platform is not required to persist scheduling related data, but can do so (e.g. for performance reasons).
+In this scenario one Central Booking Platform acts as a central Scheduling Server accumulating data from other Scheduling Servers and/or health information systems. Requests to the Central Booking Platform are relayed to known other Scheduling Servers. The other Scheduling Servers can either be health information systems or booking platforms which in turn access the APIs of other Scheduling Servers (either via FHIR or other APIs) in a cascading fashion. The Central Booking Platform aggregates search results from multiple sources for the Scheduling Client and relays requests related to appointment booking from the Scheduling Client to the target Scheduling Server. The Central Booking Platform is not required to persist any scheduling-related data. While it is discouraged to persist information about currently available slots, rarely changed information such as available HealthcareServices can be cached for a reasonable amount of time.
 
 #### Booking with external provider
 
