@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/at-prenudge-observation-valueset-method-manual-automated | *Version*:0.1.0 | |
-| Active as of 2026-02-13 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeValueSetMethodManualAutomated |
+| Active as of 2026-02-22 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeValueSetMethodManualAutomated |
 
  **References** 
 
@@ -46,45 +46,35 @@
   "version" : "0.1.0",
   "name" : "AtPrenudgeValueSetMethodManualAutomated",
   "status" : "active",
-  "date" : "2026-02-13T19:47:50+00:00",
+  "date" : "2026-02-22T11:57:51+00:00",
   "publisher" : "The PreNUDGE Consortium",
-  "contact" : [
-    {
-      "name" : "The PreNUDGE Consortium",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://prenudge.at"
-        }
-      ]
-    },
-    {
-      "name" : "The PreNUDGE Consortium",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://prenudge.at",
-          "use" : "work"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at"
+    }]
+  },
+  {
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at",
+      "use" : "work"
+    }]
+  }],
   "compose" : {
-    "include" : [
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "concept" : [{
+        "code" : "87982008",
+        "display" : "Manual"
+      },
       {
-        "system" : "http://snomed.info/sct",
-        "concept" : [
-          {
-            "code" : "87982008",
-            "display" : "Manual"
-          },
-          {
-            "code" : "8359006",
-            "display" : "Automated"
-          }
-        ]
-      }
-    ]
+        "code" : "8359006",
+        "display" : "Automated"
+      }]
+    }]
   }
 }
 

@@ -24,26 +24,22 @@
 {
   "resourceType" : "QuestionnaireResponse",
   "id" : "AlcoholResponseNever",
-  "questionnaire" : "http://hl7.at/prenudge/Questionnaire/alcohol-frequency",
+  "questionnaire" : "https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/AtPrenudgeQuestionnaireAlcoholUse",
   "status" : "completed",
   "subject" : {
     "reference" : "Patient/example"
   },
   "authored" : "2026-02-13",
-  "item" : [
-    {
-      "linkId" : "alcohol-frequency",
-      "answer" : [
-        {
-          "valueCoding" : {
-            "system" : "http://snomed.info/sct",
-            "code" : "783261004",
-            "display" : "Nie oder lediglich einige wenige Schlucke in meinem Leben"
-          }
-        }
-      ]
-    }
-  ]
+  "item" : [{
+    "linkId" : "alcohol-frequency",
+    "answer" : [{
+      "valueCoding" : {
+        "system" : "http://snomed.info/sct",
+        "code" : "783261004",
+        "display" : "Nie oder lediglich einige wenige Schlucke in meinem Leben"
+      }
+    }]
+  }]
 }
 
 ```

@@ -11,7 +11,7 @@
   <name value="PreNUDGEAppdataR4"/>
   <title value="PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)"/>
   <status value="draft"/>
-  <date value="2026-02-13T19:47:50+00:00"/>
+  <date value="2026-02-22T11:57:51+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -485,7 +485,7 @@
         <reference value="Questionnaire/AtPrenudgeQuestionnaireAlcoholUse"/>
       </reference>
       <name value="Alkoholkonsum-Frequenz (letztes Jahr)"/>
-      <description value="Categorical variable for the frequency of alcohol consumption in the last year (IPS-compatible)."/>
+      <description value="Categorical variable for the frequency of alcohol consumption in the last year (IPS compatible)."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -540,7 +540,18 @@
         <reference value="StructureDefinition/at-prenudge-questionnaire"/>
       </reference>
       <name value="AT PreNUDGE Questionnaire"/>
-      <description value="This FHIR profile is defining the overall Questionnaire for PreNUDGE."/>
+      <description value="This FHIR profile is defining the overall Questionnaire for PreNUDGE. Every top level item requires one comment subitem, with the linkId ending or equal 'comment'."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-prenudge-questionnaireresponse"/>
+      </reference>
+      <name value="AT PreNUDGE Questionnaire Response"/>
+      <description value="This FHIR profile is defining the overall Questionnaire Response for PreNUDGE."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -574,6 +585,27 @@
       <name value="PatientExample"/>
       <description value="An example of a patient with a license to krill."/>
       <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/MyPatient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/QolQuestionnaire"/>
+      </reference>
+      <name value="Quality of life by RAND 36-Item Health Survey 1.0 (SF-36)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/rand-sf36-answers"/>
+      </reference>
+      <name value="RAND SF-36 answer options in german"/>
+      <description value="Answer options for den RAND SF-36 Health Survey, translated to german"/>
+      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">

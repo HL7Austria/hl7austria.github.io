@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-observation | *Version*:0.1.0 | |
-| Draft as of 2026-02-13 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservation |
+| Draft as of 2026-02-22 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservation |
 
  
 This FHIR profile is defining the overall Observation for PreNUDGE. 
@@ -41,90 +41,104 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-observat
   "name" : "AtPrenudgeObservation",
   "title" : "AT PreNUDGE Observation",
   "status" : "draft",
-  "date" : "2026-02-13T19:47:50+00:00",
+  "date" : "2026-02-22T11:57:51+00:00",
   "publisher" : "The PreNUDGE Consortium",
-  "contact" : [
-    {
-      "name" : "The PreNUDGE Consortium",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://prenudge.at"
-        }
-      ]
-    },
-    {
-      "name" : "The PreNUDGE Consortium",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://prenudge.at",
-          "use" : "work"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at"
+    }]
+  },
+  {
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at",
+      "use" : "work"
+    }]
+  }],
   "description" : "This FHIR profile is defining the overall Observation for PreNUDGE.",
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "workflow",
-      "uri" : "http://hl7.org/fhir/workflow",
-      "name" : "Workflow Pattern"
-    },
-    {
-      "identity" : "sct-concept",
-      "uri" : "http://snomed.info/conceptdomain",
-      "name" : "SNOMED CT Concept Domain Binding"
-    },
-    {
-      "identity" : "v2",
-      "uri" : "http://hl7.org/v2",
-      "name" : "HL7 v2 Mapping"
-    },
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    },
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    },
-    {
-      "identity" : "sct-attr",
-      "uri" : "http://snomed.org/attributebinding",
-      "name" : "SNOMED CT Attribute Binding"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "workflow",
+    "uri" : "http://hl7.org/fhir/workflow",
+    "name" : "Workflow Pattern"
+  },
+  {
+    "identity" : "sct-concept",
+    "uri" : "http://snomed.info/conceptdomain",
+    "name" : "SNOMED CT Concept Domain Binding"
+  },
+  {
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "sct-attr",
+    "uri" : "http://snomed.org/attributebinding",
+    "name" : "SNOMED CT Attribute Binding"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Observation",
   "baseDefinition" : "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Observation",
-        "path" : "Observation"
-      },
-      {
-        "id" : "Observation.method",
-        "path" : "Observation.method",
-        "min" : 1,
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/at-prenudge-observation-valueset-method-manual-automated"
-        }
-      },
-      {
-        "id" : "Observation.component",
-        "path" : "Observation.component",
-        "max" : "0",
-        "mustSupport" : false
+    "element" : [{
+      "id" : "Observation",
+      "path" : "Observation"
+    },
+    {
+      "id" : "Observation.identifier",
+      "path" : "Observation.identifier",
+      "short" : "Business Identifier for observation, at least one is assigned by the data provider",
+      "min" : 1
+    },
+    {
+      "id" : "Observation.identifier.system",
+      "path" : "Observation.identifier.system",
+      "short" : "The namespace for the identifier value, if no other information is given, use your website url",
+      "min" : 1
+    },
+    {
+      "id" : "Observation.identifier.value",
+      "path" : "Observation.identifier.value",
+      "min" : 1
+    },
+    {
+      "id" : "Observation.note",
+      "path" : "Observation.note",
+      "short" : "Comments about the observation including patient comments have to be possible",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.method",
+      "path" : "Observation.method",
+      "min" : 1,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/at-prenudge-observation-valueset-method-manual-automated"
       }
-    ]
+    },
+    {
+      "id" : "Observation.component",
+      "path" : "Observation.component",
+      "short" : "Component results are not allowed as groupings for values will be handeled case by case; create only flat observations",
+      "max" : "0",
+      "mustSupport" : false
+    }]
   }
 }
 

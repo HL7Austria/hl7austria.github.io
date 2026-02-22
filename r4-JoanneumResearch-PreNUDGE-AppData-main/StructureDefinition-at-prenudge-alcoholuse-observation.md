@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation | *Version*:0.1.0 | |
-| Draft as of 2026-02-13 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationAlcoholUse |
+| Draft as of 2026-02-22 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationAlcoholUse |
 
  
 This FHIR profile is currently derived from the APS Observation Alcohol Use profile without introducing any additional constraints or changes. It serves as a prepared extension point so that future adaptations can be made independently if required. 
@@ -36,86 +36,74 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-alcoholu
 {
   "resourceType" : "StructureDefinition",
   "id" : "at-prenudge-alcoholuse-observation",
-  "extension" : [
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile",
-      "valueCanonical" : "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-alcoholuse-uv-ips"
-    }
-  ],
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile",
+    "valueCanonical" : "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-alcoholuse-uv-ips"
+  }],
   "url" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation",
   "version" : "0.1.0",
   "name" : "AtPrenudgeObservationAlcoholUse",
   "title" : "AT PreNUDGE Observation Alcohol Use",
   "status" : "draft",
-  "date" : "2026-02-13T19:47:50+00:00",
+  "date" : "2026-02-22T11:57:51+00:00",
   "publisher" : "The PreNUDGE Consortium",
-  "contact" : [
-    {
-      "name" : "The PreNUDGE Consortium",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://prenudge.at"
-        }
-      ]
-    },
-    {
-      "name" : "The PreNUDGE Consortium",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://prenudge.at",
-          "use" : "work"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at"
+    }]
+  },
+  {
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at",
+      "use" : "work"
+    }]
+  }],
   "description" : "This FHIR profile is currently derived from the APS Observation Alcohol Use profile without introducing any additional constraints or changes. It serves as a prepared extension point so that future adaptations can be made independently if required.",
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "workflow",
-      "uri" : "http://hl7.org/fhir/workflow",
-      "name" : "Workflow Pattern"
-    },
-    {
-      "identity" : "sct-concept",
-      "uri" : "http://snomed.info/conceptdomain",
-      "name" : "SNOMED CT Concept Domain Binding"
-    },
-    {
-      "identity" : "v2",
-      "uri" : "http://hl7.org/v2",
-      "name" : "HL7 v2 Mapping"
-    },
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    },
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    },
-    {
-      "identity" : "sct-attr",
-      "uri" : "http://snomed.org/attributebinding",
-      "name" : "SNOMED CT Attribute Binding"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "workflow",
+    "uri" : "http://hl7.org/fhir/workflow",
+    "name" : "Workflow Pattern"
+  },
+  {
+    "identity" : "sct-concept",
+    "uri" : "http://snomed.info/conceptdomain",
+    "name" : "SNOMED CT Concept Domain Binding"
+  },
+  {
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "sct-attr",
+    "uri" : "http://snomed.org/attributebinding",
+    "name" : "SNOMED CT Attribute Binding"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Observation",
   "baseDefinition" : "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationalcoholuse",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Observation",
-        "path" : "Observation"
-      }
-    ]
+    "element" : [{
+      "id" : "Observation",
+      "path" : "Observation"
+    }]
   }
 }
 

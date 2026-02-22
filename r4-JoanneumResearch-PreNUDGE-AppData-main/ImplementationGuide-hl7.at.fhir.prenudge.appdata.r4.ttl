@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "PreNUDGEAppdataR4"] ; # 
   fhir:title [ fhir:v "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-02-13T19:47:50+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-02-22T11:57:51+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "The PreNUDGE Consortium"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "The PreNUDGE Consortium" ] ;
@@ -1353,7 +1353,7 @@
          fhir:reference [ fhir:v "Questionnaire/AtPrenudgeQuestionnaireAlcoholUse" ]
        ] ;
        fhir:name [ fhir:v "Alkoholkonsum-Frequenz (letztes Jahr)" ] ;
-       fhir:description [ fhir:v "Categorical variable for the frequency of alcohol consumption in the last year (IPS-compatible)." ] ;
+       fhir:description [ fhir:v "Categorical variable for the frequency of alcohol consumption in the last year (IPS compatible)." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -1458,7 +1458,28 @@
          fhir:reference [ fhir:v "StructureDefinition/at-prenudge-questionnaire" ]
        ] ;
        fhir:name [ fhir:v "AT PreNUDGE Questionnaire" ] ;
-       fhir:description [ fhir:v "This FHIR profile is defining the overall Questionnaire for PreNUDGE." ] ;
+       fhir:description [ fhir:v "This FHIR profile is defining the overall Questionnaire for PreNUDGE. Every top level item requires one comment subitem, with the linkId ending or equal 'comment'." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-prenudge-questionnaireresponse" ]
+       ] ;
+       fhir:name [ fhir:v "AT PreNUDGE Questionnaire Response" ] ;
+       fhir:description [ fhir:v "This FHIR profile is defining the overall Questionnaire Response for PreNUDGE." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -1525,6 +1546,47 @@
          a fhir:Canonical ;
          fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/MyPatient"^^xsd:anyURI ;
          fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/MyPatient>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Questionnaire"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/QolQuestionnaire> ;
+         fhir:reference [ fhir:v "Questionnaire/QolQuestionnaire" ]
+       ] ;
+       fhir:name [ fhir:v "Quality of life by RAND 36-Item Health Survey 1.0 (SF-36)" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/rand-sf36-answers> ;
+         fhir:reference [ fhir:v "CodeSystem/rand-sf36-answers" ]
+       ] ;
+       fhir:name [ fhir:v "RAND SF-36 answer options in german" ] ;
+       fhir:description [ fhir:v "Answer options for den RAND SF-36 Health Survey, translated to german" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
        ]
      ] [
        fhir:extension ( [

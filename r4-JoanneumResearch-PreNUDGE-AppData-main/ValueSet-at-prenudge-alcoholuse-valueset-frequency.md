@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/at-prenudge-alcoholuse-valueset-frequency | *Version*:0.1.0 | |
-| Active as of 2026-02-13 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeValueSetAlcoholUseFrequencySnomedVS |
+| Active as of 2026-02-22 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeValueSetAlcoholUseFrequencySnomedVS |
 
  **References** 
 
@@ -47,163 +47,135 @@
   "name" : "AtPrenudgeValueSetAlcoholUseFrequencySnomedVS",
   "title" : "SNOMED CT AlcoholUse-Frequency",
   "status" : "active",
-  "date" : "2026-02-13T19:47:50+00:00",
+  "date" : "2026-02-22T11:57:51+00:00",
   "publisher" : "The PreNUDGE Consortium",
-  "contact" : [
-    {
-      "name" : "The PreNUDGE Consortium",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://prenudge.at"
-        }
-      ]
-    },
-    {
-      "name" : "The PreNUDGE Consortium",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://prenudge.at",
-          "use" : "work"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at"
+    }]
+  },
+  {
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at",
+      "use" : "work"
+    }]
+  }],
   "compose" : {
-    "include" : [
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "concept" : [{
+        "code" : "69620002",
+        "display" : "Daily",
+        "designation" : [{
+          "use" : {
+            "system" : "http://snomed.info/sct",
+            "code" : "405672008",
+            "display" : "Direct questioning"
+          },
+          "value" : "Täglich oder fast jeden Tag im letzten Jahr"
+        }]
+      },
       {
-        "system" : "http://snomed.info/sct",
-        "concept" : [
-          {
-            "code" : "69620002",
-            "display" : "Daily",
-            "designation" : [
-              {
-                "use" : {
-                  "system" : "http://snomed.info/sct",
-                  "code" : "405672008",
-                  "display" : "Direct questioning"
-                },
-                "value" : "Täglich oder fast jeden Tag im letzten Jahr"
-              }
-            ]
+        "code" : "307447001",
+        "display" : "Six times weekly",
+        "designation" : [{
+          "use" : {
+            "system" : "http://snomed.info/sct",
+            "code" : "405672008",
+            "display" : "Direct questioning"
           },
-          {
-            "code" : "307447001",
-            "display" : "Six times weekly",
-            "designation" : [
-              {
-                "use" : {
-                  "system" : "http://snomed.info/sct",
-                  "code" : "405672008",
-                  "display" : "Direct questioning"
-                },
-                "value" : "An 5 bis 6 Tagen pro Woche"
-              }
-            ]
+          "value" : "An 5 bis 6 Tagen pro Woche"
+        }]
+      },
+      {
+        "code" : "396113003",
+        "display" : "Three to four times a week",
+        "designation" : [{
+          "use" : {
+            "system" : "http://snomed.info/sct",
+            "code" : "405672008",
+            "display" : "Direct questioning"
           },
-          {
-            "code" : "396113003",
-            "display" : "Three to four times a week",
-            "designation" : [
-              {
-                "use" : {
-                  "system" : "http://snomed.info/sct",
-                  "code" : "405672008",
-                  "display" : "Direct questioning"
-                },
-                "value" : "An 3 bis 4 Tagen pro Woche"
-              }
-            ]
+          "value" : "An 3 bis 4 Tagen pro Woche"
+        }]
+      },
+      {
+        "code" : "229800002",
+        "display" : "Twice weekly",
+        "designation" : [{
+          "use" : {
+            "system" : "http://snomed.info/sct",
+            "code" : "405672008",
+            "display" : "Direct questioning"
           },
-          {
-            "code" : "229800002",
-            "display" : "Twice weekly",
-            "designation" : [
-              {
-                "use" : {
-                  "system" : "http://snomed.info/sct",
-                  "code" : "405672008",
-                  "display" : "Direct questioning"
-                },
-                "value" : "An 1 bis 2 Tagen pro Woche"
-              }
-            ]
+          "value" : "An 1 bis 2 Tagen pro Woche"
+        }]
+      },
+      {
+        "code" : "307452006",
+        "display" : "Three times monthly",
+        "designation" : [{
+          "use" : {
+            "system" : "http://snomed.info/sct",
+            "code" : "405672008",
+            "display" : "Direct questioning"
           },
-          {
-            "code" : "307452006",
-            "display" : "Three times monthly",
-            "designation" : [
-              {
-                "use" : {
-                  "system" : "http://snomed.info/sct",
-                  "code" : "405672008",
-                  "display" : "Direct questioning"
-                },
-                "value" : "An 2 bis 3 Tagen pro Monat"
-              }
-            ]
+          "value" : "An 2 bis 3 Tagen pro Monat"
+        }]
+      },
+      {
+        "code" : "307450003",
+        "display" : "Once monthly",
+        "designation" : [{
+          "use" : {
+            "system" : "http://snomed.info/sct",
+            "code" : "405672008",
+            "display" : "Direct questioning"
           },
-          {
-            "code" : "307450003",
-            "display" : "Once monthly",
-            "designation" : [
-              {
-                "use" : {
-                  "system" : "http://snomed.info/sct",
-                  "code" : "405672008",
-                  "display" : "Direct questioning"
-                },
-                "value" : "Einmal pro Monat"
-              }
-            ]
+          "value" : "Einmal pro Monat"
+        }]
+      },
+      {
+        "code" : "445547001",
+        "display" : "Every two months",
+        "designation" : [{
+          "use" : {
+            "system" : "http://snomed.info/sct",
+            "code" : "405672008",
+            "display" : "Direct questioning"
           },
-          {
-            "code" : "445547001",
-            "display" : "Every two months",
-            "designation" : [
-              {
-                "use" : {
-                  "system" : "http://snomed.info/sct",
-                  "code" : "405672008",
-                  "display" : "Direct questioning"
-                },
-                "value" : "Weniger als einmal pro Monat"
-              }
-            ]
+          "value" : "Weniger als einmal pro Monat"
+        }]
+      },
+      {
+        "code" : "105542008",
+        "display" : "Current non-drinker of alcohol",
+        "designation" : [{
+          "use" : {
+            "system" : "http://snomed.info/sct",
+            "code" : "405672008",
+            "display" : "Direct questioning"
           },
-          {
-            "code" : "105542008",
-            "display" : "Current non-drinker of alcohol",
-            "designation" : [
-              {
-                "use" : {
-                  "system" : "http://snomed.info/sct",
-                  "code" : "405672008",
-                  "display" : "Direct questioning"
-                },
-                "value" : "Nicht in den letzten 12 Monaten, da ich keinen Alkohol mehr trinke"
-              }
-            ]
+          "value" : "Nicht in den letzten 12 Monaten, da ich keinen Alkohol mehr trinke"
+        }]
+      },
+      {
+        "code" : "783261004",
+        "display" : "Lifetime non-drinker of alcohol",
+        "designation" : [{
+          "use" : {
+            "system" : "http://snomed.info/sct",
+            "code" : "405672008",
+            "display" : "Direct questioning"
           },
-          {
-            "code" : "783261004",
-            "display" : "Lifetime non-drinker of alcohol",
-            "designation" : [
-              {
-                "use" : {
-                  "system" : "http://snomed.info/sct",
-                  "code" : "405672008",
-                  "display" : "Direct questioning"
-                },
-                "value" : "Nie oder lediglich einige wenige Schlucke in meinem Leben"
-              }
-            ]
-          }
-        ]
-      }
-    ]
+          "value" : "Nie oder lediglich einige wenige Schlucke in meinem Leben"
+        }]
+      }]
+    }]
   }
 }
 

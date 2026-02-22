@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/MyPatient | *Version*:0.1.0 | |
-| Draft as of 2026-02-13 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:MyPatient |
+| Draft as of 2026-02-22 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:MyPatient |
 
  
 An example profile of the Patient resource. 
@@ -40,76 +40,66 @@ Other representations of profile: [CSV](StructureDefinition-MyPatient.csv), [Exc
   "version" : "0.1.0",
   "name" : "MyPatient",
   "status" : "draft",
-  "date" : "2026-02-13T19:47:50+00:00",
+  "date" : "2026-02-22T11:57:51+00:00",
   "publisher" : "The PreNUDGE Consortium",
-  "contact" : [
-    {
-      "name" : "The PreNUDGE Consortium",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://prenudge.at"
-        }
-      ]
-    },
-    {
-      "name" : "The PreNUDGE Consortium",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://prenudge.at",
-          "use" : "work"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at"
+    }]
+  },
+  {
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at",
+      "use" : "work"
+    }]
+  }],
   "description" : "An example profile of the Patient resource.",
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    },
-    {
-      "identity" : "cda",
-      "uri" : "http://hl7.org/v3/cda",
-      "name" : "CDA (R2)"
-    },
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    },
-    {
-      "identity" : "v2",
-      "uri" : "http://hl7.org/v2",
-      "name" : "HL7 v2 Mapping"
-    },
-    {
-      "identity" : "loinc",
-      "uri" : "http://loinc.org",
-      "name" : "LOINC code for the element"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "cda",
+    "uri" : "http://hl7.org/v3/cda",
+    "name" : "CDA (R2)"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  },
+  {
+    "identity" : "loinc",
+    "uri" : "http://loinc.org",
+    "name" : "LOINC code for the element"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Patient",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Patient",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Patient",
-        "path" : "Patient"
-      },
-      {
-        "id" : "Patient.name",
-        "path" : "Patient.name",
-        "min" : 1,
-        "mustSupport" : true
-      }
-    ]
+    "element" : [{
+      "id" : "Patient",
+      "path" : "Patient"
+    },
+    {
+      "id" : "Patient.name",
+      "path" : "Patient.name",
+      "min" : 1,
+      "mustSupport" : true
+    }]
   }
 }
 

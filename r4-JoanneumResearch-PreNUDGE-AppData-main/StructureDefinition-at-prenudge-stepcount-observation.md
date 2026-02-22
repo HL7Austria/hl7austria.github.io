@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation | *Version*:0.1.0 | |
-| Draft as of 2026-02-13 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationStepCount |
+| Draft as of 2026-02-22 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationStepCount |
 
  
 This FHIR profile is defining the Step Count Observation, similar to the Observation Social History - Alcohol Use from the IPS. The step count option only allowes values inbetween 0 and 300 000. 
@@ -41,124 +41,106 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-stepcoun
   "name" : "AtPrenudgeObservationStepCount",
   "title" : "AT PreNUDGE Observation Step Count",
   "status" : "draft",
-  "date" : "2026-02-13T19:47:50+00:00",
+  "date" : "2026-02-22T11:57:51+00:00",
   "publisher" : "The PreNUDGE Consortium",
-  "contact" : [
-    {
-      "name" : "The PreNUDGE Consortium",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://prenudge.at"
-        }
-      ]
-    },
-    {
-      "name" : "The PreNUDGE Consortium",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://prenudge.at",
-          "use" : "work"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at"
+    }]
+  },
+  {
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at",
+      "use" : "work"
+    }]
+  }],
   "description" : "This FHIR profile is defining the Step Count Observation, similar to the Observation Social History - Alcohol Use from the IPS. The step count option only allowes values inbetween 0 and 300 000.",
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "workflow",
-      "uri" : "http://hl7.org/fhir/workflow",
-      "name" : "Workflow Pattern"
-    },
-    {
-      "identity" : "sct-concept",
-      "uri" : "http://snomed.info/conceptdomain",
-      "name" : "SNOMED CT Concept Domain Binding"
-    },
-    {
-      "identity" : "v2",
-      "uri" : "http://hl7.org/v2",
-      "name" : "HL7 v2 Mapping"
-    },
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    },
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    },
-    {
-      "identity" : "sct-attr",
-      "uri" : "http://snomed.org/attributebinding",
-      "name" : "SNOMED CT Attribute Binding"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "workflow",
+    "uri" : "http://hl7.org/fhir/workflow",
+    "name" : "Workflow Pattern"
+  },
+  {
+    "identity" : "sct-concept",
+    "uri" : "http://snomed.info/conceptdomain",
+    "name" : "SNOMED CT Concept Domain Binding"
+  },
+  {
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "sct-attr",
+    "uri" : "http://snomed.org/attributebinding",
+    "name" : "SNOMED CT Attribute Binding"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Observation",
   "baseDefinition" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-observation",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Observation",
-        "path" : "Observation",
-        "constraint" : [
-          {
-            "key" : "stepcount-range",
-            "severity" : "error",
-            "human" : "Step count must be inbetween 0 and 300 000.",
-            "expression" : "valueInteger >= 0 and valueInteger <= 300000",
-            "source" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation"
-          }
-        ]
-      },
-      {
-        "id" : "Observation.code",
-        "path" : "Observation.code",
-        "patternCodeableConcept" : {
-          "coding" : [
-            {
-              "system" : "http://loinc.org",
-              "code" : "41950-7",
-              "display" : "Number of steps in 24 hour Measured"
-            }
-          ]
-        }
-      },
-      {
-        "id" : "Observation.value[x]",
-        "path" : "Observation.value[x]",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "type",
-              "path" : "$this"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
-        },
-        "min" : 1
-      },
-      {
-        "id" : "Observation.value[x]:valueInteger",
-        "path" : "Observation.value[x]",
-        "sliceName" : "valueInteger",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "integer"
-          }
-        ]
+    "element" : [{
+      "id" : "Observation",
+      "path" : "Observation",
+      "constraint" : [{
+        "key" : "stepcount-range",
+        "severity" : "error",
+        "human" : "Step count must be inbetween 0 and 300 000.",
+        "expression" : "valueInteger >= 0 and valueInteger <= 300000",
+        "source" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation"
+      }]
+    },
+    {
+      "id" : "Observation.code",
+      "path" : "Observation.code",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "41950-7",
+          "display" : "Number of steps in 24 hour Measured"
+        }]
       }
-    ]
+    },
+    {
+      "id" : "Observation.value[x]",
+      "path" : "Observation.value[x]",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "type",
+          "path" : "$this"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      },
+      "min" : 1
+    },
+    {
+      "id" : "Observation.value[x]:valueInteger",
+      "path" : "Observation.value[x]",
+      "sliceName" : "valueInteger",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "integer"
+      }]
+    }]
   }
 }
 

@@ -24,22 +24,18 @@
 {
   "resourceType" : "QuestionnaireResponse",
   "id" : "StepCountResponseActive",
-  "questionnaire" : "http://example.org/fhir/Questionnaire/step-count",
+  "questionnaire" : "https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/StepCountQuestionnaire",
   "status" : "completed",
   "subject" : {
     "reference" : "Patient/example"
   },
   "authored" : "2026-02-13",
-  "item" : [
-    {
-      "linkId" : "step-count-today",
-      "answer" : [
-        {
-          "valueInteger" : 12345
-        }
-      ]
-    }
-  ]
+  "item" : [{
+    "linkId" : "step-count-today",
+    "answer" : [{
+      "valueInteger" : 12345
+    }]
+  }]
 }
 
 ```

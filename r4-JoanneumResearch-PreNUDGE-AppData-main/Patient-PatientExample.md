@@ -21,16 +21,12 @@ James Pond (no stated gender), DoB Unknown
   "resourceType" : "Patient",
   "id" : "PatientExample",
   "meta" : {
-    "profile" : [
-      "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/MyPatient"
-    ]
+    "profile" : ["https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/MyPatient"]
   },
-  "name" : [
-    {
-      "family" : "Pond",
-      "given" : ["James"]
-    }
-  ]
+  "name" : [{
+    "family" : "Pond",
+    "given" : ["James"]
+  }]
 }
 
 ```

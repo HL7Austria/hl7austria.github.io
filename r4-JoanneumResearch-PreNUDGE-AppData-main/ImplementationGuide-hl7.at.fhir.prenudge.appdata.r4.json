@@ -10,7 +10,7 @@
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-02-13T19:47:50+00:00",
+  "date" : "2026-02-22T11:57:51+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -643,7 +643,7 @@
         "reference" : "Questionnaire/AtPrenudgeQuestionnaireAlcoholUse"
       },
       "name" : "Alkoholkonsum-Frequenz (letztes Jahr)",
-      "description" : "Categorical variable for the frequency of alcohol consumption in the last year (IPS-compatible).",
+      "description" : "Categorical variable for the frequency of alcohol consumption in the last year (IPS compatible).",
       "exampleBoolean" : false
     },
     {
@@ -703,7 +703,19 @@
         "reference" : "StructureDefinition/at-prenudge-questionnaire"
       },
       "name" : "AT PreNUDGE Questionnaire",
-      "description" : "This FHIR profile is defining the overall Questionnaire for PreNUDGE.",
+      "description" : "This FHIR profile is defining the overall Questionnaire for PreNUDGE. Every top level item requires one comment subitem, with the linkId ending or equal 'comment'.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-prenudge-questionnaireresponse"
+      },
+      "name" : "AT PreNUDGE Questionnaire Response",
+      "description" : "This FHIR profile is defining the overall Questionnaire Response for PreNUDGE.",
       "exampleBoolean" : false
     },
     {
@@ -740,6 +752,29 @@
       "name" : "PatientExample",
       "description" : "An example of a patient with a license to krill.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/MyPatient"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/QolQuestionnaire"
+      },
+      "name" : "Quality of life by RAND 36-Item Health Survey 1.0 (SF-36)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/rand-sf36-answers"
+      },
+      "name" : "RAND SF-36 answer options in german",
+      "description" : "Answer options for den RAND SF-36 Health Survey, translated to german",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
