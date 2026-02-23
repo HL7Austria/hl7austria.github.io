@@ -33,7 +33,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) ENTWURF",
   "status" : "draft",
-  "date" : "2026-02-23T08:57:08+00:00",
+  "date" : "2026-02-23T17:25:44+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -812,6 +812,18 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/AtEmedExampleMR-Dosierung-1010"
+      },
+      "name" : "Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema",
+      "description" : "**Beschreibung:** Medikationsplaneintrag mit Dosierung im Tageszeitenschema (morgens, mittags, abends, nachts): 1-0-1-0.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Organization"
       }],
       "reference" : {
@@ -1034,7 +1046,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "StructureDefinition/at-emed-timing"
       },
       "name" : "ELGA e-Med Timing",
-      "description" : "**Beschreibung:** Timing",
+      "description" : "**Beschreibung:** ELGA e-Med Timing",
       "exampleBoolean" : false
     }],
     "page" : {

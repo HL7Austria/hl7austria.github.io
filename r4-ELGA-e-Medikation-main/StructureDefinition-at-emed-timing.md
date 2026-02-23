@@ -12,11 +12,11 @@
 | Draft as of 2026-02-23 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedTiming |
 
  
-**Beschreibung:** Timing 
+**Beschreibung:** ELGA e-Med Timing 
 
 **Usages:**
 
-* This DataType Profile is not used by any profiles in this Implementation Guide
+* Use this DataType Profile: [ELGA e-Med Dosage](StructureDefinition-at-emed-dosage.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/at-emed-timing)
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-timing.csv),
   "name" : "AtEmedTiming",
   "title" : "ELGA e-Med Timing",
   "status" : "draft",
-  "date" : "2026-02-23T08:57:08+00:00",
+  "date" : "2026-02-23T17:25:44+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -58,7 +58,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-timing.csv),
       "use" : "work"
     }]
   }],
-  "description" : "**Beschreibung:** Timing",
+  "description" : "**Beschreibung:** ELGA e-Med Timing",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "v2",
@@ -77,8 +77,82 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-timing.csv),
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
-      "id" : "Timing",
-      "path" : "Timing"
+      "id" : "Timing.event",
+      "path" : "Timing.event",
+      "short" : "Zeitpunkt der Einnahme: Mapping /effectiveTime[1]/@value",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Timing.repeat",
+      "path" : "Timing.repeat",
+      "short" : "Wiederholungsangaben zur Einnahme",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Timing.repeat.bounds[x]",
+      "path" : "Timing.repeat.bounds[x]",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "type",
+          "path" : "$this"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "Timing.repeat.bounds[x]:boundsPeriod",
+      "path" : "Timing.repeat.bounds[x]",
+      "sliceName" : "boundsPeriod",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Period"
+      }]
+    },
+    {
+      "id" : "Timing.repeat.bounds[x]:boundsPeriod.start",
+      "path" : "Timing.repeat.bounds[x].start",
+      "short" : "Zeitraum der Einnahme: Start. Mapping /effectiveTime[1]/low"
+    },
+    {
+      "id" : "Timing.repeat.bounds[x]:boundsPeriod.end",
+      "path" : "Timing.repeat.bounds[x].end",
+      "short" : "Zeitraum der Einnahme: Ende. Mapping /effectiveTime[1]/high"
+    },
+    {
+      "id" : "Timing.repeat.frequency",
+      "path" : "Timing.repeat.frequency",
+      "short" : "Häufigkeit der Einnahme, z.B. 1 mal täglich.\nPeriodic Frequency /effectiveTime[operator=\"A\" and xsi:type=\"PIVL_TS\"] …/@institutionSpecified …/period/@value …/period/@unit"
+    },
+    {
+      "id" : "Timing.repeat.period",
+      "path" : "Timing.repeat.period",
+      "short" : "Intervall der Einnahme, z.B. alle 8 Stunden.",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Timing.repeat.periodUnit",
+      "path" : "Timing.repeat.periodUnit",
+      "short" : "Einheit des Intervalls der Einnahme, z.B. h für Stunden, d für Tage.",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://termgit.elga.gv.at/ValueSet/elga-medikationfrequenz"
+      }
+    },
+    {
+      "id" : "Timing.repeat.when",
+      "path" : "Timing.repeat.when",
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://termgit.elga.gv.at/ValueSet/elga-einnahmezeitpunkte"
+      }
+    },
+    {
+      "id" : "Timing.repeat.offset",
+      "path" : "Timing.repeat.offset",
+      "mustSupport" : true
     }]
   }
 }

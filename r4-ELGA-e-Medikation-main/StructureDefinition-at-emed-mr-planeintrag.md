@@ -18,7 +18,7 @@
 
 * Use this Profile: [ELGA e-Med Medikationsplan Collection Bundle](StructureDefinition-at-emed-bundle-medikationsplan.md) and [ELGA e-Med Medikationsplan Transaction Bundle](StructureDefinition-at-emed-bundle-tx-medikationsplan.md)
 * Refer to this Profile: [ELGA e-Med Medikationsplan](StructureDefinition-at-emed-list-medikationsplan.md) and [ELGA e-Med Geplante Abgabe](StructureDefinition-at-emed-mr-geplante-abgabe.md)
-* Examples for this Profile: [MedicationRequest/AtEmedJourneyMrPlaneintrag0201](MedicationRequest-AtEmedJourneyMrPlaneintrag0201.md) and [MedicationRequest/AtEmedJourneyMrPlaneintrag0202](MedicationRequest-AtEmedJourneyMrPlaneintrag0202.md)
+* Examples for this Profile: [MedicationRequest/AtEmedExampleMR-Dosierung-1010](MedicationRequest-AtEmedExampleMR-Dosierung-1010.md), [MedicationRequest/AtEmedJourneyMrPlaneintrag0201](MedicationRequest-AtEmedJourneyMrPlaneintrag0201.md) and [MedicationRequest/AtEmedJourneyMrPlaneintrag0202](MedicationRequest-AtEmedJourneyMrPlaneintrag0202.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/at-emed-mr-planeintrag)
 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
   "name" : "AtEmedMRPlaneintrag",
   "title" : "ELGA e-Med Planeintrag",
   "status" : "draft",
-  "date" : "2026-02-23T08:57:08+00:00",
+  "date" : "2026-02-23T17:25:44+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -424,8 +424,12 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
     {
       "id" : "MedicationRequest.dosageInstruction",
       "path" : "MedicationRequest.dosageInstruction",
-      "short" : "Anweisungen zur Einnahme/Verabreichung des Arzneimittels. TODO: alle Elemente + R5 Extensions prüfen",
+      "short" : "Angabe der Dosierinformationen strukturiert oder als Freitext",
       "min" : 1,
+      "type" : [{
+        "code" : "Dosage",
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-dosage"]
+      }],
       "mustSupport" : true
     },
     {

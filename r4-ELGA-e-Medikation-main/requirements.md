@@ -40,3 +40,26 @@
 
 ### Dosierungsbeispiele
 
+Dosierschemata, abgeleitet von FHIR Dosierungen für den digital gestützten Medikationsprozess - Medication IG DE v1.0.3, https://ig.fhir.de/igs/medication/index.html
+
+#### Freitext-Dosierung
+
+#### Schema mit Tageszeiten-Bezug
+
+https://ig.fhir.de/igs/medication/schema-tageszeit.html
+
+Das Schema gibt an, zu welchen Tageszeiten (morgens, mittags, abends, nachts) das Medikament angewandt werden soll. Das Tageszeitenschema wird häufig in Form einer vierstelligen Zahlenfolge dargestellt (z. B. 1-0-1-0).
+
+Varianten: Die Einnahmezeitpunkte sind täglich und bleiben über gesamte Behandlungsdauer gleich.
+ Die Einnahmezeitpunkte beziehen sich auf einzelne Tage. Die Behandlungsdauer kann auf ein Datum oder eine Anzahl von Tagen begrenzt werden.
+
+#### Schema mit Uhrzeiten-Bezug
+
+#### Schema mit Wochentags-Bezug
+
+#### Schema für wiederkehrende Intervalle
+
+#### Schema für Kombinationen von Zeitintervallen
+
+#### Schema für Kombinationen von Wochentagen
+

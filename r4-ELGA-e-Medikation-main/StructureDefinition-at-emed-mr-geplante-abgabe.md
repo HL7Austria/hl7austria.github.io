@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
   "name" : "AtEmedMRGeplanteAbgabe",
   "title" : "ELGA e-Med Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-02-23T08:57:08+00:00",
+  "date" : "2026-02-23T17:25:44+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -396,7 +396,12 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.dosageInstruction",
       "path" : "MedicationRequest.dosageInstruction",
-      "short" : "Anweisungen zur Einnahme/Verabreichung des Arzneimittels. TODO: alle Elemente + R5 Extensions prüfen",
+      "short" : "Angabe der Dosierinformationen strukturiert oder als Freitext",
+      "min" : 1,
+      "type" : [{
+        "code" : "Dosage",
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-dosage"]
+      }],
       "mustSupport" : true
     },
     {

@@ -35,7 +35,7 @@ These define constraints on FHIR data types for systems conforming to this imple
 | | |
 | :--- | :--- |
 | [ELGA e-Med Dosage](StructureDefinition-at-emed-dosage.md) | **Beschreibung:** Dosage |
-| [ELGA e-Med Timing](StructureDefinition-at-emed-timing.md) | **Beschreibung:** Timing |
+| [ELGA e-Med Timing](StructureDefinition-at-emed-timing.md) | **Beschreibung:** ELGA e-Med Timing |
 
 ### Terminology: Value Sets 
 
@@ -75,6 +75,7 @@ These are example instances that show what data produced and consumed by systems
 | [Beispiel Journey 02: Substance Hydrocortison](Substance-AtEmedJourneySubstanceHydrocortison.md) | **Beschreibung:** Beispiel einer Substance Hydrocortison. |
 | [Beispiel Journey 02: Transaction Bundle](Bundle-AtEmedJourneyBundleMedikationsplanTx02.md) | **Beschreibung:** Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) beinhaltet. |
 | [Beispiel Journey 03: Geplante Abgabe](MedicationRequest-AtEmedJourneyMrGeplanteAbgabe03.md) | **Beschreibung:** Bildet eine geplante Abgabe des Medikaments EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest). |
+| [Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema](MedicationRequest-AtEmedExampleMR-Dosierung-1010.md) | **Beschreibung:** Medikationsplaneintrag mit Dosierung im Tageszeitenschema (morgens, mittags, abends, nachts): 1-0-1-0. |
 | [Beispiel Organisation Apotheke 01](Organization-AtEmedExampleOrganizationApo01.md) | **Beschreibung:** Beispiel einer Apotheke als Organisation. |
 | [Beispiel Patient 01](Patient-AtEmedExamplePatient01.md) | **Beschreibung:** Beispiel eines Patienten. |
 | [Beispiel Ärztin 01](Practitioner-AtEmedExamplePractitioner01.md) | **Beschreibung:** Beispiel einer behandelnden Ärztin. |

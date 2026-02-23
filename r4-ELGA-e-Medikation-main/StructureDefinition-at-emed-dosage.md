@@ -16,7 +16,7 @@
 
 **Usages:**
 
-* This DataType Profile is not used by any profiles in this Implementation Guide
+* Use this DataType Profile: [ELGA e-Med Geplante Abgabe](StructureDefinition-at-emed-mr-geplante-abgabe.md) and [ELGA e-Med Planeintrag](StructureDefinition-at-emed-mr-planeintrag.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/at-emed-dosage)
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-dosage.csv),
   "name" : "AtEmedDosage",
   "title" : "ELGA e-Med Dosage",
   "status" : "draft",
-  "date" : "2026-02-23T08:57:08+00:00",
+  "date" : "2026-02-23T17:25:44+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -77,10 +77,6 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-dosage.csv),
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
-      "id" : "Dosage",
-      "path" : "Dosage"
-    },
-    {
       "id" : "Dosage.sequence",
       "path" : "Dosage.sequence",
       "short" : "Die Reihenfolge der Dosierungsanweisungen. Entfällt bei Einzeldosierung.",
@@ -106,6 +102,10 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-dosage.csv),
       "id" : "Dosage.timing",
       "path" : "Dosage.timing",
       "short" : "Zeitpunkt oder Zeitraum der Einnahme des Medikaments. \nUm widersprüchliche Anweisungen zu vermeiden, ist entweder Dosage.timing oder Dosage.text zu befüllen.",
+      "type" : [{
+        "code" : "Timing",
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-timing"]
+      }],
       "mustSupport" : true
     },
     {
@@ -151,7 +151,8 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-dosage.csv),
     {
       "id" : "Dosage.route",
       "path" : "Dosage.route",
-      "short" : "Verabreichungsweg, z.B. oral, nasal, intravenös, subkutan etc.",
+      "short" : "Art der Anwendung der Arznei. (z.B. oral, nasal, intravenös, subkutan)\n Kann bei codierten Arzneien aus der ASP-Liste entnommen werden.",
+      "mustSupport" : true,
       "binding" : {
         "strength" : "required",
         "valueSet" : "https://termgit.elga.gv.at/CodeSystem/medikationartanwendung"
@@ -160,13 +161,20 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-dosage.csv),
     {
       "id" : "Dosage.method",
       "path" : "Dosage.method",
-      "short" : "Verabreichungsmethode, z.B. Infusion, Injektion, Tablette, Salbe etc. "
+      "short" : "Verabreichungsmethode, z.B. Infusion, Injektion, Tablette, Salbe etc. ",
+      "mustSupport" : true
     },
     {
       "id" : "Dosage.doseAndRate",
       "path" : "Dosage.doseAndRate",
       "short" : "Menge des verabreichten Medikaments",
+      "max" : "1",
       "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.type",
+      "path" : "Dosage.doseAndRate.type",
+      "short" : "Art der Dosierung, z.B. berechnet, wie verordnet (ex): https://hl7.org/fhir/R4/valueset-dose-rate-type.html"
     },
     {
       "id" : "Dosage.doseAndRate.dose[x]",
@@ -178,23 +186,87 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-dosage.csv),
         }],
         "ordered" : false,
         "rules" : "open"
-      }
+      },
+      "short" : "Menge des verabreichten Medikaments pro Zeiteinheit."
+    },
+    {
+      "id" : "Dosage.doseAndRate.dose[x]:doseRange",
+      "path" : "Dosage.doseAndRate.dose[x]",
+      "sliceName" : "doseRange",
+      "short" : "Dosierungsspanne wird mit low und high angegeben, z.B. 5-10 mg.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Range"
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "Dosage.doseAndRate.dose[x]:doseQuantity",
       "path" : "Dosage.doseAndRate.dose[x]",
       "sliceName" : "doseQuantity",
+      "short" : "Mapping auf doseQuantity",
       "min" : 0,
       "max" : "1",
       "type" : [{
         "code" : "Quantity",
         "profile" : ["http://hl7.org/fhir/StructureDefinition/SimpleQuantity"]
       }],
-      "mustSupport" : true,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.dose[x]:doseQuantity.unit",
+      "path" : "Dosage.doseAndRate.dose[x].unit",
       "binding" : {
         "strength" : "required",
         "valueSet" : "https://termgit.elga.gv.at/ValueSet-elga-medikationmengenart"
       }
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]",
+      "path" : "Dosage.doseAndRate.rate[x]",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "type",
+          "path" : "$this"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRatio",
+      "path" : "Dosage.doseAndRate.rate[x]",
+      "sliceName" : "rateRatio",
+      "short" : "TODO: prüfen",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Ratio"
+      }]
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRange",
+      "path" : "Dosage.doseAndRate.rate[x]",
+      "sliceName" : "rateRange",
+      "short" : "TODO: prüfen",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Range"
+      }]
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateQuantity",
+      "path" : "Dosage.doseAndRate.rate[x]",
+      "sliceName" : "rateQuantity",
+      "short" : "TODO: prüfen",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Quantity",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/SimpleQuantity"]
+      }]
     }]
   }
 }
