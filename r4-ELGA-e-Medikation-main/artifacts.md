@@ -35,6 +35,7 @@ These define constraints on FHIR data types for systems conforming to this imple
 | | |
 | :--- | :--- |
 | [ELGA e-Med Dosage](StructureDefinition-at-emed-dosage.md) | **Beschreibung:** Dosage |
+| [ELGA e-Med Timing](StructureDefinition-at-emed-timing.md) | **Beschreibung:** Timing |
 
 ### Terminology: Value Sets 
 

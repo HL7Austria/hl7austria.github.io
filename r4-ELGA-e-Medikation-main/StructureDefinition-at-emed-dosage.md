@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-dosage | *Version*:0.1.1 | |
-| Draft as of 2026-02-20 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedDosage |
+| Draft as of 2026-02-23 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedDosage |
 
  
 **Beschreibung:** Dosage 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-dosage.csv),
   "name" : "AtEmedDosage",
   "title" : "ELGA e-Med Dosage",
   "status" : "draft",
-  "date" : "2026-02-20T10:02:53+00:00",
+  "date" : "2026-02-23T08:57:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -79,6 +79,122 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-dosage.csv),
     "element" : [{
       "id" : "Dosage",
       "path" : "Dosage"
+    },
+    {
+      "id" : "Dosage.sequence",
+      "path" : "Dosage.sequence",
+      "short" : "Die Reihenfolge der Dosierungsanweisungen. Entfällt bei Einzeldosierung.",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.text",
+      "path" : "Dosage.text",
+      "short" : "Freitext-Dosierungsanweisung, wenn keine strukturierte Angabe möglich ist.",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.additionalInstruction",
+      "path" : "Dosage.additionalInstruction",
+      "short" : "Codierte Anweisungen oder Warnhinweise für den Patienten, z.B. zur Einnahme oder zur Aufbewahrung des Arzneimittels. (ex):\nhttps://hl7.org/fhir/R4/valueset-additional-instruction-codes.html. TODO: Nur wenn nicht ohnehin im Beipackzettel enthalten oder zusätzlich? Evtl. f. magistrale Zubereitungen, da kein Beipackzettel."
+    },
+    {
+      "id" : "Dosage.patientInstruction",
+      "path" : "Dosage.patientInstruction",
+      "short" : "Freitext Anweisungen für den Patienten, z.B. zur Einnahme oder zur Aufbewahrung des Arzneimittels."
+    },
+    {
+      "id" : "Dosage.timing",
+      "path" : "Dosage.timing",
+      "short" : "Zeitpunkt oder Zeitraum der Einnahme des Medikaments. \nUm widersprüchliche Anweisungen zu vermeiden, ist entweder Dosage.timing oder Dosage.text zu befüllen.",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.asNeeded[x]",
+      "path" : "Dosage.asNeeded[x]",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "type",
+          "path" : "$this"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "Dosage.asNeeded[x]:asNeededBoolean",
+      "path" : "Dosage.asNeeded[x]",
+      "sliceName" : "asNeededBoolean",
+      "short" : "Bedarfsmedikation: Ja/Nein",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "boolean"
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.asNeeded[x]:asNeededCodeableConcept",
+      "path" : "Dosage.asNeeded[x]",
+      "sliceName" : "asNeededCodeableConcept",
+      "short" : "Bedarfsmedikation: Grund für die Bedarfsmedikation; Vermutlich reicht ein genereller Grund für die Medikation im Planeintrag (wenn e-Diagnose verfügbar).",
+      "min" : 0,
+      "max" : "0",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }]
+    },
+    {
+      "id" : "Dosage.site",
+      "path" : "Dosage.site",
+      "short" : "Körperstelle, an der das Medikament angewendet wird, z.B. Haut, Auge, Ohr etc."
+    },
+    {
+      "id" : "Dosage.route",
+      "path" : "Dosage.route",
+      "short" : "Verabreichungsweg, z.B. oral, nasal, intravenös, subkutan etc.",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://termgit.elga.gv.at/CodeSystem/medikationartanwendung"
+      }
+    },
+    {
+      "id" : "Dosage.method",
+      "path" : "Dosage.method",
+      "short" : "Verabreichungsmethode, z.B. Infusion, Injektion, Tablette, Salbe etc. "
+    },
+    {
+      "id" : "Dosage.doseAndRate",
+      "path" : "Dosage.doseAndRate",
+      "short" : "Menge des verabreichten Medikaments",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.dose[x]",
+      "path" : "Dosage.doseAndRate.dose[x]",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "type",
+          "path" : "$this"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "Dosage.doseAndRate.dose[x]:doseQuantity",
+      "path" : "Dosage.doseAndRate.dose[x]",
+      "sliceName" : "doseQuantity",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Quantity",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/SimpleQuantity"]
+      }],
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://termgit.elga.gv.at/ValueSet-elga-medikationmengenart"
+      }
     }]
   }
 }

@@ -38,3 +38,5 @@
 * Beispiel: [Collection Bundle](Bundle-AtEmedJourneyBundleMedikationsplan02.md)
  
 
+### Dosierungsbeispiele
+
