@@ -9,29 +9,10 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/appointment-book | *Version*:0.2.0 | |
-| Active as of 2025-11-18 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:Book_Appointment_Operation |
+| Active as of 2026-02-24 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:Book_Appointment_Operation |
 
  
 Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactions. This operation completes the booking of an appointment. The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the book request and updates the resource status accordingly. 
-
-URL: [base]/Appointment/$book
-
-### Parameters
-
-* **Use**: IN
-  * **Name**: appointment-resource
-  * **Scope**: 
-  * **Cardinality**: 1..1
-  * **Type**: [Resource](http://hl7.org/fhir/R5/resource.html)([HL7® AT Scheduling Appointment Profile](StructureDefinition-at-scheduling-appointment.md))
-  * **Binding**: 
-  * **Documentation**: The full appointment resource is needed for this operation. The appointment SHALL have the status `proposed`.
-* **Use**: OUT
-  * **Name**: return
-  * **Scope**: 
-  * **Cardinality**: 1..1
-  * **Type**: [Parameters](http://hl7.org/fhir/R5/parameters.html)
-  * **Binding**: 
-  * **Documentation**: The response will be a Parameters resource consisting of the requested Appointment resource and an OperationOutcome with errors, warnings or information as a result of processing the operation. The Appointment resource will have an updated `status` of `booked` if the request is approved, `pending` if it needs to be manually confirmed or `cancelled` if it is rejected.
 
 ### Notes:
 
@@ -55,7 +36,7 @@ If any of those pre-conditions are not met, the Scheduling Server SHALL reject t
 
 #####  Examples 
 
-#####  Request the booking of an appointmetn 
+#####  Request the booking of an appointment 
 
 ```
 POST: [baseURL]/Appointment/$book
@@ -86,7 +67,7 @@ POST: [baseURL]/Appointment/$book
                     <display value="A routine check-up, such as an annual physical"/>
                 </coding>
             </appointmentType>
-            <description value="Routineuntersuchung beim Hausarzt"/>
+            <description value="Physiotherapie - Einzelbehandlung 30 Minuten"/>
             <start value="2025-06-01T09:00:00+02:00"/>
             <end value="2025-06-01T09:30:00+02:00"/>
             <minutesDuration value="30"/>
@@ -152,7 +133,7 @@ HTTP 200 OK
                     <display value="A routine check-up, such as an annual physical"/>
                 </coding>
             </appointmentType>
-            <description value="Routineuntersuchung beim Hausarzt"/>
+            <description value="Physiotherapie - Einzelbehandlung 30 Minuten"/>
             <start value="2025-06-01T09:00:00+02:00"/>
             <end value="2025-06-01T09:30:00+02:00"/>
             <minutesDuration value="30"/>
@@ -213,7 +194,7 @@ HTTP 200 OK
   "name" : "Book_Appointment_Operation",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2025-11-18T18:56:10+00:00",
+  "date" : "2026-02-24T18:31:36+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactions. This operation completes the booking of an appointment. The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the book request and updates the resource status accordingly. ",
   "affectsState" : true,
@@ -222,27 +203,23 @@ HTTP 200 OK
   "system" : false,
   "type" : true,
   "instance" : false,
-  "parameter" : [
-    {
-      "name" : "appointment-resource",
-      "use" : "in",
-      "min" : 1,
-      "max" : "1",
-      "documentation" : "The full appointment resource is needed for this operation. The appointment SHALL have the status ```proposed```.",
-      "type" : "Resource",
-      "targetProfile" : [
-        "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment"
-      ]
-    },
-    {
-      "name" : "return",
-      "use" : "out",
-      "min" : 1,
-      "max" : "1",
-      "documentation" : "The response will be a Parameters resource consisting of the requested Appointment resource and an OperationOutcome with errors, warnings or information as a result of processing the operation. The Appointment resource will have an updated `status` of ```booked``` if the request is approved, ```pending``` if it needs to be manually confirmed or  ```cancelled``` if it is rejected.",
-      "type" : "Parameters"
-    }
-  ]
+  "parameter" : [{
+    "name" : "appointment-resource",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "The full appointment resource is needed for this operation. The appointment SHALL have the status ```proposed```.",
+    "type" : "Resource",
+    "targetProfile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment"]
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "The response will be a Parameters resource consisting of the requested Appointment resource and an OperationOutcome with errors, warnings or information as a result of processing the operation. The Appointment resource will have an updated `status` of ```booked``` if the request is approved, ```pending``` if it needs to be manually confirmed or  ```cancelled``` if it is rejected.",
+    "type" : "Parameters"
+  }]
 }
 
 ```

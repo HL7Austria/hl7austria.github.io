@@ -19,7 +19,7 @@ Profile: [HL7® AT Scheduling Appointment Profile](StructureDefinition-at-schedu
 
 **appointmentType**: A routine check-up, such as an annual physical
 
-**description**: Routineuntersuchung beim Hausarzt
+**description**: Physiotherapie - Einzelbehandlung 30 Minuten
 
 **start**: 2025-06-01 09:00:00+0200
 
@@ -33,9 +33,9 @@ Profile: [HL7® AT Scheduling Appointment Profile](StructureDefinition-at-schedu
 
 **subject**: [Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/2.0.0/Patient-HL7ATCorePatientExample01.html)
 
-> **participant****actor**:[Max Mustermann](http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/2.0.0/Patient-HL7ATCorePatientExample01.html)**required**: true**status**: Accepted
+> **participant****actor**: [Max Mustermann](http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/2.0.0/Patient-HL7ATCorePatientExample01.html)**required**: true**status**: Accepted
 
-> **participant****actor**:[Melanie Musterärztin](http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/2.0.0/Practitioner-HL7ATCorePractitionerExample01.html)**required**: true**status**: Accepted
+> **participant****actor**: [Melanie Musterärztin](http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/2.0.0/Practitioner-HL7ATCorePractitionerExample01.html)**required**: true**status**: Accepted
 
 
 
@@ -46,64 +46,52 @@ Profile: [HL7® AT Scheduling Appointment Profile](StructureDefinition-at-schedu
   "resourceType" : "Appointment",
   "id" : "HL7ATSchedulingAppointmentExample01",
   "meta" : {
-    "profile" : [
-      "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment"
-    ]
+    "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment"]
   },
   "status" : "booked",
-  "serviceType" : [
-    {
-      "concept" : {
-        "coding" : [
-          {
-            "system" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType",
-            "code" : "65",
-            "display" : "Physiotherapy"
-          }
-        ]
-      }
+  "serviceType" : [{
+    "concept" : {
+      "coding" : [{
+        "system" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType",
+        "code" : "65",
+        "display" : "Physiotherapy"
+      }]
     }
-  ],
+  }],
   "appointmentType" : {
-    "coding" : [
-      {
-        "system" : "http://terminology.hl7.org/CodeSystem/v2-0276",
-        "code" : "CHECKUP",
-        "display" : "A routine check-up, such as an annual physical"
-      }
-    ]
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v2-0276",
+      "code" : "CHECKUP",
+      "display" : "A routine check-up, such as an annual physical"
+    }]
   },
-  "description" : "Routineuntersuchung beim Hausarzt",
+  "description" : "Physiotherapie - Einzelbehandlung 30 Minuten",
   "start" : "2025-06-01T09:00:00+02:00",
   "end" : "2025-06-01T09:30:00+02:00",
   "minutesDuration" : 30,
-  "slot" : [
-    {
-      "reference" : "Slot/HL7ATSchedulingSlotExample01-free"
-    }
-  ],
+  "slot" : [{
+    "reference" : "Slot/HL7ATSchedulingSlotExample01-free"
+  }],
   "created" : "2025-05-10T14:23:00+02:00",
   "subject" : {
     "reference" : "Patient/HL7ATCorePatientExample01"
   },
-  "participant" : [
-    {
-      "actor" : {
-        "reference" : "Patient/HL7ATCorePatientExample01",
-        "display" : "Max Mustermann"
-      },
-      "required" : true,
-      "status" : "accepted"
+  "participant" : [{
+    "actor" : {
+      "reference" : "Patient/HL7ATCorePatientExample01",
+      "display" : "Max Mustermann"
     },
-    {
-      "actor" : {
-        "reference" : "Practitioner/HL7ATCorePractitionerExample01",
-        "display" : "Melanie Musterärztin"
-      },
-      "required" : true,
-      "status" : "accepted"
-    }
-  ]
+    "required" : true,
+    "status" : "accepted"
+  },
+  {
+    "actor" : {
+      "reference" : "Practitioner/HL7ATCorePractitionerExample01",
+      "display" : "Melanie Musterärztin"
+    },
+    "required" : true,
+    "status" : "accepted"
+  }]
 }
 
 ```

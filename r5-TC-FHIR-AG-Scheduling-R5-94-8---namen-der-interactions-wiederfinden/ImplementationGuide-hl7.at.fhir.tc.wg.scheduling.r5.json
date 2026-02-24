@@ -8,8 +8,9 @@
   "url" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ImplementationGuide/hl7.at.fhir.tc.wg.scheduling.r5",
   "version" : "0.2.0",
   "name" : "TCFHIRAGSchedulingR5",
+  "title" : "Austrian Appointment Scheduling (R5)",
   "status" : "draft",
-  "date" : "2025-11-18T18:56:10+00:00",
+  "date" : "2026-02-24T18:31:36+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "packageId" : "hl7.at.fhir.tc.wg.scheduling.r5",
   "license" : "CC0-1.0",
@@ -22,7 +23,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r5",
-    "version" : "7.0.0"
+    "version" : "7.0.1"
   },
   {
     "id" : "hl7ext",
@@ -43,7 +44,7 @@
   "definition" : {
     "extension" : [{
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools.r5#0.8.0"
+      "valueCode" : "hl7.fhir.uv.tools.r5#0.9.0"
     }],
     "resource" : [{
       "extension" : [{
@@ -55,6 +56,18 @@
       },
       "name" : "Appointment Booking URL",
       "description" : "An optional URL that can be used for redirects to a webpage for booking an Appointment. It should contain identifying information about the Slot so that it can be preselected on the target booking page.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/appointment-postponementReason"
+      },
+      "name" : "Appointment Postponement Reason",
+      "description" : "The reason why an appointment was postoponed. This is often used in reporting/billing/further processing to determine if further actions are required, or specific fees apply.",
       "isExample" : false
     },
     {
@@ -102,7 +115,7 @@
         "reference" : "Appointment/HL7ATSchedulingAppointmentExample01"
       },
       "name" : "HL7ATSchedulingAppointmentExample01",
-      "description" : "Routineuntersuchung beim Hausarzt",
+      "description" : "Physiotherapie - Einzelbehandlung 30 Minuten",
       "isExample" : true,
       "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment"]
     },
@@ -278,7 +291,7 @@
         "reference" : "OperationDefinition/slot-hold"
       },
       "name" : "slot-hold",
-      "description" : "Request for a hold on a selected Slot in order for the user to complete entering data for booking an appointment.  This operation precedes the booking and follows the appointment availability interaction.  The server determines if the nominated slot is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly.",
+      "description" : "Request for a hold on a selected Slot in order for the user to complete entering data for booking an appointment.  This operation follows the appointment availability interaction and precedes the booking.  The server determines if the nominated slot is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly.",
       "isExample" : false
     },
     {
@@ -324,6 +337,12 @@
         "sourceUrl" : "index.html",
         "name" : "index.html",
         "title" : "Home",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "actors.html",
+        "name" : "actors.html",
+        "title" : "Actors",
         "generation" : "markdown"
       },
       {

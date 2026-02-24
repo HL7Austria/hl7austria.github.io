@@ -19,8 +19,9 @@
   ] ; # 
   fhir:version [ fhir:v "0.2.0"] ; # 
   fhir:name [ fhir:v "TCFHIRAGSchedulingR5"] ; # 
+  fhir:title [ fhir:v "Austrian Appointment Scheduling (R5)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-11-18T18:56:10+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-02-24T18:31:36+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7® Austria, TC FHIR®"] ; # 
   fhir:packageId [ fhir:v "hl7.at.fhir.tc.wg.scheduling.r5"] ; # 
   fhir:license [ fhir:v "CC0-1.0"] ; # 
@@ -42,7 +43,7 @@
        fhir:l <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
      ] ;
      fhir:packageId [ fhir:v "hl7.terminology.r5" ] ;
-     fhir:version [ fhir:v "7.0.0" ]
+     fhir:version [ fhir:v "7.0.1" ]
   ] [
      fhir:id [ fhir:v "hl7ext" ] ;
      fhir:extension ( [
@@ -78,7 +79,7 @@
        ] ;
        fhir:value [
          a fhir:Code ;
-         fhir:v "hl7.fhir.uv.tools.r5#0.8.0"
+         fhir:v "hl7.fhir.uv.tools.r5#0.9.0"
        ]
      ] ) ;
      fhir:resource ( [
@@ -98,6 +99,24 @@
        ] ;
        fhir:name [ fhir:v "Appointment Booking URL" ] ;
        fhir:description [ fhir:v "An optional URL that can be used for redirects to a webpage for booking an Appointment. It should contain identifying information about the Slot so that it can be preselected on the target booking page." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/appointment-postponementReason> ;
+         fhir:reference [ fhir:v "StructureDefinition/appointment-postponementReason" ]
+       ] ;
+       fhir:name [ fhir:v "Appointment Postponement Reason" ] ;
+       fhir:description [ fhir:v "The reason why an appointment was postoponed. This is often used in reporting/billing/further processing to determine if further actions are required, or specific fees apply." ] ;
        fhir:isExample [ fhir:v false ]
      ] [
        fhir:extension ( [
@@ -169,7 +188,7 @@
          fhir:reference [ fhir:v "Appointment/HL7ATSchedulingAppointmentExample01" ]
        ] ;
        fhir:name [ fhir:v "HL7ATSchedulingAppointmentExample01" ] ;
-       fhir:description [ fhir:v "Routineuntersuchung beim Hausarzt" ] ;
+       fhir:description [ fhir:v "Physiotherapie - Einzelbehandlung 30 Minuten" ] ;
        fhir:isExample [ fhir:v true ] ;
        fhir:profile ( [
          fhir:v "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment"^^xsd:anyURI ;
@@ -456,7 +475,7 @@
          fhir:reference [ fhir:v "OperationDefinition/slot-hold" ]
        ] ;
        fhir:name [ fhir:v "slot-hold" ] ;
-       fhir:description [ fhir:v "Request for a hold on a selected Slot in order for the user to complete entering data for booking an appointment.  This operation precedes the booking and follows the appointment availability interaction.  The server determines if the nominated slot is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly." ] ;
+       fhir:description [ fhir:v "Request for a hold on a selected Slot in order for the user to complete entering data for booking an appointment.  This operation follows the appointment availability interaction and precedes the booking.  The server determines if the nominated slot is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly." ] ;
        fhir:isExample [ fhir:v false ]
      ] [
        fhir:extension ( [
@@ -534,6 +553,18 @@
            fhir:l fhir:index.html
          ] ;
          fhir:title [ fhir:v "Home" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [
+           a fhir:Url ;
+           fhir:v "actors.html"^^xsd:anyURI ;
+           fhir:l fhir:actors.html
+         ] ;
+         fhir:name [
+           fhir:v "actors.html"^^xsd:anyURI ;
+           fhir:l fhir:actors.html
+         ] ;
+         fhir:title [ fhir:v "Actors" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:source [

@@ -38,9 +38,11 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"4.3"}
-    h3,h4,h5,h6{--heading-prefix:"4.3"}</style>
+    <style type="text/css">h2{--heading-prefix:"5.3"}
+    h3,h4,h5,h6{--heading-prefix:"5.3"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- at-fhir-ig-template begin -->
@@ -55,7 +57,7 @@
             
             <div id="ig-status">
               <p>
-                <span style="font-size:12pt;font-weight:bold"></span><br/>
+                <span style="font-size:12pt;font-weight:bold">Austrian Appointment Scheduling (R5)</span><br/>
                 <span class="label label-info">0.2.0 - Informative</span>
               </p>
             </div>
@@ -121,7 +123,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">TCFHIRAGSchedulingR5 - Local Development build (v0.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Austrian Appointment Scheduling (R5) - Local Development build (v0.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -191,7 +193,7 @@
         
           Active
           
-            as of 2025-11-18
+            as of 2026-02-24
           
         
       </td>
@@ -232,7 +234,7 @@
   
 
 
-  <div xmlns="http://www.w3.org/1999/xhtml"><a name="appointment-book"> </a><a name="hcappointment-book"> </a><p>URL: [base]/Appointment/$book</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>appointment-resource</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="StructureDefinition-at-scheduling-appointment.html" title="http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment">HL7® AT Scheduling Appointment Profile</a>)</td><td/><td><div><p>The full appointment resource is needed for this operation. The appointment SHALL have the status <code>proposed</code>.</p>
+  <div data-fhir="generated"><p class="res-header-id"/><a name="appointment-book"> </a><a name="hcappointment-book"> </a><p>URL: [base]/Appointment/$book</p><h3>Parameters</h3><table class="grid" data-fhir="generated"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>appointment-resource</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="StructureDefinition-at-scheduling-appointment.html" title="http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment">HL7® AT Scheduling Appointment Profile</a>)</td><td/><td><div><p>The full appointment resource is needed for this operation. The appointment SHALL have the status <code>proposed</code>.</p>
 </div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/parameters.html">Parameters</a></td><td/><td><div><p>The response will be a Parameters resource consisting of the requested Appointment resource and an OperationOutcome with errors, warnings or information as a result of processing the operation. The Appointment resource will have an updated <code>status</code> of <code>booked</code> if the request is approved, <code>pending</code> if it needs to be manually confirmed or  <code>cancelled</code> if it is rejected.</p>
 </div></td></tr></table></div>
 
@@ -262,7 +264,8 @@
 <p>If any of those pre-conditions are not met, the Scheduling Server SHALL reject the operation and provide a corresponding explanation in the OperationOutcome.</p>
 
 <h5> Examples </h5>
-<h5> Request the booking of an appointmetn </h5>
+<h5> Request the booking of an appointment </h5>
+
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST: [baseURL]/Appointment/$book
 
 &lt;Parameters xmlns="http://hl7.org/fhir"&gt;
@@ -291,7 +294,7 @@
                     &lt;display value="A routine check-up, such as an annual physical"/&gt;
                 &lt;/coding&gt;
             &lt;/appointmentType&gt;
-            &lt;description value="Routineuntersuchung beim Hausarzt"/&gt;
+            &lt;description value="Physiotherapie - Einzelbehandlung 30 Minuten"/&gt;
             &lt;start value="2025-06-01T09:00:00+02:00"/&gt;
             &lt;end value="2025-06-01T09:30:00+02:00"/&gt;
             &lt;minutesDuration value="30"/&gt;
@@ -323,7 +326,9 @@
   &lt;/parameter&gt;
 &lt;/Parameters&gt;
 </code></pre></div></div>
+
 <p>Response to the book request:</p>
+
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP 200 OK
 [&amp; other headers]
 
@@ -353,7 +358,7 @@
                     &lt;display value="A routine check-up, such as an annual physical"/&gt;
                 &lt;/coding&gt;
             &lt;/appointmentType&gt;
-            &lt;description value="Routineuntersuchung beim Hausarzt"/&gt;
+            &lt;description value="Physiotherapie - Einzelbehandlung 30 Minuten"/&gt;
             &lt;start value="2025-06-01T09:00:00+02:00"/&gt;
             &lt;end value="2025-06-01T09:30:00+02:00"/&gt;
             &lt;minutesDuration value="30"/&gt;
@@ -423,7 +428,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.tc.wg.scheduling.r5#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Nov 18, 2025 18:56+0000">2025-11-18</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.tc.wg.scheduling.r5#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Feb 24, 2026 18:31+0000">2026-02-24</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

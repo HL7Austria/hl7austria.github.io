@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-schedule | *Version*:0.2.0 | |
-| Draft as of 2025-11-18 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingSchedule |
+| Draft as of 2026-02-24 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingSchedule |
 
  
 HL7® Austria FHIR® Scheduling Profile for schedule data in Austria. 
@@ -58,66 +58,58 @@ At least one of the parameters [actor](https://www.hl7.org/fhir/schedule-search.
   "name" : "HL7ATSchedulingSchedule",
   "title" : "HL7® AT Scheduling Schedule Profile",
   "status" : "draft",
-  "date" : "2025-11-18T18:56:10+00:00",
+  "date" : "2026-02-24T18:31:36+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "HL7® Austria FHIR® Scheduling Profile for schedule data in Austria.",
   "fhirVersion" : "5.0.0",
-  "mapping" : [
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    },
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    },
-    {
-      "identity" : "ical",
-      "uri" : "http://ietf.org/rfc/2445",
-      "name" : "iCalendar"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "ical",
+    "uri" : "http://ietf.org/rfc/2445",
+    "name" : "iCalendar"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Schedule",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Schedule",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Schedule",
-        "path" : "Schedule"
-      },
-      {
-        "id" : "Schedule.serviceType",
-        "path" : "Schedule.serviceType",
-        "binding" : {
-          "strength" : "extensible",
-          "valueSet" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType"
-        }
-      },
-      {
-        "id" : "Schedule.actor",
-        "path" : "Schedule.actor",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-patient",
-              "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-practitioner",
-              "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-practitionerRole",
-              "http://hl7.org/fhir/StructureDefinition/CareTeam",
-              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
-              "http://hl7.org/fhir/StructureDefinition/Device",
-              "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice",
-              "http://hl7.org/fhir/StructureDefinition/Location"
-            ]
-          }
-        ]
+    "element" : [{
+      "id" : "Schedule",
+      "path" : "Schedule"
+    },
+    {
+      "id" : "Schedule.serviceType",
+      "path" : "Schedule.serviceType",
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType"
       }
-    ]
+    },
+    {
+      "id" : "Schedule.actor",
+      "path" : "Schedule.actor",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-patient",
+        "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-practitioner",
+        "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-practitionerRole",
+        "http://hl7.org/fhir/StructureDefinition/CareTeam",
+        "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+        "http://hl7.org/fhir/StructureDefinition/Device",
+        "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice",
+        "http://hl7.org/fhir/StructureDefinition/Location"]
+      }]
+    }]
   }
 }
 

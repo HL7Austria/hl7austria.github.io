@@ -38,9 +38,11 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"4.4"}
-    h3,h4,h5,h6{--heading-prefix:"4.4"}</style>
+    <style type="text/css">h2{--heading-prefix:"5.4"}
+    h3,h4,h5,h6{--heading-prefix:"5.4"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- at-fhir-ig-template begin -->
@@ -55,7 +57,7 @@
             
             <div id="ig-status">
               <p>
-                <span style="font-size:12pt;font-weight:bold"></span><br/>
+                <span style="font-size:12pt;font-weight:bold">Austrian Appointment Scheduling (R5)</span><br/>
                 <span class="label label-info">0.2.0 - Informative</span>
               </p>
             </div>
@@ -121,7 +123,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">TCFHIRAGSchedulingR5 - Local Development build (v0.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Austrian Appointment Scheduling (R5) - Local Development build (v0.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -191,7 +193,7 @@
         
           Active
           
-            as of 2025-11-18
+            as of 2026-02-24
           
         
       </td>
@@ -232,7 +234,7 @@
   
 
 
-  <div xmlns="http://www.w3.org/1999/xhtml"><a name="healthcareService-provider-find"> </a><a name="hchealthcareService-provider-find"> </a><p>URL: [base]/HealthcareService/$findHSP</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>healthcareService-reference</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/references.html#Reference">Reference</a> (<a href="StructureDefinition-at-scheduling-healthcareservice.html" title="http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice">HL7® AT Scheduling HealthcareService Profile</a>)</td><td/><td><div><p>The full HealthcareService resource can be provided for this operation. The HealthcareService SHALL be active (HealthcareService.active=true).</p>
+  <div data-fhir="generated"><p class="res-header-id"/><a name="healthcareService-provider-find"> </a><a name="hchealthcareService-provider-find"> </a><p>URL: [base]/HealthcareService/$findHSP</p><h3>Parameters</h3><table class="grid" data-fhir="generated"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>healthcareService-reference</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/references.html#Reference">Reference</a> (<a href="StructureDefinition-at-scheduling-healthcareservice.html" title="http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice">HL7® AT Scheduling HealthcareService Profile</a>)</td><td/><td><div><p>The full HealthcareService resource can be provided for this operation. The HealthcareService SHALL be active (HealthcareService.active=true).</p>
 </div></td></tr><tr><td>IN</td><td>healthcareService-category</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#string">string</a><br/>(<a href="https://hl7.org/fhir/R5/search.html#token">token</a>)</td><td/><td><div><p>The code of the category of the healthcare service. Each parameter value SHALL contain <em>both</em> the system property and the code property for a code using the general syntax <code>healthcareService-category=[system]|[code]</code>. See the examples below for how this is implemented.</p>
 </div></td></tr><tr><td>IN</td><td>healthcareService-type</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#string">string</a><br/>(<a href="https://hl7.org/fhir/R5/search.html#token">token</a>)</td><td/><td><div><p>The code of the type of the healthcare service. Each parameter value SHALL contain <em>both</em> the system property and the code property for a code using the general syntax <code>healthcareService-type=[system]|[code]</code>. See the examples below for how this is implemented.</p>
 </div></td></tr><tr><td>IN</td><td>healthcareService-specialty</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#string">string</a><br/>(<a href="https://hl7.org/fhir/R5/search.html#token">token</a>)</td><td/><td><div><p>The code of the specialty of the healthcare service. Each parameter value SHALL contain <em>both</em> the system property and the code property for a code using the general syntax <code>healthcareService-specialty=[system]|[code]</code>. See the examples below for how this is implemented.</p>
@@ -284,6 +286,7 @@ It SHALL respond to the client with a Bundle containing the HealthcareService re
 <h4> Examples </h4>
 <h5> Search for healthcare service provider via service type</h5>
 <p>furthermore, the district and the availability were added as search criteria</p>
+
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST: [baseURL]/HealthcareService/$findHSP
 
 &lt;Parameters xmlns="http://hl7.org/fhir"&gt;
@@ -312,7 +315,9 @@ It SHALL respond to the client with a Bundle containing the HealthcareService re
     &lt;/parameter&gt;
 &lt;/Parameters&gt;
 </code></pre></div></div>
+
 <p>Response to the search request:</p>
+
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP 200 OK
 [&amp; other headers]
 
@@ -503,7 +508,7 @@ It SHALL respond to the client with a Bundle containing the HealthcareService re
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.tc.wg.scheduling.r5#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Nov 18, 2025 18:56+0000">2025-11-18</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.tc.wg.scheduling.r5#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Feb 24, 2026 18:31+0000">2026-02-24</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
