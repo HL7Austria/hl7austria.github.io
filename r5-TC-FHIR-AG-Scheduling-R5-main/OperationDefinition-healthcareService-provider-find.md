@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/healthcareService-provider-find | *Version*:0.2.0 | |
-| Active as of 2026-01-28 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:Find_HealthcareService_Provider |
+| Active as of 2026-02-24 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:Find_HealthcareService_Provider |
 
  
 A query operation that allows to search for healthcare service providers that offer a specific healthcare service. The general information about the HealthcareService identification itself is already available in advance, either as resource or via codes. 
@@ -265,7 +265,7 @@ HTTP 200 OK
   "name" : "Find_HealthcareService_Provider",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-01-28T08:46:49+00:00",
+  "date" : "2026-02-24T18:21:42+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "A query operation that allows to search for healthcare service providers that offer a specific healthcare service. The general information about the HealthcareService identification itself is already available in advance, either as resource or via codes. ",
   "affectsState" : false,
@@ -274,80 +274,76 @@ HTTP 200 OK
   "system" : false,
   "type" : true,
   "instance" : false,
-  "parameter" : [
-    {
-      "name" : "healthcareService-reference",
-      "use" : "in",
-      "min" : 0,
-      "max" : "1",
-      "documentation" : "The full HealthcareService resource can be provided for this operation. The HealthcareService SHALL be active (HealthcareService.active=true). ",
-      "type" : "Reference",
-      "targetProfile" : [
-        "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice"
-      ]
-    },
-    {
-      "name" : "healthcareService-category",
-      "use" : "in",
-      "min" : 0,
-      "max" : "1",
-      "documentation" : "The code of the category of the healthcare service. Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `healthcareService-category=[system]|[code]`. See the examples below for how this is implemented.",
-      "type" : "string",
-      "searchType" : "token"
-    },
-    {
-      "name" : "healthcareService-type",
-      "use" : "in",
-      "min" : 0,
-      "max" : "1",
-      "documentation" : "The code of the type of the healthcare service. Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `healthcareService-type=[system]|[code]`. See the examples below for how this is implemented.",
-      "type" : "string",
-      "searchType" : "token"
-    },
-    {
-      "name" : "healthcareService-specialty",
-      "use" : "in",
-      "min" : 0,
-      "max" : "1",
-      "documentation" : "The code of the specialty of the healthcare service. Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `healthcareService-specialty=[system]|[code]`. See the examples below for how this is implemented.",
-      "type" : "string",
-      "searchType" : "token"
-    },
-    {
-      "name" : "healthcareService-location",
-      "use" : "in",
-      "min" : 0,
-      "max" : "*",
-      "documentation" : "The (physical) location where a healthcare service should be provided can be used as a search parameter.",
-      "type" : "Reference",
-      "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Location"]
-    },
-    {
-      "name" : "healthcareService-zipCodeArea",
-      "use" : "in",
-      "min" : 0,
-      "max" : "*",
-      "documentation" : "The aera in which a healthcare service should be offered can be provided as search parameter. For that purpose the zip code(s) shall be used.",
-      "type" : "string",
-      "searchType" : "string"
-    },
-    {
-      "name" : "healthcareService-availability",
-      "use" : "in",
-      "min" : 0,
-      "max" : "*",
-      "documentation" : "The desired availabilities for the healthcare service. ",
-      "type" : "Availability"
-    },
-    {
-      "name" : "result",
-      "use" : "out",
-      "min" : 1,
-      "max" : "1",
-      "documentation" : "The response will be a Bundle consisting of the HealthcareService resource and a list of healthcare service providers (Organization, Practitioner, PractitionerRole) that offer the requested service and an OperationOutcome with errors, warnings or information as a result of processing the operation.",
-      "type" : "Bundle"
-    }
-  ]
+  "parameter" : [{
+    "name" : "healthcareService-reference",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "The full HealthcareService resource can be provided for this operation. The HealthcareService SHALL be active (HealthcareService.active=true). ",
+    "type" : "Reference",
+    "targetProfile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice"]
+  },
+  {
+    "name" : "healthcareService-category",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "The code of the category of the healthcare service. Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `healthcareService-category=[system]|[code]`. See the examples below for how this is implemented.",
+    "type" : "string",
+    "searchType" : "token"
+  },
+  {
+    "name" : "healthcareService-type",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "The code of the type of the healthcare service. Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `healthcareService-type=[system]|[code]`. See the examples below for how this is implemented.",
+    "type" : "string",
+    "searchType" : "token"
+  },
+  {
+    "name" : "healthcareService-specialty",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "The code of the specialty of the healthcare service. Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `healthcareService-specialty=[system]|[code]`. See the examples below for how this is implemented.",
+    "type" : "string",
+    "searchType" : "token"
+  },
+  {
+    "name" : "healthcareService-location",
+    "use" : "in",
+    "min" : 0,
+    "max" : "*",
+    "documentation" : "The (physical) location where a healthcare service should be provided can be used as a search parameter.",
+    "type" : "Reference",
+    "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Location"]
+  },
+  {
+    "name" : "healthcareService-zipCodeArea",
+    "use" : "in",
+    "min" : 0,
+    "max" : "*",
+    "documentation" : "The aera in which a healthcare service should be offered can be provided as search parameter. For that purpose the zip code(s) shall be used.",
+    "type" : "string",
+    "searchType" : "string"
+  },
+  {
+    "name" : "healthcareService-availability",
+    "use" : "in",
+    "min" : 0,
+    "max" : "*",
+    "documentation" : "The desired availabilities for the healthcare service. ",
+    "type" : "Availability"
+  },
+  {
+    "name" : "result",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "The response will be a Bundle consisting of the HealthcareService resource and a list of healthcare service providers (Organization, Practitioner, PractitionerRole) that offer the requested service and an OperationOutcome with errors, warnings or information as a result of processing the operation.",
+    "type" : "Bundle"
+  }]
 }
 
 ```

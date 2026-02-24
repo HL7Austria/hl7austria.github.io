@@ -34,37 +34,27 @@ Profile: [HL7® AT Scheduling Slot Profile](StructureDefinition-at-scheduling-sl
   "resourceType" : "Slot",
   "id" : "HL7ATSchedulingSlotExample02-VirtualVisit",
   "meta" : {
-    "profile" : [
-      "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot"
-    ]
+    "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot"]
   },
-  "extension" : [
-    {
-      "url" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/slot-encounter-class",
-      "valueCodeableConcept" : {
-        "coding" : [
-          {
-            "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-            "code" : "VR",
-            "display" : "virtual"
-          }
-        ]
-      }
+  "extension" : [{
+    "url" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/slot-encounter-class",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code" : "VR",
+        "display" : "virtual"
+      }]
     }
-  ],
-  "serviceType" : [
-    {
-      "concept" : {
-        "coding" : [
-          {
-            "system" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType",
-            "code" : "65",
-            "display" : "Physiotherapy"
-          }
-        ]
-      }
+  }],
+  "serviceType" : [{
+    "concept" : {
+      "coding" : [{
+        "system" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType",
+        "code" : "65",
+        "display" : "Physiotherapy"
+      }]
     }
-  ],
+  }],
   "schedule" : {
     "reference" : "Schedule/HL7ATSchedulingScheduleExample01"
   },

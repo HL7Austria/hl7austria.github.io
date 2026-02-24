@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType | *Version*:0.2.0 | |
-| Draft as of 2026-01-28 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:AtSchedulingServiceType |
+| Draft as of 2026-02-24 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:AtSchedulingServiceType |
 
  
 This is a placeholder for a ValueSet of bookable service types. The contained value just serves as an example and is not guaranteed to 
@@ -54,21 +54,17 @@ This is a placeholder for a ValueSet of bookable service types. The contained va
   "title" : "AT Scheduling Service Type",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-01-28T08:46:49+00:00",
+  "date" : "2026-02-24T18:21:42+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "This is a placeholder for a ValueSet of bookable service types. The contained value just serves as an example and is not guaranteed to ",
   "compose" : {
-    "include" : [
-      {
-        "system" : "http://terminology.hl7.org/CodeSystem/service-type",
-        "concept" : [
-          {
-            "code" : "65",
-            "display" : "Physiotherapy"
-          }
-        ]
-      }
-    ]
+    "include" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/service-type",
+      "concept" : [{
+        "code" : "65",
+        "display" : "Physiotherapy"
+      }]
+    }]
   }
 }
 

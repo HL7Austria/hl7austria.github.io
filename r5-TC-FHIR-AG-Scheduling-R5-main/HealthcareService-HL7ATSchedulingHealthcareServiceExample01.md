@@ -25,27 +25,21 @@ Profile: [HL7® AT Scheduling HealthcareService Profile](StructureDefinition-at-
   "resourceType" : "HealthcareService",
   "id" : "HL7ATSchedulingHealthcareServiceExample01",
   "meta" : {
-    "profile" : [
-      "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice"
-    ]
+    "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice"]
   },
   "active" : true,
   "providedBy" : {
     "reference" : "Organization/HL7ATCoreOrganizationExample01",
     "display" : "Amadeus Spital"
   },
-  "type" : [
-    {
-      "coding" : [
-        {
-          "system" : "http://terminology.hl7.org/CodeSystem/service-type",
-          "code" : "65",
-          "display" : "Physiotherapy"
-        }
-      ],
-      "text" : "Allgemeinmedizin"
-    }
-  ],
+  "type" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/service-type",
+      "code" : "65",
+      "display" : "Physiotherapy"
+    }],
+    "text" : "Allgemeinmedizin"
+  }],
   "name" : "Allgemeinmedizinische Versorgung"
 }
 

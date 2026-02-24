@@ -36,41 +36,31 @@ Profile: [HL7® AT Scheduling Slot Profile](StructureDefinition-at-scheduling-sl
   "resourceType" : "Slot",
   "id" : "HL7ATSchedulingSlotExample04-external-booking-URL",
   "meta" : {
-    "profile" : [
-      "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot"
-    ]
+    "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot"]
   },
-  "extension" : [
-    {
-      "url" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/slot-encounter-class",
-      "valueCodeableConcept" : {
-        "coding" : [
-          {
-            "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-            "code" : "AMB",
-            "display" : "ambulatory"
-          }
-        ]
-      }
-    },
-    {
-      "url" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/appointment-booking-url",
-      "valueUri" : "https://booking.example.com/slot/297c0007-f8d1-4e47-bddb-a47978607f65"
+  "extension" : [{
+    "url" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/slot-encounter-class",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code" : "AMB",
+        "display" : "ambulatory"
+      }]
     }
-  ],
-  "serviceType" : [
-    {
-      "concept" : {
-        "coding" : [
-          {
-            "system" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType",
-            "code" : "65",
-            "display" : "Physiotherapy"
-          }
-        ]
-      }
+  },
+  {
+    "url" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/appointment-booking-url",
+    "valueUri" : "https://booking.example.com/slot/297c0007-f8d1-4e47-bddb-a47978607f65"
+  }],
+  "serviceType" : [{
+    "concept" : {
+      "coding" : [{
+        "system" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType",
+        "code" : "65",
+        "display" : "Physiotherapy"
+      }]
     }
-  ],
+  }],
   "schedule" : {
     "reference" : "Schedule/HL7ATSchedulingScheduleExample01"
   },

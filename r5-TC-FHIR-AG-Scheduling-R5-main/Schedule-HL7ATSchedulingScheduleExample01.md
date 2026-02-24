@@ -30,30 +30,22 @@ Profile: [HL7® AT Scheduling Schedule Profile](StructureDefinition-at-schedulin
   "resourceType" : "Schedule",
   "id" : "HL7ATSchedulingScheduleExample01",
   "meta" : {
-    "profile" : [
-      "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-schedule"
-    ]
+    "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-schedule"]
   },
   "active" : true,
-  "serviceType" : [
-    {
-      "concept" : {
-        "coding" : [
-          {
-            "system" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType",
-            "code" : "65",
-            "display" : "Physiotherapy"
-          }
-        ]
-      }
+  "serviceType" : [{
+    "concept" : {
+      "coding" : [{
+        "system" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType",
+        "code" : "65",
+        "display" : "Physiotherapy"
+      }]
     }
-  ],
-  "actor" : [
-    {
-      "reference" : "Practitioner/HL7ATCorePractitionerExample01",
-      "display" : "Melanie Musterärztin"
-    }
-  ],
+  }],
+  "actor" : [{
+    "reference" : "Practitioner/HL7ATCorePractitionerExample01",
+    "display" : "Melanie Musterärztin"
+  }],
   "planningHorizon" : {
     "start" : "2025-05-19T09:00:00+02:00",
     "end" : "2025-05-23T17:00:00+02:00"

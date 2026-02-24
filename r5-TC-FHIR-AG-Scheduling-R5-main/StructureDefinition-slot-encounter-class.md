@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/slot-encounter-class | *Version*:0.2.0 | |
-| Draft as of 2026-01-28 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:SlotEncounterClassExt |
+| Draft as of 2026-02-24 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:SlotEncounterClassExt |
 
 An encounter class similar to (Appointment.class)[https://www.hl7.org/fhir/appointment-definitions.html#Appointment.class] for classification of possible mode of encounter
 
@@ -44,75 +44,65 @@ Other representations of profile: [CSV](StructureDefinition-slot-encounter-class
 {
   "resourceType" : "StructureDefinition",
   "id" : "slot-encounter-class",
-  "extension" : [
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
-      "valueCode" : "can-bind"
-    }
-  ],
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+    "valueCode" : "can-bind"
+  }],
   "url" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/slot-encounter-class",
   "version" : "0.2.0",
   "name" : "SlotEncounterClassExt",
   "title" : "Slot Encounter Class",
   "status" : "draft",
-  "date" : "2026-01-28T08:46:49+00:00",
+  "date" : "2026-02-24T18:21:42+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "An encounter class similar to (Appointment.class)[https://www.hl7.org/fhir/appointment-definitions.html#Appointment.class] for classification of possible mode of encounter",
   "fhirVersion" : "5.0.0",
-  "mapping" : [
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  }],
   "kind" : "complex-type",
   "abstract" : false,
-  "context" : [
-    {
-      "type" : "element",
-      "expression" : "Slot"
-    },
-    {
-      "type" : "element",
-      "expression" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot#Slot"
-    }
-  ],
+  "context" : [{
+    "type" : "element",
+    "expression" : "Slot"
+  },
+  {
+    "type" : "element",
+    "expression" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot#Slot"
+  }],
   "type" : "Extension",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Extension",
-        "path" : "Extension",
-        "short" : "Slot Encounter Class",
-        "definition" : "An encounter class similar to (Appointment.class)[https://www.hl7.org/fhir/appointment-definitions.html#Appointment.class] for classification of possible mode of encounter"
-      },
-      {
-        "id" : "Extension.extension",
-        "path" : "Extension.extension",
-        "max" : "0"
-      },
-      {
-        "id" : "Extension.url",
-        "path" : "Extension.url",
-        "fixedUri" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/slot-encounter-class"
-      },
-      {
-        "id" : "Extension.value[x]",
-        "path" : "Extension.value[x]",
-        "type" : [
-          {
-            "code" : "CodeableConcept"
-          }
-        ],
-        "binding" : {
-          "strength" : "extensible",
-          "valueSet" : "http://terminology.hl7.org/ValueSet/encounter-class"
-        }
+    "element" : [{
+      "id" : "Extension",
+      "path" : "Extension",
+      "short" : "Slot Encounter Class",
+      "definition" : "An encounter class similar to (Appointment.class)[https://www.hl7.org/fhir/appointment-definitions.html#Appointment.class] for classification of possible mode of encounter"
+    },
+    {
+      "id" : "Extension.extension",
+      "path" : "Extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.url",
+      "path" : "Extension.url",
+      "fixedUri" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/slot-encounter-class"
+    },
+    {
+      "id" : "Extension.value[x]",
+      "path" : "Extension.value[x]",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "http://terminology.hl7.org/ValueSet/encounter-class"
       }
-    ]
+    }]
   }
 }
 
