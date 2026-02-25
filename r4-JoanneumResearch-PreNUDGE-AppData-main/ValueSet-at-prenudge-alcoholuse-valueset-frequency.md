@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/at-prenudge-alcoholuse-valueset-frequency | *Version*:0.1.0 | |
-| Active as of 2026-02-22 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeValueSetAlcoholUseFrequencySnomedVS |
+| Active as of 2026-02-25 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeValueSetAlcoholUseFrequencySnomedVS |
 
  **References** 
 
@@ -47,7 +47,7 @@
   "name" : "AtPrenudgeValueSetAlcoholUseFrequencySnomedVS",
   "title" : "SNOMED CT AlcoholUse-Frequency",
   "status" : "active",
-  "date" : "2026-02-22T11:57:51+00:00",
+  "date" : "2026-02-25T07:03:20+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

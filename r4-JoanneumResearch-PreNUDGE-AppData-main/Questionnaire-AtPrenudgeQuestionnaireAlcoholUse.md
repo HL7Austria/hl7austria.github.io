@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/AtPrenudgeQuestionnaireAlcoholUse | *Version*:0.1.0 | |
-| Active as of 2026-02-22 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeQuestionnaireAlcoholUse |
+| Active as of 2026-02-25 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeQuestionnaireAlcoholUse |
 
  
 Categorical variable for the frequency of alcohol consumption in the last year (IPS compatible). 
@@ -31,7 +31,7 @@ Categorical variable for the frequency of alcohol consumption in the last year (
   "title" : "Alkoholkonsum-Frequenz (letztes Jahr)",
   "status" : "active",
   "subjectType" : ["Patient"],
-  "date" : "2026-02-22T11:57:51+00:00",
+  "date" : "2026-02-25T07:03:20+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

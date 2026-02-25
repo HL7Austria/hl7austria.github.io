@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/rand-sf36-answers | *Version*:0.1.0 | |
-| Active as of 2026-02-22 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:RandSF36Answers |
+| Active as of 2026-02-25 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:RandSF36Answers |
 
  
 Answer options for den RAND SF-36 Health Survey, translated to german 
@@ -31,7 +31,7 @@ Answer options for den RAND SF-36 Health Survey, translated to german
   "name" : "RandSF36Answers",
   "title" : "RAND SF-36 answer options in german",
   "status" : "active",
-  "date" : "2026-02-22T11:57:51+00:00",
+  "date" : "2026-02-25T07:03:20+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
