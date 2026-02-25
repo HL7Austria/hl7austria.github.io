@@ -26,11 +26,11 @@ A system providing the FHIR API for appointment booking and related data
   "version" : "0.2.0",
   "title" : "HL7® AT Scheduling Server ActorDefinition",
   "status" : "draft",
-  "date" : "2026-02-25T08:56:55+00:00",
+  "date" : "2026-02-25T09:54:46+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "A system providing the FHIR API for appointment booking and related data",
   "type" : "system",
-  "documentation" : "A Scheduling Server provides data relevant to appointment scheduling, including Healthcare Service Providers, Healthcare Services, available time slots. It offers services such as creating patients, booking,editing and cancelling appointments."
+  "documentation" : "A Scheduling Server provides data relevant to appointment scheduling, including Healthcare Service Providers, Healthcare Services, available time slots. It offers services such as creating patients, booking, editing and cancelling appointments."
 }
 
 ```

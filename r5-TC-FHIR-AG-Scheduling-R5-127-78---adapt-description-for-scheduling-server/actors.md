@@ -13,5 +13,5 @@ The [Scheduling Client](ActorDefinition-at-scheduling-actor-scheduling-client.md
 
 #### Scheduling Server
 
-A [Scheduling Server](ActorDefinition-at-scheduling-actor-scheduling-server.md) serves data relevant to appointment scheduling (Healthcare Service Providers, Healthcare Services, available time slots, etc.) and provides services such as: creating patients, booking/editing/cancelling appointments.
+A [Scheduling Server](ActorDefinition-at-scheduling-actor-scheduling-server.md) provides data relevant to appointment scheduling, including Healthcare Service Providers, Healthcare Services, available time slots. It offers services such as creating patients, booking, editing and cancelling appointments.
 
