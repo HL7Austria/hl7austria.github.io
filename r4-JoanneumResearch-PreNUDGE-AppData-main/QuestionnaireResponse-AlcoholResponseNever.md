@@ -6,6 +6,8 @@
 
 ## Example QuestionnaireResponse: AlcoholResponseNever
 
+Profile: [AT PreNUDGE Questionnaire Response](StructureDefinition-at-prenudge-questionnaireresponse.md)
+
 * [LinkID](https://hl7.org/fhir/R4/formats.html#table): AlcoholResponseNever
   * [Text](https://hl7.org/fhir/R4/formats.html#table): 
   * [Definition](https://hl7.org/fhir/R4/formats.html#table): 
@@ -24,12 +26,19 @@
 {
   "resourceType" : "QuestionnaireResponse",
   "id" : "AlcoholResponseNever",
+  "meta" : {
+    "profile" : ["https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"]
+  },
+  "identifier" : {
+    "system" : "https://www.joanneum.at",
+    "value" : "qr-alc-2026-02-27-001"
+  },
   "questionnaire" : "https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/AtPrenudgeQuestionnaireAlcoholUse",
   "status" : "completed",
   "subject" : {
     "reference" : "Patient/example"
   },
-  "authored" : "2026-02-13",
+  "authored" : "2026-02-27",
   "item" : [{
     "linkId" : "alcohol-frequency",
     "answer" : [{
@@ -38,6 +47,12 @@
         "code" : "783261004",
         "display" : "Nie oder lediglich einige wenige Schlucke in meinem Leben"
       }
+    }],
+    "item" : [{
+      "linkId" : "comment",
+      "answer" : [{
+        "valueString" : "Ich bin als Kind in ein Fass hausgemachten Schnaps gefallen. Zählt das?"
+      }]
     }]
   }]
 }

@@ -10,7 +10,7 @@
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-02-25T07:03:20+00:00",
+  "date" : "2026-02-26T10:01:13+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -621,7 +621,7 @@
         "reference" : "QuestionnaireResponse/AlcoholResponseDaily"
       },
       "name" : "AlcoholResponseDaily",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
     },
     {
       "extension" : [{
@@ -632,7 +632,7 @@
         "reference" : "QuestionnaireResponse/AlcoholResponseNever"
       },
       "name" : "AlcoholResponseNever",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
     },
     {
       "extension" : [{
@@ -732,13 +732,35 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
+        "valueString" : "QuestionnaireResponse"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MyPatient"
+        "reference" : "QuestionnaireResponse/BloodGlucoseQuestionnaireResponse1"
       },
-      "name" : "MyPatient",
-      "description" : "An example profile of the Patient resource.",
+      "name" : "BloodGlucoseQuestionnaireResponse1",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/BloodGlucoseQuestionnaireResponse2"
+      },
+      "name" : "BloodGlucoseQuestionnaireResponse2",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/BloodGlucoseQuestionnaire"
+      },
+      "name" : "Blutzucker",
+      "description" : "A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allowes values inbetween 12 and 1200.",
       "exampleBoolean" : false
     },
     {
@@ -747,11 +769,11 @@
         "valueString" : "Patient"
       }],
       "reference" : {
-        "reference" : "Patient/PatientExample"
+        "reference" : "Patient/example"
       },
       "name" : "PatientExample",
       "description" : "An example of a patient with a license to krill.",
-      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/MyPatient"
+      "exampleBoolean" : true
     },
     {
       "extension" : [{
@@ -808,7 +830,7 @@
         "reference" : "QuestionnaireResponse/StepCountResponseActive"
       },
       "name" : "StepCountResponseActive",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
     },
     {
       "extension" : [{
@@ -819,7 +841,7 @@
         "reference" : "QuestionnaireResponse/StepCountResponseExtreme"
       },
       "name" : "StepCountResponseExtreme",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
     }],
     "page" : {
       "extension" : [{
@@ -850,10 +872,10 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "use_cases.html"
+          "valueUrl" : "workflow.html"
         }],
-        "nameUrl" : "use_cases.html",
-        "title" : "Use Cases",
+        "nameUrl" : "workflow.html",
+        "title" : "Workflow",
         "generation" : "markdown"
       },
       {

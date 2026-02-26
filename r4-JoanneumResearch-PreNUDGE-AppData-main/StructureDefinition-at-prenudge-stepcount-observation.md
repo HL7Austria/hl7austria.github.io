@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation | *Version*:0.1.0 | |
-| Draft as of 2026-02-25 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationStepCount |
+| Draft as of 2026-02-26 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationStepCount |
 
  
 This FHIR profile is defining the Step Count Observation, similar to the Observation Social History - Alcohol Use from the IPS. The step count option only allowes values inbetween 0 and 300 000. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-stepcoun
   "name" : "AtPrenudgeObservationStepCount",
   "title" : "AT PreNUDGE Observation Step Count",
   "status" : "draft",
-  "date" : "2026-02-25T07:03:20+00:00",
+  "date" : "2026-02-26T10:01:13+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -102,8 +102,8 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-stepcoun
       "constraint" : [{
         "key" : "stepcount-range",
         "severity" : "error",
-        "human" : "Step count must be inbetween 0 and 300 000.",
-        "expression" : "valueInteger >= 0 and valueInteger <= 300000",
+        "human" : "Step count must be inbetween 0 and 150 000.",
+        "expression" : "valueInteger >= 0 and valueInteger <= 150000",
         "source" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation"
       }]
     },

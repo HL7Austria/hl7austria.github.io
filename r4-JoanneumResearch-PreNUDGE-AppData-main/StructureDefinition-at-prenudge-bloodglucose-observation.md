@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation | *Version*:0.1.0 | |
-| Draft as of 2026-02-25 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationBloodGlucose |
+| Draft as of 2026-02-26 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationBloodGlucose |
 
  
 This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allowes values inbetween 12 and 1200 mg/dL. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-bloodglu
   "name" : "AtPrenudgeObservationBloodGlucose",
   "title" : "AT PreNUDGE Observation Blood Glucose (only in mg/dL)",
   "status" : "draft",
-  "date" : "2026-02-25T07:03:20+00:00",
+  "date" : "2026-02-26T10:01:13+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

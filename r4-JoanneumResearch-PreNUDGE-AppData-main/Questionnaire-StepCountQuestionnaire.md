@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/StepCountQuestionnaire | *Version*:0.1.0 | |
-| Active as of 2026-02-25 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:StepCountQuestionnaire |
+| Active as of 2026-02-26 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:StepCountQuestionnaire |
 
  
 A simple questionnaire for asking how many steps have been done today. The step count option only allowes values inbetween 0 and 300 000. 
@@ -32,7 +32,7 @@ A simple questionnaire for asking how many steps have been done today. The step 
   "status" : "active",
   "experimental" : false,
   "subjectType" : ["Patient"],
-  "date" : "2026-02-25T07:03:20+00:00",
+  "date" : "2026-02-26T10:01:13+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -57,7 +57,7 @@ A simple questionnaire for asking how many steps have been done today. The step 
     },
     {
       "url" : "http://hl7.org/fhir/StructureDefinition/maxValue",
-      "valueInteger" : 300000
+      "valueInteger" : 150000
     }],
     "linkId" : "step-count-today",
     "code" : [{

@@ -6,6 +6,8 @@
 
 ## Example QuestionnaireResponse: StepCountResponseActive
 
+Profile: [AT PreNUDGE Questionnaire Response](StructureDefinition-at-prenudge-questionnaireresponse.md)
+
 * [LinkID](https://hl7.org/fhir/R4/formats.html#table): StepCountResponseActive
   * [Text](https://hl7.org/fhir/R4/formats.html#table): 
   * [Definition](https://hl7.org/fhir/R4/formats.html#table): 
@@ -24,12 +26,19 @@
 {
   "resourceType" : "QuestionnaireResponse",
   "id" : "StepCountResponseActive",
+  "meta" : {
+    "profile" : ["https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"]
+  },
+  "identifier" : {
+    "system" : "https://www.joanneum.at",
+    "value" : "qr-steps-2026-02-26-001"
+  },
   "questionnaire" : "https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/StepCountQuestionnaire",
   "status" : "completed",
   "subject" : {
     "reference" : "Patient/example"
   },
-  "authored" : "2026-02-13",
+  "authored" : "2026-02-26",
   "item" : [{
     "linkId" : "step-count-today",
     "answer" : [{

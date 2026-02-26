@@ -8,8 +8,8 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/at-prenudge-alcoholuse-valueset-frequency | *Version*:0.1.0 | |
-| Active as of 2026-02-25 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeValueSetAlcoholUseFrequencySnomedVS |
+| *Official URL*:https://termgit.elga.gv.at/ValueSet/prenudge-alcoholuse-frequency | *Version*:0.1.0 | |
+| Active as of 2026-02-26 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeValueSetAlcoholUseFrequencySnomedVS |
 
  **References** 
 
@@ -42,12 +42,12 @@
 {
   "resourceType" : "ValueSet",
   "id" : "at-prenudge-alcoholuse-valueset-frequency",
-  "url" : "https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/at-prenudge-alcoholuse-valueset-frequency",
+  "url" : "https://termgit.elga.gv.at/ValueSet/prenudge-alcoholuse-frequency",
   "version" : "0.1.0",
   "name" : "AtPrenudgeValueSetAlcoholUseFrequencySnomedVS",
   "title" : "SNOMED CT AlcoholUse-Frequency",
   "status" : "active",
-  "date" : "2026-02-25T07:03:20+00:00",
+  "date" : "2026-02-26T10:01:13+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

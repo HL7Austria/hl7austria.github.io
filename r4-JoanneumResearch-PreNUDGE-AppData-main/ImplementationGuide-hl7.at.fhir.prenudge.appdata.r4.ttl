@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "PreNUDGEAppdataR4"] ; # 
   fhir:title [ fhir:v "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-02-25T07:03:20+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-02-26T10:01:13+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "The PreNUDGE Consortium"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "The PreNUDGE Consortium" ] ;
@@ -1314,8 +1314,9 @@
        ] ;
        fhir:name [ fhir:v "AlcoholResponseDaily" ] ;
        fhir:example [
-         a fhir:Boolean ;
-         fhir:v true
+         a fhir:Canonical ;
+         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"^^xsd:anyURI ;
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ] [
        fhir:extension ( [
@@ -1334,8 +1335,9 @@
        ] ;
        fhir:name [ fhir:v "AlcoholResponseNever" ] ;
        fhir:example [
-         a fhir:Boolean ;
-         fhir:v true
+         a fhir:Canonical ;
+         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"^^xsd:anyURI ;
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ] [
        fhir:extension ( [
@@ -1512,15 +1514,57 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "StructureDefinition:resource"
+           fhir:v "QuestionnaireResponse"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/MyPatient> ;
-         fhir:reference [ fhir:v "StructureDefinition/MyPatient" ]
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/BloodGlucoseQuestionnaireResponse1> ;
+         fhir:reference [ fhir:v "QuestionnaireResponse/BloodGlucoseQuestionnaireResponse1" ]
        ] ;
-       fhir:name [ fhir:v "MyPatient" ] ;
-       fhir:description [ fhir:v "An example profile of the Patient resource." ] ;
+       fhir:name [ fhir:v "BloodGlucoseQuestionnaireResponse1" ] ;
+       fhir:example [
+         a fhir:Canonical ;
+         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"^^xsd:anyURI ;
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "QuestionnaireResponse"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/BloodGlucoseQuestionnaireResponse2> ;
+         fhir:reference [ fhir:v "QuestionnaireResponse/BloodGlucoseQuestionnaireResponse2" ]
+       ] ;
+       fhir:name [ fhir:v "BloodGlucoseQuestionnaireResponse2" ] ;
+       fhir:example [
+         a fhir:Canonical ;
+         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"^^xsd:anyURI ;
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Questionnaire"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/BloodGlucoseQuestionnaire> ;
+         fhir:reference [ fhir:v "Questionnaire/BloodGlucoseQuestionnaire" ]
+       ] ;
+       fhir:name [ fhir:v "Blutzucker" ] ;
+       fhir:description [ fhir:v "A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allowes values inbetween 12 and 1200." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -1537,15 +1581,14 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Patient/PatientExample> ;
-         fhir:reference [ fhir:v "Patient/PatientExample" ]
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Patient/example> ;
+         fhir:reference [ fhir:v "Patient/example" ]
        ] ;
        fhir:name [ fhir:v "PatientExample" ] ;
        fhir:description [ fhir:v "An example of a patient with a license to krill." ] ;
        fhir:example [
-         a fhir:Canonical ;
-         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/MyPatient"^^xsd:anyURI ;
-         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/MyPatient>
+         a fhir:Boolean ;
+         fhir:v true
        ]
      ] [
        fhir:extension ( [
@@ -1646,8 +1689,9 @@
        ] ;
        fhir:name [ fhir:v "StepCountResponseActive" ] ;
        fhir:example [
-         a fhir:Boolean ;
-         fhir:v true
+         a fhir:Canonical ;
+         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"^^xsd:anyURI ;
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ] [
        fhir:extension ( [
@@ -1666,8 +1710,9 @@
        ] ;
        fhir:name [ fhir:v "StepCountResponseExtreme" ] ;
        fhir:example [
-         a fhir:Boolean ;
-         fhir:v true
+         a fhir:Canonical ;
+         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"^^xsd:anyURI ;
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ] ) ;
      fhir:page [
@@ -1735,16 +1780,16 @@
            ] ;
            fhir:value [
              a fhir:Url ;
-             fhir:v "use_cases.html"^^xsd:anyURI ;
-             fhir:l fhir:use_cases.html
+             fhir:v "workflow.html"^^xsd:anyURI ;
+             fhir:l fhir:workflow.html
            ]
          ] ) ;
          fhir:name [
            a fhir:Url ;
-           fhir:v "use_cases.html"^^xsd:anyURI ;
-           fhir:l fhir:use_cases.html
+           fhir:v "workflow.html"^^xsd:anyURI ;
+           fhir:l fhir:workflow.html
          ] ;
-         fhir:title [ fhir:v "Use Cases" ] ;
+         fhir:title [ fhir:v "Workflow" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [

@@ -14,6 +14,7 @@ These define forms used by systems conforming to this implementation guide to ca
 | | |
 | :--- | :--- |
 | [Alkoholkonsum-Frequenz (letztes Jahr)](Questionnaire-AtPrenudgeQuestionnaireAlcoholUse.md) | Categorical variable for the frequency of alcohol consumption in the last year (IPS compatible). |
+| [Blutzucker](Questionnaire-BloodGlucoseQuestionnaire.md) | A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allowes values inbetween 12 and 1200. |
 | [Quality of life by RAND 36-Item Health Survey 1.0 (SF-36)](Questionnaire-QolQuestionnaire.md) |  |
 | [Schrittanzahl (täglich)](Questionnaire-StepCountQuestionnaire.md) | A simple questionnaire for asking how many steps have been done today. The step count option only allowes values inbetween 0 and 300 000. |
 
@@ -29,7 +30,6 @@ These define constraints on FHIR resources for systems conforming to this implem
 | [AT PreNUDGE Observation Step Count](StructureDefinition-at-prenudge-stepcount-observation.md) | This FHIR profile is defining the Step Count Observation, similar to the Observation Social History - Alcohol Use from the IPS. The step count option only allowes values inbetween 0 and 300 000. |
 | [AT PreNUDGE Questionnaire](StructureDefinition-at-prenudge-questionnaire.md) | This FHIR profile is defining the overall Questionnaire for PreNUDGE. Every top level item requires one comment subitem, with the linkId ending or equal 'comment'. |
 | [AT PreNUDGE Questionnaire Response](StructureDefinition-at-prenudge-questionnaireresponse.md) | This FHIR profile is defining the overall Questionnaire Response for PreNUDGE. |
-| [MyPatient](StructureDefinition-MyPatient.md) | An example profile of the Patient resource. |
 
 ### Terminology: Value Sets 
 
@@ -56,7 +56,9 @@ These are example instances that show what data produced and consumed by systems
 | :--- | :--- |
 | [AlcoholResponseDaily](QuestionnaireResponse-AlcoholResponseDaily.md) |  |
 | [AlcoholResponseNever](QuestionnaireResponse-AlcoholResponseNever.md) |  |
-| [PatientExample](Patient-PatientExample.md) | An example of a patient with a license to krill. |
+| [BloodGlucoseQuestionnaireResponse1](QuestionnaireResponse-BloodGlucoseQuestionnaireResponse1.md) |  |
+| [BloodGlucoseQuestionnaireResponse2](QuestionnaireResponse-BloodGlucoseQuestionnaireResponse2.md) |  |
+| [PatientExample](Patient-example.md) | An example of a patient with a license to krill. |
 | [StepCountResponseActive](QuestionnaireResponse-StepCountResponseActive.md) |  |
 | [StepCountResponseExtreme](QuestionnaireResponse-StepCountResponseExtreme.md) |  |
 

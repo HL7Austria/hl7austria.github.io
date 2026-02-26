@@ -11,7 +11,7 @@
   <name value="PreNUDGEAppdataR4"/>
   <title value="PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)"/>
   <status value="draft"/>
-  <date value="2026-02-25T07:03:20+00:00"/>
+  <date value="2026-02-26T10:01:13+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -465,7 +465,7 @@
         <reference value="QuestionnaireResponse/AlcoholResponseDaily"/>
       </reference>
       <name value="AlcoholResponseDaily"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -475,7 +475,7 @@
         <reference value="QuestionnaireResponse/AlcoholResponseNever"/>
       </reference>
       <name value="AlcoholResponseNever"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -566,13 +566,33 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
+        <valueString value="QuestionnaireResponse"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MyPatient"/>
+        <reference value="QuestionnaireResponse/BloodGlucoseQuestionnaireResponse1"/>
       </reference>
-      <name value="MyPatient"/>
-      <description value="An example profile of the Patient resource."/>
+      <name value="BloodGlucoseQuestionnaireResponse1"/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/BloodGlucoseQuestionnaireResponse2"/>
+      </reference>
+      <name value="BloodGlucoseQuestionnaireResponse2"/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/BloodGlucoseQuestionnaire"/>
+      </reference>
+      <name value="Blutzucker"/>
+      <description value="A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allowes values inbetween 12 and 1200."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -580,11 +600,11 @@
         <valueString value="Patient"/>
       </extension>
       <reference>
-        <reference value="Patient/PatientExample"/>
+        <reference value="Patient/example"/>
       </reference>
       <name value="PatientExample"/>
       <description value="An example of a patient with a license to krill."/>
-      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/MyPatient"/>
+      <exampleBoolean value="true"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -636,7 +656,7 @@
         <reference value="QuestionnaireResponse/StepCountResponseActive"/>
       </reference>
       <name value="StepCountResponseActive"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -646,7 +666,7 @@
         <reference value="QuestionnaireResponse/StepCountResponseExtreme"/>
       </reference>
       <name value="StepCountResponseExtreme"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
     </resource>
     <page>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
@@ -673,10 +693,10 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="use_cases.html"/>
+          <valueUrl value="workflow.html"/>
         </extension>
-        <nameUrl value="use_cases.html"/>
-        <title value="Use Cases"/>
+        <nameUrl value="workflow.html"/>
+        <title value="Workflow"/>
         <generation value="markdown"/>
       </page>
       <page>

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/QolQuestionnaire | *Version*:0.1.0 | |
-| Active as of 2026-02-25 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:QoLByRandSF36v1 |
+| Active as of 2026-02-26 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:QoLByRandSF36v1 |
 
 
 
@@ -29,7 +29,7 @@
   "title" : "Quality of life by RAND 36-Item Health Survey 1.0 (SF-36)",
   "status" : "active",
   "subjectType" : ["Patient"],
-  "date" : "2026-02-25T07:03:20+00:00",
+  "date" : "2026-02-26T10:01:13+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
