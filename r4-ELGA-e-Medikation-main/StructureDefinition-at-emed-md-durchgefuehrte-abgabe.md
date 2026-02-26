@@ -9,14 +9,14 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-md-durchgefuehrte-abgabe | *Version*:0.1.1 | |
-| Draft as of 2026-02-23 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMDDurchgefuehrteAbgabe |
+| Draft as of 2026-02-26 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMDDurchgefuehrteAbgabe |
 
  
-**Beschreibung:** Dokumentiert eine durchgeführte Abgabe eines Arzneimittels ("MedicationDispense"-Ressource). Sofern eine zugehörige geplante Abgabe vorliegt, können Abweichungen hinsichtlich der Dosierung oder einer möglichen Substitution des Medikaments in der durchgeführten Abgabe dokumentiert werden. 
+Dokumentiert eine durchgeführte Abgabe eines Arzneimittels ("MedicationDispense"-Ressource). Sofern eine zugehörige geplante Abgabe vorliegt, können Abweichungen hinsichtlich der Dosierung oder einer möglichen Substitution des Medikaments in der durchgeführten Abgabe dokumentiert werden. 
 
 **Usages:**
 
-* Examples for this Profile: [MedicationDispense/AtEmedExampleDurchgefuehrteAbgabe01](MedicationDispense-AtEmedExampleDurchgefuehrteAbgabe01.md)
+* Examples for this Profile: [MedicationDispense/At-Emed-Example-Durchgefuehrte-Abgabe-01](MedicationDispense-At-Emed-Example-Durchgefuehrte-Abgabe-01.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/at-emed-md-durchgefuehrte-abgabe)
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
   "name" : "AtEmedMDDurchgefuehrteAbgabe",
   "title" : "ELGA e-Med Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-02-23T17:25:44+00:00",
+  "date" : "2026-02-26T16:36:39+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -58,7 +58,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
       "use" : "work"
     }]
   }],
-  "description" : "**Beschreibung:** Dokumentiert eine durchgeführte Abgabe eines Arzneimittels (\"MedicationDispense\"-Ressource). \nSofern eine zugehörige geplante Abgabe vorliegt, können Abweichungen hinsichtlich der Dosierung oder einer möglichen\nSubstitution des Medikaments in der durchgeführten Abgabe dokumentiert werden.",
+  "description" : "Dokumentiert eine durchgeführte Abgabe eines Arzneimittels (\"MedicationDispense\"-Ressource). \nSofern eine zugehörige geplante Abgabe vorliegt, können Abweichungen hinsichtlich der Dosierung oder einer möglichen\nSubstitution des Medikaments in der durchgeführten Abgabe dokumentiert werden.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "workflow",

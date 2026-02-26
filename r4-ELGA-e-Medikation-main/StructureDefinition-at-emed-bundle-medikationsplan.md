@@ -9,17 +9,17 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-medikationsplan | *Version*:0.1.1 | |
-| Draft as of 2026-02-23 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedBundleMedikationsplan |
+| Draft as of 2026-02-26 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedBundleMedikationsplan |
 
  
-**Beschreibung:** Das Bundle vom Typ Collection bestehend aus: 
+Das Bundle vom Typ Collection bestehend aus: 
 * 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus)
 * 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung
  
 
 **Usages:**
 
-* Examples for this Profile: [Bundle/AtEmedJourneyBundleMedikationsplan01](Bundle-AtEmedJourneyBundleMedikationsplan01.md) and [Bundle/AtEmedJourneyBundleMedikationsplan02](Bundle-AtEmedJourneyBundleMedikationsplan02.md)
+* Examples for this Profile: [Bundle/At-Emed-Journey-01-Bundle-Medikationsplan](Bundle-At-Emed-Journey-01-Bundle-Medikationsplan.md), [Bundle/At-Emed-Journey-02-Bundle-Medikationsplan](Bundle-At-Emed-Journey-02-Bundle-Medikationsplan.md) and [Bundle/At-Emed-Journey-04-Bundle-Medikationsplan](Bundle-At-Emed-Journey-04-Bundle-Medikationsplan.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/at-emed-bundle-medikationsplan)
 
@@ -44,7 +44,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-bundle-medik
   "name" : "AtEmedBundleMedikationsplan",
   "title" : "ELGA e-Med Medikationsplan Collection Bundle",
   "status" : "draft",
-  "date" : "2026-02-23T17:25:44+00:00",
+  "date" : "2026-02-26T16:36:39+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -61,7 +61,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-bundle-medik
       "use" : "work"
     }]
   }],
-  "description" : "**Beschreibung:** Das Bundle vom Typ Collection bestehend aus: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus) \n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung",
+  "description" : "Das Bundle vom Typ Collection bestehend aus: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus) \n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "v2",

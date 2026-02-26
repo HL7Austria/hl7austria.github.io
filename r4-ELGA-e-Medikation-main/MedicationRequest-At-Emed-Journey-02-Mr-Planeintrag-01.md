@@ -1,0 +1,79 @@
+# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel Journey 02: Medikationsplaneintrag 1 - FHIR® v4.0.1
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Beispiel Journey 02: Medikationsplaneintrag 1**
+
+## Example MedicationRequest: Beispiel Journey 02: Medikationsplaneintrag 1
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "MedicationRequest",
+  "id" : "At-Emed-Journey-02-Mr-Planeintrag-01",
+  "meta" : {
+    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"]
+  },
+  "contained" : [{
+    "resourceType" : "Medication",
+    "id" : "contained-medication-journey-02-01",
+    "meta" : {
+      "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"]
+    },
+    "code" : {
+      "coding" : [{
+        "system" : "https://termgit.elga.gv.at/CodeSystem/asp-liste",
+        "code" : "2443061",
+        "display" : "EBETREXAT TBL 10MG"
+      }]
+    }
+  }],
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
+    "valueMarkdown" : "1-0-1-0 Stück"
+  }],
+  "identifier" : [{
+    "value" : "4712_202602280800000"
+  }],
+  "status" : "active",
+  "intent" : "order",
+  "category" : [{
+    "coding" : [{
+      "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS",
+      "code" : "1"
+    }]
+  }],
+  "reportedBoolean" : false,
+  "medicationReference" : {
+    "reference" : "#contained-medication-journey-02-01"
+  },
+  "subject" : {
+    "reference" : "Patient/At-Emed-Journey-01-Patient-01"
+  },
+  "authoredOn" : "2026-01-28T08:00:00+00:00",
+  "requester" : {
+    "reference" : "Practitioner/At-Emed-Journey-01-Practitioner-01"
+  },
+  "dosageInstruction" : [{
+    "timing" : {
+      "repeat" : {
+        "frequency" : 2,
+        "period" : 1,
+        "periodUnit" : "d",
+        "when" : ["ACM", "ACV"]
+      }
+    },
+    "doseAndRate" : [{
+      "doseQuantity" : {
+        "unit" : "Stück",
+        "system" : "https://termgit.elga.gv.at/ValueSet-elga-medikationmengenart",
+        "code" : "{Stueck}"
+      }
+    }]
+  }]
+}
+
+```

@@ -9,10 +9,10 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-timing | *Version*:0.1.1 | |
-| Draft as of 2026-02-23 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedTiming |
+| Draft as of 2026-02-26 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedTiming |
 
  
-**Beschreibung:** ELGA e-Med Timing 
+ELGA e-Med Timing 
 
 **Usages:**
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-timing.csv),
   "name" : "AtEmedTiming",
   "title" : "ELGA e-Med Timing",
   "status" : "draft",
-  "date" : "2026-02-23T17:25:44+00:00",
+  "date" : "2026-02-26T16:36:39+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -58,7 +58,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-timing.csv),
       "use" : "work"
     }]
   }],
-  "description" : "**Beschreibung:** ELGA e-Med Timing",
+  "description" : "ELGA e-Med Timing",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "v2",

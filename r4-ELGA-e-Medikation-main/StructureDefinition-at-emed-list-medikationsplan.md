@@ -9,16 +9,16 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan | *Version*:0.1.1 | |
-| Draft as of 2026-02-23 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedListMedikationsplan |
+| Draft as of 2026-02-26 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedListMedikationsplan |
 
  
-**Beschreibung:** Bildet den Medikationsplan eines ELGA-Teilnehmers ab ("List"-Ressource). Die Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimittel und deren Dosierung abbilden. Die Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch zu klären). 
+Bildet den Medikationsplan eines ELGA-Teilnehmers ab ("List"-Ressource). Die Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimittel und deren Dosierung abbilden. Die Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch zu klären). 
 TODO: Invariante, dass überall in der List der gleiche Patient enthalten sein muss 
 
 **Usages:**
 
 * Use this Profile: [ELGA e-Med Medikationsplan Collection Bundle](StructureDefinition-at-emed-bundle-medikationsplan.md) and [ELGA e-Med Medikationsplan Transaction Bundle](StructureDefinition-at-emed-bundle-tx-medikationsplan.md)
-* Examples for this Profile: [List/AtEmedJourneyListMedikationsplan01](List-AtEmedJourneyListMedikationsplan01.md) and [List/AtEmedJourneyListMedikationsplan02](List-AtEmedJourneyListMedikationsplan02.md)
+* Examples for this Profile: [List/At-Emed-Journey-01-List-Medikationsplan](List-At-Emed-Journey-01-List-Medikationsplan.md), [List/At-Emed-Journey-02-List-Medikationsplan](List-At-Emed-Journey-02-List-Medikationsplan.md), [List/At-Emed-Journey-04-List-Medikationsplan-Reihenfolge](List-At-Emed-Journey-04-List-Medikationsplan-Reihenfolge.md) and [List/At-Emed-Journey-05-List-Medikationsplan-Aenderung](List-At-Emed-Journey-05-List-Medikationsplan-Aenderung.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/at-emed-list-medikationsplan)
 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
   "name" : "AtEmedListMedikationsplan",
   "title" : "ELGA e-Med Medikationsplan",
   "status" : "draft",
-  "date" : "2026-02-23T17:25:44+00:00",
+  "date" : "2026-02-26T16:36:39+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -60,7 +60,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
       "use" : "work"
     }]
   }],
-  "description" : "**Beschreibung:** Bildet den Medikationsplan eines ELGA-Teilnehmers ab (\"List\"-Ressource). \nDie Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimittel und deren Dosierung abbilden.\nDie Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch zu klären).\n\nTODO: Invariante, dass überall in der List der gleiche Patient enthalten sein muss",
+  "description" : "Bildet den Medikationsplan eines ELGA-Teilnehmers ab (\"List\"-Ressource). \nDie Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimittel und deren Dosierung abbilden.\nDie Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch zu klären).\n\nTODO: Invariante, dass überall in der List der gleiche Patient enthalten sein muss",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "rim",
@@ -144,12 +144,13 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
     {
       "id" : "List.source",
       "path" : "List.source",
-      "short" : "Arzt oder Ärztin, die den Medikationsplans erstellt und für den Inhalt verantwortlich ist. \nEindeutig identifiziert über den GDA-Index und berechtigt auf die ELGA e-Medikation \ndes Patienten zuzugreifen.",
+      "short" : "Arzt oder Ärztin, die den Medikationsplans erstellt und für den Inhalt verantwortlich ist. \nEindeutig identifiziert über den GDA-Index und berechtigt auf die ELGA e-Medikation \ndes Patienten zuzugreifen. Device nur für initiale Erstellung durch die Fachanwendung.",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner",
-        "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitionerRole"]
+        "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitionerRole",
+        "http://hl7.org/fhir/StructureDefinition/Device"]
       }],
       "mustSupport" : true
     },

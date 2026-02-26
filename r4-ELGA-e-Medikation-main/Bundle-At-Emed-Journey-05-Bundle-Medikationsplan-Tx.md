@@ -1,0 +1,335 @@
+# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel Journey 04: Transaction Bundle zur Änderung der Reihenfolge der Medikationsplaneinträge. - FHIR® v4.0.1
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Beispiel Journey 04: Transaction Bundle zur Änderung der Reihenfolge der Medikationsplaneinträge.**
+
+## Example Bundle: Beispiel Journey 04: Transaction Bundle zur Änderung der Reihenfolge der Medikationsplaneinträge.
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Bundle",
+  "id" : "At-Emed-Journey-05-Bundle-Medikationsplan-Tx",
+  "meta" : {
+    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-tx-medikationsplan"]
+  },
+  "type" : "transaction",
+  "timestamp" : "2026-02-07T08:00:00+00:00",
+  "entry" : [{
+    "fullUrl" : "urn:uuid:62e2daa5-c34b-4b97-8044-fd893bc99a56",
+    "resource" : {
+      "resourceType" : "List",
+      "id" : "At-Emed-Journey-05-List-Medikationsplan-Aenderung",
+      "meta" : {
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"List_At-Emed-Journey-05-List-Medikationsplan-Aenderung\"> </a><p class=\"res-header-id\"><b>Generated Narrative: List At-Emed-Journey-05-List-Medikationsplan-Aenderung</b></p><a name=\"At-Emed-Journey-05-List-Medikationsplan-Aenderung\"> </a><a name=\"hcAt-Emed-Journey-05-List-Medikationsplan-Aenderung\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-emed-list-medikationsplan.html\">ELGA e-Med Medikationsplan</a></p></div><table class=\"clstu\"><tr><td>Date: 2026-02-07 08:00:00+0000 </td><td>Mode: Working List </td><td>Status: Current </td><td>Code: Medikationsplan </td></tr><tr><td>Subject: <a href=\"Patient-At-Emed-Journey-01-Patient-01.html\">Max Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</a>Source: Order: Sorted by User </td></tr></table><table class=\"grid\"><tr style=\"backgound-color: #eeeeee\"><td><b>Items</b></td><td>Date</td><td>Flag</td></tr><tr><td><a href=\"MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-02.html\">MedicationRequest: extension = 2026-01-28 --&gt; 2026-02-28,1 täglich auftragen; identifier = 4713_202602280800000; status = active; intent = order; category = Medikationsplaneintrag; reported[x] = -&gt;Practitioner Hermine Fremdmedikation ; medication[x] = -&gt;Medication: form = Salbe; authoredOn = 2026-01-28 08:00:00+0000</a></td><td>2026-02-07 08:00:00+0000</td><td>Ceased</td></tr><tr><td><a href=\"MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-01.html\">MedicationRequest: extension = 1-0-1-0 Stück; identifier = 4712_202602280800000; status = active; intent = order; category = Medikationsplaneintrag; reported[x] = false; medication[x] = -&gt;Medication EBETREXAT TBL 10MG; authoredOn = 2026-01-28 08:00:00+0000</a></td><td>2026-02-07 08:00:00+0000</td><td>Changed</td></tr></table></div>"
+      },
+      "status" : "current",
+      "mode" : "working",
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "736378000",
+          "display" : "Medikationsplan"
+        }]
+      },
+      "subject" : {
+        "reference" : "Patient/At-Emed-Journey-01-Patient-01"
+      },
+      "date" : "2026-02-07T08:00:00+00:00",
+      "source" : {
+        "reference" : "Practitioner/At-Emed-Journey-01-Practitioner-02"
+      },
+      "orderedBy" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/list-order",
+          "code" : "user"
+        }]
+      },
+      "entry" : [{
+        "flag" : {
+          "coding" : [{
+            "system" : "urn:oid:1.2.36.1.2001.1001.101.104.16592",
+            "code" : "05",
+            "display" : "Ceased"
+          }]
+        },
+        "date" : "2026-02-07T08:00:00+00:00",
+        "item" : {
+          "reference" : "MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-02"
+        }
+      },
+      {
+        "flag" : {
+          "coding" : [{
+            "system" : "urn:oid:1.2.36.1.2001.1001.101.104.16592",
+            "code" : "02",
+            "display" : "Changed"
+          }]
+        },
+        "date" : "2026-02-07T08:00:00+00:00",
+        "item" : {
+          "reference" : "MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-01"
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "List/At-Emed-Journey-05-List-Medikationsplan-Aenderung"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:62e2daa5-c34b-4b97-8044-fd893bc99a57",
+    "resource" : {
+      "resourceType" : "MedicationRequest",
+      "id" : "At-Emed-Journey-05-Mr-Planeintrag-01",
+      "meta" : {
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"]
+      },
+      "text" : {
+        "status" : "extensions",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_At-Emed-Journey-05-Mr-Planeintrag-01\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationRequest At-Emed-Journey-05-Mr-Planeintrag-01</b></p><a name=\"At-Emed-Journey-05-Mr-Planeintrag-01\"> </a><a name=\"hcAt-Emed-Journey-05-Mr-Planeintrag-01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-emed-mr-planeintrag.html\">ELGA e-Med Planeintrag</a></p></div><p><b>Extension Definition for MedicationRequest.effectiveDosePeriod for Version 5.0</b>: 2026-02-07 --&gt; 2026-02-14</p><p><b>Extension Definition for MedicationRequest.renderedDosageInstruction for Version 5.0</b>: </p><div><p>1 Kapsel täglich morgens</p>\n</div><p><b>identifier</b>: 4712_202602280800000</p><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS 1}\">Medikationsplaneintrag</span></p><p><b>reported</b>: false</p><p><b>medication</b>: <a href=\"#hcAt-Emed-Journey-05-Mr-Planeintrag-01/ContainedMedication05\">Medication EBETREXAT TBL 10MG</a></p><p><b>subject</b>: <a href=\"Patient-At-Emed-Journey-01-Patient-01.html\">Max Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</a></p><p><b>authoredOn</b>: 2026-02-07 08:00:00+0000</p><p><b>requester</b>: <a href=\"Practitioner-At-Emed-Journey-01-Practitioner-02.html\">Practitioner Hermine Fremdmedikation </a></p><blockquote><p><b>dosageInstruction</b></p><p><b>text</b>: 1 Kapsel täglich morgens</p><p><b>patientInstruction</b>: Nehmen Sie die Kapsel jeden Morgen mit ausreichend Flüssigkeit ein.</p><p><b>timing</b>: Once per 1 day</p><p><b>route</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem-medikationartanwendung.html 100000073619}\">zum Einnehmen</span></p><h3>DoseAndRates</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Dose[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>10 mg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemg = 'mg')</span></td></tr></table></blockquote><hr/><blockquote><p class=\"res-header-id\"><b>Generated Narrative: Medication #ContainedMedication05</b></p><a name=\"At-Emed-Journey-05-Mr-Planeintrag-01/ContainedMedication05\"> </a><a name=\"hcAt-Emed-Journey-05-Mr-Planeintrag-01/ContainedMedication05\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-emed-medication.html\">ELGA e-Med Medikation</a></p></div><p><b>code</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/asp-liste 2443061}\">EBETREXAT TBL 10MG</span></p></blockquote></div>"
+      },
+      "contained" : [{
+        "resourceType" : "Medication",
+        "id" : "ContainedMedication05",
+        "meta" : {
+          "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"]
+        },
+        "code" : {
+          "coding" : [{
+            "system" : "https://termgit.elga.gv.at/CodeSystem/asp-liste",
+            "code" : "2443061",
+            "display" : "EBETREXAT TBL 10MG"
+          }]
+        }
+      }],
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod",
+        "valuePeriod" : {
+          "start" : "2026-02-07",
+          "end" : "2026-02-14"
+        }
+      },
+      {
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
+        "valueMarkdown" : "1 Kapsel täglich morgens"
+      }],
+      "identifier" : [{
+        "value" : "4712_202602280800000"
+      }],
+      "status" : "active",
+      "intent" : "order",
+      "category" : [{
+        "coding" : [{
+          "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS",
+          "code" : "1"
+        }]
+      }],
+      "reportedBoolean" : false,
+      "medicationReference" : {
+        "reference" : "#ContainedMedication05"
+      },
+      "subject" : {
+        "reference" : "Patient/At-Emed-Journey-01-Patient-01"
+      },
+      "authoredOn" : "2026-02-07T08:00:00+00:00",
+      "requester" : {
+        "reference" : "Practitioner/At-Emed-Journey-01-Practitioner-02"
+      },
+      "dosageInstruction" : [{
+        "text" : "1 Kapsel täglich morgens",
+        "patientInstruction" : "Nehmen Sie die Kapsel jeden Morgen mit ausreichend Flüssigkeit ein.",
+        "timing" : {
+          "repeat" : {
+            "frequency" : 1,
+            "period" : 1,
+            "periodUnit" : "d"
+          }
+        },
+        "route" : {
+          "coding" : [{
+            "system" : "https://termgit.elga.gv.at/CodeSystem-medikationartanwendung.html",
+            "code" : "100000073619",
+            "display" : "zum Einnehmen"
+          }]
+        },
+        "doseAndRate" : [{
+          "doseQuantity" : {
+            "value" : 10,
+            "unit" : "mg",
+            "system" : "http://unitsofmeasure.org",
+            "code" : "mg"
+          }
+        }]
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "MedicationRequest/At-Emed-Journey-05-Mr-Planeintrag-01"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:62e2daa5-c34b-4b97-8044-fd893bc99a58",
+    "resource" : {
+      "resourceType" : "MedicationRequest",
+      "id" : "At-Emed-Journey-05-Mr-Planeintrag-02",
+      "meta" : {
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"]
+      },
+      "text" : {
+        "status" : "extensions",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_At-Emed-Journey-05-Mr-Planeintrag-02\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationRequest At-Emed-Journey-05-Mr-Planeintrag-02</b></p><a name=\"At-Emed-Journey-05-Mr-Planeintrag-02\"> </a><a name=\"hcAt-Emed-Journey-05-Mr-Planeintrag-02\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-emed-mr-planeintrag.html\">ELGA e-Med Planeintrag</a></p></div><p><b>Extension Definition for MedicationRequest.effectiveDosePeriod for Version 5.0</b>: 2026-01-28 --&gt; 2026-02-28</p><p><b>Extension Definition for MedicationRequest.renderedDosageInstruction for Version 5.0</b>: </p><div><p>1 täglich auftragen</p>\n</div><p><b>identifier</b>: 4713_202602280800000</p><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS 1}\">Medikationsplaneintrag</span></p><p><b>reported</b>: <a href=\"Practitioner-At-Emed-Journey-01-Practitioner-02.html\">Practitioner Hermine Fremdmedikation </a></p><p><b>medication</b>: <a href=\"#hcAt-Emed-Journey-05-Mr-Planeintrag-02/ContainedMedicationMagistral05\">Medication: form = Salbe</a></p><p><b>subject</b>: <a href=\"Patient-At-Emed-Journey-01-Patient-01.html\">Max Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</a></p><p><b>authoredOn</b>: 2026-02-07 08:00:00+0000</p><p><b>requester</b>: <a href=\"Practitioner-At-Emed-Journey-01-Practitioner-01.html\">Practitioner Melanie Musterärztin </a></p><p><b>note</b>: </p><blockquote><div><p>Freitext Informationen zum Medikationsplaneintrag.</p>\n</div></blockquote><h3>DosageInstructions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td><td><b>PatientInstruction</b></td><td><b>Timing</b></td><td><b>Route</b></td></tr><tr><td style=\"display: none\">*</td><td>1 täglich auftragen</td><td>Abends sehr dünn auf die betroffene Stelle auftragen.</td><td>Once per 1 day</td><td><span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem-medikationartanwendung.html 100000073566}\">Anwendung auf der Haut</span></td></tr></table><hr/><blockquote><p class=\"res-header-id\"><b>Generated Narrative: Medication #ContainedMedicationMagistral05</b></p><a name=\"At-Emed-Journey-05-Mr-Planeintrag-02/ContainedMedicationMagistral05\"> </a><a name=\"hcAt-Emed-Journey-05-Mr-Planeintrag-02/ContainedMedicationMagistral05\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-emed-medication.html\">ELGA e-Med Medikation</a></p></div><p><b>form</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform 100000073713}\">Salbe</span></p><blockquote><p><b>ingredient</b></p><p><b>item</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido A01AC03}\">Hydrocortison</span></p><p><b>strength</b>: 1 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span>/100 g<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg = 'g')</span></p></blockquote><blockquote><p><b>ingredient</b></p><p><b>item</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido A01AB18}\">Clotrimazol</span></p><p><b>strength</b>: 1 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span>/100 g<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg = 'g')</span></p></blockquote><blockquote><p><b>ingredient</b></p><p><b>item</b>: <span title=\"Codes:\">Salbengrundlage</span></p><p><b>isActive</b>: false</p><p><b>strength</b>: 98 g/100 g</p></blockquote></blockquote></div>"
+      },
+      "contained" : [{
+        "resourceType" : "Medication",
+        "id" : "ContainedMedicationMagistral05",
+        "meta" : {
+          "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"]
+        },
+        "text" : {
+          "status" : "additional",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Freitext-Informationen zur magistralen Anwendung.</p></div>"
+        },
+        "form" : {
+          "coding" : [{
+            "system" : "https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform",
+            "code" : "100000073713",
+            "display" : "Salbe"
+          }]
+        },
+        "ingredient" : [{
+          "itemCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido",
+              "code" : "A01AC03",
+              "display" : "Hydrocortison"
+            }]
+          },
+          "strength" : {
+            "numerator" : {
+              "value" : 1,
+              "unit" : "%",
+              "system" : "http://unitsofmeasure.org",
+              "code" : "%"
+            },
+            "denominator" : {
+              "value" : 100,
+              "unit" : "g",
+              "system" : "http://unitsofmeasure.org",
+              "code" : "g"
+            }
+          }
+        },
+        {
+          "itemCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido",
+              "code" : "A01AB18",
+              "display" : "Clotrimazol"
+            }]
+          },
+          "strength" : {
+            "numerator" : {
+              "value" : 1,
+              "unit" : "%",
+              "system" : "http://unitsofmeasure.org",
+              "code" : "%"
+            },
+            "denominator" : {
+              "value" : 100,
+              "unit" : "g",
+              "system" : "http://unitsofmeasure.org",
+              "code" : "g"
+            }
+          }
+        },
+        {
+          "itemCodeableConcept" : {
+            "text" : "Salbengrundlage"
+          },
+          "isActive" : false,
+          "strength" : {
+            "numerator" : {
+              "value" : 98,
+              "unit" : "g"
+            },
+            "denominator" : {
+              "value" : 100,
+              "unit" : "g"
+            }
+          }
+        }]
+      }],
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod",
+        "valuePeriod" : {
+          "start" : "2026-01-28",
+          "end" : "2026-02-28"
+        }
+      },
+      {
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
+        "valueMarkdown" : "1 täglich auftragen"
+      }],
+      "identifier" : [{
+        "value" : "4713_202602280800000"
+      }],
+      "status" : "active",
+      "intent" : "order",
+      "category" : [{
+        "coding" : [{
+          "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS",
+          "code" : "1"
+        }]
+      }],
+      "reportedReference" : {
+        "reference" : "Practitioner/At-Emed-Journey-01-Practitioner-02"
+      },
+      "medicationReference" : {
+        "reference" : "#ContainedMedicationMagistral05"
+      },
+      "subject" : {
+        "reference" : "Patient/At-Emed-Journey-01-Patient-01"
+      },
+      "authoredOn" : "2026-02-07T08:00:00+00:00",
+      "requester" : {
+        "reference" : "Practitioner/At-Emed-Journey-01-Practitioner-01"
+      },
+      "note" : [{
+        "text" : "Freitext Informationen zum Medikationsplaneintrag."
+      }],
+      "dosageInstruction" : [{
+        "text" : "1 täglich auftragen",
+        "patientInstruction" : "Abends sehr dünn auf die betroffene Stelle auftragen.",
+        "timing" : {
+          "repeat" : {
+            "frequency" : 1,
+            "period" : 1,
+            "periodUnit" : "d"
+          }
+        },
+        "route" : {
+          "coding" : [{
+            "system" : "https://termgit.elga.gv.at/CodeSystem-medikationartanwendung.html",
+            "code" : "100000073566",
+            "display" : "Anwendung auf der Haut"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "MedicationRequest/At-Emed-Journey-05-Mr-Planeintrag-02"
+    }
+  }]
+}
+
+```

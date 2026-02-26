@@ -9,16 +9,16 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-substance | *Version*:0.1.1 | |
-| Draft as of 2026-02-23 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedSubstance |
+| Draft as of 2026-02-26 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedSubstance |
 
  
-**Beschreibung:** Dokumentation der Substanz eines Inhaltsstoffes eines Arzneimittels, sofern es nicht kodiert vorliegt. 
+Dokumentation der Substanz eines Inhaltsstoffes eines Arzneimittels, sofern es nicht kodiert vorliegt. 
 
 **Usages:**
 
 * Use this Profile: [ELGA e-Med Geplante Abgabe](StructureDefinition-at-emed-mr-geplante-abgabe.md) and [ELGA e-Med Planeintrag](StructureDefinition-at-emed-mr-planeintrag.md)
 * Refer to this Profile: [ELGA e-Med Medikation](StructureDefinition-at-emed-medication.md)
-* Examples for this Profile: [Substance/AtEmedJourneySubstanceClotrimazol](Substance-AtEmedJourneySubstanceClotrimazol.md) and [Substance/AtEmedJourneySubstanceHydrocortison](Substance-AtEmedJourneySubstanceHydrocortison.md)
+* Examples for this Profile: [Substance/At-Emed-Example-Substance-Clotrimazol](Substance-At-Emed-Example-Substance-Clotrimazol.md) and [Substance/At-Emed-Example-Substance-Hydrocortison](Substance-At-Emed-Example-Substance-Hydrocortison.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/at-emed-substance)
 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-substance.cs
   "name" : "AtEmedSubstance",
   "title" : "ELGA e-Med Substanz",
   "status" : "draft",
-  "date" : "2026-02-23T17:25:44+00:00",
+  "date" : "2026-02-26T16:36:39+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -60,7 +60,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-substance.cs
       "use" : "work"
     }]
   }],
-  "description" : "**Beschreibung:** Dokumentation der Substanz eines Inhaltsstoffes eines Arzneimittels, sofern es nicht kodiert vorliegt.",
+  "description" : "Dokumentation der Substanz eines Inhaltsstoffes eines Arzneimittels, sofern es nicht kodiert vorliegt.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "rim",
