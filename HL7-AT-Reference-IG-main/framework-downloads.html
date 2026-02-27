@@ -38,9 +38,11 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
 
-    <style type="text/css">h2{--heading-prefix:"5.3.2"}
-    h3,h4,h5,h6{--heading-prefix:"5.3.2"}</style>
+    <style type="text/css">h2{--heading-prefix:"5.6.2"}
+    h3,h4,h5,h6{--heading-prefix:"5.6.2"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
           <!-- at-fhir-ig-template begin -->
@@ -124,10 +126,19 @@
         <a href="framework-toc.html">Table of Contents</a>
       </li>
       <li>
+        <a href="framework-introduction.html">Introduction</a>
+      </li>
+      <li>
+        <a href="framework-functional.html">Functional</a>
+      </li>
+      <li>
+        <a href="framework-use-cases.html">Use-Cases</a>
+      </li>
+      <li>
         <a href="framework-artifacts.html">Artifacts</a>
       </li>
       <li>
-        <a href="framework-other.html">Other</a>
+        <a href="framework-about.html">About</a>
       </li>
     </ul>
   </li>
@@ -143,16 +154,25 @@
         <a href="use-case-toc.html">Table of Contents</a>
       </li>
       <li>
+        <a href="use-case-introduction.html">Introduction</a>
+      </li>
+      <li>
+        <a href="use-case-functional.html">Functional</a>
+      </li>
+      <li>
+        <a href="use-case-use-cases.html">Use Cases</a>
+      </li>
+      <li>
+        <a href="use-case-mappings.html">Mappings</a>
+      </li>
+      <li>
         <a href="use-case-artifacts.html">Artifacts</a>
       </li>
       <li>
-        <a href="use-case-background.html">Background</a>
+        <a href="use-case-optional.html">[ TBD ]</a>
       </li>
       <li>
-        <a href="use-case-optional.html">[ Optional ]</a>
-      </li>
-      <li>
-        <a href="use-case-other.html">Other</a>
+        <a href="use-case-about.html">About</a>
       </li>
     </ul>
   </li>
@@ -168,7 +188,7 @@
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="framework.html"><b>Framework IGs</b></a></li><li><a href="framework-other.html"><b>Framework IGs - Other</b></a></li><li><b>Framework IGs - Downloads</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="framework.html"><b>Framework IGs</b></a></li><li><a href="framework-about.html"><b>Framework IGs - About</b></a></li><li><b>Framework IGs - Downloads</b></li>
 
         </ul>
       </div>    <!-- /container -->
@@ -246,19 +266,45 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           <ul class="nav navbar-nav">
             <li><a href="framework.html">Home</a></li>
             <li><a href="framework-toc.html">Table of Contents</a></li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Introduction<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="framework-scope-and-content.html">Scope and Content</a></li>
+                  <li><a href="framework-background.html">Background</a></li>
+                  <li><a href="framework-challenges.html">Challenges</a></li>
+                </ul>            
+            </li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Functional<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="framework-design-choices.html">Design Choices</a></li>
+                  <li><a href="framework-system-actors.html">System Actors</a></li>
+                  <li><a href="framework-transactions.html">[Transactions]</a></li>
+                  <li><a href="framework-workflowmanagement.html">[Workflowmanagement]</a></li>
+                  <li><a href="framework-obligations.html">[Obligations]</a></li>
+                  <li><a href="framework-logical-models.html">[Logical Models]</a></li>
+                </ul>            
+            </li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Use Cases<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="framework-example-use-case-1.html">[Example Use Case 1]</a></li>
+                  <li><a href="framework-example-use-case-2.html">[Example Use Case 2]</a></li>
+                  <li><a href="framework-example-use-case-3.html">[Example Use Case 3]</a></li>
+                </ul>            
+            </li>
             <li><a href="framework-artifacts.html">Artifacts</a></li>
-             <li class="dropdown">
-              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Other <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="framework-about.html">About</a></li>
-                <li><a href="framework-downloads.html">Downloads</a></li>
-                <li class="divider"></li>
-                <li>
-                  <a href="http://hl7.org/fhir/R5/index.html" target="_blank">
-                    FHIR&reg; Spec
-                  </a>
-                </li>
-              </ul>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">About<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="framework-authors.html">Authors and Contributors</a></li>
+                  <li><a href="framework-downloads.html">Download</a></li>
+                  <li><a href="framework-dependencies.html">Dependencies</a></li>
+                  <li><a href="framework-copyright.html">Copyright</a></li>
+                  <li><a href="framework-cross-version-analysis.html">Cross-Version Analysis</a></li>
+                  <li><a href="framework-known-issues.html">Known Issues</a></li>
+                  <li><a href="http://hl7.org/fhir/R5/index.html" target="_blank">FHIR&reg; Spec</a></li>
+                </ul>            
             </li>
           </ul>
         </div>
@@ -294,9 +340,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <p>In addition there are format specific definition files:</p>
 
   <ul>
-    <li><a name="l516">​</a><a href="definitions.xml.zip">XML</a></li>
-    <li><a name="l520">​</a><a href="definitions.json.zip">JSON</a></li>
-    <li><a name="l524">​</a><a href="definitions.ttl.zip">TTL</a></li>
+    <li><a name="l646">​</a><a href="definitions.xml.zip">XML</a></li>
+    <li><a name="l650">​</a><a href="definitions.json.zip">JSON</a></li>
+    <li><a name="l654">​</a><a href="definitions.ttl.zip">TTL</a></li>
   </ul>
 
   <p>These files should be the first choice whenever generating any implementation artifacts since they contain all of the rules about what makes these profiles valid. Implementers will still need to be familiar with the content of the specification and profiles that apply in order to make a conformant implementation.  See the overview on <a href="http://hl7.org/fhir/R5/validation.html">validating FHIR profiles and resources</a>.</p>
@@ -306,8 +352,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <p>All of the examples that are used in this Implementation Guide are available for download:</p>
 
   <ul>
-    <li><a name="l543">​</a><a href="examples.xml.zip">XML</a></li>
-    <li><a name="l547">​</a><a href="examples.json.zip">JSON</a></li>
+    <li><a name="l673">​</a><a href="examples.xml.zip">XML</a></li>
+    <li><a name="l677">​</a><a href="examples.json.zip">JSON</a></li>
   </ul>
 
   <script src="assets/js/jquery.js" type="text/javascript"> </script>
@@ -322,7 +368,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://hl7.at/technische-komitees/tc-fhir/">HL7&reg; Austria, TC FHIR&reg;</a>.  Package hl7.at.fhir.reference-ig#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Fri, Jul 4, 2025 09:26+0000">2025-07-04</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://hl7.at/technische-komitees/tc-fhir/">HL7&reg; Austria, TC FHIR&reg;</a>.  Package hl7.at.fhir.reference-ig#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Fri, Feb 27, 2026 12:37+0000">2026-02-27</span>
     <br/>
     <span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
@@ -361,7 +407,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://hl7.at/technische-komitees/tc-fhir/">HL7&reg; Austria, TC FHIR&reg;</a>.  Package hl7.at.fhir.reference-ig#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Fri, Jul 4, 2025 09:26+0000">2025-07-04</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="https://hl7.at/technische-komitees/tc-fhir/">HL7&reg; Austria, TC FHIR&reg;</a>.  Package hl7.at.fhir.reference-ig#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Fri, Feb 27, 2026 12:37+0000">2026-02-27</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
