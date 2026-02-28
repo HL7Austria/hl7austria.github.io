@@ -1,18 +1,18 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Schrittanzahl (täglich) - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Schrittzahl - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Schrittanzahl (täglich)**
+* **Schrittzahl**
 
-## Questionnaire: Schrittanzahl (täglich) 
+## Questionnaire: Schrittzahl 
 
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/StepCountQuestionnaire | *Version*:0.1.0 | |
-| Active as of 2026-02-26 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:StepCountQuestionnaire |
+| Active as of 2026-02-28 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:StepCountQuestionnaire |
 
  
-A simple questionnaire for asking how many steps have been done today. The step count option only allowes values inbetween 0 and 300 000. 
+A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000. 
 
 
 
@@ -28,11 +28,11 @@ A simple questionnaire for asking how many steps have been done today. The step 
   "url" : "https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/StepCountQuestionnaire",
   "version" : "0.1.0",
   "name" : "StepCountQuestionnaire",
-  "title" : "Schrittanzahl (täglich)",
+  "title" : "Schrittzahl",
   "status" : "active",
   "experimental" : false,
   "subjectType" : ["Patient"],
-  "date" : "2026-02-26T10:01:13+00:00",
+  "date" : "2026-02-28T09:14:32+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -49,15 +49,23 @@ A simple questionnaire for asking how many steps have been done today. The step 
       "use" : "work"
     }]
   }],
-  "description" : "A simple questionnaire for asking how many steps have been done today. The step count option only allowes values inbetween 0 and 300 000.",
+  "description" : "A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000.",
   "item" : [{
     "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/questionnaire-unitOption",
+      "valueCoding" : {
+        "system" : "http://unitsofmeasure.org",
+        "code" : "{steps}/d",
+        "display" : "{steps}/d"
+      }
+    },
+    {
       "url" : "http://hl7.org/fhir/StructureDefinition/minValue",
-      "valueInteger" : 0
+      "valueDecimal" : 0
     },
     {
       "url" : "http://hl7.org/fhir/StructureDefinition/maxValue",
-      "valueInteger" : 150000
+      "valueDecimal" : 150000
     }],
     "linkId" : "step-count-today",
     "code" : [{
@@ -65,7 +73,7 @@ A simple questionnaire for asking how many steps have been done today. The step 
       "code" : "41950-7"
     }],
     "text" : "Wie viele Schritte sind Sie heute gegangen?",
-    "type" : "integer",
+    "type" : "quantity",
     "required" : true,
     "repeats" : false,
     "item" : [{

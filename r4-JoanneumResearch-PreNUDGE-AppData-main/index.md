@@ -47,6 +47,8 @@ General information and deadlines according to HL7 Austria voting procedures:
 We look forward to your active participation in the balloting process, which makes a vital contribution to quality assurance and the success of Austrian e-health applications.
  Thank you very much for your commitment!
 
+For more, see [Background](background.md).
+
 
 
 ## Resource Content
@@ -60,7 +62,7 @@ We look forward to your active participation in the balloting process, which mak
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-02-26T10:01:13+00:00",
+  "date" : "2026-02-28T09:14:32+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -106,6 +108,12 @@ We look forward to your active participation in the balloting process, which mak
     "uri" : "https://fhir.hl7.at/elga/aps/r4/ImplementationGuide/hl7.at.fhir.elga.aps.r4",
     "packageId" : "hl7.at.fhir.elga.aps.r4",
     "version" : "current"
+  },
+  {
+    "id" : "hl7_fhir_uv_sdc",
+    "uri" : "http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc",
+    "packageId" : "hl7.fhir.uv.sdc",
+    "version" : "3.0.0"
   }],
   "definition" : {
     "extension" : [{
@@ -665,6 +673,18 @@ We look forward to your active participation in the balloting process, which mak
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-prenudge-whoqol-bref-score-observation"
+      },
+      "name" : " AT PreNUDGE Observation WHOQOL-BREF Score",
+      "description" : "Observation profile for recording WHOQOL-BREF domain scores. The overall score is represented in Observation.value, individual domain scores are recorded as components.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "QuestionnaireResponse"
       }],
       "reference" : {
@@ -741,7 +761,7 @@ We look forward to your active participation in the balloting process, which mak
         "reference" : "StructureDefinition/at-prenudge-stepcount-observation"
       },
       "name" : "AT PreNUDGE Observation Step Count",
-      "description" : "This FHIR profile is defining the Step Count Observation, similar to the Observation Social History - Alcohol Use from the IPS. The step count option only allowes values inbetween 0 and 300 000.",
+      "description" : "This FHIR profile is defining the Step Count Observation. The step count only allows values inbetween 0 and 150,000 steps per 24 hours.",
       "exampleBoolean" : false
     },
     {
@@ -771,13 +791,26 @@ We look forward to your active participation in the balloting process, which mak
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
+        "valueString" : "Observation"
       }],
       "reference" : {
-        "reference" : "ValueSet/at-prenudge-observation-valueset-method-manual-automated"
+        "reference" : "Observation/bloodglucose-elevated-example"
       },
-      "name" : "AtPrenudgeValueSetMethodManualAutomated",
-      "exampleBoolean" : false
+      "name" : "Blood Glucose - Elevated Example",
+      "description" : "Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL), hinweisend auf Diabetes mellitus.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/bloodglucose-normal-example"
+      },
+      "name" : "Blood Glucose - Normal Example",
+      "description" : "Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation"
     },
     {
       "extension" : [{
@@ -785,10 +818,11 @@ We look forward to your active participation in the balloting process, which mak
         "valueString" : "QuestionnaireResponse"
       }],
       "reference" : {
-        "reference" : "QuestionnaireResponse/BloodGlucoseQuestionnaireResponse1"
+        "reference" : "QuestionnaireResponse/bloodglucose-response-elevated-example"
       },
-      "name" : "BloodGlucoseQuestionnaireResponse1",
-      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+      "name" : "Blood Glucose QuestionnaireResponse - Elevated Example",
+      "description" : "Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL) als QuestionnaireResponse.",
+      "exampleBoolean" : true
     },
     {
       "extension" : [{
@@ -796,10 +830,11 @@ We look forward to your active participation in the balloting process, which mak
         "valueString" : "QuestionnaireResponse"
       }],
       "reference" : {
-        "reference" : "QuestionnaireResponse/BloodGlucoseQuestionnaireResponse2"
+        "reference" : "QuestionnaireResponse/bloodglucose-response-normal-example"
       },
-      "name" : "BloodGlucoseQuestionnaireResponse2",
-      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+      "name" : "Blood Glucose QuestionnaireResponse - Normal Example",
+      "description" : "Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL) als QuestionnaireResponse.",
+      "exampleBoolean" : true
     },
     {
       "extension" : [{
@@ -810,7 +845,7 @@ We look forward to your active participation in the balloting process, which mak
         "reference" : "Questionnaire/BloodGlucoseQuestionnaire"
       },
       "name" : "Blutzucker",
-      "description" : "A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allowes values inbetween 12 and 1200.",
+      "description" : "A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allows values inbetween 12 and 1200 mg/dL.",
       "exampleBoolean" : false
     },
     {
@@ -833,19 +868,8 @@ We look forward to your active participation in the balloting process, which mak
       "reference" : {
         "reference" : "Questionnaire/QolQuestionnaire"
       },
-      "name" : "Quality of life by RAND 36-Item Health Survey 1.0 (SF-36)",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/rand-sf36-answers"
-      },
-      "name" : "RAND SF-36 answer options in german",
-      "description" : "Answer options for den RAND SF-36 Health Survey, translated to german",
+      "name" : "Quality of life Fragebogen WHOQOL-BREF - World Health Organization Quality of Life Kurzversion",
+      "description" : "The WHOQOL-BREF is a 26-item instrument for assessing subjective quality of life in four domains: physical, psychological, social relationships, and environment. Developed by the WHO.",
       "exampleBoolean" : false
     },
     {
@@ -856,8 +880,8 @@ We look forward to your active participation in the balloting process, which mak
       "reference" : {
         "reference" : "Questionnaire/StepCountQuestionnaire"
       },
-      "name" : "Schrittanzahl (täglich)",
-      "description" : "A simple questionnaire for asking how many steps have been done today. The step count option only allowes values inbetween 0 and 300 000.",
+      "name" : "Schrittzahl",
+      "description" : "A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000.",
       "exampleBoolean" : false
     },
     {
@@ -866,9 +890,70 @@ We look forward to your active participation in the balloting process, which mak
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/at-prenudge-alcoholuse-valueset-frequency"
+        "reference" : "ValueSet/prenudge-alcoholuse-frequency"
       },
       "name" : "SNOMED CT AlcoholUse-Frequency",
+      "description" : "ValueSet containing SNOMED CT codes for differentiating frequencies used in the PreNUDGE alcoholuse questionnaire.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/stepcount-low-example"
+      },
+      "name" : "Step Count - Low Example",
+      "description" : "Beispiel einer niedrigen Schrittzahl (2,150 Schritte pro Tag), hinweisend auf Bewegungsmangel.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/stepcount-normal-example"
+      },
+      "name" : "Step Count - Normal Example",
+      "description" : "Beispiel einer normalen Schrittzahl (8,432 Schritte pro Tag).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/stepcount-response-low-example"
+      },
+      "name" : "Step Count QuestionnaireResponse - Low Example",
+      "description" : "Beispiel einer niedrigen Schrittzahl (2,150 Schritte) als QuestionnaireResponse.",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/stepcount-response-normal-example"
+      },
+      "name" : "Step Count QuestionnaireResponse - Normal Example",
+      "description" : "Beispiel einer normalen Schrittzahl (8,432 Schritte) als QuestionnaireResponse.",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/whoqol-bref-scale"
+      },
+      "name" : "WHOQOL-BREF Answer Scales",
+      "description" : "Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire.",
       "exampleBoolean" : false
     },
     {
@@ -877,21 +962,47 @@ We look forward to your active participation in the balloting process, which mak
         "valueString" : "QuestionnaireResponse"
       }],
       "reference" : {
-        "reference" : "QuestionnaireResponse/StepCountResponseActive"
+        "reference" : "QuestionnaireResponse/whoqol-bref-response-example"
       },
-      "name" : "StepCountResponseActive",
-      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+      "name" : "WHOQOL-BREF QuestionnaireResponse - Example",
+      "description" : "Example of a completed WHOQOL-BREF QuestionnaireResponse including all 26 items and calculated scores.",
+      "exampleBoolean" : true
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "QuestionnaireResponse"
+        "valueString" : "Observation"
       }],
       "reference" : {
-        "reference" : "QuestionnaireResponse/StepCountResponseExtreme"
+        "reference" : "Observation/whoqol-bref-score-example"
       },
-      "name" : "StepCountResponseExtreme",
-      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+      "name" : "WHOQOL-BREF Score - Example",
+      "description" : "Example of a WHOQOL-BREF score observation with a general score and all four domain scores.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-whoqol-bref-score-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/prenudge-observation-method"
+      },
+      "name" : "WHOQOL-BREF Score Type ValueSet",
+      "description" : "ValueSet containing SNOMED CT codes for differentiating methods used in the PreNUDGE observation.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/prenudge-whoqol-bref-score-type"
+      },
+      "name" : "WHOQOL-BREF Score Type ValueSet",
+      "description" : "ValueSet containing SNOMED CT codes for differentiating WHOQOL-BREF overall and domain scores.",
+      "exampleBoolean" : false
     }],
     "page" : {
       "extension" : [{

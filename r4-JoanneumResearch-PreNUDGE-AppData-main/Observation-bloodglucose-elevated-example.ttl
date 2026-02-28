@@ -1,0 +1,77 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/prenudge/appdata/r4/Observation/bloodglucose-elevated-example> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "bloodglucose-elevated-example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation"^^xsd:anyURI ;
+       fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation bloodglucose-elevated-example</b></p><a name=\"bloodglucose-elevated-example\"> </a><a name=\"hcbloodglucose-elevated-example\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-prenudge-bloodglucose-observation.html\">AT PreNUDGE Observation Blood Glucose (only in mg/dL)</a></p></div><p><b>identifier</b>: <code>http://cdehealth.org/fhir/observation-id</code>/bg-2026-02-28-002</p><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 1556-0}\">Fasting glucose [Mass/volume] in Capillary blood</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">James Pond  (no stated gender), DoB Unknown</a></p><p><b>effective</b>: 2026-02-28 07:45:00+0000</p><p><b>value</b>: 142 mg/dL<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemg/dL = 'mg/dL')</span></p><p><b>note</b>: </p><blockquote><div><p>Patient berichtet, gestern Abend spät gegessen zu haben.</p>\n</div></blockquote><p><b>method</b>: <span title=\"Codes:{http://snomed.info/sct 87982008}\">Manual</span></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "http://cdehealth.org/fhir/observation-id"^^xsd:anyURI ;
+       fhir:l <http://cdehealth.org/fhir/observation-id>
+     ] ;
+     fhir:value [ fhir:v "bg-2026-02-28-002" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:1556-0 ;
+       fhir:system [
+         fhir:v "http://loinc.org"^^xsd:anyURI ;
+         fhir:l <http://loinc.org>
+       ] ;
+       fhir:code [ fhir:v "1556-0" ] ;
+       fhir:display [ fhir:v "Fasting glucose [Mass/volume] in Capillary blood" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:DateTime ;
+     fhir:v "2026-02-28T07:45:00Z"^^xsd:dateTime
+  ] ; # 
+  fhir:value [
+     a fhir:Quantity ;
+     fhir:value [ fhir:v "142"^^xsd:decimal ] ;
+     fhir:unit [ fhir:v "mg/dL" ] ;
+     fhir:system [
+       fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+       fhir:l <http://unitsofmeasure.org>
+     ] ;
+     fhir:code [ fhir:v "mg/dL" ]
+  ] ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "Patient berichtet, gestern Abend spät gegessen zu haben." ]
+  ] ) ; # 
+  fhir:method [
+     fhir:coding ( [
+       a sct:87982008 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "87982008" ] ;
+       fhir:display [ fhir:v "Manual" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

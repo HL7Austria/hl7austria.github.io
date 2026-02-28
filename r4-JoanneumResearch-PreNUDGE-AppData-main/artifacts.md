@@ -14,9 +14,9 @@ These define forms used by systems conforming to this implementation guide to ca
 | | |
 | :--- | :--- |
 | [Alkoholkonsum-Frequenz (letztes Jahr)](Questionnaire-AtPrenudgeQuestionnaireAlcoholUse.md) | Categorical variable for the frequency of alcohol consumption in the last year (IPS compatible). |
-| [Blutzucker](Questionnaire-BloodGlucoseQuestionnaire.md) | A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allowes values inbetween 12 and 1200. |
-| [Quality of life by RAND 36-Item Health Survey 1.0 (SF-36)](Questionnaire-QolQuestionnaire.md) |  |
-| [Schrittanzahl (täglich)](Questionnaire-StepCountQuestionnaire.md) | A simple questionnaire for asking how many steps have been done today. The step count option only allowes values inbetween 0 and 300 000. |
+| [Blutzucker](Questionnaire-BloodGlucoseQuestionnaire.md) | A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allows values inbetween 12 and 1200 mg/dL. |
+| [Quality of life Fragebogen WHOQOL-BREF - World Health Organization Quality of Life Kurzversion](Questionnaire-QolQuestionnaire.md) | The WHOQOL-BREF is a 26-item instrument for assessing subjective quality of life in four domains: physical, psychological, social relationships, and environment. Developed by the WHO. |
+| [Schrittzahl](Questionnaire-StepCountQuestionnaire.md) | A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000. |
 
 ### Structures: Resource Profiles 
 
@@ -24,10 +24,11 @@ These define constraints on FHIR resources for systems conforming to this implem
 
 | | |
 | :--- | :--- |
+| [ AT PreNUDGE Observation WHOQOL-BREF Score](StructureDefinition-at-prenudge-whoqol-bref-score-observation.md) | Observation profile for recording WHOQOL-BREF domain scores. The overall score is represented in Observation.value, individual domain scores are recorded as components. |
 | [AT PreNUDGE Observation](StructureDefinition-at-prenudge-observation.md) | This FHIR profile is defining the overall Observation for PreNUDGE. |
 | [AT PreNUDGE Observation Alcohol Use](StructureDefinition-at-prenudge-alcoholuse-observation.md) | This FHIR profile is currently derived from the APS Observation Alcohol Use profile without introducing any additional constraints or changes. It serves as a prepared extension point so that future adaptations can be made independently if required. |
 | [AT PreNUDGE Observation Blood Glucose (only in mg/dL)](StructureDefinition-at-prenudge-bloodglucose-observation.md) | This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allowes values inbetween 12 and 1200 mg/dL. |
-| [AT PreNUDGE Observation Step Count](StructureDefinition-at-prenudge-stepcount-observation.md) | This FHIR profile is defining the Step Count Observation, similar to the Observation Social History - Alcohol Use from the IPS. The step count option only allowes values inbetween 0 and 300 000. |
+| [AT PreNUDGE Observation Step Count](StructureDefinition-at-prenudge-stepcount-observation.md) | This FHIR profile is defining the Step Count Observation. The step count only allows values inbetween 0 and 150,000 steps per 24 hours. |
 | [AT PreNUDGE Questionnaire](StructureDefinition-at-prenudge-questionnaire.md) | This FHIR profile is defining the overall Questionnaire for PreNUDGE. Every top level item requires one comment subitem, with the linkId ending or equal 'comment'. |
 | [AT PreNUDGE Questionnaire Response](StructureDefinition-at-prenudge-questionnaireresponse.md) | This FHIR profile is defining the overall Questionnaire Response for PreNUDGE. |
 
@@ -35,10 +36,11 @@ These define constraints on FHIR resources for systems conforming to this implem
 
 These define sets of codes used by systems conforming to this implementation guide.
 
-| |
-| :--- |
-| [AtPrenudgeValueSetMethodManualAutomated](ValueSet-at-prenudge-observation-valueset-method-manual-automated.md) |
-| [SNOMED CT AlcoholUse-Frequency](ValueSet-at-prenudge-alcoholuse-valueset-frequency.md) |
+| | |
+| :--- | :--- |
+| [SNOMED CT AlcoholUse-Frequency](ValueSet-prenudge-alcoholuse-frequency.md) | ValueSet containing SNOMED CT codes for differentiating frequencies used in the PreNUDGE alcoholuse questionnaire. |
+| [WHOQOL-BREF Score Type ValueSet](ValueSet-prenudge-observation-method.md) | ValueSet containing SNOMED CT codes for differentiating methods used in the PreNUDGE observation. |
+| [WHOQOL-BREF Score Type ValueSet](ValueSet-prenudge-whoqol-bref-score-type.md) | ValueSet containing SNOMED CT codes for differentiating WHOQOL-BREF overall and domain scores. |
 
 ### Terminology: Code Systems 
 
@@ -46,7 +48,7 @@ These define new code systems used by systems conforming to this implementation 
 
 | | |
 | :--- | :--- |
-| [RAND SF-36 answer options in german](CodeSystem-rand-sf36-answers.md) | Answer options for den RAND SF-36 Health Survey, translated to german |
+| [WHOQOL-BREF Answer Scales](CodeSystem-whoqol-bref-scale.md) | Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire. |
 
 ### Example: Example Instances 
 
@@ -56,9 +58,15 @@ These are example instances that show what data produced and consumed by systems
 | :--- | :--- |
 | [AlcoholResponseDaily](QuestionnaireResponse-AlcoholResponseDaily.md) |  |
 | [AlcoholResponseNever](QuestionnaireResponse-AlcoholResponseNever.md) |  |
-| [BloodGlucoseQuestionnaireResponse1](QuestionnaireResponse-BloodGlucoseQuestionnaireResponse1.md) |  |
-| [BloodGlucoseQuestionnaireResponse2](QuestionnaireResponse-BloodGlucoseQuestionnaireResponse2.md) |  |
+| [Blood Glucose - Elevated Example](Observation-bloodglucose-elevated-example.md) | Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL), hinweisend auf Diabetes mellitus. |
+| [Blood Glucose - Normal Example](Observation-bloodglucose-normal-example.md) | Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL). |
+| [Blood Glucose QuestionnaireResponse - Elevated Example](QuestionnaireResponse-bloodglucose-response-elevated-example.md) | Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL) als QuestionnaireResponse. |
+| [Blood Glucose QuestionnaireResponse - Normal Example](QuestionnaireResponse-bloodglucose-response-normal-example.md) | Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL) als QuestionnaireResponse. |
 | [PatientExample](Patient-example.md) | An example of a patient with a license to krill. |
-| [StepCountResponseActive](QuestionnaireResponse-StepCountResponseActive.md) |  |
-| [StepCountResponseExtreme](QuestionnaireResponse-StepCountResponseExtreme.md) |  |
+| [Step Count - Low Example](Observation-stepcount-low-example.md) | Beispiel einer niedrigen Schrittzahl (2,150 Schritte pro Tag), hinweisend auf Bewegungsmangel. |
+| [Step Count - Normal Example](Observation-stepcount-normal-example.md) | Beispiel einer normalen Schrittzahl (8,432 Schritte pro Tag). |
+| [Step Count QuestionnaireResponse - Low Example](QuestionnaireResponse-stepcount-response-low-example.md) | Beispiel einer niedrigen Schrittzahl (2,150 Schritte) als QuestionnaireResponse. |
+| [Step Count QuestionnaireResponse - Normal Example](QuestionnaireResponse-stepcount-response-normal-example.md) | Beispiel einer normalen Schrittzahl (8,432 Schritte) als QuestionnaireResponse. |
+| [WHOQOL-BREF QuestionnaireResponse - Example](QuestionnaireResponse-whoqol-bref-response-example.md) | Example of a completed WHOQOL-BREF QuestionnaireResponse including all 26 items and calculated scores. |
+| [WHOQOL-BREF Score - Example](Observation-whoqol-bref-score-example.md) | Example of a WHOQOL-BREF score observation with a general score and all four domain scores. |
 

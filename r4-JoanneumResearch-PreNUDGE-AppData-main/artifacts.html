@@ -188,25 +188,25 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="Questionnaire/BloodGlucoseQuestionnaire">Blutzucker</a>
             </td>
             <td>
-<p>A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allowes values inbetween 12 and 1200.</p>
+<p>A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allows values inbetween 12 and 1200 mg/dL.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
                <a href="Questionnaire-QolQuestionnaire.html"
-                  title="Questionnaire/QolQuestionnaire">Quality of life by RAND 36-Item Health Survey 1.0 (SF-36)</a>
+                  title="Questionnaire/QolQuestionnaire">Quality of life Fragebogen WHOQOL-BREF - World Health Organization Quality of Life Kurzversion</a>
             </td>
             <td>
-
+<p>The WHOQOL-BREF is a 26-item instrument for assessing subjective quality of life in four domains: physical, psychological, social relationships, and environment. Developed by the WHO.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
                <a href="Questionnaire-StepCountQuestionnaire.html"
-                  title="Questionnaire/StepCountQuestionnaire">Schrittanzahl (täglich)</a>
+                  title="Questionnaire/StepCountQuestionnaire">Schrittzahl</a>
             </td>
             <td>
-<p>A simple questionnaire for asking how many steps have been done today. The step count option only allowes values inbetween 0 and 300 000.</p>
+<p>A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000.</p>
 </td>
          </tr>
       </tbody>
@@ -217,6 +217,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <table class="grid">
       <col style="width:20%"/>
       <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-at-prenudge-whoqol-bref-score-observation.html"
+                  title="StructureDefinition/at-prenudge-whoqol-bref-score-observation"> AT PreNUDGE Observation WHOQOL-BREF Score</a>
+            </td>
+            <td>
+<p>Observation profile for recording WHOQOL-BREF domain scores. The overall score is represented in Observation.value, individual domain scores are recorded as components.</p>
+</td>
+         </tr>
          <tr>
             <td style="column-width:30%">
                <a href="StructureDefinition-at-prenudge-observation.html"
@@ -250,7 +259,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="StructureDefinition/at-prenudge-stepcount-observation">AT PreNUDGE Observation Step Count</a>
             </td>
             <td>
-<p>This FHIR profile is defining the Step Count Observation, similar to the Observation Social History - Alcohol Use from the IPS. The step count option only allowes values inbetween 0 and 300 000.</p>
+<p>This FHIR profile is defining the Step Count Observation. The step count only allows values inbetween 0 and 150,000 steps per 24 hours.</p>
 </td>
          </tr>
          <tr>
@@ -281,15 +290,30 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <tbody>
          <tr>
             <td style="column-width:30%">
-               <a href="ValueSet-at-prenudge-observation-valueset-method-manual-automated.html"
-                  title="ValueSet/at-prenudge-observation-valueset-method-manual-automated">AtPrenudgeValueSetMethodManualAutomated</a>
+               <a href="ValueSet-prenudge-alcoholuse-frequency.html"
+                  title="ValueSet/prenudge-alcoholuse-frequency">SNOMED CT AlcoholUse-Frequency</a>
             </td>
+            <td>
+<p>ValueSet containing SNOMED CT codes for differentiating frequencies used in the PreNUDGE alcoholuse questionnaire.</p>
+</td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ValueSet-at-prenudge-alcoholuse-valueset-frequency.html"
-                  title="ValueSet/at-prenudge-alcoholuse-valueset-frequency">SNOMED CT AlcoholUse-Frequency</a>
+               <a href="ValueSet-prenudge-observation-method.html"
+                  title="ValueSet/prenudge-observation-method">WHOQOL-BREF Score Type ValueSet</a>
             </td>
+            <td>
+<p>ValueSet containing SNOMED CT codes for differentiating methods used in the PreNUDGE observation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-prenudge-whoqol-bref-score-type.html"
+                  title="ValueSet/prenudge-whoqol-bref-score-type">WHOQOL-BREF Score Type ValueSet</a>
+            </td>
+            <td>
+<p>ValueSet containing SNOMED CT codes for differentiating WHOQOL-BREF overall and domain scores.</p>
+</td>
          </tr>
       </tbody>
    </table>
@@ -301,11 +325,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <tbody>
          <tr>
             <td style="column-width:30%">
-               <a href="CodeSystem-rand-sf36-answers.html"
-                  title="CodeSystem/rand-sf36-answers">RAND SF-36 answer options in german</a>
+               <a href="CodeSystem-whoqol-bref-scale.html"
+                  title="CodeSystem/whoqol-bref-scale">WHOQOL-BREF Answer Scales</a>
             </td>
             <td>
-<p>Answer options for den RAND SF-36 Health Survey, translated to german</p>
+<p>Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire.</p>
 </td>
          </tr>
       </tbody>
@@ -336,20 +360,38 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="QuestionnaireResponse-BloodGlucoseQuestionnaireResponse1.html"
-                  title="QuestionnaireResponse/BloodGlucoseQuestionnaireResponse1">BloodGlucoseQuestionnaireResponse1</a>
+               <a href="Observation-bloodglucose-elevated-example.html"
+                  title="Observation/bloodglucose-elevated-example">Blood Glucose - Elevated Example</a>
             </td>
             <td>
-
+<p>Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL), hinweisend auf Diabetes mellitus.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="QuestionnaireResponse-BloodGlucoseQuestionnaireResponse2.html"
-                  title="QuestionnaireResponse/BloodGlucoseQuestionnaireResponse2">BloodGlucoseQuestionnaireResponse2</a>
+               <a href="Observation-bloodglucose-normal-example.html"
+                  title="Observation/bloodglucose-normal-example">Blood Glucose - Normal Example</a>
             </td>
             <td>
-
+<p>Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="QuestionnaireResponse-bloodglucose-response-elevated-example.html"
+                  title="QuestionnaireResponse/bloodglucose-response-elevated-example">Blood Glucose QuestionnaireResponse - Elevated Example</a>
+            </td>
+            <td>
+<p>Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL) als QuestionnaireResponse.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="QuestionnaireResponse-bloodglucose-response-normal-example.html"
+                  title="QuestionnaireResponse/bloodglucose-response-normal-example">Blood Glucose QuestionnaireResponse - Normal Example</a>
+            </td>
+            <td>
+<p>Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL) als QuestionnaireResponse.</p>
 </td>
          </tr>
          <tr>
@@ -362,20 +404,56 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="QuestionnaireResponse-StepCountResponseActive.html"
-                  title="QuestionnaireResponse/StepCountResponseActive">StepCountResponseActive</a>
+               <a href="Observation-stepcount-low-example.html"
+                  title="Observation/stepcount-low-example">Step Count - Low Example</a>
             </td>
             <td>
-
+<p>Beispiel einer niedrigen Schrittzahl (2,150 Schritte pro Tag), hinweisend auf Bewegungsmangel.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="QuestionnaireResponse-StepCountResponseExtreme.html"
-                  title="QuestionnaireResponse/StepCountResponseExtreme">StepCountResponseExtreme</a>
+               <a href="Observation-stepcount-normal-example.html"
+                  title="Observation/stepcount-normal-example">Step Count - Normal Example</a>
             </td>
             <td>
-
+<p>Beispiel einer normalen Schrittzahl (8,432 Schritte pro Tag).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="QuestionnaireResponse-stepcount-response-low-example.html"
+                  title="QuestionnaireResponse/stepcount-response-low-example">Step Count QuestionnaireResponse - Low Example</a>
+            </td>
+            <td>
+<p>Beispiel einer niedrigen Schrittzahl (2,150 Schritte) als QuestionnaireResponse.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="QuestionnaireResponse-stepcount-response-normal-example.html"
+                  title="QuestionnaireResponse/stepcount-response-normal-example">Step Count QuestionnaireResponse - Normal Example</a>
+            </td>
+            <td>
+<p>Beispiel einer normalen Schrittzahl (8,432 Schritte) als QuestionnaireResponse.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="QuestionnaireResponse-whoqol-bref-response-example.html"
+                  title="QuestionnaireResponse/whoqol-bref-response-example">WHOQOL-BREF QuestionnaireResponse - Example</a>
+            </td>
+            <td>
+<p>Example of a completed WHOQOL-BREF QuestionnaireResponse including all 26 items and calculated scores.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-whoqol-bref-score-example.html"
+                  title="Observation/whoqol-bref-score-example">WHOQOL-BREF Score - Example</a>
+            </td>
+            <td>
+<p>Example of a WHOQOL-BREF score observation with a general score and all four domain scores.</p>
 </td>
          </tr>
       </tbody>
@@ -398,7 +476,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Feb 26, 2026 10:01+0000">2026-02-26</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Sat, Feb 28, 2026 09:14+0000">2026-02-28</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -9,14 +9,14 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation | *Version*:0.1.0 | |
-| Draft as of 2026-02-26 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationBloodGlucose |
+| Draft as of 2026-02-28 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationBloodGlucose |
 
  
 This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allowes values inbetween 12 and 1200 mg/dL. 
 
 **Usages:**
 
-* This Profile is not used by any profiles in this Implementation Guide
+* Examples for this Profile: [Observation/bloodglucose-elevated-example](Observation-bloodglucose-elevated-example.md) and [Observation/bloodglucose-normal-example](Observation-bloodglucose-normal-example.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.prenudge.appdata.r4|current/StructureDefinition/at-prenudge-bloodglucose-observation)
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-bloodglu
   "name" : "AtPrenudgeObservationBloodGlucose",
   "title" : "AT PreNUDGE Observation Blood Glucose (only in mg/dL)",
   "status" : "draft",
-  "date" : "2026-02-26T10:01:13+00:00",
+  "date" : "2026-02-28T09:14:32+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -103,7 +103,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-bloodglu
         "key" : "bloodglucose-range",
         "severity" : "error",
         "human" : "Blood glucose must be inbetween 12 and 1200 mg/dL.",
-        "expression" : "valueInteger >= 12 and valueInteger <= 1200",
+        "expression" : "value.ofType(Quantity).value >= 12 and value.ofType(Quantity).value <= 1200",
         "source" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation"
       }]
     },
@@ -121,25 +121,32 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-bloodglu
     {
       "id" : "Observation.value[x]",
       "path" : "Observation.value[x]",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "type",
-          "path" : "$this"
-        }],
-        "ordered" : false,
-        "rules" : "open"
-      },
-      "min" : 1
+      "min" : 1,
+      "type" : [{
+        "code" : "Quantity"
+      }],
+      "mustSupport" : true
     },
     {
-      "id" : "Observation.value[x]:valueInteger",
-      "path" : "Observation.value[x]",
-      "sliceName" : "valueInteger",
+      "id" : "Observation.value[x].value",
+      "path" : "Observation.value[x].value",
       "min" : 1,
-      "max" : "1",
-      "type" : [{
-        "code" : "integer"
-      }]
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.value[x].unit",
+      "path" : "Observation.value[x].unit",
+      "patternString" : "mg/dL"
+    },
+    {
+      "id" : "Observation.value[x].system",
+      "path" : "Observation.value[x].system",
+      "patternUri" : "http://unitsofmeasure.org"
+    },
+    {
+      "id" : "Observation.value[x].code",
+      "path" : "Observation.value[x].code",
+      "patternCode" : "mg/dL"
     }]
   }
 }

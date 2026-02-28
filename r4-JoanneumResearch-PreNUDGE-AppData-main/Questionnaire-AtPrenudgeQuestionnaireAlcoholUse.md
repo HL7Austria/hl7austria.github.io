@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/AtPrenudgeQuestionnaireAlcoholUse | *Version*:0.1.0 | |
-| Active as of 2026-02-26 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeQuestionnaireAlcoholUse |
+| Active as of 2026-02-28 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeQuestionnaireAlcoholUse |
 
  
 Categorical variable for the frequency of alcohol consumption in the last year (IPS compatible). 
@@ -31,7 +31,7 @@ Categorical variable for the frequency of alcohol consumption in the last year (
   "title" : "Alkoholkonsum-Frequenz (letztes Jahr)",
   "status" : "active",
   "subjectType" : ["Patient"],
-  "date" : "2026-02-26T10:01:13+00:00",
+  "date" : "2026-02-28T09:14:32+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -54,7 +54,7 @@ Categorical variable for the frequency of alcohol consumption in the last year (
     "text" : "Wie oft haben Sie in den letzten 12 Monaten Alkohol getrunken?",
     "type" : "choice",
     "required" : true,
-    "answerValueSet" : "https://termgit.elga.gv.at/ValueSet/prenudge-alcoholuse-frequency",
+    "answerValueSet" : "https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-alcoholuse-frequency",
     "item" : [{
       "linkId" : "comment",
       "text" : "Haben Sie zu Ihrer Antwort noch einen Kommentar oder etwas hinzuzufügen?",

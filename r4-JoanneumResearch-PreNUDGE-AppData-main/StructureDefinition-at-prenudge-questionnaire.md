@@ -9,14 +9,14 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaire | *Version*:0.1.0 | |
-| Draft as of 2026-02-26 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeQuestionnaire |
+| Draft as of 2026-02-28 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeQuestionnaire |
 
  
 This FHIR profile is defining the overall Questionnaire for PreNUDGE. Every top level item requires one comment subitem, with the linkId ending or equal 'comment'. 
 
 **Usages:**
 
-* Examples for this Profile: [AtPrenudgeQuestionnaireAlcoholUse](Questionnaire-AtPrenudgeQuestionnaireAlcoholUse.md), [BloodGlucoseQuestionnaire](Questionnaire-BloodGlucoseQuestionnaire.md), [QoLByRandSF36v1](Questionnaire-QolQuestionnaire.md) and [StepCountQuestionnaire](Questionnaire-StepCountQuestionnaire.md)
+* Examples for this Profile: [AtPrenudgeQuestionnaireAlcoholUse](Questionnaire-AtPrenudgeQuestionnaireAlcoholUse.md), [BloodGlucoseQuestionnaire](Questionnaire-BloodGlucoseQuestionnaire.md), [QoLByWHOQOLBREF](Questionnaire-QolQuestionnaire.md) and [StepCountQuestionnaire](Questionnaire-StepCountQuestionnaire.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.prenudge.appdata.r4|current/StructureDefinition/at-prenudge-questionnaire)
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-question
   "name" : "AtPrenudgeQuestionnaire",
   "title" : "AT PreNUDGE Questionnaire",
   "status" : "draft",
-  "date" : "2026-02-26T10:01:13+00:00",
+  "date" : "2026-02-28T09:14:32+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -102,7 +102,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-question
         "key" : "at-prenudge-every-item-has-comment",
         "severity" : "error",
         "human" : "Jedes top-level Item muss genau ein Unter-Item enthalten, dessen linkId auf 'comment' endet",
-        "expression" : "item.where(linkId.endsWith('comment') and type = 'string').count() = 1",
+        "expression" : "type = 'display' or item.where(linkId.endsWith('comment') and type = 'string').count() = 1",
         "source" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaire"
       }]
     }]

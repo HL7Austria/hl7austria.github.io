@@ -11,7 +11,7 @@
   <name value="PreNUDGEAppdataR4"/>
   <title value="PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)"/>
   <status value="draft"/>
-  <date value="2026-02-26T10:01:13+00:00"/>
+  <date value="2026-02-28T09:14:32+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -52,6 +52,11 @@
     <uri value="https://fhir.hl7.at/elga/aps/r4/ImplementationGuide/hl7.at.fhir.elga.aps.r4"/>
     <packageId value="hl7.at.fhir.elga.aps.r4"/>
     <version value="current"/>
+  </dependsOn>
+  <dependsOn id="hl7_fhir_uv_sdc">
+    <uri value="http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc"/>
+    <packageId value="hl7.fhir.uv.sdc"/>
+    <version value="3.0.0"/>
   </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -459,6 +464,17 @@
     </extension>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-prenudge-whoqol-bref-score-observation"/>
+      </reference>
+      <name value=" AT PreNUDGE Observation WHOQOL-BREF Score"/>
+      <description value="Observation profile for recording WHOQOL-BREF domain scores. The overall score is represented in Observation.value, individual domain scores are recorded as components."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="QuestionnaireResponse"/>
       </extension>
       <reference>
@@ -529,7 +545,7 @@
         <reference value="StructureDefinition/at-prenudge-stepcount-observation"/>
       </reference>
       <name value="AT PreNUDGE Observation Step Count"/>
-      <description value="This FHIR profile is defining the Step Count Observation, similar to the Observation Social History - Alcohol Use from the IPS. The step count option only allowes values inbetween 0 and 300 000."/>
+      <description value="This FHIR profile is defining the Step Count Observation. The step count only allows values inbetween 0 and 150,000 steps per 24 hours."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -556,33 +572,47 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
+        <valueString value="Observation"/>
       </extension>
       <reference>
-        <reference value="ValueSet/at-prenudge-observation-valueset-method-manual-automated"/>
+        <reference value="Observation/bloodglucose-elevated-example"/>
       </reference>
-      <name value="AtPrenudgeValueSetMethodManualAutomated"/>
-      <exampleBoolean value="false"/>
+      <name value="Blood Glucose - Elevated Example"/>
+      <description value="Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL), hinweisend auf Diabetes mellitus."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/bloodglucose-normal-example"/>
+      </reference>
+      <name value="Blood Glucose - Normal Example"/>
+      <description value="Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL)."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="QuestionnaireResponse"/>
       </extension>
       <reference>
-        <reference value="QuestionnaireResponse/BloodGlucoseQuestionnaireResponse1"/>
+        <reference value="QuestionnaireResponse/bloodglucose-response-elevated-example"/>
       </reference>
-      <name value="BloodGlucoseQuestionnaireResponse1"/>
-      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
+      <name value="Blood Glucose QuestionnaireResponse - Elevated Example"/>
+      <description value="Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL) als QuestionnaireResponse."/>
+      <exampleBoolean value="true"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="QuestionnaireResponse"/>
       </extension>
       <reference>
-        <reference value="QuestionnaireResponse/BloodGlucoseQuestionnaireResponse2"/>
+        <reference value="QuestionnaireResponse/bloodglucose-response-normal-example"/>
       </reference>
-      <name value="BloodGlucoseQuestionnaireResponse2"/>
-      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
+      <name value="Blood Glucose QuestionnaireResponse - Normal Example"/>
+      <description value="Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL) als QuestionnaireResponse."/>
+      <exampleBoolean value="true"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -592,7 +622,7 @@
         <reference value="Questionnaire/BloodGlucoseQuestionnaire"/>
       </reference>
       <name value="Blutzucker"/>
-      <description value="A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allowes values inbetween 12 and 1200."/>
+      <description value="A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allows values inbetween 12 and 1200 mg/dL."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -613,18 +643,8 @@
       <reference>
         <reference value="Questionnaire/QolQuestionnaire"/>
       </reference>
-      <name value="Quality of life by RAND 36-Item Health Survey 1.0 (SF-36)"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
-      </extension>
-      <reference>
-        <reference value="CodeSystem/rand-sf36-answers"/>
-      </reference>
-      <name value="RAND SF-36 answer options in german"/>
-      <description value="Answer options for den RAND SF-36 Health Survey, translated to german"/>
+      <name value="Quality of life Fragebogen WHOQOL-BREF - World Health Organization Quality of Life Kurzversion"/>
+      <description value="The WHOQOL-BREF is a 26-item instrument for assessing subjective quality of life in four domains: physical, psychological, social relationships, and environment. Developed by the WHO."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -634,8 +654,8 @@
       <reference>
         <reference value="Questionnaire/StepCountQuestionnaire"/>
       </reference>
-      <name value="Schrittanzahl (täglich)"/>
-      <description value="A simple questionnaire for asking how many steps have been done today. The step count option only allowes values inbetween 0 and 300 000."/>
+      <name value="Schrittzahl"/>
+      <description value="A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -643,9 +663,65 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/at-prenudge-alcoholuse-valueset-frequency"/>
+        <reference value="ValueSet/prenudge-alcoholuse-frequency"/>
       </reference>
       <name value="SNOMED CT AlcoholUse-Frequency"/>
+      <description value="ValueSet containing SNOMED CT codes for differentiating frequencies used in the PreNUDGE alcoholuse questionnaire."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/stepcount-low-example"/>
+      </reference>
+      <name value="Step Count - Low Example"/>
+      <description value="Beispiel einer niedrigen Schrittzahl (2,150 Schritte pro Tag), hinweisend auf Bewegungsmangel."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/stepcount-normal-example"/>
+      </reference>
+      <name value="Step Count - Normal Example"/>
+      <description value="Beispiel einer normalen Schrittzahl (8,432 Schritte pro Tag)."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/stepcount-response-low-example"/>
+      </reference>
+      <name value="Step Count QuestionnaireResponse - Low Example"/>
+      <description value="Beispiel einer niedrigen Schrittzahl (2,150 Schritte) als QuestionnaireResponse."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/stepcount-response-normal-example"/>
+      </reference>
+      <name value="Step Count QuestionnaireResponse - Normal Example"/>
+      <description value="Beispiel einer normalen Schrittzahl (8,432 Schritte) als QuestionnaireResponse."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/whoqol-bref-scale"/>
+      </reference>
+      <name value="WHOQOL-BREF Answer Scales"/>
+      <description value="Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -653,20 +729,44 @@
         <valueString value="QuestionnaireResponse"/>
       </extension>
       <reference>
-        <reference value="QuestionnaireResponse/StepCountResponseActive"/>
+        <reference value="QuestionnaireResponse/whoqol-bref-response-example"/>
       </reference>
-      <name value="StepCountResponseActive"/>
-      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
+      <name value="WHOQOL-BREF QuestionnaireResponse - Example"/>
+      <description value="Example of a completed WHOQOL-BREF QuestionnaireResponse including all 26 items and calculated scores."/>
+      <exampleBoolean value="true"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="QuestionnaireResponse"/>
+        <valueString value="Observation"/>
       </extension>
       <reference>
-        <reference value="QuestionnaireResponse/StepCountResponseExtreme"/>
+        <reference value="Observation/whoqol-bref-score-example"/>
       </reference>
-      <name value="StepCountResponseExtreme"/>
-      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
+      <name value="WHOQOL-BREF Score - Example"/>
+      <description value="Example of a WHOQOL-BREF score observation with a general score and all four domain scores."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-whoqol-bref-score-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/prenudge-observation-method"/>
+      </reference>
+      <name value="WHOQOL-BREF Score Type ValueSet"/>
+      <description value="ValueSet containing SNOMED CT codes for differentiating methods used in the PreNUDGE observation."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/prenudge-whoqol-bref-score-type"/>
+      </reference>
+      <name value="WHOQOL-BREF Score Type ValueSet"/>
+      <description value="ValueSet containing SNOMED CT codes for differentiating WHOQOL-BREF overall and domain scores."/>
+      <exampleBoolean value="false"/>
     </resource>
     <page>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">

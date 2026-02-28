@@ -9,14 +9,14 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation | *Version*:0.1.0 | |
-| Draft as of 2026-02-26 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationStepCount |
+| Draft as of 2026-02-28 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationStepCount |
 
  
-This FHIR profile is defining the Step Count Observation, similar to the Observation Social History - Alcohol Use from the IPS. The step count option only allowes values inbetween 0 and 300 000. 
+This FHIR profile is defining the Step Count Observation. The step count only allows values inbetween 0 and 150,000 steps per 24 hours. 
 
 **Usages:**
 
-* This Profile is not used by any profiles in this Implementation Guide
+* Examples for this Profile: [Observation/stepcount-low-example](Observation-stepcount-low-example.md) and [Observation/stepcount-normal-example](Observation-stepcount-normal-example.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.prenudge.appdata.r4|current/StructureDefinition/at-prenudge-stepcount-observation)
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-stepcoun
   "name" : "AtPrenudgeObservationStepCount",
   "title" : "AT PreNUDGE Observation Step Count",
   "status" : "draft",
-  "date" : "2026-02-26T10:01:13+00:00",
+  "date" : "2026-02-28T09:14:32+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -58,7 +58,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-stepcoun
       "use" : "work"
     }]
   }],
-  "description" : "This FHIR profile is defining the Step Count Observation, similar to the Observation Social History - Alcohol Use from the IPS. The step count option only allowes values inbetween 0 and 300 000.",
+  "description" : "This FHIR profile is defining the Step Count Observation. The step count only allows values inbetween 0 and 150,000 steps per 24 hours.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "workflow",
@@ -102,8 +102,8 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-stepcoun
       "constraint" : [{
         "key" : "stepcount-range",
         "severity" : "error",
-        "human" : "Step count must be inbetween 0 and 150 000.",
-        "expression" : "valueInteger >= 0 and valueInteger <= 150000",
+        "human" : "Step count must be inbetween 0 and 150,000.",
+        "expression" : "value.ofType(Quantity).value >= 0 and value.ofType(Quantity).value <= 150000",
         "source" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation"
       }]
     },
@@ -121,25 +121,32 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-stepcoun
     {
       "id" : "Observation.value[x]",
       "path" : "Observation.value[x]",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "type",
-          "path" : "$this"
-        }],
-        "ordered" : false,
-        "rules" : "open"
-      },
-      "min" : 1
+      "min" : 1,
+      "type" : [{
+        "code" : "Quantity"
+      }],
+      "mustSupport" : true
     },
     {
-      "id" : "Observation.value[x]:valueInteger",
-      "path" : "Observation.value[x]",
-      "sliceName" : "valueInteger",
+      "id" : "Observation.value[x].value",
+      "path" : "Observation.value[x].value",
       "min" : 1,
-      "max" : "1",
-      "type" : [{
-        "code" : "integer"
-      }]
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.value[x].unit",
+      "path" : "Observation.value[x].unit",
+      "patternString" : "{steps}/d"
+    },
+    {
+      "id" : "Observation.value[x].system",
+      "path" : "Observation.value[x].system",
+      "patternUri" : "http://unitsofmeasure.org"
+    },
+    {
+      "id" : "Observation.value[x].code",
+      "path" : "Observation.value[x].code",
+      "patternCode" : "{steps}/d"
     }]
   }
 }
