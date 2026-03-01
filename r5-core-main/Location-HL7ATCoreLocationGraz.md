@@ -32,19 +32,15 @@ Profile: [HL7® AT Core Location Profile](StructureDefinition-at-core-location.m
   "resourceType" : "Location",
   "id" : "HL7ATCoreLocationGraz",
   "meta" : {
-    "profile" : [
-      "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-location"
-    ]
+    "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-location"]
   },
-  "identifier" : [
-    {
-      "system" : "urn:oid:1.2.40.0.34.4.10",
-      "value" : "K101.1",
-      "assigner" : {
-        "display" : "Österreichisches Bundesministerium für Gesundheit"
-      }
+  "identifier" : [{
+    "system" : "urn:oid:1.2.40.0.34.4.10",
+    "value" : "K101.1",
+    "assigner" : {
+      "display" : "Österreichisches Bundesministerium für Gesundheit"
     }
-  ],
+  }],
   "name" : "Campus Graz",
   "address" : {
     "city" : "Graz",

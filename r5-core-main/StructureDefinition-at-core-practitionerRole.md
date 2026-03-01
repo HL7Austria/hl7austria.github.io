@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-practitionerRole | *Version*:2.1.0 | |
-| Active as of 2025-11-27 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:HL7ATCorePractitionerRole |
+| Active as of 2026-03-01 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:HL7ATCorePractitionerRole |
 
  
 HL7® Austria FHIR® Core Profile for practitioner role data in Austria. 
@@ -41,113 +41,91 @@ Other representations of profile: [CSV](StructureDefinition-at-core-practitioner
   "name" : "HL7ATCorePractitionerRole",
   "title" : "HL7® AT Core PractitionerRole Profile",
   "status" : "active",
-  "date" : "2025-11-27T09:10:20+00:00",
+  "date" : "2026-03-01T19:31:53+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
-  "contact" : [
-    {
-      "name" : "HL7® Austria, TC FHIR®",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://hl7.at/technische-komitees/tc-fhir/"
-        }
-      ]
-    },
-    {
-      "name" : "Technical Committee for FHIR® at HL7® Austria",
-      "telecom" : [
-        {
-          "system" : "email",
-          "value" : "mailto:tc-fhir@hl7.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "HL7® Austria, TC FHIR®",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://hl7.at/technische-komitees/tc-fhir/"
+    }]
+  },
+  {
+    "name" : "Technical Committee for FHIR® at HL7® Austria",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "mailto:tc-fhir@hl7.at"
+    }]
+  }],
   "description" : "HL7® Austria FHIR® Core Profile for practitioner role data in Austria.",
   "fhirVersion" : "5.0.0",
-  "mapping" : [
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    },
-    {
-      "identity" : "v2",
-      "uri" : "http://hl7.org/v2",
-      "name" : "HL7 V2 Mapping"
-    },
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    },
-    {
-      "identity" : "interface",
-      "uri" : "http://hl7.org/fhir/interface",
-      "name" : "Interface Pattern"
-    },
-    {
-      "identity" : "servd",
-      "uri" : "http://www.omg.org/spec/ServD/1.0/",
-      "name" : "ServD"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 V2 Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "interface",
+    "uri" : "http://hl7.org/fhir/interface",
+    "name" : "Interface Pattern"
+  },
+  {
+    "identity" : "servd",
+    "uri" : "http://www.omg.org/spec/ServD/1.0/",
+    "name" : "ServD"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "PractitionerRole",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "PractitionerRole",
-        "path" : "PractitionerRole"
-      },
-      {
-        "id" : "PractitionerRole.practitioner",
-        "path" : "PractitionerRole.practitioner",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-practitioner"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "PractitionerRole.organization",
-        "path" : "PractitionerRole.organization",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-organization"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "PractitionerRole.code",
-        "path" : "PractitionerRole.code",
-        "binding" : {
-          "strength" : "extensible",
-          "valueSet" : "https://termgit.elga.gv.at/ValueSet/hl7-at-practitionerrole"
-        }
-      },
-      {
-        "id" : "PractitionerRole.contact",
-        "path" : "PractitionerRole.contact",
-        "type" : [
-          {
-            "code" : "ExtendedContactDetail",
-            "profile" : [
-              "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-extendedContactDetail"
-            ]
-          }
-        ]
+    "element" : [{
+      "id" : "PractitionerRole",
+      "path" : "PractitionerRole"
+    },
+    {
+      "id" : "PractitionerRole.practitioner",
+      "path" : "PractitionerRole.practitioner",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-practitioner"]
+      }]
+    },
+    {
+      "id" : "PractitionerRole.organization",
+      "path" : "PractitionerRole.organization",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-organization"]
+      }]
+    },
+    {
+      "id" : "PractitionerRole.code",
+      "path" : "PractitionerRole.code",
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "https://termgit.elga.gv.at/ValueSet/hl7-at-practitionerrole"
       }
-    ]
+    },
+    {
+      "id" : "PractitionerRole.contact",
+      "path" : "PractitionerRole.contact",
+      "type" : [{
+        "code" : "ExtendedContactDetail",
+        "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-extendedContactDetail"]
+      }]
+    }]
   }
 }
 

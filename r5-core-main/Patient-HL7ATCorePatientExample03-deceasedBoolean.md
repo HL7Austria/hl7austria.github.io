@@ -29,78 +29,60 @@ Muster Andreas Bucher Male, DoB: 1990-12-24 ( Social Security number: 1111241261
   "resourceType" : "Patient",
   "id" : "HL7ATCorePatientExample03-deceasedBoolean",
   "meta" : {
-    "profile" : [
-      "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-patient"
-    ]
+    "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-patient"]
   },
-  "identifier" : [
-    {
-      "use" : "usual",
-      "type" : {
-        "coding" : [
-          {
-            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
-            "code" : "SS",
-            "display" : "Social Security number"
-          }
-        ]
-      },
-      "system" : "urn:oid:1.2.40.0.10.1.4.3.1",
-      "value" : "1111241261",
-      "assigner" : {
-        "display" : "Dachverband der österreichischen Sozialversicherungsträger"
-      }
+  "identifier" : [{
+    "use" : "usual",
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "SS",
+        "display" : "Social Security number"
+      }]
+    },
+    "system" : "urn:oid:1.2.40.0.10.1.4.3.1",
+    "value" : "1111241261",
+    "assigner" : {
+      "display" : "Dachverband der österreichischen Sozialversicherungsträger"
     }
-  ],
-  "name" : [
-    {
-      "family" : "Bucher",
-      "given" : ["Muster", "Andreas"],
-      "prefix" : ["Dipl.Ing.", "Dr."]
-    }
-  ],
-  "telecom" : [
-    {
-      "system" : "phone",
-      "value" : "+43.2682.40400",
-      "use" : "home"
-    }
-  ],
+  }],
+  "name" : [{
+    "family" : "Bucher",
+    "given" : ["Muster", "Andreas"],
+    "prefix" : ["Dipl.Ing.", "Dr."]
+  }],
+  "telecom" : [{
+    "system" : "phone",
+    "value" : "+43.2682.40400",
+    "use" : "home"
+  }],
   "gender" : "male",
   "birthDate" : "1990-12-24",
   "deceasedBoolean" : true,
-  "address" : [
-    {
-      "use" : "home",
-      "line" : ["Berggasse 13a"],
-      "city" : "Eisenstadt",
-      "state" : "Burgenland",
-      "postalCode" : "7000",
-      "country" : "AUT"
-    }
-  ],
+  "address" : [{
+    "use" : "home",
+    "line" : ["Berggasse 13a"],
+    "city" : "Eisenstadt",
+    "state" : "Burgenland",
+    "postalCode" : "7000",
+    "country" : "AUT"
+  }],
   "maritalStatus" : {
-    "coding" : [
-      {
-        "system" : "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
-        "code" : "M",
-        "display" : "Married"
-      }
-    ]
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
+      "code" : "M",
+      "display" : "Married"
+    }]
   },
-  "communication" : [
-    {
-      "language" : {
-        "coding" : [
-          {
-            "system" : "urn:ietf:bcp:47",
-            "code" : "de"
-          }
-        ]
-      },
-      "preferred" : true
-    }
-  ]
+  "communication" : [{
+    "language" : {
+      "coding" : [{
+        "system" : "urn:ietf:bcp:47",
+        "code" : "de"
+      }]
+    },
+    "preferred" : true
+  }]
 }
 
 ```
