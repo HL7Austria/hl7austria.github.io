@@ -4,12 +4,12 @@
 * [**Artifacts Summary**](artifacts.md)
 * **AT PreNUDGE Questionnaire**
 
-## Resource Profile: AT PreNUDGE Questionnaire 
+## Resource Profile: AT PreNUDGE Questionnaire ( Abstract ) 
 
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaire | *Version*:0.1.0 | |
-| Draft as of 2026-02-28 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeQuestionnaire |
+| Draft as of 2026-03-01 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeQuestionnaire |
 
  
 This FHIR profile is defining the overall Questionnaire for PreNUDGE. Every top level item requires one comment subitem, with the linkId ending or equal 'comment'. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-question
   "name" : "AtPrenudgeQuestionnaire",
   "title" : "AT PreNUDGE Questionnaire",
   "status" : "draft",
-  "date" : "2026-02-28T09:14:32+00:00",
+  "date" : "2026-03-01T10:29:33+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -86,7 +86,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-question
     "name" : "HL7 v2 Mapping"
   }],
   "kind" : "resource",
-  "abstract" : false,
+  "abstract" : true,
   "type" : "Questionnaire",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Questionnaire",
   "derivation" : "constraint",

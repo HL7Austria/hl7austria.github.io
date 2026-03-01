@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale | *Version*:0.1.0 | |
-| Active as of 2026-02-28 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:WHOQOLBrefScale |
+| Active as of 2026-03-01 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:WHOQOLBrefScale |
 
  
 Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire. 
@@ -32,7 +32,7 @@ Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire.
   "title" : "WHOQOL-BREF Answer Scales",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-02-28T09:14:32+00:00",
+  "date" : "2026-03-01T10:29:33+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

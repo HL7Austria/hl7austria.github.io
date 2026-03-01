@@ -6,9 +6,15 @@
 
 ## Example Patient: PatientExample
 
-James Pond (no stated gender), DoB Unknown
+Profile: [AT APS Patient](https://build.fhir.org/ig/HL7Austria/ELGA-AustrianPatientSummary-R4/StructureDefinition-at-aps-patient.html)
+
+James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)
 
 -------
+
+| | |
+| :--- | :--- |
+| Other Id: | Patient internal identifier/123123123 |
 
 
 
@@ -18,10 +24,29 @@ James Pond (no stated gender), DoB Unknown
 {
   "resourceType" : "Patient",
   "id" : "example",
+  "meta" : {
+    "profile" : ["https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient"]
+  },
+  "identifier" : [{
+    "system" : "urn:oid:1.2.40.0.10.1.4.3.1",
+    "value" : "1234567890"
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "PI"
+      }]
+    },
+    "system" : "https://www.joanneum.at",
+    "value" : "123123123"
+  }],
   "name" : [{
     "family" : "Pond",
     "given" : ["James"]
-  }]
+  }],
+  "gender" : "male",
+  "birthDate" : "1990-01-01"
 }
 
 ```

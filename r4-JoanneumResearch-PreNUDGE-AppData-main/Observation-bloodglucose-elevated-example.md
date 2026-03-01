@@ -14,7 +14,7 @@ Profile: [AT PreNUDGE Observation Blood Glucose (only in mg/dL)](StructureDefini
 
 **code**: Fasting glucose [Mass/volume] in Capillary blood
 
-**subject**: [James Pond (no stated gender), DoB Unknown](Patient-example.md)
+**subject**: [James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)](Patient-example.md)
 
 **effective**: 2026-02-28 07:45:00+0000
 

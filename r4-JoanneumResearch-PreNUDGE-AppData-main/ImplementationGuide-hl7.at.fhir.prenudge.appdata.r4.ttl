@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "PreNUDGEAppdataR4"] ; # 
   fhir:title [ fhir:v "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-02-28T09:14:32+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-03-01T10:29:33+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "The PreNUDGE Consortium"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "The PreNUDGE Consortium" ] ;
@@ -1397,7 +1397,28 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "StructureDefinition:resource"
+           fhir:v "ConceptMap"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/ConceptMap/AtPrenudgeCodeUnitMap> ;
+         fhir:reference [ fhir:v "ConceptMap/AtPrenudgeCodeUnitMap" ]
+       ] ;
+       fhir:name [ fhir:v "AT PreNUDGE Code-to-Unit Mapping" ] ;
+       fhir:description [ fhir:v "Maps observation codes to their expected UCUM units for the 'Other' observation profile." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:resource:abstract"
          ]
        ] ) ;
        fhir:reference [
@@ -1405,7 +1426,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-prenudge-observation" ]
        ] ;
        fhir:name [ fhir:v "AT PreNUDGE Observation" ] ;
-       fhir:description [ fhir:v "This FHIR profile is defining the overall Observation for PreNUDGE." ] ;
+       fhir:description [ fhir:v "This FHIR profile is defining the overall Observation for PreNUDGE. It is abstract, so no instances of this profile directly are allowed." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -1464,6 +1485,27 @@
          ]
        ] ) ;
        fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-observation-other> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-prenudge-observation-other" ]
+       ] ;
+       fhir:name [ fhir:v "AT PreNUDGE Observation Other" ] ;
+       fhir:description [ fhir:v "This FHIR profile can be used for all the other Observations for PreNUDGE, not fitting the existing narrow standardized observations. If some code for specifing a new Observation are missing, please contact prenudge@joanneum.at." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
          fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation> ;
          fhir:reference [ fhir:v "StructureDefinition/at-prenudge-stepcount-observation" ]
        ] ;
@@ -1481,7 +1523,49 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "StructureDefinition:resource"
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-other-observations-codes> ;
+         fhir:reference [ fhir:v "ValueSet/prenudge-other-observations-codes" ]
+       ] ;
+       fhir:name [ fhir:v "AT PreNUDGE Other Observations Codes" ] ;
+       fhir:description [ fhir:v "Allowed observation codes for the 'Other' observation profile." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-other-observations-units> ;
+         fhir:reference [ fhir:v "ValueSet/prenudge-other-observations-units" ]
+       ] ;
+       fhir:name [ fhir:v "AT PreNUDGE Other Observations Units" ] ;
+       fhir:description [ fhir:v "Allowed UCUM units for the 'Other' observation profile." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:resource:abstract"
          ]
        ] ) ;
        fhir:reference [

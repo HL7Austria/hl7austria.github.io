@@ -10,7 +10,7 @@
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-02-28T09:14:32+00:00",
+  "date" : "2026-03-01T10:29:33+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -667,13 +667,25 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/AtPrenudgeCodeUnitMap"
+      },
+      "name" : "AT PreNUDGE Code-to-Unit Mapping",
+      "description" : "Maps observation codes to their expected UCUM units for the 'Other' observation profile.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource:abstract"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-prenudge-observation"
       },
       "name" : "AT PreNUDGE Observation",
-      "description" : "This FHIR profile is defining the overall Observation for PreNUDGE.",
+      "description" : "This FHIR profile is defining the overall Observation for PreNUDGE. It is abstract, so no instances of this profile directly are allowed.",
       "exampleBoolean" : false
     },
     {
@@ -706,6 +718,18 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/at-prenudge-observation-other"
+      },
+      "name" : "AT PreNUDGE Observation Other",
+      "description" : "This FHIR profile can be used for all the other Observations for PreNUDGE, not fitting the existing narrow standardized observations. If some code for specifing a new Observation are missing, please contact prenudge@joanneum.at.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/at-prenudge-stepcount-observation"
       },
       "name" : "AT PreNUDGE Observation Step Count",
@@ -715,7 +739,31 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/prenudge-other-observations-codes"
+      },
+      "name" : "AT PreNUDGE Other Observations Codes",
+      "description" : "Allowed observation codes for the 'Other' observation profile.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/prenudge-other-observations-units"
+      },
+      "name" : "AT PreNUDGE Other Observations Units",
+      "description" : "Allowed UCUM units for the 'Other' observation profile.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource:abstract"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-prenudge-questionnaire"

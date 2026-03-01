@@ -14,13 +14,13 @@ Profile: [ AT PreNUDGE Observation WHOQOL-BREF Score](StructureDefinition-at-pre
 
 **code**: Quality of life satisfaction (observable entity)
 
-**subject**: [James Pond (no stated gender), DoB Unknown](Patient-example.md)
+**subject**: [James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)](Patient-example.md)
 
 **effective**: 2026-02-28
 
 **method**: Automated
 
-**derivedFrom**: [Response to Questionnaire '->Quality of life Fragebogen WHOQOL-BREF - World Health Organization Quality of Life Kurzversion' about '->James Pond (no stated gender), DoB Unknown'](QuestionnaireResponse-whoqol-bref-response-example.md)
+**derivedFrom**: [Response to Questionnaire '->Quality of life Fragebogen WHOQOL-BREF - World Health Organization Quality of Life Kurzversion' about '->James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)'](QuestionnaireResponse-whoqol-bref-response-example.md)
 
 > **component****code**: Generalized**value**: 75 score (Details: UCUM code{score} = '{score}')
 
