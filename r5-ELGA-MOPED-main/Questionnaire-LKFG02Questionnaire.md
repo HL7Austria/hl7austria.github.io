@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/Questionnaire/LKFG02Questionnaire | *Version*:0.1.0 | |
-| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
+| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
 
  
 G02 Questionnaire - Großgeräteleistungsdaten 
@@ -26,173 +26,179 @@ G02 Questionnaire - Großgeräteleistungsdaten
   "version" : "0.1.0",
   "title" : "LKF G02 Questionnaire",
   "status" : "active",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "G02 Questionnaire - Großgeräteleistungsdaten",
-  "item" : [
-    {
-      "linkId" : "satzartenkennzeichen",
-      "text" : "Satzartenkennzeichen",
-      "type" : "string",
-      "readOnly" : true,
-      "maxLength" : 3,
-      "initial" : [
-        {
-          "valueString" : "G02"
-        }
-      ]
+  "item" : [{
+    "linkId" : "satzartenkennzeichen",
+    "text" : "Satzartenkennzeichen",
+    "type" : "string",
+    "readOnly" : true,
+    "maxLength" : 3,
+    "initial" : [{
+      "valueString" : "G02"
+    }]
+  },
+  {
+    "linkId" : "jahr",
+    "text" : "Jahr",
+    "type" : "integer",
+    "maxLength" : 4
+  },
+  {
+    "linkId" : "krankenanstaltennummer",
+    "text" : "Krankenanstaltennummer",
+    "type" : "string",
+    "maxLength" : 6
+  },
+  {
+    "linkId" : "grosgeraet-positionsnummer",
+    "text" : "Großgerät – Positionsnummer",
+    "type" : "string",
+    "maxLength" : 4
+  },
+  {
+    "linkId" : "grosgeraet-leistungsindex",
+    "text" : "Großgerät – Leistungsindex",
+    "type" : "coding",
+    "answerOption" : [{
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "C50",
+        "display" : "Computertomographie (CT) – Alle Leistungen"
+      }
     },
     {
-      "linkId" : "jahr",
-      "text" : "Jahr",
-      "type" : "integer",
-      "maxLength" : 4
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "M50",
+        "display" : "Magnetresonanz-Tomographie (MR) – Alle Leistungen"
+      }
     },
     {
-      "linkId" : "krankenanstaltennummer",
-      "text" : "Krankenanstaltennummer",
-      "type" : "string",
-      "maxLength" : 6
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "H51",
+        "display" : "Coronarangiographie (COR)"
+      }
     },
     {
-      "linkId" : "grosgeraet-positionsnummer",
-      "text" : "Großgerät – Positionsnummer",
-      "type" : "string",
-      "maxLength" : 4
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "H52",
+        "display" : "Coronarangiographie - PTCA ein Gefäß"
+      }
     },
     {
-      "linkId" : "grosgeraet-leistungsindex",
-      "text" : "Großgerät – Leistungsindex",
-      "type" : "coding",
-      "answerOption" : [
-        {
-          "valueCoding" : {
-            "code" : "C50",
-            "display" : "Computertomographie (CT) – Alle Leistungen"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "M50",
-            "display" : "Magnetresonanz-Tomographie (MR) – Alle Leistungen"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "H51",
-            "display" : "Coronarangiographie (COR)"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "H52",
-            "display" : "Coronarangiographie - PTCA ein Gefäß"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "H53",
-            "display" : "Coronarangiographie - PTCA mehr als ein Gefäß"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "H54",
-            "display" : "Coronarangiographie - Stentimplantation"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "H55",
-            "display" : "Coronarangiographie - Ablation"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "H56",
-            "display" : "Coronarangiographie - Elektrophysiologie"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "H99",
-            "display" : "Coronarangiographie - Sonstige Eingriffe bei strukturellen Herzerkrankungen"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "S54",
-            "display" : "Strahlentherapie - Bestrahlungstermine für strahlentherapeutische Leistungen"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "S55",
-            "display" : "Strahlentherapie - Bestrahlungstermine für radiochirurgische Leistungen"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "S56",
-            "display" : "Strahlentherapie - Bestrahlungstermine für intensitätsmodulierte Strahlentherapie (IMRT)"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "E51",
-            "display" : "Emissions-Computertomographie (ECT) – Untersuchungen mit planarer Technik"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "E52",
-            "display" : "Emissions-Computertomographie (ECT) – Untersuchungen mit Schichttechnik"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "P51",
-            "display" : "Positronenemissions-Tomographie (PET) – Untersuchungen mit 18-FDG"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "P99",
-            "display" : "Positronenemissions-Tomographie (PET) – Untersuchungen mit sonstigen Tracern"
-          }
-        }
-      ]
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "H53",
+        "display" : "Coronarangiographie - PTCA mehr als ein Gefäß"
+      }
     },
     {
-      "linkId" : "ambulante-frequenzen",
-      "text" : "Ambulante Frequenzen",
-      "type" : "integer",
-      "maxLength" : 10
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "H54",
+        "display" : "Coronarangiographie - Stentimplantation"
+      }
     },
     {
-      "linkId" : "stationaere-frequenzen",
-      "text" : "Stationäre Frequenzen",
-      "type" : "integer",
-      "maxLength" : 10
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "H55",
+        "display" : "Coronarangiographie - Ablation"
+      }
     },
     {
-      "linkId" : "durchschnittliche-dauer-je-frequenz",
-      "text" : "Durchschnittliche Dauer je Frequenz in Minuten",
-      "type" : "integer",
-      "maxLength" : 4
-    }
-  ]
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "H56",
+        "display" : "Coronarangiographie - Elektrophysiologie"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "H99",
+        "display" : "Coronarangiographie - Sonstige Eingriffe bei strukturellen Herzerkrankungen"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "S54",
+        "display" : "Strahlentherapie - Bestrahlungstermine für strahlentherapeutische Leistungen"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "S55",
+        "display" : "Strahlentherapie - Bestrahlungstermine für radiochirurgische Leistungen"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "S56",
+        "display" : "Strahlentherapie - Bestrahlungstermine für intensitätsmodulierte Strahlentherapie (IMRT)"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "E51",
+        "display" : "Emissions-Computertomographie (ECT) – Untersuchungen mit planarer Technik"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "E52",
+        "display" : "Emissions-Computertomographie (ECT) – Untersuchungen mit Schichttechnik"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "P51",
+        "display" : "Positronenemissions-Tomographie (PET) – Untersuchungen mit 18-FDG"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "P99",
+        "display" : "Positronenemissions-Tomographie (PET) – Untersuchungen mit sonstigen Tracern"
+      }
+    }]
+  },
+  {
+    "linkId" : "ambulante-frequenzen",
+    "text" : "Ambulante Frequenzen",
+    "type" : "integer",
+    "maxLength" : 10
+  },
+  {
+    "linkId" : "stationaere-frequenzen",
+    "text" : "Stationäre Frequenzen",
+    "type" : "integer",
+    "maxLength" : 10
+  },
+  {
+    "linkId" : "durchschnittliche-dauer-je-frequenz",
+    "text" : "Durchschnittliche Dauer je Frequenz in Minuten",
+    "type" : "integer",
+    "maxLength" : 4
+  }]
 }
 
 ```

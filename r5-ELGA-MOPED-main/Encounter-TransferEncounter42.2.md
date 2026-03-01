@@ -41,28 +41,20 @@ Profile: [MOPED TransferEncounter](StructureDefinition-MopedTransferEncounter.md
   "resourceType" : "Encounter",
   "id" : "TransferEncounter42.2",
   "meta" : {
-    "profile" : [
-      "https://elga.moped.at/StructureDefinition/MopedTransferEncounter"
-    ]
+    "profile" : ["https://elga.moped.at/StructureDefinition/MopedTransferEncounter"]
   },
   "status" : "completed",
-  "type" : [
-    {
-      "coding" : [
-        {
-          "system" : "https://elga.moped.at/CodeSystem/MopedEncounterTypesCS",
-          "code" : "TENC"
-        }
-      ]
+  "type" : [{
+    "coding" : [{
+      "system" : "https://elga.moped.at/CodeSystem/MopedEncounterTypesCS",
+      "code" : "TENC"
+    }]
+  }],
+  "serviceType" : [{
+    "reference" : {
+      "reference" : "HealthcareService/KHK999ABT12118102"
     }
-  ],
-  "serviceType" : [
-    {
-      "reference" : {
-        "reference" : "HealthcareService/KHK999ABT12118102"
-      }
-    }
-  ],
+  }],
   "subject" : {
     "reference" : "Patient/Patient42"
   },
@@ -74,35 +66,27 @@ Profile: [MOPED TransferEncounter](StructureDefinition-MopedTransferEncounter.md
     "end" : "2025-01-04T00:00:00+02:00"
   },
   "admission" : {
-    "extension" : [
-      {
-        "extension" : [
-          {
-            "url" : "beiZugang",
-            "valueCodeableConcept" : {
-              "coding" : [
-                {
-                  "system" : "https://elga.moped.at/CodeSystem/AltersgruppeCS",
-                  "code" : "85"
-                }
-              ]
-            }
-          },
-          {
-            "url" : "neugeborenes",
-            "valueBoolean" : false
-          }
-        ],
-        "url" : "https://elga.moped.at/StructureDefinition/moped-ext-altersgruppe"
-      }
-    ],
-    "dischargeDisposition" : {
-      "coding" : [
-        {
-          "system" : "https://elga.moped.at/CodeSystem/AbgangsartCS",
-          "code" : "1"
+    "extension" : [{
+      "extension" : [{
+        "url" : "beiZugang",
+        "valueCodeableConcept" : {
+          "coding" : [{
+            "system" : "https://elga.moped.at/CodeSystem/AltersgruppeCS",
+            "code" : "85"
+          }]
         }
-      ]
+      },
+      {
+        "url" : "neugeborenes",
+        "valueBoolean" : false
+      }],
+      "url" : "https://elga.moped.at/StructureDefinition/moped-ext-altersgruppe"
+    }],
+    "dischargeDisposition" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/AbgangsartCS",
+        "code" : "1"
+      }]
     }
   }
 }

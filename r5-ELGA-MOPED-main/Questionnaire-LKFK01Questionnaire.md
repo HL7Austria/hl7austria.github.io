@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/Questionnaire/LKFK01Questionnaire | *Version*:0.1.0 | |
-| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
+| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
 
  
 K01 Questionnaire - den Kostenstellenplan 
@@ -26,89 +26,82 @@ K01 Questionnaire - den Kostenstellenplan
   "version" : "0.1.0",
   "title" : "LKF K01 Questionnaire",
   "status" : "active",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "K01 Questionnaire - den Kostenstellenplan",
-  "item" : [
-    {
-      "linkId" : "satzartenkennzeichen",
-      "text" : "Satzartenkennzeichen",
-      "type" : "string",
-      "readOnly" : true,
-      "maxLength" : 3,
-      "initial" : [
-        {
-          "valueString" : "K01"
-        }
-      ]
+  "item" : [{
+    "linkId" : "satzartenkennzeichen",
+    "text" : "Satzartenkennzeichen",
+    "type" : "string",
+    "readOnly" : true,
+    "maxLength" : 3,
+    "initial" : [{
+      "valueString" : "K01"
+    }]
+  },
+  {
+    "linkId" : "jahr",
+    "text" : "Jahr",
+    "type" : "integer",
+    "maxLength" : 4
+  },
+  {
+    "linkId" : "krankenanstaltennummer",
+    "text" : "Krankenanstaltennummer",
+    "type" : "string",
+    "maxLength" : 6
+  },
+  {
+    "linkId" : "funktionscode",
+    "text" : "Funktionscode",
+    "type" : "integer",
+    "maxLength" : 8
+  },
+  {
+    "linkId" : "interne-kostenstellennummer",
+    "text" : "Interne Kostenstellennummer",
+    "type" : "string",
+    "maxLength" : 8
+  },
+  {
+    "linkId" : "interne-kostenstellenbezeichnung",
+    "text" : "Interne Kostenstellenbezeichnung",
+    "type" : "string",
+    "maxLength" : 50
+  },
+  {
+    "linkId" : "spezielle-organisationsform",
+    "text" : "Spezielle Organisationsform",
+    "type" : "coding",
+    "answerOption" : [{
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "A",
+        "display" : "Abteilung"
+      }
     },
     {
-      "linkId" : "jahr",
-      "text" : "Jahr",
-      "type" : "integer",
-      "maxLength" : 4
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "R",
+        "display" : "Referenzzentrum – ohne Versorgungsstufengliederung"
+      }
     },
     {
-      "linkId" : "krankenanstaltennummer",
-      "text" : "Krankenanstaltennummer",
-      "type" : "string",
-      "maxLength" : 6
-    },
-    {
-      "linkId" : "funktionscode",
-      "text" : "Funktionscode",
-      "type" : "integer",
-      "maxLength" : 8
-    },
-    {
-      "linkId" : "interne-kostenstellennummer",
-      "text" : "Interne Kostenstellennummer",
-      "type" : "string",
-      "maxLength" : 8
-    },
-    {
-      "linkId" : "interne-kostenstellenbezeichnung",
-      "text" : "Interne Kostenstellenbezeichnung",
-      "type" : "string",
-      "maxLength" : 50
-    },
-    {
-      "linkId" : "spezielle-organisationsform",
-      "text" : "Spezielle Organisationsform",
-      "type" : "coding",
-      "answerOption" : [
-        {
-          "valueCoding" : {
-            "code" : "A",
-            "display" : "Abteilung"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "R",
-            "display" : "Referenzzentrum – ohne Versorgungsstufengliederung"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "Z",
-            "display" : "Referenzzentrum – höchste Versorgungsstufe"
-          }
-        }
-      ]
-    }
-  ]
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "Z",
+        "display" : "Referenzzentrum – höchste Versorgungsstufe"
+      }
+    }]
+  }]
 }
 
 ```

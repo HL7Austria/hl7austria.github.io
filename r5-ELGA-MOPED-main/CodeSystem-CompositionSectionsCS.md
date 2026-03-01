@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/CompositionSectionsCS | *Version*:0.1.0 | |
-| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:CompositionSectionsCS |
+| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:CompositionSectionsCS |
 
  
 CodeSystem für die Moped Sections der Composition Ressource 
@@ -32,73 +32,67 @@ CodeSystem für die Moped Sections der Composition Ressource
   "title" : "Moped Composition Sections",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "CodeSystem für die Moped Sections der Composition Ressource",
   "caseSensitive" : true,
   "content" : "complete",
   "count" : 12,
-  "concept" : [
-    {
-      "code" : "SV",
-      "display" : "Zuständige SV"
-    },
-    {
-      "code" : "LGF",
-      "display" : "Zuständiger LGF"
-    },
-    {
-      "code" : "KH",
-      "display" : "Zuständiges KH"
-    },
-    {
-      "code" : "ABT",
-      "display" : "Besuchte Abteilungen"
-    },
-    {
-      "code" : "COV",
-      "display" : "Coverages"
-    },
-    {
-      "code" : "DIAG",
-      "display" : "Diagnosen (Conditions)"
-    },
-    {
-      "code" : "LEI",
-      "display" : "Leistungen (Procedures)"
-    },
-    {
-      "code" : "OBS",
-      "display" : "Observations"
-    },
-    {
-      "code" : "HAUPTV",
-      "display" : "Hauptversicherter"
-    },
-    {
-      "code" : "QRESP",
-      "display" : "QuestionnaireResponses"
-    },
-    {
-      "code" : "ARKPAY",
-      "display" : "ARK Status Updates"
-    },
-    {
-      "code" : "COMM",
-      "display" : "Communication & Responses"
-    }
-  ]
+  "concept" : [{
+    "code" : "SV",
+    "display" : "Zuständige SV"
+  },
+  {
+    "code" : "LGF",
+    "display" : "Zuständiger LGF"
+  },
+  {
+    "code" : "KH",
+    "display" : "Zuständiges KH"
+  },
+  {
+    "code" : "ABT",
+    "display" : "Besuchte Abteilungen"
+  },
+  {
+    "code" : "COV",
+    "display" : "Coverages"
+  },
+  {
+    "code" : "DIAG",
+    "display" : "Diagnosen (Conditions)"
+  },
+  {
+    "code" : "LEI",
+    "display" : "Leistungen (Procedures)"
+  },
+  {
+    "code" : "OBS",
+    "display" : "Observations"
+  },
+  {
+    "code" : "HAUPTV",
+    "display" : "Hauptversicherter"
+  },
+  {
+    "code" : "QRESP",
+    "display" : "QuestionnaireResponses"
+  },
+  {
+    "code" : "ARKPAY",
+    "display" : "ARK Status Updates"
+  },
+  {
+    "code" : "COMM",
+    "display" : "Communication & Responses"
+  }]
 }
 
 ```

@@ -56,97 +56,81 @@ Profile: [MOPED VAEResponse](StructureDefinition-MopedVAEResponse.md)
   "meta" : {
     "profile" : ["https://elga.moped.at/StructureDefinition/MopedVAEResponse"]
   },
-  "extension" : [
-    {
-      "extension" : [
-        {
-          "url" : "Befreiung",
-          "valueCoding" : {
-            "system" : "https://elga.moped.at/CodeSystem/VerpflegskostenBeitragsbefreiungCS",
-            "code" : "N"
-          }
-        },
-        {
-          "url" : "Zeitraum",
-          "valuePeriod" : {
-            "start" : "2024-08-26"
-          }
-        }
-      ],
-      "url" : "https://elga.moped.at/StructureDefinition/moped-ext-verpflegskostenBeitragsbefreiung"
+  "extension" : [{
+    "extension" : [{
+      "url" : "Befreiung",
+      "valueCoding" : {
+        "system" : "https://elga.moped.at/CodeSystem/VerpflegskostenBeitragsbefreiungCS",
+        "code" : "N"
+      }
     },
     {
-      "extension" : [
-        {
-          "url" : "category",
-          "valueCodeableConcept" : {
-            "coding" : [
-              {
-                "system" : "https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS",
-                "code" : "KLAS"
-              }
-            ]
-          }
-        },
-        {
-          "url" : "code",
-          "valueCodeableConcept" : {
-            "coding" : [
-              {
-                "system" : "https://elga.moped.at/CodeSystem/SonderklasseCS",
-                "code" : "A"
-              }
-            ]
-          }
-        },
-        {
-          "url" : "sequence",
-          "valuePositiveInt" : 2
-        },
-        {
-          "url" : "timing",
-          "valuePeriod" : {
-            "start" : "2024-08-08T08:21:00+02:00"
-          }
-        }
-      ],
-      "url" : "https://elga.moped.at/StructureDefinition/MopedSupportingInfoSonderklasse"
+      "url" : "Zeitraum",
+      "valuePeriod" : {
+        "start" : "2024-08-26"
+      }
+    }],
+    "url" : "https://elga.moped.at/StructureDefinition/moped-ext-verpflegskostenBeitragsbefreiung"
+  },
+  {
+    "extension" : [{
+      "url" : "category",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS",
+          "code" : "KLAS"
+        }]
+      }
     },
     {
-      "extension" : [
-        {
-          "url" : "category",
-          "valueCodeableConcept" : {
-            "coding" : [
-              {
-                "system" : "https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS",
-                "code" : "VTAGE"
-              }
-            ]
-          }
-        },
-        {
-          "url" : "value",
-          "valueQuantity" : {
-            "value" : 0
-          }
-        },
-        {
-          "url" : "sequence",
-          "valuePositiveInt" : 4
-        }
-      ],
-      "url" : "https://elga.moped.at/StructureDefinition/MopedSupportingInfoVortageanzahlAufKostenbeitrag"
-    }
-  ],
+      "url" : "code",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://elga.moped.at/CodeSystem/SonderklasseCS",
+          "code" : "A"
+        }]
+      }
+    },
+    {
+      "url" : "sequence",
+      "valuePositiveInt" : 2
+    },
+    {
+      "url" : "timing",
+      "valuePeriod" : {
+        "start" : "2024-08-08T08:21:00+02:00"
+      }
+    }],
+    "url" : "https://elga.moped.at/StructureDefinition/MopedSupportingInfoSonderklasse"
+  },
+  {
+    "extension" : [{
+      "url" : "category",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS",
+          "code" : "VTAGE"
+        }]
+      }
+    },
+    {
+      "url" : "value",
+      "valueQuantity" : {
+        "value" : 0
+      }
+    },
+    {
+      "url" : "sequence",
+      "valuePositiveInt" : 4
+    }],
+    "url" : "https://elga.moped.at/StructureDefinition/MopedSupportingInfoVortageanzahlAufKostenbeitrag"
+  }],
   "status" : "active",
   "type" : {
-    "coding" : [
-      {
-        "system" : "https://elga.moped.at/CodeSystem/MopedClaimTypeCS",
-        "code" : "VAERESP"
-      }
-    ]
+    "coding" : [{
+      "system" : "https://elga.moped.at/CodeSystem/MopedClaimTypeCS",
+      "code" : "VAERESP"
+    }]
   },
   "use" : "preauthorization",
   "patient" : {
@@ -164,12 +148,10 @@ Profile: [MOPED VAEResponse](StructureDefinition-MopedVAEResponse.md)
   },
   "outcome" : "complete",
   "decision" : {
-    "coding" : [
-      {
-        "system" : "https://elga.moped.at/CodeSystem/VAEStatusCS",
-        "code" : "00"
-      }
-    ]
+    "coding" : [{
+      "system" : "https://elga.moped.at/CodeSystem/VAEStatusCS",
+      "code" : "00"
+    }]
   },
   "preAuthPeriod" : {
     "start" : "2024-08-08",

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/OperationDefinition/MOPED.Auf.Request.Antworten | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_Auf_Request_Antworten |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_Auf_Request_Antworten |
 
  
 Die $antworten Operation wird aufgerufen, wenn eine Versichertenanspruchserklärung oder eine Kosteninformation beantwortet wird. 
@@ -52,19 +52,15 @@ Die Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die $antworten
   "title" : "MOPED auf VAERequest oder ARKRequest $antworten",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "Die $antworten Operation wird aufgerufen, wenn eine Versichertenanspruchserklärung oder eine Kosteninformation beantwortet wird.",
   "affectsState" : true,
   "code" : "antworten",
@@ -72,28 +68,24 @@ Die Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die $antworten
   "system" : false,
   "type" : false,
   "instance" : true,
-  "parameter" : [
-    {
-      "name" : "Antwort",
-      "use" : "in",
-      "min" : 1,
-      "max" : "1",
-      "documentation" : "Der *Antwort* Parameter beinhaltet sämtliche Details zur Antwort auf den VAE/ARKRequest oder zusätzlich eingebrachte Kommunikation.",
-      "type" : "Bundle",
-      "targetProfile" : [
-        "https://elga.moped.at/StructureDefinition/MopedAntwortenBundleSV"
-      ]
-    },
-    {
-      "name" : "return",
-      "use" : "out",
-      "min" : 1,
-      "max" : "1",
-      "documentation" : "Der *return* Parameter gibt Auskunft über den Erfolg der Operation.",
-      "type" : "Resource",
-      "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/OperationOutcome"]
-    }
-  ]
+  "parameter" : [{
+    "name" : "Antwort",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *Antwort* Parameter beinhaltet sämtliche Details zur Antwort auf den VAE/ARKRequest oder zusätzlich eingebrachte Kommunikation.",
+    "type" : "Bundle",
+    "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedAntwortenBundleSV"]
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *return* Parameter gibt Auskunft über den Erfolg der Operation.",
+    "type" : "Resource",
+    "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/OperationOutcome"]
+  }]
 }
 
 ```

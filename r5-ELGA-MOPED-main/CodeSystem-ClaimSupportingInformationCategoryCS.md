@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS | *Version*:0.1.0 | |
-| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:ClaimSupportingInformationCategoryCS |
+| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:ClaimSupportingInformationCategoryCS |
 
  
 Arten von zusätzlichen Informationen in der VAE 
@@ -34,61 +34,55 @@ Arten von zusätzlichen Informationen in der VAE
   "title" : "MOPED VAESupportingInformationCategory",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "Arten von zusätzlichen Informationen in der VAE",
   "caseSensitive" : true,
   "content" : "complete",
   "count" : 9,
-  "concept" : [
-    {
-      "code" : "KLAS",
-      "display" : "Allgemeine Gebührenklasse/Sonderklasse"
-    },
-    {
-      "code" : "FREVER",
-      "display" : "Fremdversschluden"
-    },
-    {
-      "code" : "VERLAENG",
-      "display" : "Verlängerungstage"
-    },
-    {
-      "code" : "PLAUS",
-      "display" : "Plausibilitätskennzeichen"
-    },
-    {
-      "code" : "FREMDRE",
-      "display" : "Rechnungsnummer der zwischenstaatlichen Abrechnung"
-    },
-    {
-      "code" : "OEGKELBNR",
-      "display" : "Forderungsnummer der Österreichischen Gesundheitskasse"
-    },
-    {
-      "code" : "VTAGE",
-      "display" : "Vortageanzahl auf Kostenbeitrag"
-    },
-    {
-      "code" : "ENDG",
-      "display" : "Endgültige Meldung"
-    },
-    {
-      "code" : "DEVX",
-      "display" : "XDok Device"
-    }
-  ]
+  "concept" : [{
+    "code" : "KLAS",
+    "display" : "Allgemeine Gebührenklasse/Sonderklasse"
+  },
+  {
+    "code" : "FREVER",
+    "display" : "Fremdversschluden"
+  },
+  {
+    "code" : "VERLAENG",
+    "display" : "Verlängerungstage"
+  },
+  {
+    "code" : "PLAUS",
+    "display" : "Plausibilitätskennzeichen"
+  },
+  {
+    "code" : "FREMDRE",
+    "display" : "Rechnungsnummer der zwischenstaatlichen Abrechnung"
+  },
+  {
+    "code" : "OEGKELBNR",
+    "display" : "Forderungsnummer der Österreichischen Gesundheitskasse"
+  },
+  {
+    "code" : "VTAGE",
+    "display" : "Vortageanzahl auf Kostenbeitrag"
+  },
+  {
+    "code" : "ENDG",
+    "display" : "Endgültige Meldung"
+  },
+  {
+    "code" : "DEVX",
+    "display" : "XDok Device"
+  }]
 }
 
 ```

@@ -85,38 +85,32 @@ Profile: [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md)
   "meta" : {
     "profile" : ["https://elga.moped.at/StructureDefinition/MopedLKFRequest"]
   },
-  "extension" : [
-    {
-      "url" : "https://elga.moped.at/StructureDefinition/moped-ext-diagnoseKnoten",
-      "valueCoding" : {
-        "system" : "https://elga.moped.at/CodeSystem/LKFAbrechnungsKnotenCS",
-        "code" : "C"
-      }
-    },
-    {
-      "url" : "https://elga.moped.at/StructureDefinition/moped-ext-fondsrelevanz",
-      "valueCoding" : {
-        "system" : "https://elga.moped.at/CodeSystem/FondsrelevanzCS",
-        "code" : "J"
-      }
+  "extension" : [{
+    "url" : "https://elga.moped.at/StructureDefinition/moped-ext-diagnoseKnoten",
+    "valueCoding" : {
+      "system" : "https://elga.moped.at/CodeSystem/LKFAbrechnungsKnotenCS",
+      "code" : "C"
     }
-  ],
+  },
+  {
+    "url" : "https://elga.moped.at/StructureDefinition/moped-ext-fondsrelevanz",
+    "valueCoding" : {
+      "system" : "https://elga.moped.at/CodeSystem/FondsrelevanzCS",
+      "code" : "J"
+    }
+  }],
   "status" : "active",
   "type" : {
-    "coding" : [
-      {
-        "system" : "https://elga.moped.at/CodeSystem/MopedClaimTypeCS",
-        "code" : "LKFREQ"
-      }
-    ]
+    "coding" : [{
+      "system" : "https://elga.moped.at/CodeSystem/MopedClaimTypeCS",
+      "code" : "LKFREQ"
+    }]
   },
   "subType" : {
-    "coding" : [
-      {
-        "system" : "https://elga.moped.at/CodeSystem/MopedClaimSubTypeCS",
-        "code" : "LKFREQVORL"
-      }
-    ]
+    "coding" : [{
+      "system" : "https://elga.moped.at/CodeSystem/MopedClaimSubTypeCS",
+      "code" : "LKFREQVORL"
+    }]
   },
   "use" : "claim",
   "patient" : {
@@ -129,261 +123,215 @@ Profile: [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md)
   "provider" : {
     "reference" : "Organization/OrganizationKrankenhausRied"
   },
-  "encounter" : [
-    {
-      "reference" : "Encounter/PJ2Encounter"
-    },
-    {
-      "reference" : "Encounter/PJ2TransferEncounter5"
-    }
-  ],
-  "diagnosisRelatedGroup" : {
-    "coding" : [
-      {
-        "system" : "https://elga.moped.at/CodeSystem/LKFHauptdiagnosegruppenCS",
-        "code" : "HDG15.03"
-      }
-    ]
+  "encounter" : [{
+    "reference" : "Encounter/PJ2Encounter"
   },
-  "supportingInfo" : [
-    {
-      "sequence" : 1,
-      "category" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS",
-            "code" : "PLAUS"
-          }
-        ]
-      },
-      "valueString" : "1234"
+  {
+    "reference" : "Encounter/PJ2TransferEncounter5"
+  }],
+  "diagnosisRelatedGroup" : {
+    "coding" : [{
+      "system" : "https://elga.moped.at/CodeSystem/LKFHauptdiagnosegruppenCS",
+      "code" : "HDG15.03"
+    }]
+  },
+  "supportingInfo" : [{
+    "sequence" : 1,
+    "category" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS",
+        "code" : "PLAUS"
+      }]
     },
-    {
-      "sequence" : 2,
-      "category" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS",
-            "code" : "ENDG"
-          }
-        ]
-      },
-      "valueBoolean" : false
+    "valueString" : "1234"
+  },
+  {
+    "sequence" : 2,
+    "category" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS",
+        "code" : "ENDG"
+      }]
     },
-    {
-      "sequence" : 3,
-      "category" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS",
-            "code" : "DEVX"
-          }
-        ]
-      },
-      "valueReference" : {
-        "reference" : "Device/XDokExampleDevice"
-      }
+    "valueBoolean" : false
+  },
+  {
+    "sequence" : 3,
+    "category" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS",
+        "code" : "DEVX"
+      }]
+    },
+    "valueReference" : {
+      "reference" : "Device/XDokExampleDevice"
     }
-  ],
-  "diagnosis" : [
-    {
-      "sequence" : 1,
-      "diagnosisReference" : {
-        "reference" : "Condition/PJ2Condition1"
-      },
-      "onAdmission" : {
-        "coding" : [
-          {
-            "system" : "http://terminology.hl7.org/CodeSystem/ex-diagnosis-on-admission",
-            "code" : "unknown"
-          }
-        ]
-      }
+  }],
+  "diagnosis" : [{
+    "sequence" : 1,
+    "diagnosisReference" : {
+      "reference" : "Condition/PJ2Condition1"
     },
-    {
-      "sequence" : 2,
-      "diagnosisReference" : {
-        "reference" : "Condition/PJ2Condition2"
-      },
-      "onAdmission" : {
-        "coding" : [
-          {
-            "system" : "http://terminology.hl7.org/CodeSystem/ex-diagnosis-on-admission",
-            "code" : "unknown"
-          }
-        ]
-      }
+    "onAdmission" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/ex-diagnosis-on-admission",
+        "code" : "unknown"
+      }]
     }
-  ],
-  "procedure" : [
-    {
-      "extension" : [
-        {
-          "url" : "https://elga.moped.at/StructureDefinition/moped-ext-AbrechnungsRelevanz",
-          "valueCoding" : {
-            "system" : "https://elga.moped.at/CodeSystem/AbrechnungsRelevanzCS",
-            "code" : "J"
-          }
-        }
-      ],
-      "sequence" : 1,
-      "procedureReference" : {
-        "reference" : "Procedure/PJ2Procedure1"
-      }
+  },
+  {
+    "sequence" : 2,
+    "diagnosisReference" : {
+      "reference" : "Condition/PJ2Condition2"
     },
-    {
-      "extension" : [
-        {
-          "url" : "https://elga.moped.at/StructureDefinition/moped-ext-AbrechnungsRelevanz",
-          "valueCoding" : {
-            "system" : "https://elga.moped.at/CodeSystem/AbrechnungsRelevanzCS",
-            "code" : "J"
-          }
-        }
-      ],
-      "sequence" : 2,
-      "procedureReference" : {
-        "reference" : "Procedure/PJ2Procedure2"
-      }
+    "onAdmission" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/ex-diagnosis-on-admission",
+        "code" : "unknown"
+      }]
     }
-  ],
-  "insurance" : [
-    {
-      "sequence" : 1,
-      "focal" : true,
-      "coverage" : {
-        "reference" : "Coverage/PJ2Coverage"
+  }],
+  "procedure" : [{
+    "extension" : [{
+      "url" : "https://elga.moped.at/StructureDefinition/moped-ext-AbrechnungsRelevanz",
+      "valueCoding" : {
+        "system" : "https://elga.moped.at/CodeSystem/AbrechnungsRelevanzCS",
+        "code" : "J"
       }
+    }],
+    "sequence" : 1,
+    "procedureReference" : {
+      "reference" : "Procedure/PJ2Procedure1"
     }
-  ],
-  "item" : [
-    {
-      "sequence" : 1,
-      "category" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS",
-            "code" : "SCULK"
-          }
-        ]
-      },
-      "quantity" : {
-        "value" : 0
+  },
+  {
+    "extension" : [{
+      "url" : "https://elga.moped.at/StructureDefinition/moped-ext-AbrechnungsRelevanz",
+      "valueCoding" : {
+        "system" : "https://elga.moped.at/CodeSystem/AbrechnungsRelevanzCS",
+        "code" : "J"
       }
-    },
-    {
-      "sequence" : 2,
-      "category" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS",
-            "code" : "SCUTK"
-          }
-        ]
-      },
-      "quantity" : {
-        "value" : 0
-      }
-    },
-    {
-      "sequence" : 3,
-      "category" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS",
-            "code" : "BDZU"
-          }
-        ]
-      },
-      "quantity" : {
-        "value" : 0
-      }
-    },
-    {
-      "sequence" : 4,
-      "category" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS",
-            "code" : "INTZU"
-          }
-        ]
-      },
-      "quantity" : {
-        "value" : 0
-      }
-    },
-    {
-      "sequence" : 5,
-      "category" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS",
-            "code" : "MELZU"
-          }
-        ]
-      },
-      "quantity" : {
-        "value" : 0
-      }
-    },
-    {
-      "sequence" : 6,
-      "category" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS",
-            "code" : "SCSPEZ"
-          }
-        ]
-      },
-      "quantity" : {
-        "value" : 0
-      }
-    },
-    {
-      "sequence" : 7,
-      "category" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS",
-            "code" : "SCGES"
-          }
-        ]
-      },
-      "quantity" : {
-        "value" : 1384
-      }
-    },
-    {
-      "sequence" : 8,
-      "category" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS",
-            "code" : "LDFPLK"
-          }
-        ]
-      },
-      "quantity" : {
-        "value" : 62
-      }
-    },
-    {
-      "sequence" : 9,
-      "category" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS",
-            "code" : "LDFPTK"
-          }
-        ]
-      },
-      "quantity" : {
-        "value" : 1322
-      }
+    }],
+    "sequence" : 2,
+    "procedureReference" : {
+      "reference" : "Procedure/PJ2Procedure2"
     }
-  ]
+  }],
+  "insurance" : [{
+    "sequence" : 1,
+    "focal" : true,
+    "coverage" : {
+      "reference" : "Coverage/PJ2Coverage"
+    }
+  }],
+  "item" : [{
+    "sequence" : 1,
+    "category" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS",
+        "code" : "SCULK"
+      }]
+    },
+    "quantity" : {
+      "value" : 0
+    }
+  },
+  {
+    "sequence" : 2,
+    "category" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS",
+        "code" : "SCUTK"
+      }]
+    },
+    "quantity" : {
+      "value" : 0
+    }
+  },
+  {
+    "sequence" : 3,
+    "category" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS",
+        "code" : "BDZU"
+      }]
+    },
+    "quantity" : {
+      "value" : 0
+    }
+  },
+  {
+    "sequence" : 4,
+    "category" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS",
+        "code" : "INTZU"
+      }]
+    },
+    "quantity" : {
+      "value" : 0
+    }
+  },
+  {
+    "sequence" : 5,
+    "category" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS",
+        "code" : "MELZU"
+      }]
+    },
+    "quantity" : {
+      "value" : 0
+    }
+  },
+  {
+    "sequence" : 6,
+    "category" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS",
+        "code" : "SCSPEZ"
+      }]
+    },
+    "quantity" : {
+      "value" : 0
+    }
+  },
+  {
+    "sequence" : 7,
+    "category" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS",
+        "code" : "SCGES"
+      }]
+    },
+    "quantity" : {
+      "value" : 1384
+    }
+  },
+  {
+    "sequence" : 8,
+    "category" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS",
+        "code" : "LDFPLK"
+      }]
+    },
+    "quantity" : {
+      "value" : 62
+    }
+  },
+  {
+    "sequence" : 9,
+    "category" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS",
+        "code" : "LDFPTK"
+      }]
+    },
+    "quantity" : {
+      "value" : 1322
+    }
+  }]
 }
 
 ```

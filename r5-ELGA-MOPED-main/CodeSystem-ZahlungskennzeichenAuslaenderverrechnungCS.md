@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/ZahlungskennzeichenAuslaenderverrechnungCS | *Version*:0.1.0 | |
-| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:ZahlungskennzeichenAuslaenderverrechnungCS |
+| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:ZahlungskennzeichenAuslaenderverrechnungCS |
 
  
 CodeSystem Zahlungskennzeichen Auslaenderverrechnung 
@@ -32,41 +32,35 @@ CodeSystem Zahlungskennzeichen Auslaenderverrechnung
   "title" : "CodeSystem Zahlungskennzeichen Auslaenderverrechnung",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "CodeSystem Zahlungskennzeichen Auslaenderverrechnung",
   "caseSensitive" : true,
   "content" : "complete",
   "count" : 4,
-  "concept" : [
-    {
-      "code" : "A",
-      "display" : "Akontierung"
-    },
-    {
-      "code" : "K",
-      "display" : "keine ausländische Verrechnung möglich (letzte Meldung)"
-    },
-    {
-      "code" : "E",
-      "display" : "Endzahlung"
-    },
-    {
-      "code" : "R",
-      "display" : "Rücküberweisung an ausländischen Träger Rechnung wurde bereits bezahlt und das Geld dem Landesfond weitergegeben. Im Nachhinein wurde diese Rechnung vom ausländischen Träger begründet beanstandet. Dem ausländischen Träger wurde der Rechnungsbetrag von der ÖGK rücküberwiesen. Der Betrag im Feld BETRAV ist deshalb vom Landesgesundheitsfonds an die Österreichische Gesundheitskasse zu erstatten."
-    }
-  ]
+  "concept" : [{
+    "code" : "A",
+    "display" : "Akontierung"
+  },
+  {
+    "code" : "K",
+    "display" : "keine ausländische Verrechnung möglich (letzte Meldung)"
+  },
+  {
+    "code" : "E",
+    "display" : "Endzahlung"
+  },
+  {
+    "code" : "R",
+    "display" : "Rücküberweisung an ausländischen Träger Rechnung wurde bereits bezahlt und das Geld dem Landesfond weitergegeben. Im Nachhinein wurde diese Rechnung vom ausländischen Träger begründet beanstandet. Dem ausländischen Träger wurde der Rechnungsbetrag von der ÖGK rücküberwiesen. Der Betrag im Feld BETRAV ist deshalb vom Landesgesundheitsfonds an die Österreichische Gesundheitskasse zu erstatten."
+  }]
 }
 
 ```

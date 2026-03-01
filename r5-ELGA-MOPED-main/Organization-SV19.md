@@ -32,49 +32,37 @@ Profile: [SV Organization](StructureDefinition-SVOrganization.md)
   "meta" : {
     "profile" : ["https://elga.moped.at/StructureDefinition/SVOrganization"]
   },
-  "identifier" : [
-    {
-      "system" : "http://svc.co.at/CodeSystem/ecard-svt-cs",
-      "value" : "19"
-    }
-  ],
-  "type" : [
-    {
-      "coding" : [
-        {
-          "system" : "https://termgit.elga.gv.at/CodeSystem/elga-gtelvogdarollen",
-          "code" : "406",
-          "display" : "Sozialversicherung"
-        }
-      ]
-    }
-  ],
+  "identifier" : [{
+    "system" : "http://svc.co.at/CodeSystem/ecard-svt-cs",
+    "value" : "19"
+  }],
+  "type" : [{
+    "coding" : [{
+      "system" : "https://termgit.elga.gv.at/CodeSystem/elga-gtelvogdarollen",
+      "code" : "406",
+      "display" : "Sozialversicherung"
+    }]
+  }],
   "name" : "Österreichische Gesundheitskasse Vorarlberg",
-  "contact" : [
-    {
-      "address" : {
-        "line" : ["Jahngasse 4, 6850 Dornbirn"],
-        "_line" : [
-          {
-            "extension" : [
-              {
-                "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                "valueString" : "Jahngasse"
-              },
-              {
-                "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                "valueString" : "4"
-              }
-            ]
-          }
-        ],
-        "city" : "Dornbirn",
-        "state" : "Vorarlberg",
-        "postalCode" : "6850",
-        "country" : "AUT"
-      }
+  "contact" : [{
+    "address" : {
+      "line" : ["Jahngasse 4, 6850 Dornbirn"],
+      "_line" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+          "valueString" : "Jahngasse"
+        },
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+          "valueString" : "4"
+        }]
+      }],
+      "city" : "Dornbirn",
+      "state" : "Vorarlberg",
+      "postalCode" : "6850",
+      "country" : "AUT"
     }
-  ]
+  }]
 }
 
 ```

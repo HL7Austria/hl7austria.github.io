@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/MopedEncounterTypesCS | *Version*:0.1.0 | |
-| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounterTypesCS |
+| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounterTypesCS |
 
  
 Arten von Moped Encounter 
@@ -33,45 +33,39 @@ Arten von Moped Encounter
   "title" : "Arten von Moped Encounter",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "Arten von Moped Encounter",
   "caseSensitive" : true,
   "content" : "complete",
   "count" : 5,
-  "concept" : [
-    {
-      "code" : "ENC",
-      "display" : "Moped Encounter"
-    },
-    {
-      "code" : "TENC",
-      "display" : "Moped Transfer Encounter"
-    },
-    {
-      "code" : "ENC-BUND",
-      "display" : "Moped Encounter Bund"
-    },
-    {
-      "code" : "ENC-LGF",
-      "display" : "Moped Encounter LGF"
-    },
-    {
-      "code" : "ENC-SV",
-      "display" : "Moped Encounter SV"
-    }
-  ]
+  "concept" : [{
+    "code" : "ENC",
+    "display" : "Moped Encounter"
+  },
+  {
+    "code" : "TENC",
+    "display" : "Moped Transfer Encounter"
+  },
+  {
+    "code" : "ENC-BUND",
+    "display" : "Moped Encounter Bund"
+  },
+  {
+    "code" : "ENC-LGF",
+    "display" : "Moped Encounter LGF"
+  },
+  {
+    "code" : "ENC-SV",
+    "display" : "Moped Encounter SV"
+  }]
 }
 
 ```

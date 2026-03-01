@@ -27,87 +27,65 @@ Santiago Schnabeltier Test (official) Male, DoB: 1985-03-19 ( Social Security Nu
   "resourceType" : "Patient",
   "id" : "PJ2Patient",
   "meta" : {
-    "profile" : [
-      "https://elga.moped.at/StructureDefinition/MopedPatient",
-      "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-patient"
-    ]
+    "profile" : ["https://elga.moped.at/StructureDefinition/MopedPatient",
+    "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-patient"]
   },
-  "extension" : [
-    {
-      "extension" : [
-        {
-          "url" : "code",
-          "valueCodeableConcept" : {
-            "coding" : [
-              {
-                "system" : "https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3",
-                "code" : "AUT",
-                "display" : "Österreich"
-              }
-            ]
-          }
-        }
-      ],
-      "url" : "http://hl7.org/fhir/StructureDefinition/patient-citizenship"
-    }
-  ],
-  "identifier" : [
-    {
-      "type" : {
-        "coding" : [
-          {
-            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
-            "code" : "SS",
-            "display" : "Social Security Number"
-          }
-        ]
-      },
-      "system" : "urn:oid:1.2.40.0.10.1.4.3.1",
-      "value" : "2873111374",
-      "assigner" : {
-        "display" : "Dachverband der österreichischen Sozialversicherungsträger"
+  "extension" : [{
+    "extension" : [{
+      "url" : "code",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3",
+          "code" : "AUT",
+          "display" : "Österreich"
+        }]
       }
+    }],
+    "url" : "http://hl7.org/fhir/StructureDefinition/patient-citizenship"
+  }],
+  "identifier" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "SS",
+        "display" : "Social Security Number"
+      }]
+    },
+    "system" : "urn:oid:1.2.40.0.10.1.4.3.1",
+    "value" : "2873111374",
+    "assigner" : {
+      "display" : "Dachverband der österreichischen Sozialversicherungsträger"
     }
-  ],
-  "name" : [
-    {
-      "use" : "official",
-      "family" : "Schnabeltier Test",
-      "given" : ["Santiago"]
-    }
-  ],
+  }],
+  "name" : [{
+    "use" : "official",
+    "family" : "Schnabeltier Test",
+    "given" : ["Santiago"]
+  }],
   "gender" : "male",
   "birthDate" : "1985-03-19",
-  "address" : [
-    {
-      "extension" : [
-        {
-          "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-ext-address-municipalityCode",
-          "valueString" : "90201"
-        }
-      ],
-      "use" : "home",
-      "line" : ["Ernst-Melchior-Gasse 22/5/506"],
-      "_line" : [
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-              "valueString" : "Ernst-Melchior-Gasse"
-            },
-            {
-              "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-              "valueString" : "22/5/506"
-            }
-          ]
-        }
-      ],
-      "city" : "Wien",
-      "state" : "Wien",
-      "postalCode" : "1020",
-      "country" : "AUT"
-    }
-  ]
+  "address" : [{
+    "extension" : [{
+      "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-ext-address-municipalityCode",
+      "valueString" : "90201"
+    }],
+    "use" : "home",
+    "line" : ["Ernst-Melchior-Gasse 22/5/506"],
+    "_line" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+        "valueString" : "Ernst-Melchior-Gasse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+        "valueString" : "22/5/506"
+      }]
+    }],
+    "city" : "Wien",
+    "state" : "Wien",
+    "postalCode" : "1020",
+    "country" : "AUT"
+  }]
 }
 
 ```

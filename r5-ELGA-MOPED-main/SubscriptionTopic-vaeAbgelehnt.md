@@ -8,7 +8,7 @@
 
 | |
 | :--- |
-| Active as of 2026-01-26 |
+| Active as of 2026-03-01 |
 
 
 
@@ -22,45 +22,35 @@
   "version" : "0.1.0",
   "name" : "VAEabgelehnt",
   "status" : "active",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
+  "resourceTrigger" : [{
+    "description" : "Erstellen einer VAEResponse mit Ablehnung",
+    "resource" : "https://elga.moped.at/StructureDefinition/MopedVAEResponse",
+    "supportedInteraction" : ["create"],
+    "queryCriteria" : {
+      "current" : "TBD"
     }
-  ],
-  "resourceTrigger" : [
-    {
-      "description" : "Erstellen einer VAEResponse mit Ablehnung",
-      "resource" : "https://elga.moped.at/StructureDefinition/MopedVAEResponse",
-      "supportedInteraction" : ["create"],
-      "queryCriteria" : {
-        "current" : "TBD"
-      }
-    }
-  ],
-  "canFilterBy" : [
-    {
-      "resource" : "https://elga.moped.at/StructureDefinition/MopedVAEResponse",
-      "filterParameter" : "requestor"
-    }
-  ],
-  "notificationShape" : [
-    {
-      "resource" : "https://elga.moped.at/StructureDefinition/MopedMasterComposition",
-      "include" : ["Composition:id"]
-    },
-    {
-      "resource" : "https://elga.moped.at/StructureDefinition/MopedVAEResponse",
-      "include" : ["ClaimResponse:requestor"]
-    }
-  ]
+  }],
+  "canFilterBy" : [{
+    "resource" : "https://elga.moped.at/StructureDefinition/MopedVAEResponse",
+    "filterParameter" : "requestor"
+  }],
+  "notificationShape" : [{
+    "resource" : "https://elga.moped.at/StructureDefinition/MopedMasterComposition",
+    "include" : ["Composition:id"]
+  },
+  {
+    "resource" : "https://elga.moped.at/StructureDefinition/MopedVAEResponse",
+    "include" : ["ClaimResponse:requestor"]
+  }]
 }
 
 ```

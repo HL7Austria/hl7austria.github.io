@@ -8,7 +8,7 @@
 
 | |
 | :--- |
-| Active as of 2026-01-26 |
+| Active as of 2026-03-01 |
 
 
 
@@ -22,42 +22,32 @@
   "version" : "0.1.0",
   "name" : "neueVAE",
   "status" : "active",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
-  "resourceTrigger" : [
-    {
-      "description" : "Erstellen eines neuen VAERequest",
-      "resource" : "https://elga.moped.at/StructureDefinition/MopedVAERequest",
-      "supportedInteraction" : ["create"]
-    }
-  ],
-  "canFilterBy" : [
-    {
-      "resource" : "https://elga.moped.at/StructureDefinition/MopedVAERequest",
-      "filterParameter" : "insurer"
-    }
-  ],
-  "notificationShape" : [
-    {
-      "resource" : "https://elga.moped.at/StructureDefinition/MopedMasterComposition",
-      "include" : ["Composition:id"]
-    },
-    {
-      "resource" : "https://elga.moped.at/StructureDefinition/MopedVAERequest",
-      "include" : ["Claim:insurer"]
-    }
-  ]
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
+  "resourceTrigger" : [{
+    "description" : "Erstellen eines neuen VAERequest",
+    "resource" : "https://elga.moped.at/StructureDefinition/MopedVAERequest",
+    "supportedInteraction" : ["create"]
+  }],
+  "canFilterBy" : [{
+    "resource" : "https://elga.moped.at/StructureDefinition/MopedVAERequest",
+    "filterParameter" : "insurer"
+  }],
+  "notificationShape" : [{
+    "resource" : "https://elga.moped.at/StructureDefinition/MopedMasterComposition",
+    "include" : ["Composition:id"]
+  },
+  {
+    "resource" : "https://elga.moped.at/StructureDefinition/MopedVAERequest",
+    "include" : ["Claim:insurer"]
+  }]
 }
 
 ```

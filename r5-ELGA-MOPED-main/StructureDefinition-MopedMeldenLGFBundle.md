@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedMeldenLGFBundle | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedMeldenLGFBundle |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedMeldenLGFBundle |
 
  
 Bundle für die Input-Ressourcen beim Melden von Informationen 
@@ -41,19 +41,15 @@ Other representations of profile: [CSV](StructureDefinition-MopedMeldenLGFBundle
   "name" : "MopedMeldenLGFBundle",
   "title" : "MOPED Melden Bundle LGF",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "Bundle für die Input-Ressourcen beim Melden von Informationen",
   "fhirVersion" : "5.0.0",
   "kind" : "resource",
@@ -62,58 +58,52 @@ Other representations of profile: [CSV](StructureDefinition-MopedMeldenLGFBundle
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Bundle",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Bundle",
-        "path" : "Bundle"
+    "element" : [{
+      "id" : "Bundle",
+      "path" : "Bundle"
+    },
+    {
+      "id" : "Bundle.type",
+      "path" : "Bundle.type",
+      "patternCode" : "transaction"
+    },
+    {
+      "id" : "Bundle.entry",
+      "path" : "Bundle.entry",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "type",
+          "path" : "resource"
+        }],
+        "rules" : "closed"
       },
-      {
-        "id" : "Bundle.type",
-        "path" : "Bundle.type",
-        "patternCode" : "transaction"
-      },
-      {
-        "id" : "Bundle.entry",
-        "path" : "Bundle.entry",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "type",
-              "path" : "resource"
-            }
-          ],
-          "rules" : "closed"
-        },
-        "min" : 1,
-        "max" : "1"
-      },
-      {
-        "id" : "Bundle.entry:ARKKostenInformation",
-        "path" : "Bundle.entry",
-        "sliceName" : "ARKKostenInformation",
-        "min" : 1,
-        "max" : "1"
-      },
-      {
-        "id" : "Bundle.entry:ARKKostenInformation.resource",
-        "path" : "Bundle.entry.resource",
-        "type" : [
-          {
-            "code" : "Claim",
-            "profile" : ["https://elga.moped.at/StructureDefinition/MopedARKRequest"]
-          }
-        ]
-      },
-      {
-        "id" : "Bundle.entry:ARKKostenInformation.request.method",
-        "path" : "Bundle.entry.request.method",
-        "short" : "POST",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "https://elga.moped.at/ValueSet/HTTPVerbInsertOnlyVS"
-        }
+      "min" : 1,
+      "max" : "1"
+    },
+    {
+      "id" : "Bundle.entry:ARKKostenInformation",
+      "path" : "Bundle.entry",
+      "sliceName" : "ARKKostenInformation",
+      "min" : 1,
+      "max" : "1"
+    },
+    {
+      "id" : "Bundle.entry:ARKKostenInformation.resource",
+      "path" : "Bundle.entry.resource",
+      "type" : [{
+        "code" : "Claim",
+        "profile" : ["https://elga.moped.at/StructureDefinition/MopedARKRequest"]
+      }]
+    },
+    {
+      "id" : "Bundle.entry:ARKKostenInformation.request.method",
+      "path" : "Bundle.entry.request.method",
+      "short" : "POST",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://elga.moped.at/ValueSet/HTTPVerbInsertOnlyVS"
       }
-    ]
+    }]
   }
 }
 

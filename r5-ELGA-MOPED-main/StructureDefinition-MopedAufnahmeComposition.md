@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedAufnahmeComposition | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedAufnahmeComposition |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedAufnahmeComposition |
 
  
 MOPED Profil der Composition Ressource nach $aufnehmen 
@@ -42,69 +42,59 @@ Other representations of profile: [CSV](StructureDefinition-MopedAufnahmeComposi
   "title" : "MOPED Aufnahme Composition",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "MOPED Profil der Composition Ressource nach $aufnehmen",
   "fhirVersion" : "5.0.0",
-  "mapping" : [
-    {
-      "identity" : "LKF",
-      "uri" : "https://elga.moped.at/mapping/LKF",
-      "name" : "LKF"
-    },
-    {
-      "identity" : "KaOrg",
-      "uri" : "https://elga.moped.at/mapping/KaOrg",
-      "name" : "KaOrg"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "LKF",
+    "uri" : "https://elga.moped.at/mapping/LKF",
+    "name" : "LKF"
+  },
+  {
+    "identity" : "KaOrg",
+    "uri" : "https://elga.moped.at/mapping/KaOrg",
+    "name" : "KaOrg"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Composition",
   "baseDefinition" : "https://elga.moped.at/StructureDefinition/MopedComposition",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Composition",
-        "path" : "Composition",
-        "constraint" : [
-          {
-            "key" : "moped-nach-aufnahme-freigegeben-encounter-inprogress",
-            "severity" : "error",
-            "human" : "Falls der Workflow status 'Aufnahme-freigegeben' ist, dann muss ein MopedEncounter in-progress sein",
-            "expression" : "encounter.resolve().ofType(Encounter).where(status = 'in-progress').count() = 1",
-            "source" : "https://elga.moped.at/StructureDefinition/MopedAufnahmeComposition"
-          }
-        ]
-      },
-      {
-        "id" : "Composition.status",
-        "path" : "Composition.status",
-        "patternCode" : "partial"
-      },
-      {
-        "id" : "Composition.section:Diagnosen",
-        "path" : "Composition.section",
-        "sliceName" : "Diagnosen"
-      },
-      {
-        "id" : "Composition.section:Diagnosen.entry",
-        "path" : "Composition.section.entry",
-        "min" : 1
-      }
-    ]
+    "element" : [{
+      "id" : "Composition",
+      "path" : "Composition",
+      "constraint" : [{
+        "key" : "moped-nach-aufnahme-freigegeben-encounter-inprogress",
+        "severity" : "error",
+        "human" : "Falls der Workflow status 'Aufnahme-freigegeben' ist, dann muss ein MopedEncounter in-progress sein",
+        "expression" : "encounter.resolve().ofType(Encounter).where(status = 'in-progress').count() = 1",
+        "source" : "https://elga.moped.at/StructureDefinition/MopedAufnahmeComposition"
+      }]
+    },
+    {
+      "id" : "Composition.status",
+      "path" : "Composition.status",
+      "patternCode" : "partial"
+    },
+    {
+      "id" : "Composition.section:Diagnosen",
+      "path" : "Composition.section",
+      "sliceName" : "Diagnosen"
+    },
+    {
+      "id" : "Composition.section:Diagnosen.entry",
+      "path" : "Composition.section.entry",
+      "min" : 1
+    }]
   }
 }
 

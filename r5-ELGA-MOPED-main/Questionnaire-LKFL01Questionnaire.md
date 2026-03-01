@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/Questionnaire/LKFL01Questionnaire | *Version*:0.1.0 | |
-| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
+| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
 
  
 LKF L01 Questionnaire - Spezielle Leistungsbereiche 
@@ -26,147 +26,147 @@ LKF L01 Questionnaire - Spezielle Leistungsbereiche
   "version" : "0.1.0",
   "title" : "LKF L01 Questionnaire",
   "status" : "active",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "LKF L01 Questionnaire - Spezielle Leistungsbereiche",
-  "item" : [
-    {
-      "linkId" : "satzartenkennzeichen",
-      "text" : "Satzartenkennzeichen",
-      "type" : "string",
-      "readOnly" : true,
-      "maxLength" : 3,
-      "initial" : [
-        {
-          "valueString" : "L01"
-        }
-      ]
+  "item" : [{
+    "linkId" : "satzartenkennzeichen",
+    "text" : "Satzartenkennzeichen",
+    "type" : "string",
+    "readOnly" : true,
+    "maxLength" : 3,
+    "initial" : [{
+      "valueString" : "L01"
+    }]
+  },
+  {
+    "linkId" : "jahr",
+    "text" : "Jahr",
+    "type" : "integer",
+    "maxLength" : 4
+  },
+  {
+    "linkId" : "krankenanstaltennummer",
+    "text" : "Krankenanstaltennummer",
+    "type" : "string",
+    "maxLength" : 6
+  },
+  {
+    "linkId" : "hauptkostenstelle-funktionscode",
+    "text" : "Hauptkostenstelle – Funktionscode",
+    "type" : "integer",
+    "enableWhen" : [{
+      "question" : "leistungsbereich",
+      "operator" : "!=",
+      "answerCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "M",
+        "display" : "Spezielle Leistungen"
+      }
+    }],
+    "maxLength" : 8
+  },
+  {
+    "linkId" : "leistungsbereich",
+    "text" : "Leistungsbereich",
+    "type" : "coding",
+    "answerOption" : [{
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "I",
+        "display" : "Intensivüberwachungs-/behandlungseinheiten (Erwachsene/Kinder)"
+      }
     },
     {
-      "linkId" : "jahr",
-      "text" : "Jahr",
-      "type" : "integer",
-      "maxLength" : 4
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "G",
+        "display" : "Akutgeriatrie/Remobilisation"
+      }
     },
     {
-      "linkId" : "krankenanstaltennummer",
-      "text" : "Krankenanstaltennummer",
-      "type" : "string",
-      "maxLength" : 6
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "L",
+        "display" : "Palliativmedizinische Einrichtungen"
+      }
     },
     {
-      "linkId" : "hauptkostenstelle-funktionscode",
-      "text" : "Hauptkostenstelle – Funktionscode",
-      "type" : "integer",
-      "enableWhen" : [
-        {
-          "question" : "leistungsbereich",
-          "operator" : "!=",
-          "answerCoding" : {
-            "code" : "M",
-            "display" : "Spezielle Leistungen"
-          }
-        }
-      ],
-      "maxLength" : 8
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "N",
+        "display" : "Neurologische Akut-Nachbehandlung"
+      }
     },
     {
-      "linkId" : "leistungsbereich",
-      "text" : "Leistungsbereich",
-      "type" : "coding",
-      "answerOption" : [
-        {
-          "valueCoding" : {
-            "code" : "I",
-            "display" : "Intensivüberwachungs-/behandlungseinheiten (Erwachsene/Kinder)"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "G",
-            "display" : "Akutgeriatrie/Remobilisation"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "L",
-            "display" : "Palliativmedizinische Einrichtungen"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "N",
-            "display" : "Neurologische Akut-Nachbehandlung"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "J",
-            "display" : "Kinder- und Jugendpsychiatrie"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "P",
-            "display" : "Psychiatrie"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "S",
-            "display" : "Stroke Unit"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "A",
-            "display" : "Alkohol- und Drogenentwöhnung"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "M",
-            "display" : "Spezielle Leistungen"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "R",
-            "display" : "Remobilisation/Nachsorge"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "O",
-            "display" : "Psychosomatik"
-          }
-        }
-      ]
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "J",
+        "display" : "Kinder- und Jugendpsychiatrie"
+      }
     },
     {
-      "linkId" : "gruppe-stufe",
-      "text" : "Gruppe/Stufe",
-      "type" : "string",
-      "maxLength" : 2
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "P",
+        "display" : "Psychiatrie"
+      }
     },
     {
-      "linkId" : "punkte",
-      "text" : "Punkte",
-      "type" : "integer",
-      "maxLength" : 6
-    }
-  ]
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "S",
+        "display" : "Stroke Unit"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "A",
+        "display" : "Alkohol- und Drogenentwöhnung"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "M",
+        "display" : "Spezielle Leistungen"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "R",
+        "display" : "Remobilisation/Nachsorge"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "O",
+        "display" : "Psychosomatik"
+      }
+    }]
+  },
+  {
+    "linkId" : "gruppe-stufe",
+    "text" : "Gruppe/Stufe",
+    "type" : "string",
+    "maxLength" : 2
+  },
+  {
+    "linkId" : "punkte",
+    "text" : "Punkte",
+    "type" : "integer",
+    "maxLength" : 6
+  }]
 }
 
 ```

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedDevice | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedDevice |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedDevice |
 
  
 Generische Moped Definition für Devices 
@@ -41,75 +41,65 @@ Other representations of profile: [CSV](StructureDefinition-MopedDevice.csv), [E
   "name" : "MopedDevice",
   "title" : "Moped Device",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "Generische Moped Definition für Devices",
   "fhirVersion" : "5.0.0",
-  "mapping" : [
-    {
-      "identity" : "udi",
-      "uri" : "http://fda.gov/UDI",
-      "name" : "UDI Mapping"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "udi",
+    "uri" : "http://fda.gov/UDI",
+    "name" : "UDI Mapping"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Device",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Device",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Device",
-        "path" : "Device"
-      },
-      {
-        "id" : "Device.status",
-        "path" : "Device.status",
-        "min" : 1
-      },
-      {
-        "id" : "Device.name",
-        "path" : "Device.name",
-        "min" : 1
-      },
-      {
-        "id" : "Device.category",
-        "path" : "Device.category",
-        "patternCodeableConcept" : {
-          "coding" : [
-            {
-              "system" : "http://hl7.org/fhir/device-category",
-              "code" : "software"
-            }
-          ]
-        }
-      },
-      {
-        "id" : "Device.type",
-        "path" : "Device.type",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "https://elga.moped.at/ValueSet/MopedDeviceTypesVS"
-        }
-      },
-      {
-        "id" : "Device.version",
-        "path" : "Device.version",
-        "min" : 1
+    "element" : [{
+      "id" : "Device",
+      "path" : "Device"
+    },
+    {
+      "id" : "Device.status",
+      "path" : "Device.status",
+      "min" : 1
+    },
+    {
+      "id" : "Device.name",
+      "path" : "Device.name",
+      "min" : 1
+    },
+    {
+      "id" : "Device.category",
+      "path" : "Device.category",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/device-category",
+          "code" : "software"
+        }]
       }
-    ]
+    },
+    {
+      "id" : "Device.type",
+      "path" : "Device.type",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://elga.moped.at/ValueSet/MopedDeviceTypesVS"
+      }
+    },
+    {
+      "id" : "Device.version",
+      "path" : "Device.version",
+      "min" : 1
+    }]
   }
 }
 

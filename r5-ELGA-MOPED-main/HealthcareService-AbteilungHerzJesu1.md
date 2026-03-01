@@ -33,74 +33,56 @@ Profile: [MOPED KH Organisationseinheiten](StructureDefinition-MopedKHOrganisati
   "resourceType" : "HealthcareService",
   "id" : "AbteilungHerzJesu1",
   "meta" : {
-    "profile" : [
-      "https://elga.moped.at/StructureDefinition/MopedKHOrganisationseinheit"
-    ]
+    "profile" : ["https://elga.moped.at/StructureDefinition/MopedKHOrganisationseinheit"]
   },
-  "extension" : [
-    {
-      "extension" : [
-        {
-          "url" : "InterneKostenstellennummer",
-          "valueUnsignedInt" : 11160
-        },
-        {
-          "url" : "InterneKostenstellenbezeichnung",
-          "valueString" : "Schlaflabor (Interne)"
-        },
-        {
-          "url" : "SpezielleOrganisationsform",
-          "valueCoding" : {
-            "system" : "https://elga.moped.at/CodeSystem/SpezielleOrganisationsformenCS",
-            "code" : "A"
-          }
-        },
-        {
-          "url" : "KostenstellenJahr",
-          "valueDate" : "2024"
-        }
-      ],
-      "url" : "https://elga.moped.at/StructureDefinition/moped-ext-Kostenstelle"
-    }
-  ],
-  "identifier" : [
-    {
-      "system" : "http://example.org/lkf-system/funktionscode",
-      "value" : "131180"
+  "extension" : [{
+    "extension" : [{
+      "url" : "InterneKostenstellennummer",
+      "valueUnsignedInt" : 11160
     },
     {
-      "system" : "http://example.org/lkf-system/funktionssubcode",
-      "value" : "00"
-    }
-  ],
+      "url" : "InterneKostenstellenbezeichnung",
+      "valueString" : "Schlaflabor (Interne)"
+    },
+    {
+      "url" : "SpezielleOrganisationsform",
+      "valueCoding" : {
+        "system" : "https://elga.moped.at/CodeSystem/SpezielleOrganisationsformenCS",
+        "code" : "A"
+      }
+    },
+    {
+      "url" : "KostenstellenJahr",
+      "valueDate" : "2024"
+    }],
+    "url" : "https://elga.moped.at/StructureDefinition/moped-ext-Kostenstelle"
+  }],
+  "identifier" : [{
+    "system" : "http://example.org/lkf-system/funktionscode",
+    "value" : "131180"
+  },
+  {
+    "system" : "http://example.org/lkf-system/funktionssubcode",
+    "value" : "00"
+  }],
   "providedBy" : {
     "reference" : "Organization/OrganizationHerzJesuKrankenhaus"
   },
-  "category" : [
-    {
-      "coding" : [
-        {
-          "system" : "http://terminology.hl7.org/CodeSystem/service-category",
-          "code" : "35"
-        }
-      ]
-    }
-  ],
-  "type" : [
-    {
-      "coding" : [
-        {
-          "system" : "http://terminology.hl7.org/CodeSystem/service-type",
-          "code" : "361"
-        }
-      ]
-    }
-  ],
-  "location" : [
-    {
-      "reference" : "Location/LocationKHHerzJesu"
-    }
-  ]
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/service-category",
+      "code" : "35"
+    }]
+  }],
+  "type" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/service-type",
+      "code" : "361"
+    }]
+  }],
+  "location" : [{
+    "reference" : "Location/LocationKHHerzJesu"
+  }]
 }
 
 ```

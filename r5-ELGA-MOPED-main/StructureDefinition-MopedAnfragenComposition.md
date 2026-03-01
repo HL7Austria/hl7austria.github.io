@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedAnfragenComposition | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedAnfragenComposition |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedAnfragenComposition |
 
  
 MOPED Profil der Composition Ressource nach $anfragen 
@@ -42,76 +42,66 @@ Other representations of profile: [CSV](StructureDefinition-MopedAnfragenComposi
   "title" : "MOPED Anfragen Composition",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "MOPED Profil der Composition Ressource nach $anfragen",
   "fhirVersion" : "5.0.0",
-  "mapping" : [
-    {
-      "identity" : "LKF",
-      "uri" : "https://elga.moped.at/mapping/LKF",
-      "name" : "LKF"
-    },
-    {
-      "identity" : "KaOrg",
-      "uri" : "https://elga.moped.at/mapping/KaOrg",
-      "name" : "KaOrg"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "LKF",
+    "uri" : "https://elga.moped.at/mapping/LKF",
+    "name" : "LKF"
+  },
+  {
+    "identity" : "KaOrg",
+    "uri" : "https://elga.moped.at/mapping/KaOrg",
+    "name" : "KaOrg"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Composition",
   "baseDefinition" : "https://elga.moped.at/StructureDefinition/MopedComposition",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Composition",
-        "path" : "Composition",
-        "constraint" : [
-          {
-            "key" : "moped-anfragen-TBD",
-            "severity" : "error",
-            "human" : "TBD",
-            "source" : "https://elga.moped.at/StructureDefinition/MopedAnfragenComposition"
-          }
-        ]
-      },
-      {
-        "id" : "Composition.status",
-        "path" : "Composition.status",
-        "patternCode" : "partial"
-      },
-      {
-        "id" : "Composition.section",
-        "path" : "Composition.section",
-        "min" : 4
-      },
-      {
-        "id" : "Composition.section:zustaendigeSV",
-        "path" : "Composition.section",
-        "sliceName" : "zustaendigeSV",
-        "min" : 1
-      },
-      {
-        "id" : "Composition.section:VAERequests",
-        "path" : "Composition.section",
-        "sliceName" : "VAERequests",
-        "min" : 1,
-        "max" : "1"
-      }
-    ]
+    "element" : [{
+      "id" : "Composition",
+      "path" : "Composition",
+      "constraint" : [{
+        "key" : "moped-anfragen-TBD",
+        "severity" : "error",
+        "human" : "TBD",
+        "source" : "https://elga.moped.at/StructureDefinition/MopedAnfragenComposition"
+      }]
+    },
+    {
+      "id" : "Composition.status",
+      "path" : "Composition.status",
+      "patternCode" : "partial"
+    },
+    {
+      "id" : "Composition.section",
+      "path" : "Composition.section",
+      "min" : 4
+    },
+    {
+      "id" : "Composition.section:zustaendigeSV",
+      "path" : "Composition.section",
+      "sliceName" : "zustaendigeSV",
+      "min" : 1
+    },
+    {
+      "id" : "Composition.section:VAERequests",
+      "path" : "Composition.section",
+      "sliceName" : "VAERequests",
+      "min" : 1,
+      "max" : "1"
+    }]
   }
 }
 

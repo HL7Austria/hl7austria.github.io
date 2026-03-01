@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/LKFSeitenlokalisationVS | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LKFSeitenlokalisationVS |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LKFSeitenlokalisationVS |
 
  
 LKF Seitenlokalisation 
@@ -51,36 +51,28 @@ LKF Seitenlokalisation
   "title" : "LKF Seitenlokalisation ValueSet",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "LKF Seitenlokalisation",
   "compose" : {
-    "include" : [
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "concept" : [{
+        "code" : "7771000",
+        "display" : "Links"
+      },
       {
-        "system" : "http://snomed.info/sct",
-        "concept" : [
-          {
-            "code" : "7771000",
-            "display" : "Links"
-          },
-          {
-            "code" : "24028007",
-            "display" : "Rechts"
-          }
-        ]
-      }
-    ]
+        "code" : "24028007",
+        "display" : "Rechts"
+      }]
+    }]
   }
 }
 

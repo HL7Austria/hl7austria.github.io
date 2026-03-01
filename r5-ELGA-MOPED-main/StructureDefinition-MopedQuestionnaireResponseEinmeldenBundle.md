@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedQuestionnaireResponseEinmeldenBundle | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedQuestionnaireResponseEinmeldenBundle |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedQuestionnaireResponseEinmeldenBundle |
 
  
 Bundle für die Input-Ressourcen beim Einmelden von nicht fallspezifischen QuestionnaireResponses 
@@ -41,19 +41,15 @@ Other representations of profile: [CSV](StructureDefinition-MopedQuestionnaireRe
   "name" : "MopedQuestionnaireResponseEinmeldenBundle",
   "title" : "MOPED QuestionnaireResponse einmelden Bundle",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "Bundle für die Input-Ressourcen beim Einmelden von nicht fallspezifischen QuestionnaireResponses",
   "fhirVersion" : "5.0.0",
   "kind" : "resource",
@@ -62,43 +58,37 @@ Other representations of profile: [CSV](StructureDefinition-MopedQuestionnaireRe
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Bundle",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Bundle",
-        "path" : "Bundle"
-      },
-      {
-        "id" : "Bundle.type",
-        "path" : "Bundle.type",
-        "patternCode" : "transaction"
-      },
-      {
-        "id" : "Bundle.entry",
-        "path" : "Bundle.entry",
-        "min" : 1
-      },
-      {
-        "id" : "Bundle.entry.resource",
-        "path" : "Bundle.entry.resource",
-        "type" : [
-          {
-            "code" : "QuestionnaireResponse",
-            "profile" : [
-              "https://elga.moped.at/StructureDefinition/MopedQuestionnaireResponseNichtFallbezogen"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Bundle.entry.request.method",
-        "path" : "Bundle.entry.request.method",
-        "short" : "POST | PUT | DELETE",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "https://elga.moped.at/ValueSet/HTTPVerbInsertUpdateDeleteVS"
-        }
+    "element" : [{
+      "id" : "Bundle",
+      "path" : "Bundle"
+    },
+    {
+      "id" : "Bundle.type",
+      "path" : "Bundle.type",
+      "patternCode" : "transaction"
+    },
+    {
+      "id" : "Bundle.entry",
+      "path" : "Bundle.entry",
+      "min" : 1
+    },
+    {
+      "id" : "Bundle.entry.resource",
+      "path" : "Bundle.entry.resource",
+      "type" : [{
+        "code" : "QuestionnaireResponse",
+        "profile" : ["https://elga.moped.at/StructureDefinition/MopedQuestionnaireResponseNichtFallbezogen"]
+      }]
+    },
+    {
+      "id" : "Bundle.entry.request.method",
+      "path" : "Bundle.entry.request.method",
+      "short" : "POST | PUT | DELETE",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://elga.moped.at/ValueSet/HTTPVerbInsertUpdateDeleteVS"
       }
-    ]
+    }]
   }
 }
 

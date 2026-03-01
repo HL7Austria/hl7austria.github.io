@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS | *Version*:0.1.0 | |
-| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedClaimItemCategoryCS |
+| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedClaimItemCategoryCS |
 
  
 CodeSystem für die Arten von Claim Item Kategorien 
@@ -32,65 +32,59 @@ CodeSystem für die Arten von Claim Item Kategorien
   "title" : "Moped Claim Item Category CodeSystem",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "CodeSystem für die Arten von Claim Item Kategorien",
   "caseSensitive" : true,
   "content" : "complete",
   "count" : 10,
-  "concept" : [
-    {
-      "code" : "Patientenanteil",
-      "display" : "Patientenanteil"
-    },
-    {
-      "code" : "LDFPLK",
-      "display" : "Leistungskomponente/Leistungspunkte"
-    },
-    {
-      "code" : "LDFPTK",
-      "display" : "Tageskomponente/Kontaktpunktet"
-    },
-    {
-      "code" : "SCULK",
-      "display" : "Punkte Belagsdauerausreißer nach unten – Leistungskomponente"
-    },
-    {
-      "code" : "SCUTK",
-      "display" : "Punkte Belagsdauerausreißer nach unten – Tageskomponente"
-    },
-    {
-      "code" : "BDZU",
-      "display" : "Zusatzpunkte Belagsdauerausreißer nach oben"
-    },
-    {
-      "code" : "INTZU",
-      "display" : "Zusatzpunkte Intensiv"
-    },
-    {
-      "code" : "MELZU",
-      "display" : "Zusatzpunkte Mehrfachleistungen"
-    },
-    {
-      "code" : "SCSPEZ",
-      "display" : "Punkte spezieller Bereiche (tageweise)"
-    },
-    {
-      "code" : "SCGES",
-      "display" : "Punkte total"
-    }
-  ]
+  "concept" : [{
+    "code" : "Patientenanteil",
+    "display" : "Patientenanteil"
+  },
+  {
+    "code" : "LDFPLK",
+    "display" : "Leistungskomponente/Leistungspunkte"
+  },
+  {
+    "code" : "LDFPTK",
+    "display" : "Tageskomponente/Kontaktpunktet"
+  },
+  {
+    "code" : "SCULK",
+    "display" : "Punkte Belagsdauerausreißer nach unten – Leistungskomponente"
+  },
+  {
+    "code" : "SCUTK",
+    "display" : "Punkte Belagsdauerausreißer nach unten – Tageskomponente"
+  },
+  {
+    "code" : "BDZU",
+    "display" : "Zusatzpunkte Belagsdauerausreißer nach oben"
+  },
+  {
+    "code" : "INTZU",
+    "display" : "Zusatzpunkte Intensiv"
+  },
+  {
+    "code" : "MELZU",
+    "display" : "Zusatzpunkte Mehrfachleistungen"
+  },
+  {
+    "code" : "SCSPEZ",
+    "display" : "Punkte spezieller Bereiche (tageweise)"
+  },
+  {
+    "code" : "SCGES",
+    "display" : "Punkte total"
+  }]
 }
 
 ```

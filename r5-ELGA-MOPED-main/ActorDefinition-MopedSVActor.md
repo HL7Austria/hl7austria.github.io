@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ActorDefinition/MopedSVActor | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:SVActor |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:SVActor |
 
  
 Moped ActorDefnition für eine SV in Österreich 
@@ -27,25 +27,19 @@ Moped ActorDefnition für eine SV in Österreich
   "name" : "SVActor",
   "title" : "Moped SV Actor",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "Moped ActorDefnition für eine SV in Österreich",
   "type" : "system",
-  "reference" : [
-    "https://elga.moped.at/StructureDefinition/SVOrganization",
-    "https://elga.moped.at/StructureDefinition/DachverbandOrganization"
-  ]
+  "reference" : ["https://elga.moped.at/StructureDefinition/SVOrganization",
+  "https://elga.moped.at/StructureDefinition/DachverbandOrganization"]
 }
 
 ```

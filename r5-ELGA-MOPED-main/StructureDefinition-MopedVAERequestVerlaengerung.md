@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedVAERequestVerlaengerung | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedVAERequestVerlaengerung |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedVAERequestVerlaengerung |
 
  
 MOPED Profil für die Verlängerung der Versichertenanspruchserklärung (VAE) 
@@ -42,258 +42,206 @@ Other representations of profile: [CSV](StructureDefinition-MopedVAERequestVerla
   "name" : "MopedVAERequestVerlaengerung",
   "title" : "MOPED VAERequest für die Verlängerung der VAE",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "MOPED Profil für die Verlängerung der Versichertenanspruchserklärung (VAE)",
   "fhirVersion" : "5.0.0",
-  "mapping" : [
-    {
-      "identity" : "LKF",
-      "uri" : "https://elga.moped.at/mapping/LKF",
-      "name" : "LKF"
-    },
-    {
-      "identity" : "KaOrg",
-      "uri" : "https://elga.moped.at/mapping/KaOrg",
-      "name" : "KaOrg"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "LKF",
+    "uri" : "https://elga.moped.at/mapping/LKF",
+    "name" : "LKF"
+  },
+  {
+    "identity" : "KaOrg",
+    "uri" : "https://elga.moped.at/mapping/KaOrg",
+    "name" : "KaOrg"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Claim",
   "baseDefinition" : "https://elga.moped.at/StructureDefinition/MopedVAERequest",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Claim.subType",
-        "extension" : [
-          {
-            "extension" : [
-              {
-                "url" : "code",
-                "valueCode" : "SHALL:populate"
-              },
-              {
-                "url" : "actor",
-                "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
-              },
-              {
-                "url" : "code",
-                "valueCode" : "SHALL:populate"
-              },
-              {
-                "url" : "actor",
-                "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
-              }
-            ],
-            "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
-          }
-        ],
-        "path" : "Claim.subType",
-        "patternCodeableConcept" : {
-          "coding" : [
-            {
-              "system" : "https://elga.moped.at/CodeSystem/MopedClaimSubTypeCS",
-              "code" : "VAEREQV"
-            }
-          ]
-        }
-      },
-      {
-        "id" : "Claim.billablePeriod.start",
-        "extension" : [
-          {
-            "extension" : [
-              {
-                "url" : "code",
-                "valueCode" : "SHALL:populate"
-              },
-              {
-                "url" : "actor",
-                "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
-              },
-              {
-                "url" : "code",
-                "valueCode" : "SHALL:populate"
-              },
-              {
-                "url" : "actor",
-                "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
-              }
-            ],
-            "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
-          }
-        ],
-        "path" : "Claim.billablePeriod.start",
-        "short" : "KaOrg: Ereignis-/Unfalldatum (Verlängerungsdatum)",
-        "mapping" : [
-          {
-            "identity" : "KaOrg",
-            "map" : "Ereignis-/Unfalldatum (Verlängerungsdatum)"
-          }
-        ]
-      },
-      {
-        "id" : "Claim.billablePeriod.end",
-        "extension" : [
-          {
-            "extension" : [
-              {
-                "url" : "code",
-                "valueCode" : "SHALL:populate"
-              },
-              {
-                "url" : "actor",
-                "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
-              }
-            ],
-            "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
-          }
-        ],
-        "path" : "Claim.billablePeriod.end",
-        "short" : "KaOrg: Anzahl der Verlängerungstage",
-        "min" : 1,
-        "mapping" : [
-          {
-            "identity" : "KaOrg",
-            "map" : "Anzahl der Verlängerungstage"
-          }
-        ]
-      },
-      {
-        "id" : "Claim.related",
-        "path" : "Claim.related",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "value",
-              "path" : "claim.resolve().subType"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
+    "element" : [{
+      "id" : "Claim.subType",
+      "extension" : [{
+        "extension" : [{
+          "url" : "code",
+          "valueCode" : "SHALL:populate"
         },
-        "min" : 1
-      },
-      {
-        "id" : "Claim.related:InitialeVAE",
-        "extension" : [
-          {
-            "extension" : [
-              {
-                "url" : "code",
-                "valueCode" : "SHALL:populate"
-              },
-              {
-                "url" : "actor",
-                "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
-              }
-            ],
-            "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
-          }
-        ],
-        "path" : "Claim.related",
-        "sliceName" : "InitialeVAE",
-        "short" : "Initiale Anfrage der VAE",
-        "min" : 1,
-        "max" : "1"
-      },
-      {
-        "id" : "Claim.related:InitialeVAE.claim",
-        "path" : "Claim.related.claim",
-        "type" : [
-          {
-            "extension" : [
-              {
-                "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy",
-                "valueBoolean" : false
-              }
-            ],
-            "code" : "Reference",
-            "targetProfile" : [
-              "https://elga.moped.at/StructureDefinition/MopedVAERequestInitial"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Claim.related:InitialeVAE.relationship",
-        "path" : "Claim.related.relationship",
-        "patternCodeableConcept" : {
-          "coding" : [
-            {
-              "system" : "http://terminology.hl7.org/CodeSystem/ex-relatedclaimrelationship",
-              "code" : "prior"
-            }
-          ]
-        }
-      },
-      {
-        "id" : "Claim.related:VerlaengerteVAE",
-        "extension" : [
-          {
-            "extension" : [
-              {
-                "url" : "code",
-                "valueCode" : "SHALL:populate"
-              },
-              {
-                "url" : "actor",
-                "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
-              }
-            ],
-            "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
-          }
-        ],
-        "path" : "Claim.related",
-        "sliceName" : "VerlaengerteVAE",
-        "short" : "Vorherige Verlängerungsanfrage der VAE",
-        "min" : 0,
-        "max" : "*"
-      },
-      {
-        "id" : "Claim.related:VerlaengerteVAE.claim",
-        "path" : "Claim.related.claim",
-        "type" : [
-          {
-            "extension" : [
-              {
-                "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy",
-                "valueBoolean" : false
-              }
-            ],
-            "code" : "Reference",
-            "targetProfile" : [
-              "https://elga.moped.at/StructureDefinition/MopedVAERequestVerlaengerung"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Claim.related:VerlaengerteVAE.relationship",
-        "path" : "Claim.related.relationship",
-        "patternCodeableConcept" : {
-          "coding" : [
-            {
-              "system" : "http://terminology.hl7.org/CodeSystem/ex-relatedclaimrelationship",
-              "code" : "prior"
-            }
-          ]
-        }
+        {
+          "url" : "actor",
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+        },
+        {
+          "url" : "code",
+          "valueCode" : "SHALL:populate"
+        },
+        {
+          "url" : "actor",
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
+      }],
+      "path" : "Claim.subType",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://elga.moped.at/CodeSystem/MopedClaimSubTypeCS",
+          "code" : "VAEREQV"
+        }]
       }
-    ]
+    },
+    {
+      "id" : "Claim.billablePeriod.start",
+      "extension" : [{
+        "extension" : [{
+          "url" : "code",
+          "valueCode" : "SHALL:populate"
+        },
+        {
+          "url" : "actor",
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+        },
+        {
+          "url" : "code",
+          "valueCode" : "SHALL:populate"
+        },
+        {
+          "url" : "actor",
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
+      }],
+      "path" : "Claim.billablePeriod.start",
+      "short" : "KaOrg: Ereignis-/Unfalldatum (Verlängerungsdatum)",
+      "mapping" : [{
+        "identity" : "KaOrg",
+        "map" : "Ereignis-/Unfalldatum (Verlängerungsdatum)"
+      }]
+    },
+    {
+      "id" : "Claim.billablePeriod.end",
+      "extension" : [{
+        "extension" : [{
+          "url" : "code",
+          "valueCode" : "SHALL:populate"
+        },
+        {
+          "url" : "actor",
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
+      }],
+      "path" : "Claim.billablePeriod.end",
+      "short" : "KaOrg: Anzahl der Verlängerungstage",
+      "min" : 1,
+      "mapping" : [{
+        "identity" : "KaOrg",
+        "map" : "Anzahl der Verlängerungstage"
+      }]
+    },
+    {
+      "id" : "Claim.related",
+      "path" : "Claim.related",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "claim.resolve().subType"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      },
+      "min" : 1
+    },
+    {
+      "id" : "Claim.related:InitialeVAE",
+      "extension" : [{
+        "extension" : [{
+          "url" : "code",
+          "valueCode" : "SHALL:populate"
+        },
+        {
+          "url" : "actor",
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
+      }],
+      "path" : "Claim.related",
+      "sliceName" : "InitialeVAE",
+      "short" : "Initiale Anfrage der VAE",
+      "min" : 1,
+      "max" : "1"
+    },
+    {
+      "id" : "Claim.related:InitialeVAE.claim",
+      "path" : "Claim.related.claim",
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy",
+          "valueBoolean" : false
+        }],
+        "code" : "Reference",
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedVAERequestInitial"]
+      }]
+    },
+    {
+      "id" : "Claim.related:InitialeVAE.relationship",
+      "path" : "Claim.related.relationship",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/ex-relatedclaimrelationship",
+          "code" : "prior"
+        }]
+      }
+    },
+    {
+      "id" : "Claim.related:VerlaengerteVAE",
+      "extension" : [{
+        "extension" : [{
+          "url" : "code",
+          "valueCode" : "SHALL:populate"
+        },
+        {
+          "url" : "actor",
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
+      }],
+      "path" : "Claim.related",
+      "sliceName" : "VerlaengerteVAE",
+      "short" : "Vorherige Verlängerungsanfrage der VAE",
+      "min" : 0,
+      "max" : "*"
+    },
+    {
+      "id" : "Claim.related:VerlaengerteVAE.claim",
+      "path" : "Claim.related.claim",
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy",
+          "valueBoolean" : false
+        }],
+        "code" : "Reference",
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedVAERequestVerlaengerung"]
+      }]
+    },
+    {
+      "id" : "Claim.related:VerlaengerteVAE.relationship",
+      "path" : "Claim.related.relationship",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/ex-relatedclaimrelationship",
+          "code" : "prior"
+        }]
+      }
+    }]
   }
 }
 

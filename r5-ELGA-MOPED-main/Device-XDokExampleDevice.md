@@ -40,37 +40,25 @@ Profile: [Moped Device XDok](StructureDefinition-MopedDeviceXDok.md)
     "profile" : ["https://elga.moped.at/StructureDefinition/MopedDeviceXDok"]
   },
   "status" : "active",
-  "name" : [
-    {
-      "value" : "XDok",
-      "type" : "registered-name"
-    }
-  ],
-  "category" : [
-    {
-      "coding" : [
-        {
-          "system" : "http://hl7.org/fhir/device-category",
-          "code" : "software"
-        }
-      ]
-    }
-  ],
-  "type" : [
-    {
-      "coding" : [
-        {
-          "system" : "https://elga.moped.at/CodeSystem/MopedDeviceTypesCS",
-          "code" : "XDok"
-        }
-      ]
-    }
-  ],
-  "version" : [
-    {
-      "value" : "1.0"
-    }
-  ]
+  "name" : [{
+    "value" : "XDok",
+    "type" : "registered-name"
+  }],
+  "category" : [{
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/device-category",
+      "code" : "software"
+    }]
+  }],
+  "type" : [{
+    "coding" : [{
+      "system" : "https://elga.moped.at/CodeSystem/MopedDeviceTypesCS",
+      "code" : "XDok"
+    }]
+  }],
+  "version" : [{
+    "value" : "1.0"
+  }]
 }
 
 ```

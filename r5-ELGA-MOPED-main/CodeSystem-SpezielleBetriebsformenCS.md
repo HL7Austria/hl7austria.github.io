@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/SpezielleBetriebsformenCS | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:SpezielleBetriebsformenCS |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:SpezielleBetriebsformenCS |
 
  
 Spezielle Betriebsformen (gemäß ÖSG bzw. KAKuG) 
@@ -31,40 +31,34 @@ Spezielle Betriebsformen (gemäß ÖSG bzw. KAKuG)
   "name" : "SpezielleBetriebsformenCS",
   "title" : "Spezielle Betriebsform",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "Spezielle Betriebsformen (gemäß ÖSG bzw. KAKuG)",
   "content" : "complete",
   "count" : 4,
-  "concept" : [
-    {
-      "code" : "K",
-      "display" : "Tagesstation als Teil einer vollstationären Organisationsform (für einmalige Aufenthalte über Tag oder über Nacht)"
-    },
-    {
-      "code" : "H",
-      "display" : "Spezielle ambulante Bereiche (ambulante Tagesbehandlung und ambulante tagesstrukturierende Behandlung)"
-    },
-    {
-      "code" : "M",
-      "display" : "Fachspezifische Wochenklinik"
-    },
-    {
-      "code" : "X",
-      "display" : "Ohne fachlich eindeutige Zuordnung"
-    }
-  ]
+  "concept" : [{
+    "code" : "K",
+    "display" : "Tagesstation als Teil einer vollstationären Organisationsform (für einmalige Aufenthalte über Tag oder über Nacht)"
+  },
+  {
+    "code" : "H",
+    "display" : "Spezielle ambulante Bereiche (ambulante Tagesbehandlung und ambulante tagesstrukturierende Behandlung)"
+  },
+  {
+    "code" : "M",
+    "display" : "Fachspezifische Wochenklinik"
+  },
+  {
+    "code" : "X",
+    "display" : "Ohne fachlich eindeutige Zuordnung"
+  }]
 }
 
 ```

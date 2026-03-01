@@ -463,1010 +463,794 @@
   "source" : {
     "reference" : "Organization/OrganizationHerzJesuKrankenhaus"
   },
-  "item" : [
-    {
-      "linkId" : "gruppe-patientendaten",
-      "text" : "Patientendaten",
-      "item" : [
-        {
-          "linkId" : "2001",
-          "text" : "Zentrum",
-          "answer" : [
-            {
-              "valueInteger" : 427
-            }
-          ]
-        },
-        {
-          "linkId" : "2003",
-          "text" : "Aufnahmezahl",
-          "answer" : [
-            {
-              "valueString" : "1024000028"
-            }
-          ]
-        },
-        {
-          "linkId" : "gruppe-demographie",
-          "text" : "Demographische Basisdaten",
-          "item" : [
-            {
-              "linkId" : "2040",
-              "text" : "Vorname (für bPK nötig)",
-              "answer" : [
-                {
-                  "valueString" : "Susi"
-                }
-              ]
-            },
-            {
-              "linkId" : "2041",
-              "text" : "Nachname (für bPK nötig)",
-              "answer" : [
-                {
-                  "valueString" : "Sonnenschein"
-                }
-              ]
-            },
-            {
-              "linkId" : "2004",
-              "text" : "Geburtsdatum",
-              "answer" : [
-                {
-                  "valueDate" : "1969-04-21"
-                }
-              ]
-            },
-            {
-              "linkId" : "2032",
-              "text" : "Wohnort",
-              "answer" : [
-                {
-                  "valueCoding" : {
-                    "code" : "1",
-                    "display" : "im Inland"
-                  }
-                }
-              ]
-            },
-            {
-              "linkId" : "2030",
-              "text" : "Wohnpostleitzahl (wenn Wohnort Österreich)",
-              "answer" : [
-                {
-                  "valueInteger" : 1030
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "linkId" : "gruppe-geschlecht",
-          "text" : "Geschlecht",
-          "item" : [
-            {
-              "linkId" : "2005",
-              "text" : "Geschlecht",
-              "answer" : [
-                {
-                  "valueCoding" : {
-                    "code" : "2",
-                    "display" : "Weiblich"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "linkId" : "gruppe-akuter-schlaganfall",
-          "text" : "Akuter Schlaganfall",
-          "item" : [
-            {
-              "linkId" : "2006",
-              "text" : "Akuter Schlaganfall",
-              "answer" : [
-                {
-                  "valueCoding" : {
-                    "code" : "1",
-                    "display" : "ja"
-                  }
-                }
-              ]
-            }
-          ]
-        }
-      ]
+  "item" : [{
+    "linkId" : "gruppe-patientendaten",
+    "text" : "Patientendaten",
+    "item" : [{
+      "linkId" : "2001",
+      "text" : "Zentrum",
+      "answer" : [{
+        "valueInteger" : 427
+      }]
     },
     {
-      "linkId" : "gruppe-aufnahme-und-diagnostik",
-      "text" : "Aufnahme und Diagnostik",
-      "item" : [
-        {
-          "linkId" : "3052",
-          "text" : "Datum Ereignis bekannt",
-          "answer" : [
-            {
-              "valueBoolean" : true
-            }
-          ]
-        },
-        {
-          "linkId" : "3001",
-          "text" : "Datum Ereignis",
-          "answer" : [
-            {
-              "valueDate" : "2025-04-06"
-            }
-          ]
-        },
-        {
-          "linkId" : "3040",
-          "text" : "Datum 'last seen well' bekannt",
-          "answer" : [
-            {
-              "valueBoolean" : true
-            }
-          ]
-        },
-        {
-          "linkId" : "3041",
-          "text" : "Datum 'last seen well'",
-          "answer" : [
-            {
-              "valueDate" : "2025-04-05"
-            }
-          ]
-        },
-        {
-          "linkId" : "3053",
-          "text" : "Uhrzeit Ereignis bekannt",
-          "answer" : [
-            {
-              "valueCoding" : {
-                "code" : "2",
-                "display" : "nein, im Schlaf"
-              }
-            }
-          ]
-        },
-        {
-          "linkId" : "3050",
-          "text" : "Uhrzeit 'last seen well' bekannt",
-          "answer" : [
-            {
-              "valueBoolean" : true
-            }
-          ]
-        },
-        {
-          "linkId" : "3051",
-          "text" : "Uhrzeit 'last seen well'",
-          "answer" : [
-            {
-              "valueTime" : "22:00:00"
-            }
-          ]
-        },
-        {
-          "linkId" : "gruppe-ereignis-aufgetreten",
-          "text" : "Ereignis aufgetreten",
-          "item" : [
-            {
-              "linkId" : "3005",
-              "text" : "Ereignis aufgetreten",
-              "answer" : [
-                {
-                  "valueCoding" : {
-                    "code" : "2",
-                    "display" : "Im Schlafzustand"
-                  }
-                }
-              ]
-            },
-            {
-              "linkId" : "3006",
-              "text" : "Datum Krankenhausaufnahme",
-              "answer" : [
-                {
-                  "valueDate" : "2025-04-06"
-                }
-              ]
-            },
-            {
-              "linkId" : "3007",
-              "text" : "Uhrzeit Krankenhausaufnahme",
-              "answer" : [
-                {
-                  "valueTime" : "07:50:00"
-                }
-              ]
-            },
-            {
-              "linkId" : "3008",
-              "text" : "Datum Aufnahme Stroke Unit",
-              "answer" : [
-                {
-                  "valueDate" : "2025-04-06"
-                }
-              ]
-            },
-            {
-              "linkId" : "3009",
-              "text" : "Uhrzeit Aufnahme Stroke Unit",
-              "answer" : [
-                {
-                  "valueTime" : "08:00:00"
-                }
-              ]
-            },
-            {
-              "linkId" : "3012",
-              "text" : "Prehospital-SCORE erhoben",
-              "answer" : [
-                {
-                  "valueBoolean" : true
-                }
-              ]
-            },
-            {
-              "linkId" : "3013",
-              "text" : "Prehospital-SCORE Wert",
-              "answer" : [
-                {
-                  "valueInteger" : 25
-                }
-              ]
-            },
-            {
-              "linkId" : "30541",
-              "text" : "Zutransport",
-              "answer" : [
-                {
-                  "valueCoding" : {
-                    "code" : "2",
-                    "display" : "Zutransport extern"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "linkId" : "gruppe-zutransport-extern",
-          "text" : "Zutransport extern",
-          "item" : [
-            {
-              "linkId" : "3010",
-              "text" : "Zutransport extern",
-              "answer" : [
-                {
-                  "valueCoding" : {
-                    "code" : "2",
-                    "display" : "Direkt"
-                  }
-                }
-              ]
-            },
-            {
-              "linkId" : "3020",
-              "text" : "Art Zutransport – direkt",
-              "answer" : [
-                {
-                  "valueCoding" : {
-                    "code" : "8",
-                    "display" : "Rettung mit Notarzt"
-                  }
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "linkId" : "2003",
+      "text" : "Aufnahmezahl",
+      "answer" : [{
+        "valueString" : "1024000028"
+      }]
     },
     {
-      "linkId" : "gruppe-nih-aufnahme",
-      "text" : "NIH Stroke Scale bei Aufnahme",
-      "item" : [
-        {
-          "linkId" : "4020",
-          "text" : "Gesamtsumme NIH - SS bei Aufnahme",
-          "answer" : [
-            {
-              "valueInteger" : 30
-            }
-          ]
-        }
-      ]
+      "linkId" : "gruppe-demographie",
+      "text" : "Demographische Basisdaten",
+      "item" : [{
+        "linkId" : "2040",
+        "text" : "Vorname (für bPK nötig)",
+        "answer" : [{
+          "valueString" : "Susi"
+        }]
+      },
+      {
+        "linkId" : "2041",
+        "text" : "Nachname (für bPK nötig)",
+        "answer" : [{
+          "valueString" : "Sonnenschein"
+        }]
+      },
+      {
+        "linkId" : "2004",
+        "text" : "Geburtsdatum",
+        "answer" : [{
+          "valueDate" : "1969-04-21"
+        }]
+      },
+      {
+        "linkId" : "2032",
+        "text" : "Wohnort",
+        "answer" : [{
+          "valueCoding" : {
+            "code" : "1",
+            "display" : "im Inland"
+          }
+        }]
+      },
+      {
+        "linkId" : "2030",
+        "text" : "Wohnpostleitzahl (wenn Wohnort Österreich)",
+        "answer" : [{
+          "valueInteger" : 1030
+        }]
+      }]
     },
     {
-      "linkId" : "gruppe-rankinskala-aufnahme",
+      "linkId" : "gruppe-geschlecht",
+      "text" : "Geschlecht",
+      "item" : [{
+        "linkId" : "2005",
+        "text" : "Geschlecht",
+        "answer" : [{
+          "valueCoding" : {
+            "code" : "2",
+            "display" : "Weiblich"
+          }
+        }]
+      }]
+    },
+    {
+      "linkId" : "gruppe-akuter-schlaganfall",
+      "text" : "Akuter Schlaganfall",
+      "item" : [{
+        "linkId" : "2006",
+        "text" : "Akuter Schlaganfall",
+        "answer" : [{
+          "valueCoding" : {
+            "code" : "1",
+            "display" : "ja"
+          }
+        }]
+      }]
+    }]
+  },
+  {
+    "linkId" : "gruppe-aufnahme-und-diagnostik",
+    "text" : "Aufnahme und Diagnostik",
+    "item" : [{
+      "linkId" : "3052",
+      "text" : "Datum Ereignis bekannt",
+      "answer" : [{
+        "valueBoolean" : true
+      }]
+    },
+    {
+      "linkId" : "3001",
+      "text" : "Datum Ereignis",
+      "answer" : [{
+        "valueDate" : "2025-04-06"
+      }]
+    },
+    {
+      "linkId" : "3040",
+      "text" : "Datum 'last seen well' bekannt",
+      "answer" : [{
+        "valueBoolean" : true
+      }]
+    },
+    {
+      "linkId" : "3041",
+      "text" : "Datum 'last seen well'",
+      "answer" : [{
+        "valueDate" : "2025-04-05"
+      }]
+    },
+    {
+      "linkId" : "3053",
+      "text" : "Uhrzeit Ereignis bekannt",
+      "answer" : [{
+        "valueCoding" : {
+          "code" : "2",
+          "display" : "nein, im Schlaf"
+        }
+      }]
+    },
+    {
+      "linkId" : "3050",
+      "text" : "Uhrzeit 'last seen well' bekannt",
+      "answer" : [{
+        "valueBoolean" : true
+      }]
+    },
+    {
+      "linkId" : "3051",
+      "text" : "Uhrzeit 'last seen well'",
+      "answer" : [{
+        "valueTime" : "22:00:00"
+      }]
+    },
+    {
+      "linkId" : "gruppe-ereignis-aufgetreten",
+      "text" : "Ereignis aufgetreten",
+      "item" : [{
+        "linkId" : "3005",
+        "text" : "Ereignis aufgetreten",
+        "answer" : [{
+          "valueCoding" : {
+            "code" : "2",
+            "display" : "Im Schlafzustand"
+          }
+        }]
+      },
+      {
+        "linkId" : "3006",
+        "text" : "Datum Krankenhausaufnahme",
+        "answer" : [{
+          "valueDate" : "2025-04-06"
+        }]
+      },
+      {
+        "linkId" : "3007",
+        "text" : "Uhrzeit Krankenhausaufnahme",
+        "answer" : [{
+          "valueTime" : "07:50:00"
+        }]
+      },
+      {
+        "linkId" : "3008",
+        "text" : "Datum Aufnahme Stroke Unit",
+        "answer" : [{
+          "valueDate" : "2025-04-06"
+        }]
+      },
+      {
+        "linkId" : "3009",
+        "text" : "Uhrzeit Aufnahme Stroke Unit",
+        "answer" : [{
+          "valueTime" : "08:00:00"
+        }]
+      },
+      {
+        "linkId" : "3012",
+        "text" : "Prehospital-SCORE erhoben",
+        "answer" : [{
+          "valueBoolean" : true
+        }]
+      },
+      {
+        "linkId" : "3013",
+        "text" : "Prehospital-SCORE Wert",
+        "answer" : [{
+          "valueInteger" : 25
+        }]
+      },
+      {
+        "linkId" : "30541",
+        "text" : "Zutransport",
+        "answer" : [{
+          "valueCoding" : {
+            "code" : "2",
+            "display" : "Zutransport extern"
+          }
+        }]
+      }]
+    },
+    {
+      "linkId" : "gruppe-zutransport-extern",
+      "text" : "Zutransport extern",
+      "item" : [{
+        "linkId" : "3010",
+        "text" : "Zutransport extern",
+        "answer" : [{
+          "valueCoding" : {
+            "code" : "2",
+            "display" : "Direkt"
+          }
+        }]
+      },
+      {
+        "linkId" : "3020",
+        "text" : "Art Zutransport – direkt",
+        "answer" : [{
+          "valueCoding" : {
+            "code" : "8",
+            "display" : "Rettung mit Notarzt"
+          }
+        }]
+      }]
+    }]
+  },
+  {
+    "linkId" : "gruppe-nih-aufnahme",
+    "text" : "NIH Stroke Scale bei Aufnahme",
+    "item" : [{
+      "linkId" : "4020",
+      "text" : "Gesamtsumme NIH - SS bei Aufnahme",
+      "answer" : [{
+        "valueInteger" : 30
+      }]
+    }]
+  },
+  {
+    "linkId" : "gruppe-rankinskala-aufnahme",
+    "text" : "Rankinskala bei Aufnahme",
+    "item" : [{
+      "linkId" : "6001",
+      "text" : "Rankinskala vor Insult",
+      "answer" : [{
+        "valueInteger" : 1
+      }]
+    },
+    {
+      "linkId" : "6002",
       "text" : "Rankinskala bei Aufnahme",
-      "item" : [
-        {
-          "linkId" : "6001",
-          "text" : "Rankinskala vor Insult",
-          "answer" : [
-            {
-              "valueInteger" : 1
-            }
-          ]
-        },
-        {
-          "linkId" : "6002",
-          "text" : "Rankinskala bei Aufnahme",
-          "answer" : [
-            {
-              "valueInteger" : 2
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "linkId" : "gruppe-syndrom",
+      "answer" : [{
+        "valueInteger" : 2
+      }]
+    }]
+  },
+  {
+    "linkId" : "gruppe-syndrom",
+    "text" : "Syndrom",
+    "item" : [{
+      "linkId" : "7001",
       "text" : "Syndrom",
-      "item" : [
-        {
-          "linkId" : "7001",
-          "text" : "Syndrom",
-          "answer" : [
-            {
-              "valueCoding" : {
-                "code" : "2",
-                "display" : "Primäre intrazerebrale Blutung"
-              }
-            }
-          ]
-        },
-        {
-          "linkId" : "gruppe-lokalisation-icb",
-          "text" : "Lokalisation",
-          "item" : [
-            {
-              "linkId" : "7015",
-              "text" : "Seite primäre intrazerebrale Blutung",
-              "answer" : [
-                {
-                  "valueCoding" : {
-                    "code" : "2",
-                    "display" : "Rechts"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "linkId" : "gruppe-lokalisation-primaere-icb",
-          "text" : "Lokalisation primäre intrazerebrale Blutung",
-          "item" : [
-            {
-              "linkId" : "7022",
-              "text" : "Stammganglien",
-              "answer" : [
-                {
-                  "valueBoolean" : true
-                }
-              ]
-            },
-            {
-              "linkId" : "7023",
-              "text" : "Thalamus",
-              "answer" : [
-                {
-                  "valueBoolean" : false
-                }
-              ]
-            },
-            {
-              "linkId" : "7024",
-              "text" : "Cerebellum",
-              "answer" : [
-                {
-                  "valueBoolean" : true
-                }
-              ]
-            },
-            {
-              "linkId" : "7025",
-              "text" : "Lobär",
-              "answer" : [
-                {
-                  "valueBoolean" : false
-                }
-              ]
-            },
-            {
-              "linkId" : "7026",
-              "text" : "Pons",
-              "answer" : [
-                {
-                  "valueBoolean" : false
-                }
-              ]
-            },
-            {
-              "linkId" : "7027",
-              "text" : "IVH (intraventricular hemorrhage)",
-              "answer" : [
-                {
-                  "valueBoolean" : true
-                }
-              ]
-            },
-            {
-              "linkId" : "7030",
-              "text" : "Wenn IVH: Lokalisation",
-              "answer" : [
-                {
-                  "valueCoding" : {
-                    "code" : "2",
-                    "display" : "3. oder 4. Ventrikel"
-                  }
-                }
-              ]
-            },
-            {
-              "linkId" : "7050",
-              "text" : "GCS bei Aufnahme",
-              "answer" : [
-                {
-                  "valueInteger" : 7
-                }
-              ]
-            },
-            {
-              "linkId" : "7060",
-              "text" : "ICB bei Aufnahme bestimmt",
-              "answer" : [
-                {
-                  "valueBoolean" : true
-                }
-              ]
-            },
-            {
-              "linkId" : "7061",
-              "text" : "Volumen in ml",
-              "answer" : [
-                {
-                  "valueDecimal" : 220
-                }
-              ]
-            },
-            {
-              "linkId" : "7072",
-              "text" : "GRAEB Score",
-              "answer" : [
-                {
-                  "valueInteger" : 8
-                }
-              ]
-            }
-          ]
+      "answer" : [{
+        "valueCoding" : {
+          "code" : "2",
+          "display" : "Primäre intrazerebrale Blutung"
         }
-      ]
+      }]
     },
     {
-      "linkId" : "gruppe-diagnostik",
-      "text" : "Diagnostik",
-      "item" : [
-        {
-          "linkId" : "gruppe-erste-bildgebung",
-          "text" : "Erste Bildgebung",
-          "item" : [
-            {
-              "linkId" : "8888",
-              "text" : "Bildgebende Untersuchung durchgeführt",
-              "answer" : [
-                {
-                  "valueBoolean" : true
-                }
-              ]
-            },
-            {
-              "linkId" : "8000",
-              "text" : "Bereits vor Krankenhausaufnahme durchgeführt",
-              "answer" : [
-                {
-                  "valueBoolean" : false
-                }
-              ]
-            },
-            {
-              "linkId" : "8001",
-              "text" : "Datum",
-              "answer" : [
-                {
-                  "valueDate" : "2025-04-06"
-                }
-              ]
-            },
-            {
-              "linkId" : "8002",
-              "text" : "Uhrzeit CCT",
-              "answer" : [
-                {
-                  "valueTime" : "10:15:00"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "linkId" : "gruppe-bildgebung-verfahren",
-          "text" : "Bildgebendes Verfahren",
-          "item" : [
-            {
-              "linkId" : "8003",
-              "text" : "CCT durchgeführt",
-              "answer" : [
-                {
-                  "valueBoolean" : false
-                }
-              ]
-            },
-            {
-              "linkId" : "8004",
-              "text" : "MRI durchgeführt",
-              "answer" : [
-                {
-                  "valueBoolean" : true
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "linkId" : "gruppe-gefäßdiagnostik-extrakraniell",
-          "text" : "Erste Untersuchung der hirnzuführenden Gefäße (extrakraniell)",
-          "item" : [
-            {
-              "linkId" : "8889",
-              "text" : "Untersuchung der hirnzuführenden Gefäße durchgeführt",
-              "answer" : [
-                {
-                  "valueBoolean" : true
-                }
-              ]
-            },
-            {
-              "linkId" : "8011",
-              "text" : "Bereits vor Krankenhausaufnahme durchgeführt",
-              "answer" : [
-                {
-                  "valueBoolean" : false
-                }
-              ]
-            },
-            {
-              "linkId" : "8009",
-              "text" : "Datum",
-              "answer" : [
-                {
-                  "valueDate" : "2025-04-06"
-                }
-              ]
-            },
-            {
-              "linkId" : "8010",
-              "text" : "Uhrzeit",
-              "answer" : [
-                {
-                  "valueTime" : "12:00:00"
-                }
-              ]
-            },
-            {
-              "linkId" : "8008",
-              "text" : "Sonografie",
-              "answer" : [
-                {
-                  "valueBoolean" : true
-                }
-              ]
-            },
-            {
-              "linkId" : "8013",
-              "text" : "CTA",
-              "answer" : [
-                {
-                  "valueBoolean" : false
-                }
-              ]
-            },
-            {
-              "linkId" : "8006",
-              "text" : "MR-Angio",
-              "answer" : [
-                {
-                  "valueBoolean" : false
-                }
-              ]
-            },
-            {
-              "linkId" : "8030",
-              "text" : "Erste Untersuchung der Hirngefäße",
-              "answer" : [
-                {
-                  "valueCoding" : {
-                    "code" : "1",
-                    "display" : "Sonografie"
-                  }
-                }
-              ]
-            },
-            {
-              "linkId" : "8060",
-              "text" : "Gefäßverschluss (Hauptstamm)",
-              "answer" : [
-                {
-                  "valueBoolean" : true
-                }
-              ]
-            },
-            {
-              "linkId" : "806X",
-              "text" : "Lokalisation des Gefäßverschlusses",
-              "answer" : [
-                {
-                  "valueString" : "Test"
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "linkId" : "gruppe-lokalisation-icb",
+      "text" : "Lokalisation",
+      "item" : [{
+        "linkId" : "7015",
+        "text" : "Seite primäre intrazerebrale Blutung",
+        "answer" : [{
+          "valueCoding" : {
+            "code" : "2",
+            "display" : "Rechts"
+          }
+        }]
+      }]
     },
     {
-      "linkId" : "gruppe-vortherapie",
-      "text" : "Vortherapie bei Aufnahme (Antithrombotische Therapie)",
-      "item" : [
-        {
-          "linkId" : "8070",
-          "text" : "Plättchenhemmer",
-          "answer" : [
-            {
-              "valueCoding" : {
-                "code" : "2",
-                "display" : "Dual"
-              }
-            }
-          ]
-        },
-        {
-          "linkId" : "8075",
-          "text" : "Vitamin K Antagonist",
-          "answer" : [
-            {
-              "valueCoding" : {
-                "code" : "0",
-                "display" : "nein"
-              }
-            }
-          ]
-        },
-        {
-          "linkId" : "8080",
-          "text" : "Apixaban",
-          "answer" : [
-            {
-              "valueCoding" : {
-                "code" : "0",
-                "display" : "nein"
-              }
-            }
-          ]
-        },
-        {
-          "linkId" : "8085",
-          "text" : "Dabigatran",
-          "answer" : [
-            {
-              "valueCoding" : {
-                "code" : "0",
-                "display" : "nein"
-              }
-            }
-          ]
-        },
-        {
-          "linkId" : "8090",
-          "text" : "Edoxaban",
-          "answer" : [
-            {
-              "valueCoding" : {
-                "code" : "1",
-                "display" : "ja"
-              }
-            }
-          ]
-        },
-        {
-          "linkId" : "8095",
-          "text" : "Rivaroxaban",
-          "answer" : [
-            {
-              "valueCoding" : {
-                "code" : "2",
-                "display" : "derzeit pausiert"
-              }
-            }
-          ]
-        }
-      ]
+      "linkId" : "gruppe-lokalisation-primaere-icb",
+      "text" : "Lokalisation primäre intrazerebrale Blutung",
+      "item" : [{
+        "linkId" : "7022",
+        "text" : "Stammganglien",
+        "answer" : [{
+          "valueBoolean" : true
+        }]
+      },
+      {
+        "linkId" : "7023",
+        "text" : "Thalamus",
+        "answer" : [{
+          "valueBoolean" : false
+        }]
+      },
+      {
+        "linkId" : "7024",
+        "text" : "Cerebellum",
+        "answer" : [{
+          "valueBoolean" : true
+        }]
+      },
+      {
+        "linkId" : "7025",
+        "text" : "Lobär",
+        "answer" : [{
+          "valueBoolean" : false
+        }]
+      },
+      {
+        "linkId" : "7026",
+        "text" : "Pons",
+        "answer" : [{
+          "valueBoolean" : false
+        }]
+      },
+      {
+        "linkId" : "7027",
+        "text" : "IVH (intraventricular hemorrhage)",
+        "answer" : [{
+          "valueBoolean" : true
+        }]
+      },
+      {
+        "linkId" : "7030",
+        "text" : "Wenn IVH: Lokalisation",
+        "answer" : [{
+          "valueCoding" : {
+            "code" : "2",
+            "display" : "3. oder 4. Ventrikel"
+          }
+        }]
+      },
+      {
+        "linkId" : "7050",
+        "text" : "GCS bei Aufnahme",
+        "answer" : [{
+          "valueInteger" : 7
+        }]
+      },
+      {
+        "linkId" : "7060",
+        "text" : "ICB bei Aufnahme bestimmt",
+        "answer" : [{
+          "valueBoolean" : true
+        }]
+      },
+      {
+        "linkId" : "7061",
+        "text" : "Volumen in ml",
+        "answer" : [{
+          "valueDecimal" : 220
+        }]
+      },
+      {
+        "linkId" : "7072",
+        "text" : "GRAEB Score",
+        "answer" : [{
+          "valueInteger" : 8
+        }]
+      }]
+    }]
+  },
+  {
+    "linkId" : "gruppe-diagnostik",
+    "text" : "Diagnostik",
+    "item" : [{
+      "linkId" : "gruppe-erste-bildgebung",
+      "text" : "Erste Bildgebung",
+      "item" : [{
+        "linkId" : "8888",
+        "text" : "Bildgebende Untersuchung durchgeführt",
+        "answer" : [{
+          "valueBoolean" : true
+        }]
+      },
+      {
+        "linkId" : "8000",
+        "text" : "Bereits vor Krankenhausaufnahme durchgeführt",
+        "answer" : [{
+          "valueBoolean" : false
+        }]
+      },
+      {
+        "linkId" : "8001",
+        "text" : "Datum",
+        "answer" : [{
+          "valueDate" : "2025-04-06"
+        }]
+      },
+      {
+        "linkId" : "8002",
+        "text" : "Uhrzeit CCT",
+        "answer" : [{
+          "valueTime" : "10:15:00"
+        }]
+      }]
     },
     {
-      "linkId" : "gruppe-risikofaktoren",
-      "text" : "Risikofaktoren und Begleiterkrankungen",
-      "item" : [
-        {
-          "linkId" : "9001",
-          "text" : "Hypertonie",
-          "answer" : [
-            {
-              "valueCoding" : {
-                "code" : "1",
-                "display" : "ja"
-              }
-            }
-          ]
-        },
-        {
-          "linkId" : "9002",
-          "text" : "Diabetes mellitus",
-          "answer" : [
-            {
-              "valueCoding" : {
-                "code" : "1",
-                "display" : "ja"
-              }
-            }
-          ]
-        },
-        {
-          "linkId" : "9003",
-          "text" : "Vorinsult",
-          "answer" : [
-            {
-              "valueCoding" : {
-                "code" : "2",
-                "display" : "unbekannt"
-              }
-            }
-          ]
-        },
-        {
-          "linkId" : "9004",
-          "text" : "Herzinfarkt",
-          "answer" : [
-            {
-              "valueCoding" : {
-                "code" : "0",
-                "display" : "nein"
-              }
-            }
-          ]
-        },
-        {
-          "linkId" : "9005",
-          "text" : "Hypercholesterinämie",
-          "answer" : [
-            {
-              "valueCoding" : {
-                "code" : "0",
-                "display" : "nein"
-              }
-            }
-          ]
-        },
-        {
-          "linkId" : "9006",
-          "text" : "Vorhofflimmern",
-          "answer" : [
-            {
-              "valueCoding" : {
-                "code" : "0",
-                "display" : "nein"
-              }
-            }
-          ]
-        },
-        {
-          "linkId" : "9009",
-          "text" : "Nikotin",
-          "answer" : [
-            {
-              "valueCoding" : {
-                "code" : "2",
-                "display" : "unbekannt"
-              }
-            }
-          ]
-        },
-        {
-          "linkId" : "9012",
-          "text" : "Alkohol",
-          "answer" : [
-            {
-              "valueCoding" : {
-                "code" : "1",
-                "display" : "ja"
-              }
-            }
-          ]
-        },
-        {
-          "linkId" : "9013",
-          "text" : "Niereninsuffizienz",
-          "answer" : [
-            {
-              "valueCoding" : {
-                "code" : "0",
-                "display" : "nein"
-              }
-            }
-          ]
-        }
-      ]
+      "linkId" : "gruppe-bildgebung-verfahren",
+      "text" : "Bildgebendes Verfahren",
+      "item" : [{
+        "linkId" : "8003",
+        "text" : "CCT durchgeführt",
+        "answer" : [{
+          "valueBoolean" : false
+        }]
+      },
+      {
+        "linkId" : "8004",
+        "text" : "MRI durchgeführt",
+        "answer" : [{
+          "valueBoolean" : true
+        }]
+      }]
     },
     {
-      "linkId" : "gruppe-therapie-ischämisch",
-      "text" : "Therapie ischämischer Schlaganfall",
-      "item" : [
-        {
-          "linkId" : "10001",
-          "text" : "Lyse i.v.",
-          "answer" : [
-            {
-              "valueCoding" : {
-                "code" : "1",
-                "display" : "ja"
-              }
-            }
-          ]
-        },
-        {
-          "linkId" : "10002",
-          "text" : "Art der Thrombolyse",
-          "answer" : [
-            {
-              "valueCoding" : {
-                "code" : "2",
-                "display" : "Tenecteplase"
-              }
-            }
-          ]
-        },
-        {
-          "linkId" : "10040",
-          "text" : "Datum Lyse i.v.",
-          "answer" : [
-            {
-              "valueDate" : "2025-04-06"
-            }
-          ]
-        },
-        {
-          "linkId" : "10041",
-          "text" : "Uhrzeit Lyse i.v.",
-          "answer" : [
-            {
-              "valueTime" : "15:25:00"
-            }
-          ]
-        },
-        {
-          "linkId" : "10090",
-          "text" : "Akute endovaskuläre Behandlung",
-          "answer" : [
-            {
-              "valueBoolean" : true
-            }
-          ]
-        },
-        {
-          "linkId" : "10005",
-          "text" : "Thrombozytenaggregationshemmer",
-          "answer" : [
-            {
-              "valueCoding" : {
-                "code" : "3",
-                "display" : "Dual"
-              }
-            }
-          ]
-        },
-        {
-          "linkId" : "10091",
-          "text" : "Heparin",
-          "answer" : [
-            {
-              "valueCoding" : {
-                "code" : "2",
-                "display" : "Low"
-              }
-            }
-          ]
-        },
-        {
-          "linkId" : "10092",
-          "text" : "PTA/Stent der ACI",
-          "answer" : [
-            {
-              "valueCoding" : {
-                "code" : "1",
-                "display" : "ja"
-              }
-            }
-          ]
-        },
-        {
-          "linkId" : "10093",
-          "text" : "CEA",
-          "answer" : [
-            {
-              "valueCoding" : {
-                "code" : "2",
-                "display" : "vorgesehen"
-              }
-            }
-          ]
+      "linkId" : "gruppe-gefäßdiagnostik-extrakraniell",
+      "text" : "Erste Untersuchung der hirnzuführenden Gefäße (extrakraniell)",
+      "item" : [{
+        "linkId" : "8889",
+        "text" : "Untersuchung der hirnzuführenden Gefäße durchgeführt",
+        "answer" : [{
+          "valueBoolean" : true
+        }]
+      },
+      {
+        "linkId" : "8011",
+        "text" : "Bereits vor Krankenhausaufnahme durchgeführt",
+        "answer" : [{
+          "valueBoolean" : false
+        }]
+      },
+      {
+        "linkId" : "8009",
+        "text" : "Datum",
+        "answer" : [{
+          "valueDate" : "2025-04-06"
+        }]
+      },
+      {
+        "linkId" : "8010",
+        "text" : "Uhrzeit",
+        "answer" : [{
+          "valueTime" : "12:00:00"
+        }]
+      },
+      {
+        "linkId" : "8008",
+        "text" : "Sonografie",
+        "answer" : [{
+          "valueBoolean" : true
+        }]
+      },
+      {
+        "linkId" : "8013",
+        "text" : "CTA",
+        "answer" : [{
+          "valueBoolean" : false
+        }]
+      },
+      {
+        "linkId" : "8006",
+        "text" : "MR-Angio",
+        "answer" : [{
+          "valueBoolean" : false
+        }]
+      },
+      {
+        "linkId" : "8030",
+        "text" : "Erste Untersuchung der Hirngefäße",
+        "answer" : [{
+          "valueCoding" : {
+            "code" : "1",
+            "display" : "Sonografie"
+          }
+        }]
+      },
+      {
+        "linkId" : "8060",
+        "text" : "Gefäßverschluss (Hauptstamm)",
+        "answer" : [{
+          "valueBoolean" : true
+        }]
+      },
+      {
+        "linkId" : "806X",
+        "text" : "Lokalisation des Gefäßverschlusses",
+        "answer" : [{
+          "valueString" : "Test"
+        }]
+      }]
+    }]
+  },
+  {
+    "linkId" : "gruppe-vortherapie",
+    "text" : "Vortherapie bei Aufnahme (Antithrombotische Therapie)",
+    "item" : [{
+      "linkId" : "8070",
+      "text" : "Plättchenhemmer",
+      "answer" : [{
+        "valueCoding" : {
+          "code" : "2",
+          "display" : "Dual"
         }
-      ]
+      }]
     },
     {
-      "linkId" : "gruppe-therapie-icb",
-      "text" : "Therapie intrazerebrale Blutung",
-      "item" : [
-        {
-          "linkId" : "10060",
-          "text" : "Externe Ventrikel-Drainage",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        },
-        {
-          "linkId" : "10061",
-          "text" : "Lumbale Drainage",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        },
-        {
-          "linkId" : "10062",
-          "text" : "Intraventrikuläre Lyse",
-          "answer" : [
-            {
-              "valueBoolean" : true
-            }
-          ]
-        },
-        {
-          "linkId" : "10063",
-          "text" : "Operative Ausräumung",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        },
-        {
-          "linkId" : "10064",
-          "text" : "Hypothermie",
-          "answer" : [
-            {
-              "valueBoolean" : true
-            }
-          ]
+      "linkId" : "8075",
+      "text" : "Vitamin K Antagonist",
+      "answer" : [{
+        "valueCoding" : {
+          "code" : "0",
+          "display" : "nein"
         }
-      ]
-    }
-  ]
+      }]
+    },
+    {
+      "linkId" : "8080",
+      "text" : "Apixaban",
+      "answer" : [{
+        "valueCoding" : {
+          "code" : "0",
+          "display" : "nein"
+        }
+      }]
+    },
+    {
+      "linkId" : "8085",
+      "text" : "Dabigatran",
+      "answer" : [{
+        "valueCoding" : {
+          "code" : "0",
+          "display" : "nein"
+        }
+      }]
+    },
+    {
+      "linkId" : "8090",
+      "text" : "Edoxaban",
+      "answer" : [{
+        "valueCoding" : {
+          "code" : "1",
+          "display" : "ja"
+        }
+      }]
+    },
+    {
+      "linkId" : "8095",
+      "text" : "Rivaroxaban",
+      "answer" : [{
+        "valueCoding" : {
+          "code" : "2",
+          "display" : "derzeit pausiert"
+        }
+      }]
+    }]
+  },
+  {
+    "linkId" : "gruppe-risikofaktoren",
+    "text" : "Risikofaktoren und Begleiterkrankungen",
+    "item" : [{
+      "linkId" : "9001",
+      "text" : "Hypertonie",
+      "answer" : [{
+        "valueCoding" : {
+          "code" : "1",
+          "display" : "ja"
+        }
+      }]
+    },
+    {
+      "linkId" : "9002",
+      "text" : "Diabetes mellitus",
+      "answer" : [{
+        "valueCoding" : {
+          "code" : "1",
+          "display" : "ja"
+        }
+      }]
+    },
+    {
+      "linkId" : "9003",
+      "text" : "Vorinsult",
+      "answer" : [{
+        "valueCoding" : {
+          "code" : "2",
+          "display" : "unbekannt"
+        }
+      }]
+    },
+    {
+      "linkId" : "9004",
+      "text" : "Herzinfarkt",
+      "answer" : [{
+        "valueCoding" : {
+          "code" : "0",
+          "display" : "nein"
+        }
+      }]
+    },
+    {
+      "linkId" : "9005",
+      "text" : "Hypercholesterinämie",
+      "answer" : [{
+        "valueCoding" : {
+          "code" : "0",
+          "display" : "nein"
+        }
+      }]
+    },
+    {
+      "linkId" : "9006",
+      "text" : "Vorhofflimmern",
+      "answer" : [{
+        "valueCoding" : {
+          "code" : "0",
+          "display" : "nein"
+        }
+      }]
+    },
+    {
+      "linkId" : "9009",
+      "text" : "Nikotin",
+      "answer" : [{
+        "valueCoding" : {
+          "code" : "2",
+          "display" : "unbekannt"
+        }
+      }]
+    },
+    {
+      "linkId" : "9012",
+      "text" : "Alkohol",
+      "answer" : [{
+        "valueCoding" : {
+          "code" : "1",
+          "display" : "ja"
+        }
+      }]
+    },
+    {
+      "linkId" : "9013",
+      "text" : "Niereninsuffizienz",
+      "answer" : [{
+        "valueCoding" : {
+          "code" : "0",
+          "display" : "nein"
+        }
+      }]
+    }]
+  },
+  {
+    "linkId" : "gruppe-therapie-ischämisch",
+    "text" : "Therapie ischämischer Schlaganfall",
+    "item" : [{
+      "linkId" : "10001",
+      "text" : "Lyse i.v.",
+      "answer" : [{
+        "valueCoding" : {
+          "code" : "1",
+          "display" : "ja"
+        }
+      }]
+    },
+    {
+      "linkId" : "10002",
+      "text" : "Art der Thrombolyse",
+      "answer" : [{
+        "valueCoding" : {
+          "code" : "2",
+          "display" : "Tenecteplase"
+        }
+      }]
+    },
+    {
+      "linkId" : "10040",
+      "text" : "Datum Lyse i.v.",
+      "answer" : [{
+        "valueDate" : "2025-04-06"
+      }]
+    },
+    {
+      "linkId" : "10041",
+      "text" : "Uhrzeit Lyse i.v.",
+      "answer" : [{
+        "valueTime" : "15:25:00"
+      }]
+    },
+    {
+      "linkId" : "10090",
+      "text" : "Akute endovaskuläre Behandlung",
+      "answer" : [{
+        "valueBoolean" : true
+      }]
+    },
+    {
+      "linkId" : "10005",
+      "text" : "Thrombozytenaggregationshemmer",
+      "answer" : [{
+        "valueCoding" : {
+          "code" : "3",
+          "display" : "Dual"
+        }
+      }]
+    },
+    {
+      "linkId" : "10091",
+      "text" : "Heparin",
+      "answer" : [{
+        "valueCoding" : {
+          "code" : "2",
+          "display" : "Low"
+        }
+      }]
+    },
+    {
+      "linkId" : "10092",
+      "text" : "PTA/Stent der ACI",
+      "answer" : [{
+        "valueCoding" : {
+          "code" : "1",
+          "display" : "ja"
+        }
+      }]
+    },
+    {
+      "linkId" : "10093",
+      "text" : "CEA",
+      "answer" : [{
+        "valueCoding" : {
+          "code" : "2",
+          "display" : "vorgesehen"
+        }
+      }]
+    }]
+  },
+  {
+    "linkId" : "gruppe-therapie-icb",
+    "text" : "Therapie intrazerebrale Blutung",
+    "item" : [{
+      "linkId" : "10060",
+      "text" : "Externe Ventrikel-Drainage",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
+    },
+    {
+      "linkId" : "10061",
+      "text" : "Lumbale Drainage",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
+    },
+    {
+      "linkId" : "10062",
+      "text" : "Intraventrikuläre Lyse",
+      "answer" : [{
+        "valueBoolean" : true
+      }]
+    },
+    {
+      "linkId" : "10063",
+      "text" : "Operative Ausräumung",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
+    },
+    {
+      "linkId" : "10064",
+      "text" : "Hypothermie",
+      "answer" : [{
+        "valueBoolean" : true
+      }]
+    }]
+  }]
 }
 
 ```

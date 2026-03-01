@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/FondsrelevanzCS | *Version*:0.1.0 | |
-| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:FondsrelevanzCS |
+| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:FondsrelevanzCS |
 
  
 CodeSystem für die Fondsrelevanz 
@@ -32,37 +32,31 @@ CodeSystem für die Fondsrelevanz
   "title" : "Fondsrelevanz",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "CodeSystem für die Fondsrelevanz",
   "caseSensitive" : true,
   "content" : "complete",
   "count" : 3,
-  "concept" : [
-    {
-      "code" : "J",
-      "display" : "Ja (Abrechnung des stationären Aufenthalts/ambulanten Besuchs erfolgt über den Landesgesundheitsfonds/PRIKRAF)"
-    },
-    {
-      "code" : "K",
-      "display" : "Nein (Abrechnung des stationären Aufenthalts/ambulanten Besuchs erfolgt über den Sozialversicherungsträger)"
-    },
-    {
-      "code" : "N",
-      "display" : "Nein (Abrechnung des stationären Aufenthalts/ambulanten Besuchs erfolgt weder über den Landesgesundheitsfonds/PRIKRAF noch über den Sozialversicherungsträger)"
-    }
-  ]
+  "concept" : [{
+    "code" : "J",
+    "display" : "Ja (Abrechnung des stationären Aufenthalts/ambulanten Besuchs erfolgt über den Landesgesundheitsfonds/PRIKRAF)"
+  },
+  {
+    "code" : "K",
+    "display" : "Nein (Abrechnung des stationären Aufenthalts/ambulanten Besuchs erfolgt über den Sozialversicherungsträger)"
+  },
+  {
+    "code" : "N",
+    "display" : "Nein (Abrechnung des stationären Aufenthalts/ambulanten Besuchs erfolgt weder über den Landesgesundheitsfonds/PRIKRAF noch über den Sozialversicherungsträger)"
+  }]
 }
 
 ```

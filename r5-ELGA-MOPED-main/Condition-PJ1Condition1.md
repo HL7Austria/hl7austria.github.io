@@ -31,54 +31,42 @@ Profile: [MOPED Condition](StructureDefinition-MopedCondition.md)
   "meta" : {
     "profile" : ["https://elga.moped.at/StructureDefinition/MopedCondition"]
   },
-  "extension" : [
-    {
-      "url" : "https://elga.moped.at/StructureDefinition/moped-ext-Diagnosetyp",
-      "valueCodeableConcept" : {
-        "coding" : [
-          {
-            "system" : "https://TBD.at/CodeSystem/LKFDiagnoseTypCS",
-            "code" : "A"
-          }
-        ]
-      }
+  "extension" : [{
+    "url" : "https://elga.moped.at/StructureDefinition/moped-ext-Diagnosetyp",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://TBD.at/CodeSystem/LKFDiagnoseTypCS",
+        "code" : "A"
+      }]
     }
-  ],
+  }],
   "clinicalStatus" : {
-    "extension" : [
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-        "valueCode" : "not-asked"
-      }
-    ],
-    "coding" : [
-      {
-        "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
-        "code" : "unknown"
-      }
-    ]
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+      "valueCode" : "not-asked"
+    }],
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+      "code" : "unknown"
+    }]
   },
   "verificationStatus" : {
-    "coding" : [
-      {
-        "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-        "code" : "confirmed"
-      }
-    ]
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+      "code" : "confirmed"
+    }]
   },
   "code" : {
-    "coding" : [
-      {
-        "system" : "https://termgit.elga.gv.at/CodeSystem/icd-10-bmsgpk-2025",
-        "code" : "G47.3",
-        "display" : "Schlafapnoe"
-      },
-      {
-        "system" : "https://elga.moped.at/CodeSystem/LKFHauptdiagnosegruppenCS",
-        "code" : "HDG01.31",
-        "display" : "Sonstige Erkrankungen - Nervensystem"
-      }
-    ]
+    "coding" : [{
+      "system" : "https://termgit.elga.gv.at/CodeSystem/icd-10-bmsgpk-2025",
+      "code" : "G47.3",
+      "display" : "Schlafapnoe"
+    },
+    {
+      "system" : "https://elga.moped.at/CodeSystem/LKFHauptdiagnosegruppenCS",
+      "code" : "HDG01.31",
+      "display" : "Sonstige Erkrankungen - Nervensystem"
+    }]
   },
   "subject" : {
     "reference" : "Patient/PJ1Patient"

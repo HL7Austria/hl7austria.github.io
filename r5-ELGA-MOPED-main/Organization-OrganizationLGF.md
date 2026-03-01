@@ -29,16 +29,12 @@ Profile: [LGF Organization](StructureDefinition-LGFOrganization.md)
     "profile" : ["https://elga.moped.at/StructureDefinition/LGFOrganization"]
   },
   "name" : "Wiener Gesundheitsfonds (WGF)",
-  "contact" : [
-    {
-      "telecom" : [
-        {
-          "system" : "email",
-          "value" : "wiener.gesundheitsfonds@wien.gv.at"
-        }
-      ]
-    }
-  ]
+  "contact" : [{
+    "telecom" : [{
+      "system" : "email",
+      "value" : "wiener.gesundheitsfonds@wien.gv.at"
+    }]
+  }]
 }
 
 ```

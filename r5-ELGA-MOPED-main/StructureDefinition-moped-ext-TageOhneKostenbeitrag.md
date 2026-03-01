@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/moped-ext-TageOhneKostenbeitrag | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:TageOhneKostenbeitrag |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:TageOhneKostenbeitrag |
 
 Anzahl der Tage, für welche kein Kostenbeitrag seitens der Krankenanstalt eingehoben wurde
 
@@ -41,88 +41,74 @@ Other representations of profile: [CSV](StructureDefinition-moped-ext-TageOhneKo
 {
   "resourceType" : "StructureDefinition",
   "id" : "moped-ext-TageOhneKostenbeitrag",
-  "extension" : [
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
-      "valueCode" : "can-bind"
-    }
-  ],
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+    "valueCode" : "can-bind"
+  }],
   "url" : "https://elga.moped.at/StructureDefinition/moped-ext-TageOhneKostenbeitrag",
   "version" : "0.1.0",
   "name" : "TageOhneKostenbeitrag",
   "title" : "Tage ohne Einhebung des Kostenbeitrags",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "Anzahl der Tage, für welche kein Kostenbeitrag seitens der Krankenanstalt eingehoben wurde",
   "fhirVersion" : "5.0.0",
   "kind" : "complex-type",
   "abstract" : false,
-  "context" : [
-    {
-      "type" : "element",
-      "expression" : "https://elga.moped.at/StructureDefinition/MopedComposition#Composition"
-    }
-  ],
+  "context" : [{
+    "type" : "element",
+    "expression" : "https://elga.moped.at/StructureDefinition/MopedComposition#Composition"
+  }],
   "type" : "Extension",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Extension",
-        "path" : "Extension",
-        "short" : "Tage ohne Einhebung des Kostenbeitrags",
-        "definition" : "Anzahl der Tage, für welche kein Kostenbeitrag seitens der Krankenanstalt eingehoben wurde"
-      },
-      {
-        "id" : "Extension.extension",
-        "path" : "Extension.extension",
-        "max" : "0"
-      },
-      {
-        "id" : "Extension.url",
-        "path" : "Extension.url",
-        "fixedUri" : "https://elga.moped.at/StructureDefinition/moped-ext-TageOhneKostenbeitrag"
-      },
-      {
-        "id" : "Extension.value[x]",
-        "path" : "Extension.value[x]",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "type",
-              "path" : "$this"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
-        }
-      },
-      {
-        "id" : "Extension.value[x]:valueUnsignedInt",
-        "path" : "Extension.value[x]",
-        "sliceName" : "valueUnsignedInt",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "unsignedInt"
-          }
-        ]
+    "element" : [{
+      "id" : "Extension",
+      "path" : "Extension",
+      "short" : "Tage ohne Einhebung des Kostenbeitrags",
+      "definition" : "Anzahl der Tage, für welche kein Kostenbeitrag seitens der Krankenanstalt eingehoben wurde"
+    },
+    {
+      "id" : "Extension.extension",
+      "path" : "Extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.url",
+      "path" : "Extension.url",
+      "fixedUri" : "https://elga.moped.at/StructureDefinition/moped-ext-TageOhneKostenbeitrag"
+    },
+    {
+      "id" : "Extension.value[x]",
+      "path" : "Extension.value[x]",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "type",
+          "path" : "$this"
+        }],
+        "ordered" : false,
+        "rules" : "open"
       }
-    ]
+    },
+    {
+      "id" : "Extension.value[x]:valueUnsignedInt",
+      "path" : "Extension.value[x]",
+      "sliceName" : "valueUnsignedInt",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "unsignedInt"
+      }]
+    }]
   }
 }
 

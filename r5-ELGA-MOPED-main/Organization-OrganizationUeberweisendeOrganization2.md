@@ -8,7 +8,7 @@
 
 Profile: [HL7® AT Core Organization Profile](https://build.fhir.org/ig/HL7Austria/HL7-AT-FHIR-Core-R5/StructureDefinition-at-core-organization.html)
 
-**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/7.0.0/NamingSystem-uri.html)/urn:oid:1.3.6.1.4.1.36122.tbd.234
+**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/7.0.1/NamingSystem-uri.html)/urn:oid:1.3.6.1.4.1.36122.tbd.234
 
 **name**: HJK Interne Ambulanz
 
@@ -28,27 +28,21 @@ Profile: [HL7® AT Core Organization Profile](https://build.fhir.org/ig/HL7Austr
   "resourceType" : "Organization",
   "id" : "OrganizationUeberweisendeOrganization2",
   "meta" : {
-    "profile" : [
-      "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-organization"
-    ]
+    "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-organization"]
   },
-  "identifier" : [
-    {
-      "system" : "urn:ietf:rfc:3986",
-      "value" : "urn:oid:1.3.6.1.4.1.36122.tbd.234"
-    }
-  ],
+  "identifier" : [{
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:oid:1.3.6.1.4.1.36122.tbd.234"
+  }],
   "name" : "HJK Interne Ambulanz",
-  "contact" : [
-    {
-      "address" : {
-        "city" : "Wien",
-        "state" : "Wien",
-        "postalCode" : "1030",
-        "country" : "AUT"
-      }
+  "contact" : [{
+    "address" : {
+      "city" : "Wien",
+      "state" : "Wien",
+      "postalCode" : "1030",
+      "country" : "AUT"
     }
-  ]
+  }]
 }
 
 ```

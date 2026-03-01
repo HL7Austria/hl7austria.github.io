@@ -29,16 +29,12 @@
   "participatingOrganization" : {
     "reference" : "Organization/OrganizationHerzJesuKrankenhaus"
   },
-  "code" : [
-    {
-      "coding" : [
-        {
-          "system" : "http://hl7.org/fhir/organization-role",
-          "code" : "provider"
-        }
-      ]
-    }
-  ]
+  "code" : [{
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/organization-role",
+      "code" : "provider"
+    }]
+  }]
 }
 
 ```

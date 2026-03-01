@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/SVOrganization | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:SVOrganization |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:SVOrganization |
 
  
 MOPED Profil für SV Organizations 
@@ -42,53 +42,43 @@ Other representations of profile: [CSV](StructureDefinition-SVOrganization.csv),
   "name" : "SVOrganization",
   "title" : "SV Organization",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "MOPED Profil für SV Organizations",
   "fhirVersion" : "5.0.0",
-  "mapping" : [
-    {
-      "identity" : "servd",
-      "uri" : "http://www.omg.org/spec/ServD/1.0/",
-      "name" : "ServD"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "servd",
+    "uri" : "http://www.omg.org/spec/ServD/1.0/",
+    "name" : "ServD"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Organization",
   "baseDefinition" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-organization",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Organization",
-        "path" : "Organization"
-      },
-      {
-        "id" : "Organization.type",
-        "path" : "Organization.type",
-        "patternCodeableConcept" : {
-          "coding" : [
-            {
-              "system" : "https://termgit.elga.gv.at/CodeSystem/elga-gtelvogdarollen",
-              "code" : "406",
-              "display" : "Sozialversicherung"
-            }
-          ]
-        }
+    "element" : [{
+      "id" : "Organization",
+      "path" : "Organization"
+    },
+    {
+      "id" : "Organization.type",
+      "path" : "Organization.type",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://termgit.elga.gv.at/CodeSystem/elga-gtelvogdarollen",
+          "code" : "406",
+          "display" : "Sozialversicherung"
+        }]
       }
-    ]
+    }]
   }
 }
 

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/OperationDefinition/MOPED.ClaimResponse.Entscheiden | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_ClaimResponse_Entscheiden |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_ClaimResponse_Entscheiden |
 
  
 Die $entscheiden Operation wird aufgerufen, wenn eine Abrechnung beantwortet wird und freigegeben wird. 
@@ -61,19 +61,15 @@ Die Operation wird vom Akteur Landesgesundheitsfonds (LFG) aufgerufen. Die $ents
   "title" : "MOPED ClaimResponse $entscheiden",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "Die $entscheiden Operation wird aufgerufen, wenn eine Abrechnung beantwortet wird und freigegeben wird.",
   "affectsState" : true,
   "code" : "entscheiden",
@@ -81,28 +77,24 @@ Die Operation wird vom Akteur Landesgesundheitsfonds (LFG) aufgerufen. Die $ents
   "system" : false,
   "type" : false,
   "instance" : true,
-  "parameter" : [
-    {
-      "name" : "Entscheidung",
-      "use" : "in",
-      "min" : 1,
-      "max" : "1",
-      "documentation" : "Der *Entscheidung* Parameter beinhaltet ein Bundle mit sämtliche Details zur Antwort auf den Claim.",
-      "type" : "Bundle",
-      "targetProfile" : [
-        "https://elga.moped.at/StructureDefinition/MopedEntscheidenLGFBundle"
-      ]
-    },
-    {
-      "name" : "return",
-      "use" : "out",
-      "min" : 1,
-      "max" : "1",
-      "documentation" : "Der *return* Parameter gibt Auskunft über den Erfolg der Operation.",
-      "type" : "Resource",
-      "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/OperationOutcome"]
-    }
-  ]
+  "parameter" : [{
+    "name" : "Entscheidung",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *Entscheidung* Parameter beinhaltet ein Bundle mit sämtliche Details zur Antwort auf den Claim.",
+    "type" : "Bundle",
+    "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedEntscheidenLGFBundle"]
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *return* Parameter gibt Auskunft über den Erfolg der Operation.",
+    "type" : "Resource",
+    "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/OperationOutcome"]
+  }]
 }
 
 ```

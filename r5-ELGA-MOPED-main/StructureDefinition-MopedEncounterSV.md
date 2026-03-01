@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedEncounterSV | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounterSV |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounterSV |
 
  
 MOPED Profil der Encounter Ressource für die Rolle: SV 
@@ -41,73 +41,65 @@ Other representations of profile: [CSV](StructureDefinition-MopedEncounterSV.csv
   "name" : "MopedEncounterSV",
   "title" : "MOPED Encounter SV",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "MOPED Profil der Encounter Ressource für die Rolle: SV",
   "fhirVersion" : "5.0.0",
-  "mapping" : [
-    {
-      "identity" : "LKF",
-      "uri" : "https://elga.moped.at/mapping/LKF",
-      "name" : "LKF"
-    },
-    {
-      "identity" : "KaOrg",
-      "uri" : "https://elga.moped.at/mapping/KaOrg",
-      "name" : "KaOrg"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "LKF",
+    "uri" : "https://elga.moped.at/mapping/LKF",
+    "name" : "LKF"
+  },
+  {
+    "identity" : "KaOrg",
+    "uri" : "https://elga.moped.at/mapping/KaOrg",
+    "name" : "KaOrg"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Encounter",
   "baseDefinition" : "https://elga.moped.at/StructureDefinition/MopedEncounter",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Encounter",
-        "path" : "Encounter"
-      },
-      {
-        "id" : "Encounter.identifier:DatensatzID",
-        "path" : "Encounter.identifier",
-        "sliceName" : "DatensatzID",
-        "max" : "0"
-      },
-      {
-        "id" : "Encounter.class:Aufnahmeart2",
-        "path" : "Encounter.class",
-        "sliceName" : "Aufnahmeart2",
-        "max" : "0"
-      },
-      {
-        "id" : "Encounter.diagnosis.use",
-        "path" : "Encounter.diagnosis.use",
-        "max" : "0"
-      },
-      {
-        "id" : "Encounter.admission.extension:Transportart",
-        "path" : "Encounter.admission.extension",
-        "sliceName" : "Transportart",
-        "max" : "0"
-      },
-      {
-        "id" : "Encounter.admission.destination",
-        "path" : "Encounter.admission.destination",
-        "max" : "0"
-      }
-    ]
+    "element" : [{
+      "id" : "Encounter",
+      "path" : "Encounter"
+    },
+    {
+      "id" : "Encounter.identifier:DatensatzID",
+      "path" : "Encounter.identifier",
+      "sliceName" : "DatensatzID",
+      "max" : "0"
+    },
+    {
+      "id" : "Encounter.class:Aufnahmeart2",
+      "path" : "Encounter.class",
+      "sliceName" : "Aufnahmeart2",
+      "max" : "0"
+    },
+    {
+      "id" : "Encounter.diagnosis.use",
+      "path" : "Encounter.diagnosis.use",
+      "max" : "0"
+    },
+    {
+      "id" : "Encounter.admission.extension:Transportart",
+      "path" : "Encounter.admission.extension",
+      "sliceName" : "Transportart",
+      "max" : "0"
+    },
+    {
+      "id" : "Encounter.admission.destination",
+      "path" : "Encounter.admission.destination",
+      "max" : "0"
+    }]
   }
 }
 

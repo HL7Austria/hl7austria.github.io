@@ -40,127 +40,93 @@ Profile: [MOPED Aufnahme Composition](StructureDefinition-MopedAufnahmeCompositi
   "resourceType" : "Composition",
   "id" : "PJ1CompositionAufnehmen",
   "meta" : {
-    "profile" : [
-      "https://elga.moped.at/StructureDefinition/MopedAufnahmeComposition"
-    ]
+    "profile" : ["https://elga.moped.at/StructureDefinition/MopedAufnahmeComposition"]
   },
-  "extension" : [
-    {
-      "url" : "https://elga.moped.at/StructureDefinition/moped-ext-AnzahlVerlegungen",
-      "valueUnsignedInt" : 1
-    },
-    {
-      "url" : "https://elga.moped.at/StructureDefinition/moped-ext-AnzahlBeurlaubungen",
-      "valueUnsignedInt" : 0
-    }
-  ],
+  "extension" : [{
+    "url" : "https://elga.moped.at/StructureDefinition/moped-ext-AnzahlVerlegungen",
+    "valueUnsignedInt" : 1
+  },
+  {
+    "url" : "https://elga.moped.at/StructureDefinition/moped-ext-AnzahlBeurlaubungen",
+    "valueUnsignedInt" : 0
+  }],
   "status" : "partial",
   "type" : {
-    "coding" : [
-      {
-        "system" : "http://loinc.org",
-        "code" : "34133-9"
-      }
-    ]
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "34133-9"
+    }]
   },
-  "subject" : [
-    {
-      "reference" : "Patient/PJ1Patient"
-    }
-  ],
+  "subject" : [{
+    "reference" : "Patient/PJ1Patient"
+  }],
   "encounter" : {
     "reference" : "Encounter/PJ1EncounterAufnahme"
   },
   "date" : "2025-03-31",
-  "useContext" : [
-    {
-      "code" : {
-        "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
-        "code" : "workflow"
-      },
-      "valueCodeableConcept" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/WorkflowStatusCS",
-            "code" : "Aufnahme-freigegeben"
-          }
-        ]
-      }
+  "useContext" : [{
+    "code" : {
+      "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code" : "workflow"
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/WorkflowStatusCS",
+        "code" : "Aufnahme-freigegeben"
+      }]
     }
-  ],
-  "author" : [
-    {
-      "reference" : "Organization/OrganizationHerzJesuKrankenhaus"
-    }
-  ],
+  }],
+  "author" : [{
+    "reference" : "Organization/OrganizationHerzJesuKrankenhaus"
+  }],
   "title" : "PJ1CompositionNachAufnehmen",
-  "section" : [
-    {
-      "code" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/CompositionSectionsCS",
-            "code" : "SV"
-          }
-        ]
-      },
-      "entry" : [
-        {
-          "reference" : "Organization/SV11"
-        }
-      ]
+  "section" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/CompositionSectionsCS",
+        "code" : "SV"
+      }]
     },
-    {
-      "code" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/CompositionSectionsCS",
-            "code" : "LGF"
-          }
-        ]
-      },
-      "entry" : [
-        {
-          "reference" : "Organization/OrganizationLGF"
-        }
-      ]
+    "entry" : [{
+      "reference" : "Organization/SV11"
+    }]
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/CompositionSectionsCS",
+        "code" : "LGF"
+      }]
     },
-    {
-      "code" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/CompositionSectionsCS",
-            "code" : "KH"
-          }
-        ]
-      },
-      "entry" : [
-        {
-          "reference" : "Organization/OrganizationHerzJesuKrankenhaus"
-        }
-      ]
+    "entry" : [{
+      "reference" : "Organization/OrganizationLGF"
+    }]
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/CompositionSectionsCS",
+        "code" : "KH"
+      }]
     },
-    {
-      "code" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/CompositionSectionsCS",
-            "code" : "DIAG"
-          }
-        ]
-      },
-      "author" : [
-        {
-          "reference" : "Organization/OrganizationHerzJesuKrankenhaus"
-        }
-      ],
-      "entry" : [
-        {
-          "reference" : "Condition/PJ1Condition1"
-        }
-      ]
-    }
-  ]
+    "entry" : [{
+      "reference" : "Organization/OrganizationHerzJesuKrankenhaus"
+    }]
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/CompositionSectionsCS",
+        "code" : "DIAG"
+      }]
+    },
+    "author" : [{
+      "reference" : "Organization/OrganizationHerzJesuKrankenhaus"
+    }],
+    "entry" : [{
+      "reference" : "Condition/PJ1Condition1"
+    }]
+  }]
 }
 
 ```

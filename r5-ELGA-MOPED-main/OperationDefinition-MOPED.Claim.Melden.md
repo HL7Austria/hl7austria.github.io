@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/OperationDefinition/MOPED.Claim.Melden | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_Claim_Melden |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_Claim_Melden |
 
  
 Die $melden Operation wird aufgerufen, wenn eine Kosteninformation an die SV gemeldet werden soll. 
@@ -58,19 +58,15 @@ Die Punkte des ARKRequest und des referenzierten **MopedARKRequest.related.claim
   "title" : "MOPED Kosteninformation $melden",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "Die $melden Operation wird aufgerufen, wenn eine Kosteninformation an die SV gemeldet werden soll.",
   "affectsState" : true,
   "code" : "melden",
@@ -78,28 +74,24 @@ Die Punkte des ARKRequest und des referenzierten **MopedARKRequest.related.claim
   "system" : false,
   "type" : false,
   "instance" : true,
-  "parameter" : [
-    {
-      "name" : "Kosteninformation",
-      "use" : "in",
-      "min" : 1,
-      "max" : "1",
-      "documentation" : "Der *Kosteninformation* Parameter beinhaltet ein Bundle mit sämtlichen Details zur Kosteninformation lt. MopedARKRequest Profil.",
-      "type" : "Bundle",
-      "targetProfile" : [
-        "https://elga.moped.at/StructureDefinition/MopedMeldenLGFBundle"
-      ]
-    },
-    {
-      "name" : "return",
-      "use" : "out",
-      "min" : 1,
-      "max" : "1",
-      "documentation" : "Der *return* Parameter gibt Auskunft über den Erfolg der Operation.",
-      "type" : "Resource",
-      "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/OperationOutcome"]
-    }
-  ]
+  "parameter" : [{
+    "name" : "Kosteninformation",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *Kosteninformation* Parameter beinhaltet ein Bundle mit sämtlichen Details zur Kosteninformation lt. MopedARKRequest Profil.",
+    "type" : "Bundle",
+    "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedMeldenLGFBundle"]
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *return* Parameter gibt Auskunft über den Erfolg der Operation.",
+    "type" : "Resource",
+    "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/OperationOutcome"]
+  }]
 }
 
 ```

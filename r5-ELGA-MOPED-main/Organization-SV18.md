@@ -32,49 +32,37 @@ Profile: [SV Organization](StructureDefinition-SVOrganization.md)
   "meta" : {
     "profile" : ["https://elga.moped.at/StructureDefinition/SVOrganization"]
   },
-  "identifier" : [
-    {
-      "system" : "http://svc.co.at/CodeSystem/ecard-svt-cs",
-      "value" : "18"
-    }
-  ],
-  "type" : [
-    {
-      "coding" : [
-        {
-          "system" : "https://termgit.elga.gv.at/CodeSystem/elga-gtelvogdarollen",
-          "code" : "406",
-          "display" : "Sozialversicherung"
-        }
-      ]
-    }
-  ],
+  "identifier" : [{
+    "system" : "http://svc.co.at/CodeSystem/ecard-svt-cs",
+    "value" : "18"
+  }],
+  "type" : [{
+    "coding" : [{
+      "system" : "https://termgit.elga.gv.at/CodeSystem/elga-gtelvogdarollen",
+      "code" : "406",
+      "display" : "Sozialversicherung"
+    }]
+  }],
   "name" : "Österreichische Gesundheitskasse Tirol",
-  "contact" : [
-    {
-      "address" : {
-        "line" : ["Klara-Pölt-Weg 2, 6020 Innsbruck"],
-        "_line" : [
-          {
-            "extension" : [
-              {
-                "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                "valueString" : "Klara-Pölt-Weg"
-              },
-              {
-                "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                "valueString" : "2"
-              }
-            ]
-          }
-        ],
-        "city" : "Innsbruck",
-        "state" : "Tirol",
-        "postalCode" : "6020",
-        "country" : "AUT"
-      }
+  "contact" : [{
+    "address" : {
+      "line" : ["Klara-Pölt-Weg 2, 6020 Innsbruck"],
+      "_line" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+          "valueString" : "Klara-Pölt-Weg"
+        },
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+          "valueString" : "2"
+        }]
+      }],
+      "city" : "Innsbruck",
+      "state" : "Tirol",
+      "postalCode" : "6020",
+      "country" : "AUT"
     }
-  ]
+  }]
 }
 
 ```

@@ -43,39 +43,29 @@ Profiles: [MOPED TransferEncounter Stationär](StructureDefinition-MopedTransfer
   "resourceType" : "Encounter",
   "id" : "PJ1TransferEncounter1Aufnahme",
   "meta" : {
-    "profile" : [
-      "https://elga.moped.at/StructureDefinition/MopedTransferEncounterS",
-      "https://elga.moped.at/StructureDefinition/MopedTransferEncounter"
-    ]
+    "profile" : ["https://elga.moped.at/StructureDefinition/MopedTransferEncounterS",
+    "https://elga.moped.at/StructureDefinition/MopedTransferEncounter"]
   },
   "status" : "in-progress",
-  "type" : [
-    {
-      "coding" : [
-        {
-          "system" : "https://elga.moped.at/CodeSystem/MopedEncounterTypesCS",
-          "code" : "TENC"
-        }
-      ]
+  "type" : [{
+    "coding" : [{
+      "system" : "https://elga.moped.at/CodeSystem/MopedEncounterTypesCS",
+      "code" : "TENC"
+    }]
+  }],
+  "serviceType" : [{
+    "reference" : {
+      "reference" : "HealthcareService/AbteilungHerzJesu1"
     }
-  ],
-  "serviceType" : [
-    {
-      "reference" : {
-        "reference" : "HealthcareService/AbteilungHerzJesu1"
-      }
-    }
-  ],
+  }],
   "subject" : {
     "reference" : "Patient/PJ1Patient"
   },
   "subjectStatus" : {
-    "coding" : [
-      {
-        "system" : "https://elga.moped.at/CodeSystem/AnwesenheitsartCS",
-        "code" : "ANW"
-      }
-    ]
+    "coding" : [{
+      "system" : "https://elga.moped.at/CodeSystem/AnwesenheitsartCS",
+      "code" : "ANW"
+    }]
   },
   "partOf" : {
     "reference" : "Encounter/PJ1EncounterAufnahme"
@@ -84,28 +74,22 @@ Profiles: [MOPED TransferEncounter Stationär](StructureDefinition-MopedTransfer
     "start" : "2024-02-22T19:33:00+02:00"
   },
   "admission" : {
-    "extension" : [
+    "extension" : [{
+      "extension" : [{
+        "url" : "beiZugang",
+        "valueCodeableConcept" : {
+          "coding" : [{
+            "system" : "https://elga.moped.at/CodeSystem/AltersgruppeCS",
+            "code" : "55"
+          }]
+        }
+      },
       {
-        "extension" : [
-          {
-            "url" : "beiZugang",
-            "valueCodeableConcept" : {
-              "coding" : [
-                {
-                  "system" : "https://elga.moped.at/CodeSystem/AltersgruppeCS",
-                  "code" : "55"
-                }
-              ]
-            }
-          },
-          {
-            "url" : "neugeborenes",
-            "valueBoolean" : false
-          }
-        ],
-        "url" : "https://elga.moped.at/StructureDefinition/moped-ext-altersgruppe"
-      }
-    ]
+        "url" : "neugeborenes",
+        "valueBoolean" : false
+      }],
+      "url" : "https://elga.moped.at/StructureDefinition/moped-ext-altersgruppe"
+    }]
   }
 }
 

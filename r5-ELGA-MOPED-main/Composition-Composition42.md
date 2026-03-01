@@ -40,172 +40,132 @@ Profile: [MOPED Composition](StructureDefinition-MopedComposition.md)
   },
   "status" : "final",
   "type" : {
-    "coding" : [
-      {
-        "system" : "http://loinc.org",
-        "code" : "102089-0",
-        "display" : "FHIR resource patient medical record"
-      }
-    ]
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "102089-0",
+      "display" : "FHIR resource patient medical record"
+    }]
   },
-  "subject" : [
-    {
-      "reference" : "Patient/Patient42"
-    }
-  ],
+  "subject" : [{
+    "reference" : "Patient/Patient42"
+  }],
   "encounter" : {
     "reference" : "Encounter/Encounter42"
   },
   "date" : "2025-08-30",
-  "useContext" : [
-    {
-      "code" : {
-        "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
-        "code" : "workflow"
-      },
-      "valueCodeableConcept" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/WorkflowStatusCS",
-            "code" : "Endgueltige-Freigabe",
-            "display" : "Endgültige Freigabe"
-          }
-        ]
-      }
+  "useContext" : [{
+    "code" : {
+      "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code" : "workflow"
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/WorkflowStatusCS",
+        "code" : "Endgueltige-Freigabe",
+        "display" : "Endgültige Freigabe"
+      }]
     }
-  ],
-  "author" : [
-    {
-      "reference" : "Organization/KHK999"
-    }
-  ],
+  }],
+  "author" : [{
+    "reference" : "Organization/KHK999"
+  }],
   "title" : "LKF Testdaten Fall",
-  "section" : [
-    {
-      "title" : "Zuständiges KH",
-      "code" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/CompositionSectionsCS",
-            "code" : "KH"
-          }
-        ]
-      },
-      "entry" : [
-        {
-          "reference" : "Organization/KHK999"
-        }
-      ]
+  "section" : [{
+    "title" : "Zuständiges KH",
+    "code" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/CompositionSectionsCS",
+        "code" : "KH"
+      }]
+    },
+    "entry" : [{
+      "reference" : "Organization/KHK999"
+    }]
+  },
+  {
+    "title" : "Zuständiger LGF",
+    "code" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/CompositionSectionsCS",
+        "code" : "LGF"
+      }]
+    },
+    "entry" : [{
+      "reference" : "Organization/OrganizationLGF"
+    }]
+  },
+  {
+    "title" : "Zuständige SV",
+    "code" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/CompositionSectionsCS",
+        "code" : "SV"
+      }]
+    },
+    "entry" : [{
+      "reference" : "Organization/SV11"
+    }]
+  },
+  {
+    "title" : "LKF Requests",
+    "code" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/MopedClaimTypeCS",
+        "code" : "LKFREQ"
+      }]
+    },
+    "entry" : [{
+      "reference" : "Claim/LKFRequest42"
+    }]
+  },
+  {
+    "title" : "Conditions",
+    "code" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/CompositionSectionsCS",
+        "code" : "DIAG"
+      }]
+    },
+    "entry" : [{
+      "reference" : "Condition/Condition42.1"
+    }]
+  },
+  {
+    "title" : "TransferEncounter",
+    "code" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/MopedEncounterTypesCS",
+        "code" : "TENC"
+      }]
+    },
+    "entry" : [{
+      "reference" : "Encounter/TransferEncounter42.1"
     },
     {
-      "title" : "Zuständiger LGF",
-      "code" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/CompositionSectionsCS",
-            "code" : "LGF"
-          }
-        ]
-      },
-      "entry" : [
-        {
-          "reference" : "Organization/OrganizationLGF"
-        }
-      ]
+      "reference" : "Encounter/TransferEncounter42.2"
+    }]
+  },
+  {
+    "title" : "QuestionnaireResponses",
+    "code" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/CompositionSectionsCS",
+        "code" : "QRESP"
+      }]
+    },
+    "entry" : [{
+      "reference" : "QuestionnaireResponse/SAPS42.1"
     },
     {
-      "title" : "Zuständige SV",
-      "code" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/CompositionSectionsCS",
-            "code" : "SV"
-          }
-        ]
-      },
-      "entry" : [
-        {
-          "reference" : "Organization/SV11"
-        }
-      ]
+      "reference" : "QuestionnaireResponse/TISS42.1"
     },
     {
-      "title" : "LKF Requests",
-      "code" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/MopedClaimTypeCS",
-            "code" : "LKFREQ"
-          }
-        ]
-      },
-      "entry" : [
-        {
-          "reference" : "Claim/LKFRequest42"
-        }
-      ]
+      "reference" : "QuestionnaireResponse/TISS42.2"
     },
     {
-      "title" : "Conditions",
-      "code" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/CompositionSectionsCS",
-            "code" : "DIAG"
-          }
-        ]
-      },
-      "entry" : [
-        {
-          "reference" : "Condition/Condition42.1"
-        }
-      ]
-    },
-    {
-      "title" : "TransferEncounter",
-      "code" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/MopedEncounterTypesCS",
-            "code" : "TENC"
-          }
-        ]
-      },
-      "entry" : [
-        {
-          "reference" : "Encounter/TransferEncounter42.1"
-        },
-        {
-          "reference" : "Encounter/TransferEncounter42.2"
-        }
-      ]
-    },
-    {
-      "title" : "QuestionnaireResponses",
-      "code" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/CompositionSectionsCS",
-            "code" : "QRESP"
-          }
-        ]
-      },
-      "entry" : [
-        {
-          "reference" : "QuestionnaireResponse/SAPS42.1"
-        },
-        {
-          "reference" : "QuestionnaireResponse/TISS42.1"
-        },
-        {
-          "reference" : "QuestionnaireResponse/TISS42.2"
-        },
-        {
-          "reference" : "QuestionnaireResponse/TISS42.3"
-        }
-      ]
-    }
-  ]
+      "reference" : "QuestionnaireResponse/TISS42.3"
+    }]
+  }]
 }
 
 ```

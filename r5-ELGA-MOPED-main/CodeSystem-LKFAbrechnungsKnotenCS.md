@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/LKFAbrechnungsKnotenCS | *Version*:0.1.0 | |
-| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LKFAbrechnungsKnotenCS |
+| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LKFAbrechnungsKnotenCS |
 
  
 LKF Abrechnungsknoten 
@@ -32,57 +32,51 @@ LKF Abrechnungsknoten
   "title" : "LKF Abrechnungsknoten",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "LKF Abrechnungsknoten",
   "caseSensitive" : true,
   "content" : "complete",
   "count" : 8,
-  "concept" : [
-    {
-      "code" : "A",
-      "display" : "A"
-    },
-    {
-      "code" : "B",
-      "display" : "B"
-    },
-    {
-      "code" : "C",
-      "display" : "C"
-    },
-    {
-      "code" : "D",
-      "display" : "D"
-    },
-    {
-      "code" : "E",
-      "display" : "E"
-    },
-    {
-      "code" : "F",
-      "display" : "F"
-    },
-    {
-      "code" : "G",
-      "display" : "G"
-    },
-    {
-      "code" : "H",
-      "display" : "H"
-    }
-  ]
+  "concept" : [{
+    "code" : "A",
+    "display" : "A"
+  },
+  {
+    "code" : "B",
+    "display" : "B"
+  },
+  {
+    "code" : "C",
+    "display" : "C"
+  },
+  {
+    "code" : "D",
+    "display" : "D"
+  },
+  {
+    "code" : "E",
+    "display" : "E"
+  },
+  {
+    "code" : "F",
+    "display" : "F"
+  },
+  {
+    "code" : "G",
+    "display" : "G"
+  },
+  {
+    "code" : "H",
+    "display" : "H"
+  }]
 }
 
 ```

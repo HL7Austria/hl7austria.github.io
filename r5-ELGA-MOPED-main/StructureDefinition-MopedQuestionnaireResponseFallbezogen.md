@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedQuestionnaireResponseFallbezogen | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedQuestionnaireResponseFallbezogen |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedQuestionnaireResponseFallbezogen |
 
  
 MOPED Profil für QuestionnaireResponses die im Kontext von Moped mit Fallbezug erhoben werden 
@@ -43,19 +43,15 @@ Other representations of profile: [CSV](StructureDefinition-MopedQuestionnaireRe
   "name" : "MopedQuestionnaireResponseFallbezogen",
   "title" : "Moped QuestionnaireResponse fallbezogen",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "MOPED Profil für QuestionnaireResponses die im Kontext von Moped mit Fallbezug erhoben werden",
   "fhirVersion" : "5.0.0",
   "kind" : "resource",
@@ -64,51 +60,43 @@ Other representations of profile: [CSV](StructureDefinition-MopedQuestionnaireRe
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "QuestionnaireResponse.subject",
-        "path" : "QuestionnaireResponse.subject",
-        "min" : 1,
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedPatient"]
-          }
-        ]
-      },
-      {
-        "id" : "QuestionnaireResponse.encounter",
-        "path" : "QuestionnaireResponse.encounter",
-        "min" : 1,
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedEncounter"]
-          }
-        ]
-      },
-      {
-        "id" : "QuestionnaireResponse.authored",
-        "path" : "QuestionnaireResponse.authored",
-        "min" : 1
-      },
-      {
-        "id" : "QuestionnaireResponse.author",
-        "path" : "QuestionnaireResponse.author",
-        "min" : 1,
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : ["https://elga.moped.at/StructureDefinition/KHOrganization"]
-          }
-        ]
-      },
-      {
-        "id" : "QuestionnaireResponse.item",
-        "path" : "QuestionnaireResponse.item",
-        "min" : 1
-      }
-    ]
+    "element" : [{
+      "id" : "QuestionnaireResponse.subject",
+      "path" : "QuestionnaireResponse.subject",
+      "min" : 1,
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedPatient"]
+      }]
+    },
+    {
+      "id" : "QuestionnaireResponse.encounter",
+      "path" : "QuestionnaireResponse.encounter",
+      "min" : 1,
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedEncounter"]
+      }]
+    },
+    {
+      "id" : "QuestionnaireResponse.authored",
+      "path" : "QuestionnaireResponse.authored",
+      "min" : 1
+    },
+    {
+      "id" : "QuestionnaireResponse.author",
+      "path" : "QuestionnaireResponse.author",
+      "min" : 1,
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KHOrganization"]
+      }]
+    },
+    {
+      "id" : "QuestionnaireResponse.item",
+      "path" : "QuestionnaireResponse.item",
+      "min" : 1
+    }]
   }
 }
 

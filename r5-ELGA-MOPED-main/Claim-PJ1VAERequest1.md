@@ -62,20 +62,16 @@ Profile: [MOPED VAERequest](StructureDefinition-MopedVAERequest.md)
   },
   "status" : "active",
   "type" : {
-    "coding" : [
-      {
-        "system" : "https://elga.moped.at/CodeSystem/MopedClaimTypeCS",
-        "code" : "VAEREQ"
-      }
-    ]
+    "coding" : [{
+      "system" : "https://elga.moped.at/CodeSystem/MopedClaimTypeCS",
+      "code" : "VAEREQ"
+    }]
   },
   "subType" : {
-    "coding" : [
-      {
-        "system" : "https://elga.moped.at/CodeSystem/MopedClaimSubTypeCS",
-        "code" : "VAEREQI"
-      }
-    ]
+    "coding" : [{
+      "system" : "https://elga.moped.at/CodeSystem/MopedClaimSubTypeCS",
+      "code" : "VAEREQI"
+    }]
   },
   "use" : "preauthorization",
   "patient" : {
@@ -88,92 +84,74 @@ Profile: [MOPED VAERequest](StructureDefinition-MopedVAERequest.md)
   "provider" : {
     "reference" : "Organization/OrganizationHerzJesuKrankenhaus"
   },
-  "encounter" : [
-    {
-      "reference" : "Encounter/PJ1Encounter"
+  "encounter" : [{
+    "reference" : "Encounter/PJ1Encounter"
+  },
+  {
+    "reference" : "Encounter/PJ1TransferEncounter1"
+  }],
+  "supportingInfo" : [{
+    "sequence" : 1,
+    "category" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS",
+        "code" : "FREVER"
+      }]
     },
-    {
-      "reference" : "Encounter/PJ1TransferEncounter1"
-    }
-  ],
-  "supportingInfo" : [
-    {
-      "sequence" : 1,
-      "category" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS",
-            "code" : "FREVER"
-          }
-        ]
-      },
-      "valueBoolean" : false
+    "valueBoolean" : false
+  },
+  {
+    "sequence" : 2,
+    "category" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS",
+        "code" : "KLAS"
+      }]
     },
-    {
-      "sequence" : 2,
-      "category" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS",
-            "code" : "KLAS"
-          }
-        ]
-      },
-      "code" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/SonderklasseCS",
-            "code" : "A"
-          }
-        ]
-      },
-      "timingPeriod" : {
-        "start" : "2024-02-22T19:33:00+02:00"
-      }
+    "code" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/SonderklasseCS",
+        "code" : "A"
+      }]
     },
-    {
-      "sequence" : 3,
-      "category" : {
-        "coding" : [
-          {
-            "system" : "https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS",
-            "code" : "VERLAENG"
-          }
-        ]
-      },
-      "valueQuantity" : {
-        "value" : 0,
-        "unit" : "day",
-        "system" : "http://unitsofmeasure.org",
-        "code" : "day"
-      }
+    "timingPeriod" : {
+      "start" : "2024-02-22T19:33:00+02:00"
     }
-  ],
-  "insurance" : [
-    {
-      "sequence" : 1,
-      "focal" : true,
-      "coverage" : {
-        "reference" : "Coverage/PJ1Coverage"
-      }
+  },
+  {
+    "sequence" : 3,
+    "category" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS",
+        "code" : "VERLAENG"
+      }]
+    },
+    "valueQuantity" : {
+      "value" : 0,
+      "unit" : "day",
+      "system" : "http://unitsofmeasure.org",
+      "code" : "day"
     }
-  ],
+  }],
+  "insurance" : [{
+    "sequence" : 1,
+    "focal" : true,
+    "coverage" : {
+      "reference" : "Coverage/PJ1Coverage"
+    }
+  }],
   "accident" : {
-    "extension" : [
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-        "valueCode" : "not-applicable"
-      }
-    ],
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+      "valueCode" : "not-applicable"
+    }],
     "date" : "0001",
     "type" : {
-      "coding" : [
-        {
-          "system" : "https://elga.moped.at/CodeSystem/VerdachtArbeitsSchuelerunfallCS",
-          "code" : "0",
-          "display" : "Nein/Unbekannt"
-        }
-      ]
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/VerdachtArbeitsSchuelerunfallCS",
+        "code" : "0",
+        "display" : "Nein/Unbekannt"
+      }]
     }
   }
 }

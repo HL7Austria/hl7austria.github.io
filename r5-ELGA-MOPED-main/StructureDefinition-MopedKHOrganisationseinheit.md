@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedKHOrganisationseinheit | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedKHOrganisationseinheit |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedKHOrganisationseinheit |
 
  
 MOPED Profil für Organisationseinheiten innerhalb einer Krankenanstalt. 
@@ -42,19 +42,15 @@ Other representations of profile: [CSV](StructureDefinition-MopedKHOrganisations
   "name" : "MopedKHOrganisationseinheit",
   "title" : "MOPED KH Organisationseinheiten",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "MOPED Profil für Organisationseinheiten innerhalb einer Krankenanstalt.",
   "fhirVersion" : "5.0.0",
   "kind" : "resource",
@@ -63,124 +59,108 @@ Other representations of profile: [CSV](StructureDefinition-MopedKHOrganisations
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/HealthcareService",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "HealthcareService",
-        "path" : "HealthcareService"
-      },
-      {
-        "id" : "HealthcareService.extension",
-        "path" : "HealthcareService.extension",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "value",
-              "path" : "url"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
-        }
-      },
-      {
-        "id" : "HealthcareService.extension:Kostenstelle",
-        "path" : "HealthcareService.extension",
-        "sliceName" : "Kostenstelle",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "https://elga.moped.at/StructureDefinition/moped-ext-Kostenstelle"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "HealthcareService.identifier",
-        "path" : "HealthcareService.identifier",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "value",
-              "path" : "system"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
-        }
-      },
-      {
-        "id" : "HealthcareService.identifier:Funktionscode",
-        "path" : "HealthcareService.identifier",
-        "sliceName" : "Funktionscode",
-        "short" : "Funktionscode der Abteilung laut LKF",
-        "min" : 0,
-        "max" : "1"
-      },
-      {
-        "id" : "HealthcareService.identifier:Funktionscode.system",
-        "path" : "HealthcareService.identifier.system",
-        "min" : 1,
-        "fixedUri" : "http://example.org/lkf-system/funktionscode"
-      },
-      {
-        "id" : "HealthcareService.identifier:Funktionssubcode",
-        "path" : "HealthcareService.identifier",
-        "sliceName" : "Funktionssubcode",
-        "short" : "Funktionssubcode der Abteilung laut LKF",
-        "min" : 0,
-        "max" : "1"
-      },
-      {
-        "id" : "HealthcareService.identifier:Funktionssubcode.system",
-        "path" : "HealthcareService.identifier.system",
-        "min" : 1,
-        "fixedUri" : "http://example.org/lkf-system/funktionssubcode"
-      },
-      {
-        "id" : "HealthcareService.providedBy",
-        "path" : "HealthcareService.providedBy",
-        "short" : "Krankenanstalt zu welcher die Abteilung gehört",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : ["https://elga.moped.at/StructureDefinition/KHOrganization"]
-          }
-        ]
-      },
-      {
-        "id" : "HealthcareService.category",
-        "path" : "HealthcareService.category",
-        "patternCodeableConcept" : {
-          "coding" : [
-            {
-              "system" : "http://terminology.hl7.org/CodeSystem/service-category",
-              "code" : "35"
-            }
-          ]
-        }
-      },
-      {
-        "id" : "HealthcareService.type",
-        "path" : "HealthcareService.type",
-        "patternCodeableConcept" : {
-          "coding" : [
-            {
-              "system" : "http://terminology.hl7.org/CodeSystem/service-type",
-              "code" : "361"
-            }
-          ]
-        }
-      },
-      {
-        "id" : "HealthcareService.location",
-        "path" : "HealthcareService.location",
-        "short" : "Angabe des spezifischen Standorts",
-        "min" : 1
+    "element" : [{
+      "id" : "HealthcareService",
+      "path" : "HealthcareService"
+    },
+    {
+      "id" : "HealthcareService.extension",
+      "path" : "HealthcareService.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
       }
-    ]
+    },
+    {
+      "id" : "HealthcareService.extension:Kostenstelle",
+      "path" : "HealthcareService.extension",
+      "sliceName" : "Kostenstelle",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://elga.moped.at/StructureDefinition/moped-ext-Kostenstelle"]
+      }]
+    },
+    {
+      "id" : "HealthcareService.identifier",
+      "path" : "HealthcareService.identifier",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "system"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "HealthcareService.identifier:Funktionscode",
+      "path" : "HealthcareService.identifier",
+      "sliceName" : "Funktionscode",
+      "short" : "Funktionscode der Abteilung laut LKF",
+      "min" : 0,
+      "max" : "1"
+    },
+    {
+      "id" : "HealthcareService.identifier:Funktionscode.system",
+      "path" : "HealthcareService.identifier.system",
+      "min" : 1,
+      "fixedUri" : "http://example.org/lkf-system/funktionscode"
+    },
+    {
+      "id" : "HealthcareService.identifier:Funktionssubcode",
+      "path" : "HealthcareService.identifier",
+      "sliceName" : "Funktionssubcode",
+      "short" : "Funktionssubcode der Abteilung laut LKF",
+      "min" : 0,
+      "max" : "1"
+    },
+    {
+      "id" : "HealthcareService.identifier:Funktionssubcode.system",
+      "path" : "HealthcareService.identifier.system",
+      "min" : 1,
+      "fixedUri" : "http://example.org/lkf-system/funktionssubcode"
+    },
+    {
+      "id" : "HealthcareService.providedBy",
+      "path" : "HealthcareService.providedBy",
+      "short" : "Krankenanstalt zu welcher die Abteilung gehört",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KHOrganization"]
+      }]
+    },
+    {
+      "id" : "HealthcareService.category",
+      "path" : "HealthcareService.category",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/service-category",
+          "code" : "35"
+        }]
+      }
+    },
+    {
+      "id" : "HealthcareService.type",
+      "path" : "HealthcareService.type",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/service-type",
+          "code" : "361"
+        }]
+      }
+    },
+    {
+      "id" : "HealthcareService.location",
+      "path" : "HealthcareService.location",
+      "short" : "Angabe des spezifischen Standorts",
+      "min" : 1
+    }]
   }
 }
 

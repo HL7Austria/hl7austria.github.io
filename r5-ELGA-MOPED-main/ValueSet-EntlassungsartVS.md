@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/EntlassungsartVS | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:EntlassungsartVS |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:EntlassungsartVS |
 
  
 ValueSet für die Entlassungsart des Patienten 
@@ -50,29 +50,23 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "name" : "EntlassungsartVS",
   "title" : "Entlassungsart des Patienten ambulant + stationär",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "ValueSet für die Entlassungsart des Patienten",
   "compose" : {
-    "include" : [
-      {
-        "valueSet" : ["https://elga.moped.at/ValueSet/EntlassungsartAVS"]
-      },
-      {
-        "valueSet" : ["https://elga.moped.at/ValueSet/EntlassungsartSVS"]
-      }
-    ]
+    "include" : [{
+      "valueSet" : ["https://elga.moped.at/ValueSet/EntlassungsartAVS"]
+    },
+    {
+      "valueSet" : ["https://elga.moped.at/ValueSet/EntlassungsartSVS"]
+    }]
   }
 }
 

@@ -41,23 +41,19 @@ Profile: [MOPED LKFResponse](StructureDefinition-MopedLKFResponse.md)
   "meta" : {
     "profile" : ["https://elga.moped.at/StructureDefinition/MopedLKFResponse"]
   },
-  "extension" : [
-    {
-      "url" : "https://elga.moped.at/StructureDefinition/moped-ext-diagnoseKnoten",
-      "valueCoding" : {
-        "system" : "https://elga.moped.at/CodeSystem/LKFAbrechnungsKnotenCS",
-        "code" : "C"
-      }
+  "extension" : [{
+    "url" : "https://elga.moped.at/StructureDefinition/moped-ext-diagnoseKnoten",
+    "valueCoding" : {
+      "system" : "https://elga.moped.at/CodeSystem/LKFAbrechnungsKnotenCS",
+      "code" : "C"
     }
-  ],
+  }],
   "status" : "active",
   "type" : {
-    "coding" : [
-      {
-        "system" : "https://elga.moped.at/CodeSystem/MopedClaimTypeCS",
-        "code" : "LKFRESP"
-      }
-    ]
+    "coding" : [{
+      "system" : "https://elga.moped.at/CodeSystem/MopedClaimTypeCS",
+      "code" : "LKFRESP"
+    }]
   },
   "use" : "claim",
   "patient" : {
@@ -72,20 +68,16 @@ Profile: [MOPED LKFResponse](StructureDefinition-MopedLKFResponse.md)
   },
   "outcome" : "complete",
   "decision" : {
-    "coding" : [
-      {
-        "system" : "http://hl7.org/fhir/claim-decision",
-        "code" : "approved"
-      }
-    ]
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/claim-decision",
+      "code" : "approved"
+    }]
   },
   "diagnosisRelatedGroup" : {
-    "coding" : [
-      {
-        "system" : "https://elga.moped.at/CodeSystem/LKFHauptdiagnosegruppenCS",
-        "code" : "HDG15.03"
-      }
-    ]
+    "coding" : [{
+      "system" : "https://elga.moped.at/CodeSystem/LKFHauptdiagnosegruppenCS",
+      "code" : "HDG15.03"
+    }]
   }
 }
 

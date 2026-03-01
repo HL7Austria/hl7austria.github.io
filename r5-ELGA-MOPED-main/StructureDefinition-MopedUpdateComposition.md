@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedUpdateComposition | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedUpdateComposition |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedUpdateComposition |
 
  
 MOPED Profil der Composition Ressource nach $update 
@@ -42,80 +42,70 @@ Other representations of profile: [CSV](StructureDefinition-MopedUpdateCompositi
   "title" : "MOPED Update Composition",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "MOPED Profil der Composition Ressource nach $update",
   "fhirVersion" : "5.0.0",
-  "mapping" : [
-    {
-      "identity" : "LKF",
-      "uri" : "https://elga.moped.at/mapping/LKF",
-      "name" : "LKF"
-    },
-    {
-      "identity" : "KaOrg",
-      "uri" : "https://elga.moped.at/mapping/KaOrg",
-      "name" : "KaOrg"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "LKF",
+    "uri" : "https://elga.moped.at/mapping/LKF",
+    "name" : "LKF"
+  },
+  {
+    "identity" : "KaOrg",
+    "uri" : "https://elga.moped.at/mapping/KaOrg",
+    "name" : "KaOrg"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Composition",
   "baseDefinition" : "https://elga.moped.at/StructureDefinition/MopedComposition",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Composition",
-        "path" : "Composition",
-        "constraint" : [
-          {
-            "key" : "moped-Leistung-Diagnose-erfassen-TBD",
-            "severity" : "error",
-            "human" : "TBD",
-            "source" : "https://elga.moped.at/StructureDefinition/MopedUpdateComposition"
-          },
-          {
-            "key" : "moped-erfassen-stationaer-leistung-z-seitenlokalisation",
-            "severity" : "error",
-            "human" : "Bei stationären Fällen muss bei Leistungen mit Leistungseinheit C verpflichtend die Seitenlokalistion befüllt werden.",
-            "source" : "https://elga.moped.at/StructureDefinition/MopedUpdateComposition"
-          },
-          {
-            "key" : "moped-erfassen-entweder-funktionscode-oder-KANummer-extern",
-            "severity" : "error",
-            "human" : "Entweder der Funktionscode leistungserbringend oder die KANummer leistungserbringend muss befüllt sein aber nicht beides. (KANummer nur bei extern erbrachten Leistungen).",
-            "source" : "https://elga.moped.at/StructureDefinition/MopedUpdateComposition"
-          }
-        ]
+    "element" : [{
+      "id" : "Composition",
+      "path" : "Composition",
+      "constraint" : [{
+        "key" : "moped-Leistung-Diagnose-erfassen-TBD",
+        "severity" : "error",
+        "human" : "TBD",
+        "source" : "https://elga.moped.at/StructureDefinition/MopedUpdateComposition"
       },
       {
-        "id" : "Composition.status",
-        "path" : "Composition.status",
-        "patternCode" : "partial"
+        "key" : "moped-erfassen-stationaer-leistung-z-seitenlokalisation",
+        "severity" : "error",
+        "human" : "Bei stationären Fällen muss bei Leistungen mit Leistungseinheit C verpflichtend die Seitenlokalistion befüllt werden.",
+        "source" : "https://elga.moped.at/StructureDefinition/MopedUpdateComposition"
       },
       {
-        "id" : "Composition.section:Diagnosen",
-        "path" : "Composition.section",
-        "sliceName" : "Diagnosen"
-      },
-      {
-        "id" : "Composition.section:Diagnosen.entry",
-        "path" : "Composition.section.entry",
-        "min" : 1
-      }
-    ]
+        "key" : "moped-erfassen-entweder-funktionscode-oder-KANummer-extern",
+        "severity" : "error",
+        "human" : "Entweder der Funktionscode leistungserbringend oder die KANummer leistungserbringend muss befüllt sein aber nicht beides. (KANummer nur bei extern erbrachten Leistungen).",
+        "source" : "https://elga.moped.at/StructureDefinition/MopedUpdateComposition"
+      }]
+    },
+    {
+      "id" : "Composition.status",
+      "path" : "Composition.status",
+      "patternCode" : "partial"
+    },
+    {
+      "id" : "Composition.section:Diagnosen",
+      "path" : "Composition.section",
+      "sliceName" : "Diagnosen"
+    },
+    {
+      "id" : "Composition.section:Diagnosen.entry",
+      "path" : "Composition.section.entry",
+      "min" : 1
+    }]
   }
 }
 

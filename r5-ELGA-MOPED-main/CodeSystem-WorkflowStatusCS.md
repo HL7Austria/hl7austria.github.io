@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/WorkflowStatusCS | *Version*:0.1.0 | |
-| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:WorkflowStatusCS |
+| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:WorkflowStatusCS |
 
  
 CodeSystem für die Statusoptionen in denen sich ein Fall befinden kann. 
@@ -32,69 +32,63 @@ CodeSystem für die Statusoptionen in denen sich ein Fall befinden kann.
   "title" : "Workflow Status eines Falls",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "CodeSystem für die Statusoptionen in denen sich ein Fall befinden kann.",
   "caseSensitive" : true,
   "content" : "complete",
   "count" : 11,
-  "concept" : [
-    {
-      "code" : "Aufnahme-in-arbeit",
-      "display" : "Aufnahme in Arbeit"
-    },
-    {
-      "code" : "Aufnahme-freigegeben",
-      "display" : "Aufnahme freigegeben"
-    },
-    {
-      "code" : "SV-verarbeitet",
-      "display" : "SV verarbeitet"
-    },
-    {
-      "code" : "Entlassungs-Aviso",
-      "display" : "Entlassungs Aviso"
-    },
-    {
-      "code" : "Entlassung-vollständig",
-      "display" : "Entlassung vollständig"
-    },
-    {
-      "code" : "Vorläufige-Meldung",
-      "display" : "Vorläufige Meldung"
-    },
-    {
-      "code" : "LGF-Korrekturaufforderung",
-      "display" : "LGF Korrekturaufforderung"
-    },
-    {
-      "code" : "Endgueltige-Korrekturaufforderung",
-      "display" : "LGF Endgültige Korrekturaufforderung"
-    },
-    {
-      "code" : "Vorlaeufige-Freigabe",
-      "display" : "Vorläufige Freigabe"
-    },
-    {
-      "code" : "Endgueltige-Meldung",
-      "display" : "Endgültige Meldung"
-    },
-    {
-      "code" : "Endgueltige-Freigabe",
-      "display" : "Endgültige Freigabe"
-    }
-  ]
+  "concept" : [{
+    "code" : "Aufnahme-in-arbeit",
+    "display" : "Aufnahme in Arbeit"
+  },
+  {
+    "code" : "Aufnahme-freigegeben",
+    "display" : "Aufnahme freigegeben"
+  },
+  {
+    "code" : "SV-verarbeitet",
+    "display" : "SV verarbeitet"
+  },
+  {
+    "code" : "Entlassungs-Aviso",
+    "display" : "Entlassungs Aviso"
+  },
+  {
+    "code" : "Entlassung-vollständig",
+    "display" : "Entlassung vollständig"
+  },
+  {
+    "code" : "Vorläufige-Meldung",
+    "display" : "Vorläufige Meldung"
+  },
+  {
+    "code" : "LGF-Korrekturaufforderung",
+    "display" : "LGF Korrekturaufforderung"
+  },
+  {
+    "code" : "Endgueltige-Korrekturaufforderung",
+    "display" : "LGF Endgültige Korrekturaufforderung"
+  },
+  {
+    "code" : "Vorlaeufige-Freigabe",
+    "display" : "Vorläufige Freigabe"
+  },
+  {
+    "code" : "Endgueltige-Meldung",
+    "display" : "Endgültige Meldung"
+  },
+  {
+    "code" : "Endgueltige-Freigabe",
+    "display" : "Endgültige Freigabe"
+  }]
 }
 
 ```

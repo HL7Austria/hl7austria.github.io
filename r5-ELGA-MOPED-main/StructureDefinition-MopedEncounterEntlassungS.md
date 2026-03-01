@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedEncounterEntlassungS | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounterEntlassungS |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounterEntlassungS |
 
  
 MOPED Profil der Encounter Ressource für die Entlassung im stationären Bereich 
@@ -41,63 +41,55 @@ Other representations of profile: [CSV](StructureDefinition-MopedEncounterEntlas
   "name" : "MopedEncounterEntlassungS",
   "title" : "MOPED Encounter Entlassung Stationär",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "MOPED Profil der Encounter Ressource für die Entlassung im stationären Bereich",
   "fhirVersion" : "5.0.0",
-  "mapping" : [
-    {
-      "identity" : "LKF",
-      "uri" : "https://elga.moped.at/mapping/LKF",
-      "name" : "LKF"
-    },
-    {
-      "identity" : "KaOrg",
-      "uri" : "https://elga.moped.at/mapping/KaOrg",
-      "name" : "KaOrg"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "LKF",
+    "uri" : "https://elga.moped.at/mapping/LKF",
+    "name" : "LKF"
+  },
+  {
+    "identity" : "KaOrg",
+    "uri" : "https://elga.moped.at/mapping/KaOrg",
+    "name" : "KaOrg"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Encounter",
   "baseDefinition" : "https://elga.moped.at/StructureDefinition/MopedEncounterS",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Encounter",
-        "path" : "Encounter"
-      },
-      {
-        "id" : "Encounter.status",
-        "path" : "Encounter.status",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "https://elga.moped.at/ValueSet/MopedEncounterStatusEntlassungVS"
-        }
-      },
-      {
-        "id" : "Encounter.actualPeriod.end",
-        "path" : "Encounter.actualPeriod.end",
-        "min" : 1
-      },
-      {
-        "id" : "Encounter.admission.dischargeDisposition",
-        "path" : "Encounter.admission.dischargeDisposition",
-        "min" : 1
+    "element" : [{
+      "id" : "Encounter",
+      "path" : "Encounter"
+    },
+    {
+      "id" : "Encounter.status",
+      "path" : "Encounter.status",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://elga.moped.at/ValueSet/MopedEncounterStatusEntlassungVS"
       }
-    ]
+    },
+    {
+      "id" : "Encounter.actualPeriod.end",
+      "path" : "Encounter.actualPeriod.end",
+      "min" : 1
+    },
+    {
+      "id" : "Encounter.admission.dischargeDisposition",
+      "path" : "Encounter.admission.dischargeDisposition",
+      "min" : 1
+    }]
   }
 }
 

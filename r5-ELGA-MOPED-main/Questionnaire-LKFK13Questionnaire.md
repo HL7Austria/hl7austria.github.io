@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/Questionnaire/LKFK13Questionnaire | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
 
  
 LKF K13 Questionnaire - Kalkulatorischer Anhang – Kostenminderungen 
@@ -26,77 +26,70 @@ LKF K13 Questionnaire - Kalkulatorischer Anhang – Kostenminderungen
   "version" : "0.1.0",
   "title" : "LKF K13 Questionnaire",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "LKF K13 Questionnaire - Kalkulatorischer Anhang – Kostenminderungen",
-  "item" : [
-    {
-      "linkId" : "satzartenkennzeichen",
-      "text" : "Satzartenkennzeichen",
-      "type" : "string",
-      "readOnly" : true,
-      "maxLength" : 3,
-      "initial" : [
-        {
-          "valueString" : "K13"
-        }
-      ]
+  "item" : [{
+    "linkId" : "satzartenkennzeichen",
+    "text" : "Satzartenkennzeichen",
+    "type" : "string",
+    "readOnly" : true,
+    "maxLength" : 3,
+    "initial" : [{
+      "valueString" : "K13"
+    }]
+  },
+  {
+    "linkId" : "jahr",
+    "text" : "Jahr",
+    "type" : "integer",
+    "maxLength" : 4
+  },
+  {
+    "linkId" : "krankenanstaltennummer",
+    "text" : "Krankenanstaltennummer",
+    "type" : "string",
+    "maxLength" : 6
+  },
+  {
+    "linkId" : "index-kostenminderungsart",
+    "text" : "Index Kostenminderungsart",
+    "type" : "coding",
+    "answerOption" : [{
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "A",
+        "display" : "GSBG-Beihilfen"
+      }
     },
     {
-      "linkId" : "jahr",
-      "text" : "Jahr",
-      "type" : "integer",
-      "maxLength" : 4
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "B",
+        "display" : "Klinischer Mehraufwand"
+      }
     },
     {
-      "linkId" : "krankenanstaltennummer",
-      "text" : "Krankenanstaltennummer",
-      "type" : "string",
-      "maxLength" : 6
-    },
-    {
-      "linkId" : "index-kostenminderungsart",
-      "text" : "Index Kostenminderungsart",
-      "type" : "coding",
-      "answerOption" : [
-        {
-          "valueCoding" : {
-            "code" : "A",
-            "display" : "GSBG-Beihilfen"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "B",
-            "display" : "Klinischer Mehraufwand"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "C",
-            "display" : "Kostenersätze für Schulen und Akademien"
-          }
-        }
-      ]
-    },
-    {
-      "linkId" : "kostenminderungen",
-      "text" : "Kostenminderungen",
-      "type" : "integer",
-      "maxLength" : 10
-    }
-  ]
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "C",
+        "display" : "Kostenersätze für Schulen und Akademien"
+      }
+    }]
+  },
+  {
+    "linkId" : "kostenminderungen",
+    "text" : "Kostenminderungen",
+    "type" : "integer",
+    "maxLength" : 10
+  }]
 }
 
 ```

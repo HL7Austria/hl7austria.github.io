@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/MopedClaimTypeCS | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedClaimTypeCS |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedClaimTypeCS |
 
  
 CodeSystem für die Arten der Claims/ClaimResponses 
@@ -32,48 +32,42 @@ CodeSystem für die Arten der Claims/ClaimResponses
   "name" : "MopedClaimTypeCS",
   "title" : "Claim Type CodeSystem",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "CodeSystem für die Arten der Claims/ClaimResponses",
   "content" : "complete",
   "count" : 6,
-  "concept" : [
-    {
-      "code" : "VAEREQ",
-      "display" : "VAE Request"
-    },
-    {
-      "code" : "VAERESP",
-      "display" : "VAE Response"
-    },
-    {
-      "code" : "LKFREQ",
-      "display" : "LKF Request"
-    },
-    {
-      "code" : "LKFRESP",
-      "display" : "LKF Response"
-    },
-    {
-      "code" : "ARKREQ",
-      "display" : "ARK Request"
-    },
-    {
-      "code" : "ARKRESP",
-      "display" : "ARK Response"
-    }
-  ]
+  "concept" : [{
+    "code" : "VAEREQ",
+    "display" : "VAE Request"
+  },
+  {
+    "code" : "VAERESP",
+    "display" : "VAE Response"
+  },
+  {
+    "code" : "LKFREQ",
+    "display" : "LKF Request"
+  },
+  {
+    "code" : "LKFRESP",
+    "display" : "LKF Response"
+  },
+  {
+    "code" : "ARKREQ",
+    "display" : "ARK Request"
+  },
+  {
+    "code" : "ARKRESP",
+    "display" : "ARK Response"
+  }]
 }
 
 ```

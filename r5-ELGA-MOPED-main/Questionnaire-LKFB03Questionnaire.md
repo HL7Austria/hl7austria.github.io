@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/Questionnaire/LKFB03Questionnaire | *Version*:0.1.0 | |
-| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
+| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
 
  
 B03 Questionnaire - Eigenmittelverteilungsrechnung (EVR) 
@@ -26,168 +26,172 @@ B03 Questionnaire - Eigenmittelverteilungsrechnung (EVR)
   "version" : "0.1.0",
   "title" : "LKF B03 Questionnaire",
   "status" : "active",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "B03 Questionnaire - Eigenmittelverteilungsrechnung (EVR)",
-  "item" : [
-    {
-      "linkId" : "satzartenkennzeichen",
-      "text" : "Satzartenkennzeichen",
-      "type" : "string",
-      "readOnly" : true,
-      "maxLength" : 3,
-      "initial" : [
-        {
-          "valueString" : "B03"
-        }
-      ]
+  "item" : [{
+    "linkId" : "satzartenkennzeichen",
+    "text" : "Satzartenkennzeichen",
+    "type" : "string",
+    "readOnly" : true,
+    "maxLength" : 3,
+    "initial" : [{
+      "valueString" : "B03"
+    }]
+  },
+  {
+    "linkId" : "jahr",
+    "text" : "Jahr",
+    "type" : "integer",
+    "maxLength" : 4
+  },
+  {
+    "linkId" : "krankenanstalten-traegernummer",
+    "text" : "Krankenanstalten-/Trägernummer",
+    "type" : "string",
+    "maxLength" : 6
+  },
+  {
+    "linkId" : "berichtstyp",
+    "text" : "Berichtstyp",
+    "type" : "coding",
+    "answerOption" : [{
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "K",
+        "display" : "KA-Ebene – Gesamtdarstellung/-bericht"
+      }
     },
     {
-      "linkId" : "jahr",
-      "text" : "Jahr",
-      "type" : "integer",
-      "maxLength" : 4
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "G",
+        "display" : "Trägerebene – krankenanstaltenübergreifender (gemeinsamer) Bereich"
+      }
     },
     {
-      "linkId" : "krankenanstalten-traegernummer",
-      "text" : "Krankenanstalten-/Trägernummer",
-      "type" : "string",
-      "maxLength" : 6
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "A",
+        "display" : "Trägerebene – krankenanstaltenfremder Bereich"
+      }
     },
     {
-      "linkId" : "berichtstyp",
-      "text" : "Berichtstyp",
-      "type" : "coding",
-      "answerOption" : [
-        {
-          "valueCoding" : {
-            "code" : "K",
-            "display" : "KA-Ebene – Gesamtdarstellung/-bericht"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "G",
-            "display" : "Trägerebene – krankenanstaltenübergreifender (gemeinsamer) Bereich"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "A",
-            "display" : "Trägerebene – krankenanstaltenfremder Bereich"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "T",
-            "display" : "Trägerebene – Gesamtdarstellung/-bericht (KA-übergeordnete Institution)"
-          }
-        }
-      ]
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "T",
+        "display" : "Trägerebene – Gesamtdarstellung/-bericht (KA-übergeordnete Institution)"
+      }
+    }]
+  },
+  {
+    "linkId" : "evr-index",
+    "text" : "EVRIndex",
+    "type" : "coding",
+    "answerOption" : [{
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "R01",
+        "display" : "Eigenmittel i.w.S. + Mezzaninkapital"
+      }
     },
     {
-      "linkId" : "evr-index",
-      "text" : "EVRIndex",
-      "type" : "coding",
-      "answerOption" : [
-        {
-          "valueCoding" : {
-            "code" : "R01",
-            "display" : "Eigenmittel i.w.S. + Mezzaninkapital"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "R02",
-            "display" : "Mezzaninkapital"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "R03",
-            "display" : "Eigenmittel i.w.S."
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "R04",
-            "display" : "Investitionszuschüsse zum Anlagevermögen, verbraucht"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "R05",
-            "display" : "Investitionszuschüsse zum Anlagevermögen, nicht verbraucht"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "R06",
-            "display" : "Eigenmittel gem. §23 URG"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "R07",
-            "display" : "Unversteuerte Rücklagen"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "R08",
-            "display" : "Eigenkapital"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "R09",
-            "display" : "Kapitalrücklagen"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "R10",
-            "display" : "Gewinnrücklagen"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "R11",
-            "display" : "Bilanzgewinn/Bilanzverlust"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "R12",
-            "display" : "Nenn-Kapital (Grund-, Stammkapital)"
-          }
-        }
-      ]
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "R02",
+        "display" : "Mezzaninkapital"
+      }
     },
     {
-      "linkId" : "wert-berichtsjahr",
-      "text" : "Wert Berichtsjahr",
-      "type" : "integer",
-      "maxLength" : 10
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "R03",
+        "display" : "Eigenmittel i.w.S."
+      }
     },
     {
-      "linkId" : "wert-vorjahr",
-      "text" : "Wert Vorjahr",
-      "type" : "integer",
-      "maxLength" : 10
-    }
-  ]
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "R04",
+        "display" : "Investitionszuschüsse zum Anlagevermögen, verbraucht"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "R05",
+        "display" : "Investitionszuschüsse zum Anlagevermögen, nicht verbraucht"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "R06",
+        "display" : "Eigenmittel gem. §23 URG"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "R07",
+        "display" : "Unversteuerte Rücklagen"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "R08",
+        "display" : "Eigenkapital"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "R09",
+        "display" : "Kapitalrücklagen"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "R10",
+        "display" : "Gewinnrücklagen"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "R11",
+        "display" : "Bilanzgewinn/Bilanzverlust"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "R12",
+        "display" : "Nenn-Kapital (Grund-, Stammkapital)"
+      }
+    }]
+  },
+  {
+    "linkId" : "wert-berichtsjahr",
+    "text" : "Wert Berichtsjahr",
+    "type" : "integer",
+    "maxLength" : 10
+  },
+  {
+    "linkId" : "wert-vorjahr",
+    "text" : "Wert Vorjahr",
+    "type" : "integer",
+    "maxLength" : 10
+  }]
 }
 
 ```

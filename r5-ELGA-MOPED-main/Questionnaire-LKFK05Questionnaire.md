@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/Questionnaire/LKFK05Questionnaire | *Version*:0.1.0 | |
-| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
+| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
 
  
 K05 Questionnaire - KA-Statistik (Personal des ärztlichen Dienstes) 
@@ -26,93 +26,87 @@ K05 Questionnaire - KA-Statistik (Personal des ärztlichen Dienstes)
   "version" : "0.1.0",
   "title" : "LKF K05 Questionnaire",
   "status" : "active",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "K05 Questionnaire - KA-Statistik (Personal des ärztlichen Dienstes)",
-  "item" : [
-    {
-      "linkId" : "sazartenkennzeichen",
-      "text" : "Sazartenkennzeichen",
-      "type" : "string",
-      "maxLength" : 3
-    },
-    {
-      "linkId" : "jahr",
-      "text" : "Jahr",
-      "type" : "date"
-    },
-    {
-      "linkId" : "krankenanstaltennummer",
-      "text" : "Krankenanstaltennummer",
-      "type" : "string",
-      "maxLength" : 6
-    },
-    {
-      "linkId" : "fachhauptbereichsindex",
-      "text" : "Fachhauptbereichsindex",
-      "type" : "string",
-      "maxLength" : 2
-    },
-    {
-      "linkId" : "facharzte-kopfzahl",
-      "text" : "Fachärzte/-ärztinnen – Kopfzahl",
-      "type" : "integer",
-      "maxLength" : 6
-    },
-    {
-      "linkId" : "allgemeinmedizin-kopfzahl",
-      "text" : "Ärzte/Ärztinnen für Allgemeinmedizin – Kopfzahl",
-      "type" : "integer",
-      "maxLength" : 6
-    },
-    {
-      "linkId" : "facharzte-ausbildung-kopfzahl",
-      "text" : "Fachärzte/-ärztinnen in Ausbildung – Kopfzahl",
-      "type" : "integer",
-      "maxLength" : 6
-    },
-    {
-      "linkId" : "allgemeinmedizin-ausbildung-kopfzahl",
-      "text" : "Ärzte/Ärztinnen für Allgemeinmedizin in Ausbildung – Kopfzahl",
-      "type" : "integer",
-      "maxLength" : 6
-    },
-    {
-      "linkId" : "facharzte-vollzeitäquivalente",
-      "text" : "Fachärzte/-ärztinnen – Vollzeitäquivalente",
-      "type" : "decimal",
-      "maxLength" : 9
-    },
-    {
-      "linkId" : "allgemeinmedizin-vollzeitäquivalente",
-      "text" : "Ärzte/Ärztinnen für Allgemeinmedizin – Vollzeitäquivalente",
-      "type" : "decimal",
-      "maxLength" : 9
-    },
-    {
-      "linkId" : "facharzte-ausbildung-vollzeitäquivalente",
-      "text" : "Fachärzte/-ärztinnen in Ausbildung – Vollzeitäquivalente",
-      "type" : "decimal",
-      "maxLength" : 9
-    },
-    {
-      "linkId" : "allgemeinmedizin-ausbildung-vollzeitäquivalente",
-      "text" : "Ärzte/Ärztinnen für Allgemeinmedizin in Ausbildung – Vollzeitäquivalente",
-      "type" : "decimal",
-      "maxLength" : 9
-    }
-  ]
+  "item" : [{
+    "linkId" : "sazartenkennzeichen",
+    "text" : "Sazartenkennzeichen",
+    "type" : "string",
+    "maxLength" : 3
+  },
+  {
+    "linkId" : "jahr",
+    "text" : "Jahr",
+    "type" : "date"
+  },
+  {
+    "linkId" : "krankenanstaltennummer",
+    "text" : "Krankenanstaltennummer",
+    "type" : "string",
+    "maxLength" : 6
+  },
+  {
+    "linkId" : "fachhauptbereichsindex",
+    "text" : "Fachhauptbereichsindex",
+    "type" : "string",
+    "maxLength" : 2
+  },
+  {
+    "linkId" : "facharzte-kopfzahl",
+    "text" : "Fachärzte/-ärztinnen – Kopfzahl",
+    "type" : "integer",
+    "maxLength" : 6
+  },
+  {
+    "linkId" : "allgemeinmedizin-kopfzahl",
+    "text" : "Ärzte/Ärztinnen für Allgemeinmedizin – Kopfzahl",
+    "type" : "integer",
+    "maxLength" : 6
+  },
+  {
+    "linkId" : "facharzte-ausbildung-kopfzahl",
+    "text" : "Fachärzte/-ärztinnen in Ausbildung – Kopfzahl",
+    "type" : "integer",
+    "maxLength" : 6
+  },
+  {
+    "linkId" : "allgemeinmedizin-ausbildung-kopfzahl",
+    "text" : "Ärzte/Ärztinnen für Allgemeinmedizin in Ausbildung – Kopfzahl",
+    "type" : "integer",
+    "maxLength" : 6
+  },
+  {
+    "linkId" : "facharzte-vollzeitäquivalente",
+    "text" : "Fachärzte/-ärztinnen – Vollzeitäquivalente",
+    "type" : "decimal",
+    "maxLength" : 9
+  },
+  {
+    "linkId" : "allgemeinmedizin-vollzeitäquivalente",
+    "text" : "Ärzte/Ärztinnen für Allgemeinmedizin – Vollzeitäquivalente",
+    "type" : "decimal",
+    "maxLength" : 9
+  },
+  {
+    "linkId" : "facharzte-ausbildung-vollzeitäquivalente",
+    "text" : "Fachärzte/-ärztinnen in Ausbildung – Vollzeitäquivalente",
+    "type" : "decimal",
+    "maxLength" : 9
+  },
+  {
+    "linkId" : "allgemeinmedizin-ausbildung-vollzeitäquivalente",
+    "text" : "Ärzte/Ärztinnen für Allgemeinmedizin in Ausbildung – Vollzeitäquivalente",
+    "type" : "decimal",
+    "maxLength" : 9
+  }]
 }
 
 ```

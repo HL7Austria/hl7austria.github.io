@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedPatientBund | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedPatientBund |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedPatientBund |
 
  
 MOPED Profil der Patient Ressource aus der Sicht der Rolle: Bund 
@@ -41,122 +41,112 @@ Other representations of profile: [CSV](StructureDefinition-MopedPatientBund.csv
   "name" : "MopedPatientBund",
   "title" : "MOPED Patient Bund",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "MOPED Profil der Patient Ressource aus der Sicht der Rolle: Bund",
   "fhirVersion" : "5.0.0",
-  "mapping" : [
-    {
-      "identity" : "LKF",
-      "uri" : "https://elga.moped.at/mapping/LKF",
-      "name" : "LKF"
-    },
-    {
-      "identity" : "KaOrg",
-      "uri" : "https://elga.moped.at/mapping/KaOrg",
-      "name" : "KaOrg"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "LKF",
+    "uri" : "https://elga.moped.at/mapping/LKF",
+    "name" : "LKF"
+  },
+  {
+    "identity" : "KaOrg",
+    "uri" : "https://elga.moped.at/mapping/KaOrg",
+    "name" : "KaOrg"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Patient",
   "baseDefinition" : "https://elga.moped.at/StructureDefinition/MopedPatient",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Patient",
-        "path" : "Patient"
-      },
-      {
-        "id" : "Patient.extension:PatientReligion",
-        "path" : "Patient.extension",
-        "sliceName" : "PatientReligion",
-        "max" : "0"
-      },
-      {
-        "id" : "Patient.identifier",
-        "path" : "Patient.identifier",
-        "max" : "0"
-      },
-      {
-        "id" : "Patient.identifier:socialSecurityNumber",
-        "path" : "Patient.identifier",
-        "sliceName" : "socialSecurityNumber",
-        "max" : "0"
-      },
-      {
-        "id" : "Patient.identifier:bPK",
-        "path" : "Patient.identifier",
-        "sliceName" : "bPK",
-        "max" : "0"
-      },
-      {
-        "id" : "Patient.identifier:localPatientId",
-        "path" : "Patient.identifier",
-        "sliceName" : "localPatientId",
-        "max" : "0"
-      },
-      {
-        "id" : "Patient.name.extension",
-        "path" : "Patient.name.extension",
-        "min" : 1
-      },
-      {
-        "id" : "Patient.name.extension:data-absent-reason",
-        "path" : "Patient.name.extension",
-        "sliceName" : "data-absent-reason",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : ["http://hl7.org/fhir/StructureDefinition/data-absent-reason"]
-          }
-        ]
-      },
-      {
-        "id" : "Patient.name.extension:data-absent-reason.value[x]",
-        "path" : "Patient.name.extension.value[x]",
-        "patternCode" : "masked"
-      },
-      {
-        "id" : "Patient.telecom",
-        "path" : "Patient.telecom",
-        "max" : "0"
-      },
-      {
-        "id" : "Patient.birthDate",
-        "path" : "Patient.birthDate",
-        "max" : "0"
-      },
-      {
-        "id" : "Patient.address.text",
-        "path" : "Patient.address.text",
-        "max" : "0"
-      },
-      {
-        "id" : "Patient.address.line",
-        "path" : "Patient.address.line",
-        "max" : "0"
-      },
-      {
-        "id" : "Patient.address.city",
-        "path" : "Patient.address.city",
-        "max" : "0"
-      }
-    ]
+    "element" : [{
+      "id" : "Patient",
+      "path" : "Patient"
+    },
+    {
+      "id" : "Patient.extension:PatientReligion",
+      "path" : "Patient.extension",
+      "sliceName" : "PatientReligion",
+      "max" : "0"
+    },
+    {
+      "id" : "Patient.identifier",
+      "path" : "Patient.identifier",
+      "max" : "0"
+    },
+    {
+      "id" : "Patient.identifier:socialSecurityNumber",
+      "path" : "Patient.identifier",
+      "sliceName" : "socialSecurityNumber",
+      "max" : "0"
+    },
+    {
+      "id" : "Patient.identifier:bPK",
+      "path" : "Patient.identifier",
+      "sliceName" : "bPK",
+      "max" : "0"
+    },
+    {
+      "id" : "Patient.identifier:localPatientId",
+      "path" : "Patient.identifier",
+      "sliceName" : "localPatientId",
+      "max" : "0"
+    },
+    {
+      "id" : "Patient.name.extension",
+      "path" : "Patient.name.extension",
+      "min" : 1
+    },
+    {
+      "id" : "Patient.name.extension:data-absent-reason",
+      "path" : "Patient.name.extension",
+      "sliceName" : "data-absent-reason",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/data-absent-reason"]
+      }]
+    },
+    {
+      "id" : "Patient.name.extension:data-absent-reason.value[x]",
+      "path" : "Patient.name.extension.value[x]",
+      "patternCode" : "masked"
+    },
+    {
+      "id" : "Patient.telecom",
+      "path" : "Patient.telecom",
+      "max" : "0"
+    },
+    {
+      "id" : "Patient.birthDate",
+      "path" : "Patient.birthDate",
+      "max" : "0"
+    },
+    {
+      "id" : "Patient.address.text",
+      "path" : "Patient.address.text",
+      "max" : "0"
+    },
+    {
+      "id" : "Patient.address.line",
+      "path" : "Patient.address.line",
+      "max" : "0"
+    },
+    {
+      "id" : "Patient.address.city",
+      "path" : "Patient.address.city",
+      "max" : "0"
+    }]
   }
 }
 

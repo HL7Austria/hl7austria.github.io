@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/EntlassungsartSVS | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:EntlassungsartSVS |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:EntlassungsartSVS |
 
  
 ValueSet für die stationäre Entlassungsart des Patienten 
@@ -52,55 +52,47 @@ ValueSet für die stationäre Entlassungsart des Patienten
   "title" : "Entlassungsart des Patienten stationär",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "ValueSet für die stationäre Entlassungsart des Patienten",
   "compose" : {
-    "include" : [
+    "include" : [{
+      "system" : "https://elga.moped.at/CodeSystem/EntlassungsartCS",
+      "concept" : [{
+        "code" : "E"
+      },
       {
-        "system" : "https://elga.moped.at/CodeSystem/EntlassungsartCS",
-        "concept" : [
-          {
-            "code" : "E"
-          },
-          {
-            "code" : "T"
-          },
-          {
-            "code" : "S"
-          },
-          {
-            "code" : "A"
-          },
-          {
-            "code" : "R"
-          },
-          {
-            "code" : "P"
-          },
-          {
-            "code" : "LKF_L"
-          },
-          {
-            "code" : "LKF_V"
-          },
-          {
-            "code" : "4"
-          }
-        ]
-      }
-    ]
+        "code" : "T"
+      },
+      {
+        "code" : "S"
+      },
+      {
+        "code" : "A"
+      },
+      {
+        "code" : "R"
+      },
+      {
+        "code" : "P"
+      },
+      {
+        "code" : "LKF_L"
+      },
+      {
+        "code" : "LKF_V"
+      },
+      {
+        "code" : "4"
+      }]
+    }]
   }
 }
 

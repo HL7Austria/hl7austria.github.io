@@ -38,15 +38,13 @@ Profile: [MOPED Coverage](StructureDefinition-MopedCoverage.md)
   "meta" : {
     "profile" : ["https://elga.moped.at/StructureDefinition/MopedCoverage"]
   },
-  "identifier" : [
-    {
-      "system" : "urn:oid:1.2.40.0.10.1.4.3.9.1",
-      "value" : "XB4G37PFN9FJ",
-      "assigner" : {
-        "reference" : "Organization/OrganizationHerzJesuKrankenhaus"
-      }
+  "identifier" : [{
+    "system" : "urn:oid:1.2.40.0.10.1.4.3.9.1",
+    "value" : "XB4G37PFN9FJ",
+    "assigner" : {
+      "reference" : "Organization/OrganizationHerzJesuKrankenhaus"
     }
-  ],
+  }],
   "status" : "active",
   "kind" : "insurance",
   "policyHolder" : {
@@ -58,22 +56,18 @@ Profile: [MOPED Coverage](StructureDefinition-MopedCoverage.md)
   "insurer" : {
     "reference" : "Organization/SV11"
   },
-  "class" : [
-    {
-      "type" : {
-        "coding" : [
-          {
-            "system" : "http://terminology.hl7.org/CodeSystem/coverage-class",
-            "code" : "group"
-          }
-        ]
-      },
-      "value" : {
-        "system" : "http://svc.co.at/CodeSystem/ecard-versichertenkategorie-cs",
-        "value" : "01"
-      }
+  "class" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/coverage-class",
+        "code" : "group"
+      }]
+    },
+    "value" : {
+      "system" : "http://svc.co.at/CodeSystem/ecard-versichertenkategorie-cs",
+      "value" : "01"
     }
-  ]
+  }]
 }
 
 ```

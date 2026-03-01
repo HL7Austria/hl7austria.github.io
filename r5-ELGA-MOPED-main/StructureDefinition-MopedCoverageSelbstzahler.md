@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedCoverageSelbstzahler | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedCoverageSelbstzahler |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedCoverageSelbstzahler |
 
  
 MOPED Profil der Coverage Ressource für Selbstzahler 
@@ -42,19 +42,15 @@ Other representations of profile: [CSV](StructureDefinition-MopedCoverageSelbstz
   "name" : "MopedCoverageSelbstzahler",
   "title" : "MOPED Coverage für Selbstzahler",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "MOPED Profil der Coverage Ressource für Selbstzahler",
   "fhirVersion" : "5.0.0",
   "kind" : "resource",
@@ -63,142 +59,112 @@ Other representations of profile: [CSV](StructureDefinition-MopedCoverageSelbstz
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Coverage",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Coverage.status",
-        "extension" : [
-          {
-            "extension" : [
-              {
-                "url" : "code",
-                "valueCode" : "SHALL:populate"
-              },
-              {
-                "url" : "actor",
-                "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
-              }
-            ],
-            "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
-          },
-          {
-            "extension" : [
-              {
-                "url" : "code",
-                "valueCode" : "SHALL:handle"
-              },
-              {
-                "url" : "actor",
-                "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedDeviceActor"
-              }
-            ],
-            "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
-          }
-        ],
-        "path" : "Coverage.status"
+    "element" : [{
+      "id" : "Coverage.status",
+      "extension" : [{
+        "extension" : [{
+          "url" : "code",
+          "valueCode" : "SHALL:populate"
+        },
+        {
+          "url" : "actor",
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       },
       {
-        "id" : "Coverage.kind",
-        "extension" : [
-          {
-            "extension" : [
-              {
-                "url" : "code",
-                "valueCode" : "SHALL:populate"
-              },
-              {
-                "url" : "actor",
-                "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
-              }
-            ],
-            "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
-          }
-        ],
-        "path" : "Coverage.kind",
-        "patternCode" : "self-pay"
-      },
-      {
-        "id" : "Coverage.paymentBy.party",
-        "extension" : [
-          {
-            "extension" : [
-              {
-                "url" : "code",
-                "valueCode" : "SHALL:handle"
-              },
-              {
-                "url" : "actor",
-                "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedDeviceActor"
-              }
-            ],
-            "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
-          }
-        ],
-        "path" : "Coverage.paymentBy.party",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedPatient"]
-          }
-        ]
-      },
-      {
-        "id" : "Coverage.type",
-        "extension" : [
-          {
-            "extension" : [
-              {
-                "url" : "code",
-                "valueCode" : "SHALL:populate"
-              },
-              {
-                "url" : "actor",
-                "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
-              }
-            ],
-            "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
-          }
-        ],
-        "path" : "Coverage.type",
-        "patternCodeableConcept" : {
-          "coding" : [
-            {
-              "system" : "http://terminology.hl7.org/CodeSystem/coverage-selfpay",
-              "code" : "pay"
-            }
-          ]
-        }
-      },
-      {
-        "id" : "Coverage.beneficiary",
-        "extension" : [
-          {
-            "extension" : [
-              {
-                "url" : "code",
-                "valueCode" : "SHALL:handle"
-              },
-              {
-                "url" : "actor",
-                "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedDeviceActor"
-              }
-            ],
-            "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
-          }
-        ],
-        "path" : "Coverage.beneficiary",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedPatient"]
-          }
-        ]
-      },
-      {
-        "id" : "Coverage.insurer",
-        "path" : "Coverage.insurer",
-        "max" : "0"
+        "extension" : [{
+          "url" : "code",
+          "valueCode" : "SHALL:handle"
+        },
+        {
+          "url" : "actor",
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedDeviceActor"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
+      }],
+      "path" : "Coverage.status"
+    },
+    {
+      "id" : "Coverage.kind",
+      "extension" : [{
+        "extension" : [{
+          "url" : "code",
+          "valueCode" : "SHALL:populate"
+        },
+        {
+          "url" : "actor",
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
+      }],
+      "path" : "Coverage.kind",
+      "patternCode" : "self-pay"
+    },
+    {
+      "id" : "Coverage.paymentBy.party",
+      "extension" : [{
+        "extension" : [{
+          "url" : "code",
+          "valueCode" : "SHALL:handle"
+        },
+        {
+          "url" : "actor",
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedDeviceActor"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
+      }],
+      "path" : "Coverage.paymentBy.party",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedPatient"]
+      }]
+    },
+    {
+      "id" : "Coverage.type",
+      "extension" : [{
+        "extension" : [{
+          "url" : "code",
+          "valueCode" : "SHALL:populate"
+        },
+        {
+          "url" : "actor",
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
+      }],
+      "path" : "Coverage.type",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/coverage-selfpay",
+          "code" : "pay"
+        }]
       }
-    ]
+    },
+    {
+      "id" : "Coverage.beneficiary",
+      "extension" : [{
+        "extension" : [{
+          "url" : "code",
+          "valueCode" : "SHALL:handle"
+        },
+        {
+          "url" : "actor",
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedDeviceActor"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
+      }],
+      "path" : "Coverage.beneficiary",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedPatient"]
+      }]
+    },
+    {
+      "id" : "Coverage.insurer",
+      "path" : "Coverage.insurer",
+      "max" : "0"
+    }]
   }
 }
 

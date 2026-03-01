@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/MopedClaimSubTypeCS | *Version*:0.1.0 | |
-| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedClaimSubTypeCS |
+| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedClaimSubTypeCS |
 
  
 CodeSystem für die Arten der Claims/ClaimResponses 
@@ -34,53 +34,47 @@ CodeSystem für die Arten der Claims/ClaimResponses
   "title" : "Claim Subtype CodeSystem",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "CodeSystem für die Arten der Claims/ClaimResponses",
   "caseSensitive" : true,
   "content" : "complete",
   "count" : 7,
-  "concept" : [
-    {
-      "code" : "A",
-      "display" : "Ausländerverrechnung"
-    },
-    {
-      "code" : "R",
-      "display" : "Regressangelegenheiten"
-    },
-    {
-      "code" : "K",
-      "display" : "Kosteninformation"
-    },
-    {
-      "code" : "VAEREQI",
-      "display" : "initiale VAE"
-    },
-    {
-      "code" : "VAEREQV",
-      "display" : "VAE Verlängerung"
-    },
-    {
-      "code" : "LKFREQENDG",
-      "display" : "LKF Endgültige Meldung"
-    },
-    {
-      "code" : "LKFREQVORL",
-      "display" : "LKF Vorläufige Meldung"
-    }
-  ]
+  "concept" : [{
+    "code" : "A",
+    "display" : "Ausländerverrechnung"
+  },
+  {
+    "code" : "R",
+    "display" : "Regressangelegenheiten"
+  },
+  {
+    "code" : "K",
+    "display" : "Kosteninformation"
+  },
+  {
+    "code" : "VAEREQI",
+    "display" : "initiale VAE"
+  },
+  {
+    "code" : "VAEREQV",
+    "display" : "VAE Verlängerung"
+  },
+  {
+    "code" : "LKFREQENDG",
+    "display" : "LKF Endgültige Meldung"
+  },
+  {
+    "code" : "LKFREQVORL",
+    "display" : "LKF Vorläufige Meldung"
+  }]
 }
 
 ```

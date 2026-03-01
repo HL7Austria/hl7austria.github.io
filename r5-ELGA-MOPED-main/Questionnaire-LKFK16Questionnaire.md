@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/Questionnaire/LKFK16Questionnaire | *Version*:0.1.0 | |
-| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
+| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
 
  
 LKF K16 Questionnaire - Kalkulatorischer Anhang – Ausgewählte Kosten 
@@ -26,107 +26,105 @@ LKF K16 Questionnaire - Kalkulatorischer Anhang – Ausgewählte Kosten
   "version" : "0.1.0",
   "title" : "LKF K16 Questionnaire",
   "status" : "active",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "LKF K16 Questionnaire - Kalkulatorischer Anhang – Ausgewählte Kosten",
-  "item" : [
-    {
-      "linkId" : "satzartenkennzeichen",
-      "text" : "Satzartenkennzeichen",
-      "type" : "string",
-      "readOnly" : true,
-      "maxLength" : 3,
-      "initial" : [
-        {
-          "valueString" : "K16"
-        }
-      ]
+  "item" : [{
+    "linkId" : "satzartenkennzeichen",
+    "text" : "Satzartenkennzeichen",
+    "type" : "string",
+    "readOnly" : true,
+    "maxLength" : 3,
+    "initial" : [{
+      "valueString" : "K16"
+    }]
+  },
+  {
+    "linkId" : "jahr",
+    "text" : "Jahr",
+    "type" : "integer",
+    "maxLength" : 4
+  },
+  {
+    "linkId" : "krankenanstaltennummer",
+    "text" : "Krankenanstaltennummer",
+    "type" : "string",
+    "maxLength" : 6
+  },
+  {
+    "linkId" : "kostenindex",
+    "text" : "Kostenindex",
+    "type" : "coding",
+    "answerOption" : [{
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "10",
+        "display" : "Blut"
+      }
     },
     {
-      "linkId" : "jahr",
-      "text" : "Jahr",
-      "type" : "integer",
-      "maxLength" : 4
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "20",
+        "display" : "Chirurgisches Nahtmaterial"
+      }
     },
     {
-      "linkId" : "krankenanstaltennummer",
-      "text" : "Krankenanstaltennummer",
-      "type" : "string",
-      "maxLength" : 6
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "30",
+        "display" : "Implantate und Prothesen (Summe)"
+      }
     },
     {
-      "linkId" : "kostenindex",
-      "text" : "Kostenindex",
-      "type" : "coding",
-      "answerOption" : [
-        {
-          "valueCoding" : {
-            "code" : "10",
-            "display" : "Blut"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "20",
-            "display" : "Chirurgisches Nahtmaterial"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "30",
-            "display" : "Implantate und Prothesen (Summe)"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "31",
-            "display" : "Implantate und Prothesen für Gefäß- und Herzchirurgie"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "32",
-            "display" : "Implantate und Prothesen für Knochenchirurgie"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "33",
-            "display" : "Implantate und Prothesen für Neurochirurgie"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "34",
-            "display" : "Körperersatzteile, andere"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "35",
-            "display" : "Implantate für HNO"
-          }
-        }
-      ]
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "31",
+        "display" : "Implantate und Prothesen für Gefäß- und Herzchirurgie"
+      }
     },
     {
-      "linkId" : "kosten",
-      "text" : "Kosten",
-      "type" : "decimal",
-      "maxLength" : 10
-    }
-  ]
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "32",
+        "display" : "Implantate und Prothesen für Knochenchirurgie"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "33",
+        "display" : "Implantate und Prothesen für Neurochirurgie"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "34",
+        "display" : "Körperersatzteile, andere"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "35",
+        "display" : "Implantate für HNO"
+      }
+    }]
+  },
+  {
+    "linkId" : "kosten",
+    "text" : "Kosten",
+    "type" : "decimal",
+    "maxLength" : 10
+  }]
 }
 
 ```

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/AbgangsartCS | *Version*:0.1.0 | |
-| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:AbgangsartCS |
+| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:AbgangsartCS |
 
  
 Zulässige Ausprägungen Aufnahmeart (LKF & KaOrg) 
@@ -32,41 +32,35 @@ Zulässige Ausprägungen Aufnahmeart (LKF & KaOrg)
   "title" : "Moped Aufnahmeart des Patienten",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "Zulässige Ausprägungen Aufnahmeart (LKF & KaOrg)",
   "caseSensitive" : true,
   "content" : "complete",
   "count" : 4,
-  "concept" : [
-    {
-      "code" : "1",
-      "display" : "Lebend"
-    },
-    {
-      "code" : "2",
-      "display" : "Lebend mit Therapiereduktion"
-    },
-    {
-      "code" : "3",
-      "display" : "Gestorben"
-    },
-    {
-      "code" : "4",
-      "display" : "Gestorben mit Therapiereduktion"
-    }
-  ]
+  "concept" : [{
+    "code" : "1",
+    "display" : "Lebend"
+  },
+  {
+    "code" : "2",
+    "display" : "Lebend mit Therapiereduktion"
+  },
+  {
+    "code" : "3",
+    "display" : "Gestorben"
+  },
+  {
+    "code" : "4",
+    "display" : "Gestorben mit Therapiereduktion"
+  }]
 }
 
 ```

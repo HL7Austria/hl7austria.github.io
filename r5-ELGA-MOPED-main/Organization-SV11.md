@@ -32,49 +32,37 @@ Profile: [SV Organization](StructureDefinition-SVOrganization.md)
   "meta" : {
     "profile" : ["https://elga.moped.at/StructureDefinition/SVOrganization"]
   },
-  "identifier" : [
-    {
-      "system" : "http://svc.co.at/CodeSystem/ecard-svt-cs",
-      "value" : "11"
-    }
-  ],
-  "type" : [
-    {
-      "coding" : [
-        {
-          "system" : "https://termgit.elga.gv.at/CodeSystem/elga-gtelvogdarollen",
-          "code" : "406",
-          "display" : "Sozialversicherung"
-        }
-      ]
-    }
-  ],
+  "identifier" : [{
+    "system" : "http://svc.co.at/CodeSystem/ecard-svt-cs",
+    "value" : "11"
+  }],
+  "type" : [{
+    "coding" : [{
+      "system" : "https://termgit.elga.gv.at/CodeSystem/elga-gtelvogdarollen",
+      "code" : "406",
+      "display" : "Sozialversicherung"
+    }]
+  }],
   "name" : "Österreichische Gesundheitskasse Wien",
-  "contact" : [
-    {
-      "address" : {
-        "line" : ["Wienerbergstraße 15-19, 1100 Wien"],
-        "_line" : [
-          {
-            "extension" : [
-              {
-                "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                "valueString" : "Wienerbergstraße"
-              },
-              {
-                "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                "valueString" : "15-19"
-              }
-            ]
-          }
-        ],
-        "city" : "Wien",
-        "state" : "Wien",
-        "postalCode" : "1100",
-        "country" : "AUT"
-      }
+  "contact" : [{
+    "address" : {
+      "line" : ["Wienerbergstraße 15-19, 1100 Wien"],
+      "_line" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+          "valueString" : "Wienerbergstraße"
+        },
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+          "valueString" : "15-19"
+        }]
+      }],
+      "city" : "Wien",
+      "state" : "Wien",
+      "postalCode" : "1100",
+      "country" : "AUT"
     }
-  ]
+  }]
 }
 
 ```

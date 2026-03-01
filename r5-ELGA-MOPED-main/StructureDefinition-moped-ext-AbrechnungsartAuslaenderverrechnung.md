@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/moped-ext-AbrechnungsartAuslaenderverrechnung | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:AbrechnungsartAuslaenderverrechnung |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:AbrechnungsartAuslaenderverrechnung |
 
 Abrechnungsart Ausländerverrechnung
 
@@ -43,76 +43,64 @@ Other representations of profile: [CSV](StructureDefinition-moped-ext-Abrechnung
 {
   "resourceType" : "StructureDefinition",
   "id" : "moped-ext-AbrechnungsartAuslaenderverrechnung",
-  "extension" : [
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
-      "valueCode" : "can-bind"
-    }
-  ],
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+    "valueCode" : "can-bind"
+  }],
   "url" : "https://elga.moped.at/StructureDefinition/moped-ext-AbrechnungsartAuslaenderverrechnung",
   "version" : "0.1.0",
   "name" : "AbrechnungsartAuslaenderverrechnung",
   "title" : "Abrechnungsart Ausländerverrechnung",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "Abrechnungsart Ausländerverrechnung",
   "fhirVersion" : "5.0.0",
   "kind" : "complex-type",
   "abstract" : false,
-  "context" : [
-    {
-      "type" : "element",
-      "expression" : "https://elga.moped.at/StructureDefinition/MopedARKRequest#Claim"
-    }
-  ],
+  "context" : [{
+    "type" : "element",
+    "expression" : "https://elga.moped.at/StructureDefinition/MopedARKRequest#Claim"
+  }],
   "type" : "Extension",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Extension",
-        "path" : "Extension",
-        "short" : "Abrechnungsart Ausländerverrechnung",
-        "definition" : "Abrechnungsart Ausländerverrechnung"
-      },
-      {
-        "id" : "Extension.extension",
-        "path" : "Extension.extension",
-        "max" : "0"
-      },
-      {
-        "id" : "Extension.url",
-        "path" : "Extension.url",
-        "fixedUri" : "https://elga.moped.at/StructureDefinition/moped-ext-AbrechnungsartAuslaenderverrechnung"
-      },
-      {
-        "id" : "Extension.value[x]",
-        "path" : "Extension.value[x]",
-        "min" : 1,
-        "type" : [
-          {
-            "code" : "Coding"
-          }
-        ],
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "https://elga.moped.at/ValueSet/AbrechnungsartAuslaenderverrechnungVS"
-        }
+    "element" : [{
+      "id" : "Extension",
+      "path" : "Extension",
+      "short" : "Abrechnungsart Ausländerverrechnung",
+      "definition" : "Abrechnungsart Ausländerverrechnung"
+    },
+    {
+      "id" : "Extension.extension",
+      "path" : "Extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.url",
+      "path" : "Extension.url",
+      "fixedUri" : "https://elga.moped.at/StructureDefinition/moped-ext-AbrechnungsartAuslaenderverrechnung"
+    },
+    {
+      "id" : "Extension.value[x]",
+      "path" : "Extension.value[x]",
+      "min" : 1,
+      "type" : [{
+        "code" : "Coding"
+      }],
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://elga.moped.at/ValueSet/AbrechnungsartAuslaenderverrechnungVS"
       }
-    ]
+    }]
   }
 }
 

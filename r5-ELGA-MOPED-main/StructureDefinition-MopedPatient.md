@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedPatient | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedPatient |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedPatient |
 
  
 MOPED Profil der Patient Ressource 
@@ -44,399 +44,325 @@ Other representations of profile: [CSV](StructureDefinition-MopedPatient.csv), [
   "name" : "MopedPatient",
   "title" : "MOPED Patient",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "MOPED Profil der Patient Ressource",
   "fhirVersion" : "5.0.0",
-  "mapping" : [
-    {
-      "identity" : "LKF",
-      "uri" : "https://elga.moped.at/mapping/LKF",
-      "name" : "LKF"
-    },
-    {
-      "identity" : "KaOrg",
-      "uri" : "https://elga.moped.at/mapping/KaOrg",
-      "name" : "KaOrg"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "LKF",
+    "uri" : "https://elga.moped.at/mapping/LKF",
+    "name" : "LKF"
+  },
+  {
+    "identity" : "KaOrg",
+    "uri" : "https://elga.moped.at/mapping/KaOrg",
+    "name" : "KaOrg"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Patient",
   "baseDefinition" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-patient",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Patient.extension:citizenship",
-        "extension" : [
-          {
-            "extension" : [
-              {
-                "url" : "code",
-                "valueCode" : "SHALL:populate"
-              },
-              {
-                "url" : "actor",
-                "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
-              }
-            ],
-            "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
-          }
-        ],
-        "path" : "Patient.extension",
-        "sliceName" : "citizenship",
-        "short" : "LKF: Staatsbürgerschaft; KaOrg: Staatsbürgerschaftsschlüssel",
-        "mapping" : [
-          {
-            "identity" : "LKF",
-            "map" : "Staatsbürgerschaft"
-          },
-          {
-            "identity" : "KaOrg",
-            "map" : "Staatsbürgerschaftsschlüssel"
-          },
-          {
-            "identity" : "KaOrg",
-            "map" : "Staatsbürgerschaft"
-          }
-        ]
+    "element" : [{
+      "id" : "Patient.extension:citizenship",
+      "extension" : [{
+        "extension" : [{
+          "url" : "code",
+          "valueCode" : "SHALL:populate"
+        },
+        {
+          "url" : "actor",
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
+      }],
+      "path" : "Patient.extension",
+      "sliceName" : "citizenship",
+      "short" : "LKF: Staatsbürgerschaft; KaOrg: Staatsbürgerschaftsschlüssel",
+      "mapping" : [{
+        "identity" : "LKF",
+        "map" : "Staatsbürgerschaft"
       },
       {
-        "id" : "Patient.identifier:socialSecurityNumber",
-        "extension" : [
-          {
-            "extension" : [
-              {
-                "url" : "code",
-                "valueCode" : "SHALL:populate"
-              },
-              {
-                "url" : "actor",
-                "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
-              }
-            ],
-            "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
-          }
-        ],
-        "path" : "Patient.identifier",
-        "sliceName" : "socialSecurityNumber",
-        "short" : "KaOrg: Versicherungsnummer des Hauptversicherten; KaOrg: Versicherungsnummer des Mitversicherten; Hier ist immer die SVNR des Patienten angegeben - je nachdem ob der Hauptversicherte selbst der Patient ist, ist hier die SVNR des Haupt- oder Mitversicherten angegeben",
-        "mapping" : [
-          {
-            "identity" : "KaOrg",
-            "map" : "Versicherungsnummer des Hauptversicherten"
-          },
-          {
-            "identity" : "KaOrg",
-            "map" : "Versicherungsnummer des Mitversicherten"
-          }
-        ]
+        "identity" : "KaOrg",
+        "map" : "Staatsbürgerschaftsschlüssel"
       },
       {
-        "id" : "Patient.name.family",
-        "extension" : [
-          {
-            "extension" : [
-              {
-                "url" : "code",
-                "valueCode" : "SHALL:populate"
-              },
-              {
-                "url" : "actor",
-                "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
-              }
-            ],
-            "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
-          }
-        ],
-        "path" : "Patient.name.family",
-        "short" : "KaOrg: Zuname; KaOrg: Zuname des Hauptversicherten; KaOrg: Zuname des Mitversicherten; Vorname des Patienten - je nachdem ob es einen Mitversicherten gibt oder nicht ist das der Zuname des Mitversicherten oder des Hauptversicherten.",
-        "mapping" : [
-          {
-            "identity" : "KaOrg",
-            "map" : "Zuname"
-          },
-          {
-            "identity" : "KaOrg",
-            "map" : "Zuname des Hauptversicherten"
-          },
-          {
-            "identity" : "KaOrg",
-            "map" : "Zuname des Mitversicherten"
-          }
-        ]
+        "identity" : "KaOrg",
+        "map" : "Staatsbürgerschaft"
+      }]
+    },
+    {
+      "id" : "Patient.identifier:socialSecurityNumber",
+      "extension" : [{
+        "extension" : [{
+          "url" : "code",
+          "valueCode" : "SHALL:populate"
+        },
+        {
+          "url" : "actor",
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
+      }],
+      "path" : "Patient.identifier",
+      "sliceName" : "socialSecurityNumber",
+      "short" : "KaOrg: Versicherungsnummer des Hauptversicherten; KaOrg: Versicherungsnummer des Mitversicherten; Hier ist immer die SVNR des Patienten angegeben - je nachdem ob der Hauptversicherte selbst der Patient ist, ist hier die SVNR des Haupt- oder Mitversicherten angegeben",
+      "mapping" : [{
+        "identity" : "KaOrg",
+        "map" : "Versicherungsnummer des Hauptversicherten"
       },
       {
-        "id" : "Patient.name.given",
-        "extension" : [
-          {
-            "extension" : [
-              {
-                "url" : "code",
-                "valueCode" : "SHALL:populate"
-              },
-              {
-                "url" : "actor",
-                "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
-              }
-            ],
-            "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
-          }
-        ],
-        "path" : "Patient.name.given",
-        "short" : "KaOrg: Vorname; KaOrg: Vorname des Hauptversicherten; KaOrg: Vorname des Mitversicherten; Vorname des Patienten - je nachdem ob es einen Mitversicherten gibt oder nicht ist das der Vorname des Mitversicherten oder des Hauptversicherten.",
-        "mapping" : [
-          {
-            "identity" : "KaOrg",
-            "map" : "Vorname"
-          },
-          {
-            "identity" : "KaOrg",
-            "map" : "Vorname des Hauptversicherten"
-          },
-          {
-            "identity" : "KaOrg",
-            "map" : "Vorname des Mitversicherten"
-          }
-        ]
+        "identity" : "KaOrg",
+        "map" : "Versicherungsnummer des Mitversicherten"
+      }]
+    },
+    {
+      "id" : "Patient.name.family",
+      "extension" : [{
+        "extension" : [{
+          "url" : "code",
+          "valueCode" : "SHALL:populate"
+        },
+        {
+          "url" : "actor",
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
+      }],
+      "path" : "Patient.name.family",
+      "short" : "KaOrg: Zuname; KaOrg: Zuname des Hauptversicherten; KaOrg: Zuname des Mitversicherten; Vorname des Patienten - je nachdem ob es einen Mitversicherten gibt oder nicht ist das der Zuname des Mitversicherten oder des Hauptversicherten.",
+      "mapping" : [{
+        "identity" : "KaOrg",
+        "map" : "Zuname"
       },
       {
-        "id" : "Patient.gender",
-        "extension" : [
-          {
-            "extension" : [
-              {
-                "url" : "code",
-                "valueCode" : "SHALL:populate"
-              },
-              {
-                "url" : "actor",
-                "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
-              }
-            ],
-            "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
-          }
-        ],
-        "path" : "Patient.gender",
-        "short" : "LKF: Geschlecht; KaOrg: Geschlecht des Hauptversicherten; KaOrg: Geschlecht des Mitversicherten; KaOrg: Geschlecht",
-        "mapping" : [
-          {
-            "identity" : "LKF",
-            "map" : "Geschlecht"
-          },
-          {
-            "identity" : "KaOrg",
-            "map" : "Geschlecht des Hauptversicherten"
-          },
-          {
-            "identity" : "KaOrg",
-            "map" : "Geschlecht des Mitversicherten"
-          },
-          {
-            "identity" : "KaOrg",
-            "map" : "Geschlecht"
-          }
-        ]
+        "identity" : "KaOrg",
+        "map" : "Zuname des Hauptversicherten"
       },
       {
-        "id" : "Patient.birthDate",
-        "extension" : [
-          {
-            "extension" : [
-              {
-                "url" : "code",
-                "valueCode" : "SHALL:populate"
-              },
-              {
-                "url" : "actor",
-                "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
-              }
-            ],
-            "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
-          }
-        ],
-        "path" : "Patient.birthDate",
-        "short" : "LKF: Geburtsdatum; KaOrg: Geburtsdatum des Hauptversicherten; KaOrg: Geburtsdatum des Mitversicherten; KaOrg: Geburtsdatum",
-        "mapping" : [
-          {
-            "identity" : "LKF",
-            "map" : "Geburtsdatum"
-          },
-          {
-            "identity" : "KaOrg",
-            "map" : "Geburtsdatum des Hauptversicherten"
-          },
-          {
-            "identity" : "KaOrg",
-            "map" : "Geburtsdatum des Mitversicherten"
-          },
-          {
-            "identity" : "KaOrg",
-            "map" : "Geburtsdatum"
-          }
-        ]
+        "identity" : "KaOrg",
+        "map" : "Zuname des Mitversicherten"
+      }]
+    },
+    {
+      "id" : "Patient.name.given",
+      "extension" : [{
+        "extension" : [{
+          "url" : "code",
+          "valueCode" : "SHALL:populate"
+        },
+        {
+          "url" : "actor",
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
+      }],
+      "path" : "Patient.name.given",
+      "short" : "KaOrg: Vorname; KaOrg: Vorname des Hauptversicherten; KaOrg: Vorname des Mitversicherten; Vorname des Patienten - je nachdem ob es einen Mitversicherten gibt oder nicht ist das der Vorname des Mitversicherten oder des Hauptversicherten.",
+      "mapping" : [{
+        "identity" : "KaOrg",
+        "map" : "Vorname"
       },
       {
-        "id" : "Patient.address.extension:municipalityCode",
-        "extension" : [
-          {
-            "extension" : [
-              {
-                "url" : "code",
-                "valueCode" : "SHALL:populate"
-              },
-              {
-                "url" : "actor",
-                "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
-              }
-            ],
-            "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
-          }
-        ],
-        "path" : "Patient.address.extension",
-        "sliceName" : "municipalityCode",
-        "short" : "LKF: Wohnsitz – Gemeindecode ",
-        "mapping" : [
-          {
-            "identity" : "LKF",
-            "map" : "Wohnsitz – Gemeindecode"
-          }
-        ]
+        "identity" : "KaOrg",
+        "map" : "Vorname des Hauptversicherten"
       },
       {
-        "id" : "Patient.address.line.extension:street",
-        "extension" : [
-          {
-            "extension" : [
-              {
-                "url" : "code",
-                "valueCode" : "SHALL:populate"
-              },
-              {
-                "url" : "actor",
-                "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
-              }
-            ],
-            "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
-          }
-        ],
-        "path" : "Patient.address.line.extension",
-        "sliceName" : "street",
-        "short" : "KaOrg: Wohandresse des Patienten, Straße",
-        "mapping" : [
-          {
-            "identity" : "KaOrg",
-            "map" : "Wohandresse des Patienten - Straße"
-          }
-        ]
+        "identity" : "KaOrg",
+        "map" : "Vorname des Mitversicherten"
+      }]
+    },
+    {
+      "id" : "Patient.gender",
+      "extension" : [{
+        "extension" : [{
+          "url" : "code",
+          "valueCode" : "SHALL:populate"
+        },
+        {
+          "url" : "actor",
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
+      }],
+      "path" : "Patient.gender",
+      "short" : "LKF: Geschlecht; KaOrg: Geschlecht des Hauptversicherten; KaOrg: Geschlecht des Mitversicherten; KaOrg: Geschlecht",
+      "mapping" : [{
+        "identity" : "LKF",
+        "map" : "Geschlecht"
       },
       {
-        "id" : "Patient.address.city",
-        "extension" : [
-          {
-            "extension" : [
-              {
-                "url" : "code",
-                "valueCode" : "SHALL:populate"
-              },
-              {
-                "url" : "actor",
-                "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
-              }
-            ],
-            "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
-          }
-        ],
-        "path" : "Patient.address.city",
-        "short" : "KaOrg: Wohnadresse des Patienten - Ort",
-        "mapping" : [
-          {
-            "identity" : "KaOrg",
-            "map" : "Wohnadresse des Patienten - Ort"
-          }
-        ]
+        "identity" : "KaOrg",
+        "map" : "Geschlecht des Hauptversicherten"
       },
       {
-        "id" : "Patient.address.postalCode",
-        "extension" : [
-          {
-            "extension" : [
-              {
-                "url" : "code",
-                "valueCode" : "SHALL:populate"
-              },
-              {
-                "url" : "actor",
-                "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
-              }
-            ],
-            "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
-          }
-        ],
-        "path" : "Patient.address.postalCode",
-        "short" : "LKF: Wohnsitz – Postleitzahl; KaOrg: Wohnadresse des Patienten - Postleitzahl",
-        "mapping" : [
-          {
-            "identity" : "LKF",
-            "map" : "Wohnsitz – Postleitzahl"
-          },
-          {
-            "identity" : "KaOrg",
-            "map" : "Wohnadresse des Patienten - Postleitzahl"
-          },
-          {
-            "identity" : "KaOrg",
-            "map" : "Hauptwohnsitz Postleitzahl"
-          }
-        ]
+        "identity" : "KaOrg",
+        "map" : "Geschlecht des Mitversicherten"
       },
       {
-        "id" : "Patient.address.country",
-        "extension" : [
-          {
-            "extension" : [
-              {
-                "url" : "code",
-                "valueCode" : "SHALL:populate"
-              },
-              {
-                "url" : "actor",
-                "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
-              }
-            ],
-            "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
-          }
-        ],
-        "path" : "Patient.address.country",
-        "short" : "LKF: Wohnsitz – Staat; KaOrg: Wohnadresse des Patienten - Länderkennzeichen",
-        "mapping" : [
-          {
-            "identity" : "LKF",
-            "map" : "Wohnsitz – Staat"
-          },
-          {
-            "identity" : "KaOrg",
-            "map" : "Wohnadresse des Patienten - Länderkennzeichen"
-          },
-          {
-            "identity" : "KaOrg",
-            "map" : "Hauptwohnsitz Staat"
-          }
-        ]
-      }
-    ]
+        "identity" : "KaOrg",
+        "map" : "Geschlecht"
+      }]
+    },
+    {
+      "id" : "Patient.birthDate",
+      "extension" : [{
+        "extension" : [{
+          "url" : "code",
+          "valueCode" : "SHALL:populate"
+        },
+        {
+          "url" : "actor",
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
+      }],
+      "path" : "Patient.birthDate",
+      "short" : "LKF: Geburtsdatum; KaOrg: Geburtsdatum des Hauptversicherten; KaOrg: Geburtsdatum des Mitversicherten; KaOrg: Geburtsdatum",
+      "mapping" : [{
+        "identity" : "LKF",
+        "map" : "Geburtsdatum"
+      },
+      {
+        "identity" : "KaOrg",
+        "map" : "Geburtsdatum des Hauptversicherten"
+      },
+      {
+        "identity" : "KaOrg",
+        "map" : "Geburtsdatum des Mitversicherten"
+      },
+      {
+        "identity" : "KaOrg",
+        "map" : "Geburtsdatum"
+      }]
+    },
+    {
+      "id" : "Patient.address.extension:municipalityCode",
+      "extension" : [{
+        "extension" : [{
+          "url" : "code",
+          "valueCode" : "SHALL:populate"
+        },
+        {
+          "url" : "actor",
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
+      }],
+      "path" : "Patient.address.extension",
+      "sliceName" : "municipalityCode",
+      "short" : "LKF: Wohnsitz – Gemeindecode ",
+      "mapping" : [{
+        "identity" : "LKF",
+        "map" : "Wohnsitz – Gemeindecode"
+      }]
+    },
+    {
+      "id" : "Patient.address.line.extension:street",
+      "extension" : [{
+        "extension" : [{
+          "url" : "code",
+          "valueCode" : "SHALL:populate"
+        },
+        {
+          "url" : "actor",
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
+      }],
+      "path" : "Patient.address.line.extension",
+      "sliceName" : "street",
+      "short" : "KaOrg: Wohandresse des Patienten, Straße",
+      "mapping" : [{
+        "identity" : "KaOrg",
+        "map" : "Wohandresse des Patienten - Straße"
+      }]
+    },
+    {
+      "id" : "Patient.address.city",
+      "extension" : [{
+        "extension" : [{
+          "url" : "code",
+          "valueCode" : "SHALL:populate"
+        },
+        {
+          "url" : "actor",
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
+      }],
+      "path" : "Patient.address.city",
+      "short" : "KaOrg: Wohnadresse des Patienten - Ort",
+      "mapping" : [{
+        "identity" : "KaOrg",
+        "map" : "Wohnadresse des Patienten - Ort"
+      }]
+    },
+    {
+      "id" : "Patient.address.postalCode",
+      "extension" : [{
+        "extension" : [{
+          "url" : "code",
+          "valueCode" : "SHALL:populate"
+        },
+        {
+          "url" : "actor",
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
+      }],
+      "path" : "Patient.address.postalCode",
+      "short" : "LKF: Wohnsitz – Postleitzahl; KaOrg: Wohnadresse des Patienten - Postleitzahl",
+      "mapping" : [{
+        "identity" : "LKF",
+        "map" : "Wohnsitz – Postleitzahl"
+      },
+      {
+        "identity" : "KaOrg",
+        "map" : "Wohnadresse des Patienten - Postleitzahl"
+      },
+      {
+        "identity" : "KaOrg",
+        "map" : "Hauptwohnsitz Postleitzahl"
+      }]
+    },
+    {
+      "id" : "Patient.address.country",
+      "extension" : [{
+        "extension" : [{
+          "url" : "code",
+          "valueCode" : "SHALL:populate"
+        },
+        {
+          "url" : "actor",
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
+      }],
+      "path" : "Patient.address.country",
+      "short" : "LKF: Wohnsitz – Staat; KaOrg: Wohnadresse des Patienten - Länderkennzeichen",
+      "mapping" : [{
+        "identity" : "LKF",
+        "map" : "Wohnsitz – Staat"
+      },
+      {
+        "identity" : "KaOrg",
+        "map" : "Wohnadresse des Patienten - Länderkennzeichen"
+      },
+      {
+        "identity" : "KaOrg",
+        "map" : "Hauptwohnsitz Staat"
+      }]
+    }]
   }
 }
 

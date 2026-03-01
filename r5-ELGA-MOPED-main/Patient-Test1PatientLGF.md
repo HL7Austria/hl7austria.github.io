@@ -29,53 +29,39 @@ MSK MSK (official) Female, DoB: 1969-04-21
   "meta" : {
     "profile" : ["https://elga.moped.at/StructureDefinition/MopedPatientLGF"]
   },
-  "extension" : [
-    {
-      "extension" : [
-        {
-          "url" : "code",
-          "valueCodeableConcept" : {
-            "coding" : [
-              {
-                "system" : "https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3",
-                "code" : "AUT",
-                "display" : "Österreich"
-              }
-            ]
-          }
-        }
-      ],
-      "url" : "http://hl7.org/fhir/StructureDefinition/patient-citizenship"
-    }
-  ],
-  "name" : [
-    {
-      "extension" : [
-        {
-          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-          "valueCode" : "masked"
-        }
-      ],
-      "use" : "official",
-      "family" : "MSK",
-      "given" : ["MSK"]
-    }
-  ],
+  "extension" : [{
+    "extension" : [{
+      "url" : "code",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3",
+          "code" : "AUT",
+          "display" : "Österreich"
+        }]
+      }
+    }],
+    "url" : "http://hl7.org/fhir/StructureDefinition/patient-citizenship"
+  }],
+  "name" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+      "valueCode" : "masked"
+    }],
+    "use" : "official",
+    "family" : "MSK",
+    "given" : ["MSK"]
+  }],
   "gender" : "female",
   "birthDate" : "1969-04-21",
-  "address" : [
-    {
-      "extension" : [
-        {
-          "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-ext-address-municipalityCode",
-          "valueString" : "90301"
-        }
-      ],
-      "use" : "home",
-      "postalCode" : "1030",
-      "country" : "AUT"
-    }
-  ]
+  "address" : [{
+    "extension" : [{
+      "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-ext-address-municipalityCode",
+      "valueString" : "90301"
+    }],
+    "use" : "home",
+    "postalCode" : "1030",
+    "country" : "AUT"
+  }]
 }
 
 ```

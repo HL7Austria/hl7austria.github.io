@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/HTTPVerbInsertUpdateVS | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:HTTPVerbInsertUpdateVS |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:HTTPVerbInsertUpdateVS |
 
  
 HTTP Verben für das Einmelden von Ressourcen, welche nach dem initialen Einmelden nur aktualisiert werden dürfen. 
@@ -50,34 +50,26 @@ HTTP Verben für das Einmelden von Ressourcen, welche nach dem initialen Einmeld
   "name" : "HTTPVerbInsertUpdateVS",
   "title" : "HTTP Verb Update Only",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "HTTP Verben für das Einmelden von Ressourcen, welche nach dem initialen Einmelden nur aktualisiert werden dürfen.",
   "compose" : {
-    "include" : [
+    "include" : [{
+      "system" : "http://hl7.org/fhir/http-verb",
+      "concept" : [{
+        "code" : "PUT"
+      },
       {
-        "system" : "http://hl7.org/fhir/http-verb",
-        "concept" : [
-          {
-            "code" : "PUT"
-          },
-          {
-            "code" : "POST"
-          }
-        ]
-      }
-    ]
+        "code" : "POST"
+      }]
+    }]
   }
 }
 

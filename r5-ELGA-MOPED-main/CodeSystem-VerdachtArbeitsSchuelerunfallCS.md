@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/VerdachtArbeitsSchuelerunfallCS | *Version*:0.1.0 | |
-| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:VerdachtArbeitsSchuelerunfallCS |
+| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:VerdachtArbeitsSchuelerunfallCS |
 
  
 CodeSystem für den Verdacht auf einen Arbeits- oder Schuelerunfall 
@@ -32,49 +32,43 @@ CodeSystem für den Verdacht auf einen Arbeits- oder Schuelerunfall
   "title" : "Verdacht auf Arbeits- oder Schuelerunfall CodeSystem",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "CodeSystem für den Verdacht auf einen Arbeits- oder Schuelerunfall",
   "caseSensitive" : true,
   "content" : "complete",
   "count" : 6,
-  "concept" : [
-    {
-      "code" : "1",
-      "display" : "Arbeitsunfall"
-    },
-    {
-      "code" : "2",
-      "display" : "Schüler-/Studentenunfall"
-    },
-    {
-      "code" : "3",
-      "display" : "Landwirtschaftlicher Unfall"
-    },
-    {
-      "code" : "4",
-      "display" : "Wegunfall Arbeit"
-    },
-    {
-      "code" : "5",
-      "display" : "Wegunfall Schüler/Student"
-    },
-    {
-      "code" : "0",
-      "display" : "Nein/Unbekannt"
-    }
-  ]
+  "concept" : [{
+    "code" : "1",
+    "display" : "Arbeitsunfall"
+  },
+  {
+    "code" : "2",
+    "display" : "Schüler-/Studentenunfall"
+  },
+  {
+    "code" : "3",
+    "display" : "Landwirtschaftlicher Unfall"
+  },
+  {
+    "code" : "4",
+    "display" : "Wegunfall Arbeit"
+  },
+  {
+    "code" : "5",
+    "display" : "Wegunfall Schüler/Student"
+  },
+  {
+    "code" : "0",
+    "display" : "Nein/Unbekannt"
+  }]
 }
 
 ```

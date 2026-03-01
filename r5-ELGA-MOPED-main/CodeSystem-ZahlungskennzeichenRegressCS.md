@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/ZahlungskennzeichenRegressCS | *Version*:0.1.0 | |
-| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:ZahlungskennzeichenRegressCS |
+| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:ZahlungskennzeichenRegressCS |
 
  
 CodeSystem Zahlungskennzeichen Regress 
@@ -32,41 +32,35 @@ CodeSystem Zahlungskennzeichen Regress
   "title" : "CodeSystem Zahlungskennzeichen Regress",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "CodeSystem Zahlungskennzeichen Regress",
   "caseSensitive" : true,
   "content" : "complete",
   "count" : 4,
-  "concept" : [
-    {
-      "code" : "K",
-      "display" : "kein Regress (letzte Meldung)"
-    },
-    {
-      "code" : "T",
-      "display" : "Teilzahlung"
-    },
-    {
-      "code" : "N",
-      "display" : "Nicht Einbringlich-Abschreibung (letzte Mel-\ndung)"
-    },
-    {
-      "code" : "E",
-      "display" : "Endzahlung"
-    }
-  ]
+  "concept" : [{
+    "code" : "K",
+    "display" : "kein Regress (letzte Meldung)"
+  },
+  {
+    "code" : "T",
+    "display" : "Teilzahlung"
+  },
+  {
+    "code" : "N",
+    "display" : "Nicht Einbringlich-Abschreibung (letzte Mel-\ndung)"
+  },
+  {
+    "code" : "E",
+    "display" : "Endzahlung"
+  }]
 }
 
 ```

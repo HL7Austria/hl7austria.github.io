@@ -27,48 +27,34 @@ Profile: [MOPED KH Organisationseinheiten](StructureDefinition-MopedKHOrganisati
   "resourceType" : "HealthcareService",
   "id" : "AbteilungKHRied1",
   "meta" : {
-    "profile" : [
-      "https://elga.moped.at/StructureDefinition/MopedKHOrganisationseinheit"
-    ]
+    "profile" : ["https://elga.moped.at/StructureDefinition/MopedKHOrganisationseinheit"]
   },
-  "identifier" : [
-    {
-      "system" : "http://example.org/lkf-system/funktionscode",
-      "value" : "112111"
-    },
-    {
-      "system" : "http://example.org/lkf-system/funktionssubcode",
-      "value" : "00"
-    }
-  ],
+  "identifier" : [{
+    "system" : "http://example.org/lkf-system/funktionscode",
+    "value" : "112111"
+  },
+  {
+    "system" : "http://example.org/lkf-system/funktionssubcode",
+    "value" : "00"
+  }],
   "providedBy" : {
     "reference" : "Organization/OrganizationKrankenhausRied"
   },
-  "category" : [
-    {
-      "coding" : [
-        {
-          "system" : "http://terminology.hl7.org/CodeSystem/service-category",
-          "code" : "35"
-        }
-      ]
-    }
-  ],
-  "type" : [
-    {
-      "coding" : [
-        {
-          "system" : "http://terminology.hl7.org/CodeSystem/service-type",
-          "code" : "361"
-        }
-      ]
-    }
-  ],
-  "location" : [
-    {
-      "reference" : "Location/LocationKHRied"
-    }
-  ]
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/service-category",
+      "code" : "35"
+    }]
+  }],
+  "type" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/service-type",
+      "code" : "361"
+    }]
+  }],
+  "location" : [{
+    "reference" : "Location/LocationKHRied"
+  }]
 }
 
 ```

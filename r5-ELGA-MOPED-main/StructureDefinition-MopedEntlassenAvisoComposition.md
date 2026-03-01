@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedEntlassenAvisoComposition | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEntlassenAvisoComposition |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEntlassenAvisoComposition |
 
  
 MOPED Profil der Composition Ressource nach $entlassen bei Entlassung Aviso 
@@ -42,58 +42,48 @@ Other representations of profile: [CSV](StructureDefinition-MopedEntlassenAvisoC
   "title" : "MOPED Entlassung Aviso Composition",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "MOPED Profil der Composition Ressource nach $entlassen bei Entlassung Aviso",
   "fhirVersion" : "5.0.0",
-  "mapping" : [
-    {
-      "identity" : "LKF",
-      "uri" : "https://elga.moped.at/mapping/LKF",
-      "name" : "LKF"
-    },
-    {
-      "identity" : "KaOrg",
-      "uri" : "https://elga.moped.at/mapping/KaOrg",
-      "name" : "KaOrg"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "LKF",
+    "uri" : "https://elga.moped.at/mapping/LKF",
+    "name" : "LKF"
+  },
+  {
+    "identity" : "KaOrg",
+    "uri" : "https://elga.moped.at/mapping/KaOrg",
+    "name" : "KaOrg"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Composition",
   "baseDefinition" : "https://elga.moped.at/StructureDefinition/MopedComposition",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Composition",
-        "path" : "Composition",
-        "constraint" : [
-          {
-            "key" : "moped-entlassen-aviso-TBD",
-            "severity" : "error",
-            "human" : "TBD",
-            "source" : "https://elga.moped.at/StructureDefinition/MopedEntlassenAvisoComposition"
-          }
-        ]
-      },
-      {
-        "id" : "Composition.status",
-        "path" : "Composition.status",
-        "patternCode" : "partial"
-      }
-    ]
+    "element" : [{
+      "id" : "Composition",
+      "path" : "Composition",
+      "constraint" : [{
+        "key" : "moped-entlassen-aviso-TBD",
+        "severity" : "error",
+        "human" : "TBD",
+        "source" : "https://elga.moped.at/StructureDefinition/MopedEntlassenAvisoComposition"
+      }]
+    },
+    {
+      "id" : "Composition.status",
+      "path" : "Composition.status",
+      "patternCode" : "partial"
+    }]
   }
 }
 

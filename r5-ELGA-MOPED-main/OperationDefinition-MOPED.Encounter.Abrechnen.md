@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/OperationDefinition/MOPED.Encounter.Abrechnen | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_Encounter_Abrechnen |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_Encounter_Abrechnen |
 
  
 Die $abrechnen Operation wird aufgerufen, wenn ein Fall abgerechnet werden soll. 
@@ -60,19 +60,15 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $abrechnen Operat
   "title" : "MOPED Encounter $abrechnen",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "Die $abrechnen Operation wird aufgerufen, wenn ein Fall abgerechnet werden soll.",
   "affectsState" : true,
   "code" : "abrechnen",
@@ -80,28 +76,24 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $abrechnen Operat
   "system" : false,
   "type" : false,
   "instance" : true,
-  "parameter" : [
-    {
-      "name" : "Abrechnung",
-      "use" : "in",
-      "min" : 1,
-      "max" : "1",
-      "documentation" : "Der *Abrechnung* Parameter beinhaltet ein Bundle mit sämtlichen Details zur Abrechnung lt. MopedLKFRequest Profil.",
-      "type" : "Bundle",
-      "targetProfile" : [
-        "https://elga.moped.at/StructureDefinition/MopedAbrechnenBundleKH"
-      ]
-    },
-    {
-      "name" : "return",
-      "use" : "out",
-      "min" : 1,
-      "max" : "1",
-      "documentation" : "Der *return* Parameter gibt Auskunft über den Erfolg der Operation.",
-      "type" : "Resource",
-      "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/OperationOutcome"]
-    }
-  ]
+  "parameter" : [{
+    "name" : "Abrechnung",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *Abrechnung* Parameter beinhaltet ein Bundle mit sämtlichen Details zur Abrechnung lt. MopedLKFRequest Profil.",
+    "type" : "Bundle",
+    "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedAbrechnenBundleKH"]
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *return* Parameter gibt Auskunft über den Erfolg der Operation.",
+    "type" : "Resource",
+    "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/OperationOutcome"]
+  }]
 }
 
 ```

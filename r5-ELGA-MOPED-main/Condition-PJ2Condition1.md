@@ -31,54 +31,42 @@ Profile: [MOPED Condition](StructureDefinition-MopedCondition.md)
   "meta" : {
     "profile" : ["https://elga.moped.at/StructureDefinition/MopedCondition"]
   },
-  "extension" : [
-    {
-      "url" : "https://elga.moped.at/StructureDefinition/moped-ext-Diagnosetyp",
-      "valueCodeableConcept" : {
-        "coding" : [
-          {
-            "system" : "https://termgit.elga.gv.at/ValueSet/lkf-diagnose-typ",
-            "code" : "H"
-          }
-        ]
-      }
+  "extension" : [{
+    "url" : "https://elga.moped.at/StructureDefinition/moped-ext-Diagnosetyp",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://termgit.elga.gv.at/ValueSet/lkf-diagnose-typ",
+        "code" : "H"
+      }]
     }
-  ],
+  }],
   "clinicalStatus" : {
-    "extension" : [
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-        "valueCode" : "not-asked"
-      }
-    ],
-    "coding" : [
-      {
-        "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
-        "code" : "unknown"
-      }
-    ]
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+      "valueCode" : "not-asked"
+    }],
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+      "code" : "unknown"
+    }]
   },
   "verificationStatus" : {
-    "coding" : [
-      {
-        "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-        "code" : "confirmed"
-      }
-    ]
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+      "code" : "confirmed"
+    }]
   },
   "code" : {
-    "coding" : [
-      {
-        "system" : "https://termgit.elga.gv.at/CodeSystem/icd-10-bmsgpk-2025",
-        "code" : "S82.0",
-        "display" : "Fraktur der Patella"
-      },
-      {
-        "system" : "https://elga.moped.at/CodeSystem/LKFHauptdiagnosegruppenCS",
-        "code" : "HDG15.03",
-        "display" : "Frakturen der unteren Extremität/Becken, außer Vorfuß"
-      }
-    ]
+    "coding" : [{
+      "system" : "https://termgit.elga.gv.at/CodeSystem/icd-10-bmsgpk-2025",
+      "code" : "S82.0",
+      "display" : "Fraktur der Patella"
+    },
+    {
+      "system" : "https://elga.moped.at/CodeSystem/LKFHauptdiagnosegruppenCS",
+      "code" : "HDG15.03",
+      "display" : "Frakturen der unteren Extremität/Becken, außer Vorfuß"
+    }]
   },
   "subject" : {
     "reference" : "Patient/PJ2Patient"

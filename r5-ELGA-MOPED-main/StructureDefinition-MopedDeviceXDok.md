@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedDeviceXDok | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedDeviceXDok |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedDeviceXDok |
 
  
 Moped Definition für XDok 
@@ -42,62 +42,52 @@ Other representations of profile: [CSV](StructureDefinition-MopedDeviceXDok.csv)
   "name" : "MopedDeviceXDok",
   "title" : "Moped Device XDok",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "Moped Definition für XDok",
   "fhirVersion" : "5.0.0",
-  "mapping" : [
-    {
-      "identity" : "udi",
-      "uri" : "http://fda.gov/UDI",
-      "name" : "UDI Mapping"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "udi",
+    "uri" : "http://fda.gov/UDI",
+    "name" : "UDI Mapping"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Device",
   "baseDefinition" : "https://elga.moped.at/StructureDefinition/MopedDevice",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Device",
-        "path" : "Device"
-      },
-      {
-        "id" : "Device.status",
-        "path" : "Device.status",
-        "patternCode" : "active"
-      },
-      {
-        "id" : "Device.name.value",
-        "path" : "Device.name.value",
-        "patternString" : "XDok"
-      },
-      {
-        "id" : "Device.type",
-        "path" : "Device.type",
-        "patternCodeableConcept" : {
-          "coding" : [
-            {
-              "system" : "https://elga.moped.at/CodeSystem/MopedDeviceTypesCS",
-              "code" : "XDok"
-            }
-          ]
-        }
+    "element" : [{
+      "id" : "Device",
+      "path" : "Device"
+    },
+    {
+      "id" : "Device.status",
+      "path" : "Device.status",
+      "patternCode" : "active"
+    },
+    {
+      "id" : "Device.name.value",
+      "path" : "Device.name.value",
+      "patternString" : "XDok"
+    },
+    {
+      "id" : "Device.type",
+      "path" : "Device.type",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://elga.moped.at/CodeSystem/MopedDeviceTypesCS",
+          "code" : "XDok"
+        }]
       }
-    ]
+    }]
   }
 }
 

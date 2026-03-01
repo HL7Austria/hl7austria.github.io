@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/SpezielleOrganisationsformenCS | *Version*:0.1.0 | |
-| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:SpezielleOrganisationsformenCS |
+| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:SpezielleOrganisationsformenCS |
 
  
 Spezielle Organisationsformen (gemäß ÖSG bzw. KAKuG) 
@@ -32,61 +32,55 @@ Spezielle Organisationsformen (gemäß ÖSG bzw. KAKuG)
   "title" : "Spezielle Organisationsformen",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "Spezielle Organisationsformen (gemäß ÖSG bzw. KAKuG)",
   "caseSensitive" : true,
   "content" : "complete",
   "count" : 9,
-  "concept" : [
-    {
-      "code" : "A",
-      "display" : "Abteilung"
-    },
-    {
-      "code" : "R",
-      "display" : "Referenzzentrum – ohne Versorgungsstufengliederung"
-    },
-    {
-      "code" : "Z",
-      "display" : "Referenzzentrum – höchste Versorgungsstufe"
-    },
-    {
-      "code" : "S",
-      "display" : "Referenzzentrum – 2. Versorgungsstufe"
-    },
-    {
-      "code" : "V",
-      "display" : "Spezialzentrum – ausgewählte Versorgungsbereiche"
-    },
-    {
-      "code" : "D",
-      "display" : "Department"
-    },
-    {
-      "code" : "F",
-      "display" : "Fachschwerpunkt"
-    },
-    {
-      "code" : "T",
-      "display" : "Dislozierte Tagesklinik"
-    },
-    {
-      "code" : "W",
-      "display" : "Dislozierte Wochenklinik"
-    }
-  ]
+  "concept" : [{
+    "code" : "A",
+    "display" : "Abteilung"
+  },
+  {
+    "code" : "R",
+    "display" : "Referenzzentrum – ohne Versorgungsstufengliederung"
+  },
+  {
+    "code" : "Z",
+    "display" : "Referenzzentrum – höchste Versorgungsstufe"
+  },
+  {
+    "code" : "S",
+    "display" : "Referenzzentrum – 2. Versorgungsstufe"
+  },
+  {
+    "code" : "V",
+    "display" : "Spezialzentrum – ausgewählte Versorgungsbereiche"
+  },
+  {
+    "code" : "D",
+    "display" : "Department"
+  },
+  {
+    "code" : "F",
+    "display" : "Fachschwerpunkt"
+  },
+  {
+    "code" : "T",
+    "display" : "Dislozierte Tagesklinik"
+  },
+  {
+    "code" : "W",
+    "display" : "Dislozierte Wochenklinik"
+  }]
 }
 
 ```

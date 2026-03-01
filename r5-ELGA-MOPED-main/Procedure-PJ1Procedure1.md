@@ -38,21 +38,17 @@ Profile: [MOPED Procedure](StructureDefinition-MopedProcedure.md)
   "meta" : {
     "profile" : ["https://elga.moped.at/StructureDefinition/MopedProcedure"]
   },
-  "extension" : [
-    {
-      "url" : "https://elga.moped.at/StructureDefinition/moped-ext-Leistungsanzahl",
-      "valueUnsignedInt" : 1
-    }
-  ],
+  "extension" : [{
+    "url" : "https://elga.moped.at/StructureDefinition/moped-ext-Leistungsanzahl",
+    "valueUnsignedInt" : 1
+  }],
   "status" : "completed",
   "code" : {
-    "coding" : [
-      {
-        "system" : "https://termgit.elga.gv.at/CodeSystem/lkat-bmsgpk-2025",
-        "code" : "AN010",
-        "display" : "Polysomnographie im Schlaflabor (LE=je Behandlungstag)"
-      }
-    ]
+    "coding" : [{
+      "system" : "https://termgit.elga.gv.at/CodeSystem/lkat-bmsgpk-2025",
+      "code" : "AN010",
+      "display" : "Polysomnographie im Schlaflabor (LE=je Behandlungstag)"
+    }]
   },
   "subject" : {
     "reference" : "Patient/PJ1Patient"
@@ -61,16 +57,14 @@ Profile: [MOPED Procedure](StructureDefinition-MopedProcedure.md)
     "reference" : "Encounter/PJ1Encounter"
   },
   "occurrenceDateTime" : "2024-02-22T19:33:00+02:00",
-  "performer" : [
-    {
-      "actor" : {
-        "reference" : "HealthcareService/AbteilungHerzJesu1"
-      },
-      "onBehalfOf" : {
-        "reference" : "Organization/OrganizationHerzJesuKrankenhaus"
-      }
+  "performer" : [{
+    "actor" : {
+      "reference" : "HealthcareService/AbteilungHerzJesu1"
+    },
+    "onBehalfOf" : {
+      "reference" : "Organization/OrganizationHerzJesuKrankenhaus"
     }
-  ]
+  }]
 }
 
 ```

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/MopedEncounterStatusEntlassungVS | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounterStatusEntlassungVS |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounterStatusEntlassungVS |
 
  
 Varianten des Encounter Status bei Entlassung 
@@ -52,34 +52,26 @@ Varianten des Encounter Status bei Entlassung
   "title" : "Encounter Status bei Entlassung",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "Varianten des Encounter Status bei Entlassung",
   "compose" : {
-    "include" : [
+    "include" : [{
+      "system" : "http://hl7.org/fhir/encounter-status",
+      "concept" : [{
+        "code" : "discharged"
+      },
       {
-        "system" : "http://hl7.org/fhir/encounter-status",
-        "concept" : [
-          {
-            "code" : "discharged"
-          },
-          {
-            "code" : "completed"
-          }
-        ]
-      }
-    ]
+        "code" : "completed"
+      }]
+    }]
   }
 }
 

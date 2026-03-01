@@ -41,28 +41,20 @@ Profile: [MOPED TransferEncounter](StructureDefinition-MopedTransferEncounter.md
   "resourceType" : "Encounter",
   "id" : "TransferEncounter42.1",
   "meta" : {
-    "profile" : [
-      "https://elga.moped.at/StructureDefinition/MopedTransferEncounter"
-    ]
+    "profile" : ["https://elga.moped.at/StructureDefinition/MopedTransferEncounter"]
   },
   "status" : "completed",
-  "type" : [
-    {
-      "coding" : [
-        {
-          "system" : "https://elga.moped.at/CodeSystem/MopedEncounterTypesCS",
-          "code" : "TENC"
-        }
-      ]
+  "type" : [{
+    "coding" : [{
+      "system" : "https://elga.moped.at/CodeSystem/MopedEncounterTypesCS",
+      "code" : "TENC"
+    }]
+  }],
+  "serviceType" : [{
+    "reference" : {
+      "reference" : "HealthcareService/KHK999ABT11111100"
     }
-  ],
-  "serviceType" : [
-    {
-      "reference" : {
-        "reference" : "HealthcareService/KHK999ABT11111100"
-      }
-    }
-  ],
+  }],
   "subject" : {
     "reference" : "Patient/Patient42"
   },
@@ -73,28 +65,22 @@ Profile: [MOPED TransferEncounter](StructureDefinition-MopedTransferEncounter.md
     "start" : "2025-01-01"
   },
   "admission" : {
-    "extension" : [
+    "extension" : [{
+      "extension" : [{
+        "url" : "beiZugang",
+        "valueCodeableConcept" : {
+          "coding" : [{
+            "system" : "https://elga.moped.at/CodeSystem/AltersgruppeCS",
+            "code" : "85"
+          }]
+        }
+      },
       {
-        "extension" : [
-          {
-            "url" : "beiZugang",
-            "valueCodeableConcept" : {
-              "coding" : [
-                {
-                  "system" : "https://elga.moped.at/CodeSystem/AltersgruppeCS",
-                  "code" : "85"
-                }
-              ]
-            }
-          },
-          {
-            "url" : "neugeborenes",
-            "valueBoolean" : false
-          }
-        ],
-        "url" : "https://elga.moped.at/StructureDefinition/moped-ext-altersgruppe"
-      }
-    ]
+        "url" : "neugeborenes",
+        "valueBoolean" : false
+      }],
+      "url" : "https://elga.moped.at/StructureDefinition/moped-ext-altersgruppe"
+    }]
   }
 }
 

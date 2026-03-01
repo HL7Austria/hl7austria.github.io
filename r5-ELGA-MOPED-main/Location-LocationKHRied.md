@@ -19,9 +19,7 @@ Profile: [HL7® AT Core Location Profile](https://build.fhir.org/ig/HL7Austria/H
   "resourceType" : "Location",
   "id" : "LocationKHRied",
   "meta" : {
-    "profile" : [
-      "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-location"
-    ]
+    "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-location"]
   },
   "managingOrganization" : {
     "reference" : "Organization/OrganizationKrankenhausRied"

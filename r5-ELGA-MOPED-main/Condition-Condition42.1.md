@@ -29,34 +29,26 @@ Profile: [MOPED Condition](StructureDefinition-MopedCondition.md)
   "meta" : {
     "profile" : ["https://elga.moped.at/StructureDefinition/MopedCondition"]
   },
-  "extension" : [
-    {
-      "url" : "https://elga.moped.at/StructureDefinition/moped-ext-Diagnosetyp",
-      "valueCodeableConcept" : {
-        "coding" : [
-          {
-            "system" : "https://termgit.elga.gv.at/CodeSystem/lkf-diagnose-typ",
-            "code" : "H"
-          }
-        ]
-      }
+  "extension" : [{
+    "url" : "https://elga.moped.at/StructureDefinition/moped-ext-Diagnosetyp",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://termgit.elga.gv.at/CodeSystem/lkf-diagnose-typ",
+        "code" : "H"
+      }]
     }
-  ],
+  }],
   "clinicalStatus" : {
-    "extension" : [
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-        "valueCode" : "not-asked"
-      }
-    ]
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+      "valueCode" : "not-asked"
+    }]
   },
   "code" : {
-    "coding" : [
-      {
-        "system" : "https://termgit.elga.gv.at/CodeSystem/icd-10-bmsgpk-2025",
-        "code" : "G40.0"
-      }
-    ]
+    "coding" : [{
+      "system" : "https://termgit.elga.gv.at/CodeSystem/icd-10-bmsgpk-2025",
+      "code" : "G40.0"
+    }]
   },
   "subject" : {
     "reference" : "Patient/Patient42"

@@ -32,49 +32,37 @@ Profile: [SV Organization](StructureDefinition-SVOrganization.md)
   "meta" : {
     "profile" : ["https://elga.moped.at/StructureDefinition/SVOrganization"]
   },
-  "identifier" : [
-    {
-      "system" : "http://svc.co.at/CodeSystem/ecard-svt-cs",
-      "value" : "16"
-    }
-  ],
-  "type" : [
-    {
-      "coding" : [
-        {
-          "system" : "https://termgit.elga.gv.at/CodeSystem/elga-gtelvogdarollen",
-          "code" : "406",
-          "display" : "Sozialversicherung"
-        }
-      ]
-    }
-  ],
+  "identifier" : [{
+    "system" : "http://svc.co.at/CodeSystem/ecard-svt-cs",
+    "value" : "16"
+  }],
+  "type" : [{
+    "coding" : [{
+      "system" : "https://termgit.elga.gv.at/CodeSystem/elga-gtelvogdarollen",
+      "code" : "406",
+      "display" : "Sozialversicherung"
+    }]
+  }],
   "name" : "Österreichische Gesundheitskasse Kärnten",
-  "contact" : [
-    {
-      "address" : {
-        "line" : ["Kempfstraße 8, 9021 Klagenfurt am Wörthersee"],
-        "_line" : [
-          {
-            "extension" : [
-              {
-                "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-                "valueString" : "Kempfstraße"
-              },
-              {
-                "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                "valueString" : "8"
-              }
-            ]
-          }
-        ],
-        "city" : "Klagenfurt am Wörthersee",
-        "state" : "Kärnten",
-        "postalCode" : "9021",
-        "country" : "AUT"
-      }
+  "contact" : [{
+    "address" : {
+      "line" : ["Kempfstraße 8, 9021 Klagenfurt am Wörthersee"],
+      "_line" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+          "valueString" : "Kempfstraße"
+        },
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+          "valueString" : "8"
+        }]
+      }],
+      "city" : "Klagenfurt am Wörthersee",
+      "state" : "Kärnten",
+      "postalCode" : "9021",
+      "country" : "AUT"
     }
-  ]
+  }]
 }
 
 ```

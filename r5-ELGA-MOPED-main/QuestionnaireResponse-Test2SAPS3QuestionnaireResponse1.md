@@ -271,9 +271,7 @@ Profile: [Moped QuestionnaireResponse fallbezogen](StructureDefinition-MopedQues
   "resourceType" : "QuestionnaireResponse",
   "id" : "Test2SAPS3QuestionnaireResponse1",
   "meta" : {
-    "profile" : [
-      "https://elga.moped.at/StructureDefinition/MopedQuestionnaireResponseFallbezogen"
-    ]
+    "profile" : ["https://elga.moped.at/StructureDefinition/MopedQuestionnaireResponseFallbezogen"]
   },
   "questionnaire" : "https://elga.moped.at/Questionnaire/LKFSAPS3Questionnaire",
   "status" : "completed",
@@ -287,608 +285,482 @@ Profile: [Moped QuestionnaireResponse fallbezogen](StructureDefinition-MopedQues
   "author" : {
     "reference" : "Organization/OrganizationHerzJesuKrankenhaus"
   },
-  "item" : [
-    {
-      "linkId" : "saps3-02",
-      "text" : "Krankenanstaltennummer",
-      "answer" : [
-        {
-          "valueString" : "K427"
-        }
-      ]
+  "item" : [{
+    "linkId" : "saps3-02",
+    "text" : "Krankenanstaltennummer",
+    "answer" : [{
+      "valueString" : "K427"
+    }]
+  },
+  {
+    "linkId" : "saps3-03",
+    "text" : "Aufnahmezahl",
+    "answer" : [{
+      "valueString" : "324200063"
+    }]
+  },
+  {
+    "linkId" : "saps3-05",
+    "text" : "Aufnahme-/Kontaktdatum",
+    "answer" : [{
+      "valueDate" : "2024-08-08"
+    }]
+  },
+  {
+    "linkId" : "saps3-06",
+    "text" : "Bettenführende Hauptkostenstelle – Positionsnummer",
+    "answer" : [{
+      "valueString" : "2"
+    }]
+  },
+  {
+    "linkId" : "saps3-07",
+    "text" : "Erhebungsdatum",
+    "answer" : [{
+      "valueDate" : "2024-08-08"
+    }]
+  },
+  {
+    "linkId" : "saps3-08",
+    "text" : "Akute Infektion bei Aufnahme; Akute Infektion bei Aufnahme - Nosokomiale Infektion",
+    "answer" : [{
+      "valueBoolean" : false
+    }]
+  },
+  {
+    "linkId" : "saps3-08a",
+    "text" : "Akute Infektion bei Aufnahme; Akute Infektion bei Aufnahme - Respiratorische Infektion",
+    "answer" : [{
+      "valueBoolean" : false
+    }]
+  },
+  {
+    "linkId" : "saps3-09",
+    "text" : "Aufnahmegrund: Anderer, nicht klassifiziert",
+    "answer" : [{
+      "valueBoolean" : false
+    }]
+  },
+  {
+    "linkId" : "saps3-10",
+    "text" : "Aufnahmegrund: Basispflege und Observanz",
+    "answer" : [{
+      "valueCoding" : {
+        "code" : "2",
+        "display" : "Medizinische Überwachung"
+      }
+    }]
+  },
+  {
+    "linkId" : "saps3-11",
+    "text" : "Aufnahmegrund: Gastrointestinal",
+    "answer" : [{
+      "valueCoding" : {
+        "code" : "0",
+        "display" : "Kein Aufnahmegrund: Gastrointestinal/nicht erhoben"
+      }
+    }]
+  },
+  {
+    "linkId" : "saps3-12",
+    "text" : "Aufnahmegrund: Hämatologisch",
+    "answer" : [{
+      "valueCoding" : {
+        "code" : "0",
+        "display" : "Kein Aufnahmegrund: Hämatologisch/nicht erhoben"
+      }
+    }]
+  },
+  {
+    "linkId" : "saps3-13",
+    "text" : "Aufnahmegrund: Kardiovaskulär",
+    "answer" : [{
+      "valueCoding" : {
+        "code" : "10",
+        "display" : "Rhythmusstörungen: durch Herzfrequenz oder Herzleitungsstörungen"
+      }
+    }]
+  },
+  {
+    "linkId" : "saps3-14",
+    "text" : "Aufnahmegrund: Leber",
+    "answer" : [{
+      "valueCoding" : {
+        "code" : "0",
+        "display" : "Kein Aufnahmegrund: Leber/nicht erhoben"
+      }
+    }]
+  },
+  {
+    "linkId" : "saps3-15",
+    "text" : "Aufnahmegrund: Metabolisch",
+    "answer" : [{
+      "valueCoding" : {
+        "code" : "0",
+        "display" : "Kein Aufnahmegrund: Metabolisch/nicht erhoben"
+      }
+    }]
+  },
+  {
+    "linkId" : "saps3-16",
+    "text" : "Aufnahmegrund: Neurologisch",
+    "answer" : [{
+      "valueCoding" : {
+        "code" : "0",
+        "display" : "Kein Aufnahmegrund: Neurologisch/nicht erhoben"
+      }
+    }]
+  },
+  {
+    "linkId" : "saps3-17",
+    "text" : "Aufnahmegrund: Renal",
+    "answer" : [{
+      "valueCoding" : {
+        "code" : "0",
+        "display" : "Kein Aufnahmegrund: Renal/nicht erhoben"
+      }
+    }]
+  },
+  {
+    "linkId" : "saps3-18",
+    "text" : "Aufnahmegrund: Respiratorisch",
+    "answer" : [{
+      "valueCoding" : {
+        "code" : "0",
+        "display" : "Kein Aufnahmegrund: Respiratorisch/nicht erhoben"
+      }
+    }]
+  },
+  {
+    "linkId" : "saps3-19",
+    "text" : "Aufnahmegrund: Schweres Trauma",
+    "answer" : [{
+      "valueBoolean" : false
+    }]
+  },
+  {
+    "linkId" : "saps3-20",
+    "text" : "Aufnahmetyp",
+    "answer" : [{
+      "valueCoding" : {
+        "code" : "2",
+        "display" : "Ungeplant: Patient:innen, deren Aufnahme komplett ungeplant oder kürzer als 12 Stunden geplant wurde"
+      }
+    }]
+  },
+  {
+    "linkId" : "saps3-21",
+    "text" : "Blutbild: Leukozyten (Minimum)",
+    "answer" : [{
+      "valueDecimal" : 17
+    }]
+  },
+  {
+    "linkId" : "saps3-22",
+    "text" : "Blutbild: pH-Wert",
+    "answer" : [{
+      "valueDecimal" : 7.2
+    }]
+  },
+  {
+    "linkId" : "saps3-23",
+    "text" : "Blutbild: Thrombozyten (Minimum)",
+    "answer" : [{
+      "valueDecimal" : 488
+    }]
+  },
+  {
+    "linkId" : "saps3-24",
+    "text" : "Chirurgie – Eingriff",
+    "answer" : [{
+      "valueCoding" : {
+        "code" : "0",
+        "display" : "Keine Chirurgie – Eingriff/nicht erhoben"
+      }
+    }]
+  },
+  {
+    "linkId" : "saps3-25",
+    "text" : "Chirurgischer Status",
+    "answer" : [{
+      "valueCoding" : {
+        "code" : "3",
+        "display" : "Kein chirurgischer Eingriff"
+      }
+    }]
+  },
+  {
+    "linkId" : "saps3-26",
+    "text" : "Glasgow Coma Scale: motorische Reaktion",
+    "answer" : [{
+      "valueCoding" : {
+        "code" : "6",
+        "display" : "Befolgt verbale Aufforderung"
+      }
+    }]
+  },
+  {
+    "linkId" : "saps3-27",
+    "text" : "Glasgow Coma Scale: verbale Reaktion",
+    "answer" : [{
+      "valueCoding" : {
+        "code" : "4",
+        "display" : "Desorientiert, betreibt Konversation"
+      }
+    }]
+  },
+  {
+    "linkId" : "saps3-28",
+    "text" : "Glasgow Coma Scale: visuelle Reaktion",
+    "answer" : [{
+      "valueCoding" : {
+        "code" : "3",
+        "display" : "Befolgt Aufforderung"
+      }
+    }]
+  },
+  {
+    "linkId" : "saps3-29",
+    "text" : "Herzfrequenz (Maximum)",
+    "answer" : [{
+      "valueInteger" : 44
+    }]
+  },
+  {
+    "linkId" : "saps3-30",
+    "text" : "Koexistierende Erkrankungen",
+    "item" : [{
+      "linkId" : "saps3-30-1",
+      "text" : "Hämatologische Erkrankung: Lymphom, akute Leukämie oder Multiples Myelom",
+      "answer" : [{
+        "valueBoolean" : true
+      }]
     },
     {
-      "linkId" : "saps3-03",
-      "text" : "Aufnahmezahl",
-      "answer" : [
-        {
-          "valueString" : "324200063"
-        }
-      ]
+      "linkId" : "saps3-30-2",
+      "text" : "HIV-positiv (kein AIDS): Positive HIV-Serologie, aber keine AIDS-Kriterien nach den CDC/WHO-Definitionen; CD4-Zellen sind, sofern gemessen, > 200",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
     },
     {
-      "linkId" : "saps3-05",
-      "text" : "Aufnahme-/Kontaktdatum",
-      "answer" : [
-        {
-          "valueDate" : "2024-08-08"
-        }
-      ]
+      "linkId" : "saps3-30-3",
+      "text" : "AIDS: Patient:innen, welche die CDC/WHO-Definitionen für AIDS erfüllen, wie HIV-positive Patient:innen mit klinischen Komplikationen wie Pneumocystis carinii Pneumonie, Kaposi-Sarkom, Lymphom, Tuberkulose oder Toxoplasmose, oder CD4-Zellen sind, sofern gemessen, < 200",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
     },
     {
-      "linkId" : "saps3-06",
-      "text" : "Bettenführende Hauptkostenstelle – Positionsnummer",
-      "answer" : [
-        {
-          "valueString" : "2"
-        }
-      ]
+      "linkId" : "saps3-30-4",
+      "text" : "Metastasierendes Malignom: Neoplasma mit Metastasen, bestätigt durch radiologische (z.B. CT), chirurgische oder andere Methoden",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
     },
     {
-      "linkId" : "saps3-07",
-      "text" : "Erhebungsdatum",
-      "answer" : [
-        {
-          "valueDate" : "2024-08-08"
-        }
-      ]
+      "linkId" : "saps3-30-5",
+      "text" : "Malignom, nicht metastasierend: Neoplasma ohne Metastasen, bestätigt durch radiologische (z.B. CT), chirurgische oder andere Methoden",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
     },
     {
-      "linkId" : "saps3-08",
-      "text" : "Akute Infektion bei Aufnahme; Akute Infektion bei Aufnahme - Nosokomiale Infektion",
-      "answer" : [
-        {
-          "valueBoolean" : false
-        }
-      ]
+      "linkId" : "saps3-30-6",
+      "text" : "Leberzirrhose: Dokumentiert durch Biopsie oder klinischen Symptomen portaler Hypertension, Präsenz ösophagealer oder gastrischer Varizen (bestätigt durch Endoskopie oder Chirurgie) oder der Demonstration eines retrograden Flusses in der Vena lienalis, Episoden hepatischer Enzephalopathie oder einer Anamnese von Varizenblutungen",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
     },
     {
-      "linkId" : "saps3-08a",
-      "text" : "Akute Infektion bei Aufnahme; Akute Infektion bei Aufnahme - Respiratorische Infektion",
-      "answer" : [
-        {
-          "valueBoolean" : false
-        }
-      ]
+      "linkId" : "saps3-30-7",
+      "text" : "Herzinsuffizienz NYHA II: Müdigkeit, Dyspnoe oder Angina pectoris, welche mit normaler Betätigung einhergehen",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
     },
     {
-      "linkId" : "saps3-09",
-      "text" : "Aufnahmegrund: Anderer, nicht klassifiziert",
-      "answer" : [
-        {
-          "valueBoolean" : false
-        }
-      ]
+      "linkId" : "saps3-30-8",
+      "text" : "Herzinsuffizienz NYHA III: Müdigkeit, Dyspnoe oder Angina pectoris, welche bereits bei mittelschwerer Betätigung auftreten",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
     },
     {
-      "linkId" : "saps3-10",
-      "text" : "Aufnahmegrund: Basispflege und Observanz",
-      "answer" : [
-        {
-          "valueCoding" : {
-            "code" : "2",
-            "display" : "Medizinische Überwachung"
-          }
-        }
-      ]
+      "linkId" : "saps3-30-9",
+      "text" : "Herzinsuffizienz NYHA IV: Müdigkeit, Dyspnoe oder Angina pectoris, welche mit leichter Betätigung einhergehen. Diese Patient:innen können nur geringe Wegstrecken zu Fuß zurücklegen oder andere Tätigkeiten alleine durchführen.",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
     },
     {
-      "linkId" : "saps3-11",
-      "text" : "Aufnahmegrund: Gastrointestinal",
-      "answer" : [
-        {
-          "valueCoding" : {
-            "code" : "0",
-            "display" : "Kein Aufnahmegrund: Gastrointestinal/nicht erhoben"
-          }
-        }
-      ]
+      "linkId" : "saps3-30-10",
+      "text" : "Chronische respiratorische Insuffizienz: Permanente Atemnot bei leichter Aktivität aufgrund pulmonaler Erkrankungen (chronisch restriktiver oder obstruktiver Natur). Funktionell sind diese Patient:innen unfähig, alleine Stiegen zu steigen, zu arbeiten oder den Haushalt zu verrichten. Sollte auch dokumentiert werden, wenn eines der folgenden Symptome vorliegt: chronische Hypoxie, Hyperkapnie, sekundäre Polyzythämie oder pulmonale Hypertonension mit systolischem Druck > 40 mmHg) oder Respirator-Abhängigkeit.",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
     },
     {
-      "linkId" : "saps3-12",
-      "text" : "Aufnahmegrund: Hämatologisch",
-      "answer" : [
-        {
-          "valueCoding" : {
-            "code" : "0",
-            "display" : "Kein Aufnahmegrund: Hämatologisch/nicht erhoben"
-          }
-        }
-      ]
+      "linkId" : "saps3-30-11",
+      "text" : "Chronische renale Insuffizienz: Chronische renale Therapie (Hämodialyse oder Peritonealdialyse) bei irreversiblen renalen Erkrankungen oder Anamnese einer chronischen renalen Insuffizienz",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
     },
     {
-      "linkId" : "saps3-13",
-      "text" : "Aufnahmegrund: Kardiovaskulär",
-      "answer" : [
-        {
-          "valueCoding" : {
-            "code" : "10",
-            "display" : "Rhythmusstörungen: durch Herzfrequenz oder Herzleitungsstörungen"
-          }
-        }
-      ]
+      "linkId" : "saps3-30-12",
+      "text" : "Alkoholismus: Alkoholeinfuhr von mehr als 80 g pro Tag über einen Zeitraum von mindestens 6 Monaten vor der Aufnahme, welche klinische Symptome verursacht wie: Logorrhoe, Enzephalopathie, andere neurologische Erkrankungen, schlechter Ernährungszustand oder Leberzirrhose",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
     },
     {
-      "linkId" : "saps3-14",
-      "text" : "Aufnahmegrund: Leber",
-      "answer" : [
-        {
-          "valueCoding" : {
-            "code" : "0",
-            "display" : "Kein Aufnahmegrund: Leber/nicht erhoben"
-          }
-        }
-      ]
+      "linkId" : "saps3-30-13",
+      "text" : "Drogensucht: Drogenabhängigkeit aufgrund intravenöser Drogeneinnahme (Kokain, Opiate und Derivate) für mindestens 6 Monate vor der Aufnahme. Patient:innen im Methadonprogramm ohne andere Drogenkonsumation fallen nicht darunter.",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
     },
     {
-      "linkId" : "saps3-15",
-      "text" : "Aufnahmegrund: Metabolisch",
-      "answer" : [
-        {
-          "valueCoding" : {
-            "code" : "0",
-            "display" : "Kein Aufnahmegrund: Metabolisch/nicht erhoben"
-          }
-        }
-      ]
+      "linkId" : "saps3-30-14",
+      "text" : "Immunsuppression, andere: Der:die Patient:in weist eine Erkrankung auf, welche genügend fortgeschritten ist, um die Infektionsresistenz zu unterdrücken: Schwere Mangelernährung, angeborene Defektzustände des humoralen oder zellulären Systems. Exkludiert AIDS oder HIV-Infektion, metastasiernde oder hämatologische Neoplasien, Chemotherapie, Radiotherapie und Steroidbehandlung.",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
     },
     {
-      "linkId" : "saps3-16",
-      "text" : "Aufnahmegrund: Neurologisch",
-      "answer" : [
-        {
-          "valueCoding" : {
-            "code" : "0",
-            "display" : "Kein Aufnahmegrund: Neurologisch/nicht erhoben"
-          }
-        }
-      ]
+      "linkId" : "saps3-30-15",
+      "text" : "Insulinpflichtiger Diabetes mellitus: Patient:innen, welche tägliche Insulingaben (Injektionen) benötigen",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
     },
     {
-      "linkId" : "saps3-17",
-      "text" : "Aufnahmegrund: Renal",
-      "answer" : [
-        {
-          "valueCoding" : {
-            "code" : "0",
-            "display" : "Kein Aufnahmegrund: Renal/nicht erhoben"
-          }
-        }
-      ]
+      "linkId" : "saps3-30-16",
+      "text" : "Nicht-insulinpflichtiger Diabetes mellitus: Patient:innen mit diagnostiziertem Diabetes mellitus, welcher durch diätetische Maßnahmen und/oder Medikamente kontrolliert werden kann. Diese Patient:innen benötigen nicht regelmäßig Insulin.",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
     },
     {
-      "linkId" : "saps3-18",
-      "text" : "Aufnahmegrund: Respiratorisch",
-      "answer" : [
-        {
-          "valueCoding" : {
-            "code" : "0",
-            "display" : "Kein Aufnahmegrund: Respiratorisch/nicht erhoben"
-          }
-        }
-      ]
+      "linkId" : "saps3-30-17",
+      "text" : "Steroide Behandlung: Tägliche Gabe von >= 0,3mg/kg KG Prednisolon oder äquivalente Dosierungen anderer Kortikoide mindestens 6 Monate vor der Aufnahme. Topische Steroide oder Steroide per Inhalationen gehören nicht dazu.",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
     },
     {
-      "linkId" : "saps3-19",
-      "text" : "Aufnahmegrund: Schweres Trauma",
-      "answer" : [
-        {
-          "valueBoolean" : false
-        }
-      ]
+      "linkId" : "saps3-30-18",
+      "text" : "Bestrahlung: Strahlentherapie während der letzten 6 Monate vor der Aufnahme. Exkludiert Strahlentherapie für nicht-invasive Tumoren, enterale oder parenterale Radioisotop-Therapie, radioaktive Implantate, Therapie zur Verhinderung heterotopischer Knochenformationen.",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
     },
     {
-      "linkId" : "saps3-20",
-      "text" : "Aufnahmetyp",
-      "answer" : [
-        {
-          "valueCoding" : {
-            "code" : "2",
-            "display" : "Ungeplant: Patient:innen, deren Aufnahme komplett ungeplant oder kürzer als 12 Stunden geplant wurde"
-          }
-        }
-      ]
+      "linkId" : "saps3-30-19",
+      "text" : "Chemotherapie: Chemotherapie in den 6 Monaten vor der Aufnahme, inkludiert immunsuppressierende Therapie für Malignome, Rheumatoide Arthritis oder entzündliche Darmerkrankungen (außer reine Behandlung mit Steroiden).",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
     },
     {
-      "linkId" : "saps3-21",
-      "text" : "Blutbild: Leukozyten (Minimum)",
-      "answer" : [
-        {
-          "valueDecimal" : 17
-        }
-      ]
+      "linkId" : "saps3-30-20",
+      "text" : "COPD: Chronisch obstruktive pulmonale Erkrankungen aufgrund chronischer Bronchitis und/oder Emphysem",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
     },
     {
-      "linkId" : "saps3-22",
-      "text" : "Blutbild: pH-Wert",
-      "answer" : [
-        {
-          "valueDecimal" : 7.2
-        }
-      ]
+      "linkId" : "saps3-30-21",
+      "text" : "Arterielle Hypertonension: Anamnese eines systolischen Blutdrucks >= 160 mmHg und/oder eines diastolischen Blutdrucks >= 95 mmHg, behandelt oder unbehandelt",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
+    }]
+  },
+  {
+    "linkId" : "saps3-31",
+    "text" : "Körpertemperatur (Maximum)",
+    "answer" : [{
+      "valueDecimal" : 35
+    }]
+  },
+  {
+    "linkId" : "saps3-32",
+    "text" : "Mechanische Beatmung",
+    "answer" : [{
+      "valueBoolean" : false
+    }]
+  },
+  {
+    "linkId" : "saps3-33",
+    "text" : "Sauerstoff-Partialdruck arteriell (PaO2)",
+    "answer" : [{
+      "valueDecimal" : 222
+    }]
+  },
+  {
+    "linkId" : "saps3-34",
+    "text" : "Sauerstoffkonzentration inspiratorisch (FiO2)",
+    "answer" : [{
+      "valueDecimal" : 55
+    }]
+  },
+  {
+    "linkId" : "saps3-35",
+    "text" : "Serum: Bilirubin (Maximum)",
+    "answer" : [{
+      "valueDecimal" : 0.5
+    }]
+  },
+  {
+    "linkId" : "saps3-36",
+    "text" : "Serum: Kreatinin (Maximum)",
+    "answer" : [{
+      "valueDecimal" : 0.8
+    }]
+  },
+  {
+    "linkId" : "saps3-37",
+    "text" : "Systolischer Blutdruck (Minimum)",
+    "answer" : [{
+      "valueDecimal" : 66
+    }]
+  },
+  {
+    "linkId" : "saps3-38",
+    "text" : "Therapeutische Maßnahmen (vor IBS)",
+    "item" : [{
+      "linkId" : "saps3-38-1",
+      "text" : "CPR: Herzstillstand mit kardiopulmonaler Reanimation vor der Aufnahme auf die Intensivstation. Die Reanimation muss enthalten: Thoraxkompressionen, Herzmassage oder Defibrillation.",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
     },
     {
-      "linkId" : "saps3-23",
-      "text" : "Blutbild: Thrombozyten (Minimum)",
-      "answer" : [
-        {
-          "valueDecimal" : 488
-        }
-      ]
+      "linkId" : "saps3-38-2",
+      "text" : "Vasoaktive Medikamente: Kontinuierlicher Einsatz von Vasopressoren, um den Blutdruck aufrechtzuerhalten (Adrenalin, Noradrenalin, Dobutamin in jeder Dosierung, Dopamin >5 μg/kgKG/ min), für mindestens eine Stunde",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
     },
     {
-      "linkId" : "saps3-24",
-      "text" : "Chirurgie – Eingriff",
-      "answer" : [
-        {
-          "valueCoding" : {
-            "code" : "0",
-            "display" : "Keine Chirurgie – Eingriff/nicht erhoben"
-          }
-        }
-      ]
-    },
-    {
-      "linkId" : "saps3-25",
-      "text" : "Chirurgischer Status",
-      "answer" : [
-        {
-          "valueCoding" : {
-            "code" : "3",
-            "display" : "Kein chirurgischer Eingriff"
-          }
-        }
-      ]
-    },
-    {
-      "linkId" : "saps3-26",
-      "text" : "Glasgow Coma Scale: motorische Reaktion",
-      "answer" : [
-        {
-          "valueCoding" : {
-            "code" : "6",
-            "display" : "Befolgt verbale Aufforderung"
-          }
-        }
-      ]
-    },
-    {
-      "linkId" : "saps3-27",
-      "text" : "Glasgow Coma Scale: verbale Reaktion",
-      "answer" : [
-        {
-          "valueCoding" : {
-            "code" : "4",
-            "display" : "Desorientiert, betreibt Konversation"
-          }
-        }
-      ]
-    },
-    {
-      "linkId" : "saps3-28",
-      "text" : "Glasgow Coma Scale: visuelle Reaktion",
-      "answer" : [
-        {
-          "valueCoding" : {
-            "code" : "3",
-            "display" : "Befolgt Aufforderung"
-          }
-        }
-      ]
-    },
-    {
-      "linkId" : "saps3-29",
-      "text" : "Herzfrequenz (Maximum)",
-      "answer" : [
-        {
-          "valueInteger" : 44
-        }
-      ]
-    },
-    {
-      "linkId" : "saps3-30",
-      "text" : "Koexistierende Erkrankungen",
-      "item" : [
-        {
-          "linkId" : "saps3-30-1",
-          "text" : "Hämatologische Erkrankung: Lymphom, akute Leukämie oder Multiples Myelom",
-          "answer" : [
-            {
-              "valueBoolean" : true
-            }
-          ]
-        },
-        {
-          "linkId" : "saps3-30-2",
-          "text" : "HIV-positiv (kein AIDS): Positive HIV-Serologie, aber keine AIDS-Kriterien nach den CDC/WHO-Definitionen; CD4-Zellen sind, sofern gemessen, > 200",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        },
-        {
-          "linkId" : "saps3-30-3",
-          "text" : "AIDS: Patient:innen, welche die CDC/WHO-Definitionen für AIDS erfüllen, wie HIV-positive Patient:innen mit klinischen Komplikationen wie Pneumocystis carinii Pneumonie, Kaposi-Sarkom, Lymphom, Tuberkulose oder Toxoplasmose, oder CD4-Zellen sind, sofern gemessen, < 200",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        },
-        {
-          "linkId" : "saps3-30-4",
-          "text" : "Metastasierendes Malignom: Neoplasma mit Metastasen, bestätigt durch radiologische (z.B. CT), chirurgische oder andere Methoden",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        },
-        {
-          "linkId" : "saps3-30-5",
-          "text" : "Malignom, nicht metastasierend: Neoplasma ohne Metastasen, bestätigt durch radiologische (z.B. CT), chirurgische oder andere Methoden",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        },
-        {
-          "linkId" : "saps3-30-6",
-          "text" : "Leberzirrhose: Dokumentiert durch Biopsie oder klinischen Symptomen portaler Hypertension, Präsenz ösophagealer oder gastrischer Varizen (bestätigt durch Endoskopie oder Chirurgie) oder der Demonstration eines retrograden Flusses in der Vena lienalis, Episoden hepatischer Enzephalopathie oder einer Anamnese von Varizenblutungen",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        },
-        {
-          "linkId" : "saps3-30-7",
-          "text" : "Herzinsuffizienz NYHA II: Müdigkeit, Dyspnoe oder Angina pectoris, welche mit normaler Betätigung einhergehen",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        },
-        {
-          "linkId" : "saps3-30-8",
-          "text" : "Herzinsuffizienz NYHA III: Müdigkeit, Dyspnoe oder Angina pectoris, welche bereits bei mittelschwerer Betätigung auftreten",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        },
-        {
-          "linkId" : "saps3-30-9",
-          "text" : "Herzinsuffizienz NYHA IV: Müdigkeit, Dyspnoe oder Angina pectoris, welche mit leichter Betätigung einhergehen. Diese Patient:innen können nur geringe Wegstrecken zu Fuß zurücklegen oder andere Tätigkeiten alleine durchführen.",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        },
-        {
-          "linkId" : "saps3-30-10",
-          "text" : "Chronische respiratorische Insuffizienz: Permanente Atemnot bei leichter Aktivität aufgrund pulmonaler Erkrankungen (chronisch restriktiver oder obstruktiver Natur). Funktionell sind diese Patient:innen unfähig, alleine Stiegen zu steigen, zu arbeiten oder den Haushalt zu verrichten. Sollte auch dokumentiert werden, wenn eines der folgenden Symptome vorliegt: chronische Hypoxie, Hyperkapnie, sekundäre Polyzythämie oder pulmonale Hypertonension mit systolischem Druck > 40 mmHg) oder Respirator-Abhängigkeit.",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        },
-        {
-          "linkId" : "saps3-30-11",
-          "text" : "Chronische renale Insuffizienz: Chronische renale Therapie (Hämodialyse oder Peritonealdialyse) bei irreversiblen renalen Erkrankungen oder Anamnese einer chronischen renalen Insuffizienz",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        },
-        {
-          "linkId" : "saps3-30-12",
-          "text" : "Alkoholismus: Alkoholeinfuhr von mehr als 80 g pro Tag über einen Zeitraum von mindestens 6 Monaten vor der Aufnahme, welche klinische Symptome verursacht wie: Logorrhoe, Enzephalopathie, andere neurologische Erkrankungen, schlechter Ernährungszustand oder Leberzirrhose",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        },
-        {
-          "linkId" : "saps3-30-13",
-          "text" : "Drogensucht: Drogenabhängigkeit aufgrund intravenöser Drogeneinnahme (Kokain, Opiate und Derivate) für mindestens 6 Monate vor der Aufnahme. Patient:innen im Methadonprogramm ohne andere Drogenkonsumation fallen nicht darunter.",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        },
-        {
-          "linkId" : "saps3-30-14",
-          "text" : "Immunsuppression, andere: Der:die Patient:in weist eine Erkrankung auf, welche genügend fortgeschritten ist, um die Infektionsresistenz zu unterdrücken: Schwere Mangelernährung, angeborene Defektzustände des humoralen oder zellulären Systems. Exkludiert AIDS oder HIV-Infektion, metastasiernde oder hämatologische Neoplasien, Chemotherapie, Radiotherapie und Steroidbehandlung.",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        },
-        {
-          "linkId" : "saps3-30-15",
-          "text" : "Insulinpflichtiger Diabetes mellitus: Patient:innen, welche tägliche Insulingaben (Injektionen) benötigen",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        },
-        {
-          "linkId" : "saps3-30-16",
-          "text" : "Nicht-insulinpflichtiger Diabetes mellitus: Patient:innen mit diagnostiziertem Diabetes mellitus, welcher durch diätetische Maßnahmen und/oder Medikamente kontrolliert werden kann. Diese Patient:innen benötigen nicht regelmäßig Insulin.",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        },
-        {
-          "linkId" : "saps3-30-17",
-          "text" : "Steroide Behandlung: Tägliche Gabe von >= 0,3mg/kg KG Prednisolon oder äquivalente Dosierungen anderer Kortikoide mindestens 6 Monate vor der Aufnahme. Topische Steroide oder Steroide per Inhalationen gehören nicht dazu.",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        },
-        {
-          "linkId" : "saps3-30-18",
-          "text" : "Bestrahlung: Strahlentherapie während der letzten 6 Monate vor der Aufnahme. Exkludiert Strahlentherapie für nicht-invasive Tumoren, enterale oder parenterale Radioisotop-Therapie, radioaktive Implantate, Therapie zur Verhinderung heterotopischer Knochenformationen.",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        },
-        {
-          "linkId" : "saps3-30-19",
-          "text" : "Chemotherapie: Chemotherapie in den 6 Monaten vor der Aufnahme, inkludiert immunsuppressierende Therapie für Malignome, Rheumatoide Arthritis oder entzündliche Darmerkrankungen (außer reine Behandlung mit Steroiden).",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        },
-        {
-          "linkId" : "saps3-30-20",
-          "text" : "COPD: Chronisch obstruktive pulmonale Erkrankungen aufgrund chronischer Bronchitis und/oder Emphysem",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        },
-        {
-          "linkId" : "saps3-30-21",
-          "text" : "Arterielle Hypertonension: Anamnese eines systolischen Blutdrucks >= 160 mmHg und/oder eines diastolischen Blutdrucks >= 95 mmHg, behandelt oder unbehandelt",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "linkId" : "saps3-31",
-      "text" : "Körpertemperatur (Maximum)",
-      "answer" : [
-        {
-          "valueDecimal" : 35
-        }
-      ]
-    },
-    {
-      "linkId" : "saps3-32",
-      "text" : "Mechanische Beatmung",
-      "answer" : [
-        {
-          "valueBoolean" : false
-        }
-      ]
-    },
-    {
-      "linkId" : "saps3-33",
-      "text" : "Sauerstoff-Partialdruck arteriell (PaO2)",
-      "answer" : [
-        {
-          "valueDecimal" : 222
-        }
-      ]
-    },
-    {
-      "linkId" : "saps3-34",
-      "text" : "Sauerstoffkonzentration inspiratorisch (FiO2)",
-      "answer" : [
-        {
-          "valueDecimal" : 55
-        }
-      ]
-    },
-    {
-      "linkId" : "saps3-35",
-      "text" : "Serum: Bilirubin (Maximum)",
-      "answer" : [
-        {
-          "valueDecimal" : 0.5
-        }
-      ]
-    },
-    {
-      "linkId" : "saps3-36",
-      "text" : "Serum: Kreatinin (Maximum)",
-      "answer" : [
-        {
-          "valueDecimal" : 0.8
-        }
-      ]
-    },
-    {
-      "linkId" : "saps3-37",
-      "text" : "Systolischer Blutdruck (Minimum)",
-      "answer" : [
-        {
-          "valueDecimal" : 66
-        }
-      ]
-    },
-    {
-      "linkId" : "saps3-38",
-      "text" : "Therapeutische Maßnahmen (vor IBS)",
-      "item" : [
-        {
-          "linkId" : "saps3-38-1",
-          "text" : "CPR: Herzstillstand mit kardiopulmonaler Reanimation vor der Aufnahme auf die Intensivstation. Die Reanimation muss enthalten: Thoraxkompressionen, Herzmassage oder Defibrillation.",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        },
-        {
-          "linkId" : "saps3-38-2",
-          "text" : "Vasoaktive Medikamente: Kontinuierlicher Einsatz von Vasopressoren, um den Blutdruck aufrechtzuerhalten (Adrenalin, Noradrenalin, Dobutamin in jeder Dosierung, Dopamin >5 μg/kgKG/ min), für mindestens eine Stunde",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        },
-        {
-          "linkId" : "saps3-38-3",
-          "text" : "Mechanische Beatmung: Invasive oder nicht-invasive Beatmung. Nicht inkludiert ist die alleinige Sauerstoffgabe über eine Venturi-Maske oder Nasenbrille.",
-          "answer" : [
-            {
-              "valueBoolean" : false
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "linkId" : "saps3-39",
-      "text" : "Zutransferierung",
-      "answer" : [
-        {
-          "valueCoding" : {
-            "code" : "1",
-            "display" : "Bettenstation: Der:die Patient:in wurde von einer Normalstation entweder derselben oder einer anderen Krankenanstalt zurtransferiert."
-          }
-        }
-      ]
-    }
-  ]
+      "linkId" : "saps3-38-3",
+      "text" : "Mechanische Beatmung: Invasive oder nicht-invasive Beatmung. Nicht inkludiert ist die alleinige Sauerstoffgabe über eine Venturi-Maske oder Nasenbrille.",
+      "answer" : [{
+        "valueBoolean" : false
+      }]
+    }]
+  },
+  {
+    "linkId" : "saps3-39",
+    "text" : "Zutransferierung",
+    "answer" : [{
+      "valueCoding" : {
+        "code" : "1",
+        "display" : "Bettenstation: Der:die Patient:in wurde von einer Normalstation entweder derselben oder einer anderen Krankenanstalt zurtransferiert."
+      }
+    }]
+  }]
 }
 
 ```

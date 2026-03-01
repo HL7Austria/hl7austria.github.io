@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedUpdateBundleKH | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedUpdateBundleKH |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedUpdateBundleKH |
 
  
 Bundle für die Input-Ressourcen beim Update von Informationen zu einem Fall 
@@ -41,19 +41,15 @@ Other representations of profile: [CSV](StructureDefinition-MopedUpdateBundleKH.
   "name" : "MopedUpdateBundleKH",
   "title" : "MOPED Update Bundle KH",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "Bundle für die Input-Ressourcen beim Update von Informationen zu einem Fall",
   "fhirVersion" : "5.0.0",
   "kind" : "resource",
@@ -62,34 +58,32 @@ Other representations of profile: [CSV](StructureDefinition-MopedUpdateBundleKH.
   "baseDefinition" : "https://elga.moped.at/StructureDefinition/MopedInputBundleKH",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Bundle",
-        "path" : "Bundle"
-      },
-      {
-        "id" : "Bundle.entry:Aufenthalt",
-        "path" : "Bundle.entry",
-        "sliceName" : "Aufenthalt"
-      },
-      {
-        "id" : "Bundle.entry:Aufenthalt.request.method",
-        "path" : "Bundle.entry.request.method",
-        "short" : "PUT",
-        "patternCode" : "PUT"
-      },
-      {
-        "id" : "Bundle.entry:Patient",
-        "path" : "Bundle.entry",
-        "sliceName" : "Patient"
-      },
-      {
-        "id" : "Bundle.entry:Patient.request.method",
-        "path" : "Bundle.entry.request.method",
-        "short" : "PUT",
-        "patternCode" : "PUT"
-      }
-    ]
+    "element" : [{
+      "id" : "Bundle",
+      "path" : "Bundle"
+    },
+    {
+      "id" : "Bundle.entry:Aufenthalt",
+      "path" : "Bundle.entry",
+      "sliceName" : "Aufenthalt"
+    },
+    {
+      "id" : "Bundle.entry:Aufenthalt.request.method",
+      "path" : "Bundle.entry.request.method",
+      "short" : "PUT",
+      "patternCode" : "PUT"
+    },
+    {
+      "id" : "Bundle.entry:Patient",
+      "path" : "Bundle.entry",
+      "sliceName" : "Patient"
+    },
+    {
+      "id" : "Bundle.entry:Patient.request.method",
+      "path" : "Bundle.entry.request.method",
+      "short" : "PUT",
+      "patternCode" : "PUT"
+    }]
   }
 }
 

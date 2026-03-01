@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/LKFDiagnoseTypVS | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LKFDiagnoseTypVS |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LKFDiagnoseTypVS |
 
  
 LKF Diganosetyp 
@@ -24,7 +24,7 @@ LKF Diganosetyp
 
 ### Expansion
 
-No Expansion for this valueset (not supported by Publication Tooling)
+No Expansion for this valueset (Unknown Code System)
 
 -------
 
@@ -53,35 +53,27 @@ No Expansion for this valueset (not supported by Publication Tooling)
   "title" : "LKF Diagnosetyp ValueSet",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "LKF Diganosetyp",
   "compose" : {
-    "include" : [
-      {
-        "system" : "https://termgit.elga.gv.at/ValueSet/lkf-diagnose-typ"
-      },
-      {
-        "system" : "http://snomed.info/sct",
-        "concept" : [
-          {
-            "code" : "52870002",
-            "display" : "Aufnahmediagnose"
-          }
-        ]
-      }
-    ]
+    "include" : [{
+      "system" : "https://termgit.elga.gv.at/ValueSet/lkf-diagnose-typ"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "concept" : [{
+        "code" : "52870002",
+        "display" : "Aufnahmediagnose"
+      }]
+    }]
   }
 }
 

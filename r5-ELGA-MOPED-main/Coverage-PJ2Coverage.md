@@ -38,15 +38,13 @@ Profile: [MOPED Coverage](StructureDefinition-MopedCoverage.md)
   "meta" : {
     "profile" : ["https://elga.moped.at/StructureDefinition/MopedCoverage"]
   },
-  "identifier" : [
-    {
-      "system" : "urn:oid:1.2.40.0.10.1.4.3.9.1",
-      "value" : "FJK5MCDPMRCY",
-      "assigner" : {
-        "reference" : "Organization/OrganizationKrankenhausRied"
-      }
+  "identifier" : [{
+    "system" : "urn:oid:1.2.40.0.10.1.4.3.9.1",
+    "value" : "FJK5MCDPMRCY",
+    "assigner" : {
+      "reference" : "Organization/OrganizationKrankenhausRied"
     }
-  ],
+  }],
   "status" : "active",
   "kind" : "insurance",
   "policyHolder" : {
@@ -58,22 +56,18 @@ Profile: [MOPED Coverage](StructureDefinition-MopedCoverage.md)
   "insurer" : {
     "reference" : "Organization/SV14"
   },
-  "class" : [
-    {
-      "type" : {
-        "coding" : [
-          {
-            "system" : "http://terminology.hl7.org/CodeSystem/coverage-class",
-            "code" : "group"
-          }
-        ]
-      },
-      "value" : {
-        "system" : "http://svc.co.at/CodeSystem/ecard-versichertenkategorie-cs",
-        "value" : "01"
-      }
+  "class" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/coverage-class",
+        "code" : "group"
+      }]
+    },
+    "value" : {
+      "system" : "http://svc.co.at/CodeSystem/ecard-versichertenkategorie-cs",
+      "value" : "01"
     }
-  ]
+  }]
 }
 
 ```

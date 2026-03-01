@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/OperationDefinition/MOPED.QuestionnaireResponse.Einmelden | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_QuestionnaireResponse_Einmelden |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_QuestionnaireResponse_Einmelden |
 
  
 Die $einmelden Operation wird aufgerufen, wenn eine (nicht fallbezogene) QuestionnaireResponse eingemeldet werden soll. 
@@ -48,19 +48,15 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $einmelden Operat
   "title" : "MOPED QuestionnaireResponse $einmelden",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "Die $einmelden Operation wird aufgerufen, wenn eine (nicht fallbezogene) QuestionnaireResponse eingemeldet werden soll.",
   "affectsState" : true,
   "code" : "einmelden",
@@ -68,28 +64,24 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $einmelden Operat
   "system" : false,
   "type" : true,
   "instance" : false,
-  "parameter" : [
-    {
-      "name" : "QuestionnaireResponses",
-      "use" : "in",
-      "min" : 1,
-      "max" : "1",
-      "documentation" : "Der *QuestionnaireResponses* Parameter beinhaltet ein Bundle mit sämtlichen nicht fallspezifischen QuestionnaireResponses die eingebracht werden sollen.",
-      "type" : "Bundle",
-      "targetProfile" : [
-        "https://elga.moped.at/StructureDefinition/MopedQuestionnaireResponseEinmeldenBundle"
-      ]
-    },
-    {
-      "name" : "return",
-      "use" : "out",
-      "min" : 1,
-      "max" : "1",
-      "documentation" : "Der *return* Parameter gibt Auskunft über den Erfolg der Operation.",
-      "type" : "Resource",
-      "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/OperationOutcome"]
-    }
-  ]
+  "parameter" : [{
+    "name" : "QuestionnaireResponses",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *QuestionnaireResponses* Parameter beinhaltet ein Bundle mit sämtlichen nicht fallspezifischen QuestionnaireResponses die eingebracht werden sollen.",
+    "type" : "Bundle",
+    "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedQuestionnaireResponseEinmeldenBundle"]
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *return* Parameter gibt Auskunft über den Erfolg der Operation.",
+    "type" : "Resource",
+    "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/OperationOutcome"]
+  }]
 }
 
 ```

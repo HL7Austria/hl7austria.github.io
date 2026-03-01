@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/Questionnaire/LKFK12Questionnaire | *Version*:0.1.0 | |
-| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
+| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
 
  
 LKF K12 Questionnaire - Sammel-Kostennachweis Detailblätter 
@@ -26,101 +26,94 @@ LKF K12 Questionnaire - Sammel-Kostennachweis Detailblätter
   "version" : "0.1.0",
   "title" : "LKF K12 Questionnaire",
   "status" : "active",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "LKF K12 Questionnaire - Sammel-Kostennachweis Detailblätter",
-  "item" : [
-    {
-      "linkId" : "satzartenkennzeichen",
-      "text" : "Satzartenkennzeichen",
-      "type" : "string",
-      "readOnly" : true,
-      "maxLength" : 3,
-      "initial" : [
-        {
-          "valueString" : "K12"
-        }
-      ]
+  "item" : [{
+    "linkId" : "satzartenkennzeichen",
+    "text" : "Satzartenkennzeichen",
+    "type" : "string",
+    "readOnly" : true,
+    "maxLength" : 3,
+    "initial" : [{
+      "valueString" : "K12"
+    }]
+  },
+  {
+    "linkId" : "jahr",
+    "text" : "Jahr",
+    "type" : "integer",
+    "maxLength" : 4
+  },
+  {
+    "linkId" : "krankenanstaltennummer",
+    "text" : "Krankenanstaltennummer",
+    "type" : "string",
+    "maxLength" : 6
+  },
+  {
+    "linkId" : "blattnummer",
+    "text" : "Blattnummer",
+    "type" : "coding",
+    "answerOption" : [{
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "01/11",
+        "display" : "Personalkosten (Kostenartennummer 111–119)"
+      }
     },
     {
-      "linkId" : "jahr",
-      "text" : "Jahr",
-      "type" : "integer",
-      "maxLength" : 4
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "01/12",
+        "display" : "Personalkosten (Kostenartennummer 121–129)"
+      }
     },
     {
-      "linkId" : "krankenanstaltennummer",
-      "text" : "Krankenanstaltennummer",
-      "type" : "string",
-      "maxLength" : 6
-    },
-    {
-      "linkId" : "blattnummer",
-      "text" : "Blattnummer",
-      "type" : "coding",
-      "answerOption" : [
-        {
-          "valueCoding" : {
-            "code" : "01/11",
-            "display" : "Personalkosten (Kostenartennummer 111–119)"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "01/12",
-            "display" : "Personalkosten (Kostenartennummer 121–129)"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "01/13",
-            "display" : "Personalkosten (Kostenartennummer 131–139)"
-          }
-        }
-      ]
-    },
-    {
-      "linkId" : "mlv-nummer",
-      "text" : "MLV-Nummer",
-      "type" : "integer",
-      "maxLength" : 3
-    },
-    {
-      "linkId" : "aufwand-finanzbuchführung",
-      "text" : "Aufwand gemäß Finanzbuchführung",
-      "type" : "integer",
-      "maxLength" : 10
-    },
-    {
-      "linkId" : "neutraler-aufwand",
-      "text" : "Neutraler Aufwand",
-      "type" : "integer",
-      "maxLength" : 10
-    },
-    {
-      "linkId" : "kalkulatorische-kosten",
-      "text" : "Kalkulatorische Kosten",
-      "type" : "integer",
-      "maxLength" : 10
-    },
-    {
-      "linkId" : "kosten",
-      "text" : "Kosten",
-      "type" : "integer",
-      "maxLength" : 10
-    }
-  ]
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "01/13",
+        "display" : "Personalkosten (Kostenartennummer 131–139)"
+      }
+    }]
+  },
+  {
+    "linkId" : "mlv-nummer",
+    "text" : "MLV-Nummer",
+    "type" : "integer",
+    "maxLength" : 3
+  },
+  {
+    "linkId" : "aufwand-finanzbuchführung",
+    "text" : "Aufwand gemäß Finanzbuchführung",
+    "type" : "integer",
+    "maxLength" : 10
+  },
+  {
+    "linkId" : "neutraler-aufwand",
+    "text" : "Neutraler Aufwand",
+    "type" : "integer",
+    "maxLength" : 10
+  },
+  {
+    "linkId" : "kalkulatorische-kosten",
+    "text" : "Kalkulatorische Kosten",
+    "type" : "integer",
+    "maxLength" : 10
+  },
+  {
+    "linkId" : "kosten",
+    "text" : "Kosten",
+    "type" : "integer",
+    "maxLength" : 10
+  }]
 }
 
 ```

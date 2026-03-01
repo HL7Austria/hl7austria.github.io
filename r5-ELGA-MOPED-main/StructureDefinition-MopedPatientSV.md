@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedPatientSV | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedPatientSV |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedPatientSV |
 
  
 MOPED Profil der Patient Ressource aus der Sicht der Rolle: SV 
@@ -41,57 +41,49 @@ Other representations of profile: [CSV](StructureDefinition-MopedPatientSV.csv),
   "name" : "MopedPatientSV",
   "title" : "MOPED Patient SV",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "MOPED Profil der Patient Ressource aus der Sicht der Rolle: SV",
   "fhirVersion" : "5.0.0",
-  "mapping" : [
-    {
-      "identity" : "LKF",
-      "uri" : "https://elga.moped.at/mapping/LKF",
-      "name" : "LKF"
-    },
-    {
-      "identity" : "KaOrg",
-      "uri" : "https://elga.moped.at/mapping/KaOrg",
-      "name" : "KaOrg"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "LKF",
+    "uri" : "https://elga.moped.at/mapping/LKF",
+    "name" : "LKF"
+  },
+  {
+    "identity" : "KaOrg",
+    "uri" : "https://elga.moped.at/mapping/KaOrg",
+    "name" : "KaOrg"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Patient",
   "baseDefinition" : "https://elga.moped.at/StructureDefinition/MopedPatient",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Patient",
-        "path" : "Patient"
-      },
-      {
-        "id" : "Patient.address.extension:municipalityCode",
-        "path" : "Patient.address.extension",
-        "sliceName" : "municipalityCode",
-        "max" : "0"
-      },
-      {
-        "id" : "Patient.contact.address.extension:municipalityCode",
-        "path" : "Patient.contact.address.extension",
-        "sliceName" : "municipalityCode",
-        "max" : "0"
-      }
-    ]
+    "element" : [{
+      "id" : "Patient",
+      "path" : "Patient"
+    },
+    {
+      "id" : "Patient.address.extension:municipalityCode",
+      "path" : "Patient.address.extension",
+      "sliceName" : "municipalityCode",
+      "max" : "0"
+    },
+    {
+      "id" : "Patient.contact.address.extension:municipalityCode",
+      "path" : "Patient.contact.address.extension",
+      "sliceName" : "municipalityCode",
+      "max" : "0"
+    }]
   }
 }
 

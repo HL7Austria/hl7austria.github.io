@@ -30,57 +30,43 @@ Profile: [MOPED KH Organisationseinheiten](StructureDefinition-MopedKHOrganisati
   "resourceType" : "HealthcareService",
   "id" : "KHK999ABT16111112",
   "meta" : {
-    "profile" : [
-      "https://elga.moped.at/StructureDefinition/MopedKHOrganisationseinheit"
-    ]
+    "profile" : ["https://elga.moped.at/StructureDefinition/MopedKHOrganisationseinheit"]
   },
-  "extension" : [
-    {
-      "extension" : [
-        {
-          "url" : "InterneKostenstellennummer",
-          "valueUnsignedInt" : 1291
-        },
-        {
-          "url" : "InterneKostenstellenbezeichnung",
-          "valueString" : "Innere Medizin � allgemein"
-        },
-        {
-          "url" : "KostenstellenJahr",
-          "valueDate" : "2025"
-        }
-      ],
-      "url" : "https://elga.moped.at/StructureDefinition/moped-ext-Kostenstelle"
-    }
-  ],
-  "identifier" : [
-    {
-      "system" : "http://example.org/lkf-system/funktionscode",
-      "value" : "161111"
+  "extension" : [{
+    "extension" : [{
+      "url" : "InterneKostenstellennummer",
+      "valueUnsignedInt" : 1291
     },
     {
-      "system" : "http://example.org/lkf-system/funktionssubcode",
-      "value" : "12"
-    }
-  ],
+      "url" : "InterneKostenstellenbezeichnung",
+      "valueString" : "Innere Medizin � allgemein"
+    },
+    {
+      "url" : "KostenstellenJahr",
+      "valueDate" : "2025"
+    }],
+    "url" : "https://elga.moped.at/StructureDefinition/moped-ext-Kostenstelle"
+  }],
+  "identifier" : [{
+    "system" : "http://example.org/lkf-system/funktionscode",
+    "value" : "161111"
+  },
+  {
+    "system" : "http://example.org/lkf-system/funktionssubcode",
+    "value" : "12"
+  }],
   "providedBy" : {
     "reference" : "Organization/KHK999"
   },
-  "type" : [
-    {
-      "coding" : [
-        {
-          "system" : "http://terminology.hl7.org/CodeSystem/service-type",
-          "code" : "361"
-        }
-      ]
-    }
-  ],
-  "location" : [
-    {
-      "reference" : "Location/LocationKHK999"
-    }
-  ]
+  "type" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/service-type",
+      "code" : "361"
+    }]
+  }],
+  "location" : [{
+    "reference" : "Location/LocationKHK999"
+  }]
 }
 
 ```

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/VerpflegskostenBeitragsbefreiungCS | *Version*:0.1.0 | |
-| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:VerpflegskostenBeitragsbefreiungCS |
+| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:VerpflegskostenBeitragsbefreiungCS |
 
  
 CodeSystem für die Befreiung für den Verpflegskostenbeitrag 
@@ -32,37 +32,31 @@ CodeSystem für die Befreiung für den Verpflegskostenbeitrag
   "title" : "Befreiung für den Verpflegskostenbeitrag",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "CodeSystem für die Befreiung für den Verpflegskostenbeitrag",
   "caseSensitive" : true,
   "content" : "complete",
   "count" : 3,
-  "concept" : [
-    {
-      "code" : "J",
-      "display" : "Es liegt eine Befreiung vom Verpflegskostenbeitrag aufgrund einer bundes- oder landesgesetzlichen Gesetzesbestimmung bzw. eines Arbeitsunfalls oder einer Rezeptgebührenbefreiung vor."
-    },
-    {
-      "code" : "N",
-      "display" : "Es liegt keine Befreiung vom Verpflegskostenbeitrag vor."
-    },
-    {
-      "code" : "S",
-      "display" : "Es liegt eine Befreiung vom Verpflegskostenbeitrag aufgrund eines gemeldeten Aufenthaltes von\nPatienten in der Sonderklasse vor (BVAEB-EB, SVS-GW, BVAEB-OEB)."
-    }
-  ]
+  "concept" : [{
+    "code" : "J",
+    "display" : "Es liegt eine Befreiung vom Verpflegskostenbeitrag aufgrund einer bundes- oder landesgesetzlichen Gesetzesbestimmung bzw. eines Arbeitsunfalls oder einer Rezeptgebührenbefreiung vor."
+  },
+  {
+    "code" : "N",
+    "display" : "Es liegt keine Befreiung vom Verpflegskostenbeitrag vor."
+  },
+  {
+    "code" : "S",
+    "display" : "Es liegt eine Befreiung vom Verpflegskostenbeitrag aufgrund eines gemeldeten Aufenthaltes von\nPatienten in der Sonderklasse vor (BVAEB-EB, SVS-GW, BVAEB-OEB)."
+  }]
 }
 
 ```

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/Questionnaire/LKFB06Questionnaire | *Version*:0.1.0 | |
-| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
+| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
 
  
 B06 Questionnaire - Zuschussstruktur (ZS) 
@@ -26,157 +26,157 @@ B06 Questionnaire - Zuschussstruktur (ZS)
   "version" : "0.1.0",
   "title" : "LKF B06 Questionnaire",
   "status" : "active",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "B06 Questionnaire - Zuschussstruktur (ZS)",
-  "item" : [
-    {
-      "linkId" : "satzartenkennzeichen",
-      "text" : "Satzartenkennzeichen",
-      "type" : "string",
-      "readOnly" : true,
-      "maxLength" : 3,
-      "initial" : [
-        {
-          "valueString" : "B06"
-        }
-      ]
+  "item" : [{
+    "linkId" : "satzartenkennzeichen",
+    "text" : "Satzartenkennzeichen",
+    "type" : "string",
+    "readOnly" : true,
+    "maxLength" : 3,
+    "initial" : [{
+      "valueString" : "B06"
+    }]
+  },
+  {
+    "linkId" : "jahr",
+    "text" : "Jahr",
+    "type" : "integer",
+    "maxLength" : 4
+  },
+  {
+    "linkId" : "krankenanstalten-traegernummer",
+    "text" : "Krankenanstalten-/Trägernummer",
+    "type" : "string",
+    "maxLength" : 6
+  },
+  {
+    "linkId" : "berichtstyp",
+    "text" : "Berichtstyp",
+    "type" : "coding",
+    "answerOption" : [{
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "K",
+        "display" : "KA-Ebene – Gesamtdarstellung/-bericht"
+      }
     },
     {
-      "linkId" : "jahr",
-      "text" : "Jahr",
-      "type" : "integer",
-      "maxLength" : 4
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "G",
+        "display" : "Trägerebene – krankenanstaltenübergreifender (gemeinsamer) Bereich"
+      }
     },
     {
-      "linkId" : "krankenanstalten-traegernummer",
-      "text" : "Krankenanstalten-/Trägernummer",
-      "type" : "string",
-      "maxLength" : 6
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "A",
+        "display" : "Trägerebene – krankenanstaltenfremder Bereich"
+      }
     },
     {
-      "linkId" : "berichtstyp",
-      "text" : "Berichtstyp",
-      "type" : "coding",
-      "answerOption" : [
-        {
-          "valueCoding" : {
-            "code" : "K",
-            "display" : "KA-Ebene – Gesamtdarstellung/-bericht"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "G",
-            "display" : "Trägerebene – krankenanstaltenübergreifender (gemeinsamer) Bereich"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "A",
-            "display" : "Trägerebene – krankenanstaltenfremder Bereich"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "T",
-            "display" : "Trägerebene – Gesamtdarstellung/-bericht (KA-übergeordnete Institution)"
-          }
-        }
-      ]
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "T",
+        "display" : "Trägerebene – Gesamtdarstellung/-bericht (KA-übergeordnete Institution)"
+      }
+    }]
+  },
+  {
+    "linkId" : "finanzierungstraegerindex",
+    "text" : "FinanzierungsträgerIndex",
+    "type" : "coding",
+    "answerOption" : [{
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "LF",
+        "display" : "Landesgesundheitsfonds"
+      }
     },
     {
-      "linkId" : "finanzierungstraegerindex",
-      "text" : "FinanzierungsträgerIndex",
-      "type" : "coding",
-      "answerOption" : [
-        {
-          "valueCoding" : {
-            "code" : "LF",
-            "display" : "Landesgesundheitsfonds"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "LD",
-            "display" : "Land"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "GM",
-            "display" : "Gemeinde(n)"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "RT",
-            "display" : "Rechtsträger"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "SO",
-            "display" : "Sonstige"
-          }
-        }
-      ]
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "LD",
+        "display" : "Land"
+      }
     },
     {
-      "linkId" : "zuschussartindex",
-      "text" : "ZuschussartIndex",
-      "type" : "coding",
-      "answerOption" : [
-        {
-          "valueCoding" : {
-            "code" : "Z01",
-            "display" : "Zuschüsse zum Betriebsabgang"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "Z02",
-            "display" : "Sonstige Betriebszuschüsse"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "Z03",
-            "display" : "Betriebszuschüsse"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "Z04",
-            "display" : "Investitionszuschüsse"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "Z05",
-            "display" : "Zins- und Annuitätenzuschüsse"
-          }
-        }
-      ]
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "GM",
+        "display" : "Gemeinde(n)"
+      }
     },
     {
-      "linkId" : "zuschuss",
-      "text" : "Zuschuss",
-      "type" : "integer",
-      "maxLength" : 10
-    }
-  ]
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "RT",
+        "display" : "Rechtsträger"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "SO",
+        "display" : "Sonstige"
+      }
+    }]
+  },
+  {
+    "linkId" : "zuschussartindex",
+    "text" : "ZuschussartIndex",
+    "type" : "coding",
+    "answerOption" : [{
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "Z01",
+        "display" : "Zuschüsse zum Betriebsabgang"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "Z02",
+        "display" : "Sonstige Betriebszuschüsse"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "Z03",
+        "display" : "Betriebszuschüsse"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "Z04",
+        "display" : "Investitionszuschüsse"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "Z05",
+        "display" : "Zins- und Annuitätenzuschüsse"
+      }
+    }]
+  },
+  {
+    "linkId" : "zuschuss",
+    "text" : "Zuschuss",
+    "type" : "integer",
+    "maxLength" : 10
+  }]
 }
 
 ```

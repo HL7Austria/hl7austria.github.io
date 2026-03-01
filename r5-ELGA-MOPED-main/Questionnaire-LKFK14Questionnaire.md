@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/Questionnaire/LKFK14Questionnaire | *Version*:0.1.0 | |
-| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
+| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
 
  
 LKF K14 Questionnaire - Kalkulatorischer Anhang – Kalkulatorischer Anlagenspiegel 
@@ -26,119 +26,112 @@ LKF K14 Questionnaire - Kalkulatorischer Anhang – Kalkulatorischer Anlagenspie
   "version" : "0.1.0",
   "title" : "LKF K14 Questionnaire",
   "status" : "active",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "LKF K14 Questionnaire - Kalkulatorischer Anhang – Kalkulatorischer Anlagenspiegel",
-  "item" : [
-    {
-      "linkId" : "satzartenkennzeichen",
-      "text" : "Satzartenkennzeichen",
-      "type" : "string",
-      "readOnly" : true,
-      "maxLength" : 3,
-      "initial" : [
-        {
-          "valueString" : "K14"
-        }
-      ]
+  "item" : [{
+    "linkId" : "satzartenkennzeichen",
+    "text" : "Satzartenkennzeichen",
+    "type" : "string",
+    "readOnly" : true,
+    "maxLength" : 3,
+    "initial" : [{
+      "valueString" : "K14"
+    }]
+  },
+  {
+    "linkId" : "jahr",
+    "text" : "Jahr",
+    "type" : "integer",
+    "maxLength" : 4
+  },
+  {
+    "linkId" : "krankenanstaltennummer",
+    "text" : "Krankenanstaltennummer",
+    "type" : "string",
+    "maxLength" : 6
+  },
+  {
+    "linkId" : "anlagenindex",
+    "text" : "Anlagenindex",
+    "type" : "coding",
+    "answerOption" : [{
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "A",
+        "display" : "Grundstücke (MLV-Nr. 91)"
+      }
     },
     {
-      "linkId" : "jahr",
-      "text" : "Jahr",
-      "type" : "integer",
-      "maxLength" : 4
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "B",
+        "display" : "Bauten (MLV-Nr. 92–99)"
+      }
     },
     {
-      "linkId" : "krankenanstaltennummer",
-      "text" : "Krankenanstaltennummer",
-      "type" : "string",
-      "maxLength" : 6
-    },
-    {
-      "linkId" : "anlagenindex",
-      "text" : "Anlagenindex",
-      "type" : "coding",
-      "answerOption" : [
-        {
-          "valueCoding" : {
-            "code" : "A",
-            "display" : "Grundstücke (MLV-Nr. 91)"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "B",
-            "display" : "Bauten (MLV-Nr. 92–99)"
-          }
-        },
-        {
-          "valueCoding" : {
-            "code" : "C",
-            "display" : "Anlagen in Bau"
-          }
-        }
-      ]
-    },
-    {
-      "linkId" : "anschaffungs-und-herstellungskosten",
-      "text" : "Anschaffungs- und Herstellungskosten",
-      "type" : "integer",
-      "maxLength" : 10
-    },
-    {
-      "linkId" : "zugänge",
-      "text" : "Zugänge",
-      "type" : "decimal",
-      "maxLength" : 10
-    },
-    {
-      "linkId" : "abgänge",
-      "text" : "Abgänge",
-      "type" : "decimal",
-      "maxLength" : 10
-    },
-    {
-      "linkId" : "umbuchungen",
-      "text" : "Umbuchungen",
-      "type" : "decimal",
-      "maxLength" : 10
-    },
-    {
-      "linkId" : "kumulierte-abschreibungen",
-      "text" : "Kumulierte Abschreibungen",
-      "type" : "decimal",
-      "maxLength" : 10
-    },
-    {
-      "linkId" : "buchwerte-ende-berichtsjahres",
-      "text" : "Buchwerte am Ende des Berichtsjahres",
-      "type" : "decimal",
-      "maxLength" : 10
-    },
-    {
-      "linkId" : "buchwerte-vorjahr",
-      "text" : "Buchwerte Vorjahr",
-      "type" : "decimal",
-      "maxLength" : 10
-    },
-    {
-      "linkId" : "abschreibungen-laufendes-berichtsjahr",
-      "text" : "Abschreibungen laufendes Berichtsjahr",
-      "type" : "decimal",
-      "maxLength" : 10
-    }
-  ]
+      "valueCoding" : {
+        "system" : "https://tbd.at/LKF",
+        "code" : "C",
+        "display" : "Anlagen in Bau"
+      }
+    }]
+  },
+  {
+    "linkId" : "anschaffungs-und-herstellungskosten",
+    "text" : "Anschaffungs- und Herstellungskosten",
+    "type" : "integer",
+    "maxLength" : 10
+  },
+  {
+    "linkId" : "zugänge",
+    "text" : "Zugänge",
+    "type" : "decimal",
+    "maxLength" : 10
+  },
+  {
+    "linkId" : "abgänge",
+    "text" : "Abgänge",
+    "type" : "decimal",
+    "maxLength" : 10
+  },
+  {
+    "linkId" : "umbuchungen",
+    "text" : "Umbuchungen",
+    "type" : "decimal",
+    "maxLength" : 10
+  },
+  {
+    "linkId" : "kumulierte-abschreibungen",
+    "text" : "Kumulierte Abschreibungen",
+    "type" : "decimal",
+    "maxLength" : 10
+  },
+  {
+    "linkId" : "buchwerte-ende-berichtsjahres",
+    "text" : "Buchwerte am Ende des Berichtsjahres",
+    "type" : "decimal",
+    "maxLength" : 10
+  },
+  {
+    "linkId" : "buchwerte-vorjahr",
+    "text" : "Buchwerte Vorjahr",
+    "type" : "decimal",
+    "maxLength" : 10
+  },
+  {
+    "linkId" : "abschreibungen-laufendes-berichtsjahr",
+    "text" : "Abschreibungen laufendes Berichtsjahr",
+    "type" : "decimal",
+    "maxLength" : 10
+  }]
 }
 
 ```

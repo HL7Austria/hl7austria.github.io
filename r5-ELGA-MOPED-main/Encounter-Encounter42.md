@@ -43,79 +43,57 @@ Profile: [MOPED Encounter](StructureDefinition-MopedEncounter.md)
   "meta" : {
     "profile" : ["https://elga.moped.at/StructureDefinition/MopedEncounter"]
   },
-  "extension" : [
-    {
-      "extension" : [
-        {
-          "url" : "beiEntlassung",
-          "valueCodeableConcept" : {
-            "coding" : [
-              {
-                "system" : "https://elga.moped.at/CodeSystem/AltersgruppeCS",
-                "code" : "85"
-              }
-            ]
-          }
-        }
-      ],
-      "url" : "https://elga.moped.at/StructureDefinition/moped-ext-altersgruppe"
-    }
-  ],
-  "identifier" : [
-    {
-      "type" : {
-        "coding" : [
-          {
-            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
-            "code" : "VN"
-          }
-        ]
-      },
-      "system" : "urn:oid:1.3.6.1.4.1.36124.5.999",
-      "value" : "043"
+  "extension" : [{
+    "extension" : [{
+      "url" : "beiEntlassung",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://elga.moped.at/CodeSystem/AltersgruppeCS",
+          "code" : "85"
+        }]
+      }
+    }],
+    "url" : "https://elga.moped.at/StructureDefinition/moped-ext-altersgruppe"
+  }],
+  "identifier" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "VN"
+      }]
     },
-    {
-      "type" : {
-        "coding" : [
-          {
-            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
-            "code" : "ANON"
-          }
-        ]
-      },
-      "system" : "urn:oid:1.3.6.1.4.1.36124.5.999",
-      "value" : "82ad92612238288c30b4590440ecb271690deb8e7c418c1f07b2eda4d87a6fe9"
-    }
-  ],
+    "system" : "urn:oid:1.3.6.1.4.1.36124.5.999",
+    "value" : "043"
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "ANON"
+      }]
+    },
+    "system" : "urn:oid:1.3.6.1.4.1.36124.5.999",
+    "value" : "82ad92612238288c30b4590440ecb271690deb8e7c418c1f07b2eda4d87a6fe9"
+  }],
   "status" : "completed",
-  "class" : [
-    {
-      "coding" : [
-        {
-          "system" : "https://elga.moped.at/CodeSystem/BehandlungsartCS",
-          "code" : "S"
-        }
-      ]
-    },
-    {
-      "coding" : [
-        {
-          "system" : "https://elga.moped.at/CodeSystem/Aufnahmeart2CS",
-          "code" : "P"
-        }
-      ]
-    }
-  ],
-  "type" : [
-    {
-      "coding" : [
-        {
-          "system" : "https://elga.moped.at/CodeSystem/MopedEncounterTypesCS",
-          "code" : "ENC"
-        }
-      ]
-    }
-  ],
+  "class" : [{
+    "coding" : [{
+      "system" : "https://elga.moped.at/CodeSystem/BehandlungsartCS",
+      "code" : "S"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "https://elga.moped.at/CodeSystem/Aufnahmeart2CS",
+      "code" : "P"
+    }]
+  }],
+  "type" : [{
+    "coding" : [{
+      "system" : "https://elga.moped.at/CodeSystem/MopedEncounterTypesCS",
+      "code" : "ENC"
+    }]
+  }],
   "subject" : {
     "reference" : "Patient/Patient42"
   },
@@ -127,22 +105,18 @@ Profile: [MOPED Encounter](StructureDefinition-MopedEncounter.md)
     "end" : "2025-01-04T12:00:00+02:00"
   },
   "admission" : {
-    "extension" : [
-      {
-        "url" : "https://elga.moped.at/StructureDefinition/moped-ext-aufnahmeart",
-        "valueCoding" : {
-          "system" : "https://elga.moped.at/CodeSystem/AufnahmeartCS",
-          "code" : "A"
-        }
+    "extension" : [{
+      "url" : "https://elga.moped.at/StructureDefinition/moped-ext-aufnahmeart",
+      "valueCoding" : {
+        "system" : "https://elga.moped.at/CodeSystem/AufnahmeartCS",
+        "code" : "A"
       }
-    ],
+    }],
     "dischargeDisposition" : {
-      "coding" : [
-        {
-          "system" : "https://elga.moped.at/CodeSystem/EntlassungsartCS",
-          "code" : "E"
-        }
-      ]
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/EntlassungsartCS",
+        "code" : "E"
+      }]
     }
   }
 }

@@ -31,64 +31,50 @@ Profile: [MOPED KH Organisationseinheiten](StructureDefinition-MopedKHOrganisati
   "resourceType" : "HealthcareService",
   "id" : "KHK999ABT12118102",
   "meta" : {
-    "profile" : [
-      "https://elga.moped.at/StructureDefinition/MopedKHOrganisationseinheit"
-    ]
+    "profile" : ["https://elga.moped.at/StructureDefinition/MopedKHOrganisationseinheit"]
   },
-  "extension" : [
-    {
-      "extension" : [
-        {
-          "url" : "InterneKostenstellennummer",
-          "valueUnsignedInt" : 1200
-        },
-        {
-          "url" : "InterneKostenstellenbezeichnung",
-          "valueString" : "Intensivbetreuung (Interne)"
-        },
-        {
-          "url" : "SpezielleOrganisationsform",
-          "valueCoding" : {
-            "system" : "https://elga.moped.at/CodeSystem/SpezielleOrganisationsformenCS",
-            "code" : "A"
-          }
-        },
-        {
-          "url" : "KostenstellenJahr",
-          "valueDate" : "2025"
-        }
-      ],
-      "url" : "https://elga.moped.at/StructureDefinition/moped-ext-Kostenstelle"
-    }
-  ],
-  "identifier" : [
-    {
-      "system" : "http://example.org/lkf-system/funktionscode",
-      "value" : "121181"
+  "extension" : [{
+    "extension" : [{
+      "url" : "InterneKostenstellennummer",
+      "valueUnsignedInt" : 1200
     },
     {
-      "system" : "http://example.org/lkf-system/funktionssubcode",
-      "value" : "02"
-    }
-  ],
+      "url" : "InterneKostenstellenbezeichnung",
+      "valueString" : "Intensivbetreuung (Interne)"
+    },
+    {
+      "url" : "SpezielleOrganisationsform",
+      "valueCoding" : {
+        "system" : "https://elga.moped.at/CodeSystem/SpezielleOrganisationsformenCS",
+        "code" : "A"
+      }
+    },
+    {
+      "url" : "KostenstellenJahr",
+      "valueDate" : "2025"
+    }],
+    "url" : "https://elga.moped.at/StructureDefinition/moped-ext-Kostenstelle"
+  }],
+  "identifier" : [{
+    "system" : "http://example.org/lkf-system/funktionscode",
+    "value" : "121181"
+  },
+  {
+    "system" : "http://example.org/lkf-system/funktionssubcode",
+    "value" : "02"
+  }],
   "providedBy" : {
     "reference" : "Organization/KHK999"
   },
-  "type" : [
-    {
-      "coding" : [
-        {
-          "system" : "http://terminology.hl7.org/CodeSystem/service-type",
-          "code" : "361"
-        }
-      ]
-    }
-  ],
-  "location" : [
-    {
-      "reference" : "Location/LocationKHK999"
-    }
-  ]
+  "type" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/service-type",
+      "code" : "361"
+    }]
+  }],
+  "location" : [{
+    "reference" : "Location/LocationKHK999"
+  }]
 }
 
 ```

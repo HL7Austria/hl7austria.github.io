@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedEncounterLGF | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounterLGF |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounterLGF |
 
  
 MOPED Profil der Encounter Ressource für die Rolle: LGF 
@@ -41,57 +41,49 @@ Other representations of profile: [CSV](StructureDefinition-MopedEncounterLGF.cs
   "name" : "MopedEncounterLGF",
   "title" : "MOPED Encounter LGF",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "MOPED Profil der Encounter Ressource für die Rolle: LGF",
   "fhirVersion" : "5.0.0",
-  "mapping" : [
-    {
-      "identity" : "LKF",
-      "uri" : "https://elga.moped.at/mapping/LKF",
-      "name" : "LKF"
-    },
-    {
-      "identity" : "KaOrg",
-      "uri" : "https://elga.moped.at/mapping/KaOrg",
-      "name" : "KaOrg"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "LKF",
+    "uri" : "https://elga.moped.at/mapping/LKF",
+    "name" : "LKF"
+  },
+  {
+    "identity" : "KaOrg",
+    "uri" : "https://elga.moped.at/mapping/KaOrg",
+    "name" : "KaOrg"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Encounter",
   "baseDefinition" : "https://elga.moped.at/StructureDefinition/MopedEncounter",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Encounter",
-        "path" : "Encounter"
-      },
-      {
-        "id" : "Encounter.identifier:DatensatzID",
-        "path" : "Encounter.identifier",
-        "sliceName" : "DatensatzID",
-        "max" : "0"
-      },
-      {
-        "id" : "Encounter.reason:Ursache",
-        "path" : "Encounter.reason",
-        "sliceName" : "Ursache",
-        "max" : "0"
-      }
-    ]
+    "element" : [{
+      "id" : "Encounter",
+      "path" : "Encounter"
+    },
+    {
+      "id" : "Encounter.identifier:DatensatzID",
+      "path" : "Encounter.identifier",
+      "sliceName" : "DatensatzID",
+      "max" : "0"
+    },
+    {
+      "id" : "Encounter.reason:Ursache",
+      "path" : "Encounter.reason",
+      "sliceName" : "Ursache",
+      "max" : "0"
+    }]
   }
 }
 

@@ -19,16 +19,12 @@ Profile: [HL7® AT Core Organization Profile](https://build.fhir.org/ig/HL7Austr
   "resourceType" : "Organization",
   "id" : "OrganizationUeberweisendeOrganization1",
   "meta" : {
-    "profile" : [
-      "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-organization"
-    ]
+    "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-organization"]
   },
-  "identifier" : [
-    {
-      "system" : "urn:oid:1.2.40.0.10.1.4.3.2",
-      "value" : "233853"
-    }
-  ]
+  "identifier" : [{
+    "system" : "urn:oid:1.2.40.0.10.1.4.3.2",
+    "value" : "233853"
+  }]
 }
 
 ```

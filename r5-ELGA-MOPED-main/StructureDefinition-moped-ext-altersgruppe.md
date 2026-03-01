@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/moped-ext-altersgruppe | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:Altersgruppe |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:Altersgruppe |
 
 In Gruppen eingeteilt, wobei vollendete Lebensjahre ausschlaggebend sind.
 
@@ -44,170 +44,152 @@ Other representations of profile: [CSV](StructureDefinition-moped-ext-altersgrup
 {
   "resourceType" : "StructureDefinition",
   "id" : "moped-ext-altersgruppe",
-  "extension" : [
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
-      "valueCode" : "can-bind"
-    }
-  ],
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+    "valueCode" : "can-bind"
+  }],
   "url" : "https://elga.moped.at/StructureDefinition/moped-ext-altersgruppe",
   "version" : "0.1.0",
   "name" : "Altersgruppe",
   "title" : "Altersgruppe",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "In Gruppen eingeteilt, wobei vollendete Lebensjahre ausschlaggebend sind.",
   "fhirVersion" : "5.0.0",
   "kind" : "complex-type",
   "abstract" : false,
-  "context" : [
-    {
-      "type" : "element",
-      "expression" : "https://elga.moped.at/StructureDefinition/MopedTransferEncounter#Encounter.admission"
-    },
-    {
-      "type" : "element",
-      "expression" : "https://elga.moped.at/StructureDefinition/MopedEncounter#Encounter"
-    }
-  ],
+  "context" : [{
+    "type" : "element",
+    "expression" : "https://elga.moped.at/StructureDefinition/MopedTransferEncounter#Encounter.admission"
+  },
+  {
+    "type" : "element",
+    "expression" : "https://elga.moped.at/StructureDefinition/MopedEncounter#Encounter"
+  }],
   "type" : "Extension",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Extension",
-        "path" : "Extension",
-        "short" : "Altersgruppe",
-        "definition" : "In Gruppen eingeteilt, wobei vollendete Lebensjahre ausschlaggebend sind.",
-        "constraint" : [
-          {
-            "key" : "moped-inv-Altersgruppe-1",
-            "severity" : "error",
-            "human" : "If 'neugeborenes' is true then 'beiZugang' must be age group 0.",
-            "expression" : "(extension.where(url = 'neugeborenes').exists() and extension.where(url = 'neugeborenes').value = true) implies (extension.where(url = 'beiZugang').value = '0')",
-            "source" : "https://elga.moped.at/StructureDefinition/moped-ext-altersgruppe"
-          }
-        ]
-      },
-      {
-        "id" : "Extension.extension:beiZugang",
-        "path" : "Extension.extension",
-        "sliceName" : "beiZugang",
-        "short" : "Altersgruppe bei Zugang/Kontakt",
-        "definition" : "Nach dem Alter in Gruppen eingeteilt, wobei vollendete Lebensjahre ausschlaggebend sind.",
-        "min" : 0,
-        "max" : "1",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Extension.extension:beiZugang.extension",
-        "path" : "Extension.extension.extension",
-        "max" : "0"
-      },
-      {
-        "id" : "Extension.extension:beiZugang.url",
-        "path" : "Extension.extension.url",
-        "fixedUri" : "beiZugang"
-      },
-      {
-        "id" : "Extension.extension:beiZugang.value[x]",
-        "path" : "Extension.extension.value[x]",
-        "type" : [
-          {
-            "code" : "CodeableConcept"
-          }
-        ],
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "https://elga.moped.at/ValueSet/AltersgruppeVS"
-        }
-      },
-      {
-        "id" : "Extension.extension:beiEntlassung",
-        "path" : "Extension.extension",
-        "sliceName" : "beiEntlassung",
-        "short" : "Altersgruppe bei Entlassung/Kontakt",
-        "definition" : "Nach dem Alter in Gruppen eingeteilt, wobei vollendete Lebensjahre ausschlaggebend sind.",
-        "min" : 0,
-        "max" : "1",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Extension.extension:beiEntlassung.extension",
-        "path" : "Extension.extension.extension",
-        "max" : "0"
-      },
-      {
-        "id" : "Extension.extension:beiEntlassung.url",
-        "path" : "Extension.extension.url",
-        "fixedUri" : "beiEntlassung"
-      },
-      {
-        "id" : "Extension.extension:beiEntlassung.value[x]",
-        "path" : "Extension.extension.value[x]",
-        "type" : [
-          {
-            "code" : "CodeableConcept"
-          }
-        ],
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "https://elga.moped.at/ValueSet/AltersgruppeVS"
-        }
-      },
-      {
-        "id" : "Extension.extension:neugeborenes",
-        "path" : "Extension.extension",
-        "sliceName" : "neugeborenes",
-        "short" : "Neugeborenes",
-        "definition" : "Ein Patient wird als Neugeborenes bezeichnet, wenn das Alter zum Zugangszeitpunkt auf die Abteilung <28 Tage ist.",
-        "min" : 0,
-        "max" : "1",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Extension.extension:neugeborenes.extension",
-        "path" : "Extension.extension.extension",
-        "max" : "0"
-      },
-      {
-        "id" : "Extension.extension:neugeborenes.url",
-        "path" : "Extension.extension.url",
-        "fixedUri" : "neugeborenes"
-      },
-      {
-        "id" : "Extension.extension:neugeborenes.value[x]",
-        "path" : "Extension.extension.value[x]",
-        "type" : [
-          {
-            "code" : "boolean"
-          }
-        ]
-      },
-      {
-        "id" : "Extension.url",
-        "path" : "Extension.url",
-        "fixedUri" : "https://elga.moped.at/StructureDefinition/moped-ext-altersgruppe"
-      },
-      {
-        "id" : "Extension.value[x]",
-        "path" : "Extension.value[x]",
-        "max" : "0"
+    "element" : [{
+      "id" : "Extension",
+      "path" : "Extension",
+      "short" : "Altersgruppe",
+      "definition" : "In Gruppen eingeteilt, wobei vollendete Lebensjahre ausschlaggebend sind.",
+      "constraint" : [{
+        "key" : "moped-inv-Altersgruppe-1",
+        "severity" : "error",
+        "human" : "If 'neugeborenes' is true then 'beiZugang' must be age group 0.",
+        "expression" : "(extension.where(url = 'neugeborenes').exists() and extension.where(url = 'neugeborenes').value = true) implies (extension.where(url = 'beiZugang').value = '0')",
+        "source" : "https://elga.moped.at/StructureDefinition/moped-ext-altersgruppe"
+      }]
+    },
+    {
+      "id" : "Extension.extension:beiZugang",
+      "path" : "Extension.extension",
+      "sliceName" : "beiZugang",
+      "short" : "Altersgruppe bei Zugang/Kontakt",
+      "definition" : "Nach dem Alter in Gruppen eingeteilt, wobei vollendete Lebensjahre ausschlaggebend sind.",
+      "min" : 0,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Extension.extension:beiZugang.extension",
+      "path" : "Extension.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.extension:beiZugang.url",
+      "path" : "Extension.extension.url",
+      "fixedUri" : "beiZugang"
+    },
+    {
+      "id" : "Extension.extension:beiZugang.value[x]",
+      "path" : "Extension.extension.value[x]",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://elga.moped.at/ValueSet/AltersgruppeVS"
       }
-    ]
+    },
+    {
+      "id" : "Extension.extension:beiEntlassung",
+      "path" : "Extension.extension",
+      "sliceName" : "beiEntlassung",
+      "short" : "Altersgruppe bei Entlassung/Kontakt",
+      "definition" : "Nach dem Alter in Gruppen eingeteilt, wobei vollendete Lebensjahre ausschlaggebend sind.",
+      "min" : 0,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Extension.extension:beiEntlassung.extension",
+      "path" : "Extension.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.extension:beiEntlassung.url",
+      "path" : "Extension.extension.url",
+      "fixedUri" : "beiEntlassung"
+    },
+    {
+      "id" : "Extension.extension:beiEntlassung.value[x]",
+      "path" : "Extension.extension.value[x]",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://elga.moped.at/ValueSet/AltersgruppeVS"
+      }
+    },
+    {
+      "id" : "Extension.extension:neugeborenes",
+      "path" : "Extension.extension",
+      "sliceName" : "neugeborenes",
+      "short" : "Neugeborenes",
+      "definition" : "Ein Patient wird als Neugeborenes bezeichnet, wenn das Alter zum Zugangszeitpunkt auf die Abteilung <28 Tage ist.",
+      "min" : 0,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Extension.extension:neugeborenes.extension",
+      "path" : "Extension.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.extension:neugeborenes.url",
+      "path" : "Extension.extension.url",
+      "fixedUri" : "neugeborenes"
+    },
+    {
+      "id" : "Extension.extension:neugeborenes.value[x]",
+      "path" : "Extension.extension.value[x]",
+      "type" : [{
+        "code" : "boolean"
+      }]
+    },
+    {
+      "id" : "Extension.url",
+      "path" : "Extension.url",
+      "fixedUri" : "https://elga.moped.at/StructureDefinition/moped-ext-altersgruppe"
+    },
+    {
+      "id" : "Extension.value[x]",
+      "path" : "Extension.value[x]",
+      "max" : "0"
+    }]
   }
 }
 

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedTransferEncounterI | *Version*:0.1.0 | |
-| Draft as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedTransferEncounterI |
+| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedTransferEncounterI |
 
  
 MOPED Profil der Encounter Ressource für die Verlegung auf Intensivstationen 
@@ -41,65 +41,55 @@ Other representations of profile: [CSV](StructureDefinition-MopedTransferEncount
   "name" : "MopedTransferEncounterI",
   "title" : "MOPED TransferEncounter Intensiv",
   "status" : "draft",
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "MOPED Profil der Encounter Ressource für die Verlegung auf Intensivstationen",
   "fhirVersion" : "5.0.0",
-  "mapping" : [
-    {
-      "identity" : "LKF",
-      "uri" : "https://elga.moped.at/mapping/LKF",
-      "name" : "LKF"
-    },
-    {
-      "identity" : "KaOrg",
-      "uri" : "https://elga.moped.at/mapping/KaOrg",
-      "name" : "KaOrg"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "LKF",
+    "uri" : "https://elga.moped.at/mapping/LKF",
+    "name" : "LKF"
+  },
+  {
+    "identity" : "KaOrg",
+    "uri" : "https://elga.moped.at/mapping/KaOrg",
+    "name" : "KaOrg"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Encounter",
   "baseDefinition" : "https://elga.moped.at/StructureDefinition/MopedTransferEncounterS",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
+    "element" : [{
+      "id" : "Encounter",
+      "path" : "Encounter",
+      "constraint" : [{
+        "key" : "moped-TENC-status-entweder-in-progress-oder-completed",
+        "severity" : "error",
+        "human" : "Der TENC status muss entweder in-progress oder completed sein",
+        "source" : "https://elga.moped.at/StructureDefinition/MopedTransferEncounterI"
+      },
       {
-        "id" : "Encounter",
-        "path" : "Encounter",
-        "constraint" : [
-          {
-            "key" : "moped-TENC-status-entweder-in-progress-oder-completed",
-            "severity" : "error",
-            "human" : "Der TENC status muss entweder in-progress oder completed sein",
-            "source" : "https://elga.moped.at/StructureDefinition/MopedTransferEncounterI"
-          },
-          {
-            "key" : "moped-verlegen-intensiv-verpflichtendes-abgangsdatum",
-            "severity" : "error",
-            "human" : "Wenn der TENC.status complete ist, muss es das Abgangsdatum befüllt sein",
-            "source" : "https://elga.moped.at/StructureDefinition/MopedTransferEncounterI"
-          },
-          {
-            "key" : "moped-verlegen-intensiv-verpflichtende-abgangsart",
-            "severity" : "error",
-            "human" : "Wenn der TENC.status complete ist, muss die Abgangsart (dischargeDisposition) befüllt sein",
-            "source" : "https://elga.moped.at/StructureDefinition/MopedTransferEncounterI"
-          }
-        ]
-      }
-    ]
+        "key" : "moped-verlegen-intensiv-verpflichtendes-abgangsdatum",
+        "severity" : "error",
+        "human" : "Wenn der TENC.status complete ist, muss es das Abgangsdatum befüllt sein",
+        "source" : "https://elga.moped.at/StructureDefinition/MopedTransferEncounterI"
+      },
+      {
+        "key" : "moped-verlegen-intensiv-verpflichtende-abgangsart",
+        "severity" : "error",
+        "human" : "Wenn der TENC.status complete ist, muss die Abgangsart (dischargeDisposition) befüllt sein",
+        "source" : "https://elga.moped.at/StructureDefinition/MopedTransferEncounterI"
+      }]
+    }]
   }
 }
 

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/LKFAbrechnungsGruppeAndereCS | *Version*:0.1.0 | |
-| Active as of 2026-01-26 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LKFAbrechnungsGruppeAndereCS |
+| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LKFAbrechnungsGruppeAndereCS |
 
  
 LKF Abrechnungsgruppe Andere 
@@ -32,69 +32,63 @@ LKF Abrechnungsgruppe Andere
   "title" : "LKF Abrechnungsgruppe Andere",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-01-26T07:23:42+00:00",
+  "date" : "2026-03-01T19:57:07+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
   "description" : "LKF Abrechnungsgruppe Andere",
   "caseSensitive" : true,
   "content" : "complete",
   "count" : 11,
-  "concept" : [
-    {
-      "code" : "DIAG0PKT",
-      "display" : "bei Patient:innen, deren codierte Hauptdiagnose für einen stationären Aufenthalt alleine nicht plausibel ist"
-    },
-    {
-      "code" : "FEHLER",
-      "display" : "bei fehlerhaften Datensätzen"
-    },
-    {
-      "code" : "GERIAT",
-      "display" : "bei Patient:innen mit ausschließlichem Aufenthalt auf einer Einheit für Akutgeriatrie/Remobilisation"
-    },
-    {
-      "code" : "HKLE",
-      "display" : "bei Patient:innen mit ausschließlichem Aufenthalt auf einer Einheit für hochkontagiöse lebensbedrohliche Erkrankungen"
-    },
-    {
-      "code" : "KJP",
-      "display" : "bei Patient:innen mit ausschließlichem Aufenthalt auf einer Einheit für Kinder- und Jugendpsychiatrie"
-    },
-    {
-      "code" : "LANGZEIT",
-      "display" : "bei der Aufnahmeart \"L\""
-    },
-    {
-      "code" : "NEURO",
-      "display" : "bei Patient:innen mit ausschließlichem Aufenthalt auf einer Einheit für Akut-Nachbehandlung von neurologischen Patienten"
-    },
-    {
-      "code" : "PALLIAT",
-      "display" : "bei Patient:innen mit ausschließlichem Aufenthalt auf einer palliativmedizinischen Einheit"
-    },
-    {
-      "code" : "PFLEGE",
-      "display" : "bei der Aufnahmeart \"P\""
-    },
-    {
-      "code" : "REMOB",
-      "display" : "bei Patient:innen mit ausschließlichem Aufenthalt auf einer Einheit für Remobilisation/Nachsorge"
-    },
-    {
-      "code" : "VERBLEIB",
-      "display" : "bei am Jahresende verbleibenden Patient:innen"
-    }
-  ]
+  "concept" : [{
+    "code" : "DIAG0PKT",
+    "display" : "bei Patient:innen, deren codierte Hauptdiagnose für einen stationären Aufenthalt alleine nicht plausibel ist"
+  },
+  {
+    "code" : "FEHLER",
+    "display" : "bei fehlerhaften Datensätzen"
+  },
+  {
+    "code" : "GERIAT",
+    "display" : "bei Patient:innen mit ausschließlichem Aufenthalt auf einer Einheit für Akutgeriatrie/Remobilisation"
+  },
+  {
+    "code" : "HKLE",
+    "display" : "bei Patient:innen mit ausschließlichem Aufenthalt auf einer Einheit für hochkontagiöse lebensbedrohliche Erkrankungen"
+  },
+  {
+    "code" : "KJP",
+    "display" : "bei Patient:innen mit ausschließlichem Aufenthalt auf einer Einheit für Kinder- und Jugendpsychiatrie"
+  },
+  {
+    "code" : "LANGZEIT",
+    "display" : "bei der Aufnahmeart \"L\""
+  },
+  {
+    "code" : "NEURO",
+    "display" : "bei Patient:innen mit ausschließlichem Aufenthalt auf einer Einheit für Akut-Nachbehandlung von neurologischen Patienten"
+  },
+  {
+    "code" : "PALLIAT",
+    "display" : "bei Patient:innen mit ausschließlichem Aufenthalt auf einer palliativmedizinischen Einheit"
+  },
+  {
+    "code" : "PFLEGE",
+    "display" : "bei der Aufnahmeart \"P\""
+  },
+  {
+    "code" : "REMOB",
+    "display" : "bei Patient:innen mit ausschließlichem Aufenthalt auf einer Einheit für Remobilisation/Nachsorge"
+  },
+  {
+    "code" : "VERBLEIB",
+    "display" : "bei am Jahresende verbleibenden Patient:innen"
+  }]
 }
 
 ```
