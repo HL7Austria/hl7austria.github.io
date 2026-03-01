@@ -62,7 +62,7 @@ For more, see [Background](background.md).
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-03-01T10:29:33+00:00",
+  "date" : "2026-03-01T15:46:45+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -685,12 +685,37 @@ For more, see [Background](background.md).
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/alcoholuse-occasional-example"
+      },
+      "name" : "Alcohol Use O - Daily",
+      "description" : "Observation example of an alcohol use observation for an daily drinker (2 drinks per day).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/alcoholuse-never-example"
+      },
+      "name" : "Alcohol Use O - Non-Drinker",
+      "description" : "Observation example of an alcohol use observation for a lifetime non-drinker (0 drinks per day).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "QuestionnaireResponse"
       }],
       "reference" : {
         "reference" : "QuestionnaireResponse/AlcoholResponseDaily"
       },
-      "name" : "AlcoholResponseDaily",
+      "name" : "Alcohol Use Q - Daily",
+      "description" : "QuestionnaireResponse example of an alcohol use observation for an daily drinker.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
     },
     {
@@ -701,7 +726,8 @@ For more, see [Background](background.md).
       "reference" : {
         "reference" : "QuestionnaireResponse/AlcoholResponseNever"
       },
-      "name" : "AlcoholResponseNever",
+      "name" : "Alcohol Use Q - Non-Drinker",
+      "description" : "QuestionnaireResponse example of an alcohol use observation for a lifetime non-drinker .",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
     },
     {
@@ -712,8 +738,20 @@ For more, see [Background](background.md).
       "reference" : {
         "reference" : "Questionnaire/AtPrenudgeQuestionnaireAlcoholUse"
       },
-      "name" : "Alkoholkonsum-Frequenz (letztes Jahr)",
+      "name" : "Alkoholkonsum im letzten Jahr",
       "description" : "Categorical variable for the frequency of alcohol consumption in the last year (IPS compatible).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/prenudge-alcoholuse-frequency"
+      },
+      "name" : "AT PreNUDGE Alcohol Use Frequency",
+      "description" : "Frequencies used in the PreNUDGE alcoholuse questionnaire.",
       "exampleBoolean" : false
     },
     {
@@ -762,6 +800,18 @@ For more, see [Background](background.md).
       },
       "name" : "AT PreNUDGE Observation Blood Glucose (only in mg/dL)",
       "description" : "This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allowes values inbetween 12 and 1200 mg/dL.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/prenudge-observation-method"
+      },
+      "name" : "AT PreNUDGE Observation Methods",
+      "description" : "ValueSet containing SNOMED CT codes for differentiating methods used in the PreNUDGE observation.",
       "exampleBoolean" : false
     },
     {
@@ -839,6 +889,42 @@ For more, see [Background](background.md).
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/whoqol-bref-scale"
+      },
+      "name" : "AT PreNUDGE WHOQOL-BREF Answer Scales",
+      "description" : "Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/prenudge-whoqol-bref-score-type"
+      },
+      "name" : "AT PreNUDGE WHOQOL-BREF Score Type ValueSet",
+      "description" : "ValueSet containing SNOMED CT codes for differentiating WHOQOL-BREF overall and domain scores.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/example"
+      },
+      "name" : "AtApsPatient-example",
+      "description" : "An example of a patient with a license to krill.",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Observation"
       }],
       "reference" : {
@@ -892,21 +978,9 @@ For more, see [Background](background.md).
       "reference" : {
         "reference" : "Questionnaire/BloodGlucoseQuestionnaire"
       },
-      "name" : "Blutzucker",
+      "name" : "Blutzucker bei der letzten Messung",
       "description" : "A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allows values inbetween 12 and 1200 mg/dL.",
       "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Patient"
-      }],
-      "reference" : {
-        "reference" : "Patient/example"
-      },
-      "name" : "PatientExample",
-      "description" : "An example of a patient with a license to krill.",
-      "exampleBoolean" : true
     },
     {
       "extension" : [{
@@ -916,7 +990,7 @@ For more, see [Background](background.md).
       "reference" : {
         "reference" : "Questionnaire/QolQuestionnaire"
       },
-      "name" : "Quality of life Fragebogen WHOQOL-BREF - World Health Organization Quality of Life Kurzversion",
+      "name" : "Lebensstil Selbsteinschätzung",
       "description" : "The WHOQOL-BREF is a 26-item instrument for assessing subjective quality of life in four domains: physical, psychological, social relationships, and environment. Developed by the WHO.",
       "exampleBoolean" : false
     },
@@ -928,20 +1002,8 @@ For more, see [Background](background.md).
       "reference" : {
         "reference" : "Questionnaire/StepCountQuestionnaire"
       },
-      "name" : "Schrittzahl",
+      "name" : "Schrittzahl am heutigen Tag",
       "description" : "A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/prenudge-alcoholuse-frequency"
-      },
-      "name" : "SNOMED CT AlcoholUse-Frequency",
-      "description" : "ValueSet containing SNOMED CT codes for differentiating frequencies used in the PreNUDGE alcoholuse questionnaire.",
       "exampleBoolean" : false
     },
     {
@@ -995,24 +1057,12 @@ For more, see [Background](background.md).
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/whoqol-bref-scale"
-      },
-      "name" : "WHOQOL-BREF Answer Scales",
-      "description" : "Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "QuestionnaireResponse"
       }],
       "reference" : {
         "reference" : "QuestionnaireResponse/whoqol-bref-response-example"
       },
-      "name" : "WHOQOL-BREF QuestionnaireResponse - Example",
+      "name" : "WHOQOL-BREF QuestionnaireResponse",
       "description" : "Example of a completed WHOQOL-BREF QuestionnaireResponse including all 26 items and calculated scores.",
       "exampleBoolean" : true
     },
@@ -1024,33 +1074,20 @@ For more, see [Background](background.md).
       "reference" : {
         "reference" : "Observation/whoqol-bref-score-example"
       },
-      "name" : "WHOQOL-BREF Score - Example",
+      "name" : "WHOQOL-BREF Score",
       "description" : "Example of a WHOQOL-BREF score observation with a general score and all four domain scores.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-whoqol-bref-score-observation"
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
+        "valueString" : "StructureMap"
       }],
       "reference" : {
-        "reference" : "ValueSet/prenudge-observation-method"
+        "reference" : "StructureMap/AlcoholQuestionnaireResponseToObservation"
       },
-      "name" : "WHOQOL-BREF Score Type ValueSet",
-      "description" : "ValueSet containing SNOMED CT codes for differentiating methods used in the PreNUDGE observation.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/prenudge-whoqol-bref-score-type"
-      },
-      "name" : "WHOQOL-BREF Score Type ValueSet",
-      "description" : "ValueSet containing SNOMED CT codes for differentiating WHOQOL-BREF overall and domain scores.",
-      "exampleBoolean" : false
+      "name" : "Alcohol Use QuestionnaireResponse to Observation",
+      "description" : "Alcohol Use QuestionnaireResponse to Observation"
     }],
     "page" : {
       "extension" : [{

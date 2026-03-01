@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\PatientExample - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\AtApsPatient-example - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **PatientExample**
+* **AtApsPatient-example**
 
-## Example Patient: PatientExample
+## Example Patient: AtApsPatient-example
 
 Profile: [AT APS Patient](https://build.fhir.org/ig/HL7Austria/ELGA-AustrianPatientSummary-R4/StructureDefinition-at-aps-patient.html)
 

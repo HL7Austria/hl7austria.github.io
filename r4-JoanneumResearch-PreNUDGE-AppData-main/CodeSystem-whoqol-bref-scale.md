@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\WHOQOL-BREF Answer Scales - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\AT PreNUDGE WHOQOL-BREF Answer Scales - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **WHOQOL-BREF Answer Scales**
+* **AT PreNUDGE WHOQOL-BREF Answer Scales**
 
-## CodeSystem: WHOQOL-BREF Answer Scales 
+## CodeSystem: AT PreNUDGE WHOQOL-BREF Answer Scales 
 
 | | | |
 | :--- | :--- | :--- |
@@ -29,10 +29,10 @@ Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire.
   "url" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale",
   "version" : "0.1.0",
   "name" : "WHOQOLBrefScale",
-  "title" : "WHOQOL-BREF Answer Scales",
+  "title" : "AT PreNUDGE WHOQOL-BREF Answer Scales",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-03-01T10:29:33+00:00",
+  "date" : "2026-03-01T15:46:45+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\WHOQOL-BREF Score Type ValueSet - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\AT PreNUDGE Observation Methods - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **WHOQOL-BREF Score Type ValueSet**
+* **AT PreNUDGE Observation Methods**
 
-## ValueSet: WHOQOL-BREF Score Type ValueSet 
+## ValueSet: AT PreNUDGE Observation Methods 
 
 | | | |
 | :--- | :--- | :--- |
@@ -49,10 +49,10 @@ ValueSet containing SNOMED CT codes for differentiating methods used in the PreN
   "url" : "https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-observation-method",
   "version" : "0.1.0",
   "name" : "AtPrenudgeValueSetMethodManualAutomated",
-  "title" : "WHOQOL-BREF Score Type ValueSet",
+  "title" : "AT PreNUDGE Observation Methods",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-03-01T10:29:33+00:00",
+  "date" : "2026-03-01T15:46:45+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Blutzucker - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Blutzucker bei der letzten Messung - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Blutzucker**
+* **Blutzucker bei der letzten Messung**
 
-## Questionnaire: Blutzucker 
+## Questionnaire: Blutzucker bei der letzten Messung 
 
 | | | |
 | :--- | :--- | :--- |
@@ -28,11 +28,11 @@ A simple questionnaire for asking how high the blood glucose level is right now.
   "url" : "https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/BloodGlucoseQuestionnaire",
   "version" : "0.1.0",
   "name" : "BloodGlucoseQuestionnaire",
-  "title" : "Blutzucker",
+  "title" : "Blutzucker bei der letzten Messung",
   "status" : "active",
   "experimental" : false,
   "subjectType" : ["Patient"],
-  "date" : "2026-03-01T10:29:33+00:00",
+  "date" : "2026-03-01T15:46:45+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

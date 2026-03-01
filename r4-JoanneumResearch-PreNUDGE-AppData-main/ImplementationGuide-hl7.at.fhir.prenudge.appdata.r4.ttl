@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "PreNUDGEAppdataR4"] ; # 
   fhir:title [ fhir:v "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-03-01T10:29:33+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-03-01T15:46:45+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "The PreNUDGE Consortium"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "The PreNUDGE Consortium" ] ;
@@ -1334,6 +1334,50 @@
          ] ;
          fhir:value [
            a fhir:String ;
+           fhir:v "Observation"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Observation/alcoholuse-occasional-example> ;
+         fhir:reference [ fhir:v "Observation/alcoholuse-occasional-example" ]
+       ] ;
+       fhir:name [ fhir:v "Alcohol Use O - Daily" ] ;
+       fhir:description [ fhir:v "Observation example of an alcohol use observation for an daily drinker (2 drinks per day)." ] ;
+       fhir:example [
+         a fhir:Canonical ;
+         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation"^^xsd:anyURI ;
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Observation"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Observation/alcoholuse-never-example> ;
+         fhir:reference [ fhir:v "Observation/alcoholuse-never-example" ]
+       ] ;
+       fhir:name [ fhir:v "Alcohol Use O - Non-Drinker" ] ;
+       fhir:description [ fhir:v "Observation example of an alcohol use observation for a lifetime non-drinker (0 drinks per day)." ] ;
+       fhir:example [
+         a fhir:Canonical ;
+         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation"^^xsd:anyURI ;
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
            fhir:v "QuestionnaireResponse"
          ]
        ] ) ;
@@ -1341,7 +1385,8 @@
          fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/AlcoholResponseDaily> ;
          fhir:reference [ fhir:v "QuestionnaireResponse/AlcoholResponseDaily" ]
        ] ;
-       fhir:name [ fhir:v "AlcoholResponseDaily" ] ;
+       fhir:name [ fhir:v "Alcohol Use Q - Daily" ] ;
+       fhir:description [ fhir:v "QuestionnaireResponse example of an alcohol use observation for an daily drinker." ] ;
        fhir:example [
          a fhir:Canonical ;
          fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"^^xsd:anyURI ;
@@ -1362,7 +1407,8 @@
          fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/AlcoholResponseNever> ;
          fhir:reference [ fhir:v "QuestionnaireResponse/AlcoholResponseNever" ]
        ] ;
-       fhir:name [ fhir:v "AlcoholResponseNever" ] ;
+       fhir:name [ fhir:v "Alcohol Use Q - Non-Drinker" ] ;
+       fhir:description [ fhir:v "QuestionnaireResponse example of an alcohol use observation for a lifetime non-drinker ." ] ;
        fhir:example [
          a fhir:Canonical ;
          fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"^^xsd:anyURI ;
@@ -1383,8 +1429,29 @@
          fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/AtPrenudgeQuestionnaireAlcoholUse> ;
          fhir:reference [ fhir:v "Questionnaire/AtPrenudgeQuestionnaireAlcoholUse" ]
        ] ;
-       fhir:name [ fhir:v "Alkoholkonsum-Frequenz (letztes Jahr)" ] ;
+       fhir:name [ fhir:v "Alkoholkonsum im letzten Jahr" ] ;
        fhir:description [ fhir:v "Categorical variable for the frequency of alcohol consumption in the last year (IPS compatible)." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-alcoholuse-frequency> ;
+         fhir:reference [ fhir:v "ValueSet/prenudge-alcoholuse-frequency" ]
+       ] ;
+       fhir:name [ fhir:v "AT PreNUDGE Alcohol Use Frequency" ] ;
+       fhir:description [ fhir:v "Frequencies used in the PreNUDGE alcoholuse questionnaire." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -1469,6 +1536,27 @@
        ] ;
        fhir:name [ fhir:v "AT PreNUDGE Observation Blood Glucose (only in mg/dL)" ] ;
        fhir:description [ fhir:v "This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allowes values inbetween 12 and 1200 mg/dL." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-observation-method> ;
+         fhir:reference [ fhir:v "ValueSet/prenudge-observation-method" ]
+       ] ;
+       fhir:name [ fhir:v "AT PreNUDGE Observation Methods" ] ;
+       fhir:description [ fhir:v "ValueSet containing SNOMED CT codes for differentiating methods used in the PreNUDGE observation." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -1607,6 +1695,69 @@
          ] ;
          fhir:value [
            a fhir:String ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale> ;
+         fhir:reference [ fhir:v "CodeSystem/whoqol-bref-scale" ]
+       ] ;
+       fhir:name [ fhir:v "AT PreNUDGE WHOQOL-BREF Answer Scales" ] ;
+       fhir:description [ fhir:v "Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-whoqol-bref-score-type> ;
+         fhir:reference [ fhir:v "ValueSet/prenudge-whoqol-bref-score-type" ]
+       ] ;
+       fhir:name [ fhir:v "AT PreNUDGE WHOQOL-BREF Score Type ValueSet" ] ;
+       fhir:description [ fhir:v "ValueSet containing SNOMED CT codes for differentiating WHOQOL-BREF overall and domain scores." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Patient"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Patient/example> ;
+         fhir:reference [ fhir:v "Patient/example" ]
+       ] ;
+       fhir:name [ fhir:v "AtApsPatient-example" ] ;
+       fhir:description [ fhir:v "An example of a patient with a license to krill." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
            fhir:v "Observation"
          ]
        ] ) ;
@@ -1700,32 +1851,11 @@
          fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/BloodGlucoseQuestionnaire> ;
          fhir:reference [ fhir:v "Questionnaire/BloodGlucoseQuestionnaire" ]
        ] ;
-       fhir:name [ fhir:v "Blutzucker" ] ;
+       fhir:name [ fhir:v "Blutzucker bei der letzten Messung" ] ;
        fhir:description [ fhir:v "A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allows values inbetween 12 and 1200 mg/dL." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "Patient"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Patient/example> ;
-         fhir:reference [ fhir:v "Patient/example" ]
-       ] ;
-       fhir:name [ fhir:v "PatientExample" ] ;
-       fhir:description [ fhir:v "An example of a patient with a license to krill." ] ;
-       fhir:example [
-         a fhir:Boolean ;
-         fhir:v true
        ]
      ] [
        fhir:extension ( [
@@ -1742,7 +1872,7 @@
          fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/QolQuestionnaire> ;
          fhir:reference [ fhir:v "Questionnaire/QolQuestionnaire" ]
        ] ;
-       fhir:name [ fhir:v "Quality of life Fragebogen WHOQOL-BREF - World Health Organization Quality of Life Kurzversion" ] ;
+       fhir:name [ fhir:v "Lebensstil Selbsteinschätzung" ] ;
        fhir:description [ fhir:v "The WHOQOL-BREF is a 26-item instrument for assessing subjective quality of life in four domains: physical, psychological, social relationships, and environment. Developed by the WHO." ] ;
        fhir:example [
          a fhir:Boolean ;
@@ -1763,29 +1893,8 @@
          fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/StepCountQuestionnaire> ;
          fhir:reference [ fhir:v "Questionnaire/StepCountQuestionnaire" ]
        ] ;
-       fhir:name [ fhir:v "Schrittzahl" ] ;
+       fhir:name [ fhir:v "Schrittzahl am heutigen Tag" ] ;
        fhir:description [ fhir:v "A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000." ] ;
-       fhir:example [
-         a fhir:Boolean ;
-         fhir:v false
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "ValueSet"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-alcoholuse-frequency> ;
-         fhir:reference [ fhir:v "ValueSet/prenudge-alcoholuse-frequency" ]
-       ] ;
-       fhir:name [ fhir:v "SNOMED CT AlcoholUse-Frequency" ] ;
-       fhir:description [ fhir:v "ValueSet containing SNOMED CT codes for differentiating frequencies used in the PreNUDGE alcoholuse questionnaire." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -1884,27 +1993,6 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "CodeSystem"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale> ;
-         fhir:reference [ fhir:v "CodeSystem/whoqol-bref-scale" ]
-       ] ;
-       fhir:name [ fhir:v "WHOQOL-BREF Answer Scales" ] ;
-       fhir:description [ fhir:v "Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire." ] ;
-       fhir:example [
-         a fhir:Boolean ;
-         fhir:v false
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
            fhir:v "QuestionnaireResponse"
          ]
        ] ) ;
@@ -1912,7 +2000,7 @@
          fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/whoqol-bref-response-example> ;
          fhir:reference [ fhir:v "QuestionnaireResponse/whoqol-bref-response-example" ]
        ] ;
-       fhir:name [ fhir:v "WHOQOL-BREF QuestionnaireResponse - Example" ] ;
+       fhir:name [ fhir:v "WHOQOL-BREF QuestionnaireResponse" ] ;
        fhir:description [ fhir:v "Example of a completed WHOQOL-BREF QuestionnaireResponse including all 26 items and calculated scores." ] ;
        fhir:example [
          a fhir:Boolean ;
@@ -1933,7 +2021,7 @@
          fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Observation/whoqol-bref-score-example> ;
          fhir:reference [ fhir:v "Observation/whoqol-bref-score-example" ]
        ] ;
-       fhir:name [ fhir:v "WHOQOL-BREF Score - Example" ] ;
+       fhir:name [ fhir:v "WHOQOL-BREF Score" ] ;
        fhir:description [ fhir:v "Example of a WHOQOL-BREF score observation with a general score and all four domain scores." ] ;
        fhir:example [
          a fhir:Canonical ;
@@ -1948,40 +2036,15 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "ValueSet"
+           fhir:v "StructureMap"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-observation-method> ;
-         fhir:reference [ fhir:v "ValueSet/prenudge-observation-method" ]
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/AlcoholQuestionnaireResponseToObservation> ;
+         fhir:reference [ fhir:v "StructureMap/AlcoholQuestionnaireResponseToObservation" ]
        ] ;
-       fhir:name [ fhir:v "WHOQOL-BREF Score Type ValueSet" ] ;
-       fhir:description [ fhir:v "ValueSet containing SNOMED CT codes for differentiating methods used in the PreNUDGE observation." ] ;
-       fhir:example [
-         a fhir:Boolean ;
-         fhir:v false
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "ValueSet"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-whoqol-bref-score-type> ;
-         fhir:reference [ fhir:v "ValueSet/prenudge-whoqol-bref-score-type" ]
-       ] ;
-       fhir:name [ fhir:v "WHOQOL-BREF Score Type ValueSet" ] ;
-       fhir:description [ fhir:v "ValueSet containing SNOMED CT codes for differentiating WHOQOL-BREF overall and domain scores." ] ;
-       fhir:example [
-         a fhir:Boolean ;
-         fhir:v false
-       ]
+       fhir:name [ fhir:v "Alcohol Use QuestionnaireResponse to Observation" ] ;
+       fhir:description [ fhir:v "Alcohol Use QuestionnaireResponse to Observation" ]
      ] ) ;
      fhir:page [
        fhir:extension ( [

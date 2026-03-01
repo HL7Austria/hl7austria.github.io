@@ -1,15 +1,15 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Quality of life Fragebogen WHOQOL-BREF - World Health Organization Quality of Life Kurzversion - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Lebensstil Selbsteinschätzung - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Quality of life Fragebogen WHOQOL-BREF - World Health Organization Quality of Life Kurzversion**
+* **Lebensstil Selbsteinschätzung**
 
-## Questionnaire: Quality of life Fragebogen WHOQOL-BREF - World Health Organization Quality of Life Kurzversion 
+## Questionnaire: Lebensstil Selbsteinschätzung 
 
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/QolQuestionnaire | *Version*:0.1.0 | |
-| Active as of 2026-03-01 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:QoLByWHOQOLBREF |
+| Active as of 2026-03-01 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeQoLByWHOQOLBREF |
 | **Copyright/Legal**: © World Health Organization. Usage with permission from WHO. | | |
 
  
@@ -32,12 +32,12 @@ Assessment of subjective quality of life in the general population and in patien
   "language" : "de-AT",
   "url" : "https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/QolQuestionnaire",
   "version" : "0.1.0",
-  "name" : "QoLByWHOQOLBREF",
-  "title" : "Quality of life Fragebogen WHOQOL-BREF - World Health Organization Quality of Life Kurzversion",
+  "name" : "AtPrenudgeQoLByWHOQOLBREF",
+  "title" : "Lebensstil Selbsteinschätzung",
   "status" : "active",
   "experimental" : false,
   "subjectType" : ["Patient"],
-  "date" : "2026-03-01T10:29:33+00:00",
+  "date" : "2026-03-01T15:46:45+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

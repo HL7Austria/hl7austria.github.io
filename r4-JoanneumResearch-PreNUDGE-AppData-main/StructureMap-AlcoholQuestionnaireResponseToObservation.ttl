@@ -1,0 +1,506 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/AlcoholQuestionnaireResponseToObservation> a fhir:StructureMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "AlcoholQuestionnaireResponseToObservation"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap AlcoholQuestionnaireResponseToObservation</b></p><a name=\"AlcoholQuestionnaireResponseToObservation\"> </a><a name=\"hcAlcoholQuestionnaireResponseToObservation\"> </a><pre class=\"fml\">#xD;\n<b>map</b><span style=\"color: navy\"> \"</span>https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/AlcoholQuestionnaireResponseToObservation<span style=\"color: navy\">\" = \"</span>AlcoholQuestionnaireResponseToObservation<span style=\"color: navy\">\"#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Alcohol Use QuestionnaireResponse to Observation</span>#xD;\n#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/questionnaireresponse.html\" title=\"QuestionnaireResponse\">http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse</a><span style=\"color: navy\">\" </span><b>alias </b>QR <b>as </b><b>source</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/observation.html\" title=\"Observation\">http://hl7.org/fhir/StructureDefinition/Observation</a><span style=\"color: navy\">\" </span><b>alias </b>Obs <b>as </b><b>target</b>#xD;\n#xD;\n<b>imports</b><span style=\"color: navy\"> \"</span>http://hl7.org/fhir/StructureMap/*<span style=\"color: navy\">\"#xD;\n</span>#xD;\n<b>group </b>AlcoholQuestionnaireResponseToObservation<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  <span style=\"color: navy\">// </span><span style=\"color: green\">Status</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.status = <span style=\"color: blue\">'final'</span> <i>\"SetStatus\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Code</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span> tgt.code<b> as </b><span style=\"color: maroon\">code</span><span style=\"color: navy\">, </span> code.coding<b> as </b><span style=\"color: maroon\">coding</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    src<span style=\"color: navy\"><b> -&gt; </b></span>coding.system = <span style=\"color: blue\">'http://loinc.org'</span> <i>\"SetCodeSystem\"</i><span style=\"color: navy\">;</span>#xD;\n    src<span style=\"color: navy\"><b> -&gt; </b></span>coding.code = <span style=\"color: blue\">'74013-4'</span> <i>\"SetCodeCode\"</i><span style=\"color: navy\">;</span>#xD;\n    src<span style=\"color: navy\"><b> -&gt; </b></span>coding.display = <span style=\"color: blue\">'Alcoholic drinks per day'</span> <i>\"SetCodeDisplay\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"SetCode\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Subject</span>#xD;\n  src.subject<b> as </b><span style=\"color: maroon\">subject</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.subject = <span style=\"color: maroon\">subject</span> <i>\"SetSubject\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">EffectiveDateTime from authored</span>#xD;\n  src.authored<b> as </b><span style=\"color: maroon\">authored</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.effective = <span style=\"color: maroon\">authored</span> <i>\"SetEffective\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Process items</span>#xD;\n  src.item<b> as </b><span style=\"color: maroon\">item</span><b> where </b>linkId = 'alcohol-frequency'<b> then </b>MapAlcoholFrequency<span style=\"color: navy\">(</span><span style=\"color: maroon\">item</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>\"ProcessItem\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span><b>group </b>MapAlcoholFrequency<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span>, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  src.answer<b> as </b><span style=\"color: maroon\">answer</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    <span style=\"color: navy\">// </span><span style=\"color: green\">Map frequency code to drinks/day</span>#xD;\n    answer.valueCoding<b> as </b><span style=\"color: maroon\">coding</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      coding<b> where </b>code = '69620002'<span style=\"color: navy\"><b> -&gt; </b></span>qty.value = <span style=\"color: blue\">1</span> <i>\"MapDaily\"</i><span style=\"color: navy\">;</span>#xD;\n      coding<b> where </b>code = '307447001'<span style=\"color: navy\"><b> -&gt; </b></span>qty.value = <span style=\"color: blue\">0.79</span> <i>\"MapSixTimesWeekly\"</i><span style=\"color: navy\">;</span>#xD;\n      coding<b> where </b>code = '396113003'<span style=\"color: navy\"><b> -&gt; </b></span>qty.value = <span style=\"color: blue\">0.5</span> <i>\"MapThreeToFourTimesWeekly\"</i><span style=\"color: navy\">;</span>#xD;\n      coding<b> where </b>code = '229800002'<span style=\"color: navy\"><b> -&gt; </b></span>qty.value = <span style=\"color: blue\">0.21</span> <i>\"MapTwiceWeekly\"</i><span style=\"color: navy\">;</span>#xD;\n      coding<b> where </b>code = '307452006'<span style=\"color: navy\"><b> -&gt; </b></span>qty.value = <span style=\"color: blue\">0.08</span> <i>\"MapThreeTimesMonthly\"</i><span style=\"color: navy\">;</span>#xD;\n      coding<b> where </b>code = '307450003'<span style=\"color: navy\"><b> -&gt; </b></span>qty.value = <span style=\"color: blue\">0.03</span> <i>\"MapOnceMonthly\"</i><span style=\"color: navy\">;</span>#xD;\n      coding<b> where </b>code = '445547001'<span style=\"color: navy\"><b> -&gt; </b></span>qty.value = <span style=\"color: blue\">0.02</span> <i>\"MapEveryTwoMonths\"</i><span style=\"color: navy\">;</span>#xD;\n      coding<b> where </b>code = '105542008'<span style=\"color: navy\"><b> -&gt; </b></span>qty.value = <span style=\"color: blue\">0.001</span> <i>\"MapCurrentNonDrinker\"</i><span style=\"color: navy\">;</span>#xD;\n      coding<b> where </b>code = '783261004'<span style=\"color: navy\"><b> -&gt; </b></span>qty.value = <span style=\"color: blue\">0</span> <i>\"MapLifetimeNonDrinker\"</i><span style=\"color: navy\">;</span>#xD;\n      coding<span style=\"color: navy\"><b> -&gt; </b></span>qty.unit = <span style=\"color: blue\">'drinks/day'</span> <i>\"SetUnit\"</i><span style=\"color: navy\">;</span>#xD;\n      coding<span style=\"color: navy\"><b> -&gt; </b></span>qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span> <i>\"SetUnitSystem\"</i><span style=\"color: navy\">;</span>#xD;\n      coding<span style=\"color: navy\"><b> -&gt; </b></span>qty.code = <span style=\"color: blue\">'{drinks}/d'</span> <i>\"SetUnitCode\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"MapValueQuantity\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">// </span><span style=\"color: green\">Map comment to note</span>#xD;\n    answer.item<b> as </b><span style=\"color: maroon\">commentItem</span><b> where </b>linkId = 'comment'<b> then</b><span style=\"color: navy\"> {#xD;\n</span>      commentItem.answer<b> as </b><span style=\"color: maroon\">commentAnswer</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        commentAnswer.value<b> as </b><span style=\"color: maroon\">commentValue</span><span style=\"color: navy\"><b> -&gt; </b></span> tgt.note<b> as </b><span style=\"color: maroon\">note</span><span style=\"color: navy\">, </span> note.text = <span style=\"color: maroon\">commentValue</span> <i>\"SetNote\"</i><span style=\"color: navy\">;</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"ProcessCommentAnswer\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"ProcessComment\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"ProcessAnswer\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span></pre></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/AlcoholQuestionnaireResponseToObservation"^^xsd:anyURI ;
+     fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/AlcoholQuestionnaireResponseToObservation>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "AlcoholQuestionnaireResponseToObservation"] ; # 
+  fhir:title [ fhir:v "Alcohol Use QuestionnaireResponse to Observation"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-03-01T15:46:45+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "The PreNUDGE Consortium"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "The PreNUDGE Consortium" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://prenudge.at" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "The PreNUDGE Consortium" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://prenudge.at" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Alcohol Use QuestionnaireResponse to Observation"] ; # 
+  fhir:structure ( [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse>
+     ] ;
+     fhir:mode [ fhir:v "source" ] ;
+     fhir:alias [ fhir:v "QR" ]
+  ] [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/Observation>
+     ] ;
+     fhir:mode [ fhir:v "target" ] ;
+     fhir:alias [ fhir:v "Obs" ]
+  ] ) ; # 
+  fhir:import ( [
+     fhir:v "http://hl7.org/fhir/StructureMap/*"^^xsd:anyURI ;
+     fhir:l <http://hl7.org/fhir/StructureMap/*>
+  ] ) ; # 
+  fhir:group ( [
+     fhir:name [ fhir:v "AlcoholQuestionnaireResponseToObservation" ] ;
+     fhir:typeMode [ fhir:v "none" ] ;
+     fhir:input ( [
+       fhir:name [ fhir:v "src" ] ;
+       fhir:type [ fhir:v "QR" ] ;
+       fhir:mode [ fhir:v "source" ]
+     ] [
+       fhir:name [ fhir:v "tgt" ] ;
+       fhir:type [ fhir:v "Obs" ] ;
+       fhir:mode [ fhir:v "target" ]
+     ] ) ;
+     fhir:rule ( [
+       fhir:name [ fhir:v "SetStatus" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "tgt" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "status" ] ;
+         fhir:transform [ fhir:v "copy" ] ;
+         fhir:parameter ( [
+           fhir:value [
+             a fhir:String ;
+             fhir:v "final"
+           ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "SetCode" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "tgt" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "code" ] ;
+         fhir:variable [ fhir:v "code" ]
+       ] [
+         fhir:context [ fhir:v "code" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "coding" ] ;
+         fhir:variable [ fhir:v "coding" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "SetCodeSystem" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "src" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "coding" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "system" ] ;
+           fhir:transform [ fhir:v "copy" ] ;
+           fhir:parameter ( [
+             fhir:value [
+               a fhir:String ;
+               fhir:v "http://loinc.org"
+             ]
+           ] )
+         ] )
+       ] [
+         fhir:name [ fhir:v "SetCodeCode" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "src" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "coding" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "code" ] ;
+           fhir:transform [ fhir:v "copy" ] ;
+           fhir:parameter ( [
+             fhir:value [
+               a fhir:String ;
+               fhir:v "74013-4"
+             ]
+           ] )
+         ] )
+       ] [
+         fhir:name [ fhir:v "SetCodeDisplay" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "src" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "coding" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "display" ] ;
+           fhir:transform [ fhir:v "copy" ] ;
+           fhir:parameter ( [
+             fhir:value [
+               a fhir:String ;
+               fhir:v "Alcoholic drinks per day"
+             ]
+           ] )
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "SetSubject" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ] ;
+         fhir:element [ fhir:v "subject" ] ;
+         fhir:variable [ fhir:v "subject" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "tgt" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "subject" ] ;
+         fhir:transform [ fhir:v "copy" ] ;
+         fhir:parameter ( [
+           fhir:value [
+             a fhir:Id ;
+             fhir:v "subject"
+           ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "SetEffective" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ] ;
+         fhir:element [ fhir:v "authored" ] ;
+         fhir:variable [ fhir:v "authored" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "tgt" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "effective" ] ;
+         fhir:transform [ fhir:v "copy" ] ;
+         fhir:parameter ( [
+           fhir:value [
+             a fhir:Id ;
+             fhir:v "authored"
+           ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "ProcessItem" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ] ;
+         fhir:element [ fhir:v "item" ] ;
+         fhir:variable [ fhir:v "item" ] ;
+         fhir:condition [ fhir:v "linkId = 'alcohol-frequency'" ]
+       ] ) ;
+       fhir:dependent ( [
+         fhir:name [ fhir:v "MapAlcoholFrequency" ] ;
+         fhir:variable ( [ fhir:v "item" ] [ fhir:v "tgt" ] )
+       ] )
+     ] )
+  ] [
+     fhir:name [ fhir:v "MapAlcoholFrequency" ] ;
+     fhir:typeMode [ fhir:v "none" ] ;
+     fhir:input ( [
+       fhir:name [ fhir:v "src" ] ;
+       fhir:mode [ fhir:v "source" ]
+     ] [
+       fhir:name [ fhir:v "tgt" ] ;
+       fhir:type [ fhir:v "Obs" ] ;
+       fhir:mode [ fhir:v "target" ]
+     ] ) ;
+     fhir:rule ( [
+       fhir:name [ fhir:v "ProcessAnswer" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ] ;
+         fhir:element [ fhir:v "answer" ] ;
+         fhir:variable [ fhir:v "answer" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "MapValueQuantity" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "answer" ] ;
+           fhir:element [ fhir:v "valueCoding" ] ;
+           fhir:variable [ fhir:v "coding" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgt" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "value" ] ;
+           fhir:variable [ fhir:v "qty" ] ;
+           fhir:transform [ fhir:v "create" ] ;
+           fhir:parameter ( [
+             fhir:value [
+               a fhir:String ;
+               fhir:v "Quantity"
+             ]
+           ] )
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "MapDaily" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "coding" ] ;
+             fhir:condition [ fhir:v "code = '69620002'" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "qty" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "value" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:Integer ;
+                 fhir:v 1
+               ]
+             ] )
+           ] )
+         ] [
+           fhir:name [ fhir:v "MapSixTimesWeekly" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "coding" ] ;
+             fhir:condition [ fhir:v "code = '307447001'" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "qty" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "value" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:Decimal ;
+                 fhir:v 0.79
+               ]
+             ] )
+           ] )
+         ] [
+           fhir:name [ fhir:v "MapThreeToFourTimesWeekly" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "coding" ] ;
+             fhir:condition [ fhir:v "code = '396113003'" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "qty" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "value" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:Decimal ;
+                 fhir:v 0.5
+               ]
+             ] )
+           ] )
+         ] [
+           fhir:name [ fhir:v "MapTwiceWeekly" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "coding" ] ;
+             fhir:condition [ fhir:v "code = '229800002'" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "qty" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "value" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:Decimal ;
+                 fhir:v 0.21
+               ]
+             ] )
+           ] )
+         ] [
+           fhir:name [ fhir:v "MapThreeTimesMonthly" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "coding" ] ;
+             fhir:condition [ fhir:v "code = '307452006'" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "qty" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "value" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:Decimal ;
+                 fhir:v 0.08
+               ]
+             ] )
+           ] )
+         ] [
+           fhir:name [ fhir:v "MapOnceMonthly" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "coding" ] ;
+             fhir:condition [ fhir:v "code = '307450003'" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "qty" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "value" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:Decimal ;
+                 fhir:v 0.03
+               ]
+             ] )
+           ] )
+         ] [
+           fhir:name [ fhir:v "MapEveryTwoMonths" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "coding" ] ;
+             fhir:condition [ fhir:v "code = '445547001'" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "qty" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "value" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:Decimal ;
+                 fhir:v 0.02
+               ]
+             ] )
+           ] )
+         ] [
+           fhir:name [ fhir:v "MapCurrentNonDrinker" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "coding" ] ;
+             fhir:condition [ fhir:v "code = '105542008'" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "qty" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "value" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:Decimal ;
+                 fhir:v 0.001
+               ]
+             ] )
+           ] )
+         ] [
+           fhir:name [ fhir:v "MapLifetimeNonDrinker" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "coding" ] ;
+             fhir:condition [ fhir:v "code = '783261004'" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "qty" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "value" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:Integer ;
+                 fhir:v 0
+               ]
+             ] )
+           ] )
+         ] [
+           fhir:name [ fhir:v "SetUnit" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "coding" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "qty" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "unit" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:String ;
+                 fhir:v "drinks/day"
+               ]
+             ] )
+           ] )
+         ] [
+           fhir:name [ fhir:v "SetUnitSystem" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "coding" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "qty" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "system" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:String ;
+                 fhir:v "http://unitsofmeasure.org"
+               ]
+             ] )
+           ] )
+         ] [
+           fhir:name [ fhir:v "SetUnitCode" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "coding" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "qty" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "code" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:String ;
+                 fhir:v "{drinks}/d"
+               ]
+             ] )
+           ] )
+         ] )
+       ] [
+         fhir:name [ fhir:v "ProcessComment" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "answer" ] ;
+           fhir:element [ fhir:v "item" ] ;
+           fhir:variable [ fhir:v "commentItem" ] ;
+           fhir:condition [ fhir:v "linkId = 'comment'" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "ProcessCommentAnswer" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "commentItem" ] ;
+             fhir:element [ fhir:v "answer" ] ;
+             fhir:variable [ fhir:v "commentAnswer" ]
+           ] ) ;
+           fhir:rule ( [
+             fhir:name [ fhir:v "SetNote" ] ;
+             fhir:source ( [
+               fhir:context [ fhir:v "commentAnswer" ] ;
+               fhir:element [ fhir:v "value" ] ;
+               fhir:variable [ fhir:v "commentValue" ]
+             ] ) ;
+             fhir:target ( [
+               fhir:context [ fhir:v "tgt" ] ;
+               fhir:contextType [ fhir:v "variable" ] ;
+               fhir:element [ fhir:v "note" ] ;
+               fhir:variable [ fhir:v "note" ]
+             ] [
+               fhir:context [ fhir:v "note" ] ;
+               fhir:contextType [ fhir:v "variable" ] ;
+               fhir:element [ fhir:v "text" ] ;
+               fhir:transform [ fhir:v "copy" ] ;
+               fhir:parameter ( [
+                 fhir:value [
+                   a fhir:Id ;
+                   fhir:v "commentValue"
+                 ]
+               ] )
+             ] )
+           ] )
+         ] )
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

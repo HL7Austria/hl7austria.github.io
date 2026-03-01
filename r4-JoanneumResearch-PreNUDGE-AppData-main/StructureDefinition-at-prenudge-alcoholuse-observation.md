@@ -16,7 +16,7 @@ This FHIR profile is currently derived from the APS Observation Alcohol Use prof
 
 **Usages:**
 
-* This Profile is not used by any profiles in this Implementation Guide
+* Examples for this Profile: [Observation/alcoholuse-never-example](Observation-alcoholuse-never-example.md) and [Observation/alcoholuse-occasional-example](Observation-alcoholuse-occasional-example.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.prenudge.appdata.r4|current/StructureDefinition/at-prenudge-alcoholuse-observation)
 
@@ -45,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-alcoholu
   "name" : "AtPrenudgeObservationAlcoholUse",
   "title" : "AT PreNUDGE Observation Alcohol Use",
   "status" : "draft",
-  "date" : "2026-03-01T10:29:33+00:00",
+  "date" : "2026-03-01T15:46:45+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

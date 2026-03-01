@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Alkoholkonsum-Frequenz (letztes Jahr) - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Alkoholkonsum im letzten Jahr - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Alkoholkonsum-Frequenz (letztes Jahr)**
+* **Alkoholkonsum im letzten Jahr**
 
-## Questionnaire: Alkoholkonsum-Frequenz (letztes Jahr) 
+## Questionnaire: Alkoholkonsum im letzten Jahr 
 
 | | | |
 | :--- | :--- | :--- |
@@ -28,10 +28,10 @@ Categorical variable for the frequency of alcohol consumption in the last year (
   "url" : "https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/AtPrenudgeQuestionnaireAlcoholUse",
   "version" : "0.1.0",
   "name" : "AtPrenudgeQuestionnaireAlcoholUse",
-  "title" : "Alkoholkonsum-Frequenz (letztes Jahr)",
+  "title" : "Alkoholkonsum im letzten Jahr",
   "status" : "active",
   "subjectType" : ["Patient"],
-  "date" : "2026-03-01T10:29:33+00:00",
+  "date" : "2026-03-01T15:46:45+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

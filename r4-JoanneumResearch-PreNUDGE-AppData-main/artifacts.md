@@ -13,10 +13,10 @@ These define forms used by systems conforming to this implementation guide to ca
 
 | | |
 | :--- | :--- |
-| [Alkoholkonsum-Frequenz (letztes Jahr)](Questionnaire-AtPrenudgeQuestionnaireAlcoholUse.md) | Categorical variable for the frequency of alcohol consumption in the last year (IPS compatible). |
-| [Blutzucker](Questionnaire-BloodGlucoseQuestionnaire.md) | A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allows values inbetween 12 and 1200 mg/dL. |
-| [Quality of life Fragebogen WHOQOL-BREF - World Health Organization Quality of Life Kurzversion](Questionnaire-QolQuestionnaire.md) | The WHOQOL-BREF is a 26-item instrument for assessing subjective quality of life in four domains: physical, psychological, social relationships, and environment. Developed by the WHO. |
-| [Schrittzahl](Questionnaire-StepCountQuestionnaire.md) | A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000. |
+| [Alkoholkonsum im letzten Jahr](Questionnaire-AtPrenudgeQuestionnaireAlcoholUse.md) | Categorical variable for the frequency of alcohol consumption in the last year (IPS compatible). |
+| [Blutzucker bei der letzten Messung](Questionnaire-BloodGlucoseQuestionnaire.md) | A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allows values inbetween 12 and 1200 mg/dL. |
+| [Lebensstil Selbsteinschätzung](Questionnaire-QolQuestionnaire.md) | The WHOQOL-BREF is a 26-item instrument for assessing subjective quality of life in four domains: physical, psychological, social relationships, and environment. Developed by the WHO. |
+| [Schrittzahl am heutigen Tag](Questionnaire-StepCountQuestionnaire.md) | A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000. |
 
 ### Structures: Abstract Profiles 
 
@@ -46,11 +46,11 @@ These define sets of codes used by systems conforming to this implementation gui
 
 | | |
 | :--- | :--- |
+| [AT PreNUDGE Alcohol Use Frequency](ValueSet-prenudge-alcoholuse-frequency.md) | Frequencies used in the PreNUDGE alcoholuse questionnaire. |
+| [AT PreNUDGE Observation Methods](ValueSet-prenudge-observation-method.md) | ValueSet containing SNOMED CT codes for differentiating methods used in the PreNUDGE observation. |
 | [AT PreNUDGE Other Observations Codes](ValueSet-prenudge-other-observations-codes.md) | Allowed observation codes for the 'Other' observation profile. |
 | [AT PreNUDGE Other Observations Units](ValueSet-prenudge-other-observations-units.md) | Allowed UCUM units for the 'Other' observation profile. |
-| [SNOMED CT AlcoholUse-Frequency](ValueSet-prenudge-alcoholuse-frequency.md) | ValueSet containing SNOMED CT codes for differentiating frequencies used in the PreNUDGE alcoholuse questionnaire. |
-| [WHOQOL-BREF Score Type ValueSet](ValueSet-prenudge-observation-method.md) | ValueSet containing SNOMED CT codes for differentiating methods used in the PreNUDGE observation. |
-| [WHOQOL-BREF Score Type ValueSet](ValueSet-prenudge-whoqol-bref-score-type.md) | ValueSet containing SNOMED CT codes for differentiating WHOQOL-BREF overall and domain scores. |
+| [AT PreNUDGE WHOQOL-BREF Score Type ValueSet](ValueSet-prenudge-whoqol-bref-score-type.md) | ValueSet containing SNOMED CT codes for differentiating WHOQOL-BREF overall and domain scores. |
 
 ### Terminology: Code Systems 
 
@@ -58,7 +58,15 @@ These define new code systems used by systems conforming to this implementation 
 
 | | |
 | :--- | :--- |
-| [WHOQOL-BREF Answer Scales](CodeSystem-whoqol-bref-scale.md) | Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire. |
+| [AT PreNUDGE WHOQOL-BREF Answer Scales](CodeSystem-whoqol-bref-scale.md) | Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire. |
+
+### Terminology: Structure Maps 
+
+These define transformations to convert between data structures used by systems conforming to this implementation guide.
+
+| | |
+| :--- | :--- |
+| [Alcohol Use QuestionnaireResponse to Observation](StructureMap-AlcoholQuestionnaireResponseToObservation.md) | Alcohol Use QuestionnaireResponse to Observation |
 
 ### Terminology: Concept Maps 
 
@@ -74,17 +82,19 @@ These are example instances that show what data produced and consumed by systems
 
 | | |
 | :--- | :--- |
-| [AlcoholResponseDaily](QuestionnaireResponse-AlcoholResponseDaily.md) |  |
-| [AlcoholResponseNever](QuestionnaireResponse-AlcoholResponseNever.md) |  |
+| [Alcohol Use O - Daily](Observation-alcoholuse-occasional-example.md) | Observation example of an alcohol use observation for an daily drinker (2 drinks per day). |
+| [Alcohol Use O - Non-Drinker](Observation-alcoholuse-never-example.md) | Observation example of an alcohol use observation for a lifetime non-drinker (0 drinks per day). |
+| [Alcohol Use Q - Daily](QuestionnaireResponse-AlcoholResponseDaily.md) | QuestionnaireResponse example of an alcohol use observation for an daily drinker. |
+| [Alcohol Use Q - Non-Drinker](QuestionnaireResponse-AlcoholResponseNever.md) | QuestionnaireResponse example of an alcohol use observation for a lifetime non-drinker . |
+| [AtApsPatient-example](Patient-example.md) | An example of a patient with a license to krill. |
 | [Blood Glucose - Elevated Example](Observation-bloodglucose-elevated-example.md) | Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL), hinweisend auf Diabetes mellitus. |
 | [Blood Glucose - Normal Example](Observation-bloodglucose-normal-example.md) | Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL). |
 | [Blood Glucose QuestionnaireResponse - Elevated Example](QuestionnaireResponse-bloodglucose-response-elevated-example.md) | Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL) als QuestionnaireResponse. |
 | [Blood Glucose QuestionnaireResponse - Normal Example](QuestionnaireResponse-bloodglucose-response-normal-example.md) | Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL) als QuestionnaireResponse. |
-| [PatientExample](Patient-example.md) | An example of a patient with a license to krill. |
 | [Step Count - Low Example](Observation-stepcount-low-example.md) | Beispiel einer niedrigen Schrittzahl (2,150 Schritte pro Tag), hinweisend auf Bewegungsmangel. |
 | [Step Count - Normal Example](Observation-stepcount-normal-example.md) | Beispiel einer normalen Schrittzahl (8,432 Schritte pro Tag). |
 | [Step Count QuestionnaireResponse - Low Example](QuestionnaireResponse-stepcount-response-low-example.md) | Beispiel einer niedrigen Schrittzahl (2,150 Schritte) als QuestionnaireResponse. |
 | [Step Count QuestionnaireResponse - Normal Example](QuestionnaireResponse-stepcount-response-normal-example.md) | Beispiel einer normalen Schrittzahl (8,432 Schritte) als QuestionnaireResponse. |
-| [WHOQOL-BREF QuestionnaireResponse - Example](QuestionnaireResponse-whoqol-bref-response-example.md) | Example of a completed WHOQOL-BREF QuestionnaireResponse including all 26 items and calculated scores. |
-| [WHOQOL-BREF Score - Example](Observation-whoqol-bref-score-example.md) | Example of a WHOQOL-BREF score observation with a general score and all four domain scores. |
+| [WHOQOL-BREF QuestionnaireResponse](QuestionnaireResponse-whoqol-bref-response-example.md) | Example of a completed WHOQOL-BREF QuestionnaireResponse including all 26 items and calculated scores. |
+| [WHOQOL-BREF Score](Observation-whoqol-bref-score-example.md) | Example of a WHOQOL-BREF score observation with a general score and all four domain scores. |
 

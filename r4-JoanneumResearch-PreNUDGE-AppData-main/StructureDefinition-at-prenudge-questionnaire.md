@@ -16,7 +16,7 @@ This FHIR profile is defining the overall Questionnaire for PreNUDGE. Every top 
 
 **Usages:**
 
-* Examples for this Profile: [AtPrenudgeQuestionnaireAlcoholUse](Questionnaire-AtPrenudgeQuestionnaireAlcoholUse.md), [BloodGlucoseQuestionnaire](Questionnaire-BloodGlucoseQuestionnaire.md), [QoLByWHOQOLBREF](Questionnaire-QolQuestionnaire.md) and [StepCountQuestionnaire](Questionnaire-StepCountQuestionnaire.md)
+* Examples for this Profile: [AtPrenudgeQuestionnaireAlcoholUse](Questionnaire-AtPrenudgeQuestionnaireAlcoholUse.md), [BloodGlucoseQuestionnaire](Questionnaire-BloodGlucoseQuestionnaire.md), [AtPrenudgeQoLByWHOQOLBREF](Questionnaire-QolQuestionnaire.md) and [StepCountQuestionnaire](Questionnaire-StepCountQuestionnaire.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.prenudge.appdata.r4|current/StructureDefinition/at-prenudge-questionnaire)
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-question
   "name" : "AtPrenudgeQuestionnaire",
   "title" : "AT PreNUDGE Questionnaire",
   "status" : "draft",
-  "date" : "2026-03-01T10:29:33+00:00",
+  "date" : "2026-03-01T15:46:45+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
