@@ -1,14 +1,14 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Blood Glucose - Normal Example - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Blood Glucose O - Normal Example - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Blood Glucose - Normal Example**
+* **Blood Glucose O - Normal Example**
 
-## Example Observation: Blood Glucose - Normal Example
+## Example Observation: Blood Glucose O - Normal Example
 
 Profile: [AT PreNUDGE Observation Blood Glucose (only in mg/dL)](StructureDefinition-at-prenudge-bloodglucose-observation.md)
 
-**identifier**: `http://cdehealth.org/fhir/observation-id`/bg-2026-02-28-001
+**identifier**: `https://www.joanneum.at`/obs-bg-2026-02-28-001
 
 **status**: Final
 
@@ -20,7 +20,14 @@ Profile: [AT PreNUDGE Observation Blood Glucose (only in mg/dL)](StructureDefini
 
 **value**: 95 mg/dL (Details: UCUM codemg/dL = 'mg/dL')
 
-**method**: Automated
+**note**: 
+
+> 
+
+Nüchtern gemessen.
+
+
+**method**: Manual
 
 
 
@@ -34,8 +41,8 @@ Profile: [AT PreNUDGE Observation Blood Glucose (only in mg/dL)](StructureDefini
     "profile" : ["https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation"]
   },
   "identifier" : [{
-    "system" : "http://cdehealth.org/fhir/observation-id",
-    "value" : "bg-2026-02-28-001"
+    "system" : "https://www.joanneum.at",
+    "value" : "obs-bg-2026-02-28-001"
   }],
   "status" : "final",
   "code" : {
@@ -55,11 +62,14 @@ Profile: [AT PreNUDGE Observation Blood Glucose (only in mg/dL)](StructureDefini
     "system" : "http://unitsofmeasure.org",
     "code" : "mg/dL"
   },
+  "note" : [{
+    "text" : "Nüchtern gemessen."
+  }],
   "method" : {
     "coding" : [{
       "system" : "http://snomed.info/sct",
-      "code" : "8359006",
-      "display" : "Automated"
+      "code" : "87982008",
+      "display" : "Manual"
     }]
   }
 }

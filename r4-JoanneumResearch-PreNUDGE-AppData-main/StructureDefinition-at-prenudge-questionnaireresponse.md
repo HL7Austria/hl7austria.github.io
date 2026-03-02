@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse | *Version*:0.1.0 | |
-| Draft as of 2026-03-01 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeQuestionnaireResponse |
+| Draft as of 2026-03-02 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeQuestionnaireResponse |
 
  
 This FHIR profile is defining the overall Questionnaire Response for PreNUDGE. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-question
   "name" : "AtPrenudgeQuestionnaireResponse",
   "title" : "AT PreNUDGE Questionnaire Response",
   "status" : "draft",
-  "date" : "2026-03-01T15:46:45+00:00",
+  "date" : "2026-03-02T16:20:44+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

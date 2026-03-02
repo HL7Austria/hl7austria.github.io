@@ -1,14 +1,14 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\WHOQOL-BREF Score - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\WHOQOL-BREF O Score only - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **WHOQOL-BREF Score**
+* **WHOQOL-BREF O Score only**
 
-## Example Observation: WHOQOL-BREF Score
+## Example Observation: WHOQOL-BREF O Score only
 
-Profile: [ AT PreNUDGE Observation WHOQOL-BREF Score](StructureDefinition-at-prenudge-whoqol-bref-score-observation.md)
+Profile: [AT PreNUDGE Observation WHOQOL-BREF Score](StructureDefinition-at-prenudge-whoqol-bref-score-observation.md)
 
-**identifier**: `http://cdehealth.org/fhir/observation-id`/whoqol-bref-2026-02-28-001
+**identifier**: `https://www.joanneum.at`/obs-whoqol-2026-02-28-001
 
 **status**: Final
 
@@ -16,9 +16,9 @@ Profile: [ AT PreNUDGE Observation WHOQOL-BREF Score](StructureDefinition-at-pre
 
 **subject**: [James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)](Patient-example.md)
 
-**effective**: 2026-02-28
+**effective**: 2026-02-28 10:30:00+0000
 
-**method**: Automated
+**method**: Manual
 
 **derivedFrom**: [Response to Questionnaire '->Lebensstil Selbsteinschätzung' about '->James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)'](QuestionnaireResponse-whoqol-bref-response-example.md)
 
@@ -44,8 +44,8 @@ Profile: [ AT PreNUDGE Observation WHOQOL-BREF Score](StructureDefinition-at-pre
     "profile" : ["https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-whoqol-bref-score-observation"]
   },
   "identifier" : [{
-    "system" : "http://cdehealth.org/fhir/observation-id",
-    "value" : "whoqol-bref-2026-02-28-001"
+    "system" : "https://www.joanneum.at",
+    "value" : "obs-whoqol-2026-02-28-001"
   }],
   "status" : "final",
   "code" : {
@@ -57,12 +57,12 @@ Profile: [ AT PreNUDGE Observation WHOQOL-BREF Score](StructureDefinition-at-pre
   "subject" : {
     "reference" : "Patient/example"
   },
-  "effectiveDateTime" : "2026-02-28",
+  "effectiveDateTime" : "2026-02-28T10:30:00Z",
   "method" : {
     "coding" : [{
       "system" : "http://snomed.info/sct",
-      "code" : "8359006",
-      "display" : "Automated"
+      "code" : "87982008",
+      "display" : "Manual"
     }]
   },
   "derivedFrom" : [{

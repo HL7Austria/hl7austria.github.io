@@ -3,14 +3,14 @@
   "id" : "AlcoholQuestionnaireResponseToObservation",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap AlcoholQuestionnaireResponseToObservation</b></p><a name=\"AlcoholQuestionnaireResponseToObservation\"> </a><a name=\"hcAlcoholQuestionnaireResponseToObservation\"> </a><pre class=\"fml\">\r\n<b>map</b><span style=\"color: navy\"> &quot;</span>https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/AlcoholQuestionnaireResponseToObservation<span style=\"color: navy\">&quot; = &quot;</span>AlcoholQuestionnaireResponseToObservation<span style=\"color: navy\">&quot;\r\n\r\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Alcohol Use QuestionnaireResponse to Observation</span>\r\n\r\n<b>uses</b><span style=\"color: navy\"> &quot;</span><a href=\"http://hl7.org/fhir/R4/questionnaireresponse.html\" title=\"QuestionnaireResponse\">http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse</a><span style=\"color: navy\">&quot; </span><b>alias </b>QR <b>as </b><b>source</b>\r\n<b>uses</b><span style=\"color: navy\"> &quot;</span><a href=\"http://hl7.org/fhir/R4/observation.html\" title=\"Observation\">http://hl7.org/fhir/StructureDefinition/Observation</a><span style=\"color: navy\">&quot; </span><b>alias </b>Obs <b>as </b><b>target</b>\r\n\r\n<b>imports</b><span style=\"color: navy\"> &quot;</span>http://hl7.org/fhir/StructureMap/*<span style=\"color: navy\">&quot;\r\n</span>\r\n<b>group </b>AlcoholQuestionnaireResponseToObservation<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  <span style=\"color: navy\">// </span><span style=\"color: green\">Status</span>\r\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.status = <span style=\"color: blue\">'final'</span> <i>&quot;SetStatus&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Code</span>\r\n  src<span style=\"color: navy\"><b> -&gt; </b></span> tgt.code<b> as </b><span style=\"color: maroon\">code</span><span style=\"color: navy\">, </span> code.coding<b> as </b><span style=\"color: maroon\">coding</span><b> then</b><span style=\"color: navy\"> {\r\n</span>    src<span style=\"color: navy\"><b> -&gt; </b></span>coding.system = <span style=\"color: blue\">'http://loinc.org'</span> <i>&quot;SetCodeSystem&quot;</i><span style=\"color: navy\">;</span>\r\n    src<span style=\"color: navy\"><b> -&gt; </b></span>coding.code = <span style=\"color: blue\">'74013-4'</span> <i>&quot;SetCodeCode&quot;</i><span style=\"color: navy\">;</span>\r\n    src<span style=\"color: navy\"><b> -&gt; </b></span>coding.display = <span style=\"color: blue\">'Alcoholic drinks per day'</span> <i>&quot;SetCodeDisplay&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;SetCode&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Subject</span>\r\n  src.subject<b> as </b><span style=\"color: maroon\">subject</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.subject = <span style=\"color: maroon\">subject</span> <i>&quot;SetSubject&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">EffectiveDateTime from authored</span>\r\n  src.authored<b> as </b><span style=\"color: maroon\">authored</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.effective = <span style=\"color: maroon\">authored</span> <i>&quot;SetEffective&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Process items</span>\r\n  src.item<b> as </b><span style=\"color: maroon\">item</span><b> where </b>linkId = 'alcohol-frequency'<b> then </b>MapAlcoholFrequency<span style=\"color: navy\">(</span><span style=\"color: maroon\">item</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>&quot;ProcessItem&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span><b>group </b>MapAlcoholFrequency<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span>, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  src.answer<b> as </b><span style=\"color: maroon\">answer</span><b> then</b><span style=\"color: navy\"> {\r\n</span>    <span style=\"color: navy\">// </span><span style=\"color: green\">Map frequency code to drinks/day</span>\r\n    answer.valueCoding<b> as </b><span style=\"color: maroon\">coding</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><b> then</b><span style=\"color: navy\"> {\r\n</span>      coding<b> where </b>code = '69620002'<span style=\"color: navy\"><b> -&gt; </b></span>qty.value = <span style=\"color: blue\">1</span> <i>&quot;MapDaily&quot;</i><span style=\"color: navy\">;</span>\r\n      coding<b> where </b>code = '307447001'<span style=\"color: navy\"><b> -&gt; </b></span>qty.value = <span style=\"color: blue\">0.79</span> <i>&quot;MapSixTimesWeekly&quot;</i><span style=\"color: navy\">;</span>\r\n      coding<b> where </b>code = '396113003'<span style=\"color: navy\"><b> -&gt; </b></span>qty.value = <span style=\"color: blue\">0.5</span> <i>&quot;MapThreeToFourTimesWeekly&quot;</i><span style=\"color: navy\">;</span>\r\n      coding<b> where </b>code = '229800002'<span style=\"color: navy\"><b> -&gt; </b></span>qty.value = <span style=\"color: blue\">0.21</span> <i>&quot;MapTwiceWeekly&quot;</i><span style=\"color: navy\">;</span>\r\n      coding<b> where </b>code = '307452006'<span style=\"color: navy\"><b> -&gt; </b></span>qty.value = <span style=\"color: blue\">0.08</span> <i>&quot;MapThreeTimesMonthly&quot;</i><span style=\"color: navy\">;</span>\r\n      coding<b> where </b>code = '307450003'<span style=\"color: navy\"><b> -&gt; </b></span>qty.value = <span style=\"color: blue\">0.03</span> <i>&quot;MapOnceMonthly&quot;</i><span style=\"color: navy\">;</span>\r\n      coding<b> where </b>code = '445547001'<span style=\"color: navy\"><b> -&gt; </b></span>qty.value = <span style=\"color: blue\">0.02</span> <i>&quot;MapEveryTwoMonths&quot;</i><span style=\"color: navy\">;</span>\r\n      coding<b> where </b>code = '105542008'<span style=\"color: navy\"><b> -&gt; </b></span>qty.value = <span style=\"color: blue\">0.001</span> <i>&quot;MapCurrentNonDrinker&quot;</i><span style=\"color: navy\">;</span>\r\n      coding<b> where </b>code = '783261004'<span style=\"color: navy\"><b> -&gt; </b></span>qty.value = <span style=\"color: blue\">0</span> <i>&quot;MapLifetimeNonDrinker&quot;</i><span style=\"color: navy\">;</span>\r\n      coding<span style=\"color: navy\"><b> -&gt; </b></span>qty.unit = <span style=\"color: blue\">'drinks/day'</span> <i>&quot;SetUnit&quot;</i><span style=\"color: navy\">;</span>\r\n      coding<span style=\"color: navy\"><b> -&gt; </b></span>qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span> <i>&quot;SetUnitSystem&quot;</i><span style=\"color: navy\">;</span>\r\n      coding<span style=\"color: navy\"><b> -&gt; </b></span>qty.code = <span style=\"color: blue\">'{drinks}/d'</span> <i>&quot;SetUnitCode&quot;</i><span style=\"color: navy\">;</span>\r\n    <span style=\"color: navy\">}</span> <i>&quot;MapValueQuantity&quot;</i><span style=\"color: navy\">;</span>\r\n    <span style=\"color: navy\">// </span><span style=\"color: green\">Map comment to note</span>\r\n    answer.item<b> as </b><span style=\"color: maroon\">commentItem</span><b> where </b>linkId = 'comment'<b> then</b><span style=\"color: navy\"> {\r\n</span>      commentItem.answer<b> as </b><span style=\"color: maroon\">commentAnswer</span><b> then</b><span style=\"color: navy\"> {\r\n</span>        commentAnswer.value<b> as </b><span style=\"color: maroon\">commentValue</span><span style=\"color: navy\"><b> -&gt; </b></span> tgt.note<b> as </b><span style=\"color: maroon\">note</span><span style=\"color: navy\">, </span> note.text = <span style=\"color: maroon\">commentValue</span> <i>&quot;SetNote&quot;</i><span style=\"color: navy\">;</span>\r\n      <span style=\"color: navy\">}</span> <i>&quot;ProcessCommentAnswer&quot;</i><span style=\"color: navy\">;</span>\r\n    <span style=\"color: navy\">}</span> <i>&quot;ProcessComment&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;ProcessAnswer&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span></pre></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap AlcoholQuestionnaireResponseToObservation</b></p><a name=\"AlcoholQuestionnaireResponseToObservation\"> </a><a name=\"hcAlcoholQuestionnaireResponseToObservation\"> </a><pre class=\"fml\">\r\n<b>map</b><span style=\"color: navy\"> &quot;</span>https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/AlcoholQuestionnaireResponseToObservation<span style=\"color: navy\">&quot; = &quot;</span>AlcoholQuestionnaireResponseToObservation<span style=\"color: navy\">&quot;\r\n\r\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Alcohol Use Q mapping frequency to O drinks per day</span>\r\n\r\n<b>uses</b><span style=\"color: navy\"> &quot;</span><a href=\"http://hl7.org/fhir/R4/questionnaireresponse.html\" title=\"QuestionnaireResponse\">http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse</a><span style=\"color: navy\">&quot; </span><b>alias </b>QR <b>as </b><b>source</b>\r\n<b>uses</b><span style=\"color: navy\"> &quot;</span><a href=\"http://hl7.org/fhir/R4/observation.html\" title=\"Observation\">http://hl7.org/fhir/StructureDefinition/Observation</a><span style=\"color: navy\">&quot; </span><b>alias </b>Obs <b>as </b><b>target</b>\r\n<b>uses</b><span style=\"color: navy\"> &quot;</span><a href=\"http://hl7.org/fhir/R4/datatypes.html#Coding\" title=\"Coding\">http://hl7.org/fhir/StructureDefinition/Coding</a><span style=\"color: navy\">&quot; </span><b>alias </b>Coding <b>as </b><b>source</b>\r\n\r\n<b>imports</b><span style=\"color: navy\"> &quot;</span>http://hl7.org/fhir/StructureMap/*<span style=\"color: navy\">&quot;\r\n</span>\r\n<b>group </b>AlcoholQuestionnaireResponseToObservation<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  <span style=\"color: navy\">// </span><span style=\"color: green\">Status</span>\r\n  src.status<b> as </b><span style=\"color: maroon\">s</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.status = <span style=\"color: blue\">'final'</span> <i>&quot;SetStatus&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Code</span>\r\n  src.status<b> as </b><span style=\"color: maroon\">s</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.code<b> as </b><span style=\"color: maroon\">code</span><b> then</b><span style=\"color: navy\"> {\r\n</span>    s<b> as </b><span style=\"color: maroon\">x</span><span style=\"color: navy\"><b> -&gt; </b></span> code.coding<b> as </b><span style=\"color: maroon\">coding</span><span style=\"color: navy\">, </span> coding.system = <span style=\"color: blue\">'http://loinc.org'</span><span style=\"color: navy\">, </span> coding.code = <span style=\"color: blue\">'74013-4'</span><span style=\"color: navy\">, </span> coding.display = <span style=\"color: blue\">'Alcoholic drinks per day'</span> <i>&quot;SetCodeCoding&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;SetCode&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Method - questionnaires are always manually filled</span>\r\n  src.status<b> as </b><span style=\"color: maroon\">s</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.method<b> as </b><span style=\"color: maroon\">method</span><b> then</b><span style=\"color: navy\"> {\r\n</span>    s<b> as </b><span style=\"color: maroon\">x</span><span style=\"color: navy\"><b> -&gt; </b></span> method.coding<b> as </b><span style=\"color: maroon\">mc</span><span style=\"color: navy\">, </span> mc.system = <span style=\"color: blue\">'http://snomed.info/sct'</span><span style=\"color: navy\">, </span> mc.code = <span style=\"color: blue\">'87982008'</span><span style=\"color: navy\">, </span> mc.display = <span style=\"color: blue\">'Manual'</span> <i>&quot;SetMethodCoding&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;SetMethod&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Subject</span>\r\n  src.subject<b> as </b><span style=\"color: maroon\">subject</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.subject = <span style=\"color: maroon\">subject</span> <i>&quot;SetSubject&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">EffectiveDateTime from authored</span>\r\n  src.authored<b> as </b><span style=\"color: maroon\">authored</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.effective = <span style=\"color: maroon\">authored</span> <i>&quot;SetEffective&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Process items</span>\r\n  src.item<b> as </b><span style=\"color: maroon\">item</span><b> where </b>linkId = 'alcohol-frequency'<b> then </b>MapAlcoholFrequency<span style=\"color: navy\">(</span><span style=\"color: maroon\">item</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>&quot;ProcessItem&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span><b>group </b>MapAlcoholFrequency<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span>, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  src.answer<b> as </b><span style=\"color: maroon\">answer</span><b> then</b><span style=\"color: navy\"> {\r\n</span>    <span style=\"color: navy\">// </span><span style=\"color: green\">Map frequency code to drinks/day</span>\r\n    answer.value<span style=\"color: navy\"> : </span>Coding<b> as </b><span style=\"color: maroon\">coding</span><b> then </b>MapCodingToQuantity<span style=\"color: navy\">(</span><span style=\"color: maroon\">coding</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>&quot;MapValueQuantity&quot;</i><span style=\"color: navy\">;</span>\r\n    <span style=\"color: navy\">// </span><span style=\"color: green\">Map comment to note</span>\r\n    answer.item<b> as </b><span style=\"color: maroon\">commentItem</span><b> where </b>linkId = 'comment'<b> then</b><span style=\"color: navy\"> {\r\n</span>      commentItem.answer<b> as </b><span style=\"color: maroon\">commentAnswer</span><b> then</b><span style=\"color: navy\"> {\r\n</span>        commentAnswer.value<b> as </b><span style=\"color: maroon\">commentValue</span><span style=\"color: navy\"><b> -&gt; </b></span> tgt.note<b> as </b><span style=\"color: maroon\">note</span><span style=\"color: navy\">, </span> note.text = <span style=\"color: maroon\">commentValue</span> <i>&quot;SetNote&quot;</i><span style=\"color: navy\">;</span>\r\n      <span style=\"color: navy\">}</span> <i>&quot;ProcessCommentAnswer&quot;</i><span style=\"color: navy\">;</span>\r\n    <span style=\"color: navy\">}</span> <i>&quot;ProcessComment&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;ProcessAnswer&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span><b>group </b>MapCodingToQuantity<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">coding</span><span style=\"color: navy\"> : </span>Coding, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  coding.code<b> as </b><span style=\"color: maroon\">c</span><b> where </b>$this = '69620002'<span style=\"color: navy\"><b> -&gt; </b></span> tgt.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><span style=\"color: navy\">, </span> qty.value = <span style=\"color: blue\">1</span><span style=\"color: navy\">, </span> qty.unit = <span style=\"color: blue\">'drinks/day'</span><span style=\"color: navy\">, </span> qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span><span style=\"color: navy\">, </span> qty.code = <span style=\"color: blue\">'{drinks}/d'</span> <i>&quot;MapDaily&quot;</i><span style=\"color: navy\">;</span>\r\n  coding.code<b> as </b><span style=\"color: maroon\">c</span><b> where </b>$this = '307447001'<span style=\"color: navy\"><b> -&gt; </b></span> tgt.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><span style=\"color: navy\">, </span> qty.value = <span style=\"color: blue\">0.79</span><span style=\"color: navy\">, </span> qty.unit = <span style=\"color: blue\">'drinks/day'</span><span style=\"color: navy\">, </span> qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span><span style=\"color: navy\">, </span> qty.code = <span style=\"color: blue\">'{drinks}/d'</span> <i>&quot;MapSixTimesWeekly&quot;</i><span style=\"color: navy\">;</span>\r\n  coding.code<b> as </b><span style=\"color: maroon\">c</span><b> where </b>$this = '396113003'<span style=\"color: navy\"><b> -&gt; </b></span> tgt.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><span style=\"color: navy\">, </span> qty.value = <span style=\"color: blue\">0.5</span><span style=\"color: navy\">, </span> qty.unit = <span style=\"color: blue\">'drinks/day'</span><span style=\"color: navy\">, </span> qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span><span style=\"color: navy\">, </span> qty.code = <span style=\"color: blue\">'{drinks}/d'</span> <i>&quot;MapThreeToFourTimesWeekly&quot;</i><span style=\"color: navy\">;</span>\r\n  coding.code<b> as </b><span style=\"color: maroon\">c</span><b> where </b>$this = '229800002'<span style=\"color: navy\"><b> -&gt; </b></span> tgt.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><span style=\"color: navy\">, </span> qty.value = <span style=\"color: blue\">0.21</span><span style=\"color: navy\">, </span> qty.unit = <span style=\"color: blue\">'drinks/day'</span><span style=\"color: navy\">, </span> qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span><span style=\"color: navy\">, </span> qty.code = <span style=\"color: blue\">'{drinks}/d'</span> <i>&quot;MapTwiceWeekly&quot;</i><span style=\"color: navy\">;</span>\r\n  coding.code<b> as </b><span style=\"color: maroon\">c</span><b> where </b>$this = '307452006'<span style=\"color: navy\"><b> -&gt; </b></span> tgt.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><span style=\"color: navy\">, </span> qty.value = <span style=\"color: blue\">0.08</span><span style=\"color: navy\">, </span> qty.unit = <span style=\"color: blue\">'drinks/day'</span><span style=\"color: navy\">, </span> qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span><span style=\"color: navy\">, </span> qty.code = <span style=\"color: blue\">'{drinks}/d'</span> <i>&quot;MapThreeTimesMonthly&quot;</i><span style=\"color: navy\">;</span>\r\n  coding.code<b> as </b><span style=\"color: maroon\">c</span><b> where </b>$this = '307450003'<span style=\"color: navy\"><b> -&gt; </b></span> tgt.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><span style=\"color: navy\">, </span> qty.value = <span style=\"color: blue\">0.03</span><span style=\"color: navy\">, </span> qty.unit = <span style=\"color: blue\">'drinks/day'</span><span style=\"color: navy\">, </span> qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span><span style=\"color: navy\">, </span> qty.code = <span style=\"color: blue\">'{drinks}/d'</span> <i>&quot;MapOnceMonthly&quot;</i><span style=\"color: navy\">;</span>\r\n  coding.code<b> as </b><span style=\"color: maroon\">c</span><b> where </b>$this = '445547001'<span style=\"color: navy\"><b> -&gt; </b></span> tgt.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><span style=\"color: navy\">, </span> qty.value = <span style=\"color: blue\">0.02</span><span style=\"color: navy\">, </span> qty.unit = <span style=\"color: blue\">'drinks/day'</span><span style=\"color: navy\">, </span> qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span><span style=\"color: navy\">, </span> qty.code = <span style=\"color: blue\">'{drinks}/d'</span> <i>&quot;MapEveryTwoMonths&quot;</i><span style=\"color: navy\">;</span>\r\n  coding.code<b> as </b><span style=\"color: maroon\">c</span><b> where </b>$this = '105542008'<span style=\"color: navy\"><b> -&gt; </b></span> tgt.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><span style=\"color: navy\">, </span> qty.value = <span style=\"color: blue\">0</span><span style=\"color: navy\">, </span> qty.unit = <span style=\"color: blue\">'drinks/day'</span><span style=\"color: navy\">, </span> qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span><span style=\"color: navy\">, </span> qty.code = <span style=\"color: blue\">'{drinks}/d'</span> <i>&quot;MapCurrentNonDrinker&quot;</i><span style=\"color: navy\">;</span>\r\n  coding.code<b> as </b><span style=\"color: maroon\">c</span><b> where </b>$this = '783261004'<span style=\"color: navy\"><b> -&gt; </b></span> tgt.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><span style=\"color: navy\">, </span> qty.value = <span style=\"color: blue\">0</span><span style=\"color: navy\">, </span> qty.unit = <span style=\"color: blue\">'drinks/day'</span><span style=\"color: navy\">, </span> qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span><span style=\"color: navy\">, </span> qty.code = <span style=\"color: blue\">'{drinks}/d'</span> <i>&quot;MapLifetimeNonDrinker&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span></pre></div>"
   },
   "url" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/AlcoholQuestionnaireResponseToObservation",
   "version" : "0.1.0",
   "name" : "AlcoholQuestionnaireResponseToObservation",
-  "title" : "Alcohol Use QuestionnaireResponse to Observation",
+  "title" : "Alcohol Use Q mapping frequency to O drinks per day",
   "status" : "active",
-  "date" : "2026-03-01T15:46:45+00:00",
+  "date" : "2026-03-02T16:20:44+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -27,7 +27,7 @@
       "use" : "work"
     }]
   }],
-  "description" : "Alcohol Use QuestionnaireResponse to Observation",
+  "description" : "Alcohol Use Q mapping frequency to O drinks per day",
   "structure" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse",
     "mode" : "source",
@@ -37,6 +37,11 @@
     "url" : "http://hl7.org/fhir/StructureDefinition/Observation",
     "mode" : "target",
     "alias" : "Obs"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/Coding",
+    "mode" : "source",
+    "alias" : "Coding"
   }],
   "import" : ["http://hl7.org/fhir/StructureMap/*"],
   "group" : [{
@@ -55,7 +60,9 @@
     "rule" : [{
       "name" : "SetStatus",
       "source" : [{
-        "context" : "src"
+        "context" : "src",
+        "element" : "status",
+        "variable" : "s"
       }],
       "target" : [{
         "context" : "tgt",
@@ -70,26 +77,29 @@
     {
       "name" : "SetCode",
       "source" : [{
-        "context" : "src"
+        "context" : "src",
+        "element" : "status",
+        "variable" : "s"
       }],
       "target" : [{
         "context" : "tgt",
         "contextType" : "variable",
         "element" : "code",
         "variable" : "code"
-      },
-      {
-        "context" : "code",
-        "contextType" : "variable",
-        "element" : "coding",
-        "variable" : "coding"
       }],
       "rule" : [{
-        "name" : "SetCodeSystem",
+        "name" : "SetCodeCoding",
         "source" : [{
-          "context" : "src"
+          "context" : "s",
+          "variable" : "x"
         }],
         "target" : [{
+          "context" : "code",
+          "contextType" : "variable",
+          "element" : "coding",
+          "variable" : "coding"
+        },
+        {
           "context" : "coding",
           "contextType" : "variable",
           "element" : "system",
@@ -97,14 +107,8 @@
           "parameter" : [{
             "valueString" : "http://loinc.org"
           }]
-        }]
-      },
-      {
-        "name" : "SetCodeCode",
-        "source" : [{
-          "context" : "src"
-        }],
-        "target" : [{
+        },
+        {
           "context" : "coding",
           "contextType" : "variable",
           "element" : "code",
@@ -112,20 +116,68 @@
           "parameter" : [{
             "valueString" : "74013-4"
           }]
-        }]
-      },
-      {
-        "name" : "SetCodeDisplay",
-        "source" : [{
-          "context" : "src"
-        }],
-        "target" : [{
+        },
+        {
           "context" : "coding",
           "contextType" : "variable",
           "element" : "display",
           "transform" : "copy",
           "parameter" : [{
             "valueString" : "Alcoholic drinks per day"
+          }]
+        }]
+      }]
+    },
+    {
+      "name" : "SetMethod",
+      "source" : [{
+        "context" : "src",
+        "element" : "status",
+        "variable" : "s"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "method",
+        "variable" : "method"
+      }],
+      "rule" : [{
+        "name" : "SetMethodCoding",
+        "source" : [{
+          "context" : "s",
+          "variable" : "x"
+        }],
+        "target" : [{
+          "context" : "method",
+          "contextType" : "variable",
+          "element" : "coding",
+          "variable" : "mc"
+        },
+        {
+          "context" : "mc",
+          "contextType" : "variable",
+          "element" : "system",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "http://snomed.info/sct"
+          }]
+        },
+        {
+          "context" : "mc",
+          "contextType" : "variable",
+          "element" : "code",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "87982008"
+          }]
+        },
+        {
+          "context" : "mc",
+          "contextType" : "variable",
+          "element" : "display",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "Manual"
           }]
         }]
       }]
@@ -202,207 +254,14 @@
         "name" : "MapValueQuantity",
         "source" : [{
           "context" : "answer",
-          "element" : "valueCoding",
+          "type" : "Coding",
+          "element" : "value",
           "variable" : "coding"
         }],
-        "target" : [{
-          "context" : "tgt",
-          "contextType" : "variable",
-          "element" : "value",
-          "variable" : "qty",
-          "transform" : "create",
-          "parameter" : [{
-            "valueString" : "Quantity"
-          }]
-        }],
-        "rule" : [{
-          "name" : "MapDaily",
-          "source" : [{
-            "context" : "coding",
-            "condition" : "code = '69620002'"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "value",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueInteger" : 1
-            }]
-          }]
-        },
-        {
-          "name" : "MapSixTimesWeekly",
-          "source" : [{
-            "context" : "coding",
-            "condition" : "code = '307447001'"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "value",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueDecimal" : 0.79
-            }]
-          }]
-        },
-        {
-          "name" : "MapThreeToFourTimesWeekly",
-          "source" : [{
-            "context" : "coding",
-            "condition" : "code = '396113003'"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "value",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueDecimal" : 0.5
-            }]
-          }]
-        },
-        {
-          "name" : "MapTwiceWeekly",
-          "source" : [{
-            "context" : "coding",
-            "condition" : "code = '229800002'"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "value",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueDecimal" : 0.21
-            }]
-          }]
-        },
-        {
-          "name" : "MapThreeTimesMonthly",
-          "source" : [{
-            "context" : "coding",
-            "condition" : "code = '307452006'"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "value",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueDecimal" : 0.08
-            }]
-          }]
-        },
-        {
-          "name" : "MapOnceMonthly",
-          "source" : [{
-            "context" : "coding",
-            "condition" : "code = '307450003'"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "value",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueDecimal" : 0.03
-            }]
-          }]
-        },
-        {
-          "name" : "MapEveryTwoMonths",
-          "source" : [{
-            "context" : "coding",
-            "condition" : "code = '445547001'"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "value",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueDecimal" : 0.02
-            }]
-          }]
-        },
-        {
-          "name" : "MapCurrentNonDrinker",
-          "source" : [{
-            "context" : "coding",
-            "condition" : "code = '105542008'"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "value",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueDecimal" : 0.001
-            }]
-          }]
-        },
-        {
-          "name" : "MapLifetimeNonDrinker",
-          "source" : [{
-            "context" : "coding",
-            "condition" : "code = '783261004'"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "value",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueInteger" : 0
-            }]
-          }]
-        },
-        {
-          "name" : "SetUnit",
-          "source" : [{
-            "context" : "coding"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "unit",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueString" : "drinks/day"
-            }]
-          }]
-        },
-        {
-          "name" : "SetUnitSystem",
-          "source" : [{
-            "context" : "coding"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "system",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueString" : "http://unitsofmeasure.org"
-            }]
-          }]
-        },
-        {
-          "name" : "SetUnitCode",
-          "source" : [{
-            "context" : "coding"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "code",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueString" : "{drinks}/d"
-            }]
-          }]
+        "dependent" : [{
+          "name" : "MapCodingToQuantity",
+          "variable" : ["coding",
+          "tgt"]
         }]
       },
       {
@@ -443,6 +302,515 @@
               }]
             }]
           }]
+        }]
+      }]
+    }]
+  },
+  {
+    "name" : "MapCodingToQuantity",
+    "typeMode" : "none",
+    "input" : [{
+      "name" : "coding",
+      "type" : "Coding",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgt",
+      "type" : "Obs",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "MapDaily",
+      "source" : [{
+        "context" : "coding",
+        "element" : "code",
+        "variable" : "c",
+        "condition" : "$this = '69620002'"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "value",
+        "variable" : "qty",
+        "transform" : "create",
+        "parameter" : [{
+          "valueString" : "Quantity"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "value",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueInteger" : 1
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "unit",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "drinks/day"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "system",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "http://unitsofmeasure.org"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "code",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "{drinks}/d"
+        }]
+      }]
+    },
+    {
+      "name" : "MapSixTimesWeekly",
+      "source" : [{
+        "context" : "coding",
+        "element" : "code",
+        "variable" : "c",
+        "condition" : "$this = '307447001'"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "value",
+        "variable" : "qty",
+        "transform" : "create",
+        "parameter" : [{
+          "valueString" : "Quantity"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "value",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueDecimal" : 0.79
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "unit",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "drinks/day"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "system",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "http://unitsofmeasure.org"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "code",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "{drinks}/d"
+        }]
+      }]
+    },
+    {
+      "name" : "MapThreeToFourTimesWeekly",
+      "source" : [{
+        "context" : "coding",
+        "element" : "code",
+        "variable" : "c",
+        "condition" : "$this = '396113003'"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "value",
+        "variable" : "qty",
+        "transform" : "create",
+        "parameter" : [{
+          "valueString" : "Quantity"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "value",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueDecimal" : 0.5
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "unit",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "drinks/day"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "system",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "http://unitsofmeasure.org"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "code",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "{drinks}/d"
+        }]
+      }]
+    },
+    {
+      "name" : "MapTwiceWeekly",
+      "source" : [{
+        "context" : "coding",
+        "element" : "code",
+        "variable" : "c",
+        "condition" : "$this = '229800002'"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "value",
+        "variable" : "qty",
+        "transform" : "create",
+        "parameter" : [{
+          "valueString" : "Quantity"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "value",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueDecimal" : 0.21
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "unit",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "drinks/day"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "system",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "http://unitsofmeasure.org"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "code",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "{drinks}/d"
+        }]
+      }]
+    },
+    {
+      "name" : "MapThreeTimesMonthly",
+      "source" : [{
+        "context" : "coding",
+        "element" : "code",
+        "variable" : "c",
+        "condition" : "$this = '307452006'"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "value",
+        "variable" : "qty",
+        "transform" : "create",
+        "parameter" : [{
+          "valueString" : "Quantity"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "value",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueDecimal" : 0.08
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "unit",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "drinks/day"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "system",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "http://unitsofmeasure.org"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "code",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "{drinks}/d"
+        }]
+      }]
+    },
+    {
+      "name" : "MapOnceMonthly",
+      "source" : [{
+        "context" : "coding",
+        "element" : "code",
+        "variable" : "c",
+        "condition" : "$this = '307450003'"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "value",
+        "variable" : "qty",
+        "transform" : "create",
+        "parameter" : [{
+          "valueString" : "Quantity"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "value",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueDecimal" : 0.03
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "unit",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "drinks/day"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "system",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "http://unitsofmeasure.org"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "code",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "{drinks}/d"
+        }]
+      }]
+    },
+    {
+      "name" : "MapEveryTwoMonths",
+      "source" : [{
+        "context" : "coding",
+        "element" : "code",
+        "variable" : "c",
+        "condition" : "$this = '445547001'"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "value",
+        "variable" : "qty",
+        "transform" : "create",
+        "parameter" : [{
+          "valueString" : "Quantity"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "value",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueDecimal" : 0.02
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "unit",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "drinks/day"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "system",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "http://unitsofmeasure.org"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "code",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "{drinks}/d"
+        }]
+      }]
+    },
+    {
+      "name" : "MapCurrentNonDrinker",
+      "source" : [{
+        "context" : "coding",
+        "element" : "code",
+        "variable" : "c",
+        "condition" : "$this = '105542008'"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "value",
+        "variable" : "qty",
+        "transform" : "create",
+        "parameter" : [{
+          "valueString" : "Quantity"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "value",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueInteger" : 0
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "unit",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "drinks/day"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "system",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "http://unitsofmeasure.org"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "code",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "{drinks}/d"
+        }]
+      }]
+    },
+    {
+      "name" : "MapLifetimeNonDrinker",
+      "source" : [{
+        "context" : "coding",
+        "element" : "code",
+        "variable" : "c",
+        "condition" : "$this = '783261004'"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "value",
+        "variable" : "qty",
+        "transform" : "create",
+        "parameter" : [{
+          "valueString" : "Quantity"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "value",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueInteger" : 0
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "unit",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "drinks/day"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "system",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "http://unitsofmeasure.org"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "code",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "{drinks}/d"
         }]
       }]
     }]

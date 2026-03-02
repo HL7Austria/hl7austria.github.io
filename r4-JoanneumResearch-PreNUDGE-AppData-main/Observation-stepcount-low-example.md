@@ -1,14 +1,14 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Step Count - Low Example - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Step Count O - High Example - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Step Count - Low Example**
+* **Step Count O - High Example**
 
-## Example Observation: Step Count - Low Example
+## Example Observation: Step Count O - High Example
 
 Profile: [AT PreNUDGE Observation Step Count](StructureDefinition-at-prenudge-stepcount-observation.md)
 
-**identifier**: `http://cdehealth.org/fhir/observation-id`/sc-2026-02-28-002
+**identifier**: `https://www.joanneum.at`/obs-sc-2026-02-28-002
 
 **status**: Final
 
@@ -16,7 +16,7 @@ Profile: [AT PreNUDGE Observation Step Count](StructureDefinition-at-prenudge-st
 
 **subject**: [James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)](Patient-example.md)
 
-**effective**: 2026-02-28
+**effective**: 2026-02-28 20:15:00+0000
 
 **value**: 133519 {steps}/d (Details: UCUM code{steps}/d = '{steps}/d')
 
@@ -41,8 +41,8 @@ Könnte bitte jemand überprüfen ob das ein Weltrekord wäre?
     "profile" : ["https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation"]
   },
   "identifier" : [{
-    "system" : "http://cdehealth.org/fhir/observation-id",
-    "value" : "sc-2026-02-28-002"
+    "system" : "https://www.joanneum.at",
+    "value" : "obs-sc-2026-02-28-002"
   }],
   "status" : "final",
   "code" : {
@@ -55,7 +55,7 @@ Könnte bitte jemand überprüfen ob das ein Weltrekord wäre?
   "subject" : {
     "reference" : "Patient/example"
   },
-  "effectiveDateTime" : "2026-02-28",
+  "effectiveDateTime" : "2026-02-28T20:15:00Z",
   "valueQuantity" : {
     "value" : 133519,
     "unit" : "{steps}/d",

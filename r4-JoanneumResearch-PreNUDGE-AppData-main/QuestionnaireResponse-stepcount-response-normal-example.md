@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Step Count QuestionnaireResponse - Normal Example - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Step Count Q - Normal Example - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Step Count QuestionnaireResponse - Normal Example**
+* **Step Count Q - Normal Example**
 
-## Example QuestionnaireResponse: Step Count QuestionnaireResponse - Normal Example
+## Example QuestionnaireResponse: Step Count Q - Normal Example
 
 * [LinkID](https://hl7.org/fhir/R4/formats.html#table): stepcount-response-normal-example
   * [Text](https://hl7.org/fhir/R4/formats.html#table): 
@@ -28,6 +28,10 @@
 {
   "resourceType" : "QuestionnaireResponse",
   "id" : "stepcount-response-normal-example",
+  "identifier" : {
+    "system" : "https://www.joanneum.at",
+    "value" : "qr-sc-2026-02-28-001"
+  },
   "questionnaire" : "https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/StepCountQuestionnaire",
   "status" : "completed",
   "subject" : {

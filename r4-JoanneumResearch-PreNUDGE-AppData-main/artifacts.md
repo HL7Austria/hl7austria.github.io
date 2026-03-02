@@ -33,11 +33,11 @@ These define constraints on FHIR resources for systems conforming to this implem
 
 | | |
 | :--- | :--- |
-| [ AT PreNUDGE Observation WHOQOL-BREF Score](StructureDefinition-at-prenudge-whoqol-bref-score-observation.md) | Observation profile for recording WHOQOL-BREF domain scores. The overall score is represented in Observation.value, individual domain scores are recorded as components. |
 | [AT PreNUDGE Observation Alcohol Use](StructureDefinition-at-prenudge-alcoholuse-observation.md) | This FHIR profile is currently derived from the APS Observation Alcohol Use profile without introducing any additional constraints or changes. It serves as a prepared extension point so that future adaptations can be made independently if required. |
 | [AT PreNUDGE Observation Blood Glucose (only in mg/dL)](StructureDefinition-at-prenudge-bloodglucose-observation.md) | This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allowes values inbetween 12 and 1200 mg/dL. |
 | [AT PreNUDGE Observation Other](StructureDefinition-at-prenudge-observation-other.md) | This FHIR profile can be used for all the other Observations for PreNUDGE, not fitting the existing narrow standardized observations. If some code for specifing a new Observation are missing, please contact prenudge@joanneum.at. |
 | [AT PreNUDGE Observation Step Count](StructureDefinition-at-prenudge-stepcount-observation.md) | This FHIR profile is defining the Step Count Observation. The step count only allows values inbetween 0 and 150,000 steps per 24 hours. |
+| [AT PreNUDGE Observation WHOQOL-BREF Score](StructureDefinition-at-prenudge-whoqol-bref-score-observation.md) | Observation profile for recording WHOQOL-BREF domain scores. The overall score is represented in Observation.value, individual domain scores are recorded as components. |
 | [AT PreNUDGE Questionnaire Response](StructureDefinition-at-prenudge-questionnaireresponse.md) | This FHIR profile is defining the overall Questionnaire Response for PreNUDGE. |
 
 ### Terminology: Value Sets 
@@ -66,7 +66,9 @@ These define transformations to convert between data structures used by systems 
 
 | | |
 | :--- | :--- |
-| [Alcohol Use QuestionnaireResponse to Observation](StructureMap-AlcoholQuestionnaireResponseToObservation.md) | Alcohol Use QuestionnaireResponse to Observation |
+| [Alcohol Use Q mapping frequency to O drinks per day](StructureMap-AlcoholQuestionnaireResponseToObservation.md) | Alcohol Use Q mapping frequency to O drinks per day |
+| [Blood Glucose Q to O](StructureMap-BloodGlucoseQuestionnaireResponseToObservation.md) | Blood Glucose Q to O |
+| [WHOQOL-BREF Q score to O score](StructureMap-WHOQOLBrefQuestionnaireResponseToObservation.md) | WHOQOL-BREF Q score to O score |
 
 ### Terminology: Concept Maps 
 
@@ -82,19 +84,19 @@ These are example instances that show what data produced and consumed by systems
 
 | | |
 | :--- | :--- |
-| [Alcohol Use O - Daily](Observation-alcoholuse-occasional-example.md) | Observation example of an alcohol use observation for an daily drinker (2 drinks per day). |
+| [Alcohol Use O - Daily](Observation-alcoholuse-occasional-example.md) | Observation example of an alcohol use observation for a daily drinker (1 drink per day). |
 | [Alcohol Use O - Non-Drinker](Observation-alcoholuse-never-example.md) | Observation example of an alcohol use observation for a lifetime non-drinker (0 drinks per day). |
-| [Alcohol Use Q - Daily](QuestionnaireResponse-AlcoholResponseDaily.md) | QuestionnaireResponse example of an alcohol use observation for an daily drinker. |
-| [Alcohol Use Q - Non-Drinker](QuestionnaireResponse-AlcoholResponseNever.md) | QuestionnaireResponse example of an alcohol use observation for a lifetime non-drinker . |
+| [Alcohol Use Q - Daily](QuestionnaireResponse-AlcoholResponseDaily.md) | QuestionnaireResponse example of an alcohol use observation for a daily drinker. |
+| [Alcohol Use Q - Non-Drinker](QuestionnaireResponse-AlcoholResponseNever.md) | QuestionnaireResponse example of an alcohol use observation for a lifetime non-drinker. |
 | [AtApsPatient-example](Patient-example.md) | An example of a patient with a license to krill. |
-| [Blood Glucose - Elevated Example](Observation-bloodglucose-elevated-example.md) | Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL), hinweisend auf Diabetes mellitus. |
-| [Blood Glucose - Normal Example](Observation-bloodglucose-normal-example.md) | Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL). |
-| [Blood Glucose QuestionnaireResponse - Elevated Example](QuestionnaireResponse-bloodglucose-response-elevated-example.md) | Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL) als QuestionnaireResponse. |
-| [Blood Glucose QuestionnaireResponse - Normal Example](QuestionnaireResponse-bloodglucose-response-normal-example.md) | Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL) als QuestionnaireResponse. |
-| [Step Count - Low Example](Observation-stepcount-low-example.md) | Beispiel einer niedrigen Schrittzahl (2,150 Schritte pro Tag), hinweisend auf Bewegungsmangel. |
-| [Step Count - Normal Example](Observation-stepcount-normal-example.md) | Beispiel einer normalen Schrittzahl (8,432 Schritte pro Tag). |
-| [Step Count QuestionnaireResponse - Low Example](QuestionnaireResponse-stepcount-response-low-example.md) | Beispiel einer niedrigen Schrittzahl (2,150 Schritte) als QuestionnaireResponse. |
-| [Step Count QuestionnaireResponse - Normal Example](QuestionnaireResponse-stepcount-response-normal-example.md) | Beispiel einer normalen Schrittzahl (8,432 Schritte) als QuestionnaireResponse. |
-| [WHOQOL-BREF QuestionnaireResponse](QuestionnaireResponse-whoqol-bref-response-example.md) | Example of a completed WHOQOL-BREF QuestionnaireResponse including all 26 items and calculated scores. |
-| [WHOQOL-BREF Score](Observation-whoqol-bref-score-example.md) | Example of a WHOQOL-BREF score observation with a general score and all four domain scores. |
+| [Blood Glucose O - Elevated Example](Observation-bloodglucose-elevated-example.md) | Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL), hinweisend auf Diabetes mellitus. |
+| [Blood Glucose O - Normal Example](Observation-bloodglucose-normal-example.md) | Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL). |
+| [Blood Glucose Q - Elevated Example](QuestionnaireResponse-bloodglucose-response-elevated-example.md) | Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL) als QuestionnaireResponse. |
+| [Blood Glucose Q - Normal Example](QuestionnaireResponse-bloodglucose-response-normal-example.md) | Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL) als QuestionnaireResponse. |
+| [Step Count O - High Example](Observation-stepcount-low-example.md) | Beispiel einer hohen Schrittzahl (133,519 Schritte pro Tag). |
+| [Step Count O - Normal Example](Observation-stepcount-normal-example.md) | Beispiel einer normalen Schrittzahl (8,432 Schritte pro Tag). |
+| [Step Count Q - High Example](QuestionnaireResponse-stepcount-response-low-example.md) | Beispiel einer hohen Schrittzahl (133,519 Schritte) als QuestionnaireResponse. |
+| [Step Count Q - Normal Example](QuestionnaireResponse-stepcount-response-normal-example.md) | Beispiel einer normalen Schrittzahl (8,432 Schritte) als QuestionnaireResponse. |
+| [WHOQOL-BREF O Score only](Observation-whoqol-bref-score-example.md) | Example of a WHOQOL-BREF score observation with a general score and all four domain scores. |
+| [WHOQOL-BREF Q](QuestionnaireResponse-whoqol-bref-response-example.md) | Example of a completed WHOQOL-BREF QuestionnaireResponse including all 26 items and calculated scores. |
 

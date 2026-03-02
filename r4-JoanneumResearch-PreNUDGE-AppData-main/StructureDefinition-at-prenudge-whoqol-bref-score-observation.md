@@ -1,15 +1,15 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\ AT PreNUDGE Observation WHOQOL-BREF Score - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\AT PreNUDGE Observation WHOQOL-BREF Score - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* ** AT PreNUDGE Observation WHOQOL-BREF Score**
+* **AT PreNUDGE Observation WHOQOL-BREF Score**
 
 ## Resource Profile: AT PreNUDGE Observation WHOQOL-BREF Score 
 
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-whoqol-bref-score-observation | *Version*:0.1.0 | |
-| Draft as of 2026-03-01 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationWHOQOLBrefScore |
+| Draft as of 2026-03-02 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationWHOQOLBrefScore |
 
  
 Observation profile for recording WHOQOL-BREF domain scores. The overall score is represented in Observation.value, individual domain scores are recorded as components. 
@@ -39,9 +39,9 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-whoqol-b
   "url" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-whoqol-bref-score-observation",
   "version" : "0.1.0",
   "name" : "AtPrenudgeObservationWHOQOLBrefScore",
-  "title" : " AT PreNUDGE Observation WHOQOL-BREF Score",
+  "title" : "AT PreNUDGE Observation WHOQOL-BREF Score",
   "status" : "draft",
-  "date" : "2026-03-01T15:46:45+00:00",
+  "date" : "2026-03-02T16:20:44+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

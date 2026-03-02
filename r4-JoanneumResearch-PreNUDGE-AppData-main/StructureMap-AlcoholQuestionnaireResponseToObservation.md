@@ -1,18 +1,18 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Alcohol Use QuestionnaireResponse to Observation - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Alcohol Use Q mapping frequency to O drinks per day - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Alcohol Use QuestionnaireResponse to Observation**
+* **Alcohol Use Q mapping frequency to O drinks per day**
 
-## StructureMap: Alcohol Use QuestionnaireResponse to Observation 
+## StructureMap: Alcohol Use Q mapping frequency to O drinks per day 
 
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/AlcoholQuestionnaireResponseToObservation | *Version*:0.1.0 | |
-| Active as of 2026-03-01 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AlcoholQuestionnaireResponseToObservation |
+| Active as of 2026-03-02 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AlcoholQuestionnaireResponseToObservation |
 
  
-Alcohol Use QuestionnaireResponse to Observation 
+Alcohol Use Q mapping frequency to O drinks per day 
 
 
 
@@ -25,9 +25,9 @@ Alcohol Use QuestionnaireResponse to Observation
   "url" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/AlcoholQuestionnaireResponseToObservation",
   "version" : "0.1.0",
   "name" : "AlcoholQuestionnaireResponseToObservation",
-  "title" : "Alcohol Use QuestionnaireResponse to Observation",
+  "title" : "Alcohol Use Q mapping frequency to O drinks per day",
   "status" : "active",
-  "date" : "2026-03-01T15:46:45+00:00",
+  "date" : "2026-03-02T16:20:44+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -44,7 +44,7 @@ Alcohol Use QuestionnaireResponse to Observation
       "use" : "work"
     }]
   }],
-  "description" : "Alcohol Use QuestionnaireResponse to Observation",
+  "description" : "Alcohol Use Q mapping frequency to O drinks per day",
   "structure" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse",
     "mode" : "source",
@@ -54,6 +54,11 @@ Alcohol Use QuestionnaireResponse to Observation
     "url" : "http://hl7.org/fhir/StructureDefinition/Observation",
     "mode" : "target",
     "alias" : "Obs"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/Coding",
+    "mode" : "source",
+    "alias" : "Coding"
   }],
   "import" : ["http://hl7.org/fhir/StructureMap/*"],
   "group" : [{
@@ -72,7 +77,9 @@ Alcohol Use QuestionnaireResponse to Observation
     "rule" : [{
       "name" : "SetStatus",
       "source" : [{
-        "context" : "src"
+        "context" : "src",
+        "element" : "status",
+        "variable" : "s"
       }],
       "target" : [{
         "context" : "tgt",
@@ -87,26 +94,29 @@ Alcohol Use QuestionnaireResponse to Observation
     {
       "name" : "SetCode",
       "source" : [{
-        "context" : "src"
+        "context" : "src",
+        "element" : "status",
+        "variable" : "s"
       }],
       "target" : [{
         "context" : "tgt",
         "contextType" : "variable",
         "element" : "code",
         "variable" : "code"
-      },
-      {
-        "context" : "code",
-        "contextType" : "variable",
-        "element" : "coding",
-        "variable" : "coding"
       }],
       "rule" : [{
-        "name" : "SetCodeSystem",
+        "name" : "SetCodeCoding",
         "source" : [{
-          "context" : "src"
+          "context" : "s",
+          "variable" : "x"
         }],
         "target" : [{
+          "context" : "code",
+          "contextType" : "variable",
+          "element" : "coding",
+          "variable" : "coding"
+        },
+        {
           "context" : "coding",
           "contextType" : "variable",
           "element" : "system",
@@ -114,14 +124,8 @@ Alcohol Use QuestionnaireResponse to Observation
           "parameter" : [{
             "valueString" : "http://loinc.org"
           }]
-        }]
-      },
-      {
-        "name" : "SetCodeCode",
-        "source" : [{
-          "context" : "src"
-        }],
-        "target" : [{
+        },
+        {
           "context" : "coding",
           "contextType" : "variable",
           "element" : "code",
@@ -129,20 +133,68 @@ Alcohol Use QuestionnaireResponse to Observation
           "parameter" : [{
             "valueString" : "74013-4"
           }]
-        }]
-      },
-      {
-        "name" : "SetCodeDisplay",
-        "source" : [{
-          "context" : "src"
-        }],
-        "target" : [{
+        },
+        {
           "context" : "coding",
           "contextType" : "variable",
           "element" : "display",
           "transform" : "copy",
           "parameter" : [{
             "valueString" : "Alcoholic drinks per day"
+          }]
+        }]
+      }]
+    },
+    {
+      "name" : "SetMethod",
+      "source" : [{
+        "context" : "src",
+        "element" : "status",
+        "variable" : "s"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "method",
+        "variable" : "method"
+      }],
+      "rule" : [{
+        "name" : "SetMethodCoding",
+        "source" : [{
+          "context" : "s",
+          "variable" : "x"
+        }],
+        "target" : [{
+          "context" : "method",
+          "contextType" : "variable",
+          "element" : "coding",
+          "variable" : "mc"
+        },
+        {
+          "context" : "mc",
+          "contextType" : "variable",
+          "element" : "system",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "http://snomed.info/sct"
+          }]
+        },
+        {
+          "context" : "mc",
+          "contextType" : "variable",
+          "element" : "code",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "87982008"
+          }]
+        },
+        {
+          "context" : "mc",
+          "contextType" : "variable",
+          "element" : "display",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "Manual"
           }]
         }]
       }]
@@ -218,207 +270,13 @@ Alcohol Use QuestionnaireResponse to Observation
         "name" : "MapValueQuantity",
         "source" : [{
           "context" : "answer",
-          "element" : "valueCoding",
+          "type" : "Coding",
+          "element" : "value",
           "variable" : "coding"
         }],
-        "target" : [{
-          "context" : "tgt",
-          "contextType" : "variable",
-          "element" : "value",
-          "variable" : "qty",
-          "transform" : "create",
-          "parameter" : [{
-            "valueString" : "Quantity"
-          }]
-        }],
-        "rule" : [{
-          "name" : "MapDaily",
-          "source" : [{
-            "context" : "coding",
-            "condition" : "code = '69620002'"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "value",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueInteger" : 1
-            }]
-          }]
-        },
-        {
-          "name" : "MapSixTimesWeekly",
-          "source" : [{
-            "context" : "coding",
-            "condition" : "code = '307447001'"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "value",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueDecimal" : 0.79
-            }]
-          }]
-        },
-        {
-          "name" : "MapThreeToFourTimesWeekly",
-          "source" : [{
-            "context" : "coding",
-            "condition" : "code = '396113003'"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "value",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueDecimal" : 0.5
-            }]
-          }]
-        },
-        {
-          "name" : "MapTwiceWeekly",
-          "source" : [{
-            "context" : "coding",
-            "condition" : "code = '229800002'"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "value",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueDecimal" : 0.21
-            }]
-          }]
-        },
-        {
-          "name" : "MapThreeTimesMonthly",
-          "source" : [{
-            "context" : "coding",
-            "condition" : "code = '307452006'"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "value",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueDecimal" : 0.08
-            }]
-          }]
-        },
-        {
-          "name" : "MapOnceMonthly",
-          "source" : [{
-            "context" : "coding",
-            "condition" : "code = '307450003'"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "value",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueDecimal" : 0.03
-            }]
-          }]
-        },
-        {
-          "name" : "MapEveryTwoMonths",
-          "source" : [{
-            "context" : "coding",
-            "condition" : "code = '445547001'"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "value",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueDecimal" : 0.02
-            }]
-          }]
-        },
-        {
-          "name" : "MapCurrentNonDrinker",
-          "source" : [{
-            "context" : "coding",
-            "condition" : "code = '105542008'"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "value",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueDecimal" : 0.001
-            }]
-          }]
-        },
-        {
-          "name" : "MapLifetimeNonDrinker",
-          "source" : [{
-            "context" : "coding",
-            "condition" : "code = '783261004'"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "value",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueInteger" : 0
-            }]
-          }]
-        },
-        {
-          "name" : "SetUnit",
-          "source" : [{
-            "context" : "coding"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "unit",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueString" : "drinks/day"
-            }]
-          }]
-        },
-        {
-          "name" : "SetUnitSystem",
-          "source" : [{
-            "context" : "coding"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "system",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueString" : "http://unitsofmeasure.org"
-            }]
-          }]
-        },
-        {
-          "name" : "SetUnitCode",
-          "source" : [{
-            "context" : "coding"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "code",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueString" : "{drinks}/d"
-            }]
-          }]
+        "dependent" : [{
+          "name" : "MapCodingToQuantity",
+          "variable" : ["coding", "tgt"]
         }]
       },
       {
@@ -459,6 +317,515 @@ Alcohol Use QuestionnaireResponse to Observation
               }]
             }]
           }]
+        }]
+      }]
+    }]
+  },
+  {
+    "name" : "MapCodingToQuantity",
+    "typeMode" : "none",
+    "input" : [{
+      "name" : "coding",
+      "type" : "Coding",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgt",
+      "type" : "Obs",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "MapDaily",
+      "source" : [{
+        "context" : "coding",
+        "element" : "code",
+        "variable" : "c",
+        "condition" : "$this = '69620002'"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "value",
+        "variable" : "qty",
+        "transform" : "create",
+        "parameter" : [{
+          "valueString" : "Quantity"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "value",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueInteger" : 1
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "unit",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "drinks/day"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "system",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "http://unitsofmeasure.org"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "code",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "{drinks}/d"
+        }]
+      }]
+    },
+    {
+      "name" : "MapSixTimesWeekly",
+      "source" : [{
+        "context" : "coding",
+        "element" : "code",
+        "variable" : "c",
+        "condition" : "$this = '307447001'"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "value",
+        "variable" : "qty",
+        "transform" : "create",
+        "parameter" : [{
+          "valueString" : "Quantity"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "value",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueDecimal" : 0.79
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "unit",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "drinks/day"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "system",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "http://unitsofmeasure.org"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "code",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "{drinks}/d"
+        }]
+      }]
+    },
+    {
+      "name" : "MapThreeToFourTimesWeekly",
+      "source" : [{
+        "context" : "coding",
+        "element" : "code",
+        "variable" : "c",
+        "condition" : "$this = '396113003'"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "value",
+        "variable" : "qty",
+        "transform" : "create",
+        "parameter" : [{
+          "valueString" : "Quantity"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "value",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueDecimal" : 0.5
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "unit",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "drinks/day"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "system",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "http://unitsofmeasure.org"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "code",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "{drinks}/d"
+        }]
+      }]
+    },
+    {
+      "name" : "MapTwiceWeekly",
+      "source" : [{
+        "context" : "coding",
+        "element" : "code",
+        "variable" : "c",
+        "condition" : "$this = '229800002'"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "value",
+        "variable" : "qty",
+        "transform" : "create",
+        "parameter" : [{
+          "valueString" : "Quantity"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "value",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueDecimal" : 0.21
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "unit",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "drinks/day"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "system",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "http://unitsofmeasure.org"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "code",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "{drinks}/d"
+        }]
+      }]
+    },
+    {
+      "name" : "MapThreeTimesMonthly",
+      "source" : [{
+        "context" : "coding",
+        "element" : "code",
+        "variable" : "c",
+        "condition" : "$this = '307452006'"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "value",
+        "variable" : "qty",
+        "transform" : "create",
+        "parameter" : [{
+          "valueString" : "Quantity"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "value",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueDecimal" : 0.08
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "unit",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "drinks/day"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "system",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "http://unitsofmeasure.org"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "code",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "{drinks}/d"
+        }]
+      }]
+    },
+    {
+      "name" : "MapOnceMonthly",
+      "source" : [{
+        "context" : "coding",
+        "element" : "code",
+        "variable" : "c",
+        "condition" : "$this = '307450003'"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "value",
+        "variable" : "qty",
+        "transform" : "create",
+        "parameter" : [{
+          "valueString" : "Quantity"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "value",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueDecimal" : 0.03
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "unit",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "drinks/day"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "system",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "http://unitsofmeasure.org"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "code",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "{drinks}/d"
+        }]
+      }]
+    },
+    {
+      "name" : "MapEveryTwoMonths",
+      "source" : [{
+        "context" : "coding",
+        "element" : "code",
+        "variable" : "c",
+        "condition" : "$this = '445547001'"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "value",
+        "variable" : "qty",
+        "transform" : "create",
+        "parameter" : [{
+          "valueString" : "Quantity"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "value",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueDecimal" : 0.02
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "unit",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "drinks/day"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "system",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "http://unitsofmeasure.org"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "code",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "{drinks}/d"
+        }]
+      }]
+    },
+    {
+      "name" : "MapCurrentNonDrinker",
+      "source" : [{
+        "context" : "coding",
+        "element" : "code",
+        "variable" : "c",
+        "condition" : "$this = '105542008'"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "value",
+        "variable" : "qty",
+        "transform" : "create",
+        "parameter" : [{
+          "valueString" : "Quantity"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "value",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueInteger" : 0
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "unit",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "drinks/day"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "system",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "http://unitsofmeasure.org"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "code",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "{drinks}/d"
+        }]
+      }]
+    },
+    {
+      "name" : "MapLifetimeNonDrinker",
+      "source" : [{
+        "context" : "coding",
+        "element" : "code",
+        "variable" : "c",
+        "condition" : "$this = '783261004'"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "value",
+        "variable" : "qty",
+        "transform" : "create",
+        "parameter" : [{
+          "valueString" : "Quantity"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "value",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueInteger" : 0
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "unit",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "drinks/day"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "system",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "http://unitsofmeasure.org"
+        }]
+      },
+      {
+        "context" : "qty",
+        "contextType" : "variable",
+        "element" : "code",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "{drinks}/d"
         }]
       }]
     }]

@@ -31,14 +31,14 @@ Profile: [AT PreNUDGE Questionnaire Response](StructureDefinition-at-prenudge-qu
   },
   "identifier" : {
     "system" : "https://www.joanneum.at",
-    "value" : "qr-alc-2026-02-26-001"
+    "value" : "qr-alc-2026-02-20-001"
   },
   "questionnaire" : "https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/AtPrenudgeQuestionnaireAlcoholUse",
   "status" : "completed",
   "subject" : {
     "reference" : "Patient/example"
   },
-  "authored" : "2026-02-26",
+  "authored" : "2026-02-20",
   "item" : [{
     "linkId" : "alcohol-frequency",
     "answer" : [{

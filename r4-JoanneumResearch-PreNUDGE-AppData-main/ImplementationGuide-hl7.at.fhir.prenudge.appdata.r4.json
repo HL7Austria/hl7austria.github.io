@@ -10,7 +10,7 @@
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-03-01T15:46:45+00:00",
+  "date" : "2026-03-02T16:20:44+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -621,25 +621,13 @@
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/at-prenudge-whoqol-bref-score-observation"
-      },
-      "name" : " AT PreNUDGE Observation WHOQOL-BREF Score",
-      "description" : "Observation profile for recording WHOQOL-BREF domain scores. The overall score is represented in Observation.value, individual domain scores are recorded as components.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Observation"
       }],
       "reference" : {
         "reference" : "Observation/alcoholuse-occasional-example"
       },
       "name" : "Alcohol Use O - Daily",
-      "description" : "Observation example of an alcohol use observation for an daily drinker (2 drinks per day).",
+      "description" : "Observation example of an alcohol use observation for a daily drinker (1 drink per day).",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation"
     },
     {
@@ -663,7 +651,7 @@
         "reference" : "QuestionnaireResponse/AlcoholResponseDaily"
       },
       "name" : "Alcohol Use Q - Daily",
-      "description" : "QuestionnaireResponse example of an alcohol use observation for an daily drinker.",
+      "description" : "QuestionnaireResponse example of an alcohol use observation for a daily drinker.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
     },
     {
@@ -675,7 +663,7 @@
         "reference" : "QuestionnaireResponse/AlcoholResponseNever"
       },
       "name" : "Alcohol Use Q - Non-Drinker",
-      "description" : "QuestionnaireResponse example of an alcohol use observation for a lifetime non-drinker .",
+      "description" : "QuestionnaireResponse example of an alcohol use observation for a lifetime non-drinker.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
     },
     {
@@ -789,6 +777,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-prenudge-whoqol-bref-score-observation"
+      },
+      "name" : "AT PreNUDGE Observation WHOQOL-BREF Score",
+      "description" : "Observation profile for recording WHOQOL-BREF domain scores. The overall score is represented in Observation.value, individual domain scores are recorded as components.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
@@ -878,7 +878,7 @@
       "reference" : {
         "reference" : "Observation/bloodglucose-elevated-example"
       },
-      "name" : "Blood Glucose - Elevated Example",
+      "name" : "Blood Glucose O - Elevated Example",
       "description" : "Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL), hinweisend auf Diabetes mellitus.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation"
     },
@@ -890,7 +890,7 @@
       "reference" : {
         "reference" : "Observation/bloodglucose-normal-example"
       },
-      "name" : "Blood Glucose - Normal Example",
+      "name" : "Blood Glucose O - Normal Example",
       "description" : "Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL).",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation"
     },
@@ -902,7 +902,7 @@
       "reference" : {
         "reference" : "QuestionnaireResponse/bloodglucose-response-elevated-example"
       },
-      "name" : "Blood Glucose QuestionnaireResponse - Elevated Example",
+      "name" : "Blood Glucose Q - Elevated Example",
       "description" : "Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL) als QuestionnaireResponse.",
       "exampleBoolean" : true
     },
@@ -914,7 +914,7 @@
       "reference" : {
         "reference" : "QuestionnaireResponse/bloodglucose-response-normal-example"
       },
-      "name" : "Blood Glucose QuestionnaireResponse - Normal Example",
+      "name" : "Blood Glucose Q - Normal Example",
       "description" : "Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL) als QuestionnaireResponse.",
       "exampleBoolean" : true
     },
@@ -962,8 +962,8 @@
       "reference" : {
         "reference" : "Observation/stepcount-low-example"
       },
-      "name" : "Step Count - Low Example",
-      "description" : "Beispiel einer niedrigen Schrittzahl (2,150 Schritte pro Tag), hinweisend auf Bewegungsmangel.",
+      "name" : "Step Count O - High Example",
+      "description" : "Beispiel einer hohen Schrittzahl (133,519 Schritte pro Tag).",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation"
     },
     {
@@ -974,7 +974,7 @@
       "reference" : {
         "reference" : "Observation/stepcount-normal-example"
       },
-      "name" : "Step Count - Normal Example",
+      "name" : "Step Count O - Normal Example",
       "description" : "Beispiel einer normalen Schrittzahl (8,432 Schritte pro Tag).",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation"
     },
@@ -986,8 +986,8 @@
       "reference" : {
         "reference" : "QuestionnaireResponse/stepcount-response-low-example"
       },
-      "name" : "Step Count QuestionnaireResponse - Low Example",
-      "description" : "Beispiel einer niedrigen Schrittzahl (2,150 Schritte) als QuestionnaireResponse.",
+      "name" : "Step Count Q - High Example",
+      "description" : "Beispiel einer hohen Schrittzahl (133,519 Schritte) als QuestionnaireResponse.",
       "exampleBoolean" : true
     },
     {
@@ -998,20 +998,8 @@
       "reference" : {
         "reference" : "QuestionnaireResponse/stepcount-response-normal-example"
       },
-      "name" : "Step Count QuestionnaireResponse - Normal Example",
+      "name" : "Step Count Q - Normal Example",
       "description" : "Beispiel einer normalen Schrittzahl (8,432 Schritte) als QuestionnaireResponse.",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "QuestionnaireResponse"
-      }],
-      "reference" : {
-        "reference" : "QuestionnaireResponse/whoqol-bref-response-example"
-      },
-      "name" : "WHOQOL-BREF QuestionnaireResponse",
-      "description" : "Example of a completed WHOQOL-BREF QuestionnaireResponse including all 26 items and calculated scores.",
       "exampleBoolean" : true
     },
     {
@@ -1022,9 +1010,21 @@
       "reference" : {
         "reference" : "Observation/whoqol-bref-score-example"
       },
-      "name" : "WHOQOL-BREF Score",
+      "name" : "WHOQOL-BREF O Score only",
       "description" : "Example of a WHOQOL-BREF score observation with a general score and all four domain scores.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-whoqol-bref-score-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/whoqol-bref-response-example"
+      },
+      "name" : "WHOQOL-BREF Q",
+      "description" : "Example of a completed WHOQOL-BREF QuestionnaireResponse including all 26 items and calculated scores.",
+      "exampleBoolean" : true
     },
     {
       "extension" : [{
@@ -1034,8 +1034,30 @@
       "reference" : {
         "reference" : "StructureMap/AlcoholQuestionnaireResponseToObservation"
       },
-      "name" : "Alcohol Use QuestionnaireResponse to Observation",
-      "description" : "Alcohol Use QuestionnaireResponse to Observation"
+      "name" : "Alcohol Use Q mapping frequency to O drinks per day",
+      "description" : "Alcohol Use Q mapping frequency to O drinks per day"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureMap"
+      }],
+      "reference" : {
+        "reference" : "StructureMap/BloodGlucoseQuestionnaireResponseToObservation"
+      },
+      "name" : "Blood Glucose Q to O",
+      "description" : "Blood Glucose Q to O"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureMap"
+      }],
+      "reference" : {
+        "reference" : "StructureMap/WHOQOLBrefQuestionnaireResponseToObservation"
+      },
+      "name" : "WHOQOL-BREF Q score to O score",
+      "description" : "WHOQOL-BREF Q score to O score"
     }],
     "page" : {
       "extension" : [{

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Alcohol Use QuestionnaireResponse to Observation - FHIR® v4.0.1</title>
+    <title>HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Alcohol Use Q mapping frequency to O drinks per day - FHIR® v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -114,7 +114,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Alcohol Use QuestionnaireResponse to Observation</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Alcohol Use Q mapping frequency to O drinks per day</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -170,7 +170,7 @@
 
   <a name="root"> </a>
 
-  <h2 id="root">StructureMap: Alcohol Use QuestionnaireResponse to Observation
+  <h2 id="root">StructureMap: Alcohol Use Q mapping frequency to O drinks per day
 
   </h2>
 
@@ -196,7 +196,7 @@
         
           Active
           
-            as of 2026-03-01
+            as of 2026-03-02
           
         
       </td>
@@ -220,7 +220,7 @@
 
 
 <p>
-<p>Alcohol Use QuestionnaireResponse to Observation</p>
+<p>Alcohol Use Q mapping frequency to O drinks per day</p>
 
 </p>
 
@@ -240,22 +240,25 @@
   <div data-fhir="generated"><p class="res-header-id"/><a name="AlcoholQuestionnaireResponseToObservation"> </a><a name="hcAlcoholQuestionnaireResponseToObservation"> </a><pre class="fml">
 <b>map</b><span style="color: navy"> &quot;</span>https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/AlcoholQuestionnaireResponseToObservation<span style="color: navy">&quot; = &quot;</span>AlcoholQuestionnaireResponseToObservation<span style="color: navy">&quot;
 
-</span><span style="color: navy">// </span><span style="color: green">Alcohol Use QuestionnaireResponse to Observation</span>
+</span><span style="color: navy">// </span><span style="color: green">Alcohol Use Q mapping frequency to O drinks per day</span>
 
 <b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/questionnaireresponse.html" title="QuestionnaireResponse">http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse</a><span style="color: navy">&quot; </span><b>alias </b>QR <b>as </b><b>source</b>
 <b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/observation.html" title="Observation">http://hl7.org/fhir/StructureDefinition/Observation</a><span style="color: navy">&quot; </span><b>alias </b>Obs <b>as </b><b>target</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/datatypes.html#Coding" title="Coding">http://hl7.org/fhir/StructureDefinition/Coding</a><span style="color: navy">&quot; </span><b>alias </b>Coding <b>as </b><b>source</b>
 
 <b>imports</b><span style="color: navy"> &quot;</span>http://hl7.org/fhir/StructureMap/*<span style="color: navy">&quot;
 </span>
 <b>group </b>AlcoholQuestionnaireResponseToObservation<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
 </span>  <span style="color: navy">// </span><span style="color: green">Status</span>
-  src<span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'final'</span> <i>&quot;SetStatus&quot;</i><span style="color: navy">;</span>
+  src.status<b> as </b><span style="color: maroon">s</span><span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'final'</span> <i>&quot;SetStatus&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">// </span><span style="color: green">Code</span>
-  src<span style="color: navy"><b> -&gt; </b></span> tgt.code<b> as </b><span style="color: maroon">code</span><span style="color: navy">, </span> code.coding<b> as </b><span style="color: maroon">coding</span><b> then</b><span style="color: navy"> {
-</span>    src<span style="color: navy"><b> -&gt; </b></span>coding.system = <span style="color: blue">'http://loinc.org'</span> <i>&quot;SetCodeSystem&quot;</i><span style="color: navy">;</span>
-    src<span style="color: navy"><b> -&gt; </b></span>coding.code = <span style="color: blue">'74013-4'</span> <i>&quot;SetCodeCode&quot;</i><span style="color: navy">;</span>
-    src<span style="color: navy"><b> -&gt; </b></span>coding.display = <span style="color: blue">'Alcoholic drinks per day'</span> <i>&quot;SetCodeDisplay&quot;</i><span style="color: navy">;</span>
+  src.status<b> as </b><span style="color: maroon">s</span><span style="color: navy"><b> -&gt; </b></span>tgt.code<b> as </b><span style="color: maroon">code</span><b> then</b><span style="color: navy"> {
+</span>    s<b> as </b><span style="color: maroon">x</span><span style="color: navy"><b> -&gt; </b></span> code.coding<b> as </b><span style="color: maroon">coding</span><span style="color: navy">, </span> coding.system = <span style="color: blue">'http://loinc.org'</span><span style="color: navy">, </span> coding.code = <span style="color: blue">'74013-4'</span><span style="color: navy">, </span> coding.display = <span style="color: blue">'Alcoholic drinks per day'</span> <i>&quot;SetCodeCoding&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;SetCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Method - questionnaires are always manually filled</span>
+  src.status<b> as </b><span style="color: maroon">s</span><span style="color: navy"><b> -&gt; </b></span>tgt.method<b> as </b><span style="color: maroon">method</span><b> then</b><span style="color: navy"> {
+</span>    s<b> as </b><span style="color: maroon">x</span><span style="color: navy"><b> -&gt; </b></span> method.coding<b> as </b><span style="color: maroon">mc</span><span style="color: navy">, </span> mc.system = <span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span> mc.code = <span style="color: blue">'87982008'</span><span style="color: navy">, </span> mc.display = <span style="color: blue">'Manual'</span> <i>&quot;SetMethodCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;SetMethod&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">// </span><span style="color: green">Subject</span>
   src.subject<b> as </b><span style="color: maroon">subject</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject = <span style="color: maroon">subject</span> <i>&quot;SetSubject&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">// </span><span style="color: green">EffectiveDateTime from authored</span>
@@ -267,20 +270,7 @@
 </span><b>group </b>MapAlcoholFrequency<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span>, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
 </span>  src.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
 </span>    <span style="color: navy">// </span><span style="color: green">Map frequency code to drinks/day</span>
-    answer.valueCoding<b> as </b><span style="color: maroon">coding</span><span style="color: navy"><b> -&gt; </b></span>tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><b> then</b><span style="color: navy"> {
-</span>      coding<b> where </b>code = '69620002'<span style="color: navy"><b> -&gt; </b></span>qty.value = <span style="color: blue">1</span> <i>&quot;MapDaily&quot;</i><span style="color: navy">;</span>
-      coding<b> where </b>code = '307447001'<span style="color: navy"><b> -&gt; </b></span>qty.value = <span style="color: blue">0.79</span> <i>&quot;MapSixTimesWeekly&quot;</i><span style="color: navy">;</span>
-      coding<b> where </b>code = '396113003'<span style="color: navy"><b> -&gt; </b></span>qty.value = <span style="color: blue">0.5</span> <i>&quot;MapThreeToFourTimesWeekly&quot;</i><span style="color: navy">;</span>
-      coding<b> where </b>code = '229800002'<span style="color: navy"><b> -&gt; </b></span>qty.value = <span style="color: blue">0.21</span> <i>&quot;MapTwiceWeekly&quot;</i><span style="color: navy">;</span>
-      coding<b> where </b>code = '307452006'<span style="color: navy"><b> -&gt; </b></span>qty.value = <span style="color: blue">0.08</span> <i>&quot;MapThreeTimesMonthly&quot;</i><span style="color: navy">;</span>
-      coding<b> where </b>code = '307450003'<span style="color: navy"><b> -&gt; </b></span>qty.value = <span style="color: blue">0.03</span> <i>&quot;MapOnceMonthly&quot;</i><span style="color: navy">;</span>
-      coding<b> where </b>code = '445547001'<span style="color: navy"><b> -&gt; </b></span>qty.value = <span style="color: blue">0.02</span> <i>&quot;MapEveryTwoMonths&quot;</i><span style="color: navy">;</span>
-      coding<b> where </b>code = '105542008'<span style="color: navy"><b> -&gt; </b></span>qty.value = <span style="color: blue">0.001</span> <i>&quot;MapCurrentNonDrinker&quot;</i><span style="color: navy">;</span>
-      coding<b> where </b>code = '783261004'<span style="color: navy"><b> -&gt; </b></span>qty.value = <span style="color: blue">0</span> <i>&quot;MapLifetimeNonDrinker&quot;</i><span style="color: navy">;</span>
-      coding<span style="color: navy"><b> -&gt; </b></span>qty.unit = <span style="color: blue">'drinks/day'</span> <i>&quot;SetUnit&quot;</i><span style="color: navy">;</span>
-      coding<span style="color: navy"><b> -&gt; </b></span>qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span> <i>&quot;SetUnitSystem&quot;</i><span style="color: navy">;</span>
-      coding<span style="color: navy"><b> -&gt; </b></span>qty.code = <span style="color: blue">'{drinks}/d'</span> <i>&quot;SetUnitCode&quot;</i><span style="color: navy">;</span>
-    <span style="color: navy">}</span> <i>&quot;MapValueQuantity&quot;</i><span style="color: navy">;</span>
+    answer.value<span style="color: navy"> : </span>Coding<b> as </b><span style="color: maroon">coding</span><b> then </b>MapCodingToQuantity<span style="color: navy">(</span><span style="color: maroon">coding</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapValueQuantity&quot;</i><span style="color: navy">;</span>
     <span style="color: navy">// </span><span style="color: green">Map comment to note</span>
     answer.item<b> as </b><span style="color: maroon">commentItem</span><b> where </b>linkId = 'comment'<b> then</b><span style="color: navy"> {
 </span>      commentItem.answer<b> as </b><span style="color: maroon">commentAnswer</span><b> then</b><span style="color: navy"> {
@@ -288,6 +278,18 @@
       <span style="color: navy">}</span> <i>&quot;ProcessCommentAnswer&quot;</i><span style="color: navy">;</span>
     <span style="color: navy">}</span> <i>&quot;ProcessComment&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;ProcessAnswer&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><b>group </b>MapCodingToQuantity<span style="color: navy">(</span><b>source</b> <span style="color: maroon">coding</span><span style="color: navy"> : </span>Coding, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  coding.code<b> as </b><span style="color: maroon">c</span><b> where </b>$this = '69620002'<span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: blue">1</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'drinks/day'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'{drinks}/d'</span> <i>&quot;MapDaily&quot;</i><span style="color: navy">;</span>
+  coding.code<b> as </b><span style="color: maroon">c</span><b> where </b>$this = '307447001'<span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: blue">0.79</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'drinks/day'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'{drinks}/d'</span> <i>&quot;MapSixTimesWeekly&quot;</i><span style="color: navy">;</span>
+  coding.code<b> as </b><span style="color: maroon">c</span><b> where </b>$this = '396113003'<span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: blue">0.5</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'drinks/day'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'{drinks}/d'</span> <i>&quot;MapThreeToFourTimesWeekly&quot;</i><span style="color: navy">;</span>
+  coding.code<b> as </b><span style="color: maroon">c</span><b> where </b>$this = '229800002'<span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: blue">0.21</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'drinks/day'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'{drinks}/d'</span> <i>&quot;MapTwiceWeekly&quot;</i><span style="color: navy">;</span>
+  coding.code<b> as </b><span style="color: maroon">c</span><b> where </b>$this = '307452006'<span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: blue">0.08</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'drinks/day'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'{drinks}/d'</span> <i>&quot;MapThreeTimesMonthly&quot;</i><span style="color: navy">;</span>
+  coding.code<b> as </b><span style="color: maroon">c</span><b> where </b>$this = '307450003'<span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: blue">0.03</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'drinks/day'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'{drinks}/d'</span> <i>&quot;MapOnceMonthly&quot;</i><span style="color: navy">;</span>
+  coding.code<b> as </b><span style="color: maroon">c</span><b> where </b>$this = '445547001'<span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: blue">0.02</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'drinks/day'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'{drinks}/d'</span> <i>&quot;MapEveryTwoMonths&quot;</i><span style="color: navy">;</span>
+  coding.code<b> as </b><span style="color: maroon">c</span><b> where </b>$this = '105542008'<span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: blue">0</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'drinks/day'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'{drinks}/d'</span> <i>&quot;MapCurrentNonDrinker&quot;</i><span style="color: navy">;</span>
+  coding.code<b> as </b><span style="color: maroon">c</span><b> where </b>$this = '783261004'<span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: blue">0</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'drinks/day'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'{drinks}/d'</span> <i>&quot;MapLifetimeNonDrinker&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">}
 
 </span></pre></div>
@@ -315,7 +317,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Sun, Mar 1, 2026 15:46+0000">2026-03-01</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Mar 2, 2026 16:20+0000">2026-03-02</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

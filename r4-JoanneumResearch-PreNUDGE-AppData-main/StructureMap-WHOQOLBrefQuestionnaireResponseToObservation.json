@@ -1,0 +1,935 @@
+{
+  "resourceType" : "StructureMap",
+  "id" : "WHOQOLBrefQuestionnaireResponseToObservation",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap WHOQOLBrefQuestionnaireResponseToObservation</b></p><a name=\"WHOQOLBrefQuestionnaireResponseToObservation\"> </a><a name=\"hcWHOQOLBrefQuestionnaireResponseToObservation\"> </a><pre class=\"fml\">\r\n<b>map</b><span style=\"color: navy\"> &quot;</span>https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/WHOQOLBrefQuestionnaireResponseToObservation<span style=\"color: navy\">&quot; = &quot;</span>WHOQOLBrefQuestionnaireResponseToObservation<span style=\"color: navy\">&quot;\r\n\r\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">WHOQOL-BREF Q score to O score</span>\r\n\r\n<b>uses</b><span style=\"color: navy\"> &quot;</span><a href=\"http://hl7.org/fhir/R4/questionnaireresponse.html\" title=\"QuestionnaireResponse\">http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse</a><span style=\"color: navy\">&quot; </span><b>alias </b>QR <b>as </b><b>source</b>\r\n<b>uses</b><span style=\"color: navy\"> &quot;</span><a href=\"http://hl7.org/fhir/R4/observation.html\" title=\"Observation\">http://hl7.org/fhir/StructureDefinition/Observation</a><span style=\"color: navy\">&quot; </span><b>alias </b>Obs <b>as </b><b>target</b>\r\n\r\n<b>imports</b><span style=\"color: navy\"> &quot;</span>http://hl7.org/fhir/StructureMap/*<span style=\"color: navy\">&quot;\r\n</span>\r\n<b>group </b>WHOQOLBrefQuestionnaireResponseToObservation<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  <span style=\"color: navy\">// </span><span style=\"color: green\">Status</span>\r\n  src.status<b> as </b><span style=\"color: maroon\">s</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.status = <span style=\"color: blue\">'final'</span> <i>&quot;SetStatus&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Code (SNOMED: Quality of life assessment)</span>\r\n  src.status<b> as </b><span style=\"color: maroon\">s</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.code<b> as </b><span style=\"color: maroon\">code</span><b> then</b><span style=\"color: navy\"> {\r\n</span>    s<b> as </b><span style=\"color: maroon\">x</span><span style=\"color: navy\"><b> -&gt; </b></span> code.coding<b> as </b><span style=\"color: maroon\">coding</span><span style=\"color: navy\">, </span> coding.system = <span style=\"color: blue\">'http://snomed.info/sct'</span><span style=\"color: navy\">, </span> coding.code = <span style=\"color: blue\">'405152002'</span><span style=\"color: navy\">, </span> coding.display = <span style=\"color: blue\">'Quality of life assessment'</span> <i>&quot;SetCodeCoding&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;SetCode&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Method - questionnaires are always manually filled</span>\r\n  src.status<b> as </b><span style=\"color: maroon\">s</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.method<b> as </b><span style=\"color: maroon\">method</span><b> then</b><span style=\"color: navy\"> {\r\n</span>    s<b> as </b><span style=\"color: maroon\">x</span><span style=\"color: navy\"><b> -&gt; </b></span> method.coding<b> as </b><span style=\"color: maroon\">mc</span><span style=\"color: navy\">, </span> mc.system = <span style=\"color: blue\">'http://snomed.info/sct'</span><span style=\"color: navy\">, </span> mc.code = <span style=\"color: blue\">'87982008'</span><span style=\"color: navy\">, </span> mc.display = <span style=\"color: blue\">'Manual'</span> <i>&quot;SetMethodCoding&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;SetMethod&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Subject</span>\r\n  src.subject<b> as </b><span style=\"color: maroon\">subject</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.subject = <span style=\"color: maroon\">subject</span> <i>&quot;SetSubject&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">EffectiveDateTime from authored</span>\r\n  src.authored<b> as </b><span style=\"color: maroon\">authored</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.effective = <span style=\"color: maroon\">authored</span> <i>&quot;SetEffective&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Process general group for generalized score</span>\r\n  src.item<b> as </b><span style=\"color: maroon\">generalGroup</span><b> where </b>linkId = 'general'<b> then</b><span style=\"color: navy\"> {\r\n</span>    generalGroup.item<b> as </b><span style=\"color: maroon\">scoreItem</span><b> where </b>linkId = 'general-score'<b> then </b>MapGeneralScore<span style=\"color: navy\">(</span><span style=\"color: maroon\">scoreItem</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>&quot;MapGeneralScore&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;ProcessGeneral&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Process domain1 group for physical score</span>\r\n  src.item<b> as </b><span style=\"color: maroon\">domain1Group</span><b> where </b>linkId = 'domain1'<b> then</b><span style=\"color: navy\"> {\r\n</span>    domain1Group.item<b> as </b><span style=\"color: maroon\">scoreItem</span><b> where </b>linkId = 'domain1-score'<b> then </b>MapPhysicalScore<span style=\"color: navy\">(</span><span style=\"color: maroon\">scoreItem</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>&quot;MapDomain1Score&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;ProcessDomain1&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Process domain2 group for psychological score</span>\r\n  src.item<b> as </b><span style=\"color: maroon\">domain2Group</span><b> where </b>linkId = 'domain2'<b> then</b><span style=\"color: navy\"> {\r\n</span>    domain2Group.item<b> as </b><span style=\"color: maroon\">scoreItem</span><b> where </b>linkId = 'domain2-score'<b> then </b>MapPsychologicalScore<span style=\"color: navy\">(</span><span style=\"color: maroon\">scoreItem</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>&quot;MapDomain2Score&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;ProcessDomain2&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Process domain3 group for relationships score</span>\r\n  src.item<b> as </b><span style=\"color: maroon\">domain3Group</span><b> where </b>linkId = 'domain3'<b> then</b><span style=\"color: navy\"> {\r\n</span>    domain3Group.item<b> as </b><span style=\"color: maroon\">scoreItem</span><b> where </b>linkId = 'domain3-score'<b> then </b>MapRelationshipsScore<span style=\"color: navy\">(</span><span style=\"color: maroon\">scoreItem</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>&quot;MapDomain3Score&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;ProcessDomain3&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Process domain4 group for environment score</span>\r\n  src.item<b> as </b><span style=\"color: maroon\">domain4Group</span><b> where </b>linkId = 'domain4'<b> then</b><span style=\"color: navy\"> {\r\n</span>    domain4Group.item<b> as </b><span style=\"color: maroon\">scoreItem</span><b> where </b>linkId = 'domain4-score'<b> then </b>MapEnvironmentScore<span style=\"color: navy\">(</span><span style=\"color: maroon\">scoreItem</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>&quot;MapDomain4Score&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;ProcessDomain4&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Generalized score component</span>\r\n<b>group </b>MapGeneralScore<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span>, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  src.answer<b> as </b><span style=\"color: maroon\">answer</span><b> then</b><span style=\"color: navy\"> {\r\n</span>    answer.value<b> as </b><span style=\"color: maroon\">val</span><span style=\"color: navy\"><b> -&gt; </b></span> tgt.component<b> as </b><span style=\"color: maroon\">comp</span><span style=\"color: navy\">, </span> comp.code<b> as </b><span style=\"color: maroon\">code</span><span style=\"color: navy\">, </span> code.coding<b> as </b><span style=\"color: maroon\">coding</span><span style=\"color: navy\">, </span> coding.system = <span style=\"color: blue\">'http://snomed.info/sct'</span><span style=\"color: navy\">, </span> coding.code = <span style=\"color: blue\">'60132005'</span><span style=\"color: navy\">, </span> coding.display = <span style=\"color: blue\">'Generalized'</span><span style=\"color: navy\">, </span> comp.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><span style=\"color: navy\">, </span> qty.value = <span style=\"color: maroon\">val</span><span style=\"color: navy\">, </span> qty.unit = <span style=\"color: blue\">'score'</span><span style=\"color: navy\">, </span> qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span><span style=\"color: navy\">, </span> qty.code = <span style=\"color: blue\">'{score}'</span> <i>&quot;SetGeneralComponent&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;ProcessGeneralAnswer&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Physical health score component</span>\r\n<b>group </b>MapPhysicalScore<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span>, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  src.answer<b> as </b><span style=\"color: maroon\">answer</span><b> then</b><span style=\"color: navy\"> {\r\n</span>    answer.value<b> as </b><span style=\"color: maroon\">val</span><span style=\"color: navy\"><b> -&gt; </b></span> tgt.component<b> as </b><span style=\"color: maroon\">comp</span><span style=\"color: navy\">, </span> comp.code<b> as </b><span style=\"color: maroon\">code</span><span style=\"color: navy\">, </span> code.coding<b> as </b><span style=\"color: maroon\">coding</span><span style=\"color: navy\">, </span> coding.system = <span style=\"color: blue\">'http://snomed.info/sct'</span><span style=\"color: navy\">, </span> coding.code = <span style=\"color: blue\">'19388002'</span><span style=\"color: navy\">, </span> coding.display = <span style=\"color: blue\">'Physical'</span><span style=\"color: navy\">, </span> comp.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><span style=\"color: navy\">, </span> qty.value = <span style=\"color: maroon\">val</span><span style=\"color: navy\">, </span> qty.unit = <span style=\"color: blue\">'score'</span><span style=\"color: navy\">, </span> qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span><span style=\"color: navy\">, </span> qty.code = <span style=\"color: blue\">'{score}'</span> <i>&quot;SetPhysicalComponent&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;ProcessPhysicalAnswer&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Psychological well-being score component</span>\r\n<b>group </b>MapPsychologicalScore<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span>, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  src.answer<b> as </b><span style=\"color: maroon\">answer</span><b> then</b><span style=\"color: navy\"> {\r\n</span>    answer.value<b> as </b><span style=\"color: maroon\">val</span><span style=\"color: navy\"><b> -&gt; </b></span> tgt.component<b> as </b><span style=\"color: maroon\">comp</span><span style=\"color: navy\">, </span> comp.code<b> as </b><span style=\"color: maroon\">code</span><span style=\"color: navy\">, </span> code.coding<b> as </b><span style=\"color: maroon\">coding</span><span style=\"color: navy\">, </span> coding.system = <span style=\"color: blue\">'http://snomed.info/sct'</span><span style=\"color: navy\">, </span> coding.code = <span style=\"color: blue\">'60224009'</span><span style=\"color: navy\">, </span> coding.display = <span style=\"color: blue\">'Psychologic'</span><span style=\"color: navy\">, </span> comp.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><span style=\"color: navy\">, </span> qty.value = <span style=\"color: maroon\">val</span><span style=\"color: navy\">, </span> qty.unit = <span style=\"color: blue\">'score'</span><span style=\"color: navy\">, </span> qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span><span style=\"color: navy\">, </span> qty.code = <span style=\"color: blue\">'{score}'</span> <i>&quot;SetPsychologicalComponent&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;ProcessPsychologicalAnswer&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Social relationships score component</span>\r\n<b>group </b>MapRelationshipsScore<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span>, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  src.answer<b> as </b><span style=\"color: maroon\">answer</span><b> then</b><span style=\"color: navy\"> {\r\n</span>    answer.value<b> as </b><span style=\"color: maroon\">val</span><span style=\"color: navy\"><b> -&gt; </b></span> tgt.component<b> as </b><span style=\"color: maroon\">comp</span><span style=\"color: navy\">, </span> comp.code<b> as </b><span style=\"color: maroon\">code</span><span style=\"color: navy\">, </span> code.coding<b> as </b><span style=\"color: maroon\">coding</span><span style=\"color: navy\">, </span> coding.system = <span style=\"color: blue\">'http://snomed.info/sct'</span><span style=\"color: navy\">, </span> coding.code = <span style=\"color: blue\">'272151006'</span><span style=\"color: navy\">, </span> coding.display = <span style=\"color: blue\">'Relationships'</span><span style=\"color: navy\">, </span> comp.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><span style=\"color: navy\">, </span> qty.value = <span style=\"color: maroon\">val</span><span style=\"color: navy\">, </span> qty.unit = <span style=\"color: blue\">'score'</span><span style=\"color: navy\">, </span> qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span><span style=\"color: navy\">, </span> qty.code = <span style=\"color: blue\">'{score}'</span> <i>&quot;SetRelationshipsComponent&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;ProcessRelationshipsAnswer&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Environment score component</span>\r\n<b>group </b>MapEnvironmentScore<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span>, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  src.answer<b> as </b><span style=\"color: maroon\">answer</span><b> then</b><span style=\"color: navy\"> {\r\n</span>    answer.value<b> as </b><span style=\"color: maroon\">val</span><span style=\"color: navy\"><b> -&gt; </b></span> tgt.component<b> as </b><span style=\"color: maroon\">comp</span><span style=\"color: navy\">, </span> comp.code<b> as </b><span style=\"color: maroon\">code</span><span style=\"color: navy\">, </span> code.coding<b> as </b><span style=\"color: maroon\">coding</span><span style=\"color: navy\">, </span> coding.system = <span style=\"color: blue\">'http://snomed.info/sct'</span><span style=\"color: navy\">, </span> coding.code = <span style=\"color: blue\">'276339004'</span><span style=\"color: navy\">, </span> coding.display = <span style=\"color: blue\">'Environment'</span><span style=\"color: navy\">, </span> comp.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><span style=\"color: navy\">, </span> qty.value = <span style=\"color: maroon\">val</span><span style=\"color: navy\">, </span> qty.unit = <span style=\"color: blue\">'score'</span><span style=\"color: navy\">, </span> qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span><span style=\"color: navy\">, </span> qty.code = <span style=\"color: blue\">'{score}'</span> <i>&quot;SetEnvironmentComponent&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;ProcessEnvironmentAnswer&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span></pre></div>"
+  },
+  "url" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/WHOQOLBrefQuestionnaireResponseToObservation",
+  "version" : "0.1.0",
+  "name" : "WHOQOLBrefQuestionnaireResponseToObservation",
+  "title" : "WHOQOL-BREF Q score to O score",
+  "status" : "active",
+  "date" : "2026-03-02T16:20:44+00:00",
+  "publisher" : "The PreNUDGE Consortium",
+  "contact" : [{
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at"
+    }]
+  },
+  {
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at",
+      "use" : "work"
+    }]
+  }],
+  "description" : "WHOQOL-BREF Q score to O score",
+  "structure" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse",
+    "mode" : "source",
+    "alias" : "QR"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/Observation",
+    "mode" : "target",
+    "alias" : "Obs"
+  }],
+  "import" : ["http://hl7.org/fhir/StructureMap/*"],
+  "group" : [{
+    "name" : "WHOQOLBrefQuestionnaireResponseToObservation",
+    "typeMode" : "none",
+    "input" : [{
+      "name" : "src",
+      "type" : "QR",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgt",
+      "type" : "Obs",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "SetStatus",
+      "source" : [{
+        "context" : "src",
+        "element" : "status",
+        "variable" : "s"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "status",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "final"
+        }]
+      }]
+    },
+    {
+      "name" : "SetCode",
+      "source" : [{
+        "context" : "src",
+        "element" : "status",
+        "variable" : "s"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "code",
+        "variable" : "code"
+      }],
+      "rule" : [{
+        "name" : "SetCodeCoding",
+        "source" : [{
+          "context" : "s",
+          "variable" : "x"
+        }],
+        "target" : [{
+          "context" : "code",
+          "contextType" : "variable",
+          "element" : "coding",
+          "variable" : "coding"
+        },
+        {
+          "context" : "coding",
+          "contextType" : "variable",
+          "element" : "system",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "http://snomed.info/sct"
+          }]
+        },
+        {
+          "context" : "coding",
+          "contextType" : "variable",
+          "element" : "code",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "405152002"
+          }]
+        },
+        {
+          "context" : "coding",
+          "contextType" : "variable",
+          "element" : "display",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "Quality of life assessment"
+          }]
+        }]
+      }]
+    },
+    {
+      "name" : "SetMethod",
+      "source" : [{
+        "context" : "src",
+        "element" : "status",
+        "variable" : "s"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "method",
+        "variable" : "method"
+      }],
+      "rule" : [{
+        "name" : "SetMethodCoding",
+        "source" : [{
+          "context" : "s",
+          "variable" : "x"
+        }],
+        "target" : [{
+          "context" : "method",
+          "contextType" : "variable",
+          "element" : "coding",
+          "variable" : "mc"
+        },
+        {
+          "context" : "mc",
+          "contextType" : "variable",
+          "element" : "system",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "http://snomed.info/sct"
+          }]
+        },
+        {
+          "context" : "mc",
+          "contextType" : "variable",
+          "element" : "code",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "87982008"
+          }]
+        },
+        {
+          "context" : "mc",
+          "contextType" : "variable",
+          "element" : "display",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "Manual"
+          }]
+        }]
+      }]
+    },
+    {
+      "name" : "SetSubject",
+      "source" : [{
+        "context" : "src",
+        "element" : "subject",
+        "variable" : "subject"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "subject",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueId" : "subject"
+        }]
+      }]
+    },
+    {
+      "name" : "SetEffective",
+      "source" : [{
+        "context" : "src",
+        "element" : "authored",
+        "variable" : "authored"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "effective",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueId" : "authored"
+        }]
+      }]
+    },
+    {
+      "name" : "ProcessGeneral",
+      "source" : [{
+        "context" : "src",
+        "element" : "item",
+        "variable" : "generalGroup",
+        "condition" : "linkId = 'general'"
+      }],
+      "rule" : [{
+        "name" : "MapGeneralScore",
+        "source" : [{
+          "context" : "generalGroup",
+          "element" : "item",
+          "variable" : "scoreItem",
+          "condition" : "linkId = 'general-score'"
+        }],
+        "dependent" : [{
+          "name" : "MapGeneralScore",
+          "variable" : ["scoreItem",
+          "tgt"]
+        }]
+      }]
+    },
+    {
+      "name" : "ProcessDomain1",
+      "source" : [{
+        "context" : "src",
+        "element" : "item",
+        "variable" : "domain1Group",
+        "condition" : "linkId = 'domain1'"
+      }],
+      "rule" : [{
+        "name" : "MapDomain1Score",
+        "source" : [{
+          "context" : "domain1Group",
+          "element" : "item",
+          "variable" : "scoreItem",
+          "condition" : "linkId = 'domain1-score'"
+        }],
+        "dependent" : [{
+          "name" : "MapPhysicalScore",
+          "variable" : ["scoreItem",
+          "tgt"]
+        }]
+      }]
+    },
+    {
+      "name" : "ProcessDomain2",
+      "source" : [{
+        "context" : "src",
+        "element" : "item",
+        "variable" : "domain2Group",
+        "condition" : "linkId = 'domain2'"
+      }],
+      "rule" : [{
+        "name" : "MapDomain2Score",
+        "source" : [{
+          "context" : "domain2Group",
+          "element" : "item",
+          "variable" : "scoreItem",
+          "condition" : "linkId = 'domain2-score'"
+        }],
+        "dependent" : [{
+          "name" : "MapPsychologicalScore",
+          "variable" : ["scoreItem",
+          "tgt"]
+        }]
+      }]
+    },
+    {
+      "name" : "ProcessDomain3",
+      "source" : [{
+        "context" : "src",
+        "element" : "item",
+        "variable" : "domain3Group",
+        "condition" : "linkId = 'domain3'"
+      }],
+      "rule" : [{
+        "name" : "MapDomain3Score",
+        "source" : [{
+          "context" : "domain3Group",
+          "element" : "item",
+          "variable" : "scoreItem",
+          "condition" : "linkId = 'domain3-score'"
+        }],
+        "dependent" : [{
+          "name" : "MapRelationshipsScore",
+          "variable" : ["scoreItem",
+          "tgt"]
+        }]
+      }]
+    },
+    {
+      "name" : "ProcessDomain4",
+      "source" : [{
+        "context" : "src",
+        "element" : "item",
+        "variable" : "domain4Group",
+        "condition" : "linkId = 'domain4'"
+      }],
+      "rule" : [{
+        "name" : "MapDomain4Score",
+        "source" : [{
+          "context" : "domain4Group",
+          "element" : "item",
+          "variable" : "scoreItem",
+          "condition" : "linkId = 'domain4-score'"
+        }],
+        "dependent" : [{
+          "name" : "MapEnvironmentScore",
+          "variable" : ["scoreItem",
+          "tgt"]
+        }]
+      }]
+    }]
+  },
+  {
+    "name" : "MapGeneralScore",
+    "typeMode" : "none",
+    "documentation" : "Generalized score component",
+    "input" : [{
+      "name" : "src",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgt",
+      "type" : "Obs",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "ProcessGeneralAnswer",
+      "source" : [{
+        "context" : "src",
+        "element" : "answer",
+        "variable" : "answer"
+      }],
+      "rule" : [{
+        "name" : "SetGeneralComponent",
+        "source" : [{
+          "context" : "answer",
+          "element" : "value",
+          "variable" : "val"
+        }],
+        "target" : [{
+          "context" : "tgt",
+          "contextType" : "variable",
+          "element" : "component",
+          "variable" : "comp"
+        },
+        {
+          "context" : "comp",
+          "contextType" : "variable",
+          "element" : "code",
+          "variable" : "code"
+        },
+        {
+          "context" : "code",
+          "contextType" : "variable",
+          "element" : "coding",
+          "variable" : "coding"
+        },
+        {
+          "context" : "coding",
+          "contextType" : "variable",
+          "element" : "system",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "http://snomed.info/sct"
+          }]
+        },
+        {
+          "context" : "coding",
+          "contextType" : "variable",
+          "element" : "code",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "60132005"
+          }]
+        },
+        {
+          "context" : "coding",
+          "contextType" : "variable",
+          "element" : "display",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "Generalized"
+          }]
+        },
+        {
+          "context" : "comp",
+          "contextType" : "variable",
+          "element" : "value",
+          "variable" : "qty",
+          "transform" : "create",
+          "parameter" : [{
+            "valueString" : "Quantity"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "value",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueId" : "val"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "unit",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "score"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "system",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "http://unitsofmeasure.org"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "code",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "{score}"
+          }]
+        }]
+      }]
+    }]
+  },
+  {
+    "name" : "MapPhysicalScore",
+    "typeMode" : "none",
+    "documentation" : "Physical health score component",
+    "input" : [{
+      "name" : "src",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgt",
+      "type" : "Obs",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "ProcessPhysicalAnswer",
+      "source" : [{
+        "context" : "src",
+        "element" : "answer",
+        "variable" : "answer"
+      }],
+      "rule" : [{
+        "name" : "SetPhysicalComponent",
+        "source" : [{
+          "context" : "answer",
+          "element" : "value",
+          "variable" : "val"
+        }],
+        "target" : [{
+          "context" : "tgt",
+          "contextType" : "variable",
+          "element" : "component",
+          "variable" : "comp"
+        },
+        {
+          "context" : "comp",
+          "contextType" : "variable",
+          "element" : "code",
+          "variable" : "code"
+        },
+        {
+          "context" : "code",
+          "contextType" : "variable",
+          "element" : "coding",
+          "variable" : "coding"
+        },
+        {
+          "context" : "coding",
+          "contextType" : "variable",
+          "element" : "system",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "http://snomed.info/sct"
+          }]
+        },
+        {
+          "context" : "coding",
+          "contextType" : "variable",
+          "element" : "code",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "19388002"
+          }]
+        },
+        {
+          "context" : "coding",
+          "contextType" : "variable",
+          "element" : "display",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "Physical"
+          }]
+        },
+        {
+          "context" : "comp",
+          "contextType" : "variable",
+          "element" : "value",
+          "variable" : "qty",
+          "transform" : "create",
+          "parameter" : [{
+            "valueString" : "Quantity"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "value",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueId" : "val"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "unit",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "score"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "system",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "http://unitsofmeasure.org"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "code",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "{score}"
+          }]
+        }]
+      }]
+    }]
+  },
+  {
+    "name" : "MapPsychologicalScore",
+    "typeMode" : "none",
+    "documentation" : "Psychological well-being score component",
+    "input" : [{
+      "name" : "src",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgt",
+      "type" : "Obs",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "ProcessPsychologicalAnswer",
+      "source" : [{
+        "context" : "src",
+        "element" : "answer",
+        "variable" : "answer"
+      }],
+      "rule" : [{
+        "name" : "SetPsychologicalComponent",
+        "source" : [{
+          "context" : "answer",
+          "element" : "value",
+          "variable" : "val"
+        }],
+        "target" : [{
+          "context" : "tgt",
+          "contextType" : "variable",
+          "element" : "component",
+          "variable" : "comp"
+        },
+        {
+          "context" : "comp",
+          "contextType" : "variable",
+          "element" : "code",
+          "variable" : "code"
+        },
+        {
+          "context" : "code",
+          "contextType" : "variable",
+          "element" : "coding",
+          "variable" : "coding"
+        },
+        {
+          "context" : "coding",
+          "contextType" : "variable",
+          "element" : "system",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "http://snomed.info/sct"
+          }]
+        },
+        {
+          "context" : "coding",
+          "contextType" : "variable",
+          "element" : "code",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "60224009"
+          }]
+        },
+        {
+          "context" : "coding",
+          "contextType" : "variable",
+          "element" : "display",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "Psychologic"
+          }]
+        },
+        {
+          "context" : "comp",
+          "contextType" : "variable",
+          "element" : "value",
+          "variable" : "qty",
+          "transform" : "create",
+          "parameter" : [{
+            "valueString" : "Quantity"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "value",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueId" : "val"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "unit",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "score"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "system",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "http://unitsofmeasure.org"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "code",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "{score}"
+          }]
+        }]
+      }]
+    }]
+  },
+  {
+    "name" : "MapRelationshipsScore",
+    "typeMode" : "none",
+    "documentation" : "Social relationships score component",
+    "input" : [{
+      "name" : "src",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgt",
+      "type" : "Obs",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "ProcessRelationshipsAnswer",
+      "source" : [{
+        "context" : "src",
+        "element" : "answer",
+        "variable" : "answer"
+      }],
+      "rule" : [{
+        "name" : "SetRelationshipsComponent",
+        "source" : [{
+          "context" : "answer",
+          "element" : "value",
+          "variable" : "val"
+        }],
+        "target" : [{
+          "context" : "tgt",
+          "contextType" : "variable",
+          "element" : "component",
+          "variable" : "comp"
+        },
+        {
+          "context" : "comp",
+          "contextType" : "variable",
+          "element" : "code",
+          "variable" : "code"
+        },
+        {
+          "context" : "code",
+          "contextType" : "variable",
+          "element" : "coding",
+          "variable" : "coding"
+        },
+        {
+          "context" : "coding",
+          "contextType" : "variable",
+          "element" : "system",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "http://snomed.info/sct"
+          }]
+        },
+        {
+          "context" : "coding",
+          "contextType" : "variable",
+          "element" : "code",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "272151006"
+          }]
+        },
+        {
+          "context" : "coding",
+          "contextType" : "variable",
+          "element" : "display",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "Relationships"
+          }]
+        },
+        {
+          "context" : "comp",
+          "contextType" : "variable",
+          "element" : "value",
+          "variable" : "qty",
+          "transform" : "create",
+          "parameter" : [{
+            "valueString" : "Quantity"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "value",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueId" : "val"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "unit",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "score"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "system",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "http://unitsofmeasure.org"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "code",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "{score}"
+          }]
+        }]
+      }]
+    }]
+  },
+  {
+    "name" : "MapEnvironmentScore",
+    "typeMode" : "none",
+    "documentation" : "Environment score component",
+    "input" : [{
+      "name" : "src",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgt",
+      "type" : "Obs",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "ProcessEnvironmentAnswer",
+      "source" : [{
+        "context" : "src",
+        "element" : "answer",
+        "variable" : "answer"
+      }],
+      "rule" : [{
+        "name" : "SetEnvironmentComponent",
+        "source" : [{
+          "context" : "answer",
+          "element" : "value",
+          "variable" : "val"
+        }],
+        "target" : [{
+          "context" : "tgt",
+          "contextType" : "variable",
+          "element" : "component",
+          "variable" : "comp"
+        },
+        {
+          "context" : "comp",
+          "contextType" : "variable",
+          "element" : "code",
+          "variable" : "code"
+        },
+        {
+          "context" : "code",
+          "contextType" : "variable",
+          "element" : "coding",
+          "variable" : "coding"
+        },
+        {
+          "context" : "coding",
+          "contextType" : "variable",
+          "element" : "system",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "http://snomed.info/sct"
+          }]
+        },
+        {
+          "context" : "coding",
+          "contextType" : "variable",
+          "element" : "code",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "276339004"
+          }]
+        },
+        {
+          "context" : "coding",
+          "contextType" : "variable",
+          "element" : "display",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "Environment"
+          }]
+        },
+        {
+          "context" : "comp",
+          "contextType" : "variable",
+          "element" : "value",
+          "variable" : "qty",
+          "transform" : "create",
+          "parameter" : [{
+            "valueString" : "Quantity"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "value",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueId" : "val"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "unit",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "score"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "system",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "http://unitsofmeasure.org"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "code",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "{score}"
+          }]
+        }]
+      }]
+    }]
+  }]
+}

@@ -8,6 +8,8 @@
 
 Profile: [AT PreNUDGE Observation Alcohol Use](StructureDefinition-at-prenudge-alcoholuse-observation.md)
 
+**identifier**: `https://www.joanneum.at`/obs-alc-2026-02-20-001
+
 **status**: Final
 
 **code**: Alcoholic drinks per day
@@ -16,7 +18,9 @@ Profile: [AT PreNUDGE Observation Alcohol Use](StructureDefinition-at-prenudge-a
 
 **effective**: 2026-02-20
 
-**value**: 2 drinks/day (Details: UCUM code{drinks}/d = '{drinks}/d')
+**value**: 1 drinks/day (Details: UCUM code{drinks}/d = '{drinks}/d')
+
+**method**: Manual
 
 
 
@@ -29,6 +33,10 @@ Profile: [AT PreNUDGE Observation Alcohol Use](StructureDefinition-at-prenudge-a
   "meta" : {
     "profile" : ["https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation"]
   },
+  "identifier" : [{
+    "system" : "https://www.joanneum.at",
+    "value" : "obs-alc-2026-02-20-001"
+  }],
   "status" : "final",
   "code" : {
     "coding" : [{
@@ -42,10 +50,17 @@ Profile: [AT PreNUDGE Observation Alcohol Use](StructureDefinition-at-prenudge-a
   },
   "effectiveDateTime" : "2026-02-20",
   "valueQuantity" : {
-    "value" : 2,
+    "value" : 1,
     "unit" : "drinks/day",
     "system" : "http://unitsofmeasure.org",
     "code" : "{drinks}/d"
+  },
+  "method" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "87982008",
+      "display" : "Manual"
+    }]
   }
 }
 
