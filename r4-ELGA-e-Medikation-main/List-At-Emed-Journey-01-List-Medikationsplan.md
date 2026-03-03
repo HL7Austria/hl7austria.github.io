@@ -10,8 +10,8 @@ Profile: [ELGA e-Med Medikationsplan](StructureDefinition-at-emed-list-medikatio
 
 | | | | |
 | :--- | :--- | :--- | :--- |
-| Date: 2026-01-28 08:00:00+1100 | Mode: Working List | Status: Current | Code: Medikationsplan |
-| Subject:[Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-At-Emed-Journey-01-Patient-01.md)Source: Order: Sorted by User | | | |
+| Date: 2026-02-27 08:00:00+0000 | Mode: Working List | Status: Current | Code: Medikationsplan |
+| Subject:[Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-At-Emed-Example-Patient-01.md)Source: Order: Sorted by User | | | |
 
 
 
@@ -35,11 +35,11 @@ Profile: [ELGA e-Med Medikationsplan](StructureDefinition-at-emed-list-medikatio
     }]
   },
   "subject" : {
-    "reference" : "Patient/At-Emed-Journey-01-Patient-01"
+    "reference" : "Patient/At-Emed-Example-Patient-01"
   },
-  "date" : "2026-01-28T08:00:00+11:00",
+  "date" : "2026-02-27T08:00:00+00:00",
   "source" : {
-    "reference" : "Device/At-Emed-Journey-01-Device"
+    "reference" : "Device/At-Emed-Example-Device-01"
   },
   "orderedBy" : {
     "coding" : [{

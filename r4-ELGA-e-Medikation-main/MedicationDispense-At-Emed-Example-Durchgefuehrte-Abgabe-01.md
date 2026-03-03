@@ -14,7 +14,7 @@ Profile: [ELGA e-Med Durchgeführte Abgabe](StructureDefinition-at-emed-md-durch
 
 **medication**: [Cefuroxime MIP 1500 mg, powder for solution for injection/infusion. N10.](http://hl7.eu/fhir/mpd/0.1.0-ballot/Medication-01C-Cefuroxime1500Branded.html)
 
-**subject**: [Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-At-Emed-Journey-01-Patient-01.md)
+**subject**: [Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-At-Emed-Example-Patient-01.md)
 
 ### Performers
 
@@ -51,7 +51,7 @@ Profile: [ELGA e-Med Durchgeführte Abgabe](StructureDefinition-at-emed-md-durch
     "display" : "Cefuroxime MIP 1500 mg, powder for solution for injection/infusion. N10."
   },
   "subject" : {
-    "reference" : "Patient/At-Emed-Journey-01-Patient-01"
+    "reference" : "Patient/At-Emed-Example-Patient-01"
   },
   "performer" : [{
     "actor" : {

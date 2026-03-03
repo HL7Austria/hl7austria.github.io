@@ -33,7 +33,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) ENTWURF",
   "status" : "draft",
-  "date" : "2026-02-26T16:36:39+00:00",
+  "date" : "2026-03-03T08:59:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -719,7 +719,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "valueString" : "Device"
       }],
       "reference" : {
-        "reference" : "Device/At-Emed-Journey-01-Device"
+        "reference" : "Device/At-Emed-Example-Device-01"
       },
       "name" : "Beispiel Journey 01: e-Med Fachanwendung",
       "description" : "Beispiel der e-Med Fachanwendung, die den Mediaktionsplan initial erstellt.",
@@ -743,7 +743,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "valueString" : "Bundle"
       }],
       "reference" : {
-        "reference" : "Bundle/At-Emed-Journey-01-Bundle-Ts-Medikationsplan"
+        "reference" : "Bundle/At-Emed-Journey-01-Bundle-Tx-Medikationsplan"
       },
       "name" : "Beispiel Journey 01: Transaction Bundle",
       "description" : "Beispiel eines Transaction Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge).",
@@ -767,7 +767,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "valueString" : "Medication"
       }],
       "reference" : {
-        "reference" : "Medication/At-Emed-Journey-02-Medication-Magistral-01"
+        "reference" : "Medication/At-Emed-Example-Medication-Magistral-01"
       },
       "name" : "Beispiel Journey 02: Magistrale Zubereitung",
       "description" : "Beispiel einer magistralen Zubereitung (Medication) - Salbe.",
@@ -803,31 +803,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "valueString" : "MedicationRequest"
       }],
       "reference" : {
-        "reference" : "MedicationRequest/At-Emed-Journey-05-Mr-Planeintrag-01"
-      },
-      "name" : "Beispiel Journey 02: Medikationsplaneintrag 1",
-      "description" : "Bildet einen Medikationsplaneintrag mit dem Medikament EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest).",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      }],
-      "reference" : {
         "reference" : "MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-02"
-      },
-      "name" : "Beispiel Journey 02: Medikationsplaneintrag 2",
-      "description" : "Bildet einen Medikationsplaneintrag mit einer Referenz auf eine magistrale Zubereitung und zugehörigen Dosierungsanweisungen ab (MedicationRequest).",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/At-Emed-Journey-05-Mr-Planeintrag-02"
       },
       "name" : "Beispiel Journey 02: Medikationsplaneintrag 2",
       "description" : "Bildet einen Medikationsplaneintrag mit einer Referenz auf eine magistrale Zubereitung und zugehörigen Dosierungsanweisungen ab (MedicationRequest).",
@@ -863,9 +839,9 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "valueString" : "Bundle"
       }],
       "reference" : {
-        "reference" : "Bundle/At-Emed-Journey-04-Bundle-Medikationsplan"
+        "reference" : "Bundle/At-Emed-Journey-05-a-Bundle-Medikationsplan"
       },
-      "name" : "Beispiel Journey 04: Collection Bundle mit geänderter Reihenfolge der Planeinträge.",
+      "name" : "Beispiel Journey 05-a: Collection Bundle mit geänderter Reihenfolge der Planeinträge.",
       "description" : "Beispiel eines Collection Bundles, mit geänderter Reihenfolge der Medikationsplaneinträge (referenziert List-Ressource mit Einträgen).",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-medikationsplan"
     },
@@ -875,22 +851,10 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "valueString" : "List"
       }],
       "reference" : {
-        "reference" : "List/At-Emed-Journey-04-List-Medikationsplan-Reihenfolge"
+        "reference" : "List/At-Emed-Journey-05-a-List-Reihenfolge"
       },
-      "name" : "Beispiel Journey 04: Reihenfolge der Planeinträge ändern",
-      "description" : "Beispiel Änderung der Reihenfolge der Medikationsplaneinträge (MedicationReqeusts) durch einen anderen GDA.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "List"
-      }],
-      "reference" : {
-        "reference" : "List/At-Emed-Journey-05-List-Medikationsplan-Aenderung"
-      },
-      "name" : "Beispiel Journey 04: Reihenfolge der Planeinträge ändern",
-      "description" : "Beispiel: Medikation absetzen und ändern durch einen anderen GDA.",
+      "name" : "Beispiel Journey 05-a: Reihenfolge der Planeinträge ändern",
+      "description" : "Beispiel Änderung der Reihenfolge der Medikationsplaneinträge (MedicationReqeusts) durch den Patienten.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"
     },
     {
@@ -899,9 +863,9 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "valueString" : "Bundle"
       }],
       "reference" : {
-        "reference" : "Bundle/At-Emed-Journey-04-Bundle-Medikationsplan-Tx"
+        "reference" : "Bundle/At-Emed-Journey-05-a-Bundle-Medikationsplan-Tx"
       },
-      "name" : "Beispiel Journey 04: Transaction Bundle zur Änderung der Reihenfolge der Medikationsplaneinträge.",
+      "name" : "Beispiel Journey 05-a: Transaction Bundle zur Änderung der Reihenfolge der Medikationsplaneinträge.",
       "description" : "Beispiel eines Transaction Bundles, zur Änderung der Reihenfolge der Medikationsplaneinträge (referenziert List-Ressource mit MedicationRequests.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-tx-medikationsplan"
     },
@@ -911,10 +875,46 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "valueString" : "Bundle"
       }],
       "reference" : {
-        "reference" : "Bundle/At-Emed-Journey-05-Bundle-Medikationsplan-Tx"
+        "reference" : "Bundle/At-Emed-Journey-05-b-Bundle-Medikationsplan"
       },
-      "name" : "Beispiel Journey 04: Transaction Bundle zur Änderung der Reihenfolge der Medikationsplaneinträge.",
-      "description" : "Beispiel eines Transaction Bundles, zur Änderung der Reihenfolge der Medikationsplaneinträge (referenziert List-Ressource mit MedicationRequests.",
+      "name" : "Beispiel Journey 05-b: Collection Bundle",
+      "description" : "Beispiel eines Collection Bundles mit geändertem und abgesetztem Planeintrag.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-medikationsplan"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/At-Emed-Journey-05-b-Mr-Planeintrag-01"
+      },
+      "name" : "Beispiel Journey 05-b: Medikationsplaneintrag 1",
+      "description" : "Geänderter Medikationsplaneintrag mit dem Medikament EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest).",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "List"
+      }],
+      "reference" : {
+        "reference" : "List/At-Emed-Journey-05-b-List-Aenderung"
+      },
+      "name" : "Beispiel Journey 05-b: Reihenfolge der Planeinträge ändern",
+      "description" : "Beispiel: Medikation absetzen und ändern durch einen anderen GDA.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/At-Emed-Journey-05-b-Bundle-Tx-Medikationsplan"
+      },
+      "name" : "Beispiel Journey 05-b: Transaction Bundle",
+      "description" : "Beispiel eines Transaction Bundles mit geändertem und abgesetztem Planeintrag.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-tx-medikationsplan"
     },
     {
@@ -947,7 +947,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "valueString" : "Organization"
       }],
       "reference" : {
-        "reference" : "Organization/At-Emed-Journey-01-Organization-Apo"
+        "reference" : "Organization/At-Emed-Example-Organization-Apo-01"
       },
       "name" : "Beispiel Organisation Apotheke 01",
       "description" : "Beispiel einer Apotheke als Organisation.",
@@ -959,7 +959,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "valueString" : "Patient"
       }],
       "reference" : {
-        "reference" : "Patient/At-Emed-Journey-01-Patient-01"
+        "reference" : "Patient/At-Emed-Example-Patient-01"
       },
       "name" : "Beispiel Patient 01",
       "description" : "Beispiel eines Patienten.",
@@ -971,7 +971,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "valueString" : "Practitioner"
       }],
       "reference" : {
-        "reference" : "Practitioner/At-Emed-Journey-01-Practitioner-01"
+        "reference" : "Practitioner/At-Emed-Example-Practitioner-01"
       },
       "name" : "Beispiel Ärztin 01",
       "description" : "Beispiel einer behandelnden Ärztin.",
@@ -983,7 +983,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "valueString" : "Practitioner"
       }],
       "reference" : {
-        "reference" : "Practitioner/At-Emed-Journey-01-Practitioner-02"
+        "reference" : "Practitioner/At-Emed-Example-Practitioner-02"
       },
       "name" : "Beispiel Ärztin 02",
       "description" : "Beispiel einer ursprünglich eine Medikation verordnenden Ärztin (Fremdmedikation).",

@@ -51,11 +51,11 @@
     "reference" : "#contained-medication-freitext-01"
   },
   "subject" : {
-    "reference" : "Patient/At-Emed-Journey-01-Patient-01"
+    "reference" : "Patient/At-Emed-Example-Patient-01"
   },
-  "authoredOn" : "2026-01-28T08:00:00+00:00",
+  "authoredOn" : "2026-02-27T10:20:00+00:00",
   "requester" : {
-    "reference" : "Practitioner/At-Emed-Journey-01-Practitioner-01"
+    "reference" : "Practitioner/At-Emed-Example-Practitioner-01"
   },
   "dosageInstruction" : [{
     "text" : "2 Stück morgens zum Frühstück"

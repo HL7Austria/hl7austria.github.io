@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-tx-medikationsplan | *Version*:0.1.1 | |
-| Draft as of 2026-02-26 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedBundleMedikationsplanTx |
+| Draft as of 2026-03-03 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedBundleMedikationsplanTx |
 
  
 Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan bestehend aus: 
@@ -19,7 +19,7 @@ Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medik
 
 **Usages:**
 
-* Examples for this Profile: [Bundle/At-Emed-Journey-01-Bundle-Ts-Medikationsplan](Bundle-At-Emed-Journey-01-Bundle-Ts-Medikationsplan.md), [Bundle/At-Emed-Journey-02-Bundle-Tx-Medikationsplan](Bundle-At-Emed-Journey-02-Bundle-Tx-Medikationsplan.md), [Bundle/At-Emed-Journey-04-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-04-Bundle-Medikationsplan-Tx.md) and [Bundle/At-Emed-Journey-05-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-05-Bundle-Medikationsplan-Tx.md)
+* Examples for this Profile: [Bundle/At-Emed-Journey-01-Bundle-Tx-Medikationsplan](Bundle-At-Emed-Journey-01-Bundle-Tx-Medikationsplan.md), [Bundle/At-Emed-Journey-02-Bundle-Tx-Medikationsplan](Bundle-At-Emed-Journey-02-Bundle-Tx-Medikationsplan.md), [Bundle/At-Emed-Journey-05-a-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-05-a-Bundle-Medikationsplan-Tx.md) and [Bundle/At-Emed-Journey-05-b-Bundle-Tx-Medikationsplan](Bundle-At-Emed-Journey-05-b-Bundle-Tx-Medikationsplan.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/at-emed-bundle-tx-medikationsplan)
 
@@ -44,7 +44,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-bundle-tx-me
   "name" : "AtEmedBundleMedikationsplanTx",
   "title" : "ELGA e-Med Medikationsplan Transaction Bundle",
   "status" : "draft",
-  "date" : "2026-02-26T16:36:39+00:00",
+  "date" : "2026-03-03T08:59:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -11,7 +11,7 @@
   <name value="ELGAeMedikationR4"/>
   <title value="ELGA e-Medikation (R4) ENTWURF"/>
   <status value="draft"/>
-  <date value="2026-02-26T16:36:39+00:00"/>
+  <date value="2026-03-03T08:59:33+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -532,7 +532,7 @@
         <valueString value="Device"/>
       </extension>
       <reference>
-        <reference value="Device/At-Emed-Journey-01-Device"/>
+        <reference value="Device/At-Emed-Example-Device-01"/>
       </reference>
       <name value="Beispiel Journey 01: e-Med Fachanwendung"/>
       <description value="Beispiel der e-Med Fachanwendung, die den Mediaktionsplan initial erstellt."/>
@@ -554,7 +554,7 @@
         <valueString value="Bundle"/>
       </extension>
       <reference>
-        <reference value="Bundle/At-Emed-Journey-01-Bundle-Ts-Medikationsplan"/>
+        <reference value="Bundle/At-Emed-Journey-01-Bundle-Tx-Medikationsplan"/>
       </reference>
       <name value="Beispiel Journey 01: Transaction Bundle"/>
       <description value="Beispiel eines Transaction Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge)."/>
@@ -576,7 +576,7 @@
         <valueString value="Medication"/>
       </extension>
       <reference>
-        <reference value="Medication/At-Emed-Journey-02-Medication-Magistral-01"/>
+        <reference value="Medication/At-Emed-Example-Medication-Magistral-01"/>
       </reference>
       <name value="Beispiel Journey 02: Magistrale Zubereitung"/>
       <description value="Beispiel einer magistralen Zubereitung (Medication) - Salbe."/>
@@ -609,29 +609,7 @@
         <valueString value="MedicationRequest"/>
       </extension>
       <reference>
-        <reference value="MedicationRequest/At-Emed-Journey-05-Mr-Planeintrag-01"/>
-      </reference>
-      <name value="Beispiel Journey 02: Medikationsplaneintrag 1"/>
-      <description value="Bildet einen Medikationsplaneintrag mit dem Medikament EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest)."/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="MedicationRequest"/>
-      </extension>
-      <reference>
         <reference value="MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-02"/>
-      </reference>
-      <name value="Beispiel Journey 02: Medikationsplaneintrag 2"/>
-      <description value="Bildet einen Medikationsplaneintrag mit einer Referenz auf eine magistrale Zubereitung und zugehörigen Dosierungsanweisungen ab (MedicationRequest)."/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="MedicationRequest"/>
-      </extension>
-      <reference>
-        <reference value="MedicationRequest/At-Emed-Journey-05-Mr-Planeintrag-02"/>
       </reference>
       <name value="Beispiel Journey 02: Medikationsplaneintrag 2"/>
       <description value="Bildet einen Medikationsplaneintrag mit einer Referenz auf eine magistrale Zubereitung und zugehörigen Dosierungsanweisungen ab (MedicationRequest)."/>
@@ -664,9 +642,9 @@
         <valueString value="Bundle"/>
       </extension>
       <reference>
-        <reference value="Bundle/At-Emed-Journey-04-Bundle-Medikationsplan"/>
+        <reference value="Bundle/At-Emed-Journey-05-a-Bundle-Medikationsplan"/>
       </reference>
-      <name value="Beispiel Journey 04: Collection Bundle mit geänderter Reihenfolge der Planeinträge."/>
+      <name value="Beispiel Journey 05-a: Collection Bundle mit geänderter Reihenfolge der Planeinträge."/>
       <description value="Beispiel eines Collection Bundles, mit geänderter Reihenfolge der Medikationsplaneinträge (referenziert List-Ressource mit Einträgen)."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-medikationsplan"/>
     </resource>
@@ -675,21 +653,10 @@
         <valueString value="List"/>
       </extension>
       <reference>
-        <reference value="List/At-Emed-Journey-04-List-Medikationsplan-Reihenfolge"/>
+        <reference value="List/At-Emed-Journey-05-a-List-Reihenfolge"/>
       </reference>
-      <name value="Beispiel Journey 04: Reihenfolge der Planeinträge ändern"/>
-      <description value="Beispiel Änderung der Reihenfolge der Medikationsplaneinträge (MedicationReqeusts) durch einen anderen GDA."/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="List"/>
-      </extension>
-      <reference>
-        <reference value="List/At-Emed-Journey-05-List-Medikationsplan-Aenderung"/>
-      </reference>
-      <name value="Beispiel Journey 04: Reihenfolge der Planeinträge ändern"/>
-      <description value="Beispiel: Medikation absetzen und ändern durch einen anderen GDA."/>
+      <name value="Beispiel Journey 05-a: Reihenfolge der Planeinträge ändern"/>
+      <description value="Beispiel Änderung der Reihenfolge der Medikationsplaneinträge (MedicationReqeusts) durch den Patienten."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"/>
     </resource>
     <resource>
@@ -697,9 +664,9 @@
         <valueString value="Bundle"/>
       </extension>
       <reference>
-        <reference value="Bundle/At-Emed-Journey-04-Bundle-Medikationsplan-Tx"/>
+        <reference value="Bundle/At-Emed-Journey-05-a-Bundle-Medikationsplan-Tx"/>
       </reference>
-      <name value="Beispiel Journey 04: Transaction Bundle zur Änderung der Reihenfolge der Medikationsplaneinträge."/>
+      <name value="Beispiel Journey 05-a: Transaction Bundle zur Änderung der Reihenfolge der Medikationsplaneinträge."/>
       <description value="Beispiel eines Transaction Bundles, zur Änderung der Reihenfolge der Medikationsplaneinträge (referenziert List-Ressource mit MedicationRequests."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-tx-medikationsplan"/>
     </resource>
@@ -708,10 +675,43 @@
         <valueString value="Bundle"/>
       </extension>
       <reference>
-        <reference value="Bundle/At-Emed-Journey-05-Bundle-Medikationsplan-Tx"/>
+        <reference value="Bundle/At-Emed-Journey-05-b-Bundle-Medikationsplan"/>
       </reference>
-      <name value="Beispiel Journey 04: Transaction Bundle zur Änderung der Reihenfolge der Medikationsplaneinträge."/>
-      <description value="Beispiel eines Transaction Bundles, zur Änderung der Reihenfolge der Medikationsplaneinträge (referenziert List-Ressource mit MedicationRequests."/>
+      <name value="Beispiel Journey 05-b: Collection Bundle"/>
+      <description value="Beispiel eines Collection Bundles mit geändertem und abgesetztem Planeintrag."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-medikationsplan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/At-Emed-Journey-05-b-Mr-Planeintrag-01"/>
+      </reference>
+      <name value="Beispiel Journey 05-b: Medikationsplaneintrag 1"/>
+      <description value="Geänderter Medikationsplaneintrag mit dem Medikament EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest)."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="List"/>
+      </extension>
+      <reference>
+        <reference value="List/At-Emed-Journey-05-b-List-Aenderung"/>
+      </reference>
+      <name value="Beispiel Journey 05-b: Reihenfolge der Planeinträge ändern"/>
+      <description value="Beispiel: Medikation absetzen und ändern durch einen anderen GDA."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/At-Emed-Journey-05-b-Bundle-Tx-Medikationsplan"/>
+      </reference>
+      <name value="Beispiel Journey 05-b: Transaction Bundle"/>
+      <description value="Beispiel eines Transaction Bundles mit geändertem und abgesetztem Planeintrag."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-tx-medikationsplan"/>
     </resource>
     <resource>
@@ -741,7 +741,7 @@
         <valueString value="Organization"/>
       </extension>
       <reference>
-        <reference value="Organization/At-Emed-Journey-01-Organization-Apo"/>
+        <reference value="Organization/At-Emed-Example-Organization-Apo-01"/>
       </reference>
       <name value="Beispiel Organisation Apotheke 01"/>
       <description value="Beispiel einer Apotheke als Organisation."/>
@@ -752,7 +752,7 @@
         <valueString value="Patient"/>
       </extension>
       <reference>
-        <reference value="Patient/At-Emed-Journey-01-Patient-01"/>
+        <reference value="Patient/At-Emed-Example-Patient-01"/>
       </reference>
       <name value="Beispiel Patient 01"/>
       <description value="Beispiel eines Patienten."/>
@@ -763,7 +763,7 @@
         <valueString value="Practitioner"/>
       </extension>
       <reference>
-        <reference value="Practitioner/At-Emed-Journey-01-Practitioner-01"/>
+        <reference value="Practitioner/At-Emed-Example-Practitioner-01"/>
       </reference>
       <name value="Beispiel Ärztin 01"/>
       <description value="Beispiel einer behandelnden Ärztin."/>
@@ -774,7 +774,7 @@
         <valueString value="Practitioner"/>
       </extension>
       <reference>
-        <reference value="Practitioner/At-Emed-Journey-01-Practitioner-02"/>
+        <reference value="Practitioner/At-Emed-Example-Practitioner-02"/>
       </reference>
       <name value="Beispiel Ärztin 02"/>
       <description value="Beispiel einer ursprünglich eine Medikation verordnenden Ärztin (Fremdmedikation)."/>

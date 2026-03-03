@@ -68,27 +68,27 @@ These are example instances that show what data produced and consumed by systems
 | [Beispiel Example: Substance Hydrocortison](Substance-At-Emed-Example-Substance-Hydrocortison.md) | Beispiel einer Substance Hydrocortison. |
 | [Beispiel Journey 01: Collection Bundle](Bundle-At-Emed-Journey-01-Bundle-Medikationsplan.md) | Beispiel eines Collection Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge). |
 | [Beispiel Journey 01: Leerer Medikationsplan](List-At-Emed-Journey-01-List-Medikationsplan.md) | Beispiel eines leeren Mediaktionsplans (List-Ressource ohne Einträge) |
-| [Beispiel Journey 01: Transaction Bundle](Bundle-At-Emed-Journey-01-Bundle-Ts-Medikationsplan.md) | Beispiel eines Transaction Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge). |
-| [Beispiel Journey 01: e-Med Fachanwendung](Device-At-Emed-Journey-01-Device.md) | Beispiel der e-Med Fachanwendung, die den Mediaktionsplan initial erstellt. |
+| [Beispiel Journey 01: Transaction Bundle](Bundle-At-Emed-Journey-01-Bundle-Tx-Medikationsplan.md) | Beispiel eines Transaction Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge). |
+| [Beispiel Journey 01: e-Med Fachanwendung](Device-At-Emed-Example-Device-01.md) | Beispiel der e-Med Fachanwendung, die den Mediaktionsplan initial erstellt. |
 | [Beispiel Journey 02: Collection Bundle](Bundle-At-Emed-Journey-02-Bundle-Medikationsplan.md) | Beispiel eines Collection Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert. |
-| [Beispiel Journey 02: Magistrale Zubereitung](Medication-At-Emed-Journey-02-Medication-Magistral-01.md) | Beispiel einer magistralen Zubereitung (Medication) - Salbe. |
+| [Beispiel Journey 02: Magistrale Zubereitung](Medication-At-Emed-Example-Medication-Magistral-01.md) | Beispiel einer magistralen Zubereitung (Medication) - Salbe. |
 | [Beispiel Journey 02: Medikationsplan](List-At-Emed-Journey-02-List-Medikationsplan.md) | Beispiel eines Medikationsplans (List), der 2 Planeinträge (MedicationReqeusts) referenziert und Informationen über Reihenfolge und Änderungsstatus speichert. |
 | [Beispiel Journey 02: Medikationsplaneintrag 1](MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-01.md) | Bildet einen Medikationsplaneintrag mit dem Medikament EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest). |
-| [Beispiel Journey 02: Medikationsplaneintrag 1](MedicationRequest-At-Emed-Journey-05-Mr-Planeintrag-01.md) | Bildet einen Medikationsplaneintrag mit dem Medikament EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest). |
 | [Beispiel Journey 02: Medikationsplaneintrag 2](MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-02.md) | Bildet einen Medikationsplaneintrag mit einer Referenz auf eine magistrale Zubereitung und zugehörigen Dosierungsanweisungen ab (MedicationRequest). |
-| [Beispiel Journey 02: Medikationsplaneintrag 2](MedicationRequest-At-Emed-Journey-05-Mr-Planeintrag-02.md) | Bildet einen Medikationsplaneintrag mit einer Referenz auf eine magistrale Zubereitung und zugehörigen Dosierungsanweisungen ab (MedicationRequest). |
 | [Beispiel Journey 02: Transaction Bundle](Bundle-At-Emed-Journey-02-Bundle-Tx-Medikationsplan.md) | Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) beinhaltet. |
 | [Beispiel Journey 03: Geplante Abgabe](MedicationRequest-At-Emed-Journey-03-Mr-Geplante-Abgabe.md) | Bildet eine geplante Abgabe des Medikaments EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest). |
-| [Beispiel Journey 04: Collection Bundle mit geänderter Reihenfolge der Planeinträge.](Bundle-At-Emed-Journey-04-Bundle-Medikationsplan.md) | Beispiel eines Collection Bundles, mit geänderter Reihenfolge der Medikationsplaneinträge (referenziert List-Ressource mit Einträgen). |
-| [Beispiel Journey 04: Reihenfolge der Planeinträge ändern](List-At-Emed-Journey-04-List-Medikationsplan-Reihenfolge.md) | Beispiel Änderung der Reihenfolge der Medikationsplaneinträge (MedicationReqeusts) durch einen anderen GDA. |
-| [Beispiel Journey 04: Reihenfolge der Planeinträge ändern](List-At-Emed-Journey-05-List-Medikationsplan-Aenderung.md) | Beispiel: Medikation absetzen und ändern durch einen anderen GDA. |
-| [Beispiel Journey 04: Transaction Bundle zur Änderung der Reihenfolge der Medikationsplaneinträge.](Bundle-At-Emed-Journey-04-Bundle-Medikationsplan-Tx.md) | Beispiel eines Transaction Bundles, zur Änderung der Reihenfolge der Medikationsplaneinträge (referenziert List-Ressource mit MedicationRequests. |
-| [Beispiel Journey 04: Transaction Bundle zur Änderung der Reihenfolge der Medikationsplaneinträge.](Bundle-At-Emed-Journey-05-Bundle-Medikationsplan-Tx.md) | Beispiel eines Transaction Bundles, zur Änderung der Reihenfolge der Medikationsplaneinträge (referenziert List-Ressource mit MedicationRequests. |
+| [Beispiel Journey 05-a: Collection Bundle mit geänderter Reihenfolge der Planeinträge.](Bundle-At-Emed-Journey-05-a-Bundle-Medikationsplan.md) | Beispiel eines Collection Bundles, mit geänderter Reihenfolge der Medikationsplaneinträge (referenziert List-Ressource mit Einträgen). |
+| [Beispiel Journey 05-a: Reihenfolge der Planeinträge ändern](List-At-Emed-Journey-05-a-List-Reihenfolge.md) | Beispiel Änderung der Reihenfolge der Medikationsplaneinträge (MedicationReqeusts) durch den Patienten. |
+| [Beispiel Journey 05-a: Transaction Bundle zur Änderung der Reihenfolge der Medikationsplaneinträge.](Bundle-At-Emed-Journey-05-a-Bundle-Medikationsplan-Tx.md) | Beispiel eines Transaction Bundles, zur Änderung der Reihenfolge der Medikationsplaneinträge (referenziert List-Ressource mit MedicationRequests. |
+| [Beispiel Journey 05-b: Collection Bundle](Bundle-At-Emed-Journey-05-b-Bundle-Medikationsplan.md) | Beispiel eines Collection Bundles mit geändertem und abgesetztem Planeintrag. |
+| [Beispiel Journey 05-b: Medikationsplaneintrag 1](MedicationRequest-At-Emed-Journey-05-b-Mr-Planeintrag-01.md) | Geänderter Medikationsplaneintrag mit dem Medikament EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest). |
+| [Beispiel Journey 05-b: Reihenfolge der Planeinträge ändern](List-At-Emed-Journey-05-b-List-Aenderung.md) | Beispiel: Medikation absetzen und ändern durch einen anderen GDA. |
+| [Beispiel Journey 05-b: Transaction Bundle](Bundle-At-Emed-Journey-05-b-Bundle-Tx-Medikationsplan.md) | Beispiel eines Transaction Bundles mit geändertem und abgesetztem Planeintrag. |
 | [Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema](MedicationRequest-At-Emed-Example-Mr-Dosierung-1010.md) | Medikationsplaneintrag mit Dosierung im Tageszeitenschema (morgens, mittags, abends, nachts): 1-0-1-0. |
 | [Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema](MedicationRequest-At-Emed-Example-Mr-Dosierung-Zeit-1tg.md) | Medikationsplaneintrag mit Dosierung im Tageszeitenschema (morgens, mittags, abends, nachts): 1-0-1-0. |
-| [Beispiel Organisation Apotheke 01](Organization-At-Emed-Journey-01-Organization-Apo.md) | Beispiel einer Apotheke als Organisation. |
-| [Beispiel Patient 01](Patient-At-Emed-Journey-01-Patient-01.md) | Beispiel eines Patienten. |
-| [Beispiel Ärztin 01](Practitioner-At-Emed-Journey-01-Practitioner-01.md) | Beispiel einer behandelnden Ärztin. |
-| [Beispiel Ärztin 02](Practitioner-At-Emed-Journey-01-Practitioner-02.md) | Beispiel einer ursprünglich eine Medikation verordnenden Ärztin (Fremdmedikation). |
+| [Beispiel Organisation Apotheke 01](Organization-At-Emed-Example-Organization-Apo-01.md) | Beispiel einer Apotheke als Organisation. |
+| [Beispiel Patient 01](Patient-At-Emed-Example-Patient-01.md) | Beispiel eines Patienten. |
+| [Beispiel Ärztin 01](Practitioner-At-Emed-Example-Practitioner-01.md) | Beispiel einer behandelnden Ärztin. |
+| [Beispiel Ärztin 02](Practitioner-At-Emed-Example-Practitioner-02.md) | Beispiel einer ursprünglich eine Medikation verordnenden Ärztin (Fremdmedikation). |
 | [Medikationsplaneintrag mit Freitext-Dosierung](MedicationRequest-At-Emed-Example-Mr-Dosierung-Freitext.md) | Medikationsplaneintrag mit Dosierung im Tageszeitenschema (morgens, mittags, abends, nachts): 1-0-1-0. |
 

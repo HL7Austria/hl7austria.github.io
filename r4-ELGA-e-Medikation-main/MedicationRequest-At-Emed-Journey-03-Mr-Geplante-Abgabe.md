@@ -34,8 +34,8 @@
   "extension" : [{
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod",
     "valuePeriod" : {
-      "start" : "2026-01-28",
-      "end" : "2026-02-28"
+      "start" : "2026-02-27",
+      "end" : "2026-03-06"
     }
   },
   {
@@ -58,11 +58,11 @@
     "reference" : "ContainedMedication02"
   },
   "subject" : {
-    "reference" : "Patient/At-Emed-Journey-01-Patient-01"
+    "reference" : "Patient/At-Emed-Example-Patient-01"
   },
   "authoredOn" : "2026-01-29T08:00:00+00:00",
   "requester" : {
-    "reference" : "Practitioner/At-Emed-Journey-01-Practitioner-01"
+    "reference" : "Practitioner/At-Emed-Example-Practitioner-01"
   },
   "basedOn" : [{
     "reference" : "MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-01",
