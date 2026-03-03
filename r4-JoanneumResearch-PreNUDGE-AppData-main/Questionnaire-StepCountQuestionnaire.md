@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/StepCountQuestionnaire | *Version*:0.1.0 | |
-| Active as of 2026-03-02 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:StepCountQuestionnaire |
+| Active as of 2026-03-03 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:StepCountQuestionnaire |
 
  
 A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000. 
@@ -32,7 +32,7 @@ A simple questionnaire for asking how many steps the patient has taken today. On
   "status" : "active",
   "experimental" : false,
   "subjectType" : ["Patient"],
-  "date" : "2026-03-02T17:40:54+00:00",
+  "date" : "2026-03-03T16:09:57+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

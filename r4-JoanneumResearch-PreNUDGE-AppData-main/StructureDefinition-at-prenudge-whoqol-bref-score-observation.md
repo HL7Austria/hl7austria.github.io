@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-whoqol-bref-score-observation | *Version*:0.1.0 | |
-| Draft as of 2026-03-02 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationWHOQOLBrefScore |
+| Draft as of 2026-03-03 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationWHOQOLBrefScore |
 
  
 Observation profile for recording WHOQOL-BREF domain scores. The overall score is represented in Observation.value, individual domain scores are recorded as components. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-whoqol-b
   "name" : "AtPrenudgeObservationWHOQOLBrefScore",
   "title" : "AT PreNUDGE Observation WHOQOL-BREF Score",
   "status" : "draft",
-  "date" : "2026-03-02T17:40:54+00:00",
+  "date" : "2026-03-03T16:09:57+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
