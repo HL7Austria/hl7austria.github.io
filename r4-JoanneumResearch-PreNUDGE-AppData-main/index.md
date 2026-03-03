@@ -11,23 +11,26 @@ The core concept is to create a **modular platform** that collects and structure
 
 PräNUDGE focuses on the **prevention of four diseases**: diabetes, colorectal cancer, depression, and COPD, targeting specific groups such as children, adolescents, and working adults. The FHIR Implementation Guide (IG) is called “PreNUDGE”, which is the agreed English spelling, while the project’s German name is “PräNUDGE.”
 
+For more, see [Background](background.md).
+
 ### PreNUDGE FHIR® IG for Data Provider / Data from Apps
 
-This Implementation Guide (IG) explains how to use the **PreNUDGE FHIR API** to deliver **health indicators** as an application provider.
- It is a **work in progress** and represents a **continuous integration (CI) build**. Substantial changes may occur before the ballot starts.
+This Implementation Guide (IG) explains how application providers can use the **PreNUDGE FHIR API** to deliver **health indicators**.
 
-We will focus on narrow standardization of **four PreNUDGE measurements**:
+We focus on narrow standardization of **four PreNUDGE measurements**:
 
-* Daily activity as **Steps per day** (from a **questionnaire** and from a **wearable device as an observation**)
-* **Alcohol consumption** as number of drinks (from a **questionnaire** and from an **observation**)
-* **Blood glucose** in mg/dL (from a **questionnaire** and from a **device as an observation**)
-* **Quality of life** (from a **questionnaire** with a calculated **score as an observation**)
+* Daily activity as **Steps per day** (from a [**questionnaire**](Questionnaire-StepCountQuestionnaire.md) and from a [**wearable device as an observation**](StructureDefinition-at-prenudge-stepcount-observation.md))
+* **Alcohol consumption** as number of drinks (from a [**questionnaire**](Questionnaire-StepCountQuestionnaire.md) and from an [**observation**](StructureDefinition-at-prenudge-alcoholuse-observation.md))
+* **Blood glucose** in mg/dL (from a [**questionnaire**](Questionnaire-BloodGlucoseQuestionnaire.md) and from a [**device as an observation**](StructureDefinition-at-prenudge-bloodglucose-observation.md))
+* **Quality of life** (from a [**questionnaire**](Questionnaire-QolQuestionnaire.md) with a calculated [**score as an observation**](StructureDefinition-at-prenudge-whoqol-bref-score-observation.md))
 
-Each **questionnaire variant** maps **one-way** to its corresponding **observation variant**.
+For viewing the full questionnaires use tools like [lhcforms](https://lhcfhirtools.nlm.nih.gov/lhcforms).
 
-Additional narrow standardized **PreNUDGE measurements** may be specified and listed here prior to the ballot.
+Each **questionnaire variant** maps **one-way** to its corresponding **observation variant**. The mappings can be found at [StructureMaps](artifacts.md#terminology-structure-maps) and can be executed with [MaLaC-HD](https://gitlab.com/cdehealth/malac-hd) (small workaround because of [a IG Publisher compatibility issue](https://gitlab.com/cdehealth/malac-hd/-/issues/129) needed, for MaLaC-HD v1.4.1 replace all http://hl7.org/fhir/StructureDefinition/ to http://hl7.org/fhir/4.0/StructureDefinition/).
 
-Besides these narrow standardized measurements, **broad standardized measurements** as simple **observations**, compliant to the prenudge observation defined here, are also supported.
+Additional PreNUDGE measurements, also narrow standardized, will be specified analogously to these four, based on feedback from this informative ballot.
+
+Besides these narrow standardized measurements, **broad standardized measurements** called [**other observations**](StructureDefinition-at-prenudge-observation-other.md) are also supported. Please be aware that such broad standardized measurements does not have a corresponding questionnaire.
 
 ### Ballot Info
 
@@ -47,8 +50,6 @@ General information and deadlines according to HL7 Austria voting procedures:
 We look forward to your active participation in the balloting process, which makes a vital contribution to quality assurance and the success of Austrian e-health applications.
  Thank you very much for your commitment!
 
-For more, see [Background](background.md).
-
 
 
 ## Resource Content
@@ -62,7 +63,7 @@ For more, see [Background](background.md).
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-03-03T18:16:34+00:00",
+  "date" : "2026-03-03T20:10:31+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -1113,6 +1114,61 @@ For more, see [Background](background.md).
       "name" : "WHOQOL-BREF Q",
       "description" : "Example of a completed WHOQOL-BREF QuestionnaireResponse including all 26 items and calculated scores.",
       "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureMap"
+      }],
+      "reference" : {
+        "reference" : "StructureMap/AlcoholQuestionnaireResponseToObservation"
+      },
+      "name" : "Alcohol Use Q mapping frequency to O drinks per day",
+      "description" : "Alcohol Use Q mapping frequency to O drinks per day"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureMap"
+      }],
+      "reference" : {
+        "reference" : "StructureMap/BloodGlucoseQuestionnaireResponseToObservation"
+      },
+      "name" : "Blood Glucose Q to O",
+      "description" : "Blood Glucose Q to O"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureMap"
+      }],
+      "reference" : {
+        "reference" : "StructureMap/QuestionnaireResponseToObservationBase"
+      },
+      "name" : "Shared base for Q to O",
+      "description" : "Shared base for Q to O"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureMap"
+      }],
+      "reference" : {
+        "reference" : "StructureMap/WHOQOLBrefQuestionnaireResponseToObservation"
+      },
+      "name" : "WHOQOL-BREF Q score to O score",
+      "description" : "WHOQOL-BREF Q score to O score"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureMap"
+      }],
+      "reference" : {
+        "reference" : "StructureMap/StepCountQuestionnaireResponseToObservation"
+      },
+      "name" : "Step Count Q to O",
+      "description" : "Step Count Q to O"
     }],
     "page" : {
       "extension" : [{

@@ -163,24 +163,27 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>PräNUDGE focuses on the <strong>prevention of four diseases</strong>: diabetes, colorectal cancer, depression, and COPD, targeting specific groups such as children, adolescents, and working adults. The FHIR Implementation Guide (IG) is called “PreNUDGE”, which is the agreed English spelling, while the project’s German name is “PräNUDGE.”</p>
 
+<p>For more, see <a href="background.html">Background</a>.</p>
+
 <h3 id="prenudge-fhir-ig-for-data-provider--data-from-apps">PreNUDGE FHIR® IG for Data Provider / Data from Apps</h3>
 
-<p>This Implementation Guide (IG) explains how to use the <strong>PreNUDGE FHIR API</strong> to deliver <strong>health indicators</strong> as an application provider.<br />
-It is a <strong>work in progress</strong> and represents a <strong>continuous integration (CI) build</strong>. Substantial changes may occur before the ballot starts.</p>
+<p>This Implementation Guide (IG) explains how application providers can use the <strong>PreNUDGE FHIR API</strong> to deliver <strong>health indicators</strong>.</p>
 
-<p>We will focus on narrow standardization of <strong>four PreNUDGE measurements</strong>:</p>
+<p>We focus on narrow standardization of <strong>four PreNUDGE measurements</strong>:</p>
 <ul>
-  <li>Daily activity as <strong>Steps per day</strong> (from a <strong>questionnaire</strong> and from a <strong>wearable device as an observation</strong>)</li>
-  <li><strong>Alcohol consumption</strong> as number of drinks (from a <strong>questionnaire</strong> and from an <strong>observation</strong>)</li>
-  <li><strong>Blood glucose</strong> in mg/dL (from a <strong>questionnaire</strong> and from a <strong>device as an observation</strong>)</li>
-  <li><strong>Quality of life</strong> (from a <strong>questionnaire</strong> with a calculated <strong>score as an observation</strong>)</li>
+  <li>Daily activity as <strong>Steps per day</strong> (from a <a href="Questionnaire-StepCountQuestionnaire.html"><strong>questionnaire</strong></a> and from a <a href="StructureDefinition-at-prenudge-stepcount-observation.html"><strong>wearable device as an observation</strong></a>)</li>
+  <li><strong>Alcohol consumption</strong> as number of drinks (from a <a href="Questionnaire-StepCountQuestionnaire.html"><strong>questionnaire</strong></a> and from an <a href="StructureDefinition-at-prenudge-alcoholuse-observation.html"><strong>observation</strong></a>)</li>
+  <li><strong>Blood glucose</strong> in mg/dL (from a <a href="Questionnaire-BloodGlucoseQuestionnaire.html"><strong>questionnaire</strong></a> and from a <a href="StructureDefinition-at-prenudge-bloodglucose-observation.html"><strong>device as an observation</strong></a>)</li>
+  <li><strong>Quality of life</strong> (from a <a href="Questionnaire-QolQuestionnaire.html"><strong>questionnaire</strong></a> with a calculated <a href="StructureDefinition-at-prenudge-whoqol-bref-score-observation.html"><strong>score as an observation</strong></a>)</li>
 </ul>
 
-<p>Each <strong>questionnaire variant</strong> maps <strong>one-way</strong> to its corresponding <strong>observation variant</strong>.</p>
+<p>For viewing the full questionnaires use tools like <a href="https://lhcfhirtools.nlm.nih.gov/lhcforms">lhcforms</a>.</p>
 
-<p>Additional narrow standardized <strong>PreNUDGE measurements</strong> may be specified and listed here prior to the ballot.</p>
+<p>Each <strong>questionnaire variant</strong> maps <strong>one-way</strong> to its corresponding <strong>observation variant</strong>. The mappings can be found at <a href="artifacts.html#terminology-structure-maps">StructureMaps</a> and can be executed with <a href="https://gitlab.com/cdehealth/malac-hd">MaLaC-HD</a> (small workaround because of <a href="https://gitlab.com/cdehealth/malac-hd/-/issues/129">a IG Publisher compatibility issue</a> needed, for MaLaC-HD v1.4.1 replace all http://hl7.org/fhir/StructureDefinition/ to http://hl7.org/fhir/4.0/StructureDefinition/).</p>
 
-<p>Besides these narrow standardized measurements, <strong>broad standardized measurements</strong> as simple <strong>observations</strong>, compliant to the prenudge observation defined here, are also supported.</p>
+<p>Additional PreNUDGE measurements, also narrow standardized, will be specified analogously to these four, based on feedback from this informative ballot.</p>
+
+<p>Besides these narrow standardized measurements, <strong>broad standardized measurements</strong> called <a href="StructureDefinition-at-prenudge-observation-other.html"><strong>other observations</strong></a> are also supported. Please be aware that such broad standardized measurements does not have a corresponding questionnaire.</p>
 
 <h3 id="ballot-info">Ballot Info</h3>
 
@@ -202,8 +205,6 @@ Consensus group registrations and questions should be sent to <a href="mailto:tc
 <p>We look forward to your active participation in the balloting process, which makes a vital contribution to quality assurance and the success of Austrian e-health applications.<br />
 Thank you very much for your commitment!</p>
 
-<p>For more, see <a href="background.html">Background</a>.</p>
-
 
 
 </div>
@@ -222,7 +223,7 @@ Thank you very much for your commitment!</p>
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Mar 3, 2026 18:16+0000">2026-03-03</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Mar 3, 2026 20:10+0000">2026-03-03</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

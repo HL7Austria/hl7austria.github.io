@@ -37,7 +37,7 @@ Assessment of subjective quality of life in the general population and in patien
   "status" : "active",
   "experimental" : false,
   "subjectType" : ["Patient"],
-  "date" : "2026-03-03T18:16:34+00:00",
+  "date" : "2026-03-03T20:10:31+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
