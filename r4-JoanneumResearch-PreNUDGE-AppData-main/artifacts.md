@@ -74,19 +74,22 @@ These are example instances that show what data produced and consumed by systems
 
 | | |
 | :--- | :--- |
-| [Alcohol Use O - Daily](Observation-alcoholuse-occasional-example.md) | Observation example of an alcohol use observation for a daily drinker (1 drink per day). |
-| [Alcohol Use O - Non-Drinker](Observation-alcoholuse-never-example.md) | Observation example of an alcohol use observation for a lifetime non-drinker (0 drinks per day). |
+| [Alcohol Use O - Moderate (3-4 times weekly)](Observation-alcoholuse-moderate-example.md) | Observation example of an alcohol use observation for a moderate drinker consuming alcohol 3-4 times per week (0.5 drinks per day). |
+| [Alcohol Use O mapped from Q - Daily](Observation-alcoholuse-occasional-example.md) | Observation example of an alcohol use observation for a daily drinker (1 drink per day). |
+| [Alcohol Use O mapped from Q - Non-Drinker](Observation-alcoholuse-never-example.md) | Observation example of an alcohol use observation for a lifetime non-drinker (0 drinks per day). |
 | [Alcohol Use Q - Daily](QuestionnaireResponse-AlcoholResponseDaily.md) | QuestionnaireResponse example of an alcohol use observation for a daily drinker. |
 | [Alcohol Use Q - Non-Drinker](QuestionnaireResponse-AlcoholResponseNever.md) | QuestionnaireResponse example of an alcohol use observation for a lifetime non-drinker. |
 | [AtApsPatient-example](Patient-example.md) | An example of a patient with a license to krill. |
-| [Blood Glucose O - Elevated Example](Observation-bloodglucose-elevated-example.md) | Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL), hinweisend auf Diabetes mellitus. |
-| [Blood Glucose O - Normal Example](Observation-bloodglucose-normal-example.md) | Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL). |
+| [Blood Glucose O - Low Example](Observation-bloodglucose-low-example.md) | Beispiel einer niedrigen Nüchtern-Blutzucker-Messung (62 mg/dL), hinweisend auf Hypoglykämie. |
+| [Blood Glucose O mapped from Q - Elevated Example](Observation-bloodglucose-elevated-example.md) | Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL), hinweisend auf Diabetes mellitus. |
+| [Blood Glucose O mapped from Q - Normal Example](Observation-bloodglucose-normal-example.md) | Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL). |
 | [Blood Glucose Q - Elevated Example](QuestionnaireResponse-bloodglucose-response-elevated-example.md) | Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL) als QuestionnaireResponse. |
 | [Blood Glucose Q - Normal Example](QuestionnaireResponse-bloodglucose-response-normal-example.md) | Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL) als QuestionnaireResponse. |
-| [Step Count O - High Example](Observation-stepcount-low-example.md) | Beispiel einer hohen Schrittzahl (133,519 Schritte pro Tag). |
-| [Step Count O - Normal Example](Observation-stepcount-normal-example.md) | Beispiel einer normalen Schrittzahl (8,432 Schritte pro Tag). |
+| [Step Count O - Sedentary Example](Observation-stepcount-sedentary-example.md) | Beispiel einer niedrigen Schrittzahl (1,204 Schritte pro Tag), typisch für einen überwiegend sitzenden Tag. |
+| [Step Count O mapped from Q - High Example](Observation-stepcount-high-example.md) | Beispiel einer hohen Schrittzahl (133,519 Schritte pro Tag). |
+| [Step Count O mapped from Q - Normal Example](Observation-stepcount-normal-example.md) | Beispiel einer normalen Schrittzahl (8,432 Schritte pro Tag). |
 | [Step Count Q - High Example](QuestionnaireResponse-stepcount-response-low-example.md) | Beispiel einer hohen Schrittzahl (133,519 Schritte) als QuestionnaireResponse. |
 | [Step Count Q - Normal Example](QuestionnaireResponse-stepcount-response-normal-example.md) | Beispiel einer normalen Schrittzahl (8,432 Schritte) als QuestionnaireResponse. |
-| [WHOQOL-BREF O Score only](Observation-whoqol-bref-score-example.md) | Example of a WHOQOL-BREF score observation with a general score and all four domain scores. |
+| [WHOQOL-BREF O Score only mapped from Q](Observation-whoqol-bref-score-example.md) | Example of a WHOQOL-BREF score observation with a general score and all four domain scores. |
 | [WHOQOL-BREF Q](QuestionnaireResponse-whoqol-bref-response-example.md) | Example of a completed WHOQOL-BREF QuestionnaireResponse including all 26 items and calculated scores. |
 

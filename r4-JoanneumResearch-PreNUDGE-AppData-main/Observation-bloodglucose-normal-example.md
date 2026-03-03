@@ -1,14 +1,14 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Blood Glucose O - Normal Example - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Blood Glucose O mapped from Q - Normal Example - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Blood Glucose O - Normal Example**
+* **Blood Glucose O mapped from Q - Normal Example**
 
-## Example Observation: Blood Glucose O - Normal Example
+## Example Observation: Blood Glucose O mapped from Q - Normal Example
 
 Profile: [AT PreNUDGE Observation Blood Glucose (only in mg/dL)](StructureDefinition-at-prenudge-bloodglucose-observation.md)
 
-**identifier**: `https://www.joanneum.at`/obs-bg-2026-02-28-001
+**identifier**: `https://www.joanneum.at`/qr-bg-2026-02-28-001
 
 **status**: Final
 
@@ -42,7 +42,7 @@ Nüchtern gemessen.
   },
   "identifier" : [{
     "system" : "https://www.joanneum.at",
-    "value" : "obs-bg-2026-02-28-001"
+    "value" : "qr-bg-2026-02-28-001"
   }],
   "status" : "final",
   "code" : {

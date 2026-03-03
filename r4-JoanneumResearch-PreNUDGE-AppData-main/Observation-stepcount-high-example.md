@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Step Count O - High Example - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Step Count O mapped from Q - High Example - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Step Count O - High Example**
+* **Step Count O mapped from Q - High Example**
 
-## Example Observation: Step Count O - High Example
+## Example Observation: Step Count O mapped from Q - High Example
 
 Profile: [AT PreNUDGE Observation Step Count](StructureDefinition-at-prenudge-stepcount-observation.md)
 
@@ -36,7 +36,7 @@ Könnte bitte jemand überprüfen ob das ein Weltrekord wäre?
 ```json
 {
   "resourceType" : "Observation",
-  "id" : "stepcount-low-example",
+  "id" : "stepcount-high-example",
   "meta" : {
     "profile" : ["https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation"]
   },

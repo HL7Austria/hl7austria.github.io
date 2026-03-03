@@ -16,7 +16,7 @@ This FHIR profile is defining the Blood Glucose Observation, similar to the Obse
 
 **Usages:**
 
-* Examples for this Profile: [Observation/bloodglucose-elevated-example](Observation-bloodglucose-elevated-example.md) and [Observation/bloodglucose-normal-example](Observation-bloodglucose-normal-example.md)
+* Examples for this Profile: [Observation/bloodglucose-elevated-example](Observation-bloodglucose-elevated-example.md), [Observation/bloodglucose-low-example](Observation-bloodglucose-low-example.md) and [Observation/bloodglucose-normal-example](Observation-bloodglucose-normal-example.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.prenudge.appdata.r4|current/StructureDefinition/at-prenudge-bloodglucose-observation)
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-bloodglu
   "name" : "AtPrenudgeObservationBloodGlucose",
   "title" : "AT PreNUDGE Observation Blood Glucose (only in mg/dL)",
   "status" : "draft",
-  "date" : "2026-03-03T16:09:57+00:00",
+  "date" : "2026-03-03T18:16:34+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

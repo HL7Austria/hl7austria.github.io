@@ -16,7 +16,7 @@ This FHIR profile is defining the Step Count Observation. The step count only al
 
 **Usages:**
 
-* Examples for this Profile: [Observation/stepcount-low-example](Observation-stepcount-low-example.md) and [Observation/stepcount-normal-example](Observation-stepcount-normal-example.md)
+* Examples for this Profile: [Observation/stepcount-high-example](Observation-stepcount-high-example.md), [Observation/stepcount-normal-example](Observation-stepcount-normal-example.md) and [Observation/stepcount-sedentary-example](Observation-stepcount-sedentary-example.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.prenudge.appdata.r4|current/StructureDefinition/at-prenudge-stepcount-observation)
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-stepcoun
   "name" : "AtPrenudgeObservationStepCount",
   "title" : "AT PreNUDGE Observation Step Count",
   "status" : "draft",
-  "date" : "2026-03-03T16:09:57+00:00",
+  "date" : "2026-03-03T18:16:34+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

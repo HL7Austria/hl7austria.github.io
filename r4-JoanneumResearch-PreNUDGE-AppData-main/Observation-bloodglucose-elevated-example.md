@@ -1,14 +1,14 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Blood Glucose O - Elevated Example - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Blood Glucose O mapped from Q - Elevated Example - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Blood Glucose O - Elevated Example**
+* **Blood Glucose O mapped from Q - Elevated Example**
 
-## Example Observation: Blood Glucose O - Elevated Example
+## Example Observation: Blood Glucose O mapped from Q - Elevated Example
 
 Profile: [AT PreNUDGE Observation Blood Glucose (only in mg/dL)](StructureDefinition-at-prenudge-bloodglucose-observation.md)
 
-**identifier**: `https://www.joanneum.at`/obs-bg-2026-02-28-002
+**identifier**: `https://www.joanneum.at`/qr-bg-2026-02-28-002
 
 **status**: Final
 
@@ -42,7 +42,7 @@ Patient berichtet, gestern Abend spät gegessen zu haben.
   },
   "identifier" : [{
     "system" : "https://www.joanneum.at",
-    "value" : "obs-bg-2026-02-28-002"
+    "value" : "qr-bg-2026-02-28-002"
   }],
   "status" : "final",
   "code" : {

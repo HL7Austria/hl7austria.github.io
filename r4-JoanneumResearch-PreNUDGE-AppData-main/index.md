@@ -62,7 +62,7 @@ For more, see [Background](background.md).
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-03-03T16:09:57+00:00",
+  "date" : "2026-03-03T18:16:34+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -676,9 +676,21 @@ For more, see [Background](background.md).
         "valueString" : "Observation"
       }],
       "reference" : {
+        "reference" : "Observation/alcoholuse-moderate-example"
+      },
+      "name" : "Alcohol Use O - Moderate (3-4 times weekly)",
+      "description" : "Observation example of an alcohol use observation for a moderate drinker consuming alcohol 3-4 times per week (0.5 drinks per day).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
         "reference" : "Observation/alcoholuse-occasional-example"
       },
-      "name" : "Alcohol Use O - Daily",
+      "name" : "Alcohol Use O mapped from Q - Daily",
       "description" : "Observation example of an alcohol use observation for a daily drinker (1 drink per day).",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation"
     },
@@ -690,7 +702,7 @@ For more, see [Background](background.md).
       "reference" : {
         "reference" : "Observation/alcoholuse-never-example"
       },
-      "name" : "Alcohol Use O - Non-Drinker",
+      "name" : "Alcohol Use O mapped from Q - Non-Drinker",
       "description" : "Observation example of an alcohol use observation for a lifetime non-drinker (0 drinks per day).",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation"
     },
@@ -928,9 +940,21 @@ For more, see [Background](background.md).
         "valueString" : "Observation"
       }],
       "reference" : {
+        "reference" : "Observation/bloodglucose-low-example"
+      },
+      "name" : "Blood Glucose O - Low Example",
+      "description" : "Beispiel einer niedrigen Nüchtern-Blutzucker-Messung (62 mg/dL), hinweisend auf Hypoglykämie.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
         "reference" : "Observation/bloodglucose-elevated-example"
       },
-      "name" : "Blood Glucose O - Elevated Example",
+      "name" : "Blood Glucose O mapped from Q - Elevated Example",
       "description" : "Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL), hinweisend auf Diabetes mellitus.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation"
     },
@@ -942,7 +966,7 @@ For more, see [Background](background.md).
       "reference" : {
         "reference" : "Observation/bloodglucose-normal-example"
       },
-      "name" : "Blood Glucose O - Normal Example",
+      "name" : "Blood Glucose O mapped from Q - Normal Example",
       "description" : "Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL).",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation"
     },
@@ -1012,9 +1036,21 @@ For more, see [Background](background.md).
         "valueString" : "Observation"
       }],
       "reference" : {
-        "reference" : "Observation/stepcount-low-example"
+        "reference" : "Observation/stepcount-sedentary-example"
       },
-      "name" : "Step Count O - High Example",
+      "name" : "Step Count O - Sedentary Example",
+      "description" : "Beispiel einer niedrigen Schrittzahl (1,204 Schritte pro Tag), typisch für einen überwiegend sitzenden Tag.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/stepcount-high-example"
+      },
+      "name" : "Step Count O mapped from Q - High Example",
       "description" : "Beispiel einer hohen Schrittzahl (133,519 Schritte pro Tag).",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation"
     },
@@ -1026,7 +1062,7 @@ For more, see [Background](background.md).
       "reference" : {
         "reference" : "Observation/stepcount-normal-example"
       },
-      "name" : "Step Count O - Normal Example",
+      "name" : "Step Count O mapped from Q - Normal Example",
       "description" : "Beispiel einer normalen Schrittzahl (8,432 Schritte pro Tag).",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation"
     },
@@ -1062,7 +1098,7 @@ For more, see [Background](background.md).
       "reference" : {
         "reference" : "Observation/whoqol-bref-score-example"
       },
-      "name" : "WHOQOL-BREF O Score only",
+      "name" : "WHOQOL-BREF O Score only mapped from Q",
       "description" : "Example of a WHOQOL-BREF score observation with a general score and all four domain scores.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-whoqol-bref-score-observation"
     },

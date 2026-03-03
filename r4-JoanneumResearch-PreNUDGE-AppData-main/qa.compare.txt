@@ -1,19 +1,22 @@
 PreNUDGEAppdataR4 : Validation Results
 =========================================
 
-err = 0, warn = 46, info = 17
+err = 0, warn = 54, info = 17
 $--
 Generated $--. FHIR version $-- for hl7.at.fhir.prenudge.appdata.r4#$-- (canonical = https://fhir.hl7.at/prenudge/appdata/r4)
  Build Errors : 0 / 4 / 0
  /home/runner/work/JoanneumResearch-PreNUDGE-AppData-R4/JoanneumResearch-PreNUDGE-AppData-R4/fsh-generated/resources/CodeSystem-whoqol-bref-scale : 0 / 1 / 4
  /home/runner/work/JoanneumResearch-PreNUDGE-AppData-R4/JoanneumResearch-PreNUDGE-AppData-R4/fsh-generated/resources/ConceptMap-AtPrenudgeCodeUnitMap : 0 / 3 / 3
  /home/runner/work/JoanneumResearch-PreNUDGE-AppData-R4/JoanneumResearch-PreNUDGE-AppData-R4/fsh-generated/resources/ImplementationGuide-hl7.at.fhir.prenudge.appdata.r4 : 0 / 0 / 1
+ /home/runner/work/JoanneumResearch-PreNUDGE-AppData-R4/JoanneumResearch-PreNUDGE-AppData-R4/fsh-generated/resources/Observation-alcoholuse-moderate-example : 0 / 3 / 4
  /home/runner/work/JoanneumResearch-PreNUDGE-AppData-R4/JoanneumResearch-PreNUDGE-AppData-R4/fsh-generated/resources/Observation-alcoholuse-never-example : 0 / 3 / 4
  /home/runner/work/JoanneumResearch-PreNUDGE-AppData-R4/JoanneumResearch-PreNUDGE-AppData-R4/fsh-generated/resources/Observation-alcoholuse-occasional-example : 0 / 3 / 4
  /home/runner/work/JoanneumResearch-PreNUDGE-AppData-R4/JoanneumResearch-PreNUDGE-AppData-R4/fsh-generated/resources/Observation-bloodglucose-elevated-example : 0 / 2 / 1
+ /home/runner/work/JoanneumResearch-PreNUDGE-AppData-R4/JoanneumResearch-PreNUDGE-AppData-R4/fsh-generated/resources/Observation-bloodglucose-low-example : 0 / 2 / 1
  /home/runner/work/JoanneumResearch-PreNUDGE-AppData-R4/JoanneumResearch-PreNUDGE-AppData-R4/fsh-generated/resources/Observation-bloodglucose-normal-example : 0 / 2 / 1
- /home/runner/work/JoanneumResearch-PreNUDGE-AppData-R4/JoanneumResearch-PreNUDGE-AppData-R4/fsh-generated/resources/Observation-stepcount-low-example : 0 / 3 / 1
+ /home/runner/work/JoanneumResearch-PreNUDGE-AppData-R4/JoanneumResearch-PreNUDGE-AppData-R4/fsh-generated/resources/Observation-stepcount-high-example : 0 / 3 / 1
  /home/runner/work/JoanneumResearch-PreNUDGE-AppData-R4/JoanneumResearch-PreNUDGE-AppData-R4/fsh-generated/resources/Observation-stepcount-normal-example : 0 / 3 / 1
+ /home/runner/work/JoanneumResearch-PreNUDGE-AppData-R4/JoanneumResearch-PreNUDGE-AppData-R4/fsh-generated/resources/Observation-stepcount-sedentary-example : 0 / 3 / 1
  /home/runner/work/JoanneumResearch-PreNUDGE-AppData-R4/JoanneumResearch-PreNUDGE-AppData-R4/fsh-generated/resources/Observation-whoqol-bref-score-example : 0 / 7 / 1
  /home/runner/work/JoanneumResearch-PreNUDGE-AppData-R4/JoanneumResearch-PreNUDGE-AppData-R4/fsh-generated/resources/Patient-example : 0 / 3 / 5
  /home/runner/work/JoanneumResearch-PreNUDGE-AppData-R4/JoanneumResearch-PreNUDGE-AppData-R4/fsh-generated/resources/Questionnaire-AtPrenudgeQuestionnaireAlcoholUse : 0 / 0 / 2
@@ -58,6 +61,10 @@ INFORMATION: ConceptMap/AtPrenudgeCodeUnitMap: ConceptMap.group[1].source: Sourc
 WARNING: ConceptMap/AtPrenudgeCodeUnitMap: ConceptMap.group[1].target: Target Code System http://unitsofmeasure.org doesn't have all content (content = not-present), so the target codes cannot be checked
 WARNING: ConceptMap/AtPrenudgeCodeUnitMap: ConceptMap: Concept maps published by HL7 SHALL conform to the ShareableConceptMap profile, which says that the element ConceptMap.name should be present, but it is not
 == fsh-generated/resources/ImplementationGuide-hl7.at.fhir.prenudge.appdata.r4.json ==
+== fsh-generated/resources/Observation-alcoholuse-moderate-example.json ==
+WARNING: Observation/alcoholuse-moderate-example: Observation.identifier[0].system: No definition could be found for URL value 'https://www.joanneum.at'
+WARNING: Observation/alcoholuse-moderate-example: Observation.value.ofType(Quantity): UCUM Codes that contain human readable annotations like {drinks} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked
+WARNING: Observation/alcoholuse-moderate-example: Observation: Best Practice Recommendation: In general, all observations should have a performer
 == fsh-generated/resources/Observation-alcoholuse-never-example.json ==
 WARNING: Observation/alcoholuse-never-example: Observation.identifier[0].system: No definition could be found for URL value 'https://www.joanneum.at'
 WARNING: Observation/alcoholuse-never-example: Observation.value.ofType(Quantity): UCUM Codes that contain human readable annotations like {drinks} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked
@@ -69,17 +76,24 @@ WARNING: Observation/alcoholuse-occasional-example: Observation: Best Practice R
 == fsh-generated/resources/Observation-bloodglucose-elevated-example.json ==
 WARNING: Observation/bloodglucose-elevated-example: Observation.identifier[0].system: No definition could be found for URL value 'https://www.joanneum.at'
 WARNING: Observation/bloodglucose-elevated-example: Observation: Best Practice Recommendation: In general, all observations should have a performer
+== fsh-generated/resources/Observation-bloodglucose-low-example.json ==
+WARNING: Observation/bloodglucose-low-example: Observation.identifier[0].system: No definition could be found for URL value 'https://www.joanneum.at'
+WARNING: Observation/bloodglucose-low-example: Observation: Best Practice Recommendation: In general, all observations should have a performer
 == fsh-generated/resources/Observation-bloodglucose-normal-example.json ==
 WARNING: Observation/bloodglucose-normal-example: Observation.identifier[0].system: No definition could be found for URL value 'https://www.joanneum.at'
 WARNING: Observation/bloodglucose-normal-example: Observation: Best Practice Recommendation: In general, all observations should have a performer
-== fsh-generated/resources/Observation-stepcount-low-example.json ==
-WARNING: Observation/stepcount-low-example: Observation.identifier[0].system: No definition could be found for URL value 'https://www.joanneum.at'
-WARNING: Observation/stepcount-low-example: Observation.value.ofType(Quantity): UCUM Codes that contain human readable annotations like {steps} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked
-WARNING: Observation/stepcount-low-example: Observation: Best Practice Recommendation: In general, all observations should have a performer
+== fsh-generated/resources/Observation-stepcount-high-example.json ==
+WARNING: Observation/stepcount-high-example: Observation.identifier[0].system: No definition could be found for URL value 'https://www.joanneum.at'
+WARNING: Observation/stepcount-high-example: Observation.value.ofType(Quantity): UCUM Codes that contain human readable annotations like {steps} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked
+WARNING: Observation/stepcount-high-example: Observation: Best Practice Recommendation: In general, all observations should have a performer
 == fsh-generated/resources/Observation-stepcount-normal-example.json ==
 WARNING: Observation/stepcount-normal-example: Observation.identifier[0].system: No definition could be found for URL value 'https://www.joanneum.at'
 WARNING: Observation/stepcount-normal-example: Observation.value.ofType(Quantity): UCUM Codes that contain human readable annotations like {steps} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked
 WARNING: Observation/stepcount-normal-example: Observation: Best Practice Recommendation: In general, all observations should have a performer
+== fsh-generated/resources/Observation-stepcount-sedentary-example.json ==
+WARNING: Observation/stepcount-sedentary-example: Observation.identifier[0].system: No definition could be found for URL value 'https://www.joanneum.at'
+WARNING: Observation/stepcount-sedentary-example: Observation.value.ofType(Quantity): UCUM Codes that contain human readable annotations like {steps} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked
+WARNING: Observation/stepcount-sedentary-example: Observation: Best Practice Recommendation: In general, all observations should have a performer
 == fsh-generated/resources/Observation-whoqol-bref-score-example.json ==
 WARNING: Observation/whoqol-bref-score-example: Observation.identifier[0].system: No definition could be found for URL value 'https://www.joanneum.at'
 WARNING: Observation/whoqol-bref-score-example: Observation.component[0].value.ofType(Quantity): UCUM Codes that contain human readable annotations like {score} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked

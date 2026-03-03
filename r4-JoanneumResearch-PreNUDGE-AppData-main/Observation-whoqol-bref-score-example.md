@@ -1,14 +1,14 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\WHOQOL-BREF O Score only - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\WHOQOL-BREF O Score only mapped from Q - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **WHOQOL-BREF O Score only**
+* **WHOQOL-BREF O Score only mapped from Q**
 
-## Example Observation: WHOQOL-BREF O Score only
+## Example Observation: WHOQOL-BREF O Score only mapped from Q
 
 Profile: [AT PreNUDGE Observation WHOQOL-BREF Score](StructureDefinition-at-prenudge-whoqol-bref-score-observation.md)
 
-**identifier**: `https://www.joanneum.at`/obs-whoqol-2026-02-28-001
+**identifier**: `https://www.joanneum.at`/qr-whoqol-2026-02-28-001
 
 **status**: Final
 
@@ -45,7 +45,7 @@ Profile: [AT PreNUDGE Observation WHOQOL-BREF Score](StructureDefinition-at-pren
   },
   "identifier" : [{
     "system" : "https://www.joanneum.at",
-    "value" : "obs-whoqol-2026-02-28-001"
+    "value" : "qr-whoqol-2026-02-28-001"
   }],
   "status" : "final",
   "code" : {

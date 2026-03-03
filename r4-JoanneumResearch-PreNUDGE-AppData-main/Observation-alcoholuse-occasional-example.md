@@ -1,14 +1,14 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Alcohol Use O - Daily - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Alcohol Use O mapped from Q - Daily - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Alcohol Use O - Daily**
+* **Alcohol Use O mapped from Q - Daily**
 
-## Example Observation: Alcohol Use O - Daily
+## Example Observation: Alcohol Use O mapped from Q - Daily
 
 Profile: [AT PreNUDGE Observation Alcohol Use](StructureDefinition-at-prenudge-alcoholuse-observation.md)
 
-**identifier**: `https://www.joanneum.at`/obs-alc-2026-02-20-001
+**identifier**: `https://www.joanneum.at`/qr-alc-2026-02-20-001
 
 **status**: Final
 
@@ -35,7 +35,7 @@ Profile: [AT PreNUDGE Observation Alcohol Use](StructureDefinition-at-prenudge-a
   },
   "identifier" : [{
     "system" : "https://www.joanneum.at",
-    "value" : "obs-alc-2026-02-20-001"
+    "value" : "qr-alc-2026-02-20-001"
   }],
   "status" : "final",
   "code" : {

@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Step Count O - Normal Example - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Step Count O mapped from Q - Normal Example - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Step Count O - Normal Example**
+* **Step Count O mapped from Q - Normal Example**
 
-## Example Observation: Step Count O - Normal Example
+## Example Observation: Step Count O mapped from Q - Normal Example
 
 Profile: [AT PreNUDGE Observation Step Count](StructureDefinition-at-prenudge-stepcount-observation.md)
 

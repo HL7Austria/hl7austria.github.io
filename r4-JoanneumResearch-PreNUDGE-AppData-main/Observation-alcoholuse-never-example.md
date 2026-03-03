@@ -1,14 +1,14 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Alcohol Use O - Non-Drinker - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Alcohol Use O mapped from Q - Non-Drinker - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Alcohol Use O - Non-Drinker**
+* **Alcohol Use O mapped from Q - Non-Drinker**
 
-## Example Observation: Alcohol Use O - Non-Drinker
+## Example Observation: Alcohol Use O mapped from Q - Non-Drinker
 
 Profile: [AT PreNUDGE Observation Alcohol Use](StructureDefinition-at-prenudge-alcoholuse-observation.md)
 
-**identifier**: `https://www.joanneum.at`/obs-alc-2026-02-27-001
+**identifier**: `https://www.joanneum.at`/qr-alc-2026-02-27-001
 
 **status**: Final
 
@@ -42,7 +42,7 @@ Ich trinke zwar nicht, bin aber als Kind in ein Fass hausgemachten Schnaps gefal
   },
   "identifier" : [{
     "system" : "https://www.joanneum.at",
-    "value" : "obs-alc-2026-02-27-001"
+    "value" : "qr-alc-2026-02-27-001"
   }],
   "status" : "final",
   "code" : {
