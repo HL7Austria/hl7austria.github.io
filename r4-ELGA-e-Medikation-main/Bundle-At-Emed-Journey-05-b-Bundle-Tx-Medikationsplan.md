@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel Journey 05-b: Transaction Bundle - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel Journey 05-b: Transaction Bundle zur Änderung von bestehenden Medikationsplaneinträgen (absetzen und ändern). - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Beispiel Journey 05-b: Transaction Bundle**
+* **Beispiel Journey 05-b: Transaction Bundle zur Änderung von bestehenden Medikationsplaneinträgen (absetzen und ändern).**
 
-## Example Bundle: Beispiel Journey 05-b: Transaction Bundle
+## Example Bundle: Beispiel Journey 05-b: Transaction Bundle zur Änderung von bestehenden Medikationsplaneinträgen (absetzen und ändern).
 
 
 
@@ -16,6 +16,10 @@
   "id" : "At-Emed-Journey-05-b-Bundle-Tx-Medikationsplan",
   "meta" : {
     "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-tx-medikationsplan"]
+  },
+  "identifier" : {
+    "system" : "http://system-to-be-defined.com",
+    "value" : "63fef90a-be11-4ddf-aece-d77da15c4f20"
   },
   "type" : "transaction",
   "timestamp" : "2026-03-10T13:20:00+00:00",
@@ -29,7 +33,7 @@
       },
       "text" : {
         "status" : "generated",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"List_At-Emed-Journey-05-b-List-Aenderung\"> </a><p class=\"res-header-id\"><b>Generated Narrative: List At-Emed-Journey-05-b-List-Aenderung</b></p><a name=\"At-Emed-Journey-05-b-List-Aenderung\"> </a><a name=\"hcAt-Emed-Journey-05-b-List-Aenderung\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-emed-list-medikationsplan.html\">ELGA e-Med Medikationsplan</a></p></div><table class=\"clstu\"><tr><td>Date: 2026-03-10 13:20:00+0000 </td><td>Mode: Working List </td><td>Status: Current </td><td>Code: Medikationsplan </td></tr><tr><td>Subject: <a href=\"Patient-At-Emed-Example-Patient-01.html\">Max Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</a>Source: Order: Sorted by User </td></tr></table><table class=\"grid\"><tr style=\"backgound-color: #eeeeee\"><td><b>Items</b></td><td>Date</td><td>Flag</td></tr><tr><td><a href=\"MedicationRequest-At-Emed-Journey-05-b-Mr-Planeintrag-01.html\">MedicationRequest: extension = (?) --&gt; 2026-03-17,1-0-0-0 Stück; identifier = 4712_202602280800000; status = active; intent = order; category = Medikationsplaneintrag; reported[x] = false; medication[x] = -&gt;Medication EBETREXAT TBL 10MG; authoredOn = 2026-03-10 13:20:00+0000</a></td><td>2026-03-10 13:20:00+0000</td><td>Prescribed</td></tr></table></div>"
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"List_At-Emed-Journey-05-b-List-Aenderung\"> </a><p class=\"res-header-id\"><b>Generated Narrative: List At-Emed-Journey-05-b-List-Aenderung</b></p><a name=\"At-Emed-Journey-05-b-List-Aenderung\"> </a><a name=\"hcAt-Emed-Journey-05-b-List-Aenderung\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-emed-list-medikationsplan.html\">ELGA e-Med Medikationsplan</a></p></div><table class=\"clstu\"><tr><td>Date: 2026-03-10 13:20:00+0000 </td><td>Mode: Working List </td><td>Status: Current </td><td>Code: Medikationsplan </td></tr><tr><td>Subject: <a href=\"Patient-At-Emed-Example-Patient-01.html\">Max Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</a>Source: Order: Sorted by User </td></tr></table><table class=\"grid\"><tr style=\"backgound-color: #eeeeee\"><td><b>Items</b></td><td>Date</td><td>Flag</td></tr><tr><td><a href=\"MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-02.html\">MedicationRequest: extension = 2026-02-27 --&gt; 2026-03-16,1 täglich auftragen; identifier = 4713_202602280800000; status = active; intent = order; category = Medikationsplaneintrag; reported[x] = false; medication[x] = -&gt;Medication: form = Salbe; authoredOn = 2026-02-27 10:20:00+0000</a></td><td>2026-03-10 13:20:00+0000</td><td>Ceased</td></tr><tr><td><a href=\"MedicationRequest-At-Emed-Journey-05-b-Mr-Planeintrag-01.html\">MedicationRequest: extension = (?) --&gt; 2026-03-17,1-0-0-0 Stück; identifier = 4712_202602280800000; status = active; intent = order; category = Medikationsplaneintrag; reported[x] = false; medication[x] = -&gt;Medication EBETREXAT TBL 10MG; authoredOn = 2026-03-10 13:20:00+0000</a></td><td>2026-03-10 13:20:00+0000</td><td>Prescribed</td></tr></table></div>"
       },
       "status" : "current",
       "mode" : "working",
@@ -57,6 +61,19 @@
         "flag" : {
           "coding" : [{
             "system" : "urn:oid:1.2.36.1.2001.1001.101.104.16592",
+            "code" : "05",
+            "display" : "Ceased"
+          }]
+        },
+        "date" : "2026-03-10T13:20:00+00:00",
+        "item" : {
+          "reference" : "MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-02"
+        }
+      },
+      {
+        "flag" : {
+          "coding" : [{
+            "system" : "urn:oid:1.2.36.1.2001.1001.101.104.16592",
             "code" : "04",
             "display" : "Prescribed"
           }]
@@ -69,7 +86,7 @@
     },
     "request" : {
       "method" : "PUT",
-      "url" : "List/At-Emed-Journey-02-List-Medikationsplan"
+      "url" : "List/At-Emed-Journey-05-b-List-Aenderung"
     }
   },
   {
@@ -150,7 +167,7 @@
     },
     "request" : {
       "method" : "PUT",
-      "url" : "MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-01"
+      "url" : "MedicationRequest/At-Emed-Journey-05-b-Mr-Planeintrag-01"
     }
   },
   {
@@ -163,7 +180,7 @@
       },
       "text" : {
         "status" : "extensions",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_At-Emed-Journey-02-Mr-Planeintrag-02\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationRequest At-Emed-Journey-02-Mr-Planeintrag-02</b></p><a name=\"At-Emed-Journey-02-Mr-Planeintrag-02\"> </a><a name=\"hcAt-Emed-Journey-02-Mr-Planeintrag-02\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-emed-mr-planeintrag.html\">ELGA e-Med Planeintrag</a></p></div><p><b>Extension Definition for MedicationRequest.effectiveDosePeriod for Version 5.0</b>: 2026-02-27 --&gt; 2026-03-16</p><p><b>Extension Definition for MedicationRequest.renderedDosageInstruction for Version 5.0</b>: </p><div><p>1 täglich auftragen</p>\n</div><p><b>identifier</b>: 4713_202602280800000</p><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS 1}\">Medikationsplaneintrag</span></p><p><b>reported</b>: <a href=\"Practitioner-At-Emed-Example-Practitioner-02.html\">Practitioner Hermine Fremdmedikation </a></p><p><b>medication</b>: <a href=\"#hcAt-Emed-Journey-02-Mr-Planeintrag-02/contained-medication-journey-02-magistral\">Medication: form = Salbe</a></p><p><b>subject</b>: <a href=\"Patient-At-Emed-Example-Patient-01.html\">Max Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</a></p><p><b>authoredOn</b>: 2026-02-27 10:20:00+0000</p><p><b>requester</b>: <a href=\"Practitioner-At-Emed-Example-Practitioner-01.html\">Practitioner Melanie Musterärztin </a></p><h3>DosageInstructions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>PatientInstruction</b></td><td><b>Timing</b></td><td><b>Route</b></td></tr><tr><td style=\"display: none\">*</td><td>Abends sehr dünn auf die betroffene Stelle auftragen.</td><td>Once per 1 day</td><td><span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem-medikationartanwendung.html 100000073566}\">Anwendung auf der Haut</span></td></tr></table><hr/><blockquote><p class=\"res-header-id\"><b>Generated Narrative: Medication #contained-medication-journey-02-magistral</b></p><a name=\"At-Emed-Journey-02-Mr-Planeintrag-02/contained-medication-journey-02-magistral\"> </a><a name=\"hcAt-Emed-Journey-02-Mr-Planeintrag-02/contained-medication-journey-02-magistral\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-emed-medication.html\">ELGA e-Med Medikation</a></p></div><p><b>form</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform 100000073713}\">Salbe</span></p><blockquote><p><b>ingredient</b></p><p><b>item</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido A01AC03}\">Hydrocortison</span></p><p><b>strength</b>: 1 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span>/100 g<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg = 'g')</span></p></blockquote><blockquote><p><b>ingredient</b></p><p><b>item</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido A01AB18}\">Clotrimazol</span></p><p><b>strength</b>: 1 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span>/100 g<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg = 'g')</span></p></blockquote><blockquote><p><b>ingredient</b></p><p><b>item</b>: <span title=\"Codes:\">Salbengrundlage</span></p><p><b>isActive</b>: false</p><p><b>strength</b>: 98 g/100 g</p></blockquote></blockquote></div>"
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_At-Emed-Journey-02-Mr-Planeintrag-02\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationRequest At-Emed-Journey-02-Mr-Planeintrag-02</b></p><a name=\"At-Emed-Journey-02-Mr-Planeintrag-02\"> </a><a name=\"hcAt-Emed-Journey-02-Mr-Planeintrag-02\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-emed-mr-planeintrag.html\">ELGA e-Med Planeintrag</a></p></div><p><b>Extension Definition for MedicationRequest.effectiveDosePeriod for Version 5.0</b>: 2026-02-27 --&gt; 2026-03-16</p><p><b>Extension Definition for MedicationRequest.renderedDosageInstruction for Version 5.0</b>: </p><div><p>1 täglich auftragen</p>\n</div><p><b>identifier</b>: 4713_202602280800000</p><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS 1}\">Medikationsplaneintrag</span></p><p><b>reported</b>: false</p><p><b>medication</b>: <a href=\"#hcAt-Emed-Journey-02-Mr-Planeintrag-02/contained-medication-journey-02-magistral\">Medication: form = Salbe</a></p><p><b>subject</b>: <a href=\"Patient-At-Emed-Example-Patient-01.html\">Max Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</a></p><p><b>authoredOn</b>: 2026-02-27 10:20:00+0000</p><p><b>requester</b>: <a href=\"Practitioner-At-Emed-Example-Practitioner-01.html\">Practitioner Melanie Musterärztin </a></p><h3>DosageInstructions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>PatientInstruction</b></td><td><b>Timing</b></td><td><b>Route</b></td></tr><tr><td style=\"display: none\">*</td><td>Abends sehr dünn auf die betroffene Stelle auftragen.</td><td>Once per 1 day</td><td><span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem-medikationartanwendung.html 100000073566}\">Anwendung auf der Haut</span></td></tr></table><hr/><blockquote><p class=\"res-header-id\"><b>Generated Narrative: Medication #contained-medication-journey-02-magistral</b></p><a name=\"At-Emed-Journey-02-Mr-Planeintrag-02/contained-medication-journey-02-magistral\"> </a><a name=\"hcAt-Emed-Journey-02-Mr-Planeintrag-02/contained-medication-journey-02-magistral\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-emed-medication.html\">ELGA e-Med Medikation</a></p></div><p><b>form</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform 100000073713}\">Salbe</span></p><blockquote><p><b>ingredient</b></p><p><b>item</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido A01AC03}\">Hydrocortison</span></p><p><b>strength</b>: 1 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span>/100 g<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg = 'g')</span></p></blockquote><blockquote><p><b>ingredient</b></p><p><b>item</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido A01AB18}\">Clotrimazol</span></p><p><b>strength</b>: 1 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span>/100 g<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg = 'g')</span></p></blockquote><blockquote><p><b>ingredient</b></p><p><b>item</b>: <span title=\"Codes:\">Salbengrundlage</span></p><p><b>isActive</b>: false</p><p><b>strength</b>: 98 g/100 g</p></blockquote></blockquote></div>"
       },
       "contained" : [{
         "resourceType" : "Medication",
@@ -263,9 +280,7 @@
           "code" : "1"
         }]
       }],
-      "reportedReference" : {
-        "reference" : "Practitioner/At-Emed-Example-Practitioner-02"
-      },
+      "reportedBoolean" : false,
       "medicationReference" : {
         "reference" : "#contained-medication-journey-02-magistral"
       },

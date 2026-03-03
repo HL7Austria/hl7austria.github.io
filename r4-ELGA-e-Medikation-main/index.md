@@ -33,7 +33,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) ENTWURF",
   "status" : "draft",
-  "date" : "2026-03-03T08:59:33+00:00",
+  "date" : "2026-03-03T14:03:22+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -842,7 +842,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "Bundle/At-Emed-Journey-05-a-Bundle-Medikationsplan"
       },
       "name" : "Beispiel Journey 05-a: Collection Bundle mit geänderter Reihenfolge der Planeinträge.",
-      "description" : "Beispiel eines Collection Bundles, mit geänderter Reihenfolge der Medikationsplaneinträge (referenziert List-Ressource mit Einträgen).",
+      "description" : "Beispiel eines Collection Bundles, mit geänderter Reihenfolge der Medikationsplaneinträge.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-medikationsplan"
     },
     {
@@ -866,7 +866,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "Bundle/At-Emed-Journey-05-a-Bundle-Medikationsplan-Tx"
       },
       "name" : "Beispiel Journey 05-a: Transaction Bundle zur Änderung der Reihenfolge der Medikationsplaneinträge.",
-      "description" : "Beispiel eines Transaction Bundles, zur Änderung der Reihenfolge der Medikationsplaneinträge (referenziert List-Ressource mit MedicationRequests.",
+      "description" : "Beispiel eines Transaction Bundles, zur Änderung der Reihenfolge der Medikationsplaneinträge.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-tx-medikationsplan"
     },
     {
@@ -877,21 +877,9 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "reference" : {
         "reference" : "Bundle/At-Emed-Journey-05-b-Bundle-Medikationsplan"
       },
-      "name" : "Beispiel Journey 05-b: Collection Bundle",
-      "description" : "Beispiel eines Collection Bundles mit geändertem und abgesetztem Planeintrag.",
+      "name" : "Beispiel Journey 05-b: Collection Bundles mit geändertem und abgesetztem Medikationsplaneintrag",
+      "description" : "Beispiel eines Collection Bundles mit geändertem und abgesetztem Medikationsplaneintrag.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-medikationsplan"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/At-Emed-Journey-05-b-Mr-Planeintrag-01"
-      },
-      "name" : "Beispiel Journey 05-b: Medikationsplaneintrag 1",
-      "description" : "Geänderter Medikationsplaneintrag mit dem Medikament EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest).",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"
     },
     {
       "extension" : [{
@@ -901,8 +889,8 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "reference" : {
         "reference" : "List/At-Emed-Journey-05-b-List-Aenderung"
       },
-      "name" : "Beispiel Journey 05-b: Reihenfolge der Planeinträge ändern",
-      "description" : "Beispiel: Medikation absetzen und ändern durch einen anderen GDA.",
+      "name" : "Beispiel Journey 05-b: Mediationsplan ändern (Einträge absetzen und ändern).",
+      "description" : "Beispiel: Mediationsplan ändern (Einträge absetzen und ändern).",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"
     },
     {
@@ -913,9 +901,21 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "reference" : {
         "reference" : "Bundle/At-Emed-Journey-05-b-Bundle-Tx-Medikationsplan"
       },
-      "name" : "Beispiel Journey 05-b: Transaction Bundle",
-      "description" : "Beispiel eines Transaction Bundles mit geändertem und abgesetztem Planeintrag.",
+      "name" : "Beispiel Journey 05-b: Transaction Bundle zur Änderung von bestehenden Medikationsplaneinträgen (absetzen und ändern).",
+      "description" : "Beispiel eines Transaction Bundles, zur Änderung von bestehenden Medikationsplaneinträgen (absetzen und ändern).",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-tx-medikationsplan"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/At-Emed-Journey-05-b-Mr-Planeintrag-01"
+      },
+      "name" : "Beispiel Journey 05-b: Änderung Dosierung des Medikationsplaneintrags",
+      "description" : "Änderung der Dosierung eines Medikationsplaneintrags (EBETREXAT).",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"
     },
     {
       "extension" : [{

@@ -23,24 +23,36 @@ Journey-01 ist für die e-Medikation vorausgesetzt und wird nur zur Vollständig
 * Amadeus Apotheke: [Organization](Organization-At-Emed-Example-Organization-Apo-01.md)
 * Fachanwendung e-Medikation: [Device](Device-At-Emed-Example-Device-01.md)
  
-* Leeren Medikationsplan für einen Patienten erzeugen (durch die e-Medikation Fachanwendung): [Transaction Bundle](Bundle-At-Emed-Journey-01-Bundle-Tx-Medikationsplan.md)
+* Leeren Medikationsplan für einen Patienten erzeugen (durch die e-Medikation Fachanwendung): [Transaction Bundle](Bundle-At-Emed-Journey-01-Bundle-Tx-Medikationsplan.md): 
+* Hinweise: Wird durch die Fachanwendung erstellt 
+* Datum: Zeitpunkt, zu dem das erste Mal der Medikationsplan abgefragt wird
+* Verantwortlich: Fachanwendung.
+* EmptyReason: "notstarted"
+ 
+ 
  
 
 #### Journey-02:
 
-Am 27.2.2026 möchte Dr. Musterärztin ihrem Patienten Max Mustermann mehrere Medikamente verschreiben verschreiben. Daher ruft sie seinen Medikationsplan ab, um eine Übersicht über seine gesamte, aktuell von ihm eingenommene Medikation zu erhalten. Da für Herrn Mustermann noch kein Medikationsplan erstellt wurde, ist dieser leer.
+Am 27.2.2026 möchte Dr. Musterärztin ihrem Patienten Max Mustermann mehrere Medikamente verschreiben. Daher ruft sie seinen Medikationsplan ab, um eine Übersicht über seine gesamte, aktuell von ihm eingenommene Medikation zu erhalten. Da für Herrn Mustermann noch kein Medikationsplan erstellt wurde, ist dieser leer.
 
-* Medikationsplan abrufen ("not-started"): 
+* Medikationsplan abrufen: 
 * Beispiel: [Collection Bundle](Bundle-At-Emed-Journey-01-Bundle-Medikationsplan.md)
  
 
 Dr. Musterärztin ergänzt das Medikament Ebetrexat (10 mg, Tabletten) und erklärt dem Patienten, dass er morgens und abends je eine Tablette einnehmen soll und worauf er bei der Einnahme zu achten hat. Sie dokumentiert dies in seinem Medikationsplan. 
- Weiters verschreibt sie ihrem Patienten eine magistrale Zubereitung einer Cortison-Salbe, die er abends auftragen soll.
+ Weiters verschreibt sie ihrem Patienten eine magistrale Zubereitung einer Cortison-Salbe, die er eine Woche lang abends auftragen soll.
  Sie speichert den neuen Medikationsplan und erstellt im nächsten Schritt geplante Abgaben (siehe Journey-03).
 
 * Medikationsplaneinträge hinzufügen: 
 * Beispiel [Transaction Bundle](Bundle-At-Emed-Journey-02-Bundle-Tx-Medikationsplan.md)
  
+
+<!– * [Visualisierungsbeispiel](at-emed-journey-01-searchset-medikationsplan.pdf)
+
+* [Visualisierungsbeispiel](at-emed-journey-02-searchset-medikationsplan-2-eintraege.pdf)
+* [Visualisierungsbeispiel](at-emed-journey-05-a-searchset-medikationsplan-reihenfolge-geaendert.pdf)
+* [Visualisierungsbeispiel](assets/at-emed-journey-05-b-searchset-medikationsplan-bearbeitet.pdf) –>
 
 #### Journey-03:
 
@@ -72,7 +84,7 @@ Ein paar Tage später, am 5.3.2026, ist sich Herr Mustermann nicht mehr sicher, 
 * Beispiel: [Collection Bundle](Bundle-At-Emed-Journey-02-Bundle-Medikationsplan.md)
  
 
-Weil er es für sinnvoll hält, ändert er die Reihenfolge der Planeinträge.
+Weil er es für sinnvoll hält, ändert er die Reihenfolge der Planeinträge. Die Medikationsplaneinträge ändern sich inhaltlich dadurch nicht.
 
 * Medikationsplan mit geänderter Reihenfolge anzeigen: 
 * Beispiel: [Collection Bundle](Bundle-At-Emed-Journey-05-a-Bundle-Medikationsplan.md)
@@ -80,8 +92,20 @@ Weil er es für sinnvoll hält, ändert er die Reihenfolge der Planeinträge.
 
 #### Journey-05-b:
 
-Der Patient erscheint am 10.3.2026 zur Kontrolle bei Dr. Musterärztin. 
+Der Patient erscheint am 10.3.2026 zur Kontrolle bei Dr. Musterärztin, die den aktuellen Medikationsplan abruft. 
  Das Medikament EBETREXAT soll der Patient noch bis zum 17.3. einnehmen, aber in geringerer Dosis (nur noch 1 Stück morgens). Die Cortisonsalbe ist nicht mehr nötig, daher soll der Patient diese absetzen. Frau Dr. Musterärztin nimmt die entsprechenden Änderungen vor und speichert den neuen Medikationsplan.
+
+* Medikationsplaneinträge ändern: 
+* Beispiel: [Transaction Bundle](Bundle-At-Emed-Journey-05-b-Bundle-Tx-Medikationsplan.md)
+ 
+* Medikationsplan (Variante mit abgelaufenen Einträgen anzeigen): 
+* Beispiel: [Collection Bundle](Bundle-At-Emed-Journey-05-b-Bundle-Medikationsplan.md)
+ 
+*  
+* Medikationsplan (Variante nur aktuelle Einträge): 
+* Beispiel: Todo
+ 
+ 
 
 ### Dosierungsbeispiele
 

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-tx-medikationsplan | *Version*:0.1.1 | |
-| Draft as of 2026-03-03 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedBundleMedikationsplanTx |
+| Draft as of 2026-03-03 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedBundleTxMedikationsplan |
 
  
 Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan bestehend aus: 
@@ -41,10 +41,10 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-bundle-tx-me
   "id" : "at-emed-bundle-tx-medikationsplan",
   "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-tx-medikationsplan",
   "version" : "0.1.1",
-  "name" : "AtEmedBundleMedikationsplanTx",
+  "name" : "AtEmedBundleTxMedikationsplan",
   "title" : "ELGA e-Med Medikationsplan Transaction Bundle",
   "status" : "draft",
-  "date" : "2026-03-03T08:59:33+00:00",
+  "date" : "2026-03-03T14:03:22+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel Journey 05-b: Medikationsplaneintrag 1 - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel Journey 05-b: Änderung Dosierung des Medikationsplaneintrags - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Beispiel Journey 05-b: Medikationsplaneintrag 1**
+* **Beispiel Journey 05-b: Änderung Dosierung des Medikationsplaneintrags**
 
-## Example MedicationRequest: Beispiel Journey 05-b: Medikationsplaneintrag 1
+## Example MedicationRequest: Beispiel Journey 05-b: Änderung Dosierung des Medikationsplaneintrags
 
 
 

@@ -115,9 +115,7 @@
       "code" : "1"
     }]
   }],
-  "reportedReference" : {
-    "reference" : "Practitioner/At-Emed-Example-Practitioner-02"
-  },
+  "reportedBoolean" : false,
   "medicationReference" : {
     "reference" : "#contained-medication-journey-02-magistral"
   },
