@@ -33,7 +33,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) ENTWURF",
   "status" : "draft",
-  "date" : "2026-03-03T14:03:22+00:00",
+  "date" : "2026-03-05T12:55:37+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -656,6 +656,18 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/At-Emed-Example-Bundle-Medikationsplan-Dosierungsvarianten"
+      },
+      "name" : "Beispiel Collection Bundle: Medikationsplan mit Dosierungsvarianten",
+      "description" : "Beispiel eines Collection Bundles:  Medikationsplan mit Dosierungsvarianten.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-medikationsplan"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationDispense"
       }],
       "reference" : {
@@ -920,6 +932,18 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "List"
+      }],
+      "reference" : {
+        "reference" : "List/At-Emed-Example-List-Medikationsplan-Dosierungsvarianten"
+      },
+      "name" : "Beispiel Medikationsplan mit Dosierungsvarianten",
+      "description" : "Beispiel Medikationsplan (List) mit Dosierungsvarianten: Freitext Dosierung, Schema mit Tageszeiten-Bezug (1-0-1-0), Schema mit Uhrzeiten-Bezug.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationRequest"
       }],
       "reference" : {
@@ -939,6 +963,18 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       "name" : "Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema",
       "description" : "Medikationsplaneintrag mit Dosierung im Tageszeitenschema (morgens, mittags, abends, nachts): 1-0-1-0.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/At-Emed-Example-Mr-Dosierung-Wochentag"
+      },
+      "name" : "Beispiel Medikationsplaneintrag mit Schema mit Wochentags-Bezug",
+      "description" : "Medikationsplaneintrag mit Schema mit Wochentags-Bezug (jeden Dienstag und jeden Donnerstag).",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"
     },
     {
@@ -964,6 +1000,18 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "name" : "Beispiel Patient 01",
       "description" : "Beispiel eines Patienten.",
       "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/At-Emed-Example-Bundle-Tx-Medikationsplan-Dosierungsvarianten"
+      },
+      "name" : "Beispiel Transaction Bundle: Medikationsplan mit Dosierungsvarianten",
+      "description" : "Beispiel eines Transaction Bundles:  Medikationsplan mit Dosierungsvarianten.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-tx-medikationsplan"
     },
     {
       "extension" : [{
@@ -1205,7 +1253,25 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         }],
         "nameUrl" : "requirements.html",
         "title" : "Die \"e-Medikation\"",
-        "generation" : "markdown"
+        "generation" : "markdown",
+        "page" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "dosierungen.html"
+          }],
+          "nameUrl" : "dosierungen.html",
+          "title" : "Dosierungen",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "patient_journey.html"
+          }],
+          "nameUrl" : "patient_journey.html",
+          "title" : "Patient Journey",
+          "generation" : "markdown"
+        }]
       },
       {
         "extension" : [{

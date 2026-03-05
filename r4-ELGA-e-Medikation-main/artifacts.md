@@ -62,6 +62,7 @@ These are example instances that show what data produced and consumed by systems
 
 | | |
 | :--- | :--- |
+| [Beispiel Collection Bundle: Medikationsplan mit Dosierungsvarianten](Bundle-At-Emed-Example-Bundle-Medikationsplan-Dosierungsvarianten.md) | Beispiel eines Collection Bundles: Medikationsplan mit Dosierungsvarianten. |
 | [Beispiel Durchgeführte Abgabe 1](MedicationDispense-At-Emed-Example-Durchgefuehrte-Abgabe-01.md) | Beispiel Durchgeführte Abgabe 1 |
 | [Beispiel Example Medikationsplaneintrag](MedicationRequest-At-Emed-Example-Mr-Planeintrag.md) | Bildet einen Medikationsplaneintrag mit dem Medikament EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest). |
 | [Beispiel Example: Substance Clotrimazol](Substance-At-Emed-Example-Substance-Clotrimazol.md) | Beispiel einer Substance Clotrimazol. |
@@ -84,10 +85,13 @@ These are example instances that show what data produced and consumed by systems
 | [Beispiel Journey 05-b: Mediationsplan ändern (Einträge absetzen und ändern).](List-At-Emed-Journey-05-b-List-Aenderung.md) | Beispiel: Mediationsplan ändern (Einträge absetzen und ändern). |
 | [Beispiel Journey 05-b: Transaction Bundle zur Änderung von bestehenden Medikationsplaneinträgen (absetzen und ändern).](Bundle-At-Emed-Journey-05-b-Bundle-Tx-Medikationsplan.md) | Beispiel eines Transaction Bundles, zur Änderung von bestehenden Medikationsplaneinträgen (absetzen und ändern). |
 | [Beispiel Journey 05-b: Änderung Dosierung des Medikationsplaneintrags](MedicationRequest-At-Emed-Journey-05-b-Mr-Planeintrag-01.md) | Änderung der Dosierung eines Medikationsplaneintrags (EBETREXAT). |
+| [Beispiel Medikationsplan mit Dosierungsvarianten](List-At-Emed-Example-List-Medikationsplan-Dosierungsvarianten.md) | Beispiel Medikationsplan (List) mit Dosierungsvarianten: Freitext Dosierung, Schema mit Tageszeiten-Bezug (1-0-1-0), Schema mit Uhrzeiten-Bezug. |
 | [Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema](MedicationRequest-At-Emed-Example-Mr-Dosierung-1010.md) | Medikationsplaneintrag mit Dosierung im Tageszeitenschema (morgens, mittags, abends, nachts): 1-0-1-0. |
 | [Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema](MedicationRequest-At-Emed-Example-Mr-Dosierung-Zeit-1tg.md) | Medikationsplaneintrag mit Dosierung im Tageszeitenschema (morgens, mittags, abends, nachts): 1-0-1-0. |
+| [Beispiel Medikationsplaneintrag mit Schema mit Wochentags-Bezug](MedicationRequest-At-Emed-Example-Mr-Dosierung-Wochentag.md) | Medikationsplaneintrag mit Schema mit Wochentags-Bezug (jeden Dienstag und jeden Donnerstag). |
 | [Beispiel Organisation Apotheke 01](Organization-At-Emed-Example-Organization-Apo-01.md) | Beispiel einer Apotheke als Organisation. |
 | [Beispiel Patient 01](Patient-At-Emed-Example-Patient-01.md) | Beispiel eines Patienten. |
+| [Beispiel Transaction Bundle: Medikationsplan mit Dosierungsvarianten](Bundle-At-Emed-Example-Bundle-Tx-Medikationsplan-Dosierungsvarianten.md) | Beispiel eines Transaction Bundles: Medikationsplan mit Dosierungsvarianten. |
 | [Beispiel Ärztin 01](Practitioner-At-Emed-Example-Practitioner-01.md) | Beispiel einer behandelnden Ärztin. |
 | [Beispiel Ärztin 02](Practitioner-At-Emed-Example-Practitioner-02.md) | Beispiel einer ursprünglich eine Medikation verordnenden Ärztin (Fremdmedikation). |
 | [Medikationsplaneintrag mit Freitext-Dosierung](MedicationRequest-At-Emed-Example-Mr-Dosierung-Freitext.md) | Medikationsplaneintrag mit Dosierung im Tageszeitenschema (morgens, mittags, abends, nachts): 1-0-1-0. |
