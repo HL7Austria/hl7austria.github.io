@@ -44,7 +44,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-bundle-tx-me
   "name" : "AtEmedBundleTxMedikationsplan",
   "title" : "ELGA e-Med Medikationsplan Transaction Bundle",
   "status" : "draft",
-  "date" : "2026-03-05T12:55:37+00:00",
+  "date" : "2026-03-05T13:31:59+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

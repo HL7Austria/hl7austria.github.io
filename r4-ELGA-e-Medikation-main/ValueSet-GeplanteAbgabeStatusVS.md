@@ -53,7 +53,7 @@ No Expansion for this valueset (Unknown Code System)
   "title" : "ELGA e-Med Geplante Abgabe Status ValueSet",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-05T12:55:37+00:00",
+  "date" : "2026-03-05T13:31:59+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

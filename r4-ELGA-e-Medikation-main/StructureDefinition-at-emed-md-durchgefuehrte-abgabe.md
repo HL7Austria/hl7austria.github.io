@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
   "name" : "AtEmedMDDurchgefuehrteAbgabe",
   "title" : "ELGA e-Med Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-03-05T12:55:37+00:00",
+  "date" : "2026-03-05T13:31:59+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
