@@ -51,7 +51,7 @@ ValueSet für zulässige Ausprägungen des elements emptyReason Status eines Med
   "title" : "ELGA e-Med Medikationsplan Empty Reason Value Set",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-06T12:22:28+00:00",
+  "date" : "2026-03-06T14:18:10+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

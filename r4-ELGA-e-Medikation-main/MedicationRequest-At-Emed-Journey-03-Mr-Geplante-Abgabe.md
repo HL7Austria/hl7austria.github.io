@@ -32,18 +32,11 @@
     }
   }],
   "extension" : [{
-    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod",
-    "valuePeriod" : {
-      "start" : "2026-02-27",
-      "end" : "2026-03-06"
-    }
-  },
-  {
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
-    "valueMarkdown" : "1 Kapsel täglich morgens"
+    "valueMarkdown" : "1-0-1-0 Stück"
   }],
   "identifier" : [{
-    "value" : "WYE82A2G8EEW-4711"
+    "value" : "WYE82A2G8EEW_4712_202602280800000"
   }],
   "status" : "active",
   "intent" : "order",
@@ -60,7 +53,7 @@
   "subject" : {
     "reference" : "Patient/At-Emed-Example-Patient-01"
   },
-  "authoredOn" : "2026-01-29T08:00:00+00:00",
+  "authoredOn" : "2026-02-27T10:20:00+00:00",
   "requester" : {
     "reference" : "Practitioner/At-Emed-Example-Practitioner-01"
   },
@@ -69,49 +62,41 @@
     "display" : "Planeintrag"
   }],
   "groupIdentifier" : {
-    "value" : "WYE82A2G8EE1"
+    "value" : "WYE82A2G8EEW"
   },
   "note" : [{
     "text" : "Freitext Informationen zur geplanten Abgabe."
   }],
   "dosageInstruction" : [{
-    "text" : "1 Kapsel täglich morgens",
-    "patientInstruction" : "Nehmen Sie die Kapsel jeden Morgen mit ausreichend Flüssigkeit ein.",
+    "patientInstruction" : "Nehmen Sie die Kapsel nach dem Essen mit ausreichend Flüssigkeit ein.",
     "timing" : {
       "repeat" : {
-        "frequency" : 1,
+        "frequency" : 2,
         "period" : 1,
-        "periodUnit" : "d"
+        "periodUnit" : "d",
+        "when" : ["ACM", "ACV"]
       }
     },
     "route" : {
       "coding" : [{
-        "system" : "https://termgit.elga.gv.at/CodeSystem-medikationartanwendung.html",
+        "system" : "https://termgit.elga.gv.at/CodeSystem/medikationartanwendung",
         "code" : "100000073619",
         "display" : "zum Einnehmen"
       }]
     },
     "doseAndRate" : [{
       "doseQuantity" : {
-        "value" : 5,
-        "unit" : "mg",
-        "system" : "http://unitsofmeasure.org",
-        "code" : "mg"
+        "unit" : "Stück",
+        "system" : "https://termgit.elga.gv.at/ValueSet-elga-medikationmengenart",
+        "code" : "{Stueck}"
       }
     }]
   }],
   "dispenseRequest" : {
-    "numberOfRepeatsAllowed" : 1,
-    "quantity" : {
-      "value" : 30,
-      "unit" : "Kapseln"
+    "validityPeriod" : {
+      "end" : "2026-03-13"
     },
-    "expectedSupplyDuration" : {
-      "value" : 30,
-      "unit" : "Tage",
-      "system" : "http://unitsofmeasure.org",
-      "code" : "d"
-    }
+    "numberOfRepeatsAllowed" : 1
   }
 }
 

@@ -58,7 +58,11 @@
   "requester" : {
     "reference" : "Practitioner/At-Emed-Example-Practitioner-01"
   },
+  "note" : [{
+    "text" : "Freitext Informationen zum Medikationsplaneintrag."
+  }],
   "dosageInstruction" : [{
+    "patientInstruction" : "Nehmen Sie die Kapsel nach dem Essen mit ausreichend Flüssigkeit ein.",
     "timing" : {
       "repeat" : {
         "frequency" : 2,
@@ -66,6 +70,13 @@
         "periodUnit" : "d",
         "when" : ["ACM", "ACV"]
       }
+    },
+    "route" : {
+      "coding" : [{
+        "system" : "https://termgit.elga.gv.at/CodeSystem/medikationartanwendung",
+        "code" : "100000073619",
+        "display" : "zum Einnehmen"
+      }]
     },
     "doseAndRate" : [{
       "doseQuantity" : {

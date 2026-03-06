@@ -50,7 +50,7 @@ Dr. Musterärztin ergänzt das Medikament Ebetrexat (10 mg, Tabletten) und erkl�
 Dr. Musterärztin erstellt für beide Medikamente eine geplante Abgabe, sodass Herr Mustermann diese in der Apotheke abholen kann.
 
 * Geplante Abgaben erstellen: 
-* Beispiel: TODO
+* Beispiel [Medication Request](MedicationRequest-At-Emed-Journey-03-Mr-Geplante-Abgabe.md)
  
 
 #### Journey-04:

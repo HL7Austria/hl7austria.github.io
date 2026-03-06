@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
   "name" : "AtEmedMRGeplanteAbgabe",
   "title" : "ELGA e-Med Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-03-06T12:22:28+00:00",
+  "date" : "2026-03-06T14:18:10+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -182,7 +182,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.identifier",
       "path" : "MedicationRequest.identifier",
-      "short" : "MedicationRequest identifier = {eMed-ID}_{locally assigned ID}.\nSetzt sich zusammen aus: groupIdentifier (Rezept-Klammer) und individueller Identifikation der geplanten Abgabe.",
+      "short" : "Gepante-Abgabe-ID = {groupIdentifier}_{Medikationsplaneintrag-ID}.\nSetzt sich zusammen aus: groupIdentifier (Rezept-Klammer) und Medikationsplaneintrag-ID.\nWenn mehrere Medikamente gleichzeitig verordnet wurden, haben sie den gleichen groupIdentifier, aber unterschiedliche Medikationsplaneintrag-IDs.",
       "min" : 1,
       "mustSupport" : true
     },
@@ -212,7 +212,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.category",
       "path" : "MedicationRequest.category",
-      "short" : "Kategorie damit Instanz einer geplanten Abgabe von Medikationsplaneintrag\n unterschieden werden kann (beide haben intent order)",
+      "short" : "Kategorie zur Unterscheidung eines Medikationsplaneintrags von einer geplanten Abgabe (beide haben intent order)",
       "min" : 1,
       "max" : "1",
       "patternCodeableConcept" : {
@@ -282,7 +282,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.subject",
       "path" : "MedicationRequest.subject",
-      "short" : "Patient, für den der Medikationsplaneintrag ausgestellt werden soll, der über den \nZentralen Patientenindex identifizierbar und Teilnehmer von ELGA e-Medikation ist.",
+      "short" : "Patient, für den die geplante Abgabe ausgestellt werden soll, der über den \nZentralen Patientenindex identifizierbar und Teilnehmer von ELGA e-Medikation ist.",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"]
@@ -397,7 +397,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.dosageInstruction",
       "path" : "MedicationRequest.dosageInstruction",
-      "short" : "Angabe der Dosierinformationen strukturiert oder als Freitext",
+      "short" : "Angabe der Dosierinformationen strukturiert oder als Freitext. TODO: Inhalte AtEmedDosage fachlich prüfen.",
       "min" : 1,
       "type" : [{
         "code" : "Dosage",
@@ -408,13 +408,58 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.dispenseRequest",
       "path" : "MedicationRequest.dispenseRequest",
-      "short" : "Details zur geplanten Abgabe des Arzneimittels.",
+      "short" : "Details zur geplanten Abgabe des Arzneimittels. TODO: alle Elemente fachlich zu prüfen.",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.dispenseRequest.initialFill",
+      "path" : "MedicationRequest.dispenseRequest.initialFill",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.dispenseRequest.initialFill.quantity",
+      "path" : "MedicationRequest.dispenseRequest.initialFill.quantity",
+      "short" : "Anzahl der Einheiten für die erste Abgabe, z.B. 30 Kapseln oder 100 mg."
+    },
+    {
+      "id" : "MedicationRequest.dispenseRequest.dispenseInterval",
+      "path" : "MedicationRequest.dispenseRequest.dispenseInterval",
+      "short" : "Mindestzeitraum zwischen den Abgaben.",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.dispenseRequest.validityPeriod",
+      "path" : "MedicationRequest.dispenseRequest.validityPeriod",
+      "short" : "Zeitraum in dem die geplante Abgabe eingelöst werden kann.",
       "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.dispenseRequest.numberOfRepeatsAllowed",
       "path" : "MedicationRequest.dispenseRequest.numberOfRepeatsAllowed",
-      "short" : "Anzahl der möglichen Einlösungen."
+      "short" : "Anzahl der weiteren möglichen Einlösungen.",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.dispenseRequest.quantity",
+      "path" : "MedicationRequest.dispenseRequest.quantity",
+      "short" : "Menge des Medikaments, die bei jeder Abgabe bereitgestellt werden soll, z.B. 30 Stück.",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.dispenseRequest.expectedSupplyDuration",
+      "path" : "MedicationRequest.dispenseRequest.expectedSupplyDuration",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.dispenseRequest.expectedSupplyDuration.value",
+      "path" : "MedicationRequest.dispenseRequest.expectedSupplyDuration.value",
+      "short" : "Dauer, für die die bereitgestellte Menge des Medikaments voraussichtlich ausreicht, z.B. 30 Tage."
+    },
+    {
+      "id" : "MedicationRequest.dispenseRequest.performer",
+      "path" : "MedicationRequest.dispenseRequest.performer",
+      "short" : "Apotheke oder andere Einrichtung, die die geplante Abgabe einlösen soll. Keine Verwendung in der geplanten Abgabe.",
+      "max" : "0"
     },
     {
       "id" : "MedicationRequest.substitution",

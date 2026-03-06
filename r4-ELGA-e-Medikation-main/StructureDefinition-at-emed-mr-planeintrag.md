@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
   "name" : "AtEmedMRPlaneintrag",
   "title" : "ELGA e-Med Planeintrag",
   "status" : "draft",
-  "date" : "2026-03-06T12:22:28+00:00",
+  "date" : "2026-03-06T14:18:10+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -425,7 +425,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
     {
       "id" : "MedicationRequest.dosageInstruction",
       "path" : "MedicationRequest.dosageInstruction",
-      "short" : "Angabe der Dosierinformationen strukturiert oder als Freitext",
+      "short" : "Angabe der Dosierinformationen strukturiert oder als Freitext. TODO: Inhalte AtEmedDosage fachlich prüfen.",
       "min" : 1,
       "type" : [{
         "code" : "Dosage",
