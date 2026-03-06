@@ -25,6 +25,15 @@ Profile: [ELGA e-Med Medikationsplan](StructureDefinition-at-emed-list-medikatio
 * **Items**: [MedicationRequest: extension = dienstags — 2 Stück; donnerstags — 2 Stück; identifier = 4712_202602280800000; status = active; intent = order; category = Medikationsplaneintrag; reported[x] = false; medication[x] = ->Medication EBETREXAT TBL 10MG; authoredOn = 2026-02-27 10:20:00+0000](MedicationRequest-At-Emed-Example-Mr-Dosierung-Wochentag.md)
   * Date: 2026-02-27 10:20:00+0000
   * Flag: Prescribed
+* **Items**: [MedicationRequest: extension = alle 8 Tage: je 1 Stück; identifier = 4712_202602280800000; status = active; intent = order; category = Medikationsplaneintrag; reported[x] = false; medication[x] = ->Medication EBETREXAT TBL 10MG; authoredOn = 2026-02-27 10:20:00+0000](MedicationRequest-At-Emed-Example-Mr-Dosierung-Intervalle-Wh.md)
+  * Date: 2026-02-27 10:20:00+0000
+  * Flag: Prescribed
+* **Items**: [MedicationRequest: extension = alle 2 Tage: 08:00 Uhr — je 1 Stück; 18:00 Uhr — je 2 Stück; identifier = 4712_202602280800000; status = active; intent = order; category = Medikationsplaneintrag; reported[x] = false; medication[x] = ->Medication EBETREXAT TBL 10MG; authoredOn = 2026-02-27 10:20:00+0000](MedicationRequest-At-Emed-Example-Mr-Dosierung-Zeitintervalle-Kombi.md)
+  * Date: 2026-02-27 10:20:00+0000
+  * Flag: Prescribed
+* **Items**: [MedicationRequest: extension = montags 1-0-1-0 Stück; freitags 1-0-1-0 Stück; identifier = 4712_202602280800000; status = active; intent = order; category = Medikationsplaneintrag; reported[x] = false; medication[x] = ->Medication EBETREXAT TBL 10MG; authoredOn = 2026-02-27 10:20:00+0000](MedicationRequest-At-Emed-Example-Mr-Dosierung-Wochentag-Kombi.md)
+  * Date: 2026-02-27 10:20:00+0000
+  * Flag: Prescribed
 
 
 
@@ -109,6 +118,45 @@ Profile: [ELGA e-Med Medikationsplan](StructureDefinition-at-emed-list-medikatio
     "date" : "2026-02-27T10:20:00+00:00",
     "item" : {
       "reference" : "MedicationRequest/At-Emed-Example-Mr-Dosierung-Wochentag"
+    }
+  },
+  {
+    "flag" : {
+      "coding" : [{
+        "system" : "urn:oid:1.2.36.1.2001.1001.101.104.16592",
+        "code" : "04",
+        "display" : "Prescribed"
+      }]
+    },
+    "date" : "2026-02-27T10:20:00+00:00",
+    "item" : {
+      "reference" : "MedicationRequest/At-Emed-Example-Mr-Dosierung-Intervalle-Wh"
+    }
+  },
+  {
+    "flag" : {
+      "coding" : [{
+        "system" : "urn:oid:1.2.36.1.2001.1001.101.104.16592",
+        "code" : "04",
+        "display" : "Prescribed"
+      }]
+    },
+    "date" : "2026-02-27T10:20:00+00:00",
+    "item" : {
+      "reference" : "MedicationRequest/At-Emed-Example-Mr-Dosierung-Zeitintervalle-Kombi"
+    }
+  },
+  {
+    "flag" : {
+      "coding" : [{
+        "system" : "urn:oid:1.2.36.1.2001.1001.101.104.16592",
+        "code" : "04",
+        "display" : "Prescribed"
+      }]
+    },
+    "date" : "2026-02-27T10:20:00+00:00",
+    "item" : {
+      "reference" : "MedicationRequest/At-Emed-Example-Mr-Dosierung-Wochentag-Kombi"
     }
   }]
 }

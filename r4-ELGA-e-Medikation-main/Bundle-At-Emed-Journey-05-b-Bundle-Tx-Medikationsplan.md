@@ -133,7 +133,8 @@
       "category" : [{
         "coding" : [{
           "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS",
-          "code" : "1"
+          "code" : "1",
+          "display" : "Medikationsplaneintrag"
         }]
       }],
       "reportedBoolean" : false,
@@ -277,7 +278,8 @@
       "category" : [{
         "coding" : [{
           "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS",
-          "code" : "1"
+          "code" : "1",
+          "display" : "Medikationsplaneintrag"
         }]
       }],
       "reportedBoolean" : false,

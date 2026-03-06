@@ -1,7 +1,7 @@
 # HL7.AT.FHIR.ELGA.EMED.R4\UC_eMed_06 - Medikationsplan schreiben - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
-* [**Überblick Anwendungsfälle**](anwendungsfaelle.md)
+* [**Überblick Anwendungsfälle**](usecases.md)
 * **UC_eMed_06 - Medikationsplan schreiben**
 
 ## UC_eMed_06 - Medikationsplan schreiben
