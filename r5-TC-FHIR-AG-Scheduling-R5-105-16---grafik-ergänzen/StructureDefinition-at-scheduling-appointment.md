@@ -63,7 +63,7 @@ The following search parameters SHOULD be supported by scheduling servers:
   "name" : "HL7ATSchedulingAppointment",
   "title" : "HL7® AT Scheduling Appointment Profile",
   "status" : "draft",
-  "date" : "2026-03-06T11:03:45+00:00",
+  "date" : "2026-03-06T11:19:51+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "HL7® Austria FHIR® Scheduling Profile for appointment data in Austria.",
   "fhirVersion" : "5.0.0",

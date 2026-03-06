@@ -26,7 +26,7 @@ A system providing the FHIR API for appointment booking and related data
   "version" : "0.2.0",
   "title" : "HL7® AT Scheduling Server ActorDefinition",
   "status" : "draft",
-  "date" : "2026-03-06T11:03:45+00:00",
+  "date" : "2026-03-06T11:19:51+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "A system providing the FHIR API for appointment booking and related data",
   "type" : "system",
