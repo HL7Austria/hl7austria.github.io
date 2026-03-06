@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-schedule | *Version*:0.2.0 | |
-| Draft as of 2026-02-26 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingSchedule |
+| Draft as of 2026-03-06 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingSchedule |
 
  
 HL7® Austria FHIR® Scheduling Profile for schedule data in Austria. 
@@ -58,7 +58,7 @@ At least one of the parameters [actor](https://www.hl7.org/fhir/schedule-search.
   "name" : "HL7ATSchedulingSchedule",
   "title" : "HL7® AT Scheduling Schedule Profile",
   "status" : "draft",
-  "date" : "2026-02-26T08:55:53+00:00",
+  "date" : "2026-03-06T07:38:40+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "HL7® Austria FHIR® Scheduling Profile for schedule data in Austria.",
   "fhirVersion" : "5.0.0",
