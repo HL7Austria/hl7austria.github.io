@@ -173,6 +173,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Note: The actual transmission of notifications or reminders to Patients (e.g., sending SMS or emails) is out of scope of this implementation guide.</p>
 
+<h4 id="usage-of-logical-ids-vs-identifiers">Usage of logical IDs vs. Identifiers</h4>
+
+<p>When referencing resources across systems, implementers should prefer identifiers over logical IDs. Logical IDs (the <code class="language-plaintext highlighter-rouge">Resource.id</code> element) are unique only within a single FHIR server and may change if the resource is copied or migrated. In contrast, identifiers (<code class="language-plaintext highlighter-rouge">Resource.identifier</code>) are stable values designed for use across different systems and contexts (e.g. social insurance number). Using identifiers promotes interoperability, ensuring consistent and reliable linkage of data between independent FHIR implementations.</p>
+
 <h4 id="http-return-preference">HTTP return preference</h4>
 <p>Scheduling Clients SHALL use the following HTTP return preference for requests of standard <code class="language-plaintext highlighter-rouge">POST</code> and <code class="language-plaintext highlighter-rouge">PUT</code> interactions:</p>
 
@@ -279,7 +283,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.tc.wg.scheduling.r5#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Fri, Mar 6, 2026 07:38+0000">2026-03-06</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.tc.wg.scheduling.r5#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Fri, Mar 6, 2026 14:26+0000">2026-03-06</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
