@@ -102,7 +102,3 @@ Das Wochentagsschema bleibt über den gesamten Behandlungszeitraum gleich.
 * Beispiel: [Collection Bundle](Bundle-At-Emed-Example-Bundle-Medikationsplan-Dosierungsvarianten.md)
  
 
-[Visualisierungsbeispiel](at-emed-example-searchset-medikationsplan-dosierungsvarianten-1.jpg)
-
-[Visualisierungsbeispiel](at-emed-example-searchset-medikationsplan-dosierungsvarianten-2.jpg)
-
