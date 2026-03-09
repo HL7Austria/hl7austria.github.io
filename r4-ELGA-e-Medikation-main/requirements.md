@@ -5,6 +5,6 @@
 
 ## Die "e-Medikation"
 
-* [Dosierschemata](dosierungen.md)
+* [Dosierschemata](dosaging.md)
 * [Patient Journey](patient_journey.md)
 

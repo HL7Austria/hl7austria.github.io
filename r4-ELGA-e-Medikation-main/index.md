@@ -33,7 +33,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) ENTWURF",
   "status" : "draft",
-  "date" : "2026-03-06T14:18:10+00:00",
+  "date" : "2026-03-09T08:14:04+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -94,7 +94,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   },
   {
     "id" : "ihe_pharm_mpd_r4",
-    "uri" : "https://profiles.ihe.net/PHARM/MPD",
+    "uri" : "https://profiles.ihe.net/PHARM/MPD/ImplementationGuide/ihe.pharm.mpd",
     "packageId" : "ihe.pharm.mpd.r4",
     "version" : "1.0.0-comment-2"
   }],
