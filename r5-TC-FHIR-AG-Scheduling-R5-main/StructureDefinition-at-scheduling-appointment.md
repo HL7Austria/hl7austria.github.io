@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment | *Version*:0.2.0 | |
-| Draft as of 2026-03-06 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingAppointment |
+| Draft as of 2026-03-09 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingAppointment |
 
  
 HL7® Austria FHIR® Scheduling Profile for appointment data in Austria. 
@@ -63,7 +63,7 @@ The following search parameters SHOULD be supported by scheduling servers:
   "name" : "HL7ATSchedulingAppointment",
   "title" : "HL7® AT Scheduling Appointment Profile",
   "status" : "draft",
-  "date" : "2026-03-06T14:26:35+00:00",
+  "date" : "2026-03-09T09:58:26+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "HL7® Austria FHIR® Scheduling Profile for appointment data in Austria.",
   "fhirVersion" : "5.0.0",
@@ -123,6 +123,17 @@ The following search parameters SHOULD be supported by scheduling servers:
       "type" : [{
         "code" : "Extension",
         "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/appointment-postponementReason"]
+      }]
+    },
+    {
+      "id" : "Appointment.cancellationReason.extension:cancellationPolicy",
+      "path" : "Appointment.cancellationReason.extension",
+      "sliceName" : "cancellationPolicy",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-ext-cancellationPolicy"]
       }]
     },
     {
