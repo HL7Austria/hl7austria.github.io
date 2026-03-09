@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-substance.cs
   "name" : "AtEmedSubstance",
   "title" : "ELGA e-Med Substanz",
   "status" : "draft",
-  "date" : "2026-03-09T08:14:04+00:00",
+  "date" : "2026-03-09T10:03:26+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
