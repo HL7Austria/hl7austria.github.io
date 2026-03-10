@@ -12,7 +12,7 @@
 | Draft as of 2026-03-10 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMRGeplanteAbgabe |
 
  
-Bildet eine geplante Abgabe eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab ("MedicationRequest"-Ressource). Sie enthält das verordnete Arzneimittel und dessen Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. Als groupIdentifier dient die Geplante-Abgabe-ID (früher eMED-ID), die auch im e-Rezept mitgeführt wird. Werden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer'). Verwendet R5 Backport Extensions. 
+Bildet eine geplante Abgabe eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab ("MedicationRequest"-Ressource). Sie enthält das verordnete Arzneimittel und dessen Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. Als groupIdentifier dient die Geplante-Abgabe-ID, die auch im e-Rezept mitgeführt wird. Werden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer'). Verwendet R5 Backport Extensions. 
 
 **Usages:**
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
   "name" : "AtEmedMRGeplanteAbgabe",
   "title" : "ELGA e-Med Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-03-10T08:28:41+00:00",
+  "date" : "2026-03-10T11:00:19+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -58,7 +58,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
       "use" : "work"
     }]
   }],
-  "description" : "Bildet eine geplante Abgabe eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab (\"MedicationRequest\"-Ressource).\nSie enthält das verordnete Arzneimittel und dessen Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation.\nAls groupIdentifier dient die Geplante-Abgabe-ID (früher eMED-ID), die auch im e-Rezept mitgeführt wird.\nWerden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer'). Verwendet R5 Backport Extensions.",
+  "description" : "Bildet eine geplante Abgabe eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab (\"MedicationRequest\"-Ressource).\nSie enthält das verordnete Arzneimittel und dessen Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation.\nAls groupIdentifier dient die Geplante-Abgabe-ID, die auch im e-Rezept mitgeführt wird.\nWerden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer'). Verwendet R5 Backport Extensions.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "workflow",
@@ -182,7 +182,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.identifier",
       "path" : "MedicationRequest.identifier",
-      "short" : "Gepante-Abgabe-ID = {groupIdentifier}_{Medikationsplaneintrag-ID}.\nSetzt sich zusammen aus: groupIdentifier (Rezept-Klammer) und Medikationsplaneintrag-ID.\nWenn mehrere Medikamente gleichzeitig verordnet wurden, haben sie den gleichen groupIdentifier, aber unterschiedliche Medikationsplaneintrag-IDs.",
+      "short" : "Gepante-Abgabe-ID ? Verwendung prüfen.",
       "min" : 1,
       "mustSupport" : true
     },
@@ -282,7 +282,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.subject",
       "path" : "MedicationRequest.subject",
-      "short" : "Patient, für den die geplante Abgabe ausgestellt werden soll, der über den \nZentralen Patientenindex identifizierbar und Teilnehmer von ELGA e-Medikation ist.",
+      "short" : "Patient, für den die geplante Abgabe ausgestellt werden soll (über Zentralen Patientenindex identifiziert und Teilnehmer von ELGA e-Medikation).",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"]
@@ -311,7 +311,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.requester",
       "path" : "MedicationRequest.requester",
-      "short" : "Der Arzt oder die Ärztin, die die geplante Abgabe erstellt hat und für den Inhalt verantwortlich ist.\nEindeutig identifiziert über den GDA-Index und berechtigt auf die ELGA e-Medikation des Patienten zuzugreifen.",
+      "short" : "Der Arzt oder die Ärztin, die die geplante Abgabe erstellt hat und für den Inhalt verantwortlich ist \n(eindeutig identifiziert über den GDA-Index und berechtigt auf die ELGA e-Medikation des Patienten zuzugreifen)",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
@@ -342,19 +342,19 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.reasonCode",
       "path" : "MedicationRequest.reasonCode",
-      "short" : "Grund für die Verordnung des Arzneimittels. \nEntweder Code oder Referenz (TODO: Evtl. Invariante). Erst wenn codierte Angabe möglich.",
+      "short" : "Grund für die Verordnung des Arzneimittels. \nEntweder Code oder Referenz (TODO: Evtl. Invariante). Verwendung in geplanter Abgabe prüfen.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.instantiatesCanonical",
       "path" : "MedicationRequest.instantiatesCanonical",
-      "short" : "URL, die auf ein Protokoll (Richtlinie, Guideline) verweist, die von diesem \nMedikationsplaneintrag ganz oder teilweise eingehalten wird. Keine Verwendung in der geplanten Abgabe.",
+      "short" : "URL, die auf ein Protokoll (Richtlinie, Guideline) verweist, das von dieser \ngeplanten Abgabe ganz oder teilweise eingehalten wird. Keine Verwendung in der geplanten Abgabe.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.instantiatesUri",
       "path" : "MedicationRequest.instantiatesUri",
-      "short" : "URL, die auf ein extern gepflegtes Protokoll (Richtlinie, Guideline) verweist, die von diesem \nMedikationsplaneintrag ganz oder teilweise eingehalten wird. Keine Verwendung in der geplanten Abgabe.",
+      "short" : "URL, die auf ein extern gepflegtes Protokoll (Richtlinie, Guideline) verweist, das von dieser \ngeplanten Abgabe ganz oder teilweise eingehalten wird. Keine Verwendung in der geplanten Abgabe.",
       "max" : "0"
     },
     {
@@ -372,7 +372,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.groupIdentifier",
       "path" : "MedicationRequest.groupIdentifier",
-      "short" : "Als groupIdentifier dient die Geplante-Abgabe-ID (früher eMED-ID), \ndie auch im e-Rezept mitgeführt wird. Werden von einem:r Arzt:Ärtztin mehrere Arzneimittel gleichzeitig verordnet, \nwird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer').",
+      "short" : "Als groupIdentifier dient die eMED-ID, die auch im e-Rezept mitgeführt wird. \nWerden von einem:r Arzt:Ärtztin mehrere Arzneimittel gleichzeitig verordnet, \nwird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer').",
       "min" : 1,
       "mustSupport" : true
     },
@@ -397,7 +397,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.dosageInstruction",
       "path" : "MedicationRequest.dosageInstruction",
-      "short" : "Angabe der Dosierinformationen strukturiert oder als Freitext. TODO: Inhalte AtEmedDosage fachlich prüfen.",
+      "short" : "Angabe der Dosierinformationen. TODO: Dosiervarianten.",
       "min" : 1,
       "type" : [{
         "code" : "Dosage",
@@ -464,7 +464,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.substitution",
       "path" : "MedicationRequest.substitution",
-      "short" : "Gibt an, ob das Arzneimittel substituiert werden darf oder nicht.\nErläutert die Absicht des verschreibenden Arztes. Wenn nichts angegeben ist, kann eine Substitution vorgenommen werden. \nDie Dokumentation über eine tatsächlich erfolgte Substitution erfolgt in der Dispense-Resource. \nTODO: Eher keine Verwendung in der geplanten Abgabe.",
+      "short" : "Gibt an, ob das Arzneimittel substituiert werden darf oder nicht.\nErläutert die Absicht des verschreibenden Arztes. Wenn nichts angegeben ist, kann eine Substitution vorgenommen werden. \nDie Dokumentation über eine tatsächlich erfolgte Substitution erfolgt in der Dispense-Resource. \nTODO: Verwendung in der geplanten Abgabe prüfen.",
       "mustSupport" : true
     },
     {

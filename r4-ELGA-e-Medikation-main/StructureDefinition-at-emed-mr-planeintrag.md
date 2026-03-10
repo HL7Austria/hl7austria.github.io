@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
   "name" : "AtEmedMRPlaneintrag",
   "title" : "ELGA e-Med Planeintrag",
   "status" : "draft",
-  "date" : "2026-03-10T08:28:41+00:00",
+  "date" : "2026-03-10T11:00:19+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -401,7 +401,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
     {
       "id" : "MedicationRequest.groupIdentifier",
       "path" : "MedicationRequest.groupIdentifier",
-      "short" : "TODO: Verwendung im Medikationsplaneintrag zu prüfen. Erst bei der geplanten Abgabe (Rezepterstellung) relevant. Evtl ein Verweis auf erstellte Rezepte? Würde Extension erfordern, da Kardinalität nur 0..1 zulässig",
+      "short" : "Erst bei der geplanten Abgabe (Rezepterstellung) relevant. Evtl ein Verweis auf erstellte Rezepte? Würde Extension erfordern, da Kardinalität nur 0..1 zulässig",
       "max" : "0"
     },
     {

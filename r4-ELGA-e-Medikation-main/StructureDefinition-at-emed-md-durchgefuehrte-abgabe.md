@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
   "name" : "AtEmedMDDurchgefuehrteAbgabe",
   "title" : "ELGA e-Med Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-03-10T08:28:41+00:00",
+  "date" : "2026-03-10T11:00:19+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -99,13 +99,13 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.identifier",
       "path" : "MedicationDispense.identifier",
-      "short" : "Externer Identifier.",
+      "short" : "Durchgeführte-Abgabe-ID ? Verwendung prüfen.",
       "mustSupport" : true
     },
     {
       "id" : "MedicationDispense.partOf",
       "path" : "MedicationDispense.partOf",
-      "short" : "Auslösendes Ereignis. Verwendung in der durchgeführten Abgabe prüfen.",
+      "short" : "Auslösendes Ereignis. Referenz auf Procedure-Ressource, daher keine Verwendung in der durchgeführten Abgabe.",
       "max" : "0"
     },
     {
