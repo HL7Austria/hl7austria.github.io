@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/ValueSet/MedikationsplanEmptyReasonVS | *Version*:0.1.1 | |
-| Draft as of 2026-03-09 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:MedikationsplanEmptyReasonVS |
+| Draft as of 2026-03-10 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:MedikationsplanEmptyReasonVS |
 
  
 ValueSet für zulässige Ausprägungen des elements emptyReason Status eines Medikationsplaneintrags (MedicationRequest). 
@@ -51,7 +51,7 @@ ValueSet für zulässige Ausprägungen des elements emptyReason Status eines Med
   "title" : "ELGA e-Med Medikationsplan Empty Reason Value Set",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-09T11:27:52+00:00",
+  "date" : "2026-03-10T08:28:41+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
