@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedUpdateComposition | *Version*:0.1.0 | |
-| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedUpdateComposition |
+| Draft as of 2026-03-10 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedUpdateComposition |
 
  
 MOPED Profil der Composition Ressource nach $update 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedUpdateCompositi
   "title" : "MOPED Update Composition",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-01T19:57:07+00:00",
+  "date" : "2026-03-10T09:54:59+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

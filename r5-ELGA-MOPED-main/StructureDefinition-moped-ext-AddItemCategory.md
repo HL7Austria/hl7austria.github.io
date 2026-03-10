@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/moped-ext-AddItemCategory | *Version*:0.1.0 | |
-| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:AddItemCategory |
+| Draft as of 2026-03-10 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:AddItemCategory |
 
 Benefit classification
 
@@ -52,7 +52,7 @@ Other representations of profile: [CSV](StructureDefinition-moped-ext-AddItemCat
   "name" : "AddItemCategory",
   "title" : "AddItemCategory",
   "status" : "draft",
-  "date" : "2026-03-01T19:57:07+00:00",
+  "date" : "2026-03-10T09:54:59+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -92,6 +92,7 @@ Other representations of profile: [CSV](StructureDefinition-moped-ext-AddItemCat
     {
       "id" : "Extension.value[x]",
       "path" : "Extension.value[x]",
+      "min" : 1,
       "type" : [{
         "code" : "CodeableConcept"
       }],

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/Questionnaire/LKFA01Questionnaire | *Version*:0.1.0 | |
-| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
+| Active as of 2026-03-10 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
 
  
 LKF A01 Questionnaire - Antiinfectiva-Abrufe 
@@ -26,7 +26,7 @@ LKF A01 Questionnaire - Antiinfectiva-Abrufe
   "version" : "0.1.0",
   "title" : "LKF A01 Questionnaire",
   "status" : "active",
-  "date" : "2026-03-01T19:57:07+00:00",
+  "date" : "2026-03-10T09:54:59+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

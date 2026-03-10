@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/moped-ext-TageOhneKostenbeitrag | *Version*:0.1.0 | |
-| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:TageOhneKostenbeitrag |
+| Draft as of 2026-03-10 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:TageOhneKostenbeitrag |
 
 Anzahl der Tage, für welche kein Kostenbeitrag seitens der Krankenanstalt eingehoben wurde
 
@@ -50,7 +50,7 @@ Other representations of profile: [CSV](StructureDefinition-moped-ext-TageOhneKo
   "name" : "TageOhneKostenbeitrag",
   "title" : "Tage ohne Einhebung des Kostenbeitrags",
   "status" : "draft",
-  "date" : "2026-03-01T19:57:07+00:00",
+  "date" : "2026-03-10T09:54:59+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -97,13 +97,14 @@ Other representations of profile: [CSV](StructureDefinition-moped-ext-TageOhneKo
         }],
         "ordered" : false,
         "rules" : "open"
-      }
+      },
+      "min" : 1
     },
     {
       "id" : "Extension.value[x]:valueUnsignedInt",
       "path" : "Extension.value[x]",
       "sliceName" : "valueUnsignedInt",
-      "min" : 0,
+      "min" : 1,
       "max" : "1",
       "type" : [{
         "code" : "unsignedInt"

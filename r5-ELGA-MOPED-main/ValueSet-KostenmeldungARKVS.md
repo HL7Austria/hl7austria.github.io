@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/KostenmeldungARKVS | *Version*:0.1.0 | |
-| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:KostenmeldungARKVS |
+| Draft as of 2026-03-10 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:KostenmeldungARKVS |
 
  
 ValueSet für die Art der Kostenmeldung 
@@ -52,7 +52,7 @@ ValueSet für die Art der Kostenmeldung
   "name" : "KostenmeldungARKVS",
   "title" : "Kostenmeldung für (A/R/K)",
   "status" : "draft",
-  "date" : "2026-03-01T19:57:07+00:00",
+  "date" : "2026-03-10T09:54:59+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

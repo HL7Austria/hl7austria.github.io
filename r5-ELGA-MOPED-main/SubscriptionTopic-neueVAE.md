@@ -8,7 +8,7 @@
 
 | |
 | :--- |
-| Active as of 2026-03-01 |
+| Active as of 2026-03-10 |
 
 
 
@@ -22,7 +22,7 @@
   "version" : "0.1.0",
   "name" : "neueVAE",
   "status" : "active",
-  "date" : "2026-03-01T19:57:07+00:00",
+  "date" : "2026-03-10T09:54:59+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

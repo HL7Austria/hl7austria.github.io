@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/Aufnahmeart2CS | *Version*:0.1.0 | |
-| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:Aufnahmeart2CS |
+| Active as of 2026-03-10 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:Aufnahmeart2CS |
 
  
 CodeSystem für die Aufnahmeart des Patienten 
@@ -32,7 +32,7 @@ CodeSystem für die Aufnahmeart des Patienten
   "title" : "Aufnahmeart2 des Patienten",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-03-01T19:57:07+00:00",
+  "date" : "2026-03-10T09:54:59+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

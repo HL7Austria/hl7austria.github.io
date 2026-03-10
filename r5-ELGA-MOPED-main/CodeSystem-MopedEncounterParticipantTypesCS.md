@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/MopedEncounterParticipantTypesCS | *Version*:0.1.0 | |
-| Active as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounterParticipantTypesCS |
+| Active as of 2026-03-10 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounterParticipantTypesCS |
 
  
 CodeSystem für die Moped Encounter Participant Types 
@@ -32,7 +32,7 @@ CodeSystem für die Moped Encounter Participant Types
   "title" : "Moped Encounter Participant Type CodeSystem",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-03-01T19:57:07+00:00",
+  "date" : "2026-03-10T09:54:59+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

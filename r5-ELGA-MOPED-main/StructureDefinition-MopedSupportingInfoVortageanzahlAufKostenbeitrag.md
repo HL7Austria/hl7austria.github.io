@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedSupportingInfoVortageanzahlAufKostenbeitrag | *Version*:0.1.0 | |
-| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedSupportingInfoVortageanzahlAufKostenbeitrag |
+| Draft as of 2026-03-10 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedSupportingInfoVortageanzahlAufKostenbeitrag |
 
 Additional information codes regarding exceptions, special considerations, the condition, situation, prior or concurrent issues
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedSupportingInfoV
   "name" : "MopedSupportingInfoVortageanzahlAufKostenbeitrag",
   "title" : "Supporting Info Extension for ClaimResponse - Vortageanzahl auf Kostenbeitrag",
   "status" : "draft",
-  "date" : "2026-03-01T19:57:07+00:00",
+  "date" : "2026-03-10T09:54:59+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

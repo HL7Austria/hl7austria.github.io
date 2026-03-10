@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedSupportingInfoOEGKELBNR | *Version*:0.1.0 | |
-| Draft as of 2026-03-01 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedSupportingInfoOEGKELBNR |
+| Draft as of 2026-03-10 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedSupportingInfoOEGKELBNR |
 
 Additional information codes regarding exceptions, special considerations, the condition, situation, prior or concurrent issues
 
@@ -52,7 +52,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedSupportingInfoO
   "name" : "MopedSupportingInfoOEGKELBNR",
   "title" : "Supporting Info Extension for ClaimResponse - OEGKELBNR Slice",
   "status" : "draft",
-  "date" : "2026-03-01T19:57:07+00:00",
+  "date" : "2026-03-10T09:54:59+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -25,7 +25,7 @@ Profile: [MOPED Aufnahme Composition](StructureDefinition-MopedAufnahmeCompositi
 | | | |
 | :--- | :--- | :--- |
 | - | **Code** | **Value[x]** |
-| * | [UsageContextType: workflow](http://terminology.hl7.org/7.0.1/CodeSystem-usage-context-type.html#usage-context-type-workflow)(Workflow Setting) | Aufnahme freigegeben |
+| * | [UsageContextType: workflow](http://terminology.hl7.org/7.1.0/CodeSystem-usage-context-type.html#usage-context-type-workflow)(Workflow Setting) | Aufnahme freigegeben |
 
 **author**: [Organization Herz Jesu-Krankenhaus](Organization-OrganizationHerzJesuKrankenhaus.md)
 

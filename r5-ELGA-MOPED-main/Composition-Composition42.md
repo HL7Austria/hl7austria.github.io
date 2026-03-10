@@ -21,7 +21,7 @@ Profile: [MOPED Composition](StructureDefinition-MopedComposition.md)
 | | | |
 | :--- | :--- | :--- |
 | - | **Code** | **Value[x]** |
-| * | [UsageContextType: workflow](http://terminology.hl7.org/7.0.1/CodeSystem-usage-context-type.html#usage-context-type-workflow)(Workflow Setting) | Endgültige Freigabe |
+| * | [UsageContextType: workflow](http://terminology.hl7.org/7.1.0/CodeSystem-usage-context-type.html#usage-context-type-workflow)(Workflow Setting) | Endgültige Freigabe |
 
 **author**: [Organization Testkrankenhaus](Organization-KHK999.md)
 
