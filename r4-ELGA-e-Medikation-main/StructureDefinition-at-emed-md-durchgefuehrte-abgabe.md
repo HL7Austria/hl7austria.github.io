@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
   "name" : "AtEmedMDDurchgefuehrteAbgabe",
   "title" : "ELGA e-Med Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-03-10T11:00:19+00:00",
+  "date" : "2026-03-10T11:31:06+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -125,7 +125,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
         "ordered" : false,
         "rules" : "open"
       },
-      "short" : "Warum keine Abgabe erfolgte (zB. Allergie, Produkt nicht verfügbar). Code oder Referenz (DetectedIssue)"
+      "short" : "Grund für den aktuellen Status, z.B. warum keine Abgabe erfolgte (zB. Allergie, Produkt nicht verfügbar). Code oder Referenz (DetectedIssue)"
     },
     {
       "id" : "MedicationDispense.statusReason[x]:statusReasonCodeableConcept",
@@ -143,7 +143,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
       "id" : "MedicationDispense.statusReason[x]:statusReasonReference",
       "path" : "MedicationDispense.statusReason[x]",
       "sliceName" : "statusReasonReference",
-      "short" : "Verwendung in der durchgeführten Abgabe prüfen.",
+      "short" : "Referenz auf DetectedIssue-Ressource, daher keine Verwendung in der durchgeführten Abgabe.",
       "min" : 0,
       "max" : "0",
       "type" : [{
@@ -203,7 +203,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.subject",
       "path" : "MedicationDispense.subject",
-      "short" : "Österreichischer Patient für den die durchgeführte Abgabe ausgestellt wird.",
+      "short" : "Patient, für den die durchgeführte Abgabe ausgestellt wird (über Zentralen Patientenindex identifiziert und Teilnehmer von ELGA e-Medikation).",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
@@ -239,7 +239,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.performer.actor",
       "path" : "MedicationDispense.performer.actor",
-      "short" : "RefrenzReference auf Practitioner, PractitionerRole, Organization; entfernen: Patient, Device, RelatedPerson",
+      "short" : "RefrenzReference auf Practitioner, PractitionerRole, Organization (entfernen: Patient, Device, RelatedPerson), \ndie die durchgeführte Abgabe erstellt hat und für den Inhalt verantwortlich ist (identifiziert über den GDA-Index und berechtigt \nauf die ELGA e-Medikation des Patienten zuzugreifen)",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner",
@@ -257,7 +257,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.authorizingPrescription",
       "path" : "MedicationDispense.authorizingPrescription",
-      "short" : "Referenz auf zugehörige geplante Abgabe.",
+      "short" : "Referenz auf zugehörige geplante Abgabe (MedicationRequest).",
       "max" : "1",
       "mustSupport" : true
     },
@@ -317,13 +317,13 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.dosageInstruction",
       "path" : "MedicationDispense.dosageInstruction",
-      "short" : "Gibt an, wie das Medikament vom Patienten einzunehmen ist. \nWenn sich die Dosis oder Dosierungsrate über den gesamten Verabreichungszeitraum ändern soll \n(z.B. bei verschreibungspflichtigen Medikamenten mit schrittweiser Dosierungsreduktion), \nmüssen mehrere Dosierungsanweisungen bereitgestellt werden, um die verschiedenen Dosen/Dosierungsraten zu vermitteln. \nDer Apotheker überprüft die Medikamentenbestellung vor der Abgabe und aktualisiert die Dosierungsanweisung auf der Grundlage \ndes tatsächlich abgegebenen Produkts.",
+      "short" : "Gibt an, wie das Medikament vom Patienten einzunehmen ist. TODO: Dosiervarianten.\nDer Apotheker überprüft die Medikamentenbestellung vor der Abgabe und aktualisiert die Dosierungsanweisung auf der Grundlage \ndes tatsächlich abgegebenen Produkts.",
       "mustSupport" : true
     },
     {
       "id" : "MedicationDispense.substitution",
       "path" : "MedicationDispense.substitution",
-      "short" : "Gibt an, ob im Rahmen der Abgabe eine Substitution vorgenommen wurde oder nicht. Wenn nichts angegeben ist, wurde keine Substitution vorgenommen.",
+      "short" : "Gibt an, ob im Rahmen der Abgabe eine Substitution vorgenommen wurde oder nicht. \nWenn nichts angegeben ist, wurde keine Substitution vorgenommen.",
       "mustSupport" : true
     },
     {
@@ -358,7 +358,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.detectedIssue",
       "path" : "MedicationDispense.detectedIssue",
-      "short" : "Referenenz auf DetectedIssue Ressource. Verwendung prüfen.",
+      "short" : "Referenenz auf DetectedIssue Ressource, daher keine Verwendung in durchgeführter Abgabe.",
       "max" : "0"
     },
     {
