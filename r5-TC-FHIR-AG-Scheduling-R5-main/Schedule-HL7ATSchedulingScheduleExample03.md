@@ -19,7 +19,7 @@ Profile: [HL7® AT Scheduling Schedule Profile](StructureDefinition-at-schedulin
 
 **actor**: [Example of healthcareservice](HealthcareService-HL7ATSchedulingHealthcareServiceExample01.md)
 
-**planningHorizon**: 2025-05-19 09:00:00+0200 --> 2025-05-23 17:00:00+0200
+**planningHorizon**: 2025-05-13 08:00:00+0200 --> 2025-09-23 17:00:00+0200
 
 
 
@@ -47,8 +47,8 @@ Profile: [HL7® AT Scheduling Schedule Profile](StructureDefinition-at-schedulin
     "display" : "Example of healthcareservice"
   }],
   "planningHorizon" : {
-    "start" : "2025-05-19T09:00:00+02:00",
-    "end" : "2025-05-23T17:00:00+02:00"
+    "start" : "2025-05-13T08:00:00+02:00",
+    "end" : "2025-09-23T17:00:00+02:00"
   }
 }
 
