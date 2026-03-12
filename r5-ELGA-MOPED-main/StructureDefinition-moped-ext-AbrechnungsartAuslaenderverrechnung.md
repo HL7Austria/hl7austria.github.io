@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/moped-ext-AbrechnungsartAuslaenderverrechnung | *Version*:0.1.0 | |
-| Draft as of 2026-03-10 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:AbrechnungsartAuslaenderverrechnung |
+| Draft as of 2026-03-12 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:AbrechnungsartAuslaenderverrechnung |
 
 Abrechnungsart Ausländerverrechnung
 
@@ -52,7 +52,7 @@ Other representations of profile: [CSV](StructureDefinition-moped-ext-Abrechnung
   "name" : "AbrechnungsartAuslaenderverrechnung",
   "title" : "Abrechnungsart Ausländerverrechnung",
   "status" : "draft",
-  "date" : "2026-03-10T09:54:59+00:00",
+  "date" : "2026-03-12T09:42:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

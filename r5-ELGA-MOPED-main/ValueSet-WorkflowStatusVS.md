@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/WorkflowStatusVS | *Version*:0.1.0 | |
-| Draft as of 2026-03-10 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:WorkflowStatusVS |
+| Draft as of 2026-03-12 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:WorkflowStatusVS |
 
  
 ValueSet für die Statusoptionen in denen sich ein Fall befinden kann. 
@@ -51,7 +51,7 @@ ValueSet für die Statusoptionen in denen sich ein Fall befinden kann.
   "title" : "Workflow Status eines Falls",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-10T09:54:59+00:00",
+  "date" : "2026-03-12T09:42:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

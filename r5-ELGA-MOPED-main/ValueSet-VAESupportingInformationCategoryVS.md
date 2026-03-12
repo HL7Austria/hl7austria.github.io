@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/VAESupportingInformationCategoryVS | *Version*:0.1.0 | |
-| Draft as of 2026-03-10 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:VAESupportingInformationCategoryVS |
+| Draft as of 2026-03-12 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:VAESupportingInformationCategoryVS |
 
  
 Arten von zusätzlichen Informationen in der VAE 
@@ -51,7 +51,7 @@ Arten von zusätzlichen Informationen in der VAE
   "title" : "MOPED VAESupportingInformationCategory",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-10T09:54:59+00:00",
+  "date" : "2026-03-12T09:42:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

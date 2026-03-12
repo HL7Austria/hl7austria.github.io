@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedPatientLGF | *Version*:0.1.0 | |
-| Draft as of 2026-03-10 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedPatientLGF |
+| Draft as of 2026-03-12 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedPatientLGF |
 
  
 MOPED Profil der Patient Ressource aus der Sicht der Rolle: LGF 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedPatientLGF.csv)
   "name" : "MopedPatientLGF",
   "title" : "MOPED Patient LGF",
   "status" : "draft",
-  "date" : "2026-03-10T09:54:59+00:00",
+  "date" : "2026-03-12T09:42:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

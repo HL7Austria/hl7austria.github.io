@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/moped-ext-diagnoseKnoten | *Version*:0.1.0 | |
-| Draft as of 2026-03-10 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:DiagnoseKnoten |
+| Draft as of 2026-03-12 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:DiagnoseKnoten |
 
 Lukriert die Patient:innen über eine reguläre Gruppe Punkte, so ist in diesem Datenfeld die entsprechende Knotenbezeichnung einzutragen.
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-moped-ext-diagnoseKn
   "name" : "DiagnoseKnoten",
   "title" : "Abrechnung - Knoten",
   "status" : "draft",
-  "date" : "2026-03-10T09:54:59+00:00",
+  "date" : "2026-03-12T09:42:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

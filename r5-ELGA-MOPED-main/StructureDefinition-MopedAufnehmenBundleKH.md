@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedAufnehmenBundleKH | *Version*:0.1.0 | |
-| Draft as of 2026-03-10 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedAufnehmenBundleKH |
+| Draft as of 2026-03-12 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedAufnehmenBundleKH |
 
  
 Bundle für die Input-Ressourcen beim Aufnehmen eines Patienten 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedAufnehmenBundle
   "name" : "MopedAufnehmenBundleKH",
   "title" : "MOPED Aufnehmen Bundle KH",
   "status" : "draft",
-  "date" : "2026-03-10T09:54:59+00:00",
+  "date" : "2026-03-12T09:42:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

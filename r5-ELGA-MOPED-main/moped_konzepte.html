@@ -487,6 +487,8 @@ In diesem Bereich werden die grundlegenden Konzepte des Moped-Designs beschriebe
 
 <p>Ohne Version (z. B. lediglich mit /Composition/123) wird die Operation abgelehnt. Alle benutzerdefinierten fallbezogenen Operationen in MOPED werden ausschließlich auf Composition-Instanzebene ausgeführt und erwarten als URL-Form stets <code class="language-plaintext highlighter-rouge">Composition/{id}/_history/{version}/$operationName</code>.</p>
 
+<p>Die Pflicht zur Angabe einer versionierten Composition-Referenz gilt in MOPED nur für schreibende bzw. fallverändernde Operationen, bei denen Konflikte durch parallele Änderungen vermieden werden müssen. Für einen normalen lesenden Zugriff muss der Client die aktuellste Versionsnummer hingegen nicht kennen: Ein FHIR-read mittels GET [base]/Composition/{id} liefert immer den aktuellen Stand der Ressource. Nur wenn ausdrücklich eine bestimmte historische Version benötigt wird, wird ein versionierter Zugriff (vread) über GET [base]/Composition/{id}/_history/{vid} verwendet.</p>
+
 <h3 id="provenance-in-moped-herkunft-nachvollziehbarkeit-transparenz">Provenance in MOPED: Herkunft, Nachvollziehbarkeit, Transparenz</h3>
 <p>Die Provenance-Ressource dient der dokumentierten Nachvollziehbarkeit von Änderungen an FHIR-Ressourcen. Sie beschreibt, wer eine Ressource wann, warum und in welchem Kontext erstellt oder verändert hat.</p>
 
@@ -632,7 +634,7 @@ Dies schützt vor unabsichtlicher Manipulation und sichert die Datenintegrität 
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Mar 10, 2026 09:54+0000">2026-03-10</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Thu, Mar 12, 2026 09:42+0000">2026-03-12</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

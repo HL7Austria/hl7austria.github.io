@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedKHOrganisationseinheit | *Version*:0.1.0 | |
-| Draft as of 2026-03-10 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedKHOrganisationseinheit |
+| Draft as of 2026-03-12 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedKHOrganisationseinheit |
 
  
 MOPED Profil für Organisationseinheiten innerhalb einer Krankenanstalt. 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedKHOrganisations
   "name" : "MopedKHOrganisationseinheit",
   "title" : "MOPED KH Organisationseinheiten",
   "status" : "draft",
-  "date" : "2026-03-10T09:54:59+00:00",
+  "date" : "2026-03-12T09:42:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
