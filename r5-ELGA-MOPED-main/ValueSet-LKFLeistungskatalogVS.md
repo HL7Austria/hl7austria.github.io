@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/LKFLeistungskatalogVS | *Version*:0.1.0 | |
-| Draft as of 2026-03-12 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LKFLeistungskatalogVS |
+| Draft as of 2026-03-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LKFLeistungskatalogVS |
 
  
 LKF Hauptdiagnosegruppen 
@@ -53,7 +53,7 @@ No Expansion for this valueset (Unknown Code System)
   "title" : "LKF Leistungskatalog BMSGPK",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-12T09:42:23+00:00",
+  "date" : "2026-03-15T19:53:47+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

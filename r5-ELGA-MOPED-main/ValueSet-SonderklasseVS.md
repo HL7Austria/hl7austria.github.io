@@ -9,14 +9,13 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/SonderklasseVS | *Version*:0.1.0 | |
-| Draft as of 2026-03-12 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:SonderklasseVS |
+| Draft as of 2026-03-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:SonderklasseVS |
 
  
 ValueSet für die Klasse (KaOrg) 
 
  **References** 
 
-* [Supporting Info Extension for ClaimResponse - Sonderklasse Slice](StructureDefinition-MopedSupportingInfoSonderklasse.md)
 * [Supporting Info Extension for ClaimResponse - Vortageanzahl auf Kostenbeitrag](StructureDefinition-MopedSupportingInfoVortageanzahlAufKostenbeitrag.md)
 * [MOPED VAERequest](StructureDefinition-MopedVAERequest.md)
 
@@ -53,7 +52,7 @@ ValueSet für die Klasse (KaOrg)
   "title" : "Sonderklasse ValueSet",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-12T09:42:23+00:00",
+  "date" : "2026-03-15T19:53:47+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

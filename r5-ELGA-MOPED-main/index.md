@@ -184,7 +184,7 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
   "name" : "MOPED",
   "title" : "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)",
   "status" : "draft",
-  "date" : "2026-03-12T09:42:23+00:00",
+  "date" : "2026-03-15T19:53:47+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -3465,18 +3465,6 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
         "reference" : "StructureDefinition/MopedSupportingInfoOEGKELBNR"
       },
       "name" : "Supporting Info Extension for ClaimResponse - OEGKELBNR Slice",
-      "description" : "Additional information codes regarding exceptions, special considerations, the condition, situation, prior or concurrent issues",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/MopedSupportingInfoSonderklasse"
-      },
-      "name" : "Supporting Info Extension for ClaimResponse - Sonderklasse Slice",
       "description" : "Additional information codes regarding exceptions, special considerations, the condition, situation, prior or concurrent issues",
       "isExample" : false
     },

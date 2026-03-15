@@ -23,7 +23,7 @@ Die folgenden Anwendungsfälle werden beschrieben:
 * [ANWF 6 - Mehrmalige Aufnahme an einem Tag 🔄](AF6.md)
 * [ANWF 7 - Behandlungsabbruch 🔄](AF7.md)
 * [ANWF 8,9,47 - Stammdatenabgleich 🔄](AF8u9u47.md)
-* [ANWF 10 - Klassenwechsel 🔄](AF10.md)
+* [ANWF 10 - Klassenwechsel ✅](AF10.md)
 * [ANWF 11 - Versicherungswechsel 🔄](AF11.md)
 * [ANWF 12,13,15,35-37 - Ausländerverrechnung und Regress 🔄](AF12.md)
 * [ANWF 14 - Selbstzahler ✅](AF14.md)

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/AltersgruppeVS | *Version*:0.1.0 | |
-| Draft as of 2026-03-12 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:AltersgruppeVS |
+| Draft as of 2026-03-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:AltersgruppeVS |
 
  
 ValueSet für die Altersgruppe des Patienten 
@@ -51,7 +51,7 @@ ValueSet für die Altersgruppe des Patienten
   "title" : "Altersgruppe des Patienten",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-12T09:42:23+00:00",
+  "date" : "2026-03-15T19:53:47+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

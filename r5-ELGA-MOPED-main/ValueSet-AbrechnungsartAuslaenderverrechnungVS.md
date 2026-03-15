@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/AbrechnungsartAuslaenderverrechnungVS | *Version*:0.1.0 | |
-| Draft as of 2026-03-12 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:AbrechnungsartAuslaenderverrechnungVS |
+| Draft as of 2026-03-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:AbrechnungsartAuslaenderverrechnungVS |
 
  
 ValueSet für die Abrechnungsarten in der Ausländerverrechnung 
@@ -51,7 +51,7 @@ ValueSet für die Abrechnungsarten in der Ausländerverrechnung
   "title" : "Abrechnungsart Ausländerverrechnung ValueSet",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-12T09:42:23+00:00",
+  "date" : "2026-03-15T19:53:47+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

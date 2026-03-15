@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedVAEResponse | *Version*:0.1.0 | |
-| Draft as of 2026-03-12 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedVAEResponse |
+| Draft as of 2026-03-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedVAEResponse |
 
  
 MOPED Profil für die Beantwortung der Versichertenanspruchserklärung VAE. 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedVAEResponse.csv
   "name" : "MopedVAEResponse",
   "title" : "MOPED VAEResponse",
   "status" : "draft",
-  "date" : "2026-03-12T09:42:23+00:00",
+  "date" : "2026-03-15T19:53:47+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -81,34 +81,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedVAEResponse.csv
         "ordered" : false,
         "rules" : "open"
       },
-      "min" : 3
-    },
-    {
-      "id" : "ClaimResponse.extension:MopedSupportingInfoSonderklasse",
-      "extension" : [{
-        "extension" : [{
-          "url" : "code",
-          "valueCode" : "SHALL:populate"
-        },
-        {
-          "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedSVActor"
-        }],
-        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
-      }],
-      "path" : "ClaimResponse.extension",
-      "sliceName" : "MopedSupportingInfoSonderklasse",
-      "short" : "KaOrg: Allgemeine Gebührenklasse/Sonderklasse",
-      "min" : 1,
-      "max" : "1",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["https://elga.moped.at/StructureDefinition/MopedSupportingInfoSonderklasse"]
-      }],
-      "mapping" : [{
-        "identity" : "KaOrg",
-        "map" : "Allgemeine Gebührenklasse/Sonderklasse"
-      }]
+      "min" : 2
     },
     {
       "id" : "ClaimResponse.extension:VerpflegskostenBeitragsbefreiung",
@@ -127,7 +100,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedVAEResponse.csv
       "sliceName" : "VerpflegskostenBeitragsbefreiung",
       "short" : "KaOrg: Verpflegskosten-Beitragsbefreiung",
       "min" : 1,
-      "max" : "1",
+      "max" : "*",
       "type" : [{
         "code" : "Extension",
         "profile" : ["https://elga.moped.at/StructureDefinition/moped-ext-verpflegskostenBeitragsbefreiung"]

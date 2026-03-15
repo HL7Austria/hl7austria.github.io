@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedVAERequest | *Version*:0.1.0 | |
-| Draft as of 2026-03-12 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedVAERequest |
+| Draft as of 2026-03-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedVAERequest |
 
  
 MOPED Profil für die Anfrage der Versichertenanspruchserklärung VAE. 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedVAERequest.csv)
   "name" : "MopedVAERequest",
   "title" : "MOPED VAERequest",
   "status" : "draft",
-  "date" : "2026-03-12T09:42:23+00:00",
+  "date" : "2026-03-15T19:53:47+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -327,7 +327,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedVAERequest.csv)
         "ordered" : false,
         "rules" : "open"
       },
-      "min" : 1
+      "min" : 2
     },
     {
       "id" : "Claim.supportingInfo.code.coding",
@@ -353,7 +353,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedVAERequest.csv)
       "path" : "Claim.supportingInfo",
       "sliceName" : "Sonderklasse",
       "short" : "KaOrg: Allgemeine Gebührenklasse/Sonderklasse",
-      "min" : 0,
+      "min" : 1,
       "max" : "*"
     },
     {

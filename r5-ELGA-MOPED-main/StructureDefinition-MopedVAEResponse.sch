@@ -12,10 +12,7 @@
   <sch:pattern>
     <sch:title>f:ClaimResponse</sch:title>
     <sch:rule context="f:ClaimResponse">
-      <sch:assert test="count(f:extension[@url = 'https://elga.moped.at/StructureDefinition/MopedSupportingInfoSonderklasse']) &gt;= 1">extension with URL = 'https://elga.moped.at/StructureDefinition/MopedSupportingInfoSonderklasse': minimum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'https://elga.moped.at/StructureDefinition/MopedSupportingInfoSonderklasse']) &lt;= 1">extension with URL = 'https://elga.moped.at/StructureDefinition/MopedSupportingInfoSonderklasse': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'https://elga.moped.at/StructureDefinition/moped-ext-verpflegskostenBeitragsbefreiung']) &gt;= 1">extension with URL = 'https://elga.moped.at/StructureDefinition/moped-ext-verpflegskostenBeitragsbefreiung': minimum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'https://elga.moped.at/StructureDefinition/moped-ext-verpflegskostenBeitragsbefreiung']) &lt;= 1">extension with URL = 'https://elga.moped.at/StructureDefinition/moped-ext-verpflegskostenBeitragsbefreiung': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'https://elga.moped.at/StructureDefinition/MopedSupportingInfoVortageanzahlAufKostenbeitrag']) &gt;= 1">extension with URL = 'https://elga.moped.at/StructureDefinition/MopedSupportingInfoVortageanzahlAufKostenbeitrag': minimum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'https://elga.moped.at/StructureDefinition/MopedSupportingInfoVortageanzahlAufKostenbeitrag']) &lt;= 1">extension with URL = 'https://elga.moped.at/StructureDefinition/MopedSupportingInfoVortageanzahlAufKostenbeitrag': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:insurer) &gt;= 1">insurer: minimum cardinality of 'insurer' is 1</sch:assert>

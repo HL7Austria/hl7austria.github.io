@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedPatientSV | *Version*:0.1.0 | |
-| Draft as of 2026-03-12 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedPatientSV |
+| Draft as of 2026-03-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedPatientSV |
 
  
 MOPED Profil der Patient Ressource aus der Sicht der Rolle: SV 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedPatientSV.csv),
   "name" : "MopedPatientSV",
   "title" : "MOPED Patient SV",
   "status" : "draft",
-  "date" : "2026-03-12T09:42:23+00:00",
+  "date" : "2026-03-15T19:53:47+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -394,11 +394,11 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Anmerkungen: /
 * Feld: Allgemeine Gebührenklasse/Sonderklasse
   * Abkürzung: KLAS
-  * befüllt von: MopedKHActor; MopedSVActor
-  * Profile: MopedVAERequest; MopedVAERequestInitial; MopedVAERequestVerlaengerung; MopedVAEResponse
-  * FHIR Ressource: Claim; ClaimResponse
-  * Pfad von der Ressource aus: Claim.supportingInfo:Sonderklasse.code; ClaimResponse.extension:MopedSupportingInfoSonderklasse
-  * Pfad von der Composition aus: Composition.section:VAERequests.entry.resolve(); Composition.section:VAEResponses.entry.resolve()
+  * befüllt von: MopedKHActor
+  * Profile: MopedVAERequest; MopedVAERequestInitial; MopedVAERequestVerlaengerung
+  * FHIR Ressource: Claim
+  * Pfad von der Ressource aus: Claim.supportingInfo:Sonderklasse.code
+  * Pfad von der Composition aus: Composition.section:VAERequests.entry.resolve()
   * Anmerkungen: /
 * Feld: Staatsbürgerschaftsschlüssel
   * Abkürzung: STAAT
@@ -653,11 +653,11 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Anmerkungen: /
 * Feld: Allgemeine Gebührenklasse/Sonderklasse
   * Abkürzung: KLAS
-  * befüllt von: MopedKHActor; MopedSVActor
-  * Profile: MopedVAERequest; MopedVAERequestInitial; MopedVAERequestVerlaengerung; MopedVAEResponse
-  * FHIR Ressource: Claim; ClaimResponse
-  * Pfad von der Ressource aus: Claim.supportingInfo:Sonderklasse.code; ClaimResponse.extension:MopedSupportingInfoSonderklasse
-  * Pfad von der Composition aus: Composition.section:VAERequests.entry.resolve(); Composition.section:VAEResponses.entry.resolve()
+  * befüllt von: MopedKHActor
+  * Profile: MopedVAERequest; MopedVAERequestInitial; MopedVAERequestVerlaengerung
+  * FHIR Ressource: Claim
+  * Pfad von der Ressource aus: Claim.supportingInfo:Sonderklasse.code
+  * Pfad von der Composition aus: Composition.section:VAERequests.entry.resolve()
   * Anmerkungen: wird in R6 von einer extension zu einem normalen supportingInfo slice
 * Feld: VAE Beginndatum
   * Abkürzung: DAT-VON

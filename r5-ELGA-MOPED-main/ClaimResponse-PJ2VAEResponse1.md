@@ -12,12 +12,6 @@ Profile: [MOPED VAEResponse](StructureDefinition-MopedVAEResponse.md)
 * Befreiung: [Befreiung für den Verpflegskostenbeitrag: N](CodeSystem-VerpflegskostenBeitragsbefreiungCS.md#VerpflegskostenBeitragsbefreiungCS-N) (Es liegt keine Befreiung vom Verpflegskostenbeitrag vor.)
 * Zeitraum: 2024-08-26 --> (ongoing)
 
-> **Supporting Info Extension for ClaimResponse - Sonderklasse Slice**
-* category: Allgemeine Gebührenklasse/Sonderklasse
-* code: Allgemeine Gebührenklasse
-* sequence: 2
-* timing: 2024-08-08 08:21:00+0200 --> (ongoing)
-
 > **Supporting Info Extension for ClaimResponse - Vortageanzahl auf Kostenbeitrag**
 * category: Vortageanzahl auf Kostenbeitrag
 * value: 0
@@ -71,37 +65,6 @@ Profile: [MOPED VAEResponse](StructureDefinition-MopedVAEResponse.md)
       }
     }],
     "url" : "https://elga.moped.at/StructureDefinition/moped-ext-verpflegskostenBeitragsbefreiung"
-  },
-  {
-    "extension" : [{
-      "url" : "category",
-      "valueCodeableConcept" : {
-        "coding" : [{
-          "system" : "https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS",
-          "code" : "KLAS"
-        }]
-      }
-    },
-    {
-      "url" : "code",
-      "valueCodeableConcept" : {
-        "coding" : [{
-          "system" : "https://elga.moped.at/CodeSystem/SonderklasseCS",
-          "code" : "A"
-        }]
-      }
-    },
-    {
-      "url" : "sequence",
-      "valuePositiveInt" : 2
-    },
-    {
-      "url" : "timing",
-      "valuePeriod" : {
-        "start" : "2024-08-08T08:21:00+02:00"
-      }
-    }],
-    "url" : "https://elga.moped.at/StructureDefinition/MopedSupportingInfoSonderklasse"
   },
   {
     "extension" : [{
