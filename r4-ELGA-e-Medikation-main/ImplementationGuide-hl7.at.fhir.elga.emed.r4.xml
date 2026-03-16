@@ -11,7 +11,7 @@
   <name value="ELGAeMedikationR4"/>
   <title value="ELGA e-Medikation (R4) ENTWURF"/>
   <status value="draft"/>
-  <date value="2026-03-10T11:31:06+00:00"/>
+  <date value="2026-03-16T16:50:24+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -859,6 +859,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/At-Emed-Example-Mr-Geplante-Abgabe"/>
+      </reference>
+      <name value="Beispiel: Geplante Abgabe"/>
+      <description value="Bildet eine geplante Abgabe des Medikaments EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest)."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-geplante-abgabe"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:complex-type"/>
       </extension>
       <reference>
@@ -876,7 +887,18 @@
         <reference value="StructureDefinition/at-emed-md-durchgefuehrte-abgabe"/>
       </reference>
       <name value="ELGA e-Med Durchgeführte Abgabe"/>
-      <description value="Dokumentiert eine durchgeführte Abgabe eines Arzneimittels (&quot;MedicationDispense&quot;-Ressource). &#xA;Sofern eine zugehörige geplante Abgabe vorliegt, können Abweichungen hinsichtlich der Dosierung oder einer möglichen&#xA;Substitution des Medikaments in der durchgeführten Abgabe dokumentiert werden."/>
+      <description value="Dokumentiert eine durchgeführte Abgabe eines Arzneimittels (&quot;MedicationDispense&quot;-Ressource). &#xA;In der durchgeführten Abgabe können Abweichungen hinsichtlich der Dosierung des Medikaments dokumentiert werden.&#xA;Sofern eine zugehörige geplante Abgabe vorliegt, muss diese referenziert werden. Einer mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige geplante Abgabe, ersichtlich."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/DurchgefuehrteAbgabeStatusVS"/>
+      </reference>
+      <name value="ELGA e-Med Durchgeführte Abgabe Status Value Set"/>
+      <description value="ValueSet für zulässige Ausprägungen eines Status einer durchgeführten Abgabe (MedicationDispense)."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -887,7 +909,7 @@
         <reference value="StructureDefinition/at-emed-mr-geplante-abgabe"/>
       </reference>
       <name value="ELGA e-Med Geplante Abgabe"/>
-      <description value="Bildet eine geplante Abgabe eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab (&quot;MedicationRequest&quot;-Ressource).&#xA;Sie enthält das verordnete Arzneimittel und dessen Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation.&#xA;Als groupIdentifier dient die Geplante-Abgabe-ID, die auch im e-Rezept mitgeführt wird.&#xA;Werden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer'). Verwendet R5 Backport Extensions."/>
+      <description value="Bildet eine geplante Abgabe eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab (&quot;MedicationRequest&quot;-Ressource).&#xA;Sie enthält das verordnete Arzneimittel und dessen Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation.&#xA;Werden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer'). Verwendet R5 Backport Extensions."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -910,6 +932,28 @@
       </reference>
       <name value="ELGA e-Med MedicationRequest Kategorie CodeSystem"/>
       <description value="Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/MedicationRequestCategoryRecipeTypeCS"/>
+      </reference>
+      <name value="ELGA e-Med MedicationRequest Kategorie Rezeptart CodeSystem"/>
+      <description value="Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie Rezeptart."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/MedicationRequestCategoryRecipeTypeVS"/>
+      </reference>
+      <name value="ELGA e-Med MedicationRequest Kategorie Rezeptart ValueSet"/>
+      <description value="ValueSet für zulässige Ausprägungen der MedicationRequest Kategorie Rezeptart."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

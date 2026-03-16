@@ -39,7 +39,7 @@ Am 27.2.2026 möchte Dr. Musterärztin ihrem Patienten Max Mustermann mehrere Me
 
 * Medikationsplan abrufen: 
 * Beispiel: [Collection Bundle](Bundle-At-Emed-Journey-01-Bundle-Medikationsplan.md)
-  
+ 
 
 Dr. Musterärztin ergänzt das Medikament Ebetrexat (10 mg, Tabletten) und erklärt dem Patienten, dass er morgens und abends je eine Tablette einnehmen soll und worauf er bei der Einnahme zu achten hat. Sie dokumentiert dies in seinem Medikationsplan. 
  Weiters verschreibt sie ihrem Patienten eine magistrale Zubereitung einer Cortison-Salbe, die er eine Woche lang abends auftragen soll.
@@ -47,7 +47,7 @@ Dr. Musterärztin ergänzt das Medikament Ebetrexat (10 mg, Tabletten) und erkl�
 
 * Medikationsplaneinträge hinzufügen: 
 * Beispiel [Transaction Bundle](Bundle-At-Emed-Journey-02-Bundle-Tx-Medikationsplan.md)
-  
+ 
 
 #### Journey-03:
 
@@ -83,7 +83,7 @@ Weil er es für sinnvoll hält, ändert er die Reihenfolge der Planeinträge. Di
 
 * Medikationsplan mit geänderter Reihenfolge anzeigen: 
 * Beispiel: [Collection Bundle](Bundle-At-Emed-Journey-05-a-Bundle-Medikationsplan.md)
-  
+ 
 
 #### Journey-05-b:
 
@@ -95,7 +95,7 @@ Der Patient erscheint am 10.3.2026 zur Kontrolle bei Dr. Musterärztin, die den 
  
 * Medikationsplan (Variante ohne Filter: abgelaufenen Einträge anzeigen): 
 * Beispiel: [Collection Bundle](Bundle-At-Emed-Journey-05-b-Bundle-Medikationsplan.md)
-  
+ 
 * Medikationsplan (Variante gefiltert: nur aktuelle Einträge anzeigen): 
 * Beispiel: Todo
  

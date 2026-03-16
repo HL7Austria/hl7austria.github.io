@@ -126,14 +126,14 @@
     "sources" : ["2.16.840.1.113883.4.642.3.20"],
     "uses" : {
     },
-    "StructureDefinition-at-emed-mr-geplante-abgabe.html" : "ELGA e-Med Geplante Abgabe",
-    "StructureDefinition-at-emed-mr-planeintrag.html" : "ELGA e-Med Planeintrag",
-    "StructureDefinition-at-emed-list-medikationsplan.html" : "ELGA e-Med Medikationsplan",
-    "StructureDefinition-at-emed-substance.html" : "ELGA e-Med Substanz",
     "StructureDefinition-at-emed-bundle-tx-medikationsplan.html" : "ELGA e-Med Medikationsplan Transaction Bundle",
-    "StructureDefinition-at-emed-bundle-medikationsplan.html" : "ELGA e-Med Medikationsplan Collection Bundle",
+    "StructureDefinition-at-emed-mr-geplante-abgabe.html" : "ELGA e-Med Geplante Abgabe",
+    "StructureDefinition-at-emed-list-medikationsplan.html" : "ELGA e-Med Medikationsplan",
+    "StructureDefinition-at-emed-mr-planeintrag.html" : "ELGA e-Med Planeintrag",
     "StructureDefinition-at-emed-md-durchgefuehrte-abgabe.html" : "ELGA e-Med Durchgeführte Abgabe",
-    "StructureDefinition-at-emed-medication.html" : "ELGA e-Med Medikation"
+    "StructureDefinition-at-emed-bundle-medikationsplan.html" : "ELGA e-Med Medikationsplan Collection Bundle",
+    "StructureDefinition-at-emed-medication.html" : "ELGA e-Med Medikation",
+    "StructureDefinition-at-emed-substance.html" : "ELGA e-Med Substanz"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/list-example-codes",
@@ -231,8 +231,6 @@
     "sources" : ["2.16.840.1.113883.4.642.3.375"],
     "uses" : {
     },
-    "StructureDefinition-at-emed-mr-geplante-abgabe.html" : "ELGA e-Med Geplante Abgabe",
-    "StructureDefinition-at-emed-mr-planeintrag.html" : "ELGA e-Med Planeintrag",
     "StructureDefinition-at-emed-md-durchgefuehrte-abgabe.html" : "ELGA e-Med Durchgeführte Abgabe"
   },
   {
@@ -411,22 +409,6 @@
     "StructureDefinition-at-emed-mr-planeintrag.html" : "ELGA e-Med Planeintrag"
   },
   {
-    "url" : "http://hl7.org/fhir/ValueSet/resource-types",
-    "version" : "4.0.1",
-    "status" : "active",
-    "name" : "ResourceType",
-    "title" : "ResourceType",
-    "description" : "One of the resource types defined as part of this version of FHIR.",
-    "systems" : ["http://hl7.org/fhir/resource-types"],
-    "oids" : ["2.16.840.1.113883.4.642.3.27"],
-    "sources" : ["2.16.840.1.113883.4.642.3.27"],
-    "uses" : {
-    },
-    "StructureDefinition-at-emed-mr-geplante-abgabe.html" : "ELGA e-Med Geplante Abgabe",
-    "StructureDefinition-at-emed-mr-planeintrag.html" : "ELGA e-Med Planeintrag",
-    "StructureDefinition-at-emed-medication.html" : "ELGA e-Med Medikation"
-  },
-  {
     "url" : "http://hl7.org/fhir/ValueSet/search-entry-mode",
     "version" : "4.0.1",
     "status" : "active",
@@ -558,6 +540,14 @@
     "StructureDefinition-at-emed-md-durchgefuehrte-abgabe.html" : "ELGA e-Med Durchgeführte Abgabe"
   },
   {
+    "url" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/DurchgefuehrteAbgabeStatusVS",
+    "version" : "0.1.1",
+    "status" : "draft",
+    "name" : "DurchgefuehrteAbgabeStatusVS",
+    "title" : "ELGA e-Med Durchgeführte Abgabe Status Value Set",
+    "description" : "ValueSet für zulässige Ausprägungen eines Status einer durchgeführten Abgabe (MedicationDispense)."
+  },
+  {
     "url" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/GeplanteAbgabeStatusVS",
     "version" : "0.1.1",
     "status" : "draft",
@@ -565,6 +555,18 @@
     "title" : "ELGA e-Med Geplante Abgabe Status ValueSet",
     "description" : "ValueSet für zulässige Ausprägungen eines Status einer geplanten Abgabe (MedicationRequest).",
     "systems" : ["http://hl7.org/fhir/medicationrequest-status"],
+    "uses" : {
+    },
+    "StructureDefinition-at-emed-mr-geplante-abgabe.html" : "ELGA e-Med Geplante Abgabe"
+  },
+  {
+    "url" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/MedicationRequestCategoryRecipeTypeVS",
+    "version" : "0.1.1",
+    "status" : "draft",
+    "name" : "MedicationRequestCategoryRecipeTypeVS",
+    "title" : "ELGA e-Med MedicationRequest Kategorie Rezeptart ValueSet",
+    "description" : "ValueSet für zulässige Ausprägungen der MedicationRequest Kategorie Rezeptart.",
+    "systems" : ["https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryRecipeTypeCS"],
     "uses" : {
     },
     "StructureDefinition-at-emed-mr-geplante-abgabe.html" : "ELGA e-Med Geplante Abgabe"

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication | *Version*:0.1.1 | |
-| Draft as of 2026-03-10 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedication |
+| Draft as of 2026-03-16 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedication |
 
  
 Bildet ein Arzneimittel in der "Medication"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, geplante Abgabe und durchgeführte Abgabe. Aktuell nur geprüft im Kontext Planeintrag. Unterschieden werden folgende Fälle: 
@@ -19,7 +19,6 @@ Bildet ein Arzneimittel in der "Medication"-Ressource ab. Wird grundsätzlich ve
 
 **Usages:**
 
-* Use this Profile: [ELGA e-Med Geplante Abgabe](StructureDefinition-at-emed-mr-geplante-abgabe.md) and [ELGA e-Med Planeintrag](StructureDefinition-at-emed-mr-planeintrag.md)
 * Refer to this Profile: [ELGA e-Med Durchgeführte Abgabe](StructureDefinition-at-emed-md-durchgefuehrte-abgabe.md), [ELGA e-Med Geplante Abgabe](StructureDefinition-at-emed-mr-geplante-abgabe.md) and [ELGA e-Med Planeintrag](StructureDefinition-at-emed-mr-planeintrag.md)
 * Examples for this Profile: [Medication/At-Emed-Example-Medication-Magistral-01](Medication-At-Emed-Example-Medication-Magistral-01.md)
 
@@ -46,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
   "name" : "AtEmedMedication",
   "title" : "ELGA e-Med Medikation",
   "status" : "draft",
-  "date" : "2026-03-10T11:31:06+00:00",
+  "date" : "2026-03-16T16:50:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -92,6 +91,10 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
+      "id" : "Medication",
+      "path" : "Medication"
+    },
+    {
       "id" : "Medication.text",
       "path" : "Medication.text",
       "short" : "TODO: Freitext für magistrale Anwendungen oder Abbildung in Substance.description?",
@@ -168,7 +171,8 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
       },
       {
         "code" : "Reference",
-        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-substance"]
+        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-substance"],
+        "aggregation" : ["contained"]
       }]
     },
     {
@@ -192,20 +196,10 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
       "max" : "1",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-substance"]
+        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-substance"],
+        "aggregation" : ["contained"]
       }],
       "mustSupport" : true
-    },
-    {
-      "id" : "Medication.ingredient.item[x]:itemReference.reference",
-      "path" : "Medication.ingredient.item[x].reference",
-      "constraint" : [{
-        "key" : "contained-sub",
-        "severity" : "error",
-        "human" : "Substance must be contained",
-        "expression" : "reference.startsWith('#')",
-        "source" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"
-      }]
     },
     {
       "id" : "Medication.ingredient.isActive",

@@ -221,8 +221,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Dokumentiert eine durchgeführte Abgabe eines Arzneimittels ("MedicationDispense"-Ressource). 
-Sofern eine zugehörige geplante Abgabe vorliegt, können Abweichungen hinsichtlich der Dosierung oder einer möglichen
-Substitution des Medikaments in der durchgeführten Abgabe dokumentiert werden.</p>
+In der durchgeführten Abgabe können Abweichungen hinsichtlich der Dosierung des Medikaments dokumentiert werden.
+Sofern eine zugehörige geplante Abgabe vorliegt, muss diese referenziert werden. Einer mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige geplante Abgabe, ersichtlich.</p>
 </td>
          </tr>
          <tr>
@@ -233,7 +233,6 @@ Substitution des Medikaments in der durchgeführten Abgabe dokumentiert werden.<
             <td>
 <p>Bildet eine geplante Abgabe eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab ("MedicationRequest"-Ressource).
 Sie enthält das verordnete Arzneimittel und dessen Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation.
-Als groupIdentifier dient die Geplante-Abgabe-ID, die auch im e-Rezept mitgeführt wird.
 Werden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer'). Verwendet R5 Backport Extensions.</p>
 </td>
          </tr>
@@ -350,11 +349,29 @@ Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet
       <tbody>
          <tr>
             <td style="column-width:30%">
+               <a href="ValueSet-DurchgefuehrteAbgabeStatusVS.html"
+                  title="ValueSet/DurchgefuehrteAbgabeStatusVS">ELGA e-Med Durchgeführte Abgabe Status Value Set</a>
+            </td>
+            <td>
+<p>ValueSet für zulässige Ausprägungen eines Status einer durchgeführten Abgabe (MedicationDispense).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ValueSet-GeplanteAbgabeStatusVS.html"
                   title="ValueSet/GeplanteAbgabeStatusVS">ELGA e-Med Geplante Abgabe Status ValueSet</a>
             </td>
             <td>
 <p>ValueSet für zulässige Ausprägungen eines Status einer geplanten Abgabe (MedicationRequest).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-MedicationRequestCategoryRecipeTypeVS.html"
+                  title="ValueSet/MedicationRequestCategoryRecipeTypeVS">ELGA e-Med MedicationRequest Kategorie Rezeptart ValueSet</a>
+            </td>
+            <td>
+<p>ValueSet für zulässige Ausprägungen der MedicationRequest Kategorie Rezeptart.</p>
 </td>
          </tr>
          <tr>
@@ -399,6 +416,15 @@ Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet
             </td>
             <td>
 <p>Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-MedicationRequestCategoryRecipeTypeCS.html"
+                  title="CodeSystem/MedicationRequestCategoryRecipeTypeCS">ELGA e-Med MedicationRequest Kategorie Rezeptart CodeSystem</a>
+            </td>
+            <td>
+<p>Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie Rezeptart.</p>
 </td>
          </tr>
       </tbody>
@@ -726,6 +752,15 @@ Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="MedicationRequest-At-Emed-Example-Mr-Geplante-Abgabe.html"
+                  title="MedicationRequest/At-Emed-Example-Mr-Geplante-Abgabe">Beispiel: Geplante Abgabe</a>
+            </td>
+            <td>
+<p>Bildet eine geplante Abgabe des Medikaments EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="MedicationRequest-At-Emed-Example-Mr-Dosierung-Freitext.html"
                   title="MedicationRequest/At-Emed-Example-Mr-Dosierung-Freitext">Medikationsplaneintrag mit Freitext-Dosierung</a>
             </td>
@@ -753,7 +788,7 @@ Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Mar 10, 2026 11:31+0000">2026-03-10</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Mar 16, 2026 16:50+0000">2026-03-16</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -9,10 +9,10 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-md-durchgefuehrte-abgabe | *Version*:0.1.1 | |
-| Draft as of 2026-03-10 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMDDurchgefuehrteAbgabe |
+| Draft as of 2026-03-16 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMDDurchgefuehrteAbgabe |
 
  
-Dokumentiert eine durchgeführte Abgabe eines Arzneimittels ("MedicationDispense"-Ressource). Sofern eine zugehörige geplante Abgabe vorliegt, können Abweichungen hinsichtlich der Dosierung oder einer möglichen Substitution des Medikaments in der durchgeführten Abgabe dokumentiert werden. 
+Dokumentiert eine durchgeführte Abgabe eines Arzneimittels ("MedicationDispense"-Ressource). In der durchgeführten Abgabe können Abweichungen hinsichtlich der Dosierung des Medikaments dokumentiert werden. Sofern eine zugehörige geplante Abgabe vorliegt, muss diese referenziert werden. Einer mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige geplante Abgabe, ersichtlich. 
 
 **Usages:**
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
   "name" : "AtEmedMDDurchgefuehrteAbgabe",
   "title" : "ELGA e-Med Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-03-10T11:31:06+00:00",
+  "date" : "2026-03-16T16:50:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -58,7 +58,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
       "use" : "work"
     }]
   }],
-  "description" : "Dokumentiert eine durchgeführte Abgabe eines Arzneimittels (\"MedicationDispense\"-Ressource). \nSofern eine zugehörige geplante Abgabe vorliegt, können Abweichungen hinsichtlich der Dosierung oder einer möglichen\nSubstitution des Medikaments in der durchgeführten Abgabe dokumentiert werden.",
+  "description" : "Dokumentiert eine durchgeführte Abgabe eines Arzneimittels (\"MedicationDispense\"-Ressource). \nIn der durchgeführten Abgabe können Abweichungen hinsichtlich der Dosierung des Medikaments dokumentiert werden.\nSofern eine zugehörige geplante Abgabe vorliegt, muss diese referenziert werden. Einer mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige geplante Abgabe, ersichtlich.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "workflow",
@@ -99,8 +99,8 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.identifier",
       "path" : "MedicationDispense.identifier",
-      "short" : "Durchgeführte-Abgabe-ID ? Verwendung prüfen.",
-      "mustSupport" : true
+      "short" : "Durchgeführte-Abgabe-ID. TODO: Verwendung zu prüfen.",
+      "max" : "0"
     },
     {
       "id" : "MedicationDispense.partOf",
@@ -111,7 +111,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.status",
       "path" : "MedicationDispense.status",
-      "short" : "Status des durchgeführten Abgabe: preparation | in-progress | cancelled | on-hold | completed | entered-in-error | stopped | declined | unknown; http://hl7.org/fhir/ValueSet/medicationdispense-status|4.0.1\n-> VS einschränken",
+      "short" : "Status der durchgeführten Abgabe: preparation | in-progress | cancelled | on-hold | completed | entered-in-error | stopped | declined | unknown; http://hl7.org/fhir/ValueSet/medicationdispense-status|4.0.1\n-> VS einschränken",
       "mustSupport" : true
     },
     {
@@ -155,8 +155,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
       "id" : "MedicationDispense.category",
       "path" : "MedicationDispense.category",
       "short" : "Angabe, wo das abgegebene Medikament voraussichtlich eingenommen oder verabreicht wird (z.B. stationär oder ambulant), https://hl7.org/fhir/R4/valueset-medicationdispense-category.html. Verwendung zu prüfen.",
-      "max" : "0",
-      "mustSupport" : true
+      "max" : "0"
     },
     {
       "id" : "MedicationDispense.medication[x]",
@@ -220,7 +219,8 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.supportingInformation",
       "path" : "MedicationDispense.supportingInformation",
-      "short" : "Referenz auf zusätzliche Informationen, die die Abgabe des Medikaments unterstützen. \nVerwendung in der durchgeführten Abgabe prüfen."
+      "short" : "Referenz auf zusätzliche Informationen, die die Abgabe des Medikaments unterstützen. \nVerwendung in der durchgeführten Abgabe prüfen.",
+      "max" : "0"
     },
     {
       "id" : "MedicationDispense.performer",
@@ -234,7 +234,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
       "id" : "MedicationDispense.performer.function",
       "path" : "MedicationDispense.performer.function",
       "short" : "Rolle: https://hl7.org/fhir/R4/valueset-medicationdispense-performer-function.html; Verwendung in der durchgeführten Abgabe prüfen.",
-      "mustSupport" : true
+      "max" : "0"
     },
     {
       "id" : "MedicationDispense.performer.actor",
@@ -251,7 +251,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.location",
       "path" : "MedicationDispense.location",
-      "short" : "Ort der Abgabe (Referenz auf Location Ressource). Verwendung prüfen.",
+      "short" : "Ort der Abgabe (Referenz auf Location Ressource). Keine Verwendung in durchgeführter Abgabe.",
       "max" : "0"
     },
     {
@@ -265,30 +265,33 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
       "id" : "MedicationDispense.type",
       "path" : "MedicationDispense.type",
       "short" : "Mögliche Werte z.B. FFC (First-Fill Complete für vollständig erfüllte Bestellungen), FFP (First-Fill Part Fill für teilweise erfüllte Bestellungen), \nBsp: http://terminology.hl7.org/ValueSet/v3-ActPharmacySupplyType",
+      "min" : 1,
       "mustSupport" : true
     },
     {
       "id" : "MedicationDispense.quantity",
       "path" : "MedicationDispense.quantity",
       "short" : "Abgegebene Menge und Einheit",
+      "min" : 1,
       "mustSupport" : true
     },
     {
       "id" : "MedicationDispense.daysSupply",
       "path" : "MedicationDispense.daysSupply",
       "short" : "Medikamentenmenge, ausgedrückt als zeitliche Menge",
-      "mustSupport" : true
+      "max" : "0"
     },
     {
       "id" : "MedicationDispense.whenPrepared",
       "path" : "MedicationDispense.whenPrepared",
       "short" : "Verpackungs- und Prüfdatum.",
-      "mustSupport" : true
+      "max" : "0"
     },
     {
       "id" : "MedicationDispense.whenHandedOver",
       "path" : "MedicationDispense.whenHandedOver",
       "short" : "Der Zeitpunkt, zu dem das abgegebene Produkt dem Patienten oder seinem Vertreter zur Verfügung gestellt wurde.",
+      "min" : 1,
       "mustSupport" : true
     },
     {
@@ -324,36 +327,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
       "id" : "MedicationDispense.substitution",
       "path" : "MedicationDispense.substitution",
       "short" : "Gibt an, ob im Rahmen der Abgabe eine Substitution vorgenommen wurde oder nicht. \nWenn nichts angegeben ist, wurde keine Substitution vorgenommen.",
-      "mustSupport" : true
-    },
-    {
-      "id" : "MedicationDispense.substitution.wasSubstituted",
-      "path" : "MedicationDispense.substitution.wasSubstituted",
-      "short" : "TRUE, wenn der Apotheker ein anderes Medikament oder Produkt als das verschriebene abgegeben hat."
-    },
-    {
-      "id" : "MedicationDispense.substitution.type",
-      "path" : "MedicationDispense.substitution.type",
-      "short" : "Typ der Substitution: z.B. E equivalent, http://terminology.hl7.org/ValueSet/v3-ActSubstanceAdminSubstitutionCode",
-      "mustSupport" : true
-    },
-    {
-      "id" : "MedicationDispense.substitution.reason",
-      "path" : "MedicationDispense.substitution.reason",
-      "short" : "Grund für die Substitution: z.B. OS out of stock, https://hl7.org/fhir/R4/v3/SubstanceAdminSubstitutionReason/vs.html",
-      "mustSupport" : true
-    },
-    {
-      "id" : "MedicationDispense.substitution.responsibleParty",
-      "path" : "MedicationDispense.substitution.responsibleParty",
-      "short" : "Für die Subistution Verantwortlicher.",
-      "max" : "1",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner",
-        "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitionerRole"]
-      }],
-      "mustSupport" : true
+      "max" : "0"
     },
     {
       "id" : "MedicationDispense.detectedIssue",

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag | *Version*:0.1.1 | |
-| Draft as of 2026-03-10 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMRPlaneintrag |
+| Draft as of 2026-03-16 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMRPlaneintrag |
 
  
 Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers ab ("MedicationRequest"-Ressource). Er enthält genau ein Arzneimittel und dessen Dosierung. Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet R5 Backport Extensions. 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
   "name" : "AtEmedMRPlaneintrag",
   "title" : "ELGA e-Med Planeintrag",
   "status" : "draft",
-  "date" : "2026-03-10T11:31:06+00:00",
+  "date" : "2026-03-16T16:50:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -94,40 +94,6 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
-      "id" : "MedicationRequest.contained",
-      "path" : "MedicationRequest.contained",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "type",
-          "path" : "$this"
-        }],
-        "rules" : "open"
-      },
-      "min" : 1
-    },
-    {
-      "id" : "MedicationRequest.contained:medication",
-      "path" : "MedicationRequest.contained",
-      "sliceName" : "medication",
-      "min" : 1,
-      "max" : "1",
-      "type" : [{
-        "code" : "Medication",
-        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"]
-      }]
-    },
-    {
-      "id" : "MedicationRequest.contained:substance",
-      "path" : "MedicationRequest.contained",
-      "sliceName" : "substance",
-      "min" : 0,
-      "max" : "*",
-      "type" : [{
-        "code" : "Substance",
-        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-substance"]
-      }]
-    },
-    {
       "id" : "MedicationRequest.extension",
       "path" : "MedicationRequest.extension",
       "slicing" : {
@@ -275,39 +241,13 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
     {
       "id" : "MedicationRequest.medication[x]",
       "path" : "MedicationRequest.medication[x]",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "type",
-          "path" : "$this"
-        }],
-        "ordered" : false,
-        "rules" : "open"
-      },
-      "mustSupport" : true
-    },
-    {
-      "id" : "MedicationRequest.medication[x]:medicationReference",
-      "path" : "MedicationRequest.medication[x]",
-      "sliceName" : "medicationReference",
       "short" : "Das Arzneimittel wird immer in einer contained Medication Ressource dokumentiert, damit Arzneimittel mit und ohne PZN einheitlich dokumentiert werden können.",
-      "min" : 1,
-      "max" : "1",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"]
+        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"],
+        "aggregation" : ["contained"]
       }],
       "mustSupport" : true
-    },
-    {
-      "id" : "MedicationRequest.medication[x]:medicationReference.reference",
-      "path" : "MedicationRequest.medication[x].reference",
-      "constraint" : [{
-        "key" : "contained-ref",
-        "severity" : "error",
-        "human" : "Medication must be contained (#...)",
-        "expression" : "$this.startsWith('#')",
-        "source" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"
-      }]
     },
     {
       "id" : "MedicationRequest.subject",

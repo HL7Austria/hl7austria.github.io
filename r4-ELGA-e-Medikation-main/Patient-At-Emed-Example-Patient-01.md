@@ -6,7 +6,7 @@
 
 ## Example Patient: Beispiel Patient 01
 
-Profiles: [HL7® AT Core Patient Profile](http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/2.0.0/StructureDefinition-at-core-patient.html), `http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-patient`
+Profile: [HL7® AT Core Patient Profile](http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/2.0.0/StructureDefinition-at-core-patient.html)
 
 Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)
 
@@ -21,6 +21,8 @@ Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)
 * [+436501234567890](tel:+436501234567890)
 * Landstrasse 1 Stock 9 Tür 42 Linz Oberösterreich 4020 AUT (home)
  |
+| Patient Religion: | * code: Pastafarianismus
+ |
 | Patient Citizenship: | * code: Österreich
  |
 
@@ -33,8 +35,7 @@ Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)
   "resourceType" : "Patient",
   "id" : "At-Emed-Example-Patient-01",
   "meta" : {
-    "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient",
-    "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-patient"]
+    "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"]
   },
   "extension" : [{
     "extension" : [{
@@ -47,7 +48,7 @@ Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)
         }]
       }
     }],
-    "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-ext-patient-religion"
+    "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-patient-religion"
   },
   {
     "extension" : [{
@@ -139,7 +140,7 @@ Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)
         "valueString" : "Stock 9 Tür 42"
       },
       {
-        "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-ext-address-additionalInformation",
+        "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation",
         "valueString" : "Lift vorhanden"
       }]
     }],

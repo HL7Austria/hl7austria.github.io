@@ -19,7 +19,7 @@
   },
   "contained" : [{
     "resourceType" : "Medication",
-    "id" : "ContainedMedication02",
+    "id" : "ContainedMedication03",
     "meta" : {
       "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"]
     },
@@ -35,9 +35,6 @@
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
     "valueMarkdown" : "1-0-1-0 Stück"
   }],
-  "identifier" : [{
-    "value" : "WYE82A2G8EEW_4712_202602280800000"
-  }],
   "status" : "active",
   "intent" : "order",
   "category" : [{
@@ -46,9 +43,16 @@
       "code" : "2",
       "display" : "Geplante Abgabe"
     }]
+  },
+  {
+    "coding" : [{
+      "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS",
+      "code" : "2",
+      "display" : "Geplante Abgabe"
+    }]
   }],
   "medicationReference" : {
-    "reference" : "ContainedMedication02"
+    "reference" : "ContainedMedication03"
   },
   "subject" : {
     "reference" : "Patient/At-Emed-Example-Patient-01"
@@ -65,7 +69,7 @@
     "value" : "WYE82A2G8EEW"
   },
   "note" : [{
-    "text" : "Freitext Informationen zur geplanten Abgabe."
+    "text" : "Freitext zur geplanten Abgabe (Info von Arzt an Apotheke)."
   }],
   "dosageInstruction" : [{
     "patientInstruction" : "Nehmen Sie die Kapsel nach dem Essen mit ausreichend Flüssigkeit ein.",
@@ -96,7 +100,11 @@
     "validityPeriod" : {
       "end" : "2026-03-13"
     },
-    "numberOfRepeatsAllowed" : 1
+    "numberOfRepeatsAllowed" : 1,
+    "quantity" : {
+      "value" : 1,
+      "unit" : "Packung"
+    }
   }
 }
 
