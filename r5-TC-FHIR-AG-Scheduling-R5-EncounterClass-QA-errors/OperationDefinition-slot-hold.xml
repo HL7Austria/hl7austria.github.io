@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="slot-hold"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition slot-hold</b></p><a name="slot-hold"> </a><a name="hcslot-hold"> </a><p>URL: [base]/Slot/$hold</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>slot-reference</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/references.html#Reference">Reference</a> (<a href="StructureDefinition-at-scheduling-slot.html" title="http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot">HL7® AT Scheduling Slot Profile</a>)</td><td/><td><div><p>A resource id for one of proposed Slots returned by a prior $find operation (e.g., Resource/1234).  References can be to an absolute URL, but servers only perform this operation on their own slots.</p>
+</div></td></tr><tr><td>IN</td><td>slot-identifier</td><td/><td>0..*</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#Identifier">Identifier</a></td><td/><td><div><p>When slot-identifiers are provided, the server is expected to perform an internal lookup to identify the corresponding slot instance. The server SHALL reject the request if the provided identifiers do not resolve to a single slot instance.</p>
+</div></td></tr><tr><td>IN</td><td>slot-status</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="http://hl7.org/fhir/R5/valueset-slotstatus.html">Slot Status</a> (Required)</td><td><div><p>To create a hold on the slot this parameter needs to have the value <code>busy-tentative</code> or <code>free</code> to release it.</p>
+</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/parameters.html">Parameters</a></td><td/><td><div><p>The response will be a Parameters resource consisting of the requested held Slot resource, an OperationOutcome with errors, warnings or information as a result of processing the operation and in upon successful creation of a hold a dateTime <code>held-until</code>, which signals when the hold is automatically released. The Appointment resource will have an updated <code>status</code> of &quot;busy-tentative&quot; if the hold is approved or  &quot;busy-unavailable&quot; if the hold is rejected.</p>
+</div></td></tr></table></div>
+  </text>
+  <url value="http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/slot-hold"/>
+  <version value="0.2.0"/>
+  <name value="Hold_Slot_Operation"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <date value="2026-03-17T14:41:49+00:00"/>
+  <publisher value="HL7® Austria, TC FHIR®"/>
+  <description value="Request for a hold on a selected Slot in order for the user to complete entering data for booking an appointment.  This operation follows the appointment availability interaction and precedes the booking.  The server determines if the nominated slot is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly. "/>
+  <affectsState value="true"/>
+  <code value="hold"/>
+  <resource value="Slot"/>
+  <system value="false"/>
+  <type value="true"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="slot-reference"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="A resource id for one of proposed Slots returned by a prior $find operation (e.g., Resource/1234).  References can be to an absolute URL, but servers only perform this operation on their own slots."/>
+    <type value="Reference"/>
+    <targetProfile value="http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot"/>
+  </parameter>
+  <parameter>
+    <name value="slot-identifier"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="When slot-identifiers are provided, the server is expected to perform an internal lookup to identify the corresponding slot instance. The server SHALL reject the request if the provided identifiers do not resolve to a single slot instance."/>
+    <type value="Identifier"/>
+  </parameter>
+  <parameter>
+    <name value="slot-status"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="To create a hold on the slot this parameter needs to have the value `busy-tentative` or `free` to release it."/>
+    <type value="code"/>
+    <binding>
+      <strength value="required"/>
+      <valueSet value="http://hl7.org/fhir/ValueSet/slotstatus"/>
+    </binding>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="The response will be a Parameters resource consisting of the requested held Slot resource, an OperationOutcome with errors, warnings or information as a result of processing the operation and in upon successful creation of a hold a dateTime `held-until`, which signals when the hold is automatically released. The Appointment resource will have an updated `status` of &quot;busy-tentative&quot; if the hold is approved or  &quot;busy-unavailable&quot; if the hold is rejected."/>
+    <type value="Parameters"/>
+  </parameter>
+</OperationDefinition>
