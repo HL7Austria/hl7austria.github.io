@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-appointment-booking-
   "name" : "AppointmentBookingUrlExt",
   "title" : "Appointment Booking URL",
   "status" : "draft",
-  "date" : "2026-03-17T14:41:49+00:00",
+  "date" : "2026-03-17T15:39:49+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "An optional URL that can be used for redirects to a webpage for booking an Appointment. It should contain identifying information about the Slot so that it can be preselected on the target booking page.",
   "fhirVersion" : "5.0.0",
@@ -65,10 +65,6 @@ Other representations of profile: [CSV](StructureDefinition-appointment-booking-
   "context" : [{
     "type" : "element",
     "expression" : "Slot"
-  },
-  {
-    "type" : "element",
-    "expression" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot#Slot"
   }],
   "type" : "Extension",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",

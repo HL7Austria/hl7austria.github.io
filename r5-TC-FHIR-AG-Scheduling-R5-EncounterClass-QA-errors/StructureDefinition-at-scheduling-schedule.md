@@ -58,7 +58,7 @@ At least one of the parameters [actor](https://www.hl7.org/fhir/schedule-search.
   "name" : "HL7ATSchedulingSchedule",
   "title" : "HL7® AT Scheduling Schedule Profile",
   "status" : "draft",
-  "date" : "2026-03-17T14:41:49+00:00",
+  "date" : "2026-03-17T15:39:49+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "HL7® Austria FHIR® Scheduling Profile for schedule data in Austria.",
   "fhirVersion" : "5.0.0",

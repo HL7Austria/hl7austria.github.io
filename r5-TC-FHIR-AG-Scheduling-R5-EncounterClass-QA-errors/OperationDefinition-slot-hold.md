@@ -197,7 +197,7 @@ HTTP 200 OK
   "name" : "Hold_Slot_Operation",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-03-17T14:41:49+00:00",
+  "date" : "2026-03-17T15:39:49+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "Request for a hold on a selected Slot in order for the user to complete entering data for booking an appointment.  This operation follows the appointment availability interaction and precedes the booking.  The server determines if the nominated slot is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly. ",
   "affectsState" : true,

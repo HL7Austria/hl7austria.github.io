@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-slot-encounter-class
   "name" : "SlotEncounterClassExt",
   "title" : "Slot Encounter Class",
   "status" : "draft",
-  "date" : "2026-03-17T14:41:49+00:00",
+  "date" : "2026-03-17T15:39:49+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "An encounter class similar to (Appointment.class)[https://www.hl7.org/fhir/appointment-definitions.html#Appointment.class] for classification of possible mode of encounter",
   "fhirVersion" : "5.0.0",
@@ -67,10 +67,6 @@ Other representations of profile: [CSV](StructureDefinition-slot-encounter-class
   "context" : [{
     "type" : "element",
     "expression" : "Slot"
-  },
-  {
-    "type" : "element",
-    "expression" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot#Slot"
   }],
   "type" : "Extension",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
