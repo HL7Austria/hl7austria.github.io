@@ -63,6 +63,7 @@ These are example instances that show what data produced and consumed by systems
 
 | | |
 | :--- | :--- |
+| [HL7ATCorePatientExample01](Patient-HL7ATCorePatientExample01.md) | Example for the usage of the HL7 AT Core Patient Profile |
 | [HL7ATSchedulingAppointmentExample01](Appointment-HL7ATSchedulingAppointmentExample01.md) | Physiotherapie - Einzelbehandlung 30 Minuten |
 | [HL7ATSchedulingHealthcareServiceExample01](HealthcareService-HL7ATSchedulingHealthcareServiceExample01.md) |  |
 | [HL7ATSchedulingScheduleExample01](Schedule-HL7ATSchedulingScheduleExample01.md) | Schedule with Practitioner |

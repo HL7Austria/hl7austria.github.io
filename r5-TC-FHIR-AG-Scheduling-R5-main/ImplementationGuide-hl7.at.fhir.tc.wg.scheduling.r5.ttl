@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "TCFHIRAGSchedulingR5"] ; # 
   fhir:title [ fhir:v "Austrian Appointment Scheduling (R5)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-03-11T09:54:15+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-03-18T07:58:35+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7® Austria, TC FHIR®"] ; # 
   fhir:packageId [ fhir:v "hl7.at.fhir.tc.wg.scheduling.r5"] ; # 
   fhir:license [ fhir:v "CC0-1.0"] ; # 
@@ -79,7 +79,7 @@
        ] ;
        fhir:value [
          a fhir:Code ;
-         fhir:v "hl7.fhir.uv.tools.r5#0.9.0"
+         fhir:v "hl7.fhir.uv.tools.r5#1.1.0"
        ]
      ] ) ;
      fhir:resource ( [
@@ -172,6 +172,24 @@
        fhir:name [ fhir:v "healthcareService-provider-find" ] ;
        fhir:description [ fhir:v "A query operation that allows to search for healthcare service providers that offer a specific healthcare service. The general information about the HealthcareService identification itself is already available in advance, either as resource or via codes." ] ;
        fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Patient"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/Patient/HL7ATCorePatientExample01> ;
+         fhir:reference [ fhir:v "Patient/HL7ATCorePatientExample01" ]
+       ] ;
+       fhir:name [ fhir:v "HL7ATCorePatientExample01" ] ;
+       fhir:description [ fhir:v "Example for the usage of the HL7 AT Core Patient Profile" ] ;
+       fhir:isExample [ fhir:v true ]
      ] [
        fhir:extension ( [
          fhir:url [

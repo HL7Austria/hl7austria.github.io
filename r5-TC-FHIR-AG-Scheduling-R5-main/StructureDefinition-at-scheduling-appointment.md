@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment | *Version*:0.2.0 | |
-| Draft as of 2026-03-11 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingAppointment |
+| Draft as of 2026-03-18 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingAppointment |
 
  
 HL7® Austria FHIR® Scheduling Profile for appointment data in Austria. 
@@ -63,7 +63,7 @@ The following search parameters SHOULD be supported by scheduling servers:
   "name" : "HL7ATSchedulingAppointment",
   "title" : "HL7® AT Scheduling Appointment Profile",
   "status" : "draft",
-  "date" : "2026-03-11T09:54:15+00:00",
+  "date" : "2026-03-18T07:58:35+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "HL7® Austria FHIR® Scheduling Profile for appointment data in Austria.",
   "fhirVersion" : "5.0.0",
@@ -135,6 +135,14 @@ The following search parameters SHOULD be supported by scheduling servers:
         "code" : "Extension",
         "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-ext-cancellationPolicy"]
       }]
+    },
+    {
+      "id" : "Appointment.class",
+      "path" : "Appointment.class",
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "http://terminology.hl7.org/ValueSet/encounter-class"
+      }
     },
     {
       "id" : "Appointment.serviceType",
