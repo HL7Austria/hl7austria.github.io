@@ -7,6 +7,15 @@
 
 This page provides a list of the FHIR artifacts defined as part of this implementation guide.
 
+### Requirements: Actor Definitions 
+
+The following artifacts define the types of individuals and/or systems that will interact as part of the use cases covered by this implementation guide.
+
+| | |
+| :--- | :--- |
+| [Receiver Actor](ActorDefinition-ReceiverActor.md) | The actor that receives, parses and disassembles the FHIR message. |
+| [Sender Actor](ActorDefinition-SenderActor.md) | The actor that assembles and submits the FHIR message. |
+
 ### Behavior: Message Definitions 
 
 These define the types of messages that can be sent and/or received by systems conforming to this implementation guide.

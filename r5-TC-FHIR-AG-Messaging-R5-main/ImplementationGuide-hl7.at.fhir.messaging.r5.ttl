@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "ATMessaging"] ; # 
   fhir:title [ fhir:v "HL7® Austria TC FHIR® Messaging"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-02-02T14:50:43+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-03-18T15:56:08+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7® Austria, TC FHIR®"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "HL7® Austria, TC FHIR®" ] ;
@@ -81,7 +81,7 @@
        fhir:l <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
      ] ;
      fhir:packageId [ fhir:v "hl7.terminology.r5" ] ;
-     fhir:version [ fhir:v "7.0.1" ]
+     fhir:version [ fhir:v "7.1.0" ]
   ] [
      fhir:id [ fhir:v "hl7ext" ] ;
      fhir:extension ( [
@@ -125,7 +125,7 @@
        ] ;
        fhir:value [
          a fhir:Code ;
-         fhir:v "hl7.fhir.uv.tools.r5#0.9.0"
+         fhir:v "hl7.fhir.uv.tools.r5#1.1.0"
        ]
      ] ) ;
      fhir:resource ( [
@@ -574,6 +574,42 @@
          fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header"^^xsd:anyURI ;
          fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header>
        ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ActorDefinition"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ActorDefinition/ReceiverActor> ;
+         fhir:reference [ fhir:v "ActorDefinition/ReceiverActor" ]
+       ] ;
+       fhir:name [ fhir:v "Receiver Actor" ] ;
+       fhir:description [ fhir:v "The actor that receives, parses and disassembles the FHIR message." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ActorDefinition"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ActorDefinition/SenderActor> ;
+         fhir:reference [ fhir:v "ActorDefinition/SenderActor" ]
+       ] ;
+       fhir:name [ fhir:v "Sender Actor" ] ;
+       fhir:description [ fhir:v "The actor that assembles and submits the FHIR message." ] ;
+       fhir:isExample [ fhir:v false ]
      ] [
        fhir:extension ( [
          fhir:url [

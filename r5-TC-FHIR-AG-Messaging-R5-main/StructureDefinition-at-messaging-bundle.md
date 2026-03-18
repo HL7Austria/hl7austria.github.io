@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle | *Version*:0.1.0 | |
-| Draft as of 2026-02-02 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingBundle |
+| Draft as of 2026-03-18 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingBundle |
 | **Usage:**Jurisdiction: Austria | | |
 
  
@@ -42,115 +42,99 @@ Other representations of profile: [CSV](StructureDefinition-at-messaging-bundle.
   "name" : "ATMessagingBundle",
   "title" : "AT Messaging Message Bundle",
   "status" : "draft",
-  "date" : "2026-02-02T14:50:43+00:00",
+  "date" : "2026-03-18T15:56:08+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
-  "contact" : [
-    {
-      "name" : "HL7® Austria, TC FHIR®",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://hl7.at/technische-komitees/tc-fhir/"
-        },
-        {
-          "system" : "email",
-          "value" : "tc-fhir@hl7.at"
-        }
-      ]
+  "contact" : [{
+    "name" : "HL7® Austria, TC FHIR®",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://hl7.at/technische-komitees/tc-fhir/"
     },
     {
-      "name" : "Technical Committee for FHIR® at HL7® Austria",
-      "telecom" : [
-        {
-          "system" : "email",
-          "value" : "tc-fhir@hl7.at"
-        }
-      ]
-    }
-  ],
+      "system" : "email",
+      "value" : "tc-fhir@hl7.at"
+    }]
+  },
+  {
+    "name" : "Technical Committee for FHIR® at HL7® Austria",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "tc-fhir@hl7.at"
+    }]
+  }],
   "description" : "MessageBundle to be used for all messages transfered with the AT FHIR messaging.",
-  "useContext" : [
-    {
-      "code" : {
-        "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
-        "version" : "2.0.1",
-        "code" : "jurisdiction"
-      },
-      "valueCodeableConcept" : {
-        "coding" : [
-          {
-            "system" : "urn:iso:std:iso:3166",
-            "code" : "AT",
-            "display" : "Austria"
-          }
-        ]
-      }
+  "useContext" : [{
+    "code" : {
+      "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "version" : "2.0.1",
+      "code" : "jurisdiction"
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "urn:iso:std:iso:3166",
+        "code" : "AT",
+        "display" : "Austria"
+      }]
     }
-  ],
+  }],
   "fhirVersion" : "5.0.0",
-  "mapping" : [
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    },
-    {
-      "identity" : "v2",
-      "uri" : "http://hl7.org/v2",
-      "name" : "HL7 V2 Mapping"
-    },
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    },
-    {
-      "identity" : "cda",
-      "uri" : "http://hl7.org/v3/cda",
-      "name" : "CDA (R2)"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 V2 Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "cda",
+    "uri" : "http://hl7.org/v3/cda",
+    "name" : "CDA (R2)"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Bundle",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Bundle",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Bundle",
-        "path" : "Bundle"
-      },
-      {
-        "id" : "Bundle.id",
-        "path" : "Bundle.id",
-        "min" : 1
-      },
-      {
-        "id" : "Bundle.type",
-        "path" : "Bundle.type",
-        "patternCode" : "message"
-      },
-      {
-        "id" : "Bundle.timestamp",
-        "path" : "Bundle.timestamp",
-        "min" : 1
-      },
-      {
-        "id" : "Bundle.entry.fullUrl",
-        "path" : "Bundle.entry.fullUrl",
-        "min" : 1,
-        "constraint" : [
-          {
-            "key" : "uuid-only",
-            "severity" : "error",
-            "human" : "fullUrl must be a valid UUID",
-            "expression" : "value.matches('^urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')",
-            "source" : "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle"
-          }
-        ]
-      }
-    ]
+    "element" : [{
+      "id" : "Bundle",
+      "path" : "Bundle"
+    },
+    {
+      "id" : "Bundle.id",
+      "path" : "Bundle.id",
+      "min" : 1
+    },
+    {
+      "id" : "Bundle.type",
+      "path" : "Bundle.type",
+      "patternCode" : "message"
+    },
+    {
+      "id" : "Bundle.timestamp",
+      "path" : "Bundle.timestamp",
+      "min" : 1
+    },
+    {
+      "id" : "Bundle.entry.fullUrl",
+      "path" : "Bundle.entry.fullUrl",
+      "min" : 1,
+      "constraint" : [{
+        "key" : "uuid-only",
+        "severity" : "error",
+        "human" : "fullUrl must be a valid UUID",
+        "expression" : "value.matches('^urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')",
+        "source" : "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle"
+      }]
+    }]
   }
 }
 

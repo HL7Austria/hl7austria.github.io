@@ -31,26 +31,20 @@
   "id" : "81fd7dbf-5207-4bc5-b7df-89e97dcbbb79",
   "status" : "active",
   "intent" : "order",
-  "category" : [
-    {
-      "coding" : [
-        {
-          "system" : "http://snomed.info/sct",
-          "code" : "108252007",
-          "display" : "Laboratory procedure"
-        }
-      ]
-    }
-  ],
+  "category" : [{
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "108252007",
+      "display" : "Laboratory procedure"
+    }]
+  }],
   "code" : {
     "concept" : {
-      "coding" : [
-        {
-          "system" : "http://snomed.info/sct",
-          "code" : "396550006",
-          "display" : "Blood test"
-        }
-      ]
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "396550006",
+        "display" : "Blood test"
+      }]
     }
   },
   "subject" : {

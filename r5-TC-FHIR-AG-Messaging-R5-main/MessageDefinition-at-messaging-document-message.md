@@ -42,7 +42,7 @@ Regulates the resources to be used in a directed message when transferring a doc
 | | | |
 | :--- | :--- | :--- |
 | - | **Code** | **Value[x]** |
-| * | [UsageContextType: jurisdiction](http://terminology.hl7.org/7.0.1/CodeSystem-usage-context-type.html#usage-context-type-jurisdiction)(Jurisdiction) (version = 2.0.1 ) | Austria |
+| * | [UsageContextType: jurisdiction](http://terminology.hl7.org/7.1.0/CodeSystem-usage-context-type.html#usage-context-type-jurisdiction)(Jurisdiction) (version = 2.0.1 ) | Austria |
 
 **event**: [AT Messaging Event Type: document](CodeSystem-at-messaging-event-type.md#at-messaging-event-type-document) (A document is sent.)
 
@@ -83,83 +83,69 @@ As soon as the receiving system has processed the message successfully when the 
   "status" : "draft",
   "date" : "2026-01-21",
   "publisher" : "HL7® Austria, TC FHIR®",
-  "contact" : [
-    {
-      "name" : "HL7® Austria, TC FHIR®",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://hl7.at/technische-komitees/tc-fhir/"
-        },
-        {
-          "system" : "email",
-          "value" : "tc-fhir@hl7.at"
-        }
-      ]
+  "contact" : [{
+    "name" : "HL7® Austria, TC FHIR®",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://hl7.at/technische-komitees/tc-fhir/"
     },
     {
-      "name" : "Technical Committee for FHIR® at HL7® Austria",
-      "telecom" : [
-        {
-          "system" : "email",
-          "value" : "tc-fhir@hl7.at"
-        }
-      ]
-    }
-  ],
+      "system" : "email",
+      "value" : "tc-fhir@hl7.at"
+    }]
+  },
+  {
+    "name" : "Technical Committee for FHIR® at HL7® Austria",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "tc-fhir@hl7.at"
+    }]
+  }],
   "description" : "Regulates the resources to be used in a directed message when transferring a document.",
-  "useContext" : [
-    {
-      "code" : {
-        "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
-        "version" : "2.0.1",
-        "code" : "jurisdiction"
-      },
-      "valueCodeableConcept" : {
-        "coding" : [
-          {
-            "system" : "urn:iso:std:iso:3166",
-            "code" : "AT",
-            "display" : "Austria"
-          }
-        ]
-      }
+  "useContext" : [{
+    "code" : {
+      "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "version" : "2.0.1",
+      "code" : "jurisdiction"
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "urn:iso:std:iso:3166",
+        "code" : "AT",
+        "display" : "Austria"
+      }]
     }
-  ],
+  }],
   "eventCoding" : {
     "system" : "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-event-type",
     "code" : "document"
   },
   "category" : "consequence",
-  "focus" : [
-    {
-      "code" : "DocumentReference",
-      "profile" : "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.SimplifiedPublish.DocumentReference",
-      "min" : 1,
-      "max" : "1"
-    },
-    {
-      "code" : "Patient",
-      "profile" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-patient",
-      "min" : 1,
-      "max" : "1"
-    },
-    {
-      "code" : "Encounter",
-      "min" : 0,
-      "max" : "1"
-    }
-  ],
-  "allowedResponse" : [
-    {
-      "message" : "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-communication-message",
-      "situation" : "As soon as the receiving system has processed the message successfully and further communication needed."
-    },
-    {
-      "message" : "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-document-message",
-      "situation" : "As soon as the receiving system has processed the message successfully when the result of the ServiceRequest is available and can be transfered to the requesting party."
-    }
-  ]
+  "focus" : [{
+    "code" : "DocumentReference",
+    "profile" : "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.SimplifiedPublish.DocumentReference",
+    "min" : 1,
+    "max" : "1"
+  },
+  {
+    "code" : "Patient",
+    "profile" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-patient",
+    "min" : 1,
+    "max" : "1"
+  },
+  {
+    "code" : "Encounter",
+    "min" : 0,
+    "max" : "1"
+  }],
+  "allowedResponse" : [{
+    "message" : "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-communication-message",
+    "situation" : "As soon as the receiving system has processed the message successfully and further communication needed."
+  },
+  {
+    "message" : "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-document-message",
+    "situation" : "As soon as the receiving system has processed the message successfully when the result of the ServiceRequest is available and can be transfered to the requesting party."
+  }]
 }
 
 ```

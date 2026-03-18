@@ -10,7 +10,7 @@
   "name" : "ATMessaging",
   "title" : "HL7® Austria TC FHIR® Messaging",
   "status" : "draft",
-  "date" : "2026-02-02T14:50:43+00:00",
+  "date" : "2026-03-18T15:56:08+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -56,7 +56,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r5",
-    "version" : "7.0.1"
+    "version" : "7.1.0"
   },
   {
     "id" : "hl7ext",
@@ -83,7 +83,7 @@
   "definition" : {
     "extension" : [{
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools.r5#0.9.0"
+      "valueCode" : "hl7.fhir.uv.tools.r5#1.1.0"
     }],
     "resource" : [{
       "extension" : [{
@@ -368,6 +368,30 @@
       "description" : "Message header for sending a doctor's note document from a HIS to a GP software without prior request.",
       "isExample" : true,
       "profile" : ["http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActorDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActorDefinition/ReceiverActor"
+      },
+      "name" : "Receiver Actor",
+      "description" : "The actor that receives, parses and disassembles the FHIR message.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActorDefinition"
+      }],
+      "reference" : {
+        "reference" : "ActorDefinition/SenderActor"
+      },
+      "name" : "Sender Actor",
+      "description" : "The actor that assembles and submits the FHIR message.",
+      "isExample" : false
     },
     {
       "extension" : [{

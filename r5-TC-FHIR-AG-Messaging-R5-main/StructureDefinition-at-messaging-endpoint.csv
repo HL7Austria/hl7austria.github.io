@@ -81,7 +81,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Endpoint.payload.mimeType","Endpoint.payload.mimeType","","","",0,*,"","","Y","code {[]} {[]}
 ","Mimetype to send. If not specified, the content could be anything (including no payload, if the connectionType defined this)","The mime type to send the payload in - e.g. application/fhir+xml, application/fhir+json. If the mime type is not specified, then the sender could send any content (including no content depending on the connectionType).","Sending the payload has obvious security consequences. The server is responsible for ensuring that the content is appropriately secured.","","","","","","","","",,"required","BCP 13 (RFCs 2045, 2046, 2047, 4288, 4289 and 2049)","http://hl7.org/fhir/ValueSet/mimetypes|5.0.0","",,,,"Endpoint.payload.mimeType",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a"
-"Endpoint.address","Endpoint.address","","","",1,1,"Y","","Y","url {[]} {[]}
+"Endpoint.address","Endpoint.address","","","",1,1,"","","Y","url {[]} {[]}
 ","The technical base address for connecting to this endpoint","The uri that describes the actual end-point to connect to.","For rest-hook, and websocket, the end-point must be an http: or https: URL; for email, a mailto: url, for sms, a tel: url, and for message the endpoint can be in any form of url the server understands (usually, http: or mllp:). The URI is allowed to be relative; in which case, it is relative to the server end-point (since there may be more than one, clients should avoid using relative URIs)
 
 This address will be to the service base, without any parameters, or sub-services or resources tacked on.

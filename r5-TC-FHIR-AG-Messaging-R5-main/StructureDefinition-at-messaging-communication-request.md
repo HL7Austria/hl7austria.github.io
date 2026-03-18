@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-communication-request | *Version*:0.1.0 | |
-| Draft as of 2026-02-02 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingCommunicationRequest |
+| Draft as of 2026-03-18 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingCommunicationRequest |
 | **Usage:**Jurisdiction: Austria | | |
 
  
@@ -43,109 +43,112 @@ Other representations of profile: [CSV](StructureDefinition-at-messaging-communi
   "name" : "ATMessagingCommunicationRequest",
   "title" : "AT Messaging CommunicationRequest",
   "status" : "draft",
-  "date" : "2026-02-02T14:50:43+00:00",
+  "date" : "2026-03-18T15:56:08+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
-  "contact" : [
-    {
-      "name" : "HL7® Austria, TC FHIR®",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://hl7.at/technische-komitees/tc-fhir/"
-        },
-        {
-          "system" : "email",
-          "value" : "tc-fhir@hl7.at"
-        }
-      ]
+  "contact" : [{
+    "name" : "HL7® Austria, TC FHIR®",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://hl7.at/technische-komitees/tc-fhir/"
     },
     {
-      "name" : "Technical Committee for FHIR® at HL7® Austria",
-      "telecom" : [
-        {
-          "system" : "email",
-          "value" : "tc-fhir@hl7.at"
-        }
-      ]
-    }
-  ],
+      "system" : "email",
+      "value" : "tc-fhir@hl7.at"
+    }]
+  },
+  {
+    "name" : "Technical Committee for FHIR® at HL7® Austria",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "tc-fhir@hl7.at"
+    }]
+  }],
   "description" : "CommunicationRequest to be used for all communication request messages transfered with the AT FHIR messaging.",
-  "useContext" : [
-    {
-      "code" : {
-        "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
-        "version" : "2.0.1",
-        "code" : "jurisdiction"
-      },
-      "valueCodeableConcept" : {
-        "coding" : [
-          {
-            "system" : "urn:iso:std:iso:3166",
-            "code" : "AT",
-            "display" : "Austria"
-          }
-        ]
-      }
+  "useContext" : [{
+    "code" : {
+      "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "version" : "2.0.1",
+      "code" : "jurisdiction"
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "urn:iso:std:iso:3166",
+        "code" : "AT",
+        "display" : "Austria"
+      }]
     }
-  ],
+  }],
   "fhirVersion" : "5.0.0",
-  "mapping" : [
-    {
-      "identity" : "workflow",
-      "uri" : "http://hl7.org/fhir/workflow",
-      "name" : "Workflow Pattern"
-    },
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    },
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "workflow",
+    "uri" : "http://hl7.org/fhir/workflow",
+    "name" : "Workflow Pattern"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "CommunicationRequest",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/CommunicationRequest",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "CommunicationRequest",
-        "path" : "CommunicationRequest"
+    "element" : [{
+      "id" : "CommunicationRequest",
+      "path" : "CommunicationRequest"
+    },
+    {
+      "id" : "CommunicationRequest.id",
+      "path" : "CommunicationRequest.id",
+      "min" : 1
+    },
+    {
+      "id" : "CommunicationRequest.payload",
+      "extension" : [{
+        "extension" : [{
+          "url" : "code",
+          "valueCode" : "SHOULD:populate"
+        },
+        {
+          "url" : "actor",
+          "valueCanonical" : "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ActorDefinition/SenderActor"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       },
       {
-        "id" : "CommunicationRequest.id",
-        "path" : "CommunicationRequest.id",
-        "min" : 1
-      },
-      {
-        "id" : "CommunicationRequest.payload",
-        "path" : "CommunicationRequest.payload",
-        "max" : "1",
-        "mustSupport" : true
-      },
-      {
-        "id" : "CommunicationRequest.payload.content[x]",
-        "path" : "CommunicationRequest.payload.content[x]",
-        "type" : [
-          {
-            "code" : "Attachment",
-            "profile" : [
-              "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-communication-attachment"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "CommunicationRequest.note",
-        "path" : "CommunicationRequest.note",
-        "max" : "0"
-      }
-    ]
+        "extension" : [{
+          "url" : "code",
+          "valueCode" : "SHALL:handle"
+        },
+        {
+          "url" : "actor",
+          "valueCanonical" : "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ActorDefinition/ReceiverActor"
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
+      }],
+      "path" : "CommunicationRequest.payload",
+      "max" : "1"
+    },
+    {
+      "id" : "CommunicationRequest.payload.content[x]",
+      "path" : "CommunicationRequest.payload.content[x]",
+      "type" : [{
+        "code" : "Attachment",
+        "profile" : ["http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-communication-attachment"]
+      }]
+    },
+    {
+      "id" : "CommunicationRequest.note",
+      "path" : "CommunicationRequest.note",
+      "max" : "0"
+    }]
   }
 }
 

@@ -41,24 +41,20 @@ Profile: [AT Messaging Message Header](StructureDefinition-at-messaging-message-
   "resourceType" : "MessageHeader",
   "id" : "89c89a84-bce7-4c5d-b6f6-49690eea5b06",
   "meta" : {
-    "profile" : [
-      "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header"
-    ]
+    "profile" : ["http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header"]
   },
   "eventCoding" : {
     "system" : "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-event-type",
     "code" : "document"
   },
-  "destination" : [
-    {
-      "endpointReference" : {
-        "reference" : "urn:uuid:4707d4ab-0020-4cc9-8e0f-242f95ce31f3"
-      },
-      "receiver" : {
-        "reference" : "urn:uuid:2d8fedd6-3ccf-4725-97b0-fa9e19cbd8fc"
-      }
+  "destination" : [{
+    "endpointReference" : {
+      "reference" : "urn:uuid:4707d4ab-0020-4cc9-8e0f-242f95ce31f3"
+    },
+    "receiver" : {
+      "reference" : "urn:uuid:2d8fedd6-3ccf-4725-97b0-fa9e19cbd8fc"
     }
-  ],
+  }],
   "sender" : {
     "reference" : "urn:uuid:f9ac6aa5-71b6-438b-a33b-b0b114d9deca"
   },
@@ -77,11 +73,9 @@ Profile: [AT Messaging Message Header](StructureDefinition-at-messaging-message-
       "value" : "kis.support@softwarecorp.at"
     }
   },
-  "focus" : [
-    {
-      "reference" : "urn:uuid:a60faa01-38ff-40e8-8194-e395741875cb"
-    }
-  ],
+  "focus" : [{
+    "reference" : "urn:uuid:a60faa01-38ff-40e8-8194-e395741875cb"
+  }],
   "definition" : "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-document-message"
 }
 
