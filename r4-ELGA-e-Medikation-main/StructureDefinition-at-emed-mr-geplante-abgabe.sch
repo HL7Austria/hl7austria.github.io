@@ -48,6 +48,7 @@
       <sch:assert test="count(f:initialFill) &lt;= 0">initialFill: maximum cardinality of 'initialFill' is 0</sch:assert>
       <sch:assert test="count(f:dispenseInterval) &lt;= 0">dispenseInterval: maximum cardinality of 'dispenseInterval' is 0</sch:assert>
       <sch:assert test="count(f:validityPeriod) &gt;= 1">validityPeriod: minimum cardinality of 'validityPeriod' is 1</sch:assert>
+      <sch:assert test="count(f:numberOfRepeatsAllowed) &gt;= 1">numberOfRepeatsAllowed: minimum cardinality of 'numberOfRepeatsAllowed' is 1</sch:assert>
       <sch:assert test="count(f:quantity) &gt;= 1">quantity: minimum cardinality of 'quantity' is 1</sch:assert>
       <sch:assert test="count(f:expectedSupplyDuration) &lt;= 0">expectedSupplyDuration: maximum cardinality of 'expectedSupplyDuration' is 0</sch:assert>
       <sch:assert test="count(f:performer) &lt;= 0">performer: maximum cardinality of 'performer' is 0</sch:assert>

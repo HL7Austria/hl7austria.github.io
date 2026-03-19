@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/ValueSet/DurchgefuehrteAbgabeStatusVS | *Version*:0.1.1 | |
-| Draft as of 2026-03-16 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:DurchgefuehrteAbgabeStatusVS |
+| Draft as of 2026-03-19 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:DurchgefuehrteAbgabeStatusVS |
 
  
 ValueSet für zulässige Ausprägungen eines Status einer durchgeführten Abgabe (MedicationDispense). 
@@ -20,11 +20,11 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
 
 ### Logical Definition (CLD)
 
-No formal definition provided for this value set
-
  
 
 ### Expansion
+
+No Expansion for this valueset (Unknown Code System)
 
 -------
 
@@ -53,7 +53,7 @@ No formal definition provided for this value set
   "title" : "ELGA e-Med Durchgeführte Abgabe Status Value Set",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-16T16:50:24+00:00",
+  "date" : "2026-03-19T16:44:44+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -70,7 +70,21 @@ No formal definition provided for this value set
       "use" : "work"
     }]
   }],
-  "description" : "ValueSet für zulässige Ausprägungen eines Status einer durchgeführten Abgabe (MedicationDispense)."
+  "description" : "ValueSet für zulässige Ausprägungen eines Status einer durchgeführten Abgabe (MedicationDispense).",
+  "compose" : {
+    "include" : [{
+      "system" : "http://hl7.org/fhir/ValueSet/medicationdispense-status",
+      "concept" : [{
+        "code" : "completed"
+      },
+      {
+        "code" : "entered-in-error"
+      },
+      {
+        "code" : "stopped"
+      }]
+    }]
+  }
 }
 
 ```

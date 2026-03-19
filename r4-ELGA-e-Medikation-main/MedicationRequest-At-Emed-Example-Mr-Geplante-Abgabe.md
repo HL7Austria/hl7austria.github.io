@@ -46,7 +46,7 @@
   },
   {
     "coding" : [{
-      "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryRecipeTypeCS",
+      "system" : "https://termgit.elga.gv.at/ValueSet/elga-medikationrezeptart",
       "code" : "1",
       "display" : "Kassenrezept"
     }]

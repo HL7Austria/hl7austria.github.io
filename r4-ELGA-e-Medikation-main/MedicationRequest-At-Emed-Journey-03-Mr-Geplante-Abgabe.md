@@ -46,9 +46,9 @@
   },
   {
     "coding" : [{
-      "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS",
-      "code" : "2",
-      "display" : "Geplante Abgabe"
+      "system" : "https://termgit.elga.gv.at/ValueSet/elga-medikationrezeptart",
+      "code" : "1",
+      "display" : "Kassenrezept"
     }]
   }],
   "medicationReference" : {

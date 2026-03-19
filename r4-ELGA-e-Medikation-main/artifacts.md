@@ -44,8 +44,8 @@ These define sets of codes used by systems conforming to this implementation gui
 | | |
 | :--- | :--- |
 | [ELGA e-Med Durchgeführte Abgabe Status Value Set](ValueSet-DurchgefuehrteAbgabeStatusVS.md) | ValueSet für zulässige Ausprägungen eines Status einer durchgeführten Abgabe (MedicationDispense). |
+| [ELGA e-Med Durchgeführte Abgabe Typ Value Set](ValueSet-DurchgefuehrteAbgabeTypVS.md) | ValueSet für zulässige Ausprägungen eines Typs einer durchgeführten Abgabe (MedicationDispense). |
 | [ELGA e-Med Geplante Abgabe Status ValueSet](ValueSet-GeplanteAbgabeStatusVS.md) | ValueSet für zulässige Ausprägungen eines Status einer geplanten Abgabe (MedicationRequest). |
-| [ELGA e-Med MedicationRequest Kategorie Rezeptart ValueSet](ValueSet-MedicationRequestCategoryRecipeTypeVS.md) | ValueSet für zulässige Ausprägungen der MedicationRequest Kategorie Rezeptart. |
 | [ELGA e-Med MedicationRequest Kategorie ValueSet](ValueSet-MedicationRequestCategoryVS.md) | ValueSet für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen |
 | [ELGA e-Med Medikationsplan Empty Reason Value Set](ValueSet-MedikationsplanEmptyReasonVS.md) | ValueSet für zulässige Ausprägungen des elements emptyReason Status eines Medikationsplaneintrags (MedicationRequest). |
 | [ELGA e-Med Medikationsplaneintrag Status Value Set](ValueSet-MedikationsplaneintragStatusVS.md) | ValueSet für zulässige Ausprägungen eines Status eines Medikationsplaneintrags (MedicationRequest). |
@@ -57,7 +57,6 @@ These define new code systems used by systems conforming to this implementation 
 | | |
 | :--- | :--- |
 | [ELGA e-Med MedicationRequest Kategorie CodeSystem](CodeSystem-MedicationRequestCategoryCS.md) | Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen. |
-| [ELGA e-Med MedicationRequest Kategorie Rezeptart CodeSystem](CodeSystem-MedicationRequestCategoryRecipeTypeCS.md) | Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie Rezeptart. |
 
 ### Example: Example Instances 
 

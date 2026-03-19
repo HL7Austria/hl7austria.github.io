@@ -11,7 +11,7 @@
   fhir:id [ fhir:v "DurchgefuehrteAbgabeStatusVS"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet DurchgefuehrteAbgabeStatusVS</b></p><a name=\"DurchgefuehrteAbgabeStatusVS\"> </a><a name=\"hcDurchgefuehrteAbgabeStatusVS\"> </a><p>This value set includes codes based on the following rules:</p><ul/></div>"^^rdf:XMLLiteral ]
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet DurchgefuehrteAbgabeStatusVS</b></p><a name=\"DurchgefuehrteAbgabeStatusVS\"> </a><a name=\"hcDurchgefuehrteAbgabeStatusVS\"> </a><ul><li>Include these codes as defined in <code>http://hl7.org/fhir/ValueSet/medicationdispense-status</code><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>completed</td><td/></tr><tr><td>entered-in-error</td><td/></tr><tr><td>stopped</td><td/></tr></table></li></ul></div>"^^rdf:XMLLiteral ]
   ] ; # 
   fhir:url [
      fhir:v "https://fhir.hl7.at/elga/emed/r4/ValueSet/DurchgefuehrteAbgabeStatusVS"^^xsd:anyURI ;
@@ -22,7 +22,7 @@
   fhir:title [ fhir:v "ELGA e-Med Durchgeführte Abgabe Status Value Set"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
   fhir:experimental [ fhir:v true] ; # 
-  fhir:date [ fhir:v "2026-03-16T16:50:24+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-03-19T16:44:44+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ELGA GmbH" ] ;
@@ -38,7 +38,22 @@
        fhir:use [ fhir:v "work" ]
      ] )
   ] ) ; # 
-  fhir:description [ fhir:v "ValueSet für zulässige Ausprägungen eines Status einer durchgeführten Abgabe (MedicationDispense)."] . # 
+  fhir:description [ fhir:v "ValueSet für zulässige Ausprägungen eines Status einer durchgeführten Abgabe (MedicationDispense)."] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [
+         fhir:v "http://hl7.org/fhir/ValueSet/medicationdispense-status"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/ValueSet/medicationdispense-status>
+       ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "completed" ]
+       ] [
+         fhir:code [ fhir:v "entered-in-error" ]
+       ] [
+         fhir:code [ fhir:v "stopped" ]
+       ] )
+     ] )
+  ] . # 
 
 # -------------------------------------------------------------------------------------
 

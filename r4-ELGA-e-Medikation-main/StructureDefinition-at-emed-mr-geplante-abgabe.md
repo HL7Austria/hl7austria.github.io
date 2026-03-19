@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-geplante-abgabe | *Version*:0.1.1 | |
-| Draft as of 2026-03-16 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMRGeplanteAbgabe |
+| Draft as of 2026-03-19 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMRGeplanteAbgabe |
 
  
 Bildet eine geplante Abgabe eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab ("MedicationRequest"-Ressource). Sie enthält das verordnete Arzneimittel und dessen Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. Werden mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer'). Verwendet R5 Backport Extensions. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
   "name" : "AtEmedMRGeplanteAbgabe",
   "title" : "ELGA e-Med Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-03-16T16:50:24+00:00",
+  "date" : "2026-03-19T16:44:44+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -142,7 +142,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.status",
       "path" : "MedicationRequest.status",
-      "short" : "Status der geplanten Abgabe. \n\"active\": bei Erstellung <br>\n\"completed\": implizit mittels Custom Operation gesetzt, nachdem alle Abgaben durchgeführt wurden (Rezept komplett eingelöst) (TODO: prüfen) <br>\n\"entered-in-error\": nach fehlerhafter Eingabe; Storno nur möglich, wenn noch keine Abgabe durchgeführt wurde <br>\n\"stopped\": TODO: Verwendung zu prüfen (Status soll analog zu e-Rezept abgebildet werden) <br>\n(nicht verwendet: on-hold, stopped, cancelled, draft, unknown)",
+      "short" : "Status der geplanten Abgabe. \n\"active\": offne, geplante Abgabe <br>\n\"completed\": implizit mittels Custom Operation gesetzt, nachdem alle Abgaben durchgeführt wurden (Rezept komplett eingelöst) (TODO: techn. prüfen) <br>\n\"entered-in-error\": nach fehlerhafter Eingabe; Storno nur möglich, wenn noch keine zugehörige Abgabe durchgeführt wurde (TODO: techn. prüfen?) <br>\n\"stopped\": TODO: Verwendung zu prüfen (Status soll analog zu e-Rezept abgebildet werden) <br>\n(nicht verwendet: on-hold, stopped, cancelled, draft, unknown)",
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
@@ -195,13 +195,13 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
       "id" : "MedicationRequest.category:recipetype",
       "path" : "MedicationRequest.category",
       "sliceName" : "recipetype",
-      "short" : "Kategorie zur Unterscheidung, ob ein Kassen- oder Privatrezept erstellt wurde",
+      "short" : "Kategorie zur Unterscheidung, ob ein Kassen-, Privat- oder Substitutionsrezept erstellt wurde.",
       "min" : 1,
       "max" : "1",
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/MedicationRequestCategoryRecipeTypeVS"
+        "valueSet" : "https://termgit.elga.gv.at/ValueSet/elga-medikationrezeptart"
       }
     },
     {
@@ -265,7 +265,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.requester",
       "path" : "MedicationRequest.requester",
-      "short" : "Der Arzt oder die Ärztin, die die geplante Abgabe erstellt hat und für den Inhalt verantwortlich ist \n(eindeutig identifiziert über den GDA-Index und berechtigt auf die ELGA e-Medikation des Patienten zuzugreifen).\nTODO: Prüfen, der Rollen (HL7ATCorePractitioner nicht ausreichend).",
+      "short" : "Der Arzt oder die Ärztin, die die geplante Abgabe erstellt hat und für den Inhalt verantwortlich ist \n(eindeutig identifiziert über den GDA-Index und berechtigt auf die ELGA e-Medikation des Patienten zuzugreifen).\nTODO: HL7ATCore-Practitioner-Profile profilieren.",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
@@ -290,13 +290,13 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.recorder",
       "path" : "MedicationRequest.recorder",
-      "short" : "Keine Verwendung in der geplanten Abgabe. TODO: Abstimmung der Verwendung mit e-Diagnose.",
+      "short" : "Person der Dateineingabe. Gemäß Vorgaben im CDA keine Verwendung in der geplanten Abgabe. TODO: Abstimmung der Verwendung mit e-Diagnose.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.reasonCode",
       "path" : "MedicationRequest.reasonCode",
-      "short" : "Grund für die Verordnung des Arzneimittels als Code oder Referenz. Derzeit keine Verwendung in geplanter Abgabe.",
+      "short" : "Grund für die Verordnung des Arzneimittels als Code oder Referenz. Bis zur Verfügbarkeit von e-Diagnose keine Verwendung in geplanter Abgabe. ",
       "max" : "0"
     },
     {
@@ -384,20 +384,21 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.dispenseRequest.validityPeriod",
       "path" : "MedicationRequest.dispenseRequest.validityPeriod",
-      "short" : "Zeitraum in dem die geplante Abgabe eingelöst werden kann. Teilabgaben verlängern die Einlösedauer.\nFalls das start-Datum dem authoredOn-Datum entspricht, kann die Angabe entfallen. \nDer Gültigkeitszeitraum ist abhängig von der Rezeptart. \nTODO: Evtl. automatische Berechnung des Gültigkeitszeitraums.\nTODO: Fachlich zu klären, ob die Gültigkeitsdauer eingeschränkt werden darf.",
+      "short" : "Zeitraum in dem die geplante Abgabe eingelöst werden kann. <br>\nDer Gültigkeitszeitraum ist abhängig von der Rezeptart (gemäß e-Med v2): </br>\n\nKassenrezept: ab Erstelldatum einen Monat gültig (vom Ausstellungszeitpunkt bis zum gleichen Tag des Folgemonats 23:59 Uhr); validityPeriod.start kein Datum in der Zukunft; bei einer Teilabgabe verlängert sich die gesamte Gültigkeitsdauer auf 3 Monate („Besorger“-Prozess).<br>\n\nPrivatrezept: ab Erstelldatum maximal 365 Tage gültig, wenn die erste Einlösung innerhalb von 1 Monat ab Erstelldatum erfolgt (sonst Status abgelaufen). validityPeriod.start kein Datum in der Zukunft; Die Gültigkeitsdauer (validityPeriod.end) kann vom Arzt definiert werden.<br>\n\nSubstitutionsrezept: Maximale Gültigkeitsdauer 12 Monate. Das validityPeriod.start darf maximal einen Monat in der Zukunft liegen, gültig bis das validityPeriod.end erreicht ist.<br>\n\nFalls das start-Datum dem authoredOn-Datum entspricht, kann das start-Datum entfallen.<br><br>\n\nTODO: Techn. Prüfung der Gültigkeitszeiträume<br>\nzu prüfen: Kann beim Kassenrezept validityPeriod.start in der Vergangenheit liegen, wenn geplante Abgabe in nachhinein erstellt wurde (z.B. wenn Arzt auf Urlaub und eine Notfallabgabe in der Apotheke durchgeführt wurde)?<br>\n",
       "min" : 1,
       "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.dispenseRequest.numberOfRepeatsAllowed",
       "path" : "MedicationRequest.dispenseRequest.numberOfRepeatsAllowed",
-      "short" : "Anzahl der weiteren möglichen Einlösungen. TODO: Invariante: Verpflichtende Eingabe, wenn Privatrezept.",
+      "short" : "Anzahl der weiteren möglichen Einlösungen:<br>\nKassenrezept: keine weitere Einlösung möglich (fixer Wert 0) <br>\nPrivatrezept: bis zu 6 Einlösungen, Anzahl der möglichen Einlösungen kann vom Arzt definiert werden<br>\nSustitutionsrzepet: keine weitere Einlösung möglich (fixer Wert 0) <br><br>\nTODO: Techn. Prüfung: Wenn Kassenrezept oder Substitutionsrezept, dann 0. Verpflichtende Eingabe, wenn Privatrezept, max 6.<br>\n",
+      "min" : 1,
       "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.dispenseRequest.quantity",
       "path" : "MedicationRequest.dispenseRequest.quantity",
-      "short" : "Menge des Medikaments, die bei jeder Abgabe bereitgestellt werden soll. \nIm Fall einer Medikation mit PZN: z.B. 2 Packungen (OP2), im Fall einer Magistralen Anwendung: 1.",
+      "short" : "Menge des Medikaments, die bei jeder Abgabe bereitgestellt werden soll. \nDa sich die Angaben zum Arzneimittel jeweils auf eine Packung der Arznei beziehen, MUSS die Anzahl der auszugebenden Packungen angegeben werden (mindestens 1). \nDies gilt für Arzneimittel mit PZN und magistralen Zubereitungen, z.B. 2 Packungen (OP2), im Fall einer Magistralen Anwendung: Menge 1.",
       "min" : 1,
       "mustSupport" : true
     },

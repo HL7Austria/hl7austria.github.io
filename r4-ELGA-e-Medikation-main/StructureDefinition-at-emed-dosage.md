@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-dosage | *Version*:0.1.1 | |
-| Draft as of 2026-03-16 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedDosage |
+| Draft as of 2026-03-19 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedDosage |
 
  
 Dosage 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-dosage.csv),
   "name" : "AtEmedDosage",
   "title" : "ELGA e-Med Dosage",
   "status" : "draft",
-  "date" : "2026-03-16T16:50:24+00:00",
+  "date" : "2026-03-19T16:44:44+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -151,7 +151,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-dosage.csv),
     {
       "id" : "Dosage.route",
       "path" : "Dosage.route",
-      "short" : "Art der Anwendung der Arznei. (z.B. oral, nasal, intravenös, subkutan)\n Kann bei codierten Arzneien aus der ASP-Liste entnommen werden.",
+      "short" : "Art der Anwendung der Arznei. (z.B. oral, nasal, intravenös, subkutan). Kann bei codierten Arzneien aus der ASP-Liste entnommen werden.",
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",

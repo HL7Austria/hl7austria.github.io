@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-md-durchgefuehrte-abgabe | *Version*:0.1.1 | |
-| Draft as of 2026-03-16 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMDDurchgefuehrteAbgabe |
+| Draft as of 2026-03-19 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMDDurchgefuehrteAbgabe |
 
  
 Dokumentiert eine durchgeführte Abgabe eines Arzneimittels ("MedicationDispense"-Ressource). In der durchgeführten Abgabe können Abweichungen hinsichtlich der Dosierung des Medikaments dokumentiert werden. Sofern eine zugehörige geplante Abgabe vorliegt, muss diese referenziert werden. Einer mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige geplante Abgabe, ersichtlich. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
   "name" : "AtEmedMDDurchgefuehrteAbgabe",
   "title" : "ELGA e-Med Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-03-16T16:50:24+00:00",
+  "date" : "2026-03-19T16:44:44+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -111,7 +111,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.status",
       "path" : "MedicationDispense.status",
-      "short" : "Status der durchgeführten Abgabe: preparation | in-progress | cancelled | on-hold | completed | entered-in-error | stopped | declined | unknown; http://hl7.org/fhir/ValueSet/medicationdispense-status|4.0.1\n-> VS einschränken",
+      "short" : "Status der durchgeführten Abgabe: <br>\n\"completed\": durchgeführte Abgabe ist abgeschlossen <br>\n\"entered-in-error\": durchgeführte Abgabe wird aufgrund falscher Eingabe storniert <br>\n\"stopped\": Abgabe wird nicht durchgeführt (Medikament wird abgesetzt) <br>\nhttp://hl7.org/fhir/ValueSet/medicationdispense-status|4.0.1",
       "mustSupport" : true
     },
     {
@@ -154,50 +154,19 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.category",
       "path" : "MedicationDispense.category",
-      "short" : "Angabe, wo das abgegebene Medikament voraussichtlich eingenommen oder verabreicht wird (z.B. stationär oder ambulant), https://hl7.org/fhir/R4/valueset-medicationdispense-category.html. Verwendung zu prüfen.",
+      "short" : "Angabe, wo das abgegebene Medikament voraussichtlich eingenommen oder verabreicht wird (z.B. stationär oder ambulant), https://hl7.org/fhir/R4/valueset-medicationdispense-category.html. Keine Verwendung in der durchgeführten Abgabe.",
       "max" : "0"
     },
     {
       "id" : "MedicationDispense.medication[x]",
       "path" : "MedicationDispense.medication[x]",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "type",
-          "path" : "$this"
-        }],
-        "ordered" : false,
-        "rules" : "open"
-      },
-      "short" : "Abgegebenes Medikament. Code oder Referenz",
+      "short" : "Abgegebenes Medikament. Das Medikament wird immer in einer contained Medication Ressource dokumentiert, damit \nArzneimittel mit und ohne PZN einheitlich dokumentiert werden können.",
       "type" : [{
-        "code" : "CodeableConcept"
-      },
-      {
         "code" : "Reference",
-        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"]
+        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"],
+        "aggregation" : ["contained"]
       }],
       "mustSupport" : true
-    },
-    {
-      "id" : "MedicationDispense.medication[x]:medicationCodeableConcept",
-      "path" : "MedicationDispense.medication[x]",
-      "sliceName" : "medicationCodeableConcept",
-      "short" : "Angabe mittels Pharmazentralnummer (PZN) aus der ASP-Liste.",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "CodeableConcept"
-      }],
-      "mustSupport" : true,
-      "binding" : {
-        "strength" : "required",
-        "valueSet" : "https://termgit.elga.gv.at/CodeSystem/asp-liste"
-      }
-    },
-    {
-      "id" : "MedicationDispense.medication[x]:medicationCodeableConcept.coding",
-      "path" : "MedicationDispense.medication[x].coding",
-      "min" : 1
     },
     {
       "id" : "MedicationDispense.subject",
@@ -213,13 +182,13 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.context",
       "path" : "MedicationDispense.context",
-      "short" : "Referenz auf Encounter oder EpisodeOfCare. Verwendung in der durchgeführten Abgabe prüfen.",
+      "short" : "Referenz auf Encounter oder EpisodeOfCare. Keine Verwendung in der durchgeführten Abgabe.",
       "max" : "0"
     },
     {
       "id" : "MedicationDispense.supportingInformation",
       "path" : "MedicationDispense.supportingInformation",
-      "short" : "Referenz auf zusätzliche Informationen, die die Abgabe des Medikaments unterstützen. \nVerwendung in der durchgeführten Abgabe prüfen.",
+      "short" : "Referenz auf zusätzliche Informationen, die die Abgabe des Medikaments unterstützen. Keine Verwendung in der durchgeführten Abgabe.",
       "max" : "0"
     },
     {
@@ -239,7 +208,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.performer.actor",
       "path" : "MedicationDispense.performer.actor",
-      "short" : "RefrenzReference auf Practitioner, PractitionerRole, Organization (entfernen: Patient, Device, RelatedPerson), \ndie die durchgeführte Abgabe erstellt hat und für den Inhalt verantwortlich ist (identifiziert über den GDA-Index und berechtigt \nauf die ELGA e-Medikation des Patienten zuzugreifen)",
+      "short" : "Refrenz auf Practitioner, PractitionerRole, Organization, \ndie die durchgeführte Abgabe erstellt hat und für den Inhalt verantwortlich ist (identifiziert über den GDA-Index und berechtigt \nauf die ELGA e-Medikation des Patienten zuzugreifen).",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner",
@@ -257,21 +226,21 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.authorizingPrescription",
       "path" : "MedicationDispense.authorizingPrescription",
-      "short" : "Referenz auf zugehörige geplante Abgabe (MedicationRequest).",
+      "short" : "Verpflichtende Referenz auf zugehörige geplante Abgabe (MedicationRequest), sofern diese existiert.",
       "max" : "1",
       "mustSupport" : true
     },
     {
       "id" : "MedicationDispense.type",
       "path" : "MedicationDispense.type",
-      "short" : "Mögliche Werte z.B. FFC (First-Fill Complete für vollständig erfüllte Bestellungen), FFP (First-Fill Part Fill für teilweise erfüllte Bestellungen), \nBsp: http://terminology.hl7.org/ValueSet/v3-ActPharmacySupplyType",
+      "short" : "Mögliche Werte z.B. FFC (First-Fill Complete für vollständig erfüllte Bestellungen), FFP (First-Fill Part Fill für teilweise erfüllte Bestellungen), \nBsp: http://terminology.hl7.org/ValueSet/v3-ActPharmacySupplyType  //ffc, ffp, Refill - Part Fill, refill complete: evtl. selbst definieren\n// für leerabgabe: complete-ausprägung; emergency supply offen (OTC), complete\n\nDer Prozess des „Besorgers“ (wenn ein Arzneimittel nicht lagernd ist und bestellt werden muss) wird in der e-Medikation abgebildet. \nDabei wird das Rezept von der Apotheke eingelöst, und die Abgabe wird als Teilabgabe gekennzeichnet \n(siehe Markierung FFP „First Fill, Part Fill“ oder RFP „Refill - Part Fill“). Die Verordnung wird nicht in den Status EINGELÖST versetzt und es können solange weitere Abgaben dispensiert werden, bis eine Abgabe mit der Markierung RFC „Refill - Complete“ gespeichert wird. Die Kennzeichnung zeigt, dass das Arzneimittel dem Patienten noch nicht ausgehändigt wurde. Die Kennzeichnung zeigt auch, ob alle Packungen einer Verordnung bzw. teilweise Packungen einer Verordnung bestellt werden. Solange eine Abgabe mit der Kennzeichnung „Besorger“ vorhanden ist, muss die Abgabe mit der eMED-ID abrufbar sein.\n\n\"FFC\": First Fill - Complete:  <br>\n\"FFP\": First Fill - Part Fill <br>  \n\"RFP\": Refill - Part Fill <br> \n\"RFC\": Refill - Complete <br>\n",
       "min" : 1,
       "mustSupport" : true
     },
     {
       "id" : "MedicationDispense.quantity",
       "path" : "MedicationDispense.quantity",
-      "short" : "Abgegebene Menge und Einheit",
+      "short" : "Abgegebene Menge und Einheit.",
       "min" : 1,
       "mustSupport" : true
     },

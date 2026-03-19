@@ -33,7 +33,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) ENTWURF",
   "status" : "draft",
-  "date" : "2026-03-16T16:50:24+00:00",
+  "date" : "2026-03-19T16:44:44+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -376,7 +376,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     },
     {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools.r4#0.9.0"
+      "valueCode" : "hl7.fhir.uv.tools.r4#1.1.0"
     },
     {
       "extension" : [{
@@ -1124,6 +1124,18 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/DurchgefuehrteAbgabeTypVS"
+      },
+      "name" : "ELGA e-Med Durchgeführte Abgabe Typ Value Set",
+      "description" : "ValueSet für zulässige Ausprägungen eines Typs einer durchgeführten Abgabe (MedicationDispense).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
@@ -1155,30 +1167,6 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       "name" : "ELGA e-Med MedicationRequest Kategorie CodeSystem",
       "description" : "Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/MedicationRequestCategoryRecipeTypeCS"
-      },
-      "name" : "ELGA e-Med MedicationRequest Kategorie Rezeptart CodeSystem",
-      "description" : "Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie Rezeptart.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/MedicationRequestCategoryRecipeTypeVS"
-      },
-      "name" : "ELGA e-Med MedicationRequest Kategorie Rezeptart ValueSet",
-      "description" : "ValueSet für zulässige Ausprägungen der MedicationRequest Kategorie Rezeptart.",
       "exampleBoolean" : false
     },
     {
