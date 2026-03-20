@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
   "name" : "AtEmedMDDurchgefuehrteAbgabe",
   "title" : "ELGA e-Med Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-03-20T13:50:58+00:00",
+  "date" : "2026-03-20T15:30:14+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -135,7 +135,8 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.status",
       "path" : "MedicationDispense.status",
-      "short" : "Status der durchgeführten Abgabe: <br>\n\"completed\": durchgeführte Abgabe ist abgeschlossen <br>\n\"entered-in-error\": durchgeführte Abgabe wird aufgrund falscher Eingabe storniert <br>\n\"stopped\": Abgabe wird nicht durchgeführt (Medikament wird abgesetzt) <br>\nhttp://hl7.org/fhir/ValueSet/medicationdispense-status|4.0.1",
+      "short" : "Status der durchgeführten Abgabe: completed | entered-in-error | stopped. Details siehe Definition.",
+      "definition" : "* **\\\"completed\\\"**: Die durchgeführte Abgabe ist abgeschlossen. \n* **\\\"entered-in-error\\\"**: Die durchgeführte Abgabe wird aufgrund falscher Eingabe storniert.\n* **\\\"stopped\\\"**: Die Abgabe wird nicht durchgeführt (Medikament wird abgesetzt). \nhttp://hl7.org/fhir/ValueSet/medicationdispense-status|4.0.1\n\nTODO: zu prüfen: \n* ob es einen Status in-progress / preparation geben soll, z.B. wenn Bestellvorgang gestartet wurde und der typ First Fill - Part Fill ist.\n* Technische Prüfungen bezüglich Abhängigkeiten von status, typ, Rezeptart? automatisch geprüft werden? Falls der Status vom Typ der geplanten Abgabe (Rezeptart) abhängig sein kann (z.B. in-progress bei Bestellung o.ä.), evtl Operation ",
       "mustSupport" : true
     },
     {
@@ -212,7 +213,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.supportingInformation",
       "path" : "MedicationDispense.supportingInformation",
-      "short" : "Referenz auf zusätzliche Informationen, die die Abgabe des Medikaments unterstützen. Keine Verwendung in der durchgeführten Abgabe.",
+      "short" : "Referenz (Any) auf zusätzliche Informationen, die die Abgabe des Medikaments unterstützen. Keine Verwendung in der durchgeführten Abgabe.",
       "max" : "0"
     },
     {
@@ -226,7 +227,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.performer.function",
       "path" : "MedicationDispense.performer.function",
-      "short" : "Rolle: https://hl7.org/fhir/R4/valueset-medicationdispense-performer-function.html; Verwendung in der durchgeführten Abgabe prüfen.",
+      "short" : "Rolle: https://hl7.org/fhir/R4/valueset-medicationdispense-performer-function.html; Keine Verwendung in der durchgeführten Abgabe.",
       "max" : "0"
     },
     {
@@ -264,7 +265,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.quantity",
       "path" : "MedicationDispense.quantity",
-      "short" : "Abgegebene Menge und Einheit.",
+      "short" : "Abgegebene Packungsanzahl.",
       "min" : 1,
       "mustSupport" : true
     },
@@ -290,19 +291,14 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.destination",
       "path" : "MedicationDispense.destination",
-      "short" : "Ort an den das Medikament geschickt wurde (Referenz auf Location Ressource). Verwendung prüfen.",
+      "short" : "Ort an den das Medikament geschickt wurde (Referenz auf Location Ressource). Keine Verwendung in durchgeführter Abgabe.",
       "max" : "0"
     },
     {
       "id" : "MedicationDispense.receiver",
       "path" : "MedicationDispense.receiver",
-      "short" : "Person, die das Medikament abgeholt hat. Verwendung prüfen.",
-      "max" : "0",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient",
-        "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner"]
-      }]
+      "short" : "Person, die das Medikament abgeholt hat. Referenz auf Patient oder Practitioner. Keine Verwendung in durchgeführter Abgabe.",
+      "max" : "0"
     },
     {
       "id" : "MedicationDispense.note",

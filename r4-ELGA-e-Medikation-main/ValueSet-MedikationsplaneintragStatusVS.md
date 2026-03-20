@@ -54,7 +54,7 @@ No Expansion for this valueset (Unknown Code System)
   "title" : "ELGA e-Med Medikationsplaneintrag Status Value Set",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-20T13:50:58+00:00",
+  "date" : "2026-03-20T15:30:14+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
