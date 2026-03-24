@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
   "name" : "AtEmedListMedikationsplan",
   "title" : "ELGA e-Med Medikationsplan",
   "status" : "draft",
-  "date" : "2026-03-24T10:00:40+00:00",
+  "date" : "2026-03-24T15:12:36+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -87,13 +87,14 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
     {
       "id" : "List.status",
       "path" : "List.status",
-      "short" : "Verpflichtende Angabe: current | retired | entered-in-error. https://hl7.org/fhir/R4/valueset-list-status.html",
+      "short" : "Verpflichtende Angabe: current | retired. https://hl7.org/fhir/R4/valueset-list-status.html\nTODO: retired nach Ableben des Patienten bis Ende der Aufbewahrungsfrist? automatisch gesetzt?\nentered-in-error nicht sinnvoll",
       "mustSupport" : true
     },
     {
       "id" : "List.mode",
       "path" : "List.mode",
-      "short" : "Verpflichtende Angabe: working | snapshot | changes. https://hl7.org/fhir/R4/valueset-list-mode.html\nDer Medikationsplan ist ein laufend gepflegtes Dokument: working",
+      "short" : "Verpflichtende Angabe: working | snapshot | changes. https://hl7.org/fhir/R4/valueset-list-mode.html\nDer Medikationsplan ist ein laufend gepflegtes Dokument: working.",
+      "patternCode" : "working",
       "mustSupport" : true
     },
     {
@@ -157,7 +158,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
     {
       "id" : "List.orderedBy",
       "path" : "List.orderedBy",
-      "short" : "Die Reihenfolge der Einträge im Medikationsplan ist fachlich relevant und wird durch den Ersteller vorgegeben. \nMögliche Codes: user | system | event-date | entry-date| priority | alphabetic | category | patient (TODO: nur user oder andere Reihenfolge ermöglichen?)",
+      "short" : "Die Reihenfolge der Einträge im Medikationsplan ist fachlich relevant und wird durch den Ersteller vorgegeben. Da nicht verpflichtend, könnte das Element auch 0..0 gesetzt werden.\nEvtl. Unterscheidung user und patient.\nMögliche Codes: user | system | event-date | entry-date| priority | alphabetic | category | patient (TODO: nur user oder andere Reihenfolge ermöglichen?)",
       "min" : 1,
       "patternCodeableConcept" : {
         "coding" : [{
@@ -184,7 +185,8 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
     {
       "id" : "List.entry.flag",
       "path" : "List.entry.flag",
-      "short" : "Kennzeichnet die Art der Änderung des Medikationsplaneintrags: zB Unchanged | Changed | Cancelled | Prescribed | Ceased | Suspended.",
+      "short" : "Kennzeichnet die Art der Änderung des Medikationsplaneintrags: (example) Unchanged | Changed | Cancelled | Prescribed | Ceased | Suspended. Details siehe Definition.",
+      "definition" : "Kennzeichnet die Art der Änderung des Medikationsplaneintrags: \n* \\\"Unchanged\\\": Medikationsplaneintrag bleibt unverändert bestehen\n* \\\"Changed\\\": Medikationsplaneintrag wird geändert\n* \\\"Cancelled\\\": Medikationsplaneintrag wird storniert\n* \\\"Prescribed\\\": Neuer Medikationsplaneintrag wurde hinzugefügt\n* \\\"Ceased\\\": Medikationsplaneintrag wird abgesetzt\n* \\\"Suspended\\\": Medikationsplaneintrag wird pausiert",
       "min" : 1,
       "mustSupport" : true,
       "binding" : {
@@ -217,7 +219,8 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
     {
       "id" : "List.emptyReason",
       "path" : "List.emptyReason",
-      "short" : "Begründung, warum der Medikationsplan leer ist: \nhttps://hl7.org/fhir/R4/valueset-list-empty-reason.html eingeschränkt auf: <vbr>\n    - notstarted: Intitalzustand <br>\n    - nilknown: Patient nimmt derzeit keine Medikamente ein",
+      "short" : "Begründung, warum der Medikationsplan leer ist: notstarted |  nilknown. Details siehe Definition.",
+      "definition" : "Begründung, warum der Medikationsplan leer ist. Eingeschränkt auf: <vbr>\n    - notstarted: Intitalzustand <br>\n    - nilknown: Patient nimmt derzeit keine Medikamente ein\n\nhttps://hl7.org/fhir/R4/valueset-list-empty-reason.html",
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
