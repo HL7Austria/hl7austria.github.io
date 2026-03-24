@@ -11,6 +11,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
 ### X01 -> FHIR
 
 * Feld: Satzartenkennzeichen
+  * Ambulant: /
+  * Stationär: /
+  * Intensiv: /
+  * Notiz zur Kardinalität: /
   * befüllt von: /
   * Profile: /
   * FHIR Ressource: /
@@ -18,6 +22,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: /
   * Anmerkungen: in neuer Architektur nicht mehr notwendig
 * Feld: Krankenanstaltennummer/Leistungserbringer-Stammdaten-ID
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedDeviceActor
   * Profile: MopedAnfragenComposition; MopedAufnahmeComposition; MopedBeantwortenComposition; MopedComposition; MopedEntlassenAvisoComposition; MopedEntlassenVollstaendigComposition; MopedMasterComposition; MopedUpdateComposition
   * FHIR Ressource: Composition
@@ -25,6 +33,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.author.resolve()
   * Anmerkungen: /
 * Feld: Aufnahmezahl
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -32,6 +44,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Datensatz-ID
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -39,6 +55,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Aufnahme-/Kontaktdatum
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -46,6 +66,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Aufnahme-/Kontaktuhrzeit
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -53,6 +77,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Behandlungsart
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -60,6 +88,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Geburtsdatum
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
@@ -67,6 +99,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.subject.resolve()
   * Anmerkungen: /
 * Feld: Altersgruppe bei Entlassung/Kontakt
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -74,6 +110,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Geschlecht
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
@@ -81,6 +121,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.subject.resolve()
   * Anmerkungen: /
 * Feld: Staatsbürgerschaft
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
@@ -88,6 +132,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.subject.resolve()
   * Anmerkungen: /
 * Feld: Wohnsitz – Staat
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
@@ -95,6 +143,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.subject.resolve()
   * Anmerkungen: /
 * Feld: Wohnsitz – Postleitzahl
+  * Ambulant: O[Inv.]*
+  * Stationär: O[Inv.]*
+  * Intensiv: 
+  * Notiz zur Kardinalität: *nur für österreichische Patienten verpflichtend
   * befüllt von: MopedKHActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
@@ -102,6 +154,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.subject.resolve()
   * Anmerkungen: /
 * Feld: Wohnsitz – Gemeindecode
+  * Ambulant: O[Inv.]*
+  * Stationär: O[Inv.]*
+  * Intensiv: 
+  * Notiz zur Kardinalität: *nur für österreichische Patienten verpflichtend
   * befüllt von: MopedKHActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF
   * FHIR Ressource: Patient
@@ -109,6 +165,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.subject.resolve()
   * Anmerkungen: /
 * Feld: Aufnahme-/Zugangsart 1
+  * Ambulant: O*
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: *Zwingend sofern systematisch erfasst
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterBund; MopedEncounterLGF; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -116,6 +176,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Aufnahme-/Zugangsart 2
+  * Ambulant: O*
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: *Zwingend sofern systematisch erfasst
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -123,6 +187,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Transportart
+  * Ambulant: O*
+  * Stationär: O*
+  * Intensiv: 
+  * Notiz zur Kardinalität: *Zwingend sofern systematisch erfasst
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS
   * FHIR Ressource: Encounter
@@ -130,6 +198,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Zugewiesen von – Krankenanstaltennummer
+  * Ambulant: /
+  * Stationär: X*
+  * Intensiv: 
+  * Notiz zur Kardinalität: *sofern ein Transfer vorliegt
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -137,6 +209,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Zugewiesen an – Krankenanstaltennummer
+  * Ambulant: /
+  * Stationär: X*
+  * Intensiv: 
+  * Notiz zur Kardinalität: *sofern ein Transfer vorliegt
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -144,6 +220,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Entlassungs-/Abgangsart
+  * Ambulant: O[Prof.]*
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: Valueset in ambulant und stationär geteilt; *ambulant nur zwingend sofern systematisch erfasst
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -151,6 +231,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Entlassungsdatum
+  * Ambulant: /
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -158,6 +242,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Entlassungsuhrzeit
+  * Ambulant: /
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -165,6 +253,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Leistungszuständiger Kostenträger – Code
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedDeviceActor
   * Profile: MopedAnfragenComposition; MopedAufnahmeComposition; MopedBeantwortenComposition; MopedComposition; MopedEntlassenAvisoComposition; MopedEntlassenVollstaendigComposition; MopedMasterComposition; MopedUpdateComposition
   * FHIR Ressource: Composition
@@ -172,6 +264,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:zustaendigeSV.entry.resolve()
   * Anmerkungen: Slice mit dem System http://svc.co.at/CodeSystem/ecard-svt-cs
 * Feld: Fondsrelevanz
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
@@ -179,6 +275,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:LKFRequests.entry.resolve()
   * Anmerkungen: /
 * Feld: Plausibilitätskennzeichen
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
@@ -186,6 +286,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:LKFRequests.entry.resolve()
   * Anmerkungen: /
 * Feld: Abrechnender Kostenträger – Code
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: 
   * Profile: 
   * FHIR Ressource: 
@@ -193,6 +297,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: 
   * Anmerkungen: noch inhaltlich abzuklären: ggf. über den Träger des KH definiert
 * Feld: Abrechnungsquartal der Sozialversicherung
+  * Ambulant: /
+  * Stationär: /
+  * Intensiv: /
+  * Notiz zur Kardinalität: /
   * befüllt von: /
   * Profile: /
   * FHIR Ressource: /
@@ -203,6 +311,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
 ### X02 -> FHIR
 
 * Feld: Satzartenkennzeichen
+  * Ambulant: /
+  * Stationär: /
+  * Intensiv: /
+  * Notiz zur Kardinalität: /
   * befüllt von: /
   * Profile: /
   * FHIR Ressource: /
@@ -210,6 +322,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: /
   * Anmerkungen: in neuer Architektur nicht mehr notwendig
 * Feld: Krankenanstaltennummer/Leistungserbringer-Stammdaten-ID
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedDeviceActor
   * Profile: MopedAnfragenComposition; MopedAufnahmeComposition; MopedBeantwortenComposition; MopedComposition; MopedEntlassenAvisoComposition; MopedEntlassenVollstaendigComposition; MopedMasterComposition; MopedUpdateComposition
   * FHIR Ressource: Composition
@@ -217,6 +333,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.author.resolve()
   * Anmerkungen: /
 * Feld: Aufnahmezahl
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -224,6 +344,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Datensatz-ID
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -231,6 +355,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Aufnahme-/Kontaktdatum
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -238,6 +366,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Hauptkostenstelle/Fachgebiet – Positionsnummer
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: 
   * Profile: 
   * FHIR Ressource: 
@@ -245,6 +377,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: 
   * Anmerkungen: ggf. über FHIR ID des TransferEncounters lösbar; Details sind noch abzuklären
 * Feld: Hauptkostenstelle – Funktionscode/Fachgebiet
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
@@ -252,6 +388,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
   * Anmerkungen: Funktions- und subcode sind in zwei Felder aufgeteilt
 * Feld: Hauptkostenstelle/Fachgebiet – Zugangsdatum/Kontaktdatum
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
@@ -259,6 +399,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
   * Anmerkungen: /
 * Feld: Hauptkostenstelle/Fachgebiet – Zugangsuhrzeit/Kontaktuhrzeit
+  * Ambulant: /
+  * Stationär: /
+  * Intensiv: !
+  * Notiz zur Kardinalität: nur für Intensiveinheiten auszufüllen, für die eine Intensivdokumentation (TISS-A/ SAPS3) übermittelt wird
   * befüllt von: MopedKHActor
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
@@ -266,6 +410,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
   * Anmerkungen: /
 * Feld: Physische Anwesenheit
+  * Ambulant: X
+  * Stationär: /
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
@@ -273,6 +421,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
   * Anmerkungen: /
 * Feld: Hauptkostenstelle – Abgangsdatum
+  * Ambulant: /
+  * Stationär: /
+  * Intensiv: !
+  * Notiz zur Kardinalität: nur für Intensiveinheiten auszufüllen, für die eine Intensivdokumentation (TISS-A/ SAPS3) übermittelt wird
   * befüllt von: MopedKHActor
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
@@ -280,6 +432,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
   * Anmerkungen: /
 * Feld: Hauptkostenstelle – Abgangsuhrzeit
+  * Ambulant: /
+  * Stationär: /
+  * Intensiv: !
+  * Notiz zur Kardinalität: nur für Intensiveinheiten auszufüllen, für die eine Intensivdokumentation (TISS-A/ SAPS3) übermittelt wird
   * befüllt von: MopedKHActor
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
@@ -287,6 +443,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
   * Anmerkungen: /
 * Feld: Hauptkostenstelle – Abgangsart
+  * Ambulant: /
+  * Stationär: /
+  * Intensiv: !
+  * Notiz zur Kardinalität: nur für Intensiveinheiten auszufüllen, für die eine Intensivdokumentation (TISS-A/ SAPS3) übermittelt wird
   * befüllt von: MopedKHActor
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
@@ -294,6 +454,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
   * Anmerkungen: /
 * Feld: Hauptkostenstelle – Fachlicher Funktionscode
+  * Ambulant: /
+  * Stationär: O*
+  * Intensiv: 
+  * Notiz zur Kardinalität: *zu befüllen, sofern dies auf Ebene der Landes- gesundheitsfonds festgelegt wird
   * befüllt von: MopedKHActor
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
@@ -301,6 +465,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
   * Anmerkungen: wird in AG Moped geklärt
 * Feld: Hauptkostenstelle – Pflegerischer Funktionscode
+  * Ambulant: /
+  * Stationär: O*
+  * Intensiv: 
+  * Notiz zur Kardinalität: *zu befüllen, sofern dies auf Ebene der Landes- gesundheitsfonds festgelegt wird
   * befüllt von: MopedKHActor
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
@@ -308,6 +476,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
   * Anmerkungen: wird in AG Moped geklärt
 * Feld: Neugeborenes
+  * Ambulant: /
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
@@ -315,6 +487,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
   * Anmerkungen: /
 * Feld: Altersgruppe bei Zugang/Kontakt
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
@@ -322,6 +498,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
   * Anmerkungen: /
 * Feld: Aufnahmezahl – funktionscodebezogen
+  * Ambulant: O[TBD]*
+  * Stationär: /
+  * Intensiv: 
+  * Notiz zur Kardinalität: * Nur für Fondshäuser und TBD: nur bei Tagesklammer?
   * befüllt von: MopedKHActor
   * Profile: MopedTransferEncounterA
   * FHIR Ressource: Encounter
@@ -332,6 +512,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
 ### X03 -> FHIR
 
 * Feld: Satzartenkennzeichen
+  * Ambulant: /
+  * Stationär: /
+  * Intensiv: /
+  * Notiz zur Kardinalität: /
   * befüllt von: /
   * Profile: /
   * FHIR Ressource: /
@@ -339,6 +523,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: /
   * Anmerkungen: in neuer Architektur nicht mehr notwendig
 * Feld: Krankenanstaltennummer/Leistungserbringer-Stammdaten-ID
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedDeviceActor
   * Profile: MopedAnfragenComposition; MopedAufnahmeComposition; MopedBeantwortenComposition; MopedComposition; MopedEntlassenAvisoComposition; MopedEntlassenVollstaendigComposition; MopedMasterComposition; MopedUpdateComposition
   * FHIR Ressource: Composition
@@ -346,6 +534,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.author.resolve()
   * Anmerkungen: /
 * Feld: Aufnahmezahl
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -353,6 +545,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Datensatz-ID
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -360,6 +556,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Aufnahme-/Kontaktdatum
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -367,6 +567,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Diagnose – Code
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedCondition
   * FHIR Ressource: Condition
@@ -374,6 +578,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:Diagnosen.entry.resolve()
   * Anmerkungen: /
 * Feld: Diagnose – Typ
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedCondition
   * FHIR Ressource: Condition
@@ -381,6 +589,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:Diagnosen.entry.resolve()
   * Anmerkungen: /
 * Feld: Diagnose – Art
+  * Ambulant: O*
+  * Stationär: /
+  * Intensiv: 
+  * Notiz zur Kardinalität: *zu befüllen, sofern dies im Rahmen der jährlich zu wartenden Abrechnungsmodelle oder von Modellprojekten der Bundesgesundheitsagentur vorgesehen ist
   * befüllt von: MopedKHActor
   * Profile: MopedCondition
   * FHIR Ressource: Condition
@@ -388,6 +600,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:Diagnosen.entry.resolve()
   * Anmerkungen: /
 * Feld: Diagnose – im stationären Aufenthalt erworben
+  * Ambulant: /
+  * Stationär: O*
+  * Intensiv: 
+  * Notiz zur Kardinalität: *ist für im Rahmen der jährlichen Wartung ausgewählte Diagnosen zu befüllen
   * befüllt von: MopedKHActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
@@ -395,6 +611,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:LKFRequests.entry.resolve()
   * Anmerkungen: /
 * Feld: Aufnahmezahl – funktionscodebezogen
+  * Ambulant: O[TBD]*
+  * Stationär: /
+  * Intensiv: 
+  * Notiz zur Kardinalität: * Nur für Fondshäuser und TBD: nur bei Tagesklammer?
   * befüllt von: MopedKHActor
   * Profile: MopedTransferEncounterA
   * FHIR Ressource: Encounter
@@ -405,6 +625,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
 ### X04 -> FHIR
 
 * Feld: Satzartenkennzeichen
+  * Ambulant: /
+  * Stationär: /
+  * Intensiv: /
+  * Notiz zur Kardinalität: /
   * befüllt von: /
   * Profile: /
   * FHIR Ressource: /
@@ -412,6 +636,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: /
   * Anmerkungen: in neuer Architektur nicht mehr notwendig
 * Feld: Krankenanstaltennummer/Leistungserbringer-Stammdaten-ID
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedDeviceActor
   * Profile: MopedAnfragenComposition; MopedAufnahmeComposition; MopedBeantwortenComposition; MopedComposition; MopedEntlassenAvisoComposition; MopedEntlassenVollstaendigComposition; MopedMasterComposition; MopedUpdateComposition
   * FHIR Ressource: Composition
@@ -419,6 +647,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.author.resolve()
   * Anmerkungen: /
 * Feld: Aufnahmezahl
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -426,6 +658,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Datensatz-ID
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -433,6 +669,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Aufnahme-/Kontaktdatum
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -440,6 +680,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Medizinische Leistung – Code
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedProcedure
   * FHIR Ressource: Procedure
@@ -447,6 +691,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:Leistungen.entry.resolve()
   * Anmerkungen: /
 * Feld: Medizinische Leistung – Seitenlokalisation
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedProcedure
   * FHIR Ressource: Procedure
@@ -454,6 +702,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:Leistungen.entry.resolve()
   * Anmerkungen: /
 * Feld: Medizinische Leistung – Abrechnungsrelevanz
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
@@ -461,6 +713,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:LKFRequests.entry.resolve()
   * Anmerkungen: /
 * Feld: Medizinische Leistung – Anzahl
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedProcedure
   * FHIR Ressource: Procedure
@@ -468,6 +724,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:Leistungen.entry.resolve()
   * Anmerkungen: /
 * Feld: Medizinische Leistung – Datum der Erbringung
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedProcedure
   * FHIR Ressource: Procedure
@@ -475,6 +735,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:Leistungen.entry.resolve()
   * Anmerkungen: /
 * Feld: Medizinische Leistung – Uhrzeit der Erbringung
+  * Ambulant: O*
+  * Stationär: O*
+  * Intensiv: 
+  * Notiz zur Kardinalität: * Zwingend sofern systematisch erfasst
   * befüllt von: MopedKHActor
   * Profile: MopedProcedure
   * FHIR Ressource: Procedure
@@ -482,6 +746,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:Leistungen.entry.resolve()
   * Anmerkungen: /
 * Feld: Funktionscode/Fachgebiet leistungserbringend
+  * Ambulant: O[Inv.]*
+  * Stationär: O[Inv.]*
+  * Intensiv: 
+  * Notiz zur Kardinalität: *Für alle Leistungen außer externe zu befüllen
   * befüllt von: MopedKHActor
   * Profile: MopedProcedure
   * FHIR Ressource: Procedure
@@ -489,6 +757,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:Leistungen.entry.resolve()
   * Anmerkungen: Referenz auf eine Abteilung
 * Feld: Krankenanstaltennummer leistungserbringend
+  * Ambulant: O[Inv.]*
+  * Stationär: O[Inv.]*
+  * Intensiv: 
+  * Notiz zur Kardinalität: *Nur befüllt falls extern erbrachte Leistung
   * befüllt von: MopedKHActor
   * Profile: MopedProcedure
   * FHIR Ressource: Procedure
@@ -496,6 +768,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:Leistungen.entry.resolve()
   * Anmerkungen: Referenz auf eine Krankenanstalt
 * Feld: Aufnahmezahl – funktionscodebezogen
+  * Ambulant: O[TBD]*
+  * Stationär: /
+  * Intensiv: 
+  * Notiz zur Kardinalität: * Nur für Fondshäuser und TBD: nur bei Tagesklammer?
   * befüllt von: MopedKHActor
   * Profile: MopedTransferEncounterA
   * FHIR Ressource: Encounter
@@ -506,6 +782,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
 ### X05 -> FHIR
 
 * Feld: Satzartenkennzeichen
+  * Ambulant: /
+  * Stationär: /
+  * Intensiv: /
+  * Notiz zur Kardinalität: /
   * befüllt von: /
   * Profile: /
   * FHIR Ressource: /
@@ -513,6 +793,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: /
   * Anmerkungen: in neuer Architektur nicht mehr notwendig
 * Feld: Krankenanstaltennummer
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedDeviceActor
   * Profile: MopedAnfragenComposition; MopedAufnahmeComposition; MopedBeantwortenComposition; MopedComposition; MopedEntlassenAvisoComposition; MopedEntlassenVollstaendigComposition; MopedMasterComposition; MopedUpdateComposition
   * FHIR Ressource: Composition
@@ -520,6 +804,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.author.resolve()
   * Anmerkungen: /
 * Feld: Aufnahmezahl
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -527,6 +815,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Datensatz-ID
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -534,6 +826,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Aufnahme-/Kontaktdatum
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -541,6 +837,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Abrechnung – Gruppe
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
@@ -548,6 +848,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:LKFRequests.entry.resolve()
   * Anmerkungen: /
 * Feld: Abrechnung – Knoten
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
@@ -555,6 +859,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:LKFRequests.entry.resolve()
   * Anmerkungen: /
 * Feld: Leistungskomponente/Leistungspunkte
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
@@ -562,6 +870,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:LKFRequests.entry.resolve()
   * Anmerkungen: /
 * Feld: Tageskomponente/Kontaktpunkte
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
@@ -569,6 +881,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:LKFRequests.entry.resolve()
   * Anmerkungen: /
 * Feld: Punkte Belagsdauerausreißer nach unten – Leistungskomponente
+  * Ambulant: /
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
@@ -576,6 +892,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:LKFRequests.entry.resolve()
   * Anmerkungen: /
 * Feld: Punkte Belagsdauerausreißer nach unten – Tageskomponente
+  * Ambulant: /
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
@@ -583,6 +903,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:LKFRequests.entry.resolve()
   * Anmerkungen: /
 * Feld: Zusatzpunkte Belagsdauerausreißer nach oben
+  * Ambulant: /
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
@@ -590,6 +914,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:LKFRequests.entry.resolve()
   * Anmerkungen: /
 * Feld: Zusatzpunkte Intensiv
+  * Ambulant: /
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
@@ -597,6 +925,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:LKFRequests.entry.resolve()
   * Anmerkungen: /
 * Feld: Zusatzpunkte Mehrfachleistungen
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
@@ -604,6 +936,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:LKFRequests.entry.resolve()
   * Anmerkungen: /
 * Feld: Punkte spezieller Bereiche (tageweise)
+  * Ambulant: /
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
@@ -611,6 +947,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.section:LKFRequests.entry.resolve()
   * Anmerkungen: /
 * Feld: Punkte total
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
@@ -621,6 +961,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
 ### X06 -> FHIR
 
 * Feld: Satzartenkennzeichen
+  * Ambulant: /
+  * Stationär: /
+  * Intensiv: /
+  * Notiz zur Kardinalität: /
   * befüllt von: /
   * Profile: /
   * FHIR Ressource: /
@@ -628,6 +972,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: /
   * Anmerkungen: in neuer Architektur nicht mehr notwendig
 * Feld: Krankenanstaltennummer
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedDeviceActor
   * Profile: MopedAnfragenComposition; MopedAufnahmeComposition; MopedBeantwortenComposition; MopedComposition; MopedEntlassenAvisoComposition; MopedEntlassenVollstaendigComposition; MopedMasterComposition; MopedUpdateComposition
   * FHIR Ressource: Composition
@@ -635,6 +983,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.author.resolve()
   * Anmerkungen: /
 * Feld: Aufnahmezahl
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -642,6 +994,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Datensatz-ID
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -649,6 +1005,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Aufnahme-/Kontaktdatum
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -656,6 +1016,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Error/Warning – Wert
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: 
   * Profile: 
   * FHIR Ressource: 
@@ -663,6 +1027,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: 
   * Anmerkungen: Error/Warning Prozess in Arbeit
 * Feld: Error/Warning – Code
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: 
   * Profile: 
   * FHIR Ressource: 
@@ -670,6 +1038,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: 
   * Anmerkungen: Error/Warning Prozess in Arbeit
 * Feld: Error/Warning – Kommentar
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: 
   * Profile: 
   * FHIR Ressource: 
@@ -680,6 +1052,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
 ### X07 -> FHIR
 
 * Feld: Satzartenkennzeichen
+  * Ambulant: /
+  * Stationär: /
+  * Intensiv: /
+  * Notiz zur Kardinalität: /
   * befüllt von: /
   * Profile: /
   * FHIR Ressource: /
@@ -687,6 +1063,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: /
   * Anmerkungen: in neuer Architektur nicht mehr notwendig
 * Feld: Krankenanstaltennummer
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedDeviceActor
   * Profile: MopedAnfragenComposition; MopedAufnahmeComposition; MopedBeantwortenComposition; MopedComposition; MopedEntlassenAvisoComposition; MopedEntlassenVollstaendigComposition; MopedMasterComposition; MopedUpdateComposition
   * FHIR Ressource: Composition
@@ -694,6 +1074,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.author.resolve()
   * Anmerkungen: /
 * Feld: Aufnahmezahl
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -701,6 +1085,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Datensatz-ID
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -708,6 +1096,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Aufnahme-/Kontaktdatum
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: MopedKHActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
@@ -715,6 +1107,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: Composition.encounter.resolve()
   * Anmerkungen: /
 * Feld: Kommentar 1
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: 
   * Profile: 
   * FHIR Ressource: 
@@ -722,6 +1118,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: 
   * Anmerkungen: Kommentare die MBDS relevant sind und als X07 exportiert werden sollen enthalten in der Communication.extension:MBDSRelevanz den Wert true
 * Feld: Kommentar 2
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: 
   * Profile: 
   * FHIR Ressource: 
@@ -729,6 +1129,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: 
   * Anmerkungen: Kommentare die MBDS relevant sind und als X07 exportiert werden sollen enthalten in der Communication.extension:MBDSRelevanz den Wert true
 * Feld: Kommentar 3
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: 
   * Profile: 
   * FHIR Ressource: 
@@ -736,6 +1140,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: 
   * Anmerkungen: Kommentare die MBDS relevant sind und als X07 exportiert werden sollen enthalten in der Communication.extension:MBDSRelevanz den Wert true
 * Feld: Kommentar 4
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: 
   * Profile: 
   * FHIR Ressource: 
@@ -743,6 +1151,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: 
   * Anmerkungen: Kommentare die MBDS relevant sind und als X07 exportiert werden sollen enthalten in der Communication.extension:MBDSRelevanz den Wert true
 * Feld: Kommentar 5
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: 
   * Profile: 
   * FHIR Ressource: 
@@ -750,6 +1162,10 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Pfad von der Composition aus: 
   * Anmerkungen: Kommentare die MBDS relevant sind und als X07 exportiert werden sollen enthalten in der Communication.extension:MBDSRelevanz den Wert true
 * Feld: Kommentar 6
+  * Ambulant: X
+  * Stationär: X
+  * Intensiv: 
+  * Notiz zur Kardinalität: /
   * befüllt von: 
   * Profile: 
   * FHIR Ressource: 

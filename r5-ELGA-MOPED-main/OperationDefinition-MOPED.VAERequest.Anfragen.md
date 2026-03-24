@@ -52,7 +52,7 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die Versichertenanspr
   "title" : "MOPED Versichertenanspruchserklärung $anfragen",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-03-24T19:35:33+00:00",
+  "date" : "2026-03-24T20:07:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

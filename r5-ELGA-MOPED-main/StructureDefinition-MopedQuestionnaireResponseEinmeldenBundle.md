@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedQuestionnaireRe
   "name" : "MopedQuestionnaireResponseEinmeldenBundle",
   "title" : "MOPED QuestionnaireResponse einmelden Bundle",
   "status" : "draft",
-  "date" : "2026-03-24T19:35:33+00:00",
+  "date" : "2026-03-24T20:07:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
