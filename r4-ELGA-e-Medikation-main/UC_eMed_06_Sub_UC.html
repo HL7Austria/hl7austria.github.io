@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>HL7.AT.FHIR.ELGA.EMED.R4\Überblick Anwendungsfälle - FHIR® v4.0.1</title>
+    <title>HL7.AT.FHIR.ELGA.EMED.R4\Sub-Usecases zu UC_eMed_06: Medikationsplan schreiben - FHIR® v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -41,8 +41,8 @@
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"4"}
-    h3,h4,h5,h6{--heading-prefix:"4.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"4.3"}
+    h3,h4,h5,h6{--heading-prefix:"4.3"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- at-fhir-ig-template begin -->
@@ -157,7 +157,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Überblick Anwendungsfälle</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='usecases.html'><b>Überblick Anwendungsfälle</b></a></li><li><b>Sub-Usecases zu UC_eMed_06: Medikationsplan schreiben</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -182,7 +182,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <!--ReleaseHeader--><p id="publish-box">ELGA e-Medikation (R4) ENTWURF - Local Development build (v0.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/emed/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   </div>
   <!-- at-fhir-ig-template end -->
-  <h2>Überblick Anwendungsfälle</h2>
+  <h2>Sub-Usecases zu UC_eMed_06: Medikationsplan schreiben</h2>
   
 
 
@@ -194,12 +194,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div class="markdown-toc">
-<ul id="markdown-toc">
-  <li><a href="#anwendungsfälle" id="markdown-toc-anwendungsfälle">Anwendungsfälle</a></li>
-  <li><a href="#liste-der-anwendungsfälle" id="markdown-toc-liste-der-anwendungsfälle">Liste der Anwendungsfälle</a></li>
-</ul>
-
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
 <style>
 .notification-table {
@@ -274,27 +270,168 @@ width: 100%;}
 
 <script type="module"> import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';</script>
 
-<h3 id="anwendungsfälle">Anwendungsfälle</h3>
-<p>In diesem Abschnitt werden die Anwendungsfälle im Rahmen der e-Medikation beschrieben.</p>
+<!-- Anwendungsfall UC_eMed_06: Medikationsplan schreiben -->
 
-<p><br clear="all" /></p>
+<h3 id="sub-usecases-zu-uc_emed_06-medikationsplan-schreiben">Sub-Usecases zu UC_eMed_06: Medikationsplan schreiben</h3>
 
-<h3 id="liste-der-anwendungsfälle">Liste der Anwendungsfälle</h3>
+<p>Der <strong>Medikationsplan eines ELGA-Teilnehmers ("List"-Ressource)</strong> beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimittel und deren Dosierung abbilden. Die Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus.</p>
 
-<p>Die folgenden Anwendungsfälle werden beschrieben:</p>
+<p>Der <strong>Medikationsplaneintrag ("MedicationRequest"-Ressource)</strong> im Medikationsplan eines ELGA-Teilnehmers ab bildet genau ein Arzneimittel und dessen Dosierung ab und bildet in weiterer Folge die Grundlage zur Erstellung einer geplanten Abgabe.</p>
 
+<h4 id="neuen-medikationsplan-erstellen">Neuen Medikationsplan erstellen</h4>
+<p>Wird durch die e-Medikation Fachanwendung umgesetzt.</p>
+
+<p>Relevante Felder (List):</p>
 <ul>
-  <li><a href="UC_eMed_05.html">UC_eMed_05 - Medikationsplan lesen</a></li>
-  <li><a href="UC_eMed_06.html">UC_eMed_06 - Medikationsplan schreiben</a>
-    <ul>
-      <li><a href="UC_eMed_06_Sub_UC.html">Sub-Usecases zu UC_eMed_06: Medikationsplan schreiben</a></li>
-    </ul>
-  </li>
-  <li><a href="UC_eMed_07.html">UC_eMed_07 - Geplante und durchgeführte Abgaben lesen</a></li>
-  <li><a href="UC_eMed_08.html">UC_eMed_08 - Geplante Abgabe schreiben</a></li>
-  <li><a href="UC_eMed_09.html">UC_eMed_09 - Durchgeführte Abgabe schreiben</a></li>
+  <li>status: <strong>current</strong></li>
+  <li>mode: working</li>
+  <li>date: Datum der Erstellung durch die Fachanwendung</li>
+  <li>source: Intitiale Erstellung durch die Fachanwendung</li>
+  <li>emptyReason: <strong>notstarted</strong>, noch keine Medikationsplaneinträge erfasst</li>
 </ul>
 
+<h4 id="medikationsplan-bearbeiten">Medikationsplan bearbeiten</h4>
+<p>Dem leeren Medikationsplan können Medikationsplaneinträge hinzugefügt werden.</p>
+
+<p>Hierfür werden entsprechende Medikationsplaneinträge erstellt und in der List-Ressoce referenziert.</p>
+
+<p>Relevante Felder (List):</p>
+<ul>
+  <li>status: <strong>current</strong></li>
+  <li>mode: working</li>
+  <li>date: Datum der Bearbeitung</li>
+  <li>source: Veranwortlicher GDA</li>
+  <li>entry: Für jeden Medikationsplaneintrag ein Eintrag:
+    <ul>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>flag: <strong>Prescribed</strong> (weitere Status: Unchanged</td>
+              <td>Changed</td>
+              <td>Cancelled</td>
+              <td>Prescribed</td>
+              <td>Ceased</td>
+              <td>Suspended)</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>date: Datum der Aufnahme / Änderung des Medikationsplaneintrags</li>
+      <li>item: Referenz auf den Planeintrag</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="neuen-medikationsplaneintrag-erstellen">Neuen Medikationsplaneintrag erstellen</h4>
+<p>Neues Arzneimittel soll eingenommen werden:</p>
+
+<p>Relevante Felder (MedicationRequest):</p>
+<ul>
+  <li>identifier: neue Medikationsplaneintrag-ID</li>
+  <li>requester: veranwortlicher GDA</li>
+  <li>authoredOn: aktuelles Datum</li>
+  <li>status <strong>active</strong>
+&lt;!– * intent: order (fixer Wert)</li>
+  <li>category: Medikationsplaneintrag (fixer Wert) –&gt;</li>
+  <li>reported: Fremdmedikation Ja/Nein</li>
+  <li>medication: Medikation mit PZN oder Magistrale Anwendung
+<!-- * note: Anmerkungen  --></li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>dosageInstruction: Dosierung + Einnahmezeitraum (ab sofort</td>
+          <td>in der Zukunft)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p>TODO: noch unkler:</p>
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>courseOfTherapyType: Gesamtmuster der Medikamentengabe continuous</td>
+          <td>acute</td>
+          <td>seasonal).</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>doNotPerform: Gibt an, ob die Verordnung der Medikation untersagt ist (z.B. bei Allergie).</li>
+</ul>
+
+<h4 id="medikationsplaneintrag-bearbeiten">Medikationsplaneintrag bearbeiten</h4>
+<p><strong>Alle Datenfelder</strong> eines bestehenden Medikationsplaneintrags können geändert werden. Wird das Arzneimittel selbst geändert, sollte vorher geprüft werden, ob es fachlich nicht sinnvoller ist, einen neuen Eintrag zu erstellen und den alten zu stoppen, damit die Änderungen für Patienten und Nachbehandler nachvollziehbar bleiben.</p>
+
+<p>Relevante Felder (MedicationRequest):</p>
+<ul>
+  <li>Medikationsplaneintrag-ID bleibt bestehen</li>
+  <li>requester: für die Änderung verantwortlicher GDA</li>
+  <li>authoredOn: aktualisiertes Datum</li>
+  <li>status <strong>active</strong></li>
+  <li>{Diverse Änderungen}</li>
+  <li>priorPrescription: Referenz auf ersetzten Medikationsplaneintrag</li>
+</ul>
+
+<h5 id="medikationsplaneintrag-pausieren">Medikationsplaneintrag pausieren</h5>
+<p>Die Therapie ist vorübergehend unterbrochen, die Wiederaufnahme ist vorgesehen.
+Nur der Status des Medikationsplaneintrags wird angepasst:</p>
+
+<p>Relevante Felder (MedicationRequest):</p>
+<ul>
+  <li>Medikationsplaneintrag-ID bleibt bestehen</li>
+  <li>requester: für die Änderung verantwortlicher GDA</li>
+  <li>authoredOn: aktualisiertes Datum</li>
+  <li>Status <strong>on-hold</strong></li>
+  <li>priorPrescription: Referenz auf ersetzten Medikationsplaneintrag</li>
+</ul>
+
+<p>TODO: statusReason wäre hier sinnvoll, dzt. NP</p>
+
+<h5 id="medikationsplaneintrag-beenden">Medikationsplaneintrag beenden</h5>
+<p>Therapie ist regulär abgeschlossen. Nur der Status des Medikationsplaneintrags wird angepasst:</p>
+
+<p>Relevante Felder:</p>
+<ul>
+  <li>Medikationsplaneintrag-ID bleibt bestehen</li>
+  <li>requester: für die Änderung verantwortlicher GDA</li>
+  <li>authoredOn: aktualisiertes Datum</li>
+  <li>Status <strong>completed</strong></li>
+  <li>priorPrescription: Referenz auf ersetzten Medikationsplaneintrag</li>
+</ul>
+
+<p>TODO: bei zeitlich befristeter Medikation, kann nach Ablauf des Status automatisch gesetzt werden -&gt; welche Werte in requester und authoredOn?</p>
+
+<h5 id="medikationsplaneintrag-abbrechen">Medikationsplaneintrag abbrechen</h5>
+<p>Die Therapie wurde begonnen, aber abgebrochen. Nur der Status des Medikationsplaneintrags wird angepasst:</p>
+
+<p>Relevante Felder (MedicationRequest):</p>
+<ul>
+  <li>Medikationsplaneintrag-ID bleibt bestehen</li>
+  <li>Author, Datum: wird aktualisiert</li>
+  <li>Status <strong>stopped</strong></li>
+  <li>priorPrescription: Referenz auf ersetzten Medikationsplaneintrag</li>
+</ul>
+
+<p>TODO: statusReason wäre hier sinnvoll, dzt. NP</p>
+
+<h5 id="medikationsplaneintrag-löschen">Medikationsplaneintrag löschen</h5>
+<p>Nur durch den ELGA-Teilnehmer zur Umsetzung der Teilnehmerrechte.</p>
+
+<!-- #### Beispiel
+
+#### Technische Hinweise
+
+#### Relevante Profile
+
+#### Relevante Invarianten
+
+#### Mögliche Notifications -->
 
 
 

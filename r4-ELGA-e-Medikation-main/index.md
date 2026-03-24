@@ -33,7 +33,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) ENTWURF",
   "status" : "draft",
-  "date" : "2026-03-20T15:30:14+00:00",
+  "date" : "2026-03-24T10:00:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1202,7 +1202,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "StructureDefinition/at-emed-list-medikationsplan"
       },
       "name" : "ELGA e-Med Medikationsplan",
-      "description" : "Bildet den Medikationsplan eines ELGA-Teilnehmers ab (\"List\"-Ressource). \nDie Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimittel und deren Dosierung abbilden.\nDie Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus (weitere Elemente sind noch zu klären).\n\nTODO: Invariante, dass überall in der List der gleiche Patient enthalten sein muss",
+      "description" : "Bildet den Medikationsplan eines ELGA-Teilnehmers ab (\"List\"-Ressource). \nDie Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimittel und deren Dosierung abbilden.\nDie Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus.",
       "exampleBoolean" : false
     },
     {
@@ -1378,6 +1378,15 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           }],
           "nameUrl" : "UC_eMed_06.html",
           "title" : "UC_eMed_06 - Medikationsplan schreiben",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "UC_eMed_06_Sub_UC.html"
+          }],
+          "nameUrl" : "UC_eMed_06_Sub_UC.html",
+          "title" : "Sub-Usecases zu UC_eMed_06: Medikationsplan schreiben",
           "generation" : "markdown"
         },
         {
