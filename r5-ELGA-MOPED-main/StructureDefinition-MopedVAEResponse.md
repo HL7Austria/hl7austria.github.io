@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedVAEResponse | *Version*:0.1.0 | |
-| Draft as of 2026-03-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedVAEResponse |
+| Draft as of 2026-03-24 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedVAEResponse |
 
  
 MOPED Profil für die Beantwortung der Versichertenanspruchserklärung VAE. 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedVAEResponse.csv
   "name" : "MopedVAEResponse",
   "title" : "MOPED VAEResponse",
   "status" : "draft",
-  "date" : "2026-03-15T19:53:47+00:00",
+  "date" : "2026-03-24T19:35:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -9,13 +9,14 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/LKFHauptdiagnosegruppenVS | *Version*:0.1.0 | |
-| Draft as of 2026-03-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LKFHauptdiagnosegruppenVS |
+| Draft as of 2026-03-24 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LKFHauptdiagnosegruppenVS |
 
  
 LKF Hauptdiagnosegruppen 
 
  **References** 
 
+* [MOPED Condition](StructureDefinition-MopedCondition.md)
 * [MOPED Condition](StructureDefinition-MopedCondition.md)
 
 ### Logical Definition (CLD)
@@ -51,7 +52,7 @@ LKF Hauptdiagnosegruppen
   "title" : "LKF Hauptdiagnosegruppen",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-15T19:53:47+00:00",
+  "date" : "2026-03-24T19:35:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

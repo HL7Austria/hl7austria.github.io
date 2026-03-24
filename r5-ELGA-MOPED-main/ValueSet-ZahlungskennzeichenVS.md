@@ -9,13 +9,14 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/ZahlungskennzeichenVS | *Version*:0.1.0 | |
-| Draft as of 2026-03-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:ZahlungskennzeichenVS |
+| Draft as of 2026-03-24 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:ZahlungskennzeichenVS |
 
  
 ValueSet für das Zahlungskennzeichen ARK 
 
  **References** 
 
+* [Zahlungskennzeichen](StructureDefinition-moped-ext-Zahlungskennzeichen.md)
 * [Zahlungskennzeichen](StructureDefinition-moped-ext-Zahlungskennzeichen.md)
 
 ### Logical Definition (CLD)
@@ -51,7 +52,7 @@ ValueSet für das Zahlungskennzeichen ARK
   "title" : "ValueSet Zahlungskennzeichen ARK",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-15T19:53:47+00:00",
+  "date" : "2026-03-24T19:35:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

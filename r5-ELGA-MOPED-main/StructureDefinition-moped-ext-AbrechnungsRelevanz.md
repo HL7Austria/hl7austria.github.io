@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/moped-ext-AbrechnungsRelevanz | *Version*:0.1.0 | |
-| Draft as of 2026-03-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:AbrechnungsRelevanz |
+| Draft as of 2026-03-24 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:AbrechnungsRelevanz |
 
 Hier ist anzugeben, ob die medizinische Leistung bei der Bepunktung des ambulanten Besuchs/stationären Aufenthalts (Satzart X01) zu berücksichtigen ist.
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-moped-ext-Abrechnung
   "name" : "AbrechnungsRelevanz",
   "title" : "Medizinische Leistung - Abrechnungsrelevanz",
   "status" : "draft",
-  "date" : "2026-03-15T19:53:47+00:00",
+  "date" : "2026-03-24T19:35:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

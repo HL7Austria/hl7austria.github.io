@@ -1,0 +1,958 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>ELGA.MOPED\LKF Ambulante Pauschal-Gruppen - JSON Representation - FHIR® v5.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"17.170"}
+    h3,h4,h5,h6{--heading-prefix:"17.170"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img id="header-logo" src="logo.png"/>
+          </div>
+          <div class="col-11">
+        <!-- at-fhir-ig-template end -->
+            <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)</span><br/>
+                <span class="label label-info">0.1.0 - ci-build</span>
+              </p>
+            </div>
+        <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+        <!-- at-fhir-ig-template end -->
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R5/index.html">FHIR®</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Einleitung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="scope_and_content.html">Umfang und Inhalt</a>
+      </li>
+      <li>
+        <a href="background.html">Hintergrund</a>
+      </li>
+      <li>
+        <a href="challenges.html">Herausforderungen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Funktionales
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="moped_konzepte.html">Designentscheidungen</a>
+      </li>
+      <li>
+        <a href="actors.html">Akteure</a>
+      </li>
+      <li>
+        <a href="workflowmanagement.html">Workflowmanagement</a>
+      </li>
+      <li>
+        <a href="obligations.html">Obligations</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anwendungsfälle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="anwendungsfaelle.html">Überblick &amp; Sunshine Case</a>
+      </li>
+      <li>
+        <a href="AF1.html">ANWF 1 - Planaufnahme 🔄</a>
+      </li>
+      <li>
+        <a href="AF2.html">ANWF 2 - Stationäre Aufnahme ✅</a>
+      </li>
+      <li>
+        <a href="AF3.html">ANWF 3 - Ambulante Aufnahme 🔄</a>
+      </li>
+      <li>
+        <a href="AF4u5.html">ANWF 4,5 - Fallartwechsel 🔄</a>
+      </li>
+      <li>
+        <a href="AF6.html">ANWF 6 - Mehrmalige Aufnahme an einem Tag 🔄</a>
+      </li>
+      <li>
+        <a href="AF7.html">ANWF 7 - Behandlungsabbruch 🔄</a>
+      </li>
+      <li>
+        <a href="AF8u9u47.html">ANWF 8,9,47 - Stammdatenabgleich 🔄</a>
+      </li>
+      <li>
+        <a href="AF10.html">ANWF 10 - Klassenwechsel ✅</a>
+      </li>
+      <li>
+        <a href="AF11.html">ANWF 11 - Versicherungswechsel 🔄</a>
+      </li>
+      <li>
+        <a href="AF12.html">ANWF 12,13,15,35-37 - Ausländerverrechnung und Regress 🔄</a>
+      </li>
+      <li>
+        <a href="AF14.html">ANWF 14 - Selbstzahler ✅</a>
+      </li>
+      <li>
+        <a href="AF17.html">ANWF 17 - Zwischenbetriebliche Leistungserbringung ✅</a>
+      </li>
+      <li>
+        <a href="AF18.html">ANWF 18 - Transfer 🔄</a>
+      </li>
+      <li>
+        <a href="AF19.html">ANWF 19 - Interne Verlegung ✅</a>
+      </li>
+      <li>
+        <a href="AF20.html">ANWF 20 - Urlaub ✅</a>
+      </li>
+      <li>
+        <a href="AF21u22.html">ANWF 21,22 - Neugeborene 🔄</a>
+      </li>
+      <li>
+        <a href="AF23bis25.html">ANWF 23-25 - Entlassung &amp; Hauptdiagnose ✅</a>
+      </li>
+      <li>
+        <a href="AF26.html">ANWF 26 - Überlieger 🔄</a>
+      </li>
+      <li>
+        <a href="AF27.html">ANWF 27 - Leistungen ohne Abrechnungsrelevanz ✅</a>
+      </li>
+      <li>
+        <a href="AF28bis32.html">ANWF 28-32 - SV Kostenübernahmevariationen 🔄</a>
+      </li>
+      <li>
+        <a href="AF33u34.html">ANWF 33-34 - Kostenmeldungen? 🔄</a>
+      </li>
+      <li>
+        <a href="AF38bis44.html">ANWF 38-44 - LKF Daten 🔄</a>
+      </li>
+      <li>
+        <a href="AF45.html">ANWF 45 - Jahresmeldung 🔄</a>
+      </li>
+      <li>
+        <a href="AF46.html">ANWF 46 - VDAS Rückmeldung (Patient verstorben) 🔄</a>
+      </li>
+      <li>
+        <a href="AF48.html">ANWF 48 - Mehrere aktive Fälle in MOPED 🔄</a>
+      </li>
+      <li>
+        <a href="AF49.html">ANWF 49 - Aufrollung nach Speicherfrist 🔄</a>
+      </li>
+      <li>
+        <a href="AF50.html">ANWF 50 - Urgenz 🔄</a>
+      </li>
+      <li>
+        <a href="AF51u52.html">ANWF 51-52 - Asylierung 🔄</a>
+      </li>
+      <li>
+        <a href="AF53.html">ANWF 53 - Intensivaufenthalt 🔄</a>
+      </li>
+      <li>
+        <a href="AF54.html">ANWF 54 - Stammdatenänderung 🔄</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Questionnaires
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Questionnaire-LKFTISSAQuestionnaire.html">MBDS - TISS-A</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFSAPS3Questionnaire.html">MBDS - SAPS3</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFL01Questionnaire.html">MBDS - Monatsmeldung - L01</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK01Questionnaire.html">MBDS - Monatsmeldung - K01</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFL02Questionnaire.html">LKF Jahresmeldung - L02</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFL03Questionnaire.html">LKF Jahresmeldung - L03</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFL04Questionnaire.html">LKF Jahresmeldung - L04</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK02Questionnaire.html">LKF Jahresmeldung - K02</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK03Questionnaire.html">LKF Jahresmeldung - K03</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK04Questionnaire.html">LKF Jahresmeldung - K04</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK05Questionnaire.html">LKF Jahresmeldung - K05</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK06Questionnaire.html">LKF Jahresmeldung - K06</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK07Questionnaire.html">LKF Jahresmeldung - K07</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK08Questionnaire.html">LKF Jahresmeldung - K08</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK09Questionnaire.html">LKF Jahresmeldung - K09</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK10Questionnaire.html">LKF Jahresmeldung - K10</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK11Questionnaire.html">LKF Jahresmeldung - K11</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK12Questionnaire.html">LKF Jahresmeldung - K12</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK13Questionnaire.html">LKF Jahresmeldung - K13</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK14Questionnaire.html">LKF Jahresmeldung - K14</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK15Questionnaire.html">LKF Jahresmeldung - K15</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK16Questionnaire.html">LKF Jahresmeldung - K16</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFG01Questionnaire.html">LKF Jahresmeldung - G01</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFG02Questionnaire.html">LKF Jahresmeldung - G02</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB01Questionnaire.html">LKF Jahresmeldung - B01</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB02Questionnaire.html">LKF Jahresmeldung - B02</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB03Questionnaire.html">LKF Jahresmeldung - B03</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB04Questionnaire.html">LKF Jahresmeldung - B04</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB05Questionnaire.html">LKF Jahresmeldung - B05</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB06Questionnaire.html">LKF Jahresmeldung - B06</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFA01Questionnaire.html">LKF Jahresmeldung - A01</a>
+      </li>
+      <li>
+        <a href="Questionnaire-StrokeUnitQuestionnaire2025.html">Register - Strokeunit</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Mappings
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="lkf_mapping.html">MBDS Mapping</a>
+      </li>
+      <li>
+        <a href="jahresmeldungen_mapping.html">LKF Jahresmeldung</a>
+      </li>
+      <li>
+        <a href="ka-org_mapping.html">Ka-Org Mapping</a>
+      </li>
+      <li>
+        <a href="stammdaten_mapping.html">Stammdaten</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">About
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="imprint.html">Impressum</a>
+      </li>
+      <li>
+        <a href="authors.html">Mitwirkende</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="dependencies.html">Dependencies</a>
+      </li>
+      <li>
+        <a href="copyright.html">Copyright</a>
+      </li>
+      <li>
+        <a href="known_issues.html">Known Issues</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>LKF Ambulante Pauschal-Gruppen</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+	
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<div style="counter-reset: section 8" class="col-12">
+<!--ReleaseHeader--><p id="publish-box">Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED) - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://elga.moped.at/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="CodeSystem-LKFAmbulantePauschalGruppenCS.html">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="CodeSystem-LKFAmbulantePauschalGruppenCS.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li class="active">
+      <a href="#">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="CodeSystem-LKFAmbulantePauschalGruppenCS.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+<h2 id="root">: LKF Ambulante Pauschal-Gruppen - JSON Representation</h2>
+
+  <table class="colsi">
+    <tr>
+
+      <td colspan="2">
+        
+          Active
+          
+            as of 2026-03-24
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p><a href="CodeSystem-LKFAmbulantePauschalGruppenCS.json" no-download="true">Raw json</a> | <a href="CodeSystem-LKFAmbulantePauschalGruppenCS.json" download>Download</a></p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <pre class="json" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code style="white-space: pre; text-wrap: nowrap;">{
+  "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem">resourceType</a>" : "CodeSystem",
+  "<a href="http://hl7.org/fhir/R5/resource.html#XCodeSystem.id">id</a>" : "LKFAmbulantePauschalGruppenCS",
+  "<a href="http://hl7.org/fhir/R5/domainresource.html#XCodeSystem.text">text</a>" : {
+    "<a href="http://hl7.org/fhir/R5/narrative.html#Narrative#XNarrative.status">status</a>" : "generated",
+    "<a href="http://hl7.org/fhir/R5/narrative.html#Narrative#XNarrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: CodeSystem LKFAmbulantePauschalGruppenCS&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcLKFAmbulantePauschalGruppenCS\&quot;&gt; &lt;/a&gt;&lt;p&gt;This case-sensitive code system &lt;code&gt;https://elga.moped.at/CodeSystem/LKFAmbulantePauschalGruppenCS&lt;/code&gt; defines the following codes:&lt;/p&gt;&lt;table class=\&quot;codes\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG00.00&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG00.4600\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ambulanter Kontakt ohne codierte Leistungen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG00.11&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG00.4611\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ambulanter Kontakt mit sonstigen Diagnostik/Therapie-Leistungen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG00.12&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG00.4612\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ambulanter Kontakt mit sonstigen operativen Leistungen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG00.30&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG00.4630\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Fachspezifische Konsultation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG01.00&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG01.4600\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ambulante Diagnostik/Therapie - Nervensystem, Psyche&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG01.01&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG01.4601\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Spezielle Diagnostik - Nervensystem&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG01.02&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG01.4602\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Spezielle neurophysiologische Diagnostik (Langzeit-EEG)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG01.03&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG01.4603\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Spezielle Diagnostik - Nervensystem (Magnetenzephalographie)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG01.04&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG01.4604\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Schlaflabor&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG01.10&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG01.4610\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Strukturierte Diagnostik/Therapie/Nachsorge bei neurologischen Erkrankungen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG01.21&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG01.4621\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Spezielle Diagnostik/Therapie - Psyche&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG01.31&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG01.4631\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Transkranielle Magnetstimulation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG01.32&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG01.4632\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Elektrokonvulsionstherapie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG02.00&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG02.4600\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ambulante Diagnostik/Therapie - Auge&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG02.01&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG02.4601\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Spezielle Diagnostik - Auge&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG02.11&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG02.4611\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Spezielle Therapien - Auge&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG02.12&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG02.4612\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Lasertherapie - Auge&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG02.13&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG02.4613\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Photodynamische Therapie der Makula&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG02.14&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG02.4614\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Intravitreale Injektion mit Anti-VEGF&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG02.15&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG02.4615\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Kryokoagulation der Netzhaut&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG02.21&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG02.4621\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Orthoptik&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG03.00&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG03.4600\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ambulante Diagnostik/Therapie - Ohr&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG03.01&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG03.4601\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Spezielle Diagnostik/Therapie - Ohr&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG03.10&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG03.4610\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ambulante Diagnostik/Therapie - Nase/Rachen/Kehlkopf&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG03.11&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG03.4611\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Spezielle Diagnostik/Therapie - Nase/Rachen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG03.12&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG03.4612\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Spezielle Diagnostik/Therapie - Kehlkopf&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG03.21&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG03.4621\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ambulante Eingriffe - Ohr/Nase/Rachen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG03.25&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG03.4625\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ambulante Eingriffe - Kehlkopf/Trachea&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG03.31&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG03.4631\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Logopädisch-phoniatrische Diagnostik/Therapie (einzel)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG03.50&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG03.4650\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ambulante Diagnostik/Therapie - Mundhöhle/Zähne/Kiefer&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG03.51&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG03.4651\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Spezielle Diagnostik/Therapie - Mundhöhle/Zähne/Kiefer&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG03.61&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG03.4661\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Kieferorthopädische Behandlung&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG04.00&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG04.4600\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ambulante Diagnostik/Therapie - Atmung, Respirationstrakt&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG04.01&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG04.4601\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Spezielle Diagnostik - Atmung, Respirationstrakt&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG05.00&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG05.4600\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ambulante Diagnostik/Therapie - Blut/Herz/Kreislauf&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG05.01&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG05.4601\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Spezielle Diagnostik - Herz/Kreislauf&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG05.11&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG05.4611\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ambulante Eingriffe - Venen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG06.01&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG06.4601\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Spezielle Diagnostik/Therapie - Diabetes mellitus&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG07.00&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG07.4600\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ambulante Diagnostik/Therapie - Gastrointestinaltrakt&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG07.01&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG07.4601\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Spezielle Diagnostik - Gastrointestinaltrakt 1&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG07.02&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG07.4602\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Spezielle Diagnostik - Gastrointestinaltrakt 2&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG07.11&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG07.4611\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ambulante Eingriffe - Gastrointestinaltrakt&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG08.00&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG08.4600\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ambulante Diagnostik/Therapie - Urogenitaltrakt&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG08.02&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG08.4602\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Zystomanometrie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG08.03&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG08.4603\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Videourodynamik&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG08.11&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG08.4611\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ambulante Eingriffe - Urogenitaltrakt 1&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG08.12&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG08.4612\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ambulante Eingriffe - Urogenitaltrakt 2&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG08.21&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG08.4621\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Spezielle Diagnostik - Schwangerschaft/Geburt&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG08.22&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG08.4622\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Invasive Diagnostik - Schwangerschaft/Geburt&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG08.25&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG08.4625\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Spezielle Therapie - Schwangerschaft/Geburt&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG09.00&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG09.4600\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ambulante Diagnostik/Therapie - Haut/Allergie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG09.01&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG09.4601\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Spezielle Diagnostik - Haut/Allergie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG09.11&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG09.4611\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ambulante Eingriffe - Haut/Weichteile/Knochen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG09.12&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG09.4612\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Photodynamische Therapie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG09.21&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG09.4621\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Spezielle Eingriffe - Haut/Weichteile&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG10.11&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG10.4611\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Reposition/Fixation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG10.12&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG10.4612\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ambulante Eingriffe - Bewegungsapparat&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG12.11&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG12.4611\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;CT und CT-Angio&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG12.12&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG12.4612\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;CT gezielte Interventionen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG12.21&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG12.4621\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;MR und MR-Angio&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG12.22&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG12.4622\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;MR gezielte Interventionen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG12.23&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG12.4623\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Funktionelle Magnetresonanztomographie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG12.41&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG12.4641\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Phlebographie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG12.51&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG12.4651\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Punktionen/Drainagen/Infiltrationen 1&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG12.52&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG12.4652\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Punktionen/Drainagen/Infiltrationen 2&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG12.53&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG12.4653\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Punktionen/Drainagen/Infiltrationen 3&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG12.54&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG12.4654\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Stereotaktische Mammabiopsie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG12.55&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG12.4655\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Spezielle Gewebemarkierungen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG12.60&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG12.4660\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Röntgen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG12.61&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG12.4661\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Konventionelles Röntgen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG12.62&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG12.4662\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Funktionelles Röntgen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG12.71&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG12.4671\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Sonographie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG14.01&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG14.4601\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Nuklearmedizinische Diagnostik 1&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG14.02&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG14.4602\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Nuklearmedizinische Diagnostik 2&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG14.03&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG14.4603\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Nuklearmedizinische Diagnostik 3&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG14.04&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG14.4604\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Nuklearmedizinische Diagnostik 4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG15.01&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG15.4601\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Endoskopische Diagnostik/Therapie GIT&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG15.02&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG15.4602\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Endoskopische Diagnostik/Therapie UGT1&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG15.03&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG15.4603\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Endoskopische Mukosaresektion&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG15.04&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG15.4604\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Bronchoskopie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG15.05&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG15.4605\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Endoskopische Interventionen 1&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG15.06&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG15.4606\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Endoskopische Diagnostik/Therapie UGT2&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG15.08&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG15.4608\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Endoskopie des Dünndarms&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG18.00&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG18.4600\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Physikalische und andere Therapie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG18.01&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG18.4601\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ergotherapie/Physiotherapie (einzel)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG18.02&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG18.4602\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ambulant durchgeführte Schulungen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG18.04&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG18.4604\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Entwicklungsdiagnostik&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG18.06&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG18.4606\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ambulante hyperbare Oxygenierung&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG18.07&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG18.4607\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Komplexe physikalische Therapie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG18.10&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG18.4610\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ergotherapie/Physiotherapie/logopäd.-phoniatr. Therapie (Gruppe)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG18.50&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG18.4650\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ambulante Diagnostik/Therapie - allgemein&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG18.60&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG18.4660\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Opferschutz&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG21.01&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG21.4601\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Beobachtung/Therapie/Nachsorge bei Kindern mit spezifischen Erkrankungen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG21.02&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG21.4602\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ambulante Besuche mit spezifischer Pharmakotherapie bei Kindern mit seltenen Erkrankungen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG23.01&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG23.4601\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Anästhesie durch Anästhesisten&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG23.02&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG23.4602\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Spezielle Schmerztherapie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG24.00&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG24.4600\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Labordiagnostik&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;APG25.00&lt;a name=\&quot;LKFAmbulantePauschalGruppenCS-APG25.4600\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Histologische/zytologische Diagnostik&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"
+  },
+  "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.url">url</a>" : "https://elga.moped.at/CodeSystem/LKFAmbulantePauschalGruppenCS",
+  "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.version">version</a>" : "0.1.0",
+  "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.name">name</a>" : "LKFAmbulantePauschalGruppenCS",
+  "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.title">title</a>" : "LKF Ambulante Pauschal-Gruppen",
+  "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.status">status</a>" : "active",
+  "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.experimental">experimental</a>" : true,
+  "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.date">date</a>" : "2026-03-24T19:35:33+00:00",
+  "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.publisher">publisher</a>" : "ELGA GmbH",
+  "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.contact">contact</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R5/metadatatypes.html#ContactDetail#XContactDetail.name">name</a>" : "ELGA GmbH",
+      "<a href="http://hl7.org/fhir/R5/metadatatypes.html#ContactDetail#XContactDetail.telecom">telecom</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R5/datatypes.html#ContactPoint#XContactPoint.system">system</a>" : "url",
+          "<a href="http://hl7.org/fhir/R5/datatypes.html#ContactPoint#XContactPoint.value">value</a>" : "https://elga.gv.at"
+        }
+      ]
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.description">description</a>" : "LKF Ambulante Pauschal-Gruppen",
+  "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.caseSensitive">caseSensitive</a>" : true,
+  "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.content">content</a>" : "complete",
+  "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.count">count</a>" : 98,
+  "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept">concept</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG00.00",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ambulanter Kontakt ohne codierte Leistungen"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG00.11",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ambulanter Kontakt mit sonstigen Diagnostik/Therapie-Leistungen"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG00.12",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ambulanter Kontakt mit sonstigen operativen Leistungen"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG00.30",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Fachspezifische Konsultation"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG01.00",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ambulante Diagnostik/Therapie - Nervensystem, Psyche"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG01.01",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Spezielle Diagnostik - Nervensystem"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG01.02",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Spezielle neurophysiologische Diagnostik (Langzeit-EEG)"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG01.03",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Spezielle Diagnostik - Nervensystem (Magnetenzephalographie)"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG01.04",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Schlaflabor"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG01.10",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Strukturierte Diagnostik/Therapie/Nachsorge bei neurologischen Erkrankungen"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG01.21",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Spezielle Diagnostik/Therapie - Psyche"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG01.31",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Transkranielle Magnetstimulation"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG01.32",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Elektrokonvulsionstherapie"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG02.00",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ambulante Diagnostik/Therapie - Auge"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG02.01",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Spezielle Diagnostik - Auge"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG02.11",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Spezielle Therapien - Auge"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG02.12",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Lasertherapie - Auge"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG02.13",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Photodynamische Therapie der Makula"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG02.14",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Intravitreale Injektion mit Anti-VEGF"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG02.15",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Kryokoagulation der Netzhaut"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG02.21",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Orthoptik"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG03.00",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ambulante Diagnostik/Therapie - Ohr"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG03.01",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Spezielle Diagnostik/Therapie - Ohr"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG03.10",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ambulante Diagnostik/Therapie - Nase/Rachen/Kehlkopf"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG03.11",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Spezielle Diagnostik/Therapie - Nase/Rachen"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG03.12",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Spezielle Diagnostik/Therapie - Kehlkopf"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG03.21",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ambulante Eingriffe - Ohr/Nase/Rachen"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG03.25",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ambulante Eingriffe - Kehlkopf/Trachea"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG03.31",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Logopädisch-phoniatrische Diagnostik/Therapie (einzel)"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG03.50",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ambulante Diagnostik/Therapie - Mundhöhle/Zähne/Kiefer"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG03.51",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Spezielle Diagnostik/Therapie - Mundhöhle/Zähne/Kiefer"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG03.61",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Kieferorthopädische Behandlung"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG04.00",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ambulante Diagnostik/Therapie - Atmung, Respirationstrakt"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG04.01",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Spezielle Diagnostik - Atmung, Respirationstrakt"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG05.00",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ambulante Diagnostik/Therapie - Blut/Herz/Kreislauf"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG05.01",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Spezielle Diagnostik - Herz/Kreislauf"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG05.11",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ambulante Eingriffe - Venen"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG06.01",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Spezielle Diagnostik/Therapie - Diabetes mellitus"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG07.00",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ambulante Diagnostik/Therapie - Gastrointestinaltrakt"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG07.01",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Spezielle Diagnostik - Gastrointestinaltrakt 1"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG07.02",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Spezielle Diagnostik - Gastrointestinaltrakt 2"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG07.11",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ambulante Eingriffe - Gastrointestinaltrakt"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG08.00",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ambulante Diagnostik/Therapie - Urogenitaltrakt"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG08.02",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Zystomanometrie"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG08.03",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Videourodynamik"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG08.11",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ambulante Eingriffe - Urogenitaltrakt 1"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG08.12",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ambulante Eingriffe - Urogenitaltrakt 2"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG08.21",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Spezielle Diagnostik - Schwangerschaft/Geburt"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG08.22",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Invasive Diagnostik - Schwangerschaft/Geburt"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG08.25",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Spezielle Therapie - Schwangerschaft/Geburt"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG09.00",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ambulante Diagnostik/Therapie - Haut/Allergie"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG09.01",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Spezielle Diagnostik - Haut/Allergie"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG09.11",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ambulante Eingriffe - Haut/Weichteile/Knochen"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG09.12",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Photodynamische Therapie"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG09.21",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Spezielle Eingriffe - Haut/Weichteile"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG10.11",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Reposition/Fixation"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG10.12",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ambulante Eingriffe - Bewegungsapparat"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG12.11",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "CT und CT-Angio"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG12.12",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "CT gezielte Interventionen"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG12.21",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "MR und MR-Angio"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG12.22",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "MR gezielte Interventionen"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG12.23",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Funktionelle Magnetresonanztomographie"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG12.41",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Phlebographie"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG12.51",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Punktionen/Drainagen/Infiltrationen 1"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG12.52",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Punktionen/Drainagen/Infiltrationen 2"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG12.53",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Punktionen/Drainagen/Infiltrationen 3"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG12.54",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Stereotaktische Mammabiopsie"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG12.55",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Spezielle Gewebemarkierungen"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG12.60",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Röntgen"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG12.61",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Konventionelles Röntgen"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG12.62",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Funktionelles Röntgen"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG12.71",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Sonographie"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG14.01",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Nuklearmedizinische Diagnostik 1"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG14.02",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Nuklearmedizinische Diagnostik 2"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG14.03",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Nuklearmedizinische Diagnostik 3"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG14.04",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Nuklearmedizinische Diagnostik 4"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG15.01",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Endoskopische Diagnostik/Therapie GIT"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG15.02",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Endoskopische Diagnostik/Therapie UGT1"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG15.03",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Endoskopische Mukosaresektion"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG15.04",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Bronchoskopie"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG15.05",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Endoskopische Interventionen 1"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG15.06",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Endoskopische Diagnostik/Therapie UGT2"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG15.08",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Endoskopie des Dünndarms"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG18.00",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Physikalische und andere Therapie"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG18.01",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ergotherapie/Physiotherapie (einzel)"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG18.02",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ambulant durchgeführte Schulungen"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG18.04",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Entwicklungsdiagnostik"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG18.06",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ambulante hyperbare Oxygenierung"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG18.07",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Komplexe physikalische Therapie"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG18.10",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ergotherapie/Physiotherapie/logopäd.-phoniatr. Therapie (Gruppe)"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG18.50",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ambulante Diagnostik/Therapie - allgemein"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG18.60",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Opferschutz"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG21.01",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Beobachtung/Therapie/Nachsorge bei Kindern mit spezifischen Erkrankungen"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG21.02",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Ambulante Besuche mit spezifischer Pharmakotherapie bei Kindern mit seltenen Erkrankungen"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG23.01",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Anästhesie durch Anästhesisten"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG23.02",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Spezielle Schmerztherapie"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG24.00",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Labordiagnostik"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.code">code</a>" : "APG25.00",
+      "<a href="http://hl7.org/fhir/R5/codesystem.html#XCodeSystem.concept.display">display</a>" : "Histologische/zytologische Diagnostik"
+    }
+  ]
+}</code></pre>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /row -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-content -->
+
+<script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/window-hash.js"> </script>
+<a name="bottom"> </a>
+<div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+<div class="container">  <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Mar 24, 2026 19:35+0000">2026-03-24</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    </span>
+  </p>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+<div class="container">  <!-- container -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-post-footer -->
+
+<!-- JS and analytics only. -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+<script type="text/javascript" src="assets/js/respond.min.js"> </script>
+<script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+<script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+</body>
+</html>
+

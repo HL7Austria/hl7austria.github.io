@@ -184,7 +184,7 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
   "name" : "MOPED",
   "title" : "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)",
   "status" : "draft",
-  "date" : "2026-03-15T19:53:47+00:00",
+  "date" : "2026-03-24T19:35:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -225,7 +225,7 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
   "definition" : {
     "extension" : [{
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools.r5#0.9.0"
+      "valueCode" : "hl7.fhir.uv.tools.r5#1.1.0"
     }],
     "resource" : [{
       "extension" : [{
@@ -1237,6 +1237,54 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF Abrechnungsknoten",
       "description" : "LKF Abrechnungsknoten",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/LKFAmbulantenMELGruppenVS"
+      },
+      "name" : "LKF Ambulante MEL-Gruppen",
+      "description" : "LKF Ambulante MEL-Gruppen",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/LKFAmbulantenMELGruppenCS"
+      },
+      "name" : "LKF Ambulante MEL-Gruppen",
+      "description" : "LKF Ambulante MEL-Gruppen",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/LKFAmbulantePauschalGruppenVS"
+      },
+      "name" : "LKF Ambulante Pauschal-Gruppen",
+      "description" : "LKF Ambulante Pauschal-Gruppen",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/LKFAmbulantePauschalGruppenCS"
+      },
+      "name" : "LKF Ambulante Pauschal-Gruppen",
+      "description" : "LKF Ambulante Pauschal-Gruppen",
       "isExample" : false
     },
     {

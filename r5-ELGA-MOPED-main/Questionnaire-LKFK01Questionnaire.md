@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/Questionnaire/LKFK01Questionnaire | *Version*:0.1.0 | |
-| Active as of 2026-03-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
+| Active as of 2026-03-24 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
 
  
 K01 Questionnaire - den Kostenstellenplan 
@@ -26,7 +26,7 @@ K01 Questionnaire - den Kostenstellenplan
   "version" : "0.1.0",
   "title" : "LKF K01 Questionnaire",
   "status" : "active",
-  "date" : "2026-03-15T19:53:47+00:00",
+  "date" : "2026-03-24T19:35:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

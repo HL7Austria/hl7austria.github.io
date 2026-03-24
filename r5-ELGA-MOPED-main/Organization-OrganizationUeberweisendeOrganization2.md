@@ -8,7 +8,7 @@
 
 Profile: [HL7® AT Core Organization Profile](https://build.fhir.org/ig/HL7Austria/HL7-AT-FHIR-Core-R5/StructureDefinition-at-core-organization.html)
 
-**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/7.0.1/NamingSystem-uri.html)/urn:oid:1.3.6.1.4.1.36122.tbd.234
+**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/7.1.0/NamingSystem-uri.html)/urn:oid:1.3.6.1.4.1.36122.tbd.234
 
 **name**: HJK Interne Ambulanz
 

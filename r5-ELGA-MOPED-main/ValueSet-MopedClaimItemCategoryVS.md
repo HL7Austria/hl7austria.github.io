@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/MopedClaimItemCategoryVS | *Version*:0.1.0 | |
-| Draft as of 2026-03-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedClaimItemCategoryVS |
+| Draft as of 2026-03-24 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedClaimItemCategoryVS |
 
  
 ValueSet für die Arten von Claim Item Kategorien 
@@ -17,7 +17,10 @@ ValueSet für die Arten von Claim Item Kategorien
  **References** 
 
 * [MOPED ARKRequest](StructureDefinition-MopedARKRequest.md)
+* [MOPED ARKRequest](StructureDefinition-MopedARKRequest.md)
 * [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md)
+* [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md)
+* [AddItemCategory](StructureDefinition-moped-ext-AddItemCategory.md)
 * [AddItemCategory](StructureDefinition-moped-ext-AddItemCategory.md)
 
 ### Logical Definition (CLD)
@@ -53,7 +56,7 @@ ValueSet für die Arten von Claim Item Kategorien
   "title" : "Moped Claim Item Category ValueSet",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-15T19:53:47+00:00",
+  "date" : "2026-03-24T19:35:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

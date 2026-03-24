@@ -9,13 +9,14 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/Aufnahmeart2VS | *Version*:0.1.0 | |
-| Draft as of 2026-03-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:Aufnahmeart2VS |
+| Draft as of 2026-03-24 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:Aufnahmeart2VS |
 
  
 ValueSet für die Aufnahmeart des Patienten 
 
  **References** 
 
+* [MOPED Encounter](StructureDefinition-MopedEncounter.md)
 * [MOPED Encounter](StructureDefinition-MopedEncounter.md)
 
 ### Logical Definition (CLD)
@@ -51,7 +52,7 @@ ValueSet für die Aufnahmeart des Patienten
   "title" : "Aufnahmeart2 des Patienten",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-15T19:53:47+00:00",
+  "date" : "2026-03-24T19:35:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

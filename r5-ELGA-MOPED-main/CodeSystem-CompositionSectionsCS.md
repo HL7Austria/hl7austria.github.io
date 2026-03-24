@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/CompositionSectionsCS | *Version*:0.1.0 | |
-| Active as of 2026-03-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:CompositionSectionsCS |
+| Active as of 2026-03-24 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:CompositionSectionsCS |
 
  
 CodeSystem für die Moped Sections der Composition Ressource 
@@ -32,7 +32,7 @@ CodeSystem für die Moped Sections der Composition Ressource
   "title" : "Moped Composition Sections",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-03-15T19:53:47+00:00",
+  "date" : "2026-03-24T19:35:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

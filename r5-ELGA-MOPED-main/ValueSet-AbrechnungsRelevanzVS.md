@@ -9,13 +9,14 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/AbrechnungsRelevanzVS | *Version*:0.1.0 | |
-| Draft as of 2026-03-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:AbrechnungsRelevanzVS |
+| Draft as of 2026-03-24 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:AbrechnungsRelevanzVS |
 
  
 Abrechnungsrelevanz der medizinischen Leistung 
 
  **References** 
 
+* [Medizinische Leistung - Abrechnungsrelevanz](StructureDefinition-moped-ext-AbrechnungsRelevanz.md)
 * [Medizinische Leistung - Abrechnungsrelevanz](StructureDefinition-moped-ext-AbrechnungsRelevanz.md)
 
 ### Logical Definition (CLD)
@@ -51,7 +52,7 @@ Abrechnungsrelevanz der medizinischen Leistung
   "title" : "Abrechnungsrelevanz der medizinischen Leistung",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-15T19:53:47+00:00",
+  "date" : "2026-03-24T19:35:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

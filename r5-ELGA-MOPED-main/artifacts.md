@@ -167,6 +167,8 @@ These define sets of codes used by systems conforming to this implementation gui
 | [Kostenmeldung für (A/R/K)](ValueSet-KostenmeldungARKVS.md) | ValueSet für die Art der Kostenmeldung |
 | [LKF Abrechnungsgruppe](ValueSet-LKFAbrechnungsGruppeVS.md) | LKF Abrechnungsgruppe |
 | [LKF Abrechnungsknoten](ValueSet-LKFAbrechnungsKnotenVS.md) | LKF Abrechnungsknoten |
+| [LKF Ambulante MEL-Gruppen](ValueSet-LKFAmbulantenMELGruppenVS.md) | LKF Ambulante MEL-Gruppen |
+| [LKF Ambulante Pauschal-Gruppen](ValueSet-LKFAmbulantePauschalGruppenVS.md) | LKF Ambulante Pauschal-Gruppen |
 | [LKF ClaimResponse Subtype ValueSet](ValueSet-MopedLKFRequestSubTypeVS.md) | ValueSet für die Art der ClaimResponses |
 | [LKF Diagnosetyp ValueSet](ValueSet-LKFDiagnoseTypVS.md) | LKF Diganosetyp |
 | [LKF Hauptdiagnosegruppen](ValueSet-LKFHauptdiagnosegruppenVS.md) | LKF Hauptdiagnosegruppen |
@@ -214,6 +216,8 @@ These define new code systems used by systems conforming to this implementation 
 | [Fondsrelevanz](CodeSystem-FondsrelevanzCS.md) | CodeSystem für die Fondsrelevanz |
 | [LKF Abrechnungsgruppe Andere](CodeSystem-LKFAbrechnungsGruppeAndereCS.md) | LKF Abrechnungsgruppe Andere |
 | [LKF Abrechnungsknoten](CodeSystem-LKFAbrechnungsKnotenCS.md) | LKF Abrechnungsknoten |
+| [LKF Ambulante MEL-Gruppen](CodeSystem-LKFAmbulantenMELGruppenCS.md) | LKF Ambulante MEL-Gruppen |
+| [LKF Ambulante Pauschal-Gruppen](CodeSystem-LKFAmbulantePauschalGruppenCS.md) | LKF Ambulante Pauschal-Gruppen |
 | [LKF Hauptdiagnosegruppen](CodeSystem-LKFHauptdiagnosegruppenCS.md) | LKF Hauptdiagnosegruppen |
 | [LKF medizinische Einzelleistungen (MEL)](CodeSystem-LKFmedizinischeEinzelleistungenCS.md) | LKF medizinische Einzelleistungen (MEL) |
 | [MOPED VAESupportingInformationCategory](CodeSystem-ClaimSupportingInformationCategoryCS.md) | Arten von zusätzlichen Informationen in der VAE |

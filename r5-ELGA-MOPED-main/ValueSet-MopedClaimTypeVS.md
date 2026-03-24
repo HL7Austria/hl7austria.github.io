@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/MopedClaimTypeVS | *Version*:0.1.0 | |
-| Draft as of 2026-03-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedClaimTypeVS |
+| Draft as of 2026-03-24 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedClaimTypeVS |
 
  
 ValueSet für die Arten der Claims/ClaimResponses 
@@ -17,10 +17,16 @@ ValueSet für die Arten der Claims/ClaimResponses
  **References** 
 
 * [MOPED ARKRequest](StructureDefinition-MopedARKRequest.md)
+* [MOPED ARKRequest](StructureDefinition-MopedARKRequest.md)
+* [MOPED ARKResponse](StructureDefinition-MopedARKResponse.md)
 * [MOPED ARKResponse](StructureDefinition-MopedARKResponse.md)
 * [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md)
+* [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md)
+* [MOPED LKFResponse](StructureDefinition-MopedLKFResponse.md)
 * [MOPED LKFResponse](StructureDefinition-MopedLKFResponse.md)
 * [MOPED VAERequest](StructureDefinition-MopedVAERequest.md)
+* [MOPED VAERequest](StructureDefinition-MopedVAERequest.md)
+* [MOPED VAEResponse](StructureDefinition-MopedVAEResponse.md)
 * [MOPED VAEResponse](StructureDefinition-MopedVAEResponse.md)
 
 ### Logical Definition (CLD)
@@ -55,7 +61,7 @@ ValueSet für die Arten der Claims/ClaimResponses
   "name" : "MopedClaimTypeVS",
   "title" : "Claim Type ValueSet",
   "status" : "draft",
-  "date" : "2026-03-15T19:53:47+00:00",
+  "date" : "2026-03-24T19:35:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

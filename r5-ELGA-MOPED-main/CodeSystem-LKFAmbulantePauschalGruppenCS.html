@@ -1,0 +1,773 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>ELGA.MOPED\LKF Ambulante Pauschal-Gruppen - FHIR® v5.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"17.170"}
+    h3,h4,h5,h6{--heading-prefix:"17.170"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img id="header-logo" src="logo.png"/>
+          </div>
+          <div class="col-11">
+        <!-- at-fhir-ig-template end -->
+            <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)</span><br/>
+                <span class="label label-info">0.1.0 - ci-build</span>
+              </p>
+            </div>
+        <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+        <!-- at-fhir-ig-template end -->
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R5/index.html">FHIR®</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Einleitung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="scope_and_content.html">Umfang und Inhalt</a>
+      </li>
+      <li>
+        <a href="background.html">Hintergrund</a>
+      </li>
+      <li>
+        <a href="challenges.html">Herausforderungen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Funktionales
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="moped_konzepte.html">Designentscheidungen</a>
+      </li>
+      <li>
+        <a href="actors.html">Akteure</a>
+      </li>
+      <li>
+        <a href="workflowmanagement.html">Workflowmanagement</a>
+      </li>
+      <li>
+        <a href="obligations.html">Obligations</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anwendungsfälle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="anwendungsfaelle.html">Überblick &amp; Sunshine Case</a>
+      </li>
+      <li>
+        <a href="AF1.html">ANWF 1 - Planaufnahme 🔄</a>
+      </li>
+      <li>
+        <a href="AF2.html">ANWF 2 - Stationäre Aufnahme ✅</a>
+      </li>
+      <li>
+        <a href="AF3.html">ANWF 3 - Ambulante Aufnahme 🔄</a>
+      </li>
+      <li>
+        <a href="AF4u5.html">ANWF 4,5 - Fallartwechsel 🔄</a>
+      </li>
+      <li>
+        <a href="AF6.html">ANWF 6 - Mehrmalige Aufnahme an einem Tag 🔄</a>
+      </li>
+      <li>
+        <a href="AF7.html">ANWF 7 - Behandlungsabbruch 🔄</a>
+      </li>
+      <li>
+        <a href="AF8u9u47.html">ANWF 8,9,47 - Stammdatenabgleich 🔄</a>
+      </li>
+      <li>
+        <a href="AF10.html">ANWF 10 - Klassenwechsel ✅</a>
+      </li>
+      <li>
+        <a href="AF11.html">ANWF 11 - Versicherungswechsel 🔄</a>
+      </li>
+      <li>
+        <a href="AF12.html">ANWF 12,13,15,35-37 - Ausländerverrechnung und Regress 🔄</a>
+      </li>
+      <li>
+        <a href="AF14.html">ANWF 14 - Selbstzahler ✅</a>
+      </li>
+      <li>
+        <a href="AF17.html">ANWF 17 - Zwischenbetriebliche Leistungserbringung ✅</a>
+      </li>
+      <li>
+        <a href="AF18.html">ANWF 18 - Transfer 🔄</a>
+      </li>
+      <li>
+        <a href="AF19.html">ANWF 19 - Interne Verlegung ✅</a>
+      </li>
+      <li>
+        <a href="AF20.html">ANWF 20 - Urlaub ✅</a>
+      </li>
+      <li>
+        <a href="AF21u22.html">ANWF 21,22 - Neugeborene 🔄</a>
+      </li>
+      <li>
+        <a href="AF23bis25.html">ANWF 23-25 - Entlassung &amp; Hauptdiagnose ✅</a>
+      </li>
+      <li>
+        <a href="AF26.html">ANWF 26 - Überlieger 🔄</a>
+      </li>
+      <li>
+        <a href="AF27.html">ANWF 27 - Leistungen ohne Abrechnungsrelevanz ✅</a>
+      </li>
+      <li>
+        <a href="AF28bis32.html">ANWF 28-32 - SV Kostenübernahmevariationen 🔄</a>
+      </li>
+      <li>
+        <a href="AF33u34.html">ANWF 33-34 - Kostenmeldungen? 🔄</a>
+      </li>
+      <li>
+        <a href="AF38bis44.html">ANWF 38-44 - LKF Daten 🔄</a>
+      </li>
+      <li>
+        <a href="AF45.html">ANWF 45 - Jahresmeldung 🔄</a>
+      </li>
+      <li>
+        <a href="AF46.html">ANWF 46 - VDAS Rückmeldung (Patient verstorben) 🔄</a>
+      </li>
+      <li>
+        <a href="AF48.html">ANWF 48 - Mehrere aktive Fälle in MOPED 🔄</a>
+      </li>
+      <li>
+        <a href="AF49.html">ANWF 49 - Aufrollung nach Speicherfrist 🔄</a>
+      </li>
+      <li>
+        <a href="AF50.html">ANWF 50 - Urgenz 🔄</a>
+      </li>
+      <li>
+        <a href="AF51u52.html">ANWF 51-52 - Asylierung 🔄</a>
+      </li>
+      <li>
+        <a href="AF53.html">ANWF 53 - Intensivaufenthalt 🔄</a>
+      </li>
+      <li>
+        <a href="AF54.html">ANWF 54 - Stammdatenänderung 🔄</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Questionnaires
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Questionnaire-LKFTISSAQuestionnaire.html">MBDS - TISS-A</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFSAPS3Questionnaire.html">MBDS - SAPS3</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFL01Questionnaire.html">MBDS - Monatsmeldung - L01</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK01Questionnaire.html">MBDS - Monatsmeldung - K01</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFL02Questionnaire.html">LKF Jahresmeldung - L02</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFL03Questionnaire.html">LKF Jahresmeldung - L03</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFL04Questionnaire.html">LKF Jahresmeldung - L04</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK02Questionnaire.html">LKF Jahresmeldung - K02</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK03Questionnaire.html">LKF Jahresmeldung - K03</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK04Questionnaire.html">LKF Jahresmeldung - K04</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK05Questionnaire.html">LKF Jahresmeldung - K05</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK06Questionnaire.html">LKF Jahresmeldung - K06</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK07Questionnaire.html">LKF Jahresmeldung - K07</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK08Questionnaire.html">LKF Jahresmeldung - K08</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK09Questionnaire.html">LKF Jahresmeldung - K09</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK10Questionnaire.html">LKF Jahresmeldung - K10</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK11Questionnaire.html">LKF Jahresmeldung - K11</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK12Questionnaire.html">LKF Jahresmeldung - K12</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK13Questionnaire.html">LKF Jahresmeldung - K13</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK14Questionnaire.html">LKF Jahresmeldung - K14</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK15Questionnaire.html">LKF Jahresmeldung - K15</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK16Questionnaire.html">LKF Jahresmeldung - K16</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFG01Questionnaire.html">LKF Jahresmeldung - G01</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFG02Questionnaire.html">LKF Jahresmeldung - G02</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB01Questionnaire.html">LKF Jahresmeldung - B01</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB02Questionnaire.html">LKF Jahresmeldung - B02</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB03Questionnaire.html">LKF Jahresmeldung - B03</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB04Questionnaire.html">LKF Jahresmeldung - B04</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB05Questionnaire.html">LKF Jahresmeldung - B05</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB06Questionnaire.html">LKF Jahresmeldung - B06</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFA01Questionnaire.html">LKF Jahresmeldung - A01</a>
+      </li>
+      <li>
+        <a href="Questionnaire-StrokeUnitQuestionnaire2025.html">Register - Strokeunit</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Mappings
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="lkf_mapping.html">MBDS Mapping</a>
+      </li>
+      <li>
+        <a href="jahresmeldungen_mapping.html">LKF Jahresmeldung</a>
+      </li>
+      <li>
+        <a href="ka-org_mapping.html">Ka-Org Mapping</a>
+      </li>
+      <li>
+        <a href="stammdaten_mapping.html">Stammdaten</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">About
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="imprint.html">Impressum</a>
+      </li>
+      <li>
+        <a href="authors.html">Mitwirkende</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="dependencies.html">Dependencies</a>
+      </li>
+      <li>
+        <a href="copyright.html">Copyright</a>
+      </li>
+      <li>
+        <a href="known_issues.html">Known Issues</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>LKF Ambulante Pauschal-Gruppen</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+	
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED) - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://elga.moped.at/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="CodeSystem-LKFAmbulantePauschalGruppenCS.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="CodeSystem-LKFAmbulantePauschalGruppenCS.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="CodeSystem-LKFAmbulantePauschalGruppenCS.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+  <h2 id="root">CodeSystem: LKF Ambulante Pauschal-Gruppen
+(Experimental)
+  </h2>
+
+  <table class="colsi">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://elga.moped.at/CodeSystem/LKFAmbulantePauschalGruppenCS<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://elga.moped.at/CodeSystem/LKFAmbulantePauschalGruppenCS"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">0.1.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://elga.moped.at/CodeSystem/LKFAmbulantePauschalGruppenCS|0.1.0"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="3">
+        
+          Active
+          
+            as of 2026-03-24
+          
+        
+      </td>
+
+
+      <td>
+        <i>Responsible:</i> 
+
+        <a href="https://elga.gv.at">ELGA GmbH</a>
+
+      </td>
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">LKFAmbulantePauschalGruppenCS</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+<p>
+<p>LKF Ambulante Pauschal-Gruppen</p>
+
+</p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <p>
+  This Code system is referenced in the content logical definition of the following value sets:
+  </p>
+
+  
+<ul>
+ <li><a href="ValueSet-LKFAbrechnungsGruppeVS.html">LKFAbrechnungsGruppeVS</a></li>
+ <li><a href="ValueSet-LKFAmbulantePauschalGruppenVS.html">LKFAmbulantePauschalGruppenVS</a></li>
+</ul>
+
+
+  <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated"><p class="res-header-id"></p><a name="LKFAmbulantePauschalGruppenCS"> </a><a name="hcLKFAmbulantePauschalGruppenCS"> </a><p>This case-sensitive code system <code>https://elga.moped.at/CodeSystem/LKFAmbulantePauschalGruppenCS</code> defines the following codes:</p>
+<table class="codes" data-fhir="generated"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr>
+<tr><td style="white-space:nowrap">APG00.00<a name="LKFAmbulantePauschalGruppenCS-APG00.4600"> </a></td>
+<td>Ambulanter Kontakt ohne codierte Leistungen</td></tr>
+<tr><td style="white-space:nowrap">APG00.11<a name="LKFAmbulantePauschalGruppenCS-APG00.4611"> </a></td>
+<td>Ambulanter Kontakt mit sonstigen Diagnostik/Therapie-Leistungen</td></tr>
+<tr><td style="white-space:nowrap">APG00.12<a name="LKFAmbulantePauschalGruppenCS-APG00.4612"> </a></td>
+<td>Ambulanter Kontakt mit sonstigen operativen Leistungen</td></tr>
+<tr><td style="white-space:nowrap">APG00.30<a name="LKFAmbulantePauschalGruppenCS-APG00.4630"> </a></td>
+<td>Fachspezifische Konsultation</td></tr>
+<tr><td style="white-space:nowrap">APG01.00<a name="LKFAmbulantePauschalGruppenCS-APG01.4600"> </a></td>
+<td>Ambulante Diagnostik/Therapie - Nervensystem, Psyche</td></tr>
+<tr><td style="white-space:nowrap">APG01.01<a name="LKFAmbulantePauschalGruppenCS-APG01.4601"> </a></td>
+<td>Spezielle Diagnostik - Nervensystem</td></tr>
+<tr><td style="white-space:nowrap">APG01.02<a name="LKFAmbulantePauschalGruppenCS-APG01.4602"> </a></td>
+<td>Spezielle neurophysiologische Diagnostik (Langzeit-EEG)</td></tr>
+<tr><td style="white-space:nowrap">APG01.03<a name="LKFAmbulantePauschalGruppenCS-APG01.4603"> </a></td>
+<td>Spezielle Diagnostik - Nervensystem (Magnetenzephalographie)</td></tr>
+<tr><td style="white-space:nowrap">APG01.04<a name="LKFAmbulantePauschalGruppenCS-APG01.4604"> </a></td>
+<td>Schlaflabor</td></tr>
+<tr><td style="white-space:nowrap">APG01.10<a name="LKFAmbulantePauschalGruppenCS-APG01.4610"> </a></td>
+<td>Strukturierte Diagnostik/Therapie/Nachsorge bei neurologischen Erkrankungen</td></tr>
+<tr><td style="white-space:nowrap">APG01.21<a name="LKFAmbulantePauschalGruppenCS-APG01.4621"> </a></td>
+<td>Spezielle Diagnostik/Therapie - Psyche</td></tr>
+<tr><td style="white-space:nowrap">APG01.31<a name="LKFAmbulantePauschalGruppenCS-APG01.4631"> </a></td>
+<td>Transkranielle Magnetstimulation</td></tr>
+<tr><td style="white-space:nowrap">APG01.32<a name="LKFAmbulantePauschalGruppenCS-APG01.4632"> </a></td>
+<td>Elektrokonvulsionstherapie</td></tr>
+<tr><td style="white-space:nowrap">APG02.00<a name="LKFAmbulantePauschalGruppenCS-APG02.4600"> </a></td>
+<td>Ambulante Diagnostik/Therapie - Auge</td></tr>
+<tr><td style="white-space:nowrap">APG02.01<a name="LKFAmbulantePauschalGruppenCS-APG02.4601"> </a></td>
+<td>Spezielle Diagnostik - Auge</td></tr>
+<tr><td style="white-space:nowrap">APG02.11<a name="LKFAmbulantePauschalGruppenCS-APG02.4611"> </a></td>
+<td>Spezielle Therapien - Auge</td></tr>
+<tr><td style="white-space:nowrap">APG02.12<a name="LKFAmbulantePauschalGruppenCS-APG02.4612"> </a></td>
+<td>Lasertherapie - Auge</td></tr>
+<tr><td style="white-space:nowrap">APG02.13<a name="LKFAmbulantePauschalGruppenCS-APG02.4613"> </a></td>
+<td>Photodynamische Therapie der Makula</td></tr>
+<tr><td style="white-space:nowrap">APG02.14<a name="LKFAmbulantePauschalGruppenCS-APG02.4614"> </a></td>
+<td>Intravitreale Injektion mit Anti-VEGF</td></tr>
+<tr><td style="white-space:nowrap">APG02.15<a name="LKFAmbulantePauschalGruppenCS-APG02.4615"> </a></td>
+<td>Kryokoagulation der Netzhaut</td></tr>
+<tr><td style="white-space:nowrap">APG02.21<a name="LKFAmbulantePauschalGruppenCS-APG02.4621"> </a></td>
+<td>Orthoptik</td></tr>
+<tr><td style="white-space:nowrap">APG03.00<a name="LKFAmbulantePauschalGruppenCS-APG03.4600"> </a></td>
+<td>Ambulante Diagnostik/Therapie - Ohr</td></tr>
+<tr><td style="white-space:nowrap">APG03.01<a name="LKFAmbulantePauschalGruppenCS-APG03.4601"> </a></td>
+<td>Spezielle Diagnostik/Therapie - Ohr</td></tr>
+<tr><td style="white-space:nowrap">APG03.10<a name="LKFAmbulantePauschalGruppenCS-APG03.4610"> </a></td>
+<td>Ambulante Diagnostik/Therapie - Nase/Rachen/Kehlkopf</td></tr>
+<tr><td style="white-space:nowrap">APG03.11<a name="LKFAmbulantePauschalGruppenCS-APG03.4611"> </a></td>
+<td>Spezielle Diagnostik/Therapie - Nase/Rachen</td></tr>
+<tr><td style="white-space:nowrap">APG03.12<a name="LKFAmbulantePauschalGruppenCS-APG03.4612"> </a></td>
+<td>Spezielle Diagnostik/Therapie - Kehlkopf</td></tr>
+<tr><td style="white-space:nowrap">APG03.21<a name="LKFAmbulantePauschalGruppenCS-APG03.4621"> </a></td>
+<td>Ambulante Eingriffe - Ohr/Nase/Rachen</td></tr>
+<tr><td style="white-space:nowrap">APG03.25<a name="LKFAmbulantePauschalGruppenCS-APG03.4625"> </a></td>
+<td>Ambulante Eingriffe - Kehlkopf/Trachea</td></tr>
+<tr><td style="white-space:nowrap">APG03.31<a name="LKFAmbulantePauschalGruppenCS-APG03.4631"> </a></td>
+<td>Logopädisch-phoniatrische Diagnostik/Therapie (einzel)</td></tr>
+<tr><td style="white-space:nowrap">APG03.50<a name="LKFAmbulantePauschalGruppenCS-APG03.4650"> </a></td>
+<td>Ambulante Diagnostik/Therapie - Mundhöhle/Zähne/Kiefer</td></tr>
+<tr><td style="white-space:nowrap">APG03.51<a name="LKFAmbulantePauschalGruppenCS-APG03.4651"> </a></td>
+<td>Spezielle Diagnostik/Therapie - Mundhöhle/Zähne/Kiefer</td></tr>
+<tr><td style="white-space:nowrap">APG03.61<a name="LKFAmbulantePauschalGruppenCS-APG03.4661"> </a></td>
+<td>Kieferorthopädische Behandlung</td></tr>
+<tr><td style="white-space:nowrap">APG04.00<a name="LKFAmbulantePauschalGruppenCS-APG04.4600"> </a></td>
+<td>Ambulante Diagnostik/Therapie - Atmung, Respirationstrakt</td></tr>
+<tr><td style="white-space:nowrap">APG04.01<a name="LKFAmbulantePauschalGruppenCS-APG04.4601"> </a></td>
+<td>Spezielle Diagnostik - Atmung, Respirationstrakt</td></tr>
+<tr><td style="white-space:nowrap">APG05.00<a name="LKFAmbulantePauschalGruppenCS-APG05.4600"> </a></td>
+<td>Ambulante Diagnostik/Therapie - Blut/Herz/Kreislauf</td></tr>
+<tr><td style="white-space:nowrap">APG05.01<a name="LKFAmbulantePauschalGruppenCS-APG05.4601"> </a></td>
+<td>Spezielle Diagnostik - Herz/Kreislauf</td></tr>
+<tr><td style="white-space:nowrap">APG05.11<a name="LKFAmbulantePauschalGruppenCS-APG05.4611"> </a></td>
+<td>Ambulante Eingriffe - Venen</td></tr>
+<tr><td style="white-space:nowrap">APG06.01<a name="LKFAmbulantePauschalGruppenCS-APG06.4601"> </a></td>
+<td>Spezielle Diagnostik/Therapie - Diabetes mellitus</td></tr>
+<tr><td style="white-space:nowrap">APG07.00<a name="LKFAmbulantePauschalGruppenCS-APG07.4600"> </a></td>
+<td>Ambulante Diagnostik/Therapie - Gastrointestinaltrakt</td></tr>
+<tr><td style="white-space:nowrap">APG07.01<a name="LKFAmbulantePauschalGruppenCS-APG07.4601"> </a></td>
+<td>Spezielle Diagnostik - Gastrointestinaltrakt 1</td></tr>
+<tr><td style="white-space:nowrap">APG07.02<a name="LKFAmbulantePauschalGruppenCS-APG07.4602"> </a></td>
+<td>Spezielle Diagnostik - Gastrointestinaltrakt 2</td></tr>
+<tr><td style="white-space:nowrap">APG07.11<a name="LKFAmbulantePauschalGruppenCS-APG07.4611"> </a></td>
+<td>Ambulante Eingriffe - Gastrointestinaltrakt</td></tr>
+<tr><td style="white-space:nowrap">APG08.00<a name="LKFAmbulantePauschalGruppenCS-APG08.4600"> </a></td>
+<td>Ambulante Diagnostik/Therapie - Urogenitaltrakt</td></tr>
+<tr><td style="white-space:nowrap">APG08.02<a name="LKFAmbulantePauschalGruppenCS-APG08.4602"> </a></td>
+<td>Zystomanometrie</td></tr>
+<tr><td style="white-space:nowrap">APG08.03<a name="LKFAmbulantePauschalGruppenCS-APG08.4603"> </a></td>
+<td>Videourodynamik</td></tr>
+<tr><td style="white-space:nowrap">APG08.11<a name="LKFAmbulantePauschalGruppenCS-APG08.4611"> </a></td>
+<td>Ambulante Eingriffe - Urogenitaltrakt 1</td></tr>
+<tr><td style="white-space:nowrap">APG08.12<a name="LKFAmbulantePauschalGruppenCS-APG08.4612"> </a></td>
+<td>Ambulante Eingriffe - Urogenitaltrakt 2</td></tr>
+<tr><td style="white-space:nowrap">APG08.21<a name="LKFAmbulantePauschalGruppenCS-APG08.4621"> </a></td>
+<td>Spezielle Diagnostik - Schwangerschaft/Geburt</td></tr>
+<tr><td style="white-space:nowrap">APG08.22<a name="LKFAmbulantePauschalGruppenCS-APG08.4622"> </a></td>
+<td>Invasive Diagnostik - Schwangerschaft/Geburt</td></tr>
+<tr><td style="white-space:nowrap">APG08.25<a name="LKFAmbulantePauschalGruppenCS-APG08.4625"> </a></td>
+<td>Spezielle Therapie - Schwangerschaft/Geburt</td></tr>
+<tr><td style="white-space:nowrap">APG09.00<a name="LKFAmbulantePauschalGruppenCS-APG09.4600"> </a></td>
+<td>Ambulante Diagnostik/Therapie - Haut/Allergie</td></tr>
+<tr><td style="white-space:nowrap">APG09.01<a name="LKFAmbulantePauschalGruppenCS-APG09.4601"> </a></td>
+<td>Spezielle Diagnostik - Haut/Allergie</td></tr>
+<tr><td style="white-space:nowrap">APG09.11<a name="LKFAmbulantePauschalGruppenCS-APG09.4611"> </a></td>
+<td>Ambulante Eingriffe - Haut/Weichteile/Knochen</td></tr>
+<tr><td style="white-space:nowrap">APG09.12<a name="LKFAmbulantePauschalGruppenCS-APG09.4612"> </a></td>
+<td>Photodynamische Therapie</td></tr>
+<tr><td style="white-space:nowrap">APG09.21<a name="LKFAmbulantePauschalGruppenCS-APG09.4621"> </a></td>
+<td>Spezielle Eingriffe - Haut/Weichteile</td></tr>
+<tr><td style="white-space:nowrap">APG10.11<a name="LKFAmbulantePauschalGruppenCS-APG10.4611"> </a></td>
+<td>Reposition/Fixation</td></tr>
+<tr><td style="white-space:nowrap">APG10.12<a name="LKFAmbulantePauschalGruppenCS-APG10.4612"> </a></td>
+<td>Ambulante Eingriffe - Bewegungsapparat</td></tr>
+<tr><td style="white-space:nowrap">APG12.11<a name="LKFAmbulantePauschalGruppenCS-APG12.4611"> </a></td>
+<td>CT und CT-Angio</td></tr>
+<tr><td style="white-space:nowrap">APG12.12<a name="LKFAmbulantePauschalGruppenCS-APG12.4612"> </a></td>
+<td>CT gezielte Interventionen</td></tr>
+<tr><td style="white-space:nowrap">APG12.21<a name="LKFAmbulantePauschalGruppenCS-APG12.4621"> </a></td>
+<td>MR und MR-Angio</td></tr>
+<tr><td style="white-space:nowrap">APG12.22<a name="LKFAmbulantePauschalGruppenCS-APG12.4622"> </a></td>
+<td>MR gezielte Interventionen</td></tr>
+<tr><td style="white-space:nowrap">APG12.23<a name="LKFAmbulantePauschalGruppenCS-APG12.4623"> </a></td>
+<td>Funktionelle Magnetresonanztomographie</td></tr>
+<tr><td style="white-space:nowrap">APG12.41<a name="LKFAmbulantePauschalGruppenCS-APG12.4641"> </a></td>
+<td>Phlebographie</td></tr>
+<tr><td style="white-space:nowrap">APG12.51<a name="LKFAmbulantePauschalGruppenCS-APG12.4651"> </a></td>
+<td>Punktionen/Drainagen/Infiltrationen 1</td></tr>
+<tr><td style="white-space:nowrap">APG12.52<a name="LKFAmbulantePauschalGruppenCS-APG12.4652"> </a></td>
+<td>Punktionen/Drainagen/Infiltrationen 2</td></tr>
+<tr><td style="white-space:nowrap">APG12.53<a name="LKFAmbulantePauschalGruppenCS-APG12.4653"> </a></td>
+<td>Punktionen/Drainagen/Infiltrationen 3</td></tr>
+<tr><td style="white-space:nowrap">APG12.54<a name="LKFAmbulantePauschalGruppenCS-APG12.4654"> </a></td>
+<td>Stereotaktische Mammabiopsie</td></tr>
+<tr><td style="white-space:nowrap">APG12.55<a name="LKFAmbulantePauschalGruppenCS-APG12.4655"> </a></td>
+<td>Spezielle Gewebemarkierungen</td></tr>
+<tr><td style="white-space:nowrap">APG12.60<a name="LKFAmbulantePauschalGruppenCS-APG12.4660"> </a></td>
+<td>Röntgen</td></tr>
+<tr><td style="white-space:nowrap">APG12.61<a name="LKFAmbulantePauschalGruppenCS-APG12.4661"> </a></td>
+<td>Konventionelles Röntgen</td></tr>
+<tr><td style="white-space:nowrap">APG12.62<a name="LKFAmbulantePauschalGruppenCS-APG12.4662"> </a></td>
+<td>Funktionelles Röntgen</td></tr>
+<tr><td style="white-space:nowrap">APG12.71<a name="LKFAmbulantePauschalGruppenCS-APG12.4671"> </a></td>
+<td>Sonographie</td></tr>
+<tr><td style="white-space:nowrap">APG14.01<a name="LKFAmbulantePauschalGruppenCS-APG14.4601"> </a></td>
+<td>Nuklearmedizinische Diagnostik 1</td></tr>
+<tr><td style="white-space:nowrap">APG14.02<a name="LKFAmbulantePauschalGruppenCS-APG14.4602"> </a></td>
+<td>Nuklearmedizinische Diagnostik 2</td></tr>
+<tr><td style="white-space:nowrap">APG14.03<a name="LKFAmbulantePauschalGruppenCS-APG14.4603"> </a></td>
+<td>Nuklearmedizinische Diagnostik 3</td></tr>
+<tr><td style="white-space:nowrap">APG14.04<a name="LKFAmbulantePauschalGruppenCS-APG14.4604"> </a></td>
+<td>Nuklearmedizinische Diagnostik 4</td></tr>
+<tr><td style="white-space:nowrap">APG15.01<a name="LKFAmbulantePauschalGruppenCS-APG15.4601"> </a></td>
+<td>Endoskopische Diagnostik/Therapie GIT</td></tr>
+<tr><td style="white-space:nowrap">APG15.02<a name="LKFAmbulantePauschalGruppenCS-APG15.4602"> </a></td>
+<td>Endoskopische Diagnostik/Therapie UGT1</td></tr>
+<tr><td style="white-space:nowrap">APG15.03<a name="LKFAmbulantePauschalGruppenCS-APG15.4603"> </a></td>
+<td>Endoskopische Mukosaresektion</td></tr>
+<tr><td style="white-space:nowrap">APG15.04<a name="LKFAmbulantePauschalGruppenCS-APG15.4604"> </a></td>
+<td>Bronchoskopie</td></tr>
+<tr><td style="white-space:nowrap">APG15.05<a name="LKFAmbulantePauschalGruppenCS-APG15.4605"> </a></td>
+<td>Endoskopische Interventionen 1</td></tr>
+<tr><td style="white-space:nowrap">APG15.06<a name="LKFAmbulantePauschalGruppenCS-APG15.4606"> </a></td>
+<td>Endoskopische Diagnostik/Therapie UGT2</td></tr>
+<tr><td style="white-space:nowrap">APG15.08<a name="LKFAmbulantePauschalGruppenCS-APG15.4608"> </a></td>
+<td>Endoskopie des Dünndarms</td></tr>
+<tr><td style="white-space:nowrap">APG18.00<a name="LKFAmbulantePauschalGruppenCS-APG18.4600"> </a></td>
+<td>Physikalische und andere Therapie</td></tr>
+<tr><td style="white-space:nowrap">APG18.01<a name="LKFAmbulantePauschalGruppenCS-APG18.4601"> </a></td>
+<td>Ergotherapie/Physiotherapie (einzel)</td></tr>
+<tr><td style="white-space:nowrap">APG18.02<a name="LKFAmbulantePauschalGruppenCS-APG18.4602"> </a></td>
+<td>Ambulant durchgeführte Schulungen</td></tr>
+<tr><td style="white-space:nowrap">APG18.04<a name="LKFAmbulantePauschalGruppenCS-APG18.4604"> </a></td>
+<td>Entwicklungsdiagnostik</td></tr>
+<tr><td style="white-space:nowrap">APG18.06<a name="LKFAmbulantePauschalGruppenCS-APG18.4606"> </a></td>
+<td>Ambulante hyperbare Oxygenierung</td></tr>
+<tr><td style="white-space:nowrap">APG18.07<a name="LKFAmbulantePauschalGruppenCS-APG18.4607"> </a></td>
+<td>Komplexe physikalische Therapie</td></tr>
+<tr><td style="white-space:nowrap">APG18.10<a name="LKFAmbulantePauschalGruppenCS-APG18.4610"> </a></td>
+<td>Ergotherapie/Physiotherapie/logopäd.-phoniatr. Therapie (Gruppe)</td></tr>
+<tr><td style="white-space:nowrap">APG18.50<a name="LKFAmbulantePauschalGruppenCS-APG18.4650"> </a></td>
+<td>Ambulante Diagnostik/Therapie - allgemein</td></tr>
+<tr><td style="white-space:nowrap">APG18.60<a name="LKFAmbulantePauschalGruppenCS-APG18.4660"> </a></td>
+<td>Opferschutz</td></tr>
+<tr><td style="white-space:nowrap">APG21.01<a name="LKFAmbulantePauschalGruppenCS-APG21.4601"> </a></td>
+<td>Beobachtung/Therapie/Nachsorge bei Kindern mit spezifischen Erkrankungen</td></tr>
+<tr><td style="white-space:nowrap">APG21.02<a name="LKFAmbulantePauschalGruppenCS-APG21.4602"> </a></td>
+<td>Ambulante Besuche mit spezifischer Pharmakotherapie bei Kindern mit seltenen Erkrankungen</td></tr>
+<tr><td style="white-space:nowrap">APG23.01<a name="LKFAmbulantePauschalGruppenCS-APG23.4601"> </a></td>
+<td>Anästhesie durch Anästhesisten</td></tr>
+<tr><td style="white-space:nowrap">APG23.02<a name="LKFAmbulantePauschalGruppenCS-APG23.4602"> </a></td>
+<td>Spezielle Schmerztherapie</td></tr>
+<tr><td style="white-space:nowrap">APG24.00<a name="LKFAmbulantePauschalGruppenCS-APG24.4600"> </a></td>
+<td>Labordiagnostik</td></tr>
+<tr><td style="white-space:nowrap">APG25.00<a name="LKFAmbulantePauschalGruppenCS-APG25.4600"> </a></td>
+<td>Histologische/zytologische Diagnostik</td></tr></table></div>
+
+  
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /row -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-content -->
+
+<script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/window-hash.js"> </script>
+<a name="bottom"> </a>
+<div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+<div class="container">  <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Mar 24, 2026 19:35+0000">2026-03-24</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    </span>
+  </p>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+<div class="container">  <!-- container -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-post-footer -->
+
+<!-- JS and analytics only. -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+<script type="text/javascript" src="assets/js/respond.min.js"> </script>
+<script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+<script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+</body>
+</html>
+

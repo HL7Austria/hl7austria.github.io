@@ -149,10 +149,10 @@
     "systems" : ["https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS"],
     "uses" : {
     },
-    "StructureDefinition-MopedSupportingInfoFREMDRE.html" : "Supporting Info Extension for ClaimResponse - FREMDRE Slice",
     "StructureDefinition-MopedSupportingInfoOEGKELBNR.html" : "Supporting Info Extension for ClaimResponse - OEGKELBNR Slice",
-    "StructureDefinition-MopedSupportingInfoVortageanzahlAufKostenbeitrag.html" : "Supporting Info Extension for ClaimResponse - Vortageanzahl auf Kostenbeitrag",
-    "StructureDefinition-MopedSupportingInfo.html" : "Supporting Info Extension for ClaimResponse"
+    "StructureDefinition-MopedSupportingInfoFREMDRE.html" : "Supporting Info Extension for ClaimResponse - FREMDRE Slice",
+    "StructureDefinition-MopedSupportingInfo.html" : "Supporting Info Extension for ClaimResponse",
+    "StructureDefinition-MopedSupportingInfoVortageanzahlAufKostenbeitrag.html" : "Supporting Info Extension for ClaimResponse - Vortageanzahl auf Kostenbeitrag"
   },
   {
     "url" : "https://elga.moped.at/ValueSet/CompositionSectionsVS",
@@ -203,8 +203,8 @@
     "systems" : ["https://elga.moped.at/CodeSystem/EntlassungsartCS"],
     "uses" : {
     },
-    "StructureDefinition-MopedEncounterS.html" : "MOPED Encounter Stationär",
-    "ValueSet-EntlassungsartVS.html" : "Entlassungsart des Patienten ambulant + stationär"
+    "ValueSet-EntlassungsartVS.html" : "Entlassungsart des Patienten ambulant + stationär",
+    "StructureDefinition-MopedEncounterS.html" : "MOPED Encounter Stationär"
   },
   {
     "url" : "https://elga.moped.at/ValueSet/EntlassungsartVS",
@@ -237,12 +237,12 @@
     "systems" : ["http://hl7.org/fhir/http-verb"],
     "uses" : {
     },
-    "StructureDefinition-MopedMeldenLGFBundle.html" : "MOPED Melden Bundle LGF",
-    "StructureDefinition-MopedAntwortenBundleSV.html" : "MOPED Antworten Bundle SV",
+    "StructureDefinition-MopedAbrechnenBundleKH.html" : "MOPED Abrechnen Bundle KH",
     "StructureDefinition-MopedInputBundleKH.html" : "MOPED Input Bundle KH",
     "StructureDefinition-MopedEntscheidenLGFBundle.html" : "MOPED Entscheiden Bundle LGF",
+    "StructureDefinition-MopedAntwortenBundleSV.html" : "MOPED Antworten Bundle SV",
     "StructureDefinition-MopedAnfragenBundleKH.html" : "MOPED Anfragen Bundle KH",
-    "StructureDefinition-MopedAbrechnenBundleKH.html" : "MOPED Abrechnen Bundle KH"
+    "StructureDefinition-MopedMeldenLGFBundle.html" : "MOPED Melden Bundle LGF"
   },
   {
     "url" : "https://elga.moped.at/ValueSet/HTTPVerbInsertUpdateDeleteVS",
@@ -313,6 +313,8 @@
     "description" : "LKF Abrechnungsgruppe",
     "systems" : ["https://elga.moped.at/CodeSystem/LKFAbrechnungsGruppeAndereCS",
     "https://elga.moped.at/CodeSystem/LKFHauptdiagnosegruppenCS",
+    "https://elga.moped.at/CodeSystem/LKFAmbulantePauschalGruppenCS",
+    "https://elga.moped.at/CodeSystem/LKFAmbulantenMELGruppenCS",
     "https://elga.moped.at/CodeSystem/LKFmedizinischeEinzelleistungenCS"],
     "uses" : {
     },
@@ -330,6 +332,24 @@
     "uses" : {
     },
     "StructureDefinition-moped-ext-diagnoseKnoten.html" : "Abrechnung - Knoten"
+  },
+  {
+    "url" : "https://elga.moped.at/ValueSet/LKFAmbulantePauschalGruppenVS",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "LKFAmbulantePauschalGruppenVS",
+    "title" : "LKF Ambulante Pauschal-Gruppen",
+    "description" : "LKF Ambulante Pauschal-Gruppen",
+    "systems" : ["https://elga.moped.at/CodeSystem/LKFAmbulantePauschalGruppenCS"]
+  },
+  {
+    "url" : "https://elga.moped.at/ValueSet/LKFAmbulantenMELGruppenVS",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "LKFAmbulantenMELGruppenVS",
+    "title" : "LKF Ambulante MEL-Gruppen",
+    "description" : "LKF Ambulante MEL-Gruppen",
+    "systems" : ["https://elga.moped.at/CodeSystem/LKFAmbulantenMELGruppenCS"]
   },
   {
     "url" : "https://elga.moped.at/ValueSet/LKFDiagnoseTypVS",
@@ -412,8 +432,8 @@
     "uses" : {
     },
     "StructureDefinition-MopedARKRequest.html" : "MOPED ARKRequest",
-    "StructureDefinition-MopedLKFRequest.html" : "MOPED LKFRequest",
-    "StructureDefinition-moped-ext-AddItemCategory.html" : "AddItemCategory"
+    "StructureDefinition-moped-ext-AddItemCategory.html" : "AddItemCategory",
+    "StructureDefinition-MopedLKFRequest.html" : "MOPED LKFRequest"
   },
   {
     "url" : "https://elga.moped.at/ValueSet/MopedClaimTypeVS",
@@ -426,11 +446,11 @@
     "uses" : {
     },
     "StructureDefinition-MopedARKRequest.html" : "MOPED ARKRequest",
-    "StructureDefinition-MopedVAEResponse.html" : "MOPED VAEResponse",
-    "StructureDefinition-MopedLKFRequest.html" : "MOPED LKFRequest",
     "StructureDefinition-MopedLKFResponse.html" : "MOPED LKFResponse",
+    "StructureDefinition-MopedLKFRequest.html" : "MOPED LKFRequest",
     "StructureDefinition-MopedARKResponse.html" : "MOPED ARKResponse",
-    "StructureDefinition-MopedVAERequest.html" : "MOPED VAERequest"
+    "StructureDefinition-MopedVAERequest.html" : "MOPED VAERequest",
+    "StructureDefinition-MopedVAEResponse.html" : "MOPED VAEResponse"
   },
   {
     "url" : "https://elga.moped.at/ValueSet/MopedDeviceTypesVS",
@@ -546,8 +566,8 @@
     "systems" : ["https://elga.moped.at/CodeSystem/SonderklasseCS"],
     "uses" : {
     },
-    "StructureDefinition-MopedSupportingInfoVortageanzahlAufKostenbeitrag.html" : "Supporting Info Extension for ClaimResponse - Vortageanzahl auf Kostenbeitrag",
-    "StructureDefinition-MopedVAERequest.html" : "MOPED VAERequest"
+    "StructureDefinition-MopedVAERequest.html" : "MOPED VAERequest",
+    "StructureDefinition-MopedSupportingInfoVortageanzahlAufKostenbeitrag.html" : "Supporting Info Extension for ClaimResponse - Vortageanzahl auf Kostenbeitrag"
   },
   {
     "url" : "https://elga.moped.at/ValueSet/SpezielleOrganisationsformVS",

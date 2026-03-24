@@ -9,13 +9,14 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/MopedVAERequestSubTypeVS | *Version*:0.1.0 | |
-| Draft as of 2026-03-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedVAERequestSubTypeVS |
+| Draft as of 2026-03-24 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedVAERequestSubTypeVS |
 
  
 ValueSet für die Art der Claims 
 
  **References** 
 
+* [MOPED VAERequest](StructureDefinition-MopedVAERequest.md)
 * [MOPED VAERequest](StructureDefinition-MopedVAERequest.md)
 
 ### Logical Definition (CLD)
@@ -51,7 +52,7 @@ ValueSet für die Art der Claims
   "title" : "VAE Claim Subtype ValueSet",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-15T19:53:47+00:00",
+  "date" : "2026-03-24T19:35:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedQuestionnaireResponseNichtFallbezogen | *Version*:0.1.0 | |
-| Draft as of 2026-03-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedQuestionnaireResponseNichtFallbezogen |
+| Draft as of 2026-03-24 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedQuestionnaireResponseNichtFallbezogen |
 
  
 MOPED Profil für QuestionnaireResponses die im Kontext von Moped ohne Fallbezug erhoben werden 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedQuestionnaireRe
   "name" : "MopedQuestionnaireResponseNichtFallbezogen",
   "title" : "Moped QuestionnaireResponse nicht fallbezogen",
   "status" : "draft",
-  "date" : "2026-03-15T19:53:47+00:00",
+  "date" : "2026-03-24T19:35:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
