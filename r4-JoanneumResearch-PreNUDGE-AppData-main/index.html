@@ -157,11 +157,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ul>
 
 </div>
-<p>PräNUDGE is an Austrian research project designed to strengthen citizens' personal responsibility for their health. The project aims to increase the number of <strong>healthy life years</strong> through the <strong>digitalization of self-reported health data</strong>.</p>
+<p>PreNUDGE is an Austrian research project designed to strengthen citizens' personal responsibility for their health. The project aims to increase the number of <strong>healthy life years</strong> through the <strong>digitalization of self-reported health data</strong>.</p>
 
 <p>The core concept is to create a <strong>modular platform</strong> that collects and structures health data from various sources. <strong>Qualified health apps</strong> serve as the interface between citizens and the platform. The project combines nudging strategies with evidence-based health promotion to subtly motivate people to live healthier lives.</p>
 
-<p>PräNUDGE focuses on the <strong>prevention of four diseases</strong>: diabetes, colorectal cancer, depression, and COPD, targeting specific groups such as children, adolescents, and working adults. The FHIR Implementation Guide (IG) is called “PreNUDGE”, which is the agreed English spelling, while the project’s German name is “PräNUDGE.”</p>
+<p>PreNUDGE focuses on the <strong>prevention of four diseases</strong>: diabetes, colorectal cancer, depression, and COPD, targeting specific groups such as children, adolescents, and working adults. The FHIR Implementation Guide (IG) is called “PreNUDGE”, which is the agreed English spelling, while the project’s German name is “PräNUDGE.”</p>
 
 <p>For more, see <a href="background.html">Background</a>.</p>
 
@@ -172,18 +172,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>We focus on narrow standardization of <strong>four PreNUDGE measurements</strong>:</p>
 <ul>
   <li>Daily activity as <strong>Steps per day</strong> (from a <a href="Questionnaire-StepCountQuestionnaire.html"><strong>questionnaire</strong></a> and from a <a href="StructureDefinition-at-prenudge-stepcount-observation.html"><strong>wearable device as an observation</strong></a>)</li>
-  <li><strong>Alcohol consumption</strong> as number of drinks (from a <a href="Questionnaire-StepCountQuestionnaire.html"><strong>questionnaire</strong></a> and from an <a href="StructureDefinition-at-prenudge-alcoholuse-observation.html"><strong>observation</strong></a>)</li>
+  <li><strong>Alcohol consumption</strong> as number of drinks (from a <a href="Questionnaire-AlcoholUseQuestionnaire.html"><strong>questionnaire</strong></a> and from an <a href="StructureDefinition-at-prenudge-alcoholuse-observation.html"><strong>observation</strong></a>)</li>
   <li><strong>Blood glucose</strong> in mg/dL (from a <a href="Questionnaire-BloodGlucoseQuestionnaire.html"><strong>questionnaire</strong></a> and from a <a href="StructureDefinition-at-prenudge-bloodglucose-observation.html"><strong>device as an observation</strong></a>)</li>
-  <li><strong>Quality of life</strong> (from a <a href="Questionnaire-QolQuestionnaire.html"><strong>questionnaire</strong></a> with a calculated <a href="StructureDefinition-at-prenudge-whoqol-bref-score-observation.html"><strong>score as an observation</strong></a>)</li>
+  <li><strong>Quality of life</strong> (from a <a href="Questionnaire-WhoQolBrefQuestionnaire.html"><strong>questionnaire</strong></a> with a calculated <a href="StructureDefinition-at-prenudge-whoqol-bref-score-observation.html"><strong>score as an observation</strong></a>)</li>
 </ul>
 
 <p>For viewing the full questionnaires use tools like <a href="https://lhcfhirtools.nlm.nih.gov/lhcforms">lhcforms</a>.</p>
 
-<p>Each <strong>questionnaire variant</strong> maps <strong>one-way</strong> to its corresponding <strong>observation variant</strong>. The mappings can be found at <a href="artifacts.html#terminology-structure-maps">StructureMaps</a> and can be executed with <a href="https://gitlab.com/cdehealth/malac-hd">MaLaC-HD</a> (small workaround because of <a href="https://gitlab.com/cdehealth/malac-hd/-/issues/129">a IG Publisher compatibility issue</a> needed, for MaLaC-HD v1.4.1 replace all http://hl7.org/fhir/StructureDefinition/ to http://hl7.org/fhir/4.0/StructureDefinition/).</p>
+<p>Each <strong>questionnaire variant</strong> maps <strong>one-way</strong> to its corresponding <strong>observation variant</strong>. The mappings can be found at <a href="artifacts.html#terminology-structure-maps">StructureMaps</a> and can be executed with <a href="https://gitlab.com/cdehealth/malac-hd">MaLaC-HD</a>.</p>
 
-<p>Additional PreNUDGE measurements, also narrow standardized, will be specified analogously to these four, based on feedback from this informative ballot.</p>
+<p>Additional PreNUDGE measurements, also narrow standardized, will be specified analogously to these four, based on feedback from this informative ballot.
+These are:</p>
+<ul>
+  <li>a</li>
+  <li>b</li>
+  <li>c</li>
+</ul>
 
-<p>Besides these narrow standardized measurements, <strong>broad standardized measurements</strong> called <a href="StructureDefinition-at-prenudge-observation-other.html"><strong>other observations</strong></a> are also supported. Please be aware that such broad standardized measurements does not have a corresponding questionnaire.</p>
+<p>Besides these narrow standardized measurements, <strong>broad standardized measurements</strong> called <a href="StructureDefinition-at-prenudge-observation-other-quantities.html"><strong>other quantities observations</strong></a> and <a href="StructureDefinition-at-prenudge-observation-other-not-quantities.html"><strong>other not quantities observations</strong></a> are also supported. Please be aware that such broad standardized measurements do not have a corresponding questionnaire.</p>
 
 <h3 id="ballot-info">Ballot Info</h3>
 
@@ -223,7 +229,7 @@ Thank you very much for your commitment!</p>
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Mar 3, 2026 20:10+0000">2026-03-03</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Mar 24, 2026 11:22+0000">2026-03-24</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

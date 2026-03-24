@@ -23,7 +23,11 @@
 <span style="color: navy">}
 
 </span><b>group </b>MapBloodGlucose<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
-</span>  src.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
+</span>  <span style="color: navy">// </span><span style="color: green">effectiveDateTime from child-Item with linkId = 'datetime'</span>
+  src.item<b> as </b><span style="color: maroon">dtItem</span><b> where </b>linkId = 'datetime'<b> then</b><span style="color: navy"> {
+</span>    dtItem.answer<b> as </b><span style="color: maroon">dtAns</span><span style="color: navy"><b> -&gt; </b></span>tgt.effectiveDateTime = <span style="color: maroon">dtAns.value</span> <i>&quot;SetEffectiveFromDatetime&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ProcessDatetime&quot;</i><span style="color: navy">;</span>
+  src.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
 </span>    answer.valueQuantity<b> as </b><span style="color: maroon">srcQty</span><b> then </b>MapBloodGlucoseQuantity<span style="color: navy">(</span><span style="color: maroon">srcQty</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapValueQuantity&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;ProcessAnswer&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">// </span><span style="color: green">TODO: Note mapping disabled due to MaLaC-HD limitation</span>
@@ -52,7 +56,7 @@
   <name value="BloodGlucoseQuestionnaireResponseToObservation"/>
   <title value="Blood Glucose Q to O"/>
   <status value="active"/>
-  <date value="2026-03-03T20:10:31+00:00"/>
+  <date value="2026-03-24T11:22:25+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -185,6 +189,32 @@
       <type value="Obs"/>
       <mode value="target"/>
     </input>
+    <rule>
+      <name value="ProcessDatetime"/>
+      <source>
+        <context value="src"/>
+        <element value="item"/>
+        <variable value="dtItem"/>
+        <condition value="linkId = 'datetime'"/>
+      </source>
+      <rule>
+        <name value="SetEffectiveFromDatetime"/>
+        <source>
+          <context value="dtItem"/>
+          <element value="answer"/>
+          <variable value="dtAns"/>
+        </source>
+        <target>
+          <context value="tgt"/>
+          <contextType value="variable"/>
+          <element value="effectiveDateTime"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueId value="dtAns.value"/>
+          </parameter>
+        </target>
+      </rule>
+    </rule>
     <rule>
       <name value="ProcessAnswer"/>
       <source>

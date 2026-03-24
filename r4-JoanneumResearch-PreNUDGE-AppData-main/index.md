@@ -5,11 +5,11 @@
 
 ## Home
 
-PräNUDGE is an Austrian research project designed to strengthen citizens' personal responsibility for their health. The project aims to increase the number of **healthy life years** through the **digitalization of self-reported health data**.
+PreNUDGE is an Austrian research project designed to strengthen citizens' personal responsibility for their health. The project aims to increase the number of **healthy life years** through the **digitalization of self-reported health data**.
 
 The core concept is to create a **modular platform** that collects and structures health data from various sources. **Qualified health apps** serve as the interface between citizens and the platform. The project combines nudging strategies with evidence-based health promotion to subtly motivate people to live healthier lives.
 
-PräNUDGE focuses on the **prevention of four diseases**: diabetes, colorectal cancer, depression, and COPD, targeting specific groups such as children, adolescents, and working adults. The FHIR Implementation Guide (IG) is called “PreNUDGE”, which is the agreed English spelling, while the project’s German name is “PräNUDGE.”
+PreNUDGE focuses on the **prevention of four diseases**: diabetes, colorectal cancer, depression, and COPD, targeting specific groups such as children, adolescents, and working adults. The FHIR Implementation Guide (IG) is called “PreNUDGE”, which is the agreed English spelling, while the project’s German name is “PräNUDGE.”
 
 For more, see [Background](background.md).
 
@@ -20,17 +20,21 @@ This Implementation Guide (IG) explains how application providers can use the **
 We focus on narrow standardization of **four PreNUDGE measurements**:
 
 * Daily activity as **Steps per day** (from a [**questionnaire**](Questionnaire-StepCountQuestionnaire.md) and from a [**wearable device as an observation**](StructureDefinition-at-prenudge-stepcount-observation.md))
-* **Alcohol consumption** as number of drinks (from a [**questionnaire**](Questionnaire-StepCountQuestionnaire.md) and from an [**observation**](StructureDefinition-at-prenudge-alcoholuse-observation.md))
+* **Alcohol consumption** as number of drinks (from a [**questionnaire**](Questionnaire-AlcoholUseQuestionnaire.md) and from an [**observation**](StructureDefinition-at-prenudge-alcoholuse-observation.md))
 * **Blood glucose** in mg/dL (from a [**questionnaire**](Questionnaire-BloodGlucoseQuestionnaire.md) and from a [**device as an observation**](StructureDefinition-at-prenudge-bloodglucose-observation.md))
-* **Quality of life** (from a [**questionnaire**](Questionnaire-QolQuestionnaire.md) with a calculated [**score as an observation**](StructureDefinition-at-prenudge-whoqol-bref-score-observation.md))
+* **Quality of life** (from a [**questionnaire**](Questionnaire-WhoQolBrefQuestionnaire.md) with a calculated [**score as an observation**](StructureDefinition-at-prenudge-whoqol-bref-score-observation.md))
 
 For viewing the full questionnaires use tools like [lhcforms](https://lhcfhirtools.nlm.nih.gov/lhcforms).
 
-Each **questionnaire variant** maps **one-way** to its corresponding **observation variant**. The mappings can be found at [StructureMaps](artifacts.md#terminology-structure-maps) and can be executed with [MaLaC-HD](https://gitlab.com/cdehealth/malac-hd) (small workaround because of [a IG Publisher compatibility issue](https://gitlab.com/cdehealth/malac-hd/-/issues/129) needed, for MaLaC-HD v1.4.1 replace all http://hl7.org/fhir/StructureDefinition/ to http://hl7.org/fhir/4.0/StructureDefinition/).
+Each **questionnaire variant** maps **one-way** to its corresponding **observation variant**. The mappings can be found at [StructureMaps](artifacts.md#terminology-structure-maps) and can be executed with [MaLaC-HD](https://gitlab.com/cdehealth/malac-hd).
 
-Additional PreNUDGE measurements, also narrow standardized, will be specified analogously to these four, based on feedback from this informative ballot.
+Additional PreNUDGE measurements, also narrow standardized, will be specified analogously to these four, based on feedback from this informative ballot. These are:
 
-Besides these narrow standardized measurements, **broad standardized measurements** called [**other observations**](StructureDefinition-at-prenudge-observation-other.md) are also supported. Please be aware that such broad standardized measurements does not have a corresponding questionnaire.
+* a
+* b
+* c
+
+Besides these narrow standardized measurements, **broad standardized measurements** called [**other quantities observations**](StructureDefinition-at-prenudge-observation-other-quantities.md) and [**other not quantities observations**](StructureDefinition-at-prenudge-observation-other-not-quantities.md) are also supported. Please be aware that such broad standardized measurements do not have a corresponding questionnaire.
 
 ### Ballot Info
 
@@ -63,7 +67,7 @@ We look forward to your active participation in the balloting process, which mak
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-03-03T20:10:31+00:00",
+  "date" : "2026-03-24T11:22:25+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -92,7 +96,7 @@ We look forward to your active participation in the balloting process, which mak
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.0.1"
+    "version" : "7.1.0"
   },
   {
     "id" : "hl7ext",
@@ -394,7 +398,7 @@ We look forward to your active participation in the balloting process, which mak
     },
     {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools.r4#0.9.0"
+      "valueCode" : "hl7.fhir.uv.tools.r4#1.1.0"
     },
     {
       "extension" : [{
@@ -680,7 +684,7 @@ We look forward to your active participation in the balloting process, which mak
         "reference" : "Observation/alcoholuse-moderate-example"
       },
       "name" : "Alcohol Use O - Moderate (3-4 times weekly)",
-      "description" : "Observation example of an alcohol use observation for a moderate drinker consuming alcohol 3-4 times per week (0.5 drinks per day).",
+      "description" : "Example of an alcohol use observation for a moderate drinker consuming alcohol 3-4 times per week (0.5 drinks per day).",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation"
     },
     {
@@ -692,7 +696,7 @@ We look forward to your active participation in the balloting process, which mak
         "reference" : "Observation/alcoholuse-occasional-example"
       },
       "name" : "Alcohol Use O mapped from Q - Daily",
-      "description" : "Observation example of an alcohol use observation for a daily drinker (1 drink per day).",
+      "description" : "Example of an alcohol use observation for a daily drinker (1 drink per day).",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation"
     },
     {
@@ -704,7 +708,7 @@ We look forward to your active participation in the balloting process, which mak
         "reference" : "Observation/alcoholuse-never-example"
       },
       "name" : "Alcohol Use O mapped from Q - Non-Drinker",
-      "description" : "Observation example of an alcohol use observation for a lifetime non-drinker (0 drinks per day).",
+      "description" : "Example of an alcohol use observation for a lifetime non-drinker (0 drinks per day).",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation"
     },
     {
@@ -716,7 +720,7 @@ We look forward to your active participation in the balloting process, which mak
         "reference" : "QuestionnaireResponse/AlcoholResponseDaily"
       },
       "name" : "Alcohol Use Q - Daily",
-      "description" : "QuestionnaireResponse example of an alcohol use observation for a daily drinker.",
+      "description" : "Example  of an alcohol use observation for a daily drinker.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
     },
     {
@@ -728,7 +732,7 @@ We look forward to your active participation in the balloting process, which mak
         "reference" : "QuestionnaireResponse/AlcoholResponseNever"
       },
       "name" : "Alcohol Use Q - Non-Drinker",
-      "description" : "QuestionnaireResponse example of an alcohol use observation for a lifetime non-drinker.",
+      "description" : "Example  of an alcohol use observation for a lifetime non-drinker.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
     },
     {
@@ -737,7 +741,7 @@ We look forward to your active participation in the balloting process, which mak
         "valueString" : "Questionnaire"
       }],
       "reference" : {
-        "reference" : "Questionnaire/AtPrenudgeQuestionnaireAlcoholUse"
+        "reference" : "Questionnaire/AlcoholUseQuestionnaire"
       },
       "name" : "Alkoholkonsum im letzten Jahr",
       "description" : "Categorical variable for the frequency of alcohol consumption in the last year (IPS compatible).",
@@ -764,7 +768,7 @@ We look forward to your active participation in the balloting process, which mak
         "reference" : "ConceptMap/AtPrenudgeCodeUnitMap"
       },
       "name" : "AT PreNUDGE Code-to-Unit Mapping",
-      "description" : "Maps observation codes to their expected UCUM units for the 'Other' observation profile.",
+      "description" : "Maps observation codes to their expected UCUM units for the 'Other Quantities' observation profile.",
       "exampleBoolean" : false
     },
     {
@@ -776,7 +780,7 @@ We look forward to your active participation in the balloting process, which mak
         "reference" : "StructureDefinition/at-prenudge-observation"
       },
       "name" : "AT PreNUDGE Observation",
-      "description" : "This FHIR profile is defining the overall Observation for PreNUDGE. It is abstract, so no instances of this profile directly are allowed.",
+      "description" : "This FHIR profile is defining the overall Observation for PreNUDGE. It is abstract, so no instances of this profile directly are allowed. Be aware that if the user enters values from a device into a questionnaire, it is still considered a manual input. Please keep in mind that all observations must comply with the qualification matrix on https://prenudge.at/qualificationmatrix/.",
       "exampleBoolean" : false
     },
     {
@@ -800,7 +804,7 @@ We look forward to your active participation in the balloting process, which mak
         "reference" : "StructureDefinition/at-prenudge-bloodglucose-observation"
       },
       "name" : "AT PreNUDGE Observation Blood Glucose (only in mg/dL)",
-      "description" : "This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allowes values inbetween 12 and 1200 mg/dL.",
+      "description" : "This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allows values inbetween 0 and 999 mg/dL.",
       "exampleBoolean" : false
     },
     {
@@ -821,10 +825,22 @@ We look forward to your active participation in the balloting process, which mak
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-prenudge-observation-other"
+        "reference" : "StructureDefinition/at-prenudge-observation-other-not-quantities"
       },
-      "name" : "AT PreNUDGE Observation Other",
-      "description" : "This FHIR profile can be used for all the other Observations for PreNUDGE, not fitting the existing narrow standardized observations. If some code for specifing a new Observation are missing, please contact prenudge@joanneum.at.",
+      "name" : "AT PreNUDGE Observation Other not Quantities",
+      "description" : "This FHIR profile can be used for all the other Observations for PreNUDGE, not beeing an quantity and not fitting the existing narrow standardized observations.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-prenudge-observation-other-quantities"
+      },
+      "name" : "AT PreNUDGE Observation Other Quantities",
+      "description" : "This FHIR profile can be used for all the other Observations for PreNUDGE, beeing quantities and not fitting the existing narrow standardized observations. If some code for specifing a new Observation is missing, please contact prenudge@joanneum.at.",
       "exampleBoolean" : false
     },
     {
@@ -884,7 +900,7 @@ We look forward to your active participation in the balloting process, which mak
         "reference" : "StructureDefinition/at-prenudge-questionnaire"
       },
       "name" : "AT PreNUDGE Questionnaire",
-      "description" : "This FHIR profile is defining the overall Questionnaire for PreNUDGE. Every top level item requires one comment subitem, with the linkId ending or equal 'comment'.",
+      "description" : "This FHIR profile is defining the overall Questionnaire for PreNUDGE. Every top level item requires one comment subitem, with the linkId ending or equal 'comment'. Be aware that if the user enters values from a device into a questionnaire, it is still considered a manual input. Please keep in mind that all questionnaires must comply with the qualification matrix on https://prenudge.at/qualificationmatrix/.",
       "exampleBoolean" : false
     },
     {
@@ -896,7 +912,7 @@ We look forward to your active participation in the balloting process, which mak
         "reference" : "StructureDefinition/at-prenudge-questionnaireresponse"
       },
       "name" : "AT PreNUDGE Questionnaire Response",
-      "description" : "This FHIR profile is defining the overall Questionnaire Response for PreNUDGE.",
+      "description" : "This FHIR profile is defining the overall Questionnaire Response for PreNUDGE. Be aware that if the user enters values from a device into a questionnaire, it is still considered a manual input. Please keep in mind that all questionnaire responses must comply with the qualification matrix on https://prenudge.at/qualificationmatrix/.",
       "exampleBoolean" : false
     },
     {
@@ -944,7 +960,7 @@ We look forward to your active participation in the balloting process, which mak
         "reference" : "Observation/bloodglucose-low-example"
       },
       "name" : "Blood Glucose O - Low Example",
-      "description" : "Beispiel einer niedrigen Nüchtern-Blutzucker-Messung (62 mg/dL), hinweisend auf Hypoglykämie.",
+      "description" : "Example of a low fasting blood glucose measurement (62 mg/dL), indicating hypoglycemia.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation"
     },
     {
@@ -956,7 +972,7 @@ We look forward to your active participation in the balloting process, which mak
         "reference" : "Observation/bloodglucose-elevated-example"
       },
       "name" : "Blood Glucose O mapped from Q - Elevated Example",
-      "description" : "Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL), hinweisend auf Diabetes mellitus.",
+      "description" : "Example of an elevated fasting blood glucose measurement (142 mg/dL), indicating diabetes mellitus.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation"
     },
     {
@@ -968,7 +984,7 @@ We look forward to your active participation in the balloting process, which mak
         "reference" : "Observation/bloodglucose-normal-example"
       },
       "name" : "Blood Glucose O mapped from Q - Normal Example",
-      "description" : "Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL).",
+      "description" : "Example of a normal fasting blood glucose measurement (95 mg/dL).",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation"
     },
     {
@@ -980,8 +996,8 @@ We look forward to your active participation in the balloting process, which mak
         "reference" : "QuestionnaireResponse/bloodglucose-response-elevated-example"
       },
       "name" : "Blood Glucose Q - Elevated Example",
-      "description" : "Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL) als QuestionnaireResponse.",
-      "exampleBoolean" : true
+      "description" : "Example of an elevated fasting blood glucose measurement (142 mg/dL), indicating diabetes mellitus.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
     },
     {
       "extension" : [{
@@ -992,8 +1008,8 @@ We look forward to your active participation in the balloting process, which mak
         "reference" : "QuestionnaireResponse/bloodglucose-response-normal-example"
       },
       "name" : "Blood Glucose Q - Normal Example",
-      "description" : "Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL) als QuestionnaireResponse.",
-      "exampleBoolean" : true
+      "description" : "Example of a normal fasting blood glucose measurement (95 mg/dL).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
     },
     {
       "extension" : [{
@@ -1004,7 +1020,7 @@ We look forward to your active participation in the balloting process, which mak
         "reference" : "Questionnaire/BloodGlucoseQuestionnaire"
       },
       "name" : "Blutzucker bei der letzten Messung",
-      "description" : "A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allows values inbetween 12 and 1200 mg/dL.",
+      "description" : "A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allows values inbetween 0 and 999 mg/dL.",
       "exampleBoolean" : false
     },
     {
@@ -1013,10 +1029,10 @@ We look forward to your active participation in the balloting process, which mak
         "valueString" : "Questionnaire"
       }],
       "reference" : {
-        "reference" : "Questionnaire/QolQuestionnaire"
+        "reference" : "Questionnaire/StepCountEhisPaqQuestionnaire"
       },
-      "name" : "Lebensstil Selbsteinschätzung",
-      "description" : "The WHOQOL-BREF is a 26-item instrument for assessing subjective quality of life in four domains: physical, psychological, social relationships, and environment. Developed by the WHO.",
+      "name" : "EHIS-PAQ: Zu-Fuß-Gehen",
+      "description" : "The questions Q2 and Q3 from the EHIS-PAQ about the number of days and duration of walking (for transport) in a typical week.",
       "exampleBoolean" : false
     },
     {
@@ -1034,13 +1050,37 @@ We look forward to your active participation in the balloting process, which mak
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/stepcount-ehispaq-high"
+      },
+      "name" : "Step Count EHIS PAQ Q - High Example",
+      "description" : "Example of a high step count (7 times a week with 2-3 hours).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/stepcount-ehispaq-normal"
+      },
+      "name" : "Step Count EHIS PAQ Q - Normal Example",
+      "description" : "Example of a normal step count (5 times a week with 30-59 minutes).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Observation"
       }],
       "reference" : {
         "reference" : "Observation/stepcount-sedentary-example"
       },
       "name" : "Step Count O - Sedentary Example",
-      "description" : "Beispiel einer niedrigen Schrittzahl (1,204 Schritte pro Tag), typisch für einen überwiegend sitzenden Tag.",
+      "description" : "Example of a low step count (1,204 steps per day), typical for a mostly sedentary day.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation"
     },
     {
@@ -1052,7 +1092,7 @@ We look forward to your active participation in the balloting process, which mak
         "reference" : "Observation/stepcount-high-example"
       },
       "name" : "Step Count O mapped from Q - High Example",
-      "description" : "Beispiel einer hohen Schrittzahl (133,519 Schritte pro Tag).",
+      "description" : "Example of a high step count (133,519 steps per day).",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation"
     },
     {
@@ -1064,7 +1104,7 @@ We look forward to your active participation in the balloting process, which mak
         "reference" : "Observation/stepcount-normal-example"
       },
       "name" : "Step Count O mapped from Q - Normal Example",
-      "description" : "Beispiel einer normalen Schrittzahl (8,432 Schritte pro Tag).",
+      "description" : "Example of a normal step count (8,432 steps per day).",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation"
     },
     {
@@ -1076,8 +1116,8 @@ We look forward to your active participation in the balloting process, which mak
         "reference" : "QuestionnaireResponse/stepcount-response-low-example"
       },
       "name" : "Step Count Q - High Example",
-      "description" : "Beispiel einer hohen Schrittzahl (133,519 Schritte) als QuestionnaireResponse.",
-      "exampleBoolean" : true
+      "description" : "Example of a high step count (133,519 steps per day).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
     },
     {
       "extension" : [{
@@ -1088,8 +1128,20 @@ We look forward to your active participation in the balloting process, which mak
         "reference" : "QuestionnaireResponse/stepcount-response-normal-example"
       },
       "name" : "Step Count Q - Normal Example",
-      "description" : "Beispiel einer normalen Schrittzahl (8,432 Schritte) als QuestionnaireResponse.",
-      "exampleBoolean" : true
+      "description" : "Example of a normal step count (8,432 steps per day).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/WhoQolBrefQuestionnaire"
+      },
+      "name" : "WHOQOL-BREF Lebensstil Selbsteinschätzung",
+      "description" : "The WHOQOL-BREF is a 26-item instrument for assessing subjective quality of life in four domains: physical, psychological, social relationships, and environment. Developed by the WHO.",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
@@ -1113,7 +1165,7 @@ We look forward to your active participation in the balloting process, which mak
       },
       "name" : "WHOQOL-BREF Q",
       "description" : "Example of a completed WHOQOL-BREF QuestionnaireResponse including all 26 items and calculated scores.",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
     },
     {
       "extension" : [{

@@ -9,10 +9,10 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/BloodGlucoseQuestionnaire | *Version*:0.1.0 | |
-| Active as of 2026-03-03 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:BloodGlucoseQuestionnaire |
+| Active as of 2026-03-24 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:BloodGlucoseQuestionnaire |
 
  
-A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allows values inbetween 12 and 1200 mg/dL. 
+A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allows values inbetween 0 and 999 mg/dL. 
 
 
 
@@ -32,7 +32,7 @@ A simple questionnaire for asking how high the blood glucose level is right now.
   "status" : "active",
   "experimental" : false,
   "subjectType" : ["Patient"],
-  "date" : "2026-03-03T20:10:31+00:00",
+  "date" : "2026-03-24T11:22:25+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -49,7 +49,7 @@ A simple questionnaire for asking how high the blood glucose level is right now.
       "use" : "work"
     }]
   }],
-  "description" : "A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allows values inbetween 12 and 1200 mg/dL.",
+  "description" : "A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allows values inbetween 0 and 999 mg/dL.",
   "item" : [{
     "extension" : [{
       "url" : "http://hl7.org/fhir/StructureDefinition/questionnaire-unitOption",
@@ -61,22 +61,34 @@ A simple questionnaire for asking how high the blood glucose level is right now.
     },
     {
       "url" : "http://hl7.org/fhir/StructureDefinition/minValue",
-      "valueDecimal" : 12
+      "valueDecimal" : 0
     },
     {
       "url" : "http://hl7.org/fhir/StructureDefinition/maxValue",
-      "valueDecimal" : 1200
+      "valueDecimal" : 999
     }],
     "linkId" : "blood-glucose-now",
     "code" : [{
       "system" : "http://loinc.org",
       "code" : "1556-0"
     }],
-    "text" : "Wie hoch ist Ihr Blutzucker aktuell?",
+    "text" : "Wie hoch ist Ihr Blutzucker aktuell (mg/dL)?",
     "type" : "quantity",
     "required" : true,
     "repeats" : false,
     "item" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+        "valueExpression" : {
+          "language" : "text/fhirpath",
+          "expression" : "now().toString()"
+        }
+      }],
+      "linkId" : "datetime",
+      "text" : "Wann haben sie diesen Wert gemessen?",
+      "type" : "dateTime"
+    },
+    {
       "linkId" : "comment",
       "text" : "Haben Sie zu Ihrer Antwort noch einen Kommentar oder etwas hinzuzufügen?",
       "type" : "string"

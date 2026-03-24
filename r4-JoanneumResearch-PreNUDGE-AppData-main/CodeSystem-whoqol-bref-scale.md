@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale | *Version*:0.1.0 | |
-| Active as of 2026-03-03 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:WHOQOLBrefScale |
+| Active as of 2026-03-24 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:WHOQOLBrefScale |
 
  
 Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire. 
@@ -32,7 +32,7 @@ Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire.
   "title" : "AT PreNUDGE WHOQOL-BREF Answer Scales",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-03-03T20:10:31+00:00",
+  "date" : "2026-03-24T11:22:25+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -288,7 +288,7 @@ Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire.
     },
     {
       "code" : "C3",
-      "display" : "Mittelmäßig",
+      "display" : "Halbwegs",
       "property" : [{
         "code" : "scale",
         "valueString" : "capacity"
@@ -341,7 +341,7 @@ Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire.
     },
     {
       "code" : "F2",
-      "display" : "Selten",
+      "display" : "Nicht oft",
       "property" : [{
         "code" : "scale",
         "valueString" : "frequency"
@@ -353,7 +353,7 @@ Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire.
     },
     {
       "code" : "F3",
-      "display" : "Ziemlich oft",
+      "display" : "Zeitweilig",
       "property" : [{
         "code" : "scale",
         "valueString" : "frequency"
@@ -365,7 +365,7 @@ Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire.
     },
     {
       "code" : "F4",
-      "display" : "Sehr oft",
+      "display" : "Oftmals",
       "property" : [{
         "code" : "scale",
         "valueString" : "frequency"

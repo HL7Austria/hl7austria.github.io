@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/BloodGlucoseQuestionnaireResponseToObservation | *Version*:0.1.0 | |
-| Active as of 2026-03-03 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:BloodGlucoseQuestionnaireResponseToObservation |
+| Active as of 2026-03-24 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:BloodGlucoseQuestionnaireResponseToObservation |
 
  
 Blood Glucose Q to O 
@@ -27,7 +27,7 @@ Blood Glucose Q to O
   "name" : "BloodGlucoseQuestionnaireResponseToObservation",
   "title" : "Blood Glucose Q to O",
   "status" : "active",
-  "date" : "2026-03-03T20:10:31+00:00",
+  "date" : "2026-03-24T11:22:25+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -159,6 +159,32 @@ Blood Glucose Q to O
       "mode" : "target"
     }],
     "rule" : [{
+      "name" : "ProcessDatetime",
+      "source" : [{
+        "context" : "src",
+        "element" : "item",
+        "variable" : "dtItem",
+        "condition" : "linkId = 'datetime'"
+      }],
+      "rule" : [{
+        "name" : "SetEffectiveFromDatetime",
+        "source" : [{
+          "context" : "dtItem",
+          "element" : "answer",
+          "variable" : "dtAns"
+        }],
+        "target" : [{
+          "context" : "tgt",
+          "contextType" : "variable",
+          "element" : "effectiveDateTime",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueId" : "dtAns.value"
+          }]
+        }]
+      }]
+    },
+    {
       "name" : "ProcessAnswer",
       "source" : [{
         "context" : "src",

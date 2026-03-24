@@ -42,8 +42,8 @@
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"6.20"}
-    h3,h4,h5,h6{--heading-prefix:"6.20"}</style>
+    <style type="text/css">h2{--heading-prefix:"6.22"}
+    h3,h4,h5,h6{--heading-prefix:"6.22"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- at-fhir-ig-template begin -->
@@ -196,7 +196,7 @@
         
           Active
           
-            as of 2026-03-03
+            as of 2026-03-24
           
         
       </td>
@@ -257,7 +257,11 @@
 <span style="color: navy">}
 
 </span><b>group </b>MapBloodGlucose<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
-</span>  src.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
+</span>  <span style="color: navy">// </span><span style="color: green">effectiveDateTime from child-Item with linkId = 'datetime'</span>
+  src.item<b> as </b><span style="color: maroon">dtItem</span><b> where </b>linkId = 'datetime'<b> then</b><span style="color: navy"> {
+</span>    dtItem.answer<b> as </b><span style="color: maroon">dtAns</span><span style="color: navy"><b> -&gt; </b></span>tgt.effectiveDateTime = <span style="color: maroon">dtAns.value</span> <i>&quot;SetEffectiveFromDatetime&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ProcessDatetime&quot;</i><span style="color: navy">;</span>
+  src.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
 </span>    answer.valueQuantity<b> as </b><span style="color: maroon">srcQty</span><b> then </b>MapBloodGlucoseQuantity<span style="color: navy">(</span><span style="color: maroon">srcQty</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapValueQuantity&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;ProcessAnswer&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">// </span><span style="color: green">TODO: Note mapping disabled due to MaLaC-HD limitation</span>
@@ -304,7 +308,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Mar 3, 2026 20:10+0000">2026-03-03</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Mar 24, 2026 11:22+0000">2026-03-24</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

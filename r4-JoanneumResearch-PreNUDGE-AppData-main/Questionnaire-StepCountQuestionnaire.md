@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/StepCountQuestionnaire | *Version*:0.1.0 | |
-| Active as of 2026-03-03 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:StepCountQuestionnaire |
+| Active as of 2026-03-24 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:StepCountQuestionnaire |
 
  
 A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000. 
@@ -32,7 +32,7 @@ A simple questionnaire for asking how many steps the patient has taken today. On
   "status" : "active",
   "experimental" : false,
   "subjectType" : ["Patient"],
-  "date" : "2026-03-03T20:10:31+00:00",
+  "date" : "2026-03-24T11:22:25+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -67,16 +67,30 @@ A simple questionnaire for asking how many steps the patient has taken today. On
       "url" : "http://hl7.org/fhir/StructureDefinition/maxValue",
       "valueDecimal" : 150000
     }],
-    "linkId" : "step-count-today",
+    "linkId" : "step-count",
     "code" : [{
       "system" : "http://loinc.org",
       "code" : "41950-7"
     }],
-    "text" : "Wie viele Schritte sind Sie heute gegangen?",
+    "text" : "Wie viele Schritte sind Sie gegangen?",
     "type" : "quantity",
     "required" : true,
     "repeats" : false,
     "item" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+        "valueExpression" : {
+          "language" : "text/fhirpath",
+          "expression" : "today().subtract(1).toString()"
+        }
+      }],
+      "linkId" : "date",
+      "text" : "Wann sind sie diese Schritte gegangen?",
+      "type" : "date",
+      "required" : true,
+      "repeats" : false
+    },
+    {
       "linkId" : "comment",
       "text" : "Haben Sie zu Ihrer Antwort noch einen Kommentar oder etwas hinzuzufügen?",
       "type" : "string"

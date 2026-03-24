@@ -184,8 +184,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <tbody>
          <tr>
             <td style="column-width:30%">
-               <a href="Questionnaire-AtPrenudgeQuestionnaireAlcoholUse.html"
-                  title="Questionnaire/AtPrenudgeQuestionnaireAlcoholUse">Alkoholkonsum im letzten Jahr</a>
+               <a href="Questionnaire-AlcoholUseQuestionnaire.html"
+                  title="Questionnaire/AlcoholUseQuestionnaire">Alkoholkonsum im letzten Jahr</a>
             </td>
             <td>
 <p>Categorical variable for the frequency of alcohol consumption in the last year (IPS compatible).</p>
@@ -197,16 +197,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="Questionnaire/BloodGlucoseQuestionnaire">Blutzucker bei der letzten Messung</a>
             </td>
             <td>
-<p>A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allows values inbetween 12 and 1200 mg/dL.</p>
+<p>A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allows values inbetween 0 and 999 mg/dL.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Questionnaire-QolQuestionnaire.html"
-                  title="Questionnaire/QolQuestionnaire">Lebensstil Selbsteinschätzung</a>
+               <a href="Questionnaire-StepCountEhisPaqQuestionnaire.html"
+                  title="Questionnaire/StepCountEhisPaqQuestionnaire">EHIS-PAQ: Zu-Fuß-Gehen</a>
             </td>
             <td>
-<p>The WHOQOL-BREF is a 26-item instrument for assessing subjective quality of life in four domains: physical, psychological, social relationships, and environment. Developed by the WHO.</p>
+<p>The questions Q2 and Q3 from the EHIS-PAQ about the number of days and duration of walking (for transport) in a typical week.</p>
 </td>
          </tr>
          <tr>
@@ -216,6 +216,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Questionnaire-WhoQolBrefQuestionnaire.html"
+                  title="Questionnaire/WhoQolBrefQuestionnaire">WHOQOL-BREF Lebensstil Selbsteinschätzung</a>
+            </td>
+            <td>
+<p>The WHOQOL-BREF is a 26-item instrument for assessing subjective quality of life in four domains: physical, psychological, social relationships, and environment. Developed by the WHO.</p>
 </td>
          </tr>
       </tbody>
@@ -232,7 +241,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="StructureDefinition/at-prenudge-observation">AT PreNUDGE Observation</a>
             </td>
             <td>
-<p>This FHIR profile is defining the overall Observation for PreNUDGE. It is abstract, so no instances of this profile directly are allowed.</p>
+<p>This FHIR profile is defining the overall Observation for PreNUDGE. It is abstract, so no instances of this profile directly are allowed. Be aware that if the user enters values from a device into a questionnaire, it is still considered a manual input. Please keep in mind that all observations must comply with the qualification matrix on https://prenudge.at/qualificationmatrix/.</p>
 </td>
          </tr>
          <tr>
@@ -241,7 +250,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="StructureDefinition/at-prenudge-questionnaire">AT PreNUDGE Questionnaire</a>
             </td>
             <td>
-<p>This FHIR profile is defining the overall Questionnaire for PreNUDGE. Every top level item requires one comment subitem, with the linkId ending or equal 'comment'.</p>
+<p>This FHIR profile is defining the overall Questionnaire for PreNUDGE. Every top level item requires one comment subitem, with the linkId ending or equal 'comment'. Be aware that if the user enters values from a device into a questionnaire, it is still considered a manual input. Please keep in mind that all questionnaires must comply with the qualification matrix on https://prenudge.at/qualificationmatrix/.</p>
 </td>
          </tr>
       </tbody>
@@ -267,16 +276,25 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="StructureDefinition/at-prenudge-bloodglucose-observation">AT PreNUDGE Observation Blood Glucose (only in mg/dL)</a>
             </td>
             <td>
-<p>This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allowes values inbetween 12 and 1200 mg/dL.</p>
+<p>This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allows values inbetween 0 and 999 mg/dL.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-at-prenudge-observation-other.html"
-                  title="StructureDefinition/at-prenudge-observation-other">AT PreNUDGE Observation Other</a>
+               <a href="StructureDefinition-at-prenudge-observation-other-quantities.html"
+                  title="StructureDefinition/at-prenudge-observation-other-quantities">AT PreNUDGE Observation Other Quantities</a>
             </td>
             <td>
-<p>This FHIR profile can be used for all the other Observations for PreNUDGE, not fitting the existing narrow standardized observations. If some code for specifing a new Observation are missing, please contact prenudge@joanneum.at.</p>
+<p>This FHIR profile can be used for all the other Observations for PreNUDGE, beeing quantities and not fitting the existing narrow standardized observations. If some code for specifing a new Observation is missing, please contact prenudge@joanneum.at.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-at-prenudge-observation-other-not-quantities.html"
+                  title="StructureDefinition/at-prenudge-observation-other-not-quantities">AT PreNUDGE Observation Other not Quantities</a>
+            </td>
+            <td>
+<p>This FHIR profile can be used for all the other Observations for PreNUDGE, not beeing an quantity and not fitting the existing narrow standardized observations.</p>
 </td>
          </tr>
          <tr>
@@ -303,7 +321,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="StructureDefinition/at-prenudge-questionnaireresponse">AT PreNUDGE Questionnaire Response</a>
             </td>
             <td>
-<p>This FHIR profile is defining the overall Questionnaire Response for PreNUDGE.</p>
+<p>This FHIR profile is defining the overall Questionnaire Response for PreNUDGE. Be aware that if the user enters values from a device into a questionnaire, it is still considered a manual input. Please keep in mind that all questionnaire responses must comply with the qualification matrix on https://prenudge.at/qualificationmatrix/.</p>
 </td>
          </tr>
       </tbody>
@@ -443,7 +461,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="ConceptMap/AtPrenudgeCodeUnitMap">AT PreNUDGE Code-to-Unit Mapping</a>
             </td>
             <td>
-<p>Maps observation codes to their expected UCUM units for the 'Other' observation profile.</p>
+<p>Maps observation codes to their expected UCUM units for the 'Other Quantities' observation profile.</p>
 </td>
          </tr>
       </tbody>
@@ -460,7 +478,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="Observation/alcoholuse-moderate-example">Alcohol Use O - Moderate (3-4 times weekly)</a>
             </td>
             <td>
-<p>Observation example of an alcohol use observation for a moderate drinker consuming alcohol 3-4 times per week (0.5 drinks per day).</p>
+<p>Example of an alcohol use observation for a moderate drinker consuming alcohol 3-4 times per week (0.5 drinks per day).</p>
 </td>
          </tr>
          <tr>
@@ -469,7 +487,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="Observation/alcoholuse-occasional-example">Alcohol Use O mapped from Q - Daily</a>
             </td>
             <td>
-<p>Observation example of an alcohol use observation for a daily drinker (1 drink per day).</p>
+<p>Example of an alcohol use observation for a daily drinker (1 drink per day).</p>
 </td>
          </tr>
          <tr>
@@ -478,7 +496,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="Observation/alcoholuse-never-example">Alcohol Use O mapped from Q - Non-Drinker</a>
             </td>
             <td>
-<p>Observation example of an alcohol use observation for a lifetime non-drinker (0 drinks per day).</p>
+<p>Example of an alcohol use observation for a lifetime non-drinker (0 drinks per day).</p>
 </td>
          </tr>
          <tr>
@@ -487,7 +505,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="QuestionnaireResponse/AlcoholResponseDaily">Alcohol Use Q - Daily</a>
             </td>
             <td>
-<p>QuestionnaireResponse example of an alcohol use observation for a daily drinker.</p>
+<p>Example  of an alcohol use observation for a daily drinker.</p>
 </td>
          </tr>
          <tr>
@@ -496,7 +514,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="QuestionnaireResponse/AlcoholResponseNever">Alcohol Use Q - Non-Drinker</a>
             </td>
             <td>
-<p>QuestionnaireResponse example of an alcohol use observation for a lifetime non-drinker.</p>
+<p>Example  of an alcohol use observation for a lifetime non-drinker.</p>
 </td>
          </tr>
          <tr>
@@ -513,7 +531,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="Observation/bloodglucose-low-example">Blood Glucose O - Low Example</a>
             </td>
             <td>
-<p>Beispiel einer niedrigen Nüchtern-Blutzucker-Messung (62 mg/dL), hinweisend auf Hypoglykämie.</p>
+<p>Example of a low fasting blood glucose measurement (62 mg/dL), indicating hypoglycemia.</p>
 </td>
          </tr>
          <tr>
@@ -522,7 +540,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="Observation/bloodglucose-elevated-example">Blood Glucose O mapped from Q - Elevated Example</a>
             </td>
             <td>
-<p>Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL), hinweisend auf Diabetes mellitus.</p>
+<p>Example of an elevated fasting blood glucose measurement (142 mg/dL), indicating diabetes mellitus.</p>
 </td>
          </tr>
          <tr>
@@ -531,7 +549,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="Observation/bloodglucose-normal-example">Blood Glucose O mapped from Q - Normal Example</a>
             </td>
             <td>
-<p>Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL).</p>
+<p>Example of a normal fasting blood glucose measurement (95 mg/dL).</p>
 </td>
          </tr>
          <tr>
@@ -540,7 +558,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="QuestionnaireResponse/bloodglucose-response-elevated-example">Blood Glucose Q - Elevated Example</a>
             </td>
             <td>
-<p>Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL) als QuestionnaireResponse.</p>
+<p>Example of an elevated fasting blood glucose measurement (142 mg/dL), indicating diabetes mellitus.</p>
 </td>
          </tr>
          <tr>
@@ -549,7 +567,25 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="QuestionnaireResponse/bloodglucose-response-normal-example">Blood Glucose Q - Normal Example</a>
             </td>
             <td>
-<p>Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL) als QuestionnaireResponse.</p>
+<p>Example of a normal fasting blood glucose measurement (95 mg/dL).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="QuestionnaireResponse-stepcount-ehispaq-high.html"
+                  title="QuestionnaireResponse/stepcount-ehispaq-high">Step Count EHIS PAQ Q - High Example</a>
+            </td>
+            <td>
+<p>Example of a high step count (7 times a week with 2-3 hours).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="QuestionnaireResponse-stepcount-ehispaq-normal.html"
+                  title="QuestionnaireResponse/stepcount-ehispaq-normal">Step Count EHIS PAQ Q - Normal Example</a>
+            </td>
+            <td>
+<p>Example of a normal step count (5 times a week with 30-59 minutes).</p>
 </td>
          </tr>
          <tr>
@@ -558,7 +594,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="Observation/stepcount-sedentary-example">Step Count O - Sedentary Example</a>
             </td>
             <td>
-<p>Beispiel einer niedrigen Schrittzahl (1,204 Schritte pro Tag), typisch für einen überwiegend sitzenden Tag.</p>
+<p>Example of a low step count (1,204 steps per day), typical for a mostly sedentary day.</p>
 </td>
          </tr>
          <tr>
@@ -567,7 +603,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="Observation/stepcount-high-example">Step Count O mapped from Q - High Example</a>
             </td>
             <td>
-<p>Beispiel einer hohen Schrittzahl (133,519 Schritte pro Tag).</p>
+<p>Example of a high step count (133,519 steps per day).</p>
 </td>
          </tr>
          <tr>
@@ -576,7 +612,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="Observation/stepcount-normal-example">Step Count O mapped from Q - Normal Example</a>
             </td>
             <td>
-<p>Beispiel einer normalen Schrittzahl (8,432 Schritte pro Tag).</p>
+<p>Example of a normal step count (8,432 steps per day).</p>
 </td>
          </tr>
          <tr>
@@ -585,7 +621,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="QuestionnaireResponse/stepcount-response-low-example">Step Count Q - High Example</a>
             </td>
             <td>
-<p>Beispiel einer hohen Schrittzahl (133,519 Schritte) als QuestionnaireResponse.</p>
+<p>Example of a high step count (133,519 steps per day).</p>
 </td>
          </tr>
          <tr>
@@ -594,7 +630,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="QuestionnaireResponse/stepcount-response-normal-example">Step Count Q - Normal Example</a>
             </td>
             <td>
-<p>Beispiel einer normalen Schrittzahl (8,432 Schritte) als QuestionnaireResponse.</p>
+<p>Example of a normal step count (8,432 steps per day).</p>
 </td>
          </tr>
          <tr>
@@ -635,7 +671,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Mar 3, 2026 20:10+0000">2026-03-03</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Mar 24, 2026 11:22+0000">2026-03-24</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

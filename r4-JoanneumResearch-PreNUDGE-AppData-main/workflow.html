@@ -155,19 +155,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#app-pairing" id="markdown-toc-app-pairing">App Pairing</a></li>
   <li><a href="#patient-identity-provisioning-and-mpi-resolution" id="markdown-toc-patient-identity-provisioning-and-mpi-resolution">Patient Identity Provisioning and MPI Resolution</a></li>
   <li><a href="#fhir-communication" id="markdown-toc-fhir-communication">FHIR Communication</a></li>
-  <li><a href="#dataprovider-qualification-matrix" id="markdown-toc-dataprovider-qualification-matrix">Dataprovider Qualification Matrix</a></li>
 </ul>
 
 </div>
-<p>The transmission of health profile data from the qualified apps to the <strong>PräNUDGE platform</strong> is optional.</p>
+<p>The transmission of health profile data from the qualified apps to the <strong>PreNUDGE platform</strong> is optional.</p>
 
 <p>Health profile data will only be sent once citizens establish the connection within the app and give their <strong>consent</strong>.  See <a href="#app-pairing">section App Pairing</a> for more.</p>
 
-<p>Before health profile data reaches PräNUDGE, the FHIR MPI module (via Reverse Proxy) creates an App Patient from the token's Subject-ID, links it to a protected Person resource via Person.link, and shields sensitive identity data from apps. See <a href="#patient-identity-provisioning-and-mpi-resolution">section Patient Identity Provisioning and MPI Resolution</a> for more.</p>
+<p>Before health profile data reaches PreNUDGE, the FHIR MPI module (via Reverse Proxy) creates an App Patient from the token's Subject-ID, links it to a protected Person resource via Person.link, and shields sensitive identity data from apps. See <a href="#patient-identity-provisioning-and-mpi-resolution">section Patient Identity Provisioning and MPI Resolution</a> for more.</p>
 
 <p>After the app pairing and the patient identity provisioning is successfully completed, the mobile application can communicate with the <strong>PreNUDGE platform</strong> through standard <strong>FHIR RESTful interactions</strong> that must comply with this <strong>Implementation Guide (IG)</strong>.  See <a href="#fhir-communication">FHIR Communication</a> for more.</p>
 
-<p>Additional there are current and planed requirements for data providers, see <a href="#dataprovider-qualification-matrix">Dataprovider Qualification Matrix</a> for more.</p>
+<p>Additional there are current and planed requirements for data providers, see <a href="https://prenudge.at/qualificationmatrix/">Dataprovider Qualification Matrix</a> for more.</p>
 
 <h3 id="app-pairing">App Pairing</h3>
 
@@ -188,8 +187,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="patient-identity-provisioning-and-mpi-resolution">Patient Identity Provisioning and MPI Resolution</h3>
 
-<p>Before health profile data can be sent to the PräNUDGE platform, a dedicated App Patient must be created. The Subject-ID from the token set is used as the FHIR Resource ID for the Patient. Additionally, a Person resource is created with the citizen's identification details, and the relationship between Person and Patient is established via Person.link.
-This logic is implemented in the PräNUDGE FHIR MPI module. The FHIR MPI module is integrated into the request flow via the Reverse Proxy configuration. For better readability, the Reverse Proxy is not shown in the flow diagram.
+<p>Before health profile data can be sent to the PreNUDGE platform, a dedicated App Patient must be created. The Subject-ID from the token set is used as the FHIR Resource ID for the Patient. Additionally, a Person resource is created with the citizen's identification details, and the relationship between Person and Patient is established via Person.link.
+This logic is implemented in the PreNUDGE FHIR MPI module. The FHIR MPI module is integrated into the request flow via the Reverse Proxy configuration. For better readability, the Reverse Proxy is not shown in the flow diagram.
 To ensure maximum confidentiality of sensitive identity data, the Person resource is protected before access by applications.</p>
 
 <p>This sequence describes how the <strong>FHIR MPI</strong> (Master Patient Index) ensures that a patient identity exists and is correctly linked to a person record before processing clinical resource requests.</p>
@@ -229,18 +228,8 @@ To ensure maximum confidentiality of sensitive identity data, the Person resourc
 </ul>
 
 <p>All interactions <strong>MUST</strong> conform to the specifications, resource profiles, and security guidelines defined in this <strong>Implementation Guide (IG)</strong> to ensure compliance, interoperability, and data integrity.<br />
-These interactions follow the <a href="https://www.hl7.org/fhir/http.html">HL7® FHIR R4 REST API</a> principles, ensuring full interoperability and secure data exchange between the citizen's app and the platform.</p>
+These interactions follow the <a href="https://hl7.org/fhir/R4/http.html">HL7® FHIR R4 REST API</a> principles, ensuring full interoperability and secure data exchange between the citizen's app and the platform.</p>
 
-<h3 id="dataprovider-qualification-matrix">Dataprovider Qualification Matrix</h3>
-
-<p>The following list gives the current and planed requirements for data providers (we call them Apps for now).</p>
-
-<h4 id="get-ready-for-fhir-r6">Get ready for FHIR R6</h4>
-
-<ul>
-  <li>The platform currently utilizes <code class="language-plaintext highlighter-rouge">FHIR R4</code>. Upon the normative release of <code class="language-plaintext highlighter-rouge">FHIR R6</code>, all subsequent data exchange with data providers will be migrated to the newer version.</li>
-  <li>More will follow.</li>
-</ul>
 
 
 
@@ -260,7 +249,7 @@ These interactions follow the <a href="https://www.hl7.org/fhir/http.html">HL7®
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Mar 3, 2026 20:10+0000">2026-03-03</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Mar 24, 2026 11:22+0000">2026-03-24</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

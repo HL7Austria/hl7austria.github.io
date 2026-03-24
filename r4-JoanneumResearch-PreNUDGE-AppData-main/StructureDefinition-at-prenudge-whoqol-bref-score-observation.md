@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-whoqol-bref-score-observation | *Version*:0.1.0 | |
-| Draft as of 2026-03-03 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationWHOQOLBrefScore |
+| Draft as of 2026-03-24 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationWHOQOLBrefScore |
 
  
 Observation profile for recording WHOQOL-BREF domain scores. The overall score is represented in Observation.value, individual domain scores are recorded as components. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-whoqol-b
   "name" : "AtPrenudgeObservationWHOQOLBrefScore",
   "title" : "AT PreNUDGE Observation WHOQOL-BREF Score",
   "status" : "draft",
-  "date" : "2026-03-03T20:10:31+00:00",
+  "date" : "2026-03-24T11:22:25+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -145,16 +145,14 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-whoqol-b
       },
       "short" : "WHOQOL-BREF scores: general and four domain scores",
       "min" : 5,
-      "max" : "5",
-      "mustSupport" : true
+      "max" : "5"
     },
     {
       "id" : "Observation.component:generalized",
       "path" : "Observation.component",
       "sliceName" : "generalized",
       "min" : 1,
-      "max" : "1",
-      "mustSupport" : true
+      "max" : "1"
     },
     {
       "id" : "Observation.component:generalized.code",
@@ -177,8 +175,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-whoqol-b
     {
       "id" : "Observation.component:generalized.value[x].value",
       "path" : "Observation.component.value[x].value",
-      "min" : 1,
-      "mustSupport" : true
+      "min" : 1
     },
     {
       "id" : "Observation.component:generalized.value[x].unit",
@@ -200,8 +197,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-whoqol-b
       "path" : "Observation.component",
       "sliceName" : "physical",
       "min" : 1,
-      "max" : "1",
-      "mustSupport" : true
+      "max" : "1"
     },
     {
       "id" : "Observation.component:physical.code",
@@ -224,8 +220,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-whoqol-b
     {
       "id" : "Observation.component:physical.value[x].value",
       "path" : "Observation.component.value[x].value",
-      "min" : 1,
-      "mustSupport" : true
+      "min" : 1
     },
     {
       "id" : "Observation.component:physical.value[x].unit",
@@ -247,8 +242,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-whoqol-b
       "path" : "Observation.component",
       "sliceName" : "psychological",
       "min" : 1,
-      "max" : "1",
-      "mustSupport" : true
+      "max" : "1"
     },
     {
       "id" : "Observation.component:psychological.code",
@@ -271,8 +265,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-whoqol-b
     {
       "id" : "Observation.component:psychological.value[x].value",
       "path" : "Observation.component.value[x].value",
-      "min" : 1,
-      "mustSupport" : true
+      "min" : 1
     },
     {
       "id" : "Observation.component:psychological.value[x].unit",
@@ -294,8 +287,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-whoqol-b
       "path" : "Observation.component",
       "sliceName" : "relationships",
       "min" : 1,
-      "max" : "1",
-      "mustSupport" : true
+      "max" : "1"
     },
     {
       "id" : "Observation.component:relationships.code",
@@ -318,8 +310,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-whoqol-b
     {
       "id" : "Observation.component:relationships.value[x].value",
       "path" : "Observation.component.value[x].value",
-      "min" : 1,
-      "mustSupport" : true
+      "min" : 1
     },
     {
       "id" : "Observation.component:relationships.value[x].unit",
@@ -341,8 +332,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-whoqol-b
       "path" : "Observation.component",
       "sliceName" : "environment",
       "min" : 1,
-      "max" : "1",
-      "mustSupport" : true
+      "max" : "1"
     },
     {
       "id" : "Observation.component:environment.code",
@@ -365,8 +355,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-whoqol-b
     {
       "id" : "Observation.component:environment.value[x].value",
       "path" : "Observation.component.value[x].value",
-      "min" : 1,
-      "mustSupport" : true
+      "min" : 1
     },
     {
       "id" : "Observation.component:environment.value[x].unit",

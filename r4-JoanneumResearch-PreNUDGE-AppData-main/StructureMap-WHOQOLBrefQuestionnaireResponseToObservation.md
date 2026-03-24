@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/WHOQOLBrefQuestionnaireResponseToObservation | *Version*:0.1.0 | |
-| Active as of 2026-03-03 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:WHOQOLBrefQuestionnaireResponseToObservation |
+| Active as of 2026-03-24 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:WHOQOLBrefQuestionnaireResponseToObservation |
 
  
 WHOQOL-BREF Q score to O score 
@@ -27,7 +27,7 @@ WHOQOL-BREF Q score to O score
   "name" : "WHOQOLBrefQuestionnaireResponseToObservation",
   "title" : "WHOQOL-BREF Q score to O score",
   "status" : "active",
-  "date" : "2026-03-03T20:10:31+00:00",
+  "date" : "2026-03-24T11:22:25+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -119,6 +119,33 @@ WHOQOL-BREF Q score to O score
         },
         {
           "valueString" : "Quality of life assessment"
+        }]
+      }]
+    },
+    {
+      "name" : "SetEffective",
+      "source" : [{
+        "context" : "src",
+        "element" : "authored",
+        "variable" : "authored"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "effectiveDateTime",
+        "variable" : "dt",
+        "transform" : "create",
+        "parameter" : [{
+          "valueString" : "dateTime"
+        }]
+      },
+      {
+        "context" : "dt",
+        "contextType" : "variable",
+        "element" : "value",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueId" : "authored"
         }]
       }]
     },

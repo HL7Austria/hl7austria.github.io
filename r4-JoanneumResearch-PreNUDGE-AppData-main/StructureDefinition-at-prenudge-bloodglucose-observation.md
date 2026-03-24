@@ -9,10 +9,10 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation | *Version*:0.1.0 | |
-| Draft as of 2026-03-03 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationBloodGlucose |
+| Draft as of 2026-03-24 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationBloodGlucose |
 
  
-This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allowes values inbetween 12 and 1200 mg/dL. 
+This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allows values inbetween 0 and 999 mg/dL. 
 
 **Usages:**
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-bloodglu
   "name" : "AtPrenudgeObservationBloodGlucose",
   "title" : "AT PreNUDGE Observation Blood Glucose (only in mg/dL)",
   "status" : "draft",
-  "date" : "2026-03-03T20:10:31+00:00",
+  "date" : "2026-03-24T11:22:25+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -58,7 +58,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-bloodglu
       "use" : "work"
     }]
   }],
-  "description" : "This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allowes values inbetween 12 and 1200 mg/dL.",
+  "description" : "This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allows values inbetween 0 and 999 mg/dL.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "workflow",
@@ -102,8 +102,8 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-bloodglu
       "constraint" : [{
         "key" : "bloodglucose-range",
         "severity" : "error",
-        "human" : "Blood glucose must be inbetween 12 and 1200 mg/dL.",
-        "expression" : "value.ofType(Quantity).value >= 12 and value.ofType(Quantity).value <= 1200",
+        "human" : "Blood glucose must be inbetween 0 and 999 mg/dL.",
+        "expression" : "value.ofType(Quantity).value >= 0 and value.ofType(Quantity).value <= 999",
         "source" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation"
       }]
     },
@@ -124,14 +124,12 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-bloodglu
       "min" : 1,
       "type" : [{
         "code" : "Quantity"
-      }],
-      "mustSupport" : true
+      }]
     },
     {
       "id" : "Observation.value[x].value",
       "path" : "Observation.value[x].value",
-      "min" : 1,
-      "mustSupport" : true
+      "min" : 1
     },
     {
       "id" : "Observation.value[x].unit",

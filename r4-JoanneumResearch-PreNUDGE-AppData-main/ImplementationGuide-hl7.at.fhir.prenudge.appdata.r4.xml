@@ -11,7 +11,7 @@
   <name value="PreNUDGEAppdataR4"/>
   <title value="PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)"/>
   <status value="draft"/>
-  <date value="2026-03-03T20:10:31+00:00"/>
+  <date value="2026-03-24T11:22:25+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -38,7 +38,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
-    <version value="7.0.1"/>
+    <version value="7.1.0"/>
   </dependsOn>
   <dependsOn id="hl7ext">
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
@@ -260,7 +260,7 @@
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
-      <valueCode value="hl7.fhir.uv.tools.r4#0.9.0"/>
+      <valueCode value="hl7.fhir.uv.tools.r4#1.1.0"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
@@ -470,7 +470,7 @@
         <reference value="Observation/alcoholuse-moderate-example"/>
       </reference>
       <name value="Alcohol Use O - Moderate (3-4 times weekly)"/>
-      <description value="Observation example of an alcohol use observation for a moderate drinker consuming alcohol 3-4 times per week (0.5 drinks per day)."/>
+      <description value="Example of an alcohol use observation for a moderate drinker consuming alcohol 3-4 times per week (0.5 drinks per day)."/>
       <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation"/>
     </resource>
     <resource>
@@ -481,7 +481,7 @@
         <reference value="Observation/alcoholuse-occasional-example"/>
       </reference>
       <name value="Alcohol Use O mapped from Q - Daily"/>
-      <description value="Observation example of an alcohol use observation for a daily drinker (1 drink per day)."/>
+      <description value="Example of an alcohol use observation for a daily drinker (1 drink per day)."/>
       <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation"/>
     </resource>
     <resource>
@@ -492,7 +492,7 @@
         <reference value="Observation/alcoholuse-never-example"/>
       </reference>
       <name value="Alcohol Use O mapped from Q - Non-Drinker"/>
-      <description value="Observation example of an alcohol use observation for a lifetime non-drinker (0 drinks per day)."/>
+      <description value="Example of an alcohol use observation for a lifetime non-drinker (0 drinks per day)."/>
       <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation"/>
     </resource>
     <resource>
@@ -503,7 +503,7 @@
         <reference value="QuestionnaireResponse/AlcoholResponseDaily"/>
       </reference>
       <name value="Alcohol Use Q - Daily"/>
-      <description value="QuestionnaireResponse example of an alcohol use observation for a daily drinker."/>
+      <description value="Example  of an alcohol use observation for a daily drinker."/>
       <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
     </resource>
     <resource>
@@ -514,7 +514,7 @@
         <reference value="QuestionnaireResponse/AlcoholResponseNever"/>
       </reference>
       <name value="Alcohol Use Q - Non-Drinker"/>
-      <description value="QuestionnaireResponse example of an alcohol use observation for a lifetime non-drinker."/>
+      <description value="Example  of an alcohol use observation for a lifetime non-drinker."/>
       <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
     </resource>
     <resource>
@@ -522,7 +522,7 @@
         <valueString value="Questionnaire"/>
       </extension>
       <reference>
-        <reference value="Questionnaire/AtPrenudgeQuestionnaireAlcoholUse"/>
+        <reference value="Questionnaire/AlcoholUseQuestionnaire"/>
       </reference>
       <name value="Alkoholkonsum im letzten Jahr"/>
       <description value="Categorical variable for the frequency of alcohol consumption in the last year (IPS compatible)."/>
@@ -547,7 +547,7 @@
         <reference value="ConceptMap/AtPrenudgeCodeUnitMap"/>
       </reference>
       <name value="AT PreNUDGE Code-to-Unit Mapping"/>
-      <description value="Maps observation codes to their expected UCUM units for the 'Other' observation profile."/>
+      <description value="Maps observation codes to their expected UCUM units for the 'Other Quantities' observation profile."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -558,7 +558,7 @@
         <reference value="StructureDefinition/at-prenudge-observation"/>
       </reference>
       <name value="AT PreNUDGE Observation"/>
-      <description value="This FHIR profile is defining the overall Observation for PreNUDGE. It is abstract, so no instances of this profile directly are allowed."/>
+      <description value="This FHIR profile is defining the overall Observation for PreNUDGE. It is abstract, so no instances of this profile directly are allowed. Be aware that if the user enters values from a device into a questionnaire, it is still considered a manual input. Please keep in mind that all observations must comply with the qualification matrix on https://prenudge.at/qualificationmatrix/."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -580,7 +580,7 @@
         <reference value="StructureDefinition/at-prenudge-bloodglucose-observation"/>
       </reference>
       <name value="AT PreNUDGE Observation Blood Glucose (only in mg/dL)"/>
-      <description value="This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allowes values inbetween 12 and 1200 mg/dL."/>
+      <description value="This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allows values inbetween 0 and 999 mg/dL."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -599,10 +599,21 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/at-prenudge-observation-other"/>
+        <reference value="StructureDefinition/at-prenudge-observation-other-not-quantities"/>
       </reference>
-      <name value="AT PreNUDGE Observation Other"/>
-      <description value="This FHIR profile can be used for all the other Observations for PreNUDGE, not fitting the existing narrow standardized observations. If some code for specifing a new Observation are missing, please contact prenudge@joanneum.at."/>
+      <name value="AT PreNUDGE Observation Other not Quantities"/>
+      <description value="This FHIR profile can be used for all the other Observations for PreNUDGE, not beeing an quantity and not fitting the existing narrow standardized observations."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-prenudge-observation-other-quantities"/>
+      </reference>
+      <name value="AT PreNUDGE Observation Other Quantities"/>
+      <description value="This FHIR profile can be used for all the other Observations for PreNUDGE, beeing quantities and not fitting the existing narrow standardized observations. If some code for specifing a new Observation is missing, please contact prenudge@joanneum.at."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -657,7 +668,7 @@
         <reference value="StructureDefinition/at-prenudge-questionnaire"/>
       </reference>
       <name value="AT PreNUDGE Questionnaire"/>
-      <description value="This FHIR profile is defining the overall Questionnaire for PreNUDGE. Every top level item requires one comment subitem, with the linkId ending or equal 'comment'."/>
+      <description value="This FHIR profile is defining the overall Questionnaire for PreNUDGE. Every top level item requires one comment subitem, with the linkId ending or equal 'comment'. Be aware that if the user enters values from a device into a questionnaire, it is still considered a manual input. Please keep in mind that all questionnaires must comply with the qualification matrix on https://prenudge.at/qualificationmatrix/."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -668,7 +679,7 @@
         <reference value="StructureDefinition/at-prenudge-questionnaireresponse"/>
       </reference>
       <name value="AT PreNUDGE Questionnaire Response"/>
-      <description value="This FHIR profile is defining the overall Questionnaire Response for PreNUDGE."/>
+      <description value="This FHIR profile is defining the overall Questionnaire Response for PreNUDGE. Be aware that if the user enters values from a device into a questionnaire, it is still considered a manual input. Please keep in mind that all questionnaire responses must comply with the qualification matrix on https://prenudge.at/qualificationmatrix/."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -712,7 +723,7 @@
         <reference value="Observation/bloodglucose-low-example"/>
       </reference>
       <name value="Blood Glucose O - Low Example"/>
-      <description value="Beispiel einer niedrigen Nüchtern-Blutzucker-Messung (62 mg/dL), hinweisend auf Hypoglykämie."/>
+      <description value="Example of a low fasting blood glucose measurement (62 mg/dL), indicating hypoglycemia."/>
       <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation"/>
     </resource>
     <resource>
@@ -723,7 +734,7 @@
         <reference value="Observation/bloodglucose-elevated-example"/>
       </reference>
       <name value="Blood Glucose O mapped from Q - Elevated Example"/>
-      <description value="Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL), hinweisend auf Diabetes mellitus."/>
+      <description value="Example of an elevated fasting blood glucose measurement (142 mg/dL), indicating diabetes mellitus."/>
       <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation"/>
     </resource>
     <resource>
@@ -734,7 +745,7 @@
         <reference value="Observation/bloodglucose-normal-example"/>
       </reference>
       <name value="Blood Glucose O mapped from Q - Normal Example"/>
-      <description value="Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL)."/>
+      <description value="Example of a normal fasting blood glucose measurement (95 mg/dL)."/>
       <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation"/>
     </resource>
     <resource>
@@ -745,8 +756,8 @@
         <reference value="QuestionnaireResponse/bloodglucose-response-elevated-example"/>
       </reference>
       <name value="Blood Glucose Q - Elevated Example"/>
-      <description value="Beispiel einer erhöhten Nüchtern-Blutzucker-Messung (142 mg/dL) als QuestionnaireResponse."/>
-      <exampleBoolean value="true"/>
+      <description value="Example of an elevated fasting blood glucose measurement (142 mg/dL), indicating diabetes mellitus."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -756,8 +767,8 @@
         <reference value="QuestionnaireResponse/bloodglucose-response-normal-example"/>
       </reference>
       <name value="Blood Glucose Q - Normal Example"/>
-      <description value="Beispiel einer normalen Nüchtern-Blutzucker-Messung (95 mg/dL) als QuestionnaireResponse."/>
-      <exampleBoolean value="true"/>
+      <description value="Example of a normal fasting blood glucose measurement (95 mg/dL)."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -767,7 +778,7 @@
         <reference value="Questionnaire/BloodGlucoseQuestionnaire"/>
       </reference>
       <name value="Blutzucker bei der letzten Messung"/>
-      <description value="A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allows values inbetween 12 and 1200 mg/dL."/>
+      <description value="A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allows values inbetween 0 and 999 mg/dL."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -775,10 +786,10 @@
         <valueString value="Questionnaire"/>
       </extension>
       <reference>
-        <reference value="Questionnaire/QolQuestionnaire"/>
+        <reference value="Questionnaire/StepCountEhisPaqQuestionnaire"/>
       </reference>
-      <name value="Lebensstil Selbsteinschätzung"/>
-      <description value="The WHOQOL-BREF is a 26-item instrument for assessing subjective quality of life in four domains: physical, psychological, social relationships, and environment. Developed by the WHO."/>
+      <name value="EHIS-PAQ: Zu-Fuß-Gehen"/>
+      <description value="The questions Q2 and Q3 from the EHIS-PAQ about the number of days and duration of walking (for transport) in a typical week."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -794,13 +805,35 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/stepcount-ehispaq-high"/>
+      </reference>
+      <name value="Step Count EHIS PAQ Q - High Example"/>
+      <description value="Example of a high step count (7 times a week with 2-3 hours)."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/stepcount-ehispaq-normal"/>
+      </reference>
+      <name value="Step Count EHIS PAQ Q - Normal Example"/>
+      <description value="Example of a normal step count (5 times a week with 30-59 minutes)."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Observation"/>
       </extension>
       <reference>
         <reference value="Observation/stepcount-sedentary-example"/>
       </reference>
       <name value="Step Count O - Sedentary Example"/>
-      <description value="Beispiel einer niedrigen Schrittzahl (1,204 Schritte pro Tag), typisch für einen überwiegend sitzenden Tag."/>
+      <description value="Example of a low step count (1,204 steps per day), typical for a mostly sedentary day."/>
       <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation"/>
     </resource>
     <resource>
@@ -811,7 +844,7 @@
         <reference value="Observation/stepcount-high-example"/>
       </reference>
       <name value="Step Count O mapped from Q - High Example"/>
-      <description value="Beispiel einer hohen Schrittzahl (133,519 Schritte pro Tag)."/>
+      <description value="Example of a high step count (133,519 steps per day)."/>
       <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation"/>
     </resource>
     <resource>
@@ -822,7 +855,7 @@
         <reference value="Observation/stepcount-normal-example"/>
       </reference>
       <name value="Step Count O mapped from Q - Normal Example"/>
-      <description value="Beispiel einer normalen Schrittzahl (8,432 Schritte pro Tag)."/>
+      <description value="Example of a normal step count (8,432 steps per day)."/>
       <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation"/>
     </resource>
     <resource>
@@ -833,8 +866,8 @@
         <reference value="QuestionnaireResponse/stepcount-response-low-example"/>
       </reference>
       <name value="Step Count Q - High Example"/>
-      <description value="Beispiel einer hohen Schrittzahl (133,519 Schritte) als QuestionnaireResponse."/>
-      <exampleBoolean value="true"/>
+      <description value="Example of a high step count (133,519 steps per day)."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -844,8 +877,19 @@
         <reference value="QuestionnaireResponse/stepcount-response-normal-example"/>
       </reference>
       <name value="Step Count Q - Normal Example"/>
-      <description value="Beispiel einer normalen Schrittzahl (8,432 Schritte) als QuestionnaireResponse."/>
-      <exampleBoolean value="true"/>
+      <description value="Example of a normal step count (8,432 steps per day)."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/WhoQolBrefQuestionnaire"/>
+      </reference>
+      <name value="WHOQOL-BREF Lebensstil Selbsteinschätzung"/>
+      <description value="The WHOQOL-BREF is a 26-item instrument for assessing subjective quality of life in four domains: physical, psychological, social relationships, and environment. Developed by the WHO."/>
+      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -867,7 +911,7 @@
       </reference>
       <name value="WHOQOL-BREF Q"/>
       <description value="Example of a completed WHOQOL-BREF QuestionnaireResponse including all 26 items and calculated scores."/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
