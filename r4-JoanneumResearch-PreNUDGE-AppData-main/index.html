@@ -150,12 +150,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div class="markdown-toc">
-<ul id="markdown-toc">
-  <li><a href="#prenudge-fhir-ig-for-data-provider--data-from-apps" id="markdown-toc-prenudge-fhir-ig-for-data-provider--data-from-apps">PreNUDGE FHIR® IG for Data Provider / Data from Apps</a></li>
-  <li><a href="#ballot-info" id="markdown-toc-ballot-info">Ballot Info</a></li>
-</ul>
-
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
 <p>PreNUDGE is an Austrian research project designed to strengthen citizens' personal responsibility for their health. The project aims to increase the number of <strong>healthy life years</strong> through the <strong>digitalization of self-reported health data</strong>.</p>
 
@@ -171,45 +167,37 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>We focus on narrow standardization of <strong>four PreNUDGE measurements</strong>:</p>
 <ul>
-  <li>Daily activity as <strong>Steps per day</strong> (from a <a href="Questionnaire-StepCountQuestionnaire.html"><strong>questionnaire</strong></a> and from a <a href="StructureDefinition-at-prenudge-stepcount-observation.html"><strong>wearable device as an observation</strong></a>)</li>
+  <li>Physical Activity: Daily activity as <strong>Steps per day</strong> (from a <a href="Questionnaire-StepCountQuestionnaire.html"><strong>questionnaire</strong></a> and from a <a href="StructureDefinition-at-prenudge-stepcount-observation.html"><strong>wearable device as an observation</strong></a>)</li>
   <li><strong>Alcohol consumption</strong> as number of drinks (from a <a href="Questionnaire-AlcoholUseQuestionnaire.html"><strong>questionnaire</strong></a> and from an <a href="StructureDefinition-at-prenudge-alcoholuse-observation.html"><strong>observation</strong></a>)</li>
-  <li><strong>Blood glucose</strong> in mg/dL (from a <a href="Questionnaire-BloodGlucoseQuestionnaire.html"><strong>questionnaire</strong></a> and from a <a href="StructureDefinition-at-prenudge-bloodglucose-observation.html"><strong>device as an observation</strong></a>)</li>
   <li><strong>Quality of life</strong> (from a <a href="Questionnaire-WhoQolBrefQuestionnaire.html"><strong>questionnaire</strong></a> with a calculated <a href="StructureDefinition-at-prenudge-whoqol-bref-score-observation.html"><strong>score as an observation</strong></a>)</li>
+  <li>For Demo Purposes: <strong>Blood glucose</strong> in mg/dL (from a <a href="Questionnaire-BloodGlucoseQuestionnaire.html"><strong>questionnaire</strong></a> and from a <a href="StructureDefinition-at-prenudge-bloodglucose-observation.html"><strong>device as an observation</strong></a>)</li>
 </ul>
 
 <p>For viewing the full questionnaires use tools like <a href="https://lhcfhirtools.nlm.nih.gov/lhcforms">lhcforms</a>.</p>
 
-<p>Each <strong>questionnaire variant</strong> maps <strong>one-way</strong> to its corresponding <strong>observation variant</strong>. The mappings can be found at <a href="artifacts.html#terminology-structure-maps">StructureMaps</a> and can be executed with <a href="https://gitlab.com/cdehealth/malac-hd">MaLaC-HD</a>.</p>
+<p>Each <strong>questionnaire variant</strong> maps <strong>one-way</strong> to its corresponding <strong>observation variant</strong>. The mappings can be found at <a href="artifacts.html#terminology-structure-maps">StructureMaps</a> and can be executed with <a href="https://gitlab.com/cdehealth/malac-hd">MaLaC-HD</a>. These transformations will be performed on the server side.</p>
 
-<p>Additional PreNUDGE measurements, also narrow standardized, will be specified analogously to these four, based on feedback from this informative ballot.
-These are:</p>
+<p>Additional PreNUDGE measurements, also narrow standardized, will be specified analogously to these four, based on feedback from the informative ballot. The following are to be specified:</p>
 <ul>
-  <li>a</li>
-  <li>b</li>
-  <li>c</li>
+  <li>Physical Activity: Minutes of moderate physical activity (per week), Minutes of physical activity (per week) (from a questionnaire and from a wearable device as an observation)</li>
+  <li>Physical Activity: Number of muscle strengthening exercise sessions (per week) (from a questionnaire and from a wearable device as an observation)</li>
+  <li>Physical Activity: Sitting hours (per day) (from a questionnaire from a wearable device as an observation)</li>
+  <li>Smoking: Current status (from a questionnaire and from an observation)</li>
+  <li>Sleep: Average sleep duration (hours per night) (from a questionnaire and from a wearable device as an observation)</li>
+  <li>Sleep: Self-assessment of sleep quality (from a questionnaire as part of the WHOQOL-BREF)</li>
+  <li>Nutrition: Portions of fruit and vegetables (per day) (from a questionnaire)</li>
+  <li>Nutrition: Consumption frequency of sugary and salty foods (per week) (from a questionnaire)</li>
+  <li>Sociodemographic Data: Age (from a questionnaire)</li>
+  <li>Sociodemographic Data: Gender (from a questionnaire)</li>
+  <li>Sociodemographic Data: Highest completed education (ISCED level) (from a questionnaire)</li>
+  <li>Psychosocial Factors: Self reported emotional burden (from a questionnaire)</li>
+  <li>Psychosocial Factors: Self reported stress (from a questionnaire with a calculated score as an observation)</li>
+  <li>Anthropometry: Body Mass Index (kg/m²) (from a questionnaire and from a wearable device as an observation)</li>
+  <li>Workability (score per category) (from a questionnaire with a calculated score as an observation)</li>
 </ul>
 
 <p>Besides these narrow standardized measurements, <strong>broad standardized measurements</strong> called <a href="StructureDefinition-at-prenudge-observation-other-quantities.html"><strong>other quantities observations</strong></a> and <a href="StructureDefinition-at-prenudge-observation-other-not-quantities.html"><strong>other not quantities observations</strong></a> are also supported. Please be aware that such broad standardized measurements do not have a corresponding questionnaire.</p>
 
-<h3 id="ballot-info">Ballot Info</h3>
-
-<p>Communication regarding the <strong>ballot</strong> will take place exclusively through the <strong>TC FHIR mailing list</strong>.<br />
-Consensus group registrations and questions should be sent to <a href="mailto:tc-fhir@hl7.at">tc-fhir@hl7.at</a>.</p>
-
-<p>General information and deadlines according to HL7 Austria voting procedures:</p>
-
-<ul>
-  <li><strong>Registration phase:</strong> February 2, 2026 – March 3, 2026</li>
-  <li><strong>Eligibility:</strong> Only current members of <strong>HL7 Austria</strong> may register</li>
-  <li><strong>Balloting phase:</strong> Opens March 4, 2026 (ballot materials made available)</li>
-  <li><strong>Balloting closes:</strong> March 18, 2026</li>
-  <li><strong>Resolution phase:</strong> Minimum duration of 2 weeks</li>
-  <li><strong>Objection (appeal) phase:</strong> 2 weeks after release of corrected materials</li>
-  <li><strong>Voting:</strong> Only consensus group members may submit votes</li>
-</ul>
-
-<p>We look forward to your active participation in the balloting process, which makes a vital contribution to quality assurance and the success of Austrian e-health applications.<br />
-Thank you very much for your commitment!</p>
 
 
 
@@ -229,7 +217,7 @@ Thank you very much for your commitment!</p>
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Mar 24, 2026 11:22+0000">2026-03-24</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Fri, Mar 27, 2026 21:20+0000">2026-03-27</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

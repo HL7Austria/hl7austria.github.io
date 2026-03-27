@@ -9,11 +9,11 @@ The transmission of health profile data from the qualified apps to the **PreNUDG
 
 Health profile data will only be sent once citizens establish the connection within the app and give their **consent**. See [section App Pairing](#app-pairing) for more.
 
-Before health profile data reaches PreNUDGE, the FHIR MPI module (via Reverse Proxy) creates an App Patient from the token's Subject-ID, links it to a protected Person resource via Person.link, and shields sensitive identity data from apps. See [section Patient Identity Provisioning and MPI Resolution](#patient-identity-provisioning-and-mpi-resolution) for more.
+Before health profile data reaches PreNUDGE, the FHIR Master Patient Index (MPI) module (via Reverse Proxy) creates an App Patient from the token's Subject-ID, links it to a protected Person resource via Person.link, and shields sensitive identity data from apps. See [section Patient Identity Provisioning and MPI Resolution](#patient-identity-provisioning-and-mpi-resolution) for more.
 
 After the app pairing and the patient identity provisioning is successfully completed, the mobile application can communicate with the **PreNUDGE platform** through standard **FHIR RESTful interactions** that must comply with this **Implementation Guide (IG)**. See [FHIR Communication](#fhir-communication) for more.
 
-Additional there are current and planed requirements for data providers, see [Dataprovider Qualification Matrix](https://prenudge.at/qualificationmatrix/) for more.
+Additional there are current and planned requirements for data providers, see [Dataprovider Qualification Matrix](https://prenudge.at/qualificationmatrix/) for more.
 
 ### App Pairing
 
@@ -23,7 +23,7 @@ This sequence describes the process of a citizen connecting their mobile applica
 1. **Initiation**: The citizen starts the "App Pairing" process within the app.
 1. **Authorization Request**: The app initiates an**OAuth2 Authorization Code Flow**by redirecting to the**PreNUDGE IAM**.
 1. **Authentication**: The citizen authenticates via**ID-Austria**.
-1. **Identity Exchange**: ID-Austria provides verified user information (e.g.,`gh:bpk`,`ssn`) to the PreNUDGE IAM, which then persists the user identity.
+1. **Identity Exchange**: ID-Austria provides verified user information to the PreNUDGE IAM, which then persists the user identity.
 1. **Consent Management**: The citizen provides explicit consent for both the platform usage and the specific app pairing.
 1. **Token Issuance**: Upon successful consent, the PreNUDGE IAM issues a**token set**to the app, containing a**pairwise subject identifier**.
 1. **Profile Integration**: The app stores the token set within the local user profile. The**pairwise subject identifier**is used as the**FHIR Patient ID**to reference all subsequent clinical resources (e.g.,`Observation`,`QuestionnaireResponse`, etc.).
@@ -41,7 +41,7 @@ This sequence describes how the **FHIR MPI** (Master Patient Index) ensures that
 1. **Cache Validation**: The FHIR MPI checks its internal cache to verify if the requesting App Patient identity is already known and active.
 1. **Identity Resolution (Cache Miss)**:
 * If no cache hit occurs, the MPI attempts to load the **App Patient** from the FHIR Server.
-* **Provisioning Logic**: If the App Patient does not exist: 
+* **Provisioning Logic**, if the App Patient does not exist: 
 * The MPI attempts to locate the underlying **Person** resource.
 * The MPI performs a **Token Exchange** with the IAM to obtain an administrative token for backend operations.
 * The MPI creates the **App Patient** resource.

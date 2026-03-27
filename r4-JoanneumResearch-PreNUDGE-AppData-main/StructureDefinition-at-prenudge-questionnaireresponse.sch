@@ -13,6 +13,7 @@
     <sch:title>f:QuestionnaireResponse</sch:title>
     <sch:rule context="f:QuestionnaireResponse">
       <sch:assert test="count(f:identifier) &gt;= 1">identifier: minimum cardinality of 'identifier' is 1</sch:assert>
+      <sch:assert test="count(f:authored) &gt;= 1">authored: minimum cardinality of 'authored' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

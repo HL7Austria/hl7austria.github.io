@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse | *Version*:0.1.0 | |
-| Draft as of 2026-03-24 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeQuestionnaireResponse |
+| Draft as of 2026-03-27 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeQuestionnaireResponse |
 
  
 This FHIR profile is defining the overall Questionnaire Response for PreNUDGE. Be aware that if the user enters values from a device into a questionnaire, it is still considered a manual input. Please keep in mind that all questionnaire responses must comply with the qualification matrix on https://prenudge.at/qualificationmatrix/. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-question
   "name" : "AtPrenudgeQuestionnaireResponse",
   "title" : "AT PreNUDGE Questionnaire Response",
   "status" : "draft",
-  "date" : "2026-03-24T11:22:25+00:00",
+  "date" : "2026-03-27T21:20:49+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -88,7 +88,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-question
     {
       "id" : "QuestionnaireResponse.identifier",
       "path" : "QuestionnaireResponse.identifier",
-      "short" : "Unique id for this set of answers, at least one is assigned by the data provider",
+      "short" : "Mandatory date the answers were gathered",
       "min" : 1
     },
     {
@@ -107,6 +107,11 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-question
       "path" : "QuestionnaireResponse.status",
       "short" : "In PreNUDGE only completed QuestionnaireResponses are beeing accepted",
       "patternCode" : "completed"
+    },
+    {
+      "id" : "QuestionnaireResponse.authored",
+      "path" : "QuestionnaireResponse.authored",
+      "min" : 1
     }]
   }
 }

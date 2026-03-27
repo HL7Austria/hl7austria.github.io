@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/BloodGlucoseQuestionnaire | *Version*:0.1.0 | |
-| Active as of 2026-03-24 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:BloodGlucoseQuestionnaire |
+| Active as of 2026-03-27 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:BloodGlucoseQuestionnaire |
 
  
 A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allows values inbetween 0 and 999 mg/dL. 
@@ -32,7 +32,7 @@ A simple questionnaire for asking how high the blood glucose level is right now.
   "status" : "active",
   "experimental" : false,
   "subjectType" : ["Patient"],
-  "date" : "2026-03-24T11:22:25+00:00",
+  "date" : "2026-03-27T21:20:49+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -86,7 +86,8 @@ A simple questionnaire for asking how high the blood glucose level is right now.
       }],
       "linkId" : "datetime",
       "text" : "Wann haben sie diesen Wert gemessen?",
-      "type" : "dateTime"
+      "type" : "dateTime",
+      "required" : true
     },
     {
       "linkId" : "comment",

@@ -9,14 +9,13 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-other-observations-units | *Version*:0.1.0 | |
-| Active as of 2026-03-24 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeValueSetOtherObservationsUnits |
+| Active as of 2026-03-27 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeValueSetOtherObservationsUnits |
 
  
 Allowed UCUM units for the 'Other' observation profile. 
 
  **References** 
 
-* [AT PreNUDGE Observation Other Quantities](StructureDefinition-at-prenudge-observation-other-quantities.md)
 * [AT PreNUDGE Observation Other Quantities](StructureDefinition-at-prenudge-observation-other-quantities.md)
 
 ### Logical Definition (CLD)
@@ -52,7 +51,7 @@ Allowed UCUM units for the 'Other' observation profile.
   "title" : "AT PreNUDGE Other Observations Units",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-03-24T11:22:25+00:00",
+  "date" : "2026-03-27T21:20:49+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -74,10 +73,6 @@ Allowed UCUM units for the 'Other' observation profile.
     "include" : [{
       "system" : "http://unitsofmeasure.org",
       "concept" : [{
-        "code" : "min",
-        "display" : "minute"
-      },
-      {
         "code" : "{finding}",
         "display" : "finding"
       },

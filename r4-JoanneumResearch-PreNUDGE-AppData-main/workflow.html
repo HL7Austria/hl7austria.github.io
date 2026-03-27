@@ -162,11 +162,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Health profile data will only be sent once citizens establish the connection within the app and give their <strong>consent</strong>.  See <a href="#app-pairing">section App Pairing</a> for more.</p>
 
-<p>Before health profile data reaches PreNUDGE, the FHIR MPI module (via Reverse Proxy) creates an App Patient from the token's Subject-ID, links it to a protected Person resource via Person.link, and shields sensitive identity data from apps. See <a href="#patient-identity-provisioning-and-mpi-resolution">section Patient Identity Provisioning and MPI Resolution</a> for more.</p>
+<p>Before health profile data reaches PreNUDGE, the FHIR Master Patient Index (MPI) module (via Reverse Proxy) creates an App Patient from the token's Subject-ID, links it to a protected Person resource via Person.link, and shields sensitive identity data from apps. See <a href="#patient-identity-provisioning-and-mpi-resolution">section Patient Identity Provisioning and MPI Resolution</a> for more.</p>
 
 <p>After the app pairing and the patient identity provisioning is successfully completed, the mobile application can communicate with the <strong>PreNUDGE platform</strong> through standard <strong>FHIR RESTful interactions</strong> that must comply with this <strong>Implementation Guide (IG)</strong>.  See <a href="#fhir-communication">FHIR Communication</a> for more.</p>
 
-<p>Additional there are current and planed requirements for data providers, see <a href="https://prenudge.at/qualificationmatrix/">Dataprovider Qualification Matrix</a> for more.</p>
+<p>Additional there are current and planned requirements for data providers, see <a href="https://prenudge.at/qualificationmatrix/">Dataprovider Qualification Matrix</a> for more.</p>
 
 <h3 id="app-pairing">App Pairing</h3>
 
@@ -177,7 +177,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Initiation</strong>: The citizen starts the "App Pairing" process within the app.</li>
   <li><strong>Authorization Request</strong>: The app initiates an <strong>OAuth2 Authorization Code Flow</strong> by redirecting to the <strong>PreNUDGE IAM</strong>.</li>
   <li><strong>Authentication</strong>: The citizen authenticates via <strong>ID-Austria</strong>.</li>
-  <li><strong>Identity Exchange</strong>: ID-Austria provides verified user information (e.g., <code class="language-plaintext highlighter-rouge">gh:bpk</code>, <code class="language-plaintext highlighter-rouge">ssn</code>) to the PreNUDGE IAM, which then persists the user identity.</li>
+  <li><strong>Identity Exchange</strong>: ID-Austria provides verified user information to the PreNUDGE IAM, which then persists the user identity.</li>
   <li><strong>Consent Management</strong>: The citizen provides explicit consent for both the platform usage and the specific app pairing.</li>
   <li><strong>Token Issuance</strong>: Upon successful consent, the PreNUDGE IAM issues a <strong>token set</strong> to the app, containing a <strong>pairwise subject identifier</strong>.</li>
   <li><strong>Profile Integration</strong>: The app stores the token set within the local user profile. The <strong>pairwise subject identifier</strong> is used as the <strong>FHIR Patient ID</strong> to reference all subsequent clinical resources (e.g., <code class="language-plaintext highlighter-rouge">Observation</code>, <code class="language-plaintext highlighter-rouge">QuestionnaireResponse</code>, etc.).</li>
@@ -200,7 +200,7 @@ To ensure maximum confidentiality of sensitive identity data, the Person resourc
   <li><strong>Identity Resolution (Cache Miss)</strong>:
     <ul>
       <li>If no cache hit occurs, the MPI attempts to load the <strong>App Patient</strong> from the FHIR Server.</li>
-      <li><strong>Provisioning Logic</strong>: If the App Patient does not exist:
+      <li><strong>Provisioning Logic</strong>, if the App Patient does not exist:
         <ul>
           <li>The MPI attempts to locate the underlying <strong>Person</strong> resource.</li>
           <li>The MPI performs a <strong>Token Exchange</strong> with the IAM to obtain an administrative token for backend operations.</li>
@@ -249,7 +249,7 @@ These interactions follow the <a href="https://hl7.org/fhir/R4/http.html">HL7® 
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Mar 24, 2026 11:22+0000">2026-03-24</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Fri, Mar 27, 2026 21:20+0000">2026-03-27</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
