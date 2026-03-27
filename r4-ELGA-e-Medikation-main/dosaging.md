@@ -1,7 +1,6 @@
 # HL7.AT.FHIR.ELGA.EMED.R4\Dosierschemata - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
-* [**Die "e-Medikation"**](requirements.md)
 * **Dosierschemata**
 
 ## Dosierschemata

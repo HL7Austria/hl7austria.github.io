@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\Sub-Usecases zu UC_eMed_06: Medikationsplan schreiben - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\Sub-Usecases zu UC_eMed_06 (Medikationsplan schreiben) - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
-* [**Überblick Anwendungsfälle**](usecases.md)
-* **Sub-Usecases zu UC_eMed_06: Medikationsplan schreiben**
+* [**Überblick & Anwendungsbeispiel**](use_case_overview.md)
+* **Sub-Usecases zu UC_eMed_06 (Medikationsplan schreiben)**
 
-## Sub-Usecases zu UC_eMed_06: Medikationsplan schreiben
+## Sub-Usecases zu UC_eMed_06 (Medikationsplan schreiben)
 
 ### Sub-Usecases zu UC_eMed_06: Medikationsplan schreiben
 
@@ -22,8 +22,10 @@ Der **Medikationsplaneintrag ("MedicationRequest"-Ressource)** im Medikationspla
 
 Die initiale Erstellung des Medikationsplans wird durch die e-Medikation Fachanwendung umgesetzt. Das Element emptyReason **notstarted** dokumentiert den Intitalzustand. Dies ist nicht gleichbedeutend mit der Aussage, dass der Patient keine Medikamente einnimmt, sondern zeigt nur, dass noch kein Medikationsplan dokumentiert wurde.
 
-```
 Relevante Felder (List):
+
+```
+AtEmedListMedikationsplan
 * status: **current**
 * mode: working
 * date: Datum der Erstellung durch die Fachanwendung
@@ -31,6 +33,47 @@ Relevante Felder (List):
 * emptyReason: **notstarted** (noch keine Medikationsplaneinträge erfasst)
 
 ```
+
+Test: Anzeige mit md-Tabelle:
+
+| | |
+| :--- | :--- |
+| status | **current** |
+| mode | working |
+| date | Datum der Erstellung durch die Fachanwendung |
+| source | Initiale Erstellung durch die Fachanwendung |
+| emptyReason | **notstarted**(noch keine Medikationsplaneinträge erfasst) |
+
+Test: Anzeige mit html:
+
+```
+
+* status: current
+* mode: working
+* date: Datum der Erstellung durch die Fachanwendung
+* source: Initiale Erstellung durch die Fachanwendung
+* emptyReason: notstarted (noch keine Medikationsplaneinträge erfasst)
+
+```
+
+Test: md-Tabelle mit Einrückung:
+
+| | |
+| :--- | :--- |
+| status | **current** |
+| mode | working |
+| date | Datum der Erstellung |
+| source | Initiale Erstellung |
+| emptyReason | **notstarted** |
+| └─ reasonDetail | Detail zum Grund |
+
+Test md-Tabelle mit Path:
+
+| | |
+| :--- | :--- |
+| status | **current** |
+| emptyReason | **notstarted** |
+| emptyReason.reasonDetail | Zusatzinfo |
 
 #### Sub-Usecase: Medikationsplaneintrag in Medikationsplan hinzufügen
 
@@ -41,7 +84,7 @@ Hierfür werden entsprechende Medikationsplaneinträge erstellt und in der List-
 Relevante Felder (List):
 
 ```
-AtEmedListMedikationsplan
+* AtEmedListMedikationsplan
 * status: **current**
 * mode: working
 * date: Datum der Bearbeitung des Medikationsplans

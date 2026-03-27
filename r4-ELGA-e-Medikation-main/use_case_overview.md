@@ -1,9 +1,9 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\Überblick Anwendungsfälle - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\Überblick & Anwendungsbeispiel - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
-* **Überblick Anwendungsfälle**
+* **Überblick & Anwendungsbeispiel**
 
-## Überblick Anwendungsfälle
+## Überblick & Anwendungsbeispiel
 
 ### Anwendungsfälle
 

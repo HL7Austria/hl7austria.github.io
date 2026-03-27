@@ -1,9 +1,9 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\Start - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\Home - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
-* **Start**
+* **Home**
 
-## Start
+## Home
 
 # e-Medikation (R4)
 
@@ -33,7 +33,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) ENTWURF",
   "status" : "draft",
-  "date" : "2026-03-24T15:12:36+00:00",
+  "date" : "2026-03-27T10:18:57+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -376,7 +376,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     },
     {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools.r4#1.1.0"
+      "valueCode" : "hl7.fhir.uv.tools.r4#1.1.2"
     },
     {
       "extension" : [{
@@ -1315,35 +1315,53 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "valueUrl" : "index.html"
         }],
         "nameUrl" : "index.html",
-        "title" : "Start",
+        "title" : "Home",
         "generation" : "markdown"
       },
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "requirements.html"
+          "valueUrl" : "scope_and_content.html"
         }],
-        "nameUrl" : "requirements.html",
-        "title" : "Die \"e-Medikation\"",
-        "generation" : "markdown",
-        "page" : [{
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "dosaging.html"
-          }],
-          "nameUrl" : "dosaging.html",
-          "title" : "Dosierschemata",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "patient_journey.html"
-          }],
-          "nameUrl" : "patient_journey.html",
-          "title" : "Patient Journey",
-          "generation" : "markdown"
-        }]
+        "nameUrl" : "scope_and_content.html",
+        "title" : "Umfang und Inhalt",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "background.html"
+        }],
+        "nameUrl" : "background.html",
+        "title" : "Hintergrund",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "challenges.html"
+        }],
+        "nameUrl" : "challenges.html",
+        "title" : "Herausforderungen",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "design_choices.html"
+        }],
+        "nameUrl" : "design_choices.html",
+        "title" : "Designentscheidungen",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "dosaging.html"
+        }],
+        "nameUrl" : "dosaging.html",
+        "title" : "Dosierschemata",
+        "generation" : "markdown"
       },
       {
         "extension" : [{
@@ -1357,12 +1375,21 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "usecases.html"
+          "valueUrl" : "use_case_overview.html"
         }],
-        "nameUrl" : "usecases.html",
-        "title" : "Überblick Anwendungsfälle",
+        "nameUrl" : "use_case_overview.html",
+        "title" : "Überblick & Anwendungsbeispiel",
         "generation" : "markdown",
         "page" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "patient_journey.html"
+          }],
+          "nameUrl" : "patient_journey.html",
+          "title" : "Patient Journey",
+          "generation" : "markdown"
+        },
+        {
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
             "valueUrl" : "UC_eMed_05.html"
@@ -1386,7 +1413,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
             "valueUrl" : "UC_eMed_06_Sub_UC.html"
           }],
           "nameUrl" : "UC_eMed_06_Sub_UC.html",
-          "title" : "Sub-Usecases zu UC_eMed_06: Medikationsplan schreiben",
+          "title" : "Sub-Usecases zu UC_eMed_06 (Medikationsplan schreiben)",
           "generation" : "markdown"
         },
         {
@@ -1415,16 +1442,16 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "nameUrl" : "UC_eMed_09.html",
           "title" : "UC_eMed_09 - Durchgeführte Abgabe schreiben",
           "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "mapping.html"
-          }],
-          "nameUrl" : "mapping.html",
-          "title" : "Mappings",
-          "generation" : "markdown"
         }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "mapping.html"
+        }],
+        "nameUrl" : "mapping.html",
+        "title" : "Mappings",
+        "generation" : "markdown"
       }]
     },
     "parameter" : [{
