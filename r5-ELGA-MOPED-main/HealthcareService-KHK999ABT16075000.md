@@ -13,7 +13,7 @@ Profile: [MOPED KH Organisationseinheiten](StructureDefinition-MopedKHOrganisati
 * InterneKostenstellenbezeichnung: Erstversorgungseinheit (IM und Kardiologie)
 * KostenstellenJahr: 2025
 
-**identifier**: `http://example.org/lkf-system/funktionscode`/160750, `http://example.org/lkf-system/funktionssubcode`/00
+**identifier**: `http://example.org/lkf-system/funktionscode`/16075000
 
 **providedBy**: [Organization Testkrankenhaus](Organization-KHK999.md)
 
@@ -49,11 +49,7 @@ Profile: [MOPED KH Organisationseinheiten](StructureDefinition-MopedKHOrganisati
   }],
   "identifier" : [{
     "system" : "http://example.org/lkf-system/funktionscode",
-    "value" : "160750"
-  },
-  {
-    "system" : "http://example.org/lkf-system/funktionssubcode",
-    "value" : "00"
+    "value" : "16075000"
   }],
   "providedBy" : {
     "reference" : "Organization/KHK999"

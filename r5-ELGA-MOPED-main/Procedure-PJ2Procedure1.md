@@ -25,7 +25,7 @@ Profile: [MOPED Procedure](StructureDefinition-MopedProcedure.md)
 | | | |
 | :--- | :--- | :--- |
 | - | **Actor** | **OnBehalfOf** |
-| * | [HealthcareService: identifier = http://example.org/lkf-system/funktionscode#112111,http://example.org/lkf-system/funktionssubcode#00; category = Hospital; type = Hospital Services](HealthcareService-AbteilungKHRied1.md) | [Organization Krankenhaus der Barmherzigen Schwestern vom Hl. Vinzenz von Paul Ried](Organization-OrganizationKrankenhausRied.md) |
+| * | [HealthcareService: identifier = http://example.org/lkf-system/funktionscode#11211100; category = Hospital; type = Hospital Services](HealthcareService-AbteilungKHRied1.md) | [Organization Krankenhaus der Barmherzigen Schwestern vom Hl. Vinzenz von Paul Ried](Organization-OrganizationKrankenhausRied.md) |
 
 
 

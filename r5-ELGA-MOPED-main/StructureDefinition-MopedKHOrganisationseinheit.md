@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedKHOrganisations
   "name" : "MopedKHOrganisationseinheit",
   "title" : "MOPED KH Organisationseinheiten",
   "status" : "draft",
-  "date" : "2026-03-29T08:30:46+00:00",
+  "date" : "2026-03-29T16:14:43+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -102,7 +102,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedKHOrganisations
       "id" : "HealthcareService.identifier:Funktionscode",
       "path" : "HealthcareService.identifier",
       "sliceName" : "Funktionscode",
-      "short" : "Funktionscode der Abteilung laut LKF",
+      "short" : "Funktionscode inkl. Subcode der Abteilung laut LKF",
       "min" : 0,
       "max" : "1"
     },
@@ -111,20 +111,6 @@ Other representations of profile: [CSV](StructureDefinition-MopedKHOrganisations
       "path" : "HealthcareService.identifier.system",
       "min" : 1,
       "fixedUri" : "http://example.org/lkf-system/funktionscode"
-    },
-    {
-      "id" : "HealthcareService.identifier:Funktionssubcode",
-      "path" : "HealthcareService.identifier",
-      "sliceName" : "Funktionssubcode",
-      "short" : "Funktionssubcode der Abteilung laut LKF",
-      "min" : 0,
-      "max" : "1"
-    },
-    {
-      "id" : "HealthcareService.identifier:Funktionssubcode.system",
-      "path" : "HealthcareService.identifier.system",
-      "min" : 1,
-      "fixedUri" : "http://example.org/lkf-system/funktionssubcode"
     },
     {
       "id" : "HealthcareService.providedBy",

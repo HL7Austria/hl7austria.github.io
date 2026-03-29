@@ -14,7 +14,7 @@ Profile: [MOPED KH Organisationseinheiten](StructureDefinition-MopedKHOrganisati
 * SpezielleOrganisationsform: [Spezielle Organisationsformen: A](CodeSystem-SpezielleOrganisationsformenCS.md#SpezielleOrganisationsformenCS-A) (Abteilung)
 * KostenstellenJahr: 2025
 
-**identifier**: `http://example.org/lkf-system/funktionscode`/165180, `http://example.org/lkf-system/funktionssubcode`/11
+**identifier**: `http://example.org/lkf-system/funktionscode`/16518011
 
 **providedBy**: [Organization Testkrankenhaus](Organization-KHK999.md)
 
@@ -57,11 +57,7 @@ Profile: [MOPED KH Organisationseinheiten](StructureDefinition-MopedKHOrganisati
   }],
   "identifier" : [{
     "system" : "http://example.org/lkf-system/funktionscode",
-    "value" : "165180"
-  },
-  {
-    "system" : "http://example.org/lkf-system/funktionssubcode",
-    "value" : "11"
+    "value" : "16518011"
   }],
   "providedBy" : {
     "reference" : "Organization/KHK999"

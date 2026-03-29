@@ -25,7 +25,7 @@ Profile: [MOPED Procedure](StructureDefinition-MopedProcedure.md)
 | | | |
 | :--- | :--- | :--- |
 | - | **Actor** | **OnBehalfOf** |
-| * | [HealthcareService: extension = ; identifier = http://example.org/lkf-system/funktionscode#131180,http://example.org/lkf-system/funktionssubcode#00; category = Hospital; type = Hospital Services](HealthcareService-AbteilungHerzJesu1.md) | [Organization Herz Jesu-Krankenhaus](Organization-OrganizationHerzJesuKrankenhaus.md) |
+| * | [HealthcareService: extension = ; identifier = http://example.org/lkf-system/funktionscode#13118000; category = Hospital; type = Hospital Services](HealthcareService-AbteilungHerzJesu1.md) | [Organization Herz Jesu-Krankenhaus](Organization-OrganizationHerzJesuKrankenhaus.md) |
 
 
 

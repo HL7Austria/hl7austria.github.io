@@ -14,7 +14,7 @@ Profile: [MOPED KH Organisationseinheiten](StructureDefinition-MopedKHOrganisati
 * SpezielleOrganisationsform: [Spezielle Organisationsformen: A](CodeSystem-SpezielleOrganisationsformenCS.md#SpezielleOrganisationsformenCS-A) (Abteilung)
 * KostenstellenJahr: 2024
 
-**identifier**: `http://example.org/lkf-system/funktionscode`/131180, `http://example.org/lkf-system/funktionssubcode`/00
+**identifier**: `http://example.org/lkf-system/funktionscode`/13118000
 
 **providedBy**: [Organization Herz Jesu-Krankenhaus](Organization-OrganizationHerzJesuKrankenhaus.md)
 
@@ -59,11 +59,7 @@ Profile: [MOPED KH Organisationseinheiten](StructureDefinition-MopedKHOrganisati
   }],
   "identifier" : [{
     "system" : "http://example.org/lkf-system/funktionscode",
-    "value" : "131180"
-  },
-  {
-    "system" : "http://example.org/lkf-system/funktionssubcode",
-    "value" : "00"
+    "value" : "13118000"
   }],
   "providedBy" : {
     "reference" : "Organization/OrganizationHerzJesuKrankenhaus"

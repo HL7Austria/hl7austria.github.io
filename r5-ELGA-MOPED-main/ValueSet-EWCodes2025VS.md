@@ -51,7 +51,7 @@ Der entsprechende Error-/Warning-/Hinweis-Code des unplausiblen/hinweisbezogenen
   "title" : "Akzeptierte Errors/Warnings - Codes 2025",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-29T08:30:46+00:00",
+  "date" : "2026-03-29T16:14:43+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

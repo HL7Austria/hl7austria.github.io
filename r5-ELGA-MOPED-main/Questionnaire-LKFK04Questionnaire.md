@@ -26,7 +26,7 @@ K04 Questionnaire - KA-Statistik (Personal-Vollzeitäquivalente nach Funktionsgr
   "version" : "0.1.0",
   "title" : "LKF K04 Questionnaire",
   "status" : "active",
-  "date" : "2026-03-29T08:30:46+00:00",
+  "date" : "2026-03-29T16:14:43+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

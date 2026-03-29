@@ -13,7 +13,7 @@ Profile: [MOPED KH Organisationseinheiten](StructureDefinition-MopedKHOrganisati
 * InterneKostenstellenbezeichnung: Innere Medizin � allgemein
 * KostenstellenJahr: 2025
 
-**identifier**: `http://example.org/lkf-system/funktionscode`/161111, `http://example.org/lkf-system/funktionssubcode`/11
+**identifier**: `http://example.org/lkf-system/funktionscode`/16111111
 
 **providedBy**: [Organization Testkrankenhaus](Organization-KHK999.md)
 
@@ -49,11 +49,7 @@ Profile: [MOPED KH Organisationseinheiten](StructureDefinition-MopedKHOrganisati
   }],
   "identifier" : [{
     "system" : "http://example.org/lkf-system/funktionscode",
-    "value" : "161111"
-  },
-  {
-    "system" : "http://example.org/lkf-system/funktionssubcode",
-    "value" : "11"
+    "value" : "16111111"
   }],
   "providedBy" : {
     "reference" : "Organization/KHK999"

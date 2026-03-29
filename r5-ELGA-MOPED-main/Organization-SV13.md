@@ -8,7 +8,7 @@
 
 Profile: [SV Organization](StructureDefinition-SVOrganization.md)
 
-**identifier**: `http://svc.co.at/CodeSystem/ecard-svt-cs`/13, `http://example.org/lsvt-code`/L3, `http://svc.co.at/CodeSystem/ecard-svt-cs`/?ngen-9?, `http://example.org/lsvt-code`/?ngen-9?
+**identifier**: `http://svc.co.at/CodeSystem/ecard-svt-cs`/13, `http://example.org/lsvt-code`/L3
 
 **type**: Sozialversicherung
 
@@ -39,12 +39,6 @@ Profile: [SV Organization](StructureDefinition-SVOrganization.md)
   {
     "system" : "http://example.org/lsvt-code",
     "value" : "L3"
-  },
-  {
-    "system" : "http://svc.co.at/CodeSystem/ecard-svt-cs"
-  },
-  {
-    "system" : "http://example.org/lsvt-code"
   }],
   "type" : [{
     "coding" : [{

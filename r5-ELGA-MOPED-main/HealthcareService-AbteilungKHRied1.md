@@ -8,7 +8,7 @@
 
 Profile: [MOPED KH Organisationseinheiten](StructureDefinition-MopedKHOrganisationseinheit.md)
 
-**identifier**: `http://example.org/lkf-system/funktionscode`/112111, `http://example.org/lkf-system/funktionssubcode`/00
+**identifier**: `http://example.org/lkf-system/funktionscode`/11211100
 
 **providedBy**: [Organization Krankenhaus der Barmherzigen Schwestern vom Hl. Vinzenz von Paul Ried](Organization-OrganizationKrankenhausRied.md)
 
@@ -31,11 +31,7 @@ Profile: [MOPED KH Organisationseinheiten](StructureDefinition-MopedKHOrganisati
   },
   "identifier" : [{
     "system" : "http://example.org/lkf-system/funktionscode",
-    "value" : "112111"
-  },
-  {
-    "system" : "http://example.org/lkf-system/funktionssubcode",
-    "value" : "00"
+    "value" : "11211100"
   }],
   "providedBy" : {
     "reference" : "Organization/OrganizationKrankenhausRied"
