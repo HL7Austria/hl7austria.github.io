@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/SVOrganization | *Version*:0.1.0 | |
-| Draft as of 2026-03-24 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:SVOrganization |
+| Draft as of 2026-03-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:SVOrganization |
 
  
 MOPED Profil für SV Organizations 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-SVOrganization.csv),
   "name" : "SVOrganization",
   "title" : "SV Organization",
   "status" : "draft",
-  "date" : "2026-03-24T20:07:54+00:00",
+  "date" : "2026-03-29T08:30:46+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -67,6 +67,39 @@ Other representations of profile: [CSV](StructureDefinition-SVOrganization.csv),
     "element" : [{
       "id" : "Organization",
       "path" : "Organization"
+    },
+    {
+      "id" : "Organization.identifier",
+      "path" : "Organization.identifier",
+      "min" : 2
+    },
+    {
+      "id" : "Organization.identifier:SVT",
+      "path" : "Organization.identifier",
+      "sliceName" : "SVT",
+      "short" : "CodeSystem: e-card Sozialversicherungsträger Codesystem",
+      "min" : 1,
+      "max" : "1"
+    },
+    {
+      "id" : "Organization.identifier:SVT.system",
+      "path" : "Organization.identifier.system",
+      "min" : 1,
+      "fixedUri" : "http://svc.co.at/CodeSystem/ecard-svt-cs"
+    },
+    {
+      "id" : "Organization.identifier:LSVT",
+      "path" : "Organization.identifier",
+      "sliceName" : "LSVT",
+      "short" : "L-Codes der Sozialversicherungsträger",
+      "min" : 1,
+      "max" : "1"
+    },
+    {
+      "id" : "Organization.identifier:LSVT.system",
+      "path" : "Organization.identifier.system",
+      "min" : 1,
+      "fixedUri" : "http://example.org/lsvt-code"
     },
     {
       "id" : "Organization.type",

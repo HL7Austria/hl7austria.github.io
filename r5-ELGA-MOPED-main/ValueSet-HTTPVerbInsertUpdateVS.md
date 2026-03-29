@@ -9,14 +9,13 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/HTTPVerbInsertUpdateVS | *Version*:0.1.0 | |
-| Draft as of 2026-03-24 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:HTTPVerbInsertUpdateVS |
+| Draft as of 2026-03-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:HTTPVerbInsertUpdateVS |
 
  
 HTTP Verben für das Einmelden von Ressourcen, welche nach dem initialen Einmelden nur aktualisiert werden dürfen. 
 
  **References** 
 
-* [MOPED Input Bundle KH](StructureDefinition-MopedInputBundleKH.md)
 * [MOPED Input Bundle KH](StructureDefinition-MopedInputBundleKH.md)
 
 ### Logical Definition (CLD)
@@ -51,7 +50,7 @@ HTTP Verben für das Einmelden von Ressourcen, welche nach dem initialen Einmeld
   "name" : "HTTPVerbInsertUpdateVS",
   "title" : "HTTP Verb Update Only",
   "status" : "draft",
-  "date" : "2026-03-24T20:07:54+00:00",
+  "date" : "2026-03-29T08:30:46+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

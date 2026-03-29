@@ -9,14 +9,13 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/VerpflegskostenBeitragsbefreiungVS | *Version*:0.1.0 | |
-| Draft as of 2026-03-24 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:VerpflegskostenBeitragsbefreiungVS |
+| Draft as of 2026-03-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:VerpflegskostenBeitragsbefreiungVS |
 
  
 Befreiung für den Verpflegskostenbeitrag 
 
  **References** 
 
-* [VerpflegskostenBeitragsbefreiung](StructureDefinition-moped-ext-verpflegskostenBeitragsbefreiung.md)
 * [VerpflegskostenBeitragsbefreiung](StructureDefinition-moped-ext-verpflegskostenBeitragsbefreiung.md)
 
 ### Logical Definition (CLD)
@@ -52,7 +51,7 @@ Befreiung für den Verpflegskostenbeitrag
   "title" : "Befreiung für den Verpflegskostenbeitrag",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-24T20:07:54+00:00",
+  "date" : "2026-03-29T08:30:46+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

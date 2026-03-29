@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/LKFAmbulantePauschalGruppenVS | *Version*:0.1.0 | |
-| Draft as of 2026-03-24 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LKFAmbulantePauschalGruppenVS |
+| Draft as of 2026-03-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LKFAmbulantePauschalGruppenVS |
 
  
 LKF Ambulante Pauschal-Gruppen 
@@ -51,7 +51,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "title" : "LKF Ambulante Pauschal-Gruppen",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-24T20:07:54+00:00",
+  "date" : "2026-03-29T08:30:46+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

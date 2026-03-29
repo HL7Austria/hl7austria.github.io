@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/moped-ext-altersgruppe | *Version*:0.1.0 | |
-| Draft as of 2026-03-24 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:Altersgruppe |
+| Draft as of 2026-03-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:Altersgruppe |
 
 In Gruppen eingeteilt, wobei vollendete Lebensjahre ausschlaggebend sind.
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-moped-ext-altersgrup
   "name" : "Altersgruppe",
   "title" : "Altersgruppe",
   "status" : "draft",
-  "date" : "2026-03-24T20:07:54+00:00",
+  "date" : "2026-03-29T08:30:46+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

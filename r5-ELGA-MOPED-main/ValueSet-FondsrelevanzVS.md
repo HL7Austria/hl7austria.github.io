@@ -9,14 +9,13 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/FondsrelevanzVS | *Version*:0.1.0 | |
-| Draft as of 2026-03-24 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:FondsrelevanzVS |
+| Draft as of 2026-03-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:FondsrelevanzVS |
 
  
 ValueSet für die Fondsrelevanz 
 
  **References** 
 
-* [Fondsrelevanz](StructureDefinition-moped-ext-fondsrelevanz.md)
 * [Fondsrelevanz](StructureDefinition-moped-ext-fondsrelevanz.md)
 
 ### Logical Definition (CLD)
@@ -52,7 +51,7 @@ ValueSet für die Fondsrelevanz
   "title" : "Fondsrelevanz",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-24T20:07:54+00:00",
+  "date" : "2026-03-29T08:30:46+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

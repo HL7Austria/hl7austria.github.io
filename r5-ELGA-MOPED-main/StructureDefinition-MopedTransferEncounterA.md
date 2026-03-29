@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedTransferEncounterA | *Version*:0.1.0 | |
-| Draft as of 2026-03-24 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedTransferEncounterA |
+| Draft as of 2026-03-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedTransferEncounterA |
 
  
 MOPED Profil der Encounter Ressource für ambulante Verlegungen 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedTransferEncount
   "name" : "MopedTransferEncounterA",
   "title" : "MOPED TransferEncounter Ambulant",
   "status" : "draft",
-  "date" : "2026-03-24T20:07:54+00:00",
+  "date" : "2026-03-29T08:30:46+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

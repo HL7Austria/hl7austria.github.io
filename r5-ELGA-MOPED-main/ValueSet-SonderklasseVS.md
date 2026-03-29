@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/SonderklasseVS | *Version*:0.1.0 | |
-| Draft as of 2026-03-24 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:SonderklasseVS |
+| Draft as of 2026-03-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:SonderklasseVS |
 
  
 ValueSet für die Klasse (KaOrg) 
@@ -17,8 +17,6 @@ ValueSet für die Klasse (KaOrg)
  **References** 
 
 * [Supporting Info Extension for ClaimResponse - Vortageanzahl auf Kostenbeitrag](StructureDefinition-MopedSupportingInfoVortageanzahlAufKostenbeitrag.md)
-* [Supporting Info Extension for ClaimResponse - Vortageanzahl auf Kostenbeitrag](StructureDefinition-MopedSupportingInfoVortageanzahlAufKostenbeitrag.md)
-* [MOPED VAERequest](StructureDefinition-MopedVAERequest.md)
 * [MOPED VAERequest](StructureDefinition-MopedVAERequest.md)
 
 ### Logical Definition (CLD)
@@ -54,7 +52,7 @@ ValueSet für die Klasse (KaOrg)
   "title" : "Sonderklasse ValueSet",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-24T20:07:54+00:00",
+  "date" : "2026-03-29T08:30:46+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

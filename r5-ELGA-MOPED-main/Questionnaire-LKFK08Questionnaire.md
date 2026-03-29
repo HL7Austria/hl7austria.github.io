@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/Questionnaire/LKFK08Questionnaire | *Version*:0.1.0 | |
-| Active as of 2026-03-24 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
+| Active as of 2026-03-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
 
  
 LKF K08 Questionnaire - Kostenstellen-Statistik und Kostennachweis (Bettenführende Hauptkostenstelle) 
@@ -26,7 +26,7 @@ LKF K08 Questionnaire - Kostenstellen-Statistik und Kostennachweis (Bettenführe
   "version" : "0.1.0",
   "title" : "LKF K08 Questionnaire",
   "status" : "active",
-  "date" : "2026-03-24T20:07:54+00:00",
+  "date" : "2026-03-29T08:30:46+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

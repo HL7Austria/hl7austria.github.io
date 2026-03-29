@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/HTTPVerbInsertOnlyVS | *Version*:0.1.0 | |
-| Draft as of 2026-03-24 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:HTTPVerbInsertOnlyVS |
+| Draft as of 2026-03-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:HTTPVerbInsertOnlyVS |
 
  
 HTTP Verben für das Einmelden von Ressourcen, welche nur initial eingemeldet und dann nicht mehr verändert werden dürfen. 
@@ -17,16 +17,10 @@ HTTP Verben für das Einmelden von Ressourcen, welche nur initial eingemeldet un
  **References** 
 
 * [MOPED Abrechnen Bundle KH](StructureDefinition-MopedAbrechnenBundleKH.md)
-* [MOPED Abrechnen Bundle KH](StructureDefinition-MopedAbrechnenBundleKH.md)
-* [MOPED Anfragen Bundle KH](StructureDefinition-MopedAnfragenBundleKH.md)
 * [MOPED Anfragen Bundle KH](StructureDefinition-MopedAnfragenBundleKH.md)
 * [MOPED Antworten Bundle SV](StructureDefinition-MopedAntwortenBundleSV.md)
-* [MOPED Antworten Bundle SV](StructureDefinition-MopedAntwortenBundleSV.md)
-* [MOPED Entscheiden Bundle LGF](StructureDefinition-MopedEntscheidenLGFBundle.md)
 * [MOPED Entscheiden Bundle LGF](StructureDefinition-MopedEntscheidenLGFBundle.md)
 * [MOPED Input Bundle KH](StructureDefinition-MopedInputBundleKH.md)
-* [MOPED Input Bundle KH](StructureDefinition-MopedInputBundleKH.md)
-* [MOPED Melden Bundle LGF](StructureDefinition-MopedMeldenLGFBundle.md)
 * [MOPED Melden Bundle LGF](StructureDefinition-MopedMeldenLGFBundle.md)
 
 ### Logical Definition (CLD)
@@ -61,7 +55,7 @@ HTTP Verben für das Einmelden von Ressourcen, welche nur initial eingemeldet un
   "name" : "HTTPVerbInsertOnlyVS",
   "title" : "HTTP Verb Insert Only",
   "status" : "draft",
-  "date" : "2026-03-24T20:07:54+00:00",
+  "date" : "2026-03-29T08:30:46+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

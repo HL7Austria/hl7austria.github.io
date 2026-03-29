@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/LKFAmbulantenMELGruppenCS | *Version*:0.1.0 | |
-| Active as of 2026-03-24 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LKFAmbulantenMELGruppenCS |
+| Active as of 2026-03-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LKFAmbulantenMELGruppenCS |
 
  
 LKF Ambulante MEL-Gruppen 
@@ -33,7 +33,7 @@ LKF Ambulante MEL-Gruppen
   "title" : "LKF Ambulante MEL-Gruppen",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-03-24T20:07:54+00:00",
+  "date" : "2026-03-29T08:30:46+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

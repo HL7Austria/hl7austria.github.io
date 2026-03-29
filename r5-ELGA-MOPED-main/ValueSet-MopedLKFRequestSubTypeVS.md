@@ -9,14 +9,13 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/MopedLKFRequestSubTypeVS | *Version*:0.1.0 | |
-| Draft as of 2026-03-24 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedLKFRequestSubTypeVS |
+| Draft as of 2026-03-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedLKFRequestSubTypeVS |
 
  
 ValueSet für die Art der ClaimResponses 
 
  **References** 
 
-* [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md)
 * [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md)
 
 ### Logical Definition (CLD)
@@ -52,7 +51,7 @@ ValueSet für die Art der ClaimResponses
   "title" : "LKF ClaimResponse Subtype ValueSet",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-24T20:07:54+00:00",
+  "date" : "2026-03-29T08:30:46+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

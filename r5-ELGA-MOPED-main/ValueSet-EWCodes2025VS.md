@@ -9,14 +9,13 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/EWCodes2025VS | *Version*:0.1.0 | |
-| Draft as of 2026-03-24 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:EWCodes2025VS |
+| Draft as of 2026-03-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:EWCodes2025VS |
 
  
 Der entsprechende Error-/Warning-/Hinweis-Code des unplausiblen/hinweisbezogenen Wertes 
 
  **References** 
 
-* [Error/Warning](StructureDefinition-moped-ext-fehlerWarnung.md)
 * [Error/Warning](StructureDefinition-moped-ext-fehlerWarnung.md)
 
 ### Logical Definition (CLD)
@@ -52,7 +51,7 @@ Der entsprechende Error-/Warning-/Hinweis-Code des unplausiblen/hinweisbezogenen
   "title" : "Akzeptierte Errors/Warnings - Codes 2025",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-24T20:07:54+00:00",
+  "date" : "2026-03-29T08:30:46+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
