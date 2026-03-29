@@ -18,16 +18,27 @@ Profile: [AT PreNUDGE Observation Blood Glucose (only in mg/dL)](StructureDefini
 
 **effective**: 2026-02-28 07:30:00+0000
 
+**issued**: 2026-02-28 07:31:00+0000
+
 **value**: 95 mg/dL (Details: UCUM codemg/dL = 'mg/dL')
 
 **note**: 
 
 > 
 
-Nüchtern gemessen.
+Sechzehn Stunden nichts gegessen.
 
 
 **method**: Manual
+
+**derivedFrom**: [Response to Questionnaire '->Blutzucker bei der letzten Messung' about '->James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)'](QuestionnaireResponse-bloodglucose-response-normal-example.md)
+
+### Components
+
+| | | |
+| :--- | :--- | :--- |
+| - | **Code** | **Value[x]** |
+| * | Temporal periods relating to feeding and eating | Fasting |
 
 
 
@@ -56,6 +67,7 @@ Nüchtern gemessen.
     "reference" : "Patient/example"
   },
   "effectiveDateTime" : "2026-02-28T07:30:00Z",
+  "issued" : "2026-02-28T07:31:00Z",
   "valueQuantity" : {
     "value" : 95,
     "unit" : "mg/dL",
@@ -63,7 +75,7 @@ Nüchtern gemessen.
     "code" : "mg/dL"
   },
   "note" : [{
-    "text" : "Nüchtern gemessen."
+    "text" : "Sechzehn Stunden nichts gegessen."
   }],
   "method" : {
     "coding" : [{
@@ -71,7 +83,26 @@ Nüchtern gemessen.
       "code" : "87982008",
       "display" : "Manual"
     }]
-  }
+  },
+  "derivedFrom" : [{
+    "reference" : "QuestionnaireResponse/bloodglucose-response-normal-example"
+  }],
+  "component" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "309602000",
+        "display" : "Temporal periods relating to feeding and eating"
+      }]
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "16985007",
+        "display" : "Fasting"
+      }]
+    }
+  }]
 }
 
 ```

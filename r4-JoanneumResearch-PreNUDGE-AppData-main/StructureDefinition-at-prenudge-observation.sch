@@ -13,6 +13,7 @@
     <sch:title>f:Observation</sch:title>
     <sch:rule context="f:Observation">
       <sch:assert test="count(f:identifier) &gt;= 1">identifier: minimum cardinality of 'identifier' is 1</sch:assert>
+      <sch:assert test="count(f:issued) &gt;= 1">issued: minimum cardinality of 'issued' is 1</sch:assert>
       <sch:assert test="count(f:method) &gt;= 1">method: minimum cardinality of 'method' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>

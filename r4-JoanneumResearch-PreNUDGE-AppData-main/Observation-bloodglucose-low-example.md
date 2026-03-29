@@ -18,6 +18,8 @@ Profile: [AT PreNUDGE Observation Blood Glucose (only in mg/dL)](StructureDefini
 
 **effective**: 2026-03-03 06:15:00+0000
 
+**issued**: 2026-03-03 10:31:00+0000
+
 **value**: 62 mg/dL (Details: UCUM codemg/dL = 'mg/dL')
 
 **note**: 
@@ -28,6 +30,13 @@ Patient fühlt sich schwindelig und zittrig.
 
 
 **method**: Automated
+
+### Components
+
+| | | |
+| :--- | :--- | :--- |
+| - | **Code** | **Value[x]** |
+| * | Temporal periods relating to feeding and eating | Before meal |
 
 
 
@@ -56,6 +65,7 @@ Patient fühlt sich schwindelig und zittrig.
     "reference" : "Patient/example"
   },
   "effectiveDateTime" : "2026-03-03T06:15:00Z",
+  "issued" : "2026-03-03T10:31:00Z",
   "valueQuantity" : {
     "value" : 62,
     "unit" : "mg/dL",
@@ -71,7 +81,23 @@ Patient fühlt sich schwindelig und zittrig.
       "code" : "8359006",
       "display" : "Automated"
     }]
-  }
+  },
+  "component" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "309602000",
+        "display" : "Temporal periods relating to feeding and eating"
+      }]
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "307165006",
+        "display" : "Before meal"
+      }]
+    }
+  }]
 }
 
 ```

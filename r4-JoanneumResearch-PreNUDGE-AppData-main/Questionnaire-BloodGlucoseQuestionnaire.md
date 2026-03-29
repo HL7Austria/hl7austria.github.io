@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/BloodGlucoseQuestionnaire | *Version*:0.1.0 | |
-| Active as of 2026-03-27 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:BloodGlucoseQuestionnaire |
+| Active as of 2026-03-29 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:BloodGlucoseQuestionnaire |
 
  
 A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allows values inbetween 0 and 999 mg/dL. 
@@ -32,7 +32,7 @@ A simple questionnaire for asking how high the blood glucose level is right now.
   "status" : "active",
   "experimental" : false,
   "subjectType" : ["Patient"],
-  "date" : "2026-03-27T21:20:49+00:00",
+  "date" : "2026-03-29T11:39:37+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -67,7 +67,7 @@ A simple questionnaire for asking how high the blood glucose level is right now.
       "url" : "http://hl7.org/fhir/StructureDefinition/maxValue",
       "valueDecimal" : 999
     }],
-    "linkId" : "blood-glucose-now",
+    "linkId" : "blood-glucose",
     "code" : [{
       "system" : "http://loinc.org",
       "code" : "1556-0"
@@ -77,6 +77,13 @@ A simple questionnaire for asking how high the blood glucose level is right now.
     "required" : true,
     "repeats" : false,
     "item" : [{
+      "linkId" : "meal-context",
+      "text" : "Wurde dieser Wert nüchtern, vor dem Essen oder nach dem Essen gemessen?",
+      "type" : "choice",
+      "required" : true,
+      "answerValueSet" : "https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-bloodglucose-mealcontext"
+    },
+    {
       "extension" : [{
         "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
         "valueExpression" : {

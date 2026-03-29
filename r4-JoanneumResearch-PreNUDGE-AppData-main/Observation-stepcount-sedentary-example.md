@@ -16,7 +16,9 @@ Profile: [AT PreNUDGE Observation Step Count](StructureDefinition-at-prenudge-st
 
 **subject**: [James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)](Patient-example.md)
 
-**effective**: 2026-03-03 21:30:00+0000
+**effective**: 2026-03-03
+
+**issued**: 2026-03-28 20:00:00+0000
 
 **value**: 1204 {steps}/d (Details: UCUM code{steps}/d = '{steps}/d')
 
@@ -55,7 +57,8 @@ Home-Office Tag, kaum Bewegung.
   "subject" : {
     "reference" : "Patient/example"
   },
-  "effectiveDateTime" : "2026-03-03T21:30:00Z",
+  "effectiveDateTime" : "2026-03-03",
+  "issued" : "2026-03-28T20:00:00Z",
   "valueQuantity" : {
     "value" : 1204,
     "unit" : "{steps}/d",

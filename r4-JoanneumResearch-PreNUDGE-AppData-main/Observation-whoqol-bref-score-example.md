@@ -12,11 +12,13 @@ Profile: [AT PreNUDGE Observation WHOQOL-BREF Score](StructureDefinition-at-pren
 
 **status**: Final
 
-**code**: Quality of life satisfaction (observable entity)
+**code**: Quality of life
 
 **subject**: [James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)](Patient-example.md)
 
 **effective**: 2026-02-28 10:30:00+0000
+
+**issued**: 2026-02-28 10:30:00+0000
 
 **method**: Manual
 
@@ -51,13 +53,15 @@ Profile: [AT PreNUDGE Observation WHOQOL-BREF Score](StructureDefinition-at-pren
   "code" : {
     "coding" : [{
       "system" : "http://snomed.info/sct",
-      "code" : "405152002"
+      "code" : "405152002",
+      "display" : "Quality of life"
     }]
   },
   "subject" : {
     "reference" : "Patient/example"
   },
   "effectiveDateTime" : "2026-02-28T10:30:00Z",
+  "issued" : "2026-02-28T10:30:00Z",
   "method" : {
     "coding" : [{
       "system" : "http://snomed.info/sct",

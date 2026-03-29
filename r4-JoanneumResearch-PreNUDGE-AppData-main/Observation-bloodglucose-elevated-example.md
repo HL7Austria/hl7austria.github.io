@@ -16,7 +16,9 @@ Profile: [AT PreNUDGE Observation Blood Glucose (only in mg/dL)](StructureDefini
 
 **subject**: [James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)](Patient-example.md)
 
-**effective**: 2026-02-28 07:45:00+0000
+**effective**: 2026-02-28 21:45:00+0000
+
+**issued**: 2026-02-28 22:31:00+0000
 
 **value**: 142 mg/dL (Details: UCUM codemg/dL = 'mg/dL')
 
@@ -28,6 +30,15 @@ Patient berichtet, gestern Abend spät gegessen zu haben.
 
 
 **method**: Manual
+
+**derivedFrom**: [Response to Questionnaire '->Blutzucker bei der letzten Messung' about '->James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)'](QuestionnaireResponse-bloodglucose-response-elevated-example.md)
+
+### Components
+
+| | | |
+| :--- | :--- | :--- |
+| - | **Code** | **Value[x]** |
+| * | Temporal periods relating to feeding and eating | Postprandial |
 
 
 
@@ -55,7 +66,8 @@ Patient berichtet, gestern Abend spät gegessen zu haben.
   "subject" : {
     "reference" : "Patient/example"
   },
-  "effectiveDateTime" : "2026-02-28T07:45:00Z",
+  "effectiveDateTime" : "2026-02-28T21:45:00Z",
+  "issued" : "2026-02-28T22:31:00Z",
   "valueQuantity" : {
     "value" : 142,
     "unit" : "mg/dL",
@@ -71,7 +83,26 @@ Patient berichtet, gestern Abend spät gegessen zu haben.
       "code" : "87982008",
       "display" : "Manual"
     }]
-  }
+  },
+  "derivedFrom" : [{
+    "reference" : "QuestionnaireResponse/bloodglucose-response-elevated-example"
+  }],
+  "component" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "309602000",
+        "display" : "Temporal periods relating to feeding and eating"
+      }]
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "24863003",
+        "display" : "Postprandial"
+      }]
+    }
+  }]
 }
 
 ```

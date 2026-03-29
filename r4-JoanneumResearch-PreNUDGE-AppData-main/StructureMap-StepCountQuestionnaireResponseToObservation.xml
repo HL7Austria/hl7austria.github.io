@@ -19,16 +19,22 @@
 </span>  src<b> then </b>SetObservationBase<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;Base&quot;</i><span style="color: navy">;</span>
   src<span style="color: navy"><b> -&gt; </b></span> tgt.meta = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Meta'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">meta</span><span style="color: navy">, </span> meta.profile = <span style="color: blue">'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation'</span> <i>&quot;SetProfile&quot;</i><span style="color: navy">;</span>
   src<span style="color: navy"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://loinc.org'</span><span style="color: navy">, </span><span style="color: blue">'41950-7'</span><span style="color: navy">, </span><span style="color: blue">'Number of steps in 24 hour Measured'</span><span style="color: navy">)</span> <i>&quot;SetCode&quot;</i><span style="color: navy">;</span>
-  src.item<b> as </b><span style="color: maroon">item</span><b> where </b>linkId = 'step-count'<b> then </b>MapStepCount<span style="color: navy">(</span><span style="color: maroon">item</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;ProcessItem&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Quantity step count entry</span>
+  src.item<b> as </b><span style="color: maroon">item</span><b> where </b>linkId = 'step-count'<b> then </b>MapStepCount<span style="color: navy">(</span><span style="color: maroon">item</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;ProcessQuantityStepCount&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">// </span><span style="color: green">EHIS-PAQ walking survey</span>
+<span style="color: #b36b00" title="This element was not defined prior to R5">// src.item as item where linkId = 'Q2-walking-days' then MapEhisPaqToStepCount(item, tgt) &quot;ProcessEhisPaq&quot;;</span>
 <span style="color: navy">}
 
-</span><b>group </b>MapStepCount<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
-</span>  <span style="color: navy">// </span><span style="color: green">effectiveDateTime from child-Item with linkId = 'date'</span>
-  src.item<b> as </b><span style="color: maroon">dtItem</span><b> where </b>linkId = 'date'<b> then</b><span style="color: navy"> {
-</span>    dtItem.answer<b> as </b><span style="color: maroon">dtAns</span><span style="color: navy"><b> -&gt; </b></span>tgt.effectiveDateTime = <span style="color: maroon">dtAns.value</span> <i>&quot;SetEffectiveFromDate&quot;</i><span style="color: navy">;</span>
-  <span style="color: navy">}</span> <i>&quot;ProcessDate&quot;</i><span style="color: navy">;</span>
-  src.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
-</span>    answer.valueQuantity<b> as </b><span style="color: maroon">srcQty</span><b> then </b>MapStepCountQuantity<span style="color: navy">(</span><span style="color: maroon">srcQty</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapValueQuantity&quot;</i><span style="color: navy">;</span>
+</span><span style="color: navy">// </span><span style="color: green">Direct step count mapping</span>
+<b>group </b>MapStepCount<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
+</span>    <span style="color: navy">// </span><span style="color: green">effectiveDateTime from nested item with linkId = 'date'</span>
+    answer.item<b> as </b><span style="color: maroon">dtItem</span><b> where </b>linkId = 'date'<b> then</b><span style="color: navy"> {
+</span>      dtItem.answer<b> as </b><span style="color: maroon">dtAns</span><b> then</b><span style="color: navy"> {
+</span>        dtAns.valueDate<b> as </b><span style="color: maroon">dt</span><span style="color: navy"><b> -&gt; </b></span>tgt.effectiveDateTime = <span style="color: maroon">dt</span> <i>&quot;SetEffectiveFromDate&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;ExtractDate&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;ProcessDate&quot;</i><span style="color: navy">;</span>
+    answer.valueQuantity<b> as </b><span style="color: maroon">srcQty</span><b> then </b>MapStepCountQuantity<span style="color: navy">(</span><span style="color: maroon">srcQty</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapValueQuantity&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;ProcessAnswer&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">}
 
@@ -48,7 +54,7 @@
   <name value="StepCountQuestionnaireResponseToObservation"/>
   <title value="Step Count Q to O"/>
   <status value="active"/>
-  <date value="2026-03-27T21:20:49+00:00"/>
+  <date value="2026-03-29T11:39:37+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -154,7 +160,7 @@
       </target>
     </rule>
     <rule>
-      <name value="ProcessItem"/>
+      <name value="ProcessQuantityStepCount"/>
       <source>
         <context value="src"/>
         <element value="item"/>
@@ -171,6 +177,7 @@
   <group>
     <name value="MapStepCount"/>
     <typeMode value="none"/>
+    <documentation value="Direct step count mapping"/>
     <input>
       <name value="src"/>
       <type value="QR"/>
@@ -182,38 +189,46 @@
       <mode value="target"/>
     </input>
     <rule>
-      <name value="ProcessDate"/>
-      <source>
-        <context value="src"/>
-        <element value="item"/>
-        <variable value="dtItem"/>
-        <condition value="linkId = 'date'"/>
-      </source>
-      <rule>
-        <name value="SetEffectiveFromDate"/>
-        <source>
-          <context value="dtItem"/>
-          <element value="answer"/>
-          <variable value="dtAns"/>
-        </source>
-        <target>
-          <context value="tgt"/>
-          <contextType value="variable"/>
-          <element value="effectiveDateTime"/>
-          <transform value="copy"/>
-          <parameter>
-            <valueId value="dtAns.value"/>
-          </parameter>
-        </target>
-      </rule>
-    </rule>
-    <rule>
       <name value="ProcessAnswer"/>
       <source>
         <context value="src"/>
         <element value="answer"/>
         <variable value="answer"/>
       </source>
+      <rule>
+        <name value="ProcessDate"/>
+        <source>
+          <context value="answer"/>
+          <element value="item"/>
+          <variable value="dtItem"/>
+          <condition value="linkId = 'date'"/>
+        </source>
+        <rule>
+          <name value="ExtractDate"/>
+          <source>
+            <context value="dtItem"/>
+            <element value="answer"/>
+            <variable value="dtAns"/>
+          </source>
+          <rule>
+            <name value="SetEffectiveFromDate"/>
+            <source>
+              <context value="dtAns"/>
+              <element value="valueDate"/>
+              <variable value="dt"/>
+            </source>
+            <target>
+              <context value="tgt"/>
+              <contextType value="variable"/>
+              <element value="effectiveDateTime"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueId value="dt"/>
+              </parameter>
+            </target>
+          </rule>
+        </rule>
+      </rule>
       <rule>
         <name value="MapValueQuantity"/>
         <source>

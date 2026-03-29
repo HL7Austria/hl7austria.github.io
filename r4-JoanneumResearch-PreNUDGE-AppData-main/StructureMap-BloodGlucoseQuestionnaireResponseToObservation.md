@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/BloodGlucoseQuestionnaireResponseToObservation | *Version*:0.1.0 | |
-| Active as of 2026-03-27 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:BloodGlucoseQuestionnaireResponseToObservation |
+| Active as of 2026-03-29 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:BloodGlucoseQuestionnaireResponseToObservation |
 
  
 Blood Glucose Q to O 
@@ -27,7 +27,7 @@ Blood Glucose Q to O
   "name" : "BloodGlucoseQuestionnaireResponseToObservation",
   "title" : "Blood Glucose Q to O",
   "status" : "active",
-  "date" : "2026-03-27T21:20:49+00:00",
+  "date" : "2026-03-29T11:39:37+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -137,7 +137,7 @@ Blood Glucose Q to O
         "context" : "src",
         "element" : "item",
         "variable" : "item",
-        "condition" : "linkId = 'blood-glucose-now'"
+        "condition" : "linkId = 'blood-glucose'"
       }],
       "dependent" : [{
         "name" : "MapBloodGlucose",
@@ -159,32 +159,6 @@ Blood Glucose Q to O
       "mode" : "target"
     }],
     "rule" : [{
-      "name" : "ProcessDatetime",
-      "source" : [{
-        "context" : "src",
-        "element" : "item",
-        "variable" : "dtItem",
-        "condition" : "linkId = 'datetime'"
-      }],
-      "rule" : [{
-        "name" : "SetEffectiveFromDatetime",
-        "source" : [{
-          "context" : "dtItem",
-          "element" : "answer",
-          "variable" : "dtAns"
-        }],
-        "target" : [{
-          "context" : "tgt",
-          "contextType" : "variable",
-          "element" : "effectiveDateTime",
-          "transform" : "copy",
-          "parameter" : [{
-            "valueId" : "dtAns.value"
-          }]
-        }]
-      }]
-    },
-    {
       "name" : "ProcessAnswer",
       "source" : [{
         "context" : "src",
@@ -192,6 +166,105 @@ Blood Glucose Q to O
         "variable" : "answer"
       }],
       "rule" : [{
+        "name" : "ProcessDatetime",
+        "source" : [{
+          "context" : "answer",
+          "element" : "item",
+          "variable" : "dtItem",
+          "condition" : "linkId = 'datetime'"
+        }],
+        "rule" : [{
+          "name" : "ExtractDateTime",
+          "source" : [{
+            "context" : "dtItem",
+            "element" : "answer",
+            "variable" : "dtAns"
+          }],
+          "rule" : [{
+            "name" : "SetEffectiveFromDatetime",
+            "source" : [{
+              "context" : "dtAns",
+              "element" : "valueDateTime",
+              "variable" : "dt"
+            }],
+            "target" : [{
+              "context" : "tgt",
+              "contextType" : "variable",
+              "element" : "effectiveDateTime",
+              "transform" : "copy",
+              "parameter" : [{
+                "valueId" : "dt"
+              }]
+            }]
+          }]
+        }]
+      },
+      {
+        "name" : "ProcessMealContext",
+        "source" : [{
+          "context" : "answer",
+          "element" : "item",
+          "variable" : "mcItem",
+          "condition" : "linkId = 'meal-context'"
+        }],
+        "rule" : [{
+          "name" : "ExtractCoding",
+          "source" : [{
+            "context" : "mcItem",
+            "element" : "answer",
+            "variable" : "mcAns"
+          }],
+          "rule" : [{
+            "name" : "SetMealContextCoding",
+            "source" : [{
+              "context" : "mcAns",
+              "element" : "valueCoding",
+              "variable" : "coding"
+            }],
+            "target" : [{
+              "context" : "tgt",
+              "contextType" : "variable",
+              "element" : "component",
+              "variable" : "comp"
+            },
+            {
+              "context" : "comp",
+              "contextType" : "variable",
+              "element" : "code",
+              "transform" : "cc",
+              "parameter" : [{
+                "valueString" : "http://snomed.info/sct"
+              },
+              {
+                "valueString" : "309602000"
+              },
+              {
+                "valueString" : "Temporal periods relating to feeding and eating"
+              }]
+            },
+            {
+              "context" : "comp",
+              "contextType" : "variable",
+              "element" : "value",
+              "variable" : "cc",
+              "transform" : "create",
+              "parameter" : [{
+                "valueString" : "CodeableConcept"
+              }]
+            },
+            {
+              "context" : "cc",
+              "contextType" : "variable",
+              "element" : "coding",
+              "transform" : "copy",
+              "parameter" : [{
+                "valueId" : "coding"
+              }]
+            }]
+          }]
+        }]
+      },
+      {
         "name" : "MapValueQuantity",
         "source" : [{
           "context" : "answer",

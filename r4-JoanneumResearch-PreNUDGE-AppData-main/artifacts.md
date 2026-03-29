@@ -16,7 +16,7 @@ These define forms used by systems conforming to this implementation guide to ca
 | [Alkoholkonsum im letzten Jahr](Questionnaire-AlcoholUseQuestionnaire.md) | Categorical variable for the frequency of alcohol consumption in the last year (IPS compatible). |
 | [Blutzucker bei der letzten Messung](Questionnaire-BloodGlucoseQuestionnaire.md) | A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allows values inbetween 0 and 999 mg/dL. |
 | [EHIS-PAQ: Zu-Fuß-Gehen](Questionnaire-StepCountEhisPaqQuestionnaire.md) | The questions Q2 and Q3 from the EHIS-PAQ about the number of days and duration of walking (for transport) in a typical week. |
-| [Schrittzahl am heutigen Tag](Questionnaire-StepCountQuestionnaire.md) | A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000. |
+| [Schrittzahl am heutigen Tag](Questionnaire-StepCountQuantityQuestionnaire.md) | A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000. |
 | [WHOQOL-BREF Lebensstil Selbsteinschätzung](Questionnaire-WhoQolBrefQuestionnaire.md) | The WHOQOL-BREF is a 26-item instrument for assessing subjective quality of life in four domains: physical, psychological, social relationships, and environment. Developed by the WHO. |
 
 ### Structures: Abstract Profiles 
@@ -49,6 +49,7 @@ These define sets of codes used by systems conforming to this implementation gui
 | | |
 | :--- | :--- |
 | [AT PreNUDGE Alcohol Use Frequency](ValueSet-prenudge-alcoholuse-frequency.md) | Frequencies used in the PreNUDGE alcoholuse questionnaire. |
+| [AT PreNUDGE Blood Glucose Meal Context](ValueSet-prenudge-bloodglucose-mealcontext.md) | Meal context used in the PreNUDGE Blood Glucose questionnaire and observation. |
 | [AT PreNUDGE Observation Methods](ValueSet-prenudge-observation-method.md) | ValueSet containing SNOMED CT codes for differentiating methods used in the PreNUDGE observation. |
 | [AT PreNUDGE Other Observations Codes](ValueSet-prenudge-other-observations-codes.md) | Allowed observation codes for the 'Other' observation profile. |
 | [AT PreNUDGE Other Observations Units](ValueSet-prenudge-other-observations-units.md) | Allowed UCUM units for the 'Other' observation profile. |
@@ -104,8 +105,8 @@ These are example instances that show what data produced and consumed by systems
 | [Step Count O - Sedentary Example](Observation-stepcount-sedentary-example.md) | Example of a low step count (1,204 steps per day), typical for a mostly sedentary day. |
 | [Step Count O mapped from Q - High Example](Observation-stepcount-high-example.md) | Example of a high step count (133,519 steps per day). |
 | [Step Count O mapped from Q - Normal Example](Observation-stepcount-normal-example.md) | Example of a normal step count (8,432 steps per day). |
-| [Step Count Q - High Example](QuestionnaireResponse-stepcount-response-low-example.md) | Example of a high step count (133,519 steps per day). |
-| [Step Count Q - Normal Example](QuestionnaireResponse-stepcount-response-normal-example.md) | Example of a normal step count (8,432 steps per day). |
+| [Step Count Q - High Example](QuestionnaireResponse-stepcount-quantity-response-high-example.md) | Example of a high step count (133,519 steps per day). |
+| [Step Count Q - Normal Example](QuestionnaireResponse-stepcount-quantity-response-normal-example.md) | Example of a normal step count (8,432 steps per day). |
 | [WHOQOL-BREF O Score only mapped from Q](Observation-whoqol-bref-score-example.md) | Example of a WHOQOL-BREF score observation with a general score and all four domain scores. |
 | [WHOQOL-BREF Q](QuestionnaireResponse-whoqol-bref-response-example.md) | Example of a completed WHOQOL-BREF QuestionnaireResponse including all 26 items and calculated scores. |
 

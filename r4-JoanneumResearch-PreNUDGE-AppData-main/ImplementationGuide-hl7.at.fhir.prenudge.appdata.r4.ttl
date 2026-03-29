@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "PreNUDGEAppdataR4"] ; # 
   fhir:title [ fhir:v "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-03-27T21:20:49+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-03-29T11:39:37+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "The PreNUDGE Consortium"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "The PreNUDGE Consortium" ] ;
@@ -1465,6 +1465,27 @@
          ] ;
          fhir:value [
            a fhir:String ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-bloodglucose-mealcontext> ;
+         fhir:reference [ fhir:v "ValueSet/prenudge-bloodglucose-mealcontext" ]
+       ] ;
+       fhir:name [ fhir:v "AT PreNUDGE Blood Glucose Meal Context" ] ;
+       fhir:description [ fhir:v "Meal context used in the PreNUDGE Blood Glucose questionnaire and observation." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
            fhir:v "ConceptMap"
          ]
        ] ) ;
@@ -1957,8 +1978,8 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/StepCountQuestionnaire> ;
-         fhir:reference [ fhir:v "Questionnaire/StepCountQuestionnaire" ]
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/StepCountQuantityQuestionnaire> ;
+         fhir:reference [ fhir:v "Questionnaire/StepCountQuantityQuestionnaire" ]
        ] ;
        fhir:name [ fhir:v "Schrittzahl am heutigen Tag" ] ;
        fhir:description [ fhir:v "A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000." ] ;
@@ -2088,8 +2109,8 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/stepcount-response-low-example> ;
-         fhir:reference [ fhir:v "QuestionnaireResponse/stepcount-response-low-example" ]
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/stepcount-quantity-response-high-example> ;
+         fhir:reference [ fhir:v "QuestionnaireResponse/stepcount-quantity-response-high-example" ]
        ] ;
        fhir:name [ fhir:v "Step Count Q - High Example" ] ;
        fhir:description [ fhir:v "Example of a high step count (133,519 steps per day)." ] ;
@@ -2110,8 +2131,8 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/stepcount-response-normal-example> ;
-         fhir:reference [ fhir:v "QuestionnaireResponse/stepcount-response-normal-example" ]
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/stepcount-quantity-response-normal-example> ;
+         fhir:reference [ fhir:v "QuestionnaireResponse/stepcount-quantity-response-normal-example" ]
        ] ;
        fhir:name [ fhir:v "Step Count Q - Normal Example" ] ;
        fhir:description [ fhir:v "Example of a normal step count (8,432 steps per day)." ] ;

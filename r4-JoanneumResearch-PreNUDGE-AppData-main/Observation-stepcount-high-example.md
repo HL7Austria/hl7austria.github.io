@@ -16,7 +16,9 @@ Profile: [AT PreNUDGE Observation Step Count](StructureDefinition-at-prenudge-st
 
 **subject**: [James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)](Patient-example.md)
 
-**effective**: 2026-02-28 20:15:00+0000
+**effective**: 2026-02-28
+
+**issued**: 2026-03-01 20:00:00+0000
 
 **value**: 133519 {steps}/d (Details: UCUM code{steps}/d = '{steps}/d')
 
@@ -28,6 +30,8 @@ Könnte bitte jemand überprüfen ob das ein Weltrekord wäre?
 
 
 **method**: Manual
+
+**derivedFrom**: [Response to Questionnaire '->Schrittzahl am heutigen Tag' about '->James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)'](QuestionnaireResponse-stepcount-quantity-response-high-example.md)
 
 
 
@@ -55,7 +59,8 @@ Könnte bitte jemand überprüfen ob das ein Weltrekord wäre?
   "subject" : {
     "reference" : "Patient/example"
   },
-  "effectiveDateTime" : "2026-02-28T20:15:00Z",
+  "effectiveDateTime" : "2026-02-28",
+  "issued" : "2026-03-01T20:00:00Z",
   "valueQuantity" : {
     "value" : 133519,
     "unit" : "{steps}/d",
@@ -71,7 +76,10 @@ Könnte bitte jemand überprüfen ob das ein Weltrekord wäre?
       "code" : "87982008",
       "display" : "Manual"
     }]
-  }
+  },
+  "derivedFrom" : [{
+    "reference" : "QuestionnaireResponse/stepcount-quantity-response-high-example"
+  }]
 }
 
 ```

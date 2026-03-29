@@ -19,7 +19,7 @@ This Implementation Guide (IG) explains how application providers can use the **
 
 We focus on narrow standardization of **four PreNUDGE measurements**:
 
-* Physical Activity: Daily activity as **Steps per day** (from a [**questionnaire**](Questionnaire-StepCountQuestionnaire.md) and from a [**wearable device as an observation**](StructureDefinition-at-prenudge-stepcount-observation.md))
+* Physical Activity: Daily activity as **Steps per day** (from a [**EHIS PAQ questionnaire**](Questionnaire-StepCountEhisPaqQuestionnaire.md), [**quantity questionnaire**](Questionnaire-StepCountQuantityQuestionnaire.md) and from a [**wearable device as an observation**](StructureDefinition-at-prenudge-stepcount-observation.md))
 * **Alcohol consumption** as number of drinks (from a [**questionnaire**](Questionnaire-AlcoholUseQuestionnaire.md) and from an [**observation**](StructureDefinition-at-prenudge-alcoholuse-observation.md))
 * **Quality of life** (from a [**questionnaire**](Questionnaire-WhoQolBrefQuestionnaire.md) with a calculated [**score as an observation**](StructureDefinition-at-prenudge-whoqol-bref-score-observation.md))
 * For Demo Purposes: **Blood glucose** in mg/dL (from a [**questionnaire**](Questionnaire-BloodGlucoseQuestionnaire.md) and from a [**device as an observation**](StructureDefinition-at-prenudge-bloodglucose-observation.md))
@@ -33,7 +33,7 @@ Additional PreNUDGE measurements, also narrow standardized, will be specified an
 * Physical Activity: Minutes of moderate physical activity (per week), Minutes of physical activity (per week) (from a questionnaire and from a wearable device as an observation)
 * Physical Activity: Number of muscle strengthening exercise sessions (per week) (from a questionnaire and from a wearable device as an observation)
 * Physical Activity: Sitting hours (per day) (from a questionnaire from a wearable device as an observation)
-* Smoking: Current status (from a questionnaire and from an observation)
+* Smoking: Current status (from a questionnaire and from an observation IPS style)
 * Sleep: Average sleep duration (hours per night) (from a questionnaire and from a wearable device as an observation)
 * Sleep: Self-assessment of sleep quality (from a questionnaire as part of the WHOQOL-BREF)
 * Nutrition: Portions of fruit and vegetables (per day) (from a questionnaire)
@@ -61,7 +61,7 @@ Besides these narrow standardized measurements, **broad standardized measurement
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-03-27T21:20:49+00:00",
+  "date" : "2026-03-29T11:39:37+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -756,6 +756,18 @@ Besides these narrow standardized measurements, **broad standardized measurement
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/prenudge-bloodglucose-mealcontext"
+      },
+      "name" : "AT PreNUDGE Blood Glucose Meal Context",
+      "description" : "Meal context used in the PreNUDGE Blood Glucose questionnaire and observation.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ConceptMap"
       }],
       "reference" : {
@@ -1035,7 +1047,7 @@ Besides these narrow standardized measurements, **broad standardized measurement
         "valueString" : "Questionnaire"
       }],
       "reference" : {
-        "reference" : "Questionnaire/StepCountQuestionnaire"
+        "reference" : "Questionnaire/StepCountQuantityQuestionnaire"
       },
       "name" : "Schrittzahl am heutigen Tag",
       "description" : "A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000.",
@@ -1107,7 +1119,7 @@ Besides these narrow standardized measurements, **broad standardized measurement
         "valueString" : "QuestionnaireResponse"
       }],
       "reference" : {
-        "reference" : "QuestionnaireResponse/stepcount-response-low-example"
+        "reference" : "QuestionnaireResponse/stepcount-quantity-response-high-example"
       },
       "name" : "Step Count Q - High Example",
       "description" : "Example of a high step count (133,519 steps per day).",
@@ -1119,7 +1131,7 @@ Besides these narrow standardized measurements, **broad standardized measurement
         "valueString" : "QuestionnaireResponse"
       }],
       "reference" : {
-        "reference" : "QuestionnaireResponse/stepcount-response-normal-example"
+        "reference" : "QuestionnaireResponse/stepcount-quantity-response-normal-example"
       },
       "name" : "Step Count Q - Normal Example",
       "description" : "Example of a normal step count (8,432 steps per day).",

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-observation | *Version*:0.1.0 | |
-| Draft as of 2026-03-27 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservation |
+| Draft as of 2026-03-29 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservation |
 
  
 This FHIR profile is defining the overall Observation for PreNUDGE. It is abstract, so no instances of this profile directly are allowed. Be aware that if the user enters values from a device into a questionnaire, it is still considered a manual input. Please keep in mind that all observations must comply with the qualification matrix on https://prenudge.at/qualificationmatrix/. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-observat
   "name" : "AtPrenudgeObservation",
   "title" : "AT PreNUDGE Observation",
   "status" : "draft",
-  "date" : "2026-03-27T21:20:49+00:00",
+  "date" : "2026-03-29T11:39:37+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -140,6 +140,12 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-observat
       "type" : [{
         "code" : "dateTime"
       }]
+    },
+    {
+      "id" : "Observation.issued",
+      "path" : "Observation.issued",
+      "short" : "The mandatory date/time this version was made available",
+      "min" : 1
     },
     {
       "id" : "Observation.note",

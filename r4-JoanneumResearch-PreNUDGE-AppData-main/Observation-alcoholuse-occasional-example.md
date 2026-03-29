@@ -18,9 +18,13 @@ Profile: [AT PreNUDGE Observation Alcohol Use](StructureDefinition-at-prenudge-a
 
 **effective**: 2026-02-20
 
+**issued**: 2026-02-20 00:00:00+0000
+
 **value**: 1 drinks/day (Details: UCUM code{drinks}/d = '{drinks}/d')
 
 **method**: Manual
+
+**derivedFrom**: [Response to Questionnaire '->Alkoholkonsum im letzten Jahr' about '->James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)'](QuestionnaireResponse-AlcoholResponseDaily.md)
 
 
 
@@ -49,6 +53,7 @@ Profile: [AT PreNUDGE Observation Alcohol Use](StructureDefinition-at-prenudge-a
     "reference" : "Patient/example"
   },
   "effectiveDateTime" : "2026-02-20",
+  "issued" : "2026-02-20T00:00:00Z",
   "valueQuantity" : {
     "value" : 1,
     "unit" : "drinks/day",
@@ -61,7 +66,10 @@ Profile: [AT PreNUDGE Observation Alcohol Use](StructureDefinition-at-prenudge-a
       "code" : "87982008",
       "display" : "Manual"
     }]
-  }
+  },
+  "derivedFrom" : [{
+    "reference" : "QuestionnaireResponse/AlcoholResponseDaily"
+  }]
 }
 
 ```

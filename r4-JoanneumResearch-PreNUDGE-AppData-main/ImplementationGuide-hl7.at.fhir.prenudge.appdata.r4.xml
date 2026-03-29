@@ -11,7 +11,7 @@
   <name value="PreNUDGEAppdataR4"/>
   <title value="PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)"/>
   <status value="draft"/>
-  <date value="2026-03-27T21:20:49+00:00"/>
+  <date value="2026-03-29T11:39:37+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -541,6 +541,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/prenudge-bloodglucose-mealcontext"/>
+      </reference>
+      <name value="AT PreNUDGE Blood Glucose Meal Context"/>
+      <description value="Meal context used in the PreNUDGE Blood Glucose questionnaire and observation."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ConceptMap"/>
       </extension>
       <reference>
@@ -797,7 +808,7 @@
         <valueString value="Questionnaire"/>
       </extension>
       <reference>
-        <reference value="Questionnaire/StepCountQuestionnaire"/>
+        <reference value="Questionnaire/StepCountQuantityQuestionnaire"/>
       </reference>
       <name value="Schrittzahl am heutigen Tag"/>
       <description value="A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000."/>
@@ -863,7 +874,7 @@
         <valueString value="QuestionnaireResponse"/>
       </extension>
       <reference>
-        <reference value="QuestionnaireResponse/stepcount-response-low-example"/>
+        <reference value="QuestionnaireResponse/stepcount-quantity-response-high-example"/>
       </reference>
       <name value="Step Count Q - High Example"/>
       <description value="Example of a high step count (133,519 steps per day)."/>
@@ -874,7 +885,7 @@
         <valueString value="QuestionnaireResponse"/>
       </extension>
       <reference>
-        <reference value="QuestionnaireResponse/stepcount-response-normal-example"/>
+        <reference value="QuestionnaireResponse/stepcount-quantity-response-normal-example"/>
       </reference>
       <name value="Step Count Q - Normal Example"/>
       <description value="Example of a normal step count (8,432 steps per day)."/>

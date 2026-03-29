@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/StepCountQuestionnaireResponseToObservation | *Version*:0.1.0 | |
-| Active as of 2026-03-27 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:StepCountQuestionnaireResponseToObservation |
+| Active as of 2026-03-29 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:StepCountQuestionnaireResponseToObservation |
 
  
 Step Count Q to O 
@@ -27,7 +27,7 @@ Step Count Q to O
   "name" : "StepCountQuestionnaireResponseToObservation",
   "title" : "Step Count Q to O",
   "status" : "active",
-  "date" : "2026-03-27T21:20:49+00:00",
+  "date" : "2026-03-29T11:39:37+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -132,7 +132,7 @@ Step Count Q to O
       }]
     },
     {
-      "name" : "ProcessItem",
+      "name" : "ProcessQuantityStepCount",
       "source" : [{
         "context" : "src",
         "element" : "item",
@@ -148,6 +148,7 @@ Step Count Q to O
   {
     "name" : "MapStepCount",
     "typeMode" : "none",
+    "documentation" : "Direct step count mapping",
     "input" : [{
       "name" : "src",
       "type" : "QR",
@@ -159,32 +160,6 @@ Step Count Q to O
       "mode" : "target"
     }],
     "rule" : [{
-      "name" : "ProcessDate",
-      "source" : [{
-        "context" : "src",
-        "element" : "item",
-        "variable" : "dtItem",
-        "condition" : "linkId = 'date'"
-      }],
-      "rule" : [{
-        "name" : "SetEffectiveFromDate",
-        "source" : [{
-          "context" : "dtItem",
-          "element" : "answer",
-          "variable" : "dtAns"
-        }],
-        "target" : [{
-          "context" : "tgt",
-          "contextType" : "variable",
-          "element" : "effectiveDateTime",
-          "transform" : "copy",
-          "parameter" : [{
-            "valueId" : "dtAns.value"
-          }]
-        }]
-      }]
-    },
-    {
       "name" : "ProcessAnswer",
       "source" : [{
         "context" : "src",
@@ -192,6 +167,40 @@ Step Count Q to O
         "variable" : "answer"
       }],
       "rule" : [{
+        "name" : "ProcessDate",
+        "source" : [{
+          "context" : "answer",
+          "element" : "item",
+          "variable" : "dtItem",
+          "condition" : "linkId = 'date'"
+        }],
+        "rule" : [{
+          "name" : "ExtractDate",
+          "source" : [{
+            "context" : "dtItem",
+            "element" : "answer",
+            "variable" : "dtAns"
+          }],
+          "rule" : [{
+            "name" : "SetEffectiveFromDate",
+            "source" : [{
+              "context" : "dtAns",
+              "element" : "valueDate",
+              "variable" : "dt"
+            }],
+            "target" : [{
+              "context" : "tgt",
+              "contextType" : "variable",
+              "element" : "effectiveDateTime",
+              "transform" : "copy",
+              "parameter" : [{
+                "valueId" : "dt"
+              }]
+            }]
+          }]
+        }]
+      },
+      {
         "name" : "MapValueQuantity",
         "source" : [{
           "context" : "answer",

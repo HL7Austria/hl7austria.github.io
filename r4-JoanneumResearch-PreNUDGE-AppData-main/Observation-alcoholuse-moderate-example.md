@@ -18,6 +18,8 @@ Profile: [AT PreNUDGE Observation Alcohol Use](StructureDefinition-at-prenudge-a
 
 **effective**: 2026-03-03
 
+**issued**: 2026-03-03 00:00:00+0000
+
 **value**: 0.5 drinks/day (Details: UCUM code{drinks}/d = '{drinks}/d')
 
 **method**: Automated
@@ -49,6 +51,7 @@ Profile: [AT PreNUDGE Observation Alcohol Use](StructureDefinition-at-prenudge-a
     "reference" : "Patient/example"
   },
   "effectiveDateTime" : "2026-03-03",
+  "issued" : "2026-03-03T00:00:00Z",
   "valueQuantity" : {
     "value" : 0.5,
     "unit" : "drinks/day",

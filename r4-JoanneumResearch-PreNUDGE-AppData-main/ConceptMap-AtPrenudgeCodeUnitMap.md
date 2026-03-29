@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/ConceptMap/AtPrenudgeCodeUnitMap | *Version*:0.1.0 | |
-| Active as of 2026-03-27 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*: |
+| Active as of 2026-03-29 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*: |
 
  
 Maps observation codes to their expected UCUM units for the 'Other Quantities' observation profile. 
@@ -27,7 +27,7 @@ Maps observation codes to their expected UCUM units for the 'Other Quantities' o
   "title" : "AT PreNUDGE Code-to-Unit Mapping",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-03-27T21:20:49+00:00",
+  "date" : "2026-03-29T11:39:37+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

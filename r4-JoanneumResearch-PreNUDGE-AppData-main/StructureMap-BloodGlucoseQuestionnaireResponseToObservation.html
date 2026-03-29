@@ -42,8 +42,8 @@
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"6.22"}
-    h3,h4,h5,h6{--heading-prefix:"6.22"}</style>
+    <style type="text/css">h2{--heading-prefix:"6.23"}
+    h3,h4,h5,h6{--heading-prefix:"6.23"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- at-fhir-ig-template begin -->
@@ -196,7 +196,7 @@
         
           Active
           
-            as of 2026-03-27
+            as of 2026-03-29
           
         
       </td>
@@ -253,28 +253,27 @@
 </span>  src<b> then </b>SetObservationBase<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;Base&quot;</i><span style="color: navy">;</span>
   src<span style="color: navy"><b> -&gt; </b></span> tgt.meta = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Meta'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">meta</span><span style="color: navy">, </span> meta.profile = <span style="color: blue">'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation'</span> <i>&quot;SetProfile&quot;</i><span style="color: navy">;</span>
   src<span style="color: navy"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://loinc.org'</span><span style="color: navy">, </span><span style="color: blue">'1556-0'</span><span style="color: navy">, </span><span style="color: blue">'Fasting glucose [Mass/volume] in Capillary blood'</span><span style="color: navy">)</span> <i>&quot;SetCode&quot;</i><span style="color: navy">;</span>
-  src.item<b> as </b><span style="color: maroon">item</span><b> where </b>linkId = 'blood-glucose-now'<b> then </b>MapBloodGlucose<span style="color: navy">(</span><span style="color: maroon">item</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;ProcessItem&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">item</span><b> where </b>linkId = 'blood-glucose'<b> then </b>MapBloodGlucose<span style="color: navy">(</span><span style="color: maroon">item</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;ProcessItem&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">}
 
 </span><b>group </b>MapBloodGlucose<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
-</span>  <span style="color: navy">// </span><span style="color: green">effectiveDateTime from child-Item with linkId = 'datetime'</span>
-  src.item<b> as </b><span style="color: maroon">dtItem</span><b> where </b>linkId = 'datetime'<b> then</b><span style="color: navy"> {
-</span>    dtItem.answer<b> as </b><span style="color: maroon">dtAns</span><span style="color: navy"><b> -&gt; </b></span>tgt.effectiveDateTime = <span style="color: maroon">dtAns.value</span> <i>&quot;SetEffectiveFromDatetime&quot;</i><span style="color: navy">;</span>
-  <span style="color: navy">}</span> <i>&quot;ProcessDatetime&quot;</i><span style="color: navy">;</span>
+</span>  <span style="color: navy">// </span><span style="color: green">Process the answer first to get access to nested items</span>
   src.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
-</span>    answer.valueQuantity<b> as </b><span style="color: maroon">srcQty</span><b> then </b>MapBloodGlucoseQuantity<span style="color: navy">(</span><span style="color: maroon">srcQty</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapValueQuantity&quot;</i><span style="color: navy">;</span>
+</span>    <span style="color: navy">// </span><span style="color: green">effectiveDateTime from nested item</span>
+    answer.item<b> as </b><span style="color: maroon">dtItem</span><b> where </b>linkId = 'datetime'<b> then</b><span style="color: navy"> {
+</span>      dtItem.answer<b> as </b><span style="color: maroon">dtAns</span><b> then</b><span style="color: navy"> {
+</span>        dtAns.valueDateTime<b> as </b><span style="color: maroon">dt</span><span style="color: navy"><b> -&gt; </b></span>tgt.effectiveDateTime = <span style="color: maroon">dt</span> <i>&quot;SetEffectiveFromDatetime&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;ExtractDateTime&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;ProcessDatetime&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">// </span><span style="color: green">Meal context → component[mealContext]</span>
+    answer.item<b> as </b><span style="color: maroon">mcItem</span><b> where </b>linkId = 'meal-context'<b> then</b><span style="color: navy"> {
+</span>      mcItem.answer<b> as </b><span style="color: maroon">mcAns</span><b> then</b><span style="color: navy"> {
+</span>        mcAns.valueCoding<b> as </b><span style="color: maroon">coding</span><span style="color: navy"><b> -&gt; </b></span> tgt.component<b> as </b><span style="color: maroon">comp</span><span style="color: navy">, </span> comp.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'309602000'</span><span style="color: navy">, </span><span style="color: blue">'Temporal periods relating to feeding and eating'</span><span style="color: navy">)</span><span style="color: navy">, </span> comp.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'CodeableConcept'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">cc</span><span style="color: navy">, </span> cc.coding = <span style="color: maroon">coding</span> <i>&quot;SetMealContextCoding&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;ExtractCoding&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;ProcessMealContext&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">// </span><span style="color: green">Map the blood glucose value</span>
+    answer.valueQuantity<b> as </b><span style="color: maroon">srcQty</span><b> then </b>MapBloodGlucoseQuantity<span style="color: navy">(</span><span style="color: maroon">srcQty</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapValueQuantity&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;ProcessAnswer&quot;</i><span style="color: navy">;</span>
-<span style="color: navy">// </span><span style="color: green">TODO: Note mapping disabled due to MaLaC-HD limitation</span>
-<span style="color: navy">// </span><span style="color: green">Annotation.text (markdown) target not supported with FHIR string source</span>
-<span style="color: navy">// </span><span style="color: green">See: https://gitlab.com/cdehealth/malac-hd/-/issues/128</span>
-<span style="color: navy">// </span><span style="color: green">Map comment to note</span>
-<span style="color: navy">// </span><span style="color: green">answer.item as commentItem where linkId = 'comment' then {</span>
-<span style="color: navy">// </span><span style="color: green">commentItem.answer as commentAnswer then {</span>
-<span style="color: navy">// </span><span style="color: green">commentAnswer.valueString as commentText then {</span>
-<span style="color: navy">// </span><span style="color: green">commentText.value as tv -&gt; tgt.note as note, note.text = tv &quot;SetNoteText&quot;;</span>
-<span style="color: navy">// </span><span style="color: green">} &quot;ExtractText&quot;;</span>
-<span style="color: navy">// </span><span style="color: green">} &quot;ProcessCommentAnswer&quot;;</span>
-<span style="color: navy">// </span><span style="color: green">} &quot;ProcessComment&quot;;</span>
 <span style="color: navy">}
 
 </span><b>group </b>MapBloodGlucoseQuantity<span style="color: navy">(</span><b>source</b> <span style="color: maroon">srcQty</span><span style="color: navy"> : </span>Quantity, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
@@ -308,7 +307,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Fri, Mar 27, 2026 21:20+0000">2026-03-27</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Sun, Mar 29, 2026 11:39+0000">2026-03-29</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

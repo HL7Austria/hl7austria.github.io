@@ -10,7 +10,7 @@
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-03-27T21:20:49+00:00",
+  "date" : "2026-03-29T11:39:37+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -705,6 +705,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/prenudge-bloodglucose-mealcontext"
+      },
+      "name" : "AT PreNUDGE Blood Glucose Meal Context",
+      "description" : "Meal context used in the PreNUDGE Blood Glucose questionnaire and observation.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ConceptMap"
       }],
       "reference" : {
@@ -984,7 +996,7 @@
         "valueString" : "Questionnaire"
       }],
       "reference" : {
-        "reference" : "Questionnaire/StepCountQuestionnaire"
+        "reference" : "Questionnaire/StepCountQuantityQuestionnaire"
       },
       "name" : "Schrittzahl am heutigen Tag",
       "description" : "A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000.",
@@ -1056,7 +1068,7 @@
         "valueString" : "QuestionnaireResponse"
       }],
       "reference" : {
-        "reference" : "QuestionnaireResponse/stepcount-response-low-example"
+        "reference" : "QuestionnaireResponse/stepcount-quantity-response-high-example"
       },
       "name" : "Step Count Q - High Example",
       "description" : "Example of a high step count (133,519\u202fsteps per day).",
@@ -1068,7 +1080,7 @@
         "valueString" : "QuestionnaireResponse"
       }],
       "reference" : {
-        "reference" : "QuestionnaireResponse/stepcount-response-normal-example"
+        "reference" : "QuestionnaireResponse/stepcount-quantity-response-normal-example"
       },
       "name" : "Step Count Q - Normal Example",
       "description" : "Example of a normal step count (8,432\u202fsteps per day).",

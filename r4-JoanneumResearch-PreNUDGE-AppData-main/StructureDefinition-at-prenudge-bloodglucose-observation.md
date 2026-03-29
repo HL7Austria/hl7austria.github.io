@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation | *Version*:0.1.0 | |
-| Draft as of 2026-03-27 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationBloodGlucose |
+| Draft as of 2026-03-29 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationBloodGlucose |
 
  
 This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allows values inbetween 0 and 999 mg/dL. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-bloodglu
   "name" : "AtPrenudgeObservationBloodGlucose",
   "title" : "AT PreNUDGE Observation Blood Glucose (only in mg/dL)",
   "status" : "draft",
-  "date" : "2026-03-27T21:20:49+00:00",
+  "date" : "2026-03-29T11:39:37+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -145,6 +145,49 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-bloodglu
       "id" : "Observation.value[x].code",
       "path" : "Observation.value[x].code",
       "patternCode" : "mg/dL"
+    },
+    {
+      "id" : "Observation.component",
+      "path" : "Observation.component",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "pattern",
+          "path" : "code"
+        }],
+        "rules" : "open"
+      },
+      "short" : "Mandatory meal context and other component results",
+      "min" : 1
+    },
+    {
+      "id" : "Observation.component:mealContext",
+      "path" : "Observation.component",
+      "sliceName" : "mealContext",
+      "min" : 1,
+      "max" : "1"
+    },
+    {
+      "id" : "Observation.component:mealContext.code",
+      "path" : "Observation.component.code",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "309602000",
+          "display" : "Temporal periods relating to feeding and eating"
+        }]
+      }
+    },
+    {
+      "id" : "Observation.component:mealContext.value[x]",
+      "path" : "Observation.component.value[x]",
+      "min" : 1,
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-bloodglucose-mealcontext"
+      }
     }]
   }
 }
