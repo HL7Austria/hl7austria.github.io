@@ -17,7 +17,7 @@
 <b>group </b>WHOQOLBrefQuestionnaireResponseToObservation<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
 </span>  src<b> then </b>SetObservationBase<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;Base&quot;</i><span style="color: navy">;</span>
   src<span style="color: navy"><b> -&gt; </b></span> tgt.meta<b> as </b><span style="color: maroon">meta</span><span style="color: navy">, </span> meta.profile = <span style="color: blue">'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-whoqol-bref-score-observation'</span> <i>&quot;SetProfile&quot;</i><span style="color: navy">;</span>
-  src<span style="color: navy"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'405152002'</span><span style="color: navy">, </span><span style="color: blue">'Quality of life assessment'</span><span style="color: navy">)</span> <i>&quot;SetCode&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'405152002'</span><span style="color: navy">, </span><span style="color: blue">'Quality of life'</span><span style="color: navy">)</span> <i>&quot;SetCode&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">// </span><span style="color: green">EffectiveDateTime from authored</span>
   src.authored<b> as </b><span style="color: maroon">authored</span><span style="color: navy"><b> -&gt; </b></span> tgt.effectiveDateTime = <b>create</b><span style="color: navy">(</span><span style="color: blue">'dateTime'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">dt</span><span style="color: navy">, </span> dt.value = <span style="color: maroon">authored</span> <i>&quot;SetEffective&quot;</i><span style="color: navy">;</span>
   src.item<b> as </b><span style="color: maroon">generalGroup</span><b> where </b>linkId = 'general'<b> then</b><span style="color: navy"> {
@@ -86,7 +86,7 @@
   <name value="WHOQOLBrefQuestionnaireResponseToObservation"/>
   <title value="WHOQOL-BREF Q score to O score"/>
   <status value="active"/>
-  <date value="2026-03-29T11:39:37+00:00"/>
+  <date value="2026-03-29T11:44:39+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -178,7 +178,7 @@
           <valueString value="405152002"/>
         </parameter>
         <parameter>
-          <valueString value="Quality of life assessment"/>
+          <valueString value="Quality of life"/>
         </parameter>
       </target>
     </rule>

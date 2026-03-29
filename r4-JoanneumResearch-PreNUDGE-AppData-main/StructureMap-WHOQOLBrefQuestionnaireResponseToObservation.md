@@ -27,7 +27,7 @@ WHOQOL-BREF Q score to O score
   "name" : "WHOQOLBrefQuestionnaireResponseToObservation",
   "title" : "WHOQOL-BREF Q score to O score",
   "status" : "active",
-  "date" : "2026-03-29T11:39:37+00:00",
+  "date" : "2026-03-29T11:44:39+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -118,7 +118,7 @@ WHOQOL-BREF Q score to O score
           "valueString" : "405152002"
         },
         {
-          "valueString" : "Quality of life assessment"
+          "valueString" : "Quality of life"
         }]
       }]
     },
