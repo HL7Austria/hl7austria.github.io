@@ -293,201 +293,165 @@ width: 100%;}
 <h4 id="verwendete-fhir-ressourcen">Verwendete FHIR Ressourcen</h4>
 
 <h5 id="list">List</h5>
-<p>Der <strong>Medikationsplan eines ELGA-Teilnehmers ("List"-Ressource)</strong> beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimittel und deren Dosierung abbilden. Die Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus.</p>
+
+<p>Der <strong>Medikationsplan eines ELGA-Teilnehmers ("List"-Ressource)</strong> beinhaltet Referenzen auf 0..* Medikationsplaneinträge (<em>MedicationRequests</em>), die alle verordneten Arzneimittel und deren Dosierung abbilden. Die Reihenfolge der Listenelemente kann duch den GDA oder ELGA-Teilnehmer festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus (<em>flag</em>).</p>
 
 <h5 id="medicationrequest">MedicationRequest</h5>
+
 <p>Der <strong>Medikationsplaneintrag ("MedicationRequest"-Ressource)</strong> im Medikationsplan eines ELGA-Teilnehmers / einer ELGA-Teilnehmerin bildet genau ein Arzneimittel und dessen Dosierung ab und bildet in weiterer Folge die Grundlage zur Erstellung einer geplanten Abgabe (siehe UC_08).</p>
 
 <h4 id="initial-erstellter-medikationsplan">Initial erstellter Medikationsplan</h4>
-<p>Die initiale Erstellung des Medikationsplans wird durch die e-Medikation Fachanwendung umgesetzt. Das Element emptyReason <strong>notstarted</strong> dokumentiert den Intitalzustand. Dies ist nicht gleichbedeutend mit der Aussage, dass der Patient keine Medikamente einnimmt, sondern zeigt nur, dass noch kein Medikationsplan dokumentiert wurde.</p>
+
+<p>Die initiale Erstellung des Medikationsplans wird durch die e-Medikation Fachanwendung umgesetzt. Das Element emptyReason mit dem Wert <em>notstarted</em> dokumentiert den Intitalzustand. Dies dokumentiert, dass noch kein Medikationsplan erstellt wurde ist nicht gleichbedeutend mit der Aussage, dass der Patient keine Medikamente einnimmt.</p>
 
 <p>Relevante Felder (List):</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AtEmedListMedikationsplan
-* status: **current**
+
+<div class="highlight">
+<pre>
+AtEmedListMedikationsplan
+* status: current
 * mode: working
 * date: Datum der Erstellung durch die Fachanwendung
 * source: Intitiale Erstellung durch die Fachanwendung
-* emptyReason: **notstarted** (noch keine Medikationsplaneinträge erfasst)
-</code></pre></div></div>
+* emptyReason: <b>notstarted<b> (noch keine Medikationsplaneinträge erfasst)
+&lt;/pre&gt;
+&lt;/div&gt;
 
-<p>Test: Anzeige mit md-Tabelle:</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Feld</th>
-      <th>Wert</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>status</td>
-      <td><strong>current</strong></td>
-    </tr>
-    <tr>
-      <td>mode</td>
-      <td>working</td>
-    </tr>
-    <tr>
-      <td>date</td>
-      <td>Datum der Erstellung durch die Fachanwendung</td>
-    </tr>
-    <tr>
-      <td>source</td>
-      <td>Initiale Erstellung durch die Fachanwendung</td>
-    </tr>
-    <tr>
-      <td>emptyReason</td>
-      <td><strong>notstarted</strong> (noch keine Medikationsplaneinträge erfasst)</td>
-    </tr>
-  </tbody>
-</table>
+#### Leerer Medikationsplan (keine Medikation eingenommen)
 
-<p>Test: Anzeige mit html:</p>
+Ein leerer Medikationsplan mit dem Wert emptyReason *nilknown* bedeutet, dass der Patient derzeit keine Medikamente einnimmt. Der Medikatonsplan erhält diesen Status, wenn:
+- die gesamte Medikation abgesetzt, storniert oder gelöscht wurde
+- ein GDA dokumentieren möchte, dass der Patient keine Medikamente einnehmen soll 
+
+Dient zur Unterscheidung von leeren Medikationsplänen, die noch nie befüllt wurden.
+
+Relevante Felder (List):
+
 <div class="highlight">
-
 <pre>
-* status: <b>current</b>
+AtEmedListMedikationsplan
+* status: current
 * mode: working
-* date: Datum der Erstellung durch die Fachanwendung
-* source: Initiale Erstellung durch die Fachanwendung
-* emptyReason: <b>notstarted</b> (noch keine Medikationsplaneinträge erfasst)
-</pre>
+* date: Datum der Bearbeitung
+* source: Veranwortlicher GDA 
+* emptyReason: <b>nilknown<b>, Patient nimmt derzeit kein Medikation ein
+&lt;/pre&gt;
+&lt;/div&gt;
 
-</div>
+TODO: Muss ein GDA zuerst alle Einträge abgesetzen / stornieren oder und die Fachanwendung setzt das emptyReason dann beim nächsten readtowrite auf nilknown?
 
-<p>Test: md-Tabelle mit Einrückung:</p>
+#### Sub-Usecase: Medikationsplaneintrag in Medikationsplan hinzufügen
 
-<table>
-  <thead>
-    <tr>
-      <th>Element</th>
-      <th>Beschreibung</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>status</td>
-      <td><strong>current</strong></td>
-    </tr>
-    <tr>
-      <td>mode</td>
-      <td>working</td>
-    </tr>
-    <tr>
-      <td>date</td>
-      <td>Datum der Erstellung</td>
-    </tr>
-    <tr>
-      <td>source</td>
-      <td>Initiale Erstellung</td>
-    </tr>
-    <tr>
-      <td>emptyReason</td>
-      <td><strong>notstarted</strong></td>
-    </tr>
-    <tr>
-      <td>└─ reasonDetail</td>
-      <td>Detail zum Grund</td>
-    </tr>
-  </tbody>
-</table>
+Der GDA kann dem Medikationsplan ein oder mehrere Medikationsplaneinträge hinzufügen. 
 
-<p>Test md-Tabelle mit Path:</p>
+Hierfür werden entsprechende Medikationsplaneinträge *MedicationRequests* erstellt und in der *List*-Ressouce referenziert. 
 
-<table>
-  <thead>
-    <tr>
-      <th>Pfad</th>
-      <th>Beschreibung</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>status</td>
-      <td><strong>current</strong></td>
-    </tr>
-    <tr>
-      <td>emptyReason</td>
-      <td><strong>notstarted</strong></td>
-    </tr>
-    <tr>
-      <td>emptyReason.reasonDetail</td>
-      <td>Zusatzinfo</td>
-    </tr>
-  </tbody>
-</table>
+Relevante Felder (List):
 
-<h4 id="sub-usecase-medikationsplaneintrag-in-medikationsplan-hinzufügen">Sub-Usecase: Medikationsplaneintrag in Medikationsplan hinzufügen</h4>
-<p>Der GDA kann dem Medikationsplan ein oder mehrere Medikationsplaneinträge hinzufügen.</p>
-
-<p>Hierfür werden entsprechende Medikationsplaneinträge erstellt und in der List-Ressoce referenziert.</p>
-
-<p>Relevante Felder (List):</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* AtEmedListMedikationsplan
-* status: **current**
+<div class="highlight">
+<pre>
+* status: current
 * mode: working
 * date: Datum der Bearbeitung des Medikationsplans
 * source: Veranwortlicher GDA 
-* entry[0]:  // 1. Medikationsplaneintrag 
-    * flag: **Prescribed** 
+* entry[0]:  // 1. Medikationsplaneintrag wird hinzufgefügt
+    * flag: <b>Prescribed<b> 
     * date: Datum der Aufnahme des Medikationsplaneintrags  // in diesem Fall gleich mit dem Datum der Bearbeitung des Medikationsplans
-    * item: Referenz auf den **Planeintrag 1**  // siehe "Neuen Medikationsplaneintrag erstellen"
-* entry[1]:  // 2. Medikationsplaneintrag
-    * flag: **Prescribed** 
+    * item: Referenz auf den <b>Planeintrag 1<b>  // siehe "Neuen Medikationsplaneintrag erstellen"
+* entry[1]:  // 2. Medikationsplaneintrag wird hinzufgefügt
+    * flag: <b>Prescribed<b> 
     * date: Datum der Aufnahme des Medikationsplaneintrags // in diesem Fall gleich mit dem Datum der Bearbeitung des Medikationsplans
-    * item: Referenz auf den **Planeintrag 2**  // siehe "Neuen Medikationsplaneintrag erstellen"
-</code></pre></div></div>
-<p>Anmerkung: Für das Erstellen einer geplanten Abgabe (Rezeptieren) aus den Medikationsplaneinträgen heraus siehe UC_08.</p>
+    * item: Referenz auf den <b>Planeintrag 2<b>  // siehe "Neuen Medikationsplaneintrag erstellen"
+&lt;/pre&gt;
+&lt;/div&gt;
 
-<h4 id="sub-usecase-medikationsplaneintrag-im-medikationsplan-ändern">Sub-Usecase: Medikationsplaneintrag im Medikationsplan ändern</h4>
-<p>Der GDA kann im Medikationsplan ein oder mehrere Medikationsplaneinträge ändern.</p>
+Anmerkung: Für das Erstellen einer geplanten Abgabe (Rezeptieren) aus den Medikationsplaneinträgen heraus siehe UC_08.
 
-<p>Hierfür werden entsprechende Medikationsplaneinträge angepasst und in der List-Ressouce Datum und Flag aktualisiert.</p>
 
-<p>Relevante Felder (List):</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AtEmedListMedikationsplan
+#### Sub-Usecase: Medikationsplaneintrag im Medikationsplan ändern
+Der GDA kann im Medikationsplan ein oder mehrere Medikationsplaneinträge ändern. 
+
+Hierfür werden entsprechende Medikationsplaneinträge angepasst und in der List-Ressouce Datum und Flag aktualisiert.
+
+Relevante Felder (List):
+```
+AtEmedListMedikationsplan
 * status: **current**
 * mode: working
 * date: Datum der Bearbeitung des Medikationsplans
 * source: Veranwortlicher GDA 
-* entry[0]:  // 1. Medikationsplaneintrag 
+* entry[0]:  // 1. Medikationsplaneintrag wird geändert
     * flag: **Changed** 
     * date: Datum der Änderung des Medikationsplaneintrags  // in diesem Fall gleich mit dem Datum der Bearbeitung des Medikationsplans
     * item: Referenz auf den **Planeintrag 1**  // siehe "Medikationsplaneintrag ändern"
-* entry[1]:  // 2. Medikationsplaneintrag
+* entry[1]:  // 2. Medikationsplaneintrag bleibt unverändert
     * flag: **Unchanged** 
     * date: Datum der Aufnahme des Medikationsplaneintrags // in diesem Fall unterschiedlich mit dem Datum der Bearbeitung des Medikationsplans
     * item: Referenz auf den **Planeintrag 2**  
-</code></pre></div></div>
-<p>Anmerkung: Für das Erstellen einer geplanten Abgabe (Rezeptieren) aus den Medikationsplaneinträgen heraus siehe UC_08.</p>
+```
+Anmerkung: Für das Erstellen einer geplanten Abgabe (Rezeptieren) aus den Medikationsplaneinträgen heraus siehe UC_08.
 
-<h4 id="sub-usecase-reihenfolge-der-medikationsplaneinträge-ändern">Sub-Usecase: Reihenfolge der Medikationsplaneinträge ändern</h4>
-<p>Sowohl der GDA, als auch der:die ELGA-Teilnehmer:in können die Reihenfolge der Medikationsplaneinträge ändern. Die Einträge selbst bleiben dabei unverändert.</p>
+#### Sub-Usecase: Medikationsplaneintrag im Medikationsplan stornieren
+Der GDA möchten einen Medikationsplaneintrag stornieren. Der restliche Plan bleibt unverändert. Hierfür wird der betreffende Medikationsplaneintrag mit dem flag Cancelled versehen.
 
-<p>In folgendem Beispiel wird der ursprünglich 2. Eintrag als 1. gereiht.</p>
-
-<p>Relevante Felder (List):</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AtEmedListMedikationsplan
+Relevante Felder (List):
+```
+AtEmedListMedikationsplan
 * status: **current**
 * mode: working
-* date: Datum der Änderung der Reihenfolge
+* date: Datum der Bearbeitung des Medikationsplans
 * source: Veranwortlicher GDA 
-* entry[0]: // 2. Medikationsplaneintrag 
+* entry[0]:  // 1. Medikationsplaneintrag wird storniert
+    * flag: **Cancelled** 
+    * date: Datum der Stornierung des Medikationsplaneintrags  // in diesem Fall gleich mit dem Datum der Bearbeitung des Medikationsplans
+    * item: Referenz auf den **Planeintrag 1**  // siehe "Medikationsplaneintrag ändern"
+* entry[1]:  // 2. Medikationsplaneintrag bleibt unverändert
     * flag: **Unchanged** 
-    * date: Datum der Aufnahme / Änderung des Medikationsplaneintrags 
-    * item: Referenz auf den **Planeintrag 2** 
-* entry[1]: // 1. Medikationsplaneintrag
+    * date: Datum der Aufnahme / Änderung des Medikationsplaneintrags // in diesem Fall unterschiedlich mit dem Datum der Bearbeitung des Medikationsplans
+    * item: Referenz auf den **Planeintrag 2**  
+```
+TODO: 
+- Beim nächsten Abruf des Medikationsplans ist die stornierte Medikation nicht mehr enthalten ?
+
+
+#### Sub-Usecase: Medikationsplaneintrag im Medikationsplan absetzen
+Der GDA möchten einen Medikationsplaneintrag absetzen. Der restliche Plan bleibt unverändert. Hierfür wird der betreffende Medikationsplaneintrag mit dem flag Ceased versehen.
+
+Relevante Felder (List):
+```
+AtEmedListMedikationsplan
+* status: **current**
+* mode: working
+* date: Datum der Bearbeitung des Medikationsplans
+* source: Veranwortlicher GDA 
+* entry[0]:  // 1. Medikationsplaneintrag wird abgesetzt
+    * flag: **Ceased** 
+    * date: Datum der Absetzung des Medikationsplaneintrags  // in diesem Fall gleich mit dem Datum der Bearbeitung des Medikationsplans
+    * item: Referenz auf den **Planeintrag 1**  // siehe "Medikationsplaneintrag ändern"
+* entry[1]:  // 2. Medikationsplaneintrag bleibt unverändert
     * flag: **Unchanged** 
-    * date: Datum der Aufnahme / Änderung des Medikationsplaneintrags 
-    * item: Referenz auf den **Planeintrag 1** 
-</code></pre></div></div>
+    * date: Datum der Aufnahme / Änderung des Medikationsplaneintrags // in diesem Fall unterschiedlich mit dem Datum der Bearbeitung des Medikationsplans
+    * item: Referenz auf den **Planeintrag 2**  
+```
+TODO: 
+- Beim nächsten Abruf des Medikationsplans ist die abgesetzte Medikation nicht mehr enthalten ?
 
-<h4 id="sub-usecase-medikationsplan-vollständig-leeren">Sub-Usecase: Medikationsplan vollständig leeren</h4>
-<p>Der GDA dokumentiert, dass aktuell keine Medikamente eingenommen werden sollen. Hierfür werden alle bestehenden Medikationsplaneinträge mit dem flag Ceased versehen.</p>
 
-<p>Relevante Felder (List):</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AtEmedListMedikationsplan
+#### Sub-Usecase: Medikationsplaneintrag abgelaufen 
+TODO: 
+- Was passiert wenn der Zeitraum in dem die Medikation eingenommen werden soll abläuft? effectiveDosePeriod.end ist erreicht
+
+#### Sub-Usecase: Medikationsplaneintrag durch ELGA-Teilnehmer löschen
+
+TODO: Entspricht dies dem "Medikationsplaneintrag im Medikationsplan stornieren" oder wird hier das Entry aus der Liste entfernt?
+
+#### Sub-Usecase: Medikationsplan vollständig leeren
+Der GDA dokumentiert, dass aktuell keine Medikamente eingenommen werden sollen. Hierfür werden alle bestehenden Medikationsplaneinträge abgesetzt (mit dem flag Ceased versehen).
+
+Relevante Felder (List):
+```
+AtEmedListMedikationsplan
 * status: **current**
 * mode: working
 * date: Datum der Bearbeitung
@@ -500,171 +464,118 @@ width: 100%;}
     * flag: **Ceased** 
     * date: Datum der Absetzung // in diesem Fall gleich mit dem Datum der Bearbeitung des Medikationsplans
     * item: Referenz auf den Planeintrag 2 (siehe "Neuen Medikationsplaneintrag erstellen")
-</code></pre></div></div>
-<p>TODO:</p>
-<ul>
-  <li>Beim nächsten Abruf des Medikationsplans ist die abgesetzte Medikation nicht mehr enthalten ?</li>
-</ul>
+```
+TODO: 
+- Beim nächsten Abruf des Medikationsplans ist die abgesetzte Medikation nicht mehr enthalten ?
 
-<h4 id="sub-usecase-medikationsplaneintrag-im-medikationsplan-stornieren">Sub-Usecase: Medikationsplaneintrag im Medikationsplan stornieren</h4>
-<p>Der GDA möchten einen Medikationsplaneintrag stornieren. Der restliche Plan bleibt unverändert. Hierfür wird der betreffende Medikationsplaneintrag mit dem flag Cancelled versehen.</p>
 
-<p>Relevante Felder (List):</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AtEmedListMedikationsplan
+#### Sub-Usecase: Reihenfolge der Medikationsplaneinträge ändern
+Sowohl der GDA, als auch der:die ELGA-Teilnehmer:in können die Reihenfolge der Medikationsplaneinträge ändern. Die Einträge selbst bleiben dabei unverändert.
+
+In folgendem Beispiel wird der ursprünglich 2. Eintrag als 1. gereiht.
+
+Relevante Felder (List):
+```
+AtEmedListMedikationsplan
 * status: **current**
 * mode: working
-* date: Datum der Bearbeitung des Medikationsplans
+* date: Datum der Änderung der Reihenfolge
 * source: Veranwortlicher GDA 
-* entry[0]:  // 1. Medikationsplaneintrag 
-    * flag: **Cancelled** 
-    * date: Datum der Stornierung des Medikationsplaneintrags  // in diesem Fall gleich mit dem Datum der Bearbeitung des Medikationsplans
-    * item: Referenz auf den **Planeintrag 1**  // siehe "Medikationsplaneintrag ändern"
-* entry[1]:  // 2. Medikationsplaneintrag
+* entry[0]: // 2. Medikationsplaneintrag 
     * flag: **Unchanged** 
-    * date: Datum der Aufnahme / Änderung des Medikationsplaneintrags // in diesem Fall unterschiedlich mit dem Datum der Bearbeitung des Medikationsplans
-    * item: Referenz auf den **Planeintrag 2**  
-</code></pre></div></div>
-<p>TODO:</p>
-<ul>
-  <li>Beim nächsten Abruf des Medikationsplans ist die stornierte Medikation nicht mehr enthalten ?</li>
-</ul>
-
-<h4 id="sub-usecase-medikationsplaneintrag-im-medikationsplan-absetzen">Sub-Usecase: Medikationsplaneintrag im Medikationsplan absetzen</h4>
-<p>Der GDA möchten einen Medikationsplaneintrag absetzen. Der restliche Plan bleibt unverändert. Hierfür wird der betreffende Medikationsplaneintrag mit dem flag Ceased versehen.</p>
-
-<p>Relevante Felder (List):</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AtEmedListMedikationsplan
-* status: **current**
-* mode: working
-* date: Datum der Bearbeitung des Medikationsplans
-* source: Veranwortlicher GDA 
-* entry[0]:  // 1. Medikationsplaneintrag 
-    * flag: **Ceased** 
-    * date: Datum der Absetzung des Medikationsplaneintrags  // in diesem Fall gleich mit dem Datum der Bearbeitung des Medikationsplans
-    * item: Referenz auf den **Planeintrag 1**  // siehe "Medikationsplaneintrag ändern"
-* entry[1]:  // 2. Medikationsplaneintrag
+    * date: Datum der Aufnahme / Änderung des Medikationsplaneintrags 
+    * item: Referenz auf den **Planeintrag 2** 
+* entry[1]: // 1. Medikationsplaneintrag
     * flag: **Unchanged** 
-    * date: Datum der Aufnahme / Änderung des Medikationsplaneintrags // in diesem Fall unterschiedlich mit dem Datum der Bearbeitung des Medikationsplans
-    * item: Referenz auf den **Planeintrag 2**  
-</code></pre></div></div>
-<p>TODO:</p>
-<ul>
-  <li>Beim nächsten Abruf des Medikationsplans ist die abgesetzte Medikation nicht mehr enthalten ?</li>
-</ul>
+    * date: Datum der Aufnahme / Änderung des Medikationsplaneintrags 
+    * item: Referenz auf den **Planeintrag 1** 
+```
 
-<h4 id="sub-usecase-medikationsplaneintrag-durch-elga-teilnehmer-löschen">Sub-Usecase: Medikationsplaneintrag durch ELGA-Teilnehmer löschen</h4>
+-------
 
-<p>TODO: Entspricht dies dem "Medikationsplaneintrag im Medikationsplan stornieren" oder wird hier das Entry aus der Liste entfernt?</p>
+#### Sub-Usecase: Neuen Medikationsplaneintrag erstellen
+Ein neues Arzneimittel soll vom Patienten eingenommen werden. Der GDA erstellt hierfür einen Medikationsplaneintrag, der im Medikationsplan referenziert wird.
 
-<h4 id="sub-usecase-medikationsplaneintrag-abgelaufen">Sub-Usecase: Medikationsplaneintrag abgelaufen</h4>
-<p>TODO:</p>
-<ul>
-  <li>Was passiert wenn der Zeitraum in dem die Medikation eingenommen werden soll abläuft? effectiveDosePeriod.end ist erreicht</li>
-</ul>
-
-<h4 id="leerer-medikationsplan-keine-medikation-eingenommen">Leerer Medikationsplan (keine Medikation eingenommen)</h4>
-<p>Ein leerer Medikationsplan mit dem emptyReason nilknown: Patient nimmt derzeit keine Medikamente ein."</p>
-
-<p>Relevante Felder (List):</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AtEmedListMedikationsplan
-* status: **current**
-* mode: working
-* date: Datum der Bearbeitung
-* source: Veranwortlicher GDA 
-* emptyReason: **nilknown**, Patient nimmt derzeit kein Medikation ein
-</code></pre></div></div>
-
-<hr />
-
-<h4 id="sub-usecase-neuen-medikationsplaneintrag-erstellen">Sub-Usecase: Neuen Medikationsplaneintrag erstellen</h4>
-<p>Neues Arzneimittel soll eingenommen werden:</p>
-
-<p>Relevante Felder (MedicationRequest):</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AtEmedListMedikationsplan
+Relevante Felder (MedicationRequest):
+```
+AtEmedListMedikationsplan
 * identifier: neue Medikationsplaneintrag-ID
 * requester: veranwortlicher GDA 
 * authoredOn: aktuelles Datum
 * status **active**
 // * intent: order (fixer Wert)
 // * category: Medikationsplaneintrag (fixer Wert)
-* reported: Fremdmedikation Ja/Nein 
-* medication: Medikation mit PZN oder Magistrale Anwendung
+* reported: Fremdmedikation **Nein**
+* medication: Medikation mit PZN oder Magistrale Anwendung // Contained Medication siehe TODO: "Arzneimittel dokumentieren"
 // * note: Anmerkungen 
-* dosageInstruction: Dosierung + Einnahmezeitraum (ab sofort | in der Zukunft)
-</code></pre></div></div>
+* dosageInstruction: Dosierung + Einnahmezeitraum (ab sofort | in der Zukunft) // siehe TODO: "Dosierung dokumentieren"
+```
 
-<p>TODO: noch offen:</p>
-<ul>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>courseOfTherapyType: Gesamtmuster der Medikamentengabe continuous</td>
-          <td>acute</td>
-          <td>seasonal).</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>doNotPerform: Gibt an, ob die Verordnung der Medikation untersagt ist (z.B. bei Allergie).</li>
-</ul>
+TODO: noch offen:
+* courseOfTherapyType: Gesamtmuster der Medikamentengabe continuous | acute | seasonal).
+* doNotPerform: Gibt an, ob die Verordnung der Medikation untersagt ist (z.B. bei Allergie).
 
-<h4 id="sub-usecase-medikationsplaneintrag-bearbeiten">Sub-Usecase: Medikationsplaneintrag bearbeiten</h4>
-<p><strong>Alle Datenfelder</strong> eines bestehenden Medikationsplaneintrags können geändert werden. Wird das Arzneimittel selbst geändert, sollte vorher geprüft werden, ob es fachlich nicht sinnvoller ist, einen neuen Eintrag zu erstellen und den alten zu stoppen, damit die Änderungen für Patienten und Nachbehandler nachvollziehbar bleiben.</p>
+#### Sub-Usecase: Medikationsplaneintrag bearbeiten
+**Alle Datenfelder** eines bestehenden Medikationsplaneintrags können geändert werden. Wird das Arzneimittel selbst geändert, sollte vorher geprüft werden, ob es fachlich nicht sinnvoller ist, einen neuen Eintrag zu erstellen und den alten zu stoppen, damit die Änderungen für Patienten und Nachbehandler nachvollziehbar bleiben.
 
-<p>Relevante Felder (MedicationRequest):</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AtEmedListMedikationsplan
+Relevante Felder (MedicationRequest):
+```
+AtEmedListMedikationsplan
 * Medikationsplaneintrag-ID bleibt bestehen
 * requester: für die Änderung verantwortlicher GDA 
 * authoredOn: aktualisiertes Datum
 * status **active**
 * {Diverse Änderungen}
 * priorPrescription: Referenz auf ersetzten Medikationsplaneintrag
-</code></pre></div></div>
+```
 
-<h4 id="sub-usecase-medikationsplaneintrag-pausieren">Sub-Usecase: Medikationsplaneintrag pausieren</h4>
-<p>Die Therapie ist vorübergehend unterbrochen, die Wiederaufnahme ist vorgesehen.
-Nur der Status des Medikationsplaneintrags wird angepasst:</p>
+#### Sub-Usecase: Medikationsplaneintrag pausieren
+Die Therapie ist vorübergehend unterbrochen, die Wiederaufnahme ist vorgesehen.
+Nur der Status des Medikationsplaneintrags wird angepasst:
 
-<p>Relevante Felder (MedicationRequest):</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AtEmedListMedikationsplan
+Relevante Felder (MedicationRequest):
+```
+AtEmedListMedikationsplan
 * Medikationsplaneintrag-ID bleibt bestehen
 * requester: für die Änderung verantwortlicher GDA 
 * authoredOn: aktualisiertes Datum
 * Status **on-hold**
 * priorPrescription: Referenz auf ersetzten Medikationsplaneintrag
-</code></pre></div></div>
+```
 
-<p>TODO: statusReason wäre hier sinnvoll, dzt. NP</p>
+TODO: statusReason wäre hier sinnvoll, dzt. NP
 
-<h4 id="sub-usecase-medikationsplaneintrag-beenden">Sub-Usecase: Medikationsplaneintrag beenden</h4>
-<p>Therapie ist regulär abgeschlossen. Nur der Status des Medikationsplaneintrags wird angepasst:</p>
+#### Sub-Usecase: Medikationsplaneintrag beenden
+Therapie ist regulär abgeschlossen. Nur der Status des Medikationsplaneintrags wird angepasst:
 
-<p>Relevante Felder (MedicationRequest):</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AtEmedListMedikationsplan
+Relevante Felder (MedicationRequest):
+```
+AtEmedListMedikationsplan
 * Medikationsplaneintrag-ID bleibt bestehen
 * requester: für die Änderung verantwortlicher GDA 
 * authoredOn: aktualisiertes Datum
 * Status **completed**
 * priorPrescription: Referenz auf ersetzten Medikationsplaneintrag
-</code></pre></div></div>
+```
 
-<p>TODO: bei zeitlich befristeter Medikation, kann nach Ablauf des Status automatisch gesetzt werden -&gt; welche Werte in requester und authoredOn?</p>
+TODO: bei zeitlich befristeter Medikation, kann nach Ablauf des Status automatisch gesetzt werden -&gt; welche Werte in requester und authoredOn?
 
-<h4 id="sub-usecase-medikationsplaneintrag-abbrechen">Sub-Usecase: Medikationsplaneintrag abbrechen</h4>
-<p>Die Therapie wurde begonnen, aber abgebrochen. Nur der Status des Medikationsplaneintrags wird angepasst:</p>
+#### Sub-Usecase: Medikationsplaneintrag abbrechen
+Die Therapie wurde begonnen, aber abgebrochen. Nur der Status des Medikationsplaneintrags wird angepasst:
 
-<p>Relevante Felder (MedicationRequest):</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AtEmedListMedikationsplan
+Relevante Felder (MedicationRequest):
+```
+AtEmedListMedikationsplan
 * Medikationsplaneintrag-ID bleibt bestehen
 * Author, Datum: wird aktualisiert
 * Status **stopped**
 * priorPrescription: Referenz auf ersetzten Medikationsplaneintrag
-</code></pre></div></div>
-<p>TODO: statusReason wäre hier sinnvoll, dzt. NP</p>
+```
+TODO: statusReason wäre hier sinnvoll, dzt. NP
 
-<h5 id="medikationsplaneintrag-löschen">Medikationsplaneintrag löschen</h5>
-<p>Nur durch den ELGA-Teilnehmer zur Umsetzung der Teilnehmerrechte.</p>
+
+
+
 
 <!-- #### Beispiel -->
 
@@ -675,6 +586,7 @@ Nur der Status des Medikationsplaneintrags wird angepasst:</p>
 <!-- #### Relevante Invarianten -->
 
 <!-- #### Mögliche Notifications -->
+</b></b></b></b></b></b></b></b></pre></div></b></b></pre></div></b></b></pre></div>
 
 
 
@@ -694,7 +606,7 @@ Nur der Status des Medikationsplaneintrags wird angepasst:</p>
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Fri, Mar 27, 2026 10:18+0000">2026-03-27</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Mar 30, 2026 07:39+0000">2026-03-30</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
