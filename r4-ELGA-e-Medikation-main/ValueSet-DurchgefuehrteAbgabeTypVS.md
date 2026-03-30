@@ -24,7 +24,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
 
 ### Expansion
 
-No Expansion for this valueset (Unknown Code System)
+No Expansion for this valueset (Unsupported Code System Version)
 
 -------
 
@@ -53,7 +53,7 @@ No Expansion for this valueset (Unknown Code System)
   "title" : "ELGA e-Med Durchgeführte Abgabe Typ Value Set",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-30T07:39:16+00:00",
+  "date" : "2026-03-30T10:13:35+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
