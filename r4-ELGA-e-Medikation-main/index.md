@@ -33,7 +33,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) ENTWURF",
   "status" : "draft",
-  "date" : "2026-03-30T10:13:35+00:00",
+  "date" : "2026-04-01T13:59:59+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1084,6 +1084,30 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "name" : "Beispiel: Geplante Abgabe",
       "description" : "Bildet eine geplante Abgabe des Medikaments EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest).",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-geplante-abgabe"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/AtEmed.List.Readtowrite"
+      },
+      "name" : "e-Med Operation für Read-to-write",
+      "description" : "Die $readtowrite Operation wird aufgerufen, wenn ein Medikationsplan mit der Intention zu schreiben gelesen wird.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/AtEmed.List.Write"
+      },
+      "name" : "e-Med Operation für Write des Medikationsplans",
+      "description" : "Die $write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird.",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{

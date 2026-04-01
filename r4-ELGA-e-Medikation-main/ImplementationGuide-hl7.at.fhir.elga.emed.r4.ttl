@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "ELGAeMedikationR4"] ; # 
   fhir:title [ fhir:v "ELGA e-Medikation (R4) ENTWURF"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-03-30T10:13:35+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-04-01T13:59:59+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ELGA GmbH" ] ;
@@ -2107,6 +2107,48 @@
          a fhir:Canonical ;
          fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-geplante-abgabe"^^xsd:anyURI ;
          fhir:l <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-geplante-abgabe>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "OperationDefinition"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/elga/emed/r4/OperationDefinition/AtEmed.List.Readtowrite> ;
+         fhir:reference [ fhir:v "OperationDefinition/AtEmed.List.Readtowrite" ]
+       ] ;
+       fhir:name [ fhir:v "e-Med Operation für Read-to-write" ] ;
+       fhir:description [ fhir:v "Die $readtowrite Operation wird aufgerufen, wenn ein Medikationsplan mit der Intention zu schreiben gelesen wird." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "OperationDefinition"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/elga/emed/r4/OperationDefinition/AtEmed.List.Write> ;
+         fhir:reference [ fhir:v "OperationDefinition/AtEmed.List.Write" ]
+       ] ;
+       fhir:name [ fhir:v "e-Med Operation für Write des Medikationsplans" ] ;
+       fhir:description [ fhir:v "Die $write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
        ]
      ] [
        fhir:extension ( [

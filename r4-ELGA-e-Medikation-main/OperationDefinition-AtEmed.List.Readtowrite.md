@@ -1,0 +1,92 @@
+# HL7.AT.FHIR.ELGA.EMED.R4\e-Med Operation für Read-to-write - FHIR® v4.0.1
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **e-Med Operation für Read-to-write**
+
+## OperationDefinition: e-Med Operation für Read-to-write 
+
+| | | |
+| :--- | :--- | :--- |
+| *Official URL*:https://fhir.hl7.at/elga/emed/r4/OperationDefinition/AtEmed.List.Readtowrite | *Version*:0.1.1 | |
+| Draft as of 2026-04-01 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmed_List_Readtowrite |
+
+ 
+Die $readtowrite Operation wird aufgerufen, wenn ein Medikationsplan mit der Intention zu schreiben gelesen wird. 
+
+Beim Ausliefern des Collection Bundles werden folgende Status vom Server automatisch geändert:
+
+* von new zu unchangened
+* von changed zu unchangened
+* (unchanged bleib gleich)
+
+Diese Collection wird nicht als neue Listenversion persistiert, sondern nur als Ergebnis der Operation zurückgeliefert.
+
+Entries die vor dem Aufruf die Flag delete haben, werden aus der Liste entfern.
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "AtEmed.List.Readtowrite",
+  "url" : "https://fhir.hl7.at/elga/emed/r4/OperationDefinition/AtEmed.List.Readtowrite",
+  "version" : "0.1.1",
+  "name" : "AtEmed_List_Readtowrite",
+  "title" : "e-Med Operation für Read-to-write",
+  "status" : "draft",
+  "kind" : "operation",
+  "date" : "2026-04-01T13:59:59+00:00",
+  "publisher" : "ELGA GmbH",
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://elga.gv.at"
+    }]
+  },
+  {
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at",
+      "use" : "work"
+    }]
+  }],
+  "description" : "Die $readtowrite Operation wird aufgerufen, wenn ein Medikationsplan mit der Intention zu schreiben gelesen wird.",
+  "affectsState" : true,
+  "code" : "readtowrite",
+  "system" : true,
+  "type" : true,
+  "instance" : false,
+  "parameter" : [{
+    "name" : "bpkGH",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *bpkGH* Parameter dient der Zurordnung des Patienten.",
+    "type" : "string"
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *return* Parameter gibt Auskunft über den Erfolg der Operation.",
+    "type" : "Resource",
+    "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/OperationOutcome"]
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *return* Parameter gibt Auskunft über den Erfolg der Operation.",
+    "type" : "Bundle",
+    "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-medikationsplan"]
+  }]
+}
+
+```

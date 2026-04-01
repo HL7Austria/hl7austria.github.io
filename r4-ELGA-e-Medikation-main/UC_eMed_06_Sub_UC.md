@@ -12,29 +12,39 @@
 
 ##### List
 
-Der **Medikationsplan eines ELGA-Teilnehmers ("List"-Ressource)** beinhaltet Referenzen auf 0..* Medikationsplaneinträge (**MedicationRequests**), die alle verordneten Arzneimittel und deren Dosierung abbilden. Die Reihenfolge der Listenelemente kann duch den GDA oder ELGA-Teilnehmer festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus (**flag**).
+Der **Medikationsplan eines ELGA-Teilnehmers ("List"-Ressource)** beinhaltet List-Entries, die 0..* Medikationsplaneinträge (**MedicationRequests**) referenzieren. Die Reihenfolge der Listenelemente kann duch den GDA oder Patienten festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus (**flag**).
+
+Der Status eines Eintrags kann folgende Zustände annehmen:
+
+###### List-Flag Diagramm
 
 ##### MedicationRequest
 
 Der **Medikationsplaneintrag ("MedicationRequest"-Ressource)** im Medikationsplan eines ELGA-Teilnehmers / einer ELGA-Teilnehmerin bildet genau ein Arzneimittel und dessen Dosierung ab und bildet in weiterer Folge die Grundlage zur Erstellung einer geplanten Abgabe (siehe UC_08).
 
-#### Initial erstellter Medikationsplan
+##### MedicationRequest-Status Diagramm
 
-Die initiale Erstellung des Medikationsplans wird durch die e-Medikation Fachanwendung umgesetzt. Das Element emptyReason mit dem Wert **notstarted** dokumentiert den Intitalzustand. Dies dokumentiert, dass noch kein Medikationsplan erstellt wurde ist nicht gleichbedeutend mit der Aussage, dass der Patient keine Medikamente einnimmt.
+#### Initial erstellter Medikationsplan UC_06_01
+
+Die initiale Erstellung des Medikationsplans erfolgt durch die e-Medikation Fachanwendung.
+
+Ein GDA ruft den Medikationsplan eines Patienten ab, ohne zu wissen, ob bereits einer existiert. Die Fachanwendung stellt sicher, dass pro Patient genau ein Medikationsplan vorhanden ist: Existiert noch keiner, wird dieser im Hintergrund initial angelegt und mit emptyReason **notstarted** zurückgegeben.
+
+Dieser Status kennzeichnet ausschließlich den Initialzustand (keine Einträge im Medikationsplan) und trifft keine Aussage darüber, ob der Patient tatsächlich keine Medikamente einnimmt.
 
 Relevante Felder (List):
 
 ```
 AtEmedListMedikationsplan
-* status: **current**
-* mode: working
-* date: Datum der Erstellung durch die Fachanwendung
-* source: Intitiale Erstellung durch die Fachanwendung
-* emptyReason: **notstarted** (noch keine Medikationsplaneinträge erfasst)
+    status: current
+    mode: working
+    date: Datum der Erstellung durch die Fachanwendung
+    source: Intitiale Erstellung durch die Fachanwendung
+    emptyReason: notstarted  // noch keine Medikationsplaneinträge erfasst
 
 ```
 
-#### Leerer Medikationsplan (keine Medikation eingenommen)
+#### Leerer Medikationsplan (keine Medikation eingenommen) UC_06_02
 
 Ein leerer Medikationsplan mit dem Wert emptyReason **nilknown** bedeutet, dass der Patient derzeit keine Medikamente einnimmt. Der Medikatonsplan erhält diesen Status, wenn:
 
@@ -57,7 +67,7 @@ AtEmedListMedikationsplan
 
 TODO: Muss ein GDA zuerst alle Einträge abgesetzen / stornieren oder und die Fachanwendung setzt das emptyReason dann beim nächsten readtowrite auf nilknown?
 
-#### Sub-Usecase: Medikationsplaneintrag in Medikationsplan hinzufügen
+#### Sub-Usecase: Medikationsplaneintrag in Medikationsplan hinzufügen UC_06_03
 
 Der GDA kann dem Medikationsplan ein oder mehrere Medikationsplaneinträge hinzufügen.
 

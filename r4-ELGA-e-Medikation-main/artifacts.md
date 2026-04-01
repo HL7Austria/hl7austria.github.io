@@ -7,6 +7,15 @@
 
 This page provides a list of the FHIR artifacts defined as part of this implementation guide.
 
+### Behavior: Operation Definitions 
+
+These are custom operations that can be supported by and/or invoked by systems conforming to this implementation guide.
+
+| | |
+| :--- | :--- |
+| [e-Med Operation für Read-to-write](OperationDefinition-AtEmed.List.Readtowrite.md) | Die $readtowrite Operation wird aufgerufen, wenn ein Medikationsplan mit der Intention zu schreiben gelesen wird. |
+| [e-Med Operation für Write des Medikationsplans](OperationDefinition-AtEmed.List.Write.md) | Die $write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird. |
+
 ### Structures: Resource Profiles 
 
 These define constraints on FHIR resources for systems conforming to this implementation guide.

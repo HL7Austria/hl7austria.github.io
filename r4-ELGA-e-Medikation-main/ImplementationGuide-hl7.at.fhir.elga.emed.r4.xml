@@ -11,7 +11,7 @@
   <name value="ELGAeMedikationR4"/>
   <title value="ELGA e-Medikation (R4) ENTWURF"/>
   <status value="draft"/>
-  <date value="2026-03-30T10:13:35+00:00"/>
+  <date value="2026-04-01T13:59:59+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -867,6 +867,28 @@
       <name value="Beispiel: Geplante Abgabe"/>
       <description value="Bildet eine geplante Abgabe des Medikaments EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest)."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-geplante-abgabe"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/AtEmed.List.Readtowrite"/>
+      </reference>
+      <name value="e-Med Operation für Read-to-write"/>
+      <description value="Die $readtowrite Operation wird aufgerufen, wenn ein Medikationsplan mit der Intention zu schreiben gelesen wird."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/AtEmed.List.Write"/>
+      </reference>
+      <name value="e-Med Operation für Write des Medikationsplans"/>
+      <description value="Die $write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird."/>
+      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
