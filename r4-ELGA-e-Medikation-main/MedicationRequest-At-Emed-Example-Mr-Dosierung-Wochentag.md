@@ -70,7 +70,7 @@
     "doseAndRate" : [{
       "doseQuantity" : {
         "unit" : "Stück",
-        "system" : "https://termgit.elga.gv.at/ValueSet-elga-medikationmengenart",
+        "system" : "http://unitsofmeasure.org",
         "code" : "{Stueck}"
       }
     }]

@@ -46,7 +46,7 @@
   },
   {
     "coding" : [{
-      "system" : "https://termgit.elga.gv.at/ValueSet/elga-medikationrezeptart",
+      "system" : "https://termgit.elga.gv.at/CodeSystem/medikationrezeptart",
       "code" : "1",
       "display" : "Kassenrezept"
     }]
@@ -91,7 +91,7 @@
     "doseAndRate" : [{
       "doseQuantity" : {
         "unit" : "Stück",
-        "system" : "https://termgit.elga.gv.at/ValueSet-elga-medikationmengenart",
+        "system" : "http://unitsofmeasure.org",
         "code" : "{Stueck}"
       }
     }]

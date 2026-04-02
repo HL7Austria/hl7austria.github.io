@@ -45,8 +45,8 @@
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"10.4"}
-    h3,h4,h5,h6{--heading-prefix:"10.4"}</style>
+    <style type="text/css">h2{--heading-prefix:"11.4"}
+    h3,h4,h5,h6{--heading-prefix:"11.4"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- at-fhir-ig-template begin -->
@@ -122,6 +122,9 @@
       </li>
       <li>
         <a href="actors.html">Akteure</a>
+      </li>
+      <li>
+        <a href="workflowmanagement.html">Workflowmanagement</a>
       </li>
       <li>
         <a href="dosaging.html">Dosierschemata</a>
@@ -273,7 +276,7 @@
         
           Draft
           
-            as of 2026-04-01
+            as of 2026-04-02
           
         
       </td>
@@ -338,7 +341,7 @@
 <li>"completed": implizit mittels Custom Operation gesetzt, nachdem alle Abgaben durchgeführt wurden (Rezept komplett eingelöst) (TODO: techn. prüfen)</li>
 <li>"entered-in-error": nach fehlerhafter Eingabe; Storno nur möglich, wenn noch keine zugehörige Abgabe durchgeführt wurde (TODO: techn. prüfen?)</li>
 <li>"stopped": TODO: Verwendung zu prüfen (Status soll analog zu e-Rezept abgebildet werden)
-(nicht verwendet: on-hold, stopped, cancelled, draft, unknown)</li>
+(nicht verwendet: on-hold, cancelled, draft, unknown)</li>
 </ul>
 <br/><div style="color:DarkGray;text-decoration:line-through"><p>A code specifying the current state of the order.  Generally, this will be active or completed state.</p>
 </div></td></tr><tr><td style="white-space: nowrap">Short</td><td>Status der geplanten Abgabe: active | completed | entered-in-error | stopped. Details siehe Definition.<span style="color:DarkGray;text-decoration:line-through">active | on-hold | cancelled | completed | entered-in-error | stopped | draft | unknown</span></td></tr><tr><td style="white-space: nowrap">Comments</td><td><p style="color:DarkGray">This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.</p>
@@ -551,7 +554,7 @@ Keine Verwendung in der geplanten Abgabe.<span style="color:DarkGray;text-decora
 <li style="font-size: 11px">"completed": implizit mittels Custom Operation gesetzt, nachdem alle Abgaben durchgeführt wurden (Rezept komplett eingelöst) (TODO: techn. prüfen)</li>
 <li style="font-size: 11px">"entered-in-error": nach fehlerhafter Eingabe; Storno nur möglich, wenn noch keine zugehörige Abgabe durchgeführt wurde (TODO: techn. prüfen?)</li>
 <li style="font-size: 11px">"stopped": TODO: Verwendung zu prüfen (Status soll analog zu e-Rezept abgebildet werden)
-(nicht verwendet: on-hold, stopped, cancelled, draft, unknown)</li>
+(nicht verwendet: on-hold, cancelled, draft, unknown)</li>
 </ul>
 </td></tr><tr><td style="white-space: nowrap">Short</td><td>Status der geplanten Abgabe: active | completed | entered-in-error | stopped. Details siehe Definition.</td></tr><tr><td style="white-space: nowrap"><a href="http://hl7.org/fhir/R4/terminologies.html">Binding</a></td><td><span>The codes SHALL be taken from  <a href="ValueSet-GeplanteAbgabeStatusVS.html">ELGA e-Med Geplante Abgabe Status ValueSet</a><br/>(<a href="http://hl7.org/fhir/R4/terminologies.html#required">required</a> to <span class="copy-text-inline"><code>https://fhir.hl7.at/elga/emed/r4/ValueSet/GeplanteAbgabeStatusVS</code><button data-clipboard-text="https://fhir.hl7.at/elga/emed/r4/ValueSet/GeplanteAbgabeStatusVS" title="Click to Copy URL" class="btn-copy"></button></span>)</span></td></tr><tr><td style="white-space: nowrap"><a href="http://hl7.org/fhir/R4/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
 
@@ -718,7 +721,7 @@ Keine Verwendung in der geplanten Abgabe.</td></tr><tr><td style="white-space: n
 <li style="font-size: 11px">"completed": implizit mittels Custom Operation gesetzt, nachdem alle Abgaben durchgeführt wurden (Rezept komplett eingelöst) (TODO: techn. prüfen)</li>
 <li style="font-size: 11px">"entered-in-error": nach fehlerhafter Eingabe; Storno nur möglich, wenn noch keine zugehörige Abgabe durchgeführt wurde (TODO: techn. prüfen?)</li>
 <li style="font-size: 11px">"stopped": TODO: Verwendung zu prüfen (Status soll analog zu e-Rezept abgebildet werden)
-(nicht verwendet: on-hold, stopped, cancelled, draft, unknown)</li>
+(nicht verwendet: on-hold, cancelled, draft, unknown)</li>
 </ul>
 </td></tr><tr><td style="white-space: nowrap">Short</td><td>Status der geplanten Abgabe: active | completed | entered-in-error | stopped. Details siehe Definition.</td></tr><tr><td style="white-space: nowrap">Comments</td><td><p style="font-size: 11px">This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.</p>
 </td></tr><tr><td style="white-space: nowrap"><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr><tr><td style="white-space: nowrap"><a href="http://hl7.org/fhir/R4/terminologies.html">Binding</a></td><td><span>The codes SHALL be taken from  <a href="ValueSet-GeplanteAbgabeStatusVS.html">ELGA e-Med Geplante Abgabe Status ValueSet</a><br/>(<a href="http://hl7.org/fhir/R4/terminologies.html#required">required</a> to <span class="copy-text-inline"><code>https://fhir.hl7.at/elga/emed/r4/ValueSet/GeplanteAbgabeStatusVS</code><button data-clipboard-text="https://fhir.hl7.at/elga/emed/r4/ValueSet/GeplanteAbgabeStatusVS" title="Click to Copy URL" class="btn-copy"></button></span>)</span></td></tr><tr><td style="white-space: nowrap"><a href="http://hl7.org/fhir/R4/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/R4/datatypes.html#code">code</a></td></tr><tr><td style="white-space: nowrap"><a href="http://hl7.org/fhir/R4/conformance-rules.html#ismodifier">Is Modifier</a></td><td>true because This element is labeled as a modifier because it is a status element that contains status entered-in-error which means that the resource should not be treated as valid</td></tr><tr><td style="white-space: nowrap"><a href="http://hl7.org/fhir/R4/elementdefinition.html#primitives">Primitive Value</a></td><td>This primitive element may be present, or absent, or replaced by an extension</td></tr><tr><td style="white-space: nowrap"><a href="http://hl7.org/fhir/R4/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr><tr><td style="white-space: nowrap"><a href="http://hl7.org/fhir/R4/search.html#summary">Summary</a></td><td>true</td></tr><tr><td style="white-space: nowrap">Invariants</td><td><b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (<code>hasValue() or (children().count() &gt; id.count())</code>)</td></tr>
@@ -957,7 +960,7 @@ Keine Verwendung in der geplanten Abgabe.</td></tr><tr><td style="white-space: n
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Apr 1, 2026 13:59+0000">2026-04-01</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Apr 2, 2026 15:01+0000">2026-04-02</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
