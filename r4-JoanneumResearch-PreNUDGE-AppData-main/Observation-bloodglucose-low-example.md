@@ -12,7 +12,7 @@ Profile: [AT PreNUDGE Observation Blood Glucose (only in mg/dL)](StructureDefini
 
 **status**: Final
 
-**code**: Fasting glucose [Mass/volume] in Capillary blood
+**code**: Glucose [Mass/volume] in Capillary blood by Glucometer
 
 **subject**: [James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)](Patient-example.md)
 
@@ -57,8 +57,8 @@ Patient fühlt sich schwindelig und zittrig.
   "code" : {
     "coding" : [{
       "system" : "http://loinc.org",
-      "code" : "1556-0",
-      "display" : "Fasting glucose [Mass/volume] in Capillary blood"
+      "code" : "41653-7",
+      "display" : "Glucose [Mass/volume] in Capillary blood by Glucometer"
     }]
   },
   "subject" : {

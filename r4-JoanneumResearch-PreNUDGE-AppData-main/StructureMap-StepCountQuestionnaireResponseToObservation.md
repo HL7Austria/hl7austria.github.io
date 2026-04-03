@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/StepCountQuestionnaireResponseToObservation | *Version*:0.1.0 | |
-| Active as of 2026-03-29 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:StepCountQuestionnaireResponseToObservation |
+| Active as of 2026-04-03 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:StepCountQuestionnaireResponseToObservation |
 
  
 Step Count Q to O 
@@ -27,7 +27,7 @@ Step Count Q to O
   "name" : "StepCountQuestionnaireResponseToObservation",
   "title" : "Step Count Q to O",
   "status" : "active",
-  "date" : "2026-03-29T11:44:39+00:00",
+  "date" : "2026-04-03T14:50:23+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

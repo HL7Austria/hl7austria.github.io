@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/BloodGlucoseQuestionnaireResponseToObservation | *Version*:0.1.0 | |
-| Active as of 2026-03-29 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:BloodGlucoseQuestionnaireResponseToObservation |
+| Active as of 2026-04-03 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:BloodGlucoseQuestionnaireResponseToObservation |
 
  
 Blood Glucose Q to O 
@@ -27,7 +27,7 @@ Blood Glucose Q to O
   "name" : "BloodGlucoseQuestionnaireResponseToObservation",
   "title" : "Blood Glucose Q to O",
   "status" : "active",
-  "date" : "2026-03-29T11:44:39+00:00",
+  "date" : "2026-04-03T14:50:23+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -124,10 +124,10 @@ Blood Glucose Q to O
           "valueString" : "http://loinc.org"
         },
         {
-          "valueString" : "1556-0"
+          "valueString" : "41653-7"
         },
         {
-          "valueString" : "Fasting glucose [Mass/volume] in Capillary blood"
+          "valueString" : "Glucose [Mass/volume] in Capillary blood by Glucometer"
         }]
       }]
     },
