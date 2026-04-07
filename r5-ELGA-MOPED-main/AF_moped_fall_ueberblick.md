@@ -144,6 +144,10 @@ Keine relevanten Notifications für diesen Standardablauf identifiziert.
 * [ANWF 2 - Stationäre Aufnahme ✅](AF_moped_fall_aufnahme.md#anwendungsfall-2-stationäre-aufnahme)
 * [ANWF 18 - Transfer 🔄](AF_moped_fall_aufnahme.md#anwendungsfall-18-transfer)
 
+#### Moped Fall - Administration:
+
+TBD
+
 #### Moped Fall - Patientversorgung:
 
 * [ANWF 7 - Behandlungsabbruch 🔄](AF_moped_fall_patientenversorgung.md#anwendungsfall-7-behandlungsabbruch-vor-erbrachter-leistung)
@@ -185,6 +189,10 @@ Keine relevanten Notifications für diesen Standardablauf identifiziert.
 
 * [ANWF 42 - Quartalsmeldung 🔄](AF_moped_fall_jahres_quartals_meldung.md#anwendungsfall-42-quartalsmäßige-bereitstellung-der-lkf-daten)
 * [ANWF 44 - Jahresmeldung 🔄](AF_moped_fall_jahres_quartals_meldung.md#anwendungsfall-42-jährliche-bereitstellung-der-lkf-daten)
+
+#### Moped Fall - Kommunikation:
+
+TBD
 
 #### Moped Fall - Prozessübergreifend:
 

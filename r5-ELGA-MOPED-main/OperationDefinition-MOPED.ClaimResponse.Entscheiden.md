@@ -61,7 +61,7 @@ Die Operation wird vom Akteur Landesgesundheitsfonds (LFG) aufgerufen. Die $ents
   "title" : "MOPED ClaimResponse $entscheiden",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-04-07T06:39:12+00:00",
+  "date" : "2026-04-07T10:38:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

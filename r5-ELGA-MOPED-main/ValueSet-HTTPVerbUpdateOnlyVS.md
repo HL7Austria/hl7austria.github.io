@@ -50,7 +50,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "name" : "HTTPVerbUpdateOnlyVS",
   "title" : "HTTP Verb Update Only",
   "status" : "draft",
-  "date" : "2026-04-07T06:39:12+00:00",
+  "date" : "2026-04-07T10:38:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

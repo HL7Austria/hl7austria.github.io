@@ -184,7 +184,7 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
   "name" : "MOPED",
   "title" : "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)",
   "status" : "draft",
-  "date" : "2026-04-07T06:39:12+00:00",
+  "date" : "2026-04-07T10:38:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -4031,6 +4031,12 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
         "generation" : "markdown"
       },
       {
+        "sourceUrl" : "AF_moped_fall_administration.html",
+        "name" : "AF_moped_fall_administration.html",
+        "title" : "Moped Fall - Administration",
+        "generation" : "markdown"
+      },
+      {
         "sourceUrl" : "AF_moped_fall_patientenversorgung.html",
         "name" : "AF_moped_fall_patientenversorgung.html",
         "title" : "Moped Fall - Patientversorgung",
@@ -4070,6 +4076,12 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
         "sourceUrl" : "AF_moped_fall_jahres_quartals_meldung.html",
         "name" : "AF_moped_fall_jahres_quartals_meldung.html",
         "title" : "Moped Fall - Jahres-/Quartalsmeldung",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "AF_moped_fall_kommunikation.html",
+        "name" : "AF_moped_fall_kommunikation.html",
+        "title" : "Moped Fall - Kommunikation",
         "generation" : "markdown"
       },
       {

@@ -41,8 +41,8 @@
     <script src="assets/js/mermaid.js" type="text/javascript"></script>
     <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
 
-    <style type="text/css">h2{--heading-prefix:"14"}
-    h3,h4,h5,h6{--heading-prefix:"14"}</style>
+    <style type="text/css">h2{--heading-prefix:"15"}
+    h3,h4,h5,h6{--heading-prefix:"15"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
           <!-- at-fhir-ig-template begin -->
@@ -142,6 +142,9 @@
         <a href="AF_moped_fall_aufnahme.html">Moped Fall - Aufnahme</a>
       </li>
       <li>
+        <a href="AF_moped_fall_administration.html">Moped Fall - Administration</a>
+      </li>
+      <li>
         <a href="AF_moped_fall_patientenversorgung.html">Moped Fall - Patientversorgung</a>
       </li>
       <li>
@@ -161,6 +164,9 @@
       </li>
       <li>
         <a href="AF_moped_fall_jahres_quartals_meldung.html">Moped Fall - Jahres-/Quartalsmeldung</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_kommunikation.html">Moped Fall - Kommunikation</a>
       </li>
       <li>
         <a href="AF_moped_fall_prozessuebergreifend.html">Moped Fall - Prozessübergreifend</a>
@@ -764,10 +770,10 @@ width: 100%;}
 <p>Aufgrund der eingelangten VAE (Versichertenanspruchserklärung) Anfrage erfolgt seitens der SV die positive VAE Rückmeldung. Die positive Entscheidung wird in der Rückmeldung durch "00" (stationär) oder "19" (ambulant) ausgedrückt.</p>
 
 <h4 id="ambulant">Ambulant</h4>
-<p><a name="l1534">​</a>Zukünftig gibt es anstatt einer Quartalszusage pro <a href="TBD-LINK-BEGRIFFSDEFINITION">Moped Fall</a> eine Anfrage und eine Rückmeldung.</p>
+<p><a name="l1546">​</a>Zukünftig gibt es anstatt einer Quartalszusage pro <a href="TBD-LINK-BEGRIFFSDEFINITION">Moped Fall</a> eine Anfrage und eine Rückmeldung.</p>
 
 <h4 id="stationär">Stationär</h4>
-<p><a name="l1543">​</a>Die SV hat die Möglichkeit die VAE unbefristet oder befristet abzugeben. Gibt es eine Befristung, so wird ein Enddatum angegeben. Falls der stationäre Aufenthalt länger dauert als das angegebene Enddatum so muss das KH um eine Verlängerung ansuchen. In der Verlängerung wird das Enddatum als Verlängerungsdatum angegeben und zusätzlich auf die initiale Anfrage verwiesen. Die positive VAE für den ursprünglichen Zeitraum bleibt weiterhin gültig (außer sie wird aus anderen Gründen nachträglich storniert -&gt; siehe <a href="AF28bis32.html#anwendungsfall-32-vae-doch-negativ-nach-vorheriger-positiver-vae">Anwendungsfall 32:  VAE doch negativ</a>). Die VAE kann nach Ablauf der Frist der letzten positiven VAE immer wieder verlängert werden solange sich der Patient immer noch in Behandlung befindet. Gibt es kein Fristende so kann die VAE auch nicht verlängert werden.</p>
+<p><a name="l1555">​</a>Die SV hat die Möglichkeit die VAE unbefristet oder befristet abzugeben. Gibt es eine Befristung, so wird ein Enddatum angegeben. Falls der stationäre Aufenthalt länger dauert als das angegebene Enddatum so muss das KH um eine Verlängerung ansuchen. In der Verlängerung wird das Enddatum als Verlängerungsdatum angegeben und zusätzlich auf die initiale Anfrage verwiesen. Die positive VAE für den ursprünglichen Zeitraum bleibt weiterhin gültig (außer sie wird aus anderen Gründen nachträglich storniert -&gt; siehe <a href="AF28bis32.html#anwendungsfall-32-vae-doch-negativ-nach-vorheriger-positiver-vae">Anwendungsfall 32:  VAE doch negativ</a>). Die VAE kann nach Ablauf der Frist der letzten positiven VAE immer wieder verlängert werden solange sich der Patient immer noch in Behandlung befindet. Gibt es kein Fristende so kann die VAE auch nicht verlängert werden.</p>
 
 <h3 id="beispiel-1">Beispiel</h3>
 
@@ -1003,7 +1009,7 @@ Ablehnungsgründe gibt es jedoch einige, die durchaus durch die Verwaltung im KH
 <p>Die SV möchte benachrichtigt werden, wenn ein neuer VAERequest für sie bereitgestellt wurde. Das zugehörige SubscriptionTopic wurde in <a href="SubscriptionTopic-neueVAE.html">diesem Beispiel</a> definiert.</p>
 
 <h4 id="subscriptiontopic-vae-wurde-abgelehnt">SubscriptionTopic: VAE wurde abgelehnt</h4>
-<p><a name="l1889">​</a>Das KH möchte benachrichtigt werden, wenn ein VAERequest abgelehnt wurde. Das zugehörige SubscriptionTopic wurde in <a href="SubscriptionTopic-VAEabgelehnt.json.html">diesem Beispiel</a> definiert.</p>
+<p><a name="l1901">​</a>Das KH möchte benachrichtigt werden, wenn ein VAERequest abgelehnt wurde. Das zugehörige SubscriptionTopic wurde in <a href="SubscriptionTopic-VAEabgelehnt.json.html">diesem Beispiel</a> definiert.</p>
 
 <h4 id="tabellarische-übersicht-2">Tabellarische Übersicht</h4>
 
@@ -1436,7 +1442,7 @@ Ablehnungsgründe gibt es jedoch einige, die durchaus durch die Verwaltung im KH
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Tue, Apr 7, 2026 06:39+0000">2026-04-07</span>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Tue, Apr 7, 2026 10:38+0000">2026-04-07</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

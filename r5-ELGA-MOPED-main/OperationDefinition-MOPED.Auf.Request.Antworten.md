@@ -52,7 +52,7 @@ Die Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die $antworten
   "title" : "MOPED auf VAERequest oder ARKRequest $antworten",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-04-07T06:39:12+00:00",
+  "date" : "2026-04-07T10:38:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

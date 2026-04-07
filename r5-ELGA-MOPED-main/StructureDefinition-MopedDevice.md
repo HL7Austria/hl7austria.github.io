@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedDevice.csv), [E
   "name" : "MopedDevice",
   "title" : "Moped Device",
   "status" : "draft",
-  "date" : "2026-04-07T06:39:12+00:00",
+  "date" : "2026-04-07T10:38:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
