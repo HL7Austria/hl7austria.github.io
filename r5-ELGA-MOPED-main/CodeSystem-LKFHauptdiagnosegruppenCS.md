@@ -33,7 +33,7 @@ LKF Hauptdiagnosegruppen
   "title" : "LKF Hauptdiagnosegruppen",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-04-07T12:18:59+00:00",
+  "date" : "2026-04-07T19:20:35+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

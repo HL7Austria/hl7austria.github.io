@@ -384,24 +384,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p>  <!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#teilprozess-1-planaufnahme" id="markdown-toc-teilprozess-1-planaufnahme">Teilprozess 1: Planaufnahme</a></li>
-  <li><a href="#teilprozess-2-stationäre-aufnahme" id="markdown-toc-teilprozess-2-stationäre-aufnahme">Teilprozess 2: stationäre Aufnahme</a>    <ul>
-      <li><a href="#betroffene-akteure" id="markdown-toc-betroffene-akteure">Betroffene Akteure</a></li>
-      <li><a href="#betroffene-behandlungsarten" id="markdown-toc-betroffene-behandlungsarten">Betroffene Behandlungsarten</a></li>
-      <li><a href="#beschreibung" id="markdown-toc-beschreibung">Beschreibung</a></li>
-      <li><a href="#beispiel" id="markdown-toc-beispiel">Beispiel</a></li>
-      <li><a href="#technische-hinweise" id="markdown-toc-technische-hinweise">Technische Hinweise</a></li>
-      <li><a href="#ablauf" id="markdown-toc-ablauf">Ablauf</a></li>
-      <li><a href="#relevante-profile" id="markdown-toc-relevante-profile">Relevante Profile</a></li>
-      <li><a href="#relevante-invarianten" id="markdown-toc-relevante-invarianten">Relevante Invarianten</a></li>
-      <li><a href="#mögliche-notifications" id="markdown-toc-mögliche-notifications">Mögliche Notifications</a></li>
-      <li><a href="#teilprozess-18-transfer" id="markdown-toc-teilprozess-18-transfer">Teilprozess 18: Transfer</a></li>
-    </ul>
-  </li>
+  <li><a href="#betroffene-akteure" id="markdown-toc-betroffene-akteure">Betroffene Akteure</a></li>
+  <li><a href="#ablauf---generisch" id="markdown-toc-ablauf---generisch">Ablauf - generisch</a></li>
+  <li><a href="#ablauf---beispiele-zur-anwendung" id="markdown-toc-ablauf---beispiele-zur-anwendung">Ablauf - Beispiele zur Anwendung</a></li>
+  <li><a href="#relevante-profile" id="markdown-toc-relevante-profile">Relevante Profile</a></li>
+  <li><a href="#technische-hinweise" id="markdown-toc-technische-hinweise">Technische Hinweise</a></li>
 </ul>
 
 </div>
-
 <style>
 .notification-table {
   width: 100%;
@@ -611,218 +601,7 @@ pre.xml {
 
 </style>
 
-<h2 id="teilprozess-1-planaufnahme">Teilprozess 1: Planaufnahme</h2>
-
-<style>
-.notification-table {
-  width: 100%;
-  overflow-x: auto;
-  max-height: 600px;
-  overflow-y: auto;
-}
-
-.notification-table th,
-.notification-table td {
-  padding: 10px;
-  background: #f5f5f5; /* Cell color */
-  box-shadow: 0 0 0 3px #fff;
-  text-align: left;
-}
-.notification-table th {
-  background: #e4e4e4;
-}
-
-.table-responsive {
-display: block;
-width: 100%;
-overflow-x: auto;
-max-height: 600px;
-overflow-y: auto;
-}
-.table-responsive > table {
-width: 100%;}
-.table-responsive th,
-.table-responsive td {
-  padding: 15px;
-  background: #f5f5f5;
-}
-.table-responsive table {
-  border-collapse: separate;
-  border-spacing: 3px;
-}
-/* Kopfzeile sticky */
-.table-responsive th {
-  position: sticky;
-  top: 0;
-  background: rgb(228, 228, 228);
-  z-index: 2;
-}
-/* Erste Spalte sticky */
-.table-responsive th:first-child,
-.table-responsive td:first-child {
-  position: sticky;
-  left: 0;
-  background: rgb(228, 228, 228);
-  z-index: 3;
-}
-
-.table-responsive th:first-child {
-  position: sticky;
-  top: 0;
-  left: 0;
-  background: rgb(228, 228, 228);
-  z-index: 4;
-}
-
-.tabs {
-  position: relative;
-  min-height: 210px;
-  clear: both;
-  margin: 35px 0 25px;
-  background: #ffffff;
-}
-
-.tab {
-  float: left;
-}
-
-.tab label {
-  background: #eeeeee;
-  padding: 10px;
-  border: 1px solid #cccccc;
-  margin-left: -1px;
-  position: relative;
-  left: 1px;
-  top: -29px;
-  -webkit-transition: background-color .17s linear;
-  transition: background-color .17s linear;
-}
-
-.tab input[id^="tab-"] {
-  display: none;
-}
-
-.content-in-tab {
-  position: absolute;
-  top: 12px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #ffffff;
-  padding: 20px;
-  border: 1px solid #cccccc;
-  -webkit-transition: opacity .6s linear;
-  transition: opacity .6s linear;
-  opacity: 0;
-}
-
-[type=radio]:checked ~ label {
-  background: #ffffff;
-  border-bottom: 1px solid #ffffff;
-  z-index: 2;
-}
-
-[type=radio]:checked ~ label ~ .content-in-tab {
-  z-index: 1;
-  opacity: 1;
-}
-
-pre.json,
-pre.xml {
-  max-height: 100%;
-  height: auto;
-  width: 100%;
-  box-sizing: border-box;
-  resize: vertical;
-  overflow: auto;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-.request-panel {
-  background: #f8f9fa;
-  padding: 1.2rem;
-  margin: 0.5rem 0;
-  border-radius: 0 4px 4px 0;
-  border-left: 4px solid #007bff;
-}
-
-.request-panel--success {
-  border-left-color: #28a745;
-}
-
-.request-meta {
-  font-size: 0.9em;
-  color: #666666;
-  margin-top: 0.5rem;
-}
-
-.request-code {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-  background: #ffffff;
-  padding: 1rem;
-  border-radius: 4px;
-  margin-bottom: 0.8rem;
-  font-size: 0.95em;
-  line-height: 1.5;
-  overflow-x: auto;
-}
-
-.request-method-post {
-  color: #d63384;
-  font-weight: bold;
-}
-
-.request-method-get {
-  color: #007bff;
-  font-weight: bold;
-}
-
-.request-url {
-  background: #e7f3ff;
-  padding: 0.2em 0.4em;
-  border-radius: 3px;
-  color: #0066cc;
-}
-
-.request-header {
-  background: #f1f3f4;
-  padding: 0.1em 0.3em;
-  border-radius: 2px;
-}
-
-
-.tab label.request-tab {
-  --tab-height: 120px;
-}
-
-.tabs:has(input[id^="tab-request-"]:checked) {
-  min-height: 140px;
-}
-
-.tabs:has(input[id^="tab-body-"]:checked) {
-  min-height: 520px;
-}
-
-
-.tab label.body-tab {
-  --tab-height: 500px; 
-}
-
-.content-in-tab:has(.request-panel) {
-  padding: 8px 12px;
-}
-
-.content-in-tab:has(pre) {
-  padding: 10px;
-  overflow: auto;  
-  max-height: calc(100vh - 120px); 
-}
-
-
-</style>
-
-<h2 id="teilprozess-2-stationäre-aufnahme">Teilprozess 2: stationäre Aufnahme</h2>
+<p>Die folgenden Diagramme veranschaulichen die möglichen Interaktionen mit der Moped-Plattform im Teilprozess "Aufnahme". Zunächst werden die allgemeinen Interaktionsmöglichkeiten dargestellt, anschließend werden diese durch Beispiele konkretisiert und im Kontext einer spezifischen Anwendung dargestellt.</p>
 
 <h3 id="betroffene-akteure">Betroffene Akteure</h3>
 
@@ -840,20 +619,204 @@ pre.xml {
     </tr>
     <tr>
       <td>LGF (Landesgesundheitsfonds)</td>
-      <td style="text-align: right">✅</td>
+      <td style="text-align: right">❌</td>
     </tr>
     <tr>
       <td>SV (Sozialversicherung)</td>
-      <td style="text-align: right">✅</td>
+      <td style="text-align: right">❌</td>
     </tr>
     <tr>
       <td>Bund</td>
+      <td style="text-align: right">❌</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="ablauf---generisch">Ablauf - generisch</h3>
+<h4 id="aufnahme-generisch">Aufnahme (generisch)</h4>
+<div><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 1210 517" zoomAndPan="magnify" data-diagram-type="SEQUENCE" preserveAspectRatio="none" width="1210px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:1210px;height:517px;background:#F5F5F5;" version="1.1" height="517px"><defs><filter width="300%" x="-1" y="-1" id="fc12wpk4j5cmo" height="300%"><feGaussianBlur result="blurOut" stdDeviation="2"></feGaussianBlur><feColorMatrix result="blurOut2" in="blurOut" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" type="matrix"></feColorMatrix><feOffset result="blurOut3" dx="4" dy="4" in="blurOut2"></feOffset><feBlend mode="normal" in="SourceGraphic" in2="blurOut3"></feBlend></filter><linearGradient y1="0%" x1="50%" y2="100%" x2="50%" id="gc12wpk4j5cmo0"><stop offset="0%" stop-color="#E0E5F0"></stop><stop offset="100%" stop-color="#D1D9E6"></stop></linearGradient></defs><g><rect width="1210" x="0" y="0" style="stroke:none;stroke-width:1;" fill="#F5F5F5" height="517"></rect><rect rx="5" ry="5" width="126.0459" x="127" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#F5E599" height="505.8828"></rect><text font-weight="bold" lengthAdjust="spacing" x="130" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="173.8662" font-size="14" textLength="22.5654" y="35.292" font-family="Arial" fill="#000000">KH</text><rect rx="5" ry="5" width="195.5605" x="338.9033" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#C5F7BA" height="505.8828"></rect><text font-weight="bold" lengthAdjust="spacing" x="341.9033" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="410.1396" font-size="14" textLength="53.0879" y="35.292" font-family="Arial" fill="#000000">Moped</text><rect rx="5" ry="5" width="124.3984" x="576.4639" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#C0C0C0" height="505.8828"></rect><text font-weight="bold" lengthAdjust="spacing" x="579.4639" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="623.3301" font-size="14" textLength="20.918" y="35.292" font-family="Arial" fill="#000000">SV</text><rect rx="5" ry="5" width="265.5742" x="742.8623" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#C0C0C0" height="505.8828"></rect><text font-weight="bold" lengthAdjust="spacing" x="745.8623" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="750.7363" font-size="14" textLength="244.9521" y="35.292" font-family="Arial" fill="#000000">LGF (Landesgesundheitsfonds)</text><rect rx="5" ry="5" width="153.8545" x="1050.4365" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#C0C0C0" height="505.8828"></rect><text font-weight="bold" lengthAdjust="spacing" x="1053.4365" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="1107.0508" font-size="14" textLength="40.626" y="35.292" font-family="Arial" fill="#000000">Bund</text><g><title>KH</title><rect width="8" x="186.0229" y="118.8906" fill="#000000" fill-opacity="0.00000" height="313.6953"></rect><line y1="118.8906" x1="189.5229" y2="432.5859" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="189.5229"></line></g><g><title>Moped</title><rect width="8" x="432.6836" y="118.8906" fill="#000000" fill-opacity="0.00000" height="313.6953"></rect><line y1="118.8906" x1="436.168" y2="432.5859" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="436.168"></line></g><g><title>SV</title><rect width="8" x="634.6631" y="118.8906" fill="#000000" fill-opacity="0.00000" height="313.6953"></rect><line y1="118.8906" x1="638.1631" y2="432.5859" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="638.1631"></line></g><g><title>LGF (Landesgesundheitsfonds)</title><rect width="8" x="871.6494" y="118.8906" fill="#000000" fill-opacity="0.00000" height="313.6953"></rect><line y1="118.8906" x1="875.522" y2="432.5859" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="875.522"></line></g><g><title>Bund</title><rect width="8" x="1123.3638" y="118.8906" fill="#000000" fill-opacity="0.00000" height="313.6953"></rect><line y1="118.8906" x1="1127.2451" y2="432.5859" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="1127.2451"></line></g><g data-participant="KH" class="participant participant-head"><text lengthAdjust="spacing" x="177.1689" font-size="14" textLength="19.708" y="115.5889" font-family="Arial" fill="#000000">KH</text><ellipse cx="190.0229" cy="51.0938" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M190.0229,59.0938 L190.0229,86.0938 M177.0229,67.0938 L203.0229,67.0938 M190.0229,86.0938 L177.0229,101.0938 M190.0229,86.0938 L203.0229,101.0938" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="KH" class="participant participant-tail"><text lengthAdjust="spacing" x="177.1689" font-size="14" textLength="19.708" y="444.5811" font-family="Arial" fill="#000000">KH</text><ellipse cx="190.0229" cy="456.3828" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M190.0229,464.3828 L190.0229,491.3828 M177.0229,472.3828 L203.0229,472.3828 M190.0229,491.3828 L177.0229,506.3828 M190.0229,491.3828 L203.0229,506.3828" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="MP" class="participant participant-head"><rect rx="5" ry="5" width="61.0313" x="406.168" y="87.5938" style="stroke:#555555;stroke-width:0.5;" fill="#FFFFFF" height="30.2969"></rect><text lengthAdjust="spacing" x="413.168" font-size="14" textLength="47.0313" y="107.5889" font-family="Arial" fill="#000000">Moped</text></g><g data-participant="MP" class="participant participant-tail"><rect rx="5" ry="5" width="61.0313" x="406.168" y="431.5859" style="stroke:#555555;stroke-width:0.5;" fill="#FFFFFF" height="30.2969"></rect><text lengthAdjust="spacing" x="413.168" font-size="14" textLength="47.0313" y="451.5811" font-family="Arial" fill="#000000">Moped</text></g><g data-participant="SV" class="participant participant-head"><text lengthAdjust="spacing" x="626.4312" font-size="14" textLength="18.4639" y="115.5889" font-family="Arial" fill="#000000">SV</text><ellipse cx="638.6631" cy="51.0938" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M638.6631,59.0938 L638.6631,86.0938 M625.6631,67.0938 L651.6631,67.0938 M638.6631,86.0938 L625.6631,101.0938 M638.6631,86.0938 L651.6631,101.0938" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="SV" class="participant participant-tail"><text lengthAdjust="spacing" x="626.4312" font-size="14" textLength="18.4639" y="444.5811" font-family="Arial" fill="#000000">SV</text><ellipse cx="638.6631" cy="456.3828" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M638.6631,464.3828 L638.6631,491.3828 M625.6631,472.3828 L651.6631,472.3828 M638.6631,491.3828 L625.6631,506.3828 M638.6631,491.3828 L651.6631,506.3828" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="LGF" class="participant participant-head"><text lengthAdjust="spacing" x="764.522" font-size="14" textLength="216.2549" y="115.5889" font-family="Arial" fill="#000000">LGF (Landesgesundheitsfonds)</text><ellipse cx="875.6494" cy="51.0938" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M875.6494,59.0938 L875.6494,86.0938 M862.6494,67.0938 L888.6494,67.0938 M875.6494,86.0938 L862.6494,101.0938 M875.6494,86.0938 L888.6494,101.0938" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="LGF" class="participant participant-tail"><text lengthAdjust="spacing" x="764.522" font-size="14" textLength="216.2549" y="444.5811" font-family="Arial" fill="#000000">LGF (Landesgesundheitsfonds)</text><ellipse cx="875.6494" cy="456.3828" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M875.6494,464.3828 L875.6494,491.3828 M862.6494,472.3828 L888.6494,472.3828 M875.6494,491.3828 L862.6494,506.3828 M875.6494,491.3828 L888.6494,506.3828" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="Bund" class="participant participant-head"><text lengthAdjust="spacing" x="1106.2451" font-size="14" textLength="36.2373" y="115.5889" font-family="Arial" fill="#000000">Bund</text><ellipse cx="1127.3638" cy="51.0938" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M1127.3638,59.0938 L1127.3638,86.0938 M1114.3638,67.0938 L1140.3638,67.0938 M1127.3638,86.0938 L1114.3638,101.0938 M1127.3638,86.0938 L1140.3638,101.0938" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="Bund" class="participant participant-tail"><text lengthAdjust="spacing" x="1106.2451" font-size="14" textLength="36.2373" y="444.5811" font-family="Arial" fill="#000000">Bund</text><ellipse cx="1127.3638" cy="456.3828" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M1127.3638,464.3828 L1127.3638,491.3828 M1114.3638,472.3828 L1140.3638,472.3828 M1127.3638,491.3828 L1114.3638,506.3828 M1127.3638,491.3828 L1140.3638,506.3828" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><path filter="url(#fc12wpk4j5cmo)" d="M441,138.8906 L441,186.8906 A5,5 0 0 0 446,191.8906 L701,191.8906 A5,5 0 0 0 706,186.8906 L706,143.8906 L696,133.8906 L446,133.8906 A5,5 0 0 0 441,138.8906" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><path d="M696,133.8906 L696,141.3906 A2.5,2.5 0 0 0 698.5,143.8906 L706,143.8906 L696,133.8906" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><text lengthAdjust="spacing" x="447" font-size="14" textLength="62.3027" y="151.8857" font-family="Arial" fill="#111827">Zustand:</text><text lengthAdjust="spacing" x="447" font-size="14" textLength="244.8906" y="168.1826" font-family="Arial" fill="#111827">- Kein existierender Moped Fall mit</text><text lengthAdjust="spacing" x="455.9004" font-size="14" textLength="200.1699" y="184.4795" font-family="Arial" fill="#111827">dieser Schlüsselkombination</text><g data-participant-1="KH" data-participant-2="MP" class="message"><line y1="221.9141" x1="434.6836" y2="217.9141" style="stroke:#111827;stroke-width:2;" x2="424.6836"></line><line y1="221.9141" x1="434.6836" y2="225.9141" style="stroke:#111827;stroke-width:2;" x2="424.6836"></line><line y1="221.9141" x1="190.0229" y2="221.9141" style="stroke:#111827;stroke-width:2;" x2="435.6836"></line><text font-weight="bold" lengthAdjust="spacing" x="197.0229" font-size="13" textLength="9.0454" y="216.8481" font-family="Arial" fill="#000000">1</text><text lengthAdjust="spacing" x="210.0684" font-size="13" textLength="120.8276" y="216.8481" font-family="Arial" fill="#000000">POST $aufnehmen</text></g><path filter="url(#fc12wpk4j5cmo)" d="M5,239.9141 L5,353.9141 A5,5 0 0 0 10,358.9141 L367,358.9141 A5,5 0 0 0 372,353.9141 L372,244.9141 L362,234.9141 L10,234.9141 A5,5 0 0 0 5,239.9141" style="stroke:#8B95A5;stroke-width:1;" fill="url(#gc12wpk4j5cmo0)"></path><path d="M362,234.9141 L362,242.4141 A2.5,2.5 0 0 0 364.5,244.9141 L372,244.9141 L362,234.9141" style="stroke:#8B95A5;stroke-width:1;" fill="url(#gc12wpk4j5cmo0)"></path><text lengthAdjust="spacing" x="11" font-size="14" textLength="229.8994" y="252.9092" font-family="Arial" fill="#111827">Aufnahme-Bundle wird gesendet</text><text lengthAdjust="spacing" x="11" font-size="14" textLength="58.8779" y="269.2061" font-family="Arial" fill="#111827">- Patient</text><text lengthAdjust="spacing" x="11" font-size="14" textLength="169.6475" y="285.5029" font-family="Arial" fill="#111827">- Aufenthalt (Encounter)</text><text lengthAdjust="spacing" x="11" font-size="14" textLength="307.3984" y="301.7998" font-family="Arial" fill="#111827">- Aufnehmende Station (TransferEncounter)</text><text lengthAdjust="spacing" x="11" font-size="14" textLength="145.0449" y="318.0967" font-family="Arial" fill="#111827">- Aufnahmediagnose</text><text lengthAdjust="spacing" x="11" font-size="14" textLength="346.6436" y="334.3936" font-family="Arial" fill="#111827">- ggf. Verischerungsdaten inkl. Hauptversicherter</text><text lengthAdjust="spacing" x="11" font-size="14" textLength="224.998" y="350.6904" font-family="Arial" fill="#111827">- ggf. überweisend Organisation</text><path filter="url(#fc12wpk4j5cmo)" d="M441,376.9922 L441,408.9922 A5,5 0 0 0 446,413.9922 L608,413.9922 A5,5 0 0 0 613,408.9922 L613,381.9922 L603,371.9922 L446,371.9922 A5,5 0 0 0 441,376.9922" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><path d="M603,371.9922 L603,379.4922 A2.5,2.5 0 0 0 605.5,381.9922 L613,381.9922 L603,371.9922" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><text lengthAdjust="spacing" x="447" font-size="14" textLength="62.3027" y="389.9873" font-family="Arial" fill="#111827">Zustand:</text><text lengthAdjust="spacing" x="447" font-size="14" textLength="151.6758" y="406.2842" font-family="Arial" fill="#111827">- Moped Fall angelegt</text></g></svg></div>
+
+<h3 id="ablauf---beispiele-zur-anwendung">Ablauf - Beispiele zur Anwendung</h3>
+
+<h4 id="aufnahme---bpk-des-patienten-bekannt">Aufnahme - bPK des Patienten bekannt</h4>
+<h5 id="beschreibung">Beschreibung</h5>
+<p>Wenn das bPK bekannt ist, dann ist eine datenminimierte Version der Patienten-Ressource im Zuge der Aufnahme einzumelden.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Behandlungsart</th>
+      <th style="text-align: right">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ambulant</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>Stationär</td>
       <td style="text-align: right">✅</td>
     </tr>
   </tbody>
 </table>
 
-<h3 id="betroffene-behandlungsarten">Betroffene Behandlungsarten</h3>
+<div><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 903 485" zoomAndPan="magnify" data-diagram-type="SEQUENCE" preserveAspectRatio="none" width="903px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:903px;height:485px;background:#F5F5F5;" version="1.1" height="485px"><defs><filter width="300%" x="-1" y="-1" id="frx6z5xylcy8c" height="300%"><feGaussianBlur result="blurOut" stdDeviation="2"></feGaussianBlur><feColorMatrix result="blurOut2" in="blurOut" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" type="matrix"></feColorMatrix><feOffset result="blurOut3" dx="4" dy="4" in="blurOut2"></feOffset><feBlend mode="normal" in="SourceGraphic" in2="blurOut3"></feBlend></filter><linearGradient y1="0%" x1="50%" y2="100%" x2="50%" id="grx6z5xylcy8c0"><stop offset="0%" stop-color="#E0E5F0"></stop><stop offset="100%" stop-color="#D1D9E6"></stop></linearGradient></defs><g><rect width="903" x="0" y="0" style="stroke:none;stroke-width:1;" fill="#F5F5F5" height="485"></rect><rect rx="5" ry="5" width="400.2695" x="21" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#C5F7BA" height="473.2891"></rect><text font-weight="bold" lengthAdjust="spacing" x="24" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="194.5908" font-size="14" textLength="53.0879" y="35.292" font-family="Arial" fill="#000000">Moped</text><rect rx="5" ry="5" width="434.5518" x="463.2695" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#F5E599" height="473.2891"></rect><text font-weight="bold" lengthAdjust="spacing" x="466.2695" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="568.624" font-size="14" textLength="223.8428" y="35.292" font-family="Arial" fill="#000000">KH (Herz-Jesu Krankenhaus)</text><g><title>Moped</title><rect width="8" x="217.1348" y="118.8906" fill="#000000" fill-opacity="0.00000" height="281.1016"></rect><line y1="118.8906" x1="220.6191" y2="399.9922" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="220.6191"></line></g><g><title>KH (Herz-Jesu Krankenhaus)</title><rect width="8" x="676.5454" y="118.8906" fill="#000000" fill-opacity="0.00000" height="281.1016"></rect><line y1="118.8906" x1="679.8755" y2="399.9922" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="679.8755"></line></g><g data-participant="MP" class="participant participant-head"><rect rx="5" ry="5" width="61.0313" x="190.6191" y="87.5938" style="stroke:#555555;stroke-width:0.5;" fill="#FFFFFF" height="30.2969"></rect><text lengthAdjust="spacing" x="197.6191" font-size="14" textLength="47.0313" y="107.5889" font-family="Arial" fill="#000000">Moped</text></g><g data-participant="MP" class="participant participant-tail"><rect rx="5" ry="5" width="61.0313" x="190.6191" y="398.9922" style="stroke:#555555;stroke-width:0.5;" fill="#FFFFFF" height="30.2969"></rect><text lengthAdjust="spacing" x="197.6191" font-size="14" textLength="47.0313" y="418.9873" font-family="Arial" fill="#000000">Moped</text></g><g data-participant="KH" class="participant participant-head"><text lengthAdjust="spacing" x="578.8755" font-size="14" textLength="197.3398" y="115.5889" font-family="Arial" fill="#000000">KH (Herz-Jesu Krankenhaus)</text><ellipse cx="680.5454" cy="51.0938" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M680.5454,59.0938 L680.5454,86.0938 M667.5454,67.0938 L693.5454,67.0938 M680.5454,86.0938 L667.5454,101.0938 M680.5454,86.0938 L693.5454,101.0938" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="KH" class="participant participant-tail"><text lengthAdjust="spacing" x="578.8755" font-size="14" textLength="197.3398" y="411.9873" font-family="Arial" fill="#000000">KH (Herz-Jesu Krankenhaus)</text><ellipse cx="680.5454" cy="423.7891" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M680.5454,431.7891 L680.5454,458.7891 M667.5454,439.7891 L693.5454,439.7891 M680.5454,458.7891 L667.5454,473.7891 M680.5454,458.7891 L693.5454,473.7891" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><path filter="url(#frx6z5xylcy8c)" d="M226,138.8906 L226,186.8906 A5,5 0 0 0 231,191.8906 L486,191.8906 A5,5 0 0 0 491,186.8906 L491,143.8906 L481,133.8906 L231,133.8906 A5,5 0 0 0 226,138.8906" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><path d="M481,133.8906 L481,141.3906 A2.5,2.5 0 0 0 483.5,143.8906 L491,143.8906 L481,133.8906" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><text lengthAdjust="spacing" x="232" font-size="14" textLength="62.3027" y="151.8857" font-family="Arial" fill="#111827">Zustand:</text><text lengthAdjust="spacing" x="232" font-size="14" textLength="244.8906" y="168.1826" font-family="Arial" fill="#111827">- Kein existierender Moped Fall mit</text><text lengthAdjust="spacing" x="240.9004" font-size="14" textLength="200.1699" y="184.4795" font-family="Arial" fill="#111827">dieser Schlüsselkombination</text><g data-participant-1="KH" data-participant-2="MP" class="message"><line y1="221.9141" x1="222.1348" y2="217.9141" style="stroke:#111827;stroke-width:2;" x2="232.1348"></line><line y1="221.9141" x1="222.1348" y2="225.9141" style="stroke:#111827;stroke-width:2;" x2="232.1348"></line><line y1="221.9141" x1="221.1348" y2="221.9141" style="stroke:#111827;stroke-width:2;" x2="679.5454"></line><text font-weight="bold" lengthAdjust="spacing" x="238.1348" font-size="13" textLength="9.0454" y="216.8481" font-family="Arial" fill="#000000">1</text><text lengthAdjust="spacing" x="251.1802" font-size="13" textLength="120.8276" y="216.8481" font-family="Arial" fill="#000000">POST $aufnehmen</text></g><path filter="url(#frx6z5xylcy8c)" d="M484,239.9141 L484,320.9141 A5,5 0 0 0 489,325.9141 L868,325.9141 A5,5 0 0 0 873,320.9141 L873,244.9141 L863,234.9141 L489,234.9141 A5,5 0 0 0 484,239.9141" style="stroke:#8B95A5;stroke-width:1;" fill="url(#grx6z5xylcy8c0)"></path><path d="M863,234.9141 L863,242.4141 A2.5,2.5 0 0 0 865.5,244.9141 L873,244.9141 L863,234.9141" style="stroke:#8B95A5;stroke-width:1;" fill="url(#grx6z5xylcy8c0)"></path><text lengthAdjust="spacing" x="490" font-size="14" textLength="229.8994" y="252.9092" font-family="Arial" fill="#111827">Aufnahme-Bundle wird gesendet</text><text lengthAdjust="spacing" x="490" font-size="14" textLength="368.2451" y="269.2061" font-family="Arial" fill="#111827">- Patient mit bPK Profil (vbPK-GH, vbPK-AS, vbPK-SV)</text><text lengthAdjust="spacing" x="498.9004" font-size="14" textLength="85.8115" y="285.5029" font-family="Arial" fill="#111827">- Kein Name</text><text lengthAdjust="spacing" x="498.9004" font-size="14" textLength="109.1563" y="301.7998" font-family="Arial" fill="#111827">- Keine Adresse</text><text lengthAdjust="spacing" x="490" font-size="14" textLength="262.9854" y="318.0967" font-family="Arial" fill="#111827">- alle weiteren Aufnahme-Ressourcen</text><path filter="url(#frx6z5xylcy8c)" d="M226,344.3984 L226,376.3984 A5,5 0 0 0 231,381.3984 L393,381.3984 A5,5 0 0 0 398,376.3984 L398,349.3984 L388,339.3984 L231,339.3984 A5,5 0 0 0 226,344.3984" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><path d="M388,339.3984 L388,346.8984 A2.5,2.5 0 0 0 390.5,349.3984 L398,349.3984 L388,339.3984" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><text lengthAdjust="spacing" x="232" font-size="14" textLength="62.3027" y="357.3936" font-family="Arial" fill="#111827">Zustand:</text><text lengthAdjust="spacing" x="232" font-size="14" textLength="151.6758" y="373.6904" font-family="Arial" fill="#111827">- Moped Fall angelegt</text></g></svg></div>
+
+<h4 id="aufnahme---bpk-des-patienten-nicht-bekannt">Aufnahme - bPK des Patienten nicht bekannt</h4>
+<h5 id="beschreibung-1">Beschreibung</h5>
+<p>Wenn das bPK des Patienten nicht bekannt ist bzw. nicht exisiert, dann ist eine Klarnamen-Version Patienten-Ressource im Zuge der Aufnahme einzumelden.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Behandlungsart</th>
+      <th style="text-align: right">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ambulant</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>Stationär</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<div><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 903 501" zoomAndPan="magnify" data-diagram-type="SEQUENCE" preserveAspectRatio="none" width="903px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:903px;height:501px;background:#F5F5F5;" version="1.1" height="501px"><defs><filter width="300%" x="-1" y="-1" id="f1d157tqwqzyef" height="300%"><feGaussianBlur result="blurOut" stdDeviation="2"></feGaussianBlur><feColorMatrix result="blurOut2" in="blurOut" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" type="matrix"></feColorMatrix><feOffset result="blurOut3" dx="4" dy="4" in="blurOut2"></feOffset><feBlend mode="normal" in="SourceGraphic" in2="blurOut3"></feBlend></filter><linearGradient y1="0%" x1="50%" y2="100%" x2="50%" id="g1d157tqwqzyef0"><stop offset="0%" stop-color="#E0E5F0"></stop><stop offset="100%" stop-color="#D1D9E6"></stop></linearGradient></defs><g><rect width="903" x="0" y="0" style="stroke:none;stroke-width:1;" fill="#F5F5F5" height="501"></rect><rect rx="5" ry="5" width="400.2695" x="21" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#C5F7BA" height="489.5859"></rect><text font-weight="bold" lengthAdjust="spacing" x="24" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="194.5908" font-size="14" textLength="53.0879" y="35.292" font-family="Arial" fill="#000000">Moped</text><rect rx="5" ry="5" width="434.5518" x="463.2695" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#F5E599" height="489.5859"></rect><text font-weight="bold" lengthAdjust="spacing" x="466.2695" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="568.624" font-size="14" textLength="223.8428" y="35.292" font-family="Arial" fill="#000000">KH (Herz-Jesu Krankenhaus)</text><g><title>Moped</title><rect width="8" x="217.1348" y="118.8906" fill="#000000" fill-opacity="0.00000" height="297.3984"></rect><line y1="118.8906" x1="220.6191" y2="416.2891" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="220.6191"></line></g><g><title>KH (Herz-Jesu Krankenhaus)</title><rect width="8" x="676.5454" y="118.8906" fill="#000000" fill-opacity="0.00000" height="297.3984"></rect><line y1="118.8906" x1="679.8755" y2="416.2891" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="679.8755"></line></g><g data-participant="MP" class="participant participant-head"><rect rx="5" ry="5" width="61.0313" x="190.6191" y="87.5938" style="stroke:#555555;stroke-width:0.5;" fill="#FFFFFF" height="30.2969"></rect><text lengthAdjust="spacing" x="197.6191" font-size="14" textLength="47.0313" y="107.5889" font-family="Arial" fill="#000000">Moped</text></g><g data-participant="MP" class="participant participant-tail"><rect rx="5" ry="5" width="61.0313" x="190.6191" y="415.2891" style="stroke:#555555;stroke-width:0.5;" fill="#FFFFFF" height="30.2969"></rect><text lengthAdjust="spacing" x="197.6191" font-size="14" textLength="47.0313" y="435.2842" font-family="Arial" fill="#000000">Moped</text></g><g data-participant="KH" class="participant participant-head"><text lengthAdjust="spacing" x="578.8755" font-size="14" textLength="197.3398" y="115.5889" font-family="Arial" fill="#000000">KH (Herz-Jesu Krankenhaus)</text><ellipse cx="680.5454" cy="51.0938" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M680.5454,59.0938 L680.5454,86.0938 M667.5454,67.0938 L693.5454,67.0938 M680.5454,86.0938 L667.5454,101.0938 M680.5454,86.0938 L693.5454,101.0938" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="KH" class="participant participant-tail"><text lengthAdjust="spacing" x="578.8755" font-size="14" textLength="197.3398" y="428.2842" font-family="Arial" fill="#000000">KH (Herz-Jesu Krankenhaus)</text><ellipse cx="680.5454" cy="440.0859" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M680.5454,448.0859 L680.5454,475.0859 M667.5454,456.0859 L693.5454,456.0859 M680.5454,475.0859 L667.5454,490.0859 M680.5454,475.0859 L693.5454,490.0859" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><path filter="url(#f1d157tqwqzyef)" d="M226,138.8906 L226,186.8906 A5,5 0 0 0 231,191.8906 L486,191.8906 A5,5 0 0 0 491,186.8906 L491,143.8906 L481,133.8906 L231,133.8906 A5,5 0 0 0 226,138.8906" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><path d="M481,133.8906 L481,141.3906 A2.5,2.5 0 0 0 483.5,143.8906 L491,143.8906 L481,133.8906" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><text lengthAdjust="spacing" x="232" font-size="14" textLength="62.3027" y="151.8857" font-family="Arial" fill="#111827">Zustand:</text><text lengthAdjust="spacing" x="232" font-size="14" textLength="244.8906" y="168.1826" font-family="Arial" fill="#111827">- Kein existierender Moped Fall mit</text><text lengthAdjust="spacing" x="240.9004" font-size="14" textLength="200.1699" y="184.4795" font-family="Arial" fill="#111827">dieser Schlüsselkombination</text><g data-participant-1="KH" data-participant-2="MP" class="message"><line y1="221.9141" x1="222.1348" y2="217.9141" style="stroke:#111827;stroke-width:2;" x2="232.1348"></line><line y1="221.9141" x1="222.1348" y2="225.9141" style="stroke:#111827;stroke-width:2;" x2="232.1348"></line><line y1="221.9141" x1="221.1348" y2="221.9141" style="stroke:#111827;stroke-width:2;" x2="679.5454"></line><text font-weight="bold" lengthAdjust="spacing" x="238.1348" font-size="13" textLength="9.0454" y="216.8481" font-family="Arial" fill="#000000">1</text><text lengthAdjust="spacing" x="251.1802" font-size="13" textLength="120.8276" y="216.8481" font-family="Arial" fill="#000000">POST $aufnehmen</text></g><path filter="url(#f1d157tqwqzyef)" d="M537,239.9141 L537,336.9141 A5,5 0 0 0 542,341.9141 L815,341.9141 A5,5 0 0 0 820,336.9141 L820,244.9141 L810,234.9141 L542,234.9141 A5,5 0 0 0 537,239.9141" style="stroke:#8B95A5;stroke-width:1;" fill="url(#g1d157tqwqzyef0)"></path><path d="M810,234.9141 L810,242.4141 A2.5,2.5 0 0 0 812.5,244.9141 L820,244.9141 L810,234.9141" style="stroke:#8B95A5;stroke-width:1;" fill="url(#g1d157tqwqzyef0)"></path><text lengthAdjust="spacing" x="543" font-size="14" textLength="229.8994" y="252.9092" font-family="Arial" fill="#111827">Aufnahme-Bundle wird gesendet</text><text lengthAdjust="spacing" x="543" font-size="14" textLength="253.4082" y="269.2061" font-family="Arial" fill="#111827">- Patient mit identifizierendem Profil</text><text lengthAdjust="spacing" x="551.9004" font-size="14" textLength="71.0186" y="285.5029" font-family="Arial" fill="#111827">- Kein bPK</text><text lengthAdjust="spacing" x="551.9004" font-size="14" textLength="76.6104" y="301.7998" font-family="Arial" fill="#111827">- Klarname</text><text lengthAdjust="spacing" x="551.9004" font-size="14" textLength="65.5361" y="318.0967" font-family="Arial" fill="#111827">- Adresse</text><text lengthAdjust="spacing" x="543" font-size="14" textLength="262.9854" y="334.3936" font-family="Arial" fill="#111827">- alle weiteren Aufnahme-Ressourcen</text><path filter="url(#f1d157tqwqzyef)" d="M226,360.6953 L226,392.6953 A5,5 0 0 0 231,397.6953 L393,397.6953 A5,5 0 0 0 398,392.6953 L398,365.6953 L388,355.6953 L231,355.6953 A5,5 0 0 0 226,360.6953" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><path d="M388,355.6953 L388,363.1953 A2.5,2.5 0 0 0 390.5,365.6953 L398,365.6953 L388,355.6953" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><text lengthAdjust="spacing" x="232" font-size="14" textLength="62.3027" y="373.6904" font-family="Arial" fill="#111827">Zustand:</text><text lengthAdjust="spacing" x="232" font-size="14" textLength="151.6758" y="389.9873" font-family="Arial" fill="#111827">- Moped Fall angelegt</text></g></svg></div>
+
+<h4 id="aufnahme---versicherungsdetails-bekannt">Aufnahme - Versicherungsdetails bekannt</h4>
+<h5 id="beschreibung-2">Beschreibung</h5>
+<p>Sind die Versicherungsdetails bereits bei der Aufnahme bekannt, können diese direkt in $aufnehmen eingebracht werden. Hinweis: auch die Markierung eines Falls als "Selbstzahler" wird in diesem Sinn als Versicherungsdetails verstanden.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Behandlungsart</th>
+      <th style="text-align: right">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ambulant</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>Stationär</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<div><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 903 485" zoomAndPan="magnify" data-diagram-type="SEQUENCE" preserveAspectRatio="none" width="903px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:903px;height:485px;background:#F5F5F5;" version="1.1" height="485px"><defs><filter width="300%" x="-1" y="-1" id="f17qlrpmhmjnc3" height="300%"><feGaussianBlur result="blurOut" stdDeviation="2"></feGaussianBlur><feColorMatrix result="blurOut2" in="blurOut" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" type="matrix"></feColorMatrix><feOffset result="blurOut3" dx="4" dy="4" in="blurOut2"></feOffset><feBlend mode="normal" in="SourceGraphic" in2="blurOut3"></feBlend></filter><linearGradient y1="0%" x1="50%" y2="100%" x2="50%" id="g17qlrpmhmjnc30"><stop offset="0%" stop-color="#E0E5F0"></stop><stop offset="100%" stop-color="#D1D9E6"></stop></linearGradient></defs><g><rect width="903" x="0" y="0" style="stroke:none;stroke-width:1;" fill="#F5F5F5" height="485"></rect><rect rx="5" ry="5" width="400.2695" x="21" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#C5F7BA" height="473.2891"></rect><text font-weight="bold" lengthAdjust="spacing" x="24" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="194.5908" font-size="14" textLength="53.0879" y="35.292" font-family="Arial" fill="#000000">Moped</text><rect rx="5" ry="5" width="434.5518" x="463.2695" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#F5E599" height="473.2891"></rect><text font-weight="bold" lengthAdjust="spacing" x="466.2695" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="568.624" font-size="14" textLength="223.8428" y="35.292" font-family="Arial" fill="#000000">KH (Herz-Jesu Krankenhaus)</text><g><title>Moped</title><rect width="8" x="217.1348" y="118.8906" fill="#000000" fill-opacity="0.00000" height="281.1016"></rect><line y1="118.8906" x1="220.6191" y2="399.9922" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="220.6191"></line></g><g><title>KH (Herz-Jesu Krankenhaus)</title><rect width="8" x="676.5454" y="118.8906" fill="#000000" fill-opacity="0.00000" height="281.1016"></rect><line y1="118.8906" x1="679.8755" y2="399.9922" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="679.8755"></line></g><g data-participant="MP" class="participant participant-head"><rect rx="5" ry="5" width="61.0313" x="190.6191" y="87.5938" style="stroke:#555555;stroke-width:0.5;" fill="#FFFFFF" height="30.2969"></rect><text lengthAdjust="spacing" x="197.6191" font-size="14" textLength="47.0313" y="107.5889" font-family="Arial" fill="#000000">Moped</text></g><g data-participant="MP" class="participant participant-tail"><rect rx="5" ry="5" width="61.0313" x="190.6191" y="398.9922" style="stroke:#555555;stroke-width:0.5;" fill="#FFFFFF" height="30.2969"></rect><text lengthAdjust="spacing" x="197.6191" font-size="14" textLength="47.0313" y="418.9873" font-family="Arial" fill="#000000">Moped</text></g><g data-participant="KH" class="participant participant-head"><text lengthAdjust="spacing" x="578.8755" font-size="14" textLength="197.3398" y="115.5889" font-family="Arial" fill="#000000">KH (Herz-Jesu Krankenhaus)</text><ellipse cx="680.5454" cy="51.0938" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M680.5454,59.0938 L680.5454,86.0938 M667.5454,67.0938 L693.5454,67.0938 M680.5454,86.0938 L667.5454,101.0938 M680.5454,86.0938 L693.5454,101.0938" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="KH" class="participant participant-tail"><text lengthAdjust="spacing" x="578.8755" font-size="14" textLength="197.3398" y="411.9873" font-family="Arial" fill="#000000">KH (Herz-Jesu Krankenhaus)</text><ellipse cx="680.5454" cy="423.7891" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M680.5454,431.7891 L680.5454,458.7891 M667.5454,439.7891 L693.5454,439.7891 M680.5454,458.7891 L667.5454,473.7891 M680.5454,458.7891 L693.5454,473.7891" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><path filter="url(#f17qlrpmhmjnc3)" d="M226,138.8906 L226,186.8906 A5,5 0 0 0 231,191.8906 L486,191.8906 A5,5 0 0 0 491,186.8906 L491,143.8906 L481,133.8906 L231,133.8906 A5,5 0 0 0 226,138.8906" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><path d="M481,133.8906 L481,141.3906 A2.5,2.5 0 0 0 483.5,143.8906 L491,143.8906 L481,133.8906" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><text lengthAdjust="spacing" x="232" font-size="14" textLength="62.3027" y="151.8857" font-family="Arial" fill="#111827">Zustand:</text><text lengthAdjust="spacing" x="232" font-size="14" textLength="244.8906" y="168.1826" font-family="Arial" fill="#111827">- Kein existierender Moped Fall mit</text><text lengthAdjust="spacing" x="240.9004" font-size="14" textLength="200.1699" y="184.4795" font-family="Arial" fill="#111827">dieser Schlüsselkombination</text><g data-participant-1="KH" data-participant-2="MP" class="message"><line y1="221.9141" x1="222.1348" y2="217.9141" style="stroke:#111827;stroke-width:2;" x2="232.1348"></line><line y1="221.9141" x1="222.1348" y2="225.9141" style="stroke:#111827;stroke-width:2;" x2="232.1348"></line><line y1="221.9141" x1="221.1348" y2="221.9141" style="stroke:#111827;stroke-width:2;" x2="679.5454"></line><text font-weight="bold" lengthAdjust="spacing" x="238.1348" font-size="13" textLength="9.0454" y="216.8481" font-family="Arial" fill="#000000">1</text><text lengthAdjust="spacing" x="251.1802" font-size="13" textLength="120.8276" y="216.8481" font-family="Arial" fill="#000000">POST $aufnehmen</text></g><path filter="url(#f17qlrpmhmjnc3)" d="M535,239.9141 L535,304.9141 A5,5 0 0 0 540,309.9141 L817,309.9141 A5,5 0 0 0 822,304.9141 L822,244.9141 L812,234.9141 L540,234.9141 A5,5 0 0 0 535,239.9141" style="stroke:#8B95A5;stroke-width:1;" fill="url(#g17qlrpmhmjnc30)"></path><path d="M812,234.9141 L812,242.4141 A2.5,2.5 0 0 0 814.5,244.9141 L822,244.9141 L812,234.9141" style="stroke:#8B95A5;stroke-width:1;" fill="url(#g17qlrpmhmjnc30)"></path><text lengthAdjust="spacing" x="541" font-size="14" textLength="229.8994" y="252.9092" font-family="Arial" fill="#111827">Aufnahme-Bundle wird gesendet</text><text lengthAdjust="spacing" x="541" font-size="14" textLength="245.6768" y="269.2061" font-family="Arial" fill="#111827">- Versicherungsdaten als Coverage</text><text lengthAdjust="spacing" x="541" font-size="14" textLength="266.499" y="285.5029" font-family="Arial" fill="#111827">- Hauptversicherter als RelatedPerson</text><text lengthAdjust="spacing" x="541" font-size="14" textLength="262.9854" y="301.7998" font-family="Arial" fill="#111827">- alle weiteren Aufnahme-Ressourcen</text><path filter="url(#f17qlrpmhmjnc3)" d="M226,328.1016 L226,376.1016 A5,5 0 0 0 231,381.1016 L585,381.1016 A5,5 0 0 0 590,376.1016 L590,333.1016 L580,323.1016 L231,323.1016 A5,5 0 0 0 226,328.1016" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><path d="M580,323.1016 L580,330.6016 A2.5,2.5 0 0 0 582.5,333.1016 L590,333.1016 L580,323.1016" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><text lengthAdjust="spacing" x="232" font-size="14" textLength="62.3027" y="341.0967" font-family="Arial" fill="#111827">Zustand:</text><text lengthAdjust="spacing" x="232" font-size="14" textLength="151.6758" y="357.3936" font-family="Arial" fill="#111827">- Moped Fall angelegt</text><text lengthAdjust="spacing" x="232" font-size="14" textLength="343.458" y="373.6904" font-family="Arial" fill="#111827">- Aufnahme- und Versicherungsdaten vollständig</text></g></svg></div>
+
+<h4 id="aufnahme---selbstzahler">Aufnahme - Selbstzahler</h4>
+<h5 id="beschreibung-3">Beschreibung</h5>
+<p>Ist bereits bei der Aufnahme bekannt, dass der Patient ein Selbstzahler ist, kann diese Information direkt in $aufnehmen eingebracht werden. Hinweis: auch die Markierung eines Falls als "Selbstzahler" wird in diesem Sinn als Versicherungsdetails verstanden.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Behandlungsart</th>
+      <th style="text-align: right">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ambulant</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>Stationär</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<div><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 903 485" zoomAndPan="magnify" data-diagram-type="SEQUENCE" preserveAspectRatio="none" width="903px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:903px;height:485px;background:#F5F5F5;" version="1.1" height="485px"><defs><filter width="300%" x="-1" y="-1" id="f141csci1sol8c" height="300%"><feGaussianBlur result="blurOut" stdDeviation="2"></feGaussianBlur><feColorMatrix result="blurOut2" in="blurOut" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" type="matrix"></feColorMatrix><feOffset result="blurOut3" dx="4" dy="4" in="blurOut2"></feOffset><feBlend mode="normal" in="SourceGraphic" in2="blurOut3"></feBlend></filter><linearGradient y1="0%" x1="50%" y2="100%" x2="50%" id="g141csci1sol8c0"><stop offset="0%" stop-color="#E0E5F0"></stop><stop offset="100%" stop-color="#D1D9E6"></stop></linearGradient></defs><g><rect width="903" x="0" y="0" style="stroke:none;stroke-width:1;" fill="#F5F5F5" height="485"></rect><rect rx="5" ry="5" width="400.2695" x="21" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#C5F7BA" height="473.2891"></rect><text font-weight="bold" lengthAdjust="spacing" x="24" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="194.5908" font-size="14" textLength="53.0879" y="35.292" font-family="Arial" fill="#000000">Moped</text><rect rx="5" ry="5" width="434.5518" x="463.2695" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#F5E599" height="473.2891"></rect><text font-weight="bold" lengthAdjust="spacing" x="466.2695" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="568.624" font-size="14" textLength="223.8428" y="35.292" font-family="Arial" fill="#000000">KH (Herz-Jesu Krankenhaus)</text><g><title>Moped</title><rect width="8" x="217.1348" y="118.8906" fill="#000000" fill-opacity="0.00000" height="281.1016"></rect><line y1="118.8906" x1="220.6191" y2="399.9922" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="220.6191"></line></g><g><title>KH (Herz-Jesu Krankenhaus)</title><rect width="8" x="676.5454" y="118.8906" fill="#000000" fill-opacity="0.00000" height="281.1016"></rect><line y1="118.8906" x1="679.8755" y2="399.9922" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="679.8755"></line></g><g data-participant="MP" class="participant participant-head"><rect rx="5" ry="5" width="61.0313" x="190.6191" y="87.5938" style="stroke:#555555;stroke-width:0.5;" fill="#FFFFFF" height="30.2969"></rect><text lengthAdjust="spacing" x="197.6191" font-size="14" textLength="47.0313" y="107.5889" font-family="Arial" fill="#000000">Moped</text></g><g data-participant="MP" class="participant participant-tail"><rect rx="5" ry="5" width="61.0313" x="190.6191" y="398.9922" style="stroke:#555555;stroke-width:0.5;" fill="#FFFFFF" height="30.2969"></rect><text lengthAdjust="spacing" x="197.6191" font-size="14" textLength="47.0313" y="418.9873" font-family="Arial" fill="#000000">Moped</text></g><g data-participant="KH" class="participant participant-head"><text lengthAdjust="spacing" x="578.8755" font-size="14" textLength="197.3398" y="115.5889" font-family="Arial" fill="#000000">KH (Herz-Jesu Krankenhaus)</text><ellipse cx="680.5454" cy="51.0938" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M680.5454,59.0938 L680.5454,86.0938 M667.5454,67.0938 L693.5454,67.0938 M680.5454,86.0938 L667.5454,101.0938 M680.5454,86.0938 L693.5454,101.0938" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="KH" class="participant participant-tail"><text lengthAdjust="spacing" x="578.8755" font-size="14" textLength="197.3398" y="411.9873" font-family="Arial" fill="#000000">KH (Herz-Jesu Krankenhaus)</text><ellipse cx="680.5454" cy="423.7891" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M680.5454,431.7891 L680.5454,458.7891 M667.5454,439.7891 L693.5454,439.7891 M680.5454,458.7891 L667.5454,473.7891 M680.5454,458.7891 L693.5454,473.7891" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><path filter="url(#f141csci1sol8c)" d="M226,138.8906 L226,186.8906 A5,5 0 0 0 231,191.8906 L486,191.8906 A5,5 0 0 0 491,186.8906 L491,143.8906 L481,133.8906 L231,133.8906 A5,5 0 0 0 226,138.8906" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><path d="M481,133.8906 L481,141.3906 A2.5,2.5 0 0 0 483.5,143.8906 L491,143.8906 L481,133.8906" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><text lengthAdjust="spacing" x="232" font-size="14" textLength="62.3027" y="151.8857" font-family="Arial" fill="#111827">Zustand:</text><text lengthAdjust="spacing" x="232" font-size="14" textLength="244.8906" y="168.1826" font-family="Arial" fill="#111827">- Kein existierender Moped Fall mit</text><text lengthAdjust="spacing" x="240.9004" font-size="14" textLength="200.1699" y="184.4795" font-family="Arial" fill="#111827">dieser Schlüsselkombination</text><g data-participant-1="KH" data-participant-2="MP" class="message"><line y1="221.9141" x1="222.1348" y2="217.9141" style="stroke:#111827;stroke-width:2;" x2="232.1348"></line><line y1="221.9141" x1="222.1348" y2="225.9141" style="stroke:#111827;stroke-width:2;" x2="232.1348"></line><line y1="221.9141" x1="221.1348" y2="221.9141" style="stroke:#111827;stroke-width:2;" x2="679.5454"></line><text font-weight="bold" lengthAdjust="spacing" x="238.1348" font-size="13" textLength="9.0454" y="216.8481" font-family="Arial" fill="#000000">1</text><text lengthAdjust="spacing" x="251.1802" font-size="13" textLength="120.8276" y="216.8481" font-family="Arial" fill="#000000">POST $aufnehmen</text></g><path filter="url(#f141csci1sol8c)" d="M532,239.9141 L532,304.9141 A5,5 0 0 0 537,309.9141 L820,309.9141 A5,5 0 0 0 825,304.9141 L825,244.9141 L815,234.9141 L537,234.9141 A5,5 0 0 0 532,239.9141" style="stroke:#8B95A5;stroke-width:1;" fill="url(#g141csci1sol8c0)"></path><path d="M815,234.9141 L815,242.4141 A2.5,2.5 0 0 0 817.5,244.9141 L825,244.9141 L815,234.9141" style="stroke:#8B95A5;stroke-width:1;" fill="url(#g141csci1sol8c0)"></path><text lengthAdjust="spacing" x="538" font-size="14" textLength="229.8994" y="252.9092" font-family="Arial" fill="#111827">Aufnahme-Bundle wird gesendet</text><text lengthAdjust="spacing" x="538" font-size="14" textLength="272.4053" y="269.2061" font-family="Arial" fill="#111827">- Selbstzahlerinformation als Coverage</text><text lengthAdjust="spacing" x="538" font-size="14" textLength="170.4268" y="285.5029" font-family="Arial" fill="#111827">- kein Hauptversicherter</text><text lengthAdjust="spacing" x="538" font-size="14" textLength="262.9854" y="301.7998" font-family="Arial" fill="#111827">- alle weiteren Aufnahme-Ressourcen</text><path filter="url(#f141csci1sol8c)" d="M226,328.1016 L226,376.1016 A5,5 0 0 0 231,381.1016 L612,381.1016 A5,5 0 0 0 617,376.1016 L617,333.1016 L607,323.1016 L231,323.1016 A5,5 0 0 0 226,328.1016" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><path d="M607,323.1016 L607,330.6016 A2.5,2.5 0 0 0 609.5,333.1016 L617,333.1016 L607,323.1016" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><text lengthAdjust="spacing" x="232" font-size="14" textLength="62.3027" y="341.0967" font-family="Arial" fill="#111827">Zustand:</text><text lengthAdjust="spacing" x="232" font-size="14" textLength="151.6758" y="357.3936" font-family="Arial" fill="#111827">- Moped Fall angelegt</text><text lengthAdjust="spacing" x="232" font-size="14" textLength="370.1865" y="373.6904" font-family="Arial" fill="#111827">- Aufnahme- und Selbstzahlerinformation vollständig</text></g></svg></div>
+
+<h4 id="aufnahme---versicherungsdetails-noch-nicht-bekannt">Aufnahme - Versicherungsdetails noch nicht bekannt</h4>
+<h5 id="beschreibung-4">Beschreibung</h5>
+<p>Die Versicherungsdetails sind bei der Aufnahme optional. Wenn sie erst nach Ausführen von $aufnehmen bekannt sind, können sie mit Hilfe von einem anschließenden $update nachgereicht werden. Hinweis: auch die Markierung eines Falls als "Selbstzahler" wird in diesem Sinn als Versicherungsdetails verstanden.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Behandlungsart</th>
+      <th style="text-align: right">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ambulant</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>Stationär</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<div><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 903 452" zoomAndPan="magnify" data-diagram-type="SEQUENCE" preserveAspectRatio="none" width="903px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:903px;height:452px;background:#F5F5F5;" version="1.1" height="452px"><defs><filter width="300%" x="-1" y="-1" id="f172dv0yecdgvv" height="300%"><feGaussianBlur result="blurOut" stdDeviation="2"></feGaussianBlur><feColorMatrix result="blurOut2" in="blurOut" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" type="matrix"></feColorMatrix><feOffset result="blurOut3" dx="4" dy="4" in="blurOut2"></feOffset><feBlend mode="normal" in="SourceGraphic" in2="blurOut3"></feBlend></filter><linearGradient y1="0%" x1="50%" y2="100%" x2="50%" id="g172dv0yecdgvv0"><stop offset="0%" stop-color="#E0E5F0"></stop><stop offset="100%" stop-color="#D1D9E6"></stop></linearGradient></defs><g><rect width="903" x="0" y="0" style="stroke:none;stroke-width:1;" fill="#F5F5F5" height="452"></rect><rect rx="5" ry="5" width="400.2695" x="21" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#C5F7BA" height="440.6953"></rect><text font-weight="bold" lengthAdjust="spacing" x="24" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="194.5908" font-size="14" textLength="53.0879" y="35.292" font-family="Arial" fill="#000000">Moped</text><rect rx="5" ry="5" width="434.5518" x="463.2695" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#F5E599" height="440.6953"></rect><text font-weight="bold" lengthAdjust="spacing" x="466.2695" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="568.624" font-size="14" textLength="223.8428" y="35.292" font-family="Arial" fill="#000000">KH (Herz-Jesu Krankenhaus)</text><g><title>Moped</title><rect width="8" x="217.1348" y="118.8906" fill="#000000" fill-opacity="0.00000" height="248.5078"></rect><line y1="118.8906" x1="220.6191" y2="367.3984" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="220.6191"></line></g><g><title>KH (Herz-Jesu Krankenhaus)</title><rect width="8" x="676.5454" y="118.8906" fill="#000000" fill-opacity="0.00000" height="248.5078"></rect><line y1="118.8906" x1="679.8755" y2="367.3984" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="679.8755"></line></g><g data-participant="MP" class="participant participant-head"><rect rx="5" ry="5" width="61.0313" x="190.6191" y="87.5938" style="stroke:#555555;stroke-width:0.5;" fill="#FFFFFF" height="30.2969"></rect><text lengthAdjust="spacing" x="197.6191" font-size="14" textLength="47.0313" y="107.5889" font-family="Arial" fill="#000000">Moped</text></g><g data-participant="MP" class="participant participant-tail"><rect rx="5" ry="5" width="61.0313" x="190.6191" y="366.3984" style="stroke:#555555;stroke-width:0.5;" fill="#FFFFFF" height="30.2969"></rect><text lengthAdjust="spacing" x="197.6191" font-size="14" textLength="47.0313" y="386.3936" font-family="Arial" fill="#000000">Moped</text></g><g data-participant="KH" class="participant participant-head"><text lengthAdjust="spacing" x="578.8755" font-size="14" textLength="197.3398" y="115.5889" font-family="Arial" fill="#000000">KH (Herz-Jesu Krankenhaus)</text><ellipse cx="680.5454" cy="51.0938" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M680.5454,59.0938 L680.5454,86.0938 M667.5454,67.0938 L693.5454,67.0938 M680.5454,86.0938 L667.5454,101.0938 M680.5454,86.0938 L693.5454,101.0938" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="KH" class="participant participant-tail"><text lengthAdjust="spacing" x="578.8755" font-size="14" textLength="197.3398" y="379.3936" font-family="Arial" fill="#000000">KH (Herz-Jesu Krankenhaus)</text><ellipse cx="680.5454" cy="391.1953" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M680.5454,399.1953 L680.5454,426.1953 M667.5454,407.1953 L693.5454,407.1953 M680.5454,426.1953 L667.5454,441.1953 M680.5454,426.1953 L693.5454,441.1953" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><path filter="url(#f172dv0yecdgvv)" d="M226,138.8906 L226,186.8906 A5,5 0 0 0 231,191.8906 L486,191.8906 A5,5 0 0 0 491,186.8906 L491,143.8906 L481,133.8906 L231,133.8906 A5,5 0 0 0 226,138.8906" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><path d="M481,133.8906 L481,141.3906 A2.5,2.5 0 0 0 483.5,143.8906 L491,143.8906 L481,133.8906" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><text lengthAdjust="spacing" x="232" font-size="14" textLength="62.3027" y="151.8857" font-family="Arial" fill="#111827">Zustand:</text><text lengthAdjust="spacing" x="232" font-size="14" textLength="244.8906" y="168.1826" font-family="Arial" fill="#111827">- Kein existierender Moped Fall mit</text><text lengthAdjust="spacing" x="240.9004" font-size="14" textLength="200.1699" y="184.4795" font-family="Arial" fill="#111827">dieser Schlüsselkombination</text><g data-participant-1="KH" data-participant-2="MP" class="message"><line y1="221.9141" x1="222.1348" y2="217.9141" style="stroke:#111827;stroke-width:2;" x2="232.1348"></line><line y1="221.9141" x1="222.1348" y2="225.9141" style="stroke:#111827;stroke-width:2;" x2="232.1348"></line><line y1="221.9141" x1="221.1348" y2="221.9141" style="stroke:#111827;stroke-width:2;" x2="679.5454"></line><text font-weight="bold" lengthAdjust="spacing" x="238.1348" font-size="13" textLength="9.0454" y="216.8481" font-family="Arial" fill="#000000">1</text><text lengthAdjust="spacing" x="251.1802" font-size="13" textLength="120.8276" y="216.8481" font-family="Arial" fill="#000000">POST $aufnehmen</text></g><path filter="url(#f172dv0yecdgvv)" d="M477,239.9141 L477,287.9141 A5,5 0 0 0 482,292.9141 L875,292.9141 A5,5 0 0 0 880,287.9141 L880,244.9141 L870,234.9141 L482,234.9141 A5,5 0 0 0 477,239.9141" style="stroke:#8B95A5;stroke-width:1;" fill="url(#g172dv0yecdgvv0)"></path><path d="M870,234.9141 L870,242.4141 A2.5,2.5 0 0 0 872.5,244.9141 L880,244.9141 L870,234.9141" style="stroke:#8B95A5;stroke-width:1;" fill="url(#g172dv0yecdgvv0)"></path><text lengthAdjust="spacing" x="483" font-size="14" textLength="229.8994" y="252.9092" font-family="Arial" fill="#111827">Aufnahme-Bundle wird gesendet</text><text lengthAdjust="spacing" x="483" font-size="14" textLength="382.0059" y="269.2061" font-family="Arial" fill="#111827">- ohne Versicherungsdaten (Coverage, RelatedPerson)</text><text lengthAdjust="spacing" x="483" font-size="14" textLength="262.9854" y="285.5029" font-family="Arial" fill="#111827">- alle weiteren Aufnahme-Ressourcen</text><path filter="url(#f172dv0yecdgvv)" d="M226,311.8047 L226,343.8047 A5,5 0 0 0 231,348.8047 L393,348.8047 A5,5 0 0 0 398,343.8047 L398,316.8047 L388,306.8047 L231,306.8047 A5,5 0 0 0 226,311.8047" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><path d="M388,306.8047 L388,314.3047 A2.5,2.5 0 0 0 390.5,316.8047 L398,316.8047 L388,306.8047" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><text lengthAdjust="spacing" x="232" font-size="14" textLength="62.3027" y="324.7998" font-family="Arial" fill="#111827">Zustand:</text><text lengthAdjust="spacing" x="232" font-size="14" textLength="151.6758" y="341.0967" font-family="Arial" fill="#111827">- Moped Fall angelegt</text></g></svg></div>
+<div><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 903 436" zoomAndPan="magnify" data-diagram-type="SEQUENCE" preserveAspectRatio="none" width="903px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:903px;height:436px;background:#F5F5F5;" version="1.1" height="436px"><defs><filter width="300%" x="-1" y="-1" id="fbg7yxbe814eh" height="300%"><feGaussianBlur result="blurOut" stdDeviation="2"></feGaussianBlur><feColorMatrix result="blurOut2" in="blurOut" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" type="matrix"></feColorMatrix><feOffset result="blurOut3" dx="4" dy="4" in="blurOut2"></feOffset><feBlend mode="normal" in="SourceGraphic" in2="blurOut3"></feBlend></filter><linearGradient y1="0%" x1="50%" y2="100%" x2="50%" id="gbg7yxbe814eh0"><stop offset="0%" stop-color="#E0E5F0"></stop><stop offset="100%" stop-color="#D1D9E6"></stop></linearGradient></defs><g><rect width="903" x="0" y="0" style="stroke:none;stroke-width:1;" fill="#F5F5F5" height="436"></rect><rect rx="5" ry="5" width="400.2695" x="21" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#C5F7BA" height="424.3984"></rect><text font-weight="bold" lengthAdjust="spacing" x="24" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="194.5908" font-size="14" textLength="53.0879" y="35.292" font-family="Arial" fill="#000000">Moped</text><rect rx="5" ry="5" width="434.5518" x="463.2695" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#F5E599" height="424.3984"></rect><text font-weight="bold" lengthAdjust="spacing" x="466.2695" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="568.624" font-size="14" textLength="223.8428" y="35.292" font-family="Arial" fill="#000000">KH (Herz-Jesu Krankenhaus)</text><g><title>Moped</title><rect width="8" x="217.1348" y="118.8906" fill="#000000" fill-opacity="0.00000" height="232.2109"></rect><line y1="118.8906" x1="220.6191" y2="351.1016" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="220.6191"></line></g><g><title>KH (Herz-Jesu Krankenhaus)</title><rect width="8" x="676.5454" y="118.8906" fill="#000000" fill-opacity="0.00000" height="232.2109"></rect><line y1="118.8906" x1="679.8755" y2="351.1016" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="679.8755"></line></g><g data-participant="MP" class="participant participant-head"><rect rx="5" ry="5" width="61.0313" x="190.6191" y="87.5938" style="stroke:#555555;stroke-width:0.5;" fill="#FFFFFF" height="30.2969"></rect><text lengthAdjust="spacing" x="197.6191" font-size="14" textLength="47.0313" y="107.5889" font-family="Arial" fill="#000000">Moped</text></g><g data-participant="MP" class="participant participant-tail"><rect rx="5" ry="5" width="61.0313" x="190.6191" y="350.1016" style="stroke:#555555;stroke-width:0.5;" fill="#FFFFFF" height="30.2969"></rect><text lengthAdjust="spacing" x="197.6191" font-size="14" textLength="47.0313" y="370.0967" font-family="Arial" fill="#000000">Moped</text></g><g data-participant="KH" class="participant participant-head"><text lengthAdjust="spacing" x="578.8755" font-size="14" textLength="197.3398" y="115.5889" font-family="Arial" fill="#000000">KH (Herz-Jesu Krankenhaus)</text><ellipse cx="680.5454" cy="51.0938" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M680.5454,59.0938 L680.5454,86.0938 M667.5454,67.0938 L693.5454,67.0938 M680.5454,86.0938 L667.5454,101.0938 M680.5454,86.0938 L693.5454,101.0938" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="KH" class="participant participant-tail"><text lengthAdjust="spacing" x="578.8755" font-size="14" textLength="197.3398" y="363.0967" font-family="Arial" fill="#000000">KH (Herz-Jesu Krankenhaus)</text><ellipse cx="680.5454" cy="374.8984" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M680.5454,382.8984 L680.5454,409.8984 M667.5454,390.8984 L693.5454,390.8984 M680.5454,409.8984 L667.5454,424.8984 M680.5454,409.8984 L693.5454,424.8984" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><path filter="url(#fbg7yxbe814eh)" d="M226,138.8906 L226,170.8906 A5,5 0 0 0 231,175.8906 L393,175.8906 A5,5 0 0 0 398,170.8906 L398,143.8906 L388,133.8906 L231,133.8906 A5,5 0 0 0 226,138.8906" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><path d="M388,133.8906 L388,141.3906 A2.5,2.5 0 0 0 390.5,143.8906 L398,143.8906 L388,133.8906" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><text lengthAdjust="spacing" x="232" font-size="14" textLength="62.3027" y="151.8857" font-family="Arial" fill="#111827">Zustand:</text><text lengthAdjust="spacing" x="232" font-size="14" textLength="151.6758" y="168.1826" font-family="Arial" fill="#111827">- Moped Fall angelegt</text><g data-participant-1="KH" data-participant-2="MP" class="message"><line y1="205.6172" x1="222.1348" y2="201.6172" style="stroke:#111827;stroke-width:2;" x2="232.1348"></line><line y1="205.6172" x1="222.1348" y2="209.6172" style="stroke:#111827;stroke-width:2;" x2="232.1348"></line><line y1="205.6172" x1="221.1348" y2="205.6172" style="stroke:#111827;stroke-width:2;" x2="679.5454"></line><text font-weight="bold" lengthAdjust="spacing" x="238.1348" font-size="13" textLength="9.0454" y="200.5513" font-family="Arial" fill="#000000">1</text><text lengthAdjust="spacing" x="251.1802" font-size="13" textLength="92.4727" y="200.5513" font-family="Arial" fill="#000000">POST $update</text></g><path filter="url(#fbg7yxbe814eh)" d="M526,223.6172 L526,271.6172 A5,5 0 0 0 531,276.6172 L826,276.6172 A5,5 0 0 0 831,271.6172 L831,228.6172 L821,218.6172 L531,218.6172 A5,5 0 0 0 526,223.6172" style="stroke:#8B95A5;stroke-width:1;" fill="url(#gbg7yxbe814eh0)"></path><path d="M821,218.6172 L821,226.1172 A2.5,2.5 0 0 0 823.5,228.6172 L831,228.6172 L821,218.6172" style="stroke:#8B95A5;stroke-width:1;" fill="url(#gbg7yxbe814eh0)"></path><text lengthAdjust="spacing" x="532" font-size="14" textLength="208.6465" y="236.6123" font-family="Arial" fill="#111827">Update-Bundle wird gesendet</text><text lengthAdjust="spacing" x="532" font-size="14" textLength="245.8271" y="252.9092" font-family="Arial" fill="#111827">- Versichertenanspruch (Coverage)</text><text lengthAdjust="spacing" x="532" font-size="14" textLength="284.8125" y="269.2061" font-family="Arial" fill="#111827">- ggf. Hauptversicherter (RelatedPerson)</text><path filter="url(#fbg7yxbe814eh)" d="M226,295.5078 L226,327.5078 A5,5 0 0 0 231,332.5078 L585,332.5078 A5,5 0 0 0 590,327.5078 L590,300.5078 L580,290.5078 L231,290.5078 A5,5 0 0 0 226,295.5078" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><path d="M580,290.5078 L580,298.0078 A2.5,2.5 0 0 0 582.5,300.5078 L590,300.5078 L580,290.5078" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><text lengthAdjust="spacing" x="232" font-size="14" textLength="62.3027" y="308.5029" font-family="Arial" fill="#111827">Zustand:</text><text lengthAdjust="spacing" x="232" font-size="14" textLength="343.458" y="324.7998" font-family="Arial" fill="#111827">- Aufnahme- und Versicherungsdaten vollständig</text></g></svg></div>
+
+<h4 id="aufnahme---neugeborenes">Aufnahme - Neugeborenes</h4>
+<h5 id="beschreibung-5">Beschreibung</h5>
+<p>TBD - ein Neugeborenes hat oft noch kein bPK und keine Versicherungsdaten. Hat es bereits einen fixen Vornamen (ich denke, da hat man mehrere Tage Zeit)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Behandlungsart</th>
+      <th style="text-align: right">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ambulant</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>Stationär</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="aufnahme---durch-überweisung">Aufnahme - Durch Überweisung</h4>
+<h5 id="beschreibung-6">Beschreibung</h5>
+<p>Kommt ein Patient durch eine Überweisung in das Krankenhaus, so muss der Überweiser mit angegeben werden. GDAs aus Österreich sind in Moped als Stammdaten hinterlegt und können referenziert werden. Für ausländische GDAs muss eine neue Organization-Ressource mit den Details mitgeliefert werden.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Behandlungsart</th>
+      <th style="text-align: right">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ambulant</td>
+      <td style="text-align: right">❓</td>
+    </tr>
+    <tr>
+      <td>Stationär</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>TBD: wird die überweisende Organization auch für ambulante Fälle mitgegeben?</p>
+
+<div><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 903 452" zoomAndPan="magnify" data-diagram-type="SEQUENCE" preserveAspectRatio="none" width="903px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:903px;height:452px;background:#F5F5F5;" version="1.1" height="452px"><defs><filter width="300%" x="-1" y="-1" id="f1abadqgb7xi2s" height="300%"><feGaussianBlur result="blurOut" stdDeviation="2"></feGaussianBlur><feColorMatrix result="blurOut2" in="blurOut" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" type="matrix"></feColorMatrix><feOffset result="blurOut3" dx="4" dy="4" in="blurOut2"></feOffset><feBlend mode="normal" in="SourceGraphic" in2="blurOut3"></feBlend></filter><linearGradient y1="0%" x1="50%" y2="100%" x2="50%" id="g1abadqgb7xi2s0"><stop offset="0%" stop-color="#E0E5F0"></stop><stop offset="100%" stop-color="#D1D9E6"></stop></linearGradient></defs><g><rect width="903" x="0" y="0" style="stroke:none;stroke-width:1;" fill="#F5F5F5" height="452"></rect><rect rx="5" ry="5" width="400.2695" x="21" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#C5F7BA" height="440.6953"></rect><text font-weight="bold" lengthAdjust="spacing" x="24" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="194.5908" font-size="14" textLength="53.0879" y="35.292" font-family="Arial" fill="#000000">Moped</text><rect rx="5" ry="5" width="434.5518" x="463.2695" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#F5E599" height="440.6953"></rect><text font-weight="bold" lengthAdjust="spacing" x="466.2695" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="568.624" font-size="14" textLength="223.8428" y="35.292" font-family="Arial" fill="#000000">KH (Herz-Jesu Krankenhaus)</text><g><title>Moped</title><rect width="8" x="217.1348" y="118.8906" fill="#000000" fill-opacity="0.00000" height="248.5078"></rect><line y1="118.8906" x1="220.6191" y2="367.3984" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="220.6191"></line></g><g><title>KH (Herz-Jesu Krankenhaus)</title><rect width="8" x="676.5454" y="118.8906" fill="#000000" fill-opacity="0.00000" height="248.5078"></rect><line y1="118.8906" x1="679.8755" y2="367.3984" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="679.8755"></line></g><g data-participant="MP" class="participant participant-head"><rect rx="5" ry="5" width="61.0313" x="190.6191" y="87.5938" style="stroke:#555555;stroke-width:0.5;" fill="#FFFFFF" height="30.2969"></rect><text lengthAdjust="spacing" x="197.6191" font-size="14" textLength="47.0313" y="107.5889" font-family="Arial" fill="#000000">Moped</text></g><g data-participant="MP" class="participant participant-tail"><rect rx="5" ry="5" width="61.0313" x="190.6191" y="366.3984" style="stroke:#555555;stroke-width:0.5;" fill="#FFFFFF" height="30.2969"></rect><text lengthAdjust="spacing" x="197.6191" font-size="14" textLength="47.0313" y="386.3936" font-family="Arial" fill="#000000">Moped</text></g><g data-participant="KH" class="participant participant-head"><text lengthAdjust="spacing" x="578.8755" font-size="14" textLength="197.3398" y="115.5889" font-family="Arial" fill="#000000">KH (Herz-Jesu Krankenhaus)</text><ellipse cx="680.5454" cy="51.0938" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M680.5454,59.0938 L680.5454,86.0938 M667.5454,67.0938 L693.5454,67.0938 M680.5454,86.0938 L667.5454,101.0938 M680.5454,86.0938 L693.5454,101.0938" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="KH" class="participant participant-tail"><text lengthAdjust="spacing" x="578.8755" font-size="14" textLength="197.3398" y="379.3936" font-family="Arial" fill="#000000">KH (Herz-Jesu Krankenhaus)</text><ellipse cx="680.5454" cy="391.1953" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M680.5454,399.1953 L680.5454,426.1953 M667.5454,407.1953 L693.5454,407.1953 M680.5454,426.1953 L667.5454,441.1953 M680.5454,426.1953 L693.5454,441.1953" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><path filter="url(#f1abadqgb7xi2s)" d="M226,138.8906 L226,186.8906 A5,5 0 0 0 231,191.8906 L486,191.8906 A5,5 0 0 0 491,186.8906 L491,143.8906 L481,133.8906 L231,133.8906 A5,5 0 0 0 226,138.8906" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><path d="M481,133.8906 L481,141.3906 A2.5,2.5 0 0 0 483.5,143.8906 L491,143.8906 L481,133.8906" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><text lengthAdjust="spacing" x="232" font-size="14" textLength="62.3027" y="151.8857" font-family="Arial" fill="#111827">Zustand:</text><text lengthAdjust="spacing" x="232" font-size="14" textLength="244.8906" y="168.1826" font-family="Arial" fill="#111827">- Kein existierender Moped Fall mit</text><text lengthAdjust="spacing" x="240.9004" font-size="14" textLength="200.1699" y="184.4795" font-family="Arial" fill="#111827">dieser Schlüsselkombination</text><g data-participant-1="KH" data-participant-2="MP" class="message"><line y1="221.9141" x1="222.1348" y2="217.9141" style="stroke:#111827;stroke-width:2;" x2="232.1348"></line><line y1="221.9141" x1="222.1348" y2="225.9141" style="stroke:#111827;stroke-width:2;" x2="232.1348"></line><line y1="221.9141" x1="221.1348" y2="221.9141" style="stroke:#111827;stroke-width:2;" x2="679.5454"></line><text font-weight="bold" lengthAdjust="spacing" x="238.1348" font-size="13" textLength="9.0454" y="216.8481" font-family="Arial" fill="#000000">1</text><text lengthAdjust="spacing" x="251.1802" font-size="13" textLength="120.8276" y="216.8481" font-family="Arial" fill="#000000">POST $aufnehmen</text></g><path filter="url(#f1abadqgb7xi2s)" d="M534,239.9141 L534,287.9141 A5,5 0 0 0 539,292.9141 L819,292.9141 A5,5 0 0 0 824,287.9141 L824,244.9141 L814,234.9141 L539,234.9141 A5,5 0 0 0 534,239.9141" style="stroke:#8B95A5;stroke-width:1;" fill="url(#g1abadqgb7xi2s0)"></path><path d="M814,234.9141 L814,242.4141 A2.5,2.5 0 0 0 816.5,244.9141 L824,244.9141 L814,234.9141" style="stroke:#8B95A5;stroke-width:1;" fill="url(#g1abadqgb7xi2s0)"></path><text lengthAdjust="spacing" x="540" font-size="14" textLength="229.8994" y="252.9092" font-family="Arial" fill="#111827">Aufnahme-Bundle wird gesendet</text><text lengthAdjust="spacing" x="540" font-size="14" textLength="269.0625" y="269.2061" font-family="Arial" fill="#111827">- Überweisender GDA als Organization</text><text lengthAdjust="spacing" x="540" font-size="14" textLength="262.9854" y="285.5029" font-family="Arial" fill="#111827">- alle weiteren Aufnahme-Ressourcen</text><path filter="url(#f1abadqgb7xi2s)" d="M226,311.8047 L226,343.8047 A5,5 0 0 0 231,348.8047 L393,348.8047 A5,5 0 0 0 398,343.8047 L398,316.8047 L388,306.8047 L231,306.8047 A5,5 0 0 0 226,311.8047" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><path d="M388,306.8047 L388,314.3047 A2.5,2.5 0 0 0 390.5,316.8047 L398,316.8047 L388,306.8047" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><text lengthAdjust="spacing" x="232" font-size="14" textLength="62.3027" y="324.7998" font-family="Arial" fill="#111827">Zustand:</text><text lengthAdjust="spacing" x="232" font-size="14" textLength="151.6758" y="341.0967" font-family="Arial" fill="#111827">- Moped Fall angelegt</text></g></svg></div>
+
+<h4 id="aufnahme---durch-transfer">Aufnahme - Durch Transfer</h4>
+<h5 id="beschreibung-7">Beschreibung</h5>
+<p>TBD: Es muss die richtige Aufnahmeart vergeben werden und die überweisende Organization befüllt</p>
 
 <table>
   <thead>
@@ -874,63 +837,25 @@ pre.xml {
   </tbody>
 </table>
 
-<h3 id="beschreibung">Beschreibung</h3>
-<p>Der Patient wird stationär aufgenommen und die Aufnahme wird so früh wie möglich in Moped bereitgestellt.</p>
-
-<h3 id="beispiel">Beispiel</h3>
-
-<h3 id="technische-hinweise">Technische Hinweise</h3>
-<p>Der Patient wird stationär in das KH aufgenommen und ein Aufenthalt (Encounter) wird angelegt. In diesem Zuge wird auch gleich die Station auf die er aufgenommen wird (TransferEncounter) und die Aufnahmediagnose mit übermittelt. Die zuständige Versicherung kann in Form einer Coverage direkt zur Verfügung gestellt werden, sofern diese bereits bekannt ist. Dies ist aber bei der Aufnahme nicht verpflichtend und kann später durch $update eingebracht werden.</p>
-
-<h3 id="ablauf">Ablauf</h3>
-
-<div><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 1105 292" zoomAndPan="magnify" data-diagram-type="SEQUENCE" preserveAspectRatio="none" width="1105px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:1105px;height:292px;background:#F5F5F5;" version="1.1" height="292px"><defs><linearGradient y1="0%" x1="50%" y2="100%" x2="50%" id="g18ly6oa92p3zu0"><stop offset="0%" stop-color="#E0E5F0"></stop><stop offset="100%" stop-color="#D1D9E6"></stop></linearGradient><filter width="300%" x="-1" y="-1" id="f18ly6oa92p3zu" height="300%"><feGaussianBlur result="blurOut" stdDeviation="2"></feGaussianBlur><feColorMatrix result="blurOut2" in="blurOut" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" type="matrix"></feColorMatrix><feOffset result="blurOut3" dx="4" dy="4" in="blurOut2"></feOffset><feBlend mode="normal" in="SourceGraphic" in2="blurOut3"></feBlend></filter></defs><g><rect width="1105" x="0" y="0" style="stroke:none;stroke-width:1;" fill="#F5F5F5" height="292"></rect><rect rx="5" ry="5" width="248.4023" x="21" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#F5E599" height="280.6172"></rect><text font-weight="bold" lengthAdjust="spacing" x="24" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="33.748" font-size="14" textLength="222.9063" y="35.292" font-family="Arial" fill="#000000">KH (Herz Jesu Krankenhaus)</text><rect rx="5" ry="5" width="127.3242" x="316.8628" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#C5F7BA" height="280.6172"></rect><text font-weight="bold" lengthAdjust="spacing" x="319.8628" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="353.981" font-size="14" textLength="53.0879" y="35.292" font-family="Arial" fill="#000000">Moped</text><rect rx="5" ry="5" width="139.0957" x="486.187" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#BAC4F7" height="280.6172"></rect><text font-weight="bold" lengthAdjust="spacing" x="489.187" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="508.6831" font-size="14" textLength="94.1035" y="35.292" font-family="Arial" fill="#000000">SV (ÖGK,...)</text><rect rx="5" ry="5" width="265.5742" x="667.2827" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#F7D0BA" height="280.6172"></rect><text font-weight="bold" lengthAdjust="spacing" x="670.2827" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="675.1567" font-size="14" textLength="244.9521" y="35.292" font-family="Arial" fill="#000000">LGF (Landesgesundheitsfonds)</text><rect rx="5" ry="5" width="124.6104" x="974.8569" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#FCB3B3" height="280.6172"></rect><text font-weight="bold" lengthAdjust="spacing" x="977.8569" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="1016.8491" font-size="14" textLength="40.626" y="35.292" font-family="Arial" fill="#000000">Bund</text><g><title>KH</title><rect width="8" x="141.2012" y="118.8906" fill="#000000" fill-opacity="0.00000" height="88.4297"></rect><line y1="118.8906" x1="144.7012" y2="207.3203" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="144.7012"></line></g><g><title>Moped</title><rect width="8" x="376.5249" y="118.8906" fill="#000000" fill-opacity="0.00000" height="88.4297"></rect><line y1="118.8906" x1="380.0093" y2="207.3203" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="380.0093"></line></g><g><title>SV (ÖGK)</title><rect width="8" x="551.7349" y="118.8906" fill="#000000" fill-opacity="0.00000" height="88.4297"></rect><line y1="118.8906" x1="555.2915" y2="207.3203" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="555.2915"></line></g><g><title>LGF (Landesgesundheitsfonds)</title><rect width="8" x="796.0698" y="118.8906" fill="#000000" fill-opacity="0.00000" height="88.4297"></rect><line y1="118.8906" x1="799.9424" y2="207.3203" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="799.9424"></line></g><g><title>Bund</title><rect width="8" x="1033.1621" y="118.8906" fill="#000000" fill-opacity="0.00000" height="88.4297"></rect><line y1="118.8906" x1="1037.0435" y2="207.3203" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="1037.0435"></line></g><g data-participant="KH" class="participant participant-head"><text lengthAdjust="spacing" x="132.3472" font-size="14" textLength="19.708" y="115.5889" font-family="Arial" fill="#000000">KH</text><ellipse cx="145.2012" cy="51.0938" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M145.2012,59.0938 L145.2012,86.0938 M132.2012,67.0938 L158.2012,67.0938 M145.2012,86.0938 L132.2012,101.0938 M145.2012,86.0938 L158.2012,101.0938" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="KH" class="participant participant-tail"><text lengthAdjust="spacing" x="132.3472" font-size="14" textLength="19.708" y="219.3154" font-family="Arial" fill="#000000">KH</text><ellipse cx="145.2012" cy="231.1172" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M145.2012,239.1172 L145.2012,266.1172 M132.2012,247.1172 L158.2012,247.1172 M145.2012,266.1172 L132.2012,281.1172 M145.2012,266.1172 L158.2012,281.1172" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="MP" class="participant participant-head"><rect rx="5" ry="5" width="61.0313" x="350.0093" y="87.5938" style="stroke:#555555;stroke-width:0.5;" fill="#FFFFFF" height="30.2969"></rect><text lengthAdjust="spacing" x="357.0093" font-size="14" textLength="47.0313" y="107.5889" font-family="Arial" fill="#000000">Moped</text></g><g data-participant="MP" class="participant participant-tail"><rect rx="5" ry="5" width="61.0313" x="350.0093" y="206.3203" style="stroke:#555555;stroke-width:0.5;" fill="#FFFFFF" height="30.2969"></rect><text lengthAdjust="spacing" x="357.0093" font-size="14" textLength="47.0313" y="226.3154" font-family="Arial" fill="#000000">Moped</text></g><g data-participant="SV" class="participant participant-head"><text lengthAdjust="spacing" x="520.2915" font-size="14" textLength="64.8867" y="115.5889" font-family="Arial" fill="#000000">SV (ÖGK)</text><ellipse cx="555.7349" cy="51.0938" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M555.7349,59.0938 L555.7349,86.0938 M542.7349,67.0938 L568.7349,67.0938 M555.7349,86.0938 L542.7349,101.0938 M555.7349,86.0938 L568.7349,101.0938" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="SV" class="participant participant-tail"><text lengthAdjust="spacing" x="520.2915" font-size="14" textLength="64.8867" y="219.3154" font-family="Arial" fill="#000000">SV (ÖGK)</text><ellipse cx="555.7349" cy="231.1172" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M555.7349,239.1172 L555.7349,266.1172 M542.7349,247.1172 L568.7349,247.1172 M555.7349,266.1172 L542.7349,281.1172 M555.7349,266.1172 L568.7349,281.1172" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="LGF" class="participant participant-head"><text lengthAdjust="spacing" x="688.9424" font-size="14" textLength="216.2549" y="115.5889" font-family="Arial" fill="#000000">LGF (Landesgesundheitsfonds)</text><ellipse cx="800.0698" cy="51.0938" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M800.0698,59.0938 L800.0698,86.0938 M787.0698,67.0938 L813.0698,67.0938 M800.0698,86.0938 L787.0698,101.0938 M800.0698,86.0938 L813.0698,101.0938" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="LGF" class="participant participant-tail"><text lengthAdjust="spacing" x="688.9424" font-size="14" textLength="216.2549" y="219.3154" font-family="Arial" fill="#000000">LGF (Landesgesundheitsfonds)</text><ellipse cx="800.0698" cy="231.1172" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M800.0698,239.1172 L800.0698,266.1172 M787.0698,247.1172 L813.0698,247.1172 M800.0698,266.1172 L787.0698,281.1172 M800.0698,266.1172 L813.0698,281.1172" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="Bund" class="participant participant-head"><text lengthAdjust="spacing" x="1016.0435" font-size="14" textLength="36.2373" y="115.5889" font-family="Arial" fill="#000000">Bund</text><ellipse cx="1037.1621" cy="51.0938" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M1037.1621,59.0938 L1037.1621,86.0938 M1024.1621,67.0938 L1050.1621,67.0938 M1037.1621,86.0938 L1024.1621,101.0938 M1037.1621,86.0938 L1050.1621,101.0938" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="Bund" class="participant participant-tail"><text lengthAdjust="spacing" x="1016.0435" font-size="14" textLength="36.2373" y="219.3154" font-family="Arial" fill="#000000">Bund</text><ellipse cx="1037.1621" cy="231.1172" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M1037.1621,239.1172 L1037.1621,266.1172 M1024.1621,247.1172 L1050.1621,247.1172 M1037.1621,266.1172 L1024.1621,281.1172 M1037.1621,266.1172 L1050.1621,281.1172" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant-1="KH" data-participant-2="MP" class="message"><line y1="150.0234" x1="378.5249" y2="146.0234" style="stroke:#111827;stroke-width:2;" x2="368.5249"></line><line y1="150.0234" x1="378.5249" y2="154.0234" style="stroke:#111827;stroke-width:2;" x2="368.5249"></line><line y1="150.0234" x1="145.2012" y2="150.0234" style="stroke:#111827;stroke-width:2;" x2="379.5249"></line><text font-weight="bold" lengthAdjust="spacing" x="152.2012" font-size="13" textLength="9.0454" y="144.9575" font-family="Arial" fill="#000000">1</text><text lengthAdjust="spacing" x="165.2466" font-size="13" textLength="82.4307" y="144.9575" font-family="Arial" fill="#000000">$aufnehmen</text></g><path filter="url(#f18ly6oa92p3zu)" d="M38,168.0234 L38,184.0234 A5,5 0 0 0 43,189.0234 L244,189.0234 A5,5 0 0 0 249,184.0234 L249,173.0234 L239,163.0234 L43,163.0234 A5,5 0 0 0 38,168.0234" style="stroke:#8B95A5;stroke-width:1;" fill="url(#g18ly6oa92p3zu0)"></path><path d="M239,163.0234 L239,170.5234 A2.5,2.5 0 0 0 241.5,173.0234 L249,173.0234 L239,163.0234" style="stroke:#8B95A5;stroke-width:1;" fill="url(#g18ly6oa92p3zu0)"></path><text lengthAdjust="spacing" x="44" font-size="14" textLength="190.3398" y="181.0186" font-family="Arial" fill="#111827">Patient wird aufgenommen</text></g></svg></div>
+<div><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 903 452" zoomAndPan="magnify" data-diagram-type="SEQUENCE" preserveAspectRatio="none" width="903px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:903px;height:452px;background:#F5F5F5;" version="1.1" height="452px"><defs><filter width="300%" x="-1" y="-1" id="f19yvzpxtcwh9a" height="300%"><feGaussianBlur result="blurOut" stdDeviation="2"></feGaussianBlur><feColorMatrix result="blurOut2" in="blurOut" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" type="matrix"></feColorMatrix><feOffset result="blurOut3" dx="4" dy="4" in="blurOut2"></feOffset><feBlend mode="normal" in="SourceGraphic" in2="blurOut3"></feBlend></filter><linearGradient y1="0%" x1="50%" y2="100%" x2="50%" id="g19yvzpxtcwh9a0"><stop offset="0%" stop-color="#E0E5F0"></stop><stop offset="100%" stop-color="#D1D9E6"></stop></linearGradient></defs><g><rect width="903" x="0" y="0" style="stroke:none;stroke-width:1;" fill="#F5F5F5" height="452"></rect><rect rx="5" ry="5" width="400.2695" x="21" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#C5F7BA" height="440.6953"></rect><text font-weight="bold" lengthAdjust="spacing" x="24" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="194.5908" font-size="14" textLength="53.0879" y="35.292" font-family="Arial" fill="#000000">Moped</text><rect rx="5" ry="5" width="434.5518" x="463.2695" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#F5E599" height="440.6953"></rect><text font-weight="bold" lengthAdjust="spacing" x="466.2695" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="568.624" font-size="14" textLength="223.8428" y="35.292" font-family="Arial" fill="#000000">KH (Herz-Jesu Krankenhaus)</text><g><title>Moped</title><rect width="8" x="217.1348" y="118.8906" fill="#000000" fill-opacity="0.00000" height="248.5078"></rect><line y1="118.8906" x1="220.6191" y2="367.3984" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="220.6191"></line></g><g><title>KH (Herz-Jesu Krankenhaus)</title><rect width="8" x="676.5454" y="118.8906" fill="#000000" fill-opacity="0.00000" height="248.5078"></rect><line y1="118.8906" x1="679.8755" y2="367.3984" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="679.8755"></line></g><g data-participant="MP" class="participant participant-head"><rect rx="5" ry="5" width="61.0313" x="190.6191" y="87.5938" style="stroke:#555555;stroke-width:0.5;" fill="#FFFFFF" height="30.2969"></rect><text lengthAdjust="spacing" x="197.6191" font-size="14" textLength="47.0313" y="107.5889" font-family="Arial" fill="#000000">Moped</text></g><g data-participant="MP" class="participant participant-tail"><rect rx="5" ry="5" width="61.0313" x="190.6191" y="366.3984" style="stroke:#555555;stroke-width:0.5;" fill="#FFFFFF" height="30.2969"></rect><text lengthAdjust="spacing" x="197.6191" font-size="14" textLength="47.0313" y="386.3936" font-family="Arial" fill="#000000">Moped</text></g><g data-participant="KH" class="participant participant-head"><text lengthAdjust="spacing" x="578.8755" font-size="14" textLength="197.3398" y="115.5889" font-family="Arial" fill="#000000">KH (Herz-Jesu Krankenhaus)</text><ellipse cx="680.5454" cy="51.0938" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M680.5454,59.0938 L680.5454,86.0938 M667.5454,67.0938 L693.5454,67.0938 M680.5454,86.0938 L667.5454,101.0938 M680.5454,86.0938 L693.5454,101.0938" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="KH" class="participant participant-tail"><text lengthAdjust="spacing" x="578.8755" font-size="14" textLength="197.3398" y="379.3936" font-family="Arial" fill="#000000">KH (Herz-Jesu Krankenhaus)</text><ellipse cx="680.5454" cy="391.1953" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M680.5454,399.1953 L680.5454,426.1953 M667.5454,407.1953 L693.5454,407.1953 M680.5454,426.1953 L667.5454,441.1953 M680.5454,426.1953 L693.5454,441.1953" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><path filter="url(#f19yvzpxtcwh9a)" d="M226,138.8906 L226,186.8906 A5,5 0 0 0 231,191.8906 L491,191.8906 A5,5 0 0 0 496,186.8906 L496,143.8906 L486,133.8906 L231,133.8906 A5,5 0 0 0 226,138.8906" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><path d="M486,133.8906 L486,141.3906 A2.5,2.5 0 0 0 488.5,143.8906 L496,143.8906 L486,133.8906" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><text lengthAdjust="spacing" x="232" font-size="14" textLength="62.3027" y="151.8857" font-family="Arial" fill="#111827">Zustand:</text><text lengthAdjust="spacing" x="232" font-size="14" textLength="244.8906" y="168.1826" font-family="Arial" fill="#111827">- Kein existierender Moped Fall mit</text><text lengthAdjust="spacing" x="240.9004" font-size="14" textLength="200.1699" y="184.4795" font-family="Arial" fill="#111827">dieser Schlüsselkombination</text><g data-participant-1="KH" data-participant-2="MP" class="message"><line y1="221.9141" x1="222.1348" y2="217.9141" style="stroke:#111827;stroke-width:2;" x2="232.1348"></line><line y1="221.9141" x1="222.1348" y2="225.9141" style="stroke:#111827;stroke-width:2;" x2="232.1348"></line><line y1="221.9141" x1="221.1348" y2="221.9141" style="stroke:#111827;stroke-width:2;" x2="679.5454"></line><text font-weight="bold" lengthAdjust="spacing" x="238.1348" font-size="13" textLength="9.0454" y="216.8481" font-family="Arial" fill="#000000">1</text><text lengthAdjust="spacing" x="251.1802" font-size="13" textLength="120.8276" y="216.8481" font-family="Arial" fill="#000000">POST $aufnehmen</text></g><path filter="url(#f19yvzpxtcwh9a)" d="M507,239.9141 L507,287.9141 A5,5 0 0 0 512,292.9141 L844,292.9141 A5,5 0 0 0 849,287.9141 L849,244.9141 L839,234.9141 L512,234.9141 A5,5 0 0 0 507,239.9141" style="stroke:#8B95A5;stroke-width:1;" fill="url(#g19yvzpxtcwh9a0)"></path><path d="M839,234.9141 L839,242.4141 A2.5,2.5 0 0 0 841.5,244.9141 L849,244.9141 L839,234.9141" style="stroke:#8B95A5;stroke-width:1;" fill="url(#g19yvzpxtcwh9a0)"></path><text lengthAdjust="spacing" x="513" font-size="14" textLength="257.3662" y="252.9092" font-family="Arial" fill="#111827">Aufnahme-Bundle wird gesendet mit</text><text lengthAdjust="spacing" x="513" font-size="14" textLength="321.2754" y="269.2061" font-family="Arial" fill="#111827">- Aufnahmedaten mit Aufnahmeart "Transfer"</text><text lengthAdjust="spacing" x="513" font-size="14" textLength="254.1123" y="285.5029" font-family="Arial" fill="#111827">- alle weiteren Aufnahme-Ressource</text><path filter="url(#f19yvzpxtcwh9a)" d="M226,311.8047 L226,343.8047 A5,5 0 0 0 231,348.8047 L393,348.8047 A5,5 0 0 0 398,343.8047 L398,316.8047 L388,306.8047 L231,306.8047 A5,5 0 0 0 226,311.8047" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><path d="M388,306.8047 L388,314.3047 A2.5,2.5 0 0 0 390.5,316.8047 L398,316.8047 L388,306.8047" style="stroke:#8B95A5;stroke-width:1;" fill="#C5F7BA"></path><text lengthAdjust="spacing" x="232" font-size="14" textLength="62.3027" y="324.7998" font-family="Arial" fill="#111827">Zustand:</text><text lengthAdjust="spacing" x="232" font-size="14" textLength="151.6758" y="341.0967" font-family="Arial" fill="#111827">- Moped Fall angelegt</text></g></svg></div>
 
 <h3 id="relevante-profile">Relevante Profile</h3>
 <ul>
   <li><a href="StructureDefinition-MopedUpdateBundleKH.html">$aufnahme Bundle</a></li>
-  <li><a name="l1033">​</a><a href="TBD">Patientenressource</a></li>
+  <li><a name="l2008">​</a><a href="TBD">Patientenressource</a></li>
   <li><a href="StructureDefinition-MopedEncounterS.html">Encounter Stationär</a></li>
+  <li><a name="l2016">​</a><a href="TBD">Encounter Ambulant</a></li>
   <li><a href="StructureDefinition-MopedTransferEncounterS.html">TransferEncounter Stationär</a></li>
+  <li><a name="l2024">​</a><a href="TBD">TransferEncounter Ambulant</a></li>
+  <li><a name="l2028">​</a><a href="TBD">TransferEncounter Intensiv</a></li>
   <li><a href="StructureDefinition-MopedCondition.html">Aufnahmediagnose</a></li>
-  <li><a name="l1049">​</a>optional: <a href="StructureDefinition-MopedCoverage.html">Coverage</a> oder <a href="TBD">Selbstzahler Coverage</a></li>
+  <li><a name="l2036">​</a>optional: <a href="StructureDefinition-MopedCoverage.html">Coverage</a> oder <a href="TBD">Selbstzahler Coverage</a></li>
+  <li><a name="l2044">​</a>optional: <a href="TBD">RelatedPerson Hauptversicherter</a></li>
+  <li><a name="l2049">​</a>optional: <a href="TBD">Überweisende Organization</a></li>
 </ul>
 
-<h3 id="relevante-invarianten">Relevante Invarianten</h3>
+<h3 id="technische-hinweise">Technische Hinweise</h3>
 
-<h3 id="mögliche-notifications">Mögliche Notifications</h3>
-
-<h4 id="subscriptiontopic-x">SubscriptionTopic: X</h4>
-
-<h4 id="tabellarische-übersicht">Tabellarische Übersicht</h4>
-
-<table class="table-responsive">
-  <tr>
-    <th>Titel</th>
-    <th>Beschreibung</th>
-    <th>Trigger Ressource</th>
-    <th>Interaktion</th>
-    <th>Auslöser</th>
-    <th>Empfänger</th>
-    <th>Beschreibung zusätzlicher Bedingungen</th>
-    <th>Relevantes Feld</th>
-    <th>Bedingung</th>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
-
-<h3 id="teilprozess-18-transfer">Teilprozess 18: Transfer</h3>
-<p>In Arbeit :)</p>
 
 
 
@@ -950,7 +875,7 @@ pre.xml {
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Tue, Apr 7, 2026 12:18+0000">2026-04-07</span>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Tue, Apr 7, 2026 19:20+0000">2026-04-07</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
