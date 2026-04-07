@@ -25,6 +25,8 @@ In this implementation guide a ValueSet [AT Scheduling Service Type](ValueSet-At
 
 Furthermore, the transmission of notifications or reminders to Patients is out of scope for this implementation guide. While notifications are mentioned in the context of cancellation workflows, the IG does not define mechanisms or channels for directly delivering messages to Patients.
 
+In this implementation guide, no rules for cancellation of appointments (see Interaction [Cancellation by Scheduling Server](interactions.md#cancellation-by-scheduling-server)) by Scheduling Server are defined. Those rules are subject to the Scheduling Server's business logic and therefor out of scope.
+
 ### Governance
 
 HL7® Austria is an official Affiliate of HL7® International. Within HL7® Austria the technical committee for FHIR® (TC FHIR®) is responsible to promote and disseminate the new upcoming standard HL7® FHIR®. The TC FHIR® deals with the standard-compliant and coordinated usage of HL7® FHIR® based communication solutions. It coordinates and describes necessary localizations and offers concrete help for FHIR®-compliant interfaces.
@@ -48,7 +50,7 @@ This Implementation Guide contains and references intellectual property owned by
   "name" : "TCFHIRAGSchedulingR5",
   "title" : "Austrian Appointment Scheduling (R5)",
   "status" : "draft",
-  "date" : "2026-04-07T09:25:26+00:00",
+  "date" : "2026-04-07T09:46:48+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "packageId" : "hl7.at.fhir.tc.wg.scheduling.r5",
   "license" : "CC0-1.0",

@@ -9,7 +9,11 @@
 
 #### Overview of relevant Ressources and Profiles
 
-The following diagram shows how the Ressources and Profiles relevant to this Implementation Guide are related to each other. ```mermaid flowchart LR %% Core scheduling backbone Schedule["**Schedule**
+The following diagram shows how the Ressources and Profiles relevant to this Implementation Guide are related to each other.
+
+```mermaid
+
+flowchart LR %% Core scheduling backbone Schedule["**Schedule**
 HL7® AT Scheduling Schedule Profile"]:::sched Slot["**Slot**
 HL7® AT Scheduling Slot Profile"]:::slot Appointment["**Appointment**
 HL7® AT Scheduling Appointment Profile"]:::appt
