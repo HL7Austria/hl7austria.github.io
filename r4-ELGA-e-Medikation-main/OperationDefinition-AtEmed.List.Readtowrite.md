@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/OperationDefinition/AtEmed.List.Readtowrite | *Version*:0.1.1 | |
-| Draft as of 2026-04-02 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmed_List_Readtowrite |
+| Draft as of 2026-04-07 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmed_List_Readtowrite |
 
  
 Die $readtowrite Operation wird aufgerufen, wenn ein Medikationsplan mit der Intention zu schreiben gelesen wird. 
@@ -38,7 +38,7 @@ Entries die vor dem Aufruf die Flag delete haben, werden aus der Liste entfern.
   "title" : "e-Med Operation für Read-to-write",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-04-02T15:01:02+00:00",
+  "date" : "2026-04-07T09:06:22+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
