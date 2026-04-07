@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot | *Version*:0.2.0 | |
-| Draft as of 2026-03-11 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingSlot |
+| Draft as of 2026-04-07 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingSlot |
 
  
 HL7® Austria FHIR® Scheduling Profile for slot data in Austria. 
@@ -64,7 +64,7 @@ Other representations of profile: [CSV](StructureDefinition-at-scheduling-slot.c
   "name" : "HL7ATSchedulingSlot",
   "title" : "HL7® AT Scheduling Slot Profile",
   "status" : "draft",
-  "date" : "2026-03-11T07:45:24+00:00",
+  "date" : "2026-04-07T09:25:26+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "HL7® Austria FHIR® Scheduling Profile for slot data in Austria.",
   "fhirVersion" : "5.0.0",
@@ -125,6 +125,17 @@ Other representations of profile: [CSV](StructureDefinition-at-scheduling-slot.c
       "type" : [{
         "code" : "Extension",
         "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/appointment-booking-url"]
+      }]
+    },
+    {
+      "id" : "Slot.extension:cancellationPolicy",
+      "path" : "Slot.extension",
+      "sliceName" : "cancellationPolicy",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-ext-cancellationPolicy"]
       }]
     },
     {

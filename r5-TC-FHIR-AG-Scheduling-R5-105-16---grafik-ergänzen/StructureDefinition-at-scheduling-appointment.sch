@@ -16,6 +16,14 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
+    <sch:title>f:Appointment/f:cancellationReason</sch:title>
+    <sch:rule context="f:Appointment/f:cancellationReason">
+      <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-ext-cancellationPolicy']) &lt;= 1">extension with URL = 'http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-ext-cancellationPolicy': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:text) &lt;= 1">text: maximum cardinality of 'text' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:title>f:Appointment/f:participant</sch:title>
     <sch:rule context="f:Appointment/f:participant">
       <sch:assert test="count(f:extension[@url = 'http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/virtual-service-detail']) &lt;= 1">extension with URL = 'http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/virtual-service-detail': maximum cardinality of 'extension' is 1</sch:assert>

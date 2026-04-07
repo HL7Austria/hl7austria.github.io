@@ -17,7 +17,7 @@ Profile: [HL7® AT Scheduling Slot Profile](StructureDefinition-at-scheduling-sl
 | - | **Concept** |
 | * | Physiotherapy |
 
-**schedule**: [Schedule: planningHorizon = 2025-05-19 09:00:00+0200 --> 2025-05-23 17:00:00+0200](Schedule-HL7ATSchedulingScheduleExample01.md)
+**schedule**: [Schedule: planningHorizon = 2025-05-13 08:00:00+0200 --> 2025-09-23 17:00:00+0200](Schedule-HL7ATSchedulingScheduleExample01.md)
 
 **status**: Free
 

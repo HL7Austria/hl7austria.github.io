@@ -166,63 +166,74 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 <h3 id="general-information">General Information</h3>
 <h4 id="overview-of-relevant-ressources-and-profiles">Overview of relevant Ressources and Profiles</h4>
-<p>The following diagram shows how the Ressources and Profiles relevant to this Implementation Guide are related to each other.</p>
-<pre><code class="language-mermaid">flowchart LR
+<p>The following diagram shows how the Ressources and Profiles relevant to this Implementation Guide are related to each other.
+```mermaid
+flowchart LR
   %% Core scheduling backbone
-  Schedule["**Schedule**&lt;br/&gt;&lt;a href='/StructureDefinition-at-scheduling-schedule.html'&gt;HL7® AT Scheduling Schedule Profile&lt;/a&gt;"]:::sched
-  Slot["**Slot**&lt;br/&gt;&lt;a href='/StructureDefinition-at-scheduling-slot.html'&gt;HL7® AT Scheduling Slot Profile&lt;/a&gt;"]:::slot
-  Appointment["**Appointment**&lt;br/&gt;&lt;a href='/StructureDefinition-at-scheduling-appointment.html'&gt;HL7® AT Scheduling Appointment Profile&lt;/a&gt;"]:::appt
+  Schedule["<strong>Schedule</strong><br />HL7® AT Scheduling Schedule Profile"]:::sched
+  Slot["<strong>Slot</strong><br />HL7® AT Scheduling Slot Profile"]:::slot
+  Appointment["<strong>Appointment</strong><br />HL7® AT Scheduling Appointment Profile"]:::appt</p>
 
-  %% Service + participants
-  HealthcareService["**HealthcareService**&lt;br/&gt;&lt;a href='/StructureDefinition-at-scheduling-healthcareService.html'&gt;HL7® AT Scheduling HealthcareService Profile&lt;/a&gt;"]:::svc
+<p>%% Service + participants
+  HealthcareService["<strong>HealthcareService</strong><br />HL7® AT Scheduling HealthcareService Profile"]:::svc</p>
 
-  Patient["**Patient**&lt;br/&gt;&lt;a href='https://fhir.hl7.at/HL7-AT-FHIR-Core-R5/StructureDefinition-at-core-patient.html'&gt;HL7® AT Core Patient Profile&lt;/a&gt;"]:::core
-  RelatedPerson["**RelatedPerson**&lt;br/&gt;&lt;a href='https://hl7.org/fhir/relatedperson.html'&gt;FHIR R5 RelatedPerson&lt;/a&gt;"]:::core
-  Practitioner["**Practitioner**&lt;br/&gt;&lt;a href='https://fhir.hl7.at/HL7-AT-FHIR-Core-R5/StructureDefinition-at-core-practitioner.html'&gt;HL7® AT Core Practitioner Profile&lt;/a&gt;"]:::core
-  PractitionerRole["**PractitionerRole**&lt;br/&gt;&lt;a href='https://fhir.hl7.at/HL7-AT-FHIR-Core-R5/StructureDefinition-at-core-practitionerRole.html'&gt;HL7® AT Core PractitionerRole Profile&lt;/a&gt;"]:::core
-  Organization["**Organization**&lt;br/&gt;&lt;a href='https://fhir.hl7.at/HL7-AT-FHIR-Core-R5/StructureDefinition-at-core-organization.html'&gt;HL7® AT Core Organization Profile&lt;/a&gt;"]:::core
-  Location["**Location**&lt;br/&gt;&lt;a href='https://fhir.hl7.at/r5-core-main/StructureDefinition-at-core-location.html'&gt;HL7® AT Core Location Profile&lt;/a&gt;"]:::core
+<p>Patient["<strong>Patient</strong><br />HL7® AT Core Patient Profile"]:::core
+  RelatedPerson["<strong>RelatedPerson</strong><br />FHIR R5 RelatedPerson"]:::core
+  Practitioner["<strong>Practitioner</strong><br />HL7® AT Core Practitioner Profile"]:::core
+  PractitionerRole["<strong>PractitionerRole</strong><br />HL7® AT Core PractitionerRole Profile"]:::core
+  Organization["<strong>Organization</strong><br />HL7® AT Core Organization Profile"]:::core
+  Location["<strong>Location</strong><br />HL7® AT Core Location Profile"]:::core</p>
 
-  %% Relationships Schedule/Slot/Appointment
-  Schedule --&gt;|"defines availability for"| Slot
-  Slot --&gt;|"is booked by"| Appointment
-  Schedule -. "serviceType&lt;br/&gt;CodeableReference(HealthcareService)" .-&gt; HealthcareService
-  Schedule -. "actor&lt;br/&gt;Reference(Patient)" .-&gt; Patient
-  Schedule -. "actor&lt;br/&gt;Reference(Practitioner)" .-&gt; Practitioner
-  Schedule -. "actor&lt;br/&gt;Reference(PractitionerRole)" .-&gt; PractitionerRole
-  Schedule -. "actor&lt;br/&gt;Reference(RelatedPerson)" .-&gt; RelatedPerson
-  Schedule -. "actor&lt;br/&gt;Reference(HealthcareService)" .-&gt; HealthcareService
-  Schedule -. "actor&lt;br/&gt;Reference(Location)" .-&gt; Location
+<p>%% Relationships Schedule/Slot/Appointment
+  Schedule –&gt;|"defines availability for"| Slot
+  Slot –&gt;|"is booked by"| Appointment
+  Schedule -. "serviceType<br />CodeableReference(HealthcareService)" .-&gt; HealthcareService
+  Schedule -. "actor<br />Reference(Patient)" .-&gt; Patient
+  Schedule -. "actor<br />Reference(Practitioner)" .-&gt; Practitioner
+  Schedule -. "actor<br />Reference(PractitionerRole)" .-&gt; PractitionerRole
+  Schedule -. "actor<br />Reference(RelatedPerson)" .-&gt; RelatedPerson
+  Schedule -. "actor<br />Reference(HealthcareService)" .-&gt; HealthcareService
+  Schedule -. "actor<br />Reference(Location)" .-&gt; Location</p>
 
-  %% Relationships Appointment -&gt; participants
-  Appointment --&gt;|"subject&lt;br/&gt;Reference(Patient|Group)"| Patient
-  Appointment -. "participant.actor&lt;br/&gt;Reference(Patient)" .-&gt; Patient
-  Appointment -. "participant.actor&lt;br/&gt;Reference(RelatedPerson)" .-&gt; RelatedPerson
-  Appointment -. "participant.actor&lt;br/&gt;Reference(Practitioner)" .-&gt; Practitioner
-  Appointment -. "participant.actor&lt;br/&gt;Reference(PractitionerRole)" .-&gt; PractitionerRole
-  Appointment -. "participant.actor&lt;br/&gt;Reference(HealthcareService)" .-&gt; HealthcareService
-  Appointment -. "participant.actor&lt;br/&gt;Reference(Location)" .-&gt; Location
+<p>%% Relationships Appointment -&gt; participants
+  Appointment –&gt;|"subject<br />Reference(Patient|Group)"| Patient
+  Appointment -. "participant.actor<br />Reference(Patient)" .-&gt; Patient
+  Appointment -. "participant.actor<br />Reference(RelatedPerson)" .-&gt; RelatedPerson
+  Appointment -. "participant.actor<br />Reference(Practitioner)" .-&gt; Practitioner
+  Appointment -. "participant.actor<br />Reference(PractitionerRole)" .-&gt; PractitionerRole
+  Appointment -. "participant.actor<br />Reference(HealthcareService)" .-&gt; HealthcareService
+  Appointment -. "participant.actor<br />Reference(Location)" .-&gt; Location</p>
 
-  Appointment -. "serviceType&lt;br/&gt;CodeableReference(HealthcareService)" .-&gt; HealthcareService
-  Appointment -. "slot&lt;br/&gt;Reference(Slot)" .-&gt; Slot
+<p>Appointment -. "serviceType<br />CodeableReference(HealthcareService)" .-&gt; HealthcareService
+  Appointment -. "slot<br />Reference(Slot)" .-&gt; Slot</p>
 
-  %% PractitionerRole context
-  PractitionerRole --&gt;|"practitioner"| Practitioner
-  PractitionerRole --&gt;|"organization"| Organization
-  PractitionerRole -. "healthcareService" .-&gt; HealthcareService
+<p>%% PractitionerRole context
+  PractitionerRole –&gt;|"practitioner"| Practitioner
+  PractitionerRole –&gt;|"organization"| Organization
+  PractitionerRole -. "healthcareService" .-&gt; HealthcareService</p>
 
-  %% Location context
-  Location --&gt;|"managingOrganization"| Organization
+<p>%% Location context
+  Location –&gt;|"managingOrganization"| Organization</p>
 
- %% Styles
+<p>%% Clickable links
+  click Schedule href "/StructureDefinition-at-scheduling-schedule.html" "Open Schedule profile" _self
+  click Slot href "/StructureDefinition-at-scheduling-slot.html" "Open Slot profile" _self
+  click Appointment href "/StructureDefinition-at-scheduling-appointment.html" "Open Appointment profile" _self
+  click HealthcareService href "/StructureDefinition-at-scheduling-healthcareService.html" "Open HealthcareService profile" _self</p>
+
+<p>click Patient href "https://fhir.hl7.at/HL7-AT-FHIR-Core-R5/StructureDefinition-at-core-patient.html" "Open Patient profile" _blank
+  click RelatedPerson href "https://hl7.org/fhir/relatedperson.html" "Open RelatedPerson resource" _blank
+  click Practitioner href "https://fhir.hl7.at/HL7-AT-FHIR-Core-R5/StructureDefinition-at-core-practitioner.html" "Open Practitioner profile" _blank
+  click PractitionerRole href "https://fhir.hl7.at/HL7-AT-FHIR-Core-R5/StructureDefinition-at-core-practitionerRole.html" "Open PractitionerRole profile" _blank
+  click Organization href "https://fhir.hl7.at/HL7-AT-FHIR-Core-R5/StructureDefinition-at-core-organization.html" "Open Organization profile" _blank
+  click Location href "https://fhir.hl7.at/r5-core-main/StructureDefinition-at-core-location.html" "Open Location profile" _blank</p>
+
+<p>%% Styles
   classDef sched fill:#e1f5fe
   classDef slot fill:#f3e5f5
   classDef appt fill:#e8f5e8
   classDef svc fill:#fff3e0
-  classDef core fill:#f5f5f5
-
-
-</code></pre>
+  classDef core fill:#f5f5f5</p>
 
 <table>
   <thead>
@@ -282,6 +293,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>In typical appointment booking systems appointment-related messages are sent via various channels (e.g. email, text message). Because this implementation guide allows chaining multiple Scheduling Servers cascadingly, the necessity arises to coordinate which Scheduling Server is responsible for sending those messages. By default the Scheduling Server, that also persists Appointments, SHOULD be the one that also sends the Appointment-related messages. However, service providers of Scheduling Servers MAY also have different bilateral arrangements, which are managed outside of the scope of this implementation guide.</p>
 
 <p>Note: The actual transmission of notifications or reminders to Patients (e.g., sending SMS or emails) is out of scope of this implementation guide.</p>
+
+<h4 id="usage-of-logical-ids-vs-identifiers">Usage of logical IDs vs. Identifiers</h4>
+
+<p>When referencing resources across systems, implementers should prefer identifiers over logical IDs. Logical IDs (the <code class="language-plaintext highlighter-rouge">Resource.id</code> element) are unique only within a single FHIR server and may change if the resource is copied or migrated. In contrast, identifiers (<code class="language-plaintext highlighter-rouge">Resource.identifier</code>) are stable values designed for use across different systems and contexts (e.g. social insurance number). Using identifiers promotes interoperability, ensuring consistent and reliable linkage of data between independent FHIR implementations.</p>
 
 <h4 id="http-return-preference">HTTP return preference</h4>
 <p>Scheduling Clients SHALL use the following HTTP return preference for requests of standard <code class="language-plaintext highlighter-rouge">POST</code> and <code class="language-plaintext highlighter-rouge">PUT</code> interactions:</p>
@@ -389,7 +404,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.tc.wg.scheduling.r5#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Wed, Mar 11, 2026 07:45+0000">2026-03-11</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.tc.wg.scheduling.r5#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Apr 7, 2026 09:25+0000">2026-04-07</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -48,7 +48,7 @@ This Implementation Guide contains and references intellectual property owned by
   "name" : "TCFHIRAGSchedulingR5",
   "title" : "Austrian Appointment Scheduling (R5)",
   "status" : "draft",
-  "date" : "2026-03-11T07:45:24+00:00",
+  "date" : "2026-04-07T09:25:26+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "packageId" : "hl7.at.fhir.tc.wg.scheduling.r5",
   "license" : "CC0-1.0",
@@ -82,7 +82,7 @@ This Implementation Guide contains and references intellectual property owned by
   "definition" : {
     "extension" : [{
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools.r5#0.9.0"
+      "valueCode" : "hl7.fhir.uv.tools.r5#1.1.2"
     }],
     "resource" : [{
       "extension" : [{
@@ -143,6 +143,18 @@ This Implementation Guide contains and references intellectual property owned by
       "name" : "healthcareService-provider-find",
       "description" : "A query operation that allows to search for healthcare service providers that offer a specific healthcare service. The general information about the HealthcareService identification itself is already available in advance, either as resource or via codes.",
       "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/HL7ATCorePatientExample01"
+      },
+      "name" : "HL7ATCorePatientExample01",
+      "description" : "Example for the usage of the HL7 AT Core Patient Profile",
+      "isExample" : true
     },
     {
       "extension" : [{
@@ -330,6 +342,18 @@ This Implementation Guide contains and references intellectual property owned by
       },
       "name" : "slot-hold",
       "description" : "Request for a hold on a selected Slot in order for the user to complete entering data for booking an appointment.  This operation follows the appointment availability interaction and precedes the booking.  The server determines if the nominated slot is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-scheduling-ext-cancellationPolicy"
+      },
+      "name" : "The policy for a cancellation",
+      "description" : "This Extension provides the information about the policy of a cancellation of an appointment. It can contain a time frame until when a cancellation is possible or what the fee for a cancellation will be.",
       "isExample" : false
     },
     {
