@@ -67,7 +67,7 @@ AtEmedListMedikationsplan
 
 Der GDA kann dem Medikationsplan ein oder mehrere Medikationsplaneinträge hinzufügen.
 
-Hierfür werden entsprechende Medikationsplaneinträge **MedicationRequests** erstellt und in der **List**-Ressouce referenziert.
+Hierfür werden entsprechende Medikationsplaneinträge **MedicationRequests** erstellt und in der **List**-Ressouce referenziert:
 
 * Das List-Flag des referenzierten MedicationRequests erhält den Wert **new**,
 * die MedicationRequests selbst können den Status **active** oder **on-hold** erhalten (siehe [Planeintrag-Status in Abhängigkeit des Flag-Status des Medikationsplans](workflowmanagement.md#planeintrag-status-in-abh%C3%A4ngigkeit-des-flag-status-des-medikationsplans))
@@ -121,7 +121,7 @@ TODO: noch offen für AtEmedMRPlaneintrag:
  
 * doNotPerform: Gibt an, ob die Verordnung der Medikation untersagt ist (z.B. bei Allergie).
 
-##### Auswirkung der Zugriffsart auf den List-Status: neuer Planeintrag
+##### Auswirkung der Zugriffsart auf List-Status und Bundles: neuer Planeintrag
 
 | | | | |
 | :--- | :--- | :--- | :--- |
@@ -129,7 +129,7 @@ TODO: noch offen für AtEmedMRPlaneintrag:
 
 #### Sub_UC_06_04 - Medikationsplaneintrag im Medikationsplan beibehalten
 
-Der GDA kann im Medikationsplan ein oder mehrere Medikationsplaneinträge beibehalten und zur Kennntis nehmen. Hierfür bleiben entsprechende Medikationsplaneinträge, sofern der Behandlungszeitraum noch nicht abgelaufen ist, unverändert (im Status **active** oder **on-hold**).
+Der GDA kann im Medikationsplan ein oder mehrere Medikationsplaneinträge beibehalten und zur Kennntis nehmen. Hierfür bleiben entsprechende Medikationsplaneinträge **MedicationRequests**, sofern der Behandlungszeitraum noch nicht abgelaufen ist, unverändert (im Status **active** oder **on-hold**). TODO: Ist der Behandlungszeitraum abgelaufen (im Status **complete**), muss dieser angepasst werden (siehe **Sub_UC_06_05 - Medikationsplaneintrag im Medikationsplan ändern**) (das Prüfung des Datums erfolgt durch die Fachanwendung).
 
 Die **List**-source wird mit dem verantwortlichen GDA, das Datum in **date** aktualisiert.
 

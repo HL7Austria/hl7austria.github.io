@@ -364,8 +364,7 @@ width: 100%;}
 
 <p>Der GDA kann dem Medikationsplan ein oder mehrere Medikationsplaneinträge hinzufügen.</p>
 
-<p>Hierfür werden entsprechende Medikationsplaneinträge <em>MedicationRequests</em> erstellt und in der <em>List</em>-Ressouce referenziert.</p>
-
+<p>Hierfür werden entsprechende Medikationsplaneinträge <em>MedicationRequests</em> erstellt und in der <em>List</em>-Ressouce referenziert:</p>
 <ul>
   <li>Das List-Flag des referenzierten MedicationRequests erhält den Wert <em>new</em>,</li>
   <li>die MedicationRequests selbst können den Status <em>active</em> oder <em>on-hold</em> erhalten (siehe <a href="workflowmanagement.html#planeintrag-status-in-abh%C3%A4ngigkeit-des-flag-status-des-medikationsplans">Planeintrag-Status in Abhängigkeit des Flag-Status des Medikationsplans</a>)</li>
@@ -423,7 +422,7 @@ width: 100%;}
   <li>doNotPerform: Gibt an, ob die Verordnung der Medikation untersagt ist (z.B. bei Allergie).</li>
 </ul>
 
-<h5 id="auswirkung-der-zugriffsart-auf-den-list-status-neuer-planeintrag">Auswirkung der Zugriffsart auf den List-Status: neuer Planeintrag</h5>
+<h5 id="auswirkung-der-zugriffsart-auf-list-status-und-bundles-neuer-planeintrag">Auswirkung der Zugriffsart auf List-Status und Bundles: neuer Planeintrag</h5>
 
 <table>
   <thead>
@@ -449,7 +448,7 @@ width: 100%;}
 <h4 id="sub_uc_06_04---medikationsplaneintrag-im-medikationsplan-beibehalten">Sub_UC_06_04 - Medikationsplaneintrag im Medikationsplan beibehalten</h4>
 
 <p>Der GDA kann im Medikationsplan ein oder mehrere Medikationsplaneinträge beibehalten und zur Kennntis nehmen.
-Hierfür bleiben entsprechende Medikationsplaneinträge, sofern der Behandlungszeitraum noch nicht abgelaufen ist, unverändert (im Status <em>active</em> oder <em>on-hold</em>).</p>
+Hierfür bleiben entsprechende Medikationsplaneinträge <em>MedicationRequests</em>, sofern der Behandlungszeitraum noch nicht abgelaufen ist, unverändert (im Status <em>active</em> oder <em>on-hold</em>). TODO: Ist der Behandlungszeitraum abgelaufen (im Status <em>complete</em>), muss dieser angepasst werden (siehe <em>Sub_UC_06_05 - Medikationsplaneintrag im Medikationsplan ändern</em>) (das Prüfung des Datums erfolgt durch die Fachanwendung).</p>
 
 <p>Die <em>List</em>-source wird mit dem verantwortlichen GDA, das Datum in <em>date</em> aktualisiert.</p>
 
@@ -731,7 +730,7 @@ Nur der Status des Medikationsplaneintrags wird angepasst:</p>
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Apr 7, 2026 15:41+0000">2026-04-07</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Apr 7, 2026 16:09+0000">2026-04-07</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

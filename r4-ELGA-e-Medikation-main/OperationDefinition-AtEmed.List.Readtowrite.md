@@ -38,7 +38,7 @@ Entries die vor dem Aufruf die Flag delete haben, werden aus der Liste entfern.
   "title" : "e-Med Operation für Read-to-write",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-04-07T15:41:53+00:00",
+  "date" : "2026-04-07T16:09:01+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
