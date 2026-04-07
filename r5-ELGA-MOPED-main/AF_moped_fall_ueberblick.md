@@ -92,7 +92,337 @@ Das KH möchte benachrichtigt werden, wenn ein VAERequest abgelehnt wurde. Das z
   * Relevantes Feld: VAEResponse.decision
   * Bedingung: != #00 AND != #19
 
-In Arbeit :)
+### Standardablauf Moped-Fall Ambulant
+
+#### Betroffene Akteure
+
+| | |
+| :--- | :--- |
+| KH (Krankenhaus) | ✅ |
+| LGF (Landesgesundheitsfonds) | ✅ |
+| SV (Sozialversicherung) | ✅ |
+| Bund | ✅ |
+
+#### Betroffene Behandlungsarten
+
+| | |
+| :--- | :--- |
+| Ambulant | ✅ |
+| Stationär | ❌ |
+
+#### Beschreibung
+
+Ein Patient kommt in die Ambulanz und wird behandelt. Ambulanter Besuch (LKF Behandlungsart Ambulant) wird analog der stationären Aufnahme administriert. Es wird aber keine Entlassung erstellt. Da es die Möglichkeit einer Mehrfachversicherung gibt, kann es im ambulanten Bereich zu einem Versicherungsträgerwechsel kommen. Die Vergabe der Aufnahmezahl im ambulanten Bereich dient der Administration im KH und beschreibt nicht zwingend einen medizinischen Fall. Ein medizinischer Fall kann daher mehrere Aufnahmezahlen beinhalten und umgekehrt.
+
+#### Beispiel
+
+Ein Patient kommt mit einem gebrochenen Arm in das KH, wird dort behandelt (Röntgen, Gips, etc.) und kann nach ein paar Stunden wieder nach Hause gehen.
+
+#### Ablauf
+
+#### 1: Aufnehmen
+
+Aufnehmen Operation ausführen und alle bereits vorhandenen Informationen zu Coverage, Aufnahmediagnose, Patient,... mitgeben.
+
+Request
+
+POST
+`[base]/$aufnehmen`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 2: VAE Anfrage stellen
+
+VAE Anfrage an die SV stellen mit $anfragen
+
+Request
+
+POST
+`[base]/Composition/{id}/_history/{version}/$anfragen`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 3a: offene VAEs abrufen
+
+offene VAEs vom Server abrufen
+
+Request
+
+GET
+`[base]/Claim?status=active&use=preauthorization&_has:ClaimResponse:request:status:not=active`
+
+**Headers:**
+`Accept: application/fhir+json`
+
+Response Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 3b: VAE beantworten
+
+VAE mit positiver Antwort einbringen
+
+Request
+
+POST
+`[base]/Composition/{id}/_history/{version}/$antworten`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 4a: aktuellen Fall abrufen
+
+Krankenanstalt ruft die aktuellen Falldaten ab (inklusive der neuen VAE Antwort)
+
+Request
+
+GET
+`[base]/Composition/{id}`
+
+**Headers:**
+`Accept: application/fhir+json`
+
+Response Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 4b: Fall aktualisieren
+
+Daten zum Kontakt mit der Abteilung für Radiologie ergänzen
+
+Request
+
+POST
+`[base]/Composition/{id}/_history/{version}/$update`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 5: Diagnose und Leistung erfassen
+
+Diagnosen und Leistungen zum Fall ergänzen
+
+Request
+
+POST
+`[base]/Composition/{id}/_history/{version}/$update`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 6: Falldaten ergänzen
+
+Restliche Falldaten für Amanda Ambulant ergänzen
+
+Request
+
+POST
+`[base]/Composition/{id}/_history/{version}/$update`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 7: Abrechnung einbringen
+
+Die Daten zur Abrechnung werden eingebracht und dem LGF als vorläufige Abrechnung zur Verfügung gestellt.
+
+Request
+
+POST
+`[base]/Composition/{id}/_history/{version}/$abrechnen`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 8a: offene Abrechnungen abrufen
+
+offene Abrechnungen abfragen, für welche noch keine Antwort (Genehmigung/Ablehnung) eingebracht wurde
+
+Request
+
+GET
+`[base]/Claim?status=active&use=claim&_has:ClaimResponse:request:status:not=active`
+
+**Headers:**
+`Accept: application/fhir+json`
+
+Response Body
+TBD mit der tatsächlichen Beispielressource ersetzen Hier würden typischerweise sehr viele Ergebnisse zurückgeliefert werden (alle derzeit für den LGF verfügbaren Abrechnungen, die noch keine Antwort erhalten haben).
+
+#### 8b: vorläufig genehmigen
+
+vorläufige Genehmigung (inkl. Bestätigung der Punkte einbringen)
+
+Request
+
+POST
+`[base]/Composition/{id}/_history/{version}/$genehmigen`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 9a: Fall erneut abrufen
+
+Krankenanstalt ruft die aktuellen Falldaten ab (inklusive der neuen bestätigten Punkte)
+
+Request
+
+GET
+`[base]/Composition/{id}`
+
+**Headers:**
+`Accept: application/fhir+json`
+
+Response Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 9b: final abrechnen
+
+Die endgültige Abrechnung wird eingebracht und dem LGF zur Verfügung gestellt.
+
+Request
+
+POST
+`[base]/Composition/{id}/_history/{version}/$abrechnen`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 10a: endgültige offene Abrechnung abrufen
+
+Die offenen endgültige Abrechnungen abfragen, für welche noch keine Antwort (Genehmigung/Ablehnung) eingebracht wurde.
+
+Request
+
+GET
+`[base]/Claim?status=active&use=claim&endgueltig=true&_has:ClaimResponse:request:status:not=active`
+
+**Headers:**
+`Accept: application/fhir+json`
+
+Response Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 10b: endgültig genehmigen
+
+Die endgültige Genehmigung (inkl. Bestätigung der Punkte einbringen) einbringen.
+
+Request
+
+POST
+`[base]/Composition/{id}/_history/{version}/$genehmigen`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 11: Kosteninformation abrufen
+
+Alle verfügbaren Kosteninformationen werden von der SV abgerufen
+
+Request
+
+GET
+`[base]/ClaimResponse?status=active&use=claim&endgueltig=true`
+
+**Headers:**
+`Accept: application/fhir+json`
+
+Response Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 12: Finale Composition abrufen
+
+Die vollständig befüllten und vom LGF genehmigten Fälle werden vom Bund abgerufen.
+
+Request
+
+GET
+`[base]/Composition?status=final`
+
+**Headers:**
+`Accept: application/fhir+json`
+
+Response Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### Technische Hinweise
+
+##### Tagesklammer vs. Aufteilung:
+
+Ob die Tagesklammer verwendet wird oder nicht liegt im Ermessen des jeweiligen KH und muss auf Seite des KIS geregelt werden. In Moped werden dann entweder ein Datensatz mit allen Leistungen und Diagnosen des jeweiligen Tages oder mehrere Datensätze mit den aufgeteilten Leistungen und Diagnosen eingemeldet. Dabei ist zu beachten:
+
+* Bei der Nutzung der Tagesklammer gibt es in den meisten Fällen in Moped pro Tag nur eine Composition und eine zugehörige VAE -> $aufnehmen wird nur ein mal ausgeführt.
+* Wird die Tagesklammer nicht genutzt so ist es möglich mehrere gültige Compositions für den gleichen Tag und Patienten in Moped zu haben. Hierbei wird $aufnehmen mehrmals ausgeführt (Für jede X01 ein mal). Pro Composition gibt es dann jeweils eine VAE.
+* Pro Composition gibt es zukünftig eine VAE. Bei Nutzung der Tagesklammer muss das KIS intern die VAE auf mehrere Aufnahmezahlen aufteilen.
+* Die Tagesklammer impliziert immer mehrere Aufnahmezahlen pro Patient, Tag und KA.
+* Die Anzahl der Ausführungen von $aufnehmen entspricht der Anzahl der Anzahl der erstellten Compositions (und soll mit der Anzahl der X01 Datensätze übereinstimmen). Unterschiedliche Compositions müssen sich in zumindest einem der folgenden Datenfelder unterscheiden: 
+* Aufnahmezahl
+* Aufnahme-/Kontaktdatum
+* KA-Nummer
+ 
+
+##### Transferencounter Stationär vs. Ambulant
+
+Der Transferencounter entspricht nicht wie beim stationären Fall der Verlegung/Aufnahme auf eine andere Station sondern einem Kontakt oder einer Bewegung (entspricht einer Behandlungen auf unterschiedlichen Funktionscodes).
+
+#### Relevante Profile
+
+* [$aufnehmen Bundle](StructureDefinition-MopedAufnehmenBundleKH.md)
+* [$update Bundle](StructureDefinition-MopedUpdateBundleKH.md)
+* [$anfragen Bundle](StructureDefinition-MopedAnfragenBundleKH.md)
+* [$antworten Bundle](StructureDefinition-MopedAntwortenBundleSV.md)
+* [$abrechnen Bundle](StructureDefinition-MopedAbrechnenBundleKH.md)
+* [$entscheiden Bundle](StructureDefinition-MopedEntscheidenLGFBundle.md)
+* [Ambulanter Encounter](StructureDefinition-MopedEncounterA.md)
+* [Ambulanter Transferencounter](StructureDefinition-MopedTransferEncounterA.md)
+
+#### Relevante Invarianten
+
+#### Mögliche Notifications
+
+##### SubscriptionTopic: X
+
+##### Tabellarische Übersicht
+
+* Titel: 
+  * Beschreibung: 
+  * Trigger Ressource: 
+  * Interaktion: 
+  * Auslöser: 
+  * Empfänger: 
+  * Beschreibung zusätzlicher Bedingungen: 
+  * Relevantes Feld: 
+  * Bedingung: 
 
 ### Standardablauf Moped-Fall Selbstzahler
 

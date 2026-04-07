@@ -85,7 +85,7 @@ These define constraints on FHIR resources for systems conforming to this implem
 | [MOPED Procedure](StructureDefinition-MopedProcedure.md) | MOPED Profil der Procedure Ressource für die LDF-Abrechnung |
 | [MOPED QuestionnaireResponse einmelden Bundle](StructureDefinition-MopedQuestionnaireResponseEinmeldenBundle.md) | Bundle für die Input-Ressourcen beim Einmelden von nicht fallspezifischen QuestionnaireResponses |
 | [MOPED TransferEncounter](StructureDefinition-MopedTransferEncounter.md) | MOPED Profil der Encounter Ressource für die Verlegung innerhalb oder zwischen Krankenanstalten |
-| [MOPED TransferEncounter Ambulant](StructureDefinition-MopedTransferEncounterA.md) | MOPED Profil der Encounter Ressource für ambulante Verlegungen |
+| [MOPED TransferEncounter Ambulant](StructureDefinition-MopedTransferEncounterA.md) | MOPED Profil der Encounter Ressource für ambulante Kontakte/Bewegungen |
 | [MOPED TransferEncounter Intensiv](StructureDefinition-MopedTransferEncounterI.md) | MOPED Profil der Encounter Ressource für die Verlegung auf Intensivstationen |
 | [MOPED TransferEncounter Stationär](StructureDefinition-MopedTransferEncounterS.md) | MOPED Profil der Encounter Ressource für eine stationäre Verlegung |
 | [MOPED Update Bundle KH](StructureDefinition-MopedUpdateBundleKH.md) | Bundle für die Input-Ressourcen beim Update von Informationen zu einem Fall |

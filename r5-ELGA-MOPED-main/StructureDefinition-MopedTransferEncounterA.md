@@ -12,7 +12,7 @@
 | Draft as of 2026-04-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedTransferEncounterA |
 
  
-MOPED Profil der Encounter Ressource für ambulante Verlegungen 
+MOPED Profil der Encounter Ressource für ambulante Kontakte/Bewegungen 
 
 **Usages:**
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedTransferEncount
   "name" : "MopedTransferEncounterA",
   "title" : "MOPED TransferEncounter Ambulant",
   "status" : "draft",
-  "date" : "2026-04-07T11:10:24+00:00",
+  "date" : "2026-04-07T12:18:59+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -50,7 +50,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedTransferEncount
       "value" : "https://elga.gv.at"
     }]
   }],
-  "description" : "MOPED Profil der Encounter Ressource für ambulante Verlegungen",
+  "description" : "MOPED Profil der Encounter Ressource für ambulante Kontakte/Bewegungen",
   "fhirVersion" : "5.0.0",
   "mapping" : [{
     "identity" : "LKF",

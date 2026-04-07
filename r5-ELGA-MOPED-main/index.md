@@ -184,7 +184,7 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
   "name" : "MOPED",
   "title" : "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)",
   "status" : "draft",
-  "date" : "2026-04-07T11:10:24+00:00",
+  "date" : "2026-04-07T12:18:59+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -2629,7 +2629,7 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
         "reference" : "StructureDefinition/MopedTransferEncounterA"
       },
       "name" : "MOPED TransferEncounter Ambulant",
-      "description" : "MOPED Profil der Encounter Ressource für ambulante Verlegungen",
+      "description" : "MOPED Profil der Encounter Ressource für ambulante Kontakte/Bewegungen",
       "isExample" : false
     },
     {
