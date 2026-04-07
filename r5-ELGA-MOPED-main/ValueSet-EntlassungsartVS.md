@@ -50,7 +50,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "name" : "EntlassungsartVS",
   "title" : "Entlassungsart des Patienten ambulant + stationär",
   "status" : "draft",
-  "date" : "2026-04-07T19:20:35+00:00",
+  "date" : "2026-04-07T19:34:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

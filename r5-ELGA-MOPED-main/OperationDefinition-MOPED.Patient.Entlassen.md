@@ -44,7 +44,7 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $entlassen Operat
   "title" : "MOPED Patient $entlassen",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-04-07T19:20:35+00:00",
+  "date" : "2026-04-07T19:34:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

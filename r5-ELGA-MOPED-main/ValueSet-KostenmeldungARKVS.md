@@ -52,7 +52,7 @@ ValueSet für die Art der Kostenmeldung
   "name" : "KostenmeldungARKVS",
   "title" : "Kostenmeldung für (A/R/K)",
   "status" : "draft",
-  "date" : "2026-04-07T19:20:35+00:00",
+  "date" : "2026-04-07T19:34:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

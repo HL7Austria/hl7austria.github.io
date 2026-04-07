@@ -32,7 +32,7 @@ Arten von Moped Payment Types CS
   "title" : "Arten von Moped Payment Types CS",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-04-07T19:20:35+00:00",
+  "date" : "2026-04-07T19:34:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -5,49 +5,88 @@
 
 ## Moped Fall - Abrechnung
 
-## Teilprozess 27: Leistung ohne Abrechnungsrelevanz
+Die folgenden Diagramme veranschaulichen die möglichen Interaktionen mit der Moped-Plattform im Teilprozess "Abrechnen". Zunächst werden die allgemeinen Interaktionsmöglichkeiten dargestellt, anschließend werden diese durch Beispiele konkretisiert und im Kontext einer spezifischen Anwendung dargestellt.
 
 ### Betroffene Akteure
 
 | | |
 | :--- | :--- |
 | KH (Krankenhaus) | ✅ |
-| LGF (Landesgesundheitsfonds) | ✅ |
-| SV (Sozialversicherung) | ✅ |
-| Bund | ✅ |
+| LGF (Landesgesundheitsfonds) | ❌ |
+| SV (Sozialversicherung) | ❌ |
+| Bund | ❌ |
 
-### Betroffene Behandlungsarten
+### Ablauf - generisch
+
+#### Abrechnung - generisch
+
+Folgende Zustände existieren und dienen in weiterer Folge als Vor-/Nachbedingungen:
+
+* es gibt noch keine Abrechnung
+* es gibt bereits eine unbeantwortete vorläufige Abrechnung
+* es gibt bereits eine genehmigte vorläufige Abrechnung
+* es gibt bereits eine abgelehnte vorläufige Abrechnung
+* es gibt bereits eine unbeantwortete endgültige Abrechnung
+* es gibt bereits eine genehmigte endgültige Abrechnung
+* es gibt bereits eine abgelehnte endgültige Abrechnung
+
+zwischen den Zuständen sind folgende Übergänge möglich:
+
+### Ablauf - Beispiele zur Anwendung
+
+#### Abrechnung - vorläufige Abrechnung
+
+##### Beschreibung
+
+Eine vorläufige Abrechnung wird entweder initial eingebracht oder ersetzt aufgrund von Änderungen in den Moped-Falldaten eine vorherige Abrechnung. Es kann so lange neu abgerechnet werden, bis eine endgueltige Abrechnung eingebracht wird.
 
 | | |
 | :--- | :--- |
-| Ambulant | ✅? |
+| Ambulant | ✅ |
 | Stationär | ✅ |
 
-### Beschreibung
+#### Abrechnung - endgültige Abrechnung
 
-Zusammenfassung: Es werden Kosten für ambulante Besuche /Aufenthalte bzw. einzelne Leistungen durch unterschiedliche Kostenträger übernommen.
+##### Beschreibung
 
-### Beispiel
+Eine endgültige Abrechnung wird entweder initial eingebracht, folgt auf eine vorläufige Abrechnung oder folgt auf eine Ablehnung einer vorherigen Abrechnung. Nach einer endgültigen Abrechnung kann der Moped-Fall nur mehr im Falle einer Ablehnung des LGF aktualisiert werden.
 
-Beispiele: Vorsorgeuntersuchung Coloskopie, Vorsorgeuntersuchung Brust-Krebs-Früherkennung bzw. Selbstzahlerleistungen (z.B. Tubensterilisation ohne medizinische Indikation im Rahmen einer Geburt) im Rahmen eines fonds-finanzierten Aufenthalts
+| | |
+| :--- | :--- |
+| Ambulant | ✅ |
+| Stationär | ✅ |
 
-### Technische Hinweise
+#### Abrechnung - Leistung ohne Abrechnungsrelevanz
 
-Die Abrechnungsrelevanz von Leistungen wird im Feld procedure.extension:Abrechnungsrelevanz dokumentiert.
+##### Beschreibung
 
-### Ablauf
+Es werden Kosten für ambulante Besuche /Aufenthalte bzw. einzelne Leistungen durch unterschiedliche Kostenträger übernommen.
 
-Die Abrechnung mit der SV ist out of scope von Moped. Ansonsten ist der Anwendungsfall gleich wie [Susi Sonnenschein](anwendungsfaelle.md). Es wird für jede Leistung festgehalten, ob diese für den LGF abrechnungsrelevant ist oder nicht.
+##### Beispiele
+
+Vorsorgeuntersuchung Coloskopie, Vorsorgeuntersuchung Brust-Krebs-Früherkennung bzw. Selbstzahlerleistungen (z.B. Tubensterilisation ohne medizinische Indikation im Rahmen einer Geburt) im Rahmen eines fonds-finanzierten Aufenthalts/Besuchs.
+
+| | |
+| :--- | :--- |
+| Ambulant | ✅ |
+| Stationär | ✅ |
+
+#### Abrechnung - Änderung von Leistungen oder Diagnosen für Abrechnung
+
+##### Beschreibung
+
+Leistungen, Diagnosen oder andere abrechnungsrelevante Informationen müssen im Moped-Fall geändert oder hinzugefügt werden. Dadurch wird die vorherige Abrechnung ungültig und muss neu eingebracht werden.
+
+##### Beispiele
+
+| | |
+| :--- | :--- |
+| Ambulant | ✅ |
+| Stationär | ✅ |
 
 ### Relevante Profile
 
-* Das Feld procedure.extension:Abrechnungsrelevanz im [LKFRequest](StructureDefinition-MopedLKFRequest-definitions.md#Claim.procedure.extension:AbrechnungsRelevanz)
+* [$abrechnen Bundle](StructureDefinition-MopedAbrechnenBundleKH.md)
 
-### Relevante Invarianten
-
-### Mögliche Notifications
-
-### Teilprozess 38: Laufende Generierung der LKF Daten
-
-In Arbeit :)
+### Technische Hinweise
 
