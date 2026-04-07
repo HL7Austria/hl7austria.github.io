@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
   "name" : "AtEmedMRGeplanteAbgabe",
   "title" : "ELGA e-Med Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-04-07T09:06:22+00:00",
+  "date" : "2026-04-07T15:41:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

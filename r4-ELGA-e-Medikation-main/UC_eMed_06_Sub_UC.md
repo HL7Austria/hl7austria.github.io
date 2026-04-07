@@ -12,23 +12,25 @@
 
 ##### List
 
-Der Medikationsplan eines ELGA-Teilnehmers ("List"-Ressource) beinhaltet List-Entries, die 0..* Medikationsplaneinträge (**MedicationRequests**) referenzieren. Die Reihenfolge der Listenelemente kann duch den GDA oder Patienten festgelegt werden. Jedes Listenelement enthält im **flag**-Element den Änderungsstatus (siehe [Status-Änderungen der List-Flag (Medikationsplan)](workflowmanagement.md)).
+Der Medikationsplan eines ELGA-Teilnehmers / einer ELGA-Teilnehmerin (**List**-Ressource) beinhaltet List-Entries, die 0..* Medikationsplaneinträge (**MedicationRequests**) referenzieren. Die Reihenfolge der Listenelemente kann duch den GDA oder Patienten festgelegt werden. Jedes Listenelement enthält im **flag**-Element den Änderungsstatus (siehe [Status-Änderungen der List-Flag (Medikationsplan)](workflowmanagement.md#status-%C3%A4nderungen-der-list-flag-medikationsplan)).
 
 ##### MedicationRequest
 
-Der Medikationsplaneintrag ("MedicationRequest"-Ressource) im Medikationsplan eines ELGA-Teilnehmers / einer ELGA-Teilnehmerin bildet genau ein Arzneimittel und dessen Dosierung ab und bildet in weiterer Folge die Grundlage zur Erstellung einer geplanten Abgabe (siehe UC_08).
+Der Medikationsplaneintrag (**MedicationRequest**-Ressource) im Medikationsplan eines ELGA-Teilnehmers / einer ELGA-Teilnehmerin bildet genau ein Arzneimittel und dessen Dosierung ab und bildet in weiterer Folge die Grundlage zur Erstellung einer geplanten Abgabe (siehe **UC_08 Geplante Abgabe Schreiben**).
 
-Der atkuelle Status eines Medikationsplaneintrags wird im **status**-Element dokumentiert (siehe [Status-Änderungen des MedicationRequests im Medikationsplaneintrag](workflowmanagement.md)).
+Der aktuelle Status eines Medikationsplaneintrags wird im **status**-Element dokumentiert (siehe [Status-Änderungen des MedicationRequests im Medikationsplaneintrag](workflowmanagement.md#status-%C3%A4nderungen-des-medicationrequests-im-medikationsplaneintrag)).
 
-#### Initial erstellter Medikationsplan UC_06_01
+Abhängig vom List-Flag kann der Medikationsplaneintrag nur eingeschränkte Status einnehmen (siehe [Planeintrag-Status in Abhängigkeit des Flag-Status des Medikationsplans](workflowmanagement.md#planeintrag-status-in-abh%C3%A4ngigkeit-des-flag-status-des-medikationsplans)).
+
+#### Sub_UC_06_01 - Initial erstellter Medikationsplan
 
 Die initiale Erstellung des Medikationsplans erfolgt durch die e-Medikation Fachanwendung.
 
-Ein GDA ruft den Medikationsplan eines Patienten ab, ohne zu wissen, ob bereits einer existiert. Die Fachanwendung stellt sicher, dass pro Patient genau ein Medikationsplan vorhanden ist: Existiert noch keiner, wird dieser im Hintergrund initial angelegt und mit emptyReason **notstarted** zurückgegeben.
+Ein GDA ruft den Medikationsplan eines Patienten ab, ohne zu wissen, ob dieser bereits existiert. Die Fachanwendung stellt sicher, dass pro Patient genau ein Medikationsplan vorhanden ist: Existiert noch keiner, wird dieser im Hintergrund initial angelegt und mit dem emptyReason **notstarted** zurückgegeben.
 
 Dieser Status kennzeichnet ausschließlich den Initialzustand (keine Einträge im Medikationsplan) und trifft keine Aussage darüber, ob der Patient tatsächlich keine Medikamente einnimmt.
 
-Relevante Felder (List):
+##### Relevante Felder (List):
 
 ```
 AtEmedListMedikationsplan
@@ -40,36 +42,98 @@ AtEmedListMedikationsplan
 
 ```
 
-#### Leerer Medikationsplan (keine Medikation eingenommen) UC_06_02
+#### Sub_UC_06_02 - Leerer Medikationsplan (keine Medikation eingenommen)
 
 Ein leerer Medikationsplan mit dem Wert emptyReason **nilknown** bedeutet, dass der Patient derzeit keine Medikamente einnimmt. Der Medikatonsplan erhält diesen Status, wenn:
 
-* die gesamte Medikation abgesetzt, storniert oder gelöscht wurde
+* ein GDA zuvor die gesamte Medikation abgesetzt, storniert oder gelöscht hat (TODO: Implizites setzen von nilknown durch die Fachanwendung beim nächsten read-to-write?)
 * ein GDA dokumentieren möchte, dass der Patient keine Medikamente einnehmen soll
 
 Dient zur Unterscheidung von leeren Medikationsplänen, die noch nie befüllt wurden.
 
-Relevante Felder (List):
+##### Relevante Felder (List):
 
 ```
 AtEmedListMedikationsplan
- status: current
- mode: working
- date: Datum der Bearbeitung
- source: Veranwortlicher GDA 
- emptyReason: nilknown   // Patient nimmt derzeit kein Medikation ein
+    status: current
+    mode: working
+    date: Datum der Bearbeitung
+    source: veranwortlicher GDA 
+    emptyReason: nilknown   // Patient nimmt derzeit kein Medikation ein
 
 ```
 
-TODO: Muss ein GDA alle Einträge absetzen / stornieren und die Fachanwendung setzt das emptyReason dann beim nächsten readtowrite auf nilknown?
-
-#### Sub-Usecase: Medikationsplaneintrag in Medikationsplan hinzufügen UC_06_03
+#### Sub_UC_06_03 - Medikationsplaneintrag in Medikationsplan hinzufügen
 
 Der GDA kann dem Medikationsplan ein oder mehrere Medikationsplaneinträge hinzufügen.
 
 Hierfür werden entsprechende Medikationsplaneinträge **MedicationRequests** erstellt und in der **List**-Ressouce referenziert.
 
-Relevante Felder (List):
+* Das List-Flag des referenzierten MedicationRequests erhält den Wert **new**,
+* die MedicationRequests selbst können den Status **active** oder **on-hold** erhalten (siehe [Planeintrag-Status in Abhängigkeit des Flag-Status des Medikationsplans](workflowmanagement.md#planeintrag-status-in-abh%C3%A4ngigkeit-des-flag-status-des-medikationsplans))
+* der Behandlungszeitraum im MedicationRequest kann sich auf das aktuelle Datum beziehen oder in der Zukunft liegen
+* ein bereits bestehender MedicationRequest kann wieder (re)aktiviert werden: 
+* MedicationRequest mit Status **on-hold** wird beim read-to-write-Zugriff im Collection Bundle mitgeliefert und kann wieder auf **active** gesetzt werden (TODO: siehe Sub_UC_06_0x - Medikationsplaneintrag in Medikationsplan reaktivieren)
+* MedicationRequest mit einem Endzustand (**stopped, entered-in-error** oder **completed**), wird beim read-to-write-Zugriff im Collection Bundle **nicht** mitgeliefert und kann nur über die Historie abgerufen und durch Erzeugung eines neuen Planeintrags in den Medikationsplan aufgenommen werden (via Client-SW) (TODO: prüfen)
+ 
+
+##### Relevante Felder (List):
+
+```
+AtEmedListMedikationsplan
+    status: current
+    mode: working
+    date: Datum der Bearbeitung des Medikationsplans
+    source: veranwortlicher GDA 
+    entry[0]:  // 1. Medikationsplaneintrag wird hinzufgefügt
+        flag: new
+        date: Datum der Aufnahme des Medikationsplaneintrags  // in diesem Fall gleich mit dem Datum der Bearbeitung des Medikationsplans
+        item: Referenz auf den Planeintrag 1  // siehe "Relevante Felder (MedicationRequest) Planeintrag 1"
+    entry[1]:  // 2. Medikationsplaneintrag wird hinzufgefügt
+        flag: new
+        date: Datum der Aufnahme des Medikationsplaneintrags // in diesem Fall gleich mit dem Datum der Bearbeitung des Medikationsplans
+        item: Referenz auf den Planeintrag 2  // analog zu "Relevante Felder (MedicationRequest) Planeintrag 1"
+
+```
+
+##### Relevante Felder (MedicationRequest) Planeintrag 1:
+
+```
+AtEmedMRPlaneintrag
+    identifier: neue Medikationsplaneintrag-ID
+    status: active | on-hold
+    reportedBoolean: false  // Fremdmedikation
+    medicationReference.reference: Medikation mit PZN oder Magistrale Anwendung // Contained Medication siehe TODO: "Arzneimittel dokumentieren"
+    authoredOn: Datum der Erstellung des Medikationsplaneintrags    
+    requester: veranwortlicher GDA  // wird auf Übereinstimmung mit List.source geprüft
+    dosageInstruction: Dosierung + Einnahmezeitraum (ab sofort | in der Zukunft) // siehe TODO: "Dosierung dokumentieren"
+
+```
+
+TODO: noch offen für AtEmedMRPlaneintrag:
+
+*  
+
+| | | |
+| :--- | :--- | :--- |
+| courseOfTherapyType: Gesamtmuster der Medikamentengabe continuous | acute | seasonal. |
+
+ 
+* doNotPerform: Gibt an, ob die Verordnung der Medikation untersagt ist (z.B. bei Allergie).
+
+##### Auswirkung der Zugriffsart auf den List-Status: neuer Planeintrag
+
+| | | | |
+| :--- | :--- | :--- | :--- |
+| **new** | - List-Entries, die vom Vorgänger-GDA mit**new**geflaggt wurden, bleiben beim read-only-Zugriff unverändert.- Die neuen MedicationRequests sind im Collection Bundle enthalten. | - List-Entries, die vom Vorgänger-GDA mit**new**geflaggt wurden, werden beim lesenden read-to-write-Zugriff von der**Fachanwendung**als****unchanged****geflaggt.- Die betreffenden MedicationRequests sind im Collection Bundle enthalten. | - List-Entries, die beim schreibenden read-to-write-Zugriff vom aktuellen GDA mit**new**geflaggt wurden, werden dem Medikationsplan neu hinzugefügt.- Die betreffenden MedicationRequests müssen im Transaction Bundle enthalten sein. |
+
+#### Sub_UC_06_04 - Medikationsplaneintrag im Medikationsplan beibehalten
+
+Der GDA kann im Medikationsplan ein oder mehrere Medikationsplaneinträge beibehalten und zur Kennntis nehmen. Hierfür bleiben entsprechende Medikationsplaneinträge, sofern der Behandlungszeitraum noch nicht abgelaufen ist, unverändert (im Status **active** oder **on-hold**).
+
+Die **List**-source wird mit dem verantwortlichen GDA, das Datum in **date** aktualisiert.
+
+##### Relevante Felder (List):
 
 ```
 AtEmedListMedikationsplan
@@ -77,49 +141,32 @@ AtEmedListMedikationsplan
     mode: working
     date: Datum der Bearbeitung des Medikationsplans
     source: Veranwortlicher GDA 
-    entry[0]:  // 1. Medikationsplaneintrag wird hinzufgefügt
-        flag: New
-        date: Datum der Aufnahme des Medikationsplaneintrags  // in diesem Fall gleich mit dem Datum der Bearbeitung des Medikationsplans
-        item: Referenz auf den Planeintrag 1  // siehe "Neuen Medikationsplaneintrag erstellen"
-    entry[1]:  // 2. Medikationsplaneintrag wird hinzufgefügt
-        flag: New
-        date: Datum der Aufnahme des Medikationsplaneintrags // in diesem Fall gleich mit dem Datum der Bearbeitung des Medikationsplans
-        item: Referenz auf den Planeintrag 2  // siehe "Neuen Medikationsplaneintrag erstellen"
+    entry[0]:  // 1. Medikationsplaneintrag bleibt unverändert
+        flag: Unchanged 
+        date: Datum der Aufnahme des Medikationsplaneintrags // in diesem Fall unterschiedlich mit dem Datum der Bearbeitung des Medikationsplans
+        item: Referenz auf den Planeintrag 1  
 
 ```
 
-Relevante Felder (MedicationRequest) Planeintrag 1:
+##### Relevante Felder (MedicationRequest) Planeintrag 1:
 
 ```
-AtEmedListMedikationsplan
-    identifier: neue Medikationsplaneintrag-ID
-    requester: veranwortlicher GDA 
-    authoredOn: aktuelles Datum
-    status active
-    reported: Fremdmedikation Nein
-    medication: Medikation mit PZN oder Magistrale Anwendung // Contained Medication siehe TODO: "Arzneimittel dokumentieren"
-    dosageInstruction: Dosierung + Einnahmezeitraum (ab sofort | in der Zukunft) // siehe TODO: "Dosierung dokumentieren"
+AtEmedMRPlaneintrag
+    {unverändert}
 
 ```
 
-TODO: noch offen:
+Anmerkung: Für das Erstellen einer geplanten Abgabe (Rezeptieren) aus den Medikationsplaneinträgen heraus siehe **UC_08 Geplante Abgabe Schreiben**.
 
-*  
-
-| | | |
-| :--- | :--- | :--- |
-| courseOfTherapyType: Gesamtmuster der Medikamentengabe continuous | acute | seasonal). |
-
- 
-* doNotPerform: Gibt an, ob die Verordnung der Medikation untersagt ist (z.B. bei Allergie).
-
-#### Sub-Usecase: Medikationsplaneintrag im Medikationsplan ändern
+#### Sub_UC_06_05 - Medikationsplaneintrag im Medikationsplan ändern
 
 Der GDA kann im Medikationsplan ein oder mehrere Medikationsplaneinträge ändern.
 
 Hierfür werden entsprechende Medikationsplaneinträge angepasst und in der List-Ressouce Datum und Flag aktualisiert.
 
-Relevante Felder (List):
+Es können nur Listen-Einträge mit dem Flag **unchanged** geändert werden, da Einträge, die vom Vorgängen mit den Flags **new** oder **changed** gespeichert wurden, beim read-to-write-Zugriff von der Fachanwendung auf **unchanged** geändert werden. Einträge die vom Vorgänger mit einem **removed**-Flag gespeichert wurde, sind beim nächsten read-to-write-Zugriff nicht mehr enthalten. TODO: prüfen.
+
+##### Relevante Felder (List):
 
 ```
 AtEmedListMedikationsplan
@@ -138,9 +185,25 @@ AtEmedListMedikationsplan
 
 ```
 
-Anmerkung: Für das Erstellen einer geplanten Abgabe (Rezeptieren) aus den Medikationsplaneinträgen heraus siehe UC_08.
+##### Relevante Felder (MedicationRequest) Planeintrag 1:
 
-#### Sub-Usecase: Medikationsplaneintrag im Medikationsplan stornieren
+```
+AtEmedMRPlaneintrag
+    identifier: Medikationsplaneintrag-ID bleibt bestehen
+    status: active | on-hold
+    statusReason.text: Freitextbegrüdung // optional TODO: Verwendung zu prüfen, Ressource anzupassen
+    reportedBoolean: false  // Fremdmedikation
+    medicationReference.reference: Änderungen betreffend der Medikation // siehe TODO: "Arzneimittel dokumentieren"
+    authoredOn: Datum der Änderung des Medikationsplaneintrags    
+    requester: für die Änderung verantwortlicher GDA 
+    dosageInstruction: Änderung betreffend Dosierung + Einnahmezeitraum (ab sofort | in der Zukunft) // siehe TODO: "Dosierung dokumentieren"
+    priorPrescription: Referenz auf ersetzten Medikationsplaneintrag
+
+```
+
+Anmerkung: Für das Erstellen einer geplanten Abgabe (Rezeptieren) aus den Medikationsplaneinträgen heraus siehe **UC_08 Geplante Abgabe Schreiben**.
+
+#### Sub_UC_06_06 - Medikationsplaneintrag im Medikationsplan stornieren
 
 Der GDA möchten einen Medikationsplaneintrag stornieren. Der restliche Plan bleibt unverändert. Hierfür wird der betreffende Medikationsplaneintrag mit dem flag Cancelled versehen.
 
