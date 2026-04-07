@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedMasterComposition | *Version*:0.1.0 | |
-| Draft as of 2026-03-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedMasterComposition |
+| Draft as of 2026-04-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedMasterComposition |
 
  
 MOPED Profil der Composition Ressource für die Composition in der sich der gesamte Moped Datensatz aufbaut. Diese unterstütz durch ihre Invarianten eine konsistente Datenhaltung. 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedMasterCompositi
   "title" : "MOPED Master Composition",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-29T16:14:43+00:00",
+  "date" : "2026-04-07T06:39:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

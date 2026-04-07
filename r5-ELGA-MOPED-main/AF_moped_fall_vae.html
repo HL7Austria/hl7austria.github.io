@@ -1,0 +1,1471 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>ELGA.MOPED\Moped Fall - Versichertenanspruchserklärung - FHIR&reg; v5.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+
+    <style type="text/css">h2{--heading-prefix:"14"}
+    h3,h4,h5,h6{--heading-prefix:"14"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+          <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img src="logo.png" id="header-logo"/>
+          </div>
+          <div class="col-11">
+          <!-- at-fhir-ig-template end -->
+              <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)</span><br/>
+                <span class="label label-info">0.1.0 - ci-build</span>
+              </p>
+            </div>
+          <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+          <!-- at-fhir-ig-template end -->
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R5/index.html" class="navbar-brand hidden">FHIR&reg;</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Einleitung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="scope_and_content.html">Umfang und Inhalt</a>
+      </li>
+      <li>
+        <a href="background.html">Hintergrund</a>
+      </li>
+      <li>
+        <a href="challenges.html">Herausforderungen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Funktionales
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="moped_konzepte.html">Designentscheidungen</a>
+      </li>
+      <li>
+        <a href="actors.html">Akteure</a>
+      </li>
+      <li>
+        <a href="workflowmanagement.html">Workflowmanagement</a>
+      </li>
+      <li>
+        <a href="obligations.html">Obligations</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anwendungsfälle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="AF_moped_plattform_ueberblick.html">Moped Plattform - Überblick</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_ueberblick.html">Moped Fall - Überblick</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_aufnahme.html">Moped Fall - Aufnahme</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_patientenversorgung.html">Moped Fall - Patientversorgung</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_entlassung.html">Moped Fall - Entlassung</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_vae.html">Moped Fall - Versichertenanspruchserklärung</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_abrechnung.html">Moped Fall - Abrechnung</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_ablehnung_genehmigung.html">Moped Fall - Genehmigung/Ablehnung</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_kostenmeldung.html">Moped Fall - Kostenmeldung</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_jahres_quartals_meldung.html">Moped Fall - Jahres-/Quartalsmeldung</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_prozessuebergreifend.html">Moped Fall - Prozessübergreifend</a>
+      </li>
+      <li>
+        <a href="AF_lkf_jahresstatistikmeldung.html">LKF Jahresstatistikmeldung</a>
+      </li>
+      <li>
+        <a href="AF_medizinische_register.html">Medizinische Register</a>
+      </li>
+      <li>
+        <a href="AF_ems.html">EMS</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Questionnaires
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Questionnaire-LKFTISSAQuestionnaire.html">MBDS - TISS-A</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFSAPS3Questionnaire.html">MBDS - SAPS3</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFL01Questionnaire.html">MBDS - Monatsmeldung - L01</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK01Questionnaire.html">MBDS - Monatsmeldung - K01</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFL02Questionnaire.html">LKF Jahresmeldung - L02</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFL03Questionnaire.html">LKF Jahresmeldung - L03</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFL04Questionnaire.html">LKF Jahresmeldung - L04</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK02Questionnaire.html">LKF Jahresmeldung - K02</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK03Questionnaire.html">LKF Jahresmeldung - K03</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK04Questionnaire.html">LKF Jahresmeldung - K04</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK05Questionnaire.html">LKF Jahresmeldung - K05</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK06Questionnaire.html">LKF Jahresmeldung - K06</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK07Questionnaire.html">LKF Jahresmeldung - K07</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK08Questionnaire.html">LKF Jahresmeldung - K08</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK09Questionnaire.html">LKF Jahresmeldung - K09</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK10Questionnaire.html">LKF Jahresmeldung - K10</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK11Questionnaire.html">LKF Jahresmeldung - K11</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK12Questionnaire.html">LKF Jahresmeldung - K12</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK13Questionnaire.html">LKF Jahresmeldung - K13</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK14Questionnaire.html">LKF Jahresmeldung - K14</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK15Questionnaire.html">LKF Jahresmeldung - K15</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK16Questionnaire.html">LKF Jahresmeldung - K16</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFG01Questionnaire.html">LKF Jahresmeldung - G01</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFG02Questionnaire.html">LKF Jahresmeldung - G02</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB01Questionnaire.html">LKF Jahresmeldung - B01</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB02Questionnaire.html">LKF Jahresmeldung - B02</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB03Questionnaire.html">LKF Jahresmeldung - B03</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB04Questionnaire.html">LKF Jahresmeldung - B04</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB05Questionnaire.html">LKF Jahresmeldung - B05</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB06Questionnaire.html">LKF Jahresmeldung - B06</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFA01Questionnaire.html">LKF Jahresmeldung - A01</a>
+      </li>
+      <li>
+        <a href="Questionnaire-StrokeUnitQuestionnaire2025.html">Register - Strokeunit</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Mappings
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="lkf_mapping.html">MBDS Mapping</a>
+      </li>
+      <li>
+        <a href="jahresmeldungen_mapping.html">LKF Jahresmeldung</a>
+      </li>
+      <li>
+        <a href="ka-org_mapping.html">Ka-Org Mapping</a>
+      </li>
+      <li>
+        <a href="stammdaten_mapping.html">Stammdaten</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">About
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="imprint.html">Impressum</a>
+      </li>
+      <li>
+        <a href="authors.html">Mitwirkende</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="dependencies.html">Dependencies</a>
+      </li>
+      <li>
+        <a href="copyright.html">Copyright</a>
+      </li>
+      <li>
+        <a href="known_issues.html">Known Issues</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Moped Fall - Versichertenanspruchserklärung</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+	
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- at-fhir-ig-template begin -->
+  <div role="alert" class="alert alert-warning">
+      <!-- ReleaseHeader --><p id="publish-box">Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED) - Local Development build (v0.1.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="https://elga.moped.at/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  </div>
+    <!-- at-fhir-ig-template end -->
+  <h2>Moped Fall - Versichertenanspruchserklärung</h2>
+  
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#teilprozess-10-klassenwechsel" id="markdown-toc-teilprozess-10-klassenwechsel">Teilprozess 10: Klassenwechsel</a>    <ul>
+      <li><a href="#betroffene-akteure" id="markdown-toc-betroffene-akteure">Betroffene Akteure</a></li>
+      <li><a href="#betroffene-behandlungsarten" id="markdown-toc-betroffene-behandlungsarten">Betroffene Behandlungsarten</a></li>
+      <li><a href="#beschreibung" id="markdown-toc-beschreibung">Beschreibung</a></li>
+      <li><a href="#beispiel" id="markdown-toc-beispiel">Beispiel</a></li>
+      <li><a href="#technische-hinweise" id="markdown-toc-technische-hinweise">Technische Hinweise</a></li>
+      <li><a href="#ablauf" id="markdown-toc-ablauf">Ablauf</a></li>
+      <li><a href="#relevante-profile" id="markdown-toc-relevante-profile">Relevante Profile</a></li>
+      <li><a href="#relevante-invarianten" id="markdown-toc-relevante-invarianten">Relevante Invarianten</a></li>
+      <li><a href="#mögliche-notifications" id="markdown-toc-mögliche-notifications">Mögliche Notifications</a></li>
+      <li><a href="#teilprozess-11-versicherungswechsel" id="markdown-toc-teilprozess-11-versicherungswechsel">Teilprozess 11: Versicherungswechsel</a></li>
+    </ul>
+  </li>
+  <li><a href="#teilprozess-28-positive-vae-inkl-verlängerung" id="markdown-toc-teilprozess-28-positive-vae-inkl-verlängerung">Teilprozess 28: Positive VAE inkl. Verlängerung</a>    <ul>
+      <li><a href="#betroffene-akteure-1" id="markdown-toc-betroffene-akteure-1">Betroffene Akteure</a></li>
+      <li><a href="#betroffene-behandlungsarten-1" id="markdown-toc-betroffene-behandlungsarten-1">Betroffene Behandlungsarten</a></li>
+      <li><a href="#beschreibung-1" id="markdown-toc-beschreibung-1">Beschreibung</a></li>
+      <li><a href="#beispiel-1" id="markdown-toc-beispiel-1">Beispiel</a></li>
+      <li><a href="#technische-hinweise-1" id="markdown-toc-technische-hinweise-1">Technische Hinweise</a></li>
+      <li><a href="#ablauf-1" id="markdown-toc-ablauf-1">Ablauf</a></li>
+      <li><a href="#relevante-profile-1" id="markdown-toc-relevante-profile-1">Relevante Profile</a></li>
+      <li><a href="#relevante-invarianten-1" id="markdown-toc-relevante-invarianten-1">Relevante Invarianten</a></li>
+      <li><a href="#mögliche-notifications-1" id="markdown-toc-mögliche-notifications-1">Mögliche Notifications</a></li>
+    </ul>
+  </li>
+  <li><a href="#teilprozess-29-negative-vae" id="markdown-toc-teilprozess-29-negative-vae">Teilprozess 29: Negative VAE</a>    <ul>
+      <li><a href="#betroffene-akteure-2" id="markdown-toc-betroffene-akteure-2">Betroffene Akteure</a></li>
+      <li><a href="#betroffene-behandlungsarten-2" id="markdown-toc-betroffene-behandlungsarten-2">Betroffene Behandlungsarten</a></li>
+      <li><a href="#beschreibung-2" id="markdown-toc-beschreibung-2">Beschreibung</a></li>
+      <li><a href="#beispiel-2" id="markdown-toc-beispiel-2">Beispiel</a></li>
+      <li><a href="#technische-hinweise-2" id="markdown-toc-technische-hinweise-2">Technische Hinweise</a></li>
+      <li><a href="#ablauf-2" id="markdown-toc-ablauf-2">Ablauf</a></li>
+      <li><a href="#relevante-profile-2" id="markdown-toc-relevante-profile-2">Relevante Profile</a></li>
+      <li><a href="#relevante-invarianten-2" id="markdown-toc-relevante-invarianten-2">Relevante Invarianten</a></li>
+      <li><a href="#mögliche-notifications-2" id="markdown-toc-mögliche-notifications-2">Mögliche Notifications</a></li>
+    </ul>
+  </li>
+  <li><a href="#teilprozess-30-vae-mit-status-in-bearbeitung" id="markdown-toc-teilprozess-30-vae-mit-status-in-bearbeitung">Teilprozess 30: VAE mit Status in Bearbeitung</a>    <ul>
+      <li><a href="#betroffene-akteure-3" id="markdown-toc-betroffene-akteure-3">Betroffene Akteure</a></li>
+      <li><a href="#betroffene-behandlungsarten-3" id="markdown-toc-betroffene-behandlungsarten-3">Betroffene Behandlungsarten</a></li>
+      <li><a href="#beschreibung-3" id="markdown-toc-beschreibung-3">Beschreibung</a></li>
+      <li><a href="#beispiel-3" id="markdown-toc-beispiel-3">Beispiel</a></li>
+      <li><a href="#technische-hinweise-3" id="markdown-toc-technische-hinweise-3">Technische Hinweise</a></li>
+      <li><a href="#ablauf-3" id="markdown-toc-ablauf-3">Ablauf</a></li>
+      <li><a href="#relevante-profile-3" id="markdown-toc-relevante-profile-3">Relevante Profile</a></li>
+      <li><a href="#relevante-invarianten-3" id="markdown-toc-relevante-invarianten-3">Relevante Invarianten</a></li>
+      <li><a href="#mögliche-notifications-3" id="markdown-toc-mögliche-notifications-3">Mögliche Notifications</a></li>
+    </ul>
+  </li>
+  <li><a href="#teilprozess-31-vae-doch-positiv-nach-vorheriger-negativer-vae" id="markdown-toc-teilprozess-31-vae-doch-positiv-nach-vorheriger-negativer-vae">Teilprozess 31: VAE doch positiv (nach vorheriger negativer VAE)</a>    <ul>
+      <li><a href="#betroffene-akteure-4" id="markdown-toc-betroffene-akteure-4">Betroffene Akteure</a></li>
+      <li><a href="#betroffene-behandlungsarten-4" id="markdown-toc-betroffene-behandlungsarten-4">Betroffene Behandlungsarten</a></li>
+      <li><a href="#beschreibung-4" id="markdown-toc-beschreibung-4">Beschreibung</a></li>
+      <li><a href="#beispiel-4" id="markdown-toc-beispiel-4">Beispiel</a></li>
+      <li><a href="#technische-hinweise-4" id="markdown-toc-technische-hinweise-4">Technische Hinweise</a></li>
+      <li><a href="#ablauf-4" id="markdown-toc-ablauf-4">Ablauf</a></li>
+      <li><a href="#relevante-profile-4" id="markdown-toc-relevante-profile-4">Relevante Profile</a></li>
+      <li><a href="#relevante-invarianten-4" id="markdown-toc-relevante-invarianten-4">Relevante Invarianten</a></li>
+      <li><a href="#mögliche-notifications-4" id="markdown-toc-mögliche-notifications-4">Mögliche Notifications</a></li>
+    </ul>
+  </li>
+  <li><a href="#teilprozess-32-vae-doch-negativ-nach-vorheriger-positiver-vae" id="markdown-toc-teilprozess-32-vae-doch-negativ-nach-vorheriger-positiver-vae">Teilprozess 32: VAE doch negativ (nach vorheriger positiver VAE)</a>    <ul>
+      <li><a href="#betroffene-akteure-5" id="markdown-toc-betroffene-akteure-5">Betroffene Akteure</a></li>
+      <li><a href="#betroffene-behandlungsarten-5" id="markdown-toc-betroffene-behandlungsarten-5">Betroffene Behandlungsarten</a></li>
+      <li><a href="#beschreibung-5" id="markdown-toc-beschreibung-5">Beschreibung</a></li>
+      <li><a href="#beispiel-5" id="markdown-toc-beispiel-5">Beispiel</a></li>
+      <li><a href="#technische-hinweise-5" id="markdown-toc-technische-hinweise-5">Technische Hinweise</a></li>
+      <li><a href="#ablauf-5" id="markdown-toc-ablauf-5">Ablauf</a></li>
+      <li><a href="#relevante-profile-5" id="markdown-toc-relevante-profile-5">Relevante Profile</a></li>
+      <li><a href="#relevante-invarianten-5" id="markdown-toc-relevante-invarianten-5">Relevante Invarianten</a></li>
+      <li><a href="#mögliche-notifications-5" id="markdown-toc-mögliche-notifications-5">Mögliche Notifications</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+
+<style>
+.notification-table {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.notification-table th,
+.notification-table td {
+  padding: 10px;
+  background: #f5f5f5; /* Cell color */
+  box-shadow: 0 0 0 3px #fff;
+  text-align: left;
+}
+.notification-table th {
+  background: #e4e4e4;
+}
+
+.table-responsive {
+display: block;
+width: 100%;
+overflow-x: auto;
+max-height: 600px;
+overflow-y: auto;
+}
+.table-responsive > table {
+width: 100%;}
+.table-responsive th,
+.table-responsive td {
+  padding: 15px;
+  background: #f5f5f5;
+}
+.table-responsive table {
+  border-collapse: separate;
+  border-spacing: 3px;
+}
+/* Kopfzeile sticky */
+.table-responsive th {
+  position: sticky;
+  top: 0;
+  background: rgb(228, 228, 228);
+  z-index: 2;
+}
+/* Erste Spalte sticky */
+.table-responsive th:first-child,
+.table-responsive td:first-child {
+  position: sticky;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 3;
+}
+
+.table-responsive th:first-child {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 4;
+}
+
+</style>
+
+<h2 id="teilprozess-10-klassenwechsel">Teilprozess 10: Klassenwechsel</h2>
+
+<h3 id="betroffene-akteure">Betroffene Akteure</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Akteur</th>
+      <th style="text-align: right">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>KH (Krankenhaus)</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>LGF (Landesgesundheitsfonds)</td>
+      <td style="text-align: right">❌</td>
+    </tr>
+    <tr>
+      <td>SV (Sozialversicherung)</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>Bund</td>
+      <td style="text-align: right">❌</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="betroffene-behandlungsarten">Betroffene Behandlungsarten</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Behandlungsart</th>
+      <th style="text-align: right">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ambulant</td>
+      <td style="text-align: right">❌</td>
+    </tr>
+    <tr>
+      <td>Stationär</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="beschreibung">Beschreibung</h3>
+<p>Die Klasse des Aufenthalts (Allgemeine Klasse/Sonderklasse) wird mit der VAE an die SV übermittelt. Im Fall eines Klassenwechsels während des Aufenthalts, muss diese Information der SV mitgeteilt werden, da unter anderem die Verpflegskostenbeitragsbefreiung (VKBEFR) davon abhängt. Der Wechsel ist zu jedem Zeitpunkt in beide Richtungen möglich. Um die Zeitintervalle der jeweiligen Klassen nachvollziehen zu können, wird von Seite des KH das Zeitintervall für die jeweiligen Klassen und von Seite der SV das Zeitintervall der VKBEFR festgehalten.</p>
+
+<h3 id="beispiel">Beispiel</h3>
+<p>Patient liegt zuerst auf der Allgemeinen Klasse (A) und wird dann auf die Sonderklasse (S) verlegt. Zuerst liegt keine Verpflegskostenbeitragsbefreieung vor (VKBEFR = N). Aufgrund der Verlegung auf die  Sonderklasse gilt ab dem Zeitpunkt des Klassenwechsels eine Befreiung der Verpflegskosten (S – Befreiung aufgrund der Sonderklasse).</p>
+
+<h3 id="technische-hinweise">Technische Hinweise</h3>
+<p>Da es sich hierbei um eine Änderung der VAE für den selben Zeitraum handelt, wird beide male das Profil VAERequestInitial verwendet, was zu einer automatischen Stornierung des vorherigen VAERequest führt.</p>
+
+<h3 id="ablauf">Ablauf</h3>
+<div><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 1261 726" zoomAndPan="magnify" data-diagram-type="SEQUENCE" preserveAspectRatio="none" width="1261px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:1261px;height:726px;background:#F5F5F5;" version="1.1" height="726px"><defs><linearGradient y1="0%" x1="50%" y2="100%" x2="50%" id="g14527e1mryutj0"><stop offset="0%" stop-color="#E0E5F0"></stop><stop offset="100%" stop-color="#D1D9E6"></stop></linearGradient><filter width="300%" x="-1" y="-1" id="f14527e1mryutj" height="300%"><feGaussianBlur result="blurOut" stdDeviation="2"></feGaussianBlur><feColorMatrix result="blurOut2" in="blurOut" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" type="matrix"></feColorMatrix><feOffset result="blurOut3" dx="4" dy="4" in="blurOut2"></feOffset><feBlend mode="normal" in="SourceGraphic" in2="blurOut3"></feBlend></filter></defs><g><rect width="1261" x="0" y="0" style="stroke:none;stroke-width:1;" fill="#F5F5F5" height="726"></rect><rect rx="5" ry="5" width="248.4023" x="41" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#F5E599" height="714.0078"></rect><text font-weight="bold" lengthAdjust="spacing" x="44" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="53.748" font-size="14" textLength="222.9063" y="35.292" font-family="Arial" fill="#000000">KH (Herz Jesu Krankenhaus)</text><rect rx="5" ry="5" width="127.3242" x="331.4023" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#C5F7BA" height="714.0078"></rect><text font-weight="bold" lengthAdjust="spacing" x="334.4023" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="368.5205" font-size="14" textLength="53.0879" y="35.292" font-family="Arial" fill="#000000">Moped</text><rect rx="5" ry="5" width="139.0957" x="642.0376" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#BAC4F7" height="714.0078"></rect><text font-weight="bold" lengthAdjust="spacing" x="645.0376" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="664.5337" font-size="14" textLength="94.1035" y="35.292" font-family="Arial" fill="#000000">SV (ÖGK,...)</text><rect rx="5" ry="5" width="265.5742" x="823.1333" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#F7D0BA" height="714.0078"></rect><text font-weight="bold" lengthAdjust="spacing" x="826.1333" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="831.0073" font-size="14" textLength="244.9521" y="35.292" font-family="Arial" fill="#000000">LGF (Landesgesundheitsfonds)</text><rect rx="5" ry="5" width="124.6104" x="1130.7075" y="6" style="stroke:#181818;stroke-width:0.5;" fill="#FCB3B3" height="714.0078"></rect><text font-weight="bold" lengthAdjust="spacing" x="1133.7075" font-size="14" textLength="4.874" y="18.9951" font-family="Arial" fill="#000000">&nbsp;</text><text font-weight="bold" lengthAdjust="spacing" x="1172.6997" font-size="14" textLength="40.626" y="35.292" font-family="Arial" fill="#000000">Bund</text><g><title>KH</title><rect width="8" x="161.2012" y="118.8906" fill="#000000" fill-opacity="0.00000" height="521.8203"></rect><line y1="118.8906" x1="164.7012" y2="640.7109" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="164.7012"></line></g><g><title>Moped</title><rect width="8" x="391.0645" y="118.8906" fill="#000000" fill-opacity="0.00000" height="521.8203"></rect><line y1="118.8906" x1="394.5488" y2="640.7109" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="394.5488"></line></g><g><title>SV (ÖGK)</title><rect width="8" x="707.5854" y="118.8906" fill="#000000" fill-opacity="0.00000" height="521.8203"></rect><line y1="118.8906" x1="711.1421" y2="640.7109" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="711.1421"></line></g><g><title>LGF (Landesgesundheitsfonds)</title><rect width="8" x="951.9204" y="118.8906" fill="#000000" fill-opacity="0.00000" height="521.8203"></rect><line y1="118.8906" x1="955.793" y2="640.7109" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="955.793"></line></g><g><title>Bund</title><rect width="8" x="1189.0127" y="118.8906" fill="#000000" fill-opacity="0.00000" height="521.8203"></rect><line y1="118.8906" x1="1192.894" y2="640.7109" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="1192.894"></line></g><g data-participant="KH" class="participant participant-head"><text lengthAdjust="spacing" x="152.3472" font-size="14" textLength="19.708" y="115.5889" font-family="Arial" fill="#000000">KH</text><ellipse cx="165.2012" cy="51.0938" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M165.2012,59.0938 L165.2012,86.0938 M152.2012,67.0938 L178.2012,67.0938 M165.2012,86.0938 L152.2012,101.0938 M165.2012,86.0938 L178.2012,101.0938" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="KH" class="participant participant-tail"><text lengthAdjust="spacing" x="152.3472" font-size="14" textLength="19.708" y="652.7061" font-family="Arial" fill="#000000">KH</text><ellipse cx="165.2012" cy="664.5078" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M165.2012,672.5078 L165.2012,699.5078 M152.2012,680.5078 L178.2012,680.5078 M165.2012,699.5078 L152.2012,714.5078 M165.2012,699.5078 L178.2012,714.5078" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="MP" class="participant participant-head"><rect rx="5" ry="5" width="61.0313" x="364.5488" y="87.5938" style="stroke:#555555;stroke-width:0.5;" fill="#FFFFFF" height="30.2969"></rect><text lengthAdjust="spacing" x="371.5488" font-size="14" textLength="47.0313" y="107.5889" font-family="Arial" fill="#000000">Moped</text></g><g data-participant="MP" class="participant participant-tail"><rect rx="5" ry="5" width="61.0313" x="364.5488" y="639.7109" style="stroke:#555555;stroke-width:0.5;" fill="#FFFFFF" height="30.2969"></rect><text lengthAdjust="spacing" x="371.5488" font-size="14" textLength="47.0313" y="659.7061" font-family="Arial" fill="#000000">Moped</text></g><g data-participant="SV" class="participant participant-head"><text lengthAdjust="spacing" x="676.1421" font-size="14" textLength="64.8867" y="115.5889" font-family="Arial" fill="#000000">SV (ÖGK)</text><ellipse cx="711.5854" cy="51.0938" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M711.5854,59.0938 L711.5854,86.0938 M698.5854,67.0938 L724.5854,67.0938 M711.5854,86.0938 L698.5854,101.0938 M711.5854,86.0938 L724.5854,101.0938" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="SV" class="participant participant-tail"><text lengthAdjust="spacing" x="676.1421" font-size="14" textLength="64.8867" y="652.7061" font-family="Arial" fill="#000000">SV (ÖGK)</text><ellipse cx="711.5854" cy="664.5078" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M711.5854,672.5078 L711.5854,699.5078 M698.5854,680.5078 L724.5854,680.5078 M711.5854,699.5078 L698.5854,714.5078 M711.5854,699.5078 L724.5854,714.5078" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="LGF" class="participant participant-head"><text lengthAdjust="spacing" x="844.793" font-size="14" textLength="216.2549" y="115.5889" font-family="Arial" fill="#000000">LGF (Landesgesundheitsfonds)</text><ellipse cx="955.9204" cy="51.0938" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M955.9204,59.0938 L955.9204,86.0938 M942.9204,67.0938 L968.9204,67.0938 M955.9204,86.0938 L942.9204,101.0938 M955.9204,86.0938 L968.9204,101.0938" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="LGF" class="participant participant-tail"><text lengthAdjust="spacing" x="844.793" font-size="14" textLength="216.2549" y="652.7061" font-family="Arial" fill="#000000">LGF (Landesgesundheitsfonds)</text><ellipse cx="955.9204" cy="664.5078" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M955.9204,672.5078 L955.9204,699.5078 M942.9204,680.5078 L968.9204,680.5078 M955.9204,699.5078 L942.9204,714.5078 M955.9204,699.5078 L968.9204,714.5078" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="Bund" class="participant participant-head"><text lengthAdjust="spacing" x="1171.894" font-size="14" textLength="36.2373" y="115.5889" font-family="Arial" fill="#000000">Bund</text><ellipse cx="1193.0127" cy="51.0938" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M1193.0127,59.0938 L1193.0127,86.0938 M1180.0127,67.0938 L1206.0127,67.0938 M1193.0127,86.0938 L1180.0127,101.0938 M1193.0127,86.0938 L1206.0127,101.0938" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant="Bund" class="participant participant-tail"><text lengthAdjust="spacing" x="1171.894" font-size="14" textLength="36.2373" y="652.7061" font-family="Arial" fill="#000000">Bund</text><ellipse cx="1193.0127" cy="664.5078" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0"></ellipse><path d="M1193.0127,672.5078 L1193.0127,699.5078 M1180.0127,680.5078 L1206.0127,680.5078 M1193.0127,699.5078 L1180.0127,714.5078 M1193.0127,699.5078 L1206.0127,714.5078" style="stroke:#181818;stroke-width:0.5;" fill="none"></path></g><g data-participant-1="KH" data-participant-2="MP" class="message"><line y1="150.0234" x1="393.0645" y2="146.0234" style="stroke:#111827;stroke-width:2;" x2="383.0645"></line><line y1="150.0234" x1="393.0645" y2="154.0234" style="stroke:#111827;stroke-width:2;" x2="383.0645"></line><line y1="150.0234" x1="165.2012" y2="150.0234" style="stroke:#111827;stroke-width:2;" x2="394.0645"></line><text font-weight="bold" lengthAdjust="spacing" x="172.2012" font-size="13" textLength="9.0454" y="144.9575" font-family="Arial" fill="#000000">1</text><text lengthAdjust="spacing" x="185.2466" font-size="13" textLength="66.8535" y="144.9575" font-family="Arial" fill="#000000">$anfragen</text></g><path filter="url(#f14527e1mryutj)" d="M36,168.0234 L36,216.0234 A5,5 0 0 0 41,221.0234 L285,221.0234 A5,5 0 0 0 290,216.0234 L290,173.0234 L280,163.0234 L41,163.0234 A5,5 0 0 0 36,168.0234" style="stroke:#8B95A5;stroke-width:1;" fill="url(#g14527e1mryutj0)"></path><path d="M280,163.0234 L280,170.5234 A2.5,2.5 0 0 0 282.5,173.0234 L290,173.0234 L280,163.0234" style="stroke:#8B95A5;stroke-width:1;" fill="url(#g14527e1mryutj0)"></path><text lengthAdjust="spacing" x="42" font-size="14" textLength="111.7334" y="181.0186" font-family="Arial" fill="#111827">Initiale Anfrage:</text><text lengthAdjust="spacing" x="42" font-size="14" textLength="137.5938" y="197.3154" font-family="Arial" fill="#111827">VAERequestInitial 1</text><text lengthAdjust="spacing" x="46.4502" font-size="14" textLength="228.9287" y="213.6123" font-family="Arial" fill="#111827">KLAS = A + Zeitintervall: ab 1.1.</text><g data-participant-1="SV" data-participant-2="MP" class="message"><line y1="251.0469" x1="396.0645" y2="247.0469" style="stroke:#111827;stroke-width:2;" x2="406.0645"></line><line y1="251.0469" x1="396.0645" y2="255.0469" style="stroke:#111827;stroke-width:2;" x2="406.0645"></line><line y1="251.0469" x1="395.0645" y2="251.0469" style="stroke:#111827;stroke-width:2;stroke-dasharray:2.0,2.0;" x2="710.5854"></line><text font-weight="bold" lengthAdjust="spacing" x="412.0645" font-size="13" textLength="9.0454" y="245.981" font-family="Arial" fill="#000000">2</text><text lengthAdjust="spacing" x="425.1099" font-size="13" textLength="74.8389" y="245.981" font-family="Arial" fill="#000000">$antworten</text></g><path filter="url(#f14527e1mryutj)" d="M574,269.0469 L574,301.0469 A5,5 0 0 0 579,306.0469 L839,306.0469 A5,5 0 0 0 844,301.0469 L844,274.0469 L834,264.0469 L579,264.0469 A5,5 0 0 0 574,269.0469" style="stroke:#8B95A5;stroke-width:1;" fill="url(#g14527e1mryutj0)"></path><path d="M834,264.0469 L834,271.5469 A2.5,2.5 0 0 0 836.5,274.0469 L844,274.0469 L834,264.0469" style="stroke:#8B95A5;stroke-width:1;" fill="url(#g14527e1mryutj0)"></path><text lengthAdjust="spacing" x="580" font-size="14" textLength="109.2246" y="282.042" font-family="Arial" fill="#111827">VAEResponse 1</text><text lengthAdjust="spacing" x="580" font-size="14" textLength="249.3682" y="298.3389" font-family="Arial" fill="#111827">VKBEFR = N + Zeitintervall: ab 1.1.</text><g data-participant-1="KH" data-participant-2="MP" class="message"><line y1="335.7734" x1="393.0645" y2="331.7734" style="stroke:#111827;stroke-width:2;" x2="383.0645"></line><line y1="335.7734" x1="393.0645" y2="339.7734" style="stroke:#111827;stroke-width:2;" x2="383.0645"></line><line y1="335.7734" x1="165.2012" y2="335.7734" style="stroke:#111827;stroke-width:2;" x2="394.0645"></line><text font-weight="bold" lengthAdjust="spacing" x="172.2012" font-size="13" textLength="9.0454" y="330.7075" font-family="Arial" fill="#000000">3</text><text lengthAdjust="spacing" x="185.2466" font-size="13" textLength="66.8535" y="330.7075" font-family="Arial" fill="#000000">$anfragen</text></g><path filter="url(#f14527e1mryutj)" d="M5,353.7734 L5,418.7734 A5,5 0 0 0 10,423.7734 L318,423.7734 A5,5 0 0 0 323,418.7734 L323,358.7734 L313,348.7734 L10,348.7734 A5,5 0 0 0 5,353.7734" style="stroke:#8B95A5;stroke-width:1;" fill="url(#g14527e1mryutj0)"></path><path d="M313,348.7734 L313,356.2734 A2.5,2.5 0 0 0 315.5,358.7734 L323,358.7734 L313,348.7734" style="stroke:#8B95A5;stroke-width:1;" fill="url(#g14527e1mryutj0)"></path><text lengthAdjust="spacing" x="11" font-size="14" textLength="114.8711" y="366.7686" font-family="Arial" fill="#111827">Klassenwechsel:</text><text lengthAdjust="spacing" x="15.4502" font-size="14" textLength="137.5938" y="383.0654" font-family="Arial" fill="#111827">VAERequestInitial 2</text><text lengthAdjust="spacing" x="15.4502" font-size="14" textLength="292.8721" y="399.3623" font-family="Arial" fill="#111827">KLAS = A + Zeitintervall: von 1.1. bis 3.1.</text><text lengthAdjust="spacing" x="15.4502" font-size="14" textLength="228.2383" y="415.6592" font-family="Arial" fill="#111827">KLAS = S + Zeitintervall: ab 3.1.</text><g data-participant-1="MP" data-participant-2="MP" class="message"><line y1="453.0938" x1="395.0645" y2="453.0938" style="stroke:#111827;stroke-width:2;" x2="437.0645"></line><line y1="453.0938" x1="437.0645" y2="466.0938" style="stroke:#111827;stroke-width:2;" x2="437.0645"></line><line y1="466.0938" x1="395.0645" y2="466.0938" style="stroke:#111827;stroke-width:2;" x2="437.0645"></line><line y1="466.0938" x1="396.0645" y2="462.0938" style="stroke:#111827;stroke-width:2;" x2="406.0645"></line><line y1="466.0938" x1="396.0645" y2="470.0938" style="stroke:#111827;stroke-width:2;" x2="406.0645"></line><text font-weight="bold" lengthAdjust="spacing" x="402.0645" font-size="13" textLength="9.0454" y="448.0278" font-family="Arial" fill="#000000">4</text><text lengthAdjust="spacing" x="415.1099" font-size="13" textLength="250.2246" y="448.0278" font-family="Arial" fill="#000000">Moped Operation Logik von $anfragen</text></g><path filter="url(#f14527e1mryutj)" d="M161,484.0938 L161,516.0938 A5,5 0 0 0 166,521.0938 L620,521.0938 A5,5 0 0 0 625,516.0938 L625,489.0938 L615,479.0938 L166,479.0938 A5,5 0 0 0 161,484.0938" style="stroke:#8B95A5;stroke-width:1;" fill="url(#g14527e1mryutj0)"></path><path d="M615,479.0938 L615,486.5938 A2.5,2.5 0 0 0 617.5,489.0938 L625,489.0938 L615,479.0938" style="stroke:#8B95A5;stroke-width:1;" fill="url(#g14527e1mryutj0)"></path><text lengthAdjust="spacing" x="167" font-size="14" textLength="443.5088" y="497.0889" font-family="Arial" fill="#111827">Automatischen Stornierung von VAERequestInitial 1, da es sich</text><text lengthAdjust="spacing" x="171.4502" font-size="14" textLength="366.2148" y="513.3857" font-family="Arial" fill="#111827">um eine Anfrage für den gleichen Zeitraum handelt.</text><g data-participant-1="SV" data-participant-2="MP" class="message"><line y1="550.8203" x1="396.0645" y2="546.8203" style="stroke:#111827;stroke-width:2;" x2="406.0645"></line><line y1="550.8203" x1="396.0645" y2="554.8203" style="stroke:#111827;stroke-width:2;" x2="406.0645"></line><line y1="550.8203" x1="395.0645" y2="550.8203" style="stroke:#111827;stroke-width:2;stroke-dasharray:2.0,2.0;" x2="710.5854"></line><text font-weight="bold" lengthAdjust="spacing" x="412.0645" font-size="13" textLength="9.0454" y="545.7544" font-family="Arial" fill="#000000">5</text><text lengthAdjust="spacing" x="425.1099" font-size="13" textLength="74.8389" y="545.7544" font-family="Arial" fill="#000000">$antworten</text></g><path filter="url(#f14527e1mryutj)" d="M542,568.8203 L542,616.8203 A5,5 0 0 0 547,621.8203 L871,621.8203 A5,5 0 0 0 876,616.8203 L876,573.8203 L866,563.8203 L547,563.8203 A5,5 0 0 0 542,568.8203" style="stroke:#8B95A5;stroke-width:1;" fill="url(#g14527e1mryutj0)"></path><path d="M866,563.8203 L866,571.3203 A2.5,2.5 0 0 0 868.5,573.8203 L876,573.8203 L866,563.8203" style="stroke:#8B95A5;stroke-width:1;" fill="url(#g14527e1mryutj0)"></path><text lengthAdjust="spacing" x="548" font-size="14" textLength="109.2246" y="581.8154" font-family="Arial" fill="#111827">VAEResponse 2</text><text lengthAdjust="spacing" x="548" font-size="14" textLength="313.3115" y="598.1123" font-family="Arial" fill="#111827">VKBEFR = N + Zeitintervall: von 1.1. bis 3.1.</text><text lengthAdjust="spacing" x="548" font-size="14" textLength="247.7822" y="614.4092" font-family="Arial" fill="#111827">VKBEFR = S + Zeitintervall: ab 3.1.</text></g></svg></div>
+
+<h3 id="relevante-profile">Relevante Profile</h3>
+<ul>
+  <li><a href="StructureDefinition-MopedVAERequestInitial.html">VAERequestInitial</a></li>
+  <li><a href="StructureDefinition-MopedVAEResponse.html">VAEResponse</a></li>
+  <li><a href="StructureDefinition-MopedAnfragenBundleKH.html">$anfragen Bundle</a></li>
+  <li><a href="StructureDefinition-MopedAntwortenBundleSV.html">$antworten Bundle</a></li>
+</ul>
+
+<h3 id="relevante-invarianten">Relevante Invarianten</h3>
+
+<h3 id="mögliche-notifications">Mögliche Notifications</h3>
+
+<h4 id="tabellarische-übersicht">Tabellarische Übersicht</h4>
+
+<table class="table-responsive">
+  <tr>
+    <th>Titel</th>
+    <th>Beschreibung</th>
+    <th>Trigger Ressource</th>
+    <th>Interaktion</th>
+    <th>Auslöser</th>
+    <th>Empfänger</th>
+    <th>Beschreibung zusätzlicher Bedingungen</th>
+    <th>Relevantes Feld</th>
+    <th>Bedingung</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+<h3 id="teilprozess-11-versicherungswechsel">Teilprozess 11: Versicherungswechsel</h3>
+<p>In Arbeit :)</p>
+
+<style>
+.notification-table {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.notification-table th,
+.notification-table td {
+  padding: 10px;
+  background: #f5f5f5; /* Cell color */
+  box-shadow: 0 0 0 3px #fff;
+  text-align: left;
+}
+.notification-table th {
+  background: #e4e4e4;
+}
+
+.table-responsive {
+display: block;
+width: 100%;
+overflow-x: auto;
+max-height: 600px;
+overflow-y: auto;
+}
+.table-responsive > table {
+width: 100%;}
+.table-responsive th,
+.table-responsive td {
+  padding: 15px;
+  background: #f5f5f5;
+}
+.table-responsive table {
+  border-collapse: separate;
+  border-spacing: 3px;
+}
+/* Kopfzeile sticky */
+.table-responsive th {
+  position: sticky;
+  top: 0;
+  background: rgb(228, 228, 228);
+  z-index: 2;
+}
+/* Erste Spalte sticky */
+.table-responsive th:first-child,
+.table-responsive td:first-child {
+  position: sticky;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 3;
+}
+
+.table-responsive th:first-child {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 4;
+}
+
+</style>
+
+<h2 id="teilprozess-28-positive-vae-inkl-verlängerung">Teilprozess 28: Positive VAE inkl. Verlängerung</h2>
+
+<h3 id="betroffene-akteure-1">Betroffene Akteure</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Akteur</th>
+      <th style="text-align: right">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>KH (Krankenhaus)</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>LGF (Landesgesundheitsfonds)</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>SV (Sozialversicherung)</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>Bund</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="betroffene-behandlungsarten-1">Betroffene Behandlungsarten</h3>
+
+<h4 id="positive-vae">Positive VAE</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Behandlungsart</th>
+      <th style="text-align: right">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ambulant</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>Stationär</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="verlängerung-der-vae">Verlängerung der VAE</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Behandlungsart</th>
+      <th style="text-align: right">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ambulant</td>
+      <td style="text-align: right">❌</td>
+    </tr>
+    <tr>
+      <td>Stationär</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="beschreibung-1">Beschreibung</h3>
+<p>Aufgrund der eingelangten VAE (Versichertenanspruchserklärung) Anfrage erfolgt seitens der SV die positive VAE Rückmeldung. Die positive Entscheidung wird in der Rückmeldung durch "00" (stationär) oder "19" (ambulant) ausgedrückt.</p>
+
+<h4 id="ambulant">Ambulant</h4>
+<p><a name="l1534">​</a>Zukünftig gibt es anstatt einer Quartalszusage pro <a href="TBD-LINK-BEGRIFFSDEFINITION">Moped Fall</a> eine Anfrage und eine Rückmeldung.</p>
+
+<h4 id="stationär">Stationär</h4>
+<p><a name="l1543">​</a>Die SV hat die Möglichkeit die VAE unbefristet oder befristet abzugeben. Gibt es eine Befristung, so wird ein Enddatum angegeben. Falls der stationäre Aufenthalt länger dauert als das angegebene Enddatum so muss das KH um eine Verlängerung ansuchen. In der Verlängerung wird das Enddatum als Verlängerungsdatum angegeben und zusätzlich auf die initiale Anfrage verwiesen. Die positive VAE für den ursprünglichen Zeitraum bleibt weiterhin gültig (außer sie wird aus anderen Gründen nachträglich storniert -&gt; siehe <a href="AF28bis32.html#anwendungsfall-32-vae-doch-negativ-nach-vorheriger-positiver-vae">Anwendungsfall 32:  VAE doch negativ</a>). Die VAE kann nach Ablauf der Frist der letzten positiven VAE immer wieder verlängert werden solange sich der Patient immer noch in Behandlung befindet. Gibt es kein Fristende so kann die VAE auch nicht verlängert werden.</p>
+
+<h3 id="beispiel-1">Beispiel</h3>
+
+<h4 id="beispiel-1-ambulant">Beispiel 1: ambulant</h4>
+
+<h4 id="beispiel-2-stationär-ohne-fristende">Beispiel 2: stationär ohne Fristende</h4>
+
+<h4 id="beispiel-3-stationär-mit-fristende-und-verlängerung">Beispiel 3: stationär mit Fristende und Verlängerung</h4>
+
+<h3 id="technische-hinweise-1">Technische Hinweise</h3>
+<p>Die initiale VAE und die VAE zur Verlängerung entsprechen unterschiedlichen Profilen mit unterschiedlichen Subtypen. In der Verlängerung muss verpflichtend die initiale VAE verlinkt werden.</p>
+
+<h3 id="ablauf-1">Ablauf</h3>
+<pre class="mermaid">
+    ---
+    config:
+      theme: 'base'
+      themeVariables:
+        primaryColor: '#dbdbdb'         
+        actorBorder: '#666'
+        noteBkgColor: '#f4f4f4'
+        noteBorderColor: '#555'
+    ---
+    sequenceDiagram
+    autonumber
+    box rgb(245, 229, 153)
+    actor KH as KH (Herz Jesu Krankenhaus)
+    end
+    box rgb(197, 247, 186)
+    participant MP as Moped
+    end
+    box rgb(186, 196, 247)
+    actor SV as SV (ÖGK Wien)
+    end
+    box rgb(247, 208, 186)
+    actor LGF as LGF (Landesgesundheitsfonds Wien)
+    end
+    box rgb(252, 179, 179) 
+    actor Bund as Bund 
+    end
+
+    KH-&gt;&gt;MP: POST VAERequest 1
+    Note over KH: Anfrage VAE <br/>(ab 1.09.2025)
+    SV-&gt;&gt;MP: POST VAEResponse 1
+    Note over SV: Bestätigung VAE <br/>(01.09.2025-16.09.2025)
+
+    KH-&gt;&gt;MP: POST VAERequest 2
+    Note over KH: Anfrage Verlängerung<br/>mit Claim.related.claim zu VAERequest 1 und <br/> Claim.related.relationship = 'Verlängerung'<br/>(16.09.2025-21.09.2025 = Verlängerungstage)
+    Note over MP: Moped behält die gültige Übernahme (VAEResponse 1)
+
+    SV-&gt;&gt;MP: POST VAEResponse 2
+    Note over SV: Bestätigung Verlängerung<br/>(16.09.2025-21.09.2025)
+    Note over MP: Moped behält die gültigen Übernahmen für beide Zeiträume<br/>(VAEResponse 1 &amp; VAEResponse 2)
+
+</pre>
+
+<h3 id="relevante-profile-1">Relevante Profile</h3>
+<ul>
+  <li><a href="StructureDefinition-MopedCoverage.html">Coverage</a></li>
+  <li><a href="StructureDefinition-MopedVAERequestInitial.html">VAERequestInitial</a></li>
+  <li><a href="StructureDefinition-MopedVAERequestVerlaengerung.html">VAERequestVerlaengerung</a></li>
+  <li><a href="StructureDefinition-MopedVAEResponse.html">VAEResponse</a></li>
+  <li><a href="StructureDefinition-MopedUpdateBundleKH.html">$update Bundle</a></li>
+  <li><a href="StructureDefinition-MopedAnfragenBundleKH.html">$anfragen Bundle</a></li>
+  <li><a href="StructureDefinition-MopedAntwortenBundleSV.html">$antworten Bundle</a></li>
+</ul>
+
+<h3 id="relevante-invarianten-1">Relevante Invarianten</h3>
+<ul>
+  <li>Es kann zu keinem Zeitpunkt zwei aktive initiale VAEs an den selben Träger geben.</li>
+</ul>
+
+<h3 id="mögliche-notifications-1">Mögliche Notifications</h3>
+
+<h4 id="tabellarische-übersicht-1">Tabellarische Übersicht</h4>
+
+<table class="table-responsive">
+  <tr>
+    <th>Titel</th>
+    <th>Beschreibung</th>
+    <th>Trigger Ressource</th>
+    <th>Interaktion</th>
+    <th>Auslöser</th>
+    <th>Empfänger</th>
+    <th>Beschreibung zusätzlicher Bedingungen</th>
+    <th>Relevantes Feld</th>
+    <th>Bedingung</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+<h2 id="teilprozess-29-negative-vae">Teilprozess 29: Negative VAE</h2>
+
+<h3 id="betroffene-akteure-2">Betroffene Akteure</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Akteur</th>
+      <th style="text-align: right">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>KH (Krankenhaus)</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>LGF (Landesgesundheitsfonds)</td>
+      <td style="text-align: right">❌</td>
+    </tr>
+    <tr>
+      <td>SV (Sozialversicherung)</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>Bund</td>
+      <td style="text-align: right">❌</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="betroffene-behandlungsarten-2">Betroffene Behandlungsarten</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Behandlungsart</th>
+      <th style="text-align: right">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ambulant</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>Stationär</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="beschreibung-2">Beschreibung</h3>
+<p>Aufgrund der eingelangten Aufnahme-/Ereignisanzeige erfolgt seitens SV eine negative Versichertenanspruchserklärung. Bei einer negativen Versichertenanspruchserklärung wird der jeweilige Ablehnungsgrund (Code) angeführt.
+Das KH prüft regelmäßig, ob es Ablehnungen der VAE seitens der SV gibt. Diese Fälle müssen bearbeitet werden. Im schlimmsten Fall muss der Patient die Rechnung als Selbstzahler selbst bezahlen. 
+Ablehnungsgründe gibt es jedoch einige, die durchaus durch die Verwaltung im KH behoben werden können, so dass eine positive VAE durch die SV nach erneuter Anfrage in Folge möglich ist.</p>
+
+<h3 id="beispiel-2">Beispiel</h3>
+<ul>
+  <li>Patient wurde anstelle von selbstversichert als mitversichert gemeldet und umgekehrt (nach Richtigstellung dann positive VAE möglich)</li>
+  <li>Versicherung nicht festgestellt, weil nicht versichert</li>
+  <li>Versicherung falsch, da andere SV—Träger zuständig ist (positive VAE nach Anfrage bei anderem Träger möglich)</li>
+</ul>
+
+<h3 id="technische-hinweise-2">Technische Hinweise</h3>
+<ul>
+  <li>VAERequest und Response werden in FHIR durch Profile der Claim Ressource abgebildet.</li>
+  <li>Kommentare zum jeweiligen VAE Ablehnungsgrund können in ClaimResponse.processNote.text festgehalten werden.</li>
+</ul>
+
+<h3 id="ablauf-2">Ablauf</h3>
+<pre class="mermaid">
+    ---
+    config:
+      theme: 'base'
+      themeVariables:
+        primaryColor: '#dbdbdb'         
+        actorBorder: '#666'
+        noteBkgColor: '#f4f4f4'
+        noteBorderColor: '#555'
+    ---
+    sequenceDiagram
+    autonumber
+    box rgb(245, 229, 153)
+    actor KH as KH (Herz Jesu Krankenhaus)
+    end
+    box rgb(197, 247, 186)
+    participant MP as Moped
+    end
+    box rgb(186, 196, 247)
+    actor SV as SV (ÖGK Wien)
+    end
+    box rgb(247, 208, 186)
+    actor LGF as LGF (Landesgesundheitsfonds Wien)
+    end
+    box rgb(252, 179, 179) 
+    actor Bund as Bund 
+    end
+    KH-&gt;&gt;MP: Anfrage VAE <br/>POST VAERequest 1
+    Note over KH: Anfrage auf Versicherungsanspruchserklärung 
+    SV-&gt;&gt;MP: VAEResponse 1<br/>(Status 03 'nicht leistungszuständig')
+    Note over SV: Negative VAE
+    Note over MP: durch negative Response wird der <br/>VAERequest 1 automatisch gecancelled
+    alt Erneute Anfrage bei gleichem<br/> Träger mit anderen Daten
+      KH-&gt;&gt;MP: Anfrage VAE <br/>POST VAERequest 2
+      Note over KH: KH stellt modifizierte Anfrage an ÖGK
+    else Patient hat noch einen Anspruch bei <br/>einem anderen SV Träger (z.B. SVS)
+      KH-&gt;&gt;MP: $update mit SVS referenziert in der neuen Coverage
+      Note over KH: KH setzt die SVS als zuständige Versicherung
+      KH-&gt;&gt;MP: Anfrage VAE <br/>POST VAERequest 2
+      Note over KH: KH stellt neue Anfrage an SVS
+    else  Patient wird zum Selbstzahler
+      KH-&gt;&gt;MP: $update mit Selbstzahler Coverage
+      Note over KH: KH meldet Patienten als Selbstzahler 
+    end
+</pre>
+
+<h3 id="relevante-profile-2">Relevante Profile</h3>
+<ul>
+  <li><a href="StructureDefinition-MopedCoverage.html">Coverage</a> oder <a href="StructureDefinition-MopedCoverageSelbstzahler.html">Selbstzahler Coverage</a></li>
+  <li><a href="StructureDefinition-MopedVAERequest.html">VAERequest</a></li>
+  <li><a href="StructureDefinition-MopedVAEResponse.html">VAEResponse</a></li>
+  <li><a href="StructureDefinition-MopedUpdateBundleKH.html">$update Bundle</a></li>
+  <li><a href="StructureDefinition-MopedAnfragenBundleKH.html">$anfragen Bundle</a></li>
+</ul>
+
+<h3 id="relevante-invarianten-2">Relevante Invarianten</h3>
+
+<h3 id="mögliche-notifications-2">Mögliche Notifications</h3>
+
+<h4 id="subscriptiontopic-neue-vae-wurde-angefragt">SubscriptionTopic: neue VAE wurde angefragt</h4>
+<p>Die SV möchte benachrichtigt werden, wenn ein neuer VAERequest für sie bereitgestellt wurde. Das zugehörige SubscriptionTopic wurde in <a href="SubscriptionTopic-neueVAE.html">diesem Beispiel</a> definiert.</p>
+
+<h4 id="subscriptiontopic-vae-wurde-abgelehnt">SubscriptionTopic: VAE wurde abgelehnt</h4>
+<p><a name="l1889">​</a>Das KH möchte benachrichtigt werden, wenn ein VAERequest abgelehnt wurde. Das zugehörige SubscriptionTopic wurde in <a href="SubscriptionTopic-VAEabgelehnt.json.html">diesem Beispiel</a> definiert.</p>
+
+<h4 id="tabellarische-übersicht-2">Tabellarische Übersicht</h4>
+
+<table class="notification-table">
+  <tr>
+    <th>Titel</th>
+    <th>Beschreibung</th>
+    <th>Trigger Ressource</th>
+    <th>Interaktion</th>
+    <th>Auslöser</th>
+    <th>Empfänger</th>
+    <th>Beschreibung zusätzlicher Bedingungen</th>
+    <th>Relevantes Feld</th>
+    <th>Bedingung</th>
+  </tr>
+  <tr>
+    <td>neue VAE wurde angefragt</td>
+    <td>Die SV möchte benachrichtigt werden, wenn ein neuer VAERequest für sie bereitgestellt wurde.</td>
+    <td>VAERequest</td>
+    <td>create</td>
+    <td>SV</td>
+    <td>KH</td>
+    <td>/</td>
+    <td>/</td>
+    <td>/</td>
+  </tr>
+   <tr>
+    <td>VAE wurde abgelehnt</td>
+    <td>Das KH möchte benachrichtigt werden, wenn ein VAERequest abgelehnt wurde.</td>
+    <td>VAEResponse</td>
+    <td>create</td>
+    <td>KH</td>
+    <td>SV</td>
+    <td>Negative VAE</td>
+    <td>VAEResponse.decision</td>
+    <td>!= #00 AND != #19</td>
+  </tr>
+</table>
+
+<h2 id="teilprozess-30-vae-mit-status-in-bearbeitung">Teilprozess 30: VAE mit Status in Bearbeitung</h2>
+<p>In Arbeit :)</p>
+
+<h3 id="betroffene-akteure-3">Betroffene Akteure</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Akteur</th>
+      <th style="text-align: right">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>KH (Krankenhaus)</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>LGF (Landesgesundheitsfonds)</td>
+      <td style="text-align: right">❌</td>
+    </tr>
+    <tr>
+      <td>SV (Sozialversicherung)</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>Bund</td>
+      <td style="text-align: right">❌</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="betroffene-behandlungsarten-3">Betroffene Behandlungsarten</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Behandlungsart</th>
+      <th style="text-align: right">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ambulant</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>Stationär</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="beschreibung-3">Beschreibung</h3>
+
+<h3 id="beispiel-3">Beispiel</h3>
+
+<h3 id="technische-hinweise-3">Technische Hinweise</h3>
+
+<h3 id="ablauf-3">Ablauf</h3>
+<pre class="mermaid">
+    ---
+    config:
+      theme: 'base'
+      themeVariables:
+        primaryColor: '#dbdbdb'         
+        actorBorder: '#666'
+        noteBkgColor: '#f4f4f4'
+        noteBorderColor: '#555'
+    ---
+    sequenceDiagram
+    autonumber
+    box rgb(245, 229, 153)
+    actor KH as KH (Herz Jesu Krankenhaus)
+    end
+    box rgb(197, 247, 186)
+    participant MP as Moped
+    end
+    box rgb(186, 196, 247)
+    actor SV as SV (ÖGK Wien)
+    end
+    box rgb(247, 208, 186)
+    actor LGF as LGF (Landesgesundheitsfonds Wien)
+    end
+    box rgb(252, 179, 179) 
+    actor Bund as Bund 
+    end
+
+</pre>
+
+<h3 id="relevante-profile-3">Relevante Profile</h3>
+
+<h3 id="relevante-invarianten-3">Relevante Invarianten</h3>
+
+<h3 id="mögliche-notifications-3">Mögliche Notifications</h3>
+
+<h4 id="subscriptiontopic-x">SubscriptionTopic: X</h4>
+
+<h4 id="tabellarische-übersicht-3">Tabellarische Übersicht</h4>
+
+<table class="table-responsive">
+  <tr>
+    <th>Titel</th>
+    <th>Beschreibung</th>
+    <th>Trigger Ressource</th>
+    <th>Interaktion</th>
+    <th>Auslöser</th>
+    <th>Empfänger</th>
+    <th>Beschreibung zusätzlicher Bedingungen</th>
+    <th>Relevantes Feld</th>
+    <th>Bedingung</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+<h2 id="teilprozess-31-vae-doch-positiv-nach-vorheriger-negativer-vae">Teilprozess 31: VAE doch positiv (nach vorheriger negativer VAE)</h2>
+<p>In Arbeit :)</p>
+
+<h3 id="betroffene-akteure-4">Betroffene Akteure</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Akteur</th>
+      <th style="text-align: right">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>KH (Krankenhaus)</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>LGF (Landesgesundheitsfonds)</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>SV (Sozialversicherung)</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>Bund</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="betroffene-behandlungsarten-4">Betroffene Behandlungsarten</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Behandlungsart</th>
+      <th style="text-align: right">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ambulant</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>Stationär</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="beschreibung-4">Beschreibung</h3>
+
+<h3 id="beispiel-4">Beispiel</h3>
+
+<h3 id="technische-hinweise-4">Technische Hinweise</h3>
+
+<h3 id="ablauf-4">Ablauf</h3>
+<pre class="mermaid">
+    ---
+    config:
+      theme: 'base'
+      themeVariables:
+        primaryColor: '#dbdbdb'         
+        actorBorder: '#666'
+        noteBkgColor: '#f4f4f4'
+        noteBorderColor: '#555'
+    ---
+    sequenceDiagram
+    autonumber
+    box rgb(245, 229, 153)
+    actor KH as KH (Herz Jesu Krankenhaus)
+    end
+    box rgb(197, 247, 186)
+    participant MP as MP
+    end
+    box rgb(186, 196, 247)
+    actor SV as SV (ÖGK Wien)
+    end
+    box rgb(247, 208, 186)
+    actor LGF as LGF (Landesgesundheitsfonds Wien)
+    end
+    box rgb(252, 179, 179) 
+    actor Bund as Bund 
+    end
+
+</pre>
+
+<h3 id="relevante-profile-4">Relevante Profile</h3>
+
+<h3 id="relevante-invarianten-4">Relevante Invarianten</h3>
+
+<h3 id="mögliche-notifications-4">Mögliche Notifications</h3>
+
+<h4 id="subscriptiontopic-x-1">SubscriptionTopic: X</h4>
+
+<h4 id="tabellarische-übersicht-4">Tabellarische Übersicht</h4>
+
+<table class="table-responsive">
+  <tr>
+    <th>Titel</th>
+    <th>Beschreibung</th>
+    <th>Trigger Ressource</th>
+    <th>Interaktion</th>
+    <th>Auslöser</th>
+    <th>Empfänger</th>
+    <th>Beschreibung zusätzlicher Bedingungen</th>
+    <th>Relevantes Feld</th>
+    <th>Bedingung</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+<h2 id="teilprozess-32-vae-doch-negativ-nach-vorheriger-positiver-vae">Teilprozess 32: VAE doch negativ (nach vorheriger positiver VAE)</h2>
+<p>In Arbeit :)</p>
+
+<h3 id="betroffene-akteure-5">Betroffene Akteure</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Akteur</th>
+      <th style="text-align: right">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>KH (Krankenhaus)</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>LGF (Landesgesundheitsfonds)</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>SV (Sozialversicherung)</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>Bund</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="betroffene-behandlungsarten-5">Betroffene Behandlungsarten</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Behandlungsart</th>
+      <th style="text-align: right">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ambulant</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>Stationär</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="beschreibung-5">Beschreibung</h3>
+
+<h3 id="beispiel-5">Beispiel</h3>
+
+<h3 id="technische-hinweise-5">Technische Hinweise</h3>
+
+<h3 id="ablauf-5">Ablauf</h3>
+<pre class="mermaid">
+    ---
+    config:
+      theme: 'base'
+      themeVariables:
+        primaryColor: '#dbdbdb'         
+        actorBorder: '#666'
+        noteBkgColor: '#f4f4f4'
+        noteBorderColor: '#555'
+    ---
+    sequenceDiagram
+    autonumber
+    box rgb(245, 229, 153)
+    actor KH as KH (Herz Jesu Krankenhaus)
+    end
+    box rgb(197, 247, 186)
+    participant MP as Moped
+    end
+    box rgb(186, 196, 247)
+    actor SV as SV (ÖGK Wien)
+    end
+    box rgb(247, 208, 186)
+    actor LGF as LGF (Landesgesundheitsfonds Wien)
+    end
+    box rgb(252, 179, 179) 
+    actor Bund as Bund 
+    end
+
+</pre>
+
+<h3 id="relevante-profile-5">Relevante Profile</h3>
+
+<h3 id="relevante-invarianten-5">Relevante Invarianten</h3>
+
+<h3 id="mögliche-notifications-5">Mögliche Notifications</h3>
+
+<h4 id="subscriptiontopic-x-2">SubscriptionTopic: X</h4>
+
+<h4 id="tabellarische-übersicht-5">Tabellarische Übersicht</h4>
+
+<table class="table-responsive">
+  <tr>
+    <th>Titel</th>
+    <th>Beschreibung</th>
+    <th>Trigger Ressource</th>
+    <th>Interaktion</th>
+    <th>Auslöser</th>
+    <th>Empfänger</th>
+    <th>Beschreibung zusätzlicher Bedingungen</th>
+    <th>Relevantes Feld</th>
+    <th>Bedingung</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+
+
+</div>
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /row -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-content -->
+
+<script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+<script src="assets/js/window-hash.js" type="text/javascript"> </script>
+<a name="bottom"> </a>
+<div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+<div class="container">    <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Tue, Apr 7, 2026 06:39+0000">2026-04-07</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    
+  </p>
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+<div class="container">    <!-- container -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+<script src="assets/js/respond.min.js" type="text/javascript"> </script>
+<script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+<script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+<script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+<script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+</body>
+</html>

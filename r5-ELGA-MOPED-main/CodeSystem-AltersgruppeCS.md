@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/AltersgruppeCS | *Version*:0.1.0 | |
-| Active as of 2026-03-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:AltersgruppeCS |
+| Active as of 2026-04-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:AltersgruppeCS |
 
  
 CodeSystem für die Altersgruppe des Patienten 
@@ -32,7 +32,7 @@ CodeSystem für die Altersgruppe des Patienten
   "title" : "Altersgruppe des Patienten",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-03-29T16:14:43+00:00",
+  "date" : "2026-04-07T06:39:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

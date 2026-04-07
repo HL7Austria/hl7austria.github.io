@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/Questionnaire/LKFK02Questionnaire | *Version*:0.1.0 | |
-| Draft as of 2026-03-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
+| Draft as of 2026-04-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
 
  
 K02 Questionnaire - KA-Stammdaten 
@@ -26,7 +26,7 @@ K02 Questionnaire - KA-Stammdaten
   "version" : "0.1.0",
   "title" : "LKF K02 Questionnaire",
   "status" : "draft",
-  "date" : "2026-03-29T16:14:43+00:00",
+  "date" : "2026-04-07T06:39:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

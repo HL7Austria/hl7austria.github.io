@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/Questionnaire/LKFB03Questionnaire | *Version*:0.1.0 | |
-| Active as of 2026-03-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
+| Active as of 2026-04-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
 
  
 B03 Questionnaire - Eigenmittelverteilungsrechnung (EVR) 
@@ -26,7 +26,7 @@ B03 Questionnaire - Eigenmittelverteilungsrechnung (EVR)
   "version" : "0.1.0",
   "title" : "LKF B03 Questionnaire",
   "status" : "active",
-  "date" : "2026-03-29T16:14:43+00:00",
+  "date" : "2026-04-07T06:39:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

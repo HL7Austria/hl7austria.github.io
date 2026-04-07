@@ -1,0 +1,53 @@
+# ELGA.MOPED\Moped Fall - Abrechnung - FHIR® v5.0.0
+
+* [**Table of Contents**](toc.md)
+* **Moped Fall - Abrechnung**
+
+## Moped Fall - Abrechnung
+
+## Teilprozess 27: Leistung ohne Abrechnungsrelevanz
+
+### Betroffene Akteure
+
+| | |
+| :--- | :--- |
+| KH (Krankenhaus) | ✅ |
+| LGF (Landesgesundheitsfonds) | ✅ |
+| SV (Sozialversicherung) | ✅ |
+| Bund | ✅ |
+
+### Betroffene Behandlungsarten
+
+| | |
+| :--- | :--- |
+| Ambulant | ✅? |
+| Stationär | ✅ |
+
+### Beschreibung
+
+Zusammenfassung: Es werden Kosten für ambulante Besuche /Aufenthalte bzw. einzelne Leistungen durch unterschiedliche Kostenträger übernommen.
+
+### Beispiel
+
+Beispiele: Vorsorgeuntersuchung Coloskopie, Vorsorgeuntersuchung Brust-Krebs-Früherkennung bzw. Selbstzahlerleistungen (z.B. Tubensterilisation ohne medizinische Indikation im Rahmen einer Geburt) im Rahmen eines fonds-finanzierten Aufenthalts
+
+### Technische Hinweise
+
+Die Abrechnungsrelevanz von Leistungen wird im Feld procedure.extension:Abrechnungsrelevanz dokumentiert.
+
+### Ablauf
+
+Die Abrechnung mit der SV ist out of scope von Moped. Ansonsten ist der Anwendungsfall gleich wie [Susi Sonnenschein](anwendungsfaelle.md). Es wird für jede Leistung festgehalten, ob diese für den LGF abrechnungsrelevant ist oder nicht.
+
+### Relevante Profile
+
+* Das Feld procedure.extension:Abrechnungsrelevanz im [LKFRequest](StructureDefinition-MopedLKFRequest-definitions.md#Claim.procedure.extension:AbrechnungsRelevanz)
+
+### Relevante Invarianten
+
+### Mögliche Notifications
+
+### Teilprozess 38: Laufende Generierung der LKF Daten
+
+In Arbeit :)
+

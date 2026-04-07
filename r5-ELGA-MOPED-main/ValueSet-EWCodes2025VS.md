@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/EWCodes2025VS | *Version*:0.1.0 | |
-| Draft as of 2026-03-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:EWCodes2025VS |
+| Draft as of 2026-04-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:EWCodes2025VS |
 
  
 Der entsprechende Error-/Warning-/Hinweis-Code des unplausiblen/hinweisbezogenen Wertes 
@@ -51,7 +51,7 @@ Der entsprechende Error-/Warning-/Hinweis-Code des unplausiblen/hinweisbezogenen
   "title" : "Akzeptierte Errors/Warnings - Codes 2025",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-29T16:14:43+00:00",
+  "date" : "2026-04-07T06:39:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

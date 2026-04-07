@@ -184,7 +184,7 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
   "name" : "MOPED",
   "title" : "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)",
   "status" : "draft",
-  "date" : "2026-03-29T16:14:43+00:00",
+  "date" : "2026-04-07T06:39:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -4013,190 +4013,88 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
         "generation" : "markdown"
       },
       {
-        "sourceUrl" : "anwendungsfaelle.html",
-        "name" : "anwendungsfaelle.html",
-        "title" : "Überblick & Sunshine Case",
-        "generation" : "markdown",
-        "page" : [{
-          "sourceUrl" : "AF1.html",
-          "name" : "AF1.html",
-          "title" : "ANWF 1 - Planaufnahme",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF2.html",
-          "name" : "AF2.html",
-          "title" : "ANWF 2 - Stationäre Aufnahme",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF3.html",
-          "name" : "AF3.html",
-          "title" : "ANWF 3 - Ambulante Aufnahme",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF4u5.html",
-          "name" : "AF4u5.html",
-          "title" : "ANWF 4,5 - Fallartwechsel",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF6.html",
-          "name" : "AF6.html",
-          "title" : "ANWF 6 - Mehrmalige Aufnahme an einem Tag",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF7.html",
-          "name" : "AF7.html",
-          "title" : "ANWF 7 - Behandlungsabbruch",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF8u9u47.html",
-          "name" : "AF8u9u47.html",
-          "title" : "ANWF 8,9,47 - Stammdatenabgleich",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF10.html",
-          "name" : "AF10.html",
-          "title" : "ANWF 10 - Klassenwechsel",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF11.html",
-          "name" : "AF11.html",
-          "title" : "ANWF 11 - Versicherungswechsel",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF12.html",
-          "name" : "AF12.html",
-          "title" : "ANWF 12,13,15,35-37 - Ausländerverrechnung und Regress",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF14.html",
-          "name" : "AF14.html",
-          "title" : "ANWF 14 - Selbstzahler",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF17.html",
-          "name" : "AF17.html",
-          "title" : "ANWF 17 - Zwischenbetriebliche Leistungserbringung",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF18.html",
-          "name" : "AF18.html",
-          "title" : "ANWF 18 - Transfer",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF19.html",
-          "name" : "AF19.html",
-          "title" : "ANWF 19 - Interne Verlegung",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF20.html",
-          "name" : "AF20.html",
-          "title" : "ANWF 20 - Urlaub",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF21u22.html",
-          "name" : "AF21u22.html",
-          "title" : "ANWF 21,22 - Neugeborene",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF23bis25.html",
-          "name" : "AF23bis25.html",
-          "title" : "ANWF 23-25 - Entlassung & Hauptdiagnose",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF26.html",
-          "name" : "AF26.html",
-          "title" : "ANWF 26 - Überlieger",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF27.html",
-          "name" : "AF27.html",
-          "title" : "ANWF 27 - Leistungen ohne Abrechnungsrelevanz",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF28bis32.html",
-          "name" : "AF28bis32.html",
-          "title" : "ANWF 28-32 - SV Kostenübernahmevariationen",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF33u34.html",
-          "name" : "AF33u34.html",
-          "title" : "ANWF 33-34 - Kostenmeldungen?",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF38bis44.html",
-          "name" : "AF38bis44.html",
-          "title" : "ANWF 38-44 - LKF Daten",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF45.html",
-          "name" : "AF45.html",
-          "title" : "ANWF 45 - Jahresmeldung",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF46.html",
-          "name" : "AF46.html",
-          "title" : "ANWF 46 - VDAS Rückmeldung (Patient verstorben)",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF48.html",
-          "name" : "AF48.html",
-          "title" : "ANWF 48 - Mehrere aktive Fälle in MOPED",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF49.html",
-          "name" : "AF49.html",
-          "title" : "ANWF 49 - Aufrollung nach Speicherfrist",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF50.html",
-          "name" : "AF50.html",
-          "title" : "ANWF 50 - Urgenz",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF51u52.html",
-          "name" : "AF51u52.html",
-          "title" : "ANWF 51-52 - Asylierung",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF53.html",
-          "name" : "AF53.html",
-          "title" : "ANWF 53 - Intensivaufenthalt",
-          "generation" : "markdown"
-        },
-        {
-          "sourceUrl" : "AF54.html",
-          "name" : "AF54.html",
-          "title" : "ANWF 54 - Stammdatenänderung",
-          "generation" : "markdown"
-        }]
+        "sourceUrl" : "AF_moped_plattform_ueberblick.html",
+        "name" : "AF_moped_plattform_ueberblick.html",
+        "title" : "Moped Plattform - Überblick",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "AF_moped_fall_ueberblick.html",
+        "name" : "AF_moped_fall_ueberblick.html",
+        "title" : "Moped Fall - Überblick",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "AF_moped_fall_aufnahme.html",
+        "name" : "AF_moped_fall_aufnahme.html",
+        "title" : "Moped Fall - Aufnahme",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "AF_moped_fall_patientenversorgung.html",
+        "name" : "AF_moped_fall_patientenversorgung.html",
+        "title" : "Moped Fall - Patientversorgung",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "AF_moped_fall_entlassung.html",
+        "name" : "AF_moped_fall_entlassung.html",
+        "title" : "Moped Fall - Entlassung",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "AF_moped_fall_vae.html",
+        "name" : "AF_moped_fall_vae.html",
+        "title" : "Moped Fall - Versichertenanspruchserklärung",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "AF_moped_fall_abrechnung.html",
+        "name" : "AF_moped_fall_abrechnung.html",
+        "title" : "Moped Fall - Abrechnung",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "AF_moped_fall_ablehnung_genehmigung.html",
+        "name" : "AF_moped_fall_ablehnung_genehmigung.html",
+        "title" : "Moped Fall - Genehmigung/Ablehnung",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "AF_moped_fall_kostenmeldung.html",
+        "name" : "AF_moped_fall_kostenmeldung.html",
+        "title" : "Moped Fall - Kostenmeldung",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "AF_moped_fall_jahres_quartals_meldung.html",
+        "name" : "AF_moped_fall_jahres_quartals_meldung.html",
+        "title" : "Moped Fall - Jahres-/Quartalsmeldung",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "AF_moped_fall_prozessuebergreifend.html",
+        "name" : "AF_moped_fall_prozessuebergreifend.html",
+        "title" : "Moped Fall - Prozessübergreifend",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "AF_lkf_jahresstatistikmeldung.html",
+        "name" : "AF_lkf_jahresstatistikmeldung.html",
+        "title" : "LKF Jahresstatistikmeldung",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "AF_medizinische_register.html",
+        "name" : "AF_medizinische_register.html",
+        "title" : "Medizinische Register",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "AF_ems.html",
+        "name" : "AF_ems.html",
+        "title" : "EMS",
+        "generation" : "markdown"
       },
       {
         "sourceUrl" : "mappings.html",

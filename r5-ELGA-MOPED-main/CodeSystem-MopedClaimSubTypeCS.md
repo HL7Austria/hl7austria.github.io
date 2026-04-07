@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/MopedClaimSubTypeCS | *Version*:0.1.0 | |
-| Active as of 2026-03-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedClaimSubTypeCS |
+| Active as of 2026-04-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedClaimSubTypeCS |
 
  
 CodeSystem für die Arten der Claims/ClaimResponses 
@@ -34,7 +34,7 @@ CodeSystem für die Arten der Claims/ClaimResponses
   "title" : "Claim Subtype CodeSystem",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-03-29T16:14:43+00:00",
+  "date" : "2026-04-07T06:39:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

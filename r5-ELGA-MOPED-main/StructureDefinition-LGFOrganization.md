@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/LGFOrganization | *Version*:0.1.0 | |
-| Draft as of 2026-03-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LGFOrganization |
+| Draft as of 2026-04-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LGFOrganization |
 
  
 MOPED Profil für LGF Organizations 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-LGFOrganization.csv)
   "name" : "LGFOrganization",
   "title" : "LGF Organization",
   "status" : "draft",
-  "date" : "2026-03-29T16:14:43+00:00",
+  "date" : "2026-04-07T06:39:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

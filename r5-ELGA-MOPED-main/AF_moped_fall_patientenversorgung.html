@@ -1,0 +1,913 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>ELGA.MOPED\Moped Fall - Patientversorgung - FHIR® v5.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"12"}
+    h3,h4,h5,h6{--heading-prefix:"12"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img id="header-logo" src="logo.png"/>
+          </div>
+          <div class="col-11">
+        <!-- at-fhir-ig-template end -->
+            <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)</span><br/>
+                <span class="label label-info">0.1.0 - ci-build</span>
+              </p>
+            </div>
+        <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+        <!-- at-fhir-ig-template end -->
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R5/index.html">FHIR®</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Einleitung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="scope_and_content.html">Umfang und Inhalt</a>
+      </li>
+      <li>
+        <a href="background.html">Hintergrund</a>
+      </li>
+      <li>
+        <a href="challenges.html">Herausforderungen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Funktionales
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="moped_konzepte.html">Designentscheidungen</a>
+      </li>
+      <li>
+        <a href="actors.html">Akteure</a>
+      </li>
+      <li>
+        <a href="workflowmanagement.html">Workflowmanagement</a>
+      </li>
+      <li>
+        <a href="obligations.html">Obligations</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anwendungsfälle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="AF_moped_plattform_ueberblick.html">Moped Plattform - Überblick</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_ueberblick.html">Moped Fall - Überblick</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_aufnahme.html">Moped Fall - Aufnahme</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_patientenversorgung.html">Moped Fall - Patientversorgung</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_entlassung.html">Moped Fall - Entlassung</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_vae.html">Moped Fall - Versichertenanspruchserklärung</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_abrechnung.html">Moped Fall - Abrechnung</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_ablehnung_genehmigung.html">Moped Fall - Genehmigung/Ablehnung</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_kostenmeldung.html">Moped Fall - Kostenmeldung</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_jahres_quartals_meldung.html">Moped Fall - Jahres-/Quartalsmeldung</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_prozessuebergreifend.html">Moped Fall - Prozessübergreifend</a>
+      </li>
+      <li>
+        <a href="AF_lkf_jahresstatistikmeldung.html">LKF Jahresstatistikmeldung</a>
+      </li>
+      <li>
+        <a href="AF_medizinische_register.html">Medizinische Register</a>
+      </li>
+      <li>
+        <a href="AF_ems.html">EMS</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Questionnaires
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Questionnaire-LKFTISSAQuestionnaire.html">MBDS - TISS-A</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFSAPS3Questionnaire.html">MBDS - SAPS3</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFL01Questionnaire.html">MBDS - Monatsmeldung - L01</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK01Questionnaire.html">MBDS - Monatsmeldung - K01</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFL02Questionnaire.html">LKF Jahresmeldung - L02</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFL03Questionnaire.html">LKF Jahresmeldung - L03</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFL04Questionnaire.html">LKF Jahresmeldung - L04</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK02Questionnaire.html">LKF Jahresmeldung - K02</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK03Questionnaire.html">LKF Jahresmeldung - K03</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK04Questionnaire.html">LKF Jahresmeldung - K04</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK05Questionnaire.html">LKF Jahresmeldung - K05</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK06Questionnaire.html">LKF Jahresmeldung - K06</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK07Questionnaire.html">LKF Jahresmeldung - K07</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK08Questionnaire.html">LKF Jahresmeldung - K08</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK09Questionnaire.html">LKF Jahresmeldung - K09</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK10Questionnaire.html">LKF Jahresmeldung - K10</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK11Questionnaire.html">LKF Jahresmeldung - K11</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK12Questionnaire.html">LKF Jahresmeldung - K12</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK13Questionnaire.html">LKF Jahresmeldung - K13</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK14Questionnaire.html">LKF Jahresmeldung - K14</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK15Questionnaire.html">LKF Jahresmeldung - K15</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFK16Questionnaire.html">LKF Jahresmeldung - K16</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFG01Questionnaire.html">LKF Jahresmeldung - G01</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFG02Questionnaire.html">LKF Jahresmeldung - G02</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB01Questionnaire.html">LKF Jahresmeldung - B01</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB02Questionnaire.html">LKF Jahresmeldung - B02</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB03Questionnaire.html">LKF Jahresmeldung - B03</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB04Questionnaire.html">LKF Jahresmeldung - B04</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB05Questionnaire.html">LKF Jahresmeldung - B05</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFB06Questionnaire.html">LKF Jahresmeldung - B06</a>
+      </li>
+      <li>
+        <a href="Questionnaire-LKFA01Questionnaire.html">LKF Jahresmeldung - A01</a>
+      </li>
+      <li>
+        <a href="Questionnaire-StrokeUnitQuestionnaire2025.html">Register - Strokeunit</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Mappings
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="lkf_mapping.html">MBDS Mapping</a>
+      </li>
+      <li>
+        <a href="jahresmeldungen_mapping.html">LKF Jahresmeldung</a>
+      </li>
+      <li>
+        <a href="ka-org_mapping.html">Ka-Org Mapping</a>
+      </li>
+      <li>
+        <a href="stammdaten_mapping.html">Stammdaten</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">About
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="imprint.html">Impressum</a>
+      </li>
+      <li>
+        <a href="authors.html">Mitwirkende</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="dependencies.html">Dependencies</a>
+      </li>
+      <li>
+        <a href="copyright.html">Copyright</a>
+      </li>
+      <li>
+        <a href="known_issues.html">Known Issues</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Moped Fall - Patientversorgung</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+	
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!-- at-fhir-ig-template begin -->
+  <div class="alert alert-warning" role="alert">
+    <!--ReleaseHeader--><p id="publish-box">Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED) - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://elga.moped.at/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  </div>
+  <!-- at-fhir-ig-template end -->
+  <h2>Moped Fall - Patientversorgung</h2>
+  
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#teilprozess-7-behandlungsabbruch-vor-erbrachter-leistung" id="markdown-toc-teilprozess-7-behandlungsabbruch-vor-erbrachter-leistung">Teilprozess 7: Behandlungsabbruch vor erbrachter Leistung</a></li>
+  <li><a href="#teilprozess-17-zwischenbetriebliche-leistungserbringung" id="markdown-toc-teilprozess-17-zwischenbetriebliche-leistungserbringung">Teilprozess 17: Zwischenbetriebliche Leistungserbringung</a>    <ul>
+      <li><a href="#betroffene-akteure" id="markdown-toc-betroffene-akteure">Betroffene Akteure</a></li>
+      <li><a href="#betroffene-behandlungsarten" id="markdown-toc-betroffene-behandlungsarten">Betroffene Behandlungsarten</a></li>
+      <li><a href="#beschreibung" id="markdown-toc-beschreibung">Beschreibung</a></li>
+      <li><a href="#beispiel" id="markdown-toc-beispiel">Beispiel</a></li>
+      <li><a href="#technische-hinweise" id="markdown-toc-technische-hinweise">Technische Hinweise</a></li>
+      <li><a href="#ablauf" id="markdown-toc-ablauf">Ablauf</a></li>
+      <li><a href="#relevante-profile" id="markdown-toc-relevante-profile">Relevante Profile</a></li>
+      <li><a href="#relevante-invarianten" id="markdown-toc-relevante-invarianten">Relevante Invarianten</a></li>
+      <li><a href="#mögliche-notifications" id="markdown-toc-mögliche-notifications">Mögliche Notifications</a></li>
+    </ul>
+  </li>
+  <li><a href="#teilprozess-19-interne-verlegung" id="markdown-toc-teilprozess-19-interne-verlegung">Teilprozess 19: Interne Verlegung</a>    <ul>
+      <li><a href="#betroffene-akteure-1" id="markdown-toc-betroffene-akteure-1">Betroffene Akteure</a></li>
+      <li><a href="#betroffene-behandlungsarten-1" id="markdown-toc-betroffene-behandlungsarten-1">Betroffene Behandlungsarten</a></li>
+      <li><a href="#beschreibung-1" id="markdown-toc-beschreibung-1">Beschreibung</a></li>
+      <li><a href="#beispiel-1" id="markdown-toc-beispiel-1">Beispiel</a></li>
+      <li><a href="#technische-hinweise-1" id="markdown-toc-technische-hinweise-1">Technische Hinweise</a></li>
+      <li><a href="#ablauf-1" id="markdown-toc-ablauf-1">Ablauf</a></li>
+      <li><a href="#relevante-profile-1" id="markdown-toc-relevante-profile-1">Relevante Profile</a></li>
+      <li><a href="#relevante-invarianten-1" id="markdown-toc-relevante-invarianten-1">Relevante Invarianten</a></li>
+      <li><a href="#mögliche-notifications-1" id="markdown-toc-mögliche-notifications-1">Mögliche Notifications</a></li>
+    </ul>
+  </li>
+  <li><a href="#teilprozess-20-beurlaubung" id="markdown-toc-teilprozess-20-beurlaubung">Teilprozess 20: Beurlaubung</a>    <ul>
+      <li><a href="#betroffene-akteure-2" id="markdown-toc-betroffene-akteure-2">Betroffene Akteure</a></li>
+      <li><a href="#betroffene-behandlungsarten-2" id="markdown-toc-betroffene-behandlungsarten-2">Betroffene Behandlungsarten</a></li>
+      <li><a href="#beschreibung-2" id="markdown-toc-beschreibung-2">Beschreibung</a></li>
+      <li><a href="#beispiel-2" id="markdown-toc-beispiel-2">Beispiel</a></li>
+      <li><a href="#technische-hinweise-2" id="markdown-toc-technische-hinweise-2">Technische Hinweise</a></li>
+      <li><a href="#ablauf-2" id="markdown-toc-ablauf-2">Ablauf</a></li>
+      <li><a href="#relevante-profile-2" id="markdown-toc-relevante-profile-2">Relevante Profile</a></li>
+      <li><a href="#relevante-invarianten-2" id="markdown-toc-relevante-invarianten-2">Relevante Invarianten</a></li>
+      <li><a href="#mögliche-notifications-2" id="markdown-toc-mögliche-notifications-2">Mögliche Notifications</a></li>
+      <li><a href="#teilprozess-21-gesundes-neugeborenes" id="markdown-toc-teilprozess-21-gesundes-neugeborenes">Teilprozess 21: gesundes Neugeborenes</a></li>
+      <li><a href="#teilprozess-22-krankes-neugeborenes" id="markdown-toc-teilprozess-22-krankes-neugeborenes">Teilprozess 22: krankes Neugeborenes</a></li>
+      <li><a href="#teilprozess-26-überlieger" id="markdown-toc-teilprozess-26-überlieger">Teilprozess 26: Überlieger</a></li>
+      <li><a href="#teilprozess-53-intensivaufenthalt-mit-intensivdaten" id="markdown-toc-teilprozess-53-intensivaufenthalt-mit-intensivdaten">Teilprozess 53: Intensivaufenthalt mit Intensivdaten</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+
+<h3 id="teilprozess-7-behandlungsabbruch-vor-erbrachter-leistung">Teilprozess 7: Behandlungsabbruch vor erbrachter Leistung</h3>
+<p>In Arbeit :)</p>
+
+<style>
+.notification-table {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.notification-table th,
+.notification-table td {
+  padding: 10px;
+  background: #f5f5f5; /* Cell color */
+  box-shadow: 0 0 0 3px #fff;
+  text-align: left;
+}
+.notification-table th {
+  background: #e4e4e4;
+}
+
+.table-responsive {
+display: block;
+width: 100%;
+overflow-x: auto;
+max-height: 600px;
+overflow-y: auto;
+}
+.table-responsive > table {
+width: 100%;}
+.table-responsive th,
+.table-responsive td {
+  padding: 15px;
+  background: #f5f5f5;
+}
+.table-responsive table {
+  border-collapse: separate;
+  border-spacing: 3px;
+}
+/* Kopfzeile sticky */
+.table-responsive th {
+  position: sticky;
+  top: 0;
+  background: rgb(228, 228, 228);
+  z-index: 2;
+}
+/* Erste Spalte sticky */
+.table-responsive th:first-child,
+.table-responsive td:first-child {
+  position: sticky;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 3;
+}
+
+.table-responsive th:first-child {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 4;
+}
+
+</style>
+
+<h2 id="teilprozess-17-zwischenbetriebliche-leistungserbringung">Teilprozess 17: Zwischenbetriebliche Leistungserbringung</h2>
+
+<h3 id="betroffene-akteure">Betroffene Akteure</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Akteur</th>
+      <th style="text-align: right"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>KH (Krankenhaus)</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>LGF (Landesgesundheitsfonds)</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>SV (Sozialversicherung)</td>
+      <td style="text-align: right">❌</td>
+    </tr>
+    <tr>
+      <td>Bund</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="betroffene-behandlungsarten">Betroffene Behandlungsarten</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Behandlungsart</th>
+      <th style="text-align: right"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ambulant</td>
+      <td style="text-align: right">❌</td>
+    </tr>
+    <tr>
+      <td>Stationär</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="beschreibung">Beschreibung</h3>
+<p>Patient befindet sich stationär in KH A und muss für eine z.B. Diagnostik in das KH B gebracht werden. Der stationäre Fall im KH A läuft weiter. Die Diagnostik/Therapie im KH B wird als ambulanter “zwischenbetrieblicher” Fall in geführt.</p>
+
+<h3 id="beispiel">Beispiel</h3>
+<ul>
+  <li>Ambulante oder tagesklinische Leistung in einem anderen Haus</li>
+  <li>Konsiliarleistung durch ein anderes Krankenhaus</li>
+  <li>Diagnostik oder Therapie an einem ausgelagerten Standort (z.B. Herzkatheter in einem anderen KH)</li>
+</ul>
+
+<h3 id="technische-hinweise">Technische Hinweise</h3>
+<p>Nur das KH A interagiert in diesem Fall mit Moped.</p>
+
+<h3 id="ablauf">Ablauf</h3>
+<div><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="SEQUENCE" height="530px" preserveAspectRatio="none" style="width:1381px;height:530px;background:#F5F5F5;" version="1.1" viewBox="0 0 1381 530" width="1381px" zoomAndPan="magnify"><defs><linearGradient id="gntglsvn822mv0" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#E0E5F0" /><stop offset="100%" stop-color="#D1D9E6" /></linearGradient><filter height="300%" id="fntglsvn822mv" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2" /><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" /><feOffset dx="4" dy="4" in="blurOut2" result="blurOut3" /><feBlend in="SourceGraphic" in2="blurOut3" mode="normal" /></filter></defs><g><rect fill="#F5F5F5" height="530" style="stroke:none;stroke-width:1;" width="1381" x="0" y="0" /><rect fill="#F5E599" height="518.5" rx="5" ry="5" style="stroke:#181818;stroke-width:0.5;" width="170.835" x="16" y="6" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="4.874" x="19" y="18.9951">&#160;</text><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="38.1104" x="82.3623" y="35.292">KH B</text><rect fill="#F5E599" height="518.5" rx="5" ry="5" style="stroke:#181818;stroke-width:0.5;" width="170.999" x="434.8013" y="6" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="4.874" x="437.8013" y="18.9951">&#160;</text><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="38.2744" x="501.1636" y="35.292">KH A</text><rect fill="#C5F7BA" height="518.5" rx="5" ry="5" style="stroke:#181818;stroke-width:0.5;" width="127.3242" x="653.2607" y="6" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="4.874" x="656.2607" y="18.9951">&#160;</text><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="53.0879" x="690.3789" y="35.292">Moped</text><rect fill="#BAC4F7" height="518.5" rx="5" ry="5" style="stroke:#181818;stroke-width:0.5;" width="139.0957" x="802.585" y="6" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="4.874" x="805.585" y="18.9951">&#160;</text><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="94.1035" x="825.0811" y="35.292">SV (&#214;GK,...)</text><rect fill="#F7D0BA" height="518.5" rx="5" ry="5" style="stroke:#181818;stroke-width:0.5;" width="265.5742" x="963.6807" y="6" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="4.874" x="966.6807" y="18.9951">&#160;</text><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="244.9521" x="971.5547" y="35.292">LGF (Landesgesundheitsfonds)</text><rect fill="#FCB3B3" height="518.5" rx="5" ry="5" style="stroke:#181818;stroke-width:0.5;" width="124.6104" x="1251.2549" y="6" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="4.874" x="1254.2549" y="18.9951">&#160;</text><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="40.626" x="1293.2471" y="35.292">Bund</text><g><title>KH</title><rect fill="#000000" fill-opacity="0.00000" height="326.3125" width="8" x="97.4175" y="118.8906" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="100.9175" x2="100.9175" y1="118.8906" y2="445.2031" /></g><g><title>KH</title><rect fill="#000000" fill-opacity="0.00000" height="326.3125" width="8" x="516.3008" y="118.8906" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="519.8008" x2="519.8008" y1="118.8906" y2="445.2031" /></g><g><title>Moped</title><rect fill="#000000" fill-opacity="0.00000" height="326.3125" width="8" x="712.9229" y="118.8906" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="716.4072" x2="716.4072" y1="118.8906" y2="445.2031" /></g><g><title>SV (&#214;GK)</title><rect fill="#000000" fill-opacity="0.00000" height="326.3125" width="8" x="868.1328" y="118.8906" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="871.6895" x2="871.6895" y1="118.8906" y2="445.2031" /></g><g><title>LGF (Landesgesundheitsfonds)</title><rect fill="#000000" fill-opacity="0.00000" height="326.3125" width="8" x="1092.4678" y="118.8906" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1096.3403" x2="1096.3403" y1="118.8906" y2="445.2031" /></g><g><title>Bund</title><rect fill="#000000" fill-opacity="0.00000" height="326.3125" width="8" x="1309.5601" y="118.8906" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1313.4414" x2="1313.4414" y1="118.8906" y2="445.2031" /></g><g class="participant participant-head" data-participant="KHB"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="19.708" x="88.5635" y="115.5889">KH</text><ellipse cx="101.4175" cy="51.0938" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M101.4175,59.0938 L101.4175,86.0938 M88.4175,67.0938 L114.4175,67.0938 M101.4175,86.0938 L88.4175,101.0938 M101.4175,86.0938 L114.4175,101.0938" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-tail" data-participant="KHB"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="19.708" x="88.5635" y="457.1982">KH</text><ellipse cx="101.4175" cy="469" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M101.4175,477 L101.4175,504 M88.4175,485 L114.4175,485 M101.4175,504 L88.4175,519 M101.4175,504 L114.4175,519" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-head" data-participant="KHA"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="19.708" x="507.4468" y="115.5889">KH</text><ellipse cx="520.3008" cy="51.0938" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M520.3008,59.0938 L520.3008,86.0938 M507.3008,67.0938 L533.3008,67.0938 M520.3008,86.0938 L507.3008,101.0938 M520.3008,86.0938 L533.3008,101.0938" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-tail" data-participant="KHA"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="19.708" x="507.4468" y="457.1982">KH</text><ellipse cx="520.3008" cy="469" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M520.3008,477 L520.3008,504 M507.3008,485 L533.3008,485 M520.3008,504 L507.3008,519 M520.3008,504 L533.3008,519" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-head" data-participant="MP"><rect fill="#FFFFFF" height="30.2969" rx="5" ry="5" style="stroke:#555555;stroke-width:0.5;" width="61.0313" x="686.4072" y="87.5938" /><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="47.0313" x="693.4072" y="107.5889">Moped</text></g><g class="participant participant-tail" data-participant="MP"><rect fill="#FFFFFF" height="30.2969" rx="5" ry="5" style="stroke:#555555;stroke-width:0.5;" width="61.0313" x="686.4072" y="444.2031" /><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="47.0313" x="693.4072" y="464.1982">Moped</text></g><g class="participant participant-head" data-participant="SV"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="64.8867" x="836.6895" y="115.5889">SV (&#214;GK)</text><ellipse cx="872.1328" cy="51.0938" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M872.1328,59.0938 L872.1328,86.0938 M859.1328,67.0938 L885.1328,67.0938 M872.1328,86.0938 L859.1328,101.0938 M872.1328,86.0938 L885.1328,101.0938" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-tail" data-participant="SV"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="64.8867" x="836.6895" y="457.1982">SV (&#214;GK)</text><ellipse cx="872.1328" cy="469" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M872.1328,477 L872.1328,504 M859.1328,485 L885.1328,485 M872.1328,504 L859.1328,519 M872.1328,504 L885.1328,519" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-head" data-participant="LGF"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="216.2549" x="985.3403" y="115.5889">LGF (Landesgesundheitsfonds)</text><ellipse cx="1096.4678" cy="51.0938" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M1096.4678,59.0938 L1096.4678,86.0938 M1083.4678,67.0938 L1109.4678,67.0938 M1096.4678,86.0938 L1083.4678,101.0938 M1096.4678,86.0938 L1109.4678,101.0938" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-tail" data-participant="LGF"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="216.2549" x="985.3403" y="457.1982">LGF (Landesgesundheitsfonds)</text><ellipse cx="1096.4678" cy="469" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M1096.4678,477 L1096.4678,504 M1083.4678,485 L1109.4678,485 M1096.4678,504 L1083.4678,519 M1096.4678,504 L1109.4678,519" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-head" data-participant="Bund"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="36.2373" x="1292.4414" y="115.5889">Bund</text><ellipse cx="1313.5601" cy="51.0938" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M1313.5601,59.0938 L1313.5601,86.0938 M1300.5601,67.0938 L1326.5601,67.0938 M1313.5601,86.0938 L1300.5601,101.0938 M1313.5601,86.0938 L1326.5601,101.0938" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-tail" data-participant="Bund"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="36.2373" x="1292.4414" y="457.1982">Bund</text><ellipse cx="1313.5601" cy="469" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M1313.5601,477 L1313.5601,504 M1300.5601,485 L1326.5601,485 M1313.5601,504 L1300.5601,519 M1313.5601,504 L1326.5601,519" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="message" data-participant-1="KHA" data-participant-2="MP"><line style="stroke:#111827;stroke-width:2;" x1="714.9229" x2="704.9229" y1="150.0234" y2="146.0234" /><line style="stroke:#111827;stroke-width:2;" x1="714.9229" x2="704.9229" y1="150.0234" y2="154.0234" /><line style="stroke:#111827;stroke-width:2;" x1="520.3008" x2="715.9229" y1="150.0234" y2="150.0234" /><text fill="#000000" font-family="Arial" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9.0454" x="527.3008" y="144.9575">1</text><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="82.4307" x="540.3462" y="144.9575">$aufnehmen</text></g><path d="M413,168.0234 L413,184.0234 A5,5 0 0 0 418,189.0234 L619,189.0234 A5,5 0 0 0 624,184.0234 L624,173.0234 L614,163.0234 L418,163.0234 A5,5 0 0 0 413,168.0234" fill="url(#gntglsvn822mv0)" filter="url(#fntglsvn822mv)" style="stroke:#8B95A5;stroke-width:1;" /><path d="M614,163.0234 L614,170.5234 A2.5,2.5 0 0 0 616.5,173.0234 L624,173.0234 L614,163.0234" fill="url(#gntglsvn822mv0)" style="stroke:#8B95A5;stroke-width:1;" /><text fill="#111827" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="190.3398" x="419" y="181.0186">Patient wird aufgenommen</text><g class="message" data-participant-1="KHA" data-participant-2="KHB"><line style="stroke:#111827;stroke-width:2;" x1="102.4175" x2="112.4175" y1="218.4531" y2="214.4531" /><line style="stroke:#111827;stroke-width:2;" x1="102.4175" x2="112.4175" y1="218.4531" y2="222.4531" /><line style="stroke:#111827;stroke-width:2;stroke-dasharray:2.0,2.0;" x1="101.4175" x2="519.3008" y1="218.4531" y2="218.4531" /><text fill="#000000" font-family="Arial" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9.0454" x="118.4175" y="213.3872">2</text><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="198.4912" x="131.4629" y="213.3872">Patient wird ins KH B gebracht</text></g><path d="M369,236.4531 L369,252.4531 A5,5 0 0 0 374,257.4531 L663,257.4531 A5,5 0 0 0 668,252.4531 L668,241.4531 L658,231.4531 L374,231.4531 A5,5 0 0 0 369,236.4531" fill="url(#gntglsvn822mv0)" filter="url(#fntglsvn822mv)" style="stroke:#8B95A5;stroke-width:1;" /><path d="M658,231.4531 L658,238.9531 A2.5,2.5 0 0 0 660.5,241.4531 L668,241.4531 L658,231.4531" fill="url(#gntglsvn822mv0)" style="stroke:#8B95A5;stroke-width:1;" /><text fill="#111827" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="278.373" x="375" y="249.4482">Patient muss f&#252;r Diagnostik in das KH B</text><g class="message" data-participant-1="KHB" data-participant-2="KHA"><line style="stroke:#111827;stroke-width:2;" x1="518.3008" x2="508.3008" y1="286.8828" y2="282.8828" /><line style="stroke:#111827;stroke-width:2;" x1="518.3008" x2="508.3008" y1="286.8828" y2="290.8828" /><line style="stroke:#111827;stroke-width:2;stroke-dasharray:2.0,2.0;" x1="101.4175" x2="519.3008" y1="286.8828" y2="286.8828" /><text fill="#000000" font-family="Arial" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9.0454" x="108.4175" y="281.8169">3</text><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="245.9209" x="121.4629" y="281.8169">Patient wird zur&#252;ck ins KH A gebracht</text></g><path d="M5,304.8828 L5,320.8828 A5,5 0 0 0 10,325.8828 L191,325.8828 A5,5 0 0 0 196,320.8828 L196,309.8828 L186,299.8828 L10,299.8828 A5,5 0 0 0 5,304.8828" fill="url(#gntglsvn822mv0)" filter="url(#fntglsvn822mv)" style="stroke:#8B95A5;stroke-width:1;" /><path d="M186,299.8828 L186,307.3828 A2.5,2.5 0 0 0 188.5,309.8828 L196,309.8828 L186,299.8828" fill="url(#gntglsvn822mv0)" style="stroke:#8B95A5;stroke-width:1;" /><text fill="#111827" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="170.3105" x="11" y="317.8779">Diagnostik durchgef&#252;hrt</text><g class="message" data-participant-1="KHA" data-participant-2="MP"><line style="stroke:#111827;stroke-width:2;" x1="714.9229" x2="704.9229" y1="355.3125" y2="351.3125" /><line style="stroke:#111827;stroke-width:2;" x1="714.9229" x2="704.9229" y1="355.3125" y2="359.3125" /><line style="stroke:#111827;stroke-width:2;" x1="520.3008" x2="715.9229" y1="355.3125" y2="355.3125" /><text fill="#000000" font-family="Arial" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9.0454" x="527.3008" y="350.2466">4</text><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="54.0757" x="540.3462" y="350.2466">$update</text></g><path d="M334,373.3125 L334,421.3125 A5,5 0 0 0 339,426.3125 L697,426.3125 A5,5 0 0 0 702,421.3125 L702,378.3125 L692,368.3125 L339,368.3125 A5,5 0 0 0 334,373.3125" fill="url(#gntglsvn822mv0)" filter="url(#fntglsvn822mv)" style="stroke:#8B95A5;stroke-width:1;" /><path d="M692,368.3125 L692,375.8125 A2.5,2.5 0 0 0 694.5,378.3125 L702,378.3125 L692,368.3125" fill="url(#gntglsvn822mv0)" style="stroke:#8B95A5;stroke-width:1;" /><text fill="#111827" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="250.708" x="340" y="386.3076">KH A meldet die Leistung an Moped</text><text fill="#111827" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="342.5967" x="344.4502" y="402.6045">-&gt; gibt im Procedure statt einer Referenz auf die</text><text fill="#111827" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="307.2275" x="344.4502" y="418.9014">eigene Abteilung eine Referenz auf KH B an</text></g></svg></div>
+
+<h3 id="relevante-profile">Relevante Profile</h3>
+<ul>
+  <li><a href="StructureDefinition-MopedUpdateBundleKH.html">$update Bundle</a></li>
+  <li><a href="StructureDefinition-MopedProcedure.html">Procedure</a></li>
+</ul>
+
+<h3 id="relevante-invarianten">Relevante Invarianten</h3>
+<p>Keine relevanten Invarianten identifiziert.</p>
+
+<h3 id="mögliche-notifications">Mögliche Notifications</h3>
+<p>Keine relevanten Notifications identifiziert.</p>
+
+<style>
+.notification-table {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.notification-table th,
+.notification-table td {
+  padding: 10px;
+  background: #f5f5f5; /* Cell color */
+  box-shadow: 0 0 0 3px #fff;
+  text-align: left;
+}
+.notification-table th {
+  background: #e4e4e4;
+}
+
+.table-responsive {
+display: block;
+width: 100%;
+overflow-x: auto;
+max-height: 600px;
+overflow-y: auto;
+}
+.table-responsive > table {
+width: 100%;}
+.table-responsive th,
+.table-responsive td {
+  padding: 15px;
+  background: #f5f5f5;
+}
+.table-responsive table {
+  border-collapse: separate;
+  border-spacing: 3px;
+}
+/* Kopfzeile sticky */
+.table-responsive th {
+  position: sticky;
+  top: 0;
+  background: rgb(228, 228, 228);
+  z-index: 2;
+}
+/* Erste Spalte sticky */
+.table-responsive th:first-child,
+.table-responsive td:first-child {
+  position: sticky;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 3;
+}
+
+.table-responsive th:first-child {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 4;
+}
+
+</style>
+
+<h2 id="teilprozess-19-interne-verlegung">Teilprozess 19: Interne Verlegung</h2>
+
+<h3 id="betroffene-akteure-1">Betroffene Akteure</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Akteur</th>
+      <th style="text-align: right"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>KH (Krankenhaus)</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>LGF (Landesgesundheitsfonds)</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>SV (Sozialversicherung)</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>Bund</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="betroffene-behandlungsarten-1">Betroffene Behandlungsarten</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Behandlungsart</th>
+      <th style="text-align: right"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ambulant</td>
+      <td style="text-align: right">❌?</td>
+    </tr>
+    <tr>
+      <td>Stationär</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="beschreibung-1">Beschreibung</h3>
+<p>Der Patient wird innerhalb einer Krankenanstalt verlegt. Sobald sich der Funktions(sub)code, egal an welcher Stelle, ändert, kommt es zu einer Änderung in MOPED. Bei jeder Verlegung muss alles übermittelt werden, was in einer X02 enthalten wäre (Interne Verlegung in einer Krankenanstalt ist auch ein Wechsel).</p>
+
+<h3 id="beispiel-1">Beispiel</h3>
+<ul>
+  <li>Patient wird von Bett/Zimmer zu Bett/Zimmer verlegt, gleiche Station –&gt; keine MOPED Relevanz</li>
+  <li>Patient wird von Station zu Station verlegt, ein Primariat (Subcode gleich) —&gt; keine MOPED Relevanz</li>
+  <li>Patient wird von Station A zu einer Station B mit anderem Funktionscode verlegt -&gt; Bei Änderung des Funktions(sub)codes muss eine Verlegung in MOPED erfolgen</li>
+</ul>
+
+<h3 id="technische-hinweise-1">Technische Hinweise</h3>
+<p>Hier ist es wichtig zwischen dem Encounter (Aufenthalt) und dem TransferEncounter (Verlegung/Bewegung) zu unterscheiden.</p>
+
+<h3 id="ablauf-1">Ablauf</h3>
+
+<div><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="SEQUENCE" height="393px" preserveAspectRatio="none" style="width:1275px;height:393px;background:#F5F5F5;" version="1.1" viewBox="0 0 1275 393" width="1275px" zoomAndPan="magnify"><defs><linearGradient id="g1fded4x8h2p7z0" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#E0E5F0" /><stop offset="100%" stop-color="#D1D9E6" /></linearGradient><filter height="300%" id="f1fded4x8h2p7z" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2" /><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" /><feOffset dx="4" dy="4" in="blurOut2" result="blurOut3" /><feBlend in="SourceGraphic" in2="blurOut3" mode="normal" /></filter></defs><g><rect fill="#F5F5F5" height="393" style="stroke:none;stroke-width:1;" width="1275" x="0" y="0" /><rect fill="#F5E599" height="381.6406" rx="5" ry="5" style="stroke:#181818;stroke-width:0.5;" width="248.4023" x="89" y="6" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="4.874" x="92" y="18.9951">&#160;</text><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="222.9063" x="101.748" y="35.292">KH (Herz Jesu Krankenhaus)</text><rect fill="#C5F7BA" height="381.6406" rx="5" ry="5" style="stroke:#181818;stroke-width:0.5;" width="127.3242" x="486.9521" y="6" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="4.874" x="489.9521" y="18.9951">&#160;</text><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="53.0879" x="524.0703" y="35.292">Moped</text><rect fill="#BAC4F7" height="381.6406" rx="5" ry="5" style="stroke:#181818;stroke-width:0.5;" width="139.0957" x="656.2764" y="6" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="4.874" x="659.2764" y="18.9951">&#160;</text><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="94.1035" x="678.7725" y="35.292">SV (&#214;GK,...)</text><rect fill="#F7D0BA" height="381.6406" rx="5" ry="5" style="stroke:#181818;stroke-width:0.5;" width="265.5742" x="837.3721" y="6" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="4.874" x="840.3721" y="18.9951">&#160;</text><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="244.9521" x="845.2461" y="35.292">LGF (Landesgesundheitsfonds)</text><rect fill="#FCB3B3" height="381.6406" rx="5" ry="5" style="stroke:#181818;stroke-width:0.5;" width="124.6104" x="1144.9463" y="6" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="4.874" x="1147.9463" y="18.9951">&#160;</text><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="40.626" x="1186.9385" y="35.292">Bund</text><g><title>KH</title><rect fill="#000000" fill-opacity="0.00000" height="189.4531" width="8" x="209.2012" y="118.8906" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="212.7012" x2="212.7012" y1="118.8906" y2="308.3438" /></g><g><title>Moped</title><rect fill="#000000" fill-opacity="0.00000" height="189.4531" width="8" x="546.6143" y="118.8906" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="550.0986" x2="550.0986" y1="118.8906" y2="308.3438" /></g><g><title>SV (&#214;GK)</title><rect fill="#000000" fill-opacity="0.00000" height="189.4531" width="8" x="721.8242" y="118.8906" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="725.3809" x2="725.3809" y1="118.8906" y2="308.3438" /></g><g><title>LGF (Landesgesundheitsfonds)</title><rect fill="#000000" fill-opacity="0.00000" height="189.4531" width="8" x="966.1592" y="118.8906" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="970.0317" x2="970.0317" y1="118.8906" y2="308.3438" /></g><g><title>Bund</title><rect fill="#000000" fill-opacity="0.00000" height="189.4531" width="8" x="1203.2515" y="118.8906" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1207.1328" x2="1207.1328" y1="118.8906" y2="308.3438" /></g><g class="participant participant-head" data-participant="KH"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="19.708" x="200.3472" y="115.5889">KH</text><ellipse cx="213.2012" cy="51.0938" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M213.2012,59.0938 L213.2012,86.0938 M200.2012,67.0938 L226.2012,67.0938 M213.2012,86.0938 L200.2012,101.0938 M213.2012,86.0938 L226.2012,101.0938" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-tail" data-participant="KH"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="19.708" x="200.3472" y="320.3389">KH</text><ellipse cx="213.2012" cy="332.1406" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M213.2012,340.1406 L213.2012,367.1406 M200.2012,348.1406 L226.2012,348.1406 M213.2012,367.1406 L200.2012,382.1406 M213.2012,367.1406 L226.2012,382.1406" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-head" data-participant="MP"><rect fill="#FFFFFF" height="30.2969" rx="5" ry="5" style="stroke:#555555;stroke-width:0.5;" width="61.0313" x="520.0986" y="87.5938" /><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="47.0313" x="527.0986" y="107.5889">Moped</text></g><g class="participant participant-tail" data-participant="MP"><rect fill="#FFFFFF" height="30.2969" rx="5" ry="5" style="stroke:#555555;stroke-width:0.5;" width="61.0313" x="520.0986" y="307.3438" /><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="47.0313" x="527.0986" y="327.3389">Moped</text></g><g class="participant participant-head" data-participant="SV"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="64.8867" x="690.3809" y="115.5889">SV (&#214;GK)</text><ellipse cx="725.8242" cy="51.0938" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M725.8242,59.0938 L725.8242,86.0938 M712.8242,67.0938 L738.8242,67.0938 M725.8242,86.0938 L712.8242,101.0938 M725.8242,86.0938 L738.8242,101.0938" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-tail" data-participant="SV"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="64.8867" x="690.3809" y="320.3389">SV (&#214;GK)</text><ellipse cx="725.8242" cy="332.1406" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M725.8242,340.1406 L725.8242,367.1406 M712.8242,348.1406 L738.8242,348.1406 M725.8242,367.1406 L712.8242,382.1406 M725.8242,367.1406 L738.8242,382.1406" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-head" data-participant="LGF"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="216.2549" x="859.0317" y="115.5889">LGF (Landesgesundheitsfonds)</text><ellipse cx="970.1592" cy="51.0938" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M970.1592,59.0938 L970.1592,86.0938 M957.1592,67.0938 L983.1592,67.0938 M970.1592,86.0938 L957.1592,101.0938 M970.1592,86.0938 L983.1592,101.0938" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-tail" data-participant="LGF"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="216.2549" x="859.0317" y="320.3389">LGF (Landesgesundheitsfonds)</text><ellipse cx="970.1592" cy="332.1406" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M970.1592,340.1406 L970.1592,367.1406 M957.1592,348.1406 L983.1592,348.1406 M970.1592,367.1406 L957.1592,382.1406 M970.1592,367.1406 L983.1592,382.1406" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-head" data-participant="Bund"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="36.2373" x="1186.1328" y="115.5889">Bund</text><ellipse cx="1207.2515" cy="51.0938" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M1207.2515,59.0938 L1207.2515,86.0938 M1194.2515,67.0938 L1220.2515,67.0938 M1207.2515,86.0938 L1194.2515,101.0938 M1207.2515,86.0938 L1220.2515,101.0938" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-tail" data-participant="Bund"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="36.2373" x="1186.1328" y="320.3389">Bund</text><ellipse cx="1207.2515" cy="332.1406" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M1207.2515,340.1406 L1207.2515,367.1406 M1194.2515,348.1406 L1220.2515,348.1406 M1207.2515,367.1406 L1194.2515,382.1406 M1207.2515,367.1406 L1220.2515,382.1406" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="message" data-participant-1="KH" data-participant-2="MP"><line style="stroke:#111827;stroke-width:2;" x1="548.6143" x2="538.6143" y1="150.0234" y2="146.0234" /><line style="stroke:#111827;stroke-width:2;" x1="548.6143" x2="538.6143" y1="150.0234" y2="154.0234" /><line style="stroke:#111827;stroke-width:2;" x1="213.2012" x2="549.6143" y1="150.0234" y2="150.0234" /><text fill="#000000" font-family="Arial" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9.0454" x="220.2012" y="144.9575">1</text><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="82.4307" x="233.2466" y="144.9575">$aufnehmen</text></g><path d="M5,168.0234 L5,200.0234 A5,5 0 0 0 10,205.0234 L414,205.0234 A5,5 0 0 0 419,200.0234 L419,173.0234 L409,163.0234 L10,163.0234 A5,5 0 0 0 5,168.0234" fill="url(#g1fded4x8h2p7z0)" filter="url(#f1fded4x8h2p7z)" style="stroke:#8B95A5;stroke-width:1;" /><path d="M409,163.0234 L409,170.5234 A2.5,2.5 0 0 0 411.5,173.0234 L419,173.0234 L409,163.0234" fill="url(#g1fded4x8h2p7z0)" style="stroke:#8B95A5;stroke-width:1;" /><text fill="#111827" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="193.4639" x="11" y="181.0186">POST Patient, Encounter, ...</text><text fill="#111827" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="393.5449" x="11" y="197.3154">TransferEncounter mit Referenz auf Aufnahmeabteilung</text><g class="message" data-participant-1="KH" data-participant-2="MP"><line style="stroke:#111827;stroke-width:2;" x1="548.6143" x2="538.6143" y1="234.75" y2="230.75" /><line style="stroke:#111827;stroke-width:2;" x1="548.6143" x2="538.6143" y1="234.75" y2="238.75" /><line style="stroke:#111827;stroke-width:2;" x1="213.2012" x2="549.6143" y1="234.75" y2="234.75" /><text fill="#000000" font-family="Arial" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9.0454" x="220.2012" y="229.6841">2</text><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="184.52" x="233.2466" y="229.6841">$update - interne Verlegung</text></g><path d="M23,252.75 L23,284.75 A5,5 0 0 0 28,289.75 L393,289.75 A5,5 0 0 0 398,284.75 L398,257.75 L388,247.75 L28,247.75 A5,5 0 0 0 23,252.75" fill="url(#g1fded4x8h2p7z0)" filter="url(#f1fded4x8h2p7z)" style="stroke:#8B95A5;stroke-width:1;" /><path d="M388,247.75 L388,255.25 A2.5,2.5 0 0 0 390.5,257.75 L398,257.75 L388,247.75" fill="url(#g1fded4x8h2p7z0)" style="stroke:#8B95A5;stroke-width:1;" /><text fill="#111827" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="350" x="29" y="265.7451">PUT alter TransferEncounter (finished, Enddatum)</text><text fill="#111827" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="354.4229" x="29" y="282.042">+ POST neuer TransferEncounter (neue Abteilung)</text></g></svg></div>
+
+<h3 id="relevante-profile-1">Relevante Profile</h3>
+<ul>
+  <li><a href="StructureDefinition-MopedTransferEncounterA.html">TransferEncounter Ambulant</a></li>
+  <li><a href="StructureDefinition-MopedTransferEncounterS.html">TransferEncounter Stationär</a></li>
+</ul>
+
+<h3 id="relevante-invarianten-1">Relevante Invarianten</h3>
+
+<h3 id="mögliche-notifications-1">Mögliche Notifications</h3>
+<style>
+.notification-table {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.notification-table th,
+.notification-table td {
+  padding: 10px;
+  background: #f5f5f5; /* Cell color */
+  box-shadow: 0 0 0 3px #fff;
+  text-align: left;
+}
+.notification-table th {
+  background: #e4e4e4;
+}
+
+.table-responsive {
+display: block;
+width: 100%;
+overflow-x: auto;
+max-height: 600px;
+overflow-y: auto;
+}
+.table-responsive > table {
+width: 100%;}
+.table-responsive th,
+.table-responsive td {
+  padding: 15px;
+  background: #f5f5f5;
+}
+.table-responsive table {
+  border-collapse: separate;
+  border-spacing: 3px;
+}
+/* Kopfzeile sticky */
+.table-responsive th {
+  position: sticky;
+  top: 0;
+  background: rgb(228, 228, 228);
+  z-index: 2;
+}
+/* Erste Spalte sticky */
+.table-responsive th:first-child,
+.table-responsive td:first-child {
+  position: sticky;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 3;
+}
+
+.table-responsive th:first-child {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 4;
+}
+
+</style>
+
+<h2 id="teilprozess-20-beurlaubung">Teilprozess 20: Beurlaubung</h2>
+
+<h3 id="betroffene-akteure-2">Betroffene Akteure</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Akteur</th>
+      <th style="text-align: right"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>KH (Krankenhaus)</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>LGF (Landesgesundheitsfonds)</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>SV (Sozialversicherung)</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+    <tr>
+      <td>Bund</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="betroffene-behandlungsarten-2">Betroffene Behandlungsarten</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Behandlungsart</th>
+      <th style="text-align: right"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ambulant</td>
+      <td style="text-align: right">❌</td>
+    </tr>
+    <tr>
+      <td>Stationär</td>
+      <td style="text-align: right">✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="beschreibung-2">Beschreibung</h3>
+<p>Eine Patient unterbricht seinen stationären Aufenthalt und kommt an einem späteren Tag wieder. Bezeichnung: Urlaub bzw. Abwesenheit</p>
+
+<h3 id="beispiel-2">Beispiel</h3>
+<ul>
+  <li>TBD</li>
+</ul>
+
+<h3 id="technische-hinweise-2">Technische Hinweise</h3>
+<p>Hier ist es wichtig zwischen dem Encounter (Aufenthalt) und dem TransferEncounter (Verlegung/Bewegung) zu unterscheiden.</p>
+
+<h3 id="ablauf-2">Ablauf</h3>
+
+<div><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="SEQUENCE" height="560px" preserveAspectRatio="none" style="width:1249px;height:560px;background:#F5F5F5;" version="1.1" viewBox="0 0 1249 560" width="1249px" zoomAndPan="magnify"><defs><linearGradient id="g18y9t5idw0xsm0" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#E0E5F0" /><stop offset="100%" stop-color="#D1D9E6" /></linearGradient><filter height="300%" id="f18y9t5idw0xsm" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2" /><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" /><feOffset dx="4" dy="4" in="blurOut2" result="blurOut3" /><feBlend in="SourceGraphic" in2="blurOut3" mode="normal" /></filter></defs><g><rect fill="#F5F5F5" height="560" style="stroke:none;stroke-width:1;" width="1249" x="0" y="0" /><rect fill="#F5E599" height="548.8516" rx="5" ry="5" style="stroke:#181818;stroke-width:0.5;" width="248.4023" x="165" y="6" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="4.874" x="168" y="18.9951">&#160;</text><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="222.9063" x="177.748" y="35.292">KH (Herz Jesu Krankenhaus)</text><rect fill="#C5F7BA" height="548.8516" rx="5" ry="5" style="stroke:#181818;stroke-width:0.5;" width="127.3242" x="460.8628" y="6" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="4.874" x="463.8628" y="18.9951">&#160;</text><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="53.0879" x="497.981" y="35.292">Moped</text><rect fill="#BAC4F7" height="548.8516" rx="5" ry="5" style="stroke:#181818;stroke-width:0.5;" width="139.0957" x="630.187" y="6" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="4.874" x="633.187" y="18.9951">&#160;</text><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="94.1035" x="652.6831" y="35.292">SV (&#214;GK,...)</text><rect fill="#F7D0BA" height="548.8516" rx="5" ry="5" style="stroke:#181818;stroke-width:0.5;" width="265.5742" x="811.2827" y="6" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="4.874" x="814.2827" y="18.9951">&#160;</text><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="244.9521" x="819.1567" y="35.292">LGF (Landesgesundheitsfonds)</text><rect fill="#FCB3B3" height="548.8516" rx="5" ry="5" style="stroke:#181818;stroke-width:0.5;" width="124.6104" x="1118.8569" y="6" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="4.874" x="1121.8569" y="18.9951">&#160;</text><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="40.626" x="1160.8491" y="35.292">Bund</text><rect fill="none" height="221.6406" rx="5" ry="5" style="stroke:#111827;stroke-width:1;" width="531.0405" x="54" y="236.9141" /><g><title>KH</title><rect fill="#000000" fill-opacity="0.00000" height="356.6641" width="8" x="285.2012" y="118.8906" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="288.7012" x2="288.7012" y1="118.8906" y2="475.5547" /></g><g><title>Moped</title><rect fill="#000000" fill-opacity="0.00000" height="356.6641" width="8" x="520.5249" y="118.8906" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="524.0093" x2="524.0093" y1="118.8906" y2="475.5547" /></g><g><title>SV (&#214;GK)</title><rect fill="#000000" fill-opacity="0.00000" height="356.6641" width="8" x="695.7349" y="118.8906" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="699.2915" x2="699.2915" y1="118.8906" y2="475.5547" /></g><g><title>LGF (Landesgesundheitsfonds)</title><rect fill="#000000" fill-opacity="0.00000" height="356.6641" width="8" x="940.0698" y="118.8906" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="943.9424" x2="943.9424" y1="118.8906" y2="475.5547" /></g><g><title>Bund</title><rect fill="#000000" fill-opacity="0.00000" height="356.6641" width="8" x="1177.1621" y="118.8906" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1181.0435" x2="1181.0435" y1="118.8906" y2="475.5547" /></g><g class="participant participant-head" data-participant="KH"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="19.708" x="276.3472" y="115.5889">KH</text><ellipse cx="289.2012" cy="51.0938" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M289.2012,59.0938 L289.2012,86.0938 M276.2012,67.0938 L302.2012,67.0938 M289.2012,86.0938 L276.2012,101.0938 M289.2012,86.0938 L302.2012,101.0938" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-tail" data-participant="KH"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="19.708" x="276.3472" y="487.5498">KH</text><ellipse cx="289.2012" cy="499.3516" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M289.2012,507.3516 L289.2012,534.3516 M276.2012,515.3516 L302.2012,515.3516 M289.2012,534.3516 L276.2012,549.3516 M289.2012,534.3516 L302.2012,549.3516" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-head" data-participant="MP"><rect fill="#FFFFFF" height="30.2969" rx="5" ry="5" style="stroke:#555555;stroke-width:0.5;" width="61.0313" x="494.0093" y="87.5938" /><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="47.0313" x="501.0093" y="107.5889">Moped</text></g><g class="participant participant-tail" data-participant="MP"><rect fill="#FFFFFF" height="30.2969" rx="5" ry="5" style="stroke:#555555;stroke-width:0.5;" width="61.0313" x="494.0093" y="474.5547" /><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="47.0313" x="501.0093" y="494.5498">Moped</text></g><g class="participant participant-head" data-participant="SV"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="64.8867" x="664.2915" y="115.5889">SV (&#214;GK)</text><ellipse cx="699.7349" cy="51.0938" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M699.7349,59.0938 L699.7349,86.0938 M686.7349,67.0938 L712.7349,67.0938 M699.7349,86.0938 L686.7349,101.0938 M699.7349,86.0938 L712.7349,101.0938" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-tail" data-participant="SV"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="64.8867" x="664.2915" y="487.5498">SV (&#214;GK)</text><ellipse cx="699.7349" cy="499.3516" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M699.7349,507.3516 L699.7349,534.3516 M686.7349,515.3516 L712.7349,515.3516 M699.7349,534.3516 L686.7349,549.3516 M699.7349,534.3516 L712.7349,549.3516" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-head" data-participant="LGF"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="216.2549" x="832.9424" y="115.5889">LGF (Landesgesundheitsfonds)</text><ellipse cx="944.0698" cy="51.0938" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M944.0698,59.0938 L944.0698,86.0938 M931.0698,67.0938 L957.0698,67.0938 M944.0698,86.0938 L931.0698,101.0938 M944.0698,86.0938 L957.0698,101.0938" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-tail" data-participant="LGF"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="216.2549" x="832.9424" y="487.5498">LGF (Landesgesundheitsfonds)</text><ellipse cx="944.0698" cy="499.3516" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M944.0698,507.3516 L944.0698,534.3516 M931.0698,515.3516 L957.0698,515.3516 M944.0698,534.3516 L931.0698,549.3516 M944.0698,534.3516 L957.0698,549.3516" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-head" data-participant="Bund"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="36.2373" x="1160.0435" y="115.5889">Bund</text><ellipse cx="1181.1621" cy="51.0938" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M1181.1621,59.0938 L1181.1621,86.0938 M1168.1621,67.0938 L1194.1621,67.0938 M1181.1621,86.0938 L1168.1621,101.0938 M1181.1621,86.0938 L1194.1621,101.0938" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-tail" data-participant="Bund"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="36.2373" x="1160.0435" y="487.5498">Bund</text><ellipse cx="1181.1621" cy="499.3516" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M1181.1621,507.3516 L1181.1621,534.3516 M1168.1621,515.3516 L1194.1621,515.3516 M1181.1621,534.3516 L1168.1621,549.3516 M1181.1621,534.3516 L1194.1621,549.3516" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="message" data-participant-1="KH" data-participant-2="MP"><line style="stroke:#111827;stroke-width:2;" x1="522.5249" x2="512.5249" y1="150.0234" y2="146.0234" /><line style="stroke:#111827;stroke-width:2;" x1="522.5249" x2="512.5249" y1="150.0234" y2="154.0234" /><line style="stroke:#111827;stroke-width:2;" x1="289.2012" x2="523.5249" y1="150.0234" y2="150.0234" /><text fill="#000000" font-family="Arial" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9.0454" x="296.2012" y="144.9575">1</text><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="82.4307" x="309.2466" y="144.9575">$aufnehmen</text></g><path d="M5,168.0234 L5,216.0234 A5,5 0 0 0 10,221.0234 L565,221.0234 A5,5 0 0 0 570,216.0234 L570,173.0234 L560,163.0234 L10,163.0234 A5,5 0 0 0 5,168.0234" fill="url(#g18y9t5idw0xsm0)" filter="url(#f18y9t5idw0xsm)" style="stroke:#8B95A5;stroke-width:1;" /><path d="M560,163.0234 L560,170.5234 A2.5,2.5 0 0 0 562.5,173.0234 L570,173.0234 L560,163.0234" fill="url(#g18y9t5idw0xsm0)" style="stroke:#8B95A5;stroke-width:1;" /><text fill="#111827" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="540.4014" x="11" y="181.0186">Patient:in wird am 2025-07-20 auf Abteilung &#8222;Innere Medizin&#8220; aufgenommen</text><text fill="#111827" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="223.2686" x="11" y="197.3154">&#8594; Encounter status: in-progress</text><text fill="#111827" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="326.2998" x="11" y="213.6123">TransferEncounter Abteilung: "Innere Medizin"</text><path d="M59,236.9141 L133.0566,236.9141 L133.0566,245.2109 L123.0566,255.2109 L54,255.2109 L54,241.9141 A5,5 0 0 1 59,236.9141" fill="#F3F4F6" style="stroke:#111827;stroke-width:1.5;" /><rect fill="none" height="221.6406" rx="5" ry="5" style="stroke:#111827;stroke-width:1;" width="531.0405" x="54" y="236.9141" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="34.0566" x="69" y="250.9092">loop</text><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="179.8535" x="148.0566" y="251.9092">[Beurlaubungs-Zyklus]</text><g class="message" data-participant-1="KH" data-participant-2="MP"><line style="stroke:#111827;stroke-width:2;" x1="522.5249" x2="512.5249" y1="277.6406" y2="273.6406" /><line style="stroke:#111827;stroke-width:2;" x1="522.5249" x2="512.5249" y1="277.6406" y2="281.6406" /><line style="stroke:#111827;stroke-width:2;" x1="289.2012" x2="523.5249" y1="277.6406" y2="277.6406" /><text fill="#000000" font-family="Arial" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9.0454" x="296.2012" y="272.5747">2</text><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="54.0757" x="309.2466" y="272.5747">$update</text></g><path d="M64,295.6406 L64,343.6406 A5,5 0 0 0 69,348.6406 L504,348.6406 A5,5 0 0 0 509,343.6406 L509,300.6406 L499,290.6406 L69,290.6406 A5,5 0 0 0 64,295.6406" fill="url(#g18y9t5idw0xsm0)" filter="url(#f18y9t5idw0xsm)" style="stroke:#8B95A5;stroke-width:1;" /><path d="M499,290.6406 L499,298.1406 A2.5,2.5 0 0 0 501.5,300.6406 L509,300.6406 L499,290.6406" fill="url(#g18y9t5idw0xsm0)" style="stroke:#8B95A5;stroke-width:1;" /><text fill="#111827" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="256.8467" x="70" y="308.6357">Patient:in am 2025-07-22 auf Urlaub</text><text fill="#111827" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="197.1074" x="70" y="324.9326">&#8594; Encounter status: on-hold</text><text fill="#111827" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="424.7783" x="70" y="341.2295">Verlegung auf TransferEncounter mit Funktionscode 100000</text><g class="message" data-participant-1="KH" data-participant-2="MP"><line style="stroke:#111827;stroke-width:2;" x1="522.5249" x2="512.5249" y1="378.6641" y2="374.6641" /><line style="stroke:#111827;stroke-width:2;" x1="522.5249" x2="512.5249" y1="378.6641" y2="382.6641" /><line style="stroke:#111827;stroke-width:2;" x1="289.2012" x2="523.5249" y1="378.6641" y2="378.6641" /><text fill="#000000" font-family="Arial" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="9.0454" x="296.2012" y="373.5981">3</text><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="54.0757" x="309.2466" y="373.5981">$update</text></g><path d="M113,396.6641 L113,444.6641 A5,5 0 0 0 118,449.6641 L456,449.6641 A5,5 0 0 0 461,444.6641 L461,401.6641 L451,391.6641 L118,391.6641 A5,5 0 0 0 113,396.6641" fill="url(#g18y9t5idw0xsm0)" filter="url(#f18y9t5idw0xsm)" style="stroke:#8B95A5;stroke-width:1;" /><path d="M451,391.6641 L451,399.1641 A2.5,2.5 0 0 0 453.5,401.6641 L461,401.6641 L451,391.6641" fill="url(#g18y9t5idw0xsm0)" style="stroke:#8B95A5;stroke-width:1;" /><text fill="#111827" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="271.7285" x="119" y="409.6592">Patient:in kehrt am 2025-07-24 zur&#252;ck</text><text fill="#111827" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="223.2686" x="119" y="425.9561">&#8594; Encounter status: in-progress</text><text fill="#111827" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="327.9268" x="119" y="442.2529">TransferEncounter Abteilung: &#8222;Innere Medizin&#8220;</text></g></svg></div>
+
+<h3 id="relevante-profile-2">Relevante Profile</h3>
+<ul>
+  <li><a href="StructureDefinition-MopedTransferEncounterS.html">TransferEncounter Stationär (Bewegung)</a></li>
+  <li><a href="StructureDefinition-MopedEncounterS.html">Encounter Stationär (Aufenthalt)</a></li>
+</ul>
+
+<h3 id="relevante-invarianten-2">Relevante Invarianten</h3>
+
+<h3 id="mögliche-notifications-2">Mögliche Notifications</h3>
+
+<h3 id="teilprozess-21-gesundes-neugeborenes">Teilprozess 21: gesundes Neugeborenes</h3>
+<h3 id="teilprozess-22-krankes-neugeborenes">Teilprozess 22: krankes Neugeborenes</h3>
+<p>In Arbeit :)</p>
+
+<h3 id="teilprozess-26-überlieger">Teilprozess 26: Überlieger</h3>
+<p>In Arbeit :)</p>
+
+<h3 id="teilprozess-53-intensivaufenthalt-mit-intensivdaten">Teilprozess 53: Intensivaufenthalt mit Intensivdaten</h3>
+<p>In Arbeit :)</p>
+
+
+
+
+</div>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /row -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-content -->
+
+<script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/window-hash.js"> </script>
+<a name="bottom"> </a>
+<div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+<div class="container">  <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Apr 7, 2026 06:39+0000">2026-04-07</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    </span>
+  </p>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+<div class="container">  <!-- container -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-post-footer -->
+
+<!-- JS and analytics only. -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+<script type="text/javascript" src="assets/js/respond.min.js"> </script>
+<script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+<script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+</body>
+</html>
+
