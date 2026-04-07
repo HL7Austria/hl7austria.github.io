@@ -60,7 +60,7 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $abrechnen Operat
   "title" : "MOPED Encounter $abrechnen",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-04-07T10:38:55+00:00",
+  "date" : "2026-04-07T11:10:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
