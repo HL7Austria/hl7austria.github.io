@@ -23,7 +23,7 @@ When referencing resources across systems, implementers should prefer identifier
 
 #### HTTP return preference
 
-Scheduling Clients SHALL use the following HTTP return preference for requests of standard `POST` and `PUT` interactions:
+Scheduling Clients SHALL use the following HTTP request [Prefer Header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Prefer) for requests of standard `POST` and `PUT` interactions:
 
 `Prefer: return=representation`
 

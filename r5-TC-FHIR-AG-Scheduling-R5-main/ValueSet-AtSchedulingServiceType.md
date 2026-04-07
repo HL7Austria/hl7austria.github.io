@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType | *Version*:0.2.0 | |
-| Draft as of 2026-03-18 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:AtSchedulingServiceType |
+| Draft as of 2026-04-07 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:AtSchedulingServiceType |
 
  
 This is a placeholder for a ValueSet of bookable service types. The contained value just serves as an example and is not guaranteed to 
@@ -17,12 +17,8 @@ This is a placeholder for a ValueSet of bookable service types. The contained va
  **References** 
 
 * [HL7® AT Scheduling Appointment Profile](StructureDefinition-at-scheduling-appointment.md)
-* [HL7® AT Scheduling Appointment Profile](StructureDefinition-at-scheduling-appointment.md)
-* [HL7® AT Scheduling HealthcareService Profile](StructureDefinition-at-scheduling-healthcareservice.md)
 * [HL7® AT Scheduling HealthcareService Profile](StructureDefinition-at-scheduling-healthcareservice.md)
 * [HL7® AT Scheduling Schedule Profile](StructureDefinition-at-scheduling-schedule.md)
-* [HL7® AT Scheduling Schedule Profile](StructureDefinition-at-scheduling-schedule.md)
-* [HL7® AT Scheduling Slot Profile](StructureDefinition-at-scheduling-slot.md)
 * [HL7® AT Scheduling Slot Profile](StructureDefinition-at-scheduling-slot.md)
 
 ### Logical Definition (CLD)
@@ -58,7 +54,7 @@ This is a placeholder for a ValueSet of bookable service types. The contained va
   "title" : "AT Scheduling Service Type",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-18T07:58:35+00:00",
+  "date" : "2026-04-07T11:55:37+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "This is a placeholder for a ValueSet of bookable service types. The contained value just serves as an example and is not guaranteed to ",
   "compose" : {
