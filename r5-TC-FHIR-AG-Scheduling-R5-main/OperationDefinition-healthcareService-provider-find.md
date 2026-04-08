@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/healthcareService-provider-find | *Version*:0.2.0 | |
-| Active as of 2026-04-07 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:Find_HealthcareService_Provider |
+| Active as of 2026-04-08 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:Find_HealthcareService_Provider |
 
  
 A query operation that allows to search for healthcare service providers that offer a specific healthcare service. The general information about the HealthcareService identification itself is already available in advance, either as resource or via codes. 
@@ -265,7 +265,7 @@ HTTP 200 OK
   "name" : "Find_HealthcareService_Provider",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-04-07T11:55:37+00:00",
+  "date" : "2026-04-08T07:58:25+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "A query operation that allows to search for healthcare service providers that offer a specific healthcare service. The general information about the HealthcareService identification itself is already available in advance, either as resource or via codes. ",
   "affectsState" : false,
