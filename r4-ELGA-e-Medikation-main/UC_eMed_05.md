@@ -1,7 +1,7 @@
 # HL7.AT.FHIR.ELGA.EMED.R4\UC_eMed_05 - Medikationsplan lesen - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
-* [**Überblick & Anwendungsbeispiel**](use_case_overview.md)
+* [**Überblick & Anwendungsbeispiel**](overview_use_case.md)
 * **UC_eMed_05 - Medikationsplan lesen**
 
 ## UC_eMed_05 - Medikationsplan lesen

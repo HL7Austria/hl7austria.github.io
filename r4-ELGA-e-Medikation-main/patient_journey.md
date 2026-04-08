@@ -1,7 +1,7 @@
 # HL7.AT.FHIR.ELGA.EMED.R4\Patient Journey - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
-* [**Überblick & Anwendungsbeispiel**](use_case_overview.md)
+* [**Überblick & Anwendungsbeispiel**](overview_use_case.md)
 * **Patient Journey**
 
 ## Patient Journey

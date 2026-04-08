@@ -31,9 +31,9 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "url" : "https://fhir.hl7.at/elga/emed/r4/ImplementationGuide/hl7.at.fhir.elga.emed.r4",
   "version" : "0.1.1",
   "name" : "ELGAeMedikationR4",
-  "title" : "ELGA e-Medikation (R4) ENTWURF",
+  "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-04-07T16:09:01+00:00",
+  "date" : "2026-04-08T18:33:44+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1408,9 +1408,54 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "use_case_overview.html"
+          "valueUrl" : "interactions.html"
         }],
-        "nameUrl" : "use_case_overview.html",
+        "nameUrl" : "interactions.html",
+        "title" : "Standardisierter Zugriff auf FHIR-Ressourcen",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "overview_sub_use_case.html"
+        }],
+        "nameUrl" : "overview_sub_use_case.html",
+        "title" : "Technische Use Cases",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "Sub_UC_eMed_06.html"
+        }],
+        "nameUrl" : "Sub_UC_eMed_06.html",
+        "title" : "​Technische Use Cases für Medikationsplan schreiben (UC_eMed_06)",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "Sub_UC_eMed_08.html"
+        }],
+        "nameUrl" : "Sub_UC_eMed_08.html",
+        "title" : "​Technische Use Cases für Geplante Abgabe schreiben (UC_eMed_08)",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "Sub_UC_eMed_09.html"
+        }],
+        "nameUrl" : "Sub_UC_eMed_09.html",
+        "title" : "​Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_09)",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "overview_use_case.html"
+        }],
+        "nameUrl" : "overview_use_case.html",
         "title" : "Überblick & Anwendungsbeispiel",
         "generation" : "markdown",
         "page" : [{
@@ -1438,15 +1483,6 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           }],
           "nameUrl" : "UC_eMed_06.html",
           "title" : "UC_eMed_06 - Medikationsplan schreiben",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "UC_eMed_06_Sub_UC.html"
-          }],
-          "nameUrl" : "UC_eMed_06_Sub_UC.html",
-          "title" : "Sub-Usecases zu UC_eMed_06 (Medikationsplan schreiben)",
           "generation" : "markdown"
         },
         {

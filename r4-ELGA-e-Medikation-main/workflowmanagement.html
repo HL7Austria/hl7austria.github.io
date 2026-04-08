@@ -57,7 +57,7 @@
             
             <div id="ig-status">
               <p>
-                <span style="font-size:12pt;font-weight:bold">ELGA e-Medikation (R4) ENTWURF</span><br/>
+                <span style="font-size:12pt;font-weight:bold">ELGA e-Medikation (R4) DRAFT</span><br/>
                 <span class="label label-info">0.1.1 - ci-build</span>
               </p>
             </div>
@@ -125,6 +125,12 @@
       <li>
         <a href="dosaging.html">Dosierschemata</a>
       </li>
+      <li>
+        <a href="interactions.html">Standardisierter Zugriff auf FHIR-Ressourcen</a>
+      </li>
+      <li>
+        <a href="overview_sub_use_case.html">Technische Use Cases</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -133,7 +139,7 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="use_case_overview.html">Überblick</a>
+        <a href="overview_use_case.html">Überblick</a>
       </li>
       <li>
         <a href="patient_journey.html">Patient Journey</a>
@@ -152,9 +158,6 @@
       </li>
       <li>
         <a href="UC_eMed_09.html">UC_eMed_09 Durchgeführte Abgabe schreiben</a>
-      </li>
-      <li>
-        <a href="UC_eMed_06_Sub_UC.html">Sub-Usecases zu UC_eMed_06 (Medikationsplan schreiben)</a>
       </li>
     </ul>
   </li>
@@ -198,7 +201,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="col-12">
   <!-- at-fhir-ig-template begin -->
   <div class="alert alert-warning" role="alert">
-    <!--ReleaseHeader--><p id="publish-box">ELGA e-Medikation (R4) ENTWURF - Local Development build (v0.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/emed/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+    <!--ReleaseHeader--><p id="publish-box">ELGA e-Medikation (R4) DRAFT - Local Development build (v0.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/emed/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   </div>
   <!-- at-fhir-ig-template end -->
   <h2>Workflowmanagement</h2>
@@ -304,7 +307,7 @@ width: 100%;}
 
 <h4 id="status-der-list-flag-medikationsplan">Status der List-Flag (Medikationsplan)</h4>
 
-<p>Das <em>flag</em>-Element eines Entries in der List-Ressource beschreibt die Art der Änderung eines Planeintrags auf Listenebene und kann folgende Status einnehmen:</p>
+<p>Das <em>flag</em>-Element eines Entries der List-Ressource beschreibt die Art der Änderung eines Mediaktionsplaneintrags auf Listenebene und kann folgende Status einnehmen:</p>
 
 <table>
   <thead>
@@ -324,52 +327,52 @@ width: 100%;}
     </tr>
     <tr>
       <td><strong>Changed</strong></td>
-      <td>Bestehender Planeintrag geändert</td>
+      <td>Bestehender Planeintrag wird geändert</td>
     </tr>
     <tr>
       <td><strong>Removed</strong></td>
-      <td>Bestehender Planeintrag entfernt</td>
+      <td>Bestehender Planeintrag wird entfernt</td>
     </tr>
   </tbody>
 </table>
 
-<div><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="ACTIVITY" height="435px" preserveAspectRatio="none" style="width:383px;height:435px;background:#FFFFFF;" version="1.1" viewBox="0 0 383 435" width="383px" zoomAndPan="magnify"><title>List Flag</title><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="67.4502" x="151.0478" y="22.9951">List Flag</text><ellipse cx="105.79" cy="53.2969" fill="#222222" rx="10" ry="10" style="stroke:#222222;stroke-width:1;" /><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="46.1738" x="82.79" y="130.2969" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="26.1738" x="92.79" y="151.4355">New</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="88.168" x="61.79" y="231.2969" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="68.168" x="71.79" y="252.4355">Unchanged</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="73.5605" x="24.79" y="332.2969" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53.5605" x="34.79" y="353.4355">Changed</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="76.8535" x="285.29" y="332.2969" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="56.8535" x="295.29" y="353.4355">Removed</text><ellipse cx="323.79" cy="418.2969" fill="none" rx="11" ry="11" style="stroke:#222222;stroke-width:1;" /><ellipse cx="323.79" cy="418.2969" fill="#222222" rx="6" ry="6" style="stroke:#222222;stroke-width:1;" /><!--link start to New--><g class="link" data-entity-1="start" data-entity-2="New" data-source-line="3" data-uid="lnk4" id="link_start_New"><path d="M105.79,63.4569 C105.79,78.9969 105.79,104.7369 105.79,124.1069" fill="none" id="start-to-New" style="stroke:#181818;stroke-width:1;" /><polygon fill="#181818" points="105.79,130.1069,109.79,121.1069,105.79,125.1069,101.79,121.1069,105.79,130.1069" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="99.5103" x="106.79" y="94.5073">Neuer Planeintrag</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="65.6348" x="123.7277" y="107.312">hinzugef&#252;gt</text></g><!--link New to Unchanged--><g class="link" data-entity-1="New" data-entity-2="Unchanged" data-source-line="4" data-uid="lnk6" id="link_New_Unchanged"><path d="M105.79,164.6469 C105.79,183.0969 105.79,206.9269 105.79,225.2569" fill="none" id="New-to-Unchanged" style="stroke:#181818;stroke-width:1;" /><polygon fill="#181818" points="105.79,231.2569,109.79,222.2569,105.79,226.2569,101.79,222.2569,105.79,231.2569" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="191.6782" x="106.79" y="195.5073">Autmatisch bei read-to-write-Abruf</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="134.0195" x="135.6193" y="208.312">(durch Fachanwendung)</text></g><!--link Changed to Unchanged--><g class="link" data-entity-1="Changed" data-entity-2="Unchanged" data-source-line="5" data-uid="lnk8" id="link_Changed_Unchanged"><path d="M71.45,332.0669 C74.91,325.9669 78.71,318.9069 81.79,312.2969 C89.05,296.6969 93.8985,283.9002 98.4085,271.0102" fill="none" id="Changed-to-Unchanged" style="stroke:#181818;stroke-width:1;" /><polygon fill="#181818" points="100.39,265.3469,93.6422,272.5209,98.7387,270.0663,101.1933,275.1629,100.39,265.3469" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="191.6782" x="93.79" y="296.5073">Autmatisch bei read-to-write-Abruf</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="134.0195" x="122.6193" y="309.312">(durch Fachanwendung)</text></g><!--link Unchanged to Changed--><g class="link" data-entity-1="Unchanged" data-entity-2="Changed" data-source-line="6" data-uid="lnk9" id="link_Unchanged_Changed"><path d="M61.5,255.3369 C43.26,260.2569 23.84,269.1569 12.79,285.2969 C6,295.1969 7.37,301.5869 12.79,312.2969 C16.84,320.3069 18.7705,323.3965 26.0005,328.7265" fill="none" id="Unchanged-to-Changed" style="stroke:#181818;stroke-width:1;" /><polygon fill="#181818" points="30.83,332.2869,25.9593,323.7267,26.8054,329.3199,21.2122,330.166,30.83,332.2869" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="62.7559" x="13.79" y="296.5073">Planeintrag</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="50.0479" x="20.144" y="309.312">ge&#228;ndert</text></g><!--link Unchanged to Removed--><g class="link" data-entity-1="Unchanged" data-entity-2="Removed" data-source-line="7" data-uid="lnk11" id="link_Unchanged_Removed"><path d="M149.8,253.4569 C197.26,258.6869 268.94,269.0269 290.79,285.2969 C306.23,296.8069 313.3096,311.9534 317.8896,326.5134" fill="none" id="Unchanged-to-Removed" style="stroke:#181818;stroke-width:1;" /><polygon fill="#181818" points="319.69,332.2369,320.8051,322.4513,318.1897,327.4673,313.1737,324.8519,319.69,332.2369" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="62.7559" x="312.79" y="296.5073">Planeintrag</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="44.4995" x="321.9182" y="309.312">entfernt</text></g><!--link Removed to end--><g class="link" data-entity-1="Removed" data-entity-2="end" data-source-line="8" data-uid="lnk13" id="link_Removed_end"><path d="M323.79,366.5169 C323.79,379.2169 323.79,390.4869 323.79,401.2569" fill="none" id="Removed-to-end" style="stroke:#181818;stroke-width:1;" /><polygon fill="#181818" points="323.79,407.2569,327.79,398.2569,323.79,402.2569,319.79,398.2569,323.79,407.2569" style="stroke:#181818;stroke-width:1;" /></g></g></svg></div>
+<div><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="ACTIVITY" height="461px" preserveAspectRatio="none" style="width:334px;height:461px;background:#FFFFFF;" version="1.1" viewBox="0 0 334 461" width="334px" zoomAndPan="magnify"><title>List-Flag</title><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="68.3867" x="126.2096" y="22.9951">List-Flag</text><ellipse cx="109.05" cy="53.2969" fill="#222222" rx="10" ry="10" style="stroke:#222222;stroke-width:1;" /><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="46.1738" x="86.05" y="130.2969" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="26.1738" x="96.05" y="151.4355">New</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="88.168" x="65.05" y="244.2969" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="68.168" x="75.05" y="265.4355">Unchanged</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="73.5605" x="28.05" y="358.2969" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53.5605" x="38.05" y="379.4355">Changed</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="76.8535" x="231.55" y="358.2969" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="56.8535" x="241.55" y="379.4355">Removed</text><ellipse cx="270.05" cy="444.2969" fill="none" rx="11" ry="11" style="stroke:#222222;stroke-width:1;" /><ellipse cx="270.05" cy="444.2969" fill="#222222" rx="6" ry="6" style="stroke:#222222;stroke-width:1;" /><!--link start to New--><g class="link" data-entity-1="start" data-entity-2="New" data-source-line="3" data-uid="lnk4" id="link_start_New"><path d="M109.05,63.4569 C109.05,78.9969 109.05,104.7369 109.05,124.1069" fill="none" id="start-to-New" style="stroke:#181818;stroke-width:1;" /><polygon fill="#181818" points="109.05,130.1069,113.05,121.1069,109.05,125.1069,105.05,121.1069,109.05,130.1069" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="101.9595" x="110.05" y="94.5073">Neuen Planeintrag</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="61.311" x="130.3742" y="107.312">hinzuf&#252;gen</text></g><!--link New to Unchanged--><g class="link" data-entity-1="New" data-entity-2="Unchanged" data-source-line="4" data-uid="lnk6" id="link_New_Unchanged"><path d="M109.05,164.3469 C109.05,185.6369 109.05,217.0069 109.05,238.2769" fill="none" id="New-to-Unchanged" style="stroke:#181818;stroke-width:1;" /><polygon fill="#181818" points="109.05,244.2769,113.05,235.2769,109.05,239.2769,105.05,235.2769,109.05,244.2769" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="82.688" x="135.7158" y="195.5073">Autmatisch bei</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="117.4336" x="118.343" y="208.312">Read-to-Write-Zugriff</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="134.0195" x="110.05" y="221.1167">(durch Fachanwendung)</text></g><!--link Changed to Unchanged--><g class="link" data-entity-1="Changed" data-entity-2="Unchanged" data-source-line="5" data-uid="lnk8" id="link_Changed_Unchanged"><path d="M74.92,358.1569 C78.4,352.0669 82.16,344.9969 85.05,338.2969 C93.69,318.2169 99.2589,299.7729 103.4389,284.1529" fill="none" id="Changed-to-Unchanged" style="stroke:#181818;stroke-width:1;" /><polygon fill="#181818" points="104.99,278.3569,98.7994,286.0169,103.6975,283.1869,106.5275,288.085,104.99,278.3569" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="82.688" x="125.7158" y="309.5073">Autmatisch bei</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="117.4336" x="108.343" y="322.312">Read-to-Write-Zugriff</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="134.0195" x="100.05" y="335.1167">(durch Fachanwendung)</text></g><!--link Unchanged to Changed--><g class="link" data-entity-1="Unchanged" data-entity-2="Changed" data-source-line="6" data-uid="lnk9" id="link_Unchanged_Changed"><path d="M64.76,268.3369 C46.52,273.2569 27.1,282.1569 16.05,298.2969 C6,312.9669 8.02,322.4369 16.05,338.2969 C20.1,346.3069 22.0305,349.3965 29.2605,354.7265" fill="none" id="Unchanged-to-Changed" style="stroke:#181818;stroke-width:1;" /><polygon fill="#181818" points="34.09,358.2869,29.2193,349.7267,30.0654,355.3199,24.4722,356.166,34.09,358.2869" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="62.7559" x="17.05" y="316.0073">Planeintrag</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="38.9565" x="28.9497" y="328.812">&#228;ndern</text></g><!--link Unchanged to Removed--><g class="link" data-entity-1="Unchanged" data-entity-2="Removed" data-source-line="7" data-uid="lnk11" id="link_Unchanged_Removed"><path d="M153.3,264.5669 C181.22,268.1769 216.35,277.0269 240.05,298.2969 C257.46,313.9269 263.8354,335.0803 266.9154,352.3303" fill="none" id="Unchanged-to-Removed" style="stroke:#181818;stroke-width:1;" /><polygon fill="#181818" points="267.97,358.2369,270.3258,348.6739,267.0911,353.3147,262.4503,350.0801,267.97,358.2369" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="62.7559" x="264.05" y="316.0073">Planeintrag</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="53.9258" x="268.465" y="328.812">entfernen</text></g><!--link Removed to end--><g class="link" data-entity-1="Removed" data-entity-2="end" data-source-line="8" data-uid="lnk13" id="link_Removed_end"><path d="M270.05,392.5169 C270.05,405.2169 270.05,416.4869 270.05,427.2569" fill="none" id="Removed-to-end" style="stroke:#181818;stroke-width:1;" /><polygon fill="#181818" points="270.05,433.2569,274.05,424.2569,270.05,428.2569,266.05,424.2569,270.05,433.2569" style="stroke:#181818;stroke-width:1;" /></g></g></svg></div>
 
-<h4 id="status-der-list-flag-medikationsplan-in-abhängigkeit-von-der-zugriffsart">Status der List-Flag (Medikationsplan) in Abhängigkeit von der Zugriffsart</h4>
+<h4 id="abhängigkeit-list-flag-von-der-zugriffsart">Abhängigkeit List-Flag von der Zugriffsart</h4>
 
 <table>
   <thead>
     <tr>
       <th>Status</th>
-      <th>read-only-Zugriff</th>
-      <th>lesender read-to-write-Zugriff</th>
-      <th>schreibender read-to-write-Zugriff</th>
+      <th>Read-only-Zugriff</th>
+      <th>Read-to-Write-Zugriff</th>
+      <th>Schreibender Zugriff</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>New</strong></td>
-      <td>- List-Entries, die vom Vorgänger-GDA mit <em>new</em> geflaggt wurden, bleiben beim read-only-Zugriff unverändert.<br />- Die neuen MedicationRequests sind im Collection Bundle enthalten.</td>
-      <td><br />- List-Entries, die vom Vorgänger-GDA mit <em>new</em> geflaggt wurden, werden beim lesenden read-to-write-Zugriff von der <strong>Fachanwendung</strong> als <strong><em>unchanged</em></strong> geflaggt.<br />- Die betreffenden MedicationRequests sind im Collection Bundle enthalten.</td>
-      <td>- List-Entries, die beim schreibenden read-to-write-Zugriff vom aktuellen GDA mit <em>new</em> geflaggt wurden, werden dem Medikationsplan neu hinzugefügt.<br />- Die betreffenden MedicationRequests müssen im Transaction Bundle enthalten sein.</td>
+      <td><strong>new</strong></td>
+      <td>- List-Entries, die vom Vorgänger-GDA mit <em>new</em> geflaggt wurden, bleiben beim read-only-Zugriff <strong>unverändert</strong>.<br />- Die neuen MedicationRequests sind im Collection Bundle enthalten.</td>
+      <td>- List-Entries, die vom Vorgänger-GDA mit <em>new</em> geflaggt wurden, werden beim read-to-write-Zugriff von der <strong>Fachanwendung</strong> als <strong>unchanged</strong> geflaggt.<br />- Die betreffenden MedicationRequests sind im Collection Bundle enthalten.</td>
+      <td>- List-Entries, die beim schreibenden Zugriff vom aktuellen GDA mit <em>new</em> geflaggt wurden, werden dem Medikationsplan neu hinzugefügt.<br />- Die betreffenden MedicationRequests müssen im Transaction Bundle <strong>enthalten</strong> sein.</td>
     </tr>
     <tr>
-      <td><strong>Unchanged</strong></td>
-      <td>- List-Entries, die vom Vorgänger-GDA mit <em>unchanged</em> geflaggt wurden, bleiben beim read-only-Zugriff unverändert.<br />- Die unveränderten MedicationRequests sind im Collection Bundle enthalten.</td>
-      <td>- List-Entries, die vom Vorgänger-GDA als <em>unchanged</em> geflaggt wurden, bleiben beim lesenden read-to-write-Zugriff von der Fachanwendung unverändert.<br />- Die betreffenden MedicationRequests sind im Collection Bundle enthalten.</td>
-      <td>- List-Entries, die beim vom aktuellen GDA nicht verändert wurden, bleiben beim schreibenden read-to-write-Zugriff mit <em>unchanged</em> geflaggt. Sie gelten somit als zur Kenntnis genommen.<br />-  Die betreffenden MedicationRequests sind nicht im Transaction Bundle enthalten, sondern werden nur in der Liste referenziert.</td>
+      <td><strong>unchanged</strong></td>
+      <td>- List-Entries, die vom Vorgänger-GDA mit <em>unchanged</em> geflaggt wurden, bleiben beim read-only-Zugriff <strong>unverändert</strong>.<br />- Die unveränderten MedicationRequests sind im Collection Bundle enthalten.</td>
+      <td>- List-Entries, die vom Vorgänger-GDA als <em>unchanged</em> geflaggt wurden, bleiben beim read-to-write-Zugriff von der Fachanwendung unverändert.<br />- Die betreffenden MedicationRequests sind im Collection Bundle enthalten.</td>
+      <td>- List-Entries, die vom aktuellen GDA nicht verändert wurden, bleiben beim schreibenden Zugriff mit <em>unchanged</em> geflaggt. Sie gelten somit als zur Kenntnis genommen.<br />-  Die betreffenden MedicationRequests sind nicht im Transaction Bundle enthalten, sondern werden in der Liste <strong>nur referenziert</strong>.</td>
     </tr>
     <tr>
-      <td><strong>Changed</strong></td>
-      <td>- List-Entries, die vom Vorgänger-GDA mit <em>changed</em> geflaggt wurden, bleiben beim read-only-Zugriff unverändert.<br />- Die geänderten MedicationRequests sind im Collection Bundle enthalten.</td>
-      <td>- List-Entries, die vom Vorgänger-GDA mit <em>changed</em> geflaggt wurden, werden beim lesenden read-to-write-Zugriff von der <strong>Fachanwendung</strong> als <strong><em>unchanged</em></strong> geflaggt.<br />- Die betreffenden MedicationRequests sind im Collection Bundle enthalten.</td>
-      <td>- List-Entries, die vom aktuellen GDA mit <em>changed</em> geflaggt werden, wurden geändert.<br />- Die betreffenden MedicationRequests müssen im Transaction Bundle enthalten sein.</td>
+      <td><strong>changed</strong></td>
+      <td>- List-Entries, die vom Vorgänger-GDA mit <em>changed</em> geflaggt wurden, bleiben beim read-only-Zugriff <strong>unverändert</strong>.<br />- Die geänderten MedicationRequests sind im Collection Bundle enthalten.</td>
+      <td>- List-Entries, die vom Vorgänger-GDA mit <em>changed</em> geflaggt wurden, werden beim read-to-write-Zugriff von der <strong>Fachanwendung</strong> als <strong>unchanged</strong> geflaggt.<br />- Die betreffenden MedicationRequests sind im Collection Bundle enthalten.</td>
+      <td>- List-Entries, die vom aktuellen GDA mit <em>changed</em> geflaggt werden, wurden geändert.<br />- Die betreffenden MedicationRequests müssen im Transaction Bundle <strong>enthalten</strong> sein.</td>
     </tr>
     <tr>
-      <td><strong>Removed</strong></td>
-      <td>- List-Entries, die vom Vorgänger-GDA mit <em>removed</em> geflaggt wurden, bleiben beim read-only-Zugriff unverändert.<br />- Die zum Entfernen markierten MedicationRequests sind im Collection Bundle enthalten.</td>
-      <td>- List-Entries, die vom Vorgänger-GDA mit <em>removed</em> geflaggt wurden, werden beim lesenden read-to-write-Zugriff von der <strong>Fachanwendung</strong> <strong>entfernt</strong>.<br />- Die betreffenden MedicationRequests sind <strong>nicht</strong> im Collection Bundle enthalten.</td>
-      <td>- List-Entries, die beim schreibenden read-to-write-Zugriff vom aktuellen GDA mit <em>removed</em> geflaggt wurden, sollen aus dem Medikationsplan entfernt werden.<br />- Die betreffenden MedicationRequests werden u.a. mit dem Status entsprechenden Statuts geflaggt und müssen im Transaction Bundle mitgeliefert werden.</td>
+      <td><strong>removed</strong></td>
+      <td>- List-Entries, die vom Vorgänger-GDA mit <em>removed</em> geflaggt wurden, bleiben beim read-only-Zugriff <strong>unverändert</strong>.<br />- Die zum Entfernen markierten MedicationRequests sind im Collection Bundle enthalten.</td>
+      <td>- List-Entries, die vom Vorgänger-GDA mit <em>removed</em> geflaggt wurden, werden beim read-to-write-Zugriff von der <strong>Fachanwendung entfernt</strong>.<br />- Die betreffenden MedicationRequests sind im Collection Bundle <strong>nicht enthalten</strong>.</td>
+      <td>- List-Entries, die beim schreibenden Zugriff vom aktuellen GDA mit <em>removed</em> geflaggt wurden, sollen aus dem Medikationsplan entfernt werden.<br />- Die betreffenden MedicationRequests werden u.a. mit dem Status entsprechenden Statuts geflaggt und müssen im Transaction Bundle <strong>enthalten</strong> sein.</td>
     </tr>
   </tbody>
 </table>
@@ -388,30 +391,30 @@ width: 100%;}
   <tbody>
     <tr>
       <td><strong>active</strong></td>
-      <td>Planeintrag ist aktiv/gültig</td>
+      <td>Planeintrag dokumentiert aktive Therapie: Medikation soll aktuell vom Patienten eingenommen werden</td>
     </tr>
     <tr>
       <td><strong>on-hold</strong></td>
-      <td>Planeintrag ist pausiert</td>
+      <td>Planeintrag ist pausiert: Therapie wurde vorübergehend unterbrochen, Wiederaufnahme ist vorgesehen</td>
     </tr>
     <tr>
       <td><strong>completed</strong></td>
-      <td>Planeintrag ist beendet (automatisch durch Ablauf des Behandlungszeitraums,<br />wenn keine erneute Verordnung) TODO: zu prüfen, ob dieser Status benötigt wird</td>
+      <td>Planeintrag ist beendet: Therapie wurde regulär/durch Ablauf des Behandlungszeitraums abgeschlossen, wenn keine erneute Verordnung erfolgt ist</td>
     </tr>
     <tr>
       <td><strong>stopped</strong></td>
-      <td>Planeintrag ist abgesetzt (vor Ablauf des Behandlungszeitraums)</td>
+      <td>Planeintrag ist abgesetzt: Therapie wurde begonnen, aber vorzeitig und ohne regulären Abschluss beendet (vor Ablauf des Behandlungszeitraums)</td>
     </tr>
     <tr>
       <td><strong>entered-in-error</strong></td>
-      <td>Storno/falscher Planeintrag</td>
+      <td>Planeintrag ist storniert: falscher Planeintrag</td>
     </tr>
   </tbody>
 </table>
 
 <div><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="ACTIVITY" height="321px" preserveAspectRatio="none" style="width:412px;height:321px;background:#FFFFFF;" version="1.1" viewBox="0 0 412 321" width="412px" zoomAndPan="magnify"><title>MedicationRequest Status</title><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="207.9424" x="95.4055" y="22.9951">MedicationRequest Status</text><ellipse cx="245.5" cy="53.2969" fill="#222222" rx="10" ry="10" style="stroke:#222222;stroke-width:1;" /><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="56.4746" x="289.5" y="130.2969" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="36.4746" x="299.5" y="151.4355">active</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="65.1758" x="148" y="130.2969" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="45.1758" x="158" y="151.4355">on-hold</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="116.1348" x="72.5" y="218.2969" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="96.1348" x="82.5" y="239.4355">entered-in-error</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="68.5332" x="7" y="130.2969" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="48.5332" x="17" y="151.4355">stopped</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="83.668" x="208.5" y="218.2969" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="63.668" x="218.5" y="239.4355">completed</text><ellipse cx="130.5" cy="304.2969" fill="none" rx="11" ry="11" style="stroke:#222222;stroke-width:1;" /><ellipse cx="130.5" cy="304.2969" fill="#222222" rx="6" ry="6" style="stroke:#222222;stroke-width:1;" /><!--link start to active--><g class="link" data-entity-1="start" data-entity-2="active" data-source-line="3" data-uid="lnk4" id="link_start_active"><path d="M254.58,58.1569 C264.58,62.8169 280.54,71.5169 290.5,83.2969 C302.1,97.0169 307.7072,110.7236 311.7472,124.3736" fill="none" id="start-to-active" style="stroke:#181818;stroke-width:1;" /><polygon fill="#181818" points="313.45,130.1269,314.7313,120.3617,312.031,125.3325,307.0603,122.6321,313.45,130.1269" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="98.2534" x="306.5" y="101.0073">neuer Planeintrag</text></g><!--link start to on-hold--><g class="link" data-entity-1="start" data-entity-2="on-hold" data-source-line="4" data-uid="lnk6" id="link_start_on-hold"><path d="M235.78,56.4169 C222.94,59.7669 200.66,67.5869 189.5,83.2969 C179.84,96.8969 178.2396,110.3806 178.7196,124.0606" fill="none" id="start-to-on-hold" style="stroke:#181818;stroke-width:1;" /><polygon fill="#181818" points="178.93,130.0569,182.6119,120.9221,178.7547,125.06,174.6169,121.2027,178.93,130.0569" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="98.2534" x="190.5" y="94.5073">neuer Planeintrag</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45.085" x="217.0842" y="107.312">pausiert</text></g><!--link on-hold to active--><g class="link" data-entity-1="on-hold" data-entity-2="active" data-source-line="5" data-uid="lnk7" id="link_on-hold_active"><path d="M213.31,147.2969 C236.43,147.2969 261.07,147.2969 283.13,147.2969" fill="none" id="on-hold-to-active" style="stroke:#181818;stroke-width:1;" /><polygon fill="#181818" points="289.13,147.2969,280.13,143.2969,284.13,147.2969,280.13,151.2969,289.13,147.2969" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55.0752" x="223.75" y="141.5073">aktivieren</text></g><!--reverse link on-hold to active--><g class="link" data-entity-1="on-hold" data-entity-2="active" data-source-line="11" data-uid="lnk19" id="link_on-hold_active"><path d="M218.9957,163.5405 C222.3157,164.5805 219.96,163.6669 223.25,164.2969 C247.69,168.9769 254.9,169.4669 279.25,164.2969 C282.52,163.6069 285.85,162.6069 289.11,161.4469" fill="none" id="on-hold-backto-active" style="stroke:#181818;stroke-width:1;" /><polygon fill="#181818" points="213.27,161.7469,220.6628,168.2543,218.0414,163.2415,223.0542,160.6201,213.27,161.7469" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="54.5112" x="224.25" y="161.5073">pausieren</text></g><!--link on-hold to entered-in-error--><g class="link" data-entity-1="on-hold" data-entity-2="entered-in-error" data-source-line="6" data-uid="lnk9" id="link_on-hold_entered-in-error"><path d="M147.96,157.6069 C134.86,163.1269 121.09,171.6069 113.5,184.2969 C107.2,194.8369 109.0497,202.9099 115.1997,213.0999" fill="none" id="on-hold-to-entered-in-error" style="stroke:#181818;stroke-width:1;" /><polygon fill="#181818" points="118.3,218.2369,117.0742,208.4646,115.7164,213.9561,110.2249,212.5983,118.3,218.2369" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="56.3535" x="114.5" y="195.5073">stornieren</text></g><!--reverse link stopped to on-hold--><g class="link" data-entity-1="stopped" data-entity-2="on-hold" data-source-line="7" data-uid="lnk12" id="link_stopped_on-hold"><path d="M82.22,147.2969 C104.09,147.2969 126.15,147.2969 147.66,147.2969" fill="none" id="stopped-backto-on-hold" style="stroke:#181818;stroke-width:1;" /><polygon fill="#181818" points="76.22,147.2969,85.22,151.2969,81.22,147.2969,85.22,143.2969,76.22,147.2969" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="50.0479" x="87" y="141.5073">absetzen</text></g><!--link on-hold to completed--><g class="link" data-entity-1="on-hold" data-entity-2="completed" data-source-line="8" data-uid="lnk14" id="link_on-hold_completed"><path d="M182.83,164.4369 C184.99,174.9069 189.04,188.3969 196.5,198.2969 C202.4,206.1269 205.5236,209.4799 213.6836,214.8699" fill="none" id="on-hold-to-completed" style="stroke:#181818;stroke-width:1;" /><polygon fill="#181818" points="218.69,218.1769,213.385,209.8789,214.518,215.4211,208.9758,216.5541,218.69,218.1769" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="48.2109" x="197.5" y="195.5073">beenden</text></g><!--reverse link stopped to active--><g class="link" data-entity-1="stopped" data-entity-2="active" data-source-line="9" data-uid="lnk16" id="link_stopped_active"><path d="M57.2972,125.3229 C66.4772,113.7929 76.49,104.2869 92.5,97.7969 C128.18,83.3269 237.42,118.6069 289.42,136.9969" fill="none" id="stopped-backto-active" style="stroke:#181818;stroke-width:1;" /><polygon fill="#181818" points="53.56,130.0169,62.2951,125.4675,56.6744,126.1053,56.0366,120.4845,53.56,130.0169" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="50.0479" x="93.5" y="101.0073">absetzen</text></g><!--link active to completed--><g class="link" data-entity-1="active" data-entity-2="completed" data-source-line="10" data-uid="lnk17" id="link_active_completed"><path d="M327.99,164.6669 C333.16,174.9769 337.03,188.2069 330.5,198.2969 C321.9,211.5969 312.7156,217.9777 298.1556,223.2977" fill="none" id="active-to-completed" style="stroke:#181818;stroke-width:1;" /><polygon fill="#181818" points="292.52,225.3569,302.3462,226.0252,297.2163,223.6409,299.6006,218.5111,292.52,225.3569" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="48.2109" x="334.5" y="195.5073">beenden</text></g><!--link active to entered-in-error--><g class="link" data-entity-1="active" data-entity-2="entered-in-error" data-source-line="12" data-uid="lnk20" id="link_active_entered-in-error"><path d="M295.16,164.3769 C275.18,178.7469 248.82,197.6469 247.5,198.2969 C229.12,207.3869 213.7281,213.0602 194.5081,218.6902" fill="none" id="active-to-entered-in-error" style="stroke:#181818;stroke-width:1;" /><polygon fill="#181818" points="188.75,220.3769,198.5115,221.6856,193.5484,218.9713,196.2626,214.0082,188.75,220.3769" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="56.3535" x="267.5" y="195.5073">stornieren</text></g><!--link stopped to end--><g class="link" data-entity-1="stopped" data-entity-2="end" data-source-line="13" data-uid="lnk22" id="link_stopped_end"><path d="M41.3,164.3869 C41.76,186.0069 45.19,224.8869 62.5,252.2969 C77,275.2569 100.3886,288.9239 115.4386,296.2739" fill="none" id="stopped-to-end" style="stroke:#181818;stroke-width:1;" /><polygon fill="#181818" points="120.83,298.9069,114.4982,291.3631,116.3372,296.7127,110.9876,298.5516,120.83,298.9069" style="stroke:#181818;stroke-width:1;" /></g><!--link entered-in-error to end--><g class="link" data-entity-1="entered-in-error" data-entity-2="end" data-source-line="14" data-uid="lnk23" id="link_entered-in-error_end"><path d="M130.5,252.5169 C130.5,265.2169 130.5,276.4869 130.5,287.2569" fill="none" id="entered-in-error-to-end" style="stroke:#181818;stroke-width:1;" /><polygon fill="#181818" points="130.5,293.2569,134.5,284.2569,130.5,288.2569,126.5,284.2569,130.5,293.2569" style="stroke:#181818;stroke-width:1;" /></g><!--link completed to end--><g class="link" data-entity-1="completed" data-entity-2="end" data-source-line="15" data-uid="lnk24" id="link_completed_end"><path d="M221.76,252.3469 C195.13,267.2069 162.3477,285.5099 145.0077,295.1999" fill="none" id="completed-to-end" style="stroke:#181818;stroke-width:1;" /><polygon fill="#181818" points="139.77,298.1269,149.5778,297.2283,144.1347,295.6878,145.6752,290.2447,139.77,298.1269" style="stroke:#181818;stroke-width:1;" /></g></g></svg></div>
 
-<h5 id="planeintrag-status-in-abhängigkeit-des-flag-status-des-medikationsplans">Planeintrag-Status in Abhängigkeit des Flag-Status des Medikationsplans</h5>
+<h5 id="abhängigkeiten-list-flag-und-medicationreqeust-status">Abhängigkeiten List-Flag und MedicationReqeust-Status</h5>
 
 <table>
   <thead>
@@ -426,63 +429,63 @@ width: 100%;}
   <tbody>
     <tr>
       <td>Neuen Planeintrag zum Medikationsplan hinzufügen</td>
-      <td><strong>New</strong></td>
+      <td><strong>new</strong></td>
       <td><strong>active</strong></td>
       <td>Neuer Planeintrag wird erstellt und ist aktiv<br /> - der Behandlungszeitraum kann in der Zukunft liegen<br /> - Bereits bestehender Planeintrag kann wieder reaktiviert werden (Client-SW)</td>
       <td> </td>
     </tr>
     <tr>
       <td> </td>
-      <td> </td>
+      <td><strong>new</strong></td>
       <td><strong>on-hold</strong></td>
       <td>Neuer Planeintrag wird erstellt, wird aber pausiert</td>
       <td> </td>
     </tr>
     <tr>
       <td>Bestehenden Planeintrag im Medikationsplan beibehalten/zur Kenntnis nehmen</td>
-      <td><strong>Unchanged</strong></td>
+      <td><strong>unchanged</strong></td>
       <td><strong>active</strong></td>
       <td>Bestehender Planeintrag bleibt unverändert<br /> - der Behandlungszeitraum darf noch nicht abgelaufen sein</td>
       <td> </td>
     </tr>
     <tr>
       <td> </td>
-      <td> </td>
+      <td><strong>unchanged</strong></td>
       <td><strong>on-hold</strong></td>
-      <td>Bestehender Planeintrag bleibt unverändert, wird aber pausiert<br /> - der Behandlungszeitraum darf noch nicht abgelaufen sein</td>
+      <td>Bestehender Planeintrag bleibt unverändert pausiert<br /> - der Behandlungszeitraum darf noch nicht abgelaufen sein</td>
       <td> </td>
     </tr>
     <tr>
       <td>Bestehenden Planeintrag im Medikationsplan ändern</td>
-      <td><strong>Changed</strong></td>
+      <td><strong>changed</strong></td>
       <td><strong>active</strong></td>
       <td>Bestehender Planeintrag wird geändert</td>
       <td> </td>
     </tr>
     <tr>
       <td> </td>
-      <td> </td>
+      <td><strong>changed</strong></td>
       <td><strong>on-hold</strong></td>
-      <td>Bestehender Planeintrag wird geändert, wird aber pausiert</td>
+      <td>Bestehender Planeintrag wird geändert und pausiert</td>
       <td> </td>
     </tr>
     <tr>
       <td>Bestehenden Planeintrag aus Medikationsplan entfernen</td>
-      <td><strong>Removed</strong></td>
+      <td><strong>removed</strong></td>
       <td><strong>completed</strong></td>
-      <td>Bestehender Planeintrag wird beendet (durch Ablauf des Behandlungszeitraums,<br /> wenn keine erneute Verordnung) TODO: fachlich prüfen, ob dieser Status   benötigt wird</td>
+      <td>Bestehender Planeintrag wird beendet (durch Ablauf des Behandlungszeitraums, wenn keine erneute Verordnung)</td>
       <td> </td>
     </tr>
     <tr>
       <td> </td>
-      <td> </td>
+      <td><strong>removed</strong></td>
       <td><strong>stopped</strong></td>
       <td>Bestehender Planeintrag wird vor Ablauf des Behandlungszeitraums abgesetzt</td>
       <td> </td>
     </tr>
     <tr>
       <td> </td>
-      <td> </td>
+      <td><strong>removed</strong></td>
       <td><strong>entered-in-error</strong></td>
       <td>Bestehender Planeintrag wird storniert, aufgrund falscher Eingabe</td>
       <td> </td>
@@ -491,10 +494,10 @@ width: 100%;}
 </table>
 
 <h4 id="status-änderungen-des-medicationrequests-in-der-geplanten-abgabe">Status-Änderungen des MedicationRequests in der geplanten Abgabe</h4>
-<p>TODO</p>
+<p>In Arbeit.</p>
 
 <h4 id="status-änderungen-des-medicationdispense-durchgeführte-abgabe">Status-Änderungen des MedicationDispense (durchgeführte Abgabe)</h4>
-<p>TODO</p>
+<p>In Arbeit.</p>
 
 
 
@@ -514,7 +517,7 @@ width: 100%;}
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Apr 7, 2026 16:09+0000">2026-04-07</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Apr 8, 2026 18:33+0000">2026-04-08</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
