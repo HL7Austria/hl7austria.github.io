@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedTransferEncount
   "name" : "MopedTransferEncounterS",
   "title" : "MOPED TransferEncounter Stationär",
   "status" : "draft",
-  "date" : "2026-04-08T06:34:39+00:00",
+  "date" : "2026-04-08T08:16:43+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
