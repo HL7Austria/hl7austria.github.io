@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/AufnahmeartVS | *Version*:0.1.0 | |
-| Draft as of 2026-04-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:AufnahmeartVS |
+| Draft as of 2026-04-08 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:AufnahmeartVS |
 
  
 ValueSet für die Aufnahmeart des Patienten (LKF + Ka-Org) 
@@ -51,7 +51,7 @@ ValueSet für die Aufnahmeart des Patienten (LKF + Ka-Org)
   "title" : "Aufnahmeart des Patienten",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-04-07T19:34:12+00:00",
+  "date" : "2026-04-08T06:34:39+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

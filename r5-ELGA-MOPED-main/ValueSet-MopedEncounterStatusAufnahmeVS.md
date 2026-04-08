@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/MopedEncounterStatusAufnahmeVS | *Version*:0.1.0 | |
-| Draft as of 2026-04-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounterStatusAufnahmeVS |
+| Draft as of 2026-04-08 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounterStatusAufnahmeVS |
 
  
 Varianten des Encounter Status bei der Aufnahme 
@@ -51,7 +51,7 @@ Varianten des Encounter Status bei der Aufnahme
   "title" : "Encounter Status bei der Aufnahme",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-04-07T19:34:12+00:00",
+  "date" : "2026-04-08T06:34:39+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

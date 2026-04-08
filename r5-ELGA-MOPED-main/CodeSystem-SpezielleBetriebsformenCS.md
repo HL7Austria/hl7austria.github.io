@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/SpezielleBetriebsformenCS | *Version*:0.1.0 | |
-| Draft as of 2026-04-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:SpezielleBetriebsformenCS |
+| Draft as of 2026-04-08 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:SpezielleBetriebsformenCS |
 
  
 Spezielle Betriebsformen (gemäß ÖSG bzw. KAKuG) 
@@ -31,7 +31,7 @@ Spezielle Betriebsformen (gemäß ÖSG bzw. KAKuG)
   "name" : "SpezielleBetriebsformenCS",
   "title" : "Spezielle Betriebsform",
   "status" : "draft",
-  "date" : "2026-04-07T19:34:12+00:00",
+  "date" : "2026-04-08T06:34:39+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedLKFResponse | *Version*:0.1.0 | |
-| Draft as of 2026-04-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedLKFResponse |
+| Draft as of 2026-04-08 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedLKFResponse |
 
  
 MOPED Profil der ClaimResponse Ressource für die Leistungsabrechnungsantwort. 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedLKFResponse.csv
   "name" : "MopedLKFResponse",
   "title" : "MOPED LKFResponse",
   "status" : "draft",
-  "date" : "2026-04-07T19:34:12+00:00",
+  "date" : "2026-04-08T06:34:39+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/moped-ext-aufnahmeart | *Version*:0.1.0 | |
-| Draft as of 2026-04-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:Aufnahmeart |
+| Draft as of 2026-04-08 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:Aufnahmeart |
 
 MOPED Extension für die Aufnahmeart.
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-moped-ext-aufnahmear
   "name" : "Aufnahmeart",
   "title" : "Aufnahmeart",
   "status" : "draft",
-  "date" : "2026-04-07T19:34:12+00:00",
+  "date" : "2026-04-08T06:34:39+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

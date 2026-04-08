@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS | *Version*:0.1.0 | |
-| Active as of 2026-04-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:ClaimSupportingInformationCategoryCS |
+| Active as of 2026-04-08 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:ClaimSupportingInformationCategoryCS |
 
  
 Arten von zusätzlichen Informationen in der VAE 
@@ -34,7 +34,7 @@ Arten von zusätzlichen Informationen in der VAE
   "title" : "MOPED VAESupportingInformationCategory",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-04-07T19:34:12+00:00",
+  "date" : "2026-04-08T06:34:39+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

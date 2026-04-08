@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/LKFHauptdiagnosegruppenCS | *Version*:0.1.0 | |
-| Active as of 2026-04-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LKFHauptdiagnosegruppenCS |
+| Active as of 2026-04-08 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LKFHauptdiagnosegruppenCS |
 
  
 LKF Hauptdiagnosegruppen 
@@ -33,7 +33,7 @@ LKF Hauptdiagnosegruppen
   "title" : "LKF Hauptdiagnosegruppen",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-04-07T19:34:12+00:00",
+  "date" : "2026-04-08T06:34:39+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

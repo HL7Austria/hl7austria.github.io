@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/Questionnaire/LKFB06Questionnaire | *Version*:0.1.0 | |
-| Active as of 2026-04-07 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
+| Active as of 2026-04-08 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
 
  
 B06 Questionnaire - Zuschussstruktur (ZS) 
@@ -26,7 +26,7 @@ B06 Questionnaire - Zuschussstruktur (ZS)
   "version" : "0.1.0",
   "title" : "LKF B06 Questionnaire",
   "status" : "active",
-  "date" : "2026-04-07T19:34:12+00:00",
+  "date" : "2026-04-08T06:34:39+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

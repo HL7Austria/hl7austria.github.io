@@ -15,9 +15,9 @@ Dieses Vorgehen erlaubt eine flexible Modellierung realer Prozessvarianten: Die 
 
 Die folgenden Prozesse in ihrem Standardablauf werden im Detail beschrieben:
 
-* [Moped Fall Stationär](AF_moped_fall_ueberblick.md#anwendungsfall-standardablauf-im-sunshine-case)
-* [Moped Fall Ambulant](AF_moped_fall_ueberblick.md#anwendungsfall-3-ambulanter-fall)
-* [Moped Fall Selbstzahler](AF_moped_fall_ueberblick.md#anwendungsfall-14-selbstzahler)
+* [Moped Fall Stationär](AF_moped_fall_ueberblick.md#standardablauf-moped-fall-stationär)
+* [Moped Fall Ambulant](AF_moped_fall_ueberblick.md#standardablauf-moped-fall-ambulant)
+* [Moped Fall Selbstzahler](AF_moped_fall_ueberblick.md#standardablauf-moped-fall-selbstzahler)
 
 Die einzelnen Schritte dieser Standardabläufe sowie mögliche Abweichungen werden als „puzzleartig“ zusammensetzbare Teilprozesse beschrieben – jeweils mit ihren jeweiligen Vor- und Nachbedingungen. Dadurch wird nachvollziehbar, an welchen Stellen innerhalb des Gesamtprozesses die einzelnen Teilprozesse zur Anwendung kommen können.
 
@@ -38,20 +38,277 @@ Eine Übersicht aller Teilprozesse findet sich [hier](#liste-der-teilprozesse).
 
 | | |
 | :--- | :--- |
-| Ambulant | ✅ |
+| Ambulant | ❌ |
 | Stationär | ✅ |
 
 #### Beschreibung: Susi Sonnenschein
 
-Die Patientin Susi Sonnenschein wird stationär aufgenommen. Im Verlauf ihres Aufenthalts wird sie verlegt, der zuständige Versicherer wird festgelegt und angefragt und Diagnosen sowie Leistungen werden dokumentiert. Nach Entlassung erfolgt die Abrechnung und Freigabe der Fallakte zur Einsicht durch den Bund sowie die Meldung der Kosteninformation an die SV.
+Die Patientin Susi Sonnenschein wird stationär aufgenommen. Im Verlauf ihres Aufenthalts wird sie verlegt, der zuständige Versicherer wird festgelegt und angefragt und Diagnosen sowie Leistungen werden dokumentiert. Nach Entlassung erfolgt die Abrechnung und Freigabe des Moped-Falls zur Einsicht durch den Bund sowie die Meldung der Kosteninformation an die SV.
 
 #### Beispiel
 
-#### Technische Hinweise
-
 #### Vorbedingung
 
+Es existiert kein Fall mit der selben Schlüsselkombination.
+
 #### Ablauf
+
+#### 1: Aufnehmen
+
+Aufnehmen Operation ausführen und alle bereits vorhandenen Informationen zu Coverage, Aufnahmediagnose, Patient,... mitgeben.
+
+Request
+
+POST
+`[base]/$aufnehmen`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 2: VAE Anfrage stellen
+
+VAE Anfrage an die SV stellen mit $anfragen
+
+Request
+
+POST
+`[base]/Composition/{id}/_history/{version}/$anfragen`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 3a: Offene VAEs abrufen
+
+offene VAEs vom Server abrufen
+
+Request
+
+GET
+`[base]/Claim?status=active&use=preauthorization&_has:ClaimResponse:request:status:not=active`
+
+**Headers:**
+`Accept: application/fhir+json`
+
+Response Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 3b: VAE beantworten
+
+VAE mit positiver Antwort einbringen
+
+Request
+
+POST
+`[base]/Composition/{id}/_history/{version}/$antworten`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 4a: Aktuellen Fall abrufen
+
+Krankenanstalt ruft die aktuellen Falldaten ab (inklusive der neuen VAE Antwort)
+
+Request
+
+GET
+`[base]/Composition/{id}`
+
+**Headers:**
+`Accept: application/fhir+json`
+
+Response Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 4b: Fall aktualisieren
+
+Verlegung auf Abteilung Innere Medizin einbringen
+
+Request
+
+POST
+`[base]/Composition/{id}/_history/{version}/$update`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 5: Diagnose und Leistung erfassen
+
+Diagnosen und Leistungen zum Fall ergänzen
+
+Request
+
+POST
+`[base]/Composition/{id}/_history/{version}/$update`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 6: Entlassung
+
+Susi Sonnenschein entlassen
+
+Request
+
+POST
+`[base]/Composition/{id}/_history/{version}/$entlassen`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 7: Abrechnung einbringen
+
+Die Daten zur Abrechnung werden eingebracht und dem LGF als vorläufige Abrechnung zur Verfügung gestellt.
+
+Request
+
+POST
+`[base]/Composition/{id}/_history/{version}/$abrechnen`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 8a: Unbeantwortete Abrechnungen abrufen
+
+unbeantwortete Abrechnungen abfragen, für welche noch keine Antwort (Genehmigung/Ablehnung) eingebracht wurde
+
+Request
+
+GET
+`[base]/Claim?status=active&use=claim&_has:ClaimResponse:request:status:not=active`
+
+**Headers:**
+`Accept: application/fhir+json`
+
+Response Body
+TBD mit der tatsächlichen Beispielressource ersetzen Hier würden typischerweise sehr viele Ergebnisse zurückgeliefert werden (alle derzeit für den LGF verfügbaren Abrechnungen, die noch keine Antwort erhalten haben).
+
+#### 8b: Vorläufig genehmigen
+
+vorläufige Genehmigung (inkl. Bestätigung der Punkte einbringen)
+
+Request
+
+POST
+`[base]/Composition/{id}/_history/{version}/$genehmigen`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 9a: Fall erneut abrufen
+
+Krankenanstalt ruft die aktuellen Falldaten ab (inklusive der neuen bestätigten Punkte)
+
+Request
+
+GET
+`[base]/Composition/{id}`
+
+**Headers:**
+`Accept: application/fhir+json`
+
+Response Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 9b: Endgültig abrechnen
+
+Die endgültige Abrechnung wird eingebracht und dem LGF zur Verfügung gestellt.
+
+Request
+
+POST
+`[base]/Composition/{id}/_history/{version}/$abrechnen`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 10a: Endgültige unbeantwortete Abrechnungen abrufen
+
+Die offenen endgültige Abrechnungen abfragen, für welche noch keine Antwort (Genehmigung/Ablehnung) eingebracht wurde.
+
+Request
+
+GET
+`[base]/Claim?status=active&use=claim&endgueltig=true&_has:ClaimResponse:request:status:not=active`
+
+**Headers:**
+`Accept: application/fhir+json`
+
+Response Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 10b: Endgültig genehmigen
+
+Die endgültige Genehmigung (inkl. Bestätigung der Punkte einbringen) einbringen.
+
+Request
+
+POST
+`[base]/Composition/{id}/_history/{version}/$genehmigen`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 11: Kosteninformation abrufen
+
+Alle verfügbaren Kosteninformationen werden von der SV abgerufen
+
+Request
+
+GET
+`[base]/ClaimResponse?status=active&use=claim&endgueltig=true`
+
+**Headers:**
+`Accept: application/fhir+json`
+
+Response Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 12: Finale Composition abrufen
+
+Die vollständig befüllten und vom LGF genehmigten Fälle werden vom Bund abgerufen.
+
+Request
+
+GET
+`[base]/Composition?status=final`
+
+**Headers:**
+`Accept: application/fhir+json`
+
+Response Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### Technische Hinweise
 
 #### Relevante Profile
 
@@ -92,7 +349,7 @@ Das KH möchte benachrichtigt werden, wenn ein VAERequest abgelehnt wurde. Das z
   * Relevantes Feld: VAEResponse.decision
   * Bedingung: != #00 AND != #19
 
-### Standardablauf Moped-Fall Ambulant
+### Standardablauf Moped-Fall ambulant
 
 #### Betroffene Akteure
 
@@ -117,6 +374,10 @@ Ein Patient kommt in die Ambulanz und wird behandelt. Ambulanter Besuch (LKF Beh
 #### Beispiel
 
 Ein Patient kommt mit einem gebrochenen Arm in das KH, wird dort behandelt (Röntgen, Gips, etc.) und kann nach ein paar Stunden wieder nach Hause gehen.
+
+#### Vorbedingung
+
+Es existiert kein Fall mit der selben Schlüsselkombination.
 
 #### Ablauf
 
@@ -150,7 +411,7 @@ POST
 Request Body
 TBD mit der tatsächlichen Beispielressource ersetzen
 
-#### 3a: offene VAEs abrufen
+#### 3a: Offene VAEs abrufen
 
 offene VAEs vom Server abrufen
 
@@ -180,7 +441,7 @@ POST
 Request Body
 TBD mit der tatsächlichen Beispielressource ersetzen
 
-#### 4a: aktuellen Fall abrufen
+#### 4a: Aktuellen Fall abrufen
 
 Krankenanstalt ruft die aktuellen Falldaten ab (inklusive der neuen VAE Antwort)
 
@@ -255,9 +516,9 @@ POST
 Request Body
 TBD mit der tatsächlichen Beispielressource ersetzen
 
-#### 8a: offene Abrechnungen abrufen
+#### 8a: Unbeantwortete Abrechnungen abrufen
 
-offene Abrechnungen abfragen, für welche noch keine Antwort (Genehmigung/Ablehnung) eingebracht wurde
+Unbeantwortete Abrechnungen abfragen, für welche noch keine Antwort (Genehmigung/Ablehnung) eingebracht wurde
 
 Request
 
@@ -270,7 +531,7 @@ GET
 Response Body
 TBD mit der tatsächlichen Beispielressource ersetzen Hier würden typischerweise sehr viele Ergebnisse zurückgeliefert werden (alle derzeit für den LGF verfügbaren Abrechnungen, die noch keine Antwort erhalten haben).
 
-#### 8b: vorläufig genehmigen
+#### 8b: Vorläufig genehmigen
 
 vorläufige Genehmigung (inkl. Bestätigung der Punkte einbringen)
 
@@ -300,7 +561,7 @@ GET
 Response Body
 TBD mit der tatsächlichen Beispielressource ersetzen
 
-#### 9b: final abrechnen
+#### 9b: Endgültig abrechnen
 
 Die endgültige Abrechnung wird eingebracht und dem LGF zur Verfügung gestellt.
 
@@ -315,7 +576,7 @@ POST
 Request Body
 TBD mit der tatsächlichen Beispielressource ersetzen
 
-#### 10a: endgültige offene Abrechnung abrufen
+#### 10a: Endgültige unbeantwortete Abrechnung abrufen
 
 Die offenen endgültige Abrechnungen abfragen, für welche noch keine Antwort (Genehmigung/Ablehnung) eingebracht wurde.
 
@@ -330,7 +591,7 @@ GET
 Response Body
 TBD mit der tatsächlichen Beispielressource ersetzen
 
-#### 10b: endgültig genehmigen
+#### 10b: Endgültig genehmigen
 
 Die endgültige Genehmigung (inkl. Bestätigung der Punkte einbringen) einbringen.
 
@@ -426,7 +687,7 @@ Der Transferencounter entspricht nicht wie beim stationären Fall der Verlegung/
 
 ### Standardablauf Moped-Fall Selbstzahler
 
-### Betroffene Akteure
+#### Betroffene Akteure
 
 | | |
 | :--- | :--- |
@@ -435,36 +696,214 @@ Der Transferencounter entspricht nicht wie beim stationären Fall der Verlegung/
 | SV (Sozialversicherung) | ❌ |
 | Bund | ✅ |
 
-### Betroffene Behandlungsarten
+#### Betroffene Behandlungsarten
 
 | | |
 | :--- | :--- |
 | Ambulant | ✅ |
 | Stationär | ✅ |
 
-### Beschreibung: Selbstzahler
+#### Beschreibung: Selbstzahler
 
 Vorgehensweise für Patienten, die nicht über die Sozialversicherungsschiene gemeldet werden, da sie Selbstzahler sind, jedoch im LKF aufscheinen.
 
-### Beispiel
+#### Beispiel
 
 Nicht-EU Ausländer (z.B. US -Bürger), Patienten die über die Sozialhilfe oder Justizanstalten abgerechnet werden 
 
-### Technische Hinweise
+#### Vorbedingung
+
+Es existiert kein Fall mit der selben Schlüsselkombination.
+
+#### Ablauf
+
+#### 1: Aufnehmen
+
+Aufnehmen Operation ausführen und alle bereits vorhandenen Informationen zu Selbstzahler-Coverage, Aufnahmediagnose, Patient,... mitgeben.
+
+Request
+
+POST
+`[base]/$aufnehmen`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 2: Fall aktualisieren
+
+Verlegung auf Abteilung Innere Medizin einbringen
+
+Request
+
+POST
+`[base]/Composition/{id}/_history/{version}/$update`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 3: Diagnose und Leistung erfassen
+
+Diagnosen und Leistungen zum Fall ergänzen
+
+Request
+
+POST
+`[base]/Composition/{id}/_history/{version}/$update`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 4: Entlassung
+
+Susi Sonnenschein entlassen
+
+Request
+
+POST
+`[base]/Composition/{id}/_history/{version}/$entlassen`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 5: Abrechnung einbringen
+
+Die Daten zur Abrechnung werden eingebracht und dem LGF als vorläufige Abrechnung zur Verfügung gestellt.
+
+Request
+
+POST
+`[base]/Composition/{id}/_history/{version}/$abrechnen`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 6a: Unbeantwortete Abrechnungen abrufen
+
+unbeantwortete Abrechnungen abfragen, für welche noch keine Antwort (Genehmigung/Ablehnung) eingebracht wurde
+
+Request
+
+GET
+`[base]/Claim?status=active&use=claim&_has:ClaimResponse:request:status:not=active`
+
+**Headers:**
+`Accept: application/fhir+json`
+
+Response Body
+TBD mit der tatsächlichen Beispielressource ersetzen Hier würden typischerweise sehr viele Ergebnisse zurückgeliefert werden (alle derzeit für den LGF verfügbaren Abrechnungen, die noch keine Antwort erhalten haben).
+
+#### 6b: Vorläufig genehmigen
+
+vorläufige Genehmigung (inkl. Bestätigung der Punkte einbringen)
+
+Request
+
+POST
+`[base]/Composition/{id}/_history/{version}/$genehmigen`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 7a: Fall erneut abrufen
+
+Krankenanstalt ruft die aktuellen Falldaten ab (inklusive der neuen bestätigten Punkte)
+
+Request
+
+GET
+`[base]/Composition/{id}`
+
+**Headers:**
+`Accept: application/fhir+json`
+
+Response Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 7b: Endgültig abrechnen
+
+Die endgültige Abrechnung wird eingebracht und dem LGF zur Verfügung gestellt.
+
+Request
+
+POST
+`[base]/Composition/{id}/_history/{version}/$abrechnen`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 8a: Endgültige unbeantwortete Abrechnungen abrufen
+
+Die endgültige Abrechnungen abfragen, für welche noch keine Antwort (Genehmigung/Ablehnung) eingebracht wurde.
+
+Request
+
+GET
+`[base]/Claim?status=active&use=claim&endgueltig=true&_has:ClaimResponse:request:status:not=active`
+
+**Headers:**
+`Accept: application/fhir+json`
+
+Response Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 8b: Endgültig genehmigen
+
+Die endgültige Genehmigung (inkl. Bestätigung der Punkte einbringen) einbringen.
+
+Request
+
+POST
+`[base]/Composition/{id}/_history/{version}/$genehmigen`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### 9: Finale Composition abrufen
+
+Die vollständig befüllten und vom LGF genehmigten Fälle werden vom Bund abgerufen.
+
+Request
+
+GET
+`[base]/Composition?status=final`
+
+**Headers:**
+`Accept: application/fhir+json`
+
+Response Body
+TBD mit der tatsächlichen Beispielressource ersetzen
+
+#### Technische Hinweise
 
 Die Composition Section zustaendigeSV bleibt in diesem Fall leer, was Auswirkungen auf die Berechtigungen und den weiteren Ablauf hat. Die Operation $melden ist z.B. in diesem Fall nicht erlaubt und würde fehlschlagen.
 
-### Ablauf
-
-### Relevante Profile
+#### Relevante Profile
 
 * Selbstzahler Coverage (TBD Link)
-
-### Relevante Invarianten
-
-### Mögliche Notifications
-
-Keine relevanten Notifications für diesen Standardablauf identifiziert.
 
 ### Liste der Teilprozesse:
 
