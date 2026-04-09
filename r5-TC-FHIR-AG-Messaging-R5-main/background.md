@@ -5,13 +5,3 @@
 
 ## Background
 
-# ATMessaging
-
-### Heading 1
-
- Some text 
-
-### Heading 2
-
- ![](anImage.png) 
-
