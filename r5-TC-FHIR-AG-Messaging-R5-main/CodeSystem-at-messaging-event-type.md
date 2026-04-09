@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-event-type | *Version*:0.1.0 | |
-| Draft as of 2026-03-18 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingEventType |
+| Draft as of 2026-04-09 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingEventType |
 | **Usage:**Jurisdiction: Austria | | |
 
  
@@ -33,7 +33,7 @@ Event Coding for discriminating messages on the receiver.
   "title" : "AT Messaging Event Type",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-03-18T15:56:08+00:00",
+  "date" : "2026-04-09T09:35:35+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ValueSet/at-messaging-event-type-vs | *Version*:0.1.0 | |
-| Draft as of 2026-03-18 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingEventTypeVS |
+| Draft as of 2026-04-09 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingEventTypeVS |
 | **Usage:**Jurisdiction: Austria | | |
 
  
@@ -17,7 +17,6 @@ Extensible ValueSet consisting of the Message Event Type Codings.
 
  **References** 
 
-* [AT Messaging Message Header](StructureDefinition-at-messaging-message-header.md)
 * [AT Messaging Message Header](StructureDefinition-at-messaging-message-header.md)
 
 ### Logical Definition (CLD)
@@ -53,7 +52,7 @@ Extensible ValueSet consisting of the Message Event Type Codings.
   "title" : "AT Message Event Type ValueSet",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-03-18T15:56:08+00:00",
+  "date" : "2026-04-09T09:35:35+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",

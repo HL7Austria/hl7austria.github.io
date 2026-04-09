@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ActorDefinition/SenderActor | *Version*:0.1.0 | |
-| Draft as of 2026-03-18 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:SenderActor |
+| Draft as of 2026-04-09 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:SenderActor |
 | **Usage:**Jurisdiction: Austria | | |
 
  
@@ -28,7 +28,7 @@ The actor that assembles and submits the FHIR message.
   "name" : "SenderActor",
   "title" : "Sender Actor",
   "status" : "draft",
-  "date" : "2026-03-18T15:56:08+00:00",
+  "date" : "2026-04-09T09:35:35+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
