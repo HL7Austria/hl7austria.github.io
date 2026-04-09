@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-messaging-communi
   "name" : "ATMessagingCommunicationRequest",
   "title" : "AT Messaging CommunicationRequest",
   "status" : "draft",
-  "date" : "2026-04-09T11:10:35+00:00",
+  "date" : "2026-04-09T11:58:42+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
