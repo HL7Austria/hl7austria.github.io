@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-dosage.csv),
   "name" : "AtEmedDosage",
   "title" : "ELGA e-Med Dosage",
   "status" : "draft",
-  "date" : "2026-04-09T06:40:16+00:00",
+  "date" : "2026-04-09T18:30:31+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -9,7 +9,7 @@ In diesem Abschnitt werden die Technischen Use Cases im Rahmen der e-Medikation 
 
 ### Liste der Technischen Use Cases
 
-* [Medikationsplan schreiben (UC_eMed_06)](Sub_UC_eMed_06.md)
-* [Geplante Abgabe schreiben (UC_eMed_08)](Sub_UC_eMed_08.md)
-* [Durchgeführte Abgabe schreiben (UC_eMed_09)](Sub_UC_eMed_09.md)
+* [Technische UC zu Medikationsplan schreiben (UC_eMed_06)](Sub_UC_eMed_06.md)
+* [Technische UC zu Geplante Abgabe schreiben (UC_eMed_08)](Sub_UC_eMed_08.md)
+* [Technische UC zu Durchgeführte Abgabe schreiben (UC_eMed_09)](Sub_UC_eMed_09.md)
 

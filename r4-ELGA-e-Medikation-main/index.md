@@ -33,7 +33,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-04-09T06:40:16+00:00",
+  "date" : "2026-04-09T18:30:31+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -794,7 +794,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "List/At-Emed-Journey-02-List-Medikationsplan"
       },
       "name" : "Beispiel Journey 02: Medikationsplan",
-      "description" : "Beispiel eines Medikationsplans (List), der 2 Planeinträge (MedicationReqeusts) referenziert und Informationen über Reihenfolge und Änderungsstatus speichert.",
+      "description" : "Beispiel eines Medikationsplans (List), der 2 Planeinträge (MedicationRequests) referenziert und Informationen über Reihenfolge und Änderungsstatus speichert.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"
     },
     {
@@ -866,7 +866,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "List/At-Emed-Journey-05-a-List-Reihenfolge"
       },
       "name" : "Beispiel Journey 05-a: Reihenfolge der Planeinträge ändern",
-      "description" : "Beispiel Änderung der Reihenfolge der Medikationsplaneinträge (MedicationReqeusts) durch den Patienten.",
+      "description" : "Beispiel Änderung der Reihenfolge der Medikationsplaneinträge (MedicationRequests) durch den Patienten.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"
     },
     {
@@ -1093,7 +1093,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "reference" : {
         "reference" : "OperationDefinition/AtEmed.List.Readtowrite"
       },
-      "name" : "e-Med Operation für Read-to-write",
+      "name" : "e-Med Operation für Read-to-Write",
       "description" : "Die $readtowrite Operation wird aufgerufen, wenn ein Medikationsplan mit der Intention zu schreiben gelesen wird.",
       "exampleBoolean" : false
     },
@@ -1411,7 +1411,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "valueUrl" : "interactions.html"
         }],
         "nameUrl" : "interactions.html",
-        "title" : "Standardisierter Zugriff auf FHIR-Ressourcen",
+        "title" : "Zugriffsarten auf den Medikationsplan",
         "generation" : "markdown"
       },
       {

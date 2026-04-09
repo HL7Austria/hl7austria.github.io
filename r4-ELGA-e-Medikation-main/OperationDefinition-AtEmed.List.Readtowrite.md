@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\e-Med Operation für Read-to-write - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\e-Med Operation für Read-to-Write - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **e-Med Operation für Read-to-write**
+* **e-Med Operation für Read-to-Write**
 
-## OperationDefinition: e-Med Operation für Read-to-write 
+## OperationDefinition: e-Med Operation für Read-to-Write 
 
 | | | |
 | :--- | :--- | :--- |
@@ -14,7 +14,7 @@
  
 Die $readtowrite Operation wird aufgerufen, wenn ein Medikationsplan mit der Intention zu schreiben gelesen wird. 
 
-Beim Ausliefern des Collection Bundles werden folgende Status vom Server automatisch geändert:
+Beim Ausliefern des Collection Bundles werden folgende List-Flags vom Server automatisch geändert:
 
 * von new zu unchangened
 * von changed zu unchangened
@@ -22,7 +22,7 @@ Beim Ausliefern des Collection Bundles werden folgende Status vom Server automat
 
 Diese Collection wird nicht als neue Listenversion persistiert, sondern nur als Ergebnis der Operation zurückgeliefert.
 
-Entries die vor dem Aufruf die Flag delete haben, werden aus der Liste entfern.
+Entries die vor dem Aufruf das Flag removed haben, werden aus der Liste entfernt.
 
 
 
@@ -35,10 +35,10 @@ Entries die vor dem Aufruf die Flag delete haben, werden aus der Liste entfern.
   "url" : "https://fhir.hl7.at/elga/emed/r4/OperationDefinition/AtEmed.List.Readtowrite",
   "version" : "0.1.1",
   "name" : "AtEmed_List_Readtowrite",
-  "title" : "e-Med Operation für Read-to-write",
+  "title" : "e-Med Operation für Read-to-Write",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-04-09T06:40:16+00:00",
+  "date" : "2026-04-09T18:30:31+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

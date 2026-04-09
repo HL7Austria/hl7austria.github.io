@@ -17,7 +17,7 @@ Der Medikationsplaneintrag (**MedicationRequest**-Ressource) im Medikationsplan 
 
 Der aktuelle Status eines Medikationsplaneintrags wird im **status**-Element dokumentiert (siehe [Status des MedicationRequests im Medikationsplaneintrag](workflowmanagement.md#status-des-medicationrequests-im-medikationsplaneintrag)).
 
-Abhängig vom List-Flag kann der Medikationsplaneintrag nur eingeschränkte Status einnehmen (siehe [Konsistenzregeln zwischen List-Flag und MedicationReqeust-Status](workflowmanagement.md#konsistenzregeln-zwischen-list-flag-und-medicationreqeust-status)).
+Abhängig vom List-Flag kann der Medikationsplaneintrag nur eingeschränkte Status einnehmen (siehe [Konsistenzregeln zwischen List-Flag und MedicationRequest-Status](workflowmanagement.md#konsistenzregeln-zwischen-list-flag-und-medicationrequest-status)).
 
 #### Sub_UC_06_01 - Initial erstellter Medikationsplan
 
@@ -47,7 +47,7 @@ AtEmedListMedikationsplan
 
 Ein leerer Medikationsplan mit dem Wert emptyReason **nilknown** bedeutet, dass der Patient derzeit keine Medikamente einnimmt. Der Medikatonsplan erhält diesen Status, wenn:
 
-* ein GDA zuvor die gesamte Medikation abgesetzt, storniert oder gelöscht hat (TODO: Implizites setzen von nilknown durch die Fachanwendung beim nächsten read-to-write?)
+* ein GDA zuvor die gesamte Medikation abgesetzt, storniert oder gelöscht hat (TODO: Implizites setzen von nilknown durch die Fachanwendung beim nächsten Read-to-Write?)
 * ein GDA dokumentieren möchte, dass der Patient keine Medikamente einnehmen soll
 
 Dient zur Unterscheidung von leeren Medikationsplänen, die noch nie befüllt wurden.
@@ -73,16 +73,16 @@ Der GDA kann dem Medikationsplan ein oder mehrere Medikationsplaneinträge hinzu
 Hierfür werden entsprechende Medikationsplaneinträge **MedicationRequests** erstellt und in der **List**-Ressouce referenziert:
 
 * Das List-Flag des referenzierten MedicationRequests erhält den Wert **new**,
-* die MedicationRequests selbst können den Status **active** oder **on-hold** erhalten (siehe [Konsistenzregeln zwischen List-Flag und MedicationReqeust-Status](workflowmanagement.md#konsistenzregeln-zwischen-list-flag-und-medicationreqeust-status))
+* die MedicationRequests selbst können den Status **active** oder **on-hold** erhalten (siehe [Konsistenzregeln zwischen List-Flag und MedicationRequest-Status](workflowmanagement.md#konsistenzregeln-zwischen-list-flag-und-medicationrequest-status))
 * der Behandlungszeitraum im MedicationRequest kann sich auf das aktuelle Datum beziehen oder in der Zukunft liegen
 * ein bereits bestehender MedicationRequest kann wieder (re)aktiviert werden: 
-* MedicationRequest mit Status **on-hold** wird beim read-to-write-Zugriff im Collection Bundle mitgeliefert und kann wieder auf **active** gesetzt werden (TODO: siehe Sub_UC_06_0x - Medikationsplaneintrag in Medikationsplan reaktivieren)
-* MedicationRequest mit einem Endzustand (**stopped, entered-in-error** oder **completed**), wird beim read-to-write-Zugriff im Collection Bundle **nicht** mitgeliefert und kann nur über die Historie abgerufen und durch Erzeugung eines neuen Planeintrags in den Medikationsplan aufgenommen werden (via Client-SW) (TODO: prüfen)
+* MedicationRequest mit Status **on-hold** wird beim Read-to-Write-Zugriff im Collection Bundle mitgeliefert und kann wieder auf **active** gesetzt werden (TODO: siehe Sub_UC_06_0x - Medikationsplaneintrag in Medikationsplan reaktivieren)
+* MedicationRequest mit einem Endzustand (**stopped, entered-in-error** oder **completed**), wird beim Read-to-Write-Zugriff im Collection Bundle **nicht** mitgeliefert und kann nur über die Historie abgerufen und durch Erzeugung eines neuen Planeintrags in den Medikationsplan aufgenommen werden (via Client-SW) (TODO: prüfen)
  
 
 ##### Ablauf
 
-Siehe [Ablauf Read-to-write-Zugriff](interactions.md#ablauf-read-to-write-zugriff)
+Siehe [Ablauf Read-to-Write-Zugriff](interactions.md#ablauf-read-to-write-zugriff)
 
 ##### Relevante Felder (List):
 
@@ -140,7 +140,7 @@ Die **List**-source wird mit dem verantwortlichen GDA, das Datum in **date** akt
 
 ##### Ablauf
 
-Siehe [Ablauf Read-to-write-Zugriff](interactions.md#ablauf-read-to-write-zugriff)
+Siehe [Ablauf Read-to-Write-Zugriff](interactions.md#ablauf-read-to-write-zugriff)
 
 ##### Relevante Felder (List):
 
@@ -177,11 +177,11 @@ Anmerkung: Ob es sinnvoller ist einen bestehenden Medikationsplaneintrag zu been
 
 Hierfür werden entsprechende Medikationsplaneinträge angepasst und in der List-Ressouce Datum und Flag aktualisiert.
 
-Es können nur Listen-Einträge mit dem Flag **unchanged** geändert werden, da Einträge, die vom Vorgängen mit den Flags **new** oder **changed** gespeichert wurden, beim read-to-write-Zugriff von der Fachanwendung auf **unchanged** geändert werden. Einträge die vom Vorgänger mit einem **removed**-Flag gespeichert wurde, sind beim nächsten read-to-write-Zugriff nicht mehr enthalten. TODO: prüfen.
+Es können nur Listen-Einträge mit dem Flag **unchanged** geändert werden, da Einträge, die vom Vorgängen mit den Flags **new** oder **changed** gespeichert wurden, beim Read-to-Write-Zugriff von der Fachanwendung auf **unchanged** geändert werden. Einträge die vom Vorgänger mit einem **removed**-Flag gespeichert wurde, sind beim nächsten Read-to-Write-Zugriff nicht mehr enthalten. TODO: prüfen.
 
 ##### Ablauf
 
-Siehe [Ablauf Read-to-write-Zugriff](interactions.md#ablauf-read-to-write-zugriff)
+Siehe [Ablauf Read-to-Write-Zugriff](interactions.md#ablauf-read-to-write-zugriff)
 
 ##### Relevante Felder (List):
 
