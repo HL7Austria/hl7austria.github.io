@@ -8,7 +8,7 @@
 
 Profile: [HL7® AT Core Organization Profile](http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/2.0.0/StructureDefinition-at-core-organization.html)
 
-**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/7.0.1/NamingSystem-uri.html)/urn:oid:1.2.40.0.34.99.4613.3, `urn:oid:1.2.40.0.34.4.10`/K101+, `urn:oid:1.2.40.0.10.1.4.3.2`/123456789
+**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/6.4.0/NamingSystem-uri.html)/urn:oid:1.2.40.0.34.99.4613.3, `urn:oid:1.2.40.0.34.4.10`/K101+, `urn:oid:1.2.40.0.10.1.4.3.2`/123456789
 
 **type**: Öffentliche Apotheke
 

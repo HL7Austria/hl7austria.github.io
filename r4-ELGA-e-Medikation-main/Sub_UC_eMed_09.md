@@ -5,8 +5,6 @@
 
 ## ​Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_09)
 
-### Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_09)
-
 In Arbeit.
 
 #### Beispiel

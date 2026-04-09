@@ -18,7 +18,7 @@ Das **flag**-Element eines Entries der List-Ressource beschreibt die Art der Än
 | **Changed** | Bestehender Planeintrag wird geändert |
 | **Removed** | Bestehender Planeintrag wird entfernt |
 
-#### Abhängigkeit List-Flag von der Zugriffsart
+#### Auswirkung der Zugriffsart auf List-Status und Bundles
 
 | | | | |
 | :--- | :--- | :--- | :--- |
@@ -39,7 +39,7 @@ Das **status**-Element kann in Planeinträgen fogende Zustände annehmen:
 | **stopped** | Planeintrag ist abgesetzt: Therapie wurde begonnen, aber vorzeitig und ohne regulären Abschluss beendet (vor Ablauf des Behandlungszeitraums) |
 | **entered-in-error** | Planeintrag ist storniert: falscher Planeintrag |
 
-##### Abhängigkeiten List-Flag und MedicationReqeust-Status
+##### Konsistenzregeln zwischen List-Flag und MedicationReqeust-Status
 
 | | | | | |
 | :--- | :--- | :--- | :--- | :--- |
@@ -53,11 +53,11 @@ Das **status**-Element kann in Planeinträgen fogende Zustände annehmen:
 |   | **removed** | **stopped** | Bestehender Planeintrag wird vor Ablauf des Behandlungszeitraums abgesetzt |   |
 |   | **removed** | **entered-in-error** | Bestehender Planeintrag wird storniert, aufgrund falscher Eingabe |   |
 
-#### Status-Änderungen des MedicationRequests in der geplanten Abgabe
+#### Status des MedicationRequests in der geplanten Abgabe
 
 In Arbeit.
 
-#### Status-Änderungen des MedicationDispense (durchgeführte Abgabe)
+#### Status des MedicationDispense (durchgeführte Abgabe)
 
 In Arbeit.
 
