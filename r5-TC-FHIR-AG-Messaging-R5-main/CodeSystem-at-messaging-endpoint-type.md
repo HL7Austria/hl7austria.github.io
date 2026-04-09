@@ -33,7 +33,7 @@ Endpoint Type Coding to encode Messaging Systems the message is transported over
   "title" : "AT Messaging Endpoint Type",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-04-09T09:35:35+00:00",
+  "date" : "2026-04-09T10:04:08+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",

@@ -22,7 +22,7 @@ Feel free to modify this index page with your own awesome content!
   "name" : "ATMessaging",
   "title" : "HL7® Austria TC FHIR® Messaging",
   "status" : "draft",
-  "date" : "2026-04-09T09:35:35+00:00",
+  "date" : "2026-04-09T10:04:08+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -438,6 +438,24 @@ Feel free to modify this index page with your own awesome content!
         "sourceUrl" : "index.html",
         "name" : "index.html",
         "title" : "Home",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "background.html",
+        "name" : "background.html",
+        "title" : "Background",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "challenges.html",
+        "name" : "challenges.html",
+        "title" : "Challenges",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "scope.html",
+        "name" : "scope.html",
+        "title" : "Scope",
         "generation" : "markdown"
       }]
     },
