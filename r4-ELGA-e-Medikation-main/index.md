@@ -33,7 +33,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-04-09T18:30:31+00:00",
+  "date" : "2026-04-10T11:48:51+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1417,42 +1417,6 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "overview_sub_use_case.html"
-        }],
-        "nameUrl" : "overview_sub_use_case.html",
-        "title" : "Technische Use Cases",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "Sub_UC_eMed_06.html"
-        }],
-        "nameUrl" : "Sub_UC_eMed_06.html",
-        "title" : "​Technische Use Cases für Medikationsplan schreiben (UC_eMed_06)",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "Sub_UC_eMed_08.html"
-        }],
-        "nameUrl" : "Sub_UC_eMed_08.html",
-        "title" : "​Technische Use Cases für Geplante Abgabe schreiben (UC_eMed_08)",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "Sub_UC_eMed_09.html"
-        }],
-        "nameUrl" : "Sub_UC_eMed_09.html",
-        "title" : "​Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_09)",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "overview_use_case.html"
         }],
         "nameUrl" : "overview_use_case.html",
@@ -1510,6 +1474,42 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           }],
           "nameUrl" : "UC_eMed_09.html",
           "title" : "UC_eMed_09 - Durchgeführte Abgabe schreiben",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "overview_sub_use_case.html"
+          }],
+          "nameUrl" : "overview_sub_use_case.html",
+          "title" : "Technische Use Cases",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "Sub_UC_eMed_06.html"
+          }],
+          "nameUrl" : "Sub_UC_eMed_06.html",
+          "title" : "​Technische Use Cases für Medikationsplan schreiben (UC_eMed_06)",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "Sub_UC_eMed_08.html"
+          }],
+          "nameUrl" : "Sub_UC_eMed_08.html",
+          "title" : "​Technische Use Cases für Geplante Abgabe schreiben (UC_eMed_08)",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "Sub_UC_eMed_09.html"
+          }],
+          "nameUrl" : "Sub_UC_eMed_09.html",
+          "title" : "​Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_09)",
           "generation" : "markdown"
         }]
       },

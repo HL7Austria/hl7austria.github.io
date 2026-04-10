@@ -38,7 +38,7 @@ Ist zum Zeitpunkt der Abfrage kein Medikationsplan für den/die Patient:in vorha
 Der Read-to-Write-Zugriff dient der Vorbereitung einer Änderung des Medikationsplans:
 
 * Bei einem Read-to-Write-Zugriff prüft die Fachanwendung zunächst, ob bereits ein Medikationsplan vorhanden ist. Ist dies nicht der Fall, wird dieser erstellt (siehe [Sub_UC_06_01 - Initial erstellter Medikationsplan](Sub_UC_eMed_06.md#sub_uc_06_01---initial-erstellter-medikationsplan)) und zurückgeliefert.
-* Existiert bereits ein Medikationsplan (d.h. es wurde bereits ein Collection Bundle persistiert), wird von der Fachanwendung aus diesem eine **neue Version eines Collection Bundles** erstellt:
+* Existiert bereits ein Medikationsplan (d.h. es wurde bereits ein Collection Bundle persistiert), wird von der Fachanwendung aus diesem ein **Collection Bundle** zur Auslieferung erstellt:
 
 #### Custom Operations
 
@@ -66,9 +66,14 @@ Der Write-Zugriff ist eine eigenständige Operation, die ausschließlich im Kont
 
 #### Ablauf
 
-TODO: Evtl. 2 Versionen: eine ungefiliterte Version (inkl. der seit dem letzten Speichern abgelaufener Einträge) und eine Version nur mit aktiven Einträgen/gültigem Behandlungszeitraum
+#### Abgelehnter Write-Zugriff
 
-##### Abgelehnter Read-to-Write-Zugriff
+* Wenn weitere Akteure (hier GDA 2) ein Read-to-Write ausführen, während GDA 1 das von der Fachanwendung übermittelte Bundle bearbeitet, erhalten sie: 
+* dasselbe Collection Bundle (mit dem selben List.identifier), das zuvor schon GDA 1 übermittelt wurde.
+ 
+* Nur bei jenem Akteur, der zuerst ein Write ausführt, wird der temporär in der Fachanwendung vorgehaltene List.identifier mit dem eigenen im TransactionBundle.List.identifier übereinstimmen, da der termporäre List.identifier danach gelöscht wird.
+* Bei einem späteren Schreibversuch eines anderen Akteurs mit dem ursprünglich gleichen List.identifier wird die Prüfung daher fehlschlagen und ein Speichern abgelehnt.
+* Erst ein weiteres Read-to-Write löst wieder das generieren eines zur Auslieferung bereitgestellten temporären Collection Bundles inkl. neuem List.identifier aus.
 
-TODO: Sequenzdaigramm: 2. GDA führt zeitgleich Read-to-Write aus -> späteres schreiben wird abgelehnt, da Identifier-Prüfung fehlschlägt
+#### Ablauf
 

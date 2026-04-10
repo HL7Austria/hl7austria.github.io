@@ -128,9 +128,6 @@
       <li>
         <a href="interactions.html">Zugriffsarten auf den Medikationsplan</a>
       </li>
-      <li>
-        <a href="overview_sub_use_case.html">Technische Use Cases</a>
-      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -158,6 +155,9 @@
       </li>
       <li>
         <a href="UC_eMed_09.html">UC_eMed_09 Durchgeführte Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="overview_sub_use_case.html">Technische Use Cases</a>
       </li>
     </ul>
   </li>
@@ -303,7 +303,19 @@ width: 100%;}
 
 <script type="module"> import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';</script>
 
-<p>In Arbeit.</p>
+<h3 id="relevante-profile">Relevante Profile</h3>
+
+<h4 id="atemedlistmedikationsplan-list">AtEmedListMedikationsplan (<em>List</em>)</h4>
+
+<p>Der Medikationsplan eines ELGA-Teilnehmers/einer ELGA-Teilnehmerin (<em>List</em>-Ressource) beinhaltet List-Entries, die 0..* Medikationsplaneinträge (<em>MedicationRequests</em>) referenzieren. Die Reihenfolge der Listenelemente kann duch den GDA oder Patienten festgelegt werden. Jedes Listenelement enthält im <em>flag</em>-Element den Änderungsstatus (siehe <a href="workflowmanagement.html#status-der-list-flag-medikationsplan">Status der List-Flag (Medikationsplan)</a>).</p>
+
+<h4 id="atemedmrplaneintrag-medicationrequest">AtEmedMRPlaneintrag (<em>MedicationRequest</em>)</h4>
+
+<p>Der Medikationsplaneintrag (<em>MedicationRequest</em>-Ressource) im Medikationsplan eines ELGA-Teilnehmers/einer ELGA-Teilnehmerin bildet genau ein Arzneimittel und dessen Dosierung ab und bildet in weiterer Folge die Grundlage zur Erstellung einer geplanten Abgabe (siehe <em>UC_08 Geplante Abgabe Schreiben</em>).</p>
+
+<p>Der aktuelle Status eines Medikationsplaneintrags wird im <em>status</em>-Element dokumentiert (siehe <a href="workflowmanagement.html#status-des-medicationrequests-im-medikationsplaneintrag">Status des MedicationRequests im Medikationsplaneintrag</a>).</p>
+
+<p>Abhängig vom List-Flag kann der Medikationsplaneintrag nur eingeschränkte Status einnehmen (siehe <a href="workflowmanagement.html#konsistenzregeln-zwischen-list-flag-und-medicationrequest-status">Konsistenzregeln zwischen List-Flag und MedicationRequest-Status</a>).</p>
 
 
 
@@ -323,7 +335,7 @@ width: 100%;}
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Apr 9, 2026 18:30+0000">2026-04-09</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Fri, Apr 10, 2026 11:48+0000">2026-04-10</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
