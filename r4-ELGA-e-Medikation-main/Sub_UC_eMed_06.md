@@ -1,7 +1,7 @@
 # HL7.AT.FHIR.ELGA.EMED.R4\​Technische Use Cases für Medikationsplan schreiben (UC_eMed_06) - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
-* [**Überblick & Anwendungsbeispiel**](overview_use_case.md)
+* [**Overview Use Case**](overview_use_case.md)
 * **​Technische Use Cases für Medikationsplan schreiben (UC_eMed_06)**
 
 ## ​Technische Use Cases für Medikationsplan schreiben (UC_eMed_06)

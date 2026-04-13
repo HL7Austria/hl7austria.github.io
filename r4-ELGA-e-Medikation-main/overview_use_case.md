@@ -1,9 +1,9 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\Überblick & Anwendungsbeispiel - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\Overview Use Case - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
-* **Überblick & Anwendungsbeispiel**
+* **Overview Use Case**
 
-## Überblick & Anwendungsbeispiel
+## Overview Use Case
 
 In diesem Abschnitt werden die Anwendungsfälle im Rahmen der e-Medikation beschrieben.
 

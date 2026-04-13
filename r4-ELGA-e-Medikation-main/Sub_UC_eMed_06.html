@@ -41,8 +41,8 @@
     <script src="assets/js/mermaid.js" type="text/javascript"></script>
     <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
 
-    <style type="text/css">h2{--heading-prefix:"10.8"}
-    h3,h4,h5,h6{--heading-prefix:"10.8"}</style>
+    <style type="text/css">h2{--heading-prefix:"10.3"}
+    h3,h4,h5,h6{--heading-prefix:"10.3"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
           <!-- at-fhir-ig-template begin -->
@@ -136,33 +136,12 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="overview_use_case.html">Überblick</a>
-      </li>
-      <li>
         <a href="patient_journey.html">Patient Journey</a>
-      </li>
-      <li>
-        <a href="UC_eMed_05.html">UC_eMed_05 Medikationsplan lesen</a>
-      </li>
-      <li>
-        <a href="UC_eMed_06.html">UC_eMed_06 Medikationsplan schreiben</a>
-      </li>
-      <li>
-        <a href="UC_eMed_07.html">UC_eMed_07 Geplante und durchgeführte Abgaben lesen</a>
-      </li>
-      <li>
-        <a href="UC_eMed_08.html">UC_eMed_08 Geplante Abgabe schreiben</a>
-      </li>
-      <li>
-        <a href="UC_eMed_09.html">UC_eMed_09 Durchgeführte Abgabe schreiben</a>
       </li>
       <li>
         <a href="overview_sub_use_case.html">Technische Use Cases</a>
       </li>
     </ul>
-  </li>
-  <li>
-    <a href="mapping.html">Mappings</a>
   </li>
   <li>
     <a href="artifacts.html">Artifacts</a>
@@ -179,7 +158,7 @@
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="overview_use_case.html"><b>Überblick &amp; Anwendungsbeispiel</b></a></li><li><b>​Technische Use Cases für Medikationsplan schreiben (UC_eMed_06)</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="overview_use_case.html"><b>Overview Use Case</b></a></li><li><b>​Technische Use Cases für Medikationsplan schreiben (UC_eMed_06)</b></li>
 
         </ul>
       </div>    <!-- /container -->
@@ -371,7 +350,7 @@ Für jeden Use Case werden in den Kapiteln <em>Relevante Elemente</em> die wicht
 <p>Hierfür werden entsprechende Medikationsplaneinträge <em>MedicationRequests</em> erstellt und in der <em>List</em>-Ressouce referenziert:</p>
 <ul>
   <li>Das List.entry.flag des referenzierten MedicationRequests erhält den Wert <em>new</em>,</li>
-  <li><a name="l1069">​</a>die MedicationRequests selbst können den Status <em>active</em> oder <em>on-hold</em> erhalten (siehe <a href="workflowmanagement.html#konsistenzregeln-zwischen-list-entry-flag-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flag und MedicationRequest-Status</a>)</li>
+  <li><a name="l1027">​</a>die MedicationRequests selbst können den Status <em>active</em> oder <em>on-hold</em> erhalten (siehe <a href="workflowmanagement.html#konsistenzregeln-zwischen-list-entry-flag-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flag und MedicationRequest-Status</a>)</li>
   <li>der Behandlungszeitraum im MedicationRequest kann sich auf das aktuelle Datum beziehen oder in der Zukunft liegen</li>
   <li>ein bereits bestehender MedicationRequest kann wieder (re)aktiviert werden:
     <ul>
@@ -432,7 +411,7 @@ Für jeden Use Case werden in den Kapiteln <em>Relevante Elemente</em> die wicht
 
 <h5 id="auswirkung-der-zugriffsart-auf-list-status-und-bundles-neuer-medikationsplaneintrag">Auswirkung der Zugriffsart auf List-Status und Bundles: neuer Medikationsplaneintrag</h5>
 
-<p><a name="l1419">​</a>Siehe <a href="workflowmanagement.html#auswirkung-der-zugriffsart-auf-list-status-und-bundles">Auswirkung der Zugriffsart auf List-Status und Bundles</a>: Status <em>new</em>.</p>
+<p><a name="l1377">​</a>Siehe <a href="workflowmanagement.html#auswirkung-der-zugriffsart-auf-list-status-und-bundles">Auswirkung der Zugriffsart auf List-Status und Bundles</a>: Status <em>new</em>.</p>
 
 <h4 id="sub_uc_06_04---medikationsplaneintrag-im-medikationsplan-beibehalten">Sub_UC_06_04 - Medikationsplaneintrag im Medikationsplan beibehalten</h4>
 
@@ -443,7 +422,7 @@ Hierfür bleiben entsprechende Medikationsplaneinträge <em>MedicationRequests</
 
 <h5 id="ablauf-3">Ablauf</h5>
 
-<p><a name="l1461">​</a>Siehe <a href="interactions.html#ablauf-read-to-write-zugriff">Ablauf Read-to-Write-Zugriff</a></p>
+<p><a name="l1419">​</a>Siehe <a href="interactions.html#ablauf-read-to-write-zugriff">Ablauf Read-to-Write-Zugriff</a></p>
 
 <h5 id="relevante-elemente-list-3">Relevante Elemente (List):</h5>
 
@@ -466,7 +445,7 @@ Hierfür bleiben entsprechende Medikationsplaneinträge <em>MedicationRequests</
 
 <h5 id="auswirkung-der-zugriffsart-auf-list-status-und-bundles-medikationsplaneintrag-beibehalten">Auswirkung der Zugriffsart auf List-Status und Bundles: Medikationsplaneintrag beibehalten</h5>
 
-<p><a name="l1483">​</a>Siehe <a href="workflowmanagement.html#auswirkung-der-zugriffsart-auf-list-status-und-bundles">Auswirkung der Zugriffsart auf List-Status und Bundles</a>: Status <em>unchanged</em>.</p>
+<p><a name="l1441">​</a>Siehe <a href="workflowmanagement.html#auswirkung-der-zugriffsart-auf-list-status-und-bundles">Auswirkung der Zugriffsart auf List-Status und Bundles</a>: Status <em>unchanged</em>.</p>
 
 <h4 id="sub_uc_06_05---medikationsplaneintrag-im-medikationsplan-ändern">Sub_UC_06_05 - Medikationsplaneintrag im Medikationsplan ändern</h4>
 
@@ -481,7 +460,7 @@ Dies kann den gesamten Medikationsplaneintrag (<em>MedicationRequest</em>) umfas
 
 <h5 id="ablauf-4">Ablauf</h5>
 
-<p><a name="l1531">​</a>Siehe <a href="interactions.html#ablauf-read-to-write-zugriff">Ablauf Read-to-Write-Zugriff</a></p>
+<p><a name="l1489">​</a>Siehe <a href="interactions.html#ablauf-read-to-write-zugriff">Ablauf Read-to-Write-Zugriff</a></p>
 
 <h5 id="relevante-elemente-list-4">Relevante Elemente (List):</h5>
 
@@ -516,7 +495,7 @@ Dies kann den gesamten Medikationsplaneintrag (<em>MedicationRequest</em>) umfas
 
 <h5 id="auswirkung-der-zugriffsart-auf-list-status-und-bundles-medikationsplaneintrag-ändern">Auswirkung der Zugriffsart auf List-Status und Bundles: Medikationsplaneintrag ändern</h5>
 
-<p><a name="l1553">​</a>Siehe <a href="workflowmanagement.html#auswirkung-der-zugriffsart-auf-list-status-und-bundles">Auswirkung der Zugriffsart auf List-Status und Bundles</a>: Status <em>changed</em>.</p>
+<p><a name="l1511">​</a>Siehe <a href="workflowmanagement.html#auswirkung-der-zugriffsart-auf-list-status-und-bundles">Auswirkung der Zugriffsart auf List-Status und Bundles</a>: Status <em>changed</em>.</p>
 
 <h4 id="sub_uc_06_06---medikationsplaneintrag-im-medikationsplan-stornieren">Sub_UC_06_06 - Medikationsplaneintrag im Medikationsplan stornieren</h4>
 
@@ -734,7 +713,7 @@ Nur der Status des Medikationsplaneintrags wird angepasst:</p>
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Apr 13, 2026 14:44+0000">2026-04-13</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Apr 13, 2026 15:27+0000">2026-04-13</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -53,7 +53,7 @@ These define sets of codes used by systems conforming to this implementation gui
 | | |
 | :--- | :--- |
 | [ELGA List Empty Reason Value Set](ValueSet-ElgaListEmptyReasonVS.md) | ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste. |
-| [ELGA List Status ValueSet](ValueSet-ListStatusVS.md) | Zulässige Ausprägungen des Status einer List-Ressource in ELGA. |
+| [ELGA List Status ValueSet](ValueSet-ElgaListStatusVS.md) | Zulässige Ausprägungen des Status einer List-Ressource in ELGA. |
 | [ELGA List.entry.flag Value Set](ValueSet-ElgaListEntryFlagVS.md) | ValueSet für zulässige Ausprägungen Ausprägungen des Flags eines List.Entries in ELGA. |
 | [ELGA e-Med Durchgeführte Abgabe Status Value Set](ValueSet-DurchgefuehrteAbgabeStatusVS.md) | ValueSet für zulässige Ausprägungen eines Status einer durchgeführten Abgabe (MedicationDispense). |
 | [ELGA e-Med Durchgeführte Abgabe Typ Value Set](ValueSet-DurchgefuehrteAbgabeTypVS.md) | ValueSet für zulässige Ausprägungen eines Typs einer durchgeführten Abgabe (MedicationDispense). |

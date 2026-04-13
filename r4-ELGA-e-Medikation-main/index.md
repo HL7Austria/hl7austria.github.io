@@ -33,7 +33,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-04-13T14:44:53+00:00",
+  "date" : "2026-04-13T15:27:52+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1319,7 +1319,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/ListStatusVS"
+        "reference" : "ValueSet/ElgaListStatusVS"
       },
       "name" : "ELGA List Status ValueSet",
       "description" : "Zulässige Ausprägungen des Status einer List-Ressource in ELGA.",
@@ -1456,7 +1456,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "valueUrl" : "overview_use_case.html"
         }],
         "nameUrl" : "overview_use_case.html",
-        "title" : "Überblick & Anwendungsbeispiel",
+        "title" : "Overview Use Case",
         "generation" : "markdown",
         "page" : [{
           "extension" : [{
@@ -1465,51 +1465,6 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           }],
           "nameUrl" : "patient_journey.html",
           "title" : "Patient Journey",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "UC_eMed_05.html"
-          }],
-          "nameUrl" : "UC_eMed_05.html",
-          "title" : "UC_eMed_05 - Medikationsplan lesen",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "UC_eMed_06.html"
-          }],
-          "nameUrl" : "UC_eMed_06.html",
-          "title" : "UC_eMed_06 - Medikationsplan schreiben",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "UC_eMed_07.html"
-          }],
-          "nameUrl" : "UC_eMed_07.html",
-          "title" : "UC_eMed_07 - Geplante und durchgeführte Abgaben lesen",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "UC_eMed_08.html"
-          }],
-          "nameUrl" : "UC_eMed_08.html",
-          "title" : "UC_eMed_08 - Geplante Abgabe schreiben",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "UC_eMed_09.html"
-          }],
-          "nameUrl" : "UC_eMed_09.html",
-          "title" : "UC_eMed_09 - Durchgeführte Abgabe schreiben",
           "generation" : "markdown"
         },
         {
@@ -1548,15 +1503,6 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "title" : "​Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_09)",
           "generation" : "markdown"
         }]
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "mapping.html"
-        }],
-        "nameUrl" : "mapping.html",
-        "title" : "Mappings",
-        "generation" : "markdown"
       }]
     },
     "parameter" : [{

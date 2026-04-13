@@ -8,15 +8,15 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:https://fhir.hl7.at/elga/emed/r4/ValueSet/ListStatusVS | *Version*:0.1.1 | |
-| Active as of 2026-04-13 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:ListStatusVS |
+| *Official URL*:https://fhir.hl7.at/elga/emed/r4/ValueSet/ElgaListStatusVS | *Version*:0.1.1 | |
+| Active as of 2026-04-13 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:ElgaListStatusVS |
 
  
 Zulässige Ausprägungen des Status einer List-Ressource in ELGA. 
 
  **References** 
 
-This value set is not used here; it may be used elsewhere (e.g. specifications and/or implementations that use this content)
+* [ELGA e-Med Medikationsplan](StructureDefinition-at-emed-list-medikationsplan.md)
 
 ### Logical Definition (CLD)
 
@@ -44,14 +44,14 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
 ```json
 {
   "resourceType" : "ValueSet",
-  "id" : "ListStatusVS",
-  "url" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/ListStatusVS",
+  "id" : "ElgaListStatusVS",
+  "url" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/ElgaListStatusVS",
   "version" : "0.1.1",
-  "name" : "ListStatusVS",
+  "name" : "ElgaListStatusVS",
   "title" : "ELGA List Status ValueSet",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-04-13T14:44:53+00:00",
+  "date" : "2026-04-13T15:27:52+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
