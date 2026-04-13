@@ -33,7 +33,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-04-10T11:48:51+00:00",
+  "date" : "2026-04-13T14:44:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1226,7 +1226,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "StructureDefinition/at-emed-list-medikationsplan"
       },
       "name" : "ELGA e-Med Medikationsplan",
-      "description" : "Bildet den Medikationsplan eines ELGA-Teilnehmers ab (\"List\"-Ressource). \nDie Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimittel und deren Dosierung abbilden.\nDie Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus.",
+      "description" : "Bildet den Medikationsplan eines ELGA-Teilnehmers ab (\"List\"-Ressource). \nDie Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle geplanten Medikationen und deren Dosierung abbilden.\nDie Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus.",
       "exampleBoolean" : false
     },
     {
@@ -1239,18 +1239,6 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       "name" : "ELGA e-Med Medikationsplan Collection Bundle",
       "description" : "Das Bundle vom Typ Collection bestehend aus: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus) \n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/MedikationsplanEmptyReasonVS"
-      },
-      "name" : "ELGA e-Med Medikationsplan Empty Reason Value Set",
-      "description" : "ValueSet für zulässige Ausprägungen des elements emptyReason Status eines Medikationsplaneintrags (MedicationRequest).",
       "exampleBoolean" : false
     },
     {
@@ -1311,6 +1299,54 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       "name" : "ELGA e-Med Timing",
       "description" : "ELGA e-Med Timing",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ElgaListEmptyReasonVS"
+      },
+      "name" : "ELGA List Empty Reason Value Set",
+      "description" : "ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ListStatusVS"
+      },
+      "name" : "ELGA List Status ValueSet",
+      "description" : "Zulässige Ausprägungen des Status einer List-Ressource in ELGA.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/ElgaListEntryFlagCS"
+      },
+      "name" : "ELGA List.entry.flag CodeSystem",
+      "description" : "CodeSystem für zulässige Ausprägungen des Flags eines List.Entries in ELGA.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ElgaListEntryFlagVS"
+      },
+      "name" : "ELGA List.entry.flag Value Set",
+      "description" : "ValueSet für zulässige Ausprägungen Ausprägungen des Flags eines List.Entries in ELGA.",
       "exampleBoolean" : false
     },
     {

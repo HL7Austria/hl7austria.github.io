@@ -6,9 +6,9 @@
 
 ## ​Technische Use Cases für Medikationsplan schreiben (UC_eMed_06)
 
-m folgenden Kapitel werden die fachlichen Anwendungsfälle in Form technischer Use Cases beschrieben. Die zugehörigen Sequenzdiagramme veranschaulichen die beteiligten Akteure sowie die jeweiligen Abläufe.
+Im folgenden Kapitel werden die fachlichen Anwendungsfälle in Form technischer Use Cases beschrieben. Die zugehörigen Sequenzdiagramme veranschaulichen die beteiligten Akteure sowie die jeweiligen Abläufe.
 
-Für jeden Use Case werden die relevanten Profilfelder in grauen Boxen hervorgehoben. Diese ermöglichen eine kompakte Übersicht über die erforderlichen Anpassungen der Ressourcen im Kontext des jeweiligen Anwendungsfalls.
+Für jeden Use Case werden in den Kapiteln **Relevante Elemente** die wichtigsten Elemente der verwendeten Profile beschrieben. Dies ermöglicht eine kompakte Übersicht über die erforderlichen Anpassungen der Ressourcen im Kontext des jeweiligen Anwendungsfalls.
 
 #### Sub_UC_06_01 - Initial erstellter Medikationsplan
 
@@ -22,7 +22,7 @@ Auch der Patient kann die Erstellung eines Medikationsplans auslösen.
 
 ##### Ablauf
 
-##### Relevante Felder (List):
+##### Relevante Elemente (List):
 
 ```
 AtEmedListMedikationsplan
@@ -45,7 +45,7 @@ Dient zur Unterscheidung von leeren Medikationsplänen, die noch nie befüllt wu
 
 ##### Ablauf
 
-##### Relevante Felder (List):
+##### Relevante Elemente (List):
 
 ```
 AtEmedListMedikationsplan
@@ -57,25 +57,27 @@ AtEmedListMedikationsplan
 
 ```
 
+#### Standardablauf Medikationsplan bearbeiten
+
+Der folgende Ablauf gilt für alle weiteren technischen Use Cases (Sub_UC_06_03 bis Sub_UC_06_0X). Für jeden Use Case werden in den Kapiteln **Relevante Elemente** die wichtigsten Elemente der verwendeten Profile beschrieben.
+
 #### Sub_UC_06_03 - Medikationsplaneintrag in Medikationsplan hinzufügen
 
 Der GDA kann dem Medikationsplan ein oder mehrere Medikationsplaneinträge hinzufügen.
 
 Hierfür werden entsprechende Medikationsplaneinträge **MedicationRequests** erstellt und in der **List**-Ressouce referenziert:
 
-* Das List-Flag des referenzierten MedicationRequests erhält den Wert **new**,
-* die MedicationRequests selbst können den Status **active** oder **on-hold** erhalten (siehe [Konsistenzregeln zwischen List-Flag und MedicationRequest-Status](workflowmanagement.md#konsistenzregeln-zwischen-list-flag-und-medicationrequest-status))
+* Das List.entry.flag des referenzierten MedicationRequests erhält den Wert **new**,
+* die MedicationRequests selbst können den Status **active** oder **on-hold** erhalten (siehe [Konsistenzregeln zwischen List.entry.flag und MedicationRequest-Status](workflowmanagement.md#konsistenzregeln-zwischen-list-entry-flag-und-medicationrequest-status))
 * der Behandlungszeitraum im MedicationRequest kann sich auf das aktuelle Datum beziehen oder in der Zukunft liegen
 * ein bereits bestehender MedicationRequest kann wieder (re)aktiviert werden: 
 * MedicationRequest mit Status **on-hold** wird beim Read-to-Write-Zugriff im Collection Bundle mitgeliefert und kann wieder auf **active** gesetzt werden (TODO: siehe Sub_UC_06_0x - Medikationsplaneintrag in Medikationsplan reaktivieren)
 * MedicationRequest mit einem Endzustand (**stopped, entered-in-error** oder **completed**), wird beim Read-to-Write-Zugriff im Collection Bundle **nicht** mitgeliefert und kann nur über die Historie abgerufen und durch Erzeugung eines neuen Planeintrags in den Medikationsplan aufgenommen werden (via Client-SW) (TODO: prüfen)
  
 
-##### Standardablauf
+##### Ablauf
 
-Der folgende Ablauf gilt für alle folgenden Use Cases. Die im jeweiligen Kapitel angegebenen **Relevanten Felder** der verwendeten Profile, dokumentieren die erforderlichen Anpassungen der Ressource für den speziellen Use Case.
-
-##### Relevante Felder (List):
+##### Relevante Elemente (List):
 
 ```
 AtEmedListMedikationsplan
@@ -86,15 +88,15 @@ AtEmedListMedikationsplan
     entry[0]:  // 1. Medikationsplaneintrag wird hinzufgefügt
         flag: new
         date: Datum der Aufnahme des Medikationsplaneintrags  // in diesem Fall gleich mit dem Datum der Bearbeitung des Medikationsplans
-        item: Referenz auf den Planeintrag 1  // siehe "Relevante Felder (MedicationRequest) Planeintrag 1"
+        item: Referenz auf den Planeintrag 1  // siehe "Relevante Elemente (MedicationRequest) Planeintrag 1"
     entry[1]:  // 2. Medikationsplaneintrag wird hinzufgefügt
         flag: new
         date: Datum der Aufnahme des Medikationsplaneintrags // in diesem Fall gleich mit dem Datum der Bearbeitung des Medikationsplans
-        item: Referenz auf den Planeintrag 2  // analog zu "Relevante Felder (MedicationRequest) Planeintrag 1"
+        item: Referenz auf den Planeintrag 2  // analog zu "Relevante Elemente (MedicationRequest) Planeintrag 1"
 
 ```
 
-##### Relevante Felder (MedicationRequest - Planeintrag 1):
+##### Relevante Elemente (MedicationRequest - Planeintrag 1):
 
 ```
 AtEmedMRPlaneintrag
@@ -133,7 +135,7 @@ Die **List**-source wird mit dem verantwortlichen GDA, das Datum in **date** akt
 
 Siehe [Ablauf Read-to-Write-Zugriff](interactions.md#ablauf-read-to-write-zugriff)
 
-##### Relevante Felder (List):
+##### Relevante Elemente (List):
 
 ```
 AtEmedListMedikationsplan
@@ -148,7 +150,7 @@ AtEmedListMedikationsplan
 
 ```
 
-##### Relevante Felder (MedicationRequest) Planeintrag 1:
+##### Relevante Elemente (MedicationRequest) Planeintrag 1:
 
 ```
 AtEmedMRPlaneintrag
@@ -174,7 +176,7 @@ Es können nur Listen-Einträge mit dem Flag **unchanged** geändert werden, da 
 
 Siehe [Ablauf Read-to-Write-Zugriff](interactions.md#ablauf-read-to-write-zugriff)
 
-##### Relevante Felder (List):
+##### Relevante Elemente (List):
 
 ```
 AtEmedListMedikationsplan
@@ -193,7 +195,7 @@ AtEmedListMedikationsplan
 
 ```
 
-##### Relevante Felder (MedicationRequest) Planeintrag 1:
+##### Relevante Elemente (MedicationRequest) Planeintrag 1:
 
 ```
 AtEmedMRPlaneintrag
@@ -217,7 +219,7 @@ Siehe [Auswirkung der Zugriffsart auf List-Status und Bundles](workflowmanagemen
 
 Der GDA möchten einen Medikationsplaneintrag stornieren. Der restliche Plan bleibt unverändert. Hierfür wird der betreffende Medikationsplaneintrag mit dem flag Cancelled versehen.
 
-Relevante Felder (List):
+Relevante Elemente (List):
 
 ```
 AtEmedListMedikationsplan
@@ -244,7 +246,7 @@ TODO:
 
 Der GDA möchten einen Medikationsplaneintrag absetzen. Der restliche Plan bleibt unverändert. Hierfür wird der betreffende Medikationsplaneintrag mit dem flag Ceased versehen.
 
-Relevante Felder (List):
+Relevante Elemente (List):
 
 ```
 AtEmedListMedikationsplan
@@ -281,7 +283,7 @@ TODO: Entspricht dies dem "Medikationsplaneintrag im Medikationsplan stornieren"
 
 Der GDA dokumentiert, dass aktuell keine Medikamente eingenommen werden sollen. Hierfür werden alle bestehenden Medikationsplaneinträge abgesetzt (mit dem flag Ceased versehen).
 
-Relevante Felder (List):
+Relevante Elemente (List):
 
 ```
 AtEmedListMedikationsplan
@@ -310,7 +312,7 @@ Sowohl der GDA, als auch der:die ELGA-Teilnehmer:in können die Reihenfolge der 
 
 In folgendem Beispiel wird der ursprünglich 2. Eintrag als 1. gereiht.
 
-Relevante Felder (List):
+Relevante Elemente (List):
 
 ```
 AtEmedListMedikationsplan
@@ -335,7 +337,7 @@ AtEmedListMedikationsplan
 
 Ein neues Arzneimittel soll vom Patienten eingenommen werden. Der GDA erstellt hierfür einen Medikationsplaneintrag, der im Medikationsplan referenziert wird.
 
-Relevante Felder (MedicationRequest):
+Relevante Elemente (MedicationRequest):
 
 ```
 AtEmedListMedikationsplan
@@ -364,7 +366,7 @@ TODO: noch offen:
 
 Alle Datenfelder eines bestehenden Medikationsplaneintrags können geändert werden. Wird das Arzneimittel selbst geändert, sollte vorher geprüft werden, ob es fachlich nicht sinnvoller ist, einen neuen Eintrag zu erstellen und den alten zu stoppen, damit die Änderungen für Patienten und Nachbehandler nachvollziehbar bleiben.
 
-Relevante Felder (MedicationRequest):
+Relevante Elemente (MedicationRequest):
 
 ```
 AtEmedListMedikationsplan
@@ -381,7 +383,7 @@ AtEmedListMedikationsplan
 
 Die Therapie ist vorübergehend unterbrochen, die Wiederaufnahme ist vorgesehen. Nur der Status des Medikationsplaneintrags wird angepasst:
 
-Relevante Felder (MedicationRequest):
+Relevante Elemente (MedicationRequest):
 
 ```
 AtEmedListMedikationsplan
@@ -399,7 +401,7 @@ TODO: statusReason wäre hier sinnvoll, dzt. NP
 
 Therapie ist regulär abgeschlossen. Nur der Status des Medikationsplaneintrags wird angepasst:
 
-Relevante Felder (MedicationRequest):
+Relevante Elemente (MedicationRequest):
 
 ```
 AtEmedListMedikationsplan
@@ -417,7 +419,7 @@ TODO: bei zeitlich befristeter Medikation, kann nach Ablauf des Status automatis
 
 Die Therapie wurde begonnen, aber abgebrochen. Nur der Status des Medikationsplaneintrags wird angepasst:
 
-Relevante Felder (MedicationRequest):
+Relevante Elemente (MedicationRequest):
 
 ```
 AtEmedListMedikationsplan

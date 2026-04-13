@@ -27,7 +27,7 @@ These define constraints on FHIR resources for systems conforming to this implem
 | [ELGA e-Med Medikation](StructureDefinition-at-emed-medication.md) | Bildet ein Arzneimittel in der "Medication"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, geplante Abgabe und durchgeführte Abgabe. Aktuell nur geprüft im Kontext Planeintrag. Unterschieden werden folgende Fälle:1. Arzneimittel besitzt eine PZN und wird über diese identifiziert, die weiteren Informationen werden durch die Fachanwendung angereichert. a. Identifikation nur über PZN: eine Befüllung jener Felder, die über die ASP-Liste angereichert werden können, durch den GDA wird technisch verhindert (Invariante oder eigene Medication Ressource). b. Identifikation über PZN und Handelsname: damit eine Prüfung auf Übereinstimmung durchgeführt werden kann. TODO: Juristisch zu prüfen.
 1. Arzneimittel besitzt keine PZN, alle benötigten Informationen sind verpflichtend vom GDA zu befüllen: a. Bei Verschreibung von Wirkstoffen b. Bei magistraler Anwendung, Infusionen
  |
-| [ELGA e-Med Medikationsplan](StructureDefinition-at-emed-list-medikationsplan.md) | Bildet den Medikationsplan eines ELGA-Teilnehmers ab ("List"-Ressource). Die Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimittel und deren Dosierung abbilden. Die Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus. |
+| [ELGA e-Med Medikationsplan](StructureDefinition-at-emed-list-medikationsplan.md) | Bildet den Medikationsplan eines ELGA-Teilnehmers ab ("List"-Ressource). Die Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle geplanten Medikationen und deren Dosierung abbilden. Die Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus. |
 | [ELGA e-Med Medikationsplan Collection Bundle](StructureDefinition-at-emed-bundle-medikationsplan.md) | Das Bundle vom Typ Collection bestehend aus:* 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus)
 * 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung
  |
@@ -52,11 +52,13 @@ These define sets of codes used by systems conforming to this implementation gui
 
 | | |
 | :--- | :--- |
+| [ELGA List Empty Reason Value Set](ValueSet-ElgaListEmptyReasonVS.md) | ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste. |
+| [ELGA List Status ValueSet](ValueSet-ListStatusVS.md) | Zulässige Ausprägungen des Status einer List-Ressource in ELGA. |
+| [ELGA List.entry.flag Value Set](ValueSet-ElgaListEntryFlagVS.md) | ValueSet für zulässige Ausprägungen Ausprägungen des Flags eines List.Entries in ELGA. |
 | [ELGA e-Med Durchgeführte Abgabe Status Value Set](ValueSet-DurchgefuehrteAbgabeStatusVS.md) | ValueSet für zulässige Ausprägungen eines Status einer durchgeführten Abgabe (MedicationDispense). |
 | [ELGA e-Med Durchgeführte Abgabe Typ Value Set](ValueSet-DurchgefuehrteAbgabeTypVS.md) | ValueSet für zulässige Ausprägungen eines Typs einer durchgeführten Abgabe (MedicationDispense). |
 | [ELGA e-Med Geplante Abgabe Status ValueSet](ValueSet-GeplanteAbgabeStatusVS.md) | ValueSet für zulässige Ausprägungen eines Status einer geplanten Abgabe (MedicationRequest). |
 | [ELGA e-Med MedicationRequest Kategorie ValueSet](ValueSet-MedicationRequestCategoryVS.md) | ValueSet für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen |
-| [ELGA e-Med Medikationsplan Empty Reason Value Set](ValueSet-MedikationsplanEmptyReasonVS.md) | ValueSet für zulässige Ausprägungen des elements emptyReason Status eines Medikationsplaneintrags (MedicationRequest). |
 | [ELGA e-Med Medikationsplaneintrag Status Value Set](ValueSet-MedikationsplaneintragStatusVS.md) | ValueSet für zulässige Ausprägungen eines Status eines Medikationsplaneintrags (MedicationRequest). |
 
 ### Terminology: Code Systems 
@@ -65,6 +67,7 @@ These define new code systems used by systems conforming to this implementation 
 
 | | |
 | :--- | :--- |
+| [ELGA List.entry.flag CodeSystem](CodeSystem-ElgaListEntryFlagCS.md) | CodeSystem für zulässige Ausprägungen des Flags eines List.Entries in ELGA. |
 | [ELGA e-Med MedicationRequest Kategorie CodeSystem](CodeSystem-MedicationRequestCategoryCS.md) | Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen. |
 
 ### Example: Example Instances 

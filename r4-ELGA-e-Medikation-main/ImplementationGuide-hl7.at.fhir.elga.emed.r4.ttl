@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "ELGAeMedikationR4"] ; # 
   fhir:title [ fhir:v "ELGA e-Medikation (R4) DRAFT"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-04-10T11:48:51+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-04-13T14:44:53+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ELGA GmbH" ] ;
@@ -2355,7 +2355,7 @@
          fhir:reference [ fhir:v "StructureDefinition/at-emed-list-medikationsplan" ]
        ] ;
        fhir:name [ fhir:v "ELGA e-Med Medikationsplan" ] ;
-       fhir:description [ fhir:v "Bildet den Medikationsplan eines ELGA-Teilnehmers ab (\"List\"-Ressource). \nDie Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimittel und deren Dosierung abbilden.\nDie Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus." ] ;
+       fhir:description [ fhir:v "Bildet den Medikationsplan eines ELGA-Teilnehmers ab (\"List\"-Ressource). \nDie Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle geplanten Medikationen und deren Dosierung abbilden.\nDie Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -2377,27 +2377,6 @@
        ] ;
        fhir:name [ fhir:v "ELGA e-Med Medikationsplan Collection Bundle" ] ;
        fhir:description [ fhir:v "Das Bundle vom Typ Collection bestehend aus: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus) \n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung" ] ;
-       fhir:example [
-         a fhir:Boolean ;
-         fhir:v false
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "ValueSet"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <https://fhir.hl7.at/elga/emed/r4/ValueSet/MedikationsplanEmptyReasonVS> ;
-         fhir:reference [ fhir:v "ValueSet/MedikationsplanEmptyReasonVS" ]
-       ] ;
-       fhir:name [ fhir:v "ELGA e-Med Medikationsplan Empty Reason Value Set" ] ;
-       fhir:description [ fhir:v "ValueSet für zulässige Ausprägungen des elements emptyReason Status eines Medikationsplaneintrags (MedicationRequest)." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -2503,6 +2482,90 @@
        ] ;
        fhir:name [ fhir:v "ELGA e-Med Timing" ] ;
        fhir:description [ fhir:v "ELGA e-Med Timing" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/elga/emed/r4/ValueSet/ElgaListEmptyReasonVS> ;
+         fhir:reference [ fhir:v "ValueSet/ElgaListEmptyReasonVS" ]
+       ] ;
+       fhir:name [ fhir:v "ELGA List Empty Reason Value Set" ] ;
+       fhir:description [ fhir:v "ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/elga/emed/r4/ValueSet/ListStatusVS> ;
+         fhir:reference [ fhir:v "ValueSet/ListStatusVS" ]
+       ] ;
+       fhir:name [ fhir:v "ELGA List Status ValueSet" ] ;
+       fhir:description [ fhir:v "Zulässige Ausprägungen des Status einer List-Ressource in ELGA." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/elga/emed/r4/CodeSystem/ElgaListEntryFlagCS> ;
+         fhir:reference [ fhir:v "CodeSystem/ElgaListEntryFlagCS" ]
+       ] ;
+       fhir:name [ fhir:v "ELGA List.entry.flag CodeSystem" ] ;
+       fhir:description [ fhir:v "CodeSystem für zulässige Ausprägungen des Flags eines List.Entries in ELGA." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/elga/emed/r4/ValueSet/ElgaListEntryFlagVS> ;
+         fhir:reference [ fhir:v "ValueSet/ElgaListEntryFlagVS" ]
+       ] ;
+       fhir:name [ fhir:v "ELGA List.entry.flag Value Set" ] ;
+       fhir:description [ fhir:v "ValueSet für zulässige Ausprägungen Ausprägungen des Flags eines List.Entries in ELGA." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false

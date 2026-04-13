@@ -7,7 +7,7 @@
 
 ### Überblick der Statusänderungen der e-Medikation Ressourcen
 
-#### Status der List-Flag (Medikationsplan)
+#### Status des List.entry.flags (Medikationsplan)
 
 Das **flag**-Element eines Entries der List-Ressource beschreibt die Art der Änderung eines Mediaktionsplaneintrags auf Listenebene und kann folgende Status einnehmen:
 
@@ -18,7 +18,7 @@ Das **flag**-Element eines Entries der List-Ressource beschreibt die Art der Än
 | **Changed** | Bestehender Planeintrag wird geändert |
 | **Removed** | Bestehender Planeintrag wird entfernt |
 
-#### Auswirkung der Zugriffsart auf List-Status und Bundles
+#### Auswirkung der Zugriffsart auf List.entry.flags und Bundles
 
 | | | | |
 | :--- | :--- | :--- | :--- |
@@ -35,11 +35,11 @@ Das **status**-Element kann in Planeinträgen fogende Zustände annehmen:
 | :--- | :--- |
 | **active** | Planeintrag dokumentiert aktive Therapie: Medikation soll aktuell vom Patienten eingenommen werden |
 | **on-hold** | Planeintrag ist pausiert: Therapie wurde vorübergehend unterbrochen, Wiederaufnahme ist vorgesehen |
-| **completed** | Planeintrag ist beendet: Therapie wurde regulär/durch Ablauf des Behandlungszeitraums abgeschlossen, wenn keine erneute Verordnung erfolgt ist |
-| **stopped** | Planeintrag ist abgesetzt: Therapie wurde begonnen, aber vorzeitig und ohne regulären Abschluss beendet (vor Ablauf des Behandlungszeitraums) |
-| **entered-in-error** | Planeintrag ist storniert: falscher Planeintrag |
+| **completed** | Die im Planeintrag beschriebenen Maßnahmen wurden wie geplant durchgeführt. Der Planeintrag wird damit abgeschlossen. |
+| **stopped** | Die im Planeintrag beschriebenen Maßnahmen werden dauerhaft gestoppt, bevor alle geplanten Einnahmen oder Verabreichungen durchgeführt wurden. Der Planeintrag wird damit abgeschlossen. |
+| **entered-in-error** | Planeintrag ist storniert: Kennzeichnung eines fehlerhaften Planeintrages. Der Planeintrag wird damit abgeschlossen. |
 
-##### Konsistenzregeln zwischen List-Flag und MedicationRequest-Status
+##### Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status
 
 | | | | | |
 | :--- | :--- | :--- | :--- | :--- |

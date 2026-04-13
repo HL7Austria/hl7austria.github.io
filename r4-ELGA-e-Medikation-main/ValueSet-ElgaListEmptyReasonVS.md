@@ -1,18 +1,18 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\ELGA e-Med Medikationsplan Empty Reason Value Set - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\ELGA List Empty Reason Value Set - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **ELGA e-Med Medikationsplan Empty Reason Value Set**
+* **ELGA List Empty Reason Value Set**
 
-## ValueSet: ELGA e-Med Medikationsplan Empty Reason Value Set (Experimental) 
+## ValueSet: ELGA List Empty Reason Value Set (Experimental) 
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:https://fhir.hl7.at/elga/emed/r4/ValueSet/MedikationsplanEmptyReasonVS | *Version*:0.1.1 | |
-| Draft as of 2026-04-10 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:MedikationsplanEmptyReasonVS |
+| *Official URL*:https://fhir.hl7.at/elga/emed/r4/ValueSet/ElgaListEmptyReasonVS | *Version*:0.1.1 | |
+| Draft as of 2026-04-13 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:ElgaListEmptyReasonVS |
 
  
-ValueSet für zulässige Ausprägungen des elements emptyReason Status eines Medikationsplaneintrags (MedicationRequest). 
+ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste. 
 
  **References** 
 
@@ -44,14 +44,14 @@ ValueSet für zulässige Ausprägungen des elements emptyReason Status eines Med
 ```json
 {
   "resourceType" : "ValueSet",
-  "id" : "MedikationsplanEmptyReasonVS",
-  "url" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/MedikationsplanEmptyReasonVS",
+  "id" : "ElgaListEmptyReasonVS",
+  "url" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/ElgaListEmptyReasonVS",
   "version" : "0.1.1",
-  "name" : "MedikationsplanEmptyReasonVS",
-  "title" : "ELGA e-Med Medikationsplan Empty Reason Value Set",
+  "name" : "ElgaListEmptyReasonVS",
+  "title" : "ELGA List Empty Reason Value Set",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-04-10T11:48:51+00:00",
+  "date" : "2026-04-13T14:44:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -68,7 +68,7 @@ ValueSet für zulässige Ausprägungen des elements emptyReason Status eines Med
       "use" : "work"
     }]
   }],
-  "description" : "ValueSet für zulässige Ausprägungen des elements emptyReason Status eines Medikationsplaneintrags (MedicationRequest).",
+  "description" : "ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste.",
   "compose" : {
     "include" : [{
       "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",

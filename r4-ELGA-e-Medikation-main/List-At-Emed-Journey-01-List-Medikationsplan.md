@@ -10,7 +10,7 @@ Profile: [ELGA e-Med Medikationsplan](StructureDefinition-at-emed-list-medikatio
 
 | | | | |
 | :--- | :--- | :--- | :--- |
-| Date: 2026-02-27 08:00:00+0000 | Mode: Working List | Status: Current | Code: Medication management plan (record artifact) |
+| Date: 2026-02-27 08:00:00+0000 | Mode: Working List | Status: Current | Code: Medikationsplan |
 | Subject:[Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-At-Emed-Example-Patient-01.md)Source: Order: Sorted by User | | | |
 
 
@@ -31,7 +31,7 @@ Profile: [ELGA e-Med Medikationsplan](StructureDefinition-at-emed-list-medikatio
     "coding" : [{
       "system" : "http://snomed.info/sct",
       "code" : "736378000",
-      "display" : "Medication management plan (record artifact)"
+      "display" : "Medikationsplan"
     }]
   },
   "subject" : {

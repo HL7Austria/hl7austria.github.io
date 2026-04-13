@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/ValueSet/MedikationsplaneintragStatusVS | *Version*:0.1.1 | |
-| Draft as of 2026-04-10 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:MedikationsplaneintragStatusVS |
+| Draft as of 2026-04-13 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:MedikationsplaneintragStatusVS |
 
  
 ValueSet für zulässige Ausprägungen eines Status eines Medikationsplaneintrags (MedicationRequest). 
@@ -51,7 +51,7 @@ ValueSet für zulässige Ausprägungen eines Status eines Medikationsplaneintrag
   "title" : "ELGA e-Med Medikationsplaneintrag Status Value Set",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-04-10T11:48:51+00:00",
+  "date" : "2026-04-13T14:44:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -79,10 +79,13 @@ ValueSet für zulässige Ausprägungen eines Status eines Medikationsplaneintrag
         "code" : "on-hold"
       },
       {
-        "code" : "completed"
+        "code" : "stopped"
       },
       {
-        "code" : "stopped"
+        "code" : "entered-in-error"
+      },
+      {
+        "code" : "completed"
       }]
     }]
   }

@@ -9,10 +9,10 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan | *Version*:0.1.1 | |
-| Draft as of 2026-04-10 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedListMedikationsplan |
+| Draft as of 2026-04-13 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedListMedikationsplan |
 
  
-Bildet den Medikationsplan eines ELGA-Teilnehmers ab ("List"-Ressource). Die Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimittel und deren Dosierung abbilden. Die Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus. 
+Bildet den Medikationsplan eines ELGA-Teilnehmers ab ("List"-Ressource). Die Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle geplanten Medikationen und deren Dosierung abbilden. Die Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus. 
 
 **Usages:**
 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
   "name" : "AtEmedListMedikationsplan",
   "title" : "ELGA e-Med Medikationsplan",
   "status" : "draft",
-  "date" : "2026-04-10T11:48:51+00:00",
+  "date" : "2026-04-13T14:44:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -59,7 +59,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
       "use" : "work"
     }]
   }],
-  "description" : "Bildet den Medikationsplan eines ELGA-Teilnehmers ab (\"List\"-Ressource). \nDie Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle verordneten Arzneimittel und deren Dosierung abbilden.\nDie Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus.",
+  "description" : "Bildet den Medikationsplan eines ELGA-Teilnehmers ab (\"List\"-Ressource). \nDie Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle geplanten Medikationen und deren Dosierung abbilden.\nDie Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "rim",
@@ -80,39 +80,39 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
     "element" : [{
       "id" : "List.identifier",
       "path" : "List.identifier",
-      "short" : "Logischer Identfier der Liste / des Medikationsplans. Verwendung zu prüfen.",
+      "short" : "Logischer Identfier der Liste (des Medikationsplans) zur Schreibintegritätsprüfung.",
       "max" : "1",
       "mustSupport" : true
     },
     {
       "id" : "List.status",
       "path" : "List.status",
-      "short" : "Verpflichtende Angabe: current | retired. https://hl7.org/fhir/R4/valueset-list-status.html\nTODO: retired nach Ableben des Patienten bis Ende der Aufbewahrungsfrist? automatisch gesetzt?\nentered-in-error nicht sinnvoll",
+      "short" : "Mögliche Ausprägungen: [current | retired] Bedeutung: current: default | retired: nach Ableben des Patienten bis Ende der Aufbewahrungsfrist",
       "mustSupport" : true
     },
     {
       "id" : "List.mode",
       "path" : "List.mode",
-      "short" : "Verpflichtende Angabe: working | snapshot | changes. https://hl7.org/fhir/R4/valueset-list-mode.html\nDer Medikationsplan ist ein laufend gepflegtes Dokument: working.",
-      "patternCode" : "working",
+      "short" : "Der Medikationsplan ist ein laufend gepflegtes Dokument. Fixer Wert: working.",
+      "fixedCode" : "working",
       "mustSupport" : true
     },
     {
       "id" : "List.title",
       "path" : "List.title",
-      "short" : "Titel der Liste. Verwendung zu prüfen.",
+      "short" : "Titel der Liste.",
       "max" : "0"
     },
     {
       "id" : "List.code",
       "path" : "List.code",
-      "short" : "Code, der den Typ der Liste beschreibt. https://hl7.org/fhir/R4/valueset-list-example-codes.html. Zu prüfen, ob/wie in Medikationsplan verwendet.",
+      "short" : "Code, der den Typ der Liste beschreibt.",
       "min" : 1,
-      "patternCodeableConcept" : {
+      "fixedCodeableConcept" : {
         "coding" : [{
           "system" : "http://snomed.info/sct",
           "code" : "736378000",
-          "display" : "Medication management plan (record artifact)"
+          "display" : "Medikationsplan"
         }]
       },
       "mustSupport" : true
@@ -120,7 +120,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
     {
       "id" : "List.subject",
       "path" : "List.subject",
-      "short" : "Patient, für den der Medikationsplan erstellt werden soll, der über den \nZentralen Patientenindex identifizierbar und Teilnehmer von ELGA e-Medikation ist.",
+      "short" : "Patient, für den der Medikationsplan dokumentiert wird, der über den \nZentralen Patientenindex identifizierbar und Teilnehmer von ELGA e-Medikation ist.",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
@@ -131,7 +131,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
     {
       "id" : "List.encounter",
       "path" : "List.encounter",
-      "short" : "Verwendung zu prüfen.",
+      "short" : "Behandlungskontext, in dem die Liste erstellt wurde.",
       "max" : "0"
     },
     {
@@ -144,7 +144,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
     {
       "id" : "List.source",
       "path" : "List.source",
-      "short" : "Arzt oder Ärztin, die den Medikationsplans erstellt und für den Inhalt verantwortlich ist. \nEindeutig identifiziert über den GDA-Index und berechtigt auf die ELGA e-Medikation \ndes Patienten zuzugreifen. Device nur für initiale Erstellung durch die Fachanwendung. Patient nur zur Änderung der Reihenfolge der Planeinträge oder nachdem er Einträge gelöscht hat.",
+      "short" : "Arzt oder Ärztin, die den Medikationsplans erstellt hat und für den Inhalt verantwortlich ist. \nEindeutig identifiziert über den GDA-Index und berechtigt auf die ELGA e-Medikation \ndes Patienten zuzugreifen. Device nur für initiale Erstellung durch die Fachanwendung. Patient nur zur Änderung der Reihenfolge der Planeinträge oder nachdem er Einträge gelöscht hat.",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
@@ -185,19 +185,19 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
     {
       "id" : "List.entry.flag",
       "path" : "List.entry.flag",
-      "short" : "Kennzeichnet die Art der Änderung des Medikationsplaneintrags: (example) Unchanged | Changed | Cancelled | Prescribed | Ceased | Suspended. Details siehe Definition.",
-      "definition" : "Kennzeichnet die Art der Änderung des Medikationsplaneintrags: \n* \\\"Unchanged\\\": Medikationsplaneintrag bleibt unverändert bestehen\n* \\\"Changed\\\": Medikationsplaneintrag wird geändert\n* \\\"Cancelled\\\": Medikationsplaneintrag wird storniert\n* \\\"Prescribed\\\": Neuer Medikationsplaneintrag wurde hinzugefügt\n* \\\"Ceased\\\": Medikationsplaneintrag wird abgesetzt\n* \\\"Suspended\\\": Medikationsplaneintrag wird pausiert",
+      "short" : "Kennzeichnet die Art der Änderung des Medikationsplaneintrags: [New | Unchanged | Changed | Removed] Bedeutung: New: Neuer Planeintrag wird hinzugefügt | Unchanged: Bestehender Planeintrag wird beibehalten und zur Kenntnis genommen | Changed: Bestehender Planeintrag wird geändert | Removed: Bestehender Planeintrag wird entfernt",
       "min" : 1,
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
-        "valueSet" : "http://hl7.org/fhir/ValueSet/list-item-flag"
+        "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/ElgaListEntryFlagVS"
       }
     },
     {
       "id" : "List.entry.deleted",
       "path" : "List.entry.deleted",
       "short" : "Gibt an, ob der referenzierte Medikationsplaneintrag zur Entfernung markiert wurde. Unklar, ob Löschen so abgebildet werden soll oder einfach der Eintrag nicht mehr enthalten ist.",
+      "max" : "0",
       "mustSupport" : true
     },
     {
@@ -219,12 +219,11 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
     {
       "id" : "List.emptyReason",
       "path" : "List.emptyReason",
-      "short" : "Begründung, warum der Medikationsplan leer ist: notstarted |  nilknown. Details siehe Definition.",
-      "definition" : "Begründung, warum der Medikationsplan leer ist. Eingeschränkt auf: <vbr>\n    - notstarted: Intitalzustand <br>\n    - nilknown: Patient nimmt derzeit keine Medikamente ein\n\nhttps://hl7.org/fhir/R4/valueset-list-empty-reason.html",
+      "short" : "Begründung, warum der Medikationsplan leer ist. Mögliche Ausprägungen: [notstarted |  nilknown] Bedeutung: notstarted: Intitalzustand - noch nie befüllt | nilknown: Patient nimmt derzeit keine Medikamente ein",
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/MedikationsplanEmptyReasonVS"
+        "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/ElgaListEmptyReasonVS"
       }
     }]
   }
