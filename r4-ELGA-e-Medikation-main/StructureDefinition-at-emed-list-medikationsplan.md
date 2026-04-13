@@ -12,7 +12,7 @@
 | Draft as of 2026-04-13 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedListMedikationsplan |
 
  
-Bildet den Medikationsplan eines ELGA-Teilnehmers ab ("List"-Ressource). Die Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle geplanten Medikationen und deren Dosierung abbilden. Die Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus. 
+Der Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine List-Ressource abgebildet. Diese enthält 0..* Einträge (List.entry), wobei jedes Entry genau eine Referenz auf einen Medikationsplaneintrag (MedicationRequest) in List.entry.item beinhaltet. Die Reihenfolge der Einträge kann durch den GDA oder den Patienten festgelegt werden. Jeder Listeneintrag enthält im Element List.entry.flag den Änderungsstatus des jeweiligen Medikationsplaneintrags. 
 
 **Usages:**
 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
   "name" : "AtEmedListMedikationsplan",
   "title" : "ELGA e-Med Medikationsplan",
   "status" : "draft",
-  "date" : "2026-04-13T15:27:52+00:00",
+  "date" : "2026-04-13T20:12:42+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -59,7 +59,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
       "use" : "work"
     }]
   }],
-  "description" : "Bildet den Medikationsplan eines ELGA-Teilnehmers ab (\"List\"-Ressource). \nDie Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle geplanten Medikationen und deren Dosierung abbilden.\nDie Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus.",
+  "description" : "Der Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine List-Ressource abgebildet. \nDiese enthält 0..* Einträge (List.entry), wobei jedes Entry genau eine Referenz auf einen Medikationsplaneintrag (MedicationRequest) in List.entry.item beinhaltet.\nDie Reihenfolge der Einträge kann durch den GDA oder den Patienten festgelegt werden. Jeder Listeneintrag enthält im Element List.entry.flag den Änderungsstatus des jeweiligen Medikationsplaneintrags.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "rim",
@@ -80,7 +80,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
     "element" : [{
       "id" : "List.identifier",
       "path" : "List.identifier",
-      "short" : "Logischer Identfier der Liste (des Medikationsplans) zur Schreibintegritätsprüfung.",
+      "short" : "Logischer Identfier der Liste (des Medikationsplans) zur Integritätsprüfung beim Schreibvorgang.",
       "max" : "1",
       "mustSupport" : true
     },
@@ -162,7 +162,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
     {
       "id" : "List.orderedBy",
       "path" : "List.orderedBy",
-      "short" : "Die Reihenfolge der Einträge im Medikationsplan ist fachlich relevant und wird durch den Ersteller vorgegeben. Da nicht verpflichtend, könnte das Element auch 0..0 gesetzt werden.\nEvtl. Unterscheidung user und patient.\nMögliche Codes: user | system | event-date | entry-date| priority | alphabetic | category | patient (TODO: nur user oder andere Reihenfolge ermöglichen?)",
+      "short" : "Die Reihenfolge der Einträge im Medikationsplan ist fachlich relevant und wird durch den Ersteller vorgegeben.",
       "min" : 1,
       "patternCodeableConcept" : {
         "coding" : [{
@@ -178,12 +178,13 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
     {
       "id" : "List.note",
       "path" : "List.note",
-      "short" : "Freitextliche Anmerkungen zum Medikationsplan. TODO: prüfen, ob fachlich sinnvoll.",
+      "short" : "Freitextliche Anmerkungen zum Medikationsplan.",
       "mustSupport" : true
     },
     {
       "id" : "List.entry",
       "path" : "List.entry",
+      "short" : "Medikationsplaneinträge in der Liste",
       "mustSupport" : true
     },
     {
@@ -200,14 +201,14 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
     {
       "id" : "List.entry.deleted",
       "path" : "List.entry.deleted",
-      "short" : "Gibt an, ob der referenzierte Medikationsplaneintrag zur Entfernung markiert wurde. Unklar, ob Löschen so abgebildet werden soll oder einfach der Eintrag nicht mehr enthalten ist.",
+      "short" : "Gibt an, ob der referenzierte Medikationsplaneintrag zur Entfernung markiert wurde.\nKeine Verwendung im Medikationsplan, da GDA für die Kennzeichnung von zur Entfernung freigegebenen Planeinträgen das Element entry.flag mit dem Wert \"removed\" verwenden und ELGA-Teilnehmer Einträge durch Entfernen aus der Liste löschen.",
       "max" : "0",
       "mustSupport" : true
     },
     {
       "id" : "List.entry.date",
       "path" : "List.entry.date",
-      "short" : "Datum der Aufnahme / Änderung des Medikationsplaneintrags. Fachlich zu klären.",
+      "short" : "Datum der Aufnahme bzw. Änderung des Medikationsplaneintrags.",
       "mustSupport" : true
     },
     {

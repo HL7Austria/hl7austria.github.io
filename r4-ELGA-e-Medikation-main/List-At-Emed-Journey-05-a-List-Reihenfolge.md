@@ -15,10 +15,10 @@ Profile: [ELGA e-Med Medikationsplan](StructureDefinition-at-emed-list-medikatio
 
 * **Items**: [MedicationRequest: extension = 2026-02-27 --> 2026-03-16,1 täglich auftragen; identifier = 4713_202602280800000; status = active; intent = order; category = Medikationsplaneintrag; reported[x] = false; medication[x] = ->Medication: form = Salbe; authoredOn = 2026-02-27 10:20:00+0000](MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-02.md)
   * Date: 2026-02-27 10:20:00+0000
-  * Flag: Prescribed
+  * Flag: Neuer Planeintrag
 * **Items**: [MedicationRequest: extension = 1-0-1-0 Stück; identifier = 4712_202602280800000; status = active; intent = order; category = Medikationsplaneintrag; reported[x] = false; medication[x] = ->Medication EBETREXAT TBL 10MG; authoredOn = 2026-02-27 10:20:00+0000; note = Freitext Informationen zum Medikationsplaneintrag.](MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-01.md)
   * Date: 2026-02-27 10:20:00+0000
-  * Flag: Prescribed
+  * Flag: Neuer Planeintrag
 
 
 
@@ -56,9 +56,9 @@ Profile: [ELGA e-Med Medikationsplan](StructureDefinition-at-emed-list-medikatio
   "entry" : [{
     "flag" : {
       "coding" : [{
-        "system" : "urn:oid:1.2.36.1.2001.1001.101.104.16592",
-        "code" : "04",
-        "display" : "Prescribed"
+        "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/ElgaListEntryFlagCS",
+        "code" : "new",
+        "display" : "Neuer Planeintrag"
       }]
     },
     "date" : "2026-02-27T10:20:00+00:00",
@@ -69,9 +69,9 @@ Profile: [ELGA e-Med Medikationsplan](StructureDefinition-at-emed-list-medikatio
   {
     "flag" : {
       "coding" : [{
-        "system" : "urn:oid:1.2.36.1.2001.1001.101.104.16592",
-        "code" : "04",
-        "display" : "Prescribed"
+        "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/ElgaListEntryFlagCS",
+        "code" : "new",
+        "display" : "Neuer Planeintrag"
       }]
     },
     "date" : "2026-02-27T10:20:00+00:00",

@@ -51,7 +51,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "title" : "ELGA e-Med MedicationRequest Kategorie ValueSet",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-04-13T15:27:52+00:00",
+  "date" : "2026-04-13T20:12:42+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

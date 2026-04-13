@@ -33,7 +33,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-04-13T15:27:52+00:00",
+  "date" : "2026-04-13T20:12:42+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1226,7 +1226,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "StructureDefinition/at-emed-list-medikationsplan"
       },
       "name" : "ELGA e-Med Medikationsplan",
-      "description" : "Bildet den Medikationsplan eines ELGA-Teilnehmers ab (\"List\"-Ressource). \nDie Liste beinhaltet Referenzen auf 0..* Medikationsplaneinträge (MedicationRequests), die alle geplanten Medikationen und deren Dosierung abbilden.\nDie Reihenfolge der Listenelemente kann duch den User festgelegt werden. Jedes Listenelement enthält einen Änderungsstatus.",
+      "description" : "Der Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine List-Ressource abgebildet. \nDiese enthält 0..* Einträge (List.entry), wobei jedes Entry genau eine Referenz auf einen Medikationsplaneintrag (MedicationRequest) in List.entry.item beinhaltet.\nDie Reihenfolge der Einträge kann durch den GDA oder den Patienten festgelegt werden. Jeder Listeneintrag enthält im Element List.entry.flag den Änderungsstatus des jeweiligen Medikationsplaneintrags.",
       "exampleBoolean" : false
     },
     {
@@ -1274,7 +1274,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "StructureDefinition/at-emed-mr-planeintrag"
       },
       "name" : "ELGA e-Med Planeintrag",
-      "description" : "Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers ab (\"MedicationRequest\"-Ressource).\nEr enthält genau ein Arzneimittel und dessen Dosierung.\nKann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet R5 Backport Extensions.",
+      "description" : "Ein Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine \"MedicationRequest\"-Ressource abgebildet.\nDie Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained Medication-Ressource (inline), also innerhalb der Ressource, dokumentiert wird.\nDer Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstellung einer geplanten Abgabe dienen. Es werden R5-Backport-Extensions verwendet.",
       "exampleBoolean" : false
     },
     {

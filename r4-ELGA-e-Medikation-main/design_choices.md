@@ -9,11 +9,13 @@
 
 #### AtEmedListMedikationsplan (List)
 
-Der Medikationsplan eines ELGA-Teilnehmers/einer ELGA-Teilnehmerin (**List**-Ressource) beinhaltet List-Entries, die 0..* Medikationsplaneinträge (**MedicationRequests**) referenzieren. Die Reihenfolge der Listenelemente kann duch den GDA oder Patienten festgelegt werden. Jedes Listenelement enthält im **flag**-Element den Änderungsstatus (siehe [Status der List.entry.flag (Medikationsplan)](workflowmanagement.md#status-der-list-entry-flag-medikationsplan)).
+Der Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine **List**-Ressource abgebildet. Diese enthält 0..* Einträge (**List.entry**), wobei jedes Entry genau eine Referenz (**Reference**) auf einen Medikationsplaneintrag (**MedicationRequest**) in **List.entry.item** beinhaltet.
+
+Die Reihenfolge der Einträge kann durch den GDA oder den Patienten festgelegt werden. Jeder Listeneintrag enthält im Element **List.entry.flag** den Änderungsstatus des jeweiligen Medikationsplaneintrags (siehe [Status der List.entry.flag (Medikationsplan)](workflowmanagement.md#status-der-list-entry-flag-medikationsplan)).
 
 #### AtEmedMRPlaneintrag (MedicationRequest)
 
-Der Medikationsplaneintrag (**MedicationRequest**-Ressource) im Medikationsplan eines ELGA-Teilnehmers/einer ELGA-Teilnehmerin bildet genau ein Arzneimittel und dessen Dosierung ab und bildet in weiterer Folge die Grundlage zur Erstellung einer geplanten Abgabe (siehe **UC_08 Geplante Abgabe Schreiben**).
+Ein Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine **MedicationRequest**-Ressource abgebildet. Die Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained **Medication**-Ressource, also inline (innerhalb der Ressource), dokumentiert wird. Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstellung einer geplanten Abgabe dienen. Es werden R5-Backport-Extensions verwendet."
 
 Der aktuelle Status eines Medikationsplaneintrags wird im **status**-Element dokumentiert (siehe [Status des MedicationRequests im Medikationsplaneintrag](workflowmanagement.md#status-des-medicationrequests-im-medikationsplaneintrag)).
 

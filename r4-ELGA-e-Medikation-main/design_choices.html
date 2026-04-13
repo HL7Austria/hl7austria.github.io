@@ -286,15 +286,20 @@ width: 100%;}
 
 <h4 id="atemedlistmedikationsplan-list">AtEmedListMedikationsplan (<em>List</em>)</h4>
 
-<p><a name="l370">​</a>Der Medikationsplan eines ELGA-Teilnehmers/einer ELGA-Teilnehmerin (<em>List</em>-Ressource) beinhaltet List-Entries, die 0..* Medikationsplaneinträge (<em>MedicationRequests</em>) referenzieren. Die Reihenfolge der Listenelemente kann duch den GDA oder Patienten festgelegt werden. Jedes Listenelement enthält im <em>flag</em>-Element den Änderungsstatus (siehe <a href="workflowmanagement.html#status-der-list-entry-flag-medikationsplan">Status der List.entry.flag (Medikationsplan)</a>).</p>
+<p>Der Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine <em>List</em>-Ressource abgebildet. Diese enthält 0..* Einträge (<em>List.entry</em>), wobei jedes Entry genau eine Referenz (<em>Reference</em>) auf einen Medikationsplaneintrag (<em>MedicationRequest</em>) in <em>List.entry.item</em> beinhaltet.</p>
+
+<p><a name="l388">​</a>Die Reihenfolge der Einträge kann durch den GDA oder den Patienten festgelegt werden. Jeder Listeneintrag enthält im Element <em>List.entry.flag</em> den Änderungsstatus des jeweiligen Medikationsplaneintrags (siehe <a href="workflowmanagement.html#status-der-list-entry-flag-medikationsplan">Status der List.entry.flag (Medikationsplan)</a>).</p>
+
+  <!-- TODO: Wiederverwendbarkeit der Liste für e-Diagnose und e-Behandlungsplan -->
 
 <h4 id="atemedmrplaneintrag-medicationrequest">AtEmedMRPlaneintrag (<em>MedicationRequest</em>)</h4>
 
-<p>Der Medikationsplaneintrag (<em>MedicationRequest</em>-Ressource) im Medikationsplan eines ELGA-Teilnehmers/einer ELGA-Teilnehmerin bildet genau ein Arzneimittel und dessen Dosierung ab und bildet in weiterer Folge die Grundlage zur Erstellung einer geplanten Abgabe (siehe <em>UC_08 Geplante Abgabe Schreiben</em>).</p>
+<p>Ein Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine <em>MedicationRequest</em>-Ressource abgebildet. Die Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained <em>Medication</em>-Ressource, also inline (innerhalb der Ressource), dokumentiert wird.
+Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstellung einer geplanten Abgabe dienen. Es werden R5-Backport-Extensions verwendet."</p>
 
 <p>Der aktuelle Status eines Medikationsplaneintrags wird im <em>status</em>-Element dokumentiert (siehe <a href="workflowmanagement.html#status-des-medicationrequests-im-medikationsplaneintrag">Status des MedicationRequests im Medikationsplaneintrag</a>).</p>
 
-<p><a name="l409">​</a>Abhängig vom List.entry.flag kann der Medikationsplaneintrag nur eingeschränkte Status einnehmen (siehe <a href="workflowmanagement.html#konsistenzregeln-zwischen-list-entry-flag-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flag und MedicationRequest-Status</a>).</p>
+<p><a name="l423">​</a>Abhängig vom List.entry.flag kann der Medikationsplaneintrag nur eingeschränkte Status einnehmen (siehe <a href="workflowmanagement.html#konsistenzregeln-zwischen-list-entry-flag-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flag und MedicationRequest-Status</a>).</p>
 
 
 
@@ -314,7 +319,7 @@ width: 100%;}
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Apr 13, 2026 15:27+0000">2026-04-13</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Apr 13, 2026 20:12+0000">2026-04-13</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

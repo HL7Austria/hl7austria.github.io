@@ -14,7 +14,7 @@ Beim Read-only-Zugriff wird der aktuelle Medikationsplan (zuletzt gespeichertes 
 Das **Collection Bundle** enthält:
 
 * die List-Ressource des Medikationsplans
-* alle referenzierten Ressourcen (z.B. MedicationRequest, Patient, Practitioner) vollständig (inline)
+* alle darin referenzierten Ressourcen (z.B. MedicationRequest, Patient, Practitioner) vollständig (inline)
 * Es erfolgt keine Veränderung von Flags, Status oder Inhalten.
 * Der Zugriff dient ausschließlich der Anzeige bzw. Information.
 
@@ -35,24 +35,24 @@ Ist zum Zeitpunkt der Abfrage kein Medikationsplan für den/die Patient:in vorha
 
 ### Read-to-Write-Zugriff
 
-Der Read-to-Write-Zugriff dient der Vorbereitung einer Änderung des Medikationsplans:
+Der Read-to-Write-Zugriff dient dem Abruf des Medikationsplans und der Vorbereitung einer nachfolgenden Änderung.
 
 * Bei einem Read-to-Write-Zugriff prüft die Fachanwendung zunächst, ob bereits ein Medikationsplan vorhanden ist. Ist dies nicht der Fall, wird dieser erstellt (siehe [Sub_UC_06_01 - Initial erstellter Medikationsplan](Sub_UC_eMed_06.md#sub_uc_06_01---initial-erstellter-medikationsplan)) und zurückgeliefert.
-* Existiert bereits ein Medikationsplan (d.h. es wurde bereits ein Collection Bundle persistiert), wird von der Fachanwendung aus diesem ein **Collection Bundle** zur Auslieferung erstellt: 
-* mit einem neuen oder bereits temporär gespeicherten **List.identifier** (wird von der Fachanwendung zur späteren Schreibintegritätsprüfung verwaltet)
+* Existiert bereits ein Medikationsplan (d.h. es wurde bereits ein Collection Bundle persistiert), wird von der Fachanwendung aus diesem ein **Collection Bundle zur Auslieferung** erstellt: 
+* mit einem neuen oder bereits temporär gespeicherten **List.identifier** (wird von der Fachanwendung zur späteren Integritätsprüfung beim Schreibvorgang verwaltet)
 * die Inhalte werden von der Fachanwendung wie folgt aufbereitet: 
-* Wenn List.entry.flag **new** → **unchanged**
-* Wenn List.entry.flag **changed** → **unchanged**
-* Wenn List.entry.flag **removed** → Einträge werden aus der Liste **entfernt**
+* Wenn ein List.entry.flag den Status **new** hat, wird dieser auf **unchanged** gesetzt
+* Wenn ein List.entry.flag den Status **changed** hat, wird dieser auf **unchanged** gesetzt
+* Wenn ein List.entry.flag den Status **removed** hat, wird der Eintrag aus der Liste **entfernt**
 * Einträge mit abgelaufenem Behandlungszeitraum bleiben erhalten 
  
-* die Fachanwendung liefert diese zurück an den GDA: 
+* die Fachanwendung liefert das Collection Bundle an den GDA: 
 * inkl. List und aller referenzierten Ressourcen (inline)
 * ergänzt um den List.identifier
 * Ziel ist ein neutraler, weiterbearbeitbarer Zustand für den nächsten GDA
  
  
-* Der temporär gespeicherte List.identifier für die Zugriffsintegrität wird von der Fachanwendung, separat von den FHIR Ressourcen verwalten.
+* Der temporär gespeicherte List.identifier für die Integritätsprüfung beim Schreibvorgang wird von der Fachanwendung separat von den FHIR Ressourcen verwalten.
 
 #### Custom Operations
 
@@ -62,12 +62,12 @@ Der Read-to-Write-Zugriff dient der Vorbereitung einer Änderung des Medikations
 
 Der Write-Zugriff ist eine eigenständige Operation, die ausschließlich im Kontext eines vorherigen Read-to-Writes erfolgen darf:
 
-* Der GDA übermittelt den aktualisierten Medikationsplan als Transaction Bundle: 
-* Inline enthalten: neue und geänderte Ressourcen
-* Referenziert: unveränderte Ressourcen
+* Der GDA übermittelt den aktualisierten Medikationsplan als **Transaction Bundle**: 
+* alle **neuen und geänderten Ressourcen** sind **inline** im Bundle enthalten
+* alle unveränderten Ressourcen werden nur referenziert
  
 * Die Fachanwendung prüft u.a. ob der übermittelte **List.identifier** mit dem List.identifier der temporär gespeicherten Medikationsplanversion **übereinstimmt** (d.h. es wurde zwischenzeitlich kein anderer Schreibvorgang durchgeführt) 
-* Stimm der List.identifier nicht überein, lehnt die Fachanwendung die Aktualisierung des Medikationsplans ab. Es muss erneut ein Read-to-Write ausgeführt werden und die Aktualisierungen übernommen werden, bevor ein neuerlicher Speicherversuch gestartet werden kann.
+* Stimm der List.identifier nicht überein, lehnt die Fachanwendung das Speichern des Medikationsplans ab. Es muss erneut ein Read-to-Write ausgeführt werden und die Aktualisierungen übernommen werden, bevor ein neuerlicher Speicherversuch gestartet werden kann.
  
 * Bei erfolgreicher Prüfung: 
 * werden die übermittelten Änderungen in die Ressourcen übernommen und
@@ -85,8 +85,8 @@ Der Write-Zugriff ist eine eigenständige Operation, die ausschließlich im Kont
 * Wenn weitere Akteure (hier GDA 2) ein Read-to-Write ausführen, während GDA 1 das von der Fachanwendung übermittelte Bundle bearbeitet, erhalten sie: 
 * dasselbe Collection Bundle (mit dem selben List.identifier), das zuvor schon GDA 1 übermittelt wurde.
  
-* Nur bei jenem Akteur, der zuerst ein Write ausführt, wird der temporär in der Fachanwendung vorgehaltene List.identifier mit dem eigenen im TransactionBundle.List.identifier übereinstimmen, da der termporäre List.identifier danach gelöscht wird.
-* Bei einem späteren Schreibversuch eines anderen Akteurs mit dem ursprünglich gleichen List.identifier wird die Prüfung daher fehlschlagen und ein Speichern abgelehnt.
+* Nur bei jenem Akteur, der **zuerst einen Write-Zugriff ausführt**, stimmt der temporär in der Fachanwendung vorgehaltene List.identifier mit dem im Transaction Bundle verwendeten List.identifier überein, da der **temporäre List.identifier nach einem erfolgreichen Speichern gelöscht wird**.
+* Bei einem späteren Schreibversuch mit dem ursprünglich gleichen List.identifier wird die Prüfung daher fehlschlagen und ein Speichern abgelehnt.
 * Erst ein weiteres Read-to-Write löst wieder das generieren eines zur Auslieferung bereitgestellten temporären Collection Bundles inkl. neuem List.identifier aus.
 
 #### Ablauf

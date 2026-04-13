@@ -12,7 +12,7 @@
 | Draft as of 2026-04-13 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMRPlaneintrag |
 
  
-Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers ab ("MedicationRequest"-Ressource). Er enthält genau ein Arzneimittel und dessen Dosierung. Kann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet R5 Backport Extensions. 
+Ein Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine "MedicationRequest"-Ressource abgebildet. Die Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained Medication-Ressource (inline), also innerhalb der Ressource, dokumentiert wird. Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstellung einer geplanten Abgabe dienen. Es werden R5-Backport-Extensions verwendet. 
 
 **Usages:**
 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
   "name" : "AtEmedMRPlaneintrag",
   "title" : "ELGA e-Med Planeintrag",
   "status" : "draft",
-  "date" : "2026-04-13T15:27:52+00:00",
+  "date" : "2026-04-13T20:12:42+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -60,7 +60,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
       "use" : "work"
     }]
   }],
-  "description" : "Bildet einen Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers ab (\"MedicationRequest\"-Ressource).\nEr enthält genau ein Arzneimittel und dessen Dosierung.\nKann in weiterer Folge dazu dienen, eine geplante Abgabe zu erstellen. Verwendet R5 Backport Extensions.",
+  "description" : "Ein Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine \"MedicationRequest\"-Ressource abgebildet.\nDie Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained Medication-Ressource (inline), also innerhalb der Ressource, dokumentiert wird.\nDer Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstellung einer geplanten Abgabe dienen. Es werden R5-Backport-Extensions verwendet.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "workflow",
@@ -153,8 +153,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
     {
       "id" : "MedicationRequest.status",
       "path" : "MedicationRequest.status",
-      "short" : "Status des Medikationsplaneintrags. active | completed | on-hold | stopped. TODO: Fachlich zu püfen, ob im Medikationsplan dokumentiert werden soll, dass und warum ein Medikament abgesetzt wurde (Status: stopped, z.B. bei Allergie). Details siehe Definition.",
-      "definition" : "Status des Medikationsplaneintrags:\n* \\\"active\\\": aktive Therapie; soll aktuell vom Patienten eingenommen werden\n* \\\"completed\\\": Therapie regulär abgeschlossen\n* \\\"on-hold\\\": Therapie vorübergehend unterbrochen; Wiederaufnahme vorgesehen\n* \\\"stopped\\\": begonnen Therapie, aber vorzeitig und ohne regulären Abschluss beendet\n\n(nicht verwendet: cancelled, entered-in-error, draft, unknown)\nhttps://hl7.org/fhir/R4/valueset-medicationrequest-status.html",
+      "short" : "Status des Medikationsplaneintrags. Mögliche Ausprägungen: [active | on-hold | completed | stopped | entered-in-error]. Bedeutung: active: Planeintrag einer aktiven Medikation, die eingenommen werden soll | on-hold: Planeintrag ist pausiert, die Therapie ist unterbrochen (Wiederaufnahme vorgesehen) | completed: Therapie gemäß Planeintrag wie geplant durchgeführt und abgeschlossen | stopped: Therapie gemäß Planeintrag vorzeitig gestoppt und abgeschlossen | entered-in-error: Fehlerhafter Planeintrag storniert und abgeschlossen.",
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
@@ -164,8 +163,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
     {
       "id" : "MedicationRequest.statusReason",
       "path" : "MedicationRequest.statusReason",
-      "short" : "Grund für den aktuellen Status des Medikationsplaneintrags: (ex) https://hl7.org/fhir/R4/valueset-medicationrequest-status-reason.html. TODO: Verwendung fachlich zu prüfen im Zusammenhang mit Status.",
-      "max" : "0"
+      "short" : "Grund für den aktuellen Status des Medikationsplaneintrags: (ex) https://hl7.org/fhir/R4/valueset-medicationrequest-status-reason.html."
     },
     {
       "id" : "MedicationRequest.intent",
