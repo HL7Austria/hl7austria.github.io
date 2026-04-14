@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MessageDefinition xmlns="http://hl7.org/fhir">
+  <id value="at-messaging-communication-message"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: MessageDefinition at-messaging-communication-message</b></p><a name="at-messaging-communication-message"> </a><a name="hcat-messaging-communication-message"> </a><p><b>url</b>: <a href="MessageDefinition-at-messaging-communication-message.html">MessageDefinition Communication over directed messaging.</a></p><p><b>version</b>: 0.1.0</p><p><b>versionAlgorithm</b>: <a href="http://hl7.org/fhir/R5/codesystem-version-algorithm.html#version-algorithm-semver">Version Algorithm: semver</a> (SemVer)</p><p><b>name</b>: ATMessagingCommunicationMessage</p><p><b>title</b>: Communication over directed messaging.</p><p><b>status</b>: Draft</p><p><b>date</b>: 2026-01-21</p><p><b>publisher</b>: HL7® Austria, TC FHIR®</p><p><b>contact</b>: HL7® Austria, TC FHIR®: <a href="https://hl7.at/technische-komitees/tc-fhir/">https://hl7.at/technische-komitees/tc-fhir/</a>,<a href="mailto:tc-fhir@hl7.at">tc-fhir@hl7.at</a>, Technical Committee for FHIR® at HL7® Austria: <a href="mailto:tc-fhir@hl7.at">tc-fhir@hl7.at</a></p><p><b>description</b>: </p><div><p>Regulates the resources to be used in a directed message when transferring a Communication.</p>
+</div><h3>UseContexts</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Code</b></td><td><b>Value[x]</b></td></tr><tr><td style="display: none">*</td><td><a href="http://terminology.hl7.org/7.1.0/CodeSystem-usage-context-type.html#usage-context-type-jurisdiction">UsageContextType: jurisdiction</a> (Jurisdiction) (version = 2.0.1 )</td><td><span title="Codes:{urn:iso:std:iso:3166 AT}">Austria</span></td></tr></table><p><b>event</b>: <a href="CodeSystem-at-messaging-event-type.html#at-messaging-event-type-status">AT Messaging Event Type: status</a> (The message is sent to transfer the status or result of an ongoing message flow (e.g. acknowledgement, service status update, ...))</p><p><b>category</b>: Currency</p><h3>Focus</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Code</b></td><td><b>Profile</b></td><td><b>Min</b></td><td><b>Max</b></td></tr><tr><td style="display: none">*</td><td>Communication</td><td><a href="StructureDefinition-at-messaging-communication.html">AT Messaging Communication</a></td><td>1</td><td>1</td></tr></table><blockquote><p><b>allowedResponse</b></p><p><b>message</b>: <a href="MessageDefinition-at-messaging-communication-message.html">Communication over directed messaging.</a></p><p><b>situation</b>: </p><div><p>As soon as the receiving system has processed the message successfully and the communication is answered.</p>
+</div></blockquote><blockquote><p><b>allowedResponse</b></p><p><b>message</b>: <a href="MessageDefinition-at-messaging-document-message.html">Document transfer over directed messaging.</a></p><p><b>situation</b>: </p><div><p>As soon as the receiving system has processed the message successfully and a document is sent as a result or answer of the communication.</p>
+</div></blockquote></div>
+  </text>
+  <url value="http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-communication-message"/>
+  <version value="0.1.0"/>
+  <versionAlgorithmCoding>
+    <system value="http://hl7.org/fhir/version-algorithm"/>
+    <code value="semver"/>
+  </versionAlgorithmCoding>
+  <name value="ATMessagingCommunicationMessage"/>
+  <title value="Communication over directed messaging."/>
+  <status value="draft"/>
+  <date value="2026-01-21"/>
+  <publisher value="HL7® Austria, TC FHIR®"/>
+  <contact>
+    <name value="HL7® Austria, TC FHIR®"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://hl7.at/technische-komitees/tc-fhir/"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="tc-fhir@hl7.at"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Technical Committee for FHIR® at HL7® Austria"/>
+    <telecom>
+      <system value="email"/>
+      <value value="tc-fhir@hl7.at"/>
+    </telecom>
+  </contact>
+  <description value="Regulates the resources to be used in a directed message when transferring a Communication."/>
+  <useContext>
+    <code>
+      <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+      <version value="2.0.1"/>
+      <code value="jurisdiction"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="urn:iso:std:iso:3166"/>
+        <code value="AT"/>
+        <display value="Austria"/>
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <eventCoding>
+    <system value="http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-event-type"/>
+    <code value="status"/>
+  </eventCoding>
+  <category value="currency"/>
+  <focus>
+    <code value="Communication"/>
+    <profile value="http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-communication"/>
+    <min value="1"/>
+    <max value="1"/>
+  </focus>
+  <allowedResponse>
+    <message value="http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-communication-message"/>
+    <situation value="As soon as the receiving system has processed the message successfully and the communication is answered."/>
+  </allowedResponse>
+  <allowedResponse>
+    <message value="http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-document-message"/>
+    <situation value="As soon as the receiving system has processed the message successfully and a document is sent as a result or answer of the communication."/>
+  </allowedResponse>
+</MessageDefinition>

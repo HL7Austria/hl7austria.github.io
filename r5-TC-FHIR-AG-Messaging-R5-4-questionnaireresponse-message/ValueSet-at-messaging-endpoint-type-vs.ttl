@@ -1,0 +1,83 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ValueSet/at-messaging-endpoint-type-vs> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "at-messaging-endpoint-type-vs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet at-messaging-endpoint-type-vs</b></p><a name=\"at-messaging-endpoint-type-vs\"> </a><a name=\"hcat-messaging-endpoint-type-vs\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <a href=\"CodeSystem-at-messaging-endpoint-type.html\"><code>http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-endpoint-type</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?0.1.0</span></li><li>Include these codes as defined in <a href=\"http://terminology.hl7.org/7.1.0/CodeSystem-endpoint-connection-type.html\"><code>http://terminology.hl7.org/CodeSystem/endpoint-connection-type</code></a><span title=\"Version is not explicitly stated, which means it is fixed to 2.1.1, the version found through the package references\"> version ?2.1.1</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"http://terminology.hl7.org/7.1.0/CodeSystem-endpoint-connection-type.html#endpoint-connection-type-hl7-fhir-msg\">hl7-fhir-msg</a></td><td style=\"color: #cccccc\">HL7 FHIR Messaging</td><td>Use the servers FHIR Messaging interface. Details can be found on the messaging.html page in the FHIR Specification. The FHIR server's base address is specified in the Endpoint.address property.</td></tr></table></li></ul></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ValueSet/at-messaging-endpoint-type-vs"^^xsd:anyURI ;
+     fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ValueSet/at-messaging-endpoint-type-vs>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "ATMessagingEndpointTypeVS"] ; # 
+  fhir:title [ fhir:v "AT Messaging Endpoint Type ValueSet"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-04-14T12:51:31+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "HL7® Austria, TC FHIR®"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "HL7® Austria, TC FHIR®" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://hl7.at/technische-komitees/tc-fhir/" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "tc-fhir@hl7.at" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Technical Committee for FHIR® at HL7® Austria" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "tc-fhir@hl7.at" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "ValueSet of Endpoint Type Codings."] ; # 
+  fhir:useContext ( [
+     fhir:code [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/usage-context-type"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/usage-context-type>
+       ] ;
+       fhir:version [ fhir:v "2.0.1" ] ;
+       fhir:code [ fhir:v "jurisdiction" ]
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+           fhir:l <urn:iso:std:iso:3166>
+         ] ;
+         fhir:code [ fhir:v "AT" ] ;
+         fhir:display [ fhir:v "Austria" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [
+         fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-endpoint-type"^^xsd:anyURI ;
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-endpoint-type>
+       ]
+     ] [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/endpoint-connection-type"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/endpoint-connection-type>
+       ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "hl7-fhir-msg" ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
