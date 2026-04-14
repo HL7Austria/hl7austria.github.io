@@ -31,6 +31,9 @@ Profile: [ELGA e-Med Medikationsplan](StructureDefinition-at-emed-list-medikatio
   "meta" : {
     "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"]
   },
+  "identifier" : [{
+    "value" : "123"
+  }],
   "status" : "current",
   "mode" : "working",
   "code" : {

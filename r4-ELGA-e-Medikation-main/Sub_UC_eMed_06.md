@@ -14,11 +14,11 @@ Für jeden Use Case werden in den Kapiteln **Relevante Elemente** die wichtigste
 
 Die initiale Erstellung des Medikationsplans erfolgt durch die e-Medikation Fachanwendung.
 
-Ein GDA ruft den Medikationsplan eines Patienten ab, ohne zu wissen, ob dieser bereits existiert. Die Fachanwendung stellt sicher, dass pro Patient genau ein Medikationsplan vorhanden ist: Existiert noch keiner, wird dieser im Hintergrund initial angelegt und mit dem emptyReason **notstarted** zurückgegeben.
+Ein GDA möchte den Medikationsplan eines Patienten abrufen, mit der Intention diesen zu bearbeiten, aber ohne zu wissen, ob dieser bereits existiert (siehe auch [Read-to-Write-Zugriff](interactions.md#read-to-write-zugriff)). Die Fachanwendung stellt sicher, dass pro Patient genau ein Medikationsplan vorhanden ist: Existiert noch keiner, wird dieser im Hintergrund initial angelegt und mit dem emptyReason **notstarted** zurückgeliefert.
 
-Dieser Status kennzeichnet ausschließlich den Initialzustand (keine Einträge im Medikationsplan) und trifft keine Aussage darüber, ob der Patient tatsächlich keine Medikamente einnimmt.
+Dieser Status kennzeichnet ausschließlich den Initialzustand (keine Einträge im Medikationsplan) und trifft keine Aussage darüber, ob der Patient keine Medikamente einnimmt.
 
-Auch der Patient kann die Erstellung eines Medikationsplans auslösen.
+Auch der Patient kann die Erstellung eines Medikationsplans auslösen, indem er diesen über das ELGA Portal aufruft (siehe auch [Read-to-Write-Zugriff](interactions.md#read-to-write-zugriff)).
 
 ##### Ablauf
 

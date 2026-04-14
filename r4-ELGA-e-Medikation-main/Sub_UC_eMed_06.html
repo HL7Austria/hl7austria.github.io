@@ -292,11 +292,11 @@ width: 100%;}
 
 <p>Die initiale Erstellung des Medikationsplans erfolgt durch die e-Medikation Fachanwendung.</p>
 
-<p>Ein GDA ruft den Medikationsplan eines Patienten ab, ohne zu wissen, ob dieser bereits existiert. Die Fachanwendung stellt sicher, dass pro Patient genau ein Medikationsplan vorhanden ist: Existiert noch keiner, wird dieser im Hintergrund initial angelegt und mit dem emptyReason <em>notstarted</em> zurückgegeben.</p>
+<p>Ein GDA möchte den Medikationsplan eines Patienten abrufen, mit der Intention diesen zu bearbeiten, aber ohne zu wissen, ob dieser bereits existiert (siehe auch <a href="interactions.html#read-to-write-zugriff">Read-to-Write-Zugriff</a>). Die Fachanwendung stellt sicher, dass pro Patient genau ein Medikationsplan vorhanden ist: Existiert noch keiner, wird dieser im Hintergrund initial angelegt und mit dem emptyReason <em>notstarted</em> zurückgeliefert.</p>
 
-<p>Dieser Status kennzeichnet ausschließlich den Initialzustand (keine Einträge im Medikationsplan) und trifft keine Aussage darüber, ob der Patient tatsächlich keine Medikamente einnimmt.</p>
+<p>Dieser Status kennzeichnet ausschließlich den Initialzustand (keine Einträge im Medikationsplan) und trifft keine Aussage darüber, ob der Patient keine Medikamente einnimmt.</p>
 
-<p>Auch der Patient kann die Erstellung eines Medikationsplans auslösen.</p>
+<p>Auch der Patient kann die Erstellung eines Medikationsplans auslösen, indem er diesen über das ELGA Portal aufruft (siehe auch <a href="interactions.html#read-to-write-zugriff">Read-to-Write-Zugriff</a>).</p>
 
 <h5 id="ablauf">Ablauf</h5>
 
@@ -350,7 +350,7 @@ Für jeden Use Case werden in den Kapiteln <em>Relevante Elemente</em> die wicht
 <p>Hierfür werden entsprechende Medikationsplaneinträge <em>MedicationRequests</em> erstellt und in der <em>List</em>-Ressouce referenziert:</p>
 <ul>
   <li>Das List.entry.flag des referenzierten MedicationRequests erhält den Wert <em>new</em>,</li>
-  <li><a name="l1027">​</a>die MedicationRequests selbst können den Status <em>active</em> oder <em>on-hold</em> erhalten (siehe <a href="workflowmanagement.html#konsistenzregeln-zwischen-list-entry-flag-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flag und MedicationRequest-Status</a>)</li>
+  <li><a name="l1033">​</a>die MedicationRequests selbst können den Status <em>active</em> oder <em>on-hold</em> erhalten (siehe <a href="workflowmanagement.html#konsistenzregeln-zwischen-list-entry-flag-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flag und MedicationRequest-Status</a>)</li>
   <li>der Behandlungszeitraum im MedicationRequest kann sich auf das aktuelle Datum beziehen oder in der Zukunft liegen</li>
   <li>ein bereits bestehender MedicationRequest kann wieder (re)aktiviert werden:
     <ul>
@@ -411,7 +411,7 @@ Für jeden Use Case werden in den Kapiteln <em>Relevante Elemente</em> die wicht
 
 <h5 id="auswirkung-der-zugriffsart-auf-list-status-und-bundles-neuer-medikationsplaneintrag">Auswirkung der Zugriffsart auf List-Status und Bundles: neuer Medikationsplaneintrag</h5>
 
-<p><a name="l1377">​</a>Siehe <a href="workflowmanagement.html#auswirkung-der-zugriffsart-auf-list-status-und-bundle-inhalte">Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte</a>: Status <em>new</em>.</p>
+<p><a name="l1383">​</a>Siehe <a href="workflowmanagement.html#auswirkung-der-zugriffsart-auf-list-status-und-bundle-inhalte">Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte</a>: Status <em>new</em>.</p>
 
 <h4 id="sub_uc_06_04---medikationsplaneintrag-im-medikationsplan-beibehalten">Sub_UC_06_04 - Medikationsplaneintrag im Medikationsplan beibehalten</h4>
 
@@ -422,7 +422,7 @@ Hierfür bleiben entsprechende Medikationsplaneinträge <em>MedicationRequests</
 
 <h5 id="ablauf-3">Ablauf</h5>
 
-<p><a name="l1419">​</a>Siehe <a href="interactions.html#ablauf-read-to-write-zugriff">Ablauf Read-to-Write-Zugriff</a></p>
+<p><a name="l1425">​</a>Siehe <a href="interactions.html#ablauf-read-to-write-zugriff">Ablauf Read-to-Write-Zugriff</a></p>
 
 <h5 id="relevante-elemente-list-3">Relevante Elemente (List):</h5>
 
@@ -445,7 +445,7 @@ Hierfür bleiben entsprechende Medikationsplaneinträge <em>MedicationRequests</
 
 <h5 id="auswirkung-der-zugriffsart-auf-list-status-und-bundles-medikationsplaneintrag-beibehalten">Auswirkung der Zugriffsart auf List-Status und Bundles: Medikationsplaneintrag beibehalten</h5>
 
-<p><a name="l1441">​</a>Siehe <a href="workflowmanagement.html#auswirkung-der-zugriffsart-auf-list-status-und-bundle-inhalte">Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte</a>: Status <em>unchanged</em>.</p>
+<p><a name="l1447">​</a>Siehe <a href="workflowmanagement.html#auswirkung-der-zugriffsart-auf-list-status-und-bundle-inhalte">Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte</a>: Status <em>unchanged</em>.</p>
 
 <h4 id="sub_uc_06_05---medikationsplaneintrag-im-medikationsplan-ändern">Sub_UC_06_05 - Medikationsplaneintrag im Medikationsplan ändern</h4>
 
@@ -460,7 +460,7 @@ Dies kann den gesamten Medikationsplaneintrag (<em>MedicationRequest</em>) umfas
 
 <h5 id="ablauf-4">Ablauf</h5>
 
-<p><a name="l1489">​</a>Siehe <a href="interactions.html#ablauf-read-to-write-zugriff">Ablauf Read-to-Write-Zugriff</a></p>
+<p><a name="l1495">​</a>Siehe <a href="interactions.html#ablauf-read-to-write-zugriff">Ablauf Read-to-Write-Zugriff</a></p>
 
 <h5 id="relevante-elemente-list-4">Relevante Elemente (List):</h5>
 
@@ -495,7 +495,7 @@ Dies kann den gesamten Medikationsplaneintrag (<em>MedicationRequest</em>) umfas
 
 <h5 id="auswirkung-der-zugriffsart-auf-list-status-und-bundles-medikationsplaneintrag-ändern">Auswirkung der Zugriffsart auf List-Status und Bundles: Medikationsplaneintrag ändern</h5>
 
-<p><a name="l1511">​</a>Siehe <a href="workflowmanagement.html#auswirkung-der-zugriffsart-auf-list-status-und-bundle-inhalte">Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte</a>: Status <em>changed</em>.</p>
+<p><a name="l1517">​</a>Siehe <a href="workflowmanagement.html#auswirkung-der-zugriffsart-auf-list-status-und-bundle-inhalte">Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte</a>: Status <em>changed</em>.</p>
 
 <h4 id="sub_uc_06_06---medikationsplaneintrag-im-medikationsplan-stornieren">Sub_UC_06_06 - Medikationsplaneintrag im Medikationsplan stornieren</h4>
 
@@ -713,7 +713,7 @@ Nur der Status des Medikationsplaneintrags wird angepasst:</p>
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Apr 13, 2026 20:12+0000">2026-04-13</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Apr 14, 2026 10:13+0000">2026-04-14</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
