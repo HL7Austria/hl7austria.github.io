@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedEncounterS | *Version*:0.1.0 | |
-| Draft as of 2026-04-08 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounterS |
+| Draft as of 2026-04-17 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounterS |
 
  
 MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme und Entlassung im stationären Bereich 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedEncounterS.csv)
   "name" : "MopedEncounterS",
   "title" : "MOPED Encounter Stationär",
   "status" : "draft",
-  "date" : "2026-04-08T08:16:43+00:00",
+  "date" : "2026-04-17T10:34:11+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

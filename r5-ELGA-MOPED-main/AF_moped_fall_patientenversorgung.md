@@ -5,152 +5,118 @@
 
 ## Moped Fall - Patientversorgung
 
-### Teilprozess 7: Behandlungsabbruch vor erbrachter Leistung
-
-In Arbeit :)
-
-## Teilprozess 17: Zwischenbetriebliche Leistungserbringung
+Die folgenden Diagramme veranschaulichen die möglichen Interaktionen mit der Moped-Plattform im Teilprozess "Patientenversorgung". Zunächst werden die allgemeinen Interaktionsmöglichkeiten dargestellt, anschließend werden diese durch Beispiele konkretisiert und im Kontext einer spezifischen Anwendung dargestellt.
 
 ### Betroffene Akteure
 
 | | |
 | :--- | :--- |
 | KH (Krankenhaus) | ✅ |
-| LGF (Landesgesundheitsfonds) | ✅ |
+| LGF (Landesgesundheitsfonds) | ❌ |
 | SV (Sozialversicherung) | ❌ |
-| Bund | ✅ |
+| Bund | ❌ |
 
-### Betroffene Behandlungsarten
+### Ablauf - generisch
+
+#### Patientenversorgung (generisch)
+
+### Ablauf - Beispiele zur Anwendung
+
+#### Neue Verlegung (stationär) bzw. Kontakt (ambulant)
+
+##### Beschreibung
+
+Ein Patient wird auf eine Organisationseinheit verlegt bzw. kommt in eine Ambulanz. Ein Patient kann nicht auf mehreren Organisationseinheiten / in mehreren Ambulanzen gleichzeitig behandelt werden.
+
+| | |
+| :--- | :--- |
+| Ambulant | ✅ |
+| Stationär | ✅ |
+
+#### Aktualisierte Verlegung (stationär) bzw. Kontakt (ambulant)
+
+##### Beschreibung
+
+Eine zuvor eingebrachte Verlegung / Kontakt wird aktualisiert.
+
+| | |
+| :--- | :--- |
+| Ambulant | ✅ |
+| Stationär | ✅ |
+
+#### Aufnahmediagnose nachreichen
+
+##### Beschreibung
+
+Die Aufnahmediagnose war zum Zeitpunkt der administrativen Aufnahme noch unbekannt und wird nachgereicht.
+
+| | |
+| :--- | :--- |
+| Ambulant | ❓ |
+| Stationär | ✅ |
+
+TBD: ist eine Aufnahmediagnose für ambulant relevant?
+
+#### Erbrachte Leistung einbringen
+
+##### Beschreibung
+
+Eine neue Leistung wird erfasst die im Zuge der Patientenversorgung erbracht wurde.
+
+| | |
+| :--- | :--- |
+| Ambulant | ✅ |
+| Stationär | ✅ |
+
+#### Gestellte Diagnose einbringen
+
+##### Beschreibung
+
+Während der Patientenbehandlung wird eine Diagnose gestellt. Diese kann entweder eine Zusatz- oder Hauptdiagnose sein. In manchen Fällen ist sie auch gleichzeitig die Aufnahmediagnose.
+
+| | |
+| :--- | :--- |
+| Ambulant | ✅ |
+| Stationär | ✅ |
+
+#### Veränderung von Falldetails
+
+##### Beschreibung
+
+Manche Details zum Aufenthalt können verwendert werden. Als unveränderbar gelten jedenfalls die Bestandteile der Schlüsselkombination eines Moped-Falls.
+
+| | |
+| :--- | :--- |
+| Ambulant | ✅ |
+| Stationär | ✅ |
+
+#### Einbringen der Intensivdokumentation
+
+##### Beschreibung
+
+Der Aufenthalt auf Intensivstationen (identifiziert durch bestimmte Funktionscodes) erfordert eine Einmeldung der Intensivdokumentation.
 
 | | |
 | :--- | :--- |
 | Ambulant | ❌ |
 | Stationär | ✅ |
 
-### Beschreibung
+#### Einbringen der Stroke-Unit Registermeldung
 
-Patient befindet sich stationär in KH A und muss für eine z.B. Diagnostik in das KH B gebracht werden. Der stationäre Fall im KH A läuft weiter. Die Diagnostik/Therapie im KH B wird als ambulanter “zwischenbetrieblicher” Fall in geführt.
+##### Beschreibung
 
-### Beispiel
+TBD: gibt es einen Teil der Registermeldung die bei ambulanter Nachbehandlung eingebracht wird?
 
-* Ambulante oder tagesklinische Leistung in einem anderen Haus
-* Konsiliarleistung durch ein anderes Krankenhaus
-* Diagnostik oder Therapie an einem ausgelagerten Standort (z.B. Herzkatheter in einem anderen KH)
-
-### Technische Hinweise
-
-Nur das KH A interagiert in diesem Fall mit Moped.
-
-### Ablauf
+| | |
+| :--- | :--- |
+| Ambulant | ❓ |
+| Stationär | ✅ |
 
 ### Relevante Profile
 
 * [$update Bundle](StructureDefinition-MopedUpdateBundleKH.md)
-* [Procedure](StructureDefinition-MopedProcedure.md)
-
-### Relevante Invarianten
-
-Keine relevanten Invarianten identifiziert.
-
-### Mögliche Notifications
-
-Keine relevanten Notifications identifiziert.
-
-## Teilprozess 19: Interne Verlegung
-
-### Betroffene Akteure
-
-| | |
-| :--- | :--- |
-| KH (Krankenhaus) | ✅ |
-| LGF (Landesgesundheitsfonds) | ✅ |
-| SV (Sozialversicherung) | ✅ |
-| Bund | ✅ |
-
-### Betroffene Behandlungsarten
-
-| | |
-| :--- | :--- |
-| Ambulant | ❌? |
-| Stationär | ✅ |
-
-### Beschreibung
-
-Der Patient wird innerhalb einer Krankenanstalt verlegt. Sobald sich der Funktions(sub)code, egal an welcher Stelle, ändert, kommt es zu einer Änderung in MOPED. Bei jeder Verlegung muss alles übermittelt werden, was in einer X02 enthalten wäre (Interne Verlegung in einer Krankenanstalt ist auch ein Wechsel).
-
-### Beispiel
-
-* Patient wird von Bett/Zimmer zu Bett/Zimmer verlegt, gleiche Station –> keine MOPED Relevanz
-* Patient wird von Station zu Station verlegt, ein Primariat (Subcode gleich) —> keine MOPED Relevanz
-* Patient wird von Station A zu einer Station B mit anderem Funktionscode verlegt -> Bei Änderung des Funktions(sub)codes muss eine Verlegung in MOPED erfolgen
+* [SAPS3 Questionnaire](Questionnaire-LKFSAPS3Questionnaire.md)
+* [TISS-A Questionnaire](Questionnaire-LKFTISSAQuestionnaire.md)
 
 ### Technische Hinweise
-
-Hier ist es wichtig zwischen dem Encounter (Aufenthalt) und dem TransferEncounter (Verlegung/Bewegung) zu unterscheiden.
-
-### Ablauf
-
-### Relevante Profile
-
-* [TransferEncounter Ambulant](StructureDefinition-MopedTransferEncounterA.md)
-* [TransferEncounter Stationär](StructureDefinition-MopedTransferEncounterS.md)
-
-### Relevante Invarianten
-
-### Mögliche Notifications
-
-## Teilprozess 20: Beurlaubung
-
-### Betroffene Akteure
-
-| | |
-| :--- | :--- |
-| KH (Krankenhaus) | ✅ |
-| LGF (Landesgesundheitsfonds) | ✅ |
-| SV (Sozialversicherung) | ✅ |
-| Bund | ✅ |
-
-### Betroffene Behandlungsarten
-
-| | |
-| :--- | :--- |
-| Ambulant | ❌ |
-| Stationär | ✅ |
-
-### Beschreibung
-
-Eine Patient unterbricht seinen stationären Aufenthalt und kommt an einem späteren Tag wieder. Bezeichnung: Urlaub bzw. Abwesenheit
-
-### Beispiel
-
-* TBD
-
-### Technische Hinweise
-
-Hier ist es wichtig zwischen dem Encounter (Aufenthalt) und dem TransferEncounter (Verlegung/Bewegung) zu unterscheiden.
-
-### Ablauf
-
-### Relevante Profile
-
-* [TransferEncounter Stationär (Bewegung)](StructureDefinition-MopedTransferEncounterS.md)
-* [Encounter Stationär (Aufenthalt)](StructureDefinition-MopedEncounterS.md)
-
-### Relevante Invarianten
-
-### Mögliche Notifications
-
-### Teilprozess 21: gesundes Neugeborenes
-
-### Teilprozess 22: krankes Neugeborenes
-
-In Arbeit :)
-
-### Teilprozess 26: Überlieger
-
-In Arbeit :)
-
-### Teilprozess 53: Intensivaufenthalt mit Intensivdaten
-
-In Arbeit :)
 

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/LKFDiagnoseTypVS | *Version*:0.1.0 | |
-| Draft as of 2026-04-08 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LKFDiagnoseTypVS |
+| Draft as of 2026-04-17 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LKFDiagnoseTypVS |
 
  
 LKF Diganosetyp 
@@ -53,7 +53,7 @@ No Expansion for this valueset (Unknown Code System)
   "title" : "LKF Diagnosetyp ValueSet",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-04-08T08:16:43+00:00",
+  "date" : "2026-04-17T10:34:11+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
