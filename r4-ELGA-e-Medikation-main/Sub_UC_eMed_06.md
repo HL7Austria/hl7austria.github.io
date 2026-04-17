@@ -16,7 +16,7 @@ Die initiale Erstellung des Medikationsplans erfolgt durch die e-Medikation Fach
 
 Ein GDA möchte den Medikationsplan eines Patienten abrufen, mit der Intention diesen zu bearbeiten, aber ohne zu wissen, ob dieser bereits existiert (siehe auch [Read-to-Write-Zugriff](interactions.md#read-to-write-zugriff)). Die Fachanwendung stellt sicher, dass pro Patient genau ein Medikationsplan vorhanden ist: Existiert noch keiner, wird dieser im Hintergrund initial angelegt und mit dem emptyReason **notstarted** zurückgeliefert.
 
-Dieser Status kennzeichnet ausschließlich den Initialzustand (keine Einträge im Medikationsplan) und trifft keine Aussage darüber, ob der Patient keine Medikamente einnimmt.
+Dieser Status **kennzeichnet ausschließlich den Initialzustand** (keine Einträge im Medikationsplan) und trifft keine Aussage darüber, ob der Patient keine Medikamente einnimmt.
 
 Auch der Patient kann die Erstellung eines Medikationsplans auslösen, indem er diesen über das ELGA Portal aufruft (siehe auch [Read-to-Write-Zugriff](interactions.md#read-to-write-zugriff)).
 
@@ -38,10 +38,10 @@ AtEmedListMedikationsplan
 
 Ein leerer Medikationsplan mit dem Wert emptyReason **nilknown** bedeutet, dass der Patient derzeit keine Medikamente einnimmt. Der Medikatonsplan erhält diesen Status, wenn:
 
-* ein GDA zuvor die gesamte Medikation abgesetzt, storniert oder gelöscht hat. Dabei muss der GDA der Liste den Status **nilknown** geben. (TODO: Invariante zur Überprüfung)
+* ein GDA zuvor die **gesamte Medikation abgesetzt, storniert oder gelöscht** hat, dh. alle Medikationsplaneinträge auf Listenebene das flag **removed** erhalten haben. Beim nächsten Read-to-Write-Zugriff erkennt dies die Fachanwendung und versieht das zur Auslieferung vorbereitete Collection Bundle mit den emptyReason **nilknown**. 
 * ein GDA dokumentieren möchte, dass der Patient keine Medikamente einnehmen soll. Wenn die Liste zuvor das emptyReason **notstarted** hatte, kann der GDA den Status **nilknown** setzen.
 
-Dient zur Unterscheidung von leeren Medikationsplänen, die noch nie befüllt wurden.
+Zur Unterscheidung zwischen Medikationsplänen, die noch nie befüllt wurden, und solchen, die explizit dokumentieren, dass der Patient keine Medikamente einnimmt. 
 
 ##### Ablauf
 
@@ -277,7 +277,9 @@ TODO:
 
 #### Sub-Usecase: Medikationsplaneintrag durch ELGA-Teilnehmer löschen
 
-TODO: Entspricht dies dem "Medikationsplaneintrag im Medikationsplan stornieren" oder wird hier das Entry aus der Liste entfernt?
+Der ELGA-Teilnehmer möchte einen oder mehrere Medikationsplaneinträge löschen. Hierfür wird der betreffende Medikationsplaneintrag aus dem List.Entry entfernt und der betroffene Planeintrag (MedicationRequest) gelöscht.
+
+TODO: Grafik 
 
 #### Sub-Usecase: Medikationsplan vollständig leeren
 
@@ -431,4 +433,8 @@ AtEmedListMedikationsplan
 ```
 
 TODO: statusReason wäre hier sinnvoll, dzt. NP
+
+#### Sub-Usecase: Historischen Medikationsplaneintrag abrufen
+
+TODO: Abrufen der _history von medicationrequests (für den Verlauf eines einzelnen MedicationRequests)
 
