@@ -192,8 +192,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#2722026-arztbesuch" id="markdown-toc-2722026-arztbesuch">27.2.2026: Arztbesuch</a></li>
+  <li><a href="#2822026-abgabe-in-der-apotheke-teil-1" id="markdown-toc-2822026-abgabe-in-der-apotheke-teil-1">28.2.2026: Abgabe in der Apotheke, Teil 1</a></li>
+  <li><a href="#132026-abgabe-in-der-apotheke-teil-2" id="markdown-toc-132026-abgabe-in-der-apotheke-teil-2">1.3.2026: Abgabe in der Apotheke, Teil 2</a></li>
+  <li><a href="#532026-abruf-medikationsplan-durch-patienten" id="markdown-toc-532026-abruf-medikationsplan-durch-patienten">5.3.2026: Abruf Medikationsplan durch Patienten</a></li>
+  <li><a href="#1032026-kontrolltermin" id="markdown-toc-1032026-kontrolltermin">10.3.2026: Kontrolltermin</a></li>
+</ul>
+
 </div>
 <style>
 .notification-table {
@@ -279,100 +286,75 @@ width: 100%;}
 
 <script type="module"> import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';</script>
 
-<h3 id="patient-journey">Patient Journey</h3>
-
 <p>Am Beispiel einer fiktiven Patient Journey wird veranschaulicht, wie sich der Medikationsplan eines Patienten mit den zugehörigen geplanten Abgaben und den durchgeführten Abgaben verändern kann.</p>
 
-<h4 id="journey-01">Journey-01:</h4>
+<!-- * Ärztin Hermine Fremdmedikation: [Practitioner 2](Practitioner-At-Emed-Example-Practitioner-02.html) -->
 
-<p>Journey-01 ist für die e-Medikation vorausgesetzt und wird nur zur Vollständigkeit dokumentiert.</p>
+<h3 id="2722026-arztbesuch">27.2.2026: Arztbesuch</h3>
 
-<h5 id="initialisierung">Initialisierung</h5>
+<p>Am 27.2.2026 möchte Dr. Musterärztin ihrem Patienten Max Mustermann mehrere Medikamente verschreiben. Daher ruft sie seinen Medikationsplan ab, um eine Übersicht über seine gesamte, aktuell von ihm einzunehmende Medikation zu erhalten.</p>
 
-<ul>
-  <li>Ressourcen erstellen für:
-    <ul>
-      <li>Personen, Organisationen, Fachanwendung:
-        <ul>
-          <li>Patient Max Mustermann: <a href="Patient-At-Emed-Example-Patient-01.html">Patient</a></li>
-          <li>Ärztin Melanie Musterärztin: <a href="Practitioner-At-Emed-Example-Practitioner-01.html">Practitioner 1</a></li>
-          <li>Ärztin Hermine Fremdmedikation: <a href="Practitioner-At-Emed-Example-Practitioner-02.html">Practitioner 2</a></li>
-          <li>Amadeus Apotheke: <a href="Organization-At-Emed-Example-Organization-Apo-01.html">Organization</a></li>
-          <li>Fachanwendung e-Medikation: <a href="Device-At-Emed-Example-Device-01.html">Device</a></li>
-        </ul>
-      </li>
-      <li>Leeren Medikationsplan für einen Patienten erzeugen (durch die e-Medikation Fachanwendung): <a href="Bundle-At-Emed-Journey-01-Bundle-Tx-Medikationsplan.html">Transaction Bundle</a>:
-        <ul>
-          <li>Hinweise: Wird durch die Fachanwendung erstellt
-            <ul>
-              <li>Datum: Zeitpunkt, zu dem das erste Mal der Medikationsplan abgefragt wird</li>
-              <li>Verantwortlich: Fachanwendung.</li>
-              <li>EmptyReason: "notstarted"</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="journey-02">Journey-02:</h4>
-
-<p>Am 27.2.2026 möchte Dr. Musterärztin ihrem Patienten Max Mustermann mehrere Medikamente verschreiben. Daher ruft sie seinen Medikationsplan ab, um eine Übersicht über seine gesamte, aktuell von ihm eingenommene Medikation zu erhalten. Da für Herrn Mustermann noch kein Medikationsplan erstellt wurde, ist dieser leer.</p>
+<p>Da für Herrn Mustermann noch nie ein Medikationsplan abgerufen wurde, erstellt die Fachanwendung automatisch einen leeren Medikationsplan. Darin enthalten sind die Informationen des <a href="Patient-At-Emed-Example-Patient-01.html">Patienten</a>, der erstellenden e-Medikation-Fachwanwendung (<a href="Device-At-Emed-Example-Device-01.html">Device</a>), das Datum der Erstellung und der Grund, warum der Plan noch leer ist (EmptyReason <em>notstarted</em>).</p>
 
 <ul>
-  <li>Medikationsplan abrufen:
+  <li><strong>Leerer Medikationsplan:</strong>
     <ul>
-      <li>Beispiel: <a href="Bundle-At-Emed-Journey-01-Bundle-Medikationsplan.html">Collection Bundle</a></li>
+      <li><a href="Bundle-At-Emed-Journey-01-Bundle-Medikationsplan.html">Collection Bundle</a></li>
     </ul>
   </li>
 </ul>
 
 <p>Dr. Musterärztin ergänzt das Medikament Ebetrexat (10 mg, Tabletten) und erklärt dem Patienten, dass er morgens und abends je eine Tablette einnehmen soll und worauf er bei der Einnahme zu achten hat. Sie dokumentiert dies in seinem Medikationsplan. <br />
 Weiters verschreibt sie ihrem Patienten eine magistrale Zubereitung einer Cortison-Salbe, die er eine Woche lang abends auftragen soll.<br />
-Sie speichert den neuen Medikationsplan und erstellt im nächsten Schritt geplante Abgaben (siehe Journey-03).</p>
+Sie speichert den neuen Medikationsplan.</p>
 
 <ul>
-  <li>Medikationsplaneinträge hinzufügen:
+  <li><strong>Medikationsplaneinträge hinzufügen:</strong>
     <ul>
-      <li>Beispiel <a href="Bundle-At-Emed-Journey-02-Bundle-Tx-Medikationsplan.html">Transaction Bundle</a></li>
+      <li><a href="Bundle-At-Emed-Journey-02-Bundle-Tx-Medikationsplan.html">Transaction Bundle</a></li>
     </ul>
   </li>
 </ul>
 
-<h4 id="journey-03">Journey-03:</h4>
+<p>Im neu erstellen Medikationsplan sind die neuen Planeinträge sowie das Datum der Bearbeitung und als verantwortliche Ärztin Dr. Musterärztin (<a href="Practitioner-At-Emed-Example-Practitioner-01.html">Practitioner 1</a>) ersichtlich.</p>
 
-<p>Dr. Musterärztin erstellt für beide Medikamente eine geplante Abgabe, sodass Herr Mustermann diese in der Apotheke abholen kann.</p>
+<p>Dr. Musterärztin erstellt für beide Medikamente eine geplante Abgabe (Rezeptierung), sodass Herr Mustermann diese in der Apotheke abholen kann.</p>
+
 <ul>
-  <li>Geplante Abgaben erstellen:
+  <li><strong>Geplante Abgaben erstellen:</strong>
     <ul>
       <li>Beispiel <a href="MedicationRequest-At-Emed-Journey-03-Mr-Geplante-Abgabe.html">Medication Request</a></li>
     </ul>
   </li>
 </ul>
 
-<h4 id="journey-04">Journey-04:</h4>
+<h3 id="2822026-abgabe-in-der-apotheke-teil-1">28.2.2026: Abgabe in der Apotheke, Teil 1</h3>
 
 <p>Herr Mustermann sucht eine Apotheke auf, um sich die Medikamente abzuholen.<br />
-Der Apotheke identifiziert den Patienten, sieht die geplanten Abgaben in der e-Medikation und kontrolliert, ob im Medikationsplan eventuell weitere wechselwirkungsrelevante Medikation existiert. 
-Da er das Medikament Ebetrexat verfügbar hat, erstellt er eine durchgeführte Abgabe, stellt den Status der zugehörigen geplanten Abgabe auf completed und händigt dem Patienten das Mediakment aus. <br />
-Für die Herstellung der magistralen Zubereitung benötigt der Apotheker Zeit, er markiert die geplante Abgabe (TODO: on-hold?), sodass dies in der e-Medikation ersichtlich ist.</p>
+Der Apotheke identifiziert den Patienten, sieht die geplanten Abgaben in der e-Medikation und kontrolliert, ob im Medikationsplan eventuell wechselwirkungsrelevante Medikation existiert. 
+Da er das Medikament Ebetrexat verfügbar hat, erstellt er eine durchgeführte Abgabe 
+<!-- stellt den Status der zugehörigen geplanten Abgabe auf completed  -->
+und händigt dem Patienten das Mediakment aus.<br />
+Für die Herstellung der magistralen Zubereitung benötigt der Apotheker Zeit, er markiert die geplante Abgabe, 
+<!-- (TODO: on-hold?)  -->
+sodass dies in der e-Medikation ersichtlich ist.</p>
 
 <ul>
-  <li>Durchgeführte Abgabe erstellen:
-    <ul>
-      <li>Beispiel: TODO</li>
-    </ul>
-  </li>
-  <li>Geplante Abgabe Ebetrexat auf completed setzen: TODO</li>
-  <li>Geplante Abgabe Cortinson-Salbe auf on-hold setzen: TODO</li>
+  <li>Durchgeführte Abgabe (zu erstellen) 
+  <!-- * Geplante Abgabe Ebetrexat auf completed setzen: TODO -->
+  <!-- * Geplante Abgabe Cortinson-Salbe auf on-hold setzen: TODO --></li>
 </ul>
 
-<p>TODO: Abholung beenden.</p>
+<!-- TODO: Abholung beenden. -->
 
-<h4 id="journey-05-a">Journey-05-a:</h4>
+<h3 id="132026-abgabe-in-der-apotheke-teil-2">1.3.2026: Abgabe in der Apotheke, Teil 2</h3>
 
-<p>Ein paar Tage später, am 5.3.2026, ist sich Herr Mustermann nicht mehr sicher, welches Medikament er wie einnehmen soll und ruf seinene Medikationsplan auf.</p>
+<p>Herr Mustermann sucht erneut die Apotheke auf, um die magistrale Zubereitung abzuholen. Der Apotheker erstellt eine durchgeführte Abgabe und übergibt dem Patienten das Medikament.
+Die Amadeus Apotheke (<a href="Organization-At-Emed-Example-Organization-Apo-01.html">Organization</a>) ist als v</p>
+
+<h3 id="532026-abruf-medikationsplan-durch-patienten">5.3.2026: Abruf Medikationsplan durch Patienten</h3>
+
+<p>Ein paar Tage später, ist sich Herr Mustermann nicht mehr sicher, welches Medikament er wie einnehmen soll und ruft in seiner ELGA seinen Medikationsplan auf.</p>
 
 <ul>
   <li>Medikationsplan mit 2 Medikationsplaneinträgen anzeigen:
@@ -382,19 +364,9 @@ Für die Herstellung der magistralen Zubereitung benötigt der Apotheker Zeit, e
   </li>
 </ul>
 
-<p>Weil er es für sinnvoll hält, ändert er die Reihenfolge der Planeinträge. Die Medikationsplaneinträge ändern sich inhaltlich dadurch nicht.</p>
+<h3 id="1032026-kontrolltermin">10.3.2026: Kontrolltermin</h3>
 
-<ul>
-  <li>Medikationsplan mit geänderter Reihenfolge anzeigen:
-    <ul>
-      <li>Beispiel: <a href="Bundle-At-Emed-Journey-05-a-Bundle-Medikationsplan.html">Collection Bundle</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="journey-05-b">Journey-05-b:</h4>
-
-<p>Der Patient erscheint am 10.3.2026 zur Kontrolle bei Dr. Musterärztin, die den aktuellen Medikationsplan abruft.
+<p>Der Patient erscheint zur Kontrolle bei Dr. Musterärztin, die den aktuellen Medikationsplan abruft.
 <br /> 
 Das Medikament EBETREXAT soll der Patient noch bis zum 17.3. einnehmen, aber in geringerer Dosis (nur noch 1 Stück morgens).
 Die Cortisonsalbe ist nicht mehr nötig, daher soll der Patient diese absetzen. Frau Dr. Musterärztin nimmt die entsprechenden Änderungen vor und speichert den neuen Medikationsplan.</p>
@@ -405,18 +377,19 @@ Die Cortisonsalbe ist nicht mehr nötig, daher soll der Patient diese absetzen. 
       <li>Beispiel: <a href="Bundle-At-Emed-Journey-05-b-Bundle-Tx-Medikationsplan.html">Transaction Bundle</a></li>
     </ul>
   </li>
-  <li>Medikationsplan (Variante ohne Filter: abgelaufenen Einträge anzeigen):
-    <ul>
-      <li>Beispiel: <a href="Bundle-At-Emed-Journey-05-b-Bundle-Medikationsplan.html">Collection Bundle</a></li>
-    </ul>
-  </li>
-  <li>Medikationsplan (Variante gefiltert: nur aktuelle Einträge anzeigen):
-    <ul>
-      <li>Beispiel: Todo</li>
-    </ul>
-  </li>
 </ul>
 
+<p><!-- * Medikationsplan (Variante ohne Filter: abgelaufenen Einträge anzeigen): -->
+     <!-- * Beispiel: [Collection Bundle](Bundle-At-Emed-Journey-05-b-Bundle-Medikationsplan.html) --></p>
+
+<!-- Weil er es für sinnvoll hält, ändert er die Reihenfolge der Planeinträge. Die Medikationsplaneinträge ändern sich inhaltlich dadurch nicht. -->
+
+<p><!-- * Medikationsplan mit geänderter Reihenfolge anzeigen: -->
+  <!-- * Beispiel: [Collection Bundle](Bundle-At-Emed-Journey-05-a-Bundle-Medikationsplan.html) --></p>
+
+<p><br /></p>
+<div><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="SEQUENCE" height="1384px" preserveAspectRatio="none" style="width:1226px;height:1384px;background:#F5F5F5;" version="1.1" viewBox="0 0 1226 1384" width="1226px" zoomAndPan="magnify"><title>Patient Journey - e-Medikation</title><defs /><g><rect fill="#F5F5F5" height="1384" style="stroke:none;stroke-width:1;" width="1226" x="0" y="0" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="241.459" x="488.3293" y="27.9951">Patient Journey - e-Medikation</text><rect fill="#B3C4BA" height="1334.9844" rx="5" ry="5" style="stroke:#181818;stroke-width:0.5;" width="135.4609" x="21" y="43.2969" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="4.874" x="55.1797" y="56.292">&#160;</text><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="57.3535" x="60.0537" y="72.5889">Patient</text><rect fill="#B2C3C9" height="1334.9844" rx="5" ry="5" style="stroke:#181818;stroke-width:0.5;" width="127.4766" x="198.4609" y="43.2969" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="4.874" x="233.6523" y="56.292">&#160;</text><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="47.3457" x="238.5264" y="72.5889">&#196;rztin</text><rect fill="#D8D7E0" height="1334.9844" rx="5" ry="5" style="stroke:#181818;stroke-width:0.5;" width="150.6367" x="551.062" y="43.2969" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="4.874" x="583.7891" y="56.292">&#160;</text><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="75.4346" x="588.6631" y="72.5889">Apotheke</text><rect fill="#C48F81" height="1334.9844" rx="5" ry="5" style="stroke:#181818;stroke-width:0.5;" width="256.9268" x="941.1909" y="43.2969" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="4.874" x="944.1909" y="56.292">&#160;</text><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="182.6904" x="978.3091" y="72.5889">e-Med Fachanwendung</text><g><title>Max Mustermann</title><rect fill="#000000" fill-opacity="0.00000" height="1142.7969" width="8" x="84.7305" y="156.1875" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="88" x2="88" y1="156.1875" y2="1298.9844" /></g><g><title>Dr. Muster&#228;rztin</title><rect fill="#000000" fill-opacity="0.00000" height="1142.7969" width="8" x="258.1992" y="156.1875" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="261.4609" x2="261.4609" y1="156.1875" y2="1298.9844" /></g><g><title>Amadeus Apotheke</title><rect fill="#000000" fill-opacity="0.00000" height="1142.7969" width="8" x="622.3804" y="156.1875" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="626.062" x2="626.062" y1="156.1875" y2="1298.9844" /></g><g><title>e-Medikation</title><rect fill="#000000" fill-opacity="0.00000" height="1142.7969" width="8" x="1065.6543" y="156.1875" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1069.3354" x2="1069.3354" y1="156.1875" y2="1298.9844" /></g><g class="participant participant-head" data-participant="Patient"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="121.4609" x="25" y="152.8857">Max Mustermann</text><ellipse cx="88.7305" cy="88.3906" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M88.7305,96.3906 L88.7305,123.3906 M75.7305,104.3906 L101.7305,104.3906 M88.7305,123.3906 L75.7305,138.3906 M88.7305,123.3906 L101.7305,138.3906" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-tail" data-participant="Patient"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="121.4609" x="25" y="1310.9795">Max Mustermann</text><ellipse cx="88.7305" cy="1322.7813" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M88.7305,1330.7813 L88.7305,1357.7813 M75.7305,1338.7813 L101.7305,1338.7813 M88.7305,1357.7813 L75.7305,1372.7813 M88.7305,1357.7813 L101.7305,1372.7813" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-head" data-participant="Arzt"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="113.4766" x="202.4609" y="152.8857">Dr. Muster&#228;rztin</text><ellipse cx="262.1992" cy="88.3906" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M262.1992,96.3906 L262.1992,123.3906 M249.1992,104.3906 L275.1992,104.3906 M262.1992,123.3906 L249.1992,138.3906 M262.1992,123.3906 L275.1992,138.3906" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-tail" data-participant="Arzt"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="113.4766" x="202.4609" y="1310.9795">Dr. Muster&#228;rztin</text><ellipse cx="262.1992" cy="1322.7813" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M262.1992,1330.7813 L262.1992,1357.7813 M249.1992,1338.7813 L275.1992,1338.7813 M262.1992,1357.7813 L249.1992,1372.7813 M262.1992,1357.7813 L275.1992,1372.7813" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-head" data-participant="Apotheke"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="136.6367" x="555.062" y="152.8857">Amadeus Apotheke</text><ellipse cx="626.3804" cy="88.3906" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M626.3804,96.3906 L626.3804,123.3906 M613.3804,104.3906 L639.3804,104.3906 M626.3804,123.3906 L613.3804,138.3906 M626.3804,123.3906 L639.3804,138.3906" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-tail" data-participant="Apotheke"><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="136.6367" x="555.062" y="1310.9795">Amadeus Apotheke</text><ellipse cx="626.3804" cy="1322.7813" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M626.3804,1330.7813 L626.3804,1357.7813 M613.3804,1338.7813 L639.3804,1338.7813 M626.3804,1357.7813 L613.3804,1372.7813 M626.3804,1357.7813 L639.3804,1372.7813" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-head" data-participant="System"><rect fill="#FFFFFF" height="30.2969" rx="5" ry="5" style="stroke:#555555;stroke-width:0.5;" width="104.6377" x="1017.3354" y="124.8906" /><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="90.6377" x="1024.3354" y="144.8857">e-Medikation</text></g><g class="participant participant-tail" data-participant="System"><rect fill="#FFFFFF" height="30.2969" rx="5" ry="5" style="stroke:#555555;stroke-width:0.5;" width="104.6377" x="1017.3354" y="1297.9844" /><text fill="#000000" font-family="Arial" font-size="14" lengthAdjust="spacing" textLength="90.6377" x="1024.3354" y="1317.9795">e-Medikation</text></g><rect fill="#EEEEEE" height="3" rx="5" ry="5" style="stroke:#EEEEEE;stroke-width:1;" width="1219.1177" x="0" y="187.3359" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1219.1177" y1="187.3359" y2="187.3359" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1219.1177" y1="190.3359" y2="190.3359" /><rect fill="#EEEEEE" height="24.2969" rx="5" ry="5" style="stroke:#000000;stroke-width:2;" width="379.0527" x="420.0325" y="176.1875" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="360.1787" x="426.0325" y="193.1826">27.2.2026: Medikationsplan erstmals abrufen</text><g class="message" data-participant-1="Patient" data-participant-2="Arzt"><polygon fill="#111827" points="250.1992,227.6172,260.1992,231.6172,250.1992,235.6172,254.1992,231.6172" style="stroke:#111827;stroke-width:1;" /><line style="stroke:#111827;stroke-width:1;" x1="88.7305" x2="256.1992" y1="231.6172" y2="231.6172" /><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="72.8076" x="95.7305" y="226.5513">Arztbesuch</text></g><g class="message" data-participant-1="Arzt" data-participant-2="System"><polygon fill="#111827" points="1057.6543,256.75,1067.6543,260.75,1057.6543,264.75,1061.6543,260.75" style="stroke:#111827;stroke-width:1;" /><line style="stroke:#111827;stroke-width:1;" x1="262.1992" x2="1063.6543" y1="260.75" y2="260.75" /><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="161.0654" x="269.1992" y="255.6841">Medikationsplan abrufen</text></g><g class="message" data-participant-1="System" data-participant-2="Arzt"><polygon fill="#111827" points="273.1992,285.8828,263.1992,289.8828,273.1992,293.8828,269.1992,289.8828" style="stroke:#111827;stroke-width:1;" /><line style="stroke:#111827;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="267.1992" x2="1068.6543" y1="289.8828" y2="289.8828" /><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="152.3755" x="279.1992" y="284.8169">Leerer Medikationsplan</text></g><rect fill="#EEEEEE" height="3" rx="5" ry="5" style="stroke:#EEEEEE;stroke-width:1;" width="1219.1177" x="0" y="319.0313" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1219.1177" y1="319.0313" y2="319.0313" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1219.1177" y1="322.0313" y2="322.0313" /><rect fill="#EEEEEE" height="24.2969" rx="5" ry="5" style="stroke:#000000;stroke-width:2;" width="309.6064" x="454.7556" y="307.8828" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="290.7324" x="460.7556" y="324.8779">Medikationsplaneintr&#228;ge hinzuf&#252;gen</text><g class="message" data-participant-1="Arzt" data-participant-2="Arzt"><line style="stroke:#111827;stroke-width:1;" x1="262.1992" x2="304.1992" y1="378.4453" y2="378.4453" /><line style="stroke:#111827;stroke-width:1;" x1="304.1992" x2="304.1992" y1="378.4453" y2="391.4453" /><line style="stroke:#111827;stroke-width:1;" x1="263.1992" x2="304.1992" y1="391.4453" y2="391.4453" /><polygon fill="#111827" points="273.1992,387.4453,263.1992,391.4453,273.1992,395.4453,269.1992,391.4453" style="stroke:#111827;stroke-width:1;" /><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="237.415" x="269.1992" y="358.2466">Medikationsplaneintr&#228;ge hinzuf&#252;gen</text><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="181.6128" x="269.1992" y="373.3794">(Ebetrexat + Cortisonsalbe)</text></g><g class="message" data-participant-1="Arzt" data-participant-2="System"><polygon fill="#111827" points="1057.6543,416.5781,1067.6543,420.5781,1057.6543,424.5781,1061.6543,420.5781" style="stroke:#111827;stroke-width:1;" /><line style="stroke:#111827;stroke-width:1;" x1="262.1992" x2="1063.6543" y1="420.5781" y2="420.5781" /><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="174.0527" x="269.1992" y="415.5122">Medikationsplan speichern</text></g><rect fill="#EEEEEE" height="3" rx="5" ry="5" style="stroke:#EEEEEE;stroke-width:1;" width="1219.1177" x="0" y="449.7266" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1219.1177" y1="449.7266" y2="449.7266" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1219.1177" y1="452.7266" y2="452.7266" /><rect fill="#EEEEEE" height="24.2969" rx="5" ry="5" style="stroke:#000000;stroke-width:2;" width="164.9648" x="527.0764" y="438.5781" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="146.0908" x="533.0764" y="455.5732">Geplante Abgaben</text><g class="message" data-participant-1="Arzt" data-participant-2="Arzt"><line style="stroke:#111827;stroke-width:1;" x1="262.1992" x2="304.1992" y1="494.0078" y2="494.0078" /><line style="stroke:#111827;stroke-width:1;" x1="304.1992" x2="304.1992" y1="494.0078" y2="507.0078" /><line style="stroke:#111827;stroke-width:1;" x1="263.1992" x2="304.1992" y1="507.0078" y2="507.0078" /><polygon fill="#111827" points="273.1992,503.0078,263.1992,507.0078,273.1992,511.0078,269.1992,507.0078" style="stroke:#111827;stroke-width:1;" /><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="350.1812" x="269.1992" y="488.9419">Medikationsplaneintr&#228;ge zur Rezeptierung ausw&#228;hlen</text></g><g class="message" data-participant-1="Arzt" data-participant-2="System"><polygon fill="#111827" points="1057.6543,532.1406,1067.6543,536.1406,1057.6543,540.1406,1061.6543,536.1406" style="stroke:#111827;stroke-width:1;" /><line style="stroke:#111827;stroke-width:1;" x1="262.1992" x2="1063.6543" y1="536.1406" y2="536.1406" /><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="182.0254" x="269.1992" y="531.0747">Geplante Abgaben erstellen</text></g><rect fill="#EEEEEE" height="3" rx="5" ry="5" style="stroke:#EEEEEE;stroke-width:1;" width="1219.1177" x="0" y="565.2891" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1219.1177" y1="565.2891" y2="565.2891" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1219.1177" y1="568.2891" y2="568.2891" /><rect fill="#EEEEEE" height="24.2969" rx="5" ry="5" style="stroke:#000000;stroke-width:2;" width="352.707" x="433.2053" y="554.1406" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="333.833" x="439.2053" y="571.1357">28.2.2026: Abgabe in der Apotheke, Teil 1</text><g class="message" data-participant-1="Patient" data-participant-2="Apotheke"><polygon fill="#111827" points="614.3804,605.5703,624.3804,609.5703,614.3804,613.5703,618.3804,609.5703" style="stroke:#111827;stroke-width:1;" /><line style="stroke:#111827;stroke-width:1;" x1="88.7305" x2="620.3804" y1="609.5703" y2="609.5703" /><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="144.9614" x="95.7305" y="604.5044">Medikamente abholen</text></g><g class="message" data-participant-1="Apotheke" data-participant-2="System"><polygon fill="#111827" points="1057.6543,634.7031,1067.6543,638.7031,1057.6543,642.7031,1061.6543,638.7031" style="stroke:#111827;stroke-width:1;" /><line style="stroke:#111827;stroke-width:1;" x1="626.3804" x2="1063.6543" y1="638.7031" y2="638.7031" /><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="315.2817" x="633.3804" y="633.6372">Geplante Abgaben und Medikationsplan abrufen</text></g><g class="message" data-participant-1="System" data-participant-2="Apotheke"><polygon fill="#111827" points="637.3804,663.8359,627.3804,667.8359,637.3804,671.8359,633.3804,667.8359" style="stroke:#111827;stroke-width:1;" /><line style="stroke:#111827;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="631.3804" x2="1068.6543" y1="667.8359" y2="667.8359" /><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="246.6953" x="643.3804" y="662.77">Geplante Abgaben + Medikationsplan</text></g><g class="message" data-participant-1="Apotheke" data-participant-2="System"><polygon fill="#111827" points="1057.6543,692.9688,1067.6543,696.9688,1057.6543,700.9688,1061.6543,696.9688" style="stroke:#111827;stroke-width:1;" /><line style="stroke:#111827;stroke-width:1;" x1="626.3804" x2="1063.6543" y1="696.9688" y2="696.9688" /><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="277.0688" x="633.3804" y="691.9028">Durchgef&#252;hrte Abgabe Ebetrexat erstellen</text></g><g class="message" data-participant-1="Apotheke" data-participant-2="Patient"><polygon fill="#111827" points="99.7305,722.1016,89.7305,726.1016,99.7305,730.1016,95.7305,726.1016" style="stroke:#111827;stroke-width:1;" /><line style="stroke:#111827;stroke-width:1;" x1="93.7305" x2="625.3804" y1="726.1016" y2="726.1016" /><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="151.5693" x="105.7305" y="721.0356">Ebetrexat aush&#228;ndigen</text></g><g class="message" data-participant-1="Apotheke" data-participant-2="System"><polygon fill="#111827" points="1057.6543,751.2344,1067.6543,755.2344,1057.6543,759.2344,1061.6543,755.2344" style="stroke:#111827;stroke-width:1;" /><line style="stroke:#111827;stroke-width:1;" x1="626.3804" x2="1063.6543" y1="755.2344" y2="755.2344" /><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="346.5947" x="633.3804" y="750.1685">Durchgef&#252;hrte Abgabe Cortisonsalbe in Vorbereitung</text></g><rect fill="#EEEEEE" height="3" rx="5" ry="5" style="stroke:#EEEEEE;stroke-width:1;" width="1219.1177" x="0" y="784.3828" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1219.1177" y1="784.3828" y2="784.3828" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1219.1177" y1="787.3828" y2="787.3828" /><rect fill="#EEEEEE" height="24.2969" rx="5" ry="5" style="stroke:#000000;stroke-width:2;" width="342.9658" x="438.0759" y="773.2344" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="324.0918" x="444.0759" y="790.2295">1.3.2026: Abgabe in der Apotheke, Teil 2</text><g class="message" data-participant-1="Patient" data-participant-2="Apotheke"><polygon fill="#111827" points="614.3804,824.6641,624.3804,828.6641,614.3804,832.6641,618.3804,828.6641" style="stroke:#111827;stroke-width:1;" /><line style="stroke:#111827;stroke-width:1;" x1="88.7305" x2="620.3804" y1="828.6641" y2="828.6641" /><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="145.0439" x="95.7305" y="823.5981">Cortisonsalbe abholen</text></g><g class="message" data-participant-1="Apotheke" data-participant-2="System"><polygon fill="#111827" points="1057.6543,853.7969,1067.6543,857.7969,1057.6543,861.7969,1061.6543,857.7969" style="stroke:#111827;stroke-width:1;" /><line style="stroke:#111827;stroke-width:1;" x1="626.3804" x2="1063.6543" y1="857.7969" y2="857.7969" /><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="339.168" x="633.3804" y="852.731">Geplante und offene durchgef&#252;hrte Abgabe abrufen</text></g><g class="message" data-participant-1="System" data-participant-2="Apotheke"><polygon fill="#111827" points="637.3804,882.9297,627.3804,886.9297,637.3804,890.9297,633.3804,886.9297" style="stroke:#111827;stroke-width:1;" /><line style="stroke:#111827;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="631.3804" x2="1068.6543" y1="886.9297" y2="886.9297" /><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="284.4194" x="643.3804" y="881.8638">Geplante und offene durchgef&#252;hrte Abgabe</text></g><g class="message" data-participant-1="Apotheke" data-participant-2="System"><polygon fill="#111827" points="1057.6543,912.0625,1067.6543,916.0625,1057.6543,920.0625,1061.6543,916.0625" style="stroke:#111827;stroke-width:1;" /><line style="stroke:#111827;stroke-width:1;" x1="626.3804" x2="1063.6543" y1="916.0625" y2="916.0625" /><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="367.1294" x="633.3804" y="910.9966">offene durchgef&#252;hrte Abgabe Cortisonsalbe abschlie&#223;en</text></g><g class="message" data-participant-1="Apotheke" data-participant-2="Patient"><polygon fill="#111827" points="99.7305,941.1953,89.7305,945.1953,99.7305,949.1953,95.7305,945.1953" style="stroke:#111827;stroke-width:1;" /><line style="stroke:#111827;stroke-width:1;" x1="93.7305" x2="625.3804" y1="945.1953" y2="945.1953" /><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="176.5601" x="105.7305" y="940.1294">Cortisonsalbe aush&#228;ndigen</text></g><rect fill="#EEEEEE" height="3" rx="5" ry="5" style="stroke:#EEEEEE;stroke-width:1;" width="1219.1177" x="0" y="974.3438" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1219.1177" y1="974.3438" y2="974.3438" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1219.1177" y1="977.3438" y2="977.3438" /><rect fill="#EEEEEE" height="24.2969" rx="5" ry="5" style="stroke:#000000;stroke-width:2;" width="409.4932" x="404.8123" y="963.1953" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="390.6191" x="410.8123" y="980.1904">5.3.2026: Abruf Medikationsplan durch Patienten</text><g class="message" data-participant-1="Patient" data-participant-2="System"><polygon fill="#111827" points="1057.6543,1014.625,1067.6543,1018.625,1057.6543,1022.625,1061.6543,1018.625" style="stroke:#111827;stroke-width:1;" /><line style="stroke:#111827;stroke-width:1;" x1="88.7305" x2="1063.6543" y1="1018.625" y2="1018.625" /><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="434.0972" x="95.7305" y="1013.5591">Medikationsplan + geplante und durchgef&#252;hrte Abgaben anzeigen</text></g><g class="message" data-participant-1="System" data-participant-2="Patient"><polygon fill="#111827" points="99.7305,1043.7578,89.7305,1047.7578,99.7305,1051.7578,95.7305,1047.7578" style="stroke:#111827;stroke-width:1;" /><line style="stroke:#111827;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="93.7305" x2="1068.6543" y1="1047.7578" y2="1047.7578" /><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="539.1001" x="105.7305" y="1042.6919">Medikationsplan mit 2 Eintr&#228;gen + geplante und durchgef&#252;hrte Abgaben anzeigen</text></g><rect fill="#EEEEEE" height="3" rx="5" ry="5" style="stroke:#EEEEEE;stroke-width:1;" width="1219.1177" x="0" y="1076.9063" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1219.1177" y1="1076.9063" y2="1076.9063" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1219.1177" y1="1079.9063" y2="1079.9063" /><rect fill="#EEEEEE" height="24.2969" rx="5" ry="5" style="stroke:#000000;stroke-width:2;" width="223.8633" x="497.6272" y="1065.7578" /><text fill="#000000" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="204.9893" x="503.6272" y="1082.7529">10.3.2026: Kontrolltermin</text><g class="message" data-participant-1="Patient" data-participant-2="Arzt"><polygon fill="#111827" points="250.1992,1117.1875,260.1992,1121.1875,250.1992,1125.1875,254.1992,1121.1875" style="stroke:#111827;stroke-width:1;" /><line style="stroke:#111827;stroke-width:1;" x1="88.7305" x2="256.1992" y1="1121.1875" y2="1121.1875" /><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="93.2915" x="95.7305" y="1116.1216">Kontrolltermin</text></g><g class="message" data-participant-1="Arzt" data-participant-2="System"><polygon fill="#111827" points="1057.6543,1146.3203,1067.6543,1150.3203,1057.6543,1154.3203,1061.6543,1150.3203" style="stroke:#111827;stroke-width:1;" /><line style="stroke:#111827;stroke-width:1;" x1="262.1992" x2="1063.6543" y1="1150.3203" y2="1150.3203" /><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="161.0654" x="269.1992" y="1145.2544">Medikationsplan abrufen</text></g><g class="message" data-participant-1="System" data-participant-2="Arzt"><polygon fill="#111827" points="273.1992,1175.4531,263.1992,1179.4531,273.1992,1183.4531,269.1992,1179.4531" style="stroke:#111827;stroke-width:1;" /><line style="stroke:#111827;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="267.1992" x2="1068.6543" y1="1179.4531" y2="1179.4531" /><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="106.3169" x="279.1992" y="1174.3872">Medikationsplan</text></g><g class="message" data-participant-1="Arzt" data-participant-2="Arzt"><line style="stroke:#111827;stroke-width:1;" x1="262.1992" x2="304.1992" y1="1238.8516" y2="1238.8516" /><line style="stroke:#111827;stroke-width:1;" x1="304.1992" x2="304.1992" y1="1238.8516" y2="1251.8516" /><line style="stroke:#111827;stroke-width:1;" x1="263.1992" x2="304.1992" y1="1251.8516" y2="1251.8516" /><polygon fill="#111827" points="273.1992,1247.8516,263.1992,1251.8516,273.1992,1255.8516,269.1992,1251.8516" style="stroke:#111827;stroke-width:1;" /><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="71.627" x="269.1992" y="1203.52">Anpassung</text><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="186.1006" x="269.1992" y="1218.6528">(Ebetrexat Dosis reduzieren,</text><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="157.0029" x="269.1992" y="1233.7856">Cortisonsalbe absetzen)</text></g><g class="message" data-participant-1="Arzt" data-participant-2="System"><polygon fill="#111827" points="1057.6543,1276.9844,1067.6543,1280.9844,1057.6543,1284.9844,1061.6543,1280.9844" style="stroke:#111827;stroke-width:1;" /><line style="stroke:#111827;stroke-width:1;" x1="262.1992" x2="1063.6543" y1="1280.9844" y2="1280.9844" /><text fill="#000000" font-family="Arial" font-size="13" lengthAdjust="spacing" textLength="174.0527" x="269.1992" y="1275.9185">Medikationsplan speichern</text></g></g></svg></div>
+<p><br /></p>
 
 
 
@@ -436,7 +409,7 @@ Die Cortisonsalbe ist nicht mehr nötig, daher soll der Patient diese absetzen. 
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Apr 20, 2026 08:20+0000">2026-04-20</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Apr 20, 2026 16:24+0000">2026-04-20</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

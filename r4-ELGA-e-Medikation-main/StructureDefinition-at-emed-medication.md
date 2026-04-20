@@ -12,10 +12,7 @@
 | Draft as of 2026-04-20 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMedication |
 
  
-Bildet ein Arzneimittel in der "Medication"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, geplante Abgabe und durchgeführte Abgabe. Aktuell nur geprüft im Kontext Planeintrag. Unterschieden werden folgende Fälle: 
-1. Arzneimittel besitzt eine PZN und wird über diese identifiziert, die weiteren Informationen werden durch die Fachanwendung angereichert. a. Identifikation nur über PZN: eine Befüllung jener Felder, die über die ASP-Liste angereichert werden können, durch den GDA wird technisch verhindert (Invariante oder eigene Medication Ressource). b. Identifikation über PZN und Handelsname: damit eine Prüfung auf Übereinstimmung durchgeführt werden kann. TODO: Juristisch zu prüfen.
-1. Arzneimittel besitzt keine PZN, alle benötigten Informationen sind verpflichtend vom GDA zu befüllen: a. Bei Verschreibung von Wirkstoffen b. Bei magistraler Anwendung, Infusionen
- 
+Bildet ein Arzneimittel in der "Medication"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, geplante Abgabe und durchgeführte Abgabe. 
 
 **Usages:**
 
@@ -45,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
   "name" : "AtEmedMedication",
   "title" : "ELGA e-Med Medikation",
   "status" : "draft",
-  "date" : "2026-04-20T08:20:06+00:00",
+  "date" : "2026-04-20T16:24:35+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -62,7 +59,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
       "use" : "work"
     }]
   }],
-  "description" : "Bildet ein Arzneimittel in der \"Medication\"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, geplante Abgabe und durchgeführte Abgabe. Aktuell nur geprüft im Kontext Planeintrag.\nUnterschieden werden folgende Fälle:\n1. Arzneimittel besitzt eine PZN und wird über diese identifiziert, die weiteren Informationen werden durch die Fachanwendung angereichert.\n    a. Identifikation nur über PZN: eine Befüllung jener Felder, die über die ASP-Liste angereichert werden können, durch den GDA wird technisch verhindert (Invariante oder eigene Medication Ressource).\n    b. Identifikation über PZN und Handelsname: damit eine Prüfung auf Übereinstimmung durchgeführt werden kann. TODO: Juristisch zu prüfen. \n3. Arzneimittel besitzt keine PZN, alle benötigten Informationen sind verpflichtend vom GDA zu befüllen:\n    a. Bei Verschreibung von Wirkstoffen\n    b. Bei magistraler Anwendung, Infusionen \n",
+  "description" : "Bildet ein Arzneimittel in der \"Medication\"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, geplante Abgabe und durchgeführte Abgabe.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "script10.6",
@@ -152,7 +149,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
     {
       "id" : "Medication.ingredient",
       "path" : "Medication.ingredient",
-      "short" : "Wirkstoffe. Wenn PZN vorhanden 0..0, da Anreicherung aus ASP-Liste durch Fachanwendung.\nGemäß AG: Einschränkung auf CodeableConcept, TODO: prüfen, wie Freitext bei magistraler Zubereitung abgebildet wird:\nEvtl. in einer Substance-Ressource in der description (string).",
+      "short" : "Wirkstoffe. Keine Angabe, wenn PZN vorhanden (Anreicherung aus ASP-Liste durch Fachanwendung).",
       "mustSupport" : true
     },
     {
@@ -179,7 +176,6 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
       "id" : "Medication.ingredient.item[x]:itemCodeableConcept",
       "path" : "Medication.ingredient.item[x]",
       "sliceName" : "itemCodeableConcept",
-      "short" : "Inhaltsstoff codiert. TODO: prüfen, Einschränkung auf SPOR (EMA). Gemüß CDA v3:\nWirkstoff-Codes stammen aus der ATC-Klassifikation (Anatomical Therapeutic Chemical Classification), die von der WHO herausgegeben wird. \nWeitere Codes, wie auch die deutsche Bezeichnung der Codes, entsprechen dem GKV-Arzneimittelindex im Wissenschaftlichen Institut der AOK (WidO), \nAOK Bundesverband GbR, Deutschland, welcher auf den WHO ATC basiert.\nZusätzlich kommen ergänzende Codes aus dem Arzneimittelverzeichnis der AGES zum Einsatz.",
       "min" : 0,
       "max" : "1",
       "type" : [{
@@ -210,13 +206,13 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
     {
       "id" : "Medication.ingredient.strength",
       "path" : "Medication.ingredient.strength",
-      "short" : "Menge der vorhandenen Zutat",
+      "short" : "Menge der vorhandenen Zutaten.",
       "mustSupport" : true
     },
     {
       "id" : "Medication.batch",
       "path" : "Medication.batch",
-      "short" : "Informationen zur Charge des Arzneimittels. Keine Verwenund im Kontext Planeintrag.",
+      "short" : "Informationen zur Charge des Arzneimittels.",
       "max" : "0"
     }]
   }

@@ -13,7 +13,7 @@
 
  
 Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan bestehend aus: 
-* 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus)
+* 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus
 * 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung
  
 
@@ -44,7 +44,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-bundle-tx-me
   "name" : "AtEmedBundleTxMedikationsplan",
   "title" : "ELGA e-Med Medikationsplan Transaction Bundle",
   "status" : "draft",
-  "date" : "2026-04-20T08:20:06+00:00",
+  "date" : "2026-04-20T16:24:35+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -61,7 +61,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-bundle-tx-me
       "use" : "work"
     }]
   }],
-  "description" : "Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan bestehend aus: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus) \n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung",
+  "description" : "Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan bestehend aus: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus \n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "v2",
@@ -109,14 +109,14 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-bundle-tx-me
     {
       "id" : "Bundle.timestamp",
       "path" : "Bundle.timestamp",
-      "short" : "Zeitpunkt der Erstellung des Bundles. Verwendung prüfen.",
+      "short" : "Zeitpunkt der Erstellung des Bundles.",
       "min" : 1,
       "mustSupport" : true
     },
     {
       "id" : "Bundle.link",
       "path" : "Bundle.link",
-      "short" : "Verweise auf weiterführende Informationen zum Bundle. Verwendung prüfen.",
+      "short" : "Verweise auf weiterführende Informationen zum Bundle.",
       "max" : "0"
     },
     {
@@ -135,7 +135,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-bundle-tx-me
     {
       "id" : "Bundle.entry.link",
       "path" : "Bundle.entry.link",
-      "short" : "Verweise auf weiterführende Informationen zu diesem Entry. Verwendung prüfen.",
+      "short" : "Verweise auf weiterführende Informationen zu diesem Entry.",
       "max" : "0"
     },
     {

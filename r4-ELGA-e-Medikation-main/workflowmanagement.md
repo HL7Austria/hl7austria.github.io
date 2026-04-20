@@ -7,7 +7,7 @@
 
 ### Überblick der Statusänderungen der e-Medikation Ressourcen
 
-#### Status des List.entry.flags (Medikationsplan)
+#### Status des List.entry.flags im Medikationsplan
 
 Ein Medikationsplaneintrag kann, abhängig vom jeweiligen Use Case, unterschiedliche Status einnehmen. Dieser Status wird sowohl in der MedicationRequest-Ressource selbst als auch auf List-Ebene im Element List.entry.flag dokumentiert.
 
@@ -65,7 +65,7 @@ Da der Status eines Medikationsplaneintrags im Medikationsplan auf **zwei Ebenen
 
 In Arbeit.
 
-#### Status des MedicationDispense (durchgeführte Abgabe)
+#### Status des MedicationDispense in der durchgeführten Abgabe
 
 In Arbeit.
 

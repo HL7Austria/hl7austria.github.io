@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-dosage.csv),
   "name" : "AtEmedDosage",
   "title" : "ELGA e-Med Dosage",
   "status" : "draft",
-  "date" : "2026-04-20T08:20:06+00:00",
+  "date" : "2026-04-20T16:24:35+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -91,7 +91,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-dosage.csv),
     {
       "id" : "Dosage.additionalInstruction",
       "path" : "Dosage.additionalInstruction",
-      "short" : "Codierte Anweisungen oder Warnhinweise für den Patienten, z.B. zur Einnahme oder zur Aufbewahrung des Arzneimittels. (ex):\nhttps://hl7.org/fhir/R4/valueset-additional-instruction-codes.html. TODO: Nur wenn nicht ohnehin im Beipackzettel enthalten oder zusätzlich? Evtl. f. magistrale Zubereitungen, da kein Beipackzettel."
+      "short" : "Codierte Anweisungen oder Warnhinweise für den Patienten, z.B. zur Einnahme oder zur Aufbewahrung des Arzneimittels. (ex):\nhttps://hl7.org/fhir/R4/valueset-additional-instruction-codes.html."
     },
     {
       "id" : "Dosage.patientInstruction",
@@ -136,7 +136,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-dosage.csv),
       "id" : "Dosage.asNeeded[x]:asNeededCodeableConcept",
       "path" : "Dosage.asNeeded[x]",
       "sliceName" : "asNeededCodeableConcept",
-      "short" : "Bedarfsmedikation: Grund für die Bedarfsmedikation; Vermutlich reicht ein genereller Grund für die Medikation im Planeintrag (wenn e-Diagnose verfügbar).",
+      "short" : "Bedarfsmedikation: Grund für die Bedarfsmedikation",
       "min" : 0,
       "max" : "0",
       "type" : [{
@@ -161,7 +161,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-dosage.csv),
     {
       "id" : "Dosage.method",
       "path" : "Dosage.method",
-      "short" : "Verabreichungsmethode, z.B. Infusion, Injektion, Tablette, Salbe etc. ",
+      "short" : "Verabreichungsmethode, z.B. Infusion, Injektion, Tablette, Salbe etc.",
       "mustSupport" : true
     },
     {
@@ -221,52 +221,6 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-dosage.csv),
         "strength" : "required",
         "valueSet" : "https://termgit.elga.gv.at/ValueSet-elga-medikationmengenart"
       }
-    },
-    {
-      "id" : "Dosage.doseAndRate.rate[x]",
-      "path" : "Dosage.doseAndRate.rate[x]",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "type",
-          "path" : "$this"
-        }],
-        "ordered" : false,
-        "rules" : "open"
-      }
-    },
-    {
-      "id" : "Dosage.doseAndRate.rate[x]:rateRatio",
-      "path" : "Dosage.doseAndRate.rate[x]",
-      "sliceName" : "rateRatio",
-      "short" : "TODO: prüfen",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "Ratio"
-      }]
-    },
-    {
-      "id" : "Dosage.doseAndRate.rate[x]:rateRange",
-      "path" : "Dosage.doseAndRate.rate[x]",
-      "sliceName" : "rateRange",
-      "short" : "TODO: prüfen",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "Range"
-      }]
-    },
-    {
-      "id" : "Dosage.doseAndRate.rate[x]:rateQuantity",
-      "path" : "Dosage.doseAndRate.rate[x]",
-      "sliceName" : "rateQuantity",
-      "short" : "TODO: prüfen",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "Quantity",
-        "profile" : ["http://hl7.org/fhir/StructureDefinition/SimpleQuantity"]
-      }]
     }]
   }
 }

@@ -38,7 +38,7 @@ Entries die vor dem Aufruf das Flag removed haben, werden aus der Liste entfernt
   "title" : "e-Med Operation für Read-to-Write",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-04-20T08:20:06+00:00",
+  "date" : "2026-04-20T16:24:35+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
