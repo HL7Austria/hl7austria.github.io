@@ -37,5 +37,6 @@ Die GDA-Software muss sicherstellen, dass eine eindeutige Identifizierung des ä
 * etc.
  
 
-![](usecases_e_med4.drawio.png) 
+ 
+ ![](usecases_e_med4.drawio.png)
 

@@ -38,7 +38,7 @@ Entries die vor dem Aufruf das Flag removed haben, werden aus der Liste entfernt
   "title" : "e-Med Operation für Read-to-Write",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-04-20T08:01:21+00:00",
+  "date" : "2026-04-20T08:42:15+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -62,11 +62,11 @@ Entries die vor dem Aufruf das Flag removed haben, werden aus der Liste entfernt
   "type" : true,
   "instance" : false,
   "parameter" : [{
-    "name" : "bpkGH",
+    "name" : "id",
     "use" : "in",
     "min" : 1,
     "max" : "1",
-    "documentation" : "Der *bpkGH* Parameter dient der Zurordnung des Patienten.",
+    "documentation" : "Der *id* Parameter dient der Zurordnung des Patienten.",
     "type" : "string"
   },
   {

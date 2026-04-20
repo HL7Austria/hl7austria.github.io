@@ -49,17 +49,17 @@ Im Kontext des Medikationsplans kann dieses Element folgende Statuswerte annehme
 
 Da der Status eines Medikationsplaneintrags im Medikationsplan auf **zwei Ebenen** geführt wird (List.entry.flag und MedicationRequest.status), müssen diese beiden Ebenen zur Sicherstellung einer konsistenten Verarbeitung inhaltlich aufeinander abgestimmt sein. Die folgende Tabelle beschreibt die geltenden Konsistenzregeln zwischen List.entry.flag und MedicationRequest.status in Abhängigkeit vom jeweiligen Use Case: 
 
-| | | | | |
-| :--- | :--- | :--- | :--- | :--- |
-| Neuen Planeintrag zum Medikationsplan hinzufügen | **new** | **active** | Neuer Planeintrag wird erstellt und ist aktiv- der Behandlungszeitraum kann in der Zukunft liegen- Bereits bestehender Planeintrag kann wieder reaktiviert werden (Client-SW) |   |
-|   | **new** | **on-hold** | Neuer Planeintrag wird erstellt, wird aber pausiert |   |
-| Bestehenden Planeintrag im Medikationsplan beibehalten/zur Kenntnis nehmen | **unchanged** | **active** | Bestehender Planeintrag bleibt unverändert- der Behandlungszeitraum darf noch nicht abgelaufen sein |   |
-|   | **unchanged** | **on-hold** | Bestehender Planeintrag bleibt unverändert pausiert- der Behandlungszeitraum darf noch nicht abgelaufen sein |   |
-| Bestehenden Planeintrag im Medikationsplan ändern | **changed** | **active** | Bestehender Planeintrag wird geändert |   |
-|   | **changed** | **on-hold** | Bestehender Planeintrag wird geändert und pausiert |   |
-| Bestehenden Planeintrag aus Medikationsplan entfernen | **removed** | **completed** | Bestehender Planeintrag wird beendet (durch Ablauf des Behandlungszeitraums, wenn keine erneute Verordnung) |   |
-|   | **removed** | **stopped** | Bestehender Planeintrag wird vor Ablauf des Behandlungszeitraums abgesetzt |   |
-|   | **removed** | **entered-in-error** | Bestehender Planeintrag wird storniert, aufgrund falscher Eingabe |   |
+| | | | |
+| :--- | :--- | :--- | :--- |
+| Neuen Planeintrag zum Medikationsplan hinzufügen | new | active | Neuer Planeintrag wird erstellt und ist aktiv- der Behandlungszeitraum kann in der Zukunft liegen |
+| new | on-hold | Neuer Planeintrag wird erstellt, wird aber pausiert | |
+| Bestehenden Planeintrag im Medikationsplan beibehalten/zur Kenntnis nehmen | unchanged | active | Bestehender Planeintrag bleibt unverändert- der Behandlungszeitraum darf noch nicht abgelaufen sein |
+| unchanged | on-hold | Bestehender Planeintrag bleibt unverändert pausiert- der Behandlungszeitraum darf noch nicht abgelaufen sein | |
+| Bestehenden Planeintrag im Medikationsplan ändern | changed | active | Bestehender Planeintrag wird geändert |
+| changed | on-hold | Bestehender Planeintrag wird geändert und pausiert | |
+| Bestehenden Planeintrag aus Medikationsplan entfernen | removed | completed | Bestehender Planeintrag wird beendet. Die Therapie wurde wie geplant durchgeführt und ist abgeschlossen. |
+| removed | stopped | Bestehender Planeintrag wird vor Ablauf des Behandlungszeitraums dauerhaft gestoppt. Die Medikation wurde, bevor alle geplanten Einnahmen oder Verabreichungen durchgeführt wurden, abgesetzt. | |
+| removed | entered-in-error | Bestehender Planeintrag wird storniert, aufgrund falscher Eingabe | |
 
 #### Status des MedicationRequests in der geplanten Abgabe
 

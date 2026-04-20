@@ -19,7 +19,7 @@ Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medik
 
 **Usages:**
 
-* Examples for this Profile: [Bundle/At-Emed-Example-Bundle-Tx-Medikationsplan-Dosierungsvarianten](Bundle-At-Emed-Example-Bundle-Tx-Medikationsplan-Dosierungsvarianten.md), [Bundle/At-Emed-Journey-01-Bundle-Tx-Medikationsplan](Bundle-At-Emed-Journey-01-Bundle-Tx-Medikationsplan.md), [Bundle/At-Emed-Journey-02-Bundle-Tx-Medikationsplan](Bundle-At-Emed-Journey-02-Bundle-Tx-Medikationsplan.md), [Bundle/At-Emed-Journey-05-a-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-05-a-Bundle-Medikationsplan-Tx.md) and [Bundle/At-Emed-Journey-05-b-Bundle-Tx-Medikationsplan](Bundle-At-Emed-Journey-05-b-Bundle-Tx-Medikationsplan.md)
+* Examples for this Profile: [Bundle/At-Emed-Journey-01-Bundle-Tx-Medikationsplan](Bundle-At-Emed-Journey-01-Bundle-Tx-Medikationsplan.md), [Bundle/At-Emed-Journey-02-Bundle-Tx-Medikationsplan](Bundle-At-Emed-Journey-02-Bundle-Tx-Medikationsplan.md), [Bundle/At-Emed-Journey-05-a-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-05-a-Bundle-Medikationsplan-Tx.md) and [Bundle/At-Emed-Journey-05-b-Bundle-Tx-Medikationsplan](Bundle-At-Emed-Journey-05-b-Bundle-Tx-Medikationsplan.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/at-emed-bundle-tx-medikationsplan)
 
@@ -44,7 +44,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-bundle-tx-me
   "name" : "AtEmedBundleTxMedikationsplan",
   "title" : "ELGA e-Med Medikationsplan Transaction Bundle",
   "status" : "draft",
-  "date" : "2026-04-20T08:01:21+00:00",
+  "date" : "2026-04-20T08:42:15+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
