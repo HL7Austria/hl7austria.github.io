@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-dosage.csv),
   "name" : "AtEmedDosage",
   "title" : "ELGA e-Med Dosage",
   "status" : "draft",
-  "date" : "2026-04-20T16:24:35+00:00",
+  "date" : "2026-04-20T19:04:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -221,6 +221,21 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-dosage.csv),
         "strength" : "required",
         "valueSet" : "https://termgit.elga.gv.at/ValueSet-elga-medikationmengenart"
       }
+    },
+    {
+      "id" : "Dosage.maxDosePerPeriod",
+      "path" : "Dosage.maxDosePerPeriod",
+      "short" : "Maximale Menge pro Zeiteinheit"
+    },
+    {
+      "id" : "Dosage.maxDosePerAdministration",
+      "path" : "Dosage.maxDosePerAdministration",
+      "short" : "Maximal Menge pro Abgabe"
+    },
+    {
+      "id" : "Dosage.maxDosePerLifetime",
+      "path" : "Dosage.maxDosePerLifetime",
+      "short" : "Maximale Lebenszeitdosis"
     }]
   }
 }

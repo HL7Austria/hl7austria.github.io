@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
   "name" : "AtEmedListMedikationsplan",
   "title" : "ELGA e-Med Medikationsplan",
   "status" : "draft",
-  "date" : "2026-04-20T16:24:35+00:00",
+  "date" : "2026-04-20T19:04:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -88,7 +88,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-list-medikat
     {
       "id" : "List.status",
       "path" : "List.status",
-      "short" : "Mögliche Ausprägungen: [current | retired] Bedeutung: current: default | retired: nach Ableben des Patienten bis Ende der Aufbewahrungsfrist",
+      "short" : "Status des Medikationsplans. Mögliche Ausprägungen: [current | retired] Bedeutung: current: default | retired: nach Ableben des Patienten bis Ende der Aufbewahrungsfrist",
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",

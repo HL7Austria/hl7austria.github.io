@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
   "name" : "AtEmedMDDurchgefuehrteAbgabe",
   "title" : "ELGA e-Med Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-04-20T16:24:35+00:00",
+  "date" : "2026-04-20T19:04:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -123,20 +123,19 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.identifier",
       "path" : "MedicationDispense.identifier",
-      "short" : "Durchgeführte-Abgabe-ID. TODO: Verwendung zu prüfen.",
+      "short" : "Durchgeführte-Abgabe-ID.",
       "max" : "0"
     },
     {
       "id" : "MedicationDispense.partOf",
       "path" : "MedicationDispense.partOf",
-      "short" : "Auslösendes Ereignis. Referenz auf Procedure-Ressource, daher keine Verwendung in der durchgeführten Abgabe.",
+      "short" : "Auslösendes Ereignis (Referenz auf Procedure-Ressource). Keine Verwendung in der durchgeführten Abgabe.",
       "max" : "0"
     },
     {
       "id" : "MedicationDispense.status",
       "path" : "MedicationDispense.status",
-      "short" : "Status der durchgeführten Abgabe: completed | entered-in-error | stopped. Details siehe Definition.",
-      "definition" : "* **\\\"completed\\\"**: Die durchgeführte Abgabe ist abgeschlossen. \n* **\\\"entered-in-error\\\"**: Die durchgeführte Abgabe wird aufgrund falscher Eingabe storniert.\n* **\\\"stopped\\\"**: Die Abgabe wird nicht durchgeführt (Medikament wird abgesetzt). \nhttp://hl7.org/fhir/ValueSet/medicationdispense-status|4.0.1\n\nTODO: zu prüfen: \n* ob es einen Status in-progress / preparation geben soll, z.B. wenn Bestellvorgang gestartet wurde und der typ First Fill - Part Fill ist.\n* Technische Prüfungen bezüglich Abhängigkeiten von status, typ, Rezeptart? automatisch geprüft werden? Falls der Status vom Typ der geplanten Abgabe (Rezeptart) abhängig sein kann (z.B. in-progress bei Bestellung o.ä.), evtl Operation ",
+      "short" : "Status der durchgeführten Abgabe. Mögliche Ausprägungen: [completed | entered-in-error | stopped] Bedeutung: completed: Die durchgeführte Abgabe ist abgeschlossen. | entered-in-error: Die durchgeführte Abgabe wird aufgrund falscher Eingabe storniert. | stopped: Die Abgabe wird nicht durchgeführt (Medikament wird abgesetzt).",
       "mustSupport" : true
     },
     {
@@ -150,13 +149,13 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
         "ordered" : false,
         "rules" : "open"
       },
-      "short" : "Grund für den aktuellen Status, z.B. warum keine Abgabe erfolgte (zB. Allergie, Produkt nicht verfügbar). Code oder Referenz (DetectedIssue)"
+      "short" : "Grund für den aktuellen Status, z.B. warum keine Abgabe erfolgte (zB. Produkt nicht verfügbar). Code oder Referenz (DetectedIssue)"
     },
     {
       "id" : "MedicationDispense.statusReason[x]:statusReasonCodeableConcept",
       "path" : "MedicationDispense.statusReason[x]",
       "sliceName" : "statusReasonCodeableConcept",
-      "short" : "Bsp: https://hl7.org/fhir/R4/valueset-medicationdispense-status-reason.html",
+      "short" : "Grund für den aktuellen Status als Code. (ex) https://hl7.org/fhir/R4/valueset-medicationdispense-status-reason.html",
       "min" : 0,
       "max" : "1",
       "type" : [{
@@ -168,7 +167,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
       "id" : "MedicationDispense.statusReason[x]:statusReasonReference",
       "path" : "MedicationDispense.statusReason[x]",
       "sliceName" : "statusReasonReference",
-      "short" : "Referenz auf DetectedIssue-Ressource, daher keine Verwendung in der durchgeführten Abgabe.",
+      "short" : "Referenz auf DetectedIssue-Ressource. Keine Verwendung in der durchgeführten Abgabe.",
       "min" : 0,
       "max" : "0",
       "type" : [{
@@ -179,7 +178,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.category",
       "path" : "MedicationDispense.category",
-      "short" : "Angabe, wo das abgegebene Medikament voraussichtlich eingenommen oder verabreicht wird (z.B. stationär oder ambulant), https://hl7.org/fhir/R4/valueset-medicationdispense-category.html. Keine Verwendung in der durchgeführten Abgabe.",
+      "short" : "Angabe, wo das abgegebene Medikament voraussichtlich eingenommen oder verabreicht wird (z.B. stationär oder ambulant). Keine Verwendung in der durchgeführten Abgabe.",
       "max" : "0"
     },
     {
@@ -227,13 +226,13 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.performer.function",
       "path" : "MedicationDispense.performer.function",
-      "short" : "Rolle: https://hl7.org/fhir/R4/valueset-medicationdispense-performer-function.html; Keine Verwendung in der durchgeführten Abgabe.",
+      "short" : "Rolle der Person, die die Abgabe durchgeführt hat. Keine Verwendung in der durchgeführten Abgabe.",
       "max" : "0"
     },
     {
       "id" : "MedicationDispense.performer.actor",
       "path" : "MedicationDispense.performer.actor",
-      "short" : "Refrenz auf Practitioner, PractitionerRole, Organization, \ndie die durchgeführte Abgabe erstellt hat und für den Inhalt verantwortlich ist (identifiziert über den GDA-Index und berechtigt \nauf die ELGA e-Medikation des Patienten zuzugreifen).",
+      "short" : "Refrenz auf Practitioner, PractitionerRole, Organization, \nder/die die durchgeführte Abgabe erstellt hat und für den Inhalt verantwortlich ist (identifiziert über den GDA-Index und berechtigt \nauf die ELGA e-Medikation des Patienten zuzugreifen).",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner",
@@ -251,14 +250,14 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.authorizingPrescription",
       "path" : "MedicationDispense.authorizingPrescription",
-      "short" : "Verpflichtende Referenz auf zugehörige geplante Abgabe (MedicationRequest), sofern diese existiert.\nzu prüfen (gemäß CDA): 'Ohne Verordnungsbezug kann nur die Abgabe jener OTC-Präparate in der e-Medikation \ngespeichert werden, die auch wechselwirkungsrelevant sind.'",
+      "short" : "Verpflichtende Referenz auf zugehörige geplante Abgabe (MedicationRequest), sofern diese existiert.",
       "max" : "1",
       "mustSupport" : true
     },
     {
       "id" : "MedicationDispense.type",
       "path" : "MedicationDispense.type",
-      "short" : "Mögliche Werte z.B. FFC (First-Fill Complete für vollständig erfüllte Bestellungen), FFP (First-Fill Part Fill für teilweise erfüllte Bestellungen), \nBsp: http://terminology.hl7.org/ValueSet/v3-ActPharmacySupplyType  //ffc, ffp, Refill - Part Fill, refill complete: evtl. selbst definieren\n// für leerabgabe: complete-ausprägung; emergency supply offen (OTC), complete\n\nDer Prozess des „Besorgers“ (wenn ein Arzneimittel nicht lagernd ist und bestellt werden muss) wird in der e-Medikation abgebildet. \nDabei wird das Rezept von der Apotheke eingelöst, und die Abgabe wird als Teilabgabe gekennzeichnet \n(siehe Markierung FFP „First Fill, Part Fill“ oder RFP „Refill - Part Fill“). Die Verordnung wird nicht in den Status EINGELÖST versetzt und es können solange weitere Abgaben dispensiert werden, bis eine Abgabe mit der Markierung RFC „Refill - Complete“ gespeichert wird. Die Kennzeichnung zeigt, dass das Arzneimittel dem Patienten noch nicht ausgehändigt wurde. Die Kennzeichnung zeigt auch, ob alle Packungen einer Verordnung bzw. teilweise Packungen einer Verordnung bestellt werden. Solange eine Abgabe mit der Kennzeichnung „Besorger“ vorhanden ist, muss die Abgabe mit der eMED-ID abrufbar sein.\n\n\"FFC\": First Fill - Complete:  <br>\n\"FFP\": First Fill - Part Fill <br>  \n\"RFP\": Refill - Part Fill <br> \n\"RFC\": Refill - Complete <br>\n",
+      "short" : "Art der Abgabe (z.B. für Teilabgaben). Mögliche Ausprägungen: [FFC | FFP | RFP | RFC | EM]. Bedeutung: FFC: First Fill - Complete | FFP: First Fill - Part Fill | RFP: Refill - Part Fill | RFC: Refill - Complete | EM: Emergency Supply.",
       "min" : 1,
       "mustSupport" : true
     },
@@ -272,13 +271,13 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.daysSupply",
       "path" : "MedicationDispense.daysSupply",
-      "short" : "Medikamentenmenge, ausgedrückt als zeitliche Menge",
+      "short" : "Tage, für die die abgegebene Menge ausreicht",
       "max" : "0"
     },
     {
       "id" : "MedicationDispense.whenPrepared",
       "path" : "MedicationDispense.whenPrepared",
-      "short" : "Verpackungs- und Prüfdatum.",
+      "short" : "Zeitpunkt, zu dem das Produkt verpackt und geprüft wurde.",
       "max" : "0"
     },
     {
@@ -309,25 +308,25 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     {
       "id" : "MedicationDispense.dosageInstruction",
       "path" : "MedicationDispense.dosageInstruction",
-      "short" : "Gibt an, wie das Medikament vom Patienten einzunehmen ist. TODO: Dosiervarianten.\nDer Apotheker überprüft die Medikamentenbestellung vor der Abgabe und aktualisiert die Dosierungsanweisung auf der Grundlage \ndes tatsächlich abgegebenen Produkts.",
+      "short" : "Gibt an, wie das Medikament vom Patienten einzunehmen ist. \nDer Apotheker überprüft die Medikamentenverordnung vor der Abgabe und passt die Dosierungsanweisung gegebenenfalls auf Grundlage des tatsächlich abgegebenen Produkts an.",
       "mustSupport" : true
     },
     {
       "id" : "MedicationDispense.substitution",
       "path" : "MedicationDispense.substitution",
-      "short" : "Gibt an, ob im Rahmen der Abgabe eine Substitution vorgenommen wurde oder nicht. \nWenn nichts angegeben ist, wurde keine Substitution vorgenommen.",
+      "short" : "Gibt an, ob im Rahmen der Abgabe eine Substitution vorgenommen wurde oder nicht.",
       "max" : "0"
     },
     {
       "id" : "MedicationDispense.detectedIssue",
       "path" : "MedicationDispense.detectedIssue",
-      "short" : "Referenenz auf DetectedIssue Ressource, daher keine Verwendung in durchgeführter Abgabe.",
+      "short" : "Referenenz auf DetectedIssue Ressource. Keine Verwendung in durchgeführter Abgabe.",
       "max" : "0"
     },
     {
       "id" : "MedicationDispense.eventHistory",
       "path" : "MedicationDispense.eventHistory",
-      "short" : "Bezeichnet eine Liste von Provenance-Ressourcen, die verschiedene relevante Versionen \ndieser Ressource dokumentieren. Verwendung prüfen.",
+      "short" : "Bezeichnet eine Liste von Provenance-Ressourcen, die verschiedene relevante Versionen \ndieser Ressource dokumentieren.",
       "max" : "0"
     }]
   }

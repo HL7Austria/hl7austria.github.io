@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
   "name" : "AtEmedMRPlaneintrag",
   "title" : "ELGA e-Med Planeintrag",
   "status" : "draft",
-  "date" : "2026-04-20T16:24:35+00:00",
+  "date" : "2026-04-20T19:04:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -150,8 +150,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
     {
       "id" : "MedicationRequest.identifier",
       "path" : "MedicationRequest.identifier",
-      "short" : "Medikationsplaneintrag-ID. TODO: Verwendung einer logischen Medikationsplaneintrag-ID prüfen. Details zur Herstellung von Bezügen von geänderten Planeinträgen, siehe Definition.",
-      "definition" : "Medikationsplaneintrag-ID.\nEvt. mit Zeitstempel (Planeintrag-ID_{Zeitstempel}) zur Herstellung eines Bezugs von geänderten Planeinträgen.\nVorteil: \n- Auch wenn sich die PZN ändert, aber logisch der gleiche Eintrag betroffen ist (z.B. Austausch eines Arzneimittels durch ein anderes mit weniger Wechselwirkung), kann ein Bezug hergestellt werden.\n- Wenn zur Vorversion des Eintrags bereits eine geplante Abgabe erstellt wurde, kann ein Bezug zum ursprünglichen Eintrag hergestellt werden.\nNachteil: \n- Falls Planeinträge mit komplett neuer Arznei überschrieben werden, entsteht dadurch ein verwirrender Bezug. \n- Die Verantwortung, dass nur Einträge geändert werden, die keine komplett neue Medikation beinhalten, liegt beim Ersteller des Eintrags.",
+      "short" : "Medikationsplaneintrag-ID.",
       "min" : 1,
       "max" : "1"
     },
@@ -236,7 +235,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
       "id" : "MedicationRequest.reported[x]:reportedBoolean",
       "path" : "MedicationRequest.reported[x]",
       "sliceName" : "reportedBoolean",
-      "short" : "TRUE im Falle der Dokumentation von Fremdmedikation (ein anderer Arzt hat das Medikament ursprünglich verordnet), sonst FALSE. TODO: Klären ob hier der GDA eindeutig identifiziert sein muss (im GDA-I vorhanden) oder analog zu e-Impfpass Freitext sein kann. Juristisch Verantwortlichkeit für Korrektheit des Eintrags zu klären.",
+      "short" : "TRUE im Falle der Dokumentation von Fremdmedikation (ein anderer Arzt hat das Medikament ursprünglich verordnet), sonst FALSE.",
       "min" : 0,
       "max" : "1",
       "type" : [{
@@ -299,25 +298,25 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
     {
       "id" : "MedicationRequest.performer",
       "path" : "MedicationRequest.performer",
-      "short" : "Der gewünschte Ausführende der medikamentösen Behandlung (z.B. der Ausführende der Medikamentengabe). Keine Verwendung im Planeintrag. TODO: evtl im Kontext Medikationsblatt zu prüfen.",
+      "short" : "Der gewünschte Ausführende der medikamentösen Behandlung (z.B. der Ausführende der Medikamentengabe). Keine Verwendung im Planeintrag.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.performerType",
       "path" : "MedicationRequest.performerType",
-      "short" : "Rollen: https://hl7.org/fhir/R4/valueset-performer-role.html. Keine Verwendung im Planeintrag. TODO: evtl im Kontext Medikationsblatt zu prüfen.",
+      "short" : "Rollen: https://hl7.org/fhir/R4/valueset-performer-role.html. Keine Verwendung im Planeintrag.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.recorder",
       "path" : "MedicationRequest.recorder",
-      "short" : "Die Person, die den Medikationsplaneintrag im Auftrag eines GDA eingegeben hat. TODO: Prüfen, ob eine juristische Verpflichtung zur Dokumentation der Schreibkraft besteht.",
+      "short" : "Die Person, die den Medikationsplaneintrag im Auftrag eines GDA eingegeben hat.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.reasonCode",
       "path" : "MedicationRequest.reasonCode",
-      "short" : "Grund für die Verordnung des Arzneimittels. Entweder Code oder Referenz (TODO: Evtl. Invariante). Erst wenn codierte Angabe möglich.",
+      "short" : "Grund für die Verordnung des Arzneimittels. Entweder Code oder Referenz. Verwendung erst, wenn codierte Angabe möglich.",
       "max" : "0"
     },
     {
@@ -328,31 +327,31 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
     {
       "id" : "MedicationRequest.instantiatesCanonical",
       "path" : "MedicationRequest.instantiatesCanonical",
-      "short" : "URL, die auf ein Protokoll (Richtlinie, Guideline) verweist, das von diesem Medikationsplaneintrag ganz oder teilweise eingehalten wird. Derzeit keine Verwendung im Medikationsplaneintrag.",
+      "short" : "URL, die auf eine Richtlinie/Guideline verweist, die von diesem Medikationsplaneintrag ganz oder teilweise eingehalten wird. Derzeit keine Verwendung im Medikationsplaneintrag.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.instantiatesUri",
       "path" : "MedicationRequest.instantiatesUri",
-      "short" : "URL, die auf ein extern gepflegtes Protokoll (Richtlinie, Guideline) verweist, das von diesem Medikationsplaneintrag ganz oder teilweise eingehalten wird. Derzeit keine Verwendung im Medikationsplaneintrag.",
+      "short" : "URL, die auf eine extern gepflegte Richtlinie/Guideline verweist, die von diesem Medikationsplaneintrag ganz oder teilweise eingehalten wird. Derzeit keine Verwendung im Medikationsplaneintrag.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.basedOn",
       "path" : "MedicationRequest.basedOn",
-      "short" : "TODO: Verwendung im Medikationsplaneintrag zu prüfen. Vermutlich nicht möglich, da keine versionsspezifischen Referenzen verwendet werden.",
+      "short" : "Keine Verwendung im Medikationsplaneintrag.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.groupIdentifier",
       "path" : "MedicationRequest.groupIdentifier",
-      "short" : "Erst bei der geplanten Abgabe (Rezepterstellung) relevant. Evtl ein Verweis auf erstellte Rezepte? Würde Extension erfordern, da Kardinalität nur 0..1 zulässig",
+      "short" : "Erst bei der geplanten Abgabe (Rezepterstellung) relevant.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.courseOfTherapyType",
       "path" : "MedicationRequest.courseOfTherapyType",
-      "short" : "Gesamtmuster der Medikamentengabe. continuous | acute | seasonal. Verwendung im Medikationsplaneintrag prüfen, evtl. durch Dosierungsinformationen abgedeckt.",
+      "short" : "Gesamtmuster der Medikamentengabe. continuous | acute | seasonal.",
       "mustSupport" : true
     },
     {
@@ -364,13 +363,13 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
     {
       "id" : "MedicationRequest.note",
       "path" : "MedicationRequest.note",
-      "short" : "Zusätzliche Informationen zum Medikationsplaneintrag. TODO: fachlich prüfen, an welchen Stellen überall Freitext erforderlich sein soll/muss. Auch im Kontext zu entered-in-error Informationen.",
+      "short" : "Zusätzliche Informationen zum Medikationsplaneintrag.",
       "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.dosageInstruction",
       "path" : "MedicationRequest.dosageInstruction",
-      "short" : "Angabe der Dosierinformationen strukturiert oder als Freitext. TODO: Inhalte AtEmedDosage fachlich prüfen.",
+      "short" : "Angabe der Dosierinformationen strukturiert oder als Freitext.",
       "min" : 1,
       "type" : [{
         "code" : "Dosage",
@@ -387,7 +386,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
     {
       "id" : "MedicationRequest.substitution",
       "path" : "MedicationRequest.substitution",
-      "short" : "Gibt an, ob das Arzneimittel substituiert werden darf oder nicht. Erläutert die Absicht des Arztes, der den Medikationsplaneintrag erstellt. Wenn nichts angegeben ist, kann eine Substitution vorgenommen werden. Die Dokumentation über eine tatsächlich erfolgte Substitution erfolgt in der Dispense-Resource. TODO: Usecase fachlich zu prüfen. Es kann für den Patienten selbst oder das Pflegeheim eine wichtige Information sein, mit welchem Medikament das verordnete Medikament im Bedarfsfall ersetzen werden kann.",
+      "short" : "Gibt an, ob das Arzneimittel substituiert werden darf oder nicht. Erläutert die Absicht des Arztes, der den Medikationsplaneintrag erstellt. Wenn nichts angegeben ist, kann eine Substitution vorgenommen werden.",
       "mustSupport" : true
     },
     {
@@ -399,7 +398,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
     {
       "id" : "MedicationRequest.detectedIssue",
       "path" : "MedicationRequest.detectedIssue",
-      "short" : "Klinisches Problem mit Maßnahme. Nur mittesl Referenz auf Ressouce DetectedIssue, Keine Verwendung im Medikationsplaneintrag.",
+      "short" : "Klinisches Problem mit Maßnahme (Referenz auf Ressouce DetectedIssue). Keine Verwendung im Medikationsplaneintrag.",
       "max" : "0"
     },
     {

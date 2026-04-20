@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-timing.csv),
   "name" : "AtEmedTiming",
   "title" : "ELGA e-Med Timing",
   "status" : "draft",
-  "date" : "2026-04-20T16:24:35+00:00",
+  "date" : "2026-04-20T19:04:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -79,7 +79,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-timing.csv),
     "element" : [{
       "id" : "Timing.event",
       "path" : "Timing.event",
-      "short" : "Zeitpunkt der Einnahme: Mapping /effectiveTime[1]/@value",
+      "short" : "Zeitpunkt der Einnahme.",
       "mustSupport" : true
     },
     {
@@ -113,22 +113,22 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-timing.csv),
     {
       "id" : "Timing.repeat.bounds[x]:boundsPeriod.start",
       "path" : "Timing.repeat.bounds[x].start",
-      "short" : "Zeitraum der Einnahme: Start. Mapping /effectiveTime[1]/low"
+      "short" : "Zeitraum der Einnahme: Start."
     },
     {
       "id" : "Timing.repeat.bounds[x]:boundsPeriod.end",
       "path" : "Timing.repeat.bounds[x].end",
-      "short" : "Zeitraum der Einnahme: Ende. Mapping /effectiveTime[1]/high"
+      "short" : "Zeitraum der Einnahme: Ende."
     },
     {
       "id" : "Timing.repeat.frequency",
       "path" : "Timing.repeat.frequency",
-      "short" : "Häufigkeit der Einnahme, z.B. 1 mal täglich.\nPeriodic Frequency /effectiveTime[operator=\"A\" and xsi:type=\"PIVL_TS\"] …/@institutionSpecified …/period/@value …/period/@unit"
+      "short" : "Häufigkeit der Einnahme, z.B. 3 mal täglich."
     },
     {
       "id" : "Timing.repeat.period",
       "path" : "Timing.repeat.period",
-      "short" : "Intervall der Einnahme, z.B. alle 8 Stunden.",
+      "short" : "Intervall der Einnahme, z.B. alle 4 Stunden.",
       "mustSupport" : true
     },
     {

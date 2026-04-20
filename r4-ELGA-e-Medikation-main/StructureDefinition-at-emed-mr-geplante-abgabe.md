@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
   "name" : "AtEmedMRGeplanteAbgabe",
   "title" : "ELGA e-Med Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-04-20T16:24:35+00:00",
+  "date" : "2026-04-20T19:04:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -136,14 +136,13 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.identifier",
       "path" : "MedicationRequest.identifier",
-      "short" : "Gepante-Abgabe-ID. TODO: Verwendung noch zu prüfen, evtl. basedon mit logischem Identifier ausreichend.",
+      "short" : "Gepante-Abgabe-ID.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.status",
       "path" : "MedicationRequest.status",
-      "short" : "Status der geplanten Abgabe: active | completed | entered-in-error | stopped. Details siehe Definition.",
-      "definition" : "Status der geplanten Abgabe:\n* \\\"active\\\": offene, geplante Abgabe \n* \\\"completed\\\": implizit mittels Custom Operation gesetzt, nachdem alle Abgaben durchgeführt wurden (Rezept komplett eingelöst) (TODO: techn. prüfen) \n* \\\"entered-in-error\\\": nach fehlerhafter Eingabe; Storno nur möglich, wenn noch keine zugehörige Abgabe durchgeführt wurde (TODO: techn. prüfen?) \n* \\\"stopped\\\": TODO: Verwendung zu prüfen (Status soll analog zu e-Rezept abgebildet werden)\n(nicht verwendet: on-hold, cancelled, draft, unknown)",
+      "short" : "Status der geplanten Abgabe. Mögliche Ausprägung: [active | completed | entered-in-error | stopped]. Bedeutung: active: offene, geplante Abgabe | completed: geplante Abgabe abgeschlossen | entered-in-error: nach fehlerhafter Eingabe; Storno nur möglich, wenn noch keine zugehörige Abgabe durchgeführt wurde | stopped: Verwendung zu prüfen (Status soll analog zu e-Rezept abgebildet werden)",
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
@@ -153,13 +152,13 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.statusReason",
       "path" : "MedicationRequest.statusReason",
-      "short" : "Grund für den aktuellen Status: https://hl7.org/fhir/R4/valueset-medicationrequest-status-reason.html. Keine Verwendung in der geplanten Abgabe.",
+      "short" : "Grund des aktuellen Status: https://hl7.org/fhir/R4/valueset-medicationrequest-status-reason.html. Keine Verwendung in der geplanten Abgabe.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.intent",
       "path" : "MedicationRequest.intent",
-      "short" : "Die Geplante Abgabe stellt eine Anforderung und Ermächtigung \nzum Handeln durch den Antragsteller dar, daher ist intent immer \"order\".",
+      "short" : "Die geplante Abgabe stellt einen Auftrag zur Durchführung und eine Autorisierung des Verfassers dar; daher ist intent immer \"order\".",
       "patternCode" : "order",
       "mustSupport" : true
     },
@@ -266,7 +265,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.requester",
       "path" : "MedicationRequest.requester",
-      "short" : "Der Arzt oder die Ärztin, die die geplante Abgabe erstellt hat und für den Inhalt verantwortlich ist \n(eindeutig identifiziert über den GDA-Index und berechtigt auf die ELGA e-Medikation des Patienten zuzugreifen).\nTODO: HL7ATCore-Practitioner-Profile profilieren.",
+      "short" : "Der Arzt oder die Ärztin, die die geplante Abgabe erstellt hat und für den Inhalt verantwortlich ist \n(eindeutig identifiziert über den GDA-Index und berechtigt auf die ELGA e-Medikation des Patienten zuzugreifen).",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
@@ -279,7 +278,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.performer",
       "path" : "MedicationRequest.performer",
-      "short" : "Keine Verwendung in der geplanten Abgabe.",
+      "short" : "Durchführende Person. Keine Verwendung in der geplanten Abgabe.",
       "max" : "0"
     },
     {
@@ -291,31 +290,31 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.recorder",
       "path" : "MedicationRequest.recorder",
-      "short" : "Person der Dateineingabe. Gemäß Vorgaben im CDA keine Verwendung in der geplanten Abgabe. TODO: Abstimmung der Verwendung mit e-Diagnose.",
+      "short" : "Person der Dateineingabe. Keine Verwendung in der geplanten Abgabe.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.reasonCode",
       "path" : "MedicationRequest.reasonCode",
-      "short" : "Grund für die Verordnung des Arzneimittels als Code oder Referenz. Bis zur Verfügbarkeit von e-Diagnose keine Verwendung in geplanter Abgabe. ",
+      "short" : "Grund für die Verordnung des Arzneimittels als Code oder Referenz. Bis zur Verfügbarkeit von e-Diagnose keine Verwendung in geplanter Abgabe.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.instantiatesCanonical",
       "path" : "MedicationRequest.instantiatesCanonical",
-      "short" : "URL, die auf ein Protokoll (Richtlinie, Guideline) verweist, das von dieser \ngeplanten Abgabe ganz oder teilweise eingehalten wird. Keine Verwendung in der geplanten Abgabe.",
+      "short" : "URL, die auf eine Richtlinie/Guideline verweist, die von dieser \ngeplanten Abgabe ganz oder teilweise eingehalten wird. Keine Verwendung in der geplanten Abgabe.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.instantiatesUri",
       "path" : "MedicationRequest.instantiatesUri",
-      "short" : "URL, die auf ein extern gepflegtes Protokoll (Richtlinie, Guideline) verweist, das von dieser \ngeplanten Abgabe ganz oder teilweise eingehalten wird. Keine Verwendung in der geplanten Abgabe.",
+      "short" : "URL, die auf eine externe gepflegte Richtlinie/Guideline verweist, die von dieser \ngeplanten Abgabe ganz oder teilweise eingehalten wird. Keine Verwendung in der geplanten Abgabe.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.basedOn",
       "path" : "MedicationRequest.basedOn",
-      "short" : "Referenz auf die (aktuelle) Version des zugrundeliegenden Medikationsplaneintrags, auf dem diese geplante Abgabe basiert.\nTODO: zu prüfen: zusätzliche logische Referenz: reference.identifier \n{Medikationsplaneintrag-ID}_{Medikationsplaneintrag-ID_Version}.",
+      "short" : "Referenz auf die (aktuelle) Version des zugrundeliegenden Medikationsplaneintrags, auf dem diese geplante Abgabe basiert.",
       "min" : 1,
       "max" : "1",
       "type" : [{
@@ -327,7 +326,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.groupIdentifier",
       "path" : "MedicationRequest.groupIdentifier",
-      "short" : "Als groupIdentifier dient die eMED-ID, die auch im e-Rezept mitgeführt wird. \nWerden von einem:r Arzt:Ärtztin mehrere Arzneimittel gleichzeitig verordnet, \nwird für jedes Arzneimittel eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer').\nTODO: eMED-ID Wording ist evtl. aufgrund des Parallelbetriebs noch anzupassen",
+      "short" : "Als groupIdentifier dient die eMED-ID, die auch im e-Rezept mitgeführt wird. \nWerden von einem:r Arzt:Ärtztin mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine \ngeplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer').",
       "min" : 1,
       "mustSupport" : true
     },
@@ -346,13 +345,13 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.note",
       "path" : "MedicationRequest.note",
-      "short" : "Zusätzliche Informationen zur geplanten Abgabe (Kommunikations zw. Arzt und Apotheke); die nicht die Dosierung betreffen. \nTODO: prüfen was CDA derzeit zulässt; HL7 Consultation, ob Feld benötigt",
+      "short" : "Zusätzliche Informationen zur geplanten Abgabe (Kommunikation zwischen Arzt und Apotheke, die nicht die Dosierung betreffen).",
       "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.dosageInstruction",
       "path" : "MedicationRequest.dosageInstruction",
-      "short" : "Angabe der Dosierinformationen. TODO: Dosiervarianten.",
+      "short" : "Angabe der Dosierinformationen.",
       "max" : "1",
       "type" : [{
         "code" : "Dosage",
@@ -385,8 +384,8 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.dispenseRequest.validityPeriod",
       "path" : "MedicationRequest.dispenseRequest.validityPeriod",
-      "short" : "Die Anzahl der weiteren möglichen Einlösungen ist abhängig von der Rezeptart (siehe Definition).",
-      "definition" : "Anzahl der weiteren möglichen Einlösungen:\n* **Kassenrezept**: keine weitere Einlösung möglich (fixer Wert 0)\n* **Privatrezept**: bis zu 6 Einlösungen, Anzahl der möglichen Einlösungen kann vom Arzt definiert werden\n* **Sustitutionsrzepet**: keine weitere Einlösung möglich (fixer Wert 0) \n\nTODO: Techn. Prüfung: Wenn Kassenrezept oder Substitutionsrezept, dann 0. Verpflichtende Eingabe, wenn Privatrezept, max 6.",
+      "short" : "Die Anzahl der weiteren möglichen Einlösungen ist abhängig von der Rezeptart: Kassenrezept: keine weitere Einlösung möglich (fixer Wert 0). Privatrezept: bis zu 6 Einlösungen, Anzahl der möglichen Einlösungen kann vom Arzt definiert werden. Sustitutionsrezept: keine weitere Einlösung möglich (fixer Wert 0)",
+      "definition" : "Anzahl der weiteren möglichen Einlösungen:\n* **Kassenrezept**: keine weitere Einlösung möglich (fixer Wert 0)\n* **Privatrezept**: bis zu 6 Einlösungen, Anzahl der möglichen Einlösungen kann vom Arzt definiert werden\n* **Sustitutionsrezept**: keine weitere Einlösung möglich (fixer Wert 0) ",
       "min" : 1,
       "mustSupport" : true
     },
@@ -399,7 +398,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-geplante-
     {
       "id" : "MedicationRequest.dispenseRequest.quantity",
       "path" : "MedicationRequest.dispenseRequest.quantity",
-      "short" : "Menge des Medikaments, die bei jeder Abgabe bereitgestellt werden soll. \nDa sich die Angaben zum Arzneimittel jeweils auf eine Packung der Arznei beziehen, MUSS die Anzahl der auszugebenden Packungen angegeben werden (mindestens 1). \nDies gilt für Arzneimittel mit PZN und magistralen Zubereitungen.",
+      "short" : "Menge des Medikaments, die bei jeder Abgabe bereitgestellt werden soll.\nDa sich die Angaben zum Arzneimittel jeweils auf eine Packung der Arznei beziehen, MUSS die Anzahl der auszugebenden Packungen angegeben werden (mindestens 1). \nDies gilt für Arzneimittel mit PZN und magistralen Zubereitungen.",
       "min" : 1,
       "mustSupport" : true
     },
