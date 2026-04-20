@@ -5,9 +5,9 @@
 
 ## Home
 
-# e-Medikation (R4)
+# e-Medikation (v4)
 
-Der vorliegende **FHIR Implementation Guide e‑Medikation R4** ersetzt die bestehende, auf CDA basierende Version 2 der e‑Medikation.
+Der vorliegende **FHIR Implementation Guide e‑Medikation Version 4** ersetzt die bestehende, auf CDA basierende Version 2 der e‑Medikation.
 
 * Mit Version 4 wird die bestehende Umsetzung der e‑Medikation um die Funktionalität des e‑Medikationsplans ergänzt.
 * Darüber hinaus sollen alle geplanten und durchgeführten Abgaben von Medikamenten in der e-Abgabe als Teil von e-Medikation abgebildet werden.
@@ -16,9 +16,11 @@ Der **e‑Medikationsplan** bietet Behandler:innen und Patient:innen eine vollst
 
 Die Einführung des E-Medikationsplans gewährleistet, dass alle für die Therapieentscheidung relevanten Informationen verfügbar sind, Doppelverordnungen vermieden werden und die Patient:innensicherheit erhöht wird. Darüber hinaus fungiert der e‑Medikationsplan als Datengrundlage für die automatisierte Übernahme relevanter Medikationsinformationen in die ELGA Patient Summary.
 
-Die technische Umsetzung des E-Medikationsplans sowie der e-Abgabe erfolgt auf Basis des HL7® FHIR®-Standards, um eine nachhaltige, interoperable und kosteneffiziente Lösung zu gewährleisten. Die vorliegende Implementierung leistet einen Beitrag zur Weiterentwicklung sowohl der österreichischen eHealth-Strategie als auch der Anforderungen des European Health Data Space (EHDS). In Anbetracht der ab 2029 vorgesehenen Sekundärnutzung medizinischer Daten im EHDS werden durch dieses Implementation Guide die technischen Grundlagen geschaffen, um eine datenschutzkonforme Nutzung von Medikationsdaten für gemeinwohlorientierte Forschung und gesundheitspolitische Steuerung zu ermöglichen.
+![](e_medikation_overview_start.png)
 
-Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Integration der e-Medikation in die ELGA-Infrastruktur.
+Die technische Umsetzung des E-Medikationsplans sowie der e-Abgabe erfolgt auf Basis des HL7® FHIR®-Standards, um eine nachhaltige, interoperable und kosteneffiziente Lösung zu gewährleisten. Die vorliegende Implementierung leistet einen Beitrag zur Weiterentwicklung sowohl der österreichischen eHealth-Strategie als auch der Anforderungen des European Health Data Space (EHDS). In Anbetracht der ab 2029 vorgesehenen Sekundärnutzung medizinischer Daten im EHDS werden durch diesen Implementation Guide die technischen Grundlagen geschaffen, um eine datenschutzkonforme Nutzung von Medikationsdaten für gemeinwohlorientierte Forschung und gesundheitspolitische Steuerung zu ermöglichen.
+
+Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Integration der e-Medikation in die ELGA-Infrastruktur.
 
 
 
@@ -33,7 +35,7 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-04-17T19:15:07+00:00",
+  "date" : "2026-04-20T08:20:06+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -662,18 +664,6 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Bundle"
-      }],
-      "reference" : {
-        "reference" : "Bundle/At-Emed-Example-Bundle-Medikationsplan-Dosierungsvarianten"
-      },
-      "name" : "Beispiel Collection Bundle: Medikationsplan mit Dosierungsvarianten",
-      "description" : "Beispiel eines Collection Bundles:  Medikationsplan mit Dosierungsvarianten.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-medikationsplan"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationDispense"
       }],
       "reference" : {
@@ -938,90 +928,6 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "List"
-      }],
-      "reference" : {
-        "reference" : "List/At-Emed-Example-List-Medikationsplan-Dosierungsvarianten"
-      },
-      "name" : "Beispiel Medikationsplan mit Dosierungsvarianten",
-      "description" : "Beispiel Medikationsplan (List) mit Dosierungsvarianten: Freitext Dosierung, Schema mit Tageszeiten-Bezug (1-0-1-0), Schema mit Uhrzeiten-Bezug.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/At-Emed-Example-Mr-Dosierung-Zeitintervalle-Kombi"
-      },
-      "name" : "Beispiel Medikationsplaneintrag Dosierung als Kombination von Zeitintervallen",
-      "description" : "Medikationsplaneintrag mit Dosierung als Kombination von Zeitintervallen (alle 2 Tage: 08:00 Uhr — je 1 Stück; 18:00 Uhr — je 2 Stück).",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/At-Emed-Example-Mr-Dosierung-Wochentag-Kombi"
-      },
-      "name" : "Beispiel Medikationsplaneintrag mit Dosierung als Kombination von Wochentagen",
-      "description" : "Medikationsplaneintrag mit Dosierung als Kombination von Wochentagen (montags 1-0-1-0 Stück; freitags 1-0-1-0 Stück).",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/At-Emed-Example-Mr-Dosierung-1010"
-      },
-      "name" : "Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema",
-      "description" : "Medikationsplaneintrag mit Dosierung im Tageszeitenschema (morgens, mittags, abends, nachts): 1-0-1-0.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/At-Emed-Example-Mr-Dosierung-Zeit-1tg"
-      },
-      "name" : "Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema",
-      "description" : "Medikationsplaneintrag mit Dosierung im Tageszeitenschema (morgens, mittags, abends, nachts): 1-0-1-0.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/At-Emed-Example-Mr-Dosierung-Intervalle-Wh"
-      },
-      "name" : "Beispiel Medikationsplaneintrag mit Dosierungsintervallen",
-      "description" : "Medikationsplaneintrag mit Dosierung im Intervallen (alle 8 Tage 1 Stück).",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/At-Emed-Example-Mr-Dosierung-Wochentag"
-      },
-      "name" : "Beispiel Medikationsplaneintrag mit Schema mit Wochentags-Bezug",
-      "description" : "Medikationsplaneintrag mit Schema mit Wochentags-Bezug (jeden Dienstag und jeden Donnerstag).",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Organization"
       }],
       "reference" : {
@@ -1042,18 +948,6 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "name" : "Beispiel Patient 01",
       "description" : "Beispiel eines Patienten.",
       "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Bundle"
-      }],
-      "reference" : {
-        "reference" : "Bundle/At-Emed-Example-Bundle-Tx-Medikationsplan-Dosierungsvarianten"
-      },
-      "name" : "Beispiel Transaction Bundle: Medikationsplan mit Dosierungsvarianten",
-      "description" : "Beispiel eines Transaction Bundles:  Medikationsplan mit Dosierungsvarianten.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-bundle-tx-medikationsplan"
     },
     {
       "extension" : [{
@@ -1354,18 +1248,6 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "name" : "ELGA List.entry.flag Value Set",
       "description" : "ValueSet für zulässige Ausprägungen Ausprägungen des Flags eines List.Entries in ELGA.",
       "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/At-Emed-Example-Mr-Dosierung-Freitext"
-      },
-      "name" : "Medikationsplaneintrag mit Freitext-Dosierung",
-      "description" : "Medikationsplaneintrag mit Dosierung im Tageszeitenschema (morgens, mittags, abends, nachts): 1-0-1-0.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"
     }],
     "page" : {
       "extension" : [{
@@ -1418,15 +1300,6 @@ Das Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         }],
         "nameUrl" : "design_choices.html",
         "title" : "Designentscheidungen",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "dosaging.html"
-        }],
-        "nameUrl" : "dosaging.html",
-        "title" : "Dosierschemata",
         "generation" : "markdown"
       },
       {

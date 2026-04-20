@@ -41,8 +41,8 @@
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"8"}
-    h3,h4,h5,h6{--heading-prefix:"8"}</style>
+    <style type="text/css">h2{--heading-prefix:"7"}
+    h3,h4,h5,h6{--heading-prefix:"7"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- at-fhir-ig-template begin -->
@@ -120,9 +120,6 @@
         <a href="actors.html">Akteure</a>
       </li>
       <li>
-        <a href="dosaging.html">Dosierschemata</a>
-      </li>
-      <li>
         <a href="workflowmanagement.html">Workflowmanagement</a>
       </li>
       <li>
@@ -198,90 +195,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div>
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
-<style>
-.notification-table {
-  width: 100%;
-  overflow-x: auto;
-  max-height: 600px;
-  overflow-y: auto;
-}
-
-.notification-table th,
-.notification-table td {
-  padding: 10px;
-  background: #f5f5f5; /* Cell color */
-  box-shadow: 0 0 0 3px #fff;
-  text-align: left;
-}
-.notification-table th {
-  background: #e4e4e4;
-}
-
-.table-responsive {
-display: block;
-width: 100%;
-overflow-x: auto;
-max-height: 600px;
-overflow-y: auto;
-}
-.table-responsive > table {
-width: 100%;}
-.table-responsive th,
-.table-responsive td {
-  padding: 15px;
-  background: #f5f5f5;
-}
-.table-responsive table {
-  border-collapse: separate;
-  border-spacing: 3px;
-}
-/* Kopfzeile sticky */
-.table-responsive th {
-  position: sticky;
-  top: 0;
-  background: rgb(228, 228, 228);
-  z-index: 2;
-}
-/* Erste Spalte sticky */
-.table-responsive th:first-child,
-.table-responsive td:first-child {
-  position: sticky;
-  left: 0;
-  background: rgb(228, 228, 228);
-  z-index: 3;
-}
-
-.table-responsive th:first-child {
-  position: sticky;
-  top: 0;
-  left: 0;
-  background: rgb(228, 228, 228);
-  z-index: 4;
-}
-
-.hinweisbox {
-  border: 1px solid #156082;
-  background: #dae8f8;
-  padding: 8px 12px;
-  border-radius: 4px;
-  margin: 8px 0;
-}
-
-.codebox {
-  border: 1px solid #ccc;
-  background: #f5f5f5;
-  padding: 8px 12px;
-  border-radius: 4px;
-  margin: 8px 0;
-  font-family: "Courier New", Courier, monospace;
-  color: #2d2d2d;
-}
-
-
-</style>
-
-<script type="module"> import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';</script>
-
 <h3 id="überblick-der-statusänderungen-der-e-medikation-ressourcen">Überblick der Statusänderungen der e-Medikation Ressourcen</h3>
 
 <h4 id="status-des-listentryflags-medikationsplan">Status des List.entry.flags (Medikationsplan)</h4>
@@ -412,78 +325,78 @@ width: 100%;}
 <br /></p>
 
 <table>
+  <colgroup>
+    <col style="width: 30%" />
+    <col style="width: 20%" /> 
+    <col style="width: 20%" />
+    <col style="width: 30%" />
+  </colgroup>
   <thead>
     <tr>
       <th>Use Case</th>
       <th>List.entry.flags</th>
-      <th>MedicationRequest-Status      (Planeintrag)</th>
+      <th>MedicationRequest-Status<br />(Planeintrag)</th>
       <th>Beschreibung</th>
-      <th> </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Neuen Planeintrag zum Medikationsplan hinzufügen</td>
-      <td><strong>new</strong></td>
-      <td><strong>active</strong></td>
-      <td>Neuer Planeintrag wird erstellt und ist aktiv<br /> - der Behandlungszeitraum kann in der Zukunft liegen<br /> - Bereits bestehender Planeintrag kann wieder reaktiviert werden (Client-SW)</td>
-      <td> </td>
+      <td rowspan="2"><span style="font-weight:normal">Neuen Planeintrag zum Medikationsplan hinzufügen</span></td>
+      <td><span style="font-weight:bold">new</span></td>
+      <td><span style="font-weight:bold">active</span></td>
+      <td>
+        <span style="font-weight:normal">Neuer Planeintrag wird erstellt und ist aktiv</span><br />
+        <span style="font-weight:normal">- der Behandlungszeitraum kann in der Zukunft liegen</span>
+      </td>
     </tr>
     <tr>
-      <td> </td>
-      <td><strong>new</strong></td>
-      <td><strong>on-hold</strong></td>
-      <td>Neuer Planeintrag wird erstellt, wird aber pausiert</td>
-      <td> </td>
+      <td><span style="font-weight:bold">new</span></td>
+      <td><span style="font-weight:bold">on-hold</span></td>
+      <td><span style="font-weight:normal">Neuer Planeintrag wird erstellt, wird aber pausiert</span></td>
     </tr>
     <tr>
-      <td>Bestehenden Planeintrag im Medikationsplan beibehalten/zur Kenntnis nehmen</td>
-      <td><strong>unchanged</strong></td>
-      <td><strong>active</strong></td>
-      <td>Bestehender Planeintrag bleibt unverändert<br /> - der Behandlungszeitraum darf noch nicht abgelaufen sein</td>
-      <td> </td>
+      <td rowspan="2"><span style="font-weight:normal">Bestehenden Planeintrag im Medikationsplan beibehalten/zur Kenntnis nehmen</span></td>
+      <td><span style="font-weight:bold">unchanged</span></td>
+      <td><span style="font-weight:bold">active</span></td>
+      <td>
+        <span style="font-weight:normal">Bestehender Planeintrag bleibt unverändert</span><br />
+        <span style="font-weight:normal">- der Behandlungszeitraum darf noch nicht abgelaufen sein</span>
+      </td>
     </tr>
     <tr>
-      <td> </td>
-      <td><strong>unchanged</strong></td>
-      <td><strong>on-hold</strong></td>
-      <td>Bestehender Planeintrag bleibt unverändert pausiert<br /> - der Behandlungszeitraum darf noch nicht abgelaufen sein</td>
-      <td> </td>
+      <td><span style="font-weight:bold">unchanged</span></td>
+      <td><span style="font-weight:bold">on-hold</span></td>
+      <td>
+        <span style="font-weight:normal">Bestehender Planeintrag bleibt unverändert pausiert</span><br />
+        <span style="font-weight:normal">- der Behandlungszeitraum darf noch nicht abgelaufen sein</span>
+      </td>
     </tr>
     <tr>
-      <td>Bestehenden Planeintrag im Medikationsplan ändern</td>
-      <td><strong>changed</strong></td>
-      <td><strong>active</strong></td>
-      <td>Bestehender Planeintrag wird geändert</td>
-      <td> </td>
+      <td rowspan="2"><span style="font-weight:normal">Bestehenden Planeintrag im Medikationsplan ändern</span></td>
+      <td><span style="font-weight:bold">changed</span></td>
+      <td><span style="font-weight:bold">active</span></td>
+      <td><span style="font-weight:normal">Bestehender Planeintrag wird geändert</span></td>
     </tr>
     <tr>
-      <td> </td>
-      <td><strong>changed</strong></td>
-      <td><strong>on-hold</strong></td>
-      <td>Bestehender Planeintrag wird geändert und pausiert</td>
-      <td> </td>
+      <td><span style="font-weight:bold">changed</span></td>
+      <td><span style="font-weight:bold">on-hold</span></td>
+      <td><span style="font-weight:normal">Bestehender Planeintrag wird geändert und pausiert</span></td>
     </tr>
     <tr>
-      <td>Bestehenden Planeintrag aus Medikationsplan entfernen</td>
-      <td><strong>removed</strong></td>
-      <td><strong>completed</strong></td>
-      <td>Bestehender Planeintrag wird beendet (durch Ablauf des Behandlungszeitraums, wenn keine erneute Verordnung)</td>
-      <td> </td>
+      <td rowspan="3"><span style="font-weight:normal">Bestehenden Planeintrag aus Medikationsplan entfernen</span></td>
+      <td><span style="font-weight:bold">removed</span></td>
+      <td><span style="font-weight:bold">completed</span></td>
+      <td><span style="font-weight:normal">Bestehender Planeintrag wird beendet. Die Therapie wurde wie geplant durchgeführt und ist abgeschlossen.</span></td>
     </tr>
     <tr>
-      <td> </td>
-      <td><strong>removed</strong></td>
-      <td><strong>stopped</strong></td>
-      <td>Bestehender Planeintrag wird vor Ablauf des Behandlungszeitraums abgesetzt</td>
-      <td> </td>
+      <td><span style="font-weight:bold">removed</span></td>
+      <td><span style="font-weight:bold">stopped</span></td>
+      <td><span style="font-weight:normal">Bestehender Planeintrag wird vor Ablauf des Behandlungszeitraums dauerhaft gestoppt. Die Medikation wurde, bevor alle geplanten Einnahmen oder Verabreichungen durchgeführt wurden, abgesetzt.</span></td>
     </tr>
     <tr>
-      <td> </td>
-      <td><strong>removed</strong></td>
-      <td><strong>entered-in-error</strong></td>
-      <td>Bestehender Planeintrag wird storniert, aufgrund falscher Eingabe</td>
-      <td> </td>
+      <td><span style="font-weight:bold">removed</span></td>
+      <td><span style="font-weight:bold">entered-in-error</span></td>
+      <td><span style="font-weight:normal">Bestehender Planeintrag wird storniert, aufgrund falscher Eingabe</span></td>
     </tr>
   </tbody>
 </table>
@@ -514,7 +427,7 @@ width: 100%;}
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Fri, Apr 17, 2026 19:15+0000">2026-04-17</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Apr 20, 2026 08:20+0000">2026-04-20</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

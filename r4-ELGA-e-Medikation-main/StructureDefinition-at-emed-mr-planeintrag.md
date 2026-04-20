@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag | *Version*:0.1.1 | |
-| Draft as of 2026-04-17 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMRPlaneintrag |
+| Draft as of 2026-04-20 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMRPlaneintrag |
 
  
 Ein Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine "MedicationRequest"-Ressource abgebildet. Die Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained Medication-Ressource (inline, d.h. innerhalb der Ressource), dokumentiert wird. Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstellung einer geplanten Abgabe dienen. Es werden R5-Backport-Extensions verwendet. 
@@ -18,7 +18,7 @@ Ein Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers bzw. einer 
 
 * Use this Profile: [ELGA e-Med Medikationsplan Collection Bundle](StructureDefinition-at-emed-bundle-medikationsplan.md) and [ELGA e-Med Medikationsplan Transaction Bundle](StructureDefinition-at-emed-bundle-tx-medikationsplan.md)
 * Refer to this Profile: [ELGA e-Med Medikationsplan](StructureDefinition-at-emed-list-medikationsplan.md) and [ELGA e-Med Geplante Abgabe](StructureDefinition-at-emed-mr-geplante-abgabe.md)
-* Examples for this Profile: [MedicationRequest/At-Emed-Example-Mr-Dosierung-1010](MedicationRequest-At-Emed-Example-Mr-Dosierung-1010.md), [MedicationRequest/At-Emed-Example-Mr-Dosierung-Freitext](MedicationRequest-At-Emed-Example-Mr-Dosierung-Freitext.md), [MedicationRequest/At-Emed-Example-Mr-Dosierung-Intervalle-Wh](MedicationRequest-At-Emed-Example-Mr-Dosierung-Intervalle-Wh.md), [MedicationRequest/At-Emed-Example-Mr-Dosierung-Wochentag-Kombi](MedicationRequest-At-Emed-Example-Mr-Dosierung-Wochentag-Kombi.md)... Show 7 more, [MedicationRequest/At-Emed-Example-Mr-Dosierung-Wochentag](MedicationRequest-At-Emed-Example-Mr-Dosierung-Wochentag.md), [MedicationRequest/At-Emed-Example-Mr-Dosierung-Zeit-1tg](MedicationRequest-At-Emed-Example-Mr-Dosierung-Zeit-1tg.md), [MedicationRequest/At-Emed-Example-Mr-Dosierung-Zeitintervalle-Kombi](MedicationRequest-At-Emed-Example-Mr-Dosierung-Zeitintervalle-Kombi.md), [MedicationRequest/At-Emed-Example-Mr-Planeintrag](MedicationRequest-At-Emed-Example-Mr-Planeintrag.md), [MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-01](MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-01.md), [MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-02](MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-02.md) and [MedicationRequest/At-Emed-Journey-05-b-Mr-Planeintrag-01](MedicationRequest-At-Emed-Journey-05-b-Mr-Planeintrag-01.md)
+* Examples for this Profile: [MedicationRequest/At-Emed-Example-Mr-Planeintrag](MedicationRequest-At-Emed-Example-Mr-Planeintrag.md), [MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-01](MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-01.md), [MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-02](MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-02.md) and [MedicationRequest/At-Emed-Journey-05-b-Mr-Planeintrag-01](MedicationRequest-At-Emed-Journey-05-b-Mr-Planeintrag-01.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/at-emed-mr-planeintrag)
 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
   "name" : "AtEmedMRPlaneintrag",
   "title" : "ELGA e-Med Planeintrag",
   "status" : "draft",
-  "date" : "2026-04-17T19:15:07+00:00",
+  "date" : "2026-04-20T08:20:06+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
