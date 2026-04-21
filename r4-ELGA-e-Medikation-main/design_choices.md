@@ -21,3 +21,7 @@ Der aktuelle Status eines Medikationsplaneintrags wird im **status**-Element dok
 
 Abhängig vom List.entry.flag kann der Medikationsplaneintrag nur eingeschränkte Status einnehmen (siehe [Konsistenzregeln zwischen List.entry.flag und MedicationRequest-Status](workflowmanagement.md#konsistenzregeln-zwischen-list-entry-flag-und-medicationrequest-status)).
 
+#### AtEmedBundleMedikationsplan (Collection Bundle)
+
+Eine persistierte Version des Medikationsplans eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin inklusive aller dafür relevanten Ressourcen (List, MedicationRequests, Patient, Practitioners) wird durch eine **Bundle**-Ressource vom Typ Collection abgebildet. Diese enthält 1..* Einträge (**Bundle.entry**), wobei jeder Entry genau eine Ressource (**Bundle.entry.resource**) beinhaltet. Die **List**-Ressource, also der Medikationsplan selbst, ist dabei immer der erste Entry. Die **List**-Ressource dient für das Bundle als zentrale Informationsquelle die angibt, wie die restlichen Ressourcen im Bundle zusammenhängen.
+
