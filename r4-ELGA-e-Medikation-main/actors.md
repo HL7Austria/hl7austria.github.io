@@ -11,7 +11,7 @@ Weiters werden in einer Tabelle alle ELGA Rollen angeführt, die Zugriff auf den
 
 ### Use Case Diagramm
 
- ![](usecases_e_med4.drawio.png) 
+![](usecases_e_med4.drawio.png)
 
 ### Rollen und Berechtigungen
 

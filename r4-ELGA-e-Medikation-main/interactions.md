@@ -44,7 +44,7 @@ Der Read-to-Write-Zugriff dient dem **Abruf des Medikationsplans und der Vorbere
 1. Die Fachanwendung prüft, ob ein Medikationsplan für den/die Patient:in existiert.
 1. Ist**kein Medikationsplan vorhanden**, wird dieser erstellt (siehe[Sub_UC_06_01 - Initial erstellter Medikationsplan](Sub_UC_eMed_06.md#sub_uc_06_01---initial-erstellter-medikationsplan)) und
 1. ein leerer Medikationsplan mit dem emptyReason**notstarted**wird zurückgeliefert.
-1. Existiert bereits ein Medikationsplan (d.h. es wurde bereits ein Collection Bundle persistiert), wird von der Fachanwendung aus diesem ein**Collection Bundle zur Auslieferung**erstellt:
+1. Existiert bereits ein Medikationsplan (d.h. es wurde bereits ein Collection Bundle persistiert), wird von der Fachanwendung aus diesem ein**Collection Bundle zur Auslieferung**bereitgestellt:
 
 * mit einem neuen oder bereits temporär gespeicherten **List.identifier** (wird von der Fachanwendung zur späteren Integritätsprüfung beim Schreibvorgang verwaltet)
 

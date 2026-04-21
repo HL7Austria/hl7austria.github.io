@@ -14,7 +14,7 @@ Für jeden Use Case werden in den Kapiteln **Relevante Elemente** die wichtigste
 
 Die initiale Erstellung des Medikationsplans erfolgt durch die e-Medikation Fachanwendung.
 
-Ein GDA möchte den Medikationsplan eines Patienten abrufen, mit der Intention diesen zu bearbeiten, aber ohne zu wissen, ob dieser bereits existiert (siehe auch [Read-to-Write-Zugriff](interactions.md#read-to-write-zugriff)). Die Fachanwendung stellt sicher, dass pro Patient genau ein Medikationsplan vorhanden ist: Existiert noch keiner, wird dieser im Hintergrund initial angelegt und mit dem emptyReason **notstarted** zurückgeliefert.
+Ein GDA möchte den Medikationsplan eines Patienten zum Zweck der Bearbeitung abrufen, ohne vorher zu wissen, ob bereits ein Plan vorhanden ist (siehe auch [Read-to-Write-Zugriff](interactions.md#read-to-write-zugriff)). Die Fachanwendung stellt sicher, dass pro Patient genau ein Medikationsplan vorhanden ist: Existiert noch keiner, wird dieser im Hintergrund initial angelegt. Der GDA erhält ein Collection Bundle mit einer Liste vom Typ dem **emptyReason** ****notstarted**** zurückgeliefert.
 
 Dieser Status **kennzeichnet ausschließlich den Initialzustand** (keine Einträge im Medikationsplan) und trifft keine Aussage darüber, ob der Patient keine Medikamente einnimmt.
 
@@ -36,12 +36,12 @@ AtEmedListMedikationsplan
 
 #### Sub_UC_06_02 - Leerer Medikationsplan (keine Medikation eingenommen)
 
-Ein leerer Medikationsplan mit dem Wert emptyReason **nilknown** bedeutet, dass der Patient derzeit keine Medikamente einnimmt. Der Medikatonsplan erhält diesen Status, wenn:
+Ein leerer Medikationsplan mit dem Wert **emptyReason** ****nilknown**** bedeutet, dass der Patient derzeit keine Medikamente einnehmen soll. Der Medikatonsplan erhält diesen Status, wenn:
 
 * ein GDA zuvor die **gesamte Medikation abgesetzt, storniert oder gelöscht** hat, dh. alle Medikationsplaneinträge auf Listenebene das flag **removed** erhalten haben. Beim nächsten Read-to-Write-Zugriff erkennt dies die Fachanwendung und versieht das zur Auslieferung vorbereitete Collection Bundle mit den emptyReason **nilknown**. 
 * ein GDA dokumentieren möchte, dass der Patient keine Medikamente einnehmen soll. Wenn die Liste zuvor das emptyReason **notstarted** hatte, kann der GDA den Status **nilknown** setzen.
 
-Zur Unterscheidung zwischen Medikationsplänen, die noch nie befüllt wurden, und solchen, die explizit dokumentieren, dass der Patient keine Medikamente einnimmt. 
+Dient der Unterscheidung von Medikationsplänen, die noch nie befüllt wurden, und solchen, die explizit dokumentieren, dass der Patient keine Medikamente einnimmt. 
 
 ##### Ablauf
 
@@ -57,25 +57,22 @@ AtEmedListMedikationsplan
 
 ```
 
-#### Standardablauf Medikationsplan bearbeiten
-
-Der folgende Ablauf gilt für alle weiteren technischen Use Cases (Sub_UC_06_03 bis Sub_UC_06_0X). Für jeden Use Case werden in den Kapiteln **Relevante Elemente** die wichtigsten Elemente der verwendeten Profile beschrieben.
-
 #### Sub_UC_06_03 - Medikationsplaneintrag in Medikationsplan hinzufügen
 
 Der GDA kann dem Medikationsplan ein oder mehrere Medikationsplaneinträge hinzufügen.
 
-Hierfür werden entsprechende Medikationsplaneinträge **MedicationRequests** erstellt und in der **List**-Ressouce referenziert:
-
+* Hierfür werden entsprechende Medikationsplaneinträge **MedicationRequests** erstellt und in der **List**-Ressouce referenziert: 
 * Das List.entry.flag des referenzierten MedicationRequests erhält den Wert **new**,
-* die MedicationRequests selbst können den Status **active** oder **on-hold** erhalten (siehe [Konsistenzregeln zwischen List.entry.flag und MedicationRequest-Status](workflowmanagement.md#konsistenzregeln-zwischen-list-entry-flag-und-medicationrequest-status))
+* der MedicationRequest selbst kann den Status **active** oder **on-hold** erhalten (siehe [Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status](workflowmanagement.md#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status))
 * der Behandlungszeitraum im MedicationRequest kann sich auf das aktuelle Datum beziehen oder in der Zukunft liegen
-* ein bereits bestehender MedicationRequest kann wieder (re)aktiviert werden: 
-* MedicationRequest mit Status **on-hold** wird beim Read-to-Write-Zugriff im Collection Bundle mitgeliefert und kann wieder auf **active** gesetzt werden (TODO: siehe Sub_UC_06_0x - Medikationsplaneintrag in Medikationsplan reaktivieren)
-* MedicationRequest mit einem Endzustand (**stopped, entered-in-error** oder **completed**), wird beim Read-to-Write-Zugriff im Collection Bundle **nicht** mitgeliefert und kann nur über die Historie abgerufen und durch Erzeugung eines neuen Planeintrags in den Medikationsplan aufgenommen werden (via Client-SW) (TODO: prüfen)
+ 
+* Der GDA übermittelt (via POST $write) den aktualisierten Medikationsplan als Transaction Bundle: 
+* alle neuen Ressourcen sind inline im Bundle enthalten
  
 
 ##### Ablauf
+
+Siehe [Ablauf Read-to-Write-Zugriff](interactions.md#ablauf-read-to-write-zugriff)
 
 ##### Relevante Elemente (List):
 
@@ -110,20 +107,9 @@ AtEmedMRPlaneintrag
 
 ```
 
-TODO: noch offen für AtEmedMRPlaneintrag:
-
-*  
-
-| | | |
-| :--- | :--- | :--- |
-| courseOfTherapyType: Gesamtmuster der Medikamentengabe continuous | acute | seasonal. |
-
- 
-* doNotPerform: Gibt an, ob die Verordnung der Medikation untersagt ist (z.B. bei Allergie).
-
 ##### Auswirkung der Zugriffsart auf List-Status und Bundles: neuer Medikationsplaneintrag
 
-Siehe [Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte](workflowmanagement.md#auswirkung-der-zugriffsart-auf-list-status-und-bundle-inhalte): Status **new**.
+Siehe [Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte](workflowmanagement.md#auswirkung-der-zugriffsart-auf-listentryflags-und-bundle-inhalte): Status **new**.
 
 #### Sub_UC_06_04 - Medikationsplaneintrag im Medikationsplan beibehalten
 
@@ -160,7 +146,7 @@ AtEmedMRPlaneintrag
 
 ##### Auswirkung der Zugriffsart auf List-Status und Bundles: Medikationsplaneintrag beibehalten
 
-Siehe [Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte](workflowmanagement.md#auswirkung-der-zugriffsart-auf-list-status-und-bundle-inhalte): Status **unchanged**.
+Siehe [Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte](workflowmanagement.md#auswirkung-der-zugriffsart-auf-listentryflags-und-bundle-inhalte): Status **unchanged**.
 
 #### Sub_UC_06_05 - Medikationsplaneintrag im Medikationsplan ändern
 
@@ -213,7 +199,7 @@ AtEmedMRPlaneintrag
 
 ##### Auswirkung der Zugriffsart auf List-Status und Bundles: Medikationsplaneintrag ändern
 
-Siehe [Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte](workflowmanagement.md#auswirkung-der-zugriffsart-auf-list-status-und-bundle-inhalte): Status **changed**.
+Siehe [Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte](workflowmanagement.md#auswirkung-der-zugriffsart-auf-listentryflags-und-bundle-inhalte): Status **changed**.
 
 #### Sub_UC_06_06 - Medikationsplaneintrag im Medikationsplan stornieren
 
@@ -332,6 +318,11 @@ AtEmedListMedikationsplan
         item: Referenz auf den Planeintrag 1 
 
 ```
+
+* ein bereits bestehender MedicationRequest kann wieder (re)aktiviert werden: -> das ist UC bearbeiten! 
+* MedicationRequest mit Status **on-hold** wird beim Read-to-Write-Zugriff im Collection Bundle mitgeliefert und kann wieder auf **active** gesetzt werden (TODO: siehe Sub_UC_06_0x - Medikationsplaneintrag in Medikationsplan reaktivieren)
+* MedicationRequest mit einem Endzustand (**stopped, entered-in-error** oder **completed**), wird beim Read-to-Write-Zugriff im Collection Bundle **nicht** mitgeliefert und kann nur über die Historie abgerufen und durch Erzeugung eines neuen Planeintrags in den Medikationsplan aufgenommen werden (via Client-SW) (TODO: prüfen)
+ 
 
 -------
 

@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-timing.csv),
   "name" : "AtEmedTiming",
   "title" : "ELGA e-Med Timing",
   "status" : "draft",
-  "date" : "2026-04-21T11:54:48+00:00",
+  "date" : "2026-04-21T14:09:10+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
