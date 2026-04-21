@@ -5,38 +5,17 @@
 
 ## Akteure
 
-### Akteure im niedergelassenen Bereich
+Das Kapitel gibt einen Überblick über die zentralen Anwendungsfälle der e-Medikation und zeigt, wie die verschiedenen Akteure mit den Funktionen interagieren.
 
-* Ärzte
-* Allgemeinmediziner mit und ohne Kassenvertrag
-* Fachärzte mit und ohne Kassenvertrag
-* Hausapotheker (Da im GDA-Index jeder GDA nur eine Rolle besitzt und es die Rolle „Hausapotheker“ nicht gibt, haben Hausapotheker dieselbe Rolle wie niedergelassene Ärzte ohne Hausapotheke. Somit hat jeder Arzt auch die Funktionalitäten zur Abgabe zur Verfügung.)
-* Arztpraxisassistenz
+Weiters werden in einer Tabelle alle ELGA Rollen angeführt, die Zugriff auf den Medikationsplan und geplante und durchgeführte Abgaben erhalten sollen.
 
-### Akteure der Krankenanstalt
+### Use Case Diagramm
 
-In der e-Medikation erfolgt keine Unterscheidung zwischen stationärem und ambulantem Bereich.
+ ![](usecases_e_med4.drawio.png) 
 
-### Akteure in der Apotheke
+### Rollen und Berechtigungen
 
-* Pharmazeuten
-* Pharmazeutisch-kaufmännische Assistenz
-* Pharmazeutisch-technische Assistenz
+![](e_med_berechtigungen.png)
 
-### Einrichtung der Pflege
-
-Die GDA-Software muss sicherstellen, dass eine eindeutige Identifizierung des ärztlichen Personals möglich ist. Nur dieses darf Medikationsplanänderungen und geplante Abgaben dokumentieren.
-
-### ELGA-Teilnehmer
-
-* Bürger
-* Vertreter 
-* ELGA-Ombudsstelle
-* Vollmachtnehmer
-* Gesetzlicher Vertreter
-* etc.
- 
-
- 
- ![](usecases_e_med4.drawio.png)
+**Hinweis**: Schreiben impliziert lesenden Zugriff
 
