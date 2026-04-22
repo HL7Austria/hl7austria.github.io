@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
   "name" : "AtEmedMedication",
   "title" : "ELGA e-Med Medikation",
   "status" : "draft",
-  "date" : "2026-04-22T10:01:54+00:00",
+  "date" : "2026-04-22T10:11:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -92,12 +92,6 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
       "path" : "Medication"
     },
     {
-      "id" : "Medication.text",
-      "path" : "Medication.text",
-      "short" : "TODO: Freitext für magistrale Anwendungen oder Abbildung in Substance.description?",
-      "mustSupport" : true
-    },
-    {
       "id" : "Medication.identifier",
       "path" : "Medication.identifier",
       "short" : "Eindeutiger Identifikator für das Arzneimittel. Wird nicht benötigt, da PZN, sofern vorhanden, im Code angegeben wird.",
@@ -106,17 +100,12 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
     {
       "id" : "Medication.code",
       "path" : "Medication.code",
-      "short" : "Code des Arzneimittels. Hier muss die Pharmazentralnummer (PZN) aus der ASP-Liste angegeben werden, sofern vorhanden.\nTODO: Slicing für meherere Codings\nGem. CDA V3: \nDas Codesystem Pharmazentralnummer {1.2.40.0.34.4.16} wird am Terminologieserver in der ASP-Liste (Liste der humanen Arzneispezialitäten gelistet nach PZN) publiziert, \ndie ASP-Liste enthält neben der Pharmazentralnummer {1.2.40.0.34.4.17} auch die korrespondierende Zulassungsnummer und Package Reference Number der AGES {1.2.40.0.34.4.26}. \nFür die Kompatibilität zum EU Kontext wird zukünftig auch die PCID der EMA {1.2.40.0.34.4.27} ermöglicht.",
+      "short" : "Code des Arzneimittels. Hier muss die Pharmazentralnummer (PZN) aus der ASP-Liste angegeben werden, sofern vorhanden.",
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
         "valueSet" : "https://termgit.elga.gv.at/CodeSystem/asp-liste"
       }
-    },
-    {
-      "id" : "Medication.code.coding.display",
-      "path" : "Medication.code.coding.display",
-      "short" : "Juristisch zu prüfen, ob mindestens ein Displayname (Handelsname) zur PZN angegeben werden muss (Zwecks Prüfung auf Übereinstimmung und \nhistorischer Verfügbarkeit, im Falle von sich ändernden PZNs; evtl. könnte die Fachanwendung."
     },
     {
       "id" : "Medication.status",
@@ -127,13 +116,13 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
     {
       "id" : "Medication.manufacturer",
       "path" : "Medication.manufacturer",
-      "short" : "Der Hersteller des Arzneimittels. Keine Verwendung im Kontext Planeintrag. \nTODO: Prüfen, ob im Kontext durchgeführte Abgabe und magistraler Zubereitung erforderlich; HL7ATCoreOrganization schränkt auf Organisationen gemäß GDA-Index ein.",
+      "short" : "Der Hersteller des Arzneimittels. Keine Verwendung im Kontext Planeintrag.",
       "max" : "0"
     },
     {
       "id" : "Medication.form",
       "path" : "Medication.form",
-      "short" : "Die Darreichungsform des Arzneimittels. Wenn PZN vorhanden 0..0, da Anreicherung aus ASP-Liste durch Fachanwendung.\nGem. CDA V3: \nFür die e-Medikation ist das CodeSystem ​Medikation_Darreichungsform 1.2.40.0.10.1.4.3.4.3.5 zu verwenden.\nFür den eHDSI Kontext ist das CodeSystem 0.4.0.127.0.16.1.1.2.1 zu verwenden.",
+      "short" : "Die Darreichungsform des Arzneimittels. Wenn PZN vorhanden 0..0, da Anreicherung aus ASP-Liste durch Fachanwendung.",
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
@@ -187,7 +176,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-medication.c
       "id" : "Medication.ingredient.item[x]:itemReference",
       "path" : "Medication.ingredient.item[x]",
       "sliceName" : "itemReference",
-      "short" : "Referenz auf Ressourcen Substance im Fall von magistraler Anwendung",
+      "short" : "Referenz auf Ressourcen Substance im Fall von magistraler Anwendung.",
       "min" : 0,
       "max" : "1",
       "type" : [{
