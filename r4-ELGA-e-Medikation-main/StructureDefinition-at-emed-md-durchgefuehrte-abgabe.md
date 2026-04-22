@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
   "name" : "AtEmedMDDurchgefuehrteAbgabe",
   "title" : "ELGA e-Med Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-04-22T08:49:17+00:00",
+  "date" : "2026-04-22T10:01:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -94,7 +94,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-md-durchgefu
     "element" : [{
       "id" : "MedicationDispense",
       "path" : "MedicationDispense",
-      "short" : "Durchgeführte Abgabe eines Arzneimittels mit oder ohne Bezug zum Medikationsplan. Verwendet R5 Backport Extensions."
+      "short" : "Durchgeführte Abgabe eines Arzneimittels mit oder ohne Bezug zur geplanten Abgabe. Verwendet R5 Backport Extensions."
     },
     {
       "id" : "MedicationDispense.extension",

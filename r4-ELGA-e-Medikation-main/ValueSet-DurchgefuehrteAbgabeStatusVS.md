@@ -53,7 +53,7 @@ No Expansion for this valueset (Unknown Code System)
   "title" : "ELGA e-Med Durchgeführte Abgabe Status Value Set",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-04-22T08:49:17+00:00",
+  "date" : "2026-04-22T10:01:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
