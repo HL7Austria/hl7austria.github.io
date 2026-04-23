@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/Questionnaire/LKFK05Questionnaire | *Version*:0.1.0 | |
-| Active as of 2026-04-17 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
+| Active as of 2026-04-23 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
 
  
 K05 Questionnaire - KA-Statistik (Personal des ärztlichen Dienstes) 
@@ -26,7 +26,7 @@ K05 Questionnaire - KA-Statistik (Personal des ärztlichen Dienstes)
   "version" : "0.1.0",
   "title" : "LKF K05 Questionnaire",
   "status" : "active",
-  "date" : "2026-04-17T10:34:11+00:00",
+  "date" : "2026-04-23T07:59:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

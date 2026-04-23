@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS | *Version*:0.1.0 | |
-| Active as of 2026-04-17 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedClaimItemCategoryCS |
+| Active as of 2026-04-23 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedClaimItemCategoryCS |
 
  
 CodeSystem für die Arten von Claim Item Kategorien 
@@ -32,7 +32,7 @@ CodeSystem für die Arten von Claim Item Kategorien
   "title" : "Moped Claim Item Category CodeSystem",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-04-17T10:34:11+00:00",
+  "date" : "2026-04-23T07:59:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

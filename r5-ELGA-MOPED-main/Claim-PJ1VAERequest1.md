@@ -33,7 +33,7 @@ Profile: [MOPED VAERequest](StructureDefinition-MopedVAERequest.md)
 
 > **supportingInfo****sequence**: 2**category**: Allgemeine Gebührenklasse/Sonderklasse**code**: Allgemeine Gebührenklasse**timing**: 2024-02-22 19:33:00+0200 --> (ongoing)
 
-> **supportingInfo****sequence**: 3**category**: Verlängerungstage**value**: 0 day (Details: UCUM codeday = 'day')
+> **supportingInfo****sequence**: 3**category**: Verlängerungstage**value**: 0 day (Details: UCUM coded = 'd')
 
 ### Insurances
 
@@ -130,7 +130,7 @@ Profile: [MOPED VAERequest](StructureDefinition-MopedVAERequest.md)
       "value" : 0,
       "unit" : "day",
       "system" : "http://unitsofmeasure.org",
-      "code" : "day"
+      "code" : "d"
     }
   }],
   "insurance" : [{

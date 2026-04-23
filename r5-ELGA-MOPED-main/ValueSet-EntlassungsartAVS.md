@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/EntlassungsartAVS | *Version*:0.1.0 | |
-| Draft as of 2026-04-17 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:EntlassungsartAVS |
+| Draft as of 2026-04-23 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:EntlassungsartAVS |
 
  
 ValueSet für die ambulante Entlassungsart des Patienten 
@@ -52,7 +52,7 @@ ValueSet für die ambulante Entlassungsart des Patienten
   "title" : "Entlassungsart des Patienten ambulant",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-04-17T10:34:11+00:00",
+  "date" : "2026-04-23T07:59:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

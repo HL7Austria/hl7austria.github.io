@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedPatientBund | *Version*:0.1.0 | |
-| Draft as of 2026-04-17 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedPatientBund |
+| Draft as of 2026-04-23 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedPatientBund |
 
  
 MOPED Profil der Patient Ressource aus der Sicht der Rolle: Bund 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedPatientBund.csv
   "name" : "MopedPatientBund",
   "title" : "MOPED Patient Bund",
   "status" : "draft",
-  "date" : "2026-04-17T10:34:11+00:00",
+  "date" : "2026-04-23T07:59:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/FondsrelevanzCS | *Version*:0.1.0 | |
-| Active as of 2026-04-17 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:FondsrelevanzCS |
+| Active as of 2026-04-23 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:FondsrelevanzCS |
 
  
 CodeSystem für die Fondsrelevanz 
@@ -32,7 +32,7 @@ CodeSystem für die Fondsrelevanz
   "title" : "Fondsrelevanz",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-04-17T10:34:11+00:00",
+  "date" : "2026-04-23T07:59:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
