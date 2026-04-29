@@ -51,7 +51,7 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $aufnehmen Operat
   "title" : "MOPED Patient $aufnehmen",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-04-29T07:12:28+00:00",
+  "date" : "2026-04-29T07:28:34+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

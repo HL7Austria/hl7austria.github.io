@@ -26,7 +26,7 @@ K02 Questionnaire - KA-Stammdaten
   "version" : "0.1.0",
   "title" : "LKF K02 Questionnaire",
   "status" : "draft",
-  "date" : "2026-04-29T07:12:28+00:00",
+  "date" : "2026-04-29T07:28:34+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

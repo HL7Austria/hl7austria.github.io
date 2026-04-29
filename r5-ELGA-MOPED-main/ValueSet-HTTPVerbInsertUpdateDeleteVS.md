@@ -51,7 +51,7 @@ HTTP Verben für das Einmelden von Ressourcen, welche nur initial eingemeldet un
   "name" : "HTTPVerbInsertUpdateDeleteVS",
   "title" : "HTTP Verb Insert Update Delete",
   "status" : "draft",
-  "date" : "2026-04-29T07:12:28+00:00",
+  "date" : "2026-04-29T07:28:34+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
