@@ -29,7 +29,7 @@ Eine Übersicht aller Teilprozesse findet sich [hier](#liste-der-teilprozesse).
 
 | | |
 | :--- | :--- |
-| KH (Krankenhaus) | ✅ |
+| KA (Krankenhaus) | ✅ |
 | LGF (Landesgesundheitsfonds) | ✅ |
 | SV (Sozialversicherung) | ✅ |
 | Bund | ✅ |
@@ -312,8 +312,8 @@ TBD mit der tatsächlichen Beispielressource ersetzen
 
 #### Relevante Profile
 
-* [$aufnahme Bundle](StructureDefinition-MopedUpdateBundleKH.md)
-* [$update Bundle](StructureDefinition-MopedUpdateBundleKH.md)
+* [$aufnahme Bundle](StructureDefinition-MopedUpdateBundleKA.md)
+* [$update Bundle](StructureDefinition-MopedUpdateBundleKA.md)
 * TBD
 
 #### Relevante Invarianten
@@ -326,7 +326,7 @@ Die SV möchte benachrichtigt werden, wenn ein neuer VAERequest für sie bereitg
 
 ##### SubscriptionTopic: VAE wurde abgelehnt
 
-Das KH möchte benachrichtigt werden, wenn ein VAERequest abgelehnt wurde. Das zugehörige SubscriptionTopic wurde in [diesem Beispiel](SubscriptionTopic-VAEabgelehnt.json.md) definiert.
+Die KAmöchte benachrichtigt werden, wenn ein VAERequest abgelehnt wurde. Das zugehörige SubscriptionTopic wurde in [diesem Beispiel](SubscriptionTopic-VAEabgelehnt.json.md) definiert.
 
 ##### Tabellarische Übersicht
 
@@ -334,17 +334,17 @@ Das KH möchte benachrichtigt werden, wenn ein VAERequest abgelehnt wurde. Das z
   * Beschreibung: Die SV möchte benachrichtigt werden, wenn ein neuer VAERequest für sie bereitgestellt wurde.
   * Trigger Ressource: VAERequest
   * Interaktion: create
-  * Auslöser: KH
+  * Auslöser: KA
   * Empfänger: SV
   * Beschreibung zusätzlicher Bedingungen: /
   * Relevantes Feld: /
   * Bedingung: /
 * Titel: VAE wurde abgelehnt
-  * Beschreibung: Das KH möchte benachrichtigt werden, wenn ein VAERequest abgelehnt wurde.
+  * Beschreibung: Die KAmöchte benachrichtigt werden, wenn ein VAERequest abgelehnt wurde.
   * Trigger Ressource: VAEResponse
   * Interaktion: create
   * Auslöser: SV
-  * Empfänger: KH
+  * Empfänger: KA
   * Beschreibung zusätzlicher Bedingungen: Negative VAE
   * Relevantes Feld: VAEResponse.decision
   * Bedingung: != #00 AND != #19
@@ -355,7 +355,7 @@ Das KH möchte benachrichtigt werden, wenn ein VAERequest abgelehnt wurde. Das z
 
 | | |
 | :--- | :--- |
-| KH (Krankenhaus) | ✅ |
+| KA (Krankenhaus) | ✅ |
 | LGF (Landesgesundheitsfonds) | ✅ |
 | SV (Sozialversicherung) | ✅ |
 | Bund | ✅ |
@@ -369,11 +369,11 @@ Das KH möchte benachrichtigt werden, wenn ein VAERequest abgelehnt wurde. Das z
 
 #### Beschreibung
 
-Ein Patient kommt in die Ambulanz und wird behandelt. Ambulanter Besuch (LKF Behandlungsart Ambulant) wird analog der stationären Aufnahme administriert. Es wird aber keine Entlassung erstellt. Da es die Möglichkeit einer Mehrfachversicherung gibt, kann es im ambulanten Bereich zu einem Versicherungsträgerwechsel kommen. Die Vergabe der Aufnahmezahl im ambulanten Bereich dient der Administration im KH und beschreibt nicht zwingend einen medizinischen Fall. Ein medizinischer Fall kann daher mehrere Aufnahmezahlen beinhalten und umgekehrt.
+Ein Patient kommt in die Ambulanz und wird behandelt. Ambulanter Besuch (LKF Behandlungsart Ambulant) wird analog der stationären Aufnahme administriert. Es wird aber keine Entlassung erstellt. Da es die Möglichkeit einer Mehrfachversicherung gibt, kann es im ambulanten Bereich zu einem Versicherungsträgerwechsel kommen. Die Vergabe der Aufnahmezahl im ambulanten Bereich dient der Administration im KA und beschreibt nicht zwingend einen medizinischen Fall. Ein medizinischer Fall kann daher mehrere Aufnahmezahlen beinhalten und umgekehrt.
 
 #### Beispiel
 
-Ein Patient kommt mit einem gebrochenen Arm in das KH, wird dort behandelt (Röntgen, Gips, etc.) und kann nach ein paar Stunden wieder nach Hause gehen.
+Ein Patient kommt mit einem gebrochenen Arm in die KA, wird dort behandelt (Röntgen, Gips, etc.) und kann nach ein paar Stunden wieder nach Hause gehen.
 
 #### Vorbedingung
 
@@ -640,7 +640,7 @@ TBD mit der tatsächlichen Beispielressource ersetzen
 
 ##### Tagesklammer vs. Aufteilung:
 
-Ob die Tagesklammer verwendet wird oder nicht liegt im Ermessen des jeweiligen KH und muss auf Seite des KIS geregelt werden. In Moped werden dann entweder ein Datensatz mit allen Leistungen und Diagnosen des jeweiligen Tages oder mehrere Datensätze mit den aufgeteilten Leistungen und Diagnosen eingemeldet. Dabei ist zu beachten:
+Ob die Tagesklammer verwendet wird oder nicht liegt im Ermessen des jeweiligen KA und muss auf Seite des KIS geregelt werden. In Moped werden dann entweder ein Datensatz mit allen Leistungen und Diagnosen des jeweiligen Tages oder mehrere Datensätze mit den aufgeteilten Leistungen und Diagnosen eingemeldet. Dabei ist zu beachten:
 
 * Bei der Nutzung der Tagesklammer gibt es in den meisten Fällen in Moped pro Tag nur eine Composition und eine zugehörige VAE -> $aufnehmen wird nur ein mal ausgeführt.
 * Wird die Tagesklammer nicht genutzt so ist es möglich mehrere gültige Compositions für den gleichen Tag und Patienten in Moped zu haben. Hierbei wird $aufnehmen mehrmals ausgeführt (Für jede X01 ein mal). Pro Composition gibt es dann jeweils eine VAE.
@@ -658,11 +658,11 @@ Der Transferencounter entspricht nicht wie beim stationären Fall der Verlegung/
 
 #### Relevante Profile
 
-* [$aufnehmen Bundle](StructureDefinition-MopedAufnehmenBundleKH.md)
-* [$update Bundle](StructureDefinition-MopedUpdateBundleKH.md)
-* [$anfragen Bundle](StructureDefinition-MopedAnfragenBundleKH.md)
+* [$aufnehmen Bundle](StructureDefinition-MopedAufnehmenBundleKA.md)
+* [$update Bundle](StructureDefinition-MopedUpdateBundleKA.md)
+* [$anfragen Bundle](StructureDefinition-MopedAnfragenBundleKA.md)
 * [$antworten Bundle](StructureDefinition-MopedAntwortenBundleSV.md)
-* [$abrechnen Bundle](StructureDefinition-MopedAbrechnenBundleKH.md)
+* [$abrechnen Bundle](StructureDefinition-MopedAbrechnenBundleKA.md)
 * [$entscheiden Bundle](StructureDefinition-MopedEntscheidenLGFBundle.md)
 * [Ambulanter Encounter](StructureDefinition-MopedEncounterA.md)
 * [Ambulanter Transferencounter](StructureDefinition-MopedTransferEncounterA.md)
@@ -691,7 +691,7 @@ Der Transferencounter entspricht nicht wie beim stationären Fall der Verlegung/
 
 | | |
 | :--- | :--- |
-| KH (Krankenhaus) | ✅ |
+| KA (Krankenhaus) | ✅ |
 | LGF (Landesgesundheitsfonds) | ✅ |
 | SV (Sozialversicherung) | ❌ |
 | Bund | ✅ |

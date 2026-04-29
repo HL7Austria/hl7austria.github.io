@@ -6,7 +6,7 @@
 
 ## Example HealthcareService: AbteilungHerzJesu1
 
-Profile: [MOPED KH Organisationseinheiten](StructureDefinition-MopedKHOrganisationseinheit.md)
+Profile: [MOPED KA Organisationseinheiten](StructureDefinition-MopedKAOrganisationseinheit.md)
 
 > **Kostenstelle**
 * InterneKostenstellennummer: 11160
@@ -22,7 +22,7 @@ Profile: [MOPED KH Organisationseinheiten](StructureDefinition-MopedKHOrganisati
 
 **type**: Hospital Services
 
-**location**: [Location](Location-LocationKHHerzJesu.md)
+**location**: [Location](Location-LocationKAHerzJesu.md)
 
 
 
@@ -33,7 +33,7 @@ Profile: [MOPED KH Organisationseinheiten](StructureDefinition-MopedKHOrganisati
   "resourceType" : "HealthcareService",
   "id" : "AbteilungHerzJesu1",
   "meta" : {
-    "profile" : ["https://elga.moped.at/StructureDefinition/MopedKHOrganisationseinheit"]
+    "profile" : ["https://elga.moped.at/StructureDefinition/MopedKAOrganisationseinheit"]
   },
   "extension" : [{
     "extension" : [{
@@ -77,7 +77,7 @@ Profile: [MOPED KH Organisationseinheiten](StructureDefinition-MopedKHOrganisati
     }]
   }],
   "location" : [{
-    "reference" : "Location/LocationKHHerzJesu"
+    "reference" : "Location/LocationKAHerzJesu"
   }]
 }
 

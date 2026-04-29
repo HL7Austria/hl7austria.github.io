@@ -384,7 +384,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#actor-KH" id="markdown-toc-actor-KH">Krankenanstalt</a></li>
+  <li><a href="#actor-KA" id="markdown-toc-actor-KA">Krankenanstalt</a></li>
   <li><a href="#actor-SV" id="markdown-toc-actor-SV">Sozialversicherung</a></li>
   <li><a href="#actor-LGF" id="markdown-toc-actor-LGF">Landesgesundheitsfonds</a></li>
   <li><a href="#actor-BMSGPK" id="markdown-toc-actor-BMSGPK">Bundesministerium für Soziales, Gesundheit, Pflege und Konsumentenschutz</a></li>
@@ -392,23 +392,23 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ul>
 
 </div>
-<h3 id="actor-KH">Krankenanstalt</h3>
+<h3 id="actor-KA">Krankenanstalt</h3>
 <div xmlns="http://www.w3.org/1999/xhtml" class="container"> 
-    Im MOPED-Kontext spielt eine Krankenanstalt (KH) eine zentrale Rolle als Initiator zahlreicher Prozesse und als Meldestelle für vielfältige Daten. Diese umfassen unter anderem die Patientenaufnahme, die Abfrage des Versicherungsstatus und -anspruchs, die Erfassung von Versorgungsdaten während der Patientenbehandlung, die Entlassung sowie die Initiierung der Leistungsabrechnung.
+    Im MOPED-Kontext spielt eine Krankenanstalt (KA) eine zentrale Rolle als Initiator zahlreicher Prozesse und als Meldestelle für vielfältige Daten. Diese umfassen unter anderem die Patientenaufnahme, die Abfrage des Versicherungsstatus und -anspruchs, die Erfassung von Versorgungsdaten während der Patientenbehandlung, die Entlassung sowie die Initiierung der Leistungsabrechnung.
 </div>
 <pre class="mermaid">
     graph LR
-    KH[Krankenanstalt]
+    KA[Krankenanstalt]
     Moped[Moped] 
-    KH ---&gt;|POST $aufnehmen| Moped 
-    KH --&gt;|POST $update| Moped
-    KH --&gt;|POST $anfragen| Moped
-    KH --&gt;|POST $entlassen| Moped
-    KH --&gt;|POST $abrechnen| Moped
-    KH --&gt;|POST $stornieren| Moped
-    KH --&gt;|POST $einmelden| Moped
-    Moped --&gt;|GET VAEResponse| KH
-    Moped ---&gt;|GET ClaimResponse| KH
+    KA ---&gt;|POST $aufnehmen| Moped 
+    KA --&gt;|POST $update| Moped
+    KA --&gt;|POST $anfragen| Moped
+    KA --&gt;|POST $entlassen| Moped
+    KA --&gt;|POST $abrechnen| Moped
+    KA --&gt;|POST $stornieren| Moped
+    KA --&gt;|POST $einmelden| Moped
+    Moped --&gt;|GET VAEResponse| KA
+    Moped ---&gt;|GET ClaimResponse| KA
 </pre>
 
 <h3 id="actor-SV">Sozialversicherung</h3>
@@ -457,8 +457,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     graph LR
     Register[Register]
     Moped[Moped] 
-    KH[Krankenanstalt]
-    KH ---&gt;|POST $update<br />einer fallbezogenen QuestionnaireResponse| Moped 
+    KA[Krankenanstalt]
+    KA ---&gt;|POST $update<br />einer fallbezogenen QuestionnaireResponse| Moped 
     Moped ---&gt;|GET QuestionnaireResponse| Register
 </pre>
 
@@ -480,7 +480,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Wed, Apr 29, 2026 07:28+0000">2026-04-29</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Wed, Apr 29, 2026 09:14+0000">2026-04-29</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

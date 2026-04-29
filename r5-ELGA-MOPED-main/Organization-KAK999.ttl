@@ -1,0 +1,91 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://elga.moped.at/Organization/KAK999> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "KAK999"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://elga.moped.at/StructureDefinition/KAOrganization"^^xsd:anyURI ;
+       fhir:l <https://elga.moped.at/StructureDefinition/KAOrganization>
+     ] [
+       fhir:v "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-organization"^^xsd:anyURI ;
+       fhir:l <http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-organization>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Organization KAK999</b></p><a name=\"KAK999\"> </a><a name=\"hcKAK999\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profiles: <a href=\"StructureDefinition-KAOrganization.html\">KA Organization</a>, <a href=\"https://build.fhir.org/ig/HL7Austria/HL7-AT-FHIR-Core-R5/StructureDefinition-at-core-organization.html\">HL7® AT Core Organization Profile</a></p></div><p><b>identifier</b>: <a href=\"http://terminology.hl7.org/7.0.1/NamingSystem-uri.html\" title=\"As defined by RFC 3986 (http://www.ietf.org/rfc/rfc3986.txt)(with many schemes defined in many RFCs). For OIDs and UUIDs, use the URN form (urn:oid:(note: lowercase) and urn:uuid:). See http://www.ietf.org/rfc/rfc3001.txt and http://www.ietf.org/rfc/rfc4122.txt #xD;#xA;#xD;#xA;This oid is used as an identifier II.root to indicate the the extension is an absolute URI (technically, an IRI). Typically, this is used for OIDs and GUIDs. Note that when this OID is used with OIDs and GUIDs, the II.extension should start with urn:oid or urn:uuid: #xD;#xA;#xD;#xA;Note that this OID is created to aid with interconversion between CDA and FHIR - FHIR uses urn:ietf:rfc:3986 as equivalent to this OID. URIs as identifiers appear more commonly in FHIR.#xD;#xA;#xD;#xA;This OID may also be used in CD.codeSystem.\">Uniform Resource Identifier (URI)</a>/urn:oid:1.3.6.1.4.1.36124.5.999, <code>urn:oid:1.2.40.0.34.4.10</code>/K999, <code>urn:oid:1.2.40.0.10.1.4.3.2</code>/123456</p><p><b>type</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/elga-gtelvogdarollen 300}\">Allgemeine Krankenanstalt</span></p><p><b>name</b>: Testkrankenhaus</p><h3>Contacts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Telecom</b></td><td><b>Address</b></td></tr><tr><td style=\"display: none\">*</td><td>ph: Contact details not provided</td><td>Test Test Test Test Test 1234 Test </td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "urn:ietf:rfc:3986"^^xsd:anyURI ;
+       fhir:l <urn:ietf:rfc:3986>
+     ] ;
+     fhir:value [ fhir:v "urn:oid:1.3.6.1.4.1.36124.5.999" ]
+  ] [
+     fhir:system [
+       fhir:v "urn:oid:1.2.40.0.34.4.10"^^xsd:anyURI ;
+       fhir:l <urn:oid:1.2.40.0.34.4.10>
+     ] ;
+     fhir:value [ fhir:v "K999" ]
+  ] [
+     fhir:system [
+       fhir:v "urn:oid:1.2.40.0.10.1.4.3.2"^^xsd:anyURI ;
+       fhir:l <urn:oid:1.2.40.0.10.1.4.3.2>
+     ] ;
+     fhir:value [ fhir:v "123456" ]
+  ] ) ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://termgit.elga.gv.at/CodeSystem/elga-gtelvogdarollen"^^xsd:anyURI ;
+         fhir:l <https://termgit.elga.gv.at/CodeSystem/elga-gtelvogdarollen>
+       ] ;
+       fhir:code [ fhir:v "300" ] ;
+       fhir:display [ fhir:v "Allgemeine Krankenanstalt" ]
+     ] )
+  ] ) ; # 
+  fhir:name [ fhir:v "Testkrankenhaus"] ; # 
+  fhir:contact ( [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "phone" ] ;
+       fhir:value [ fhir:v "Contact details not provided" ]
+     ] ) ;
+     fhir:address [
+       fhir:line ( [
+         fhir:v "Test Test Test" ;
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName>
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Test"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber>
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "1243"
+           ]
+         ] )
+       ] ) ;
+       fhir:city [ fhir:v "Test" ] ;
+       fhir:state [ fhir:v "Test" ] ;
+       fhir:postalCode [ fhir:v "1234" ] ;
+       fhir:country [ fhir:v "Test" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

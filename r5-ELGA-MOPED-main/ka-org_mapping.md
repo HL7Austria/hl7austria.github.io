@@ -37,7 +37,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X
   * Stationär: X
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.identifier:Aufnahmezahl.value
@@ -81,7 +81,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X
   * Stationär: X
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.actualPeriod.start
@@ -92,7 +92,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O
   * Stationär: X
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.actualPeriod.end
@@ -114,7 +114,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X
   * Stationär: X
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: Hauptversicherter; MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient; RelatedPerson
   * Pfad von der Ressource aus: Patient.identifier:socialSecurityNumber; RelatedPerson.identifier:socialSecurityNumber.value
@@ -125,7 +125,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X
   * Stationär: X
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: Hauptversicherter; MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient; RelatedPerson
   * Pfad von der Ressource aus: Patient.name.family; RelatedPerson.name.family
@@ -136,7 +136,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X
   * Stationär: X
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: Hauptversicherter; MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient; RelatedPerson
   * Pfad von der Ressource aus: Patient.name.given; RelatedPerson.name.given
@@ -147,7 +147,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X
   * Stationär: X
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: Hauptversicherter; MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient; RelatedPerson
   * Pfad von der Ressource aus: Patient.gender; RelatedPerson.gender
@@ -158,7 +158,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X
   * Stationär: X
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: Hauptversicherter; MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient; RelatedPerson
   * Pfad von der Ressource aus: Patient.birthDate; RelatedPerson.birthDate
@@ -180,7 +180,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X
   * Stationär: X
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedCoverage
   * FHIR Ressource: Coverage
   * Pfad von der Ressource aus: Coverage.class:Versichertenkategorien.value
@@ -191,7 +191,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O[Inv.]*
   * Stationär: O[Inv.]*
   * Notiz zur Kardinalität: *wenn Patient Mitversicherter, dann zwingend
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.identifier:socialSecurityNumber
@@ -202,7 +202,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O[Inv.]*
   * Stationär: O[Inv.]*
   * Notiz zur Kardinalität: *wenn Patient Mitversicherter, dann zwingend
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.name.family
@@ -213,7 +213,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O[Inv.]*
   * Stationär: O[Inv.]*
   * Notiz zur Kardinalität: *wenn Patient Mitversicherter, dann zwingend
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.name.given
@@ -224,7 +224,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O[Inv.]*
   * Stationär: O[Inv.]*
   * Notiz zur Kardinalität: *wenn Patient Mitversicherter, dann zwingend
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.gender
@@ -235,7 +235,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O[Inv.]*
   * Stationär: O[Inv.]*
   * Notiz zur Kardinalität: *wenn Patient Mitversicherter, dann zwingend
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.birthDate
@@ -326,7 +326,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X
   * Stationär: X
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.identifier:Aufnahmezahl.value
@@ -370,7 +370,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X
   * Stationär: X
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.actualPeriod.start
@@ -381,7 +381,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O[TBD]*
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: *zwingend wenn zutreffend; TBD: Unterschied ambulant vs. stationär?
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.actualPeriod.end
@@ -403,7 +403,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X
   * Stationär: X
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: Hauptversicherter; MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient; RelatedPerson
   * Pfad von der Ressource aus: Patient.birthDate; RelatedPerson.birthDate
@@ -425,7 +425,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X[TBD]*
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: optional (Unterschied zu E.1); TBD: klären warum der Patient nicht verpflichtend ist, aber der Hauptversicherte schon (nicht immer der Patient)
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.birthDate
@@ -505,7 +505,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X
   * Stationär: X
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterBund; MopedEncounterLGF; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.admission.extension:aufnahmeart
@@ -516,7 +516,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X
   * Stationär: X
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.serviceType:MopedServiceType.reference.resolve()
@@ -527,7 +527,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O
   * Stationär: O
   * Notiz zur Kardinalität: optional
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.serviceType:MopedServiceType.reference.resolve()
@@ -538,7 +538,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X[TBD]*
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: *zwingend, ausgenommen EREIG 8 (Kurheilverfahren stationär), 9 (Rehabilitationsaufenthalt ambulant) und R (Aufnahme in den Bereich der Rehabilitation); TBD: codes für Moped relevant?
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedVAERequest; MopedVAERequestInitial; MopedVAERequestVerlaengerung
   * FHIR Ressource: Claim
   * Pfad von der Ressource aus: Claim.supportingInfo:Sonderklasse.code
@@ -549,7 +549,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X[TBD]*
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: *zwingend, ausgenommen EREIG 8 (Kurheilverfahren stationär), 9 (Rehabilitationsaufenthalt ambulant) und R (Aufnahme in den Bereich der Rehabilitation); TBD: codes für Moped relevant?
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.extension:citizenship
@@ -560,7 +560,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O
   * Stationär: O
   * Notiz zur Kardinalität: optional
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.address.line.extension:street
@@ -571,7 +571,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O
   * Stationär: O
   * Notiz zur Kardinalität: optional
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.address.country
@@ -582,7 +582,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O
   * Stationär: O
   * Notiz zur Kardinalität: optional
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.address.postalCode
@@ -593,7 +593,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O
   * Stationär: O
   * Notiz zur Kardinalität: optional
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.address.city
@@ -604,7 +604,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X
   * Stationär: X
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedVAERequest; MopedVAERequestInitial; MopedVAERequestVerlaengerung
   * FHIR Ressource: Claim
   * Pfad von der Ressource aus: Claim.accident.type
@@ -615,7 +615,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X[TBD]*
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: *zwingend, ausgenommen EREIG 8 (Kurheilverfahren stationär), 9 (Rehabilitationsaufenthalt ambulant) und R (Aufnahme in den Bereich der Rehabilitation); TBD: codes für Moped relevant?
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedCondition
   * FHIR Ressource: Condition
   * Pfad von der Ressource aus: Condition.code.coding:ICD10
@@ -626,7 +626,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X[TBD]*
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: *zwingend, ausgenommen EREIG 8 (Kurheilverfahren stationär), 9 (Rehabilitationsaufenthalt ambulant) und R (Aufnahme in den Bereich der Rehabilitation); TBD: codes für Moped relevant?
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedCondition
   * FHIR Ressource: Condition
   * Pfad von der Ressource aus: Condition.code.coding:ICD10
@@ -637,7 +637,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X[TBD]*
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: *zwingend, ausgenommen EREIG 8 (Kurheilverfahren stationär), 9 (Rehabilitationsaufenthalt ambulant) und R (Aufnahme in den Bereich der Rehabilitation); TBD: codes für Moped relevant?
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedCondition
   * FHIR Ressource: Condition
   * Pfad von der Ressource aus: Condition.code.coding:ICD10
@@ -648,7 +648,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O
   * Stationär: O
   * Notiz zur Kardinalität: optional
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedCondition
   * FHIR Ressource: Condition
   * Pfad von der Ressource aus: Condition.code.coding:ICD10
@@ -659,7 +659,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O
   * Stationär: O
   * Notiz zur Kardinalität: optional
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedCondition
   * FHIR Ressource: Condition
   * Pfad von der Ressource aus: Condition.code.coding:ICD10
@@ -670,7 +670,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O
   * Stationär: O
   * Notiz zur Kardinalität: optional
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedCondition
   * FHIR Ressource: Condition
   * Pfad von der Ressource aus: Condition.code.coding:ICD10
@@ -681,7 +681,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O
   * Stationär: O
   * Notiz zur Kardinalität: optional
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedCondition
   * FHIR Ressource: Condition
   * Pfad von der Ressource aus: Condition.code.coding:ICD10
@@ -692,7 +692,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O
   * Stationär: O
   * Notiz zur Kardinalität: optional
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedCondition
   * FHIR Ressource: Condition
   * Pfad von der Ressource aus: Condition.code.coding:ICD10
@@ -703,7 +703,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O
   * Stationär: O
   * Notiz zur Kardinalität: optional
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedCondition
   * FHIR Ressource: Condition
   * Pfad von der Ressource aus: Condition.code.coding:ICD10
@@ -714,7 +714,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X
   * Stationär: X
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedVAERequest; MopedVAERequestInitial; MopedVAERequestVerlaengerung
   * FHIR Ressource: Claim
   * Pfad von der Ressource aus: Claim.supportingInfo:VerdachtFremdverschulden.value[x]
@@ -736,7 +736,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X[TBD]*
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: wird bei Kur-/Rehabilitationsaufenthalten mit „99“ befüllt; Kur/Reha relevant?
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.reason:Ursache.value
@@ -758,7 +758,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O
   * Stationär: O
   * Notiz zur Kardinalität: optional
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.admission.origin.resolve()
@@ -769,7 +769,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O
   * Stationär: O
   * Notiz zur Kardinalität: optional
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.admission.origin.resolve()
@@ -780,7 +780,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O
   * Stationär: O
   * Notiz zur Kardinalität: optional
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.admission.origin.resolve()
@@ -791,7 +791,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O
   * Stationär: O
   * Notiz zur Kardinalität: optional
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.admission.origin.resolve()
@@ -802,7 +802,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O
   * Stationär: O
   * Notiz zur Kardinalität: optional
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.admission.origin.resolve()
@@ -813,7 +813,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O[Inv.]*
   * Stationär: O[Inv.]*
   * Notiz zur Kardinalität: *bei Aufnahmeart 1, 7 oder wenn VERDAU 1 - 5
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.actualPeriod.start
@@ -824,7 +824,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O[Inv.]*
   * Stationär: O[Inv.]*
   * Notiz zur Kardinalität: *bei Aufnahmeart 1, 7 oder wenn VERDAU 1 - 5
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedVAERequest; MopedVAERequestInitial; MopedVAERequestVerlaengerung
   * FHIR Ressource: Claim
   * Pfad von der Ressource aus: Claim.accident.date
@@ -835,7 +835,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O[Inv.]*
   * Stationär: O[Inv.]*
   * Notiz zur Kardinalität: *bei Aufnahmeart 1, 7 oder wenn VERDAU 1 - 5
-  * befüllt von: MopedKHActor, MopedKHActor, MopedKHActor
+  * befüllt von: MopedKAActor, MopedKAActor, MopedKAActor
   * Profile: MopedVAERequestVerlaengerung
   * FHIR Ressource: Claim
   * Pfad von der Ressource aus: Claim.billablePeriod.start
@@ -846,7 +846,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O
   * Stationär: O
   * Notiz zur Kardinalität: optional
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedVAERequest; MopedVAERequestInitial; MopedVAERequestVerlaengerung
   * FHIR Ressource: Claim
   * Pfad von der Ressource aus: Claim.billablePeriod.end; Claim.supportingInfo:Verlaengerungstage.value[x]:valueQuantity.value
@@ -857,7 +857,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O
   * Stationär: O
   * Notiz zur Kardinalität: optional
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedCoverage
   * FHIR Ressource: Coverage
   * Pfad von der Ressource aus: Coverage.identifier:VDASID
@@ -882,7 +882,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X
   * Stationär: X
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterBund; MopedEncounterLGF; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.admission.extension:aufnahmeart
@@ -893,7 +893,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X
   * Stationär: X
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedVAERequest; MopedVAERequestInitial; MopedVAERequestVerlaengerung
   * FHIR Ressource: Claim
   * Pfad von der Ressource aus: Claim.supportingInfo:Sonderklasse.code
@@ -904,7 +904,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X[TBD]*
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: *zwingend wenn zutreffend; TBD: Wenn Rückmeldung „in Bearbeitung“ (VAEST = 18 oder 98) dann nicht zwingend
-  * befüllt von: MopedKHActor, MopedKHActor, MopedKHActor; MopedSVActor
+  * befüllt von: MopedKAActor, MopedKAActor, MopedKAActor; MopedSVActor
   * Profile: MopedVAERequestInitial; MopedVAEResponse
   * FHIR Ressource: Claim; ClaimResponse
   * Pfad von der Ressource aus: Claim.billablePeriod.start; ClaimResponse.preAuthPeriod.start
@@ -984,7 +984,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: /
   * Stationär: X
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.admission.dischargeDisposition
@@ -995,7 +995,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: /
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: *in Zukunft immer codiert notwendig?
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedCondition
   * FHIR Ressource: Condition
   * Pfad von der Ressource aus: Condition.code.coding:ICD10
@@ -1006,7 +1006,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: /
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: *in Zukunft immer codiert notwendig?
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedCondition
   * FHIR Ressource: Condition
   * Pfad von der Ressource aus: Condition.code.coding:ICD10
@@ -1017,7 +1017,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: /
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: *in Zukunft immer codiert notwendig?
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedCondition
   * FHIR Ressource: Condition
   * Pfad von der Ressource aus: Condition.code.coding:ICD10
@@ -1028,7 +1028,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: /
   * Stationär: O
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedCondition
   * FHIR Ressource: Condition
   * Pfad von der Ressource aus: Condition.code.coding:ICD10
@@ -1039,7 +1039,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: /
   * Stationär: O
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedCondition
   * FHIR Ressource: Condition
   * Pfad von der Ressource aus: Condition.code.coding:ICD10
@@ -1050,7 +1050,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: /
   * Stationär: O
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedCondition
   * FHIR Ressource: Condition
   * Pfad von der Ressource aus: Condition.code.coding:ICD10
@@ -1072,7 +1072,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: /
   * Stationär: X*
   * Notiz zur Kardinalität: in K01 bereits zwingend daher für K05 nicht mehr optional notwendig
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedVAERequest; MopedVAERequestInitial; MopedVAERequestVerlaengerung
   * FHIR Ressource: Claim
   * Pfad von der Ressource aus: Claim.supportingInfo:VerdachtFremdverschulden.value[x]
@@ -1083,7 +1083,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: /
   * Stationär: X*
   * Notiz zur Kardinalität: in K01 bereits zwingend daher für K05 nicht mehr optional notwendig
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.reason:Ursache.value
@@ -1149,7 +1149,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: /
   * Stationär: O
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedVAERequest; MopedVAERequestInitial; MopedVAERequestVerlaengerung
   * FHIR Ressource: Claim
   * Pfad von der Ressource aus: Claim.supportingInfo:Sonderklasse.timing[x]:timingPeriod
@@ -1160,7 +1160,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: /
   * Stationär: O
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedVAERequest; MopedVAERequestInitial; MopedVAERequestVerlaengerung
   * FHIR Ressource: Claim
   * Pfad von der Ressource aus: Claim.supportingInfo:Sonderklasse.code
@@ -1171,7 +1171,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: /
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: *zwingend wenn zutreffend; TBD: wann zutreffend?
-  * befüllt von: MopedKHActor, MopedDeviceActor
+  * befüllt von: MopedKAActor, MopedDeviceActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.status
@@ -1182,7 +1182,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: /
   * Stationär: O
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounterAufnahmeS; MopedEncounterEntlassungS; MopedEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.extension:TageOhneKostenbeitrag
@@ -1295,7 +1295,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: /
   * Stationär: /
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.identifier:Aufnahmezahl.value
@@ -1306,7 +1306,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: /
   * Stationär: /
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.birthDate
@@ -1317,7 +1317,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: /
   * Stationär: /
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.gender
@@ -1328,7 +1328,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: /
   * Stationär: /
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.extension:citizenship
@@ -1339,7 +1339,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: /
   * Stationär: /
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.address.country
@@ -1350,7 +1350,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: /
   * Stationär: /
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.address.postalCode
@@ -1361,7 +1361,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: /
   * Stationär: /
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterBund; MopedEncounterLGF; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.admission.extension:aufnahmeart
@@ -1372,7 +1372,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: /
   * Stationär: /
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.admission.dischargeDisposition
@@ -1383,7 +1383,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: /
   * Stationär: /
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.actualPeriod.end
@@ -1686,7 +1686,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X
   * Stationär: /
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.serviceType:MopedServiceType.reference.resolve()
@@ -1697,7 +1697,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X
   * Stationär: /
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.serviceType:MopedServiceType.reference.resolve()
@@ -1708,7 +1708,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X
   * Stationär: /
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.actualPeriod.start
@@ -2091,7 +2091,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X[TBD]*
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: *Nicht zu befüllen, wenn EFORM mit „ANFO“ belegt ist.
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.name.family
@@ -2102,7 +2102,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X[TBD]*
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: *Nicht zu befüllen, wenn EFORM mit „ANFO“ belegt ist.
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.name.given
@@ -2113,7 +2113,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X[TBD]*
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: *Nicht zu befüllen, wenn EFORM mit „ANFO“ belegt ist.
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.gender
@@ -2124,7 +2124,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: X[TBD]*
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: *Nicht zu befüllen, wenn EFORM mit „ANFO“ belegt ist.
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.birthDate

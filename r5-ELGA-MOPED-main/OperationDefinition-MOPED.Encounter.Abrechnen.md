@@ -16,7 +16,7 @@ Die $abrechnen Operation wird aufgerufen, wenn ein Fall abgerechnet werden soll.
 
 ## Wer ruft diese Operation in welchem Zusammenhang auf?
 
-Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $abrechnen Operation wird aufgerufen, wenn im Zuge des Falles angefallene LKF Punkte abgerechnet werden sollen.
+Die Operation wird vom Akteur Krankenhaus (KA) aufgerufen. Die $abrechnen Operation wird aufgerufen, wenn im Zuge des Falles angefallene LKF Punkte abgerechnet werden sollen.
 
 ## Voraussetzungen für den Aufruf
 
@@ -29,7 +29,7 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $abrechnen Operat
 1. Der MopedLKFRequest wird lt. Regeln validiert und erstellt
 * **MopedLKFRequest.patient** mit Composition.subject befüllen
 * **MopedLKFRequest.insurance.coverage** mit **MopedComposition.section:Coverages.entry** befüllen
-* **MopedLKFRequest.provider** mit **MopedComposition.section:zustaendigesKH** befüllen
+* **MopedLKFRequest.provider** mit **MopedComposition.section:zustaendigeKA** befüllen
 * **MopedLKFRequest.insurer** mit **MopedComposition.section:zustaendigeSV** befüllen
 * **MopedLKFRequest.encounter** mit **MopedComposition.encounter** und allen TransferEncounter aus **MopedComposition.section:TransferEncounter** befüllen
 
@@ -40,7 +40,7 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $abrechnen Operat
 
 ## Weitere Hinweise
 
-1. Ein aktiver endgültiger LKFRequest ohne negative LKFResponse würde bedeuten, dass es bereits eine endgültige Meldung gibt (bereits bestätigt oder noch in Bearbeitung) -> $abrechnen kann dann nur mehr nach Korrekturaufforderung inklusive ClaimResponse mit Ablehnung erneut aufgerufen werden. Dadurch wird sichergestellt, dass das KH nach einer endgültigen Meldung nur mehr nach Aufforderung des LGF Änderungen durchführen kann
+1. Ein aktiver endgültiger LKFRequest ohne negative LKFResponse würde bedeuten, dass es bereits eine endgültige Meldung gibt (bereits bestätigt oder noch in Bearbeitung) -> $abrechnen kann dann nur mehr nach Korrekturaufforderung inklusive ClaimResponse mit Ablehnung erneut aufgerufen werden. Dadurch wird sichergestellt, dass die KA nach einer endgültigen Meldung nur mehr nach Aufforderung des LGF Änderungen durchführen kann
 
 ## Annahmen an das BeS
 
@@ -60,7 +60,7 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $abrechnen Operat
   "title" : "MOPED Encounter $abrechnen",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-04-29T07:28:34+00:00",
+  "date" : "2026-04-29T09:14:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -83,7 +83,7 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $abrechnen Operat
     "max" : "1",
     "documentation" : "Der *Abrechnung* Parameter beinhaltet ein Bundle mit sämtlichen Details zur Abrechnung lt. MopedLKFRequest Profil.",
     "type" : "Bundle",
-    "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedAbrechnenBundleKH"]
+    "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedAbrechnenBundleKA"]
   },
   {
     "name" : "return",

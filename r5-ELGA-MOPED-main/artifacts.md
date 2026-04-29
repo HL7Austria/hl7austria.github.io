@@ -15,7 +15,7 @@ The following artifacts define the types of individuals and/or systems that will
 | :--- | :--- |
 | [Moped Bund Actor](ActorDefinition-MopedBundActor.md) | Moped ActorDefnition für den Bund |
 | [Moped Device Actor](ActorDefinition-MopedDeviceActor.md) | Moped ActorDefnition für Moped selbst |
-| [Moped KH Actor](ActorDefinition-MopedKHActor.md) | Moped ActorDefnition für KHs in Österreich |
+| [Moped KA Actor](ActorDefinition-MopedKAActor.md) | Moped ActorDefnition für Krankenanstalten in Österreich |
 | [Moped LGF Actor](ActorDefinition-MopedLGFActor.md) | Moped ActorDefnition für LGFs in Österreich |
 | [Moped SV Actor](ActorDefinition-MopedSVActor.md) | Moped ActorDefnition für eine SV in Österreich |
 
@@ -29,7 +29,7 @@ These are custom operations that can be supported by and/or invoked by systems c
 | [MOPED Daten $update](OperationDefinition-MOPED.Daten.Update.md) | Die $update Operation wird aufgerufen, wenn zusätzliche Informationen zu einem Fall eingebracht/abgeändert werden. |
 | [MOPED Encounter $abrechnen](OperationDefinition-MOPED.Encounter.Abrechnen.md) | Die $abrechnen Operation wird aufgerufen, wenn ein Fall abgerechnet werden soll. |
 | [MOPED Kosteninformation $melden](OperationDefinition-MOPED.Claim.Melden.md) | Die $melden Operation wird aufgerufen, wenn eine Kosteninformation an die SV gemeldet werden soll. |
-| [MOPED Patient $aufnehmen](OperationDefinition-MOPED.Patient.Aufnehmen.md) | Die $aufnehmen Operation wird aufgerufen, wenn ein(e) Patient*in in das Krankenhaus aufgenommen wird. |
+| [MOPED Patient $aufnehmen](OperationDefinition-MOPED.Patient.Aufnehmen.md) | Die $aufnehmen Operation wird aufgerufen, wenn ein(e) Patient*in in die Krankenanstalt aufgenommen wird. |
 | [MOPED Patient $entlassen](OperationDefinition-MOPED.Patient.Entlassen.md) | Die $entlassen Operation wird aufgerufen, wenn ein(e) Patient*in aus dem Krankenhaus entlassen wurde. |
 | [MOPED QuestionnaireResponse $einmelden](OperationDefinition-MOPED.QuestionnaireResponse.Einmelden.md) | Die $einmelden Operation wird aufgerufen, wenn eine (nicht fallbezogene) QuestionnaireResponse eingemeldet werden soll. |
 | [MOPED Versichertenanspruchserklärung $anfragen](OperationDefinition-MOPED.VAERequest.Anfragen.md) | Die Versichertenanspruchserklärung $anfragen Operation wird aufgerufen, um die Versichertenanspruchserklärung-Anfrage an die SV anzustoßen. Diese Operation ist irrelevant für Selbstzahler (-> wenn es keine zuständige SV gibt darf die Operation $anfragen nicht ausgeführt werden). |
@@ -43,17 +43,17 @@ These define constraints on FHIR resources for systems conforming to this implem
 | :--- | :--- |
 | [Bund Organization](StructureDefinition-BundOrganization.md) | MOPED Profil für den Bund |
 | [Dachverband Organization](StructureDefinition-DachverbandOrganization.md) | MOPED Profil für die Dachverband Organization |
-| [KH Organization](StructureDefinition-KHOrganization.md) | MOPED Profil für KH Organizations |
+| [KA Organization](StructureDefinition-KAOrganization.md) | MOPED Profil für KA Organizations |
 | [LGF Organization](StructureDefinition-LGFOrganization.md) | MOPED Profil für LGF Organizations |
 | [MOPED ARK Status Update - PaymentReconciliation](StructureDefinition-MopedARKStatusUpdate.md) | MOPED Profil für Statusupdates zur Ausländerverrechnung oder zum Regress |
 | [MOPED ARKRequest](StructureDefinition-MopedARKRequest.md) | MOPED Profil der Claim Ressource für die Kostenmeldung für Ausländerverrechnung und Regresse. |
 | [MOPED ARKResponse](StructureDefinition-MopedARKResponse.md) | MOPED Profil der ClaimResponse Ressource für die Rückmeldung der SV für Ausländerverrechnung und Regresse. |
-| [MOPED Abrechnen Bundle KH](StructureDefinition-MopedAbrechnenBundleKH.md) | Bundle für die Input-Ressourcen beim Abrechnen (KH) |
-| [MOPED Anfragen Bundle KH](StructureDefinition-MopedAnfragenBundleKH.md) | Bundle für die Input-Ressourcen beim Anfragen (KH) |
+| [MOPED Abrechnen Bundle KA](StructureDefinition-MopedAbrechnenBundleKA.md) | Bundle für die Input-Ressourcen beim Abrechnen (KA) |
+| [MOPED Anfragen Bundle KA](StructureDefinition-MopedAnfragenBundleKA.md) | Bundle für die Input-Ressourcen beim Anfragen (KA) |
 | [MOPED Anfragen Composition](StructureDefinition-MopedAnfragenComposition.md) | MOPED Profil der Composition Ressource nach $anfragen |
 | [MOPED Antworten Bundle SV](StructureDefinition-MopedAntwortenBundleSV.md) | Bundle für die Input-Ressourcen beim Einbringen von Antworten der SV |
 | [MOPED Aufnahme Composition](StructureDefinition-MopedAufnahmeComposition.md) | MOPED Profil der Composition Ressource nach $aufnehmen |
-| [MOPED Aufnehmen Bundle KH](StructureDefinition-MopedAufnehmenBundleKH.md) | Bundle für die Input-Ressourcen beim Aufnehmen eines Patienten |
+| [MOPED Aufnehmen Bundle KA](StructureDefinition-MopedAufnehmenBundleKA.md) | Bundle für die Input-Ressourcen beim Aufnehmen eines Patienten |
 | [MOPED Beantworten Composition](StructureDefinition-MopedBeantwortenComposition.md) | MOPED Profil der Composition Ressource nach $beantworten |
 | [MOPED Composition](StructureDefinition-MopedComposition.md) | MOPED Profil der Composition Ressource von der alle anderen Compositions ableiten. |
 | [MOPED Condition](StructureDefinition-MopedCondition.md) | MOPED Profil der Condition Ressource für die LDF-Abrechnung |
@@ -67,13 +67,13 @@ These define constraints on FHIR resources for systems conforming to this implem
 | [MOPED Encounter LGF](StructureDefinition-MopedEncounterLGF.md) | MOPED Profil der Encounter Ressource für die Rolle: LGF |
 | [MOPED Encounter SV](StructureDefinition-MopedEncounterSV.md) | MOPED Profil der Encounter Ressource für die Rolle: SV |
 | [MOPED Encounter Stationär](StructureDefinition-MopedEncounterS.md) | MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme und Entlassung im stationären Bereich |
-| [MOPED Entlassen Bundle KH](StructureDefinition-MopedEntlassenBundle.md) | Bundle für die Input-Ressourcen beim Entlassen eines Patienten |
+| [MOPED Entlassen Bundle KA](StructureDefinition-MopedEntlassenBundle.md) | Bundle für die Input-Ressourcen beim Entlassen eines Patienten |
 | [MOPED Entlassung Aviso Composition](StructureDefinition-MopedEntlassenAvisoComposition.md) | MOPED Profil der Composition Ressource nach $entlassen bei Entlassung Aviso |
 | [MOPED Entlassung vollständig Composition](StructureDefinition-MopedEntlassenVollstaendigComposition.md) | MOPED Profil der Composition Ressource nach $entlassen bei Entlassung vollständig |
 | [MOPED Entscheiden Bundle LGF](StructureDefinition-MopedEntscheidenLGFBundle.md) | Bundle für die Input-Ressourcen beim Entscheiden (Bestätigen/Ablehnen) von Punkten/Erorrs/Warnings |
 | [MOPED Hauptversicherter](StructureDefinition-Hauptversicherter.md) | MOPED Profil der Person Ressource für den Hauptversicherten |
-| [MOPED Input Bundle KH](StructureDefinition-MopedInputBundleKH.md) | Bundle für die Input-Ressourcen beim Update von Informationen zu einem Fall |
-| [MOPED KH Organisationseinheiten](StructureDefinition-MopedKHOrganisationseinheit.md) | MOPED Profil für Organisationseinheiten innerhalb einer Krankenanstalt. |
+| [MOPED Input Bundle KA](StructureDefinition-MopedInputBundleKA.md) | Bundle für die Input-Ressourcen beim Update von Informationen zu einem Fall |
+| [MOPED KA Organisationseinheiten](StructureDefinition-MopedKAOrganisationseinheit.md) | MOPED Profil für Organisationseinheiten innerhalb einer Krankenanstalt. |
 | [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md) | MOPED Profil der Claim Ressource für die Leistungsabrechnungsanfrage. |
 | [MOPED LKFResponse](StructureDefinition-MopedLKFResponse.md) | MOPED Profil der ClaimResponse Ressource für die Leistungsabrechnungsantwort. |
 | [MOPED Master Composition](StructureDefinition-MopedMasterComposition.md) | MOPED Profil der Composition Ressource für die Composition in der sich der gesamte Moped Datensatz aufbaut. Diese unterstütz durch ihre Invarianten eine konsistente Datenhaltung. |
@@ -88,7 +88,7 @@ These define constraints on FHIR resources for systems conforming to this implem
 | [MOPED TransferEncounter Ambulant](StructureDefinition-MopedTransferEncounterA.md) | MOPED Profil der Encounter Ressource für ambulante Kontakte/Bewegungen |
 | [MOPED TransferEncounter Intensiv](StructureDefinition-MopedTransferEncounterI.md) | MOPED Profil der Encounter Ressource für die Verlegung auf Intensivstationen |
 | [MOPED TransferEncounter Stationär](StructureDefinition-MopedTransferEncounterS.md) | MOPED Profil der Encounter Ressource für eine stationäre Verlegung |
-| [MOPED Update Bundle KH](StructureDefinition-MopedUpdateBundleKH.md) | Bundle für die Input-Ressourcen beim Update von Informationen zu einem Fall |
+| [MOPED Update Bundle KA](StructureDefinition-MopedUpdateBundleKA.md) | Bundle für die Input-Ressourcen beim Update von Informationen zu einem Fall |
 | [MOPED Update Composition](StructureDefinition-MopedUpdateComposition.md) | MOPED Profil der Composition Ressource nach $update |
 | [MOPED VAERequest](StructureDefinition-MopedVAERequest.md) | MOPED Profil für die Anfrage der Versichertenanspruchserklärung VAE. |
 | [MOPED VAERequest für die Verlängerung der VAE](StructureDefinition-MopedVAERequestVerlaengerung.md) | MOPED Profil für die Verlängerung der Versichertenanspruchserklärung (VAE) |
@@ -123,7 +123,7 @@ These define constraints on FHIR data types for systems conforming to this imple
 | [Leistung - Anzahl](StructureDefinition-moped-ext-Leistungsanzahl.md) | MOPED Extension für die Anzahl der zu einem Zeitpunkt erbrachten Leistungen |
 | [Medizinische Leistung - Abrechnungsrelevanz](StructureDefinition-moped-ext-AbrechnungsRelevanz.md) | Hier ist anzugeben, ob die medizinische Leistung bei der Bepunktung des ambulanten Besuchs/stationären Aufenthalts (Satzart X01) zu berücksichtigen ist. |
 | [Prozentsatz der Zahlung](StructureDefinition-moped-ext-PaymentPercentage.md) | Prozentsatz der Zahlung |
-| [Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds](StructureDefinition-moped-ext-RechnungsnummerKHLGF.md) | MOPED Extension für die Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds |
+| [Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds](StructureDefinition-moped-ext-RechnungsnummerKALGF.md) | MOPED Extension für die Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds |
 | [Supporting Info Extension for ClaimResponse](StructureDefinition-MopedSupportingInfo.md) | Additional information codes regarding exceptions, special considerations, the condition, situation, prior or concurrent issues |
 | [Supporting Info Extension for ClaimResponse - FREMDRE Slice](StructureDefinition-MopedSupportingInfoFREMDRE.md) | Additional information codes regarding exceptions, special considerations, the condition, situation, prior or concurrent issues |
 | [Supporting Info Extension for ClaimResponse - OEGKELBNR Slice](StructureDefinition-MopedSupportingInfoOEGKELBNR.md) | Additional information codes regarding exceptions, special considerations, the condition, situation, prior or concurrent issues |
@@ -242,24 +242,24 @@ These are example instances that show what data produced and consumed by systems
 
 | | |
 | :--- | :--- |
-| [AbteilungHerzJesu1](HealthcareService-AbteilungHerzJesu1.md) | Hackathon Stammdaten: Abteilung 1 des KH Herz Jesu |
-| [AbteilungKHRied1](HealthcareService-AbteilungKHRied1.md) | Hackathon Stammdaten: Abteilung 1 des KH Ried |
-| [AbteilungKHRied2](HealthcareService-AbteilungKHRied2.md) | Hackathon Stammdaten: Abteilung 2 des KH Ried |
-| [AbteilungKHRied3](HealthcareService-AbteilungKHRied3.md) | Hackathon Stammdaten: Abteilung 3 des KH Ried |
-| [AbteilungKHRied4](HealthcareService-AbteilungKHRied4.md) | Hackathon Stammdaten: Abteilung 4 des KH Ried |
+| [AbteilungHerzJesu1](HealthcareService-AbteilungHerzJesu1.md) | Hackathon Stammdaten: Abteilung 1 der KA Herz Jesu |
+| [AbteilungKARied1](HealthcareService-AbteilungKARied1.md) | Hackathon Stammdaten: Abteilung 1 der KA Ried |
+| [AbteilungKARied2](HealthcareService-AbteilungKARied2.md) | Hackathon Stammdaten: Abteilung 2 der KA Ried |
+| [AbteilungKARied3](HealthcareService-AbteilungKARied3.md) | Hackathon Stammdaten: Abteilung 3 der KA Ried |
+| [AbteilungKARied4](HealthcareService-AbteilungKARied4.md) | Hackathon Stammdaten: Abteilung 4 der KA Ried |
 | [Condition42.1](Condition-Condition42.1.md) |  |
 | [Encounter42](Encounter-Encounter42.md) |  |
 | [I12 Questionnaire für TISS-A-Daten](Questionnaire-LKFTISSAQuestionnaire.md) |  |
 | [I12 QuestionnaireResponse für TISS-A-Daten](QuestionnaireResponse-TISSAQuestionnaireResponse.md) |  |
-| [KHK999](Organization-KHK999.md) |  |
-| [KHK999ABT11111100](HealthcareService-KHK999ABT11111100.md) |  |
-| [KHK999ABT12111100](HealthcareService-KHK999ABT12111100.md) |  |
-| [KHK999ABT12118102](HealthcareService-KHK999ABT12118102.md) |  |
-| [KHK999ABT16075000](HealthcareService-KHK999ABT16075000.md) |  |
-| [KHK999ABT16111111](HealthcareService-KHK999ABT16111111.md) |  |
-| [KHK999ABT16111112](HealthcareService-KHK999ABT16111112.md) |  |
-| [KHK999ABT16211100](HealthcareService-KHK999ABT16211100.md) |  |
-| [KHK999ABT16518011](HealthcareService-KHK999ABT16518011.md) |  |
+| [KAK999](Organization-KAK999.md) |  |
+| [KAK999ABT11111100](HealthcareService-KAK999ABT11111100.md) |  |
+| [KAK999ABT12111100](HealthcareService-KAK999ABT12111100.md) |  |
+| [KAK999ABT12118102](HealthcareService-KAK999ABT12118102.md) |  |
+| [KAK999ABT16075000](HealthcareService-KAK999ABT16075000.md) |  |
+| [KAK999ABT16111111](HealthcareService-KAK999ABT16111111.md) |  |
+| [KAK999ABT16111112](HealthcareService-KAK999ABT16111112.md) |  |
+| [KAK999ABT16211100](HealthcareService-KAK999ABT16211100.md) |  |
+| [KAK999ABT16518011](HealthcareService-KAK999ABT16518011.md) |  |
 | [LKF A01 Questionnaire](Questionnaire-LKFA01Questionnaire.md) | LKF A01 Questionnaire - Antiinfectiva-Abrufe |
 | [LKF B01 Questionnaire](Questionnaire-LKFB01Questionnaire.md) | B01 Questionnaire - Basisinformation |
 | [LKF B02 Questionnaire](Questionnaire-LKFB02Questionnaire.md) | B02 Questionnaire - Vermögens- und Kapitalstruktur (VKS) |
@@ -291,13 +291,13 @@ These are example instances that show what data produced and consumed by systems
 | [LKF L04 Questionnaire](Questionnaire-LKFL04Questionnaire.md) | LKF L04 Questionnaire - Exklusionen tagesklinischer medizinischer Leistungen |
 | [LKF Testdaten Fall](Composition-Composition42.md) |  |
 | [LKFRequest42](Claim-LKFRequest42.md) |  |
-| [LocationKHHerzJesu](Location-LocationKHHerzJesu.md) | Stammdaten: Location des KH Herz Jesu |
-| [LocationKHK999](Location-LocationKHK999.md) |  |
-| [LocationKHRied](Location-LocationKHRied.md) | Stammdaten: Location des KH Ried |
+| [LocationKAHerzJesu](Location-LocationKAHerzJesu.md) | Stammdaten: Location der KA Herz Jesu |
+| [LocationKAK999](Location-LocationKAK999.md) |  |
+| [LocationKARied](Location-LocationKARied.md) | Stammdaten: Location der KA Ried |
 | [MOPED PJ1 Composition nach $aufnehmen](Composition-PJ1CompositionAufnehmen.md) | PJ1 Beispiel der Composition Ressource nach $aufnehmen |
-| [OrganizationAffiliationWgfHerzJesu](OrganizationAffiliation-OrganizationAffiliationWgfHerzJesu.md) | Hackathon Stammdaten: Organization Affiliation zwischen LGF und KH Herz Jesu |
-| [OrganizationHerzJesuKrankenhaus](Organization-OrganizationHerzJesuKrankenhaus.md) | Hackathon Stammdaten: KH Herz Jesu |
-| [OrganizationKrankenhausRied](Organization-OrganizationKrankenhausRied.md) | Hackathon Stammdaten: KH Ried |
+| [OrganizationAffiliationWgfHerzJesu](OrganizationAffiliation-OrganizationAffiliationWgfHerzJesu.md) | Hackathon Stammdaten: Organization Affiliation zwischen LGF und KA Herz Jesu |
+| [OrganizationHerzJesuKrankenhaus](Organization-OrganizationHerzJesuKrankenhaus.md) | Hackathon Stammdaten: KA Herz Jesu |
+| [OrganizationKrankenhausRied](Organization-OrganizationKrankenhausRied.md) | Hackathon Stammdaten: KA Ried |
 | [OrganizationLGF](Organization-OrganizationLGF.md) | Hackathon Stammdaten: LGF Wien |
 | [OrganizationUeberweisendeOrganization1](Organization-OrganizationUeberweisendeOrganization1.md) | Hackathon Stammdaten: Überweisende Organisation 1 |
 | [OrganizationUeberweisendeOrganization2](Organization-OrganizationUeberweisendeOrganization2.md) | Hackathon Stammdaten: Überweisende Organisation 2 |
@@ -347,7 +347,7 @@ These are example instances that show what data produced and consumed by systems
 | [SV19](Organization-SV19.md) | Hackathon Stammdaten: ÖGK Vorarlberg |
 | [Stroke Unit Registermeldung – Patientendaten](Questionnaire-StrokeUnitQuestionnaire2025.md) | Fragen zur Registermeldung Stroke Unit – Abschnitt Patientendaten |
 | [Stroke Unit Registermeldung – Patientendaten](Questionnaire-strokeunit-questionnaire.md) | Fragen zur Registermeldung Stroke Unit – Abschnitt Patientendaten |
-| [Subscription Topic VAE abgelehnt](SubscriptionTopic-vaeAbgelehnt.md) | SubscriptionTopic für das KH, um bei abgelehnten VAEs benachrichtigt zu werden. |
+| [Subscription Topic VAE abgelehnt](SubscriptionTopic-vaeAbgelehnt.md) | SubscriptionTopic für die KA, um bei abgelehnten VAEs benachrichtigt zu werden. |
 | [Subscription Topic neue VAE](SubscriptionTopic-neueVAE.md) | SubscriptionTopic für die SV, um bei neuen VAEs benachrichtigt zu werden. |
 | [TISS42.1](QuestionnaireResponse-TISS42.1.md) |  |
 | [TISS42.2](QuestionnaireResponse-TISS42.2.md) |  |

@@ -16,7 +16,7 @@ HTTP Verben für das Einmelden von Ressourcen, welche nach dem initialen Einmeld
 
  **References** 
 
-* [MOPED Input Bundle KH](StructureDefinition-MopedInputBundleKH.md)
+* [MOPED Input Bundle KA](StructureDefinition-MopedInputBundleKA.md)
 
 ### Logical Definition (CLD)
 
@@ -50,7 +50,7 @@ HTTP Verben für das Einmelden von Ressourcen, welche nach dem initialen Einmeld
   "name" : "HTTPVerbInsertUpdateVS",
   "title" : "HTTP Verb Update Only",
   "status" : "draft",
-  "date" : "2026-04-29T07:28:34+00:00",
+  "date" : "2026-04-29T09:14:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

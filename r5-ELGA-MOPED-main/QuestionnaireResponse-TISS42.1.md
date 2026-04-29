@@ -174,7 +174,7 @@
   },
   "authored" : "2025-08-30",
   "author" : {
-    "reference" : "Organization/KHK999"
+    "reference" : "Organization/KAK999"
   },
   "item" : [{
     "linkId" : "krankenanstaltennummer",

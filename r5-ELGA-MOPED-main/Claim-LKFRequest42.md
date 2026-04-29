@@ -26,7 +26,7 @@ Profile: [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md)
 
 **insurer**: [Organization Österreichische Gesundheitskasse Wien](Organization-SV11.md)
 
-**provider**: [Organization Testkrankenhaus](Organization-KHK999.md)
+**provider**: [Organization Testkrankenhaus](Organization-KAK999.md)
 
 **encounter**: 
 
@@ -114,7 +114,7 @@ Profile: [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md)
     "reference" : "Organization/SV11"
   },
   "provider" : {
-    "reference" : "Organization/KHK999"
+    "reference" : "Organization/KAK999"
   },
   "encounter" : [{
     "reference" : "Encounter/Encounter42"

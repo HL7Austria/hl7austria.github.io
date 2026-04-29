@@ -6,7 +6,7 @@
 
 ## Example Organization: OrganizationHerzJesuKrankenhaus
 
-Profile: [KH Organization](StructureDefinition-KHOrganization.md)
+Profile: [KA Organization](StructureDefinition-KAOrganization.md)
 
 **identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/7.0.1/NamingSystem-uri.html)/urn:oid:1.3.6.1.4.1.36124.5.914, `urn:oid:1.2.40.0.34.4.10`/K914, `urn:oid:1.2.40.0.10.1.4.3.2`/832138
 
@@ -30,7 +30,7 @@ Profile: [KH Organization](StructureDefinition-KHOrganization.md)
   "resourceType" : "Organization",
   "id" : "OrganizationHerzJesuKrankenhaus",
   "meta" : {
-    "profile" : ["https://elga.moped.at/StructureDefinition/KHOrganization"]
+    "profile" : ["https://elga.moped.at/StructureDefinition/KAOrganization"]
   },
   "identifier" : [{
     "system" : "urn:ietf:rfc:3986",

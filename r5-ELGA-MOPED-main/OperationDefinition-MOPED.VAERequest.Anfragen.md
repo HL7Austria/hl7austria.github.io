@@ -16,7 +16,7 @@ Die Versichertenanspruchserklärung $anfragen Operation wird aufgerufen, um die 
 
 ## Wer ruft diese Operation in welchem Zusammenhang auf?
 
-Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die Versichertenanspruchserklärung $anfragen Operation wird aufgerufen, um die Versichertenanspruchserklärung-Anfrage an die SV anzustoßen. Diese Operation ist irrelevant für Selbstzahler (-> wenn es keine zuständige SV gibt darf die Operation $anfragen nicht ausgeführt werden). Diese Operation dient außerdem dazu, eine Verlängerung für eine bereits positiv von der SV bestätigte Versichertenanspruchserklärung zu beantragen.
+Die Operation wird vom Akteur Krankenhaus (KA) aufgerufen. Die Versichertenanspruchserklärung $anfragen Operation wird aufgerufen, um die Versichertenanspruchserklärung-Anfrage an die SV anzustoßen. Diese Operation ist irrelevant für Selbstzahler (-> wenn es keine zuständige SV gibt darf die Operation $anfragen nicht ausgeführt werden). Diese Operation dient außerdem dazu, eine Verlängerung für eine bereits positiv von der SV bestätigte Versichertenanspruchserklärung zu beantragen.
 
 ## Voraussetzungen für den Aufruf
 
@@ -27,7 +27,7 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die Versichertenanspr
 1. Der MopedVAERequest wird lt. Regeln validiert und erstellt
 * **MopedVAERequest.patient** mit Composition.subject befüllen
 * **MopedVAERequest.insurance.coverage** mit **MopedComposition.section:Coverages.entry** befüllen
-* **MopedVAERequest.provider** mit **MopedComposition.section:zustaendigesKH** befüllen
+* **MopedVAERequest.provider** mit **MopedComposition.section:zustaendigeKA** befüllen
 * **MopedVAERequest.encounter** mit **MopedComposition.encounter** befüllen
 
 1. Der MopedVAERequest wird in der Composition.section:VAERequests eingefügt
@@ -52,7 +52,7 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die Versichertenanspr
   "title" : "MOPED Versichertenanspruchserklärung $anfragen",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-04-29T07:28:34+00:00",
+  "date" : "2026-04-29T09:14:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -75,7 +75,7 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die Versichertenanspr
     "max" : "1",
     "documentation" : "Der *Anfrage* Parameter beinhaltet ein Bundle mit den Informationen für die Versichertenanspruchserklärung",
     "type" : "Bundle",
-    "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedAnfragenBundleKH"]
+    "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedAnfragenBundleKA"]
   },
   {
     "name" : "return",

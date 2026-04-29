@@ -12,20 +12,20 @@
 | Draft as of 2026-04-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_Patient_Aufnehmen |
 
  
-Die $aufnehmen Operation wird aufgerufen, wenn ein(e) Patient*in in das Krankenhaus aufgenommen wird. 
+Die $aufnehmen Operation wird aufgerufen, wenn ein(e) Patient*in in die Krankenanstalt aufgenommen wird. 
 
 ## Wer ruft diese Operation in welchem Zusammenhang auf?
 
-Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $aufnehmen Operation wird aufgerufen, wenn ein(e) Patient*in in das Krankenhaus aufgenommen wird.
+Die Operation wird vom Akteur Krankenhaus (KA) aufgerufen. Die $aufnehmen Operation wird aufgerufen, wenn ein(e) Patient*in in die Krankenanstalt aufgenommen wird.
 
 ## Voraussetzungen für den Aufruf
 
-* Es darf keine andere Composition mit der gleichen Kombination aus KH + Aufnahmezahl + Aufnahmedatum geben sonst schlägt die Operation fehl.
+* Es darf keine andere Composition mit der gleichen Kombination KA+ Aufnahmezahl + Aufnahmedatum geben sonst schlägt die Operation fehl.
 
 ## Detaillierte Business-Logik
 
-1. Es wird ein neue Composition Ressource angelegt. Darin muss das zuständige KH und der zuständige LGF laut Informationen aus dem**falldaten**Bundle befüllt werden:
-* **Composition.section:zustaendigesKH.entry** wird mit der Encounter.serviceProvider Referenz aus dem Encounter befüllt
+1. Es wird ein neue Composition Ressource angelegt. Darin muss das zuständige KA und der zuständige LGF laut Informationen aus dem**falldaten**Bundle befüllt werden:
+* **Composition.section:zustaendigeKA.entry** wird mit der Encounter.serviceProvider Referenz aus dem Encounter befüllt
 
 * **Composition.section:zustaendigerLGF.entry** wird über die OrganizationAffiliation des Encounter.serviceProvider ermittelt und befüllt
 
@@ -51,7 +51,7 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $aufnehmen Operat
   "title" : "MOPED Patient $aufnehmen",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-04-29T07:28:34+00:00",
+  "date" : "2026-04-29T09:14:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -60,7 +60,7 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $aufnehmen Operat
       "value" : "https://elga.gv.at"
     }]
   }],
-  "description" : "Die $aufnehmen Operation wird aufgerufen, wenn ein(e) Patient*in in das Krankenhaus aufgenommen wird.",
+  "description" : "Die $aufnehmen Operation wird aufgerufen, wenn ein(e) Patient*in in die Krankenanstalt aufgenommen wird.",
   "affectsState" : true,
   "code" : "aufnehmen",
   "system" : true,
@@ -73,7 +73,7 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $aufnehmen Operat
     "max" : "1",
     "documentation" : "Der *falldaten* Parameter beinhaltet die nötigen Elemente um die Details zum Fall zu beschreiben die bei Patientenaufnahme bekannt sind, inklusive Patient, Encounter und Aufnahmediagnose.",
     "type" : "Bundle",
-    "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedAufnehmenBundleKH"]
+    "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedAufnehmenBundleKA"]
   },
   {
     "name" : "return",

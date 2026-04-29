@@ -16,7 +16,7 @@ Die $einmelden Operation wird aufgerufen, wenn eine (nicht fallbezogene) Questio
 
 ## Wer ruft diese Operation in welchem Zusammenhang auf?
 
-Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $einmelden Operation wird aufgerufen, wenn nicht fallspezifische Questionnaires eingemeldet werden sollen.
+Die Operation wird vom Akteur Krankenhaus (KA) aufgerufen. Die $einmelden Operation wird aufgerufen, wenn nicht fallspezifische Questionnaires eingemeldet werden sollen.
 
 ## Voraussetzungen für den Aufruf
 
@@ -48,7 +48,7 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $einmelden Operat
   "title" : "MOPED QuestionnaireResponse $einmelden",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-04-29T07:28:34+00:00",
+  "date" : "2026-04-29T09:14:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

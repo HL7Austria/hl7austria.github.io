@@ -7,22 +7,22 @@
 
 ### Krankenanstalt
 
-Im MOPED-Kontext spielt eine Krankenanstalt (KH) eine zentrale Rolle als Initiator zahlreicher Prozesse und als Meldestelle für vielfältige Daten. Diese umfassen unter anderem die Patientenaufnahme, die Abfrage des Versicherungsstatus und -anspruchs, die Erfassung von Versorgungsdaten während der Patientenbehandlung, die Entlassung sowie die Initiierung der Leistungsabrechnung.
+Im MOPED-Kontext spielt eine Krankenanstalt (KA) eine zentrale Rolle als Initiator zahlreicher Prozesse und als Meldestelle für vielfältige Daten. Diese umfassen unter anderem die Patientenaufnahme, die Abfrage des Versicherungsstatus und -anspruchs, die Erfassung von Versorgungsdaten während der Patientenbehandlung, die Entlassung sowie die Initiierung der Leistungsabrechnung.
 
 ```
 
     graph LR
-    KH[Krankenanstalt]
+    KA[Krankenanstalt]
     Moped[Moped] 
-    KH --->|POST $aufnehmen| Moped 
-    KH -->|POST $update| Moped
-    KH -->|POST $anfragen| Moped
-    KH -->|POST $entlassen| Moped
-    KH -->|POST $abrechnen| Moped
-    KH -->|POST $stornieren| Moped
-    KH -->|POST $einmelden| Moped
-    Moped -->|GET VAEResponse| KH
-    Moped --->|GET ClaimResponse| KH
+    KA --->|POST $aufnehmen| Moped 
+    KA -->|POST $update| Moped
+    KA -->|POST $anfragen| Moped
+    KA -->|POST $entlassen| Moped
+    KA -->|POST $abrechnen| Moped
+    KA -->|POST $stornieren| Moped
+    KA -->|POST $einmelden| Moped
+    Moped -->|GET VAEResponse| KA
+    Moped --->|GET ClaimResponse| KA
 
 ```
 
@@ -80,8 +80,8 @@ Im Moped Kontext werden von den Krankenanstalten ausgewählte Meldungen an mediz
     graph LR
     Register[Register]
     Moped[Moped] 
-    KH[Krankenanstalt]
-    KH --->|POST $updateeiner fallbezogenen QuestionnaireResponse| Moped 
+    KA[Krankenanstalt]
+    KA --->|POST $updateeiner fallbezogenen QuestionnaireResponse| Moped 
     Moped --->|GET QuestionnaireResponse| Register
 
 ```

@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedComposition.csv
   "title" : "MOPED Composition",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-04-29T07:28:34+00:00",
+  "date" : "2026-04-29T09:14:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -307,7 +307,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedComposition.csv
       "path" : "Composition.author",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KHOrganization"]
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KAOrganization"]
       }],
       "mapping" : [{
         "identity" : "LKF",
@@ -498,7 +498,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedComposition.csv
       }]
     },
     {
-      "id" : "Composition.section:zustaendigesKH",
+      "id" : "Composition.section:zustaendigeKA",
       "extension" : [{
         "extension" : [{
           "url" : "code",
@@ -511,28 +511,28 @@ Other representations of profile: [CSV](StructureDefinition-MopedComposition.csv
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
       "path" : "Composition.section",
-      "sliceName" : "zustaendigesKH",
+      "sliceName" : "zustaendigeKA",
       "min" : 1,
       "max" : "1"
     },
     {
-      "id" : "Composition.section:zustaendigesKH.code.coding.system",
+      "id" : "Composition.section:zustaendigeKA.code.coding.system",
       "path" : "Composition.section.code.coding.system",
       "patternUri" : "https://elga.moped.at/CodeSystem/CompositionSectionsCS"
     },
     {
-      "id" : "Composition.section:zustaendigesKH.code.coding.code",
+      "id" : "Composition.section:zustaendigeKA.code.coding.code",
       "path" : "Composition.section.code.coding.code",
       "min" : 1,
-      "patternCode" : "KH"
+      "patternCode" : "KA"
     },
     {
-      "id" : "Composition.section:zustaendigesKH.entry",
+      "id" : "Composition.section:zustaendigeKA.entry",
       "path" : "Composition.section.entry",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KHOrganization"]
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KAOrganization"]
       }]
     },
     {
@@ -569,7 +569,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedComposition.csv
       "path" : "Composition.section.author",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KHOrganization"]
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KAOrganization"]
       }]
     },
     {
@@ -578,7 +578,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedComposition.csv
       "min" : 1,
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedKHOrganisationseinheit"]
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedKAOrganisationseinheit"]
       }]
     },
     {
@@ -652,7 +652,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedComposition.csv
       "path" : "Composition.section.author",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KHOrganization"]
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KAOrganization"]
       }]
     },
     {
@@ -698,7 +698,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedComposition.csv
       "path" : "Composition.section.author",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KHOrganization"]
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KAOrganization"]
       }]
     },
     {
@@ -745,7 +745,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedComposition.csv
       "path" : "Composition.section.author",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KHOrganization"]
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KAOrganization"]
       }]
     },
     {
@@ -838,7 +838,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedComposition.csv
       "path" : "Composition.section.author",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KHOrganization"]
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KAOrganization"]
       }]
     },
     {
@@ -930,7 +930,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedComposition.csv
       "path" : "Composition.section.author",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KHOrganization"]
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KAOrganization"]
       }]
     },
     {
@@ -1068,7 +1068,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedComposition.csv
       "path" : "Composition.section.author",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KHOrganization"]
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KAOrganization"]
       }]
     },
     {
@@ -1114,7 +1114,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedComposition.csv
       "path" : "Composition.section.author",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KHOrganization"]
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KAOrganization"]
       }]
     },
     {
@@ -1161,7 +1161,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedComposition.csv
       "path" : "Composition.section.author",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KHOrganization"]
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KAOrganization"]
       }]
     },
     {
@@ -1206,7 +1206,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedComposition.csv
       "path" : "Composition.section.author",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KHOrganization",
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KAOrganization",
         "https://elga.moped.at/StructureDefinition/SVOrganization",
         "https://elga.moped.at/StructureDefinition/LGFOrganization"]
       }]

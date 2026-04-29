@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedTransferEncount
   "name" : "MopedTransferEncounterS",
   "title" : "MOPED TransferEncounter Stationär",
   "status" : "draft",
-  "date" : "2026-04-29T07:28:34+00:00",
+  "date" : "2026-04-29T09:14:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -99,7 +99,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedTransferEncount
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],

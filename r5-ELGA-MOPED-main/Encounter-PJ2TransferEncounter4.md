@@ -17,7 +17,7 @@ Profile: [MOPED TransferEncounter](StructureDefinition-MopedTransferEncounter.md
 | | |
 | :--- | :--- |
 | - | **Reference** |
-| * | [HealthcareService: identifier = http://example.org/lkf-system/funktionscode#10000000; category = Hospital; type = Hospital Services](HealthcareService-AbteilungKHRied4.md) |
+| * | [HealthcareService: identifier = http://example.org/lkf-system/funktionscode#10000000; category = Hospital; type = Hospital Services](HealthcareService-AbteilungKARied4.md) |
 
 **subject**: [Santiago Schnabeltier Test (official) Male, DoB: 1985-03-19 ( Social Security Number: 2873111374)](Patient-PJ2Patient.md)
 
@@ -54,7 +54,7 @@ Profile: [MOPED TransferEncounter](StructureDefinition-MopedTransferEncounter.md
   }],
   "serviceType" : [{
     "reference" : {
-      "reference" : "HealthcareService/AbteilungKHRied4"
+      "reference" : "HealthcareService/AbteilungKARied4"
     }
   }],
   "subject" : {

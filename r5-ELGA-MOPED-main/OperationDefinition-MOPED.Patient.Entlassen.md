@@ -16,7 +16,7 @@ Die $entlassen Operation wird aufgerufen, wenn ein(e) Patient*in aus dem Kranken
 
 ## Wer ruft diese Operation in welchem Zusammenhang auf?
 
-Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $entlassen Operation wird aufgerufen, wenn ein(e) Patient*in aus dem Krankenhaus entlassen wurde.
+Die Operation wird vom Akteur Krankenhaus (KA) aufgerufen. Die $entlassen Operation wird aufgerufen, wenn ein(e) Patient*in aus dem Krankenhaus entlassen wurde.
 
 ## Voraussetzungen für den Aufruf
 
@@ -44,7 +44,7 @@ Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $entlassen Operat
   "title" : "MOPED Patient $entlassen",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-04-29T07:28:34+00:00",
+  "date" : "2026-04-29T09:14:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

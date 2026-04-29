@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedLKFResponse.csv
   "name" : "MopedLKFResponse",
   "title" : "MOPED LKFResponse",
   "status" : "draft",
-  "date" : "2026-04-29T07:28:34+00:00",
+  "date" : "2026-04-29T09:14:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -200,7 +200,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedLKFResponse.csv
       "min" : 1,
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KHOrganization"]
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KAOrganization"]
       }]
     },
     {

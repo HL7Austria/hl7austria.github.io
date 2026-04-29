@@ -452,7 +452,7 @@
 
 
 <p>
-<p>Die $aufnehmen Operation wird aufgerufen, wenn ein(e) Patient*in in das Krankenhaus aufgenommen wird.</p>
+<p>Die $aufnehmen Operation wird aufgerufen, wenn ein(e) Patient*in in die Krankenanstalt aufgenommen wird.</p>
 
 </p>
 
@@ -466,20 +466,20 @@
 
 <h2 id="wer-ruft-diese-operation-in-welchem-zusammenhang-auf">Wer ruft diese Operation in welchem Zusammenhang auf?</h2>
 
-<p>Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $aufnehmen Operation wird aufgerufen, wenn ein(e) Patient*in in das Krankenhaus aufgenommen wird.</p>
+<p>Die Operation wird vom Akteur Krankenhaus (KA) aufgerufen. Die $aufnehmen Operation wird aufgerufen, wenn ein(e) Patient*in in die Krankenanstalt aufgenommen wird.</p>
 
 <h2 id="voraussetzungen-für-den-aufruf">Voraussetzungen für den Aufruf</h2>
 
 <ul>
-  <li>Es darf keine andere Composition mit der gleichen Kombination aus KH + Aufnahmezahl + Aufnahmedatum geben sonst schlägt die Operation fehl.</li>
+  <li>Es darf keine andere Composition mit der gleichen Kombination KA+ Aufnahmezahl + Aufnahmedatum geben sonst schlägt die Operation fehl.</li>
 </ul>
 
 <h2 id="detaillierte-business-logik">Detaillierte Business-Logik</h2>
 
 <ol>
-  <li>Es wird ein neue Composition Ressource angelegt. Darin muss das zuständige KH und der zuständige LGF laut Informationen aus dem <em>falldaten</em> Bundle befüllt werden:
+  <li>Es wird ein neue Composition Ressource angelegt. Darin muss das zuständige KA und der zuständige LGF laut Informationen aus dem <em>falldaten</em> Bundle befüllt werden:
     <ul>
-      <li><em>Composition.section:zustaendigesKH.entry</em> wird mit der Encounter.serviceProvider Referenz aus dem Encounter befüllt</li>
+      <li><em>Composition.section:zustaendigeKA.entry</em> wird mit der Encounter.serviceProvider Referenz aus dem Encounter befüllt</li>
     </ul>
     <ul>
       <li><em>Composition.section:zustaendigerLGF.entry</em> wird über die OrganizationAffiliation des Encounter.serviceProvider ermittelt und befüllt</li>
@@ -510,7 +510,7 @@
   
 
 
-  <div data-fhir="generated"><p class="res-header-id"/><a name="MOPED.Patient.Aufnehmen"> </a><a name="hcMOPED.Patient.Aufnehmen"> </a><p>URL: [base]/$aufnehmen</p><h3>Parameters</h3><table class="grid" data-fhir="generated"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>falldaten</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/bundle.html">Bundle</a> (<a href="StructureDefinition-MopedAufnehmenBundleKH.html" title="https://elga.moped.at/StructureDefinition/MopedAufnehmenBundleKH">MOPED Aufnehmen Bundle KH</a>)</td><td/><td><div><p>Der <em>falldaten</em> Parameter beinhaltet die nötigen Elemente um die Details zum Fall zu beschreiben die bei Patientenaufnahme bekannt sind, inklusive Patient, Encounter und Aufnahmediagnose.</p>
+  <div data-fhir="generated"><p class="res-header-id"/><a name="MOPED.Patient.Aufnehmen"> </a><a name="hcMOPED.Patient.Aufnehmen"> </a><p>URL: [base]/$aufnehmen</p><h3>Parameters</h3><table class="grid" data-fhir="generated"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>falldaten</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/bundle.html">Bundle</a> (<a href="StructureDefinition-MopedAufnehmenBundleKA.html" title="https://elga.moped.at/StructureDefinition/MopedAufnehmenBundleKA">MOPED Aufnehmen Bundle KA</a>)</td><td/><td><div><p>Der <em>falldaten</em> Parameter beinhaltet die nötigen Elemente um die Details zum Fall zu beschreiben die bei Patientenaufnahme bekannt sind, inklusive Patient, Encounter und Aufnahmediagnose.</p>
 </div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation. Wenn der <em>modus</em> Parameter auf 'freigeben' gesetzt war, ist die Operation erfolgreich, wenn die Daten validiert wurden und abgespeichert werden konnten. Wenn der <em>modus</em> Parameter auf <em>zwischenspeichern</em> gesetzt war, ist für eine erfolgreiche Durchführung der Operation lediglich ein erfolgreiches Speichern vorausgesetzt. Schlägt die Operation fehl, wird eine entsprechende Meldung ausgegeben.</p>
 </div></td></tr></table></div>
 
@@ -537,7 +537,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Wed, Apr 29, 2026 07:28+0000">2026-04-29</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Wed, Apr 29, 2026 09:14+0000">2026-04-29</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

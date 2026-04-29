@@ -1,0 +1,82 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://elga.moped.at/HealthcareService/KAK999ABT16075000> a fhir:HealthcareService ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "KAK999ABT16075000"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://elga.moped.at/StructureDefinition/MopedKAOrganisationseinheit"^^xsd:anyURI ;
+       fhir:l <https://elga.moped.at/StructureDefinition/MopedKAOrganisationseinheit>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: HealthcareService KAK999ABT16075000</b></p><a name=\"KAK999ABT16075000\"> </a><a name=\"hcKAK999ABT16075000\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-MopedKAOrganisationseinheit.html\">MOPED KA Organisationseinheiten</a></p></div><blockquote><p><b>Kostenstelle</b></p><ul><li>InterneKostenstellennummer: 1250</li><li>InterneKostenstellenbezeichnung: Erstversorgungseinheit (IM und Kardiologie)</li><li>KostenstellenJahr: 2025</li></ul></blockquote><p><b>identifier</b>: <code>http://example.org/lkf-system/funktionscode</code>/16075000</p><p><b>providedBy</b>: <a href=\"Organization-KAK999.html\">Organization Testkrankenhaus</a></p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/service-type 361}\">Hospital Services</span></p><p><b>location</b>: <a href=\"Location-LocationKAK999.html\">Location</a></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "InterneKostenstellennummer"^^xsd:anyURI ;
+         fhir:l fhir:InterneKostenstellennummer
+       ] ;
+       fhir:value [
+         a fhir:UnsignedInt ;
+         fhir:v "1250"^^xsd:nonNegativeInteger
+       ]
+     ] [
+       fhir:url [
+         fhir:v "InterneKostenstellenbezeichnung"^^xsd:anyURI ;
+         fhir:l fhir:InterneKostenstellenbezeichnung
+       ] ;
+       fhir:value [
+         a fhir:String ;
+         fhir:v "Erstversorgungseinheit (IM und Kardiologie)"
+       ]
+     ] [
+       fhir:url [
+         fhir:v "KostenstellenJahr"^^xsd:anyURI ;
+         fhir:l fhir:KostenstellenJahr
+       ] ;
+       fhir:value [
+         a fhir:Date ;
+         fhir:v "2025"^^xsd:gYear
+       ]
+     ] ) ;
+     fhir:url [
+       fhir:v "https://elga.moped.at/StructureDefinition/moped-ext-Kostenstelle"^^xsd:anyURI ;
+       fhir:l <https://elga.moped.at/StructureDefinition/moped-ext-Kostenstelle>
+     ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "http://example.org/lkf-system/funktionscode"^^xsd:anyURI ;
+       fhir:l <http://example.org/lkf-system/funktionscode>
+     ] ;
+     fhir:value [ fhir:v "16075000" ]
+  ] ) ; # 
+  fhir:providedBy [
+     fhir:l <https://elga.moped.at/Organization/KAK999> ;
+     fhir:reference [ fhir:v "Organization/KAK999" ]
+  ] ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/service-type"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/service-type>
+       ] ;
+       fhir:code [ fhir:v "361" ]
+     ] )
+  ] ) ; # 
+  fhir:location ( [
+     fhir:l <https://elga.moped.at/Location/LocationKAK999> ;
+     fhir:reference [ fhir:v "Location/LocationKAK999" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

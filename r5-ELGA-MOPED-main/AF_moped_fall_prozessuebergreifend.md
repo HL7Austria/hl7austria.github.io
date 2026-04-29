@@ -9,7 +9,7 @@
 
 In Arbeit :)
 
-### Teilprozess 6: Abgeschlossene ambulante Behandlung und stationäre Aufnahme am gleichen Tag innerhalb eines KHs
+### Teilprozess 6: Abgeschlossene ambulante Behandlung und stationäre Aufnahme am gleichen Tag innerhalb einer KA
 
 In Arbeit :)
 
@@ -17,7 +17,7 @@ In Arbeit :)
 
 | | |
 | :--- | :--- |
-| KH (Krankenhaus) | ✅ / ❌ |
+| KA (Krankenhaus) | ✅ / ❌ |
 | LGF (Landesgesundheitsfonds) | ✅ / ❌ |
 | SV (Sozialversicherung) | ✅ / ❌ |
 | Bund | ✅ / ❌ |
@@ -51,7 +51,7 @@ In Arbeit :)
     sequenceDiagram
     autonumber
     box rgb(245, 229, 153)
-    actor KH as KH (Herz Jesu Krankenhaus)
+    actor KA as KA (Herz Jesu Krankenhaus)
     end
     box rgb(197, 247, 186)
     participant MP as Moped

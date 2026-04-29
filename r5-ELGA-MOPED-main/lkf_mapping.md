@@ -37,7 +37,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.identifier:Aufnahmezahl.value
@@ -48,7 +48,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.identifier:DatensatzID.value
@@ -59,7 +59,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.actualPeriod.start
@@ -70,7 +70,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.actualPeriod.start
@@ -81,7 +81,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.class:Behandlungsart
@@ -92,7 +92,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.birthDate
@@ -103,7 +103,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.extension:Altersgruppe
@@ -114,7 +114,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.gender
@@ -125,7 +125,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.extension:citizenship
@@ -136,7 +136,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.address.country
@@ -147,7 +147,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: O[Inv.]*
   * Intensiv: 
   * Notiz zur Kardinalität: *nur für österreichische Patienten verpflichtend
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.address.postalCode
@@ -158,7 +158,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: O[Inv.]*
   * Intensiv: 
   * Notiz zur Kardinalität: *nur für österreichische Patienten verpflichtend
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.address.extension:municipalityCode
@@ -169,7 +169,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: *Zwingend sofern systematisch erfasst
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterBund; MopedEncounterLGF; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.admission.extension:aufnahmeart
@@ -180,7 +180,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: *Zwingend sofern systematisch erfasst
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.class:Aufnahmeart2
@@ -191,7 +191,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: O*
   * Intensiv: 
   * Notiz zur Kardinalität: *Zwingend sofern systematisch erfasst
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.admission.extension:Transportart
@@ -202,7 +202,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X*
   * Intensiv: 
   * Notiz zur Kardinalität: *sofern ein Transfer vorliegt
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.admission.origin.resolve()
@@ -213,7 +213,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X*
   * Intensiv: 
   * Notiz zur Kardinalität: *sofern ein Transfer vorliegt
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.admission.destination.resolve()
@@ -224,7 +224,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: Valueset in ambulant und stationär geteilt; *ambulant nur zwingend sofern systematisch erfasst
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.admission.dischargeDisposition
@@ -235,7 +235,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.actualPeriod.end
@@ -246,7 +246,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.actualPeriod.end
@@ -268,7 +268,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
   * Pfad von der Ressource aus: Claim.extension:Fondsrelevanz
@@ -279,7 +279,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
   * Pfad von der Ressource aus: Claim.supportingInfo:Plausibilitaetskennzeichen.value[x]
@@ -337,7 +337,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.identifier:Aufnahmezahl.value
@@ -348,7 +348,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.identifier:DatensatzID.value
@@ -359,7 +359,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.actualPeriod.start
@@ -381,7 +381,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.serviceType:MopedServiceType.reference.resolve()
@@ -392,7 +392,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.actualPeriod.start
@@ -403,7 +403,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: /
   * Intensiv: !
   * Notiz zur Kardinalität: nur für Intensiveinheiten auszufüllen, für die eine Intensivdokumentation (TISS-A/ SAPS3) übermittelt wird
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.actualPeriod.start
@@ -414,7 +414,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: /
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.subjectStatus
@@ -425,7 +425,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: /
   * Intensiv: !
   * Notiz zur Kardinalität: nur für Intensiveinheiten auszufüllen, für die eine Intensivdokumentation (TISS-A/ SAPS3) übermittelt wird
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.actualPeriod.end
@@ -436,7 +436,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: /
   * Intensiv: !
   * Notiz zur Kardinalität: nur für Intensiveinheiten auszufüllen, für die eine Intensivdokumentation (TISS-A/ SAPS3) übermittelt wird
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.actualPeriod.end
@@ -447,7 +447,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: /
   * Intensiv: !
   * Notiz zur Kardinalität: nur für Intensiveinheiten auszufüllen, für die eine Intensivdokumentation (TISS-A/ SAPS3) übermittelt wird
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.admission.dischargeDisposition
@@ -458,7 +458,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: O*
   * Intensiv: 
   * Notiz zur Kardinalität: *zu befüllen, sofern dies auf Ebene der Landes- gesundheitsfonds festgelegt wird
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.participant:FachlichZustaendigeOrganisationseinheit.actor.resolve()
@@ -469,7 +469,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: O*
   * Intensiv: 
   * Notiz zur Kardinalität: *zu befüllen, sofern dies auf Ebene der Landes- gesundheitsfonds festgelegt wird
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.participant:PflegerischZustaendigeOrganisationseinheit.actor.resolve()
@@ -480,7 +480,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.admission.extension:Altersgruppe.extension:neugeborenes.value[x]
@@ -491,7 +491,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.admission.extension:Altersgruppe.extension:beiZugang.value[x]
@@ -502,7 +502,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: /
   * Intensiv: 
   * Notiz zur Kardinalität: * Nur für Fondshäuser und TBD: nur bei Tagesklammer?
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedTransferEncounterA
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.identifier:AufnahmezahlFunktionscodebezogen.value
@@ -538,7 +538,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.identifier:Aufnahmezahl.value
@@ -549,7 +549,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.identifier:DatensatzID.value
@@ -560,7 +560,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.actualPeriod.start
@@ -571,7 +571,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedCondition
   * FHIR Ressource: Condition
   * Pfad von der Ressource aus: Condition.code.coding:ICD10
@@ -582,7 +582,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedCondition
   * FHIR Ressource: Condition
   * Pfad von der Ressource aus: Condition.extension:Diagnosetyp
@@ -593,7 +593,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: /
   * Intensiv: 
   * Notiz zur Kardinalität: *zu befüllen, sofern dies im Rahmen der jährlich zu wartenden Abrechnungsmodelle oder von Modellprojekten der Bundesgesundheitsagentur vorgesehen ist
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedCondition
   * FHIR Ressource: Condition
   * Pfad von der Ressource aus: Condition.verificationStatus
@@ -604,7 +604,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: O*
   * Intensiv: 
   * Notiz zur Kardinalität: *ist für im Rahmen der jährlichen Wartung ausgewählte Diagnosen zu befüllen
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
   * Pfad von der Ressource aus: Claim.diagnosis.onAdmission
@@ -615,7 +615,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: /
   * Intensiv: 
   * Notiz zur Kardinalität: * Nur für Fondshäuser und TBD: nur bei Tagesklammer?
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedTransferEncounterA
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.identifier:AufnahmezahlFunktionscodebezogen.value
@@ -651,7 +651,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.identifier:Aufnahmezahl.value
@@ -662,7 +662,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.identifier:DatensatzID.value
@@ -673,7 +673,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.actualPeriod.start
@@ -684,7 +684,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedProcedure
   * FHIR Ressource: Procedure
   * Pfad von der Ressource aus: Procedure.code
@@ -695,7 +695,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedProcedure
   * FHIR Ressource: Procedure
   * Pfad von der Ressource aus: Procedure.bodySite
@@ -706,7 +706,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
   * Pfad von der Ressource aus: Claim.procedure.extension:AbrechnungsRelevanz
@@ -717,7 +717,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedProcedure
   * FHIR Ressource: Procedure
   * Pfad von der Ressource aus: Procedure.extension:Leistungsanzahl
@@ -728,7 +728,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedProcedure
   * FHIR Ressource: Procedure
   * Pfad von der Ressource aus: Procedure.occurrence[x]:occurrenceDateTime
@@ -739,7 +739,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: O*
   * Intensiv: 
   * Notiz zur Kardinalität: * Zwingend sofern systematisch erfasst
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedProcedure
   * FHIR Ressource: Procedure
   * Pfad von der Ressource aus: Procedure.occurrence[x]:occurrenceDateTime
@@ -750,7 +750,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: O[Inv.]*
   * Intensiv: 
   * Notiz zur Kardinalität: *Für alle Leistungen außer externe zu befüllen
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedProcedure
   * FHIR Ressource: Procedure
   * Pfad von der Ressource aus: Procedure.performer.actor.resolve()
@@ -761,7 +761,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: O[Inv.]*
   * Intensiv: 
   * Notiz zur Kardinalität: *Nur befüllt falls extern erbrachte Leistung
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedProcedure
   * FHIR Ressource: Procedure
   * Pfad von der Ressource aus: Procedure.performer.actor.resolve()
@@ -772,7 +772,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: /
   * Intensiv: 
   * Notiz zur Kardinalität: * Nur für Fondshäuser und TBD: nur bei Tagesklammer?
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedTransferEncounterA
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.identifier:AufnahmezahlFunktionscodebezogen.value
@@ -808,7 +808,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.identifier:Aufnahmezahl.value
@@ -819,7 +819,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.identifier:DatensatzID.value
@@ -830,7 +830,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.actualPeriod.start
@@ -841,7 +841,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
   * Pfad von der Ressource aus: Claim.diagnosisRelatedGroup
@@ -852,7 +852,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
   * Pfad von der Ressource aus: Claim.extension:DiagnoseKnoten
@@ -863,7 +863,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
   * Pfad von der Ressource aus: Claim.item:Leistungskomponente.quantity.value
@@ -874,7 +874,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
   * Pfad von der Ressource aus: Claim.item:Tageskomponente.quantity.value
@@ -885,7 +885,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
   * Pfad von der Ressource aus: Claim.item:PunkteBelagsdauerausreisserUntenLeistungskomponente.quantity.value
@@ -896,7 +896,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
   * Pfad von der Ressource aus: Claim.item:PunkteBelagsdauerausreisserUntenTageskomponente.quantity.value
@@ -907,7 +907,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
   * Pfad von der Ressource aus: Claim.item:ZusatzpunkteBelagsdauerausreisserNachOben.quantity.value
@@ -918,7 +918,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
   * Pfad von der Ressource aus: Claim.item:ZusatzpunkteIntensiv.quantity.value
@@ -929,7 +929,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
   * Pfad von der Ressource aus: Claim.item:ZusatzpunkteMehrfachleistungen.quantity.value
@@ -940,7 +940,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
   * Pfad von der Ressource aus: Claim.item:PunkteSpeziellerBereicheTageweise.quantity.value
@@ -951,7 +951,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedLKFRequest
   * FHIR Ressource: Claim
   * Pfad von der Ressource aus: Claim.item:Gesamtpunkte.quantity.value
@@ -987,7 +987,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.identifier:Aufnahmezahl.value
@@ -998,7 +998,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.identifier:DatensatzID.value
@@ -1009,7 +1009,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.actualPeriod.start
@@ -1078,7 +1078,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.identifier:Aufnahmezahl.value
@@ -1089,7 +1089,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.identifier:DatensatzID.value
@@ -1100,7 +1100,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Stationär: X
   * Intensiv: 
   * Notiz zur Kardinalität: /
-  * befüllt von: MopedKHActor
+  * befüllt von: MopedKAActor
   * Profile: MopedEncounter; MopedEncounterA; MopedEncounterAufnahmeS; MopedEncounterBund; MopedEncounterEntlassungS; MopedEncounterLGF; MopedEncounterS; MopedEncounterSV
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.actualPeriod.start

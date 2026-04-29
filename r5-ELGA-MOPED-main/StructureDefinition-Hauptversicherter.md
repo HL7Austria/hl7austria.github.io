@@ -16,7 +16,7 @@ MOPED Profil der Person Ressource für den Hauptversicherten
 
 **Usages:**
 
-* Use this Profile: [MOPED Input Bundle KH](StructureDefinition-MopedInputBundleKH.md)
+* Use this Profile: [MOPED Input Bundle KA](StructureDefinition-MopedInputBundleKA.md)
 * Refer to this Profile: [MOPED Composition](StructureDefinition-MopedComposition.md) and [MOPED Coverage](StructureDefinition-MopedCoverage.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/elga.moped|current/StructureDefinition/Hauptversicherter)
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-Hauptversicherter.cs
   "name" : "Hauptversicherter",
   "title" : "MOPED Hauptversicherter",
   "status" : "draft",
-  "date" : "2026-04-29T07:28:34+00:00",
+  "date" : "2026-04-29T09:14:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -102,7 +102,7 @@ Other representations of profile: [CSV](StructureDefinition-Hauptversicherter.cs
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
@@ -147,7 +147,7 @@ Other representations of profile: [CSV](StructureDefinition-Hauptversicherter.cs
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
@@ -190,7 +190,7 @@ Other representations of profile: [CSV](StructureDefinition-Hauptversicherter.cs
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
@@ -210,7 +210,7 @@ Other representations of profile: [CSV](StructureDefinition-Hauptversicherter.cs
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
@@ -230,7 +230,7 @@ Other representations of profile: [CSV](StructureDefinition-Hauptversicherter.cs
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
@@ -250,7 +250,7 @@ Other representations of profile: [CSV](StructureDefinition-Hauptversicherter.cs
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
@@ -270,7 +270,7 @@ Other representations of profile: [CSV](StructureDefinition-Hauptversicherter.cs
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],

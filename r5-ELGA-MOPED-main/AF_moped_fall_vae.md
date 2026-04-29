@@ -11,7 +11,7 @@ Die folgenden Diagramme veranschaulichen die möglichen Interaktionen mit der Mo
 
 | | |
 | :--- | :--- |
-| KH (Krankenhaus) | ✅ |
+| KA (Krankenhaus) | ✅ |
 | LGF (Landesgesundheitsfonds) | ❌ |
 | SV (Sozialversicherung) | ✅ |
 | Bund | ❌ |
@@ -44,7 +44,7 @@ Die SV hat die Möglichkeit die VAE unbefristet oder befristet abzugeben. Gibt e
 
 #### Negative VAE
 
-Aufgrund der eingelangten Aufnahme-/Ereignisanzeige erfolgt seitens SV eine negative Versichertenanspruchserklärung. Bei einer negativen Versichertenanspruchserklärung wird der jeweilige Ablehnungsgrund (Code) angeführt. Das KH prüft regelmäßig, ob es Ablehnungen der VAE seitens der SV gibt. Diese Fälle müssen bearbeitet werden. Im schlimmsten Fall muss der Patient die Rechnung als Selbstzahler selbst bezahlen. Ablehnungsgründe gibt es jedoch einige, die durchaus durch die Verwaltung im KH behoben werden können, so dass eine positive VAE durch die SV nach erneuter Anfrage in Folge möglich ist.
+Aufgrund der eingelangten Aufnahme-/Ereignisanzeige erfolgt seitens SV eine negative Versichertenanspruchserklärung. Bei einer negativen Versichertenanspruchserklärung wird der jeweilige Ablehnungsgrund (Code) angeführt. Die KAprüft regelmäßig, ob es Ablehnungen der VAE seitens der SV gibt. Diese Fälle müssen bearbeitet werden. Im schlimmsten Fall muss der Patient die Rechnung als Selbstzahler selbst bezahlen. Ablehnungsgründe gibt es jedoch einige, die durchaus durch die Verwaltung im KA behoben werden können, so dass eine positive VAE durch die SV nach erneuter Anfrage in Folge möglich ist.
 
 ###### Beispiel
 
@@ -77,7 +77,7 @@ TBD: Klärung ob diese Ausprägung noch nötig ist oder durch Moped obsolet wird
 
 #### Anfrage für Verlängerung
 
-Falls der stationäre Aufenthalt länger dauert als das angegebene Enddatum (Fristende) der bereits bewilligten VAE so muss das KH um eine Verlängerung ansuchen. Gibt es keine bewilligte VAE mit Fristende so kann die VAE auch nicht verlängert werden.
+Falls der stationäre Aufenthalt länger dauert als das angegebene Enddatum (Fristende) der bereits bewilligten VAE so muss die KA um eine Verlängerung ansuchen. Gibt es keine bewilligte VAE mit Fristende so kann die VAE auch nicht verlängert werden.
 
 | | |
 | :--- | :--- |
@@ -117,8 +117,8 @@ TBD
 * [VAERequestInitial](StructureDefinition-MopedVAERequestInitial.md)
 * [VAERequestVerlaengerung](StructureDefinition-MopedVAERequestVerlaengerung.md)
 * [VAEResponse](StructureDefinition-MopedVAEResponse.md)
-* [$update Bundle](StructureDefinition-MopedUpdateBundleKH.md)
-* [$anfragen Bundle](StructureDefinition-MopedAnfragenBundleKH.md)
+* [$update Bundle](StructureDefinition-MopedUpdateBundleKA.md)
+* [$anfragen Bundle](StructureDefinition-MopedAnfragenBundleKA.md)
 * [$antworten Bundle](StructureDefinition-MopedAntwortenBundleSV.md)
 
 ### Technische Hinweise
@@ -140,5 +140,5 @@ Die SV möchte benachrichtigt werden, wenn ein neuer VAERequest für sie bereitg
 
 ##### SubscriptionTopic: VAE wurde abgelehnt
 
-Das KH möchte benachrichtigt werden, wenn ein VAERequest abgelehnt wurde. Das zugehörige SubscriptionTopic wurde in [diesem Beispiel](SubscriptionTopic-VAEabgelehnt.json.md) definiert.
+Die KAmöchte benachrichtigt werden, wenn ein VAERequest abgelehnt wurde. Das zugehörige SubscriptionTopic wurde in [diesem Beispiel](SubscriptionTopic-VAEabgelehnt.json.md) definiert.
 

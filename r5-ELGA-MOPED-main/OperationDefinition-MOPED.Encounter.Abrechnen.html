@@ -466,7 +466,7 @@
 
 <h2 id="wer-ruft-diese-operation-in-welchem-zusammenhang-auf">Wer ruft diese Operation in welchem Zusammenhang auf?</h2>
 
-<p>Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $abrechnen Operation wird aufgerufen, wenn im Zuge des Falles angefallene LKF Punkte abgerechnet werden sollen.</p>
+<p>Die Operation wird vom Akteur Krankenhaus (KA) aufgerufen. Die $abrechnen Operation wird aufgerufen, wenn im Zuge des Falles angefallene LKF Punkte abgerechnet werden sollen.</p>
 
 <h2 id="voraussetzungen-für-den-aufruf">Voraussetzungen für den Aufruf</h2>
 
@@ -483,7 +483,7 @@
     <ul>
       <li><em>MopedLKFRequest.patient</em> mit Composition.subject befüllen</li>
       <li><em>MopedLKFRequest.insurance.coverage</em> mit <em>MopedComposition.section:Coverages.entry</em> befüllen</li>
-      <li><em>MopedLKFRequest.provider</em> mit <em>MopedComposition.section:zustaendigesKH</em> befüllen</li>
+      <li><em>MopedLKFRequest.provider</em> mit <em>MopedComposition.section:zustaendigeKA</em> befüllen</li>
       <li><em>MopedLKFRequest.insurer</em> mit <em>MopedComposition.section:zustaendigeSV</em> befüllen</li>
       <li><em>MopedLKFRequest.encounter</em> mit <em>MopedComposition.encounter</em> und allen TransferEncounter aus <em>MopedComposition.section:TransferEncounter</em> befüllen</li>
     </ul>
@@ -499,7 +499,7 @@
 
 <h2 id="weitere-hinweise">Weitere Hinweise</h2>
 <ol>
-  <li>Ein aktiver endgültiger LKFRequest ohne negative LKFResponse würde bedeuten, dass es bereits eine endgültige Meldung gibt (bereits bestätigt oder noch in Bearbeitung) -&gt; $abrechnen kann dann nur mehr nach Korrekturaufforderung inklusive ClaimResponse mit Ablehnung erneut aufgerufen werden. Dadurch wird sichergestellt, dass das KH nach einer endgültigen Meldung nur mehr nach Aufforderung des LGF Änderungen durchführen kann</li>
+  <li>Ein aktiver endgültiger LKFRequest ohne negative LKFResponse würde bedeuten, dass es bereits eine endgültige Meldung gibt (bereits bestätigt oder noch in Bearbeitung) -&gt; $abrechnen kann dann nur mehr nach Korrekturaufforderung inklusive ClaimResponse mit Ablehnung erneut aufgerufen werden. Dadurch wird sichergestellt, dass die KA nach einer endgültigen Meldung nur mehr nach Aufforderung des LGF Änderungen durchführen kann</li>
 </ol>
 
 <h2 id="annahmen-an-das-bes">Annahmen an das BeS</h2>
@@ -520,7 +520,7 @@
   
 
 
-  <div data-fhir="generated"><p class="res-header-id"/><a name="MOPED.Encounter.Abrechnen"> </a><a name="hcMOPED.Encounter.Abrechnen"> </a><p>URL: [base]/Composition/[id]/$abrechnen</p><h3>Parameters</h3><table class="grid" data-fhir="generated"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>Abrechnung</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/bundle.html">Bundle</a> (<a href="StructureDefinition-MopedAbrechnenBundleKH.html" title="https://elga.moped.at/StructureDefinition/MopedAbrechnenBundleKH">MOPED Abrechnen Bundle KH</a>)</td><td/><td><div><p>Der <em>Abrechnung</em> Parameter beinhaltet ein Bundle mit sämtlichen Details zur Abrechnung lt. MopedLKFRequest Profil.</p>
+  <div data-fhir="generated"><p class="res-header-id"/><a name="MOPED.Encounter.Abrechnen"> </a><a name="hcMOPED.Encounter.Abrechnen"> </a><p>URL: [base]/Composition/[id]/$abrechnen</p><h3>Parameters</h3><table class="grid" data-fhir="generated"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>Abrechnung</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/bundle.html">Bundle</a> (<a href="StructureDefinition-MopedAbrechnenBundleKA.html" title="https://elga.moped.at/StructureDefinition/MopedAbrechnenBundleKA">MOPED Abrechnen Bundle KA</a>)</td><td/><td><div><p>Der <em>Abrechnung</em> Parameter beinhaltet ein Bundle mit sämtlichen Details zur Abrechnung lt. MopedLKFRequest Profil.</p>
 </div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>
 </div></td></tr></table></div>
 
@@ -547,7 +547,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Wed, Apr 29, 2026 07:28+0000">2026-04-29</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Wed, Apr 29, 2026 09:14+0000">2026-04-29</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

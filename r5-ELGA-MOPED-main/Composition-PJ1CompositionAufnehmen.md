@@ -106,7 +106,7 @@ Profile: [MOPED Aufnahme Composition](StructureDefinition-MopedAufnahmeCompositi
     "code" : {
       "coding" : [{
         "system" : "https://elga.moped.at/CodeSystem/CompositionSectionsCS",
-        "code" : "KH"
+        "code" : "KA"
       }]
     },
     "entry" : [{

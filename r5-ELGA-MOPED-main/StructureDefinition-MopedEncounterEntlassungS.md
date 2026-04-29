@@ -16,7 +16,7 @@ MOPED Profil der Encounter Ressource für die Entlassung im stationären Bereich
 
 **Usages:**
 
-* Use this Profile: [MOPED Entlassen Bundle KH](StructureDefinition-MopedEntlassenBundle.md)
+* Use this Profile: [MOPED Entlassen Bundle KA](StructureDefinition-MopedEntlassenBundle.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/elga.moped|current/StructureDefinition/MopedEncounterEntlassungS)
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedEncounterEntlas
   "name" : "MopedEncounterEntlassungS",
   "title" : "MOPED Encounter Entlassung Stationär",
   "status" : "draft",
-  "date" : "2026-04-29T07:28:34+00:00",
+  "date" : "2026-04-29T09:14:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

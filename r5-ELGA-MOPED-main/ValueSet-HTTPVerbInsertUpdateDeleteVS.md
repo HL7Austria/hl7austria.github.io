@@ -16,7 +16,7 @@ HTTP Verben für das Einmelden von Ressourcen, welche nur initial eingemeldet un
 
  **References** 
 
-* [MOPED Input Bundle KH](StructureDefinition-MopedInputBundleKH.md)
+* [MOPED Input Bundle KA](StructureDefinition-MopedInputBundleKA.md)
 * [MOPED QuestionnaireResponse einmelden Bundle](StructureDefinition-MopedQuestionnaireResponseEinmeldenBundle.md)
 
 ### Logical Definition (CLD)
@@ -51,7 +51,7 @@ HTTP Verben für das Einmelden von Ressourcen, welche nur initial eingemeldet un
   "name" : "HTTPVerbInsertUpdateDeleteVS",
   "title" : "HTTP Verb Insert Update Delete",
   "status" : "draft",
-  "date" : "2026-04-29T07:28:34+00:00",
+  "date" : "2026-04-29T09:14:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

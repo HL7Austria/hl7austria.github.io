@@ -466,7 +466,7 @@
 
 <h2 id="wer-ruft-diese-operation-in-welchem-zusammenhang-auf">Wer ruft diese Operation in welchem Zusammenhang auf?</h2>
 
-<p>Die Operation wird vom Akteur Krankenhaus (KH) aufgerufen. Die $update Operation wird aufgerufen, wenn Informationen zum Fall aktualisiert,neu eingebracht oder gelöscht werden sollen.</p>
+<p>Die Operation wird vom Akteur Krankenhaus (KA) aufgerufen. Die $update Operation wird aufgerufen, wenn Informationen zum Fall aktualisiert,neu eingebracht oder gelöscht werden sollen.</p>
 
 <h2 id="voraussetzungen-für-den-aufruf">Voraussetzungen für den Aufruf</h2>
 <ul>
@@ -491,7 +491,7 @@
       <li>Diagnosen:
         <ul>
           <li>Existiert nach dem Ausführen des Transaction Bundles keine Hauptdiagnose mehr dann muss Composition.encounter auf den status = discharged gesetzt werden. Wird die Hauptdiagnose aktualisiert und existiert weiterhin so ist dies nicht notwendig.</li>
-          <li>Wird eine Haupt-, oder Nebendiagnose aktualisiert so muss falls ein aktiver LKFRequest existiert dessen Status auf cancelled gesetzt werden, da sich dadurch die LKF Punkte ändern und der alte Claim nicht mehr valide ist. Das KH muss daraufhin erneut $abrechnen.</li>
+          <li>Wird eine Haupt-, oder Nebendiagnose aktualisiert so muss falls ein aktiver LKFRequest existiert dessen Status auf cancelled gesetzt werden, da sich dadurch die LKF Punkte ändern und der alte Claim nicht mehr valide ist. Die KAmuss daraufhin erneut $abrechnen.</li>
         </ul>
       </li>
       <li>Coverage + Hauptversicherter: Beim Einbringen einer neuen Coverage muss die alte Coverage gelöscht und aus der Composition entfernt werden. Zusätzlich muss der Hauptversicherte (falls vorhanden) gelöscht und aus der Composition entfernt und ggf. durch den neuen Hauptversicherten ersetzt werden. Die Referenz auf die zuständige SV muss ebenfalls entfernt werden und durch den Coverage.insurer der neuen Coverage ersetzt werden sofern es sich nicht um eine Selbstzahlercoverage handelt. Falls ein aktiver VAERequest existiert, muss dessen Status auf cancelled gesetzt werden.</li>
@@ -519,7 +519,7 @@
   
 
 
-  <div data-fhir="generated"><p class="res-header-id"/><a name="MOPED.Daten.Update"> </a><a name="hcMOPED.Daten.Update"> </a><p>URL: [base]/Composition/[id]/$update</p><h3>Parameters</h3><table class="grid" data-fhir="generated"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>Update</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/bundle.html">Bundle</a> (<a href="StructureDefinition-MopedUpdateBundleKH.html" title="https://elga.moped.at/StructureDefinition/MopedUpdateBundleKH">MOPED Update Bundle KH</a>)</td><td/><td><div><p>Der <em>Update</em> Parameter beinhaltet ein Bundle mit den relevanten Ressourcen zum Fall die aktualisiert, eingebracht oder gelöscht werden sollen.</p>
+  <div data-fhir="generated"><p class="res-header-id"/><a name="MOPED.Daten.Update"> </a><a name="hcMOPED.Daten.Update"> </a><p>URL: [base]/Composition/[id]/$update</p><h3>Parameters</h3><table class="grid" data-fhir="generated"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>Update</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/bundle.html">Bundle</a> (<a href="StructureDefinition-MopedUpdateBundleKA.html" title="https://elga.moped.at/StructureDefinition/MopedUpdateBundleKA">MOPED Update Bundle KA</a>)</td><td/><td><div><p>Der <em>Update</em> Parameter beinhaltet ein Bundle mit den relevanten Ressourcen zum Fall die aktualisiert, eingebracht oder gelöscht werden sollen.</p>
 </div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R5/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>
 </div></td></tr></table><div/></div>
 
@@ -546,7 +546,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Wed, Apr 29, 2026 07:28+0000">2026-04-29</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Wed, Apr 29, 2026 09:14+0000">2026-04-29</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

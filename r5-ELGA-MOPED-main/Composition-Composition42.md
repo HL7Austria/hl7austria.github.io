@@ -23,7 +23,7 @@ Profile: [MOPED Composition](StructureDefinition-MopedComposition.md)
 | - | **Code** | **Value[x]** |
 | * | [UsageContextType: workflow](http://terminology.hl7.org/7.1.0/CodeSystem-usage-context-type.html#usage-context-type-workflow)(Workflow Setting) | Endgültige Freigabe |
 
-**author**: [Organization Testkrankenhaus](Organization-KHK999.md)
+**author**: [Organization Testkrankenhaus](Organization-KAK999.md)
 
 **title**: LKF Testdaten Fall
 
@@ -67,19 +67,19 @@ Profile: [MOPED Composition](StructureDefinition-MopedComposition.md)
     }
   }],
   "author" : [{
-    "reference" : "Organization/KHK999"
+    "reference" : "Organization/KAK999"
   }],
   "title" : "LKF Testdaten Fall",
   "section" : [{
-    "title" : "Zuständiges KH",
+    "title" : "Zuständige KA",
     "code" : {
       "coding" : [{
         "system" : "https://elga.moped.at/CodeSystem/CompositionSectionsCS",
-        "code" : "KH"
+        "code" : "KA"
       }]
     },
     "entry" : [{
-      "reference" : "Organization/KHK999"
+      "reference" : "Organization/KAK999"
     }]
   },
   {

@@ -21,7 +21,7 @@ Profile: [MOPED Encounter](StructureDefinition-MopedEncounter.md)
 
 **subject**: [Patient42 Patient42FamilienName Male, DoB: 1937-12-31 ( Social Security Number: 123456)](Patient-Patient42.md)
 
-**serviceProvider**: [Organization Testkrankenhaus](Organization-KHK999.md)
+**serviceProvider**: [Organization Testkrankenhaus](Organization-KAK999.md)
 
 **actualPeriod**: 2025-01-01 12:00:00+0200 --> 2025-01-04 12:00:00+0200
 
@@ -98,7 +98,7 @@ Profile: [MOPED Encounter](StructureDefinition-MopedEncounter.md)
     "reference" : "Patient/Patient42"
   },
   "serviceProvider" : {
-    "reference" : "Organization/KHK999"
+    "reference" : "Organization/KAK999"
   },
   "actualPeriod" : {
     "start" : "2025-01-01T12:00:00+02:00",

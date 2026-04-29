@@ -16,11 +16,11 @@ HTTP Verben für das Einmelden von Ressourcen, welche nur initial eingemeldet un
 
  **References** 
 
-* [MOPED Abrechnen Bundle KH](StructureDefinition-MopedAbrechnenBundleKH.md)
-* [MOPED Anfragen Bundle KH](StructureDefinition-MopedAnfragenBundleKH.md)
+* [MOPED Abrechnen Bundle KA](StructureDefinition-MopedAbrechnenBundleKA.md)
+* [MOPED Anfragen Bundle KA](StructureDefinition-MopedAnfragenBundleKA.md)
 * [MOPED Antworten Bundle SV](StructureDefinition-MopedAntwortenBundleSV.md)
 * [MOPED Entscheiden Bundle LGF](StructureDefinition-MopedEntscheidenLGFBundle.md)
-* [MOPED Input Bundle KH](StructureDefinition-MopedInputBundleKH.md)
+* [MOPED Input Bundle KA](StructureDefinition-MopedInputBundleKA.md)
 * [MOPED Melden Bundle LGF](StructureDefinition-MopedMeldenLGFBundle.md)
 
 ### Logical Definition (CLD)
@@ -55,7 +55,7 @@ HTTP Verben für das Einmelden von Ressourcen, welche nur initial eingemeldet un
   "name" : "HTTPVerbInsertOnlyVS",
   "title" : "HTTP Verb Insert Only",
   "status" : "draft",
-  "date" : "2026-04-29T07:28:34+00:00",
+  "date" : "2026-04-29T09:14:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

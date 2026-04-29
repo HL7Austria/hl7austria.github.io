@@ -11,7 +11,7 @@ Die folgenden Diagramme veranschaulichen die möglichen Interaktionen mit der Mo
 
 | | |
 | :--- | :--- |
-| KH (Krankenhaus) | ✅ |
+| KA (Krankenhaus) | ✅ |
 | LGF (Landesgesundheitsfonds) | ❌ |
 | SV (Sozialversicherung) | ❌ |
 | Bund | ❌ |

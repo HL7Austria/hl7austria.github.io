@@ -427,11 +427,11 @@ In diesem Bereich werden die grundlegenden Konzepte des Moped-Designs beschriebe
 </pre>
 
 <h4 id="optimistische-versionskontrolle-der-composition">Optimistische Versionskontrolle der Composition</h4>
-<p>In MOPED gilt bei allen fallbezogenen Operationen, die eine <code class="language-plaintext highlighter-rouge">Composition</code> referenzieren, das Prinzip der Optimistische Versionskontrolle. Jede Operation, die neue Informationen zum Fall ergänzt (z. B. <code class="language-plaintext highlighter-rouge">$update</code>, <code class="language-plaintext highlighter-rouge">$anfragen</code>, <code class="language-plaintext highlighter-rouge">$abrechnen</code>), erfordert die explizite Angabe der zugehörigen versionierten Composition ID. Dabei muss immer die vollständige, versionsspezifische ID der Composition angegeben werden, z. B.: <code class="language-plaintext highlighter-rouge">Composition/12345/_history/4</code>. Dies dient der Sicherstellung, dass der aufrufende Client mit dem aktuellsten Stand der Composition arbeitet. So wird verhindert, dass Daten auf veralteter Basis eingefügt oder verändert werden, wie es in verteilten Prozessen (z. B. SV, KH, LGF, Bund) passieren kann. Ist die angegebene Version nicht mehr die aktuellste, wird die Operation mit einem entsprechenden Fehler abgewiesen (i.e. <code class="language-plaintext highlighter-rouge">409 Conflict</code>). Der Client muss sich in diesem Fall die aktuelle Version der <code class="language-plaintext highlighter-rouge">Composition</code> abrufen, den Kontext prüfen und die Operation ggf. erneut durchführen. Damit ist der Moped-Datensatz robust gegenüber parallelen Zugriffen und gewährleistet die Konsistenz fallbezogener Informationen. Dieses Prinzip entspricht der gängigen Praxis in REST-Systemen (z. B. <code class="language-plaintext highlighter-rouge">PUT</code> mit <code class="language-plaintext highlighter-rouge">If-Match</code> in HTTP), bei der ebenfalls geprüft wird, ob der Client die aktuelle Version kennt, bevor Änderungen übernommen werden. Beispielablauf:</p>
+<p>In MOPED gilt bei allen fallbezogenen Operationen, die eine <code class="language-plaintext highlighter-rouge">Composition</code> referenzieren, das Prinzip der Optimistische Versionskontrolle. Jede Operation, die neue Informationen zum Fall ergänzt (z. B. <code class="language-plaintext highlighter-rouge">$update</code>, <code class="language-plaintext highlighter-rouge">$anfragen</code>, <code class="language-plaintext highlighter-rouge">$abrechnen</code>), erfordert die explizite Angabe der zugehörigen versionierten Composition ID. Dabei muss immer die vollständige, versionsspezifische ID der Composition angegeben werden, z. B.: <code class="language-plaintext highlighter-rouge">Composition/12345/_history/4</code>. Dies dient der Sicherstellung, dass der aufrufende Client mit dem aktuellsten Stand der Composition arbeitet. So wird verhindert, dass Daten auf veralteter Basis eingefügt oder verändert werden, wie es in verteilten Prozessen (z. B. SV, KA, LGF, Bund) passieren kann. Ist die angegebene Version nicht mehr die aktuellste, wird die Operation mit einem entsprechenden Fehler abgewiesen (i.e. <code class="language-plaintext highlighter-rouge">409 Conflict</code>). Der Client muss sich in diesem Fall die aktuelle Version der <code class="language-plaintext highlighter-rouge">Composition</code> abrufen, den Kontext prüfen und die Operation ggf. erneut durchführen. Damit ist der Moped-Datensatz robust gegenüber parallelen Zugriffen und gewährleistet die Konsistenz fallbezogener Informationen. Dieses Prinzip entspricht der gängigen Praxis in REST-Systemen (z. B. <code class="language-plaintext highlighter-rouge">PUT</code> mit <code class="language-plaintext highlighter-rouge">If-Match</code> in HTTP), bei der ebenfalls geprüft wird, ob der Client die aktuelle Version kennt, bevor Änderungen übernommen werden. Beispielablauf:</p>
 
 <ol>
   <li>Client SV lädt <code class="language-plaintext highlighter-rouge">Composition/12345/_history/4</code></li>
-  <li>Währenddessen wird Version 5 durch ein anderes System (Client KH) erzeugt (Hinweis: Dies löst in der Regel eine Notification aus, die den folgenden Konflikt bereits clientseitig vermeiden soll.)</li>
+  <li>Währenddessen wird Version 5 durch ein anderes System (Client KA) erzeugt (Hinweis: Dies löst in der Regel eine Notification aus, die den folgenden Konflikt bereits clientseitig vermeiden soll.)</li>
   <li>Der Client SV sendet eine VAE mit Bezug auf <code class="language-plaintext highlighter-rouge">Composition/12345/_history/4</code></li>
   <li>➜ Server lehnt ab: Version ist nicht mehr aktuell</li>
 </ol>
@@ -508,7 +508,7 @@ graph TD
     <tr>
       <td><code class="language-plaintext highlighter-rouge">Provenance.agent.onBehalfOf</code></td>
       <td>Institution im Auftrag</td>
-      <td><code class="language-plaintext highlighter-rouge">Organization/HJKH</code> (Krankenhaus)</td>
+      <td><code class="language-plaintext highlighter-rouge">Organization/HJKA</code> (Krankenhaus)</td>
       <td>#</td>
     </tr>
   </tbody>
@@ -591,7 +591,7 @@ Dies schützt vor unabsichtlicher Manipulation und sichert die Datenintegrität 
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Wed, Apr 29, 2026 07:28+0000">2026-04-29</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Wed, Apr 29, 2026 09:14+0000">2026-04-29</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

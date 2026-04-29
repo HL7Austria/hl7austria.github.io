@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedEncounterA.csv)
   "name" : "MopedEncounterA",
   "title" : "MOPED Encounter Ambulant",
   "status" : "draft",
-  "date" : "2026-04-29T07:28:34+00:00",
+  "date" : "2026-04-29T09:14:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -16,7 +16,7 @@ MOPED Profil der Procedure Ressource für die LDF-Abrechnung
 
 **Usages:**
 
-* Use this Profile: [MOPED Input Bundle KH](StructureDefinition-MopedInputBundleKH.md)
+* Use this Profile: [MOPED Input Bundle KA](StructureDefinition-MopedInputBundleKA.md)
 * Refer to this Profile: [MOPED Composition](StructureDefinition-MopedComposition.md) and [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md)
 * Examples for this Profile: [Procedure/PJ1Procedure1](Procedure-PJ1Procedure1.md), [Procedure/PJ2Procedure1](Procedure-PJ2Procedure1.md) and [Procedure/PJ2Procedure2](Procedure-PJ2Procedure2.md)
 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedProcedure.csv),
   "name" : "MopedProcedure",
   "title" : "MOPED Procedure",
   "status" : "draft",
-  "date" : "2026-04-29T07:28:34+00:00",
+  "date" : "2026-04-29T09:14:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -74,9 +74,9 @@ Other representations of profile: [CSV](StructureDefinition-MopedProcedure.csv),
       "id" : "Procedure",
       "path" : "Procedure",
       "constraint" : [{
-        "key" : "moped-externe-Leistung-KH",
+        "key" : "moped-externe-Leistung-KA",
         "severity" : "error",
-        "human" : "Wird bei performer.actor eine KHOrganization angegeben so muss sich diese unterscheiden von der referenzierten Krankenanstalt in perfomer.onBehalfOf",
+        "human" : "Wird bei performer.actor eine KAOrganization angegeben so muss sich diese unterscheiden von der referenzierten Krankenanstalt in perfomer.onBehalfOf",
         "source" : "https://elga.moped.at/StructureDefinition/MopedProcedure"
       }]
     },
@@ -102,7 +102,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedProcedure.csv),
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
@@ -159,7 +159,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedProcedure.csv),
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
@@ -246,7 +246,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedProcedure.csv),
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
@@ -282,7 +282,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedProcedure.csv),
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
@@ -290,8 +290,8 @@ Other representations of profile: [CSV](StructureDefinition-MopedProcedure.csv),
       "short" : "LKF: Funktionscode/Fachgebiet leistungserbringend; LKF: Krankenanstaltennummer leistungserbringend; Referenz auf die Abteilung mit Funktionscode/Fachgebiet leistungserbringend oder die Krankenanstalt mit Krankenanstaltennummer leistungserbringend bei extern erbrachten Leistungen",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedKHOrganisationseinheit",
-        "https://elga.moped.at/StructureDefinition/KHOrganization"]
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedKAOrganisationseinheit",
+        "https://elga.moped.at/StructureDefinition/KAOrganization"]
       }],
       "mapping" : [{
         "identity" : "LKF",
@@ -320,7 +320,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedProcedure.csv),
       "min" : 1,
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KHOrganization"]
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KAOrganization"]
       }]
     },
     {
@@ -332,7 +332,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedProcedure.csv),
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],

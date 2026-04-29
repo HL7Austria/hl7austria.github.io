@@ -16,7 +16,7 @@ MOPED Profil für QuestionnaireResponses die im Kontext von Moped mit Fallbezug 
 
 **Usages:**
 
-* Use this Profile: [MOPED Input Bundle KH](StructureDefinition-MopedInputBundleKH.md)
+* Use this Profile: [MOPED Input Bundle KA](StructureDefinition-MopedInputBundleKA.md)
 * Refer to this Profile: [MOPED Composition](StructureDefinition-MopedComposition.md)
 * Examples for this Profile: [QuestionnaireResponse/TISSAQuestionnaireResponse](QuestionnaireResponse-TISSAQuestionnaireResponse.md) and [QuestionnaireResponse/Test2SAPS3QuestionnaireResponse1](QuestionnaireResponse-Test2SAPS3QuestionnaireResponse1.md)
 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedQuestionnaireRe
   "name" : "MopedQuestionnaireResponseFallbezogen",
   "title" : "Moped QuestionnaireResponse fallbezogen",
   "status" : "draft",
-  "date" : "2026-04-29T07:28:34+00:00",
+  "date" : "2026-04-29T09:14:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -89,7 +89,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedQuestionnaireRe
       "min" : 1,
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KHOrganization"]
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KAOrganization"]
       }]
     },
     {

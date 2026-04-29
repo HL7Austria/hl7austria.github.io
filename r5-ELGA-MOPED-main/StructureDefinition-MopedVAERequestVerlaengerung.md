@@ -16,7 +16,7 @@ MOPED Profil für die Verlängerung der Versichertenanspruchserklärung (VAE)
 
 **Usages:**
 
-* Use this Profile: [MOPED Anfragen Bundle KH](StructureDefinition-MopedAnfragenBundleKH.md)
+* Use this Profile: [MOPED Anfragen Bundle KA](StructureDefinition-MopedAnfragenBundleKA.md)
 * Refer to this Profile: [MOPED Composition](StructureDefinition-MopedComposition.md), [MOPED VAERequest für die Verlängerung der VAE](StructureDefinition-MopedVAERequestVerlaengerung.md) and [MOPED VAEResponse](StructureDefinition-MopedVAEResponse.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/elga.moped|current/StructureDefinition/MopedVAERequestVerlaengerung)
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedVAERequestVerla
   "name" : "MopedVAERequestVerlaengerung",
   "title" : "MOPED VAERequest für die Verlängerung der VAE",
   "status" : "draft",
-  "date" : "2026-04-29T07:28:34+00:00",
+  "date" : "2026-04-29T09:14:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -78,7 +78,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedVAERequestVerla
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         },
         {
           "url" : "code",
@@ -86,7 +86,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedVAERequestVerla
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
@@ -107,7 +107,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedVAERequestVerla
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         },
         {
           "url" : "code",
@@ -115,7 +115,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedVAERequestVerla
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
@@ -135,7 +135,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedVAERequestVerla
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
@@ -169,7 +169,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedVAERequestVerla
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
@@ -210,7 +210,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedVAERequestVerla
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],

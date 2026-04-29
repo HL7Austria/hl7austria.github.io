@@ -11,7 +11,7 @@ Die folgenden Diagramme veranschaulichen die möglichen Interaktionen mit der Mo
 
 | | |
 | :--- | :--- |
-| KH (Krankenhaus) | ✅ |
+| KA (Krankenanstalt) | ✅ |
 | LGF (Landesgesundheitsfonds) | ❌ |
 | SV (Sozialversicherung) | ❌ |
 | Bund | ❌ |
@@ -86,7 +86,7 @@ Leistungen, Diagnosen oder andere abrechnungsrelevante Informationen müssen im 
 
 ### Relevante Profile
 
-* [$abrechnen Bundle](StructureDefinition-MopedAbrechnenBundleKH.md)
+* [$abrechnen Bundle](StructureDefinition-MopedAbrechnenBundleKA.md)
 
 ### Technische Hinweise
 

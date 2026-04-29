@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedARKRequest.csv)
   "name" : "MopedARKRequest",
   "title" : "MOPED ARKRequest",
   "status" : "draft",
-  "date" : "2026-04-29T07:28:34+00:00",
+  "date" : "2026-04-29T09:14:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -267,7 +267,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedARKRequest.csv)
       "min" : 1,
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KHOrganization"]
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/KAOrganization"]
       }]
     },
     {

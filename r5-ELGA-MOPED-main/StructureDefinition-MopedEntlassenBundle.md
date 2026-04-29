@@ -1,10 +1,10 @@
-# ELGA.MOPED\MOPED Entlassen Bundle KH - FHIR® v5.0.0
+# ELGA.MOPED\MOPED Entlassen Bundle KA - FHIR® v5.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **MOPED Entlassen Bundle KH**
+* **MOPED Entlassen Bundle KA**
 
-## Resource Profile: MOPED Entlassen Bundle KH 
+## Resource Profile: MOPED Entlassen Bundle KA 
 
 | | | |
 | :--- | :--- | :--- |
@@ -39,9 +39,9 @@ Other representations of profile: [CSV](StructureDefinition-MopedEntlassenBundle
   "url" : "https://elga.moped.at/StructureDefinition/MopedEntlassenBundle",
   "version" : "0.1.0",
   "name" : "MopedEntlassenBundle",
-  "title" : "MOPED Entlassen Bundle KH",
+  "title" : "MOPED Entlassen Bundle KA",
   "status" : "draft",
-  "date" : "2026-04-29T07:28:34+00:00",
+  "date" : "2026-04-29T09:14:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -55,7 +55,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedEntlassenBundle
   "kind" : "resource",
   "abstract" : false,
   "type" : "Bundle",
-  "baseDefinition" : "https://elga.moped.at/StructureDefinition/MopedUpdateBundleKH",
+  "baseDefinition" : "https://elga.moped.at/StructureDefinition/MopedUpdateBundleKA",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{

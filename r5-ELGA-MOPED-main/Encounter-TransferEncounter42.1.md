@@ -17,7 +17,7 @@ Profile: [MOPED TransferEncounter](StructureDefinition-MopedTransferEncounter.md
 | | |
 | :--- | :--- |
 | - | **Reference** |
-| * | [HealthcareService: extension = ; identifier = http://example.org/lkf-system/funktionscode#111111,http://example.org/lkf-system/funktionssubcode#00; type = Hospital Services](HealthcareService-KHK999ABT11111100.md) |
+| * | [HealthcareService: extension = ; identifier = http://example.org/lkf-system/funktionscode#111111,http://example.org/lkf-system/funktionssubcode#00; type = Hospital Services](HealthcareService-KAK999ABT11111100.md) |
 
 **subject**: [Patient42 Patient42FamilienName Male, DoB: 1937-12-31 ( Social Security Number: 123456)](Patient-Patient42.md)
 
@@ -52,7 +52,7 @@ Profile: [MOPED TransferEncounter](StructureDefinition-MopedTransferEncounter.md
   }],
   "serviceType" : [{
     "reference" : {
-      "reference" : "HealthcareService/KHK999ABT11111100"
+      "reference" : "HealthcareService/KAK999ABT11111100"
     }
   }],
   "subject" : {

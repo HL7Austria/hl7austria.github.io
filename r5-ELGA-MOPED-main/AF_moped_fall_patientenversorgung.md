@@ -11,7 +11,7 @@ Die folgenden Diagramme veranschaulichen die möglichen Interaktionen mit der Mo
 
 | | |
 | :--- | :--- |
-| KH (Krankenhaus) | ✅ |
+| KA (Krankenhaus) | ✅ |
 | LGF (Landesgesundheitsfonds) | ❌ |
 | SV (Sozialversicherung) | ❌ |
 | Bund | ❌ |
@@ -114,7 +114,7 @@ TBD: gibt es einen Teil der Registermeldung die bei ambulanter Nachbehandlung ei
 
 ### Relevante Profile
 
-* [$update Bundle](StructureDefinition-MopedUpdateBundleKH.md)
+* [$update Bundle](StructureDefinition-MopedUpdateBundleKA.md)
 * [SAPS3 Questionnaire](Questionnaire-LKFSAPS3Questionnaire.md)
 * [TISS-A Questionnaire](Questionnaire-LKFTISSAQuestionnaire.md)
 

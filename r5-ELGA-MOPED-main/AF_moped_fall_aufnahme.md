@@ -11,7 +11,7 @@ Die folgenden Diagramme veranschaulichen die möglichen Interaktionen mit der Mo
 
 | | |
 | :--- | :--- |
-| KH (Krankenhaus) | ✅ |
+| KA (Krankenhaus) | ✅ |
 | LGF (Landesgesundheitsfonds) | ❌ |
 | SV (Sozialversicherung) | ❌ |
 | Bund | ❌ |
@@ -92,7 +92,7 @@ TBD - ein Neugeborenes hat oft noch kein bPK und keine Versicherungsdaten. Hat e
 
 ##### Beschreibung
 
-Kommt ein Patient durch eine Überweisung in das Krankenhaus, so muss der Überweiser mit angegeben werden. GDAs aus Österreich sind in Moped als Stammdaten hinterlegt und können referenziert werden. Für ausländische GDAs muss eine neue Organization-Ressource mit den Details mitgeliefert werden.
+Kommt ein Patient durch eine Überweisung in die Krankenanstalt, so muss der Überweiser mit angegeben werden. GDAs aus Österreich sind in Moped als Stammdaten hinterlegt und können referenziert werden. Für ausländische GDAs muss eine neue Organization-Ressource mit den Details mitgeliefert werden.
 
 | | |
 | :--- | :--- |
@@ -114,7 +114,7 @@ TBD: Es muss die richtige Aufnahmeart vergeben werden und die überweisende Orga
 
 ### Relevante Profile
 
-* [$aufnahme Bundle](StructureDefinition-MopedUpdateBundleKH.md)
+* [$aufnahme Bundle](StructureDefinition-MopedUpdateBundleKA.md)
 * [Patientenressource](TBD)
 * [Encounter Stationär](StructureDefinition-MopedEncounterS.md)
 * [Encounter Ambulant](TBD)

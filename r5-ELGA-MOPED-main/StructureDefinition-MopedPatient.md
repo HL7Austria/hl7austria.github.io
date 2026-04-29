@@ -17,7 +17,7 @@ MOPED Profil der Patient Ressource
 **Usages:**
 
 * Derived from this Profile: [MOPED Patient Bund](StructureDefinition-MopedPatientBund.md), [MOPED Patient LGF](StructureDefinition-MopedPatientLGF.md) and [MOPED Patient SV](StructureDefinition-MopedPatientSV.md)
-* Use this Profile: [MOPED Input Bundle KH](StructureDefinition-MopedInputBundleKH.md)
+* Use this Profile: [MOPED Input Bundle KA](StructureDefinition-MopedInputBundleKA.md)
 * Refer to this Profile: [MOPED Hauptversicherter](StructureDefinition-Hauptversicherter.md), [MOPED ARKRequest](StructureDefinition-MopedARKRequest.md), [MOPED ARKResponse](StructureDefinition-MopedARKResponse.md), [MOPED Composition](StructureDefinition-MopedComposition.md)... Show 11 more, [MOPED Condition](StructureDefinition-MopedCondition.md), [MOPED Coverage](StructureDefinition-MopedCoverage.md), [MOPED Coverage für Selbstzahler](StructureDefinition-MopedCoverageSelbstzahler.md), [MOPED Encounter](StructureDefinition-MopedEncounter.md), [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md), [MOPED LKFResponse](StructureDefinition-MopedLKFResponse.md), [MOPED Procedure](StructureDefinition-MopedProcedure.md), [Moped QuestionnaireResponse fallbezogen](StructureDefinition-MopedQuestionnaireResponseFallbezogen.md), [MOPED TransferEncounter](StructureDefinition-MopedTransferEncounter.md), [MOPED VAERequest](StructureDefinition-MopedVAERequest.md) and [MOPED VAEResponse](StructureDefinition-MopedVAEResponse.md)
 * Examples for this Profile: [Patient/PJ1Patient](Patient-PJ1Patient.md), [Patient/PJ2Patient](Patient-PJ2Patient.md) and [Patient/Test1PatientOhneMaskierung](Patient-Test1PatientOhneMaskierung.md)
 
@@ -44,7 +44,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedPatient.csv), [
   "name" : "MopedPatient",
   "title" : "MOPED Patient",
   "status" : "draft",
-  "date" : "2026-04-29T07:28:34+00:00",
+  "date" : "2026-04-29T09:14:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -80,7 +80,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedPatient.csv), [
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
@@ -109,7 +109,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedPatient.csv), [
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
@@ -134,7 +134,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedPatient.csv), [
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
@@ -162,7 +162,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedPatient.csv), [
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
@@ -190,7 +190,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedPatient.csv), [
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
@@ -222,7 +222,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedPatient.csv), [
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
@@ -254,7 +254,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedPatient.csv), [
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
@@ -275,7 +275,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedPatient.csv), [
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
@@ -296,7 +296,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedPatient.csv), [
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
@@ -316,7 +316,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedPatient.csv), [
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
@@ -344,7 +344,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedPatient.csv), [
         },
         {
           "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKHActor"
+          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedKAActor"
         }],
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],

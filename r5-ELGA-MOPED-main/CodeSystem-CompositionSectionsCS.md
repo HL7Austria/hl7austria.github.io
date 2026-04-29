@@ -32,7 +32,7 @@ CodeSystem für die Moped Sections der Composition Ressource
   "title" : "Moped Composition Sections",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-04-29T07:28:34+00:00",
+  "date" : "2026-04-29T09:14:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -54,8 +54,8 @@ CodeSystem für die Moped Sections der Composition Ressource
     "display" : "Zuständiger LGF"
   },
   {
-    "code" : "KH",
-    "display" : "Zuständiges KH"
+    "code" : "KA",
+    "display" : "Zuständige KA"
   },
   {
     "code" : "ABT",

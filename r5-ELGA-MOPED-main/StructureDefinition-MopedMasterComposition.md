@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedMasterCompositi
   "title" : "MOPED Master Composition",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-04-29T07:28:34+00:00",
+  "date" : "2026-04-29T09:14:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -97,13 +97,13 @@ Other representations of profile: [CSV](StructureDefinition-MopedMasterCompositi
         "source" : "https://elga.moped.at/StructureDefinition/MopedMasterComposition"
       },
       {
-        "key" : "moped-master-author-ist-gleich-haupt-KH",
+        "key" : "moped-master-author-ist-gleich-haupt-KA",
         "severity" : "error",
-        "human" : "Der Author muss dieselbe Organisation sein wie das zustaendige KH",
+        "human" : "Der Author muss dieselbe Organisation sein wie die zustaendige KA",
         "source" : "https://elga.moped.at/StructureDefinition/MopedMasterComposition"
       },
       {
-        "key" : "moped-master-alle-KH-referenzen-gleich",
+        "key" : "moped-master-alle-KA-referenzen-gleich",
         "severity" : "error",
         "human" : "Alle referenzierten Krankenanstalten müssen identisch sein",
         "source" : "https://elga.moped.at/StructureDefinition/MopedMasterComposition"

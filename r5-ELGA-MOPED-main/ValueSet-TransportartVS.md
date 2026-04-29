@@ -51,7 +51,7 @@ ValueSet für die Transportart des Patienten
   "title" : "Transportart",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-04-29T07:28:34+00:00",
+  "date" : "2026-04-29T09:14:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

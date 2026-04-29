@@ -19,8 +19,8 @@ MOPED Extension für akzeptierte Errors und Warnings
 
 **Usages:**
 
-* Use this Extension: [MOPED KH Organisationseinheiten](StructureDefinition-MopedKHOrganisationseinheit.md)
-* Examples for this Extension: [HealthcareService/AbteilungHerzJesu1](HealthcareService-AbteilungHerzJesu1.md), [HealthcareService/KHK999ABT11111100](HealthcareService-KHK999ABT11111100.md), [HealthcareService/KHK999ABT12111100](HealthcareService-KHK999ABT12111100.md), [HealthcareService/KHK999ABT12118102](HealthcareService-KHK999ABT12118102.md)... Show 5 more, [HealthcareService/KHK999ABT16075000](HealthcareService-KHK999ABT16075000.md), [HealthcareService/KHK999ABT16111111](HealthcareService-KHK999ABT16111111.md), [HealthcareService/KHK999ABT16111112](HealthcareService-KHK999ABT16111112.md), [HealthcareService/KHK999ABT16211100](HealthcareService-KHK999ABT16211100.md) and [HealthcareService/KHK999ABT16518011](HealthcareService-KHK999ABT16518011.md)
+* Use this Extension: [MOPED KA Organisationseinheiten](StructureDefinition-MopedKAOrganisationseinheit.md)
+* Examples for this Extension: [HealthcareService/AbteilungHerzJesu1](HealthcareService-AbteilungHerzJesu1.md), [HealthcareService/KAK999ABT11111100](HealthcareService-KAK999ABT11111100.md), [HealthcareService/KAK999ABT12111100](HealthcareService-KAK999ABT12111100.md), [HealthcareService/KAK999ABT12118102](HealthcareService-KAK999ABT12118102.md)... Show 5 more, [HealthcareService/KAK999ABT16075000](HealthcareService-KAK999ABT16075000.md), [HealthcareService/KAK999ABT16111111](HealthcareService-KAK999ABT16111111.md), [HealthcareService/KAK999ABT16111112](HealthcareService-KAK999ABT16111112.md), [HealthcareService/KAK999ABT16211100](HealthcareService-KAK999ABT16211100.md) and [HealthcareService/KAK999ABT16518011](HealthcareService-KAK999ABT16518011.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/elga.moped|current/StructureDefinition/moped-ext-Kostenstelle)
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-moped-ext-Kostenstel
   "name" : "Kostenstelle",
   "title" : "Kostenstelle",
   "status" : "draft",
-  "date" : "2026-04-29T07:28:34+00:00",
+  "date" : "2026-04-29T09:14:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -68,7 +68,7 @@ Other representations of profile: [CSV](StructureDefinition-moped-ext-Kostenstel
   "abstract" : false,
   "context" : [{
     "type" : "element",
-    "expression" : "https://elga.moped.at/StructureDefinition/MopedKHOrganisationseinheit#HealthcareService"
+    "expression" : "https://elga.moped.at/StructureDefinition/MopedKAOrganisationseinheit#HealthcareService"
   }],
   "type" : "Extension",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
