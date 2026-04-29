@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag | *Version*:0.1.1 | |
-| Draft as of 2026-04-28 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMRPlaneintrag |
+| Draft as of 2026-04-29 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMRPlaneintrag |
 
  
 Ein Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine "MedicationRequest"-Ressource abgebildet. Die Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained Medication-Ressource (inline, d.h. innerhalb der Ressource), dokumentiert wird. Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstellung einer geplanten Abgabe dienen. Es werden R5-Backport-Extensions verwendet. 
@@ -17,7 +17,7 @@ Ein Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers bzw. einer 
 **Usages:**
 
 * Use this Profile: [ELGA e-Med Medikationsplan Collection Bundle](StructureDefinition-at-emed-bundle-medikationsplan.md) and [ELGA e-Med Medikationsplan Transaction Bundle](StructureDefinition-at-emed-bundle-tx-medikationsplan.md)
-* Refer to this Profile: [ELGA e-Med Medikationsplan](StructureDefinition-at-emed-list-medikationsplan.md) and [ELGA e-Med Geplante Abgabe](StructureDefinition-at-emed-mr-geplante-abgabe.md)
+* Refer to this Profile: [AT ELGA Core List](StructureDefinition-at-elga-core-list.md) and [ELGA e-Med Geplante Abgabe](StructureDefinition-at-emed-mr-geplante-abgabe.md)
 * Examples for this Profile: [MedicationRequest/At-Emed-Example-Mr-Planeintrag](MedicationRequest-At-Emed-Example-Mr-Planeintrag.md), [MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-01](MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-01.md), [MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-02](MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-02.md) and [MedicationRequest/At-Emed-Journey-05-b-Mr-Planeintrag-01](MedicationRequest-At-Emed-Journey-05-b-Mr-Planeintrag-01.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/at-emed-mr-planeintrag)
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
   "name" : "AtEmedMRPlaneintrag",
   "title" : "ELGA e-Med Planeintrag",
   "status" : "draft",
-  "date" : "2026-04-28T11:58:02+00:00",
+  "date" : "2026-04-29T14:27:58+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -165,9 +165,16 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
       }
     },
     {
-      "id" : "MedicationRequest.statusReason",
-      "path" : "MedicationRequest.statusReason",
-      "short" : "Grund für den aktuellen Status des Medikationsplaneintrags: (ex) https://hl7.org/fhir/R4/valueset-medicationrequest-status-reason.html."
+      "id" : "MedicationRequest.statusReason.coding",
+      "path" : "MedicationRequest.statusReason.coding",
+      "short" : "Codierter Grund für den aktuellen Status des Medikationsplaneintrags, z.B. warum ein Medikament abgesetzt wurde. Keine codierte Angabe im Medikationsplaneintrag.",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationRequest.statusReason.text",
+      "path" : "MedicationRequest.statusReason.text",
+      "short" : "Grund für den aktuellen Status des Medikationsplaneintrags (Freitext), z.B. warum ein Medikament abgesetzt wurde.",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.intent",
@@ -214,21 +221,22 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
         "ordered" : false,
         "rules" : "open"
       },
-      "min" : 1,
-      "mustSupport" : true
+      "min" : 1
     },
     {
       "id" : "MedicationRequest.reported[x]:reportedReference",
       "path" : "MedicationRequest.reported[x]",
       "sliceName" : "reportedReference",
-      "short" : "Im Falle einer Fremdmedikation Angabe einer Referenz auf: (Patient | Practitioner | PractitionerRole | RelatedPerson | Organization)",
+      "short" : "Im Falle einer Fremdmedikation Angabe einer Referenz auf: (Patient | Practitioner | PractitionerRole | RelatedPerson | Organization). Keine Verwendung im Medikationsplan.",
       "min" : 0,
-      "max" : "1",
+      "max" : "0",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Patient",
         "http://hl7.org/fhir/StructureDefinition/Practitioner",
-        "http://hl7.org/fhir/StructureDefinition/PractitionerRole"]
+        "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
+        "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+        "http://hl7.org/fhir/StructureDefinition/Organization"]
       }]
     },
     {
@@ -236,11 +244,12 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
       "path" : "MedicationRequest.reported[x]",
       "sliceName" : "reportedBoolean",
       "short" : "TRUE im Falle der Dokumentation von Fremdmedikation (ein anderer Arzt hat das Medikament ursprünglich verordnet), sonst FALSE.",
-      "min" : 0,
+      "min" : 1,
       "max" : "1",
       "type" : [{
         "code" : "boolean"
-      }]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.medication[x]",

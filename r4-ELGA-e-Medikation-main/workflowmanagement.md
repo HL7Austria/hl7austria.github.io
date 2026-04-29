@@ -63,7 +63,12 @@ Da der Status eines Medikationsplaneintrags im Medikationsplan auf **zwei Ebenen
 
 #### Status des MedicationRequests in der geplanten Abgabe
 
-In Arbeit.
+| | |
+| :--- | :--- |
+| **active** | Neue geplante Abgabe |
+| **stopped** | geplante Abgabe wird gestoppt |
+| **completed** | geplante Abgabe beendet |
+| **entered-in-error** | geplante Abgabe storniert |
 
 #### Status des MedicationDispense in der durchgeführten Abgabe
 

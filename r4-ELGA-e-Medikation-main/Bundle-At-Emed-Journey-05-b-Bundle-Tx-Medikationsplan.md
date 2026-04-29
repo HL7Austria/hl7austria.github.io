@@ -33,7 +33,7 @@
       },
       "text" : {
         "status" : "generated",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"List_At-Emed-Journey-05-b-List-Aenderung\"> </a><p class=\"res-header-id\"><b>Generated Narrative: List At-Emed-Journey-05-b-List-Aenderung</b></p><a name=\"At-Emed-Journey-05-b-List-Aenderung\"> </a><a name=\"hcAt-Emed-Journey-05-b-List-Aenderung\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-emed-list-medikationsplan.html\">ELGA e-Med Medikationsplan</a></p></div><table class=\"clstu\"><tr><td>Date: 2026-03-10 13:20:00+0000 </td><td>Mode: Working List </td><td>Status: Current </td><td>Code: Medikationsplan </td></tr><tr><td>Subject: <a href=\"Patient-At-Emed-Example-Patient-01.html\">Max Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</a>Source: Order: Sorted by User </td></tr></table><table class=\"grid\"><tr style=\"backgound-color: #eeeeee\"><td><b>Items</b></td><td>Date</td><td>Flag</td></tr><tr><td><a href=\"MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-02.html\">MedicationRequest: extension = 2026-02-27 --&gt; 2026-03-16,1 täglich auftragen; identifier = 4713_202602280800000; status = active; intent = order; category = Medikationsplaneintrag; reported[x] = false; medication[x] = -&gt;Medication: form = Salbe; authoredOn = 2026-02-27 10:20:00+0000</a></td><td>2026-03-10 13:20:00+0000</td><td>Planeintrag entfernt</td></tr><tr><td><a href=\"MedicationRequest-At-Emed-Journey-05-b-Mr-Planeintrag-01.html\">MedicationRequest: extension = (?) --&gt; 2026-03-17,1-0-0-0 Stück; identifier = 4712_202602280800000; status = active; intent = order; category = Medikationsplaneintrag; reported[x] = false; medication[x] = -&gt;Medication EBETREXAT TBL 10MG; authoredOn = 2026-03-10 13:20:00+0000</a></td><td>2026-03-10 13:20:00+0000</td><td>Neuer Planeintrag</td></tr></table></div>"
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"List_At-Emed-Journey-05-b-List-Aenderung\"> </a><p class=\"res-header-id\"><b>Generated Narrative: List At-Emed-Journey-05-b-List-Aenderung</b></p><a name=\"At-Emed-Journey-05-b-List-Aenderung\"> </a><a name=\"hcAt-Emed-Journey-05-b-List-Aenderung\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-emed-list-medikationsplan.html\">ELGA e-Med Medikationsplan</a></p></div><table class=\"clstu\"><tr><td>Date: 2026-03-10 13:20:00+0000 </td><td>Mode: Working List </td><td>Status: Current </td><td>Code: Medikationsplan </td></tr><tr><td>Subject: <a href=\"Patient-At-Emed-Example-Patient-01.html\">Max Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</a>Source: </td></tr></table><table class=\"grid\"><tr style=\"backgound-color: #eeeeee\"><td><b>Items</b></td><td>Flag</td></tr><tr><td><a href=\"MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-02.html\">MedicationRequest: extension = 2026-02-27 --&gt; 2026-03-16,1 täglich auftragen; identifier = 4713_202602280800000; status = active; intent = order; category = Medikationsplaneintrag; reported[x] = false; medication[x] = -&gt;Medication: form = Salbe; authoredOn = 2026-02-27 10:20:00+0000</a></td><td>Planeintrag entfernt</td></tr><tr><td><a href=\"MedicationRequest-At-Emed-Journey-05-b-Mr-Planeintrag-01.html\">MedicationRequest: extension = (?) --&gt; 2026-03-17,1-0-0-0 Stück; identifier = 4712_202602280800000; status = active; intent = order; category = Medikationsplaneintrag; reported[x] = false; medication[x] = -&gt;Medication EBETREXAT TBL 10MG; authoredOn = 2026-03-10 13:20:00+0000</a></td><td>Neuer Planeintrag</td></tr></table></div>"
       },
       "identifier" : [{
         "value" : "123"
@@ -54,12 +54,6 @@
       "source" : {
         "reference" : "Practitioner/At-Emed-Example-Practitioner-01"
       },
-      "orderedBy" : {
-        "coding" : [{
-          "system" : "http://terminology.hl7.org/CodeSystem/list-order",
-          "code" : "user"
-        }]
-      },
       "entry" : [{
         "flag" : {
           "coding" : [{
@@ -68,7 +62,6 @@
             "display" : "Planeintrag entfernt"
           }]
         },
-        "date" : "2026-03-10T13:20:00+00:00",
         "item" : {
           "reference" : "MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-02"
         }
@@ -81,7 +74,6 @@
             "display" : "Neuer Planeintrag"
           }]
         },
-        "date" : "2026-03-10T13:20:00+00:00",
         "item" : {
           "reference" : "MedicationRequest/At-Emed-Journey-05-b-Mr-Planeintrag-01"
         }

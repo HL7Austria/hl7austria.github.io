@@ -15,7 +15,7 @@ Die Reihenfolge der Einträge kann durch den GDA oder den Patienten festgelegt w
 
 #### AtEmedMRPlaneintrag (MedicationRequest)
 
-Ein Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine **MedicationRequest**-Ressource abgebildet. Die Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained **Medication**-Ressource, also inline (innerhalb der Ressource), dokumentiert wird. Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstellung einer geplanten Abgabe dienen. Es werden R5-Backport-Extensions verwendet."
+Ein Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine **MedicationRequest**-Ressource der Kategorie "Medikationsplaneintrag" abgebildet. Die Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained **Medication**-Ressource, also inline (innerhalb der Ressource), dokumentiert wird. Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstellung einer geplanten Abgabe dienen. Es werden R5-Backport-Extensions verwendet.
 
 Der aktuelle Status eines Medikationsplaneintrags wird im **status**-Element dokumentiert (siehe [Status des MedicationRequests im Medikationsplaneintrag](workflowmanagement.md#status-des-medicationrequests-im-medikationsplaneintrag)).
 
@@ -24,4 +24,10 @@ Abhängig vom List.entry.flag kann der Medikationsplaneintrag nur eingeschränkt
 #### AtEmedBundleMedikationsplan (Collection Bundle)
 
 Eine persistierte Version des Medikationsplans eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin inklusive aller dafür relevanten Ressourcen (List, MedicationRequests, Patient, Practitioners) wird durch eine **Bundle**-Ressource vom Typ Collection abgebildet. Diese enthält 1..* Einträge (**Bundle.entry**), wobei jeder Entry genau eine Ressource (**Bundle.entry.resource**) beinhaltet. Die **List**-Ressource, also der Medikationsplan selbst, ist dabei immer der erste Entry. Die **List**-Ressource dient für das Bundle als zentrale Informationsquelle die angibt, wie die restlichen Ressourcen im Bundle zusammenhängen.
+
+#### AtEmedMRGeplanteAbgabe (MedicationRequest)
+
+Eine geplante Abgabe einer Medikation aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers wird durch eine **MedicationRequest**-Ressource der Kategorie "Geplante Abgabe" abgebildet. Sie enthält die verordnete Medikation und dessen Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. Werden mehrere Medikamente gleichzeitig verordnet, wird für jedes Medikament eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer'). Es werden R5-Backport-Extensions verwendet.
+
+Der aktuelle Status einer geplanten Abgabe wird im **status**-Element dokumentiert (siehe [Status des MedicationRequests in der geplanten Abgabe](workflowmanagement.md#status-des-medicationrequests-in-der-geplanten-abgabe)).
 

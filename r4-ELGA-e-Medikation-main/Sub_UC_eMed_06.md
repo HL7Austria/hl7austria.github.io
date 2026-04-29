@@ -10,11 +10,11 @@ Im folgenden Kapitel werden die fachlichen Anwendungsfälle in Form technischer 
 
 Für jeden Use Case werden in den Kapiteln **Relevante Elemente** die wichtigsten Elemente der verwendeten Profile beschrieben. Dies ermöglicht eine kompakte Übersicht über die erforderlichen Anpassungen der Ressourcen im Kontext des jeweiligen Anwendungsfalls.
 
-#### Sub_UC_06_01 - Initial erstellter Medikationsplan
+#### Sub_UC_eMed_06_01 - Initial erstellter Medikationsplan
 
 Die initiale Erstellung des Medikationsplans erfolgt durch die e-Medikation-Fachanwendung.
 
-Ruft ein GDA den Medikationsplan eines Patienten zum Zweck der Bearbeitung ab ($readtowrite), prüft die Fachanwendung, ob bereits ein Medikationsplan vorhanden ist: Existiert noch kein Plan, wird dieser im Hintergrund automatisch initial angelegt (siehe [Read-to-Write-Zugriff](interactions.md#read-to-write-zugriff)).
+Ruft ein GDA den Medikationsplan eines Patienten zum Zweck der Bearbeitung ab ($readtowrite), prüft die Fachanwendung, ob bereits ein Medikationsplan vorhanden ist: existiert noch kein Plan, wird dieser im Hintergrund automatisch initial angelegt (siehe [Read-to-Write-Zugriff](interactions.md#read-to-write-zugriff)).
 
 Der GDA erhält in diesem Fall ein Collection Bundle mit einem leeren Medikationsplan (List) mit **emptyReason** ****notstarted**** zurück. Der enthaltene list.identifer dient der zur späteren Integritätsprüfung beim Schreibvorgang.
 
@@ -37,7 +37,7 @@ AtEmedListMedikationsplan
 
 ```
 
-#### Sub_UC_06_02 - Leerer Medikationsplan (keine Medikation einnehmen)
+#### Sub_UC_eMed_06_02 - Leerer Medikationsplan (keine Medikation einnehmen)
 
 Ein leerer Medikationsplan mit dem Wert **emptyReason** ****nilknown**** bedeutet, dass der Patient derzeit keine Medikamente einnehmen soll. Der Medikatonsplan erhält diesen Status, wenn:
 
@@ -61,9 +61,9 @@ AtEmedListMedikationsplan
 
 ```
 
-#### Sub_UC_06_03 - Medikationsplaneintrag in Medikationsplan hinzufügen
+#### Sub_UC_eMed_06_03 - Medikationsplaneintrag in Medikationsplan hinzufügen
 
-Der GDA kann dem Medikationsplan ein oder mehrere Medikationsplaneinträge hinzufügen.
+Der GDA kann dem Medikationsplan ein oder mehrere Medikationsplaneinträge hinzufügen. Dabei muss er dokumentieren, ob es sich bei dem Eintrag um Fremdmedikation handelt (d.h. ein anderer Arzt hat das Medikament ursprünglich verordnet).
 
 Hierfür führt der GDA ein $readtowrite aus und bearbeitet das von der Fachanwendung übermittelte Collection Bundle:
 
@@ -112,7 +112,7 @@ AtEmedListMedikationsplan
 AtEmedMRPlaneintrag
     identifier: neue Medikationsplaneintrag-ID
     status: active | on-hold
-    reportedBoolean: false  // Fremdmedikation
+    reportedBoolean: true | false  // true, wenn Fremdmedikation
     medicationReference.reference: Medikation mit PZN oder Magistrale Anwendung // Contained Medication 
     authoredOn: Datum der Erstellung des Medikationsplaneintrags    
     requester: veranwortlicher GDA  // wird auf Übereinstimmung mit List.source geprüft
@@ -124,11 +124,11 @@ AtEmedMRPlaneintrag
 
 Siehe [Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte](workflowmanagement.md#auswirkung-der-zugriffsart-auf-listentryflags-und-bundle-inhalte).
 
-#### Sub_UC_06_04 - Medikationsplaneintrag im Medikationsplan beibehalten
+#### Sub_UC_eMed_06_04 - Medikationsplaneintrag im Medikationsplan beibehalten
 
 Der GDA kann im Medikationsplan ein oder mehrere Medikationsplaneinträge beibehalten und unverändert zur Kennntis nehmen.
 
-Hierfür führt der GDA ein $readtowrite aus und lässt die entsprechenen Medikationsplaneinträge (**MedicationRequests**) des von der Fachanwendung übermittelten Collection Bundles **unverändert** (im Status **active** oder **on-hold**). Ist der Behandlungszeitraum der Medikationsplaneinträge abgelaufen, muss dieser angepasst werden (siehe **Sub_UC_06_05 - Medikationsplaneintrag im Medikationsplan ändern**).
+Hierfür führt der GDA ein $readtowrite aus und lässt die entsprechenen Medikationsplaneinträge (**MedicationRequests**) des von der Fachanwendung übermittelten Collection Bundles **unverändert** (im Status **active** oder **on-hold**). Ist der Behandlungszeitraum der Medikationsplaneinträge abgelaufen, muss dieser angepasst werden (siehe **Sub_UC_eMed_06_05 - Medikationsplaneintrag im Medikationsplan ändern**).
 
 Im Element **List.source** wird mit dem aktuellen GDA, das Datum in **date** aktualisiert.
 
@@ -168,7 +168,7 @@ AtEmedMRPlaneintrag
 
 Siehe [Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte](workflowmanagement.md#auswirkung-der-zugriffsart-auf-listentryflags-und-bundle-inhalte).
 
-#### Sub_UC_06_05 - Medikationsplaneintrag pausieren
+#### Sub_UC_eMed_06_05 - Medikationsplaneintrag pausieren
 
 Ein GDA kann die Therapie eines Patienten vorübergehend unterbrechen (die Wiederaufnahme ist vorgesehen).
 
@@ -230,7 +230,7 @@ AtEmedMRPlaneintrag
 
 Siehe [Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte](workflowmanagement.md#auswirkung-der-zugriffsart-auf-listentryflags-und-bundle-inhalte).
 
-#### Sub_UC_06_06 - Medikationsplaneintrag im Medikationsplan ändern
+#### Sub_UC_eMed_06_06 - Medikationsplaneintrag im Medikationsplan ändern
 
 Der GDA kann im Medikationsplan ein oder mehrere Medikationsplaneinträge ändern.
 
@@ -296,7 +296,7 @@ AtEmedMRPlaneintrag
 
 Siehe [Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte](workflowmanagement.md#auswirkung-der-zugriffsart-auf-listentryflags-und-bundle-inhalte).
 
-#### Sub_UC_06_07 - Medikationsplaneintrag im Medikationsplan stornieren
+#### Sub_UC_eMed_06_07 - Medikationsplaneintrag im Medikationsplan stornieren
 
 Der GDA kann einen oder mehrere Medikationsplaneinträge aufgrund einer falschen Eingabe stornieren. Diese sind beim nächsten [Read-to-Write-Zugriff](interactions.md#read-to-write-zugriff) nicht mehr im Medikationsplan enthalten.
 
@@ -357,7 +357,7 @@ AtEmedMRPlaneintrag
 
 Siehe [Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte](workflowmanagement.md#auswirkung-der-zugriffsart-auf-listentryflags-und-bundle-inhalte).
 
-#### Sub_UC_06_08 - Medikationsplaneintrag im Medikationsplan absetzen
+#### Sub_UC_eMed_06_08 - Medikationsplaneintrag im Medikationsplan absetzen
 
 Der GDA möchte das Medikament (welches in einen Medikationsplaneintrag dokumentiert ist) absetzen, bevor alle geplanten Einnahmen oder Verabreichungen durchgeführt wurden. Der betreffende Planeintrag ist beim nächsten [Read-to-Write-Zugriff](interactions.md#read-to-write-zugriff) nicht mehr im Medikationsplan enthalten.
 
@@ -416,9 +416,9 @@ AtEmedMRPlaneintrag
 
 Siehe [Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte](workflowmanagement.md#auswirkung-der-zugriffsart-auf-listentryflags-und-bundle-inhalte).
 
-#### Sub_UC_06_09 - Behandlungszeitraum eines Medikationsplaneintrags ist abgelaufen
+#### Sub_UC_eMed_06_09 - Behandlungszeitraum eines Medikationsplaneintrags ist abgelaufen
 
-Erhält ein GDA nach einem [Read-to-Write-Zugriff](interactions.md#read-to-write-zugriff) Medikationsplaneinträge, deren Behandlungszeitraum (effectiveDosePeriod.end) abgelaufen ist, muss der GDA diese Einträge beenden oder bearbeiten (zumindest den Behandlungszeitraum anpassen) bevor ein erneutes Speichern des Medikationsplans zulässig ist (siehe [Sub_UC_06_05 - Medikationsplaneintrag im Medikationsplan ändern](Sub_UC_eMed_06.md#sub_uc_06_06---medikationsplaneintrag-im-medikationsplan-ändern)). Beendete Planeinträge sind beim nächsten [Read-to-Write-Zugriff](interactions.md#read-to-write-zugriff) nicht mehr im Medikationsplan enthalten.
+Erhält ein GDA nach einem [Read-to-Write-Zugriff](interactions.md#read-to-write-zugriff) Medikationsplaneinträge, deren Behandlungszeitraum (effectiveDosePeriod.end) abgelaufen ist, muss der GDA diese Einträge beenden oder bearbeiten (zumindest den Behandlungszeitraum anpassen) bevor ein erneutes Speichern des Medikationsplans zulässig ist (siehe [Sub_UC_eMed_06_05 - Medikationsplaneintrag im Medikationsplan ändern](Sub_UC_eMed_06.md#sub_UC_eMed_06_06---medikationsplaneintrag-im-medikationsplan-ändern)). Beendete Planeinträge sind beim nächsten [Read-to-Write-Zugriff](interactions.md#read-to-write-zugriff) nicht mehr im Medikationsplan enthalten.
 
 Um Planeinträge zu beenden bearbeitet der GDA nach einem $readtowrite das von der Fachanwendung übermittelte Collection Bundle wie folgt:
 
@@ -475,7 +475,7 @@ AtEmedMRPlaneintrag
 
 Siehe [Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte](workflowmanagement.md#auswirkung-der-zugriffsart-auf-listentryflags-und-bundle-inhalte).
 
-#### Sub_UC_06_10 - Reihenfolge der Medikationsplaneinträge ändern
+#### Sub_UC_eMed_06_10 - Reihenfolge der Medikationsplaneinträge ändern
 
 Der GDA kann die Reihenfolge der Medikationsplaneinträge ändern. Die Einträge selbst bleiben dabei unverändert.
 
@@ -483,7 +483,7 @@ Hierfür führt der GDA ein $readtowrite aus und bearbeitet das von der Fachanwe
 
 * Im Element **List.source** wird mit dem aktuellen GDA, das Datum in **date** aktualisiert.
 * Die Reihenfolge der Planeinträge wird in der **List**-Ressouce angepasst, indem die Entries entsprechend gereiht werden.
-* Der Behandlungszeitraum der Planeinträge darf noch nicht abgelaufen sein (ansonsten muss dieser bearbeitet werden - siehe [Sub_UC_06_06 - Medikationsplaneintrag im Medikationsplan ändern](Sub_UC_eMed_06.md#sub_uc_06_06---medikationsplaneintrag-im-medikationsplan-ändern)).
+* Der Behandlungszeitraum der Planeinträge darf noch nicht abgelaufen sein (ansonsten muss dieser bearbeitet werden - siehe [Sub_UC_eMed_06_06 - Medikationsplaneintrag im Medikationsplan ändern](Sub_UC_eMed_06.md#sub_UC_eMed_06_06---medikationsplaneintrag-im-medikationsplan-ändern)).
 
 Der GDA übermittelt (via POST $write) den aktualisierten Medikationsplan in einem Transaction Bundle:
 
@@ -527,9 +527,9 @@ AtEmedMRPlaneintrag
 
 Siehe [Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte](workflowmanagement.md#auswirkung-der-zugriffsart-auf-listentryflags-und-bundle-inhalte).
 
-#### Sub_UC_06_11 - Medikationsplaneintrag durch ELGA-Teilnehmer löschen
+#### Sub_UC_eMed_06_11 - Medikationsplaneintrag durch ELGA-Teilnehmer löschen
 
-Der ELGA-Teilnehmer kann via ELGA-Portal einzelne oder alle Medikationsplaneinträge löschen. Wurden durch den ELGA-Teilnehmer alle Planeinträge gelöscht, erhält der Medikationsplan durch die Fachanwendung das emptyReason **nilknown**.
+Der ELGA-Teilnehmer kann via ELGA-Portal einzelne oder alle Medikationsplaneinträge unwiderruflich löschen, wodurch eine neue Medikationsplanversion entsteht. Wurden durch den ELGA-Teilnehmer alle Planeinträge gelöscht, erhält der von der Fachanwendung erstellte, neue Medikationsplan das emptyReason **nilknown** (siehe [Sub_UC_eMed_06_02 - Leerer Medikationsplan (keine Medikation einnehmen)](Sub_UC_eMed_06.md#sub_UC_eMed_06_02---leerer-medikationsplan-keine-medikation-einnehmen)).
 
 Im Unterschied zu einem Entfernen von Einträgen mittels stornieren, absetzen und beenden durch den GDA, wird beim Löschen durch den ELGA-Teilnehmer der betreffende Medikationsplaneintrag aus dem List.Entry entfernt und der betroffene Planeintrag (**MedicationRequest**) gelöscht (und nicht nur als **removed** gekennzeichnet).
 
@@ -586,4 +586,10 @@ AtEmedListMedikationsplan
         item: Referenz auf den Planeintrag 1  
 
 ```
+
+#### Sub_UC_eMed_06_12 - Medikationsplan durch ELGA-Teilnehmer löschen
+
+Der ELGA-Teilnehmer kann via ELGA-Portal den aktuellen, einzelne oder alle historischen Medikationsplanversionen unwiderruflich löschen.
+
+Hierfür markiert der Patient die zu löschenden Medikationspläne und führt über das Portal ein $plan-delete aus, mit dem Resultat, dass alle betreffenden Collection Bundles durch die Fachanwendung gelöscht werden.
 

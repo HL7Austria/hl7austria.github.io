@@ -285,11 +285,11 @@ width: 100%;}
 
 <p>Für jeden Use Case werden in den Kapiteln <em>Relevante Elemente</em> die wichtigsten Elemente der verwendeten Profile beschrieben. Dies ermöglicht eine kompakte Übersicht über die erforderlichen Anpassungen der Ressourcen im Kontext des jeweiligen Anwendungsfalls.</p>
 
-<h4 id="sub_uc_06_01---initial-erstellter-medikationsplan">Sub_UC_06_01 - Initial erstellter Medikationsplan</h4>
+<h4 id="sub_uc_emed_06_01---initial-erstellter-medikationsplan">Sub_UC_eMed_06_01 - Initial erstellter Medikationsplan</h4>
 
 <p>Die initiale Erstellung des Medikationsplans erfolgt durch die e-Medikation-Fachanwendung.</p>
 
-<p>Ruft ein GDA den Medikationsplan eines Patienten zum Zweck der Bearbeitung ab ($readtowrite), prüft die Fachanwendung, ob bereits ein Medikationsplan vorhanden ist: Existiert noch kein Plan, wird dieser im Hintergrund automatisch initial angelegt (siehe <a href="interactions.html#read-to-write-zugriff">Read-to-Write-Zugriff</a>).</p>
+<p>Ruft ein GDA den Medikationsplan eines Patienten zum Zweck der Bearbeitung ab ($readtowrite), prüft die Fachanwendung, ob bereits ein Medikationsplan vorhanden ist: existiert noch kein Plan, wird dieser im Hintergrund automatisch initial angelegt (siehe <a href="interactions.html#read-to-write-zugriff">Read-to-Write-Zugriff</a>).</p>
 
 <p>Der GDA erhält in diesem Fall ein Collection Bundle mit einem leeren Medikationsplan (List) mit <strong>emptyReason</strong> <strong><em>notstarted</em></strong> zurück. Der enthaltene list.identifer dient der zur späteren Integritätsprüfung beim Schreibvorgang.</p>
 
@@ -312,7 +312,7 @@ width: 100%;}
     emptyReason: notstarted    // noch keine Medikationsplaneinträge erfasst
 </code></pre>
 
-<h4 id="sub_uc_06_02---leerer-medikationsplan-keine-medikation-einnehmen">Sub_UC_06_02 - Leerer Medikationsplan (keine Medikation einnehmen)</h4>
+<h4 id="sub_uc_emed_06_02---leerer-medikationsplan-keine-medikation-einnehmen">Sub_UC_eMed_06_02 - Leerer Medikationsplan (keine Medikation einnehmen)</h4>
 
 <p>Ein leerer Medikationsplan mit dem Wert <strong>emptyReason</strong> <strong><em>nilknown</em></strong> bedeutet, dass der Patient derzeit keine Medikamente einnehmen soll. Der Medikatonsplan erhält diesen Status, wenn:</p>
 <ul>
@@ -341,12 +341,12 @@ width: 100%;}
 
   <!-- Standardablauf Medikationsplan bearbeiten -->
 
-  <!-- Der folgende Ablauf gilt für alle weiteren technischen Use Cases (Sub_UC_06_03 bis Sub_UC_06_0X).
+  <!-- Der folgende Ablauf gilt für alle weiteren technischen Use Cases (Sub_UC_eMed_06_03 bis Sub_UC_eMed_06_0X).
 Für jeden Use Case werden in den Kapiteln *Relevante Elemente* die wichtigsten Elemente der verwendeten Profile beschrieben. -->
 
-<h4 id="sub_uc_06_03---medikationsplaneintrag-in-medikationsplan-hinzufügen">Sub_UC_06_03 - Medikationsplaneintrag in Medikationsplan hinzufügen</h4>
+<h4 id="sub_uc_emed_06_03---medikationsplaneintrag-in-medikationsplan-hinzufügen">Sub_UC_eMed_06_03 - Medikationsplaneintrag in Medikationsplan hinzufügen</h4>
 
-<p>Der GDA kann dem Medikationsplan ein oder mehrere Medikationsplaneinträge hinzufügen.</p>
+<p>Der GDA kann dem Medikationsplan ein oder mehrere Medikationsplaneinträge hinzufügen. Dabei muss er dokumentieren, ob es sich bei dem Eintrag um Fremdmedikation handelt (d.h. ein anderer Arzt hat das Medikament ursprünglich verordnet).</p>
 
 <p>Hierfür führt der GDA ein $readtowrite aus und bearbeitet das von der Fachanwendung übermittelte Collection Bundle:</p>
 <ul>
@@ -396,7 +396,7 @@ Für jeden Use Case werden in den Kapiteln *Relevante Elemente* die wichtigsten 
 <pre><code class="language-JSON">AtEmedMRPlaneintrag
     identifier: neue Medikationsplaneintrag-ID
     status: active | on-hold
-    reportedBoolean: false  // Fremdmedikation
+    reportedBoolean: true | false  // true, wenn Fremdmedikation
     medicationReference.reference: Medikation mit PZN oder Magistrale Anwendung // Contained Medication 
     authoredOn: Datum der Erstellung des Medikationsplaneintrags    
     requester: veranwortlicher GDA  // wird auf Übereinstimmung mit List.source geprüft
@@ -411,11 +411,11 @@ Für jeden Use Case werden in den Kapiteln *Relevante Elemente* die wichtigsten 
 
 <p>Siehe <a href="workflowmanagement.html#auswirkung-der-zugriffsart-auf-listentryflags-und-bundle-inhalte">Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte</a>.</p>
 
-<h4 id="sub_uc_06_04---medikationsplaneintrag-im-medikationsplan-beibehalten">Sub_UC_06_04 - Medikationsplaneintrag im Medikationsplan beibehalten</h4>
+<h4 id="sub_uc_emed_06_04---medikationsplaneintrag-im-medikationsplan-beibehalten">Sub_UC_eMed_06_04 - Medikationsplaneintrag im Medikationsplan beibehalten</h4>
 
 <p>Der GDA kann im Medikationsplan ein oder mehrere Medikationsplaneinträge beibehalten und unverändert zur Kennntis nehmen.</p>
 
-<p>Hierfür führt der GDA ein $readtowrite aus und lässt die entsprechenen Medikationsplaneinträge (<em>MedicationRequests</em>) des von der Fachanwendung übermittelten Collection Bundles <strong>unverändert</strong> (im Status <em>active</em> oder <em>on-hold</em>). Ist der Behandlungszeitraum der Medikationsplaneinträge abgelaufen, muss dieser angepasst werden (siehe <em>Sub_UC_06_05 - Medikationsplaneintrag im Medikationsplan ändern</em>).</p>
+<p>Hierfür führt der GDA ein $readtowrite aus und lässt die entsprechenen Medikationsplaneinträge (<em>MedicationRequests</em>) des von der Fachanwendung übermittelten Collection Bundles <strong>unverändert</strong> (im Status <em>active</em> oder <em>on-hold</em>). Ist der Behandlungszeitraum der Medikationsplaneinträge abgelaufen, muss dieser angepasst werden (siehe <em>Sub_UC_eMed_06_05 - Medikationsplaneintrag im Medikationsplan ändern</em>).</p>
 
 <p>Im Element <em>List.source</em> wird mit dem aktuellen GDA, das Datum in <em>date</em> aktualisiert.</p>
 
@@ -452,7 +452,7 @@ Für jeden Use Case werden in den Kapiteln *Relevante Elemente* die wichtigsten 
 
 <p>Siehe <a href="workflowmanagement.html#auswirkung-der-zugriffsart-auf-listentryflags-und-bundle-inhalte">Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte</a>.</p>
 
-<h4 id="sub_uc_06_05---medikationsplaneintrag-pausieren">Sub_UC_06_05 - Medikationsplaneintrag pausieren</h4>
+<h4 id="sub_uc_emed_06_05---medikationsplaneintrag-pausieren">Sub_UC_eMed_06_05 - Medikationsplaneintrag pausieren</h4>
 
 <p>Ein GDA kann die Therapie eines Patienten vorübergehend unterbrechen (die Wiederaufnahme ist vorgesehen).</p>
 
@@ -513,7 +513,7 @@ Für jeden Use Case werden in den Kapiteln *Relevante Elemente* die wichtigsten 
 
 <p>Siehe <a href="workflowmanagement.html#auswirkung-der-zugriffsart-auf-listentryflags-und-bundle-inhalte">Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte</a>.</p>
 
-<h4 id="sub_uc_06_06---medikationsplaneintrag-im-medikationsplan-ändern">Sub_UC_06_06 - Medikationsplaneintrag im Medikationsplan ändern</h4>
+<h4 id="sub_uc_emed_06_06---medikationsplaneintrag-im-medikationsplan-ändern">Sub_UC_eMed_06_06 - Medikationsplaneintrag im Medikationsplan ändern</h4>
 
 <p>Der GDA kann im Medikationsplan ein oder mehrere Medikationsplaneinträge ändern.</p>
 
@@ -581,7 +581,7 @@ Bei fehlender fachlicher Kontinuität der Bearbeitung eines Medikationsplaneintr
 
 <p>Siehe <a href="workflowmanagement.html#auswirkung-der-zugriffsart-auf-listentryflags-und-bundle-inhalte">Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte</a>.</p>
 
-<h4 id="sub_uc_06_07---medikationsplaneintrag-im-medikationsplan-stornieren">Sub_UC_06_07 - Medikationsplaneintrag im Medikationsplan stornieren</h4>
+<h4 id="sub_uc_emed_06_07---medikationsplaneintrag-im-medikationsplan-stornieren">Sub_UC_eMed_06_07 - Medikationsplaneintrag im Medikationsplan stornieren</h4>
 
 <p>Der GDA kann einen oder mehrere Medikationsplaneinträge aufgrund einer falschen Eingabe stornieren. Diese sind beim nächsten <a href="interactions.html#read-to-write-zugriff">Read-to-Write-Zugriff</a> nicht mehr im Medikationsplan enthalten.</p>
 
@@ -641,7 +641,7 @@ Bei fehlender fachlicher Kontinuität der Bearbeitung eines Medikationsplaneintr
 
 <p>Siehe <a href="workflowmanagement.html#auswirkung-der-zugriffsart-auf-listentryflags-und-bundle-inhalte">Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte</a>.</p>
 
-<h4 id="sub_uc_06_08---medikationsplaneintrag-im-medikationsplan-absetzen">Sub_UC_06_08 - Medikationsplaneintrag im Medikationsplan absetzen</h4>
+<h4 id="sub_uc_emed_06_08---medikationsplaneintrag-im-medikationsplan-absetzen">Sub_UC_eMed_06_08 - Medikationsplaneintrag im Medikationsplan absetzen</h4>
 
 <p>Der GDA möchte das Medikament (welches in einen Medikationsplaneintrag dokumentiert ist) absetzen, bevor alle geplanten Einnahmen oder Verabreichungen durchgeführt wurden.
 Der betreffende Planeintrag ist beim nächsten <a href="interactions.html#read-to-write-zugriff">Read-to-Write-Zugriff</a> nicht mehr im Medikationsplan enthalten.</p>
@@ -701,9 +701,9 @@ Der betreffende Planeintrag ist beim nächsten <a href="interactions.html#read-t
 
 <p>Siehe <a href="workflowmanagement.html#auswirkung-der-zugriffsart-auf-listentryflags-und-bundle-inhalte">Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte</a>.</p>
 
-<h4 id="sub_uc_06_09---behandlungszeitraum-eines-medikationsplaneintrags-ist-abgelaufen">Sub_UC_06_09 - Behandlungszeitraum eines Medikationsplaneintrags ist abgelaufen</h4>
+<h4 id="sub_uc_emed_06_09---behandlungszeitraum-eines-medikationsplaneintrags-ist-abgelaufen">Sub_UC_eMed_06_09 - Behandlungszeitraum eines Medikationsplaneintrags ist abgelaufen</h4>
 
-<p>Erhält ein GDA nach einem <a href="interactions.html#read-to-write-zugriff">Read-to-Write-Zugriff</a> Medikationsplaneinträge, deren Behandlungszeitraum (effectiveDosePeriod.end) abgelaufen ist, muss der GDA diese Einträge beenden oder bearbeiten (zumindest den Behandlungszeitraum anpassen) bevor ein erneutes Speichern des Medikationsplans zulässig ist (siehe <a href="Sub_UC_eMed_06.html#sub_uc_06_06---medikationsplaneintrag-im-medikationsplan-ändern">Sub_UC_06_05 - Medikationsplaneintrag im Medikationsplan ändern</a>). 
+<p><a name="l1435">​</a>Erhält ein GDA nach einem <a href="interactions.html#read-to-write-zugriff">Read-to-Write-Zugriff</a> Medikationsplaneinträge, deren Behandlungszeitraum (effectiveDosePeriod.end) abgelaufen ist, muss der GDA diese Einträge beenden oder bearbeiten (zumindest den Behandlungszeitraum anpassen) bevor ein erneutes Speichern des Medikationsplans zulässig ist (siehe <a href="Sub_UC_eMed_06.html#sub_UC_eMed_06_06---medikationsplaneintrag-im-medikationsplan-ändern">Sub_UC_eMed_06_05 - Medikationsplaneintrag im Medikationsplan ändern</a>). 
 Beendete Planeinträge sind beim nächsten <a href="interactions.html#read-to-write-zugriff">Read-to-Write-Zugriff</a> nicht mehr im Medikationsplan enthalten.</p>
 
 <p>Um Planeinträge zu beenden bearbeitet der GDA nach einem $readtowrite das von der Fachanwendung übermittelte Collection Bundle wie folgt:</p>
@@ -760,7 +760,7 @@ Beendete Planeinträge sind beim nächsten <a href="interactions.html#read-to-wr
 
 <p>Siehe <a href="workflowmanagement.html#auswirkung-der-zugriffsart-auf-listentryflags-und-bundle-inhalte">Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte</a>.</p>
 
-<h4 id="sub_uc_06_10---reihenfolge-der-medikationsplaneinträge-ändern">Sub_UC_06_10 - Reihenfolge der Medikationsplaneinträge ändern</h4>
+<h4 id="sub_uc_emed_06_10---reihenfolge-der-medikationsplaneinträge-ändern">Sub_UC_eMed_06_10 - Reihenfolge der Medikationsplaneinträge ändern</h4>
 
 <p>Der GDA kann die Reihenfolge der Medikationsplaneinträge ändern. Die Einträge selbst bleiben dabei unverändert.</p>
 
@@ -768,7 +768,7 @@ Beendete Planeinträge sind beim nächsten <a href="interactions.html#read-to-wr
 <ul>
   <li>Im Element <em>List.source</em> wird mit dem aktuellen GDA, das Datum in <em>date</em> aktualisiert.</li>
   <li>Die Reihenfolge der Planeinträge wird in der <em>List</em>-Ressouce angepasst, indem die Entries entsprechend gereiht werden.</li>
-  <li>Der Behandlungszeitraum der Planeinträge darf noch nicht abgelaufen sein (ansonsten muss dieser bearbeitet werden - siehe <a href="Sub_UC_eMed_06.html#sub_uc_06_06---medikationsplaneintrag-im-medikationsplan-ändern">Sub_UC_06_06 - Medikationsplaneintrag im Medikationsplan ändern</a>).</li>
+  <li><a name="l1562">​</a>Der Behandlungszeitraum der Planeinträge darf noch nicht abgelaufen sein (ansonsten muss dieser bearbeitet werden - siehe <a href="Sub_UC_eMed_06.html#sub_UC_eMed_06_06---medikationsplaneintrag-im-medikationsplan-ändern">Sub_UC_eMed_06_06 - Medikationsplaneintrag im Medikationsplan ändern</a>).</li>
 </ul>
 
 <p>Der GDA übermittelt (via POST $write) den aktualisierten Medikationsplan in einem Transaction Bundle:</p>
@@ -810,9 +810,9 @@ Beendete Planeinträge sind beim nächsten <a href="interactions.html#read-to-wr
 
 <p>Siehe <a href="workflowmanagement.html#auswirkung-der-zugriffsart-auf-listentryflags-und-bundle-inhalte">Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte</a>.</p>
 
-<h4 id="sub_uc_06_11---medikationsplaneintrag-durch-elga-teilnehmer-löschen">Sub_UC_06_11 - Medikationsplaneintrag durch ELGA-Teilnehmer löschen</h4>
+<h4 id="sub_uc_emed_06_11---medikationsplaneintrag-durch-elga-teilnehmer-löschen">Sub_UC_eMed_06_11 - Medikationsplaneintrag durch ELGA-Teilnehmer löschen</h4>
 
-<p>Der ELGA-Teilnehmer kann via ELGA-Portal einzelne oder alle Medikationsplaneinträge löschen. Wurden durch den ELGA-Teilnehmer alle Planeinträge gelöscht, erhält der Medikationsplan durch die Fachanwendung das emptyReason <em>nilknown</em>.</p>
+<p><a name="l1619">​</a>Der ELGA-Teilnehmer kann via ELGA-Portal einzelne oder alle Medikationsplaneinträge unwiderruflich löschen, wodurch eine neue Medikationsplanversion entsteht. Wurden durch den ELGA-Teilnehmer alle Planeinträge gelöscht, erhält der von der Fachanwendung erstellte, neue Medikationsplan das emptyReason <em>nilknown</em> (siehe <a href="Sub_UC_eMed_06.html#sub_UC_eMed_06_02---leerer-medikationsplan-keine-medikation-einnehmen">Sub_UC_eMed_06_02 - Leerer Medikationsplan (keine Medikation einnehmen)</a>).</p>
 
 <p>Im Unterschied zu einem Entfernen von Einträgen mittels stornieren, absetzen und beenden durch den GDA, wird beim Löschen durch den ELGA-Teilnehmer der betreffende Medikationsplaneintrag aus dem List.Entry entfernt und der betroffene Planeintrag (<em>MedicationRequest</em>) gelöscht (und nicht nur als <em>removed</em> gekennzeichnet).</p>
 
@@ -833,7 +833,7 @@ Die Fachanwendung bearbeitet das Collection Bundle wie folgt:</p>
 
 <h5 id="ablauf-10">Ablauf</h5>
 
-<p><a name="l1676">​</a>Siehe <a href="interactions.html#read-to-write-zugriff">Read-to-Write-Zugriff</a> und <a href="interactions.html#patient-write-zugriff">Patient-Write-Zugriff</a>.</p>
+<p><a name="l1679">​</a>Siehe <a href="interactions.html#read-to-write-zugriff">Read-to-Write-Zugriff</a> und <a href="interactions.html#patient-write-zugriff">Patient-Write-Zugriff</a>.</p>
 
 <h5 id="relevante-elemente-list-10">Relevante Elemente (List)</h5>
 
@@ -869,6 +869,15 @@ Die Fachanwendung bearbeitet das Collection Bundle wie folgt:</p>
         item: Referenz auf den Planeintrag 1  
 </code></pre>
 
+<h4 id="sub_uc_emed_06_12---medikationsplan-durch-elga-teilnehmer-löschen">Sub_UC_eMed_06_12 - Medikationsplan durch ELGA-Teilnehmer löschen</h4>
+
+<p>Der ELGA-Teilnehmer kann via ELGA-Portal den aktuellen, einzelne oder alle historischen Medikationsplanversionen unwiderruflich löschen.</p>
+
+<p>Hierfür markiert der Patient die zu löschenden Medikationspläne und führt über das Portal ein $plan-delete aus, mit dem Resultat, dass alle betreffenden Collection Bundles durch die Fachanwendung gelöscht werden.</p>
+
+  <!-- TODO: Kann hier ein Zeitraum (Filter) mitgegeben werden? -->
+
+
 
 
 </div>
@@ -887,7 +896,7 @@ Die Fachanwendung bearbeitet das Collection Bundle wie folgt:</p>
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Apr 28, 2026 11:58+0000">2026-04-28</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Wed, Apr 29, 2026 14:27+0000">2026-04-29</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
