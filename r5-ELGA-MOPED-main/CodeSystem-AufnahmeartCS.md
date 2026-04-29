@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/AufnahmeartCS | *Version*:0.1.0 | |
-| Active as of 2026-04-23 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:AufnahmeartCS |
+| Active as of 2026-04-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:AufnahmeartCS |
 
  
 Zulässige Ausprägungen Aufnahmeart (LKF & KaOrg) 
@@ -32,7 +32,7 @@ Zulässige Ausprägungen Aufnahmeart (LKF & KaOrg)
   "title" : "Moped Aufnahmeart des Patienten",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-04-23T07:59:48+00:00",
+  "date" : "2026-04-29T07:12:28+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/MopedClaimItemCategoryVS | *Version*:0.1.0 | |
-| Draft as of 2026-04-23 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedClaimItemCategoryVS |
+| Draft as of 2026-04-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedClaimItemCategoryVS |
 
  
 ValueSet für die Arten von Claim Item Kategorien 
@@ -53,7 +53,7 @@ ValueSet für die Arten von Claim Item Kategorien
   "title" : "Moped Claim Item Category ValueSet",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-04-23T07:59:48+00:00",
+  "date" : "2026-04-29T07:12:28+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

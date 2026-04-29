@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/LKFAbrechnungsKnotenCS | *Version*:0.1.0 | |
-| Active as of 2026-04-23 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LKFAbrechnungsKnotenCS |
+| Active as of 2026-04-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LKFAbrechnungsKnotenCS |
 
  
 LKF Abrechnungsknoten 
@@ -32,7 +32,7 @@ LKF Abrechnungsknoten
   "title" : "LKF Abrechnungsknoten",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-04-23T07:59:48+00:00",
+  "date" : "2026-04-29T07:12:28+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

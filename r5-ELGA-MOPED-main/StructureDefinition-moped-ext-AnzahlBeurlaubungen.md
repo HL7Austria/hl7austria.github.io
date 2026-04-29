@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/moped-ext-AnzahlBeurlaubungen | *Version*:0.1.0 | |
-| Draft as of 2026-04-23 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:AnzahlBeurlaubungen |
+| Draft as of 2026-04-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:AnzahlBeurlaubungen |
 
 MOPED Extension für die Anzahl der Beurlaubungen
 
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-moped-ext-AnzahlBeur
   "name" : "AnzahlBeurlaubungen",
   "title" : "AnzahlBeurlaubungen",
   "status" : "draft",
-  "date" : "2026-04-23T07:59:48+00:00",
+  "date" : "2026-04-29T07:12:28+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

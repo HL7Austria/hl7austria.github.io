@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedVAERequestVerlaengerung | *Version*:0.1.0 | |
-| Draft as of 2026-04-23 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedVAERequestVerlaengerung |
+| Draft as of 2026-04-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedVAERequestVerlaengerung |
 
  
 MOPED Profil für die Verlängerung der Versichertenanspruchserklärung (VAE) 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedVAERequestVerla
   "name" : "MopedVAERequestVerlaengerung",
   "title" : "MOPED VAERequest für die Verlängerung der VAE",
   "status" : "draft",
-  "date" : "2026-04-23T07:59:48+00:00",
+  "date" : "2026-04-29T07:12:28+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
