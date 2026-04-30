@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/OperationDefinition/AtEmed.List.Write | *Version*:0.1.1 | |
-| Draft as of 2026-04-29 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmed_List_Write |
+| Draft as of 2026-04-30 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmed_List_Write |
 
  
 Die $write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird. 
@@ -28,7 +28,7 @@ Die $write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird.
   "title" : "e-Med Operation für Write des Medikationsplans",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-04-29T14:27:58+00:00",
+  "date" : "2026-04-30T15:16:21+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

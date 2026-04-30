@@ -289,6 +289,52 @@ width: 100%;}
 
 <p>Ein GDA kann basierend auf bestehenden Einträgen eines Medikationsplans ein oder mehrere geplanten Abgaben erstellen (eine Rezeptierung durchführen).</p>
 
+<!-- Rezept/ Verordnung (PRESCRIPTION)
+OFFEN, EINGELÖST, STORNIERT, ABGELAUFEN, NICHT_ABGEGEBEN
+
+
+Abgabe (DISPENSE)
+ABGEGEBEN, ABGESETZT, STORNIERT -->
+
+<!-- Relevante Elemente  -->
+
+<!-- status | **active** | Neue geplante Abgabe |
+category:recipetype  //rezeptart muss angegeben sein
+medication[x] // medikation muss der medikation aus dem medikationsplaneintrag entsprechen
+authoredOn
+requester
+basedOn  //der zugehörige medikationsplaneintrag muss referenziert werden
+groupIdentifier // Rezeptklammer (vom e-Rezept?)
+dosageInstruction
+dispenseRequest.validityPeriod  // abh. von rezeptart, bzw. verkürzt durch gda
+dispenseRequest.numberOfRepeatsAllowed // abh. von rezeptart
+dispenseRequest.quantity
+
+
+
+
+
+todo: muss die dosierung mit planeintrag übereinstimmen? was muss die fachanwendung prüfen muss? was darf von planeintrag abweichen?
+
+ -->
+
+<h4 id="sub_uc_emed_08_02---geplante-abgabe-beenden">Sub_UC_eMed_08_02 - Geplante Abgabe beenden</h4>
+
+<!-- |  **completed**  | geplante Abgabe beendet |
+
+Durch das abgaben der letzten durchgeführten abgabe, löst die fachanwendung die beendigung des geplanten abgabe aus -->
+
+<h4 id="sub_uc_emed_08_03---geplante-abgabe-stornieren">Sub_UC_eMed_08_03 - Geplante Abgabe stornieren</h4>
+
+<!-- |  **entered-in-error**  | geplante Abgabe storniert|
+
+$geplante-Abgabe-stornieren 
+
+
+#### Sub_UC_eMed_08_03 - Geplante Abgabe durch ELGA-Teilnehmer löschen
+
+$delete oder DELETE -->
+
 <h4 id="beispiel">Beispiel</h4>
 
 <h4 id="technische-hinweise">Technische Hinweise</h4>
@@ -317,7 +363,7 @@ width: 100%;}
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Apr 29, 2026 14:27+0000">2026-04-29</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Apr 30, 2026 15:16+0000">2026-04-30</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

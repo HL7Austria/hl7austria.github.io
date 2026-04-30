@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-04-29T14:27:58+00:00",
+  "date" : "2026-04-30T15:16:21+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -89,12 +89,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     "version" : "2.0.0"
   },
   {
-    "id" : "hl7_at_fhir_elga_aps_r4",
-    "uri" : "https://fhir.hl7.at/elga/aps/r4/ImplementationGuide/hl7.at.fhir.elga.aps.r4",
-    "packageId" : "hl7.at.fhir.elga.aps.r4",
-    "version" : "current"
-  },
-  {
     "id" : "hl7_fhir_uv_xver_r5_r4",
     "uri" : "http://hl7.org/fhir/uv/xver/ImplementationGuide/hl7.fhir.uv.xver-r5.r4",
     "packageId" : "hl7.fhir.uv.xver-r5.r4",
@@ -105,6 +99,12 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     "uri" : "https://profiles.ihe.net/PHARM/MPD/ImplementationGuide/ihe.pharm.mpd",
     "packageId" : "ihe.pharm.mpd.r4",
     "version" : "1.0.0-comment-2"
+  },
+  {
+    "id" : "hl7_at_fhir_elga_core_r4",
+    "uri" : "https://fhir.hl7.at/elga/core/r4/ImplementationGuide/hl7.at.fhir.elga.core.r4",
+    "packageId" : "hl7.at.fhir.elga.core.r4",
+    "version" : "current"
   }],
   "definition" : {
     "extension" : [{
@@ -662,18 +662,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     }],
     "resource" : [{
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/at-elga-core-list"
-      },
-      "name" : "AT ELGA Core List",
-      "description" : "Generische Liste für ELGA-Anwendungen. Diese enthält 0..* Einträge (List.entry), wobei jedes Entry genau eine Referenz auf einen Eintrag in List.entry.item beinhaltet.\nDie Reihenfolge der Einträge der Liste ist relevant und kann festgelegt werden. Jeder Listeneintrag enthält im Element List.entry.flag den Änderungsstatus des jeweiligen Eintrags.",
-      "exampleBoolean" : false
-    },
-    {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationDispense"

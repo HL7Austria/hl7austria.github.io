@@ -14,6 +14,10 @@ Für jeden Use Case werden in den Kapiteln **Relevante Elemente** die wichtigste
 
 Ein GDA kann basierend auf bestehenden Einträgen eines Medikationsplans ein oder mehrere geplanten Abgaben erstellen (eine Rezeptierung durchführen).
 
+#### Sub_UC_eMed_08_02 - Geplante Abgabe beenden
+
+#### Sub_UC_eMed_08_03 - Geplante Abgabe stornieren
+
 #### Beispiel
 
 #### Technische Hinweise
