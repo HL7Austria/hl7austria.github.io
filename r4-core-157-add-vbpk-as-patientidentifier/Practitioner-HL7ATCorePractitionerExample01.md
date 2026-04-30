@@ -8,7 +8,7 @@
 
 Profile: [HL7® AT Core Practitioner Profile](StructureDefinition-at-core-practitioner.md)
 
-**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/7.1.0/NamingSystem-uri.html)/urn:oid:1.2.40.0.34.99.4613.4, `urn:oid:1.2.40.0.10.1.4.3.2`/987654321, Anonymous identifier/AXg6b2VMZFNFYjBsKzhrU2RKV2pPWXlZbW5Za2kwPQ==
+**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/7.1.0/NamingSystem-uri.html)/urn:oid:1.2.40.0.34.99.4613.4, `urn:oid:1.2.40.0.10.1.4.3.2`/987654321, `urn:oid:1.2.40.0.34.4.22.1`/AXg6b2VMZFNFYjBsKzhrU2RKV2pPWXlZbW5Za2kwPQ==
 
 **active**: true
 
@@ -46,13 +46,6 @@ Profile: [HL7® AT Core Practitioner Profile](StructureDefinition-at-core-practi
     }
   },
   {
-    "type" : {
-      "coding" : [{
-        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
-        "code" : "ANON",
-        "display" : "Anonymous identifier"
-      }]
-    },
     "system" : "urn:oid:1.2.40.0.34.4.22.1",
     "value" : "AXg6b2VMZFNFYjBsKzhrU2RKV2pPWXlZbW5Za2kwPQ=="
   }],

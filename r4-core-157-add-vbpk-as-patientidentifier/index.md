@@ -58,7 +58,7 @@ This Implementation Guide contains and references intellectual property owned by
   "name" : "HL7AustriaImplementationGuide",
   "title" : "HL7® Austria FHIR® Core Implementation Guide",
   "status" : "active",
-  "date" : "2026-04-30T08:37:32+00:00",
+  "date" : "2026-04-30T08:59:13+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
