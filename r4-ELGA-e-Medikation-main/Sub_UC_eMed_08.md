@@ -16,8 +16,6 @@ Ein GDA kann basierend auf bestehenden Einträgen eines Medikationsplans ein ode
 
 #### Sub_UC_eMed_08_02 - Geplante Abgabe beenden
 
-#### Sub_UC_eMed_08_03 - Geplante Abgabe stornieren
-
 #### Beispiel
 
 #### Technische Hinweise
