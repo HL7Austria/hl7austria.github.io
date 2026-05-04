@@ -986,7 +986,13 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Die Liste hat keinen Titel.","A label for the list assigned by the author.","","Allows customization beyond just the code identifying the kind of list.","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""Dr. Jane's Patients""/>","","",,,,,"",,,,"List.title",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "at-emed-list-medikationsplan","List.code","List.code","","","",1,1,"Y","","Y","CodeableConcept {[]} {[]}
-","Code, der den Typ der Liste beschreibt.","This code defines the purpose of the list - why it was created.","If there is no code, the purpose of the list is implied where it is used, such as in a document section using Document.section.code.","Lists often contain subsets of resources rather than an exhaustive list.  The code identifies what type of subset is included.","","","","","","","",,"example","What the purpose of a list is.","http://hl7.org/fhir/ValueSet/list-example-codes|4.0.1","",,,,"List.code",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","Code, der den Typ der Liste beschreibt.","This code defines the purpose of the list - why it was created.","If there is no code, the purpose of the list is implied where it is used, such as in a document section using Document.section.code.","Lists often contain subsets of resources rather than an exhaustive list.  The code identifies what type of subset is included.","","","<valueCodeableConcept xmlns=""http://hl7.org/fhir"">
+  <coding>
+    <system value=""http://snomed.info/sct""/>
+    <code value=""736378000""/>
+    <display value=""Medikationsplan""/>
+  </coding>
+</valueCodeableConcept>","","","","",,"example","What the purpose of a list is.","http://hl7.org/fhir/ValueSet/list-example-codes|4.0.1","",,,,"List.code",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "at-emed-list-medikationsplan","List.subject","List.subject","","","",1,1,"Y","","Y","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-patient]]}
 ","Patient, für den die Liste geführt wird, der über den 
@@ -1036,8 +1042,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "at-emed-list-medikationsplan","List.entry.date","List.entry.date","","","",0,0,"","","","dateTime {[]} {[]}
 ","Kein Datum der Aufnahme bzw. Änderung des Eintrags im List.entry. Das Datum ist nur im in der referenzierten Ressource ersichtlich.","When this item was added to the list.","","The date may be significant for understanding the meaning of items in a working list.","","","","","","","",,,,,"",,,,"List.entry.date",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"at-emed-list-medikationsplan","List.entry.item","List.entry.item","","","",1,1,"Y","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Resource|4.0.1]]}
-","Referenz auf einen Eintrag.","A reference to the actual resource from which data was derived.","","","","","","","","","",,,,,"",,,,"List.entry.item",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"at-emed-list-medikationsplan","List.entry.item","List.entry.item","","","",1,1,"Y","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag]]}
+","Referenz auf einen Medikationsplaneintrag.","A reference to the actual resource from which data was derived.","","","","","","","","","",,,,,"",,,,"List.entry.item",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "at-emed-list-medikationsplan","List.emptyReason","List.emptyReason","","","",0,1,"Y","","","CodeableConcept {[]} {[]}
 ","Begründung, warum die Liste leer ist. Mögliche Ausprägungen: [notstarted |  nilknown] Bedeutung: notstarted: Intitalzustand - noch nie befüllt | nilknown: Die Liste wurde explizit geleert.","If the list is empty, why the list is empty.","The various reasons for an empty list make a significant interpretation to its interpretation. Note that this code is for use when the entire list has been suppressed, and not for when individual items are omitted - implementers may consider using a text note or a flag on an entry in these cases.","Allows capturing things like ""none exist"" or ""not asked"" which can be important for most lists.","","","","","","","",,"required","","https://fhir.hl7.at/elga/core/r4/ValueSet/ElgaListEmptyReasonVS","",,,,"List.emptyReason",0,1,"lst-1

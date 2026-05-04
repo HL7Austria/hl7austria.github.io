@@ -1,9 +1,9 @@
 ELGAeMedikationR4 : Validation Results
 =========================================
 
-err = 52, warn = 234, info = 59
+err = 54, warn = 235, info = 59
 IG Publisher Version: 2.2.7
-Generated Thu Apr 30 15:26:35 UTC 2026. FHIR version 4.0.1 for hl7.at.fhir.elga.emed.r4#0.1.1 (canonical = https://fhir.hl7.at/elga/emed/r4)
+Generated Mon May 04 14:49:25 UTC 2026. FHIR version 4.0.1 for hl7.at.fhir.elga.emed.r4#0.1.1 (canonical = https://fhir.hl7.at/elga/emed/r4)
  Build Errors : 11 / 5 / 0
  /home/runner/work/ELGA-e-Medikation-R4/ELGA-e-Medikation-R4/fsh-generated/resources/Bundle-At-Emed-Journey-01-Bundle-Medikationsplan : 1 / 0 / 5
  /home/runner/work/ELGA-e-Medikation-R4/ELGA-e-Medikation-R4/fsh-generated/resources/Bundle-At-Emed-Journey-01-Bundle-Tx-Medikationsplan : 1 / 0 / 5
@@ -38,7 +38,7 @@ Generated Thu Apr 30 15:26:35 UTC 2026. FHIR version 4.0.1 for hl7.at.fhir.elga.
  /home/runner/work/ELGA-e-Medikation-R4/ELGA-e-Medikation-R4/fsh-generated/resources/StructureDefinition-at-emed-bundle-medikationsplan : 0 / 0 / 2
  /home/runner/work/ELGA-e-Medikation-R4/ELGA-e-Medikation-R4/fsh-generated/resources/StructureDefinition-at-emed-bundle-tx-medikationsplan : 0 / 4 / 1
  /home/runner/work/ELGA-e-Medikation-R4/ELGA-e-Medikation-R4/fsh-generated/resources/StructureDefinition-at-emed-dosage : 2 / 8 / 1
- /home/runner/work/ELGA-e-Medikation-R4/ELGA-e-Medikation-R4/fsh-generated/resources/StructureDefinition-at-emed-list-medikationsplan : 0 / 3 / 1
+ /home/runner/work/ELGA-e-Medikation-R4/ELGA-e-Medikation-R4/fsh-generated/resources/StructureDefinition-at-emed-list-medikationsplan : 2 / 4 / 1
  /home/runner/work/ELGA-e-Medikation-R4/ELGA-e-Medikation-R4/fsh-generated/resources/StructureDefinition-at-emed-md-durchgefuehrte-abgabe : 0 / 3 / 2
  /home/runner/work/ELGA-e-Medikation-R4/ELGA-e-Medikation-R4/fsh-generated/resources/StructureDefinition-at-emed-medication : 0 / 8 / 1
  /home/runner/work/ELGA-e-Medikation-R4/ELGA-e-Medikation-R4/fsh-generated/resources/StructureDefinition-at-emed-mr-geplante-abgabe : 0 / 8 / 3
@@ -395,7 +395,10 @@ ERROR: StructureDefinition/at-emed-dosage: StructureDefinition.snapshot.element[
 WARNING: StructureDefinition/at-emed-dosage: StructureDefinition.snapshot.element[13].binding: The valueSet reference https://termgit.elga.gv.at/CodeSystem/medikationartanwendung on element Dosage.route could not be resolved
 WARNING: StructureDefinition/at-emed-dosage: StructureDefinition.snapshot.element[26].binding: The valueSet reference https://termgit.elga.gv.at/ValueSet-elga-medikationmengenart on element Dosage.doseAndRate.dose[x].unit could not be resolved
 == fsh-generated/resources/StructureDefinition-at-emed-list-medikationsplan.json ==
+ERROR: StructureDefinition/at-emed-list-medikationsplan: StructureDefinition.snapshot.element[13].fixed.ofType(CodeableConcept).coding[0].display: Wrong Display Name 'Medikationsplan' for http://snomed.info/sct#736378000. Valid display is one of 2 choices: 'Medication management plan (record artifact)' (en) or 'Medication management plan' (en) (for the language(s) 'en-US')
+ERROR: StructureDefinition/at-emed-list-medikationsplan: StructureDefinition.differential.element[0].fixed.ofType(CodeableConcept).coding[0].display: Wrong Display Name 'Medikationsplan' for http://snomed.info/sct#736378000. Valid display is one of 2 choices: 'Medication management plan (record artifact)' (en) or 'Medication management plan' (en) (for the language(s) 'en-US')
 WARNING: StructureDefinition/at-emed-list-medikationsplan: StructureDefinition.snapshot.element[10].binding: The definition for the element 'List.status' binds to the value set 'https://fhir.hl7.at/elga/core/r4/ValueSet/ElgaListStatusVS' which is experimental, but this structure is not labeled as experimental
+WARNING: StructureDefinition/at-emed-list-medikationsplan: StructureDefinition.snapshot.element[13].fixed.ofType(CodeableConcept): For the complex type CodeableConcept, consider using a pattern rather than a fixed value to avoid over-constraining the instance
 WARNING: StructureDefinition/at-emed-list-medikationsplan: StructureDefinition.snapshot.element[24].binding: The definition for the element 'List.entry.flag' binds to the value set 'https://fhir.hl7.at/elga/core/r4/ValueSet/ElgaListEntryFlagVS' which is experimental, but this structure is not labeled as experimental
 WARNING: StructureDefinition/at-emed-list-medikationsplan: StructureDefinition.snapshot.element[28].binding: The definition for the element 'List.emptyReason' binds to the value set 'https://fhir.hl7.at/elga/core/r4/ValueSet/ElgaListEmptyReasonVS' which is experimental, but this structure is not labeled as experimental
 == fsh-generated/resources/StructureDefinition-at-emed-md-durchgefuehrte-abgabe.json ==
