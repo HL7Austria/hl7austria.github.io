@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "MOPED"] ; # 
   fhir:title [ fhir:v "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-04-29T09:14:27+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-05-05T07:22:12+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ELGA GmbH" ] ;
@@ -88,6 +88,35 @@
          a fhir:Code ;
          fhir:v "hl7.fhir.uv.tools.r5#1.1.2"
        ]
+     ] ) ;
+     fhir:grouping ( [
+       fhir:id [ fhir:v "VerordnungKA" ] ;
+       fhir:name [ fhir:v "Verordnungsrelevant - Datenfelder für die KA" ] ;
+       fhir:description [ fhir:v "Verordnungsrelevante Ressourcenprofile für den Akteuer KA" ]
+     ] [
+       fhir:id [ fhir:v "VerordnungBund" ] ;
+       fhir:name [ fhir:v "Verordnungsrelevant - Datenfelder für den Bund" ] ;
+       fhir:description [ fhir:v "Verordnungsrelevante Ressourcenprofile für den Akteuer Bund" ]
+     ] [
+       fhir:id [ fhir:v "VerordnungLGF" ] ;
+       fhir:name [ fhir:v "Verordnungsrelevant - Datenfelder für den LGF" ] ;
+       fhir:description [ fhir:v "Verordnungsrelevante Ressourcenprofile für den Akteuer LGF" ]
+     ] [
+       fhir:id [ fhir:v "VerordnungSV" ] ;
+       fhir:name [ fhir:v "Verordnungsrelevant - Datenfelder für die SV" ] ;
+       fhir:description [ fhir:v "Verordnungsrelevante Ressourcenprofile für den Akteuer SV" ]
+     ] [
+       fhir:id [ fhir:v "QuestionnairesIntensiv" ] ;
+       fhir:name [ fhir:v "Fallbezogene Questionnaires für die Intensivdokumentation" ] ;
+       fhir:description [ fhir:v "Questionnaires für die Modellierung von Intensivdokumentation" ]
+     ] [
+       fhir:id [ fhir:v "QuestionnairesRegistermeldungen" ] ;
+       fhir:name [ fhir:v "Questionnaires - Registermeldungen" ] ;
+       fhir:description [ fhir:v "Questionnaires zur Definition von Registermeldungen in Moped." ]
+     ] [
+       fhir:id [ fhir:v "QuestionnairesJahresstatistikmeldung" ] ;
+       fhir:name [ fhir:v "Questionnaires - Jahresstatistikmeldung/Monatsstatistikmeldung" ] ;
+       fhir:description [ fhir:v "Jahresstatistikmeldungen von der Krankenanstalt für den LGF und Bund." ]
      ] ) ;
      fhir:resource ( [
        fhir:extension ( [
@@ -1247,7 +1276,8 @@
          fhir:reference [ fhir:v "Questionnaire/LKFTISSAQuestionnaire" ]
        ] ;
        fhir:name [ fhir:v "I12 Questionnaire für TISS-A-Daten" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesIntensiv" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -1583,7 +1613,8 @@
        ] ;
        fhir:name [ fhir:v "LKF A01 Questionnaire" ] ;
        fhir:description [ fhir:v "LKF A01 Questionnaire - Antiinfectiva-Abrufe" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -1745,7 +1776,8 @@
        ] ;
        fhir:name [ fhir:v "LKF B01 Questionnaire" ] ;
        fhir:description [ fhir:v "B01 Questionnaire - Basisinformation" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -1763,7 +1795,8 @@
        ] ;
        fhir:name [ fhir:v "LKF B02 Questionnaire" ] ;
        fhir:description [ fhir:v "B02 Questionnaire - Vermögens- und Kapitalstruktur (VKS)" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -1781,7 +1814,8 @@
        ] ;
        fhir:name [ fhir:v "LKF B03 Questionnaire" ] ;
        fhir:description [ fhir:v "B03 Questionnaire - Eigenmittelverteilungsrechnung (EVR)" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -1799,7 +1833,8 @@
        ] ;
        fhir:name [ fhir:v "LKF B04 Questionnaire" ] ;
        fhir:description [ fhir:v "B04 Questionnaire - Quellen- und Verwendungsanalyse (QVA)" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -1817,7 +1852,8 @@
        ] ;
        fhir:name [ fhir:v "LKF B05 Questionnaire" ] ;
        fhir:description [ fhir:v "B05 Questionnaire - Erlösstruktur (ES)" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -1835,7 +1871,8 @@
        ] ;
        fhir:name [ fhir:v "LKF B06 Questionnaire" ] ;
        fhir:description [ fhir:v "B06 Questionnaire - Zuschussstruktur (ZS)" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -1889,7 +1926,8 @@
        ] ;
        fhir:name [ fhir:v "LKF G01 Questionnaire" ] ;
        fhir:description [ fhir:v "G01 Questionnaire - Großgerätebasisdaten" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -1907,7 +1945,8 @@
        ] ;
        fhir:name [ fhir:v "LKF G02 Questionnaire" ] ;
        fhir:description [ fhir:v "G02 Questionnaire - Großgeräteleistungsdaten" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -1961,7 +2000,8 @@
        ] ;
        fhir:name [ fhir:v "LKF K01 Questionnaire" ] ;
        fhir:description [ fhir:v "K01 Questionnaire - den Kostenstellenplan" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -1979,7 +2019,8 @@
        ] ;
        fhir:name [ fhir:v "LKF K02 Questionnaire" ] ;
        fhir:description [ fhir:v "K02 Questionnaire - KA-Stammdaten" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -1997,7 +2038,8 @@
        ] ;
        fhir:name [ fhir:v "LKF K03 Questionnaire" ] ;
        fhir:description [ fhir:v "K03 Questionnaire - KA-Statistik (Ressourcen und Inanspruchnahme)" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -2015,7 +2057,8 @@
        ] ;
        fhir:name [ fhir:v "LKF K04 Questionnaire" ] ;
        fhir:description [ fhir:v "K04 Questionnaire - KA-Statistik (Personal-Vollzeitäquivalente nach Funktionsgruppen und Dienstverhältnis)" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -2033,7 +2076,8 @@
        ] ;
        fhir:name [ fhir:v "LKF K05 Questionnaire" ] ;
        fhir:description [ fhir:v "K05 Questionnaire - KA-Statistik (Personal des ärztlichen Dienstes)" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -2051,7 +2095,8 @@
        ] ;
        fhir:name [ fhir:v "LKF K06 Questionnaire" ] ;
        fhir:description [ fhir:v "LKF K06 Questionnaire - KA-Statistik (Konsiliarärztlicher Dienst)" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -2069,7 +2114,8 @@
        ] ;
        fhir:name [ fhir:v "LKF K07 Questionnaire" ] ;
        fhir:description [ fhir:v "LKF K07 Questionnaire - KA-Statistik (Personal der nicht-ärztlichen Gesundheitsberufe)" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -2087,7 +2133,8 @@
        ] ;
        fhir:name [ fhir:v "LKF K08 Questionnaire" ] ;
        fhir:description [ fhir:v "LKF K08 Questionnaire - Kostenstellen-Statistik und Kostennachweis (Bettenführende Hauptkostenstelle)" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -2105,7 +2152,8 @@
        ] ;
        fhir:name [ fhir:v "LKF K09 Questionnaire" ] ;
        fhir:description [ fhir:v "LKF K09 Questionnaire - Kostenstellen-Statistik und Kostennachweis (nicht-bettenführende Hauptkostenstelle)" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -2123,7 +2171,8 @@
        ] ;
        fhir:name [ fhir:v "LKF K10 Questionnaire" ] ;
        fhir:description [ fhir:v "LKF K10 Questionnaire - Kostenstellen-Statistik und Kostennachweis (Neben- und Hilfskostenstellen)" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -2141,7 +2190,8 @@
        ] ;
        fhir:name [ fhir:v "LKF K11 Questionnaire" ] ;
        fhir:description [ fhir:v "LKF K11 Questionnaire - Sammel-Kostennachweis Summenblatt" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -2159,7 +2209,8 @@
        ] ;
        fhir:name [ fhir:v "LKF K12 Questionnaire" ] ;
        fhir:description [ fhir:v "LKF K12 Questionnaire - Sammel-Kostennachweis Detailblätter" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -2177,7 +2228,8 @@
        ] ;
        fhir:name [ fhir:v "LKF K13 Questionnaire" ] ;
        fhir:description [ fhir:v "LKF K13 Questionnaire - Kalkulatorischer Anhang – Kostenminderungen" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -2195,7 +2247,8 @@
        ] ;
        fhir:name [ fhir:v "LKF K14 Questionnaire" ] ;
        fhir:description [ fhir:v "LKF K14 Questionnaire - Kalkulatorischer Anhang – Kalkulatorischer Anlagenspiegel" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -2213,7 +2266,8 @@
        ] ;
        fhir:name [ fhir:v "LKF K15 Questionnaire" ] ;
        fhir:description [ fhir:v "LKF K15 Questionnaire - Kalkulatorischer Anhang – Allgemeine Kostenbereiche" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -2231,7 +2285,8 @@
        ] ;
        fhir:name [ fhir:v "LKF K16 Questionnaire" ] ;
        fhir:description [ fhir:v "LKF K16 Questionnaire - Kalkulatorischer Anhang – Ausgewählte Kosten" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -2249,7 +2304,8 @@
        ] ;
        fhir:name [ fhir:v "LKF L01 Questionnaire" ] ;
        fhir:description [ fhir:v "LKF L01 Questionnaire - Spezielle Leistungsbereiche" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -2267,7 +2323,8 @@
        ] ;
        fhir:name [ fhir:v "LKF L02 Questionnaire" ] ;
        fhir:description [ fhir:v "LKF L02 Questionnaire - Abrechnungsrelevante Kostenträger" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -2285,7 +2342,8 @@
        ] ;
        fhir:name [ fhir:v "LKF L03 Questionnaire" ] ;
        fhir:description [ fhir:v "LKF L03 Questionnaire - Exklusionen medizinischer Leistungen" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -2303,7 +2361,8 @@
        ] ;
        fhir:name [ fhir:v "LKF L04 Questionnaire" ] ;
        fhir:description [ fhir:v "LKF L04 Questionnaire - Exklusionen tagesklinischer medizinischer Leistungen" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesJahresstatistikmeldung" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -3104,7 +3163,8 @@
        ] ;
        fhir:name [ fhir:v "MOPED Encounter Bund" ] ;
        fhir:description [ fhir:v "MOPED Profil der Encounter Ressource für die Rolle: Bund" ] ;
-       fhir:isExample [ fhir:v false ]
+       fhir:isExample [ fhir:v false ] ;
+       fhir:groupingId [ fhir:v "VerordnungBund" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -3140,7 +3200,8 @@
        ] ;
        fhir:name [ fhir:v "MOPED Encounter LGF" ] ;
        fhir:description [ fhir:v "MOPED Profil der Encounter Ressource für die Rolle: LGF" ] ;
-       fhir:isExample [ fhir:v false ]
+       fhir:isExample [ fhir:v false ] ;
+       fhir:groupingId [ fhir:v "VerordnungLGF" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -3212,7 +3273,8 @@
        ] ;
        fhir:name [ fhir:v "MOPED Encounter SV" ] ;
        fhir:description [ fhir:v "MOPED Profil der Encounter Ressource für die Rolle: SV" ] ;
-       fhir:isExample [ fhir:v false ]
+       fhir:isExample [ fhir:v false ] ;
+       fhir:groupingId [ fhir:v "VerordnungSV" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -4870,7 +4932,8 @@
          fhir:reference [ fhir:v "Questionnaire/register-questionnaire" ]
        ] ;
        fhir:name [ fhir:v "register-questionnaire" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesRegistermeldungen" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -4888,7 +4951,8 @@
        ] ;
        fhir:name [ fhir:v "SAPS3 Questionnaire" ] ;
        fhir:description [ fhir:v "A questionnaire for collecting SAPS3 data" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesIntensiv" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -5067,7 +5131,8 @@
        ] ;
        fhir:name [ fhir:v "Stroke Unit Registermeldung – Patientendaten" ] ;
        fhir:description [ fhir:v "Fragen zur Registermeldung Stroke Unit – Abschnitt Patientendaten" ] ;
-       fhir:isExample [ fhir:v true ]
+       fhir:isExample [ fhir:v true ] ;
+       fhir:groupingId [ fhir:v "QuestionnairesRegistermeldungen" ]
      ] [
        fhir:extension ( [
          fhir:url [
@@ -6318,6 +6383,18 @@
            fhir:l fhir:known_issues.html
          ] ;
          fhir:title [ fhir:v "Known Issues" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [
+           a fhir:Url ;
+           fhir:v "artifacts_manuell.html"^^xsd:anyURI ;
+           fhir:l fhir:artifacts_manuell.html
+         ] ;
+         fhir:name [
+           fhir:v "artifacts_manuell.html"^^xsd:anyURI ;
+           fhir:l fhir:artifacts_manuell.html
+         ] ;
+         fhir:title [ fhir:v "Artifacts Summary" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] )
      ] ;

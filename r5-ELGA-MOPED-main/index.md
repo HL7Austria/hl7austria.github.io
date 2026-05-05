@@ -184,7 +184,7 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
   "name" : "MOPED",
   "title" : "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)",
   "status" : "draft",
-  "date" : "2026-04-29T09:14:27+00:00",
+  "date" : "2026-05-05T07:22:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -226,6 +226,41 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
     "extension" : [{
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
       "valueCode" : "hl7.fhir.uv.tools.r5#1.1.2"
+    }],
+    "grouping" : [{
+      "id" : "VerordnungKA",
+      "name" : "Verordnungsrelevant - Datenfelder für die KA",
+      "description" : "Verordnungsrelevante Ressourcenprofile für den Akteuer KA"
+    },
+    {
+      "id" : "VerordnungBund",
+      "name" : "Verordnungsrelevant - Datenfelder für den Bund",
+      "description" : "Verordnungsrelevante Ressourcenprofile für den Akteuer Bund"
+    },
+    {
+      "id" : "VerordnungLGF",
+      "name" : "Verordnungsrelevant - Datenfelder für den LGF",
+      "description" : "Verordnungsrelevante Ressourcenprofile für den Akteuer LGF"
+    },
+    {
+      "id" : "VerordnungSV",
+      "name" : "Verordnungsrelevant - Datenfelder für die SV",
+      "description" : "Verordnungsrelevante Ressourcenprofile für den Akteuer SV"
+    },
+    {
+      "id" : "QuestionnairesIntensiv",
+      "name" : "Fallbezogene Questionnaires für die Intensivdokumentation",
+      "description" : "Questionnaires für die Modellierung von Intensivdokumentation"
+    },
+    {
+      "id" : "QuestionnairesRegistermeldungen",
+      "name" : "Questionnaires - Registermeldungen",
+      "description" : "Questionnaires zur Definition von Registermeldungen in Moped."
+    },
+    {
+      "id" : "QuestionnairesJahresstatistikmeldung",
+      "name" : "Questionnaires - Jahresstatistikmeldung/Monatsstatistikmeldung",
+      "description" : "Jahresstatistikmeldungen von der Krankenanstalt für den LGF und Bund."
     }],
     "resource" : [{
       "extension" : [{
@@ -985,7 +1020,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
         "reference" : "Questionnaire/LKFTISSAQuestionnaire"
       },
       "name" : "I12 Questionnaire für TISS-A-Daten",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesIntensiv"
     },
     {
       "extension" : [{
@@ -1189,7 +1225,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF A01 Questionnaire",
       "description" : "LKF A01 Questionnaire - Antiinfectiva-Abrufe",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1297,7 +1334,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF B01 Questionnaire",
       "description" : "B01 Questionnaire - Basisinformation",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1309,7 +1347,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF B02 Questionnaire",
       "description" : "B02 Questionnaire - Vermögens- und Kapitalstruktur (VKS)",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1321,7 +1360,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF B03 Questionnaire",
       "description" : "B03 Questionnaire - Eigenmittelverteilungsrechnung (EVR)",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1333,7 +1373,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF B04 Questionnaire",
       "description" : "B04 Questionnaire - Quellen- und Verwendungsanalyse (QVA)",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1345,7 +1386,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF B05 Questionnaire",
       "description" : "B05 Questionnaire - Erlösstruktur (ES)",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1357,7 +1399,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF B06 Questionnaire",
       "description" : "B06 Questionnaire - Zuschussstruktur (ZS)",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1393,7 +1436,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF G01 Questionnaire",
       "description" : "G01 Questionnaire - Großgerätebasisdaten",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1405,7 +1449,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF G02 Questionnaire",
       "description" : "G02 Questionnaire - Großgeräteleistungsdaten",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1441,7 +1486,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF K01 Questionnaire",
       "description" : "K01 Questionnaire - den Kostenstellenplan",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1453,7 +1499,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF K02 Questionnaire",
       "description" : "K02 Questionnaire - KA-Stammdaten",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1465,7 +1512,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF K03 Questionnaire",
       "description" : "K03 Questionnaire - KA-Statistik (Ressourcen und Inanspruchnahme)",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1477,7 +1525,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF K04 Questionnaire",
       "description" : "K04 Questionnaire - KA-Statistik (Personal-Vollzeitäquivalente nach Funktionsgruppen und Dienstverhältnis)",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1489,7 +1538,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF K05 Questionnaire",
       "description" : "K05 Questionnaire - KA-Statistik (Personal des ärztlichen Dienstes)",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1501,7 +1551,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF K06 Questionnaire",
       "description" : "LKF K06 Questionnaire - KA-Statistik (Konsiliarärztlicher Dienst)",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1513,7 +1564,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF K07 Questionnaire",
       "description" : "LKF K07 Questionnaire - KA-Statistik (Personal der nicht-ärztlichen Gesundheitsberufe)",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1525,7 +1577,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF K08 Questionnaire",
       "description" : "LKF K08 Questionnaire - Kostenstellen-Statistik und Kostennachweis (Bettenführende Hauptkostenstelle)",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1537,7 +1590,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF K09 Questionnaire",
       "description" : "LKF K09 Questionnaire - Kostenstellen-Statistik und Kostennachweis (nicht-bettenführende Hauptkostenstelle)",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1549,7 +1603,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF K10 Questionnaire",
       "description" : "LKF K10 Questionnaire - Kostenstellen-Statistik und Kostennachweis (Neben- und Hilfskostenstellen)",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1561,7 +1616,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF K11 Questionnaire",
       "description" : "LKF K11 Questionnaire - Sammel-Kostennachweis Summenblatt",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1573,7 +1629,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF K12 Questionnaire",
       "description" : "LKF K12 Questionnaire - Sammel-Kostennachweis Detailblätter",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1585,7 +1642,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF K13 Questionnaire",
       "description" : "LKF K13 Questionnaire - Kalkulatorischer Anhang – Kostenminderungen",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1597,7 +1655,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF K14 Questionnaire",
       "description" : "LKF K14 Questionnaire - Kalkulatorischer Anhang – Kalkulatorischer Anlagenspiegel",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1609,7 +1668,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF K15 Questionnaire",
       "description" : "LKF K15 Questionnaire - Kalkulatorischer Anhang – Allgemeine Kostenbereiche",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1621,7 +1681,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF K16 Questionnaire",
       "description" : "LKF K16 Questionnaire - Kalkulatorischer Anhang – Ausgewählte Kosten",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1633,7 +1694,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF L01 Questionnaire",
       "description" : "LKF L01 Questionnaire - Spezielle Leistungsbereiche",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1645,7 +1707,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF L02 Questionnaire",
       "description" : "LKF L02 Questionnaire - Abrechnungsrelevante Kostenträger",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1657,7 +1720,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF L03 Questionnaire",
       "description" : "LKF L03 Questionnaire - Exklusionen medizinischer Leistungen",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -1669,7 +1733,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "LKF L04 Questionnaire",
       "description" : "LKF L04 Questionnaire - Exklusionen tagesklinischer medizinischer Leistungen",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesJahresstatistikmeldung"
     },
     {
       "extension" : [{
@@ -2197,7 +2262,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "MOPED Encounter Bund",
       "description" : "MOPED Profil der Encounter Ressource für die Rolle: Bund",
-      "isExample" : false
+      "isExample" : false,
+      "groupingId" : "VerordnungBund"
     },
     {
       "extension" : [{
@@ -2221,7 +2287,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "MOPED Encounter LGF",
       "description" : "MOPED Profil der Encounter Ressource für die Rolle: LGF",
-      "isExample" : false
+      "isExample" : false,
+      "groupingId" : "VerordnungLGF"
     },
     {
       "extension" : [{
@@ -2269,7 +2336,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "MOPED Encounter SV",
       "description" : "MOPED Profil der Encounter Ressource für die Rolle: SV",
-      "isExample" : false
+      "isExample" : false,
+      "groupingId" : "VerordnungSV"
     },
     {
       "extension" : [{
@@ -3312,7 +3380,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
         "reference" : "Questionnaire/register-questionnaire"
       },
       "name" : "register-questionnaire",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesRegistermeldungen"
     },
     {
       "extension" : [{
@@ -3324,7 +3393,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "SAPS3 Questionnaire",
       "description" : "A questionnaire for collecting SAPS3 data",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesIntensiv"
     },
     {
       "extension" : [{
@@ -3443,7 +3513,8 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "Stroke Unit Registermeldung – Patientendaten",
       "description" : "Fragen zur Registermeldung Stroke Unit – Abschnitt Patientendaten",
-      "isExample" : true
+      "isExample" : true,
+      "groupingId" : "QuestionnairesRegistermeldungen"
     },
     {
       "extension" : [{
@@ -4172,6 +4243,12 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
         "sourceUrl" : "known_issues.html",
         "name" : "known_issues.html",
         "title" : "Known Issues",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "artifacts_manuell.html",
+        "name" : "artifacts_manuell.html",
+        "title" : "Artifacts Summary",
         "generation" : "markdown"
       }]
     },

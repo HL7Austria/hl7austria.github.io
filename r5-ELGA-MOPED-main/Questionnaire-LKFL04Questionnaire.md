@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/Questionnaire/LKFL04Questionnaire | *Version*:0.1.0 | |
-| Active as of 2026-04-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
+| Active as of 2026-05-05 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
 
  
 LKF L04 Questionnaire - Exklusionen tagesklinischer medizinischer Leistungen 
@@ -26,7 +26,7 @@ LKF L04 Questionnaire - Exklusionen tagesklinischer medizinischer Leistungen
   "version" : "0.1.0",
   "title" : "LKF L04 Questionnaire",
   "status" : "active",
-  "date" : "2026-04-29T09:14:27+00:00",
+  "date" : "2026-05-05T07:22:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

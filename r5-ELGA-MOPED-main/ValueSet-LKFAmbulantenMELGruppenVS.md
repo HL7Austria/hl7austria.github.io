@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/LKFAmbulantenMELGruppenVS | *Version*:0.1.0 | |
-| Draft as of 2026-04-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LKFAmbulantenMELGruppenVS |
+| Draft as of 2026-05-05 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:LKFAmbulantenMELGruppenVS |
 
  
 LKF Ambulante MEL-Gruppen 
@@ -51,7 +51,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "title" : "LKF Ambulante MEL-Gruppen",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-04-29T09:14:27+00:00",
+  "date" : "2026-05-05T07:22:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

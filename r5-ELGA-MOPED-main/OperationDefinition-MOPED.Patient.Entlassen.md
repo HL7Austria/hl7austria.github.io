@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/OperationDefinition/MOPED.Patient.Entlassen | *Version*:0.1.0 | |
-| Draft as of 2026-04-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_Patient_Entlassen |
+| Draft as of 2026-05-05 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_Patient_Entlassen |
 
  
 Die $entlassen Operation wird aufgerufen, wenn ein(e) Patient*in aus dem Krankenhaus entlassen wurde. 
@@ -44,7 +44,7 @@ Die Operation wird vom Akteur Krankenhaus (KA) aufgerufen. Die $entlassen Operat
   "title" : "MOPED Patient $entlassen",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-04-29T09:14:27+00:00",
+  "date" : "2026-05-05T07:22:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

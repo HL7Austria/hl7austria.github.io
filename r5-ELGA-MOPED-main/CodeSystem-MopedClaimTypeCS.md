@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/MopedClaimTypeCS | *Version*:0.1.0 | |
-| Draft as of 2026-04-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedClaimTypeCS |
+| Draft as of 2026-05-05 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedClaimTypeCS |
 
  
 CodeSystem für die Arten der Claims/ClaimResponses 
@@ -32,7 +32,7 @@ CodeSystem für die Arten der Claims/ClaimResponses
   "name" : "MopedClaimTypeCS",
   "title" : "Claim Type CodeSystem",
   "status" : "draft",
-  "date" : "2026-04-29T09:14:27+00:00",
+  "date" : "2026-05-05T07:22:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

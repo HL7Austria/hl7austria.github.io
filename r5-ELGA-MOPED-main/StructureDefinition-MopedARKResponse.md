@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedARKResponse | *Version*:0.1.0 | |
-| Draft as of 2026-04-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedARKResponse |
+| Draft as of 2026-05-05 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedARKResponse |
 
  
 MOPED Profil der ClaimResponse Ressource für die Rückmeldung der SV für Ausländerverrechnung und Regresse. 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedARKResponse.csv
   "name" : "MopedARKResponse",
   "title" : "MOPED ARKResponse",
   "status" : "draft",
-  "date" : "2026-04-29T09:14:27+00:00",
+  "date" : "2026-05-05T07:22:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

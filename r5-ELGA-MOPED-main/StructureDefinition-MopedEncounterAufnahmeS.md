@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedEncounterAufnahmeS | *Version*:0.1.0 | |
-| Draft as of 2026-04-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounterAufnahmeS |
+| Draft as of 2026-05-05 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounterAufnahmeS |
 
  
 MOPED Profil der Encounter Ressource für die Aufnahme im stationären Bereich 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedEncounterAufnah
   "name" : "MopedEncounterAufnahmeS",
   "title" : "MOPED Encounter Aufnahme Stationär",
   "status" : "draft",
-  "date" : "2026-04-29T09:14:27+00:00",
+  "date" : "2026-05-05T07:22:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

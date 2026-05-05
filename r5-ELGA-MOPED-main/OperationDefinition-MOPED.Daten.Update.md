@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/OperationDefinition/MOPED.Daten.Update | *Version*:0.1.0 | |
-| Draft as of 2026-04-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_Daten_Update |
+| Draft as of 2026-05-05 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_Daten_Update |
 
  
 Die $update Operation wird aufgerufen, wenn zusätzliche Informationen zu einem Fall eingebracht/abgeändert werden. 
@@ -58,7 +58,7 @@ Die Operation wird vom Akteur Krankenhaus (KA) aufgerufen. Die $update Operation
   "title" : "MOPED Daten $update",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-04-29T09:14:27+00:00",
+  "date" : "2026-05-05T07:22:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

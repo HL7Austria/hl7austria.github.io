@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/ValueSet/BehandlungsartVS | *Version*:0.1.0 | |
-| Draft as of 2026-04-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:BehandlungsartVS |
+| Draft as of 2026-05-05 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:BehandlungsartVS |
 
  
 ValueSet für die Behandlungsart 
@@ -51,7 +51,7 @@ ValueSet für die Behandlungsart
   "title" : "Behandlungsart",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-04-29T09:14:27+00:00",
+  "date" : "2026-05-05T07:22:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

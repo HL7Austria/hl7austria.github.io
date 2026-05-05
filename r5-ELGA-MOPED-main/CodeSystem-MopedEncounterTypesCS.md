@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/CodeSystem/MopedEncounterTypesCS | *Version*:0.1.0 | |
-| Active as of 2026-04-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounterTypesCS |
+| Active as of 2026-05-05 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounterTypesCS |
 
  
 Arten von Moped Encounter 
@@ -33,7 +33,7 @@ Arten von Moped Encounter
   "title" : "Arten von Moped Encounter",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-04-29T09:14:27+00:00",
+  "date" : "2026-05-05T07:22:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

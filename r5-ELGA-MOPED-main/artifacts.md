@@ -7,6 +7,84 @@
 
 This page provides a list of the FHIR artifacts defined as part of this implementation guide.
 
+### Verordnungsrelevant - Datenfelder für den Bund 
+
+Verordnungsrelevante Ressourcenprofile für den Akteuer Bund
+
+| | |
+| :--- | :--- |
+| [MOPED Encounter Bund](StructureDefinition-MopedEncounterBund.md) | MOPED Profil der Encounter Ressource für die Rolle: Bund |
+
+### Verordnungsrelevant - Datenfelder für den LGF 
+
+Verordnungsrelevante Ressourcenprofile für den Akteuer LGF
+
+| | |
+| :--- | :--- |
+| [MOPED Encounter LGF](StructureDefinition-MopedEncounterLGF.md) | MOPED Profil der Encounter Ressource für die Rolle: LGF |
+
+### Verordnungsrelevant - Datenfelder für die SV 
+
+Verordnungsrelevante Ressourcenprofile für den Akteuer SV
+
+| | |
+| :--- | :--- |
+| [MOPED Encounter SV](StructureDefinition-MopedEncounterSV.md) | MOPED Profil der Encounter Ressource für die Rolle: SV |
+
+### Fallbezogene Questionnaires für die Intensivdokumentation 
+
+Questionnaires für die Modellierung von Intensivdokumentation
+
+| | |
+| :--- | :--- |
+| [I12 Questionnaire für TISS-A-Daten](Questionnaire-LKFTISSAQuestionnaire.md) |  |
+| [SAPS3 Questionnaire](Questionnaire-LKFSAPS3Questionnaire.md) | A questionnaire for collecting SAPS3 data |
+
+### Questionnaires - Registermeldungen 
+
+Questionnaires zur Definition von Registermeldungen in Moped.
+
+| | |
+| :--- | :--- |
+| [register-questionnaire](Questionnaire-register-questionnaire.md) |  |
+| [Stroke Unit Registermeldung – Patientendaten](Questionnaire-StrokeUnitQuestionnaire2025.md) | Fragen zur Registermeldung Stroke Unit – Abschnitt Patientendaten |
+
+### Questionnaires - Jahresstatistikmeldung/Monatsstatistikmeldung 
+
+Jahresstatistikmeldungen von der Krankenanstalt für den LGF und Bund.
+
+| | |
+| :--- | :--- |
+| [LKF A01 Questionnaire](Questionnaire-LKFA01Questionnaire.md) | LKF A01 Questionnaire - Antiinfectiva-Abrufe |
+| [LKF B01 Questionnaire](Questionnaire-LKFB01Questionnaire.md) | B01 Questionnaire - Basisinformation |
+| [LKF B02 Questionnaire](Questionnaire-LKFB02Questionnaire.md) | B02 Questionnaire - Vermögens- und Kapitalstruktur (VKS) |
+| [LKF B03 Questionnaire](Questionnaire-LKFB03Questionnaire.md) | B03 Questionnaire - Eigenmittelverteilungsrechnung (EVR) |
+| [LKF B04 Questionnaire](Questionnaire-LKFB04Questionnaire.md) | B04 Questionnaire - Quellen- und Verwendungsanalyse (QVA) |
+| [LKF B05 Questionnaire](Questionnaire-LKFB05Questionnaire.md) | B05 Questionnaire - Erlösstruktur (ES) |
+| [LKF B06 Questionnaire](Questionnaire-LKFB06Questionnaire.md) | B06 Questionnaire - Zuschussstruktur (ZS) |
+| [LKF G01 Questionnaire](Questionnaire-LKFG01Questionnaire.md) | G01 Questionnaire - Großgerätebasisdaten |
+| [LKF G02 Questionnaire](Questionnaire-LKFG02Questionnaire.md) | G02 Questionnaire - Großgeräteleistungsdaten |
+| [LKF K01 Questionnaire](Questionnaire-LKFK01Questionnaire.md) | K01 Questionnaire - den Kostenstellenplan |
+| [LKF K02 Questionnaire](Questionnaire-LKFK02Questionnaire.md) | K02 Questionnaire - KA-Stammdaten |
+| [LKF K03 Questionnaire](Questionnaire-LKFK03Questionnaire.md) | K03 Questionnaire - KA-Statistik (Ressourcen und Inanspruchnahme) |
+| [LKF K04 Questionnaire](Questionnaire-LKFK04Questionnaire.md) | K04 Questionnaire - KA-Statistik (Personal-Vollzeitäquivalente nach Funktionsgruppen und Dienstverhältnis) |
+| [LKF K05 Questionnaire](Questionnaire-LKFK05Questionnaire.md) | K05 Questionnaire - KA-Statistik (Personal des ärztlichen Dienstes) |
+| [LKF K06 Questionnaire](Questionnaire-LKFK06Questionnaire.md) | LKF K06 Questionnaire - KA-Statistik (Konsiliarärztlicher Dienst) |
+| [LKF K07 Questionnaire](Questionnaire-LKFK07Questionnaire.md) | LKF K07 Questionnaire - KA-Statistik (Personal der nicht-ärztlichen Gesundheitsberufe) |
+| [LKF K08 Questionnaire](Questionnaire-LKFK08Questionnaire.md) | LKF K08 Questionnaire - Kostenstellen-Statistik und Kostennachweis (Bettenführende Hauptkostenstelle) |
+| [LKF K09 Questionnaire](Questionnaire-LKFK09Questionnaire.md) | LKF K09 Questionnaire - Kostenstellen-Statistik und Kostennachweis (nicht-bettenführende Hauptkostenstelle) |
+| [LKF K10 Questionnaire](Questionnaire-LKFK10Questionnaire.md) | LKF K10 Questionnaire - Kostenstellen-Statistik und Kostennachweis (Neben- und Hilfskostenstellen) |
+| [LKF K11 Questionnaire](Questionnaire-LKFK11Questionnaire.md) | LKF K11 Questionnaire - Sammel-Kostennachweis Summenblatt |
+| [LKF K12 Questionnaire](Questionnaire-LKFK12Questionnaire.md) | LKF K12 Questionnaire - Sammel-Kostennachweis Detailblätter |
+| [LKF K13 Questionnaire](Questionnaire-LKFK13Questionnaire.md) | LKF K13 Questionnaire - Kalkulatorischer Anhang – Kostenminderungen |
+| [LKF K14 Questionnaire](Questionnaire-LKFK14Questionnaire.md) | LKF K14 Questionnaire - Kalkulatorischer Anhang – Kalkulatorischer Anlagenspiegel |
+| [LKF K15 Questionnaire](Questionnaire-LKFK15Questionnaire.md) | LKF K15 Questionnaire - Kalkulatorischer Anhang – Allgemeine Kostenbereiche |
+| [LKF K16 Questionnaire](Questionnaire-LKFK16Questionnaire.md) | LKF K16 Questionnaire - Kalkulatorischer Anhang – Ausgewählte Kosten |
+| [LKF L01 Questionnaire](Questionnaire-LKFL01Questionnaire.md) | LKF L01 Questionnaire - Spezielle Leistungsbereiche |
+| [LKF L02 Questionnaire](Questionnaire-LKFL02Questionnaire.md) | LKF L02 Questionnaire - Abrechnungsrelevante Kostenträger |
+| [LKF L03 Questionnaire](Questionnaire-LKFL03Questionnaire.md) | LKF L03 Questionnaire - Exklusionen medizinischer Leistungen |
+| [LKF L04 Questionnaire](Questionnaire-LKFL04Questionnaire.md) | LKF L04 Questionnaire - Exklusionen tagesklinischer medizinischer Leistungen |
+
 ### Requirements: Actor Definitions 
 
 The following artifacts define the types of individuals and/or systems that will interact as part of the use cases covered by this implementation guide.
@@ -62,10 +140,7 @@ These define constraints on FHIR resources for systems conforming to this implem
 | [MOPED Encounter](StructureDefinition-MopedEncounter.md) | MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme und Entlassung |
 | [MOPED Encounter Ambulant](StructureDefinition-MopedEncounterA.md) | MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme und Entlassung im ambulanten Bereich |
 | [MOPED Encounter Aufnahme Stationär](StructureDefinition-MopedEncounterAufnahmeS.md) | MOPED Profil der Encounter Ressource für die Aufnahme im stationären Bereich |
-| [MOPED Encounter Bund](StructureDefinition-MopedEncounterBund.md) | MOPED Profil der Encounter Ressource für die Rolle: Bund |
 | [MOPED Encounter Entlassung Stationär](StructureDefinition-MopedEncounterEntlassungS.md) | MOPED Profil der Encounter Ressource für die Entlassung im stationären Bereich |
-| [MOPED Encounter LGF](StructureDefinition-MopedEncounterLGF.md) | MOPED Profil der Encounter Ressource für die Rolle: LGF |
-| [MOPED Encounter SV](StructureDefinition-MopedEncounterSV.md) | MOPED Profil der Encounter Ressource für die Rolle: SV |
 | [MOPED Encounter Stationär](StructureDefinition-MopedEncounterS.md) | MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme und Entlassung im stationären Bereich |
 | [MOPED Entlassen Bundle KA](StructureDefinition-MopedEntlassenBundle.md) | Bundle für die Input-Ressourcen beim Entlassen eines Patienten |
 | [MOPED Entlassung Aviso Composition](StructureDefinition-MopedEntlassenAvisoComposition.md) | MOPED Profil der Composition Ressource nach $entlassen bei Entlassung Aviso |
@@ -249,7 +324,6 @@ These are example instances that show what data produced and consumed by systems
 | [AbteilungKARied4](HealthcareService-AbteilungKARied4.md) | Hackathon Stammdaten: Abteilung 4 der KA Ried |
 | [Condition42.1](Condition-Condition42.1.md) |  |
 | [Encounter42](Encounter-Encounter42.md) |  |
-| [I12 Questionnaire für TISS-A-Daten](Questionnaire-LKFTISSAQuestionnaire.md) |  |
 | [I12 QuestionnaireResponse für TISS-A-Daten](QuestionnaireResponse-TISSAQuestionnaireResponse.md) |  |
 | [KAK999](Organization-KAK999.md) |  |
 | [KAK999ABT11111100](HealthcareService-KAK999ABT11111100.md) |  |
@@ -260,35 +334,6 @@ These are example instances that show what data produced and consumed by systems
 | [KAK999ABT16111112](HealthcareService-KAK999ABT16111112.md) |  |
 | [KAK999ABT16211100](HealthcareService-KAK999ABT16211100.md) |  |
 | [KAK999ABT16518011](HealthcareService-KAK999ABT16518011.md) |  |
-| [LKF A01 Questionnaire](Questionnaire-LKFA01Questionnaire.md) | LKF A01 Questionnaire - Antiinfectiva-Abrufe |
-| [LKF B01 Questionnaire](Questionnaire-LKFB01Questionnaire.md) | B01 Questionnaire - Basisinformation |
-| [LKF B02 Questionnaire](Questionnaire-LKFB02Questionnaire.md) | B02 Questionnaire - Vermögens- und Kapitalstruktur (VKS) |
-| [LKF B03 Questionnaire](Questionnaire-LKFB03Questionnaire.md) | B03 Questionnaire - Eigenmittelverteilungsrechnung (EVR) |
-| [LKF B04 Questionnaire](Questionnaire-LKFB04Questionnaire.md) | B04 Questionnaire - Quellen- und Verwendungsanalyse (QVA) |
-| [LKF B05 Questionnaire](Questionnaire-LKFB05Questionnaire.md) | B05 Questionnaire - Erlösstruktur (ES) |
-| [LKF B06 Questionnaire](Questionnaire-LKFB06Questionnaire.md) | B06 Questionnaire - Zuschussstruktur (ZS) |
-| [LKF G01 Questionnaire](Questionnaire-LKFG01Questionnaire.md) | G01 Questionnaire - Großgerätebasisdaten |
-| [LKF G02 Questionnaire](Questionnaire-LKFG02Questionnaire.md) | G02 Questionnaire - Großgeräteleistungsdaten |
-| [LKF K01 Questionnaire](Questionnaire-LKFK01Questionnaire.md) | K01 Questionnaire - den Kostenstellenplan |
-| [LKF K02 Questionnaire](Questionnaire-LKFK02Questionnaire.md) | K02 Questionnaire - KA-Stammdaten |
-| [LKF K03 Questionnaire](Questionnaire-LKFK03Questionnaire.md) | K03 Questionnaire - KA-Statistik (Ressourcen und Inanspruchnahme) |
-| [LKF K04 Questionnaire](Questionnaire-LKFK04Questionnaire.md) | K04 Questionnaire - KA-Statistik (Personal-Vollzeitäquivalente nach Funktionsgruppen und Dienstverhältnis) |
-| [LKF K05 Questionnaire](Questionnaire-LKFK05Questionnaire.md) | K05 Questionnaire - KA-Statistik (Personal des ärztlichen Dienstes) |
-| [LKF K06 Questionnaire](Questionnaire-LKFK06Questionnaire.md) | LKF K06 Questionnaire - KA-Statistik (Konsiliarärztlicher Dienst) |
-| [LKF K07 Questionnaire](Questionnaire-LKFK07Questionnaire.md) | LKF K07 Questionnaire - KA-Statistik (Personal der nicht-ärztlichen Gesundheitsberufe) |
-| [LKF K08 Questionnaire](Questionnaire-LKFK08Questionnaire.md) | LKF K08 Questionnaire - Kostenstellen-Statistik und Kostennachweis (Bettenführende Hauptkostenstelle) |
-| [LKF K09 Questionnaire](Questionnaire-LKFK09Questionnaire.md) | LKF K09 Questionnaire - Kostenstellen-Statistik und Kostennachweis (nicht-bettenführende Hauptkostenstelle) |
-| [LKF K10 Questionnaire](Questionnaire-LKFK10Questionnaire.md) | LKF K10 Questionnaire - Kostenstellen-Statistik und Kostennachweis (Neben- und Hilfskostenstellen) |
-| [LKF K11 Questionnaire](Questionnaire-LKFK11Questionnaire.md) | LKF K11 Questionnaire - Sammel-Kostennachweis Summenblatt |
-| [LKF K12 Questionnaire](Questionnaire-LKFK12Questionnaire.md) | LKF K12 Questionnaire - Sammel-Kostennachweis Detailblätter |
-| [LKF K13 Questionnaire](Questionnaire-LKFK13Questionnaire.md) | LKF K13 Questionnaire - Kalkulatorischer Anhang – Kostenminderungen |
-| [LKF K14 Questionnaire](Questionnaire-LKFK14Questionnaire.md) | LKF K14 Questionnaire - Kalkulatorischer Anhang – Kalkulatorischer Anlagenspiegel |
-| [LKF K15 Questionnaire](Questionnaire-LKFK15Questionnaire.md) | LKF K15 Questionnaire - Kalkulatorischer Anhang – Allgemeine Kostenbereiche |
-| [LKF K16 Questionnaire](Questionnaire-LKFK16Questionnaire.md) | LKF K16 Questionnaire - Kalkulatorischer Anhang – Ausgewählte Kosten |
-| [LKF L01 Questionnaire](Questionnaire-LKFL01Questionnaire.md) | LKF L01 Questionnaire - Spezielle Leistungsbereiche |
-| [LKF L02 Questionnaire](Questionnaire-LKFL02Questionnaire.md) | LKF L02 Questionnaire - Abrechnungsrelevante Kostenträger |
-| [LKF L03 Questionnaire](Questionnaire-LKFL03Questionnaire.md) | LKF L03 Questionnaire - Exklusionen medizinischer Leistungen |
-| [LKF L04 Questionnaire](Questionnaire-LKFL04Questionnaire.md) | LKF L04 Questionnaire - Exklusionen tagesklinischer medizinischer Leistungen |
 | [LKF Testdaten Fall](Composition-Composition42.md) |  |
 | [LKFRequest42](Claim-LKFRequest42.md) |  |
 | [LocationKAHerzJesu](Location-LocationKAHerzJesu.md) | Stammdaten: Location der KA Herz Jesu |
@@ -334,7 +379,6 @@ These are example instances that show what data produced and consumed by systems
 | [PJ2VAERequest1](Claim-PJ2VAERequest1.md) | Hackathon Patient Journey 2 Beispiel: VAERequest 1 |
 | [PJ2VAEResponse1](ClaimResponse-PJ2VAEResponse1.md) | Hackathon Patient Journey 2 Beispiel: VAEResponse 1 |
 | [Patient42](Patient-Patient42.md) |  |
-| [SAPS3 Questionnaire](Questionnaire-LKFSAPS3Questionnaire.md) | A questionnaire for collecting SAPS3 data |
 | [SAPS42.1](QuestionnaireResponse-SAPS42.1.md) |  |
 | [SV11](Organization-SV11.md) | Hackathon Stammdaten: ÖGK Wien |
 | [SV12](Organization-SV12.md) | Hackathon Stammdaten: ÖGK Niederösterreich |
@@ -345,7 +389,6 @@ These are example instances that show what data produced and consumed by systems
 | [SV17](Organization-SV17.md) | Hackathon Stammdaten: ÖGK Salzburg |
 | [SV18](Organization-SV18.md) | Hackathon Stammdaten: ÖGK Tirol |
 | [SV19](Organization-SV19.md) | Hackathon Stammdaten: ÖGK Vorarlberg |
-| [Stroke Unit Registermeldung – Patientendaten](Questionnaire-StrokeUnitQuestionnaire2025.md) | Fragen zur Registermeldung Stroke Unit – Abschnitt Patientendaten |
 | [Stroke Unit Registermeldung – Patientendaten](Questionnaire-strokeunit-questionnaire.md) | Fragen zur Registermeldung Stroke Unit – Abschnitt Patientendaten |
 | [Subscription Topic VAE abgelehnt](SubscriptionTopic-vaeAbgelehnt.md) | SubscriptionTopic für die KA, um bei abgelehnten VAEs benachrichtigt zu werden. |
 | [Subscription Topic neue VAE](SubscriptionTopic-neueVAE.md) | SubscriptionTopic für die SV, um bei neuen VAEs benachrichtigt zu werden. |
@@ -360,6 +403,5 @@ These are example instances that show what data produced and consumed by systems
 | [TransferEncounter42.1](Encounter-TransferEncounter42.1.md) |  |
 | [TransferEncounter42.2](Encounter-TransferEncounter42.2.md) |  |
 | [XDokExampleDevice](Device-XDokExampleDevice.md) | Moped Example XDok Device |
-| [register-questionnaire](Questionnaire-register-questionnaire.md) |  |
 | [strokeunit-questionnaire-response-1](QuestionnaireResponse-strokeunit-questionnaire-response-1.md) |  |
 

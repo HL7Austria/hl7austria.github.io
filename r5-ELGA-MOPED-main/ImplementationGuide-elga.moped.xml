@@ -10,7 +10,7 @@
   <name value="MOPED"/>
   <title value="Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"/>
   <status value="draft"/>
-  <date value="2026-04-29T09:14:27+00:00"/>
+  <date value="2026-05-05T07:22:12+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -47,6 +47,34 @@
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
       <valueCode value="hl7.fhir.uv.tools.r5#1.1.2"/>
     </extension>
+    <grouping id="VerordnungKA">
+      <name value="Verordnungsrelevant - Datenfelder für die KA"/>
+      <description value="Verordnungsrelevante Ressourcenprofile für den Akteuer KA"/>
+    </grouping>
+    <grouping id="VerordnungBund">
+      <name value="Verordnungsrelevant - Datenfelder für den Bund"/>
+      <description value="Verordnungsrelevante Ressourcenprofile für den Akteuer Bund"/>
+    </grouping>
+    <grouping id="VerordnungLGF">
+      <name value="Verordnungsrelevant - Datenfelder für den LGF"/>
+      <description value="Verordnungsrelevante Ressourcenprofile für den Akteuer LGF"/>
+    </grouping>
+    <grouping id="VerordnungSV">
+      <name value="Verordnungsrelevant - Datenfelder für die SV"/>
+      <description value="Verordnungsrelevante Ressourcenprofile für den Akteuer SV"/>
+    </grouping>
+    <grouping id="QuestionnairesIntensiv">
+      <name value="Fallbezogene Questionnaires für die Intensivdokumentation"/>
+      <description value="Questionnaires für die Modellierung von Intensivdokumentation"/>
+    </grouping>
+    <grouping id="QuestionnairesRegistermeldungen">
+      <name value="Questionnaires - Registermeldungen"/>
+      <description value="Questionnaires zur Definition von Registermeldungen in Moped."/>
+    </grouping>
+    <grouping id="QuestionnairesJahresstatistikmeldung">
+      <name value="Questionnaires - Jahresstatistikmeldung/Monatsstatistikmeldung"/>
+      <description value="Jahresstatistikmeldungen von der Krankenanstalt für den LGF und Bund."/>
+    </grouping>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
@@ -743,6 +771,7 @@
       </reference>
       <name value="I12 Questionnaire für TISS-A-Daten"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesIntensiv"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -930,6 +959,7 @@
       <name value="LKF A01 Questionnaire"/>
       <description value="LKF A01 Questionnaire - Antiinfectiva-Abrufe"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1029,6 +1059,7 @@
       <name value="LKF B01 Questionnaire"/>
       <description value="B01 Questionnaire - Basisinformation"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1040,6 +1071,7 @@
       <name value="LKF B02 Questionnaire"/>
       <description value="B02 Questionnaire - Vermögens- und Kapitalstruktur (VKS)"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1051,6 +1083,7 @@
       <name value="LKF B03 Questionnaire"/>
       <description value="B03 Questionnaire - Eigenmittelverteilungsrechnung (EVR)"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1062,6 +1095,7 @@
       <name value="LKF B04 Questionnaire"/>
       <description value="B04 Questionnaire - Quellen- und Verwendungsanalyse (QVA)"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1073,6 +1107,7 @@
       <name value="LKF B05 Questionnaire"/>
       <description value="B05 Questionnaire - Erlösstruktur (ES)"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1084,6 +1119,7 @@
       <name value="LKF B06 Questionnaire"/>
       <description value="B06 Questionnaire - Zuschussstruktur (ZS)"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1117,6 +1153,7 @@
       <name value="LKF G01 Questionnaire"/>
       <description value="G01 Questionnaire - Großgerätebasisdaten"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1128,6 +1165,7 @@
       <name value="LKF G02 Questionnaire"/>
       <description value="G02 Questionnaire - Großgeräteleistungsdaten"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1161,6 +1199,7 @@
       <name value="LKF K01 Questionnaire"/>
       <description value="K01 Questionnaire - den Kostenstellenplan"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1172,6 +1211,7 @@
       <name value="LKF K02 Questionnaire"/>
       <description value="K02 Questionnaire - KA-Stammdaten"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1183,6 +1223,7 @@
       <name value="LKF K03 Questionnaire"/>
       <description value="K03 Questionnaire - KA-Statistik (Ressourcen und Inanspruchnahme)"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1194,6 +1235,7 @@
       <name value="LKF K04 Questionnaire"/>
       <description value="K04 Questionnaire - KA-Statistik (Personal-Vollzeitäquivalente nach Funktionsgruppen und Dienstverhältnis)"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1205,6 +1247,7 @@
       <name value="LKF K05 Questionnaire"/>
       <description value="K05 Questionnaire - KA-Statistik (Personal des ärztlichen Dienstes)"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1216,6 +1259,7 @@
       <name value="LKF K06 Questionnaire"/>
       <description value="LKF K06 Questionnaire - KA-Statistik (Konsiliarärztlicher Dienst)"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1227,6 +1271,7 @@
       <name value="LKF K07 Questionnaire"/>
       <description value="LKF K07 Questionnaire - KA-Statistik (Personal der nicht-ärztlichen Gesundheitsberufe)"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1238,6 +1283,7 @@
       <name value="LKF K08 Questionnaire"/>
       <description value="LKF K08 Questionnaire - Kostenstellen-Statistik und Kostennachweis (Bettenführende Hauptkostenstelle)"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1249,6 +1295,7 @@
       <name value="LKF K09 Questionnaire"/>
       <description value="LKF K09 Questionnaire - Kostenstellen-Statistik und Kostennachweis (nicht-bettenführende Hauptkostenstelle)"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1260,6 +1307,7 @@
       <name value="LKF K10 Questionnaire"/>
       <description value="LKF K10 Questionnaire - Kostenstellen-Statistik und Kostennachweis (Neben- und Hilfskostenstellen)"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1271,6 +1319,7 @@
       <name value="LKF K11 Questionnaire"/>
       <description value="LKF K11 Questionnaire - Sammel-Kostennachweis Summenblatt"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1282,6 +1331,7 @@
       <name value="LKF K12 Questionnaire"/>
       <description value="LKF K12 Questionnaire - Sammel-Kostennachweis Detailblätter"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1293,6 +1343,7 @@
       <name value="LKF K13 Questionnaire"/>
       <description value="LKF K13 Questionnaire - Kalkulatorischer Anhang – Kostenminderungen"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1304,6 +1355,7 @@
       <name value="LKF K14 Questionnaire"/>
       <description value="LKF K14 Questionnaire - Kalkulatorischer Anhang – Kalkulatorischer Anlagenspiegel"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1315,6 +1367,7 @@
       <name value="LKF K15 Questionnaire"/>
       <description value="LKF K15 Questionnaire - Kalkulatorischer Anhang – Allgemeine Kostenbereiche"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1326,6 +1379,7 @@
       <name value="LKF K16 Questionnaire"/>
       <description value="LKF K16 Questionnaire - Kalkulatorischer Anhang – Ausgewählte Kosten"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1337,6 +1391,7 @@
       <name value="LKF L01 Questionnaire"/>
       <description value="LKF L01 Questionnaire - Spezielle Leistungsbereiche"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1348,6 +1403,7 @@
       <name value="LKF L02 Questionnaire"/>
       <description value="LKF L02 Questionnaire - Abrechnungsrelevante Kostenträger"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1359,6 +1415,7 @@
       <name value="LKF L03 Questionnaire"/>
       <description value="LKF L03 Questionnaire - Exklusionen medizinischer Leistungen"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1370,6 +1427,7 @@
       <name value="LKF L04 Questionnaire"/>
       <description value="LKF L04 Questionnaire - Exklusionen tagesklinischer medizinischer Leistungen"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1854,6 +1912,7 @@
       <name value="MOPED Encounter Bund"/>
       <description value="MOPED Profil der Encounter Ressource für die Rolle: Bund"/>
       <isExample value="false"/>
+      <groupingId value="VerordnungBund"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1876,6 +1935,7 @@
       <name value="MOPED Encounter LGF"/>
       <description value="MOPED Profil der Encounter Ressource für die Rolle: LGF"/>
       <isExample value="false"/>
+      <groupingId value="VerordnungLGF"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1920,6 +1980,7 @@
       <name value="MOPED Encounter SV"/>
       <description value="MOPED Profil der Encounter Ressource für die Rolle: SV"/>
       <isExample value="false"/>
+      <groupingId value="VerordnungSV"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2879,6 +2940,7 @@
       </reference>
       <name value="register-questionnaire"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesRegistermeldungen"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2890,6 +2952,7 @@
       <name value="SAPS3 Questionnaire"/>
       <description value="A questionnaire for collecting SAPS3 data"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesIntensiv"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2999,6 +3062,7 @@
       <name value="Stroke Unit Registermeldung – Patientendaten"/>
       <description value="Fragen zur Registermeldung Stroke Unit – Abschnitt Patientendaten"/>
       <isExample value="true"/>
+      <groupingId value="QuestionnairesRegistermeldungen"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3685,6 +3749,12 @@
         <sourceUrl value="known_issues.html"/>
         <name value="known_issues.html"/>
         <title value="Known Issues"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="artifacts_manuell.html"/>
+        <name value="artifacts_manuell.html"/>
+        <title value="Artifacts Summary"/>
         <generation value="markdown"/>
       </page>
     </page>

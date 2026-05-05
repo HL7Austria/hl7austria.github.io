@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/OperationDefinition/MOPED.Encounter.Abrechnen | *Version*:0.1.0 | |
-| Draft as of 2026-04-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_Encounter_Abrechnen |
+| Draft as of 2026-05-05 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_Encounter_Abrechnen |
 
  
 Die $abrechnen Operation wird aufgerufen, wenn ein Fall abgerechnet werden soll. 
@@ -60,7 +60,7 @@ Die Operation wird vom Akteur Krankenhaus (KA) aufgerufen. Die $abrechnen Operat
   "title" : "MOPED Encounter $abrechnen",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-04-29T09:14:27+00:00",
+  "date" : "2026-05-05T07:22:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedEncounterLGF | *Version*:0.1.0 | |
-| Draft as of 2026-04-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounterLGF |
+| Draft as of 2026-05-05 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounterLGF |
 
  
 MOPED Profil der Encounter Ressource für die Rolle: LGF 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedEncounterLGF.cs
   "name" : "MopedEncounterLGF",
   "title" : "MOPED Encounter LGF",
   "status" : "draft",
-  "date" : "2026-04-29T09:14:27+00:00",
+  "date" : "2026-05-05T07:22:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

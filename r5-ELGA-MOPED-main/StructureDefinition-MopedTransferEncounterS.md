@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedTransferEncounterS | *Version*:0.1.0 | |
-| Draft as of 2026-04-29 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedTransferEncounterS |
+| Draft as of 2026-05-05 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedTransferEncounterS |
 
  
 MOPED Profil der Encounter Ressource für eine stationäre Verlegung 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedTransferEncount
   "name" : "MopedTransferEncounterS",
   "title" : "MOPED TransferEncounter Stationär",
   "status" : "draft",
-  "date" : "2026-04-29T09:14:27+00:00",
+  "date" : "2026-05-05T07:22:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
