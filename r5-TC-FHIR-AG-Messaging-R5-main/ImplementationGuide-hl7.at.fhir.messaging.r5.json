@@ -10,7 +10,7 @@
   "name" : "ATMessaging",
   "title" : "HL7® Austria TC FHIR® Messaging",
   "status" : "draft",
-  "date" : "2026-04-09T11:58:42+00:00",
+  "date" : "2026-05-06T12:27:37+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -95,6 +95,19 @@
       },
       "name" : "Ad-hoc message of Doctors note",
       "description" : "Doctors note as ad-hoc submitted message (without previous request).",
+      "isExample" : true,
+      "profile" : ["http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/c669729a-67af-453c-8b3f-ed05d754e506"
+      },
+      "name" : "Ad-hoc response of a feedback form",
+      "description" : "Feedback form submission as ad-hoc submitted message (without previous request).",
       "isExample" : true,
       "profile" : ["http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle"]
     },
@@ -368,6 +381,31 @@
       "description" : "Message header for sending a doctor's note document from a HIS to a GP software without prior request.",
       "isExample" : true,
       "profile" : ["http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MessageHeader"
+      }],
+      "reference" : {
+        "reference" : "MessageHeader/7ea8b8eb-eeb3-4632-9a21-d6132fe093d6"
+      },
+      "name" : "MessageHeader of an ad-hoc message sending a questionnaire response.",
+      "description" : "Message header for sending a feedback form submission without prior request.",
+      "isExample" : true,
+      "profile" : ["http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MessageDefinition"
+      }],
+      "reference" : {
+        "reference" : "MessageDefinition/at-messaging-questionnaireresponse-message"
+      },
+      "name" : "Questionnaire response transfer over directed messaging.",
+      "description" : "Regulates the resources to be used in a directed message when transferring a questionnaire response.",
+      "isExample" : false
     },
     {
       "extension" : [{

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header | *Version*:0.1.0 | |
-| Draft as of 2026-04-09 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingMessageHeader |
+| Draft as of 2026-05-06 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingMessageHeader |
 | **Usage:**Jurisdiction: Austria | | |
 
  
@@ -17,7 +17,7 @@ MessageHeader to be used for all messages transfered with the AT FHIR messaging.
 
 **Usages:**
 
-* Examples for this Profile: [MessageHeader/89c89a84-bce7-4c5d-b6f6-49690eea5b06](MessageHeader-89c89a84-bce7-4c5d-b6f6-49690eea5b06.md)
+* Examples for this Profile: [MessageHeader/7ea8b8eb-eeb3-4632-9a21-d6132fe093d6](MessageHeader-7ea8b8eb-eeb3-4632-9a21-d6132fe093d6.md) and [MessageHeader/89c89a84-bce7-4c5d-b6f6-49690eea5b06](MessageHeader-89c89a84-bce7-4c5d-b6f6-49690eea5b06.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.messaging.r5|current/StructureDefinition/at-messaging-message-header)
 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-messaging-message
   "name" : "ATMessagingMessageHeader",
   "title" : "AT Messaging Message Header",
   "status" : "draft",
-  "date" : "2026-04-09T11:58:42+00:00",
+  "date" : "2026-05-06T12:27:37+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",

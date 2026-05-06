@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "ATMessaging"] ; # 
   fhir:title [ fhir:v "HL7® Austria TC FHIR® Messaging"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-04-09T11:58:42+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-05-06T12:27:37+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7® Austria, TC FHIR®"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "HL7® Austria, TC FHIR®" ] ;
@@ -145,6 +145,28 @@
        ] ;
        fhir:name [ fhir:v "Ad-hoc message of Doctors note" ] ;
        fhir:description [ fhir:v "Doctors note as ad-hoc submitted message (without previous request)." ] ;
+       fhir:isExample [ fhir:v true ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle"^^xsd:anyURI ;
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Bundle"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/Bundle/c669729a-67af-453c-8b3f-ed05d754e506> ;
+         fhir:reference [ fhir:v "Bundle/c669729a-67af-453c-8b3f-ed05d754e506" ]
+       ] ;
+       fhir:name [ fhir:v "Ad-hoc response of a feedback form" ] ;
+       fhir:description [ fhir:v "Feedback form submission as ad-hoc submitted message (without previous request)." ] ;
        fhir:isExample [ fhir:v true ] ;
        fhir:profile ( [
          fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle"^^xsd:anyURI ;
@@ -574,6 +596,46 @@
          fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header"^^xsd:anyURI ;
          fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header>
        ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "MessageHeader"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageHeader/7ea8b8eb-eeb3-4632-9a21-d6132fe093d6> ;
+         fhir:reference [ fhir:v "MessageHeader/7ea8b8eb-eeb3-4632-9a21-d6132fe093d6" ]
+       ] ;
+       fhir:name [ fhir:v "MessageHeader of an ad-hoc message sending a questionnaire response." ] ;
+       fhir:description [ fhir:v "Message header for sending a feedback form submission without prior request." ] ;
+       fhir:isExample [ fhir:v true ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header"^^xsd:anyURI ;
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "MessageDefinition"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-questionnaireresponse-message> ;
+         fhir:reference [ fhir:v "MessageDefinition/at-messaging-questionnaireresponse-message" ]
+       ] ;
+       fhir:name [ fhir:v "Questionnaire response transfer over directed messaging." ] ;
+       fhir:description [ fhir:v "Regulates the resources to be used in a directed message when transferring a questionnaire response." ] ;
+       fhir:isExample [ fhir:v false ]
      ] [
        fhir:extension ( [
          fhir:url [

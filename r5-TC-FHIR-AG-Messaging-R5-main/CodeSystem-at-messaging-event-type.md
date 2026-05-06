@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-event-type | *Version*:0.1.0 | |
-| Draft as of 2026-04-09 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingEventType |
+| Draft as of 2026-05-06 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingEventType |
 | **Usage:**Jurisdiction: Austria | | |
 
  
@@ -33,7 +33,7 @@ Event Coding for discriminating messages on the receiver.
   "title" : "AT Messaging Event Type",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-04-09T11:58:42+00:00",
+  "date" : "2026-05-06T12:27:37+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -70,7 +70,7 @@ Event Coding for discriminating messages on the receiver.
   }],
   "caseSensitive" : false,
   "content" : "complete",
-  "count" : 3,
+  "count" : 4,
   "concept" : [{
     "code" : "request",
     "display" : "Message to initiate a workflow to request an action or a communication.",
@@ -85,6 +85,11 @@ Event Coding for discriminating messages on the receiver.
     "code" : "status",
     "display" : "The message is sent to transfer the status or result of an ongoing message flow (e.g. acknowledgement, service status update, ...)",
     "definition" : "The transfer of a status update as a response to another message is the main purpose of the message."
+  },
+  {
+    "code" : "questionnaireResponse",
+    "display" : "A questionnare response to a predefined questionnaire is sent.",
+    "definition" : "The transfer of an ad-hoc questionnaire response is the main purpose of the message."
   }]
 }
 

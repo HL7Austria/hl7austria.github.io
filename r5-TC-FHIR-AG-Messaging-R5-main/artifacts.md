@@ -25,6 +25,7 @@ These define the types of messages that can be sent and/or received by systems c
 | [Communication over directed messaging.](MessageDefinition-at-messaging-communication-message.md) | Regulates the resources to be used in a directed message when transferring a Communication. |
 | [Communication request over directed messaging.](MessageDefinition-at-messaging-communicationrequest-message.md) | Regulates the resources to be used in a directed message when performing a CommunicationRequest. |
 | [Document transfer over directed messaging.](MessageDefinition-at-messaging-document-message.md) | Regulates the resources to be used in a directed message when transferring a document. |
+| [Questionnaire response transfer over directed messaging.](MessageDefinition-at-messaging-questionnaireresponse-message.md) | Regulates the resources to be used in a directed message when transferring a questionnaire response. |
 | [Service request over directed messaging.](MessageDefinition-at-messaging-servicerequest-message.md) | Regulates the resources to be used in a directed message when performing a ServiceRequest. |
 | [Service status update over directed messaging.](MessageDefinition-at-messaging-service-status-message.md) | Regulates the resources to be used in a directed message when transferring a task status update of a ServiceRequest. |
 
@@ -74,6 +75,7 @@ These are example instances that show what data produced and consumed by systems
 | | |
 | :--- | :--- |
 | [Ad-hoc message of Doctors note](Bundle-269f4c84-7762-47aa-b872-c4f927301485.md) | Doctors note as ad-hoc submitted message (without previous request). |
+| [Ad-hoc response of a feedback form](Bundle-c669729a-67af-453c-8b3f-ed05d754e506.md) | Feedback form submission as ad-hoc submitted message (without previous request). |
 | [Communication Example](Communication-08327a3a-1f52-4ec0-9b90-ac17fd6e06b2.md) | Plain text message that kindly rejects a previous communication request. |
 | [CommunicationRequest for a consultation document](CommunicationRequest-c7090292-dc27-4d90-a500-7e4110217947.md) | Plain Text communication request for a consult document. |
 | [Consult communication](Bundle-63874621-5550-410a-b893-ca890614cf6e.md) | Consultation document rejection as CommunicationRequest message. |
@@ -82,4 +84,5 @@ These are example instances that show what data produced and consumed by systems
 | [Lab request](Bundle-96beaf3e-6e2f-40f4-b1d3-02b19c984fb1.md) | Lab request as ServiceRequest message. |
 | [Lab status update](Bundle-ab66186f-9d91-44b9-8459-bdee4e850bac.md) | Lab status update as service status update message. |
 | [MessageHeader of an ad-hoc message sending a document.](MessageHeader-89c89a84-bce7-4c5d-b6f6-49690eea5b06.md) | Message header for sending a doctor's note document from a HIS to a GP software without prior request. |
+| [MessageHeader of an ad-hoc message sending a questionnaire response.](MessageHeader-7ea8b8eb-eeb3-4632-9a21-d6132fe093d6.md) | Message header for sending a feedback form submission without prior request. |
 

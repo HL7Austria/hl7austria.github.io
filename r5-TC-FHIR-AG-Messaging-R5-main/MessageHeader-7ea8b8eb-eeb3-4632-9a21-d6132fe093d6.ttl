@@ -1,0 +1,73 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageHeader/7ea8b8eb-eeb3-4632-9a21-d6132fe093d6> a fhir:MessageHeader ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "7ea8b8eb-eeb3-4632-9a21-d6132fe093d6"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header"^^xsd:anyURI ;
+       fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: MessageHeader 7ea8b8eb-eeb3-4632-9a21-d6132fe093d6</b></p><a name=\"7ea8b8eb-eeb3-4632-9a21-d6132fe093d6\"> </a><a name=\"hc7ea8b8eb-eeb3-4632-9a21-d6132fe093d6\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-messaging-message-header.html\">AT Messaging Message Header</a></p></div><p><b>event</b>: <a href=\"CodeSystem-at-messaging-event-type.html#at-messaging-event-type-questionnaireResponse\">AT Messaging Event Type: questionnaireResponse</a> (A questionnare response to a predefined questionnaire is sent.)</p><h3>Destinations</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Endpoint[x]</b></td><td><b>Receiver</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Bundle-269f4c84-7762-47aa-b872-c4f927301485.html#urn-uuid-caee7722-8340-4716-a36e-837dbc13ea75\">Endpoint: status = active; connectionType = matrix; address = @internemed1:standort.krankenhaus.example.at</a></td><td><a href=\"Bundle-269f4c84-7762-47aa-b872-c4f927301485.html#urn-uuid-ab9ca6ac-b114-43a4-90eb-96070c1824ad\">Organization Krankenhaus am Standort GmbH</a></td></tr></table><p><b>sender</b>: <a href=\"Bundle-269f4c84-7762-47aa-b872-c4f927301485.html#urn-uuid-ab9ca6ac-b114-43a4-90eb-96070c1824ad\">Organization Krankenhaus am Standort GmbH</a></p><p><b>author</b>: <a href=\"Bundle-269f4c84-7762-47aa-b872-c4f927301485.html#urn-uuid-ab9ca6ac-b114-43a4-90eb-96070c1824ad\">Organization Krankenhaus am Standort GmbH</a></p><h3>Sources</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Endpoint[x]</b></td><td><b>Name</b></td><td><b>Software</b></td><td><b>Version</b></td><td><b>Contact</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Bundle-c669729a-67af-453c-8b3f-ed05d754e506.html#urn-uuid-71998612-308f-4062-8d7e-318c1b1ab1cc\">Endpoint: status = active; connectionType = matrix; address = @feedback:standort.krankenhaus.example.at</a></td><td>My Medical Feedback App</td><td>at.softwarecorp.medical.feedback</td><td>1.0.0</td><td><a href=\"mailto:feedbackapp@softwarecorp.at\">feedbackapp@softwarecorp.at</a></td></tr></table><p><b>focus</b>: <a href=\"Bundle-c669729a-67af-453c-8b3f-ed05d754e506.html#urn-uuid-f58b0623-84a5-446e-9ecc-1a6f553233de\">Response to Questionnaire 'http://feedbackapp.softwarecorp.at/fhir/Questionnaire/feedback' about 'Unspecified Subject'</a></p><p><b>definition</b>: <a href=\"MessageDefinition-at-messaging-questionnaireresponse-message.html\">Questionnaire response transfer over directed messaging.</a></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:event [
+     a fhir:Coding ;
+     fhir:system [
+       fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-event-type"^^xsd:anyURI ;
+       fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-event-type>
+     ] ;
+     fhir:code [ fhir:v "questionnaireResponse" ]
+  ] ; # 
+  fhir:destination ( [
+     fhir:endpoint [
+       a fhir:Reference ;
+       fhir:l <urn:uuid:caee7722-8340-4716-a36e-837dbc13ea75> ;
+       fhir:reference [ fhir:v "urn:uuid:caee7722-8340-4716-a36e-837dbc13ea75" ]
+     ] ;
+     fhir:receiver [
+       fhir:l <urn:uuid:ab9ca6ac-b114-43a4-90eb-96070c1824ad> ;
+       fhir:reference [ fhir:v "urn:uuid:ab9ca6ac-b114-43a4-90eb-96070c1824ad" ]
+     ]
+  ] ) ; # 
+  fhir:sender [
+     fhir:l <urn:uuid:ab9ca6ac-b114-43a4-90eb-96070c1824ad> ;
+     fhir:reference [ fhir:v "urn:uuid:ab9ca6ac-b114-43a4-90eb-96070c1824ad" ]
+  ] ; # 
+  fhir:author [
+     fhir:l <urn:uuid:ab9ca6ac-b114-43a4-90eb-96070c1824ad> ;
+     fhir:reference [ fhir:v "urn:uuid:ab9ca6ac-b114-43a4-90eb-96070c1824ad" ]
+  ] ; # 
+  fhir:source [
+     fhir:endpoint [
+       a fhir:Reference ;
+       fhir:l <urn:uuid:71998612-308f-4062-8d7e-318c1b1ab1cc> ;
+       fhir:reference [ fhir:v "urn:uuid:71998612-308f-4062-8d7e-318c1b1ab1cc" ]
+     ] ;
+     fhir:name [ fhir:v "My Medical Feedback App" ] ;
+     fhir:software [ fhir:v "at.softwarecorp.medical.feedback" ] ;
+     fhir:version [ fhir:v "1.0.0" ] ;
+     fhir:contact [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "feedbackapp@softwarecorp.at" ]
+     ]
+  ] ; # 
+  fhir:focus ( [
+     fhir:l <urn:uuid:f58b0623-84a5-446e-9ecc-1a6f553233de> ;
+     fhir:reference [ fhir:v "urn:uuid:f58b0623-84a5-446e-9ecc-1a6f553233de" ]
+  ] ) ; # 
+  fhir:definition [
+     fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-questionnaireresponse-message"^^xsd:anyURI ;
+     fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-questionnaireresponse-message>
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -11,7 +11,7 @@
   <name value="ATMessaging"/>
   <title value="HL7® Austria TC FHIR® Messaging"/>
   <status value="draft"/>
-  <date value="2026-04-09T11:58:42+00:00"/>
+  <date value="2026-05-06T12:27:37+00:00"/>
   <publisher value="HL7® Austria, TC FHIR®"/>
   <contact>
     <name value="HL7® Austria, TC FHIR®"/>
@@ -88,6 +88,18 @@
       </reference>
       <name value="Ad-hoc message of Doctors note"/>
       <description value="Doctors note as ad-hoc submitted message (without previous request)."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/c669729a-67af-453c-8b3f-ed05d754e506"/>
+      </reference>
+      <name value="Ad-hoc response of a feedback form"/>
+      <description value="Feedback form submission as ad-hoc submitted message (without previous request)."/>
       <isExample value="true"/>
       <profile value="http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle"/>
     </resource>
@@ -339,6 +351,29 @@
       <description value="Message header for sending a doctor's note document from a HIS to a GP software without prior request."/>
       <isExample value="true"/>
       <profile value="http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MessageHeader"/>
+      </extension>
+      <reference>
+        <reference value="MessageHeader/7ea8b8eb-eeb3-4632-9a21-d6132fe093d6"/>
+      </reference>
+      <name value="MessageHeader of an ad-hoc message sending a questionnaire response."/>
+      <description value="Message header for sending a feedback form submission without prior request."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MessageDefinition"/>
+      </extension>
+      <reference>
+        <reference value="MessageDefinition/at-messaging-questionnaireresponse-message"/>
+      </reference>
+      <name value="Questionnaire response transfer over directed messaging."/>
+      <description value="Regulates the resources to be used in a directed message when transferring a questionnaire response."/>
+      <isExample value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">

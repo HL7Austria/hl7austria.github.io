@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle | *Version*:0.1.0 | |
-| Draft as of 2026-04-09 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingBundle |
+| Draft as of 2026-05-06 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingBundle |
 | **Usage:**Jurisdiction: Austria | | |
 
  
@@ -17,7 +17,7 @@ MessageBundle to be used for all messages transfered with the AT FHIR messaging.
 
 **Usages:**
 
-* Examples for this Profile: [Bundle/269f4c84-7762-47aa-b872-c4f927301485](Bundle-269f4c84-7762-47aa-b872-c4f927301485.md), [Bundle/63874621-5550-410a-b893-ca890614cf6e](Bundle-63874621-5550-410a-b893-ca890614cf6e.md), [Bundle/6df9d997-d34a-448b-944e-8721c49e0939](Bundle-6df9d997-d34a-448b-944e-8721c49e0939.md), [Bundle/96beaf3e-6e2f-40f4-b1d3-02b19c984fb1](Bundle-96beaf3e-6e2f-40f4-b1d3-02b19c984fb1.md) and [Bundle/ab66186f-9d91-44b9-8459-bdee4e850bac](Bundle-ab66186f-9d91-44b9-8459-bdee4e850bac.md)
+* Examples for this Profile: [Bundle/269f4c84-7762-47aa-b872-c4f927301485](Bundle-269f4c84-7762-47aa-b872-c4f927301485.md), [Bundle/63874621-5550-410a-b893-ca890614cf6e](Bundle-63874621-5550-410a-b893-ca890614cf6e.md), [Bundle/6df9d997-d34a-448b-944e-8721c49e0939](Bundle-6df9d997-d34a-448b-944e-8721c49e0939.md), [Bundle/96beaf3e-6e2f-40f4-b1d3-02b19c984fb1](Bundle-96beaf3e-6e2f-40f4-b1d3-02b19c984fb1.md)... Show 2 more, [Bundle/ab66186f-9d91-44b9-8459-bdee4e850bac](Bundle-ab66186f-9d91-44b9-8459-bdee4e850bac.md) and [Bundle/c669729a-67af-453c-8b3f-ed05d754e506](Bundle-c669729a-67af-453c-8b3f-ed05d754e506.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.messaging.r5|current/StructureDefinition/at-messaging-bundle)
 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-messaging-bundle.
   "name" : "ATMessagingBundle",
   "title" : "AT Messaging Message Bundle",
   "status" : "draft",
-  "date" : "2026-04-09T11:58:42+00:00",
+  "date" : "2026-05-06T12:27:37+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
