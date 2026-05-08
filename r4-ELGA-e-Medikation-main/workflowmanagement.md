@@ -65,12 +65,16 @@ Da der Status eines Medikationsplaneintrags im Medikationsplan auf **zwei Ebenen
 
 | | |
 | :--- | :--- |
-| **active** | Neue geplante Abgabe |
-| **stopped** | geplante Abgabe wird gestoppt |
-| **completed** | geplante Abgabe beendet |
+| **active** | offene geplante Abgabe |
+| **stopped** | geplante Abgabe nicht abgegeben |
+| **completed** | geplante Abgabe eingelöst (Fachwendung setzt Status, wenn durchgeführte Abgabe completed) |
 | **entered-in-error** | geplante Abgabe storniert |
 
 #### Status des MedicationDispense in der durchgeführten Abgabe
 
-In Arbeit.
+| | |
+| :--- | :--- |
+| **stopped** | durchgeführte Abgabe abgesetzt |
+| **completed** | durchgeführte Abgabe abgegeben |
+| **entered-in-error** | durchgeführte Abgabe storniert |
 

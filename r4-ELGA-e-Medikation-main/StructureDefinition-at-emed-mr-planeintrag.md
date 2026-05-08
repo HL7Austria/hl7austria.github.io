@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag | *Version*:0.1.1 | |
-| Draft as of 2026-05-04 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMRPlaneintrag |
+| Draft as of 2026-05-08 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedMRPlaneintrag |
 
  
 Ein Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine "MedicationRequest"-Ressource abgebildet. Die Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained Medication-Ressource (inline, d.h. innerhalb der Ressource), dokumentiert wird. Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstellung einer geplanten Abgabe dienen. Es werden R5-Backport-Extensions verwendet. 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
   "name" : "AtEmedMRPlaneintrag",
   "title" : "ELGA e-Med Planeintrag",
   "status" : "draft",
-  "date" : "2026-05-04T14:46:25+00:00",
+  "date" : "2026-05-08T13:20:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -136,18 +136,6 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
       }]
     },
     {
-      "id" : "MedicationRequest.extension:offLabelUse",
-      "path" : "MedicationRequest.extension",
-      "sliceName" : "offLabelUse",
-      "short" : "Weist darauf hin, dass der verschreibende Arzt das Medikament wissentlich für eine Indikation, Altersgruppe, Dosierung oder Verabreichungsform verschrieben hat, die nicht von den Aufsichtsbehörden zugelassen ist und in der Verschreibungsinformation für das Produkt nicht erwähnt wird.",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["https://profiles.ihe.net/PHARM/MPD/StructureDefinition/ihe-ext-offLabel"]
-      }]
-    },
-    {
       "id" : "MedicationRequest.identifier",
       "path" : "MedicationRequest.identifier",
       "short" : "Medikationsplaneintrag-ID.",
@@ -207,7 +195,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
     {
       "id" : "MedicationRequest.doNotPerform",
       "path" : "MedicationRequest.doNotPerform",
-      "short" : "Gibt an, ob der Medikationsplaneintrag die Verordnung einer Medikation (und somit die Erstellung einer geplanten Abgabe) untersagt (z.B. bei Allergie). TODO: Fachlich zu prüfen, ob dieser Usecase existiert. Auch im Kontext mit status und statusReason zu betrachten. Evtl. erst in späterer Version",
+      "short" : "Gibt an, ob der Medikationsplaneintrag die Verordnung einer Medikation (und somit die Erstellung einer geplanten Abgabe) untersagt (z.B. bei Allergie).",
       "max" : "0"
     },
     {
@@ -360,7 +348,7 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
     {
       "id" : "MedicationRequest.courseOfTherapyType",
       "path" : "MedicationRequest.courseOfTherapyType",
-      "short" : "Gesamtmuster der Medikamentengabe. continuous | acute | seasonal.",
+      "short" : "Gesamtmuster der Medikamentengabe. Mögliche Ausprägungen: [continuous | acute ]",
       "mustSupport" : true
     },
     {
@@ -395,8 +383,8 @@ Other representations of profile: [CSV](StructureDefinition-at-emed-mr-planeintr
     {
       "id" : "MedicationRequest.substitution",
       "path" : "MedicationRequest.substitution",
-      "short" : "Gibt an, ob das Arzneimittel substituiert werden darf oder nicht. Erläutert die Absicht des Arztes, der den Medikationsplaneintrag erstellt. Wenn nichts angegeben ist, kann eine Substitution vorgenommen werden.",
-      "mustSupport" : true
+      "short" : "Gibt an, ob das Arzneimittel substituiert werden darf (Absicht des Arztes, der den Medikationsplaneintrag erstellt). Derzeit keine Verwendung im Medikationsplaneintrag.",
+      "max" : "0"
     },
     {
       "id" : "MedicationRequest.priorPrescription",
