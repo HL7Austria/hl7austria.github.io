@@ -17,7 +17,7 @@ Freitext-Informationen zur magistralen Anwendung.
   "resourceType" : "Medication",
   "id" : "At-Emed-Example-Medication-Magistral-01",
   "meta" : {
-    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"]
+    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-medikation"]
   },
   "form" : {
     "coding" : [{

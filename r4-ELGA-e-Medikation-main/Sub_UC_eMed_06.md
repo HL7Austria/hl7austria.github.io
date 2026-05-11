@@ -6,10 +6,6 @@
 
 ## ​Technische Use Cases für Medikationsplan schreiben (UC_eMed_06)
 
-Im folgenden Kapitel werden die fachlichen Anwendungsfälle in Form technischer Use Cases beschrieben. Die zugehörigen Sequenzdiagramme veranschaulichen die beteiligten Akteure sowie die jeweiligen Abläufe.
-
-Für jeden Use Case werden in den Kapiteln **Relevante Elemente** die wichtigsten Elemente der verwendeten Profile beschrieben. Dies ermöglicht eine kompakte Übersicht über die erforderlichen Anpassungen der Ressourcen im Kontext des jeweiligen Anwendungsfalls.
-
 #### Sub_UC_eMed_06_01 - Initial erstellter Medikationsplan
 
 Die initiale Erstellung des Medikationsplans erfolgt durch die e-Medikation-Fachanwendung.
@@ -27,7 +23,7 @@ Auch der Patient kann die Erstellung eines Medikationsplans auslösen, indem er 
 ##### Relevante Elemente (List)
 
 ```
-AtEmedListMedikationsplan
+AtElgaEmedListMedikationsplan
     identifier: von der Fachanwendung übermittelt (Integritätsprüfung) 
     status: current
     mode: working
@@ -51,7 +47,7 @@ Dient der Unterscheidung von Medikationsplänen, die noch nie befüllt wurden, u
 ##### Relevante Elemente (List)
 
 ```
-AtEmedListMedikationsplan
+AtElgaEmedListMedikationsplan
     identifier: von der Fachanwendung übermittelt (Integritätsprüfung) 
     status: current
     mode: working
@@ -89,7 +85,7 @@ Siehe [Read-to-Write-Zugriff](interactions.md#read-to-write-zugriff) und [Write-
 ##### Relevante Elemente (List)
 
 ```
-AtEmedListMedikationsplan
+AtElgaEmedListMedikationsplan
     identifier: von der Fachanwendung übermittelt (Integritätsprüfung) 
     status: current
     mode: working
@@ -109,7 +105,7 @@ AtEmedListMedikationsplan
 ##### Relevante Elemente (MedicationRequest - Planeintrag 1)
 
 ```
-AtEmedMRPlaneintrag
+AtElgaEmedMedicationRequestPlaneintrag
     identifier: neue Medikationsplaneintrag-ID
     status: active | on-hold
     reportedBoolean: true | false  // true, wenn Fremdmedikation
@@ -143,7 +139,7 @@ Siehe [Read-to-Write-Zugriff](interactions.md#read-to-write-zugriff) und [Write-
 ##### Relevante Elemente (List)
 
 ```
-AtEmedListMedikationsplan
+AtElgaEmedListMedikationsplan
     identifier: von der Fachanwendung übermittelt (Integritätsprüfung) 
     status: current
     mode: working
@@ -159,7 +155,7 @@ AtEmedListMedikationsplan
 ##### Relevante Elemente (MedicationRequest - Planeintrag 1)
 
 ```
-AtEmedMRPlaneintrag
+AtElgaEmedMedicationRequestPlaneintrag
     // unverändert (verantwortlicher GDA, Datum, Status bleiben bestehen)
 
 ```
@@ -195,7 +191,7 @@ Siehe [Read-to-Write-Zugriff](interactions.md#read-to-write-zugriff) und [Write-
 ##### Relevante Elemente (List)
 
 ```
-AtEmedListMedikationsplan
+AtElgaEmedListMedikationsplan
     identifier: von der Fachanwendung übermittelt (Integritätsprüfung) 
     status: current
     mode: working
@@ -215,7 +211,7 @@ AtEmedListMedikationsplan
 ##### Relevante Elemente (MedicationRequest - Planeintrag 1)
 
 ```
-AtEmedMRPlaneintrag
+AtElgaEmedMedicationRequestPlaneintrag
     identifier: Medikationsplaneintrag-ID bleibt bestehen
     status: on-hold
     statusReason.text: Freitextbegrüdung  
@@ -259,7 +255,7 @@ Siehe [Read-to-Write-Zugriff](interactions.md#read-to-write-zugriff) und [Write-
 ##### Relevante Elemente (List)
 
 ```
-AtEmedListMedikationsplan
+AtElgaEmedListMedikationsplan
     identifier: von der Fachanwendung übermittelt (Integritätsprüfung) 
     status: current
     mode: working
@@ -279,7 +275,7 @@ AtEmedListMedikationsplan
 ##### Relevante Elemente (MedicationRequest - Planeintrag 1)
 
 ```
-AtEmedMRPlaneintrag
+AtElgaEmedMedicationRequestPlaneintrag
     identifier: Medikationsplaneintrag-ID bleibt bestehen  // sofern der Bezug erhalten bleiben soll
     status: active | on-hold
     statusReason.text: Freitextbegrüdung für die Änderung 
@@ -322,7 +318,7 @@ Siehe [Read-to-Write-Zugriff](interactions.md#read-to-write-zugriff) und [Write-
 Relevante Elemente (List)
 
 ```
-AtEmedListMedikationsplan
+AtElgaEmedListMedikationsplan
     identifier: von der Fachanwendung übermittelt (Integritätsprüfung) 
     status: current
     mode: working
@@ -342,7 +338,7 @@ AtEmedListMedikationsplan
 ##### Relevante Elemente (MedicationRequest - Planeintrag 1)
 
 ```
-AtEmedMRPlaneintrag
+AtElgaEmedMedicationRequestPlaneintrag
     identifier: Medikationsplaneintrag-ID bleibt bestehen
     status: entered-in-error
     statusReason.text: Freitextbegrüdung für die Stornierung
@@ -381,7 +377,7 @@ Siehe [Read-to-Write-Zugriff](interactions.md#read-to-write-zugriff) und [Write-
 ##### Relevante Elemente (List)
 
 ```
-AtEmedListMedikationsplan
+AtElgaEmedListMedikationsplan
     identifier: von der Fachanwendung übermittelt (Integritätsprüfung) 
     status: current
     mode: working
@@ -401,7 +397,7 @@ AtEmedListMedikationsplan
 ##### Relevante Elemente (MedicationRequest - Planeintrag 1)
 
 ```
-AtEmedMRPlaneintrag
+AtElgaEmedMedicationRequestPlaneintrag
     identifier: Medikationsplaneintrag-ID bleibt bestehen
     status: stopped
     statusReason.text: Freitextbegrüdung für das Absetzen des Medikaments
@@ -440,7 +436,7 @@ Siehe [Read-to-Write-Zugriff](interactions.md#read-to-write-zugriff) und [Write-
 ##### Relevante Elemente (List)
 
 ```
-AtEmedListMedikationsplan
+AtElgaEmedListMedikationsplan
     identifier: von der Fachanwendung übermittelt (Integritätsprüfung) 
     status: current
     mode: working
@@ -460,7 +456,7 @@ AtEmedListMedikationsplan
 ##### Relevante Elemente (MedicationRequest - Planeintrag 1)
 
 ```
-AtEmedMRPlaneintrag
+AtElgaEmedMedicationRequestPlaneintrag
     identifier: Medikationsplaneintrag-ID bleibt bestehen
     status: completed
     statusReason.text: Freitextbegrüdung  
@@ -498,7 +494,7 @@ Siehe [Read-to-Write-Zugriff](interactions.md#read-to-write-zugriff) und [Write-
 In folgendem Beispiel wird der ursprünglich 2. Eintrag als 1. gereiht.
 
 ```
-AtEmedListMedikationsplan
+AtElgaEmedListMedikationsplan
     identifier: von der Fachanwendung übermittelt (Integritätsprüfung) 
     status: current
     mode: working
@@ -518,7 +514,7 @@ AtEmedListMedikationsplan
 ##### Relevante Elemente (MedicationRequest - Planeintrag 1 und 2)
 
 ```
-AtEmedMRPlaneintrag
+AtElgaEmedMedicationRequestPlaneintrag
     // unverändert (verantwortlicher GDA, Datum, Status bleiben bestehen)
 
 ```
@@ -554,7 +550,7 @@ Siehe [Read-to-Write-Zugriff](interactions.md#read-to-write-zugriff) und [Patien
 Zustand **vor dem Löschen** des 2. Planeintrags (Ergebnis von $readtowrite):
 
 ```
-AtEmedListMedikationsplan
+AtElgaEmedListMedikationsplan
     identifier: von der Fachanwendung übermittelt (Integritätsprüfung) 
     status: current
     mode: working
@@ -574,7 +570,7 @@ AtEmedListMedikationsplan
 Zustand **nach dem Löschen** des 2. Planeintrags (List-Ressource im Transaction Bundle von $patient-write):
 
 ```
-AtEmedListMedikationsplan
+AtElgaEmedListMedikationsplan
     identifier: von der Fachanwendung übermittelt (Integritätsprüfung) 
     status: current
     mode: working

@@ -6,7 +6,7 @@
 
 ## Example List: Beispiel Journey 05-a: Reihenfolge der Planeinträge ändern
 
-Profile: [ELGA e-Med Medikationsplan](StructureDefinition-at-emed-list-medikationsplan.md)
+Profile: [AT ELGA e-Medikation List Medikationsplan](StructureDefinition-at-elga-emed-list-medikationsplan.md)
 
 | | | | |
 | :--- | :--- | :--- | :--- |
@@ -27,7 +27,7 @@ Profile: [ELGA e-Med Medikationsplan](StructureDefinition-at-emed-list-medikatio
   "resourceType" : "List",
   "id" : "At-Emed-Journey-05-a-List-Reihenfolge",
   "meta" : {
-    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-list-medikationsplan"]
+    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"]
   },
   "identifier" : [{
     "value" : "123"

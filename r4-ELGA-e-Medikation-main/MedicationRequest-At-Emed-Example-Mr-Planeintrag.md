@@ -15,13 +15,13 @@
   "resourceType" : "MedicationRequest",
   "id" : "At-Emed-Example-Mr-Planeintrag",
   "meta" : {
-    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-planeintrag"]
+    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"]
   },
   "contained" : [{
     "resourceType" : "Medication",
     "id" : "ContainedMedication01",
     "meta" : {
-      "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"]
+      "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-medikation"]
     },
     "code" : {
       "coding" : [{

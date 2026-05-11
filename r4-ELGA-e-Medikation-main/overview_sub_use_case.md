@@ -6,7 +6,9 @@
 
 ## Technische Use Cases
 
-In diesem Abschnitt werden die Technischen Use Cases im Rahmen der e-Medikation beschrieben.
+Im folgenden Kapiteln werden die fachlichen Anwendungsfälle der e-Medikation in Form technischer Use Cases beschrieben. Die zugehörigen Sequenzdiagramme veranschaulichen die beteiligten Akteure sowie die jeweiligen Abläufe.
+
+Für jeden Use Case werden im Kapitel **Relevante Elemente** die wichtigsten Elemente der verwendeten Profile beschrieben. Dies ermöglicht eine kompakte Übersicht über die erforderlichen Anpassungen der Ressourcen im Kontext des jeweiligen Anwendungsfalls.
 
 ### Liste der Technischen Use Cases
 

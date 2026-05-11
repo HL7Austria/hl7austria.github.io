@@ -281,7 +281,7 @@ width: 100%;}
 
 <h3 id="relevante-profile">Relevante Profile</h3>
 
-<h4 id="atemedlistmedikationsplan-list">AtEmedListMedikationsplan (<em>List</em>)</h4>
+<h4 id="atelgaemedlistmedikationsplan-list">AtElgaEmedListMedikationsplan (<em>List</em>)</h4>
 
 <p>Der Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine <em>List</em>-Ressource abgebildet. Diese enthält 0..* Einträge (<em>List.entry</em>), wobei jedes Entry genau eine Referenz (<em>Reference</em>) auf einen Medikationsplaneintrag (<em>MedicationRequest</em>) in <em>List.entry.item</em> beinhaltet.</p>
 
@@ -289,7 +289,7 @@ width: 100%;}
 
   <!-- TODO: Wiederverwendbarkeit der Liste für e-Diagnose und e-Behandlungsplan -->
 
-<h4 id="atemedmrplaneintrag-medicationrequest">AtEmedMRPlaneintrag (<em>MedicationRequest</em>)</h4>
+<h4 id="atelgaemedmedicationrequestplaneintrag-medicationrequest">AtElgaEmedMedicationRequestPlaneintrag (<em>MedicationRequest</em>)</h4>
 
 <p>Ein Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine <em>MedicationRequest</em>-Ressource der Kategorie "Medikationsplaneintrag" abgebildet. Die Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained <em>Medication</em>-Ressource, also inline (innerhalb der Ressource), dokumentiert wird.
 Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstellung einer geplanten Abgabe dienen. Es werden R5-Backport-Extensions verwendet.</p>
@@ -302,7 +302,7 @@ Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstell
 
 <p>Eine persistierte Version des Medikationsplans eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin inklusive aller dafür relevanten Ressourcen (List, MedicationRequests, Patient, Practitioners) wird durch eine <em>Bundle</em>-Ressource vom Typ Collection abgebildet. Diese enthält 1..* Einträge (<em>Bundle.entry</em>), wobei jeder Entry genau eine Ressource (<em>Bundle.entry.resource</em>) beinhaltet. Die <em>List</em>-Ressource, also der Medikationsplan selbst, ist dabei immer der erste Entry. Die <em>List</em>-Ressource dient für das Bundle als zentrale Informationsquelle die angibt, wie die restlichen Ressourcen im Bundle zusammenhängen.</p>
 
-<h4 id="atemedmrgeplanteabgabe-medicationrequest">AtEmedMRGeplanteAbgabe (<em>MedicationRequest</em>)</h4>
+<h4 id="atelgaemedmedicationrequestgeplanteabgabe-medicationrequest">AtElgaEmedMedicationRequestGeplanteAbgabe (<em>MedicationRequest</em>)</h4>
 
 <p>Eine geplante Abgabe einer Medikation aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers wird durch eine <em>MedicationRequest</em>-Ressource der Kategorie "Geplante Abgabe" abgebildet. Sie enthält die verordnete Medikation und dessen Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. 
 Werden mehrere Medikamente gleichzeitig verordnet, wird für jedes Medikament eine geplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer'). Es werden R5-Backport-Extensions verwendet.</p>
@@ -328,7 +328,7 @@ Werden mehrere Medikamente gleichzeitig verordnet, wird für jedes Medikament ei
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Fri, May 8, 2026 13:20+0000">2026-05-08</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, May 11, 2026 15:21+0000">2026-05-11</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

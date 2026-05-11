@@ -15,13 +15,13 @@
   "resourceType" : "MedicationRequest",
   "id" : "At-Emed-Example-Mr-Geplante-Abgabe",
   "meta" : {
-    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-mr-geplante-abgabe"]
+    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"]
   },
   "contained" : [{
     "resourceType" : "Medication",
     "id" : "ContainedMedication",
     "meta" : {
-      "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-emed-medication"]
+      "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-medikation"]
     },
     "code" : {
       "coding" : [{

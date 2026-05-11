@@ -69,6 +69,17 @@ Da der Status eines Medikationsplaneintrags im Medikationsplan auf **zwei Ebenen
 | **stopped** | geplante Abgabe nicht abgegeben |
 | **completed** | geplante Abgabe eingelöst (Fachwendung setzt Status, wenn durchgeführte Abgabe completed) |
 | **entered-in-error** | geplante Abgabe storniert |
+| **cancelled** | geplante Abgabe ist abgelaufen (Fachwendung setzt Status, wenn Einlösezeitraum überschritten) |
+
+| | | | | |
+| :--- | :--- | :--- | :--- | :--- |
+| Kassenrezept | 1 Monat ab Datum der Verordnung:Beginn des Gültigkeitszeitraums + 1 Monat + 1 Tag |   |   |   |
+| 1x | Im Zuge des „Besorgerprozesses“ (Medikament muss erst bestellt werden) wird bei einer gespeicherten Teilabgabe die gesamte Gültigkeitsdauer auf 3 Monate verlängert | Ein Kassenrezept muss innerhalb von 1 Monat eingelöst werden, sonst erhält das Rezept den Status abgelaufen (**cancelled**). |   |   |
+| Privatrezept | 1 Monat ab Datum der Verordnung für die erste EinlösungMindestens: Beginn des Gültigkeitszeitraums + 1 Monat + 1 TagMaximal: Beginn des Gültigkeitszeitraums + 1 Jahr (+ 1 Tag?) |   |   |   |
+| Bis zu 6x (durch Verordner festgelegt) | Keine Verlängerung. | Ein Privatrezept muss innerhalb von 1 Monat eingelöst werden, sonst erhält es den Status ABGELAUFEN. |   |   |
+| Substitutionsrezept | Angabe eines beliebigen Gültigkeitszeitraums durch VerordnerDatum frei wählbar, aber später als das Beginndatum | 1 x | Keine Verlängerung. | Ein Substitutionsrezept ist im Status ABGELAUFEN, wenn das „bis Datum“ erreicht ist. |
+
+[^1] Die Anzahl der Einlösungen gibt an, wie viele Einlösungen auf ein Rezept durchgeführt werden dürfen bis die Verordnung auf dem Rezept und das Rezept den Status EINGELÖST erhält. [^2] Das Einlösen eines Rezepts nach Ablauf der Gültigkeit wird durch e-Medikation nicht verhindert. Die Abgabe wird in diesem Fall ohne Verordnungsbezug in e-Medikation gespeichert. Wird die Gültigkeitsdauer nicht angegeben (NullFlavor = MSK, Maskiert), kann die Gültigkeitsdauer vom empfangenden System nur mit 1 Monat angenommen werden, gerechnet vom Erstellungsdatum an.
 
 #### Status des MedicationDispense in der durchgeführten Abgabe
 
