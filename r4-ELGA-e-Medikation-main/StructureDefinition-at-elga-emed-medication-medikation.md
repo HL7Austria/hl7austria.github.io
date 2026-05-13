@@ -1,15 +1,15 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\AT ELGA e-Medikation medication Medikation - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\AT ELGA e-Medikation Medication Medikation - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **AT ELGA e-Medikation medication Medikation**
+* **AT ELGA e-Medikation Medication Medikation**
 
-## Resource Profile: AT ELGA e-Medikation medication Medikation 
+## Resource Profile: AT ELGA e-Medikation Medication Medikation 
 
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-medikation | *Version*:0.1.1 | |
-| Draft as of 2026-05-11 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationMedikation |
+| Draft as of 2026-05-13 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationMedikation |
 
  
 Bildet ein Arzneimittel in der "Medication"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, geplante Abgabe und durchgeführte Abgabe. 
@@ -40,9 +40,9 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
   "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-medikation",
   "version" : "0.1.1",
   "name" : "AtElgaEmedMedicationMedikation",
-  "title" : "AT ELGA e-Medikation medication Medikation",
+  "title" : "AT ELGA e-Medikation Medication Medikation",
   "status" : "draft",
-  "date" : "2026-05-11T15:21:25+00:00",
+  "date" : "2026-05-13T14:40:49+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

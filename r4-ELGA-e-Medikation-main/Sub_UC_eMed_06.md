@@ -80,8 +80,6 @@ Anmerkung: Beim nächsten Read-to-Write ändert die Fachanwendung im zur Auslief
 
 ##### Ablauf
 
-Siehe [Read-to-Write-Zugriff](interactions.md#read-to-write-zugriff) und [Write-Zugriff](interactions.md#write-zugriff).
-
 ##### Relevante Elemente (List)
 
 ```
