@@ -19,7 +19,7 @@ Profiles: [MOPED TransferEncounter Stationär](StructureDefinition-MopedTransfer
 | - | **Reference** |
 | * | [HealthcareService: extension = ; identifier = http://example.org/lkf-system/funktionscode#13118000; category = Hospital; type = Hospital Services](HealthcareService-AbteilungHerzJesu1.md) |
 
-**subject**: [Sonnenschein Susi (official) Female, DoB: 1969-04-21 ( Social Security Number: 9994210469)](Patient-PJ1Patient.md)
+**subject**: [Sonnenschein Susi Female, DoB: 1969-04-21](Patient-PJ1Patient.md)
 
 **subjectStatus**: physisch anwesend
 

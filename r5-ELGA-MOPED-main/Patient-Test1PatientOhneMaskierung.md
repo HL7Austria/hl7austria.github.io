@@ -6,15 +6,15 @@
 
 ## Example Patient: Test1PatientOhneMaskierung
 
-Profiles: [MOPED Patient](StructureDefinition-MopedPatient.md), [HL7® AT Core Patient Profile](https://build.fhir.org/ig/HL7Austria/HL7-AT-FHIR-Core-R5/StructureDefinition-at-core-patient.html)
+Profile: [MOPED Basis Patient mit Klarname](StructureDefinition-MopedBasisPatientKlarname.md)
 
-Sonnenschein Susi (official) Female, DoB: 1969-04-21 ( Social Security Number: 9994210469)
+Sonnenschein Susi Female, DoB: 1969-04-21
 
 -------
 
 | | |
 | :--- | :--- |
-| Contact Detail | Baumgasse 20a Wien 1030 AUT (home) |
+| Contact Detail | Baumgasse 20a Wien 1030 AUT |
 | Patient Citizenship: | * code: Österreich
  |
 
@@ -27,8 +27,7 @@ Sonnenschein Susi (official) Female, DoB: 1969-04-21 ( Social Security Number: 9
   "resourceType" : "Patient",
   "id" : "Test1PatientOhneMaskierung",
   "meta" : {
-    "profile" : ["https://elga.moped.at/StructureDefinition/MopedPatient",
-    "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-patient"]
+    "profile" : ["https://elga.moped.at/StructureDefinition/MopedBasisPatientKlarname"]
   },
   "extension" : [{
     "extension" : [{
@@ -43,22 +42,7 @@ Sonnenschein Susi (official) Female, DoB: 1969-04-21 ( Social Security Number: 9
     }],
     "url" : "http://hl7.org/fhir/StructureDefinition/patient-citizenship"
   }],
-  "identifier" : [{
-    "type" : {
-      "coding" : [{
-        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
-        "code" : "SS",
-        "display" : "Social Security Number"
-      }]
-    },
-    "system" : "urn:oid:1.2.40.0.10.1.4.3.1",
-    "value" : "9994210469",
-    "assigner" : {
-      "display" : "Dachverband der österreichischen Sozialversicherungsträger"
-    }
-  }],
   "name" : [{
-    "use" : "official",
     "family" : "Susi",
     "given" : ["Sonnenschein"]
   }],
@@ -69,7 +53,6 @@ Sonnenschein Susi (official) Female, DoB: 1969-04-21 ( Social Security Number: 9
       "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-ext-address-municipalityCode",
       "valueString" : "90301"
     }],
-    "use" : "home",
     "line" : ["Baumgasse 20a"],
     "_line" : [{
       "extension" : [{

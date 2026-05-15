@@ -184,7 +184,7 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
   "name" : "MOPED",
   "title" : "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)",
   "status" : "draft",
-  "date" : "2026-05-15T07:39:15+00:00",
+  "date" : "2026-05-15T09:26:31+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1982,6 +1982,30 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/MopedBasisPatientKlarname"
+      },
+      "name" : "MOPED Basis Patient mit Klarname",
+      "description" : "MOPED Basis Profil der Patienten Ressource mit Klarname",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MopedBasisPatientvbPK"
+      },
+      "name" : "MOPED Basis Patient mit vbPKs",
+      "description" : "MOPED Profil der Patienten Ressource mit vbPKs",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/MopedBeantwortenComposition"
       },
       "name" : "MOPED Beantworten Composition",
@@ -2498,18 +2522,6 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/MopedPatient"
-      },
-      "name" : "MOPED Patient",
-      "description" : "MOPED Profil der Patient Ressource",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
       }],
       "reference" : {
@@ -2537,10 +2549,10 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MopedPatientBund"
+        "reference" : "StructureDefinition/MopedPatientKlarnameBund"
       },
-      "name" : "MOPED Patient Bund",
-      "description" : "MOPED Profil der Patient Ressource aus der Sicht der Rolle: Bund",
+      "name" : "MOPED Patient mit Klarname Bund",
+      "description" : "MOPED Profil der Patient Ressource mit Klarname - verordnungsrelevant: Bund",
       "isExample" : false
     },
     {
@@ -2549,10 +2561,10 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MopedPatientLGF"
+        "reference" : "StructureDefinition/MopedPatientKlarnameKA"
       },
-      "name" : "MOPED Patient LGF",
-      "description" : "MOPED Profil der Patient Ressource aus der Sicht der Rolle: LGF",
+      "name" : "MOPED Patient mit Klarname KA",
+      "description" : "MOPED Profil der Patient Ressource mit Klarname - verordnungsrelevant: KA",
       "isExample" : false
     },
     {
@@ -2561,10 +2573,22 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MopedPatientSV"
+        "reference" : "StructureDefinition/MopedPatientKlarnameLGF"
       },
-      "name" : "MOPED Patient SV",
-      "description" : "MOPED Profil der Patient Ressource aus der Sicht der Rolle: SV",
+      "name" : "MOPED Patient mit Klarname LGF",
+      "description" : "MOPED Profil der Patient Ressource mit Klarname - verordnungsrelevant: LGF",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MopedPatientKlarnameSV"
+      },
+      "name" : "MOPED Patient mit Klarname SV",
+      "description" : "MOPED Profil der Patient Ressource mit Klarname - verordnungsrelevant: SV",
       "isExample" : false
     },
     {
@@ -2811,6 +2835,54 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MopedPatientvbPKBund"
+      },
+      "name" : "MOPED vbPK Patient Bund",
+      "description" : "MOPED Profil der Patienten Ressource mit vbPKs - verordnungsrelevant: Bund",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MopedPatientvbPKKA"
+      },
+      "name" : "MOPED vbPK Patient KA",
+      "description" : "MOPED Profil der Patienten Ressource mit vbPKs - verordnungsrelevant: KA",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MopedPatientvbPKLGF"
+      },
+      "name" : "MOPED vbPK Patient LGF",
+      "description" : "MOPED Profil der Patienten Ressource mit vbPKs - verordnungsrelevant: LGF",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MopedPatientvbPKSV"
+      },
+      "name" : "MOPED vbPK Patient SV",
+      "description" : "MOPED Profil der Patienten Ressource mit vbPKs - verordnungsrelevant: SV",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
       }],
       "reference" : {
@@ -3048,7 +3120,7 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       "name" : "PJ1Patient",
       "description" : "Hackathon Patient Journey 1 Beispiel: Patient",
       "isExample" : true,
-      "profile" : ["https://elga.moped.at/StructureDefinition/MopedPatient"]
+      "profile" : ["https://elga.moped.at/StructureDefinition/MopedBasisPatientKlarname"]
     },
     {
       "extension" : [{
@@ -3204,7 +3276,7 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       "name" : "PJ2Patient",
       "description" : "Hackathon Patient Journey 2 Beispiel: Patient",
       "isExample" : true,
-      "profile" : ["https://elga.moped.at/StructureDefinition/MopedPatient"]
+      "profile" : ["https://elga.moped.at/StructureDefinition/MopedBasisPatientKlarname"]
     },
     {
       "extension" : [{
@@ -3725,9 +3797,9 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
         "reference" : "Patient/Test1PatientBund"
       },
       "name" : "Test1PatientBund",
-      "description" : "Maskierung Beispiel PatientBund",
+      "description" : "Maskierung Beispiel Patient Bund",
       "isExample" : true,
-      "profile" : ["https://elga.moped.at/StructureDefinition/MopedPatientBund"]
+      "profile" : ["https://elga.moped.at/StructureDefinition/MopedPatientKlarnameBund"]
     },
     {
       "extension" : [{
@@ -3740,7 +3812,7 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       "name" : "Test1PatientLGF",
       "description" : "Maskierung Beispiel PatientLGF",
       "isExample" : true,
-      "profile" : ["https://elga.moped.at/StructureDefinition/MopedPatientLGF"]
+      "profile" : ["https://elga.moped.at/StructureDefinition/MopedPatientKlarnameLGF"]
     },
     {
       "extension" : [{
@@ -3753,7 +3825,7 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       "name" : "Test1PatientOhneMaskierung",
       "description" : "Maskierung Beispiel Patient",
       "isExample" : true,
-      "profile" : ["https://elga.moped.at/StructureDefinition/MopedPatient"]
+      "profile" : ["https://elga.moped.at/StructureDefinition/MopedBasisPatientKlarname"]
     },
     {
       "extension" : [{
@@ -3766,7 +3838,7 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       "name" : "Test1PatientSV",
       "description" : "Maskierung Beispiel PatientSV",
       "isExample" : true,
-      "profile" : ["https://elga.moped.at/StructureDefinition/MopedPatientSV"]
+      "profile" : ["https://elga.moped.at/StructureDefinition/MopedPatientKlarnameSV"]
     },
     {
       "extension" : [{
@@ -3907,6 +3979,18 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "ValueSet Zahlungskennzeichen ARK",
       "description" : "ValueSet für das Zahlungskennzeichen ARK",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/VBPKValueSet"
+      },
+      "name" : "vbPK ValueSet",
+      "description" : "ValueSet für die vbPKs",
       "isExample" : false
     },
     {

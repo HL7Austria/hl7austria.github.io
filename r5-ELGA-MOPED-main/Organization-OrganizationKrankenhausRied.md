@@ -8,7 +8,7 @@
 
 Profile: [KA Organization](StructureDefinition-KAOrganization.md)
 
-**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/7.0.1/NamingSystem-uri.html)/urn:oid:1.3.6.1.4.1.36124.5.427, `urn:oid:1.2.40.0.34.4.10`/K427, `urn:oid:1.2.40.0.10.1.4.3.2`/827378
+**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/7.1.0/NamingSystem-uri.html)/urn:oid:1.3.6.1.4.1.36124.5.427, `urn:oid:1.2.40.0.34.4.10`/K427, `urn:oid:1.2.40.0.10.1.4.3.2`/827378
 
 **type**: Allgemeine Krankenanstalt
 

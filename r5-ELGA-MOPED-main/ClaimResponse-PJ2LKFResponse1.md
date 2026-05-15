@@ -16,7 +16,7 @@ Profile: [MOPED LKFResponse](StructureDefinition-MopedLKFResponse.md)
 
 **use**: Claim
 
-**patient**: [Santiago Schnabeltier Test (official) Male, DoB: 1985-03-19 ( Social Security Number: 2873111374)](Patient-PJ2Patient.md)
+**patient**: [Santiago Schnabeltier Test Male, DoB: 1985-03-19](Patient-PJ2Patient.md)
 
 **created**: 2025-02-24
 

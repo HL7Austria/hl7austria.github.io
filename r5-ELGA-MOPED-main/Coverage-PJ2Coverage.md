@@ -14,9 +14,9 @@ Profile: [MOPED Coverage](StructureDefinition-MopedCoverage.md)
 
 **kind**: Insurance
 
-**policyHolder**: [Santiago Schnabeltier Test (official) Male, DoB: 1985-03-19 ( Social Security Number: 2873111374)](Patient-PJ2Patient.md)
+**policyHolder**: [Santiago Schnabeltier Test Male, DoB: 1985-03-19](Patient-PJ2Patient.md)
 
-**beneficiary**: [Santiago Schnabeltier Test (official) Male, DoB: 1985-03-19 ( Social Security Number: 2873111374)](Patient-PJ2Patient.md)
+**beneficiary**: [Santiago Schnabeltier Test Male, DoB: 1985-03-19](Patient-PJ2Patient.md)
 
 **insurer**: [Organization Österreichische Gesundheitskasse Oberösterreich](Organization-SV14.md)
 

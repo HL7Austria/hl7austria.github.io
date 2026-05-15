@@ -24,9 +24,10 @@ Alle weiteren Artefakte dienen der technischen Spezifikation, Interaktion oder P
 
 VERORDNUNGSRELEVANT
 
-|
-|
-|
+| | |
+| :--- | :--- |
+| [MOPED vbPK Patient KA](StructureDefinition-MopedPatientvbPKKA.md) | MOPED Profil der Patient Ressource mit vbPKs - verordnungsrelevant: KA |
+| [MOPED Patient mit Klarname KA](StructureDefinition-MopedPatientKlarnameKA.md) | MOPED Profil der Patient Ressource mit Klarname - verordnungsrelevant: KA |
 
 #### Datenfelder für den Bund 
 
@@ -34,7 +35,8 @@ VERORDNUNGSRELEVANT
 
 | | |
 | :--- | :--- |
-| [MOPED Encounter Bund](StructureDefinition-MopedEncounterBund.md) | MOPED Profil der Encounter Ressource für die Rolle: Bund |
+| [MOPED vbPK Patient Bund](StructureDefinition-MopedPatientvbPKBund.md) | MOPED Profil der Patient Ressource mit vbPKs - verordnungsrelevant: Bund |
+| [MOPED Patient mit Klarname Bund](StructureDefinition-MopedPatientKlarnameBund.md) | MOPED Profil der Patient Ressource mit Klarname - verordnungsrelevant: Bund |
 
 #### Datenfelder für den LGF 
 
@@ -43,6 +45,8 @@ VERORDNUNGSRELEVANT
 | | |
 | :--- | :--- |
 | [MOPED Encounter LGF](StructureDefinition-MopedEncounterLGF.md) | MOPED Profil der Encounter Ressource für die Rolle: LGF |
+| [MOPED vbPK Patient LGF](StructureDefinition-MopedPatientvbPKLGF.md) | MOPED Profil der Patient Ressource mit vbPKs - verordnungsrelevant: LGF |
+| [MOPED Patient mit Klarname LGF](StructureDefinition-MopedPatientKlarnameLGF.md) | MOPED Profil der Patient Ressource mit Klarname - verordnungsrelevant: LGF |
 
 #### Datenfelder für die SV 
 
@@ -51,6 +55,8 @@ VERORDNUNGSRELEVANT
 | | |
 | :--- | :--- |
 | [MOPED Encounter SV](StructureDefinition-MopedEncounterSV.md) | MOPED Profil der Encounter Ressource für die Rolle: SV |
+| [MOPED vbPK Patient SV](StructureDefinition-MopedPatientvbPKSV.md) | MOPED Profil der Patient Ressource mit vbPKs - verordnungsrelevant: SV |
+| [MOPED Patient mit Klarname SV](StructureDefinition-MopedPatientKlarnameSV.md) | MOPED Profil der Patient Ressource mit Klarname - verordnungsrelevant: SV |
 
 -------
 

@@ -6,15 +6,15 @@
 
 ## Example Patient: Test1PatientLGF
 
-Profile: [MOPED Patient LGF](StructureDefinition-MopedPatientLGF.md)
+Profile: [MOPED Patient mit Klarname LGF](StructureDefinition-MopedPatientKlarnameLGF.md)
 
-MSK MSK (official) Female, DoB: 1969-04-21
+ Female, DoB: 1969-04-21
 
 -------
 
 | | |
 | :--- | :--- |
-| Contact Detail | 1030 AUT (home) |
+| Contact Detail | 1030 AUT |
 | Patient Citizenship: | * code: Österreich
  |
 
@@ -27,7 +27,7 @@ MSK MSK (official) Female, DoB: 1969-04-21
   "resourceType" : "Patient",
   "id" : "Test1PatientLGF",
   "meta" : {
-    "profile" : ["https://elga.moped.at/StructureDefinition/MopedPatientLGF"]
+    "profile" : ["https://elga.moped.at/StructureDefinition/MopedPatientKlarnameLGF"]
   },
   "extension" : [{
     "extension" : [{
@@ -46,10 +46,7 @@ MSK MSK (official) Female, DoB: 1969-04-21
     "extension" : [{
       "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
       "valueCode" : "masked"
-    }],
-    "use" : "official",
-    "family" : "MSK",
-    "given" : ["MSK"]
+    }]
   }],
   "gender" : "female",
   "birthDate" : "1969-04-21",
@@ -58,7 +55,6 @@ MSK MSK (official) Female, DoB: 1969-04-21
       "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-ext-address-municipalityCode",
       "valueString" : "90301"
     }],
-    "use" : "home",
     "postalCode" : "1030",
     "country" : "AUT"
   }]

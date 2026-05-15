@@ -57,7 +57,7 @@ user contentmodifiers","",0,*,"","Y","Y","Extension {[]} {[]}
 
 Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R5/extensibility.html#modifierExtension).","","","","","","","",,,,,"",,,,"BackboneElement.modifierExtension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"Coverage.paymentBy.party","Coverage.paymentBy.party","","","",1,1,"","","Y","Reference {[]} {[CanonicalType[https://elga.moped.at/StructureDefinition/MopedPatient]]}
+"Coverage.paymentBy.party","Coverage.paymentBy.party","","","",1,1,"","","Y","Reference {[]} {[CanonicalType[https://elga.moped.at/StructureDefinition/MopedBasisPatientvbPK], CanonicalType[https://elga.moped.at/StructureDefinition/MopedBasisPatientKlarname]]}
 ","Parties performing self-payment","The list of parties providing non-insurance payment for the treatment costs.","","","","","","","","","",,,,,"",,,,"Coverage.paymentBy.party",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Coverage.paymentBy.responsibility","Coverage.paymentBy.responsibility","","","",0,1,"","","Y","string {[]} {[]}
@@ -80,7 +80,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Coverage.subscriberId","Coverage.subscriberId","","","",0,*,"","","Y","Identifier {[]} {[]}
 ","ID assigned to the subscriber","The insurer assigned ID for the Subscriber.","","The insurer requires this identifier on correspondance and claims (digital and otherwise).","","","","","","","",,,,,"",,,,"Coverage.subscriberId",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"Coverage.beneficiary","Coverage.beneficiary","","","",1,1,"","","Y","Reference {[]} {[CanonicalType[https://elga.moped.at/StructureDefinition/MopedPatient]]}
+"Coverage.beneficiary","Coverage.beneficiary","","","",1,1,"","","Y","Reference {[]} {[CanonicalType[https://elga.moped.at/StructureDefinition/MopedBasisPatientvbPK], CanonicalType[https://elga.moped.at/StructureDefinition/MopedBasisPatientKlarname]]}
 ","Plan beneficiary","The party who benefits from the insurance coverage; the patient when products and/or services are provided.","","This is the party who receives treatment for which the costs are reimbursed under the coverage.","","","","","","","",,,,,"",,,,"Coverage.beneficiary",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Coverage.dependent","Coverage.dependent","","","",0,1,"","","Y","string {[]} {[]}

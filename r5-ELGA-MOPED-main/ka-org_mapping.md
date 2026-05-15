@@ -115,10 +115,10 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Stationär: X
   * Notiz zur Kardinalität: /
   * befüllt von: MopedKAActor
-  * Profile: Hauptversicherter; MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
-  * FHIR Ressource: Patient; RelatedPerson
-  * Pfad von der Ressource aus: Patient.identifier:socialSecurityNumber; RelatedPerson.identifier:socialSecurityNumber.value
-  * Pfad von der Composition aus: Composition.section:Hauptversicherter.entry.resolve(); Composition.subject.resolve()
+  * Profile: Hauptversicherter
+  * FHIR Ressource: RelatedPerson
+  * Pfad von der Ressource aus: RelatedPerson.identifier:socialSecurityNumber.value
+  * Pfad von der Composition aus: Composition.section:Hauptversicherter.entry.resolve()
   * Anmerkungen: /
 * Feld: Zuname des Hauptversicherten
   * Abkürzung: ZUNA
@@ -126,7 +126,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Stationär: X
   * Notiz zur Kardinalität: /
   * befüllt von: MopedKAActor
-  * Profile: Hauptversicherter; MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: Hauptversicherter; MopedBasisPatientKlarname; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV
   * FHIR Ressource: Patient; RelatedPerson
   * Pfad von der Ressource aus: Patient.name.family; RelatedPerson.name.family
   * Pfad von der Composition aus: Composition.section:Hauptversicherter.entry.resolve(); Composition.subject.resolve()
@@ -137,7 +137,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Stationär: X
   * Notiz zur Kardinalität: /
   * befüllt von: MopedKAActor
-  * Profile: Hauptversicherter; MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: Hauptversicherter; MopedBasisPatientKlarname; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV
   * FHIR Ressource: Patient; RelatedPerson
   * Pfad von der Ressource aus: Patient.name.given; RelatedPerson.name.given
   * Pfad von der Composition aus: Composition.section:Hauptversicherter.entry.resolve(); Composition.subject.resolve()
@@ -148,7 +148,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Stationär: X
   * Notiz zur Kardinalität: /
   * befüllt von: MopedKAActor
-  * Profile: Hauptversicherter; MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: Hauptversicherter; MopedBasisPatientKlarname; MopedBasisPatientvbPK; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV; MopedPatientvbPKBund; MopedPatientvbPKKA; MopedPatientvbPKLGF; MopedPatientvbPKSV
   * FHIR Ressource: Patient; RelatedPerson
   * Pfad von der Ressource aus: Patient.gender; RelatedPerson.gender
   * Pfad von der Composition aus: Composition.section:Hauptversicherter.entry.resolve(); Composition.subject.resolve()
@@ -159,7 +159,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Stationär: X
   * Notiz zur Kardinalität: /
   * befüllt von: MopedKAActor
-  * Profile: Hauptversicherter; MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: Hauptversicherter; MopedBasisPatientKlarname; MopedBasisPatientvbPK; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV; MopedPatientvbPKBund; MopedPatientvbPKKA; MopedPatientvbPKLGF; MopedPatientvbPKSV
   * FHIR Ressource: Patient; RelatedPerson
   * Pfad von der Ressource aus: Patient.birthDate; RelatedPerson.birthDate
   * Pfad von der Composition aus: Composition.section:Hauptversicherter.entry.resolve(); Composition.subject.resolve()
@@ -191,11 +191,11 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O[Inv.]*
   * Stationär: O[Inv.]*
   * Notiz zur Kardinalität: *wenn Patient Mitversicherter, dann zwingend
-  * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
-  * FHIR Ressource: Patient
-  * Pfad von der Ressource aus: Patient.identifier:socialSecurityNumber
-  * Pfad von der Composition aus: Composition.subject.resolve()
+  * befüllt von: 
+  * Profile: 
+  * FHIR Ressource: 
+  * Pfad von der Ressource aus: 
+  * Pfad von der Composition aus: 
   * Anmerkungen: /
 * Feld: Zuname des Mitversicherten
   * Abkürzung: AZUNA
@@ -203,7 +203,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Stationär: O[Inv.]*
   * Notiz zur Kardinalität: *wenn Patient Mitversicherter, dann zwingend
   * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: MopedBasisPatientKlarname; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.name.family
   * Pfad von der Composition aus: Composition.subject.resolve()
@@ -214,7 +214,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Stationär: O[Inv.]*
   * Notiz zur Kardinalität: *wenn Patient Mitversicherter, dann zwingend
   * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: MopedBasisPatientKlarname; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.name.given
   * Pfad von der Composition aus: Composition.subject.resolve()
@@ -225,7 +225,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Stationär: O[Inv.]*
   * Notiz zur Kardinalität: *wenn Patient Mitversicherter, dann zwingend
   * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: MopedBasisPatientKlarname; MopedBasisPatientvbPK; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV; MopedPatientvbPKBund; MopedPatientvbPKKA; MopedPatientvbPKLGF; MopedPatientvbPKSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.gender
   * Pfad von der Composition aus: Composition.subject.resolve()
@@ -236,7 +236,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Stationär: O[Inv.]*
   * Notiz zur Kardinalität: *wenn Patient Mitversicherter, dann zwingend
   * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: MopedBasisPatientKlarname; MopedBasisPatientvbPK; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV; MopedPatientvbPKBund; MopedPatientvbPKKA; MopedPatientvbPKLGF; MopedPatientvbPKSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.birthDate
   * Pfad von der Composition aus: Composition.subject.resolve()
@@ -404,7 +404,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Stationär: X
   * Notiz zur Kardinalität: /
   * befüllt von: MopedKAActor
-  * Profile: Hauptversicherter; MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: Hauptversicherter; MopedBasisPatientKlarname; MopedBasisPatientvbPK; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV; MopedPatientvbPKBund; MopedPatientvbPKKA; MopedPatientvbPKLGF; MopedPatientvbPKSV
   * FHIR Ressource: Patient; RelatedPerson
   * Pfad von der Ressource aus: Patient.birthDate; RelatedPerson.birthDate
   * Pfad von der Composition aus: Composition.section:Hauptversicherter.entry.resolve(); Composition.subject.resolve()
@@ -426,7 +426,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: optional (Unterschied zu E.1); TBD: klären warum der Patient nicht verpflichtend ist, aber der Hauptversicherte schon (nicht immer der Patient)
   * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: MopedBasisPatientKlarname; MopedBasisPatientvbPK; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV; MopedPatientvbPKBund; MopedPatientvbPKKA; MopedPatientvbPKLGF; MopedPatientvbPKSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.birthDate
   * Pfad von der Composition aus: Composition.subject.resolve()
@@ -550,9 +550,9 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: *zwingend, ausgenommen EREIG 8 (Kurheilverfahren stationär), 9 (Rehabilitationsaufenthalt ambulant) und R (Aufnahme in den Bereich der Rehabilitation); TBD: codes für Moped relevant?
   * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: MopedBasisPatientKlarname; MopedBasisPatientvbPK; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV; MopedPatientvbPKBund; MopedPatientvbPKKA; MopedPatientvbPKLGF; MopedPatientvbPKSV
   * FHIR Ressource: Patient
-  * Pfad von der Ressource aus: Patient.extension:citizenship
+  * Pfad von der Ressource aus: Patient.extension:citizenship.extension:code.value[x]
   * Pfad von der Composition aus: Composition.subject.resolve()
   * Anmerkungen: /
 * Feld: Wohandresse des Patienten - Straße
@@ -561,7 +561,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Stationär: O
   * Notiz zur Kardinalität: optional
   * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: MopedBasisPatientKlarname; MopedPatientKlarnameKA; MopedPatientKlarnameSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.address.line.extension:street
   * Pfad von der Composition aus: Composition.subject.resolve()
@@ -572,7 +572,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Stationär: O
   * Notiz zur Kardinalität: optional
   * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: MopedBasisPatientKlarname; MopedBasisPatientvbPK; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV; MopedPatientvbPKBund; MopedPatientvbPKKA; MopedPatientvbPKLGF; MopedPatientvbPKSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.address.country
   * Pfad von der Composition aus: Composition.subject.resolve()
@@ -583,7 +583,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Stationär: O
   * Notiz zur Kardinalität: optional
   * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: MopedBasisPatientKlarname; MopedBasisPatientvbPK; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV; MopedPatientvbPKBund; MopedPatientvbPKKA; MopedPatientvbPKLGF; MopedPatientvbPKSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.address.postalCode
   * Pfad von der Composition aus: Composition.subject.resolve()
@@ -594,7 +594,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Stationär: O
   * Notiz zur Kardinalität: optional
   * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: MopedBasisPatientKlarname; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.address.city
   * Pfad von der Composition aus: Composition.subject.resolve()
@@ -1307,7 +1307,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Stationär: /
   * Notiz zur Kardinalität: /
   * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: MopedBasisPatientKlarname; MopedBasisPatientvbPK; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV; MopedPatientvbPKBund; MopedPatientvbPKKA; MopedPatientvbPKLGF; MopedPatientvbPKSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.birthDate
   * Pfad von der Composition aus: Composition.subject.resolve()
@@ -1318,7 +1318,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Stationär: /
   * Notiz zur Kardinalität: /
   * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: MopedBasisPatientKlarname; MopedBasisPatientvbPK; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV; MopedPatientvbPKBund; MopedPatientvbPKKA; MopedPatientvbPKLGF; MopedPatientvbPKSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.gender
   * Pfad von der Composition aus: Composition.subject.resolve()
@@ -1329,9 +1329,9 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Stationär: /
   * Notiz zur Kardinalität: /
   * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: MopedBasisPatientKlarname; MopedBasisPatientvbPK; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV; MopedPatientvbPKBund; MopedPatientvbPKKA; MopedPatientvbPKLGF; MopedPatientvbPKSV
   * FHIR Ressource: Patient
-  * Pfad von der Ressource aus: Patient.extension:citizenship
+  * Pfad von der Ressource aus: Patient.extension:citizenship.extension:code.value[x]
   * Pfad von der Composition aus: Composition.subject.resolve()
   * Anmerkungen: nicht mehr Teil der KaOrg Meldung (Stand 2026)
 * Feld: Hauptwohnsitz Staat
@@ -1340,7 +1340,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Stationär: /
   * Notiz zur Kardinalität: /
   * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: MopedBasisPatientKlarname; MopedBasisPatientvbPK; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV; MopedPatientvbPKBund; MopedPatientvbPKKA; MopedPatientvbPKLGF; MopedPatientvbPKSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.address.country
   * Pfad von der Composition aus: Composition.subject.resolve()
@@ -1351,7 +1351,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Stationär: /
   * Notiz zur Kardinalität: /
   * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: MopedBasisPatientKlarname; MopedBasisPatientvbPK; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV; MopedPatientvbPKBund; MopedPatientvbPKKA; MopedPatientvbPKLGF; MopedPatientvbPKSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.address.postalCode
   * Pfad von der Composition aus: Composition.subject.resolve()
@@ -2092,7 +2092,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: *Nicht zu befüllen, wenn EFORM mit „ANFO“ belegt ist.
   * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: MopedBasisPatientKlarname; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.name.family
   * Pfad von der Composition aus: Composition.subject.resolve()
@@ -2103,7 +2103,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: *Nicht zu befüllen, wenn EFORM mit „ANFO“ belegt ist.
   * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: MopedBasisPatientKlarname; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.name.given
   * Pfad von der Composition aus: Composition.subject.resolve()
@@ -2114,7 +2114,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: *Nicht zu befüllen, wenn EFORM mit „ANFO“ belegt ist.
   * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: MopedBasisPatientKlarname; MopedBasisPatientvbPK; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV; MopedPatientvbPKBund; MopedPatientvbPKKA; MopedPatientvbPKLGF; MopedPatientvbPKSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.gender
   * Pfad von der Composition aus: Composition.subject.resolve()
@@ -2125,7 +2125,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: *Nicht zu befüllen, wenn EFORM mit „ANFO“ belegt ist.
   * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: MopedBasisPatientKlarname; MopedBasisPatientvbPK; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV; MopedPatientvbPKBund; MopedPatientvbPKKA; MopedPatientvbPKLGF; MopedPatientvbPKSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.birthDate
   * Pfad von der Composition aus: Composition.subject.resolve()

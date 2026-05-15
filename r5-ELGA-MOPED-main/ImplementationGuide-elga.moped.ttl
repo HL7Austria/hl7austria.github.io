@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "MOPED"] ; # 
   fhir:title [ fhir:v "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-05-15T07:39:15+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-05-15T09:26:31+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ELGA GmbH" ] ;
@@ -2744,6 +2744,42 @@
          ]
        ] ) ;
        fhir:reference [
+         fhir:l <https://elga.moped.at/StructureDefinition/MopedBasisPatientKlarname> ;
+         fhir:reference [ fhir:v "StructureDefinition/MopedBasisPatientKlarname" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED Basis Patient mit Klarname" ] ;
+       fhir:description [ fhir:v "MOPED Basis Profil der Patienten Ressource mit Klarname" ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://elga.moped.at/StructureDefinition/MopedBasisPatientvbPK> ;
+         fhir:reference [ fhir:v "StructureDefinition/MopedBasisPatientvbPK" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED Basis Patient mit vbPKs" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Patienten Ressource mit vbPKs" ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
          fhir:l <https://elga.moped.at/StructureDefinition/MopedBeantwortenComposition> ;
          fhir:reference [ fhir:v "StructureDefinition/MopedBeantwortenComposition" ]
        ] ;
@@ -3517,24 +3553,6 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "StructureDefinition:resource"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <https://elga.moped.at/StructureDefinition/MopedPatient> ;
-         fhir:reference [ fhir:v "StructureDefinition/MopedPatient" ]
-       ] ;
-       fhir:name [ fhir:v "MOPED Patient" ] ;
-       fhir:description [ fhir:v "MOPED Profil der Patient Ressource" ] ;
-       fhir:isExample [ fhir:v false ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
            fhir:v "OperationDefinition"
          ]
        ] ) ;
@@ -3575,11 +3593,11 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://elga.moped.at/StructureDefinition/MopedPatientBund> ;
-         fhir:reference [ fhir:v "StructureDefinition/MopedPatientBund" ]
+         fhir:l <https://elga.moped.at/StructureDefinition/MopedPatientKlarnameBund> ;
+         fhir:reference [ fhir:v "StructureDefinition/MopedPatientKlarnameBund" ]
        ] ;
-       fhir:name [ fhir:v "MOPED Patient Bund" ] ;
-       fhir:description [ fhir:v "MOPED Profil der Patient Ressource aus der Sicht der Rolle: Bund" ] ;
+       fhir:name [ fhir:v "MOPED Patient mit Klarname Bund" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Patient Ressource mit Klarname - verordnungsrelevant: Bund" ] ;
        fhir:isExample [ fhir:v false ]
      ] [
        fhir:extension ( [
@@ -3593,11 +3611,11 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://elga.moped.at/StructureDefinition/MopedPatientLGF> ;
-         fhir:reference [ fhir:v "StructureDefinition/MopedPatientLGF" ]
+         fhir:l <https://elga.moped.at/StructureDefinition/MopedPatientKlarnameKA> ;
+         fhir:reference [ fhir:v "StructureDefinition/MopedPatientKlarnameKA" ]
        ] ;
-       fhir:name [ fhir:v "MOPED Patient LGF" ] ;
-       fhir:description [ fhir:v "MOPED Profil der Patient Ressource aus der Sicht der Rolle: LGF" ] ;
+       fhir:name [ fhir:v "MOPED Patient mit Klarname KA" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Patient Ressource mit Klarname - verordnungsrelevant: KA" ] ;
        fhir:isExample [ fhir:v false ]
      ] [
        fhir:extension ( [
@@ -3611,11 +3629,29 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <https://elga.moped.at/StructureDefinition/MopedPatientSV> ;
-         fhir:reference [ fhir:v "StructureDefinition/MopedPatientSV" ]
+         fhir:l <https://elga.moped.at/StructureDefinition/MopedPatientKlarnameLGF> ;
+         fhir:reference [ fhir:v "StructureDefinition/MopedPatientKlarnameLGF" ]
        ] ;
-       fhir:name [ fhir:v "MOPED Patient SV" ] ;
-       fhir:description [ fhir:v "MOPED Profil der Patient Ressource aus der Sicht der Rolle: SV" ] ;
+       fhir:name [ fhir:v "MOPED Patient mit Klarname LGF" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Patient Ressource mit Klarname - verordnungsrelevant: LGF" ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://elga.moped.at/StructureDefinition/MopedPatientKlarnameSV> ;
+         fhir:reference [ fhir:v "StructureDefinition/MopedPatientKlarnameSV" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED Patient mit Klarname SV" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Patient Ressource mit Klarname - verordnungsrelevant: SV" ] ;
        fhir:isExample [ fhir:v false ]
      ] [
        fhir:extension ( [
@@ -3980,6 +4016,78 @@
        ] ;
        fhir:name [ fhir:v "MOPED VAESupportingInformationCategory" ] ;
        fhir:description [ fhir:v "Arten von zusätzlichen Informationen in der VAE" ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://elga.moped.at/StructureDefinition/MopedPatientvbPKBund> ;
+         fhir:reference [ fhir:v "StructureDefinition/MopedPatientvbPKBund" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED vbPK Patient Bund" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Patienten Ressource mit vbPKs - verordnungsrelevant: Bund" ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://elga.moped.at/StructureDefinition/MopedPatientvbPKKA> ;
+         fhir:reference [ fhir:v "StructureDefinition/MopedPatientvbPKKA" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED vbPK Patient KA" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Patienten Ressource mit vbPKs - verordnungsrelevant: KA" ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://elga.moped.at/StructureDefinition/MopedPatientvbPKLGF> ;
+         fhir:reference [ fhir:v "StructureDefinition/MopedPatientvbPKLGF" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED vbPK Patient LGF" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Patienten Ressource mit vbPKs - verordnungsrelevant: LGF" ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://elga.moped.at/StructureDefinition/MopedPatientvbPKSV> ;
+         fhir:reference [ fhir:v "StructureDefinition/MopedPatientvbPKSV" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED vbPK Patient SV" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Patienten Ressource mit vbPKs - verordnungsrelevant: SV" ] ;
        fhir:isExample [ fhir:v false ]
      ] [
        fhir:extension ( [
@@ -4379,8 +4487,8 @@
        fhir:description [ fhir:v "Hackathon Patient Journey 1 Beispiel: Patient" ] ;
        fhir:isExample [ fhir:v true ] ;
        fhir:profile ( [
-         fhir:v "https://elga.moped.at/StructureDefinition/MopedPatient"^^xsd:anyURI ;
-         fhir:l <https://elga.moped.at/StructureDefinition/MopedPatient>
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedBasisPatientKlarname"^^xsd:anyURI ;
+         fhir:l <https://elga.moped.at/StructureDefinition/MopedBasisPatientKlarname>
        ] )
      ] [
        fhir:extension ( [
@@ -4643,8 +4751,8 @@
        fhir:description [ fhir:v "Hackathon Patient Journey 2 Beispiel: Patient" ] ;
        fhir:isExample [ fhir:v true ] ;
        fhir:profile ( [
-         fhir:v "https://elga.moped.at/StructureDefinition/MopedPatient"^^xsd:anyURI ;
-         fhir:l <https://elga.moped.at/StructureDefinition/MopedPatient>
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedBasisPatientKlarname"^^xsd:anyURI ;
+         fhir:l <https://elga.moped.at/StructureDefinition/MopedBasisPatientKlarname>
        ] )
      ] [
        fhir:extension ( [
@@ -5472,11 +5580,11 @@
          fhir:reference [ fhir:v "Patient/Test1PatientBund" ]
        ] ;
        fhir:name [ fhir:v "Test1PatientBund" ] ;
-       fhir:description [ fhir:v "Maskierung Beispiel PatientBund" ] ;
+       fhir:description [ fhir:v "Maskierung Beispiel Patient Bund" ] ;
        fhir:isExample [ fhir:v true ] ;
        fhir:profile ( [
-         fhir:v "https://elga.moped.at/StructureDefinition/MopedPatientBund"^^xsd:anyURI ;
-         fhir:l <https://elga.moped.at/StructureDefinition/MopedPatientBund>
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedPatientKlarnameBund"^^xsd:anyURI ;
+         fhir:l <https://elga.moped.at/StructureDefinition/MopedPatientKlarnameBund>
        ] )
      ] [
        fhir:extension ( [
@@ -5497,8 +5605,8 @@
        fhir:description [ fhir:v "Maskierung Beispiel PatientLGF" ] ;
        fhir:isExample [ fhir:v true ] ;
        fhir:profile ( [
-         fhir:v "https://elga.moped.at/StructureDefinition/MopedPatientLGF"^^xsd:anyURI ;
-         fhir:l <https://elga.moped.at/StructureDefinition/MopedPatientLGF>
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedPatientKlarnameLGF"^^xsd:anyURI ;
+         fhir:l <https://elga.moped.at/StructureDefinition/MopedPatientKlarnameLGF>
        ] )
      ] [
        fhir:extension ( [
@@ -5519,8 +5627,8 @@
        fhir:description [ fhir:v "Maskierung Beispiel Patient" ] ;
        fhir:isExample [ fhir:v true ] ;
        fhir:profile ( [
-         fhir:v "https://elga.moped.at/StructureDefinition/MopedPatient"^^xsd:anyURI ;
-         fhir:l <https://elga.moped.at/StructureDefinition/MopedPatient>
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedBasisPatientKlarname"^^xsd:anyURI ;
+         fhir:l <https://elga.moped.at/StructureDefinition/MopedBasisPatientKlarname>
        ] )
      ] [
        fhir:extension ( [
@@ -5541,8 +5649,8 @@
        fhir:description [ fhir:v "Maskierung Beispiel PatientSV" ] ;
        fhir:isExample [ fhir:v true ] ;
        fhir:profile ( [
-         fhir:v "https://elga.moped.at/StructureDefinition/MopedPatientSV"^^xsd:anyURI ;
-         fhir:l <https://elga.moped.at/StructureDefinition/MopedPatientSV>
+         fhir:v "https://elga.moped.at/StructureDefinition/MopedPatientKlarnameSV"^^xsd:anyURI ;
+         fhir:l <https://elga.moped.at/StructureDefinition/MopedPatientKlarnameSV>
        ] )
      ] [
        fhir:extension ( [
@@ -5765,6 +5873,24 @@
        ] ;
        fhir:name [ fhir:v "ValueSet Zahlungskennzeichen ARK" ] ;
        fhir:description [ fhir:v "ValueSet für das Zahlungskennzeichen ARK" ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://elga.moped.at/ValueSet/VBPKValueSet> ;
+         fhir:reference [ fhir:v "ValueSet/VBPKValueSet" ]
+       ] ;
+       fhir:name [ fhir:v "vbPK ValueSet" ] ;
+       fhir:description [ fhir:v "ValueSet für die vbPKs" ] ;
        fhir:isExample [ fhir:v false ]
      ] [
        fhir:extension ( [

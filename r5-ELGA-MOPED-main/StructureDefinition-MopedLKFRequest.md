@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedLKFRequest.csv)
   "name" : "MopedLKFRequest",
   "title" : "MOPED LKFRequest",
   "status" : "draft",
-  "date" : "2026-05-15T07:39:15+00:00",
+  "date" : "2026-05-15T09:26:31+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -263,7 +263,8 @@ Other representations of profile: [CSV](StructureDefinition-MopedLKFRequest.csv)
       "path" : "Claim.patient",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedPatient"]
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedBasisPatientvbPK",
+        "https://elga.moped.at/StructureDefinition/MopedBasisPatientKlarname"]
       }]
     },
     {
@@ -586,7 +587,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedLKFRequest.csv)
       }]
     },
     {
-      "id" : "Claim.supportingInfo:EndgueltigeMeldung",
+      "id" : "Claim.supportingInfo:FinaleAbrechnung",
       "extension" : [{
         "extension" : [{
           "url" : "code",
@@ -599,13 +600,13 @@ Other representations of profile: [CSV](StructureDefinition-MopedLKFRequest.csv)
         "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
       }],
       "path" : "Claim.supportingInfo",
-      "sliceName" : "EndgueltigeMeldung",
-      "short" : "Feld, welches angibt, ob es sich um die vorläufige oder endgültige Meldung handelt.",
+      "sliceName" : "FinaleAbrechnung",
+      "short" : "Feld, welches angibt, ob es sich um die vorläufige oder finale Abrechnung handelt.",
       "min" : 1,
       "max" : "1"
     },
     {
-      "id" : "Claim.supportingInfo:EndgueltigeMeldung.category",
+      "id" : "Claim.supportingInfo:FinaleAbrechnung.category",
       "path" : "Claim.supportingInfo.category",
       "patternCodeableConcept" : {
         "coding" : [{
@@ -615,7 +616,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedLKFRequest.csv)
       }
     },
     {
-      "id" : "Claim.supportingInfo:EndgueltigeMeldung.value[x]",
+      "id" : "Claim.supportingInfo:FinaleAbrechnung.value[x]",
       "path" : "Claim.supportingInfo.value[x]",
       "type" : [{
         "code" : "boolean"

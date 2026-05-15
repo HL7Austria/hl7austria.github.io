@@ -93,7 +93,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Intensiv: 
   * Notiz zur Kardinalität: /
   * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: MopedBasisPatientKlarname; MopedBasisPatientvbPK; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV; MopedPatientvbPKBund; MopedPatientvbPKKA; MopedPatientvbPKLGF; MopedPatientvbPKSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.birthDate
   * Pfad von der Composition aus: Composition.subject.resolve()
@@ -115,7 +115,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Intensiv: 
   * Notiz zur Kardinalität: /
   * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: MopedBasisPatientKlarname; MopedBasisPatientvbPK; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV; MopedPatientvbPKBund; MopedPatientvbPKKA; MopedPatientvbPKLGF; MopedPatientvbPKSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.gender
   * Pfad von der Composition aus: Composition.subject.resolve()
@@ -126,9 +126,9 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Intensiv: 
   * Notiz zur Kardinalität: /
   * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: MopedBasisPatientKlarname; MopedBasisPatientvbPK; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV; MopedPatientvbPKBund; MopedPatientvbPKKA; MopedPatientvbPKLGF; MopedPatientvbPKSV
   * FHIR Ressource: Patient
-  * Pfad von der Ressource aus: Patient.extension:citizenship
+  * Pfad von der Ressource aus: Patient.extension:citizenship.extension:code.value[x]
   * Pfad von der Composition aus: Composition.subject.resolve()
   * Anmerkungen: /
 * Feld: Wohnsitz – Staat
@@ -137,7 +137,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Intensiv: 
   * Notiz zur Kardinalität: /
   * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: MopedBasisPatientKlarname; MopedBasisPatientvbPK; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV; MopedPatientvbPKBund; MopedPatientvbPKKA; MopedPatientvbPKLGF; MopedPatientvbPKSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.address.country
   * Pfad von der Composition aus: Composition.subject.resolve()
@@ -148,7 +148,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Intensiv: 
   * Notiz zur Kardinalität: *nur für österreichische Patienten verpflichtend
   * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF; MopedPatientSV
+  * Profile: MopedBasisPatientKlarname; MopedBasisPatientvbPK; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV; MopedPatientvbPKBund; MopedPatientvbPKKA; MopedPatientvbPKLGF; MopedPatientvbPKSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.address.postalCode
   * Pfad von der Composition aus: Composition.subject.resolve()
@@ -159,7 +159,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Intensiv: 
   * Notiz zur Kardinalität: *nur für österreichische Patienten verpflichtend
   * befüllt von: MopedKAActor
-  * Profile: MopedPatient; MopedPatientBund; MopedPatientLGF
+  * Profile: MopedBasisPatientKlarname; MopedBasisPatientvbPK; MopedPatientKlarnameBund; MopedPatientKlarnameKA; MopedPatientKlarnameLGF; MopedPatientKlarnameSV; MopedPatientvbPKBund; MopedPatientvbPKKA; MopedPatientvbPKLGF; MopedPatientvbPKSV
   * FHIR Ressource: Patient
   * Pfad von der Ressource aus: Patient.address.extension:municipalityCode
   * Pfad von der Composition aus: Composition.subject.resolve()

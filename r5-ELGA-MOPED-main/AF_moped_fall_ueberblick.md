@@ -235,7 +235,7 @@ TBD mit der tatsächlichen Beispielressource ersetzen
 
 #### 9b: Endgültig abrechnen
 
-Die endgültige Abrechnung wird eingebracht und dem LGF zur Verfügung gestellt.
+Die finale Abrechnung wird eingebracht und dem LGF zur Verfügung gestellt.
 
 Request
 
@@ -250,12 +250,12 @@ TBD mit der tatsächlichen Beispielressource ersetzen
 
 #### 10a: Endgültige unbeantwortete Abrechnungen abrufen
 
-Die offenen endgültige Abrechnungen abfragen, für welche noch keine Antwort (Genehmigung/Ablehnung) eingebracht wurde.
+Die offenen finale Abrechnungen abfragen, für welche noch keine Antwort (Genehmigung/Ablehnung) eingebracht wurde.
 
 Request
 
 GET
-`[base]/Claim?status=active&use=claim&endgueltig=true&_has:ClaimResponse:request:status:not=active`
+`[base]/Claim?status=active&use=claim&final=true&_has:ClaimResponse:request:status:not=active`
 
 **Headers:**
 `Accept: application/fhir+json`
@@ -265,7 +265,7 @@ TBD mit der tatsächlichen Beispielressource ersetzen
 
 #### 10b: Endgültig genehmigen
 
-Die endgültige Genehmigung (inkl. Bestätigung der Punkte einbringen) einbringen.
+Die finale Genehmigung (inkl. Bestätigung der Punkte einbringen) einbringen.
 
 Request
 
@@ -285,7 +285,7 @@ Alle verfügbaren Kosteninformationen werden von der SV abgerufen
 Request
 
 GET
-`[base]/ClaimResponse?status=active&use=claim&endgueltig=true`
+`[base]/ClaimResponse?status=active&use=claim&final=true`
 
 **Headers:**
 `Accept: application/fhir+json`
@@ -563,7 +563,7 @@ TBD mit der tatsächlichen Beispielressource ersetzen
 
 #### 9b: Endgültig abrechnen
 
-Die endgültige Abrechnung wird eingebracht und dem LGF zur Verfügung gestellt.
+Die finale Abrechnung wird eingebracht und dem LGF zur Verfügung gestellt.
 
 Request
 
@@ -578,12 +578,12 @@ TBD mit der tatsächlichen Beispielressource ersetzen
 
 #### 10a: Endgültige unbeantwortete Abrechnung abrufen
 
-Die offenen endgültige Abrechnungen abfragen, für welche noch keine Antwort (Genehmigung/Ablehnung) eingebracht wurde.
+Die offenen finale Abrechnungen abfragen, für welche noch keine Antwort (Genehmigung/Ablehnung) eingebracht wurde.
 
 Request
 
 GET
-`[base]/Claim?status=active&use=claim&endgueltig=true&_has:ClaimResponse:request:status:not=active`
+`[base]/Claim?status=active&use=claim&final=true&_has:ClaimResponse:request:status:not=active`
 
 **Headers:**
 `Accept: application/fhir+json`
@@ -593,7 +593,7 @@ TBD mit der tatsächlichen Beispielressource ersetzen
 
 #### 10b: Endgültig genehmigen
 
-Die endgültige Genehmigung (inkl. Bestätigung der Punkte einbringen) einbringen.
+Die finale Genehmigung (inkl. Bestätigung der Punkte einbringen) einbringen.
 
 Request
 
@@ -613,7 +613,7 @@ Alle verfügbaren Kosteninformationen werden von der SV abgerufen
 Request
 
 GET
-`[base]/ClaimResponse?status=active&use=claim&endgueltig=true`
+`[base]/ClaimResponse?status=active&use=claim&final=true`
 
 **Headers:**
 `Accept: application/fhir+json`
@@ -839,7 +839,7 @@ TBD mit der tatsächlichen Beispielressource ersetzen
 
 #### 7b: Endgültig abrechnen
 
-Die endgültige Abrechnung wird eingebracht und dem LGF zur Verfügung gestellt.
+Die finale Abrechnung wird eingebracht und dem LGF zur Verfügung gestellt.
 
 Request
 
@@ -854,12 +854,12 @@ TBD mit der tatsächlichen Beispielressource ersetzen
 
 #### 8a: Endgültige unbeantwortete Abrechnungen abrufen
 
-Die endgültige Abrechnungen abfragen, für welche noch keine Antwort (Genehmigung/Ablehnung) eingebracht wurde.
+Die finale Abrechnungen abfragen, für welche noch keine Antwort (Genehmigung/Ablehnung) eingebracht wurde.
 
 Request
 
 GET
-`[base]/Claim?status=active&use=claim&endgueltig=true&_has:ClaimResponse:request:status:not=active`
+`[base]/Claim?status=active&use=claim&final=true&_has:ClaimResponse:request:status:not=active`
 
 **Headers:**
 `Accept: application/fhir+json`
@@ -869,7 +869,7 @@ TBD mit der tatsächlichen Beispielressource ersetzen
 
 #### 8b: Endgültig genehmigen
 
-Die endgültige Genehmigung (inkl. Bestätigung der Punkte einbringen) einbringen.
+Die finale Genehmigung (inkl. Bestätigung der Punkte einbringen) einbringen.
 
 Request
 

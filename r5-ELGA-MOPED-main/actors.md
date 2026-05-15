@@ -43,7 +43,7 @@ Im MOPED-Kontext übernimmt die Sozialversicherung (SV) eine zentrale Rolle, ind
 
 ### Landesgesundheitsfonds
 
-Im MOPED-Kontext sind die Landesgesundheitsfonds (LGF) für das Scoring der Leistungen im Rahmen der Abrechnung verantwortlich. Sie geben Hinweise und Begründungen bei Abweisungen und fordern gegebenenfalls Korrekturen an. Sobald von den Krankenanstalten ein endgültiges Scoring vorliegt, wird der LGF informiert und vergibt anschließend die endgültige Freigabe. Der LGF stellt Kosteninformationen für die Ausländerverrechnung und Regresse zur Verfügung und erhält zusätzliche Informationen der SV über den Verrechnungsstatus.
+Im MOPED-Kontext sind die Landesgesundheitsfonds (LGF) für das Scoring der Leistungen im Rahmen der Abrechnung verantwortlich. Sie geben Hinweise und Begründungen bei Abweisungen und fordern gegebenenfalls Korrekturen an. Sobald von den Krankenanstalten ein finales Scoring vorliegt, wird der LGF informiert und vergibt anschließend die finale Freigabe. Der LGF stellt Kosteninformationen für die Ausländerverrechnung und Regresse zur Verfügung und erhält zusätzliche Informationen der SV über den Verrechnungsstatus.
 
 ```
 

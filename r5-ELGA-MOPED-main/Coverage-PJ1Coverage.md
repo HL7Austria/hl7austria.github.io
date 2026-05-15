@@ -14,9 +14,9 @@ Profile: [MOPED Coverage](StructureDefinition-MopedCoverage.md)
 
 **kind**: Insurance
 
-**policyHolder**: [Sonnenschein Susi (official) Female, DoB: 1969-04-21 ( Social Security Number: 9994210469)](Patient-PJ1Patient.md)
+**policyHolder**: [Sonnenschein Susi Female, DoB: 1969-04-21](Patient-PJ1Patient.md)
 
-**beneficiary**: [Sonnenschein Susi (official) Female, DoB: 1969-04-21 ( Social Security Number: 9994210469)](Patient-PJ1Patient.md)
+**beneficiary**: [Sonnenschein Susi Female, DoB: 1969-04-21](Patient-PJ1Patient.md)
 
 **insurer**: [Organization Österreichische Gesundheitskasse Wien](Organization-SV11.md)
 

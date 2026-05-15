@@ -132,6 +132,8 @@ These define constraints on FHIR resources for systems conforming to this implem
 | [MOPED Antworten Bundle SV](StructureDefinition-MopedAntwortenBundleSV.md) | Bundle für die Input-Ressourcen beim Einbringen von Antworten der SV |
 | [MOPED Aufnahme Composition](StructureDefinition-MopedAufnahmeComposition.md) | MOPED Profil der Composition Ressource nach $aufnehmen |
 | [MOPED Aufnehmen Bundle KA](StructureDefinition-MopedAufnehmenBundleKA.md) | Bundle für die Input-Ressourcen beim Aufnehmen eines Patienten |
+| [MOPED Basis Patient mit Klarname](StructureDefinition-MopedBasisPatientKlarname.md) | MOPED Basis Profil der Patienten Ressource mit Klarname |
+| [MOPED Basis Patient mit vbPKs](StructureDefinition-MopedBasisPatientvbPK.md) | MOPED Profil der Patienten Ressource mit vbPKs |
 | [MOPED Beantworten Composition](StructureDefinition-MopedBeantwortenComposition.md) | MOPED Profil der Composition Ressource nach $beantworten |
 | [MOPED Composition](StructureDefinition-MopedComposition.md) | MOPED Profil der Composition Ressource von der alle anderen Compositions ableiten. |
 | [MOPED Condition](StructureDefinition-MopedCondition.md) | MOPED Profil der Condition Ressource für die LDF-Abrechnung |
@@ -153,10 +155,10 @@ These define constraints on FHIR resources for systems conforming to this implem
 | [MOPED LKFResponse](StructureDefinition-MopedLKFResponse.md) | MOPED Profil der ClaimResponse Ressource für die Leistungsabrechnungsantwort. |
 | [MOPED Master Composition](StructureDefinition-MopedMasterComposition.md) | MOPED Profil der Composition Ressource für die Composition in der sich der gesamte Moped Datensatz aufbaut. Diese unterstütz durch ihre Invarianten eine konsistente Datenhaltung. |
 | [MOPED Melden Bundle LGF](StructureDefinition-MopedMeldenLGFBundle.md) | Bundle für die Input-Ressourcen beim Melden von Informationen |
-| [MOPED Patient](StructureDefinition-MopedPatient.md) | MOPED Profil der Patient Ressource |
-| [MOPED Patient Bund](StructureDefinition-MopedPatientBund.md) | MOPED Profil der Patient Ressource aus der Sicht der Rolle: Bund |
-| [MOPED Patient LGF](StructureDefinition-MopedPatientLGF.md) | MOPED Profil der Patient Ressource aus der Sicht der Rolle: LGF |
-| [MOPED Patient SV](StructureDefinition-MopedPatientSV.md) | MOPED Profil der Patient Ressource aus der Sicht der Rolle: SV |
+| [MOPED Patient mit Klarname Bund](StructureDefinition-MopedPatientKlarnameBund.md) | MOPED Profil der Patient Ressource mit Klarname - verordnungsrelevant: Bund |
+| [MOPED Patient mit Klarname KA](StructureDefinition-MopedPatientKlarnameKA.md) | MOPED Profil der Patient Ressource mit Klarname - verordnungsrelevant: KA |
+| [MOPED Patient mit Klarname LGF](StructureDefinition-MopedPatientKlarnameLGF.md) | MOPED Profil der Patient Ressource mit Klarname - verordnungsrelevant: LGF |
+| [MOPED Patient mit Klarname SV](StructureDefinition-MopedPatientKlarnameSV.md) | MOPED Profil der Patient Ressource mit Klarname - verordnungsrelevant: SV |
 | [MOPED Procedure](StructureDefinition-MopedProcedure.md) | MOPED Profil der Procedure Ressource für die LDF-Abrechnung |
 | [MOPED QuestionnaireResponse einmelden Bundle](StructureDefinition-MopedQuestionnaireResponseEinmeldenBundle.md) | Bundle für die Input-Ressourcen beim Einmelden von nicht fallspezifischen QuestionnaireResponses |
 | [MOPED TransferEncounter](StructureDefinition-MopedTransferEncounter.md) | MOPED Profil der Encounter Ressource für die Verlegung innerhalb oder zwischen Krankenanstalten |
@@ -169,6 +171,10 @@ These define constraints on FHIR resources for systems conforming to this implem
 | [MOPED VAERequest für die Verlängerung der VAE](StructureDefinition-MopedVAERequestVerlaengerung.md) | MOPED Profil für die Verlängerung der Versichertenanspruchserklärung (VAE) |
 | [MOPED VAERequest für die initiale Anfrage der VAE](StructureDefinition-MopedVAERequestInitial.md) | MOPED Profil für die initiale Anfrage der Versichertenanspruchserklärung (VAE) |
 | [MOPED VAEResponse](StructureDefinition-MopedVAEResponse.md) | MOPED Profil für die Beantwortung der Versichertenanspruchserklärung VAE. |
+| [MOPED vbPK Patient Bund](StructureDefinition-MopedPatientvbPKBund.md) | MOPED Profil der Patienten Ressource mit vbPKs - verordnungsrelevant: Bund |
+| [MOPED vbPK Patient KA](StructureDefinition-MopedPatientvbPKKA.md) | MOPED Profil der Patienten Ressource mit vbPKs - verordnungsrelevant: KA |
+| [MOPED vbPK Patient LGF](StructureDefinition-MopedPatientvbPKLGF.md) | MOPED Profil der Patienten Ressource mit vbPKs - verordnungsrelevant: LGF |
+| [MOPED vbPK Patient SV](StructureDefinition-MopedPatientvbPKSV.md) | MOPED Profil der Patienten Ressource mit vbPKs - verordnungsrelevant: SV |
 | [Moped Device](StructureDefinition-MopedDevice.md) | Generische Moped Definition für Devices |
 | [Moped Device XDok](StructureDefinition-MopedDeviceXDok.md) | Moped Definition für XDok |
 | [Moped QuestionnaireResponse fallbezogen](StructureDefinition-MopedQuestionnaireResponseFallbezogen.md) | MOPED Profil für QuestionnaireResponses die im Kontext von Moped mit Fallbezug erhoben werden |
@@ -264,6 +270,7 @@ These define sets of codes used by systems conforming to this implementation gui
 | [ValueSet Zahlungskennzeichen ARK](ValueSet-ZahlungskennzeichenVS.md) | ValueSet für das Zahlungskennzeichen ARK |
 | [Verdacht auf Arbeits- oder Schuelerunfall ValueSet](ValueSet-VerdachtArbeitsSchuelerunfallVS.md) | ValueSet für den Verdacht auf einen Arbeits- oder Schuelerunfall |
 | [Workflow Status eines Falls](ValueSet-WorkflowStatusVS.md) | ValueSet für die Statusoptionen in denen sich ein Fall befinden kann. |
+| [vbPK ValueSet](ValueSet-VBPKValueSet.md) | ValueSet für die vbPKs |
 
 ### Terminology: Code Systems 
 
@@ -393,7 +400,7 @@ These are example instances that show what data produced and consumed by systems
 | [TISS42.1](QuestionnaireResponse-TISS42.1.md) |  |
 | [TISS42.2](QuestionnaireResponse-TISS42.2.md) |  |
 | [TISS42.3](QuestionnaireResponse-TISS42.3.md) |  |
-| [Test1PatientBund](Patient-Test1PatientBund.md) | Maskierung Beispiel PatientBund |
+| [Test1PatientBund](Patient-Test1PatientBund.md) | Maskierung Beispiel Patient Bund |
 | [Test1PatientLGF](Patient-Test1PatientLGF.md) | Maskierung Beispiel PatientLGF |
 | [Test1PatientOhneMaskierung](Patient-Test1PatientOhneMaskierung.md) | Maskierung Beispiel Patient |
 | [Test1PatientSV](Patient-Test1PatientSV.md) | Maskierung Beispiel PatientSV |

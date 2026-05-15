@@ -6,15 +6,15 @@
 
 ## Example Patient: Test1PatientBund
 
-Profile: [MOPED Patient Bund](StructureDefinition-MopedPatientBund.md)
+Profile: [MOPED Patient mit Klarname Bund](StructureDefinition-MopedPatientKlarnameBund.md)
 
-MSK MSK (official) Female, DoB Unknown
+ Female, DoB Unknown
 
 -------
 
 | | |
 | :--- | :--- |
-| Contact Detail | 1030 AUT (home) |
+| Contact Detail | 1030 AUT |
 | Patient Citizenship: | * code: Österreich
  |
 
@@ -27,7 +27,7 @@ MSK MSK (official) Female, DoB Unknown
   "resourceType" : "Patient",
   "id" : "Test1PatientBund",
   "meta" : {
-    "profile" : ["https://elga.moped.at/StructureDefinition/MopedPatientBund"]
+    "profile" : ["https://elga.moped.at/StructureDefinition/MopedPatientKlarnameBund"]
   },
   "extension" : [{
     "extension" : [{
@@ -46,10 +46,7 @@ MSK MSK (official) Female, DoB Unknown
     "extension" : [{
       "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
       "valueCode" : "masked"
-    }],
-    "use" : "official",
-    "family" : "MSK",
-    "given" : ["MSK"]
+    }]
   }],
   "gender" : "female",
   "address" : [{
@@ -57,7 +54,6 @@ MSK MSK (official) Female, DoB Unknown
       "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-ext-address-municipalityCode",
       "valueString" : "90301"
     }],
-    "use" : "home",
     "postalCode" : "1030",
     "country" : "AUT"
   }]

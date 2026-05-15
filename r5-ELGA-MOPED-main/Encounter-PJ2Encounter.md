@@ -16,7 +16,7 @@ Profile: [MOPED Encounter](StructureDefinition-MopedEncounter.md)
 
 **type**: Moped Encounter
 
-**subject**: [Santiago Schnabeltier Test (official) Male, DoB: 1985-03-19 ( Social Security Number: 2873111374)](Patient-PJ2Patient.md)
+**subject**: [Santiago Schnabeltier Test Male, DoB: 1985-03-19](Patient-PJ2Patient.md)
 
 **serviceProvider**: [Organization Krankenhaus der Barmherzigen Schwestern vom Hl. Vinzenz von Paul Ried](Organization-OrganizationKrankenhausRied.md)
 

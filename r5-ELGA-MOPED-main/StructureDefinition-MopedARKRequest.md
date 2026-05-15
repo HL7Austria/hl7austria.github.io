@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedARKRequest.csv)
   "name" : "MopedARKRequest",
   "title" : "MOPED ARKRequest",
   "status" : "draft",
-  "date" : "2026-05-15T07:39:15+00:00",
+  "date" : "2026-05-15T09:26:31+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -227,7 +227,8 @@ Other representations of profile: [CSV](StructureDefinition-MopedARKRequest.csv)
       "path" : "Claim.patient",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedPatient"]
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedBasisPatientvbPK",
+        "https://elga.moped.at/StructureDefinition/MopedBasisPatientKlarname"]
       }]
     },
     {

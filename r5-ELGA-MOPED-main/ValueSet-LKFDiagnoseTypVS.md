@@ -53,7 +53,7 @@ No Expansion for this valueset (Unknown Code System)
   "title" : "LKF Diagnosetyp ValueSet",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-05-15T07:39:15+00:00",
+  "date" : "2026-05-15T09:26:31+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

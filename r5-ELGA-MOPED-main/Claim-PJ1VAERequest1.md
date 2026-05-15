@@ -16,7 +16,7 @@ Profile: [MOPED VAERequest](StructureDefinition-MopedVAERequest.md)
 
 **use**: Preauthorization
 
-**patient**: [Sonnenschein Susi (official) Female, DoB: 1969-04-21 ( Social Security Number: 9994210469)](Patient-PJ1Patient.md)
+**patient**: [Sonnenschein Susi Female, DoB: 1969-04-21](Patient-PJ1Patient.md)
 
 **created**: 2025-02-17
 

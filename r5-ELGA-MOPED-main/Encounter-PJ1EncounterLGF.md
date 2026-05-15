@@ -16,7 +16,7 @@ Profiles: [MOPED Encounter LGF](StructureDefinition-MopedEncounterLGF.md), [MOPE
 
 **type**: Moped Encounter
 
-**subject**: [Sonnenschein Susi (official) Female, DoB: 1969-04-21 ( Social Security Number: 9994210469)](Patient-PJ1Patient.md)
+**subject**: [Sonnenschein Susi Female, DoB: 1969-04-21](Patient-PJ1Patient.md)
 
 **serviceProvider**: [Organization Herz Jesu-Krankenhaus](Organization-OrganizationHerzJesuKrankenhaus.md)
 

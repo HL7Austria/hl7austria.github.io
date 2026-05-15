@@ -10,7 +10,7 @@
   <name value="MOPED"/>
   <title value="Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"/>
   <status value="draft"/>
-  <date value="2026-05-15T07:39:15+00:00"/>
+  <date value="2026-05-15T09:26:31+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -1654,6 +1654,28 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/MopedBasisPatientKlarname"/>
+      </reference>
+      <name value="MOPED Basis Patient mit Klarname"/>
+      <description value="MOPED Basis Profil der Patienten Ressource mit Klarname"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MopedBasisPatientvbPK"/>
+      </reference>
+      <name value="MOPED Basis Patient mit vbPKs"/>
+      <description value="MOPED Profil der Patienten Ressource mit vbPKs"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/MopedBeantwortenComposition"/>
       </reference>
       <name value="MOPED Beantworten Composition"/>
@@ -2127,17 +2149,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/MopedPatient"/>
-      </reference>
-      <name value="MOPED Patient"/>
-      <description value="MOPED Profil der Patient Ressource"/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
@@ -2163,10 +2174,10 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MopedPatientBund"/>
+        <reference value="StructureDefinition/MopedPatientKlarnameBund"/>
       </reference>
-      <name value="MOPED Patient Bund"/>
-      <description value="MOPED Profil der Patient Ressource aus der Sicht der Rolle: Bund"/>
+      <name value="MOPED Patient mit Klarname Bund"/>
+      <description value="MOPED Profil der Patient Ressource mit Klarname - verordnungsrelevant: Bund"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -2174,10 +2185,10 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MopedPatientLGF"/>
+        <reference value="StructureDefinition/MopedPatientKlarnameKA"/>
       </reference>
-      <name value="MOPED Patient LGF"/>
-      <description value="MOPED Profil der Patient Ressource aus der Sicht der Rolle: LGF"/>
+      <name value="MOPED Patient mit Klarname KA"/>
+      <description value="MOPED Profil der Patient Ressource mit Klarname - verordnungsrelevant: KA"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -2185,10 +2196,21 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MopedPatientSV"/>
+        <reference value="StructureDefinition/MopedPatientKlarnameLGF"/>
       </reference>
-      <name value="MOPED Patient SV"/>
-      <description value="MOPED Profil der Patient Ressource aus der Sicht der Rolle: SV"/>
+      <name value="MOPED Patient mit Klarname LGF"/>
+      <description value="MOPED Profil der Patient Ressource mit Klarname - verordnungsrelevant: LGF"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MopedPatientKlarnameSV"/>
+      </reference>
+      <name value="MOPED Patient mit Klarname SV"/>
+      <description value="MOPED Profil der Patient Ressource mit Klarname - verordnungsrelevant: SV"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -2414,6 +2436,50 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MopedPatientvbPKBund"/>
+      </reference>
+      <name value="MOPED vbPK Patient Bund"/>
+      <description value="MOPED Profil der Patienten Ressource mit vbPKs - verordnungsrelevant: Bund"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MopedPatientvbPKKA"/>
+      </reference>
+      <name value="MOPED vbPK Patient KA"/>
+      <description value="MOPED Profil der Patienten Ressource mit vbPKs - verordnungsrelevant: KA"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MopedPatientvbPKLGF"/>
+      </reference>
+      <name value="MOPED vbPK Patient LGF"/>
+      <description value="MOPED Profil der Patienten Ressource mit vbPKs - verordnungsrelevant: LGF"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MopedPatientvbPKSV"/>
+      </reference>
+      <name value="MOPED vbPK Patient SV"/>
+      <description value="MOPED Profil der Patienten Ressource mit vbPKs - verordnungsrelevant: SV"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
@@ -2633,7 +2699,7 @@
       <name value="PJ1Patient"/>
       <description value="Hackathon Patient Journey 1 Beispiel: Patient"/>
       <isExample value="true"/>
-      <profile value="https://elga.moped.at/StructureDefinition/MopedPatient"/>
+      <profile value="https://elga.moped.at/StructureDefinition/MopedBasisPatientKlarname"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2777,7 +2843,7 @@
       <name value="PJ2Patient"/>
       <description value="Hackathon Patient Journey 2 Beispiel: Patient"/>
       <isExample value="true"/>
-      <profile value="https://elga.moped.at/StructureDefinition/MopedPatient"/>
+      <profile value="https://elga.moped.at/StructureDefinition/MopedBasisPatientKlarname"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3256,9 +3322,9 @@
         <reference value="Patient/Test1PatientBund"/>
       </reference>
       <name value="Test1PatientBund"/>
-      <description value="Maskierung Beispiel PatientBund"/>
+      <description value="Maskierung Beispiel Patient Bund"/>
       <isExample value="true"/>
-      <profile value="https://elga.moped.at/StructureDefinition/MopedPatientBund"/>
+      <profile value="https://elga.moped.at/StructureDefinition/MopedPatientKlarnameBund"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3270,7 +3336,7 @@
       <name value="Test1PatientLGF"/>
       <description value="Maskierung Beispiel PatientLGF"/>
       <isExample value="true"/>
-      <profile value="https://elga.moped.at/StructureDefinition/MopedPatientLGF"/>
+      <profile value="https://elga.moped.at/StructureDefinition/MopedPatientKlarnameLGF"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3282,7 +3348,7 @@
       <name value="Test1PatientOhneMaskierung"/>
       <description value="Maskierung Beispiel Patient"/>
       <isExample value="true"/>
-      <profile value="https://elga.moped.at/StructureDefinition/MopedPatient"/>
+      <profile value="https://elga.moped.at/StructureDefinition/MopedBasisPatientKlarname"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3294,7 +3360,7 @@
       <name value="Test1PatientSV"/>
       <description value="Maskierung Beispiel PatientSV"/>
       <isExample value="true"/>
-      <profile value="https://elga.moped.at/StructureDefinition/MopedPatientSV"/>
+      <profile value="https://elga.moped.at/StructureDefinition/MopedPatientKlarnameSV"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3423,6 +3489,17 @@
       </reference>
       <name value="ValueSet Zahlungskennzeichen ARK"/>
       <description value="ValueSet für das Zahlungskennzeichen ARK"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/VBPKValueSet"/>
+      </reference>
+      <name value="vbPK ValueSet"/>
+      <description value="ValueSet für die vbPKs"/>
       <isExample value="false"/>
     </resource>
     <resource>
