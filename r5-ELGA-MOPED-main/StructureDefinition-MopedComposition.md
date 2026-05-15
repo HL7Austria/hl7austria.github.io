@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedComposition | *Version*:0.1.0 | |
-| Draft as of 2026-05-05 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedComposition |
+| Draft as of 2026-05-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedComposition |
 
  
 MOPED Profil der Composition Ressource von der alle anderen Compositions ableiten. 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedComposition.csv
   "title" : "MOPED Composition",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-05-05T07:22:12+00:00",
+  "date" : "2026-05-15T07:39:15+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -92,67 +92,6 @@ Other representations of profile: [CSV](StructureDefinition-MopedComposition.csv
       "mapping" : [{
         "identity" : "KaOrg",
         "map" : "Datensatz-ID"
-      }]
-    },
-    {
-      "id" : "Composition.extension",
-      "path" : "Composition.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "ordered" : false,
-        "rules" : "open"
-      }
-    },
-    {
-      "id" : "Composition.extension:AnzahlVerlegungen",
-      "extension" : [{
-        "extension" : [{
-          "url" : "code",
-          "valueCode" : "SHALL:populate"
-        },
-        {
-          "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedDeviceActor"
-        }],
-        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
-      }],
-      "path" : "Composition.extension",
-      "sliceName" : "AnzahlVerlegungen",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["https://elga.moped.at/StructureDefinition/moped-ext-AnzahlVerlegungen"]
-      }]
-    },
-    {
-      "id" : "Composition.extension:AnzahlBeurlaubungen",
-      "extension" : [{
-        "extension" : [{
-          "url" : "code",
-          "valueCode" : "SHALL:populate"
-        },
-        {
-          "url" : "actor",
-          "valueCanonical" : "https://elga.moped.at/ActorDefinition/MopedDeviceActor"
-        }],
-        "url" : "http://hl7.org/fhir/StructureDefinition/obligation"
-      }],
-      "path" : "Composition.extension",
-      "sliceName" : "AnzahlBeurlaubungen",
-      "short" : "KaOrg: Fallnummer",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["https://elga.moped.at/StructureDefinition/moped-ext-AnzahlBeurlaubungen"]
-      }],
-      "mapping" : [{
-        "identity" : "KaOrg",
-        "map" : "Fallnummer"
       }]
     },
     {

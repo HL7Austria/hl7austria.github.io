@@ -10,13 +10,6 @@
     single schematron that validates contained resources (if you have any) 
   -->
   <sch:pattern>
-    <sch:title>f:Composition</sch:title>
-    <sch:rule context="f:Composition">
-      <sch:assert test="count(f:extension[@url = 'https://elga.moped.at/StructureDefinition/moped-ext-AnzahlVerlegungen']) &lt;= 1">extension with URL = 'https://elga.moped.at/StructureDefinition/moped-ext-AnzahlVerlegungen': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'https://elga.moped.at/StructureDefinition/moped-ext-AnzahlBeurlaubungen']) &lt;= 1">extension with URL = 'https://elga.moped.at/StructureDefinition/moped-ext-AnzahlBeurlaubungen': maximum cardinality of 'extension' is 1</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
     <sch:title>f:Composition/f:section</sch:title>
     <sch:rule context="f:Composition/f:section">
       <sch:assert test="count(f:entry) &gt;= 1">entry: minimum cardinality of 'entry' is 1</sch:assert>

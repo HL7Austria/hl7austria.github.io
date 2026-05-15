@@ -325,7 +325,7 @@
         
           Draft
           
-            as of 2026-05-05
+            as of 2026-05-15
           
         
       </td>
@@ -379,12 +379,6 @@
     <ul>
       <li>Aufenthalt, Patient: Encounter und Patient werden nicht in eine Section sondern in Composition.encounter und Composition.subject eingefügt</li>
       <li>Leistungen, Observations, Fragebögen, Communication, CommunicationRequest: keine Besonderheiten</li>
-      <li>Verlegungen: Bei einem insert/update/delete von Verlegungen müssen folgende Anzahlen neu berechnet werden:
-        <ul>
-          <li>Anzahl Verlegungen: Composition.extension:AnzahlVerlegungen wird ermittelt durch die Gesamtanzahl der TransferEncounter</li>
-          <li>AnzahlBeurlaubungen: Wird ermittelt durch die Anzahl der TransferEncounter mit dem Funktionscode <code class="language-plaintext highlighter-rouge">10000000</code></li>
-        </ul>
-      </li>
       <li>Diagnosen:
         <ul>
           <li>Existiert nach dem Ausführen des Transaction Bundles keine Hauptdiagnose mehr dann muss Composition.encounter auf den status = discharged gesetzt werden. Wird die Hauptdiagnose aktualisiert und existiert weiterhin so ist dies nicht notwendig.</li>
@@ -443,7 +437,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, May 5, 2026 07:22+0000">2026-05-05</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Fri, May 15, 2026 07:39+0000">2026-05-15</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

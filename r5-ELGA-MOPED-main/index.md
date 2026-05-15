@@ -184,7 +184,7 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
   "name" : "MOPED",
   "title" : "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)",
   "status" : "draft",
-  "date" : "2026-05-05T07:22:12+00:00",
+  "date" : "2026-05-15T07:39:15+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -505,30 +505,6 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "Anwesenheitsart",
       "description" : "CodeSystem für die Anwesenheitsart",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/moped-ext-AnzahlBeurlaubungen"
-      },
-      "name" : "AnzahlBeurlaubungen",
-      "description" : "MOPED Extension für die Anzahl der Beurlaubungen",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/moped-ext-AnzahlVerlegungen"
-      },
-      "name" : "AnzahlVerlegungen",
-      "description" : "MOPED Extension für die Anzahl der Verlegungen",
       "isExample" : false
     },
     {

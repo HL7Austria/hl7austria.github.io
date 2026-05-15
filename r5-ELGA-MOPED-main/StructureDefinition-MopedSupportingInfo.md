@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedSupportingInfo | *Version*:0.1.0 | |
-| Draft as of 2026-05-05 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedSupportingInfo |
+| Draft as of 2026-05-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedSupportingInfo |
 
 Additional information codes regarding exceptions, special considerations, the condition, situation, prior or concurrent issues
 
@@ -52,7 +52,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedSupportingInfo.
   "name" : "MopedSupportingInfo",
   "title" : "Supporting Info Extension for ClaimResponse",
   "status" : "draft",
-  "date" : "2026-05-05T07:22:12+00:00",
+  "date" : "2026-05-15T07:39:15+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

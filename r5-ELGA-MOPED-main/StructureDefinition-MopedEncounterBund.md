@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedEncounterBund | *Version*:0.1.0 | |
-| Draft as of 2026-05-05 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounterBund |
+| Draft as of 2026-05-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounterBund |
 
  
 MOPED Profil der Encounter Ressource für die Rolle: Bund 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedEncounterBund.c
   "name" : "MopedEncounterBund",
   "title" : "MOPED Encounter Bund",
   "status" : "draft",
-  "date" : "2026-05-05T07:22:12+00:00",
+  "date" : "2026-05-15T07:39:15+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

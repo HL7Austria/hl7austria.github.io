@@ -13,7 +13,7 @@
   <title value="MOPED Entlassung Aviso Composition"/>
   <status value="draft"/>
   <experimental value="true"/>
-  <date value="2026-05-05T07:22:12+00:00"/>
+  <date value="2026-05-15T07:39:15+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -320,16 +320,11 @@
     </element>
     <element id="Composition.extension">
       <path value="Composition.extension"/>
-      <slicing>
-        <discriminator>
-          <type value="value"/>
-          <path value="url"/>
-        </discriminator>
-        <ordered value="false"/>
-        <rules value="open"/>
-      </slicing>
-      <short value="Extension"/>
-      <definition value="An Extension"/>
+      <short value="Additional content defined by implementations"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -357,99 +352,9 @@
       <mustSupport value="false"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
-    </element>
-    <element id="Composition.extension:AnzahlVerlegungen">
-      <extension url="http://hl7.org/fhir/StructureDefinition/obligation">
-        <extension url="code">
-          <valueCode value="SHALL:populate"/>
-        </extension>
-        <extension url="actor">
-          <valueCanonical value="https://elga.moped.at/ActorDefinition/MopedDeviceActor"/>
-        </extension>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/snapshot-source">
-          <valueCanonical value="https://elga.moped.at/StructureDefinition/MopedComposition|0.1.0"/>
-        </extension>
-      </extension>
-      <path value="Composition.extension"/>
-      <sliceName value="AnzahlVerlegungen"/>
-      <short value="AnzahlVerlegungen"/>
-      <definition value="MOPED Extension für die Anzahl der Verlegungen"/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="DomainResource.extension"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Extension"/>
-        <profile value="https://elga.moped.at/StructureDefinition/moped-ext-AnzahlVerlegungen"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <constraint>
-        <key value="ext-1"/>
-        <severity value="error"/>
-        <human value="Must have either extensions or value[x], not both"/>
-        <expression value="extension.exists() != value.exists()"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-      </constraint>
-      <mustSupport value="false"/>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
-    </element>
-    <element id="Composition.extension:AnzahlBeurlaubungen">
-      <extension url="http://hl7.org/fhir/StructureDefinition/obligation">
-        <extension url="code">
-          <valueCode value="SHALL:populate"/>
-        </extension>
-        <extension url="actor">
-          <valueCanonical value="https://elga.moped.at/ActorDefinition/MopedDeviceActor"/>
-        </extension>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/snapshot-source">
-          <valueCanonical value="https://elga.moped.at/StructureDefinition/MopedComposition|0.1.0"/>
-        </extension>
-      </extension>
-      <path value="Composition.extension"/>
-      <sliceName value="AnzahlBeurlaubungen"/>
-      <short value="KaOrg: Fallnummer"/>
-      <definition value="MOPED Extension für die Anzahl der Beurlaubungen"/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="DomainResource.extension"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Extension"/>
-        <profile value="https://elga.moped.at/StructureDefinition/moped-ext-AnzahlBeurlaubungen"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <constraint>
-        <key value="ext-1"/>
-        <severity value="error"/>
-        <human value="Must have either extensions or value[x], not both"/>
-        <expression value="extension.exists() != value.exists()"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-      </constraint>
-      <mustSupport value="false"/>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
       <mapping>
-        <identity value="KaOrg"/>
-        <map value="Fallnummer"/>
+        <identity value="rim"/>
+        <map value="N/A"/>
       </mapping>
     </element>
     <element id="Composition.modifierExtension">

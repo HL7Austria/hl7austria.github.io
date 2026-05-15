@@ -48,12 +48,12 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O
   * Stationär: O
   * Notiz zur Kardinalität: optional
-  * befüllt von: MopedDeviceActor
-  * Profile: MopedAnfragenComposition; MopedAufnahmeComposition; MopedBeantwortenComposition; MopedComposition; MopedEntlassenAvisoComposition; MopedEntlassenVollstaendigComposition; MopedMasterComposition; MopedUpdateComposition
-  * FHIR Ressource: Composition
-  * Pfad von der Ressource aus: Composition.extension:AnzahlBeurlaubungen
-  * Pfad von der Composition aus: Composition.extension:AnzahlBeurlaubungen
-  * Anmerkungen: /
+  * befüllt von: /
+  * Profile: /
+  * FHIR Ressource: /
+  * Pfad von der Ressource aus: /
+  * Pfad von der Composition aus: /
+  * Anmerkungen: Wird ermittelt durch die Anzahl der TransferEncounter mit dem Funktionscode `10000000`
 * Feld: Kostenträger (leistungszuständig)
   * Abkürzung: KOST
   * Ambulant: X
@@ -337,12 +337,12 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: O
   * Stationär: O
   * Notiz zur Kardinalität: optional
-  * befüllt von: MopedDeviceActor
-  * Profile: MopedAnfragenComposition; MopedAufnahmeComposition; MopedBeantwortenComposition; MopedComposition; MopedEntlassenAvisoComposition; MopedEntlassenVollstaendigComposition; MopedMasterComposition; MopedUpdateComposition
-  * FHIR Ressource: Composition
-  * Pfad von der Ressource aus: Composition.extension:AnzahlBeurlaubungen
-  * Pfad von der Composition aus: Composition.extension:AnzahlBeurlaubungen
-  * Anmerkungen: /
+  * befüllt von: /
+  * Profile: /
+  * FHIR Ressource: /
+  * Pfad von der Ressource aus: /
+  * Pfad von der Composition aus: /
+  * Anmerkungen: Wird ermittelt durch die Anzahl der TransferEncounter mit dem Funktionscode `10000000`
 * Feld: Kostenträger (leistungszuständig)
   * Abkürzung: KOST
   * Ambulant: X

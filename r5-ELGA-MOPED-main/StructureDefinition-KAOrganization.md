@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/KAOrganization | *Version*:0.1.0 | |
-| Draft as of 2026-05-05 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:KAOrganization |
+| Draft as of 2026-05-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:KAOrganization |
 
  
 MOPED Profil für KA Organizations 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-KAOrganization.csv),
   "name" : "KAOrganization",
   "title" : "KA Organization",
   "status" : "draft",
-  "date" : "2026-05-05T07:22:12+00:00",
+  "date" : "2026-05-15T07:39:15+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

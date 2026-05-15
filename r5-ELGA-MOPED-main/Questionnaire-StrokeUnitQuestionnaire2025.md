@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/Questionnaire/StrokeUnitQuestionnaire2025 | *Version*:0.1.0 | |
-| Active as of 2026-05-05 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:StrokeUnitQuestionnaire |
+| Active as of 2026-05-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:StrokeUnitQuestionnaire |
 
  
 Fragen zur Registermeldung Stroke Unit – Abschnitt Patientendaten 
@@ -27,7 +27,7 @@ Fragen zur Registermeldung Stroke Unit – Abschnitt Patientendaten
   "name" : "StrokeUnitQuestionnaire",
   "title" : "Stroke Unit Registermeldung – Patientendaten",
   "status" : "active",
-  "date" : "2026-05-05T07:22:12+00:00",
+  "date" : "2026-05-15T07:39:15+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

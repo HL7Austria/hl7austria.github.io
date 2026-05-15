@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/OperationDefinition/MOPED.QuestionnaireResponse.Einmelden | *Version*:0.1.0 | |
-| Draft as of 2026-05-05 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_QuestionnaireResponse_Einmelden |
+| Draft as of 2026-05-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_QuestionnaireResponse_Einmelden |
 
  
 Die $einmelden Operation wird aufgerufen, wenn eine (nicht fallbezogene) QuestionnaireResponse eingemeldet werden soll. 
@@ -48,7 +48,7 @@ Die Operation wird vom Akteur Krankenhaus (KA) aufgerufen. Die $einmelden Operat
   "title" : "MOPED QuestionnaireResponse $einmelden",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-05-05T07:22:12+00:00",
+  "date" : "2026-05-15T07:39:15+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

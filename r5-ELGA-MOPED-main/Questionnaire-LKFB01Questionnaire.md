@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/Questionnaire/LKFB01Questionnaire | *Version*:0.1.0 | |
-| Active as of 2026-05-05 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
+| Active as of 2026-05-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
 
  
 B01 Questionnaire - Basisinformation 
@@ -26,7 +26,7 @@ B01 Questionnaire - Basisinformation
   "version" : "0.1.0",
   "title" : "LKF B01 Questionnaire",
   "status" : "active",
-  "date" : "2026-05-05T07:22:12+00:00",
+  "date" : "2026-05-15T07:39:15+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

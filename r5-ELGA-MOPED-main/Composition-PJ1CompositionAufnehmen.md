@@ -8,10 +8,6 @@
 
 Profile: [MOPED Aufnahme Composition](StructureDefinition-MopedAufnahmeComposition.md)
 
-**AnzahlVerlegungen**: 1
-
-**AnzahlBeurlaubungen**: 0
-
 **status**: Partial
 
 **type**: Summary of episode note
@@ -42,14 +38,6 @@ Profile: [MOPED Aufnahme Composition](StructureDefinition-MopedAufnahmeCompositi
   "meta" : {
     "profile" : ["https://elga.moped.at/StructureDefinition/MopedAufnahmeComposition"]
   },
-  "extension" : [{
-    "url" : "https://elga.moped.at/StructureDefinition/moped-ext-AnzahlVerlegungen",
-    "valueUnsignedInt" : 1
-  },
-  {
-    "url" : "https://elga.moped.at/StructureDefinition/moped-ext-AnzahlBeurlaubungen",
-    "valueUnsignedInt" : 0
-  }],
   "status" : "partial",
   "type" : {
     "coding" : [{
