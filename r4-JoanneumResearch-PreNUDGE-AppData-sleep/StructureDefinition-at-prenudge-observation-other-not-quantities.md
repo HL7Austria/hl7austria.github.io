@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-observat
   "name" : "AtPrenudgeObservationOtherNotQuantities",
   "title" : "AT PreNUDGE Observation Other not Quantities",
   "status" : "draft",
-  "date" : "2026-05-18T13:56:00+00:00",
+  "date" : "2026-05-18T14:18:35+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

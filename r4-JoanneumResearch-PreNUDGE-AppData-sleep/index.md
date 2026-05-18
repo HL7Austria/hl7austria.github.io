@@ -34,8 +34,8 @@ Additional PreNUDGE measurements, also narrow standardized, will be specified an
 * Physical Activity: Number of muscle strengthening exercise sessions (per week) (from a questionnaire and from a wearable device as an observation)
 * Physical Activity: Sitting hours (per day) (from a questionnaire from a wearable device as an observation)
 * Smoking: Current status (from a questionnaire and from an observation IPS style)
-* **In progress by Tom** Sleep: Average sleep duration (hours per night) (from a questionnaire and from a wearable device as an observation)
-* **In progress by Tom** Sleep: Self-assessment of sleep quality (from a questionnaire as part of the WHOQOL-BREF)
+* **⏳ In progress by Tom** Sleep: Average sleep duration (hours per night) (from a questionnaire and from a wearable device as an observation)
+* **⏳In progress by Tom** Sleep: Self-assessment of sleep quality (from a questionnaire as part of the WHOQOL-BREF)
 * Nutrition: Portions of fruit and vegetables (per day) (from a questionnaire)
 * Nutrition: Consumption frequency of sugary and salty foods (per week) (from a questionnaire)
 * Sociodemographic Data: Age (from a questionnaire)
@@ -61,7 +61,7 @@ Besides these narrow standardized measurements, **broad standardized measurement
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-05-18T13:56:00+00:00",
+  "date" : "2026-05-18T14:18:35+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
