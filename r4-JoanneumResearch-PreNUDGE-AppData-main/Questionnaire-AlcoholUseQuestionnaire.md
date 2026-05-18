@@ -31,7 +31,7 @@ Categorical variable for the frequency of alcohol consumption in the last year (
   "title" : "Alkoholkonsum im letzten Jahr",
   "status" : "active",
   "subjectType" : ["Patient"],
-  "date" : "2026-05-18T08:38:27+00:00",
+  "date" : "2026-05-18T10:23:40+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

@@ -52,7 +52,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "title" : "AT PreNUDGE WHOQOL-BREF Score Type ValueSet",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-05-18T08:38:27+00:00",
+  "date" : "2026-05-18T10:23:40+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

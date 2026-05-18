@@ -32,7 +32,7 @@ A simple questionnaire for asking how high the blood glucose level is right now.
   "status" : "active",
   "experimental" : false,
   "subjectType" : ["Patient"],
-  "date" : "2026-05-18T08:38:27+00:00",
+  "date" : "2026-05-18T10:23:40+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
