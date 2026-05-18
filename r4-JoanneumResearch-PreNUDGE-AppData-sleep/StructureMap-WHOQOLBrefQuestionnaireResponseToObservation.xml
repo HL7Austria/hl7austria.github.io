@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="WHOQOLBrefQuestionnaireResponseToObservation"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureMap WHOQOLBrefQuestionnaireResponseToObservation</b></p><a name="WHOQOLBrefQuestionnaireResponseToObservation"> </a><a name="hcWHOQOLBrefQuestionnaireResponseToObservation"> </a><pre class="fml">
+<b>map</b><span style="color: navy"> &quot;</span>https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/WHOQOLBrefQuestionnaireResponseToObservation<span style="color: navy">&quot; = &quot;</span>WHOQOLBrefQuestionnaireResponseToObservation<span style="color: navy">&quot;
+
+</span><span style="color: navy">// </span><span style="color: green">WHOQOL-BREF Q score to O score</span>
+
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/questionnaireresponse.html" title="QuestionnaireResponse">http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse</a><span style="color: navy">&quot; </span><b>alias </b>QR <b>as </b><b>source</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/observation.html" title="Observation">http://hl7.org/fhir/StructureDefinition/Observation</a><span style="color: navy">&quot; </span><b>alias </b>Obs <b>as </b><b>target</b>
+
+<b>imports</b><span style="color: navy"> &quot;</span>http://hl7.org/fhir/StructureMap/*<span style="color: navy">&quot;
+</span><b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-QuestionnaireResponseToObservationBase.html" title="Shared base for Q to O">https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase</a><span style="color: navy">&quot;
+</span>
+<b>group </b>WHOQOLBrefQuestionnaireResponseToObservation<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src<b> then </b>SetObservationBase<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;Base&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span> tgt.meta<b> as </b><span style="color: maroon">meta</span><span style="color: navy">, </span> meta.profile = <span style="color: blue">'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-whoqol-bref-score-observation'</span> <i>&quot;SetProfile&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'405152002'</span><span style="color: navy">, </span><span style="color: blue">'Quality of life'</span><span style="color: navy">)</span> <i>&quot;SetCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">EffectiveDateTime from authored</span>
+  src.authored<b> as </b><span style="color: maroon">authored</span><span style="color: navy"><b> -&gt; </b></span> tgt.effectiveDateTime = <b>create</b><span style="color: navy">(</span><span style="color: blue">'dateTime'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">dt</span><span style="color: navy">, </span> dt.value = <span style="color: maroon">authored</span> <i>&quot;SetEffective&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">generalGroup</span><b> where </b>linkId = 'general'<b> then</b><span style="color: navy"> {
+</span>    generalGroup.item<b> as </b><span style="color: maroon">scoreItem</span><b> where </b>linkId = 'general-score'<b> then </b>MapGeneralScore<span style="color: navy">(</span><span style="color: maroon">scoreItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapGeneralScore&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ProcessGeneral&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">domain1Group</span><b> where </b>linkId = 'domain1'<b> then</b><span style="color: navy"> {
+</span>    domain1Group.item<b> as </b><span style="color: maroon">scoreItem</span><b> where </b>linkId = 'domain1-score'<b> then </b>MapPhysicalScore<span style="color: navy">(</span><span style="color: maroon">scoreItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapDomain1Score&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ProcessDomain1&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">domain2Group</span><b> where </b>linkId = 'domain2'<b> then</b><span style="color: navy"> {
+</span>    domain2Group.item<b> as </b><span style="color: maroon">scoreItem</span><b> where </b>linkId = 'domain2-score'<b> then </b>MapPsychologicalScore<span style="color: navy">(</span><span style="color: maroon">scoreItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapDomain2Score&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ProcessDomain2&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">domain3Group</span><b> where </b>linkId = 'domain3'<b> then</b><span style="color: navy"> {
+</span>    domain3Group.item<b> as </b><span style="color: maroon">scoreItem</span><b> where </b>linkId = 'domain3-score'<b> then </b>MapRelationshipsScore<span style="color: navy">(</span><span style="color: maroon">scoreItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapDomain3Score&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ProcessDomain3&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">domain4Group</span><b> where </b>linkId = 'domain4'<b> then</b><span style="color: navy"> {
+</span>    domain4Group.item<b> as </b><span style="color: maroon">scoreItem</span><b> where </b>linkId = 'domain4-score'<b> then </b>MapEnvironmentScore<span style="color: navy">(</span><span style="color: maroon">scoreItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapDomain4Score&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ProcessDomain4&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">// </span><span style="color: green">TODO: Comment/Note mapping disabled due to MaLaC-HD limitation</span>
+<span style="color: navy">// </span><span style="color: green">See: https://gitlab.com/cdehealth/malac-hd/-/issues/128</span>
+<span style="color: navy">}
+
+</span><b>group </b>MapGeneralScore<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
+</span>    answer.valueDecimal<b> as </b><span style="color: maroon">val</span><b> then</b><span style="color: navy"> {
+</span>      val.value<b> as </b><span style="color: maroon">numVal</span><span style="color: navy"><b> -&gt; </b></span> tgt.component<b> as </b><span style="color: maroon">comp</span><span style="color: navy">, </span> comp.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'60132005'</span><span style="color: navy">, </span><span style="color: blue">'Generalized'</span><span style="color: navy">)</span><span style="color: navy">, </span> comp.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: maroon">numVal</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'score'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'{score}'</span> <i>&quot;SetComponent&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;ExtractValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ProcessAnswer&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><b>group </b>MapPhysicalScore<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
+</span>    answer.valueDecimal<b> as </b><span style="color: maroon">val</span><b> then</b><span style="color: navy"> {
+</span>      val.value<b> as </b><span style="color: maroon">numVal</span><span style="color: navy"><b> -&gt; </b></span> tgt.component<b> as </b><span style="color: maroon">comp</span><span style="color: navy">, </span> comp.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'19388002'</span><span style="color: navy">, </span><span style="color: blue">'Physical'</span><span style="color: navy">)</span><span style="color: navy">, </span> comp.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: maroon">numVal</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'score'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'{score}'</span> <i>&quot;SetComponent&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;ExtractValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ProcessAnswer&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><b>group </b>MapPsychologicalScore<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
+</span>    answer.valueDecimal<b> as </b><span style="color: maroon">val</span><b> then</b><span style="color: navy"> {
+</span>      val.value<b> as </b><span style="color: maroon">numVal</span><span style="color: navy"><b> -&gt; </b></span> tgt.component<b> as </b><span style="color: maroon">comp</span><span style="color: navy">, </span> comp.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'60224009'</span><span style="color: navy">, </span><span style="color: blue">'Psychologic'</span><span style="color: navy">)</span><span style="color: navy">, </span> comp.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: maroon">numVal</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'score'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'{score}'</span> <i>&quot;SetComponent&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;ExtractValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ProcessAnswer&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><b>group </b>MapRelationshipsScore<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
+</span>    answer.valueDecimal<b> as </b><span style="color: maroon">val</span><b> then</b><span style="color: navy"> {
+</span>      val.value<b> as </b><span style="color: maroon">numVal</span><span style="color: navy"><b> -&gt; </b></span> tgt.component<b> as </b><span style="color: maroon">comp</span><span style="color: navy">, </span> comp.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'272151006'</span><span style="color: navy">, </span><span style="color: blue">'Relationships'</span><span style="color: navy">)</span><span style="color: navy">, </span> comp.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: maroon">numVal</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'score'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'{score}'</span> <i>&quot;SetComponent&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;ExtractValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ProcessAnswer&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><b>group </b>MapEnvironmentScore<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
+</span>    answer.valueDecimal<b> as </b><span style="color: maroon">val</span><b> then</b><span style="color: navy"> {
+</span>      val.value<b> as </b><span style="color: maroon">numVal</span><span style="color: navy"><b> -&gt; </b></span> tgt.component<b> as </b><span style="color: maroon">comp</span><span style="color: navy">, </span> comp.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'276339004'</span><span style="color: navy">, </span><span style="color: blue">'Environment'</span><span style="color: navy">)</span><span style="color: navy">, </span> comp.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: maroon">numVal</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'score'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'{score}'</span> <i>&quot;SetComponent&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;ExtractValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ProcessAnswer&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span></pre></div>
+  </text>
+  <url value="https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/WHOQOLBrefQuestionnaireResponseToObservation"/>
+  <version value="0.1.0"/>
+  <name value="WHOQOLBrefQuestionnaireResponseToObservation"/>
+  <title value="WHOQOL-BREF Q score to O score"/>
+  <status value="active"/>
+  <date value="2026-05-18T13:56:00+00:00"/>
+  <publisher value="The PreNUDGE Consortium"/>
+  <contact>
+    <name value="The PreNUDGE Consortium"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://prenudge.at"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="The PreNUDGE Consortium"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://prenudge.at"/>
+      <use value="work"/>
+    </telecom>
+  </contact>
+  <description value="WHOQOL-BREF Q score to O score"/>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse"/>
+    <mode value="source"/>
+    <alias value="QR"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+    <mode value="target"/>
+    <alias value="Obs"/>
+  </structure>
+  <import value="http://hl7.org/fhir/StructureMap/*"/>
+  <import value="https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase"/>
+  <group>
+    <name value="WHOQOLBrefQuestionnaireResponseToObservation"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="Base"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <dependent>
+        <name value="SetObservationBase"/>
+        <variable value="src"/>
+        <variable value="tgt"/>
+      </dependent>
+    </rule>
+    <rule>
+      <name value="SetProfile"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="meta"/>
+      </target>
+      <target>
+        <context value="meta"/>
+        <contextType value="variable"/>
+        <element value="profile"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-whoqol-bref-score-observation"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="SetCode"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <transform value="cc"/>
+        <parameter>
+          <valueString value="http://snomed.info/sct"/>
+        </parameter>
+        <parameter>
+          <valueString value="405152002"/>
+        </parameter>
+        <parameter>
+          <valueString value="Quality of life"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="SetEffective"/>
+      <source>
+        <context value="src"/>
+        <element value="authored"/>
+        <variable value="authored"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="effectiveDateTime"/>
+        <variable value="dt"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="dateTime"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="dt"/>
+        <contextType value="variable"/>
+        <element value="value"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="authored"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="ProcessGeneral"/>
+      <source>
+        <context value="src"/>
+        <element value="item"/>
+        <variable value="generalGroup"/>
+        <condition value="linkId = 'general'"/>
+      </source>
+      <rule>
+        <name value="MapGeneralScore"/>
+        <source>
+          <context value="generalGroup"/>
+          <element value="item"/>
+          <variable value="scoreItem"/>
+          <condition value="linkId = 'general-score'"/>
+        </source>
+        <dependent>
+          <name value="MapGeneralScore"/>
+          <variable value="scoreItem"/>
+          <variable value="tgt"/>
+        </dependent>
+      </rule>
+    </rule>
+    <rule>
+      <name value="ProcessDomain1"/>
+      <source>
+        <context value="src"/>
+        <element value="item"/>
+        <variable value="domain1Group"/>
+        <condition value="linkId = 'domain1'"/>
+      </source>
+      <rule>
+        <name value="MapDomain1Score"/>
+        <source>
+          <context value="domain1Group"/>
+          <element value="item"/>
+          <variable value="scoreItem"/>
+          <condition value="linkId = 'domain1-score'"/>
+        </source>
+        <dependent>
+          <name value="MapPhysicalScore"/>
+          <variable value="scoreItem"/>
+          <variable value="tgt"/>
+        </dependent>
+      </rule>
+    </rule>
+    <rule>
+      <name value="ProcessDomain2"/>
+      <source>
+        <context value="src"/>
+        <element value="item"/>
+        <variable value="domain2Group"/>
+        <condition value="linkId = 'domain2'"/>
+      </source>
+      <rule>
+        <name value="MapDomain2Score"/>
+        <source>
+          <context value="domain2Group"/>
+          <element value="item"/>
+          <variable value="scoreItem"/>
+          <condition value="linkId = 'domain2-score'"/>
+        </source>
+        <dependent>
+          <name value="MapPsychologicalScore"/>
+          <variable value="scoreItem"/>
+          <variable value="tgt"/>
+        </dependent>
+      </rule>
+    </rule>
+    <rule>
+      <name value="ProcessDomain3"/>
+      <source>
+        <context value="src"/>
+        <element value="item"/>
+        <variable value="domain3Group"/>
+        <condition value="linkId = 'domain3'"/>
+      </source>
+      <rule>
+        <name value="MapDomain3Score"/>
+        <source>
+          <context value="domain3Group"/>
+          <element value="item"/>
+          <variable value="scoreItem"/>
+          <condition value="linkId = 'domain3-score'"/>
+        </source>
+        <dependent>
+          <name value="MapRelationshipsScore"/>
+          <variable value="scoreItem"/>
+          <variable value="tgt"/>
+        </dependent>
+      </rule>
+    </rule>
+    <rule>
+      <name value="ProcessDomain4"/>
+      <source>
+        <context value="src"/>
+        <element value="item"/>
+        <variable value="domain4Group"/>
+        <condition value="linkId = 'domain4'"/>
+      </source>
+      <rule>
+        <name value="MapDomain4Score"/>
+        <source>
+          <context value="domain4Group"/>
+          <element value="item"/>
+          <variable value="scoreItem"/>
+          <condition value="linkId = 'domain4-score'"/>
+        </source>
+        <dependent>
+          <name value="MapEnvironmentScore"/>
+          <variable value="scoreItem"/>
+          <variable value="tgt"/>
+        </dependent>
+      </rule>
+    </rule>
+  </group>
+  <group>
+    <name value="MapGeneralScore"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="ProcessAnswer"/>
+      <source>
+        <context value="src"/>
+        <element value="answer"/>
+        <variable value="answer"/>
+      </source>
+      <rule>
+        <name value="ExtractValue"/>
+        <source>
+          <context value="answer"/>
+          <element value="valueDecimal"/>
+          <variable value="val"/>
+        </source>
+        <rule>
+          <name value="SetComponent"/>
+          <source>
+            <context value="val"/>
+            <element value="value"/>
+            <variable value="numVal"/>
+          </source>
+          <target>
+            <context value="tgt"/>
+            <contextType value="variable"/>
+            <element value="component"/>
+            <variable value="comp"/>
+          </target>
+          <target>
+            <context value="comp"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cc"/>
+            <parameter>
+              <valueString value="http://snomed.info/sct"/>
+            </parameter>
+            <parameter>
+              <valueString value="60132005"/>
+            </parameter>
+            <parameter>
+              <valueString value="Generalized"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="comp"/>
+            <contextType value="variable"/>
+            <element value="value"/>
+            <variable value="qty"/>
+            <transform value="create"/>
+            <parameter>
+              <valueString value="Quantity"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="qty"/>
+            <contextType value="variable"/>
+            <element value="value"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueId value="numVal"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="qty"/>
+            <contextType value="variable"/>
+            <element value="unit"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="score"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="qty"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="http://unitsofmeasure.org"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="qty"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="{score}"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+    </rule>
+  </group>
+  <group>
+    <name value="MapPhysicalScore"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="ProcessAnswer"/>
+      <source>
+        <context value="src"/>
+        <element value="answer"/>
+        <variable value="answer"/>
+      </source>
+      <rule>
+        <name value="ExtractValue"/>
+        <source>
+          <context value="answer"/>
+          <element value="valueDecimal"/>
+          <variable value="val"/>
+        </source>
+        <rule>
+          <name value="SetComponent"/>
+          <source>
+            <context value="val"/>
+            <element value="value"/>
+            <variable value="numVal"/>
+          </source>
+          <target>
+            <context value="tgt"/>
+            <contextType value="variable"/>
+            <element value="component"/>
+            <variable value="comp"/>
+          </target>
+          <target>
+            <context value="comp"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cc"/>
+            <parameter>
+              <valueString value="http://snomed.info/sct"/>
+            </parameter>
+            <parameter>
+              <valueString value="19388002"/>
+            </parameter>
+            <parameter>
+              <valueString value="Physical"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="comp"/>
+            <contextType value="variable"/>
+            <element value="value"/>
+            <variable value="qty"/>
+            <transform value="create"/>
+            <parameter>
+              <valueString value="Quantity"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="qty"/>
+            <contextType value="variable"/>
+            <element value="value"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueId value="numVal"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="qty"/>
+            <contextType value="variable"/>
+            <element value="unit"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="score"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="qty"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="http://unitsofmeasure.org"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="qty"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="{score}"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+    </rule>
+  </group>
+  <group>
+    <name value="MapPsychologicalScore"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="ProcessAnswer"/>
+      <source>
+        <context value="src"/>
+        <element value="answer"/>
+        <variable value="answer"/>
+      </source>
+      <rule>
+        <name value="ExtractValue"/>
+        <source>
+          <context value="answer"/>
+          <element value="valueDecimal"/>
+          <variable value="val"/>
+        </source>
+        <rule>
+          <name value="SetComponent"/>
+          <source>
+            <context value="val"/>
+            <element value="value"/>
+            <variable value="numVal"/>
+          </source>
+          <target>
+            <context value="tgt"/>
+            <contextType value="variable"/>
+            <element value="component"/>
+            <variable value="comp"/>
+          </target>
+          <target>
+            <context value="comp"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cc"/>
+            <parameter>
+              <valueString value="http://snomed.info/sct"/>
+            </parameter>
+            <parameter>
+              <valueString value="60224009"/>
+            </parameter>
+            <parameter>
+              <valueString value="Psychologic"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="comp"/>
+            <contextType value="variable"/>
+            <element value="value"/>
+            <variable value="qty"/>
+            <transform value="create"/>
+            <parameter>
+              <valueString value="Quantity"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="qty"/>
+            <contextType value="variable"/>
+            <element value="value"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueId value="numVal"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="qty"/>
+            <contextType value="variable"/>
+            <element value="unit"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="score"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="qty"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="http://unitsofmeasure.org"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="qty"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="{score}"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+    </rule>
+  </group>
+  <group>
+    <name value="MapRelationshipsScore"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="ProcessAnswer"/>
+      <source>
+        <context value="src"/>
+        <element value="answer"/>
+        <variable value="answer"/>
+      </source>
+      <rule>
+        <name value="ExtractValue"/>
+        <source>
+          <context value="answer"/>
+          <element value="valueDecimal"/>
+          <variable value="val"/>
+        </source>
+        <rule>
+          <name value="SetComponent"/>
+          <source>
+            <context value="val"/>
+            <element value="value"/>
+            <variable value="numVal"/>
+          </source>
+          <target>
+            <context value="tgt"/>
+            <contextType value="variable"/>
+            <element value="component"/>
+            <variable value="comp"/>
+          </target>
+          <target>
+            <context value="comp"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cc"/>
+            <parameter>
+              <valueString value="http://snomed.info/sct"/>
+            </parameter>
+            <parameter>
+              <valueString value="272151006"/>
+            </parameter>
+            <parameter>
+              <valueString value="Relationships"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="comp"/>
+            <contextType value="variable"/>
+            <element value="value"/>
+            <variable value="qty"/>
+            <transform value="create"/>
+            <parameter>
+              <valueString value="Quantity"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="qty"/>
+            <contextType value="variable"/>
+            <element value="value"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueId value="numVal"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="qty"/>
+            <contextType value="variable"/>
+            <element value="unit"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="score"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="qty"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="http://unitsofmeasure.org"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="qty"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="{score}"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+    </rule>
+  </group>
+  <group>
+    <name value="MapEnvironmentScore"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="ProcessAnswer"/>
+      <source>
+        <context value="src"/>
+        <element value="answer"/>
+        <variable value="answer"/>
+      </source>
+      <rule>
+        <name value="ExtractValue"/>
+        <source>
+          <context value="answer"/>
+          <element value="valueDecimal"/>
+          <variable value="val"/>
+        </source>
+        <rule>
+          <name value="SetComponent"/>
+          <source>
+            <context value="val"/>
+            <element value="value"/>
+            <variable value="numVal"/>
+          </source>
+          <target>
+            <context value="tgt"/>
+            <contextType value="variable"/>
+            <element value="component"/>
+            <variable value="comp"/>
+          </target>
+          <target>
+            <context value="comp"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="cc"/>
+            <parameter>
+              <valueString value="http://snomed.info/sct"/>
+            </parameter>
+            <parameter>
+              <valueString value="276339004"/>
+            </parameter>
+            <parameter>
+              <valueString value="Environment"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="comp"/>
+            <contextType value="variable"/>
+            <element value="value"/>
+            <variable value="qty"/>
+            <transform value="create"/>
+            <parameter>
+              <valueString value="Quantity"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="qty"/>
+            <contextType value="variable"/>
+            <element value="value"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueId value="numVal"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="qty"/>
+            <contextType value="variable"/>
+            <element value="unit"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="score"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="qty"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="http://unitsofmeasure.org"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="qty"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="{score}"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+    </rule>
+  </group>
+</StructureMap>

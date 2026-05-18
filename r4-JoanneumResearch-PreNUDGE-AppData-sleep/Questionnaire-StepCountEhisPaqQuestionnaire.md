@@ -1,0 +1,105 @@
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\EHIS-PAQ: Zu-Fuß-Gehen - FHIR® v4.0.1
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **EHIS-PAQ: Zu-Fuß-Gehen**
+
+## Questionnaire: EHIS-PAQ: Zu-Fuß-Gehen 
+
+| | | |
+| :--- | :--- | :--- |
+| *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/StepCountEhisPaqQuestionnaire | *Version*:0.1.0 | |
+| Active as of 2026-05-18 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:StepCountEhisPaqQuestionnaire |
+
+ 
+The questions Q2 and Q3 from the EHIS-PAQ about the number of days and duration of walking (for transport) in a typical week. 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Questionnaire",
+  "id" : "StepCountEhisPaqQuestionnaire",
+  "meta" : {
+    "profile" : ["https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaire"]
+  },
+  "url" : "https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/StepCountEhisPaqQuestionnaire",
+  "version" : "0.1.0",
+  "name" : "StepCountEhisPaqQuestionnaire",
+  "title" : "EHIS-PAQ: Zu-Fuß-Gehen",
+  "status" : "active",
+  "experimental" : false,
+  "subjectType" : ["Patient"],
+  "date" : "2026-05-18T13:56:00+00:00",
+  "publisher" : "The PreNUDGE Consortium",
+  "contact" : [{
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at"
+    }]
+  },
+  {
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at",
+      "use" : "work"
+    }]
+  }],
+  "description" : "The questions Q2 and Q3 from the EHIS-PAQ about the number of days and duration of walking (for transport) in a typical week.",
+  "item" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/minValue",
+      "valueDecimal" : 0
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/maxValue",
+      "valueDecimal" : 7
+    }],
+    "linkId" : "Q2-walking-days",
+    "text" : "An wie vielen Tagen in einer typischen Woche gehen Sie mindestens 10 Minuten ohne Unterbrechung zu Fuß, um von Ort zu Ort zu gelangen?",
+    "type" : "integer",
+    "required" : true,
+    "repeats" : false,
+    "item" : [{
+      "linkId" : "Q2-comment",
+      "text" : "Haben Sie zu Ihrer Antwort noch einen Kommentar oder etwas hinzuzufügen?",
+      "type" : "string"
+    }]
+  },
+  {
+    "linkId" : "Q3-walking-duration",
+    "text" : "Wie lange gehen Sie an einem typischen Tag zu Fuß, um von Ort zu Ort zu gelangen?",
+    "type" : "choice",
+    "required" : true,
+    "repeats" : false,
+    "answerOption" : [{
+      "valueString" : "0–9 Minuten pro Tag"
+    },
+    {
+      "valueString" : "10–29 Minuten pro Tag"
+    },
+    {
+      "valueString" : "30–59 Minuten pro Tag"
+    },
+    {
+      "valueString" : "1 Stunde bis unter 2 Stunden pro Tag"
+    },
+    {
+      "valueString" : "2 Stunden bis unter 3 Stunden pro Tag"
+    },
+    {
+      "valueString" : "3 Stunden pro Tag oder mehr"
+    }],
+    "item" : [{
+      "linkId" : "Q3-comment",
+      "text" : "Haben Sie zu Ihrer Antwort noch einen Kommentar oder etwas hinzuzufügen?",
+      "type" : "string"
+    }]
+  }]
+}
+
+```
