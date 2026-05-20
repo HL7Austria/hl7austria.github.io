@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="StepCountQuestionnaireResponseToObservation"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureMap StepCountQuestionnaireResponseToObservation</b></p><a name="StepCountQuestionnaireResponseToObservation"> </a><a name="hcStepCountQuestionnaireResponseToObservation"> </a><pre class="fml">
+<b>map</b><span style="color: navy"> &quot;</span>https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/StepCountQuestionnaireResponseToObservation<span style="color: navy">&quot; = &quot;</span>StepCountQuestionnaireResponseToObservation<span style="color: navy">&quot;
+
+</span><span style="color: navy">// </span><span style="color: green">Step Count Q to O</span>
+
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/questionnaireresponse.html" title="QuestionnaireResponse">http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse</a><span style="color: navy">&quot; </span><b>alias </b>QR <b>as </b><b>source</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/observation.html" title="Observation">http://hl7.org/fhir/StructureDefinition/Observation</a><span style="color: navy">&quot; </span><b>alias </b>Obs <b>as </b><b>target</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/datatypes.html#Quantity" title="Quantity">http://hl7.org/fhir/StructureDefinition/Quantity</a><span style="color: navy">&quot; </span><b>alias </b>Quantity <b>as </b><b>source</b>
+
+<b>imports</b><span style="color: navy"> &quot;</span>http://hl7.org/fhir/StructureMap/*<span style="color: navy">&quot;
+</span><b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-QuestionnaireResponseToObservationBase.html" title="Shared base for Q to O">https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase</a><span style="color: navy">&quot;
+</span>
+<b>group </b>StepCountQuestionnaireResponseToObservation<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src<b> then </b>SetObservationBase<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;Base&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span> tgt.meta = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Meta'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">meta</span><span style="color: navy">, </span> meta.profile = <span style="color: blue">'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation'</span> <i>&quot;SetProfile&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://loinc.org'</span><span style="color: navy">, </span><span style="color: blue">'41950-7'</span><span style="color: navy">, </span><span style="color: blue">'Number of steps in 24 hour Measured'</span><span style="color: navy">)</span> <i>&quot;SetCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Quantity step count entry</span>
+  src.item<b> as </b><span style="color: maroon">item</span><b> where </b>linkId = 'step-count'<b> then </b>MapStepCount<span style="color: navy">(</span><span style="color: maroon">item</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;ProcessQuantityStepCount&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">// </span><span style="color: green">EHIS-PAQ walking survey</span>
+<span style="color: #b36b00" title="This element was not defined prior to R5">// src.item as item where linkId = 'Q2-walking-days' then MapEhisPaqToStepCount(item, tgt) &quot;ProcessEhisPaq&quot;;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">Direct step count mapping</span>
+<b>group </b>MapStepCount<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
+</span>    <span style="color: navy">// </span><span style="color: green">effectiveDateTime from nested item with linkId = 'date'</span>
+    answer.item<b> as </b><span style="color: maroon">dtItem</span><b> where </b>linkId = 'date'<b> then</b><span style="color: navy"> {
+</span>      dtItem.answer<b> as </b><span style="color: maroon">dtAns</span><b> then</b><span style="color: navy"> {
+</span>        dtAns.valueDate<b> as </b><span style="color: maroon">dt</span><span style="color: navy"><b> -&gt; </b></span>tgt.effectiveDateTime = <span style="color: maroon">dt</span> <i>&quot;SetEffectiveFromDate&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;ExtractDate&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;ProcessDate&quot;</i><span style="color: navy">;</span>
+    answer.valueQuantity<b> as </b><span style="color: maroon">srcQty</span><b> then </b>MapStepCountQuantity<span style="color: navy">(</span><span style="color: maroon">srcQty</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapValueQuantity&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ProcessAnswer&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><b>group </b>MapStepCountQuantity<span style="color: navy">(</span><b>source</b> <span style="color: maroon">srcQty</span><span style="color: navy"> : </span>Quantity, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  srcQty.value<b> as </b><span style="color: maroon">v</span><span style="color: navy"><b> -&gt; </b></span>tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><b> then</b><span style="color: navy"> {
+</span>    v.value<b> as </b><span style="color: maroon">numVal</span><span style="color: navy"><b> -&gt; </b></span>qty.value = <span style="color: maroon">numVal</span> <i>&quot;SetValue&quot;</i><span style="color: navy">;</span>
+    srcQty<span style="color: navy"><b> -&gt; </b></span>qty.unit = <span style="color: blue">'{steps}/d'</span> <i>&quot;SetUnit&quot;</i><span style="color: navy">;</span>
+    srcQty<span style="color: navy"><b> -&gt; </b></span>qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span> <i>&quot;SetSystem&quot;</i><span style="color: navy">;</span>
+    srcQty<span style="color: navy"><b> -&gt; </b></span>qty.code = <span style="color: blue">'{steps}/d'</span> <i>&quot;SetCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;MapQuantityValue&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span></pre></div>
+  </text>
+  <url value="https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/StepCountQuestionnaireResponseToObservation"/>
+  <version value="0.1.0"/>
+  <name value="StepCountQuestionnaireResponseToObservation"/>
+  <title value="Step Count Q to O"/>
+  <status value="active"/>
+  <date value="2026-05-20T09:08:27+00:00"/>
+  <publisher value="The PreNUDGE Consortium"/>
+  <contact>
+    <name value="The PreNUDGE Consortium"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://prenudge.at"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="The PreNUDGE Consortium"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://prenudge.at"/>
+      <use value="work"/>
+    </telecom>
+  </contact>
+  <description value="Step Count Q to O"/>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse"/>
+    <mode value="source"/>
+    <alias value="QR"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+    <mode value="target"/>
+    <alias value="Obs"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Quantity"/>
+    <mode value="source"/>
+    <alias value="Quantity"/>
+  </structure>
+  <import value="http://hl7.org/fhir/StructureMap/*"/>
+  <import value="https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase"/>
+  <group>
+    <name value="StepCountQuestionnaireResponseToObservation"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="Base"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <dependent>
+        <name value="SetObservationBase"/>
+        <variable value="src"/>
+        <variable value="tgt"/>
+      </dependent>
+    </rule>
+    <rule>
+      <name value="SetProfile"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="meta"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Meta"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="meta"/>
+        <contextType value="variable"/>
+        <element value="profile"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="SetCode"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <transform value="cc"/>
+        <parameter>
+          <valueString value="http://loinc.org"/>
+        </parameter>
+        <parameter>
+          <valueString value="41950-7"/>
+        </parameter>
+        <parameter>
+          <valueString value="Number of steps in 24 hour Measured"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="ProcessQuantityStepCount"/>
+      <source>
+        <context value="src"/>
+        <element value="item"/>
+        <variable value="item"/>
+        <condition value="linkId = 'step-count'"/>
+      </source>
+      <dependent>
+        <name value="MapStepCount"/>
+        <variable value="item"/>
+        <variable value="tgt"/>
+      </dependent>
+    </rule>
+  </group>
+  <group>
+    <name value="MapStepCount"/>
+    <typeMode value="none"/>
+    <documentation value="Direct step count mapping"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="ProcessAnswer"/>
+      <source>
+        <context value="src"/>
+        <element value="answer"/>
+        <variable value="answer"/>
+      </source>
+      <rule>
+        <name value="ProcessDate"/>
+        <source>
+          <context value="answer"/>
+          <element value="item"/>
+          <variable value="dtItem"/>
+          <condition value="linkId = 'date'"/>
+        </source>
+        <rule>
+          <name value="ExtractDate"/>
+          <source>
+            <context value="dtItem"/>
+            <element value="answer"/>
+            <variable value="dtAns"/>
+          </source>
+          <rule>
+            <name value="SetEffectiveFromDate"/>
+            <source>
+              <context value="dtAns"/>
+              <element value="valueDate"/>
+              <variable value="dt"/>
+            </source>
+            <target>
+              <context value="tgt"/>
+              <contextType value="variable"/>
+              <element value="effectiveDateTime"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueId value="dt"/>
+              </parameter>
+            </target>
+          </rule>
+        </rule>
+      </rule>
+      <rule>
+        <name value="MapValueQuantity"/>
+        <source>
+          <context value="answer"/>
+          <element value="valueQuantity"/>
+          <variable value="srcQty"/>
+        </source>
+        <dependent>
+          <name value="MapStepCountQuantity"/>
+          <variable value="srcQty"/>
+          <variable value="tgt"/>
+        </dependent>
+      </rule>
+    </rule>
+  </group>
+  <group>
+    <name value="MapStepCountQuantity"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="srcQty"/>
+      <type value="Quantity"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="MapQuantityValue"/>
+      <source>
+        <context value="srcQty"/>
+        <element value="value"/>
+        <variable value="v"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="value"/>
+        <variable value="qty"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Quantity"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="SetValue"/>
+        <source>
+          <context value="v"/>
+          <element value="value"/>
+          <variable value="numVal"/>
+        </source>
+        <target>
+          <context value="qty"/>
+          <contextType value="variable"/>
+          <element value="value"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueId value="numVal"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="SetUnit"/>
+        <source>
+          <context value="srcQty"/>
+        </source>
+        <target>
+          <context value="qty"/>
+          <contextType value="variable"/>
+          <element value="unit"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="{steps}/d"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="SetSystem"/>
+        <source>
+          <context value="srcQty"/>
+        </source>
+        <target>
+          <context value="qty"/>
+          <contextType value="variable"/>
+          <element value="system"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="http://unitsofmeasure.org"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="SetCode"/>
+        <source>
+          <context value="srcQty"/>
+        </source>
+        <target>
+          <context value="qty"/>
+          <contextType value="variable"/>
+          <element value="code"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="{steps}/d"/>
+          </parameter>
+        </target>
+      </rule>
+    </rule>
+  </group>
+</StructureMap>

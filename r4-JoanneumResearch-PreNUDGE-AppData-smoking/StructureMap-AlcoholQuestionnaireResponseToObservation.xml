@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="AlcoholQuestionnaireResponseToObservation"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureMap AlcoholQuestionnaireResponseToObservation</b></p><a name="AlcoholQuestionnaireResponseToObservation"> </a><a name="hcAlcoholQuestionnaireResponseToObservation"> </a><pre class="fml">
+<b>map</b><span style="color: navy"> &quot;</span>https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/AlcoholQuestionnaireResponseToObservation<span style="color: navy">&quot; = &quot;</span>AlcoholQuestionnaireResponseToObservation<span style="color: navy">&quot;
+
+</span><span style="color: navy">// </span><span style="color: green">Alcohol Use Q mapping frequency to O drinks per day</span>
+
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/questionnaireresponse.html" title="QuestionnaireResponse">http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse</a><span style="color: navy">&quot; </span><b>alias </b>QR <b>as </b><b>source</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/observation.html" title="Observation">http://hl7.org/fhir/StructureDefinition/Observation</a><span style="color: navy">&quot; </span><b>alias </b>Obs <b>as </b><b>target</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/datatypes.html#Coding" title="Coding">http://hl7.org/fhir/StructureDefinition/Coding</a><span style="color: navy">&quot; </span><b>alias </b>Coding <b>as </b><b>source</b>
+
+<b>imports</b><span style="color: navy"> &quot;</span>http://hl7.org/fhir/StructureMap/*<span style="color: navy">&quot;
+</span><b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-QuestionnaireResponseToObservationBase.html" title="Shared base for Q to O">https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase</a><span style="color: navy">&quot;
+</span>
+<b>group </b>AlcoholQuestionnaireResponseToObservation<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src<b> then </b>SetObservationBase<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;Base&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span> tgt.meta<b> as </b><span style="color: maroon">meta</span><span style="color: navy">, </span> meta.profile = <span style="color: blue">'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation'</span> <i>&quot;SetProfile&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://loinc.org'</span><span style="color: navy">, </span><span style="color: blue">'74013-4'</span><span style="color: navy">, </span><span style="color: blue">'Alcoholic drinks per day'</span><span style="color: navy">)</span> <i>&quot;SetCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">EffectiveDateTime from authored</span>
+  src.authored<b> as </b><span style="color: maroon">authored</span><span style="color: navy"><b> -&gt; </b></span> tgt.effectiveDateTime = <b>create</b><span style="color: navy">(</span><span style="color: blue">'dateTime'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">dt</span><span style="color: navy">, </span> dt.value = <span style="color: maroon">authored</span> <i>&quot;SetEffective&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">item</span><b> where </b>linkId = 'alcohol-frequency'<b> then </b>MapAlcoholFrequency<span style="color: navy">(</span><span style="color: maroon">item</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;ProcessItem&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><b>group </b>MapAlcoholFrequency<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
+</span>    answer.valueCoding<b> as </b><span style="color: maroon">coding</span><b> then </b>MapAlcoholCodingToQuantity<span style="color: navy">(</span><span style="color: maroon">coding</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapValueCoding&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ProcessAnswer&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">// </span><span style="color: green">TODO: Note mapping disabled due to MaLaC-HD limitation</span>
+<span style="color: navy">// </span><span style="color: green">Annotation.text (markdown) target not supported with FHIR string source</span>
+<span style="color: navy">// </span><span style="color: green">See: https://gitlab.com/cdehealth/malac-hd/-/issues/128</span>
+<span style="color: navy">}
+
+</span><b>group </b>MapAlcoholCodingToQuantity<span style="color: navy">(</span><b>source</b> <span style="color: maroon">coding</span><span style="color: navy"> : </span>Coding, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  coding.code<b> as </b><span style="color: maroon">c</span><b> where </b>$this = '69620002'<span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: blue">'1'</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'drinks/day'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'{drinks}/d'</span> <i>&quot;MapDaily&quot;</i><span style="color: navy">;</span>
+  coding.code<b> as </b><span style="color: maroon">c</span><b> where </b>$this = '307447001'<span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: blue">'0.79'</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'drinks/day'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'{drinks}/d'</span> <i>&quot;MapSixTimesWeekly&quot;</i><span style="color: navy">;</span>
+  coding.code<b> as </b><span style="color: maroon">c</span><b> where </b>$this = '396113003'<span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: blue">'0.5'</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'drinks/day'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'{drinks}/d'</span> <i>&quot;MapThreeToFourTimesWeekly&quot;</i><span style="color: navy">;</span>
+  coding.code<b> as </b><span style="color: maroon">c</span><b> where </b>$this = '229800002'<span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: blue">'0.21'</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'drinks/day'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'{drinks}/d'</span> <i>&quot;MapTwiceWeekly&quot;</i><span style="color: navy">;</span>
+  coding.code<b> as </b><span style="color: maroon">c</span><b> where </b>$this = '307452006'<span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: blue">'0.08'</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'drinks/day'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'{drinks}/d'</span> <i>&quot;MapThreeTimesMonthly&quot;</i><span style="color: navy">;</span>
+  coding.code<b> as </b><span style="color: maroon">c</span><b> where </b>$this = '307450003'<span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: blue">'0.03'</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'drinks/day'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'{drinks}/d'</span> <i>&quot;MapOnceMonthly&quot;</i><span style="color: navy">;</span>
+  coding.code<b> as </b><span style="color: maroon">c</span><b> where </b>$this = '445547001'<span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: blue">'0.02'</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'drinks/day'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'{drinks}/d'</span> <i>&quot;MapEveryTwoMonths&quot;</i><span style="color: navy">;</span>
+  coding.code<b> as </b><span style="color: maroon">c</span><b> where </b>$this = '105542008'<span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: blue">'0.001'</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'drinks/day'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'{drinks}/d'</span> <i>&quot;MapCurrentNonDrinker&quot;</i><span style="color: navy">;</span>
+  coding.code<b> as </b><span style="color: maroon">c</span><b> where </b>$this = '783261004'<span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: blue">'0'</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'drinks/day'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'{drinks}/d'</span> <i>&quot;MapLifetimeNonDrinker&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span></pre></div>
+  </text>
+  <url value="https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/AlcoholQuestionnaireResponseToObservation"/>
+  <version value="0.1.0"/>
+  <name value="AlcoholQuestionnaireResponseToObservation"/>
+  <title value="Alcohol Use Q mapping frequency to O drinks per day"/>
+  <status value="active"/>
+  <date value="2026-05-20T09:08:27+00:00"/>
+  <publisher value="The PreNUDGE Consortium"/>
+  <contact>
+    <name value="The PreNUDGE Consortium"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://prenudge.at"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="The PreNUDGE Consortium"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://prenudge.at"/>
+      <use value="work"/>
+    </telecom>
+  </contact>
+  <description value="Alcohol Use Q mapping frequency to O drinks per day"/>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse"/>
+    <mode value="source"/>
+    <alias value="QR"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+    <mode value="target"/>
+    <alias value="Obs"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Coding"/>
+    <mode value="source"/>
+    <alias value="Coding"/>
+  </structure>
+  <import value="http://hl7.org/fhir/StructureMap/*"/>
+  <import value="https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase"/>
+  <group>
+    <name value="AlcoholQuestionnaireResponseToObservation"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="Base"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <dependent>
+        <name value="SetObservationBase"/>
+        <variable value="src"/>
+        <variable value="tgt"/>
+      </dependent>
+    </rule>
+    <rule>
+      <name value="SetProfile"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="meta"/>
+      </target>
+      <target>
+        <context value="meta"/>
+        <contextType value="variable"/>
+        <element value="profile"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="SetCode"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <transform value="cc"/>
+        <parameter>
+          <valueString value="http://loinc.org"/>
+        </parameter>
+        <parameter>
+          <valueString value="74013-4"/>
+        </parameter>
+        <parameter>
+          <valueString value="Alcoholic drinks per day"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="SetEffective"/>
+      <source>
+        <context value="src"/>
+        <element value="authored"/>
+        <variable value="authored"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="effectiveDateTime"/>
+        <variable value="dt"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="dateTime"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="dt"/>
+        <contextType value="variable"/>
+        <element value="value"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="authored"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="ProcessItem"/>
+      <source>
+        <context value="src"/>
+        <element value="item"/>
+        <variable value="item"/>
+        <condition value="linkId = 'alcohol-frequency'"/>
+      </source>
+      <dependent>
+        <name value="MapAlcoholFrequency"/>
+        <variable value="item"/>
+        <variable value="tgt"/>
+      </dependent>
+    </rule>
+  </group>
+  <group>
+    <name value="MapAlcoholFrequency"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="ProcessAnswer"/>
+      <source>
+        <context value="src"/>
+        <element value="answer"/>
+        <variable value="answer"/>
+      </source>
+      <rule>
+        <name value="MapValueCoding"/>
+        <source>
+          <context value="answer"/>
+          <element value="valueCoding"/>
+          <variable value="coding"/>
+        </source>
+        <dependent>
+          <name value="MapAlcoholCodingToQuantity"/>
+          <variable value="coding"/>
+          <variable value="tgt"/>
+        </dependent>
+      </rule>
+    </rule>
+  </group>
+  <group>
+    <name value="MapAlcoholCodingToQuantity"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="coding"/>
+      <type value="Coding"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="MapDaily"/>
+      <source>
+        <context value="coding"/>
+        <element value="code"/>
+        <variable value="c"/>
+        <condition value="$this = '69620002'"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="value"/>
+        <variable value="qty"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Quantity"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="value"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="1"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="unit"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="drinks/day"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="system"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="http://unitsofmeasure.org"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="{drinks}/d"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="MapSixTimesWeekly"/>
+      <source>
+        <context value="coding"/>
+        <element value="code"/>
+        <variable value="c"/>
+        <condition value="$this = '307447001'"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="value"/>
+        <variable value="qty"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Quantity"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="value"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="0.79"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="unit"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="drinks/day"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="system"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="http://unitsofmeasure.org"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="{drinks}/d"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="MapThreeToFourTimesWeekly"/>
+      <source>
+        <context value="coding"/>
+        <element value="code"/>
+        <variable value="c"/>
+        <condition value="$this = '396113003'"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="value"/>
+        <variable value="qty"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Quantity"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="value"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="0.5"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="unit"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="drinks/day"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="system"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="http://unitsofmeasure.org"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="{drinks}/d"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="MapTwiceWeekly"/>
+      <source>
+        <context value="coding"/>
+        <element value="code"/>
+        <variable value="c"/>
+        <condition value="$this = '229800002'"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="value"/>
+        <variable value="qty"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Quantity"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="value"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="0.21"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="unit"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="drinks/day"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="system"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="http://unitsofmeasure.org"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="{drinks}/d"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="MapThreeTimesMonthly"/>
+      <source>
+        <context value="coding"/>
+        <element value="code"/>
+        <variable value="c"/>
+        <condition value="$this = '307452006'"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="value"/>
+        <variable value="qty"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Quantity"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="value"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="0.08"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="unit"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="drinks/day"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="system"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="http://unitsofmeasure.org"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="{drinks}/d"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="MapOnceMonthly"/>
+      <source>
+        <context value="coding"/>
+        <element value="code"/>
+        <variable value="c"/>
+        <condition value="$this = '307450003'"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="value"/>
+        <variable value="qty"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Quantity"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="value"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="0.03"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="unit"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="drinks/day"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="system"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="http://unitsofmeasure.org"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="{drinks}/d"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="MapEveryTwoMonths"/>
+      <source>
+        <context value="coding"/>
+        <element value="code"/>
+        <variable value="c"/>
+        <condition value="$this = '445547001'"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="value"/>
+        <variable value="qty"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Quantity"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="value"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="0.02"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="unit"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="drinks/day"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="system"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="http://unitsofmeasure.org"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="{drinks}/d"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="MapCurrentNonDrinker"/>
+      <source>
+        <context value="coding"/>
+        <element value="code"/>
+        <variable value="c"/>
+        <condition value="$this = '105542008'"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="value"/>
+        <variable value="qty"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Quantity"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="value"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="0.001"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="unit"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="drinks/day"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="system"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="http://unitsofmeasure.org"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="{drinks}/d"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="MapLifetimeNonDrinker"/>
+      <source>
+        <context value="coding"/>
+        <element value="code"/>
+        <variable value="c"/>
+        <condition value="$this = '783261004'"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="value"/>
+        <variable value="qty"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Quantity"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="value"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="0"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="unit"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="drinks/day"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="system"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="http://unitsofmeasure.org"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="qty"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="{drinks}/d"/>
+        </parameter>
+      </target>
+    </rule>
+  </group>
+</StructureMap>
