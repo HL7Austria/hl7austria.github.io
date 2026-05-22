@@ -10,7 +10,7 @@
   <name value="MOPED"/>
   <title value="Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"/>
   <status value="draft"/>
-  <date value="2026-05-15T09:26:31+00:00"/>
+  <date value="2026-05-22T08:08:56+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -36,7 +36,7 @@
     </extension>
     <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
     <packageId value="hl7.fhir.uv.extensions.r5"/>
-    <version value="5.2.0"/>
+    <version value="5.3.0"/>
   </dependsOn>
   <dependsOn id="hl7_at_fhir_core_r5">
     <uri value="http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/ImplementationGuide/hl7.at.fhir.core.r5"/>
@@ -2149,6 +2149,28 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MopedObservationEntbindungsart"/>
+      </reference>
+      <name value="MOPED Observation Entbindungsart"/>
+      <description value="MOPED Profil der Observation Ressource für die Entbindungsart"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MopedObservationGeburtenanzahl"/>
+      </reference>
+      <name value="MOPED Observation Geburtenanzahl"/>
+      <description value="MOPED Profil der Observation Ressource für die Anzahl der Geburten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
@@ -2432,6 +2454,17 @@
       </reference>
       <name value="MOPED VAESupportingInformationCategory"/>
       <description value="Arten von zusätzlichen Informationen in der VAE"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/MopedEntbindungsartVS"/>
+      </reference>
+      <name value="Moped ValueSet für die Art der Entbindung"/>
+      <description value="Varianten der Art der Entbindung"/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -3478,6 +3511,17 @@
       </reference>
       <name value="VAE Claim Subtype ValueSet"/>
       <description value="ValueSet für die Art der Claims"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/GeburtenanzahlVS"/>
+      </reference>
+      <name value="Valueset für die Art der Geburtenanzahl"/>
+      <description value="Valueset für die Art der Geburtenanzahl in MOPED"/>
       <isExample value="false"/>
     </resource>
     <resource>

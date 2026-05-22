@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedComposition | *Version*:0.1.0 | |
-| Draft as of 2026-05-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedComposition |
+| Draft as of 2026-05-22 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedComposition |
 
  
 MOPED Profil der Composition Ressource von der alle anderen Compositions ableiten. 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedComposition.csv
   "title" : "MOPED Composition",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-05-15T09:26:31+00:00",
+  "date" : "2026-05-22T08:08:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1017,7 +1017,8 @@ Other representations of profile: [CSV](StructureDefinition-MopedComposition.csv
       "min" : 1,
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Observation"]
+        "targetProfile" : ["https://elga.moped.at/StructureDefinition/MopedObservationGeburtenanzahl",
+        "https://elga.moped.at/StructureDefinition/MopedObservationEntbindungsart"]
       }]
     },
     {

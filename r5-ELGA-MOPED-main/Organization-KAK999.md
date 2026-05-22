@@ -8,7 +8,7 @@
 
 Profiles: [KA Organization](StructureDefinition-KAOrganization.md), [HL7® AT Core Organization Profile](https://build.fhir.org/ig/HL7Austria/HL7-AT-FHIR-Core-R5/StructureDefinition-at-core-organization.html)
 
-**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/7.1.0/NamingSystem-uri.html)/urn:oid:1.3.6.1.4.1.36124.5.999, `urn:oid:1.2.40.0.34.4.10`/K999, `urn:oid:1.2.40.0.10.1.4.3.2`/123456
+**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/7.0.1/NamingSystem-uri.html)/urn:oid:1.3.6.1.4.1.36124.5.999, `urn:oid:1.2.40.0.34.4.10`/K999, `urn:oid:1.2.40.0.10.1.4.3.2`/123456
 
 **type**: Allgemeine Krankenanstalt
 

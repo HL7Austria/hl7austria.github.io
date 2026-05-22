@@ -10,7 +10,7 @@
   "name" : "MopedUpdateBundleKA",
   "title" : "MOPED Update Bundle KA",
   "status" : "draft",
-  "date" : "2026-05-15T09:26:31+00:00",
+  "date" : "2026-05-22T08:08:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -5907,8 +5907,13 @@
     {
       "id" : "Bundle.entry:Entbindung.resource",
       "path" : "Bundle.entry.resource",
-      "short" : "A resource in the bundle",
-      "definition" : "The Resource for the entry. The purpose/meaning of the resource is determined by the Bundle.type. This is allowed to be a Parameters resource if and only if it is referenced by something else within the Bundle that provides context/meaning.",
+      "short" : "Measurements and simple assertions",
+      "definition" : "Measurements and simple assertions made about a patient, device or other subject.",
+      "comment" : "Used for simple observations such as device measurements, laboratory atomic results, vital signs, height, weight, smoking status, comments, etc.  Other resources are used to provide context for observations such as laboratory reports, etc.",
+      "alias" : ["Vital Signs",
+      "Measurement",
+      "Results",
+      "Tests"],
       "min" : 0,
       "max" : "1",
       "base" : {
@@ -5917,19 +5922,33 @@
         "max" : "1"
       },
       "type" : [{
-        "code" : "Observation"
+        "code" : "Observation",
+        "profile" : ["https://elga.moped.at/StructureDefinition/MopedObservationGeburtenanzahl",
+        "https://elga.moped.at/StructureDefinition/MopedObservationEntbindungsart"]
       }],
-      "condition" : ["bdl-3a",
-      "bdl-3b",
-      "bdl-3c",
-      "bdl-7",
-      "bdl-11",
-      "bdl-12",
-      "bdl-13",
-      "bdl-5"],
       "mustSupport" : false,
       "isModifier" : false,
-      "isSummary" : true
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "Entity, Role, or Act,Observation[classCode=OBS, moodCode=EVN]"
+      },
+      {
+        "identity" : "workflow",
+        "map" : "Event"
+      },
+      {
+        "identity" : "w5",
+        "map" : "clinical.diagnostics"
+      },
+      {
+        "identity" : "sct-concept",
+        "map" : "< 363787002 |Observable entity|"
+      },
+      {
+        "identity" : "v2",
+        "map" : "OBX"
+      }]
     },
     {
       "id" : "Bundle.entry:Entbindung.search",

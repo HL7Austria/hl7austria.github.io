@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/OperationDefinition/MOPED.Patient.Aufnehmen | *Version*:0.1.0 | |
-| Draft as of 2026-05-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_Patient_Aufnehmen |
+| Draft as of 2026-05-22 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_Patient_Aufnehmen |
 
  
 Die $aufnehmen Operation wird aufgerufen, wenn ein(e) Patient*in in die Krankenanstalt aufgenommen wird. 
@@ -51,7 +51,7 @@ Die Operation wird vom Akteur Krankenhaus (KA) aufgerufen. Die $aufnehmen Operat
   "title" : "MOPED Patient $aufnehmen",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-05-15T09:26:31+00:00",
+  "date" : "2026-05-22T08:08:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

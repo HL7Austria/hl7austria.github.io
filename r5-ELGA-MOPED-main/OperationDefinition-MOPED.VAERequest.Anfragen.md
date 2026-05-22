@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/OperationDefinition/MOPED.VAERequest.Anfragen | *Version*:0.1.0 | |
-| Draft as of 2026-05-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_VAERequest_Anfragen |
+| Draft as of 2026-05-22 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_VAERequest_Anfragen |
 
  
 Die Versichertenanspruchserklärung $anfragen Operation wird aufgerufen, um die Versichertenanspruchserklärung-Anfrage an die SV anzustoßen. Diese Operation ist irrelevant für Selbstzahler (-> wenn es keine zuständige SV gibt darf die Operation $anfragen nicht ausgeführt werden). 
@@ -52,7 +52,7 @@ Die Operation wird vom Akteur Krankenhaus (KA) aufgerufen. Die Versichertenanspr
   "title" : "MOPED Versichertenanspruchserklärung $anfragen",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-05-15T09:26:31+00:00",
+  "date" : "2026-05-22T08:08:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

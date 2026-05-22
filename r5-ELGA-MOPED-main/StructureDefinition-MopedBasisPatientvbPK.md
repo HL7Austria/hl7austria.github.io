@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedBasisPatientvbPK | *Version*:0.1.0 | |
-| Draft as of 2026-05-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedBasisPatientvbPK |
+| Draft as of 2026-05-22 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedBasisPatientvbPK |
 
  
 MOPED Profil der Patienten Ressource mit vbPKs 
@@ -18,7 +18,7 @@ MOPED Profil der Patienten Ressource mit vbPKs
 
 * Derived from this Profile: [MOPED vbPK Patient Bund](StructureDefinition-MopedPatientvbPKBund.md), [MOPED vbPK Patient KA](StructureDefinition-MopedPatientvbPKKA.md), [MOPED vbPK Patient LGF](StructureDefinition-MopedPatientvbPKLGF.md) and [MOPED vbPK Patient SV](StructureDefinition-MopedPatientvbPKSV.md)
 * Use this Profile: [MOPED Input Bundle KA](StructureDefinition-MopedInputBundleKA.md)
-* Refer to this Profile: [MOPED Hauptversicherter](StructureDefinition-Hauptversicherter.md), [MOPED ARKRequest](StructureDefinition-MopedARKRequest.md), [MOPED ARKResponse](StructureDefinition-MopedARKResponse.md), [MOPED Composition](StructureDefinition-MopedComposition.md)... Show 11 more, [MOPED Condition](StructureDefinition-MopedCondition.md), [MOPED Coverage](StructureDefinition-MopedCoverage.md), [MOPED Coverage für Selbstzahler](StructureDefinition-MopedCoverageSelbstzahler.md), [MOPED Encounter](StructureDefinition-MopedEncounter.md), [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md), [MOPED LKFResponse](StructureDefinition-MopedLKFResponse.md), [MOPED Procedure](StructureDefinition-MopedProcedure.md), [Moped QuestionnaireResponse fallbezogen](StructureDefinition-MopedQuestionnaireResponseFallbezogen.md), [MOPED TransferEncounter](StructureDefinition-MopedTransferEncounter.md), [MOPED VAERequest](StructureDefinition-MopedVAERequest.md) and [MOPED VAEResponse](StructureDefinition-MopedVAEResponse.md)
+* Refer to this Profile: [MOPED Hauptversicherter](StructureDefinition-Hauptversicherter.md), [MOPED ARKRequest](StructureDefinition-MopedARKRequest.md), [MOPED ARKResponse](StructureDefinition-MopedARKResponse.md), [MOPED Composition](StructureDefinition-MopedComposition.md)... Show 13 more, [MOPED Condition](StructureDefinition-MopedCondition.md), [MOPED Coverage](StructureDefinition-MopedCoverage.md), [MOPED Coverage für Selbstzahler](StructureDefinition-MopedCoverageSelbstzahler.md), [MOPED Encounter](StructureDefinition-MopedEncounter.md), [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md), [MOPED LKFResponse](StructureDefinition-MopedLKFResponse.md), [MOPED Observation Entbindungsart](StructureDefinition-MopedObservationEntbindungsart.md), [MOPED Observation Geburtenanzahl](StructureDefinition-MopedObservationGeburtenanzahl.md), [MOPED Procedure](StructureDefinition-MopedProcedure.md), [Moped QuestionnaireResponse fallbezogen](StructureDefinition-MopedQuestionnaireResponseFallbezogen.md), [MOPED TransferEncounter](StructureDefinition-MopedTransferEncounter.md), [MOPED VAERequest](StructureDefinition-MopedVAERequest.md) and [MOPED VAEResponse](StructureDefinition-MopedVAEResponse.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/elga.moped|current/StructureDefinition/MopedBasisPatientvbPK)
 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedBasisPatientvbP
   "name" : "MopedBasisPatientvbPK",
   "title" : "MOPED Basis Patient mit vbPKs",
   "status" : "draft",
-  "date" : "2026-05-15T09:26:31+00:00",
+  "date" : "2026-05-22T08:08:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

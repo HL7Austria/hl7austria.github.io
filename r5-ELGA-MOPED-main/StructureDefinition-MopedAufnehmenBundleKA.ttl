@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "MopedAufnehmenBundleKA"] ; # 
   fhir:title [ fhir:v "MOPED Aufnehmen Bundle KA"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-05-15T09:26:31+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-05-22T08:08:56+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ELGA GmbH" ] ;
@@ -6990,8 +6990,10 @@
      ] [
        fhir:id [ fhir:v "Bundle.entry:Entbindung.resource" ] ;
        fhir:path [ fhir:v "Bundle.entry.resource" ] ;
-       fhir:short [ fhir:v "A resource in the bundle" ] ;
-       fhir:definition [ fhir:v "The Resource for the entry. The purpose/meaning of the resource is determined by the Bundle.type. This is allowed to be a Parameters resource if and only if it is referenced by something else within the Bundle that provides context/meaning." ] ;
+       fhir:short [ fhir:v "Measurements and simple assertions" ] ;
+       fhir:definition [ fhir:v "Measurements and simple assertions made about a patient, device or other subject." ] ;
+       fhir:comment [ fhir:v "Used for simple observations such as device measurements, laboratory atomic results, vital signs, height, weight, smoking status, comments, etc.  Other resources are used to provide context for observations such as laboratory reports, etc." ] ;
+       fhir:alias ( [ fhir:v "Vital Signs" ] [ fhir:v "Measurement" ] [ fhir:v "Results" ] [ fhir:v "Tests" ] ) ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -7003,12 +7005,34 @@
          fhir:code [
            fhir:v "Observation"^^xsd:anyURI ;
            fhir:l fhir:Observation
-         ]
+         ] ;
+         fhir:profile ( [
+           fhir:v "https://elga.moped.at/StructureDefinition/MopedObservationGeburtenanzahl"^^xsd:anyURI ;
+           fhir:l <https://elga.moped.at/StructureDefinition/MopedObservationGeburtenanzahl>
+         ] [
+           fhir:v "https://elga.moped.at/StructureDefinition/MopedObservationEntbindungsart"^^xsd:anyURI ;
+           fhir:l <https://elga.moped.at/StructureDefinition/MopedObservationEntbindungsart>
+         ] )
        ] ) ;
-       fhir:condition ( [ fhir:v "bdl-3a" ] [ fhir:v "bdl-3b" ] [ fhir:v "bdl-3c" ] [ fhir:v "bdl-7" ] [ fhir:v "bdl-11" ] [ fhir:v "bdl-12" ] [ fhir:v "bdl-13" ] [ fhir:v "bdl-5" ] ) ;
        fhir:mustSupport [ fhir:v false ] ;
        fhir:isModifier [ fhir:v false ] ;
-       fhir:isSummary [ fhir:v true ]
+       fhir:isSummary [ fhir:v false ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "rim" ] ;
+         fhir:map [ fhir:v "Entity, Role, or Act,Observation[classCode=OBS, moodCode=EVN]" ]
+       ] [
+         fhir:identity [ fhir:v "workflow" ] ;
+         fhir:map [ fhir:v "Event" ]
+       ] [
+         fhir:identity [ fhir:v "w5" ] ;
+         fhir:map [ fhir:v "clinical.diagnostics" ]
+       ] [
+         fhir:identity [ fhir:v "sct-concept" ] ;
+         fhir:map [ fhir:v "< 363787002 |Observable entity|" ]
+       ] [
+         fhir:identity [ fhir:v "v2" ] ;
+         fhir:map [ fhir:v "OBX" ]
+       ] )
      ] [
        fhir:id [ fhir:v "Bundle.entry:Entbindung.search" ] ;
        fhir:path [ fhir:v "Bundle.entry.search" ] ;

@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "MOPED"] ; # 
   fhir:title [ fhir:v "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-05-15T09:26:31+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-05-22T08:08:56+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ELGA GmbH" ] ;
@@ -68,7 +68,7 @@
        fhir:l <http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions>
      ] ;
      fhir:packageId [ fhir:v "hl7.fhir.uv.extensions.r5" ] ;
-     fhir:version [ fhir:v "5.2.0" ]
+     fhir:version [ fhir:v "5.3.0" ]
   ] [
      fhir:id [ fhir:v "hl7_at_fhir_core_r5" ] ;
      fhir:uri [
@@ -3553,6 +3553,42 @@
          ] ;
          fhir:value [
            a fhir:String ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://elga.moped.at/StructureDefinition/MopedObservationEntbindungsart> ;
+         fhir:reference [ fhir:v "StructureDefinition/MopedObservationEntbindungsart" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED Observation Entbindungsart" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Observation Ressource für die Entbindungsart" ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://elga.moped.at/StructureDefinition/MopedObservationGeburtenanzahl> ;
+         fhir:reference [ fhir:v "StructureDefinition/MopedObservationGeburtenanzahl" ]
+       ] ;
+       fhir:name [ fhir:v "MOPED Observation Geburtenanzahl" ] ;
+       fhir:description [ fhir:v "MOPED Profil der Observation Ressource für die Anzahl der Geburten" ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
            fhir:v "OperationDefinition"
          ]
        ] ) ;
@@ -4016,6 +4052,24 @@
        ] ;
        fhir:name [ fhir:v "MOPED VAESupportingInformationCategory" ] ;
        fhir:description [ fhir:v "Arten von zusätzlichen Informationen in der VAE" ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://elga.moped.at/ValueSet/MopedEntbindungsartVS> ;
+         fhir:reference [ fhir:v "ValueSet/MopedEntbindungsartVS" ]
+       ] ;
+       fhir:name [ fhir:v "Moped ValueSet für die Art der Entbindung" ] ;
+       fhir:description [ fhir:v "Varianten der Art der Entbindung" ] ;
        fhir:isExample [ fhir:v false ]
      ] [
        fhir:extension ( [
@@ -5855,6 +5909,24 @@
        ] ;
        fhir:name [ fhir:v "VAE Claim Subtype ValueSet" ] ;
        fhir:description [ fhir:v "ValueSet für die Art der Claims" ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://elga.moped.at/ValueSet/GeburtenanzahlVS> ;
+         fhir:reference [ fhir:v "ValueSet/GeburtenanzahlVS" ]
+       ] ;
+       fhir:name [ fhir:v "Valueset für die Art der Geburtenanzahl" ] ;
+       fhir:description [ fhir:v "Valueset für die Art der Geburtenanzahl in MOPED" ] ;
        fhir:isExample [ fhir:v false ]
      ] [
        fhir:extension ( [

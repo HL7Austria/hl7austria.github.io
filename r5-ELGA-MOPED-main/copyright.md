@@ -28,12 +28,12 @@ This publication includes IP covered under the following statements.
 
 * This material contains content from [LOINC](http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the [license](http://loinc.org/license). LOINC® is a registered United States trademark of Regenstrief Institute, Inc.
 
-* LOINC: [Composition/Composition42](Composition-Composition42.md) and [Composition/PJ1CompositionAufnehmen](Composition-PJ1CompositionAufnehmen.md)
+* [LOINC](http://tx.fhir.org/r5/ValueSet/x-loinc2.82): [Composition/Composition42](Composition-Composition42.md), [Composition/PJ1CompositionAufnehmen](Composition-PJ1CompositionAufnehmen.md), [GeburtenanzahlVS](ValueSet-GeburtenanzahlVS.md) and [MopedObservationGeburtenanzahl](StructureDefinition-MopedObservationGeburtenanzahl.md)
 
 
 * This material contains content that is copyright of SNOMED International. Implementers of these specifications must have the appropriate SNOMED CT Affiliate license - for more information contact [https://www.snomed.org/get-snomed](https://www.snomed.org/get-snomed) or [info@snomed.org](mailto:info@snomed.org).
 
-* SNOMED Clinical Terms&reg; (SNOMED CT&reg;): [Diagnosetyp](StructureDefinition-moped-ext-Diagnosetyp.md), [LKFDiagnoseTypVS](ValueSet-LKFDiagnoseTypVS.md), [LKFSeitenlokalisationVS](ValueSet-LKFSeitenlokalisationVS.md) and [MopedProcedure](StructureDefinition-MopedProcedure.md)
+* SNOMED Clinical Terms&reg; (SNOMED CT&reg;): [Diagnosetyp](StructureDefinition-moped-ext-Diagnosetyp.md), [LKFDiagnoseTypVS](ValueSet-LKFDiagnoseTypVS.md)... Show 4 more, [LKFSeitenlokalisationVS](ValueSet-LKFSeitenlokalisationVS.md), [MopedEntbindungsartVS](ValueSet-MopedEntbindungsartVS.md), [MopedObservationEntbindungsart](StructureDefinition-MopedObservationEntbindungsart.md) and [MopedProcedure](StructureDefinition-MopedProcedure.md)
 
 
 * This material derives from the HL7 Terminology (THO). THO is copyright ©1989+ Health Level Seven International and is made available under the CC0 designation. For more licensing information see: [https://terminology.hl7.org/license.html](https://terminology.hl7.org/license.html)

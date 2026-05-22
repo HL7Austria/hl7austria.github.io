@@ -51,8 +51,8 @@
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"33.101"}
-    h3,h4,h5,h6{--heading-prefix:"33.101"}</style>
+    <style type="text/css">h2{--heading-prefix:"33.103"}
+    h3,h4,h5,h6{--heading-prefix:"33.103"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- at-fhir-ig-template begin -->
@@ -336,7 +336,7 @@
         
           Draft
           
-            as of 2026-05-15
+            as of 2026-05-22
           
         
       </td>
@@ -366,7 +366,7 @@
   "<a href="http://hl7.org/fhir/R5/structuredefinition.html#XStructureDefinition.name">name</a>" : "MopedUpdateBundleKA",
   "<a href="http://hl7.org/fhir/R5/structuredefinition.html#XStructureDefinition.title">title</a>" : "MOPED Update Bundle KA",
   "<a href="http://hl7.org/fhir/R5/structuredefinition.html#XStructureDefinition.status">status</a>" : "draft",
-  "<a href="http://hl7.org/fhir/R5/structuredefinition.html#XStructureDefinition.date">date</a>" : "2026-05-15T09:26:31+00:00",
+  "<a href="http://hl7.org/fhir/R5/structuredefinition.html#XStructureDefinition.date">date</a>" : "2026-05-22T08:08:56+00:00",
   "<a href="http://hl7.org/fhir/R5/structuredefinition.html#XStructureDefinition.publisher">publisher</a>" : "ELGA GmbH",
   "<a href="http://hl7.org/fhir/R5/structuredefinition.html#XStructureDefinition.contact">contact</a>" : [
     {
@@ -7384,8 +7384,15 @@
       {
         "<a href="http://hl7.org/fhir/R5/types.html#Element#XElementDefinition.id">id</a>" : "Bundle.entry:Entbindung.resource",
         "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.path">path</a>" : "Bundle.entry.resource",
-        "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.short">short</a>" : "A resource in the bundle",
-        "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.definition">definition</a>" : "The Resource for the entry. The purpose/meaning of the resource is determined by the Bundle.type. This is allowed to be a Parameters resource if and only if it is referenced by something else within the Bundle that provides context/meaning.",
+        "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.short">short</a>" : "Measurements and simple assertions",
+        "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.definition">definition</a>" : "Measurements and simple assertions made about a patient, device or other subject.",
+        "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.comment">comment</a>" : "Used for simple observations such as device measurements, laboratory atomic results, vital signs, height, weight, smoking status, comments, etc.  Other resources are used to provide context for observations such as laboratory reports, etc.",
+        "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.alias">alias</a>" : [
+          "Vital Signs",
+          "Measurement",
+          "Results",
+          "Tests"
+        ],
         "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.min">min</a>" : 0,
         "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.max">max</a>" : "1",
         "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.base">base</a>" : {
@@ -7395,22 +7402,38 @@
         },
         "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.type">type</a>" : [
           {
-            "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.type.code">code</a>" : "Observation"
+            "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.type.code">code</a>" : "Observation",
+            "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.type.profile">profile</a>" : [
+              <a href="StructureDefinition-MopedObservationGeburtenanzahl.html" style="color: Maroon">&#x1F517;</a> "https://elga.moped.at/StructureDefinition/MopedObservationGeburtenanzahl"<a href="StructureDefinition-MopedObservationEntbindungsart.html" style="color: Maroon">&#x1F517;</a> ,
+              "https://elga.moped.at/StructureDefinition/MopedObservationEntbindungsart"
+            ]
           }
-        ],
-        "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.condition">condition</a>" : [
-          "bdl-3a",
-          "bdl-3b",
-          "bdl-3c",
-          "bdl-7",
-          "bdl-11",
-          "bdl-12",
-          "bdl-13",
-          "bdl-5"
         ],
         "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.mustSupport">mustSupport</a>" : false,
         "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.isModifier">isModifier</a>" : false,
-        "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.isSummary">isSummary</a>" : true
+        "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.isSummary">isSummary</a>" : false,
+        "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.mapping">mapping</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.mapping.identity">identity</a>" : "rim",
+            "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.mapping.map">map</a>" : "Entity, Role, or Act,Observation[classCode=OBS, moodCode=EVN]"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.mapping.identity">identity</a>" : "workflow",
+            "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.mapping.map">map</a>" : "Event"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.mapping.identity">identity</a>" : "w5",
+            "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.mapping.map">map</a>" : "clinical.diagnostics"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.mapping.identity">identity</a>" : "sct-concept",
+            "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.mapping.map">map</a>" : "&lt; 363787002 |Observable entity|"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.mapping.identity">identity</a>" : "v2",
+            "<a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition#XElementDefinition.mapping.map">map</a>" : "OBX"
+          }
+        ]
       },
       {
         "<a href="http://hl7.org/fhir/R5/types.html#Element#XElementDefinition.id">id</a>" : "Bundle.entry:Entbindung.search",
@@ -16839,7 +16862,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Fri, May 15, 2026 09:26+0000">2026-05-15</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Fri, May 22, 2026 08:08+0000">2026-05-22</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

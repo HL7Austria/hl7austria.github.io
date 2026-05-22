@@ -184,7 +184,7 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
   "name" : "MOPED",
   "title" : "Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)",
   "status" : "draft",
-  "date" : "2026-05-15T09:26:31+00:00",
+  "date" : "2026-05-22T08:08:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -214,7 +214,7 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
     }],
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r5",
-    "version" : "5.2.0"
+    "version" : "5.3.0"
   },
   {
     "id" : "hl7_at_fhir_core_r5",
@@ -2522,6 +2522,30 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MopedObservationEntbindungsart"
+      },
+      "name" : "MOPED Observation Entbindungsart",
+      "description" : "MOPED Profil der Observation Ressource für die Entbindungsart",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MopedObservationGeburtenanzahl"
+      },
+      "name" : "MOPED Observation Geburtenanzahl",
+      "description" : "MOPED Profil der Observation Ressource für die Anzahl der Geburten",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
       }],
       "reference" : {
@@ -2830,6 +2854,18 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "MOPED VAESupportingInformationCategory",
       "description" : "Arten von zusätzlichen Informationen in der VAE",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/MopedEntbindungsartVS"
+      },
+      "name" : "Moped ValueSet für die Art der Entbindung",
+      "description" : "Varianten der Art der Entbindung",
       "isExample" : false
     },
     {
@@ -3967,6 +4003,18 @@ Der Aufbau des IG ist im Detail im Abschnitt [Umfang und Inhalt](scope_and_conte
       },
       "name" : "VAE Claim Subtype ValueSet",
       "description" : "ValueSet für die Art der Claims",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/GeburtenanzahlVS"
+      },
+      "name" : "Valueset für die Art der Geburtenanzahl",
+      "description" : "Valueset für die Art der Geburtenanzahl in MOPED",
       "isExample" : false
     },
     {

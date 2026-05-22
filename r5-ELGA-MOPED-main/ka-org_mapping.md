@@ -184,7 +184,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Profile: MopedCoverage
   * FHIR Ressource: Coverage
   * Pfad von der Ressource aus: Coverage.class:Versichertenkategorien.value
-  * Pfad von der Composition aus: Composition.section:Coverages.entry.resolve()
+  * Pfad von der Composition aus: Composition.section:Versichertenanspruch.entry.resolve()
   * Anmerkungen: /
 * Feld: Versicherungsnummer des Mitversicherten
   * Abkürzung: AVSNR
@@ -520,7 +520,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.serviceType:MopedServiceType.reference.resolve()
-  * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
+  * Pfad von der Composition aus: Composition.section:Bewegungen.entry.resolve()
   * Anmerkungen: /
 * Feld: Funktionssubcode der Abteilung lt. LKF
   * Abkürzung: FKRASU
@@ -531,7 +531,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.serviceType:MopedServiceType.reference.resolve()
-  * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
+  * Pfad von der Composition aus: Composition.section:Bewegungen.entry.resolve()
   * Anmerkungen: /
 * Feld: Allgemeine Gebührenklasse/Sonderklasse
   * Abkürzung: KLAS
@@ -861,7 +861,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Profile: MopedCoverage
   * FHIR Ressource: Coverage
   * Pfad von der Ressource aus: Coverage.identifier:VDASID
-  * Pfad von der Composition aus: Composition.section:Coverages.entry.resolve()
+  * Pfad von der Composition aus: Composition.section:Versichertenanspruch.entry.resolve()
   * Anmerkungen: /
 
 ### K03 -> FHIR
@@ -1094,54 +1094,43 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Ambulant: /
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: *zwingend wenn zutreffend; TBD: wann zutreffend?
-  * befüllt von: 
-  * Profile: 
-  * FHIR Ressource: 
-  * Pfad von der Ressource aus: 
-  * Pfad von der Composition aus: 
+  * befüllt von: MopedKAActor
+  * Profile: MopedObservationEntbindungsart; MopedObservationGeburtenanzahl
+  * FHIR Ressource: Observation
+  * Pfad von der Ressource aus: Observation.effective[x]:effectiveDateTime
+  * Pfad von der Composition aus: Composition.section:Entbindung.entry.resolve()
   * Anmerkungen: Thema Geburt in Arbeit
-* Feld: Anzahl der Lebendgeburten - männliche Kinder
+* Feld: Anzahl der Lebendgeburten
   * Abkürzung: ENTGM
   * Ambulant: /
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: *zwingend wenn zutreffend; TBD: wann zutreffend?
-  * befüllt von: 
-  * Profile: 
-  * FHIR Ressource: 
-  * Pfad von der Ressource aus: 
-  * Pfad von der Composition aus: 
-  * Anmerkungen: Thema Geburt in Arbeit
-* Feld: Anzahl der Lebendgeburten - weibliche Kinder
-  * Abkürzung: ENTGW
-  * Ambulant: /
-  * Stationär: X[TBD]*
-  * Notiz zur Kardinalität: *zwingend wenn zutreffend; TBD: wann zutreffend?
-  * befüllt von: 
-  * Profile: 
-  * FHIR Ressource: 
-  * Pfad von der Ressource aus: 
-  * Pfad von der Composition aus: 
+  * befüllt von: MopedKAActor
+  * Profile: MopedObservationGeburtenanzahl
+  * FHIR Ressource: Observation
+  * Pfad von der Ressource aus: Observation.value[x]:valueQuantity.value
+  * Pfad von der Composition aus: Composition.section:Entbindung.entry.resolve()
   * Anmerkungen: Thema Geburt in Arbeit
 * Feld: Anzahl der Totgeburten
   * Abkürzung: ENTT
   * Ambulant: /
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: *zwingend wenn zutreffend; TBD: wann zutreffend?
-  * befüllt von: 
-  * Profile: 
-  * FHIR Ressource: 
-  * Pfad von der Ressource aus: 
-  * Pfad von der Composition aus: 
+  * befüllt von: MopedKAActor
+  * Profile: MopedObservationGeburtenanzahl
+  * FHIR Ressource: Observation
+  * Pfad von der Ressource aus: Observation.value[x]:valueQuantity.value
+  * Pfad von der Composition aus: Composition.section:Entbindung.entry.resolve()
   * Anmerkungen: Thema Geburt in Arbeit
 * Feld: Art der Entbindung
   * Abkürzung: ENTBART
   * Ambulant: /
   * Stationär: X[TBD]*
   * Notiz zur Kardinalität: *zwingend wenn zutreffend; TBD: wann zutreffend?
-  * befüllt von: 
-  * Profile: 
-  * FHIR Ressource: 
-  * Pfad von der Ressource aus: 
+  * befüllt von: MopedKAActor
+  * Profile: MopedObservationEntbindungsart
+  * FHIR Ressource: Observation
+  * Pfad von der Ressource aus: Observation.value[x]:valueCodeableConcept
   * Pfad von der Composition aus: 
   * Anmerkungen: Thema Geburt in Arbeit
 * Feld: Aufnahme-/Verlegungsdatum
@@ -1690,7 +1679,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.serviceType:MopedServiceType.reference.resolve()
-  * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
+  * Pfad von der Composition aus: Composition.section:Bewegungen.entry.resolve()
   * Anmerkungen: /
 * Feld: Abteilung - Subcode
   * Abkürzung: FKRASU
@@ -1701,7 +1690,7 @@ Diese Seite enthält das Mapping der Meldungen des Ka-Org Systems zu FHIR. Die D
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.serviceType:MopedServiceType.reference.resolve()
-  * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
+  * Pfad von der Composition aus: Composition.section:Bewegungen.entry.resolve()
   * Anmerkungen: /
 * Feld: Behandlungsdatum
   * Abkürzung: BDAT

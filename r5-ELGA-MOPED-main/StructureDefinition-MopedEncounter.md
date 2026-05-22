@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedEncounter | *Version*:0.1.0 | |
-| Draft as of 2026-05-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounter |
+| Draft as of 2026-05-22 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedEncounter |
 
  
 MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme und Entlassung 
@@ -18,7 +18,7 @@ MOPED Profil der Encounter Ressource für die Krankenanstaltenaufnahme und Entla
 
 * Derived from this Profile: [MOPED Encounter Ambulant](StructureDefinition-MopedEncounterA.md), [MOPED Encounter Bund](StructureDefinition-MopedEncounterBund.md), [MOPED Encounter LGF](StructureDefinition-MopedEncounterLGF.md), [MOPED Encounter Stationär](StructureDefinition-MopedEncounterS.md) and [MOPED Encounter SV](StructureDefinition-MopedEncounterSV.md)
 * Use this Profile: [MOPED Input Bundle KA](StructureDefinition-MopedInputBundleKA.md)
-* Refer to this Profile: [MOPED ARKRequest](StructureDefinition-MopedARKRequest.md), [MOPED Condition](StructureDefinition-MopedCondition.md), [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md), [MOPED Procedure](StructureDefinition-MopedProcedure.md)... Show 3 more, [Moped QuestionnaireResponse fallbezogen](StructureDefinition-MopedQuestionnaireResponseFallbezogen.md), [MOPED TransferEncounter](StructureDefinition-MopedTransferEncounter.md) and [MOPED VAERequest](StructureDefinition-MopedVAERequest.md)
+* Refer to this Profile: [MOPED ARKRequest](StructureDefinition-MopedARKRequest.md), [MOPED Condition](StructureDefinition-MopedCondition.md), [MOPED LKFRequest](StructureDefinition-MopedLKFRequest.md), [MOPED Observation Entbindungsart](StructureDefinition-MopedObservationEntbindungsart.md)... Show 5 more, [MOPED Observation Geburtenanzahl](StructureDefinition-MopedObservationGeburtenanzahl.md), [MOPED Procedure](StructureDefinition-MopedProcedure.md), [Moped QuestionnaireResponse fallbezogen](StructureDefinition-MopedQuestionnaireResponseFallbezogen.md), [MOPED TransferEncounter](StructureDefinition-MopedTransferEncounter.md) and [MOPED VAERequest](StructureDefinition-MopedVAERequest.md)
 * Examples for this Profile: [Encounter/Encounter42](Encounter-Encounter42.md), [Encounter/PJ1Encounter](Encounter-PJ1Encounter.md), [Encounter/PJ1EncounterAufnahme](Encounter-PJ1EncounterAufnahme.md), [Encounter/PJ1EncounterBasis](Encounter-PJ1EncounterBasis.md)... Show 3 more, [Encounter/PJ1EncounterLGF](Encounter-PJ1EncounterLGF.md), [Encounter/PJ1EncounterSV](Encounter-PJ1EncounterSV.md) and [Encounter/PJ2Encounter](Encounter-PJ2Encounter.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/elga.moped|current/StructureDefinition/MopedEncounter)
@@ -44,7 +44,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedEncounter.csv),
   "name" : "MopedEncounter",
   "title" : "MOPED Encounter",
   "status" : "draft",
-  "date" : "2026-05-15T09:26:31+00:00",
+  "date" : "2026-05-22T08:08:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

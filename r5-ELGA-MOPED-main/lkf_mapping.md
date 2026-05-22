@@ -385,7 +385,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.serviceType:MopedServiceType.reference.resolve()
-  * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
+  * Pfad von der Composition aus: Composition.section:Bewegungen.entry.resolve()
   * Anmerkungen: Funktions- und subcode sind in zwei Felder aufgeteilt
 * Feld: Hauptkostenstelle/Fachgebiet – Zugangsdatum/Kontaktdatum
   * Ambulant: X
@@ -396,7 +396,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.actualPeriod.start
-  * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
+  * Pfad von der Composition aus: Composition.section:Bewegungen.entry.resolve()
   * Anmerkungen: /
 * Feld: Hauptkostenstelle/Fachgebiet – Zugangsuhrzeit/Kontaktuhrzeit
   * Ambulant: /
@@ -407,7 +407,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.actualPeriod.start
-  * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
+  * Pfad von der Composition aus: Composition.section:Bewegungen.entry.resolve()
   * Anmerkungen: /
 * Feld: Physische Anwesenheit
   * Ambulant: X
@@ -418,7 +418,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.subjectStatus
-  * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
+  * Pfad von der Composition aus: Composition.section:Bewegungen.entry.resolve()
   * Anmerkungen: /
 * Feld: Hauptkostenstelle – Abgangsdatum
   * Ambulant: /
@@ -429,7 +429,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.actualPeriod.end
-  * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
+  * Pfad von der Composition aus: Composition.section:Bewegungen.entry.resolve()
   * Anmerkungen: /
 * Feld: Hauptkostenstelle – Abgangsuhrzeit
   * Ambulant: /
@@ -440,7 +440,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.actualPeriod.end
-  * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
+  * Pfad von der Composition aus: Composition.section:Bewegungen.entry.resolve()
   * Anmerkungen: /
 * Feld: Hauptkostenstelle – Abgangsart
   * Ambulant: /
@@ -451,7 +451,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.admission.dischargeDisposition
-  * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
+  * Pfad von der Composition aus: Composition.section:Bewegungen.entry.resolve()
   * Anmerkungen: /
 * Feld: Hauptkostenstelle – Fachlicher Funktionscode
   * Ambulant: /
@@ -462,7 +462,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.participant:FachlichZustaendigeOrganisationseinheit.actor.resolve()
-  * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
+  * Pfad von der Composition aus: Composition.section:Bewegungen.entry.resolve()
   * Anmerkungen: wird in AG Moped geklärt
 * Feld: Hauptkostenstelle – Pflegerischer Funktionscode
   * Ambulant: /
@@ -473,7 +473,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.participant:PflegerischZustaendigeOrganisationseinheit.actor.resolve()
-  * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
+  * Pfad von der Composition aus: Composition.section:Bewegungen.entry.resolve()
   * Anmerkungen: wird in AG Moped geklärt
 * Feld: Neugeborenes
   * Ambulant: /
@@ -484,7 +484,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Profile: MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.admission.extension:Altersgruppe.extension:neugeborenes.value[x]
-  * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
+  * Pfad von der Composition aus: Composition.section:Bewegungen.entry.resolve()
   * Anmerkungen: /
 * Feld: Altersgruppe bei Zugang/Kontakt
   * Ambulant: X
@@ -495,7 +495,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Profile: MopedTransferEncounter; MopedTransferEncounterA; MopedTransferEncounterI; MopedTransferEncounterS
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.admission.extension:Altersgruppe.extension:beiZugang.value[x]
-  * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
+  * Pfad von der Composition aus: Composition.section:Bewegungen.entry.resolve()
   * Anmerkungen: /
 * Feld: Aufnahmezahl – funktionscodebezogen
   * Ambulant: O[TBD]*
@@ -506,7 +506,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Profile: MopedTransferEncounterA
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.identifier:AufnahmezahlFunktionscodebezogen.value
-  * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
+  * Pfad von der Composition aus: Composition.section:Bewegungen.entry.resolve()
   * Anmerkungen: /
 
 ### X03 -> FHIR
@@ -619,7 +619,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Profile: MopedTransferEncounterA
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.identifier:AufnahmezahlFunktionscodebezogen.value
-  * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
+  * Pfad von der Composition aus: Composition.section:Bewegungen.entry.resolve()
   * Anmerkungen: /
 
 ### X04 -> FHIR
@@ -776,7 +776,7 @@ Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I1
   * Profile: MopedTransferEncounterA
   * FHIR Ressource: Encounter
   * Pfad von der Ressource aus: Encounter.identifier:AufnahmezahlFunktionscodebezogen.value
-  * Pfad von der Composition aus: Composition.section:TransferEncounter.entry.resolve()
+  * Pfad von der Composition aus: Composition.section:Bewegungen.entry.resolve()
   * Anmerkungen: /
 
 ### X05 -> FHIR

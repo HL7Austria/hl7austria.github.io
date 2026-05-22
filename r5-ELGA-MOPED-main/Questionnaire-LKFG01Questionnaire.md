@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/Questionnaire/LKFG01Questionnaire | *Version*:0.1.0 | |
-| Active as of 2026-05-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
+| Active as of 2026-05-22 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*: |
 
  
 G01 Questionnaire - Großgerätebasisdaten 
@@ -26,7 +26,7 @@ G01 Questionnaire - Großgerätebasisdaten
   "version" : "0.1.0",
   "title" : "LKF G01 Questionnaire",
   "status" : "active",
-  "date" : "2026-05-15T09:26:31+00:00",
+  "date" : "2026-05-22T08:08:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

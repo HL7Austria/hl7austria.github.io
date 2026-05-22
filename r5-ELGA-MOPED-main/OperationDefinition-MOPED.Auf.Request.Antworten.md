@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/OperationDefinition/MOPED.Auf.Request.Antworten | *Version*:0.1.0 | |
-| Draft as of 2026-05-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_Auf_Request_Antworten |
+| Draft as of 2026-05-22 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_Auf_Request_Antworten |
 
  
 Die $antworten Operation wird aufgerufen, wenn eine Versichertenanspruchserklärung oder eine Kosteninformation beantwortet wird. 
@@ -52,7 +52,7 @@ Die Operation wird vom Akteur Sozialversicherung (SV) aufgerufen. Die $antworten
   "title" : "MOPED auf VAERequest oder ARKRequest $antworten",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-05-15T09:26:31+00:00",
+  "date" : "2026-05-22T08:08:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

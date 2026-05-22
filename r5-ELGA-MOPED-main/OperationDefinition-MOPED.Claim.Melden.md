@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/OperationDefinition/MOPED.Claim.Melden | *Version*:0.1.0 | |
-| Draft as of 2026-05-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_Claim_Melden |
+| Draft as of 2026-05-22 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MOPED_Claim_Melden |
 
  
 Die $melden Operation wird aufgerufen, wenn eine Kosteninformation an die SV gemeldet werden soll. 
@@ -58,7 +58,7 @@ Die Punkte des ARKRequest und des referenzierten **MopedARKRequest.related.claim
   "title" : "MOPED Kosteninformation $melden",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-05-15T09:26:31+00:00",
+  "date" : "2026-05-22T08:08:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://elga.moped.at/StructureDefinition/MopedUpdateBundleKA | *Version*:0.1.0 | |
-| Draft as of 2026-05-15 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedUpdateBundleKA |
+| Draft as of 2026-05-22 | *Responsible:*[ELGA GmbH](https://elga.gv.at) | *Computable Name*:MopedUpdateBundleKA |
 
  
 Bundle für die Input-Ressourcen beim Update von Informationen zu einem Fall 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-MopedUpdateBundleKA.
   "name" : "MopedUpdateBundleKA",
   "title" : "MOPED Update Bundle KA",
   "status" : "draft",
-  "date" : "2026-05-15T09:26:31+00:00",
+  "date" : "2026-05-22T08:08:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

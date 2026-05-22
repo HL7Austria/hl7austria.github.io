@@ -8,7 +8,7 @@
 
 | |
 | :--- |
-| Active as of 2026-05-15 |
+| Active as of 2026-05-22 |
 
 
 
@@ -22,7 +22,7 @@
   "version" : "0.1.0",
   "name" : "VAEabgelehnt",
   "status" : "active",
-  "date" : "2026-05-15T09:26:31+00:00",
+  "date" : "2026-05-22T08:08:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
