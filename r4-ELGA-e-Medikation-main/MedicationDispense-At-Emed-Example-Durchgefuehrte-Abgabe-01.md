@@ -8,6 +8,8 @@
 
 Profile: [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medikationdispense-durchgefuehrteAbgabe.md)
 
+**R5: When the recording of the dispense started (new)**: 2026-02-27 10:20:00+0000
+
 **status**: Completed
 
 **medication**: [Cefuroxime MIP 1500 mg, powder for solution for injection/infusion. N10.](http://hl7.eu/fhir/mpd/0.1.0-ballot/Medication-01C-Cefuroxime1500Branded.html)
@@ -27,7 +29,7 @@ Profile: [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](Structu
 
 **quantity**: 1 1 (Details: UCUM code1 = '1')
 
-**whenHandedOver**: 2024-12-06 19:54:00+0000
+**whenHandedOver**: 2026-02-27 10:20:00+0000
 
 
 
@@ -40,6 +42,10 @@ Profile: [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](Structu
   "meta" : {
     "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medikationdispense-durchgefuehrteAbgabe"]
   },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.recorded",
+    "valueDateTime" : "2026-02-27T10:20:00+00:00"
+  }],
   "status" : "completed",
   "medicationReference" : {
     "reference" : "Medication/01C-Cefuroxime1500Branded",
@@ -66,7 +72,7 @@ Profile: [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](Structu
     "system" : "http://unitsofmeasure.org",
     "code" : "1"
   },
-  "whenHandedOver" : "2024-12-06T19:54:00Z"
+  "whenHandedOver" : "2026-02-27T10:20:00+00:00"
 }
 
 ```
