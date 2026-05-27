@@ -63,7 +63,7 @@ Da der Status eines Medikationsplaneintrags im Medikationsplan auf **zwei Ebenen
 | changed | on-hold | Bestehender Planeintrag wird geändert und pausiert | |
 | Bestehenden Planeintrag aus Medikationsplan entfernen | removed | completed | Bestehender Planeintrag wird beendet. Die Therapie wurde wie geplant durchgeführt und ist abgeschlossen. |
 | removed | stopped | Bestehender Planeintrag wird vor Ablauf des Behandlungszeitraums dauerhaft gestoppt. Die Medikation wurde, bevor alle geplanten Einnahmen oder Verabreichungen durchgeführt wurden, abgesetzt. | |
-| removed | entered-in-error | Bestehender Planeintrag wird storniert, aufgrund falscher Eingabe | |
+| removed | entered-in-error | Bestehender Planeintrag wird aufgrund eines Fehlers storniert | |
 
 #### Status des MedicationRequests in der geplanten Abgabe
 
@@ -76,7 +76,7 @@ Eine [Geplante Abgabe](design_choices.md#geplante-abgabe-atelgaemedmedicationreq
 | **completed** | Geplante Abgabe**eingelöst**: Der Status wird durch die Fachwendung**automatisch**gesetzt, wenn alle möglichen Einlösungen durchgeführt wurden. Sonderfall: Sollte im Anschluss eine Durchgeführte Abgabe den Status**entered-in-error**erhalten, setzt die Fachanwendung gegebenfalls die Geplante Abgabe automatisch wieder auf**active**. |
 | **stopped** | Geplante Abgabe ist**abgelaufen**, d.h. der Einlösezeitraum für die ausgewählte Rezeptart (**category:recipetype**) ist überschritten; der Status wird**automatisch durch die Fachanwendung**gesetzt. Die Geplante Abgabe ist damit abgeschlossen. |
 | **entered-in-error** | Geplante Abgabe wird aufgrund eines Fehlers verworfen. Es wurden noch**keine Abgaben durchgeführt**. Die Geplante Abgabe wird damit abgeschlossen. |
-| **cancelled** | Geplante Abgabe erhält automatisch den Status**cancelled**("nicht abgegeben"), wenn alle Durchgeführten Abgaben (jede Einlösung) den Status**cancelled**erhalten haben ("Leerabgabe") |
+| **cancelled** | Geplante Abgabe erhält automatisch den Status**cancelled**("nicht abgegeben"), wenn alle Durchgeführten Abgaben (jede Einlösung) den Status**cancelled**erhalten haben ("Leerabgabe"). Wird eine gecancelte Abgabe verworfen, wird die geplante Abgabe automatisch wieder aktiviert. |
 
 #### Gültigkeit von Geplanten Abgaben basierend auf der Rezeptart
 
@@ -98,7 +98,7 @@ Eine [Durchgeführte Abgabe](design_choices.md#durchgeführte-abgabe-AtElgaEmedM
 | :--- | :--- |
 | **completed** | Einzel- oder Teilabgabe wurde durchgeführt |
 | **cancelled** | Durchgeführte Abgabe gecancelt: Der Patient benötigt die Medikation einer geplanten Abgabe nicht (Medikation "abgesetzt") |
-| **entered-in-error** | Vorhandene Durchgeführte Abgabe (im Status**complete**oder**cancelled**) wird aufgrund einer falschen Eingabe verworfen (eine mögliche beendete Geplante Abgabe, wird dadurch wieder**aktiv**) |
+| **entered-in-error** | Vorhandene Durchgeführte Abgabe (im Status**complete**oder**cancelled**) wird aufgrund eines Fehlers verworfen (eine mögliche beendete Geplante Abgabe, wird dadurch wieder**aktiv**) |
 
 #### Abhängigkeiten der Geplanten Abgabe und der Durchgeführten Abgaben
 

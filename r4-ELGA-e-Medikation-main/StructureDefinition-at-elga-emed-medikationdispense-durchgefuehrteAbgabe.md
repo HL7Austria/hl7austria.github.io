@@ -9,16 +9,16 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medikationdispense-durchgefuehrteAbgabe | *Version*:0.1.1 | |
-| Draft as of 2026-05-22 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe |
+| Draft as of 2026-05-27 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe |
 
  
-Dokumentiert eine durchgeführte Abgabe eines Arzneimittels ("MedicationDispense"-Ressource). In der durchgeführten Abgabe können Abweichungen hinsichtlich des Medikaments und dessen Dosierung dokumentiert werden. Sofern eine zugehörige geplante Abgabe vorliegt, muss diese referenziert werden. Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige geplante Abgabe, ersichtlich. 
+Dokumentiert eine durchgeführte Abgabe eines Arzneimittels ("MedicationDispense"-Ressource). In der durchgeführten Abgabe können Abweichungen hinsichtlich des Medikaments und dessen Dosierung dokumentiert werden. Sofern eine zugehörige geplante Abgabe vorliegt, muss diese mit dem zugehörigen Planeintrag referenziert werden. Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige geplante Abgabe, ersichtlich. 
 
 **Usages:**
 
 * Examples for this Profile: [MedicationDispense/At-Emed-Example-Durchgefuehrte-Abgabe-01](MedicationDispense-At-Emed-Example-Durchgefuehrte-Abgabe-01.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/at-elga-emed-medikationdispense-durchgefuehrteAbgabe)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-medikationdispense-durchgefuehrteAbgabe.json)
 
 ### Formal Views of Profile Content
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medikat
   "name" : "AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe",
   "title" : "AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-05-22T12:28:16+00:00",
+  "date" : "2026-05-27T13:46:49+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -58,7 +58,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medikat
       "use" : "work"
     }]
   }],
-  "description" : "Dokumentiert eine durchgeführte Abgabe eines Arzneimittels (\"MedicationDispense\"-Ressource). \nIn der durchgeführten Abgabe können Abweichungen hinsichtlich des Medikaments und dessen Dosierung dokumentiert werden.\nSofern eine zugehörige geplante Abgabe vorliegt, muss diese referenziert werden. Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige geplante Abgabe, ersichtlich.",
+  "description" : "Dokumentiert eine durchgeführte Abgabe eines Arzneimittels (\"MedicationDispense\"-Ressource). \nIn der durchgeführten Abgabe können Abweichungen hinsichtlich des Medikaments und dessen Dosierung dokumentiert werden.\nSofern eine zugehörige geplante Abgabe vorliegt, muss diese mit dem zugehörigen Planeintrag referenziert werden. Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige geplante Abgabe, ersichtlich.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "workflow",
@@ -212,7 +212,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medikat
       "min" : 1,
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"]
+        "targetProfile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-patient"]
       }],
       "mustSupport" : true
     },
@@ -248,8 +248,8 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medikat
       "short" : "Refrenz auf Practitioner, PractitionerRole, Organization, \nder/die die durchgeführte Abgabe erstellt hat und für den Inhalt verantwortlich ist (identifiziert über den GDA-Index und berechtigt \nauf die ELGA e-Medikation des Patienten zuzugreifen).",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner",
-        "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitionerRole",
+        "targetProfile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitioner",
+        "https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitionerRole",
         "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-organization"]
       }],
       "mustSupport" : true
@@ -263,8 +263,8 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medikat
     {
       "id" : "MedicationDispense.authorizingPrescription",
       "path" : "MedicationDispense.authorizingPrescription",
-      "short" : "Verpflichtende Referenz auf zugehörige geplante Abgabe (MedicationRequest), sofern diese existiert.",
-      "max" : "1",
+      "short" : "Referenz auf zugehörige geplante Abgabe (MedicationRequest), sofern diese existiert bzw. Planeintrag (MedicationRequest).",
+      "max" : "2",
       "mustSupport" : true
     },
     {

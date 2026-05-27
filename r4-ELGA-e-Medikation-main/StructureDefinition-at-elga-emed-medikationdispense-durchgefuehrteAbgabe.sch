@@ -24,7 +24,7 @@
       <sch:assert test="count(f:performer) &gt;= 1">performer: minimum cardinality of 'performer' is 1</sch:assert>
       <sch:assert test="count(f:performer) &lt;= 1">performer: maximum cardinality of 'performer' is 1</sch:assert>
       <sch:assert test="count(f:location) &lt;= 0">location: maximum cardinality of 'location' is 0</sch:assert>
-      <sch:assert test="count(f:authorizingPrescription) &lt;= 1">authorizingPrescription: maximum cardinality of 'authorizingPrescription' is 1</sch:assert>
+      <sch:assert test="count(f:authorizingPrescription) &lt;= 2">authorizingPrescription: maximum cardinality of 'authorizingPrescription' is 2</sch:assert>
       <sch:assert test="count(f:type) &gt;= 1">type: minimum cardinality of 'type' is 1</sch:assert>
       <sch:assert test="count(f:quantity) &gt;= 1">quantity: minimum cardinality of 'quantity' is 1</sch:assert>
       <sch:assert test="count(f:daysSupply) &lt;= 0">daysSupply: maximum cardinality of 'daysSupply' is 0</sch:assert>

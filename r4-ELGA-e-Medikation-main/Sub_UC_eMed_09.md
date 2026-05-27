@@ -65,7 +65,7 @@ AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe
 
 ```
 
-#### Sub_UC_eMed_09_01_0x Durchgeführte Abgabe ohne Bezug zu einer geplanten Abgabe erfassen
+#### Sub_UC_eMed_09_01_0x Durchgeführte Abgabe ohne Bezug zu einer geplanten Abgabe erfassen (OTC Abgabe / rezeptfrei)
 
 In folgenden Fällen liegt bei der Erfassung einer **Durchgeführten Abgabe** keine zugehörige **Durchgeführte Abgabe** vor:
 
@@ -92,7 +92,7 @@ In folgenden Fällen liegt bei der Erfassung einer **Durchgeführten Abgabe** ke
 * Leerabgabe bei Einzelabgabe
 * Leerabgabe beendet Teilabgaben
 
-#### Sub_UC_eMed_09_01_0x Durchgeführte Abgabe Nacherfassen
+#### Sub_UC_eMed_09_01_0x Durchgeführte Abgabe Nacherfassen (Rezept wird nachgebracht)
 
 Eine **Durchgeführte Abgabe** muss nacherfasst werden, wenn das Arzneimittel bereits abgegeben wurde, - aber eine Speicherung zum Zeitpunkt der Abgabe aus technischen Gründen nicht möglich war - der Arzneimittelbezug aus dem Ausland erfolgt ist (Element **recorded** abweichend von **whenHandedOver**) - wenn ein e-Rezept-Eintrag oder ein Papierrezept vorhanden ist und keine geplante Abgabe in e-Medikation eingetragen wurden.
 

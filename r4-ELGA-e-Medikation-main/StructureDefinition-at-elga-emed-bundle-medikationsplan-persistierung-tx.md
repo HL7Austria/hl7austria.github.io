@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx | *Version*:0.1.1 | |
-| Draft as of 2026-05-22 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedBundleMedikationsplanTx |
+| Draft as of 2026-05-27 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedBundleMedikationsplanTx |
 
  
 Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan bestehend aus: 
@@ -21,7 +21,7 @@ Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medik
 
 * Examples for this Profile: [Bundle/At-Emed-Journey-01-Bundle-Tx-Medikationsplan](Bundle-At-Emed-Journey-01-Bundle-Tx-Medikationsplan.md), [Bundle/At-Emed-Journey-02-Bundle-Tx-Medikationsplan](Bundle-At-Emed-Journey-02-Bundle-Tx-Medikationsplan.md), [Bundle/At-Emed-Journey-05-a-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-05-a-Bundle-Medikationsplan-Tx.md) and [Bundle/At-Emed-Journey-05-b-Bundle-Tx-Medikationsplan](Bundle-At-Emed-Journey-05-b-Bundle-Tx-Medikationsplan.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-bundle-medikationsplan-persistierung-tx.json)
 
 ### Formal Views of Profile Content
 
@@ -44,7 +44,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
   "name" : "AtElgaEmedBundleMedikationsplanTx",
   "title" : "AT ELGA e-Medikation Transaction Bundle Medikationsplan",
   "status" : "draft",
-  "date" : "2026-05-22T12:28:16+00:00",
+  "date" : "2026-05-27T13:46:49+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

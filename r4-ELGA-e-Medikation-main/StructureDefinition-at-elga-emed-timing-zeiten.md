@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-timing-zeiten | *Version*:0.1.1 | |
-| Draft as of 2026-05-22 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedTimingZeiten |
+| Draft as of 2026-05-27 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedTimingZeiten |
 
  
 AT ELGA e-Medikation Timing Zeiten 
@@ -18,7 +18,7 @@ AT ELGA e-Medikation Timing Zeiten
 
 * Use this DataType Profile: [AT ELGA e-Medikation Dosage Dosierung](StructureDefinition-at-elga-emed-dosage-dosierung.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/at-elga-emed-timing-zeiten)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-timing-zeiten.json)
 
 ### Formal Views of Profile Content
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-timing-
   "name" : "AtElgaEmedTimingZeiten",
   "title" : "AT ELGA e-Medikation Timing Zeiten",
   "status" : "draft",
-  "date" : "2026-05-22T12:28:16+00:00",
+  "date" : "2026-05-27T13:46:49+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

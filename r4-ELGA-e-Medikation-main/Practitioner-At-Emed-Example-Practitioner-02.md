@@ -6,7 +6,7 @@
 
 ## Example Practitioner: Beispiel Ärztin 02
 
-Profile: [HL7® AT Core Practitioner Profile](http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/2.0.0/StructureDefinition-at-core-practitioner.html)
+Profile: [AT ELGA Core Practitioner Profil](https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/StructureDefinition-at-elga-core-practitioner.html)
 
 **identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/6.2.0/NamingSystem-uri.html)/urn:oid:1.2.40.0.34.99.4613.4, `urn:oid:1.2.40.0.10.1.4.3.2`/987654322
 
@@ -29,7 +29,7 @@ Profile: [HL7® AT Core Practitioner Profile](http://hl7.at/fhir/HL7ATCoreProfil
   "resourceType" : "Practitioner",
   "id" : "At-Emed-Example-Practitioner-02",
   "meta" : {
-    "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner"]
+    "profile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitioner"]
   },
   "identifier" : [{
     "system" : "urn:ietf:rfc:3986",

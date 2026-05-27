@@ -49,7 +49,9 @@ Der aktuelle Status einer geplanten Abgabe wird im **status**-Element dokumentie
 
 Eine **Durchgeführte Abgabe** einer Medikation wird durch eine **MedicationDispense**-Ressource abgebildet. Die **Durchgeführte Abgabe** enthält die abgegebene Medikation und deren Dosierung und dient somit der Nachvollziehbarkeit der abgegebenen Arzneimittel in der e-Medikation.
 
-In der **Durchgeführten Abgabe** können Abweichungen von der **Geplanten Abgabe** hinsichtlich des Medikaments und dessen Dosierung dokumentiert werden. Sofern eine zugehörige [Geplante Abgabe](design_choices.md#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest) vorliegt, muss diese referenziert werden. Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige geplante Abgabe, ersichtlich. Es werden R5-Backport-Extensions verwendet.
+In der **Durchgeführten Abgabe** können Abweichungen von der **Geplanten Abgabe** hinsichtlich des Medikaments und dessen Dosierung dokumentiert werden. Sofern eine zugehörige [Geplante Abgabe](design_choices.md#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest) vorliegt, muss diese mit dem zugehörigen Planeintrag referenziert werden.
+
+Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige geplante Abgabe, ersichtlich. Es werden R5-Backport-Extensions verwendet.
 
 Der aktuelle Status einer **Durchgeführte Abgabe** wird mittels **status**- und **type**-Element dokumentiert (siehe [Status des MedicationDispense in der durchgeführten Abgabe](workflowmanagement.md#status-des-medicationdispense-in-der-durchgeführten-abgabe)).
 

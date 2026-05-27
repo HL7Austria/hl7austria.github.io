@@ -6,7 +6,7 @@
 
 ## Example Patient: Beispiel Patient 01
 
-Profile: [HL7® AT Core Patient Profile](http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/2.0.0/StructureDefinition-at-core-patient.html)
+Profiles: [AT ELGA Core Patient Profil](https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/StructureDefinition-at-elga-core-patient.html), [HL7® AT Core Patient Profile](http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/2.0.0/StructureDefinition-at-core-patient.html)
 
 Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)
 
@@ -35,7 +35,8 @@ Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)
   "resourceType" : "Patient",
   "id" : "At-Emed-Example-Patient-01",
   "meta" : {
-    "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"]
+    "profile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-patient",
+    "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"]
   },
   "extension" : [{
     "extension" : [{
