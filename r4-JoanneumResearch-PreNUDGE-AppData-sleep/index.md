@@ -35,7 +35,7 @@ Additional PreNUDGE measurements, also narrow standardized, will be specified an
 * Physical Activity: Sitting hours (per day) (from a questionnaire from a wearable device as an observation)
 * Smoking: Current status (from a questionnaire and from an observation IPS style)
 * **⏳ In progress by Tom** Sleep: Average sleep duration (hours per night) (from a questionnaire and from a wearable device as an observation)
-* **⏳In progress by Tom** Sleep: Self-assessment of sleep quality (from a questionnaire as part of the WHOQOL-BREF)
+* **⏳ In progress by Tom** Sleep: Self-assessment of sleep quality (from a standalone questionnaire or as part of the WHOQOL-BREF)
 * Nutrition: Portions of fruit and vegetables (per day) (from a questionnaire)
 * Nutrition: Consumption frequency of sugary and salty foods (per week) (from a questionnaire)
 * Sociodemographic Data: Age (from a questionnaire)
@@ -61,7 +61,7 @@ Besides these narrow standardized measurements, **broad standardized measurement
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-05-18T14:18:35+00:00",
+  "date" : "2026-05-27T15:35:26+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -106,7 +106,7 @@ Besides these narrow standardized measurements, **broad standardized measurement
     "id" : "hl7_at_fhir_elga_aps_r4",
     "uri" : "https://fhir.hl7.at/elga/aps/r4/ImplementationGuide/hl7.at.fhir.elga.aps.r4",
     "packageId" : "hl7.at.fhir.elga.aps.r4",
-    "version" : "current"
+    "version" : "1.0.0"
   },
   {
     "id" : "hl7_fhir_uv_sdc",
@@ -855,6 +855,30 @@ Besides these narrow standardized measurements, **broad standardized measurement
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/at-prenudge-sleep-observation"
+      },
+      "name" : "AT PreNUDGE Observation Sleep Duration",
+      "description" : "This FHIR profile defines the Sleep Duration Observation recording average nightly sleep in hours. Applicable for both automated wearable measurements (method = automated) and self-reported values derived from a questionnaire (method = manual).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-prenudge-sleep-quality-observation"
+      },
+      "name" : "AT PreNUDGE Observation Sleep Quality",
+      "description" : "Records the self-assessed sleep quality from PROMIS (My sleep quality was...in past 7 days). Also used to map WHOQOL-BREF Q16 from standalone SleepQualityQuestionnaire or the full WhoQolBrefQuestionnaire.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/at-prenudge-stepcount-observation"
       },
       "name" : "AT PreNUDGE Observation Step Count",
@@ -1035,10 +1059,34 @@ Besides these narrow standardized measurements, **broad standardized measurement
         "valueString" : "Questionnaire"
       }],
       "reference" : {
+        "reference" : "Questionnaire/SleepDurationQuestionnaire"
+      },
+      "name" : "Durchschnittliche Schlafdauer pro Nacht",
+      "description" : "A simple questionnaire for self-reporting average sleep duration per night in hours. Only allows values between 0 and 24 hours.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
         "reference" : "Questionnaire/StepCountEhisPaqQuestionnaire"
       },
       "name" : "EHIS-PAQ: Zu-Fuß-Gehen",
       "description" : "The questions Q2 and Q3 from the EHIS-PAQ about the number of days and duration of walking (for transport) in a typical week.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/SleepQualityQuestionnaire"
+      },
+      "name" : "Schlafqualität – Selbsteinschätzung (WHOQOL-BREF Q16)",
+      "description" : "Standalone questionnaire for self-assessing sleep quality based on WHOQOL-BREF question Q16 ('Wie zufrieden sind Sie mit Ihrem Schlaf?').",
       "exampleBoolean" : false
     },
     {
@@ -1052,6 +1100,114 @@ Besides these narrow standardized measurements, **broad standardized measurement
       "name" : "Schrittzahl am heutigen Tag",
       "description" : "A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000.",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/sleep-duration-normal-automated-example"
+      },
+      "name" : "Sleep Duration O - Normal Automated Example",
+      "description" : "Example of a normal average sleep duration (7.5 h) measured by a wearable device.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/sleep-duration-short-automated-example"
+      },
+      "name" : "Sleep Duration O - Short Automated Example",
+      "description" : "Example of a short average sleep duration (5.5 h) measured by a wearable device, indicating insufficient sleep.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/sleep-duration-normal-manual-example"
+      },
+      "name" : "Sleep Duration O mapped from Q - Normal Example",
+      "description" : "Example of a self-reported average sleep duration (7 h) derived from a questionnaire response.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/sleep-response-normal-example"
+      },
+      "name" : "Sleep Duration Q - Normal Example",
+      "description" : "Example of a self-reported normal average sleep duration (7 h per night).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/sleep-response-short-example"
+      },
+      "name" : "Sleep Duration Q - Short Example",
+      "description" : "Example of a self-reported short average sleep duration (5.5 h per night).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/sleep-quality-dissatisfied-example"
+      },
+      "name" : "Sleep Quality O mapped from Q - Dissatisfied Example",
+      "description" : "Example of a sleep quality observation indicating poor sleep satisfaction (LA8969-3 - Poor), derived from the standalone SleepQualityQuestionnaire (S2 - Unzufrieden mapped to LOINC).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-quality-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/sleep-quality-satisfied-example"
+      },
+      "name" : "Sleep Quality O mapped from Q - Satisfied Example",
+      "description" : "Example of a sleep quality observation indicating good sleep satisfaction (LA8967-7 - Good), derived from the standalone SleepQualityQuestionnaire (S4 - Zufrieden mapped to LOINC).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-quality-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/sleep-quality-response-dissatisfied-example"
+      },
+      "name" : "Sleep Quality Q - Dissatisfied Example",
+      "description" : "Example of a standalone sleep quality questionnaire response indicating dissatisfaction with sleep (S2 - Unzufrieden).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/sleep-quality-response-satisfied-example"
+      },
+      "name" : "Sleep Quality Q - Satisfied Example",
+      "description" : "Example of a standalone sleep quality questionnaire response indicating satisfaction with sleep (S4 - Zufrieden).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
     },
     {
       "extension" : [{
@@ -1216,6 +1372,28 @@ Besides these narrow standardized measurements, **broad standardized measurement
       },
       "name" : "WHOQOL-BREF Q score to O score",
       "description" : "WHOQOL-BREF Q score to O score"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureMap"
+      }],
+      "reference" : {
+        "reference" : "StructureMap/SleepDurationQuestionnaireResponseToObservation"
+      },
+      "name" : "Sleep Duration Q to O",
+      "description" : "Sleep Duration Q to O"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureMap"
+      }],
+      "reference" : {
+        "reference" : "StructureMap/SleepQualityQuestionnaireResponseToObservation"
+      },
+      "name" : "Sleep Quality Q to O",
+      "description" : "Sleep Quality Q to O"
     },
     {
       "extension" : [{

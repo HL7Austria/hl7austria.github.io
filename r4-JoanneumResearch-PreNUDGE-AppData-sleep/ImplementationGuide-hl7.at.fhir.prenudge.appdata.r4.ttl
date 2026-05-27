@@ -21,7 +21,7 @@
   fhir:name [ fhir:v "PreNUDGEAppdataR4"] ; # 
   fhir:title [ fhir:v "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-05-18T14:18:35+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-05-27T15:35:26+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "The PreNUDGE Consortium"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "The PreNUDGE Consortium" ] ;
@@ -84,7 +84,7 @@
        fhir:l <https://fhir.hl7.at/elga/aps/r4/ImplementationGuide/hl7.at.fhir.elga.aps.r4>
      ] ;
      fhir:packageId [ fhir:v "hl7.at.fhir.elga.aps.r4" ] ;
-     fhir:version [ fhir:v "current" ]
+     fhir:version [ fhir:v "1.0.0" ]
   ] [
      fhir:id [ fhir:v "hl7_fhir_uv_sdc" ] ;
      fhir:uri [
@@ -1637,6 +1637,48 @@
          ]
        ] ) ;
        fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-observation> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-prenudge-sleep-observation" ]
+       ] ;
+       fhir:name [ fhir:v "AT PreNUDGE Observation Sleep Duration" ] ;
+       fhir:description [ fhir:v "This FHIR profile defines the Sleep Duration Observation recording average nightly sleep in hours. Applicable for both automated wearable measurements (method = automated) and self-reported values derived from a questionnaire (method = manual)." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-quality-observation> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-prenudge-sleep-quality-observation" ]
+       ] ;
+       fhir:name [ fhir:v "AT PreNUDGE Observation Sleep Quality" ] ;
+       fhir:description [ fhir:v "Records the self-assessed sleep quality from PROMIS (My sleep quality was...in past 7 days). Also used to map WHOQOL-BREF Q16 from standalone SleepQualityQuestionnaire or the full WhoQolBrefQuestionnaire." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
          fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation> ;
          fhir:reference [ fhir:v "StructureDefinition/at-prenudge-stepcount-observation" ]
        ] ;
@@ -1957,11 +1999,53 @@
          ]
        ] ) ;
        fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/SleepDurationQuestionnaire> ;
+         fhir:reference [ fhir:v "Questionnaire/SleepDurationQuestionnaire" ]
+       ] ;
+       fhir:name [ fhir:v "Durchschnittliche Schlafdauer pro Nacht" ] ;
+       fhir:description [ fhir:v "A simple questionnaire for self-reporting average sleep duration per night in hours. Only allows values between 0 and 24 hours." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Questionnaire"
+         ]
+       ] ) ;
+       fhir:reference [
          fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/StepCountEhisPaqQuestionnaire> ;
          fhir:reference [ fhir:v "Questionnaire/StepCountEhisPaqQuestionnaire" ]
        ] ;
        fhir:name [ fhir:v "EHIS-PAQ: Zu-Fuß-Gehen" ] ;
        fhir:description [ fhir:v "The questions Q2 and Q3 from the EHIS-PAQ about the number of days and duration of walking (for transport) in a typical week." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Questionnaire"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/SleepQualityQuestionnaire> ;
+         fhir:reference [ fhir:v "Questionnaire/SleepQualityQuestionnaire" ]
+       ] ;
+       fhir:name [ fhir:v "Schlafqualität – Selbsteinschätzung (WHOQOL-BREF Q16)" ] ;
+       fhir:description [ fhir:v "Standalone questionnaire for self-assessing sleep quality based on WHOQOL-BREF question Q16 ('Wie zufrieden sind Sie mit Ihrem Schlaf?')." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -1986,6 +2070,204 @@
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Observation"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Observation/sleep-duration-normal-automated-example> ;
+         fhir:reference [ fhir:v "Observation/sleep-duration-normal-automated-example" ]
+       ] ;
+       fhir:name [ fhir:v "Sleep Duration O - Normal Automated Example" ] ;
+       fhir:description [ fhir:v "Example of a normal average sleep duration (7.5 h) measured by a wearable device." ] ;
+       fhir:example [
+         a fhir:Canonical ;
+         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-observation"^^xsd:anyURI ;
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-observation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Observation"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Observation/sleep-duration-short-automated-example> ;
+         fhir:reference [ fhir:v "Observation/sleep-duration-short-automated-example" ]
+       ] ;
+       fhir:name [ fhir:v "Sleep Duration O - Short Automated Example" ] ;
+       fhir:description [ fhir:v "Example of a short average sleep duration (5.5 h) measured by a wearable device, indicating insufficient sleep." ] ;
+       fhir:example [
+         a fhir:Canonical ;
+         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-observation"^^xsd:anyURI ;
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-observation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Observation"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Observation/sleep-duration-normal-manual-example> ;
+         fhir:reference [ fhir:v "Observation/sleep-duration-normal-manual-example" ]
+       ] ;
+       fhir:name [ fhir:v "Sleep Duration O mapped from Q - Normal Example" ] ;
+       fhir:description [ fhir:v "Example of a self-reported average sleep duration (7 h) derived from a questionnaire response." ] ;
+       fhir:example [
+         a fhir:Canonical ;
+         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-observation"^^xsd:anyURI ;
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-observation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "QuestionnaireResponse"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/sleep-response-normal-example> ;
+         fhir:reference [ fhir:v "QuestionnaireResponse/sleep-response-normal-example" ]
+       ] ;
+       fhir:name [ fhir:v "Sleep Duration Q - Normal Example" ] ;
+       fhir:description [ fhir:v "Example of a self-reported normal average sleep duration (7 h per night)." ] ;
+       fhir:example [
+         a fhir:Canonical ;
+         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"^^xsd:anyURI ;
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "QuestionnaireResponse"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/sleep-response-short-example> ;
+         fhir:reference [ fhir:v "QuestionnaireResponse/sleep-response-short-example" ]
+       ] ;
+       fhir:name [ fhir:v "Sleep Duration Q - Short Example" ] ;
+       fhir:description [ fhir:v "Example of a self-reported short average sleep duration (5.5 h per night)." ] ;
+       fhir:example [
+         a fhir:Canonical ;
+         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"^^xsd:anyURI ;
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Observation"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Observation/sleep-quality-dissatisfied-example> ;
+         fhir:reference [ fhir:v "Observation/sleep-quality-dissatisfied-example" ]
+       ] ;
+       fhir:name [ fhir:v "Sleep Quality O mapped from Q - Dissatisfied Example" ] ;
+       fhir:description [ fhir:v "Example of a sleep quality observation indicating poor sleep satisfaction (LA8969-3 - Poor), derived from the standalone SleepQualityQuestionnaire (S2 - Unzufrieden mapped to LOINC)." ] ;
+       fhir:example [
+         a fhir:Canonical ;
+         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-quality-observation"^^xsd:anyURI ;
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-quality-observation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Observation"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Observation/sleep-quality-satisfied-example> ;
+         fhir:reference [ fhir:v "Observation/sleep-quality-satisfied-example" ]
+       ] ;
+       fhir:name [ fhir:v "Sleep Quality O mapped from Q - Satisfied Example" ] ;
+       fhir:description [ fhir:v "Example of a sleep quality observation indicating good sleep satisfaction (LA8967-7 - Good), derived from the standalone SleepQualityQuestionnaire (S4 - Zufrieden mapped to LOINC)." ] ;
+       fhir:example [
+         a fhir:Canonical ;
+         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-quality-observation"^^xsd:anyURI ;
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-quality-observation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "QuestionnaireResponse"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/sleep-quality-response-dissatisfied-example> ;
+         fhir:reference [ fhir:v "QuestionnaireResponse/sleep-quality-response-dissatisfied-example" ]
+       ] ;
+       fhir:name [ fhir:v "Sleep Quality Q - Dissatisfied Example" ] ;
+       fhir:description [ fhir:v "Example of a standalone sleep quality questionnaire response indicating dissatisfaction with sleep (S2 - Unzufrieden)." ] ;
+       fhir:example [
+         a fhir:Canonical ;
+         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"^^xsd:anyURI ;
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "QuestionnaireResponse"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/sleep-quality-response-satisfied-example> ;
+         fhir:reference [ fhir:v "QuestionnaireResponse/sleep-quality-response-satisfied-example" ]
+       ] ;
+       fhir:name [ fhir:v "Sleep Quality Q - Satisfied Example" ] ;
+       fhir:description [ fhir:v "Example of a standalone sleep quality questionnaire response indicating satisfaction with sleep (S4 - Zufrieden)." ] ;
+       fhir:example [
+         a fhir:Canonical ;
+         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"^^xsd:anyURI ;
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ] [
        fhir:extension ( [
@@ -2274,6 +2556,40 @@
        ] ;
        fhir:name [ fhir:v "WHOQOL-BREF Q score to O score" ] ;
        fhir:description [ fhir:v "WHOQOL-BREF Q score to O score" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureMap"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SleepDurationQuestionnaireResponseToObservation> ;
+         fhir:reference [ fhir:v "StructureMap/SleepDurationQuestionnaireResponseToObservation" ]
+       ] ;
+       fhir:name [ fhir:v "Sleep Duration Q to O" ] ;
+       fhir:description [ fhir:v "Sleep Duration Q to O" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureMap"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SleepQualityQuestionnaireResponseToObservation> ;
+         fhir:reference [ fhir:v "StructureMap/SleepQualityQuestionnaireResponseToObservation" ]
+       ] ;
+       fhir:name [ fhir:v "Sleep Quality Q to O" ] ;
+       fhir:description [ fhir:v "Sleep Quality Q to O" ]
      ] [
        fhir:extension ( [
          fhir:url [

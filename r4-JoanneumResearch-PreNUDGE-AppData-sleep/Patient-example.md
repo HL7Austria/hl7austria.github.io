@@ -6,7 +6,7 @@
 
 ## Example Patient: AtApsPatient-example
 
-Profile: [AT APS Patient](https://build.fhir.org/ig/HL7Austria/ELGA-AustrianPatientSummary-R4/StructureDefinition-at-aps-patient.html)
+Profile: [AT APS Patient](https://fhir.hl7.at/elga/aps/r4/1.0.0/StructureDefinition-at-aps-patient.html)
 
 James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)
 

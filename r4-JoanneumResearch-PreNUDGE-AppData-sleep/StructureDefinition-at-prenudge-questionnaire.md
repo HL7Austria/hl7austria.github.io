@@ -9,16 +9,16 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaire | *Version*:0.1.0 | |
-| Draft as of 2026-05-18 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeQuestionnaire |
+| Draft as of 2026-05-27 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeQuestionnaire |
 
  
 This FHIR profile is defining the overall Questionnaire for PreNUDGE. Every top level item requires one comment subitem, with the linkId ending or equal 'comment'. Be aware that if the user enters values from a device into a questionnaire, it is still considered a manual input. Please keep in mind that all questionnaires must comply with the qualification matrix on https://prenudge.at/qualificationmatrix/. 
 
 **Usages:**
 
-* Examples for this Profile: [AlcoholUseQuestionnaire](Questionnaire-AlcoholUseQuestionnaire.md), [BloodGlucoseQuestionnaire](Questionnaire-BloodGlucoseQuestionnaire.md), [StepCountEhisPaqQuestionnaire](Questionnaire-StepCountEhisPaqQuestionnaire.md), [StepCountQuantityQuestionnaire](Questionnaire-StepCountQuantityQuestionnaire.md) and [AtPrenudgeQoLByWhoQolBref](Questionnaire-WhoQolBrefQuestionnaire.md)
+* Examples for this Profile: [AlcoholUseQuestionnaire](Questionnaire-AlcoholUseQuestionnaire.md), [BloodGlucoseQuestionnaire](Questionnaire-BloodGlucoseQuestionnaire.md), [SleepDurationQuestionnaire](Questionnaire-SleepDurationQuestionnaire.md), [SleepQualityQuestionnaire](Questionnaire-SleepQualityQuestionnaire.md)... Show 3 more, [StepCountEhisPaqQuestionnaire](Questionnaire-StepCountEhisPaqQuestionnaire.md), [StepCountQuantityQuestionnaire](Questionnaire-StepCountQuantityQuestionnaire.md) and [AtPrenudgeQoLByWhoQolBref](Questionnaire-WhoQolBrefQuestionnaire.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.prenudge.appdata.r4|current/StructureDefinition/at-prenudge-questionnaire)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.prenudge.appdata.r4|current/StructureDefinition/StructureDefinition-at-prenudge-questionnaire.json)
 
 ### Formal Views of Profile Content
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-question
   "name" : "AtPrenudgeQuestionnaire",
   "title" : "AT PreNUDGE Questionnaire",
   "status" : "draft",
-  "date" : "2026-05-18T14:18:35+00:00",
+  "date" : "2026-05-27T15:35:26+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

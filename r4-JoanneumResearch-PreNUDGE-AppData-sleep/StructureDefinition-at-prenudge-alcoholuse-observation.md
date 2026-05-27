@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation | *Version*:0.1.0 | |
-| Draft as of 2026-05-18 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationAlcoholUse |
+| Draft as of 2026-05-27 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationAlcoholUse |
 
  
 This FHIR profile is currently derived from the APS Observation Alcohol Use profile without introducing any additional constraints or changes. It serves as a prepared extension point so that future adaptations can be made independently if required. 
@@ -18,7 +18,7 @@ This FHIR profile is currently derived from the APS Observation Alcohol Use prof
 
 * Examples for this Profile: [Observation/alcoholuse-moderate-example](Observation-alcoholuse-moderate-example.md), [Observation/alcoholuse-never-example](Observation-alcoholuse-never-example.md) and [Observation/alcoholuse-occasional-example](Observation-alcoholuse-occasional-example.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.prenudge.appdata.r4|current/StructureDefinition/at-prenudge-alcoholuse-observation)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.prenudge.appdata.r4|current/StructureDefinition/StructureDefinition-at-prenudge-alcoholuse-observation.json)
 
 ### Formal Views of Profile Content
 
@@ -45,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-alcoholu
   "name" : "AtPrenudgeObservationAlcoholUse",
   "title" : "AT PreNUDGE Observation Alcohol Use",
   "status" : "draft",
-  "date" : "2026-05-18T14:18:35+00:00",
+  "date" : "2026-05-27T15:35:26+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

@@ -11,7 +11,7 @@
   <name value="PreNUDGEAppdataR4"/>
   <title value="PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)"/>
   <status value="draft"/>
-  <date value="2026-05-18T14:18:35+00:00"/>
+  <date value="2026-05-27T15:35:26+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -51,7 +51,7 @@
   <dependsOn id="hl7_at_fhir_elga_aps_r4">
     <uri value="https://fhir.hl7.at/elga/aps/r4/ImplementationGuide/hl7.at.fhir.elga.aps.r4"/>
     <packageId value="hl7.at.fhir.elga.aps.r4"/>
-    <version value="current"/>
+    <version value="1.0.0"/>
   </dependsOn>
   <dependsOn id="hl7_fhir_uv_sdc">
     <uri value="http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc"/>
@@ -632,6 +632,28 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/at-prenudge-sleep-observation"/>
+      </reference>
+      <name value="AT PreNUDGE Observation Sleep Duration"/>
+      <description value="This FHIR profile defines the Sleep Duration Observation recording average nightly sleep in hours. Applicable for both automated wearable measurements (method = automated) and self-reported values derived from a questionnaire (method = manual)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-prenudge-sleep-quality-observation"/>
+      </reference>
+      <name value="AT PreNUDGE Observation Sleep Quality"/>
+      <description value="Records the self-assessed sleep quality from PROMIS (My sleep quality was...in past 7 days). Also used to map WHOQOL-BREF Q16 from standalone SleepQualityQuestionnaire or the full WhoQolBrefQuestionnaire."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/at-prenudge-stepcount-observation"/>
       </reference>
       <name value="AT PreNUDGE Observation Step Count"/>
@@ -797,10 +819,32 @@
         <valueString value="Questionnaire"/>
       </extension>
       <reference>
+        <reference value="Questionnaire/SleepDurationQuestionnaire"/>
+      </reference>
+      <name value="Durchschnittliche Schlafdauer pro Nacht"/>
+      <description value="A simple questionnaire for self-reporting average sleep duration per night in hours. Only allows values between 0 and 24 hours."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
         <reference value="Questionnaire/StepCountEhisPaqQuestionnaire"/>
       </reference>
       <name value="EHIS-PAQ: Zu-Fuß-Gehen"/>
       <description value="The questions Q2 and Q3 from the EHIS-PAQ about the number of days and duration of walking (for transport) in a typical week."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/SleepQualityQuestionnaire"/>
+      </reference>
+      <name value="Schlafqualität – Selbsteinschätzung (WHOQOL-BREF Q16)"/>
+      <description value="Standalone questionnaire for self-assessing sleep quality based on WHOQOL-BREF question Q16 ('Wie zufrieden sind Sie mit Ihrem Schlaf?')."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -813,6 +857,105 @@
       <name value="Schrittzahl am heutigen Tag"/>
       <description value="A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000."/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/sleep-duration-normal-automated-example"/>
+      </reference>
+      <name value="Sleep Duration O - Normal Automated Example"/>
+      <description value="Example of a normal average sleep duration (7.5 h) measured by a wearable device."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/sleep-duration-short-automated-example"/>
+      </reference>
+      <name value="Sleep Duration O - Short Automated Example"/>
+      <description value="Example of a short average sleep duration (5.5 h) measured by a wearable device, indicating insufficient sleep."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/sleep-duration-normal-manual-example"/>
+      </reference>
+      <name value="Sleep Duration O mapped from Q - Normal Example"/>
+      <description value="Example of a self-reported average sleep duration (7 h) derived from a questionnaire response."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/sleep-response-normal-example"/>
+      </reference>
+      <name value="Sleep Duration Q - Normal Example"/>
+      <description value="Example of a self-reported normal average sleep duration (7 h per night)."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/sleep-response-short-example"/>
+      </reference>
+      <name value="Sleep Duration Q - Short Example"/>
+      <description value="Example of a self-reported short average sleep duration (5.5 h per night)."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/sleep-quality-dissatisfied-example"/>
+      </reference>
+      <name value="Sleep Quality O mapped from Q - Dissatisfied Example"/>
+      <description value="Example of a sleep quality observation indicating poor sleep satisfaction (LA8969-3 - Poor), derived from the standalone SleepQualityQuestionnaire (S2 - Unzufrieden mapped to LOINC)."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-quality-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/sleep-quality-satisfied-example"/>
+      </reference>
+      <name value="Sleep Quality O mapped from Q - Satisfied Example"/>
+      <description value="Example of a sleep quality observation indicating good sleep satisfaction (LA8967-7 - Good), derived from the standalone SleepQualityQuestionnaire (S4 - Zufrieden mapped to LOINC)."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-quality-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/sleep-quality-response-dissatisfied-example"/>
+      </reference>
+      <name value="Sleep Quality Q - Dissatisfied Example"/>
+      <description value="Example of a standalone sleep quality questionnaire response indicating dissatisfaction with sleep (S2 - Unzufrieden)."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/sleep-quality-response-satisfied-example"/>
+      </reference>
+      <name value="Sleep Quality Q - Satisfied Example"/>
+      <description value="Example of a standalone sleep quality questionnaire response indicating satisfaction with sleep (S4 - Zufrieden)."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -963,6 +1106,26 @@
       </reference>
       <name value="WHOQOL-BREF Q score to O score"/>
       <description value="WHOQOL-BREF Q score to O score"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureMap"/>
+      </extension>
+      <reference>
+        <reference value="StructureMap/SleepDurationQuestionnaireResponseToObservation"/>
+      </reference>
+      <name value="Sleep Duration Q to O"/>
+      <description value="Sleep Duration Q to O"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureMap"/>
+      </extension>
+      <reference>
+        <reference value="StructureMap/SleepQualityQuestionnaireResponseToObservation"/>
+      </reference>
+      <name value="Sleep Quality Q to O"/>
+      <description value="Sleep Quality Q to O"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
