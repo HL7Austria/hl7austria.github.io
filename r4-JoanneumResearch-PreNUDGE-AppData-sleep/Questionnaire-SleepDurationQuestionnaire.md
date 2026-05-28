@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/SleepDurationQuestionnaire | *Version*:0.1.0 | |
-| Active as of 2026-05-27 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:SleepDurationQuestionnaire |
+| Active as of 2026-05-28 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:SleepDurationQuestionnaire |
 
  
 A simple questionnaire for self-reporting average sleep duration per night in hours. Only allows values between 0 and 24 hours. 
@@ -32,7 +32,7 @@ A simple questionnaire for self-reporting average sleep duration per night in ho
   "status" : "active",
   "experimental" : false,
   "subjectType" : ["Patient"],
-  "date" : "2026-05-27T15:35:26+00:00",
+  "date" : "2026-05-28T10:55:10+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

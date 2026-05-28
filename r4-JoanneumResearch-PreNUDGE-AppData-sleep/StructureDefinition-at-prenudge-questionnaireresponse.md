@@ -9,14 +9,14 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse | *Version*:0.1.0 | |
-| Draft as of 2026-05-27 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeQuestionnaireResponse |
+| Draft as of 2026-05-28 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeQuestionnaireResponse |
 
  
 This FHIR profile is defining the overall Questionnaire Response for PreNUDGE. Be aware that if the user enters values from a device into a questionnaire, it is still considered a manual input. Please keep in mind that all questionnaire responses must comply with the qualification matrix on https://prenudge.at/qualificationmatrix/. 
 
 **Usages:**
 
-* Examples for this Profile: [QuestionnaireResponse/AlcoholResponseDaily](QuestionnaireResponse-AlcoholResponseDaily.md), [QuestionnaireResponse/AlcoholResponseNever](QuestionnaireResponse-AlcoholResponseNever.md), [QuestionnaireResponse/bloodglucose-response-elevated-example](QuestionnaireResponse-bloodglucose-response-elevated-example.md), [QuestionnaireResponse/bloodglucose-response-normal-example](QuestionnaireResponse-bloodglucose-response-normal-example.md)... Show 9 more, [QuestionnaireResponse/sleep-quality-response-dissatisfied-example](QuestionnaireResponse-sleep-quality-response-dissatisfied-example.md), [QuestionnaireResponse/sleep-quality-response-satisfied-example](QuestionnaireResponse-sleep-quality-response-satisfied-example.md), [QuestionnaireResponse/sleep-response-normal-example](QuestionnaireResponse-sleep-response-normal-example.md), [QuestionnaireResponse/sleep-response-short-example](QuestionnaireResponse-sleep-response-short-example.md), [QuestionnaireResponse/stepcount-ehispaq-high](QuestionnaireResponse-stepcount-ehispaq-high.md), [QuestionnaireResponse/stepcount-ehispaq-normal](QuestionnaireResponse-stepcount-ehispaq-normal.md), [QuestionnaireResponse/stepcount-quantity-response-high-example](QuestionnaireResponse-stepcount-quantity-response-high-example.md), [QuestionnaireResponse/stepcount-quantity-response-normal-example](QuestionnaireResponse-stepcount-quantity-response-normal-example.md) and [QuestionnaireResponse/whoqol-bref-response-example](QuestionnaireResponse-whoqol-bref-response-example.md)
+* Examples for this Profile: [QuestionnaireResponse/AlcoholResponseDaily](QuestionnaireResponse-AlcoholResponseDaily.md), [QuestionnaireResponse/AlcoholResponseNever](QuestionnaireResponse-AlcoholResponseNever.md), [QuestionnaireResponse/bloodglucose-response-elevated-example](QuestionnaireResponse-bloodglucose-response-elevated-example.md), [QuestionnaireResponse/bloodglucose-response-normal-example](QuestionnaireResponse-bloodglucose-response-normal-example.md)... Show 9 more, [QuestionnaireResponse/sleep-duration-response-normal-example](QuestionnaireResponse-sleep-duration-response-normal-example.md), [QuestionnaireResponse/sleep-duration-response-short-example](QuestionnaireResponse-sleep-duration-response-short-example.md), [QuestionnaireResponse/sleep-quality-response-dissatisfied-example](QuestionnaireResponse-sleep-quality-response-dissatisfied-example.md), [QuestionnaireResponse/sleep-quality-response-satisfied-example](QuestionnaireResponse-sleep-quality-response-satisfied-example.md), [QuestionnaireResponse/stepcount-ehispaq-high](QuestionnaireResponse-stepcount-ehispaq-high.md), [QuestionnaireResponse/stepcount-ehispaq-normal](QuestionnaireResponse-stepcount-ehispaq-normal.md), [QuestionnaireResponse/stepcount-quantity-response-high-example](QuestionnaireResponse-stepcount-quantity-response-high-example.md), [QuestionnaireResponse/stepcount-quantity-response-normal-example](QuestionnaireResponse-stepcount-quantity-response-normal-example.md) and [QuestionnaireResponse/whoqol-bref-response-example](QuestionnaireResponse-whoqol-bref-response-example.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.prenudge.appdata.r4|current/StructureDefinition/StructureDefinition-at-prenudge-questionnaireresponse.json)
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-question
   "name" : "AtPrenudgeQuestionnaireResponse",
   "title" : "AT PreNUDGE Questionnaire Response",
   "status" : "draft",
-  "date" : "2026-05-27T15:35:26+00:00",
+  "date" : "2026-05-28T10:55:10+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

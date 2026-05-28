@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/SleepQualityQuestionnaire | *Version*:0.1.0 | |
-| Active as of 2026-05-27 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:SleepQualityQuestionnaire |
+| Active as of 2026-05-28 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:SleepQualityQuestionnaire |
 
  
 Standalone questionnaire for self-assessing sleep quality based on WHOQOL-BREF question Q16 ('Wie zufrieden sind Sie mit Ihrem Schlaf?'). 
@@ -32,7 +32,7 @@ Standalone questionnaire for self-assessing sleep quality based on WHOQOL-BREF q
   "status" : "active",
   "experimental" : false,
   "subjectType" : ["Patient"],
-  "date" : "2026-05-27T15:35:26+00:00",
+  "date" : "2026-05-28T10:55:10+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

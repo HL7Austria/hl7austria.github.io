@@ -61,7 +61,7 @@ Besides these narrow standardized measurements, **broad standardized measurement
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-05-27T15:35:26+00:00",
+  "date" : "2026-05-28T10:55:10+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -855,7 +855,7 @@ Besides these narrow standardized measurements, **broad standardized measurement
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-prenudge-sleep-observation"
+        "reference" : "StructureDefinition/at-prenudge-sleep-duration-observation"
       },
       "name" : "AT PreNUDGE Observation Sleep Duration",
       "description" : "This FHIR profile defines the Sleep Duration Observation recording average nightly sleep in hours. Applicable for both automated wearable measurements (method = automated) and self-reported values derived from a questionnaire (method = manual).",
@@ -1111,7 +1111,7 @@ Besides these narrow standardized measurements, **broad standardized measurement
       },
       "name" : "Sleep Duration O - Normal Automated Example",
       "description" : "Example of a normal average sleep duration (7.5 h) measured by a wearable device.",
-      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-observation"
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-duration-observation"
     },
     {
       "extension" : [{
@@ -1123,7 +1123,7 @@ Besides these narrow standardized measurements, **broad standardized measurement
       },
       "name" : "Sleep Duration O - Short Automated Example",
       "description" : "Example of a short average sleep duration (5.5 h) measured by a wearable device, indicating insufficient sleep.",
-      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-observation"
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-duration-observation"
     },
     {
       "extension" : [{
@@ -1135,7 +1135,7 @@ Besides these narrow standardized measurements, **broad standardized measurement
       },
       "name" : "Sleep Duration O mapped from Q - Normal Example",
       "description" : "Example of a self-reported average sleep duration (7 h) derived from a questionnaire response.",
-      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-observation"
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-duration-observation"
     },
     {
       "extension" : [{
@@ -1143,7 +1143,7 @@ Besides these narrow standardized measurements, **broad standardized measurement
         "valueString" : "QuestionnaireResponse"
       }],
       "reference" : {
-        "reference" : "QuestionnaireResponse/sleep-response-normal-example"
+        "reference" : "QuestionnaireResponse/sleep-duration-response-normal-example"
       },
       "name" : "Sleep Duration Q - Normal Example",
       "description" : "Example of a self-reported normal average sleep duration (7 h per night).",
@@ -1155,7 +1155,7 @@ Besides these narrow standardized measurements, **broad standardized measurement
         "valueString" : "QuestionnaireResponse"
       }],
       "reference" : {
-        "reference" : "QuestionnaireResponse/sleep-response-short-example"
+        "reference" : "QuestionnaireResponse/sleep-duration-response-short-example"
       },
       "name" : "Sleep Duration Q - Short Example",
       "description" : "Example of a self-reported short average sleep duration (5.5 h per night).",
@@ -1390,10 +1390,10 @@ Besides these narrow standardized measurements, **broad standardized measurement
         "valueString" : "StructureMap"
       }],
       "reference" : {
-        "reference" : "StructureMap/SleepQualityQuestionnaireResponseToObservation"
+        "reference" : "StructureMap/SleepQualityBase"
       },
-      "name" : "Sleep Quality Q to O",
-      "description" : "Sleep Quality Q to O"
+      "name" : "Sleep Quality Base (WHOQOL-BREF scale to LOINC)",
+      "description" : "Sleep Quality Base (WHOQOL-BREF scale to LOINC)"
     },
     {
       "extension" : [{

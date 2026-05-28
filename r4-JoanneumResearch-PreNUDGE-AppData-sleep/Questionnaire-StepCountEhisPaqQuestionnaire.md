@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/StepCountEhisPaqQuestionnaire | *Version*:0.1.0 | |
-| Active as of 2026-05-27 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:StepCountEhisPaqQuestionnaire |
+| Active as of 2026-05-28 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:StepCountEhisPaqQuestionnaire |
 
  
 The questions Q2 and Q3 from the EHIS-PAQ about the number of days and duration of walking (for transport) in a typical week. 
@@ -32,7 +32,7 @@ The questions Q2 and Q3 from the EHIS-PAQ about the number of days and duration 
   "status" : "active",
   "experimental" : false,
   "subjectType" : ["Patient"],
-  "date" : "2026-05-27T15:35:26+00:00",
+  "date" : "2026-05-28T10:55:10+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

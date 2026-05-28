@@ -40,7 +40,7 @@ These define constraints on FHIR resources for systems conforming to this implem
 | [AT PreNUDGE Observation Blood Glucose (only in mg/dL)](StructureDefinition-at-prenudge-bloodglucose-observation.md) | This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allows values inbetween 0 and 999 mg/dL. |
 | [AT PreNUDGE Observation Other Quantities](StructureDefinition-at-prenudge-observation-other-quantities.md) | This FHIR profile can be used for all the other Observations for PreNUDGE, beeing quantities and not fitting the existing narrow standardized observations. If some code for specifing a new Observation is missing, please contact prenudge@joanneum.at. |
 | [AT PreNUDGE Observation Other not Quantities](StructureDefinition-at-prenudge-observation-other-not-quantities.md) | This FHIR profile can be used for all the other Observations for PreNUDGE, not beeing an quantity and not fitting the existing narrow standardized observations. |
-| [AT PreNUDGE Observation Sleep Duration](StructureDefinition-at-prenudge-sleep-observation.md) | This FHIR profile defines the Sleep Duration Observation recording average nightly sleep in hours. Applicable for both automated wearable measurements (method = automated) and self-reported values derived from a questionnaire (method = manual). |
+| [AT PreNUDGE Observation Sleep Duration](StructureDefinition-at-prenudge-sleep-duration-observation.md) | This FHIR profile defines the Sleep Duration Observation recording average nightly sleep in hours. Applicable for both automated wearable measurements (method = automated) and self-reported values derived from a questionnaire (method = manual). |
 | [AT PreNUDGE Observation Sleep Quality](StructureDefinition-at-prenudge-sleep-quality-observation.md) | Records the self-assessed sleep quality from PROMIS (My sleep quality was…in past 7 days). Also used to map WHOQOL-BREF Q16 from standalone SleepQualityQuestionnaire or the full WhoQolBrefQuestionnaire. |
 | [AT PreNUDGE Observation Step Count](StructureDefinition-at-prenudge-stepcount-observation.md) | This FHIR profile is defining the Step Count Observation. The step count only allows values inbetween 0 and 150,000 steps per 24 hours. |
 | [AT PreNUDGE Observation WHOQOL-BREF Score](StructureDefinition-at-prenudge-whoqol-bref-score-observation.md) | Observation profile for recording WHOQOL-BREF domain scores. The overall score is represented in Observation.value, individual domain scores are recorded as components. |
@@ -77,7 +77,7 @@ These define transformations to convert between data structures used by systems 
 | [Blood Glucose Q to O](StructureMap-BloodGlucoseQuestionnaireResponseToObservation.md) | Blood Glucose Q to O |
 | [Shared base for Q to O](StructureMap-QuestionnaireResponseToObservationBase.md) | Shared base for Q to O |
 | [Sleep Duration Q to O](StructureMap-SleepDurationQuestionnaireResponseToObservation.md) | Sleep Duration Q to O |
-| [Sleep Quality Q to O](StructureMap-SleepQualityQuestionnaireResponseToObservation.md) | Sleep Quality Q to O |
+| [Sleep Quality Base (WHOQOL-BREF scale to LOINC)](StructureMap-SleepQualityBase.md) | Sleep Quality Base (WHOQOL-BREF scale to LOINC) |
 | [Step Count Q to O](StructureMap-StepCountQuestionnaireResponseToObservation.md) | Step Count Q to O |
 | [WHOQOL-BREF Q score to O score](StructureMap-WHOQOLBrefQuestionnaireResponseToObservation.md) | WHOQOL-BREF Q score to O score |
 
@@ -109,8 +109,8 @@ These are example instances that show what data produced and consumed by systems
 | [Sleep Duration O - Normal Automated Example](Observation-sleep-duration-normal-automated-example.md) | Example of a normal average sleep duration (7.5 h) measured by a wearable device. |
 | [Sleep Duration O - Short Automated Example](Observation-sleep-duration-short-automated-example.md) | Example of a short average sleep duration (5.5 h) measured by a wearable device, indicating insufficient sleep. |
 | [Sleep Duration O mapped from Q - Normal Example](Observation-sleep-duration-normal-manual-example.md) | Example of a self-reported average sleep duration (7 h) derived from a questionnaire response. |
-| [Sleep Duration Q - Normal Example](QuestionnaireResponse-sleep-response-normal-example.md) | Example of a self-reported normal average sleep duration (7 h per night). |
-| [Sleep Duration Q - Short Example](QuestionnaireResponse-sleep-response-short-example.md) | Example of a self-reported short average sleep duration (5.5 h per night). |
+| [Sleep Duration Q - Normal Example](QuestionnaireResponse-sleep-duration-response-normal-example.md) | Example of a self-reported normal average sleep duration (7 h per night). |
+| [Sleep Duration Q - Short Example](QuestionnaireResponse-sleep-duration-response-short-example.md) | Example of a self-reported short average sleep duration (5.5 h per night). |
 | [Sleep Quality O mapped from Q - Dissatisfied Example](Observation-sleep-quality-dissatisfied-example.md) | Example of a sleep quality observation indicating poor sleep satisfaction (LA8969-3 - Poor), derived from the standalone SleepQualityQuestionnaire (S2 - Unzufrieden mapped to LOINC). |
 | [Sleep Quality O mapped from Q - Satisfied Example](Observation-sleep-quality-satisfied-example.md) | Example of a sleep quality observation indicating good sleep satisfaction (LA8967-7 - Good), derived from the standalone SleepQualityQuestionnaire (S4 - Zufrieden mapped to LOINC). |
 | [Sleep Quality Q - Dissatisfied Example](QuestionnaireResponse-sleep-quality-response-dissatisfied-example.md) | Example of a standalone sleep quality questionnaire response indicating dissatisfaction with sleep (S2 - Unzufrieden). |

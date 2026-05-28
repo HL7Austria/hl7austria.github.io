@@ -6,7 +6,7 @@
 
 ## Example Observation: Sleep Duration O mapped from Q - Normal Example
 
-Profile: [AT PreNUDGE Observation Sleep Duration](StructureDefinition-at-prenudge-sleep-observation.md)
+Profile: [AT PreNUDGE Observation Sleep Duration](StructureDefinition-at-prenudge-sleep-duration-observation.md)
 
 **identifier**: `https://www.joanneum.at`/qr-sl-2026-03-10-001
 
@@ -31,7 +31,7 @@ Selbstberichtet.
 
 **method**: Manual
 
-**derivedFrom**: [Response to Questionnaire '->Durchschnittliche Schlafdauer pro Nacht' about '->James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)'](QuestionnaireResponse-sleep-response-normal-example.md)
+**derivedFrom**: [QuestionnaireResponse/sleep-response-normal-example](QuestionnaireResponse/sleep-response-normal-example)
 
 
 
@@ -42,7 +42,7 @@ Selbstberichtet.
   "resourceType" : "Observation",
   "id" : "sleep-duration-normal-manual-example",
   "meta" : {
-    "profile" : ["https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-observation"]
+    "profile" : ["https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-duration-observation"]
   },
   "identifier" : [{
     "system" : "https://www.joanneum.at",

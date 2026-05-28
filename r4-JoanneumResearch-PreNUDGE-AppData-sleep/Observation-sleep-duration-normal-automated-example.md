@@ -6,7 +6,7 @@
 
 ## Example Observation: Sleep Duration O - Normal Automated Example
 
-Profile: [AT PreNUDGE Observation Sleep Duration](StructureDefinition-at-prenudge-sleep-observation.md)
+Profile: [AT PreNUDGE Observation Sleep Duration](StructureDefinition-at-prenudge-sleep-duration-observation.md)
 
 **identifier**: `https://www.joanneum.at`/obs-sl-2026-03-10-001
 
@@ -40,7 +40,7 @@ Automatisch von Wearable gemessen.
   "resourceType" : "Observation",
   "id" : "sleep-duration-normal-automated-example",
   "meta" : {
-    "profile" : ["https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-observation"]
+    "profile" : ["https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-duration-observation"]
   },
   "identifier" : [{
     "system" : "https://www.joanneum.at",
