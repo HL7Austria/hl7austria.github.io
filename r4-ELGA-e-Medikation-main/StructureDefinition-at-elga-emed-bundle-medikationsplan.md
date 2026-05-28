@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan | *Version*:0.1.1 | |
-| Draft as of 2026-05-27 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedBundleMedikationsplan |
+| Draft as of 2026-05-28 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedBundleMedikationsplan |
 
  
 Das Bundle vom Typ Collection bestehend aus: 
@@ -44,7 +44,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
   "name" : "AtEmedBundleMedikationsplan",
   "title" : "AT ELGA e-Medikation Collection Bundle Medikationsplan",
   "status" : "draft",
-  "date" : "2026-05-27T13:46:49+00:00",
+  "date" : "2026-05-28T11:16:16+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-05-27T13:46:49+00:00",
+  "date" : "2026-05-28T11:16:16+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1326,7 +1326,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "valueUrl" : "interactions.html"
         }],
         "nameUrl" : "interactions.html",
-        "title" : "Zugriffsarten auf den Medikationsplan",
+        "title" : "Transaktionen",
         "generation" : "markdown"
       },
       {
