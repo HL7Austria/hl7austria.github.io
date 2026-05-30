@@ -1,0 +1,84 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/emed/r4/Bundle/At-Emed-Journey-01-Bundle-Tx-Medikationsplan> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "At-Emed-Journey-01-Bundle-Tx-Medikationsplan"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx"^^xsd:anyURI ;
+       fhir:l <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx>
+     ] )
+  ] ; # 
+  fhir:type [ fhir:v "transaction"] ; # 
+  fhir:timestamp [ fhir:v "2026-02-27T08:00:00+00:00"^^xsd:dateTime] ; # 
+  fhir:entry ( [
+     fhir:fullUrl [
+       fhir:v "urn:uuid:62e2daa5-c34b-4b97-8044-fd893bc99a55"^^xsd:anyURI ;
+       fhir:l <urn:uuid:62e2daa5-c34b-4b97-8044-fd893bc99a55>
+     ] ;
+     fhir:resource ( <urn:uuid:62e2daa5-c34b-4b97-8044-fd893bc99a55> ) ;
+     fhir:request [
+       fhir:method [ fhir:v "PUT" ] ;
+       fhir:url [
+         fhir:v "List/At-Emed-Journey-01-List-Medikationsplan"^^xsd:anyURI ;
+         fhir:l <https://fhir.hl7.at/elga/emed/r4/List/At-Emed-Journey-01-List-Medikationsplan>
+       ]
+     ]
+  ] ) . # 
+
+<urn:uuid:62e2daa5-c34b-4b97-8044-fd893bc99a55> a fhir:List ;
+  fhir:id [ fhir:v "At-Emed-Journey-01-List-Medikationsplan"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"^^xsd:anyURI ;
+       fhir:l <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"List_At-Emed-Journey-01-List-Medikationsplan\"> </a><p class=\"res-header-id\"><b>Generated Narrative: List At-Emed-Journey-01-List-Medikationsplan</b></p><a name=\"At-Emed-Journey-01-List-Medikationsplan\"> </a><a name=\"hcAt-Emed-Journey-01-List-Medikationsplan\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-list-medikationsplan.html\">AT ELGA e-Medikation List Medikationsplan</a></p></div><table class=\"clstu\"><tr><td>Date: 2026-02-27 08:00:00+0000 </td><td>Mode: Working List </td><td>Status: Current </td><td>Code: Medikationsplan </td></tr><tr><td>Subject: <a href=\"Patient-At-Emed-Example-Patient-01.html\">Max Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</a>Source: </td></tr></table><table class=\"grid\"><tr style=\"backgound-color: #eeeeee\"><td><b>Items</b></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:value [ fhir:v "123" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "current"] ; # 
+  fhir:mode [ fhir:v "working"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:736378000 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "736378000" ] ;
+       fhir:display [ fhir:v "Medikationsplan" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <https://fhir.hl7.at/elga/emed/r4/Patient/At-Emed-Example-Patient-01> ;
+     fhir:reference [ fhir:v "Patient/At-Emed-Example-Patient-01" ]
+  ] ; # 
+  fhir:date [ fhir:v "2026-02-27T08:00:00+00:00"^^xsd:dateTime] ; # 
+  fhir:source [
+     fhir:l <https://fhir.hl7.at/elga/emed/r4/Device/At-Emed-Example-Device-01> ;
+     fhir:reference [ fhir:v "Device/At-Emed-Example-Device-01" ]
+  ] ; # 
+  fhir:emptyReason [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/list-empty-reason"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/list-empty-reason>
+       ] ;
+       fhir:code [ fhir:v "notstarted" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

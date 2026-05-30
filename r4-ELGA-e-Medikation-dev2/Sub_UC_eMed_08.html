@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>HL7.AT.FHIR.ELGA.EMED.R4\​Technische Use Cases für Geplante Abgabe schreiben (UC_eMed_08) - FHIR® v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"9.4"}
+    h3,h4,h5,h6{--heading-prefix:"9.4"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img id="header-logo" src="assets/images/hl7atlogo.png"/>
+          </div>
+          <div class="col-11">
+        <!-- at-fhir-ig-template end -->
+            <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">ELGA e-Medikation (R4) DRAFT</span><br/>
+                <span class="label label-info">0.1.1 - ci-build</span>
+              </p>
+            </div>
+        <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+        <!-- at-fhir-ig-template end -->
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR®</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Inhaltsverzeichnis</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Einleitung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="scope_and_content.html">Umfang und Inhalt</a>
+      </li>
+      <li>
+        <a href="background.html">Hintergrund</a>
+      </li>
+      <li>
+        <a href="challenges.html">Herausforderungen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Funktionales
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="design_choices.html">Designentscheidungen</a>
+      </li>
+      <li>
+        <a href="actors.html">Akteure</a>
+      </li>
+      <li>
+        <a href="workflowmanagement.html">Workflowmanagement</a>
+      </li>
+      <li>
+        <a href="interactions.html">Transaktionen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anwendungsfälle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="patient_journey.html">Patient Journey</a>
+      </li>
+      <li>
+        <a href="overview_sub_use_case.html">Technische Use Cases</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='overview_use_case.html'><b>Overview Use Case</b></a></li><li><b>​Technische Use Cases für Geplante Abgabe schreiben (UC_eMed_08)</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!-- at-fhir-ig-template begin -->
+  <div class="alert alert-warning" role="alert">
+    <!--ReleaseHeader--><p id="publish-box">ELGA e-Medikation (R4) DRAFT - Local Development build (v0.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/emed/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  </div>
+  <!-- at-fhir-ig-template end -->
+  <h2>​Technische Use Cases für Geplante Abgabe schreiben (UC_eMed_08)</h2>
+  
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#sub_uc_emed_08_01---geplante-abgabe-erfassen" id="markdown-toc-sub_uc_emed_08_01---geplante-abgabe-erfassen">Sub_UC_eMed_08_01 - Geplante Abgabe erfassen</a></li>
+  <li><a href="#sub_uc_emed_08_04---geplante-abgabe-verwerfen" id="markdown-toc-sub_uc_emed_08_04---geplante-abgabe-verwerfen">Sub_UC_eMed_08_04 - Geplante Abgabe verwerfen</a></li>
+  <li><a href="#sub_uc_emed_08_02---geplante-abgabe-beenden-durch-fachanwendung" id="markdown-toc-sub_uc_emed_08_02---geplante-abgabe-beenden-durch-fachanwendung">Sub_UC_eMed_08_02 - Geplante Abgabe beenden (durch Fachanwendung)</a></li>
+  <li><a href="#sub_uc_emed_08_03---geplante-abgabe-abgelaufen-durch-fachanwendung" id="markdown-toc-sub_uc_emed_08_03---geplante-abgabe-abgelaufen-durch-fachanwendung">Sub_UC_eMed_08_03 - Geplante Abgabe abgelaufen (durch Fachanwendung)</a></li>
+  <li><a href="#sub_uc_emed_08_05---geplante-abgabe-löschen-durch-elga-teilnehmer" id="markdown-toc-sub_uc_emed_08_05---geplante-abgabe-löschen-durch-elga-teilnehmer">Sub_UC_eMed_08_05 - Geplante Abgabe löschen (durch ELGA-Teilnehmer)</a></li>
+</ul>
+
+</div>
+<style>
+.notification-table {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.notification-table th,
+.notification-table td {
+  padding: 10px;
+  background: #f5f5f5; /* Cell color */
+  box-shadow: 0 0 0 3px #fff;
+  text-align: left;
+}
+.notification-table th {
+  background: #e4e4e4;
+}
+
+.table-responsive {
+display: block;
+width: 100%;
+overflow-x: auto;
+max-height: 600px;
+overflow-y: auto;
+}
+.table-responsive > table {
+width: 100%;}
+.table-responsive th,
+.table-responsive td {
+  padding: 15px;
+  background: #f5f5f5;
+}
+.table-responsive table {
+  border-collapse: separate;
+  border-spacing: 3px;
+}
+/* Kopfzeile sticky */
+.table-responsive th {
+  position: sticky;
+  top: 0;
+  background: rgb(228, 228, 228);
+  z-index: 2;
+}
+/* Erste Spalte sticky */
+.table-responsive th:first-child,
+.table-responsive td:first-child {
+  position: sticky;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 3;
+}
+
+.table-responsive th:first-child {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 4;
+}
+
+.hinweisbox {
+  border: 1px solid #156082;
+  background: #dae8f8;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.codebox {
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+  font-family: "Courier New", Courier, monospace;
+  color: #2d2d2d;
+}
+
+
+</style>
+
+<script type="module"> import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';</script>
+
+<!--  Technische Use Cases für Geplante Abgabe schreiben (UC_eMed_08) -->
+
+<h3 id="sub_uc_emed_08_01---geplante-abgabe-erfassen">Sub_UC_eMed_08_01 - Geplante Abgabe erfassen</h3>
+
+<p>Ein GDA kann basierend auf einem <strong>bestehenden</strong> <a href="design_choices.html#medikationsplaneintrag-bzw-planeintrag-atelgaemedmedicationrequestplaneintrag-medicationrequest">Medikationsplaneintrag</a> eine oder mehrere <a href="design_choices.html#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest">geplanten Abgaben</a> erstellen und das Erzeugen eines e-Rezepts auslösen.</p>
+
+<p>Sollte für die <em>Geplante Abgabe</em> noch kein Medikationsplaneintrag existieren, muss dieser zuerst erstellt werden (siehe <a href="Sub_UC_eMed_06.html#sub_uc_emed_06_03---medikationsplaneintrag-in-medikationsplan-hinzufügen">Sub_UC_eMed_06_03 - Medikationsplaneintrag in Medikationsplan hinzufügen</a>). 
+Bei Bedarf kann ein bestehender Medikationsplaneintrag angepasst werden (siehe <a href="Sub_UC_eMed_06.html#sub_uc_emed_06_06---medikationsplaneintrag-im-medikationsplan-ändern">Sub_UC_eMed_06_06 - Medikationsplaneintrag im Medikationsplan ändern</a>).</p>
+
+<p>Ist keine Anpassung des Medikationsplaneintrags erforderlich, führt der GDA ein <a href="interactions.html#plan-read">$plan-read</a> aus und erhält von der Fachanwendung das <a href="design_choices.html#auslieferungs-medikationsplan-collection-bundle">Auslieferungs-Collection-Bundle</a>, das den Medikationsplan mit allen relevanten Ressourcen enthält.
+Basierend auf darin vorhandenen Planeinträgen erstellt der GDA neue <em>Geplante Abgabe</em>n wie folgt:</p>
+<ul>
+  <li>Der Status der neuen geplanten Abgabe muss <em>offen</em> sein (<strong>active</strong>)</li>
+  <li>Die <strong>Rezeptart</strong> muss verpflichtend ausgewählt werden (<em>Kassenrezept, Privatrezept</em> oder <em>Substitutionsrezept</em>)</li>
+  <li>Die <strong>Medikation</strong> soll jener des Planeintrags entsprechen. Enthält der Planeintrag ausschließlich Wirkstoffe, ist verpflichtend ein entsprechendes Medikament aus der ASP-Liste (inkl. PZN) bzw. eine magistrale Zubereitung zu dokumentieren.</li>
+  <li>Werden mehrere Medikamente gleichzeitig verordnet und sollen demselben e-Rezept zugeordnet werden, wird für jedes Medikament eine <em>Geplante Abgabe</em> mit demselben <strong>groupIdentifier</strong> erstellt (bildet 'Rezept-Klammer'). Mithilfe dieser eindeutigen Kennung können berechtigte Akteure gezielt nach zusammengehörenden geplanten Abgaben suchen:
+    <ul>
+      <li>Hierfür wird der <em>e-Med groupIdentifier</em> von der Fachanwendung bezogen und in den geplanten Abgaben ergänzt.</li>
+    </ul>
+  </li>
+  <li><strong>Dosierangaben</strong> können optional angepasst werden.</li>
+  <li>Der <strong>Gültigkeitszeitraum</strong> (<em>dispenseRequest.validityPeriod</em>), innerhalb dessen <em>Geplante Abgaben</em> eingelöst werden können, sowie</li>
+  <li>die Anzahl möglicher weiterer <strong>Einlösungen</strong> (<em>dispenseRequest.numberOfRepeatsAllowed</em>) ist abhängig von der ausgewählten <strong>Rezeptart</strong> (siehe <a href="workflowmanagement.html#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart">Gültigkeit von Geplanten Abgaben basierend auf der Rezeptart</a>)</li>
+  <li>Die <strong>Menge</strong> (Anzahl Packungen), die bei jeder Abgabe bereitgestellt werden soll, ist verpflichtend zu dokumentieren (<em>dispenseRequest.quantity</em>).</li>
+</ul>
+
+<p>Im Anschluss wird vom GDA für die Geplanten Abgaben die Erstellung eines e-Rezepts ausgelöst und ein <strong>Transaction Bundle mit den geplanten Abgaben</strong> (mit gleichem <em>e-Med groupIdentifier</em>) an die e-Med Fachanwendung übermittelt (via POST [base]/GeplAbgabe/MedicationRequest/).</p>
+
+<p>Wird nur eine einzelne Geplante Abgabe erstellt, kann diese via POST [base]/GeplAbgabe/Bundle/ an die e-Med Fachanwendung übermittelt.
+<!-- TODO: eigener Usecase? --></p>
+
+<!-- TODO Suchparameter emed-id: alle geplanten abgaben zu einer e-med-id finden -->
+
+<h4 id="ablauf">Ablauf</h4>
+
+<div><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="SEQUENCE" height="1418px" preserveAspectRatio="none" style="width:1139px;height:1418px;background:#F5F5F5;" version="1.1" viewBox="0 0 1139 1418" width="1139px" zoomAndPan="magnify"><?plantuml 1.2026.5?><defs><linearGradient id="g7i9v0wq12w5u0" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#E0E5F0" /><stop offset="100%" stop-color="#D1D9E6" /></linearGradient><filter height="300%" id="f7i9v0wq12w5u" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2" /><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" /><feOffset dx="4" dy="4" in="blurOut2" result="blurOut3" /><feBlend in="SourceGraphic" in2="blurOut3" mode="normal" /></filter></defs><g><rect fill="#F5F5F5" height="1418" style="stroke:none;stroke-width:1;" width="1139" x="0" y="0" /><g class="title" data-source-line="1"><text fill="#000000" font-family="'Arial'" font-size="14" font-weight="700" lengthAdjust="spacing" textLength="539.0137" x="296.7595" y="27.9951">Geplante Abgabe f&#252;r bestehende Medikationsplaneintr&#228;ge erstellen</text></g><rect fill="#9FBAC4" height="1368.6484" rx="5" ry="5" style="stroke:#181818;stroke-width:0.5;" width="74.0586" x="140" y="43.2969" /><text fill="#000000" font-family="'Arial'" font-size="14" font-weight="700" lengthAdjust="spacing" textLength="4.874" x="143" y="56.292">&#160;</text><text fill="#000000" font-family="'Arial'" font-size="14" font-weight="700" lengthAdjust="spacing" textLength="48.5625" x="152.748" y="72.5889">GDA 1</text><rect fill="#C48778" height="1368.6484" rx="5" ry="5" style="stroke:#181818;stroke-width:0.5;" width="256.9268" x="439.9546" y="43.2969" /><text fill="#000000" font-family="'Arial'" font-size="14" font-weight="700" lengthAdjust="spacing" textLength="4.874" x="442.9546" y="56.292">&#160;</text><text fill="#000000" font-family="'Arial'" font-size="14" font-weight="700" lengthAdjust="spacing" textLength="182.6904" x="477.0728" y="72.5889">e-Med Fachanwendung</text><rect fill="#CBB272" height="1368.6484" rx="5" ry="5" style="stroke:#181818;stroke-width:0.5;" width="105.1826" x="895.7363" y="43.2969" /><text fill="#000000" font-family="'Arial'" font-size="14" font-weight="700" lengthAdjust="spacing" textLength="4.874" x="898.7363" y="56.292">&#160;</text><text fill="#000000" font-family="'Arial'" font-size="14" font-weight="700" lengthAdjust="spacing" textLength="69.9385" x="918.2324" y="72.5889">e-Rezept</text><g><title>GDA 1</title><rect fill="#FFFFFF" height="1157.4609" style="stroke:#181818;stroke-width:1;" width="10" x="172.0293" y="166.1875" /></g><g><title>e-Med FA</title><rect fill="#FFFFFF" height="126.8594" style="stroke:#181818;stroke-width:1;" width="10" x="563.418" y="518.9609" /></g><g><title>e-Med FA</title><rect fill="#FFFFFF" height="305.3125" style="stroke:#181818;stroke-width:1;" width="10" x="563.418" y="1018.3359" /></g><g><title>e-Rezept</title><rect fill="#FFFFFF" height="184.5859" style="stroke:#181818;stroke-width:1;" width="10" x="943.3276" y="804.6172" /></g><rect fill="none" height="456.7344" rx="5" ry="5" style="stroke:#111827;stroke-width:2;" width="1114.1133" x="9" y="858.9141" /><rect fill="none" height="177.5859" rx="5" ry="5" style="stroke:#111827;stroke-width:2;" width="707.4175" x="141.7476" y="1131.0625" /><g class="participant-lifeline" data-entity-uid="part1" data-qualified-name="GDA_1" data-source-line="43" id="part1-lifeline"><g><title>GDA 1</title><rect fill="#000000" fill-opacity="0.00000" height="1176.4609" width="8" x="173.0293" y="156.1875" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;" x1="176.7476" x2="176.7476" y1="156.1875" y2="1332.6484" /></g></g><g class="participant-lifeline" data-entity-uid="part2" data-qualified-name="eMed_FA" data-source-line="47" id="part2-lifeline"><g><title>e-Med FA</title><rect fill="#000000" fill-opacity="0.00000" height="1176.4609" width="8" x="564.418" y="156.1875" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;" x1="567.7559" x2="567.7559" y1="156.1875" y2="1332.6484" /></g></g><g class="participant-lifeline" data-entity-uid="part3" data-qualified-name="e_Rezept" data-source-line="51" id="part3-lifeline"><g><title>e-Rezept</title><rect fill="#000000" fill-opacity="0.00000" height="1176.4609" width="8" x="944.3276" y="156.1875" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;" x1="948.1558" x2="948.1558" y1="156.1875" y2="1332.6484" /></g></g><g class="participant participant-head" data-entity-uid="part1" data-qualified-name="GDA_1" data-source-line="43" id="part1-head"><text fill="#000000" font-family="'Arial'" font-size="14" lengthAdjust="spacing" textLength="44.5635" x="151.7476" y="152.8857">GDA 1</text><ellipse cx="177.0293" cy="88.3906" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M177.0293,96.3906 L177.0293,123.3906 M164.0293,104.3906 L190.0293,104.3906 M177.0293,123.3906 L164.0293,138.3906 M177.0293,123.3906 L190.0293,138.3906" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-tail" data-entity-uid="part1" data-qualified-name="GDA_1" data-source-line="43" id="part1-tail"><text fill="#000000" font-family="'Arial'" font-size="14" lengthAdjust="spacing" textLength="44.5635" x="151.7476" y="1344.6436">GDA 1</text><ellipse cx="177.0293" cy="1356.4453" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" /><path d="M177.0293,1364.4453 L177.0293,1391.4453 M164.0293,1372.4453 L190.0293,1372.4453 M177.0293,1391.4453 L164.0293,1406.4453 M177.0293,1391.4453 L190.0293,1406.4453" fill="none" style="stroke:#181818;stroke-width:0.5;" /></g><g class="participant participant-head" data-entity-uid="part2" data-qualified-name="eMed_FA" data-source-line="47" id="part2-head"><rect fill="#FFFFFF" height="30.2969" rx="5" ry="5" style="stroke:#555555;stroke-width:0.5;" width="79.3242" x="528.7559" y="124.8906" /><text fill="#000000" font-family="'Arial'" font-size="14" lengthAdjust="spacing" textLength="65.3242" x="535.7559" y="144.8857">e-Med FA</text></g><g class="participant participant-tail" data-entity-uid="part2" data-qualified-name="eMed_FA" data-source-line="47" id="part2-tail"><rect fill="#FFFFFF" height="30.2969" rx="5" ry="5" style="stroke:#555555;stroke-width:0.5;" width="79.3242" x="528.7559" y="1331.6484" /><text fill="#000000" font-family="'Arial'" font-size="14" lengthAdjust="spacing" textLength="65.3242" x="535.7559" y="1351.6436">e-Med FA</text></g><g class="participant participant-head" data-entity-uid="part3" data-qualified-name="e_Rezept" data-source-line="51" id="part3-head"><rect fill="#FFFFFF" height="30.2969" rx="5" ry="5" style="stroke:#555555;stroke-width:0.5;" width="76.3438" x="910.1558" y="124.8906" /><text fill="#000000" font-family="'Arial'" font-size="14" lengthAdjust="spacing" textLength="62.3438" x="917.1558" y="144.8857">e-Rezept</text></g><g class="participant participant-tail" data-entity-uid="part3" data-qualified-name="e_Rezept" data-source-line="51" id="part3-tail"><rect fill="#FFFFFF" height="30.2969" rx="5" ry="5" style="stroke:#555555;stroke-width:0.5;" width="76.3438" x="910.1558" y="1331.6484" /><text fill="#000000" font-family="'Arial'" font-size="14" lengthAdjust="spacing" textLength="62.3438" x="917.1558" y="1351.6436">e-Rezept</text></g><g><title>GDA 1</title><rect fill="#FFFFFF" height="1157.4609" style="stroke:#181818;stroke-width:1;" width="10" x="172.0293" y="166.1875" /></g><g><title>e-Med FA</title><rect fill="#FFFFFF" height="126.8594" style="stroke:#181818;stroke-width:1;" width="10" x="563.418" y="518.9609" /></g><g><title>e-Med FA</title><rect fill="#FFFFFF" height="305.3125" style="stroke:#181818;stroke-width:1;" width="10" x="563.418" y="1018.3359" /></g><g><title>e-Rezept</title><rect fill="#FFFFFF" height="184.5859" style="stroke:#181818;stroke-width:1;" width="10" x="943.3276" y="804.6172" /></g><rect fill="#EEEEEE" height="3" rx="5" ry="5" style="stroke:#EEEEEE;stroke-width:1;" width="1133.5327" x="0" y="187.3359" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1133.5327" y1="187.3359" y2="187.3359" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1133.5327" y1="190.3359" y2="190.3359" /><rect fill="#EEEEEE" height="24.2969" rx="5" ry="5" style="stroke:#000000;stroke-width:2;" width="216.2891" x="458.6218" y="176.1875" /><text fill="#000000" font-family="'Arial'" font-size="14" font-weight="700" lengthAdjust="spacing" textLength="197.415" x="464.6218" y="193.1826">Medikationsplan abrufen</text><rect fill="none" height="42.5938" rx="5" ry="5" style="stroke:#000000;stroke-width:1.5;" width="462.3325" x="148.7476" y="210.4844" /><path d="M153.7476,210.4844 L215.7476,210.4844 L215.7476,218.4844 L205.7476,228.4844 L148.7476,228.4844 L148.7476,215.4844 A5,5 0 0 1 153.7476,210.4844" fill="#EEEEEE" style="stroke:#000000;stroke-width:2;" /><text fill="#000000" font-family="'Arial'" font-size="14" font-weight="700" lengthAdjust="spacing" textLength="22.4902" x="161.7476" y="225.4795">ref</text><a href="interactions.html#sequenzdiagramm-plan-read" target="_top" title="interactions.html#sequenzdiagramm-plan-read" xlink:actuate="onRequest" xlink:href="interactions.html#sequenzdiagramm-plan-read" xlink:show="new" xlink:title="interactions.html#sequenzdiagramm-plan-read" xlink:type="simple"><text fill="#0000EE" font-family="'Arial'" font-size="14" lengthAdjust="spacing" textLength="70.6426" x="344.5925" y="245.4795">Plan-Read</text></a><path d="M47,268.0781 L47,300.0781 A5,5 0 0 0 52,305.0781 L297,305.0781 A5,5 0 0 0 302,300.0781 L302,273.0781 L292,263.0781 L52,263.0781 A5,5 0 0 0 47,268.0781" fill="url(#g7i9v0wq12w5u0)" filter="url(#f7i9v0wq12w5u)" style="stroke:#8B95A5;stroke-width:1;" /><path d="M292,263.0781 L292,270.5781 A2.5,2.5 0 0 0 294.5,273.0781 L302,273.0781 L292,263.0781" fill="url(#g7i9v0wq12w5u0)" style="stroke:#8B95A5;stroke-width:1;" /><text fill="#111827" font-family="'Arial'" font-size="14" lengthAdjust="spacing" textLength="195.8018" x="53" y="281.0732">GDA erh&#228;lt Medikationsplan</text><text fill="#111827" font-family="'Arial'" font-size="14" lengthAdjust="spacing" textLength="234.377" x="53" y="297.3701">(Auslieferungs-Collection-Bundle)</text><rect fill="#EEEEEE" height="3" rx="5" ry="5" style="stroke:#EEEEEE;stroke-width:1;" width="1133.5327" x="0" y="334.8203" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1133.5327" y1="334.8203" y2="334.8203" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1133.5327" y1="337.8203" y2="337.8203" /><rect fill="#EEEEEE" height="24.2969" rx="5" ry="5" style="stroke:#000000;stroke-width:2;" width="379.3398" x="377.0964" y="323.6719" /><text fill="#000000" font-family="'Arial'" font-size="14" font-weight="700" lengthAdjust="spacing" textLength="360.4658" x="383.0964" y="340.667">Geplante Abgaben vorbereiten und schreiben</text><g class="message" data-entity-1="part1" data-entity-2="part1" data-source-line="69" id="msg1"><line style="stroke:#111827;stroke-width:1;" x1="182.0293" x2="224.0293" y1="379.1016" y2="379.1016" /><line style="stroke:#111827;stroke-width:1;" x1="224.0293" x2="224.0293" y1="379.1016" y2="392.1016" /><line style="stroke:#111827;stroke-width:1;" x1="183.0293" x2="224.0293" y1="392.1016" y2="392.1016" /><polygon fill="#111827" points="193.0293,388.1016,183.0293,392.1016,193.0293,396.1016,189.0293,392.1016" style="stroke:#111827;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;" /><text fill="#000000" font-family="'Arial'" font-size="13" font-weight="700" lengthAdjust="spacing" textLength="9.0454" x="189.0293" y="374.0356">1</text><text fill="#000000" font-family="'Arial'" font-size="13" lengthAdjust="spacing" textLength="186.1895" x="202.0747" y="374.0356">Geplante Abgabe 1 erstellen</text></g><g class="message" data-entity-1="part1" data-entity-2="part1" data-source-line="70" id="msg2"><line style="stroke:#111827;stroke-width:1;" x1="182.0293" x2="224.0293" y1="421.2344" y2="421.2344" /><line style="stroke:#111827;stroke-width:1;" x1="224.0293" x2="224.0293" y1="421.2344" y2="434.2344" /><line style="stroke:#111827;stroke-width:1;" x1="183.0293" x2="224.0293" y1="434.2344" y2="434.2344" /><polygon fill="#111827" points="193.0293,430.2344,183.0293,434.2344,193.0293,438.2344,189.0293,434.2344" style="stroke:#111827;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;" /><text fill="#000000" font-family="'Arial'" font-size="13" font-weight="700" lengthAdjust="spacing" textLength="9.0454" x="189.0293" y="416.1685">2</text><text fill="#000000" font-family="'Arial'" font-size="13" lengthAdjust="spacing" textLength="186.1895" x="202.0747" y="416.1685">Geplante Abgabe 2 erstellen</text></g><path d="M34,452.2344 L34,484.2344 A5,5 0 0 0 39,489.2344 L310,489.2344 A5,5 0 0 0 315,484.2344 L315,457.2344 L305,447.2344 L39,447.2344 A5,5 0 0 0 34,452.2344" fill="url(#g7i9v0wq12w5u0)" filter="url(#f7i9v0wq12w5u)" style="stroke:#8B95A5;stroke-width:1;" /><path d="M305,447.2344 L305,454.7344 A2.5,2.5 0 0 0 307.5,457.2344 L315,457.2344 L305,447.2344" fill="url(#g7i9v0wq12w5u0)" style="stroke:#8B95A5;stroke-width:1;" /><text fill="#111827" font-family="'Arial'" font-size="14" lengthAdjust="spacing" textLength="229.2432" x="40" y="465.2295">Geplante Abgaben referenzieren</text><text fill="#111827" font-family="'Arial'" font-size="14" lengthAdjust="spacing" textLength="260.4014" x="40" y="481.5264">zugeh&#246;rige Medikationsplaneintr&#228;ge.</text><g class="message" data-entity-1="part1" data-entity-2="part2" data-source-line="76" id="msg3"><polygon fill="#111827" points="551.418,514.9609,561.418,518.9609,551.418,522.9609,555.418,518.9609" style="stroke:#111827;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;" /><line style="stroke:#111827;stroke-width:1;" x1="182.0293" x2="557.418" y1="518.9609" y2="518.9609" /><text fill="#000000" font-family="'Arial'" font-size="13" font-weight="700" lengthAdjust="spacing" textLength="9.0454" x="189.0293" y="513.895">3</text><text fill="#000000" font-family="'Arial'" font-size="13" lengthAdjust="spacing" textLength="208.9395" x="202.0747" y="513.895">e-Med groupIdentifier anfordern</text></g><path d="M13,536.9609 L13,568.9609 A5,5 0 0 0 18,573.9609 L332,573.9609 A5,5 0 0 0 337,568.9609 L337,541.9609 L327,531.9609 L18,531.9609 A5,5 0 0 0 13,536.9609" fill="url(#g7i9v0wq12w5u0)" filter="url(#f7i9v0wq12w5u)" style="stroke:#8B95A5;stroke-width:1;" /><path d="M327,531.9609 L327,539.4609 A2.5,2.5 0 0 0 329.5,541.9609 L337,541.9609 L327,531.9609" fill="url(#g7i9v0wq12w5u0)" style="stroke:#8B95A5;stroke-width:1;" /><text fill="#111827" font-family="'Arial'" font-size="14" lengthAdjust="spacing" textLength="303.9668" x="19" y="549.9561">e-Med groupIdentifier f&#252;r "Rezeptklammer"</text><text fill="#111827" font-family="'Arial'" font-size="14" lengthAdjust="spacing" textLength="68.8311" x="19" y="566.2529">anfordern</text><g class="message" data-entity-1="part2" data-entity-2="part2" data-source-line="84" id="msg4"><line style="stroke:#111827;stroke-width:1;" x1="573.418" x2="615.418" y1="603.6875" y2="603.6875" /><line style="stroke:#111827;stroke-width:1;" x1="615.418" x2="615.418" y1="603.6875" y2="616.6875" /><line style="stroke:#111827;stroke-width:1;" x1="574.418" x2="615.418" y1="616.6875" y2="616.6875" /><polygon fill="#111827" points="584.418,612.6875,574.418,616.6875,584.418,620.6875,580.418,616.6875" style="stroke:#111827;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;" /><text fill="#000000" font-family="'Arial'" font-size="13" font-weight="700" lengthAdjust="spacing" textLength="9.0454" x="580.418" y="598.6216">4</text><text fill="#000000" font-family="'Arial'" font-size="13" lengthAdjust="spacing" textLength="205.918" x="593.4634" y="598.6216">e-Med groupIdentifier erzeugen</text></g><g class="message" data-entity-1="part2" data-entity-2="part1" data-source-line="85" id="msg5"><line style="stroke:#111827;stroke-width:1;" x1="183.0293" x2="193.0293" y1="645.8203" y2="641.8203" /><line style="stroke:#111827;stroke-width:1;" x1="183.0293" x2="193.0293" y1="645.8203" y2="649.8203" /><line style="stroke:#111827;stroke-width:1;stroke-dasharray:2,2;" x1="182.0293" x2="567.418" y1="645.8203" y2="645.8203" /><text fill="#000000" font-family="'Arial'" font-size="13" font-weight="700" lengthAdjust="spacing" textLength="9.0454" x="199.0293" y="640.7544">5</text><text fill="#000000" font-family="'Arial'" font-size="13" lengthAdjust="spacing" textLength="140.8926" x="212.0747" y="640.7544">e-Med groupIdentifier</text></g><g class="message" data-entity-1="part1" data-entity-2="part1" data-source-line="88" id="msg6"><line style="stroke:#111827;stroke-width:1;" x1="182.0293" x2="224.0293" y1="705.2188" y2="705.2188" /><line style="stroke:#111827;stroke-width:1;" x1="224.0293" x2="224.0293" y1="705.2188" y2="718.2188" /><line style="stroke:#111827;stroke-width:1;" x1="183.0293" x2="224.0293" y1="718.2188" y2="718.2188" /><polygon fill="#111827" points="193.0293,714.2188,183.0293,718.2188,193.0293,722.2188,189.0293,718.2188" style="stroke:#111827;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;" /><text fill="#000000" font-family="'Arial'" font-size="13" font-weight="700" lengthAdjust="spacing" textLength="9.0454" x="189.0293" y="685.02">6</text><text fill="#000000" font-family="'Arial'" font-size="13" lengthAdjust="spacing" textLength="160.0879" x="202.0747" y="669.8872">e-Med groupIdentifier zu</text><text fill="#000000" font-family="'Arial'" font-size="13" lengthAdjust="spacing" textLength="169.292" x="202.0747" y="685.02">Geplanten Abgaben 1 + 2</text><text fill="#000000" font-family="'Arial'" font-size="13" lengthAdjust="spacing" textLength="72.4585" x="202.0747" y="700.1528">hinzuf&#252;gen</text></g><g class="message" data-entity-1="part1" data-entity-2="part1" data-source-line="89" id="msg7"><line style="stroke:#111827;stroke-width:1;" x1="182.0293" x2="224.0293" y1="762.4844" y2="762.4844" /><line style="stroke:#111827;stroke-width:1;" x1="224.0293" x2="224.0293" y1="762.4844" y2="775.4844" /><line style="stroke:#111827;stroke-width:1;" x1="183.0293" x2="224.0293" y1="775.4844" y2="775.4844" /><polygon fill="#111827" points="193.0293,771.4844,183.0293,775.4844,193.0293,779.4844,189.0293,775.4844" style="stroke:#111827;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;" /><text fill="#000000" font-family="'Arial'" font-size="13" font-weight="700" lengthAdjust="spacing" textLength="9.0454" x="189.0293" y="749.8521">7</text><text fill="#000000" font-family="'Arial'" font-size="13" lengthAdjust="spacing" textLength="151.1758" x="202.0747" y="742.2856">Transaction Bundle mit</text><text fill="#000000" font-family="'Arial'" font-size="13" lengthAdjust="spacing" textLength="230.0962" x="206.207" y="757.4185">Geplanten Abgaben 1 + 2 erstellen</text></g><g class="message" data-entity-1="part1" data-entity-2="part3" data-source-line="91" id="msg8"><line style="stroke:#111827;stroke-width:1;" x1="941.3276" x2="931.3276" y1="804.6172" y2="800.6172" /><line style="stroke:#111827;stroke-width:1;" x1="941.3276" x2="931.3276" y1="804.6172" y2="808.6172" /><line style="stroke:#111827;stroke-width:1;" x1="182.0293" x2="942.3276" y1="804.6172" y2="804.6172" /><text fill="#000000" font-family="'Arial'" font-size="13" font-weight="700" lengthAdjust="spacing" textLength="9.0454" x="189.0293" y="799.5513">8</text><text fill="#000000" font-family="'Arial'" font-size="13" lengthAdjust="spacing" textLength="169.5713" x="202.0747" y="799.5513">Trigger e-Rezept erstellen</text></g><path d="M63,822.6172 L63,838.6172 A5,5 0 0 0 68,843.6172 L282,843.6172 A5,5 0 0 0 287,838.6172 L287,827.6172 L277,817.6172 L68,817.6172 A5,5 0 0 0 63,822.6172" fill="url(#g7i9v0wq12w5u0)" filter="url(#f7i9v0wq12w5u)" style="stroke:#8B95A5;stroke-width:1;" /><path d="M277,817.6172 L277,825.1172 A2.5,2.5 0 0 0 279.5,827.6172 L287,827.6172 L277,817.6172" fill="url(#g7i9v0wq12w5u0)" style="stroke:#8B95A5;stroke-width:1;" /><text fill="#111827" font-family="'Arial'" font-size="14" lengthAdjust="spacing" textLength="203.6357" x="69" y="835.6123">Erstellung e-Rezept ausl&#246;sen</text><path d="M14,858.9141 L74.9385,858.9141 L74.9385,867.2109 L64.9385,877.2109 L9,877.2109 L9,863.9141 A5,5 0 0 1 14,858.9141" fill="#EEF2FF" style="stroke:#111827;stroke-width:1.5;" /><rect fill="none" height="456.7344" rx="5" ry="5" style="stroke:#111827;stroke-width:2;" width="1114.1133" x="9" y="858.9141" /><text fill="#000000" font-family="'Arial'" font-size="14" font-weight="700" lengthAdjust="spacing" textLength="20.9385" x="24" y="872.9092">alt</text><text fill="#000000" font-family="'Arial'" font-size="14" font-weight="700" lengthAdjust="spacing" textLength="253.627" x="89.9385" y="873.9092">[Fehler bei Erstellung e_Rezept]</text><g class="message" data-entity-1="part3" data-entity-2="part1" data-source-line="99" id="msg9"><line style="stroke:#111827;stroke-width:1;" x1="183.0293" x2="193.0293" y1="899.6406" y2="895.6406" /><line style="stroke:#111827;stroke-width:1;" x1="183.0293" x2="193.0293" y1="899.6406" y2="903.6406" /><line style="stroke:#111827;stroke-width:1;stroke-dasharray:2,2;" x1="182.0293" x2="942.3276" y1="899.6406" y2="899.6406" /><text fill="#000000" font-family="'Arial'" font-size="13" font-weight="700" lengthAdjust="spacing" textLength="9.0454" x="199.0293" y="894.5747">9</text><text fill="#000000" font-family="'Arial'" font-size="13" lengthAdjust="spacing" textLength="40.6694" x="212.0747" y="894.5747">Fehler</text></g><line style="stroke:#111827;stroke-width:1;stroke-dasharray:2,2;" x1="9" x2="1123.1133" y1="908.6406" y2="908.6406" /><text fill="#000000" font-family="'Arial'" font-size="14" font-weight="700" lengthAdjust="spacing" textLength="237.2754" x="14" y="921.6357">[e_Rezept erfolgreich erstellt]</text><g class="message" data-entity-1="part3" data-entity-2="part3" data-source-line="102" id="msg10"><line style="stroke:#111827;stroke-width:1;" x1="953.3276" x2="995.3276" y1="947.0703" y2="947.0703" /><line style="stroke:#111827;stroke-width:1;" x1="995.3276" x2="995.3276" y1="947.0703" y2="960.0703" /><line style="stroke:#111827;stroke-width:1;" x1="954.3276" x2="995.3276" y1="960.0703" y2="960.0703" /><polygon fill="#111827" points="964.3276,956.0703,954.3276,960.0703,964.3276,964.0703,960.3276,960.0703" style="stroke:#111827;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;" /><text fill="#000000" font-family="'Arial'" font-size="13" font-weight="700" lengthAdjust="spacing" textLength="18.0908" x="960.3276" y="942.0044">10</text><text fill="#000000" font-family="'Arial'" font-size="13" lengthAdjust="spacing" textLength="118.6948" x="982.4185" y="942.0044">e-Rezept erstellen</text></g><g class="message" data-entity-1="part3" data-entity-2="part1" data-source-line="103" id="msg11"><line style="stroke:#111827;stroke-width:1;" x1="183.0293" x2="193.0293" y1="989.2031" y2="985.2031" /><line style="stroke:#111827;stroke-width:1;" x1="183.0293" x2="193.0293" y1="989.2031" y2="993.2031" /><line style="stroke:#111827;stroke-width:1;stroke-dasharray:2,2;" x1="182.0293" x2="947.3276" y1="989.2031" y2="989.2031" /><text fill="#000000" font-family="'Arial'" font-size="13" font-weight="700" lengthAdjust="spacing" textLength="18.0908" x="199.0293" y="984.1372">11</text><text fill="#000000" font-family="'Arial'" font-size="13" lengthAdjust="spacing" textLength="18.7573" x="221.1201" y="984.1372">OK</text></g><g class="message" data-entity-1="part1" data-entity-2="part2" data-source-line="105" id="msg12"><line style="stroke:#111827;stroke-width:1;" x1="561.418" x2="551.418" y1="1018.3359" y2="1014.3359" /><line style="stroke:#111827;stroke-width:1;" x1="561.418" x2="551.418" y1="1018.3359" y2="1022.3359" /><line style="stroke:#111827;stroke-width:1;" x1="182.0293" x2="562.418" y1="1018.3359" y2="1018.3359" /><text fill="#000000" font-family="'Arial'" font-size="13" font-weight="700" lengthAdjust="spacing" textLength="18.0908" x="189.0293" y="1013.27">12</text><text fill="#000000" font-family="'Arial'" font-size="13" lengthAdjust="spacing" textLength="247.749" x="211.1201" y="1013.27">POST Transaction Bundle GeplAbgabe</text></g><path d="M19,1036.3359 L19,1068.3359 A5,5 0 0 0 24,1073.3359 L325,1073.3359 A5,5 0 0 0 330,1068.3359 L330,1041.3359 L320,1031.3359 L24,1031.3359 A5,5 0 0 0 19,1036.3359" fill="url(#g7i9v0wq12w5u0)" filter="url(#f7i9v0wq12w5u)" style="stroke:#8B95A5;stroke-width:1;" /><path d="M320,1031.3359 L320,1038.8359 A2.5,2.5 0 0 0 322.5,1041.3359 L330,1041.3359 L320,1031.3359" fill="url(#g7i9v0wq12w5u0)" style="stroke:#8B95A5;stroke-width:1;" /><text fill="#111827" font-family="'Arial'" font-size="14" lengthAdjust="spacing" textLength="239.9209" x="25" y="1049.3311">Transaction Bundle mit Geplanten</text><text fill="#111827" font-family="'Arial'" font-size="14" lengthAdjust="spacing" textLength="290.2266" x="25" y="1065.6279">Abgaben an Fachanwendung &#252;bermitteln</text><g class="message" data-entity-1="part2" data-entity-2="part2" data-source-line="113" id="msg13"><line style="stroke:#111827;stroke-width:1;" x1="573.418" x2="615.418" y1="1103.0625" y2="1103.0625" /><line style="stroke:#111827;stroke-width:1;" x1="615.418" x2="615.418" y1="1103.0625" y2="1116.0625" /><line style="stroke:#111827;stroke-width:1;" x1="574.418" x2="615.418" y1="1116.0625" y2="1116.0625" /><polygon fill="#111827" points="584.418,1112.0625,574.418,1116.0625,584.418,1120.0625,580.418,1116.0625" style="stroke:#111827;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;" /><text fill="#000000" font-family="'Arial'" font-size="13" font-weight="700" lengthAdjust="spacing" textLength="18.0908" x="580.418" y="1097.9966">13</text><text fill="#000000" font-family="'Arial'" font-size="13" lengthAdjust="spacing" textLength="228.5981" x="602.5088" y="1097.9966">Transaction Bundle + Inhalt pr&#252;fen</text></g><path d="M146.7476,1131.0625 L207.686,1131.0625 L207.686,1139.3594 L197.686,1149.3594 L141.7476,1149.3594 L141.7476,1136.0625 A5,5 0 0 1 146.7476,1131.0625" fill="#EEF2FF" style="stroke:#111827;stroke-width:1.5;" /><rect fill="none" height="177.5859" rx="5" ry="5" style="stroke:#111827;stroke-width:2;" width="707.4175" x="141.7476" y="1131.0625" /><text fill="#000000" font-family="'Arial'" font-size="14" font-weight="700" lengthAdjust="spacing" textLength="20.9385" x="156.7476" y="1145.0576">alt</text><text fill="#000000" font-family="'Arial'" font-size="14" font-weight="700" lengthAdjust="spacing" textLength="59.0967" x="222.686" y="1146.0576">[g&#252;ltig]</text><g class="message" data-entity-1="part2" data-entity-2="part2" data-source-line="115" id="msg14"><line style="stroke:#111827;stroke-width:1;" x1="573.418" x2="615.418" y1="1171.7891" y2="1171.7891" /><line style="stroke:#111827;stroke-width:1;" x1="615.418" x2="615.418" y1="1171.7891" y2="1184.7891" /><line style="stroke:#111827;stroke-width:1;" x1="574.418" x2="615.418" y1="1184.7891" y2="1184.7891" /><polygon fill="#111827" points="584.418,1180.7891,574.418,1184.7891,584.418,1188.7891,580.418,1184.7891" style="stroke:#111827;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;" /><text fill="#000000" font-family="'Arial'" font-size="13" font-weight="700" lengthAdjust="spacing" textLength="18.0908" x="580.418" y="1166.7231">14</text><text fill="#000000" font-family="'Arial'" font-size="13" lengthAdjust="spacing" textLength="224.6563" x="602.5088" y="1166.7231">GeplanteAbgaben 1 + 2 speichern</text></g><path d="M430,1202.7891 L430,1218.7891 A5,5 0 0 0 435,1223.7891 L697,1223.7891 A5,5 0 0 0 702,1218.7891 L702,1207.7891 L692,1197.7891 L435,1197.7891 A5,5 0 0 0 430,1202.7891" fill="url(#g7i9v0wq12w5u0)" filter="url(#f7i9v0wq12w5u)" style="stroke:#8B95A5;stroke-width:1;" /><path d="M692,1197.7891 L692,1205.2891 A2.5,2.5 0 0 0 694.5,1207.7891 L702,1207.7891 L692,1197.7891" fill="url(#g7i9v0wq12w5u0)" style="stroke:#8B95A5;stroke-width:1;" /><text fill="#111827" font-family="'Arial'" font-size="14" lengthAdjust="spacing" textLength="251.6309" x="436" y="1215.7842">Geplante Abgabe 1 + 2 gespeichert</text><g class="message" data-entity-1="part2" data-entity-2="part1" data-source-line="121" id="msg15"><line style="stroke:#111827;stroke-width:1;" x1="183.0293" x2="193.0293" y1="1253.2188" y2="1249.2188" /><line style="stroke:#111827;stroke-width:1;" x1="183.0293" x2="193.0293" y1="1253.2188" y2="1257.2188" /><line style="stroke:#111827;stroke-width:1;stroke-dasharray:2,2;" x1="182.0293" x2="562.418" y1="1253.2188" y2="1253.2188" /><text fill="#000000" font-family="'Arial'" font-size="13" font-weight="700" lengthAdjust="spacing" textLength="18.0908" x="199.0293" y="1248.1528">15</text><text fill="#000000" font-family="'Arial'" font-size="13" lengthAdjust="spacing" textLength="18.7573" x="221.1201" y="1248.1528">OK</text></g><line style="stroke:#111827;stroke-width:1;stroke-dasharray:2,2;" x1="141.7476" x2="849.165" y1="1262.2188" y2="1262.2188" /><text fill="#000000" font-family="'Arial'" font-size="14" font-weight="700" lengthAdjust="spacing" textLength="79.0303" x="146.7476" y="1275.2139">[ung&#252;ltig]</text><g class="message" data-entity-1="part2" data-entity-2="part1" data-source-line="123" id="msg16"><line style="stroke:#111827;stroke-width:1;" x1="183.0293" x2="193.0293" y1="1300.6484" y2="1296.6484" /><line style="stroke:#111827;stroke-width:1;" x1="183.0293" x2="193.0293" y1="1300.6484" y2="1304.6484" /><line style="stroke:#111827;stroke-width:1;stroke-dasharray:2,2;" x1="182.0293" x2="562.418" y1="1300.6484" y2="1300.6484" /><text fill="#000000" font-family="'Arial'" font-size="13" font-weight="700" lengthAdjust="spacing" textLength="18.0908" x="199.0293" y="1295.5825">16</text><text fill="#000000" font-family="'Arial'" font-size="13" lengthAdjust="spacing" textLength="40.6694" x="221.1201" y="1295.5825">Fehler</text></g><?plantuml-src XLRRRjms47tdLmpMBotI3Qnjjhu0Dh1ExIGeqXYs-nG71YMD96Arb49Hjhj1_oRVa2U_xOzrIDseooAoOKZap73EEJD3Qw5JX7UOfrngX9KVSnyXshqeyB7GcA0C4JvYADPSYqmMnX25r6htFKP0HJPfYfAnOYrapXNVW9-f4DNRBCqK71pQnztbmJfMMId3sY9QcX_7eaXuc3q96KF4qmATdTfDILJWkK53Z7YPwgjCwh_v1c6sKeAdiscBMx55yDvCR_RJTcnaHlnyOm0NGm1uYCleS7uGUk49_c4iN0AE_PCbNxQhTua8rXAB0ZnQkt407TFtDGz30zn4SRBnFEzuSKHhjoqrMfN8_dCJVFzlZYeLSkr0kBoSClY7D3KlM1FiSezVIvH1XVIQAoq2aLDfz20jxJCm6CbgdxxHcE3HTYDERwEXPM4SLafbJqDYx6AVMxiqTMAxKPtrEoszeypp7iOsShKrqXoZXKNdU7R7B_hAN6JF3eBU-XIlpC-UONOlAVYVA_00Pd1m4b7V65PueCcKDXuyu0NChCcCKPjItpqxllR1ERKkNF4WuVA9R4fAeNeevjitnqT7fkhoZcb0SdYuMjdOjVTgEZpERt2BkRQn0jzV72s6iHvgYofOzU44uwNEPBdnKJ5sTZQSCi1zLKOeuUoCJ0Cj7Zbre4NE54QGFM9Dn6zjrgVm-JCD9rJ6dkAyJlGcFQYAUXiA7XFjcxc9FbV8GxWsRpVqzkKBOyosU1UM6MvH9RllgHubntvPbKKgC495f1PpaZ15U-ZyWieanLyjJXFIWXkCM0cFcIBWA3IzamCKGK9VVest4dX-NcLoEfhGdZDwVsQxS6n748TfAOE8o1BcBx1j6MEo-w54lFyMUEqWRNEf5JcjIz0qJ_uXHAb5HA61oyXMlXopFkrWhwHPLKBhb5H4DMDTb2w3jbBg35XJ6pzF2jKM2Q_iNERdBQkJBYp4qNaZFQOFsvRtic5VjlHxy0eMzp8HSbiIv7X2tZl5PL7LDrIb1XkXgIVtH7ClwIRMUTkR9fw8OuE-wUVzrN9PxPWfqbfpQeFTZm8T3JfAwaD85MgXAqnIDFzN2703jJRG3GoN-DgDCQIxgZD15MLfJ2qJ94t6kXV2nJY1RSzfd_wY7LVL9Zq0XxocZgu_tTvD2MAag4IeHdQ_GW26nC8ULJjDpRrLgqhJfp_HToyqISYQa5bSZGu0vdUg_YTEUmKVP69aojNkXSQkbIpUlQHQn2ReH9GckNwv5RdHn3IbFR-3si4VJpFZ66FZgbqKxk53eMn940LjcjEsJGdPgCmKwly0?></g></svg> </div>
+
+<h4 id="relevante-elemente-medicationrequest">Relevante Elemente (MedicationRequest)</h4>
+
+<pre><code class="language-JSON">AtElgaEmedMedicationRequestGeplanteAbgabe
+    status: active 
+    category: recipetype                     // Verpflichtende Angabe der Rezeptart
+    medicationReference.reference: Medikation gemäß zugehörigem Planeintrag // Contained Medication
+    authoredOn: Datum der Erstellung der Geplanten Abgabe
+    requester: veranwortlicher GDA für die Geplante Abgabe  // wird auf Übereinstimmung mit List.source geprüft
+    basedOn: id des zugehörigen Medikationsplaneintrags
+    groupIdentifier: e-Med groupIdentifier  // optionale Rezeptklammer 
+    dosageInstruction: Dosierung + Einnahmezeitraum (ab sofort | in der Zukunft) 
+    dispenseRequest.validityPeriod:         // Gültigkeitszeitraum (abhängig von Rezeptart bzw. verkürzt durch GDA)
+    dispenseRequest.numberOfRepeatsAllowed: // Anzahl weiterer Einlösungen (abhängig von Rezeptart)
+    dispenseRequest.quantity:               // Abzugebende Menge (Packungen) je Abgabe
+</code></pre>
+
+<h3 id="sub_uc_emed_08_04---geplante-abgabe-verwerfen">Sub_UC_eMed_08_04 - Geplante Abgabe verwerfen</h3>
+
+<p>Ein GDA kann jede bestehende <a href="design_choices.html#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest">Geplante Abgabe</a> aufgrund es Fehlers verwerfen (auch wenn er die <em>Geplante Abgabe</em> nicht selbst erstellt hat), solange noch <strong>keine Abgaben durchgeführt</strong> wurden. Die verworfene <em>Geplante Abgabe</em> wird damit abgeschlossen, kann aber über die Historie der geplanten Abgaben eingesehen werden.
+<!-- TODO: Suchparameter nach stornierten *Geplante Abgabe*n? -->
+<!-- TODO: kann ein GDA die *Geplante Abgabe* eines anderen GDAs verwerfen oder nur die eigenen? -->
+<!-- Wenn nicht seine eigene, woher soll er wissen, dass es ein Irrtum war? Begründung f Statuswechsel dzt nicht möglich. --></p>
+
+<p>Um eine <em>Geplante Abgabe</em> zu verwerfen, ruft der GDA diese mittels GET MedicationRequest ab und bearbeitet diesen wie folgt:</p>
+<ul>
+  <li>Der Status wird auf <em>entered-in-error</em> gesetzt,</li>
+  <li>der verantwortliche GDA (<em>requester</em>) und das Datum in <em>authoredOn</em> werden entsprechend aktualisiert.</li>
+</ul>
+
+<p>Der GDA übermittelt (via POST [base]/GeplAbgabe/Bundle/) den aktualisierten Medikationsplan der Fachanwendung.</p>
+
+<!-- TODO: Wenn stornierte *Geplante Abgabe* Teil eines e-Rezepts mit weiteren geplanten Abgaben ist: Auswirkungen? keine -->
+
+<h4 id="relevante-elemente-medicationrequest-1">Relevante Elemente (MedicationRequest)</h4>
+
+<pre><code class="language-JSON">AtElgaEmedMedicationRequestGeplanteAbgabe
+    status: entered-in-error 
+    authoredOn: Datum des Verwerfens der Geplanten Abgabe
+    requester: veranwortlicher GDA für das Verwerfen der Geplanten Abgabe  // wird auf Übereinstimmung mit List.source geprüft
+</code></pre>
+
+<h3 id="sub_uc_emed_08_02---geplante-abgabe-beenden-durch-fachanwendung">Sub_UC_eMed_08_02 - Geplante Abgabe beenden (durch Fachanwendung)</h3>
+
+<!-- |  **completed**  | *Geplante Abgabe* beendet | -->
+
+<p>Wurden alle geplanten Abgaben planmäßig durchgeführt (gemäß dem ausgewählten Rezepttyp oder den Einschränkungen des GDAs), setzt die Fachanwendung die <em>Geplante Abgabe</em> automatisch auf den Status <em>completed</em>.</p>
+
+<p>Sonderfall: Wenn die letzte durchgeführte Abgabe danach verworfen wird (Status <em>entered-in-error</em>), wird der Status der geplanten Abgabe durch die Fachanwendung wieder auf <em>active</em> gesetzt.</p>
+
+<h4 id="relevante-elemente-medicationrequest-2">Relevante Elemente (MedicationRequest)</h4>
+
+<pre><code class="language-JSON">AtElgaEmedMedicationRequestGeplanteAbgabe
+    status: completed
+    authoredOn: Datum der Erstellung der geplanten Abgabe  // bleibt unverändert
+    requester: Ursprünglicher Ersteller                    // bleibt unverändert
+</code></pre>
+
+<h3 id="sub_uc_emed_08_03---geplante-abgabe-abgelaufen-durch-fachanwendung">Sub_UC_eMed_08_03 - Geplante Abgabe abgelaufen (durch Fachanwendung)</h3>
+
+<p>Ist der Einlösezeitraum der geplanten Abgaben gemäß dem ausgewählten Rezepttyp oder den Einschränkungen des GDAs überschritten, setzt die Fachanwendung die <em>Geplante Abgabe</em> automatisch auf den Status <em>stopped</em>.</p>
+
+<h4 id="relevante-elemente-medicationrequest-3">Relevante Elemente (MedicationRequest)</h4>
+
+<pre><code class="language-JSON">AtElgaEmedMedicationRequestGeplanteAbgabe
+    status: stopped
+    authoredOn: Datum der Erstellung der geplanten Abgabe  // bleibt unverändert
+    requester: Ursprünglicher Ersteller                    // bleibt unverändert
+</code></pre>
+
+<!-- ### Sub_UC_eMed_08_03 - Geplante Abgabe gecancelt (durch Fachanwendung)  TODO
+
+Ist der Einlösezeitraum der geplanten Abgaben gemäß dem ausgewählten Rezepttyp oder den Einschränkungen des GDAs überschritten, setzt die Fachanwendung die *Geplante Abgabe* automatisch auf den Status *stopped*.
+
+#### Relevante Elemente (MedicationRequest)
+
+```JSON
+AtElgaEmedMedicationRequestGeplanteAbgabe
+    status: stopped
+    authoredOn: Datum der Erstellung der geplanten Abgabe  // bleibt unverändert
+    requester: Ursprünglicher Ersteller                    // bleibt unverändert -->
+
+<h3 id="sub_uc_emed_08_05---geplante-abgabe-löschen-durch-elga-teilnehmer">Sub_UC_eMed_08_05 - Geplante Abgabe löschen (durch ELGA-Teilnehmer)</h3>
+
+<p>Der ELGA-Teilnehmer kann eine <em>Geplante Abgabe</em> endgültig löschen. Bereits dokumentierte durchgeführte Abgaben sowie bestehende Planeinträge bleiben davon unberührt.</p>
+
+<p>Die Löschung der geplanten Abgabe umfasst:</p>
+
+<ul>
+  <li>die fachliche Entfernung der betreffenden MedicationRequest-Ressource sowie</li>
+  <li>die Entfernung aller zugehörigen historischen Ressourcenversionen (_history).</li>
+</ul>
+
+<p>Zum Löschen einer geplanten Abgabe ruft der ELGA-Teilnehmer die betreffende <em>Geplante Abgabe</em> im ELGA-Portal auf. Dieses führt zunächst eine Leseoperation auf die betreffende MedicationRequest-Ressource aus (GET MedicationRequest/[id]) und löscht anschließend die betreffende <em>Geplante Abgabe</em> mittels DELETE (DELETE [base]/MedicationRequest/[id]).</p>
+
+<p>Die Ressource einschließlich aller historischen Versionen darf nach erfolgreicher Löschung weder über reguläre FHIR-Interaktionen noch über administrative Schnittstellen abrufbar sein.</p>
+
+<!-- #### Beispiel -->
+
+<!-- #### Technische Hinweise -->
+
+<!-- #### Relevante Profile -->
+
+<!-- #### Relevante Invarianten -->
+
+<!-- #### Mögliche Notifications -->
+
+
+
+</div>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /row -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-content -->
+
+<script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/window-hash.js"> </script>
+<a name="bottom"> </a>
+<div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+<div class="container">  <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Sat, May 30, 2026 06:37+0000">2026-05-30</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    </span>
+  </p>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+<div class="container">  <!-- container -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-post-footer -->
+
+<!-- JS and analytics only. -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+<script type="text/javascript" src="assets/js/respond.min.js"> </script>
+<script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+<script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+</body>
+</html>
+

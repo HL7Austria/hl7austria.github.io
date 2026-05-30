@@ -1,0 +1,599 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>HL7.AT.FHIR.ELGA.EMED.R4\​Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_09) - FHIR&reg; v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+
+    <style type="text/css">h2{--heading-prefix:"9.5"}
+    h3,h4,h5,h6{--heading-prefix:"9.5"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+          <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img src="assets/images/hl7atlogo.png" id="header-logo"/>
+          </div>
+          <div class="col-11">
+          <!-- at-fhir-ig-template end -->
+              <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">ELGA e-Medikation (R4) DRAFT</span><br/>
+                <span class="label label-info">0.1.1 - ci-build</span>
+              </p>
+            </div>
+          <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+          <!-- at-fhir-ig-template end -->
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR&reg;</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Inhaltsverzeichnis</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Einleitung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="scope_and_content.html">Umfang und Inhalt</a>
+      </li>
+      <li>
+        <a href="background.html">Hintergrund</a>
+      </li>
+      <li>
+        <a href="challenges.html">Herausforderungen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Funktionales
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="design_choices.html">Designentscheidungen</a>
+      </li>
+      <li>
+        <a href="actors.html">Akteure</a>
+      </li>
+      <li>
+        <a href="workflowmanagement.html">Workflowmanagement</a>
+      </li>
+      <li>
+        <a href="interactions.html">Transaktionen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anwendungsfälle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="patient_journey.html">Patient Journey</a>
+      </li>
+      <li>
+        <a href="overview_sub_use_case.html">Technische Use Cases</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="overview_use_case.html"><b>Overview Use Case</b></a></li><li><b>​Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_09)</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- at-fhir-ig-template begin -->
+  <div role="alert" class="alert alert-warning">
+      <!-- ReleaseHeader --><p id="publish-box">ELGA e-Medikation (R4) DRAFT - Local Development build (v0.1.1) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="https://fhir.hl7.at/elga/emed/r4/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  </div>
+    <!-- at-fhir-ig-template end -->
+  <h2>​Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_09)</h2>
+  
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#sub_uc_emed_09_01---durchgeführte-abgabe-erfassen" id="markdown-toc-sub_uc_emed_09_01---durchgeführte-abgabe-erfassen">Sub_UC_eMed_09_01 - Durchgeführte Abgabe erfassen</a></li>
+  <li><a href="#sub_uc_emed_09_02---durchgeführte-abgabe-verwerfen" id="markdown-toc-sub_uc_emed_09_02---durchgeführte-abgabe-verwerfen">Sub_UC_eMed_09_02 - Durchgeführte Abgabe verwerfen</a></li>
+  <li><a href="#sub_uc_emed_09_03---durchgeführte-abgabe-löschen-durch-elga-teilnehmer" id="markdown-toc-sub_uc_emed_09_03---durchgeführte-abgabe-löschen-durch-elga-teilnehmer">Sub_UC_eMed_09_03 - Durchgeführte Abgabe löschen (durch ELGA-Teilnehmer)</a></li>
+</ul>
+
+</div>
+<style>
+.notification-table {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.notification-table th,
+.notification-table td {
+  padding: 10px;
+  background: #f5f5f5; /* Cell color */
+  box-shadow: 0 0 0 3px #fff;
+  text-align: left;
+}
+.notification-table th {
+  background: #e4e4e4;
+}
+
+.table-responsive {
+display: block;
+width: 100%;
+overflow-x: auto;
+max-height: 600px;
+overflow-y: auto;
+}
+.table-responsive > table {
+width: 100%;}
+.table-responsive th,
+.table-responsive td {
+  padding: 15px;
+  background: #f5f5f5;
+}
+.table-responsive table {
+  border-collapse: separate;
+  border-spacing: 3px;
+}
+/* Kopfzeile sticky */
+.table-responsive th {
+  position: sticky;
+  top: 0;
+  background: rgb(228, 228, 228);
+  z-index: 2;
+}
+/* Erste Spalte sticky */
+.table-responsive th:first-child,
+.table-responsive td:first-child {
+  position: sticky;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 3;
+}
+
+.table-responsive th:first-child {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 4;
+}
+
+.hinweisbox {
+  border: 1px solid #156082;
+  background: #dae8f8;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.codebox {
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+  font-family: "Courier New", Courier, monospace;
+  color: #2d2d2d;
+}
+
+
+</style>
+
+<script type="module"> import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';</script>
+
+  <!-- Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_09) -->
+
+<h3 id="sub_uc_emed_09_01---durchgeführte-abgabe-erfassen">Sub_UC_eMed_09_01 - Durchgeführte Abgabe erfassen</h3>
+
+<p><a name="l377">​</a>Der GDA (Apotheke bzw. Arzt mit Hausapotheke) kann eine <a href="design_choices.html#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense">Durchgeführte Abgabe</a> für einen ELGA-Teilnehmer erfassen, um die Abgabe eines Medikamentes medizinisch zu dokumentieren.</p>
+
+<p>Sofern eine zugehörige <a href="design_choices.html#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest">Geplante Abgabe</a> vorliegt, <strong>muss</strong> diese im Element <em>authorizingPrescription</em> referenziert werden.</p>
+
+<p>Die in der <em>Geplanten Abgabe</em> dokumentierte <a href="workflowmanagement.html#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart">Rezeptart</a> (bzw. eine evtl. Einschränkung durch den GDA (Arzt) im Element <em>MedicationRequest.numberOfRepeatsAllowed</em>), legt fest wieviele Abgaben durchgeführt werden dürfen.</p>
+
+<p>Der aktuelle Status einer <em>Durchgeführten Abgabe</em> wird mittels <em>MedicationDispense.status</em>- und <em>MedicationDispense.type</em>-Element dokumentiert (siehe <a href="workflowmanagement.html#status-des-medicationdispense-in-der-durchgeführten-abgabe">Status des MedicationDispense in der durchgeführten Abgabe</a>) und kann sich auf den Status der zugehörigen <em>Geplanten Abgabe</em> auswirken.</p>
+
+<p>Folgende Tabelle bildet eine Übersicht über alle Varianten von (Teil-)Abgaben:</p>
+<ul>
+  <li>Einzelabgabe</li>
+  <li>Besorgerprozess</li>
+  <li>Teilabgaben</li>
+  <li>Leerabgaben
+<br/></li>
+</ul>
+
+<h4 id="varianten-der-teil-abgabe">Varianten der (Teil-)Abgabe</h4>
+
+<p>Im Element <em>MedicationDispense.type</em> einer durchgeführten Abgabe wird die Art der Abgabe dokumentiert, welche von der <a href="workflowmanagement.html#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart">Rezeptart</a> (Anzahl Einlösungen) und vom Use Case abhängt.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Use Case (pro Einlösung)</th>
+      <th>Geplante Abgabe (MedicationRequest.status)</th>
+      <th>Beschreibung</th>
+      <th>Durchgeführte Abgabe (MedicationDispense)</th>
+      <th>Beschreibung</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Vollständige Abgabe (Einzelabgabe)</td>
+      <td>complete, wenn letzte Eilnlösung abgeschlossen, sonst active</td>
+      <td>geplante Abgabe wird nach erfolgter Dispense automatisch&nbsp; auf complete gesetzt</td>
+      <td>type: FFC (First Fill - Complete)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
+      <td>Dispense abgeschlossen; Kann nicht mehr verändert werden.</td>
+    </tr>
+    <tr>
+      <td>"Besorgerprozess": Medikament von Apotheke bestellt</td>
+      <td>active</td>
+      <td>geplante Abgabe bleibt active</td>
+      <td>type: FFP (First Fill - Part Fill)<br/>quantity:&nbsp; 0 Packungen (wurden&nbsp; ausgegeben)<br/>status: „preparation?“</td>
+      <td>Medikament bestellt oder Magistrale Zubereitung in Vorbereitung. Geplante Abgabe kann nicht mehr in einer anderen Apotheke abgegeben werden</td>
+    </tr>
+    <tr>
+      <td>"Besorgerprozess": bestelltes Medikament wird ausgehändigt</td>
+      <td>complete</td>
+      <td>wenn Dispense complete, dann auch geplante Abgabe complete</td>
+      <td>type: RFC (Refill - Complete)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
+      <td>Durchgeführte Abgabe abgeschlossen</td>
+    </tr>
+    <tr>
+      <td>1. Teilabgabe</td>
+      <td>active</td>
+      <td>geplante Abgabe bleibt active</td>
+      <td>type: FFP (First Fill - Part Fill)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
+      <td>1. Teilabgabe</td>
+    </tr>
+    <tr>
+      <td>Weitere Teilabgabe</td>
+      <td>active</td>
+      <td>geplante Abgabe bleibt active</td>
+      <td>type: RFP (Refill - Part Fill)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
+      <td>weitere Teilabgabe</td>
+    </tr>
+    <tr>
+      <td>Letzte Teilabgabe</td>
+      <td>complete</td>
+      <td>nach der letzten Teilabgabe wird die geplante Abgabe automatisch auf complete gesetzt</td>
+      <td>type:&nbsp; RFC (Refill - Complete)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
+      <td>letzte Teilabgabe</td>
+    </tr>
+    <tr>
+      <td>Leerabgabe bei Einzelabgabe</td>
+      <td>complete</td>
+      <td>die geplante Abgabe wird automatisch auf complete gesetzt</td>
+      <td>type: FFC (First Fill - Complete) bzw. RFC (Refill Complete)<br/>quantity:&nbsp; 0 Packungen<br/>status: „cancelled“</td>
+      <td>Das Medikament einer geplanten Abgabe wird vom Patienten nicht benötigt und daher als Leerabgabe vermerkt.</td>
+    </tr>
+    <tr>
+      <td>Leerabgabe beendet Teilabgaben</td>
+      <td>complete</td>
+      <td>nach einer Leerabgabe bei einer&nbsp; Teilabgabe wird die geplante Abgabe automatisch auf complete gesetzt</td>
+      <td>type: RFC (Refill - Complete)<br/>quantity:&nbsp; 0 Packungen<br/>status: „cancelled“</td>
+      <td>Das Medikament einer geplanten Abgabe wird vom Patienten nicht benötigt und daher als Leerabgabe vermerkt. Dieser Einlösevorgang ist damit beendet.</td>
+    </tr>
+    <tr>
+      <td>Notabgabe</td>
+      <td>&nbsp;-</td>
+      <td>keine geplante Abgabe vorhanden</td>
+      <td>type: EM (Emergency Supply)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
+      <td>Das Medikament wurde ohne zugrundeliegende geplante Abgabe abgegeben.<br/>Es wird kein Rezept nachgereicht</td>
+    </tr>
+    <tr>
+      <td>Rezept wird nachgebracht</td>
+      <td>&nbsp;-</td>
+      <td>keine geplante Abgabe vorhanden</td>
+      <td>type: SO (Script Owing)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
+      <td>Medikament wurde abgegeben oder reserviert, das formale Rezept wird später nachgereicht.&nbsp; Planeintrag + geplante Abgabe für Wechselwirkungsrelevante Medikatmente soll nacherfasst werden.</td>
+    </tr>
+    <tr>
+      <td>OTC Abgabe (rezeptfrei)</td>
+      <td>&nbsp;-</td>
+      <td>keine geplante Abgabe vorhanden</td>
+      <td>type: OTC (hinzufügen)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
+      <td>Rezeptfreies Medikament wurde abgegeben. Ein Planeintrag für Wechselwirkungsrelevante Medikatmente soll nacherfasst werden.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br/></p>
+
+<h4 id="sub_uc_emed_09_01_0x-durchgeführte-abgabe-mit-bezug-zu-einer-geplanten-abgabe-erfassen-vollständige-abgabe">Sub_UC_eMed_09_01_0x Durchgeführte Abgabe mit Bezug zu einer geplanten Abgabe erfassen (Vollständige Abgabe)</h4>
+
+<p>Nach der letztmöglichen Einlösung (und Erstellung einer <em>Durchgeführten Abgabe</em> mit Status <em>complete</em>) setzt die Fachanwendung die zugehörige <em>Geplante Abgabe</em> auf den Status <em>completed</em> (siehe<a href="Sub_UC_eMed_08.html#sub_uc_emed_08_02---geplante-abgabe-beenden-durch-fachanwendung">Sub_UC_eMed_08_02 - Geplante Abgabe beenden (durch Fachanwendung)</a>).</p>
+
+<p>Wenn die geplante Abgabe nur eine einmalige Einlösung ermöglicht (z.B. Kassenrezept), erkennt die Fachanwendung durch die Kombination aus MedicationDispense.type enthält <em>X-fill complete</em> (und Status <em>complete</em>) und Geplante Abgabe MedicationReqeust.numberOfRepeatsAllowed == 0, dass die geplante Abgabe abgeschlossen ist und setzt deren Status auf complete. Wenn die geplante Abgabe eine mehrmalige Einlösungen (numberOfRepeatsAllowed) ermöglicht (z.B. Privatrezept), bleibt der Status der geplanten Abgabe weiterhin active bis die letzte Einlösung erfolgt ist.</p>
+
+  <!-- teilabgabe kann abgabe eines teils, bestellung (gesamtbesllung oder teil) oder leerabgabe status cancelled -->
+
+<h4 id="relevante-elemente-medicationdispense">Relevante Elemente (MedicationDispense)</h4>
+
+<pre><code class="language-JSON">AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe
+    recorded: Datum der Erstellung der Durchgeführten Abgabe
+    status: completed  
+    statusReasonCodeableConcept: Wert aus Valueset (in Arbeit)        // optionale Begründung für den Status https://hl7.org/fhir/R4/valueset-medicationdispense-status-reason.html     
+    medicationReference.reference: Tatsächlich abgegebenes Medikament // Contained Medication
+    authoredOn: Datum der Erstellung der Durchgeführten Abgabe
+    performer: veranwortlicher GDA (Apotheke) für die Durchgeführte Abgabe 
+    authorizingPrescription: Verpflichtende Referenz auf zugehörige Geplante Abgabe
+    type: FFC (First Fill - Complete) | (Part Fill - Complete) // Art der Abgabe
+    quantity: Abgebende Menge (Packungen) je Abgabe
+    whenHandedOver: Der Zeitpunkt, zu dem das abgegebene Produkt ausgehändigt wurde
+    dosageInstruction: Dosierung + Einnahmezeitraum (ab sofort | in der Zukunft)  // angepasst an abgegebene Medikation
+</code></pre>
+
+  <!-- #### Sub_UC_eMed_09_01_0x Durchgeführte Abgabe als vollständige Abgabe (Einzelabgabe) erfassen -->
+
+  <!-- Werden geplante Abgaben mit einer [Rezeptart](workflowmanagement.html#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart), die nur einmalig eingelöst werden,  
+
+
+geplante Abgabe wird nach erfolgter Dispense automatisch  auf complete gesetzt
+
+Dispense abgeschlossen; Kann nicht mehr verändert werden. -->
+<p><br/></p>
+
+<h4 id="sub_uc_emed_09_01_0x-durchgeführte-abgabe-ohne-bezug-zu-einer-geplanten-abgabe-erfassen-otc-abgabe--rezeptfrei">Sub_UC_eMed_09_01_0x Durchgeführte Abgabe ohne Bezug zu einer geplanten Abgabe erfassen (OTC Abgabe / rezeptfrei)</h4>
+
+<p>In folgenden Fällen liegt bei der Erfassung einer <em>Durchgeführten Abgabe</em> keine zugehörige <em>Durchgeführte Abgabe</em> vor:</p>
+<ul>
+  <li>Notabgabe (Rezept wird nachgebracht)
+  <!-- (d.h. es muss im nachhinein ein Planeintrag und eine geplante Abgabe erstellt werden (Nacherfassung) und die geplante Abgabe muss die bereits erstellten durchgeführte Abgabe referenzieren?) Usecase? --></li>
+  <li>OTC Medikation (nicht rezeptpflichtig):
+    <ul>
+      <li>für wechselwirkungsrelevante Medikamente (aus ASP-Liste) soll eine <em>Durchgeführte Abgabe</em> erstellt werden</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br/></p>
+
+<h4 id="sub_uc_emed_09_01_0x-durchgeführte-abgabe-mit-besorgerprozess-erfassen">Sub_UC_eMed_09_01_0x Durchgeführte Abgabe mit Besorgerprozess erfassen</h4>
+
+<ul>
+  <li>"Besorgerprozess": Medikament von Apotheke bestellt oder Magistrale Zubereitung in Vorbereitung</li>
+  <li>"Besorgerprozess": bestelltes Medikament wird ausgehändigt</li>
+</ul>
+
+  <!-- Geplante Abgabe kann nicht mehr in einer anderen Apotheke eingelöst werden 
+und Teilabgabe -->
+
+<p><br/></p>
+
+<h4 id="sub_uc_emed_09_01_0x-durchgeführte-abgabe-als-teilabgaben-erfassen">Sub_UC_eMed_09_01_0x Durchgeführte Abgabe als Teilabgaben erfassen</h4>
+
+<ul>
+  <li>
+    <ol>
+      <li>Teilabgabe</li>
+    </ol>
+  </li>
+  <li>Weitere Teilabgabe</li>
+  <li>Letzte Teilabgabe</li>
+</ul>
+
+<p><br/></p>
+
+<h4 id="sub_uc_emed_09_01_0x-durchgeführte-abgabe-als-leerabgabe-erfassen">Sub_UC_eMed_09_01_0x Durchgeführte Abgabe als Leerabgabe erfassen</h4>
+
+<ul>
+  <li>Leerabgabe bei Einzelabgabe</li>
+  <li>Leerabgabe beendet Teilabgaben</li>
+</ul>
+
+<p><br/></p>
+
+<h4 id="sub_uc_emed_09_01_0x-durchgeführte-abgabe-nacherfassen-rezept-wird-nachgebracht">Sub_UC_eMed_09_01_0x Durchgeführte Abgabe Nacherfassen (Rezept wird nachgebracht)</h4>
+
+<p>Eine <em>Durchgeführte Abgabe</em> muss nacherfasst werden, wenn das Arzneimittel bereits abgegeben wurde, 
+    - aber eine Speicherung zum Zeitpunkt der Abgabe aus technischen Gründen nicht möglich war
+    - der Arzneimittelbezug aus dem Ausland erfolgt ist (Element <em>recorded</em> abweichend von <em>whenHandedOver</em>)
+    - wenn ein e-Rezept-Eintrag oder ein Papierrezept vorhanden ist und keine geplante Abgabe in e-Medikation eingetragen wurden.</p>
+
+<p>In Arbeit.</p>
+
+<p><br/></p>
+
+<h4 id="sub_uc_emed_09_01_0x-durchgeführte-abgabe-mit-substitution-eines-medikaments-erfassen">Sub_UC_eMed_09_01_0x Durchgeführte Abgabe mit Substitution eines Medikaments erfassen</h4>
+
+<p>Eine Substitution eines Medikaments ist nur implizit ersichtich, durch die Referenz auf die zugehörige geplante Abgabe.</p>
+
+  <!-- Begrüdung verpflichtend? -->
+<p><br/></p>
+
+<h3 id="sub_uc_emed_09_02---durchgeführte-abgabe-verwerfen">Sub_UC_eMed_09_02 - Durchgeführte Abgabe verwerfen</h3>
+
+<p><a name="l901">​</a>Ein GDA (Apotheke) kann jede bestehende <a href="design_choices.html#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense">Durchgeführte Abgabe</a> aufgrund einer fehlerhaften Eingabe verwerfen (auch wenn er diese nicht selbst erstellt hat).</p>
+
+<p>Um eine <em>Durchgeführte Abgabe</em> zu verwerfen, ruft der GDA diese mittels GET MedicationDispense ab und bearbeitet diese wie folgt:</p>
+<ul>
+  <li>Der Status wird auf <em>entered-in-error</em> gesetzt,</li>
+  <li>der verantwortliche GDA (<em>requester</em>) und das Datum in <em>authoredOn</em> werden entsprechend aktualisiert.</li>
+</ul>
+
+<p>Die stornierte <em>Durchgeführte Abgabe</em> wird damit abgeschlossen, kann aber über die Historie eingesehen werden.
+  <!-- TODO: Suchparameter nach stornierten Durchgeführten Abgaben? -->
+  <!-- TODO: kann ein GDA (Apotheke) die Durchgeführte Abgabe eines anderen GDAs verwerfen oder nur die eigenen (wie im CDA)? Wenn auch fremde, woher soll er wissen, dass es ein Irrtum war? Begründung f Statuswechsel? -->
+  <!-- TODO: Wenn stornierte *Durchgeführte Abgabe* Teil eines e-Rezepts mit weiteren geplanten Abgaben ist: Auswirkungen? keine -->
+<br/></p>
+
+<h3 id="sub_uc_emed_09_03---durchgeführte-abgabe-löschen-durch-elga-teilnehmer">Sub_UC_eMed_09_03 - Durchgeführte Abgabe löschen (durch ELGA-Teilnehmer)</h3>
+
+<p>Der ELGA-Teilnehmer kann eine <em>Durchgeführte Abgabe</em> endgültig löschen.</p>
+
+<p>Die Löschung der <em>Durchgeführten Abgabe</em> umfasst:</p>
+
+<ul>
+  <li>die fachliche Entfernung der betreffenden MedicationDispense-Ressource sowie</li>
+  <li>die Entfernung aller zugehörigen historischen Ressourcenversionen (_history).</li>
+</ul>
+
+<p>Zum Löschen einer <em>Durchgeführte Abgabe</em> ruft der ELGA-Teilnehmer die betreffende <em>Durchgeführte Abgabe</em> im ELGA-Portal auf. Dieses führt zunächst eine Leseoperation auf die betreffende MedicationDispense-Ressource aus (GET MedicationDispense/[id]) und löscht anschließend die betreffende geplante Abgabe mittels DELETE (DELETE [base]/MedicationDispense/[id]).</p>
+
+<p>Die Ressource einschließlich aller historischen Versionen darf nach erfolgreicher Löschung weder über reguläre FHIR-Interaktionen noch über administrative Schnittstellen abrufbar sein.
+  <!-- Todo: Auswirkunung auf bestehende geplante Abgaben? Darf nicht wieder active werden --></p>
+
+  <!-- #### Beispiel
+
+#### Technische Hinweise
+
+#### Relevante Profile
+
+#### Relevante Invarianten
+
+#### Mögliche Notifications -->
+
+
+
+</div>
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /row -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-content -->
+
+<script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+<script src="assets/js/window-hash.js" type="text/javascript"> </script>
+<a name="bottom"> </a>
+<div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+<div class="container">    <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Sat, May 30, 2026 06:37+0000">2026-05-30</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    
+  </p>
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+<div class="container">    <!-- container -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+<script src="assets/js/respond.min.js" type="text/javascript"> </script>
+<script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+<script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+<script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+<script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+</body>
+</html>
