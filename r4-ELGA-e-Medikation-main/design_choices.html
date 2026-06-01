@@ -307,7 +307,7 @@ Dient einerseits der 1. Persistierung nach einem Plan-Write und 2. der Ausliefer
 <p>Nachdem die Fachanwendung beim <a href="interactions.html#plan-write">Plan-Write</a>, mittels <a href="design_choices.html#medikationsplan-transaction-bundle-atemedbundlemedikationsplantx-transaction-bundle">Medikationsplan-Transaction-Bundle</a> alle Ressourcen aktualisiert hat, erstellt diese ein <em>Medikationsplan-Collection-Bundle</em> zur <strong>Persistierung</strong>, welches den vom GDA übermittelten Medikationsplan <strong>unverändert</strong> (keine Statusänderungen oder Entfernung entsprechend markierten Planeinträgen) abbildet und die Gesamtheit aller referenzierten Ressourcen enthält. Dies stellt sicher, dass in den historischen Versionen des Medikationsplans alle relevanten Informationen verfügbar sind.</p>
 
 <h5 id="auslieferungs-medikationsplan-collection-bundle">Auslieferungs-Medikationsplan-Collection-Bundle</h5>
-<p>Bei einem <a href="interactions.html#plan-read">Plan-Read</a> wird von der Fachanwendung ein <strong>Auslieferungs-Bundle</strong> bereitgestellt und wie folgt <strong>angepasst</strong>: Es enthält den temporären List.identifier zur späteren Integritätsprüfung beim Schreibvorgang.
+<p>Bei einem <a href="interactions.html#plan-read">Plan-Read</a> wird von der Fachanwendung ein <strong>Auslieferungs-Bundle</strong> bereitgestellt und wie folgt <strong>angepasst</strong>: 
 Neue oder gänderte Planeinträge erhalten das List.entry.flag unchanged, zum Entfernen markierte Planeinträge (mit List.entry.flag <em>removed</em>) werden aus dem Medikationsplan entfernt.
 Wurden alle Planeinträge entfernt, erhält der Medikationsplan das List.emptyReason <em>nilknown</em>.</p>
 
@@ -355,7 +355,7 @@ Die <em>Durchgeführte Abgabe</em> enthält die abgegebene Medikation und deren 
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jun 1, 2026 11:23+0000">2026-06-01</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jun 1, 2026 11:34+0000">2026-06-01</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

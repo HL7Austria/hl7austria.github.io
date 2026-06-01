@@ -31,7 +31,7 @@ Nachdem die Fachanwendung beim [Plan-Write](interactions.md#plan-write), mittels
 
 ##### Auslieferungs-Medikationsplan-Collection-Bundle
 
-Bei einem [Plan-Read](interactions.md#plan-read) wird von der Fachanwendung ein **Auslieferungs-Bundle** bereitgestellt und wie folgt **angepasst**: Es enthält den temporären List.identifier zur späteren Integritätsprüfung beim Schreibvorgang. Neue oder gänderte Planeinträge erhalten das List.entry.flag unchanged, zum Entfernen markierte Planeinträge (mit List.entry.flag **removed**) werden aus dem Medikationsplan entfernt. Wurden alle Planeinträge entfernt, erhält der Medikationsplan das List.emptyReason **nilknown**.
+Bei einem [Plan-Read](interactions.md#plan-read) wird von der Fachanwendung ein **Auslieferungs-Bundle** bereitgestellt und wie folgt **angepasst**: Neue oder gänderte Planeinträge erhalten das List.entry.flag unchanged, zum Entfernen markierte Planeinträge (mit List.entry.flag **removed**) werden aus dem Medikationsplan entfernt. Wurden alle Planeinträge entfernt, erhält der Medikationsplan das List.emptyReason **nilknown**.
 
 #### Medikationsplan-Transaction-Bundle: AtEmedBundleMedikationsplanTx (Transaction Bundle)
 

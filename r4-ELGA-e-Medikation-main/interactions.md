@@ -13,14 +13,14 @@ Im Folgenden werden standardisierte Interaktionen für den lesenden und schreibe
 
 #### Plan-History-Read
 
-Beim Plan-History-Read stellt die Fachanwendung **die aktuelle oder historische Version(en)** des Medikationsplans ([persistiertes Medikationsplan-Collection-Bundle](design_choices.md#medikationsplan-collection-bundle-zur-persistierung) inkl. aller referenzierten Ressourcen) **unverändert** bereit.
+Beim Plan-History-Read stellt die Fachanwendung **die aktuelle oder historische Version(en)** des Medikationsplans ([persistiertes Medikationsplan-Collection-Bundle](design_choices.md#persistiertes-medikationsplan-collection-bundle) inkl. aller referenzierten Ressourcen) **unverändert** bereit.
 
 ##### Ablauf
 
-1. Der GDA führt ein**GET**auf das[persistierte Medikationsplan-Collection-Bundle](design_choices.md#medikationsplan-collection-bundle-zur-persistierung)aus, das den Medikationsplan mit allen zugehörigen relevanten Ressourcen enthält.
+1. Der GDA führt ein**GET**auf das[persistierte Medikationsplan-Collection-Bundle](design_choices.md#persistiertes-medikationsplan-collection-bundle)aus, das den Medikationsplan mit allen zugehörigen relevanten Ressourcen enthält.
 1. Die Fachanwendung prüft, ob ein Medikationsplan für den/die Patient:in existiert.
 1. Ist**kein Medikationsplan vorhanden**, wird ein**leeres Ergebnis**zurückgegeben.
-1. Ist ein Medikationsplan vorhanden, wird das zuletzt[persistierte Medikationsplan-Collection-Bundle](design_choices.md#medikationsplan-collection-bundle-zur-persistierung)zurückgeliefert.
+1. Ist ein Medikationsplan vorhanden, wird das zuletzt[persistierte Medikationsplan-Collection-Bundle](design_choices.md#persistiertes-medikationsplan-collection-bundle)zurückgeliefert.
 Das**Collection Bundle**enthält:
 
 * die List-Ressource des Medikationsplans 
@@ -36,7 +36,7 @@ Beim Plan-History-Read erfolgt **keine Veränderung** von Flags, Status oder Inh
 
 * **Aktuelle Planversion** mit dem Suchparameter Patient abrufen: GET [base]/Bundle?type=collection&_count=1&_sort=-timestamp&list.subject={bPK-GH}
 * **Alle Planversionen** mit dem Suchparameter Patient abrufen: GET [base]/Bundle?type=collection&_sort=-timestamp&list.subject={bPK-GH}
-* Abfrage aller **historischen Medikationsplan-Versionen** eines Patienten, die nach dem angegebenen Datum gespeichert wurden und Plan-Einträge enthalten, die als **storniert, beendet oder abgesetzt** gekennzeichnet sind: GET [base]/Bundle?type=collection&_sort=-timestamp&timestamp=ge2025-01-01&list.subject={bPK-GH}&list.entry.flag=removed (TODO query prüfen)
+* Abfrage aller **historischen Medikationsplan-Versionen** eines Patienten, die nach dem angegebenen Datum gespeichert wurden und Plan-Einträge enthalten, die als **storniert, beendet oder abgesetzt** gekennzeichnet sind: GET [base]/Bundle?type=collection&_sort=-timestamp&timestamp=ge2025-01-01&list.subject={bPK-GH}&list.entry.flag=removed
 
 #### Plan-Read
 
@@ -44,13 +44,11 @@ Plan-Read dient dem **Abruf des Medikationsplans und der Vorbereitung einer nach
 
 ##### Ablauf
 
-1. Der GDA führt ein[POST $plan-read](interactions.md#custom-operations)auf das Collection Bundle aus, das den Medikationsplan mit allen zugehörigen relevanten Ressourcen enthält.
+1. Der GDA führt ein POST[$plan-read](OperationDefinition-AtEmed.List.Planread.md)auf das Collection Bundle aus, das den Medikationsplan mit allen zugehörigen relevanten Ressourcen enthält.
 1. Die Fachanwendung prüft, ob ein Medikationsplan für den/die Patient:in existiert.
 1. Ist**kein Medikationsplan vorhanden**, wird dieser erstellt (siehe[Sub_UC_06_01 - Initial erstellter Medikationsplan](Sub_UC_eMed_06.md#sub_uc_06_01---initial-erstellter-medikationsplan)) und
 1. ein leerer Medikationsplan mit dem emptyReason**notstarted**wird zurückgeliefert.
-1. Existiert bereits ein Medikationsplan (d.h. es wurde bereits ein Collection Bundle persistiert), wird von der Fachanwendung aus diesem ein**Collection Bundle zur Auslieferung**bereitgestellt:
-
-* Die Inhalte werden von der Fachanwendung wie folgt aufbereitet:
+1. Existiert bereits ein Medikationsplan (d.h. es wurde bereits ein[Medikationsplan-Collection-Bundle persistiert](design_choices.md#persistiertes-medikationsplan-collection-bundle)), wird von der Fachanwendung aus diesem ein[Collection Bundle zur Auslieferung](design_choices.md#auslieferungs-medikationsplan-collection-bundle)bereitgestellt. Die Inhalte werden von der Fachanwendung wie folgt aufbereitet:
 
 * Falls der vorherige GDA neue Medikationsplaneinträge hinzugefügt oder bestehende geändert hat (List.entry.flag haben den Wert **new** oder **changed**), werden diese auf **unchanged** gesetzt.
 
@@ -61,9 +59,9 @@ Plan-Read dient dem **Abruf des Medikationsplans und der Vorbereitung einer nach
 * Einträge mit abgelaufenem Behandlungszeitraum bleiben erhalten.
  
 
-1. Die Fachanwendung liefert das**Collection Bundle**an den GDA:
+1. Die Fachanwendung liefert das[Auslieferungs-Medikationsplan-Collection-Bundle](design_choices.md#auslieferungs-medikationsplan-collection-bundle)an den GDA:
 
-* inkl. ETag für [optimistisches Locking](https://hl7.org/fhir/http.html#concurrency)
+* inkl. ETag für [Optimistic Locking](https://hl7.org/fhir/http.html#concurrency)
 * inkl. List und aller referenzierten Ressourcen (inline)
 
 * Ziel ist ein neutraler, weiterbearbeitbarer Zustand für den abrufenden GDA
@@ -83,16 +81,16 @@ Plan-Write ist eine eigenständige Operation, die ausschließlich im Kontext ein
 
 ##### Ablauf
 
-1. Der GDA übermittelt via[POST $plan-write](interactions.md#custom-operations-1)den aktualisierten Medikationsplan als**Transaction Bundle**:
+1. Der GDA übermittelt via POST[$plan-write](OperationDefinition-AtEmed.List.Write.md)den aktualisierten Medikationsplan als[Medikationsplan-Transaction-Bundle](design_choices.md#medikationsplan-transaction-bundle-atemedbundlemedikationsplantx-transaction-bundle)inkl. ETag für[Optimistic Locking](https://hl7.org/fhir/http.html#concurrency):
 * alle **neuen und geänderten und zu entfernenden Ressourcen** sind **inline** im Bundle enthalten,
 * alle unveränderten Ressourcen werden nur referenziert.
 
-1. Die Fachanwendung prüft, ob der übermittelte**List.identifier**mit dem List.identifier der temporär gespeicherten Medikationsplanversion**übereinstimmt**(d.h. es wurde zwischenzeitlich kein anderer Schreibvorgang durchgeführt).
-1. Stimmt der List.identifier nicht überein, lehnt die Fachanwendung das Speichern des Medikationsplans ab. Es muss erneut ein Plan-Read ausgeführt werden und die Aktualisierungen übernommen werden bzw. Fehler behoben werden, bevor ein neuerlicher Speicherversuch vorgenommen werden kann.
+1. Die Fachanwendung prüft, ob der im Header übermittelte**ETag**mit dem ETag der Fachanwendung**übereinstimmt**(d.h. es wurde zwischenzeitlich kein Medikationsplan gespeichert).
+1. Stimmt der ETag nicht überein, lehnt die Fachanwendung das Speichern des Medikationsplans ab. Es muss erneut ein[Plan-Read](interactions.md#plan-read)ausgeführt werden und die Aktualisierungen übernommen werden bzw. Fehler behoben werden, bevor ein neuerlicher Speicherversuch vorgenommen werden kann.
 1. Wenn kein Fehler auftritt, validiert die Fachanwendung den neuen Plan und stellt sicher, dass keine unzulässigen Zustandsübergänge vorgenommen wurden.
 1. Bei erfolgreicher Prüfung:
 * werden die übermittelten Änderungen in die Ressourcen übernommen.
-* Auf Basis der aktualisierten Ressourcen erstellt die Fachanwendung ein neues Collection Bundle, das als **neuer Medikationsplan persistiert** wird.
+* Auf Basis der aktualisierten Ressourcen erstellt die Fachanwendung ein neues [Medikationsplan-Collection-Bundle](design_choices.md#persistiertes-medikationsplan-collection-bundle), das als **neuer Medikationsplan persistiert** wird.
 
 1. Der GDA erhält eine Meldung, dass der Medikationsplan erfolgreich aktualisiert wurde.
 
@@ -110,26 +108,25 @@ Plan-Write ist eine eigenständige Operation, die ausschließlich im Kontext ein
 
 ##### Ablauf
 
-1. **GDA 1**möchte den Medikationsplan seiner Patientin bearbeiten und führt ein[POST $plan-read](interactions.md#custom-operations)auf das Collection Bundle des Medikationsplans aus.
-1. Die Fachanwendung prüft, ob ein Medikationsplan für den/die Patient:in existiert (Siehe[Plan-Read](interactions.md#plan-read)). Annahme: Es ist bereits ein Medikationsplan vorhanden.
-1. Die Fachanwendung erstellt ein**Collection Bundle zur Auslieferung**(Siehe[Plan-Read](interactions.md#plan-read)) mit dem temporären**List.identifier**"123"
-1. Die Fachanwendung liefert das Collection Bundle an den GDA 1.
+1. **GDA 1**möchte den Medikationsplan seiner Patientin bearbeiten und führt ein POST[$plan-read](OperationDefinition-AtEmed.List.Planread.md)auf das Collection Bundle des Medikationsplans aus.
+1. Die Fachanwendung prüft, ob ein Medikationsplan für den/die Patient:in existiert (siehe[Plan-Read](interactions.md#plan-read)). Annahme: Es ist bereits ein Medikationsplan vorhanden.
+1. Die Fachanwendung erstellt ein**Auslieferungs-Medikationsplan-Collection-Bundle**(Siehe[Plan-Read](interactions.md#plan-read))
+1. Die Fachanwendung liefert das Collection Bundle inkl. ETag "123" an den GDA 1.
 1. GDA 1 bearbeitet den Medikationsplan.
-1. **GDA 2**führt ein POST $plan-read auf den Medikationsplan aus, während GDA 1 das von der Fachanwendung übermittelte Collection Bundle bearbeitet.
+1. **GDA 2**führt ein POST[$plan-read](OperationDefinition-AtEmed.List.Planread.md)auf den Medikationsplan aus, während GDA 1 das von der Fachanwendung übermittelte Collection Bundle bearbeitet.
 1. Die Fachanwendung prüft erfolgreich, ob ein Medikationsplan für den/die Patient:in existiert.
-1. Die Fachanwendung erstellt, genau wie für GDA 1, ein**Collection Bundle zur Auslieferung**(Siehe[Plan-Read](interactions.md#plan-read)) mit dem temporären**List.identifier**"123"
-1. Die Fachanwendung liefert das Collection Bundle an den GDA 2.
+1. Die Fachanwendung erstellt, genau wie für GDA 1, ein**Auslieferungs-Medikationsplan-Collection-Bundle**(siehe[Plan-Read](interactions.md#plan-read))
+1. Die Fachanwendung liefert das Collection Bundle inkl. ETag "123" an den GDA 2.
 1. GDA 2**bearbeitet zeitgleich**mit GDA 1 den Medikationsplan.
-1. **GDA 2 sendet zuerst**mittels POST $plan-write ein Transaction Bundle mit dem aktualisierten Medikationsplan.
-1. Die Fachanwendung prüft, ob der temporär in der Fachanwendung vorgehaltene**List.identifier**mit dem im Transaction Bundle verwendeten List.identifier**übereinstimmt**. Beide haben den Wert "123".
-1. Die Fachanwendung validert den neuen Plan (keine unzulässigen Zustandsübergänge)
-1. Die Prüfung verläuft erfolgreich, der**neue Medikationsplan**mit List.identifier "123" wird**persistiert**.
-1. Die Fachanwendung**löscht**den**temporären List.identifier**"123".
+1. **GDA 2 sendet zuerst**mittels POST[$plan-write](OperationDefinition-AtEmed.List.Write.md)ein[Medikationsplan-Transaction-Bundle](design_choices.md#medikationsplan-transaction-bundle-atemedbundlemedikationsplantx-transaction-bundle)mit dem aktualisierten Medikationsplan und übermittelt den ETag "123".
+1. Die Fachanwendung prüft, ob der im Header übermittelte**ETag**mit dem ETag der Fachanwendung**übereinstimmt**. Beide haben den Wert "123".
+1. Die Fachanwendung validert den neuen Plan bezüglich (keine unzulässigen Zustandsübergänge)
+1. Die Prüfung verläuft erfolgreich, der**neue Medikationsplan**wird**persistiert**inkl. neuer ETag "124".
 1. GDA 2 erhält eine Meldung, dass der Medikationsplan erfolgreich aktualisiert wurde.
-1. GDA 1 sendet mittels POST $plan-write ein Transaction Bundle mit dem aktualisierten Medikationsplan mit List.identifier "123".
-1. Die Prüfung auf Übereinstimmung des von GDA 1 verwendeten List.identifier und dem von der der Fachanwendung vorgehaltenen temporären identifer schlägt fehl.
+1. GDA 1 sendet mittels POST[$plan-write](OperationDefinition-AtEmed.List.Write.md)ein[Medikationsplan-Transaction-Bundle](design_choices.md#medikationsplan-transaction-bundle-atemedbundlemedikationsplantx-transaction-bundle)mit dem aktualisierten Medikationsplan und übermittelt den ETag "123".
+1. Die Prüfung auf Übereinstimmung der ETags von GDA 1 mit dem der Fachanwendung schlägt fehl.
 1. Die Fachanwendung**lehnt das Speichern ab**.
-1. GDA 1 erhält eine**Fehlermeldung**und muss ein erneutes Plan-Read ausführen, welches das Generieren eines zur Auslieferung bereitgestellten temporären Collection Bundles inkl. neuem List.identifiers auslöst.
+1. GDA 1 erhält eine**Fehlermeldung**und muss ein erneutes Plan-Read ausführen, welches das Generieren eines neuen**Auslieferungs-Medikationsplan-Collection-Bundle**auslöst und mit dem aktuellen ETag übermittelt wird.
 
 ##### Sequenzdiagramm Abgelehntes Plan-Write
 
