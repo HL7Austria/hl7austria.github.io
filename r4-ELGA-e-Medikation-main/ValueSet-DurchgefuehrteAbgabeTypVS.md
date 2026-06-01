@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/ValueSet/DurchgefuehrteAbgabeTypVS | *Version*:0.1.1 | |
-| Draft as of 2026-05-28 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:DurchgefuehrteAbgabeTypVS |
+| Draft as of 2026-06-01 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:DurchgefuehrteAbgabeTypVS |
 
  
 ValueSet für zulässige Ausprägungen eines Typs einer durchgeführten Abgabe (MedicationDispense). 
@@ -53,7 +53,7 @@ No Expansion for this valueset (Unsupported Code System Version)
   "title" : "ELGA e-Med Durchgeführte Abgabe Typ Value Set",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-05-28T11:16:16+00:00",
+  "date" : "2026-06-01T11:23:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

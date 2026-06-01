@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-dosierung | *Version*:0.1.1 | |
-| Draft as of 2026-05-28 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedDosageDosierung |
+| Draft as of 2026-06-01 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedDosageDosierung |
 
  
 AT ELGA e-Medikation Dosage Dosierung 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-dosage-
   "name" : "AtElgaEmedDosageDosierung",
   "title" : "AT ELGA e-Medikation Dosage Dosierung",
   "status" : "draft",
-  "date" : "2026-05-28T11:16:16+00:00",
+  "date" : "2026-06-01T11:23:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -104,7 +104,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-dosage-
       "short" : "Zeitpunkt oder Zeitraum der Einnahme des Medikaments. \nUm widersprüchliche Anweisungen zu vermeiden, ist entweder Dosage.timing oder Dosage.text zu befüllen.",
       "type" : [{
         "code" : "Timing",
-        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-timing-zeiten"]
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-timing"]
       }],
       "mustSupport" : true
     },

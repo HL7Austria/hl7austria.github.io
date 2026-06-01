@@ -12,7 +12,7 @@ Ein GDA kann basierend auf einem **bestehenden** [Medikationsplaneintrag](design
 
 Sollte für die **Geplante Abgabe** noch kein Medikationsplaneintrag existieren, muss dieser zuerst erstellt werden (siehe [Sub_UC_eMed_06_03 - Medikationsplaneintrag in Medikationsplan hinzufügen](Sub_UC_eMed_06.md#sub_uc_emed_06_03---medikationsplaneintrag-in-medikationsplan-hinzufügen)). Bei Bedarf kann ein bestehender Medikationsplaneintrag angepasst werden (siehe [Sub_UC_eMed_06_06 - Medikationsplaneintrag im Medikationsplan ändern](Sub_UC_eMed_06.md#sub_uc_emed_06_06---medikationsplaneintrag-im-medikationsplan-ändern)).
 
-Ist keine Anpassung des Medikationsplaneintrags erforderlich, führt der GDA ein [$readtowrite](interactions.md#read-to-write-zugriff) aus und erhält von der Fachanwendung das [Auslieferungs-Collection-Bundle](design_choices.md#medikationsplan-collection-bundle-zur-auslieferung-des-medikationsplans-bei-einem-read-to-write-zugriff), das den Medikationsplan mit allen relevanten Ressourcen enthält. Basierend auf darin vorhandenen Planeinträgen erstellt der GDA neue **Geplante Abgabe**n wie folgt:
+Ist keine Anpassung des Medikationsplaneintrags erforderlich, führt der GDA ein [$plan-read](interactions.md#plan-read) aus und erhält von der Fachanwendung das [Auslieferungs-Collection-Bundle](design_choices.md#auslieferungs-medikationsplan-collection-bundle), das den Medikationsplan mit allen relevanten Ressourcen enthält. Basierend auf darin vorhandenen Planeinträgen erstellt der GDA neue **Geplante Abgabe**n wie folgt:
 
 * Der Status der neuen geplanten Abgabe muss **offen** sein (**active**)
 * Die **Rezeptart** muss verpflichtend ausgewählt werden (**Kassenrezept, Privatrezept** oder **Substitutionsrezept**)

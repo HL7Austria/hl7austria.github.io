@@ -6,7 +6,7 @@
 
 ## Example Substance: Beispiel Example: Substance Hydrocortison
 
-Profile: [At ELGA e-Medikation Substance Substanz](StructureDefinition-at-elga-emed-substance-substanz.md)
+Profile: [At ELGA e-Medikation Substance Wirkstoff](StructureDefinition-at-elga-emed-substance-wirkstoff.md)
 
 **status**: Active
 
@@ -21,7 +21,7 @@ Profile: [At ELGA e-Medikation Substance Substanz](StructureDefinition-at-elga-e
   "resourceType" : "Substance",
   "id" : "At-Emed-Example-Substance-Hydrocortison",
   "meta" : {
-    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-substance-substanz"]
+    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-substance-wirkstoff"]
   },
   "status" : "active",
   "code" : {

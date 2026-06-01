@@ -11,7 +11,7 @@
   <name value="ELGAeMedikationR4"/>
   <title value="ELGA e-Medikation (R4) DRAFT"/>
   <status value="draft"/>
-  <date value="2026-05-28T11:16:16+00:00"/>
+  <date value="2026-06-01T11:23:56+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -526,7 +526,7 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/at-elga-emed-medikationdispense-durchgefuehrteAbgabe"/>
+        <reference value="StructureDefinition/at-elga-emed-medikationdispense-durchgefuehrteabgabe"/>
       </reference>
       <name value="AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe"/>
       <description value="Dokumentiert eine durchgeführte Abgabe eines Arzneimittels (&quot;MedicationDispense&quot;-Ressource). &#xA;In der durchgeführten Abgabe können Abweichungen hinsichtlich des Medikaments und dessen Dosierung dokumentiert werden.&#xA;Sofern eine zugehörige geplante Abgabe vorliegt, muss diese mit dem zugehörigen Planeintrag referenziert werden. Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige geplante Abgabe, ersichtlich."/>
@@ -559,10 +559,10 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/at-elga-emed-substance-substanz"/>
+        <reference value="StructureDefinition/at-elga-emed-substance-wirkstoff"/>
       </reference>
-      <name value="At ELGA e-Medikation Substance Substanz"/>
-      <description value="Dokumentation der Substanz eines Inhaltsstoffes eines Arzneimittels in der ELGA e-Medikation, sofern es nicht kodiert vorliegt."/>
+      <name value="At ELGA e-Medikation Substance Wirkstoff"/>
+      <description value="Dokumentation des Wirkstoffs eines Arzneimittels in der ELGA e-Medikation, sofern es nicht kodiert vorliegt."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -570,10 +570,10 @@
         <valueString value="StructureDefinition:complex-type"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/at-elga-emed-timing-zeiten"/>
+        <reference value="StructureDefinition/at-elga-emed-timing"/>
       </reference>
-      <name value="AT ELGA e-Medikation Timing Zeiten"/>
-      <description value="AT ELGA e-Medikation Timing Zeiten"/>
+      <name value="AT ELGA e-Medikation Timing"/>
+      <description value="AT ELGA e-Medikation Timing"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -596,7 +596,7 @@
       </reference>
       <name value="Beispiel Durchgeführte Abgabe 1"/>
       <description value="Beispiel Durchgeführte Abgabe 1"/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medikationdispense-durchgefuehrteAbgabe"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medikationdispense-durchgefuehrteabgabe"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -618,7 +618,7 @@
       </reference>
       <name value="Beispiel Example: Substance Clotrimazol"/>
       <description value="Beispiel einer Substance Clotrimazol."/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-substance-substanz"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-substance-wirkstoff"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -629,7 +629,7 @@
       </reference>
       <name value="Beispiel Example: Substance Hydrocortison"/>
       <description value="Beispiel einer Substance Hydrocortison."/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-substance-substanz"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-substance-wirkstoff"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -889,10 +889,10 @@
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
-        <reference value="OperationDefinition/AtEmed.List.Readtowrite"/>
+        <reference value="OperationDefinition/AtEmed.List.PlanRead"/>
       </reference>
-      <name value="e-Med Operation für Read-to-Write"/>
-      <description value="Die $readtowrite Operation wird aufgerufen, wenn ein Medikationsplan mit der Intention zu schreiben gelesen wird."/>
+      <name value="e-Med Operation für Plan-Read"/>
+      <description value="Die $plan-read Operation wird aufgerufen, wenn ein Medikationsplan mit der Intention zu schreiben gelesen wird."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -900,10 +900,10 @@
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
-        <reference value="OperationDefinition/AtEmed.List.Write"/>
+        <reference value="OperationDefinition/AtEmed.List.PlanWrite"/>
       </reference>
-      <name value="e-Med Operation für Write des Medikationsplans"/>
-      <description value="Die $write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird."/>
+      <name value="e-Med Operation für Plan-Write"/>
+      <description value="Die $plan-write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

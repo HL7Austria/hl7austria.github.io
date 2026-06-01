@@ -23,19 +23,19 @@ Abhängig vom List.entry.flag kann der Medikationsplaneintrag nur eingeschränkt
 
 #### Medikationsplan-Collection-Bundle: AtEmedBundleMedikationsplan (Collection Bundle)
 
-Version des Medikationsplans inklusive aller relevanten Ressourcen (List, MedicationRequests, Patient, Practitioners) wird durch eine **Bundle**-Ressource vom Typ Collection abgebildet. Dient einerseits der 1. Persistierung nach einem Write-Zugriff und 2. der Auslieferung des Medikationsplans bei einem Read-to-Write-Zugriff an den GDA.
+Version des Medikationsplans inklusive aller relevanten Ressourcen (List, MedicationRequests, Patient, Practitioners) wird durch eine **Bundle**-Ressource vom Typ Collection abgebildet. Dient einerseits der 1. Persistierung nach einem Plan-Write und 2. der Auslieferung des Medikationsplans bei einem Plan-Read-Zugriff an den GDA.
 
-##### Medikationsplan-Collection-Bundle zur Persistierung nach einem Write-Zugriff
+##### Persistiertes Medikationsplan-Collection-Bundle
 
-Nachdem die Fachanwendung beim [Write-Zugriff](interactions.md#write-zugriff), mittels [Medikationsplan-Transaction-Bundle](design_choices.md#medikationsplan-transaction-bundle-atemedbundlemedikationsplantx-transaction-bundle) alle Ressourcen aktualisiert hat, erstellt diese ein **Medikationsplan-Collection-Bundle** zur **Persistierung**, welches den vom GDA übermittelten Medikationsplan **unverändert** (keine Statusänderungen oder Entfernung entsprechend markierten Planeinträgen) abbildet und die Gesamtheit aller referenzierten Ressourcen enthält. Dies stellt sicher, dass in den historischen Versionen des Medikationsplans alle relevanten Informationen verfügbar sind.
+Nachdem die Fachanwendung beim [Plan-Write](interactions.md#plan-write), mittels [Medikationsplan-Transaction-Bundle](design_choices.md#medikationsplan-transaction-bundle-atemedbundlemedikationsplantx-transaction-bundle) alle Ressourcen aktualisiert hat, erstellt diese ein **Medikationsplan-Collection-Bundle** zur **Persistierung**, welches den vom GDA übermittelten Medikationsplan **unverändert** (keine Statusänderungen oder Entfernung entsprechend markierten Planeinträgen) abbildet und die Gesamtheit aller referenzierten Ressourcen enthält. Dies stellt sicher, dass in den historischen Versionen des Medikationsplans alle relevanten Informationen verfügbar sind.
 
-##### Medikationsplan-Collection-Bundle zur Auslieferung des Medikationsplans bei einem Read-to-Write-Zugriff
+##### Auslieferungs-Medikationsplan-Collection-Bundle
 
-Bei einem [Read-to-Write-Zugriff](interactions.md#read-to-write-zugriff) wird von der Fachanwendung ein **Auslieferungs-Bundle** bereitgestellt und wie folgt **angepasst**: Es enthält den temporären List.identifier zur späteren Integritätsprüfung beim Schreibvorgang. Neue oder gänderte Planeinträge erhalten das List.entry.flag unchanged, zum Entfernen markierte Planeinträge (mit List.entry.flag **removed**) werden aus dem Medikationsplan entfernt. Wurden alle Planeinträge entfernt, erhält der Medikationsplan das List.emptyReason **nilknown**.
+Bei einem [Plan-Read](interactions.md#plan-read) wird von der Fachanwendung ein **Auslieferungs-Bundle** bereitgestellt und wie folgt **angepasst**: Es enthält den temporären List.identifier zur späteren Integritätsprüfung beim Schreibvorgang. Neue oder gänderte Planeinträge erhalten das List.entry.flag unchanged, zum Entfernen markierte Planeinträge (mit List.entry.flag **removed**) werden aus dem Medikationsplan entfernt. Wurden alle Planeinträge entfernt, erhält der Medikationsplan das List.emptyReason **nilknown**.
 
 #### Medikationsplan-Transaction-Bundle: AtEmedBundleMedikationsplanTx (Transaction Bundle)
 
-Ein Bundle vom Typ Transaction, das beim [Write-Zugriff](interactions.md#write-zugriff) auf den Medikationsplan an die Fachanwendung übermittelt wird. Das Bundle enthält den [Medikationsplan](design_choices.md#medikationsplan-atelgaemedlistmedikationsplan-list) mit Referenzen auf die [Medikationsplaneinträge](design_choices.md#medikationsplaneintrag-bzw-planeintrag-atelgaemedmedicationrequestplaneintrag-medicationrequest). Alle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert.
+Ein Bundle vom Typ Transaction, das beim [Plan-Write](interactions.md#plan-write) auf den Medikationsplan an die Fachanwendung übermittelt wird. Das Bundle enthält den [Medikationsplan](design_choices.md#medikationsplan-atelgaemedlistmedikationsplan-list) mit Referenzen auf die [Medikationsplaneinträge](design_choices.md#medikationsplaneintrag-bzw-planeintrag-atelgaemedmedicationrequestplaneintrag-medicationrequest). Alle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert.
 
 Das Transaction Bundle dient der Aktualisierung aller enthaltenen Ressourcen und wird selbst nicht persisitert.
 

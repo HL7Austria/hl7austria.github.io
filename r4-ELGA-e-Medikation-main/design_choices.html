@@ -301,19 +301,19 @@ Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstell
 <h4 id="medikationsplan-collection-bundle-atemedbundlemedikationsplan-collection-bundle">Medikationsplan-Collection-Bundle: AtEmedBundleMedikationsplan (<em>Collection Bundle</em>)</h4>
 
 <p>Version des Medikationsplans inklusive aller relevanten Ressourcen (List, MedicationRequests, Patient, Practitioners) wird durch eine <em>Bundle</em>-Ressource vom Typ Collection abgebildet.
-Dient einerseits der 1. Persistierung nach einem Write-Zugriff und 2. der Auslieferung des Medikationsplans bei einem Read-to-Write-Zugriff an den GDA.</p>
+Dient einerseits der 1. Persistierung nach einem Plan-Write und 2. der Auslieferung des Medikationsplans bei einem Plan-Read-Zugriff an den GDA.</p>
 
-<h5 id="medikationsplan-collection-bundle-zur-persistierung-nach-einem-write-zugriff">Medikationsplan-Collection-Bundle zur Persistierung nach einem Write-Zugriff</h5>
-<p>Nachdem die Fachanwendung beim <a href="interactions.html#write-zugriff">Write-Zugriff</a>, mittels <a href="design_choices.html#medikationsplan-transaction-bundle-atemedbundlemedikationsplantx-transaction-bundle">Medikationsplan-Transaction-Bundle</a> alle Ressourcen aktualisiert hat, erstellt diese ein <em>Medikationsplan-Collection-Bundle</em> zur <strong>Persistierung</strong>, welches den vom GDA übermittelten Medikationsplan <strong>unverändert</strong> (keine Statusänderungen oder Entfernung entsprechend markierten Planeinträgen) abbildet und die Gesamtheit aller referenzierten Ressourcen enthält. Dies stellt sicher, dass in den historischen Versionen des Medikationsplans alle relevanten Informationen verfügbar sind.</p>
+<h5 id="persistiertes-medikationsplan-collection-bundle">Persistiertes Medikationsplan-Collection-Bundle</h5>
+<p>Nachdem die Fachanwendung beim <a href="interactions.html#plan-write">Plan-Write</a>, mittels <a href="design_choices.html#medikationsplan-transaction-bundle-atemedbundlemedikationsplantx-transaction-bundle">Medikationsplan-Transaction-Bundle</a> alle Ressourcen aktualisiert hat, erstellt diese ein <em>Medikationsplan-Collection-Bundle</em> zur <strong>Persistierung</strong>, welches den vom GDA übermittelten Medikationsplan <strong>unverändert</strong> (keine Statusänderungen oder Entfernung entsprechend markierten Planeinträgen) abbildet und die Gesamtheit aller referenzierten Ressourcen enthält. Dies stellt sicher, dass in den historischen Versionen des Medikationsplans alle relevanten Informationen verfügbar sind.</p>
 
-<h5 id="medikationsplan-collection-bundle-zur-auslieferung-des-medikationsplans-bei-einem-read-to-write-zugriff">Medikationsplan-Collection-Bundle zur Auslieferung des Medikationsplans bei einem Read-to-Write-Zugriff</h5>
-<p>Bei einem <a href="interactions.html#read-to-write-zugriff">Read-to-Write-Zugriff</a> wird von der Fachanwendung ein <strong>Auslieferungs-Bundle</strong> bereitgestellt und wie folgt <strong>angepasst</strong>: Es enthält den temporären List.identifier zur späteren Integritätsprüfung beim Schreibvorgang.
+<h5 id="auslieferungs-medikationsplan-collection-bundle">Auslieferungs-Medikationsplan-Collection-Bundle</h5>
+<p>Bei einem <a href="interactions.html#plan-read">Plan-Read</a> wird von der Fachanwendung ein <strong>Auslieferungs-Bundle</strong> bereitgestellt und wie folgt <strong>angepasst</strong>: Es enthält den temporären List.identifier zur späteren Integritätsprüfung beim Schreibvorgang.
 Neue oder gänderte Planeinträge erhalten das List.entry.flag unchanged, zum Entfernen markierte Planeinträge (mit List.entry.flag <em>removed</em>) werden aus dem Medikationsplan entfernt.
 Wurden alle Planeinträge entfernt, erhält der Medikationsplan das List.emptyReason <em>nilknown</em>.</p>
 
 <h4 id="medikationsplan-transaction-bundle-atemedbundlemedikationsplantx-transaction-bundle">Medikationsplan-Transaction-Bundle: AtEmedBundleMedikationsplanTx (<em>Transaction Bundle</em>)</h4>
 
-<p>Ein Bundle vom Typ Transaction, das beim <a href="interactions.html#write-zugriff">Write-Zugriff</a> auf den Medikationsplan an die Fachanwendung übermittelt wird. 
+<p>Ein Bundle vom Typ Transaction, das beim <a href="interactions.html#plan-write">Plan-Write</a> auf den Medikationsplan an die Fachanwendung übermittelt wird. 
 Das Bundle enthält den <a href="design_choices.html#medikationsplan-atelgaemedlistmedikationsplan-list">Medikationsplan</a> mit Referenzen auf die <a href="design_choices.html#medikationsplaneintrag-bzw-planeintrag-atelgaemedmedicationrequestplaneintrag-medicationrequest">Medikationsplaneinträge</a>. Alle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert.</p>
 
 <p>Das Transaction Bundle dient der Aktualisierung aller enthaltenen Ressourcen und wird selbst nicht persisitert.</p>
@@ -355,7 +355,7 @@ Die <em>Durchgeführte Abgabe</em> enthält die abgegebene Medikation und deren 
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Thu, May 28, 2026 11:16+0000">2026-05-28</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jun 1, 2026 11:23+0000">2026-06-01</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

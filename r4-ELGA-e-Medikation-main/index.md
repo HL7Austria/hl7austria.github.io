@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-05-28T11:16:16+00:00",
+  "date" : "2026-06-01T11:23:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -715,7 +715,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-elga-emed-medikationdispense-durchgefuehrteAbgabe"
+        "reference" : "StructureDefinition/at-elga-emed-medikationdispense-durchgefuehrteabgabe"
       },
       "name" : "AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe",
       "description" : "Dokumentiert eine durchgeführte Abgabe eines Arzneimittels (\"MedicationDispense\"-Ressource). \nIn der durchgeführten Abgabe können Abweichungen hinsichtlich des Medikaments und dessen Dosierung dokumentiert werden.\nSofern eine zugehörige geplante Abgabe vorliegt, muss diese mit dem zugehörigen Planeintrag referenziert werden. Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige geplante Abgabe, ersichtlich.",
@@ -751,10 +751,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-elga-emed-substance-substanz"
+        "reference" : "StructureDefinition/at-elga-emed-substance-wirkstoff"
       },
-      "name" : "At ELGA e-Medikation Substance Substanz",
-      "description" : "Dokumentation der Substanz eines Inhaltsstoffes eines Arzneimittels in der ELGA e-Medikation, sofern es nicht kodiert vorliegt.",
+      "name" : "At ELGA e-Medikation Substance Wirkstoff",
+      "description" : "Dokumentation des Wirkstoffs eines Arzneimittels in der ELGA e-Medikation, sofern es nicht kodiert vorliegt.",
       "exampleBoolean" : false
     },
     {
@@ -763,10 +763,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "valueString" : "StructureDefinition:complex-type"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-elga-emed-timing-zeiten"
+        "reference" : "StructureDefinition/at-elga-emed-timing"
       },
-      "name" : "AT ELGA e-Medikation Timing Zeiten",
-      "description" : "AT ELGA e-Medikation Timing Zeiten",
+      "name" : "AT ELGA e-Medikation Timing",
+      "description" : "AT ELGA e-Medikation Timing",
       "exampleBoolean" : false
     },
     {
@@ -791,7 +791,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       "name" : "Beispiel Durchgeführte Abgabe 1",
       "description" : "Beispiel Durchgeführte Abgabe 1",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medikationdispense-durchgefuehrteAbgabe"
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medikationdispense-durchgefuehrteabgabe"
     },
     {
       "extension" : [{
@@ -815,7 +815,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       "name" : "Beispiel Example: Substance Clotrimazol",
       "description" : "Beispiel einer Substance Clotrimazol.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-substance-substanz"
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-substance-wirkstoff"
     },
     {
       "extension" : [{
@@ -827,7 +827,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       "name" : "Beispiel Example: Substance Hydrocortison",
       "description" : "Beispiel einer Substance Hydrocortison.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-substance-substanz"
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-substance-wirkstoff"
     },
     {
       "extension" : [{
@@ -1111,10 +1111,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "valueString" : "OperationDefinition"
       }],
       "reference" : {
-        "reference" : "OperationDefinition/AtEmed.List.Readtowrite"
+        "reference" : "OperationDefinition/AtEmed.List.PlanRead"
       },
-      "name" : "e-Med Operation für Read-to-Write",
-      "description" : "Die $readtowrite Operation wird aufgerufen, wenn ein Medikationsplan mit der Intention zu schreiben gelesen wird.",
+      "name" : "e-Med Operation für Plan-Read",
+      "description" : "Die $plan-read Operation wird aufgerufen, wenn ein Medikationsplan mit der Intention zu schreiben gelesen wird.",
       "exampleBoolean" : false
     },
     {
@@ -1123,10 +1123,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "valueString" : "OperationDefinition"
       }],
       "reference" : {
-        "reference" : "OperationDefinition/AtEmed.List.Write"
+        "reference" : "OperationDefinition/AtEmed.List.PlanWrite"
       },
-      "name" : "e-Med Operation für Write des Medikationsplans",
-      "description" : "Die $write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird.",
+      "name" : "e-Med Operation für Plan-Write",
+      "description" : "Die $plan-write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird.",
       "exampleBoolean" : false
     },
     {

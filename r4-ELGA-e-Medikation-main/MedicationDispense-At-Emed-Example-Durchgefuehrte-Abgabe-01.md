@@ -6,7 +6,7 @@
 
 ## Example MedicationDispense: Beispiel Durchgeführte Abgabe 1
 
-Profile: [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medikationdispense-durchgefuehrteAbgabe.md)
+Profile: [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medikationdispense-durchgefuehrteabgabe.md)
 
 **R5: When the recording of the dispense started (new)**: 2026-02-27 10:20:00+0000
 
@@ -40,7 +40,7 @@ Profile: [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](Structu
   "resourceType" : "MedicationDispense",
   "id" : "At-Emed-Example-Durchgefuehrte-Abgabe-01",
   "meta" : {
-    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medikationdispense-durchgefuehrteAbgabe"]
+    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medikationdispense-durchgefuehrteabgabe"]
   },
   "extension" : [{
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.recorded",
