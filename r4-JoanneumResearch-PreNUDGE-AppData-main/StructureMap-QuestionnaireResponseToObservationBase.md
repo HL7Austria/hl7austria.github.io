@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase | *Version*:0.1.0 | |
-| Active as of 2026-05-18 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:QuestionnaireResponseToObservationBase |
+| Active as of 2026-06-01 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:QuestionnaireResponseToObservationBase |
 
  
 Shared base for Q to O 
@@ -27,7 +27,7 @@ Shared base for Q to O
   "name" : "QuestionnaireResponseToObservationBase",
   "title" : "Shared base for Q to O",
   "status" : "active",
-  "date" : "2026-05-18T10:23:40+00:00",
+  "date" : "2026-06-01T14:49:28+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

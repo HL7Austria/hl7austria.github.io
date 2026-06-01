@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-whoqol-bref-score-observation | *Version*:0.1.0 | |
-| Draft as of 2026-05-18 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationWHOQOLBrefScore |
+| Draft as of 2026-06-01 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationWHOQOLBrefScore |
 
  
 Observation profile for recording WHOQOL-BREF domain scores. The overall score is represented in Observation.value, individual domain scores are recorded as components. 
@@ -18,7 +18,7 @@ Observation profile for recording WHOQOL-BREF domain scores. The overall score i
 
 * Examples for this Profile: [Observation/whoqol-bref-score-example](Observation-whoqol-bref-score-example.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.prenudge.appdata.r4|current/StructureDefinition/at-prenudge-whoqol-bref-score-observation)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.prenudge.appdata.r4|current/StructureDefinition/StructureDefinition-at-prenudge-whoqol-bref-score-observation.json)
 
 ### Formal Views of Profile Content
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-whoqol-b
   "name" : "AtPrenudgeObservationWHOQOLBrefScore",
   "title" : "AT PreNUDGE Observation WHOQOL-BREF Score",
   "status" : "draft",
-  "date" : "2026-05-18T10:23:40+00:00",
+  "date" : "2026-06-01T14:49:28+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

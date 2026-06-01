@@ -1,0 +1,319 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SleepDurationQuestionnaireResponseToObservation> a fhir:StructureMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "SleepDurationQuestionnaireResponseToObservation"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap SleepDurationQuestionnaireResponseToObservation</b></p><a name=\"SleepDurationQuestionnaireResponseToObservation\"> </a><a name=\"hcSleepDurationQuestionnaireResponseToObservation\"> </a><pre class=\"fml\">#xD;\n<b>map</b><span style=\"color: navy\"> \"</span>https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SleepDurationQuestionnaireResponseToObservation<span style=\"color: navy\">\" = \"</span>SleepDurationQuestionnaireResponseToObservation<span style=\"color: navy\">\"#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Sleep Duration Q to O</span>#xD;\n#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/questionnaireresponse.html\" title=\"QuestionnaireResponse\">http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse</a><span style=\"color: navy\">\" </span><b>alias </b>QR <b>as </b><b>source</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/observation.html\" title=\"Observation\">http://hl7.org/fhir/StructureDefinition/Observation</a><span style=\"color: navy\">\" </span><b>alias </b>Obs <b>as </b><b>target</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/datatypes.html#Quantity\" title=\"Quantity\">http://hl7.org/fhir/StructureDefinition/Quantity</a><span style=\"color: navy\">\" </span><b>alias </b>Quantity <b>as </b><b>source</b>#xD;\n#xD;\n<b>imports</b><span style=\"color: navy\"> \"</span>http://hl7.org/fhir/StructureMap/*<span style=\"color: navy\">\"#xD;\n</span><b>imports</b><span style=\"color: navy\"> \"</span><a href=\"StructureMap-QuestionnaireResponseToObservationBase.html\" title=\"Shared base for Q to O\">https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase</a><span style=\"color: navy\">\"#xD;\n</span><b>imports</b><span style=\"color: navy\"> \"</span><a href=\"StructureMap-SleepQualityBase.html\" title=\"Sleep Quality Base (WHOQOL-BREF scale to LOINC)\">https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SleepQualityBase</a><span style=\"color: navy\">\"#xD;\n</span>#xD;\n<b>group </b>SleepDurationQuestionnaireResponseToObservation<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  src<b> then </b>SetObservationBase<span style=\"color: navy\">(</span><span style=\"color: maroon\">src</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>\"Base\"</i><span style=\"color: navy\">;</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span> tgt.meta = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Meta'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">meta</span><span style=\"color: navy\">, </span> meta.profile = <span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-duration-observation'</span> <i>\"SetProfile\"</i><span style=\"color: navy\">;</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'http://loinc.org'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'93832-4'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Sleep duration'</span><span style=\"color: navy\">)</span> <i>\"SetCode\"</i><span style=\"color: navy\">;</span>#xD;\n  src.item<b> as </b><span style=\"color: maroon\">item</span><b> where </b>linkId = 'sleep-duration'<b> then </b>MapSleepDuration<span style=\"color: navy\">(</span><span style=\"color: maroon\">item</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>\"ProcessItem\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span><b>group </b>MapSleepDuration<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  src.answer<b> as </b><span style=\"color: maroon\">answer</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    <span style=\"color: navy\">// </span><span style=\"color: green\">effectiveDateTime from nested date item</span>#xD;\n    answer.item<b> as </b><span style=\"color: maroon\">dtItem</span><b> where </b>linkId = 'date'<b> then</b><span style=\"color: navy\"> {#xD;\n</span>      dtItem.answer<b> as </b><span style=\"color: maroon\">dtAns</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        dtAns.valueDate<b> as </b><span style=\"color: maroon\">dt</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.effectiveDateTime = <span style=\"color: maroon\">dt</span> <i>\"SetEffectiveFromDate\"</i><span style=\"color: navy\">;</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"ExtractDate\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"ProcessDate\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">// </span><span style=\"color: green\">Map sleep duration value</span>#xD;\n    answer.valueQuantity<b> as </b><span style=\"color: maroon\">srcQty</span><b> then </b>MapSleepDurationQuantity<span style=\"color: navy\">(</span><span style=\"color: maroon\">srcQty</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>\"MapValueQuantity\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"ProcessAnswer\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span><b>group </b>MapSleepDurationQuantity<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">srcQty</span><span style=\"color: navy\"> : </span>Quantity, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  srcQty.value<b> as </b><span style=\"color: maroon\">v</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    v.value<b> as </b><span style=\"color: maroon\">numVal</span><span style=\"color: navy\"><b> -&gt; </b></span> tgt.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><span style=\"color: navy\">, </span> qty.value = <span style=\"color: maroon\">numVal</span><span style=\"color: navy\">, </span> qty.unit = <span style=\"color: blue\">'h'</span><span style=\"color: navy\">, </span> qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span><span style=\"color: navy\">, </span> qty.code = <span style=\"color: blue\">'h'</span> <i>\"SetQuantity\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"ExtractValue\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span></pre></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SleepDurationQuestionnaireResponseToObservation"^^xsd:anyURI ;
+     fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SleepDurationQuestionnaireResponseToObservation>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "SleepDurationQuestionnaireResponseToObservation"] ; # 
+  fhir:title [ fhir:v "Sleep Duration Q to O"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-06-01T14:49:28+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "The PreNUDGE Consortium"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "The PreNUDGE Consortium" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://prenudge.at" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "The PreNUDGE Consortium" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://prenudge.at" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Sleep Duration Q to O"] ; # 
+  fhir:structure ( [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse>
+     ] ;
+     fhir:mode [ fhir:v "source" ] ;
+     fhir:alias [ fhir:v "QR" ]
+  ] [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/Observation>
+     ] ;
+     fhir:mode [ fhir:v "target" ] ;
+     fhir:alias [ fhir:v "Obs" ]
+  ] [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/Quantity"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/Quantity>
+     ] ;
+     fhir:mode [ fhir:v "source" ] ;
+     fhir:alias [ fhir:v "Quantity" ]
+  ] ) ; # 
+  fhir:import ( [
+     fhir:v "http://hl7.org/fhir/StructureMap/*"^^xsd:anyURI ;
+     fhir:l <http://hl7.org/fhir/StructureMap/*>
+  ] [
+     fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase"^^xsd:anyURI ;
+     fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase>
+  ] [
+     fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SleepQualityBase"^^xsd:anyURI ;
+     fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SleepQualityBase>
+  ] ) ; # 
+  fhir:group ( [
+     fhir:name [ fhir:v "SleepDurationQuestionnaireResponseToObservation" ] ;
+     fhir:typeMode [ fhir:v "none" ] ;
+     fhir:input ( [
+       fhir:name [ fhir:v "src" ] ;
+       fhir:type [ fhir:v "QR" ] ;
+       fhir:mode [ fhir:v "source" ]
+     ] [
+       fhir:name [ fhir:v "tgt" ] ;
+       fhir:type [ fhir:v "Obs" ] ;
+       fhir:mode [ fhir:v "target" ]
+     ] ) ;
+     fhir:rule ( [
+       fhir:name [ fhir:v "Base" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ]
+       ] ) ;
+       fhir:dependent ( [
+         fhir:name [ fhir:v "SetObservationBase" ] ;
+         fhir:variable ( [ fhir:v "src" ] [ fhir:v "tgt" ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "SetProfile" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "tgt" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "meta" ] ;
+         fhir:variable [ fhir:v "meta" ] ;
+         fhir:transform [ fhir:v "create" ] ;
+         fhir:parameter ( [
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Meta"
+           ]
+         ] )
+       ] [
+         fhir:context [ fhir:v "meta" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "profile" ] ;
+         fhir:transform [ fhir:v "copy" ] ;
+         fhir:parameter ( [
+           fhir:value [
+             a fhir:String ;
+             fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-duration-observation"
+           ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "SetCode" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "tgt" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "code" ] ;
+         fhir:transform [ fhir:v "cc" ] ;
+         fhir:parameter ( [
+           fhir:value [
+             a fhir:String ;
+             fhir:v "http://loinc.org"
+           ]
+         ] [
+           fhir:value [
+             a fhir:String ;
+             fhir:v "93832-4"
+           ]
+         ] [
+           fhir:value [
+             a fhir:String ;
+             fhir:v "Sleep duration"
+           ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "ProcessItem" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ] ;
+         fhir:element [ fhir:v "item" ] ;
+         fhir:variable [ fhir:v "item" ] ;
+         fhir:condition [ fhir:v "linkId = 'sleep-duration'" ]
+       ] ) ;
+       fhir:dependent ( [
+         fhir:name [ fhir:v "MapSleepDuration" ] ;
+         fhir:variable ( [ fhir:v "item" ] [ fhir:v "tgt" ] )
+       ] )
+     ] )
+  ] [
+     fhir:name [ fhir:v "MapSleepDuration" ] ;
+     fhir:typeMode [ fhir:v "none" ] ;
+     fhir:input ( [
+       fhir:name [ fhir:v "src" ] ;
+       fhir:type [ fhir:v "QR" ] ;
+       fhir:mode [ fhir:v "source" ]
+     ] [
+       fhir:name [ fhir:v "tgt" ] ;
+       fhir:type [ fhir:v "Obs" ] ;
+       fhir:mode [ fhir:v "target" ]
+     ] ) ;
+     fhir:rule ( [
+       fhir:name [ fhir:v "ProcessAnswer" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ] ;
+         fhir:element [ fhir:v "answer" ] ;
+         fhir:variable [ fhir:v "answer" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "ProcessDate" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "answer" ] ;
+           fhir:element [ fhir:v "item" ] ;
+           fhir:variable [ fhir:v "dtItem" ] ;
+           fhir:condition [ fhir:v "linkId = 'date'" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "ExtractDate" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "dtItem" ] ;
+             fhir:element [ fhir:v "answer" ] ;
+             fhir:variable [ fhir:v "dtAns" ]
+           ] ) ;
+           fhir:rule ( [
+             fhir:name [ fhir:v "SetEffectiveFromDate" ] ;
+             fhir:source ( [
+               fhir:context [ fhir:v "dtAns" ] ;
+               fhir:element [ fhir:v "valueDate" ] ;
+               fhir:variable [ fhir:v "dt" ]
+             ] ) ;
+             fhir:target ( [
+               fhir:context [ fhir:v "tgt" ] ;
+               fhir:contextType [ fhir:v "variable" ] ;
+               fhir:element [ fhir:v "effectiveDateTime" ] ;
+               fhir:transform [ fhir:v "copy" ] ;
+               fhir:parameter ( [
+                 fhir:value [
+                   a fhir:Id ;
+                   fhir:v "dt"
+                 ]
+               ] )
+             ] )
+           ] )
+         ] )
+       ] [
+         fhir:name [ fhir:v "MapValueQuantity" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "answer" ] ;
+           fhir:element [ fhir:v "valueQuantity" ] ;
+           fhir:variable [ fhir:v "srcQty" ]
+         ] ) ;
+         fhir:dependent ( [
+           fhir:name [ fhir:v "MapSleepDurationQuantity" ] ;
+           fhir:variable ( [ fhir:v "srcQty" ] [ fhir:v "tgt" ] )
+         ] )
+       ] )
+     ] )
+  ] [
+     fhir:name [ fhir:v "MapSleepDurationQuantity" ] ;
+     fhir:typeMode [ fhir:v "none" ] ;
+     fhir:input ( [
+       fhir:name [ fhir:v "srcQty" ] ;
+       fhir:type [ fhir:v "Quantity" ] ;
+       fhir:mode [ fhir:v "source" ]
+     ] [
+       fhir:name [ fhir:v "tgt" ] ;
+       fhir:type [ fhir:v "Obs" ] ;
+       fhir:mode [ fhir:v "target" ]
+     ] ) ;
+     fhir:rule ( [
+       fhir:name [ fhir:v "ExtractValue" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "srcQty" ] ;
+         fhir:element [ fhir:v "value" ] ;
+         fhir:variable [ fhir:v "v" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "SetQuantity" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "v" ] ;
+           fhir:element [ fhir:v "value" ] ;
+           fhir:variable [ fhir:v "numVal" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgt" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "value" ] ;
+           fhir:variable [ fhir:v "qty" ] ;
+           fhir:transform [ fhir:v "create" ] ;
+           fhir:parameter ( [
+             fhir:value [
+               a fhir:String ;
+               fhir:v "Quantity"
+             ]
+           ] )
+         ] [
+           fhir:context [ fhir:v "qty" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "value" ] ;
+           fhir:transform [ fhir:v "copy" ] ;
+           fhir:parameter ( [
+             fhir:value [
+               a fhir:Id ;
+               fhir:v "numVal"
+             ]
+           ] )
+         ] [
+           fhir:context [ fhir:v "qty" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "unit" ] ;
+           fhir:transform [ fhir:v "copy" ] ;
+           fhir:parameter ( [
+             fhir:value [
+               a fhir:String ;
+               fhir:v "h"
+             ]
+           ] )
+         ] [
+           fhir:context [ fhir:v "qty" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "system" ] ;
+           fhir:transform [ fhir:v "copy" ] ;
+           fhir:parameter ( [
+             fhir:value [
+               a fhir:String ;
+               fhir:v "http://unitsofmeasure.org"
+             ]
+           ] )
+         ] [
+           fhir:context [ fhir:v "qty" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "code" ] ;
+           fhir:transform [ fhir:v "copy" ] ;
+           fhir:parameter ( [
+             fhir:value [
+               a fhir:String ;
+               fhir:v "h"
+             ]
+           ] )
+         ] )
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
