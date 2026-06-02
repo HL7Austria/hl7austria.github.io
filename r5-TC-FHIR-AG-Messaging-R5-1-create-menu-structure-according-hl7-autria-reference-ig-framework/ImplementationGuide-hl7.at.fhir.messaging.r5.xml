@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="hl7.at.fhir.messaging.r5"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide hl7.at.fhir.messaging.r5</b></p><a name="hl7.at.fhir.messaging.r5"> </a><a name="hchl7.at.fhir.messaging.r5"> </a><h2>ATMessaging</h2><p>The official URL for this implementation guide is: </p><pre>http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ImplementationGuide/hl7.at.fhir.messaging.r5</pre><div><p>Implementation Guide for Directed FHIR Messaging in Austria</p>
+</div></div>
+  </text>
+  <url value="http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ImplementationGuide/hl7.at.fhir.messaging.r5"/>
+  <version value="0.1.0"/>
+  <name value="ATMessaging"/>
+  <title value="HL7® Austria TC FHIR® Messaging"/>
+  <status value="draft"/>
+  <date value="2026-06-02T07:37:21+00:00"/>
+  <publisher value="HL7® Austria, TC FHIR®"/>
+  <contact>
+    <name value="HL7® Austria, TC FHIR®"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://hl7.at/technische-komitees/tc-fhir/"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="tc-fhir@hl7.at"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Technical Committee for FHIR® at HL7® Austria"/>
+    <telecom>
+      <system value="email"/>
+      <value value="tc-fhir@hl7.at"/>
+    </telecom>
+  </contact>
+  <description value="Implementation Guide for Directed FHIR Messaging in Austria"/>
+  <useContext>
+    <code>
+      <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+      <version value="2.0.1"/>
+      <code value="jurisdiction"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="urn:iso:std:iso:3166"/>
+        <code value="AT"/>
+        <display value="Austria"/>
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <packageId value="hl7.at.fhir.messaging.r5"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="5.0.0"/>
+  <dependsOn id="hl7tx">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on HL7 Terminology"/>
+    </extension>
+    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <packageId value="hl7.terminology.r5"/>
+    <version value="7.1.0"/>
+  </dependsOn>
+  <dependsOn id="hl7ext">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/>
+    </extension>
+    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+    <packageId value="hl7.fhir.uv.extensions.r5"/>
+    <version value="5.3.0"/>
+  </dependsOn>
+  <dependsOn id="hl7_at_fhir_core_r5">
+    <uri value="http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/ImplementationGuide/hl7.at.fhir.core.r5"/>
+    <packageId value="hl7.at.fhir.core.r5"/>
+    <version value="2.0.0"/>
+  </dependsOn>
+  <dependsOn id="ihe_iti_mhd">
+    <uri value="https://profiles.ihe.net/ITI/MHD/ImplementationGuide/ihe.iti.mhd"/>
+    <packageId value="ihe.iti.mhd"/>
+    <version value="5.0.0"/>
+  </dependsOn>
+  <definition>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
+      <valueCode value="hl7.fhir.uv.tools.r5#1.1.2"/>
+    </extension>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/269f4c84-7762-47aa-b872-c4f927301485"/>
+      </reference>
+      <name value="Ad-hoc message of Doctors note"/>
+      <description value="Doctors note as ad-hoc submitted message (without previous request)."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/c669729a-67af-453c-8b3f-ed05d754e506"/>
+      </reference>
+      <name value="Ad-hoc response of a feedback form"/>
+      <description value="Feedback form submission as ad-hoc submitted message (without previous request)."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/at-messaging-event-type-vs"/>
+      </reference>
+      <name value="AT Message Event Type ValueSet"/>
+      <description value="Extensible ValueSet consisting of the Message Event Type Codings."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-messaging-communication"/>
+      </reference>
+      <name value="AT Messaging Communication"/>
+      <description value="Communication to be used for all communication messages transfered with the AT FHIR messaging."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:complex-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-messaging-communication-attachment"/>
+      </reference>
+      <name value="AT Messaging Communication Attachment"/>
+      <description value="Simple Attachment with base64 encoded content for communication over directed messaging."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-messaging-communication-request"/>
+      </reference>
+      <name value="AT Messaging CommunicationRequest"/>
+      <description value="CommunicationRequest to be used for all communication request messages transfered with the AT FHIR messaging."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-messaging-endpoint"/>
+      </reference>
+      <name value="AT Messaging Endpoint"/>
+      <description value="Endpoint for use in the Messaging systems for AT FHIR messaging."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/at-messaging-endpoint-type"/>
+      </reference>
+      <name value="AT Messaging Endpoint Type"/>
+      <description value="Endpoint Type Coding to encode Messaging Systems the message is transported over."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/at-messaging-endpoint-type-vs"/>
+      </reference>
+      <name value="AT Messaging Endpoint Type ValueSet"/>
+      <description value="ValueSet of Endpoint Type Codings."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/at-messaging-event-type"/>
+      </reference>
+      <name value="AT Messaging Event Type"/>
+      <description value="Event Coding for discriminating messages on the receiver."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-messaging-bundle"/>
+      </reference>
+      <name value="AT Messaging Message Bundle"/>
+      <description value="MessageBundle to be used for all messages transfered with the AT FHIR messaging."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-messaging-message-header"/>
+      </reference>
+      <name value="AT Messaging Message Header"/>
+      <description value="MessageHeader to be used for all messages transfered with the AT FHIR messaging."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-messaging-task"/>
+      </reference>
+      <name value="AT Messaging Task"/>
+      <description value="Task to be used for all service status messages transfered with the AT FHIR messaging."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Communication"/>
+      </extension>
+      <reference>
+        <reference value="Communication/08327a3a-1f52-4ec0-9b90-ac17fd6e06b2"/>
+      </reference>
+      <name value="Communication Example"/>
+      <description value="Plain text message that kindly rejects a previous communication request."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-communication"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MessageDefinition"/>
+      </extension>
+      <reference>
+        <reference value="MessageDefinition/at-messaging-communication-message"/>
+      </reference>
+      <name value="Communication over directed messaging."/>
+      <description value="Regulates the resources to be used in a directed message when transferring a Communication."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MessageDefinition"/>
+      </extension>
+      <reference>
+        <reference value="MessageDefinition/at-messaging-communicationrequest-message"/>
+      </reference>
+      <name value="Communication request over directed messaging."/>
+      <description value="Regulates the resources to be used in a directed message when performing a CommunicationRequest."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CommunicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="CommunicationRequest/c7090292-dc27-4d90-a500-7e4110217947"/>
+      </reference>
+      <name value="CommunicationRequest for a consultation document"/>
+      <description value="Plain Text communication request for a consult document."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-communication-request"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/63874621-5550-410a-b893-ca890614cf6e"/>
+      </reference>
+      <name value="Consult communication"/>
+      <description value="Consultation document rejection as CommunicationRequest message."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/6df9d997-d34a-448b-944e-8721c49e0939"/>
+      </reference>
+      <name value="Consult request"/>
+      <description value="Consult request as CommunicationRequest message."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MessageDefinition"/>
+      </extension>
+      <reference>
+        <reference value="MessageDefinition/at-messaging-document-message"/>
+      </reference>
+      <name value="Document transfer over directed messaging."/>
+      <description value="Regulates the resources to be used in a directed message when transferring a document."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/96beaf3e-6e2f-40f4-b1d3-02b19c984fb1"/>
+      </reference>
+      <name value="Lab request"/>
+      <description value="Lab request as ServiceRequest message."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/81fd7dbf-5207-4bc5-b7df-89e97dcbbb79"/>
+      </reference>
+      <name value="Lab ServiceRequest"/>
+      <description value="Service Request for a Blood Test."/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/ab66186f-9d91-44b9-8459-bdee4e850bac"/>
+      </reference>
+      <name value="Lab status update"/>
+      <description value="Lab status update as service status update message."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MessageHeader"/>
+      </extension>
+      <reference>
+        <reference value="MessageHeader/89c89a84-bce7-4c5d-b6f6-49690eea5b06"/>
+      </reference>
+      <name value="MessageHeader of an ad-hoc message sending a document."/>
+      <description value="Message header for sending a doctor's note document from a HIS to a GP software without prior request."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MessageHeader"/>
+      </extension>
+      <reference>
+        <reference value="MessageHeader/7ea8b8eb-eeb3-4632-9a21-d6132fe093d6"/>
+      </reference>
+      <name value="MessageHeader of an ad-hoc message sending a questionnaire response."/>
+      <description value="Message header for sending a feedback form submission without prior request."/>
+      <isExample value="true"/>
+      <profile value="http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MessageDefinition"/>
+      </extension>
+      <reference>
+        <reference value="MessageDefinition/at-messaging-questionnaireresponse-message"/>
+      </reference>
+      <name value="Questionnaire response transfer over directed messaging."/>
+      <description value="Regulates the resources to be used in a directed message when transferring a questionnaire response."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActorDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActorDefinition/ReceiverActor"/>
+      </reference>
+      <name value="Receiver Actor"/>
+      <description value="The actor that receives, parses and disassembles the FHIR message."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActorDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActorDefinition/SenderActor"/>
+      </reference>
+      <name value="Sender Actor"/>
+      <description value="The actor that assembles and submits the FHIR message."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MessageDefinition"/>
+      </extension>
+      <reference>
+        <reference value="MessageDefinition/at-messaging-servicerequest-message"/>
+      </reference>
+      <name value="Service request over directed messaging."/>
+      <description value="Regulates the resources to be used in a directed message when performing a ServiceRequest."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MessageDefinition"/>
+      </extension>
+      <reference>
+        <reference value="MessageDefinition/at-messaging-service-status-message"/>
+      </reference>
+      <name value="Service status update over directed messaging."/>
+      <description value="Regulates the resources to be used in a directed message when transferring a task status update of a ServiceRequest."/>
+      <isExample value="false"/>
+    </resource>
+    <page>
+      <sourceUrl value="toc.html"/>
+      <name value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <sourceUrl value="index.html"/>
+        <name value="index.html"/>
+        <title value="Home"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="authors.html"/>
+        <name value="authors.html"/>
+        <title value="Authors"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="background.html"/>
+        <name value="background.html"/>
+        <title value="Background"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="challenges.html"/>
+        <name value="challenges.html"/>
+        <title value="Challenges"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="cross-version-analytics.html"/>
+        <name value="cross-version-analytics.html"/>
+        <title value="Cross Version Analytics"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="dependencies.html"/>
+        <name value="dependencies.html"/>
+        <title value="Dependencies"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="design-choices.html"/>
+        <name value="design-choices.html"/>
+        <title value="Design Choices"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="downloads.html"/>
+        <name value="downloads.html"/>
+        <title value="Downloads"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="FHIR-spec.html"/>
+        <name value="FHIR-spec.html"/>
+        <title value="FHIR Spec"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="known-issues.html"/>
+        <name value="known-issues.html"/>
+        <title value="Known Issues"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="scope.html"/>
+        <name value="scope.html"/>
+        <title value="Scope"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="system-actors.html"/>
+        <name value="system-actors.html"/>
+        <title value="System Actors"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="use-case-1.html"/>
+        <name value="use-case-1.html"/>
+        <title value="Use Case 1"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="use-case-2.html"/>
+        <name value="use-case-2.html"/>
+        <title value="Use Case 2"/>
+        <generation value="markdown"/>
+      </page>
+    </page>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="copyrightyear"/>
+      </code>
+      <value value="2026+"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="releaselabel"/>
+      </code>
+      <value value="ci-build"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="autoload-resources"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/capabilities"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/examples"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/extensions"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/models"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/operations"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/profiles"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/resources"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/vocabulary"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/maps"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/testing"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/history"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="fsh-generated/resources"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-pages"/>
+      </code>
+      <value value="template/config"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-pages"/>
+      </code>
+      <value value="input/images"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-liquid"/>
+      </code>
+      <value value="template/liquid"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-liquid"/>
+      </code>
+      <value value="input/liquid"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-qa"/>
+      </code>
+      <value value="temp/qa"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-temp"/>
+      </code>
+      <value value="temp/pages"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-output"/>
+      </code>
+      <value value="output"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-tx-cache"/>
+      </code>
+      <value value="input-cache/txcache"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-suppressed-warnings"/>
+      </code>
+      <value value="input/ignoreWarnings.txt"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-history"/>
+      </code>
+      <value value="http://fhir.hl7.at/fhir/ATMessaging/0.1.0/history.html"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="template-html"/>
+      </code>
+      <value value="template-page.html"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="template-md"/>
+      </code>
+      <value value="template-page-md.html"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-contact"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-context"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-copyright"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-jurisdiction"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-license"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-publisher"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-version"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-wg"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="active-tables"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="fmm-definition"/>
+      </code>
+      <value value="http://hl7.org/fhir/versions.html#maturity"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="propagate-status"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="excludelogbinaryformat"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="tabbed-snapshots"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>

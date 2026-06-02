@@ -1,0 +1,1258 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ImplementationGuide/hl7.at.fhir.messaging.r5> a fhir:ImplementationGuide ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "hl7.at.fhir.messaging.r5"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide hl7.at.fhir.messaging.r5</b></p><a name=\"hl7.at.fhir.messaging.r5\"> </a><a name=\"hchl7.at.fhir.messaging.r5\"> </a><h2>ATMessaging</h2><p>The official URL for this implementation guide is: </p><pre>http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ImplementationGuide/hl7.at.fhir.messaging.r5</pre><div><p>Implementation Guide for Directed FHIR Messaging in Austria</p>\n</div></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ImplementationGuide/hl7.at.fhir.messaging.r5"^^xsd:anyURI ;
+     fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ImplementationGuide/hl7.at.fhir.messaging.r5>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "ATMessaging"] ; # 
+  fhir:title [ fhir:v "HL7® Austria TC FHIR® Messaging"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2026-06-02T07:37:21+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "HL7® Austria, TC FHIR®"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "HL7® Austria, TC FHIR®" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://hl7.at/technische-komitees/tc-fhir/" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "tc-fhir@hl7.at" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Technical Committee for FHIR® at HL7® Austria" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "tc-fhir@hl7.at" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Implementation Guide for Directed FHIR Messaging in Austria"] ; # 
+  fhir:useContext ( [
+     fhir:code [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/usage-context-type"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/usage-context-type>
+       ] ;
+       fhir:version [ fhir:v "2.0.1" ] ;
+       fhir:code [ fhir:v "jurisdiction" ]
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+           fhir:l <urn:iso:std:iso:3166>
+         ] ;
+         fhir:code [ fhir:v "AT" ] ;
+         fhir:display [ fhir:v "Austria" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:packageId [ fhir:v "hl7.at.fhir.messaging.r5"] ; # 
+  fhir:license [ fhir:v "CC0-1.0"] ; # 
+  fhir:fhirVersion ( [ fhir:v "5.0.0"] ) ; # 
+  fhir:dependsOn ( [
+     fhir:id [ fhir:v "hl7tx" ] ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment>
+       ] ;
+       fhir:value [
+         a fhir:Markdown ;
+         fhir:v "Automatically added as a dependency - all IGs depend on HL7 Terminology"
+       ]
+     ] ) ;
+     fhir:uri [
+       fhir:v "http://terminology.hl7.org/ImplementationGuide/hl7.terminology"^^xsd:anyURI ;
+       fhir:l <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
+     ] ;
+     fhir:packageId [ fhir:v "hl7.terminology.r5" ] ;
+     fhir:version [ fhir:v "7.1.0" ]
+  ] [
+     fhir:id [ fhir:v "hl7ext" ] ;
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment>
+       ] ;
+       fhir:value [
+         a fhir:Markdown ;
+         fhir:v "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
+       ]
+     ] ) ;
+     fhir:uri [
+       fhir:v "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions>
+     ] ;
+     fhir:packageId [ fhir:v "hl7.fhir.uv.extensions.r5" ] ;
+     fhir:version [ fhir:v "5.3.0" ]
+  ] [
+     fhir:id [ fhir:v "hl7_at_fhir_core_r5" ] ;
+     fhir:uri [
+       fhir:v "http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/ImplementationGuide/hl7.at.fhir.core.r5"^^xsd:anyURI ;
+       fhir:l <http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/ImplementationGuide/hl7.at.fhir.core.r5>
+     ] ;
+     fhir:packageId [ fhir:v "hl7.at.fhir.core.r5" ] ;
+     fhir:version [ fhir:v "2.0.0" ]
+  ] [
+     fhir:id [ fhir:v "ihe_iti_mhd" ] ;
+     fhir:uri [
+       fhir:v "https://profiles.ihe.net/ITI/MHD/ImplementationGuide/ihe.iti.mhd"^^xsd:anyURI ;
+       fhir:l <https://profiles.ihe.net/ITI/MHD/ImplementationGuide/ihe.iti.mhd>
+     ] ;
+     fhir:packageId [ fhir:v "ihe.iti.mhd" ] ;
+     fhir:version [ fhir:v "5.0.0" ]
+  ] ) ; # 
+  fhir:definition [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency>
+       ] ;
+       fhir:value [
+         a fhir:Code ;
+         fhir:v "hl7.fhir.uv.tools.r5#1.1.2"
+       ]
+     ] ) ;
+     fhir:resource ( [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Bundle"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/Bundle/269f4c84-7762-47aa-b872-c4f927301485> ;
+         fhir:reference [ fhir:v "Bundle/269f4c84-7762-47aa-b872-c4f927301485" ]
+       ] ;
+       fhir:name [ fhir:v "Ad-hoc message of Doctors note" ] ;
+       fhir:description [ fhir:v "Doctors note as ad-hoc submitted message (without previous request)." ] ;
+       fhir:isExample [ fhir:v true ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle"^^xsd:anyURI ;
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Bundle"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/Bundle/c669729a-67af-453c-8b3f-ed05d754e506> ;
+         fhir:reference [ fhir:v "Bundle/c669729a-67af-453c-8b3f-ed05d754e506" ]
+       ] ;
+       fhir:name [ fhir:v "Ad-hoc response of a feedback form" ] ;
+       fhir:description [ fhir:v "Feedback form submission as ad-hoc submitted message (without previous request)." ] ;
+       fhir:isExample [ fhir:v true ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle"^^xsd:anyURI ;
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ValueSet/at-messaging-event-type-vs> ;
+         fhir:reference [ fhir:v "ValueSet/at-messaging-event-type-vs" ]
+       ] ;
+       fhir:name [ fhir:v "AT Message Event Type ValueSet" ] ;
+       fhir:description [ fhir:v "Extensible ValueSet consisting of the Message Event Type Codings." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-communication> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-messaging-communication" ]
+       ] ;
+       fhir:name [ fhir:v "AT Messaging Communication" ] ;
+       fhir:description [ fhir:v "Communication to be used for all communication messages transfered with the AT FHIR messaging." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:complex-type"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-communication-attachment> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-messaging-communication-attachment" ]
+       ] ;
+       fhir:name [ fhir:v "AT Messaging Communication Attachment" ] ;
+       fhir:description [ fhir:v "Simple Attachment with base64 encoded content for communication over directed messaging." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-communication-request> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-messaging-communication-request" ]
+       ] ;
+       fhir:name [ fhir:v "AT Messaging CommunicationRequest" ] ;
+       fhir:description [ fhir:v "CommunicationRequest to be used for all communication request messages transfered with the AT FHIR messaging." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-endpoint> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-messaging-endpoint" ]
+       ] ;
+       fhir:name [ fhir:v "AT Messaging Endpoint" ] ;
+       fhir:description [ fhir:v "Endpoint for use in the Messaging systems for AT FHIR messaging." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-endpoint-type> ;
+         fhir:reference [ fhir:v "CodeSystem/at-messaging-endpoint-type" ]
+       ] ;
+       fhir:name [ fhir:v "AT Messaging Endpoint Type" ] ;
+       fhir:description [ fhir:v "Endpoint Type Coding to encode Messaging Systems the message is transported over." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ValueSet/at-messaging-endpoint-type-vs> ;
+         fhir:reference [ fhir:v "ValueSet/at-messaging-endpoint-type-vs" ]
+       ] ;
+       fhir:name [ fhir:v "AT Messaging Endpoint Type ValueSet" ] ;
+       fhir:description [ fhir:v "ValueSet of Endpoint Type Codings." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-event-type> ;
+         fhir:reference [ fhir:v "CodeSystem/at-messaging-event-type" ]
+       ] ;
+       fhir:name [ fhir:v "AT Messaging Event Type" ] ;
+       fhir:description [ fhir:v "Event Coding for discriminating messages on the receiver." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-messaging-bundle" ]
+       ] ;
+       fhir:name [ fhir:v "AT Messaging Message Bundle" ] ;
+       fhir:description [ fhir:v "MessageBundle to be used for all messages transfered with the AT FHIR messaging." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-messaging-message-header" ]
+       ] ;
+       fhir:name [ fhir:v "AT Messaging Message Header" ] ;
+       fhir:description [ fhir:v "MessageHeader to be used for all messages transfered with the AT FHIR messaging." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-task> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-messaging-task" ]
+       ] ;
+       fhir:name [ fhir:v "AT Messaging Task" ] ;
+       fhir:description [ fhir:v "Task to be used for all service status messages transfered with the AT FHIR messaging." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Communication"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/Communication/08327a3a-1f52-4ec0-9b90-ac17fd6e06b2> ;
+         fhir:reference [ fhir:v "Communication/08327a3a-1f52-4ec0-9b90-ac17fd6e06b2" ]
+       ] ;
+       fhir:name [ fhir:v "Communication Example" ] ;
+       fhir:description [ fhir:v "Plain text message that kindly rejects a previous communication request." ] ;
+       fhir:isExample [ fhir:v true ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-communication"^^xsd:anyURI ;
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-communication>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "MessageDefinition"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-communication-message> ;
+         fhir:reference [ fhir:v "MessageDefinition/at-messaging-communication-message" ]
+       ] ;
+       fhir:name [ fhir:v "Communication over directed messaging." ] ;
+       fhir:description [ fhir:v "Regulates the resources to be used in a directed message when transferring a Communication." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "MessageDefinition"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-communicationrequest-message> ;
+         fhir:reference [ fhir:v "MessageDefinition/at-messaging-communicationrequest-message" ]
+       ] ;
+       fhir:name [ fhir:v "Communication request over directed messaging." ] ;
+       fhir:description [ fhir:v "Regulates the resources to be used in a directed message when performing a CommunicationRequest." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "CommunicationRequest"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CommunicationRequest/c7090292-dc27-4d90-a500-7e4110217947> ;
+         fhir:reference [ fhir:v "CommunicationRequest/c7090292-dc27-4d90-a500-7e4110217947" ]
+       ] ;
+       fhir:name [ fhir:v "CommunicationRequest for a consultation document" ] ;
+       fhir:description [ fhir:v "Plain Text communication request for a consult document." ] ;
+       fhir:isExample [ fhir:v true ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-communication-request"^^xsd:anyURI ;
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-communication-request>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Bundle"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/Bundle/63874621-5550-410a-b893-ca890614cf6e> ;
+         fhir:reference [ fhir:v "Bundle/63874621-5550-410a-b893-ca890614cf6e" ]
+       ] ;
+       fhir:name [ fhir:v "Consult communication" ] ;
+       fhir:description [ fhir:v "Consultation document rejection as CommunicationRequest message." ] ;
+       fhir:isExample [ fhir:v true ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle"^^xsd:anyURI ;
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Bundle"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/Bundle/6df9d997-d34a-448b-944e-8721c49e0939> ;
+         fhir:reference [ fhir:v "Bundle/6df9d997-d34a-448b-944e-8721c49e0939" ]
+       ] ;
+       fhir:name [ fhir:v "Consult request" ] ;
+       fhir:description [ fhir:v "Consult request as CommunicationRequest message." ] ;
+       fhir:isExample [ fhir:v true ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle"^^xsd:anyURI ;
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "MessageDefinition"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-document-message> ;
+         fhir:reference [ fhir:v "MessageDefinition/at-messaging-document-message" ]
+       ] ;
+       fhir:name [ fhir:v "Document transfer over directed messaging." ] ;
+       fhir:description [ fhir:v "Regulates the resources to be used in a directed message when transferring a document." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Bundle"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/Bundle/96beaf3e-6e2f-40f4-b1d3-02b19c984fb1> ;
+         fhir:reference [ fhir:v "Bundle/96beaf3e-6e2f-40f4-b1d3-02b19c984fb1" ]
+       ] ;
+       fhir:name [ fhir:v "Lab request" ] ;
+       fhir:description [ fhir:v "Lab request as ServiceRequest message." ] ;
+       fhir:isExample [ fhir:v true ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle"^^xsd:anyURI ;
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ServiceRequest"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ServiceRequest/81fd7dbf-5207-4bc5-b7df-89e97dcbbb79> ;
+         fhir:reference [ fhir:v "ServiceRequest/81fd7dbf-5207-4bc5-b7df-89e97dcbbb79" ]
+       ] ;
+       fhir:name [ fhir:v "Lab ServiceRequest" ] ;
+       fhir:description [ fhir:v "Service Request for a Blood Test." ] ;
+       fhir:isExample [ fhir:v true ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Bundle"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/Bundle/ab66186f-9d91-44b9-8459-bdee4e850bac> ;
+         fhir:reference [ fhir:v "Bundle/ab66186f-9d91-44b9-8459-bdee4e850bac" ]
+       ] ;
+       fhir:name [ fhir:v "Lab status update" ] ;
+       fhir:description [ fhir:v "Lab status update as service status update message." ] ;
+       fhir:isExample [ fhir:v true ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle"^^xsd:anyURI ;
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-bundle>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "MessageHeader"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageHeader/89c89a84-bce7-4c5d-b6f6-49690eea5b06> ;
+         fhir:reference [ fhir:v "MessageHeader/89c89a84-bce7-4c5d-b6f6-49690eea5b06" ]
+       ] ;
+       fhir:name [ fhir:v "MessageHeader of an ad-hoc message sending a document." ] ;
+       fhir:description [ fhir:v "Message header for sending a doctor's note document from a HIS to a GP software without prior request." ] ;
+       fhir:isExample [ fhir:v true ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header"^^xsd:anyURI ;
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "MessageHeader"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageHeader/7ea8b8eb-eeb3-4632-9a21-d6132fe093d6> ;
+         fhir:reference [ fhir:v "MessageHeader/7ea8b8eb-eeb3-4632-9a21-d6132fe093d6" ]
+       ] ;
+       fhir:name [ fhir:v "MessageHeader of an ad-hoc message sending a questionnaire response." ] ;
+       fhir:description [ fhir:v "Message header for sending a feedback form submission without prior request." ] ;
+       fhir:isExample [ fhir:v true ] ;
+       fhir:profile ( [
+         fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header"^^xsd:anyURI ;
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "MessageDefinition"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-questionnaireresponse-message> ;
+         fhir:reference [ fhir:v "MessageDefinition/at-messaging-questionnaireresponse-message" ]
+       ] ;
+       fhir:name [ fhir:v "Questionnaire response transfer over directed messaging." ] ;
+       fhir:description [ fhir:v "Regulates the resources to be used in a directed message when transferring a questionnaire response." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ActorDefinition"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ActorDefinition/ReceiverActor> ;
+         fhir:reference [ fhir:v "ActorDefinition/ReceiverActor" ]
+       ] ;
+       fhir:name [ fhir:v "Receiver Actor" ] ;
+       fhir:description [ fhir:v "The actor that receives, parses and disassembles the FHIR message." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ActorDefinition"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ActorDefinition/SenderActor> ;
+         fhir:reference [ fhir:v "ActorDefinition/SenderActor" ]
+       ] ;
+       fhir:name [ fhir:v "Sender Actor" ] ;
+       fhir:description [ fhir:v "The actor that assembles and submits the FHIR message." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "MessageDefinition"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-servicerequest-message> ;
+         fhir:reference [ fhir:v "MessageDefinition/at-messaging-servicerequest-message" ]
+       ] ;
+       fhir:name [ fhir:v "Service request over directed messaging." ] ;
+       fhir:description [ fhir:v "Regulates the resources to be used in a directed message when performing a ServiceRequest." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "MessageDefinition"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://fhir.hl7.at/fhir/ATMessaging/0.1.0/MessageDefinition/at-messaging-service-status-message> ;
+         fhir:reference [ fhir:v "MessageDefinition/at-messaging-service-status-message" ]
+       ] ;
+       fhir:name [ fhir:v "Service status update over directed messaging." ] ;
+       fhir:description [ fhir:v "Regulates the resources to be used in a directed message when transferring a task status update of a ServiceRequest." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] ) ;
+     fhir:page [
+       fhir:source [
+         a fhir:Url ;
+         fhir:v "toc.html"^^xsd:anyURI ;
+         fhir:l fhir:toc.html
+       ] ;
+       fhir:name [
+         fhir:v "toc.html"^^xsd:anyURI ;
+         fhir:l fhir:toc.html
+       ] ;
+       fhir:title [ fhir:v "Table of Contents" ] ;
+       fhir:generation [ fhir:v "html" ] ;
+       fhir:page ( [
+         fhir:source [
+           a fhir:Url ;
+           fhir:v "index.html"^^xsd:anyURI ;
+           fhir:l fhir:index.html
+         ] ;
+         fhir:name [
+           fhir:v "index.html"^^xsd:anyURI ;
+           fhir:l fhir:index.html
+         ] ;
+         fhir:title [ fhir:v "Home" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [
+           a fhir:Url ;
+           fhir:v "authors.html"^^xsd:anyURI ;
+           fhir:l fhir:authors.html
+         ] ;
+         fhir:name [
+           fhir:v "authors.html"^^xsd:anyURI ;
+           fhir:l fhir:authors.html
+         ] ;
+         fhir:title [ fhir:v "Authors" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [
+           a fhir:Url ;
+           fhir:v "background.html"^^xsd:anyURI ;
+           fhir:l fhir:background.html
+         ] ;
+         fhir:name [
+           fhir:v "background.html"^^xsd:anyURI ;
+           fhir:l fhir:background.html
+         ] ;
+         fhir:title [ fhir:v "Background" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [
+           a fhir:Url ;
+           fhir:v "challenges.html"^^xsd:anyURI ;
+           fhir:l fhir:challenges.html
+         ] ;
+         fhir:name [
+           fhir:v "challenges.html"^^xsd:anyURI ;
+           fhir:l fhir:challenges.html
+         ] ;
+         fhir:title [ fhir:v "Challenges" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [
+           a fhir:Url ;
+           fhir:v "cross-version-analytics.html"^^xsd:anyURI ;
+           fhir:l fhir:cross-version-analytics.html
+         ] ;
+         fhir:name [
+           fhir:v "cross-version-analytics.html"^^xsd:anyURI ;
+           fhir:l fhir:cross-version-analytics.html
+         ] ;
+         fhir:title [ fhir:v "Cross Version Analytics" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [
+           a fhir:Url ;
+           fhir:v "dependencies.html"^^xsd:anyURI ;
+           fhir:l fhir:dependencies.html
+         ] ;
+         fhir:name [
+           fhir:v "dependencies.html"^^xsd:anyURI ;
+           fhir:l fhir:dependencies.html
+         ] ;
+         fhir:title [ fhir:v "Dependencies" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [
+           a fhir:Url ;
+           fhir:v "design-choices.html"^^xsd:anyURI ;
+           fhir:l fhir:design-choices.html
+         ] ;
+         fhir:name [
+           fhir:v "design-choices.html"^^xsd:anyURI ;
+           fhir:l fhir:design-choices.html
+         ] ;
+         fhir:title [ fhir:v "Design Choices" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [
+           a fhir:Url ;
+           fhir:v "downloads.html"^^xsd:anyURI ;
+           fhir:l fhir:downloads.html
+         ] ;
+         fhir:name [
+           fhir:v "downloads.html"^^xsd:anyURI ;
+           fhir:l fhir:downloads.html
+         ] ;
+         fhir:title [ fhir:v "Downloads" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [
+           a fhir:Url ;
+           fhir:v "FHIR-spec.html"^^xsd:anyURI ;
+           fhir:l fhir:FHIR-spec.html
+         ] ;
+         fhir:name [
+           fhir:v "FHIR-spec.html"^^xsd:anyURI ;
+           fhir:l fhir:FHIR-spec.html
+         ] ;
+         fhir:title [ fhir:v "FHIR Spec" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [
+           a fhir:Url ;
+           fhir:v "known-issues.html"^^xsd:anyURI ;
+           fhir:l fhir:known-issues.html
+         ] ;
+         fhir:name [
+           fhir:v "known-issues.html"^^xsd:anyURI ;
+           fhir:l fhir:known-issues.html
+         ] ;
+         fhir:title [ fhir:v "Known Issues" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [
+           a fhir:Url ;
+           fhir:v "scope.html"^^xsd:anyURI ;
+           fhir:l fhir:scope.html
+         ] ;
+         fhir:name [
+           fhir:v "scope.html"^^xsd:anyURI ;
+           fhir:l fhir:scope.html
+         ] ;
+         fhir:title [ fhir:v "Scope" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [
+           a fhir:Url ;
+           fhir:v "system-actors.html"^^xsd:anyURI ;
+           fhir:l fhir:system-actors.html
+         ] ;
+         fhir:name [
+           fhir:v "system-actors.html"^^xsd:anyURI ;
+           fhir:l fhir:system-actors.html
+         ] ;
+         fhir:title [ fhir:v "System Actors" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [
+           a fhir:Url ;
+           fhir:v "use-case-1.html"^^xsd:anyURI ;
+           fhir:l fhir:use-case-1.html
+         ] ;
+         fhir:name [
+           fhir:v "use-case-1.html"^^xsd:anyURI ;
+           fhir:l fhir:use-case-1.html
+         ] ;
+         fhir:title [ fhir:v "Use Case 1" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [
+           a fhir:Url ;
+           fhir:v "use-case-2.html"^^xsd:anyURI ;
+           fhir:l fhir:use-case-2.html
+         ] ;
+         fhir:name [
+           fhir:v "use-case-2.html"^^xsd:anyURI ;
+           fhir:l fhir:use-case-2.html
+         ] ;
+         fhir:title [ fhir:v "Use Case 2" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] )
+     ] ;
+     fhir:parameter ( [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/CodeSystem/ig-parameters>
+         ] ;
+         fhir:code [ fhir:v "copyrightyear" ]
+       ] ;
+       fhir:value [ fhir:v "2026+" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/CodeSystem/ig-parameters>
+         ] ;
+         fhir:code [ fhir:v "releaselabel" ]
+       ] ;
+       fhir:value [ fhir:v "ci-build" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/CodeSystem/ig-parameters>
+         ] ;
+         fhir:code [ fhir:v "autoload-resources" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/guide-parameter-code>
+         ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/capabilities" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/guide-parameter-code>
+         ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/examples" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/guide-parameter-code>
+         ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/extensions" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/guide-parameter-code>
+         ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/models" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/guide-parameter-code>
+         ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/operations" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/guide-parameter-code>
+         ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/profiles" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/guide-parameter-code>
+         ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/resources" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/guide-parameter-code>
+         ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/vocabulary" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/guide-parameter-code>
+         ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/maps" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/guide-parameter-code>
+         ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/testing" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/guide-parameter-code>
+         ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/history" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/guide-parameter-code>
+         ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "fsh-generated/resources" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/guide-parameter-code>
+         ] ;
+         fhir:code [ fhir:v "path-pages" ]
+       ] ;
+       fhir:value [ fhir:v "template/config" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/guide-parameter-code>
+         ] ;
+         fhir:code [ fhir:v "path-pages" ]
+       ] ;
+       fhir:value [ fhir:v "input/images" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/CodeSystem/ig-parameters>
+         ] ;
+         fhir:code [ fhir:v "path-liquid" ]
+       ] ;
+       fhir:value [ fhir:v "template/liquid" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/CodeSystem/ig-parameters>
+         ] ;
+         fhir:code [ fhir:v "path-liquid" ]
+       ] ;
+       fhir:value [ fhir:v "input/liquid" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/CodeSystem/ig-parameters>
+         ] ;
+         fhir:code [ fhir:v "path-qa" ]
+       ] ;
+       fhir:value [ fhir:v "temp/qa" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/CodeSystem/ig-parameters>
+         ] ;
+         fhir:code [ fhir:v "path-temp" ]
+       ] ;
+       fhir:value [ fhir:v "temp/pages" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/CodeSystem/ig-parameters>
+         ] ;
+         fhir:code [ fhir:v "path-output" ]
+       ] ;
+       fhir:value [ fhir:v "output" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/guide-parameter-code>
+         ] ;
+         fhir:code [ fhir:v "path-tx-cache" ]
+       ] ;
+       fhir:value [ fhir:v "input-cache/txcache" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/CodeSystem/ig-parameters>
+         ] ;
+         fhir:code [ fhir:v "path-suppressed-warnings" ]
+       ] ;
+       fhir:value [ fhir:v "input/ignoreWarnings.txt" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/CodeSystem/ig-parameters>
+         ] ;
+         fhir:code [ fhir:v "path-history" ]
+       ] ;
+       fhir:value [ fhir:v "http://fhir.hl7.at/fhir/ATMessaging/0.1.0/history.html" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/CodeSystem/ig-parameters>
+         ] ;
+         fhir:code [ fhir:v "template-html" ]
+       ] ;
+       fhir:value [ fhir:v "template-page.html" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/CodeSystem/ig-parameters>
+         ] ;
+         fhir:code [ fhir:v "template-md" ]
+       ] ;
+       fhir:value [ fhir:v "template-page-md.html" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/CodeSystem/ig-parameters>
+         ] ;
+         fhir:code [ fhir:v "apply-contact" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/CodeSystem/ig-parameters>
+         ] ;
+         fhir:code [ fhir:v "apply-context" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/CodeSystem/ig-parameters>
+         ] ;
+         fhir:code [ fhir:v "apply-copyright" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/CodeSystem/ig-parameters>
+         ] ;
+         fhir:code [ fhir:v "apply-jurisdiction" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/CodeSystem/ig-parameters>
+         ] ;
+         fhir:code [ fhir:v "apply-license" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/CodeSystem/ig-parameters>
+         ] ;
+         fhir:code [ fhir:v "apply-publisher" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/CodeSystem/ig-parameters>
+         ] ;
+         fhir:code [ fhir:v "apply-version" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/CodeSystem/ig-parameters>
+         ] ;
+         fhir:code [ fhir:v "apply-wg" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/CodeSystem/ig-parameters>
+         ] ;
+         fhir:code [ fhir:v "active-tables" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/CodeSystem/ig-parameters>
+         ] ;
+         fhir:code [ fhir:v "fmm-definition" ]
+       ] ;
+       fhir:value [ fhir:v "http://hl7.org/fhir/versions.html#maturity" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/CodeSystem/ig-parameters>
+         ] ;
+         fhir:code [ fhir:v "propagate-status" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/CodeSystem/ig-parameters>
+         ] ;
+         fhir:code [ fhir:v "excludelogbinaryformat" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/CodeSystem/ig-parameters>
+         ] ;
+         fhir:code [ fhir:v "tabbed-snapshots" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
