@@ -523,7 +523,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td><strong>entered-in-error</strong></td>
-      <td>Vorhandene Durchgeführte Abgabe (im Status <em>complete</em> oder <em>cancelled</em>) wird aufgrund eines Fehlers verworfen (eine mögliche beendete Geplante Abgabe, wird dadurch wieder <em>aktiv</em>)</td>
+      <td>Vorhandene Durchgeführte Abgabe (im Status <em>completed</em> oder <em>cancelled</em>) wird aufgrund eines Fehlers verworfen (eine mögliche beendete Geplante Abgabe, wird dadurch wieder <em>aktiv</em>)</td>
     </tr>
   </tbody>
 </table>
@@ -561,7 +561,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>z.B. 6 Einlösungen bei Privatrezept</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td>noch keine bzw. noch nicht alle mögl. Einlösungen erfolgt (mit Status complete)</td>
+      <td>noch keine bzw. noch nicht alle mögl. Einlösungen erfolgt (mit Status completed)</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
@@ -631,6 +631,102 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p><br/></p>
 
+<h4 id="varianten-der-teil-abgabe">Varianten der (Teil-)Abgabe</h4>
+
+<p>Im Element <em>MedicationDispense.type</em> einer durchgeführten Abgabe wird die Art der Abgabe dokumentiert, welche von der <a href="workflowmanagement.html#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart">Rezeptart</a> (Anzahl Einlösungen) und vom Use Case abhängt.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Use Case (pro Einlösung)</th>
+      <th>Geplante Abgabe (MedicationRequest.status)</th>
+      <th>Beschreibung</th>
+      <th>Durchgeführte Abgabe (MedicationDispense)</th>
+      <th>Beschreibung</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Vollständige Abgabe (Einzelabgabe)</td>
+      <td>completed, wenn letzte Einlösung abgeschlossen, sonst active</td>
+      <td>Geplante Abgabe wird nach erfolgter Dispense automatisch auf completed gesetzt</td>
+      <td>type: FFC (First Fill - Complete)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
+      <td>Dispense abgeschlossen; Kann nicht mehr verändert werden.</td>
+    </tr>
+    <tr>
+      <td>"Besorgerprozess": Medikament von Apotheke bestellt</td>
+      <td>active</td>
+      <td>Geplante Abgabe bleibt active</td>
+      <td>type: FFP (First Fill - Part Fill)<br/>quantity:&nbsp; 0 Packungen (wurden&nbsp; ausgegeben)<br/>status: „preparation?“</td>
+      <td>Medikament bestellt oder Magistrale Zubereitung in Vorbereitung. Geplante Abgabe kann nicht mehr in einer anderen Apotheke abgegeben werden</td>
+    </tr>
+    <tr>
+      <td>"Besorgerprozess": bestelltes Medikament wird ausgehändigt</td>
+      <td>completed</td>
+      <td>wenn Dispense completed, dann auch Geplante Abgabe completed</td>
+      <td>type: RFC (Refill - Complete)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
+      <td>Durchgeführte Abgabe abgeschlossen</td>
+    </tr>
+    <tr>
+      <td>1. Teilabgabe</td>
+      <td>active</td>
+      <td>Geplante Abgabe bleibt active</td>
+      <td>type: FFP (First Fill - Part Fill)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
+      <td>1. Teilabgabe</td>
+    </tr>
+    <tr>
+      <td>Weitere Teilabgabe</td>
+      <td>active</td>
+      <td>Geplante Abgabe bleibt active</td>
+      <td>type: RFP (Refill - Part Fill)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
+      <td>weitere Teilabgabe</td>
+    </tr>
+    <tr>
+      <td>Vollständige Teilabgabe</td>
+      <td>completed</td>
+      <td>nach der letzten Teilabgabe wird die Geplante Abgabe automatisch auf completed gesetzt</td>
+      <td>type:&nbsp; RFC (Refill - Complete)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
+      <td>letzte Teilabgabe</td>
+    </tr>
+    <tr>
+      <td>Leerabgabe bei Einzelabgabe</td>
+      <td>completed</td>
+      <td>die Geplante Abgabe wird automatisch auf completed gesetzt</td>
+      <td>type: FFC (First Fill - Complete) bzw. RFC (Refill Complete)<br/>quantity:&nbsp; 0 Packungen<br/>status: „cancelled“</td>
+      <td>Das Medikament einer geplanten Abgabe wird vom Patienten nicht benötigt und daher als Leerabgabe vermerkt.</td>
+    </tr>
+    <tr>
+      <td>Leerabgabe beendet Teilabgaben</td>
+      <td>completed</td>
+      <td>nach einer Leerabgabe bei einer&nbsp; Teilabgabe wird die Geplante Abgabe automatisch auf completed gesetzt</td>
+      <td>type: RFC (Refill - Complete)<br/>quantity:&nbsp; 0 Packungen<br/>status: „cancelled“</td>
+      <td>Das Medikament einer geplanten Abgabe wird vom Patienten nicht benötigt und daher als Leerabgabe vermerkt. Dieser Einlösevorgang ist damit beendet.</td>
+    </tr>
+    <tr>
+      <td>Notabgabe</td>
+      <td>&nbsp;-</td>
+      <td>keine Geplante Abgabe vorhanden</td>
+      <td>type: EM (Emergency Supply)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
+      <td>Das Medikament wurde ohne zugrundeliegende Geplante Abgabe abgegeben.<br/>Es wird kein Rezept nachgereicht</td>
+    </tr>
+    <tr>
+      <td>Rezept wird nachgebracht</td>
+      <td>&nbsp;-</td>
+      <td>keine Geplante Abgabe vorhanden</td>
+      <td>type: SO (Script Owing)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
+      <td>Medikament wurde abgegeben oder reserviert, das formale Rezept wird später nachgereicht.&nbsp; Planeintrag + Geplante Abgabe für Wechselwirkungsrelevante Medikatmente soll nacherfasst werden.</td>
+    </tr>
+    <tr>
+      <td>OTC Abgabe (rezeptfrei)</td>
+      <td>&nbsp;-</td>
+      <td>keine Geplante Abgabe vorhanden</td>
+      <td>type: OTC (hinzufügen)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
+      <td>Rezeptfreies Medikament wurde abgegeben. Ein Planeintrag für Wechselwirkungsrelevante Medikatmente soll nacherfasst werden.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br/></p>
 
 
 
@@ -650,7 +746,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jun 1, 2026 11:34+0000">2026-06-01</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Jun 2, 2026 13:07+0000">2026-06-02</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

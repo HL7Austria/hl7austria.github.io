@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medikationdispense-durchgefuehrteabgabe | *Version*:0.1.1 | |
-| Draft as of 2026-06-01 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe |
+| Draft as of 2026-06-02 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe |
 
  
 Dokumentiert eine durchgeführte Abgabe eines Arzneimittels ("MedicationDispense"-Ressource). In der durchgeführten Abgabe können Abweichungen hinsichtlich des Medikaments und dessen Dosierung dokumentiert werden. Sofern eine zugehörige geplante Abgabe vorliegt, muss diese mit dem zugehörigen Planeintrag referenziert werden. Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige geplante Abgabe, ersichtlich. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medikat
   "name" : "AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe",
   "title" : "AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-06-01T11:34:34+00:00",
+  "date" : "2026-06-02T13:07:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -98,13 +98,13 @@ Eine [Durchgeführte Abgabe](design_choices.md#durchgeführte-abgabe-AtElgaEmedM
 | :--- | :--- |
 | **completed** | Einzel- oder Teilabgabe wurde durchgeführt |
 | **cancelled** | Durchgeführte Abgabe gecancelt: Der Patient benötigt die Medikation einer geplanten Abgabe nicht (Medikation "abgesetzt") |
-| **entered-in-error** | Vorhandene Durchgeführte Abgabe (im Status**complete**oder**cancelled**) wird aufgrund eines Fehlers verworfen (eine mögliche beendete Geplante Abgabe, wird dadurch wieder**aktiv**) |
+| **entered-in-error** | Vorhandene Durchgeführte Abgabe (im Status**completed**oder**cancelled**) wird aufgrund eines Fehlers verworfen (eine mögliche beendete Geplante Abgabe, wird dadurch wieder**aktiv**) |
 
 #### Abhängigkeiten der Geplanten Abgabe und der Durchgeführten Abgaben
 
 | | | | | | | | | | |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| Geplante Abgabe basierend auf Planeintrag erfassen | active | Planeintrag bleibt active, unabhängig von Status der gepanten Abgabe * | active | OFFEN | z.B. 6 Einlösungen bei Privatrezept |   |   | noch keine bzw. noch nicht alle mögl. Einlösungen erfolgt (mit Status complete) |   |
+| Geplante Abgabe basierend auf Planeintrag erfassen | active | Planeintrag bleibt active, unabhängig von Status der gepanten Abgabe * | active | OFFEN | z.B. 6 Einlösungen bei Privatrezept |   |   | noch keine bzw. noch nicht alle mögl. Einlösungen erfolgt (mit Status completed) |   |
 | Geplante Abgabe beenden (durch Fachanwendung) | active | Planeintrag bleibt active, unabhängig von Status der gepanten Abgabe * | completed | EINGELÖST | auf Basis der durchgeführten Abgaben automatisch gesetzt durch Fachanwendung; dh. Alle möglichen Einlösungen sind abgechlossen (entweder completed oder cancelled) | completed | ABGEGEBEN | alle möglichen Einlösungen erfolgt | Durchgeführte Abgabe erfassen |
 | Geplante Abgabe verwerfen | active | Planeintrag bleibt active, unabhängig von Status der gepanten Abgabe * | entered-in-error | STORNIERT | bei fehlerhafter Eingabe, wenn noch keine Abgabe durchgeführt |   |   | keine durchgeführten Abgaben vorhanden |   |
 | Geplante Abgabe abgelaufen (durch Fachanwendung) | active | Planeintrag bleibt active, unabhängig von Status der gepanten Abgabe * | stopped | ABGELAUFEN | automatisch erkannt durch Fachanwendung | kein relevanter Status | kein relevanter Status | noch keine bzw. noch nicht alle mögl. Einlösungen erfolgtZu abgelaufenen geplanten Abgaben können keine Abgaben mehr gespeichert werden. Die (nachträgliche) Speicherung von Abgaben zu einem abgelaufenen Rezept kann im Anlassfall allerdings ohne Verordnungsbezug erfolgen. |   |
@@ -112,4 +112,22 @@ Eine [Durchgeführte Abgabe](design_choices.md#durchgeführte-abgabe-AtElgaEmedM
 |   |   |   |   |   |   | entered-in-error | STORNIERT | bei fehlerhafter Eingabe | Durchgeführte Abgabe verwerfen |
 
 * solange ein evtl. Behandlungszeitraum nicht überschritten
+
+#### Varianten der (Teil-)Abgabe
+
+Im Element **MedicationDispense.type** einer durchgeführten Abgabe wird die Art der Abgabe dokumentiert, welche von der [Rezeptart](workflowmanagement.md#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart) (Anzahl Einlösungen) und vom Use Case abhängt.
+
+| | | | | |
+| :--- | :--- | :--- | :--- | :--- |
+| Vollständige Abgabe (Einzelabgabe) | completed, wenn letzte Einlösung abgeschlossen, sonst active | Geplante Abgabe wird nach erfolgter Dispense automatisch auf completed gesetzt | type: FFC (First Fill - Complete)quantity:  x Packungenstatus: „complete“ | Dispense abgeschlossen; Kann nicht mehr verändert werden. |
+| "Besorgerprozess": Medikament von Apotheke bestellt | active | Geplante Abgabe bleibt active | type: FFP (First Fill - Part Fill)quantity:  0 Packungen (wurden  ausgegeben)status: „preparation?“ | Medikament bestellt oder Magistrale Zubereitung in Vorbereitung. Geplante Abgabe kann nicht mehr in einer anderen Apotheke abgegeben werden |
+| "Besorgerprozess": bestelltes Medikament wird ausgehändigt | completed | wenn Dispense completed, dann auch Geplante Abgabe completed | type: RFC (Refill - Complete)quantity:  x Packungenstatus: „complete“ | Durchgeführte Abgabe abgeschlossen |
+| 1. Teilabgabe | active | Geplante Abgabe bleibt active | type: FFP (First Fill - Part Fill)quantity:  x Packungenstatus: „complete“ | 1. Teilabgabe |
+| Weitere Teilabgabe | active | Geplante Abgabe bleibt active | type: RFP (Refill - Part Fill)quantity:  x Packungenstatus: „complete“ | weitere Teilabgabe |
+| Vollständige Teilabgabe | completed | nach der letzten Teilabgabe wird die Geplante Abgabe automatisch auf completed gesetzt | type:  RFC (Refill - Complete)quantity:  x Packungenstatus: „complete“ | letzte Teilabgabe |
+| Leerabgabe bei Einzelabgabe | completed | die Geplante Abgabe wird automatisch auf completed gesetzt | type: FFC (First Fill - Complete) bzw. RFC (Refill Complete)quantity:  0 Packungenstatus: „cancelled“ | Das Medikament einer geplanten Abgabe wird vom Patienten nicht benötigt und daher als Leerabgabe vermerkt. |
+| Leerabgabe beendet Teilabgaben | completed | nach einer Leerabgabe bei einer  Teilabgabe wird die Geplante Abgabe automatisch auf completed gesetzt | type: RFC (Refill - Complete)quantity:  0 Packungenstatus: „cancelled“ | Das Medikament einer geplanten Abgabe wird vom Patienten nicht benötigt und daher als Leerabgabe vermerkt. Dieser Einlösevorgang ist damit beendet. |
+| Notabgabe |  - | keine Geplante Abgabe vorhanden | type: EM (Emergency Supply)quantity:  x Packungenstatus: „complete“ | Das Medikament wurde ohne zugrundeliegende Geplante Abgabe abgegeben.Es wird kein Rezept nachgereicht |
+| Rezept wird nachgebracht |  - | keine Geplante Abgabe vorhanden | type: SO (Script Owing)quantity:  x Packungenstatus: „complete“ | Medikament wurde abgegeben oder reserviert, das formale Rezept wird später nachgereicht.  Planeintrag + Geplante Abgabe für Wechselwirkungsrelevante Medikatmente soll nacherfasst werden. |
+| OTC Abgabe (rezeptfrei) |  - | keine Geplante Abgabe vorhanden | type: OTC (hinzufügen)quantity:  x Packungenstatus: „complete“ | Rezeptfreies Medikament wurde abgegeben. Ein Planeintrag für Wechselwirkungsrelevante Medikatmente soll nacherfasst werden. |
 
