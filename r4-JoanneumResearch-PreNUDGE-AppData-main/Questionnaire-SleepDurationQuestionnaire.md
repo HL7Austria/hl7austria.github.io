@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/SleepDurationQuestionnaire | *Version*:0.1.0 | |
-| Active as of 2026-06-01 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:SleepDurationQuestionnaire |
+| Active as of 2026-06-03 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:SleepDurationQuestionnaire |
 
  
 A simple questionnaire for self-reporting average sleep duration per night in hours. Only allows values between 0 and 24 hours. 
@@ -32,7 +32,7 @@ A simple questionnaire for self-reporting average sleep duration per night in ho
   "status" : "active",
   "experimental" : false,
   "subjectType" : ["Patient"],
-  "date" : "2026-06-01T14:49:28+00:00",
+  "date" : "2026-06-03T09:07:40+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -73,35 +73,11 @@ A simple questionnaire for self-reporting average sleep duration per night in ho
       "code" : "93832-4",
       "display" : "Sleep duration"
     }],
-    "text" : "Wie viele Stunden schlafen Sie normalerweise pro Nacht?",
+    "text" : "Effektive Schlafzeit (Stunden) pro Nacht (0-24): Wie viele Stunden haben Sie während der letzten 4 Wochen pro Nacht (oder wann Sie üblicherweise schlafen) tatsächlich geschlafen? Das muss nicht mit der Anzahl der Stunden, die Sie im Bett verbracht haben, übereinstimmen.",
     "type" : "quantity",
     "required" : true,
     "repeats" : false,
     "item" : [{
-      "linkId" : "sleep-duration-help",
-      "text" : "Hinweis: Bitte zählen Sie Nickerchen tagsüber nicht dazu und runden Sie ganze Stunden auf oder ab.",
-      "type" : "display"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-        "valueExpression" : {
-          "language" : "text/fhirpath",
-          "expression" : "today()"
-        }
-      }],
-      "linkId" : "date",
-      "text" : "Für welchen Zeitraum gilt dieser Wert?",
-      "type" : "date",
-      "required" : true,
-      "repeats" : false
-    },
-    {
-      "linkId" : "date-help",
-      "text" : "Hinweis: Geben Sie das Datum des Tages an, an dem dieser Zeitraum endet (z. B. das Ende der letzten Woche).",
-      "type" : "display"
-    },
-    {
       "linkId" : "comment",
       "text" : "Haben Sie zu Ihrer Antwort noch einen Kommentar oder etwas hinzuzufügen?",
       "type" : "string"

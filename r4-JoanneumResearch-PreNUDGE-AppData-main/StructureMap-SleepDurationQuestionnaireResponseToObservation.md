@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SleepDurationQuestionnaireResponseToObservation | *Version*:0.1.0 | |
-| Active as of 2026-06-01 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:SleepDurationQuestionnaireResponseToObservation |
+| Active as of 2026-06-03 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:SleepDurationQuestionnaireResponseToObservation |
 
  
 Sleep Duration Q to O 
@@ -27,7 +27,7 @@ Sleep Duration Q to O
   "name" : "SleepDurationQuestionnaireResponseToObservation",
   "title" : "Sleep Duration Q to O",
   "status" : "active",
-  "date" : "2026-06-01T14:49:28+00:00",
+  "date" : "2026-06-03T09:07:40+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
