@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/CodeSystem/at-messaging-endpoint-type | *Version*:0.1.0 | |
-| Draft as of 2026-06-02 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingEndpointType |
+| Draft as of 2026-06-03 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingEndpointType |
 | **Usage:**Jurisdiction: Austria | | |
 
  
@@ -33,7 +33,7 @@ Endpoint Type Coding to encode Messaging Systems the message is transported over
   "title" : "AT Messaging Endpoint Type",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-06-02T07:37:21+00:00",
+  "date" : "2026-06-03T07:29:21+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",

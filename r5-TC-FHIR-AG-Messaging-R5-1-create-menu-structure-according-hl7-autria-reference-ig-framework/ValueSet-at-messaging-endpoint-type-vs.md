@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/ValueSet/at-messaging-endpoint-type-vs | *Version*:0.1.0 | |
-| Draft as of 2026-06-02 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingEndpointTypeVS |
+| Draft as of 2026-06-03 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingEndpointTypeVS |
 | **Usage:**Jurisdiction: Austria | | |
 
  
@@ -52,7 +52,7 @@ ValueSet of Endpoint Type Codings.
   "title" : "AT Messaging Endpoint Type ValueSet",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-06-02T07:37:21+00:00",
+  "date" : "2026-06-03T07:29:21+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",

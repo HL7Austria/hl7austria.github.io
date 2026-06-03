@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://fhir.hl7.at/fhir/ATMessaging/0.1.0/StructureDefinition/at-messaging-message-header | *Version*:0.1.0 | |
-| Draft as of 2026-06-02 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingMessageHeader |
+| Draft as of 2026-06-03 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATMessagingMessageHeader |
 | **Usage:**Jurisdiction: Austria | | |
 
  
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-messaging-message
   "name" : "ATMessagingMessageHeader",
   "title" : "AT Messaging Message Header",
   "status" : "draft",
-  "date" : "2026-06-02T07:37:21+00:00",
+  "date" : "2026-06-03T07:29:21+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
