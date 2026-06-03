@@ -33,7 +33,7 @@ Vollständige Antwortmöglichkeiten aus dem ATHIS Fragebogen (Österreichische G
   "title" : "ATHIS – Antwortmöglichkeiten",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-03T12:49:02+00:00",
+  "date" : "2026-06-03T13:38:36+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

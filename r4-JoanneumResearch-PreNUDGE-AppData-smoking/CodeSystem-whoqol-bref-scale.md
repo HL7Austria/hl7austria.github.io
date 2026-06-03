@@ -32,7 +32,7 @@ Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire.
   "title" : "AT PreNUDGE WHOQOL-BREF Answer Scales",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-03T12:49:02+00:00",
+  "date" : "2026-06-03T13:38:36+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

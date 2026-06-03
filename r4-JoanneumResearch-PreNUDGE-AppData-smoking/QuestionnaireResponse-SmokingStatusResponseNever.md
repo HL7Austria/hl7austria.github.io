@@ -58,7 +58,7 @@ Profile: [AT PreNUDGE Questionnaire Response](StructureDefinition-at-prenudge-qu
   "subject" : {
     "reference" : "Patient/example"
   },
-  "authored" : "2026-03-12",
+  "authored" : "2026-03-12T08:00:00Z",
   "item" : [{
     "linkId" : "smoking-status-athis",
     "item" : [{

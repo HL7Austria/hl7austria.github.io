@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-bloodglu
   "name" : "AtPrenudgeObservationBloodGlucose",
   "title" : "AT PreNUDGE Observation Blood Glucose (only in mg/dL)",
   "status" : "draft",
-  "date" : "2026-06-03T12:49:02+00:00",
+  "date" : "2026-06-03T13:38:36+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

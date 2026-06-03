@@ -31,7 +31,7 @@ ATHIS 2025-based questionnaire module for smoking status, cigarette consumption,
   "title" : "Rauchstatus und Nikotinkonsum",
   "status" : "active",
   "subjectType" : ["Patient"],
-  "date" : "2026-06-03T12:49:02+00:00",
+  "date" : "2026-06-03T13:38:36+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
