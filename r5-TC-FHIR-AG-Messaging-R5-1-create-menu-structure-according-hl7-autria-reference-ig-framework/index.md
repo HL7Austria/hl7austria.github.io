@@ -24,7 +24,7 @@ The Messaging FHIR Implementation Guide (IG) is a work-in-progress document and 
   "name" : "ATMessaging",
   "title" : "HL7® Austria TC FHIR® Messaging",
   "status" : "draft",
-  "date" : "2026-06-03T07:29:21+00:00",
+  "date" : "2026-06-03T07:41:19+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -496,6 +496,12 @@ The Messaging FHIR Implementation Guide (IG) is a work-in-progress document and 
         "sourceUrl" : "challenges.html",
         "name" : "challenges.html",
         "title" : "Challenges",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "copyright.html",
+        "name" : "copyright.html",
+        "title" : "Copyright",
         "generation" : "markdown"
       },
       {

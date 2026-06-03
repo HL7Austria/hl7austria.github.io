@@ -52,7 +52,7 @@ Extensible ValueSet consisting of the Message Event Type Codings.
   "title" : "AT Message Event Type ValueSet",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-06-03T07:29:21+00:00",
+  "date" : "2026-06-03T07:41:19+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
