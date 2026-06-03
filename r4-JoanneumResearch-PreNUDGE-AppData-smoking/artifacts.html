@@ -202,6 +202,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Questionnaire-SleepDurationQuestionnaire.html"
+                  title="Questionnaire/SleepDurationQuestionnaire">Durchschnittliche Schlafdauer pro Nacht</a>
+            </td>
+            <td>
+<p>A simple questionnaire for self-reporting average sleep duration per night in hours. Only allows values between 0 and 24 hours.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Questionnaire-StepCountEhisPaqQuestionnaire.html"
                   title="Questionnaire/StepCountEhisPaqQuestionnaire">EHIS-PAQ: Zu-Fuß-Gehen</a>
             </td>
@@ -215,7 +224,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="Questionnaire/SmokingStatusQuestionnaire">Rauchstatus und Nikotinkonsum</a>
             </td>
             <td>
-<p>ATHIS-based questionnaire module for smoking status, cigarette consumption, duration of daily smoking, tobacco heaters, electronic cigarettes or similar electronic products, and nicotine pouches. A derived IPS-compatible Observation can be created from SK1 and the past tobacco smoking question.</p>
+<p>ATHIS 2025-based questionnaire module for smoking status, cigarette consumption, duration of daily smoking, tobacco heaters, electronic cigarettes or similar electronic products, and nicotine pouches. A derived IPS-compatible Observation can be created from SK1 and the past tobacco smoking question.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Questionnaire-SleepQualityQuestionnaire.html"
+                  title="Questionnaire/SleepQualityQuestionnaire">Schlafqualität – Selbsteinschätzung (WHOQOL-BREF Q16)</a>
+            </td>
+            <td>
+<p>Standalone questionnaire for self-assessing sleep quality based on WHOQOL-BREF question Q16 ('Wie zufrieden sind Sie mit Ihrem Schlaf?').</p>
 </td>
          </tr>
          <tr>
@@ -304,6 +322,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>This FHIR profile can be used for all the other Observations for PreNUDGE, not beeing an quantity and not fitting the existing narrow standardized observations.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-at-prenudge-sleep-duration-observation.html"
+                  title="StructureDefinition/at-prenudge-sleep-duration-observation">AT PreNUDGE Observation Sleep Duration</a>
+            </td>
+            <td>
+<p>This FHIR profile defines the Sleep Duration Observation recording average nightly sleep in hours. Applicable for both automated wearable measurements (method = automated) and self-reported values derived from a questionnaire (method = manual).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-at-prenudge-sleep-quality-observation.html"
+                  title="StructureDefinition/at-prenudge-sleep-quality-observation">AT PreNUDGE Observation Sleep Quality</a>
+            </td>
+            <td>
+<p>Records the self-assessed sleep quality from PROMIS (My sleep quality was…in past 7 days). Also used to map WHOQOL-BREF Q16 from standalone SleepQualityQuestionnaire or the full WhoQolBrefQuestionnaire.</p>
 </td>
          </tr>
          <tr>
@@ -414,20 +450,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <tbody>
          <tr>
             <td style="column-width:30%">
-               <a href="CodeSystem-prenudge-athis-smoking.html"
-                  title="CodeSystem/prenudge-athis-smoking">AT PreNUDGE ATHIS Smoking Answer Codes</a>
-            </td>
-            <td>
-<p>Local answer codes for ATHIS smoking questionnaire items used in the PreNUDGE smoking status questionnaire. These codes preserve the questionnaire semantics and are mapped to SNOMED CT only where a clinical smoking-status Observation is derived.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
                <a href="CodeSystem-whoqol-bref-scale.html"
                   title="CodeSystem/whoqol-bref-scale">AT PreNUDGE WHOQOL-BREF Answer Scales</a>
             </td>
             <td>
 <p>Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-athis-answers.html" title="CodeSystem/athis-answers">ATHIS – Antwortmöglichkeiten</a>
+            </td>
+            <td>
+<p>Vollständige Antwortmöglichkeiten aus dem ATHIS Fragebogen (Österreichische Gesundheitsbefragung, STATISTIK AUSTRIA, Version 31.03.2025). Codes sind englisch; Display-Werte bleiben deutsch. Gruppiert nach Skalentypen. Hinweis: Bestehende PreNUDGE CodeSystems bleiben gültig – whoqol-bref-scale (LQ16-Zufriedenheitsskala), prenudge-nutrition-consumption-frequency (DH1/DH3 numerische Codes), prenudge-alcoholuse-frequency (AL1 SNOMED-basiert).</p>
 </td>
          </tr>
       </tbody>
@@ -472,6 +507,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Shared base for Q to O</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureMap-SleepDurationQuestionnaireResponseToObservation.html"
+                  title="StructureMap/SleepDurationQuestionnaireResponseToObservation">Sleep Duration Q to O</a>
+            </td>
+            <td>
+<p>Sleep Duration Q to O</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureMap-SleepQualityBase.html"
+                  title="StructureMap/SleepQualityBase">Sleep Quality Base (WHOQOL-BREF scale to LOINC)</a>
+            </td>
+            <td>
+<p>Sleep Quality Base (WHOQOL-BREF scale to LOINC)</p>
 </td>
          </tr>
          <tr>
@@ -613,6 +666,87 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Example of a normal fasting blood glucose measurement (95 mg/dL).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-sleep-duration-normal-automated-example.html"
+                  title="Observation/sleep-duration-normal-automated-example">Sleep Duration O - Normal Automated Example</a>
+            </td>
+            <td>
+<p>Example of a normal average sleep duration (7.5 h) measured by a wearable device.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-sleep-duration-short-automated-example.html"
+                  title="Observation/sleep-duration-short-automated-example">Sleep Duration O - Short Automated Example</a>
+            </td>
+            <td>
+<p>Example of a short average sleep duration (5.5 h) measured by a wearable device, indicating insufficient sleep.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-sleep-duration-normal-manual-example.html"
+                  title="Observation/sleep-duration-normal-manual-example">Sleep Duration O mapped from Q - Normal Example</a>
+            </td>
+            <td>
+<p>Example of a self-reported average sleep duration (7 h) derived from a questionnaire response.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="QuestionnaireResponse-sleep-duration-response-normal-example.html"
+                  title="QuestionnaireResponse/sleep-duration-response-normal-example">Sleep Duration Q - Normal Example</a>
+            </td>
+            <td>
+<p>Example of a self-reported normal average sleep duration (7 h per night).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="QuestionnaireResponse-sleep-duration-response-short-example.html"
+                  title="QuestionnaireResponse/sleep-duration-response-short-example">Sleep Duration Q - Short Example</a>
+            </td>
+            <td>
+<p>Example of a self-reported short average sleep duration (5.5 h per night).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-sleep-quality-dissatisfied-example.html"
+                  title="Observation/sleep-quality-dissatisfied-example">Sleep Quality O mapped from Q - Dissatisfied Example</a>
+            </td>
+            <td>
+<p>Example of a sleep quality observation indicating poor sleep satisfaction (LA8969-3 - Poor), derived from the standalone SleepQualityQuestionnaire (S2 - Unzufrieden mapped to LOINC).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-sleep-quality-satisfied-example.html"
+                  title="Observation/sleep-quality-satisfied-example">Sleep Quality O mapped from Q - Satisfied Example</a>
+            </td>
+            <td>
+<p>Example of a sleep quality observation indicating good sleep satisfaction (LA8967-7 - Good), derived from the standalone SleepQualityQuestionnaire (S4 - Zufrieden mapped to LOINC).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="QuestionnaireResponse-sleep-quality-response-dissatisfied-example.html"
+                  title="QuestionnaireResponse/sleep-quality-response-dissatisfied-example">Sleep Quality Q - Dissatisfied Example</a>
+            </td>
+            <td>
+<p>Example of a standalone sleep quality questionnaire response indicating dissatisfaction with sleep (S2 - Unzufrieden).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="QuestionnaireResponse-sleep-quality-response-satisfied-example.html"
+                  title="QuestionnaireResponse/sleep-quality-response-satisfied-example">Sleep Quality Q - Satisfied Example</a>
+            </td>
+            <td>
+<p>Example of a standalone sleep quality questionnaire response indicating satisfaction with sleep (S4 - Zufrieden).</p>
 </td>
          </tr>
          <tr>
@@ -770,7 +904,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, May 20, 2026 09:08+0000">2026-05-20</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jun 3, 2026 12:49+0000">2026-06-03</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

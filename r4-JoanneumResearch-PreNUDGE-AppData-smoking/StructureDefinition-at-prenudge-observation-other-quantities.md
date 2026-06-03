@@ -9,16 +9,16 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-observation-other-quantities | *Version*:0.1.0 | |
-| Draft as of 2026-05-20 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationOtherQuantities |
+| Draft as of 2026-06-03 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationOtherQuantities |
 
  
 This FHIR profile can be used for all the other Observations for PreNUDGE, beeing quantities and not fitting the existing narrow standardized observations. If some code for specifing a new Observation is missing, please contact prenudge@joanneum.at. 
 
 **Usages:**
 
-* This Profile is not used by any profiles in this Implementation Guide
+* This Profile is not used by any profiles in this Specification
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.prenudge.appdata.r4|current/StructureDefinition/at-prenudge-observation-other-quantities)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.prenudge.appdata.r4|current/StructureDefinition/StructureDefinition-at-prenudge-observation-other-quantities.json)
 
 ### Formal Views of Profile Content
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-observat
   "name" : "AtPrenudgeObservationOtherQuantities",
   "title" : "AT PreNUDGE Observation Other Quantities",
   "status" : "draft",
-  "date" : "2026-05-20T09:08:27+00:00",
+  "date" : "2026-06-03T12:49:02+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

@@ -9,10 +9,10 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/SmokingStatusQuestionnaire | *Version*:0.1.0 | |
-| Active as of 2026-05-20 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:SmokingStatusQuestionnaire |
+| Active as of 2026-06-03 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:SmokingStatusQuestionnaire |
 
  
-ATHIS-based questionnaire module for smoking status, cigarette consumption, duration of daily smoking, tobacco heaters, electronic cigarettes or similar electronic products, and nicotine pouches. A derived IPS-compatible Observation can be created from SK1 and the past tobacco smoking question. 
+ATHIS 2025-based questionnaire module for smoking status, cigarette consumption, duration of daily smoking, tobacco heaters, electronic cigarettes or similar electronic products, and nicotine pouches. A derived IPS-compatible Observation can be created from SK1 and the past tobacco smoking question. 
 
 
 
@@ -31,7 +31,7 @@ ATHIS-based questionnaire module for smoking status, cigarette consumption, dura
   "title" : "Rauchstatus und Nikotinkonsum",
   "status" : "active",
   "subjectType" : ["Patient"],
-  "date" : "2026-05-20T09:08:27+00:00",
+  "date" : "2026-06-03T12:49:02+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -48,36 +48,55 @@ ATHIS-based questionnaire module for smoking status, cigarette consumption, dura
       "use" : "work"
     }]
   }],
-  "description" : "ATHIS-based questionnaire module for smoking status, cigarette consumption, duration of daily smoking, tobacco heaters, electronic cigarettes or similar electronic products, and nicotine pouches. A derived IPS-compatible Observation can be created from SK1 and the past tobacco smoking question.",
+  "description" : "ATHIS 2025-based questionnaire module for smoking status, cigarette consumption, duration of daily smoking, tobacco heaters, electronic cigarettes or similar electronic products, and nicotine pouches. A derived IPS-compatible Observation can be created from SK1 and the past tobacco smoking question.",
   "item" : [{
     "linkId" : "smoking-status-athis",
     "text" : "Rauchstatus und Nikotinkonsum",
     "type" : "group",
     "item" : [{
       "linkId" : "sk1",
-      "text" : "Rauchen Sie Tabakprodukte (Zigaretten, Zigarren, Pfeife)? Nicht gemeint sind E-Zigaretten oder ähnliche elektronische Produkte.",
+      "text" : "Rauchen Sie Tabakprodukte? Nicht gemeint sind Tabakerhitzer, elektronische Zigaretten oder ähnliche elektronische Produkte",
       "type" : "choice",
       "required" : true,
       "answerOption" : [{
         "valueCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "status-no",
-          "display" : "Nein"
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-yes-daily",
+          "display" : "Ja, täglich"
         }
       },
       {
         "valueCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "status-occasional",
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-yes-occasionally",
           "display" : "Ja, gelegentlich"
         }
       },
       {
         "valueCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "status-daily",
-          "display" : "Ja, täglich"
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-no-not-at-all",
+          "display" : "Nein, überhaupt nicht"
         }
+      },
+      {
+        "valueCoding" : {
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "meta-unknown",
+          "display" : "Weiß nicht"
+        }
+      },
+      {
+        "valueCoding" : {
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "meta-not-stated",
+          "display" : "Keine Angabe"
+        }
+      }],
+      "item" : [{
+        "linkId" : "sk1-help",
+        "text" : "Tabakprodukte sind: Zigaretten (aus der Schachtel und/oder selbstgedreht), Zigarren (einschließlich Zigarillos), Pfeife. Nicht dazu zählen: Tabakschnupfen oder Tabakkauen, Shisha, Elektronische Zigaretten oder ähnliche elektronische Produkte, Cannabis gemischt mit Tabak",
+        "type" : "display"
       }]
     },
     {
@@ -88,24 +107,38 @@ ATHIS-based questionnaire module for smoking status, cigarette consumption, dura
         "question" : "sk1",
         "operator" : "=",
         "answerCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "status-daily",
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-yes-daily",
           "display" : "Ja, täglich"
         }
       }],
       "required" : false,
       "answerOption" : [{
         "valueCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "yes",
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-yes",
           "display" : "Ja"
         }
       },
       {
         "valueCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "no",
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-no",
           "display" : "Nein"
+        }
+      },
+      {
+        "valueCoding" : {
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "meta-unknown",
+          "display" : "Weiß nicht"
+        }
+      },
+      {
+        "valueCoding" : {
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "meta-not-stated",
+          "display" : "Keine Angabe"
         }
       }]
     },
@@ -117,12 +150,17 @@ ATHIS-based questionnaire module for smoking status, cigarette consumption, dura
         "question" : "sk2a",
         "operator" : "=",
         "answerCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "yes",
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-yes",
           "display" : "Ja"
         }
       }],
-      "required" : false
+      "required" : false,
+      "item" : [{
+        "linkId" : "sk2-help",
+        "text" : "Bitte um Angabe von Zigaretten, nicht von Packungen. In einer Zigarettenschachtel sind meist 20 Zigaretten enthalten.",
+        "type" : "display"
+      }]
     },
     {
       "linkId" : "past-tobacco-smoking",
@@ -132,31 +170,45 @@ ATHIS-based questionnaire module for smoking status, cigarette consumption, dura
         "question" : "sk1",
         "operator" : "=",
         "answerCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "status-no",
-          "display" : "Nein"
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-no-not-at-all",
+          "display" : "Nein, überhaupt nicht"
         }
       }],
       "required" : false,
       "answerOption" : [{
         "valueCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "status-no",
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-no",
           "display" : "Nein"
         }
       },
       {
         "valueCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "status-occasional",
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-yes-occasionally",
           "display" : "Ja, gelegentlich"
         }
       },
       {
         "valueCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "status-daily",
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-yes-daily",
           "display" : "Ja, täglich"
+        }
+      },
+      {
+        "valueCoding" : {
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "meta-unknown",
+          "display" : "Weiß nicht"
+        }
+      },
+      {
+        "valueCoding" : {
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "meta-not-stated",
+          "display" : "Keine Angabe"
         }
       }]
     },
@@ -168,8 +220,8 @@ ATHIS-based questionnaire module for smoking status, cigarette consumption, dura
         "question" : "past-tobacco-smoking",
         "operator" : "=",
         "answerCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "status-daily",
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-yes-daily",
           "display" : "Ja, täglich"
         }
       },
@@ -177,8 +229,8 @@ ATHIS-based questionnaire module for smoking status, cigarette consumption, dura
         "question" : "past-tobacco-smoking",
         "operator" : "=",
         "answerCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "status-occasional",
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-yes-occasionally",
           "display" : "Ja, gelegentlich"
         }
       }],
@@ -187,50 +239,69 @@ ATHIS-based questionnaire module for smoking status, cigarette consumption, dura
     },
     {
       "linkId" : "sk4",
-      "text" : "Wie viele Jahre lang haben Sie täglich geraucht? Zählen Sie alle Zeitabschnitte, an denen Sie täglich geraucht haben, zusammen. Wenn Sie sich nicht an die genaue Anzahl der Jahre erinnern können, geben Sie bitte eine Schätzung an.",
+      "text" : "Wie viele Jahre haben Sie täglich geraucht? Bitte zählen Sie alle Zeiträume von täglichem Rauchen zusammen.",
       "type" : "integer",
       "enableWhen" : [{
         "question" : "past-tobacco-smoking",
         "operator" : "=",
         "answerCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "status-daily",
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-yes-daily",
           "display" : "Ja, täglich"
         }
       }],
-      "required" : false
+      "required" : false,
+      "item" : [{
+        "linkId" : "sk4-help",
+        "text" : "Wenn Sie sich nicht an die genaue Anzahl der Jahre erinnern, geben Sie bitte eine Schätzung ab.",
+        "type" : "display"
+      }]
     },
     {
       "linkId" : "sk6a",
-      "text" : "Nutzen Sie aktuell Tabakerhitzer, bei denen Tabaksticks oder loser Tabak erhitzt werden, zum Beispiel der Marken IQOS, glo, Ploom oder PAX?",
+      "text" : "Nutzen Sie derzeit Tabakerhitzer, bei denen Tabaksticks oder loser Tabak erhitzt werden, zum Beispiel der Marken IQOS, glo, Ploom oder PAX?",
       "type" : "choice",
       "required" : false,
       "answerOption" : [{
         "valueCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "status-daily",
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-yes-daily",
           "display" : "Ja, täglich"
         }
       },
       {
         "valueCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "status-occasional",
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-yes-occasionally",
           "display" : "Ja, gelegentlich"
         }
       },
       {
         "valueCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "use-former",
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-no-but-formerly",
           "display" : "Nein, aber früher"
         }
       },
       {
         "valueCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "use-never",
-          "display" : "Nein, noch nie konsumiert"
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-no-never",
+          "display" : "Nein, noch nie genutzt/konsumiert"
+        }
+      },
+      {
+        "valueCoding" : {
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "meta-unknown",
+          "display" : "Weiß nicht"
+        }
+      },
+      {
+        "valueCoding" : {
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "meta-not-stated",
+          "display" : "Keine Angabe"
         }
       }]
     },
@@ -241,30 +312,44 @@ ATHIS-based questionnaire module for smoking status, cigarette consumption, dura
       "required" : false,
       "answerOption" : [{
         "valueCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "status-daily",
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-yes-daily",
           "display" : "Ja, täglich"
         }
       },
       {
         "valueCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "status-occasional",
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-yes-occasionally",
           "display" : "Ja, gelegentlich"
         }
       },
       {
         "valueCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "use-former",
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-no-but-formerly",
           "display" : "Nein, aber früher"
         }
       },
       {
         "valueCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "use-never",
-          "display" : "Nein, noch nie konsumiert"
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-no-never",
+          "display" : "Nein, noch nie genutzt/konsumiert"
+        }
+      },
+      {
+        "valueCoding" : {
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "meta-unknown",
+          "display" : "Weiß nicht"
+        }
+      },
+      {
+        "valueCoding" : {
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "meta-not-stated",
+          "display" : "Keine Angabe"
         }
       }]
     },
@@ -275,30 +360,44 @@ ATHIS-based questionnaire module for smoking status, cigarette consumption, dura
       "required" : false,
       "answerOption" : [{
         "valueCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "status-daily",
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-yes-daily",
           "display" : "Ja, täglich"
         }
       },
       {
         "valueCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "status-occasional",
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-yes-occasionally",
           "display" : "Ja, gelegentlich"
         }
       },
       {
         "valueCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "use-former",
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-no-but-formerly",
           "display" : "Nein, aber früher"
         }
       },
       {
         "valueCoding" : {
-          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking",
-          "code" : "use-never",
-          "display" : "Nein, noch nie konsumiert"
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "yn-no-never",
+          "display" : "Nein, noch nie genutzt/konsumiert"
+        }
+      },
+      {
+        "valueCoding" : {
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "meta-unknown",
+          "display" : "Weiß nicht"
+        }
+      },
+      {
+        "valueCoding" : {
+          "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+          "code" : "meta-not-stated",
+          "display" : "Keine Angabe"
         }
       }]
     },

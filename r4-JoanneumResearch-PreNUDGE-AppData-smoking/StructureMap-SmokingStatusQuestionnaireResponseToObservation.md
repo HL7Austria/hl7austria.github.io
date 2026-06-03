@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SmokingStatusQuestionnaireResponseToObservation | *Version*:0.1.0 | |
-| Active as of 2026-05-20 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:SmokingStatusQuestionnaireResponseToObservation |
+| Active as of 2026-06-03 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:SmokingStatusQuestionnaireResponseToObservation |
 
  
 ATHIS-based Smoking Status Q to O 
@@ -27,7 +27,7 @@ ATHIS-based Smoking Status Q to O
   "name" : "SmokingStatusQuestionnaireResponseToObservation",
   "title" : "ATHIS-based Smoking Status Q to O",
   "status" : "active",
-  "date" : "2026-05-20T09:08:27+00:00",
+  "date" : "2026-06-03T12:49:02+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -240,6 +240,7 @@ ATHIS-based Smoking Status Q to O
     "typeMode" : "none",
     "input" : [{
       "name" : "groupItem",
+      "type" : "QR",
       "mode" : "source"
     },
     {
@@ -266,14 +267,14 @@ ATHIS-based Smoking Status Q to O
           "name" : "mapCurrentDailySmoker",
           "source" : [{
             "context" : "answer",
-            "element" : "value",
+            "element" : "valueCoding",
             "variable" : "coding",
-            "condition" : "(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking') and (coding.code = 'status-daily')"
+            "condition" : "(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-yes-daily')"
           }],
           "target" : [{
             "context" : "tgt",
             "contextType" : "variable",
-            "element" : "value",
+            "element" : "valueCodeableConcept",
             "transform" : "cc",
             "parameter" : [{
               "valueString" : "http://snomed.info/sct"
@@ -307,14 +308,14 @@ ATHIS-based Smoking Status Q to O
           "name" : "mapCurrentOccasionalSmoker",
           "source" : [{
             "context" : "answer",
-            "element" : "value",
+            "element" : "valueCoding",
             "variable" : "coding",
-            "condition" : "(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking') and (coding.code = 'status-occasional')"
+            "condition" : "(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-yes-occasionally')"
           }],
           "target" : [{
             "context" : "tgt",
             "contextType" : "variable",
-            "element" : "value",
+            "element" : "valueCodeableConcept",
             "transform" : "cc",
             "parameter" : [{
               "valueString" : "http://snomed.info/sct"
@@ -348,14 +349,14 @@ ATHIS-based Smoking Status Q to O
           "name" : "mapPastDailyToFormerSmoker",
           "source" : [{
             "context" : "answer",
-            "element" : "value",
+            "element" : "valueCoding",
             "variable" : "coding",
-            "condition" : "(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking') and (coding.code = 'status-daily')"
+            "condition" : "(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-yes-daily')"
           }],
           "target" : [{
             "context" : "tgt",
             "contextType" : "variable",
-            "element" : "value",
+            "element" : "valueCodeableConcept",
             "transform" : "cc",
             "parameter" : [{
               "valueString" : "http://snomed.info/sct"
@@ -372,14 +373,14 @@ ATHIS-based Smoking Status Q to O
           "name" : "mapPastOccasionalToFormerSmoker",
           "source" : [{
             "context" : "answer",
-            "element" : "value",
+            "element" : "valueCoding",
             "variable" : "coding",
-            "condition" : "(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking') and (coding.code = 'status-occasional')"
+            "condition" : "(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-yes-occasionally')"
           }],
           "target" : [{
             "context" : "tgt",
             "contextType" : "variable",
-            "element" : "value",
+            "element" : "valueCodeableConcept",
             "transform" : "cc",
             "parameter" : [{
               "valueString" : "http://snomed.info/sct"
@@ -413,14 +414,14 @@ ATHIS-based Smoking Status Q to O
           "name" : "mapPastNoToNeverSmoker",
           "source" : [{
             "context" : "answer",
-            "element" : "value",
+            "element" : "valueCoding",
             "variable" : "coding",
-            "condition" : "(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-athis-smoking') and (coding.code = 'status-no')"
+            "condition" : "(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-no')"
           }],
           "target" : [{
             "context" : "tgt",
             "contextType" : "variable",
-            "element" : "value",
+            "element" : "valueCodeableConcept",
             "transform" : "cc",
             "parameter" : [{
               "valueString" : "http://snomed.info/sct"

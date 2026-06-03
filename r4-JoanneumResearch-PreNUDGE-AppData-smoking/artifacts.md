@@ -15,8 +15,10 @@ These define forms used by systems conforming to this implementation guide to ca
 | :--- | :--- |
 | [Alkoholkonsum im letzten Jahr](Questionnaire-AlcoholUseQuestionnaire.md) | Categorical variable for the frequency of alcohol consumption in the last year (IPS compatible). |
 | [Blutzucker bei der letzten Messung](Questionnaire-BloodGlucoseQuestionnaire.md) | A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allows values inbetween 0 and 999 mg/dL. |
+| [Durchschnittliche Schlafdauer pro Nacht](Questionnaire-SleepDurationQuestionnaire.md) | A simple questionnaire for self-reporting average sleep duration per night in hours. Only allows values between 0 and 24 hours. |
 | [EHIS-PAQ: Zu-Fuß-Gehen](Questionnaire-StepCountEhisPaqQuestionnaire.md) | The questions Q2 and Q3 from the EHIS-PAQ about the number of days and duration of walking (for transport) in a typical week. |
-| [Rauchstatus und Nikotinkonsum](Questionnaire-SmokingStatusQuestionnaire.md) | ATHIS-based questionnaire module for smoking status, cigarette consumption, duration of daily smoking, tobacco heaters, electronic cigarettes or similar electronic products, and nicotine pouches. A derived IPS-compatible Observation can be created from SK1 and the past tobacco smoking question. |
+| [Rauchstatus und Nikotinkonsum](Questionnaire-SmokingStatusQuestionnaire.md) | ATHIS 2025-based questionnaire module for smoking status, cigarette consumption, duration of daily smoking, tobacco heaters, electronic cigarettes or similar electronic products, and nicotine pouches. A derived IPS-compatible Observation can be created from SK1 and the past tobacco smoking question. |
+| [Schlafqualität – Selbsteinschätzung (WHOQOL-BREF Q16)](Questionnaire-SleepQualityQuestionnaire.md) | Standalone questionnaire for self-assessing sleep quality based on WHOQOL-BREF question Q16 ('Wie zufrieden sind Sie mit Ihrem Schlaf?'). |
 | [Schrittzahl am heutigen Tag](Questionnaire-StepCountQuantityQuestionnaire.md) | A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000. |
 | [WHOQOL-BREF Lebensstil Selbsteinschätzung](Questionnaire-WhoQolBrefQuestionnaire.md) | The WHOQOL-BREF is a 26-item instrument for assessing subjective quality of life in four domains: physical, psychological, social relationships, and environment. Developed by the WHO. |
 
@@ -39,6 +41,8 @@ These define constraints on FHIR resources for systems conforming to this implem
 | [AT PreNUDGE Observation Blood Glucose (only in mg/dL)](StructureDefinition-at-prenudge-bloodglucose-observation.md) | This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allows values inbetween 0 and 999 mg/dL. |
 | [AT PreNUDGE Observation Other Quantities](StructureDefinition-at-prenudge-observation-other-quantities.md) | This FHIR profile can be used for all the other Observations for PreNUDGE, beeing quantities and not fitting the existing narrow standardized observations. If some code for specifing a new Observation is missing, please contact prenudge@joanneum.at. |
 | [AT PreNUDGE Observation Other not Quantities](StructureDefinition-at-prenudge-observation-other-not-quantities.md) | This FHIR profile can be used for all the other Observations for PreNUDGE, not beeing an quantity and not fitting the existing narrow standardized observations. |
+| [AT PreNUDGE Observation Sleep Duration](StructureDefinition-at-prenudge-sleep-duration-observation.md) | This FHIR profile defines the Sleep Duration Observation recording average nightly sleep in hours. Applicable for both automated wearable measurements (method = automated) and self-reported values derived from a questionnaire (method = manual). |
+| [AT PreNUDGE Observation Sleep Quality](StructureDefinition-at-prenudge-sleep-quality-observation.md) | Records the self-assessed sleep quality from PROMIS (My sleep quality was…in past 7 days). Also used to map WHOQOL-BREF Q16 from standalone SleepQualityQuestionnaire or the full WhoQolBrefQuestionnaire. |
 | [AT PreNUDGE Observation Smoking Status](StructureDefinition-at-prenudge-smokingstatus-observation.md) | This FHIR profile is defining the current smoking status observation for PreNUDGE. It is derived from the APS Observation Tobacco Use profile, which imposes the IPS Observation Social History - Tobacco Use profile. The value is derived from the ATHIS-based SmokingStatusQuestionnaire, primarily from SK1 and, if SK1 is negative, from the past tobacco smoking question. |
 | [AT PreNUDGE Observation Step Count](StructureDefinition-at-prenudge-stepcount-observation.md) | This FHIR profile is defining the Step Count Observation. The step count only allows values inbetween 0 and 150,000 steps per 24 hours. |
 | [AT PreNUDGE Observation WHOQOL-BREF Score](StructureDefinition-at-prenudge-whoqol-bref-score-observation.md) | Observation profile for recording WHOQOL-BREF domain scores. The overall score is represented in Observation.value, individual domain scores are recorded as components. |
@@ -63,8 +67,8 @@ These define new code systems used by systems conforming to this implementation 
 
 | | |
 | :--- | :--- |
-| [AT PreNUDGE ATHIS Smoking Answer Codes](CodeSystem-prenudge-athis-smoking.md) | Local answer codes for ATHIS smoking questionnaire items used in the PreNUDGE smoking status questionnaire. These codes preserve the questionnaire semantics and are mapped to SNOMED CT only where a clinical smoking-status Observation is derived. |
 | [AT PreNUDGE WHOQOL-BREF Answer Scales](CodeSystem-whoqol-bref-scale.md) | Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire. |
+| [ATHIS – Antwortmöglichkeiten](CodeSystem-athis-answers.md) | Vollständige Antwortmöglichkeiten aus dem ATHIS Fragebogen (Österreichische Gesundheitsbefragung, STATISTIK AUSTRIA, Version 31.03.2025). Codes sind englisch; Display-Werte bleiben deutsch. Gruppiert nach Skalentypen. Hinweis: Bestehende PreNUDGE CodeSystems bleiben gültig – whoqol-bref-scale (LQ16-Zufriedenheitsskala), prenudge-nutrition-consumption-frequency (DH1/DH3 numerische Codes), prenudge-alcoholuse-frequency (AL1 SNOMED-basiert). |
 
 ### Terminology: Structure Maps 
 
@@ -76,6 +80,8 @@ These define transformations to convert between data structures used by systems 
 | [Alcohol Use Q mapping frequency to O drinks per day](StructureMap-AlcoholQuestionnaireResponseToObservation.md) | Alcohol Use Q mapping frequency to O drinks per day |
 | [Blood Glucose Q to O](StructureMap-BloodGlucoseQuestionnaireResponseToObservation.md) | Blood Glucose Q to O |
 | [Shared base for Q to O](StructureMap-QuestionnaireResponseToObservationBase.md) | Shared base for Q to O |
+| [Sleep Duration Q to O](StructureMap-SleepDurationQuestionnaireResponseToObservation.md) | Sleep Duration Q to O |
+| [Sleep Quality Base (WHOQOL-BREF scale to LOINC)](StructureMap-SleepQualityBase.md) | Sleep Quality Base (WHOQOL-BREF scale to LOINC) |
 | [Step Count Q to O](StructureMap-StepCountQuestionnaireResponseToObservation.md) | Step Count Q to O |
 | [WHOQOL-BREF Q score to O score](StructureMap-WHOQOLBrefQuestionnaireResponseToObservation.md) | WHOQOL-BREF Q score to O score |
 
@@ -104,6 +110,15 @@ These are example instances that show what data produced and consumed by systems
 | [Blood Glucose O mapped from Q - Normal Example](Observation-bloodglucose-normal-example.md) | Example of a normal fasting blood glucose measurement (95 mg/dL). |
 | [Blood Glucose Q - Elevated Example](QuestionnaireResponse-bloodglucose-response-elevated-example.md) | Example of an elevated fasting blood glucose measurement (142 mg/dL), indicating diabetes mellitus. |
 | [Blood Glucose Q - Normal Example](QuestionnaireResponse-bloodglucose-response-normal-example.md) | Example of a normal fasting blood glucose measurement (95 mg/dL). |
+| [Sleep Duration O - Normal Automated Example](Observation-sleep-duration-normal-automated-example.md) | Example of a normal average sleep duration (7.5 h) measured by a wearable device. |
+| [Sleep Duration O - Short Automated Example](Observation-sleep-duration-short-automated-example.md) | Example of a short average sleep duration (5.5 h) measured by a wearable device, indicating insufficient sleep. |
+| [Sleep Duration O mapped from Q - Normal Example](Observation-sleep-duration-normal-manual-example.md) | Example of a self-reported average sleep duration (7 h) derived from a questionnaire response. |
+| [Sleep Duration Q - Normal Example](QuestionnaireResponse-sleep-duration-response-normal-example.md) | Example of a self-reported normal average sleep duration (7 h per night). |
+| [Sleep Duration Q - Short Example](QuestionnaireResponse-sleep-duration-response-short-example.md) | Example of a self-reported short average sleep duration (5.5 h per night). |
+| [Sleep Quality O mapped from Q - Dissatisfied Example](Observation-sleep-quality-dissatisfied-example.md) | Example of a sleep quality observation indicating poor sleep satisfaction (LA8969-3 - Poor), derived from the standalone SleepQualityQuestionnaire (S2 - Unzufrieden mapped to LOINC). |
+| [Sleep Quality O mapped from Q - Satisfied Example](Observation-sleep-quality-satisfied-example.md) | Example of a sleep quality observation indicating good sleep satisfaction (LA8967-7 - Good), derived from the standalone SleepQualityQuestionnaire (S4 - Zufrieden mapped to LOINC). |
+| [Sleep Quality Q - Dissatisfied Example](QuestionnaireResponse-sleep-quality-response-dissatisfied-example.md) | Example of a standalone sleep quality questionnaire response indicating dissatisfaction with sleep (S2 - Unzufrieden). |
+| [Sleep Quality Q - Satisfied Example](QuestionnaireResponse-sleep-quality-response-satisfied-example.md) | Example of a standalone sleep quality questionnaire response indicating satisfaction with sleep (S4 - Zufrieden). |
 | [Smoking Status O mapped from ATHIS Q - Current Daily Tobacco Smoker Example](Observation-smokingstatus-current-every-day-example.md) | Example of a smoking status observation for a current daily tobacco smoker, mapped from SK1 of the ATHIS-based SmokingStatusQuestionnaire. |
 | [Smoking Status O mapped from ATHIS Q - Former Tobacco Smoker Example](Observation-smokingstatus-former-example.md) | Example of a smoking status observation for a former tobacco smoker, mapped from SK1 and the past tobacco smoking question of the ATHIS-based SmokingStatusQuestionnaire. |
 | [Smoking Status O mapped from ATHIS Q - Never Tobacco Smoker Example](Observation-smokingstatus-never-example.md) | Example of a smoking status observation for a person who never smoked tobacco, mapped from SK1 and the past tobacco smoking question of the ATHIS-based SmokingStatusQuestionnaire. |

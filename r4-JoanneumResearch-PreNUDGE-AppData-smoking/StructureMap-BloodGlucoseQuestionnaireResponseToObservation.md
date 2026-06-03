@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/BloodGlucoseQuestionnaireResponseToObservation | *Version*:0.1.0 | |
-| Active as of 2026-05-20 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:BloodGlucoseQuestionnaireResponseToObservation |
+| Active as of 2026-06-03 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:BloodGlucoseQuestionnaireResponseToObservation |
 
  
 Blood Glucose Q to O 
@@ -27,7 +27,7 @@ Blood Glucose Q to O
   "name" : "BloodGlucoseQuestionnaireResponseToObservation",
   "title" : "Blood Glucose Q to O",
   "status" : "active",
-  "date" : "2026-05-20T09:08:27+00:00",
+  "date" : "2026-06-03T12:49:02+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

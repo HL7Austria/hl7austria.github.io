@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/WhoQolBrefQuestionnaire | *Version*:0.1.0 | |
-| Active as of 2026-05-20 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeQoLByWhoQolBref |
+| Active as of 2026-06-03 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeQoLByWhoQolBref |
 | **Copyright/Legal**: © World Health Organization. Usage with permission from WHO. | | |
 
  
@@ -37,7 +37,7 @@ Assessment of subjective quality of life in the general population and in patien
   "status" : "active",
   "experimental" : false,
   "subjectType" : ["Patient"],
-  "date" : "2026-05-20T09:08:27+00:00",
+  "date" : "2026-06-03T12:49:02+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -748,7 +748,7 @@ Assessment of subjective quality of life in the general population and in patien
   },
   {
     "linkId" : "section-3",
-    "text" : "In den folgenden Fragen geht es darum, wie zufrieden, glücklich oder gut Sie sich während der vergangenen zwei Wochen hinsichtlich verschiedener Aspekte Ihres Lebens gefühlt haben. ",
+    "text" : "In den folgenden Fragen geht es darum, wie zufrieden, glücklich oder gut Sie sich während der vergangenen zwei Wochen hinsichtlich verschiedener Aspekte Ihres Lebens gefühlt haben.",
     "type" : "group",
     "item" : [{
       "linkId" : "Q16",
