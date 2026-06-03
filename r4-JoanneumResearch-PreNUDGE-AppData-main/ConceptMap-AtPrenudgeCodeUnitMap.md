@@ -27,7 +27,7 @@ Maps observation codes to their expected UCUM units for the 'Other Quantities' o
   "title" : "AT PreNUDGE Code-to-Unit Mapping",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-03T09:07:40+00:00",
+  "date" : "2026-06-03T10:15:52+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

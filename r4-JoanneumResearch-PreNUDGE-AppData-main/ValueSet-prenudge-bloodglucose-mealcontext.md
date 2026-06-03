@@ -53,7 +53,7 @@ Meal context used in the PreNUDGE Blood Glucose questionnaire and observation.
   "title" : "AT PreNUDGE Blood Glucose Meal Context",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-03T09:07:40+00:00",
+  "date" : "2026-06-03T10:15:52+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

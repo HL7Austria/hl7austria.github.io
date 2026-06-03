@@ -64,7 +64,7 @@ Besides these narrow standardized measurements, **broad standardized measurement
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-06-03T09:07:40+00:00",
+  "date" : "2026-06-03T10:15:52+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -993,7 +993,7 @@ Besides these narrow standardized measurements, **broad standardized measurement
         "reference" : "CodeSystem/athis-answers"
       },
       "name" : "ATHIS – Antwortmöglichkeiten",
-      "description" : "Antwortmöglichkeiten aus dem ATHIS Fragebogen (Österreichische Gesundheitsbefragung, STATISTIK AUSTRIA). Version vom 31.03.2025; Codes sind englisch; Display-Werte bleiben deutsch. Gruppiert nach Skalentypen für die Wiederverwendung in PreNUDGE Questionnaires. Hinweis: Bestehende PreNUDGE CodeSystems bleiben gültig – whoqol-bref-scale (LQ16-Zufriedenheitsskala), prenudge-nutrition-consumption-frequency (DH1/DH3 numerische ATHIS-Codes), prenudge-alcoholuse-frequency (AL1 SNOMED-basiert).",
+      "description" : "Vollständige Antwortmöglichkeiten aus dem ATHIS Fragebogen (Österreichische Gesundheitsbefragung, STATISTIK AUSTRIA, Version 31.03.2025). Codes sind englisch; Display-Werte bleiben deutsch. Gruppiert nach Skalentypen. Hinweis: Bestehende PreNUDGE CodeSystems bleiben gültig – whoqol-bref-scale (LQ16-Zufriedenheitsskala), prenudge-nutrition-consumption-frequency (DH1/DH3 numerische Codes), prenudge-alcoholuse-frequency (AL1 SNOMED-basiert).",
       "exampleBoolean" : false
     },
     {

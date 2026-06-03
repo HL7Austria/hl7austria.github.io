@@ -27,7 +27,7 @@ WHOQOL-BREF Q score to O score
   "name" : "WHOQOLBrefQuestionnaireResponseToObservation",
   "title" : "WHOQOL-BREF Q score to O score",
   "status" : "active",
-  "date" : "2026-06-03T09:07:40+00:00",
+  "date" : "2026-06-03T10:15:52+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

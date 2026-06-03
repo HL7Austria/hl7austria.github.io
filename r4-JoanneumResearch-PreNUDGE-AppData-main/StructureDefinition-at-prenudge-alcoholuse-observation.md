@@ -45,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-alcoholu
   "name" : "AtPrenudgeObservationAlcoholUse",
   "title" : "AT PreNUDGE Observation Alcohol Use",
   "status" : "draft",
-  "date" : "2026-06-03T09:07:40+00:00",
+  "date" : "2026-06-03T10:15:52+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

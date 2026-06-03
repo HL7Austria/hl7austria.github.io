@@ -66,7 +66,7 @@ These define new code systems used by systems conforming to this implementation 
 | | |
 | :--- | :--- |
 | [AT PreNUDGE WHOQOL-BREF Answer Scales](CodeSystem-whoqol-bref-scale.md) | Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire. |
-| [ATHIS – Antwortmöglichkeiten](CodeSystem-athis-answers.md) | Antwortmöglichkeiten aus dem ATHIS Fragebogen (Österreichische Gesundheitsbefragung, STATISTIK AUSTRIA). Version vom 31.03.2025; Codes sind englisch; Display-Werte bleiben deutsch. Gruppiert nach Skalentypen für die Wiederverwendung in PreNUDGE Questionnaires. Hinweis: Bestehende PreNUDGE CodeSystems bleiben gültig – whoqol-bref-scale (LQ16-Zufriedenheitsskala), prenudge-nutrition-consumption-frequency (DH1/DH3 numerische ATHIS-Codes), prenudge-alcoholuse-frequency (AL1 SNOMED-basiert). |
+| [ATHIS – Antwortmöglichkeiten](CodeSystem-athis-answers.md) | Vollständige Antwortmöglichkeiten aus dem ATHIS Fragebogen (Österreichische Gesundheitsbefragung, STATISTIK AUSTRIA, Version 31.03.2025). Codes sind englisch; Display-Werte bleiben deutsch. Gruppiert nach Skalentypen. Hinweis: Bestehende PreNUDGE CodeSystems bleiben gültig – whoqol-bref-scale (LQ16-Zufriedenheitsskala), prenudge-nutrition-consumption-frequency (DH1/DH3 numerische Codes), prenudge-alcoholuse-frequency (AL1 SNOMED-basiert). |
 
 ### Terminology: Structure Maps 
 
