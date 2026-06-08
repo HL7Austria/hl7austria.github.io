@@ -1,0 +1,82 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/prenudge/appdata/r4/Observation/alcoholuse-never-example> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "alcoholuse-never-example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation"^^xsd:anyURI ;
+       fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation alcoholuse-never-example</b></p><a name=\"alcoholuse-never-example\"> </a><a name=\"hcalcoholuse-never-example\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-prenudge-alcoholuse-observation.html\">AT PreNUDGE Observation Alcohol Use</a></p></div><p><b>identifier</b>: <code>https://www.joanneum.at</code>/qr-alc-2026-02-27-001</p><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 74013-4}\">Alcoholic drinks per day</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">James Pond  Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)</a></p><p><b>effective</b>: 2026-02-27</p><p><b>issued</b>: 2026-02-27 00:00:00+0000</p><p><b>value</b>: 0 drinks/day<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{drinks}/d = '{drinks}/d')</span></p><p><b>note</b>: </p><blockquote><div><p>Ich trinke zwar nicht, bin aber als Kind in ein Fass hausgemachten Schnaps gefallen. Zählt das?</p>\n</div></blockquote><p><b>method</b>: <span title=\"Codes:{http://snomed.info/sct 87982008}\">Manual</span></p><p><b>derivedFrom</b>: <a href=\"QuestionnaireResponse-AlcoholResponseNever.html\">Response to Questionnaire '-&gt;Alkoholkonsum im letzten Jahr' about '-&gt;James Pond  Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)'</a></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "https://www.joanneum.at"^^xsd:anyURI ;
+       fhir:l <https://www.joanneum.at>
+     ] ;
+     fhir:value [ fhir:v "qr-alc-2026-02-27-001" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:74013-4 ;
+       fhir:system [
+         fhir:v "http://loinc.org"^^xsd:anyURI ;
+         fhir:l <http://loinc.org>
+       ] ;
+       fhir:code [ fhir:v "74013-4" ] ;
+       fhir:display [ fhir:v "Alcoholic drinks per day" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:DateTime ;
+     fhir:v "2026-02-27"^^xsd:date
+  ] ; # 
+  fhir:issued [ fhir:v "2026-02-27T00:00:00Z"^^xsd:dateTime] ; # 
+  fhir:value [
+     a fhir:Quantity ;
+     fhir:value [ fhir:v "0"^^xsd:decimal ] ;
+     fhir:unit [ fhir:v "drinks/day" ] ;
+     fhir:system [
+       fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+       fhir:l <http://unitsofmeasure.org>
+     ] ;
+     fhir:code [ fhir:v "{drinks}/d" ]
+  ] ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "Ich trinke zwar nicht, bin aber als Kind in ein Fass hausgemachten Schnaps gefallen. Zählt das?" ]
+  ] ) ; # 
+  fhir:method [
+     fhir:coding ( [
+       a sct:87982008 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "87982008" ] ;
+       fhir:display [ fhir:v "Manual" ]
+     ] )
+  ] ; # 
+  fhir:derivedFrom ( [
+     fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/AlcoholResponseNever> ;
+     fhir:reference [ fhir:v "QuestionnaireResponse/AlcoholResponseNever" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

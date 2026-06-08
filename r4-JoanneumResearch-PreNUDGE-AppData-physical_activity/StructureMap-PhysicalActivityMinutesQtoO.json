@@ -1,0 +1,293 @@
+{
+  "resourceType" : "StructureMap",
+  "id" : "PhysicalActivityMinutesQtoO",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap PhysicalActivityMinutesQtoO</b></p><a name=\"PhysicalActivityMinutesQtoO\"> </a><a name=\"hcPhysicalActivityMinutesQtoO\"> </a><pre class=\"fml\">\r\n<b>map</b><span style=\"color: navy\"> &quot;</span>https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/PhysicalActivityMinutesQtoO<span style=\"color: navy\">&quot; = &quot;</span>Physical Activity Minutes Q to O<span style=\"color: navy\">&quot;\r\n\r\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Physical Activity EHIS-PAQ Q7 / ATHIS PE7 to O (aggregate-only variant)</span>\r\n\r\n<b>uses</b><span style=\"color: navy\"> &quot;</span><a href=\"http://hl7.org/fhir/R4/questionnaireresponse.html\" title=\"QuestionnaireResponse\">http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse</a><span style=\"color: navy\">&quot; </span><b>alias </b>QR <b>as </b><b>source</b>\r\n<b>uses</b><span style=\"color: navy\"> &quot;</span><a href=\"http://hl7.org/fhir/R4/observation.html\" title=\"Observation\">http://hl7.org/fhir/StructureDefinition/Observation</a><span style=\"color: navy\">&quot; </span><b>alias </b>Obs <b>as </b><b>target</b>\r\n\r\n<b>imports</b><span style=\"color: navy\"> &quot;</span>http://hl7.org/fhir/StructureMap/*<span style=\"color: navy\">&quot;\r\n</span><b>imports</b><span style=\"color: navy\"> &quot;</span><a href=\"StructureMap-QuestionnaireResponseToObservationBase.html\" title=\"Shared base for Q to O\">https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase</a><span style=\"color: navy\">&quot;\r\n</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">---------------------------------------------------------------------------</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">Main entry group</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">---------------------------------------------------------------------------</span>\r\n<b>group </b>PhysicalActivityQuestionnaireResponseToObservation<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  <span style=\"color: navy\">// </span><span style=\"color: green\">Shared base: identifier copy, derivedFrom, subject, issued.</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">SetObservationBase also sets method = SCT 87982008 (Manual) — correct for</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">all questionnaire-derived observations in this IG.</span>\r\n  src<b> then </b>SetObservationBase<span style=\"color: navy\">(</span><span style=\"color: maroon\">src</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>&quot;Base&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Explicitly confirm method = Manual (base already does this; listed for clarity).</span>\r\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.method = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'http://snomed.info/sct'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'87982008'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Manual'</span><span style=\"color: navy\">)</span> <i>&quot;SetMethodManual&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Target profile</span>\r\n  src<span style=\"color: navy\"><b> -&gt; </b></span> tgt.meta = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Meta'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">meta</span><span style=\"color: navy\">, </span> meta.profile = <span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation'</span> <i>&quot;SetProfile&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Panel code</span>\r\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'http://loinc.org'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'101691-4'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Duration of physical activity'</span><span style=\"color: navy\">)</span> <i>&quot;SetCode&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">effectiveDateTime from authored (EHIS-PAQ Q7 has no embedded date item)</span>\r\n  src.authored<b> as </b><span style=\"color: maroon\">authored</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.effectiveDateTime = <span style=\"color: maroon\">authored</span> <i>&quot;SetEffectiveDateTime&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Map Q7 group to component[aggregateActivity]</span>\r\n  src.item<b> as </b><span style=\"color: maroon\">q7</span><b> where </b>linkId = 'Q7'<b> then </b>MapQ7ToAggregate<span style=\"color: navy\">(</span><span style=\"color: maroon\">q7</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>&quot;ProcessQ7&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">component[moderateActivity] : NOT mapped</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">Q7 asks for total leisure activity time without separating intensity levels.</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">There is no questionnaire source for a moderate-only figure.</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">component[vigorousActivity] : NOT mapped</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">Total leisure time maps directly to aggregateActivity (see MapQ7ToAggregate).</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">component[classificationMethod] : NOT mapped</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">method = Manual → component must be absent or self-rp (pa-manual-comp-01).</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">The map does not set it; a consuming system may add self-rp post-transform</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">if explicit documentation of the classification basis is required.</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">---------------------------------------------------------------------------</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">Q7 → component[aggregateActivity]  (LOINC 101691-4)</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">Formula: aggregateMinutes = (Q7-hours × 60) + Q7-minutes</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">This is a direct transcription of the patient-reported total time.</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">No intensity weighting is applied because Q7 does not capture intensity.</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">The ×2 vigorous weighting (WHO/IPAQ) is ONLY applied when a wearable</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">separately measures moderate and vigorous minutes (wearable variant).</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">Note on FML arithmetic / MaLaC-HD compatibility:</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">This map uses evaluate() with integer arithmetic (* 60, +) which is NOT</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">supported by MaLaC-HD 1.6.0. MaLaC-HD fails at parse time with</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">&quot;Param type 14 not implemented&quot; (integer literal in FHIRPath expression).</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">The questionnaire captures hours and minutes as separate integer items,</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">so no MaLaC-HD compatible rewrite exists without redesigning the questionnaire</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">or changing the output unit. Use matchbox or another evaluate()-capable engine.</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">---------------------------------------------------------------------------</span>\r\n<b>group </b>MapQ7ToAggregate<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.component<b> as </b><span style=\"color: maroon\">aggComp</span><b> then</b><span style=\"color: navy\"> {\r\n</span>    <span style=\"color: navy\">// </span><span style=\"color: green\">Component discriminator code: LOINC 101691-4</span>\r\n    <span style=\"color: navy\">// </span><span style=\"color: green\">Note: same code as panel Observation.code — collision documented in profile.</span>\r\n    <span style=\"color: navy\">// </span><span style=\"color: green\">obs-7 is not violated because Observation.value[x] is absent.</span>\r\n    src<span style=\"color: navy\"><b> -&gt; </b></span>aggComp.code = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'http://loinc.org'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'101691-4'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Duration of physical activity'</span><span style=\"color: navy\">)</span> <i>&quot;SetAggregateCode&quot;</i><span style=\"color: navy\">;</span>\r\n    src<span style=\"color: navy\"><b> -&gt; </b></span>aggComp.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><b> then</b><span style=\"color: navy\"> {\r\n</span>      <span style=\"color: navy\">// </span><span style=\"color: green\">aggregateMinutes = (Q7-hours × 60) + Q7-minutes</span>\r\n      src<span style=\"color: navy\"><b> -&gt; </b></span>qty.value = evaluate<span style=\"color: navy\">(</span>src<span style=\"color: navy\">, </span>(item.where(linkId = 'Q7-hours').answer.valueInteger * 60) + item.where(linkId = 'Q7-minutes').answer.valueInteger<span style=\"color: navy\">)</span> <i>&quot;ComputeAggregateMinutes&quot;</i><span style=\"color: navy\">;</span>\r\n      src<span style=\"color: navy\"><b> -&gt; </b></span>qty.unit = <span style=\"color: blue\">'min/wk'</span> <i>&quot;SetUnit&quot;</i><span style=\"color: navy\">;</span>\r\n      src<span style=\"color: navy\"><b> -&gt; </b></span>qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span> <i>&quot;SetSystem&quot;</i><span style=\"color: navy\">;</span>\r\n      src<span style=\"color: navy\"><b> -&gt; </b></span>qty.code = <span style=\"color: blue\">'min/wk'</span> <i>&quot;SetUCUM&quot;</i><span style=\"color: navy\">;</span>\r\n    <span style=\"color: navy\">}</span> <i>&quot;SetAggregateQuantity&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;MapAggregateComponent&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span></pre></div>"
+  },
+  "url" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/PhysicalActivityMinutesQtoO",
+  "version" : "0.1.0",
+  "name" : "Physical Activity Minutes Q to O",
+  "status" : "draft",
+  "date" : "2026-06-08T06:51:44+00:00",
+  "publisher" : "The PreNUDGE Consortium",
+  "contact" : [{
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at"
+    }]
+  },
+  {
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at",
+      "use" : "work"
+    }]
+  }],
+  "description" : "Physical Activity EHIS-PAQ Q7 / ATHIS PE7 to O (aggregate-only variant)",
+  "structure" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse",
+    "mode" : "source",
+    "alias" : "QR"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/Observation",
+    "mode" : "target",
+    "alias" : "Obs"
+  }],
+  "import" : ["http://hl7.org/fhir/StructureMap/*",
+  "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase"],
+  "group" : [{
+    "name" : "PhysicalActivityQuestionnaireResponseToObservation",
+    "typeMode" : "none",
+    "documentation" : "---------------------------------------------------------------------------\r\nMain entry group\r\n---------------------------------------------------------------------------",
+    "input" : [{
+      "name" : "src",
+      "type" : "QR",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgt",
+      "type" : "Obs",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "Base",
+      "source" : [{
+        "context" : "src"
+      }],
+      "dependent" : [{
+        "name" : "SetObservationBase",
+        "variable" : ["src",
+        "tgt"]
+      }]
+    },
+    {
+      "name" : "SetMethodManual",
+      "source" : [{
+        "context" : "src"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "method",
+        "transform" : "cc",
+        "parameter" : [{
+          "valueString" : "http://snomed.info/sct"
+        },
+        {
+          "valueString" : "87982008"
+        },
+        {
+          "valueString" : "Manual"
+        }]
+      }]
+    },
+    {
+      "name" : "SetProfile",
+      "source" : [{
+        "context" : "src"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "meta",
+        "variable" : "meta",
+        "transform" : "create",
+        "parameter" : [{
+          "valueString" : "Meta"
+        }]
+      },
+      {
+        "context" : "meta",
+        "contextType" : "variable",
+        "element" : "profile",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation"
+        }]
+      }]
+    },
+    {
+      "name" : "SetCode",
+      "source" : [{
+        "context" : "src"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "code",
+        "transform" : "cc",
+        "parameter" : [{
+          "valueString" : "http://loinc.org"
+        },
+        {
+          "valueString" : "101691-4"
+        },
+        {
+          "valueString" : "Duration of physical activity"
+        }]
+      }]
+    },
+    {
+      "name" : "SetEffectiveDateTime",
+      "source" : [{
+        "context" : "src",
+        "element" : "authored",
+        "variable" : "authored"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "effectiveDateTime",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueId" : "authored"
+        }]
+      }]
+    },
+    {
+      "name" : "ProcessQ7",
+      "source" : [{
+        "context" : "src",
+        "element" : "item",
+        "variable" : "q7",
+        "condition" : "linkId = 'Q7'"
+      }],
+      "dependent" : [{
+        "name" : "MapQ7ToAggregate",
+        "variable" : ["q7",
+        "tgt"]
+      }]
+    }]
+  },
+  {
+    "name" : "MapQ7ToAggregate",
+    "typeMode" : "none",
+    "documentation" : "---------------------------------------------------------------------------\r\nQ7 → component[aggregateActivity]  (LOINC 101691-4)\r\nFormula: aggregateMinutes = (Q7-hours × 60) + Q7-minutes\r\nThis is a direct transcription of the patient-reported total time.\r\nNo intensity weighting is applied because Q7 does not capture intensity.\r\nThe ×2 vigorous weighting (WHO/IPAQ) is ONLY applied when a wearable\r\nseparately measures moderate and vigorous minutes (wearable variant).\r\nNote on FML arithmetic / MaLaC-HD compatibility:\r\nThis map uses evaluate() with integer arithmetic (* 60, +) which is NOT\r\nsupported by MaLaC-HD 1.6.0. MaLaC-HD fails at parse time with\r\n\"Param type 14 not implemented\" (integer literal in FHIRPath expression).\r\nThe questionnaire captures hours and minutes as separate integer items,\r\nso no MaLaC-HD compatible rewrite exists without redesigning the questionnaire\r\nor changing the output unit. Use matchbox or another evaluate()-capable engine.\r\n---------------------------------------------------------------------------",
+    "input" : [{
+      "name" : "src",
+      "type" : "QR",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgt",
+      "type" : "Obs",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "MapAggregateComponent",
+      "source" : [{
+        "context" : "src"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "component",
+        "variable" : "aggComp"
+      }],
+      "rule" : [{
+        "name" : "SetAggregateCode",
+        "source" : [{
+          "context" : "src"
+        }],
+        "target" : [{
+          "context" : "aggComp",
+          "contextType" : "variable",
+          "element" : "code",
+          "transform" : "cc",
+          "parameter" : [{
+            "valueString" : "http://loinc.org"
+          },
+          {
+            "valueString" : "101691-4"
+          },
+          {
+            "valueString" : "Duration of physical activity"
+          }]
+        }]
+      },
+      {
+        "name" : "SetAggregateQuantity",
+        "source" : [{
+          "context" : "src"
+        }],
+        "target" : [{
+          "context" : "aggComp",
+          "contextType" : "variable",
+          "element" : "value",
+          "variable" : "qty",
+          "transform" : "create",
+          "parameter" : [{
+            "valueString" : "Quantity"
+          }]
+        }],
+        "rule" : [{
+          "name" : "ComputeAggregateMinutes",
+          "source" : [{
+            "context" : "src"
+          }],
+          "target" : [{
+            "context" : "qty",
+            "contextType" : "variable",
+            "element" : "value",
+            "transform" : "evaluate",
+            "parameter" : [{
+              "valueId" : "src"
+            },
+            {
+              "valueString" : "(item.where(linkId = 'Q7-hours').answer.valueInteger * 60) + item.where(linkId = 'Q7-minutes').answer.valueInteger"
+            }]
+          }]
+        },
+        {
+          "name" : "SetUnit",
+          "source" : [{
+            "context" : "src"
+          }],
+          "target" : [{
+            "context" : "qty",
+            "contextType" : "variable",
+            "element" : "unit",
+            "transform" : "copy",
+            "parameter" : [{
+              "valueString" : "min/wk"
+            }]
+          }]
+        },
+        {
+          "name" : "SetSystem",
+          "source" : [{
+            "context" : "src"
+          }],
+          "target" : [{
+            "context" : "qty",
+            "contextType" : "variable",
+            "element" : "system",
+            "transform" : "copy",
+            "parameter" : [{
+              "valueString" : "http://unitsofmeasure.org"
+            }]
+          }]
+        },
+        {
+          "name" : "SetUCUM",
+          "source" : [{
+            "context" : "src"
+          }],
+          "target" : [{
+            "context" : "qty",
+            "contextType" : "variable",
+            "element" : "code",
+            "transform" : "copy",
+            "parameter" : [{
+              "valueString" : "min/wk"
+            }]
+          }]
+        }]
+      }]
+    }]
+  }]
+}

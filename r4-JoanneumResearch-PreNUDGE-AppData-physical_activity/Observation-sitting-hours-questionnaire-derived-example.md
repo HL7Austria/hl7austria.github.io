@@ -1,0 +1,85 @@
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Sitting Hours O mapped from EHIS-PAQ Q9 / ATHIS PE9 – Example - FHIR® v4.0.1
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Sitting Hours O mapped from EHIS-PAQ Q9 / ATHIS PE9 – Example**
+
+## Example Observation: Sitting Hours O mapped from EHIS-PAQ Q9 / ATHIS PE9 – Example
+
+Profile: [AT PreNUDGE Observation Sitting Hours](StructureDefinition-at-prenudge-sitting-hours-observation.md)
+
+**identifier**: `https://www.joanneum.at`/obs-sh-2026-06-06-002
+
+**status**: Final
+
+**code**: Sedentary activity 24 hour
+
+**subject**: [James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)](Patient-example.md)
+
+**effective**: 2026-06-06 09:00:00+0200
+
+**issued**: 2026-06-06 09:00:00+0200
+
+**value**: 6 h (Details: UCUM codeh = 'h')
+
+**note**: 
+
+> 
+
+Selbstberichtet. Schlafstunden vom Befragten gemäß Fragebogenanweisung ausgeschlossen.
+
+
+**method**: Manual
+
+**derivedFrom**: [Response to Questionnaire '->EHIS-PAQ Q9 / ATHIS PE9: Sitzen und Ruhen' about '->James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)'](QuestionnaireResponse-sitting-hours-ehis-paq-response-example.md)
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Observation",
+  "id" : "sitting-hours-questionnaire-derived-example",
+  "meta" : {
+    "profile" : ["https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sitting-hours-observation"]
+  },
+  "identifier" : [{
+    "system" : "https://www.joanneum.at",
+    "value" : "obs-sh-2026-06-06-002"
+  }],
+  "status" : "final",
+  "code" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "87705-0",
+      "display" : "Sedentary activity 24 hour"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/example"
+  },
+  "effectiveDateTime" : "2026-06-06T09:00:00+02:00",
+  "issued" : "2026-06-06T09:00:00+02:00",
+  "valueQuantity" : {
+    "value" : 6,
+    "unit" : "h",
+    "system" : "http://unitsofmeasure.org",
+    "code" : "h"
+  },
+  "note" : [{
+    "text" : "Selbstberichtet. Schlafstunden vom Befragten gemäß Fragebogenanweisung ausgeschlossen."
+  }],
+  "method" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "87982008",
+      "display" : "Manual"
+    }]
+  },
+  "derivedFrom" : [{
+    "reference" : "QuestionnaireResponse/sitting-hours-ehis-paq-response-example"
+  }]
+}
+
+```

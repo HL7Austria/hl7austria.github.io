@@ -1,0 +1,179 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/prenudge/appdata/r4/Observation/whoqol-bref-score-example> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "whoqol-bref-score-example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-whoqol-bref-score-observation"^^xsd:anyURI ;
+       fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-whoqol-bref-score-observation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation whoqol-bref-score-example</b></p><a name=\"whoqol-bref-score-example\"> </a><a name=\"hcwhoqol-bref-score-example\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-prenudge-whoqol-bref-score-observation.html\">AT PreNUDGE Observation WHOQOL-BREF Score</a></p></div><p><b>identifier</b>: <code>https://www.joanneum.at</code>/qr-whoqol-2026-02-28-001</p><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 405152002}\">Quality of life</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">James Pond  Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)</a></p><p><b>effective</b>: 2026-02-28 10:30:00+0000</p><p><b>issued</b>: 2026-02-28 10:30:00+0000</p><p><b>method</b>: <span title=\"Codes:{http://snomed.info/sct 87982008}\">Manual</span></p><p><b>derivedFrom</b>: <a href=\"QuestionnaireResponse-whoqol-bref-response-example.html\">Response to Questionnaire 'https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/QolQuestionnaire' about '-&gt;James Pond  Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)'</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 60132005}\">Generalized</span></p><p><b>value</b>: 75 score<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{score} = '{score}')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 19388002}\">Physical</span></p><p><b>value</b>: 78.6 score<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{score} = '{score}')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 60224009}\">Psychologic</span></p><p><b>value</b>: 70.8 score<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{score} = '{score}')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 272151006}\">Relationships</span></p><p><b>value</b>: 66.7 score<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{score} = '{score}')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 276339004}\">Environment</span></p><p><b>value</b>: 62.5 score<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{score} = '{score}')</span></p></blockquote></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "https://www.joanneum.at"^^xsd:anyURI ;
+       fhir:l <https://www.joanneum.at>
+     ] ;
+     fhir:value [ fhir:v "qr-whoqol-2026-02-28-001" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:405152002 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "405152002" ] ;
+       fhir:display [ fhir:v "Quality of life" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:DateTime ;
+     fhir:v "2026-02-28T10:30:00Z"^^xsd:dateTime
+  ] ; # 
+  fhir:issued [ fhir:v "2026-02-28T10:30:00Z"^^xsd:dateTime] ; # 
+  fhir:method [
+     fhir:coding ( [
+       a sct:87982008 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "87982008" ] ;
+       fhir:display [ fhir:v "Manual" ]
+     ] )
+  ] ; # 
+  fhir:derivedFrom ( [
+     fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/whoqol-bref-response-example> ;
+     fhir:reference [ fhir:v "QuestionnaireResponse/whoqol-bref-response-example" ]
+  ] ) ; # 
+  fhir:component ( [
+     fhir:code [
+       fhir:coding ( [
+         a sct:60132005 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "60132005" ] ;
+         fhir:display [ fhir:v "Generalized" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "75"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "score" ] ;
+       fhir:system [
+         fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+         fhir:l <http://unitsofmeasure.org>
+       ] ;
+       fhir:code [ fhir:v "{score}" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a sct:19388002 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "19388002" ] ;
+         fhir:display [ fhir:v "Physical" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v 78.6 ] ;
+       fhir:unit [ fhir:v "score" ] ;
+       fhir:system [
+         fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+         fhir:l <http://unitsofmeasure.org>
+       ] ;
+       fhir:code [ fhir:v "{score}" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a sct:60224009 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "60224009" ] ;
+         fhir:display [ fhir:v "Psychologic" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v 70.8 ] ;
+       fhir:unit [ fhir:v "score" ] ;
+       fhir:system [
+         fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+         fhir:l <http://unitsofmeasure.org>
+       ] ;
+       fhir:code [ fhir:v "{score}" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a sct:272151006 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "272151006" ] ;
+         fhir:display [ fhir:v "Relationships" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v 66.7 ] ;
+       fhir:unit [ fhir:v "score" ] ;
+       fhir:system [
+         fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+         fhir:l <http://unitsofmeasure.org>
+       ] ;
+       fhir:code [ fhir:v "{score}" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a sct:276339004 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "276339004" ] ;
+         fhir:display [ fhir:v "Environment" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v 62.5 ] ;
+       fhir:unit [ fhir:v "score" ] ;
+       fhir:system [
+         fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+         fhir:l <http://unitsofmeasure.org>
+       ] ;
+       fhir:code [ fhir:v "{score}" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

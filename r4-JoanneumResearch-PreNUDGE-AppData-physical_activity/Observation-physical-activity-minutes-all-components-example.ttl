@@ -1,0 +1,159 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/prenudge/appdata/r4/Observation/physical-activity-minutes-all-components-example> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "physical-activity-minutes-all-components-example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation"^^xsd:anyURI ;
+       fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation physical-activity-minutes-all-components-example</b></p><a name=\"physical-activity-minutes-all-components-example\"> </a><a name=\"hcphysical-activity-minutes-all-components-example\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-prenudge-physical-activity-minutes-observation.html\">AT PreNUDGE Observation Physical Activity Minutes</a></p></div><p><b>identifier</b>: <code>https://www.joanneum.at</code>/obs-pa-e-2026-03-24-001</p><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 101691-4}\">Duration of physical activity</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">James Pond  Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)</a></p><p><b>effective</b>: 2026-03-24 08:00:00+0100</p><p><b>issued</b>: 2026-03-24 08:00:00+0100</p><p><b>method</b>: <span title=\"Codes:{http://snomed.info/sct 8359006}\">Automated</span></p><p><b>device</b>: <a href=\"Device-device-wearable-example.html\">Device: identifier = https://www.joanneum.at/devices#dev-wearable-001; status = active; manufacturer = PreNUDGE Demo Devices GmbH; modelNumber = PND-FT-001</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 77592-4}\">Moderate physical activity [IPAQ]</span></p><p><b>value</b>: 120 min/wk<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemin/wk = 'min/wk')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 77593-2}\">Vigorous physical activity [IPAQ]</span></p><p><b>value</b>: 60 min/wk<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemin/wk = 'min/wk')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 101691-4}\">Duration of physical activity</span></p><p><b>value</b>: 240 min/wk<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemin/wk = 'min/wk')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 246501002}\">Technique</span></p><p><b>value</b>: <span title=\"Codes:{https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/at-prenudge-physical-activity-classification-method-cs met-cal}\">MET Value Calculated</span></p></blockquote></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "https://www.joanneum.at"^^xsd:anyURI ;
+       fhir:l <https://www.joanneum.at>
+     ] ;
+     fhir:value [ fhir:v "obs-pa-e-2026-03-24-001" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:101691-4 ;
+       fhir:system [
+         fhir:v "http://loinc.org"^^xsd:anyURI ;
+         fhir:l <http://loinc.org>
+       ] ;
+       fhir:code [ fhir:v "101691-4" ] ;
+       fhir:display [ fhir:v "Duration of physical activity" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:DateTime ;
+     fhir:v "2026-03-24T08:00:00+01:00"^^xsd:dateTime
+  ] ; # 
+  fhir:issued [ fhir:v "2026-03-24T08:00:00+01:00"^^xsd:dateTime] ; # 
+  fhir:method [
+     fhir:coding ( [
+       a sct:8359006 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "8359006" ] ;
+       fhir:display [ fhir:v "Automated" ]
+     ] )
+  ] ; # 
+  fhir:device [
+     fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/Device/device-wearable-example> ;
+     fhir:reference [ fhir:v "Device/device-wearable-example" ]
+  ] ; # 
+  fhir:component ( [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:77592-4 ;
+         fhir:system [
+           fhir:v "http://loinc.org"^^xsd:anyURI ;
+           fhir:l <http://loinc.org>
+         ] ;
+         fhir:code [ fhir:v "77592-4" ] ;
+         fhir:display [ fhir:v "Moderate physical activity [IPAQ]" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "120"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "min/wk" ] ;
+       fhir:system [
+         fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+         fhir:l <http://unitsofmeasure.org>
+       ] ;
+       fhir:code [ fhir:v "min/wk" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:77593-2 ;
+         fhir:system [
+           fhir:v "http://loinc.org"^^xsd:anyURI ;
+           fhir:l <http://loinc.org>
+         ] ;
+         fhir:code [ fhir:v "77593-2" ] ;
+         fhir:display [ fhir:v "Vigorous physical activity [IPAQ]" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "60"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "min/wk" ] ;
+       fhir:system [
+         fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+         fhir:l <http://unitsofmeasure.org>
+       ] ;
+       fhir:code [ fhir:v "min/wk" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:101691-4 ;
+         fhir:system [
+           fhir:v "http://loinc.org"^^xsd:anyURI ;
+           fhir:l <http://loinc.org>
+         ] ;
+         fhir:code [ fhir:v "101691-4" ] ;
+         fhir:display [ fhir:v "Duration of physical activity" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "240"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "min/wk" ] ;
+       fhir:system [
+         fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
+         fhir:l <http://unitsofmeasure.org>
+       ] ;
+       fhir:code [ fhir:v "min/wk" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a sct:246501002 ;
+         fhir:system [
+           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+           fhir:l <http://snomed.info/sct>
+         ] ;
+         fhir:code [ fhir:v "246501002" ] ;
+         fhir:display [ fhir:v "Technique" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/at-prenudge-physical-activity-classification-method-cs"^^xsd:anyURI ;
+           fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/at-prenudge-physical-activity-classification-method-cs>
+         ] ;
+         fhir:code [ fhir:v "met-cal" ] ;
+         fhir:display [ fhir:v "MET Value Calculated" ]
+       ] )
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

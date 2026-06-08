@@ -1,0 +1,277 @@
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Muscle Strengthening Sessions Q to O - FHIR® v4.0.1
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Muscle Strengthening Sessions Q to O**
+
+## StructureMap: Muscle Strengthening Sessions Q to O 
+
+| | | |
+| :--- | :--- | :--- |
+| *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/MuscleStrengtheningQuestionnaireResponseToObservation | *Version*:0.1.0 | |
+| Active as of 2026-06-08 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:MuscleStrengtheningQuestionnaireResponseToObservation |
+
+ 
+Muscle Strengthening Sessions Q to O 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "StructureMap",
+  "id" : "MuscleStrengtheningQuestionnaireResponseToObservation",
+  "url" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/MuscleStrengtheningQuestionnaireResponseToObservation",
+  "version" : "0.1.0",
+  "name" : "MuscleStrengtheningQuestionnaireResponseToObservation",
+  "title" : "Muscle Strengthening Sessions Q to O",
+  "status" : "active",
+  "date" : "2026-06-08T06:51:44+00:00",
+  "publisher" : "The PreNUDGE Consortium",
+  "contact" : [{
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at"
+    }]
+  },
+  {
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at",
+      "use" : "work"
+    }]
+  }],
+  "description" : "Muscle Strengthening Sessions Q to O",
+  "structure" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse",
+    "mode" : "source",
+    "alias" : "QR"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/Observation",
+    "mode" : "target",
+    "alias" : "Obs"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/Quantity",
+    "mode" : "source",
+    "alias" : "Quantity"
+  }],
+  "import" : ["http://hl7.org/fhir/StructureMap/*",
+  "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase"],
+  "group" : [{
+    "name" : "MuscleStrengtheningQuestionnaireResponseToObservation",
+    "typeMode" : "none",
+    "input" : [{
+      "name" : "src",
+      "type" : "QR",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgt",
+      "type" : "Obs",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "Base",
+      "source" : [{
+        "context" : "src"
+      }],
+      "dependent" : [{
+        "name" : "SetObservationBase",
+        "variable" : ["src", "tgt"]
+      }]
+    },
+    {
+      "name" : "SetProfile",
+      "source" : [{
+        "context" : "src"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "meta",
+        "variable" : "meta",
+        "transform" : "create",
+        "parameter" : [{
+          "valueString" : "Meta"
+        }]
+      },
+      {
+        "context" : "meta",
+        "contextType" : "variable",
+        "element" : "profile",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-muscle-strengthening-observation"
+        }]
+      }]
+    },
+    {
+      "name" : "SetCode",
+      "source" : [{
+        "context" : "src"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "code",
+        "transform" : "cc",
+        "parameter" : [{
+          "valueString" : "http://loinc.org"
+        },
+        {
+          "valueString" : "82291-6"
+        },
+        {
+          "valueString" : "Frequency of muscle-strengthening physical activity"
+        }]
+      }]
+    },
+    {
+      "name" : "SetEffectiveDateTime",
+      "source" : [{
+        "context" : "src",
+        "element" : "authored",
+        "variable" : "authored"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "effectiveDateTime",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueId" : "authored"
+        }]
+      }]
+    },
+    {
+      "name" : "ProcessItem",
+      "source" : [{
+        "context" : "src",
+        "element" : "item",
+        "variable" : "item",
+        "condition" : "linkId = 'muscle-strengthening-sessions'"
+      }],
+      "dependent" : [{
+        "name" : "MapMuscleStrengthening",
+        "variable" : ["item", "tgt"]
+      }]
+    }]
+  },
+  {
+    "name" : "MapMuscleStrengthening",
+    "typeMode" : "none",
+    "input" : [{
+      "name" : "src",
+      "type" : "QR",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgt",
+      "type" : "Obs",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "ProcessAnswer",
+      "source" : [{
+        "context" : "src",
+        "element" : "answer",
+        "variable" : "answer"
+      }],
+      "rule" : [{
+        "name" : "MapValueQuantity",
+        "source" : [{
+          "context" : "answer",
+          "element" : "valueQuantity",
+          "variable" : "srcQty"
+        }],
+        "dependent" : [{
+          "name" : "MapMuscleStrengtheningQuantity",
+          "variable" : ["srcQty", "tgt"]
+        }]
+      }]
+    }]
+  },
+  {
+    "name" : "MapMuscleStrengtheningQuantity",
+    "typeMode" : "none",
+    "input" : [{
+      "name" : "srcQty",
+      "type" : "Quantity",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgt",
+      "type" : "Obs",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "ExtractValue",
+      "source" : [{
+        "context" : "srcQty",
+        "element" : "value",
+        "variable" : "v"
+      }],
+      "rule" : [{
+        "name" : "SetQuantity",
+        "source" : [{
+          "context" : "v",
+          "element" : "value",
+          "variable" : "numVal"
+        }],
+        "target" : [{
+          "context" : "tgt",
+          "contextType" : "variable",
+          "element" : "value",
+          "variable" : "qty",
+          "transform" : "create",
+          "parameter" : [{
+            "valueString" : "Quantity"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "value",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueId" : "numVal"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "unit",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "{sessions}/wk"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "system",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "http://unitsofmeasure.org"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "code",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "{sessions}/wk"
+          }]
+        }]
+      }]
+    }]
+  }]
+}
+
+```
