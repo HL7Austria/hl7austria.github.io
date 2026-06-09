@@ -50,7 +50,7 @@ This Implementation Guide contains and references intellectual property owned by
   "name" : "TCFHIRAGSchedulingR5",
   "title" : "Austrian Appointment Scheduling (R5)",
   "status" : "draft",
-  "date" : "2026-06-09T13:05:25+00:00",
+  "date" : "2026-06-09T13:44:21+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "packageId" : "hl7.at.fhir.tc.wg.scheduling.r5",
   "license" : "CC0-1.0",

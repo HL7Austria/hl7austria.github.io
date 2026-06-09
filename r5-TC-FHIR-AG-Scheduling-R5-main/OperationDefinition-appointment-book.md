@@ -18,11 +18,11 @@ Request to book a selected Appointment. This operation follows the appointment a
 
 ####  Book a New Appointment 
 
-This operation is used by the Scheduling Client to request the booking of an appointment from a Scheduling Server. The Scheduling Client provides a full Appointment resource that SHALL have the status `proposed`.
+This operation is used by the Scheduling Client to request the booking of an Appointment from a Scheduling Server. The Scheduling Client provides a full Appointment resource that SHALL have the status `proposed`.
 
-If the appointment `$book` operation was successful the Scheduling Server returns an Appointment resource with the the value of `Appointment.status` set to `booked`. If the Appointment needs to be manually confirmed, the Scheduling Server `Appointment.status` of the returned Appointment is set to `pending`.
+If the Appointment `$book` operation was successful the Scheduling Server returns an Appointment resource with the the value of `Appointment.status` set to `booked`. If the Appointment needs to be manually confirmed, the Scheduling Server `Appointment.status` of the returned Appointment is set to `pending`.
 
-The Scheduling Client is expected to convey the outcome to the user who requested the creation of the appointment, and to record the current state of the appointment in the corresponding system(s), including any error conditions..
+The Scheduling Client is expected to convey the outcome to the user who requested the creation of the Appointment, and to record the current state of the Appointment in the corresponding system(s), including any error conditions..
 
 #####  Pre-Conditions 
 
@@ -36,7 +36,7 @@ If any of those pre-conditions are not met, the Scheduling Server SHALL reject t
 
 #####  Examples 
 
-#####  Request the booking of an appointment 
+#####  Request the booking of an Appointment 
 
 ```
 POST: [baseURL]/Appointment/$book
@@ -194,7 +194,7 @@ HTTP 200 OK
   "name" : "Book_Appointment_Operation",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-06-09T13:05:25+00:00",
+  "date" : "2026-06-09T13:44:21+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactions. This operation completes the booking of an appointment. The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the book request and updates the resource status accordingly. ",
   "affectsState" : true,

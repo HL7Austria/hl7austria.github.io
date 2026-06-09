@@ -21,32 +21,32 @@ A query operation that allows to search for healthcare service providers that of
 
 ####  For the Scheduling Client 
 
-This query operation is used by the Scheduling Client to find healthcare service providers that offer a specific healthcare service. This can be achieved by:
+This query operation is used by the Scheduling Client to find Healthcare Service Providers that offer a specific Healthcare Service. This can be achieved by:
 
 * using a HealthcareService instance (as full resource) as search input
 * identifying the healthcare service via a code (`HealthcareService.category`, `HealthcareService.type` or `HealthcareService.specialty`)
 
 In addition to that a Scheduling Client can provide further filter criteria in its search like:
 
-* a region where a healthcare service should ideally be offered with either a Location reference or a zip code
-* the desired availablity time of a healthcare service
+* a region where a Healthcare Service should ideally be offered with either a Location reference or a zip code
+* the desired availablity time of a Healthcare Service
 
 #####  Pre-Conditions 
 
 The following pre-conditions must be fulfilled for the `$findHSP` operation to be successful:
 
 * The general information about the HealthcareService identification itself is already available in advance
-* This means that either the client has already searched for the healthcare service and has fetched the corresponding HealthcareService resource instance or the client is aware of the codes for category, type or specialty of it.
+* This means that either the client has already searched for the Healthcare Service and has fetched the corresponding HealthcareService resource instance or the client is aware of the codes for category, type or specialty of it.
 
-If a healthcare service information is not provided by the client in this query operation, the Scheduling Server SHALL reject the operation and provide a corresponding explanation in the OperationOutcome.
+If a Healthcare Service information is not provided by the client in this query operation, the Scheduling Server SHALL reject the operation and provide a corresponding explanation in the OperationOutcome.
 
 ####  For the Scheduling Server 
 
-Based on the search input the Scheduling Server has to look up the corresponding healthcare service as well as the healthcare service providers that offer it. Depending on the implementation and the supported scenarios for the scheduling workflow, the server has to do this internally and/or with its connected systems. It SHALL respond to the client with a Bundle containing the HealthcareService resource and a list of healthcare service providers (Organization, Practitioner, PractitionerRole) that offer the requested service. Furthermore it SHALL contain an OperationOutcome with errors, warnings or information as a result of processing the operation.
+Based on the search input the Scheduling Server has to look up the corresponding Healthcare Service as well as the Healthcare Service providers that offer it. Depending on the implementation and the supported scenarios for the scheduling workflow, the server has to do this internally and/or with its connected systems. It SHALL respond to the client with a Bundle containing the HealthcareService resource and a list of Healthcare Service Providers (Organization, Practitioner, PractitionerRole) that offer the requested service. Furthermore it SHALL contain an OperationOutcome with errors, warnings or information as a result of processing the operation.
 
 ####  Examples 
 
-#####  Search for healthcare service provider via service type
+#####  Search for Healthcare Service Provider via service type
 
 furthermore, the district and the availability were added as search criteria
 
@@ -265,7 +265,7 @@ HTTP 200 OK
   "name" : "Find_HealthcareService_Provider",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-06-09T13:05:25+00:00",
+  "date" : "2026-06-09T13:44:21+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "A query operation that allows to search for healthcare service providers that offer a specific healthcare service. The general information about the HealthcareService identification itself is already available in advance, either as resource or via codes. ",
   "affectsState" : false,

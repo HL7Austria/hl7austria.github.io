@@ -247,11 +247,11 @@
 <div style="display:inline-block" markdown="1">
 
 <h4> Book a New Appointment </h4>
-<p>This operation is used by the Scheduling Client to request the booking of an appointment from a Scheduling Server. The Scheduling Client provides a full Appointment resource that SHALL have the status <code class="language-plaintext highlighter-rouge">proposed</code>.</p>
+<p>This operation is used by the Scheduling Client to request the booking of an Appointment from a Scheduling Server. The Scheduling Client provides a full Appointment resource that SHALL have the status <code class="language-plaintext highlighter-rouge">proposed</code>.</p>
 
-<p>If the appointment <code class="language-plaintext highlighter-rouge">$book</code> operation was successful the Scheduling Server returns an Appointment resource with the the value of <code class="language-plaintext highlighter-rouge">Appointment.status</code> set to <code class="language-plaintext highlighter-rouge">booked</code>. If the Appointment needs to be manually confirmed, the Scheduling Server <code class="language-plaintext highlighter-rouge">Appointment.status</code> of the returned Appointment is set to <code class="language-plaintext highlighter-rouge">pending</code>.</p>
+<p>If the Appointment <code class="language-plaintext highlighter-rouge">$book</code> operation was successful the Scheduling Server returns an Appointment resource with the the value of <code class="language-plaintext highlighter-rouge">Appointment.status</code> set to <code class="language-plaintext highlighter-rouge">booked</code>. If the Appointment needs to be manually confirmed, the Scheduling Server <code class="language-plaintext highlighter-rouge">Appointment.status</code> of the returned Appointment is set to <code class="language-plaintext highlighter-rouge">pending</code>.</p>
 
-<p>The Scheduling Client is expected to convey the outcome to the user who requested the creation of the appointment, and to record the current state of the appointment in the corresponding system(s), including any error conditions..</p>
+<p>The Scheduling Client is expected to convey the outcome to the user who requested the creation of the Appointment, and to record the current state of the Appointment in the corresponding system(s), including any error conditions..</p>
 
 <h5> Pre-Conditions </h5>
 <p>The following pre-conditions must be fullfilled for the $book operation to be successful:</p>
@@ -264,7 +264,7 @@
 <p>If any of those pre-conditions are not met, the Scheduling Server SHALL reject the operation and provide a corresponding explanation in the OperationOutcome.</p>
 
 <h5> Examples </h5>
-<h5> Request the booking of an appointment </h5>
+<h5> Request the booking of an Appointment </h5>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST: [baseURL]/Appointment/$book
 
@@ -428,7 +428,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.tc.wg.scheduling.r5#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Jun 9, 2026 13:05+0000">2026-06-09</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.tc.wg.scheduling.r5#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Jun 9, 2026 13:44+0000">2026-06-09</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

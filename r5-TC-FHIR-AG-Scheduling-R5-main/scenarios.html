@@ -159,10 +159,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>This IG defines two types of actors relevant to the scheduling process: Scheduling Client and Scheduling Server.</p>
 
 <h4 id="scheduling-client">Scheduling Client</h4>
-<p>The <a href="ActorDefinition-at-scheduling-actor-scheduling-client.html">Scheduling Client</a> issues parameterized requests to the Scheduling Server to retrieve Healthcare Service Providers, Healthcare Services, available time slots and other data relevant for appointment scheduling. It books, edits and cancels appointments for a specific patient.</p>
+<p>The <a href="ActorDefinition-at-scheduling-actor-scheduling-client.html">Scheduling Client</a> issues parameterized requests to the Scheduling Server to retrieve Healthcare Service Providers, Healthcare Services, available time slots and other data relevant for Appointment scheduling. It books, edits and cancels Appointments for a specific patient.</p>
 
 <h4 id="scheduling-server">Scheduling Server</h4>
-<p>A <a href="ActorDefinition-at-scheduling-actor-scheduling-server.html">Scheduling Server</a> provides data relevant to appointment scheduling, including Healthcare Service Providers, Healthcare Services, available time slots. It offers services such as creating patients, booking, editing and cancelling appointments.</p>
+<p>A <a href="ActorDefinition-at-scheduling-actor-scheduling-server.html">Scheduling Server</a> provides data relevant to Appointment scheduling, including Healthcare Service Providers, Healthcare Services, available time slots. It offers services such as creating Patients, booking, editing and cancelling Appointments.</p>
 
 <h3 id="simple-appointment-booking">Simple appointment booking</h3>
 <p>In this scenario a Scheduling Client directly interacts with a Scheduling Server. The Scheduling Server is typically a GP's information system or an HIS offering an appointment booking API according to this implementation guide.</p>
@@ -171,14 +171,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <figure><img src="scenarios/sequence-simple.svg" /></figure>
 
 <h3 id="central-scheduling-platform">Central scheduling platform</h3>
-<p>In this scenario one Central Booking Platform acts as a central Scheduling Server aggregating data from other Scheduling Servers and/or health information systems. Requests to the Central Booking Platform are relayed to known other Scheduling Servers. The other Scheduling Servers can either be health information systems or booking platforms which in turn access the APIs of other Scheduling Servers (either via FHIR or other APIs) in a cascading fashion. The Central Booking Platform aggregates search results from multiple sources for the Scheduling Client and relays requests related to appointment booking from the Scheduling Client to the target Scheduling Server. The Central Booking Platform is not required to persist any scheduling-related data. While it is discouraged to persist information about currently available slots, rarely changed information such as available HealthcareServices can be cached for a reasonable amount of time. For this scenario, the handling of associated actors of type Device, Location is subject to the internal business logic of the final Scheduling Server and is therefore out of scope of this scenario.</p>
+<p>In this scenario one Central Scheduling Platform acts as a central Scheduling Server aggregating data from other Scheduling Servers and/or health information systems. Requests to the Central Scheduling Platform are relayed to known other Scheduling Servers. The other Scheduling Servers can either be health information systems or booking platforms which in turn access the APIs of other Scheduling Servers (either via FHIR or other APIs) in a cascading fashion. The Central Scheduling Platform aggregates search results from multiple sources for the Scheduling Client and relays requests related to Appointment booking from the Scheduling Client to the target Scheduling Server. The Central Scheduling Platform is not required to persist any scheduling-related data. While it is discouraged to persist information about currently available Slots, rarely changed information such as available HealthcareServices can be cached for a reasonable amount of time. For this scenario, the handling of associated actors of type Device, Location is subject to the internal business logic of the final Scheduling Server and is therefore out of scope of this scenario.</p>
 
 <figure><img src="scenarios/scheduling-platform.svg" /></figure>
 <figure><img src="scenarios/sequence-platform.svg" /></figure>
 
 <h4 id="booking-with-external-provider">Booking with external provider</h4>
 
-<p>In some cases, a provider of a Scheduling Server might want a user to directly book with his scheduling client instead of via the central platform. In this case, the initial Scheduling Client redirects the user to the Scheduling Client of the provider of the corresponding Scheduling Server.</p>
+<p>In some cases, a provider of a Scheduling Server might want a user to directly book with his Scheduling Client instead of via the central platform. In this case, the initial Scheduling Client redirects the user to the Scheduling Client of the provider of the corresponding Scheduling Server.</p>
 
 <figure><img src="scenarios/sequence-platform-external.svg" /></figure>
 
@@ -201,7 +201,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.tc.wg.scheduling.r5#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Jun 9, 2026 13:05+0000">2026-06-09</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.tc.wg.scheduling.r5#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Jun 9, 2026 13:44+0000">2026-06-09</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
