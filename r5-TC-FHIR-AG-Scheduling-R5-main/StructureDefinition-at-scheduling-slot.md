@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot | *Version*:0.2.0 | |
-| Draft as of 2026-04-08 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingSlot |
+| Draft as of 2026-06-09 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingSlot |
 
  
 HL7® Austria FHIR® Scheduling Profile for slot data in Austria. 
@@ -23,7 +23,7 @@ This Profile is used in the [Find available Slots for potential Appointments](in
 * Refer to this Profile: [HL7® AT Scheduling Appointment Profile](StructureDefinition-at-scheduling-appointment.md)
 * Examples for this Profile: [Slot/HL7ATSchedulingSlotExample01-free](Slot-HL7ATSchedulingSlotExample01-free.md), [Slot/HL7ATSchedulingSlotExample02-VirtualVisit](Slot-HL7ATSchedulingSlotExample02-VirtualVisit.md), [Slot/HL7ATSchedulingSlotExample03-selectable-encounterClass](Slot-HL7ATSchedulingSlotExample03-selectable-encounterClass.md) and [Slot/HL7ATSchedulingSlotExample04-external-booking-URL](Slot-HL7ATSchedulingSlotExample04-external-booking-URL.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.tc.wg.scheduling.r5|current/StructureDefinition/at-scheduling-slot)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.tc.wg.scheduling.r5|current/StructureDefinition/StructureDefinition-at-scheduling-slot.json)
 
 ### Formal Views of Profile Content
 
@@ -64,7 +64,7 @@ Other representations of profile: [CSV](StructureDefinition-at-scheduling-slot.c
   "name" : "HL7ATSchedulingSlot",
   "title" : "HL7® AT Scheduling Slot Profile",
   "status" : "draft",
-  "date" : "2026-04-08T07:58:25+00:00",
+  "date" : "2026-06-09T13:05:25+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "HL7® Austria FHIR® Scheduling Profile for slot data in Austria.",
   "fhirVersion" : "5.0.0",
