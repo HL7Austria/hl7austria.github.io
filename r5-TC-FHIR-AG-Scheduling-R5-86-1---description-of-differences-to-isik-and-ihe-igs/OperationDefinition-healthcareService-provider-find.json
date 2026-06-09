@@ -1,0 +1,92 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "healthcareService-provider-find",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition healthcareService-provider-find</b></p><a name=\"healthcareService-provider-find\"> </a><a name=\"hchealthcareService-provider-find\"> </a><p>URL: [base]/HealthcareService/$findHSP</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>healthcareService-reference</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R5/references.html#Reference\">Reference</a> (<a href=\"StructureDefinition-at-scheduling-healthcareservice.html\" title=\"http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice\">HL7® AT Scheduling HealthcareService Profile</a>)</td><td/><td><div><p>The full HealthcareService resource can be provided for this operation. The HealthcareService SHALL be active (HealthcareService.active=true).</p>\n</div></td></tr><tr><td>IN</td><td>healthcareService-category</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#string\">string</a><br/>(<a href=\"https://hl7.org/fhir/R5/search.html#token\">token</a>)</td><td/><td><div><p>The code of the category of the healthcare service. Each parameter value SHALL contain <em>both</em> the system property and the code property for a code using the general syntax <code>healthcareService-category=[system]|[code]</code>. See the examples below for how this is implemented.</p>\n</div></td></tr><tr><td>IN</td><td>healthcareService-type</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#string\">string</a><br/>(<a href=\"https://hl7.org/fhir/R5/search.html#token\">token</a>)</td><td/><td><div><p>The code of the type of the healthcare service. Each parameter value SHALL contain <em>both</em> the system property and the code property for a code using the general syntax <code>healthcareService-type=[system]|[code]</code>. See the examples below for how this is implemented.</p>\n</div></td></tr><tr><td>IN</td><td>healthcareService-specialty</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#string\">string</a><br/>(<a href=\"https://hl7.org/fhir/R5/search.html#token\">token</a>)</td><td/><td><div><p>The code of the specialty of the healthcare service. Each parameter value SHALL contain <em>both</em> the system property and the code property for a code using the general syntax <code>healthcareService-specialty=[system]|[code]</code>. See the examples below for how this is implemented.</p>\n</div></td></tr><tr><td>IN</td><td>healthcareService-location</td><td/><td>0..*</td><td><a href=\"http://hl7.org/fhir/R5/references.html#Reference\">Reference</a> (<a href=\"http://hl7.org/fhir/R5/location.html\" title=\"http://hl7.org/fhir/StructureDefinition/Location\">Location</a>)</td><td/><td><div><p>The (physical) location where a healthcare service should be provided can be used as a search parameter.</p>\n</div></td></tr><tr><td>IN</td><td>healthcareService-zipCodeArea</td><td/><td>0..*</td><td><a href=\"http://hl7.org/fhir/R5/datatypes.html#string\">string</a><br/>(<a href=\"https://hl7.org/fhir/R5/search.html#string\">string</a>)</td><td/><td><div><p>The aera in which a healthcare service should be offered can be provided as search parameter. For that purpose the zip code(s) shall be used.</p>\n</div></td></tr><tr><td>IN</td><td>healthcareService-availability</td><td/><td>0..*</td><td><a href=\"http://hl7.org/fhir/R5/metadatatypes.html#Availability\">Availability</a></td><td/><td><div><p>The desired availabilities for the healthcare service.</p>\n</div></td></tr><tr><td>OUT</td><td>result</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/bundle.html\">Bundle</a></td><td/><td><div><p>The response will be a Bundle consisting of the HealthcareService resource and a list of healthcare service providers (Organization, Practitioner, PractitionerRole) that offer the requested service and an OperationOutcome with errors, warnings or information as a result of processing the operation.</p>\n</div></td></tr></table></div>"
+  },
+  "url" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/healthcareService-provider-find",
+  "version" : "0.2.0",
+  "name" : "Find_HealthcareService_Provider",
+  "status" : "active",
+  "kind" : "operation",
+  "date" : "2026-06-09T14:26:10+00:00",
+  "publisher" : "HL7® Austria, TC FHIR®",
+  "description" : "A query operation that allows to search for healthcare service providers that offer a specific healthcare service. The general information about the HealthcareService identification itself is already available in advance, either as resource or via codes. ",
+  "affectsState" : false,
+  "code" : "findHSP",
+  "resource" : ["HealthcareService"],
+  "system" : false,
+  "type" : true,
+  "instance" : false,
+  "parameter" : [{
+    "name" : "healthcareService-reference",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "The full HealthcareService resource can be provided for this operation. The HealthcareService SHALL be active (HealthcareService.active=true). ",
+    "type" : "Reference",
+    "targetProfile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice"]
+  },
+  {
+    "name" : "healthcareService-category",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "The code of the category of the healthcare service. Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `healthcareService-category=[system]|[code]`. See the examples below for how this is implemented.",
+    "type" : "string",
+    "searchType" : "token"
+  },
+  {
+    "name" : "healthcareService-type",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "The code of the type of the healthcare service. Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `healthcareService-type=[system]|[code]`. See the examples below for how this is implemented.",
+    "type" : "string",
+    "searchType" : "token"
+  },
+  {
+    "name" : "healthcareService-specialty",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "The code of the specialty of the healthcare service. Each parameter value SHALL contain *both* the system property and the code property for a code using the general syntax `healthcareService-specialty=[system]|[code]`. See the examples below for how this is implemented.",
+    "type" : "string",
+    "searchType" : "token"
+  },
+  {
+    "name" : "healthcareService-location",
+    "use" : "in",
+    "min" : 0,
+    "max" : "*",
+    "documentation" : "The (physical) location where a healthcare service should be provided can be used as a search parameter.",
+    "type" : "Reference",
+    "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Location"]
+  },
+  {
+    "name" : "healthcareService-zipCodeArea",
+    "use" : "in",
+    "min" : 0,
+    "max" : "*",
+    "documentation" : "The aera in which a healthcare service should be offered can be provided as search parameter. For that purpose the zip code(s) shall be used.",
+    "type" : "string",
+    "searchType" : "string"
+  },
+  {
+    "name" : "healthcareService-availability",
+    "use" : "in",
+    "min" : 0,
+    "max" : "*",
+    "documentation" : "The desired availabilities for the healthcare service. ",
+    "type" : "Availability"
+  },
+  {
+    "name" : "result",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "The response will be a Bundle consisting of the HealthcareService resource and a list of healthcare service providers (Organization, Practitioner, PractitionerRole) that offer the requested service and an OperationOutcome with errors, warnings or information as a result of processing the operation.",
+    "type" : "Bundle"
+  }]
+}
