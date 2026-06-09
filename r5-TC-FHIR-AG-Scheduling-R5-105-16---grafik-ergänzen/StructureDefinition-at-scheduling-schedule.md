@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-schedule | *Version*:0.2.0 | |
-| Draft as of 2026-04-07 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingSchedule |
+| Draft as of 2026-06-09 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingSchedule |
 
  
 HL7® Austria FHIR® Scheduling Profile for schedule data in Austria. 
@@ -21,7 +21,7 @@ This Profile is used in the [Find available Schedules Interaction](interactions.
 * Refer to this Profile: [HL7® AT Scheduling Slot Profile](StructureDefinition-at-scheduling-slot.md)
 * Examples for this Profile: [Schedule/HL7ATSchedulingScheduleExample01](Schedule-HL7ATSchedulingScheduleExample01.md), [Schedule/HL7ATSchedulingScheduleExample02](Schedule-HL7ATSchedulingScheduleExample02.md) and [Schedule/HL7ATSchedulingScheduleExample03](Schedule-HL7ATSchedulingScheduleExample03.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.tc.wg.scheduling.r5|current/StructureDefinition/at-scheduling-schedule)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.tc.wg.scheduling.r5|current/StructureDefinition/StructureDefinition-at-scheduling-schedule.json)
 
 ### Formal Views of Profile Content
 
@@ -58,7 +58,7 @@ At least one of the parameters [actor](https://www.hl7.org/fhir/schedule-search.
   "name" : "HL7ATSchedulingSchedule",
   "title" : "HL7® AT Scheduling Schedule Profile",
   "status" : "draft",
-  "date" : "2026-04-07T09:46:48+00:00",
+  "date" : "2026-06-09T10:31:34+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "HL7® Austria FHIR® Scheduling Profile for schedule data in Austria.",
   "fhirVersion" : "5.0.0",
