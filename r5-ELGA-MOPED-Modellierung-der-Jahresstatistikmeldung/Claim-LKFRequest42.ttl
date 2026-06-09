@@ -1,0 +1,303 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://elga.moped.at/Claim/LKFRequest42> a fhir:Claim ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "LKFRequest42"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://elga.moped.at/StructureDefinition/AtMopedClaimLKFRequestBasis"^^xsd:anyURI ;
+       fhir:l <https://elga.moped.at/StructureDefinition/AtMopedClaimLKFRequestBasis>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Claim LKFRequest42</b></p><a name=\"LKFRequest42\"> </a><a name=\"hcLKFRequest42\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <code>https://elga.moped.at/StructureDefinition/AtMopedClaimLKFRequestBasis</code></p></div><p><b>Abrechnung - Knoten</b>: <a href=\"CodeSystem-LKFAbrechnungsKnotenCS.html#LKFAbrechnungsKnotenCS-D\">LKF Abrechnungsknoten: D</a> (D)</p><p><b>Fondsrelevanz</b>: <a href=\"CodeSystem-FondsrelevanzCS.html#FondsrelevanzCS-J\">Fondsrelevanz: J</a> (Ja (Abrechnung des stationären Aufenthalts/ambulanten Besuchs erfolgt über den Landesgesundheitsfonds/PRIKRAF))</p><p><b>status</b>: Active</p><p><b>type</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/MopedClaimTypeCS LKFREQ}\">LKF Request</span></p><p><b>subType</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/MopedClaimSubTypeCS LKFREQVORL}\">LKF Vorläufige Meldung</span></p><p><b>use</b>: Claim</p><p><b>patient</b>: <a href=\"Patient-Patient42.html\">Patient42 Patient42FamilienName  Male, DoB: 1937-12-31 ( Social Security Number: 123456)</a></p><p><b>created</b>: 2025-08-30</p><p><b>insurer</b>: <a href=\"Organization-SV11.html\">Organization Österreichische Gesundheitskasse Wien</a></p><p><b>provider</b>: <a href=\"Organization-KAK999.html\">Organization Testkrankenhaus</a></p><p><b>encounter</b>: </p><ul><li><a href=\"Encounter-Encounter42.html\">Encounter: extension = ; identifier = Visit number,Anonymous identifier; status = completed; class = Stationär,geplante stationäre Aufnahme/geplanter ambulanter Besuch (mit vorhergehender Terminvereinbarung, Richtwert: mindestens 24 Stunden); type = Moped Encounter; actualPeriod = 2025-01-01 12:00:00+0200 --&gt; 2025-01-04 12:00:00+0200</a></li><li><a href=\"Encounter-BewegungsEncounter42.1.html\">Encounter: status = completed; type = Moped Bewegungsencounter; actualPeriod = 2025-01-01 --&gt; (ongoing)</a></li><li><a href=\"Encounter-BewegungsEncounter42.2.html\">Encounter: status = completed; type = Moped Bewegungsencounter; actualPeriod = 2025-01-02 00:00:00+0200 --&gt; 2025-01-04 00:00:00+0200</a></li></ul><p><b>diagnosisRelatedGroup</b>: <span title=\"Codes:{https://elga.moped.at/ValueSet/LKFAbrechnungsGruppeVS HDG01.12}\">HDG01.12</span></p><blockquote><p><b>supportingInfo</b></p><p><b>sequence</b>: 1</p><p><b>category</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS PLAUS}\">Plausibilitätskennzeichen</span></p><p><b>value</b>: 2</p></blockquote><blockquote><p><b>supportingInfo</b></p><p><b>sequence</b>: 2</p><p><b>category</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS ENDG}\">Endgültige Meldung</span></p><p><b>value</b>: true</p></blockquote><blockquote><p><b>supportingInfo</b></p><p><b>sequence</b>: 3</p><p><b>category</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS DEVX}\">XDok Device</span></p><p><b>value</b>: <a href=\"Device-XDokExampleDevice.html\">Device: status = active; category = Software; type = XDok</a></p></blockquote><h3>Diagnoses</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Sequence</b></td><td><b>Diagnosis[x]</b></td><td><b>OnAdmission</b></td></tr><tr><td style=\"display: none\">*</td><td>1</td><td><a href=\"Condition-Condition42.1.html\">Condition G40.0</a></td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/ex-diagnosis-on-admission unknown}\">Unknown</span></td></tr></table><blockquote><p><b>item</b></p><p><b>sequence</b>: 1</p><p><b>category</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS LDFPLK}\">Leistungskomponente/Leistungspunkte</span></p><p><b>quantity</b>: 366.0 LKF Punkte</p></blockquote><blockquote><p><b>item</b></p><p><b>sequence</b>: 2</p><p><b>category</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS LDFPTK}\">Tageskomponente/Kontaktpunktet</span></p><p><b>quantity</b>: 2730.0 LKF Punkte</p></blockquote><blockquote><p><b>item</b></p><p><b>sequence</b>: 3</p><p><b>category</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS SCULK}\">Punkte Belagsdauerausreißer nach unten – Leistungskomponente</span></p><p><b>quantity</b>: 0.0 LKF Punkte</p></blockquote><blockquote><p><b>item</b></p><p><b>sequence</b>: 4</p><p><b>category</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS SCUTK}\">Punkte Belagsdauerausreißer nach unten – Tageskomponente</span></p><p><b>quantity</b>: 0.0 LKF Punkte</p></blockquote><blockquote><p><b>item</b></p><p><b>sequence</b>: 5</p><p><b>category</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS BDZU}\">Zusatzpunkte Belagsdauerausreißer nach oben</span></p><p><b>quantity</b>: 0.0 LKF Punkte</p></blockquote><blockquote><p><b>item</b></p><p><b>sequence</b>: 6</p><p><b>category</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS INTZU}\">Zusatzpunkte Intensiv</span></p><p><b>quantity</b>: 2436.0 LKF Punkte</p></blockquote><blockquote><p><b>item</b></p><p><b>sequence</b>: 7</p><p><b>category</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS MELZU}\">Zusatzpunkte Mehrfachleistungen</span></p><p><b>quantity</b>: 0.0 LKF Punkte</p></blockquote><blockquote><p><b>item</b></p><p><b>sequence</b>: 8</p><p><b>category</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS SCSPEZ}\">Punkte spezieller Bereiche (tageweise)</span></p><p><b>quantity</b>: 0.0 LKF Punkte</p></blockquote><blockquote><p><b>item</b></p><p><b>sequence</b>: 9</p><p><b>category</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS SCGES}\">Punkte total</span></p><p><b>quantity</b>: 5532.0 LKF Punkte</p></blockquote></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "https://elga.moped.at/StructureDefinition/moped-ext-diagnoseKnoten"^^xsd:anyURI ;
+       fhir:l <https://elga.moped.at/StructureDefinition/moped-ext-diagnoseKnoten>
+     ] ;
+     fhir:value [
+       a fhir:Coding ;
+       fhir:system [
+         fhir:v "https://elga.moped.at/CodeSystem/LKFAbrechnungsKnotenCS"^^xsd:anyURI ;
+         fhir:l <https://elga.moped.at/CodeSystem/LKFAbrechnungsKnotenCS>
+       ] ;
+       fhir:code [ fhir:v "D" ]
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://elga.moped.at/StructureDefinition/moped-ext-fondsrelevanz"^^xsd:anyURI ;
+       fhir:l <https://elga.moped.at/StructureDefinition/moped-ext-fondsrelevanz>
+     ] ;
+     fhir:value [
+       a fhir:Coding ;
+       fhir:system [
+         fhir:v "https://elga.moped.at/CodeSystem/FondsrelevanzCS"^^xsd:anyURI ;
+         fhir:l <https://elga.moped.at/CodeSystem/FondsrelevanzCS>
+       ] ;
+       fhir:code [ fhir:v "J" ]
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://elga.moped.at/CodeSystem/MopedClaimTypeCS"^^xsd:anyURI ;
+         fhir:l <https://elga.moped.at/CodeSystem/MopedClaimTypeCS>
+       ] ;
+       fhir:code [ fhir:v "LKFREQ" ]
+     ] )
+  ] ; # 
+  fhir:subType [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://elga.moped.at/CodeSystem/MopedClaimSubTypeCS"^^xsd:anyURI ;
+         fhir:l <https://elga.moped.at/CodeSystem/MopedClaimSubTypeCS>
+       ] ;
+       fhir:code [ fhir:v "LKFREQVORL" ]
+     ] )
+  ] ; # 
+  fhir:use [ fhir:v "claim"] ; # 
+  fhir:patient [
+     fhir:l <https://elga.moped.at/Patient/Patient42> ;
+     fhir:reference [ fhir:v "Patient/Patient42" ]
+  ] ; # 
+  fhir:created [ fhir:v "2025-08-30"^^xsd:date] ; # 
+  fhir:insurer [
+     fhir:l <https://elga.moped.at/Organization/SV11> ;
+     fhir:reference [ fhir:v "Organization/SV11" ]
+  ] ; # 
+  fhir:provider [
+     fhir:l <https://elga.moped.at/Organization/KAK999> ;
+     fhir:reference [ fhir:v "Organization/KAK999" ]
+  ] ; # 
+  fhir:encounter ( [
+     fhir:l <https://elga.moped.at/Encounter/Encounter42> ;
+     fhir:reference [ fhir:v "Encounter/Encounter42" ]
+  ] [
+     fhir:l <https://elga.moped.at/Encounter/BewegungsEncounter42.1> ;
+     fhir:reference [ fhir:v "Encounter/BewegungsEncounter42.1" ]
+  ] [
+     fhir:l <https://elga.moped.at/Encounter/BewegungsEncounter42.2> ;
+     fhir:reference [ fhir:v "Encounter/BewegungsEncounter42.2" ]
+  ] ) ; # 
+  fhir:diagnosisRelatedGroup [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://elga.moped.at/ValueSet/LKFAbrechnungsGruppeVS"^^xsd:anyURI ;
+         fhir:l <https://elga.moped.at/ValueSet/LKFAbrechnungsGruppeVS>
+       ] ;
+       fhir:code [ fhir:v "HDG01.12" ]
+     ] )
+  ] ; # 
+  fhir:supportingInfo ( [
+     fhir:sequence [ fhir:v "1"^^xsd:positiveInteger ] ;
+     fhir:category [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS"^^xsd:anyURI ;
+           fhir:l <https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS>
+         ] ;
+         fhir:code [ fhir:v "PLAUS" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:String ;
+       fhir:v "2"
+     ]
+  ] [
+     fhir:sequence [ fhir:v "2"^^xsd:positiveInteger ] ;
+     fhir:category [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS"^^xsd:anyURI ;
+           fhir:l <https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS>
+         ] ;
+         fhir:code [ fhir:v "ENDG" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Boolean ;
+       fhir:v true
+     ]
+  ] [
+     fhir:sequence [ fhir:v "3"^^xsd:positiveInteger ] ;
+     fhir:category [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS"^^xsd:anyURI ;
+           fhir:l <https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS>
+         ] ;
+         fhir:code [ fhir:v "DEVX" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Reference ;
+       fhir:l <https://elga.moped.at/Device/XDokExampleDevice> ;
+       fhir:reference [ fhir:v "Device/XDokExampleDevice" ]
+     ]
+  ] ) ; # 
+  fhir:diagnosis ( [
+     fhir:sequence [ fhir:v "1"^^xsd:positiveInteger ] ;
+     fhir:diagnosis [
+       a fhir:Reference ;
+       fhir:l <https://elga.moped.at/Condition/Condition42.1> ;
+       fhir:reference [ fhir:v "Condition/Condition42.1" ]
+     ] ;
+     fhir:onAdmission [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/ex-diagnosis-on-admission"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/ex-diagnosis-on-admission>
+         ] ;
+         fhir:code [ fhir:v "unknown" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:item ( [
+     fhir:sequence [ fhir:v "1"^^xsd:positiveInteger ] ;
+     fhir:category [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS"^^xsd:anyURI ;
+           fhir:l <https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS>
+         ] ;
+         fhir:code [ fhir:v "LDFPLK" ]
+       ] )
+     ] ;
+     fhir:quantity [
+       fhir:value [ fhir:v 366.0 ] ;
+       fhir:unit [ fhir:v "LKF Punkte" ]
+     ]
+  ] [
+     fhir:sequence [ fhir:v "2"^^xsd:positiveInteger ] ;
+     fhir:category [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS"^^xsd:anyURI ;
+           fhir:l <https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS>
+         ] ;
+         fhir:code [ fhir:v "LDFPTK" ]
+       ] )
+     ] ;
+     fhir:quantity [
+       fhir:value [ fhir:v 2730.0 ] ;
+       fhir:unit [ fhir:v "LKF Punkte" ]
+     ]
+  ] [
+     fhir:sequence [ fhir:v "3"^^xsd:positiveInteger ] ;
+     fhir:category [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS"^^xsd:anyURI ;
+           fhir:l <https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS>
+         ] ;
+         fhir:code [ fhir:v "SCULK" ]
+       ] )
+     ] ;
+     fhir:quantity [
+       fhir:value [ fhir:v 0.0 ] ;
+       fhir:unit [ fhir:v "LKF Punkte" ]
+     ]
+  ] [
+     fhir:sequence [ fhir:v "4"^^xsd:positiveInteger ] ;
+     fhir:category [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS"^^xsd:anyURI ;
+           fhir:l <https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS>
+         ] ;
+         fhir:code [ fhir:v "SCUTK" ]
+       ] )
+     ] ;
+     fhir:quantity [
+       fhir:value [ fhir:v 0.0 ] ;
+       fhir:unit [ fhir:v "LKF Punkte" ]
+     ]
+  ] [
+     fhir:sequence [ fhir:v "5"^^xsd:positiveInteger ] ;
+     fhir:category [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS"^^xsd:anyURI ;
+           fhir:l <https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS>
+         ] ;
+         fhir:code [ fhir:v "BDZU" ]
+       ] )
+     ] ;
+     fhir:quantity [
+       fhir:value [ fhir:v 0.0 ] ;
+       fhir:unit [ fhir:v "LKF Punkte" ]
+     ]
+  ] [
+     fhir:sequence [ fhir:v "6"^^xsd:positiveInteger ] ;
+     fhir:category [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS"^^xsd:anyURI ;
+           fhir:l <https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS>
+         ] ;
+         fhir:code [ fhir:v "INTZU" ]
+       ] )
+     ] ;
+     fhir:quantity [
+       fhir:value [ fhir:v 2436.0 ] ;
+       fhir:unit [ fhir:v "LKF Punkte" ]
+     ]
+  ] [
+     fhir:sequence [ fhir:v "7"^^xsd:positiveInteger ] ;
+     fhir:category [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS"^^xsd:anyURI ;
+           fhir:l <https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS>
+         ] ;
+         fhir:code [ fhir:v "MELZU" ]
+       ] )
+     ] ;
+     fhir:quantity [
+       fhir:value [ fhir:v 0.0 ] ;
+       fhir:unit [ fhir:v "LKF Punkte" ]
+     ]
+  ] [
+     fhir:sequence [ fhir:v "8"^^xsd:positiveInteger ] ;
+     fhir:category [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS"^^xsd:anyURI ;
+           fhir:l <https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS>
+         ] ;
+         fhir:code [ fhir:v "SCSPEZ" ]
+       ] )
+     ] ;
+     fhir:quantity [
+       fhir:value [ fhir:v 0.0 ] ;
+       fhir:unit [ fhir:v "LKF Punkte" ]
+     ]
+  ] [
+     fhir:sequence [ fhir:v "9"^^xsd:positiveInteger ] ;
+     fhir:category [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS"^^xsd:anyURI ;
+           fhir:l <https://elga.moped.at/CodeSystem/MopedClaimItemCategoryCS>
+         ] ;
+         fhir:code [ fhir:v "SCGES" ]
+       ] )
+     ] ;
+     fhir:quantity [
+       fhir:value [ fhir:v 5532.0 ] ;
+       fhir:unit [ fhir:v "LKF Punkte" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

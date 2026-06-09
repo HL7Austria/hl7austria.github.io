@@ -1,0 +1,48 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "MOPED.Patient.Entlassen",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition MOPED.Patient.Entlassen</b></p><a name=\"MOPED.Patient.Entlassen\"> </a><a name=\"hcMOPED.Patient.Entlassen\"> </a><p>URL: [base]/Composition/[id]/$entlassen</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>Entlassung</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/bundle.html\">Bundle</a> (<a href=\"StructureDefinition-at-moped-bundle-entlassen-KA.html\" title=\"https://elga.moped.at/StructureDefinition/at-moped-bundle-entlassen-KA\">AT MOPED Bundle $entlassen KA Profil</a>)</td><td/><td><div><p>Der <em>Entlassung</em> Parameter beinhaltet ein Bundle mit einem Update für den jeweiligen Aufenthalt der alle verpflichtenden Felder der Entlassung enthält.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/resource.html\">Resource</a> (<a href=\"http://hl7.org/fhir/R5/operationoutcome.html\" title=\"http://hl7.org/fhir/StructureDefinition/OperationOutcome\">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>\n</div></td></tr></table></div>"
+  },
+  "url" : "https://elga.moped.at/OperationDefinition/MOPED.Patient.Entlassen",
+  "version" : "0.1.0",
+  "name" : "MOPED_Patient_Entlassen",
+  "title" : "MOPED Patient $entlassen",
+  "status" : "draft",
+  "kind" : "operation",
+  "date" : "2026-06-09T11:53:00+00:00",
+  "publisher" : "ELGA GmbH",
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
+  "description" : "Die $entlassen Operation wird aufgerufen, wenn ein(e) Patient*in aus dem Krankenhaus entlassen wurde.",
+  "affectsState" : true,
+  "code" : "entlassen",
+  "resource" : ["Composition"],
+  "system" : false,
+  "type" : false,
+  "instance" : true,
+  "parameter" : [{
+    "name" : "Entlassung",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *Entlassung* Parameter beinhaltet ein Bundle mit einem Update für den jeweiligen Aufenthalt der alle verpflichtenden Felder der Entlassung enthält.",
+    "type" : "Bundle",
+    "targetProfile" : ["https://elga.moped.at/StructureDefinition/at-moped-bundle-entlassen-KA"]
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *return* Parameter gibt Auskunft über den Erfolg der Operation.",
+    "type" : "Resource",
+    "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/OperationOutcome"]
+  }]
+}

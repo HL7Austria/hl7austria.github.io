@@ -1,0 +1,73 @@
+{
+  "resourceType" : "Encounter",
+  "id" : "PJ2BewegungsEncounter5",
+  "meta" : {
+    "profile" : ["https://elga.moped.at/StructureDefinition/at-moped-encounter-bewegung-stationaer-basis",
+    "https://elga.moped.at/StructureDefinition/MopedBewegungsEncounter"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Encounter PJ2BewegungsEncounter5</b></p><a name=\"PJ2BewegungsEncounter5\"> </a><a name=\"hcPJ2BewegungsEncounter5\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profiles: <a href=\"StructureDefinition-at-moped-encounter-bewegung-stationaer-basis.html\">AT MOPED Encounter Bewegung Stationär Basis Profil</a>, <code>https://elga.moped.at/StructureDefinition/MopedBewegungsEncounter</code></p></div><p><b>status</b>: Completed</p><p><b>type</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/MopedEncounterTypesCS BENC}\">Moped Bewegungsencounter</span></p><h3>ServiceTypes</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Reference</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"HealthcareService-AbteilungKARied3.html\">HealthcareService: identifier = http://example.org/lkf-system/funktionscode#11111100; category = Hospital; type = Hospital Services</a></td></tr></table><p><b>subject</b>: <a href=\"Patient-PJ2Patient.html\">Santiago Schnabeltier Test  Male, DoB: 1985-03-19</a></p><p><b>subjectStatus</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/AnwesenheitsartCS ANW}\">physisch anwesend</span></p><p><b>partOf</b>: <a href=\"Encounter-PJ2Encounter.html\">Encounter: identifier = Visit number,Anonymous identifier; status = discharged; class = Stationär,akute stationäre Aufnahme/akuter ambulanter Besuch (ohne vorhergehende Terminvereinbarung); type = Moped Encounter; actualPeriod = 2024-08-08 08:21:00+0200 --&gt; 2024-08-12 19:22:00+0200</a></p><p><b>actualPeriod</b>: 2024-08-10 17:00:00+0200 --&gt; 2024-08-12 19:22:00+0200</p><h3>Admissions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Extension</b></td><td><b>DischargeDisposition</b></td></tr><tr><td style=\"display: none\">*</td><td/><td><span title=\"Codes:{https://elga.moped.at/CodeSystem/AbgangsartCS 1}\">Lebend</span></td></tr></table></div>"
+  },
+  "status" : "completed",
+  "type" : [{
+    "coding" : [{
+      "system" : "https://elga.moped.at/CodeSystem/MopedEncounterTypesCS",
+      "code" : "BENC"
+    }]
+  }],
+  "serviceType" : [{
+    "reference" : {
+      "reference" : "HealthcareService/AbteilungKARied3"
+    }
+  }],
+  "subject" : {
+    "reference" : "Patient/PJ2Patient"
+  },
+  "subjectStatus" : {
+    "coding" : [{
+      "system" : "https://elga.moped.at/CodeSystem/AnwesenheitsartCS",
+      "code" : "ANW"
+    }]
+  },
+  "partOf" : {
+    "reference" : "Encounter/PJ2Encounter"
+  },
+  "actualPeriod" : {
+    "start" : "2024-08-10T17:00:00+02:00",
+    "end" : "2024-08-12T19:22:00+02:00"
+  },
+  "admission" : {
+    "extension" : [{
+      "extension" : [{
+        "url" : "beiZugang",
+        "valueCodeableConcept" : {
+          "coding" : [{
+            "system" : "https://elga.moped.at/CodeSystem/AltersgruppeCS",
+            "code" : "35"
+          }]
+        }
+      },
+      {
+        "url" : "beiEntlassung",
+        "valueCodeableConcept" : {
+          "coding" : [{
+            "system" : "https://elga.moped.at/CodeSystem/AltersgruppeCS",
+            "code" : "35"
+          }]
+        }
+      },
+      {
+        "url" : "neugeborenes",
+        "valueBoolean" : false
+      }],
+      "url" : "https://elga.moped.at/StructureDefinition/moped-ext-altersgruppe"
+    }],
+    "dischargeDisposition" : {
+      "coding" : [{
+        "system" : "https://elga.moped.at/CodeSystem/AbgangsartCS",
+        "code" : "1"
+      }]
+    }
+  }
+}

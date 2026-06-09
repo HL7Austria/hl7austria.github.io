@@ -1,0 +1,56 @@
+# ELGA.MOPED\Subscription Topic VAE abgelehnt - FHIR® v5.0.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Subscription Topic VAE abgelehnt**
+
+## Example SubscriptionTopic: Subscription Topic VAE abgelehnt
+
+| |
+| :--- |
+| Active as of 2026-06-09 |
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "SubscriptionTopic",
+  "id" : "vaeAbgelehnt",
+  "url" : "https://elga.moped.at/SubscriptionTopic/vaeAbgelehnt",
+  "version" : "0.1.0",
+  "name" : "VAEabgelehnt",
+  "status" : "active",
+  "date" : "2026-06-09T11:53:00+00:00",
+  "publisher" : "ELGA GmbH",
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  }],
+  "resourceTrigger" : [{
+    "description" : "Erstellen einer VAEResponse mit Ablehnung",
+    "resource" : "https://elga.moped.at/StructureDefinition/at-moped-claimresponse-vaeresponse-generisch",
+    "supportedInteraction" : ["create"],
+    "queryCriteria" : {
+      "current" : "TBD"
+    }
+  }],
+  "canFilterBy" : [{
+    "resource" : "https://elga.moped.at/StructureDefinition/at-moped-claimresponse-vaeresponse-generisch",
+    "filterParameter" : "requestor"
+  }],
+  "notificationShape" : [{
+    "resource" : "https://elga.moped.at/StructureDefinition/at-moped-composition-basis",
+    "include" : ["Composition:id"]
+  },
+  {
+    "resource" : "https://elga.moped.at/StructureDefinition/at-moped-claimresponse-vaeresponse-generisch",
+    "include" : ["ClaimResponse:requestor"]
+  }]
+}
+
+```

@@ -1,0 +1,94 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://elga.moped.at/Encounter/BewegungsEncounter42.2> a fhir:Encounter ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "BewegungsEncounter42.2"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://elga.moped.at/StructureDefinition/MopedBewegungsEncounter"^^xsd:anyURI ;
+       fhir:l <https://elga.moped.at/StructureDefinition/MopedBewegungsEncounter>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Encounter BewegungsEncounter42.2</b></p><a name=\"BewegungsEncounter42.2\"> </a><a name=\"hcBewegungsEncounter42.2\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <code>https://elga.moped.at/StructureDefinition/MopedBewegungsEncounter</code></p></div><p><b>status</b>: Completed</p><p><b>type</b>: <span title=\"Codes:{https://elga.moped.at/CodeSystem/MopedEncounterTypesCS BENC}\">Moped Bewegungsencounter</span></p><h3>ServiceTypes</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Reference</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"HealthcareService-KAK999ABT12118102.html\">HealthcareService: extension = ; identifier = http://example.org/lkf-system/funktionscode#12118102; type = Hospital Services</a></td></tr></table><p><b>subject</b>: <a href=\"Patient-Patient42.html\">Patient42 Patient42FamilienName  Male, DoB: 1937-12-31 ( Social Security Number: 123456)</a></p><p><b>partOf</b>: <a href=\"Encounter-Encounter42.html\">Encounter: extension = ; identifier = Visit number,Anonymous identifier; status = completed; class = Stationär,geplante stationäre Aufnahme/geplanter ambulanter Besuch (mit vorhergehender Terminvereinbarung, Richtwert: mindestens 24 Stunden); type = Moped Encounter; actualPeriod = 2025-01-01 12:00:00+0200 --&gt; 2025-01-04 12:00:00+0200</a></p><p><b>actualPeriod</b>: 2025-01-02 00:00:00+0200 --&gt; 2025-01-04 00:00:00+0200</p><h3>Admissions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Extension</b></td><td><b>DischargeDisposition</b></td></tr><tr><td style=\"display: none\">*</td><td/><td><span title=\"Codes:{https://elga.moped.at/CodeSystem/AbgangsartCS 1}\">Lebend</span></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://elga.moped.at/CodeSystem/MopedEncounterTypesCS"^^xsd:anyURI ;
+         fhir:l <https://elga.moped.at/CodeSystem/MopedEncounterTypesCS>
+       ] ;
+       fhir:code [ fhir:v "BENC" ]
+     ] )
+  ] ) ; # 
+  fhir:serviceType ( [
+     fhir:reference [
+       fhir:l <https://elga.moped.at/HealthcareService/KAK999ABT12118102> ;
+       fhir:reference [ fhir:v "HealthcareService/KAK999ABT12118102" ]
+     ]
+  ] ) ; # 
+  fhir:subject [
+     fhir:l <https://elga.moped.at/Patient/Patient42> ;
+     fhir:reference [ fhir:v "Patient/Patient42" ]
+  ] ; # 
+  fhir:partOf [
+     fhir:l <https://elga.moped.at/Encounter/Encounter42> ;
+     fhir:reference [ fhir:v "Encounter/Encounter42" ]
+  ] ; # 
+  fhir:actualPeriod [
+     fhir:start [ fhir:v "2025-01-02T00:00:00+02:00"^^xsd:dateTime ] ;
+     fhir:end [ fhir:v "2025-01-04T00:00:00+02:00"^^xsd:dateTime ]
+  ] ; # 
+  fhir:admission [
+     fhir:extension ( [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "beiZugang"^^xsd:anyURI ;
+           fhir:l fhir:beiZugang
+         ] ;
+         fhir:value [
+           a fhir:CodeableConcept ;
+           fhir:coding ( [
+             fhir:system [
+               fhir:v "https://elga.moped.at/CodeSystem/AltersgruppeCS"^^xsd:anyURI ;
+               fhir:l <https://elga.moped.at/CodeSystem/AltersgruppeCS>
+             ] ;
+             fhir:code [ fhir:v "85" ]
+           ] )
+         ]
+       ] [
+         fhir:url [
+           fhir:v "neugeborenes"^^xsd:anyURI ;
+           fhir:l fhir:neugeborenes
+         ] ;
+         fhir:value [
+           a fhir:Boolean ;
+           fhir:v false
+         ]
+       ] ) ;
+       fhir:url [
+         fhir:v "https://elga.moped.at/StructureDefinition/moped-ext-altersgruppe"^^xsd:anyURI ;
+         fhir:l <https://elga.moped.at/StructureDefinition/moped-ext-altersgruppe>
+       ]
+     ] ) ;
+     fhir:dischargeDisposition [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://elga.moped.at/CodeSystem/AbgangsartCS"^^xsd:anyURI ;
+           fhir:l <https://elga.moped.at/CodeSystem/AbgangsartCS>
+         ] ;
+         fhir:code [ fhir:v "1" ]
+       ] )
+     ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

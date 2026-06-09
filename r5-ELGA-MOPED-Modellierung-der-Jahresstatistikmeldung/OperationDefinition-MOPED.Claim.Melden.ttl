@@ -1,0 +1,66 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://elga.moped.at/OperationDefinition/MOPED.Claim.Melden> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "MOPED.Claim.Melden"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition MOPED.Claim.Melden</b></p><a name=\"MOPED.Claim.Melden\"> </a><a name=\"hcMOPED.Claim.Melden\"> </a><p>URL: [base]/Composition/[id]/$melden</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>Kosteninformation</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/bundle.html\">Bundle</a> (<a href=\"StructureDefinition-at-moped-bundle-melden-LGF.html\" title=\"https://elga.moped.at/StructureDefinition/at-moped-bundle-melden-LGF\">AT MOPED Bundle $melden LGF</a>)</td><td/><td><div><p>Der <em>Kosteninformation</em> Parameter beinhaltet ein Bundle mit sämtlichen Details zur Kosteninformation lt. MopedARKRequest Profil.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/resource.html\">Resource</a> (<a href=\"http://hl7.org/fhir/R5/operationoutcome.html\" title=\"http://hl7.org/fhir/StructureDefinition/OperationOutcome\">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>\n</div></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [
+     fhir:v "https://elga.moped.at/OperationDefinition/MOPED.Claim.Melden"^^xsd:anyURI ;
+     fhir:l <https://elga.moped.at/OperationDefinition/MOPED.Claim.Melden>
+  ] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "MOPED_Claim_Melden"] ; # 
+  fhir:title [ fhir:v "MOPED Kosteninformation $melden"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2026-06-09T11:53:00+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "ELGA GmbH" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://elga.gv.at" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Die $melden Operation wird aufgerufen, wenn eine Kosteninformation an die SV gemeldet werden soll."] ; # 
+  fhir:affectsState [ fhir:v true] ; # 
+  fhir:code [ fhir:v "melden"] ; # 
+  fhir:resource ( [ fhir:v "Composition"] ) ; # 
+  fhir:system [ fhir:v false] ; # 
+  fhir:type [ fhir:v false] ; # 
+  fhir:instance [ fhir:v true] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "Kosteninformation" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 1 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Der *Kosteninformation* Parameter beinhaltet ein Bundle mit sämtlichen Details zur Kosteninformation lt. MopedARKRequest Profil." ] ;
+     fhir:type [ fhir:v "Bundle" ] ;
+     fhir:targetProfile ( [
+       fhir:v "https://elga.moped.at/StructureDefinition/at-moped-bundle-melden-LGF"^^xsd:anyURI ;
+       fhir:l <https://elga.moped.at/StructureDefinition/at-moped-bundle-melden-LGF>
+     ] )
+  ] [
+     fhir:name [ fhir:v "return" ] ;
+     fhir:use [ fhir:v "out" ] ;
+     fhir:min [ fhir:v 1 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Der *return* Parameter gibt Auskunft über den Erfolg der Operation." ] ;
+     fhir:type [ fhir:v "Resource" ] ;
+     fhir:targetProfile ( [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/OperationOutcome"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/OperationOutcome>
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

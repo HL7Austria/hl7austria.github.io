@@ -1,0 +1,4105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="elga.moped"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide elga.moped</b></p><a name="elga.moped"> </a><a name="hcelga.moped"> </a><h2>MOPED</h2><p>The official URL for this implementation guide is: </p><pre>https://elga.moped.at/ImplementationGuide/elga.moped</pre></div>
+  </text>
+  <url value="https://elga.moped.at/ImplementationGuide/elga.moped"/>
+  <version value="0.1.0"/>
+  <name value="MOPED"/>
+  <title value="Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)"/>
+  <status value="draft"/>
+  <date value="2026-06-09T11:53:00+00:00"/>
+  <publisher value="ELGA GmbH"/>
+  <contact>
+    <name value="ELGA GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://elga.gv.at"/>
+    </telecom>
+  </contact>
+  <packageId value="elga.moped"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="5.0.0"/>
+  <dependsOn id="hl7tx">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on HL7 Terminology"/>
+    </extension>
+    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <packageId value="hl7.terminology.r5"/>
+    <version value="7.1.0"/>
+  </dependsOn>
+  <dependsOn id="hl7ext">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/>
+    </extension>
+    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+    <packageId value="hl7.fhir.uv.extensions.r5"/>
+    <version value="5.3.0"/>
+  </dependsOn>
+  <dependsOn id="hl7_at_fhir_core_r5">
+    <uri value="http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/ImplementationGuide/hl7.at.fhir.core.r5"/>
+    <packageId value="hl7.at.fhir.core.r5"/>
+    <version value="current"/>
+  </dependsOn>
+  <definition>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
+      <valueCode value="hl7.fhir.uv.tools.r5#1.1.2"/>
+    </extension>
+    <grouping id="VerordnungKA">
+      <name value="Verordnungsrelevant - Datenfelder für die KA"/>
+      <description value="Verordnungsrelevante Ressourcenprofile für den Akteuer KA"/>
+    </grouping>
+    <grouping id="VerordnungBund">
+      <name value="Verordnungsrelevant - Datenfelder für den Bund"/>
+      <description value="Verordnungsrelevante Ressourcenprofile für den Akteuer Bund"/>
+    </grouping>
+    <grouping id="VerordnungLGF">
+      <name value="Verordnungsrelevant - Datenfelder für den LGF"/>
+      <description value="Verordnungsrelevante Ressourcenprofile für den Akteuer LGF"/>
+    </grouping>
+    <grouping id="VerordnungSV">
+      <name value="Verordnungsrelevant - Datenfelder für die SV"/>
+      <description value="Verordnungsrelevante Ressourcenprofile für den Akteuer SV"/>
+    </grouping>
+    <grouping id="QuestionnairesIntensiv">
+      <name value="Fallbezogene Questionnaires für die Intensivdokumentation"/>
+      <description value="Questionnaires für die Modellierung von Intensivdokumentation"/>
+    </grouping>
+    <grouping id="QuestionnairesRegistermeldungen">
+      <name value="Questionnaires - Registermeldungen"/>
+      <description value="Questionnaires zur Definition von Registermeldungen in Moped."/>
+    </grouping>
+    <grouping id="QuestionnairesJahresstatistikmeldung">
+      <name value="Questionnaires - Jahresstatistikmeldung/Monatsstatistikmeldung"/>
+      <description value="Jahresstatistikmeldungen von der Krankenanstalt für den LGF und Bund."/>
+    </grouping>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/AbgangsartVS"/>
+      </reference>
+      <name value="Abgangsart des Patienten"/>
+      <description value="ValueSet für die Abgangsart des Patienten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-diagnoseKnoten"/>
+      </reference>
+      <name value="Abrechnung - Knoten"/>
+      <description value="Lukriert die Patient:innen über eine reguläre Gruppe Punkte, so ist in diesem Datenfeld die entsprechende Knotenbezeichnung einzutragen."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-AbrechnungsartAuslaenderverrechnung"/>
+      </reference>
+      <name value="Abrechnungsart Ausländerverrechnung"/>
+      <description value="Abrechnungsart Ausländerverrechnung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/AbrechnungsartAuslaenderverrechnungCS"/>
+      </reference>
+      <name value="Abrechnungsart Ausländerverrechnung CodeSystem"/>
+      <description value="CodeSystem für die Abrechnungsarten in der Ausländerverrechnung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/AbrechnungsartAuslaenderverrechnungVS"/>
+      </reference>
+      <name value="Abrechnungsart Ausländerverrechnung ValueSet"/>
+      <description value="ValueSet für die Abrechnungsarten in der Ausländerverrechnung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/AbrechnungsRelevanzVS"/>
+      </reference>
+      <name value="Abrechnungsrelevanz der medizinischen Leistung"/>
+      <description value="Abrechnungsrelevanz der medizinischen Leistung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/AbrechnungsRelevanzCS"/>
+      </reference>
+      <name value="Abrechnungsrelevanz der medizinischen Leistung"/>
+      <description value="Abrechnungsrelevanz der medizinischen Leistung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="HealthcareService"/>
+      </extension>
+      <reference>
+        <reference value="HealthcareService/AbteilungHerzJesu1"/>
+      </reference>
+      <name value="AbteilungHerzJesu1"/>
+      <description value="Hackathon Stammdaten: Abteilung 1 der KA Herz Jesu"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-organization-organisationseinheit-KA"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="HealthcareService"/>
+      </extension>
+      <reference>
+        <reference value="HealthcareService/AbteilungKARied1"/>
+      </reference>
+      <name value="AbteilungKARied1"/>
+      <description value="Hackathon Stammdaten: Abteilung 1 der KA Ried"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-organization-organisationseinheit-KA"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="HealthcareService"/>
+      </extension>
+      <reference>
+        <reference value="HealthcareService/AbteilungKARied2"/>
+      </reference>
+      <name value="AbteilungKARied2"/>
+      <description value="Hackathon Stammdaten: Abteilung 2 der KA Ried"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-organization-organisationseinheit-KA"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="HealthcareService"/>
+      </extension>
+      <reference>
+        <reference value="HealthcareService/AbteilungKARied3"/>
+      </reference>
+      <name value="AbteilungKARied3"/>
+      <description value="Hackathon Stammdaten: Abteilung 3 der KA Ried"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-organization-organisationseinheit-KA"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="HealthcareService"/>
+      </extension>
+      <reference>
+        <reference value="HealthcareService/AbteilungKARied4"/>
+      </reference>
+      <name value="AbteilungKARied4"/>
+      <description value="Hackathon Stammdaten: Abteilung 4 der KA Ried"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-organization-organisationseinheit-KA"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-AddItemCategory"/>
+      </reference>
+      <name value="AddItemCategory"/>
+      <description value="Benefit classification"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/EWCodes2025VS"/>
+      </reference>
+      <name value="Akzeptierte Errors/Warnings - Codes 2025"/>
+      <description value="Der entsprechende Error-/Warning-/Hinweis-Code des unplausiblen/hinweisbezogenen Wertes"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/EWCodes2025CS"/>
+      </reference>
+      <name value="Akzeptierte Errors/Warnings - Codes 2025"/>
+      <description value="Der entsprechende Error-/Warning-/Hinweis-Code des unplausiblen/hinweisbezogenen Wertes"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-altersgruppe"/>
+      </reference>
+      <name value="Altersgruppe"/>
+      <description value="In Gruppen eingeteilt, wobei vollendete Lebensjahre ausschlaggebend sind."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/AltersgruppeVS"/>
+      </reference>
+      <name value="Altersgruppe des Patienten"/>
+      <description value="ValueSet für die Altersgruppe des Patienten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/AltersgruppeCS"/>
+      </reference>
+      <name value="Altersgruppe des Patienten"/>
+      <description value="CodeSystem für die Altersgruppe des Patienten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/AnwesenheitsartVS"/>
+      </reference>
+      <name value="Anwesenheitsart"/>
+      <description value="ValueSet für die Anwesenheitsart"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/AnwesenheitsartCS"/>
+      </reference>
+      <name value="Anwesenheitsart"/>
+      <description value="CodeSystem für die Anwesenheitsart"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/MopedEncounterTypesVS"/>
+      </reference>
+      <name value="Arten von Moped Encounter"/>
+      <description value="Arten von Moped Encounter"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/MopedEncounterTypesCS"/>
+      </reference>
+      <name value="Arten von Moped Encounter"/>
+      <description value="Arten von Moped Encounter"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/MopedPaymentTypesCS"/>
+      </reference>
+      <name value="Arten von Moped Payment Types CS"/>
+      <description value="Arten von Moped Payment Types CS"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/MopedPaymentTypesVS"/>
+      </reference>
+      <name value="Arten von Moped Payment Types VS"/>
+      <description value="Arten von Moped Payment Types VS"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-bundle-abrechnen-KA"/>
+      </reference>
+      <name value="AT MOPED Bundle $abrechnen KA Profil"/>
+      <description value="MOPED Profil der Bundle Ressource für die Input-Ressourcen beim Abrechnen (KA)"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-bundle-anfragen-KA"/>
+      </reference>
+      <name value="AT MOPED Bundle $anfragen KA Profil"/>
+      <description value="MOPED Profil der Bundle Ressource für die Input-Ressourcen beim $anfragen (KA)"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-bundle-antworten-SV"/>
+      </reference>
+      <name value="AT MOPED Bundle $antworten SV Profil"/>
+      <description value="MOPED Profil der Bundle Ressource für die Input-Ressourcen beim Einbringen von Antworten der SV"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-bundle-aufnehmen-KA"/>
+      </reference>
+      <name value="AT MOPED Bundle $aufnehmen KA Profil"/>
+      <description value="MOPED Profil der Bundle Ressource für die Input-Ressourcen beim Aufnehmen eines Patienten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-bundle-entlassen-KA"/>
+      </reference>
+      <name value="AT MOPED Bundle $entlassen KA Profil"/>
+      <description value="MOPED Profil der Bundle Ressource für die Input-Ressourcen beim Entlassen eines Patienten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-bundle-entscheiden-LGF"/>
+      </reference>
+      <name value="AT MOPED Bundle $entscheiden LGF Profil"/>
+      <description value="MOPED Profil der Bundle Ressource für die Input-Ressourcen beim Entscheiden (Bestätigen/Ablehnen) von Punkten/Erorrs/Warnings"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-bundle-melden-LGF"/>
+      </reference>
+      <name value="AT MOPED Bundle $melden LGF"/>
+      <description value="MOPED Profil der Bundle Ressource für die Input-Ressourcen beim Melden von Informationen"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-bundle-update-KA"/>
+      </reference>
+      <name value="AT MOPED Bundle $update KA"/>
+      <description value="MOPED Profil der Bundle Ressource für die Input-Ressourcen beim Update von Informationen zu einem Fall"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-bundle-input-KA"/>
+      </reference>
+      <name value="AT MOPED Bundle Input KA Profil"/>
+      <description value="MOPED Profil der Bundle Ressource für die Input-Ressourcen beim Update von Informationen zu einem Fall"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-bundle-questionnaireresponse-einmelden-KA"/>
+      </reference>
+      <name value="AT MOPED Bundle QuestionnaireResponse $einmelden Profil"/>
+      <description value="MOPED Profil der Bundle Ressource für die Input-Ressourcen beim Einmelden von nicht fallspezifischen QuestionnaireResponses"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-claim-lkfrequest-basis"/>
+      </reference>
+      <name value="AT MOPED Claim LKFRequest Basis Profil"/>
+      <description value="MOPED Basis Profil der Claim Ressource für die Leistungsabrechnungsanfrage."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-claim-lkfrequest-generisch"/>
+      </reference>
+      <name value="AT MOPED Claim LKFRequest generisches Profil"/>
+      <description value="MOPED generisches Profil der Claim Ressource die Leistungsabrechnungsanfrage."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-claim-vaerequest-basis"/>
+      </reference>
+      <name value="AT MOPED Claim VAERequest Basis Profil"/>
+      <description value="MOPED Basis Profil der Claim Ressource für die Anfrage der Versichertenanspruchserklärung VAE."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-claim-vaerequest-generisch"/>
+      </reference>
+      <name value="AT MOPED Claim VAERequest generisches Profil"/>
+      <description value="MOPED generisches Profil der Claim Ressource für die Anfrage der Versichertenanspruchserklärung VAE."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-claim-VAE-request-initial"/>
+      </reference>
+      <name value="AT MOPED Claim VAERequest Initiales Profil"/>
+      <description value="MOPED Profile der Claim Ressource für die initiale Anfrage der Versichertenanspruchserklärung (VAE)"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-claim-vaerequest-verlaengerung"/>
+      </reference>
+      <name value="AT MOPED Claim VAERequest Verlängerungs Profil"/>
+      <description value="MOPED Profil der Claim Ressource für die Verlängerung der Versichertenanspruchserklärung (VAE)"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-claimresponse-lkfresponse-basis"/>
+      </reference>
+      <name value="AT MOPED ClaimResponse LKFResponse Basis Profil"/>
+      <description value="MOPED Basis Profil der ClaimResponse Ressource für die Leistungsabrechnungsantwort."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-claimresponse-lkfresponse-generisch"/>
+      </reference>
+      <name value="AT MOPED ClaimResponse LKFResponse generisches Profil"/>
+      <description value="MOPED generisches Profil der ClaimResponse Ressource für die Leistungsabrechnungsantwort."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-claimresponse-vaeresponse-basis"/>
+      </reference>
+      <name value="AT MOPED ClaimResponse VAEResponse Basis Profil"/>
+      <description value="MOPED Basis Profil der ClaimResponse Ressource für die Beantwortung der Versichertenanspruchserklärung VAE."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-claimresponse-vaeresponse-generisch"/>
+      </reference>
+      <name value="AT MOPED ClaimResponse VAEResponse generisches Profil"/>
+      <description value="MOPED generisches Profil der ClaimResponse Ressource für die Beantwortung der Versichertenanspruchserklärung VAE."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-composition-anfragen"/>
+      </reference>
+      <name value="AT MOPED Composition $anfragen Profil"/>
+      <description value="MOPED Profil der Composition Ressource nach $anfragen"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-composition-aufnehmen"/>
+      </reference>
+      <name value="AT MOPED Composition $aufnehmen Profil"/>
+      <description value="MOPED Profil der Composition Ressource nach $aufnehmen"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-composition-beantworten"/>
+      </reference>
+      <name value="AT MOPED Composition $beantworten Profil"/>
+      <description value="MOPED Profil der Composition Ressource nach $beantworten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-composition-entlassen-aviso"/>
+      </reference>
+      <name value="AT MOPED Composition $entlassen Aviso Profil"/>
+      <description value="MOPED Profil der Composition Ressource nach $entlassen bei Entlassung Aviso"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-composition-entlassen-vollstaendig"/>
+      </reference>
+      <name value="AT MOPED Composition $entlassen vollständig Profil"/>
+      <description value="MOPED Profil der Composition Ressource nach $entlassen bei Entlassung vollständig"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-composition-update"/>
+      </reference>
+      <name value="AT MOPED Composition $update Profil"/>
+      <description value="MOPED Profil der Composition Ressource nach $update"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-composition-basis"/>
+      </reference>
+      <name value="AT MOPED Composition Basis Profil"/>
+      <description value="MOPED Basis Profil der Composition Ressource in der sich der gesamte Moped Datensatz aufbaut. Diese unterstütz durch ihre Invarianten eine konsistente Datenhaltung."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-composition-generisch"/>
+      </reference>
+      <name value="AT MOPED Composition generisches Profil"/>
+      <description value="MOPED generisches Profil der Composition Ressource von der alle anderen Compositions ableiten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-condition-basis"/>
+      </reference>
+      <name value="AT MOPED Condition Basis Profil"/>
+      <description value="MOPED Basis Profil der Condition Ressource für Diagnosen"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-condition-generisch"/>
+      </reference>
+      <name value="AT MOPED Condition generisches Profil"/>
+      <description value="MOPED generisches Profil der Condition Ressource für Diagnosen"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-coverage-generisch"/>
+      </reference>
+      <name value="AT MOPED Coverage generisches Profil"/>
+      <description value="MOPED generisches Profil der Coverage Ressource"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-coverage-selbstzahler"/>
+      </reference>
+      <name value="AT MOPED Coverage Selbstzahler Basis Profil"/>
+      <description value="MOPED Basis Profil der Coverage Ressource für Personen, welche kein relevantes Versicherungsverhältnis haben und die Behandlung selbst bezahlen müssen."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-coverage-versicherter-basis"/>
+      </reference>
+      <name value="AT MOPED Coverage Versicherter Basis Profil"/>
+      <description value="MOPED Basis Profil der Coverage Ressource für Personen, welche ein Versicherungsverhältnis mit der Sozialversicherung haben."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-device-generisch"/>
+      </reference>
+      <name value="AT MOPED Device generisches Profil"/>
+      <description value="MOPED generisches Profil der Device Ressource"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-device-XDok"/>
+      </reference>
+      <name value="AT MOPED Device XDok Profil"/>
+      <description value="MOPED Profil der Device Ressource für XDok"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-encounter-aufenthalt-stationaer-Aufnahme"/>
+      </reference>
+      <name value="AT MOPED Encounter Aufenthalt Stationär Aufnahme Profil"/>
+      <description value="MOPED Profil der Encounter Ressource für die Aufnahme im stationären Bereich"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-encounter-aufenthalt-stationaer-basis"/>
+      </reference>
+      <name value="AT MOPED Encounter Aufenthalt Stationär Basis Profil"/>
+      <description value="MOPED Basis Profil der Encounter Ressource für den stationären Aufenthalt"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-encounter-aufenthalt-stationaer-Entlassung"/>
+      </reference>
+      <name value="AT MOPED Encounter Aufenthalt Stationär Entlassung Profil"/>
+      <description value="MOPED Profil der Encounter Ressource für die Entlassung im stationären Bereich"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-encounter-besuch-ambulant-Bund"/>
+      </reference>
+      <name value="AT MOPED Encounter Aufenthalt/Besuch Ambulant Bund Profil"/>
+      <description value="TBD"/>
+      <isExample value="false"/>
+      <groupingId value="VerordnungBund"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-encounter-besuch-ambulant-KA"/>
+      </reference>
+      <name value="AT MOPED Encounter Aufenthalt/Besuch Ambulant KA Profil"/>
+      <description value="TBD"/>
+      <isExample value="false"/>
+      <groupingId value="VerordnungKA"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-encounter-besuch-ambulant-LGF"/>
+      </reference>
+      <name value="AT MOPED Encounter Aufenthalt/Besuch Ambulant LGF Profil"/>
+      <description value="TBD"/>
+      <isExample value="false"/>
+      <groupingId value="VerordnungLGF"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-encounter-besuch-ambulant-SV"/>
+      </reference>
+      <name value="AT MOPED Encounter Aufenthalt/Besuch Ambulant SV Profil"/>
+      <description value="TBD"/>
+      <isExample value="false"/>
+      <groupingId value="VerordnungSV"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-encounter-aufenthaltbesuch-generisch"/>
+      </reference>
+      <name value="AT MOPED Encounter Aufenthalt/Besuch generisches Profil"/>
+      <description value="MOPED generisches Profil der Encounter Ressource für ambulante Besuche und stationäre Aufenthaltes"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-encounter-aufenthalt-stationaer-Bund"/>
+      </reference>
+      <name value="AT MOPED Encounter Aufenthalt/Besuch Stationär Bund Profil"/>
+      <description value="TBD"/>
+      <isExample value="false"/>
+      <groupingId value="VerordnungBund"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-encounter-aufenthalt-stationaer-KA"/>
+      </reference>
+      <name value="AT MOPED Encounter Aufenthalt/Besuch Stationär KA Profil"/>
+      <description value="TBD"/>
+      <isExample value="false"/>
+      <groupingId value="VerordnungKA"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-encounter-aufenthalt-stationaer-LGF"/>
+      </reference>
+      <name value="AT MOPED Encounter Aufenthalt/Besuch Stationär LGF Profil"/>
+      <description value="TBD"/>
+      <isExample value="false"/>
+      <groupingId value="VerordnungLGF"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-encounter-aufenthalt-stationaer-SV"/>
+      </reference>
+      <name value="AT MOPED Encounter Aufenthalt/Besuch Stationär SV Profil"/>
+      <description value="TBD"/>
+      <isExample value="false"/>
+      <groupingId value="VerordnungSV"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-encounter-besuch-ambulant-basis"/>
+      </reference>
+      <name value="AT MOPED Encounter Besuch Ambulantes Profil"/>
+      <description value="MOPED Basis Profil der Encounter Ressource für den ambulanten Besuch"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-encounter-bewegung-ambulant-basis"/>
+      </reference>
+      <name value="AT MOPED Encounter Bewegung Ambulant Basis Profil"/>
+      <description value="MOPED Profil der Encounter Ressource für ambulante Kontakte/Bewegungen"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-encounter-bewegung-generisch"/>
+      </reference>
+      <name value="AT MOPED Encounter Bewegung generisches Profil"/>
+      <description value="MOPED Profil der Encounter Ressource für die Verlegung innerhalb oder zwischen Krankenanstalten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-encounter-bewegung-intensiv-basis"/>
+      </reference>
+      <name value="AT MOPED Encounter Bewegung Intensiv Basis Profil"/>
+      <description value="MOPED Profil der Encounter Ressource für die Verlegung auf Intensivstationen"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-encounter-bewegung-stationaer-basis"/>
+      </reference>
+      <name value="AT MOPED Encounter Bewegung Stationär Basis Profil"/>
+      <description value="MOPED Profil der Encounter Ressource für eine stationäre Verlegung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-observation-entbindungsart-basis"/>
+      </reference>
+      <name value="AT MOPED Observation Entbindungsart Basis Profil"/>
+      <description value="MOPED Basis Profil der Observation Ressource für die Entbindungsart"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-observation-geburtenanzahl-basis"/>
+      </reference>
+      <name value="AT MOPED Observation Geburtenanzahl Basis Profil"/>
+      <description value="MOPED Basis Profil der Observation Ressource für die Anzahl der Geburten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-observation-generisch"/>
+      </reference>
+      <name value="AT MOPED Observation generisches Profil"/>
+      <description value="MOPED generisches Profil der Observation Ressource"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-organization-bund"/>
+      </reference>
+      <name value="AT MOPED Organization Bund Profil"/>
+      <description value="MOPED Profil der Organization Ressource für den Bund"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-organization-dachverband"/>
+      </reference>
+      <name value="AT MOPED Organization Dachverband Profil"/>
+      <description value="MOPED Profil der Organization Ressource für den Dachverband"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-organization-KA"/>
+      </reference>
+      <name value="AT MOPED Organization KA Profil"/>
+      <description value="MOPED Profil der Organization Ressource für KA Organizations"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-organization-LGF"/>
+      </reference>
+      <name value="AT MOPED Organization LGF Profil"/>
+      <description value="MOPED Profil der Organization Ressource für den LGF"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-organization-organisationseinheit-KA"/>
+      </reference>
+      <name value="AT MOPED Organization Organisationseinheite KA Profil"/>
+      <description value="MOPED Profil der Organization Ressource für Organisationseinheiten innerhalb einer Krankenanstalt."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-organization-SV"/>
+      </reference>
+      <name value="AT MOPED Organization SV Profil"/>
+      <description value="MOPED Profil der Organization Ressource für die SV"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-patient-generisch"/>
+      </reference>
+      <name value="AT MOPED Patient generisches Profil"/>
+      <description value="MOPED generisches Profil der Patienten Ressource für Moped"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-patient-klarname-basis"/>
+      </reference>
+      <name value="AT MOPED Patient Klarname Basis Profil"/>
+      <description value="MOPED Basis Profil der Patienten Ressource mit Klarname"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-patient-vbPK-basis"/>
+      </reference>
+      <name value="AT MOPED Patient vbPK Basis Profil"/>
+      <description value="MOPED Profil der Patienten Ressource mit vbPKs"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-procedure-basis"/>
+      </reference>
+      <name value="AT MOPED Procedure Basis Profil"/>
+      <description value="MOPED Basis Profil der Procedure Ressource für Leistungen"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-procedure-generisch"/>
+      </reference>
+      <name value="AT MOPED Procedure generisches Profil"/>
+      <description value="MOPED generisches Profil der Procedure Ressource für Leistungen"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-questionnaireresponse-fallbezogen"/>
+      </reference>
+      <name value="AT MOPED QuestionnaireResponse fallbezogenes Profil"/>
+      <description value="MOPED Profil der QuestionnaireResponse Ressource für QuestionnnaireResponses die im Kontext von Moped mit Fallbezug erhoben werden"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-questionnaireresponse-nicht-fallbezogen"/>
+      </reference>
+      <name value="AT MOPED QuestionnaireResponse nicht fallbezogenes Profil"/>
+      <description value="MOPED Profil der QuestionnaireResponse Ressource für QuestionnaireResponses die im Kontext von Moped ohne Fallbezug erhoben werden"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-relatedperson-hauptversicherter-generisch"/>
+      </reference>
+      <name value="AT MOPED RelatedPerson generisches Profil"/>
+      <description value="MOPED generisches Profil der RelatedPerson Ressource"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-relatedperson-hauptversicherter-basis"/>
+      </reference>
+      <name value="AT MOPED RelatedPerson Hauptversicherter Basis Profil"/>
+      <description value="MOPED generisches Profil der RelatedPerson Ressource für Daten zum Hauptversicherten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-aufnahmeart"/>
+      </reference>
+      <name value="Aufnahmeart"/>
+      <description value="MOPED Extension für die Aufnahmeart."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/AufnahmeartVS"/>
+      </reference>
+      <name value="Aufnahmeart des Patienten"/>
+      <description value="ValueSet für die Aufnahmeart des Patienten (LKF + Ka-Org)"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/Aufnahmeart2VS"/>
+      </reference>
+      <name value="Aufnahmeart2 des Patienten"/>
+      <description value="ValueSet für die Aufnahmeart des Patienten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/Aufnahmeart2CS"/>
+      </reference>
+      <name value="Aufnahmeart2 des Patienten"/>
+      <description value="CodeSystem für die Aufnahmeart des Patienten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/VerpflegskostenBeitragsbefreiungVS"/>
+      </reference>
+      <name value="Befreiung für den Verpflegskostenbeitrag"/>
+      <description value="Befreiung für den Verpflegskostenbeitrag"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/VerpflegskostenBeitragsbefreiungCS"/>
+      </reference>
+      <name value="Befreiung für den Verpflegskostenbeitrag"/>
+      <description value="CodeSystem für die Befreiung für den Verpflegskostenbeitrag"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/BehandlungsartVS"/>
+      </reference>
+      <name value="Behandlungsart"/>
+      <description value="ValueSet für die Behandlungsart"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/BehandlungsartCS"/>
+      </reference>
+      <name value="Behandlungsart"/>
+      <description value="CodeSystem für die Behandlungsart"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-Beihilfenaequivalent"/>
+      </reference>
+      <name value="Beihilfenaequivalent"/>
+      <description value="MOPED Extension für das Beihilfenaequivalent"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-Betreuungsschein"/>
+      </reference>
+      <name value="Betreuungsschein bei Ausländerverrechnung"/>
+      <description value="MOPED Extension für den Betreuungsschein bei Ausländerverrechnung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/BewegungsEncounter42.1"/>
+      </reference>
+      <name value="BewegungsEncounter42.1"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/BewegungsEncounter42.2"/>
+      </reference>
+      <name value="BewegungsEncounter42.2"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/MopedClaimSubTypeCS"/>
+      </reference>
+      <name value="Claim Subtype CodeSystem"/>
+      <description value="CodeSystem für die Arten der Claims/ClaimResponses"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/MopedClaimTypeCS"/>
+      </reference>
+      <name value="Claim Type CodeSystem"/>
+      <description value="CodeSystem für die Arten der Claims/ClaimResponses"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/MopedClaimTypeVS"/>
+      </reference>
+      <name value="Claim Type ValueSet"/>
+      <description value="ValueSet für die Arten der Claims/ClaimResponses"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ZahlungskennzeichenAuslaenderverrechnungCS"/>
+      </reference>
+      <name value="CodeSystem Zahlungskennzeichen Auslaenderverrechnung"/>
+      <description value="CodeSystem Zahlungskennzeichen Auslaenderverrechnung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ZahlungskennzeichenRegressCS"/>
+      </reference>
+      <name value="CodeSystem Zahlungskennzeichen Regress"/>
+      <description value="CodeSystem Zahlungskennzeichen Regress"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/Condition42.1"/>
+      </reference>
+      <name value="Condition42.1"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-Diagnosetyp"/>
+      </reference>
+      <name value="Diagnosetyp"/>
+      <description value="Diagnosetyp"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/MopedEncounterStatusAufnahmeVS"/>
+      </reference>
+      <name value="Encounter Status bei der Aufnahme"/>
+      <description value="Varianten des Encounter Status bei der Aufnahme"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/MopedEncounterStatusEntlassungVS"/>
+      </reference>
+      <name value="Encounter Status bei Entlassung"/>
+      <description value="Varianten des Encounter Status bei Entlassung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/MopedEncounterStatusVS"/>
+      </reference>
+      <name value="Encounter Status in Moped"/>
+      <description value="Varianten des Encounter Status bei Aufenthalten in Moped"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/Encounter42"/>
+      </reference>
+      <name value="Encounter42"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/EntlassungsartCS"/>
+      </reference>
+      <name value="Entlassungsart des Patienten"/>
+      <description value="CodeSystem für die Entlassungsart des Patienten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/EntlassungsartAVS"/>
+      </reference>
+      <name value="Entlassungsart des Patienten ambulant"/>
+      <description value="ValueSet für die ambulante Entlassungsart des Patienten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/EntlassungsartVS"/>
+      </reference>
+      <name value="Entlassungsart des Patienten ambulant + stationär"/>
+      <description value="ValueSet für die Entlassungsart des Patienten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/EntlassungsartSVS"/>
+      </reference>
+      <name value="Entlassungsart des Patienten stationär"/>
+      <description value="ValueSet für die stationäre Entlassungsart des Patienten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-fehlerWarnung"/>
+      </reference>
+      <name value="Error/Warning"/>
+      <description value="MOPED Extension für akzeptierte Errors und Warnings"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-fondsrelevanz"/>
+      </reference>
+      <name value="Fondsrelevanz"/>
+      <description value="Hier ist anzugeben, ob der stationäre Aufenthalt/ambulante Besuch gegenüber dem Landesgesundheitsfonds/PRIKRAF abzurechnen ist."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/FondsrelevanzVS"/>
+      </reference>
+      <name value="Fondsrelevanz"/>
+      <description value="ValueSet für die Fondsrelevanz"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/FondsrelevanzCS"/>
+      </reference>
+      <name value="Fondsrelevanz"/>
+      <description value="CodeSystem für die Fondsrelevanz"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-ReasonForNonPayment"/>
+      </reference>
+      <name value="Grund warum keine Zahlung erfolgte"/>
+      <description value="Grund warum keine Zahlung erfolgte"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/HTTPVerbInsertOnlyVS"/>
+      </reference>
+      <name value="HTTP Verb Insert Only"/>
+      <description value="HTTP Verben für das Einmelden von Ressourcen, welche nur initial eingemeldet und dann nicht mehr verändert werden dürfen."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/HTTPVerbInsertUpdateDeleteVS"/>
+      </reference>
+      <name value="HTTP Verb Insert Update Delete"/>
+      <description value="HTTP Verben für das Einmelden von Ressourcen, welche nur initial eingemeldet und dann nicht mehr verändert werden dürfen."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/HTTPVerbUpdateOnlyVS"/>
+      </reference>
+      <name value="HTTP Verb Update Only"/>
+      <description value="HTTP Verben für das Einmelden von Ressourcen, welche nach dem initialen Einmelden nur aktualisiert werden dürfen."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/HTTPVerbInsertUpdateVS"/>
+      </reference>
+      <name value="HTTP Verb Update Only"/>
+      <description value="HTTP Verben für das Einmelden von Ressourcen, welche nach dem initialen Einmelden nur aktualisiert werden dürfen."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/LKFTISSAQuestionnaire"/>
+      </reference>
+      <name value="I12 Questionnaire für TISS-A-Daten"/>
+      <isExample value="true"/>
+      <groupingId value="QuestionnairesIntensiv"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/TISSAQuestionnaireResponse"/>
+      </reference>
+      <name value="I12 QuestionnaireResponse für TISS-A-Daten"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-questionnaireresponse-fallbezogen"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ICD10ATVS"/>
+      </reference>
+      <name value="ICD-10 AT"/>
+      <description value="ICD-10 BMSGPK 2025+"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/KAK999"/>
+      </reference>
+      <name value="KAK999"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="HealthcareService"/>
+      </extension>
+      <reference>
+        <reference value="HealthcareService/KAK999ABT11111100"/>
+      </reference>
+      <name value="KAK999ABT11111100"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="HealthcareService"/>
+      </extension>
+      <reference>
+        <reference value="HealthcareService/KAK999ABT12111100"/>
+      </reference>
+      <name value="KAK999ABT12111100"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="HealthcareService"/>
+      </extension>
+      <reference>
+        <reference value="HealthcareService/KAK999ABT12118102"/>
+      </reference>
+      <name value="KAK999ABT12118102"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="HealthcareService"/>
+      </extension>
+      <reference>
+        <reference value="HealthcareService/KAK999ABT16075000"/>
+      </reference>
+      <name value="KAK999ABT16075000"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="HealthcareService"/>
+      </extension>
+      <reference>
+        <reference value="HealthcareService/KAK999ABT16111111"/>
+      </reference>
+      <name value="KAK999ABT16111111"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="HealthcareService"/>
+      </extension>
+      <reference>
+        <reference value="HealthcareService/KAK999ABT16111112"/>
+      </reference>
+      <name value="KAK999ABT16111112"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="HealthcareService"/>
+      </extension>
+      <reference>
+        <reference value="HealthcareService/KAK999ABT16211100"/>
+      </reference>
+      <name value="KAK999ABT16211100"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="HealthcareService"/>
+      </extension>
+      <reference>
+        <reference value="HealthcareService/KAK999ABT16518011"/>
+      </reference>
+      <name value="KAK999ABT16518011"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/KostenmeldungARKVS"/>
+      </reference>
+      <name value="Kostenmeldung für (A/R/K)"/>
+      <description value="ValueSet für die Art der Kostenmeldung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-Kostenstelle"/>
+      </reference>
+      <name value="Kostenstelle"/>
+      <description value="MOPED Extension für akzeptierte Errors und Warnings"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-Leistungsanzahl"/>
+      </reference>
+      <name value="Leistung - Anzahl"/>
+      <description value="MOPED Extension für die Anzahl der zu einem Zeitpunkt erbrachten Leistungen"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/LKFAbrechnungsGruppeVS"/>
+      </reference>
+      <name value="LKF Abrechnungsgruppe"/>
+      <description value="LKF Abrechnungsgruppe"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/LKFAbrechnungsGruppeAndereCS"/>
+      </reference>
+      <name value="LKF Abrechnungsgruppe Andere"/>
+      <description value="LKF Abrechnungsgruppe Andere"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/LKFAbrechnungsKnotenVS"/>
+      </reference>
+      <name value="LKF Abrechnungsknoten"/>
+      <description value="LKF Abrechnungsknoten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/LKFAbrechnungsKnotenCS"/>
+      </reference>
+      <name value="LKF Abrechnungsknoten"/>
+      <description value="LKF Abrechnungsknoten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/LKFAmbulantenMELGruppenVS"/>
+      </reference>
+      <name value="LKF Ambulante MEL-Gruppen"/>
+      <description value="LKF Ambulante MEL-Gruppen"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/LKFAmbulantenMELGruppenCS"/>
+      </reference>
+      <name value="LKF Ambulante MEL-Gruppen"/>
+      <description value="LKF Ambulante MEL-Gruppen"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/LKFAmbulantePauschalGruppenVS"/>
+      </reference>
+      <name value="LKF Ambulante Pauschal-Gruppen"/>
+      <description value="LKF Ambulante Pauschal-Gruppen"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/LKFAmbulantePauschalGruppenCS"/>
+      </reference>
+      <name value="LKF Ambulante Pauschal-Gruppen"/>
+      <description value="LKF Ambulante Pauschal-Gruppen"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/MopedLKFRequestSubTypeVS"/>
+      </reference>
+      <name value="LKF ClaimResponse Subtype ValueSet"/>
+      <description value="ValueSet für die Art der ClaimResponses"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/LKFDiagnoseTypVS"/>
+      </reference>
+      <name value="LKF Diagnosetyp ValueSet"/>
+      <description value="LKF Diganosetyp"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/LKFHauptdiagnosegruppenVS"/>
+      </reference>
+      <name value="LKF Hauptdiagnosegruppen"/>
+      <description value="LKF Hauptdiagnosegruppen"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/LKFHauptdiagnosegruppenCS"/>
+      </reference>
+      <name value="LKF Hauptdiagnosegruppen"/>
+      <description value="LKF Hauptdiagnosegruppen"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/LKFJahresstatistikmeldung"/>
+      </reference>
+      <name value="LKF Jahresstatistikmeldung"/>
+      <description value="LKF Jahresstatistikmeldung"/>
+      <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/LKFLeistungskatalogVS"/>
+      </reference>
+      <name value="LKF Leistungskatalog BMSGPK"/>
+      <description value="LKF Hauptdiagnosegruppen"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/LKFmedizinischeEinzelleistungenVS"/>
+      </reference>
+      <name value="LKF medizinische Einzelleistungen (MEL)"/>
+      <description value="LKF medizinische Einzelleistungen (MEL)"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/LKFmedizinischeEinzelleistungenCS"/>
+      </reference>
+      <name value="LKF medizinische Einzelleistungen (MEL)"/>
+      <description value="LKF medizinische Einzelleistungen (MEL)"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/LKFMonatsstatistikmeldung"/>
+      </reference>
+      <name value="LKF Monatsstatistikmeldung"/>
+      <description value="LKF Monatsstatistikmeldung"/>
+      <isExample value="true"/>
+      <groupingId value="QuestionnairesJahresstatistikmeldung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/LKFSeitenlokalisationVS"/>
+      </reference>
+      <name value="LKF Seitenlokalisation ValueSet"/>
+      <description value="LKF Seitenlokalisation"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/Composition42"/>
+      </reference>
+      <name value="LKF Testdaten Fall"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Claim"/>
+      </extension>
+      <reference>
+        <reference value="Claim/LKFRequest42"/>
+      </reference>
+      <name value="LKFRequest42"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Location"/>
+      </extension>
+      <reference>
+        <reference value="Location/LocationKAHerzJesu"/>
+      </reference>
+      <name value="LocationKAHerzJesu"/>
+      <description value="Stammdaten: Location der KA Herz Jesu"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Location"/>
+      </extension>
+      <reference>
+        <reference value="Location/LocationKAK999"/>
+      </reference>
+      <name value="LocationKAK999"/>
+      <isExample value="true"/>
+      <profile value="http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-location"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Location"/>
+      </extension>
+      <reference>
+        <reference value="Location/LocationKARied"/>
+      </reference>
+      <name value="LocationKARied"/>
+      <description value="Stammdaten: Location der KA Ried"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-AbrechnungsRelevanz"/>
+      </reference>
+      <name value="Medizinische Leistung - Abrechnungsrelevanz"/>
+      <description value="Hier ist anzugeben, ob die medizinische Leistung bei der Bepunktung des ambulanten Besuchs/stationären Aufenthalts (Satzart X01) zu berücksichtigen ist."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MopedARKStatusUpdate"/>
+      </reference>
+      <name value="MOPED ARK Status Update - PaymentReconciliation"/>
+      <description value="MOPED Profil für Statusupdates zur Ausländerverrechnung oder zum Regress"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MopedARKRequest"/>
+      </reference>
+      <name value="MOPED ARKRequest"/>
+      <description value="MOPED Profil der Claim Ressource für die Kostenmeldung für Ausländerverrechnung und Regresse."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MopedARKResponse"/>
+      </reference>
+      <name value="MOPED ARKResponse"/>
+      <description value="MOPED Profil der ClaimResponse Ressource für die Rückmeldung der SV für Ausländerverrechnung und Regresse."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/MOPED.Auf.Request.Antworten"/>
+      </reference>
+      <name value="MOPED auf VAERequest oder ARKRequest $antworten"/>
+      <description value="Die $antworten Operation wird aufgerufen, wenn eine Versichertenanspruchserklärung oder eine Kosteninformation beantwortet wird."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/AbgangsartCS"/>
+      </reference>
+      <name value="Moped Aufnahmeart des Patienten"/>
+      <description value="Zulässige Ausprägungen Aufnahmeart (LKF &amp; KaOrg)"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/AufnahmeartCS"/>
+      </reference>
+      <name value="Moped Aufnahmeart des Patienten"/>
+      <description value="Zulässige Ausprägungen Aufnahmeart (LKF &amp; KaOrg)"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActorDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActorDefinition/MopedBundActor"/>
+      </reference>
+      <name value="Moped Bund Actor"/>
+      <description value="Moped ActorDefnition für den Bund"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/MopedClaimItemCategoryCS"/>
+      </reference>
+      <name value="Moped Claim Item Category CodeSystem"/>
+      <description value="CodeSystem für die Arten von Claim Item Kategorien"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/MopedClaimItemCategoryVS"/>
+      </reference>
+      <name value="Moped Claim Item Category ValueSet"/>
+      <description value="ValueSet für die Arten von Claim Item Kategorien"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/MOPED.ClaimResponse.Entscheiden"/>
+      </reference>
+      <name value="MOPED ClaimResponse $entscheiden"/>
+      <description value="Die $entscheiden Operation wird aufgerufen, wenn eine Abrechnung beantwortet wird und freigegeben wird."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/MopedEntbindungsartCS"/>
+      </reference>
+      <name value="Moped CodeSystem für die KaOrg Arten der Entbindung"/>
+      <description value="KaOrg Varianten der Art der Entbindung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/CompositionSectionsCS"/>
+      </reference>
+      <name value="Moped Composition Sections"/>
+      <description value="CodeSystem für die Moped Sections der Composition Ressource"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/CompositionSectionsVS"/>
+      </reference>
+      <name value="Moped Composition Sections ValueSet"/>
+      <description value="ValueSet für die Moped Sections der Composition Ressource"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/MOPED.Daten.Update"/>
+      </reference>
+      <name value="MOPED Daten $update"/>
+      <description value="Die $update Operation wird aufgerufen, wenn zusätzliche Informationen zu einem Fall eingebracht/abgeändert werden."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActorDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActorDefinition/MopedDeviceActor"/>
+      </reference>
+      <name value="Moped Device Actor"/>
+      <description value="Moped ActorDefnition für Moped selbst"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/MopedDeviceTypesCS"/>
+      </reference>
+      <name value="Moped Device Types CodeSystem"/>
+      <description value="CodeSystem für die Moped Device Types"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/MopedDeviceTypesVS"/>
+      </reference>
+      <name value="Moped Device Types ValueSet"/>
+      <description value="Types von Moped Devices"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/MOPED.Encounter.Abrechnen"/>
+      </reference>
+      <name value="MOPED Encounter $abrechnen"/>
+      <description value="Die $abrechnen Operation wird aufgerufen, wenn ein Fall abgerechnet werden soll."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/MopedEncounterParticipantTypesCS"/>
+      </reference>
+      <name value="Moped Encounter Participant Type CodeSystem"/>
+      <description value="CodeSystem für die Moped Encounter Participant Types"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/MopedEncounterParticipantTypesVS"/>
+      </reference>
+      <name value="Moped Encounter Participant Type ValueSet"/>
+      <description value="ValueSet für die Moped Encounter Participant Types"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActorDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActorDefinition/MopedKAActor"/>
+      </reference>
+      <name value="Moped KA Actor"/>
+      <description value="Moped ActorDefnition für Krankenanstalten in Österreich"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/MOPED.Claim.Melden"/>
+      </reference>
+      <name value="MOPED Kosteninformation $melden"/>
+      <description value="Die $melden Operation wird aufgerufen, wenn eine Kosteninformation an die SV gemeldet werden soll."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActorDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActorDefinition/MopedLGFActor"/>
+      </reference>
+      <name value="Moped LGF Actor"/>
+      <description value="Moped ActorDefnition für LGFs in Österreich"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/LKFSupportingInformationCategoryVS"/>
+      </reference>
+      <name value="MOPED LKFSupportingInformationCategory"/>
+      <description value="Arten von zusätzlichen Informationen im LKFRequest"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/MOPED.Patient.Aufnehmen"/>
+      </reference>
+      <name value="MOPED Patient $aufnehmen"/>
+      <description value="Die $aufnehmen Operation wird aufgerufen, wenn ein(e) Patient*in in die Krankenanstalt aufgenommen wird."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/MOPED.Patient.Entlassen"/>
+      </reference>
+      <name value="MOPED Patient $entlassen"/>
+      <description value="Die $entlassen Operation wird aufgerufen, wenn ein(e) Patient*in aus dem Krankenhaus entlassen wurde."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-patient-klarname-bund"/>
+      </reference>
+      <name value="MOPED Patient mit Klarname Bund"/>
+      <description value="MOPED Profil der Patient Ressource mit Klarname - verordnungsrelevant: Bund"/>
+      <isExample value="false"/>
+      <groupingId value="VerordnungBund"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-patient-klarname-KA"/>
+      </reference>
+      <name value="MOPED Patient mit Klarname KA"/>
+      <description value="MOPED Profil der Patient Ressource mit Klarname - verordnungsrelevant: KA"/>
+      <isExample value="false"/>
+      <groupingId value="VerordnungKA"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-patient-klarname-LGF"/>
+      </reference>
+      <name value="MOPED Patient mit Klarname LGF"/>
+      <description value="MOPED Profil der Patient Ressource mit Klarname - verordnungsrelevant: LGF"/>
+      <isExample value="false"/>
+      <groupingId value="VerordnungLGF"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-patient-klarname-SV"/>
+      </reference>
+      <name value="MOPED Patient mit Klarname SV"/>
+      <description value="MOPED Profil der Patient Ressource mit Klarname - verordnungsrelevant: SV"/>
+      <isExample value="false"/>
+      <groupingId value="VerordnungSV"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/PJ1CompositionAufnehmen"/>
+      </reference>
+      <name value="MOPED PJ1 Composition nach $aufnehmen"/>
+      <description value="PJ1 Beispiel der Composition Ressource nach $aufnehmen"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-composition-aufnehmen"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Composition"/>
+      </extension>
+      <reference>
+        <reference value="Composition/PJ1Composition"/>
+      </reference>
+      <name value="MOPED PJ1 Composition nach $aufnehmen"/>
+      <description value="PJ1 Beispiel der Composition Ressource nach $aufnehmen"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-composition-generisch"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/MOPED.QuestionnaireResponse.Einmelden"/>
+      </reference>
+      <name value="MOPED QuestionnaireResponse $einmelden"/>
+      <description value="Die $einmelden Operation wird aufgerufen, wenn eine (nicht fallbezogene) QuestionnaireResponse eingemeldet werden soll."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ActorDefinition"/>
+      </extension>
+      <reference>
+        <reference value="ActorDefinition/MopedSVActor"/>
+      </reference>
+      <name value="Moped SV Actor"/>
+      <description value="Moped ActorDefnition für eine SV in Österreich"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ClaimSupportingInformationCategoryVS"/>
+      </reference>
+      <name value="MOPED VAESupportingInformationCategory"/>
+      <description value="Arten von zusätzlichen Informationen in der VAE"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/VAESupportingInformationCategoryVS"/>
+      </reference>
+      <name value="MOPED VAESupportingInformationCategory"/>
+      <description value="Arten von zusätzlichen Informationen in der VAE"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ClaimSupportingInformationCategoryCS"/>
+      </reference>
+      <name value="MOPED VAESupportingInformationCategory"/>
+      <description value="Arten von zusätzlichen Informationen in der VAE"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/MopedEntbindungsartVS"/>
+      </reference>
+      <name value="Moped ValueSet für die Art der Entbindung"/>
+      <description value="KaOrg Varianten der Art der Entbindung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/MopedObservationArtCS"/>
+      </reference>
+      <name value="Moped ValueSet für die Art der Observation"/>
+      <description value="Varianten der Art der Observation"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-patient-vbPK-bund"/>
+      </reference>
+      <name value="MOPED vbPK Patient Bund"/>
+      <description value="MOPED Profil der Patienten Ressource mit vbPKs - verordnungsrelevant: Bund"/>
+      <isExample value="false"/>
+      <groupingId value="VerordnungBund"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-patient-vbPK-KA"/>
+      </reference>
+      <name value="MOPED vbPK Patient KA"/>
+      <description value="MOPED Profil der Patienten Ressource mit vbPKs - verordnungsrelevant: KA"/>
+      <isExample value="false"/>
+      <groupingId value="VerordnungKA"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-patient-vbPK-LGF"/>
+      </reference>
+      <name value="MOPED vbPK Patient LGF"/>
+      <description value="MOPED Profil der Patienten Ressource mit vbPKs - verordnungsrelevant: LGF"/>
+      <isExample value="false"/>
+      <groupingId value="VerordnungLGF"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-moped-patient-vbPK-SV"/>
+      </reference>
+      <name value="MOPED vbPK Patient SV"/>
+      <description value="MOPED Profil der Patienten Ressource mit vbPKs - verordnungsrelevant: SV"/>
+      <isExample value="false"/>
+      <groupingId value="VerordnungSV"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/MOPED.VAERequest.Anfragen"/>
+      </reference>
+      <name value="MOPED Versichertenanspruchserklärung $anfragen"/>
+      <description value="Die $anfragen Operation wird aufgerufen, um die Versichertenanspruchserklärung-Anfrage an die SV anzustoßen. Diese Operation ist irrelevant für Selbstzahler (-&gt; wenn es keine zuständige SV gibt darf die Operation $anfragen nicht ausgeführt werden)."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OrganizationAffiliation"/>
+      </extension>
+      <reference>
+        <reference value="OrganizationAffiliation/OrganizationAffiliationWgfHerzJesu"/>
+      </reference>
+      <name value="OrganizationAffiliationWgfHerzJesu"/>
+      <description value="Hackathon Stammdaten: Organization Affiliation zwischen LGF und KA Herz Jesu"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/OrganizationHerzJesuKrankenhaus"/>
+      </reference>
+      <name value="OrganizationHerzJesuKrankenhaus"/>
+      <description value="Hackathon Stammdaten: KA Herz Jesu"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-organization-KA"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/OrganizationKrankenhausRied"/>
+      </reference>
+      <name value="OrganizationKrankenhausRied"/>
+      <description value="Hackathon Stammdaten: KA Ried"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-organization-KA"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/OrganizationLGF"/>
+      </reference>
+      <name value="OrganizationLGF"/>
+      <description value="Hackathon Stammdaten: LGF Wien"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-organization-LGF"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/OrganizationUeberweisendeOrganization1"/>
+      </reference>
+      <name value="OrganizationUeberweisendeOrganization1"/>
+      <description value="Hackathon Stammdaten: Überweisende Organisation 1"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/OrganizationUeberweisendeOrganization2"/>
+      </reference>
+      <name value="OrganizationUeberweisendeOrganization2"/>
+      <description value="Hackathon Stammdaten: Überweisende Organisation 2"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/Patient42"/>
+      </reference>
+      <name value="Patient42"/>
+      <isExample value="true"/>
+      <profile value="http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-patient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/PJ1BewegungsEncounter1"/>
+      </reference>
+      <name value="PJ1BewegungsEncounter1"/>
+      <description value="Hackathon Patient Journey 1 Beispiel: BewegungsEncounter 1"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-encounter-bewegung-stationaer-basis"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/PJ1BewegungsEncounter1Aufnahme"/>
+      </reference>
+      <name value="PJ1BewegungsEncounter1Aufnahme"/>
+      <description value="Hackathon Patient Journey 1 Beispiel: BewegungsEncounter 1"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-encounter-bewegung-stationaer-basis"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/PJ1Condition1"/>
+      </reference>
+      <name value="PJ1Condition1"/>
+      <description value="Hackathon Patient Journey 1 Beispiel: Condition 1"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-condition-basis"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Coverage"/>
+      </extension>
+      <reference>
+        <reference value="Coverage/PJ1Coverage"/>
+      </reference>
+      <name value="PJ1Coverage"/>
+      <description value="Hackathon Patient Journey 1 Beispiel: Coverage"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-coverage-versicherter-basis"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/PJ1Encounter"/>
+      </reference>
+      <name value="PJ1Encounter"/>
+      <description value="Hackathon Patient Journey 1 Beispiel: Encounter"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-encounter-aufenthaltbesuch-generisch"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/PJ1EncounterAufnahme"/>
+      </reference>
+      <name value="PJ1EncounterAufnahme"/>
+      <description value="Hackathon Patient Journey 1 Beispiel: Encounter"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-encounter-aufenthaltbesuch-generisch"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/PJ1EncounterBasis"/>
+      </reference>
+      <name value="PJ1EncounterBasis"/>
+      <description value="Maskierung Patient Journey 1 Beispiel: Encounter"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-encounter-aufenthalt-stationaer-basis"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/PJ1EncounterBund"/>
+      </reference>
+      <name value="PJ1EncounterBund"/>
+      <description value="Maskierung Patient Journey 1 Beispiel: EncounterBund"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-encounter-aufenthalt-stationaer-Bund"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/PJ1EncounterLGF"/>
+      </reference>
+      <name value="PJ1EncounterLGF"/>
+      <description value="Maskierung Patient Journey 1 Beispiel: EncounterLGF"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-encounter-aufenthalt-stationaer-LGF"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/PJ1EncounterSV"/>
+      </reference>
+      <name value="PJ1EncounterSV"/>
+      <description value="Maskierung Patient Journey 1 Beispiel: EncounterSV"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-encounter-aufenthalt-stationaer-SV"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Claim"/>
+      </extension>
+      <reference>
+        <reference value="Claim/PJ1LKFRequest1"/>
+      </reference>
+      <name value="PJ1LKFRequest1"/>
+      <description value="Hackathon Patient Journey 1 Beispiel: LKFRequest 1"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-claim-lkfrequest-basis"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ClaimResponse"/>
+      </extension>
+      <reference>
+        <reference value="ClaimResponse/PJ1LKFResponse1"/>
+      </reference>
+      <name value="PJ1LKFResponse1"/>
+      <description value="Hackathon Patient Journey 1 Beispiel: LKFResponse 1"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-claimresponse-lkfresponse-basis"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/PJ1Patient"/>
+      </reference>
+      <name value="PJ1Patient"/>
+      <description value="Hackathon Patient Journey 1 Beispiel: Patient"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-patient-klarname-basis"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Procedure"/>
+      </extension>
+      <reference>
+        <reference value="Procedure/PJ1Procedure1"/>
+      </reference>
+      <name value="PJ1Procedure1"/>
+      <description value="Hackathon Patient Journey 1 Beispiel: Procedure 1"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-procedure-basis"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Claim"/>
+      </extension>
+      <reference>
+        <reference value="Claim/PJ1VAERequest1"/>
+      </reference>
+      <name value="PJ1VAERequest1"/>
+      <description value="Hackathon Patient Journey 1 Beispiel: VAERequest 1"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-claim-vaerequest-generisch"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ClaimResponse"/>
+      </extension>
+      <reference>
+        <reference value="ClaimResponse/PJ1VAEResponse1"/>
+      </reference>
+      <name value="PJ1VAEResponse1"/>
+      <description value="Hackathon Patient Journey 1 Beispiel: VAEResponse 1"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-claimresponse-vaeresponse-generisch"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/PJ2BewegungsEncounter1"/>
+      </reference>
+      <name value="PJ2BewegungsEncounter1"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: BewegungsEncounter 1"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-encounter-bewegung-stationaer-basis"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/PJ2BewegungsEncounter2"/>
+      </reference>
+      <name value="PJ2BewegungsEncounter2"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: BewegungsEncounter 2"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-encounter-bewegung-stationaer-basis"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/PJ2BewegungsEncounter3"/>
+      </reference>
+      <name value="PJ2BewegungsEncounter3"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: BewegungsEncounter 3"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-encounter-bewegung-stationaer-basis"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/PJ2BewegungsEncounter4"/>
+      </reference>
+      <name value="PJ2BewegungsEncounter4"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: BewegungsEncounter 4"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-encounter-bewegung-stationaer-basis"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/PJ2BewegungsEncounter5"/>
+      </reference>
+      <name value="PJ2BewegungsEncounter5"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: BewegungsEncounter 5"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-encounter-bewegung-stationaer-basis"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/PJ2Condition1"/>
+      </reference>
+      <name value="PJ2Condition1"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: Condition 1"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-condition-basis"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/PJ2Condition2"/>
+      </reference>
+      <name value="PJ2Condition2"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: Condition 2"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-condition-basis"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Coverage"/>
+      </extension>
+      <reference>
+        <reference value="Coverage/PJ2Coverage"/>
+      </reference>
+      <name value="PJ2Coverage"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: Coverage"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-coverage-versicherter-basis"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/PJ2Encounter"/>
+      </reference>
+      <name value="PJ2Encounter"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: Encounter"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-encounter-aufenthaltbesuch-generisch"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Claim"/>
+      </extension>
+      <reference>
+        <reference value="Claim/PJ2LKFRequest1"/>
+      </reference>
+      <name value="PJ2LKFRequest1"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: LKFRequest 1"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-claim-lkfrequest-basis"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ClaimResponse"/>
+      </extension>
+      <reference>
+        <reference value="ClaimResponse/PJ2LKFResponse1"/>
+      </reference>
+      <name value="PJ2LKFResponse1"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: LKFResponse 1"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-claimresponse-lkfresponse-basis"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/PJ2Patient"/>
+      </reference>
+      <name value="PJ2Patient"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: Patient"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-patient-klarname-basis"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Procedure"/>
+      </extension>
+      <reference>
+        <reference value="Procedure/PJ2Procedure1"/>
+      </reference>
+      <name value="PJ2Procedure1"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: Procedure 1"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-procedure-basis"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Procedure"/>
+      </extension>
+      <reference>
+        <reference value="Procedure/PJ2Procedure2"/>
+      </reference>
+      <name value="PJ2Procedure2"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: Procedure 2"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-procedure-basis"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Claim"/>
+      </extension>
+      <reference>
+        <reference value="Claim/PJ2VAERequest1"/>
+      </reference>
+      <name value="PJ2VAERequest1"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: VAERequest 1"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-claim-vaerequest-generisch"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ClaimResponse"/>
+      </extension>
+      <reference>
+        <reference value="ClaimResponse/PJ2VAEResponse1"/>
+      </reference>
+      <name value="PJ2VAEResponse1"/>
+      <description value="Hackathon Patient Journey 2 Beispiel: VAEResponse 1"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-claimresponse-vaeresponse-generisch"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-PaymentPercentage"/>
+      </reference>
+      <name value="Prozentsatz der Zahlung"/>
+      <description value="Prozentsatz der Zahlung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-RechnungsnummerKALGF"/>
+      </reference>
+      <name value="Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds"/>
+      <description value="MOPED Extension für die Rechnungsnummer der Krankenanstalt bzw. des Landesgesundheitsfonds"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/register-questionnaire"/>
+      </reference>
+      <name value="register-questionnaire"/>
+      <isExample value="true"/>
+      <groupingId value="QuestionnairesRegistermeldungen"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/LKFSAPS3Questionnaire"/>
+      </reference>
+      <name value="SAPS3 Questionnaire"/>
+      <description value="A questionnaire for collecting SAPS3 data"/>
+      <isExample value="true"/>
+      <groupingId value="QuestionnairesIntensiv"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/SAPS42.1"/>
+      </reference>
+      <name value="SAPS42.1"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/SonderklasseCS"/>
+      </reference>
+      <name value="Sonderklasse CodeSystem"/>
+      <description value="CodeSystem für die Klasse (KaOrg)"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/SonderklasseVS"/>
+      </reference>
+      <name value="Sonderklasse ValueSet"/>
+      <description value="ValueSet für die Klasse (KaOrg)"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/SpezielleBetriebsformenCS"/>
+      </reference>
+      <name value="Spezielle Betriebsform"/>
+      <description value="Spezielle Betriebsformen (gemäß ÖSG bzw. KAKuG)"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/SpezielleOrganisationsformVS"/>
+      </reference>
+      <name value="Spezielle Organisationsform"/>
+      <description value="Die spezielle Organisationsform der stationären Versorgung ist im Kostenstellenplan &#xA;zusätzlich zum Funktionscode mit einer entsprechenden Kennzeichnung zu versehen."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/SpezielleOrganisationsformenCS"/>
+      </reference>
+      <name value="Spezielle Organisationsformen"/>
+      <description value="Spezielle Organisationsformen (gemäß ÖSG bzw. KAKuG)"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/VAEStatusVS"/>
+      </reference>
+      <name value="Status der Versichertenanspruchserklärung"/>
+      <description value="Status der Versichertenanspruchserklärung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/VAEStatusCS"/>
+      </reference>
+      <name value="Status der Versichertenanspruchserklärung"/>
+      <description value="Status der Versichertenanspruchserklärung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/strokeunit-questionnaire"/>
+      </reference>
+      <name value="Stroke Unit Registermeldung – Patientendaten"/>
+      <description value="Fragen zur Registermeldung Stroke Unit – Abschnitt Patientendaten"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/StrokeUnitQuestionnaire2025"/>
+      </reference>
+      <name value="Stroke Unit Registermeldung – Patientendaten"/>
+      <description value="Fragen zur Registermeldung Stroke Unit – Abschnitt Patientendaten"/>
+      <isExample value="true"/>
+      <groupingId value="QuestionnairesRegistermeldungen"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/strokeunit-questionnaire-response-1"/>
+      </reference>
+      <name value="strokeunit-questionnaire-response-1"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SubscriptionTopic"/>
+      </extension>
+      <reference>
+        <reference value="SubscriptionTopic/neueVAE"/>
+      </reference>
+      <name value="Subscription Topic neue VAE"/>
+      <description value="SubscriptionTopic für die SV, um bei neuen VAEs benachrichtigt zu werden."/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SubscriptionTopic"/>
+      </extension>
+      <reference>
+        <reference value="SubscriptionTopic/vaeAbgelehnt"/>
+      </reference>
+      <name value="Subscription Topic VAE abgelehnt"/>
+      <description value="SubscriptionTopic für die KA, um bei abgelehnten VAEs benachrichtigt zu werden."/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MopedSupportingInfo"/>
+      </reference>
+      <name value="Supporting Info Extension for ClaimResponse"/>
+      <description value="Additional information codes regarding exceptions, special considerations, the condition, situation, prior or concurrent issues"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MopedSupportingInfoFREMDRE"/>
+      </reference>
+      <name value="Supporting Info Extension for ClaimResponse - FREMDRE Slice"/>
+      <description value="Additional information codes regarding exceptions, special considerations, the condition, situation, prior or concurrent issues"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MopedSupportingInfoOEGKELBNR"/>
+      </reference>
+      <name value="Supporting Info Extension for ClaimResponse - OEGKELBNR Slice"/>
+      <description value="Additional information codes regarding exceptions, special considerations, the condition, situation, prior or concurrent issues"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MopedSupportingInfoVortageanzahlAufKostenbeitrag"/>
+      </reference>
+      <name value="Supporting Info Extension for ClaimResponse - Vortageanzahl auf Kostenbeitrag"/>
+      <description value="Additional information codes regarding exceptions, special considerations, the condition, situation, prior or concurrent issues"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/SV11"/>
+      </reference>
+      <name value="SV11"/>
+      <description value="Hackathon Stammdaten: ÖGK Wien"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-organization-SV"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/SV12"/>
+      </reference>
+      <name value="SV12"/>
+      <description value="Hackathon Stammdaten: ÖGK Niederösterreich"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-organization-SV"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/SV13"/>
+      </reference>
+      <name value="SV13"/>
+      <description value="Hackathon Stammdaten: ÖGK Burgenland"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-organization-SV"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/SV14"/>
+      </reference>
+      <name value="SV14"/>
+      <description value="Hackathon Stammdaten: ÖGK Oberösterreich"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-organization-SV"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/SV15"/>
+      </reference>
+      <name value="SV15"/>
+      <description value="Hackathon Stammdaten: ÖGK Steiermark"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-organization-SV"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/SV16"/>
+      </reference>
+      <name value="SV16"/>
+      <description value="Hackathon Stammdaten: ÖGK Kärnten"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-organization-SV"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/SV17"/>
+      </reference>
+      <name value="SV17"/>
+      <description value="Hackathon Stammdaten: ÖGK Salzburg"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-organization-SV"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/SV18"/>
+      </reference>
+      <name value="SV18"/>
+      <description value="Hackathon Stammdaten: ÖGK Tirol"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-organization-SV"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/SV19"/>
+      </reference>
+      <name value="SV19"/>
+      <description value="Hackathon Stammdaten: ÖGK Vorarlberg"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-organization-SV"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-TageOhneKostenbeitrag"/>
+      </reference>
+      <name value="Tage ohne Einhebung des Kostenbeitrags"/>
+      <description value="Anzahl der Tage, für welche kein Kostenbeitrag seitens der Krankenanstalt eingehoben wurde"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/Test1PatientBund"/>
+      </reference>
+      <name value="Test1PatientBund"/>
+      <description value="Maskierung Beispiel Patient Bund"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-patient-klarname-bund"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/Test1PatientLGF"/>
+      </reference>
+      <name value="Test1PatientLGF"/>
+      <description value="Maskierung Beispiel PatientLGF"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-patient-klarname-LGF"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/Test1PatientOhneMaskierung"/>
+      </reference>
+      <name value="Test1PatientOhneMaskierung"/>
+      <description value="Maskierung Beispiel Patient"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-patient-klarname-basis"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/Test1PatientSV"/>
+      </reference>
+      <name value="Test1PatientSV"/>
+      <description value="Maskierung Beispiel PatientSV"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-patient-klarname-SV"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/Test2SAPS3QuestionnaireResponse1"/>
+      </reference>
+      <name value="Test2SAPS3QuestionnaireResponse1"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-questionnaireresponse-fallbezogen"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/TISS42.1"/>
+      </reference>
+      <name value="TISS42.1"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/TISS42.2"/>
+      </reference>
+      <name value="TISS42.2"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/TISS42.3"/>
+      </reference>
+      <name value="TISS42.3"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/TransportartVS"/>
+      </reference>
+      <name value="Transportart"/>
+      <description value="ValueSet für die Transportart des Patienten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/TransportartCS"/>
+      </reference>
+      <name value="Transportart"/>
+      <description value="CodeSystem für die Transportart des Patienten"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/UrsacheVS"/>
+      </reference>
+      <name value="Ursache für Behandlung"/>
+      <description value="ValueSet für die Ursache der Behandlung laut Ka-Org"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/UrsacheCS"/>
+      </reference>
+      <name value="Ursache für Behandlung"/>
+      <description value="CodeSystem für die Ursache der Behandlung laut Ka-Org"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/MopedVAERequestSubTypeVS"/>
+      </reference>
+      <name value="VAE Claim Subtype ValueSet"/>
+      <description value="ValueSet für die Art der Claims"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/GeburtenanzahlVS"/>
+      </reference>
+      <name value="Valueset für die Art der Geburtenanzahl"/>
+      <description value="Valueset für die Art der Geburtenanzahl in MOPED"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ZahlungskennzeichenVS"/>
+      </reference>
+      <name value="ValueSet Zahlungskennzeichen ARK"/>
+      <description value="ValueSet für das Zahlungskennzeichen ARK"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/VBPKValueSet"/>
+      </reference>
+      <name value="vbPK ValueSet"/>
+      <description value="ValueSet für die vbPKs"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-vdasid"/>
+      </reference>
+      <name value="VDAS-ID - VersichertenDatenAbfrageService"/>
+      <description value="Es handelt sich um eine ID, welche bei der VDAS-Abfrage durch die Krankenanstalt vom e-card System vergeben wird und von der Krankenanstalt in der Aufnahme-/Ereignisanzeige mitgeliefert werden kann. Dadurch kann das Abfrageergebnis eindeutig nachvollzogen werden.&#xA;Das Ergebnis der VDAS-Abfrage ist im ambulanten Bereich für den Krankenversicherungsträger verbindlich. Eine Ablehnung aus versicherungsrechtlichen Gründen ist nicht möglich, sofern die Ereignisanzeige jenem Träger aus der VDAS-Abfrage (inkl. VDAS-ID) übermittelt wurde.&#xA;Um eine zwischenstaatliche Verrechnung zu ermöglichen ist bei zwischenstaatlichen Fällen eine Ablehnung zulässig."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/VerdachtArbeitsSchuelerunfallCS"/>
+      </reference>
+      <name value="Verdacht auf Arbeits- oder Schuelerunfall CodeSystem"/>
+      <description value="CodeSystem für den Verdacht auf einen Arbeits- oder Schuelerunfall"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/VerdachtArbeitsSchuelerunfallVS"/>
+      </reference>
+      <name value="Verdacht auf Arbeits- oder Schuelerunfall ValueSet"/>
+      <description value="ValueSet für den Verdacht auf einen Arbeits- oder Schuelerunfall"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-verpflegskostenBeitragsbefreiung"/>
+      </reference>
+      <name value="VerpflegskostenBeitragsbefreiung"/>
+      <description value="VKBEFR – Verpflegskosten-Beitragsbefreiung"/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/WorkflowStatusVS"/>
+      </reference>
+      <name value="Workflow Status eines Falls"/>
+      <description value="ValueSet für die Statusoptionen in denen sich ein Fall befinden kann."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/WorkflowStatusCS"/>
+      </reference>
+      <name value="Workflow Status eines Falls"/>
+      <description value="CodeSystem für die Statusoptionen in denen sich ein Fall befinden kann."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Device"/>
+      </extension>
+      <reference>
+        <reference value="Device/XDokExampleDevice"/>
+      </reference>
+      <name value="XDokExampleDevice"/>
+      <description value="Moped Example XDok Device"/>
+      <isExample value="true"/>
+      <profile value="https://elga.moped.at/StructureDefinition/at-moped-device-XDok"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/moped-ext-Zahlungskennzeichen"/>
+      </reference>
+      <name value="Zahlungskennzeichen"/>
+      <description value="MOPED Extension für die Kostenmeldung. Konstenmeldung für A = Ausländerverrechnung, R = Regressangelegenheiten oder K = Kosteninformation"/>
+      <isExample value="false"/>
+    </resource>
+    <page>
+      <sourceUrl value="toc.html"/>
+      <name value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <sourceUrl value="index.html"/>
+        <name value="index.html"/>
+        <title value="Home"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="scope_and_content.html"/>
+        <name value="scope_and_content.html"/>
+        <title value="Umfang und Inhalt"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="background.html"/>
+        <name value="background.html"/>
+        <title value="Hintergrund"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="challenges.html"/>
+        <name value="challenges.html"/>
+        <title value="Herausforderungen"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="moped_konzepte.html"/>
+        <name value="moped_konzepte.html"/>
+        <title value="Grundlegende Konzepte und Design-Entscheidungen"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="actors.html"/>
+        <name value="actors.html"/>
+        <title value="Akteure"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="workflowmanagement.html"/>
+        <name value="workflowmanagement.html"/>
+        <title value="Workflowmanagement"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="obligations.html"/>
+        <name value="obligations.html"/>
+        <title value="Obligations"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="AF_moped_plattform_ueberblick.html"/>
+        <name value="AF_moped_plattform_ueberblick.html"/>
+        <title value="Moped Plattform - Überblick"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="AF_moped_fall_ueberblick.html"/>
+        <name value="AF_moped_fall_ueberblick.html"/>
+        <title value="Moped Fall - Überblick"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="AF_moped_fall_aufnahme.html"/>
+        <name value="AF_moped_fall_aufnahme.html"/>
+        <title value="Moped Fall - Aufnahme"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="AF_moped_fall_administration.html"/>
+        <name value="AF_moped_fall_administration.html"/>
+        <title value="Moped Fall - Administration"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="AF_moped_fall_patientenversorgung.html"/>
+        <name value="AF_moped_fall_patientenversorgung.html"/>
+        <title value="Moped Fall - Patientversorgung"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="AF_moped_fall_entlassung.html"/>
+        <name value="AF_moped_fall_entlassung.html"/>
+        <title value="Moped Fall - Entlassung"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="AF_moped_fall_vae.html"/>
+        <name value="AF_moped_fall_vae.html"/>
+        <title value="Moped Fall - Versichertenanspruchserklärung"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="AF_moped_fall_abrechnung.html"/>
+        <name value="AF_moped_fall_abrechnung.html"/>
+        <title value="Moped Fall - Abrechnung"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="AF_moped_fall_ablehnung_genehmigung.html"/>
+        <name value="AF_moped_fall_ablehnung_genehmigung.html"/>
+        <title value="Moped Fall - Genehmigung/Ablehnung"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="AF_moped_fall_kostenmeldung.html"/>
+        <name value="AF_moped_fall_kostenmeldung.html"/>
+        <title value="Moped Fall - Kostenmeldung"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="AF_moped_fall_jahres_quartals_meldung.html"/>
+        <name value="AF_moped_fall_jahres_quartals_meldung.html"/>
+        <title value="Moped Fall - Jahres-/Quartalsmeldung"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="AF_moped_fall_kommunikation.html"/>
+        <name value="AF_moped_fall_kommunikation.html"/>
+        <title value="Moped Fall - Kommunikation"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="AF_moped_fall_prozessuebergreifend.html"/>
+        <name value="AF_moped_fall_prozessuebergreifend.html"/>
+        <title value="Moped Fall - Prozessübergreifend"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="AF_lkf_jahresstatistikmeldung.html"/>
+        <name value="AF_lkf_jahresstatistikmeldung.html"/>
+        <title value="LKF Jahresstatistikmeldung"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="AF_medizinische_register.html"/>
+        <name value="AF_medizinische_register.html"/>
+        <title value="Medizinische Register"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="AF_ems.html"/>
+        <name value="AF_ems.html"/>
+        <title value="EMS"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="mappings.html"/>
+        <name value="mappings.html"/>
+        <title value="Mappings"/>
+        <generation value="markdown"/>
+        <page>
+          <sourceUrl value="ka-org_mapping.html"/>
+          <name value="ka-org_mapping.html"/>
+          <title value="Ka-Org Mapping"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <sourceUrl value="lkf_mapping.html"/>
+          <name value="lkf_mapping.html"/>
+          <title value="MBDS Mapping"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <sourceUrl value="jahresmeldungen_mapping.html"/>
+          <name value="jahresmeldungen_mapping.html"/>
+          <title value="LKF Jahresmeldung"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <sourceUrl value="stammdaten_mapping.html"/>
+          <name value="stammdaten_mapping.html"/>
+          <title value="Stammdaten"/>
+          <generation value="markdown"/>
+        </page>
+      </page>
+      <page>
+        <sourceUrl value="imprint.html"/>
+        <name value="imprint.html"/>
+        <title value="Impressum"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="authors.html"/>
+        <name value="authors.html"/>
+        <title value="Mitwirkende"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="downloads.html"/>
+        <name value="downloads.html"/>
+        <title value="Downloads"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="dependencies.html"/>
+        <name value="dependencies.html"/>
+        <title value="Dependencies"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="copyright.html"/>
+        <name value="copyright.html"/>
+        <title value="Copyright"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="known_issues.html"/>
+        <name value="known_issues.html"/>
+        <title value="Known Issues"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="artifacts_manuell.html"/>
+        <name value="artifacts_manuell.html"/>
+        <title value="Artifacts Summary"/>
+        <generation value="markdown"/>
+      </page>
+    </page>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="copyrightyear"/>
+      </code>
+      <value value="2024+"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="releaselabel"/>
+      </code>
+      <value value="ci-build"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="suppress-mappings"/>
+      </code>
+      <value value="http://hl7.org/fhir/workflow"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="suppress-mappings"/>
+      </code>
+      <value value="http://hl7.org/fhir/fivews"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="suppress-mappings"/>
+      </code>
+      <value value="http://hl7.org/v3"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="suppress-mappings"/>
+      </code>
+      <value value="http://hl7.org/v2"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="suppress-mappings"/>
+      </code>
+      <value value="http://www.cda-adc.ca/en/services/cdanet/"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="suppress-mappings"/>
+      </code>
+      <value value="http://www.pharmacists.ca/"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="suppress-mappings"/>
+      </code>
+      <value value="http://hl7.org/fhir/interface"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="suppress-mappings"/>
+      </code>
+      <value value="http://hl7.org/v3/cda"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="suppress-mappings"/>
+      </code>
+      <value value="http://hl7.org/fhir/documentreference"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="suppress-mappings"/>
+      </code>
+      <value value="http://snomed.info/conceptdomain"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="suppress-mappings"/>
+      </code>
+      <value value="http://snomed.org/attributebinding"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="suppress-mappings"/>
+      </code>
+      <value value="http://loinc.org"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="suppress-mappings"/>
+      </code>
+      <value value="https://wiki.hl7.at/index.php?title=ILF:Allgemeiner_Implementierungsleitfaden_(Version_3)"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="autoload-resources"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/capabilities"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/examples"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/extensions"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/models"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/operations"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/profiles"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/resources"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/vocabulary"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/maps"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/testing"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/history"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="fsh-generated/resources"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-pages"/>
+      </code>
+      <value value="template/config"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-pages"/>
+      </code>
+      <value value="input/images"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-liquid"/>
+      </code>
+      <value value="template/liquid"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-liquid"/>
+      </code>
+      <value value="input/liquid"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-qa"/>
+      </code>
+      <value value="temp/qa"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-temp"/>
+      </code>
+      <value value="temp/pages"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-output"/>
+      </code>
+      <value value="output"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-tx-cache"/>
+      </code>
+      <value value="input-cache/txcache"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-suppressed-warnings"/>
+      </code>
+      <value value="input/ignoreWarnings.txt"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-history"/>
+      </code>
+      <value value="https://elga.moped.at/history.html"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="template-html"/>
+      </code>
+      <value value="template-page.html"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="template-md"/>
+      </code>
+      <value value="template-page-md.html"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-contact"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-context"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-copyright"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-jurisdiction"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-license"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-publisher"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-version"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-wg"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="active-tables"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="fmm-definition"/>
+      </code>
+      <value value="http://hl7.org/fhir/versions.html#maturity"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="propagate-status"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="excludelogbinaryformat"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="tabbed-snapshots"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>

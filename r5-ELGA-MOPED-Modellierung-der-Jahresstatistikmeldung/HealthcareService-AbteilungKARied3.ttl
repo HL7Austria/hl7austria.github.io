@@ -1,0 +1,60 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://elga.moped.at/HealthcareService/AbteilungKARied3> a fhir:HealthcareService ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "AbteilungKARied3"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://elga.moped.at/StructureDefinition/at-moped-organization-organisationseinheit-KA"^^xsd:anyURI ;
+       fhir:l <https://elga.moped.at/StructureDefinition/at-moped-organization-organisationseinheit-KA>
+     ] [
+       fhir:v "https://elga.moped.at/StructureDefinition/AtMopedOrganizationOrganisationseinheitKA"^^xsd:anyURI ;
+       fhir:l <https://elga.moped.at/StructureDefinition/AtMopedOrganizationOrganisationseinheitKA>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: HealthcareService AbteilungKARied3</b></p><a name=\"AbteilungKARied3\"> </a><a name=\"hcAbteilungKARied3\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profiles: <a href=\"StructureDefinition-at-moped-organization-organisationseinheit-KA.html\">AT MOPED Organization Organisationseinheite KA Profil</a>, <code>https://elga.moped.at/StructureDefinition/AtMopedOrganizationOrganisationseinheitKA</code></p></div><p><b>identifier</b>: <code>http://example.org/lkf-system/funktionscode</code>/11111100</p><p><b>providedBy</b>: <a href=\"Organization-OrganizationKrankenhausRied.html\">Organization Krankenhaus der Barmherzigen Schwestern vom Hl. Vinzenz von Paul Ried</a></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/service-category 35}\">Hospital</span></p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/service-type 361}\">Hospital Services</span></p><p><b>location</b>: <a href=\"Location-LocationKARied.html\">Location</a></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "http://example.org/lkf-system/funktionscode"^^xsd:anyURI ;
+       fhir:l <http://example.org/lkf-system/funktionscode>
+     ] ;
+     fhir:value [ fhir:v "11111100" ]
+  ] ) ; # 
+  fhir:providedBy [
+     fhir:l <https://elga.moped.at/Organization/OrganizationKrankenhausRied> ;
+     fhir:reference [ fhir:v "Organization/OrganizationKrankenhausRied" ]
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/service-category"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/service-category>
+       ] ;
+       fhir:code [ fhir:v "35" ]
+     ] )
+  ] ) ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/service-type"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/service-type>
+       ] ;
+       fhir:code [ fhir:v "361" ]
+     ] )
+  ] ) ; # 
+  fhir:location ( [
+     fhir:l <https://elga.moped.at/Location/LocationKARied> ;
+     fhir:reference [ fhir:v "Location/LocationKARied" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

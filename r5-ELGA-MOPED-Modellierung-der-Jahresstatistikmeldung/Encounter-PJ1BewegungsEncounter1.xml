@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Encounter xmlns="http://hl7.org/fhir">
+  <id value="PJ1BewegungsEncounter1"/>
+  <meta>
+    <profile value="https://elga.moped.at/StructureDefinition/at-moped-encounter-bewegung-stationaer-basis"/>
+    <profile value="https://elga.moped.at/StructureDefinition/MopedBewegungsEncounter"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Encounter PJ1BewegungsEncounter1</b></p><a name="PJ1BewegungsEncounter1"> </a><a name="hcPJ1BewegungsEncounter1"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profiles: <a href="StructureDefinition-at-moped-encounter-bewegung-stationaer-basis.html">AT MOPED Encounter Bewegung Stationär Basis Profil</a>, <code>https://elga.moped.at/StructureDefinition/MopedBewegungsEncounter</code></p></div><p><b>status</b>: Completed</p><p><b>type</b>: <span title="Codes:{https://elga.moped.at/CodeSystem/MopedEncounterTypesCS BENC}">Moped Bewegungsencounter</span></p><h3>ServiceTypes</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Reference</b></td></tr><tr><td style="display: none">*</td><td><a href="HealthcareService-AbteilungHerzJesu1.html">HealthcareService: extension = ; identifier = http://example.org/lkf-system/funktionscode#13118000; category = Hospital; type = Hospital Services</a></td></tr></table><p><b>subject</b>: <a href="Patient-PJ1Patient.html">Sonnenschein Susi  Female, DoB: 1969-04-21</a></p><p><b>subjectStatus</b>: <span title="Codes:{https://elga.moped.at/CodeSystem/AnwesenheitsartCS ANW}">physisch anwesend</span></p><p><b>partOf</b>: <a href="Encounter-PJ1Encounter.html">Encounter: identifier = Visit number,Anonymous identifier; status = discharged; class = Stationär,geplante stationäre Aufnahme/geplanter ambulanter Besuch (mit vorhergehender Terminvereinbarung, Richtwert: mindestens 24 Stunden); type = Moped Encounter; actualPeriod = 2024-02-22 19:33:00+0200 --&gt; 2024-02-23 07:38:00+0200</a></p><p><b>actualPeriod</b>: 2024-02-22 19:33:00+0200 --&gt; 2024-02-23 07:38:00+0200</p><h3>Admissions</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Extension</b></td><td><b>DischargeDisposition</b></td></tr><tr><td style="display: none">*</td><td/><td><span title="Codes:{https://elga.moped.at/CodeSystem/AbgangsartCS 1}">Lebend</span></td></tr></table></div>
+  </text>
+  <status value="completed"/>
+  <type>
+    <coding>
+      <system value="https://elga.moped.at/CodeSystem/MopedEncounterTypesCS"/>
+      <code value="BENC"/>
+    </coding>
+  </type>
+  <serviceType>
+    <reference>
+      <reference value="HealthcareService/AbteilungHerzJesu1"/>
+    </reference>
+  </serviceType>
+  <subject>
+    <reference value="Patient/PJ1Patient"/>
+  </subject>
+  <subjectStatus>
+    <coding>
+      <system value="https://elga.moped.at/CodeSystem/AnwesenheitsartCS"/>
+      <code value="ANW"/>
+    </coding>
+  </subjectStatus>
+  <partOf>
+    <reference value="Encounter/PJ1Encounter"/>
+  </partOf>
+  <actualPeriod>
+    <start value="2024-02-22T19:33:00+02:00"/>
+    <end value="2024-02-23T07:38:00+02:00"/>
+  </actualPeriod>
+  <admission>
+    <extension url="https://elga.moped.at/StructureDefinition/moped-ext-altersgruppe">
+      <extension url="beiZugang">
+        <valueCodeableConcept>
+          <coding>
+            <system value="https://elga.moped.at/CodeSystem/AltersgruppeCS"/>
+            <code value="55"/>
+          </coding>
+        </valueCodeableConcept>
+      </extension>
+      <extension url="beiEntlassung">
+        <valueCodeableConcept>
+          <coding>
+            <system value="https://elga.moped.at/CodeSystem/AltersgruppeCS"/>
+            <code value="55"/>
+          </coding>
+        </valueCodeableConcept>
+      </extension>
+      <extension url="neugeborenes">
+        <valueBoolean value="false"/>
+      </extension>
+    </extension>
+    <dischargeDisposition>
+      <coding>
+        <system value="https://elga.moped.at/CodeSystem/AbgangsartCS"/>
+        <code value="1"/>
+      </coding>
+    </dischargeDisposition>
+  </admission>
+</Encounter>

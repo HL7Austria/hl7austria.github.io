@@ -1,0 +1,127 @@
+# ELGA.MOPED\PJ1VAEResponse1 - FHIR® v5.0.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **PJ1VAEResponse1**
+
+## Example ClaimResponse: PJ1VAEResponse1
+
+Profiles: [AT MOPED ClaimResponse VAEResponse generisches Profil](StructureDefinition-at-moped-claimresponse-vaeresponse-generisch.md), `https://elga.moped.at/StructureDefinition/AtMopedClaimResponseVAEResponseGenerisch`
+
+> **VerpflegskostenBeitragsbefreiung**
+* Befreiung: [Befreiung für den Verpflegskostenbeitrag: N](CodeSystem-VerpflegskostenBeitragsbefreiungCS.md#VerpflegskostenBeitragsbefreiungCS-N) (Es liegt keine Befreiung vom Verpflegskostenbeitrag vor.)
+* Zeitraum: 2024-02-22 --> 2024-08-21
+
+> **Supporting Info Extension for ClaimResponse - Vortageanzahl auf Kostenbeitrag**
+* category: Vortageanzahl auf Kostenbeitrag
+* value: 2
+* sequence: 4
+
+**status**: Active
+
+**type**: VAE Response
+
+**use**: Preauthorization
+
+**patient**: [Sonnenschein Susi Female, DoB: 1969-04-21](Patient-PJ1Patient.md)
+
+**created**: 2025-02-18
+
+**insurer**: [Organization Österreichische Gesundheitskasse Wien](Organization-SV11.md)
+
+**requestor**: [Organization Herz Jesu-Krankenhaus](Organization-OrganizationHerzJesuKrankenhaus.md)
+
+**request**: [Claim: status = active; type = VAE Request; subType = initiale VAE; use = preauthorization; created = 2025-02-17](Claim-PJ1VAERequest1.md)
+
+**outcome**: Processing Complete
+
+**decision**: bewilligt (nur für stationären Bereich)
+
+**preAuthPeriod**: 2024-02-22 --> 2024-08-21
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "ClaimResponse",
+  "id" : "PJ1VAEResponse1",
+  "meta" : {
+    "profile" : ["https://elga.moped.at/StructureDefinition/at-moped-claimresponse-vaeresponse-generisch",
+    "https://elga.moped.at/StructureDefinition/AtMopedClaimResponseVAEResponseGenerisch"]
+  },
+  "extension" : [{
+    "extension" : [{
+      "url" : "Befreiung",
+      "valueCoding" : {
+        "system" : "https://elga.moped.at/CodeSystem/VerpflegskostenBeitragsbefreiungCS",
+        "code" : "N"
+      }
+    },
+    {
+      "url" : "Zeitraum",
+      "valuePeriod" : {
+        "start" : "2024-02-22",
+        "end" : "2024-08-21"
+      }
+    }],
+    "url" : "https://elga.moped.at/StructureDefinition/moped-ext-verpflegskostenBeitragsbefreiung"
+  },
+  {
+    "extension" : [{
+      "url" : "category",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://elga.moped.at/CodeSystem/ClaimSupportingInformationCategoryCS",
+          "code" : "VTAGE"
+        }]
+      }
+    },
+    {
+      "url" : "value",
+      "valueQuantity" : {
+        "value" : 2
+      }
+    },
+    {
+      "url" : "sequence",
+      "valuePositiveInt" : 4
+    }],
+    "url" : "https://elga.moped.at/StructureDefinition/MopedSupportingInfoVortageanzahlAufKostenbeitrag"
+  }],
+  "status" : "active",
+  "type" : {
+    "coding" : [{
+      "system" : "https://elga.moped.at/CodeSystem/MopedClaimTypeCS",
+      "code" : "VAERESP"
+    }]
+  },
+  "use" : "preauthorization",
+  "patient" : {
+    "reference" : "Patient/PJ1Patient"
+  },
+  "created" : "2025-02-18",
+  "insurer" : {
+    "reference" : "Organization/SV11"
+  },
+  "requestor" : {
+    "reference" : "Organization/OrganizationHerzJesuKrankenhaus"
+  },
+  "request" : {
+    "reference" : "Claim/PJ1VAERequest1"
+  },
+  "outcome" : "complete",
+  "decision" : {
+    "coding" : [{
+      "system" : "https://elga.moped.at/CodeSystem/VAEStatusCS",
+      "code" : "00"
+    }]
+  },
+  "preAuthPeriod" : {
+    "start" : "2024-02-22",
+    "end" : "2024-08-21"
+  }
+}
+
+```

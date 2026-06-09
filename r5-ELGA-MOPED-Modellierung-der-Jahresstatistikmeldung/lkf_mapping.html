@@ -1,0 +1,1889 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>ELGA.MOPED\MBDS Mapping - FHIR&reg; v5.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+    <script src="assets/js/sdc-examples.js" type="text/javascript"> </script>
+
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+
+    <style type="text/css">h2{--heading-prefix:"25.2"}
+    h3,h4,h5,h6{--heading-prefix:"25.2"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+          <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img src="logo.png" id="header-logo"/>
+          </div>
+          <div class="col-11">
+          <!-- at-fhir-ig-template end -->
+              <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED)</span><br/>
+                <span class="label label-info">0.1.0 - ci-build</span>
+              </p>
+            </div>
+          <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+          <!-- at-fhir-ig-template end -->
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R5/index.html" class="navbar-brand hidden">FHIR&reg;</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Einleitung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="scope_and_content.html">Umfang und Inhalt</a>
+      </li>
+      <li>
+        <a href="background.html">Hintergrund</a>
+      </li>
+      <li>
+        <a href="challenges.html">Herausforderungen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Funktionales
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="moped_konzepte.html">Designentscheidungen</a>
+      </li>
+      <li>
+        <a href="actors.html">Akteure</a>
+      </li>
+      <li>
+        <a href="workflowmanagement.html">Workflowmanagement</a>
+      </li>
+      <li>
+        <a href="obligations.html">Obligations</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anwendungsfälle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="AF_moped_plattform_ueberblick.html">Moped Plattform - Überblick</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_ueberblick.html">Moped Fall - Überblick</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_aufnahme.html">Moped Fall - Aufnahme</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_administration.html">Moped Fall - Administration</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_patientenversorgung.html">Moped Fall - Patientversorgung</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_entlassung.html">Moped Fall - Entlassung</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_vae.html">Moped Fall - Versichertenanspruchserklärung</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_abrechnung.html">Moped Fall - Abrechnung</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_ablehnung_genehmigung.html">Moped Fall - Genehmigung/Ablehnung</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_kostenmeldung.html">Moped Fall - Kostenmeldung</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_jahres_quartals_meldung.html">Moped Fall - Jahres-/Quartalsmeldung</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_kommunikation.html">Moped Fall - Kommunikation</a>
+      </li>
+      <li>
+        <a href="AF_moped_fall_prozessuebergreifend.html">Moped Fall - Prozessübergreifend</a>
+      </li>
+      <li>
+        <a href="AF_lkf_jahresstatistikmeldung.html">LKF Jahresstatistikmeldung</a>
+      </li>
+      <li>
+        <a href="AF_medizinische_register.html">Medizinische Register</a>
+      </li>
+      <li>
+        <a href="AF_ems.html">EMS</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Mappings
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="lkf_mapping.html">MBDS Mapping</a>
+      </li>
+      <li>
+        <a href="jahresmeldungen_mapping.html">LKF Jahresmeldung</a>
+      </li>
+      <li>
+        <a href="ka-org_mapping.html">Ka-Org Mapping</a>
+      </li>
+      <li>
+        <a href="stammdaten_mapping.html">Stammdaten</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts_manuell.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">About
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="imprint.html">Impressum</a>
+      </li>
+      <li>
+        <a href="authors.html">Mitwirkende</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="dependencies.html">Dependencies</a>
+      </li>
+      <li>
+        <a href="copyright.html">Copyright</a>
+      </li>
+      <li>
+        <a href="known_issues.html">Known Issues</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="mappings.html"><b>Mappings</b></a></li><li><b>MBDS Mapping</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+	
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- at-fhir-ig-template begin -->
+  <div role="alert" class="alert alert-warning">
+      <!-- ReleaseHeader --><p id="publish-box">Moderne Patient:innenabrechnung und Datenkommunikation on FHIR (MOPED) - Local Development build (v0.1.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="https://elga.moped.at/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  </div>
+    <!-- at-fhir-ig-template end -->
+  <h2>MBDS Mapping</h2>
+  
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#x01---fhir" id="markdown-toc-x01---fhir">X01 -&gt; FHIR</a></li>
+  <li><a href="#x02---fhir" id="markdown-toc-x02---fhir">X02 -&gt; FHIR</a></li>
+  <li><a href="#x03---fhir" id="markdown-toc-x03---fhir">X03 -&gt; FHIR</a></li>
+  <li><a href="#x04---fhir" id="markdown-toc-x04---fhir">X04 -&gt; FHIR</a></li>
+  <li><a href="#x05---fhir" id="markdown-toc-x05---fhir">X05 -&gt; FHIR</a></li>
+  <li><a href="#x06---fhir" id="markdown-toc-x06---fhir">X06 -&gt; FHIR</a></li>
+  <li><a href="#x07---fhir" id="markdown-toc-x07---fhir">X07 -&gt; FHIR</a></li>
+  <li><a href="#i11-saps---fhir" id="markdown-toc-i11-saps---fhir">I11 SAPS -&gt; FHIR</a></li>
+  <li><a href="#i12-tiss-a---fhir" id="markdown-toc-i12-tiss-a---fhir">I12 TISS-A -&gt; FHIR</a></li>
+  <li><a href="#lkf-k01---fhir" id="markdown-toc-lkf-k01---fhir">LKF K01 -&gt; FHIR</a></li>
+  <li><a href="#lkf-l01---fhir" id="markdown-toc-lkf-l01---fhir">LKF L01 -&gt; FHIR</a></li>
+</ul>
+
+</div>
+
+<style>
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    max-height: 600px;
+    overflow-y: auto;
+}
+.table-responsive > table { width: 100%; }
+.table-responsive th, .table-responsive td { padding: 15px; background: #f5f5f5; }
+.table-responsive table { border-collapse: separate; border-spacing: 3px; }
+/* Sticky header */
+.table-responsive th { position: sticky; top: 0; background: rgb(228, 228, 228); z-index: 2; }
+/* Sticky first column */
+.table-responsive th:first-child, .table-responsive td:first-child {
+    position: sticky; left: 0; background: rgb(228, 228, 228); z-index: 3;
+}
+.table-responsive th:first-child {
+    position: sticky; top: 0; left: 0; background: rgb(228, 228, 228); z-index: 4;
+}
+</style>
+
+<p>Diese Seite enthält das Mapping der Meldungen des MBDS Datensatzes (X01-X07, I11-I12, K01*) 
+des LKF Systems zu FHIR. Die Dokumentation der LKF Meldungen ist unter 
+<a href="https://www.sozialministerium.at/dam/jcr:8553d407-cc41-4b15-bace-5c4e155e8d88/ANHANG1%20-%20AUFBAU%20UND%20INHALT%20DER%20DATENMELDUNGEN%202025%20SP1%2020250131.pdf">
+diesem Link</a> verfügbar.</p>
+<h3 id="x01---fhir">X01 -&gt; FHIR</h3>
+<div class="table-responsive">
+<table>
+    <tr>
+        <th>Feld</th>
+        <th>Ambulant</th>
+        <th>Stationär</th>
+        <th>Intensiv</th>
+        <th>Notiz zur Kardinalität</th>
+        <th>befüllt von</th>
+        <th>Profile</th>
+        <th>FHIR Ressource</th>
+        <th>Pfad von der Ressource aus</th>
+        <th>Pfad von der Composition aus</th>
+        <th>Anmerkungen</th>
+    </tr>
+    <tr>
+        <td>Satzartenkennzeichen</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>in neuer Architektur nicht mehr notwendig</td>
+    </tr>
+    <tr>
+        <td>Krankenanstaltennummer/Leistungserbringer-Stammdaten-ID</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedDeviceActor</td>
+        <td>AtMopedCompositionAnfragen; AtMopedCompositionAufnehmen; AtMopedCompositionBasis; AtMopedCompositionBeantworten; AtMopedCompositionEntlassenAviso; AtMopedCompositionEntlassenVollstaendig; AtMopedCompositionGenerisch; AtMopedCompositionUpdate</td>
+        <td>Composition</td>
+        <td>Composition.author.resolve()</td>
+        <td>Composition.author.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Aufnahmezahl</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.identifier:Aufnahmezahl.value</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Datensatz-ID</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.identifier:DatensatzID.value</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Aufnahme-/Kontaktdatum</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.actualPeriod.start</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Aufnahme-/Kontaktuhrzeit</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.actualPeriod.start</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Behandlungsart</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.class:Behandlungsart</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Geburtsdatum</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedPatientGenerisch; AtMopedPatientKlarnameBasis; AtMopedPatientKlarnameBund; AtMopedPatientKlarnameKA; AtMopedPatientKlarnameLGF; AtMopedPatientKlarnameSV; AtMopedPatientvbPKBasis; AtMopedPatientvbPKBund; AtMopedPatientvbPKKA; AtMopedPatientvbPKLGF; AtMopedPatientvbPKSV</td>
+        <td>Patient</td>
+        <td>Patient.birthDate</td>
+        <td>Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Altersgruppe bei Entlassung/Kontakt</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.extension:Altersgruppe</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Geschlecht</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedPatientGenerisch; AtMopedPatientKlarnameBasis; AtMopedPatientKlarnameBund; AtMopedPatientKlarnameKA; AtMopedPatientKlarnameLGF; AtMopedPatientKlarnameSV; AtMopedPatientvbPKBasis; AtMopedPatientvbPKBund; AtMopedPatientvbPKKA; AtMopedPatientvbPKLGF; AtMopedPatientvbPKSV</td>
+        <td>Patient</td>
+        <td>Patient.gender</td>
+        <td>Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Staatsbürgerschaft</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedPatientGenerisch; AtMopedPatientKlarnameBasis; AtMopedPatientKlarnameBund; AtMopedPatientKlarnameKA; AtMopedPatientKlarnameLGF; AtMopedPatientKlarnameSV; AtMopedPatientvbPKBasis; AtMopedPatientvbPKBund; AtMopedPatientvbPKKA; AtMopedPatientvbPKLGF; AtMopedPatientvbPKSV</td>
+        <td>Patient</td>
+        <td>Patient.extension:citizenship.extension:code.value[x]</td>
+        <td>Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Wohnsitz – Staat</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedPatientGenerisch; AtMopedPatientKlarnameBasis; AtMopedPatientKlarnameBund; AtMopedPatientKlarnameKA; AtMopedPatientKlarnameLGF; AtMopedPatientKlarnameSV; AtMopedPatientvbPKBasis; AtMopedPatientvbPKBund; AtMopedPatientvbPKKA; AtMopedPatientvbPKLGF; AtMopedPatientvbPKSV</td>
+        <td>Patient</td>
+        <td>Patient.address.country</td>
+        <td>Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Wohnsitz – Postleitzahl</td>
+        <td>O[Inv.]*</td>
+        <td>O[Inv.]*</td>
+        <td></td>
+        <td>*nur für österreichische Patienten verpflichtend</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedPatientGenerisch; AtMopedPatientKlarnameBasis; AtMopedPatientKlarnameBund; AtMopedPatientKlarnameKA; AtMopedPatientKlarnameLGF; AtMopedPatientKlarnameSV; AtMopedPatientvbPKBasis; AtMopedPatientvbPKBund; AtMopedPatientvbPKKA; AtMopedPatientvbPKLGF; AtMopedPatientvbPKSV</td>
+        <td>Patient</td>
+        <td>Patient.address.postalCode</td>
+        <td>Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Wohnsitz – Gemeindecode</td>
+        <td>O[Inv.]*</td>
+        <td>O[Inv.]*</td>
+        <td></td>
+        <td>*nur für österreichische Patienten verpflichtend</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedPatientGenerisch; AtMopedPatientKlarnameBasis; AtMopedPatientKlarnameBund; AtMopedPatientKlarnameKA; AtMopedPatientKlarnameLGF; AtMopedPatientKlarnameSV; AtMopedPatientvbPKBasis; AtMopedPatientvbPKBund; AtMopedPatientvbPKKA; AtMopedPatientvbPKLGF; AtMopedPatientvbPKSV</td>
+        <td>Patient</td>
+        <td>Patient.address.extension:municipalityCode</td>
+        <td>Composition.subject.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Aufnahme-/Zugangsart 1</td>
+        <td>O*</td>
+        <td>X</td>
+        <td></td>
+        <td>*Zwingend sofern systematisch erfasst</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.admission.extension:aufnahmeart</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Aufnahme-/Zugangsart 2</td>
+        <td>O*</td>
+        <td>X</td>
+        <td></td>
+        <td>*Zwingend sofern systematisch erfasst</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.class:Aufnahmeart2</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Transportart</td>
+        <td>O*</td>
+        <td>O*</td>
+        <td></td>
+        <td>*Zwingend sofern systematisch erfasst</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.admission.extension:Transportart</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Zugewiesen von – Krankenanstaltennummer</td>
+        <td>/</td>
+        <td>X*</td>
+        <td></td>
+        <td>*sofern ein Transfer vorliegt</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.admission.origin.resolve()</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Zugewiesen an – Krankenanstaltennummer</td>
+        <td>/</td>
+        <td>X*</td>
+        <td></td>
+        <td>*sofern ein Transfer vorliegt</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.admission.destination.resolve()</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Entlassungs-/Abgangsart</td>
+        <td>O[Prof.]*</td>
+        <td>X</td>
+        <td></td>
+        <td>Valueset in ambulant und stationär geteilt; *ambulant nur zwingend sofern systematisch erfasst</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.admission.dischargeDisposition</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Entlassungsdatum</td>
+        <td>/</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.actualPeriod.end</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Entlassungsuhrzeit</td>
+        <td>/</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.actualPeriod.end</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Leistungszuständiger Kostenträger – Code</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedDeviceActor</td>
+        <td>AtMopedCompositionAnfragen; AtMopedCompositionAufnehmen; AtMopedCompositionBasis; AtMopedCompositionBeantworten; AtMopedCompositionEntlassenAviso; AtMopedCompositionEntlassenVollstaendig; AtMopedCompositionGenerisch; AtMopedCompositionUpdate</td>
+        <td>Composition</td>
+        <td>Composition.section:zustaendigeSV.entry.resolve()</td>
+        <td>Composition.section:zustaendigeSV.entry.resolve()</td>
+        <td>Slice mit dem System http://svc.co.at/CodeSystem/ecard-svt-cs</td>
+    </tr>
+    <tr>
+        <td>Fondsrelevanz</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedClaimLKFRequestBasis; AtMopedClaimLKFRequestGenerisch</td>
+        <td>Claim</td>
+        <td>Claim.extension:Fondsrelevanz</td>
+        <td>Composition.section:LKFRequests.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Plausibilitätskennzeichen</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedClaimLKFRequestBasis; AtMopedClaimLKFRequestGenerisch</td>
+        <td>Claim</td>
+        <td>Claim.supportingInfo:Plausibilitaetskennzeichen.value[x]</td>
+        <td>Composition.section:LKFRequests.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Abrechnender Kostenträger – Code</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>noch inhaltlich abzuklären: ggf. über den Träger des KH definiert</td>
+    </tr>
+    <tr>
+        <td>Abrechnungsquartal der Sozialversicherung</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>in neuer Architektur nicht mehr notwendig</td>
+    </tr>
+</table>
+</div>
+
+<h3 id="x02---fhir">X02 -&gt; FHIR</h3>
+<div class="table-responsive">
+<table>
+    <tr>
+        <th>Feld</th>
+        <th>Ambulant</th>
+        <th>Stationär</th>
+        <th>Intensiv</th>
+        <th>Notiz zur Kardinalität</th>
+        <th>befüllt von</th>
+        <th>Profile</th>
+        <th>FHIR Ressource</th>
+        <th>Pfad von der Ressource aus</th>
+        <th>Pfad von der Composition aus</th>
+        <th>Anmerkungen</th>
+    </tr>
+    <tr>
+        <td>Satzartenkennzeichen</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>in neuer Architektur nicht mehr notwendig</td>
+    </tr>
+    <tr>
+        <td>Krankenanstaltennummer/Leistungserbringer-Stammdaten-ID</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedDeviceActor</td>
+        <td>AtMopedCompositionAnfragen; AtMopedCompositionAufnehmen; AtMopedCompositionBasis; AtMopedCompositionBeantworten; AtMopedCompositionEntlassenAviso; AtMopedCompositionEntlassenVollstaendig; AtMopedCompositionGenerisch; AtMopedCompositionUpdate</td>
+        <td>Composition</td>
+        <td>Composition.author.resolve()</td>
+        <td>Composition.author.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Aufnahmezahl</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.identifier:Aufnahmezahl.value</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Datensatz-ID</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.identifier:DatensatzID.value</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Aufnahme-/Kontaktdatum</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.actualPeriod.start</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Hauptkostenstelle/Fachgebiet – Positionsnummer</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>ggf. über FHIR ID des BewegungsEncounters lösbar; Details sind noch abzuklären</td>
+    </tr>
+    <tr>
+        <td>Hauptkostenstelle – Funktionscode/Fachgebiet</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterBewegungAmbulantBasis; AtMopedEncounterBewegungGenerisch; AtMopedEncounterBewegungIntensivBasis; AtMopedEncounterBewegungStationaerBasis</td>
+        <td>Encounter</td>
+        <td>Encounter.serviceType:MopedServiceType.reference.resolve()</td>
+        <td>Composition.section:Bewegungen.entry.resolve()</td>
+        <td>Funktions- und subcode sind in zwei Felder aufgeteilt</td>
+    </tr>
+    <tr>
+        <td>Hauptkostenstelle/Fachgebiet – Zugangsdatum/Kontaktdatum</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterBewegungAmbulantBasis; AtMopedEncounterBewegungGenerisch; AtMopedEncounterBewegungIntensivBasis; AtMopedEncounterBewegungStationaerBasis</td>
+        <td>Encounter</td>
+        <td>Encounter.actualPeriod.start</td>
+        <td>Composition.section:Bewegungen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Hauptkostenstelle/Fachgebiet – Zugangsuhrzeit/Kontaktuhrzeit</td>
+        <td>/</td>
+        <td>/</td>
+        <td>!</td>
+        <td>nur für Intensiveinheiten auszufüllen, für die eine
+Intensivdokumentation (TISS-A/ SAPS3) übermittelt wird</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterBewegungAmbulantBasis; AtMopedEncounterBewegungGenerisch; AtMopedEncounterBewegungIntensivBasis; AtMopedEncounterBewegungStationaerBasis</td>
+        <td>Encounter</td>
+        <td>Encounter.actualPeriod.start</td>
+        <td>Composition.section:Bewegungen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Physische Anwesenheit</td>
+        <td>X</td>
+        <td>/</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterBewegungAmbulantBasis; AtMopedEncounterBewegungGenerisch; AtMopedEncounterBewegungIntensivBasis; AtMopedEncounterBewegungStationaerBasis</td>
+        <td>Encounter</td>
+        <td>Encounter.subjectStatus</td>
+        <td>Composition.section:Bewegungen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Hauptkostenstelle – Abgangsdatum</td>
+        <td>/</td>
+        <td>/</td>
+        <td>!</td>
+        <td>nur für Intensiveinheiten auszufüllen, für die eine
+Intensivdokumentation (TISS-A/ SAPS3) übermittelt wird</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterBewegungAmbulantBasis; AtMopedEncounterBewegungGenerisch; AtMopedEncounterBewegungIntensivBasis; AtMopedEncounterBewegungStationaerBasis</td>
+        <td>Encounter</td>
+        <td>Encounter.actualPeriod.end</td>
+        <td>Composition.section:Bewegungen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Hauptkostenstelle – Abgangsuhrzeit</td>
+        <td>/</td>
+        <td>/</td>
+        <td>!</td>
+        <td>nur für Intensiveinheiten auszufüllen, für die eine
+Intensivdokumentation (TISS-A/ SAPS3) übermittelt wird</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterBewegungAmbulantBasis; AtMopedEncounterBewegungGenerisch; AtMopedEncounterBewegungIntensivBasis; AtMopedEncounterBewegungStationaerBasis</td>
+        <td>Encounter</td>
+        <td>Encounter.actualPeriod.end</td>
+        <td>Composition.section:Bewegungen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Hauptkostenstelle – Abgangsart</td>
+        <td>/</td>
+        <td>/</td>
+        <td>!</td>
+        <td>nur für Intensiveinheiten auszufüllen, für die eine
+Intensivdokumentation (TISS-A/ SAPS3) übermittelt wird</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterBewegungAmbulantBasis; AtMopedEncounterBewegungGenerisch; AtMopedEncounterBewegungIntensivBasis; AtMopedEncounterBewegungStationaerBasis</td>
+        <td>Encounter</td>
+        <td>Encounter.admission.dischargeDisposition</td>
+        <td>Composition.section:Bewegungen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Hauptkostenstelle – Fachlicher Funktionscode</td>
+        <td>/</td>
+        <td>O*</td>
+        <td></td>
+        <td>*zu befüllen, sofern dies auf Ebene der Landes-
+gesundheitsfonds festgelegt wird</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterBewegungAmbulantBasis; AtMopedEncounterBewegungGenerisch; AtMopedEncounterBewegungIntensivBasis; AtMopedEncounterBewegungStationaerBasis</td>
+        <td>Encounter</td>
+        <td>Encounter.participant:FachlichZustaendigeOrganisationseinheit.actor.resolve()</td>
+        <td>Composition.section:Bewegungen.entry.resolve()</td>
+        <td>wird in AG Moped geklärt</td>
+    </tr>
+    <tr>
+        <td>Hauptkostenstelle – Pflegerischer Funktionscode</td>
+        <td>/</td>
+        <td>O*</td>
+        <td></td>
+        <td>*zu befüllen, sofern dies auf Ebene der Landes-
+gesundheitsfonds festgelegt wird</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterBewegungAmbulantBasis; AtMopedEncounterBewegungGenerisch; AtMopedEncounterBewegungIntensivBasis; AtMopedEncounterBewegungStationaerBasis</td>
+        <td>Encounter</td>
+        <td>Encounter.participant:PflegerischZustaendigeOrganisationseinheit.actor.resolve()</td>
+        <td>Composition.section:Bewegungen.entry.resolve()</td>
+        <td>wird in AG Moped geklärt</td>
+    </tr>
+    <tr>
+        <td>Neugeborenes</td>
+        <td>/</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterBewegungIntensivBasis; AtMopedEncounterBewegungStationaerBasis</td>
+        <td>Encounter</td>
+        <td>Encounter.admission.extension:Altersgruppe.extension:neugeborenes.value[x]</td>
+        <td>Composition.section:Bewegungen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Altersgruppe bei Zugang/Kontakt</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterBewegungAmbulantBasis; AtMopedEncounterBewegungGenerisch; AtMopedEncounterBewegungIntensivBasis; AtMopedEncounterBewegungStationaerBasis</td>
+        <td>Encounter</td>
+        <td>Encounter.admission.extension:Altersgruppe.extension:beiZugang.value[x]</td>
+        <td>Composition.section:Bewegungen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Aufnahmezahl – funktionscodebezogen</td>
+        <td>O[TBD]*</td>
+        <td>/</td>
+        <td></td>
+        <td>* Nur für Fondshäuser und TBD: nur bei Tagesklammer?</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterBewegungAmbulantBasis</td>
+        <td>Encounter</td>
+        <td>Encounter.identifier:AufnahmezahlFunktionscodebezogen.value</td>
+        <td>Composition.section:Bewegungen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+</table>
+</div>
+
+<h3 id="x03---fhir">X03 -&gt; FHIR</h3>
+<div class="table-responsive">
+<table>
+    <tr>
+        <th>Feld</th>
+        <th>Ambulant</th>
+        <th>Stationär</th>
+        <th>Intensiv</th>
+        <th>Notiz zur Kardinalität</th>
+        <th>befüllt von</th>
+        <th>Profile</th>
+        <th>FHIR Ressource</th>
+        <th>Pfad von der Ressource aus</th>
+        <th>Pfad von der Composition aus</th>
+        <th>Anmerkungen</th>
+    </tr>
+    <tr>
+        <td>Satzartenkennzeichen</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>in neuer Architektur nicht mehr notwendig</td>
+    </tr>
+    <tr>
+        <td>Krankenanstaltennummer/Leistungserbringer-Stammdaten-ID</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedDeviceActor</td>
+        <td>AtMopedCompositionAnfragen; AtMopedCompositionAufnehmen; AtMopedCompositionBasis; AtMopedCompositionBeantworten; AtMopedCompositionEntlassenAviso; AtMopedCompositionEntlassenVollstaendig; AtMopedCompositionGenerisch; AtMopedCompositionUpdate</td>
+        <td>Composition</td>
+        <td>Composition.author.resolve()</td>
+        <td>Composition.author.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Aufnahmezahl</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.identifier:Aufnahmezahl.value</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Datensatz-ID</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.identifier:DatensatzID.value</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Aufnahme-/Kontaktdatum</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.actualPeriod.start</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Diagnose – Code</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedConditionBasis; AtMopedConditionGenerisch</td>
+        <td>Condition</td>
+        <td>Condition.code.coding:ICD10</td>
+        <td>Composition.section:Diagnosen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Diagnose – Typ</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedConditionBasis; AtMopedConditionGenerisch</td>
+        <td>Condition</td>
+        <td>Condition.extension:Diagnosetyp</td>
+        <td>Composition.section:Diagnosen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Diagnose – Art</td>
+        <td>O*</td>
+        <td>/</td>
+        <td></td>
+        <td>*zu befüllen, sofern dies im Rahmen der jährlich zu wartenden Abrechnungsmodelle oder von Modellprojekten der
+Bundesgesundheitsagentur vorgesehen ist</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedConditionBasis; AtMopedConditionGenerisch</td>
+        <td>Condition</td>
+        <td>Condition.verificationStatus</td>
+        <td>Composition.section:Diagnosen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Diagnose – im stationären Aufenthalt erworben</td>
+        <td>/</td>
+        <td>O*</td>
+        <td></td>
+        <td>*ist für im Rahmen der jährlichen Wartung ausgewählte
+Diagnosen zu befüllen</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedClaimLKFRequestBasis; AtMopedClaimLKFRequestGenerisch</td>
+        <td>Claim</td>
+        <td>Claim.diagnosis.onAdmission</td>
+        <td>Composition.section:LKFRequests.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Aufnahmezahl – funktionscodebezogen</td>
+        <td>O[TBD]*</td>
+        <td>/</td>
+        <td></td>
+        <td>* Nur für Fondshäuser und TBD: nur bei Tagesklammer?</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterBewegungAmbulantBasis</td>
+        <td>Encounter</td>
+        <td>Encounter.identifier:AufnahmezahlFunktionscodebezogen.value</td>
+        <td>Composition.section:Bewegungen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+</table>
+</div>
+
+<h3 id="x04---fhir">X04 -&gt; FHIR</h3>
+<div class="table-responsive">
+<table>
+    <tr>
+        <th>Feld</th>
+        <th>Ambulant</th>
+        <th>Stationär</th>
+        <th>Intensiv</th>
+        <th>Notiz zur Kardinalität</th>
+        <th>befüllt von</th>
+        <th>Profile</th>
+        <th>FHIR Ressource</th>
+        <th>Pfad von der Ressource aus</th>
+        <th>Pfad von der Composition aus</th>
+        <th>Anmerkungen</th>
+    </tr>
+    <tr>
+        <td>Satzartenkennzeichen</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>in neuer Architektur nicht mehr notwendig</td>
+    </tr>
+    <tr>
+        <td>Krankenanstaltennummer/Leistungserbringer-Stammdaten-ID</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedDeviceActor</td>
+        <td>AtMopedCompositionAnfragen; AtMopedCompositionAufnehmen; AtMopedCompositionBasis; AtMopedCompositionBeantworten; AtMopedCompositionEntlassenAviso; AtMopedCompositionEntlassenVollstaendig; AtMopedCompositionGenerisch; AtMopedCompositionUpdate</td>
+        <td>Composition</td>
+        <td>Composition.author.resolve()</td>
+        <td>Composition.author.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Aufnahmezahl</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.identifier:Aufnahmezahl.value</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Datensatz-ID</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.identifier:DatensatzID.value</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Aufnahme-/Kontaktdatum</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.actualPeriod.start</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Medizinische Leistung – Code</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedProcedureBasis; AtMopedProcedureGenerisch</td>
+        <td>Procedure</td>
+        <td>Procedure.code</td>
+        <td>Composition.section:Leistungen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Medizinische Leistung – Seitenlokalisation</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedProcedureBasis; AtMopedProcedureGenerisch</td>
+        <td>Procedure</td>
+        <td>Procedure.bodySite</td>
+        <td>Composition.section:Leistungen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Medizinische Leistung – Abrechnungsrelevanz</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedClaimLKFRequestBasis; AtMopedClaimLKFRequestGenerisch</td>
+        <td>Claim</td>
+        <td>Claim.procedure.extension:AbrechnungsRelevanz</td>
+        <td>Composition.section:LKFRequests.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Medizinische Leistung – Anzahl</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedProcedureBasis; AtMopedProcedureGenerisch</td>
+        <td>Procedure</td>
+        <td>Procedure.extension:Leistungsanzahl</td>
+        <td>Composition.section:Leistungen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Medizinische Leistung – Datum der Erbringung</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedProcedureBasis; AtMopedProcedureGenerisch</td>
+        <td>Procedure</td>
+        <td>Procedure.occurrence[x]:occurrenceDateTime</td>
+        <td>Composition.section:Leistungen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Medizinische Leistung – Uhrzeit der Erbringung</td>
+        <td>O*</td>
+        <td>O*</td>
+        <td></td>
+        <td>* Zwingend sofern systematisch erfasst</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedProcedureBasis; AtMopedProcedureGenerisch</td>
+        <td>Procedure</td>
+        <td>Procedure.occurrence[x]:occurrenceDateTime</td>
+        <td>Composition.section:Leistungen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Funktionscode/Fachgebiet leistungserbringend</td>
+        <td>O[Inv.]*</td>
+        <td>O[Inv.]*</td>
+        <td></td>
+        <td>*Für alle Leistungen außer externe zu befüllen</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedProcedureBasis; AtMopedProcedureGenerisch</td>
+        <td>Procedure</td>
+        <td>Procedure.performer.actor.resolve()</td>
+        <td>Composition.section:Leistungen.entry.resolve()</td>
+        <td>Referenz auf eine Abteilung</td>
+    </tr>
+    <tr>
+        <td>Krankenanstaltennummer leistungserbringend</td>
+        <td>O[Inv.]*</td>
+        <td>O[Inv.]*</td>
+        <td></td>
+        <td>*Nur befüllt falls extern erbrachte Leistung</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedProcedureBasis; AtMopedProcedureGenerisch</td>
+        <td>Procedure</td>
+        <td>Procedure.performer.actor.resolve()</td>
+        <td>Composition.section:Leistungen.entry.resolve()</td>
+        <td>Referenz auf eine Krankenanstalt</td>
+    </tr>
+    <tr>
+        <td>Aufnahmezahl – funktionscodebezogen</td>
+        <td>O[TBD]*</td>
+        <td>/</td>
+        <td></td>
+        <td>* Nur für Fondshäuser und TBD: nur bei Tagesklammer?</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterBewegungAmbulantBasis</td>
+        <td>Encounter</td>
+        <td>Encounter.identifier:AufnahmezahlFunktionscodebezogen.value</td>
+        <td>Composition.section:Bewegungen.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+</table>
+</div>
+
+<h3 id="x05---fhir">X05 -&gt; FHIR</h3>
+<div class="table-responsive">
+<table>
+    <tr>
+        <th>Feld</th>
+        <th>Ambulant</th>
+        <th>Stationär</th>
+        <th>Intensiv</th>
+        <th>Notiz zur Kardinalität</th>
+        <th>befüllt von</th>
+        <th>Profile</th>
+        <th>FHIR Ressource</th>
+        <th>Pfad von der Ressource aus</th>
+        <th>Pfad von der Composition aus</th>
+        <th>Anmerkungen</th>
+    </tr>
+    <tr>
+        <td>Satzartenkennzeichen</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>in neuer Architektur nicht mehr notwendig</td>
+    </tr>
+    <tr>
+        <td>Krankenanstaltennummer</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedDeviceActor</td>
+        <td>AtMopedCompositionAnfragen; AtMopedCompositionAufnehmen; AtMopedCompositionBasis; AtMopedCompositionBeantworten; AtMopedCompositionEntlassenAviso; AtMopedCompositionEntlassenVollstaendig; AtMopedCompositionGenerisch; AtMopedCompositionUpdate</td>
+        <td>Composition</td>
+        <td>Composition.author.resolve()</td>
+        <td>Composition.author.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Aufnahmezahl</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.identifier:Aufnahmezahl.value</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Datensatz-ID</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.identifier:DatensatzID.value</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Aufnahme-/Kontaktdatum</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.actualPeriod.start</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Abrechnung – Gruppe</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedClaimLKFRequestBasis; AtMopedClaimLKFRequestGenerisch</td>
+        <td>Claim</td>
+        <td>Claim.diagnosisRelatedGroup</td>
+        <td>Composition.section:LKFRequests.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Abrechnung – Knoten</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedClaimLKFRequestBasis; AtMopedClaimLKFRequestGenerisch</td>
+        <td>Claim</td>
+        <td>Claim.extension:DiagnoseKnoten</td>
+        <td>Composition.section:LKFRequests.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Leistungskomponente/Leistungspunkte</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedClaimLKFRequestBasis; AtMopedClaimLKFRequestGenerisch</td>
+        <td>Claim</td>
+        <td>Claim.item:Leistungskomponente.quantity.value</td>
+        <td>Composition.section:LKFRequests.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Tageskomponente/Kontaktpunkte</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedClaimLKFRequestBasis; AtMopedClaimLKFRequestGenerisch</td>
+        <td>Claim</td>
+        <td>Claim.item:Tageskomponente.quantity.value</td>
+        <td>Composition.section:LKFRequests.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Punkte Belagsdauerausreißer nach unten – Leistungskomponente</td>
+        <td>/</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedClaimLKFRequestBasis; AtMopedClaimLKFRequestGenerisch</td>
+        <td>Claim</td>
+        <td>Claim.item:PunkteBelagsdauerausreisserUntenLeistungskomponente.quantity.value</td>
+        <td>Composition.section:LKFRequests.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Punkte Belagsdauerausreißer nach unten – Tageskomponente</td>
+        <td>/</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedClaimLKFRequestBasis; AtMopedClaimLKFRequestGenerisch</td>
+        <td>Claim</td>
+        <td>Claim.item:PunkteBelagsdauerausreisserUntenTageskomponente.quantity.value</td>
+        <td>Composition.section:LKFRequests.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Zusatzpunkte Belagsdauerausreißer nach oben</td>
+        <td>/</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedClaimLKFRequestBasis; AtMopedClaimLKFRequestGenerisch</td>
+        <td>Claim</td>
+        <td>Claim.item:ZusatzpunkteBelagsdauerausreisserNachOben.quantity.value</td>
+        <td>Composition.section:LKFRequests.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Zusatzpunkte Intensiv</td>
+        <td>/</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedClaimLKFRequestBasis; AtMopedClaimLKFRequestGenerisch</td>
+        <td>Claim</td>
+        <td>Claim.item:ZusatzpunkteIntensiv.quantity.value</td>
+        <td>Composition.section:LKFRequests.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Zusatzpunkte Mehrfachleistungen</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedClaimLKFRequestBasis; AtMopedClaimLKFRequestGenerisch</td>
+        <td>Claim</td>
+        <td>Claim.item:ZusatzpunkteMehrfachleistungen.quantity.value</td>
+        <td>Composition.section:LKFRequests.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Punkte spezieller Bereiche (tageweise)</td>
+        <td>/</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedClaimLKFRequestBasis; AtMopedClaimLKFRequestGenerisch</td>
+        <td>Claim</td>
+        <td>Claim.item:PunkteSpeziellerBereicheTageweise.quantity.value</td>
+        <td>Composition.section:LKFRequests.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Punkte total</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedClaimLKFRequestBasis; AtMopedClaimLKFRequestGenerisch</td>
+        <td>Claim</td>
+        <td>Claim.item:Gesamtpunkte.quantity.value</td>
+        <td>Composition.section:LKFRequests.entry.resolve()</td>
+        <td>/</td>
+    </tr>
+</table>
+</div>
+
+<h3 id="x06---fhir">X06 -&gt; FHIR</h3>
+<div class="table-responsive">
+<table>
+    <tr>
+        <th>Feld</th>
+        <th>Ambulant</th>
+        <th>Stationär</th>
+        <th>Intensiv</th>
+        <th>Notiz zur Kardinalität</th>
+        <th>befüllt von</th>
+        <th>Profile</th>
+        <th>FHIR Ressource</th>
+        <th>Pfad von der Ressource aus</th>
+        <th>Pfad von der Composition aus</th>
+        <th>Anmerkungen</th>
+    </tr>
+    <tr>
+        <td>Satzartenkennzeichen</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>in neuer Architektur nicht mehr notwendig</td>
+    </tr>
+    <tr>
+        <td>Krankenanstaltennummer</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedDeviceActor</td>
+        <td>AtMopedCompositionAnfragen; AtMopedCompositionAufnehmen; AtMopedCompositionBasis; AtMopedCompositionBeantworten; AtMopedCompositionEntlassenAviso; AtMopedCompositionEntlassenVollstaendig; AtMopedCompositionGenerisch; AtMopedCompositionUpdate</td>
+        <td>Composition</td>
+        <td>Composition.author.resolve()</td>
+        <td>Composition.author.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Aufnahmezahl</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.identifier:Aufnahmezahl.value</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Datensatz-ID</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.identifier:DatensatzID.value</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Aufnahme-/Kontaktdatum</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.actualPeriod.start</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Error/Warning – Wert</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Error/Warning Prozess in Arbeit</td>
+    </tr>
+    <tr>
+        <td>Error/Warning – Code</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Error/Warning Prozess in Arbeit</td>
+    </tr>
+    <tr>
+        <td>Error/Warning – Kommentar</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Error/Warning Prozess in Arbeit</td>
+    </tr>
+</table>
+</div>
+
+<h3 id="x07---fhir">X07 -&gt; FHIR</h3>
+<div class="table-responsive">
+<table>
+    <tr>
+        <th>Feld</th>
+        <th>Ambulant</th>
+        <th>Stationär</th>
+        <th>Intensiv</th>
+        <th>Notiz zur Kardinalität</th>
+        <th>befüllt von</th>
+        <th>Profile</th>
+        <th>FHIR Ressource</th>
+        <th>Pfad von der Ressource aus</th>
+        <th>Pfad von der Composition aus</th>
+        <th>Anmerkungen</th>
+    </tr>
+    <tr>
+        <td>Satzartenkennzeichen</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>/</td>
+        <td>in neuer Architektur nicht mehr notwendig</td>
+    </tr>
+    <tr>
+        <td>Krankenanstaltennummer</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedDeviceActor</td>
+        <td>AtMopedCompositionAnfragen; AtMopedCompositionAufnehmen; AtMopedCompositionBasis; AtMopedCompositionBeantworten; AtMopedCompositionEntlassenAviso; AtMopedCompositionEntlassenVollstaendig; AtMopedCompositionGenerisch; AtMopedCompositionUpdate</td>
+        <td>Composition</td>
+        <td>Composition.author.resolve()</td>
+        <td>Composition.author.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Aufnahmezahl</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.identifier:Aufnahmezahl.value</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Datensatz-ID</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.identifier:DatensatzID.value</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Aufnahme-/Kontaktdatum</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td>MopedKAActor</td>
+        <td>AtMopedEncounterAufenthaltBesuchGenerisch; AtMopedEncounterAufenthaltStationaerAufnahme; AtMopedEncounterAufenthaltStationaerBasis; AtMopedEncounterAufenthaltStationaerBund; AtMopedEncounterAufenthaltStationaerEntlassung; AtMopedEncounterAufenthaltStationaerKA; AtMopedEncounterAufenthaltStationaerLGF; AtMopedEncounterAufenthaltStationaerSV; AtMopedEncounterBesuchAmbulantBasis; AtMopedEncounterBesuchAmbulantBund; AtMopedEncounterBesuchAmbulantKA; AtMopedEncounterBesuchAmbulantLGF; AtMopedEncounterBesuchAmbulantSV</td>
+        <td>Encounter</td>
+        <td>Encounter.actualPeriod.start</td>
+        <td>Composition.encounter.resolve()</td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Kommentar 1</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Kommentare die MBDS relevant sind und als X07 exportiert werden sollen enthalten in der Communication.extension:MBDSRelevanz den Wert true</td>
+    </tr>
+    <tr>
+        <td>Kommentar 2</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Kommentare die MBDS relevant sind und als X07 exportiert werden sollen enthalten in der Communication.extension:MBDSRelevanz den Wert true</td>
+    </tr>
+    <tr>
+        <td>Kommentar 3</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Kommentare die MBDS relevant sind und als X07 exportiert werden sollen enthalten in der Communication.extension:MBDSRelevanz den Wert true</td>
+    </tr>
+    <tr>
+        <td>Kommentar 4</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Kommentare die MBDS relevant sind und als X07 exportiert werden sollen enthalten in der Communication.extension:MBDSRelevanz den Wert true</td>
+    </tr>
+    <tr>
+        <td>Kommentar 5</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Kommentare die MBDS relevant sind und als X07 exportiert werden sollen enthalten in der Communication.extension:MBDSRelevanz den Wert true</td>
+    </tr>
+    <tr>
+        <td>Kommentar 6</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td>/</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Kommentare die MBDS relevant sind und als X07 exportiert werden sollen enthalten in der Communication.extension:MBDSRelevanz den Wert true</td>
+    </tr>
+</table>
+</div>
+
+<h3 id="i11-saps---fhir">I11 SAPS -&gt; FHIR</h3>
+<p>I11 wird als fallbezogenes Questionnaire/QuestionnaireResponse modelliert. 
+Die Definition des Questionnares kann hier gefunden werden: 
+<a href="Questionnaire-LKFSAPS3Questionnaire.html">Saps Questionnaire</a></p>
+
+<h3 id="i12-tiss-a---fhir">I12 TISS-A -&gt; FHIR</h3>
+<p>I12 wird als fallbezogenes Questionnaire/QuestionnaireResponse modelliert. 
+Die Definition des Questionnares kann hier gefunden werden: 
+<a href="Questionnaire-LKFTISSAQuestionnaire.html">TISS-A Questionnaire</a></p>
+
+<h3 id="lkf-k01---fhir">LKF K01 -&gt; FHIR</h3>
+<p><a name="l4507">​</a>K01 wird als Questionnaire/QuestionnaireResponse modelliert. 
+Die Definition des Questionnares kann hier gefunden werden: 
+<a href="Questionnaire-LKFK01Questionnaire.html">K01 Questionnaire</a></p>
+
+<h3 id="lkf-l01---fhir">LKF L01 -&gt; FHIR</h3>
+<p><a name="l4515">​</a>L01 wird als fallbezogenes Questionnaire/QuestionnaireResponse modelliert. 
+Die Definition des Questionnares kann hier gefunden werden: 
+<a href="Questionnaire-LKFL01Questionnaire.html">L01 Questionnaire</a></p>
+
+
+
+
+</div>
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /row -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-content -->
+
+<script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+<script src="assets/js/window-hash.js" type="text/javascript"> </script>
+<a name="bottom"> </a>
+<div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+<div class="container">    <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package elga.moped#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR&reg; 5.0.0</a>. Generated <span title="Tue, Jun 9, 2026 11:53+0000">2026-06-09</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    
+  </p>
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+<div class="container">    <!-- container -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+<script src="assets/js/respond.min.js" type="text/javascript"> </script>
+<script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+<script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+<script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+<script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+</body>
+</html>
