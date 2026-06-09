@@ -16,19 +16,19 @@ The following diagram shows how the Ressources and Profiles relevant to this Imp
 
 flowchart LR
   %% Core scheduling backbone
-  Schedule["**Schedule**HL7® AT Scheduling Schedule Profile"]:::sched
-  Slot["**Slot**HL7® AT Scheduling Slot Profile"]:::slot
-  Appointment["**Appointment**HL7® AT Scheduling Appointment Profile"]:::appt
+  Schedule["ScheduleHL7 AT Scheduling Schedule Profile"]:::sched
+  Slot["SlotHL7 AT Scheduling Slot Profile"]:::slot
+  Appointment["AppointmentHL7 AT Scheduling Appointment Profile"]:::appt
 
   %% Service + participants
-  HealthcareService["**HealthcareService**HL7® AT Scheduling HealthcareService Profile"]:::svc
+  HealthcareService["HealthcareServiceHL7 AT Scheduling HealthcareService Profile"]:::svc
 
-  Patient["**Patient**HL7® AT Core Patient Profile"]:::core
-  RelatedPerson["**RelatedPerson**FHIR R5 RelatedPerson"]:::core
-  Practitioner["**Practitioner**HL7® AT Core Practitioner Profile"]:::core
-  PractitionerRole["**PractitionerRole**HL7® AT Core PractitionerRole Profile"]:::core
-  Organization["**Organization**HL7® AT Core Organization Profile"]:::core
-  Location["**Location**HL7® AT Core Location Profile"]:::core
+  Patient["PatientHL7 AT Core Patient Profile"]:::core
+  RelatedPerson["RelatedPersonFHIR R5 RelatedPerson"]:::core
+  Practitioner["PractitionerHL7 AT Core Practitioner Profile"]:::core
+  PractitionerRole["PractitionerRoleHL7 AT Core PractitionerRole Profile"]:::core
+  Organization["OrganizationHL7 AT Core Organization Profile"]:::core
+  Location["LocationHL7 AT Core Location Profile"]:::core
 
   %% Relationships Schedule/Slot/Appointment
   Schedule -->|"defines availability for"| Slot

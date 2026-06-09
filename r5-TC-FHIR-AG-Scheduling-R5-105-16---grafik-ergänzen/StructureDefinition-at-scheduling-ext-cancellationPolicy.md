@@ -50,7 +50,7 @@ Other representations of profile: [CSV](StructureDefinition-at-scheduling-ext-ca
   "name" : "CancellationPolicy",
   "title" : "The policy for a cancellation",
   "status" : "draft",
-  "date" : "2026-06-09T10:57:01+00:00",
+  "date" : "2026-06-09T12:42:01+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "This Extension provides the information about the policy of a cancellation of an appointment. It can contain a time frame until when a cancellation is possible or what the fee for a cancellation will be.",
   "fhirVersion" : "5.0.0",
