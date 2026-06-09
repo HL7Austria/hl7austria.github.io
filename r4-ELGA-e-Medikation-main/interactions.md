@@ -130,3 +130,7 @@ Plan-Write ist eine eigenständige Operation, die ausschließlich im Kontext ein
 
 ##### Sequenzdiagramm Abgelehntes Plan-Write
 
+#### Groupidentifier-Create
+
+siehe "Ablauf - Bezug e-Med groupIdentifier".
+

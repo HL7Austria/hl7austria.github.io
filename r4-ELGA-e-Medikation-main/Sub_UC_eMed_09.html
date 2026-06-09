@@ -290,125 +290,24 @@ width: 100%;}
 
 <p><a name="l377">​</a>Der GDA (Apotheke bzw. Arzt mit Hausapotheke) kann eine <a href="design_choices.html#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense">Durchgeführte Abgabe</a> für einen ELGA-Teilnehmer erfassen, um die Abgabe eines Medikamentes medizinisch zu dokumentieren.</p>
 
-<p>Sofern eine zugehörige <a href="design_choices.html#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest">Geplante Abgabe</a> vorliegt, <strong>muss</strong> diese im Element <em>MedicationDispense.authorizingPrescription</em> referenziert werden.</p>
+<p>Sofern eine zugehörige <a href="design_choices.html#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest">Geplante Abgabe</a> vorliegt, <strong>muss</strong> diese im Element <em>MedicationDispense.authorizingPrescription[geplanteAbgabe]</em> referenziert werden. Der zugehörige Planeintrag wird in <em>MedicationDispense.authorizingPrescription[planeintrag]</em> referenziert.</p>
 
 <p>Die in der <em>Geplanten Abgabe</em> dokumentierte <a href="workflowmanagement.html#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart">Rezeptart</a> (bzw. eine evtl. Einschränkung durch den GDA (Arzt) im Element <em>MedicationRequest.numberOfRepeatsAllowed</em>), legt fest wieviele Abgaben durchgeführt werden dürfen.</p>
 
-<p>Der aktuelle Status einer <em>Durchgeführten Abgabe</em> wird mittels <em>MedicationDispense.status</em>- und <em>MedicationDispense.type</em>-Element dokumentiert (siehe <a href="workflowmanagement.html#status-des-medicationdispense-in-der-durchgeführten-abgabe">Status des MedicationDispense in der durchgeführten Abgabe</a>) und kann sich auf den Status der zugehörigen <em>Geplanten Abgabe</em> auswirken.</p>
+<p>Der aktuelle Status einer <em>Durchgeführten Abgabe</em> wird mittels <em>MedicationDispense.status</em> und <em>MedicationDispense.type</em> dokumentiert (siehe <a href="workflowmanagement.html#status-des-medicationdispense-in-der-durchgeführten-abgabe">Status des MedicationDispense in der durchgeführten Abgabe</a>) und kann sich auf den Status der zugehörigen <em>Geplanten Abgabe</em> auswirken. 
+Via <em>MedicationDispense.type</em> können Einzelabge, Teilabgaben, Besorgerprozess, Leerabgaben, sowie Notabgabe, Rezeptnachbringung und OTC-Abgabe dokumentiert werden, siehe Tabelle <a href="workflowmanagement.html#varianten-der-teil-abgabe">Durchgeführte Abgabe - Varianten der (Teil-)Abgabe</a>. Bei Teilabgaben, Abgaben gemäß dem Besorgerprozess und Leerabgaben muss eine vorgegeben Abfolge an zur Verfügung stehenden <em>types</em> eingehalten werden.</p>
 
-<p>Folgende Tabelle bildet eine Übersicht über alle Varianten von (Teil-)Abgaben:</p>
-<ul>
-  <li>Einzelabgabe</li>
-  <li>Besorgerprozess</li>
-  <li>Teilabgaben</li>
-  <li>Leerabgaben
-<br/></li>
-</ul>
+<p>Die abgegebene Packungsmenge (<em>MedicationDispense.quantity</em>) ist verpflichtend anzugeben, wird aber nicht durch die Fachanwendung im Kontext einer möglichen zugrundeliegenden Geplanten Abgabe geprüft. Ob eine Einlösung als vollständig gilt, hängt nicht von der Anzahl der abgegebenen Packungen ab, sondern davon, ob ein <em>MedicationDispense.type</em> der <em>complete</em> beinhaltet, gesetzt wurde.</p>
 
-<h4 id="varianten-der-teil-abgabe">Varianten der (Teil-)Abgabe</h4>
+<h4 id="sub_uc_emed_09_01_01-vollständige-abgabe-einzelabgabe">Sub_UC_eMed_09_01_01 Vollständige Abgabe (Einzelabgabe)</h4>
 
-<p>Im Element <em>MedicationDispense.type</em> einer durchgeführten Abgabe wird die Art der Abgabe dokumentiert, welche von der <a href="workflowmanagement.html#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart">Rezeptart</a> (Anzahl Einlösungen) und vom Use Case abhängt.</p>
+<p>Wenn die Geplante Abgabe nur eine einmalige Einlösung ermöglicht (z.B. Kassenrezept), muss der <em>MedicationDispense.type</em> den Wert <em>FFC (First Fill - Complete)</em> und der <em>MedicationDispense.status</em> den Wert <em>completed</em> erhalten.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Use Case (pro Einlösung)</th>
-      <th>Geplante Abgabe (MedicationRequest.status)</th>
-      <th>Beschreibung</th>
-      <th>Durchgeführte Abgabe (MedicationDispense)</th>
-      <th>Beschreibung</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Vollständige Abgabe (Einzelabgabe)</td>
-      <td>complete, wenn letzte Eilnlösung abgeschlossen, sonst active</td>
-      <td>geplante Abgabe wird nach erfolgter Dispense automatisch&nbsp; auf complete gesetzt</td>
-      <td>type: FFC (First Fill - Complete)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
-      <td>Dispense abgeschlossen; Kann nicht mehr verändert werden.</td>
-    </tr>
-    <tr>
-      <td>"Besorgerprozess": Medikament von Apotheke bestellt</td>
-      <td>active</td>
-      <td>geplante Abgabe bleibt active</td>
-      <td>type: FFP (First Fill - Part Fill)<br/>quantity:&nbsp; 0 Packungen (wurden&nbsp; ausgegeben)<br/>status: „preparation?“</td>
-      <td>Medikament bestellt oder Magistrale Zubereitung in Vorbereitung. Geplante Abgabe kann nicht mehr in einer anderen Apotheke abgegeben werden</td>
-    </tr>
-    <tr>
-      <td>"Besorgerprozess": bestelltes Medikament wird ausgehändigt</td>
-      <td>complete</td>
-      <td>wenn Dispense complete, dann auch geplante Abgabe complete</td>
-      <td>type: RFC (Refill - Complete)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
-      <td>Durchgeführte Abgabe abgeschlossen</td>
-    </tr>
-    <tr>
-      <td>1. Teilabgabe</td>
-      <td>active</td>
-      <td>geplante Abgabe bleibt active</td>
-      <td>type: FFP (First Fill - Part Fill)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
-      <td>1. Teilabgabe</td>
-    </tr>
-    <tr>
-      <td>Weitere Teilabgabe</td>
-      <td>active</td>
-      <td>geplante Abgabe bleibt active</td>
-      <td>type: RFP (Refill - Part Fill)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
-      <td>weitere Teilabgabe</td>
-    </tr>
-    <tr>
-      <td>Letzte Teilabgabe</td>
-      <td>complete</td>
-      <td>nach der letzten Teilabgabe wird die geplante Abgabe automatisch auf complete gesetzt</td>
-      <td>type:&nbsp; RFC (Refill - Complete)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
-      <td>letzte Teilabgabe</td>
-    </tr>
-    <tr>
-      <td>Leerabgabe bei Einzelabgabe</td>
-      <td>complete</td>
-      <td>die geplante Abgabe wird automatisch auf complete gesetzt</td>
-      <td>type: FFC (First Fill - Complete) bzw. RFC (Refill Complete)<br/>quantity:&nbsp; 0 Packungen<br/>status: „cancelled“</td>
-      <td>Das Medikament einer geplanten Abgabe wird vom Patienten nicht benötigt und daher als Leerabgabe vermerkt.</td>
-    </tr>
-    <tr>
-      <td>Leerabgabe beendet Teilabgaben</td>
-      <td>complete</td>
-      <td>nach einer Leerabgabe bei einer&nbsp; Teilabgabe wird die geplante Abgabe automatisch auf complete gesetzt</td>
-      <td>type: RFC (Refill - Complete)<br/>quantity:&nbsp; 0 Packungen<br/>status: „cancelled“</td>
-      <td>Das Medikament einer geplanten Abgabe wird vom Patienten nicht benötigt und daher als Leerabgabe vermerkt. Dieser Einlösevorgang ist damit beendet.</td>
-    </tr>
-    <tr>
-      <td>Notabgabe</td>
-      <td>&nbsp;-</td>
-      <td>keine geplante Abgabe vorhanden</td>
-      <td>type: EM (Emergency Supply)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
-      <td>Das Medikament wurde ohne zugrundeliegende geplante Abgabe abgegeben.<br/>Es wird kein Rezept nachgereicht</td>
-    </tr>
-    <tr>
-      <td>Rezept wird nachgebracht</td>
-      <td>&nbsp;-</td>
-      <td>keine geplante Abgabe vorhanden</td>
-      <td>type: SO (Script Owing)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
-      <td>Medikament wurde abgegeben oder reserviert, das formale Rezept wird später nachgereicht.&nbsp; Planeintrag + geplante Abgabe für Wechselwirkungsrelevante Medikatmente soll nacherfasst werden.</td>
-    </tr>
-    <tr>
-      <td>OTC Abgabe (rezeptfrei)</td>
-      <td>&nbsp;-</td>
-      <td>keine geplante Abgabe vorhanden</td>
-      <td>type: OTC (hinzufügen)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
-      <td>Rezeptfreies Medikament wurde abgegeben. Ein Planeintrag für Wechselwirkungsrelevante Medikatmente soll nacherfasst werden.</td>
-    </tr>
-  </tbody>
-</table>
+<p>Erkennt die Fachanwendung durch die Kombination dieser beiden Werte in der Durchgeführten Abgabe und <em>MedicationRequest.numberOfRepeatsAllowed</em> = 0 in der zugehörigen Geplanten Abgabe, dass die Geplante Abgabe abgeschlossen ist, setzt sie diese auf den Status <em>completed</em>.</p>
 
-<p><br/></p>
+<p>Wenn die Geplante Abgabe eine mehrmalige Einlösung (<em>MedicationRequest.numberOfRepeatsAllowed</em> &gt; 0) ermöglicht (z.B. Privatrezept), bleibt der Status der geplanten Abgabe weiterhin <em>active</em> bis die letzte Einlösung erfolgt ist. Nach der letztmöglichen Einlösung (und Erstellung einer <em>Durchgeführten Abgabe</em> mit Status <em>completed</em>) setzt die Fachanwendung die zugehörige <em>Geplante Abgabe</em> auf den Status <em>completed</em> (siehe<a href="Sub_UC_eMed_08.html#sub_uc_emed_08_02---geplante-abgabe-beenden-durch-fachanwendung">Sub_UC_eMed_08_02 - Geplante Abgabe beenden (durch Fachanwendung)</a>).</p>
 
-<h4 id="sub_uc_emed_09_01_0x-durchgeführte-abgabe-mit-bezug-zu-einer-geplanten-abgabe-erfassen-vollständige-abgabe">Sub_UC_eMed_09_01_0x Durchgeführte Abgabe mit Bezug zu einer geplanten Abgabe erfassen (Vollständige Abgabe)</h4>
-
-<p>Nach der letztmöglichen Einlösung (und Erstellung einer <em>Durchgeführten Abgabe</em> mit Status <em>complete</em>) setzt die Fachanwendung die zugehörige <em>Geplante Abgabe</em> auf den Status <em>completed</em> (siehe<a href="Sub_UC_eMed_08.html#sub_uc_emed_08_02---geplante-abgabe-beenden-durch-fachanwendung">Sub_UC_eMed_08_02 - Geplante Abgabe beenden (durch Fachanwendung)</a>).</p>
-
-<p>Wenn die geplante Abgabe nur eine einmalige Einlösung ermöglicht (z.B. Kassenrezept), erkennt die Fachanwendung durch die Kombination aus MedicationDispense.type enthält <em>X-fill complete</em> (und Status <em>complete</em>) und Geplante Abgabe MedicationReqeust.numberOfRepeatsAllowed == 0, dass die geplante Abgabe abgeschlossen ist und setzt deren Status auf complete. Wenn die geplante Abgabe eine mehrmalige Einlösungen (numberOfRepeatsAllowed) ermöglicht (z.B. Privatrezept), bleibt der Status der geplanten Abgabe weiterhin active bis die letzte Einlösung erfolgt ist.</p>
-
-  <!-- teilabgabe kann abgabe eines teils, bestellung (gesamtbesllung oder teil) oder leerabgabe status cancelled -->
+  <!-- Teilabgabe kann Abgabe eines Teils einer Bestellung sein, die Gesamtabgabe nach einer Bestellung oder eine Leerabgabe mit Status cancelled -->
 
 <h4 id="relevante-elemente-medicationdispense">Relevante Elemente (MedicationDispense)</h4>
 
@@ -420,28 +319,96 @@ width: 100%;}
     authoredOn: Datum der Erstellung der Durchgeführten Abgabe
     performer: veranwortlicher GDA (Apotheke) für die Durchgeführte Abgabe 
     authorizingPrescription: Verpflichtende Referenz auf zugehörige Geplante Abgabe
-    type: FFC (First Fill - Complete) | (Part Fill - Complete) // Art der Abgabe
+    type: FFC (First Fill - Complete)                                 // Art der Abgabe
     quantity: Abgebende Menge (Packungen) je Abgabe
     whenHandedOver: Der Zeitpunkt, zu dem das abgegebene Produkt ausgehändigt wurde
     dosageInstruction: Dosierung + Einnahmezeitraum (ab sofort | in der Zukunft)  // angepasst an abgegebene Medikation
 </code></pre>
 
-  <!-- #### Sub_UC_eMed_09_01_0x Durchgeführte Abgabe als vollständige Abgabe (Einzelabgabe) erfassen -->
+<h4 id="sub_uc_emed_09_01_02-teilabgaben">Sub_UC_eMed_09_01_02 Teilabgaben</h4>
 
-  <!-- Werden geplante Abgaben mit einer [Rezeptart](workflowmanagement.html#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart), die nur einmalig eingelöst werden,  
+<p>Eine Teilabgabe liegt vor, wenn die in der Geplanten Abgabe vorgesehenen Medikation:</p>
+<ul>
+  <li>teilweise bestellt werden muss bzw. nur ein Teil abgegeben werden kann (siehe Sub_UC_eMed_09_01_02 Besorgerprozess) oder</li>
+  <li>nur ein Teil der Verordnungen des vom Patienten vorgelegten Rezepts eingelöst werden soll (Geplante Abgaben mit gemeinsamen groupIdentier, müssen gemeinsam in einer Transaktion behandelt werden) 
+  <!-- in einem Transaction Bundle ? --></li>
+</ul>
 
+<p>Im ersten Schritt wird eine Durchgeführte Abgabe mit <em>MedicationDispense.type</em>: <em>FFP (First Fill - Part Fill)</em> und <em>MedicationDispense.status</em>:  <em>completed</em> erstellt. <em>MedicationDispense.quantity</em> erhält die Anzahl bereits abgegebener Packungen.</p>
 
-geplante Abgabe wird nach erfolgter Dispense automatisch  auf complete gesetzt
+<p>Für jede weitere Teilabgabe wird jeweils eine Durchgeführte Abgabe mit <em>MedicationDispense.type</em>: <em>RFP (Refill Fill - Part Fill)</em> und <em>MedicationDispense.status</em>: <em>completed</em> und der abgegebenen Packungsanzahl erstellt (analog zu Besorgerprozess).</p>
 
-Dispense abgeschlossen; Kann nicht mehr verändert werden. -->
-<p><br/></p>
+<p>Die Gültigkeit der Geplanten Abgabe verlängert sich im Zuge von Teilabgaben, siehe <a href="workflowmanagement.html#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart">Gültigkeit von Geplanten Abgaben basierend auf der Rezeptart</a>.</p>
 
-<h4 id="sub_uc_emed_09_01_0x-durchgeführte-abgabe-ohne-bezug-zu-einer-geplanten-abgabe-erfassen-otc-abgabe--rezeptfrei">Sub_UC_eMed_09_01_0x Durchgeführte Abgabe ohne Bezug zu einer geplanten Abgabe erfassen (OTC Abgabe / rezeptfrei)</h4>
+<p>Bei der letzten Teilabgabe (Vollständige Teilabgabe), dh. die in der Geplanten Abgabe vorgesehene Arzneimenge wurde abgegeben, wird eine Durchgeführte Abgabe mit <em>MedicationDispense.type</em>: <em>RFC (Refill - Complete)</em> und <em>MedicationDispense.status</em>: <em>completed</em> erstellt. Sobald eine Teilabgabe durchgeführt wurde (<em>Part-Fill</em>), ist die Einlösung einer weiteren Teilabgabe in anderen Apotheke nicht mehr möglich, d.h. die Apotheke muss die Teilabgaben mit einem <em>Complete</em> abschließen.</p>
+
+<p>Bevor die Fachanwendung eine Speicherung einer neuen Durchgeführte Abgabe zulässt, prüft diese, ob ein gültiger <em>MedicationDispense.type</em> vergeben wurde und vergleicht die Anzahl der Durchgeführten Abgaben mit <em>FFC (First Fill - Complete)</em> und <em>RFC (Refill - Complete)</em> mit der Anzahl der möglichen zusätzlichen Einlösungen gemäß der Geplanten Abgabe (in <em>MedicationRequest.numberOfRepeatsAllowed</em>). In der Geplanten Abgabe bleibt <em>MedicationDispense.status</em> solange im Status <em>active</em>, solange noch weitere Einlösungen mölglich sind, anderenfalls wird der Status von der Fachanwendung auf <em>completed</em> gesetzt.</p>
+
+<p>Nur die zuletzt gespeicherte durchgeführte Abgabe kann storniert werden, da andernfalls die durch type definierte Statusabfolge (First Fill - Partfill / Refill - Partfill / Refill  Complete) verletzt wird und eine Inkonsistenz in der Statussequenz entsteht.
+  <!-- TODO: dann wieder das letzte usw. ist schon möglich --></p>
+
+<h4 id="relevante-elemente-medicationdispense-1">Relevante Elemente (MedicationDispense)</h4>
+
+<pre><code class="language-JSON">AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe
+    recorded: Datum der Erstellung der Durchgeführten Abgabe
+    status: completed  
+    statusReasonCodeableConcept: Wert aus Valueset (in Arbeit)        // optionale Begründung für den Status https://hl7.org/fhir/R4/valueset-medicationdispense-status-reason.html     
+    medicationReference.reference: Tatsächlich abgegebenes Medikament // Contained Medication
+    authoredOn: Datum der Erstellung der Durchgeführten Abgabe
+    performer: veranwortlicher GDA (Apotheke) für die Durchgeführte Abgabe 
+    authorizingPrescription: Verpflichtende Referenz auf zugehörige Geplante Abgabe
+    type: FFC (First Fill - Complete) | (Refill - Part Fill) | RFC (Refill - Complete)  // 1. Teilabgabe, weitere Teilabgabe, vollständige Abgabe
+    quantity: Abgebende Menge (Packungen) je Abgabe
+    whenHandedOver: Der Zeitpunkt, zu dem das abgegebene Produkt ausgehändigt wurde
+    dosageInstruction: Dosierung + Einnahmezeitraum (ab sofort | in der Zukunft)  // angepasst an abgegebene Medikation
+</code></pre>
+
+<h4 id="sub_uc_emed_09_01_03-besorgerprozess">Sub_UC_eMed_09_01_03 Besorgerprozess</h4>
+
+<p>Ein Besorgerprozess liegt vor, wenn die in der Geplanten Abgabe vorgesehenen Medikation:</p>
+<ul>
+  <li>erst gänzlich bestellt oder zubereitet werden muss oder</li>
+  <li>teilweise bestellt werden muss und ein Teil bereits abgegeben werden kann (siehe Sub_UC_eMed_09_01_02 Teilabgaben)</li>
+</ul>
+
+<p>Analog zur Teilabgabe werden beim Besorgerprozess <em>MedicationDispense.type</em> und <em>MedicationDispense.status</em>: <em>completed</em> befüllt:</p>
+<ul>
+  <li>
+    <p>Wenn eine Medikation gänzlich bestellt oder erst zubereitet werden muss, wird eine Durchgeführte Abgabe mit <em>MedicationDispense.type</em>: <em>FFP (First Fill - Part Fill)</em> und <em>MedicationDispense.status</em>: <em>completed</em> erstellt. <em>MedicationDispense.quantity</em> erhält den Wert 0, da noch keine Abgaben erfolgt sind. Falls eine Teilabgabe erfolgt, erhält <em>MedicationDispense.quantity</em> die Anzahl bereits abgegebener Packungen (siehe Sub_UC_eMed_09_01_03 Teilabgaben).</p>
+  </li>
+  <li>
+    <p>Weitere Teilabgaben werden jeweils mit einer Durchgeführten Abgabe mit <em>MedicationDispense.type</em>: <em>RFP (Refill Fill - Part Fill)</em> und <em>MedicationDispense.status</em>: <em>completed</em> und der abgegebenen Packungsanzahl erstellt. Die Gültigkeit der Geplanten Abgabe verlängert sich im Zuge des Besorgerprozesses, siehe <a href="workflowmanagement.html#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart">Gültigkeit von Geplanten Abgaben basierend auf der Rezeptart</a>.</p>
+  </li>
+  <li>
+    <p>Ist der Besorgerprozess abgeschlossen, dh. die in der Geplanten Abgabe vorgesehene Arzneimenge wurde abgegeben, wird eine Durchgeführte Abgabe mit <em>MedicationDispense.type</em>: <em>RFC (Refill - Complete)</em> und <em>MedicationDispense.status</em>: <em>completed</em> erstellt (anlaog zu Vollständige Teilabgabe). Sobald eine Teilabgabe durchgeführt wurde (<em>Part-Fill</em>), ist die Einlösung einer weiteren Teilabgabe in anderen Apotheke nicht mehr möglich, d.h. die Apotheke muss die Teilabgaben mit einem <em>Complete</em> abschließen.
+  <!-- TODO: Fachanwendung lehnt Speichern aber nicht ab? --></p>
+  </li>
+</ul>
+
+<p>Die Fachanwendung prüft, ob für die Durchgeführte Abgabe ein gültiger <em>type</em> vergeben wurde und vergleicht die Anzahl der Durchgeführten Abgaben mit <em>FFC (First Fill - Complete)</em> und <em>RFC (Refill - Complete)</em> mit der Anzahl zusätzlicher Einlösungen gemäß der Geplanten Abgabe (in <em>MedicationRequest.numberOfRepeatsAllowed</em>). In der Geplanten Abgabe bleibt <em>MedicationDispense.status</em> solange im Status <em>active</em>, solange noch weitere Einlösungen mölglich sind, anderenfalls wird der Status von der Fachanwendung auf <em>completed</em> gesetzt.</p>
+
+<h4 id="relevante-elemente-medicationdispense-2">Relevante Elemente (MedicationDispense)</h4>
+
+<pre><code class="language-JSON">AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe
+    recorded: Datum der Erstellung der Durchgeführten Abgabe
+    status: completed  
+    statusReasonCodeableConcept: Wert aus Valueset (in Arbeit)        // optionale Begründung für den Status https://hl7.org/fhir/R4/valueset-medicationdispense-status-reason.html     
+    medicationReference.reference: Tatsächlich abgegebenes Medikament // Contained Medication
+    authoredOn: Datum der Erstellung der Durchgeführten Abgabe
+    performer: veranwortlicher GDA (Apotheke) für die Durchgeführte Abgabe 
+    authorizingPrescription: Verpflichtende Referenz auf zugehörige Geplante Abgabe
+    type: FFC (First Fill - Complete) | (Refill - Part Fill) | RFC (Refill - Complete)  // 1. Teilabgabe, weitere Teilabgabe, vollständige Abgabe
+    quantity: Abgebende Menge (Packungen) je Abgabe
+    whenHandedOver: Der Zeitpunkt, zu dem das abgegebene Produkt ausgehändigt wurde
+    dosageInstruction: Dosierung + Einnahmezeitraum (ab sofort | in der Zukunft)  // angepasst an abgegebene Medikation --&gt;
+</code></pre>
+
+<h4 id="sub_uc_emed_09_01_0x-durchgeführte-abgabe-ohne-bezug-zu-einer-geplanten-abgabe-erfassen-otc-abgabe--rezeptfrei">Sub_UC_eMed_09_01_0x Durchgeführte Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen (OTC Abgabe / rezeptfrei)</h4>
 
 <p>In folgenden Fällen liegt bei der Erfassung einer <em>Durchgeführten Abgabe</em> keine zugehörige <em>Durchgeführte Abgabe</em> vor:</p>
 <ul>
   <li>Notabgabe (Rezept wird nachgebracht)
-  <!-- (d.h. es muss im nachhinein ein Planeintrag und eine geplante Abgabe erstellt werden (Nacherfassung) und die geplante Abgabe muss die bereits erstellten durchgeführte Abgabe referenzieren?) Usecase? --></li>
+  <!-- (d.h. es muss im nachhinein ein Planeintrag und eine Geplante Abgabe erstellt werden (Nacherfassung) und die Geplante Abgabe muss die bereits erstellten durchgeführte Abgabe referenzieren?) Usecase? --></li>
   <li>OTC Medikation (nicht rezeptpflichtig):
     <ul>
       <li>für wechselwirkungsrelevante Medikamente (aus ASP-Liste) soll eine <em>Durchgeführte Abgabe</em> erstellt werden</li>
@@ -491,7 +458,7 @@ und Teilabgabe -->
 <p>Eine <em>Durchgeführte Abgabe</em> muss nacherfasst werden, wenn das Arzneimittel bereits abgegeben wurde, 
     - aber eine Speicherung zum Zeitpunkt der Abgabe aus technischen Gründen nicht möglich war
     - der Arzneimittelbezug aus dem Ausland erfolgt ist (Element <em>recorded</em> abweichend von <em>whenHandedOver</em>)
-    - wenn ein e-Rezept-Eintrag oder ein Papierrezept vorhanden ist und keine geplante Abgabe in e-Medikation eingetragen wurden.</p>
+    - wenn ein e-Rezept-Eintrag oder ein Papierrezept vorhanden ist und keine Geplante Abgabe in e-Medikation eingetragen wurden.</p>
 
 <p>In Arbeit.</p>
 
@@ -499,14 +466,14 @@ und Teilabgabe -->
 
 <h4 id="sub_uc_emed_09_01_0x-durchgeführte-abgabe-mit-substitution-eines-medikaments-erfassen">Sub_UC_eMed_09_01_0x Durchgeführte Abgabe mit Substitution eines Medikaments erfassen</h4>
 
-<p>Eine Substitution eines Medikaments ist nur implizit ersichtich, durch die Referenz auf die zugehörige geplante Abgabe.</p>
+<p>Eine Substitution eines Medikaments ist nur implizit ersichtich, durch die Referenz auf die zugehörige Geplante Abgabe.</p>
 
   <!-- Begrüdung verpflichtend? -->
 <p><br/></p>
 
 <h3 id="sub_uc_emed_09_02---durchgeführte-abgabe-verwerfen">Sub_UC_eMed_09_02 - Durchgeführte Abgabe verwerfen</h3>
 
-<p><a name="l901">​</a>Ein GDA (Apotheke) kann jede bestehende <a href="design_choices.html#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense">Durchgeführte Abgabe</a> aufgrund einer fehlerhaften Eingabe verwerfen (auch wenn er diese nicht selbst erstellt hat).</p>
+<p><a name="l876">​</a>Ein GDA (Apotheke) kann von ihm erstellte <a href="design_choices.html#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense">Durchgeführte Abgabe</a>, die sich im Status <em>completed</em> oder <em>cancelled</em> befindet, aufgrund eines Fehlers verwerfen.</p>
 
 <p>Um eine <em>Durchgeführte Abgabe</em> zu verwerfen, ruft der GDA diese mittels GET MedicationDispense ab und bearbeitet diese wie folgt:</p>
 <ul>
@@ -514,11 +481,13 @@ und Teilabgabe -->
   <li>der verantwortliche GDA (<em>requester</em>) und das Datum in <em>authoredOn</em> werden entsprechend aktualisiert.</li>
 </ul>
 
-<p>Die stornierte <em>Durchgeführte Abgabe</em> wird damit abgeschlossen, kann aber über die Historie eingesehen werden.
+<p>Eine verworfene <em>Durchgeführte Abgabe</em> kann nicht mehr bearbeitet werden und ist nur noch aber über die Historie einsehbar.
+Wenn eine verworfene <em>Durchgeführte Abgabe</em> Teil eines e-Rezepts mit weiteren Geplanten Abgaben ist (gleicher groupIdentifier), wirkt sich dies nicht auf den Status der anderen Geplanten Abgaben aus.
+  <!-- TODO prüfen --></p>
+
   <!-- TODO: Suchparameter nach stornierten Durchgeführten Abgaben? -->
-  <!-- TODO: kann ein GDA (Apotheke) die Durchgeführte Abgabe eines anderen GDAs verwerfen oder nur die eigenen (wie im CDA)? Wenn auch fremde, woher soll er wissen, dass es ein Irrtum war? Begründung f Statuswechsel? -->
-  <!-- TODO: Wenn stornierte *Durchgeführte Abgabe* Teil eines e-Rezepts mit weiteren geplanten Abgaben ist: Auswirkungen? keine -->
-<br/></p>
+  <!-- TODO: Wenn stornierte *Durchgeführte Abgabe* Teil eines e-Rezepts mit weiteren geplanten Abgaben ist: Auswirkungen? keene -->
+<p><br/></p>
 
 <h3 id="sub_uc_emed_09_03---durchgeführte-abgabe-löschen-durch-elga-teilnehmer">Sub_UC_eMed_09_03 - Durchgeführte Abgabe löschen (durch ELGA-Teilnehmer)</h3>
 
@@ -531,10 +500,10 @@ und Teilabgabe -->
   <li>die Entfernung aller zugehörigen historischen Ressourcenversionen (_history).</li>
 </ul>
 
-<p>Zum Löschen einer <em>Durchgeführte Abgabe</em> ruft der ELGA-Teilnehmer die betreffende <em>Durchgeführte Abgabe</em> im ELGA-Portal auf. Dieses führt zunächst eine Leseoperation auf die betreffende MedicationDispense-Ressource aus (GET MedicationDispense/[id]) und löscht anschließend die betreffende geplante Abgabe mittels DELETE (DELETE [base]/MedicationDispense/[id]).</p>
+<p>Zum Löschen einer <em>Durchgeführte Abgabe</em> ruft der ELGA-Teilnehmer die betreffende <em>Durchgeführte Abgabe</em> im ELGA-Portal auf. Dieses führt zunächst eine Leseoperation auf die betreffende MedicationDispense-Ressource aus (GET MedicationDispense/[id]) und löscht anschließend die betreffende Geplante Abgabe mittels DELETE (DELETE [base]/MedicationDispense/[id]).</p>
 
 <p>Die Ressource einschließlich aller historischen Versionen darf nach erfolgreicher Löschung weder über reguläre FHIR-Interaktionen noch über administrative Schnittstellen abrufbar sein.
-  <!-- Todo: Auswirkunung auf bestehende geplante Abgaben? Darf nicht wieder active werden --></p>
+  <!-- Todo: Auswirkunung auf bestehende Geplante Abgaben? Darf nicht wieder active werden --></p>
 
   <!-- #### Beispiel
 
@@ -564,7 +533,7 @@ und Teilabgabe -->
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Jun 2, 2026 13:07+0000">2026-06-02</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Jun 9, 2026 15:23+0000">2026-06-09</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

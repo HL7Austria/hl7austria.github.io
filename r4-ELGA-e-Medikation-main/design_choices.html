@@ -313,7 +313,7 @@ Wurden alle Planeinträge entfernt, erhält der Medikationsplan das List.emptyRe
 
 <h4 id="medikationsplan-transaction-bundle-atemedbundlemedikationsplantx-transaction-bundle">Medikationsplan-Transaction-Bundle: AtEmedBundleMedikationsplanTx (<em>Transaction Bundle</em>)</h4>
 
-<p>Ein Bundle vom Typ Transaction, das beim <a href="interactions.html#plan-write">Plan-Write</a> auf den Medikationsplan an die Fachanwendung übermittelt wird. 
+<p>Ein Bundle vom Typ Transaction, das beim <a href="interactions.html#plan-write">Plan-Write</a> an die Fachanwendung übermittelt wird. 
 Das Bundle enthält den <a href="design_choices.html#medikationsplan-atelgaemedlistmedikationsplan-list">Medikationsplan</a> mit Referenzen auf die <a href="design_choices.html#medikationsplaneintrag-bzw-planeintrag-atelgaemedmedicationrequestplaneintrag-medicationrequest">Medikationsplaneinträge</a>. Alle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert.</p>
 
 <p>Das Transaction Bundle dient der Aktualisierung aller enthaltenen Ressourcen und wird selbst nicht persisitert.</p>
@@ -324,6 +324,12 @@ Das Bundle enthält den <a href="design_choices.html#medikationsplan-atelgaemedl
 Werden mehrere Medikamente gleichzeitig verordnet (und sollen demselben e-Rezept zugeordnet sein), wird für jedes Medikament eine geplante Abgabe mit demselben e-Med groupIdentifier erstellt (bildet 'Rezept-Klammer'). Es werden R5-Backport-Extensions verwendet.</p>
 
 <p>Der aktuelle Status einer geplanten Abgabe wird im <em>status</em>-Element dokumentiert (siehe <a href="workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der geplanten Abgabe</a>).</p>
+
+<h4 id="geplante-abgabe-transaction-bundle-atemedbundlegeplanteabgabetx-transaction-bundle">Geplante Abgabe Transaction-Bundle: AtEmedBundleGeplanteAbgabeTX (<em>Transaction Bundle</em>)</h4>
+
+<p><a name="l534">​</a>Ein Bundle vom Typ Transaction, das beim Speichern von <a href="design_choices.html#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest">Geplanten Abgaben</a> mittels <a href="interactions.html#request-write">Prescription-Write</a> auf den Medikationsplan an die Fachanwendung übermittelt wird.</p>
+
+<p>Die im Bundle enthaltenen <em>Geplanten Abgaben</em> müssen mit dem gleichen <em>e-Med groupIdentifier</em> gekennzeichnet sein. Fehlt dieser, wird er von der Fachanwendung ergänzt.</p>
 
 <h4 id="durchgeführte-abgabe-atelgaemedmedicationdispensedurchgefuehrteabgabe-medicationdispense">Durchgeführte Abgabe: AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe (<em>MedicationDispense</em>)</h4>
 
@@ -355,7 +361,7 @@ Die <em>Durchgeführte Abgabe</em> enthält die abgegebene Medikation und deren 
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Jun 2, 2026 13:07+0000">2026-06-02</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Jun 9, 2026 15:23+0000">2026-06-09</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
