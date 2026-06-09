@@ -167,46 +167,46 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="general-information">General Information</h3>
 <h4 id="overview-of-relevant-ressources-and-profiles">Overview of relevant Ressources and Profiles</h4>
 <p>The following diagram shows how the Ressources and Profiles relevant to this Implementation Guide are related to each other.</p>
+<pre class="mermaid">
 
-<pre><code class="language-mermaid">
 flowchart LR
   %% Core scheduling backbone
-  Schedule["**Schedule**&lt;br/&gt;HL7® AT Scheduling Schedule Profile"]:::sched
-  Slot["**Slot**&lt;br/&gt;HL7® AT Scheduling Slot Profile"]:::slot
-  Appointment["**Appointment**&lt;br/&gt;HL7® AT Scheduling Appointment Profile"]:::appt
+  Schedule["**Schedule**<br />HL7® AT Scheduling Schedule Profile"]:::sched
+  Slot["**Slot**<br />HL7® AT Scheduling Slot Profile"]:::slot
+  Appointment["**Appointment**<br />HL7® AT Scheduling Appointment Profile"]:::appt
 
   %% Service + participants
-  HealthcareService["**HealthcareService**&lt;br/&gt;HL7® AT Scheduling HealthcareService Profile"]:::svc
+  HealthcareService["**HealthcareService**<br />HL7® AT Scheduling HealthcareService Profile"]:::svc
 
-  Patient["**Patient**&lt;br/&gt;HL7® AT Core Patient Profile"]:::core
-  RelatedPerson["**RelatedPerson**&lt;br/&gt;FHIR R5 RelatedPerson"]:::core
-  Practitioner["**Practitioner**&lt;br/&gt;HL7® AT Core Practitioner Profile"]:::core
-  PractitionerRole["**PractitionerRole**&lt;br/&gt;HL7® AT Core PractitionerRole Profile"]:::core
-  Organization["**Organization**&lt;br/&gt;HL7® AT Core Organization Profile"]:::core
-  Location["**Location**&lt;br/&gt;HL7® AT Core Location Profile"]:::core
+  Patient["**Patient**<br />HL7® AT Core Patient Profile"]:::core
+  RelatedPerson["**RelatedPerson**<br />FHIR R5 RelatedPerson"]:::core
+  Practitioner["**Practitioner**<br />HL7® AT Core Practitioner Profile"]:::core
+  PractitionerRole["**PractitionerRole**<br />HL7® AT Core PractitionerRole Profile"]:::core
+  Organization["**Organization**<br />HL7® AT Core Organization Profile"]:::core
+  Location["**Location**<br />HL7® AT Core Location Profile"]:::core
 
   %% Relationships Schedule/Slot/Appointment
   Schedule --&gt;|"defines availability for"| Slot
   Slot --&gt;|"is booked by"| Appointment
-  Schedule -. "serviceType&lt;br/&gt;CodeableReference(HealthcareService)" .-&gt; HealthcareService
-  Schedule -. "actor&lt;br/&gt;Reference(Patient)" .-&gt; Patient
-  Schedule -. "actor&lt;br/&gt;Reference(Practitioner)" .-&gt; Practitioner
-  Schedule -. "actor&lt;br/&gt;Reference(PractitionerRole)" .-&gt; PractitionerRole
-  Schedule -. "actor&lt;br/&gt;Reference(RelatedPerson)" .-&gt; RelatedPerson
-  Schedule -. "actor&lt;br/&gt;Reference(HealthcareService)" .-&gt; HealthcareService
-  Schedule -. "actor&lt;br/&gt;Reference(Location)" .-&gt; Location
+  Schedule -. "serviceType<br />CodeableReference(HealthcareService)" .-&gt; HealthcareService
+  Schedule -. "actor<br />Reference(Patient)" .-&gt; Patient
+  Schedule -. "actor<br />Reference(Practitioner)" .-&gt; Practitioner
+  Schedule -. "actor<br />Reference(PractitionerRole)" .-&gt; PractitionerRole
+  Schedule -. "actor<br />Reference(RelatedPerson)" .-&gt; RelatedPerson
+  Schedule -. "actor<br />Reference(HealthcareService)" .-&gt; HealthcareService
+  Schedule -. "actor<br />Reference(Location)" .-&gt; Location
 
   %% Relationships Appointment -&gt; participants
-  Appointment --&gt;|"subject&lt;br/&gt;Reference(Patient|Group)"| Patient
-  Appointment -. "participant.actor&lt;br/&gt;Reference(Patient)" .-&gt; Patient
-  Appointment -. "participant.actor&lt;br/&gt;Reference(RelatedPerson)" .-&gt; RelatedPerson
-  Appointment -. "participant.actor&lt;br/&gt;Reference(Practitioner)" .-&gt; Practitioner
-  Appointment -. "participant.actor&lt;br/&gt;Reference(PractitionerRole)" .-&gt; PractitionerRole
-  Appointment -. "participant.actor&lt;br/&gt;Reference(HealthcareService)" .-&gt; HealthcareService
-  Appointment -. "participant.actor&lt;br/&gt;Reference(Location)" .-&gt; Location
+  Appointment --&gt;|"subject<br />Reference(Patient|Group)"| Patient
+  Appointment -. "participant.actor<br />Reference(Patient)" .-&gt; Patient
+  Appointment -. "participant.actor<br />Reference(RelatedPerson)" .-&gt; RelatedPerson
+  Appointment -. "participant.actor<br />Reference(Practitioner)" .-&gt; Practitioner
+  Appointment -. "participant.actor<br />Reference(PractitionerRole)" .-&gt; PractitionerRole
+  Appointment -. "participant.actor<br />Reference(HealthcareService)" .-&gt; HealthcareService
+  Appointment -. "participant.actor<br />Reference(Location)" .-&gt; Location
 
-  Appointment -. "serviceType&lt;br/&gt;CodeableReference(HealthcareService)" .-&gt; HealthcareService
-  Appointment -. "slot&lt;br/&gt;Reference(Slot)" .-&gt; Slot
+  Appointment -. "serviceType<br />CodeableReference(HealthcareService)" .-&gt; HealthcareService
+  Appointment -. "slot<br />Reference(Slot)" .-&gt; Slot
 
   %% PractitionerRole context
   PractitionerRole --&gt;|"practitioner"| Practitioner
@@ -235,7 +235,7 @@ flowchart LR
   classDef appt fill:#e8f5e8
   classDef svc fill:#fff3e0
   classDef core fill:#f5f5f5
-</code></pre>
+</pre>
 
 <table>
   <thead>
@@ -406,7 +406,7 @@ flowchart LR
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.tc.wg.scheduling.r5#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Jun 9, 2026 10:31+0000">2026-06-09</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.tc.wg.scheduling.r5#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Jun 9, 2026 10:57+0000">2026-06-09</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -81,66 +81,45 @@ This material derives from the HL7 Terminology (THO). THO is copyright &copy;198
     <ul>
       <li>
 
-        Responsible: 
-
-        HL7&reg; Austria, TC FHIR&reg;
-
-       (        <a href="ValueSet-AtSchedulingServiceType.html">src</a>
-)
-      </li>
-      <li>
-
-    IG &copy; 2024+ HL7&reg; Austria, TC FHIR&reg;.  Package hl7.at.fhir.tc.wg.scheduling.r5#0.2.0 based on FHIR&reg; 5.0.0. Generated 2026-06-09
-    
-    
-                Links: Table of Contents |
-                 QA Report
-                 
-                
-    
-   (        <a href="toc.html">src</a>
-)
-      </li>
-      <li>
 
 flowchart LR
   %% Core scheduling backbone
-  Schedule["**Schedule**&lt;br/&gt;HL7&reg; AT Scheduling Schedule Profile"]:::sched
-  Slot["**Slot**&lt;br/&gt;HL7&reg; AT Scheduling Slot Profile"]:::slot
-  Appointment["**Appointment**&lt;br/&gt;HL7&reg; AT Scheduling Appointment Profile"]:::appt
+  Schedule["**Schedule**HL7&reg; AT Scheduling Schedule Profile"]:::sched
+  Slot["**Slot**HL7&reg; AT Scheduling Slot Profile"]:::slot
+  Appointment["**Appointment**HL7&reg; AT Scheduling Appointment Profile"]:::appt
 
   %% Service + participants
-  HealthcareService["**HealthcareService**&lt;br/&gt;HL7&reg; AT Scheduling HealthcareService Profile"]:::svc
+  HealthcareService["**HealthcareService**HL7&reg; AT Scheduling HealthcareService Profile"]:::svc
 
-  Patient["**Patient**&lt;br/&gt;HL7&reg; AT Core Patient Profile"]:::core
-  RelatedPerson["**RelatedPerson**&lt;br/&gt;FHIR R5 RelatedPerson"]:::core
-  Practitioner["**Practitioner**&lt;br/&gt;HL7&reg; AT Core Practitioner Profile"]:::core
-  PractitionerRole["**PractitionerRole**&lt;br/&gt;HL7&reg; AT Core PractitionerRole Profile"]:::core
-  Organization["**Organization**&lt;br/&gt;HL7&reg; AT Core Organization Profile"]:::core
-  Location["**Location**&lt;br/&gt;HL7&reg; AT Core Location Profile"]:::core
+  Patient["**Patient**HL7&reg; AT Core Patient Profile"]:::core
+  RelatedPerson["**RelatedPerson**FHIR R5 RelatedPerson"]:::core
+  Practitioner["**Practitioner**HL7&reg; AT Core Practitioner Profile"]:::core
+  PractitionerRole["**PractitionerRole**HL7&reg; AT Core PractitionerRole Profile"]:::core
+  Organization["**Organization**HL7&reg; AT Core Organization Profile"]:::core
+  Location["**Location**HL7&reg; AT Core Location Profile"]:::core
 
   %% Relationships Schedule/Slot/Appointment
   Schedule --&gt;|"defines availability for"| Slot
   Slot --&gt;|"is booked by"| Appointment
-  Schedule -. "serviceType&lt;br/&gt;CodeableReference(HealthcareService)" .-&gt; HealthcareService
-  Schedule -. "actor&lt;br/&gt;Reference(Patient)" .-&gt; Patient
-  Schedule -. "actor&lt;br/&gt;Reference(Practitioner)" .-&gt; Practitioner
-  Schedule -. "actor&lt;br/&gt;Reference(PractitionerRole)" .-&gt; PractitionerRole
-  Schedule -. "actor&lt;br/&gt;Reference(RelatedPerson)" .-&gt; RelatedPerson
-  Schedule -. "actor&lt;br/&gt;Reference(HealthcareService)" .-&gt; HealthcareService
-  Schedule -. "actor&lt;br/&gt;Reference(Location)" .-&gt; Location
+  Schedule -. "serviceTypeCodeableReference(HealthcareService)" .-&gt; HealthcareService
+  Schedule -. "actorReference(Patient)" .-&gt; Patient
+  Schedule -. "actorReference(Practitioner)" .-&gt; Practitioner
+  Schedule -. "actorReference(PractitionerRole)" .-&gt; PractitionerRole
+  Schedule -. "actorReference(RelatedPerson)" .-&gt; RelatedPerson
+  Schedule -. "actorReference(HealthcareService)" .-&gt; HealthcareService
+  Schedule -. "actorReference(Location)" .-&gt; Location
 
   %% Relationships Appointment -&gt; participants
-  Appointment --&gt;|"subject&lt;br/&gt;Reference(Patient|Group)"| Patient
-  Appointment -. "participant.actor&lt;br/&gt;Reference(Patient)" .-&gt; Patient
-  Appointment -. "participant.actor&lt;br/&gt;Reference(RelatedPerson)" .-&gt; RelatedPerson
-  Appointment -. "participant.actor&lt;br/&gt;Reference(Practitioner)" .-&gt; Practitioner
-  Appointment -. "participant.actor&lt;br/&gt;Reference(PractitionerRole)" .-&gt; PractitionerRole
-  Appointment -. "participant.actor&lt;br/&gt;Reference(HealthcareService)" .-&gt; HealthcareService
-  Appointment -. "participant.actor&lt;br/&gt;Reference(Location)" .-&gt; Location
+  Appointment --&gt;|"subjectReference(Patient|Group)"| Patient
+  Appointment -. "participant.actorReference(Patient)" .-&gt; Patient
+  Appointment -. "participant.actorReference(RelatedPerson)" .-&gt; RelatedPerson
+  Appointment -. "participant.actorReference(Practitioner)" .-&gt; Practitioner
+  Appointment -. "participant.actorReference(PractitionerRole)" .-&gt; PractitionerRole
+  Appointment -. "participant.actorReference(HealthcareService)" .-&gt; HealthcareService
+  Appointment -. "participant.actorReference(Location)" .-&gt; Location
 
-  Appointment -. "serviceType&lt;br/&gt;CodeableReference(HealthcareService)" .-&gt; HealthcareService
-  Appointment -. "slot&lt;br/&gt;Reference(Slot)" .-&gt; Slot
+  Appointment -. "serviceTypeCodeableReference(HealthcareService)" .-&gt; HealthcareService
+  Appointment -. "slotReference(Slot)" .-&gt; Slot
 
   %% PractitionerRole context
   PractitionerRole --&gt;|"practitioner"| Practitioner
@@ -170,6 +149,28 @@ flowchart LR
   classDef svc fill:#fff3e0
   classDef core fill:#f5f5f5
  (        <a href="interactions.html">src</a>
+)
+      </li>
+      <li>
+
+        Responsible: 
+
+        HL7&reg; Austria, TC FHIR&reg;
+
+       (        <a href="ValueSet-AtSchedulingServiceType.html">src</a>
+)
+      </li>
+      <li>
+
+    IG &copy; 2024+ HL7&reg; Austria, TC FHIR&reg;.  Package hl7.at.fhir.tc.wg.scheduling.r5#0.2.0 based on FHIR&reg; 5.0.0. Generated 2026-06-09
+    
+    
+                Links: Table of Contents |
+                 QA Report
+                 
+                
+    
+   (        <a href="toc.html">src</a>
 )
       </li>
       <li>

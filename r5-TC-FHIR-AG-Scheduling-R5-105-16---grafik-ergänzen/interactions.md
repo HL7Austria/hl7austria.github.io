@@ -13,44 +13,45 @@ The following diagram shows how the Ressources and Profiles relevant to this Imp
 
 ```
 
+
 flowchart LR
   %% Core scheduling backbone
-  Schedule["**Schedule**<br/>HL7® AT Scheduling Schedule Profile"]:::sched
-  Slot["**Slot**<br/>HL7® AT Scheduling Slot Profile"]:::slot
-  Appointment["**Appointment**<br/>HL7® AT Scheduling Appointment Profile"]:::appt
+  Schedule["**Schedule**HL7® AT Scheduling Schedule Profile"]:::sched
+  Slot["**Slot**HL7® AT Scheduling Slot Profile"]:::slot
+  Appointment["**Appointment**HL7® AT Scheduling Appointment Profile"]:::appt
 
   %% Service + participants
-  HealthcareService["**HealthcareService**<br/>HL7® AT Scheduling HealthcareService Profile"]:::svc
+  HealthcareService["**HealthcareService**HL7® AT Scheduling HealthcareService Profile"]:::svc
 
-  Patient["**Patient**<br/>HL7® AT Core Patient Profile"]:::core
-  RelatedPerson["**RelatedPerson**<br/>FHIR R5 RelatedPerson"]:::core
-  Practitioner["**Practitioner**<br/>HL7® AT Core Practitioner Profile"]:::core
-  PractitionerRole["**PractitionerRole**<br/>HL7® AT Core PractitionerRole Profile"]:::core
-  Organization["**Organization**<br/>HL7® AT Core Organization Profile"]:::core
-  Location["**Location**<br/>HL7® AT Core Location Profile"]:::core
+  Patient["**Patient**HL7® AT Core Patient Profile"]:::core
+  RelatedPerson["**RelatedPerson**FHIR R5 RelatedPerson"]:::core
+  Practitioner["**Practitioner**HL7® AT Core Practitioner Profile"]:::core
+  PractitionerRole["**PractitionerRole**HL7® AT Core PractitionerRole Profile"]:::core
+  Organization["**Organization**HL7® AT Core Organization Profile"]:::core
+  Location["**Location**HL7® AT Core Location Profile"]:::core
 
   %% Relationships Schedule/Slot/Appointment
   Schedule -->|"defines availability for"| Slot
   Slot -->|"is booked by"| Appointment
-  Schedule -. "serviceType<br/>CodeableReference(HealthcareService)" .-> HealthcareService
-  Schedule -. "actor<br/>Reference(Patient)" .-> Patient
-  Schedule -. "actor<br/>Reference(Practitioner)" .-> Practitioner
-  Schedule -. "actor<br/>Reference(PractitionerRole)" .-> PractitionerRole
-  Schedule -. "actor<br/>Reference(RelatedPerson)" .-> RelatedPerson
-  Schedule -. "actor<br/>Reference(HealthcareService)" .-> HealthcareService
-  Schedule -. "actor<br/>Reference(Location)" .-> Location
+  Schedule -. "serviceTypeCodeableReference(HealthcareService)" .-> HealthcareService
+  Schedule -. "actorReference(Patient)" .-> Patient
+  Schedule -. "actorReference(Practitioner)" .-> Practitioner
+  Schedule -. "actorReference(PractitionerRole)" .-> PractitionerRole
+  Schedule -. "actorReference(RelatedPerson)" .-> RelatedPerson
+  Schedule -. "actorReference(HealthcareService)" .-> HealthcareService
+  Schedule -. "actorReference(Location)" .-> Location
 
   %% Relationships Appointment -> participants
-  Appointment -->|"subject<br/>Reference(Patient|Group)"| Patient
-  Appointment -. "participant.actor<br/>Reference(Patient)" .-> Patient
-  Appointment -. "participant.actor<br/>Reference(RelatedPerson)" .-> RelatedPerson
-  Appointment -. "participant.actor<br/>Reference(Practitioner)" .-> Practitioner
-  Appointment -. "participant.actor<br/>Reference(PractitionerRole)" .-> PractitionerRole
-  Appointment -. "participant.actor<br/>Reference(HealthcareService)" .-> HealthcareService
-  Appointment -. "participant.actor<br/>Reference(Location)" .-> Location
+  Appointment -->|"subjectReference(Patient|Group)"| Patient
+  Appointment -. "participant.actorReference(Patient)" .-> Patient
+  Appointment -. "participant.actorReference(RelatedPerson)" .-> RelatedPerson
+  Appointment -. "participant.actorReference(Practitioner)" .-> Practitioner
+  Appointment -. "participant.actorReference(PractitionerRole)" .-> PractitionerRole
+  Appointment -. "participant.actorReference(HealthcareService)" .-> HealthcareService
+  Appointment -. "participant.actorReference(Location)" .-> Location
 
-  Appointment -. "serviceType<br/>CodeableReference(HealthcareService)" .-> HealthcareService
-  Appointment -. "slot<br/>Reference(Slot)" .-> Slot
+  Appointment -. "serviceTypeCodeableReference(HealthcareService)" .-> HealthcareService
+  Appointment -. "slotReference(Slot)" .-> Slot
 
   %% PractitionerRole context
   PractitionerRole -->|"practitioner"| Practitioner
