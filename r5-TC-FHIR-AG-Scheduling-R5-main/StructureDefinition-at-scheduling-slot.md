@@ -49,7 +49,7 @@ Other representations of profile: [CSV](StructureDefinition-at-scheduling-slot.c
 | | | | | |
 | :--- | :--- | :--- | :--- | :--- |
 | [start](https://hl7.org/fhir/R5/slot-search.html#Slot-start) | [date](https://hl7.org/fhir/R5/search.html#date) | Appointment date/time. | Slot.start |  |
-| [status](https://hl7.org/fhir/R5/slot-search.html#Slot-status) | [token](https://hl7.org/fhir/R5/search.html#token) | The free/busy status of the appointment. Shall always be "free" | Slot.status |  |
+| [status](https://hl7.org/fhir/R5/slot-search.html#Slot-status) | [token](https://hl7.org/fhir/R5/search.html#token) | The free/busy status of the appointment. Shall always be`free` | Slot.status |  |
 
 
 
@@ -64,7 +64,7 @@ Other representations of profile: [CSV](StructureDefinition-at-scheduling-slot.c
   "name" : "HL7ATSchedulingSlot",
   "title" : "HL7® AT Scheduling Slot Profile",
   "status" : "draft",
-  "date" : "2026-06-09T13:44:21+00:00",
+  "date" : "2026-06-09T19:55:01+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "HL7® Austria FHIR® Scheduling Profile for slot data in Austria.",
   "fhirVersion" : "5.0.0",
