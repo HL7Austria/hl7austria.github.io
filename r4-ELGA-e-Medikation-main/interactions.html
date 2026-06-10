@@ -410,23 +410,15 @@ Es muss erneut ein <a href="interactions.html#plan-read">Plan-Read</a> ausgefüh
 
 <ol>
   <li><a name="l1190">​</a><strong>GDA 1</strong> möchte den Medikationsplan seiner Patientin bearbeiten und führt ein POST <a href="OperationDefinition-AtEmed.List.Planread.html">$plan-read</a> auf das Collection Bundle des Medikationsplans aus.</li>
-  <li>Die Fachanwendung prüft, ob ein Medikationsplan für den/die Patient:in existiert (siehe <a href="interactions.html#plan-read">Plan-Read</a>). Annahme: Es ist bereits ein Medikationsplan vorhanden.</li>
-  <li>Die Fachanwendung erstellt ein <strong>Auslieferungs-Medikationsplan-Collection-Bundle</strong> (Siehe <a href="interactions.html#plan-read">Plan-Read</a>)</li>
-  <li>Die Fachanwendung liefert das Collection Bundle inkl. ETag "123" an den GDA 1.</li>
-  <li>GDA 1 bearbeitet den Medikationsplan.</li>
-  <li><a name="l1219">​</a><strong>GDA 2</strong> führt ein POST <a href="OperationDefinition-AtEmed.List.Planread.html">$plan-read</a> auf den Medikationsplan aus, während GDA 1 das von der Fachanwendung übermittelte Collection Bundle bearbeitet.</li>
-  <li>Die Fachanwendung prüft erfolgreich, ob ein Medikationsplan für den/die Patient:in existiert.</li>
-  <li>Die Fachanwendung erstellt, genau wie für GDA 1, ein <strong>Auslieferungs-Medikationsplan-Collection-Bundle</strong> (siehe <a href="interactions.html#plan-read">Plan-Read</a>)</li>
-  <li>Die Fachanwendung liefert das Collection Bundle inkl. ETag "123" an den GDA 2.</li>
-  <li>GDA 2 <strong>bearbeitet zeitgleich</strong> mit GDA 1 den Medikationsplan.</li>
-  <li><a name="l1248">​</a><strong>GDA 2 sendet zuerst</strong> mittels POST <a href="OperationDefinition-AtEmed.List.Write.html">$plan-write</a> ein <a href="design_choices.html#medikationsplan-transaction-bundle-atemedbundlemedikationsplantx-transaction-bundle">Medikationsplan-Transaction-Bundle</a> mit dem aktualisierten Medikationsplan und übermittelt den ETag "123".</li>
-  <li>Die Fachanwendung prüft, ob der im Header übermittelte <strong>ETag</strong> mit dem ETag der Fachanwendung <strong>übereinstimmt</strong>. Beide haben den Wert "123".</li>
-  <li>Die Fachanwendung validert den neuen Plan bezüglich (keine unzulässigen Zustandsübergänge)</li>
-  <li>Die Prüfung verläuft erfolgreich, der <strong>neue Medikationsplan</strong> wird <strong>persistiert</strong> inkl. neuer ETag "124".</li>
+  <li>Die Fachanwendung erstellt ein <strong>Auslieferungs-Medikationsplan-Collection-Bundle</strong> (siehe <a href="interactions.html#plan-read">Plan-Read</a>) inkl. ETag "123" und liefert es an den GDA 1. GDA 1 bearbeitet den Medikationsplan.</li>
+  <li><a name="l1207">​</a><strong>GDA 2</strong> führt ein POST <a href="OperationDefinition-AtEmed.List.Planread.html">$plan-read</a> auf den Medikationsplan aus, während GDA 1 das von der Fachanwendung übermittelte Collection Bundle bearbeitet.</li>
+  <li>Die Fachanwendung erstellt ein <strong>Auslieferungs-Medikationsplan-Collection-Bundle</strong> (siehe <a href="interactions.html#plan-read">Plan-Read</a>) inkl. ETag "123" und liefert es an den GDA 2.
+GDA 2 <strong>bearbeitet zeitgleich</strong> mit GDA 1 den Medikationsplan.</li>
+  <li><a name="l1227">​</a><strong>GDA 2 sendet zuerst</strong> mittels POST <a href="OperationDefinition-AtEmed.List.Write.html">$plan-write</a> ein <a href="design_choices.html#medikationsplan-transaction-bundle-atemedbundlemedikationsplantx-transaction-bundle">Medikationsplan-Transaction-Bundle</a> mit dem aktualisierten Medikationsplan und übermittelt den ETag "123".</li>
+  <li>Die Fachanwendung prüft, ob der im Header übermittelte <strong>ETag</strong> mit dem ETag der Fachanwendung <strong>übereinstimmt</strong>. Beide haben den Wert "123", der <strong>neue Medikationsplan</strong> wird <strong>persistiert</strong>.</li>
   <li>GDA 2 erhält eine Meldung, dass der Medikationsplan erfolgreich aktualisiert wurde.</li>
-  <li><a name="l1283">​</a>GDA 1 sendet mittels POST <a href="OperationDefinition-AtEmed.List.Write.html">$plan-write</a> ein <a href="design_choices.html#medikationsplan-transaction-bundle-atemedbundlemedikationsplantx-transaction-bundle">Medikationsplan-Transaction-Bundle</a> mit dem aktualisierten Medikationsplan und übermittelt den ETag "123".</li>
-  <li>Die Prüfung auf Übereinstimmung der ETags von GDA 1 mit dem der Fachanwendung schlägt fehl.</li>
-  <li>Die Fachanwendung <strong>lehnt das Speichern ab</strong>.</li>
+  <li><a name="l1256">​</a>GDA 1 sendet mittels POST <a href="OperationDefinition-AtEmed.List.Write.html">$plan-write</a> ein <a href="design_choices.html#medikationsplan-transaction-bundle-atemedbundlemedikationsplantx-transaction-bundle">Medikationsplan-Transaction-Bundle</a> mit dem aktualisierten Medikationsplan und übermittelt den ETag "123".</li>
+  <li>Die Prüfung auf Übereinstimmung der ETags von GDA 1 mit dem der Fachanwendung schlägt fehl, da dieser ETag bereits zum Schreiben verwendet wurde. Die Fachanwendung <strong>lehnt das Speichern ab</strong>.</li>
   <li>GDA 1 erhält eine <strong>Fehlermeldung</strong> und muss ein erneutes Plan-Read ausführen, welches das Generieren eines neuen <em>Auslieferungs-Medikationsplan-Collection-Bundle</em> auslöst und mit dem aktuellen ETag übermittelt wird.</li>
 </ol>
 
@@ -436,7 +428,10 @@ Es muss erneut ein <a href="interactions.html#plan-read">Plan-Read</a> ausgefüh
 <p><br/></p>
 
 <h4 id="groupidentifier-create">Groupidentifier-Create</h4>
-<p>siehe "Ablauf - Bezug e-Med groupIdentifier".</p>
+<p>siehe "Ablauf - Bezug e-Med GroupIdentifier".</p>
+
+<h4 id="prescription-search">Prescription-Search</h4>
+<p>In Arbeit.</p>
 
 
 
@@ -457,7 +452,7 @@ Es muss erneut ein <a href="interactions.html#plan-read">Plan-Read</a> ausgefüh
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Jun 9, 2026 15:23+0000">2026-06-09</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Wed, Jun 10, 2026 09:53+0000">2026-06-10</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

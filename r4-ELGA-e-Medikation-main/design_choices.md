@@ -33,31 +33,11 @@ Nachdem die Fachanwendung beim [Plan-Write](interactions.md#plan-write), mittels
 
 Bei einem [Plan-Read](interactions.md#plan-read) wird von der Fachanwendung ein **Auslieferungs-Bundle** bereitgestellt und wie folgt **angepasst**: Neue oder gänderte Planeinträge erhalten das List.entry.flag unchanged, zum Entfernen markierte Planeinträge (mit List.entry.flag **removed**) werden aus dem Medikationsplan entfernt. Wurden alle Planeinträge entfernt, erhält der Medikationsplan das List.emptyReason **nilknown**.
 
-#### Medikationsplan-Transaction-Bundle: AtEmedBundleMedikationsplanTx (Transaction Bundle)
-
-Ein Bundle vom Typ Transaction, das beim [Plan-Write](interactions.md#plan-write) an die Fachanwendung übermittelt wird. Das Bundle enthält den [Medikationsplan](design_choices.md#medikationsplan-atelgaemedlistmedikationsplan-list) mit Referenzen auf die [Medikationsplaneinträge](design_choices.md#medikationsplaneintrag-bzw-planeintrag-atelgaemedmedicationrequestplaneintrag-medicationrequest). Alle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert.
-
-Das Transaction Bundle dient der Aktualisierung aller enthaltenen Ressourcen und wird selbst nicht persisitert.
-
-#### Geplante Abgabe: AtElgaEmedMedicationRequestGeplanteAbgabe (MedicationRequest)
-
-Eine **Geplante Abgabe** einer Medikation aus dem zugrundeliegenden Medikationsplaneintrag wird durch eine **MedicationRequest**-Ressource der Kategorie **Geplante Abgabe** abgebildet. Sie enthält die verordnete Medikation und deren Dosierung und spielgelt die Inhalte des e-Rezepts wider. **Geplante Abgaben** dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. Werden mehrere Medikamente gleichzeitig verordnet (und sollen demselben e-Rezept zugeordnet sein), wird für jedes Medikament eine geplante Abgabe mit demselben e-Med groupIdentifier erstellt (bildet 'Rezept-Klammer'). Es werden R5-Backport-Extensions verwendet.
-
-Der aktuelle Status einer geplanten Abgabe wird im **status**-Element dokumentiert (siehe [Status des MedicationRequests in der geplanten Abgabe](workflowmanagement.md#status-des-medicationrequests-in-der-geplanten-abgabe)).
-
 #### Geplante Abgabe Transaction-Bundle: AtEmedBundleGeplanteAbgabeTX (Transaction Bundle)
 
-Ein Bundle vom Typ Transaction, das beim Speichern von [Geplanten Abgaben](design_choices.md#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest) mittels [Prescription-Write](interactions.md#request-write) auf den Medikationsplan an die Fachanwendung übermittelt wird.
+Ein Bundle vom Typ Transaction, das beim Speichern von [Geplanten Abgaben](design_choices.md#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest) mittels [Prescription-Write](interactions.md#prescription-write) auf den Medikationsplan an die Fachanwendung übermittelt wird.
 
-Die im Bundle enthaltenen **Geplanten Abgaben** müssen mit dem gleichen **e-Med groupIdentifier** gekennzeichnet sein. Fehlt dieser, wird er von der Fachanwendung ergänzt.
+Die im Bundle enthaltenen **Geplanten Abgaben** müssen mit dem gleichen **e-Med GroupIdentifier** gekennzeichnet sein. Fehlt dieser, wird er von der Fachanwendung ergänzt.
 
-#### Durchgeführte Abgabe: AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe (MedicationDispense)
-
-Eine **Durchgeführte Abgabe** einer Medikation wird durch eine **MedicationDispense**-Ressource abgebildet. Die **Durchgeführte Abgabe** enthält die abgegebene Medikation und deren Dosierung und dient somit der Nachvollziehbarkeit der abgegebenen Arzneimittel in der e-Medikation.
-
-In der **Durchgeführten Abgabe** können Abweichungen von der **Geplanten Abgabe** hinsichtlich des Medikaments und dessen Dosierung dokumentiert werden. Sofern eine zugehörige [Geplante Abgabe](design_choices.md#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest) vorliegt, muss diese mit dem zugehörigen Planeintrag referenziert werden.
-
-Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige geplante Abgabe, ersichtlich. Es werden R5-Backport-Extensions verwendet.
-
-Der aktuelle Status einer **Durchgeführte Abgabe** wird mittels **status**- und **type**-Element dokumentiert (siehe [Status des MedicationDispense in der durchgeführten Abgabe](workflowmanagement.md#status-des-medicationdispense-in-der-durchgeführten-abgabe)).
+Profil in Arbeit.
 

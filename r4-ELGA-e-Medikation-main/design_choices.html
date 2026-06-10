@@ -304,43 +304,45 @@ Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstell
 Dient einerseits der 1. Persistierung nach einem Plan-Write und 2. der Auslieferung des Medikationsplans bei einem Plan-Read-Zugriff an den GDA.</p>
 
 <h5 id="persistiertes-medikationsplan-collection-bundle">Persistiertes Medikationsplan-Collection-Bundle</h5>
-<p>Nachdem die Fachanwendung beim <a href="interactions.html#plan-write">Plan-Write</a>, mittels <a href="design_choices.html#medikationsplan-transaction-bundle-atemedbundlemedikationsplantx-transaction-bundle">Medikationsplan-Transaction-Bundle</a> alle Ressourcen aktualisiert hat, erstellt diese ein <em>Medikationsplan-Collection-Bundle</em> zur <strong>Persistierung</strong>, welches den vom GDA übermittelten Medikationsplan <strong>unverändert</strong> (keine Statusänderungen oder Entfernung entsprechend markierten Planeinträgen) abbildet und die Gesamtheit aller referenzierten Ressourcen enthält. Dies stellt sicher, dass in den historischen Versionen des Medikationsplans alle relevanten Informationen verfügbar sind.</p>
+<p><a name="l438">​</a>Nachdem die Fachanwendung beim <a href="interactions.html#plan-write">Plan-Write</a>, mittels <a href="design_choices.html#medikationsplan-transaction-bundle-atemedbundlemedikationsplantx-transaction-bundle">Medikationsplan-Transaction-Bundle</a> alle Ressourcen aktualisiert hat, erstellt diese ein <em>Medikationsplan-Collection-Bundle</em> zur <strong>Persistierung</strong>, welches den vom GDA übermittelten Medikationsplan <strong>unverändert</strong> (keine Statusänderungen oder Entfernung entsprechend markierten Planeinträgen) abbildet und die Gesamtheit aller referenzierten Ressourcen enthält. Dies stellt sicher, dass in den historischen Versionen des Medikationsplans alle relevanten Informationen verfügbar sind.</p>
 
 <h5 id="auslieferungs-medikationsplan-collection-bundle">Auslieferungs-Medikationsplan-Collection-Bundle</h5>
 <p>Bei einem <a href="interactions.html#plan-read">Plan-Read</a> wird von der Fachanwendung ein <strong>Auslieferungs-Bundle</strong> bereitgestellt und wie folgt <strong>angepasst</strong>: 
 Neue oder gänderte Planeinträge erhalten das List.entry.flag unchanged, zum Entfernen markierte Planeinträge (mit List.entry.flag <em>removed</em>) werden aus dem Medikationsplan entfernt.
 Wurden alle Planeinträge entfernt, erhält der Medikationsplan das List.emptyReason <em>nilknown</em>.</p>
 
-<h4 id="medikationsplan-transaction-bundle-atemedbundlemedikationsplantx-transaction-bundle">Medikationsplan-Transaction-Bundle: AtEmedBundleMedikationsplanTx (<em>Transaction Bundle</em>)</h4>
+  <!-- #### Medikationsplan-Transaction-Bundle: AtEmedBundleMedikationsplanTx (*Transaction Bundle*)
 
-<p>Ein Bundle vom Typ Transaction, das beim <a href="interactions.html#plan-write">Plan-Write</a> an die Fachanwendung übermittelt wird. 
-Das Bundle enthält den <a href="design_choices.html#medikationsplan-atelgaemedlistmedikationsplan-list">Medikationsplan</a> mit Referenzen auf die <a href="design_choices.html#medikationsplaneintrag-bzw-planeintrag-atelgaemedmedicationrequestplaneintrag-medicationrequest">Medikationsplaneinträge</a>. Alle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert.</p>
+Ein Bundle vom Typ Transaction, das beim [Plan-Write](interactions.html#plan-write) an die Fachanwendung übermittelt wird. 
+Das Bundle enthält den [Medikationsplan](design_choices.html#medikationsplan-atelgaemedlistmedikationsplan-list) mit Referenzen auf die [Medikationsplaneinträge](design_choices.html#medikationsplaneintrag-bzw-planeintrag-atelgaemedmedicationrequestplaneintrag-medicationrequest). Alle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert.
 
-<p>Das Transaction Bundle dient der Aktualisierung aller enthaltenen Ressourcen und wird selbst nicht persisitert.</p>
+Das Transaction Bundle dient der Aktualisierung aller enthaltenen Ressourcen und wird selbst nicht persisitert. -->
 
-<h4 id="geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest">Geplante Abgabe: AtElgaEmedMedicationRequestGeplanteAbgabe (<em>MedicationRequest</em>)</h4>
+  <!-- #### Geplante Abgabe: AtElgaEmedMedicationRequestGeplanteAbgabe (*MedicationRequest*)
 
-<p>Eine <em>Geplante Abgabe</em> einer Medikation aus dem zugrundeliegenden Medikationsplaneintrag wird durch eine <em>MedicationRequest</em>-Ressource der Kategorie <em>Geplante Abgabe</em> abgebildet. Sie enthält die verordnete Medikation und deren Dosierung und spielgelt die Inhalte des e-Rezepts wider. <em>Geplante Abgaben</em> dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. 
-Werden mehrere Medikamente gleichzeitig verordnet (und sollen demselben e-Rezept zugeordnet sein), wird für jedes Medikament eine geplante Abgabe mit demselben e-Med groupIdentifier erstellt (bildet 'Rezept-Klammer'). Es werden R5-Backport-Extensions verwendet.</p>
+Eine *Geplante Abgabe* einer Medikation aus dem zugrundeliegenden Medikationsplaneintrag wird durch eine *MedicationRequest*-Ressource der Kategorie *Geplante Abgabe* abgebildet. Sie enthält die verordnete Medikation und deren Dosierung und spielgelt die Inhalte des e-Rezepts wider. *Geplante Abgaben* dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. 
+Werden mehrere Medikamente gleichzeitig verordnet (und sollen demselben e-Rezept zugeordnet sein), wird für jedes Medikament eine geplante Abgabe mit demselben e-Med GroupIdentifier erstellt (bildet 'Rezept-Klammer'). Es werden R5-Backport-Extensions verwendet.
 
-<p>Der aktuelle Status einer geplanten Abgabe wird im <em>status</em>-Element dokumentiert (siehe <a href="workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der geplanten Abgabe</a>).</p>
+Der aktuelle Status einer geplanten Abgabe wird im *status*-Element dokumentiert (siehe [Status des MedicationRequests in der geplanten Abgabe](workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe)). -->
 
 <h4 id="geplante-abgabe-transaction-bundle-atemedbundlegeplanteabgabetx-transaction-bundle">Geplante Abgabe Transaction-Bundle: AtEmedBundleGeplanteAbgabeTX (<em>Transaction Bundle</em>)</h4>
 
-<p><a name="l534">​</a>Ein Bundle vom Typ Transaction, das beim Speichern von <a href="design_choices.html#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest">Geplanten Abgaben</a> mittels <a href="interactions.html#request-write">Prescription-Write</a> auf den Medikationsplan an die Fachanwendung übermittelt wird.</p>
+<p><a name="l487">​</a>Ein Bundle vom Typ Transaction, das beim Speichern von <a href="design_choices.html#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest">Geplanten Abgaben</a> mittels <a href="interactions.html#prescription-write">Prescription-Write</a> auf den Medikationsplan an die Fachanwendung übermittelt wird.</p>
 
-<p>Die im Bundle enthaltenen <em>Geplanten Abgaben</em> müssen mit dem gleichen <em>e-Med groupIdentifier</em> gekennzeichnet sein. Fehlt dieser, wird er von der Fachanwendung ergänzt.</p>
+<p>Die im Bundle enthaltenen <em>Geplanten Abgaben</em> müssen mit dem gleichen <em>e-Med GroupIdentifier</em> gekennzeichnet sein. Fehlt dieser, wird er von der Fachanwendung ergänzt.</p>
 
-<h4 id="durchgeführte-abgabe-atelgaemedmedicationdispensedurchgefuehrteabgabe-medicationdispense">Durchgeführte Abgabe: AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe (<em>MedicationDispense</em>)</h4>
+<p>Profil in Arbeit.</p>
 
-<p>Eine <em>Durchgeführte Abgabe</em> einer Medikation wird durch eine <em>MedicationDispense</em>-Ressource abgebildet. 
-Die <em>Durchgeführte Abgabe</em> enthält die abgegebene Medikation und deren Dosierung und dient somit der Nachvollziehbarkeit der abgegebenen Arzneimittel in der e-Medikation.</p>
+  <!-- #### Durchgeführte Abgabe: AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe (*MedicationDispense*)
 
-<p>In der <em>Durchgeführten Abgabe</em> können Abweichungen von der <em>Geplanten Abgabe</em> hinsichtlich des Medikaments und dessen Dosierung dokumentiert werden. Sofern eine zugehörige <a href="design_choices.html#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest">Geplante Abgabe</a> vorliegt, muss diese mit dem zugehörigen Planeintrag referenziert werden.</p>
+Eine *Durchgeführte Abgabe* einer Medikation wird durch eine *MedicationDispense*-Ressource abgebildet. 
+Die *Durchgeführte Abgabe* enthält die abgegebene Medikation und deren Dosierung und dient somit der Nachvollziehbarkeit der abgegebenen Arzneimittel in der e-Medikation. 
 
-<p>Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige geplante Abgabe, ersichtlich. Es werden R5-Backport-Extensions verwendet.</p>
+In der *Durchgeführten Abgabe* können Abweichungen von der *Geplanten Abgabe* hinsichtlich des Medikaments und dessen Dosierung dokumentiert werden. Sofern eine zugehörige [Geplante Abgabe](design_choices.html#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest) vorliegt, muss diese mit dem zugehörigen Planeintrag referenziert werden. 
 
-<p>Der aktuelle Status einer <em>Durchgeführte Abgabe</em> wird mittels <em>status</em>- und <em>type</em>-Element dokumentiert (siehe <a href="workflowmanagement.html#status-des-medicationdispense-in-der-durchgeführten-abgabe">Status des MedicationDispense in der durchgeführten Abgabe</a>).</p>
+Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige geplante Abgabe, ersichtlich. Es werden R5-Backport-Extensions verwendet.
+
+Der aktuelle Status einer *Durchgeführten Abgabe* wird mittels *status*- und *type*-Element dokumentiert (siehe [Status des MedicationDispense in der durchgeführten Abgabe](workflowmanagement.html#status-des-medicationdispense-in-der-durchgeführten-abgabe)). -->
 
 
 
@@ -361,7 +363,7 @@ Die <em>Durchgeführte Abgabe</em> enthält die abgegebene Medikation und deren 
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Jun 9, 2026 15:23+0000">2026-06-09</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Wed, Jun 10, 2026 09:53+0000">2026-06-10</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
