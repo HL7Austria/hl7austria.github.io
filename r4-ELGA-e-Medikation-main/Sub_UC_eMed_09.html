@@ -288,16 +288,16 @@ width: 100%;}
 
 <h3 id="sub_uc_emed_09_01---durchgeführte-abgabe-erfassen">Sub_UC_eMed_09_01 - Durchgeführte Abgabe erfassen</h3>
 
-<p><a name="l377">​</a>Der GDA (Apotheke bzw. Arzt mit Hausapotheke) kann eine <a href="design_choices.html#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense">Durchgeführte Abgabe</a> für einen ELGA-Teilnehmer erfassen, um die Abgabe eines Medikamentes medizinisch zu dokumentieren.</p>
+<p><a name="l377">​</a>Der GDA (Apotheke bzw. Arzt mit Hausapotheke) kann eine <a href="dStructureDefinition-at-elga-emed-medikationdispense-durchgefuehrteabgabe.html">Durchgeführte Abgabe</a> für einen ELGA-Teilnehmer erfassen, um die Abgabe eines Medikamentes medizinisch zu dokumentieren.</p>
 
-<p><a name="l383">​</a>Sofern eine zugehörige <a href="design_choices.html#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest">Geplante Abgabe</a> vorliegt, <strong>muss</strong> diese im Element <em>MedicationDispense.authorizingPrescription[geplanteAbgabe]</em> referenziert werden. Der zugehörige Planeintrag wird in <em>MedicationDispense.authorizingPrescription[planeintrag]</em> referenziert.</p>
+<p>Sofern eine zugehörige <a href="StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.html">Geplante Abgabe</a> vorliegt, <strong>muss</strong> diese im Element <em>MedicationDispense.authorizingPrescription[geplanteAbgabe]</em> referenziert werden. Der zugehörige Planeintrag wird in <em>MedicationDispense.authorizingPrescription[planeintrag]</em> referenziert.</p>
 
-<p>Die in der <em>Geplanten Abgabe</em> dokumentierte <a href="workflowmanagement.html#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart">Rezeptart</a> (bzw. eine evtl. Einschränkung durch den GDA (Arzt) im Element <em>MedicationRequest.numberOfRepeatsAllowed</em>), legt fest wieviele Abgaben durchgeführt werden dürfen.</p>
+<p>Die in der <em>Geplanten Abgabe</em> dokumentierte <a href="workflowmanagement.html#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart">Rezeptart</a> (bzw. eine evtl. Einschränkung durch den GDA (Arzt) im Element <em>MedicationRequest.numberOfRepeatsAllowed</em>), legt fest wieviele Einlösungen durchgeführt werden dürfen.</p>
 
-<p>Der aktuelle Status einer <em>Durchgeführten Abgabe</em> wird mittels <em>MedicationDispense.status</em> und <em>MedicationDispense.type</em> dokumentiert (siehe <a href="workflowmanagement.html#status-des-medicationdispense-in-der-durchgeführten-abgabe">Status des MedicationDispense in der durchgeführten Abgabe</a>) und kann sich auf den Status der zugehörigen <em>Geplanten Abgabe</em> auswirken. 
-Via <em>MedicationDispense.type</em> können Einzelabge, Teilabgaben, Besorgerprozess, Leerabgaben, sowie Notabgabe, Rezeptnachbringung und OTC-Abgabe dokumentiert werden, siehe Tabelle <a href="workflowmanagement.html#varianten-der-teil-abgabe">Durchgeführte Abgabe - Varianten der (Teil-)Abgabe</a>. Bei Teilabgaben, Abgaben gemäß dem Besorgerprozess und Leerabgaben muss eine vorgegeben Abfolge an zur Verfügung stehenden <em>types</em> eingehalten werden.</p>
+<p>Der aktuelle Status einer <em>Durchgeführten Abgabe</em> wird mittels <em>MedicationDispense.status</em> und <em>MedicationDispense.type</em> dokumentiert (siehe <a href="workflowmanagement.html#status-des-medicationdispense-in-der-durchgeführten-abgabe">Status des MedicationDispense in der Durchgeführten Abgabe</a>) und kann sich auf den Status der zugehörigen <em>Geplanten Abgabe</em> auswirken. 
+Via <em>MedicationDispense.type</em> können Einzelabgabe, Teilabgaben, Besorgerprozess und Leerabgaben dokumentiert werden, siehe Tabelle <a href="workflowmanagement.html#varianten-der-teil-abgabe">Durchgeführte Abgabe - Varianten der (Teil-)Abgabe</a>. Bei Teilabgaben, Abgaben gemäß dem Besorgerprozess und Leerabgaben muss eine vorgegeben Abfolge an zur Verfügung stehenden <em>types</em> eingehalten werden.</p>
 
-<p>Die abgegebene Packungsmenge (<em>MedicationDispense.quantity</em>) ist verpflichtend anzugeben, wird aber nicht durch die Fachanwendung im Kontext einer möglichen zugrundeliegenden Geplanten Abgabe geprüft. Ob eine Einlösung als vollständig gilt, hängt nicht von der Anzahl der abgegebenen Packungen ab, sondern davon, ob ein <em>MedicationDispense.type</em> der <em>complete</em> beinhaltet, gesetzt wurde.</p>
+<p>Die abgegebene Packungsmenge (<em>MedicationDispense.quantity</em>) ist verpflichtend anzugeben, wird jedoch nicht durch die Fachanwendung im Kontext einer möglichen zugrundeliegenden <em>Geplanten Abgabe</em> geprüft. Ob eine Einlösung als vollständig gilt, hängt nicht von der Anzahl der abgegebenen Packungen ab, sondern davon, ob ein <em>MedicationDispense.type</em>, der <em>complete</em> beinhaltet, gesetzt wurde.</p>
 
 <h4 id="sub_uc_emed_09_01_01-vollständige-abgabe-einzelabgabe">Sub_UC_eMed_09_01_01 Vollständige Abgabe (Einzelabgabe)</h4>
 
@@ -403,7 +403,7 @@ Via <em>MedicationDispense.type</em> können Einzelabge, Teilabgaben, Besorgerpr
     dosageInstruction: Dosierung + Einnahmezeitraum (ab sofort | in der Zukunft)  // angepasst an abgegebene Medikation --&gt;
 </code></pre>
 
-<h4 id="sub_uc_emed_09_01_0x-durchgeführte-abgabe-ohne-bezug-zu-einer-geplanten-abgabe-erfassen-otc-abgabe--rezeptfrei">Sub_UC_eMed_09_01_0x Durchgeführte Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen (OTC Abgabe / rezeptfrei)</h4>
+<h4 id="sub_uc_emed_09_01_04-durchgeführte-abgabe-ohne-bezug-zu-einer-geplanten-abgabe-erfassen-ohne-verordnung--otc-abgabe">Sub_UC_eMed_09_01_04 Durchgeführte Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen (ohne Verordnung / OTC Abgabe)</h4>
 
 <p>In folgenden Fällen liegt bei der Erfassung einer <em>Durchgeführten Abgabe</em> keine zugehörige <em>Durchgeführte Abgabe</em> vor:</p>
 <ul>
@@ -416,46 +416,23 @@ Via <em>MedicationDispense.type</em> können Einzelabge, Teilabgaben, Besorgerpr
   </li>
 </ul>
 
-<p><br/></p>
+<p>In Arbeit.
+<br/></p>
 
-<h4 id="sub_uc_emed_09_01_0x-durchgeführte-abgabe-mit-besorgerprozess-erfassen">Sub_UC_eMed_09_01_0x Durchgeführte Abgabe mit Besorgerprozess erfassen</h4>
-
-<ul>
-  <li>"Besorgerprozess": Medikament von Apotheke bestellt oder Magistrale Zubereitung in Vorbereitung</li>
-  <li>"Besorgerprozess": bestelltes Medikament wird ausgehändigt</li>
-</ul>
-
-  <!-- Geplante Abgabe kann nicht mehr in einer anderen Apotheke eingelöst werden 
-und Teilabgabe -->
-
-<p><br/></p>
-
-<h4 id="sub_uc_emed_09_01_0x-durchgeführte-abgabe-als-teilabgaben-erfassen">Sub_UC_eMed_09_01_0x Durchgeführte Abgabe als Teilabgaben erfassen</h4>
-
-<ul>
-  <li>
-    <ol>
-      <li>Teilabgabe</li>
-    </ol>
-  </li>
-  <li>Weitere Teilabgabe</li>
-  <li>Letzte Teilabgabe</li>
-</ul>
-
-<p><br/></p>
-
-<h4 id="sub_uc_emed_09_01_0x-durchgeführte-abgabe-als-leerabgabe-erfassen">Sub_UC_eMed_09_01_0x Durchgeführte Abgabe als Leerabgabe erfassen</h4>
+<h4 id="sub_uc_emed_09_01_05-durchgeführte-abgabe-als-leerabgabe-erfassen">Sub_UC_eMed_09_01_05 Durchgeführte Abgabe als Leerabgabe erfassen</h4>
 
 <ul>
   <li>Leerabgabe bei Einzelabgabe</li>
   <li>Leerabgabe beendet Teilabgaben</li>
 </ul>
 
+<p>In Arbeit.</p>
+
 <p><br/></p>
 
-<h4 id="sub_uc_emed_09_01_0x-durchgeführte-abgabe-nacherfassen-rezept-wird-nachgebracht">Sub_UC_eMed_09_01_0x Durchgeführte Abgabe Nacherfassen (Rezept wird nachgebracht)</h4>
+<h4 id="sub_uc_emed_09_01_06-durchgeführte-abgabe-nacherfassen-rezept-wird-nachgebracht">Sub_UC_eMed_09_01_06 Durchgeführte Abgabe Nacherfassen (Rezept wird nachgebracht)</h4>
 
-<p>Eine <em>Durchgeführte Abgabe</em> muss nacherfasst werden, wenn das Arzneimittel bereits abgegeben wurde, 
+<p>Eine <em>Durchgeführte Abgabe</em> kann nacherfasst werden, wenn das Arzneimittel bereits abgegeben wurde, 
     - aber eine Speicherung zum Zeitpunkt der Abgabe aus technischen Gründen nicht möglich war
     - der Arzneimittelbezug aus dem Ausland erfolgt ist (Element <em>recorded</em> abweichend von <em>whenHandedOver</em>)
     - wenn ein e-Rezept-Eintrag oder ein Papierrezept vorhanden ist und keine Geplante Abgabe in e-Medikation eingetragen wurden.</p>
@@ -464,7 +441,7 @@ und Teilabgabe -->
 
 <p><br/></p>
 
-<h4 id="sub_uc_emed_09_01_0x-durchgeführte-abgabe-mit-substitution-eines-medikaments-erfassen">Sub_UC_eMed_09_01_0x Durchgeführte Abgabe mit Substitution eines Medikaments erfassen</h4>
+<h4 id="sub_uc_emed_09_01_07-durchgeführte-abgabe-mit-substitution-eines-medikaments-erfassen">Sub_UC_eMed_09_01_07 Durchgeführte Abgabe mit Substitution eines Medikaments erfassen</h4>
 
 <p>Eine Substitution eines Medikaments ist nur implizit ersichtich, durch die Referenz auf die zugehörige Geplante Abgabe.</p>
 
@@ -473,7 +450,7 @@ und Teilabgabe -->
 
 <h3 id="sub_uc_emed_09_02---durchgeführte-abgabe-verwerfen">Sub_UC_eMed_09_02 - Durchgeführte Abgabe verwerfen</h3>
 
-<p><a name="l876">​</a>Ein GDA (Apotheke) kann von ihm erstellte <a href="design_choices.html#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense">Durchgeführte Abgabe</a>, die sich im Status <em>completed</em> oder <em>cancelled</em> befindet, aufgrund eines Fehlers verwerfen.</p>
+<p><a name="l842">​</a>Ein GDA (Apotheke) kann von ihm erstellte <a href="design_choices.html#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense">Durchgeführte Abgabe</a>, die sich im Status <em>completed</em> oder <em>cancelled</em> befindet, aufgrund eines Fehlers verwerfen.</p>
 
 <p>Um eine <em>Durchgeführte Abgabe</em> zu verwerfen, ruft der GDA diese mittels GET MedicationDispense ab und bearbeitet diese wie folgt:</p>
 <ul>
@@ -533,7 +510,7 @@ Wenn eine verworfene <em>Durchgeführte Abgabe</em> Teil eines e-Rezepts mit wei
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Wed, Jun 10, 2026 09:53+0000">2026-06-10</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Wed, Jun 10, 2026 11:38+0000">2026-06-10</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
