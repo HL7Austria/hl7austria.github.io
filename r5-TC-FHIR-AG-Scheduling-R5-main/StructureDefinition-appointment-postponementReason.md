@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/appointment-postponementReason | *Version*:0.2.0 | |
-| Draft as of 2026-06-09 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:AppointmentPostponementReasonExt |
+| Draft as of 2026-06-10 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:AppointmentPostponementReasonExt |
 
 The reason why an appointment was postoponed. This is often used in reporting/billing/further processing to determine if further actions are required, or specific fees apply.
 
@@ -52,7 +52,7 @@ Other representations of profile: [CSV](StructureDefinition-appointment-postpone
   "name" : "AppointmentPostponementReasonExt",
   "title" : "Appointment Postponement Reason",
   "status" : "draft",
-  "date" : "2026-06-09T19:55:01+00:00",
+  "date" : "2026-06-10T09:07:46+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "The reason why an appointment was postoponed. This is often used in reporting/billing/further processing to determine if further actions are required, or specific fees apply.",
   "fhirVersion" : "5.0.0",

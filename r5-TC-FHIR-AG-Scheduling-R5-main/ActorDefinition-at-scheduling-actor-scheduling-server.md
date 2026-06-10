@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ActorDefinition/at-scheduling-actor-scheduling-server | *Version*:0.2.0 | |
-| Draft as of 2026-06-09 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*: |
+| Draft as of 2026-06-10 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*: |
 
  
 A system providing the FHIR API for appointment booking and related data 
@@ -26,7 +26,7 @@ A system providing the FHIR API for appointment booking and related data
   "version" : "0.2.0",
   "title" : "HL7® AT Scheduling Server ActorDefinition",
   "status" : "draft",
-  "date" : "2026-06-09T19:55:01+00:00",
+  "date" : "2026-06-10T09:07:46+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "A system providing the FHIR API for appointment booking and related data",
   "type" : "system",

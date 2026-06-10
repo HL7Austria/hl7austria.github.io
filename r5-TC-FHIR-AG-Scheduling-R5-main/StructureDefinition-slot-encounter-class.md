@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/slot-encounter-class | *Version*:0.2.0 | |
-| Draft as of 2026-06-09 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:SlotEncounterClassExt |
+| Draft as of 2026-06-10 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:SlotEncounterClassExt |
 
 An encounter class similar to (Appointment.class)[https://www.hl7.org/fhir/appointment-definitions.html#Appointment.class] for classification of possible mode of encounter
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-slot-encounter-class
   "name" : "SlotEncounterClassExt",
   "title" : "Slot Encounter Class",
   "status" : "draft",
-  "date" : "2026-06-09T19:55:01+00:00",
+  "date" : "2026-06-10T09:07:46+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "An encounter class similar to (Appointment.class)[https://www.hl7.org/fhir/appointment-definitions.html#Appointment.class] for classification of possible mode of encounter",
   "fhirVersion" : "5.0.0",

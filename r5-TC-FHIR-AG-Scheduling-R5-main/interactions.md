@@ -171,9 +171,11 @@ When an Appointment is cancelled on the Scheduling Server it's status is set to 
 
 ### Postpone Appointment
 
+This interaction moves an existing Appointment to a different time by changing its `start`, `end`, optionally `minutesDuration` and the referenced `slot`. To change other information of the Appointment, use the [Update Appointment](interactions.md#update-appointment-information) interaction instead.
+
 #### Postponement by Scheduling Client
 
-To postpone an Appointment, the Scheduling Client sends an [HL7® AT Scheduling Appointment](StructureDefinition-at-scheduling-appointment.md) with updated values for `start`, `end` and optionally `minutesDuration`. The Scheduling Server then returns the updated Appointment or an OperationOutcome in case of error. The Scheduling Server responds with the Appointment resource or an OperationOutcome in case of error.
+To postpone an Appointment, the Scheduling Client sends an [HL7® AT Scheduling Appointment](StructureDefinition-at-scheduling-appointment.md) with updated values for `start`, `end`, optionally `minutesDuration` and the referenced `slot`. The Scheduling Server responds with the updated Appointment resource or an OperationOutcome in case of error.
 
 Because postponing an Appointment changes the time it occupies, the Slots referenced by the Appointment are affected as well. If the postponement is successful, the status of the Slot to which the Appointment previously referred should be set to free again, `Slot.status=free`, while the Slot covering the new time should be marked as occupied, `Slot.status=busy`. Keeping the Slot statuses in sync with the Appointment is the responsibility of the Scheduling Server.
 
@@ -183,15 +185,19 @@ When an Appointment is postponed on the Scheduling Server, the values for `start
 
 ### Update Appointment information
 
-**ToDo: Define restrictions on which fields can be updated.**
+This interaction updates the information (metadata) of an existing Appointment, such as `description`, `note`, `patientInstruction`, `priority` or the non-Patient participants. The following SHALL NOT be changed via this interaction:
+
+* the participant Patient (`participant[HL7ATCorePatient]`);
+* the timing (`start`, `end`, `minutesDuration`, `slot`) — use the [Postpone Appointment](interactions.md#postpone-appointment) interaction instead;
+* the service (`serviceType` and the referenced HealthcareService) — cancel the Appointment (see [Cancel Appointment](interactions.md#cancel-appointment)) and book a new one (see [Book Appointment](interactions.md#book-appointment-book)) instead.
 
 #### Update by Scheduling Client
 
-To update an Appointment, a Scheduling Client sends a [HL7® AT Scheduling Appointment Profile](StructureDefinition-at-scheduling-appointment.md) resource with updated attributes. The Scheduling Client SHALL NOT change the participant Patient of the Appointment. The Scheduling Server then returns the updated Appointment or an OperationOutcome in case of error. The Scheduling Server responds with the Appointment resource or an OperationOutcome in case of error.
+The Scheduling Client sends a [HL7® AT Scheduling Appointment Profile](StructureDefinition-at-scheduling-appointment.md) resource with the updated attributes, respecting the restrictions above. The Scheduling Server responds with the updated Appointment resource or an OperationOutcome in case of error.
 
 #### Update by Scheduling Server
 
-When an Appointment's information is updated on the Scheduling Server, the values **ToDo list allowed attributes** are updated. The Scheduling Server is responsible for notifying participants of the Appointment (e.g. via email, text message or push notification) about the update, if the changed information requires informing them. Scheduling Clients then can fetch the updated Appointment (see [Find existing Appointments](interactions.md#find-existing-appointments)).
+The Scheduling Server may update the same attributes, subject to the same restrictions, and is responsible for notifying participants of the Appointment (e.g. via email, text message or push notification) about the update, if the changed information requires informing them. Scheduling Clients then can fetch the updated Appointment (see [Find existing Appointments](interactions.md#find-existing-appointments)).
 
 ### Find existing Appointments
 
