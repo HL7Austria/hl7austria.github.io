@@ -48,7 +48,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-practitioner
   "name" : "HL7ATCorePractitioner",
   "title" : "HL7® AT Core Practitioner Profile",
   "status" : "active",
-  "date" : "2026-06-12T11:03:52+00:00",
+  "date" : "2026-06-12T11:22:20+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -170,14 +170,35 @@ Other representations of profile: [CSV](StructureDefinition-at-core-practitioner
       "path" : "Practitioner.identifier",
       "sliceName" : "vbPK",
       "min" : 0,
-      "max" : "1"
+      "max" : "*"
+    },
+    {
+      "id" : "Practitioner.identifier:vbPK.type",
+      "path" : "Practitioner.identifier.type",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://termgit.elga.gv.at/ValueSet/hl7-at-patientidentifier"
+      }
+    },
+    {
+      "id" : "Practitioner.identifier:vbPK.type.coding.system",
+      "path" : "Practitioner.identifier.type.coding.system",
+      "fixedUri" : "http://terminology.hl7.org/CodeSystem/v2-0203"
+    },
+    {
+      "id" : "Practitioner.identifier:vbPK.type.coding.code",
+      "path" : "Practitioner.identifier.type.coding.code",
+      "fixedCode" : "NI"
     },
     {
       "id" : "Practitioner.identifier:vbPK.system",
       "path" : "Practitioner.identifier.system",
       "short" : "OID for the vbPK in Austria",
       "min" : 1,
-      "fixedUri" : "urn:oid:1.2.40.0.34.4.22"
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/ValueSet/at-core-valueset-vbpk"
+      }
     },
     {
       "id" : "Practitioner.identifier:vbPK.value",

@@ -50,7 +50,7 @@ Usage of the European Health Insurance Card (EHIC):
   "name" : "HL7ATCorePatient",
   "title" : "HL7® AT Core Patient Profile",
   "status" : "active",
-  "date" : "2026-06-12T11:03:52+00:00",
+  "date" : "2026-06-12T11:22:20+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -341,6 +341,11 @@ Usage of the European Health Insurance Card (EHIC):
         "strength" : "required",
         "valueSet" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/ValueSet/at-core-valueset-vbpk"
       }
+    },
+    {
+      "id" : "Patient.identifier:vbPK.value",
+      "path" : "Patient.identifier.value",
+      "min" : 1
     },
     {
       "id" : "Patient.identifier:vbPK.assigner.display",

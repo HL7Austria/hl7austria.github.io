@@ -17,14 +17,13 @@ HL7® AT Core ValueSet for the vbpk system
  **References** 
 
 * [HL7® AT Core Patient Profile](StructureDefinition-at-core-patient.md)
+* [HL7® AT Core Practitioner Profile](StructureDefinition-at-core-practitioner.md)
 
 ### Logical Definition (CLD)
 
  
 
 ### Expansion
-
-No Expansion for this valueset (Unknown Code System)
 
 -------
 
@@ -53,7 +52,7 @@ No Expansion for this valueset (Unknown Code System)
   "title" : "HL7® AT Core ValueSet for the vbpk system",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-06-12T11:03:52+00:00",
+  "date" : "2026-06-12T11:22:20+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -72,17 +71,17 @@ No Expansion for this valueset (Unknown Code System)
   "description" : "HL7® AT Core ValueSet for the vbpk system",
   "compose" : {
     "include" : [{
-      "system" : "urn:oid",
+      "system" : "urn:ietf:rfc:3986",
       "concept" : [{
-        "code" : "1.2.40.0.34.4.22.1",
+        "code" : "urn:oid:1.2.40.0.34.4.22.1",
         "display" : "vbPK-GH"
       },
       {
-        "code" : "1.2.40.0.34.4.22.2",
+        "code" : "urn:oid:1.2.40.0.34.4.22.2",
         "display" : "vbPK-SV"
       },
       {
-        "code" : "1.2.40.0.34.4.22.3",
+        "code" : "urn:oid:1.2.40.0.34.4.22.3",
         "display" : "vbPK-AS"
       }]
     }]
