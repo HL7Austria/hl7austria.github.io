@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-substance-wirkstoff | *Version*:0.1.1 | |
-| Draft as of 2026-06-10 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedSubstanceWirkstoff |
+| Draft as of 2026-06-12 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedSubstanceWirkstoff |
 
  
 Dokumentation des Wirkstoffs eines Arzneimittels in der ELGA e-Medikation, sofern es nicht kodiert vorliegt. 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-substan
   "name" : "AtElgaEmedSubstanceWirkstoff",
   "title" : "At ELGA e-Medikation Substance Wirkstoff",
   "status" : "draft",
-  "date" : "2026-06-10T11:38:54+00:00",
+  "date" : "2026-06-12T12:35:19+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

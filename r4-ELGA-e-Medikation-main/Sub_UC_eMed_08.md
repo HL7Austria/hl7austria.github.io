@@ -35,9 +35,13 @@ Der Ablauf zur Erstellung von **Geplanten Abgaben** und der Bezug des **e-Med Gr
 
 ##### Variante A: Vorab-Ermittlung des e-Med GroupIdentifiers
 
-Der **e-Med GroupIdentifier** ("Rezeptklammer") wird via POST $groupidentifier-create vorab von der Fachanwendung bezogen, in den **Geplanten Abgaben** ergänzt und zur Erstellung des e-Rezepts an die e-Rezept-Anwendung mitgegeben, um dieses mit den **Geplanten Abgaben** zu verknüpfen. Der Trigger zu Erstellung des e-Rezepts und [Prescription-Write](interactions.md#prescription-write) können parallel erfolgen.
+Der **e-Med GroupIdentifier** ("Rezeptklammer") wird via POST $groupidentifier-create vorab von der Fachanwendung bezogen, in den **Geplanten Abgaben** ergänzt und zur Erstellung des e-Rezepts an die e-Rezept-Anwendung mitgegeben, um dieses mit den **Geplanten Abgaben** zu verknüpfen. Der Trigger zu Erstellung des e-Rezepts und [Prescription-Write](interactions.md#prescription-write) können parallel erfolgen (siehe Normalfall).
 
-Liefert e-Rezept einen Fehler zurück, können mittels POST $prescription-discard bereits in der e-Medikation erstellte **Geplante Abgaben** verworfen werden (siehe Sub_UC_eMed_08_04 - Geplante Abgabe verwerfen). Liefert die e-Medikation Fachanwendung einen Fehler zurück, kann nach Fehlerkorrektur erneut ein **Prescription-Write** erfolgen oder ein bereits durch den **e-Med groupIdentifer** verknüpftes e-Rezept wieder von den **Geplanten Abgaben** "entkoppelt" werden. 
+Liefert e-Rezept einen Fehler zurück, können mittels POST $prescription-discard bereits in der e-Medikation erstellte **Geplante Abgaben** verworfen werden (siehe Sub_UC_eMed_08_04 - Geplante Abgabe verwerfen). Liefert die e-Medikation Fachanwendung einen Fehler zurück, kann nach Fehlerkorrektur erneut ein **Prescription-Write** erfolgen oder ein bereits durch den **e-Med groupIdentifer** verknüpftes e-Rezept wieder von den **Geplanten Abgaben** "entkoppelt" werden (siehe Fehlerfall). 
+
+###### Variante A: Normalfall
+
+###### Variante A: Fehlerfall
 
 ##### Variante B: Sequentielles Erstellen von Geplanter Abgabe und e-Rezept
 
