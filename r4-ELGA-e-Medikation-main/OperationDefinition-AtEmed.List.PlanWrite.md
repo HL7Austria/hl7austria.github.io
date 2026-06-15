@@ -28,7 +28,7 @@ Die $plan-write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben 
   "title" : "e-Med Operation für Plan-Write",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-06-15T17:37:50+00:00",
+  "date" : "2026-06-15T21:20:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -66,7 +66,7 @@ Die $plan-write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben 
     "max" : "1",
     "documentation" : "Der *medikationsplan* Parameter dient der Übermittlung der Medikationsplandaten des Patienten.",
     "type" : "Bundle",
-    "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx"]
+    "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"]
   },
   {
     "name" : "return",

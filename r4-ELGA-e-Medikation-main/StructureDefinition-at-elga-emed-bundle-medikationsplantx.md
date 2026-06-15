@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx | *Version*:0.1.1 | |
+| *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx | *Version*:0.1.1 | |
 | Draft as of 2026-06-15 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedBundleMedikationsplanTx |
 
  
@@ -22,7 +22,7 @@ Alle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen
 
 * Examples for this Profile: [Bundle/At-Emed-Journey-01-Bundle-Tx-Medikationsplan](Bundle-At-Emed-Journey-01-Bundle-Tx-Medikationsplan.md), [Bundle/At-Emed-Journey-02-Bundle-Tx-Medikationsplan](Bundle-At-Emed-Journey-02-Bundle-Tx-Medikationsplan.md), [Bundle/At-Emed-Journey-05-a-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-05-a-Bundle-Medikationsplan-Tx.md) and [Bundle/At-Emed-Journey-05-b-Bundle-Tx-Medikationsplan](Bundle-At-Emed-Journey-05-b-Bundle-Tx-Medikationsplan.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-bundle-medikationsplan-persistierung-tx.json)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-bundle-medikationsplantx.json)
 
 ### Formal Views of Profile Content
 
@@ -30,7 +30,7 @@ You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir
 
  
 
-Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-medikationsplan-persistierung-tx.csv), [Excel](StructureDefinition-at-elga-emed-bundle-medikationsplan-persistierung-tx.xlsx), [Schematron](StructureDefinition-at-elga-emed-bundle-medikationsplan-persistierung-tx.sch) 
+Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-medikationsplantx.csv), [Excel](StructureDefinition-at-elga-emed-bundle-medikationsplantx.xlsx), [Schematron](StructureDefinition-at-elga-emed-bundle-medikationsplantx.sch) 
 
 
 
@@ -39,13 +39,13 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
 ```json
 {
   "resourceType" : "StructureDefinition",
-  "id" : "at-elga-emed-bundle-medikationsplan-persistierung-tx",
-  "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx",
+  "id" : "at-elga-emed-bundle-medikationsplantx",
+  "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx",
   "version" : "0.1.1",
   "name" : "AtElgaEmedBundleMedikationsplanTx",
   "title" : "AT ELGA e-Medikation Transaction Bundle Medikationsplan",
   "status" : "draft",
-  "date" : "2026-06-15T17:37:50+00:00",
+  "date" : "2026-06-15T21:20:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

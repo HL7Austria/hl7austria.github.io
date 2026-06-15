@@ -304,7 +304,7 @@ Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstell
 Dient einerseits der 1. Persistierung nach einem Plan-Write und 2. der Auslieferung des Medikationsplans bei einem Plan-Read-Zugriff an den GDA.</p>
 
 <h5 id="persistiertes-medikationsplan-collection-bundle">Persistiertes Medikationsplan-Collection-Bundle</h5>
-<p><a name="l438">​</a>Nachdem die Fachanwendung beim <a href="interactions.html#plan-write">Plan-Write</a>, mittels <a href="design_choices.html#medikationsplan-transaction-bundle-atemedbundlemedikationsplantx-transaction-bundle">Medikationsplan-Transaction-Bundle</a> alle Ressourcen aktualisiert hat, erstellt diese ein <em>Medikationsplan-Collection-Bundle</em> zur <strong>Persistierung</strong>, welches den vom GDA übermittelten Medikationsplan <strong>unverändert</strong> (keine Statusänderungen oder Entfernung entsprechend markierten Planeinträgen) abbildet und die Gesamtheit aller referenzierten Ressourcen enthält. Dies stellt sicher, dass in den historischen Versionen des Medikationsplans alle relevanten Informationen verfügbar sind.</p>
+<p>Nachdem die Fachanwendung beim <a href="interactions.html#plan-write">Plan-Write</a>, mittels <em>Medikationsplan-Transaction-Bundle</em> alle Ressourcen aktualisiert hat, erstellt diese ein <em>Medikationsplan-Collection-Bundle</em> zur <strong>Persistierung</strong>, welches den vom GDA übermittelten Medikationsplan <strong>unverändert</strong> (keine Statusänderungen oder Entfernung entsprechend markierten Planeinträgen) abbildet und die Gesamtheit aller referenzierten Ressourcen enthält. Dies stellt sicher, dass in den historischen Versionen des Medikationsplans alle relevanten Informationen verfügbar sind.</p>
 
 <h5 id="auslieferungs-medikationsplan-collection-bundle">Auslieferungs-Medikationsplan-Collection-Bundle</h5>
 <p>Bei einem <a href="interactions.html#plan-read">Plan-Read</a> wird von der Fachanwendung ein <strong>Auslieferungs-Bundle</strong> bereitgestellt und wie folgt <strong>angepasst</strong>: 
@@ -314,7 +314,7 @@ Wurden alle Planeinträge entfernt, erhält der Medikationsplan das List.emptyRe
   <!-- #### Medikationsplan-Transaction-Bundle: AtEmedBundleMedikationsplanTx (*Transaction Bundle*)
 
 Ein Bundle vom Typ Transaction, das beim [Plan-Write](interactions.html#plan-write) an die Fachanwendung übermittelt wird. 
-Das Bundle enthält den [Medikationsplan](design_choices.html#medikationsplan-atelgaemedlistmedikationsplan-list) mit Referenzen auf die [Medikationsplaneinträge](design_choices.html#medikationsplaneintrag-bzw-planeintrag-atelgaemedmedicationrequestplaneintrag-medicationrequest). Alle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert.
+Das Bundle enthält den [Medikationsplan](design_choices.html#medikationsplan-atelgaemedlistmedikationsplan-list) mit Referenzen auf die *Medikationsplaneinträge*. Alle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert.
 
 Das Transaction Bundle dient der Aktualisierung aller enthaltenen Ressourcen und wird selbst nicht persisitert. -->
 
@@ -363,7 +363,7 @@ Der aktuelle Status einer *Durchgeführten Abgabe* wird mittels *status*- und *t
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jun 15, 2026 17:37+0000">2026-06-15</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jun 15, 2026 21:20+0000">2026-06-15</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

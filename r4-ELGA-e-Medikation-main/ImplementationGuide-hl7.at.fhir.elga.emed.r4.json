@@ -10,7 +10,7 @@
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-06-15T17:37:50+00:00",
+  "date" : "2026-06-15T21:20:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -636,6 +636,21 @@
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     }],
+    "grouping" : [{
+      "id" : "Medikationsplan",
+      "name" : "Medikationsplan",
+      "description" : "Medikationsplan"
+    },
+    {
+      "id" : "GeplanteAbgabe",
+      "name" : "Geplante Abgabe",
+      "description" : "Geplante Abgabe"
+    },
+    {
+      "id" : "DurchgefuehrteAbgabe",
+      "name" : "Durchgeführte Abgabe",
+      "description" : "Durchgeführte Abgabe"
+    }],
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
@@ -646,7 +661,8 @@
       },
       "name" : "AT ELGA e-Medikation Collection Bundle Medikationsplan",
       "description" : "Das Bundle vom Typ Collection bestehend aus: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus \n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "Medikationsplan"
     },
     {
       "extension" : [{
@@ -670,7 +686,8 @@
       },
       "name" : "AT ELGA e-Medikation List Medikationsplan",
       "description" : "Der Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine List-Ressource abgebildet. \nDiese enthält 0..* Einträge (List.entry), wobei jedes Entry genau eine Referenz auf einen Medikationsplaneintrag (MedicationRequest) in List.entry.item beinhaltet.\nDie Reihenfolge der Einträge kann durch den GDA festgelegt werden. Jeder Listeneintrag enthält im Element List.entry.flag den Änderungsstatus des jeweiligen Medikationsplaneintrags.",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "Medikationsplan"
     },
     {
       "extension" : [{
@@ -682,7 +699,8 @@
       },
       "name" : "AT ELGA e-Medikation Medication Medikation",
       "description" : "Bildet ein Arzneimittel in der \"Medication\"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, geplante Abgabe und durchgeführte Abgabe.",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "Medikationsplan"
     },
     {
       "extension" : [{
@@ -690,11 +708,12 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-elga-emed-medikationdispense-durchgefuehrteabgabe"
+        "reference" : "StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"
       },
       "name" : "AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe",
       "description" : "Dokumentiert eine \"Durchgeführte Abgabe\" eines Arzneimittels (\"MedicationDispense\"-Ressource). \nDie \"Durchgeführte Abgabe\" enthält die abgegebene Medikation und deren Dosierung und dient somit der Nachvollziehbarkeit der abgegebenen Arzneimittel in der e-Medikation. \nEs können Abweichungen zur \"Geplanten Abgabe\" hinsichtlich des Medikaments und dessen Dosierung dokumentiert werden.\nSofern eine zugehörige \"Geplanten Abgabe\" vorliegt, muss diese mit dem zugehörigen Planeintrag referenziert werden. Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige \"Geplante Abgabe\", ersichtlich.\nDer aktuelle Status einer \"Durchgeführten Abgabe\" wird mittels \"status\"- und \"type\"-Element dokumentiert. Es werden R5-Backport-Extensions verwendet.",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "DurchgefuehrteAbgabe"
     },
     {
       "extension" : [{
@@ -706,7 +725,8 @@
       },
       "name" : "At ELGA e-Medikation MedicationRequest Geplante Abgabe",
       "description" : "Bildet eine \"Geplante Abgabe\" eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab (\"MedicationRequest\"-Ressource mit Kategorie \"Geplante Abgabe\"):\nSie enthält die verordnete Medikation und deren Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. \nWerden mehrere Medikamente gleichzeitig verordnet und sollen demselben e-Rezept zugeordnet sein, wird für jedes Medikament eine \"Geplante Abgabe\" mit demselben \"e-Med GroupIdentifier\" erstellt (bildet 'Rezept-Klammer'). \nEs werden R5-Backport-Extensions verwendet.",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "GeplanteAbgabe"
     },
     {
       "extension" : [{
@@ -718,7 +738,8 @@
       },
       "name" : "At ELGA e-Medikation MedicationRequest Planeintrag",
       "description" : "Ein Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine \"MedicationRequest\"-Ressource abgebildet.\nDie Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained Medication-Ressource (inline, d.h. innerhalb der Ressource), dokumentiert wird.\nDer Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstellung einer \"Geplanten Abgabe\" dienen. Es werden R5-Backport-Extensions verwendet.",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "Medikationsplan"
     },
     {
       "extension" : [{
@@ -730,7 +751,8 @@
       },
       "name" : "At ELGA e-Medikation Substance Wirkstoff",
       "description" : "Dokumentation des Wirkstoffs eines Arzneimittels in der ELGA e-Medikation, sofern es nicht kodiert vorliegt.",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "Medikationsplan"
     },
     {
       "extension" : [{
@@ -750,11 +772,12 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx"
+        "reference" : "StructureDefinition/at-elga-emed-bundle-medikationsplantx"
       },
       "name" : "AT ELGA e-Medikation Transaction Bundle Medikationsplan",
       "description" : "Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan (Aktualisierung aller enthaltenen Ressourcen) und besteht aus: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus \n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung\n\nAlle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert.",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "Medikationsplan"
     },
     {
       "extension" : [{
@@ -766,7 +789,7 @@
       },
       "name" : "Beispiel Durchgeführte Abgabe 1",
       "description" : "Beispiel Durchgeführte Abgabe 1",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medikationdispense-durchgefuehrteabgabe"
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"
     },
     {
       "extension" : [{
@@ -850,7 +873,7 @@
       },
       "name" : "Beispiel Journey 01: Transaction Bundle",
       "description" : "Beispiel eines Transaction Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge).",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx"
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"
     },
     {
       "extension" : [{
@@ -922,7 +945,7 @@
       },
       "name" : "Beispiel Journey 02: Transaction Bundle",
       "description" : "Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) beinhaltet.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx"
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"
     },
     {
       "extension" : [{
@@ -970,7 +993,7 @@
       },
       "name" : "Beispiel Journey 05-a: Transaction Bundle zur Änderung der Reihenfolge der Medikationsplaneinträge.",
       "description" : "Beispiel eines Transaction Bundles, zur Änderung der Reihenfolge der Medikationsplaneinträge.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx"
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"
     },
     {
       "extension" : [{
@@ -1006,7 +1029,7 @@
       },
       "name" : "Beispiel Journey 05-b: Transaction Bundle zur Änderung von bestehenden Medikationsplaneinträgen (absetzen und ändern).",
       "description" : "Beispiel eines Transaction Bundles, zur Änderung von bestehenden Medikationsplaneinträgen (absetzen und ändern).",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx"
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"
     },
     {
       "extension" : [{

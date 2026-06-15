@@ -189,22 +189,28 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
    <p>Contents:</p>
    <ul>
       <li>
-         <a href="#1">Behavior: Operation Definitions</a>
+         <a href="#1">Medikationsplan</a>
       </li>
       <li>
-         <a href="#2">Structures: Resource Profiles</a>
+         <a href="#2">Geplante Abgabe</a>
       </li>
       <li>
-         <a href="#3">Structures: Data Type Profiles</a>
+         <a href="#3">Durchgeführte Abgabe</a>
       </li>
       <li>
-         <a href="#4">Terminology: Value Sets</a>
+         <a href="#4">Behavior: Operation Definitions</a>
       </li>
       <li>
-         <a href="#5">Terminology: Code Systems</a>
+         <a href="#5">Structures: Data Type Profiles</a>
       </li>
       <li>
-         <a href="#6">Example: Example Instances</a>
+         <a href="#6">Terminology: Value Sets</a>
+      </li>
+      <li>
+         <a href="#7">Terminology: Code Systems</a>
+      </li>
+      <li>
+         <a href="#8">Example: Example Instances</a>
       </li>
    </ul>
 </div>
@@ -213,34 +219,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
      xmlns:html="http://www.w3.org/1999/xhtml">
    <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
    <a name="1"> </a>
-   <h3>Behavior: Operation Definitions </h3>
-    <p>These are custom operations that can be supported by and/or invoked by systems conforming to this implementation guide.</p>
-<table class="grid">
-      <col style="width:20%"/>
-      <tbody>
-         <tr>
-            <td style="column-width:30%">
-               <a href="OperationDefinition-AtEmed.List.PlanRead.html"
-                  title="OperationDefinition/AtEmed.List.PlanRead">e-Med Operation für Plan-Read</a>
-            </td>
-            <td>
-<p>Die $plan-read Operation wird aufgerufen, wenn ein Medikationsplan mit der Intention zu schreiben gelesen wird.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="OperationDefinition-AtEmed.List.PlanWrite.html"
-                  title="OperationDefinition/AtEmed.List.PlanWrite">e-Med Operation für Plan-Write</a>
-            </td>
-            <td>
-<p>Die $plan-write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird.</p>
-</td>
-         </tr>
-      </tbody>
-   </table>
-   <a name="2"> </a>
-   <h3>Structures: Resource Profiles </h3>
-    <p>These define constraints on FHIR resources for systems conforming to this implementation guide.</p>
+   <h3>Medikationsplan </h3>
+    <p>Medikationsplan</p>
 <table class="grid">
       <col style="width:20%"/>
       <tbody>
@@ -279,46 +259,6 @@ Die Reihenfolge der Einträge kann durch den GDA festgelegt werden. Jeder Listen
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-at-elga-emed-medikationdispense-durchgefuehrteabgabe.html"
-                  title="StructureDefinition/at-elga-emed-medikationdispense-durchgefuehrteabgabe">AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe</a>
-            </td>
-            <td>
-<p>Dokumentiert eine "Durchgeführte Abgabe" eines Arzneimittels ("MedicationDispense"-Ressource). 
-Die "Durchgeführte Abgabe" enthält die abgegebene Medikation und deren Dosierung und dient somit der Nachvollziehbarkeit der abgegebenen Arzneimittel in der e-Medikation. 
-Es können Abweichungen zur "Geplanten Abgabe" hinsichtlich des Medikaments und dessen Dosierung dokumentiert werden.
-Sofern eine zugehörige "Geplanten Abgabe" vorliegt, muss diese mit dem zugehörigen Planeintrag referenziert werden. Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige "Geplante Abgabe", ersichtlich.
-Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "type"-Element dokumentiert. Es werden R5-Backport-Extensions verwendet.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan-persistierung-tx.html"
-                  title="StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx">AT ELGA e-Medikation Transaction Bundle Medikationsplan</a>
-            </td>
-            <td>
-<p>Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan (Aktualisierung aller enthaltenen Ressourcen) und besteht aus:</p>
-<ul>
-  <li>1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus</li>
-  <li>0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung</li>
-</ul>
-
-<p>Alle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.html"
-                  title="StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe">At ELGA e-Medikation MedicationRequest Geplante Abgabe</a>
-            </td>
-            <td>
-<p>Bildet eine "Geplante Abgabe" eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab ("MedicationRequest"-Ressource mit Kategorie "Geplante Abgabe"):
-Sie enthält die verordnete Medikation und deren Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. 
-Werden mehrere Medikamente gleichzeitig verordnet und sollen demselben e-Rezept zugeordnet sein, wird für jedes Medikament eine "Geplante Abgabe" mit demselben "e-Med GroupIdentifier" erstellt (bildet 'Rezept-Klammer'). 
-Es werden R5-Backport-Extensions verwendet.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
                <a href="StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html"
                   title="StructureDefinition/at-elga-emed-medicationrequest-planeintrag">At ELGA e-Medikation MedicationRequest Planeintrag</a>
             </td>
@@ -337,9 +277,91 @@ Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstell
 <p>Dokumentation des Wirkstoffs eines Arzneimittels in der ELGA e-Medikation, sofern es nicht kodiert vorliegt.</p>
 </td>
          </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html"
+                  title="StructureDefinition/at-elga-emed-bundle-medikationsplantx">AT ELGA e-Medikation Transaction Bundle Medikationsplan</a>
+            </td>
+            <td>
+<p>Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan (Aktualisierung aller enthaltenen Ressourcen) und besteht aus:</p>
+<ul>
+  <li>1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus</li>
+  <li>0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung</li>
+</ul>
+
+<p>Alle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="2"> </a>
+   <h3>Geplante Abgabe </h3>
+    <p>Geplante Abgabe</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.html"
+                  title="StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe">At ELGA e-Medikation MedicationRequest Geplante Abgabe</a>
+            </td>
+            <td>
+<p>Bildet eine "Geplante Abgabe" eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab ("MedicationRequest"-Ressource mit Kategorie "Geplante Abgabe"):
+Sie enthält die verordnete Medikation und deren Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. 
+Werden mehrere Medikamente gleichzeitig verordnet und sollen demselben e-Rezept zugeordnet sein, wird für jedes Medikament eine "Geplante Abgabe" mit demselben "e-Med GroupIdentifier" erstellt (bildet 'Rezept-Klammer'). 
+Es werden R5-Backport-Extensions verwendet.</p>
+</td>
+         </tr>
       </tbody>
    </table>
    <a name="3"> </a>
+   <h3>Durchgeführte Abgabe </h3>
+    <p>Durchgeführte Abgabe</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.html"
+                  title="StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe">AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe</a>
+            </td>
+            <td>
+<p>Dokumentiert eine "Durchgeführte Abgabe" eines Arzneimittels ("MedicationDispense"-Ressource). 
+Die "Durchgeführte Abgabe" enthält die abgegebene Medikation und deren Dosierung und dient somit der Nachvollziehbarkeit der abgegebenen Arzneimittel in der e-Medikation. 
+Es können Abweichungen zur "Geplanten Abgabe" hinsichtlich des Medikaments und dessen Dosierung dokumentiert werden.
+Sofern eine zugehörige "Geplanten Abgabe" vorliegt, muss diese mit dem zugehörigen Planeintrag referenziert werden. Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige "Geplante Abgabe", ersichtlich.
+Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "type"-Element dokumentiert. Es werden R5-Backport-Extensions verwendet.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="4"> </a>
+   <h3>Behavior: Operation Definitions </h3>
+    <p>These are custom operations that can be supported by and/or invoked by systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="OperationDefinition-AtEmed.List.PlanRead.html"
+                  title="OperationDefinition/AtEmed.List.PlanRead">e-Med Operation für Plan-Read</a>
+            </td>
+            <td>
+<p>Die $plan-read Operation wird aufgerufen, wenn ein Medikationsplan mit der Intention zu schreiben gelesen wird.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="OperationDefinition-AtEmed.List.PlanWrite.html"
+                  title="OperationDefinition/AtEmed.List.PlanWrite">e-Med Operation für Plan-Write</a>
+            </td>
+            <td>
+<p>Die $plan-write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="5"> </a>
    <h3>Structures: Data Type Profiles </h3>
     <p>These define constraints on FHIR data types for systems conforming to this implementation guide.</p>
 <table class="grid">
@@ -365,7 +387,7 @@ Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstell
          </tr>
       </tbody>
    </table>
-   <a name="4"> </a>
+   <a name="6"> </a>
    <h3>Terminology: Value Sets </h3>
     <p>These define sets of codes used by systems conforming to this implementation guide.</p>
 <table class="grid">
@@ -444,7 +466,7 @@ Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstell
          </tr>
       </tbody>
    </table>
-   <a name="5"> </a>
+   <a name="7"> </a>
    <h3>Terminology: Code Systems </h3>
     <p>These define new code systems used by systems conforming to this implementation guide.</p>
 <table class="grid">
@@ -470,7 +492,7 @@ Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstell
          </tr>
       </tbody>
    </table>
-   <a name="6"> </a>
+   <a name="8"> </a>
    <h3>Example: Example Instances </h3>
     <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.</p>
 <table class="grid">
@@ -739,7 +761,7 @@ Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstell
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Jun 15, 2026 17:37+0000">2026-06-15</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Jun 15, 2026 21:20+0000">2026-06-15</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

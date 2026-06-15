@@ -8,7 +8,7 @@
 
 ### Sub_UC_eMed_09_01 - Durchgeführte Abgabe erfassen
 
-Der GDA (Apotheke bzw. Arzt mit Hausapotheke) kann eine [Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medikationdispense-durchgefuehrteabgabe.md) für einen ELGA-Teilnehmer erfassen, um die Abgabe eines Arzneimittels medizinisch zu dokumentieren:
+Der GDA (Apotheke bzw. Arzt mit Hausapotheke) kann eine [Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) für einen ELGA-Teilnehmer erfassen, um die Abgabe eines Arzneimittels medizinisch zu dokumentieren:
 
 * Liegt eine zugehörige [Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) vor, **MUSS** diese über **MedicationDispense.authorizingPrescription[geplanteAbgabe]** referenziert werden. Der zugehörige Planeintrag **MUSS** über **MedicationDispense.authorizingPrescription[planeintrag]** referenziert werden. 
 * Die in der **Geplanten Abgabe** dokumentierte [Rezeptart](workflowmanagement.md#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart) sowie eine gegebenenfalls durch den verordnenden GDA im Element **MedicationRequest.numberOfRepeatsAllowed** festgelegte Einschränkung bestimmen die Anzahl der zulässigen Einlösungen.
@@ -107,7 +107,7 @@ In Arbeit.
 
 #### Sub_UC_eMed_09_01_05 Durchgeführte Abgabe als Leerabgabe erfassen
 
-Der GDA (Apotheker bzw. Arzt mit Hausapotheke) kann eine [Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medikationdispense-durchgefuehrteabgabe.md) als **Leerabgabe** erfassen, wenn der Patient angibt, dass er das Arzneimittel einer **Geplanten Abgabe** nicht benötigt (z. B. weil es bereits vorrätig ist) oder es generell nicht (mehr) einnimmt. Hierfür setzt er MedicationDispense.status auf **cancelled**.
+Der GDA (Apotheker bzw. Arzt mit Hausapotheke) kann eine [Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) als **Leerabgabe** erfassen, wenn der Patient angibt, dass er das Arzneimittel einer **Geplanten Abgabe** nicht benötigt (z. B. weil es bereits vorrätig ist) oder es generell nicht (mehr) einnimmt. Hierfür setzt er MedicationDispense.status auf **cancelled**.
 
 Eine **Leerabgabe** zählt als konsumierte Einlösung der zugehörigen **Geplanten Abgabe** und reduziert die Anzahl der verbleibenden möglichen Einlösungen um eins.
 
@@ -117,7 +117,7 @@ Nur wenn alle möglichen Einlösungen als **cancelled** erfasst wurden, **MUSS**
 
 #### Sub_UC_eMed_09_01_05 Durchgeführte Abgabe als Leerabgabe erfassen
 
-Der GDA (Apotheker bzw. Arzt mit Hausapotheke) kann eine [Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medikationdispense-durchgefuehrteabgabe.md) als **Leerabgabe** erfassen, wenn der Patient angibt, dass er das Medikament einer **Geplanten Abgabe** nicht benötigt (z.B. weil er es vorrätig hat) oder generell nicht (mehr) einnimmt.
+Der GDA (Apotheker bzw. Arzt mit Hausapotheke) kann eine [Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) als **Leerabgabe** erfassen, wenn der Patient angibt, dass er das Medikament einer **Geplanten Abgabe** nicht benötigt (z.B. weil er es vorrätig hat) oder generell nicht (mehr) einnimmt.
 
 Die Anzahl der möglichen Einlösungen einer **Geplanten Abgabe** reduziert sich nach einer Leerabgabe um eins, d.h. sie bleibt weiterhin offen (**active**) bis die restlichen möglichen Einlösungen erfolgt sind oder sie zeitlich abläuft. Nur wenn alle möglichen Einlösungen mit **cancelled** gespeichert wurden, wird die zugehörige **Geplante Abgabe** automatisch auf **cancelled** gesetzt, sonst auf **completed**.
 

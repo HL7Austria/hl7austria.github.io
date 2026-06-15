@@ -8,7 +8,7 @@
 
 ### Sub_UC_eMed_08_01 - Geplante Abgabe erfassen
 
-Ein GDA kann basierend auf einem **bestehenden** [Medikationsplaneintrag](design_choices.md#medikationsplaneintrag-bzw-planeintrag-atelgaemedmedicationrequestplaneintrag-medicationrequest) eine oder mehrere [Geplanten Abgaben](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) erstellen. Je verordnetes Medikament **muss** eine **Geplante Abgabe** erstellt werden.
+Ein GDA kann basierend auf einem **bestehenden** **Medikationsplaneintrag** eine oder mehrere [Geplanten Abgaben](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) erstellen. Je verordnetes Medikament **muss** eine **Geplante Abgabe** erstellt werden.
 
 Sollte für eine **Geplante Abgabe** noch kein Medikationsplaneintrag existieren, muss dieser zuerst erstellt werden (siehe [Sub_UC_eMed_06_03 - Medikationsplaneintrag in Medikationsplan hinzufügen](Sub_UC_eMed_06.md#sub_uc_emed_06_03---medikationsplaneintrag-in-medikationsplan-hinzufügen)). Bei Bedarf kann ein bestehender Medikationsplaneintrag angepasst werden (siehe [Sub_UC_eMed_06_06 - Medikationsplaneintrag im Medikationsplan ändern](Sub_UC_eMed_06.md#sub_uc_emed_06_06---medikationsplaneintrag-im-medikationsplan-ändern)).
 

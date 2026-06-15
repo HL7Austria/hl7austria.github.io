@@ -28,7 +28,7 @@ Die $plan-read Operation wird aufgerufen, wenn ein Medikationsplan mit der Inten
   "title" : "e-Med Operation für Plan-Read",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-06-15T17:37:50+00:00",
+  "date" : "2026-06-15T21:20:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -15,7 +15,7 @@
   "resourceType" : "Bundle",
   "id" : "At-Emed-Journey-05-a-Bundle-Medikationsplan-Tx",
   "meta" : {
-    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx"]
+    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"]
   },
   "type" : "transaction",
   "timestamp" : "2026-03-05T12:20:00+00:00",

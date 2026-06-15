@@ -18,7 +18,7 @@
   fhir:name [ fhir:v "ELGAeMedikationR4"] ; # 
   fhir:title [ fhir:v "ELGA e-Medikation (R4) DRAFT"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-06-15T17:37:50+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-06-15T21:20:33+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ELGA GmbH"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ELGA GmbH" ] ;
@@ -867,6 +867,19 @@
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] ) ;
+     fhir:grouping ( [
+       fhir:id [ fhir:v "Medikationsplan" ] ;
+       fhir:name [ fhir:v "Medikationsplan" ] ;
+       fhir:description [ fhir:v "Medikationsplan" ]
+     ] [
+       fhir:id [ fhir:v "GeplanteAbgabe" ] ;
+       fhir:name [ fhir:v "Geplante Abgabe" ] ;
+       fhir:description [ fhir:v "Geplante Abgabe" ]
+     ] [
+       fhir:id [ fhir:v "DurchgefuehrteAbgabe" ] ;
+       fhir:name [ fhir:v "Durchgeführte Abgabe" ] ;
+       fhir:description [ fhir:v "Durchgeführte Abgabe" ]
+     ] ) ;
      fhir:resource ( [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -884,7 +897,8 @@
        fhir:example [
          a fhir:boolean ;
          fhir:v false
-       ]
+       ] ;
+       fhir:groupingId [ fhir:v "Medikationsplan" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -920,7 +934,8 @@
        fhir:example [
          a fhir:boolean ;
          fhir:v false
-       ]
+       ] ;
+       fhir:groupingId [ fhir:v "Medikationsplan" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -938,7 +953,8 @@
        fhir:example [
          a fhir:boolean ;
          fhir:v false
-       ]
+       ] ;
+       fhir:groupingId [ fhir:v "Medikationsplan" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -948,15 +964,16 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medikationdispense-durchgefuehrteabgabe> ;
-         fhir:reference [ fhir:v "StructureDefinition/at-elga-emed-medikationdispense-durchgefuehrteabgabe" ]
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe" ]
        ] ;
        fhir:name [ fhir:v "AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe" ] ;
        fhir:description [ fhir:v "Dokumentiert eine \"Durchgeführte Abgabe\" eines Arzneimittels (\"MedicationDispense\"-Ressource). \nDie \"Durchgeführte Abgabe\" enthält die abgegebene Medikation und deren Dosierung und dient somit der Nachvollziehbarkeit der abgegebenen Arzneimittel in der e-Medikation. \nEs können Abweichungen zur \"Geplanten Abgabe\" hinsichtlich des Medikaments und dessen Dosierung dokumentiert werden.\nSofern eine zugehörige \"Geplanten Abgabe\" vorliegt, muss diese mit dem zugehörigen Planeintrag referenziert werden. Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige \"Geplante Abgabe\", ersichtlich.\nDer aktuelle Status einer \"Durchgeführten Abgabe\" wird mittels \"status\"- und \"type\"-Element dokumentiert. Es werden R5-Backport-Extensions verwendet." ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
-       ]
+       ] ;
+       fhir:groupingId [ fhir:v "DurchgefuehrteAbgabe" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -974,7 +991,8 @@
        fhir:example [
          a fhir:boolean ;
          fhir:v false
-       ]
+       ] ;
+       fhir:groupingId [ fhir:v "GeplanteAbgabe" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -992,7 +1010,8 @@
        fhir:example [
          a fhir:boolean ;
          fhir:v false
-       ]
+       ] ;
+       fhir:groupingId [ fhir:v "Medikationsplan" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1010,7 +1029,8 @@
        fhir:example [
          a fhir:boolean ;
          fhir:v false
-       ]
+       ] ;
+       fhir:groupingId [ fhir:v "Medikationsplan" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1038,15 +1058,16 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx> ;
-         fhir:reference [ fhir:v "StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx" ]
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-elga-emed-bundle-medikationsplantx" ]
        ] ;
        fhir:name [ fhir:v "AT ELGA e-Medikation Transaction Bundle Medikationsplan" ] ;
        fhir:description [ fhir:v "Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan (Aktualisierung aller enthaltenen Ressourcen) und besteht aus: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus \n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung\n\nAlle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert." ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
-       ]
+       ] ;
+       fhir:groupingId [ fhir:v "Medikationsplan" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1063,8 +1084,8 @@
        fhir:description [ fhir:v "Beispiel Durchgeführte Abgabe 1" ] ;
        fhir:example [
          a fhir:canonical ;
-         fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medikationdispense-durchgefuehrteabgabe"^^xsd:anyURI ;
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medikationdispense-durchgefuehrteabgabe>
+         fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"^^xsd:anyURI ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe>
        ]
      ] [
        fhir:extension ( [
@@ -1195,8 +1216,8 @@
        fhir:description [ fhir:v "Beispiel eines Transaction Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge)." ] ;
        fhir:example [
          a fhir:canonical ;
-         fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx"^^xsd:anyURI ;
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx>
+         fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"^^xsd:anyURI ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx>
        ]
      ] [
        fhir:extension ( [
@@ -1309,8 +1330,8 @@
        fhir:description [ fhir:v "Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) beinhaltet." ] ;
        fhir:example [
          a fhir:canonical ;
-         fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx"^^xsd:anyURI ;
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx>
+         fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"^^xsd:anyURI ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx>
        ]
      ] [
        fhir:extension ( [
@@ -1385,8 +1406,8 @@
        fhir:description [ fhir:v "Beispiel eines Transaction Bundles, zur Änderung der Reihenfolge der Medikationsplaneinträge." ] ;
        fhir:example [
          a fhir:canonical ;
-         fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx"^^xsd:anyURI ;
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx>
+         fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"^^xsd:anyURI ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx>
        ]
      ] [
        fhir:extension ( [
@@ -1442,8 +1463,8 @@
        fhir:description [ fhir:v "Beispiel eines Transaction Bundles, zur Änderung von bestehenden Medikationsplaneinträgen (absetzen und ändern)." ] ;
        fhir:example [
          a fhir:canonical ;
-         fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx"^^xsd:anyURI ;
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx>
+         fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"^^xsd:anyURI ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx>
        ]
      ] [
        fhir:extension ( [

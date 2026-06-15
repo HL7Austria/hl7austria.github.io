@@ -11,7 +11,7 @@
   <name value="ELGAeMedikationR4"/>
   <title value="ELGA e-Medikation (R4) DRAFT"/>
   <status value="draft"/>
-  <date value="2026-06-15T17:37:50+00:00"/>
+  <date value="2026-06-15T21:20:33+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -477,6 +477,18 @@
         <valueString value="true"/>
       </extension>
     </extension>
+    <grouping id="Medikationsplan">
+      <name value="Medikationsplan"/>
+      <description value="Medikationsplan"/>
+    </grouping>
+    <grouping id="GeplanteAbgabe">
+      <name value="Geplante Abgabe"/>
+      <description value="Geplante Abgabe"/>
+    </grouping>
+    <grouping id="DurchgefuehrteAbgabe">
+      <name value="Durchgeführte Abgabe"/>
+      <description value="Durchgeführte Abgabe"/>
+    </grouping>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
@@ -487,6 +499,7 @@
       <name value="AT ELGA e-Medikation Collection Bundle Medikationsplan"/>
       <description value="Das Bundle vom Typ Collection bestehend aus: &#xA;- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus &#xA;- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung"/>
       <exampleBoolean value="false"/>
+      <groupingId value="Medikationsplan"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -509,6 +522,7 @@
       <name value="AT ELGA e-Medikation List Medikationsplan"/>
       <description value="Der Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine List-Ressource abgebildet. &#xA;Diese enthält 0..* Einträge (List.entry), wobei jedes Entry genau eine Referenz auf einen Medikationsplaneintrag (MedicationRequest) in List.entry.item beinhaltet.&#xA;Die Reihenfolge der Einträge kann durch den GDA festgelegt werden. Jeder Listeneintrag enthält im Element List.entry.flag den Änderungsstatus des jeweiligen Medikationsplaneintrags."/>
       <exampleBoolean value="false"/>
+      <groupingId value="Medikationsplan"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -520,17 +534,19 @@
       <name value="AT ELGA e-Medikation Medication Medikation"/>
       <description value="Bildet ein Arzneimittel in der &quot;Medication&quot;-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, geplante Abgabe und durchgeführte Abgabe."/>
       <exampleBoolean value="false"/>
+      <groupingId value="Medikationsplan"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/at-elga-emed-medikationdispense-durchgefuehrteabgabe"/>
+        <reference value="StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"/>
       </reference>
       <name value="AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe"/>
       <description value="Dokumentiert eine &quot;Durchgeführte Abgabe&quot; eines Arzneimittels (&quot;MedicationDispense&quot;-Ressource). &#xA;Die &quot;Durchgeführte Abgabe&quot; enthält die abgegebene Medikation und deren Dosierung und dient somit der Nachvollziehbarkeit der abgegebenen Arzneimittel in der e-Medikation. &#xA;Es können Abweichungen zur &quot;Geplanten Abgabe&quot; hinsichtlich des Medikaments und dessen Dosierung dokumentiert werden.&#xA;Sofern eine zugehörige &quot;Geplanten Abgabe&quot; vorliegt, muss diese mit dem zugehörigen Planeintrag referenziert werden. Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige &quot;Geplante Abgabe&quot;, ersichtlich.&#xA;Der aktuelle Status einer &quot;Durchgeführten Abgabe&quot; wird mittels &quot;status&quot;- und &quot;type&quot;-Element dokumentiert. Es werden R5-Backport-Extensions verwendet."/>
       <exampleBoolean value="false"/>
+      <groupingId value="DurchgefuehrteAbgabe"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -542,6 +558,7 @@
       <name value="At ELGA e-Medikation MedicationRequest Geplante Abgabe"/>
       <description value="Bildet eine &quot;Geplante Abgabe&quot; eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab (&quot;MedicationRequest&quot;-Ressource mit Kategorie &quot;Geplante Abgabe&quot;):&#xA;Sie enthält die verordnete Medikation und deren Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. &#xA;Werden mehrere Medikamente gleichzeitig verordnet und sollen demselben e-Rezept zugeordnet sein, wird für jedes Medikament eine &quot;Geplante Abgabe&quot; mit demselben &quot;e-Med GroupIdentifier&quot; erstellt (bildet 'Rezept-Klammer'). &#xA;Es werden R5-Backport-Extensions verwendet."/>
       <exampleBoolean value="false"/>
+      <groupingId value="GeplanteAbgabe"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -553,6 +570,7 @@
       <name value="At ELGA e-Medikation MedicationRequest Planeintrag"/>
       <description value="Ein Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine &quot;MedicationRequest&quot;-Ressource abgebildet.&#xA;Die Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained Medication-Ressource (inline, d.h. innerhalb der Ressource), dokumentiert wird.&#xA;Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstellung einer &quot;Geplanten Abgabe&quot; dienen. Es werden R5-Backport-Extensions verwendet."/>
       <exampleBoolean value="false"/>
+      <groupingId value="Medikationsplan"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -564,6 +582,7 @@
       <name value="At ELGA e-Medikation Substance Wirkstoff"/>
       <description value="Dokumentation des Wirkstoffs eines Arzneimittels in der ELGA e-Medikation, sofern es nicht kodiert vorliegt."/>
       <exampleBoolean value="false"/>
+      <groupingId value="Medikationsplan"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -581,11 +600,12 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx"/>
+        <reference value="StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
       </reference>
       <name value="AT ELGA e-Medikation Transaction Bundle Medikationsplan"/>
       <description value="Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan (Aktualisierung aller enthaltenen Ressourcen) und besteht aus: &#xA;- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus &#xA;- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung&#xA;&#xA;Alle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert."/>
       <exampleBoolean value="false"/>
+      <groupingId value="Medikationsplan"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -596,7 +616,7 @@
       </reference>
       <name value="Beispiel Durchgeführte Abgabe 1"/>
       <description value="Beispiel Durchgeführte Abgabe 1"/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medikationdispense-durchgefuehrteabgabe"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -673,7 +693,7 @@
       </reference>
       <name value="Beispiel Journey 01: Transaction Bundle"/>
       <description value="Beispiel eines Transaction Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge)."/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -739,7 +759,7 @@
       </reference>
       <name value="Beispiel Journey 02: Transaction Bundle"/>
       <description value="Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) beinhaltet."/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -783,7 +803,7 @@
       </reference>
       <name value="Beispiel Journey 05-a: Transaction Bundle zur Änderung der Reihenfolge der Medikationsplaneinträge."/>
       <description value="Beispiel eines Transaction Bundles, zur Änderung der Reihenfolge der Medikationsplaneinträge."/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -816,7 +836,7 @@
       </reference>
       <name value="Beispiel Journey 05-b: Transaction Bundle zur Änderung von bestehenden Medikationsplaneinträgen (absetzen und ändern)."/>
       <description value="Beispiel eines Transaction Bundles, zur Änderung von bestehenden Medikationsplaneinträgen (absetzen und ändern)."/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-persistierung-tx"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
