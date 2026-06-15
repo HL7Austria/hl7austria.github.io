@@ -44,7 +44,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
   "name" : "AtEmedBundleMedikationsplan",
   "title" : "AT ELGA e-Medikation Collection Bundle Medikationsplan",
   "status" : "draft",
-  "date" : "2026-06-15T08:37:42+00:00",
+  "date" : "2026-06-15T17:37:50+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

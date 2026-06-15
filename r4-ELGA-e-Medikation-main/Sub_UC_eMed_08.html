@@ -368,24 +368,27 @@ Die e-Medikation Fachanwendung ergänzt diesen und liefert ihn an den Client zur
 
 <pre><code class="language-JSON">AtElgaEmedMedicationRequestGeplanteAbgabe
     status: active 
-    category: recipetype                     // Verpflichtende Angabe der Rezeptart
+    category[mrcategory]: 2 "Geplante Abgabe"               //Kategorie zur Unterscheidung der MedicationRequests
+    category[recipetype]: KASSEN | PRIVAT | SUBST          // Verpflichtende Angabe der Rezeptart
+    intent: order                                           // Fester Wert
     medicationReference.reference: Medikation gemäß zugehörigem Planeintrag // Contained Medication
     authoredOn: Datum der Erstellung der Geplanten Abgabe
     requester: veranwortlicher GDA für die Geplante Abgabe  // wird auf Übereinstimmung mit List.source geprüft
-    basedOn: id des zugehörigen Medikationsplaneintrags
-    groupIdentifier: e-Med GroupIdentifier  // optionale Rezeptklammer 
+    basedOn: id des zugehörigen Medikationsplaneintrags     // referenziert aktuelle Version 
+    groupIdentifier: e-Med GroupIdentifier                  // optionale Rezeptklammer 
     dosageInstruction: Dosierung + Einnahmezeitraum (ab sofort | in der Zukunft) 
-    dispenseRequest.validityPeriod: Gültigkeitszeitraum // abhängig von Rezeptart bzw. verkürzt durch GDA
-    dispenseRequest.numberOfRepeatsAllowed: Anzahl weiterer Einlösungen // abhängig von Rezeptart
+    dispenseRequest.validityPeriod: Gültigkeitszeitraum     // abhängig von Rezeptart bzw. verkürzt durch GDA
+    dispenseRequest.numberOfRepeatsAllowed: Anzahl weiterer Einlösungen // abhängig von Rezeptart bzw. verkürzt durch GDA
     dispenseRequest.quantity: Abzugebende Menge (Packungen) je Abgabe
 </code></pre>
 
 <h3 id="sub_uc_emed_08_04---geplante-abgabe-verwerfen">Sub_UC_eMed_08_04 - Geplante Abgabe verwerfen</h3>
 
 <p>Ein GDA kann von ihm erstellte <em>Geplante Abgaben</em> aufgrund eines Fehlers verwerfen, solange noch <strong>keine Abgaben durchgeführt</strong> wurden. Die verworfene <em>Geplante Abgabe</em> wird damit abgeschlossen, kann aber über die Historie der <em>Geplanten Abgaben</em> eingesehen werden.
+  <!-- TODO Klären STORNO vs VERWERFEN: https://www.chipkarte.at/cdscontent/load?contentid=10008.781687&version=1698069647: gemäß dieser Logik wäre ein fachliches Storno fremder Verordnungen mittel PADV möglich (Storno mit ITI-57 (eigene) ist immer möglich). Evtl brauchen wir den Status "verwerfen" gar nicht, weil ein GDA nun direkt den Planeintrag anpassen würde, anstatt die Verodnung zu verwerfen, für die das e-Rezept ja bereits ausgehändigt wurde und die sowieso nach Ablauf der Frist rausfällt? -->
   <!-- TODO: Suchparameter nach stornierten *Geplante Abgaben*? --></p>
 
-<p><a name="l1690">​</a>Um eine <em>Geplante Abgabe</em> zu verwerfen, führt der GDA die Operation <a href="interactions.html#prescription-discard">$prescription-discard​</a> aus:</p>
+<p><a name="l1692">​</a>Um eine <em>Geplante Abgabe</em> zu verwerfen, führt der GDA die Operation <a href="interactions.html#prescription-discard">$prescription-discard​</a> aus:</p>
 <ul>
   <li>Der Status der <em>Geplante Abgaben</em> wird auf <em>entered-in-error</em> gesetzt (siehe <a href="workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der geplanten Abgabe</a>),</li>
   <li>das Datum in <em>authoredOn</em> wird aktualisiert.</li>
@@ -398,12 +401,12 @@ Die e-Medikation Fachanwendung ergänzt diesen und liefert ihn an den Client zur
 <pre><code class="language-JSON">AtElgaEmedMedicationRequestGeplanteAbgabe
     status: entered-in-error 
     authoredOn: Datum des Verwerfens der Geplanten Abgabe
-    requester: veranwortlicher GDA für das Verwerfen der Geplanten Abgabe // ursprünglicher Ersteller
+    requester: veranwortlicher GDA für das Verwerfen der Geplanten Abgabe 
 </code></pre>
 
 <h3 id="sub_uc_emed_08_02---geplante-abgabe-beenden-durch-fachanwendung">Sub_UC_eMed_08_02 - Geplante Abgabe beenden (durch Fachanwendung)</h3>
 
-<p>Wurden alle möglichen Einlösungen einer <em>Geplanten Abgabe</em> planmäßig durchgeführt (gemäß dem ausgewählten Rezepttyp oder den Einschränkungen des GDAs), setzt die Fachanwendung die <em>Geplante Abgabe</em> automatisch auf den Status <em>completed</em> (siehe <a href="workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der geplanten Abgabe</a>). Die <em>Geplante Abgabe</em> ist damit abgeschlossen.</p>
+<p>Wurden alle möglichen Einlösungen einer <em>Geplanten Abgabe</em> planmäßig durchgeführt (siehe <a href="Sub_UC_eMed_09.html#sub_uc_emed_09_01---durchgeführte-abgabe-erfassen">Sub_UC_eMed_09_01 - Durchgeführte Abgabe erfassen</a>), setzt die Fachanwendung die <em>Geplante Abgabe</em> <strong>automatisch</strong> auf den Status <em>completed</em> (siehe <a href="workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der geplanten Abgabe</a>). Die <em>Geplante Abgabe</em> ist damit abgeschlossen.</p>
 
 <p>Sonderfall: Wenn die letzte durchgeführte Abgabe danach verworfen wird (Status <em>entered-in-error</em>), wird der Status der <em>Geplanten Abgabe</em> durch die Fachanwendung wieder auf <em>active</em> gesetzt.</p>
 
@@ -417,7 +420,7 @@ Die e-Medikation Fachanwendung ergänzt diesen und liefert ihn an den Client zur
 
 <h3 id="sub_uc_emed_08_03---geplante-abgabe-abgelaufen-durch-fachanwendung">Sub_UC_eMed_08_03 - Geplante Abgabe abgelaufen (durch Fachanwendung)</h3>
 
-<p>Ist der Einlösezeitraum der <em>Geplanten Abgabe</em> gemäß der ausgewählten Rezeptart (category:recipetype) oder den Einschränkungen des GDAs überschritten, setzt die Fachanwendung die <em>Geplante Abgabe</em> automatisch auf den Status <em>stopped</em> (siehe <a href="workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der geplanten Abgabe</a>). Die <em>Geplanten Abgabe</em> ist damit abgeschlossen.</p>
+<p>Ist der Einlösezeitraum der <em>Geplanten Abgabe</em> gemäß der ausgewählten Rezeptart (category:recipetype) oder den Einschränkungen des GDAs überschritten, setzt die Fachanwendung die <em>Geplante Abgabe</em> <strong>automatisch</strong> auf den Status <em>stopped</em> (siehe <a href="workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der geplanten Abgabe</a>). Die <em>Geplante Abgabe</em> ist damit abgeschlossen.</p>
 
 <h4 id="relevante-elemente-medicationrequest-3">Relevante Elemente (MedicationRequest)</h4>
 
@@ -429,7 +432,7 @@ Die e-Medikation Fachanwendung ergänzt diesen und liefert ihn an den Client zur
 
 <h3 id="sub_uc_emed_08_03---geplante-abgabe-gecancelt-durch-fachanwendung">Sub_UC_eMed_08_03 - Geplante Abgabe gecancelt (durch Fachanwendung)</h3>
 
-<p>Eine <em>Geplante Abgabe</em> erhält automatisch den Status <em>cancelled</em> (siehe <a href="workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der geplanten Abgabe</a>), wenn alle <em>Durchgeführten Abgaben</em> (jede Einlösung) den Status <em>cancelled</em> erhalten haben ("Leerabgabe", d.h. keine Abgabe durchgeführt). Die <em>Geplanten Abgabe</em> ist damit abgeschlossen.</p>
+<p>Eine <em>Geplante Abgabe</em> erhält <strong>automatisch</strong> den Status <em>cancelled</em> (siehe <a href="workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der geplanten Abgabe</a>), wenn alle <em>Durchgeführten Abgaben</em> (jede Einlösung) den Status <em>cancelled</em> erhalten haben ("Leerabgabe", d.h. keine Abgabe durchgeführt). Die <em>Geplanten Abgabe</em> ist damit abgeschlossen.</p>
 
 <p>Sonderfall: Wenn die letzte <em>Durchgeführte Abgabe</em> danach verworfen wird (Status <em>entered-in-error</em>), wird der Status der <em>Geplanten Abgabe</em> durch die Fachanwendung wieder auf <em>active</em> gesetzt.</p>
 
@@ -443,7 +446,7 @@ Die e-Medikation Fachanwendung ergänzt diesen und liefert ihn an den Client zur
 
 <h3 id="sub_uc_emed_08_05---geplante-abgabe-löschen-durch-elga-teilnehmer">Sub_UC_eMed_08_05 - Geplante Abgabe löschen (durch ELGA-Teilnehmer)</h3>
 
-<p>Der ELGA-Teilnehmer kann eine <em>Geplante Abgabe</em> endgültig löschen. Bereits dokumentierte <em>Durchgeführte Abgaben</em> sowie bestehende Planeinträge bleiben davon unberührt.</p>
+<p>Der ELGA-Teilnehmer kann eine <em>Geplante Abgabe</em> endgültig löschen. Bereits dokumentierte zugehörige <em>Durchgeführte Abgaben</em> sowie bestehende Planeinträge bleiben davon unberührt.</p>
 
 <p>Die Löschung der <em>Geplanten Abgabe</em> umfasst:</p>
 
@@ -485,7 +488,7 @@ Die e-Medikation Fachanwendung ergänzt diesen und liefert ihn an den Client zur
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jun 15, 2026 08:37+0000">2026-06-15</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jun 15, 2026 17:37+0000">2026-06-15</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

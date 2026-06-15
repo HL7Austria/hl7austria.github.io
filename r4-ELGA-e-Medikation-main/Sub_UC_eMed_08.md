@@ -56,22 +56,24 @@ Der Trigger zu Erstellung des e-Rezepts und [Prescription-Write](interactions.md
 ```
 AtElgaEmedMedicationRequestGeplanteAbgabe
     status: active 
-    category: recipetype                     // Verpflichtende Angabe der Rezeptart
+    category[mrcategory]: 2 "Geplante Abgabe"               //Kategorie zur Unterscheidung der MedicationRequests
+    category[recipetype]: KASSEN | PRIVAT | SUBST          // Verpflichtende Angabe der Rezeptart
+    intent: order                                           // Fester Wert
     medicationReference.reference: Medikation gemäß zugehörigem Planeintrag // Contained Medication
     authoredOn: Datum der Erstellung der Geplanten Abgabe
     requester: veranwortlicher GDA für die Geplante Abgabe  // wird auf Übereinstimmung mit List.source geprüft
-    basedOn: id des zugehörigen Medikationsplaneintrags
-    groupIdentifier: e-Med GroupIdentifier  // optionale Rezeptklammer 
+    basedOn: id des zugehörigen Medikationsplaneintrags     // referenziert aktuelle Version 
+    groupIdentifier: e-Med GroupIdentifier                  // optionale Rezeptklammer 
     dosageInstruction: Dosierung + Einnahmezeitraum (ab sofort | in der Zukunft) 
-    dispenseRequest.validityPeriod: Gültigkeitszeitraum // abhängig von Rezeptart bzw. verkürzt durch GDA
-    dispenseRequest.numberOfRepeatsAllowed: Anzahl weiterer Einlösungen // abhängig von Rezeptart
+    dispenseRequest.validityPeriod: Gültigkeitszeitraum     // abhängig von Rezeptart bzw. verkürzt durch GDA
+    dispenseRequest.numberOfRepeatsAllowed: Anzahl weiterer Einlösungen // abhängig von Rezeptart bzw. verkürzt durch GDA
     dispenseRequest.quantity: Abzugebende Menge (Packungen) je Abgabe
 
 ```
 
 ### Sub_UC_eMed_08_04 - Geplante Abgabe verwerfen
 
-Ein GDA kann von ihm erstellte **Geplante Abgaben** aufgrund eines Fehlers verwerfen, solange noch **keine Abgaben durchgeführt** wurden. Die verworfene **Geplante Abgabe** wird damit abgeschlossen, kann aber über die Historie der **Geplanten Abgaben** eingesehen werden. 
+Ein GDA kann von ihm erstellte **Geplante Abgaben** aufgrund eines Fehlers verwerfen, solange noch **keine Abgaben durchgeführt** wurden. Die verworfene **Geplante Abgabe** wird damit abgeschlossen, kann aber über die Historie der **Geplanten Abgaben** eingesehen werden.  
 
 Um eine **Geplante Abgabe** zu verwerfen, führt der GDA die Operation [$prescription-discard​](interactions.md#prescription-discard) aus:
 
@@ -84,13 +86,13 @@ Um eine **Geplante Abgabe** zu verwerfen, führt der GDA die Operation [$prescri
 AtElgaEmedMedicationRequestGeplanteAbgabe
     status: entered-in-error 
     authoredOn: Datum des Verwerfens der Geplanten Abgabe
-    requester: veranwortlicher GDA für das Verwerfen der Geplanten Abgabe // ursprünglicher Ersteller
+    requester: veranwortlicher GDA für das Verwerfen der Geplanten Abgabe 
 
 ```
 
 ### Sub_UC_eMed_08_02 - Geplante Abgabe beenden (durch Fachanwendung)
 
-Wurden alle möglichen Einlösungen einer **Geplanten Abgabe** planmäßig durchgeführt (gemäß dem ausgewählten Rezepttyp oder den Einschränkungen des GDAs), setzt die Fachanwendung die **Geplante Abgabe** automatisch auf den Status **completed** (siehe [Status des MedicationRequests in der geplanten Abgabe](workflowmanagement.md#status-des-medicationrequests-in-der-geplanten-abgabe)). Die **Geplante Abgabe** ist damit abgeschlossen.
+Wurden alle möglichen Einlösungen einer **Geplanten Abgabe** planmäßig durchgeführt (siehe [Sub_UC_eMed_09_01 - Durchgeführte Abgabe erfassen](Sub_UC_eMed_09.md#sub_uc_emed_09_01---durchgeführte-abgabe-erfassen)), setzt die Fachanwendung die **Geplante Abgabe** **automatisch** auf den Status **completed** (siehe [Status des MedicationRequests in der geplanten Abgabe](workflowmanagement.md#status-des-medicationrequests-in-der-geplanten-abgabe)). Die **Geplante Abgabe** ist damit abgeschlossen.
 
 Sonderfall: Wenn die letzte durchgeführte Abgabe danach verworfen wird (Status **entered-in-error**), wird der Status der **Geplanten Abgabe** durch die Fachanwendung wieder auf **active** gesetzt.
 
@@ -106,7 +108,7 @@ AtElgaEmedMedicationRequestGeplanteAbgabe
 
 ### Sub_UC_eMed_08_03 - Geplante Abgabe abgelaufen (durch Fachanwendung)
 
-Ist der Einlösezeitraum der **Geplanten Abgabe** gemäß der ausgewählten Rezeptart (category:recipetype) oder den Einschränkungen des GDAs überschritten, setzt die Fachanwendung die **Geplante Abgabe** automatisch auf den Status **stopped** (siehe [Status des MedicationRequests in der geplanten Abgabe](workflowmanagement.md#status-des-medicationrequests-in-der-geplanten-abgabe)). Die **Geplanten Abgabe** ist damit abgeschlossen.
+Ist der Einlösezeitraum der **Geplanten Abgabe** gemäß der ausgewählten Rezeptart (category:recipetype) oder den Einschränkungen des GDAs überschritten, setzt die Fachanwendung die **Geplante Abgabe** **automatisch** auf den Status **stopped** (siehe [Status des MedicationRequests in der geplanten Abgabe](workflowmanagement.md#status-des-medicationrequests-in-der-geplanten-abgabe)). Die **Geplante Abgabe** ist damit abgeschlossen.
 
 #### Relevante Elemente (MedicationRequest)
 
@@ -120,7 +122,7 @@ AtElgaEmedMedicationRequestGeplanteAbgabe
 
 ### Sub_UC_eMed_08_03 - Geplante Abgabe gecancelt (durch Fachanwendung)
 
-Eine **Geplante Abgabe** erhält automatisch den Status **cancelled** (siehe [Status des MedicationRequests in der geplanten Abgabe](workflowmanagement.md#status-des-medicationrequests-in-der-geplanten-abgabe)), wenn alle **Durchgeführten Abgaben** (jede Einlösung) den Status **cancelled** erhalten haben ("Leerabgabe", d.h. keine Abgabe durchgeführt). Die **Geplanten Abgabe** ist damit abgeschlossen.
+Eine **Geplante Abgabe** erhält **automatisch** den Status **cancelled** (siehe [Status des MedicationRequests in der geplanten Abgabe](workflowmanagement.md#status-des-medicationrequests-in-der-geplanten-abgabe)), wenn alle **Durchgeführten Abgaben** (jede Einlösung) den Status **cancelled** erhalten haben ("Leerabgabe", d.h. keine Abgabe durchgeführt). Die **Geplanten Abgabe** ist damit abgeschlossen.
 
 Sonderfall: Wenn die letzte **Durchgeführte Abgabe** danach verworfen wird (Status **entered-in-error**), wird der Status der **Geplanten Abgabe** durch die Fachanwendung wieder auf **active** gesetzt.
 
@@ -136,7 +138,7 @@ AtElgaEmedMedicationRequestGeplanteAbgabe
 
 ### Sub_UC_eMed_08_05 - Geplante Abgabe löschen (durch ELGA-Teilnehmer)
 
-Der ELGA-Teilnehmer kann eine **Geplante Abgabe** endgültig löschen. Bereits dokumentierte **Durchgeführte Abgaben** sowie bestehende Planeinträge bleiben davon unberührt.
+Der ELGA-Teilnehmer kann eine **Geplante Abgabe** endgültig löschen. Bereits dokumentierte zugehörige **Durchgeführte Abgaben** sowie bestehende Planeinträge bleiben davon unberührt.
 
 Die Löschung der **Geplanten Abgabe** umfasst:
 
