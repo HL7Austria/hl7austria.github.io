@@ -12,7 +12,7 @@
   fhir:meta [
      fhir:profile ( [
        fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"^^xsd:anyURI ;
-       fhir:l <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe>
+       fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe>
      ] )
   ] ; # 
   fhir:text [
@@ -25,27 +25,21 @@
      fhir:meta [
        fhir:profile ( [
          fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-medikation"^^xsd:anyURI ;
-         fhir:l <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-medikation>
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-medikation>
        ] )
      ] ;
      fhir:code [
        fhir:coding ( [
-         fhir:system [
-           fhir:v "https://termgit.elga.gv.at/CodeSystem/asp-liste"^^xsd:anyURI ;
-           fhir:l <https://termgit.elga.gv.at/CodeSystem/asp-liste>
-         ] ;
+         fhir:system [ fhir:v "https://termgit.elga.gv.at/CodeSystem/asp-liste"^^xsd:anyURI ] ;
          fhir:code [ fhir:v "2443061" ] ;
          fhir:display [ fhir:v "EBETREXAT TBL 10MG" ]
        ] )
      ]
   ] ) ; # 
   fhir:extension ( [
-     fhir:url [
-       fhir:v "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction"^^xsd:anyURI ;
-       fhir:l <http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction>
-     ] ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction"^^xsd:anyURI ] ;
      fhir:value [
-       a fhir:Markdown ;
+       a fhir:markdown ;
        fhir:v "1-0-1-0 Stück"
      ]
   ] ) ; # 
@@ -53,39 +47,32 @@
   fhir:intent [ fhir:v "order"] ; # 
   fhir:category ( [
      fhir:coding ( [
-       fhir:system [
-         fhir:v "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS"^^xsd:anyURI ;
-         fhir:l <https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS>
-       ] ;
+       fhir:system [ fhir:v "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "2" ] ;
        fhir:display [ fhir:v "Geplante Abgabe" ]
      ] )
   ] [
      fhir:coding ( [
-       fhir:system [
-         fhir:v "https://termgit.elga.gv.at/CodeSystem/medikationrezeptart"^^xsd:anyURI ;
-         fhir:l <https://termgit.elga.gv.at/CodeSystem/medikationrezeptart>
-       ] ;
+       fhir:system [ fhir:v "https://termgit.elga.gv.at/CodeSystem/medikationrezeptart"^^xsd:anyURI ] ;
        fhir:code [ fhir:v "1" ] ;
        fhir:display [ fhir:v "Kassenrezept" ]
      ] )
   ] ) ; # 
   fhir:medication [
      a fhir:Reference ;
-     fhir:l fhir:ContainedMedication ;
      fhir:reference [ fhir:v "ContainedMedication" ]
   ] ; # 
   fhir:subject [
-     fhir:l <https://fhir.hl7.at/elga/emed/r4/Patient/At-Emed-Example-Patient-01> ;
+     fhir:link <https://fhir.hl7.at/elga/emed/r4/Patient/At-Emed-Example-Patient-01> ;
      fhir:reference [ fhir:v "Patient/At-Emed-Example-Patient-01" ]
   ] ; # 
   fhir:authoredOn [ fhir:v "2026-02-27T10:20:00+00:00"^^xsd:dateTime] ; # 
   fhir:requester [
-     fhir:l <https://fhir.hl7.at/elga/emed/r4/Practitioner/At-Emed-Example-Practitioner-01> ;
+     fhir:link <https://fhir.hl7.at/elga/emed/r4/Practitioner/At-Emed-Example-Practitioner-01> ;
      fhir:reference [ fhir:v "Practitioner/At-Emed-Example-Practitioner-01" ]
   ] ; # 
   fhir:basedOn ( [
-     fhir:l <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-01> ;
+     fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-01> ;
      fhir:reference [ fhir:v "MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-01" ] ;
      fhir:display [ fhir:v "Planeintrag" ]
   ] ) ; # 
@@ -107,10 +94,7 @@
      ] ;
      fhir:route [
        fhir:coding ( [
-         fhir:system [
-           fhir:v "https://termgit.elga.gv.at/CodeSystem/medikationartanwendung"^^xsd:anyURI ;
-           fhir:l <https://termgit.elga.gv.at/CodeSystem/medikationartanwendung>
-         ] ;
+         fhir:system [ fhir:v "https://termgit.elga.gv.at/CodeSystem/medikationartanwendung"^^xsd:anyURI ] ;
          fhir:code [ fhir:v "100000073619" ] ;
          fhir:display [ fhir:v "zum Einnehmen" ]
        ] )
@@ -119,10 +103,7 @@
        fhir:dose [
          a fhir:Quantity ;
          fhir:unit [ fhir:v "Stück" ] ;
-         fhir:system [
-           fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
-           fhir:l <http://unitsofmeasure.org>
-         ] ;
+         fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
          fhir:code [ fhir:v "{Stueck}" ]
        ]
      ] )

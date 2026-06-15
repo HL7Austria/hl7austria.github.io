@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/ValueSet/ElgaListEmptyReasonVS | *Version*:0.1.1 | |
-| Draft as of 2026-06-12 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:ElgaListEmptyReasonVS |
+| Draft as of 2026-06-15 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:ElgaListEmptyReasonVS |
 
  
 ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste. 
@@ -51,7 +51,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "title" : "ELGA List Empty Reason Value Set",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-06-12T12:35:19+00:00",
+  "date" : "2026-06-15T08:37:42+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -72,7 +72,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "compose" : {
     "include" : [{
       "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
-      "version" : "4.0.1",
+      "version" : "1.0.1",
       "concept" : [{
         "code" : "nilknown"
       },
