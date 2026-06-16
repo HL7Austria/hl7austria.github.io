@@ -293,11 +293,11 @@ width: 100%;}
   <li>Liegt eine zugehörige <a href="StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.html">Geplante Abgabe</a> vor, <strong>MUSS</strong> diese über <em>MedicationDispense.authorizingPrescription[geplanteAbgabe]</em> referenziert werden. Der zugehörige Planeintrag <strong>MUSS</strong> über <em>MedicationDispense.authorizingPrescription[planeintrag]</em> referenziert werden.
   <!-- TODO: ist kommt die Referenz auf den Planeintrag zustande? Automatisch durch die Fachanwendung oder durch den GDA? -> ergänze in Relevante Elmente --></li>
   <li>Die in der <em>Geplanten Abgabe</em> dokumentierte <a href="workflowmanagement.html#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart">Rezeptart</a> sowie eine gegebenenfalls durch den verordnenden GDA im Element <em>MedicationRequest.numberOfRepeatsAllowed</em> festgelegte Einschränkung bestimmen die Anzahl der zulässigen Einlösungen.</li>
-</ul>
-
-<p>Der Status einer <em>Durchgeführten Abgabe</em> wird durch <em>MedicationDispense.status</em> und <em>MedicationDispense.type</em> beschrieben (siehe <a href="workflowmanagement.html#status-des-medicationdispense-in-der-durchgeführten-abgabe">Status des MedicationDispense in der Durchgeführten Abgabe</a>) und kann Auswirkungen auf den Status der zugehörigen <em>Geplanten Abgabe</em> haben:
-    * Über <em>MedicationDispense.type</em> werden Einzelabgaben, Teilabgaben, Besorgerprozesse und Leerabgaben unterschieden (siehe <a href="workflowmanagement.html#varianten-der-teil-abgabe">Durchgeführte Abgabe - Varianten der (Teil-)Abgabe</a>). Für Teilabgaben, Besorgerprozesse und Leerabgaben <strong>MUSS</strong> die jeweils vorgegebene Sequenz der zulässigen <em>MedicationDispense.type</em>-Werte eingehalten werden.</p>
-<ul>
+  <li>Der Status einer <em>Durchgeführten Abgabe</em> wird durch <em>MedicationDispense.status</em> und <em>MedicationDispense.type</em> beschrieben (siehe <a href="workflowmanagement.html#status-des-medicationdispense-in-der-durchgeführten-abgabe">Status des MedicationDispense in der Durchgeführten Abgabe</a>) und kann Auswirkungen auf den Status der zugehörigen <em>Geplanten Abgabe</em> haben:
+    <ul>
+      <li>Über <em>MedicationDispense.type</em> werden Einzelabgaben, Teilabgaben, Besorgerprozesse und Leerabgaben unterschieden (siehe <a href="workflowmanagement.html#varianten-der-teil-abgabe">Durchgeführte Abgabe - Varianten der (Teil-)Abgabe</a>). Für Teilabgaben, Besorgerprozesse und Leerabgaben <strong>MUSS</strong> die jeweils vorgegebene Sequenz der zulässigen <em>MedicationDispense.type</em>-Werte eingehalten werden.</li>
+    </ul>
+  </li>
   <li>Die tatsächlich abgegebene Packungsmenge <strong>MUSS</strong> in <em>MedicationDispense.quantity</em> angegeben werden. Die Fachanwendung prüft diese Menge jedoch nicht im Kontext einer gegebenenfalls zugrunde liegenden <em>Geplanten Abgabe</em>. Ob eine Einlösung als vollständig gilt, wird ausschließlich durch den Wert von <em>MedicationDispense.type</em> bestimmt. Eine Einlösung gilt als vollständig, wenn ein <em>MedicationDispense.type</em> mit dem Wert <em>Complete</em> verwendet wird; die Anzahl der abgegebenen Packungen ist hierfür nicht maßgeblich.</li>
 </ul>
 
@@ -491,7 +491,7 @@ Absetzdatum + GDA relevant (statusChanged R6) -->
 
 <h3 id="sub_uc_emed_09_02---durchgeführte-abgabe-verwerfen">Sub_UC_eMed_09_02 - Durchgeführte Abgabe verwerfen</h3>
 
-<p><a name="l965">​</a>Ein GDA (Apotheke) kann von ihm erstellte <a href="design_choices.html#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense">Durchgeführte Abgaben</a>, die sich im Status <em>completed</em> oder <em>cancelled</em> befinden, aufgrund eines Fehlers verwerfen.</p>
+<p><a name="l968">​</a>Ein GDA (Apotheke) kann von ihm erstellte <a href="design_choices.html#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense">Durchgeführte Abgaben</a>, die sich im Status <em>completed</em> oder <em>cancelled</em> befinden, aufgrund eines Fehlers verwerfen.</p>
 
 <p>Um eine <em>Durchgeführte Abgabe</em> zu verwerfen, ruft der GDA diese mittels GET MedicationDispense ab und bearbeitet diese wie folgt:</p>
 <ul>
@@ -551,7 +551,7 @@ Wenn eine verworfene <em>Durchgeführte Abgabe</em> Teil eines e-Rezepts mit wei
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jun 15, 2026 21:20+0000">2026-06-15</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Jun 16, 2026 10:30+0000">2026-06-16</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
